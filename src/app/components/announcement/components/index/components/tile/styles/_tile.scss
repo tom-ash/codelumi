@@ -3,7 +3,6 @@
 %tile {
     position: relative;
     width: 527px;
-    // height: 527px;
     float: left;
     margin-top: 12px;
     margin-bottom: 48px;
@@ -11,11 +10,9 @@
     @media only screen and (max-width: $breakpoint-phone-large-max) {
       margin: 0;
       padding: 48px 0;
-      // background: rgba(235, 245, 251, 0.48);
       background: rgba(254, 249, 231, 0.8);
     }
     .fas, .far {
-        // width: 20px;
         padding-right: 2px;
       }
     .fa-clone, .fa-city, .fa-calendar-alt {
@@ -32,9 +29,7 @@
       }
     &.even {
       margin-right: 48px;
-      
       @media only screen and (max-width: $breakpoint-phone-large-max) {
-        // background: rgba(254, 249, 231, 0.72);
         background: white;
       }
     }

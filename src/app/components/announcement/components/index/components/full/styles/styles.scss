@@ -1,250 +1,37 @@
-@import '../../../../../../../styles/themes.scss';
 @import '../../../../../../../styles/inputs/templates/input';
 @import '../../../styles/panel';
 @import '../../tile/styles/tile';
+@import './full-headers';
+@import './full-panel';
+@import './full-tile';
+@import './full-pagination';
 
 #announcement-index-full {
   @extend %wide-container;
   width: 100%;
   position: relative;
+  .page-header {
+    @extend %full-page-header;
+  }
+  .section-header {
+    @extend %full-section-header;
+  }
+  .panel {
+    @extend %full-panel;
+  }
+  .announcements {
+    padding: 0;
+    .announcement-index-tile {
+      @extend %tile;
+      @extend %full-tile;
+    }
+  }
   @media only screen and (max-width: $breakpoint-phone-large-max) {
     padding: 0;
     margin-top: 48px;
   }
-  .page-header {
-    @extend %page-header;
-    font-size: 20px;
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
-      // h1 {
-        position: absolute;
-        // display: none;
-        // top: -120px;
-      // }
-      left: 0;
-      right: 0;
-      top: -48px;
-    }
-  }
-  .section-header {
-    @extend %section-header;
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
-      display: none;
-    }
-  }
-  .panel {
-    @extend %panel;
-    margin-bottom: 24px;
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
-      padding: 0;
-      margin: 0;
-
-    }
-    .index-input {
-      &.text {
-        .input {
-          @media only screen and (max-width: $breakpoint-phone-large-max) {
-            padding-top: 22px!important;
-          }
-        }
-      }
-      &.text, &.select {
-        width: 185px;
-        @media only screen and (max-width: $breakpoint-phone-large-max) {
-          width: 100%;
-          height: 48px;
-          margin: 0!important;
-        }
-        float: left;
-        margin-right: 18.8px;
-        border-bottom: 1px solid #B3B6B7;
-        margin-bottom: 12px;
-        transition: 0.1s ease-in;
-        &.full-last, &.last {
-          margin-right: 0;
-        }
-        &.hover {
-          transition: 0.1s ease-in;
-        }
-        &.focus, &.value {
-        }
-        .label {
-          top: 24px;
-          left: 0px;
-          @media only screen and (max-width: $breakpoint-phone-large-max) {
-            left: 12px;
-            top: 18px;
-            margin: 0!important;
-            &.focus, &.value {
-              top: 10px;
-              font-weight: normal!important;
-            }
-          }
-          &.hover {
-            font-weight: bold;
-            transition: 0.1s ease-in;
-          }
-          &.focus {
-            // font-weight: bold;
-          }
-        }
-        .input {
-          padding-left: 0;
-          background: none;
-          @media only screen and (max-width: $breakpoint-phone-large-max) {
-            padding-left: 12px!important;
-            height: 48px;
-            padding-top: 26px;
-          }
-          &.hover {
-            background: none;
-          }
-        }
-      }
-      &.select {
-        .input {
-          padding-left: 0px;
-        }
-        .options {
-          top: 45px;
-          left: 0px;
-          border-top: none;
-          @media only screen and (max-width: $breakpoint-phone-large-max) {
-            width: 100%;
-            box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
-            0px 3px 8px 3px rgba(0, 0, 0, 0.14),
-            0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-            border-top-left-radius: 0;
-          }
-          .option {
-            font-size: 16px;
-            line-height: 24px;
-            height: 24px;
-            padding-left: 8px;
-            cursor: pointer;
-            &.preselected {
-              background: lightgray;
-            }
-          }
-        }
-      }
-    }
-  }
-  .availability-date {
-    position: relative;
-    float: left;
-    .react-calendar-container {
-      position: absolute;
-      top: 40px;
-      left: -34px;
-      width: 240px;
-      .react-calendar {
-        width: 280px;
-        position: absolute;
-        left: 0;
-        z-index: 3;
-        border-radius: 2.5px;
-      }
-    }
-  }
-  .announcement-index-tile {
-    @extend %tile;
-
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
-      width: 100%;
-      .picture-container {
-        padding: 0;
-      }
-      // h3 {
-      //   display: none;
-      // }
-      .data {
-        font-size: 14px;
-        padding: 0 12px 12px;
-        .rent {
-          .gross {
-            font-size: 13px;
-          }
-        }
-      }
-      .picture {
-        $width: 100%;
-        background-position: center;
-        background-size: ($width * 1.3333) auto;
-        width: $width;
-        height: 0;
-        padding-bottom: ($width / 1.3333)
-      }
-      .bottom-data {
-        padding: 0 12px;
-        font-size: 14px;
-        .area, .rooms, .floor, .total-floors {
-          padding: 12px 12px 0 0;
-          margin: 0;
-        }
-        .calendar {
-          float: right;
-          text-align: right;
-        }
-      }
-    }
-    @media only screen and (max-width: 360px) {
-      .data {
-        font-size: 13px;
-        .rent {
-          .gross {
-            font-size: 12px;
-          }
-        }
-      }
-      .bottom-data {
-        font-size: 13px;
-      }
-    }
-    @media only screen and (max-width: 336px) {
-      .data {
-        font-size: 12px;
-        .rent {
-          .gross {
-            font-size: 11px;
-          }
-        }
-      }
-      .bottom-data {
-        font-size: 12px;
-        .floor {
-          padding-right: 0;
-        }
-        .area, .rooms {
-          padding-right: 10px;
-        }
-      }
-    }
-  }
-  .announcements {
-    padding: 0;
-  }
   .pagination {
-    text-align: center;
-    height: 32px;
-    .input, .arrow {
-      height: 32px;
-      width: 22px;
-      border: 1px solid gray;
-      margin: 0px 4px;
-      border-radius: 2px;
-      font-size: 14px;
-      &.current {
-        background: rgba(84, 153, 199, 0.88);
-        color: white;
-      }
-      &.focus {
-        border: 2px solid gray;
-        &.current {
-          background: rgba(84, 153, 199, 0.88);
-          border: none;
-        }
-      }
-    }
+    @extend %full-pagination;
   }
   .connecting {
     .pagination {
@@ -252,24 +39,5 @@
         background: lightgray;
       }
     }
-  }
-  .button {
-    @extend %button;
-
-      // background: red;
-      @media only screen and (max-width: $breakpoint-phone-large-max) {
-        height: 48px!important;
-        padding: 0;
-        margin: 0;
-        width: 160px;
-        margin: 24px auto;
-        .input {
-        display: block;
-        width: 160px;
-        height: 48px;
-        margin: 0 auto!important;
-        }
-      }
-
   }
 }
