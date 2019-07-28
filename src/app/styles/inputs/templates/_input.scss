@@ -1,0 +1,107 @@
+@import '../../themes.scss';
+@import './select';
+@import './radio';
+@import './checkbox';
+@import './textarea';
+@import './button';
+
+%input {
+  &.text, &.select, &.textarea {
+    position: relative;
+    background: $color-background;
+    .disabled {
+      opacity: 0.48;
+    }
+    .input {
+      background: white;
+      width: 100%;
+      border: 1px solid $input-border-color;
+      padding: 0px 8px 0px;
+      border-radius: 2.5px;
+      color: $input-color;
+      &.hover {
+        border: 2px solid $input-hover-border-color;
+      }
+      &.focus {
+        border: 2px solid $input-focus-border-color;
+      }
+      &.error {
+        border-right: 3px solid $input-error-border-color;
+      }
+    }
+    .label {
+      position: absolute;
+      display: inline-block;
+      z-index: 2;
+      background: $color-background;
+      color: $label-color;
+      cursor: pointer;
+      &.hover {
+        color: $color-label-hover;
+      }
+      &.focus {
+        color: $color-label-focus;
+      }
+      &.error {
+        color: $label-error-color;
+      }
+    }
+    .error {
+      color: $color-error;
+    }
+    .error-container {
+      padding-top: 4px;
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+  &.text, &.select {
+    height: 64px;
+    .input {
+      width: 100%;
+      height: 44px;
+      font-size: 16px;
+      line-height: 44px;
+    }
+    .label {
+      top: 14px;
+      left: 8px;
+      padding: 0 4px 0 4px;
+      font-size: $label-font-size;
+      animation-duration: 0.24s;
+      animation-name: primary-input-text-select-maximize-label;
+      &.value, &.focus {
+        top: -5px;
+        left: 8px;
+        font-size: $label-value-font-size;
+        animation-duration: 0.24s;
+        animation-name: primary-input-text-select-minimize-label;
+      }
+      &.autofill {
+        animation: none;
+      }
+    }
+  }
+}
+
+@keyframes primary-input-text-select-maximize-label {
+  from {
+    font-size: $label-value-font-size;
+    top: 0px;
+  }
+  to {
+    font-size: $label-font-size;
+    top: 14px;
+  }
+}
+
+@keyframes primary-input-text-select-minimize-label {
+  from {
+    font-size: $label-font-size;
+    top: 14px;
+  }
+  to {
+    font-size: $label-value-font-size;
+    top: -5px;
+  }
+}

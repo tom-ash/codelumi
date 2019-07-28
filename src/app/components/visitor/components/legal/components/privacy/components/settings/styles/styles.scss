@@ -1,0 +1,19 @@
+@import '../../../../../../../../../styles/themes';
+
+#visitor-privacy-settings {
+  @extend %narrow-container;
+  color: $theme-primary-color;
+  .page-header {
+    @extend %page-header;
+    margin-bottom: 24px;
+  }
+  .text {
+    text-align: justify;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 48px 0px 12px;
+  }
+  .consent {
+    font-size: 16px;
+  }
+}

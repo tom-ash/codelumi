@@ -1,0 +1,16 @@
+@import '../../../../../../../styles/themes.scss';
+
+#announcement-show-features {
+  min-height: 64px;
+  .item {
+    float: left;
+    margin-right: 12px;
+    font-size: 17px;
+    height: 24px;
+    line-height: 24px;
+    .fas {
+      font-size: 12px;
+      padding-right: 5px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+#user-create-success {
+  width: 320px;
+  margin: 0 auto;
+  .monit {
+    padding-top: 132px;
+    font-size: 14px;
+    text-align: justify;
+  }
+  .button {
+    margin: 24px auto;
+    width: 132px;
+    height: 32px;
+    border: none;
+    border-radius: 2.5px;
+    color: #FDFEFE;
+    background: #1A5276;
+    &:hover {
+      background: #1F618D;
+    }
+
+  }
+}

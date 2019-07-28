@@ -1,0 +1,15 @@
+@import '../../../../../styles/themes.scss';
+@import '../../../../../styles/inputs/form/form';
+
+#user-create-container {
+  @extend %narrow-container;
+  padding: 48px;
+  .page-header {
+    @extend %page-header;
+  }
+  .form-input {
+    @extend %form-input;
+  }
+  
+
+}

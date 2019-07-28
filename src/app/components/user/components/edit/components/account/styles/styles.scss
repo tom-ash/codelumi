@@ -1,0 +1,16 @@
+@import '../../../../../../../styles/themes.scss';
+@import '../../../../../../../styles/inputs/form/form';
+
+#user-edit-account {
+  @extend %narrow-container;
+  .form-input {
+    @extend %form-input;
+    &.text {
+      height: 40px;
+    }
+    &.button {
+      margin: 0 0 0 auto;
+      width: 96px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import '../../../../../../../styles/themes.scss';
+
+#user-create-consents-container {
+  margin-bottom: 24px;
+  width: 360px;
+  .checkbox-container {
+    @extend %checkbox-container;
+    &.with-error {
+      border-right: 3px solid $color-error;
+    }
+  }
+  .error {
+    @extend %error;
+  }
+  .checkbox:nth-child(2) {
+    margin-top: 4px;
+  }
+}

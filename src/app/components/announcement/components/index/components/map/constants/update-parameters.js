@@ -1,0 +1,1 @@
+export const updateParameters = [ 'language', 'scripts', 'loaded', 'fetch', 'draw', 'amount', 'announcements', 'tile' ]

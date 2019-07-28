@@ -1,0 +1,121 @@
+@import '../../themes.scss';
+@import './select';
+@import './radio';
+@import './checkbox';
+@import './textarea';
+@import './button';
+@import './colors';
+
+%form-input {
+  &.text, &.select, &.textarea {
+    position: relative;
+    background: $color-background;
+    .input {
+      width: 100%;
+      padding-left: 8px;
+      border: 1px solid $color-border;
+      border-radius: 2.5px;
+      background: $color-background;
+      color: $input-color;
+      &.hover {
+        border: 2px solid $color-border-hover;
+      }
+      &.focus {
+        border: 2px solid $color-border-hover;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      &.error {
+        border-right: 2.5px solid $color-error;
+        color: $color-error!important;
+      }
+    }
+    .label {
+      display: inline-block;
+      position: absolute;
+      z-index: 2;
+      background: $color-background;
+      color: $label-color;
+      cursor: pointer;
+      &.hover {
+        color: $color-label-hover;
+      }
+      &.focus {
+        color: $color-label-focus;
+      }
+      &.error {
+        color: $color-error!important;
+      }
+    }
+    .error {
+      color: $color-error!important;
+    }
+    .error-container {
+      padding-top: 4px;
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+  &.text, &.select {
+    height: 40px;
+    margin-bottom: 24px;
+    .input {
+      width: 100%;
+      height: 40px;
+      font-size: 16px;
+    }
+    .label {
+      top: 14px;
+      left: 8px;
+      padding: 0 4px 0 4px;
+      font-size: 14px;
+      transition: 0.24s;
+      &.value, &.focus {
+        top: -5px;
+        left: 8px;
+        font-size: 12px;
+      }
+    }
+    .error-container {
+      opacity: 0;
+      transition: 0.24s;
+      color: $color-error;
+      &.error {
+        opacity: 1;
+      }
+    }
+  }
+  &.select {
+    @extend %select;
+  }
+  &.checkbox {
+    @extend %checkbox;
+    .input {
+      outline: none;
+      background: #D0D3D4;
+      transition: 0.24s;
+      &.hover, &.focus {
+        background: #909497;
+      }
+      &.checked {
+        background: #2471A3;
+      }
+      .tick {
+        border-bottom: 1px solid white;
+        border-right: 1px solid white;
+      }
+    }
+    .label {
+      color: $input-color;
+      &.focus {
+        color: $color-hover
+      }
+      &.hover {
+        color: $color-hover
+      }
+    }
+  }
+  &.button {
+    @extend %button;
+  }
+}

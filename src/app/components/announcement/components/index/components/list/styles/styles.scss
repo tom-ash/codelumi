@@ -1,0 +1,125 @@
+@import '../../../../../../../styles/themes.scss';
+@import '../../tile/styles/tile';
+
+#announcement-index-list {
+  @extend %medium-container;
+  width: 960px;
+  .page-header {
+    @extend %page-header;
+  }
+  .section-header {
+    @extend %section-header;
+  }
+  .filters {
+    @extend %checkbox-container;
+    float: left;
+    margin-bottom: 32px;
+    margin-right: 24px;
+    width: 598px;
+    .primary-input {
+      float: left;
+      margin-right: 44px;
+    }
+  }
+  .primary-input.select {
+    height: 42px;
+    float: left;
+    margin-right: 0px;
+    width: 240px;
+
+    .input {
+      height: 42px;
+      line-height: 42px;
+      font-size: 14px;
+    }
+    .label {
+      top: 14px;
+      &.focus, &.value {
+        top: -5px;
+      }
+    }
+  }
+  .announcement-index-tile {
+    @extend %tile;
+    margin-top: 0;
+    margin-bottom: 48px;
+    width: 407px;
+    &.even {
+      margin-right: 48px;
+    }
+    .tile-container {
+      .data {
+        font-size: 15px;
+        .rent {
+          margin-right: 8px;
+          .fas, .far {
+            width: 16px;
+          }
+        }
+      }
+      padding: 8px;
+      border: 1px solid lightgray;
+      border-radius: 2.5px;
+      .picture {
+        width: 100%;
+        height: 228px;
+      }
+      .bottom-data {
+        font-size: 15px;
+      }
+    }
+    .control {
+      padding-top: 12px;
+      border-right: 1px solid lightgray;
+      border-bottom: 1px solid lightgray;
+      border-left: 1px solid lightgray;
+      .info {
+        float: left;
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+        width: 33%;
+        text-align: center;
+        font-size: 14px;
+        .fas, .far {
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+  .button-container {
+    position: relative;
+    float: left;
+    width: 33%;
+    height: 48px;
+    .button {
+      position: absolute;
+      width: 96px;
+      height: 24px;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      border-radius: 2.5px;
+      border: 1px solid lightgray;
+      background: #F7F9F9;
+    }
+  }
+  .first-pagination {
+    margin-bottom: 24px;
+  }
+  .pagination {
+    @extend %pagination;
+  }
+  .announcements {
+    min-height: 480px;
+  }
+  .loading {
+    .pagination {
+      .input, .arrow {
+        background: lightgray;
+      }
+    }
+  }
+}

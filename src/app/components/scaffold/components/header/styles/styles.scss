@@ -1,0 +1,215 @@
+@import '../../../../../styles/themes';
+
+#header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: #FDFEFE;
+  box-shadow: 0px 6px 8px -9px black;
+  z-index: 9999;
+  opacity: 0.88;
+  button {
+    border: none;
+  }
+  .inner {
+    max-width: 1200px;
+    height: 64px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  h1 {
+    float: left;
+    font-size: 24px;
+    font-variant: small-caps;
+    color: #212F3D;
+    cursor: pointer;
+    &:hover {
+      color: #1B4F72;
+    }
+    div {
+      font-family: Arial;
+      float: left;
+      font-size: 18px;
+      margin-top: 24px;
+      margin-left: 2px;
+    }
+    .first-letter {      
+      border: 2px solid #212F3D;
+      padding: 2px 3px 0px 3px;
+      margin-top: 20px;
+      border-radius: 4px;
+    }
+  }
+  .add-announcement {
+    float: right;
+    height: 64px;
+    width: 240px;
+    position: relative;
+    #header-add-announcement {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      font-size: 16px;
+      height: 36px;
+      background: inherit;
+      color: #424949;
+      &:hover {
+        color: #1B4F72;
+      }
+      div {
+        div:first-child {
+          text-align: left;
+          float: left;
+          width: 20px;
+        }
+        div:nth-child(2) {
+          float: left;
+          text-align: left;
+          width: 148px;
+        }
+      }
+    }
+  }
+  .my-account {
+    float: right;
+    height: 64px;
+    width: 144px;
+    position: relative;
+    #header-my-account {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      font-size: 16px;
+      height: 36px;
+      background: inherit;
+      color: #424949;
+      border-radius: 4px;
+      &:hover {
+        color: #1B4F72;
+      }
+      div {
+        div:first-child {
+          text-align: left;
+          float: left;
+          font-size: 18px;
+          width: 24px;
+        }
+        div:nth-child(2) {
+          float: left;
+          padding-top: 1px;
+          text-align: left;
+          width: 88px;
+        }
+      }
+    }
+  }
+  .sign-in {
+    float: right;
+    height: 64px;
+    width: 128px;
+    position: relative;
+    #header-sign-in {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      font-size: 16px;
+      width: 82px;
+      height: 36px;
+      background: inherit;
+      color: #424949;
+      border-radius: 4px;
+      &:hover {
+        color: #1B4F72;
+      }
+      div {
+        div:first-child {
+          text-align: left;
+          float: left;
+          width: 18px;
+        }
+        div:nth-child(2) {
+          float: left;
+          width: 64px;
+        }
+      }
+    }
+  }
+  .sign-up {
+    float: right;
+    height: 64px;
+    width: 128px;
+    position: relative;
+    #header-sign-up {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      font-size: 16px;
+      width: 88px;
+      height: 36px;
+      background: inherit;
+      color: #424949;
+      border-radius: 4px;
+      &:hover {
+        color: #1B4F72;
+      }
+      div {
+        div:first-child {
+          text-align: left;
+          float: left;
+          width: 26px;
+        }
+        div:nth-child(2) {
+          float: left;
+          width: 62px;
+        }
+      }
+    }
+  }
+  .sign-up {
+    float: right;
+    height: 64px;
+    width: 128px;
+  }
+  .language {
+    float: right;
+    height: 64px;
+    width: 72px;
+    position: relative;
+    line-height: 64px;
+    text-align: right;
+    .button {
+      .input {
+        font-size: 18px;
+        color: $theme-primary-color;
+        background: none;
+        border: none;
+        .fas {
+          color: $button-index-background-color;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,19 @@
+%button {
+  display: block;
+  padding: 0;
+  .input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 2.5px;
+    outline: none;
+    background: $button-index-background-color;
+    color: $button-index-color;
+    cursor: pointer;
+
+    // TODO: extract
+    .fa-search {
+      margin-right: 8px;
+    }
+  }
+}

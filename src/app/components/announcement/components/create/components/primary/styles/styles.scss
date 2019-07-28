@@ -1,0 +1,61 @@
+@import '../../../../../../../styles/themes.scss';
+
+#announcement-create-primary {
+  padding-top: 0!important;
+    width: 360px;
+    .primary-input {
+      .input {
+        height: 40px;
+      }
+      &.rent {
+        width: 174px;
+        float: left;
+        &.amount {
+          margin-left: 12px;
+        }
+      }
+    }
+  .availability-date {
+    width: 114.33px;
+    float: left;
+    margin-right: 12px;
+    &.day {
+      margin-right: 0;
+    }
+  }
+  .calendar {
+    .react-calendar {
+      position: absolute;
+      width: 360px;
+      z-index: 3;
+    }
+  }
+  .date {
+    .primary-input {
+      width: 174px;
+      float: left;
+      &.date {
+        margin-left: 12px;
+        
+      }
+    }
+  }
+  .date-select {
+    margin-bottom: 12px;
+  }
+  .fas, .far {
+    width: 24px;
+  }
+  .fa-clone, .fa-city, .fa-calendar-alt {
+    color: #1F618D;
+  }
+  .fa-coins {
+    color: #E59866;
+  }
+  .fa-square, .fa-door-closed {
+    color: #1E8449;
+  }
+  .fa-layer-group, .fa-building {
+    color: #5D6D7E;
+  }
+}

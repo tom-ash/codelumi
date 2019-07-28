@@ -1,0 +1,25 @@
+%checkbox {
+  .input {
+    cursor: pointer;
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+    cursor: pointer;
+    border-radius: 2px;
+    .tick {
+      transform: rotate(45deg);
+      width: 6px;
+      height: 11px;
+      margin-left: 5px;
+    }
+  }
+  .label {
+    width: 304px;
+    cursor: pointer;
+    float: left;
+    font-size: 15px;
+    line-height: 16px;
+    text-align: justify;
+  }
+}

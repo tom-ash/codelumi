@@ -1,0 +1,19 @@
+@import '../../../../../../../styles/themes.scss';
+
+#announcement-show-primary {
+  .item {
+    float: left;
+    width: 200px;
+    height: 60px;
+    .label {
+      color: #5F6A6A;
+      font-size: 15 px;
+      margin-bottom: 4px;
+    }
+    .value {
+      color: #212F3C;
+      padding-top: 4px;
+      font-size: 18px;
+    }
+  }
+}

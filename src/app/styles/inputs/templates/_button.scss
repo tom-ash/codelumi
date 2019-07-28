@@ -1,0 +1,22 @@
+%button {
+  display: block;
+  width: 240px;
+  margin: 36px auto;
+  padding: 0;
+  .input {
+    outline: none;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    border: none;
+    background: $button-index-background-color;
+    color: $button-index-color;
+    height: 36px;
+    border-radius: 4px;
+    font-size: 16px;
+    .fa-search {
+      margin-right: 8px;
+    }
+
+  }
+}

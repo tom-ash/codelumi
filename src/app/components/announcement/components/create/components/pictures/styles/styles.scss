@@ -1,0 +1,123 @@
+#announcement-create-pictures {
+  // border-top: 1px solid #D0D3D4;
+  // padding: 36px 0 12px;
+  .drag-and-drop {
+    position: relative;
+    
+    border: 1px solid gray;
+    width: 360px;
+    height: 54px;
+    line-height: 20px;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 14px;
+    border-radius: 2.5px;
+    cursor: pointer;
+    &.error-drag-and-drop {
+      border-right: 3px solid #CB4335;
+    }
+    &:hover {
+      background: #EBF5FB;
+    }
+    .input {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 999;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+    }
+  }
+  .error {
+    width: 360px;
+    padding-top: 4px;
+    color: #CB4335;
+    text-align: center;
+    font-size: 12px;
+    height: 12px;
+    margin-bottom: 24px;
+    // margin
+  }
+
+  .picture {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 112px;
+    background-size: 100%;
+    margin: 0 35px 24px 0;
+    border-radius: 2.5px;
+    &.last {
+      margin-right: 0;
+    }
+    .button {
+      cursor: pointer;
+      background: white;
+    }
+    .delete {
+      font-size: 16px;
+      position: absolute;
+      // background: red;
+      background: none;
+      color: #C0392B;
+      top: 0;
+      right: 4px;
+      right: -20px;
+      &:hover {
+        color: red;
+      }
+    }
+    .up {
+      font-size: 16px;
+      background: none;
+      position: absolute;
+      top: 20px;
+      right: -20px;
+      &:hover {
+        color: gray;
+      }
+    }
+    .down {
+      font-size: 16px;
+      background: none;
+      position: absolute;
+      top: 40px;
+      right: -20px;
+      &:hover {
+        color: gray;
+      }
+    }
+    .comment {
+      position: absolute;
+      top: 60px;
+      right: -18px;
+      font-size: 14px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+}

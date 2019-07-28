@@ -1,0 +1,32 @@
+%select {
+  &.select {
+    .input {
+      line-height: 40px;
+      cursor: pointer;
+    }
+    .options {
+      transition: 0.24s;
+      position: absolute;
+      width: 100%;
+      border: 2px solid gray;
+      border-bottom-left-radius: 2.5px;
+      border-bottom-right-radius: 2.5px;
+      border-top: none;
+      top: 40x;
+      background: white;
+      z-index: 9;
+      overflow-y: auto;
+      max-height: 146px;
+      .option {
+        font-size: 16px;
+        line-height: 24px;
+        height: 24px;
+        padding-left: 8px;
+        cursor: pointer;
+        &.preselected {
+          background: lightgray;
+        }
+      }
+    }
+  }
+}

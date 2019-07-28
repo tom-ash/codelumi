@@ -1,0 +1,34 @@
+@import '../../../../../../../../../styles/themes.scss';
+
+#user-edit-phone-verify {
+  @extend %narrow-container;
+  padding: 48px;
+  .page-header {
+    @extend %page-header;
+    .far {
+      margin-right: 10px;
+    }
+  }
+  .monit-inputs {
+    width: 360px;
+    .monit {
+      font-size: 16px;
+      line-height: 20px;
+      text-align: justify;
+      margin-bottom: 24px;
+      div > div:first-child {
+        margin-bottom: 12px;
+      }
+    }
+  }
+  .button {
+    .input {
+      @extend %blue-button;
+      display: block;
+      width: 180px;
+      height: 36px;
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+}

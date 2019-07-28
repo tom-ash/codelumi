@@ -1,0 +1,11 @@
+@import '../../../../../../../styles/themes.scss';
+@import '../../../../../../../styles/inputs/templates/button';
+
+#announcement-create-publishing {
+  .button {
+    @extend %button;
+    .input {
+      height: 54px;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+#announcement-show-pictures {
+  padding-bottom: 24px;
+  .pictures {
+    position: relative;
+    width: 800px;
+    height: 450px;
+    background-size: 100%;
+    border: 1px solid lightgray;
+    .arrow {
+      user-select: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      height: 36px;
+      margin: auto;
+      color: rgba(255, 255, 255, 0.64);
+      font-size: 36px;
+      cursor: pointer;
+      &:hover {
+        color: rgba(255, 255, 255, 0.88);
+      }
+      &.right {
+        right: 12px;
+      }
+      &.left {
+        left: 12px;
+      }
+    }
+    .counter {
+      user-select: none;
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      height: 22px;
+      line-height: 22px;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.72);
+      padding: 0px 6px;
+      background: rgba(128, 128, 128, 0.72);
+      border-radius: 2px;
+      
+    }
+  }
+}

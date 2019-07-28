@@ -1,0 +1,62 @@
+#user-edit-card {
+  position: relative;
+  width: 768px;
+  margin: 0 auto;
+  background: #FDFEFE;
+  margin-top: 48px;
+  border: 1px solid lightgray;
+  margin-bottom: 72px;
+  .card-show {
+    height: 320px;
+    border-bottom: 1px solid lightgray;
+  }
+  .card-features {
+    height: 240px;
+    border-bottom: 1px solid lightgray;
+    .checkboxes {
+      float: left;
+      position: relative;
+      width: 480px;
+      height: 240px;
+      padding-top: 24px;
+      border-right: 1px solid lightgray;
+      .label {
+        // width:320px;
+        // border: 1px solid l;
+        color: #424949;
+        text-align: center;
+      }
+    }
+    .save {
+      position: relative;
+      float: left;
+      height: 240px;
+      width: 286px;
+      .button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 80px;
+        left: 0;
+        margin: auto;
+        // display: block;
+        width: 144px;
+        height: 36px;
+        padding: 6px 8px;
+        // margin-left: auto;
+        // margin-right: 0;
+        font-size: 18px;
+        border-radius: 3px;
+          font-size: 14px;
+          background: #D7DBDD;
+          background-image: linear-gradient(#FBFCFC,#D7DBDD);
+          border: 1px solid gray;
+          &:hover {
+          background: #F2F3F4;
+          background-image: linear-gradient(#FDFEFE, lightgray);
+          color: #212F3C;
+          }
+      }
+    }
+  }
+}

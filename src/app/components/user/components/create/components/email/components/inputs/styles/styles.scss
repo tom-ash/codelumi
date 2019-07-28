@@ -1,0 +1,21 @@
+@import '../../../../../../../../../styles/themes.scss';
+
+.user-create-email-inputs-container {
+  width: 360px;
+  .section-header {
+    @extend %section-header;
+    margin-bottom: 16px;
+    &.account-data {
+      margin-top: 12px;
+    }
+  }
+  .fas, .far {
+    margin-right: 8px;
+    color: #2471A3;
+  }
+  .error {
+    .fas, .far {
+      color: red;
+    }
+  }
+}

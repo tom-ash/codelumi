@@ -1,0 +1,93 @@
+@import './media-breakpoints';
+@import './themes';
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  appearance: none;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  color: rgb(14, 35, 62);
+  line-height: 1;
+  color: #212F3C;
+}
+
+input, textarea {
+  outline: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.float-clear {
+  clear: both;
+}
+
+#app-inner-container {
+  padding: 96px 48px;
+  min-height: 1132px;
+  background: $app-background-color;
+  overflow: hidden;
+  @media only screen and (min-width: $breakpoint-tablet-small-min) and (max-width: $breakpoint-tablet-small-max) {
+    padding: 96px 24px 24px;
+  }
+  @media only screen and (max-width: $breakpoint-phone-large-max) {
+    padding: 96px 12px 24px;
+  }
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+
+a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+  &:hover {
+    color: inherit;
+  }
+  &:active {
+    color: inherit;
+  }
+}
+
+.display-none {
+  display: none;
+}
+
+.disabled-shadow {
+  opacity: 0.64
+}
+
+.opacity-none {
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: $breakpoint-phone-large-max) {
+  .phone-large-hidden {
+    display: none!important;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-tablet-small-min) and (max-width: $breakpoint-tablet-small-max) {
+  .tablet-small-hidden {
+    display: none!important;
+  }
+}
+
+.button {
+  .input {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+  }
+}

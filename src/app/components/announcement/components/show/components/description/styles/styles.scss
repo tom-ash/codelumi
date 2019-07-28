@@ -1,0 +1,10 @@
+@import '../../../../../../../styles/themes.scss';
+
+#announcement-show-description {
+  min-height: 48px;
+  div {
+    text-align: justify;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
