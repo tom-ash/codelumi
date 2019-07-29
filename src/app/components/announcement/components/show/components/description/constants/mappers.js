@@ -1,7 +1,8 @@
 export const mapStateToProps = (store) => {
   return {
     language: store.app.language,
-    description: store.announcement.show.description
+    descriptionPolish: store.announcement.show.data.descriptionPolish,
+    descriptionEnglish: store.announcement.show.data.descriptionEnglish
   }
 }
 

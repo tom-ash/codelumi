@@ -1,16 +1,39 @@
 @import '../../../../../../../styles/themes.scss';
 
 #announcement-show-features {
-  min-height: 64px;
+  margin-top: 36px;
+  @media only screen and (max-width: $breakpoint-phone-large-max) {
+    padding: 0 12px;
+  }
+  h3 {
+    color: #1B4F72;
+    font-weight: normal;
+    font-size: 17px;
+    padding-bottom: 8px;
+  }
   .item {
     float: left;
-    margin-right: 12px;
-    font-size: 17px;
-    height: 24px;
-    line-height: 24px;
-    .fas {
-      font-size: 12px;
+    height: 30px;
+    margin-right: 18px;
+    .icon, .text {
+      float: left;
+    }
+    .icon {
+      height: 12px;
+      line-height: 19px;
       padding-right: 5px;
+      .fa-circle {
+        font-size: 6px;
+      }
+    }
+    .text {
+      height: 24px;
+      line-height: 24px;
+      font-size: 16px;
+    }
+    @media only screen and (max-width: $breakpoint-phone-large-max) {
+      width: 100%;
+      margin-right: 0;
     }
   }
 }

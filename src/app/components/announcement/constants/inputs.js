@@ -22,7 +22,7 @@ export const inputs = {
     all: { polish: 'Opłaty dodatkowe', english: 'Additional fees' }
   },
   area: {
-    icon: 'fas fa-square',
+    icon: 'fas fa-layer-group',
     create: { polish: 'Powierzchnia', english: 'Area' },
     indexMin: {},
     indexMax: {}
@@ -34,7 +34,7 @@ export const inputs = {
     indexMax: {}
   },
   floor: {
-    icon: 'fas fa-layer-group',
+    icon: 'fas fa-building',
     create: { polish: 'Piętro', english: 'Floor' },
     indexMin: {},
     indexMax: {}

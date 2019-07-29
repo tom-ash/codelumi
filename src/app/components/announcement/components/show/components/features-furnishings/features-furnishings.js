@@ -27,14 +27,25 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
     return (
       <div id='announcement-show-features'>
         {
+        this.props.items == 'features' &&
+        <h3><i className='fas fa-check-circle' /> {this.languageHandler('Zalety', 'Features')}</h3>
+        }
+        {
+        this.props.items == 'furnishings' &&
+        <h3><i className='fas fa-check-circle' /> {this.languageHandler('Wyposażenie', 'Furnishings')}</h3>
+        }
+        {
         this.props[this.props.items] && this.props[this.props.items].map(item => (
         <div
         className='item'
         key={item}>
-          <i className='fas fa-check' />
-          {
-          this.languageObjectHandler(this.nodes.find(node => node.ref === item))
-          }
+          <div className='icon'>
+            <i className='fas fa-circle' />
+          </div>
+          <div className='text'>
+            {this.languageObjectHandler(this.nodes.find(node => node.ref === item))}
+          </div>
+          <div className='float-clear' />
         </div>
         ))
         }

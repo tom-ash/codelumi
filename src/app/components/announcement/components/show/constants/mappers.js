@@ -18,18 +18,19 @@ export const mapStateToProps = (store) => {
     furnishings: store.announcement.show.data.furnishings,
     descriptionPolish: store.announcement.show.data.descriptionPolish,
     descriptionEnglish: store.announcement.show.data.descriptionEnglish,
-
     mapLatitude: store.announcement.show.data.mapLatitude,
     mapLongitude: store.announcement.show.data.mapLongitude,
     venue: 'show',
-    name: store.announcement.show.data.name
+    name: store.announcement.show.data.name,
+    isMobile: store.app.isMobile,
+    showFixedPhone: store.announcement.show.control.showFixedPhone
   }
 }
     
 export const mapDispatchToProps = (dispatch) => {
   return {
     changeData: (value) => dispatch({ type: 'announcement/show/data', value: value }),
-    changeControl: (value) => dispatch({ type: 'announcement/show/pictures', value: value })
+    changeControl: (value) => dispatch({ type: 'announcement/show/control', value: value })
   }
 }
     

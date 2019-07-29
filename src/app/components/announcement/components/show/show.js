@@ -11,6 +11,7 @@ import AnnouncementShowFeaturesFurnishings from './components/features-furnishin
 import AnnouncementShowDescription from './components/description/description'
 import './styles/styles.scss'
 import { phoneSwitchProvider } from '../../functions/phone-switch-provider'
+import { togglePhone } from '../../functions/toggle-phone'
 
 class AnnouncementShow extends React.Component {
   constructor(props) {
@@ -18,58 +19,69 @@ class AnnouncementShow extends React.Component {
     this.componentDidMount = lifecycle.componentDidMount
     this.languageHandler = languageHandler.bind(this)
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
+    this.togglePhone = togglePhone.bind(this)
   }
 
   render() {
+    const { phone, venue, features, furnishings, descriptionPolish, descriptionEnglish, id, district } = this.props
     return (
       <div id='announcement-show'>
-        <div className='page-header'>
-          Ogłoszenie {this.props.id}
-        </div>
-        <div className='contact'>
-          {this.phoneSwitchProvider()}
-          <div
-          className='name'>
+        <div id='showcase'>
+          <div className='name'>
             {this.props.name}
           </div>
-          
-          <div className='float-clear'/>
-        </div>
-        <h3>
-          <div className='pin'>
-            <i className="fas fa-briefcase"></i>
+          <div className='phone-showcase'>
+            <div className='icon'>
+              <i className='fas fa-phone' />
+            </div>
+            <div className='text'>
+              {` ${phone}`}
+            {
+            phone && phone.length < 9 &&
+            <u onClick={(e) => this.togglePhone(e, venue)}>{this.languageHandler('Pokaż', 'Show')}</u>
+            }
+            </div>
+            <div className='float-clear' />
           </div>
-          {parseDistrict(this.props.district)}
-        </h3>
-        <h4><i className='fas fa-image' /> Zdjęcia</h4>
-        <AnnouncementShowPictures />
-        <h4><i className='fas fa-info-circle' /> Informacje podstawowe</h4>
-        <AnnouncementShowPrimary />
-        {
-        this.props.features && this.props.features.length > 0 &&
-        <div>
-          <h4><i className='fas fa-check-circle' /> Zalety</h4>
-          <AnnouncementShowFeaturesFurnishings items='features'/>
+          <div className='contact'>
+            {this.phoneSwitchProvider()}
+          </div>
         </div>
-        }
-        {
-        this.props.furnishings && this.props.furnishings.length > 0 &&
-        <div>
-          <h4><i className='fas fa-check-circle' /> Wyposazenie</h4>
-          <AnnouncementShowFeaturesFurnishings items='furnishings'/>
-        </div>
-        }
-        {
-        (this.props.language == 'polish' && this.props.description && this.props.description.polish.length > 0 ||
-         this.props.language != 'polish' && this.props.description && this.props.description.english.length > 0
-        ) &&
-        <div>
-          <h4><i className='fas fa-align-left' /> Opis</h4>
+        <div className='announcement'>
+          <div className='headers'>
+            <h2 className='page-header'>
+              <div className='number'>
+                {id}
+              </div>
+              <div className='pin'>
+                <i className="fas fa-briefcase"></i>
+              </div>
+              <div className='district'>
+                {parseDistrict(district)}
+              </div>
+              <div className='float-clear'/>
+            </h2>
+          </div>
+          <AnnouncementShowPictures />
+          <AnnouncementShowPrimary />
+          {
+          features && features.length > 0 &&
+          <div>
+            <AnnouncementShowFeaturesFurnishings items='features'/>
+          </div>
+          }
+          {
+          furnishings && furnishings.length > 0 &&
+          <div>
+            <AnnouncementShowFeaturesFurnishings items='furnishings'/>
+          </div>
+          }
+          {
+          (descriptionPolish || descriptionEnglish) &&
           <AnnouncementShowDescription />
+          }
+          <AnnouncementShowMap />
         </div>
-        }
-        <h4><i className='fas fa-map-marker-alt' /> Mapa</h4>
-        <AnnouncementShowMap />
       </div>
     )
   }

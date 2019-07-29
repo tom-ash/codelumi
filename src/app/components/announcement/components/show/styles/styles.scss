@@ -1,157 +1,83 @@
 @import '../../../../../styles/themes';
+@import './headers';
+@import './contact';
+@import './icons';
 
 #announcement-show {
-  @extend %medium-container;
   width: 874px;
-  padding: 36px;
-  position: relative;
-  .page-header {
-    @extend %page-header;
-    color: #2E86C1;
+  margin: 0 auto;
+  @media only screen and (max-width: $breakpoint-phone-large-max) {
+    width: 100%;
+    padding: 0;
   }
-  .pin {
-    background: #2874A6;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border-radius: 4px;
-    text-align: center;
-    line-height: 40px;
-    font-size: 22px;
-    color: #ECF0F1;
-    margin-right: 8px;
-    &.office {
-      background: #21618C;
-      &:hover {
-        background: red;
-      }
-    }
-    &.usable-premises {
-      background: #D35400;
-    }
-    .fa-cash-register {
-      font-size: 20px;
-    }
-  }
-  .attached-header {
-    position: absolute;
-    top: 0;
-    height: 18px;
-    min-width: 18px;
-    text-align: center;
-    line-height: 18px;
-    font-size: 14px;
-    border-right: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
-    border-left: 1px solid lightgray;
-    background: #ECF0F1;
-    color: #909497;
-    font-weight: normal;
-  }
-
-  h4 {
-    color: #1B4F72;
-    font-weight: normal;
-    font-size: 17px;
-    padding-bottom: 4px;
-    border-bottom: 1px solid #1B4F72;
-    margin-bottom: 12px;
-  }
-
-  .contact {
-    position: absolute;
-    top: 110px;
-    right: 36px;
-    font-size: 18px;
-    line-height: 24px;
-    height: 36px;
-    color: #212F3C;
-    u {
-      user-select: none;
-    }
-    .name {
-      float: left;
-      // position: absolute;
-      top: -32px;
-      right: 0;
-      background: rgba(236, 240, 241, 0.96);
-      // padding: 6px 12px;
-      height: 40px;
-      line-height: 40px;
-      padding: 0 12px;
-      border-radius: 2.5px;
-      // min-width: 20px;
-      text-align: center;
-      margin-left: 12px;
-      // color: #4D5656;
-      // .contact {
-      //   position: absolute;
-      //   font-size: 12px;
-      //   top: -24px;
-      //   left: -162px;
-      //   color: #4D5656;
-      // }
-    }
-    .phone {
-      float: left;
-      // position: absolute;
-      top: 12px;
-      right: 100px;
-      height: 40px;
-      width: 40px;
-      border-radius: 18px;
-      background: rgba(236, 240, 241, 0.96);
-      white-space: nowrap;
-      overflow:hidden;
-      &.open {
-        width: 208px;
-        transition: 0.72s ease-out;
-        right: 0;
-      }
-      .fa-phone {
-        height: 40px;
-        width: 40px;
-        font-size: 20px;
+  #showcase {
+    position: relative;
+    margin: 0 0 24px auto;
+    background: #FDFEFE;
+    border-radius: 2.5px;
+    padding: 12px;
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0px 3px 8px 3px rgba(0, 0, 0, 0.14),
+                0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    width: 240px;
+    .phone-showcase {
+      min-width: 50px;
+      margin-top: 12px;
+      line-height: 24px;
+      height: 24px;
+      .icon {
+        float: left;
         color: #FBFCFC;
         background: #28B463;
-        border-radius: 20px;
-        line-height: 40px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
         text-align: center;
-        opacity: 0.92;
-        margin-right: 12px;
-        cursor: pointer;
-        &:hover {
-          background: rgba(40, 180, 99, 0.8);
+        border-radius: 12px;
+        font-size: 13px;
+        padding: 1px 0 0 2px;
+        margin-right: 8px;
+      }
+      .text {
+        float: left;
+        u {
+          cursor: pointer;
+          margin-left: 4px;
         }
       }
     }
-    u {
-      cursor: pointer;
+    .contact {
+      @extend %contact;
     }
   }
-  h3 {
-    font-weight: normal;
-    font-size: 20px;
-    text-align: left;
-    padding-bottom: 18px;
-    margin: 0px;
-    color: $primary-text-color;
-  }
-  .primary-map {
-    width: 694px;
-    margin: 0 auto;
-  }
-  .section {
-    margin-top: 36px;
-    padding-top: 8px;
-    border-top: 1px solid #3498DB;
+  .announcement {
+    @extend %medium-container;
+    width: 874px;
+    padding: 36px;
     position: relative;
-    .attached-header {
-      padding-left: 4px;
-      padding-right: 4px;
-      top: -19px;
+    @media only screen and (max-width: $breakpoint-phone-large-max) {
+      width: 100%;
+      padding: 0;
+    }
+    .page-header {
+      @extend %show-page-header;
+    }
+    .primary-map {
+      width: 694px;
+      margin: 0 auto;
+    }
+    .section {
+      margin-top: 36px;
+      padding-top: 8px;
       border-top: 1px solid #3498DB;
-      border-bottom: none;
+      position: relative;
+      .attached-header {
+        padding-left: 4px;
+        padding-right: 4px;
+        top: -19px;
+        border-top: 1px solid #3498DB;
+        border-bottom: none;
+      }
     }
   }
 }

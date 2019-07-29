@@ -1,11 +1,23 @@
+@import '../../../../../../../styles/themes.scss';
+
 #announcement-show-map {
-  border: 1px solid lightgray;
+  // border: 2px solid lightgray;
+  margin-top: 36px;
   #google-map-container {
     width: 800px;
     height: 450px;
     #google-map {
       width: 100%;
       height: 100%;
+    }
+    @media only screen and (max-width: $breakpoint-phone-large-max) {
+      $width: 100%;
+      width: $width;
+      height: 0;
+      padding-bottom: ($width / 1.3333);
+      #google-map {
+        padding-bottom: ($width / 1.3333)
+      }
     }
   }
 }

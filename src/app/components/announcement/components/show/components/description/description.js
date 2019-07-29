@@ -14,8 +14,9 @@ class AnnouncementShowDescription extends React.Component {
   render() {
     return (
       <div id='announcement-show-description'>
-        <div>
-          {this.languageHandler(this.props.description.polish, this.props.description.english)}
+        <h3><i className='fas fa-check-circle' /> {this.languageHandler('Opis', 'Description')}</h3>
+        <div className='description'>
+          {this.languageHandler(this.props.descriptionPolish, this.props.descriptionEnglish)}
         </div>
       </div>
     )

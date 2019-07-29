@@ -22,30 +22,41 @@ class AnnouncementCreatePrimary extends React.Component {
           <div
           key={index}
           className='item'>
-            <div className='label'>
-              {this.languageHandler(item.label.polish, item.label.english)}
+            <div className='icon'>
+              <i className={item.icon}/>
             </div>
-            <div className='value'>
-              {
-              item.stateKey !== 'rent' && item.stateKey !== 'availabilityDate' && this.props[item.stateKey]
-              }
-              {
-              item.stateKey === 'rent' &&
-              `${this.props.rentAmount} ${parseCurrency(this.props.rentCurrency)}`
-              }
-              {
-              item.stateKey === 'additionalFees' &&
-              this.languageHandler(parseAdditionalFees(this.props.additionalFees).polish,
-                                   parseAdditionalFees(this.props.additionalFees).english)
-              }
-              {
-              item.stateKey === 'area' &&
-              this.languageHandler(' m2', ' sqm')
-              }
-              {
-              item.stateKey === 'availabilityDate' &&
-              parseAvailabilityDate.call(this, this.props[item.stateKey])
-              }
+            <div className='label-value'>
+              <div className='label'>
+                {this.languageHandler(item.label.polish, item.label.english)}
+              </div>
+              <div className='value'>
+                {
+                item.stateKey !== 'rent' && item.stateKey !== 'availabilityDate' &&
+                this.props[item.stateKey]
+                }
+                {
+                item.stateKey === 'rent' &&
+                `${this.props.rentAmount} ${parseCurrency(this.props.rentCurrency)}`
+                }
+                {
+                item.stateKey === 'additionalFees' &&
+                this.languageHandler(parseAdditionalFees(this.props.additionalFees).polish,
+                                    parseAdditionalFees(this.props.additionalFees).english)
+                }
+                {
+                item.stateKey === 'area' &&
+                this.languageHandler(' m2', ' sqm')
+                }
+                {
+                item.stateKey === 'availabilityDate' &&
+                parseAvailabilityDate.call(this, this.props[item.stateKey])
+                }
+                {
+                item.stateKey == 'floor' &&
+                this.languageHandler(` (z ${this.props.totalFloors})`, ` (of ${this.props.totalFloors})`)
+                }
+              </div>
+              <div className='float-clear' />
             </div>
           </div>
         ))

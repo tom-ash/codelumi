@@ -10,6 +10,7 @@ export const mapDispatchToProps = (dispatch) => {
     changeUserAuthorizeData: (value) => dispatch({ type: 'user/authorize/data', value: value }),
     changeScreenSize: (value) => dispatch({ type: 'SET_SCREEN_RESOLUTION', value: value}),
     changePath: (value) => dispatch({ type: 'app/path', value: value}),
-    changeScripts: (value) => dispatch({ type: 'app/scripts', value: value})
+    changeScripts: (value) => dispatch({ type: 'app/scripts', value: value}),
+    changeIsMobile: (value) => dispatch({ type: 'app/isMobile', value: value}),
   }
 }

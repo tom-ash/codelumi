@@ -1,11 +1,20 @@
+@import '../../../../../../../styles/themes.scss';
+
 #announcement-show-pictures {
-  padding-bottom: 24px;
   .pictures {
     position: relative;
     width: 800px;
     height: 450px;
     background-size: 100%;
-    border: 1px solid lightgray;
+    @media only screen and (max-width: $breakpoint-phone-large-max) {
+      margin: 0;
+      padding: 0;
+      $width: 100%;
+      width: $width;
+      height: 0;
+      background-size: ($width * 1.3333) auto;
+      padding-bottom: ($width / 1.3333)
+    }
     .arrow {
       user-select: none;
       position: absolute;
@@ -38,7 +47,6 @@
       padding: 0px 6px;
       background: rgba(128, 128, 128, 0.72);
       border-radius: 2px;
-      
     }
   }
 }

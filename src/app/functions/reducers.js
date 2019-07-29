@@ -18,6 +18,15 @@ function pathReducer(state = '', action) {
   }
 }
 
+function isMobileReducer(state = false, action) {
+  switch (action.type) {
+    case 'app/isMobile':
+      return action.value
+    default:
+      return state
+  }
+}
+
 function languageReducer(state = 'polish', action) {
   switch (action.type) {
     case 'APP_LANGUAGE':
@@ -38,10 +47,8 @@ function connectingReducer(state = false, action) {
 
 function scriptsReducer(state = {}, action) {
   switch (action.type) {
-    case 'app/scripts':
-      return { ...state, ...action.value }
-    default:
-      return state
+    case 'app/scripts': return { ...state, ...action.value }
+    default: return state
   }
 }
 
@@ -51,5 +58,6 @@ export const appReducer = combineReducers({
   path: pathReducer,
   language: languageReducer,
   connecting: connectingReducer,
-  scripts: scriptsReducer
+  scripts: scriptsReducer,
+  isMobile: isMobileReducer
 })
