@@ -22,14 +22,12 @@ class AnnouncementIndexSearchFull extends React.Component {
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.componentDidMount = lifecycle.componentDidMount
-    // this.shouldComponentUpdate = lifecycle.shouldComponentUpdate
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
     this.buildPanel = buildPanel.bind(this)
     this.buildRequestParameters = buildRequestParameters.bind(this)
     this.buildSelectCategories = buildSelectCategories.bind(this)
     this.buildSelectDistricts = buildSelectDistricts.bind(this)
-
     this.labelProvider = labelProvider.bind(this)
     this.changeInput = changeInput.bind(this)
     this.categoryManager = managers.categoryManager.bind(this)
@@ -45,7 +43,6 @@ class AnnouncementIndexSearchFull extends React.Component {
     this.floorMaxManager = managers.floorMaxManager.bind(this)
     this.totalFloorsMinManager = managers.totalFloorsMinManager.bind(this)
     this.totalFloorsMaxManager = managers.totalFloorsMaxManager.bind(this)
-
     this.availabilityDateManager = managers.availabilityDateManager.bind(this)
     this.googleMapHandler = googleMapHandler.bind(this)
     this.fetchTile = fetchTile.bind(this)

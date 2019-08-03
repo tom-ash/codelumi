@@ -14,6 +14,7 @@ import { deepCopyAnnouncement } from './functions/deep-copy-announcement'
 import { showAnnouncement } from './functions/show-announcement'
 import { changeRoute } from '../../../../../../functions/routers'
 import { phoneSwitchProvider } from '../../../../functions/phone-switch-provider'
+import { togglePhone } from '../../../../functions/toggle-phone'
 
 class AnnouncementIndexTile extends React.Component {
   constructor(props) {
@@ -32,17 +33,16 @@ class AnnouncementIndexTile extends React.Component {
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
     this.rentCurrency = parseCurrency(this.props.announcement.rent_currency)
     this.rentGross = this.props.announcement.rent_amount * 1.23
+    this.togglePhone = togglePhone.bind(this)
   }
   
   render() {
     return (
       <div
       className={`announcement-index-tile${this.props.index % 2 === 0 ? ' even' : ''}`}>
-                {
+        {
         this.props.venue == 'map' &&
-        <i
-        className='fas fa-times close'
-        onClick={this.closeTile}/>
+        <i className='fas fa-times close' onClick={this.closeTile}/>
         }
         <div className='tile-container'>
           <div className='data'>

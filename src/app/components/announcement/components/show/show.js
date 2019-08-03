@@ -12,14 +12,17 @@ import AnnouncementShowDescription from './components/description/description'
 import './styles/styles.scss'
 import { phoneSwitchProvider } from '../../functions/phone-switch-provider'
 import { togglePhone } from '../../functions/toggle-phone'
+import { fixedPhoneHandler } from './functions/fixed-phone-handler'
 
 class AnnouncementShow extends React.Component {
   constructor(props) {
     super(props)
     this.componentDidMount = lifecycle.componentDidMount
+    this.componentWillUnmount = lifecycle.componentWillUnmount
     this.languageHandler = languageHandler.bind(this)
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
     this.togglePhone = togglePhone.bind(this)
+    this.fixedPhoneHandler = fixedPhoneHandler.bind(this)
   }
 
   render() {
