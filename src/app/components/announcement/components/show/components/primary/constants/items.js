@@ -8,6 +8,11 @@ export const items = [
   },
   {
     icon: inputs.rentCurrency.icon,
+    label: { polish: 'Miesięczny czynsz brutto', english: 'Monthly Gross Rent' },
+    stateKey: 'rentGross'
+  },
+  {
+    icon: inputs.rentCurrency.icon,
     label: { polish: 'Opłaty dodatkowe', english: 'Additional Fees' },
     stateKey: 'additionalFees'
   },

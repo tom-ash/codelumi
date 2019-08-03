@@ -31,12 +31,18 @@ class AnnouncementCreatePrimary extends React.Component {
               </div>
               <div className='value'>
                 {
-                item.stateKey !== 'rent' && item.stateKey !== 'availabilityDate' &&
+                item.stateKey !== 'rent' &&
+                item.stateKey !== 'availabilityDate' &&
+                item.stateKey !== 'rentGross' &&
                 this.props[item.stateKey]
                 }
                 {
                 item.stateKey === 'rent' &&
                 `${this.props.rentAmount} ${parseCurrency(this.props.rentCurrency)}`
+                }
+                {
+                item.stateKey === 'rentGross' &&
+                `${this.props.rentAmount * 1.23} ${parseCurrency(this.props.rentCurrency)}`
                 }
                 {
                 item.stateKey === 'additionalFees' &&
