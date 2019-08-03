@@ -36,19 +36,25 @@ class Header extends React.Component {
             <ManagedButton manager={this.languageManager} />
           </div>
           {
-          this.props.screenSize != 'largePhone' && !this.props.name &&
+          this.props.screenSize != 'largePhone' &&
+          this.props.screenSize != 'smallTablet' &&
+          !this.props.name &&
           <div className='sign-in'>
             <ManagedButton manager={this.signInManager} />
           </div>
           }
           {
-          this.props.screenSize != 'largePhone' && !this.props.name &&
+          this.props.screenSize != 'largePhone' &&
+          this.props.screenSize != 'smallTablet' &&
+          !this.props.name &&
           <div className='sign-up'>
             <ManagedButton manager={this.signUpManager} />
           </div>
           }
           {
-          this.props.screenSize != 'largePhone' && this.props.name &&
+          this.props.screenSize != 'largePhone' &&
+          this.props.screenSize != 'smallTablet' &&
+          this.props.name &&
           <div className='my-account'>
             <ManagedButton manager={this.myAccountManager} />
           </div>

@@ -6,6 +6,9 @@
 #announcement-show {
   width: 874px;
   margin: 0 auto;
+  @media only screen and (max-width: $breakpoint-tablet-large-max) {
+    width: 100%;
+  }
   @media only screen and (max-width: $breakpoint-phone-large-max) {
     width: 100%;
     padding: 0;
@@ -55,8 +58,13 @@
     width: 874px;
     padding: 36px;
     position: relative;
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
+    @media only screen and (min-width: $breakpoint-tablet-large-min) and (max-width: $breakpoint-tablet-large-max) {
+      padding: 24px;
+    }
+    @media only screen and (max-width: $breakpoint-tablet-large-max) {
       width: 100%;
+    }
+    @media only screen and (max-width: $breakpoint-tablet-small-max) {
       padding: 0;
     }
     .page-header {

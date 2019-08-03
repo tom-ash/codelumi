@@ -2,6 +2,9 @@
 
 #announcement-show-description {
   margin-top: 36px;
+  @media only screen and (min-width: $breakpoint-tablet-small-min) and (max-width: $breakpoint-tablet-small-max) {
+    padding: 0 24px;
+  }
   @media only screen and (max-width: $breakpoint-phone-large-max) {
     padding: 0 12px;
   }

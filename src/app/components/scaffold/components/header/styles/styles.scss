@@ -47,6 +47,9 @@
     height: 64px;
     width: 240px;
     position: relative;
+    @media only screen and (max-width: $breakpoint-tablet-large-max) {
+      width: 180px;
+    }
     #header-add-announcement {
       display: block;
       position: absolute;

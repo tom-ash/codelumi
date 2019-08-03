@@ -2,6 +2,9 @@
 
 #announcement-show-features {
   margin-top: 36px;
+  @media only screen and (min-width: $breakpoint-tablet-small-min) and (max-width: $breakpoint-tablet-small-max) {
+    padding: 0 24px;
+  }
   @media only screen and (max-width: $breakpoint-phone-large-max) {
     padding: 0 12px;
   }
@@ -30,10 +33,6 @@
       height: 24px;
       line-height: 24px;
       font-size: 16px;
-    }
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
-      width: 100%;
-      margin-right: 0;
     }
   }
 }
