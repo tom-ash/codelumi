@@ -7,9 +7,17 @@
 @import './full-pagination';
 
 #announcement-index-full {
+  @media only screen and (min-width: $breakpoint-tablet-small-min) and (max-width: $breakpoint-tablet-large-max) {
+    padding: 24px;
+  }
   @extend %wide-container;
-  width: 100%;
+  max-width: 960px;
   position: relative;
+
+  @media only screen and (max-width: $breakpoint-pc-small-max) {
+    width: 100%;
+  }
+
   .page-header {
     @extend %full-page-header;
   }

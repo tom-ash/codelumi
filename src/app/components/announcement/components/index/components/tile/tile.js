@@ -48,10 +48,12 @@ class AnnouncementIndexTile extends React.Component {
           <div className='data'>
             <div className='rent'>
               <div>
-                <i className='fas fa-coins'/> {this.props.announcement.rent_amount} {this.rentCurrency} {this.languageHandler('netto', 'net')} / {this.languageHandler('miesiąc', 'month')}
+                <i className='fas fa-coins'/>
+                {this.props.announcement.rent_amount} {this.rentCurrency} {this.languageHandler('netto', 'net')}
               </div>
               <div className='gross'>
-                {this.rentGross} {this.rentCurrency} {this.languageHandler('brutto', 'gross')} / {this.languageHandler('miesiąc', 'month')}
+                <i className='fas fa-coins'/>
+                {this.rentGross} {this.rentCurrency} {this.languageHandler('brutto', 'gross')}
               </div>
             </div>
             <div className='float-clear' />

@@ -1,39 +1,176 @@
 %full-tile {
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
-    width: 100%;
+  @media only screen and (min-width: $breakpoint-tablet-large-min) {
+    position: relative;
+    width: 480px;
+    height: 270px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 72px;
+    .fas, .far {
+      padding-right: 0;
+      width: 28px;
+    }
     .data {
-      font-size: 14px;
-        padding: 0 12px 12px;
-        .rent {
-          .gross {
-            font-size: 13px;
-          }
-        }
-      }
-      .picture-container {
-        padding: 0;
-        .picture {
-          $width: 100%;
-          background-position: center;
-          background-size: ($width * 1.3333) auto;
-          width: $width;
-          height: 0;
-          padding-bottom: ($width / 1.3333)
-        }
-      }
-      .bottom-data {
-        padding: 0 12px;
-        font-size: 14px;
-        .area, .rooms, .floor, .total-floors {
-          padding: 12px 12px 0 0;
-          margin: 0;
-        }
-        .calendar {
-          float: right;
-          text-align: right;
+      height: 0px;
+      left: 480x;
+      top: 0px;
+      .rent {
+        text-align: left;
+        float: none;
+        position: absolute;
+        top: 0px;
+        left: 480px;
+        width: 384px;
+        padding-left: 12px;
+        .gross {
+          text-align: left;
+          font-size: 16px;
+          margin-top: 8px;
         }
       }
     }
+    .picture-container {
+      width: 480px;
+      height: 270px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      .picture {
+        width: 480px;
+        height: 270px;
+      }
+    }
+    .bottom-data {
+      position: absolute;
+      left: 480px;
+      width: 384px;
+      bottom: 0;
+      padding: 0 0 0 12px;
+      font-size: 16px;
+      .area, .rooms, .floor, .total-floors {
+        float: none;
+        display: block;
+        margin-bottom: 12px;
+      }
+      .calendar {
+        float: none;
+      }
+    }
+  }
+  @media only screen and (min-width: $breakpoint-tablet-large-min) and (max-width: $breakpoint-tablet-large-max) {
+    width: 400px;
+    height: 226px;
+    font-size: 15px;
+    margin-bottom: 48px;
+    .fas, .far {
+      width: 22px;
+    }
+    .data {
+      left: 400x;
+      .rent {
+        left: 400px;
+        padding-left: 12px;
+        font-size: 15px;
+        .gross {
+          text-align: left;
+          font-size: 15px;
+          margin-top: 8px;
+        }
+      }
+    }
+    .picture-container {
+      width: 480px;
+      height: 270px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      .picture {
+        width: 400px;
+        height: 226px;
+      }
+    }
+    .bottom-data {
+      left: 400px;
+      padding: 0 0 0 12px;
+      font-size: 15px;
+      .area, .rooms, .floor, .total-floors {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  @media only screen and (min-width: $breakpoint-tablet-small-min) and (max-width: $breakpoint-tablet-small-max) {
+    width: 100%;
+    font-size: 16px;
+    .fas, .far {
+      margin-right: 4px;
+    }
+    .data {
+      padding: 0;
+      .rent {
+        .gross {
+          margin: 8px 0;
+        }
+      }
+    }
+    .picture-container {
+      padding: 0;
+      .picture {
+        $width: 100%;
+        background-size: ($width * 1.17777) auto;
+        width: $width;
+        height: 0;
+        padding-bottom: ($width / 1.7777)
+      }
+    }
+    .bottom-data {
+      padding: 12px 0 0;
+      .area, .rooms, .floor, .total-floors {
+        margin-right: 18px;
+      }
+      .calendar {
+        float: right;
+        text-align: right;
+      }
+    }
+  }
+  @media only screen and (max-width: $breakpoint-phone-large-max) {
+    width: 100%;
+    .fa-coins {
+      width: 24px;
+    }
+    .data {
+      font-size: 14px;
+      padding: 0 12px 12px;
+      .rent {
+        .gross {
+          margin-top: 12px;
+        }
+      }
+    }
+    .picture-container {
+      padding: 0;
+      .picture {
+        $width: 100%;
+        background-position: center;
+        background-size: ($width * 1.3333) auto;
+        width: $width;
+        height: 0;
+        padding-bottom: ($width / 1.3333)
+      }
+    }
+    .bottom-data {
+      padding: 0 12px;
+      font-size: 14px;
+      .area, .rooms, .floor, .total-floors {
+        padding: 12px 12px 0 0;
+        margin: 0;
+      }
+      .calendar {
+        float: right;
+        text-align: right;
+      }
+    }
+  }
   @media only screen and (max-width: 360px) {
     .data {
       font-size: 13px;
