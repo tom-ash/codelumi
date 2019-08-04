@@ -23,8 +23,8 @@ export function buildPanel() {
           </div>
         </div>
       <ManagedSelect manager={this.rentCurrencyManager}/>
-      <ManagedText manager={this.rentAmountMinManager}/>
-      <ManagedText manager={this.rentAmountMaxManager}/>
+      <ManagedText manager={this.rentMinManager}/>
+      <ManagedText manager={this.rentMaxManager}/>
       <ManagedText manager={this.areaMinManager}/>
       <ManagedText manager={this.areaMaxManager}/>
       <ManagedSelect manager={this.roomsMinManager}/>

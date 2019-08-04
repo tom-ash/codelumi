@@ -6,9 +6,9 @@ $label-maximized-size: 14px;
 %panel {
   .index-input {
     &.text, &.select {
+      border: 1px solid #154360;
       position: relative;
       height: 45px;
-      border-bottom: 1px solid #E5E7E9;
       .label {
         position: absolute;
         top: $label-maximized-top;
@@ -57,10 +57,10 @@ $label-maximized-size: 14px;
       .input {
         height: 44px;
         width: 100%;
-        border: none;
         font-size: 16px;
         padding-top: 18px;
         padding-left: 9px;
+        border: none;
       }
     }
     &.select {
@@ -81,7 +81,7 @@ $label-maximized-size: 14px;
         background: white;
         z-index: 9;
         overflow-y: auto;
-        max-height: 146px;
+        max-height: 292px;
         .option {
           font-size: 16px;
           line-height: 24px;

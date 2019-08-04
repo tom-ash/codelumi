@@ -29,7 +29,7 @@ export const parameters = [
     stateValue: (value) => parseInt(value)
   },
   {
-    state: 'rentAmountMin',
+    state: 'rentMin',
     api: 'min_rent_amount',
     polish: 'min_czynsz',
     english: 'min_rent',
@@ -37,7 +37,7 @@ export const parameters = [
     stateValue: (value) => value
   },
   {
-    state: 'rentAmountMax',
+    state: 'rentMax',
     api: 'max_rent_amount',
     polish: 'maks_czynsz',
     english: 'max_rent',
@@ -118,8 +118,23 @@ export const parameters = [
   }
 ]
 
-export const updateParameters = [ 'language', 'connecting', 'read', 'fetch', 'fetchAmount', 'page',
-'availabilityDateFocus', 'amount', 'announcements', 'panelAmount' ]
+export const updateParameters = [
+  'rentActive',
+  'areaActive',
+  'roomsActive',
+  'floorActive',
+  'totalFloorsActive',
+  'language',
+  'connecting',
+  'read',
+  'fetch',
+  'fetchAmount',
+  'page',
+  'availabilityDateFocus',
+  'amount',
+  'announcements',
+  'panelAmount'
+]
 
 
 

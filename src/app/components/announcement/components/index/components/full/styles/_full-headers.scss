@@ -1,6 +1,7 @@
 %full-page-header {
   @extend %page-header;
   font-size: 20px;
+  margin-bottom: 36px;
   @media only screen and (max-width: $breakpoint-phone-large-max) {
     position: absolute;
     left: 0;

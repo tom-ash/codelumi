@@ -5,7 +5,7 @@ import { floors } from '../../../constants/floors'
 
 export function categoryManager(aspect, option) {
   return managerAgent(aspect, {
-    classNames: { container: 'index-input select' },
+    classNames: { container: 'index-input select unit' },
     value: this.props.category,
     label: this.labelProvider('category'),
     options: this.buildSelectCategories(),
@@ -15,7 +15,7 @@ export function categoryManager(aspect, option) {
 
 export function districtManager(aspect, option) {
   return managerAgent(aspect, {
-    classNames: { container: 'index-input select' },
+    classNames: { container: 'index-input select unit' },
     value: this.props.district,
     label: this.labelProvider('district'),
     options: this.buildSelectDistricts(),
@@ -33,23 +33,23 @@ export function rentCurrencyManager(aspect, option) {
   })
 }
 
-export function rentAmountMinManager(aspect, value) {
+export function rentMinManager(aspect, value) {
   return managerAgent(aspect, {
     classNames: { container: 'index-input text' },
-    value: this.props.rentAmountMin,
+    value: this.props.rentMin,
     match: /^\d+$/,
-    label: this.labelProvider('rentAmountMin'),
-    onChange: () => this.changeInput('rentAmountMin', value)
+    label: this.labelProvider('rentMin'),
+    onChange: () => this.changeInput('rentMin', value)
   })
 }
 
-export function rentAmountMaxManager(aspect, value) {
+export function rentMaxManager(aspect, value) {
   return managerAgent(aspect, {
     classNames: { container: 'index-input text' },
-    value: this.props.rentAmountMax,
+    value: this.props.rentMax,
     match: /^\d+$/,
-    label: this.labelProvider('rentAmountMax'),
-    onChange: () => this.changeInput('rentAmountMax', value)
+    label: this.labelProvider('rentMax'),
+    onChange: () => this.changeInput('rentMax', value)
   })
 }
 

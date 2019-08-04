@@ -19,9 +19,28 @@ import { buildSelectCategories } from '../../../../functions/build-select-catego
 import { buildSelectDistricts } from '../../../../functions/build-select-districts'
 
 import { buttonLabelHandler } from '../../functions/button-label-handler'
-import { buttonManager, paginationManager } from './functions/managers'
+import { rentManager,
+         rentMinManager,
+         rentMaxManager,
+         rentCurrencyManager,
+         areaManager,
+         areaMinManager,
+         areaMaxManager,
+         roomsManager,
+         roomsMinManager,
+         roomsMaxManager,
+         floorManager,
+         floorMinManager,
+         floorMaxManager,
+         totalFloorsManager,
+         totalFloorsMinManager,
+         totalFloorsMaxManager,
+         buttonManager,
+         paginationManager } from './functions/managers'
 
 import { getAnnouncementAmount } from '../../functions/get-announcement-amount'
+
+import { groupInputJoiner } from './functions/group-input-joiner'
 
 import './styles/styles.scss'
 
@@ -44,32 +63,49 @@ class AnnouncementIndexFull extends React.Component {
     this.buildSelectDistricts = buildSelectDistricts.bind(this)
     this.labelProvider = labelProvider.bind(this)
     this.changeInput = changeInput.bind(this)
+
     this.categoryManager = managers.categoryManager.bind(this)
     this.districtManager = managers.districtManager.bind(this)
-    this.rentCurrencyManager = managers.rentCurrencyManager.bind(this)
-    this.rentAmountMinManager = managers.rentAmountMinManager.bind(this)
-    this.rentAmountMaxManager = managers.rentAmountMaxManager.bind(this)
     this.availabilityDateManager = managers.availabilityDateManager.bind(this)
-    this.floorMinManager = managers.floorMinManager.bind(this)
-    this.floorMaxManager = managers.floorMaxManager.bind(this)
-    this.areaMinManager = managers.areaMinManager.bind(this)
-    this.areaMaxManager = managers.areaMaxManager.bind(this)
-    this.roomsMinManager = managers.roomsMinManager.bind(this)
-    this.roomsMaxManager = managers.roomsMaxManager.bind(this)
-    this.totalFloorsMinManager = managers.totalFloorsMinManager.bind(this)
-    this.totalFloorsMaxManager = managers.totalFloorsMaxManager.bind(this)
+
+        
+
+
+
+
+    this.rentManager = rentManager.bind(this)
+    this.rentMinManager = rentMinManager.bind(this)
+    this.rentMaxManager = rentMaxManager.bind(this)
+    this.rentCurrencyManager = rentCurrencyManager.bind(this)
+    this.areaManager = areaManager.bind(this)
+    this.areaMinManager = areaMinManager.bind(this)
+    this.areaMaxManager = areaMaxManager.bind(this)
+    this.roomsManager = roomsManager.bind(this)
+    this.roomsMinManager = roomsMinManager.bind(this)
+    this.roomsMaxManager = roomsMaxManager.bind(this)
+    this.floorManager = floorManager.bind(this)
+    this.floorMinManager = floorMinManager.bind(this)
+    this.floorMaxManager = floorMaxManager.bind(this)
+
+    this.totalFloorsManager = totalFloorsManager.bind(this)
+    this.totalFloorsMinManager = totalFloorsMinManager.bind(this)
+    this.totalFloorsMaxManager = totalFloorsMaxManager.bind(this)
+
+
     this.buttonLabelHandler = buttonLabelHandler.bind(this)
     this.buttonManager = buttonManager.bind(this)
     this.getAnnouncementAmount = getAnnouncementAmount.bind(this)
+
+
+
+    this.groupInputJoiner = groupInputJoiner.bind(this)
   }
 
   render() {
     return (
       <div id='announcement-index-full'>
         {this.pageHeaderProvider('fas fa-search', { polish: 'Wyszukiwanie ogłoszeń', english: 'Announcements Search' })}
-        {this.sectionHeaderProvider('fas fa-filter', { polish: 'Filtry', english: 'Filters' })}
         {this.panel()}
-        {this.sectionHeaderProvider('fas fa-th-list', { polish: 'Wyniki wyszukiwania', english: 'Search Results' })}
         <div id='announcement-index-full-scroll-anchor' />
         <div className='announcements'>
           {

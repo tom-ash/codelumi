@@ -1,6 +1,18 @@
 export const mapStateToProps = (store) => {
   return {
     language: store.app.language,
+    venue: 'indexFull',
+
+    rentActive: store.announcement.index.control.full.rentActive,
+    areaActive: store.announcement.index.control.full.areaActive,
+
+
+    roomsActive: store.announcement.index.control.full.roomsActive,
+    floorActive: store.announcement.index.control.full.floorActive,
+    totalFloorsActive: store.announcement.index.control.full.totalFloorsActive,
+    
+
+    screenSize: store.app.screenSize,
     connecting: store.announcement.index.control.full.connecting,
     read: store.announcement.index.control.full.read,
     fetch: store.announcement.index.control.full.fetch,
@@ -11,9 +23,11 @@ export const mapStateToProps = (store) => {
     calendarHover: store.announcement.index.control.full.calendarHover,
     category: store.announcement.index.inputs.full.category,
     district: store.announcement.index.inputs.full.district,
+
+    rent: store.announcement.index.inputs.full.rent,
     rentCurrency: store.announcement.index.inputs.full.rentCurrency,
-    rentAmountMin: store.announcement.index.inputs.full.rentAmountMin,
-    rentAmountMax: store.announcement.index.inputs.full.rentAmountMax,
+    rentMin: store.announcement.index.inputs.full.rentMin,
+    rentMax: store.announcement.index.inputs.full.rentMax,
     availabilityDate: store.announcement.index.inputs.full.availabilityDate,
     floorMin: store.announcement.index.inputs.full.floorMin,
     floorMax: store.announcement.index.inputs.full.floorMax,
