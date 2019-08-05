@@ -15,6 +15,8 @@ import { showAnnouncement } from './functions/show-announcement'
 import { changeRoute } from '../../../../../../functions/routers'
 import { phoneSwitchProvider } from '../../../../functions/phone-switch-provider'
 import { togglePhone } from '../../../../functions/toggle-phone'
+import { rentProvider } from './functions/rent-provider'
+import { rentPerSqmCounter } from '../../../../functions/rent-per-sqm-counter'
 
 class AnnouncementIndexTile extends React.Component {
   constructor(props) {
@@ -32,11 +34,13 @@ class AnnouncementIndexTile extends React.Component {
     this.changeRoute = changeRoute.bind(this)
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
     this.rentCurrency = parseCurrency(this.props.announcement.rent_currency)
-    this.rentGross = this.props.announcement.rent_amount * 1.23
     this.togglePhone = togglePhone.bind(this)
+    this.rentProvider = rentProvider.bind(this)
+    this.rentPerSqmCounter = rentPerSqmCounter.bind(this)
   }
   
   render() {
+    const area = this.props.announcement.area
     return (
       <div
       className={`announcement-index-tile${this.props.index % 2 === 0 ? ' even' : ''}`}>
@@ -46,58 +50,55 @@ class AnnouncementIndexTile extends React.Component {
         }
         <div className='tile-container'>
           <div className='data'>
-            <div className='rent'>
-              <div>
-                <i className='fas fa-coins'/>
-                {this.props.announcement.rent_amount} {this.rentCurrency} {this.languageHandler('netto', 'net')}
-              </div>
-              <div className='gross'>
-                <i className='fas fa-coins'/>
-                {this.rentGross} {this.rentCurrency} {this.languageHandler('brutto', 'gross')}
-              </div>
+            <div className='area'>
+              {area} {this.languageHandler('m2', 'sqm')}
             </div>
-            <div className='float-clear' />
+            <div className='rent'>
+              {this.rentProvider()}
+              {this.rentProvider('perSqm', area)}
+              <div className='float-clear'/>  
+            </div>
+            <div className='float-clear'/>
           </div>
-          <div className='picture-container'>
-            <div
-            style={{ backgroundImage: this.getPicture() }}
-            onClick={() => this.showAnnouncement()}
-            className='picture'>
+          <div
+          style={{ backgroundImage: this.getPicture() }}
+          onClick={() => this.showAnnouncement()}
+          className='picture'>
+            <div className='primary-data'>
               <div className='announcement-id'>
                 {this.props.announcement.id}
               </div>
               <div className={`category ${this.props.announcement.category == '0' ? 'office' : 'usable-premises'}`}>
                 {getCategoryIcon(this.props.announcement.category)}
               </div>
-              <div
-              className='arrow left'
-              onClick={(e) => this.changePicture(e, 'previous')}>
-              <i className='fas fa-chevron-left' />
-              </div>
-              <div
-              className='arrow right'
-              onClick={(e) => this.changePicture(e, 'next')}>
-              <i className='fas fa-chevron-right' />
-              </div>
-              {this.phoneSwitchProvider()}
               <div className='district'>
                 <i className='fas fa-city' /> {parseDistrict(this.props.announcement.district)}
-              </div> 
+              </div>
+            </div>
+            {this.phoneSwitchProvider()}
+            <div
+            className='arrow left'
+            onClick={(e) => this.changePicture(e, 'previous')}>
+            <i className='fas fa-chevron-left' />
+            </div>
+            <div
+            className='arrow right'
+            onClick={(e) => this.changePicture(e, 'next')}>
+            <i className='fas fa-chevron-right' />
             </div>
           </div>
           <div className='bottom-data'>
-            <div className='area'>
-              <i className='fas fa-layer-group' /> {this.props.announcement.area} {this.languageHandler('m2', 'sqm')}
-            </div>
             <div className='rooms'>
-              <i className='fas fa-door-closed'/> {this.props.announcement.rooms}
+              <i className='fas fa-door-closed'/>{this.props.announcement.rooms}
             </div>
             <div className='floor'>
-              <i className='fas fa-building'/> {this.props.announcement.floor} {this.languageHandler('z ', 'of ')}
-              {this.props.announcement.total_floors}
+              <i className='fas fa-layer-group'/>{this.props.announcement.floor}
+            </div>
+            <div className='total-floors'>
+              <i className='fas fa-building'/>{this.props.announcement.total_floors}
             </div>
             <div className='calendar'>
-              <i className='fas fa-calendar-alt'/> {this.props.announcement.availability_date}
+              <i className='fas fa-calendar-alt'/>{this.props.announcement.availability_date}
             </div>
             <div className='float-clear' />
           </div>

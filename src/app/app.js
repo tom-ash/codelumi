@@ -17,7 +17,6 @@ import { screenSizeHandler } from './functions/screen-size-handler'
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
     this.componentWillMount = lifecycle.componentWillMount
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
@@ -36,10 +35,6 @@ class App extends React.Component {
           <Visitor />
           <Announcement />
           <User />
-          {
-          this.checkRoute('mainPage') &&
-          <MainPage />
-          }
         </div>
         <Footer />
       </div>

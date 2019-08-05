@@ -1,0 +1,21 @@
+@import '../../../styles/availability-date';
+@import './inputs';
+
+%panel {
+  @extend %inputs;
+  width: 100%;
+  margin: 0 0 12px;
+  background: #17202A;
+  padding: 8px 8px 0;
+  border-radius: 2.5px;
+  color: #17202A;
+  @media only screen and (max-width: $breakpoint-phone-large-max) {
+    margin: 0 0 6px;
+    margin: 0 auto 12px;
+  }
+  .gap {
+    float: left;
+    width: 6px;
+    height: 42px;
+  }
+}

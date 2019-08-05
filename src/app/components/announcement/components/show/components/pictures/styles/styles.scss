@@ -3,16 +3,12 @@
 #announcement-show-pictures {
   .pictures {
     position: relative;
-    width: 800px;
-    height: 450px;
     background-size: 100%;
+    $width: 100%;
+    width: $width;
+    padding-bottom: ($width / 1.7777);
     @media only screen and (max-width: $breakpoint-tablet-small-max) {
       height: 0;
-    }
-    @media only screen and (min-width: $breakpoint-tablet-small-min) and (max-width: $breakpoint-tablet-large-max) {
-      $width: 100%;
-      width: $width;
-      padding-bottom: ($width / 1.7777)
     }
     @media only screen and (max-width: $breakpoint-phone-large-max) {
       $width: 100%;

@@ -28,7 +28,7 @@ export function componentWillUnmount() {
 }
 
 function calendarListenersHandler() {
-  const calendar = document.getElementsByClassName('react-calendar')[0]
-  calendar.addEventListener('mouseover', () => { this.props.changeControl({ calendarHover: true }) })
-  calendar.addEventListener('mouseleave', () => { this.props.changeControl({ calendarHover: false }) })
+  const calendar = document.getElementsByClassName('react-calendar')[1]
+  calendar.addEventListener('mouseover', () => { this.props.changeControl({ availabilityDateActive: true }) })
+  calendar.addEventListener('mouseleave', () => { this.props.changeControl({ availabilityDateActive: false }) })
 }

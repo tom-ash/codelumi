@@ -12,6 +12,7 @@ export function buildUrlParameters() {
 
 export function buildRequestParameters() {
   let urlParameters = '?'
+  
   parameters.map(parameter => {
     if (this.props[parameter.state] !== '' && this.props[parameter.state] !== undefined) {
       urlParameters += `${parameter.api}=${this.props[parameter.state]}&`

@@ -1,0 +1,71 @@
+%picture {
+  position: relative;
+  background: #D7DBDD;
+  background-size: 100%;
+  cursor: pointer;
+  border-radius: 2.5px;
+  .primary-data {
+    .announcement-id, .category, .district {
+      color: #2E4053;
+      background: rgba(236, 240, 241, 0.88);
+      display: inline-block;
+      min-width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      border-radius: 2.5px;
+      font-size: 14px;
+      padding: 0 8px;
+    }
+  }
+  .phone {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    height: 36px;
+    width: 36px;
+    border-radius: 18px;
+    background: rgba(236, 240, 241, 0.96);
+    white-space: nowrap;
+    overflow:hidden;
+    &.open {
+      width: 190px;
+      transition: 0.72s ease-out;
+    }
+    .fa-phone {
+      height: 36px;
+      width: 36px;
+      font-size: 18px;
+      color: #FBFCFC;
+      background: #28B463;
+      border-radius: 18px;
+      line-height: 36px;
+      text-align: center;
+      opacity: 0.92;
+      margin-right: 12px;
+    }
+    a {
+      display: inline;
+    }
+  }
+  .arrow {
+    user-select: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 24px;
+    margin: auto;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 24px;
+    cursor: pointer;
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+    &.right {
+      right: 6px;
+    }
+    &.left {
+      left: 6px;
+    }
+  }
+}

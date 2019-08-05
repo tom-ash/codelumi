@@ -1,12 +1,13 @@
 export const mapStateToProps = (store) => {
   return {
     language: store.app.language,
+    isMobile: store.app.isMobile,
     scripts: store.app.scripts,
     connecting: store.announcement.index.control.map.connecting,
     fetch: store.announcement.index.control.map.fetch,
     draw: store.announcement.index.control.map.draw,
-    availabilityDateFocus: store.announcement.index.control.map.availabilityDateFocus,
-    calendarHover: store.announcement.index.control.map.calendarHover,
+    
+
     category: store.announcement.index.inputs.map.category,
     district: store.announcement.index.inputs.map.district,
     availabilityDate: store.announcement.index.inputs.map.availabilityDate,
@@ -25,7 +26,18 @@ export const mapStateToProps = (store) => {
     announcements: store.announcement.index.data.map.announcements,
     pins: store.announcement.index.data.map.pins,
     tile: store.announcement.index.data.map.tile,
-    loaded: store.announcement.index.control.map.loaded
+    loaded: store.announcement.index.control.map.loaded,
+
+    searchInitiated: store.announcement.index.control.full.searchInitiated,
+
+    rentActive: store.announcement.index.control.map.rentActive,
+    areaActive: store.announcement.index.control.map.areaActive,
+    roomsActive: store.announcement.index.control.map.roomsActive,
+    floorActive: store.announcement.index.control.map.floorActive,
+    totalFloorsActive: store.announcement.index.control.map.totalFloorsActive,
+
+    availabilityDateFocus: store.announcement.index.control.map.availabilityDateFocus,
+    availabilityDateActive: store.announcement.index.control.map.availabilityDateActive,
   }
 }
     

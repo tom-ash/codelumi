@@ -7,11 +7,21 @@ import { parseCurrency } from '../../../../functions/currency-parsers'
 import { parseAdditionalFees } from '../../../../functions/additional-fee-parsers'
 import { parseAvailabilityDate } from './functions/parse-availability-date'
 import './styles/styles.scss'
+import { rentPerSqmCounter } from '../../../../functions/rent-per-sqm-counter'
 
 class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {
     super(props)
     this.languageHandler = languageHandler.bind(this)
+    this.rentPerSqmCounter = rentPerSqmCounter.bind(this)
+  }
+
+  classProvider(itemName) {
+    switch (itemName) {
+      case 'rent': return ' net'
+      case 'rentNetPerSqm': return ' net'
+      default: return ''
+    }
   }
   
   render() {
@@ -29,20 +39,35 @@ class AnnouncementCreatePrimary extends React.Component {
               <div className='label'>
                 {this.languageHandler(item.label.polish, item.label.english)}
               </div>
-              <div className='value'>
+              <div className={`value${this.classProvider(item.stateKey)}`}>
                 {
                 item.stateKey !== 'rent' &&
+                item.stateKey !== 'rentPerSqm' &&
                 item.stateKey !== 'availabilityDate' &&
                 item.stateKey !== 'rentGross' &&
                 this.props[item.stateKey]
                 }
                 {
                 item.stateKey === 'rent' &&
-                `${this.props.rentAmount} ${parseCurrency(this.props.rentCurrency)}`
+                `${this.props.rentAmount} ${parseCurrency(this.props.rentCurrency)} ${this.languageHandler('netto', 'net')} + VAT`
                 }
                 {
                 item.stateKey === 'rentGross' &&
-                `${this.props.rentAmount * 1.23} ${parseCurrency(this.props.rentCurrency)}`
+                <span className='gross'>
+                  {this.props.rentAmount * 1.23} {parseCurrency(this.props.rentCurrency)} {this.languageHandler('brutto', 'gross')}
+                </span>
+                }
+                {
+                item.stateKey === 'rentNetPerSqm' &&
+                <span className='net'>
+                  {this.rentPerSqmCounter(this.props.rentAmount, this.props.area)} {parseCurrency(this.props.rentCurrency)} {this.languageHandler('netto + VAT', 'net + VAT')}
+                </span>
+                }
+                {
+                item.stateKey === 'rentGrossPerSqm' &&
+                <span className='gross'>
+                  {this.rentPerSqmCounter(this.props.rentAmount * 1.23, this.props.area)} {parseCurrency(this.props.rentCurrency)} {this.languageHandler('brutto', 'gross')}
+                </span>
                 }
                 {
                 item.stateKey === 'additionalFees' &&
@@ -57,13 +82,10 @@ class AnnouncementCreatePrimary extends React.Component {
                 item.stateKey === 'availabilityDate' &&
                 parseAvailabilityDate.call(this, this.props[item.stateKey])
                 }
-                {
-                item.stateKey == 'floor' &&
-                this.languageHandler(` (z ${this.props.totalFloors})`, ` (of ${this.props.totalFloors})`)
-                }
               </div>
               <div className='float-clear' />
             </div>
+            <div className='float-clear' />
           </div>
         ))
         }

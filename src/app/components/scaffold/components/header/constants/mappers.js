@@ -2,12 +2,14 @@ export const mapStateToProps = (store) => {
   return {
     language: store.app.language,
     name: store.user.authorize.data.name,
-    screenSize: store.app.screenSize
+    screenSize: store.app.screenSize,
+    searchInitiated: store.announcement.index.control.full.searchInitiated,
   }
 }
   
 export const mapDispatchToProps = (dispatch) => {
   return {
+    changeIndexControl: (value) => dispatch({ type: 'announcement/index/control/full', value: value }),
     changePath: (value) => dispatch({
       type: 'app/path',
       value: value

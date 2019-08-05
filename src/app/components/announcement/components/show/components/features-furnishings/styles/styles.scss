@@ -1,23 +1,36 @@
 @import '../../../../../../../styles/themes.scss';
 
 #announcement-show-features {
-  margin-top: 36px;
-  @media only screen and (min-width: $breakpoint-tablet-small-min) and (max-width: $breakpoint-tablet-small-max) {
-    padding: 0 24px;
-  }
+  margin: 24px;
   @media only screen and (max-width: $breakpoint-phone-large-max) {
-    padding: 0 12px;
+    padding: 12px;
+    margin: 0;
   }
   h3 {
+    .fas, .far {
+      font-size: 14px;
+      width: 18px;
+    }
     color: #1B4F72;
     font-weight: normal;
-    font-size: 17px;
-    padding-bottom: 8px;
+    font-size: 16px;
+    padding-bottom: 4px;
+    @media only screen and (max-width: 360px) {
+      font-size: 15px;
+    }
   }
   .item {
     float: left;
     height: 30px;
     margin-right: 18px;
+    @media only screen and (max-width: $breakpoint-phone-large-max) {
+      clear: both;
+      float: none;
+    }
+    @media only screen and (max-width: 360px) {
+      font-size: 15px;
+      height: 24px;
+    }
     .icon, .text {
       float: left;
     }
@@ -33,6 +46,9 @@
       height: 24px;
       line-height: 24px;
       font-size: 16px;
+      @media only screen and (max-width: 360px) {
+        font-size: 15px;
+      }
     }
   }
 }

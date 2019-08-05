@@ -194,7 +194,8 @@ const userEditPaths =          ['/signin',
                                 '/mojekonto/wizytowka']
 const announcementCreatePaths = ['/addannouncement',
                                  '/dodajogloszenie']
-const announcementIndexPaths = ['/search_results',
+const announcementIndexPaths = ['/',
+                                '/search_results',
                                 '/wyniki_wyszukiwania',
                                 '/mojekonto/mojeogloszenia',
                                 '/myaccount/myannouncements']                   
@@ -223,7 +224,7 @@ export function checkRoute(route) {
     case 'announcementCreate':
       return checkRouteHelper(path, announcementCreatePaths)
     case 'announcementIndex':
-      if (path == '/') return false
+      if (path == '/') return true
       result = false
       announcementIndexPaths.map(indexPath => {
         if (path.indexOf(indexPath) != -1) {
@@ -242,7 +243,7 @@ export function checkRoute(route) {
     case 'phoneVerify':
       return checkRouteHelper(path, [ '/phone_number_verification', '/weryfikacja_numeru_telefonu' ])
     case 'announcementIndexFull':
-      if (path == '/') return false
+      if (path == '/') return true
       result = false;
       [ '/search_results', '/wyniki_wyszukiwania' ].map(indexPath => {
         if (path.indexOf(indexPath) != -1) {

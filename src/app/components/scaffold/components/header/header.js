@@ -23,12 +23,18 @@ class Header extends React.Component {
     return (
       <div id='header'>
         <div className='inner'>
-          <h1 onClick={() => this.changeRoute(null, '/')}>
+          <h1 onClick={() => {
+            this.props.changeIndexControl({ searchInitiated: false })
+            this.changeRoute(null, '/')
+          }}>
             <div>
               WARSAW
             </div>
             <div className='first-letter'>
               LEASE
+            </div>
+            <div className={`map-marker ${this.props.searchInitiated ? 'visible' : 'hidden'}`}>
+              &nbsp;<i className='fas fa-map-marker-alt' />
             </div>
             <div className='float-clear' />
           </h1>

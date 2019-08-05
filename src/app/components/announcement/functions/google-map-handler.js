@@ -7,11 +7,12 @@ export function googleMapHandler(callback, options) {
   options = options || {}
   function initializeMap() {
     window.googleMap = new google.maps.Map(div, {
-      center: {lat: options.latitude || 52.2320492, lng: options.longitude || 21.0059334},
-      zoom: options.zoom || 12,
+      center: {lat: options.latitude || 52.222, lng: options.longitude || 20.985},
+      zoom: options.zoom || 12.9,
       mapTypeControl: false,
       fullscreenControl: false,
-      streetViewControl: false
+      streetViewControl: false,
+      clickableIcons: false
     })
   }
   initializeMap()

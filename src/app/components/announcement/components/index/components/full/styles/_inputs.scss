@@ -1,0 +1,22 @@
+@import '../../../styles/simple-index-input';
+@import '../../../styles/composite-index-input';
+
+%inputs {
+  .simple-index-input {
+    @extend %simple-index-input;
+    &.category {
+      margin-right: 6px;
+    }
+  }
+  .composite-input-container {
+    @extend %simple-index-input;
+    @extend %composite-index-input;
+    &.area, &.rent, &.floor, &.total-floors {
+      margin-right: 6px;
+    }
+  }
+  .react-calendar {
+    position: absolute;
+    z-index: 4;
+  }
+}

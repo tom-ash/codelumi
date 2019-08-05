@@ -13,8 +13,7 @@ class MainPage extends React.Component {
   render() {
     return (
       <div id='main-page'>
-        <Jumbotron />
-        <AnnouncementIndexMap />
+        
       </div>
     )
   }

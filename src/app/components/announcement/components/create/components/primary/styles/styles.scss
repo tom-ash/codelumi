@@ -27,7 +27,6 @@
     .react-calendar {
       position: absolute;
       width: 360px;
-      z-index: 3;
     }
   }
   .date {
@@ -45,17 +44,5 @@
   }
   .fas, .far {
     width: 24px;
-  }
-  .fa-clone, .fa-city, .fa-calendar-alt {
-    color: #1F618D;
-  }
-  .fa-coins {
-    color: #E59866;
-  }
-  .fa-square, .fa-door-closed {
-    color: #1E8449;
-  }
-  .fa-layer-group, .fa-building {
-    color: #5D6D7E;
   }
 }

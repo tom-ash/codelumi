@@ -139,7 +139,7 @@ export function totalFloorsManager(aspect, option) {
     id: requiredInputs.totalFloors.id,
     classNames: { container: 'primary-input select' },
     value: this.props.totalFloors,
-    label: this.labelProvider(inputs.buildingFloors.icon, inputs.buildingFloors.create),
+    label: this.labelProvider(inputs.totalFloors.icon, inputs.totalFloors.create),
     options: numberOptionsProvider(99),
     onFocus: () => this.props.changeErrors({ totalFloors: noError }),
     onSelect: () => this.onSelectHandler('totalFloors', option.value),

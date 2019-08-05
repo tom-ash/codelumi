@@ -2,14 +2,15 @@ export const mapStateToProps = (store) => {
   return {
     language: store.app.language,
     venue: 'indexFull',
+    isMobile: store.app.isMobile,
 
     rentActive: store.announcement.index.control.full.rentActive,
     areaActive: store.announcement.index.control.full.areaActive,
-
-
     roomsActive: store.announcement.index.control.full.roomsActive,
     floorActive: store.announcement.index.control.full.floorActive,
     totalFloorsActive: store.announcement.index.control.full.totalFloorsActive,
+
+    searchInitiated: store.announcement.index.control.full.searchInitiated,
     
 
     screenSize: store.app.screenSize,
@@ -20,7 +21,7 @@ export const mapStateToProps = (store) => {
     changed: store.announcement.index.control.full.changed,
     page: store.announcement.index.control.full.page,
     availabilityDateFocus: store.announcement.index.control.full.availabilityDateFocus,
-    calendarHover: store.announcement.index.control.full.calendarHover,
+    availabilityDateActive: store.announcement.index.control.full.availabilityDateActive,
     category: store.announcement.index.inputs.full.category,
     district: store.announcement.index.inputs.full.district,
 

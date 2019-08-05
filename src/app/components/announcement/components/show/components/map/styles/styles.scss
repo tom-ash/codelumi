@@ -1,22 +1,15 @@
 @import '../../../../../../../styles/themes.scss';
 
 #announcement-show-map {
-  margin-top: 36px;
   #google-map-container {
-    width: 800px;
-    height: 450px;
+    $width: 100%;
+    width: $width;
+    height: 0;
+    padding-bottom: ($width / 1.7777);
     #google-map {
-      width: 100%;
-      height: 100%;
-    }
-    @media only screen and (min-width: $breakpoint-tablet-large-min) and (max-width: $breakpoint-tablet-large-max) {
-      $width: 100%;
-      width: $width;
-      height: 0;
       padding-bottom: ($width / 1.7777);
-      #google-map {
-        padding-bottom: ($width / 1.7777)
-      }
+      border-bottom-left-radius: 2.5px;
+      border-bottom-right-radius: 2.5px;
     }
     @media only screen and (max-width: $breakpoint-tablet-small-max) {
       $width: 100%;

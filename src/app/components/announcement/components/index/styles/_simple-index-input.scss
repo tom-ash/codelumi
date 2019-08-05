@@ -1,0 +1,58 @@
+@import './options';
+
+%simple-index-input {
+    position: relative;
+    float: left;
+    background: none;
+    margin: 0 0 8px 0;
+    cursor: pointer;
+    // @media only screen and (max-width: $breakpoint-pc-small-max) {
+    //   width: 100%;
+    // }
+    &.category, &.district {
+      width: 349px;
+      @media only screen and (max-width: $breakpoint-pc-small-max) {
+        width: 100%;
+      }
+    }
+    .icon {
+      position: absolute;
+      color: #1A5276;
+      top: 0;
+      bottom: 0;
+      left: 12px;
+      line-height: 42px;
+      font-size: 13px;
+      padding-top: 1px;
+    }
+    .input {
+      position: relative;
+      height: 40px;
+      padding-left: 40px;
+      padding-top: 20px;
+      background: white;
+      border-radius: 2.5px!important;
+      font-size: 14px;
+      font-weight: bold;
+      &.hover {
+        background: #E5E7E9;
+      }
+    }
+    .label {
+      z-index: 1;
+      transition: .12s ease-in;
+      position: absolute;
+      top: 14px;
+      left: 42px;
+      font-size: 14px;
+      &.focus, &.value {
+        top: 5px;
+        font-size: 12px;
+      }
+    }
+
+    .options {
+      @extend %options;
+      z-index: 4;
+    }
+}

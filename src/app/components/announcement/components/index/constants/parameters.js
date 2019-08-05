@@ -115,10 +115,20 @@ export const parameters = [
     english: 'page',
     value: (value) => value,
     stateValue: (value) => value
-  }
+  },
+
+  {
+    state: 'availabilityDate',
+    api: 'availability_date',
+    polish: 'data dostępności',
+    english: 'availability date',
+    value: (value) => value,
+    stateValue: (value) => value
+  },
 ]
 
 export const updateParameters = [
+  'searchInitiated',
   'rentActive',
   'areaActive',
   'roomsActive',

@@ -2,13 +2,11 @@
   position: relative;
   width: 360px;
   margin: 0 auto;
-  z-index: 1;
   margin-bottom: 36px;
   .current {
     position: relative;
     border: 1px solid #626567;
     height: 96px;
-    z-index: 1;
     .icon {
       float: left;
       width: 48px;
@@ -76,7 +74,6 @@
   }
 
   .trigger {
-    z-index: 2;
     position: absolute;
     bottom: 0px;
     right: 0px;

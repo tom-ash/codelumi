@@ -7,6 +7,9 @@ export const inputs = {
     icon: 'fas fa-city',
     all: { polish: 'Dzielnica', english: 'District' }
   },
+  rent: {
+    icon: 'fas fa-coins',
+  },
   rentCurrency: {
     icon: 'fas fa-coins',
     all: { polish: 'Waluta czynszu', english: 'Rent currency' }
@@ -22,7 +25,7 @@ export const inputs = {
     all: { polish: 'Opłaty dodatkowe', english: 'Additional fees' }
   },
   area: {
-    icon: 'fas fa-layer-group',
+    icon: 'fas fa-square',
     create: { polish: 'Powierzchnia', english: 'Area' },
     indexMin: {},
     indexMax: {}
@@ -34,12 +37,12 @@ export const inputs = {
     indexMax: {}
   },
   floor: {
-    icon: 'fas fa-building',
+    icon: 'fas fa-layer-group',
     create: { polish: 'Piętro', english: 'Floor' },
     indexMin: {},
     indexMax: {}
   },
-  buildingFloors: {
+  totalFloors: {
     icon: 'fas fa-building',
     create: { polish: 'Liczba pięter budynku', english: 'Building floors amount' },
     indexMin: {},

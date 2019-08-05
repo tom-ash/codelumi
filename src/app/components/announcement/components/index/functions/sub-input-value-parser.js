@@ -1,8 +1,8 @@
-import { parseCurrency } from '../../../../../functions/currency-parsers'
+import { parseCurrency } from '../../../functions/currency-parsers'
 
-export function groupInputJoiner(input) {
-  const articleMin = this.languageHandler('>', '>')
-  const articleMax = this.languageHandler('<', '<')
+export function subInputValueParser(input) {
+  const articleMin = '≥'
+  const articleMax = '≤'
   const min = this.props[`${input}Min`]
   const max = this.props[`${input}Max`]
   let value = ''

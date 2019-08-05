@@ -28,7 +28,6 @@
 #announcement-show-index-search-mini {
   height: 172px;
   background: white;
-  z-index: 2;
   position: absolute;
   margin: auto;
   background: rgba(255, 255, 255, 0.72);
@@ -69,7 +68,6 @@
       border-radius: 4px;
       top: 42px;
       background: white;
-      z-index: 9;
       overflow-y: auto;
       max-height: 162px;
       border: 1px solid gray;

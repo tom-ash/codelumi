@@ -1,57 +1,37 @@
 @import '../../../../../../../styles/themes.scss';
-@import '../../../../../../../styles//inputs/templates/input';
-@import '../../../styles/panel';
 @import '../../tile/styles/tile';
 @import './google-map';
-@import './panel';
 @import './tile';
 @import '../../../../../../../styles/media-breakpoints';
 
+@import './panel-container';
+
 #announcement-index-map {
-  @extend %wide-container;
-  margin-top: 36px;
-  border-radius: 4px;
   position: relative;
+  max-width: 1338px;
+  width: 100%;
   padding: 0px;
   border: none;
-  max-width: 100%;
-  .panel {
-    @extend %map-panel;
-  }
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
-    .panel {
-      position: relative;
-      width: 100%;
-      .index-input {
-        width: 100%;
-        &.select {
-          .options {
-            width: 96%;
-            left: 2%;
-            border-radius: 2.5px;
-            box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
-                        0px 3px 8px 3px rgba(0, 0, 0, 0.14),
-                        0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-          }
-        }
-      }
-    }
-    #google-map-container {
-      margin: 0;
-      height: 416px;
-      .results {
-        top: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        border-radius: 0;
-      }
-    }
-  }
+  transition: 0.12s ease-in;
   #google-map-container {
     @extend %google-map;
-  }
-  .announcement-index-tile {
-    @extend %map-tile;
+    h3 {
+      position: absolute;
+      color: #1B4F72;
+      font-size: 16px;
+      top: -28px;
+      left: 0;
+      font-weight: normal;
+      .fas.fa-map-marker-alt {
+        width: none;
+        margin-right: 8px;
+      }
+    }
+    .panel-container {
+      @extend %panel-container;
+    }
+    .announcement-index-tile {
+      @extend %map-tile;
+    }
   }
 }

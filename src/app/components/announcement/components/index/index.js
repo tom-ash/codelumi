@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import AnnouncementIndexFull from './components/full/full'
+import AnnouncementIndexMap from './components/map/map'
 import AnnouncementIndexList from './components/list/list'
 import { checkRoute } from '../../../../functions/routers'
 import './styles/styles.scss'
@@ -15,6 +16,7 @@ class AnnouncementIndexSearch extends React.Component {
   render() {
     return (
       <div id='announcement-index-search'>
+        {console.log(this.props)}
         {
         this.checkRoute('announcementIndexFull') &&
         <AnnouncementIndexFull />
@@ -22,6 +24,10 @@ class AnnouncementIndexSearch extends React.Component {
         {
         this.checkRoute('announcementIndexList') &&
         <AnnouncementIndexList />
+        }
+        {
+        this.checkRoute('mainPage') &&
+        <AnnouncementIndexMap />
         }
       </div>
     )

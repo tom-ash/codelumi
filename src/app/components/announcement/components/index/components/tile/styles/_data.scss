@@ -1,0 +1,32 @@
+%data {
+  position: relative;
+  text-align: right;
+  .area {
+    font-size: 16px;
+    color: #641E16;
+  }
+  .rent {
+    .total, .per-sqm {
+      .net {
+        color: #154360;
+        .amount {
+          font-size: 15px;
+        }
+        .meta {
+          font-size: 12px;
+        }
+      }
+      .gross {
+        .amount {
+          color: #979A9A;
+          font-size: 15px;
+          margin-top: 4px;
+        }
+        .meta {
+          color: #979A9A;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
