@@ -5,7 +5,7 @@ export function verificationManager(aspect, value) {
     id: 'user-create-email-verification',
     controlled: false,
     classNames: { container: 'primary-input text'},
-    label: this.languageHandler('kod weryfikacyjny', 'verification code'),
+    label: this.languageHandler('Kod weryfikacyjny', 'Verification Code'),
     onChange: () => this.props.changeCreate({ verification: { polish: '', english: '' }}),
     onBlur: () => this.verificationManager('validate', value),
     validate: () => {

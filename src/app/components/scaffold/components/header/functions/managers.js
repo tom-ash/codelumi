@@ -3,80 +3,44 @@ import { managerAgent } from 'managed-inputs'
 
 export function addAnnouncementManager(action) {
   return managerAgent(action, {
-    id: 'header-add-announcement',
-    classNames: { container: 'header-button phone-large-hidden' },
-    label: (
-      <div>
-        <div>
-          <i className="fas fa-plus"></i>
-        </div>
-        <div>
-          { this.props.language === 'polish' ? 'Dodaj ogłoszenie' : 'Add Announcement' }
-        </div>
-        <div className='float-clear' />
-      </div>),
+    classNames: { container: 'link' },
+    label: this.labelProvider('fas fa-plus', { polish: 'Dodaj nieodpłatne ogłoszenie', english: 'Add gratuitous announcement'}),
     onClick: () => {
       this.changeRoute(null, 'addAnnouncement')
+      this.props.changeControl({ showLinks: false })
     }
   })
 }
 
 export function signUpManager(action) {
   return managerAgent(action, {
-    id: 'header-sign-up',
-    classNames: { container: 'header-button tablet-small-hidden phone-large-hidden' },
-    label: (
-      <div>
-        <div>
-          <i className="fas fa-user-plus"></i>
-        </div>
-        <div>
-          { this.props.language === 'polish' ? 'Zarejestruj' : 'Sign Up' }
-        </div>
-        <div className='float-clear' />
-      </div>),
+    classNames: { container: 'link' },
+    label: this.labelProvider('fas fa-user-plus', { polish: 'Zarejestruj', english: 'Sign Up'}),
     onClick: () => {
       this.changeRoute(null, 'signUp')
+      this.props.changeControl({ showLinks: false })
     }
   })
 }
 
 export function signInManager(action) {
   return managerAgent(action, {
-    id: 'header-sign-in',
-    classNames: { container: 'header-button tablet-small-hidden phone-large-hidden' },
-    label: (
-      <div>
-        <div>
-          <i className="fas fa-sign-in-alt"></i>
-        </div>
-        <div>
-          { this.props.language === 'polish' ? 'Zaloguj' : 'Sign In' }
-        </div>
-        <div className='float-clear' />
-      </div>),
+    classNames: { container: 'link' },
+    label: this.labelProvider('fas fa-sign-in-alt', { polish: 'Zaloguj', english: 'Sign In'}),
     onClick: () => {
         this.changeRoute(null, 'signIn')
+        this.props.changeControl({ showLinks: false })
     }
   })
 }
 
 export function myAccountManager(action) {
   return managerAgent(action, {
-    id: 'header-my-account',
-    classNames: { container: 'header-button tablet-small-hidden phone-large-hidden' },
-    label: (
-      <div>
-        <div>
-          <i className="far fa-user-circle"></i>
-        </div>
-        <div>
-          { this.props.language === 'polish' ? 'Moje konto' : 'My account' }
-        </div>
-        <div className='float-clear' />
-      </div>),
+    classNames: { container: 'link' },
+    label: this.labelProvider('far fa-user-circle', { polish: 'Moje konto', english: 'My account'}),
     onClick: () => {
       this.changeRoute(null, 'myAccount')
+      this.props.changeControl({ showLinks: false })
     }
   })
 }

@@ -7,26 +7,28 @@
   height: 640px;
   background: white;
   border: none;
-  margin: 24px;
+  margin: 0 12px 24px;
   padding: 12px;
   border-radius: 4px;
   margin-top: 96px;
   @media only screen and (max-width: $breakpoint-phone-large-max) {
-    height: 800px;
-    margin: 80px 0 24px;
+    height: 840px;
+    margin: 80px 0 12px;
+    padding: 6px;
   }
   .results {
     z-index: 1;
     position: absolute;
     top: 24px;
-    left: 316px;
+    left: 252px;
     height: 36px;
     width: 72px;
     line-height: 36px;
     text-align: center;
     color: white;
-    background: transparentize($primary-theme-color, 0.24);
+    background: transparentize(#626567, 0.24);
     border-radius: 4px;
+
     @media only screen and (max-width: $breakpoint-phone-large-max) {
       top: 366px;
       left: 0;

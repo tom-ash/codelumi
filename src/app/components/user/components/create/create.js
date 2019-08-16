@@ -4,7 +4,6 @@ import * as mappers from './constants/mappers'
 import { componentDidUpdate } from './functions/lifecycle'
 import { changeRoute } from '../../../../functions/routers'
 import UserCreateEmail from './components/email/email'
-import UserCreateSuccess from '../create/components/success/success'
 import './styles/styles.scss'
 import * as lifecycle from './functions/lifecycle'
 
@@ -25,10 +24,6 @@ class UserCreate extends React.Component {
         {
         this.props.success === null &&
         <UserCreateEmail />
-        }
-        {
-        this.props.success === true &&
-        <UserCreateSuccess />
         }
       </div>
     )

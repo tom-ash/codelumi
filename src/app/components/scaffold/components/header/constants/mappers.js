@@ -4,6 +4,7 @@ export const mapStateToProps = (store) => {
     name: store.user.authorize.data.name,
     screenSize: store.app.screenSize,
     searchInitiated: store.announcement.index.control.full.searchInitiated,
+    showLinks: store.scaffold.header.control.showLinks
   }
 }
   
@@ -22,6 +23,9 @@ export const mapDispatchToProps = (dispatch) => {
       type: 'USER_AUTHORIZE_DATA',
       value: value
     }),
+
+    changeControl: (value) => dispatch({ type: 'scaffold/header/control', value: value }),
+
     changeLanguage: (value) => dispatch({ type: 'APP_LANGUAGE', value: value }),
   }
 }

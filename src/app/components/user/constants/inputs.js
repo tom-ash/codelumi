@@ -1,11 +1,11 @@
 export const inputs = {
   businessName: {
     icon: 'fas fa-ellipsis-h',
-    label: { polish: 'Nazwa (firma) przedsiębiorcy', english: 'Business Name' }
+    label: { polish: 'Nazwa (firma) ogłoszeniodawcy', english: 'Announcer Business Name' }
   },
   taxIdentificationNumber: {
     icon: 'fas fa-ellipsis-h',
-    label: { polish: 'Numer identifikacji podatkowej', english: 'Tax identification number' }
+    label: { polish: 'Numer identifikacji podatkowej', english: 'Tax Identification Number' }
   },
   areaCode: {
     icon: 'fas fa-phone',

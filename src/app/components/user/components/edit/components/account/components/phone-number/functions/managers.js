@@ -7,7 +7,7 @@ const noError = { polish: '', english: '' }
 export function countryCodeManager(aspect, option) {
   return managerAgent(aspect, {
     controlled: false,
-    classNames: { container: 'form-input select' },
+    classNames: { container: 'form-input select country-code' },
     value: this.props.countryCode,
     options: [{ value: '+48', text: '+48' }, { value: '+1', text: '+1' }, { value: '+44', text: '+44' }],
     onSelect: () => this.props.changeInputs({ phoneCountryCode: option.value })
@@ -19,7 +19,7 @@ export function bodyManager(aspect, value) {
     id: 'user-edit-account-phone-number-body',
     type: 'tel',
     controlled: false,
-    classNames: { container: 'form-input text' },
+    classNames: { container: 'form-input text phone-body' },
     label: handleLanguageVersions(this.props.language, {
       polish: 'numer telefonu',
       english: 'phone number'

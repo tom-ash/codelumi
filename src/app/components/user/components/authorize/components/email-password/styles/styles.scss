@@ -1,7 +1,8 @@
 @import '../../../../../../../styles/themes.scss';
 
 #user-authorize-email {
-  width: 360px;
+  max-width: 360px;
+  width: 100%;
   .error-container {
     display: none;
   }
@@ -21,7 +22,14 @@
     }
   }
   .remember-me {
+    position: relative;
     margin-bottom: 24px;
+    .input {
+      position: absolute;
+    }
+    .label {
+      margin-left: 28px;
+    }
   }
   .password {
     text-align: center;
@@ -30,6 +38,9 @@
     width: 180px;
     font-size: 13px;
     color: gray;
+    @media only screen and (max-width: $breakpoint-phone-large-max) {
+      width: 50%;
+    }
     span {
       cursor: pointer;
     }
@@ -41,6 +52,9 @@
     float: left;
     width: 180px;
     height: 36px;
+    @media only screen and (max-width: $breakpoint-phone-large-max) {
+      width: 50%;
+    }
     .very-small-windmill-spinner {
       left: -51px;
       top: -51px;

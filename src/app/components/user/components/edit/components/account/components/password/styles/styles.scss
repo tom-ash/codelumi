@@ -3,11 +3,15 @@
 #user-reset-password {
   @extend %narrow-container;
   padding: 48px;
+  @media only screen and (max-width: $breakpoint-phone-large-max) {
+    padding: 12px;
+  }
   .page-header {
     @extend %page-header;
   }
   .inputs {
-    width: 360px;
+    max-width: 360px;
+    width: 100%;
   }
   .monit {
     text-align: justify;
@@ -15,6 +19,7 @@
     margin-bottom: 24px;
   }
   .button {
+    height: 36px;
     .input {
       @extend %blue-button;
       display: block;

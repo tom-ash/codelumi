@@ -7,6 +7,16 @@
     &.category {
       margin-right: 6px;
     }
+    @media only screen and (max-width: 744px)  {
+      &.category, &.district {
+        width: 217px;
+      }
+    }
+    @media #{$phone} {
+      &.category, &.district {
+        width: 100%;
+      }
+    }
   }
   .composite-input-container {
     @extend %simple-index-input;
@@ -14,6 +24,19 @@
     &.area, &.rent, &.floor, &.total-floors {
       margin-right: 6px;
     }
+    @media only screen and (max-width: 744px)  {
+      width: 217px;
+      &.rent, &.floor {
+        margin-right: 0;
+      }
+      &.area, &.rooms, &.total-floors {
+        margin-right: 6px;
+      }
+    }
+    @media #{$phone} {
+      width: 100%;
+    }
+
   }
   .react-calendar {
     position: absolute;

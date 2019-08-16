@@ -6,29 +6,20 @@
     height: 16px;
     margin-right: 12px;
     cursor: pointer;
-    border: 1px solid $input-color;
     border-radius: 2px;
     .tick {
       transform: rotate(45deg);
       width: 6px;
-      height: 10px;
-      margin-left: 4px;
-      border-bottom: 1px solid $input-color;
-      border-right: 1px solid $input-color;
+      height: 11px;
+      margin-left: 5px;
     }
   }
   .label {
+    width: 304px;
     cursor: pointer;
     float: left;
-    color: $input-color;
     font-size: 15px;
     line-height: 16px;
     text-align: justify;
-    &.focus {
-      color: blue;
-    }
-    &.hover {
-      color: blue;
-    }
   }
 }

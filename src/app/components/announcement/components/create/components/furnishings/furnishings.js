@@ -22,6 +22,7 @@ class AnnouncementCreateFurnishings extends React.Component {
         <div className='scroll'>
           <i className='fas fa-sort'></i>
         </div>
+        <div className='float-clear' />
       </div>
     )
   }

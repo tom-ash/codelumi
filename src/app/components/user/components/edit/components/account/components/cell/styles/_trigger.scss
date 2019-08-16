@@ -1,0 +1,44 @@
+%trigger {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  font-size: 14px;
+  padding: 4px 6px 4px 6px;
+  border-top-left-radius: 4px;
+  border-bottom: 1px solid #626567;
+  border-right: 1px solid #626567;
+  color: #F4F6F7;
+  border-left: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+  background: #D7DBDD;
+  background-image: linear-gradient(#FBFCFC,#D7DBDD);
+  transition: 0.72s ease-out;
+  &.closed {
+    color: #154360;
+  }
+  &.opened {
+    color: #154360;
+  }
+  &.closed-after-open {
+    color: #154360;
+  }
+  &.destroy {
+    &.closed {
+      color: rgba(100, 30, 22, 0.72);
+    }
+    &.opened-after-close {
+      background: red;
+    }
+    &.opened {
+      color: gray;
+    }
+    &.closed-after-open {
+      color: gray;
+    }
+  }
+  cursor: pointer;
+  span {
+    font-size: 12px;
+    padding-left: 4px;
+  }
+}

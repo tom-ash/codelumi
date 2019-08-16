@@ -25,22 +25,24 @@
 }
 
 %section-header {
-  color: #1B4F72;
-  font-size: 18px;
   position: absolute;
-  width: 800px;
   top: -28px;
   right: 0;
   left: 0;
+  width: 800px;
   margin: 0 auto;
+  color: #1B4F72;
+  font-size: 16px;
   font-weight: normal;
   .fas.fa-bars {
     width: 24px;
   }
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
+  width: 720px;
+  @media only screen and (max-width: 744px) {
+    width: 456px;
+  }
+  @media #{$phone} {
     top: -24px;
-    font-size: 16px;
     width: 280px;
-    
   }
 }

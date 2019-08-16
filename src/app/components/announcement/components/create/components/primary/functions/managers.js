@@ -165,17 +165,16 @@ export function availabilityDateSelectManager(aspect, option) {
   })
 }
 
-export function availableDateManager(aspect, value) {
+export function availableDateManager(aspect, option) {
   return managerAgent(aspect, {
     classNames: { container: 'primary-input text date' },
-    value: this.props.availabilityDate,
-    initialValue: 'aaa',
-    label: this.languageHandler('', ''),
+    value: this.props.availabilityDate ? this.props.availabilityDate : '',
+    options: [{ value: '', text: '' },  { value: this.props.availabilityDate, text: this.props.availabilityDate }],
+    label: this.labelProvider(inputs.availabilityDate.icon, {
+      polish: 'Data dostępności', english: 'Availability date'
+    }),
+    disableSelectOptions: true,
+    disableOnFocusCover: true,
     onFocus: () => this.props.changeControl({ availabilityDateFocus: true }),
-    onChange: () => this.props.changeInputs({ availabilityDate: value }),
-    onBlur: () => {
-      if (!this.props.calendarMouseOver) this.props.changeControl({ availabilityDateFocus: false })
-    },
   })
 }
-

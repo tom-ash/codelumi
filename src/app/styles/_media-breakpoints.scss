@@ -6,3 +6,10 @@ $breakpoint-tablet-large-min: 769px;
 $breakpoint-tablet-small-max: 768px;
 $breakpoint-tablet-small-min: 481px;
 $breakpoint-phone-large-max: 480px;
+
+$screen: "only screen" !default;
+$tablet: "#{$screen} and (min-width: #{$breakpoint-tablet-small-min}) and (max-width: #{$breakpoint-tablet-large-max})" !default;
+
+$small-tablet: "#{$screen} and (min-width: #{$breakpoint-tablet-small-min}) and (max-width: #{$breakpoint-tablet-large-max})" !default;
+
+$phone: "#{$screen} and (max-width: #{$breakpoint-phone-large-max})" !default;

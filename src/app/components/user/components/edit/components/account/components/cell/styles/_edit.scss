@@ -1,0 +1,55 @@
+%edit {
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-left: 1px solid gray;
+  height: 240px;
+  max-width: 360px;
+  margin: 0 auto;
+  transition: 0.72s ease-out;
+  &.closed {
+    visibility: hidden;
+    height: 0px;
+  }
+  &.closed-after-open {
+    height: 0px;
+  }
+  &.opened {
+    height: 240px;
+  }
+  .spinner {
+    position: relative;
+    padding-top: 64px;
+    .windmill-medium-spinner {
+      position: relative;
+    }
+  }
+  .input {
+    margin: 0 auto;
+    &.hidden {
+      visibility: hidden;
+    }
+    &.hiding {
+      visibility: hidden;
+      padding: 20px;
+    }
+    &.shown {
+      visibility: visible;
+      padding: 20px;
+    }
+    .monit {
+      width: 100%;
+      max-width: 320px;
+      text-align: justify;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+    .country-code {
+      position: absolute!important;
+      width: 72px;
+    }
+    .phone-body {
+      margin-left: 84px;
+    }
+  }
+}

@@ -1,7 +1,26 @@
 @import '../../../../../../../styles/themes.scss';
+@import '../../../../../../../styles/inputs/form/form';
 
 #announcement-create-features {
+  max-width: 384px;
   color: $primary-text-color;
   padding-bottom: 36px;
+  padding-right: 24px;
   position: relative;
+  @media only screen and (max-width: $breakpoint-phone-large-max) {
+    width: 100%;
+  }
+  .form-input {
+    @extend %form-input;
+    &.checkbox {
+      position: relative;
+      margin-bottom: 8px;
+      .input {
+        position: absolute;
+      }
+      .label {
+        margin-left: 28px;
+      }
+    }
+  }
 }

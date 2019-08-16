@@ -4,6 +4,9 @@
 #user-authorize {
   @extend %narrow-container;
   padding: 48px;
+  @media only screen and (max-width: $breakpoint-phone-large-max) {
+    padding: 12px;
+  }
   .page-header {
     @extend %page-header;
   }

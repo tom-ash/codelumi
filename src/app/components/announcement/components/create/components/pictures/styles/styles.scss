@@ -1,9 +1,8 @@
+@import '../../../../../../../styles/media-breakpoints';
+
 #announcement-create-pictures {
-  // border-top: 1px solid #D0D3D4;
-  // padding: 36px 0 12px;
   .drag-and-drop {
     position: relative;
-    
     border: 1px solid gray;
     width: 360px;
     height: 54px;
@@ -13,6 +12,9 @@
     font-size: 14px;
     border-radius: 2.5px;
     cursor: pointer;
+    @media only screen and (max-width: $breakpoint-phone-large-max) {
+      width: 100%;
+    }
     &.error-drag-and-drop {
       border-right: 3px solid #CB4335;
     }
@@ -38,7 +40,6 @@
     font-size: 12px;
     height: 12px;
     margin-bottom: 24px;
-    // margin
   }
 
   .picture {
@@ -49,6 +50,9 @@
     background-size: 100%;
     margin: 0 35px 24px 0;
     border-radius: 2.5px;
+    // @media only screen and (max-width: $breakpoint-phone-large-max) {
+    //   // width: 90%;
+    // }
     &.last {
       margin-right: 0;
     }
@@ -59,7 +63,6 @@
     .delete {
       font-size: 16px;
       position: absolute;
-      // background: red;
       background: none;
       color: #C0392B;
       top: 0;

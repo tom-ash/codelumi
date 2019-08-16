@@ -4,11 +4,20 @@
 #user-create-container {
   @extend %narrow-container;
   padding: 48px;
+  @media only screen and (max-width: $breakpoint-phone-large-max) {
+    padding: 12px;
+  }
   .page-header {
     @extend %page-header;
   }
   .form-input {
     @extend %form-input;
+    &.text, &.select {
+      width: 100%;
+      .input {
+        width: 100%;
+      }
+    }
   }
   
 

@@ -39,7 +39,6 @@ class AnnouncementCreatePrimary extends React.Component {
   render() {
     return (
       <div id='announcement-create-primary' className='section'>
-        {/* <div className='inputs'> */}
           <ManagedSelect manager={this.categoryManager}/>
           <ManagedSelect manager={this.districtManager}/>
           <ManagedSelect manager={this.rentCurrencyManager}/>
@@ -54,7 +53,7 @@ class AnnouncementCreatePrimary extends React.Component {
           <ManagedSelect manager={this.availabilityDateSelectManager} />
           {
           this.props.availabilityDateSelect == 'date' &&
-          <ManagedText manager={this.availableDateManager}/>
+          <ManagedSelect manager={this.availableDateManager}/>
           }
           <div className='float-clear' />
           </div>
@@ -63,12 +62,12 @@ class AnnouncementCreatePrimary extends React.Component {
           className='calendar'>          
             <Calendar 
             onChange = {(date) => {
+              console.log(date)
               this.props.changeInputs({ availabilityDate: parseDate(date) })
               this.props.changeControl({ availabilityDateFocus: false })
             }}
             locale={this.props.language == 'polish' ? 'pl' : 'en'}/>
           </div>
-        {/* </div> */}
       </div>
     )
   }

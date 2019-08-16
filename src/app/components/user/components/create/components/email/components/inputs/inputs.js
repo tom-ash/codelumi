@@ -36,12 +36,11 @@ class UserCreateEmailInputs extends React.Component {
   render() {
     return (
       <div className='user-create-email-inputs-container'>
-        {/* {console.log(this.props)} */}
         <h3 className='section-header'>
-          <i className='fas fa-business-time' /> {this.languageHandler('Dane przedsiębiorcy', 'Business data')}
+          <i className='fas fa-business-time' /> {this.languageHandler('Dane ogłoszeniodawcy', 'Announcer Data')}
         </h3>
         <ManagedText manager = {this.businessNameManager}/>
-        <ManagedText manager = {this.taxIdentificationNumberManager}/>
+        {/* <ManagedText manager = {this.taxIdentificationNumberManager}/> */}
         <div style={{ float: 'left', width: '30%'}}>
           <ManagedSelect manager={this.areaCodeManager}/>
         </div>

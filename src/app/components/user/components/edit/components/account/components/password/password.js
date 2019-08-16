@@ -10,6 +10,7 @@ import WindmillSpinner from '../../../../../../../support/components/spinner/com
 import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import './styles/styles.scss'
 import { labelProvider } from '../../../../../../../../functions/providers/label'
+import { showHeader } from './functions/show-header'
 
 class UserEditAccountPassword extends React.Component {
   constructor(props) {
@@ -31,9 +32,12 @@ class UserEditAccountPassword extends React.Component {
   render() {
     return (
       <div id={this.props.path === '/resethasla' || this.props.path === '/resetpassword' ? 'user-reset-password' : 'user-edit-account-password'}>
+        {
+        showHeader() &&
         <h2 className='page-header'>
           <i className='fas fa-user-plus' /> {this.languageHandler('Resetowanie hasła', 'Password Resetting')}
         </h2>
+        }
         {
         (this.props.path === '/resethasla' || this.props.path === '/resetpassword') && this.props.connecting &&
         <div>

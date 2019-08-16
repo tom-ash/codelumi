@@ -5,7 +5,8 @@ import { ManagedButton } from 'managed-inputs'
 import * as managers from './functions/managers'
 import './styles/styles.scss'
 import { changeRoute } from '../../../../functions/routers'
-import { languageHandler } from '../../../../functions/language-handler'
+import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
+import { labelProvider } from './functions/label-provider'
 
 class Header extends React.Component {
   constructor(props) {
@@ -17,6 +18,8 @@ class Header extends React.Component {
     this.languageManager = managers.languageManager.bind(this)
     this.changeRoute = changeRoute.bind(this)
     this.languageHandler = languageHandler.bind(this)
+    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.labelProvider = labelProvider.bind(this)
   }
 
   render() {
@@ -42,36 +45,35 @@ class Header extends React.Component {
             <ManagedButton manager={this.languageManager} />
           </div>
           {
-          this.props.screenSize != 'largePhone' &&
-          this.props.screenSize != 'smallTablet' &&
-          !this.props.name &&
-          <div className='sign-in'>
-            <ManagedButton manager={this.signInManager} />
+          this.props.screenSize == 'largePhone' &&
+          <div 
+          className='links-icon-container'
+          onClick={() => this.props.changeControl({ showLinks: !this.props.showLinks })}>
+            <div className='links-icon'>
+              <div className='link-icon' />
+              <div className='link-icon' />
+              <div className='link-icon' />
+            </div>
           </div>
           }
-          {
-          this.props.screenSize != 'largePhone' &&
-          this.props.screenSize != 'smallTablet' &&
-          !this.props.name &&
-          <div className='sign-up'>
-            <ManagedButton manager={this.signUpManager} />
-          </div>
-          }
-          {
-          this.props.screenSize != 'largePhone' &&
-          this.props.screenSize != 'smallTablet' &&
-          this.props.name &&
-          <div className='my-account'>
-            <ManagedButton manager={this.myAccountManager} />
-          </div>
-          }
-          {
-          this.props.screenSize != 'largePhone' &&
-          <div className='add-announcement'>
+          <div className={`links${this.props.showLinks ? '' : ' hidden'}`}>
+            {
             <ManagedButton manager={this.addAnnouncementManager} />
+            }
+            {
+            !this.props.name &&
+            <ManagedButton manager={this.signUpManager} />
+            }
+            {
+            !this.props.name &&
+            <ManagedButton manager={this.signInManager} />
+            }
+            {
+            this.props.name &&
+            <ManagedButton manager={this.myAccountManager} />
+            }
+            <div className='float-clear' />
           </div>
-          }
-          <div className='float-clear' />
         </div>
       </div>
     )

@@ -4,6 +4,10 @@
   padding: 12px;
   margin: 0 auto 36px!important;
   color: #515A5A;
+  @media only screen and (max-width: 744px) {
+    width: 456px;
+    padding: 0;
+  }
   @media only screen and (max-width: $breakpoint-phone-large-max) {
     width: 100%;
     padding: 0;
@@ -12,7 +16,10 @@
     position: absolute;
     right: 12px;
     top: 12px;
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
+    @media only screen and (max-width: 744px) {
+
+    }
+    @media only screen and (max-width: 744px) {
       position: relative;
       top: 0;
       left: 0;
@@ -26,20 +33,20 @@
     }
     .rent {
       margin-top: 24px;
-      @media only screen and (max-width: $breakpoint-phone-large-max) {
+      @media only screen and (max-width: 744px) {
         float: right;
         margin: 0;
       }
       .total, .per-sqm {
         margin-top: 12px;
-        @media only screen and (max-width: $breakpoint-phone-large-max) {
+        @media only screen and (max-width: 744px) {
           float: left;
           margin: 0 24px 0 0;
         }
       }
       .gross {
         margin-top: 6px;
-        @media only screen and (max-width: $breakpoint-phone-large-max) {
+        @media only screen and (max-width: 744px) {
           margin-top: 4px;
         }
       }
@@ -51,6 +58,12 @@
     height: 0;
     background-size: ($width * 1.17777) auto;
     padding-bottom: ($width / 1.7777);
+    @media only screen and (max-width: 744px) {
+      $width: 100%;
+      width: $width;
+      background-size: ($width * 1.7777) auto;
+      padding-bottom: ($width / 1.7777);
+    }
     @media only screen and (max-width: $breakpoint-phone-large-max) {
       $width: 100%;
       width: $width;
@@ -92,7 +105,7 @@
     right: 12px;
     bottom: 12px;
     width: 148px;
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
+    @media only screen and (max-width: 744px) {
       position: relative;
       top: 0;
       right: 0;
@@ -110,18 +123,17 @@
     .rooms, .floor, .total-floors, .calendar {
       margin-top: 12px;
       padding: 0;
-      @media only screen and (max-width: $breakpoint-phone-large-max) {
+      @media only screen and (max-width: 744px) {
         margin-top: 0;
+        margin-right: 12px;
       }
       .fas, .far {
         width: 24px;
-        @media only screen and (max-width: $breakpoint-phone-large-max) {
-          
+        @media only screen and (max-width: 744px) {
           width: auto;
           padding-right: 6px;
         }
       }
     }
-
   }
 }

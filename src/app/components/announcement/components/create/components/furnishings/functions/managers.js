@@ -3,7 +3,7 @@ import { furnishings } from '../../../../../constants/furnishings'
 
 export function furnishingsManager(aspect, value, ref) {
   return managerAgent(aspect, {
-    classNames: { container: 'primary-input checkbox'},
+    classNames: { container: 'form-input checkbox'},
     checkboxes: furnishings.map(furnishing => (
       {
         ref: furnishing.ref,

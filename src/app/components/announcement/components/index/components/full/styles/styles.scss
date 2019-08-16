@@ -7,20 +7,22 @@
 
 #announcement-index-full {
   position: relative;
-  width: 720px;
   margin: 0 auto;
   h2 { @extend %page-header; }
   h3 { @extend %section-header; }
-  
   .panel-container {
     position: relative;
-    margin: 224px 0 36px;
     .panel {
       @extend %panel;
     }
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
+    width: 720px;
+    margin: 148px auto 36px;
+    @media only screen and (max-width: 744px) {
+      width: 456px;
+    }
+    @media #{$phone} {
       width: 280px;
-      margin: 224px auto 36px;
+      margin: 148px auto 36px;
     }
     .button {
       @extend %button;
@@ -44,12 +46,8 @@
     }
   }
 
-  @media only screen and (min-width: $breakpoint-tablet-small-min) and (max-width: $breakpoint-tablet-large-max) {
-    padding: 24px;
-  }
-  @media only screen and (max-width: $breakpoint-pc-small-max) {
-    width: 100%;
-  }
+
+
   .announcements {
     padding: 0;
     min-height: 640px;
@@ -57,10 +55,6 @@
       @extend %tile;
       @extend %full-tile;
     }
-  }
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
-    padding: 0;
-    margin-top: 48px;
   }
   .pagination {
     @extend %full-pagination;

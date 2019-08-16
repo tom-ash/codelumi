@@ -9,6 +9,9 @@
     height: 377px;
     border: 1px solid gray;
     border-radius: 2.5px;
+    @media only screen and (max-width: $breakpoint-phone-large-max) {
+      width: 100%;
+    }
     #google-map {
       width: 100%;
       height: 100%;

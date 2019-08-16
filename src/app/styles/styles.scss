@@ -34,9 +34,13 @@ input, textarea {
 #app-inner-container {
   max-width: 1400px;
   min-width: 360px;
+  min-height: 400px;
   margin: 0 auto;
-  padding: 0 12px;
+  padding: 112px 12px 56px;
   overflow: hidden;
+  @media only screen and (max-width: $breakpoint-phone-large-max) {
+    padding: 72px 12px 12px;
+  }
 }
 
 button {

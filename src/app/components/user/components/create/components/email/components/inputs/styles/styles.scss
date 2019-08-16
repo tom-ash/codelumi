@@ -1,7 +1,8 @@
 @import '../../../../../../../../../styles/themes.scss';
 
 .user-create-email-inputs-container {
-  width: 360px;
+  max-width: 360px;
+  // width
   .section-header {
     @extend %section-header;
     margin-bottom: 16px;

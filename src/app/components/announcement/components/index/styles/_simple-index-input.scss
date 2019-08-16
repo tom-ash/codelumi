@@ -6,14 +6,8 @@
     background: none;
     margin: 0 0 8px 0;
     cursor: pointer;
-    // @media only screen and (max-width: $breakpoint-pc-small-max) {
-    //   width: 100%;
-    // }
     &.category, &.district {
       width: 349px;
-      @media only screen and (max-width: $breakpoint-pc-small-max) {
-        width: 100%;
-      }
     }
     .icon {
       position: absolute;

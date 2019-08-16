@@ -19,6 +19,8 @@ export function verify() {
     this.props.changeUserAuthorized(true)
     this.props.changeData({ name: jsonResponse.name })
     this.props.changeControl({ connecting: false, success: true })
+    this.changeRoute(null, 'myAccount')
+    location.reload();
   })
   .catch(() => {
     this.props.changeErrors({

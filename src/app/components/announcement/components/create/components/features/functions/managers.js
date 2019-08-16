@@ -3,7 +3,7 @@ import { features } from '../../../../../constants/features'
 
 export function featuresManager(aspect, value, ref) {
   return managerAgent(aspect, {
-    classNames: { container: 'primary-input checkbox'},
+    classNames: { container: 'form-input checkbox'},
     checkboxes: features.map(feature => (
       {
         ref: feature.ref,

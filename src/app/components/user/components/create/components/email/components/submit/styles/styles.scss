@@ -1,7 +1,7 @@
 @import '../../../../../../../../../styles/themes.scss';
 
 #user-create-email-submit {
-  width: 360px;
+  max-width: 360px;
   .button {
     @extend %blue-button;
     display: block;

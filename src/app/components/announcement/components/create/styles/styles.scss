@@ -3,16 +3,13 @@
 #announcement-create {
   @extend %medium-container;
   position: relative;
-  .section {
-  }
   .page-header {
     @extend %page-header;
     margin-bottom: 24px;
   }
   .section-header {
     @extend %section-header;
-    padding-top: 24px;
-    border-top: 1px solid #1F618D;
+    padding-top: 12px;
   }
   .primary {
     .section-header {
@@ -88,25 +85,27 @@
     }
   }
   .box {
+    float: left;
     position: relative;
     border: 1px solid gray;
     background: white;
     padding: 12px;
-    width: 360px;
     height: 180px;
     overflow-y: scroll;
     border-radius: 2.5px;
     overflow: -moz-scrollbars-vertical; 
     overflow-y: scroll;
     overflow-y: scroll;
+    width: 100%;
+    max-width: 360px;
   }
   .scroll {
     position: absolute;
-    top: 0px;
-    bottom: 36px;
-    height: 20px;
+    top: 0;
+    right: 0;
+    bottom: 0;
     font-size: 20px;
     margin: auto;
-    left: 368px;
+    line-height: 180px;
   }
 }
