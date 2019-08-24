@@ -19,12 +19,6 @@
       padding: 0px 8px 0px;
       border-radius: 2.5px;
       color: $input-color;
-      &.hover {
-        border: 2px solid $input-hover-border-color;
-      }
-      &.focus {
-        border: 2px solid $input-focus-border-color;
-      }
       &.error {
         border-right: 3px solid $input-error-border-color;
       }

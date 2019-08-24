@@ -1,23 +1,23 @@
 %pagination {
-  text-align: center;
-  height: 32px;
-  .input, .arrow {
-    height: 32px;
-    width: 22px;
-    border: 1px solid gray;
-    margin: 0px 4px;
-    border-radius: 2px;
-    font-size: 14px;
-    &.current {
-      background: rgba(84, 153, 199, 0.88);
-      color: white;
-    }
-    &.focus {
-      border: 2px solid gray;
-      &.current {
-        background: rgba(84, 153, 199, 0.88);
-        border: none;
-      }
-    }
-  }
+  // text-align: center;
+  // height: 32px;
+  // .input, .arrow {
+  //   height: 32px;
+  //   width: 22px;
+  //   border: 1px solid gray;
+  //   margin: 0px 4px;
+  //   border-radius: 2px;
+  //   font-size: 14px;
+  //   &.current {
+  //     background: rgba(84, 153, 199, 0.88);
+  //     color: white;
+  //   }
+  //   &.focus {
+  //     border: 2px solid gray;
+  //     &.current {
+  //       background: rgba(84, 153, 199, 0.88);
+  //       border: none;
+  //     }
+  //   }
+  // }
 }

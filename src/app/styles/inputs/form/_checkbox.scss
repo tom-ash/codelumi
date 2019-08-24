@@ -1,7 +1,7 @@
 %checkbox {
   .input {
+    position: absolute;
     cursor: pointer;
-    float: left;
     width: 16px;
     height: 16px;
     margin-right: 12px;
@@ -16,8 +16,8 @@
   }
   .label {
     width: 304px;
+    margin-left: 28px;
     cursor: pointer;
-    float: left;
     font-size: 15px;
     line-height: 16px;
     text-align: justify;

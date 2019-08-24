@@ -43,7 +43,7 @@ class AnnouncementIndexTile extends React.Component {
     const area = this.props.announcement.area
     return (
       <div
-      className={`announcement-index-tile${this.props.index % 2 === 0 ? ' even' : ''}`}>
+      className={`announcement-index-tile${this.props.first ? ' first': ''}${this.props.last ? ' last': ''}${this.props.index % 2 === 0 ? ' even' : ''}`}>
         {
         this.props.venue == 'map' &&
         <i className='fas fa-times close' onClick={this.closeTile}/>

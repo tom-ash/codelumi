@@ -47,14 +47,12 @@ class AnnouncementIndexList extends React.Component {
     return (
       <div id='announcement-index-list'>
         {this.pageHeaderProvider('fas fa-list-ol', { polish: 'Dodane ogłoszenia', english: 'Added Announcements' })}
-        {this.sectionHeaderProvider('fas fa-filter', { polish: 'Filtry', english: 'Filters' })}
-        <div className='filters'>
-          <ManagedMultipleCheckbox manager={this.switchesManager} />
-          <div className='float-clear' />
+        <div className='panel'>
+          <div className='switches'>
+            <ManagedMultipleCheckbox manager={this.switchesManager} />
+          </div>
+          <ManagedSelect manager={this.sortManager} />
         </div>
-        <ManagedSelect manager={this.sortManager} />
-        <div className='float-clear' />
-        {this.sectionHeaderProvider('fas fa-bars', { polish: 'Lista', english: 'List' })}
         <div className='first-pagination'>
           <ManagedPagination manager={this.paginationManager} />
         </div>
@@ -62,10 +60,14 @@ class AnnouncementIndexList extends React.Component {
           {
           this.props.announcements && this.props.announcements.map((announcement, index) => {
             announcement.index = index
-            return <AnnouncementIndexTile key={`${announcement.id}`} venue='list' announcement={announcement}
+            return <AnnouncementIndexTile
+                   key={`${announcement.id}`}
+                   first={index == 0}
+                   last={index == this.props.announcements.length - 1}
+                   venue='list' announcement={announcement}
                    announcements={this.props.announcements} index={index}
                    control={this.controlProvider(announcement, index)}
-                   changeAnnouncement={this.props.changeAnnouncement}/>
+                   changeAnnouncement={this.props.changeAnnouncement} />
           })
           }
           <div className='float-clear' />

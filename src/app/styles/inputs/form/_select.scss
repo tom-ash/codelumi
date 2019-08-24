@@ -1,29 +1,31 @@
 %select {
   &.select {
     .input {
+      z-index: 2;
       line-height: 40px;
       cursor: pointer;
     }
     .options {
-      transition: 0.24s;
+      z-index: 3;
       position: absolute;
-      width: 100%;
-      border: 2px solid gray;
-      border-bottom-left-radius: 2.5px;
-      border-bottom-right-radius: 2.5px;
-      border-top: none;
-      top: 40x;
-      background: white;
+      width: 102%;
+      max-height: 208px;
+      top: 40px;
+      left: -1%;
+      background: #F7F9F9;
+      box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+                  0px 3px 8px 3px rgba(0, 0, 0, 0.14),
+                  0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+      border-radius: 2.5px;
       overflow-y: auto;
-      max-height: 146px;
       .option {
+        height: 28px;
         font-size: 16px;
-        line-height: 24px;
-        height: 24px;
+        line-height: 28px;
         padding-left: 8px;
         cursor: pointer;
         &.preselected {
-          background: lightgray;
+          background: #D6EAF8;
         }
       }
     }

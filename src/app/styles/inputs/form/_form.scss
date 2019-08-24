@@ -18,12 +18,8 @@
       background: $color-background;
       color: $input-color;
       &.hover {
-        border: 2px solid $color-border-hover;
-      }
-      &.focus {
-        border: 2px solid $color-border-hover;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+        border: 1px solid #154360;
+        background: #EBF5FB;
       }
       &.error {
         border-right: 2.5px solid $color-error;
