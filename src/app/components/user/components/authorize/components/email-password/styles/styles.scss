@@ -2,7 +2,6 @@
 
 #user-authorize-email {
   max-width: 360px;
-  width: 100%;
   .error-container {
     display: none;
   }
@@ -11,15 +10,6 @@
     margin-bottom: 24px;
     color: #922B21;
     font-size: 14px;
-  }
-  .fas, .far {
-    margin-right: 8px;
-    color: #2471A3;
-  }
-  .error {
-    .fas, .far {
-      color: #922B21;
-    }
   }
   .remember-me {
     position: relative;

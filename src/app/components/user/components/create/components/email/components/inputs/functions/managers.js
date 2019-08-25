@@ -6,7 +6,7 @@ export function businessNameManager(aspect, value) {
     id: 'user-create-email-business-name',
     autoComplete: 'off',
     controlled: false,
-    classNames: { container: 'form-input text'},
+    classNames: { container: 'input-container text'},
     label: this.labelProvider(inputs.businessName.icon, inputs.businessName.label),
     onFocus: () => this.errorResetter('businessName'),
     onBlur: () => this.businessNameManager('validate', value),
@@ -15,24 +15,10 @@ export function businessNameManager(aspect, value) {
   })
 }
 
-export function taxIdentificationNumberManager(aspect, value) {
-  return managerAgent(aspect, {
-    id: 'user-create-email-tax-identification-number',
-    autoComplete: 'off',
-    controlled: false,
-    classNames: { container: 'form-input text'},
-    label: this.labelProvider(inputs.taxIdentificationNumber.icon, inputs.taxIdentificationNumber.label),
-    onFocus: () => this.errorResetter('taxIdentification'),
-    onBlur: () => this.taxIdentificationNumberManager('validate', value),
-    validate: () => this.taxIdentificationValidator(value),
-    error: this.languageObjectHandler(this.props.taxIdentificationError)
-  })
-}
-
 export function areaCodeManager(aspect, option) {
   return managerAgent(aspect, {
     id: 'user-create-email-area-code',
-    classNames: { container: 'form-input select'},
+    classNames: { container: 'input-container select phone-country-code'},
     value: this.props.areaCode,
     options: [ { value: '+48', text: '+48' }, { value: '+1', text: '+1' }, { value: '+44', text: '+44' } ],
     onSelect: () => this.props.changeInputs({ areaCode: option.value })
@@ -46,7 +32,7 @@ export function phoneNumberManager(aspect, value) {
     autoComplete: 'off',
     type: 'tel',
     controlled: false,
-    classNames: { container: 'form-input text'},
+    classNames: { container: 'input-container text phone-body'},
     label: this.labelProvider(input.icon, input.label),
     onFocus: () => this.errorResetter('phone'),
     onBlur: () => this.phoneNumberManager('validate', value),
@@ -62,7 +48,7 @@ export function emailAddressManager(aspect, value) {
     autoComplete: 'off',
     type: 'email',
     controlled: false,
-    classNames: { container: 'form-input text'},
+    classNames: { container: 'input-container text'},
     label: this.labelProvider(input.icon, input.label),
     onFocus: () => this.errorResetter('email'),
     onBlur: () => this.emailAddressManager('validate', value),
@@ -79,7 +65,7 @@ export function passwordManager(aspect, value) {
     type: 'password',
     controlled: false,
     autoComplete: 'new-password',
-    classNames: { container: 'form-input text'},
+    classNames: { container: 'input-container text'},
     label: this.labelProvider(input.icon, input.label),
     onFocus: () => this.errorResetter('password'),
     onBlur: () => this.passwordManager('validate', value),

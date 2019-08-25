@@ -4,7 +4,7 @@ export function verificationManager(aspect, value) {
   return managerAgent(aspect, {
     id: 'user-create-email-verification',
     controlled: false,
-    classNames: { container: 'form-input text'},
+    classNames: { container: 'input-container text'},
     label: this.languageHandler('Kod weryfikacyjny', 'Verification Code'),
     onChange: () => this.props.changeCreate({ verification: { polish: '', english: '' }}),
     onBlur: () => this.verificationManager('validate', value),

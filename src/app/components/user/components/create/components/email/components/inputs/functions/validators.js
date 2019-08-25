@@ -6,12 +6,6 @@ export function businesstNameValidator(value) {
   return false
 }
 
-export function taxIdentificationValidator(value) {
-  if (verifiers.taxIdentificationVerifier(value)) return true
-  this.errorSetter('taxIdentification')
-  return false
-}
-
 export function phoneValidator(value) {
   if (verifiers.phoneVerifier(value)) return true
   this.errorSetter('phone')

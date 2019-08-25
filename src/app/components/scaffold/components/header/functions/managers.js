@@ -4,7 +4,7 @@ import { managerAgent } from 'managed-inputs'
 export function addAnnouncementManager(action) {
   return managerAgent(action, {
     classNames: { container: 'link' },
-    label: this.labelProvider('fas fa-plus', { polish: 'Dodaj nieodpłatne ogłoszenie', english: 'Add gratuitous announcement'}),
+    label: this.labelProvider('fas fa-plus', { polish: 'Dodaj nieodpłatne ogłoszenie', english: 'Add unpaid announcement'}),
     onClick: () => {
       this.changeRoute(null, 'addAnnouncement')
       this.props.changeControl({ showLinks: false })
@@ -37,7 +37,7 @@ export function signInManager(action) {
 export function myAccountManager(action) {
   return managerAgent(action, {
     classNames: { container: 'link' },
-    label: this.labelProvider('far fa-user-circle', { polish: 'Moje konto', english: 'My account'}),
+    label: this.labelProvider('far fa-user-circle', { polish: 'Konto', english: 'Account'}),
     onClick: () => {
       this.changeRoute(null, 'myAccount')
       this.props.changeControl({ showLinks: false })

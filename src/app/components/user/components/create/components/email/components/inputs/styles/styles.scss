@@ -1,22 +1,12 @@
-@import '../../../../../../../../../styles/themes.scss';
-
 .user-create-email-inputs-container {
   max-width: 360px;
-  // width
-  .section-header {
-    @extend %section-header;
-    margin-bottom: 16px;
-    &.account-data {
-      margin-top: 12px;
+  .input-container {
+    &.phone-country-code {
+      position: absolute!important;
+      width: 84px;
     }
-  }
-  .fas, .far {
-    margin-right: 8px;
-    color: #2471A3;
-  }
-  .error {
-    .fas, .far {
-      color: red;
+    &.phone-body {
+      margin-left: 96px;
     }
   }
 }

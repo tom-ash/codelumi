@@ -4,7 +4,7 @@ import { consents } from '../constants/consents.js'
 export function termsOfServiceManager(aspect, value) {
   return managerAgent(aspect, {
     id: 'user-create-consents-terms',
-    classNames: { container: 'form-input checkbox' },
+    classNames: { container: 'input-container checkbox' },
     checked: this.props.terms,
     label: this.languageObjectHandler(consents.terms),
     onClick: () => {
@@ -18,7 +18,7 @@ export function termsOfServiceManager(aspect, value) {
 export function privacyPolicyManager(aspect, value) {
   return managerAgent(aspect, {
     id: 'user-create-consents-privacy',
-    classNames: { container: 'form-input checkbox' },
+    classNames: { container: 'input-container checkbox' },
     checked: this.props.privacy,
     label: this.languageObjectHandler(consents.privacy),
     onClick: () => {

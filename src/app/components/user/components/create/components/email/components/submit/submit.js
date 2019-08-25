@@ -14,7 +14,6 @@ class UserCreateSubmit extends React.Component {
     this.prepareUserAccount = prepareUserAccount.bind(this)
     this.languageHandler = languageHandler.bind(this)
     this.businesstNameValidator = inputValidators.businesstNameValidator.bind(this)
-    this.taxIdentificationValidator = inputValidators.taxIdentificationValidator.bind(this)
     this.phoneValidator = inputValidators.phoneValidator.bind(this)
     this.emailValidator = inputValidators.emailValidator.bind(this)
     this.passwordValidator = inputValidators.passwordValidator.bind(this)

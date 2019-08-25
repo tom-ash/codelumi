@@ -2,10 +2,13 @@
 
 %container {
   position: relative;
-  margin: 128px auto 64px;
+  margin: 100px auto 36px;
   background: #FDFEFE;
   border-radius: 3px;
   padding: 48px;
+  @media only screen and (max-width: $breakpoint-phone-large-max) {
+    margin: 76px auto 12px;
+  }
 }
 
 %wide-container {

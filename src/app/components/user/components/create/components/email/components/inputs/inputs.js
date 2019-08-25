@@ -16,7 +16,6 @@ class UserCreateEmailInputs extends React.Component {
   constructor(props) {
     super(props)
     this.businessNameManager = managers.businessNameManager.bind(this)
-    this.taxIdentificationNumberManager = managers.taxIdentificationNumberManager.bind(this)
     this.areaCodeManager = managers.areaCodeManager.bind(this)
     this.phoneNumberManager = managers.phoneNumberManager.bind(this)
     this.emailAddressManager = managers.emailAddressManager.bind(this)
@@ -26,7 +25,6 @@ class UserCreateEmailInputs extends React.Component {
     this.errorSetter = errorSetter.bind(this)
     this.errorResetter = errorResetter.bind(this)
     this.businesstNameValidator = validators.businesstNameValidator.bind(this)
-    this.taxIdentificationValidator = validators.taxIdentificationValidator.bind(this)
     this.phoneValidator = validators.phoneValidator.bind(this)
     this.emailValidator = validators.emailValidator.bind(this)
     this.passwordValidator = validators.passwordValidator.bind(this)
@@ -36,21 +34,9 @@ class UserCreateEmailInputs extends React.Component {
   render() {
     return (
       <div className='user-create-email-inputs-container'>
-        <h3 className='section-header'>
-          <i className='fas fa-business-time' /> {this.languageHandler('Dane Ogłoszeniodawcy', 'Announcer Data')}
-        </h3>
         <ManagedText manager = {this.businessNameManager}/>
-        {/* <ManagedText manager = {this.taxIdentificationNumberManager}/> */}
-        <div style={{ float: 'left', width: '30%'}}>
-          <ManagedSelect manager={this.areaCodeManager}/>
-        </div>
-        <div style={{ float: 'left', width: '70%', paddingLeft: 12}}>
-          <ManagedText manager={this.phoneNumberManager}/>
-        </div>
-        <div className='float-clear'/>
-        <h3 className='section-header account-data'>
-          <i className='fas fa-user' /> {this.languageHandler('Dane konta', 'Account data')}
-        </h3>
+        <ManagedSelect manager={this.areaCodeManager}/>
+        <ManagedText manager={this.phoneNumberManager}/>
         <ManagedText manager = {this.emailAddressManager}/>
         <ManagedText manager = {this.passwordManager}/>
       </div>

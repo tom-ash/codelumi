@@ -1,18 +1,14 @@
 @import '../../../../../../../styles/themes.scss';
+@import '../../../../../../../styles/colors';
 
 #user-create-consents-container {
-  margin-bottom: 24px;
   max-width: 360px;
+  margin-bottom: 24px;
   .checkbox-container {
-    @extend %checkbox-container;
-    .form-input.checkbox {
-      .input {
-        margin-top: 3px;
-      }
-      .label {
-        line-height: 20px;
-      }
-    }
+    position: relative;
+    border: 1px solid $primary-element-color;
+    padding: 12px;
+    border-radius: 2.5px;
     &.with-error {
       border-right: 3px solid $primary-error-color;
     }

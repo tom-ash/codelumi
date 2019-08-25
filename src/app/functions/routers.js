@@ -54,8 +54,8 @@ export function changeRoute(e, route, parameter) {
         routeSetter({
           polishPlace: 'Dodaj ogłoszenie',
           englishPlace: 'Add announcement',
-          polishPath: '/dodajogloszenie',
-          englishPath:'/addannouncement'
+          polishPath: '/dodaj_ogloszenie',
+          englishPath:'/add_announcement'
         })
         break;
       case 'signUp':
@@ -76,8 +76,8 @@ export function changeRoute(e, route, parameter) {
         break;
       case 'myAccount':
         routeSetter({
-          polishPlace: 'Moje konto',
-          englishPlace: 'My Account',
+          polishPlace: 'Konto',
+          englishPlace: 'Account',
           polishPath: '/mojekonto',
           englishPath:'/myaccount'
         })
@@ -192,8 +192,8 @@ const userEditPaths =          ['/signin',
                                 '/phone_number_verification',
                                 '/myaccount/card',
                                 '/mojekonto/wizytowka']
-const announcementCreatePaths = ['/addannouncement',
-                                 '/dodajogloszenie']
+const announcementCreatePaths = ['/add_announcement',
+                                 '/dodaj_ogloszenie']
 const announcementIndexPaths = ['/',
                                 '/search_results',
                                 '/wyniki_wyszukiwania',

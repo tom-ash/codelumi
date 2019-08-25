@@ -20,7 +20,6 @@ export function prepareUserAccount() {
 function prepareUserObject() {
   let userObject = {
     businessName: document.getElementById('user-create-email-business-name').value,
-    // taxIdentification: document.getElementById('user-create-email-tax-identification-number').value,
     countryCode: document.getElementById('user-create-email-area-code').value,
     phone: document.getElementById('user-create-email-phone-number').value,
     email: document.getElementById('user-create-email-email-address').value,
@@ -34,7 +33,6 @@ function prepareUserObject() {
 function validateUserObject(userObject) {
   const validationArray = [
     this.businesstNameValidator(userObject.businessName),
-    // this.taxIdentificationValidator(userObject.taxIdentification),
     this.phoneValidator(userObject.phone),
     this.emailValidator(userObject.email),
     this.passwordValidator(userObject.password),
