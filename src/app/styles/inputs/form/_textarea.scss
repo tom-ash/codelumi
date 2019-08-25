@@ -1,7 +1,6 @@
 %textarea {
   position: relative;
   height: 180px;
-  width: 670px;
   margin-top: 36px;
   .input {
     width: 100%;
@@ -20,7 +19,7 @@
   }
   .counter {
     position: absolute;
-    color: gray;
+    color: transparentize($form-input-label-color, .3);
     top: -20px;
     right: 0px;
     font-size: 14px;

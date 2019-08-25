@@ -1,69 +1,25 @@
 @import '../../../../../../../styles/themes.scss';
 
 #announcement-create-primary {
+  max-width: 360px;
   padding-top: 0!important;
-    width: 360px;
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
-      width: 100%;
-    }
-    .primary-input {
-      .input {
-        height: 40px;
-      }
-      &.rent {
-        width: 174px;
-        float: left;
-        @media only screen and (max-width: $breakpoint-phone-large-max) {
-          width: 100%;
-        }
-        &.amount {
-          margin-left: 12px;
-          @media only screen and (max-width: $breakpoint-phone-large-max) {
-            margin-left: 0;
-          }
-        }
-      }
-    }
-  .availability-date {
-    width: 114.33px;
-    float: left;
-    margin-right: 12px;
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
-      width: 100%;
-    }
-  }
   .calendar {
+    position: relative;
     .react-calendar {
-      z-index: 3;
+      z-index: 2;
       position: absolute;
-      width: 360px;
-      @media only screen and (max-width: $breakpoint-phone-large-max) {
-        width: 100%;
+      width: 102%!important;
+      max-width: 102%!important;
+      top: 38px;
+      left: -1%;
+      border: none;
+      border-radius: 2.5px;
+      box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+                  0px 3px 8px 3px rgba(0, 0, 0, 0.14),
+                  0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+      .react-calendar__navigation button {
+        font-size: 16px;
       }
     }
-  }
-  .date {
-    .primary-input {
-      width: 174px;
-      float: left;
-      &.date {
-        margin-left: 12px;
-        @media only screen and (max-width: $breakpoint-phone-large-max) {
-          margin-left: 0;
-        }
-      }
-      @media only screen and (max-width: $breakpoint-phone-large-max) {
-        width: 100%;
-      }
-    }
-  }
-  .date-select {
-    margin-bottom: 12px;
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
-      margin: 0;
-    }
-  }
-  .fas, .far {
-    width: 24px;
   }
 }

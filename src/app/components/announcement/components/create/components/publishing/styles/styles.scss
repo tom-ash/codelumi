@@ -1,11 +1,14 @@
 @import '../../../../../../../styles/themes.scss';
-@import '../../../../../../../styles/inputs/templates/button';
 
 #announcement-create-publishing {
-  .button {
-    @extend %button;
-    .input {
+  .form-input {
+    &.button {
+      width: 240px;
       height: 54px;
+      margin: 0 auto;
+      .input {
+        font-size: 16px;
+      }
     }
   }
 }

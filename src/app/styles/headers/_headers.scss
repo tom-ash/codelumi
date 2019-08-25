@@ -1,24 +1,20 @@
 %page-header {
-  font-size: 24px;
-  color: $page-header-color;
-  margin: 0 0 48px 0;
-
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
-    font-size: 20px;
-    text-align: center;
-    margin: 18px 0 32px 0;
-  }
-
+  position: absolute;
+  top: -28px;
+  left: 0;
+  color: #1B4F72;
+  font-size: 16px;
+  font-weight: normal;
   .far, .fas {
-    width: 32px;
+    margin-right: 8px;
   }
 }
 
 %section-header {
-  font-size: 18px;
-  color: $section-header-color;
+  font-size: 16px;
+  color: #2874A6;
   margin: 0 0 18px 0;
   .far, .fas {
-    width: 20px;
+    width: 24px;
   }
 }

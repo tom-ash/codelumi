@@ -3,7 +3,7 @@ import { scrollToElement } from '../../../../../../../functions/scroll-to-elemen
 
 export function buttonManager(action) {
   return managerAgent(action, {
-    classNames: { container: 'button' },
+    classNames: { container: 'simple-index-input button' },
     label: this.buttonLabelHandler(),
     onClick: () => {
       this.props.changeControl({ searchInitiated: true })

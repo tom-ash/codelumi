@@ -1,42 +1,44 @@
-
-
-// %radio {
-//   &.radio {
-//     margin-bottom: 8px;
-//     float: left;
-//     // border: 1px solid lightgray;
-//     width: 160px;
-//     padding: 12px;
-//     border-radius: 4px;
-//     margin-left: 30px;
-//     &.checked {
-//       // border: 1px solid gray;
-//       background: $button-index-background-color;
-//     }
-//     .input {
-//       float: left;
-//       width: 14px;
-//       height: 14px;
-//       border-radius: 7px;
-//       margin-right: 12px;
-//       cursor: pointer;
-//       border: 1px solid $input-color;
-//       .tick {
-//         width: 8px;
-//         height: 8px;
-//         background: gray;
-//         border-radius: 4px;
-//         margin: 2px;
-//       }
-//     }
-//     .label {
-//       cursor: pointer;
-//       float: left;
-//       color: $input-color;
-//       font-size: 14px;
-//       width: 108px;
-//       text-align: justify;
-//       line-height: 16px;
-//     }
-//   }
-// }
+%radio {
+  &.radio {
+    margin-bottom: 8px;
+    padding: 12px;
+    border-radius: 2.5px;
+    background: #E5E7E9;
+    cursor: pointer;
+    &.checked {
+      background: $button-index-background-color;
+      color: $button-index-color;
+    }
+    .input {
+      float: left;
+      width: 14px;
+      height: 14px;
+      border-radius: 7px;
+      margin-right: 12px;
+      cursor: pointer;
+      border: 2px solid $button-index-color;
+      background: white;
+      .tick {
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        margin: 1px;
+        background: white;
+        &.checked {
+          background: $button-index-background-color;
+        }
+      }
+    }
+    .label {
+      cursor: pointer;
+      float: left;
+      color: $input-color;
+      font-size: 16px;
+      text-align: justify;
+      line-height: 16px;
+      &.checked {
+        color: $button-index-color;
+      }
+    }
+  }
+}

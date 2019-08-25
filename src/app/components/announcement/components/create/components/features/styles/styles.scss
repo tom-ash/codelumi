@@ -1,26 +1,51 @@
 @import '../../../../../../../styles/themes.scss';
 @import '../../../../../../../styles/inputs/form/form';
 
-#announcement-create-features {
-  max-width: 384px;
-  color: $primary-text-color;
-  padding-bottom: 36px;
-  padding-right: 24px;
+#announcement-create-features, #announcement-create-furnishings {
   position: relative;
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
+  max-width: 360px;
+  color: $primary-text-color;
+  padding-right: 24px;
+  .box {
+    float: left;
+    position: relative;
+    border: 1px solid $primary-element-color;
+    background: white;
+    padding: 12px;
+    height: 180px;
+    overflow-y: scroll;
+    border-radius: 2.5px;
+    overflow: -moz-scrollbars-vertical; 
+    overflow-y: scroll;
+    overflow-y: scroll;
     width: 100%;
+    max-width: 360px;
+    .form-input {
+      @extend %form-input;
+      &.checkbox {
+        position: relative;
+        margin-bottom: 8px;
+        .input {
+          position: absolute;
+        }
+        .label {
+          width: auto;
+          margin-left: 28px;
+        }
+      }
+    }
   }
-  .form-input {
-    @extend %form-input;
-    &.checkbox {
-      position: relative;
-      margin-bottom: 8px;
-      .input {
-        position: absolute;
-      }
-      .label {
-        margin-left: 28px;
-      }
+  .scroll {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 20px;
+    margin: auto;
+    line-height: 180px;
+
+    .fa-sort {
+      color: $primary-element-color;
     }
   }
 }

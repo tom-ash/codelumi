@@ -10,10 +10,8 @@
     background: $button-index-background-color;
     color: $button-index-color;
     cursor: pointer;
-
-    // TODO: extract
-    .fa-search {
-      margin-right: 8px;
+    &.hover {
+      background: transparentize($button-index-background-color, 0.2)
     }
   }
 }

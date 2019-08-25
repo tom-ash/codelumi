@@ -9,7 +9,7 @@ const noError = { polish: '', english: '' }
 export function categoryManager(aspect, option) {
   return managerAgent(aspect, {
     id: requiredInputs.category.id,
-    classNames: { container: 'primary-input select' },
+    classNames: { container: 'form-input select' },
     value: this.props.category,
     label: this.labelProvider(inputs.category.icon, inputs.category.all),
     options: [{ value: '', text: '' },
@@ -26,7 +26,7 @@ export function categoryManager(aspect, option) {
 export function districtManager(aspect, option) {
   return managerAgent(aspect, {
     id: requiredInputs.district.id,
-    classNames: { container: 'primary-input select' },
+    classNames: { container: 'form-input select' },
     value: this.props.district,
     label: this.labelProvider(inputs.district.icon, inputs.district.all),
     options: [{ value: '', text: '' }].concat(districts),
@@ -41,7 +41,7 @@ export function districtManager(aspect, option) {
 export function rentCurrencyManager(aspect, option) {
   return managerAgent(aspect, {
     id: requiredInputs.rentCurrency.id,
-    classNames: { container: 'primary-input select rent' },
+    classNames: { container: 'form-input select rent' },
     value: this.props.rentCurrency,
     label: this.labelProvider(inputs.rentCurrency.icon, inputs.rentCurrency.all),
     options: [{ value: '', text: '' },
@@ -59,7 +59,7 @@ export function rentCurrencyManager(aspect, option) {
 export function rentAmountManager(aspect, value, keyCode) {
   return managerAgent(aspect, {
     id: requiredInputs.rentAmount.id,
-    classNames: { container: 'primary-input text rent amount' },
+    classNames: { container: 'form-input text rent amount' },
     value: this.props.rentAmount,
     match: /^\d+$/,
     label: this.labelProvider(inputs.rentHeight.icon, inputs.rentHeight.create),
@@ -74,7 +74,7 @@ export function rentAmountManager(aspect, value, keyCode) {
 export function additionalFeesManager(aspect, option) {
   return managerAgent(aspect, {
     id: requiredInputs.additionalFees.id,
-    classNames: { container: 'primary-input select' },
+    classNames: { container: 'form-input select' },
     value: this.props.additionalFees,
     label: this.labelProvider(inputs.additionalFees.icon, inputs.additionalFees.all),
     options: [{ value: '', text: '' },
@@ -91,7 +91,7 @@ export function additionalFeesManager(aspect, option) {
 export function areaManager(aspect, value) {
   return managerAgent(aspect, {
     id: requiredInputs.area.id,
-    classNames: { container: 'primary-input text' },
+    classNames: { container: 'form-input text' },
     value: this.props.area,
     match: /^\d+$/,
     label: this.labelProvider(inputs.area.icon, inputs.area.create),
@@ -107,7 +107,7 @@ export function areaManager(aspect, value) {
 export function roomsManager(aspect, option) {
   return managerAgent(aspect, {
     id: requiredInputs.rooms.id,
-    classNames: { container: 'primary-input select' },
+    classNames: { container: 'form-input select' },
     value: this.props.rooms,
     label: this.labelProvider(inputs.rooms.icon, inputs.rooms.create),
     options: numberOptionsProvider(99),
@@ -122,7 +122,7 @@ export function roomsManager(aspect, option) {
 export function floorManager(aspect, option) {
   return managerAgent(aspect, {
     id: requiredInputs.floor.id,
-    classNames: { container: 'primary-input select' },
+    classNames: { container: 'form-input select' },
     value: this.props.floor,
     label: this.labelProvider(inputs.floor.icon, inputs.floor.create),
     options: numberOptionsProvider(99),
@@ -137,7 +137,7 @@ export function floorManager(aspect, option) {
 export function totalFloorsManager(aspect, option) {
   return managerAgent(aspect, {
     id: requiredInputs.totalFloors.id,
-    classNames: { container: 'primary-input select' },
+    classNames: { container: 'form-input select' },
     value: this.props.totalFloors,
     label: this.labelProvider(inputs.totalFloors.icon, inputs.totalFloors.create),
     options: numberOptionsProvider(99),
@@ -151,7 +151,7 @@ export function totalFloorsManager(aspect, option) {
 
 export function availabilityDateSelectManager(aspect, option) {
   return managerAgent(aspect, {
-    classNames: { container: 'primary-input select date-select' },
+    classNames: { container: 'form-input select' },
     value: this.props.availabilityDateSelect,
     label: this.labelProvider(inputs.availabilityDate.icon, inputs.availabilityDate.all),
     options: [{ value: '', text: '' },
@@ -167,7 +167,7 @@ export function availabilityDateSelectManager(aspect, option) {
 
 export function availableDateManager(aspect, option) {
   return managerAgent(aspect, {
-    classNames: { container: 'primary-input text date' },
+    classNames: { container: 'form-input select' },
     value: this.props.availabilityDate ? this.props.availabilityDate : '',
     options: [{ value: '', text: '' },  { value: this.props.availabilityDate, text: this.props.availabilityDate }],
     label: this.labelProvider(inputs.availabilityDate.icon, {

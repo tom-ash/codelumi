@@ -1,7 +1,7 @@
 export const inputs = {
   businessName: {
     icon: 'fas fa-ellipsis-h',
-    label: { polish: 'Nazwa (firma) ogłoszeniodawcy', english: 'Announcer Business Name' }
+    label: { polish: 'Nazwa (firma) Ogłoszeniodawcy', english: 'Announcer Business Name' }
   },
   taxIdentificationNumber: {
     icon: 'fas fa-ellipsis-h',

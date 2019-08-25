@@ -1,111 +1,18 @@
 @import '../../../../../styles/themes';
+@import '../../../../../styles/inputs/form/form';
+@import './inputs';
+@import './headers';
+@import '../../../../../styles/monits/blue-monit';
 
 #announcement-create {
   @extend %medium-container;
-  position: relative;
-  .page-header {
-    @extend %page-header;
+  @extend %headers;
+  @extend %inputs;
+  .monit {
+    @extend %blue-monit;
     margin-bottom: 24px;
   }
-  .section-header {
-    @extend %section-header;
-    padding-top: 12px;
-  }
-  .primary {
-    .section-header {
-      border: none;
-    }
-  }
-  .monit {
-    width: 360px;
-    border: 1px solid blue;
-    border-radius: 2.5px;
-    text-align: justify;
-    padding: 8px;
-    font-size: 14px;
-    margin: 0 0 24px 0;
-    line-height: 1.2;
-    u {
-      color: $page-header-color;
-      cursor: pointer;
-    }
-  }
-  .error {
-    .fas, .far {
-      color: red;
-    }
-  }
-
-
-  .primary-input {
-    &.checkbox {
-      margin-bottom: 8px;
-      .input {
-        cursor: pointer;
-        float: left;
-        width: 16px;
-        height: 16px;
-        margin-right: 12px;
-        cursor: pointer;
-        border: 1px solid $input-color;
-        border-radius: 2.5px;
-        &.checked {
-          // border: 2px solid $input-color;
-        }
-        &.hover {
-          border: 1px solid black;
-        }
-        .tick {
-          transform: rotate(45deg);
-          width: 6px;
-          height: 10px;
-          margin-left: 4px;
-          margin-top: 1px;
-          border-bottom: 2px solid $input-color;
-          border-right: 2px solid $input-color;
-        }
-      }
-      .label {
-        cursor: pointer;
-        float: left;
-        color: $input-color;
-        font-size: 16px;
-        line-height: 16px;
-        text-align: justify;
-        &.focus {
-          color: black;
-        }
-        &.hover {
-          color: black;
-        }
-        &.checked {
-          font-weight: bold;
-        }
-      }
-    }
-  }
-  .box {
-    float: left;
-    position: relative;
-    border: 1px solid gray;
-    background: white;
-    padding: 12px;
-    height: 180px;
-    overflow-y: scroll;
-    border-radius: 2.5px;
-    overflow: -moz-scrollbars-vertical; 
-    overflow-y: scroll;
-    overflow-y: scroll;
-    width: 100%;
-    max-width: 360px;
-  }
-  .scroll {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    font-size: 20px;
-    margin: auto;
-    line-height: 180px;
+  .section {
+    margin-bottom: 56px;
   }
 }

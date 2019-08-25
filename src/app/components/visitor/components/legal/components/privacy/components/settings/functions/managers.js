@@ -4,7 +4,7 @@ import { saveCookie } from '../../../../cookies/functions/save'
 export function additionalFunctionsManager(aspect, value) {
   return managerAgent(aspect, {
     name: 'additional-functions',
-    classNames: { container: 'primary-input radio'},
+    classNames: { container: 'input-container radio'},
     checked: this.props.consents.personalDataProcessing.additionalFunctions,
     radios: [
       { value: 'true', label: 'Zgadzam się' },
@@ -23,7 +23,7 @@ export function additionalFunctionsManager(aspect, value) {
 export function statisticsAndMarketingManager(aspect, value) {
   return managerAgent(aspect, {
     name: 'statistics-marketing',
-    classNames: { container: 'primary-input radio'},
+    classNames: { container: 'input-container radio'},
     checked: this.props.consents.personalDataProcessing.statisticsAndMarketing,
     radios: [
       { value: 'true', label: 'Zgadzam się' },

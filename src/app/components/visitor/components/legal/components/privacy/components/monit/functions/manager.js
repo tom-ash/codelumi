@@ -4,7 +4,7 @@ import { saveCookie } from '../../../../cookies/functions/save'
 export function agreeManager(action) {
   return managerAgent(action, {
     classNames: {
-      container: 'primary-input button agree'
+      container: 'form-input button agree'
     },
     label: this.languageHandler('Zgadzam się', 'I agree'),
     onClick: () => {
@@ -20,7 +20,7 @@ export function agreeManager(action) {
 
 export function settingsManager(action) {
   return managerAgent(action, {
-    classNames: { container: 'primary-input button settings' },
+    classNames: { container: 'form-input button settings' },
     label: this.languageHandler('Ustawienia', 'Settings'),
     onClick: () => this.changeRoute(null, 'privacySettings')
   })

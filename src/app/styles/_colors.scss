@@ -1,21 +1,22 @@
 
+$primary-element-color: #34495E;
+$primary-text-color: #2E4053;
+$primary-text-transparentized-color: transparentize($primary-text-color, .3);
+$primary-icon-color: #2874A6;
+$primary-error-color: #C0392B;
 
+$form-input-hover-color: #34495E;
+$form-input-border-color: #34495E;
+$form-input-border-hover-color: #34495E;
+$form-input-label-color: $primary-text-color;
+$form-input-label-hover-color: $form-input-label-color;
+$form-input-label-focus-color: $form-input-label-color;
+$form-input-label-value-color: $form-input-label-color;
+$form-input-error-color: $primary-error-color;
+$form-input-icon-color: $primary-icon-color;
 
-
-
-$element-primary-color: #34495E;
-$element-secondary-color: blue;
-
-$text-primary-color: #2E4053;
-$text-transparentized-color: transparentize($text-primary-color, .3);
-
-
-$icon-primary-color: #2874A6;
-
-
-
-
-
+$blue-monit-background-color: #2E86C1;
+$blue-monit-text-color: white;
 
 
 
@@ -32,13 +33,10 @@ $icon-primary-color: #2874A6;
 
 
 $app-background-color: #F0F3F4;
-$primary-text-color: #424949;
 $primary-text-color-hover: #7B7D7D;
-$color-error: #C0392B;
+
 $page-header-color: #2E86C1;
 $section-header-color: #2471A3;
-
-
 $theme-primary-color: #424949;
 $theme-primary-color-inverted: #FBFCFC;
 $theme-primary-color-inverted-hover: #D6EAF8;
@@ -49,17 +47,12 @@ $primary-theme-color: #1F618D;
 $hover-color: gray;
 $focus-color: gray;
 $value-color: #7DCEA0;
-$color-error: #C0392B;
+$primary-error-color: #C0392B;
 $input-color: #626567;
 $input-border-color: #979A9A;
 $input-hover-border-color: $hover-color;
 $input-focus-border-color: $focus-color;
 $input-value-border-color: $value-color;
-$input-error-border-color: $color-error;
-$label-color: #5F6A6A;
-$color-label-hover: $hover-color;
-$color-label-focus: $focus-color;
-$label-value-color: $value-color;
-$label-error-color: $color-error;
+$input-error-border-color: $primary-error-color;
 $button-index-background-color: #3498DB;
 $button-index-color: #FBFCFC;

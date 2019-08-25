@@ -28,7 +28,7 @@ export const monits = {
     english: 'The phone number has been verified.'
   },
   already: {
-    polish: 'Numer telefonu jest juz zweryfiowany.',
+    polish: 'Numer telefonu jest już zweryfiowany.',
     english: 'The phone number is already verified.'
   }
 }

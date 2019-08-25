@@ -5,7 +5,7 @@ export function verificationManager(aspect, value) {
   return managerAgent(aspect, {
     id: 'user-edit-phone-verification-code',
     controlled: false,
-    classNames: { container: 'primary-input text'},
+    classNames: { container: 'form-input text'},
     label: this.languageHandler('kod weryfikacyjny', 'verification code'),
     onFocus: () => this.props.changeErrors({ phoneVerification: noError }),
     onBlur: () => this.verificationManager('validate', value),
@@ -22,7 +22,7 @@ export function verificationManager(aspect, value) {
 
 export function buttonManager(aspect) {
   return managerAgent(aspect, {
-    classNames: { container: 'primary-input button'},
+    classNames: { container: 'form-input button'},
     label: this.languageHandler('Dalej', 'Next'),
     onClick: () => this.sendVerification()
   })

@@ -51,22 +51,22 @@ class AnnouncementCreatePrimary extends React.Component {
           <ManagedSelect manager={this.totalFloorsManager}/>
           <div className={this.props.availabilityDateSelect == 'date' ? 'date' : ''}>
           <ManagedSelect manager={this.availabilityDateSelectManager} />
-          {
-          this.props.availabilityDateSelect == 'date' &&
-          <ManagedSelect manager={this.availableDateManager}/>
-          }
-          <div className='float-clear' />
           </div>
           <div
-          style={{ display: this.props.availabilityDateFocus ? 'block' : 'none' }}
-          className='calendar'>          
-            <Calendar 
-            onChange = {(date) => {
-              console.log(date)
-              this.props.changeInputs({ availabilityDate: parseDate(date) })
-              this.props.changeControl({ availabilityDateFocus: false })
-            }}
-            locale={this.props.language == 'polish' ? 'pl' : 'en'}/>
+          className='calendar'>       
+            {
+            this.props.availabilityDateSelect == 'date' &&
+            <ManagedSelect manager={this.availableDateManager}/>
+            }
+            <div
+            style={{ display: this.props.availabilityDateFocus ? 'block' : 'none' }}>
+              <Calendar 
+              onChange = {(date) => {
+                this.props.changeInputs({ availabilityDate: parseDate(date) })
+                this.props.changeControl({ availabilityDateFocus: false })
+              }}
+              locale={this.props.language == 'polish' ? 'pl' : 'en'}/>
+            </div>
           </div>
       </div>
     )

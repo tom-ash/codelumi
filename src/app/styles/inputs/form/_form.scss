@@ -4,7 +4,6 @@
 @import './checkbox';
 @import './textarea';
 @import './button';
-@import './colors';
 
 %form-input {
   &.text, &.select, &.textarea {
@@ -13,7 +12,7 @@
     .input {
       width: 100%;
       padding-left: 8px;
-      border: 1px solid $color-border;
+      border: 1px solid $form-input-border-color;
       border-radius: 2.5px;
       background: $color-background;
       color: $input-color;
@@ -22,28 +21,29 @@
         background: #EBF5FB;
       }
       &.error {
-        border-right: 2.5px solid $color-error;
-        color: $color-error!important;
+        border-right: 2.5px solid $primary-error-color;
+        color: $primary-error-color!important;
       }
     }
     .label {
       display: inline-block;
       position: absolute;
       background: $color-background;
-      color: $label-color;
+      color: $form-input-label-color;
       cursor: pointer;
+      background: none;
       &.hover {
-        color: $color-label-hover;
+        color: $form-input-label-hover-color;
       }
       &.focus {
-        color: $color-label-focus;
+        color: $form-input-label-focus-color;
       }
       &.error {
-        color: $color-error!important;
+        color: $primary-error-color!important;
       }
-    }
-    .error {
-      color: $color-error!important;
+      &.focus, &.value {
+        background: white;
+      }
     }
     .error-container {
       padding-top: 4px;
@@ -64,7 +64,7 @@
       left: 8px;
       padding: 0 4px 0 4px;
       font-size: 14px;
-      transition: 0.24s;
+      transition: 0.18s;
       &.value, &.focus {
         top: -5px;
         left: 8px;
@@ -73,22 +73,29 @@
     }
     .error-container {
       opacity: 0;
-      transition: 0.24s;
-      color: $color-error;
+      transition: 0.18s;
+      color: $primary-error-color;
       &.error {
         opacity: 1;
+        color: $primary-error-color;
       }
     }
   }
   &.select {
     @extend %select;
   }
+  &.textarea {
+    @extend %textarea;
+  }
+  &.radio {
+    @extend %radio;
+  }
   &.checkbox {
     @extend %checkbox;
     .input {
       outline: none;
       background: #D0D3D4;
-      transition: 0.24s;
+      transition: 0.18s;
       &.hover, &.focus {
         background: #909497;
       }
@@ -103,14 +110,33 @@
     .label {
       color: $input-color;
       &.focus {
-        color: $color-hover
+        color: $form-input-hover-color
       }
       &.hover {
-        color: $color-hover
+        color: $form-input-hover-color
       }
     }
   }
   &.button {
     @extend %button;
   }
+  .fas, .far {
+    width: 26px;
+    font-size: 14px;
+    color: $form-input-icon-color;
+    transition: 0.18s;
+  }
+  .focus, .value {
+    .fas, .far {
+      width: 20px;
+      font-size: 12px;
+      transition: 0.18s;
+    }
+  }
+  &.error {
+    .fas, .far {
+      color: $form-input-error-color;
+    }
+  }
+
 }

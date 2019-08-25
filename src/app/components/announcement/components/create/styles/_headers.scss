@@ -1,0 +1,8 @@
+%headers {
+  .page-header {
+    @extend %page-header;
+  }
+  .section-header {
+    @extend %section-header;
+  }
+}

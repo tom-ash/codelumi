@@ -37,7 +37,7 @@ class UserCreateEmailInputs extends React.Component {
     return (
       <div className='user-create-email-inputs-container'>
         <h3 className='section-header'>
-          <i className='fas fa-business-time' /> {this.languageHandler('Dane ogłoszeniodawcy', 'Announcer Data')}
+          <i className='fas fa-business-time' /> {this.languageHandler('Dane Ogłoszeniodawcy', 'Announcer Data')}
         </h3>
         <ManagedText manager = {this.businessNameManager}/>
         {/* <ManagedText manager = {this.taxIdentificationNumberManager}/> */}

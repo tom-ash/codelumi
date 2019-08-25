@@ -1,9 +1,10 @@
 @import '../../../../../../../styles/media-breakpoints';
+@import '../../../../../../../styles/colors';
 
 #announcement-create-pictures {
   .drag-and-drop {
     position: relative;
-    border: 1px solid gray;
+    border: 1px solid $primary-element-color;
     width: 360px;
     height: 54px;
     line-height: 20px;
@@ -41,7 +42,6 @@
     height: 12px;
     margin-bottom: 24px;
   }
-
   .picture {
     position: relative;
     float: left;
@@ -50,9 +50,6 @@
     background-size: 100%;
     margin: 0 35px 24px 0;
     border-radius: 2.5px;
-    // @media only screen and (max-width: $breakpoint-phone-large-max) {
-    //   // width: 90%;
-    // }
     &.last {
       margin-right: 0;
     }
