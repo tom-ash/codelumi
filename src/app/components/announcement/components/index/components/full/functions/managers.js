@@ -1,13 +1,17 @@
 import { managerAgent } from 'managed-inputs'
-import { scrollToElement } from '../../../../../../../functions/scroll-to-element'
+import { scrollToElement } from '../../../../../../../functions/scrollers/scroll-to-element'
+
+const id = 'announcement-index-full-search-button'
 
 export function buttonManager(action) {
   return managerAgent(action, {
+    id: id,
     classNames: { container: 'simple-index-input button' },
     label: this.buttonLabelHandler(),
     onClick: () => {
+      const button = document.getElementById(id)
+      scrollToElement(button, 8, -18)
       this.props.changeControl({ searchInitiated: true })
-      // if (!this.props.changed) return
       this.props.changeControl({ fetch: true, page: 1, searchInitiated: true })
     }
   })
@@ -21,7 +25,8 @@ export function paginationManager(aspect, button) {
     resultAmount: +this.props.amount,
     onClick: () => {
       if (this.props.connecting) return
-      scrollToElement(document.getElementById('announcement-index-full-scroll-anchor'), 256)
+      const scrollButton = document.getElementById(id)
+      scrollToElement(scrollButton, 24)
       window.setTimeout( () => this.props.changeControl({ page: button, fetch: true }), 512)
     }
   })

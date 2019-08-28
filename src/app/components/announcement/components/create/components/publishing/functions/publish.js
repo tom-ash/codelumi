@@ -1,4 +1,4 @@
-import { scrollToElement } from '../../../../../../../functions/scroll-to-element'
+import { scrollToElement } from '../../../../../../../functions/scrollers/scroll-to-element'
 import { requiredInputs, requiredInputsArray } from '../../../constants/required-inputs'
 
 export function publish() {
