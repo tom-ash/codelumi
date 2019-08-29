@@ -10,7 +10,7 @@ export function buttonManager(action) {
     label: this.buttonLabelHandler(),
     onClick: () => {
       const button = document.getElementById(id)
-      scrollToElement(button, 8, -18)
+      scrollToElement(button, 6, -18)
       this.props.changeControl({ searchInitiated: true })
       this.props.changeControl({ fetch: true, page: 1, searchInitiated: true })
     }

@@ -47,7 +47,7 @@ export function myAccountManager(action) {
 
 export function languageManager(action) {
   return managerAgent(action, {
-    classNames: { container: 'button' },
+    classNames: { container: 'button language' },
     label: <span><i className='fas fa-globe'/> {this.languageHandler('EN', 'PL')}</span>,
     onClick: () => {
       const language = this.props.language === 'polish' ? 'english' : 'polish'

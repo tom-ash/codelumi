@@ -1,63 +1,110 @@
 @import '../../../../../../../../../styles/themes';
 @import '../../../../../../../../../styles/media-breakpoints';
-@import '../../../../../../../../../styles/inputs/form/button';
-@import '../../../../../../../../../styles/themes.scss';
+@import '../../../../../../../../../styles/inputs/form/form';
 
 #visitor-privacy-monit {
-  position: fixed;
-  background: rgba(251, 252, 252, 0.8);
-  box-shadow: 0px 0px 12px 0px #424949;
-  right: 0px;
-  left: 0px;
-  margin: 0 auto;
-  border-radius: 2.5px;
-  color: #212F3C;
+  .cover {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparentize($primary-icon-color, $amount: .8)
+  }
   .text-buttons {
-    font-size: 14px;
-    text-align: justify;
-    .text {
-      width: 100%;
-    }
-  }
-  div:nth-child(1) {
-    padding-bottom: 8px; 
-  }
-}
-
-@media only screen and (max-width: $breakpoint-phone-large-max) {
-  #visitor-privacy-monit {
-    width: 96%;
-    top: 76px;
-    bottom: 12px;
+    z-index: 11;
+    position: fixed;
+    background: rgba(251, 252, 252, 0.92);
+    box-shadow: 0px 0px 12px 0px #424949;
+    top: 168px;
+    right: 12px;
+    left: 12px;
+    margin: auto;
+    border-radius: 2.5px;
     padding: 12px;
-    .text-buttons {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      .fas {
-        display: block;
-        text-align: center;
-        font-size: 24px;
-        color: $button-index-background-color;
-        &.fa-cookie {
-          padding: 12px 0 24px;
+    max-width: 480px;
+    .text-container {
+      font-size: 14px;
+      text-align: justify;
+      .text-line {
+        margin-bottom: 12px;
+        .icon {
+          position: absolute;
+          width: 36px;
+          height: 36px;
+          .fas {
+            font-size: 18px;
+            color: $primary-icon-color;
+          }
         }
-        &.fa-user-shield {
-          padding: 36px 0 24px;
+        .text {
+          margin-left: 36px;
+          line-height: 20px;
         }
       }
-      .text {
+    }
+    .buttons {
+      top: 0;
+      right: 0;
+      min-width: 280px;
+      .form-input {
+        @extend %form-input;
+        &.button {
+          float: right;
+          height: 42px;
+          width: 49%;
+          margin: 0 auto;
+          .input {
+            height: 100%;
+            font-size: 16px;
+          }
+          &.agree {
+            margin-left: 2%;
+          }
+          &.settings {
+            .input {
+              background: none;
+              color: #3498DB;
+              border: 2px solid #3498DB;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: $breakpoint-phone-large-max) {
+    .text-buttons {
+      top: 76px;
+      bottom: 12px;
+      .text-container {
         position: absolute;
-        background: transparentize($color: $button-index-color, $amount: 0.24);
-        top: 0;
+        top: 12px;
+        right: 12px;
         bottom: 120px;
-        line-height: 22px;
-        font-size: 16px;
-        border: 2px solid transparentize($color: $button-index-background-color, $amount: .48);
-        border-radius: 2.5px;
+        left: 12px;
         padding: 12px;
+        border: 1px solid $primary-icon-color;
+        border-radius: 2.5px;
         overflow-y: scroll;
-        color: $theme-primary-color;
+      }
+      .buttons {
+        position: absolute;
+        top: auto;
+        right: 12px;
+        left: 12px;
+        bottom: 12px;
+        .form-input {
+          &.button {
+            float: none;
+            width: 100%;
+            &.agree {
+              margin-left: 0;
+              margin-bottom: 12px;
+            }
+          }
+        }
       }
     }
   }

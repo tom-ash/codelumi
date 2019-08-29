@@ -25,18 +25,30 @@ class VisitorPrivacyMonit extends React.Component {
     return (
       <div id='visitor-privacy-monit'>
         <div className='text-buttons'>
-          <div className='text'>
-            <i className='fas fa-cookie'/>
-            <div>
-              {this.languageObjectHandler(this.textsProvider('cookies'))}
+          <div className='text-container'>
+            <div className='text-line'>
+              <div className='icon'>
+                <i className='fas fa-cookie'/>
+              </div>
+              <div className='text'>
+                {this.languageObjectHandler(this.textsProvider('cookies'))}
+              </div>
             </div>
-            <i className='fas fa-user-shield'/> 
-            <div>
-              {this.languageObjectHandler(this.textsProvider('dataProcessing'))}
+            <div className='text-line'>
+              <div className='icon'>
+                <i className='fas fa-user-shield'/> 
+              </div>
+              <div className='text'>
+                {this.languageObjectHandler(this.textsProvider('dataProcessing'))}
+              </div>
             </div>
           </div>
-          <ManagedButton manager={this.agreeManager} />
-          <ManagedButton manager={this.settingsManager} />
+          <div className='buttons'>
+            <ManagedButton manager={this.agreeManager} />
+            <ManagedButton manager={this.settingsManager} />
+            <div className='float-clear' />
+          </div>
+          <div className='float-clear' />
         </div>
       </div>
     )

@@ -8,7 +8,7 @@ export function componentDidMount() {
   this.props.changePath(window.location.pathname)
   window.addEventListener('resize', this.screenSizeHandler, false);
   this.authorizeUserWithTokens()
-  // window.onpopstate = () => {this.popStateRoute()}
+  window.onpopstate = () => this.popStateHandler()
 }
 
 export function componentWillMount() {

@@ -11,6 +11,7 @@ import * as routers from './functions/routers'
 import { authorizeUserWithTokens } from './components/user/components/authorize/components/tokens/functions/adapters.js'
 import './styles/styles.scss'
 import { screenSizeHandler } from './functions/screen-size-handler'
+import { popStateHandler } from './functions/popStateHandler'
 
 class App extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class App extends React.Component {
     this.popStateRoute = routers.popStateRoute.bind(this)
     this.authorizeUserWithTokens = authorizeUserWithTokens.bind(this)
     this.screenSizeHandler = screenSizeHandler.bind(this)
+    this.popStateHandler = popStateHandler.bind(this)
   }
 
   render() {
