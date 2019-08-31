@@ -1,0 +1,17 @@
+%section-header {
+  position: absolute;
+  top: -34px;
+  left: 0;
+  color: #1B4F72;
+  background: rgba(26, 82, 118, 0.8);
+  color: white;
+  padding: 0 8px;
+  font-size: 16px;
+  font-weight: normal;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 2.5px;
+  .fas.fa-bars {
+    width: 24px;
+  }
+}

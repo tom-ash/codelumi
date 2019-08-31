@@ -2,12 +2,8 @@
 
 #visitor-terms-of-service {
   @extend %wide-container;
-  h2 {
-    text-align: center;
-    color: $primary-text-color;
-    font-size: 24px;
-    margin-bottom: 48px;
+  max-width: 960px;
+  .page-header {
+    @extend %page-header;
   }
-
-
 }
