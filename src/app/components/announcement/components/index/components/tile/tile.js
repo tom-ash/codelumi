@@ -79,12 +79,16 @@ class AnnouncementIndexTile extends React.Component {
             <div
             className='arrow left'
             onClick={(e) => this.changePicture(e, 'previous')}>
-            <i className='fas fa-chevron-left' />
+              <div className='cover'>
+                <i className='fas fa-chevron-left' />
+              </div>
             </div>
             <div
             className='arrow right'
             onClick={(e) => this.changePicture(e, 'next')}>
-            <i className='fas fa-chevron-right' />
+              <div className='cover'>
+                <i className='fas fa-chevron-right' />
+              </div>
             </div>
           </div>
           <div className='bottom-data'>
