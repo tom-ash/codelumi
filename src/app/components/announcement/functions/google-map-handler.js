@@ -1,27 +1,34 @@
 export function googleMapHandler(callback, options) {
   if (this.props.loaded) return
-  if (this.props.scripts.googleMaps && window.googleMap) return replaceGoogleMap.call(this, callback)
+  if (this.props.scripts.googleMaps && window.googleMap) return replaceGoogleMap.call(this, callback, options)
   if (!this.props.scripts.googleMaps || window.googleMap) return
   const div = document.getElementById('google-map')
   if (!div) return
-  options = options || {}
-  function initializeMap() {
-    window.googleMap = new google.maps.Map(div, {
-      center: {lat: options.latitude || 52.222, lng: options.longitude || 20.985},
-      zoom: options.zoom || 12.9,
-      mapTypeControl: false,
-      fullscreenControl: false,
-      streetViewControl: false,
-      clickableIcons: false
-    })
-  }
+  const initializeMap = () => window.googleMap = new google.maps.Map(div, setOptions.call(this, options))
   initializeMap()
   if (callback) callback()
 }
 
-export function replaceGoogleMap(callback) {
+export function replaceGoogleMap(callback, options) {
   const googleMapContainer = document.getElementById('google-map-container')
   if (!googleMapContainer) return
-  googleMapContainer.replaceChild(window.googleMap.getDiv(), document.getElementById('google-map'))
+  const map = window.googleMap
+  googleMapContainer.replaceChild(map.getDiv(), document.getElementById('google-map'))
+  map.setOptions(setOptions.call(this, options))
   if (callback) callback()
+}
+
+function setOptions(options) {
+  options = options || {}
+  return {
+    center: {
+      lat: options.latitude || (this.props.isMobile ? 52.26: 52.222),
+      lng: options.longitude || (this.props.isMobile ? 21 : 20.985)
+    },
+    zoom: options.zoom || (this.props.isMobile ? 11.9 : 12.6),
+    mapTypeControl: false,
+    fullscreenControl: false,
+    streetViewControl: false,
+    clickableIcons: false
+  }
 }

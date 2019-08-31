@@ -5,9 +5,11 @@ export function componentDidMount() {
 }
 
 export function componentDidUpdate(prevProps) {
+  const { loaded, latitude: lat, longitude: lng} = this.props
   this.googleMapHandler(() => this.props.changeControl({ loaded: true }))
-  if (this.props.loaded && !prevProps.loaded && this.props.latitude && this.props.longitude) {
-    window.marker = addMarker(window.googleMap, this.props.latitude, this.props.longitude)
+  if (loaded && !prevProps.loaded && lat && lng) {
+    window.marker = addMarker(window.googleMap, lat, lng)
+    window.googleMap.setOptions({ center: { lat, lng }, zoom: 13.6 })
   }
 }
 
