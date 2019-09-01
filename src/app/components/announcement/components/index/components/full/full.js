@@ -22,7 +22,6 @@ import * as lifecycle from './functions/lifecycle'
 import './styles/styles.scss'
 import { compositeManagerProvider, subInputMinManagerProvider, subInputMaxManagerProvider } from '../../functions/managerProviders'
 import { compositeInputProvider } from '../../functions/composite-input-provider'
-
 import { subInputNames } from '../../constants/subInputNames'
 
 class AnnouncementIndexFull extends React.Component {
@@ -87,7 +86,10 @@ class AnnouncementIndexFull extends React.Component {
             {
             this.props.announcements && this.props.announcements.map((announcement, index) => {
               announcement.index = index
-              return <AnnouncementIndexTile index={index} key={`announcement${announcement.id}`}
+              return <AnnouncementIndexTile
+                     index={index}
+                     key={`announcement${announcement.id}`}
+                     selectedAvailabilityDate={this.props.availabilityDate}
                     announcement={announcement} announcements={this.props.announcements}
                     changeAnnouncement={this.props.changeAnnouncement}/>
             })

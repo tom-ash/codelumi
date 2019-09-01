@@ -17,6 +17,7 @@ import { phoneSwitchProvider } from '../../../../functions/phone-switch-provider
 import { togglePhone } from '../../../../functions/toggle-phone'
 import { rentProvider } from './functions/rent-provider'
 import { rentPerSqmCounter } from '../../../../functions/rent-per-sqm-counter'
+import { parseAvailabilityDate } from '../../../../functions/parse-availability-date'
 
 class AnnouncementIndexTile extends React.Component {
   constructor(props) {
@@ -37,6 +38,7 @@ class AnnouncementIndexTile extends React.Component {
     this.togglePhone = togglePhone.bind(this)
     this.rentProvider = rentProvider.bind(this)
     this.rentPerSqmCounter = rentPerSqmCounter.bind(this)
+    this.parseAvailabilityDate = parseAvailabilityDate.bind(this)
   }
   
   render() {
@@ -102,7 +104,7 @@ class AnnouncementIndexTile extends React.Component {
               <i className='fas fa-building'/>{this.props.announcement.total_floors}
             </div>
             <div className='calendar'>
-              <i className='fas fa-calendar-alt'/>{this.props.announcement.availability_date}
+              <i className='fas fa-calendar-alt'/>{this.parseAvailabilityDate(this.props.announcement.availability_date)}
             </div>
             <div className='float-clear' />
           </div>

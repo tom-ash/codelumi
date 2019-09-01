@@ -16,10 +16,11 @@ export function panelProvider() {
         {this.compositeInputProvider('totalFloors')}
         <div className={`composite-input-container availability-date${this.props.availabilityDateActive ? ' active' : ''}`}>
           <ManagedSelect manager={this.availabilityDateManager}/>
-          <div
-          className='sub-inputs-container'
+          <div 
+          className='calendar-container'
           style={{ display: this.props.availabilityDateFocus ? 'block' : 'none' }}>
-            <div onClick={() => this.props.changeControl({availabilityDateActive: false, availabilityDateFocus: false })} className='cover'/>
+            <div 
+            onClick={() => this.props.changeControl({availabilityDateActive: false, availabilityDateFocus: false })} className='cover'/>
             <Calendar
             locale={this.props.language == 'polish' ? 'pl' : 'en'}
             onChange = {(date) => {
