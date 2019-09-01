@@ -45,7 +45,7 @@ class Header extends React.Component {
             <ManagedButton manager={this.languageManager} />
           </div>
           {
-          this.props.screenSize == 'largePhone' &&
+          this.props.screenSize != 'smallPc' && this.props.screenSize != 'largePc' &&
           <div 
           className='links-icon-container'
           onClick={() => this.props.changeControl({ showLinks: !this.props.showLinks })}>

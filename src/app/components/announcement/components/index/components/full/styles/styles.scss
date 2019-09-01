@@ -11,7 +11,10 @@
   h2 { @extend %page-header; }
   h3 { @extend %section-header; }
   .panel-container {
+    background: white;
+    padding: 12px;
     position: relative;
+    border-radius: 2.5px;
     .panel {
       @extend %panel;
     }
@@ -27,10 +30,11 @@
     .button {
       width: 100%;
       margin: 0;
-      
       .input {
         width: 100%;
         height: 40px;
+        border: none;
+        border-radius: 2.5px;
         background: $button-index-background-color;
         color: $button-index-color;
         cursor: pointer;

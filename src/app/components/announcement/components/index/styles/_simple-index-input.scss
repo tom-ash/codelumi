@@ -4,10 +4,10 @@
     position: relative;
     float: left;
     background: none;
-    margin: 0 0 8px 0;
+    margin: 0 0 6px 0;
     cursor: pointer;
     &.category, &.district {
-      width: 349px;
+      width: 339px;
     }
     .icon {
       position: absolute;
@@ -29,7 +29,7 @@
       font-size: 14px;
       font-weight: bold;
       &.hover {
-        background: #E5E7E9;
+        background: #EBF5FB;
       }
     }
     .label {
@@ -44,7 +44,6 @@
         font-size: 12px;
       }
     }
-
     .options {
       @extend %options;
       z-index: 4;

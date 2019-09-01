@@ -4,23 +4,21 @@
   min-width: 400px;
   line-height: 64px;
   transition: 0.24s ease-out;
-  height: 126px;
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
+  @media only screen and (max-width: $breakpoint-tablet-large-max) {
     position: absolute;
     min-width: 0;
     float: none;
     top: 64px;
     left: 0px;
     right: 0px;
-    // width: 360px;
     margin: auto;
     line-height: 42px;
     background: #2E86C1;
+    height: 126px;
     &.hidden {
       visibility: hidden;
       height: 0;
       .link {
-        // display: none!important;
         opacity: 0;
       }
     }
@@ -29,7 +27,7 @@
     float: left;
     margin-right: 24px;
     border: none;
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
+    @media only screen and (max-width: $breakpoint-tablet-large-max) {
       float: none;
       display: block;
       margin-left: 21px;
@@ -43,13 +41,13 @@
       &.hover {
         color: #3498DB;
       }
-      @media only screen and (max-width: $breakpoint-phone-large-max) {
+      @media only screen and (max-width: $breakpoint-tablet-large-max) {
         color: white;
       }
       .fas, .far {
         margin-right: 8px;
         color: #2E86C1;
-        @media only screen and (max-width: $breakpoint-phone-large-max) {
+        @media only screen and (max-width: $breakpoint-tablet-large-max) {
             color: white;
           }
       }
