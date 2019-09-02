@@ -3,5 +3,12 @@ export function componentDidMount() {
 }
 
 export function componentDidUpdate(prevProps) {
-  if (prevProps.fetched && !this.props.fetched) this.getAnnouncements()
+  if (!prevProps.fetch && this.props.fetch) this.getAnnouncements()
+}
+
+export function componentWillUnmount() {
+  const { resetControl, resetInputs, resetData } = this.props
+  resetControl()
+  resetInputs()
+  resetData()
 }

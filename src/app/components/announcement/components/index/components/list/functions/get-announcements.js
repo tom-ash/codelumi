@@ -3,6 +3,7 @@ import { getTokens } from '../../../../../../user/components/authorize/component
 
 export function getAnnouncements(afterDestroy) {
   if (this.props.connecting && !afterDestroy) return
+  if (!this.props.fetch) return
   this.props.changeControl({ connecting: true })
   this.props.changeData({ announcements: [] })
   const [UST, UAT] = getTokens()
@@ -24,7 +25,7 @@ export function getAnnouncements(afterDestroy) {
       announcement.pictureIndex = 0
       return announcement
     })
-    this.props.changeControl({ fetched: true, connecting: false })
+    this.props.changeControl({ fetch: false, connecting: false })
     this.props.changeData({ amount: jsonResponse.amount, announcements: announcements })
   })
 }

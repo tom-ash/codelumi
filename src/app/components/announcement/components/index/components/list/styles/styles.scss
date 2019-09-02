@@ -33,6 +33,17 @@
   .list-pagination {
     @extend %list-pagination;
   }
+  .announcements-amount {
+    margin-top: 24px;
+    background: #D7DBDD;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 2.5px;
+    color: #34495E;
+  }
+  .pagination-container {
+    min-height: 36px;
+  }
   .announcements {
     min-height: 480px;
     text-align: left;

@@ -23,12 +23,7 @@ class AnnouncementIndexList extends React.Component {
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
-    // this.shouldComponentUpdate = lifecycle.shouldComponentUpdate
-    // this.componentDidUpdate = lifecycle.componentDidUpdate
-    // this.getAnnouncements = getAnnouncements.bind(this)
-    // this.buildRequestParameters = buildRequestParameters.bind(this)
-    // this.readUrlParameters = readUrlParameters.bind(this)
-    // this.paginationManager = paginationManager.bind(this)
+    this.componentWillUnmount = lifecycle.componentWillUnmount
     this.getAnnouncements = getAnnouncements.bind(this)
     this.controlProvider = controlProvider.bind(this)
     this.buttonProvider = buttonProvider.bind(this)
@@ -53,26 +48,32 @@ class AnnouncementIndexList extends React.Component {
           </div>
           <ManagedSelect manager={this.sortManager} />
         </div>
-        <div className='first-pagination'>
+        <div className='announcements-amount'>
+          {this.languageHandler('Znaleziono:', 'Found:')} {this.props.amount}
+        </div>
+        <div className='pagination-container'>
           <ManagedPagination manager={this.paginationManager} />
         </div>
         <div className='announcements'>
           {
-          this.props.announcements && this.props.announcements.map((announcement, index) => {
-            announcement.index = index
-            return <AnnouncementIndexTile
-                   key={`${announcement.id}`}
-                   first={index == 0}
-                   last={index == this.props.announcements.length - 1}
-                   venue='list' announcement={announcement}
-                   announcements={this.props.announcements} index={index}
-                   control={this.controlProvider(announcement, index)}
-                   changeAnnouncement={this.props.changeAnnouncement} />
-          })
+          this.props.announcements && this.props.announcements.map((announcement, index) => (
+          <AnnouncementIndexTile
+          key={`${announcement.id}`}
+          index={index}
+          first={index == 0}
+          last={index == this.props.announcements.length - 1}
+          venue='list'
+          announcement={announcement}
+          announcements={this.props.announcements}
+          control={this.controlProvider(announcement, index)}
+          changeAnnouncement={this.props.changeAnnouncement} />
+          ))
           }
           <div className='float-clear' />
         </div>
-        <ManagedPagination manager={this.paginationManager} />
+        <div className='pagination-container'>
+          <ManagedPagination manager={this.paginationManager} />
+        </div>
       </div>
     )
   }

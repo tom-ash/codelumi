@@ -23,22 +23,6 @@ function parseSwitches() {
   return switchChecbkoxes
 }
 
-export const miniControl = {
-  fetchAmount: true
-}
-export const mapControl = {
-  loaded: false,
-  fetch: false,
-  draw: false,
-  availabilityDateFocus: false,
-  availabilityDateActive: false,
-  rentActive: false,
-  areaActive: false,
-  roomsActive: false,
-  floorActive: false,
-  totalFloorsActive: false,
-}
-
 export const fullControl = {
   connecting: false,
   page: '1',
@@ -56,29 +40,49 @@ export const fullControl = {
   searchInitiated: false
 }
 
-export const listControl = {
-  fetched: false,
-  page: 1
+export const fullInputs = {
+  ...extendedInputs
 }
 
-export const miniInputs = {
-  category: '',
-  district: ''
+export const mapControl = {
+  loaded: false,
+  fetch: false,
+  draw: false,
+  availabilityDateFocus: false,
+  availabilityDateActive: false,
+  rentActive: false,
+  areaActive: false,
+  roomsActive: false,
+  floorActive: false,
+  totalFloorsActive: false,
 }
 
 export const mapInputs = {
   ...extendedInputs
 }
 
-export const fullInputs = {
-  ...extendedInputs
+export const listControl = {
+  fetch: true,
+  page: 1
 }
 
 export const listInputs = {
   switches: parseSwitches(), sort: 'updateasc'
 }
 
-export const miniData = { panelAmount: null }
-export const mapData = { announcements: [], pins: [], tile: {} }
-export const fullData = { panelAmount: null, amount: null, announcements: null }
-export const listData = { amount: null, announcements: null }
+export const mapData = {
+  announcements: [],
+  pins: [],
+  tile: {}
+}
+
+export const fullData = {
+  panelAmount: null,
+  amount: null,
+  announcements: null
+}
+
+export const listData = {
+  amount: null,
+  announcements: null
+}
