@@ -9,6 +9,7 @@ export const mapStateToProps = (store) => {
     sort: inputs.list.sort,
     amount: data.list.amount,
     announcements: data.list.announcements,
+    beingDeleted: control.list.beingDeleted
   }
 }
     

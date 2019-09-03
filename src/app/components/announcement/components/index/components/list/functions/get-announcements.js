@@ -1,9 +1,8 @@
 import { apiUrl } from '../../../../../../../constants/urls'
 import { getTokens } from '../../../../../../user/components/authorize/components/tokens/functions/get-tokens'
 
-export function getAnnouncements(afterDestroy) {
-  if (this.props.connecting && !afterDestroy) return
-  if (!this.props.fetch) return
+export function getAnnouncements() {
+  if (this.props.connecting) return
   this.props.changeControl({ connecting: true })
   this.props.changeData({ announcements: [] })
   const [UST, UAT] = getTokens()

@@ -4,8 +4,8 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import { getAnnouncements } from './functions/get-announcements'
-import { switchesManager, sortManager, paginationManager } from './functions/managers'
-import { ManagedMultipleCheckbox, ManagedSelect, ManagedPagination } from 'managed-inputs'
+import * as managers from './functions/managers'
+import { ManagedMultipleCheckbox, ManagedSelect, ManagedPagination, ManagedButton } from 'managed-inputs'
 import AnnouncementIndexTile from '../tile/tile'
 import { controlProvider } from './functions/control-provider'
 import './styles/styles.scss'
@@ -31,16 +31,34 @@ class AnnouncementIndexList extends React.Component {
     this.activate = activate.bind(this)
     this.destroy = destroy.bind(this)
     this.changeRoute = changeRoute.bind(this)
-    this.switchesManager = switchesManager.bind(this)
+    this.switchesManager = managers.switchesManager.bind(this)
     this.pageHeaderProvider = pageHeaderProvider.bind(this)
     this.sectionHeaderProvider = sectionHeaderProvider.bind(this)
-    this.sortManager = sortManager.bind(this)
-    this.paginationManager = paginationManager.bind(this)
+    this.sortManager = managers.sortManager.bind(this)
+    this.paginationManager = managers.paginationManager.bind(this)
+    this.destroyManager = managers.destroyManager.bind(this)
+    this.cancelDestroyManager = managers.cancelDestroyManager.bind(this)
   }
 
   render() {
     return (
       <div id='announcement-index-list'>
+        {
+        this.props.beingDeleted &&
+        <div className='delete'>
+          <div className='cover' />
+          <div className='monit'>
+            <div className='text'>
+              {
+              this.languageHandler(`Usunięte ogłoszenie nie może być przywrócone. Czy na pewno chcesz usunąć ogłoszenie Nr ${this.props.beingDeleted}. `, `The deleted announcement cannot be restored. Are you sure you want to delete the announcement No. ${this.props.beingDeleted}`)
+              }
+            </div>
+            <ManagedButton manager={this.cancelDestroyManager} />
+            <ManagedButton manager={this.destroyManager} />
+            <div className='float-clear' />
+          </div>
+        </div>
+        }
         {this.pageHeaderProvider('fas fa-list-ol', { polish: 'Dodane ogłoszenia', english: 'Added Announcements' })}
         <div className='panel'>
           <div className='switches'>

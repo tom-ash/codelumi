@@ -23,7 +23,7 @@ export function controlProvider(announcement, index) {
         :
         this.buttonProvider('Aktywuj', 'Activate', announcement, index, this.activate)
         }
-        {this.buttonProvider('Usuń', 'Delete', announcement, index, this.destroy, ' last')}
+        {this.buttonProvider('Usuń', 'Delete', announcement, index, () => this.props.changeControl({ beingDeleted: announcement.id }), ' last')}
         <div className='float-clear' />
       </div>
       <div className='float-clear' />

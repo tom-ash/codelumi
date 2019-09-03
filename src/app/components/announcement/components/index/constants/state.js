@@ -44,6 +44,12 @@ export const fullInputs = {
   ...extendedInputs
 }
 
+export const fullData = {
+  panelAmount: null,
+  amount: null,
+  announcements: null
+}
+
 export const mapControl = {
   loaded: false,
   fetch: false,
@@ -57,29 +63,24 @@ export const mapControl = {
   totalFloorsActive: false,
 }
 
-export const mapInputs = {
-  ...extendedInputs
-}
-
-export const listControl = {
-  fetch: true,
-  page: 1
-}
-
-export const listInputs = {
-  switches: parseSwitches(), sort: 'updateasc'
-}
-
 export const mapData = {
   announcements: [],
   pins: [],
   tile: {}
 }
 
-export const fullData = {
-  panelAmount: null,
-  amount: null,
-  announcements: null
+export const mapInputs = {
+  ...extendedInputs
+}
+
+export const listControl = {
+  fetch: true,
+  page: 1,
+  beingDeleted: null
+}
+
+export const listInputs = {
+  switches: parseSwitches(), sort: 'updateasc'
 }
 
 export const listData = {

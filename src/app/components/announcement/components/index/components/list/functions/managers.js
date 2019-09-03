@@ -46,3 +46,19 @@ export function paginationManager(aspect, button) {
     }
   })
 }
+
+export function destroyManager(action) {
+  return managerAgent(action, {
+    classNames: { container: 'form-input button destroy' },
+    label: this.languageHandler('Tak', 'Yes'),
+    onClick: () => this.destroy(this.props.beingDeleted)
+  })
+}
+
+export function cancelDestroyManager(action) {
+  return managerAgent(action, {
+    classNames: { container: 'form-input button cancel' },
+    label: this.languageHandler('Anuluj', 'Cancel'),
+    onClick: () => this.props.changeControl({ beingDeleted: null })
+  })
+}
