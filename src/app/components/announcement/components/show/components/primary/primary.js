@@ -49,24 +49,24 @@ class AnnouncementCreatePrimary extends React.Component {
                 }
                 {
                 item.stateKey === 'rent' &&
-                `${this.props.rentAmount} ${parseCurrency(this.props.rentCurrency)} ${this.languageHandler('netto', 'net')} + VAT`
+                `${this.props.netRentAmount} ${parseCurrency(this.props.rentCurrency)} ${this.languageHandler('netto', 'net')} + VAT`
                 }
                 {
                 item.stateKey === 'rentGross' &&
                 <span className='gross'>
-                  {this.props.rentAmount * 1.23} {parseCurrency(this.props.rentCurrency)} {this.languageHandler('brutto', 'gross')}
+                  {this.props.grossRentAmount / 100} {parseCurrency(this.props.rentCurrency)} {this.languageHandler('brutto', 'gross')}
                 </span>
                 }
                 {
                 item.stateKey === 'rentNetPerSqm' &&
                 <span className='net'>
-                  {this.rentPerSqmCounter(this.props.rentAmount, this.props.area)} {parseCurrency(this.props.rentCurrency)} {this.languageHandler('netto + VAT', 'net + VAT')}
+                  {this.props.netRentAmountPerSqm / 100} {parseCurrency(this.props.rentCurrency)} {this.languageHandler('netto + VAT', 'net + VAT')}
                 </span>
                 }
                 {
                 item.stateKey === 'rentGrossPerSqm' &&
                 <span className='gross'>
-                  {this.rentPerSqmCounter(this.props.rentAmount * 1.23, this.props.area)} {parseCurrency(this.props.rentCurrency)} {this.languageHandler('brutto', 'gross')}
+                  {this.props.grossRentAmountPerSqm / 100} {parseCurrency(this.props.rentCurrency)} {this.languageHandler('brutto', 'gross')}
                 </span>
                 }
                 {

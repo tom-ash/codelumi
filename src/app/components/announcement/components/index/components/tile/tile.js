@@ -50,7 +50,7 @@ class AnnouncementIndexTile extends React.Component {
         this.props.venue == 'map' &&
         <i className='fas fa-times close' onClick={this.closeTile}/>
         }
-        <div className={`tile-container${this.props.announcement.active ? '' : ' inactive'}`}>
+        <div className={`tile-container${this.props.announcement.status == 1 ? '' : ' inactive'}`}>
           <div className='data'>
             <div className='area'>
               {area} {this.languageHandler('m2', 'sqm')}

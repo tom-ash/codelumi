@@ -1,3 +1,3 @@
-export function rentPerSqmCounter(rentAmount, area) {
-  return Math.round((rentAmount / area) * 100) / 100
+export function rentPerSqmCounter(netRentAmount, area) {
+  return Math.round((netRentAmount / area) * 100) / 100
 }

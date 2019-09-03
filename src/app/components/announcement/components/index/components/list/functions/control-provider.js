@@ -6,7 +6,7 @@ export function controlProvider(announcement, index) {
       <div className='info-pieces'>
         <div className='info'>
           {
-          announcement.active ?
+          announcement.status == 1 ?
           <span><i className='far fa-eye' /> Aktywne</span> :
           <span><i className='far fa-eye-slash' /> Nieaktywne</span>
           }
@@ -25,7 +25,7 @@ export function controlProvider(announcement, index) {
       <div className='buttons'>
         {this.buttonProvider('Edytuj', 'Edit', announcement, index, this.edit)}
         {
-        announcement.active ?
+        announcement.status == 1 ?
         this.buttonProvider('Dezaktywuj', 'De-activate', announcement, index, this.activate)
         :
         this.buttonProvider('Aktywuj', 'Activate', announcement, index, this.activate)

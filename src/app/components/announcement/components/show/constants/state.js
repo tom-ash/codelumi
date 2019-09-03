@@ -9,7 +9,7 @@ export const data = {
   category: null,
   district: null,
   rentCurrency: null,
-  rentAmount: null,
+  netRentAmount: null,
   additionalFees: null,
   area: null,
   rooms: null,

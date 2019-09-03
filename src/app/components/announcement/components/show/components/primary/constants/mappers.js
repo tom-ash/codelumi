@@ -1,10 +1,13 @@
 export const mapStateToProps = (store) => {
   return {
     language: store.app.language,
-    rentCurrency: store.announcement.show.data.rentCurrency,
-    rentAmount: store.announcement.show.data.rentAmount,
-    additionalFees: store.announcement.show.data.additionalFees,
     area: store.announcement.show.data.area,
+    rentCurrency: store.announcement.show.data.rentCurrency,
+    netRentAmount: store.announcement.show.data.netRentAmount,
+    netRentAmountPerSqm: store.announcement.show.data.netRentAmountPerSqm,
+    grossRentAmount: store.announcement.show.data.grossRentAmount,
+    grossRentAmountPerSqm: store.announcement.show.data.grossRentAmountPerSqm,
+    additionalFees: store.announcement.show.data.additionalFees,
     rooms: store.announcement.show.data.rooms,
     floor: store.announcement.show.data.floor,
     totalFloors: store.announcement.show.data.totalFloors,

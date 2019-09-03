@@ -21,7 +21,7 @@ export const requiredInputs = {
       english: 'select rent currency'
     }
   },
-  rentAmount: {
+  netRentAmount: {
     id: 'announcement-create-rent-amount',
     error: {
       polish: 'podaj wysokość czynszu',
@@ -83,7 +83,7 @@ export const requiredInputsArray = [
   'category',
   'district',
   'rentCurrency',
-  'rentAmount',
+  'netRentAmount',
   'additionalFees',
   'area',
   'rooms',

@@ -24,7 +24,7 @@ export function getAnnouncement() {
       category: `${announcement.category}`,
       district: announcement.district,
       rentCurrency: `${announcement.rent_currency}`,
-      rentAmount: announcement.rent_amount,
+      netRentAmount: announcement.net_rent_amount,
       additionalFees: `${announcement.additional_fees}`,
       area: announcement.area,
       rooms: `${announcement.rooms}`,
@@ -34,8 +34,8 @@ export function getAnnouncement() {
       furnishings: parseFurnishings(announcement.furnishings),
       descriptionPolish: announcement.polish_description || '',
       descriptionEnglish: announcement.english_description || '',
-      mapLatitude: announcement.map_latitude / 1000000,
-      mapLongitude: announcement.map_longitude / 1000000
+      mapLatitude: announcement.latitude / 1000000,
+      mapLongitude: announcement.longitude / 1000000
     }
     this.props.changeInputs(appendAvailabilityDate(announcement, announcementInputs))
   })

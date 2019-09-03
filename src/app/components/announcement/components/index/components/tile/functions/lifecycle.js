@@ -2,14 +2,11 @@ import { compareParameters } from '../../../../../../../functions/compare-update
 
 export function componentDidMount() {
   this.fetchPicture()
-  // setTimeout(() => {
-  //   this.fetchPicture()
-  // }, this.props.index * 64);
 }
 
 export function shouldComponentUpdate(nextProps) {
   if (this.props.language !== nextProps.language) return true
-  return compareParameters(this.props.announcement, nextProps.announcement, ['phone', 'pictures', 'pictureIndex', 'active'])
+  return compareParameters(this.props.announcement, nextProps.announcement, ['phone', 'pictures', 'pictureIndex', 'status'])
 }
 
 export function componentDidUpdate(prevProps) {

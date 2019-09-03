@@ -2,7 +2,7 @@ import React from 'react'
 
 export function rentProvider(perSqm, area) {
   const classes = `${perSqm ? ' per-sqm' : 'total'}`
-  let netRentAmount = this.props.announcement.rent_amount
+  let netRentAmount = this.props.announcement.net_rent_amount
   let grossRentAmount = netRentAmount * 1.23
   if (perSqm) netRentAmount = this.rentPerSqmCounter(netRentAmount, area)
   if (perSqm) grossRentAmount = this.rentPerSqmCounter(grossRentAmount, area)

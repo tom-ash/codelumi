@@ -58,16 +58,16 @@ export function rentCurrencyManager(aspect, option) {
 
 export function rentAmountManager(aspect, value, keyCode) {
   return managerAgent(aspect, {
-    id: requiredInputs.rentAmount.id,
+    id: requiredInputs.netRentAmount.id,
     classNames: { container: 'form-input text rent amount' },
-    value: this.props.rentAmount,
+    value: this.props.netRentAmount,
     match: /^\d+$/,
     label: this.labelProvider(inputs.rentHeight.icon, inputs.rentHeight.create),
-    onFocus: () => this.props.changeErrors({ rentAmount: noError }),
-    onChange: () => this.props.changeInputs({ rentAmount: value }),
+    onFocus: () => this.props.changeErrors({ netRentAmount: noError }),
+    onChange: () => this.props.changeInputs({ netRentAmount: value }),
     onBlur: () => this.rentAmountManager('validate'),
-    validate: () => this.handleErrorOnValidate('rentAmount', this.props.rentAmount),
-    error: this.languageObjectHandler(this.props.errors.rentAmount)
+    validate: () => this.handleErrorOnValidate('netRentAmount', this.props.netRentAmount),
+    error: this.languageObjectHandler(this.props.errors.netRentAmount)
   })
 }
 

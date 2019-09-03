@@ -5,10 +5,10 @@ export function activate(announcement, index) {
   if (this.props.connecting) return
   this.props.changeControl({ connecting: true })
   const [UST, UAT] = getTokens()
-  fetch(`${apiUrl}/announcements/${announcement.id}?attribute=active`, {
+  fetch(`${apiUrl}/announcements/${announcement.id}?attribute=status`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json', UST, UAT },
-    body: JSON.stringify({ active: !announcement.active })
+    body: JSON.stringify({ status: announcement.status == 1 ? 2 : 1 })
   })
   .then(response => {
     if (response.ok) {
@@ -21,7 +21,10 @@ export function activate(announcement, index) {
 function deepCloneAnnouncement(announcement, index) {
   const announcements = [ ...this.props.announcements ]
   const copiedAnnouncement = { ...announcement }
-  copiedAnnouncement.active = !announcement.active
+  copiedAnnouncement.status = announcement.status == 1 ? 2 : 1
+
+  console.log(copiedAnnouncement)
+
   announcements[index] = copiedAnnouncement
   return announcements
 }

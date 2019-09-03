@@ -6,7 +6,7 @@ export function publish() {
     category: this.categoryManager('validate', this.props.category),
     district: this.districtManager('validate'),
     rentCurrency: this.rentCurrencyManager('validate'),
-    rentAmount: this.rentAmountManager('validate'),
+    netRentAmount: this.rentAmountManager('validate'),
     additionalFees: this.additionalFeesManager('validate'),
     area: this.areaManager('validate'),
     rooms: this.roomsManager('validate'),

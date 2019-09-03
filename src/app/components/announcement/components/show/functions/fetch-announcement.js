@@ -9,17 +9,18 @@ export function fetchAnnouncement(id) {
     if (response.ok) return response.json()
   })
   .then(jsonResponse => {
+
+    console.log(jsonResponse)
+
     let clientParams = {}
     showClientServerParams.map(param => ( clientParams[param.client] = jsonResponse[param.server] ))
-    clientParams.mapLatitude = jsonResponse.map_latitude / 1000000
-    clientParams.mapLongitude = jsonResponse.map_longitude / 1000000
+    clientParams.mapLatitude = jsonResponse.latitude / 1000000
+    clientParams.mapLongitude = jsonResponse.longitude / 1000000
     clientParams.name = jsonResponse.name
-
     clientParams.features = jsonResponse.features
     clientParams.furnishings = jsonResponse.furnishings
     clientParams.descriptionPolish = jsonResponse.polish_description
     clientParams.descriptionEnglish = jsonResponse.english_description
-
     this.props.changeData(clientParams)
     this.props.changeControl({ mapLoaded: false })
   })
