@@ -80,7 +80,7 @@ export const listControl = {
 }
 
 export const listInputs = {
-  switches: parseSwitches(), sort: 'updateasc'
+  switches: parseSwitches(), sort: 'updatedesc'
 }
 
 export const listData = {

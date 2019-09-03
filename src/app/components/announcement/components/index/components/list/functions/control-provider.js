@@ -5,13 +5,20 @@ export function controlProvider(announcement, index) {
     <div className='control'>
       <div className='info-pieces'>
         <div className='info'>
+          {
+          announcement.active ?
+          <span><i className='far fa-eye' /> Aktywne</span> :
+          <span><i className='far fa-eye-slash' /> Nieaktywne</span>
+          }
+        </div>
+        <div className='info'>
           <i className='fas fa-plus' />{announcement.created_at.slice(0, 10)}
         </div>
         <div className='info'>
           <i className='fas fa-sync-alt' />{announcement.updated_at.slice(0, 10)}
         </div>
         <div className='info'>
-          <i className='far fa-eye' />{announcement.views}
+          <i className='fas fa-users' />{announcement.views}
         </div>
         <div className='float-clear' />
       </div>

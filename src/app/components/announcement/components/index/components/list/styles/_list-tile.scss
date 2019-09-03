@@ -7,6 +7,9 @@
   background: white;
   margin-left: 52px!important;
   margin-bottom: 56px;
+  .inactive {
+    opacity: 0.4;
+  }
   &.last {
     margin-bottom: 0;
   }
@@ -17,6 +20,7 @@
     margin-top: 64px;
     margin-bottom: 240px;
     width: 100%;
+
     &.first {
       margin-top: 52px!important;
     }
@@ -137,7 +141,7 @@
         margin-bottom: 12px;
         font-size: 15px;
         @media only screen and (max-width: $breakpoint-phone-large-max) {
-          line-height: 28px;
+          line-height: 18px;
         }
       }
     }
