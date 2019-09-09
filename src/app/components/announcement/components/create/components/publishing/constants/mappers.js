@@ -1,11 +1,18 @@
 export const mapStateToProps = (store) => {
+  const { language } = store.app
+  const { control, inputs, errors } = store.announcement.create
+  const { editing, connecting, success, publishing } = control
+
+  const { authorized, phoneVerified } = store.user.authorize.data
+
   return {
-    language: store.app.language,
-    authorized: store.user.authorize.data.authorized,
-    phoneVerified: store.user.authorize.data.phoneVerified,
-    editing: store.announcement.create.control.editing,
-    connecting: store.announcement.create.control.connecting,    
-    success: store.announcement.create.control.success,
+    language,
+    authorized,
+    phoneVerified,
+    editing,
+    connecting,    
+    success,
+    publishing,
     id: store.announcement.create.inputs.id,
     category: store.announcement.create.inputs.category,
     district: store.announcement.create.inputs.district,
@@ -27,9 +34,7 @@ export const mapStateToProps = (store) => {
     mapLatitude: store.announcement.create.inputs.mapLatitude,
     mapLongitude: store.announcement.create.inputs.mapLongitude,
     errors: store.announcement.create.errors,
-    publishing: store.announcement.create.control.publishing,
-    userCreating: store.announcement.create.control.userCreating,
-    phoneVerifying: store.announcement.create.control.phoneVerifying
+
   }
 }
     

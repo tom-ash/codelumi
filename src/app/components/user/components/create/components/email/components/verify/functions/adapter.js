@@ -8,24 +8,26 @@ export function verify() {
   fetch(apiUrl + '/user_create_with_email', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', searchToken: this.props.token },
-    body: JSON.stringify({ verificationCode: verificationCode })
+    body: JSON.stringify({ verificationCode })
   })
   .then(response => {
     if (response.status == 201) return response.json()
     throw new Error('SomethingWentWrong')
   })
   .then(jsonResponse => {
+    const { changeAuthorizeData, changeControl} = this.props
+    const { name, phone_verified: phoneVerified } = jsonResponse
     saveTokens.call(this, jsonResponse.UST, jsonResponse.UAT)
-    this.props.changeUserAuthorized(true)
-    this.props.changeData({ name: jsonResponse.name })
-    this.props.changeControl({ connecting: false, success: true })
-    this.changeRoute(null, 'myAccount')
-    location.reload();
+    changeAuthorizeData({ authorized: true, name, phoneVerified })
+    changeControl({ connecting: false, success: true })
   })
   .catch(() => {
     this.props.changeErrors({
-      verification: { polish: 'nieprawidłowy kod weryfikacyjny', english: 'invalid verification code' }
+      verification: {
+        polish: 'nieprawidłowy kod weryfikacyjny',
+        english: 'invalid verification code'
+      }
     })
-    setTimeout(() => this.props.changeCreate({ cConnecting: false }), 1000);
+    this.props.changeControl({ connecting: false })
   })
 }

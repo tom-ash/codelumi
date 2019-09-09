@@ -19,7 +19,10 @@ export function saveAnnouncement() {
     body: JSON.stringify(buildAnouncementParams.apply(this))
   })
   .then(response => {
-    if (response.ok) this.props.changeControl({ connecting: false, success: true })
+    if (response.ok) this.props.changeControl({
+      connecting: false,
+      success: true
+    })
   })
 }
 

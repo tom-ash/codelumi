@@ -23,9 +23,7 @@ export const control = {
   editing: false,
   availabilityDateFocus: false,
   calendarMouseOver: false,
-  addingPicture: false,
-  userCreating: false,
-  phoneVerifying: false
+  addingPicture: false
 }
 
 export const inputs = {

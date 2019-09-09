@@ -23,7 +23,5 @@ export function publish() {
       }
     }
   }
-  if (!this.props.authorized) return this.props.changeControl({ publishing: true, userCreating: true })
-  if (!this.props.phoneVerified) return this.props.changeControl({ publishing: true, phoneVerifying: true })
   this.props.changeControl({ publishing: true })
 }

@@ -1,8 +1,9 @@
 export const mapStateToProps = (store) => {
+  const { publishing: publishingAnnouncement } = store.announcement.create.control
   return {
     authorized: store.user.authorize.data.authorized,
-    announcementPublishing: store.announcement.create.control.publishing,
-    success: store.user.create.control.success
+    success: store.user.create.control.success,
+    publishingAnnouncement
   }
 }
 

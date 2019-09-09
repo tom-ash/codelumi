@@ -1,18 +1,22 @@
 export const mapStateToProps = (store) => {
+  const { language } = store.app
+  const { verification } = store.user.create.errors
+  const { token } = store.user.create.data
+  const { publishing: publishingAnnouncement } = store.announcement.create.control
   return {
-    language: store.app.language,
-    verification: store.user.create.control.verification,
-    token: store.user.create.data.token
+    language,
+    verification,
+    token,
+    publishingAnnouncement
   }
 }
   
 export const mapDispatchToProps = (dispatch) => {
   return {
     changePath: (value) => dispatch({ type: 'app/path', value: value }),
-    changeAnnouncementControl: (value) => dispatch({ type: 'announcement/create/control', value: value }),
-    changeUserAuthorized: (value) => dispatch({ type: 'user/authorize/authorized', value: value }),
-    changeData: (value) => dispatch({ type: 'USER_AUTHORIZE_DATA', value: value }),
-    changeControl: (value) => dispatch({ type: 'user/create/control', value: value })
+    changeAuthorizeData: (value) => dispatch({ type: 'user/authorize/data', value: value }),
+    changeControl: (value) => dispatch({ type: 'user/create/control', value: value }),
+    changeErrors: (value) => dispatch({ type: 'user/create/errors', value: value }),
   }
 }
   

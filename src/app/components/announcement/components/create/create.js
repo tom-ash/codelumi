@@ -34,6 +34,7 @@ class AnnouncementCreate extends React.Component {
   render() {
     return (
       <div id='announcement-create'>
+        {/* {console.log(this.props)} */}
         {
         !this.props.publishing &&
         <div>

@@ -6,12 +6,12 @@ export function verificationManager(aspect, value) {
     controlled: false,
     classNames: { container: 'input-container text'},
     label: this.languageHandler('Kod weryfikacyjny', 'Verification Code'),
-    onChange: () => this.props.changeCreate({ verification: { polish: '', english: '' }}),
+    onChange: () => this.props.changeErrors({ verification: { polish: '', english: '' }}),
     onBlur: () => this.verificationManager('validate', value),
     validate: () => {
       const verificationCode = document.getElementById('user-create-email-verification').value
       if (verificationCode.length !== 8) {
-        this.props.changeCreate({
+        this.props.changeErrors({
           verification: {
             polish: 'kod weryfikacyjny musi składać się z 8 znaków',
             english: 'the verification code must consist of 8 characters'

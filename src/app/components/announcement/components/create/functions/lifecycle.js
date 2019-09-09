@@ -11,15 +11,14 @@ function announcementEditing() {
   const path = window.location.pathname
   let result = false;
   (['/edytowanie_ogloszenia/', '/announcement_editing/']).map(indexPath => {
-    if (path.indexOf(indexPath) != -1) {
-      result = true
-    }
+    if (path.indexOf(indexPath) != -1) result = true
   })
   return result
 }
 
 export function componentWillUnmount() {
-  if (this.props.userCreating || this.props.phoneVerifying) return
+  const { publishing, success } = this.props
+  if (publishing && !success) return
   this.props.resetControl()
   this.props.resetInputs()
   this.props.resetErrors()

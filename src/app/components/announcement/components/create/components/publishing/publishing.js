@@ -49,6 +49,7 @@ class AnnouncementCreateFeatures extends React.Component {
   render() {
     return (
       <div id='announcement-create-publishing'>
+        {console.log(this.props)}
         {
         !this.props.publishing &&
         <ManagedButton manager={this.buttonManager} />

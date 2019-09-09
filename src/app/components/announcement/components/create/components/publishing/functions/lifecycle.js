@@ -1,12 +1,11 @@
 import { compareParameters } from '../../../../../../../functions/compare-update-parameters'
 
 export function componentDidMount() {
-  if (!this.props.publishing) return
-  if (!this.props.authorized) return this.changeRoute(null, 'signUp')
-  if (!this.props.phoneVerified) return this.changeRoute(null, 'phoneVerify')
-  if (this.props.authorized) this.props.changeControl({ userCreating: false })
-  if (this.props.phoneVerified) this.props.changeControl({ phoneVerifying: false })
-  if (this.props.publishing) this.savePicture()
+  const { publishing, authorized, phoneVerified } = this.props
+  if (!publishing) return
+  if (!authorized) return this.changeRoute(null, 'signUp')
+  if (!phoneVerified) return this.changeRoute(null, 'phoneVerify')
+  this.savePicture()
 }
 
 export function shouldComponentUpdate(nextProps) {
@@ -14,10 +13,12 @@ export function shouldComponentUpdate(nextProps) {
 }
 
 export function componentDidUpdate() {
-  if (this.props.publishing && !this.props.authorized) return this.changeRoute(null, 'signUp')
-  if (this.props.publishing && !this.props.phoneVerified) return this.changeRoute(null, 'phoneVerify')
-  if (this.props.publishing && !this.props.connecting && !this.props.success) {
-    if (this.props.blobs.length > 0) return this.savePicture()
+  const { connecting, publishing, authorized, phoneVerified, blobs } = this.props
+  if (!publishing) return
+  if (!authorized) return this.changeRoute(null, 'signUp')
+  if (!phoneVerified) return this.changeRoute(null, 'phoneVerify')
+  if (!connecting && !this.props.success) {
+    if (blobs.length > 0) return this.savePicture()
     this.saveAnnouncement()
   }
 }

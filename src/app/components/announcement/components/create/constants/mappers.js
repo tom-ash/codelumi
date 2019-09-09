@@ -1,12 +1,16 @@
 export const mapStateToProps = (store) => {
+  const { control, inputs, errors } = store.announcement.create
+  const { success, publishing } = control
+
   return {
     language: store.app.language,
     path: store.app.path,
     authorized: store.user.authorize.data.authorized,
     pictureBlobs: store.announcement.create.inputs.pictureBlobs,
-    publishing: store.announcement.create.control.publishing,
-    userCreating: store.announcement.create.control.userCreating,
-    phoneVerifying: store.announcement.create.control.phoneVerifying
+    // creating
+
+    success,
+    publishing
   }
 }
     
