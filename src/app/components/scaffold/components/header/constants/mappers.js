@@ -3,7 +3,7 @@ export const mapStateToProps = (store) => {
     language: store.app.language,
     name: store.user.authorize.data.name,
     screenSize: store.app.screenSize,
-    searchInitiated: store.announcement.index.control.full.searchInitiated,
+    showList: store.announcement.index.control.full.showList,
     showLinks: store.scaffold.header.control.showLinks
   }
 }

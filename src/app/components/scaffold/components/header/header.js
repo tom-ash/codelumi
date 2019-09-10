@@ -27,7 +27,7 @@ class Header extends React.Component {
       <div id='header'>
         <div className='inner'>
           <h1 onClick={() => {
-            this.props.changeIndexControl({ searchInitiated: false })
+            this.props.changeIndexControl({ showList: false })
             this.changeRoute(null, '/')
           }}>
             <div>
@@ -36,7 +36,7 @@ class Header extends React.Component {
             <div className='first-letter'>
               LEASE
             </div>
-            <div className={`map-marker ${this.props.searchInitiated ? 'visible' : 'hidden'}`}>
+            <div className={`map-marker ${this.props.showList ? 'visible' : 'hidden'}`}>
               &nbsp;<i className='fas fa-map-marker-alt' />
             </div>
             <div className='float-clear' />

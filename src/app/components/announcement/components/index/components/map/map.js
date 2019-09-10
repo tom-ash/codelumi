@@ -53,8 +53,9 @@ class AnnouncementIndexSearchFull extends React.Component {
   }
 
   render() {
+    console.log(this.props.showList)
     return (
-      <div id='announcement-index-map' className={`${this.props.searchInitiated ? 'hidden' : 'visible'}`}>
+      <div id='announcement-index-map' className={`${this.props.showList ? 'hidden' : 'visible'}`}>
         <div id='google-map-container'>
           <h3>
             <i className={`fas fa-map-marker-alt`} />{this.languageHandler(`Wyszukaj na mapie`, `Search on Map`)}

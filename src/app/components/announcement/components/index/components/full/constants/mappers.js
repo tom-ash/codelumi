@@ -1,16 +1,23 @@
 export const mapStateToProps = (store) => {
+  const { language, isMobile } = store.app
+  const control = store.announcement.index.control.full
+  const inputs = store.announcement.index.control.inputs
+  const data = store.announcement.index.control.data
+
+  const { readParams, rentActive, areaActive, roomsActive, floorActive, totalFloorsActive, searchInitiated,
+    showList } = control
+
   return {
-    language: store.app.language,
     venue: 'indexFull',
-    isMobile: store.app.isMobile,
-
-    rentActive: store.announcement.index.control.full.rentActive,
-    areaActive: store.announcement.index.control.full.areaActive,
-    roomsActive: store.announcement.index.control.full.roomsActive,
-    floorActive: store.announcement.index.control.full.floorActive,
-    totalFloorsActive: store.announcement.index.control.full.totalFloorsActive,
-
-    searchInitiated: store.announcement.index.control.full.searchInitiated,
+    language,
+    isMobile,
+    readParams,
+    rentActive,
+    areaActive,
+    roomsActive,
+    floorActive,
+    totalFloorsActive,
+    showList,
     
 
     screenSize: store.app.screenSize,
@@ -38,8 +45,12 @@ export const mapStateToProps = (store) => {
     roomsMax: store.announcement.index.inputs.full.roomsMax,
     totalFloorsMin: store.announcement.index.inputs.full.totalFloorsMin,
     totalFloorsMax: store.announcement.index.inputs.full.totalFloorsMax,
+
+
     panelAmount: store.announcement.index.data.full.panelAmount,
-    amount: store.announcement.index.data.full.amount,
+    listAmount: store.announcement.index.data.full.listAmount,
+
+
     announcements: store.announcement.index.data.full.announcements
   }
 }

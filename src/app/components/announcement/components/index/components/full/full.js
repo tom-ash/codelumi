@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import { getAnnouncements } from '../../functions/get-announcements'
-import { readUrlParameters } from './functions/read-url-parameters'
-import { buildRequestParameters } from '../../functions/build-parameters'
+import { readParams } from './functions/read-url-parameters'
+import { buildparams, buildRequestParameters } from '../../functions/build-parameters'
 import { ManagedPagination } from 'managed-inputs'
 import AnnouncementIndexTile from '../tile/tile'
 import { panelProvider } from '../../functions/panel-provider'
@@ -27,6 +27,9 @@ import { subInputNames } from '../../constants/subInputNames'
 class AnnouncementIndexFull extends React.Component {
   constructor(props) {
     super(props)
+
+    this.buildparams = buildparams.bind(this)
+
     this.componentDidMount = lifecycle.componentDidMount
     this.shouldComponentUpdate = lifecycle.shouldComponentUpdate
     this.componentDidUpdate = lifecycle.componentDidUpdate
@@ -34,7 +37,7 @@ class AnnouncementIndexFull extends React.Component {
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.getAnnouncements = getAnnouncements.bind(this)
     this.buildRequestParameters = buildRequestParameters.bind(this)
-    this.readUrlParameters = readUrlParameters.bind(this)
+    this.readParams = readParams.bind(this)
     this.paginationManager = paginationManager.bind(this)
     this.panelProvider = panelProvider.bind(this)
     this.pageHeaderProvider = pageHeaderProvider.bind(this)
@@ -63,6 +66,7 @@ class AnnouncementIndexFull extends React.Component {
   }
 
   render() {
+    const { showList, announcements } = this.props
     return (
       <div id='announcement-index-full'>
         <h2 className='motto'>
@@ -79,19 +83,22 @@ class AnnouncementIndexFull extends React.Component {
         </h3>
         {this.panelProvider()}
         {
-        this.props.searchInitiated &&
+        showList &&
         <div>
           <div id='announcement-index-full-scroll-anchor' />
           <div className='announcements'>
             {
-            this.props.announcements && this.props.announcements.map((announcement, index) => {
-              announcement.index = index
-              return <AnnouncementIndexTile
-                     index={index}
-                     key={`announcement${announcement.id}`}
-                     selectedAvailabilityDate={this.props.availabilityDate}
-                    announcement={announcement} announcements={this.props.announcements}
-                    changeAnnouncement={this.props.changeAnnouncement}/>
+            announcements && announcements.map((announcement, index) => {
+              return (
+                <AnnouncementIndexTile
+                  index={index}
+                  key={announcement.id}
+                  selectedAvailabilityDate={this.props.availabilityDate}
+                  announcement={announcement}
+                  announcements={announcements}
+                  changeAnnouncement={this.props.changeAnnouncement}
+                />
+              )
             })
             }
             <div className='float-clear' />

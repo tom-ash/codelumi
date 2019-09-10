@@ -2,10 +2,15 @@ import { updateParameters } from '../../../constants/parameters'
 import { compareParameters } from '../../../../../../../functions/compare-update-parameters'
 
 export function componentDidMount() {
+  const { changeControl } = this.props
   const calendar = document.getElementsByClassName('react-calendar')[0]
-  calendar.addEventListener("mouseover", () => { this.props.changeControl({ availabilityDateActive: true }) })
-  calendar.addEventListener('mouseleave', () => { this.props.changeControl({ availabilityDateActive: false }) })
-  this.readUrlParameters()
+  calendar.addEventListener('mouseover', () => {
+    changeControl({ availabilityDateActive: true })
+  })
+  calendar.addEventListener('mouseleave', () => {
+    changeControl({ availabilityDateActive: false })
+  })
+  this.readParams()
 }
 
 export function shouldComponentUpdate(nextProps) {
@@ -13,7 +18,11 @@ export function shouldComponentUpdate(nextProps) {
 }
 
 export function componentDidUpdate(prevProps) {
-  if (!this.props.parametersRead && this.props.parametersRead !== prevProps.parametersRead)  this.readUrlParameters()
-  if (!prevProps.fetchAmount && this.props.fetchAmount) this.getAnnouncementAmount()
-  if (!prevProps.fetch && this.props.fetch) this.getAnnouncements()
+  const { readParams, fetch, showList } = this.props
+  const { readParams: prevReadParams, fetch: prevFetch } = prevProps
+  if (readParams && !prevReadParams) return this.readParams()
+  if (fetch && !prevFetch) {
+    if (showList) return this.getAnnouncements()
+    this.getAnnouncementAmount()
+  }
 }

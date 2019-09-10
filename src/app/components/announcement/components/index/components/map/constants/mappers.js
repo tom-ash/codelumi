@@ -28,7 +28,7 @@ export const mapStateToProps = (store) => {
     tile: store.announcement.index.data.map.tile,
     loaded: store.announcement.index.control.map.loaded,
 
-    searchInitiated: store.announcement.index.control.full.searchInitiated,
+    showList: store.announcement.index.control.full.showList,
 
     rentActive: store.announcement.index.control.map.rentActive,
     areaActive: store.announcement.index.control.map.areaActive,

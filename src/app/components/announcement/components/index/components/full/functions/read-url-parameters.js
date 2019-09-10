@@ -1,16 +1,21 @@
 import { parameters } from '../../../../index/constants/parameters'
 
-export function readUrlParameters() {
-  const urlParameters = window.location.search.replace('?', '').split('&')
-  const stateParameters = { parametersRead: true }
-  urlParameters.map(urlParameter => {
-    const parameterArray = urlParameter.split('=')
-    const stateParameter = parameters.find(parameter => parameter.polish === parameterArray[0] ||
-                                                        parameter.english === parameterArray[0])
-    if (stateParameter) {
-      stateParameters[stateParameter.state] = stateParameter.stateValue(parameterArray[1])
+export function readParams() {
+  const { changeControl, changeInputs } = this.props
+  const urlParams = window.location.search.replace('?', '').split('&')
+  const stateParams = {}
+  urlParams.map(urlParam => {
+    const parameterArray = urlParam.split('=')
+    const param = parameters.find(parameter => (
+      parameter.polish === parameterArray[0] || parameter.english === parameterArray[0])
+    )
+    if (param) {
+      stateParams[param.state] = param.stateValue(parameterArray[1])
     }
   })
-  this.props.changeInputs({ ...stateParameters })
-  this.props.changeControl({ fetch: true })
+  changeInputs(stateParams)
+  changeControl({
+    readParams: false,
+    fetch: true
+  })
 }

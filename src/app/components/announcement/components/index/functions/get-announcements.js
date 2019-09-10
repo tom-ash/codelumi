@@ -1,11 +1,21 @@
 import { apiUrl } from '../../../../../constants/urls'
 
 export function getAnnouncements() {
-  console.log('getAnnouncements')
-  this.props.changeControl({ connecting: true })
-  this.props.changeData({ amount: null, announcements: null })
-  if (this.props.connecting) return
-  fetch(apiUrl + `/announcements${this.buildRequestParameters()}`, {
+  const { connecting, changeControl, changeData } = this.props
+  changeControl({
+    connecting: true
+  })
+  changeData({
+    amount: null,
+    announcements: null
+  })
+  if (connecting) return
+
+  const requestParams = this.buildRequestParameters()
+  // var newurl = window.location.protocol + "//" + window.location.host + this.buildparams();
+  // window.history.pushState({path:newurl},'',newurl);
+
+  fetch(apiUrl + `/announcements${requestParams}`, {
     headers: { 'Content-Type': 'application/json' }
   })
   .then(response => {
@@ -16,7 +26,15 @@ export function getAnnouncements() {
       announcement.pictureIndex = 0
       return announcement
     })
-    this.props.changeData({ panelAmount: jsonRes.amount, amount: jsonRes.amount, announcements: announcements })
-    this.props.changeControl({ connecting: false, fetch: false, changed: false })
+    changeData({
+      panelAmount: jsonRes.amount,
+      listAmount: jsonRes.amount,
+      announcements: announcements
+    })
+    changeControl({
+      connecting: false,
+      fetch: false,
+      changed: false
+    })
   })
 }

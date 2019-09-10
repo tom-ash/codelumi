@@ -25,19 +25,19 @@ function parseSwitches() {
 
 export const fullControl = {
   connecting: false,
-  page: '1',
-  fetchAmount: false,
+  readParams: true,
   fetch: false,
-  paramsRead: false,
-  availabilityDateFocus: false,
-  availabilityDateActive: false,
+  showList: false,
+  page: '1',
   changed: false,
-  rentActive: false,
+  paramsRead: false,
   areaActive: false,
+  rentActive: false,
   roomsActive: false,
   floorActive: false,
-  totalFloorsActive: false,
-  searchInitiated: false
+  availabilityDateFocus: false,
+  availabilityDateActive: false,
+  totalFloorsActive: false
 }
 
 export const fullInputs = {
@@ -46,7 +46,7 @@ export const fullInputs = {
 
 export const fullData = {
   panelAmount: null,
-  amount: null,
+  listAmount: null,
   announcements: null
 }
 

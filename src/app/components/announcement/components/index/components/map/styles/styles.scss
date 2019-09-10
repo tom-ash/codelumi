@@ -10,7 +10,6 @@
   width: 100%;
   padding: 0px;
   border: none;
-  transition: 0.12s ease-in;
   #google-map-container {
     @extend %google-map;
     h3 {
@@ -32,4 +31,8 @@
       @extend %map-tile;
     }
   }
+  &.hidden {
+    opacity: 0;
+  }
+  transition: 0.16s ease-in;
 }

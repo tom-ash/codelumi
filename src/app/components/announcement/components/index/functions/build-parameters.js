@@ -1,22 +1,22 @@
 import { parameters } from '../constants/parameters'
 
-export function buildUrlParameters() {
-  let urlParameters = '?'
+export function buildparams() {
+  let params = '?'
   parameters.map(parameter => {
     if (this.props[parameter.state] !== '' && this.props[parameter.state] !== undefined) {
-      urlParameters += `${this.languageHandler(parameter.polish, parameter.english)}=${parameter.value.call(this, this.props[parameter.state])}&`
+      params += `${this.languageHandler(parameter.polish, parameter.english)}=${parameter.value.call(this, this.props[parameter.state])}&`
     }
   })
-  return urlParameters.slice(0, -1)
+  return params.slice(0, -1)
 }
 
 export function buildRequestParameters() {
-  let urlParameters = '?'
+  let params = '?'
   
   parameters.map(parameter => {
     if (this.props[parameter.state] !== '' && this.props[parameter.state] !== undefined) {
-      urlParameters += `${parameter.api}=${this.props[parameter.state]}&`
+      params += `${parameter.api}=${this.props[parameter.state]}&`
     }
   })
-  return urlParameters.slice(0, -1)
+  return params.slice(0, -1)
 }

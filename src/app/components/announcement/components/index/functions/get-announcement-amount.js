@@ -1,6 +1,7 @@
 import { apiUrl } from '../../../../../constants/urls'
 
 export function getAnnouncementAmount() {
+  const { changeControl, changeData } = this.props
   fetch(apiUrl + `/announcements${this.buildRequestParameters()}`, {
     headers: { 'Content-Type': 'application/json', 'Only-Amount': true }
   })
@@ -8,7 +9,11 @@ export function getAnnouncementAmount() {
     if (response.ok) return response.json()
   })
   .then(jsonResponse => {
-    this.props.changeControl({ fetchAmount: false })
-    this.props.changeData({ panelAmount: jsonResponse.amount })
+    changeControl({
+      fetch: false
+    })
+    changeData({
+      panelAmount: jsonResponse.amount
+    })
   })
 }

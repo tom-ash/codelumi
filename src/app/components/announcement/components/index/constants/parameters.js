@@ -128,7 +128,8 @@ export const parameters = [
 ]
 
 export const updateParameters = [
-  'searchInitiated',
+  'readParams',
+  'showList',
   'rentActive',
   'areaActive',
   'roomsActive',

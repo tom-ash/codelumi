@@ -4,6 +4,7 @@ import { scrollToElement } from '../../../../../../../functions/scrollers/scroll
 const id = 'announcement-index-full-search-button'
 
 export function buttonManager(action) {
+  const { changeControl } = this.props
   return managerAgent(action, {
     id: id,
     classNames: { container: 'simple-index-input button' },
@@ -11,23 +12,27 @@ export function buttonManager(action) {
     onClick: () => {
       const button = document.getElementById(id)
       scrollToElement(button, 6, -18)
-      this.props.changeControl({ searchInitiated: true })
-      this.props.changeControl({ fetch: true, page: 1, searchInitiated: true })
+      changeControl({
+        fetch: true,
+        showList: true,
+        page: 1
+      })
     }
   })
 }
 
 export function paginationManager(aspect, button) {
+  const { connecting, page, listAmount, changeControl } = this.props
   return managerAgent(aspect, {
     classNames: { container: 'pagination' },
-    current: +this.props.page,
+    current: +page,
     resultsPerPage: 24,
-    resultAmount: +this.props.amount,
+    resultAmount: +listAmount,
     onClick: () => {
-      if (this.props.connecting) return
+      if (connecting) return
       const scrollButton = document.getElementById(id)
       scrollToElement(scrollButton, 24)
-      window.setTimeout( () => this.props.changeControl({ page: button, fetch: true }), 512)
+      window.setTimeout(() => changeControl({ page: button, fetch: true }), 512)
     }
   })
 }
