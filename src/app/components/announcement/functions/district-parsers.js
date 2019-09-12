@@ -6,7 +6,8 @@ export function parseDistrict(districtValue) {
 }
 
 export function parseDistrictForUrl(districtValue) {
-  return districts.find(district => district.value === districtValue).url
+  const district = districts.find(district => district.value === districtValue).url
+  return { polish: district, english: district }
 }
 
 export function reverseParseDistrict(districtName) {

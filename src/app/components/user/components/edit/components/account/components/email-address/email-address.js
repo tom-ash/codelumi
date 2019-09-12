@@ -31,7 +31,6 @@ class UserEditAccountEmail extends React.Component {
   render() {
     return (
       <div id='user-edit-email-button'>
-        {console.log(this.props)}
         <div className='monit'>
           {this.monitProvider()}
         </div>

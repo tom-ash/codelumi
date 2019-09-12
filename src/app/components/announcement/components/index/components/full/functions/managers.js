@@ -12,6 +12,9 @@ export function buttonManager(action) {
     onClick: () => {
       const button = document.getElementById(id)
       scrollToElement(button, 6, -18)
+
+      this.buildUrlParams()
+
       changeControl({
         fetch: true,
         showList: true,

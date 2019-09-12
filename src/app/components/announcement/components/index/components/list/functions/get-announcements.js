@@ -20,9 +20,6 @@ export function getAnnouncements() {
     if (response.ok) return response.json()
   })
   .then(jsonResponse => {
-
-    console.log(jsonResponse)
-
     const announcements = jsonResponse.announcements.map(announcement => {
       announcement.pictureIndex = 0
       return announcement

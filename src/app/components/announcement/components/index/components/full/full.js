@@ -24,11 +24,21 @@ import { compositeManagerProvider, subInputMinManagerProvider, subInputMaxManage
 import { compositeInputProvider } from '../../functions/composite-input-provider'
 import { subInputNames } from '../../constants/subInputNames'
 
+import { buildUrlParams } from './functions/build-url-params'
+
+
+import { parseCategoryForUrl } from '../../../../functions/category-parsers'
+import { parseDistrictForUrl } from '../../../../functions/district-parsers'
+import { parseCurrency } from '../../../../functions/currency-parsers'
+
 class AnnouncementIndexFull extends React.Component {
   constructor(props) {
     super(props)
 
-    this.buildparams = buildparams.bind(this)
+    this.buildUrlParams = buildUrlParams.bind(this)
+    this.parseCategoryForUrl = parseCategoryForUrl.bind(this)
+    this.parseDistrictForUrl = parseDistrictForUrl.bind(this)
+    this.parseCurrency = parseCurrency.bind(this)
 
     this.componentDidMount = lifecycle.componentDidMount
     this.shouldComponentUpdate = lifecycle.shouldComponentUpdate

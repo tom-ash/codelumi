@@ -9,9 +9,6 @@ export function fetchAnnouncement(id) {
     if (response.ok) return response.json()
   })
   .then(jsonResponse => {
-
-    console.log(jsonResponse)
-
     let clientParams = {}
     showClientServerParams.map(param => ( clientParams[param.client] = jsonResponse[param.server] ))
     clientParams.mapLatitude = jsonResponse.latitude / 1000000

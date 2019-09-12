@@ -23,7 +23,6 @@ function deepCloneAnnouncement(announcement, index) {
   const copiedAnnouncement = { ...announcement }
   copiedAnnouncement.status = announcement.status == 1 ? 2 : 1
 
-  console.log(copiedAnnouncement)
 
   announcements[index] = copiedAnnouncement
   return announcements

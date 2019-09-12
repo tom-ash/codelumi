@@ -11,11 +11,13 @@ export function getAnnouncements() {
   })
   if (connecting) return
 
-  const requestParams = this.buildRequestParameters()
+  
+
+  // const requestParams = this.buildRequestParameters()
   // var newurl = window.location.protocol + "//" + window.location.host + this.buildparams();
   // window.history.pushState({path:newurl},'',newurl);
 
-  fetch(apiUrl + `/announcements${requestParams}`, {
+  fetch(apiUrl + `/announcements${this.buildRequestParameters()}`, {
     headers: { 'Content-Type': 'application/json' }
   })
   .then(response => {
