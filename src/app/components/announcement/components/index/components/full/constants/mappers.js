@@ -4,8 +4,16 @@ export const mapStateToProps = (store) => {
   const inputs = store.announcement.index.control.inputs
   const data = store.announcement.index.control.data
 
-  const { readParams, rentActive, areaActive, roomsActive, floorActive, totalFloorsActive, searchInitiated,
-    showList } = control
+  const {
+    readParams,
+    rentActive,
+    areaActive,
+    roomsActive,
+    floorActive,
+    totalFloorsActive,
+    searchInitiated,
+    showList
+  } = control
 
   return {
     venue: 'indexFull',

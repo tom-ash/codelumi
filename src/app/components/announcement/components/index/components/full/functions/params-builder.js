@@ -1,6 +1,6 @@
 import { params } from '../../../../../constants/params'
 
-export function buildUrlParams() {
+export function paramsBuilder() {
   let urlParams = '?'
   Object.keys(params).map(paramKey => {
     const param = params[paramKey]

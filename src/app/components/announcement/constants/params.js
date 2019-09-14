@@ -29,8 +29,8 @@ export const params = {
   rent: {
     minMax: true,
     url: {
-      polish: 'czynsz',
-      english: 'rent'
+      polish: 'miesieczny_czynsz',
+      english: 'monthly_rent'
     }
   },
   rooms: {

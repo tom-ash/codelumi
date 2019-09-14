@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import { getAnnouncements } from '../../functions/get-announcements'
-import { readParams } from './functions/read-url-parameters'
-import { buildparams, buildRequestParameters } from '../../functions/build-parameters'
+
+import { buildRequestParameters } from '../../functions/build-parameters'
 import { ManagedPagination } from 'managed-inputs'
 import AnnouncementIndexTile from '../tile/tile'
 import { panelProvider } from '../../functions/panel-provider'
@@ -24,7 +24,8 @@ import { compositeManagerProvider, subInputMinManagerProvider, subInputMaxManage
 import { compositeInputProvider } from '../../functions/composite-input-provider'
 import { subInputNames } from '../../constants/subInputNames'
 
-import { buildUrlParams } from './functions/build-url-params'
+import { paramsBuilder } from './functions/params-builder'
+import { paramsReader } from './functions/params-reader'
 
 
 import { parseCategoryForUrl } from '../../../../functions/category-parsers'
@@ -34,12 +35,14 @@ import { parseCurrency } from '../../../../functions/currency-parsers'
 class AnnouncementIndexFull extends React.Component {
   constructor(props) {
     super(props)
+    this.paramsBuilder = paramsBuilder.bind(this)
+    this.paramsReader = paramsReader.bind(this)
 
-    this.buildUrlParams = buildUrlParams.bind(this)
+    
+
     this.parseCategoryForUrl = parseCategoryForUrl.bind(this)
     this.parseDistrictForUrl = parseDistrictForUrl.bind(this)
     this.parseCurrency = parseCurrency.bind(this)
-
     this.componentDidMount = lifecycle.componentDidMount
     this.shouldComponentUpdate = lifecycle.shouldComponentUpdate
     this.componentDidUpdate = lifecycle.componentDidUpdate
@@ -47,7 +50,6 @@ class AnnouncementIndexFull extends React.Component {
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.getAnnouncements = getAnnouncements.bind(this)
     this.buildRequestParameters = buildRequestParameters.bind(this)
-    this.readParams = readParams.bind(this)
     this.paginationManager = paginationManager.bind(this)
     this.panelProvider = panelProvider.bind(this)
     this.pageHeaderProvider = pageHeaderProvider.bind(this)
