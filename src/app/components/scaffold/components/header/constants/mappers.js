@@ -10,23 +10,15 @@ export const mapStateToProps = (store) => {
   
 export const mapDispatchToProps = (dispatch) => {
   return {
-    changeIndexControl: (value) => dispatch({ type: 'announcement/index/control/full', value: value }),
-    changePath: (value) => dispatch({
-      type: 'app/path',
-      value: value
-    }),
-    changeConnecting: (value) => dispatch({
-      type: 'USER_AUTHORIZE_CONNECTING',
-      value: value
-    }),
-    changeData: (value) => dispatch({
-      type: 'USER_AUTHORIZE_DATA',
-      value: value
-    }),
-
-    changeControl: (value) => dispatch({ type: 'scaffold/header/control', value: value }),
-
+    changePath: (value) => dispatch({ type: 'app/path', value: value }),
     changeLanguage: (value) => dispatch({ type: 'APP_LANGUAGE', value: value }),
+    changeIndexControl: (value) => dispatch({ type: 'announcement/index/control/full', value: value }),
+    changeConnecting: (value) => dispatch({ type: 'USER_AUTHORIZE_CONNECTING', value: value }),
+    changeData: (value) => dispatch({ type: 'USER_AUTHORIZE_DATA', value: value }),
+    resetAnnouncementIndexControl: () => dispatch({ type: 'announcement/index/control/full/reset' }),
+    resetAnnouncementIndexInputs: () => dispatch({ type: 'announcement/index/inputs/full/reset' }),
+    resetAnnouncementIndexData: () => dispatch({ type: 'announcement/index/data/full/reset' }),
+    changeControl: (value) => dispatch({ type: 'scaffold/header/control', value: value })
   }
 }
   

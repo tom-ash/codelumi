@@ -18,11 +18,9 @@ export function shouldComponentUpdate(nextProps) {
 }
 
 export function componentDidUpdate(prevProps) {
-  const { readParams, fetch, showList } = this.props
-  const { paramsReader: prevReadParams, fetch: prevFetch } = prevProps
+  const { readParams, fetchAmount, fetchList, showList } = this.props
+  const { paramsReader: prevReadParams, fetchAmount: prevFetchAmount, fetchList: prevFetchList } = prevProps
   if (readParams && !prevReadParams) return this.paramsReader()
-  if (fetch && !prevFetch) {
-    if (showList) return this.getAnnouncements()
-    this.getAnnouncementAmount()
-  }
+  if (fetchAmount && !prevFetchAmount) return this.getAnnouncementAmount()
+  if (fetchList && !prevFetchList) return this.getAnnouncements()
 }

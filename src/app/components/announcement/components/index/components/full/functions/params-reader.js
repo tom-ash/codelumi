@@ -33,8 +33,11 @@ export function paramsReader() {
     })
   })
   changeInputs(stateParams)
+  const anyUrlParams = !!Object.keys(stateParams).length
   changeControl({
     readParams: false,
-    fetch: true
+    fetchAmount: !anyUrlParams,
+    fetchList: anyUrlParams,
+    showList: anyUrlParams
   })
 }

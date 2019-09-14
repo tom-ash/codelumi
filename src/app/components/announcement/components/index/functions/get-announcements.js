@@ -2,20 +2,12 @@ import { apiUrl } from '../../../../../constants/urls'
 
 export function getAnnouncements() {
   const { connecting, changeControl, changeData } = this.props
-  changeControl({
-    connecting: true
-  })
+  changeControl({ connecting: true })
   changeData({
     amount: null,
     announcements: null
   })
   if (connecting) return
-
-  
-
-  // const requestParams = this.buildRequestParameters()
-  // var newurl = window.location.protocol + "//" + window.location.host + this.buildparams();
-  // window.history.pushState({path:newurl},'',newurl);
 
   fetch(apiUrl + `/announcements${this.buildRequestParameters()}`, {
     headers: { 'Content-Type': 'application/json' }
@@ -35,8 +27,8 @@ export function getAnnouncements() {
     })
     changeControl({
       connecting: false,
-      fetch: false,
-      changed: false
+      fetchList: false,
+      showList: true
     })
   })
 }

@@ -5,13 +5,15 @@ import * as states from '../constants/state'
 const fullControlReducer = (state = states.fullControl, action) => {
   switch (action.type) {
     case 'announcement/index/control/full': return { ...state, ...action.value }
+    case 'announcement/index/control/full/reset': return { ...states.fullControl }
     default: return { ...state }
   }
 }
 
-const fullInputsReducer = (state = states.mapInputs, action) => {
+const fullInputsReducer = (state = states.fullInputs, action) => {
   switch (action.type) {
     case 'announcement/index/inputs/full': return { ...state, ...action.value }
+    case 'announcement/index/inputs/full/reset': return { ...states.fullInputs }
     default: return { ...state }
   }
 }
@@ -20,6 +22,7 @@ const fullDataReducer = (state = states.fullData, action) => {
   switch (action.type) {
     case 'announcement/index/data/full': return { ...state, ...action.value }
     case 'announcement/index/data/full/announcement':  return changeAnnouncements(state, action.value)
+    case 'announcement/index/data/full/reset': return { ...states.fullData }
     default: return { ...state }
   }
 }

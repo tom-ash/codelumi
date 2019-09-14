@@ -44,7 +44,7 @@ class AnnouncementIndexFull extends React.Component {
     this.parseDistrictForUrl = parseDistrictForUrl.bind(this)
     this.parseCurrency = parseCurrency.bind(this)
     this.componentDidMount = lifecycle.componentDidMount
-    this.shouldComponentUpdate = lifecycle.shouldComponentUpdate
+    // this.shouldComponentUpdate = lifecycle.shouldComponentUpdate
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)

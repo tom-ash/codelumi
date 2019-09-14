@@ -27,7 +27,9 @@ class Header extends React.Component {
       <div id='header'>
         <div className='inner'>
           <h1 onClick={() => {
-            this.props.changeIndexControl({ showList: false })
+            // this.props.resetAnnouncementIndexData()
+            this.props.resetAnnouncementIndexControl()
+            this.props.resetAnnouncementIndexInputs()
             this.changeRoute(null, '/')
           }}>
             <div>

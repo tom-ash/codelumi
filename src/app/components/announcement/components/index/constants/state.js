@@ -26,7 +26,8 @@ function parseSwitches() {
 export const fullControl = {
   connecting: false,
   readParams: true,
-  fetch: false,
+  fetchAmount: false,
+  fetchList: false,
   showList: false,
   page: '1',
   changed: false,

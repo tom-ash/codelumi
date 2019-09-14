@@ -6,13 +6,14 @@ export const mapStateToProps = (store) => {
 
   const {
     readParams,
+    fetchAmount,
+    fetchList,
+    showList,
     rentActive,
     areaActive,
     roomsActive,
     floorActive,
-    totalFloorsActive,
-    searchInitiated,
-    showList
+    totalFloorsActive
   } = control
 
   return {
@@ -20,6 +21,8 @@ export const mapStateToProps = (store) => {
     language,
     isMobile,
     readParams,
+    fetchAmount,
+    fetchList,
     rentActive,
     areaActive,
     roomsActive,

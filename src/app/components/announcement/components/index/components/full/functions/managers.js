@@ -12,12 +12,9 @@ export function buttonManager(action) {
     onClick: () => {
       const button = document.getElementById(id)
       scrollToElement(button, 6, -18)
-
       this.paramsBuilder()
-
       changeControl({
-        fetch: true,
-        showList: true,
+        fetchList: true,
         page: 1
       })
     }
