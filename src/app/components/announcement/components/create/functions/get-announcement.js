@@ -19,17 +19,20 @@ export function getAnnouncement() {
   .then(jsonResponse => {
     const announcement = jsonResponse.announcement
     setBlobs.call(this, announcement.id, announcement.pictures)
+
+    console.log(jsonResponse)
+
     let announcementInputs = {
-      id: announcement.id,
-      category: `${announcement.category}`,
-      district: announcement.district,
-      rentCurrency: `${announcement.rent_currency}`,
+      id: +announcement.id,
+      category: +announcement.category,
+      district: +announcement.district,
+      rentCurrency: +announcement.rent_currency,
       netRentAmount: announcement.net_rent_amount,
-      additionalFees: `${announcement.additional_fees}`,
+      additionalFees: announcement.additional_fees,
       area: announcement.area,
-      rooms: `${announcement.rooms}`,
-      floor: `${announcement.floor}`,
-      totalFloors: `${announcement.total_floors}`,
+      rooms: +announcement.rooms,
+      floor: +announcement.floor,
+      totalFloors: +announcement.total_floors,
       features: parseFeatures(announcement.features),
       furnishings: parseFurnishings(announcement.furnishings),
       descriptionPolish: announcement.polish_description || '',
@@ -52,7 +55,7 @@ function appendAvailabilityDate(announcement, announcementInputs) {
 }
 
 function setBlobs(id, pictures) {
-  pictures.map(picture => {
+  pictures.map((picture, index) => {
     fetch(`${apiUrl}/pictures`, {
       headers: { 'key': `announcements/${id}/${picture.database}`, 'Content-Type': 'application/json' }
     })
@@ -63,12 +66,16 @@ function setBlobs(id, pictures) {
       })
       .then(response => { if (response.ok) return response.blob() })
       .then(blobResponse => {
+
+        let pictureBlobs = [ ...this.props.pictureBlobs ]
+        pictureBlobs[index] = {
+          blob: window.URL.createObjectURL(blobResponse),
+          database: picture.database,
+          description: ''
+        }
+
         this.props.changeInputs({
-          pictureBlobs: [ ...this.props.pictureBlobs, {
-            blob: window.URL.createObjectURL(blobResponse),
-            database: picture.database,
-            description: ''
-          }]
+          pictureBlobs
         })
       })
     })

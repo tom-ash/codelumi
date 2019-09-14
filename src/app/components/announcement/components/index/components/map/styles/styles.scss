@@ -6,10 +6,20 @@
 @import './panel-container';
 
 #announcement-index-map {
-  position: relative;
-  width: 100%;
+  position: absolute;
+  top: 280px;
+  right: 12px;
+  left: 12px;
   padding: 0px;
   border: none;
+  @media only screen and (max-width: $breakpoint-tablet-small-max) {
+    top: 320px;
+  }
+  @media only screen and (max-width: $breakpoint-phone-large-max) {
+    top: 424px;
+    left: 0;
+    right: 0;
+  }
   #google-map-container {
     @extend %google-map;
     h3 {

@@ -114,9 +114,10 @@ class AnnouncementIndexFull extends React.Component {
             })
             }
             <div className='float-clear' />
-            <div className={this.props.connecting ? 'connecting' : '' }>
-              <ManagedPagination manager={this.paginationManager} />
-            </div>
+            {
+            announcements && announcements[announcements.length - 1] && announcements[announcements.length - 1].show &&
+            <ManagedPagination manager={this.paginationManager} />
+            }
           </div>
         </div>
         }

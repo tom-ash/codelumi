@@ -4,7 +4,6 @@
   z-index: 3;
   border-radius: 4px;
   width: 400px;
-  background: white;
   margin-left: 52px!important;
   margin-bottom: 56px;
   .inactive {
@@ -20,7 +19,6 @@
     margin-top: 64px;
     margin-bottom: 240px;
     width: 100%;
-
     &.first {
       margin-top: 52px!important;
     }
@@ -28,85 +26,88 @@
       margin-bottom: 144px!important;
     }
   }
-  .data {
-    padding: 12px 0;
-    .area {
-      margin: 0 0 0 36px;
-      line-height: 58px;
-      @media only screen and (max-width: $breakpoint-phone-large-max) {
-        margin: 0 0 0 24px;
+  .core {
+    .data {
+      padding: 12px 0;
+      position: relative;
+      .area {
+        margin: 0 0 0 36px;
+        line-height: 58px;
+        @media only screen and (max-width: $breakpoint-phone-large-max) {
+          margin: 0 0 0 24px;
+        }
       }
-    }
-    .area, .rent {
-      float: left;
-    }
-    .rent {
-      float: right;
-      .total, .per-sqm {
+      .area, .rent {
         float: left;
-        margin: 0 36px 0 0;
-        @media only screen and (max-width: $breakpoint-phone-large-max) {
-          margin: 0 24px 0 0;
+      }
+      .rent {
+        float: right;
+        .total, .per-sqm {
+          float: left;
+          margin: 0 36px 0 0;
+          @media only screen and (max-width: $breakpoint-phone-large-max) {
+            margin: 0 24px 0 0;
+          }
         }
       }
     }
-  }
-  .picture {
-    position: relative!important;
-    $width: 400px;
-    width: $width;
-    height: 0;
-    background-size: ($width * 1.17777) auto;
-    padding-bottom: ($width / 1.7777);
-    border-radius: 0;
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
-      $width: 100%;
-      width: $width!important;
+    .picture {
+      position: relative!important;
+      $width: 400px;
+      width: $width;
       height: 0;
-      background-size: ($width * 1.3333) auto;
-      padding-bottom: ($width / 1.3333);
-      background-position: center; 
-    }
-    .primary-data {
-      .announcement-id {
-        position: absolute;
-        top: -82px;
-        left: -52px;
-        background: white;
-        border-radius: 2.5px;
-        min-width: 40px;
-        height: 40px;
-        line-height: 42px;
-        font-size: 17px;
-        @media only screen and (max-width: $breakpoint-phone-large-max) {
-          top: -132px;
-          left: 0;
+      background-size: ($width * 1.17777) auto;
+      padding-bottom: ($width / 1.7777);
+      border-radius: 0;
+      @media only screen and (max-width: $breakpoint-phone-large-max) {
+        $width: 100%;
+        width: $width!important;
+        height: 0;
+        background-size: ($width * 1.3333) auto;
+        padding-bottom: ($width / 1.3333);
+        background-position: center; 
+      }
+      .primary-data {
+        .announcement-id {
+          position: absolute;
+          top: -82px;
+          left: -52px;
+          background: white;
+          border-radius: 2.5px;
+          min-width: 40px;
+          height: 40px;
+          line-height: 42px;
+          font-size: 17px;
+          @media only screen and (max-width: $breakpoint-phone-large-max) {
+            top: -132px;
+            left: 0;
+          }
+        }
+        .category {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+        }
+        .district {
+          position: absolute;
+          top: 6px;
+          left: 44px;
         }
       }
-      .category {
-        position: absolute;
-        top: 6px;
-        left: 6px;
+    }
+    .bottom-data {
+      font: 16px;
+      padding: 12px;
+      .rooms, .floor, .total-floors {
+        float: left;
+        margin-right: 24px;
       }
-      .district {
-        position: absolute;
-        top: 6px;
-        left: 44px;
+      .calendar {
+        float: right;
       }
-    }
-  }
-  .bottom-data {
-    font: 16px;
-    padding: 12px;
-    .rooms, .floor, .total-floors {
-      float: left;
-      margin-right: 24px;
-    }
-    .calendar {
-      float: right;
-    }
-    .fas, .far {
-      margin-right: 8px;
+      .fas, .far {
+        margin-right: 8px;
+      }
     }
   }
   .control {

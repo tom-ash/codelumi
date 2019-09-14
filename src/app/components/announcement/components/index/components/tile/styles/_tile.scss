@@ -5,14 +5,22 @@
 
 %tile {
   position: relative;
-  background: white;
-  .data {
-    @extend %data;
+  .core {
+    position: relative;
+    background: white;
+    &.loader {
+      opacity: 0;
+      background: none;
+    }
+    .data {
+      @extend %data;
+    }
+    .picture {
+      @extend %picture;
+    }
+    .bottom-data {
+      @extend %bottom-data;
+    }
   }
-  .picture {
-    @extend %picture;
-  }
-  .bottom-data {
-    @extend %bottom-data;
-  }
+
 }

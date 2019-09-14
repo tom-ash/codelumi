@@ -1,7 +1,10 @@
 import { apiUrl } from '../../../../../../../constants/urls'
 
 export function fetchPicture() {
-  const announcement = this.props.announcement
+  const { changeAnnouncement } = this.props
+  const announcement = { ...this.props.announcement }
+  announcement.show = true
+  changeAnnouncement(announcement)
   if (!announcement || !announcement.pictures) return
   const pictureIndex = announcement.pictureIndex
   if (announcement.pictures[pictureIndex].url) return
@@ -12,7 +15,9 @@ export function fetchPicture() {
     }
   })
   .then(response => { if (response.ok) return response.json() })
-  .then(jsonResponse => this.props.changeAnnouncement(this.deepCopyAnnouncement(jsonResponse)))
+  .then(jsonResponse => {
+    changeAnnouncement(this.deepCopyAnnouncement(jsonResponse))
+  })
 }
 
 

@@ -6,6 +6,7 @@ import { showAnnouncement } from './functions/routers'
 import AnnouncementCreate from './components/create/create'
 import AnnouncementShow from './components/show/show'
 import AnnouncementIndex from './components/index/index'
+import './styles/styles.scss'
 
 class Announcement extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class Announcement extends React.Component {
         (this.checkRoute('announcementCreate') || this.checkRoute('announcementEditing')) &&
         <AnnouncementCreate />
         }
+        {console.log(this.checkRoute('announcementIndex'))}
         {
         this.checkRoute('announcementIndex') &&
         <AnnouncementIndex />

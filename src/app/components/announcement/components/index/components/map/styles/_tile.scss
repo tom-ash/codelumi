@@ -24,7 +24,6 @@
     }
   }
   @media only screen and (max-width: $breakpoint-phone-large-max) {
-  // @media only screen and (max-width: 900px) {
     top: 416px;
     right: -6px;
     left: -6px;
@@ -32,75 +31,78 @@
     margin: 0 auto;
     padding: 0;
   }
-  .data {
-    padding: 12px 0;
-    .area {
-      margin: 0 0 0 36px;
-      line-height: 58px;
-      @media only screen and (max-width: $breakpoint-phone-large-max) {
-        margin: 0 0 0 24px;
-      }
-    }
-    .area, .rent {
-      float: left;
-    }
-    .rent {
-      float: right;
-      .total, .per-sqm {
-        float: left;
-        margin: 0 36px 0 0;
+  .core {
+    .data {
+      padding: 12px 0;
+      position: relative;
+      .area {
+        margin: 0 0 0 36px;
+        line-height: 58px;
         @media only screen and (max-width: $breakpoint-phone-large-max) {
-          margin: 0 24px 0 0;
+          margin: 0 0 0 24px;
+        }
+      }
+      .area, .rent {
+        float: left;
+      }
+      .rent {
+        float: right;
+        .total, .per-sqm {
+          float: left;
+          margin: 0 36px 0 0;
+          @media only screen and (max-width: $breakpoint-phone-large-max) {
+            margin: 0 24px 0 0;
+          }
         }
       }
     }
-  }
-  .picture {
-    position: relative!important;
-    $width: 400px;
-    width: $width;
-    height: 0;
-    background-size: ($width * 1.17777) auto;
-    padding-bottom: ($width / 1.7777);
-    border-radius: 0;
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
-      $width: 348px;
-      width: $width!important;
+    .picture {
+      position: relative!important;
+      $width: 400px;
+      width: $width;
       height: 0;
-      background-size: ($width * 1.3333) auto;
-      padding-bottom: ($width / 1.3333);
-      background-position: center; 
-    }
-    .primary-data {
-      .announcement-id {
-        position: absolute;
-        top: 6px;
-        left: 6px;
+      background-size: ($width * 1.17777) auto;
+      padding-bottom: ($width / 1.7777);
+      border-radius: 0;
+      @media only screen and (max-width: $breakpoint-phone-large-max) {
+        $width: 348px;
+        width: $width!important;
+        height: 0;
+        background-size: ($width * 1.3333) auto;
+        padding-bottom: ($width / 1.3333);
+        background-position: center; 
       }
-      .category {
-        position: absolute;
-        bottom: 6px;
-        left: 6px;
+      .primary-data {
+        .announcement-id {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+        }
+        .category {
+          position: absolute;
+          bottom: 6px;
+          left: 6px;
+        }
+        .district {
+          position: absolute;
+          bottom: 6px;
+          left: 44px;
+        }
       }
-      .district {
-        position: absolute;
-        bottom: 6px;
-        left: 44px;
+    }
+    .bottom-data {
+      font: 16px;
+      padding: 12px;
+      .rooms, .floor, .total-floors {
+        float: left;
+        margin-right: 24px;
       }
-    }
-  }
-  .bottom-data {
-    font: 16px;
-    padding: 12px;
-    .rooms, .floor, .total-floors {
-      float: left;
-      margin-right: 24px;
-    }
-    .calendar {
-      float: right;
-    }
-    .fas, .far {
-      margin-right: 8px;
+      .calendar {
+        float: right;
+      }
+      .fas, .far {
+        margin-right: 8px;
+      }
     }
   }
 }

@@ -194,8 +194,7 @@ const userEditPaths =          ['/signin',
                                 '/mojekonto/wizytowka']
 const announcementCreatePaths = ['/add_announcement',
                                  '/dodaj_ogloszenie']
-const announcementIndexPaths = ['/',
-                                '/search_results',
+const announcementIndexPaths = ['/search_results',
                                 '/wyniki_wyszukiwania',
                                 '/mojekonto/mojeogloszenia',
                                 '/myaccount/myannouncements']                   
@@ -227,9 +226,7 @@ export function checkRoute(route) {
       if (path == '/') return true
       result = false
       announcementIndexPaths.map(indexPath => {
-        if (path.indexOf(indexPath) != -1) {
-          result = true
-        }
+        if (path.indexOf(indexPath) !== -1) result = true
       })
       return result
     case 'announcementEditing':

@@ -8,7 +8,6 @@ export function getAnnouncements() {
     announcements: null
   })
   if (connecting) return
-
   fetch(apiUrl + `/announcements${this.buildRequestParameters()}`, {
     headers: { 'Content-Type': 'application/json' }
   })
@@ -18,8 +17,10 @@ export function getAnnouncements() {
   .then(jsonRes => {
     const announcements = jsonRes.announcements.map(announcement => {
       announcement.pictureIndex = 0
+      announcement.showLoader = true
       return announcement
     })
+    announcements[0].show = true
     changeData({
       panelAmount: jsonRes.amount,
       listAmount: jsonRes.amount,
@@ -27,8 +28,7 @@ export function getAnnouncements() {
     })
     changeControl({
       connecting: false,
-      fetchList: false,
-      showList: true
+      fetchList: false
     })
   })
 }

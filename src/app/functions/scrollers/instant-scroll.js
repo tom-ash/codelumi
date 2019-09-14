@@ -1,7 +1,8 @@
 import { findScrollingElement } from './find-scrolling-element'
 
-export function instantScroll() {
+export function instantScroll(scrollTo) {
+  scrollTo = scrollTo || 0
   const scrollingElement = findScrollingElement()
   if (!scrollingElement) return
-  scrollingElement.scrollTop = 0
+  scrollingElement.scrollTop = scrollTo
 }

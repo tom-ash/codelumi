@@ -47,40 +47,43 @@ class AnnouncementCreatePictures extends React.Component {
         </div>
         <div>
           {
-          this.props.blobs.map((picture, index) => (
-            <div
-            key={`${picture.blob}`}
-            style = {{ backgroundImage: `url('${picture.blob}')` }}
-            className={pictureClassProvider(index)}>
+          this.props.blobs.map((picture, index) => {
+            if (!picture) return undefined
+            return (
               <div
-              onClick={() => this.deletePicture(index)}
-              className='button delete'>
-                <i className='far fa-minus-square'></i>
+              key={`${picture.blob}`}
+              style = {{ backgroundImage: `url('${picture.blob}')` }}
+              className={pictureClassProvider(index)}>
+                <div
+                onClick={() => this.deletePicture(index)}
+                className='button delete'>
+                  <i className='far fa-minus-square'></i>
+                </div>
+                {
+                this.props.blobs && (index !== 0) &&
+                <div
+                onClick={() => this.movePicture('up', index)}
+                className='button up'>
+                  <i className='far fa-caret-square-up'></i>
+                </div>
+                }
+                {
+                this.props.blobs && (this.props.blobs.length !== index + 1) &&
+                <div
+                onClick={() => this.movePicture('down', index)}
+                className='button down'>
+                  <i className='far fa-caret-square-down'></i>
+                </div>
+                }
+                {
+                false &&
+                <div className='button comment'>
+                  <i className="far fa-comment-alt"></i>
+                </div>
+                }
               </div>
-              {
-              this.props.blobs && (index !== 0) &&
-              <div
-              onClick={() => this.movePicture('up', index)}
-              className='button up'>
-                <i className='far fa-caret-square-up'></i>
-              </div>
-              }
-              {
-              this.props.blobs && (this.props.blobs.length !== index + 1) &&
-              <div
-              onClick={() => this.movePicture('down', index)}
-              className='button down'>
-                <i className='far fa-caret-square-down'></i>
-              </div>
-              }
-              {
-              false &&
-              <div className='button comment'>
-                <i className="far fa-comment-alt"></i>
-              </div>
-              }
-            </div>
-          ))
+            )
+          })
           }
           <div className='float-clear' />
         </div>

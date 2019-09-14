@@ -18,13 +18,14 @@ import { togglePhone } from '../../../../functions/toggle-phone'
 import { rentProvider } from './functions/rent-provider'
 import { rentPerSqmCounter } from '../../../../functions/rent-per-sqm-counter'
 import { parseAvailabilityDate } from '../../../../functions/parse-availability-date'
+import WindmillSpinner from '../../../../../support/components/spinner/components/windmill/windmill'
 
 class AnnouncementIndexTile extends React.Component {
   constructor(props) {
     super(props)
     this.languageHandler = languageHandler.bind(this)
     this.componentDidMount = lifecycle.componentDidMount
-    this.shouldComponentUpdate = lifecycle.shouldComponentUpdate
+    // this.shouldComponentUpdate = lifecycle.shouldComponentUpdate
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.fetchPicture = fetchPicture.bind(this)
     this.changePicture = changePicture.bind(this)
@@ -43,6 +44,13 @@ class AnnouncementIndexTile extends React.Component {
   
   render() {
     const area = this.props.announcement.area
+    const { announcement, control } = this.props
+    const { showLoader, status, show } = announcement
+    let coreClass = `core`
+    if (showLoader) coreClass += ' loader'
+    if (status === 2) coreClass += ' inactive'
+    if (!announcement.pictures) return null // TODO
+    if (!show) return null
     return (
       <div
       className={`announcement-index-tile${this.props.first ? ' first': ''}${this.props.last ? ' last': ''}${this.props.index % 2 === 0 ? ' even' : ''}`}>
@@ -50,7 +58,13 @@ class AnnouncementIndexTile extends React.Component {
         this.props.venue == 'map' &&
         <i className='fas fa-times close' onClick={this.closeTile}/>
         }
-        <div className={`tile-container${this.props.announcement.status == 1 ? '' : ' inactive'}`}>
+        {
+        showLoader &&
+        <div>
+          <WindmillSpinner spinnerClass='windmill-medium-spinner'/>
+        </div>
+        }
+        <div className={coreClass}>
           <div className='data'>
             <div className='area'>
               {area} {this.languageHandler('m2', 'sqm')}
@@ -109,7 +123,7 @@ class AnnouncementIndexTile extends React.Component {
             <div className='float-clear' />
           </div>
         </div>
-        {this.props.control}
+        {control}
       </div>
     )
   }

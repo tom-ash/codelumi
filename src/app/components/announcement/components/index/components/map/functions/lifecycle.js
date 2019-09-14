@@ -17,6 +17,7 @@ export function componentDidUpdate(prevProps) {
   this.googleMapHandler(() => this.props.changeControl({ loaded: true, fetch: true }))
   if (this.props.fetch && !prevProps.fetch) getMapAnnouncements.call(this)
   if (this.props.draw && !prevProps.draw) drawPins.call(this)
+  
   if (this.props.tile && compareParameters(prevProps.tile, this.props.tile, ['id'])) this.fetchTile()
 }
 

@@ -9,6 +9,7 @@ export function fetchTile() {
   })
   .then(jsonResponse => {
     const announcement = { ...jsonResponse }
+    announcement.show = true
     announcement.pictureIndex = 0
     this.props.changeData({ tile: announcement })
   })

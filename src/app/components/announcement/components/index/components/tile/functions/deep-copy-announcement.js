@@ -6,5 +6,6 @@ export function deepCopyAnnouncement(jsonResponse) {
   picture.url = jsonResponse.url
   pictures[pictureIndex] = picture
   announcement.pictures = pictures
+  announcement.showLoader = false
   return announcement
 }

@@ -15,7 +15,7 @@ class AnnouncementIndexSearch extends React.Component {
 
   render() {
     return (
-      <div id='announcement-index-search'>
+      <div id='announcement-index'>
         {
         this.checkRoute('announcementIndexFull') &&
         <AnnouncementIndexFull />

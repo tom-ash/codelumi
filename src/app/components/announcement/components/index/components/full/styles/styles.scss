@@ -6,6 +6,7 @@
 @import '../../../../../../../styles/colors';
 
 #announcement-index-full {
+  z-index: 2;
   position: relative;
   margin: 224px auto 0;
   h2 { @extend %page-header; }
