@@ -25,8 +25,8 @@ export const text = [
 
   {
     item: 'a)', tier: 'subpoint', version: version10,
-    polish: <span><strong>Serwis</strong> - serwis internetowy znajdujący się pod adresem www.warsawlease.com.</span>,
-    english: <span><strong>The Service</strong> - an Internet service located under the address <i>www.warsawlease.com</i>.</span>
+    polish: <span><strong>Serwis</strong> - serwis internetowy znajdujący się pod adresem www.warsawlease.pl.</span>,
+    english: <span><strong>The Service</strong> - an Internet service located under the address <i>www.warsawlease.pl</i>.</span>
   },
   {
     item: 'b)', tier: 'subpoint', version: version10,
@@ -196,7 +196,7 @@ export const text = [
   },
   {
     item: '6.4.', tier: 'point', version: version10,
-    polish: <span>Administrator ma prawo do zmiany Regulaminu, Polityki Prywatności, Polityki Plików Cookies i Podobnych Technologii oraz Cennika poprzez zamieszczenie nowych tekstów jednolitych tych dokumentów w Serwisie pod adresem <i>www.warsawlease.com</i>. Zmiany te wchodzą w&nbsp;życie po upływie okresu 14 dni od ich ogłoszenia.</span>,
-    english: <span>The Administrator has the right to amend these Terms of Service, the Privacy Policy, the Cookies and Similar Technologies Policy and the Pricing through publication of new unified texts of those documents in the Service under the address <i>www.warsawlease.com</i>. The amendments are applicable after the lapse of the period of 14 days from their publication.</span>
+    polish: <span>Administrator ma prawo do zmiany Regulaminu, Polityki Prywatności, Polityki Plików Cookies i Podobnych Technologii oraz Cennika poprzez zamieszczenie nowych tekstów jednolitych tych dokumentów w Serwisie pod adresem <i>www.warsawlease.pl</i>. Zmiany te wchodzą w&nbsp;życie po upływie okresu 14 dni od ich ogłoszenia.</span>,
+    english: <span>The Administrator has the right to amend these Terms of Service, the Privacy Policy, the Cookies and Similar Technologies Policy and the Pricing through publication of new unified texts of those documents in the Service under the address <i>www.warsawlease.pl</i>. The amendments are applicable after the lapse of the period of 14 days from their publication.</span>
   },
 ]

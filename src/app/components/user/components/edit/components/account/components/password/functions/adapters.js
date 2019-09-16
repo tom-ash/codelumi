@@ -5,13 +5,14 @@ import { noError } from '../constants/no-error'
 import { changeRoute } from '../../../../../../../../../functions/routers'
 
 export function sendEmail() {
+  const { language } = this.props
   if (this.props.connecting) return
   const email = document.getElementById('user-edit-password-email').value
   if (!this.emailManager('validate', email)) return
   this.props.changeControl({ passwordConnecting: true })
   fetch(apiUrl + '/user/edit/password/email', {
     method: 'PUT', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email })
+    body: JSON.stringify({ email, language })
   })
   .then(response => {
     if (response.status == 200) {
