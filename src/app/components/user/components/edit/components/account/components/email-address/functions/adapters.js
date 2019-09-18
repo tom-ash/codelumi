@@ -8,7 +8,13 @@ export function sendCurrentEmailAddress() {
   this.props.changeControl({ emailConnecting: true })
   const [ UST, UAT ] = getTokens()
   fetch(apiUrl + '/user/edit/email/send_current', {
-    method: 'PUT', headers: { 'Content-Type': 'application/json', UST, UAT },
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      UST,
+      UAT,
+      language: this.props.language
+    },
     body: JSON.stringify({ email: this.props.currentValue })
   })
   .then(response => {
@@ -26,7 +32,11 @@ export function sendCurrentEmailVerification() {
   this.props.changeControl({ emailConnecting: true })
   const [ UST, UAT ] = getTokens()
   fetch(apiUrl + '/user/edit/email/verify/current', {
-    method: 'PUT', headers: { 'Content-Type': 'application/json', UST, UAT },
+    method: 'PUT', headers: {
+      'Content-Type': 'application/json',
+      UST,
+      UAT
+    },
     body: JSON.stringify({ verification_code: currentEmailVerification })
   })
   .then(response => {
@@ -43,7 +53,12 @@ export function sendNewEmailAddress() {
   const newEmail = document.getElementById('user-edit-email-new').value
   const [ UST, UAT ] = getTokens()
   fetch(apiUrl + '/user/edit/email/new', {
-    method: 'PUT', headers: { 'Content-Type': 'application/json', UST, UAT },
+    method: 'PUT', headers: {
+      'Content-Type': 'application/json',
+      UST,
+      UAT,
+      language: this.props.language
+    },
     body: JSON.stringify({ new_email: newEmail })
   })
   .then(response => {
@@ -61,7 +76,12 @@ export function sendNewEmailVerification() {
   this.props.changeControl({ emailConnecting: true })
   const [ UST, UAT ] = getTokens()
   fetch(apiUrl + '/user/edit/email/verify/new', {
-    method: 'PUT', headers: { 'Content-Type': 'application/json', UST, UAT },
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      UST,
+      UAT
+    },
     body: JSON.stringify({ verification_code: currentEmailVerification + newEmailVerification })
   })
   .then(response => {

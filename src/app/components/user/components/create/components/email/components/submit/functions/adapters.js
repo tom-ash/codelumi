@@ -45,7 +45,10 @@ function validateUserObject(userObject) {
 function createProspectiveUser(userObject) {
   fetch(apiUrl + '/prospective_users', {
     method: "POST",
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      language: this.props.language
+    },
     body: JSON.stringify(userObject)
   })
   .then(response => {
