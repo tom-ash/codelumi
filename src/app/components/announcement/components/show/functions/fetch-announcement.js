@@ -21,4 +21,5 @@ export function fetchAnnouncement(id) {
     this.props.changeData(clientParams)
     this.props.changeControl({ mapLoaded: false })
   })
+  .catch(() => this.changeRoute(null, '/'))
 }
