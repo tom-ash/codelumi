@@ -17,4 +17,5 @@ export function changePicture(e, direction) {
   }
   announcement.pictureIndex = pictureIndex
   this.props.changeAnnouncement(announcement)
+  this.viewAnnouncement(announcement.id)
 }

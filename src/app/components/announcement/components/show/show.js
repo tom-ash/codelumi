@@ -14,6 +14,7 @@ import { phoneSwitchProvider } from '../../functions/phone-switch-provider'
 import { togglePhone } from '../../functions/toggle-phone'
 import { fixedPhoneHandler } from './functions/fixed-phone-handler'
 import { changeRoute } from '../../../../functions/routers'
+import { viewAnnouncement } from '../../functions/view-announcement'
 
 class AnnouncementShow extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class AnnouncementShow extends React.Component {
     this.togglePhone = togglePhone.bind(this)
     this.fixedPhoneHandler = fixedPhoneHandler.bind(this)
     this.changeRoute = changeRoute.bind(this)
+    this.viewAnnouncement = viewAnnouncement.bind(this)
   }
 
   render() {

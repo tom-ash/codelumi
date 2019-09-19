@@ -23,11 +23,8 @@ import './styles/styles.scss'
 import { compositeManagerProvider, subInputMinManagerProvider, subInputMaxManagerProvider } from '../../functions/managerProviders'
 import { compositeInputProvider } from '../../functions/composite-input-provider'
 import { subInputNames } from '../../constants/subInputNames'
-
 import { paramsBuilder } from './functions/params-builder'
 import { paramsReader } from './functions/params-reader'
-
-
 import { parseCategoryForUrl } from '../../../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../../../functions/district-parsers'
 import { parseCurrency } from '../../../../functions/currency-parsers'

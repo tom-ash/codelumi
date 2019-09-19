@@ -19,6 +19,7 @@ import { rentProvider } from './functions/rent-provider'
 import { rentPerSqmCounter } from '../../../../functions/rent-per-sqm-counter'
 import { parseAvailabilityDate } from '../../../../functions/parse-availability-date'
 import WindmillSpinner from '../../../../../support/components/spinner/components/windmill/windmill'
+import { viewAnnouncement } from '../../../../functions/view-announcement'
 
 class AnnouncementIndexTile extends React.Component {
   constructor(props) {
@@ -40,6 +41,7 @@ class AnnouncementIndexTile extends React.Component {
     this.rentProvider = rentProvider.bind(this)
     this.rentPerSqmCounter = rentPerSqmCounter.bind(this)
     this.parseAvailabilityDate = parseAvailabilityDate.bind(this)
+    this.viewAnnouncement = viewAnnouncement.bind(this)
   }
   
   render() {
