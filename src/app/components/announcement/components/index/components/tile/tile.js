@@ -46,16 +46,17 @@ class AnnouncementIndexTile extends React.Component {
   
   render() {
     const area = this.props.announcement.area
-    const { announcement, control } = this.props
-    const { showLoader, status, show } = announcement
+    const { announcement, control, active } = this.props
+    const { showLoader, show, visible } = announcement
     let coreClass = `core`
     if (showLoader) coreClass += ' loader'
-    if (status === 2) coreClass += ' inactive'
+    if (!visible) coreClass += ' invisible'
     if (!announcement.pictures) return null // TODO
     if (!show) return null
     return (
       <div
       className={`announcement-index-tile${this.props.first ? ' first': ''}${this.props.last ? ' last': ''}${this.props.index % 2 === 0 ? ' even' : ''}`}>
+        {/* {console.log(announcement)} */}
         {
         this.props.venue == 'map' &&
         <i className='fas fa-times close' onClick={this.closeTile}/>
@@ -126,6 +127,7 @@ class AnnouncementIndexTile extends React.Component {
           </div>
         </div>
         {control}
+        {active}
       </div>
     )
   }

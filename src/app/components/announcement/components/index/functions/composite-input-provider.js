@@ -5,7 +5,7 @@ import { compositeManagerProvider, subInputMaxManagerProvider } from './managerP
 export function compositeInputProvider(inputName) {
   const className = inputName == 'totalFloors' ? 'total-floors' : inputName
   return (
-    <div className={`composite-input-container ${className}${this.props[`${inputName}Active`] ? ' active' : ''}`}>
+    <div className={`composite-input-container ${className}${this.props[`${inputName}Active`] ? ' visible' : ''}`}>
     <ManagedSelect manager={this[`${inputName}Manager`]}/>
     <div style={{ display: this.props[`${inputName}Active`] ? 'block' : 'none'}}>
       <div className='sub-inputs-container'>

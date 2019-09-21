@@ -14,7 +14,7 @@ export function panelProvider() {
         {this.compositeInputProvider('rooms')}
         {this.compositeInputProvider('floor')}
         {this.compositeInputProvider('totalFloors')}
-        <div className={`composite-input-container availability-date${this.props.availabilityDateActive ? ' active' : ''}`}>
+        <div className={`composite-input-container availability-date${this.props.availabilityDateActive ? ' visible' : ''}`}>
           <ManagedSelect manager={this.availabilityDateManager}/>
           <div 
           className='calendar-container'

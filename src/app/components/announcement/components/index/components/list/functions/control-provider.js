@@ -6,9 +6,9 @@ export function controlProvider(announcement, index) {
       <div className='info-pieces'>
         <div className='info'>
           {
-          announcement.status == 1 ?
-          <span><i className='far fa-eye' /> Aktywne</span> :
-          <span><i className='far fa-eye-slash' /> Nieaktywne</span>
+          announcement.visible ?
+          <span><i className='far fa-eye' /> {this.languageHandler('Widoczne', 'Visible')}</span> :
+          <span><i className='far fa-eye-slash' /> {this.languageHandler('Ukryte', 'Hidden')}</span>
           }
         </div>
         <div className='info'>
@@ -25,10 +25,10 @@ export function controlProvider(announcement, index) {
       <div className='buttons'>
         {this.buttonProvider('Edytuj', 'Edit', announcement, index, this.edit)}
         {
-        announcement.status == 1 ?
-        this.buttonProvider('Dezaktywuj', 'De-activate', announcement, index, this.activate)
+        announcement.visible ?
+        this.buttonProvider('Ukryj', 'Hide', announcement, index, this.triggerVisible)
         :
-        this.buttonProvider('Aktywuj', 'Activate', announcement, index, this.activate)
+        this.buttonProvider('Pokaż', 'Show', announcement, index, this.triggerVisible)
         }
         {this.buttonProvider('Usuń', 'Delete', announcement, index, () => this.props.changeControl({ beingDeleted: announcement.id }), ' last')}
         <div className='float-clear' />

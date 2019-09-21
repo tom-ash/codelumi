@@ -5,25 +5,25 @@
   border-radius: 4px;
   width: 400px;
   margin-left: 52px!important;
-  margin-bottom: 56px;
-  .inactive {
+  margin-bottom: 120px;
+  .invisible {
     opacity: 0.4;
   }
   &.last {
-    margin-bottom: 0;
+    margin-bottom: 72px;
   }
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
+  @media only screen and (max-width: $breakpoint-tablet-large-max) {
     margin: 0 auto;
     padding: 0;
     margin-left: 0!important;
     margin-top: 64px;
-    margin-bottom: 240px;
+    margin-bottom: 300px;
     width: 100%;
     &.first {
       margin-top: 52px!important;
     }
     &.last {
-      margin-bottom: 144px!important;
+      margin-bottom: 240px;
     }
   }
   .core {
@@ -33,7 +33,7 @@
       .area {
         margin: 0 0 0 36px;
         line-height: 58px;
-        @media only screen and (max-width: $breakpoint-phone-large-max) {
+        @media only screen and (max-width: $breakpoint-tablet-large-max) {
           margin: 0 0 0 24px;
         }
       }
@@ -45,7 +45,7 @@
         .total, .per-sqm {
           float: left;
           margin: 0 36px 0 0;
-          @media only screen and (max-width: $breakpoint-phone-large-max) {
+          @media only screen and (max-width: $breakpoint-tablet-large-max) {
             margin: 0 24px 0 0;
           }
         }
@@ -59,7 +59,7 @@
       background-size: ($width * 1.17777) auto;
       padding-bottom: ($width / 1.7777);
       border-radius: 0;
-      @media only screen and (max-width: $breakpoint-phone-large-max) {
+      @media only screen and (max-width: $breakpoint-tablet-large-max) {
         $width: 100%;
         width: $width!important;
         height: 0;
@@ -78,7 +78,7 @@
           height: 40px;
           line-height: 42px;
           font-size: 17px;
-          @media only screen and (max-width: $breakpoint-phone-large-max) {
+          @media only screen and (max-width: $breakpoint-tablet-large-max) {
             top: -132px;
             left: 0;
           }
@@ -120,7 +120,7 @@
     color: #2C3E50;
     font-size: 16px;
     padding: 12px 12px 0;
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
+    @media only screen and (max-width: $breakpoint-tablet-large-max) {
       left: 0;
       top: auto;
       margin-top: 12px;
@@ -134,20 +134,20 @@
       @media only screen and (min-width: $breakpoint-tablet-small-min) {
         height: 201px;
       }
-      @media only screen and (max-width: $breakpoint-phone-large-max) {
+      @media only screen and (max-width: $breakpoint-tablet-large-max) {
         float: left;
         width: 50%;
       }
       .info {
         margin-bottom: 12px;
         font-size: 15px;
-        @media only screen and (max-width: $breakpoint-phone-large-max) {
+        @media only screen and (max-width: $breakpoint-tablet-large-max) {
           line-height: 18px;
         }
       }
     }
     .buttons {
-      @media only screen and (max-width: $breakpoint-phone-large-max) {
+      @media only screen and (max-width: $breakpoint-tablet-large-max) {
         float: left;
         width: 50%;
       }
@@ -165,10 +165,60 @@
           &:hover {
             background: transparentize(#3498DB, .2)
           }
-          @media only screen and (max-width: $breakpoint-phone-large-max) {
+          @media only screen and (max-width: $breakpoint-tablet-large-max) {
             height: 28px;
             font-size: 12px;
           }
+        }
+      }
+    }
+  }
+  .active {
+    position: absolute;
+    bottom: -66px;
+    background: white;
+    width: 100%;
+    height: 54px;
+    line-height: 54px;
+    text-align: center;
+    .date {
+      color: #2874A6;
+    }
+    @media only screen and (max-width: $breakpoint-tablet-large-max) {
+      bottom: -210px;
+      text-align: left;
+      padding-left: 12px;
+
+    }
+    .button-container {
+      position: absolute;
+      right: -188px;
+      top: 0;
+      width: 176px;
+      height: 54px;
+      background: white;
+      @media only screen and (max-width: $breakpoint-tablet-large-max) {
+        z-index: 2;
+        right: 0;
+      }
+      .button {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 2.5px;
+        width: 152px;
+        height: 32px;
+        margin: auto;
+        border: none;
+        font-size: 14px;
+        color: white;
+        $background-color: #DC7633;
+        background: $background-color;
+        &:hover {
+          background: transparentize($background-color, .2)
         }
       }
     }

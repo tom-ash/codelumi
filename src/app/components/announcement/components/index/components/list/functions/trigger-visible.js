@@ -1,14 +1,14 @@
 import { apiUrl } from '../../../../../../../constants/urls'
 import { getTokens } from '../../../../../../user/components/authorize/components/tokens/functions/get-tokens'
 
-export function activate(announcement, index) {
+export function triggerVisible(announcement, index) {
   if (this.props.connecting) return
   this.props.changeControl({ connecting: true })
   const [UST, UAT] = getTokens()
-  fetch(`${apiUrl}/announcements/${announcement.id}?attribute=status`, {
+  fetch(`${apiUrl}/announcements/${announcement.id}?attribute=visible`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json', UST, UAT },
-    body: JSON.stringify({ status: announcement.status == 1 ? 2 : 1 })
+    body: JSON.stringify({ visible: !announcement.visible })
   })
   .then(response => {
     if (response.ok) {
@@ -21,7 +21,7 @@ export function activate(announcement, index) {
 function deepCloneAnnouncement(announcement, index) {
   const announcements = [ ...this.props.announcements ]
   const copiedAnnouncement = { ...announcement }
-  copiedAnnouncement.status = announcement.status == 1 ? 2 : 1
+  copiedAnnouncement.visible = !announcement.visible
 
 
   announcements[index] = copiedAnnouncement

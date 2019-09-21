@@ -1,7 +1,9 @@
 import { apiUrl } from '../../../../../../../constants/urls'
 
 export function fetchTile() {
-  fetch(`${apiUrl}/announcements/${this.props.tile.id}`, {
+  const { tile, changeData } = this.props
+  if (!tile.id) return
+  fetch(`${apiUrl}/announcements/${tile.id}`, {
     headers: { 'Content-Type': 'application/json', 'Only-Tile': true },
   })
   .then(response => {
@@ -11,6 +13,6 @@ export function fetchTile() {
     const announcement = { ...jsonResponse }
     announcement.show = true
     announcement.pictureIndex = 0
-    this.props.changeData({ tile: announcement })
+    changeData({ tile: announcement })
   })
 }

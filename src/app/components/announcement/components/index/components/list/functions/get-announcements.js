@@ -10,8 +10,10 @@ export function getAnnouncements() {
     {
       headers: {
         'Content-Type': 'application/json', UST, UAT,
-        offices: this.props.switches.offices, usablePremises: this.props.switches.usablePremises,
-        active: this.props.switches.active, inactive: this.props.switches.inactive,
+        offices: this.props.switches.offices,
+        usablePremises: this.props.switches.usablePremises,
+        visible: this.props.switches.visible,
+        hidden: this.props.switches.hidden,
         sort: this.props.sort
       }
     }

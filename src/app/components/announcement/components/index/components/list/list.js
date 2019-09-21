@@ -8,9 +8,11 @@ import * as managers from './functions/managers'
 import { ManagedMultipleCheckbox, ManagedSelect, ManagedPagination, ManagedButton } from 'managed-inputs'
 import AnnouncementIndexTile from '../tile/tile'
 import { controlProvider } from './functions/control-provider'
+import { activeProvider } from './functions/active-provider'
 import './styles/styles.scss'
 import { buttonProvider } from './functions/button-provider'
-import { activate } from './functions/activate'
+import { triggerVisible } from './functions/trigger-visible'
+import { extend } from './functions/extend'
 import { destroy } from './functions/destroy'
 import { edit } from './functions/edit'
 import { changeRoute } from '../../../../../../functions/routers'
@@ -26,9 +28,10 @@ class AnnouncementIndexList extends React.Component {
     this.componentWillUnmount = lifecycle.componentWillUnmount
     this.getAnnouncements = getAnnouncements.bind(this)
     this.controlProvider = controlProvider.bind(this)
+    this.activeProvider = activeProvider.bind(this)
     this.buttonProvider = buttonProvider.bind(this)
     this.edit = edit.bind(this)
-    this.activate = activate.bind(this)
+    this.triggerVisible = triggerVisible.bind(this)
     this.destroy = destroy.bind(this)
     this.changeRoute = changeRoute.bind(this)
     this.switchesManager = managers.switchesManager.bind(this)
@@ -38,6 +41,7 @@ class AnnouncementIndexList extends React.Component {
     this.paginationManager = managers.paginationManager.bind(this)
     this.destroyManager = managers.destroyManager.bind(this)
     this.cancelDestroyManager = managers.cancelDestroyManager.bind(this)
+    this.extend = extend.bind(this)
   }
 
   render() {
@@ -84,6 +88,7 @@ class AnnouncementIndexList extends React.Component {
           announcement={announcement}
           announcements={this.props.announcements}
           control={this.controlProvider(announcement, index)}
+          active={this.activeProvider(announcement, index)}
           changeAnnouncement={this.props.changeAnnouncement} />
           ))
           }

@@ -10,13 +10,13 @@ export const switches = [
     english: 'Usable Premises'
   },
   {
-    ref: 'active',
-    polish: 'Aktywne',
-    english: 'Active'
+    ref: 'visible',
+    polish: 'Widoczne',
+    english: 'Visible'
   },
   {
-    ref: 'inactive',
-    polish: 'Nieaktywne',
-    english: 'Inactive'
+    ref: 'hidden',
+    polish: 'Ukryte',
+    english: 'Hidden'
   }
 ]
