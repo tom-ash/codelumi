@@ -57,8 +57,8 @@ export const text = [
   },
   {
     item: 'g)', tier: 'subpoint', version: version['1.0'],
-    polish: <span><strong>Ogłoszeniodawca</strong> - podmiot, który dodał dane Ogłoszenie w Serwisie.</span>,
-    english: <span><strong>Announcer</strong> - an entity, which added a given Announcement in the Service.</span>
+    polish: <span><strong>Ogłoszeniodawca</strong> - podmiot, który dodał Ogłoszenie w Serwisie.</span>,
+    english: <span><strong>Announcer</strong> - an entity, which added an Announcement in the Service.</span>
   },
   {
     item: '2.', tier: 'header', version: version['1.0'],
@@ -73,7 +73,7 @@ export const text = [
   {
     item: '2.2.', tier: 'point', version: version['1.0'],
     polish: <span>Serwis przeznaczony jest do prezentowania Ogłoszeń odnoszących się do wynajmu biur oraz lokali użytkowych znajdujących się w obrębie m.st.&nbsp;Warszawy.</span>,
-    english: <span>The Service is intended to present Announcemnets regarding lease of offices and usable premises located in the area of the capital city of Warsaw.</span>
+    english: <span>The Service is intended to present Announcements regarding lease of offices and usable premises located in the area of the capital city of Warsaw.</span>
   },
   {
     item: '3.', tier: 'header', version: version['1.0'],
@@ -84,12 +84,12 @@ export const text = [
   {
     item: '3.1.', tier: 'point', version: version['1.0'],
     polish: <span>Konto w Serwisie może założyć wyłącznie podmiot posiadający status przedsiębiorcy działający samodzielnie lub poprzez osobę go&nbsp;reprezentującą.</span>,
-    english: <span>An Account in the Service can only be created by an entity being an entrepreneur acting in its own name or by a person representing such an entrepreneur.</span>
+    english: <span>An Account in the Service can only be registered by an entity being an entrepreneur acting in its own name or by a person representing such an entrepreneur.</span>
   },
   {
     item: '3.2.', tier: 'point', version: version['1.0'],
     polish: <span>Administrator uprawniony jest do deaktywacji lub usunięcia Konta w przypadku stwierdzenia naruszenia Regulaminu przez Użytkownika.</span>,
-    english: <span>The Administrator is entitled to de-activate and/or delete an Account in case of determining of violation of these Terms of Service by the User.</span>
+    english: <span>The Administrator is entitled to de-activate and/or delete the Account in case of determining of violation of these Terms of Service by the User.</span>
   },
   {
     item: '4.', tier: 'header', version: version['1.0'],
@@ -99,7 +99,7 @@ export const text = [
   {
     item: '4.1.', tier: 'point', version: version['1.0'],
     polish: <span>Ogłoszenia nie stanowią ofert w rozumieniu polskiego kodeksu cywilnego, a jedynie zaproszenia do rozpoczęcia negocjacji.</span>,
-    english: <span>The Announcements do not constitute offers within meaning of the Polish Civil Code, and constitute only invitations to commence negotiations.</span>
+    english: <span>Announcements do not constitute offers within meaning of the Polish Civil Code, and constitute only invitations to commence negotiations.</span>
   },
   {
     item: '4.2.', tier: 'point', version: version['1.0'],
@@ -129,7 +129,7 @@ export const text = [
   {
     item: '4.7.', tier: 'point', version: version['1.0'],
     polish: <span>W okresie promocyjnym dodanie lub wydłużenie okresu aktywności Ogłoszenia w Serwisie jest nieodpłatne. Po tym okresie cena za dodanie lub wydłużenie okresu aktywności Ogłoszenia będzie ustalona zgodnie z cennikiem.</span>,
-    english: <span>During promotional period adding and/or extending activation period of an Announcement in the Service is gratuitous. After that period the price of adding and/or extending activation period of an Annoucement shall be provided in the price list.</span>
+    english: <span>During promotional period adding and/or extending activation period of an Announcement in the Service is gratuitous. After that period the price for adding and/or extending activation period of an Annoucement shall be provided in the price list.</span>
   },
   {
     item: '4.8.', tier: 'point', version: version['1.0'],
@@ -149,7 +149,7 @@ export const text = [
   {
     item: '4.11.', tier: 'point', version: version['1.0'],
     polish: <span>Administrator uprawniony jest do ukrycia, deaktywacji lub usunięcia Ogłoszenia w przypadku stwierdzenia naruszenia Regulaminu przez Ogłoszeniodawcę.</span>,
-    english: <span>The Administrator is entitled to hide, de-activate and/or delete an Annoucement in case of determining of violation of these Terms of Service by the Announcer.</span>
+    english: <span>The Administrator is entitled to hide, de-activate and/or delete the Annoucement in case of determining of violation of these Terms of Service by the Announcer.</span>
   },
   {
     item: '5.', tier: 'header', version: version['1.0'],
@@ -179,7 +179,7 @@ export const text = [
   {
     item: '6.1.', tier: 'point', version: version['1.0'],
     polish: <span>Integralnymi częściami niniejszego Regulaminu są Polityka Prywatności oraz Polityka Plików Cookies.</span>,
-    english: <span>The Privacy Policy and the Cookies and Similar Technologies Policy consitute integral parts of these Terms of Service.</span>
+    english: <span>The Privacy Policy and the Cookies Policy consitute integral parts of these Terms of Service.</span>
   },
   {
     item: '6.2.', tier: 'point', version: version['1.0'],
@@ -213,7 +213,7 @@ export const text = [
   },
   {
     item: '7.4.', tier: 'point', version: version['1.0'],
-    polish: <span>Administrator ma prawo do zmiany Regulaminu, Polityki Prywatności, Polityki Plików Cookies i Podobnych Technologii oraz Cennika poprzez zamieszczenie nowych tekstów jednolitych tych dokumentów w Serwisie pod adresem <i>www.warsawlease.pl</i>. Zmiany te wchodzą w&nbsp;życie po upływie okresu 14 dni od ich ogłoszenia.</span>,
-    english: <span>The Administrator is authorised to amend these Terms of Service, the Privacy Policy, the Cookies and Similar Technologies Policy and the Pricing through publication of new unified texts of those documents within the Service under the address <i>www.warsawlease.pl</i>. The amendments are applicable after the lapse of the period of 14 days from their publication.</span>
+    polish: <span>Administrator ma prawo do zmiany Regulaminu, Polityki Prywatności, Polityki Plików Cookies oraz Cennika poprzez zamieszczenie nowych tekstów jednolitych tych dokumentów w Serwisie pod adresem <i>www.warsawlease.pl</i>. Zmiany te wchodzą w&nbsp;życie po upływie okresu 14 dni od ich ogłoszenia.</span>,
+    english: <span>The Administrator is authorised to amend these Terms of Service, the Privacy Policy, the Cookies Policy and the Pricing through publication of new unified texts of those documents within the Service under the address <i>www.warsawlease.pl</i>. The amendments are applicable after the lapse of the period of 14 days from their publication.</span>
   },
 ]

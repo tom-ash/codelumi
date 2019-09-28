@@ -11,8 +11,8 @@ export const text = [
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    polish: <span>Administratorem danych osobowych w rozumieniu Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w&nbsp;sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz&nbsp;uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) jest Administrator, czyli Warsaw Digital Sp. z o.o., z siedzibą w&nbsp;Warszawie.</span>,
-    english: <span>The administrator of the personal data within meaning of the Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation) is the Administrator, i.e. Warsaw Digital Sp. z o.o., with its registered office in Warsaw.</span>
+    polish: <span>Administratorem zbierancyh w Serwisie danych osobowych w rozumieniu Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w&nbsp;sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz&nbsp;uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) jest Administrator, czyli Warsaw Digital Sp. z o.o., z siedzibą w&nbsp;Warszawie.</span>,
+    english: <span>The administrator of the personal data gathered in the Service with the meaning of the Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation) is the Administrator, i.e. Warsaw Digital Sp. z o.o., with its registered office in Warsaw.</span>
   },
   {
     item: '2.', tier: 'header', version: versions['1.0'],
@@ -36,8 +36,8 @@ export const text = [
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    polish: <span>Ponadto, Administrator oraz jego Zaufani Partnerzy mogą gromadzić informacje o Odwiedzającyh Serwis odnoszące się do ich zachowań w Serwisie oraz rodzaju urządzeń wykorzystywanych do odwiedzania serwisu.</span>,
-    english: <span>Furthermore, the Administrator and its Trusted Partners may gather data regarding Service's Visitors regarding their behavior in the Service and kinds of devices used during visiting the Service.</span>
+    polish: <span>Ponadto, Administrator może gromadzić informacje o Odwiedzającyh Serwis odnoszące się do ich zachowań w Serwisie oraz rodzaju urządzeń wykorzystywanych do odwiedzania serwisu.</span>,
+    english: <span>Furthermore, the Administrator may gather data regarding Service's Visitors regarding their behavior in the Service and kinds of devices used during visiting the Service.</span>
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
@@ -61,18 +61,18 @@ export const text = [
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    polish: <span>Administrator oraz jego Zaufani Partnerzy gromadzą dane osobowe pozyskane od Użytkowników przy tworzeniu Konta, a ponadto za pośrednictwem technologii takich jak pliki cookies oraz lokalny magazyn danych (ang. <i>local storage</i>). Szersze informacje w tym zakresie znajdziesz w&nbsp;<u>Polityce plików cookies i podobnych technologii</u>.</span>,
-    english: <span>The Administrator and its Trusted Partners gather personal data acquired from the Users at the Account registration, and, furthermore through the use of such technologies as cookie files and local storage. More information with that regard is available in the Cookies and Similar Technologies Policy.</span>
+    polish: <span>Administrator gromadzi dane osobowe pozyskane od Użytkowników przy tworzeniu i zmianie danych Konta oraz od Odwiedzających poprzez zanonimizowaną, zsumowaną analizę ich zachowań w Serwisie przy zastosowaniu między innymi technologii, o których mowa w <u>Polityce Plików Cookies</u>.</span>,
+    english: <span>The Administrator gathers personal data acquired from the Users at the Account registration and changing Account data, and, from the Visitors through anonymised, combined analysis of their behaviour through usage of - among others - technologies reffered to under the <u>Cookies Policy</u>.</span>
   },
   {
     item: '6.', tier: 'header', version: versions['1.0'],
-    polish: <span>W jakim celu Administrator oraz Zaufani Partnerzy zbierają dane osobowe</span>,
-    english: <span>What is the purpose of gathering of the personal data by the Administrator and Trusted Partners?</span>
+    polish: <span>W jakim celu Administrator zbiera dane osobowe</span>,
+    english: <span>What is the purpose of gathering of the personal data by the Administrator?</span>
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    polish: <span>Administrator oraz Zaufani Partnerzy zbierają dane osobowe w celu:</span>,
-    english: <span>The Administrator and the Trusted Partners gather personal data to:</span>
+    polish: <span>Administrator zbiera dane osobowe w celu:</span>,
+    english: <span>The Administrator gathers personal data to:</span>
   },
   {
     item: 'a)', tier: 'subpoint', version: versions['1.0'],
@@ -106,13 +106,13 @@ export const text = [
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    polish: <span>Dane osobowe zbierane przez Administratora przekazywane są Zaufanym Partnerom.</span>,
-    english: <span>The personal data gathered by the Administrator is transferred to the Trusted Partners.</span>
+    polish: <span>Dla wypełnienia celów, o których mowa w Punkcie 6 niniejsze Polityki Prywatności, dane osobowe zbierane przez Administratora mogą być przekazywane Zaufanym Partnerom.</span>,
+    english: <span>To fulfill purposes referred to under Point 6 of this Privacy Policy, the personal data gathered by the Administrator may be transferred to the Trusted Partners.</span>
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    polish: <span>Administrator może przekazywać zbierane dane osobowe organom publicznym w przypadkach wymaganych przepisami prawa.</span>,
-    english: <span>The Administrator may provide the public authorities with the personal data in the cases envisioned by the law.</span>
+    polish: <span>Administrator oraz Zaufani Partnerzy mogą przekazywać zbierane dane osobowe organom publicznym w przypadkach wymaganych przepisami prawa.</span>,
+    english: <span>The Administrator and the Trusted Partners may provide the public authorities with the personal data in the cases envisioned by the law.</span>
   },
   {
     item: '8.', tier: 'header', version: versions['1.0'],
@@ -176,8 +176,8 @@ export const text = [
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    polish: <span>Wykonanie powyższych praw następuje poprzez wysłanie pisma na adres korespondencyjny Administratora lub emaila na adres <i>kontakt@warsaw.digital</i>.</span>,
-    english: <span>The execution of the abovementioned rights is made through sending a letter to the Administrator's correspondence address or an email to <i>contact@warsaw.digital</i>.</span>
+    polish: <span>Wykonanie powyższych praw następuje poprzez wysłanie pisma na adres korespondencyjny Administratora lub emaila na adres <i>kontakt@warsaw.digital</i> wskazujących wykonywane prawa.</span>,
+    english: <span>The execution of the abovementioned rights is made through sending a letter to the Administrator's correspondence address or an email to <i>contact@warsaw.digital</i> with indication of the rights being executed.</span>
   },
   {
     item: '10.', tier: 'header', version: versions['1.0'],
@@ -186,8 +186,8 @@ export const text = [
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    polish: <span>W celach wskazanych w Punkcie 6. niniejszej Polityki Prywatności, Administrator korzysta z usług Zaufanych Podmiotów mających siedziby na obszarze Europejskiego Obszaru Gospodarczego (EOG) lub w Stanach Zjednoczonych. W związku z tym dane osobowe mogą być przekazywane poza granice EOG. Gwarancje należytej ochrony danych osobowych przez Zaufane Podmioty mające siedziby w Stanach Zjednoczoncyh opierają się między innymi na zobowiązaniach do stosowania przez te podmioty standardowych klauzul umownych przyjętych przez Komisję Unii Europejskiej oraz&nbsp;uczestnictwa w Tarczy Prywatności (ang. Privacy Shield).</span>,
-    english: <span>With the purposes referred to under Point 6 of this Privacy Policy, the Administrator employs the services of Trusted Partners with registered offices within the European Economic Area and/or in the United States. Therefore, the personal data may be transferred outside of EEA. The guarantees of the proper protection of the personal data by the Trusted Partners with their registered offices in United States are based, among others, on the obligations of those entities to apply standard contractual clauses approved by the Commission of the European Union and the participation in the Privacy Shield program.</span>
+    polish: <span>W celach wskazanych w Punkcie 6. niniejszej Polityki Prywatności, Administrator korzysta z usług Zaufanych Partnerów mających siedziby na obszarze Europejskiego Obszaru Gospodarczego (EOG) lub w Stanach Zjednoczonych. W związku z tym dane osobowe mogą być przekazywane poza granice EOG. Gwarancje należytej ochrony danych osobowych przez Zaufanych Partnerów mających siedziby w Stanach Zjednoczoncyh opierają się między innymi na zobowiązaniach do stosowania przez te podmioty standardowych klauzul umownych przyjętych przez Komisję Unii Europejskiej oraz&nbsp;uczestnictwa w Tarczy Prywatności (ang. Privacy Shield).</span>,
+    english: <span>With the purposes referred to under Point 6 of this Privacy Policy, the Administrator employs the services of Trusted Partners with registered offices within the European Economic Area and/or in the the United States. Therefore, the personal data may be transferred outside of EEA. The guarantees of the proper protection of the personal data by the Trusted Partners with their registered offices in United States are based, among others, on the obligations of those entities to apply standard contractual clauses approved by the Commission of the European Union and the participation in the Privacy Shield program.</span>
   },
   {
     item: '11.', tier: 'header', version: versions['1.0'],
@@ -196,8 +196,8 @@ export const text = [
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    polish: <span>Dane osobowe odnoszące się do danego podmiotu przechowywane są przez Administratora przez okres nieprzekraczający terminu przedawnienia roszczeń w odniesieniu do relacji łączących Administratora z tym podmiotem.</span>,
-    english: <span>The personal data regarding a given entity is stored by the Administrator for the period not surpassing the period of limitation with respect to relations connecting the Administrator with that entity.</span>
+    polish: <span>Dane osobowe przechowywane są przez Administratora przez okres nieprzekraczający terminu przedawnienia roszczeń w odniesieniu do relacji łączących Administratora z daną osobą.</span>,
+    english: <span>The personal data is stored by the Administrator for the period not surpassing the period of limitation with respect to relations connecting the Administrator with a given person.</span>
   },
   {
     item: '', tier: '', version: versions['1.0'],

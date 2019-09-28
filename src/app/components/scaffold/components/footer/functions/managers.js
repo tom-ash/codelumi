@@ -36,7 +36,7 @@ export function cookiesPolicyManager(action) {
 export function privacyPolicyManager(action) {
   return managerAgent(action, {
     classNames: { container: 'button-container link' },
-    label: this.languageHandler('Polityka prywatności', 'Privacy Policy'),
+    label: this.languageHandler('Polityka Prywatności', 'Privacy Policy'),
     onClick: () => this.changeRoute(null, 'privacyPolicy')
   })
 }
