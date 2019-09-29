@@ -1,9 +1,6 @@
 import { apiUrl } from '../../../../../constants/urls'
 
 export function getAnnouncementAmount() {
-
-  console.log("getAnnouncementAmount")
-
   const { changeControl, changeData } = this.props
   fetch(apiUrl + `/announcements${this.buildRequestParameters()}`, {
     headers: {

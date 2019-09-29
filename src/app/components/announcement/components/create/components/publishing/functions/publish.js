@@ -3,16 +3,16 @@ import { requiredInputs, requiredInputsArray } from '../../../constants/required
 
 export function publish() {
   const validationObject = {
-    category: this.categoryManager('validate', this.props.category),
-    district: this.districtManager('validate'),
-    rentCurrency: this.rentCurrencyManager('validate'),
-    netRentAmount: this.rentAmountManager('validate'),
-    additionalFees: this.additionalFeesManager('validate'),
-    area: this.areaManager('validate'),
-    rooms: this.roomsManager('validate'),
-    floor: this.floorManager('validate'),
-    totalFloors: this.totalFloorsManager('validate'),
-    availabilityDate: this.availabilityDateSelectManager('validate'),
+    category: this.categoryManager().validate(),
+    district: this.districtManager().validate(),
+    rentCurrency: this.rentCurrencyManager().validate(),
+    netRentAmount: this.rentAmountManager().validate(),
+    additionalFees: this.additionalFeesManager().validate(),
+    area: this.areaManager().validate(),
+    rooms: this.roomsManager().validate(),
+    floor: this.floorManager().validate(),
+    totalFloors: this.totalFloorsManager().validate(),
+    availabilityDate: this.availabilityDateSelectManager().validate(),
     pictures: this.validatePictures(),
     map: this.validateMap()
   }

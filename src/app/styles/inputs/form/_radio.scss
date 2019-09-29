@@ -24,9 +24,7 @@
         border-radius: 4px;
         margin: 1px;
         background: white;
-        &.checked {
-          background: $button-index-background-color;
-        }
+        background: $button-index-background-color;
       }
     }
     .label {

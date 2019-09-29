@@ -44,8 +44,8 @@ class VisitorPrivacyMonit extends React.Component {
             </div>
           </div>
           <div className='buttons'>
-            <ManagedButton manager={this.agreeManager} />
-            <ManagedButton manager={this.settingsManager} />
+            <ManagedButton {...this.agreeManager()} />
+            <ManagedButton {...this.settingsManager()} />
             <div className='float-clear' />
           </div>
           <div className='float-clear' />

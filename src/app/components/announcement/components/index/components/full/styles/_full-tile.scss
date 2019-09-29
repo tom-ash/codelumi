@@ -3,6 +3,8 @@
   border-radius: 4px;
   margin: 0 auto 36px!important;
   color: #515A5A;
+  padding: 0;
+  background: none!important;
   @media only screen and (max-width: 744px) {
     width: 456px;
     padding: 0;
@@ -12,56 +14,14 @@
     padding: 0;
   }
   .core {
-    padding: 12px;
-    @media only screen and (max-width: 744px) {
-      padding: 0;
-    }
-    .data {
-      position: absolute;
-      right: 12px;
-      top: 12px;
-      @media only screen and (max-width: 744px) {
-
-      }
-      @media only screen and (max-width: 744px) {
-        position: relative;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: 12px 0;
-        .area {
-          float: left;
-          line-height: 58px;
-          margin-left: 24px;
-        }
-      }
-      .rent {
-        margin-top: 24px;
-        @media only screen and (max-width: 744px) {
-          float: right;
-          margin: 0;
-        }
-        .total, .per-sqm {
-          margin-top: 12px;
-          @media only screen and (max-width: 744px) {
-            float: left;
-            margin: 0 24px 0 0;
-          }
-        }
-        .gross {
-          margin-top: 6px;
-          @media only screen and (max-width: 744px) {
-            margin-top: 4px;
-          }
-        }
-      }
-    }
+    background: none!important;
     .picture {
       $width: 536px;
       width: $width;
       height: 0;
       background-size: ($width * 1.17777) auto;
       padding-bottom: ($width / 1.7777);
+      border-radius: 0;
       @media only screen and (max-width: 744px) {
         $width: 100%;
         width: $width;
@@ -104,41 +64,33 @@
         }
       }
     }
-    .bottom-data {
-      position: absolute;
-      right: 12px;
-      bottom: 12px;
-      width: 148px;
-      @media only screen and (max-width: 744px) {
-        position: relative;
-        top: 0;
-        right: 0;
-        left: 0;
-        width: 100%;
-        padding: 12px;
-        .rooms, .floor, .total-floors {
-          float: left;
-          margin-right: 8px;
-        }
-        .calendar {
-          float: right;
-        }
-      }
-      .rooms, .floor, .total-floors, .calendar {
-        margin-top: 12px;
-        padding: 0;
-        @media only screen and (max-width: 744px) {
-          margin-top: 0;
-          margin-right: 12px;
-        }
-        .fas, .far {
-          width: 24px;
-          @media only screen and (max-width: 744px) {
-            width: auto;
-            padding-right: 6px;
-          }
-        }
-      }
-    }
+    // .tertiary {
+    //   background: white;
+    //   width: 536px;
+    //   margin-top: 6px;
+    //   position: relative;
+    //   top: 0;
+    //   right: 0;
+    //   left: 0;
+    //   padding: 12px;
+    //   .rooms, .floor, .total-floors, .calendar {
+    //     float: left;
+    //     margin-right: 16px;
+    //   }
+    //   .rooms, .floor, .total-floors, .calendar {
+    //     padding: 0;
+    //     @media only screen and (max-width: 744px) {
+    //       margin-top: 0;
+    //       margin-right: 12px;
+    //     }
+    //     .fas, .far {
+    //       width: 24px;
+    //       @media only screen and (max-width: 744px) {
+    //         width: auto;
+    //         padding-right: 6px;
+    //       }
+    //     }
+    //   }
+    // }
   }
 }

@@ -16,8 +16,8 @@ class AnnouncementCreateDescription extends React.Component {
   render() {
     return (
       <div id='announcement-create-description' className='section'>
-        <ManagedTextarea manager={this.polishManager} />
-        <ManagedTextarea manager={this.englishManager} />
+        <ManagedTextarea {...this.polishManager()} />
+        <ManagedTextarea {...this.englishManager()} />
       </div>
     )
   }

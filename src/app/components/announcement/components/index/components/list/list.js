@@ -57,8 +57,8 @@ class AnnouncementIndexList extends React.Component {
               this.languageHandler(`Usunięte ogłoszenie nie może być przywrócone. Czy na pewno chcesz usunąć ogłoszenie Nr ${this.props.beingDeleted}. `, `The deleted announcement cannot be restored. Are you sure you want to delete the announcement No. ${this.props.beingDeleted}`)
               }
             </div>
-            <ManagedButton manager={this.cancelDestroyManager} />
-            <ManagedButton manager={this.destroyManager} />
+            <ManagedButton {...this.cancelDestroyManager()} />
+            <ManagedButton {...this.destroyManager()} />
             <div className='float-clear' />
           </div>
         </div>
@@ -66,15 +66,15 @@ class AnnouncementIndexList extends React.Component {
         {this.pageHeaderProvider('fas fa-list-ol', { polish: 'Dodane ogłoszenia', english: 'Added Announcements' })}
         <div className='panel'>
           <div className='switches'>
-            <ManagedMultipleCheckbox manager={this.switchesManager} />
+            <ManagedMultipleCheckbox {...this.switchesManager()} />
           </div>
-          <ManagedSelect manager={this.sortManager} />
+          <ManagedSelect {...this.sortManager()} />
         </div>
         <div className='announcements-amount'>
           {this.languageHandler('Znaleziono:', 'Found:')} {this.props.amount}
         </div>
         <div className='pagination-container'>
-          <ManagedPagination manager={this.paginationManager} />
+          <ManagedPagination {...this.paginationManager()} />
         </div>
         <div className='announcements'>
           {
@@ -95,7 +95,7 @@ class AnnouncementIndexList extends React.Component {
           <div className='float-clear' />
         </div>
         <div className='pagination-container'>
-          <ManagedPagination manager={this.paginationManager} />
+          <ManagedPagination {...this.paginationManager()} />
         </div>
       </div>
     )

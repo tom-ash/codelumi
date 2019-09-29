@@ -51,10 +51,10 @@ class UserEditAccountPassword extends React.Component {
             {this.monitProvider()}
           </div>
           }
-          <ManagedText key='emailAddress' manager={this.emailManager} />
-          <ManagedText key='verificationCode' manager={this.verificationManager} />
-          <ManagedText key='password' manager={this.passwordManager} />
-          <ManagedButton key='button' manager={this.buttonManager} />
+          <ManagedText key='emailAddress' {...this.emailManager()} />
+          <ManagedText key='verificationCode' {...this.verificationManager()} />
+          <ManagedText key='password' {...this.passwordManager()} />
+          <ManagedButton key='button' {...this.buttonManager()} />
         </div>
       </div>
     )

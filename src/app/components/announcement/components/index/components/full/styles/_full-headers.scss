@@ -25,24 +25,19 @@
 }
 
 %section-header {
-  position: absolute;
-  top: -28px;
-  right: 0;
-  left: 0;
-  width: 800px;
-  margin: 0 auto;
   color: #1B4F72;
   font-size: 16px;
   font-weight: normal;
+  padding: 0 0 12px 12px;
   .fas.fa-bars {
     width: 24px;
   }
   width: 720px;
   @media only screen and (max-width: 744px) {
-    width: 456px;
+    // width: 456px;
   }
   @media #{$phone} {
-    top: -24px;
-    width: 280px;
+    // top: -24px;
+    // width: 280px;
   }
 }

@@ -78,7 +78,7 @@ class AnnouncementIndexFull extends React.Component {
     const { showList, announcements } = this.props
     return (
       <div id='announcement-index-full'>
-        <h2 className='motto'>
+        {/* <h2 className='motto'>
           <div className='main'>
           {this.languageHandler('Znajdź się w Warszawie', 'Find Yourself in Warsaw')}
           </div>
@@ -86,10 +86,11 @@ class AnnouncementIndexFull extends React.Component {
             {this.languageHandler(<span>Ogłoszenia wynajmu biur i lokali użytkowych w&nbsp;Warszawie.</span>,
                                   <span>Warsaw Offices and Usable Premises Lease&nbsp;Announcements.</span>)}
           </div>
-        </h2>
+        </h2> */}
         <h3>
           <i className={`fas fa-bars`} />{this.languageHandler(`Wyszukaj na liście`, `Search on List`)}
         </h3>
+
         {this.panelProvider()}
         {
         showList &&
@@ -101,6 +102,8 @@ class AnnouncementIndexFull extends React.Component {
               return (
                 <AnnouncementIndexTile
                   index={index}
+                  first={index === 0}
+                  venue='full'
                   key={announcement.id}
                   selectedAvailabilityDate={this.props.availabilityDate}
                   announcement={announcement}
@@ -113,7 +116,7 @@ class AnnouncementIndexFull extends React.Component {
             <div className='float-clear' />
             {
             announcements && announcements[announcements.length - 1] && announcements[announcements.length - 1].show &&
-            <ManagedPagination manager={this.paginationManager} />
+            <ManagedPagination {...this.paginationManager()} />
             }
           </div>
         </div>

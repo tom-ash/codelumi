@@ -27,8 +27,8 @@ class UserAuthorizeEmailPassword extends React.Component {
     return (
       <div id='user-authorize-email'>
         <form>
-          <ManagedText manager={this.emailAddressManager}/>
-          <ManagedText manager={this.passwordManager}/>
+          <ManagedText {...this.emailAddressManager()}/>
+          <ManagedText {...this.passwordManager()}/>
         </form>
         <div className='email-or-password-error'>
           {
@@ -36,7 +36,7 @@ class UserAuthorizeEmailPassword extends React.Component {
           }
         </div>
         <div className='remember-me'>
-          <ManagedCheckbox manager={this.rememberMeManager} />
+          <ManagedCheckbox {...this.rememberMeManager()} />
         </div>
         <div
           className='password'>

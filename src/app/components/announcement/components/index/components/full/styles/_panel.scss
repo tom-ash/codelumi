@@ -2,16 +2,18 @@
 @import './inputs';
 
 %panel {
+  position: relative;
   @extend %inputs;
+  max-width: 960px;
+  height: 128px;
+  z-index: 8;
   width: 100%;
-  margin: 0 0 12px;
-  background: #1A5276;
-  padding: 6px 6px 0;
-  border-radius: 2.5px;
+  margin: 0 auto;
+  padding: 12px 12px 0;
   color: #17202A;
   @media #{$phone} {
-    margin: 0 0 6px;
-    margin: 0 auto 12px;
+    width: 100%;
+    height: 232px;;
   }
   .gap {
     float: left;

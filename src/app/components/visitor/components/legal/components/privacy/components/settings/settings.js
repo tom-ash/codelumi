@@ -26,13 +26,13 @@ class VisitorPrivacySettings extends React.Component {
           Czy zgadzasz się na przetwarzanie Twoich danych osobowych przez Warsaw Digital Sp. z o.o., z siedzibą w Warszawie, oraz jej Zaufanych Partnerów, na warunkach przewidzianych w&nbsp;<u>Polityce Prywatności</u>, w celu rozszerzenia funkcjonalności Serwisu?
         </div>
         <div className='consent'>
-          <ManagedRadio manager={this.additionalFunctionsManager} />
+          <ManagedRadio {...this.additionalFunctionsManager()} />
         </div>
         <div className='text'>
           Czy zgadzasz się na przetwarzanie Twoich danych osobowych przez Warsaw Digital Sp. z o.o., z siedzibą w Warszawie, oraz jej Zaufanych Partnerów, na warunkach przewidzianych w&nbsp;<u>Polityce Prywatności</u>, w celach prowadzenia statystyki oraz marketingowych?
         </div>
         <div className='consent'>
-          <ManagedRadio manager={this.statisticsAndMarketingManager} />
+          <ManagedRadio {...this.statisticsAndMarketingManager()} />
         </div>
       </div>
     )

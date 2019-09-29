@@ -15,18 +15,19 @@ import { showAnnouncement } from './functions/show-announcement'
 import { changeRoute } from '../../../../../../functions/routers'
 import { phoneSwitchProvider } from '../../../../functions/phone-switch-provider'
 import { togglePhone } from '../../../../functions/toggle-phone'
-import { rentProvider } from './functions/rent-provider'
+// import { rentProvider } from './functions/rent-provider'
 import { rentPerSqmCounter } from '../../../../functions/rent-per-sqm-counter'
 import { parseAvailabilityDate } from '../../../../functions/parse-availability-date'
 import WindmillSpinner from '../../../../../support/components/spinner/components/windmill/windmill'
 import { viewAnnouncement } from '../../../../functions/view-announcement'
+
+import { secondaryDataProvider } from './functions/secondary-data-provider'
 
 class AnnouncementIndexTile extends React.Component {
   constructor(props) {
     super(props)
     this.languageHandler = languageHandler.bind(this)
     this.componentDidMount = lifecycle.componentDidMount
-    // this.shouldComponentUpdate = lifecycle.shouldComponentUpdate
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.fetchPicture = fetchPicture.bind(this)
     this.changePicture = changePicture.bind(this)
@@ -38,25 +39,32 @@ class AnnouncementIndexTile extends React.Component {
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
     this.rentCurrency = parseCurrency(this.props.announcement.rent_currency)
     this.togglePhone = togglePhone.bind(this)
-    this.rentProvider = rentProvider.bind(this)
     this.rentPerSqmCounter = rentPerSqmCounter.bind(this)
     this.parseAvailabilityDate = parseAvailabilityDate.bind(this)
     this.viewAnnouncement = viewAnnouncement.bind(this)
+
+    this.secondaryDataProvider = secondaryDataProvider.bind(this)
+
   }
   
   render() {
-    const area = this.props.announcement.area
-    const { announcement, control, active } = this.props
+    const { announcement, control, active, venue, first } = this.props
+
     const { showLoader, show, visible } = announcement
-    let coreClass = `core`
+    let coreClass = `core ${venue}`
     if (showLoader) coreClass += ' loader'
     if (!visible) coreClass += ' invisible'
-    if (!announcement.pictures) return null // TODO
+    if (!announcement.pictures) return null
     if (!show) return null
+
     return (
       <div
       className={`announcement-index-tile${this.props.first ? ' first': ''}${this.props.last ? ' last': ''}${this.props.index % 2 === 0 ? ' even' : ''}`}>
-        {/* {console.log(announcement)} */}
+        {
+        venue === 'full' && !first &&
+        <div className='divider'/>
+        }
+
         {
         this.props.venue == 'map' &&
         <i className='fas fa-times close' onClick={this.closeTile}/>
@@ -67,33 +75,27 @@ class AnnouncementIndexTile extends React.Component {
           <WindmillSpinner spinnerClass='windmill-medium-spinner'/>
         </div>
         }
-        <div className={coreClass}>
-          <div className='data'>
-            <div className='area'>
-              {area} {this.languageHandler('m2', 'sqm')}
-            </div>
-            <div className='rent'>
-              {this.rentProvider()}
-              {this.rentProvider('perSqm', area)}
-              <div className='float-clear'/>  
-            </div>
-            <div className='float-clear'/>
-          </div>
-          <div
-          style={{ backgroundImage: this.getPicture() }}
-          onClick={() => this.showAnnouncement()}
-          className='picture'>
-            <div className='primary-data'>
-              <div className='announcement-id'>
+        <div className={`primary ${venue}`}>
+              <div className='id'>
                 {this.props.announcement.id}
               </div>
               <div className={`category ${this.props.announcement.category == '0' ? 'office' : 'usable-premises'}`}>
-                {getCategoryIcon(this.props.announcement.category)}
+                {
+                this.props.announcement.category == '0' ? this.languageHandler('Biuro', 'Office') : this.languageHandler('Lokal użytkowy', 'Usable Premises')
+                }
               </div>
               <div className='district'>
-                <i className='fas fa-city' /> {parseDistrict(this.props.announcement.district)}
+                {parseDistrict(this.props.announcement.district)}
               </div>
             </div>
+        <div className={coreClass}>
+
+
+
+          <div
+          style={{ backgroundImage: this.getPicture() }}
+          onClick={() => this.showAnnouncement()}
+          className={`picture ${venue}`}>
             {this.phoneSwitchProvider()}
             <div
             className='arrow left'
@@ -110,19 +112,24 @@ class AnnouncementIndexTile extends React.Component {
               </div>
             </div>
           </div>
-          <div className='bottom-data'>
+          {this.secondaryDataProvider()}
+          <div className={`tertiary ${venue}`}>
             <div className='rooms'>
-              <i className='fas fa-door-closed'/>{this.props.announcement.rooms}
+              {/* <i className='fas fa-door-closed'/> */}
+              <strong>{this.props.announcement.rooms}</strong> {this.languageHandler('pomieszczeń', 'rooms')}
             </div>
             <div className='floor'>
-              <i className='fas fa-layer-group'/>{this.props.announcement.floor}
+              {/* <i className='fas fa-layer-group'/> */}
+              <strong>{this.props.announcement.floor}</strong> {this.languageHandler('piętro', 'floor')}
+              &nbsp;
+              ( z <strong>{this.props.announcement.total_floors}</strong> )
             </div>
-            <div className='total-floors'>
+            {/* <div className='total-floors'>
               <i className='fas fa-building'/>{this.props.announcement.total_floors}
             </div>
             <div className='calendar'>
               <i className='fas fa-calendar-alt'/>{this.parseAvailabilityDate(this.props.announcement.availability_date)}
-            </div>
+            </div> */}
             <div className='float-clear' />
           </div>
         </div>

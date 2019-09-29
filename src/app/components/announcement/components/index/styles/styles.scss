@@ -1,4 +1,9 @@
+@import '../../../../../styles/media-breakpoints';
+
 #announcement-index {
   position: relative;
-  min-height: 1200px;
+  min-height: 948px;
+  @media #{$phone} {
+    min-height: 1036px;
+  }
 }

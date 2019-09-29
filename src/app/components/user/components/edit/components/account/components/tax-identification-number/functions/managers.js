@@ -1,10 +1,9 @@
-import { managerAgent } from 'managed-inputs'
 import { handleLanguageVersions } from '../../../../../../../../../functions/shared.js'
 import { changeTaxIdentification } from './adapters'
 const noError = { polish: '', english: '' }
 
-export function textManager(action, value) {
-  return managerAgent(action, {
+export function textManager() {
+  return {
     id: 'user-edit-account-tax-identification-text',
     controlled: false,
     classNames: { container: 'form-input text' },
@@ -13,8 +12,8 @@ export function textManager(action, value) {
       english: 'tax identification number'
     }),
     onChange: () => this.props.changeErrors({ taxIdentification: noError }),
-    onBlur: () => this.textManager('validate', value),
-    validate: () => {
+    onBlur: (value) => this.textManager().validate(value),
+    validate: (value) => {
       if (value.length < 10) {
         this.props.changeErrors({ taxIdentification: {
           polish: 'nieprawidłowy numer identyfikacji podatkowej',
@@ -28,18 +27,18 @@ export function textManager(action, value) {
       polish: this.props.error.polish,
       english: this.props.error.english
     })
-  })
+  }
 }
 
-export function buttonManager(action) {
-  return managerAgent(action, {
+export function buttonManager() {
+  return {
     classNames: { container: 'form-input button' },
     label: handleLanguageVersions(this.props.language, { polish: 'Zmień', english: 'Change' }),
     onClick: () => {
       const taxIdentification = document.getElementById('user-edit-account-tax-identification-text').value
-      if (!this.textManager('validate', taxIdentification)) return
+      if (!this.textManager().validate(taxIdentification)) return
       changeTaxIdentification.call(this, taxIdentification)
     },
     error: ''
-  })
+  }
 }

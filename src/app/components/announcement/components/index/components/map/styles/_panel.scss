@@ -2,27 +2,54 @@
 @import '../../../styles/composite-index-input';
 
 %panel {
+  z-index: 3!important;
   position: absolute;
-  border: 1px solid gray;
   border-radius: 2.5px;
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
-    
-  }
   .simple-index-input {
     @extend %simple-index-input;
-    &.category, &.district {
+    position: relative;
+    border-bottom: 1px solid #CACFD2;
+    width: 231px;
+    border-radius: 0;
+    @media #{$phone} {
       width: 100%;
     }
-    margin-bottom: 0;
-    border-bottom: 1px solid #CACFD2;
   }
   .composite-input-container {
     @extend %simple-index-input;
     @extend %composite-index-input;
+    position: relative;
     margin-bottom: 0;
     border-bottom: 1px solid #CACFD2;
-    width: 100%;
+    width: 231px;
+    @media #{$phone} {
+      width: 100%;
+    }
+    &.floor {
+      @media #{$phone} {
+        display: none;
+      }
+    }
+    &.total-floors {
+      @media #{$phone} {
+        display: none;
+      }
+    }
+    &.rooms {
+      @media #{$phone} {
+        display: none;
+      }
+    }
+    &.availability-date {
+      @media #{$phone} {
+        display: none;
+      }
+    }
+    &.availability-date {
+      position: relative;
+    }
     .sub-input {
+      z-index: 3!important;
       .options {
         z-index: 3!important;
         .option {

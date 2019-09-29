@@ -41,8 +41,8 @@ class UserEditPhoneVerify extends React.Component {
             <div className='monit'>
               {this.languageObjectHandler(monits.reason)}
             </div>
-            <ManagedText manager={this.verificationManager} />
-            <ManagedButton key='button' manager={this.buttonManager} />
+            <ManagedText {...this.verificationManager()} />
+            <ManagedButton key='button' {...this.buttonManager()} />
           </div>
           }
           {

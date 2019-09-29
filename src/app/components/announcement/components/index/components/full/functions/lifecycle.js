@@ -4,12 +4,12 @@ import { compareParameters } from '../../../../../../../functions/compare-update
 export function componentDidMount() {
   const { changeControl } = this.props
   const calendar = document.getElementsByClassName('react-calendar')[0]
-  calendar.addEventListener('mouseover', () => {
-    changeControl({ availabilityDateActive: true })
-  })
-  calendar.addEventListener('mouseleave', () => {
-    changeControl({ availabilityDateActive: false })
-  })
+  // calendar.addEventListener('mouseover', () => {
+  //   changeControl({ availabilityDateActive: true })
+  // })
+  // calendar.addEventListener('mouseleave', () => {
+  //   changeControl({ availabilityDateActive: false })
+  // })
   this.paramsReader()
 }
 

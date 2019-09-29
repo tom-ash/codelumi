@@ -18,8 +18,6 @@ class Footer extends React.Component {
     this.cookiesPolicyManager = managers.cookiesPolicyManager.bind(this)
     this.privacyPolicyManager = managers.privacyPolicyManager.bind(this)
     this.privacySettingsManager = managers.privacySettingsManager.bind(this)
-    
-    
   }
   render() {
     return(
@@ -27,14 +25,14 @@ class Footer extends React.Component {
         <div className='inner'>
           <div className='links'>
             <div className='column'>
-              <ManagedButton manager={this.aboutManger} />
-              <ManagedButton manager={this.contactManager} />
-              <ManagedButton manager={this.termsOfServiceManager} />
+              <ManagedButton {...this.aboutManger()} />
+              <ManagedButton {...this.contactManager()} />
+              <ManagedButton {...this.termsOfServiceManager()} />
             </div>
             <div className='column'>
-              <ManagedButton manager={this.cookiesPolicyManager} />
-              <ManagedButton manager={this.privacyPolicyManager} />
-              <ManagedButton manager={this.privacySettingsManager} />            
+              <ManagedButton {...this.cookiesPolicyManager()} />
+              <ManagedButton {...this.privacyPolicyManager()} />
+              <ManagedButton {...this.privacySettingsManager()} />
             </div>
             <div className='float-clear' />
           </div>

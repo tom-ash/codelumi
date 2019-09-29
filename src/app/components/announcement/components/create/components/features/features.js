@@ -16,7 +16,7 @@ class AnnouncementCreateFeatures extends React.Component {
     return (
       <div id='announcement-create-features' className='section'>
         <div className='box'>
-          <ManagedMultipleCheckbox manager={this.featuresManager} />
+          <ManagedMultipleCheckbox {...this.featuresManager()} />
         </div>
         <div className='scroll'>
           <i className="fas fa-sort"></i>

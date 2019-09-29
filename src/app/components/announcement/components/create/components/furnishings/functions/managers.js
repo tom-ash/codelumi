@@ -1,8 +1,7 @@
-import { managerAgent } from 'managed-inputs'
 import { furnishings } from '../../../../../constants/furnishings'
 
-export function furnishingsManager(aspect, value, ref) {
-  return managerAgent(aspect, {
+export function furnishingsManager() {
+  return {
     classNames: { container: 'form-input checkbox'},
     checkboxes: furnishings.map(furnishing => (
       {
@@ -11,8 +10,8 @@ export function furnishingsManager(aspect, value, ref) {
         label: this.languageHandler(furnishing.polish, furnishing.english)
       }
     )),
-    onClick: () => {
+    onClick: (value, ref) => {
       this.props.changeInputs({ furnishings: { ...this.props.furnishings, [ref]: value}})
     }
-  })
+  }
 }

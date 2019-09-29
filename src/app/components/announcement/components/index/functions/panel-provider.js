@@ -4,18 +4,19 @@ import { ManagedSelect, ManagedButton } from 'managed-inputs'
 import { parseDate } from '../../../../../functions/date-parsers'
 
 export function panelProvider() {
+  const { isMobile } = this.props;
   return (
     <div className='panel-container'>
       <div className='panel'>
-        <ManagedSelect manager={this.categoryManager}/>
-        <ManagedSelect manager={this.districtManager}/>
+        <ManagedSelect {...this.categoryManager()} />
+        <ManagedSelect {...this.districtManager()}/>
         {this.compositeInputProvider('area')}
         {this.compositeInputProvider('rent')}
         {this.compositeInputProvider('rooms')}
         {this.compositeInputProvider('floor')}
         {this.compositeInputProvider('totalFloors')}
         <div className={`composite-input-container availability-date${this.props.availabilityDateActive ? ' visible' : ''}`}>
-          <ManagedSelect manager={this.availabilityDateManager}/>
+          <ManagedSelect {...this.availabilityDateManager()}/>
           <div 
           className='calendar-container'
           style={{ display: this.props.availabilityDateFocus ? 'block' : 'none' }}>
@@ -34,7 +35,7 @@ export function panelProvider() {
       </div>
       {
       this.props.venue == 'indexFull' &&
-      <ManagedButton manager={this.buttonManager}/>
+      <ManagedButton {...this.buttonManager()}/>
       }
     </div>
   )

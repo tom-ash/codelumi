@@ -39,24 +39,24 @@ class AnnouncementCreatePrimary extends React.Component {
   render() {
     return (
       <div id='announcement-create-primary' className='section'>
-          <ManagedSelect manager={this.categoryManager}/>
-          <ManagedSelect manager={this.districtManager}/>
-          <ManagedSelect manager={this.rentCurrencyManager}/>
-          <ManagedText manager={this.rentAmountManager}/>
+          <ManagedSelect {...this.categoryManager()}/>
+          <ManagedSelect {...this.districtManager()}/>
+          <ManagedSelect {...this.rentCurrencyManager()}/>
+          <ManagedText {...this.rentAmountManager()}/>
           <div className='float-clear'/>
-          <ManagedSelect manager={this.additionalFeesManager}/>
-          <ManagedText manager={this.areaManager}/>
-          <ManagedSelect manager={this.roomsManager}/>
-          <ManagedSelect manager={this.floorManager}/>
-          <ManagedSelect manager={this.totalFloorsManager}/>
+          <ManagedSelect {...this.additionalFeesManager()}/>
+          <ManagedText {...this.areaManager()}/>
+          <ManagedSelect {...this.roomsManager()}/>
+          <ManagedSelect {...this.floorManager()}/>
+          <ManagedSelect {...this.totalFloorsManager()}/>
           <div className={this.props.availabilityDateSelect == 'date' ? 'date' : ''}>
-          <ManagedSelect manager={this.availabilityDateSelectManager} />
+          <ManagedSelect {...this.availabilityDateSelectManager()} />
           </div>
           <div
           className='calendar'>       
             {
             this.props.availabilityDateSelect == 'date' &&
-            <ManagedSelect manager={this.availableDateManager}/>
+            <ManagedSelect {...this.availableDateManager()}/>
             }
             <div
             style={{ display: this.props.availabilityDateFocus ? 'block' : 'none' }}>

@@ -1,8 +1,7 @@
-import { managerAgent } from 'managed-inputs'
 import { features } from '../../../../../constants/features'
 
-export function featuresManager(aspect, value, ref) {
-  return managerAgent(aspect, {
+export function featuresManager() {
+  return {
     classNames: { container: 'form-input checkbox'},
     checkboxes: features.map(feature => (
       {
@@ -11,8 +10,6 @@ export function featuresManager(aspect, value, ref) {
         label: this.languageHandler(feature.polish, feature.english)
       }
     )),
-    onClick: () => {
-      this.props.changeInputs({ features: { ...this.props.features, [ref]: value}})
-    }
-  })
+    onClick: (value, ref) => this.props.changeInputs({ features: { ...this.props.features, [ref]: value}})
+  }
 }

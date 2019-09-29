@@ -32,10 +32,10 @@ class UserShowAccount extends React.Component {
         <div id='user-show-account'>
           {this.pageHeaderProvider('far fa-user-circle',
                                    { polish: 'Konto', english: 'Account' })}
-          <ManagedButton manager={this.addAnnouncementManager} />
-          <ManagedButton manager={this.listAnnouncementsManager} />
-          <ManagedButton manager={this.accountManager} />
-          <ManagedButton manager={this.deAuthorizeManager} />
+          <ManagedButton {...this.addAnnouncementManager()} />
+          <ManagedButton {...this.listAnnouncementsManager()} />
+          <ManagedButton {...this.accountManager()} />
+          <ManagedButton {...this.deAuthorizeManager()} />
         </div>
       )
     }

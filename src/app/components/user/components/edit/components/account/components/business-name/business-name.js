@@ -19,8 +19,8 @@ class UserEditAccountBusinessName extends React.Component {
         <div className='monit'>
           {monit.polish}
         </div>
-        <ManagedText manager={this.textManager} />
-        <ManagedButton manager={this.buttonManager} />
+        <ManagedText {...this.textManager()} />
+        <ManagedButton {...this.buttonManager()} />
       </div>
     )
   }

@@ -1,7 +1,7 @@
 export const labels = {
   category: {
     icon: 'fas fa-clone',
-    text: { polish: 'Kategoria', english: 'Category' }
+    text: { polish: 'Kategoria najmu', english: 'Lease Category' }
   },
   district: {
     icon: 'fas fa-city',

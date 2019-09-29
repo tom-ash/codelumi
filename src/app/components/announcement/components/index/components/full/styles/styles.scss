@@ -6,59 +6,61 @@
 @import '../../../../../../../styles/colors';
 
 #announcement-index-full {
-  z-index: 2;
+  z-index: 8;
   position: relative;
-  margin: 224px auto 0;
-  h2 { @extend %page-header; }
-  h3 { @extend %section-header; }
+  margin: 96px auto 0;
+  h2 {
+    @extend %page-header;
+  }
+  h3 {
+    @extend %section-header;
+  }
   .panel-container {
-    background: white;
-    padding: 12px;
     position: relative;
-    border-radius: 2.5px;
+    width: 100%;
+    background: #2874A6;
     .panel {
       @extend %panel;
+      margin: 0 auto;
     }
-    width: 720px;
-    margin: 148px auto 36px;
     @media only screen and (max-width: 744px) {
       width: 456px;
     }
     @media #{$phone} {
-      width: 280px;
-      margin: 148px auto 36px;
+      width: 100%;
     }
     .button {
-      width: 100%;
-      margin: 0;
+      background: #2874A6;
+      padding-bottom: 12px;
+      @media #{$phone} {
+        padding: 0 12px 12px;
+      }
       .input {
-        width: 100%;
+        display: block;
+        width: 960px;
+        margin: 0 auto;
         height: 40px;
         border: none;
         border-radius: 2.5px;
-        background: $button-index-background-color;
-        color: $button-index-color;
+        background: #5DADE2;
+        color: #F7F9F9;
         cursor: pointer;
         font-size: 16px;
         &.hover {
-          background: transparentize($button-index-background-color, 0.2)
+          background: transparentize(#5DADE2, 0.2)
         }
         .fa-search {
           margin-right: 8px;
         }
-      }
-      @media only screen and (max-width: $breakpoint-phone-large-max) {
-        height: 40px;
-        margin: 0 auto;
-        .input {
-          display: block;
-          margin: 0 auto!important;
+        @media #{$phone} {
+          width: 100%;
+          margin-top: 12px;
         }
       }
     }
   }
   .announcements {
-    padding: 0;
+    padding: 24px 12px 12px;
     min-height: 640px;
     .announcement-index-tile {
       @extend %tile;

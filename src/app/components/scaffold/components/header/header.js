@@ -44,7 +44,7 @@ class Header extends React.Component {
             <div className='float-clear' />
           </h1>
           <div className='language'>
-            <ManagedButton manager={this.languageManager} />
+            <ManagedButton {...this.languageManager()} />
           </div>
           {
           this.props.screenSize != 'smallPc' && this.props.screenSize != 'largePc' &&
@@ -60,19 +60,19 @@ class Header extends React.Component {
           }
           <div className={`links${this.props.showLinks ? '' : ' hidden'}`}>
             {
-            <ManagedButton manager={this.addAnnouncementManager} />
+            <ManagedButton {...this.addAnnouncementManager()} />
             }
             {
             !this.props.name &&
-            <ManagedButton manager={this.signUpManager} />
+            <ManagedButton {...this.signUpManager()} />
             }
             {
             !this.props.name &&
-            <ManagedButton manager={this.signInManager} />
+            <ManagedButton {...this.signInManager()} />
             }
             {
             this.props.name &&
-            <ManagedButton manager={this.myAccountManager} />
+            <ManagedButton {...this.myAccountManager()} />
             }
             <div className='float-clear' />
           </div>

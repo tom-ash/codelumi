@@ -22,7 +22,7 @@ function setOptions(options) {
   options = options || {}
   return {
     center: {
-      lat: options.latitude || (this.props.isMobile ? 52.26: 52.222),
+      lat: options.latitude || (this.props.isMobile ? 52.24: 52.222),
       lng: options.longitude || (this.props.isMobile ? 21 : 20.985)
     },
     zoom: options.zoom || (this.props.isMobile ? 11.9 : 12.6),

@@ -4,33 +4,81 @@
 %inputs {
   .simple-index-input {
     @extend %simple-index-input;
-    &.category {
-      margin-right: 6px;
+    position: absolute;
+    width: 231px;
+    @media #{$phone} {
+      width: auto;
     }
-    @media only screen and (max-width: 744px)  {
-      &.category, &.district {
-        width: 207px;
+    &.category {
+      top: 12px;
+      left: 0;
+      @media #{$phone} {
+        left: 12px;
+        right: 12px;
       }
     }
-    @media #{$phone} {
-      &.category, &.district {
-        width: 100%;
+    &.district {
+      top: 70px;
+      left: 0;
+      @media #{$phone} {
+        left: 12px;
+        right: 12px;
       }
     }
   }
   .composite-input-container {
     @extend %simple-index-input;
     @extend %composite-index-input;
-    &.area, &.rent, &.floor, &.total-floors {
-      margin-right: 6px;
+    position: absolute;
+    top: 100px;
+    width: 231px;
+    @media #{$phone} {
+      width: auto!important;
     }
-    @media only screen and (max-width: 744px)  {
-      width: 207px;
-      &.rent, &.floor {
-        margin-right: 0;
+    &.area {
+      top: 12px;
+      left: 243px;
+      @media #{$phone} {
+        top: 128px;
+        left: 12px;
+        right: 12px;
       }
-      &.area, &.rooms, &.total-floors {
-        margin-right: 6px;
+    }
+    &.rent {
+      top: 70px;
+      left: 243px;
+      @media #{$phone} {
+        top: 186px;
+        left: 12px;
+        right: 12px;
+      }
+    }
+    &.floor {
+      top: 12px;
+      left: 486px;
+      @media #{$phone} {
+        display: none;
+      }
+    }
+    &.total-floors {
+      top: 70px;
+      left: 486px;
+      @media #{$phone} {
+        display: none;
+      }
+    }
+    &.rooms {
+      top: 12px;
+      left: 729px;
+      @media #{$phone} {
+        display: none;
+      }
+    }
+    &.availability-date {
+      top: 70px;
+      left: 729px;
+      @media #{$phone} {
+        display: none;
       }
     }
     @media #{$phone} {

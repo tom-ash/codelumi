@@ -20,7 +20,6 @@ class Announcement extends React.Component {
         (this.checkRoute('announcementCreate') || this.checkRoute('announcementEditing')) &&
         <AnnouncementCreate />
         }
-        {console.log(this.checkRoute('announcementIndex'))}
         {
         this.checkRoute('announcementIndex') &&
         <AnnouncementIndex />

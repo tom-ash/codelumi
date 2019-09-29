@@ -1,4 +1,3 @@
-import { managerAgent } from 'managed-inputs'
 import { scrollToElement } from '../../../../../../../functions/scrollers/scroll-to-element'
 import { instantScroll } from '../../../../../../../functions/scrollers/instant-scroll'
 
@@ -6,7 +5,7 @@ const id = 'announcement-index-full-search-button'
 
 export function buttonManager(action) {
   const { changeControl, changeData } = this.props
-  return managerAgent(action, {
+  return {
     id: id,
     classNames: { container: 'simple-index-input button' },
     label: this.buttonLabelHandler(),
@@ -19,17 +18,17 @@ export function buttonManager(action) {
       }))
       this.paramsBuilder()
     }
-  })
+  }
 }
 
-export function paginationManager(aspect, button) {
+export function paginationManager() {
   const { connecting, page, listAmount, changeControl } = this.props
-  return managerAgent(aspect, {
+  return {
     classNames: { container: 'pagination' },
     current: +page,
     resultsPerPage: 24,
     resultAmount: +listAmount,
-    onClick: () => {
+    onClick: (button) => {
       if (connecting) return
       const scrollButton = document.getElementById(id)
       instantScroll(window.pageYOffset + scrollButton.getBoundingClientRect().top)
@@ -38,5 +37,5 @@ export function paginationManager(aspect, button) {
         fetchList: true
       })
     }
-  })
+  }
 }

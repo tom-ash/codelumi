@@ -25,8 +25,8 @@ class UserCreateConsents extends React.Component {
     return (
       <div id='user-create-consents-container'>
         <div className={this.containerClassHandler()}>
-          <ManagedCheckbox manager={this.termsOfServiceManager}/>
-          <ManagedCheckbox manager={this.privacyPolicyManager}/>
+          <ManagedCheckbox {...this.termsOfServiceManager()}/>
+          <ManagedCheckbox {...this.privacyPolicyManager()}/>
         </div>
         <div className='error'>
           {this.errorTextProvider()}

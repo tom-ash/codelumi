@@ -34,11 +34,11 @@ class UserCreateEmailInputs extends React.Component {
   render() {
     return (
       <div className='user-create-email-inputs-container'>
-        <ManagedText manager = {this.businessNameManager}/>
-        <ManagedSelect manager={this.areaCodeManager}/>
-        <ManagedText manager={this.phoneNumberManager}/>
-        <ManagedText manager = {this.emailAddressManager}/>
-        <ManagedText manager = {this.passwordManager}/>
+        <ManagedText {...this.businessNameManager()}/>
+        <ManagedSelect {...this.areaCodeManager()}/>
+        <ManagedText {...this.phoneNumberManager()}/>
+        <ManagedText {...this.emailAddressManager()}/>
+        <ManagedText {...this.passwordManager()}/>
       </div>
     )
   }

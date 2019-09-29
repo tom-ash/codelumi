@@ -1,8 +1,7 @@
-import { managerAgent } from 'managed-inputs'
 import { saveCookie } from '../../../../cookies/functions/save'
 
-export function additionalFunctionsManager(aspect, value) {
-  return managerAgent(aspect, {
+export function additionalFunctionsManager() {
+  return {
     name: 'additional-functions',
     classNames: { container: 'input-container radio'},
     checked: this.props.consents.personalDataProcessing.additionalFunctions,
@@ -10,18 +9,18 @@ export function additionalFunctionsManager(aspect, value) {
       { value: 'true', label: 'Zgadzam się' },
       { value: 'false', label: 'Nie zgadzam się' }
     ],
-    onClick: () => {
+    onClick: (value) => {
       const consents = { ...this.props.consents }
       consents.personalDataProcessing.additionalFunctions = value
       this.props.changeSettings({ consents: consents })
       saveCookie('_pdpaf', value, 'oneYear')
       location.reload()
     }
-  })
+  }
 }
 
-export function statisticsAndMarketingManager(aspect, value) {
-  return managerAgent(aspect, {
+export function statisticsAndMarketingManager() {
+  return {
     name: 'statistics-marketing',
     classNames: { container: 'input-container radio'},
     checked: this.props.consents.personalDataProcessing.statisticsAndMarketing,
@@ -29,12 +28,12 @@ export function statisticsAndMarketingManager(aspect, value) {
       { value: 'true', label: 'Zgadzam się' },
       { value: 'false', label: 'Nie zgadzam się' }
     ],
-    onClick: () => {
+    onClick: (value) => {
       const consents = { ...this.props.consents }
       consents.personalDataProcessing.statisticsAndMarketing = value
       this.props.changeSettings({ consents: consents })
       saveCookie('_pdpsm', value, 'oneYear')
       location.reload()
     }
-  })
+  }
 }

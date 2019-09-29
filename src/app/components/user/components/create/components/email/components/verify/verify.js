@@ -26,8 +26,8 @@ class UserCreateEmailVerify extends React.Component {
         <div className='monit'>
           {this.languageObjectHandler(monit)}
         </div>
-        <ManagedText manager={this.verificationManager} />
-        <ManagedButton manager={this.buttonManager} />
+        <ManagedText {...this.verificationManager()} />
+        <ManagedButton {...this.buttonManager()} />
       </div>
     )
   }

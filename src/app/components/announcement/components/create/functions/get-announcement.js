@@ -20,8 +20,6 @@ export function getAnnouncement() {
     const announcement = jsonResponse.announcement
     setBlobs.call(this, announcement.id, announcement.pictures)
 
-    console.log(jsonResponse)
-
     let announcementInputs = {
       id: +announcement.id,
       category: +announcement.category,

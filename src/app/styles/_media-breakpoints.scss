@@ -13,3 +13,5 @@ $tablet: "#{$screen} and (min-width: #{$breakpoint-tablet-small-min}) and (max-w
 $small-tablet: "#{$screen} and (min-width: #{$breakpoint-tablet-small-min}) and (max-width: #{$breakpoint-tablet-large-max})" !default;
 
 $phone: "#{$screen} and (max-width: #{$breakpoint-phone-large-max})" !default;
+
+$pc: "#{$screen} and (min-width: #{$breakpoint-pc-small-min})" !default;

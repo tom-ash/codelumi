@@ -27,30 +27,6 @@
     }
   }
   .core {
-    .data {
-      padding: 12px 0;
-      position: relative;
-      .area {
-        margin: 0 0 0 36px;
-        line-height: 58px;
-        @media only screen and (max-width: $breakpoint-tablet-large-max) {
-          margin: 0 0 0 24px;
-        }
-      }
-      .area, .rent {
-        float: left;
-      }
-      .rent {
-        float: right;
-        .total, .per-sqm {
-          float: left;
-          margin: 0 36px 0 0;
-          @media only screen and (max-width: $breakpoint-tablet-large-max) {
-            margin: 0 24px 0 0;
-          }
-        }
-      }
-    }
     .picture {
       position: relative!important;
       $width: 400px;
@@ -67,35 +43,8 @@
         padding-bottom: ($width / 1.3333);
         background-position: center; 
       }
-      .primary-data {
-        .announcement-id {
-          position: absolute;
-          top: -82px;
-          left: -52px;
-          background: white;
-          border-radius: 2.5px;
-          min-width: 40px;
-          height: 40px;
-          line-height: 42px;
-          font-size: 17px;
-          @media only screen and (max-width: $breakpoint-tablet-large-max) {
-            top: -132px;
-            left: 0;
-          }
-        }
-        .category {
-          position: absolute;
-          top: 6px;
-          left: 6px;
-        }
-        .district {
-          position: absolute;
-          top: 6px;
-          left: 44px;
-        }
-      }
     }
-    .bottom-data {
+    .tertiary {
       font: 16px;
       padding: 12px;
       .rooms, .floor, .total-floors {
@@ -114,9 +63,9 @@
     position: absolute;
     background: white;
     left: 412px;
-    top: 0;
+    top: 42px;
     width: 176px;
-    height: 345px;
+    height: 365px;
     color: #2C3E50;
     font-size: 16px;
     padding: 12px 12px 0;
@@ -132,7 +81,7 @@
         width: 24px;
       }
       @media only screen and (min-width: $breakpoint-tablet-small-min) {
-        height: 201px;
+        height: 221px;
       }
       @media only screen and (max-width: $breakpoint-tablet-large-max) {
         float: left;

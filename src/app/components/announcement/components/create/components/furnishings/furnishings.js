@@ -17,7 +17,7 @@ class AnnouncementCreateFurnishings extends React.Component {
     return (
       <div id='announcement-create-furnishings' className='section'>
         <div className='box'>
-          <ManagedMultipleCheckbox manager={this.furnishingsManager} />
+          <ManagedMultipleCheckbox {...this.furnishingsManager()} />
         </div>
         <div className='scroll'>
           <i className='fas fa-sort'></i>

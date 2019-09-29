@@ -34,11 +34,11 @@ class UserEditAccountEmail extends React.Component {
         <div className='monit'>
           {this.monitProvider()}
         </div>
-        <ManagedText manager={this.currentEmailVerificationManager} />
-        <ManagedText manager={this.newEmailAddressManager} />
-        <ManagedText manager={this.newEmailVerificationManager} />
-        <ManagedText manager={this.passwordManager} />
-        <ManagedButton manager={this.buttonManager} />
+        <ManagedText {...this.currentEmailVerificationManager()} />
+        <ManagedText {...this.newEmailAddressManager()} />
+        <ManagedText {...this.newEmailVerificationManager()} />
+        <ManagedText {...this.passwordManager()} />
+        <ManagedButton {...this.buttonManager()} />
       </div>
     )
   }

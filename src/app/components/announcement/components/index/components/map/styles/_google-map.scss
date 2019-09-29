@@ -4,21 +4,16 @@
 %google-map {
   position: relative;
   height: 640px;
-  background: white;
   border: none;
-  margin: 0 12px 24px;
-  padding: 12px;
   border-radius: 4px;
   @media only screen and (max-width: $breakpoint-phone-large-max) {
-    height: 840px;
-    margin: 80px 0 12px;
-    padding: 6px;
+    margin: 150px 0 12px;
   }
   .results {
     z-index: 1;
     position: absolute;
-    top: 24px;
-    left: 252px;
+    top: 40px;
+    left: 255px;
     height: 36px;
     width: 72px;
     line-height: 36px;
@@ -26,13 +21,9 @@
     color: white;
     background: transparentize(#626567, 0.24);
     border-radius: 4px;
-
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
-      top: 366px;
-      left: 0;
-      right: 0;
-      width: 280px;
-      margin: 0 auto;
+    @media #{$phone} {
+      top: 240px;
+      right: 12px;
     }
   }
   #google-map {

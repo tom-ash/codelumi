@@ -1,11 +1,10 @@
-import { managerAgent } from 'managed-inputs'
 import { handleLanguageVersions } from '../../../../../../../../../functions/shared.js'
 import { changeBusinessName } from './adapters'
 
 const noError = { polish: '', english: '' }
 
-export function textManager(action, value) {
-  return managerAgent(action, {
+export function textManager() {
+  return {
     id: 'user-edit-account-business-name-text',
     controlled: false,
     classNames: { container: 'form-input text' },
@@ -14,8 +13,8 @@ export function textManager(action, value) {
       english: 'business name'
     }),
     onChange: () => this.props.changeErrors({ businessName: noError }),
-    onBlur: () => this.textManager('validate', value),
-    validate: () => {
+    onBlur: (value) => this.textManager().validate(value),
+    validate: (value) => {
       if (value.length < 1) {
         this.props.changeErrors({
           businessName: { polish: 'nazwa nie moze być pusta', english: "the business name can't be blank" }
@@ -28,11 +27,11 @@ export function textManager(action, value) {
       polish: this.props.error.polish,
       english: this.props.error.english
     })
-  })
+  }
 }
 
-export function buttonManager(action) {
-  return managerAgent(action, {
+export function buttonManager() {
+  return {
     classNames: { container: 'form-input button' },
     label: handleLanguageVersions(this.props.language, {
       polish: 'Zmień',
@@ -40,8 +39,8 @@ export function buttonManager(action) {
     }),
     onClick: () => {
       const businessName = document.getElementById('user-edit-account-business-name-text').value
-      if (!this.textManager('validate', businessName)) return
+      if (!this.textManager().validate(businessName)) return
       changeBusinessName.call(this, businessName)
     }
-  })
+  }
 }

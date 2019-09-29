@@ -1,43 +1,43 @@
 import React from 'react'
-import { managerAgent } from 'managed-inputs'
 import { currencies } from '../../../constants/currencies'
 
-export function categoryManager(aspect, option) {
-  return managerAgent(aspect, {
-    classNames: { container: 'simple-index-input select unit category' },
+export function categoryManager() {
+  return {
+    classNames: {
+      container: 'simple-index-input select unit category'
+    },
     value: this.props.category,
     label: this.labelProvider('category'),
     children: <i className='icon fas fa-clone' />,
     options: this.buildSelectCategories(),
-    onSelect: () => this.changeInput('category', option.value),
-  })
+    onSelect: (option) => this.changeInput('category', option.value),
+  }
 }
 
-export function districtManager(aspect, option) {
-  return managerAgent(aspect, {
+export function districtManager() {
+  return {
     classNames: { container: 'simple-index-input select district unit' },
     children: <i className='icon fas fa-city' />,
     value: this.props.district,
     label: this.labelProvider('district'),
     options: this.buildSelectDistricts(),
-    onSelect: () => this.changeInput('district', option.value),
+    onSelect: (option) => this.changeInput('district', option.value),
     onFocus: () => this.props.changeControl({ rentActive: false })
-  })
+  }
 }
 
-
-export function rentCurrencyManager(aspect, option, keyCode) {
-  return managerAgent(aspect, {
+export function rentCurrencyManager() {
+  return {
     classNames: { container: 'sub-input select rent last' },
     value: this.props.rentCurrency,
     label: this.languageHandler('Waluta', 'Currency'),
     options: currencies,
-    onSelect: () => this.changeInput('rentCurrency', option.value)
-  })
+    onSelect: (option) => this.changeInput('rentCurrency', option.value)
+  }
 }
 
-export function availabilityDateManager(aspect) {
-  return managerAgent(aspect, {
+export function availabilityDateManager() {
+  return {
     classNames: { container: 'composite-input select availability-date' },
     disableOnFocusCover: true,
     disableSelectOptions: true,
@@ -54,5 +54,5 @@ export function availabilityDateManager(aspect) {
       this.props.changeControl({ availabilityDateFocus: false })
     },
     onChange: () => null
-  })
+  }
 }

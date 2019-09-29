@@ -1,30 +1,29 @@
-import { managerAgent } from 'managed-inputs'
 import { consents } from '../constants/consents.js'
 
-export function termsOfServiceManager(aspect, value) {
-  return managerAgent(aspect, {
+export function termsOfServiceManager() {
+  return {
     id: 'user-create-consents-terms',
     classNames: { container: 'input-container checkbox' },
     checked: this.props.terms,
     label: this.languageObjectHandler(consents.terms),
-    onClick: () => {
+    onClick: (value) => {
       this.props.changeInputs({ terms: value })
-      this.termsOfServiceManager('validate', value)
+      this.termsOfServiceManager().validate(value)
     },
-    validate: () => this.termsValidator(value)
-  })
+    validate: (value) => this.termsValidator(value)
+  }
 }
 
-export function privacyPolicyManager(aspect, value) {
-  return managerAgent(aspect, {
+export function privacyPolicyManager() {
+  return {
     id: 'user-create-consents-privacy',
     classNames: { container: 'input-container checkbox' },
     checked: this.props.privacy,
     label: this.languageObjectHandler(consents.privacy),
-    onClick: () => {
+    onClick: (value) => {
       this.props.changeInputs({ privacy: value })
-      this.privacyPolicyManager('validate', value)
+      this.privacyPolicyManager().validate(value)
     },
-    validate: () => this.privacyValidator(value)
-  })
+    validate: (value) => this.privacyValidator(value)
+  }
 }

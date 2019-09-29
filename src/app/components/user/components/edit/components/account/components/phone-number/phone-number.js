@@ -21,9 +21,9 @@ class UserEditAccountPhoneNumber extends React.Component {
         <div className='monit'>
           {monit.polish}
         </div>
-        <ManagedSelect manager={this.countryCodeManager}/>
-        <ManagedText manager={this.bodyManager} />
-        <ManagedButton manager={this.buttonManager} />
+        <ManagedSelect {...this.countryCodeManager()}/>
+        <ManagedText {...this.bodyManager()} />
+        <ManagedButton {...this.buttonManager()} />
       </div>
     )
   }

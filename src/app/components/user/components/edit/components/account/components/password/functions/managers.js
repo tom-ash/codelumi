@@ -1,38 +1,37 @@
-import { managerAgent } from 'managed-inputs'
 import { emailAddressValidator } from '../../../../../../../functions/shared'
 import { noError } from '../constants/no-error'
 import { inputs } from '../../../../../../../constants/inputs'
 
-export function emailManager(aspect, value) {
+export function emailManager() {
   const input = inputs.email
-  return managerAgent(aspect, {
+  return {
     id: 'user-edit-password-email',
     display: this.props.step === null && !this.props.connecting ? 'block' : 'none',
     controlled: false,
     classNames: { container: 'form-input text' },
     label: this.labelProvider(input.icon, input.label),
     onChange: () => this.props.changeErrors({ password: noError }),
-    onBlur: () => this.emailManager('validate', value),
-    validate: () => {
+    onBlur: (value) => this.emailManager().validate(value),
+    validate: (value) => {
       return emailAddressValidator.call(this, value, 'changeErrors', {
         password: { polish: 'nieprawidłowy adres email', english: 'invalid email address' }
       })
     },
     error: this.languageObjectHandler(this.props.error)
-  })
+  }
 }
 
-export function verificationManager(aspect, value) {
+export function verificationManager() {
   const input = inputs.verification
-  return managerAgent(aspect, {
+  return {
     id: 'user-edit-password-verification',
     display: this.props.step === 'verificationCode' && !this.props.connecting ? 'block' : 'none',
     controlled: false,
     classNames: { container: 'form-input text' },
     label: this.labelProvider(input.icon, input.label),
     onChange: () => this.props.changeErrors({ password: noError }),
-    onBlur: () => this.verificationManager('validate', value),
-    validate: () => {
+    onBlur: (value) => this.verificationManager().validate(value),
+    validate: (value) => {
       if (value.length === 8) return true
       this.props.changeErrors({
         password: { polish: 'nieprawidłowy kod weryfikacyjny', english: 'invalid verification code' }
@@ -40,12 +39,12 @@ export function verificationManager(aspect, value) {
       return false
     },
     error: this.languageObjectHandler(this.props.error)
-  })
+  }
 }
 
-export function passwordManager(aspect, value) {
+export function passwordManager() {
   const input = inputs.password
-  return managerAgent(aspect, {
+  return {
     id: 'user-edit-password',
     display: this.props.step === 'password' && !this.props.connecting ? 'block' : 'none',
     controlled: false,
@@ -54,8 +53,8 @@ export function passwordManager(aspect, value) {
     classNames: { container: 'form-input text' },
     label: this.labelProvider(input.icon, input.label),
     onChange: () => this.props.changeErrors({ password: noError }),
-    onBlur: () => this.passwordManager('validate', value),
-    validate: () => {
+    onBlur: (value) => this.passwordManager().validate(value),
+    validate: (value) => {
       if (value.length > 5) return true
       this.props.changeErrors({
         password: {
@@ -66,16 +65,16 @@ export function passwordManager(aspect, value) {
       return false
     },
     error: this.languageObjectHandler(this.props.error)
-  })
+  }
 }
 
-export function buttonManager(aspect) {
-  return managerAgent(aspect, {
+export function buttonManager() {
+  return {
     display: this.props.step !== 'success' && !this.props.connecting ? 'block' : 'none',
     classNames: { container: 'form-input button' },
     label: buttonTextProvider.call(this),
     onClick: buttonOnClickProvider.call(this)
-  })
+  }
 }
 
 function buttonOnClickProvider() {
