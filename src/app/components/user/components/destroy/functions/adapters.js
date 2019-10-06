@@ -2,12 +2,18 @@ import { apiUrl } from '../../../../../constants/urls.js'
 import { getTokens } from '../../authorize/components/tokens/functions/get-tokens'
 
 export function sendEmail() {
+  const { email } = this.props
   if (this.props.connecting) return
   this.props.changeControl({ connecting: true })
   const [ UST, UAT ] = getTokens()
   fetch(apiUrl + '/user/destroy/email', {
-    method: 'PUT', headers: { 'Content-Type': 'application/json', UST, UAT },
-    body: JSON.stringify({ emailAddress: this.props.email })
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      UST,
+      UAT
+    },
+    body: JSON.stringify({ email })
   })
   .then(response => {
     if (response.status == 200) return this.props.changeControl({ step: 'verification' })
