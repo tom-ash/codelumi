@@ -4,6 +4,7 @@
 @import './tile';
 @import '../../../../../../../styles/media-breakpoints';
 @import './panel-container';
+@import './pin';
 
 #announcement-index-map {
   position: absolute;
@@ -37,6 +38,9 @@
     }
     .announcement-index-tile {
       @extend %map-tile;
+    }
+    .pin {
+      @extend %map-pin;
     }
   }
   &.hidden {

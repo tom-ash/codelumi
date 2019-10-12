@@ -33,11 +33,4 @@
     width: 24px;
   }
   width: 720px;
-  @media only screen and (max-width: 744px) {
-    // width: 456px;
-  }
-  @media #{$phone} {
-    // top: -24px;
-    // width: 280px;
-  }
 }

@@ -8,7 +8,7 @@ export function categoryManager() {
     },
     value: this.props.category,
     label: this.labelProvider('category'),
-    children: <i className='icon fas fa-clone' />,
+    children: <i className='icon far fa-list-alt' />,
     options: this.buildSelectCategories(),
     onSelect: (option) => this.changeInput('category', option.value),
   }

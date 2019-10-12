@@ -1,6 +1,6 @@
 export const inputs = {
   category: {
-    icon: 'fas fa-clone',
+    icon: 'far fa-list-alt',
     all: { polish: 'Kategoria', english: 'Category' }
   },
   district: {
@@ -25,7 +25,7 @@ export const inputs = {
     all: { polish: 'Opłaty dodatkowe', english: 'Additional fees' }
   },
   area: {
-    icon: 'fas fa-square',
+    icon: 'fas fa-ruler-combined',
     create: { polish: 'Powierzchnia', english: 'Area' },
     indexMin: {},
     indexMax: {}

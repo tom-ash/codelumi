@@ -4,7 +4,9 @@ export const mapStateToProps = (store) => {
 
     connecting: store.announcement.index.control.list.connecting,
 
-    map: store.announcement.index.map
+    map: store.announcement.index.map,
+
+    isMobile: store.app.isMobile
   }
 }
 
