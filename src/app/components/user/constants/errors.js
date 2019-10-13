@@ -18,5 +18,9 @@ export const errors = {
   password: {
     polish: 'hasło powinno się składać z przynajmniej 6 znaków',
     english: 'the password should consists of at least 6 characters'
+  },
+  verificationCode: {
+    polish: 'nieprawidłowy kod weryfikacyjny',
+    english: 'invalid verification code'
   }
 }

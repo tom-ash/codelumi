@@ -1,92 +1,131 @@
 const noError = { polish: '', english: '' }
+import { verificationCodeValidator } from '../../../../../../../functions/verification-code-validator'
+import { emailValidator } from '../../../../../../../../../functions/email-validator'
+import { passwordValidator } from '../../../../../../../functions/password-validator'
 
 export function currentEmailVerificationManager() {
+  const {
+    languageHandler,
+    languageObjectHandler,
+    currentEmailVerificationManager: thisManager,
+    props
+  } = this
+  const {
+    step,
+    changeErrors,
+    currentEmailVerificationError: error
+  } = props
+
   return {
     id: 'user-edit-email-current-verification',
-    display: this.props.step === 'currentEmailVerification' ? 'block' : 'none',
+    display: step === 'currentEmailVerification' ? 'block' : 'none',
     controlled: false,
-    classNames: { container: 'form-input text' },
-    label: this.languageHandler('Kod weryfikacyjny', 'Verification code'),
-    onChange: () => this.props.changeErrors({ currentEmailVerification: noError }),
-    onBlur: (value) => this.currentEmailVerificationManager().validate(value),
-    validate: (value) => {
-      if (value.length < 8) {
-        this.props.changeErrors({
-          currentEmailVerification: { polish: 'nieprawidłowy kod weryfikacyjny', english: 'invalid verification code'}
-        })
-        return false
-      }
-      return true
+    classNames: {
+      container: 'form-input text'
     },
-    error: this.languageObjectHandler(this.props.currentEmailVerificationError)
+    label: languageHandler('Kod weryfikacyjny', 'Verification code'),
+    onChange: () => changeErrors({
+      currentEmailVerification: noError
+    }),
+    onBlur: value => thisManager().validate(value),
+    validate: (value) => {
+      const { isValid, error } = verificationCodeValidator(value)
+      if (isValid) return
+      changeErrors({ currentEmailVerification: error })
+    },
+    error: languageObjectHandler(error)
   }
 }
 
-export function newEmailAddressManager() {
+export function newEmailManager() {
+  const {
+    languageHandler,
+    languageObjectHandler,
+    newEmailManager: thisManager,
+    props
+  } = this
+  const {
+    step,
+    changeErrors,
+    newEmailError: error
+  } = props
+
   return {
     id: 'user-edit-email-new',
-    display: this.props.step === 'newEmail' ? 'block' : 'none',
+    display: step === 'newEmail' ? 'block' : 'none',
     controlled: false,
     classNames: { container: 'form-input text' },
-    label: this.languageHandler('Nowy adres email', 'New Email Address'),
-    onChange: () => this.props.changeErrors({ newEmail: noError }),
-    onBlur: (value) => this.newEmailAddressManager().validate(value),
-    validate: (value) => {
-      if (value.length < 1) {
-        this.props.changeErrors({
-          newEmail: { polish: 'nieprawidłowy adres email', english: 'invalid email address' }
-        })
-        return false
-      }
-      return true
+    label: languageHandler('Nowy adres email', 'New Email Address'),
+    onChange: () => changeErrors({ newEmail: noError }),
+    onBlur: value => thisManager().validate(value),
+    validate: value => {
+      const { isValid, error } = emailValidator(value)
+      if (isValid) return
+      changeErrors({ newEmail: error })
     },
-    error: this.languageObjectHandler(this.props.newEmailError)
+    error: languageObjectHandler(error)
   }
 }
 
 export function newEmailVerificationManager() {
+  const {
+    languageHandler,
+    languageObjectHandler,
+    newEmailVerificationManager: thisManager,
+    props
+  } = this
+  const {
+    step,
+    changeErrors,
+    newEmailVerificationError: error
+  } = props
+
   return {
     id: 'user-edit-email-new-verification',
-    display: this.props.step === 'newEmailVerification' ? 'block' : 'none',
+    display: step === 'newEmailVerification' ? 'block' : 'none',
     controlled: false,
     classNames: { container: 'form-input text' },
-    label: this.languageHandler('Kod weryfikacyjny', 'Verification Code'),
-    onChange: () => this.props.changeErrors({ newEmailVerification: noError }),
-    onBlur: (value) => this.newEmailVerificationManager().validate(value),
-    validate: (value) => {
-      if (value.length < 1) {
-        this.props.changeErrors({
-          newEmailVerification: { polish: 'nieprawidłowy kod weryfikacyjny', english: 'invalid verification code' }
-        })
-        return false
-      }
-      return true
+    label: languageHandler('Kod weryfikacyjny', 'Verification Code'),
+    onChange: () => changeErrors({ newEmailVerification: noError }),
+    onBlur: value => thisManager().validate(value),
+    validate: value => {
+      const { isValid, error } = verificationCodeValidator(value)
+      if (isValid) return
+      changeErrors({ newEmailVerification: error })
     },
-    error: this.languageObjectHandler(this.props.newEmailVerificationError)
+    error: languageObjectHandler(error)
   }
 }
 
 export function passwordManager() {
+  const {
+    languageHandler,
+    languageObjectHandler,
+    passwordManager: thisManager,
+    props
+  } = this
+  const {
+    step,
+    changeErrors,
+    newEmailPasswordError: error
+  } = props
+
   return {
     id: 'user-edit-email-password',
-    display: this.props.step == 'password' ? 'block' : 'none',
+    display: step == 'password' ? 'block' : 'none',
     controlled: false,
     classNames: { container: 'form-input text' },
     type: 'password',
     autoComplete: 'new-password',
-    label: this.languageHandler('Hasło', 'Password'),
-    onChange: () => this.props.changeErrors({ newEmailPassword: noError }),
-    onBlur: (value) => this.passwordManager().validate(value),
-    validate: (value) => {
-      if (value.length < 6) {
-        this.props.changeErrors({
-          newEmailPassword: { polish: 'nieprawidłowe hasło', english: 'invalid password' }
-        })
-        return false
-      }
-      return true
+    label: languageHandler('Hasło', 'Password'),
+    onChange: () => changeErrors({ newEmailPassword: noError }),
+    onBlur: value => thisManager().validate(value),
+    validate: value => {
+      const { isValid, error } = passwordValidator(value)
+      if (isValid) return
+      changeErrors({ newEmailPassword: error })
     },
-    error: this.languageObjectHandler(this.props.newEmailPasswordError)
+    error: languageObjectHandler(error)
   }
 }
 
@@ -101,11 +140,38 @@ export function buttonManager(aspect) {
 }
 
 function buttonOnClickProvider() {
-  if (this.props.connecting) return
-  switch (this.props.step) {
-    case 'currentEmailVerification': return this.sendCurrentEmailVerification
-    case 'newEmail': return this.sendNewEmailAddress
-    case 'newEmailVerification': return this.sendNewEmailVerification
-    case 'password': return this.sendPassword
+  const {
+    connecting,
+    step,
+    changeErrors
+  } = this.props
+
+  if (connecting) return
+
+  switch (step) {
+    case 'currentEmailVerification': return () => {
+      const value = document.getElementById('user-edit-email-current-verification').value
+      const { isValid, error } = verificationCodeValidator(value)
+      if (isValid) return this.sendCurrentEmailVerification(value)
+      changeErrors({ currentEmailVerification: error })
+    }
+    case 'newEmail': return () => {
+      const newEmail = document.getElementById('user-edit-email-new').value
+      const { isValid, error } = emailValidator(newEmail)
+      if (isValid) return this.sendNewEmail(newEmail)
+      changeErrors({ newEmail: error })
+    }
+    case 'newEmailVerification': return () => {
+      const newEmailVerification = document.getElementById('user-edit-email-new-verification').value
+      const { isValid, error } = verificationCodeValidator(newEmailVerification)
+      if (isValid) return this.sendNewEmailVerification(newEmailVerification)
+      changeErrors({ newEmailVerification: error }) 
+    }
+    case 'password': return () => {
+      const password = document.getElementById('user-edit-email-password').value
+      const { isValid, error } = passwordValidator(password)
+      if (isValid) return this.sendPassword(password)
+      changeErrors({ newEmailPassword: error })
+    }
   }
 }

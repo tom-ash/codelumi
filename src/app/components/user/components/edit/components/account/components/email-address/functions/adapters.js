@@ -25,32 +25,34 @@ export function sendCurrentEmailAddress() {
   .finally(() => this.props.changeControl({ emailConnecting: false }))
 }
 
-export function sendCurrentEmailVerification() {
+export function sendCurrentEmailVerification(verificationCode) {
+  const { changeControl } = this.props
   if (this.props.connecting) return
-  const currentEmailVerification = document.getElementById('user-edit-email-current-verification').value
-  if (!this.currentEmailVerificationManager('validate', currentEmailVerification)) return
   this.props.changeControl({ emailConnecting: true })
-  const [ UST, UAT ] = getTokens()
+  const [
+    UST,
+    UAT
+  ] = getTokens()
   fetch(apiUrl + '/user/edit/email/verify/current', {
-    method: 'PUT', headers: {
+    method: 'PUT',
+    headers: {
       'Content-Type': 'application/json',
       UST,
       UAT
     },
-    body: JSON.stringify({ verification_code: currentEmailVerification })
+    body: JSON.stringify({ verification_code: verificationCode })
   })
   .then(response => {
-    if (response.status == 200) return this.props.changeControl({ emailStep: 'newEmail' })
+    if (response.status == 200) return changeControl({ emailStep: 'newEmail' })
     throw new Error('SomethingWentWrong')
   })
   .catch((error) => console.dir(error))
-  .finally(() => this.props.changeControl({ emailConnecting: false }))
+  .finally(() => changeControl({ emailConnecting: false }))
 }
 
-export function sendNewEmailAddress() {
+export function sendNewEmail(newEmail) {
   if (this.props.connecting) return
   this.props.changeControl({ emailConnecting: true })
-  const newEmail = document.getElementById('user-edit-email-new').value
   const [ UST, UAT ] = getTokens()
   fetch(apiUrl + '/user/edit/email/new', {
     method: 'PUT', headers: {
@@ -69,10 +71,9 @@ export function sendNewEmailAddress() {
   .finally(() => this.props.changeControl({ emailConnecting: false }))
 }
 
-export function sendNewEmailVerification() {
+export function sendNewEmailVerification(newEmailVerification) {
   if (this.props.connecting) return
   const currentEmailVerification = document.getElementById('user-edit-email-current-verification').value
-  const newEmailVerification = document.getElementById('user-edit-email-new-verification').value  
   this.props.changeControl({ emailConnecting: true })
   const [ UST, UAT ] = getTokens()
   fetch(apiUrl + '/user/edit/email/verify/new', {
@@ -92,18 +93,21 @@ export function sendNewEmailVerification() {
   .finally(() => this.props.changeControl({ emailConnecting: false }))
 }
 
-export function sendPassword() {
+export function sendPassword(password) {
+  const { currentValue } = this.props
   if (this.props.connecting) return
   const currentEmailVerification = document.getElementById('user-edit-email-current-verification').value
-  const emailAddress = document.getElementById('user-edit-email-new').value
+  const email = document.getElementById('user-edit-email-new').value
   const newEmailVerification = document.getElementById('user-edit-email-new-verification').value
-  const password = document.getElementById('user-edit-email-password').value
   this.props.changeControl({ emailConnecting: true })
-  const [ UST, UAT ] = getTokens()
-  getDerivedSaltForPassword(this.props.currentValue)
+  const [
+    UST,
+    UAT
+  ] = getTokens()
+  getDerivedSaltForPassword(currentValue)
   .then(salt => {
     const oldHashedPassword = hashPassword(password, salt)
-    getDerivedSaltForPassword(emailAddress)
+    getDerivedSaltForPassword(email)
     .then(salt => {
       const newHashedPassword = hashPassword(password, salt)
       fetch(apiUrl + '/user/edit/email', {
@@ -115,7 +119,7 @@ export function sendPassword() {
       })
       .then(response => {
         if (response.status == 200) {
-          this.props.changeData({ email: emailAddress })
+          this.props.changeData({ email })
           this.props.changeControl({ emailStep: 'success', emailStage: 'success' })
           return
         }
