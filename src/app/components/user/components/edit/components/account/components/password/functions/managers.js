@@ -1,23 +1,24 @@
-import { emailAddressValidator } from '../../../../../../../functions/shared'
 import { noError } from '../constants/no-error'
 import { inputs } from '../../../../../../../constants/inputs'
+import { emailValidator } from '../../../../../../../../../functions/email-validator'
 
 export function emailManager() {
   const input = inputs.email
+  const { step, connecting, changeErrors, error } = this.props
   return {
     id: 'user-edit-password-email',
-    display: this.props.step === null && !this.props.connecting ? 'block' : 'none',
+    display: step === null && !connecting ? 'block' : 'none',
     controlled: false,
     classNames: { container: 'form-input text' },
     label: this.labelProvider(input.icon, input.label),
-    onChange: () => this.props.changeErrors({ password: noError }),
-    onBlur: (value) => this.emailManager().validate(value),
-    validate: (value) => {
-      return emailAddressValidator.call(this, value, 'changeErrors', {
-        password: { polish: 'nieprawidłowy adres email', english: 'invalid email address' }
-      })
+    onChange: () => changeErrors({ password: noError }),
+    onBlur: value => this.emailManager().validate(value),
+    validate: value => {
+      const { isValid, error } = emailValidator(value)
+      if (isValid) return
+      changeErrors({ password: error })
     },
-    error: this.languageObjectHandler(this.props.error)
+    error: this.languageObjectHandler(error)
   }
 }
 
@@ -80,7 +81,12 @@ export function buttonManager() {
 function buttonOnClickProvider() {
   if (this.props.connecting) return
   switch (this.props.step) {
-    case null: return this.sendEmail
+    case null: return () => {
+      const value = document.getElementById('user-edit-password-email').value
+      const { isValid, error } = emailValidator(value)
+      if (isValid) return this.sendEmail()
+      this.props.changeErrors({ password: error })
+    }
     case 'verificationCode': return this.sendVerification
     case 'password': return this.sendPassword
   }
@@ -90,8 +96,3 @@ function buttonTextProvider() {
   if (this.props.step === 'password') return this.languageHandler('Zmień', 'Change')
   return this.languageHandler('Dalej', 'Next')
 }
-
-
-
-
-

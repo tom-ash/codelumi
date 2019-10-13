@@ -1,7 +1,6 @@
 import { apiUrl } from '../../../constants/urls.js'
 import PBKDF2 from 'crypto-js/pbkdf2'
-
-const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+import config from '../../../constants/config'
 
 export function getDerivedSaltForPassword(emailAddress) {
   return fetch(apiUrl + '/user_derived_salt', {
@@ -18,20 +17,21 @@ export function getDerivedSaltForPassword(emailAddress) {
   .catch((e) => {console.dir(e)})
 }
 
-const ONCLIENTPASSWORDHASHINGKEYSIZE = 32
-const ONCLIENTPASSWORDHASHINGITERATIONS = 128
-
-export function hashPassword(plaintextPassword, plaintextSalt) {
-  return PBKDF2(plaintextPassword, plaintextSalt, {
-    keySize: ONCLIENTPASSWORDHASHINGKEYSIZE,
-    iterations: ONCLIENTPASSWORDHASHINGITERATIONS
-  }).toString()
+export function hashPassword(plaintext, salt) {
+  const { keySize, iterations } = config.passwordHashing
+  return PBKDF2(
+    plaintext,
+    salt,
+    {
+      keySize,
+      iterations
+    }
+  ).toString()
 }
 
 export function emailAddressValidator(emailAddress, callback, errors) {
-  if (emailRegex.test(emailAddress)) {
-    return true
-  }
+  const { emailRegex } = config
+  if (emailRegex.test(emailAddress)) return true
   this.props[callback](errors)
   return false
 }

@@ -1,4 +1,4 @@
-import { emailRegex } from '../../../constants/regexes'
+import config from '../../../constants/config'
 
 export function businessNameVerifier(value) {
   return value.length > 0
@@ -13,6 +13,7 @@ export function phoneVerifier(value) {
 }
 
 export function emailVerifier(value) {
+  const { emailRegex } = config
   return emailRegex.test(value)
 }
 
