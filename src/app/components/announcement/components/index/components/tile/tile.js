@@ -70,7 +70,7 @@ class AnnouncementIndexTile extends React.Component {
       show,
       visible,
       area,
-      rentCurrency,
+      rent_currency,
       net_rent_amount,
       net_rent_amount_per_sqm,
       gross_rent_amount,
@@ -80,6 +80,8 @@ class AnnouncementIndexTile extends React.Component {
       floor,
       total_floors
     } = announcement
+
+    console.log(announcement)
 
     let coreClass = `core ${venue}`
     if (showLoader) coreClass += ' loader'
@@ -119,7 +121,8 @@ class AnnouncementIndexTile extends React.Component {
             venue={venue}
             languageHandler={languageHandler}
             area={area}
-            rentCurrency={rentCurrency}
+            rentCurrency={rent_currency}
+            parseCurrency={parseCurrency}
             netRentAmount={net_rent_amount}
             netRentAmountPerSqm={net_rent_amount_per_sqm}
             grossRentAmount={gross_rent_amount}

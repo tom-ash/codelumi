@@ -16,7 +16,10 @@ export const inputs = {
   },
   rentHeight: {
     icon: 'fas fa-coins',
-    create: { polish: 'Kwota czynszu', english: 'Rent amount' },
+    create: {
+      polish: 'Kwota miesięcznego czynszu netto',
+      english: 'Monthly net rent amount'
+    },
     indexMin: {},
     indexMax: {}
   },
@@ -26,7 +29,7 @@ export const inputs = {
   },
   area: {
     icon: 'fas fa-ruler-combined',
-    create: { polish: 'Powierzchnia', english: 'Area' },
+    create: { polish: 'Powierzchnia (m2)', english: 'Area (sqm)' },
     indexMin: {},
     indexMax: {}
   },

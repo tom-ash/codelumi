@@ -3,7 +3,10 @@ import { inputs } from '../../../../../constants/inputs'
 export const items = [
   {
     icon: inputs.area.icon,
-    label: { polish: 'Powierzchnia:', english: 'Area:' },
+    label: {
+      polish: 'Powierzchnia:',
+      english: 'Area:'
+    },
     stateKey: 'area'
   },
   {

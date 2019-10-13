@@ -5,12 +5,15 @@ export default function SecondaryData(props) {
     venue,
     languageHandler,
     rentCurrency,
+    parseCurrency,
     area,
     netRentAmount,
     netRentAmountPerSqm,
     grossRentAmount,
     grossRentAmountPerSqm
   } = props
+
+  const currency = parseCurrency(rentCurrency)
 
   return (
     <div className={`secondary-data ${venue}`}>
@@ -22,17 +25,17 @@ export default function SecondaryData(props) {
       <div className='outer rent net total'>
         <div className='inner'>
           <div className='amount'>
-            {netRentAmount} {rentCurrency}
+            {netRentAmount} {currency}
           </div>
           <div className='meta'>
-            {languageHandler('netto + VAT / mc', 'net + VAT/ mo')}
+            {languageHandler('netto + VAT / mc', 'net + VAT / mo')}
           </div>
         </div>
       </div>
       <div className='outer rent gross total'>
         <div className='inner'>
           <div className='amount'>
-            {grossRentAmount / 100} {rentCurrency}
+            {grossRentAmount / 100} {currency}
           </div>
           <div className='meta'>
             {languageHandler('brutto / mc', 'gross / mo')}
@@ -42,17 +45,17 @@ export default function SecondaryData(props) {
       <div className='outer rent net per-sqm'>
         <div className='inner'>
           <div className='amount'>
-            {netRentAmountPerSqm / 100} {rentCurrency} / {languageHandler('m2', 'sqm')}
+            {netRentAmountPerSqm / 100} {currency} / {languageHandler('m2', 'sqm')}
           </div>
           <div className='meta'>
-            {languageHandler('netto + VAT / mc', 'net + VAT/ mo')}
+            {languageHandler('netto + VAT / mc', 'net + VAT / mo')}
           </div>
         </div>
       </div>
       <div className='outer rent gross per-sqm'>
         <div className='inner'>
           <div className='amount'>
-            {grossRentAmountPerSqm / 100} {rentCurrency} / {languageHandler('m2', 'sqm')}
+            {grossRentAmountPerSqm / 100} {currency} / {languageHandler('m2', 'sqm')}
           </div>
           <div className='meta'>
             {languageHandler('brutto / mc', 'gross / mo')}

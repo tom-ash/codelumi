@@ -1,11 +1,19 @@
 export const mapStateToProps = (store) => {
   const { language } = store.app
-  const { control, inputs, errors } = store.announcement.create
+  const { control, inputs, data, errors } = store.announcement.create
   const { editing, connecting, success, publishing } = control
 
   const { authorized, phoneVerified } = store.user.authorize.data
 
+  const { rentNetPerSqm, rentGross, rentGrossPerSqm } = data
+
   return {
+
+    rentNetPerSqm,
+    rentGross,
+    rentGrossPerSqm,
+
+
     language,
     authorized,
     phoneVerified,

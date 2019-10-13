@@ -24,7 +24,7 @@ export const requiredInputs = {
   netRentAmount: {
     id: 'announcement-create-rent-amount',
     error: {
-      polish: 'podaj wysokość czynszu',
+      polish: 'podaj wysokość miesięcznego czynszu netto',
       english: 'provide rent amount'
     }
   },

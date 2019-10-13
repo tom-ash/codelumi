@@ -15,13 +15,15 @@ import * as managers from '../primary/functions/managers'
 import { ManagedButton } from 'managed-inputs'
 import { buttonManager } from './functions/manager'
 import { labelProvider } from '../../../../../../functions/providers/label'
+import { parseCurrency } from '../../../../functions/currency-parsers'
+import DerivedRents from './components/derived-rents/derived-rents'
 import './styles/styles.scss'
 
 class AnnouncementCreateFeatures extends React.Component {
   constructor(props) {
     super(props)
     this.componentDidMount = lifecycle.componentDidMount
-    this.shouldComponentUpdate = lifecycle.shouldComponentUpdate
+    // this.shouldComponentUpdate = lifecycle.shouldComponentUpdate
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
@@ -44,20 +46,37 @@ class AnnouncementCreateFeatures extends React.Component {
     this.buttonManager = buttonManager.bind(this)
     this.labelProvider = labelProvider.bind(this)
     this.availabilityDateSelectManager = managers.availabilityDateSelectManager.bind(this)
+    this.parseCurrency = parseCurrency.bind(this)
   }
   
   render() {
+    const { languageHandler } = this
+    const { area, netRentAmount, rentCurrency, rentNetPerSqm, rentGross, rentGrossPerSqm } = this.props
+    const parsedRentCurrency = this.parseCurrency(rentCurrency)
+
     return (
       <div id='announcement-create-publishing'>
         {
         !this.props.publishing &&
-        <ManagedButton {...this.buttonManager()} />
+        <div>
+          <DerivedRents
+            languageHandler={languageHandler}
+            area={area}
+            rentCurrency={rentCurrency}
+            parsedRentCurrency={parsedRentCurrency}
+            netRentAmount={netRentAmount}
+            rentGross={rentGross}
+            rentNetPerSqm={rentNetPerSqm}
+            rentGrossPerSqm={rentGrossPerSqm}
+          />
+          <ManagedButton {...this.buttonManager()} />
+        </div>
         }
         {
         this.props.publishing &&
         <div>
           <h2 className='page-header'>
-            <i className='fas fa-ellipsis-h' /> {this.languageHandler('Publikowanie ogłoszenia', 'Announcement Publishing')}
+            <i className='fas fa-ellipsis-h' /> {languageHandler('Publikowanie ogłoszenia', 'Announcement Publishing')}
           </h2>
           {
           !this.props.success &&

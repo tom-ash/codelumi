@@ -11,6 +11,10 @@ export function authorizeUserWithTokens() {
     throw new Error('InvalidCredentials')
   })
   .then(jsonRes => {
-    this.props.changeUserAuthorizeData({ authorized: true, name: jsonRes.name, phoneVerified: jsonRes.phone_verified})
+    this.props.changeUserAuthorizeData({
+      authorized: true,
+      name: jsonRes.name,
+      phoneVerified: jsonRes.phone_verified
+    })
   })
 }

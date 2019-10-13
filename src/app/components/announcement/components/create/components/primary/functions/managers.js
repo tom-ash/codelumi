@@ -64,7 +64,10 @@ export function rentAmountManager() {
     label: this.labelProvider(inputs.rentHeight.icon, inputs.rentHeight.create),
     onFocus: () => this.props.changeErrors({ netRentAmount: noError }),
     onChange: (value) => this.props.changeInputs({ netRentAmount: value }),
-    onBlur: () => this.rentAmountManager().validate(),
+    onBlur: () => {
+      this.rentAmountManager().validate()
+      this.getRentAmounts()
+    },
     validate: () => this.handleErrorOnValidate('netRentAmount', this.props.netRentAmount),
     error: this.languageObjectHandler(this.props.errors.netRentAmount)
   }
@@ -97,7 +100,10 @@ export function areaManager() {
     onFocus: () => this.props.changeErrors({ area: noError }),
     onChange: (value) => this.props.changeInputs({ area: value }),
     onSelect: () => this.onSelectHandler('area', option.value),
-    onBlur: () => this.areaManager().validate(),
+    onBlur: () => {
+      this.areaManager().validate()
+      this.getRentAmounts()
+    },
     validate: () => this.handleErrorOnValidate('area', this.props.area),
     error: this.languageObjectHandler(this.props.errors.area)
   }

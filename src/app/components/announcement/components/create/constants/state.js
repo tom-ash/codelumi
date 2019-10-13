@@ -50,6 +50,12 @@ export const inputs = {
   mapLongitude: null
 }
 
+export const data = {
+  rentNetPerSqm: null,
+  rentGross: null,
+  rentGrossPerSqm: null
+}
+
 export const errors = {
   category: noError,
   district: noError,
@@ -65,9 +71,3 @@ export const errors = {
   pictures: noError,
   map: noError
 }
-
-
-
-
-
-

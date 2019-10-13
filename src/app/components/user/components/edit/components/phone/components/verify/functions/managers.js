@@ -7,7 +7,7 @@ export function verificationManager() {
     classNames: { container: 'form-input text'},
     label: this.languageHandler('kod weryfikacyjny', 'verification code'),
     onFocus: () => this.props.changeErrors({ phoneVerification: noError }),
-    onBlur: () => this.verificationManager().validate(value),
+    onBlur: (value) => this.verificationManager().validate(value),
     validate: (value) => {
       if (value.length === 8) return true
       this.props.changeErrors({
