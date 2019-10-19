@@ -3,27 +3,27 @@ import { getUserToken } from './get-tokens'
 import { deleteCookie } from '../../../../../../../functions/cookie-handlers'
 
 export function authorizeUserWithTokens() {
-  const UT = getUserToken()
-  if (!UT) return
+  const uT = getUserToken()
+  if (!uT) return
 
   fetch(apiUrl + '/authorize_with_token', {
     headers: {
       'Content-Type': 'application/json',
-      UT
+      uT
     }
   })
   .then(response => {
     if (response.status == 200) return response.json()
     throw new Error('InvalidTokens')
   })
-  .then(jsonRes => {
+  .then(json => {
     this.props.changeUserAuthorizeData({
       authorized: true,
-      name: jsonRes.name,
-      phoneVerified: jsonRes.phone_verified
+      name: json.name,
+      phoneVerified: json.phoneVerified
     })
   })
   .catch(e => {
-    deleteCookie('UT')
+    deleteCookie('uT')
   })
 }

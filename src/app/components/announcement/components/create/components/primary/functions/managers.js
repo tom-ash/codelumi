@@ -91,6 +91,8 @@ export function additionalFeesManager() {
 }
 
 export function areaManager() {
+  // console.log(this.props)
+  
   return {
     id: requiredInputs.area.id,
     classNames: { container: 'form-input text' },

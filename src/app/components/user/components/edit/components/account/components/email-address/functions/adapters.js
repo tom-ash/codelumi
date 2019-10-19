@@ -6,12 +6,12 @@ import { getUserToken } from '../../../../../../authorize/components/tokens/func
 export function sendCurrentEmailAddress() {
   if (this.props.connecting) return
   this.props.changeControl({ emailConnecting: true })
-  const UT = getUserToken()
+  const uT = getUserToken()
   fetch(apiUrl + '/user/edit/email/send_current', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      UT,
+      uT,
       language: this.props.language
     },
     body: JSON.stringify({ email: this.props.currentValue })
@@ -28,12 +28,12 @@ export function sendCurrentEmailVerification(verificationCode) {
   const { changeControl } = this.props
   if (this.props.connecting) return
   this.props.changeControl({ emailConnecting: true })
-  const UT = getUserToken()
+  const uT = getUserToken()
   fetch(apiUrl + '/user/edit/email/verify/current', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      UT
+      uT
     },
     body: JSON.stringify({ verification_code: verificationCode })
   })
@@ -48,11 +48,11 @@ export function sendCurrentEmailVerification(verificationCode) {
 export function sendNewEmail(newEmail) {
   if (this.props.connecting) return
   this.props.changeControl({ emailConnecting: true })
-  const UT = getUserToken()
+  const uT = getUserToken()
   fetch(apiUrl + '/user/edit/email/new', {
     method: 'PUT', headers: {
       'Content-Type': 'application/json',
-      UT,
+      uT,
       language: this.props.language
     },
     body: JSON.stringify({ new_email: newEmail })
@@ -69,12 +69,12 @@ export function sendNewEmailVerification(newEmailVerification) {
   if (this.props.connecting) return
   const currentEmailVerification = document.getElementById('user-edit-email-current-verification').value
   this.props.changeControl({ emailConnecting: true })
-  const UT = getUserToken()
+  const uT = getUserToken()
   fetch(apiUrl + '/user/edit/email/verify/new', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      UT
+      uT
     },
     body: JSON.stringify({ verification_code: currentEmailVerification + newEmailVerification })
   })
@@ -93,7 +93,7 @@ export function sendPassword(password) {
   const email = document.getElementById('user-edit-email-new').value
   const newEmailVerification = document.getElementById('user-edit-email-new-verification').value
   this.props.changeControl({ emailConnecting: true })
-  const UT = getUserToken()
+  const uT = getUserToken()
   getDerivedSaltForPassword(currentValue)
   .then(salt => {
     const oldHashedPassword = hashPassword(password, salt)
@@ -104,7 +104,7 @@ export function sendPassword(password) {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          UT
+          uT
         },
         body: JSON.stringify({
           verification_code: currentEmailVerification + newEmailVerification,

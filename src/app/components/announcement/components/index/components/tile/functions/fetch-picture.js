@@ -15,8 +15,8 @@ export function fetchPicture() {
     }
   })
   .then(response => { if (response.ok) return response.json() })
-  .then(jsonResponse => {
-    changeAnnouncement(this.deepCopyAnnouncement(jsonResponse))
+  .then(json => {
+    changeAnnouncement(this.deepCopyAnnouncement(json))
   })
 }
 

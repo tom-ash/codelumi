@@ -9,15 +9,15 @@ export const clientServerParams = [
   },
   {
     client: 'rentCurrency',
-    server: 'rent_currency'
+    server: 'rentCurrency'
   },
   {
     client: 'netRentAmount',
-    server: 'net_rent_amount'
+    server: 'netRentAmount'
   },
   {
     client: 'additionalFees',
-    server: 'additional_fees'
+    server: 'additionalFees'
   },
   {
     client: 'area',
@@ -33,15 +33,15 @@ export const clientServerParams = [
   },
   {
     client: 'totalFloors',
-    server: 'total_floors'
+    server: 'totalFloors'
   },
   {
     client: 'descriptionPolish',
-    server: 'polish_description'
+    server: 'polishDescription'
   },
   {
     client: 'descriptionEnglish',
-    server: 'english_description'
+    server: 'englishDescription'
   }
 ]
 
@@ -65,7 +65,7 @@ export const showClientServerParams = [
   },
   {
     client: 'availabilityDate',
-    server: 'availability_date'
+    server: 'availabilityDate'
   },
   {
     client: 'pictures',
@@ -74,14 +74,14 @@ export const showClientServerParams = [
 
   {
     client: 'netRentAmountPerSqm',
-    server: 'net_rent_amount_per_sqm'
+    server: 'netRentAmountPerSqm'
   },
   {
     client: 'grossRentAmount',
-    server: 'gross_rent_amount'
+    server: 'grossRentAmount'
   },
   {
     client: 'grossRentAmountPerSqm',
-    server: 'gross_rent_amount_per_sqm'
+    server: 'grossRentAmountPerSqm'
   }
 ]

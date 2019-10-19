@@ -8,7 +8,7 @@ export default function Picture(props) {
     phoneSwitchProvider,
     parseAvailabilityDate,
     venue,
-    availability_date
+    availabilityDate
   } = props
 
   return (
@@ -36,7 +36,7 @@ export default function Picture(props) {
       </div>
       <div className='calendar'>
         <i className='fas fa-calendar-alt'/>
-        {parseAvailabilityDate(availability_date)}
+        {parseAvailabilityDate(availabilityDate)}
       </div>
     </div>
   )

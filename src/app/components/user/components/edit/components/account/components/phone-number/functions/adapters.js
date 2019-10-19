@@ -3,12 +3,12 @@ import { getUserToken } from '../../../../../../authorize/components/tokens/func
 
 export function changePhone(countryCode, body) {
   this.props.changeControl({ phoneConnecting: true })
-  const UT = getUserToken()
+  const uT = getUserToken()
   fetch(apiUrl + '/user/edit/phone', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      UT
+      uT
     },
     body: JSON.stringify({ country_code: countryCode, body })
   })

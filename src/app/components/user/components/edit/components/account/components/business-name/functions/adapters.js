@@ -3,12 +3,12 @@ import { getUserToken } from '../../../../../../authorize/components/tokens/func
 
 export function changeBusinessName(businessName) {
   this.props.changeControl({ businessNameConnecting: true })
-  const UT = getUserToken()
+  const uT = getUserToken()
   fetch(apiUrl + '/user/edit/business_name', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      UT
+      uT
     },
     body: JSON.stringify({ business_name: businessName })
   })

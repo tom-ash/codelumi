@@ -11,8 +11,8 @@ export function getAnnouncementAmount() {
   .then(response => {
     if (response.ok) return response.json()
   })
-  .then(jsonResponse => {
+  .then(json => {
     changeControl({ fetchAmount: false })
-    changeData({ panelAmount: jsonResponse.amount })
+    changeData({ panelAmount: json.amount })
   })
 }

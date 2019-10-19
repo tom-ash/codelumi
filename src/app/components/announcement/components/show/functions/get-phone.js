@@ -8,5 +8,5 @@ export function getPhone() {
   .then(response => {
     if (response.ok) return response.json()
   })
-  .then(jsonResponse => this.props.changeData({ phone: jsonResponse.phone }))
+  .then(json => this.props.changeData({ phone: json.phone }))
 }

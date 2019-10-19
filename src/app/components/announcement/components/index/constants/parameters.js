@@ -22,15 +22,15 @@ export const parameters = [
   },
   {
     state: 'rentCurrency',
-    api: 'rent_currency',
+    api: 'rentCurrency',
     polish: 'waluta_czynszu',
-    english: 'rent_currency',
+    english: 'rentCurrency',
     value: (value) => value,
     stateValue: (value) => parseInt(value)
   },
   {
     state: 'rentMin',
-    api: 'min_net_rent_amount',
+    api: 'min_netRentAmount',
     polish: 'min_czynsz',
     english: 'min_rent',
     value: (value) => value,
@@ -38,7 +38,7 @@ export const parameters = [
   },
   {
     state: 'rentMax',
-    api: 'max_net_rent_amount',
+    api: 'max_netRentAmount',
     polish: 'maks_czynsz',
     english: 'max_rent',
     value: (value) => value,
@@ -94,7 +94,7 @@ export const parameters = [
   },
   {
     state: 'totalFloorsMin',
-    api: 'min_total_floors',
+    api: 'min_totalFloors',
     polish: 'min_pietra_budynku',
     english: 'min_building_floors',
     value: (value) => value,
@@ -102,7 +102,7 @@ export const parameters = [
   },
   {
     state: 'totalFloorsMax',
-    api: 'max_total_floors',
+    api: 'max_totalFloors',
     polish: 'maks_pietra_budynku',
     english: 'max_building_floors',
     value: (value) => value,
@@ -119,7 +119,7 @@ export const parameters = [
 
   {
     state: 'availabilityDate',
-    api: 'availability_date',
+    api: 'availabilityDate',
     polish: 'data dostępności',
     english: 'availability date',
     value: (value) => value,

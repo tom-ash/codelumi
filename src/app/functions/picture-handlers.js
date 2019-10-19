@@ -16,12 +16,12 @@ export function savePicture(destination, file, callback) {
     method: 'post', headers: { 'Content-Type': 'application/json', 'FileType': file.type }
   })
   .then(response => { if (response.ok) return response.json() }, networkError => console.dir(networkError.message))
-  .then(jsonResponse => {
+  .then(json => {
     let formData = new FormData()
-    Object.keys(jsonResponse.fields).forEach((key) => { formData.append(key, jsonResponse.fields[key]) })
+    Object.keys(json.fields).forEach((key) => { formData.append(key, json.fields[key]) })
     formData.append('file', file)
     formData.append('Content-Type', file.type)
-    fetch(jsonResponse.url, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
-    .then(response => { if (response.ok) callback(jsonResponse.key) })
+    fetch(json.url, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
+    .then(response => { if (response.ok) callback(json.key) })
   })
 }

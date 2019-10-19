@@ -7,11 +7,11 @@ export function getAnnouncement() {
   const path = window.location.pathname
   let announcementId = path.match(/\d+/)
   if (!announcementId) return
-  const UT = getUserToken()
+  const uT = getUserToken()
   fetch(`${apiUrl}/announcements/${announcementId[0]}/edit`, {
     headers: {
       'Content-Type': 'application/json',
-      UT
+      uT
     }
   })
   .then(response => {
@@ -19,25 +19,47 @@ export function getAnnouncement() {
       return response.json()
     }
   })
-  .then(jsonResponse => {
-    const announcement = jsonResponse.announcement
-    setBlobs.call(this, announcement.id, announcement.pictures)
+  .then(json => {
+    // const announcement = json.announcement
+
+    console.log(json)
+    const {
+      id,
+      category,
+      district,
+      rentCurrency,
+      netRentAmount,
+      additionalFees,
+      area,
+      rooms,
+      floor,
+      totalFloors,
+      pictures,
+      features,
+      furnishings,
+      polishDescription,
+      englishDescription,
+      latitude,
+      longitude
+    } = json
+
+    setBlobs.call(this, id, pictures)
 
     let announcementInputs = {
-      id: +announcement.id,
-      category: +announcement.category,
-      district: +announcement.district,
-      rentCurrency: +announcement.rent_currency,
-      netRentAmount: announcement.net_rent_amount,
-      additionalFees: announcement.additional_fees,
-      area: announcement.area,
-      rooms: +announcement.rooms,
-      floor: +announcement.floor,
-      totalFloors: +announcement.total_floors,
+      id,
+      category,
+      district,
+      rentCurrency,
+      netRentAmount,
+      additionalFees,
+      area,
+      rooms,
+      floor,
+      totalFloors,
       features: parseFeatures(announcement.features),
       furnishings: parseFurnishings(announcement.furnishings),
-      descriptionPolish: announcement.polish_description || '',
-      descriptionEnglish: announcement.english_description || '',
+      descriptionPolish: announcement.polishDescription || '',
+      descriptionEnglish: announcement.englishDescription || '',
       mapLatitude: announcement.latitude / 1000000,
       mapLongitude: announcement.longitude / 1000000
     }
@@ -46,11 +68,11 @@ export function getAnnouncement() {
 }
 
 function appendAvailabilityDate(announcement, announcementInputs) {
-  if (announcement.availability_date == 'now') {
+  if (announcement.availabilityDate == 'now') {
     announcementInputs.availabilityDateSelect = 'now'
   } else {
     announcementInputs.availabilityDateSelect = 'date'
-    announcementInputs.availabilityDate = announcement.availability_date
+    announcementInputs.availabilityDate = announcement.availabilityDate
   }
   return announcementInputs
 }
@@ -61,8 +83,8 @@ function setBlobs(id, pictures) {
       headers: { 'key': `announcements/${id}/${picture.database}`, 'Content-Type': 'application/json' }
     })
     .then(response => { if (response.ok) return response.json() })
-    .then(jsonResponse => {
-      fetch(jsonResponse.url, {
+    .then(json => {
+      fetch(json.url, {
         headers: { 'key': `announcements/${id}/${picture.database}`, 'Content-Type': 'application/json' }
       })
       .then(response => { if (response.ok) return response.blob() })

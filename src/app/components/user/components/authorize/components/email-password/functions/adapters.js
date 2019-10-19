@@ -19,13 +19,13 @@ export function logIn() {
       if (response.status == 200) return response.json()
       throw new Error('InvalidCredentials')
     })
-    .then(jsonResponse => {
+    .then(json => {
       this.props.changeData({
         authorized: true,
-        name: jsonResponse.name,
-        phoneVerified: jsonResponse.phone_verified
+        name: json.name,
+        phoneVerified: json.phoneVerified
       })
-      saveTokens.call(this, jsonResponse.UT)
+      saveTokens.call(this, json.uT)
       this.changeRoute(null, 'myAccount')
     })
     .catch(() => {

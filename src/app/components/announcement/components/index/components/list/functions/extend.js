@@ -4,11 +4,11 @@ import { getUserToken } from '../../../../../../user/components/authorize/compon
 export function extend(announcement, index) {
   if (this.props.connecting) return
   this.props.changeControl({ connecting: true })
-  const UT = getUserToken()
+  const uT = getUserToken()
   fetch(`${apiUrl}/announcements/extend/${announcement.id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json',
-    UT
+    uT
   }
   })
   .then(response => {
@@ -23,7 +23,7 @@ export function extend(announcement, index) {
 function deepCloneAnnouncement(json, announcement, index) {
   const announcements = [ ...this.props.announcements ]
   const clonedAnnouncement = { ...announcement }
-  clonedAnnouncement.active_until = json.active_until
+  clonedAnnouncement.activeUntil = json.activeUntil
   announcements[index] = clonedAnnouncement
   return announcements
 }

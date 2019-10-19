@@ -1,14 +1,24 @@
 import { apiUrl } from '../../../../../constants/urls'
 
 export function getMapAnnouncements() {
+  const { changeControl, changeData } = this.props
   fetch(apiUrl + `/announcements${this.buildRequestParameters()}`, {
-    headers: { 'Content-Type': 'application/json', 'Only-Locations': true }
+    headers: {
+      'Content-Type': 'application/json',
+      'Only-Locations': true
+    }
   })
   .then(response => {
     if (response.ok) return response.json()
   })
-  .then(jsonResponse => {
-    this.props.changeData({ amount: jsonResponse.amount, announcements: jsonResponse.announcements })
-    this.props.changeControl({ fetch: false, draw: true })
+  .then(json => {
+    changeData({
+      amount: json.amount,
+      announcements: json.announcements
+    })
+    changeControl({
+      fetch: false,
+      draw: true
+    })
   })
 }

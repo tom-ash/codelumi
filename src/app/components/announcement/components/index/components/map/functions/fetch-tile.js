@@ -9,10 +9,12 @@ export function fetchTile() {
   .then(response => {
     if (response.ok) return response.json()
   })
-  .then(jsonResponse => {
-    const announcement = { ...jsonResponse }
+  .then(json => {
+    const announcement = { ...json }
     announcement.show = true
     announcement.pictureIndex = 0
-    changeData({ tile: announcement })
+    changeData({
+      tile: announcement
+    })
   })
 }

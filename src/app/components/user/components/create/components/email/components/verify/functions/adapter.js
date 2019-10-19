@@ -7,17 +7,17 @@ export function verify() {
   const verificationCode = document.getElementById('user-create-email-verification').value
   fetch(apiUrl + '/user_create_with_email', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', searchToken: this.props.token },
+    headers: { 'Content-Type': 'application/json', uT: this.props.token },
     body: JSON.stringify({ verificationCode })
   })
   .then(response => {
     if (response.status == 201) return response.json()
     throw new Error('SomethingWentWrong')
   })
-  .then(jsonResponse => {
+  .then(json => {
     const { changeAuthorizeData, changeControl} = this.props
-    const { name, phone_verified: phoneVerified } = jsonResponse
-    saveTokens.call(this, jsonResponse.UT)
+    const { name, phoneVerified: phoneVerified } = json
+    saveTokens.call(this, json.uT)
     changeAuthorizeData({ authorized: true, name, phoneVerified })
     changeControl({ connecting: false, success: true })
   })

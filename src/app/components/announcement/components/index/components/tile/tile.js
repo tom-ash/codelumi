@@ -37,7 +37,7 @@ class AnnouncementIndexTile extends React.Component {
     this.showAnnouncement = showAnnouncement.bind(this)
     this.changeRoute = changeRoute.bind(this)
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
-    this.rentCurrency = parseCurrency(this.props.announcement.rent_currency)
+    this.rentCurrency = parseCurrency(this.props.announcement.rentCurrency)
     this.togglePhone = togglePhone.bind(this)
     this.rentPerSqmCounter = rentPerSqmCounter.bind(this)
     this.parseAvailabilityDate = parseAvailabilityDate.bind(this)
@@ -70,18 +70,16 @@ class AnnouncementIndexTile extends React.Component {
       show,
       visible,
       area,
-      rent_currency,
-      net_rent_amount,
-      net_rent_amount_per_sqm,
-      gross_rent_amount,
-      gross_rent_amount_per_sqm,
-      availability_date,
+      rentCurrency,
+      netRentAmount,
+      netRentAmountPerSqm,
+      grossRentAmount,
+      grossRentAmountPerSqm,
+      availabilityDate,
       rooms,
       floor,
-      total_floors
+      totalFloors
     } = announcement
-
-    console.log(announcement)
 
     let coreClass = `core ${venue}`
     if (showLoader) coreClass += ' loader'
@@ -115,25 +113,25 @@ class AnnouncementIndexTile extends React.Component {
             phoneSwitchProvider={phoneSwitchProvider}
             changePicture={changePicture}
             parseAvailabilityDate={parseAvailabilityDate}
-            availability_date={availability_date}
+            availabilityDate={availabilityDate}
           />
           <SecondaryData
             venue={venue}
             languageHandler={languageHandler}
             area={area}
-            rentCurrency={rent_currency}
+            rentCurrency={rentCurrency}
             parseCurrency={parseCurrency}
-            netRentAmount={net_rent_amount}
-            netRentAmountPerSqm={net_rent_amount_per_sqm}
-            grossRentAmount={gross_rent_amount}
-            grossRentAmountPerSqm={gross_rent_amount_per_sqm}
+            netRentAmount={netRentAmount}
+            netRentAmountPerSqm={netRentAmountPerSqm}
+            grossRentAmount={grossRentAmount}
+            grossRentAmountPerSqm={grossRentAmountPerSqm}
           />
           <TertiaryData
             languageHandler={languageHandler}
             venue={venue}
             rooms={rooms}
             floor={floor}
-            total_floors={total_floors}
+            totalFloors={totalFloors}
           />
         </div>
         {control}

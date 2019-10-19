@@ -13,7 +13,7 @@ export function getDerivedSaltForPassword(emailAddress) {
     if (response.status == 200) { return response.json() }
     throw new Error('Network Error')
   })
-  .then(jsonResponse => { return jsonResponse.recordSalt })
+  .then(json => { return json.recordSalt })
   .catch((e) => {console.dir(e)})
 }
 

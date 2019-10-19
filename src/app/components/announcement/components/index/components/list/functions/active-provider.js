@@ -10,7 +10,7 @@ export function activeProvider(announcement, index) {
     <div className='active'>
       {this.languageObjectHandler(activeMonit)}
       <span className='date'>
-        {announcement.active_until}
+        {announcement.activeUntil}
       </span>
 
       {this.buttonProvider('Przedłuż', 'Extend', announcement, index, this.extend)}

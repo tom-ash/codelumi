@@ -7,11 +7,11 @@ export function togglePhone(e, showVenue, call) {
   const id = showVenue ? this.props.id : this.props.announcement.id
   fetch(`${apiUrl}/announcement/phone/${id}`, { headers: { 'Content-Type': 'application/json' } })
   .then(response => { if (response.ok) return response.json() })
-  .then(jsonResponse => {
-    if (this.props.isMobile && call) window.location.href=(`tel:${jsonResponse.phone}`)
-    if (showVenue) return this.props.changeData({ phone: jsonResponse.phone })
+  .then(json => {
+    if (this.props.isMobile && call) window.location.href=(`tel:${json.phone}`)
+    if (showVenue) return this.props.changeData({ phone: json.phone })
     let announcement = { ...this.props.announcement }
-    announcement.phone = jsonResponse.phone
+    announcement.phone = json.phone
     this.props.changeAnnouncement(announcement)
   })
 }

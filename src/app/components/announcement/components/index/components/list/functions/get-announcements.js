@@ -2,15 +2,16 @@ import { apiUrl } from '../../../../../../../constants/urls'
 import { getUserToken } from '../../../../../../user/components/authorize/components/tokens/functions/get-tokens'
 
 export function getAnnouncements() {
-  if (this.props.connecting) return
-  this.props.changeControl({ connecting: true })
-  this.props.changeData({ announcements: [] })
-  const UT = getUserToken()
+  const { connecting, changeControl, changeData } = this.props
+  if (connecting) return
+  changeControl({ connecting: true })
+  changeData({ announcements: [] })
+  const uT = getUserToken()
   fetch(apiUrl + `/announcements?type=list&page=${this.props.page}`,
     {
       headers: {
         'Content-Type': 'application/json',
-        UT,
+        uT,
         offices: this.props.switches.offices,
         usablePremises: this.props.switches.usablePremises,
         visible: this.props.switches.visible,
@@ -22,12 +23,18 @@ export function getAnnouncements() {
   .then(response => {
     if (response.ok) return response.json()
   })
-  .then(jsonResponse => {
-    const announcements = jsonResponse.announcements.map(announcement => {
+  .then(json => {
+    const announcements = json.announcements.map(announcement => {
       announcement.pictureIndex = 0
       return announcement
     })
-    this.props.changeControl({ fetch: false, connecting: false })
-    this.props.changeData({ amount: jsonResponse.amount, announcements: announcements })
+    changeControl({
+      fetch: false,
+      connecting: false
+    })
+    changeData({
+      amount: json.amount,
+      announcements: announcements
+    })
   })
 }

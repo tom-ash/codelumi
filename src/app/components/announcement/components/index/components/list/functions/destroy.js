@@ -4,12 +4,12 @@ import { getUserToken } from '../../../../../../user/components/authorize/compon
 export function destroy(id) {
   if (this.props.connecting) return
   this.props.changeControl({ connecting: true })
-  const UT = getUserToken()
+  const uT = getUserToken()
   fetch(`${apiUrl}/announcements/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
-      UT
+      uT
     }
   })
   .then(() => {

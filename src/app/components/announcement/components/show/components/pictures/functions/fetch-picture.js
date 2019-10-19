@@ -11,9 +11,9 @@ export function fetchPicture() {
   .then(response => {
     if (response.ok) return response.json()
   })
-  .then(jsonResponse => {
+  .then(json => {
     const pictures =  [ ...this.props.pictures ]
-    pictures[this.props.pictureIndex].url = jsonResponse.url
+    pictures[this.props.pictureIndex].url = json.url
     this.props.changeData({ pictures: pictures })
   })
 }

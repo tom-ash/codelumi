@@ -5,12 +5,12 @@ export function sendEmail() {
   const { email } = this.props
   if (this.props.connecting) return
   this.props.changeControl({ connecting: true })
-  const UT = getUserToken()
+  const uT = getUserToken()
   fetch(apiUrl + '/user/destroy/email', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      UT
+      uT
     },
     body: JSON.stringify({ email })
   })
@@ -27,11 +27,11 @@ export function destroy() {
   const verificationCode = document.getElementById('user-destroy-verification').value
   if (!this.verificationManager('validate', verificationCode)) return
   this.props.changeControl({ connecting: true })
-  const UT = getUserToken()
+  const uT = getUserToken()
   fetch(apiUrl + '/user/destroy', {
     method: 'DELETE', headers: {
       'Content-Type': 'application/json',
-      UT
+      uT
     },
     body: JSON.stringify({ verificationCode })
   })

@@ -4,12 +4,12 @@ import { getUserToken } from '../../../../../../user/components/authorize/compon
 export function triggerVisible(announcement, index) {
   if (this.props.connecting) return
   this.props.changeControl({ connecting: true })
-  const UT = getUserToken()
+  const uT = getUserToken()
   fetch(`${apiUrl}/announcements/${announcement.id}?attribute=visible`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      UT
+      uT
     },
     body: JSON.stringify({ visible: !announcement.visible })
   })

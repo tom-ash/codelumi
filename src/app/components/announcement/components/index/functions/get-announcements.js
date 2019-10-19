@@ -14,16 +14,17 @@ export function getAnnouncements() {
   .then(response => {
     if (response.ok) return response.json()
   })
-  .then(jsonRes => {
-    const announcements = jsonRes.announcements.map(announcement => {
+  .then(json => {
+    const announcements = json.announcements.map(announcement => {
       announcement.pictureIndex = 0
       announcement.showLoader = true
       return announcement
     })
     announcements[0].show = true
+
     changeData({
-      panelAmount: jsonRes.amount,
-      listAmount: jsonRes.amount,
+      panelAmount: json.amount,
+      listAmount: json.amount,
       announcements: announcements
     })
     changeControl({

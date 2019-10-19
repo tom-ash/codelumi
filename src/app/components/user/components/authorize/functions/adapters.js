@@ -3,7 +3,7 @@ import { deleteCookie } from '../../../../../functions/cookie-handlers'
 export function deauthorizeUser() {
   const { changeRoute, props } = this
   const { resetAuthorizeData } = props
-  deleteCookie('UT')
+  deleteCookie('uT')
   resetAuthorizeData({
     authorized: false,
     name: null,

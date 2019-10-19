@@ -2,11 +2,11 @@ import { apiUrl } from '../../../../../../../../../constants/urls.js'
 import { getUserToken } from '../../../../../../authorize/components/tokens/functions/get-tokens'
 
 export function startVerification() {
-  const UT = getUserToken()
+  const uT = getUserToken()
   fetch(apiUrl + '/phones/verification', {
     headers: {
       'Content-Type': 'application/json',
-      UT
+      uT
     }
   })
   .then(response => {
@@ -17,12 +17,12 @@ export function startVerification() {
 export function sendVerification() {
   this.props.changeControl({ connecting: true })
   const verificationCode = document.getElementById('user-edit-phone-verification-code').value
-  const UT = getUserToken()
+  const uT = getUserToken()
   fetch(apiUrl + '/users/verify_phone', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      UT
+      uT
     },
     body: JSON.stringify({ verificationCode })
   })

@@ -6,7 +6,7 @@ export default function TertiaryData(props) {
     venue,
     rooms,
     floor,
-    total_floors
+    totalFloors
   } = props
 
   return (
@@ -20,7 +20,7 @@ export default function TertiaryData(props) {
         <div className='floor'>
           <strong>{floor}</strong> {languageHandler('piętro', 'floor')}
           &nbsp;
-          ( z <strong>{total_floors}</strong> )
+          ( z <strong>{totalFloors}</strong> )
         </div>
       </div>
     </div>

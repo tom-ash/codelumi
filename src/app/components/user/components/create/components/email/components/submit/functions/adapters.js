@@ -56,9 +56,9 @@ function createProspectiveUser(userObject) {
     throw new Error('Something went wrong.')
   },
   networkError => console.dir(networkError.message))
-  .then((jsonResponse) => {
+  .then((json) => {
     this.props.changeControl({ connecting: false })
-    this.props.changeData({ token: jsonResponse.token })
+    this.props.changeData({ token: json.token })
   })
   .catch(e => console.dir(e))
 }

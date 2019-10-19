@@ -12,10 +12,10 @@ export function controlProvider(announcement, index) {
           }
         </div>
         <div className='info'>
-          <i className='fas fa-plus' />{announcement.created_at.slice(0, 10)}
+          <i className='fas fa-plus' />{announcement.createdAt.slice(0, 10)}
         </div>
         <div className='info'>
-          <i className='fas fa-sync-alt' />{announcement.updated_at.slice(0, 10)}
+          <i className='fas fa-sync-alt' />{announcement.updatedAt.slice(0, 10)}
         </div>
         <div className='info'>
           <i className='fas fa-users' />{announcement.views}

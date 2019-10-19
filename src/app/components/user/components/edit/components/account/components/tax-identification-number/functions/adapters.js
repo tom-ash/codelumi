@@ -3,12 +3,12 @@ import { getUserToken } from '../../../../../../authorize/components/tokens/func
 
 export function changeTaxIdentification(taxIdentification) {
   this.props.changeControl({ taxIdentificationConnecting: true })
-  const UT = getUserToken()
+  const uT = getUserToken()
   fetch(apiUrl + '/user/edit/tax_identification', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      UT
+      uT
     },
     body: JSON.stringify({ tax_identification: taxIdentification })
   })
