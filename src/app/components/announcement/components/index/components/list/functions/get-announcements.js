@@ -1,15 +1,16 @@
 import { apiUrl } from '../../../../../../../constants/urls'
-import { getTokens } from '../../../../../../user/components/authorize/components/tokens/functions/get-tokens'
+import { getUserToken } from '../../../../../../user/components/authorize/components/tokens/functions/get-tokens'
 
 export function getAnnouncements() {
   if (this.props.connecting) return
   this.props.changeControl({ connecting: true })
   this.props.changeData({ announcements: [] })
-  const [UST, UAT] = getTokens()
+  const UT = getUserToken()
   fetch(apiUrl + `/announcements?type=list&page=${this.props.page}`,
     {
       headers: {
-        'Content-Type': 'application/json', UST, UAT,
+        'Content-Type': 'application/json',
+        UT,
         offices: this.props.switches.offices,
         usablePremises: this.props.switches.usablePremises,
         visible: this.props.switches.visible,

@@ -17,7 +17,7 @@ export function verify() {
   .then(jsonResponse => {
     const { changeAuthorizeData, changeControl} = this.props
     const { name, phone_verified: phoneVerified } = jsonResponse
-    saveTokens.call(this, jsonResponse.UST, jsonResponse.UAT)
+    saveTokens.call(this, jsonResponse.UT)
     changeAuthorizeData({ authorized: true, name, phoneVerified })
     changeControl({ connecting: false, success: true })
   })

@@ -11,7 +11,7 @@ export function logIn() {
   .then(salt => {
     password = hashPassword(password, salt)
     this.props.changeControl({ connecting: true })
-    fetch(apiUrl + '/authorize_with_email_and_password', {
+    fetch(apiUrl + '/authorize_with_email', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json', 'emailAddress': email, 'password': password }
     })
@@ -20,8 +20,12 @@ export function logIn() {
       throw new Error('InvalidCredentials')
     })
     .then(jsonResponse => {
-      this.props.changeData({ authorized: true, name: jsonResponse.name, phoneVerified: jsonResponse.phone_verified })
-      saveTokens.call(this, jsonResponse.UST, jsonResponse.UAT)
+      this.props.changeData({
+        authorized: true,
+        name: jsonResponse.name,
+        phoneVerified: jsonResponse.phone_verified
+      })
+      saveTokens.call(this, jsonResponse.UT)
       this.changeRoute(null, 'myAccount')
     })
     .catch(() => {

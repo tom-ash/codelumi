@@ -1,10 +1,13 @@
 import { apiUrl } from '../../../../../../../../../constants/urls.js'
-import { getTokens } from '../../../../../../authorize/components/tokens/functions/get-tokens'
+import { getUserToken } from '../../../../../../authorize/components/tokens/functions/get-tokens'
 
 export function startVerification() {
-  const [UST, UAT] = getTokens()
+  const UT = getUserToken()
   fetch(apiUrl + '/phones/verification', {
-    headers: { 'Content-Type': 'application/json', UST, UAT }
+    headers: {
+      'Content-Type': 'application/json',
+      UT
+    }
   })
   .then(response => {
     if (response.status === 200) this.props.changeControl({ phoneVerificationStarted: true })
@@ -14,10 +17,13 @@ export function startVerification() {
 export function sendVerification() {
   this.props.changeControl({ connecting: true })
   const verificationCode = document.getElementById('user-edit-phone-verification-code').value
-  const [UST, UAT] = getTokens()
+  const UT = getUserToken()
   fetch(apiUrl + '/users/verify_phone', {
     method: 'PUT',
-    headers: { 'Content-Type': 'application/json', UST, UAT },
+    headers: {
+      'Content-Type': 'application/json',
+      UT
+    },
     body: JSON.stringify({ verificationCode })
   })
   .then(response => {

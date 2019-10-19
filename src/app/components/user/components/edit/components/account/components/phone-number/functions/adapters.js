@@ -1,11 +1,15 @@
 import { apiUrl } from '../../../../../../../../../constants/urls.js'
-import { getTokens } from '../../../../../../authorize/components/tokens/functions/get-tokens'
+import { getUserToken } from '../../../../../../authorize/components/tokens/functions/get-tokens'
 
 export function changePhone(countryCode, body) {
   this.props.changeControl({ phoneConnecting: true })
-  const [ UST, UAT ] = getTokens()
+  const UT = getUserToken()
   fetch(apiUrl + '/user/edit/phone', {
-    method: 'PUT', headers: { 'Content-Type': 'application/json', UST, UAT },
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      UT
+    },
     body: JSON.stringify({ country_code: countryCode, body })
   })
   .then(response => {

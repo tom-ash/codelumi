@@ -1,10 +1,13 @@
 import { apiUrl } from '../../../../../../../constants/urls.js'
-import { getTokens } from '../../../../authorize/components/tokens/functions/get-tokens'
+import { getUserToken } from '../../../../authorize/components/tokens/functions/get-tokens'
 
 export function getAccountData() {
-  const [ UST, UAT ] = getTokens()
+  const UT = getUserToken()
   fetch(apiUrl + '/user/edit/account_data', {
-    headers: { 'Content-Type': 'application/json', UST, UAT }
+    headers: {
+      'Content-Type': 'application/json',
+      UT
+    }
   })
   .then(res => {
     if (res.status == 200) return res.json()

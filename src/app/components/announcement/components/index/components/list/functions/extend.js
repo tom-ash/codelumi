@@ -1,13 +1,15 @@
 import { apiUrl } from '../../../../../../../constants/urls'
-import { getTokens } from '../../../../../../user/components/authorize/components/tokens/functions/get-tokens'
+import { getUserToken } from '../../../../../../user/components/authorize/components/tokens/functions/get-tokens'
 
 export function extend(announcement, index) {
   if (this.props.connecting) return
   this.props.changeControl({ connecting: true })
-  const [UST, UAT] = getTokens()
+  const UT = getUserToken()
   fetch(`${apiUrl}/announcements/extend/${announcement.id}`, {
     method: 'PUT',
-    headers: { 'Content-Type': 'application/json', UST, UAT }
+    headers: { 'Content-Type': 'application/json',
+    UT
+  }
   })
   .then(response => {
     if (response.ok) return response.json()
