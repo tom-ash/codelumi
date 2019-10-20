@@ -20,9 +20,6 @@ export function getAnnouncement() {
     }
   })
   .then(json => {
-    // const announcement = json.announcement
-
-    console.log(json)
     const {
       id,
       category,
@@ -56,12 +53,12 @@ export function getAnnouncement() {
       rooms,
       floor,
       totalFloors,
-      features: parseFeatures(announcement.features),
-      furnishings: parseFurnishings(announcement.furnishings),
-      descriptionPolish: announcement.polishDescription || '',
-      descriptionEnglish: announcement.englishDescription || '',
-      mapLatitude: announcement.latitude / 1000000,
-      mapLongitude: announcement.longitude / 1000000
+      features: parseFeatures(features),
+      furnishings: parseFurnishings(furnishings),
+      descriptionPolish: polishDescription || '',
+      descriptionEnglish: englishDescription || '',
+      mapLatitude: latitude / 1000000,
+      mapLongitude: longitude / 1000000
     }
     this.props.changeInputs(appendAvailabilityDate(announcement, announcementInputs))
   })

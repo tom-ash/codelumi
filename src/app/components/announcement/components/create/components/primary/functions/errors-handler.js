@@ -8,8 +8,10 @@ export function handleErrorOnSelect(input, value) {
 }
 
 export function handleErrorOnValidate(input, value) {
+  const { changeErrors } = this.props
   if (value !== '') return true
-  this.props.changeErrors({ [input]: errors[input] })
+
+  changeErrors({ [input]: errors[input] })
   return false
 }
 

@@ -18,8 +18,6 @@ export default function DerivedRents(props) {
       rentCurrency === null ||
       rentCurrency === '') return null
 
-      console.log(props)
-
   return (
     <div className='derived-rents'>
       <div>

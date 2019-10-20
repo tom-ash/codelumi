@@ -23,7 +23,6 @@ class AnnouncementCreateFeatures extends React.Component {
   constructor(props) {
     super(props)
     this.componentDidMount = lifecycle.componentDidMount
-    // this.shouldComponentUpdate = lifecycle.shouldComponentUpdate
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
@@ -46,6 +45,7 @@ class AnnouncementCreateFeatures extends React.Component {
     this.buttonManager = buttonManager.bind(this)
     this.labelProvider = labelProvider.bind(this)
     this.availabilityDateSelectManager = managers.availabilityDateSelectManager.bind(this)
+    this.availableDateManager = managers.availableDateManager.bind(this)
     this.parseCurrency = parseCurrency.bind(this)
   }
   

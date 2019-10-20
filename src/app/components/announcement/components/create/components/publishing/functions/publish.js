@@ -2,6 +2,8 @@ import { scrollToElement } from '../../../../../../../functions/scrollers/scroll
 import { requiredInputs, requiredInputsArray } from '../../../constants/required-inputs'
 
 export function publish() {
+  const { availabilityDateSelect } = this.props
+
   const validationObject = {
     category: this.categoryManager().validate(),
     district: this.districtManager().validate(),
@@ -16,6 +18,11 @@ export function publish() {
     pictures: this.validatePictures(),
     map: this.validateMap()
   }
+  
+  if (availabilityDateSelect === 'date') {
+    validationObject.availabilityDateSelect = this.availableDateManager().validate()
+  }
+
   if (!Object.values(validationObject).every((element => element))) {
     for(let i = 0; i < requiredInputsArray.length; i++) {
       if (!validationObject[requiredInputsArray[i]]) {

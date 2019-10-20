@@ -38,5 +38,9 @@ export const errors = {
   availabilityDateSelect: {
     polish: 'wybierz dostępność',
     english: 'provide availability'
+  },
+  availabilityDate: {
+    polish: 'wybierz datę',
+    english: 'provide date'
   }
 }

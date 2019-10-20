@@ -9,10 +9,6 @@ export function compositeInputProvider(inputName) {
     <ManagedSelect {...this[`${inputName}Manager`]()}/>
     <div style={{ display: this.props[`${inputName}Active`] ? 'block' : 'none'}}>
       <div className='sub-inputs-container'>
-        {
-        !this.props.isMobile &&
-        <div onClick={() => this.props.changeControl({ [`${inputName}Active`]: false })} className='cover' />
-        }
         <ManagedSelect {...this[`${inputName}MinManager`]()}/>
         <ManagedSelect {...this[`${inputName}MaxManager`]()}/>
         {

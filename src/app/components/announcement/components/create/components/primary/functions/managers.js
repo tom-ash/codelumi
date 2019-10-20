@@ -158,6 +158,7 @@ export function totalFloorsManager() {
 
 export function availabilityDateSelectManager() {
   return {
+    id: requiredInputs.availabilityDateSelect.id,
     classNames: { container: 'form-input select' },
     value: this.props.availabilityDateSelect,
     label: this.labelProvider(inputs.availabilityDate.icon, inputs.availabilityDate.all),
@@ -173,15 +174,50 @@ export function availabilityDateSelectManager() {
 }
 
 export function availableDateManager() {
+  const {
+    availabilityDate,
+    changeControl,
+    errors
+  } = this.props
+  const {
+    availableDateManager: thisManager,
+    labelProvider,
+    handleErrorOnValidate,
+    languageObjectHandler
+  } = this
+  const {
+    availabilityDate: { id }
+  } = requiredInputs
+  const {
+    availabilityDate: { icon, all: text }
+  } = inputs
+
+
   return {
+    id,
     classNames: { container: 'form-input select' },
-    value: this.props.availabilityDate ? this.props.availabilityDate : '',
-    options: [{ value: '', text: '' },  { value: this.props.availabilityDate, text: this.props.availabilityDate }],
-    label: this.labelProvider(inputs.availabilityDate.icon, {
-      polish: 'Data dostępności', english: 'Availability date'
-    }),
+    value: availabilityDate ? availabilityDate : '',
+    options: [
+      { value: '', text: '' }, 
+      { value: availabilityDate, text: availabilityDate }
+    ],
+    label: labelProvider(icon, text),
     disableSelectOptions: true,
-    disableOnFocusCover: true,
-    onFocus: () => this.props.changeControl({ availabilityDateFocus: true }),
+    onBlur: () => {
+
+      console.log('onBlur')
+
+      changeControl({ availabilityDateFocus: false })
+
+      // setTimeout(() => changeControl({ availabilityDateFocus: false }), 100)
+      thisManager().validate()
+    },
+    validate: () => handleErrorOnValidate('availabilityDate', availabilityDate),
+    onFocus: () => changeControl({ availabilityDateFocus: true }),
+    error: (() => {
+      if (availabilityDate) return null
+
+      return languageObjectHandler(errors.availabilityDate)
+    })()
   }
 }

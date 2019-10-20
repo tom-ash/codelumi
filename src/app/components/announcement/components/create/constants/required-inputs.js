@@ -63,6 +63,20 @@ export const requiredInputs = {
       english: 'select total floors'
     }
   },
+  availabilityDateSelect: {
+    id: 'availability-date-select',
+    error: {
+      polish: 'wybierz datę dostępności',
+      english: 'select availability date'
+    }
+  },
+  availabilityDate: {
+    id: 'availability-date',
+    error: {
+      polish: 'wybierz datę dostępności',
+      english: 'select availability date'
+    }
+  },
   pictures: {
     id: 'announcement-create-pictures-input',
     error: {
@@ -89,6 +103,8 @@ export const requiredInputsArray = [
   'rooms',
   'floor',
   'totalFloors',
+  'availabilityDateSelect',
+  'availabilityDate',
   'pictures',
   'map'
 ]

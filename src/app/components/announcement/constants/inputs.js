@@ -1,7 +1,10 @@
 export const inputs = {
   category: {
     icon: 'far fa-list-alt',
-    all: { polish: 'Kategoria', english: 'Category' }
+    all: {
+      polish: 'Kategoria',
+      english: 'Category'
+    }
   },
   district: {
     icon: 'fas fa-city',
@@ -53,6 +56,9 @@ export const inputs = {
   },
   availabilityDate: {
     icon: 'far fa-calendar-alt',
-    all: { polish: 'Dostępność od', english: 'Available from' },
+    all: {
+      polish: 'Data dostępności',
+      english: 'Availability date'
+    },
   }
 }

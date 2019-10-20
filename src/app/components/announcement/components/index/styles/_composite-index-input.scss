@@ -10,7 +10,7 @@
   }
   .sub-inputs-container {
     cursor: pointer;
-    z-index: 3;
+    z-index: 4;
     position: absolute;
     width: 102%;
     left: -1%;
@@ -21,17 +21,9 @@
                 0px 3px 8px 3px rgba(0, 0, 0, 0.14),
                 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
     border-radius: 2.5px;
-    .cover {
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
     .sub-input {
       position: relative;
-      z-index: 2;
+      z-index: 4;
       float: left;
       width: 50%;
       &.rent {
@@ -52,7 +44,7 @@
         }
       }
       .input {
-        height: 42px;
+        height: 46px;
         width: 100%;
         padding: 21px 0 0 6px;
         border-right: 1px solid #E5E7E9;

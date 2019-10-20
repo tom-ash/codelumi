@@ -11,13 +11,14 @@ export function compositeManagerProvider(inputName) {
     {
       classNames: { container: `composite-input select ${inputName}` },
       disableSelectOptions: true,
+      disableBlurOnValue: true,
       label: this.labelProvider(inputName),
       children: <i className={`icon ${inputs[inputName].icon}`} />,
       value: this.subInputValueParser(inputName) ? 'filled' : '',
       options: [{ value: '', text: '' },  { value: 'filled', text: this.subInputValueParser(inputName) }],
       onFocus: () => this.props.changeControl({ [`${inputName}Active`]: true }),
       onBlur: () => {
-        if (this.props.isMobile) this.props.changeControl({ [`${inputName}Active`]: false })
+        this.props.changeControl({ [`${inputName}Active`]: false })
       }
     }
   )
@@ -26,8 +27,8 @@ export function compositeManagerProvider(inputName) {
 export function subInputMinManagerProvider(inputName) {
   return () => (
     {
-      classNames: { container: `sub-input select ${inputName}` },
-      onFocusCoverZIndex: 3,
+      classNames: { container: `sub-input select ${inputName} min` },
+      onFocusCoverZIndex: 2,
       value: this.props[`${inputName}Min`],
       label: this.languageHandler('Od', 'From'),
       options: options[inputName],
@@ -39,8 +40,8 @@ export function subInputMinManagerProvider(inputName) {
 export function subInputMaxManagerProvider(inputName) {
   return () => (
     {
-      classNames: { container: `sub-input select ${inputName}` },
-      onFocusCoverZIndex: 3,
+      classNames: { container: `sub-input select ${inputName} max` },
+      onFocusCoverZIndex: 2,
       value: this.props[`${inputName}Max`],
       label: this.languageHandler('Do', 'To'),
       options: options[inputName],
