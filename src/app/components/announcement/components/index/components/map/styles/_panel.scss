@@ -1,8 +1,6 @@
 @import '../../../styles/simple-index-input';
-@import '../../../styles/composite-index-input';
 
 %panel {
-  // z-index: 3!important;
   position: absolute;
   border-radius: 2.5px;
   .simple-index-input {
@@ -17,7 +15,6 @@
   }
   .composite-input-container {
     @extend %simple-index-input;
-    @extend %composite-index-input;
     position: relative;
     margin-bottom: 0;
     border-bottom: 1px solid #CACFD2;
@@ -47,15 +44,6 @@
     }
     &.availability-date {
       position: relative;
-    }
-    .sub-input {
-      z-index: 3!important;
-      .options {
-        z-index: 3!important;
-        .option {
-          z-index: 3!important;
-        }
-      }
     }
   }
 }

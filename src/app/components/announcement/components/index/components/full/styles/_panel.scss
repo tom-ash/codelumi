@@ -2,6 +2,7 @@
 @import './inputs';
 
 %panel {
+  z-index: 3;
   position: relative;
   @extend %inputs;
   max-width: 960px;

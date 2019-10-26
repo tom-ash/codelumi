@@ -10,8 +10,7 @@
     position: relative;
     border: 1px solid $primary-element-color;
     background: white;
-    padding: 12px;
-    height: 180px;
+    height: 240px;
     overflow-y: scroll;
     border-radius: 2.5px;
     overflow: -moz-scrollbars-vertical; 
@@ -21,17 +20,6 @@
     max-width: 360px;
     .form-input {
       @extend %form-input;
-      &.checkbox {
-        position: relative;
-        margin-bottom: 8px;
-        .input {
-          position: absolute;
-        }
-        .label {
-          width: auto;
-          margin-left: 28px;
-        }
-      }
     }
   }
   .scroll {
@@ -41,8 +29,7 @@
     bottom: 0;
     font-size: 20px;
     margin: auto;
-    line-height: 180px;
-
+    line-height: 240px;
     .fa-sort {
       color: $primary-element-color;
     }

@@ -8,16 +8,13 @@
 
 #announcement-index-map {
   position: absolute;
-  top: 280px;
+  top: 270px;
   right: 0;
   left: 0;
   padding: 0px;
   border: none;
-  @media only screen and (max-width: $breakpoint-tablet-small-max) {
-    top: 320px;
-  }
   @media only screen and (max-width: $breakpoint-phone-large-max) {
-    top: 216px;
+    top: 386px;
     left: 0;
     right: 0;
   }
@@ -33,9 +30,18 @@
         margin-right: 8px;
       }
     }
-    .panel-container {
-      @extend %panel-container;
+    .panel-fixer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      max-width: 1400px;
+      margin: 0 auto;
+      .panel-container {
+        @extend %panel-container;
+      }
     }
+
     .announcement-index-tile {
       @extend %map-tile;
     }

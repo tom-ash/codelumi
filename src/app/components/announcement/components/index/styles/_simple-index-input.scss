@@ -1,47 +1,47 @@
 @import './options';
 
 %simple-index-input {
-    background: none;
+  background: none;
+  .icon {
     cursor: pointer;
-    .icon {
-      position: absolute;
-      color: #154360;
-      top: 0;
-      bottom: 0;
-      left: 14px;
-      line-height: 46px;
+    position: absolute;
+    color: #154360;
+    top: 0;
+    bottom: 0;
+    left: 14px;
+    line-height: 46px;
+    font-size: 13px;
+    padding-top: 1px;
+  }
+  .input {
+    cursor: pointer;
+    position: relative;
+    height: 46px;
+    padding-left: 44px;
+    padding-top: 23px;
+    background: white;
+    border-radius: 2.5px!important;
+    font-size: 16px;
+    font-weight: bold;
+    color: #34495E;
+    &.hover {
+      background: #EBF5FB;
+    }
+  }
+  .label {
+    cursor: pointer;
+    z-index: 5;
+    transition: .12s ease-in;
+    position: absolute;
+    top: 16px;
+    left: 42px;
+    font-size: 16px;
+    &.focus, &.value {
+      top: 5px;
       font-size: 13px;
-      padding-top: 1px;
     }
-    .input {
-      position: relative;
-      height: 46px;
-      padding-left: 44px;
-      padding-top: 23px;
-      background: white;
-      border-radius: 2.5px!important;
-      font-size: 16px;
-      font-weight: bold;
-      color: #34495E;
-      &.hover {
-        background: #EBF5FB;
-      }
-    }
-    .label {
-      z-index: 1;
-      transition: .12s ease-in;
-      position: absolute;
-      top: 16px;
-      left: 42px;
-      font-size: 16px;
-      &.focus, &.value {
-        top: 5px;
-        font-size: 13px;
-      }
-    }
-    .options {
-      @extend %options;
-      position: fixed;
-      z-index: 81;
-    }
+  }
+  .options {
+    @extend %options;
+  }
 }

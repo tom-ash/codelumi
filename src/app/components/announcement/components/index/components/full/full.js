@@ -34,14 +34,10 @@ class AnnouncementIndexFull extends React.Component {
     super(props)
     this.paramsBuilder = paramsBuilder.bind(this)
     this.paramsReader = paramsReader.bind(this)
-
-    
-
     this.parseCategoryForUrl = parseCategoryForUrl.bind(this)
     this.parseDistrictForUrl = parseDistrictForUrl.bind(this)
     this.parseCurrency = parseCurrency.bind(this)
     this.componentDidMount = lifecycle.componentDidMount
-    // this.shouldComponentUpdate = lifecycle.shouldComponentUpdate
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
@@ -78,19 +74,6 @@ class AnnouncementIndexFull extends React.Component {
     const { showList, announcements } = this.props
     return (
       <div id='announcement-index-full'>
-        {/* <h2 className='motto'>
-          <div className='main'>
-          {this.languageHandler('Znajdź się w Warszawie', 'Find Yourself in Warsaw')}
-          </div>
-          <div className='add-on'>
-            {this.languageHandler(<span>Ogłoszenia wynajmu biur i lokali użytkowych w&nbsp;Warszawie.</span>,
-                                  <span>Warsaw Offices and Usable Premises Lease&nbsp;Announcements.</span>)}
-          </div>
-        </h2> */}
-        <h3>
-          <i className={`fas fa-bars`} />{this.languageHandler(`Wyszukaj na liście`, `Search on List`)}
-        </h3>
-
         {this.panelProvider()}
         {
         showList &&

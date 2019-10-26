@@ -3,12 +3,9 @@
 
 %google-map {
   position: relative;
-  height: 640px;
+  height: 720px;
   border: none;
   border-radius: 4px;
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
-    margin: 150px 0 12px;
-  }
   .results {
     z-index: 1;
     position: absolute;

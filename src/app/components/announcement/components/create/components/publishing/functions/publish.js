@@ -23,6 +23,8 @@ export function publish() {
     validationObject.availabilityDateSelect = this.availableDateManager().validate()
   }
 
+  // console.log(availabilityDateSelect)
+
   if (!Object.values(validationObject).every((element => element))) {
     for(let i = 0; i < requiredInputsArray.length; i++) {
       if (!validationObject[requiredInputsArray[i]]) {

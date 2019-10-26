@@ -1,22 +1,94 @@
 export const features = [
-  { ref: 'undergroundgarage', polish: 'garaż podziemny', english: 'underground Garage' },
-  { ref: 'highceilings', polish: 'wysokie sufity', english: 'high ceilings' },
-  { ref: 'wellcommunicated', polish: 'dobrze skomunikowane', english: 'well communicated' },
-  { ref: 'standalonegarage', polish: 'garaz wolnostojący', english: 'standalone garage' },
-  { ref: 'parkingspaces', polish: 'miejsca postojowe', english: 'parking spaces' },
-  { ref: 'entryphone', polish: 'domofon', english: 'entry phone' },
-  { ref: 'monitoring', polish: 'monitoring', english: 'video surveillance' },
-  { ref: 'lifts', polish: 'windy', english: 'lifts' },
-  { ref: 'renovatedbuilding', polish: 'odremontowany budynek', english: 'renovated building' },
-  { ref: 'renovatedcommonareas', polish: 'odremontowane części wspólne', english: 'renovated commona reas' },
-  { ref: 'highspeedelevator', polish: 'szybka winda', english: 'high-speed elevator' },
-  { ref: 'classabuilding', polish: 'budynek klasy A', english: 'class A building' },
-  { ref: 'classbbuilding', polish: 'budynek klasy B', english: 'class B building' },
-  { ref: 'classcbuilding', polish: 'budynek klasy C', english: 'class C building' },
-  { ref: 'redundantpowersupply', polish: 'Zasilanie zapasowe', english: 'redundant power supply' },
-  { ref: 'poured flooring', polish: 'wylana posadzka', english: 'poured flooring' },
-  { ref: 'divisionwallsrearrangementpossibility', polish: 'możliwość rearanżacji ścian działowych', english: 'division walls re-arrangement possibility' },
-  { ref: 'kitchenette', polish: 'aneks kuchenny', english: 'kitchenette' },
+  {
+    ref: 'undergroundgarage',
+    polish: 'Garaż podziemny',
+    english: 'Underground Garage'
+  },
+  {
+    ref: 'highceilings',
+    polish: 'Wysokie sufity',
+    english: 'High ceilings'
+  },
+  {
+    ref: 'wellcommunicated',
+    polish: 'Dobrze skomunikowane',
+    english: 'Well communicated'
+  },
+  {
+    ref: 'standalonegarage',
+    polish: 'Garaż wolnostojący',
+    english: 'Standalone garage'
+  },
+  {
+    ref: 'parkingspaces',
+    polish: 'Miejsca postojowe',
+    english: 'Parking spaces'
+  },
+  {
+    ref: 'entryphone',
+    polish: 'Domofon',
+    english: 'Entry phone'
+  },
+  {
+    ref: 'monitoring',
+    polish: 'Monitoring',
+    english: 'Video surveillance'
+  },
+  {
+    ref: 'lifts',
+    polish: 'Windy',
+    english: 'Lifts'
+  },
+  {
+    ref: 'renovatedbuilding',
+    polish: 'Odremontowany budynek',
+    english: 'Renovated building'
+  },
+  {
+    ref: 'renovatedcommonareas',
+    polish: 'Odremontowane części wspólne',
+    english: 'Renovated commona reas'
+  },
+  {
+    ref: 'highspeedelevator',
+    polish: 'Szybka winda',
+    english: 'High-speed elevator'
+  },
+  {
+    ref: 'classabuilding',
+    polish: 'Budynek klasy A',
+    english: 'Class A building'
+  },
+  {
+    ref: 'classbbuilding',
+    polish: 'Budynek klasy B',
+    english: 'Class B building'
+  },
+  {
+    ref: 'classcbuilding',
+    polish: 'Budynek klasy C',
+    english: 'Class C building'
+  },
+  {
+    ref: 'redundantpowersupply',
+    polish: 'Zasilanie zapasowe',
+    english: 'Redundant power supply'
+  },
+  {
+    ref: 'poured flooring',
+    polish: 'Wylana posadzka',
+    english: 'Poured flooring'
+  },
+  {
+    ref: 'divisionwallsrearrangementpossibility',
+    polish: 'Możliwość rearanżacji ścian działowych',
+    english: 'Division walls re-arrangement possibility'
+  },
+  {
+    ref: 'kitchenette',
+    polish: 'aneks kuchenny',
+    english: 'kitchenette'
+  },
   { ref: 'kitchen', polish: 'kuchnia', english: 'kitchen' },
   { ref: 'electricitypiping', polish: 'instalacja prądowa', english: 'electricity piping' },
   { ref: 'gaspiping', polish: 'instalacja gazowa', english: 'gas piping' },

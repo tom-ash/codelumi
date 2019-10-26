@@ -39,7 +39,6 @@ export const mapStateToProps = (store) => {
     changed: store.announcement.index.control.full.changed,
     page: store.announcement.index.control.full.page,
     availabilityDateFocus: store.announcement.index.control.full.availabilityDateFocus,
-    availabilityDateActive: store.announcement.index.control.full.availabilityDateActive,
     category: store.announcement.index.inputs.full.category,
     district: store.announcement.index.inputs.full.district,
 

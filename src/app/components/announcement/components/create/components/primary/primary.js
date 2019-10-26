@@ -8,7 +8,6 @@ import { languageHandler, languageObjectHandler } from '../../../../../../functi
 import { handleErrorOnSelect, handleErrorOnValidate } from './functions/errors-handler'
 import { onSelectHandler } from './functions/on-select-handler'
 import Calendar from 'react-calendar';
-import { componentDidMount } from './functions/lifecycle'
 import { parseDate } from '../../../../../../functions/date-parsers'
 import { labelProvider } from '../../../../../../functions/providers/label'
 import { getRentAmounts } from '../../functions/get-rent-amounts'
@@ -17,7 +16,6 @@ import './styles/styles.scss'
 class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {
     super(props)
-    this.componentDidMount = componentDidMount.bind(this)
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.categoryManager = managers.categoryManager.bind(this)

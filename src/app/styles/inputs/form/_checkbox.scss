@@ -1,4 +1,10 @@
 %checkbox {
+  padding: 8px 0 8px 12px;
+  margin: 0;
+  &.hover {
+    background: transparentize(#2471A3, 0.9);
+  }
+  transition: .24s;
   .input {
     position: absolute;
     cursor: pointer;
@@ -17,7 +23,7 @@
   .label {
     margin-left: 28px;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 16px;
     text-align: justify;
   }

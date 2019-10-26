@@ -37,7 +37,6 @@ export const fullControl = {
   roomsActive: false,
   floorActive: false,
   availabilityDateFocus: false,
-  availabilityDateActive: false,
   totalFloorsActive: false
 }
 
@@ -56,7 +55,6 @@ export const mapControl = {
   fetch: false,
   draw: false,
   availabilityDateFocus: false,
-  availabilityDateActive: false,
   rentActive: false,
   areaActive: false,
   roomsActive: false,

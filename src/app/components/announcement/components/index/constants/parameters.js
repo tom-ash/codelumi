@@ -126,26 +126,3 @@ export const parameters = [
     stateValue: (value) => value
   },
 ]
-
-export const updateParameters = [
-  'readParams',
-  'showList',
-  'rentActive',
-  'areaActive',
-  'roomsActive',
-  'floorActive',
-  'totalFloorsActive',
-  'language',
-  'connecting',
-  'read',
-  'fetch',
-  'fetchAmount',
-  'page',
-  'availabilityDateFocus',
-  'amount',
-  'announcements',
-  'panelAmount'
-]
-
-
-

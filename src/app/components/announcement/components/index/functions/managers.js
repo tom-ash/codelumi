@@ -1,5 +1,8 @@
 import React from 'react'
 import { currencies } from '../../../constants/currencies'
+import { parseDate } from '../../../../../functions/date-parsers'
+
+import Calendar from 'react-calendar';
 
 export function categoryManager() {
   return {
@@ -7,6 +10,7 @@ export function categoryManager() {
       container: 'simple-index-input select unit category'
     },
     value: this.props.category,
+    onFocusCoverZIndex: 10,
     label: this.labelProvider('category'),
     children: <i className='icon far fa-list-alt' />,
     options: this.buildSelectCategories(),
@@ -19,6 +23,7 @@ export function districtManager() {
     classNames: { container: 'simple-index-input select district unit' },
     children: <i className='icon fas fa-city' />,
     value: this.props.district,
+    onFocusCoverZIndex: 10,
     label: this.labelProvider('district'),
     options: this.buildSelectDistricts(),
     onSelect: (option) => this.changeInput('district', option.value),
@@ -29,6 +34,7 @@ export function districtManager() {
 export function rentCurrencyManager() {
   return {
     classNames: { container: 'sub-input select rent last' },
+    onFocusCoverZIndex: 11,
     value: this.props.rentCurrency,
     label: this.languageHandler('Waluta', 'Currency'),
     options: currencies,
@@ -37,22 +43,43 @@ export function rentCurrencyManager() {
 }
 
 export function availabilityDateManager() {
+  const {
+    language,
+    availabilityDate,
+    changeInputs,
+    changeControl
+  } = this.props
+
   return {
-    classNames: { container: 'composite-input select availability-date' },
-    disableOnFocusCover: true,
-    disableSelectOptions: true,
-    children: <i className='icon far fa-calendar-alt' />,
-    value: this.props.availabilityDate ? 'filled' : '',
-    options: [{ value: '', text: '' },  { value: 'filled', text: this.props.availabilityDate }],
-    label: this.labelProvider('availabilityDate'),
-    onFocus: () => this.props.changeControl({
-      availabilityDateFocus: true,
-      roomsActive: false,
-      floorActive: false }),
-    onBlur: () => {
-      if (this.props.availabilityDateActive) return
-      this.props.changeControl({ availabilityDateFocus: false })
+    classNames: {
+      container: `composite-input-container availability-date`
     },
-    onChange: () => null
+    disableSelectOptions: true,
+    onFocusCoverZIndex: 98,
+    substituteOptions:(
+      <Calendar
+        locale={language == 'polish' ? 'pl' : 'en'}
+        onChange = {(date) => {
+          changeInputs({ availabilityDate: parseDate(date) })
+          changeControl({ fetch: true })
+        }}
+      />
+    ),
+    children: <i className='icon far fa-calendar-alt' />,
+    value: availabilityDate ? availabilityDate : '',
+    options: [
+      { value: '', text: '' }, 
+      { value: availabilityDate, text: availabilityDate }
+    ],
+    label: this.labelProvider('availabilityDate'),
+    onFocus: () => changeControl({
+      roomsActive: false,
+      floorActive: false
+    }),
+    onBlur: () => {
+      changeControl({
+        availabilityDateFocus: false
+      })
+    }
   }
 }

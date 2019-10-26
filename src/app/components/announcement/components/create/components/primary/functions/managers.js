@@ -1,28 +1,58 @@
-import { numberOptionsProvider } from '../../../../../../../functions/shared'
-import { districts } from '../../../../../constants/districts'
-import { requiredInputs } from '../../../constants/required-inputs'
 import { inputs } from '../../../../../constants/inputs'
+import { requiredInputs } from '../../../constants/required-inputs'
+import { categories } from '../../../../../constants/categories'
+import { districts } from '../../../../../constants/districts'
+import { numberOptionsProvider } from '../../../../../../../functions/shared'
 
 const noError = { polish: '', english: '' }
 
 export function categoryManager() {
+  const {
+    value: officeValue,
+    label: officeLabel
+  } = categories[0]
+  const {
+    value: usablePremisesValue,
+    label: usablePremisesLabel
+  } = categories[1]
+  const {
+    category: { id }
+  } = requiredInputs
+  const {
+    category,
+    errors,
+    changeErrors
+  } = this.props
+  const {
+    icon,
+    all: text
+  } = inputs.category
+  const {
+    category: categoryError
+  } = errors
+
   return {
-    id: requiredInputs.category.id,
+    id,
     classNames: { container: 'form-input select' },
-    value: this.props.category,
-    label: this.labelProvider(inputs.category.icon, inputs.category.all),
-    options: [{ value: '', text: '' },
-              { value: 0, text: this.languageHandler('biuro', 'office') },
-              { value: 1, text: this.languageHandler('lokal uzytkowy', 'usable premises') }],
-    onFocus: () => this.props.changeErrors({ category: noError }),
+    value: category,
+    label: this.labelProvider(icon, text),
+    options: [
+      { value: '', text: '' },
+      { value: officeValue, text: this.languageObjectHandler(officeLabel) },
+      { value: usablePremisesValue, text: this.languageObjectHandler(usablePremisesLabel) }
+    ],
+    onFocus: () => changeErrors({ category: noError }),
     onSelect: (option) => this.onSelectHandler('category', option.value),
     onBlur: () => this.categoryManager().validate(),
-    validate: () => this.handleErrorOnValidate('category', this.props.category),
-    error: this.languageObjectHandler(this.props.errors.category)
+    validate: () => this.handleErrorOnValidate('category', category),
+    error: this.languageObjectHandler(categoryError)
   }
 }
 
 export function districtManager() {
+
+
+
   return {
     id: requiredInputs.district.id,
     classNames: { container: 'form-input select' },
@@ -80,8 +110,8 @@ export function additionalFeesManager() {
     value: this.props.additionalFees,
     label: this.labelProvider(inputs.additionalFees.icon, inputs.additionalFees.all),
     options: [{ value: '', text: '' },
-              { value: true, text: this.languageHandler('tak', 'yes') },
-              { value: false, text: this.languageHandler('nie', 'no') }],
+              { value: true, text: this.languageHandler('Tak', 'Yes') },
+              { value: false, text: this.languageHandler('Nie', 'No') }],
     onFocus: () => this.props.changeErrors({ additionalFees: noError }),
     onSelect: (option) => this.onSelectHandler('additionalFees', option.value),
     onBlur: () => this.additionalFeesManager().validate(),
@@ -91,8 +121,8 @@ export function additionalFeesManager() {
 }
 
 export function areaManager() {
-  // console.log(this.props)
-  
+  // TODO
+
   return {
     id: requiredInputs.area.id,
     classNames: { container: 'form-input text' },
@@ -101,7 +131,6 @@ export function areaManager() {
     label: this.labelProvider(inputs.area.icon, inputs.area.create),
     onFocus: () => this.props.changeErrors({ area: noError }),
     onChange: (value) => this.props.changeInputs({ area: value }),
-    onSelect: () => this.onSelectHandler('area', option.value),
     onBlur: () => {
       this.areaManager().validate()
       this.getRentAmounts()
@@ -118,7 +147,7 @@ export function roomsManager() {
     value: this.props.rooms,
     label: this.labelProvider(inputs.rooms.icon, inputs.rooms.create),
     options: numberOptionsProvider(99),
-    onFocus: () => this.props.changeErrors({ area: noError }),
+    onFocus: () => this.props.changeErrors({ rooms: noError }),
     onSelect: (option) => this.onSelectHandler('rooms', option.value),
     onBlur: () => this.roomsManager().validate(),
     validate: () => this.handleErrorOnValidate('rooms', this.props.rooms),
@@ -163,8 +192,8 @@ export function availabilityDateSelectManager() {
     value: this.props.availabilityDateSelect,
     label: this.labelProvider(inputs.availabilityDate.icon, inputs.availabilityDate.all),
     options: [{ value: '', text: '' },
-              { value: 'now', text: this.languageHandler('juz dostępne', 'already available') },
-              { value: 'date', text: this.languageHandler('podaj datę', 'provide date') }],
+              { value: 'now', text: this.languageHandler('Już dostępne', 'Already available') },
+              { value: 'date', text: this.languageHandler('Podaj datę', 'Provide date') }],
     onSelect: (option) => this.props.changeInputs({ availabilityDateSelect: option.value }),
     onFocus: () => this.props.changeErrors({ availabilityDateSelect: noError }),
     onBlur: () => this.availabilityDateSelectManager().validate(),
@@ -192,7 +221,6 @@ export function availableDateManager() {
     availabilityDate: { icon, all: text }
   } = inputs
 
-
   return {
     id,
     classNames: { container: 'form-input select' },
@@ -204,19 +232,13 @@ export function availableDateManager() {
     label: labelProvider(icon, text),
     disableSelectOptions: true,
     onBlur: () => {
-
-      console.log('onBlur')
-
       changeControl({ availabilityDateFocus: false })
-
-      // setTimeout(() => changeControl({ availabilityDateFocus: false }), 100)
       thisManager().validate()
     },
     validate: () => handleErrorOnValidate('availabilityDate', availabilityDate),
     onFocus: () => changeControl({ availabilityDateFocus: true }),
     error: (() => {
       if (availabilityDate) return null
-
       return languageObjectHandler(errors.availabilityDate)
     })()
   }

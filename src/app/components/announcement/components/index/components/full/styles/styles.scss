@@ -6,15 +6,11 @@
 @import '../../../../../../../styles/colors';
 
 #announcement-index-full {
+  z-index: 3;
   position: relative;
-  margin: 96px auto 0;
-  h2 {
-    @extend %page-header;
-  }
-  h3 {
-    @extend %section-header;
-  }
   .panel-container {
+    padding-top: 78px;
+    padding-bottom: 12px;
     position: relative;
     width: 100%;
     background: #2874A6;

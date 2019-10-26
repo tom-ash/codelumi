@@ -5,11 +5,6 @@ export function componentDidMount() {
   if (index === 0 || venue === 'map') this.fetchPicture()
 }
 
-export function shouldComponentUpdate(nextProps) {
-  if (this.props.language !== nextProps.language) return true
-  return compareParameters(this.props.announcement, nextProps.announcement, ['announcements', 'phone', 'pictures', 'pictureIndex', 'status'])
-}
-
 export function componentDidUpdate(prevProps) {
   const { announcements, index, venue } = this.props
   const { announcements: precedingAnnouncements } = prevProps
