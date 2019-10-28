@@ -12,10 +12,10 @@
     .input {
       width: 100%;
       padding-left: 8px;
-      border: 1px solid transparentize($form-input-border-color, 0.4);
+      border: 1px solid #979A9A;;
       border-radius: 2.5px;
       background: $color-background;
-      color: $input-color;
+      color: #34495E;
       &.hover {
         border: 1px solid transparentize($form-input-border-color, 0.3);
         background: #EBF5FB;
@@ -29,9 +29,12 @@
       display: inline-block;
       position: absolute;
       background: $color-background;
-      color: $form-input-label-color;
+      color: #5D6D7E;
       cursor: pointer;
       background: none;
+      .fas, .far {
+        color: #5D6D7E;
+      }
       &.hover {
         color: $form-input-label-hover-color;
       }
@@ -43,6 +46,11 @@
       }
       &.focus, &.value {
         background: white;
+      }
+      &.error {
+        .fas, .far {
+          color: $form-input-error-color;
+        }
       }
     }
     .error-container {
@@ -101,7 +109,7 @@
       &.hover, &.focus {
         background: #909497;
       }
-      &.checked {
+      &.value, &.checked {
         background: #2471A3;
       }
       .tick {

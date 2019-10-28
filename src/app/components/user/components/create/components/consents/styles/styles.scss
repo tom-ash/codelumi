@@ -6,11 +6,30 @@
   margin-bottom: 24px;
   .checkbox-container {
     position: relative;
-    border: 1px solid $primary-element-color;
-    padding: 12px;
     border-radius: 2.5px;
     &.with-error {
       border-right: 3px solid $primary-error-color;
+    }
+    padding: 0;
+    .checkbox.input-container {
+      padding: 6px 12px 0 0;
+      .input {
+        top: 8px;
+        left: 0;
+        height: 15px;
+        width: 15px;
+        .tick {
+          width: 5px;
+          height: 10px;
+          left: 0px;
+          bottom: 4px;
+          position: absolute;
+        }
+      }
+      .label {
+        font-size: 15px;
+        color: #5D6D7E;
+      }
     }
   }
   .error {

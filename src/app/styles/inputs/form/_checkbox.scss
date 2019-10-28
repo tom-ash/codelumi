@@ -1,18 +1,23 @@
 %checkbox {
-  padding: 8px 0 8px 12px;
+  padding: 8px 12px;
   margin: 0;
   &.hover {
     background: transparentize(#2471A3, 0.9);
   }
   transition: .24s;
+  position: relative;
   .input {
     position: absolute;
     cursor: pointer;
     width: 16px;
     height: 16px;
-    margin-right: 12px;
     cursor: pointer;
     border-radius: 2px;
+    background: #2471A3;
+    top: 10px;
+    right: 0;
+    bottom: 0;
+    left: 12px;
     .tick {
       transform: rotate(45deg);
       width: 6px;
@@ -24,7 +29,10 @@
     margin-left: 28px;
     cursor: pointer;
     font-size: 16px;
-    line-height: 16px;
+    line-height: 20px;
     text-align: justify;
+    &.checked {
+      font-weight: bold;
+    }
   }
 }

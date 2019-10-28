@@ -86,14 +86,42 @@ export const features = [
   },
   {
     ref: 'kitchenette',
-    polish: 'aneks kuchenny',
-    english: 'kitchenette'
+    polish: 'Aneks kuchenny',
+    english: 'Kitchenette'
   },
-  { ref: 'kitchen', polish: 'kuchnia', english: 'kitchen' },
-  { ref: 'electricitypiping', polish: 'instalacja prądowa', english: 'electricity piping' },
-  { ref: 'gaspiping', polish: 'instalacja gazowa', english: 'gas piping' },
-  { ref: 'waterpiping', polish: 'instalacja wodna', english: 'water piping' },
-  { ref: 'exclusivebathroom', polish: 'łazienki na wyłączność', english: 'exclusive bathroom' },
-  { ref: 'electricity', polish: 'prąd', english: 'electricity' },
-  { ref: 'windowedkitchen', polish: 'kuchnia z oknem', english: 'windowed kitchen' }
+  {
+    ref: 'kitchen',
+    polish: 'Kuchnia',
+    english: 'Kitchen'
+  },
+  {
+    ref: 'electricitypiping',
+    polish: 'Instalacja prądowa',
+    english: 'Electricity piping'
+  },
+  {
+    ref: 'gaspiping',
+    polish: 'Instalacja gazowa',
+    english: 'Gas piping'
+  },
+  {
+    ref: 'waterpiping',
+    polish: 'Instalacja wodna',
+    english: 'Water piping'
+  },
+  {
+    ref: 'exclusivebathroom',
+    polish: 'Łazienka na wyłączność',
+    english: 'Exclusive bathroom'
+  },
+  {
+    ref: 'electricity',
+    polish: 'Prąd',
+    english: 'Electricity'
+  },
+  {
+    ref: 'windowedkitchen',
+    polish: 'Kuchnia z oknem',
+    english: 'Windowed kitchen'
+  }
 ]

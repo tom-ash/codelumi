@@ -1,15 +1,67 @@
 export const furnishings = [
-  { ref: 'fireprotectionsystem', polish: 'instalacja przeciwpożarowa', english: 'fire protection system' },
-  { ref: 'airconditioning', polish: 'klimatyzacja', english: 'air conditioning' },
-  { ref: 'alarm system', polish: 'system alarmowy', english: 'alarm system' },
-  { ref: 'illumination', polish: 'oświetlenie', english: 'illumination' },
-  { ref: 'telecommunicationinstallations', polish: 'instalacja teletechniczna', english: 'telecommunication installations' },
-  { ref: 'receptiondesk', polish: 'biurko recepcyjne', english: 'reception desk' },
-  { ref: 'serverroomequipment', polish: 'wyposażenie serwerowni', english: 'server room equipment' },
-  { ref: 'desks', polish: 'biurka', english: 'desks' },
-  { ref: 'chairs', polish: 'krzesła', english: 'chairs' },
-  { ref: 'conferenceroomequipment', polish: 'wyposażenie sal konferencyjnych', english: 'conference room equipment' },
-  { ref: 'documentcabinets', polish: 'szafy na dokumenty', english: 'document cabinets' },
-  { ref: 'kitchenutensils', polish: 'wyposażenie kuchni', english: 'kitchen utensils' },
-  { ref: 'antiburglarblinds', polish: 'rolety antywłamaniowe', english: 'anti-burglar blinds' }
+  {
+    ref: 'fireprotectionsystem',
+    polish: 'Instalacja przeciwpożarowa',
+    english: 'Fire protection system'
+  },
+  {
+    ref: 'airconditioning',
+    polish: 'Klimatyzacja',
+    english: 'Air conditioning'
+  },
+  {
+    ref: 'alarm system',
+    polish: 'System alarmowy',
+    english: 'Alarm system'
+  },
+  {
+    ref: 'illumination',
+    polish: 'Oświetlenie',
+    english: 'Illumination'
+  },
+  {
+    ref: 'telecommunicationinstallations',
+    polish: 'Instalacja teletechniczna',
+    english: 'Telecommunication installations'
+  },
+  {
+    ref: 'receptiondesk',
+    polish: 'Biurko recepcyjne',
+    english: 'Reception desk'
+  },
+  {
+    ref: 'serverroomequipment',
+    polish: 'Wyposażenie serwerowni',
+    english: 'Server room equipment'
+  },
+  {
+    ref: 'desks',
+    polish: 'Biurka',
+    english: 'Desks'
+  },
+  {
+    ref: 'chairs',
+    polish: 'Krzesła',
+    english: 'Chairs'
+  },
+  {
+    ref: 'conferenceroomequipment',
+    polish: 'Wyposażenie sal konferencyjnych',
+    english: 'Conference room equipment'
+  },
+  {
+    ref: 'documentcabinets',
+    polish: 'Szafy na dokumenty',
+    english: 'Document cabinets'
+  },
+  {
+    ref: 'kitchenutensils',
+    polish: 'Wyposażenie kuchni',
+    english: 'Kitchen utensils'
+  },
+  {
+    ref: 'antiburglarblinds',
+    polish: 'Rolety antywłamaniowe',
+    english: 'Anti-burglar blinds'
+  }
 ]

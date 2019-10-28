@@ -8,5 +8,12 @@
   }
   .input-container {
     @extend %form-input;
+    &.select, &.text {
+      height: 46px;
+      margin-bottom: 22px;
+      .error-container {
+        padding-top: 2px;
+      }
+    }
   }
 }

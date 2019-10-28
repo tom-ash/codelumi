@@ -20,6 +20,9 @@ export function getAnnouncement() {
     }
   })
   .then(json => {
+
+    const { changeInputs } = this.props
+
     const {
       id,
       category,
@@ -37,7 +40,8 @@ export function getAnnouncement() {
       polishDescription,
       englishDescription,
       latitude,
-      longitude
+      longitude,
+      availabilityDate
     } = json
 
     setBlobs.call(this, id, pictures)
@@ -60,16 +64,16 @@ export function getAnnouncement() {
       mapLatitude: latitude / 1000000,
       mapLongitude: longitude / 1000000
     }
-    this.props.changeInputs(appendAvailabilityDate(announcement, announcementInputs))
+    changeInputs(appendAvailabilityDate(availabilityDate, announcementInputs))
   })
 }
 
-function appendAvailabilityDate(announcement, announcementInputs) {
-  if (announcement.availabilityDate == 'now') {
+function appendAvailabilityDate(availabilityDate, announcementInputs) {
+  if (availabilityDate == 'now') {
     announcementInputs.availabilityDateSelect = 'now'
   } else {
     announcementInputs.availabilityDateSelect = 'date'
-    announcementInputs.availabilityDate = announcement.availabilityDate
+    announcementInputs.availabilityDate = availabilityDate
   }
   return announcementInputs
 }
