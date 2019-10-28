@@ -29,11 +29,7 @@ export function compositeManagerProvider(inputName) {
       label: this.labelProvider(inputName),
       children: <i className={`icon ${inputs[inputName].icon}`} />,
       value: this.subInputValueParser(inputName) ? 'filled' : '',
-      options: [{ value: '', text: '' },  { value: 'filled', text: this.subInputValueParser(inputName) }],
-      onFocus: () => this.props.changeControl({ [`${inputName}Active`]: true }),
-      onBlur: () => {
-        this.props.changeControl({ [`${inputName}Active`]: false })
-      }
+      options: [{ value: '', text: '' },  { value: 'filled', text: this.subInputValueParser(inputName) }]
     }
   )
 }

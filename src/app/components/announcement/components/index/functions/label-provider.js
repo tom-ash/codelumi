@@ -1,4 +1,3 @@
-import React from 'react'
 import { labels } from '../../../constants/labels'
 
 export function labelProvider(input) {

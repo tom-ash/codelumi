@@ -2,7 +2,6 @@ import React from 'react'
 import { ManagedSelect, ManagedButton } from 'managed-inputs'
 
 export function panelProvider() {
-  const { isMobile } = this.props;
   return (
     <div className='panel-container'>
       <div className='panel'>
@@ -15,10 +14,8 @@ export function panelProvider() {
         {this.compositeInputProvider('totalFloors')}
         <ManagedSelect {...this.availabilityDateManager()}/>
       </div>
-      {
-      this.props.venue == 'indexFull' &&
-      <ManagedButton {...this.buttonManager()}/>
-      }
+      {this.props.venue == 'indexFull' &&
+      <ManagedButton {...this.buttonManager()}/>}
     </div>
   )
 }

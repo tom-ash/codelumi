@@ -47,8 +47,11 @@ export function availabilityDateManager() {
     language,
     availabilityDate,
     changeInputs,
-    changeControl
+    changeControl,
+    venue
   } = this.props
+  
+  const fetchKey = venue == 'indexFull' ? 'fetchAmount' : 'fetch'
 
   return {
     classNames: {
@@ -61,7 +64,7 @@ export function availabilityDateManager() {
         locale={language == 'polish' ? 'pl' : 'en'}
         onChange = {(date) => {
           changeInputs({ availabilityDate: parseDate(date) })
-          changeControl({ fetch: true })
+          changeControl({ [fetchKey]: true })
         }}
       />
     ),
@@ -71,15 +74,6 @@ export function availabilityDateManager() {
       { value: '', text: '' }, 
       { value: availabilityDate, text: availabilityDate }
     ],
-    label: this.labelProvider('availabilityDate'),
-    onFocus: () => changeControl({
-      roomsActive: false,
-      floorActive: false
-    }),
-    onBlur: () => {
-      changeControl({
-        availabilityDateFocus: false
-      })
-    }
+    label: this.labelProvider('availabilityDate')
   }
 }

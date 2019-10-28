@@ -16,13 +16,16 @@ export function componentDidUpdate(prevProps) {
 export function componentWillUnmount() {
   this.props.changeControl({ mapLoaded: false })
   removeGoogleMapListeners.call(this)
+  if (window.marker) window.marker.setMap(null)
 }
 
 function placeMarker(location) {
   const map = window.googleMap
   if (!map) return
-  if (window.marker) marker.setMap(null)
+
+  if (window.marker) window.marker.setMap(null)
   if (!this.props.latitude || !this.props.longitude) return
+  
   window.marker = new google.maps.Marker({
     position: { lat: this.props.latitude, lng: this.props.longitude },  map: map })
 }
