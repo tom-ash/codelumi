@@ -5,17 +5,23 @@ export function panelProvider() {
   return (
     <div className='panel-container'>
       <div className='panel'>
-        <ManagedSelect {...this.categoryManager()} />
-        <ManagedSelect {...this.districtManager()}/>
-        {this.compositeInputProvider('area')}
-        {this.compositeInputProvider('rent')}
-        {this.compositeInputProvider('rooms')}
-        {this.compositeInputProvider('floor')}
-        {this.compositeInputProvider('totalFloors')}
-        <ManagedSelect {...this.availabilityDateManager()}/>
+        <div className='pane'>
+          <ManagedSelect {...this.categoryManager()} />
+          {this.compositeInputProvider('area')}
+          <ManagedSelect {...this.districtManager()}/>
+          {this.compositeInputProvider('rent')}
+          <div className='float-clear' />
+        </div>
+        <ManagedButton {...this.buttonManager()}/>
+        <div className='pane'>
+          {this.compositeInputProvider('rooms')}
+          {this.compositeInputProvider('floor')}
+          {this.compositeInputProvider('totalFloors')}
+          <ManagedSelect {...this.availabilityDateManager()}/>
+          <div className='float-clear' />
+        </div>
+        <div className='float-clear' />
       </div>
-      {this.props.venue == 'indexFull' &&
-      <ManagedButton {...this.buttonManager()}/>}
     </div>
   )
 }

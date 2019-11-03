@@ -2,26 +2,37 @@
 
 %simple-index-input {
   background: none;
+  height: 42px;
+  position: relative;
+  float: left;
+  margin-bottom: 12px;
+  width: 264px;
   .icon {
     cursor: pointer;
     position: absolute;
-    color: #154360;
+    color: #424949;
     top: 0;
     bottom: 0;
-    left: 14px;
-    line-height: 46px;
-    font-size: 13px;
+    left: 0;
+    width: 32px;
+    text-align: center;
+    line-height: 42px;
+    font-size: 12px;
     padding-top: 1px;
+    background: #E5E7E9;
+    border-right: 1px solid lightgray;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
   }
   .input {
     cursor: pointer;
     position: relative;
-    height: 46px;
+    height: 42px;
     padding-left: 44px;
-    padding-top: 23px;
+    padding-top: 21px;
     background: white;
-    border-radius: 2.5px!important;
-    font-size: 16px;
+    border-radius: 2px!important;
+    font-size: 15px;
     font-weight: bold;
     color: #34495E;
     &.hover {
@@ -33,9 +44,9 @@
     z-index: 5;
     transition: .12s ease-in;
     position: absolute;
-    top: 16px;
+    top: 13px;
     left: 42px;
-    font-size: 16px;
+    font-size: 15px;
     &.focus, &.value {
       top: 5px;
       font-size: 13px;

@@ -3,14 +3,23 @@
 
 %google-map {
   position: relative;
-  height: 720px;
+  height: 568px;
   border: none;
   border-radius: 4px;
+  .gm-bundled-control {
+    right: 48px!important;
+  }
+  @media #{$phone} {
+    height: 728px;
+    .gm-bundled-control {
+      display: none;
+    }
+  }
   .results {
     z-index: 1;
     position: absolute;
-    top: 40px;
-    left: 255px;
+    top: 424px;
+    left: 24px;
     height: 36px;
     width: 72px;
     line-height: 36px;
@@ -19,8 +28,8 @@
     background: transparentize(#626567, 0.24);
     border-radius: 4px;
     @media #{$phone} {
-      top: 240px;
-      right: 12px;
+      top: 216px;
+      left: 12px;
     }
   }
   #google-map {

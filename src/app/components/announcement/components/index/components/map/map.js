@@ -56,12 +56,12 @@ class AnnouncementIndexSearchFull extends React.Component {
     return (
       <div id='announcement-index-map' className={`${this.props.showList ? 'hidden' : 'visible'}`}>
         <div id='google-map-container'>
-          <div className='panel-fixer'>
+          {/* <div className='panel-fixer'>
             {this.panelProvider()}
-          </div>
-          <div className='results'>
+          </div> */}
+          {/* <div className='results'>
             {this.props.amount}
-          </div>
+          </div> */}
           <div id='google-map' />
           {
           this.props.tile && Object.keys(this.props.tile).length > 1 &&

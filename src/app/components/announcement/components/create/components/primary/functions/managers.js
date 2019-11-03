@@ -194,7 +194,10 @@ export function availabilityDateSelectManager() {
     options: [{ value: '', text: '' },
               { value: 'now', text: this.languageHandler('Już dostępne', 'Already available') },
               { value: 'date', text: this.languageHandler('Podaj datę', 'Provide date') }],
-    onSelect: (option) => this.props.changeInputs({ availabilityDateSelect: option.value }),
+    onSelect: (option) => this.props.changeInputs({
+      availabilityDateSelect: option.value,
+      ...option.value == 'now' && { availabilityDate: '' }
+    }),
     onFocus: () => this.props.changeErrors({ availabilityDateSelect: noError }),
     onBlur: () => this.availabilityDateSelectManager().validate(),
     validate: () => this.handleErrorOnValidate('availabilityDateSelect', this.props.availabilityDateSelect),

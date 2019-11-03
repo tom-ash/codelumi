@@ -12,7 +12,7 @@ export function buttonManager(action) {
     onClick: () => {
       const button = document.getElementById(id)
       changeData({ announcements: [] })
-      scrollToElement(button, 6, -18, () => changeControl({
+      scrollToElement(button, 4, 50, () => changeControl({
         fetchList: true,
         showList: true
       }))

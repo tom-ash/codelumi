@@ -67,6 +67,10 @@ export const mapStateToProps = (store) => {
     
 export const mapDispatchToProps = (dispatch) => {
   return {
+
+    changeMapControl: (value) => dispatch({ type: 'announcement/index/control/map', value: value }),
+    changeMapInputs: (value) => dispatch({ type: 'announcement/index/inputs/map', value: value }),
+
     changeControl: (value) => dispatch({ type: 'announcement/index/control/full', value: value }),
     changeInputs: (value) => dispatch({ type: 'announcement/index/inputs/full', value: value }),
     changeData: (value) => dispatch({ type: 'announcement/index/data/full', value: value }),

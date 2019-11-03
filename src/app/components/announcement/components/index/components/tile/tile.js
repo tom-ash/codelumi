@@ -90,7 +90,7 @@ class AnnouncementIndexTile extends React.Component {
     return (
       <div
       className={`announcement-index-tile${this.props.first ? ' first': ''}${this.props.last ? ' last': ''}${this.props.index % 2 === 0 ? ' even' : ''}`}>
-        {venue === 'full' && !first &&
+        {venue === 'full' &&
         <div className='divider'/>}
         {venue == 'map' &&
         <i className='fas fa-times close' onClick={this.closeTile}/>}

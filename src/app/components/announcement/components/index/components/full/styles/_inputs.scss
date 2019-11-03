@@ -3,81 +3,22 @@
 %inputs {
   .simple-index-input {
     @extend %simple-index-input;
-    position: absolute;
-    width: 231px;
     @media #{$phone} {
       width: auto;
     }
-    &.category {
-      top: 12px;
-      left: 0;
-      @media #{$phone} {
-        left: 12px;
-        right: 12px;
-      }
-    }
-    &.district {
-      top: 70px;
-      left: 0;
-      @media #{$phone} {
-        left: 12px;
-        right: 12px;
-      }
+    &.category, &.district {
+      margin-right: 12px;
     }
   }
   .composite-input-container {
     @extend %simple-index-input;
-    position: absolute;
-    // top: 100px;
-    width: 231px;
+    position: relative;
+    // width: 231px;
+    &.rooms, &.total-floors {
+      margin-right: 12px;
+    }
     @media #{$phone} {
       width: auto!important;
-    }
-    &.area {
-      top: 12px;
-      left: 243px;
-      @media #{$phone} {
-        top: 128px;
-        left: 12px;
-        right: 12px;
-      }
-    }
-    &.rent {
-      top: 70px;
-      left: 243px;
-      @media #{$phone} {
-        top: 186px;
-        left: 12px;
-        right: 12px;
-      }
-    }
-    &.floor {
-      top: 12px;
-      left: 486px;
-      @media #{$phone} {
-        display: none;
-      }
-    }
-    &.total-floors {
-      top: 70px;
-      left: 486px;
-      @media #{$phone} {
-        display: none;
-      }
-    }
-    &.rooms {
-      top: 12px;
-      left: 729px;
-      @media #{$phone} {
-        display: none;
-      }
-    }
-    &.availability-date {
-      top: 70px;
-      left: 729px;
-      @media #{$phone} {
-        display: none;
-      }
     }
     @media #{$phone} {
       width: 100%;

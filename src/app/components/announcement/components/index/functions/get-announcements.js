@@ -15,6 +15,9 @@ export function getAnnouncements() {
     if (response.ok) return response.json()
   })
   .then(json => {
+
+    console.log(json)
+
     const announcements = json.announcements.map(announcement => {
       announcement.pictureIndex = 0
       announcement.showLoader = true
