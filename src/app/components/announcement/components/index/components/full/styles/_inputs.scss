@@ -13,7 +13,6 @@
   .composite-input-container {
     @extend %simple-index-input;
     position: relative;
-    // width: 231px;
     &.rooms, &.total-floors {
       margin-right: 12px;
     }

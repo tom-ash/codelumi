@@ -3,7 +3,6 @@
 @import './google-map';
 @import './tile';
 @import '../../../../../../../styles/media-breakpoints';
-@import './panel-container';
 @import './pin';
 
 #announcement-index-map {
@@ -31,17 +30,6 @@
       .fas.fa-map-marker-alt {
         width: none;
         margin-right: 8px;
-      }
-    }
-    .panel-fixer {
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-      max-width: 1400px;
-      margin: 0 auto;
-      .panel-container {
-        @extend %panel-container;
       }
     }
 
