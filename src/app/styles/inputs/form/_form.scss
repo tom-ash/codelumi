@@ -12,16 +12,16 @@
     .input {
       width: 100%;
       padding-left: 8px;
-      border: 1px solid #979A9A;;
-      border-radius: 2.5px;
+      border: 1px solid #374049;
+      border-radius: 2px;
       background: $color-background;
-      color: #34495E;
+      color: #374049;
       &.hover {
         border: 1px solid transparentize($form-input-border-color, 0.3);
         background: #EBF5FB;
       }
       &.error {
-        border-right: 2.5px solid $primary-error-color;
+        border-right: 2px solid $primary-error-color;
         color: $primary-error-color!important;
       }
     }
@@ -29,12 +29,9 @@
       display: inline-block;
       position: absolute;
       background: $color-background;
-      color: #5D6D7E;
+      color: #374049;
       cursor: pointer;
       background: none;
-      .fas, .far {
-        color: #5D6D7E;
-      }
       &.hover {
         color: $form-input-label-hover-color;
       }
@@ -60,24 +57,41 @@
     }
   }
   &.text, &.select {
-    height: 46px;
+    height: 42px;
     margin-bottom: 24px;
     .input {
       width: 100%;
-      height: 46px;
-      font-size: 16px;
-      line-height: 46px;
-      padding-left: 10px;
+      height: 42px;
+      font-size: 15px;
+      padding-left: 42px;
+      font-weight: bold;
+    }
+    .fas, .far {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      line-height: 42px;
+      color: #374049;
+      background: #D7DBDD;
+      width: 32px;
+      text-align: center;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+      border-top: 1px solid #374049;
+      border-left: 1px solid #374049;
+      border-bottom: 1px solid #374049;
+      font-size: 12px;
     }
     .label {
       top: 14px;
-      left: 8px;
-      padding: 0 4px 0 4px;
-      font-size: 16px;
+      left: 42px;
+      font-size: 15px;
       transition: 0.18s;
+      text-align: left;
       &.value, &.focus {
         top: -5px;
-        left: 8px;
         font-size: 12px;
       }
     }

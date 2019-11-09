@@ -1,15 +1,22 @@
+import React from 'react'
 import { emailAddressValidator } from '../../../../../functions/shared'
 import { inputs } from '../../../../../constants/inputs'
 
 const noError = { polish: '', english: '' }
 
 export function emailAddressManager() {
+  const {
+    icon,
+    label
+  } = inputs.email
+
   const input = inputs.email
   return {
     id: 'user-logon-email-address',
     controlled: false,
     classNames: { container: 'form-input text'},
-    label: this.labelProvider(input.icon, input.label),
+    label: this.languageObjectHandler(label),
+    children: <i className={icon} />,
     onChange: () => this.props.changeErrors({ emailOrPassword: noError, email: noError }),
     onBlur: (value) => this.emailAddressManager().validate(value),
     validate: (value) => {
@@ -27,13 +34,20 @@ export function emailAddressManager() {
 }
 
 export function passwordManager() {
+  const {
+    icon,
+    label
+  } = inputs.password
+
   const input = inputs.password
+
   return {
     id: 'user-logon-password',
     type: 'password',
     controlled: false,
     classNames: { container: 'form-input text'},
-    label: this.labelProvider(input.icon, input.label),
+    label: this.languageObjectHandler(label),
+    children: <i className={icon} />,
     onChange: () => this.props.changeErrors({ emailOrPassword: noError, email: noError }),
     onBlur: (value) => this.passwordManager().validate(value),
     validate: ((value) => {

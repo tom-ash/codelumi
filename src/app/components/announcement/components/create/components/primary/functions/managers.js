@@ -1,3 +1,4 @@
+import React from 'react'
 import { inputs } from '../../../../../constants/inputs'
 import { requiredInputs } from '../../../constants/required-inputs'
 import { categories } from '../../../../../constants/categories'
@@ -35,7 +36,8 @@ export function categoryManager() {
     id,
     classNames: { container: 'form-input select' },
     value: category,
-    label: this.labelProvider(icon, text),
+    label: this.languageObjectHandler(text),
+    children: <i className={icon} />,
     options: [
       { value: '', text: '' },
       { value: officeValue, text: this.languageObjectHandler(officeLabel) },
@@ -50,14 +52,17 @@ export function categoryManager() {
 }
 
 export function districtManager() {
-
-
+  const {
+    icon,
+    all: text
+  } = inputs.district
 
   return {
     id: requiredInputs.district.id,
     classNames: { container: 'form-input select' },
     value: this.props.district,
-    label: this.labelProvider(inputs.district.icon, inputs.district.all),
+    label: this.languageObjectHandler(text),
+    children: <i className={icon} />,
     options: [{ value: '', text: '' }].concat(districts),
     onFocus: () => this.props.changeErrors({ district: noError }),
     onSelect: (option) => this.onSelectHandler('district', option.value),
@@ -68,11 +73,17 @@ export function districtManager() {
 }
 
 export function rentCurrencyManager() {
+  const {
+    icon,
+    all: text
+  } = inputs.rentCurrency
+
   return {
     id: requiredInputs.rentCurrency.id,
     classNames: { container: 'form-input select rent' },
     value: this.props.rentCurrency,
-    label: this.labelProvider(inputs.rentCurrency.icon, inputs.rentCurrency.all),
+    label: this.languageObjectHandler(text),
+    children: <i className={icon} />,
     options: [{ value: '', text: '' },
               { value: 0, text: 'zł (PLN)' },
               { value: 1, text: '€ (EUR)' },
@@ -86,12 +97,18 @@ export function rentCurrencyManager() {
 }
 
 export function rentAmountManager() {
+  const {
+    icon,
+    create: text
+  } = inputs.rentHeight
+
   return {
     id: requiredInputs.netRentAmount.id,
     classNames: { container: 'form-input text rent amount' },
     value: this.props.netRentAmount,
     match: /^\d+$/,
-    label: this.labelProvider(inputs.rentHeight.icon, inputs.rentHeight.create),
+    label: this.languageObjectHandler(text),
+    children: <i className={icon} />,
     onFocus: () => this.props.changeErrors({ netRentAmount: noError }),
     onChange: (value) => this.props.changeInputs({ netRentAmount: value }),
     onBlur: () => {
@@ -104,11 +121,17 @@ export function rentAmountManager() {
 }
 
 export function additionalFeesManager() {
+  const {
+    icon,
+    all: text
+  } = inputs.additionalFees
+
   return {
     id: requiredInputs.additionalFees.id,
     classNames: { container: 'form-input select' },
     value: this.props.additionalFees,
-    label: this.labelProvider(inputs.additionalFees.icon, inputs.additionalFees.all),
+    label: this.languageObjectHandler(text),
+    children: <i className={icon} />,
     options: [{ value: '', text: '' },
               { value: true, text: this.languageHandler('Tak', 'Yes') },
               { value: false, text: this.languageHandler('Nie', 'No') }],
@@ -121,14 +144,18 @@ export function additionalFeesManager() {
 }
 
 export function areaManager() {
-  // TODO
+  const {
+    icon,
+    create: text
+  } = inputs.area
 
   return {
     id: requiredInputs.area.id,
     classNames: { container: 'form-input text' },
     value: this.props.area,
     match: /^\d+$/,
-    label: this.labelProvider(inputs.area.icon, inputs.area.create),
+    label: this.languageObjectHandler(text),
+    children: <i className={icon} />,
     onFocus: () => this.props.changeErrors({ area: noError }),
     onChange: (value) => this.props.changeInputs({ area: value }),
     onBlur: () => {
@@ -141,11 +168,17 @@ export function areaManager() {
 }
 
 export function roomsManager() {
+  const {
+    icon,
+    create: text
+  } = inputs.rooms
+
   return {
     id: requiredInputs.rooms.id,
     classNames: { container: 'form-input select' },
     value: this.props.rooms,
-    label: this.labelProvider(inputs.rooms.icon, inputs.rooms.create),
+    label: this.languageObjectHandler(text),
+    children: <i className={icon} />,
     options: numberOptionsProvider(99),
     onFocus: () => this.props.changeErrors({ rooms: noError }),
     onSelect: (option) => this.onSelectHandler('rooms', option.value),
@@ -156,11 +189,17 @@ export function roomsManager() {
 }
 
 export function floorManager() {
+  const {
+    icon,
+    create: text
+  } = inputs.floor
+
   return {
     id: requiredInputs.floor.id,
     classNames: { container: 'form-input select' },
     value: this.props.floor,
-    label: this.labelProvider(inputs.floor.icon, inputs.floor.create),
+    label: this.languageObjectHandler(text),
+    children: <i className={icon} />,
     options: numberOptionsProvider(99),
     onFocus: () => this.props.changeErrors({ floor: noError }),
     onSelect: (option) => this.onSelectHandler('floor', option.value),
@@ -171,11 +210,17 @@ export function floorManager() {
 }
 
 export function totalFloorsManager() {
+  const {
+    icon,
+    create: text
+  } = inputs.totalFloors
+
   return {
     id: requiredInputs.totalFloors.id,
     classNames: { container: 'form-input select' },
     value: this.props.totalFloors,
-    label: this.labelProvider(inputs.totalFloors.icon, inputs.totalFloors.create),
+    label: this.languageObjectHandler(text),
+    children: <i className={icon} />,
     options: numberOptionsProvider(99),
     onFocus: () => this.props.changeErrors({ totalFloors: noError }),
     onSelect: (option) => this.onSelectHandler('totalFloors', option.value),
@@ -186,11 +231,17 @@ export function totalFloorsManager() {
 }
 
 export function availabilityDateSelectManager() {
+  const {
+    icon,
+    all: text
+  } = inputs.availabilityDate
+
   return {
     id: requiredInputs.availabilityDateSelect.id,
     classNames: { container: 'form-input select' },
     value: this.props.availabilityDateSelect,
-    label: this.labelProvider(inputs.availabilityDate.icon, inputs.availabilityDate.all),
+    label: this.languageObjectHandler(text),
+    children: <i className={icon} />,
     options: [{ value: '', text: '' },
               { value: 'now', text: this.languageHandler('Już dostępne', 'Already available') },
               { value: 'date', text: this.languageHandler('Podaj datę', 'Provide date') }],
@@ -232,7 +283,8 @@ export function availableDateManager() {
       { value: '', text: '' }, 
       { value: availabilityDate, text: availabilityDate }
     ],
-    label: labelProvider(icon, text),
+    label: this.languageObjectHandler(text),
+    children: <i className={icon} />,
     disableSelectOptions: true,
     onBlur: () => {
       changeControl({ availabilityDateFocus: false })

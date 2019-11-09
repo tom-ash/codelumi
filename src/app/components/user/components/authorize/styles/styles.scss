@@ -12,8 +12,8 @@
   }
   .form-input {
     @extend %form-input;
-    &.text {
-      height: 40px;
-    }
+    // &.text {
+    //   height: 40px;
+    // }
   }
 }

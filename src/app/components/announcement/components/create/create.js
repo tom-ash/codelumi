@@ -40,7 +40,7 @@ class AnnouncementCreate extends React.Component {
           <h2 className='page-header'>
             <i className='fas fa-plus' /> {this.languageHandler('Dodawanie ogłoszenia', 'Announcement Adding')}
           </h2>
-          {this.monitBuilder()}
+          {/* {this.monitBuilder()} */}
           {this.sectionHeaderProvider('fas fa-info-circle', { polish: 'Dane podstawowe', english: 'Primary Data'})}
           <AnnouncementCreatePrimary />
           {this.sectionHeaderProvider('fas fa-images', { polish: 'Zdjęcia', english: 'Pictures'})}

@@ -1,12 +1,19 @@
+import React from 'react'
 import { inputs } from '../../../../../../../constants/inputs'
 
 export function businessNameManager() {
+  const {
+    icon,
+    label
+  } = inputs.businessName
+
   return {
     id: 'user-create-email-business-name',
     autoComplete: 'off',
     controlled: false,
     classNames: { container: 'input-container text'},
-    label: this.labelProvider(inputs.businessName.icon, inputs.businessName.label),
+    label: this.languageObjectHandler(label),
+    children: <i className={icon} />,
     onFocus: () => this.errorResetter('businessName'),
     onBlur: (value) => this.businessNameManager().validate(value),
     validate: (value) => this.businesstNameValidator(value),
@@ -15,8 +22,14 @@ export function businessNameManager() {
 }
 
 export function areaCodeManager() {
+  const {
+    icon,
+    label
+  } = inputs.phone
+
   return {
     id: 'user-create-email-area-code',
+    children: <i className='fas fa-globe-europe' />,
     classNames: { container: 'input-container select phone-country-code'},
     value: this.props.areaCode,
     options: [ { value: '+48', text: '+48' }, { value: '+1', text: '+1' }, { value: '+44', text: '+44' } ],
@@ -25,6 +38,11 @@ export function areaCodeManager() {
 }
 
 export function phoneNumberManager() {
+  const {
+    icon,
+    label
+  } = inputs.phone
+
   const input = inputs.phone
   return {
     id: 'user-create-email-phone-number',
@@ -32,7 +50,8 @@ export function phoneNumberManager() {
     type: 'tel',
     controlled: false,
     classNames: { container: 'input-container text phone-body'},
-    label: this.labelProvider(input.icon, input.label),
+    label: this.languageObjectHandler(label),
+    children: <i className={icon} />,
     onFocus: () => this.errorResetter('phone'),
     onBlur: (value) => this.phoneNumberManager().validate(value),
     validate: (value) => this.phoneValidator(value),
@@ -41,6 +60,11 @@ export function phoneNumberManager() {
 }
 
 export function emailAddressManager() {
+  const {
+    icon,
+    label
+  } = inputs.email
+
   const input = inputs.email
   return {
     id: 'user-create-email-email-address',
@@ -48,7 +72,8 @@ export function emailAddressManager() {
     type: 'email',
     controlled: false,
     classNames: { container: 'input-container text'},
-    label: this.labelProvider(input.icon, input.label),
+    label: this.languageObjectHandler(label),
+    children: <i className={icon} />,
     onFocus: () => this.errorResetter('email'),
     onBlur: (value) => this.emailAddressManager().validate(value),
     validate: (value) => this.emailValidator(value),
@@ -57,6 +82,11 @@ export function emailAddressManager() {
 }
 
 export function passwordManager() {
+  const {
+    icon,
+    label
+  } = inputs.password
+
   const input = inputs.password
   return {
     id: 'user-create-email-password',
@@ -65,7 +95,8 @@ export function passwordManager() {
     controlled: false,
     autoComplete: 'new-password',
     classNames: { container: 'input-container text'},
-    label: this.labelProvider(input.icon, input.label),
+    label: this.languageObjectHandler(label),
+    children: <i className={icon} />,
     onFocus: () => this.errorResetter('password'),
     onBlur: (value) => this.passwordManager().validate(value),
     validate: (value) => this.passwordValidator(value),
