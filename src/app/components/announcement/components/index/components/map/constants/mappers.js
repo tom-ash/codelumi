@@ -6,6 +6,7 @@ export const mapStateToProps = (store) => {
     connecting: store.announcement.index.control.map.connecting,
     fetch: store.announcement.index.control.map.fetch,
     draw: store.announcement.index.control.map.draw,
+    
     category: store.announcement.index.inputs.map.category,
     district: store.announcement.index.inputs.map.district,
     availabilityDate: store.announcement.index.inputs.map.availabilityDate,
@@ -26,12 +27,6 @@ export const mapStateToProps = (store) => {
     tile: store.announcement.index.data.map.tile,
     loaded: store.announcement.index.control.map.loaded,
     showList: store.announcement.index.control.full.showList,
-    rentActive: store.announcement.index.control.map.rentActive,
-    areaActive: store.announcement.index.control.map.areaActive,
-    roomsActive: store.announcement.index.control.map.roomsActive,
-    floorActive: store.announcement.index.control.map.floorActive,
-    totalFloorsActive: store.announcement.index.control.map.totalFloorsActive,
-    availabilityDateFocus: store.announcement.index.control.map.availabilityDateFocus
   }
 }
     

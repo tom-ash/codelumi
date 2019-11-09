@@ -1,27 +1,49 @@
 import { getMapAnnouncements } from '../../../functions/get-map-announcements'
-import { drawPins, removeOldPins } from './draw-pins'
-import { compareParameters } from '../../../../../../../functions/compare-update-parameters'
-
+import {
+  drawPins,
+  removeOldPins
+} from './draw-pins'
 
 export function componentDidMount() {
-  calendarListenersHandler.call(this)
-  this.googleMapHandler(() => this.props.changeControl({ loaded: true, fetch: true }))
+  const { changeControl } = this.props
+
+  this.googleMapHandler(() => changeControl({
+    loaded: true,
+    fetch: true
+  }))
 }
 
 export function componentDidUpdate(prevProps) {
-  this.googleMapHandler(() => this.props.changeControl({ loaded: true, fetch: true }))
-  if (this.props.fetch && !prevProps.fetch) getMapAnnouncements.call(this)
-  if (this.props.draw && !prevProps.draw) drawPins.call(this)
-  if (this.props.tile && compareParameters(prevProps.tile, this.props.tile, ['id'])) this.fetchTile()
+  const {
+    changeControl,
+    fetch,
+    draw,
+    tile: { id: tileId }
+  } = this.props
+  const {
+    fetch: prevFetch,
+    draw: prevDraw,
+    tile: { id: prevTileId }
+  } = prevProps
+
+  this.googleMapHandler(() => changeControl({
+    loaded: true,
+    fetch: true
+  }))
+  if (fetch && !prevFetch) getMapAnnouncements.call(this)
+  if (draw && !prevDraw) drawPins.call(this)
+  if (tileId && tileId !== prevTileId) this.fetchTile()
 }
 
 export function componentWillUnmount() {
-  removeOldPins.call(this)
-  this.props.resetControl()
-  this.props.resetInputs()
-  this.props.resetData()
-}
+  const {
+    resetControl,
+    resetInputs,
+    resetData
+  } = this.props
 
-function calendarListenersHandler() {
-  const calendar = document.getElementsByClassName('react-calendar')[1]
+  removeOldPins.call(this)
+  resetControl()
+  resetInputs()
+  resetData()
 }

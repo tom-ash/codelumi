@@ -23,58 +23,60 @@ class Header extends React.Component {
   }
 
   render() {
+    const { screenSize } = this.props
+    const isLargePc = screenSize === 'largePc'
+
     return (
       <div id='header'>
         <div className='inner'>
-          <h1 onClick={() => {
-            // this.props.resetAnnouncementIndexData()
-            this.props.resetAnnouncementIndexControl()
-            this.props.resetAnnouncementIndexInputs()
-            this.changeRoute(null, '/')
-          }}>
-            <div>
-              WARSAW
-            </div>
-            <div className='first-letter'>
-              LEASE
-            </div>
-            <div className={`map-marker ${this.props.showList ? 'visible' : 'hidden'}`}>
-              &nbsp;<i className='fas fa-map-marker-alt' />
-            </div>
-            <div className='float-clear' />
-          </h1>
-          <div className='language'>
-            <ManagedButton {...this.languageManager()} />
-          </div>
-          {
-          this.props.screenSize != 'smallPc' && this.props.screenSize != 'largePc' &&
-          <div 
-          className='links-icon-container'
-          onClick={() => this.props.changeControl({ showLinks: !this.props.showLinks })}>
+          <div
+            className='links-icon-container'
+            onClick={() => this.props.changeControl({ showLinks: !this.props.showLinks })}
+          >
             <div className='links-icon'>
               <div className='link-icon' />
               <div className='link-icon' />
               <div className='link-icon' />
             </div>
           </div>
-          }
-          <div className={`links${this.props.showLinks ? '' : ' hidden'}`}>
-            {
-            <ManagedButton {...this.addAnnouncementManager()} />
-            }
-            {
-            !this.props.name &&
-            <ManagedButton {...this.signUpManager()} />
-            }
-            {
-            !this.props.name &&
-            <ManagedButton {...this.signInManager()} />
-            }
-            {
-            this.props.name &&
-            <ManagedButton {...this.myAccountManager()} />
-            }
-            <div className='float-clear' />
+          <h1 onClick={() => {
+            this.props.resetAnnouncementIndexControl()
+            this.props.resetAnnouncementIndexInputs()
+            this.changeRoute(null, '/')
+          }}>
+            <span className='city'>
+              WARSAW
+            </span>
+            <span className='lease'>
+              LEASE
+            </span>
+            <span className={`map-marker ${this.props.showList ? 'visible' : 'hidden'}`}>
+              &nbsp;<i className='fas fa-map-marker-alt' />
+            </span>
+          </h1>
+          <div className='links'>
+            {isLargePc &&
+            <ManagedButton {...this.addAnnouncementManager()} />}
+            {isLargePc &&
+            <ManagedButton {...this.signUpManager()} />}
+            {isLargePc &&
+            <ManagedButton {...this.signInManager()} />}
+            {isLargePc &&
+            <ManagedButton {...this.myAccountManager()} />}
+            <ManagedButton {...this.languageManager()} />
+            {this.props.showLinks &&
+              <div
+                className='side-links-cover'
+                onClick={() => this.props.changeControl({ showLinks: false })}
+              >
+                <div className='side-links'>
+                  <ManagedButton {...this.addAnnouncementManager()} />
+                  <ManagedButton {...this.signUpManager()} />
+                  <ManagedButton {...this.signInManager()} />
+                  <ManagedButton {...this.myAccountManager()} />
+                </div>
+              </div>
+              }
           </div>
         </div>
       </div>

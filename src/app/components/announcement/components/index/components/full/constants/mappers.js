@@ -1,5 +1,5 @@
 export const mapStateToProps = (store) => {
-  const { language, isMobile } = store.app
+  const { language, isMobile, screenSize } = store.app
   const control = store.announcement.index.control.full
   const inputs = store.announcement.index.control.inputs
   const data = store.announcement.index.control.data
@@ -29,9 +29,12 @@ export const mapStateToProps = (store) => {
     floorActive,
     totalFloorsActive,
     showList,
+    screenSize,
     
 
-    screenSize: store.app.screenSize,
+
+
+    
     connecting: store.announcement.index.control.full.connecting,
     read: store.announcement.index.control.full.read,
     fetch: store.announcement.index.control.full.fetch,

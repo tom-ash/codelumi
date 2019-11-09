@@ -70,6 +70,8 @@ class AnnouncementIndexFull extends React.Component {
     this.availabilityDateManager = managers.availabilityDateManager.bind(this)
   }
 
+  isLargePc = () => this.props.screenSize === 'largePc'
+
   render() {
     const { showList, announcements } = this.props
     return (

@@ -1,5 +1,4 @@
 @import '../../tile/styles/tile';
-@import './full-headers';
 @import './panel';
 @import './full-tile';
 @import './full-pagination';
@@ -9,7 +8,7 @@
   z-index: 3;
   position: relative;
   .panel-container {
-    padding-top: 66px;
+    padding-top: 70px;
     position: relative;
     background: #212F3D;
     .panel {

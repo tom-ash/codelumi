@@ -1,16 +1,16 @@
 import React from 'react'
 
 export function buttonLabelHandler() {
+  const { panelAmount } = this.props
+  
   return (
     <span>
       <i className="fas fa-search"></i>
       <span className='amount'>
-      {
-      this.props.panelAmount === null ?
-      '?'
-      :
-      this.props.panelAmount
-      }
+        {panelAmount === null ?
+        '-'
+        :
+        panelAmount}
       </span>
     </span>
   )

@@ -1,8 +1,7 @@
 %links-icon-container {
-  float: right;
   position: relative;
-  height: 64px;
-  width: 36px;
+  width: 64px;
+  height: 56px;
   .links-icon {
     position: absolute;
     top: 0;
@@ -10,14 +9,16 @@
     bottom: 0;
     left: 0;
     margin: auto;
-    border: 2px solid #2E86C1;
-    height: 38px;
-    width: 36px;
+    border: 2px solid #566573;
+    height: 32px;
+    width: 32px;
     border-radius: 4px;
-    padding: 4px;
+    padding: 1px 4px 0;
+    cursor: pointer;
     .link-icon {
       height: 2px;
-      background: #2E86C1;
+      background: #566573;
+      color: #CACFD2;
       margin: 5px 0;
     }
   }

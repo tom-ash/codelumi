@@ -1,23 +1,19 @@
 %site-title {
-        float: left;
-        font-size: 24px;
-        font-variant: small-caps;
-        color: #212F3D;
-        cursor: pointer;
-        &:hover {
-          color: #1B4F72;
-        }
-        div {
-          font-family: Arial;
-          float: left;
-          font-size: 18px;
-          margin-top: 24px;
-          margin-left: 2px;
-        }
-        .first-letter {      
-          border: 2px solid #212F3D;
-          padding: 2px 3px 0px 3px;
-          margin-top: 20px;
-          border-radius: 4px;
-        }
+  position: absolute;
+  top: 0;
+  left: 64px;
+  width: 152px;
+  height: 100%;
+  cursor: pointer;
+  line-height: 56px;
+  text-align: left;
+  font-size: 15px;
+  font-variant: small-caps;
+  color: #4D5656;
+  .lease {
+    border: 2px solid #4D5656;
+    padding: 2px 3px;
+    border-radius: 4px;
+    margin-left: 4px;
+  }
 }

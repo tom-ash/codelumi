@@ -74,9 +74,9 @@ export function rentCurrencyManager() {
     value: this.props.rentCurrency,
     label: this.labelProvider(inputs.rentCurrency.icon, inputs.rentCurrency.all),
     options: [{ value: '', text: '' },
-              { value: 0, text: 'PLN' },
-              { value: 1, text: 'EUR' },
-              { value: 2, text: 'USD' }],
+              { value: 0, text: 'zł (PLN)' },
+              { value: 1, text: '€ (EUR)' },
+              { value: 2, text: '$ (USD)' }],
     onFocus: () => this.props.changeErrors({ rentCurrency: noError }),
     onSelect: (option) => this.onSelectHandler('rentCurrency', option.value),
     onBlur: () => this.rentCurrencyManager().validate(),
@@ -227,7 +227,7 @@ export function availableDateManager() {
   return {
     id,
     classNames: { container: 'form-input select' },
-    value: availabilityDate ? availabilityDate : '',
+    value: availabilityDate || '',
     options: [
       { value: '', text: '' }, 
       { value: availabilityDate, text: availabilityDate }

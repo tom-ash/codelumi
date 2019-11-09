@@ -7,32 +7,17 @@
 
 #announcement-index-map {
   position: absolute;
-  top: 184px;
+  top: 178px;
   right: 0;
   left: 0;
   padding: 0px;
-  border: none;
-
-
-
   @media only screen and (max-width: $breakpoint-phone-large-max) {
-    top: 386px;
+    top: 342px;
     left: 0;
     right: 0;
   }
   #google-map-container {
     @extend %google-map;
-    h3 {
-      padding: 0 0 12px 12px;
-      color: #1B4F72;
-      font-size: 16px;
-      font-weight: normal;
-      .fas.fa-map-marker-alt {
-        width: none;
-        margin-right: 8px;
-      }
-    }
-
     .announcement-index-tile {
       @extend %map-tile;
     }

@@ -3,34 +3,74 @@
 @import './links_icon-container';
 @import './links';
 
+
 #header {
-  z-index: 9;
+  z-index: 2048;
   position: fixed;
   left: 0;
   right: 0;
-  height: 64px;
-  background: #FDFEFE;
+  height: 56px;
+  background: #ECF0F1;
   box-shadow: 0px 6px 8px -9px black;
-  opacity: 0.88;
-  // padding-top: 24px;
-  .inner {
-    max-width: 1376px;
-    height: 64px;
-    margin: 0 auto;
-    padding-left: 24px;
-    padding-right: 24px;
-    // padding-top: 24px;
-    h1 {
-      @extend %site-title;
-    }
-    .links-icon-container {
-      @extend %links-icon-container;
-    }
-    .links {
-      @extend %links;
+  opacity: 0.96;
+  .side-links-cover {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    .side-links {
+      z-index: 9999;
+      position: absolute;
+      top: 72px;
+      left: 16px;
+      background: white;
+      padding: 12px;
+      box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+                  0px 3px 8px 3px rgba(0, 0, 0, 0.14),
+                  0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+      .link {
+        display: block;
+        position: relative;
+        margin-right: 12px;
+        text-align: left;
+        margin-right: 0;
+        .input {
+          border: none;
+          font-size: 15px;
+          color: #4D5656;
+          background: none;
+          margin-left: 32px;
+          .fas, .far {
+            position: absolute;
+            left: 0;
+          }
+        }
+      }
     }
   }
 
+
+
+  .inner {
+    position: relative;
+    max-width: 1920px;
+    width: 100%;
+    height: 56px;
+    margin: 0 auto;
+    text-align: right;
+    h1 {
+      @extend %site-title;
+    }
+    .links {
+      @extend %links;
+
+    }
+  }
+
+  .links-icon-container {
+    @extend %links-icon-container;
+  }
 
 
   .map-marker {
@@ -43,36 +83,19 @@
     }
   }
 
-
-
-
-
-
-
-
-
-  .language {
-    float: right;
-    height: 64px;
-    width: 72px;
-    position: relative;
-    line-height: 64px;
-    text-align: right;
-    .button {
+    .button.language {
+      display: inline-block;
+      width: 96px;
       .input {
-        font-size: 18px;
-        color: $theme-primary-color;
-        background: none;
+        height: 56px;
+        width: 96px;
+        font-size: 15px;
         border: none;
+        color: #661a00;
+        background: none;
         .fas {
-          color: $button-index-background-color;
-          margin-right: 5px;
+          margin-right: 4px;
         }
       }
     }
   }
-}
-
-
-
-

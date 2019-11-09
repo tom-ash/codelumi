@@ -8,6 +8,9 @@
     }
     &.category, &.district {
       margin-right: 12px;
+      @media #{$phone} {
+        margin: 0;
+      }
     }
   }
   .composite-input-container {
@@ -15,12 +18,6 @@
     position: relative;
     &.rooms, &.total-floors {
       margin-right: 12px;
-    }
-    @media #{$phone} {
-      width: auto!important;
-    }
-    @media #{$phone} {
-      width: 100%;
     }
   }
 }

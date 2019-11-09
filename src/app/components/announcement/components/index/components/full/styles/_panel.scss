@@ -2,27 +2,54 @@
 @import './inputs';
 
 %panel {
-  .pane {
-    float: left;
-    width: 540px;
-    margin: 0;
-  }
   z-index: 3;
   position: relative;
   @extend %inputs;
   max-width: 1200px;
-  height: 120px;
+  height: 108px;
   width: 100%;
   margin: 0 auto;
-  padding: 12px 0;
   @media #{$phone} {
     width: 100%;
-    height: 232px;;
+    height: 272px;
   }
-  .gap {
+  .pane {
     float: left;
-    width: 6px;
-    height: 42px;
+    width: 540px;
+    margin: 0;
+    @media #{$phone} {
+      position: relative;
+      float: none;
+      width: 100%;
+      &.primary {
+        .simple-index-input {
+          position: absolute;
+          right: 12px;
+          left: 12px;
+          &.category {
+            top: 0;
+          }
+          &.district {
+            top: 54px;
+          }
+        }
+        .composite-input-container {
+          position: absolute;
+          right: 12px;
+          left: 12px;
+          width: auto;
+          &.area {
+            top: 108px;
+          }
+          &.rent {
+            top: 162px;
+          }
+        }
+      }
+      &.secondary {
+        display: none;
+      }
+    }
   }
   .button {
     position: relative;
@@ -30,6 +57,17 @@
     width: 96px;
     height: 96px;
     margin: 0 12px;
+    @media #{$phone} {
+      position: absolute;
+      float: none;
+      top: 216px;
+      left: 12px;
+      right: 12px;
+      width: auto;
+      margin: 0;
+      height: 42px;
+      line-height: 42px;
+    }
     .input {
       font-weight: normal;
       width: 100%;
@@ -52,7 +90,8 @@
       }
       @media #{$phone} {
         width: 100%;
-        margin-top: 12px;
+        height: 42px;
+        line-height: 42px;
       }
     }
   }

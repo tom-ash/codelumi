@@ -54,6 +54,7 @@ export function availabilityDateManager() {
   const fetchKey = venue == 'indexFull' ? 'fetchAmount' : 'fetch'
 
   return {
+    display: !this.isLargePc() && 'none',
     classNames: {
       container: `composite-input-container availability-date`
     },

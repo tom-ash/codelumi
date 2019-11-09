@@ -5,7 +5,7 @@ export function panelProvider() {
   return (
     <div className='panel-container'>
       <div className='panel'>
-        <div className='pane'>
+        <div className='pane primary'>
           <ManagedSelect {...this.categoryManager()} />
           {this.compositeInputProvider('area')}
           <ManagedSelect {...this.districtManager()}/>
@@ -13,7 +13,7 @@ export function panelProvider() {
           <div className='float-clear' />
         </div>
         <ManagedButton {...this.buttonManager()}/>
-        <div className='pane'>
+        <div className='pane secondary'>
           {this.compositeInputProvider('rooms')}
           {this.compositeInputProvider('floor')}
           {this.compositeInputProvider('totalFloors')}

@@ -1,55 +1,21 @@
 %links {
-  z-index: 9;
-  float: right;
-  min-width: 400px;
-  line-height: 64px;
-  transition: 0.24s ease-out;
-  @media only screen and (max-width: $breakpoint-tablet-large-max) {
-    position: absolute;
-    min-width: 0;
-    float: none;
-    top: 64px;
-    left: 0px;
-    right: 0px;
-    margin: auto;
-    line-height: 42px;
-    background: #2E86C1;
-    height: 126px;
-    &.hidden {
-      visibility: hidden;
-      height: 0;
-      .link {
-        opacity: 0;
-      }
-    }
-  }
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 216px;
+  line-height: 56px;
+  text-align: right;
   .link {
-    float: left;
-    margin-right: 24px;
-    border: none;
-    @media only screen and (max-width: $breakpoint-tablet-large-max) {
-      float: none;
-      display: block;
-      margin-left: 21px;
-      color: white;
-    }
+    display: inline-block;
+    margin-right: 12px;
     .input {
       border: none;
-      font-size: 16px;
-      color: #212F3C;
+      font-size: 15px;
+      color: #4D5656;
       background: none;
-      &.hover {
-        color: #3498DB;
-      }
-      @media only screen and (max-width: $breakpoint-tablet-large-max) {
-        color: white;
-      }
       .fas, .far {
         margin-right: 8px;
-        color: #2E86C1;
-        @media only screen and (max-width: $breakpoint-tablet-large-max) {
-            color: white;
-          }
       }
     }
   }

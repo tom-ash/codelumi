@@ -22,10 +22,10 @@ function setOptions(options) {
   options = options || {}
   return {
     center: {
-      lat: options.latitude || (this.props.isMobile ? 52.24: 52.222),
-      lng: options.longitude || (this.props.isMobile ? 21 : 20.985)
+      lat: options.latitude || (this.props.isMobile ? 52.220: 52.222),
+      lng: options.longitude || (this.props.isMobile ? 21.012 : 20.985)
     },
-    zoom: options.zoom || (this.props.isMobile ? 11.9 : 12.6),
+    zoom: options.zoom || (this.props.isMobile ? 12.2 : 12.6),
     mapTypeControl: false,
     fullscreenControl: false,
     streetViewControl: false,
