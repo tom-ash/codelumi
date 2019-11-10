@@ -45,7 +45,7 @@ export const requiredInputs = {
   rooms: {
     id: 'announcement-create-rooms',
     error: {
-      polish: 'wybierz liczbę pokoi',
+      polish: 'wybierz liczbę pomieszczeń',
       english: 'select rooms amount'
     }
   },

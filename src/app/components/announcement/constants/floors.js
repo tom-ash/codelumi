@@ -1,3 +1,3 @@
-import { numberOptionsProvider } from '../../../functions/shared'
+// import { floorNumberOptionsProvider } from '../../../functions/shared'
 
-export const floors = numberOptionsProvider(99)
+// export const floors = floorNumberOptionsProvider(99)

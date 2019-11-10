@@ -24,7 +24,7 @@ export const errors = {
     english: 'provide area'
   },
   rooms: {
-    polish: 'wybierz liczbę pokoi',
+    polish: 'wybierz liczbę pomieszczeń',
     english: 'select rooms amount'
   },
   floor: {

@@ -4,6 +4,13 @@ import React from 'react'
 export function buildSelectCategories() {
   return [{ value: '', text: '' }].concat(categories.map(category => ({
     value: category.number,
-    text: <span>{category.icon} {this.languageHandler(category.label.polish, category.label.english)}</span>
+    text: <div className='category-option'>
+      <div className={`pin ${category.number === 0 ? 'office' : 'usable-premises'}`}>
+        {category.icon}
+      </div>
+      <div className='text'>
+        {this.languageHandler(category.label.polish, category.label.english)}
+      </div>
+      </div>
   })))
 }

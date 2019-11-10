@@ -7,4 +7,3 @@ export function numberOptionsProvider(number) {
     { value: index + 1, text: `${index + 1}` }))
   )
 }
-

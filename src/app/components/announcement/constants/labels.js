@@ -21,7 +21,7 @@ export const labels = {
   },
   rooms: {
     icon: 'fas fa-door-closed',
-    text: { polish: 'Liczba pokoi', english: 'Rooms Amount' }
+    text: { polish: 'Liczba pomieszczeń', english: 'Rooms Amount' }
   },
   floor: {
     icon: 'fas fa-layer-group',
