@@ -1,4 +1,4 @@
-import { parseCurrency } from '../../../functions/currency-parsers'
+import { parseCurrency } from '../../../../../functions/currency-parsers'
 
 export function subInputValueParser(input) {
   const articleMin = '≥'

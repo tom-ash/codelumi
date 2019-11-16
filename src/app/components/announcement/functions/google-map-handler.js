@@ -1,5 +1,5 @@
 export function googleMapHandler(callback, options) {
-  if (this.props.loaded) return
+  if (this.props.mapLoaded) return
   if (this.props.scripts.googleMaps && window.googleMap) return replaceGoogleMap.call(this, callback, options)
   if (!this.props.scripts.googleMaps || window.googleMap) return
   const div = document.getElementById('google-map')

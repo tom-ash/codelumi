@@ -125,4 +125,8 @@ export const parameters = [
     value: (value) => value,
     stateValue: (value) => value
   },
+  {
+    state: 'offset',
+    api: 'offset',
+  }
 ]

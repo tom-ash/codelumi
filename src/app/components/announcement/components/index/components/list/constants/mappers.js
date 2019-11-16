@@ -1,15 +1,31 @@
 export const mapStateToProps = (store) => {
-  const { control, inputs, data } = store.announcement.index
+  const {
+    language
+  } = store.app
+  const {
+    connecting,
+    fetch,
+    beingDeleted
+  } = store.announcement.index.control
+  const {
+    page,
+    switches,
+    sort
+  } = store.announcement.index.inputs
+  const {
+    amount,
+    announcements
+  } = store.announcement.index.data
+
   return {
-    language: store.app.language,
-    connecting: control.list.connecting,
-    fetch: control.list.fetch,
-    page: control.list.page,
-    switches: inputs.list.switches,
-    sort: inputs.list.sort,
-    amount: data.list.amount,
-    announcements: data.list.announcements,
-    beingDeleted: control.list.beingDeleted
+    connecting,
+    fetch,
+    beingDeleted,
+    page,
+    switches,
+    sort,
+    amount,
+    announcements
   }
 }
     

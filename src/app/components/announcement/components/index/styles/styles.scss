@@ -2,8 +2,50 @@
 
 #announcement-index {
   position: relative;
-  min-height: 762px;
+  min-height: 752px;
   @media #{$phone} {
-    min-height: 870px;
+    min-height: 860px;
+  }
+  .offset-switcher {
+    position: absolute;
+    top: 180px;
+    z-index: 9;
+    right: 0;
+    left: 0;
+    width: 200px;
+    background: rgba(33, 47, 61, 0.8);
+    margin: 0 auto;
+    color: white;
+    border-radius: 2px;
+    line-height: 30px;
+    font-size: 16px;
+    height: 30px;
+    .switch, .text {
+      position: absolute;
+      height: 30px;
+      text-align: center;
+    }
+    .switch {
+      width: 20px;
+      font-size: 18px;
+      cursor: pointer;
+      &.min {
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+      }
+      &.max {
+        left: 180px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+      }
+      &:hover {
+        background: rgba(33, 47, 61, 1);
+        color: #DC7633;
+      }
+    }
+    .text {
+      width: 160px;
+      left: 20px;
+    }
   }
 }

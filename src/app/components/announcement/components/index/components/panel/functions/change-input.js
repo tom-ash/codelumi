@@ -12,11 +12,7 @@ export function changeInput(inputName, kind, value) {
   this.props.changeInputs({
     [`${inputName}Min`]: min,
     [`${inputName}Max`]: max,
+    offset: 0
   })
-  this.props.changeControl({ fetchAmount: true })
-  this.props.changeMapInputs({
-    [`${inputName}Min`]: min,
-    [`${inputName}Max`]: max,
-  })
-  this.props.changeMapControl({ fetch: true })
+  this.props.changeControl({ fetch: true })
 }

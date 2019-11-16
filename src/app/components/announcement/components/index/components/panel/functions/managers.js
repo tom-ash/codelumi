@@ -1,8 +1,7 @@
 import React from 'react'
-import { currencies } from '../../../constants/currencies'
-import { parseDate } from '../../../../../functions/date-parsers'
-
 import Calendar from 'react-calendar';
+import { currencies } from '../../../../../constants/currencies'
+import { parseDate } from '../../../../../../../functions/date-parsers'
 
 export function categoryManager() {
   const { category: value } = this.props
@@ -20,20 +19,16 @@ export function categoryManager() {
       <i
         className='close fas fa-times'
         onClick={() => {
-          this.props.changeInputs({ category: '' })
-          this.props.changeControl({ fetchAmount: true })
-          this.props.changeMapInputs({ category: '' })
-          this.props.changeMapControl({ fetch: true })
+          this.props.changeInputs({ category: '', offset: 0 })
+          this.props.changeControl({ fetch: true })
         }}
       />
       }
     </React.Fragment>,
     options: this.buildSelectCategories(),
     onSelect: (option) => {
-      this.props.changeInputs({ category: option.value })
-      this.props.changeControl({ fetchAmount: true })
-      this.props.changeMapInputs({ category: option.value })
-      this.props.changeMapControl({ fetch: true })
+      this.props.changeInputs({ category: option.value, offset: 0 })
+      this.props.changeControl({ fetch: true })
     },
   }
 }
@@ -52,20 +47,16 @@ export function districtManager() {
       <i
         className='close fas fa-times'
         onClick={() => {
-          this.props.changeInputs({ district: '' })
-          this.props.changeControl({ fetchAmount: true })
-          this.props.changeMapInputs({ district: '' })
-          this.props.changeMapControl({ fetch: true })
+          this.props.changeInputs({ district: '', offset: 0 })
+          this.props.changeControl({ fetch: true })
         }}
       />
       }
     </React.Fragment>,
     options: this.buildSelectDistricts(),
     onSelect: (option) => {
-      this.props.changeInputs({ district: option.value })
-      this.props.changeControl({ fetchAmount: true })
-      this.props.changeMapInputs({ district: option.value })
-      this.props.changeMapControl({ fetch: true })
+      this.props.changeInputs({ district: option.value, offset: 0 })
+      this.props.changeControl({ fetch: true })
     }
   }
 }
@@ -78,10 +69,8 @@ export function rentCurrencyManager() {
     label: this.languageHandler('Waluta', 'Currency'),
     options: currencies,
     onSelect: (option) => {
-      this.props.changeInputs({ rentCurrency: option.value })
-      this.props.changeControl({ fetchAmount: true })
-      this.props.changeMapInputs({ rentCurrency: option.value })
-      this.props.changeMapControl({ fetch: true })
+      this.props.changeInputs({ rentCurrency: option.value, offset: 0 })
+      this.props.changeControl({ fetch: true })
     }
   }
 }
@@ -98,7 +87,6 @@ export function availabilityDateManager() {
   const fetchKey = venue == 'indexFull' ? 'fetchAmount' : 'fetch'
 
   return {
-    display: !this.isLargePc() && 'none',
     classNames: {
       container: `composite-input-container availability-date`
     },
@@ -108,7 +96,7 @@ export function availabilityDateManager() {
       <Calendar
         locale={language == 'polish' ? 'pl' : 'en'}
         onChange = {(date) => {
-          changeInputs({ availabilityDate: parseDate(date) })
+          changeInputs({ availabilityDate: parseDate(date), offset: 0 })
           changeControl({ [fetchKey]: true })
         }}
       />
@@ -119,19 +107,30 @@ export function availabilityDateManager() {
     <i
       className='close fas fa-times'
       onClick={() => {
-        this.props.changeInputs({ availabilityDate: '' })
-        this.props.changeControl({ fetchAmount: true })
-        this.props.changeMapInputs({ availabilityDate: '' })
-        this.props.changeMapControl({ fetch: true })
+        this.props.changeInputs({ availabilityDate: '', offset: 0 })
+        this.props.changeControl({ fetch: true })
       }}
     />
     }
   </React.Fragment>,
     value: value ? value : '',
-    options: [
-      { value: '', text: '' }, 
-      { value, text: value }
-    ],
+    options: [ { value: '', text: '' }, { value, text: value } ],
     label: this.labelProvider('availabilityDate')
   }
 }
+
+export function buttonManager(action) {
+  const { changeControl } = this.props
+  return {
+    id: 'announcement-index-full-search-button',
+    classNames: { container: 'simple-index-input button' },
+    label: <div>
+      <i className='fas fa-map-marker-alt' /> <i className='fas fa-th-list' />
+    </div>,
+    onClick: () => {
+      changeControl({ type: this.props.type === 'map' ? 'full' : 'map' })
+    }
+  }
+}
+
+

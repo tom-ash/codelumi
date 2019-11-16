@@ -1,7 +1,7 @@
-import { params } from '../../../../../constants/params'
-import { reverseParseCategory } from '../../../../../functions/category-parsers'
-import { reverseParseDistrict } from '../../../../../functions/district-parsers'
-import { reverseParseCurrency } from '../../../../../functions/currency-parsers'
+import { params } from '../../../constants/params'
+import { reverseParseCategory } from '../../../functions/category-parsers'
+import { reverseParseDistrict } from '../../../functions/district-parsers'
+import { reverseParseCurrency } from '../../../functions/currency-parsers'
 
 export function paramsReader() {
   const { changeControl, changeInputs } = this.props
@@ -33,11 +33,5 @@ export function paramsReader() {
     })
   })
   changeInputs(stateParams)
-  const anyUrlParams = !!Object.keys(stateParams).length
-  changeControl({
-    readParams: false,
-    fetchAmount: !anyUrlParams,
-    fetchList: anyUrlParams,
-    showList: anyUrlParams
-  })
+  changeControl({ readParams: false, fetch: true })
 }

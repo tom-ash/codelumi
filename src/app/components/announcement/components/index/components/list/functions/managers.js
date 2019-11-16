@@ -54,9 +54,6 @@ export function paginationManager() {
     resultAmount: +amount,
     onClick: (button) => {
       if (connecting) return
-
-      console.log(button)
-
       changeControl({
         page: button,
         fetch: true

@@ -1,0 +1,68 @@
+%full-tile {
+  width: 720px;
+  border-radius: 4px;
+  margin: 0 auto 36px!important;
+  color: #515A5A;
+  padding: 0;
+  background: none!important;
+  @media only screen and (max-width: 744px) {
+    width: 456px;
+    padding: 0;
+  }
+  @media only screen and (max-width: $breakpoint-phone-large-max) {
+    width: 100%;
+    padding: 0;
+  }
+  .core {
+    background: none!important;
+    .picture {
+      $width: 536px;
+      width: $width;
+      height: 0;
+      background-size: ($width * 1.17777) auto;
+      padding-bottom: ($width / 1.7777);
+      border-radius: 0;
+      @media only screen and (max-width: 744px) {
+        $width: 100%;
+        width: $width;
+        background-size: ($width * 1.7777) auto;
+        padding-bottom: ($width / 1.7777);
+      }
+      @media only screen and (max-width: $breakpoint-phone-large-max) {
+        $width: 100%;
+        width: $width;
+        background-size: ($width * 1.3333) auto;
+        padding-bottom: ($width / 1.3333);
+        background-position: center;
+      }
+    }
+    .primary-data {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      .announcement-id, .category, .district {
+        margin-right: 6px;
+      }
+      @media only screen and (max-width: $breakpoint-phone-large-max) {
+        position: static;
+      }
+      @media only screen and (max-width: $breakpoint-phone-large-max) {
+        .announcement-id {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+        }
+        .category {
+          position: absolute;
+          left: 6px;
+          bottom: 6px;
+        }
+        .district {
+          position: absolute;
+          bottom: 6px;
+          left: 44px;
+        }
+      }
+    }
+  }
+}

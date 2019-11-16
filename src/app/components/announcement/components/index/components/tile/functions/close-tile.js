@@ -1,3 +1,3 @@
 export function closeTile() {
-  this.props.changeMapData({ tile: {} })
+  this.props.changeData({ tile: {} })
 }

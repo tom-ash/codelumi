@@ -52,9 +52,17 @@ function scriptsReducer(state = {}, action) {
   }
 }
 
+function scrollYReducer(state = 0, action) {
+  switch (action.type) {
+    case 'app/scrollY': return action.value
+    default: return state
+  }
+}
+
 export const appReducer = combineReducers({
   jumbotronPicture: '',
   screenSize: screenSizeReducer,
+  scrollY: scrollYReducer,
   path: pathReducer,
   language: languageReducer,
   connecting: connectingReducer,

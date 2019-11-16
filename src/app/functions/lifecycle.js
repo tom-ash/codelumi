@@ -9,6 +9,15 @@ export function componentDidMount() {
   window.addEventListener('resize', this.screenSizeHandler, false);
   this.authorizeUserWithTokens()
   window.onpopstate = () => this.popStateHandler()
+
+  window.addEventListener('scroll', () => {
+    const scrollY = (window.pageYOffset || document.scrollTop) || 0
+    if (this.props.scrollY + 100 > scrollY || this.props.scrollY - 100 < scrollY) {
+      this.props.changeScrollY(100 * Math.ceil(scrollY / 100))
+    }
+  });
+
+
 }
 
 export function componentWillMount() {

@@ -26,6 +26,7 @@ import { viewAnnouncement } from '../../../../functions/view-announcement'
 class AnnouncementIndexTile extends React.Component {
   constructor(props) {
     super(props)
+    this.container = React.createRef()
     this.languageHandler = languageHandler.bind(this)
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
@@ -60,14 +61,14 @@ class AnnouncementIndexTile extends React.Component {
       active,
       venue,
       isMobile,
-      first
+      first,
+      scrollY
     } = this.props
     const {
       id,
       category,
       district,
       showLoader,
-      show,
       visible,
       area,
       rentCurrency,
@@ -85,10 +86,10 @@ class AnnouncementIndexTile extends React.Component {
     if (showLoader) coreClass += ' loader'
     if (!visible) coreClass += ' invisible'
     if (!announcement.pictures) return null
-    if (!show) return null
 
     return (
       <div
+      ref={this.container}
       className={`announcement-index-tile${this.props.first ? ' first': ''}${this.props.last ? ' last': ''}${this.props.index % 2 === 0 ? ' even' : ''}`}>
         {venue === 'full' &&
         <div className='divider'/>}

@@ -1,8 +1,8 @@
 import React from 'react'
-import { rentOptions } from '../constants/rent-options'
-import { areaOptions } from '../constants/area-options'
-import { rooms } from '../../../constants/rooms'
-import { inputs } from '../../../constants/inputs'
+import { rentOptions } from '../../../constants/rent-options'
+import { areaOptions } from '../../../constants/area-options'
+import { rooms } from '../../../../../constants/rooms'
+import { inputs } from '../../../../../constants/inputs'
 import { ManagedSelect } from 'managed-inputs'
 const options = { rent: rentOptions, area: areaOptions, rooms: rooms }
 
@@ -11,9 +11,7 @@ export function compositeManagerProvider(inputName) {
     const value = this.subInputValueParser(inputName)
 
     return {
-      classNames: {
-        container: `composite-input select ${inputName}`
-      },
+      classNames: { container: `composite-input select ${inputName}` },
       disableSelectOptions: true,
       disableBlurOnValue: true,
       substituteOptionsContainerClass: 'sub-contain',
@@ -37,13 +35,9 @@ export function compositeManagerProvider(inputName) {
             this.props.changeInputs({
               [`${inputName}Min`]: '',
               [`${inputName}Max`]: '',
+              ...inputName === 'rent' && { rentCurrency: '' }
             })
-            this.props.changeControl({ fetchAmount: true })
-            this.props.changeMapInputs({
-              [`${inputName}Min`]: '',
-              [`${inputName}Max`]: '',
-            })
-            this.props.changeMapControl({ fetch: true })
+            this.props.changeControl({ fetch: true })
           }}
         />}
       </React.Fragment>,
@@ -68,7 +62,9 @@ export function subInputMinManagerProvider(inputName) {
         ].concat(Array(99).fill().map((_, index) => ({ value: index + 1, text: `${index + 1}` })))
 
       })(),
-      onSelect: (option) => this.changeInput(inputName, 'min', option.value)
+      onSelect: (option) => {
+        this.changeInput(inputName, 'min', option.value)
+      }
     }
   )
 }

@@ -50,9 +50,6 @@ class Header extends React.Component {
             <span className='lease'>
               LEASE
             </span>
-            <span className={`map-marker ${this.props.showList ? 'visible' : 'hidden'}`}>
-              &nbsp;<i className='fas fa-map-marker-alt' />
-            </span>
           </h1>
           <div className='links'>
             {isLargePc &&

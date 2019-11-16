@@ -1,38 +1,20 @@
-import { getMapAnnouncements } from '../../../functions/get-map-announcements'
 import {
-  drawPins,
   removeOldPins
 } from './draw-pins'
 
 export function componentDidMount() {
   const { changeControl } = this.props
 
-  this.googleMapHandler(() => changeControl({
-    loaded: true,
-    fetch: true
-  }))
+  this.googleMapHandler(() => changeControl({ mapLoaded: true }))
 }
 
 export function componentDidUpdate(prevProps) {
-  const {
-    changeControl,
-    fetch,
-    draw,
-    tile: { id: tileId }
-  } = this.props
-  const {
-    fetch: prevFetch,
-    draw: prevDraw,
-    tile: { id: prevTileId }
-  } = prevProps
+  const { changeControl, drawPins, tile: { id: tileId } } = this.props
+  const { drawPins: prevDrawPins, tile: { id: prevTileId } } = prevProps
 
-  this.googleMapHandler(() => changeControl({
-    loaded: true,
-    fetch: true
-  }))
-  if (fetch && !prevFetch) getMapAnnouncements.call(this)
-  if (draw && !prevDraw) drawPins.call(this)
-  if (tileId && tileId !== prevTileId) this.fetchTile()
+  this.googleMapHandler(() => changeControl({ mapLoaded: true }))
+  if (!prevDrawPins && drawPins) this.drawPins()
+  if (tileId && prevTileId !== tileId) this.fetchTile()
 }
 
 export function componentWillUnmount() {

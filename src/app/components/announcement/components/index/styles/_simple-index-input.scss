@@ -2,10 +2,10 @@
 
 %simple-index-input {
   background: none;
-  height: 42px;
+  height: 40px;
   position: relative;
   float: left;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   width: 264px;
   @media #{$phone} {
     float: none;
@@ -21,10 +21,10 @@
     left: 0;
     width: 32px;
     text-align: center;
-    line-height: 42px;
+    line-height: 40px;
     font-size: 12px;
     padding-top: 1px;
-    background: #D7DBDD;
+    background: #E5E7E9;
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
   }
@@ -44,9 +44,9 @@
   .input {
     cursor: pointer;
     position: relative;
-    height: 42px;
+    height: 40px;
     padding-left: 44px;
-    line-height: 42px;
+    line-height: 40px;
     background: white;
     border-radius: 2px!important;
     font-size: 15px;
@@ -62,7 +62,7 @@
     transition: .12s ease-in;
     position: absolute;
     top: 14px;
-    left: 42px;
+    left: 40px;
     font-size: 15px;
     &.value {
       display: none;

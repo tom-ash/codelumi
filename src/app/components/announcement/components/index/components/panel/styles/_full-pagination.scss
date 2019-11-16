@@ -1,0 +1,22 @@
+%full-pagination {
+  height: 56px;
+  line-height: 56px;
+  background: white;
+  width: auto;
+  margin: 24px auto;
+  padding: 0 12px;
+  border-radius: 4px;
+  .input {
+    background: #3498DB;
+    color: white;
+    border: none;
+    border-radius: 2.5px;
+    height: 32px;
+    width: 24px;
+    margin: 0 5px;
+    font-size: 14px;
+    &.current {
+      background: #1A5276;
+    }
+  }
+}

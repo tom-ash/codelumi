@@ -68,7 +68,7 @@ function addNewPins() {
       }
     )
   )})
-  this.props.changeControl({ draw: false })
+  this.props.changeControl({ drawPins: false })
   this.props.changeData({ pins: pins })
 }
 

@@ -3,7 +3,11 @@ import { apiUrl } from '../../../../../../../constants/urls'
 export function fetchPicture() {
   const { changeAnnouncement } = this.props
   const announcement = { ...this.props.announcement }
-  announcement.show = true
+  if (!window.announcementId) window.announcementId = 1
+  window.announcementId = window.announcementId + 1
+  if (announcement.fetchingPicture) return
+
+  announcement.fetchingPicture = true
   changeAnnouncement(announcement)
   if (!announcement || !announcement.pictures) return
   const pictureIndex = announcement.pictureIndex

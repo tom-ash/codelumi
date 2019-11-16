@@ -8,7 +8,7 @@
       width: auto;
     }
     &.category, &.district {
-      margin-right: 12px;
+      margin-right: 10px;
       @media #{$phone} {
         margin: 0;
       }
@@ -18,7 +18,7 @@
     @extend %simple-index-input;
     position: relative;
     &.rooms, &.total-floors {
-      margin-right: 12px;
+      margin-right: 10px;
     }
   }
 }

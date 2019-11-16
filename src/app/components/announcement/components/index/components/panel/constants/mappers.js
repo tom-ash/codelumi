@@ -1,7 +1,14 @@
 export const mapStateToProps = (store) => {
+  const { language, isMobile, screenSize } = store.app
+  const control = store.announcement.index.control
+  const inputs = store.announcement.index.inputs
+
   const {
-    fetch
-  } = store.announcement.index.control
+    readParams,
+    fetch,
+    type
+  } = control
+
   const {
     category,
     district,
@@ -18,17 +25,15 @@ export const mapStateToProps = (store) => {
     floorMin,
     floorMax,
     availabilityDate,
-    offset
-  } = store.announcement.index.inputs
-
-  const {
-    amount
-  } = store.announcement.index.data
+  } = inputs
 
   return {
-    language: store.app.language,
-    path: store.app.path,
+    language,
+    isMobile,
+    screenSize,
+    readParams,
     fetch,
+    type,
     category,
     district,
     areaMin,
@@ -43,18 +48,13 @@ export const mapStateToProps = (store) => {
     totalFloorsMax,
     floorMin,
     floorMax,
-    availabilityDate,
-    offset,
-    amount
+    availabilityDate
   }
 }
     
 export const mapDispatchToProps = (dispatch) => {
   return {
     changeControl: (value) => dispatch({ type: 'announcement/index/control', value: value }),
-    changeInputs: (value) => dispatch({ type: 'announcement/index/inputs', value: value }),
-    changeData: (value) => dispatch({ type: 'announcement/index/data', value: value }),
-    changeAnnouncements: (value) => dispatch({ type: 'announcement/index/data/announcements', value: value }),
+    changeInputs: (value) => dispatch({ type: 'announcement/index/inputs', value: value })
   }
 }
-    

@@ -1,4 +1,4 @@
-import { getAnnouncementAmount } from "../../index/functions/get-announcement-amount";
+// import { getAnnouncementAmount } from "../../index/functions/get-announcement-amount";
 
 export function componentDidMount() {
   if (announcementEditing()) {

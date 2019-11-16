@@ -1,5 +1,4 @@
 @import '../../tile/styles/tile';
-@import './panel';
 @import './full-tile';
 @import './full-pagination';
 @import '../../../../../../../styles/colors';
@@ -7,21 +6,6 @@
 #announcement-index-full {
   z-index: 3;
   position: relative;
-  .panel-container {
-    padding-top: 70px;
-    position: relative;
-    background: #212F3D;
-    .panel {
-      @extend %panel;
-      margin: 0 auto;
-    }
-    @media only screen and (max-width: 744px) {
-      width: 456px;
-    }
-    @media #{$phone} {
-      width: 100%;
-    }
-  }
   .announcements {
     padding: 24px 12px 12px;
     min-height: 640px;
