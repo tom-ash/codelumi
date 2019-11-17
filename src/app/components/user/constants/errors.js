@@ -3,7 +3,7 @@ export const errors = {
     polish: 'nazwa nie może być pusta',
     english: 'business name can\'t be blank'
   },
-  taxIdentification: {
+  taxNumber: {
     polish: 'numer identyfikacji podatkowej powinien składać się z 10 cyfr',
     english: 'tax identification number should consist of 10 numbers'
   },

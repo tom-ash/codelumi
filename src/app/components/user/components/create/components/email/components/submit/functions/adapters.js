@@ -1,4 +1,3 @@
-import { getDerivedSaltForPassword } from '../../../../../../../functions/shared.js'
 import { hashPassword } from '../../../../../../../functions/shared.js'
 import { apiUrl } from '../../../../../../../../../constants/urls.js'
 import { parser as consentsParser } from '../../../../consents/functions/parser'
@@ -7,20 +6,16 @@ export function prepareUserAccount() {
   const userObject = prepareUserObject.call(this)
   if (validateUserObject.call(this, userObject)) {
     this.props.changeControl({ connecting: true })
-    getDerivedSaltForPassword(userObject.email)
-    .then(salt => {
-      userObject.password = hashPassword(userObject.password, salt)
-      consentsParser.call(this, userObject)
-      createProspectiveUser.call(this, userObject)
-    })
-    .catch((e) => console.dir(e))
+    userObject.password = hashPassword(userObject.password, userObject.email)
+    consentsParser.call(this, userObject)
+    createProspectiveUser.call(this, userObject)
   }
 }
 
 function prepareUserObject() {
   let userObject = {
     businessName: document.getElementById('user-create-email-business-name').value,
-    countryCode: document.getElementById('user-create-email-area-code').value,
+    phoneCode: document.getElementById('user-create-email-area-code').value,
     phone: document.getElementById('user-create-email-phone-number').value,
     email: document.getElementById('user-create-email-email-address').value,
     password: document.getElementById('user-create-email-password').value,

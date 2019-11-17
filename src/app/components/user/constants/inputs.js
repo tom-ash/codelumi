@@ -3,7 +3,7 @@ export const inputs = {
     icon: 'fas fa-ellipsis-h',
     label: { polish: 'Nazwa (firma) Ogłoszeniodawcy', english: 'Announcer Business Name' }
   },
-  taxIdentificationNumber: {
+  taxNumberNumber: {
     icon: 'fas fa-ellipsis-h',
     label: { polish: 'Numer identifikacji podatkowej', english: 'Tax Identification Number' }
   },

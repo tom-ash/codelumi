@@ -1,4 +1,3 @@
-import { getDerivedSaltForPassword } from '../../../../../functions/shared.js'
 import { hashPassword } from '../../../../../functions/shared.js'
 import { apiUrl } from '../../../../../../../constants/urls.js'
 import { saveTokens } from '../../../../../functions/token-handlers'
@@ -7,36 +6,34 @@ export function logIn() {
   const email = document.getElementById('user-logon-email-address').value
   let password = document.getElementById('user-logon-password').value
   this.props.changeControl({ connecting: true })
-  getDerivedSaltForPassword(email)
-  .then(salt => {
-    password = hashPassword(password, salt)
-    this.props.changeControl({ connecting: true })
-    fetch(apiUrl + '/authorize_with_email', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json', 'emailAddress': email, 'password': password }
+  password = hashPassword(password, email)
+  this.props.changeControl({ connecting: true })
+
+  fetch(apiUrl + '/authorize_with_email', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'emailAddress': email,
+      'password': password
+    }
+  })
+  .then(response => {
+    if (response.status == 200) return response.json()
+    throw new Error('InvalidCredentials')
+  })
+  .then(json => {
+    this.props.changeData({ authorized: true, name: json.name, phoneVerified: json.phoneVerified })
+    saveTokens.call(this, json.accessToken)
+    this.changeRoute(null, 'myAccount')
+  })
+  .catch(() => {
+    this.props.changeErrors({
+      emailOrPassword: {
+        polish: 'nieprawidłowy adres email lub hasło', english: 'invalid email address and/or password'
+      }
     })
-    .then(response => {
-      if (response.status == 200) return response.json()
-      throw new Error('InvalidCredentials')
-    })
-    .then(json => {
-      this.props.changeData({
-        authorized: true,
-        name: json.name,
-        phoneVerified: json.phoneVerified
-      })
-      saveTokens.call(this, json.uT)
-      this.changeRoute(null, 'myAccount')
-    })
-    .catch(() => {
-      this.props.changeErrors({
-        emailOrPassword: {
-          polish: 'nieprawidłowy adres email lub hasło', english: 'invalid email address and/or password'
-        }
-      })
-    })
-    .finally(() => {
-      this.props.changeControl({ connecting: false })
-    })
+  })
+  .finally(() => {
+    this.props.changeControl({ connecting: false })
   })
 }

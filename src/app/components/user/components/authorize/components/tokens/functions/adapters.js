@@ -1,15 +1,15 @@
 import { apiUrl } from '../../../../../../../constants/urls.js'
-import { getUserToken } from './get-tokens'
+import { getAccessToken } from './get-tokens'
 import { deleteCookie } from '../../../../../../../functions/cookie-handlers'
 
 export function authorizeUserWithTokens() {
-  const uT = getUserToken()
-  if (!uT) return
+  const access_token = getAccessToken()
+  if (!access_token) return
 
   fetch(apiUrl + '/authorize_with_token', {
     headers: {
       'Content-Type': 'application/json',
-      uT
+      'Access-Token': access_token
     }
   })
   .then(response => {
@@ -23,7 +23,5 @@ export function authorizeUserWithTokens() {
       phoneVerified: json.phoneVerified
     })
   })
-  .catch(e => {
-    deleteCookie('uT')
-  })
+  .catch(() => deleteCookie('access_token'))
 }

@@ -2,14 +2,14 @@ export const mapStateToProps = (store) => {
   return {
     language: store.app.language,
     businessNameStage: store.user.edit.control.businessNameStage,
-    taxIdentificationStage: store.user.edit.control.taxIdentificationStage,
+    taxNumberStage: store.user.edit.control.taxNumberStage,
     phoneStage: store.user.edit.control.phoneStage,
     emailStage: store.user.edit.control.emailStage,
     passwordStage: store.user.edit.control.passwordStage,
     destroyStage: store.user.destroy.control.stage,
     businessNameCurrentValue: store.user.edit.data.businessName,
-    taxIdentificationCurrentValue: store.user.edit.data.taxIdentification,
-    phoneCountryCodeCurrentValue: store.user.edit.data.phoneCountryCode,
+    taxNumberCurrentValue: store.user.edit.data.taxNumber,
+    phonephoneCodeCurrentValue: store.user.edit.data.phoneCode,
     phoneBodyCurrentValue: store.user.edit.data.phoneBody,
     emailCurrentValue: store.user.edit.data.email
   }

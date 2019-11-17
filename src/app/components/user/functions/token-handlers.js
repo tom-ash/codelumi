@@ -1,6 +1,6 @@
 import { saveCookie } from '../../../functions/cookie-handlers'
 
-export function saveTokens(uT) {
+export function saveTokens(access_token) {
   const expiration = this.props.rememberMe ? 'ninetyDays' : null
-  saveCookie('uT', uT, expiration)
+  saveCookie('access_token', access_token, expiration)
 }

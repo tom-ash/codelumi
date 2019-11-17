@@ -4,7 +4,7 @@ export function businessNameVerifier(value) {
   return value.length > 0
 }
 
-export function taxIdentificationVerifier(value) {
+export function taxNumberVerifier(value) {
   return value.length === 10
 }
 

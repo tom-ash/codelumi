@@ -6,17 +6,17 @@ export function getDerivedStateFromProps(props, state) {
       stage: props.businessNameStage
     }
   }
-  if (props.item === 'taxIdentification') {
+  if (props.item === 'taxNumber') {
     return {
-      item: 'taxIdentification',
-      currentValue: props.taxIdentificationCurrentValue,
-      stage: props.taxIdentificationStage
+      item: 'taxNumber',
+      currentValue: props.taxNumberCurrentValue,
+      stage: props.taxNumberStage
     }
   }
   if (props.item === 'phone') {
     return {
       item: 'phone',
-      countryCode: props.phoneCountryCodeCurrentValue,
+      phoneCode: props.phonephoneCodeCurrentValue,
       body: props.phoneBodyCurrentValue,
       stage: props.phoneStage
     }

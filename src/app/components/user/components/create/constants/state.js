@@ -18,7 +18,7 @@ export const data = {
 
 export const errors = {
   businessName: noError,
-  taxIdentification: noError,
+  taxNumber: noError,
   phone: noError,
   email: noError,
   password: noError,

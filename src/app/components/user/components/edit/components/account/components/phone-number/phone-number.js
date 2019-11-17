@@ -10,7 +10,7 @@ import * as managers from './functions/managers'
 class UserEditAccountPhoneNumber extends React.Component {
   constructor(props) {
     super(props)
-    this.countryCodeManager = managers.countryCodeManager.bind(this)
+    this.phoneCodeManager = managers.phoneCodeManager.bind(this)
     this.bodyManager = managers.bodyManager.bind(this)
     this.buttonManager = managers.buttonManager.bind(this)
   }
@@ -21,7 +21,7 @@ class UserEditAccountPhoneNumber extends React.Component {
         <div className='monit'>
           {monit.polish}
         </div>
-        <ManagedSelect {...this.countryCodeManager()}/>
+        <ManagedSelect {...this.phoneCodeManager()}/>
         <ManagedText {...this.bodyManager()} />
         <ManagedButton {...this.buttonManager()} />
       </div>

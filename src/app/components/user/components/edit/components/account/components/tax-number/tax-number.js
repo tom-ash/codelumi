@@ -6,7 +6,7 @@ import { ManagedText } from 'managed-inputs'
 import { ManagedButton } from 'managed-inputs'
 import * as managers from './functions/managers'
 
-class UserEditAccountTaxIdentificationNumber extends React.Component {
+class UserEditAccountTaxNumber extends React.Component {
   constructor(props) {
     super(props)
     this.textManager = managers.textManager.bind(this)
@@ -15,7 +15,7 @@ class UserEditAccountTaxIdentificationNumber extends React.Component {
 
   render() {
     return (
-      <div id='user-edit-account-tax-identification-number'>
+      <div id='user-edit-account-tax-number'>
         <div className='monit'>
           {monit.polish}
         </div>
@@ -26,4 +26,4 @@ class UserEditAccountTaxIdentificationNumber extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserEditAccountTaxIdentificationNumber)
+export default connect(mapStateToProps, mapDispatchToProps)(UserEditAccountTaxNumber)

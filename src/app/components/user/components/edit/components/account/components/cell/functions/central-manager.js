@@ -1,6 +1,6 @@
 import React from 'react'
 import UserEditAccountBusinessName from '../../business-name/business-name'
-import UserEditAccountTaxIdentificationNumber from '../../tax-identification-number/tax-identification-number'
+import UserEditAccountTaxNumber from '../../tax-number/tax-number'
 import UserEditAccountPhoneNumber from '../../phone-number/phone-number'
 import UserEditAccountEmail from '../../email-address/email-address'
 import UserEditAccountPassword from '../../password/password'
@@ -26,7 +26,7 @@ export function centralManager(element) {
 function titleProvider() {
   switch (this.state.item) {
     case 'businessName': return 'BUSINESS NAME'
-    case 'taxIdentification': return 'TAX IDENTIFICATION NUMBER'
+    case 'taxNumber': return 'TAX IDENTIFICATION NUMBER'
     case 'phone': return 'PHONE NUMBER'
     case 'email': return 'EMAIL ADDRESS'
     case 'password': return 'PASSWORD'
@@ -38,7 +38,7 @@ function titleProvider() {
 function iconProvider() {
   switch (this.state.item) {
     case 'businessName': return <i className="fas fa-user-edit"></i>
-    case 'taxIdentification': return <i className="fas fa-file-alt"></i>
+    case 'taxNumber': return <i className="fas fa-file-alt"></i>
     case 'phone': return <i className="fas fa-mobile"></i>
     case 'email': return <i className="fas fa-envelope"></i>
     case 'password': return <i className="fas fa-key"></i>
@@ -48,7 +48,7 @@ function iconProvider() {
 }
 
 function currentValueProvider() {
-  if (this.state.item === 'phone') return this.state.countryCode + ' ' + this.state.body
+  if (this.state.item === 'phone') return this.state.phoneCode + ' ' + this.state.body
   if (this.state.item === 'password') return <i className="far fa-eye-slash"></i>
   return this.state.currentValue
 }
@@ -135,8 +135,8 @@ function editInputProvider() {
     case 'businessName':
       component = <UserEditAccountBusinessName />
       break
-    case 'taxIdentification':
-      component =  <UserEditAccountTaxIdentificationNumber />  
+    case 'taxNumber':
+      component =  <UserEditAccountTaxNumber />  
       break
     case 'phone':
       component =  <UserEditAccountPhoneNumber />

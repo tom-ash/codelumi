@@ -1,5 +1,5 @@
 import { handleLanguageVersions } from '../../../../../../../../../functions/shared.js'
-import { changeTaxIdentification } from './adapters'
+import { changetaxNumber } from './adapters'
 const noError = { polish: '', english: '' }
 
 export function textManager() {
@@ -11,11 +11,11 @@ export function textManager() {
       polish: 'numer identyfikacji podatkowej (NIP)',
       english: 'tax identification number'
     }),
-    onChange: () => this.props.changeErrors({ taxIdentification: noError }),
+    onChange: () => this.props.changeErrors({ taxNumber: noError }),
     onBlur: (value) => this.textManager().validate(value),
     validate: (value) => {
       if (value.length < 10) {
-        this.props.changeErrors({ taxIdentification: {
+        this.props.changeErrors({ taxNumber: {
           polish: 'nieprawidłowy numer identyfikacji podatkowej',
           english: 'invalid tax identification number' }
         })
@@ -35,9 +35,9 @@ export function buttonManager() {
     classNames: { container: 'form-input button' },
     label: handleLanguageVersions(this.props.language, { polish: 'Zmień', english: 'Change' }),
     onClick: () => {
-      const taxIdentification = document.getElementById('user-edit-account-tax-identification-text').value
-      if (!this.textManager().validate(taxIdentification)) return
-      changeTaxIdentification.call(this, taxIdentification)
+      const taxNumber = document.getElementById('user-edit-account-tax-identification-text').value
+      if (!this.textManager().validate(taxNumber)) return
+      changetaxNumber.call(this, taxNumber)
     },
     error: ''
   }

@@ -3,7 +3,7 @@ export const mapStateToProps = (store) => {
     language: store.app.language,
     areaCode: store.user.create.inputs.areaCode,
     businessNameError: store.user.create.errors.businessName,
-    taxIdentificationError: store.user.create.errors.taxIdentification,
+    taxNumberError: store.user.create.errors.taxNumber,
     phoneError: store.user.create.errors.phone,
     emailError: store.user.create.errors.email,
     passwordError: store.user.create.errors.password

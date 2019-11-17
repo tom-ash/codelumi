@@ -5,12 +5,12 @@ const noError = { polish: '', english: '' }
 const control = {
   connecting: false,
   businessNameConnecting: false,
-  taxIdentificationConnecting: false,
+  taxNumberConnecting: false,
   phoneConnecting: false,
   emailConnecting: false,
   passwordConnecting: false,
   businessNameStage: null,
-  taxIdentificationStage: null,
+  taxNumberStage: null,
   phoneStage: null,
   phoneVerificationStarted: false,
   phoneVerificationSent: false,
@@ -21,13 +21,13 @@ const control = {
 }
 
 const inputs = {
-  phoneCountryCode: null
+  phoneCode: null
 }
 
 const errors = {
   phoneVerification: noError,
   businessName: noError,
-  taxIdentification: noError,
+  taxNumber: noError,
   phone: noError,
   currentEmailVerification: noError,
   newEmail: noError,
@@ -38,7 +38,7 @@ const errors = {
 
 const data = {
   businessName: null,
-  taxIdentification: null,
+  taxNumber: null,
   phoneBody: null,
   email: null
 }

@@ -3,13 +3,13 @@ import { changePhone } from './adapters'
 
 const noError = { polish: '', english: '' }
 
-export function countryCodeManager() {
+export function phoneCodeManager() {
   return {
     controlled: false,
     classNames: { container: 'form-input select country-code' },
-    value: this.props.countryCode,
+    value: this.props.phoneCode,
     options: [{ value: '+48', text: '+48' }, { value: '+1', text: '+1' }, { value: '+44', text: '+44' }],
-    onSelect: (option) => this.props.changeInputs({ phoneCountryCode: option.value })
+    onSelect: (option) => this.props.changeInputs({ phoneCode: option.value })
   }
 }
 
@@ -43,10 +43,10 @@ export function buttonManager() {
     classNames: { container: 'form-input button' },
     label: 'Zmień',
     onClick: () => {
-      const countryCode = this.props.countryCode
+      const phoneCode = this.props.phoneCode
       const body = document.getElementById('user-edit-account-phone-number-body').value
       if (!this.bodyManager().validate(body)) return
-      changePhone.call(this, countryCode, body)
+      changePhone.call(this, phoneCode, body)
     }
   }
 }

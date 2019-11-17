@@ -3,7 +3,7 @@ export const mapStateToProps = (store) => {
     language: store.app.language,
     connecting: store.user.edit.control.phoneConnecting,
     stage: store.user.edit.control.phoneStage,
-    countryCode: store.user.edit.inputs.phoneCountryCode,
+    phoneCode: store.user.edit.inputs.phoneCode,
     body: store.user.edit.data.phoneBody,
     error: store.user.edit.errors.phone
   }

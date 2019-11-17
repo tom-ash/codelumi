@@ -1,10 +1,10 @@
 export const mapStateToProps = (store) => {
   return {
     language: store.app.language,
-    connecting: store.user.edit.taxIdentificationConnecting,
-    stage: store.user.edit.control.taxIdentificationStage,
-    currentValue: store.user.edit.data.taxIdentification,
-    error: store.user.edit.errors.taxIdentification
+    connecting: store.user.edit.taxNumberConnecting,
+    stage: store.user.edit.control.taxNumberStage,
+    currentValue: store.user.edit.data.taxNumber,
+    error: store.user.edit.errors.taxNumber
   }
 }
     

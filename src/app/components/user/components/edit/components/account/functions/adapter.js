@@ -1,12 +1,12 @@
 import { apiUrl } from '../../../../../../../constants/urls.js'
-import { getUserToken } from '../../../../authorize/components/tokens/functions/get-tokens'
+import { getAccessToken } from '../../../../authorize/components/tokens/functions/get-tokens'
 
 export function getAccountData() {
-  const uT = getUserToken()
+  const access_token = getAccessToken()
   fetch(apiUrl + '/user/edit/account_data', {
     headers: {
       'Content-Type': 'application/json',
-      uT
+      access_token
     }
   })
   .then(res => {
@@ -15,10 +15,10 @@ export function getAccountData() {
   })
   .then(json => {
     this.props.changeData({
-      businessName: json.businessName, taxIdentification: json.taxIdentification,
-      phoneCountryCode: json.phoneCountryCode, phoneBody: json.phoneBody, email:  json.email
+      businessName: json.businessName, taxNumber: json.taxNumber,
+      phoneCode: json.phoneCode, phoneBody: json.phoneBody, email:  json.email
     })
-    this.props.changeInputs({ phoneCountryCode: json.phoneCountryCode })
+    this.props.changeInputs({ phoneCode: json.phoneCode })
   })
   .catch((error) => { console.dir(error) })
 }

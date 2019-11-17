@@ -1,17 +1,17 @@
 import { apiUrl } from '../../../../../constants/urls'
 import { features } from '../../../constants/features'
 import { furnishings } from '../../../constants/furnishings'
-import { getUserToken } from '../../../../user/components/authorize/components/tokens/functions/get-tokens'
+import { getAccessToken } from '../../../../user/components/authorize/components/tokens/functions/get-tokens'
 
 export function getAnnouncement() {
   const path = window.location.pathname
   let announcementId = path.match(/\d+/)
   if (!announcementId) return
-  const uT = getUserToken()
+  const access_token = getAccessToken()
   fetch(`${apiUrl}/announcements/${announcementId[0]}/edit`, {
     headers: {
       'Content-Type': 'application/json',
-      uT
+      access_token
     }
   })
   .then(response => {

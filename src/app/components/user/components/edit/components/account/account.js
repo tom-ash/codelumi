@@ -21,7 +21,7 @@ class UserEditAccount extends React.Component {
           <i className='fas fa-cog' /> {this.languageHandler('Ustawienia', 'Settings')}
         </h2>
         <UserEditAccountCell item='businessName' />
-        <UserEditAccountCell item='taxIdentification' />
+        <UserEditAccountCell item='taxNumber' />
         <UserEditAccountCell item='phone'/>
         <UserEditAccountCell item='email'/>
         <UserEditAccountCell item='password'/>

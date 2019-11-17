@@ -1,7 +1,7 @@
 import { apiUrl } from '../../../../../../../constants/urls'
 import { handleAvailabilityDate } from './handle-availability-date'
 import { createClientServerParams } from '../../../../../constants/client-server-params'
-import { getUserToken } from '../../../../../../user/components/authorize/components/tokens/functions/get-tokens'
+import { getAccessToken } from '../../../../../../user/components/authorize/components/tokens/functions/get-tokens'
 
 export function saveAnnouncement() {
   let destination = '/announcements'
@@ -12,12 +12,12 @@ export function saveAnnouncement() {
     destination = `/announcements/${this.props.id}`
     method = 'PUT'
   }
-  const uT = getUserToken()
+  const access_token = getAccessToken()
   fetch(apiUrl + destination, {
     method: method,
     headers: {
       'Content-Type': 'application/json',
-      uT
+      access_token
     },
     body: JSON.stringify(buildAnouncementParams.apply(this))
   })

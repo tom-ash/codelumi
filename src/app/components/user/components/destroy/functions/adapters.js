@@ -1,16 +1,16 @@
 import { apiUrl } from '../../../../../constants/urls.js'
-import { getUserToken } from '../../authorize/components/tokens/functions/get-tokens'
+import { getAccessToken } from '../../authorize/components/tokens/functions/get-tokens'
 
 export function sendEmail() {
   const { email } = this.props
   if (this.props.connecting) return
   this.props.changeControl({ connecting: true })
-  const uT = getUserToken()
+  const access_token = getAccessToken()
   fetch(apiUrl + '/user/destroy/email', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      uT
+      access_token
     },
     body: JSON.stringify({ email })
   })
@@ -27,11 +27,11 @@ export function destroy() {
   const verificationCode = document.getElementById('user-destroy-verification').value
   if (!this.verificationManager('validate', verificationCode)) return
   this.props.changeControl({ connecting: true })
-  const uT = getUserToken()
+  const access_token = getAccessToken()
   fetch(apiUrl + '/user/destroy', {
     method: 'DELETE', headers: {
       'Content-Type': 'application/json',
-      uT
+      access_token
     },
     body: JSON.stringify({ verificationCode })
   })

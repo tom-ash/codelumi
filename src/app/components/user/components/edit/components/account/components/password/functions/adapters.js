@@ -1,5 +1,4 @@
 import { apiUrl } from '../../../../../../../../../constants/urls.js'
-import { getDerivedSaltForPassword } from '../../../../../../../functions/shared.js'
 import { hashPassword } from '../../../../../../../functions/shared.js'
 import { noError } from '../constants/no-error'
 import { changeRoute } from '../../../../../../../../../functions/routers'
@@ -58,29 +57,27 @@ export function sendPassword() {
   this.props.changeControl({ passwordConnecting: false })
   const email = document.getElementById('user-edit-password-email').value
   const verificationCode = document.getElementById('user-edit-password-verification').value
-  getDerivedSaltForPassword(email)
-  .then(salt => {
-    const hashedPassword = hashPassword(password, salt)
-    fetch(apiUrl + '/user/edit/password', {
-      method: 'PUT', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, verification_code: verificationCode, password: hashedPassword })
-    })
-    .then(response => {
-      if (response.status == 200) {
-        this.props.changeControl({ passwordStep: 'success' })
-        this.props.changeErrors({ password: noError })
-        setTimeout(() => { this.props.changeControl({ passwordStage: 'success' }) }, 1000)
-        if (this.props.path === '/resethasla' || this.props.path === '/resetpassword') {
-          setTimeout(() => {
-            this.props.changeControl({ passwordStage: null })
-            changeRoute.call(this, null, '/signin')
-          }, 2000)
-        }
-        return
-      }
-      throw new Error('ServerError')
-    })
-    .catch((e) => console.dir(e))
-    .finally(() => this.props.changeControl({ passwordConnecting: false }))
+  const hashedPassword = hashPassword(password, email)
+
+  fetch(apiUrl + '/user/edit/password', {
+    method: 'PUT', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, verification_code: verificationCode, password: hashedPassword })
   })
+  .then(response => {
+    if (response.status == 200) {
+      this.props.changeControl({ passwordStep: 'success' })
+      this.props.changeErrors({ password: noError })
+      setTimeout(() => { this.props.changeControl({ passwordStage: 'success' }) }, 1000)
+      if (this.props.path === '/resethasla' || this.props.path === '/resetpassword') {
+        setTimeout(() => {
+          this.props.changeControl({ passwordStage: null })
+          changeRoute.call(this, null, '/signin')
+        }, 2000)
+      }
+      return
+    }
+    throw new Error('ServerError')
+  })
+  .catch((e) => console.dir(e))
+  .finally(() => this.props.changeControl({ passwordConnecting: false }))
 }
