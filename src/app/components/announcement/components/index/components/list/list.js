@@ -3,9 +3,8 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
-import { getAnnouncements } from './functions/get-announcements'
 import * as managers from './functions/managers'
-import { ManagedMultipleCheckbox, ManagedSelect, ManagedPagination, ManagedButton } from 'managed-inputs'
+import { ManagedPagination, ManagedButton } from 'managed-inputs'
 import AnnouncementIndexTile from '../tile/tile'
 import { controlProvider } from './functions/control-provider'
 import { activeProvider } from './functions/active-provider'
@@ -26,7 +25,7 @@ class AnnouncementIndexList extends React.Component {
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
-    this.getAnnouncements = getAnnouncements.bind(this)
+
     this.controlProvider = controlProvider.bind(this)
     this.activeProvider = activeProvider.bind(this)
     this.buttonProvider = buttonProvider.bind(this)
@@ -34,10 +33,10 @@ class AnnouncementIndexList extends React.Component {
     this.triggerVisible = triggerVisible.bind(this)
     this.destroy = destroy.bind(this)
     this.changeRoute = changeRoute.bind(this)
-    this.switchesManager = managers.switchesManager.bind(this)
+
     this.pageHeaderProvider = pageHeaderProvider.bind(this)
     this.sectionHeaderProvider = sectionHeaderProvider.bind(this)
-    this.sortManager = managers.sortManager.bind(this)
+    
     this.paginationManager = managers.paginationManager.bind(this)
     this.destroyManager = managers.destroyManager.bind(this)
     this.cancelDestroyManager = managers.cancelDestroyManager.bind(this)
@@ -45,6 +44,7 @@ class AnnouncementIndexList extends React.Component {
   }
 
   render() {
+
     return (
       <div id='announcement-index-list'>
         {
@@ -63,15 +63,8 @@ class AnnouncementIndexList extends React.Component {
           </div>
         </div>
         }
-        {this.pageHeaderProvider('fas fa-list-ol', { polish: 'Dodane ogłoszenia', english: 'Added Announcements' })}
-        <div className='panel'>
-          <div className='switches'>
-            <ManagedMultipleCheckbox {...this.switchesManager()} />
-          </div>
-          <ManagedSelect {...this.sortManager()} />
-        </div>
         <div className='announcements-amount'>
-          {this.languageHandler('Znaleziono:', 'Found:')} {this.props.amount}
+          {this.props.amount} {this.languageHandler('Ogłoszenia', 'Announcements')} 
         </div>
         <div className='pagination-container'>
           <ManagedPagination {...this.paginationManager()} />
@@ -94,7 +87,7 @@ class AnnouncementIndexList extends React.Component {
           }
           <div className='float-clear' />
         </div>
-        <div className='pagination-container'>
+        <div className='pagination-container bottom'>
           <ManagedPagination {...this.paginationManager()} />
         </div>
       </div>

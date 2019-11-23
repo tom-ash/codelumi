@@ -1,7 +1,7 @@
 import React from 'react'
 import Calendar from 'react-calendar';
-import { currencies } from '../../../../../constants/currencies'
-import { parseDate } from '../../../../../../../functions/date-parsers'
+import { currencies } from '../../../../../../../constants/currencies'
+import { parseDate } from '../../../../../../../../../functions/date-parsers'
 
 export function categoryManager() {
   const { category: value } = this.props
@@ -132,5 +132,3 @@ export function buttonManager(action) {
     }
   }
 }
-
-

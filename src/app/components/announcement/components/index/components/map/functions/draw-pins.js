@@ -7,7 +7,6 @@ export function drawPins() {
 }
 
 function setUpPinCreator() {
-  if (window.pinCreator) return
   const map = window.googleMap
   const pinCreator = window.pinCreator = function(location, options, onClick) {
     this.latlng = new google.maps.LatLng(location.latitude, location.longitude)
@@ -53,7 +52,6 @@ export function removeOldPins() {
 }
 
 function addNewPins() {
-  if (!this.props.announcements) return
   let pins = []
   this.props.announcements.map(announcement => {
     pins.push(new window.pinCreator(
@@ -68,7 +66,6 @@ function addNewPins() {
       }
     )
   )})
-  this.props.changeControl({ drawPins: false })
   this.props.changeData({ pins: pins })
 }
 

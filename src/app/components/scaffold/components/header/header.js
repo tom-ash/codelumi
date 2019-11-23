@@ -23,7 +23,8 @@ class Header extends React.Component {
   }
 
   render() {
-    const { screenSize } = this.props
+    const { screenSize, resetAnnouncementIndexControl, resetAnnouncementIndexInputs, resetAnnouncementIndexData,
+      changeAnnouncementIndexControl } = this.props
     const isLargePc = screenSize === 'largePc'
 
     return (
@@ -40,8 +41,10 @@ class Header extends React.Component {
             </div>
           </div>
           <h1 onClick={() => {
-            this.props.resetAnnouncementIndexControl()
-            this.props.resetAnnouncementIndexInputs()
+            resetAnnouncementIndexControl()
+            resetAnnouncementIndexInputs()
+            resetAnnouncementIndexData()
+            changeAnnouncementIndexControl({ fetch: true })
             this.changeRoute(null, '/')
           }}>
             <span className='city'>

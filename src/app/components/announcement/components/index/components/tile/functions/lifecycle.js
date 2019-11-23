@@ -8,10 +8,21 @@ export function componentDidMount() {
 export function componentDidUpdate(prevProps) {
   const { announcements, index, venue, scrollY } = this.props
   const { announcements: precedingAnnouncements } = prevProps
-  if (prevProps.announcement.pictureIndex != this.props.announcement.pictureIndex) {
-    this.fetchPicture()
+
+  
+
+  if (prevProps.announcement.pictureIndex !== this.props.announcement.pictureIndex) {
+    return this.fetchPicture()
   }
   if (index === 0 || venue === 'map') return
+
+  const announcement = announcements[index]
+
+  // console.log()
+
+  if (announcement.pictures[announcement.pictureIndex].fetched) return
+
+
 
   const precedingAnnouncement = announcements[index - 1]
   const prevPrecedingAnnouncement = precedingAnnouncements[index - 1]
@@ -24,5 +35,6 @@ export function componentDidUpdate(prevProps) {
   const offset   = elemRect.top - bodyRect.top;
 
   if (scrollY + 1000 < offset) return
+
   if (!announcements[index].pictures[0].url) this.fetchPicture()
 }

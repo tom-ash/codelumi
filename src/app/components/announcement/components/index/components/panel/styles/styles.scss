@@ -1,31 +1,31 @@
-@import './panel';
-@import '../../../../../../../styles/colors';
-@import '../../../../../../../styles/media-breakpoints';
-
 #announcement-index-panel {
   z-index: 3;
   position: relative;
-  .panel-container {
+
     padding-top: 68px;
     position: relative;
     background: #212F3D;
-    .panel {
-      @extend %panel;
-      margin: 0 auto;
-    }
-    @media only screen and (max-width: 744px) {
-      width: 456px;
-    }
-    @media #{$phone} {
-      width: 100%;
-    }
-  }
+    height: 168px;
 
-  .connecting {
-    .pagination {
-      .input, .arrow {
-        background: lightgray;
-      }
-    }
-  }
+
+
+    // .panel {
+    //   @extend %panel;
+    //   margin: 0 auto;
+    // }
+    // @media only screen and (max-width: 744px) {
+    //   width: 456px;
+    // }
+    // @media #{$phone} {
+    //   width: 100%;
+    // }
+
+
+  // .connecting {
+  //   .pagination {
+  //     .input, .arrow {
+  //       background: lightgray;
+  //     }
+  //   }
+  // }
 }

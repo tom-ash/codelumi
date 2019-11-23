@@ -7,7 +7,7 @@ export function componentDidMount() {
 
 export function componentDidUpdate(prevProps) {
   this.googleMapHandler(() => this.props.changeControl({ mapLoaded: true }))
-  if (this.props.loaded && !prevProps.loaded) addGoogleMapListeners.call(this)
+  if (this.props.mapLoaded && !prevProps.mapLoaded) addGoogleMapListeners.call(this)
   if (this.props.latitude != prevProps.latitude && this.props.longitude != prevProps.longitude) {
     placeMarker.call(this)
   }

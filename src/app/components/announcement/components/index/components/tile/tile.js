@@ -87,6 +87,8 @@ class AnnouncementIndexTile extends React.Component {
     if (!visible) coreClass += ' invisible'
     if (!announcement.pictures) return null
 
+    // console.log(announcement)
+
     return (
       <div
       ref={this.container}

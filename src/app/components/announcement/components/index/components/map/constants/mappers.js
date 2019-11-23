@@ -7,7 +7,6 @@ export const mapStateToProps = (store) => {
   const {
     connecting,
     mapLoaded,
-    drawPins,
     type
   } = store.announcement.index.control
   const {
@@ -23,7 +22,6 @@ export const mapStateToProps = (store) => {
     connecting,
     type,
     mapLoaded,
-    drawPins,
     announcements,
     pins,
     tile
@@ -39,6 +37,6 @@ export const mapDispatchToProps = (dispatch) => {
     resetControl: (value) => dispatch({ type: 'announcement/index/control/reset', value: value }),
     resetInputs: (value) => dispatch({ type: 'announcement/index/inputs/reset', value: value }),
     resetData: (value) => dispatch({ type: 'announcement/index/data/reset', value: value }),
-    changeAnnouncement: (value) => dispatch({ type: 'announcement/index/data/map/announcement', value: value }),
+    changeAnnouncement: (value) => dispatch({ type: 'announcement/index/data/announcement', value: value }),
   }
 }

@@ -49,7 +49,6 @@
       right: 0;
       min-width: 280px;
       .form-input {
-        @extend %form-input;
         &.button {
           float: right;
           height: 42px;

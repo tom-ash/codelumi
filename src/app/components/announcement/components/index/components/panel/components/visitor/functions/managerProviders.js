@@ -1,8 +1,8 @@
 import React from 'react'
-import { rentOptions } from '../../../constants/rent-options'
-import { areaOptions } from '../../../constants/area-options'
-import { rooms } from '../../../../../constants/rooms'
-import { inputs } from '../../../../../constants/inputs'
+import { rentOptions } from '../../../../../constants/rent-options'
+import { areaOptions } from '../../../../../constants/area-options'
+import { rooms } from '../../../../../../../constants/rooms'
+import { inputs } from '../../../../../../../constants/inputs'
 import { ManagedSelect } from 'managed-inputs'
 const options = { rent: rentOptions, area: areaOptions, rooms: rooms }
 

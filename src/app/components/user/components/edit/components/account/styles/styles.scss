@@ -7,7 +7,6 @@
     @extend %page-header;
   }
   .form-input {
-    @extend %form-input;
     &.button {
       width: 50%!important;
       height: 36px;

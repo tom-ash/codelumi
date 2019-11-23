@@ -59,6 +59,13 @@ function scrollYReducer(state = 0, action) {
   }
 }
 
+function showUserReducer(state = false, action) {
+  switch (action.type) {
+    case 'app/show/user': return action.value
+    default: return state
+  }
+}
+
 export const appReducer = combineReducers({
   jumbotronPicture: '',
   screenSize: screenSizeReducer,
@@ -67,5 +74,6 @@ export const appReducer = combineReducers({
   language: languageReducer,
   connecting: connectingReducer,
   scripts: scriptsReducer,
-  isMobile: isMobileReducer
+  isMobile: isMobileReducer,
+  showUser: showUserReducer
 })

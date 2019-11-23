@@ -42,14 +42,14 @@ export function changeRoute(e, route, parameter) {
           englishPath: `/announcement_editing/${parameter}`
         })
         break;
-      case 'searchResults':
-        routeSetter({
-          polishPlace: 'Wyniki wyszukiwania',
-          englishPlace: 'Search Results',
-          polishPath: `/wyniki_wyszukiwania${parameter}`,
-          englishPath: `/search_results${parameter}`
-        })
-        break;
+      // case 'searchResults':
+      //   routeSetter({
+      //     polishPlace: 'Wyniki wyszukiwania',
+      //     englishPlace: 'Search Results',
+      //     polishPath: `/wyniki_wyszukiwania${parameter}`,
+      //     englishPath: `/search_results${parameter}`
+      //   })
+      //   break;
       case 'addAnnouncement':
         routeSetter({
           polishPlace: 'Dodaj ogłoszenie',
@@ -58,22 +58,22 @@ export function changeRoute(e, route, parameter) {
           englishPath:'/add_announcement'
         })
         break;
-      case 'signUp':
-        routeSetter({
-          polishPlace: 'Zarejestru',
-          englishPlace: 'Sign up',
-          polishPath: '/zarejestruj',
-          englishPath:'/signup'
-        })
-        break;
-      case 'signIn':
-        routeSetter({
-          polishPlace: 'Zaloguj',
-          englishPlace: 'Sign in',
-          polishPath: '/zaloguj',
-          englishPath:'/signin'
-        })
-        break;
+      // case 'signUp':
+      //   routeSetter({
+      //     polishPlace: 'Zarejestru',
+      //     englishPlace: 'Sign up',
+      //     polishPath: '/zarejestruj',
+      //     englishPath:'/signup'
+      //   })
+      //   break;
+      // case 'signIn':
+      //   routeSetter({
+      //     polishPlace: 'Zaloguj',
+      //     englishPlace: 'Sign in',
+      //     polishPath: '/zaloguj',
+      //     englishPath:'/signin'
+      //   })
+      //   break;
       case 'myAccount':
         routeSetter({
           polishPlace: 'Konto',
@@ -90,28 +90,28 @@ export function changeRoute(e, route, parameter) {
           englishPath:'/myaccount/myannouncements'
         })
         break;
-      case 'phoneVerify':
-        routeSetter({
-          polishPlace: 'Weryfikacja numeru telefonu',
-          englishPlace: 'Phone Number Verification',
-          polishPath: '/weryfikacja_numeru_telefonu',
-          englishPath: '/phone_number_verification'
-        })
-        break;
-      case 'myAccountCard':
-        routeSetter({
-          polishPlace: 'Edycja wizytówki',
-          englishPlace: 'Card Editing',
-          polishPath: '/mojekonto/wizytowka',
-          englishPath:'/myaccount/card'
-        })
-        break;
-      case 'resetpassword':
-        newPlace = languageHandler('Reset hasła', 'Reset password')
-        newPath = languageHandler('/resethasla', '/resetpassword')
-        this.props.changePath(newPath)
-        history.pushState({currentPlace: newPlace}, {}, newPath)
-        break;
+      // case 'phoneVerify':
+      //   routeSetter({
+      //     polishPlace: 'Weryfikacja numeru telefonu',
+      //     englishPlace: 'Phone Number Verification',
+      //     polishPath: '/weryfikacja_numeru_telefonu',
+      //     englishPath: '/phone_number_verification'
+      //   })
+      //   break;
+      // case 'myAccountCard':
+      //   routeSetter({
+      //     polishPlace: 'Edycja wizytówki',
+      //     englishPlace: 'Card Editing',
+      //     polishPath: '/mojekonto/wizytowka',
+      //     englishPath:'/myaccount/card'
+      //   })
+      //   break;
+      // case 'resetpassword':
+      //   newPlace = languageHandler('Reset hasła', 'Reset password')
+      //   newPath = languageHandler('/resethasla', '/resetpassword')
+      //   this.props.changePath(newPath)
+      //   history.pushState({currentPlace: newPlace}, {}, newPath)
+      //   break;
       case 'myAccountSettings':
         routeSetter({
           polishPlace: 'Moje Konto / Ustawienia',
@@ -273,7 +273,7 @@ function checkRouteHelper(path, routes) {
 
 
 export function popStateRoute() {
-  if (window.location.pathname == '/') {
+  if (window.location.pathname === '/') {
     this.changeRoute(null, '/')
   }
   if (/^\d+$/.test(window.location.pathname.slice(1))) {

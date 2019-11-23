@@ -10,7 +10,7 @@ import { fetchAnnouncements } from './functions/fetch-announcements'
 import { checkRoute } from '../../../../functions/routers'
 import { paramsReader } from './functions/params-reader'
 import * as lifecycle from './functions/lifecycle'
-import { paramsBuilder } from './components/panel/functions/params-builder'
+import { paramsBuilder } from './functions/params-builder'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import { parseCurrency } from '../../functions/currency-parsers'
 import { parseCategoryForUrl } from '../../functions/category-parsers'
@@ -35,6 +35,10 @@ class AnnouncementIndexSearch extends React.Component {
     this.parseDistrictForUrl = parseDistrictForUrl.bind(this)
   }
 
+  visitorIndex = () => this.props.path.indexOf('account') === -1 && this.props.path.indexOf('konto') === -1
+
+  userIndex = () => this.props.path.indexOf('account') !== -1 || this.props.path.indexOf('konto') !== -1
+
   render() {
     const {
       changeInputs,
@@ -46,24 +50,23 @@ class AnnouncementIndexSearch extends React.Component {
     return (
       <div id='announcement-index'>
         <AnnouncementIndexPanel />
-        <OffsetSwitcher
-          changeInputs={changeInputs}
-          changeControl={changeControl}
-          offset={offset}
-          amount={amount}
-          languageHandler={this.languageHandler}
-        />
         {
         this.checkRoute('announcementIndexFull') &&
-        <AnnouncementIndexFull />
+        <React.Fragment>
+          <OffsetSwitcher
+            changeInputs={changeInputs}
+            changeControl={changeControl}
+            offset={offset}
+            amount={amount}
+            languageHandler={this.languageHandler}
+          />
+          <AnnouncementIndexFull />
+          <AnnouncementIndexMap />
+        </React.Fragment>
         }
         {
         this.checkRoute('announcementIndexList') &&
         <AnnouncementIndexList />
-        }
-        {
-        this.checkRoute('mainPage') &&
-        <AnnouncementIndexMap />
         }
       </div>
     )

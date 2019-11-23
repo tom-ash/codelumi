@@ -11,11 +11,14 @@ export const mapDispatchToProps = (dispatch) => {
   return {
     changePath: (value) => dispatch({ type: 'app/path', value: value }),
     changeLanguage: (value) => dispatch({ type: 'APP_LANGUAGE', value: value }),
-    changeIndexControl: (value) => dispatch({ type: 'announcement/index/control/full', value: value }),
-    resetAnnouncementIndexControl: () => dispatch({ type: 'announcement/index/control/full/reset' }),
-    resetAnnouncementIndexInputs: () => dispatch({ type: 'announcement/index/inputs/full/reset' }),
-    resetAnnouncementIndexData: () => dispatch({ type: 'announcement/index/data/full/reset' }),
-    changeControl: (value) => dispatch({ type: 'scaffold/header/control', value: value })
+    resetAnnouncementIndexControl: (value) => dispatch({ type: 'announcement/index/control/reset', value: value }),
+    resetAnnouncementIndexInputs: (value) => dispatch({ type: 'announcement/index/inputs/reset', value: value }),
+    resetAnnouncementIndexData: (value) => dispatch({ type: 'announcement/index/data/reset', value: value }),
+    changeAnnouncementIndexControl: (value) => dispatch({ type: 'announcement/index/control', value: value }),
+    changeControl: (value) => dispatch({ type: 'scaffold/header/control', value: value }),
+
+    changeShowUser: (value) => dispatch({ type: 'app/show/user', value: value }),
+    changeUserCreateControl: (value) => dispatch({ type: 'user/create/control', value: value }),
   }
 }
   

@@ -4,7 +4,7 @@ export const mapStateToProps = (store) => {
     scripts: store.app.scripts,
     latitude: store.announcement.create.inputs.mapLatitude,
     longitude: store.announcement.create.inputs.mapLongitude,
-    loaded: store.announcement.create.control.mapLoaded,
+    mapLoaded: store.announcement.create.control.mapLoaded,
     error: store.announcement.create.errors.map
   }
 }

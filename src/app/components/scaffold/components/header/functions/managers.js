@@ -26,14 +26,15 @@ export function signUpManager() {
 }
 
 export function signInManager() {
-  const { name } = this.props
+  const { changeShowUser, changeUserCreateControl, name } = this.props
 
   return {
     display: name && 'none',
     classNames: { container: 'link' },
     label: this.labelProvider('fas fa-sign-in-alt', { polish: 'Zaloguj', english: 'Sign In'}),
     onClick: () => {
-        this.changeRoute(null, 'signIn')
+        changeUserCreateControl({ showCreate: true })
+        changeShowUser(true)
         this.props.changeControl({ showLinks: false })
     }
   }

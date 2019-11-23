@@ -1,4 +1,4 @@
-import { params } from '../../../../../constants/params'
+import { params } from '../../../constants/params'
 
 export function paramsBuilder() {
   let urlParams = '?'

@@ -11,7 +11,7 @@ export function businessNameManager() {
     id: 'user-create-email-business-name',
     autoComplete: 'off',
     controlled: false,
-    classNames: { container: 'input-container text'},
+    classNames: { container: 'form-input text'},
     label: this.languageObjectHandler(label),
     children: <i className={icon} />,
     onFocus: () => this.errorResetter('businessName'),
@@ -28,9 +28,10 @@ export function areaCodeManager() {
   } = inputs.phone
 
   return {
+    onFocusCoverZIndex: 3001,
     id: 'user-create-email-area-code',
     children: <i className='fas fa-globe-europe' />,
-    classNames: { container: 'input-container select phone-country-code'},
+    classNames: { container: 'form-input select phone-country-code'},
     value: this.props.areaCode,
     options: [ { value: '+48', text: '+48' }, { value: '+1', text: '+1' }, { value: '+44', text: '+44' } ],
     onSelect: (option) => this.props.changeInputs({ areaCode: option.value })
@@ -49,7 +50,7 @@ export function phoneNumberManager() {
     autoComplete: 'off',
     type: 'tel',
     controlled: false,
-    classNames: { container: 'input-container text phone-body'},
+    classNames: { container: 'form-input text phone-body'},
     label: this.languageObjectHandler(label),
     children: <i className={icon} />,
     onFocus: () => this.errorResetter('phone'),
@@ -71,7 +72,7 @@ export function emailAddressManager() {
     autoComplete: 'off',
     type: 'email',
     controlled: false,
-    classNames: { container: 'input-container text'},
+    classNames: { container: 'form-input text'},
     label: this.languageObjectHandler(label),
     children: <i className={icon} />,
     onFocus: () => this.errorResetter('email'),
@@ -94,7 +95,7 @@ export function passwordManager() {
     type: 'password',
     controlled: false,
     autoComplete: 'new-password',
-    classNames: { container: 'input-container text'},
+    classNames: { container: 'form-input text'},
     label: this.languageObjectHandler(label),
     children: <i className={icon} />,
     onFocus: () => this.errorResetter('password'),

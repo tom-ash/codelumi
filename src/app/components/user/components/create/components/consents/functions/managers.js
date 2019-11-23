@@ -3,7 +3,7 @@ import { consents } from '../constants/consents.js'
 export function termsOfServiceManager() {
   return {
     id: 'user-create-consents-terms',
-    classNames: { container: 'input-container checkbox' },
+    classNames: { container: 'form-input checkbox' },
     checked: this.props.terms,
     label: this.languageObjectHandler(consents.terms),
     onClick: (value) => {
@@ -17,7 +17,7 @@ export function termsOfServiceManager() {
 export function privacyPolicyManager() {
   return {
     id: 'user-create-consents-privacy',
-    classNames: { container: 'input-container checkbox' },
+    classNames: { container: 'form-input checkbox' },
     checked: this.props.privacy,
     label: this.languageObjectHandler(consents.privacy),
     onClick: (value) => {

@@ -1,5 +1,5 @@
 export const control = {
-  loaded: false,
+  mapLoaded: false,
   showFixedPhone: false
 }
 

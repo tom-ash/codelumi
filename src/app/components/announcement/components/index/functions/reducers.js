@@ -26,7 +26,7 @@ const dataReducer = (state = data, action) => {
   switch (action.type) {
     case 'announcement/index/data': return { ...state, ...action.value }
     case 'announcement/index/data/announcements':  return changeAnnouncements(state, action.value)
-    case 'announcement/index/data/map/announcement':  return changeAnnouncement(state, action.value)
+    case 'announcement/index/data/announcement':  return changeAnnouncement(state, action.value)
     case 'announcement/index/data/reset': return { ...data }
     default: return { ...state }
   }

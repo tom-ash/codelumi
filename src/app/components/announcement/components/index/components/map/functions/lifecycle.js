@@ -1,6 +1,4 @@
-import {
-  removeOldPins
-} from './draw-pins'
+import { removeOldPins } from './draw-pins'
 
 export function componentDidMount() {
   const { changeControl } = this.props
@@ -9,11 +7,17 @@ export function componentDidMount() {
 }
 
 export function componentDidUpdate(prevProps) {
-  const { changeControl, drawPins, tile: { id: tileId } } = this.props
-  const { drawPins: prevDrawPins, tile: { id: prevTileId } } = prevProps
+  const {
+    changeControl, mapLoaded, tile: { id: tileId }, announcements
+  } = this.props
+  const {
+    mapLoaded: prevMapLoaded, tile: { id: prevTileId }, announcements: prevAnnouncements
+  } = prevProps
 
   this.googleMapHandler(() => changeControl({ mapLoaded: true }))
-  if (!prevDrawPins && drawPins) this.drawPins()
+
+  if (announcements && !prevMapLoaded && mapLoaded ||
+      !prevAnnouncements && announcements && mapLoaded) this.drawPins()
   if (tileId && prevTileId !== tileId) this.fetchTile()
 }
 

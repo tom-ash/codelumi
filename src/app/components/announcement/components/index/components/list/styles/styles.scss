@@ -1,6 +1,5 @@
 @import '../../../../../../../styles/themes.scss';
 @import '../../tile/styles/tile';
-@import './panel';
 @import './list-tile';
 @import '../../../../../../../styles/inputs/form/form';
 @import './list-pagination';
@@ -8,43 +7,36 @@
 #announcement-index-list {
   position: relative;
   width: 640px;
-  margin: 128px auto;
+  margin: 0 auto;
+  // padding-top: 48px;
   @media only screen and (max-width: $breakpoint-phone-large-max) {
     width: 100%;
   }
-  .page-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: #17202A;
-    color: #1B4F72;
-    top: -24px;
-    color: #1B4F72;
-    font-size: 16px;
-    font-weight: normal;
-    .fa-list-ol {
-      width: 26px;
-    }
-  }
+
   text-align: center;
-  .panel {
-    @extend %panel;
-  }
   .list-pagination {
     @extend %list-pagination;
   }
   .announcements-amount {
     margin-top: 24px;
-    background: #D7DBDD;
+    background: #212F3D;
+    color: white;
     display: inline-block;
     padding: 8px;
     border-radius: 2.5px;
-    color: #34495E;
+    position: absolute;
+    left: 0;
+    // width
   }
   .pagination-container {
+    // position: absolute;
     min-height: 36px;
+    margin-left: 160px;
+    padding: 0;
+    // background: #212F3D;
   }
   .announcements {
+    margin-top: 64px;
     min-height: 480px;
     text-align: left;
     .announcement-index-tile {
@@ -93,54 +85,7 @@
   }
 
   .form-input {
-    @extend %form-input;
-    &.checkbox {
-      margin-bottom: 12px;
-      float: left;
-      width: 189px;
-      @media only screen and (max-width: $breakpoint-phone-large-max) {
-        width: 100%!important;
-        .label {
-          width: auto!important;
-        }
-      }
-    }
-    &.select {
-      position: absolute!important;
-      top: 12px;
-      left: 426px;
-      width: 201px;
-      height: 70px!important;
-      @media only screen and (max-width: $breakpoint-phone-large-max) {
-        position: relative!important;
-        top: 0!important;
-        left: 0!important;
-        width: 100%!important;
-        margin: 0!important;
-      }
-      .label {
-        position: absolute;
-        top: 6px!important;
-        left: 0!important;
-        font-size: 14px!important;
-        color: #34495E!important;
-      }
-      .input {
-        position: relative;
-        top: 28px;
-        width: 201px!important;
-        height: 42px!important;
-        padding: 1px 0 0 12px!important;
-        line-height: 18px;
-        color: #2C3E50!important;
-        @media only screen and (max-width: $breakpoint-phone-large-max) {
-          width: 100%!important;
-        }
-      }
-      .options {
-        top: 68px!important;
-      }
-    }
+
     &.button {
       display: block!important;
       position: relative;
@@ -152,9 +97,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      
       .input {
-        
         font-size: 14px;
       }
       &.cancel {

@@ -2,10 +2,10 @@ export const mapStateToProps = (store) => {
   return {
     language: store.app.language,
     scripts: store.app.scripts,
-    loaded: store.announcement.show.control.mapLoaded,
+    mapLoaded: store.announcement.show.control.mapLoaded,
     latitude: store.announcement.show.data.mapLatitude,
     longitude: store.announcement.show.data.mapLongitude,
-    loaded: store.announcement.show.control.loaded
+    mapLoaded: store.announcement.show.control.mapLoaded
   }
 }
 

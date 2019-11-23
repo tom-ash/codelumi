@@ -1,0 +1,8 @@
+@import './panel';
+@import '../../../../../../../../../styles/colors';
+@import '../../../../../../../../../styles/media-breakpoints';
+
+#announcement-index-panel-visitor {
+  @extend %panel;
+  margin: 0 auto;
+}

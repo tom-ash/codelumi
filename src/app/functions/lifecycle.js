@@ -5,7 +5,9 @@ export function componentDidMount() {
   if (isMobile()) this.props.changeIsMobile(true)
   loadGoogleMaps.apply(this)
   this.screenSizeHandler()
+
   this.props.changePath(window.location.pathname)
+  
   window.addEventListener('resize', this.screenSizeHandler, false);
   this.authorizeUserWithTokens()
   window.onpopstate = () => this.popStateHandler()

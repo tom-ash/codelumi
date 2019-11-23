@@ -3,12 +3,7 @@ import { apiUrl } from '../../../../../../../constants/urls'
 export function fetchPicture() {
   const { changeAnnouncement } = this.props
   const announcement = { ...this.props.announcement }
-  if (!window.announcementId) window.announcementId = 1
-  window.announcementId = window.announcementId + 1
-  if (announcement.fetchingPicture) return
-
-  announcement.fetchingPicture = true
-  changeAnnouncement(announcement)
+  changeAnnouncement(superDeepCopyAnnouncement.call(this))
   if (!announcement || !announcement.pictures) return
   const pictureIndex = announcement.pictureIndex
   if (announcement.pictures[pictureIndex].url) return
@@ -25,3 +20,13 @@ export function fetchPicture() {
 }
 
 
+function superDeepCopyAnnouncement() {
+  const announcement = { ...this.props.announcement }
+  const pictureIndex = this.props.announcement.pictureIndex
+  const pictures = [ ...announcement.pictures ]
+  const picture = { ...pictures[pictureIndex] }
+  picture.fetched = true
+  pictures[pictureIndex] = picture
+  announcement.pictures = pictures
+  return announcement
+}

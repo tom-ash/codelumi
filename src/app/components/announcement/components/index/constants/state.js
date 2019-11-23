@@ -1,15 +1,12 @@
-import { switches } from '../components/list/constants/switches'
+import { switches } from '../components/panel/components/user/constants/switches'
 
 export const control = {
   connecting: false,
   readParams: true,
   fetch: false,
   type: 'map',
-  page: '1',
   mapLoaded: false,
-  drawPins: false,
-  deletedAnnouncement: null,
-  switches: parseSwitches()
+  deletedAnnouncement: null
 }
 
 export const data = {
@@ -36,8 +33,8 @@ export const inputs = {
   totalFloorsMax: '',
   availabilityDate: '',
   offset: 0,
-  switches: parseSwitches(), sort: 'updatedesc',
-  sort: 'updatedesc'
+  switches: parseSwitches(),
+  sort: 'updatedesc',
 }
 
 function parseSwitches() {

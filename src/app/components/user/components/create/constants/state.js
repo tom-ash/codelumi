@@ -3,7 +3,8 @@ const noError = { polish: '', english: '' }
 export const control = {
   connecting: false,
   verifying: false,
-  success: null
+  success: null,
+  showCreate: false
 }
 
 export const inputs = {

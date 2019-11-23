@@ -28,13 +28,16 @@ class App extends React.Component {
   }
 
   render() {
+    const { showUser } = this.props
+
     return (
       <div id='app-container'>
         <Header />
         <div id='app-inner-container'>
           <Visitor />
           <Announcement />
-          <User />
+          {showUser &&
+          <User />}
         </div>
         <Footer />
       </div>

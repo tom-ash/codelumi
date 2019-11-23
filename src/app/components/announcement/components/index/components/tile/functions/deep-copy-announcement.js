@@ -7,6 +7,5 @@ export function deepCopyAnnouncement(json) {
   pictures[pictureIndex] = picture
   announcement.pictures = pictures
   announcement.showLoader = false
-  announcement.fetchingPicture = false
   return announcement
 }

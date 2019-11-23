@@ -3,7 +3,7 @@ import { saveCookie } from '../../../../cookies/functions/save'
 export function additionalFunctionsManager() {
   return {
     name: 'additional-functions',
-    classNames: { container: 'input-container radio'},
+    classNames: { container: 'form-input radio'},
     checked: this.props.consents.personalDataProcessing.additionalFunctions,
     radios: [
       { value: 'true', label: 'Zgadzam się' },
@@ -22,7 +22,7 @@ export function additionalFunctionsManager() {
 export function statisticsAndMarketingManager() {
   return {
     name: 'statistics-marketing',
-    classNames: { container: 'input-container radio'},
+    classNames: { container: 'form-input radio'},
     checked: this.props.consents.personalDataProcessing.statisticsAndMarketing,
     radios: [
       { value: 'true', label: 'Zgadzam się' },

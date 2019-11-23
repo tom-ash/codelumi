@@ -17,7 +17,10 @@ class UserCreate extends React.Component {
 
   render() {
     return (
-      <div id='user-create-container'>
+      <div
+        id='user-create-container'
+        onClick={e => e.stopPropagation()}
+      >
         <h2 className='page-header'>
           <i className='fas fa-user-plus' /> Rejestracja konta
         </h2>

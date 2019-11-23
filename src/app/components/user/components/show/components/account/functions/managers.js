@@ -14,7 +14,10 @@ export function listAnnouncementsManager(action) {
     id: 'user-show-account-list-announcements',
     styles: { button: 'button' },
     label: this.labelProvider('fas fa-list-ul', 'Dodane ogłoszenia', 'Added announcements'),
-    onClick: () => this.changeRoute(null, 'myAnnouncements')
+    onClick: () => {
+      this.props.changeAnnouncementControl({ type: 'list' })
+      this.changeRoute(null, 'myAnnouncements')
+    }
   }
 }
 

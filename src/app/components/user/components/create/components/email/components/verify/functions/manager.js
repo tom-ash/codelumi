@@ -2,7 +2,7 @@ export function verificationManager() {
   return {
     id: 'user-create-email-verification',
     controlled: false,
-    classNames: { container: 'input-container text' },
+    classNames: { container: 'form-input text' },
     label: this.languageHandler('Kod weryfikacyjny', 'Verification Code'),
     onChange: () => this.props.changeErrors({ verification: { polish: '', english: '' }}),
     onBlur: (value) => this.verificationManager().validate(value),

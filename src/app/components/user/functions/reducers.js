@@ -18,7 +18,6 @@ export const userReducer = combineReducers({
   create: createReducer,
   authorize: authorizeReducer,
   edit: editReducer,
-  destroy: destroyReducer,
-  //show: showReducer
+  destroy: destroyReducer
 })
   

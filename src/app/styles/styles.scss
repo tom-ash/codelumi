@@ -2,6 +2,8 @@
 @import './themes';
 @import '../components/announcement/styles/pin';
 
+@import './inputs/form/form';
+
 * {
   margin: 0px;
   padding: 0px;
@@ -9,14 +11,15 @@
   font-family: 'Helvetica Neue', 'Arial', sans-serif;
 }
 
+.form-input {
+  @extend %form-input;
+}
+
 body {
   overflow-x: hidden;
   overflow-y: scroll;
   color: rgb(14, 35, 62);
   line-height: 1;
-
-  // font-size:62.5%!important;
-
 }
 
 input, textarea {
@@ -30,6 +33,7 @@ input, textarea {
 }
 
 #app-container {
+  position: relative;
   background: #F2F3F4;
   min-width: 320px;
 }
@@ -97,6 +101,7 @@ a {
 }
 
 .options {
+  // z-index: 4000;
   position: absolute;
   max-height: 208px;
   background: #F7F9F9;
