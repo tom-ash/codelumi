@@ -11,6 +11,7 @@ import VisitorCookiesPolicy from './components/legal/components/cookies/componen
 import VisitorPrivacyPolicy from './components/legal/components/privacy/components/policy/policy'
 import VisitorPrivacyMonit from './components/legal/components/privacy/components/monit/monit'
 import VisitorPrivacySettings from './components/legal/components/privacy/components/settings/settings'
+import './styles/styles.scss'
 
 class User extends React.Component {
   constructor(props) {
@@ -19,38 +20,37 @@ class User extends React.Component {
     this.checkConsents = checkConsents.bind(this)
     this.componentDidMount = componentDidMount
   }
+
+  show = () => {
+    const { showAbout, showContact, showTermsOfService, showPrivacyMonit, showPrivacyPolicy, showCookiesPolicy,
+            showPrivacySettings } = this.props
+
+    return showAbout || showContact || showTermsOfService || showPrivacyMonit || showPrivacyPolicy ||
+           showCookiesPolicy || showPrivacySettings
+  }
+
+  hide = () => {
+    const { changeApp } = this.props
+
+    // TODO
+  }
   
   render() {
+    const { showAbout, showContact, showTermsOfService, showPrivacyMonit, showPrivacyPolicy, showCookiesPolicy,
+            showPrivacySettings } = this.props
+
     return (
       <div id='visitor'>
-        {
-        this.checkConsents() && this.checkRoute('privacyMonit') &&
-        <VisitorPrivacyMonit />
-        }
-        {
-        this.checkRoute('about') &&
-        <VisitorAbout />
-        }
-        {
-        this.checkRoute('contact') &&
-        <VisitorContact />
-        }
-        {
-        this.checkRoute('visitorTermsOfService') &&
-        <VisitorTermsOfService/>
-        }
-        {
-        this.checkRoute('cookiesPolicy') &&
-        <VisitorCookiesPolicy />
-        }
-        {
-        this.checkRoute('privacyPolicy') &&
-        <VisitorPrivacyPolicy/>
-        }
-        {
-        this.checkRoute('privacySettings') &&
-        <VisitorPrivacySettings/>
-        }
+        {this.show() &&
+        <div className='cover'>
+          {showPrivacyMonit    && <VisitorPrivacyMonit />}
+          {showAbout           && <VisitorAbout />}
+          {showContact         && <VisitorContact />}
+          {showTermsOfService  && <VisitorTermsOfService/>}
+          {showCookiesPolicy   && <VisitorCookiesPolicy />}
+          {showPrivacyPolicy   && <VisitorPrivacyPolicy/>}
+          {showPrivacySettings && <VisitorPrivacySettings/>}
+        </div>}
       </div>
     )
   }

@@ -1,3 +1,5 @@
 export function popStateHandler() {
-  this.props.changePath(window.location.pathname)
+  const { changeApp } = this.props
+
+  changeApp({ path: window.location.pathname })
 }

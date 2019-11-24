@@ -1,5 +1,5 @@
 
 
 export function edit(announcement) {
-  this.changeRoute(null, 'announcementEditing', announcement.id)
+  this.changeRoute(null, 'editAnnouncement', announcement.id)
 }

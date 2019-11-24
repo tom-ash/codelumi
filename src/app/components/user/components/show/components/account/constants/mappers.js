@@ -7,7 +7,6 @@ export const mapStateToProps = (store) => {
     
 export const mapDispatchToProps = (dispatch) => {
   return {
-    changePath: (value) => dispatch({ type: 'app/path', value: value}),
     changeAnnouncementControl: (value) => dispatch({ type: 'announcement/index/control', value: value }),
     changeUserAuthorized: (value) => dispatch({ type: 'user/authorize/authorized', value: value }),
     resetAuthorizeData: (value) => dispatch({ type: 'user/authorize/data/reset', value: value })

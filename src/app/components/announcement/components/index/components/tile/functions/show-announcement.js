@@ -1,3 +1,3 @@
 export function showAnnouncement() {
-  this.changeRoute(null, 'announcementShow', this.props.announcement.id)
+  this.changeRoute(null, 'showAnnouncement', this.props.announcement.id)
 }

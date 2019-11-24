@@ -17,7 +17,7 @@ class Announcement extends React.Component {
     return (
       <div id='announcement'>
         {
-        (this.checkRoute('announcementCreate') || this.checkRoute('announcementEditing')) &&
+        (this.checkRoute('announcementCreate') || this.checkRoute('editAnnouncement')) &&
         <AnnouncementCreate />
         }
         {

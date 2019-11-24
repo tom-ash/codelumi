@@ -2,6 +2,8 @@ import { instantScroll } from './scrollers/instant-scroll'
 
 export function changeRoute(e, route, parameter) {
   if (e) e.preventDefault()
+  const { changeApp } = this.props
+
   const languageHandler = (polishVersion, englishVersion) => this.props.language === 'polish' ? polishVersion : englishVersion
   let newPlace
   let newPath
@@ -9,7 +11,9 @@ export function changeRoute(e, route, parameter) {
     newPlace = languageHandler(route.polishPlace, route.EnglishPlace)
     newPath = languageHandler(route.polishPath, route.englishPath)
     history.pushState({currentPlace: newPlace}, {}, newPath)
-    this.props.changePath(newPath)
+
+    changeApp({ path: newPath })
+
     instantScroll()
   }
   if (route && /^\d+$/.test(route.slice(1))) {
@@ -26,7 +30,7 @@ export function changeRoute(e, route, parameter) {
           englishPath:'/'
         })
         break;
-      case 'announcementShow':
+      case 'showAnnouncement':
         routeSetter({
           polishPlace: `Ogłoszenie ${parameter}`,
           englishPlace: `Announcement ${parameter}`,
@@ -34,7 +38,7 @@ export function changeRoute(e, route, parameter) {
           englishPath: `/${parameter}`
         })
         break;
-      case 'announcementEditing':
+      case 'editAnnouncement':
         routeSetter({
           polishPlace: 'Edytowanie Ogłoszenia',
           englishPlace: 'Announcement Editing',
@@ -42,44 +46,12 @@ export function changeRoute(e, route, parameter) {
           englishPath: `/announcement_editing/${parameter}`
         })
         break;
-      // case 'searchResults':
-      //   routeSetter({
-      //     polishPlace: 'Wyniki wyszukiwania',
-      //     englishPlace: 'Search Results',
-      //     polishPath: `/wyniki_wyszukiwania${parameter}`,
-      //     englishPath: `/search_results${parameter}`
-      //   })
-      //   break;
       case 'addAnnouncement':
         routeSetter({
           polishPlace: 'Dodaj ogłoszenie',
           englishPlace: 'Add announcement',
           polishPath: '/dodaj_ogloszenie',
           englishPath:'/add_announcement'
-        })
-        break;
-      // case 'signUp':
-      //   routeSetter({
-      //     polishPlace: 'Zarejestru',
-      //     englishPlace: 'Sign up',
-      //     polishPath: '/zarejestruj',
-      //     englishPath:'/signup'
-      //   })
-      //   break;
-      // case 'signIn':
-      //   routeSetter({
-      //     polishPlace: 'Zaloguj',
-      //     englishPlace: 'Sign in',
-      //     polishPath: '/zaloguj',
-      //     englishPath:'/signin'
-      //   })
-      //   break;
-      case 'myAccount':
-        routeSetter({
-          polishPlace: 'Konto',
-          englishPlace: 'Account',
-          polishPath: '/mojekonto',
-          englishPath:'/myaccount'
         })
         break;
       case 'myAnnouncements':
@@ -90,136 +62,23 @@ export function changeRoute(e, route, parameter) {
           englishPath:'/myaccount/myannouncements'
         })
         break;
-      // case 'phoneVerify':
-      //   routeSetter({
-      //     polishPlace: 'Weryfikacja numeru telefonu',
-      //     englishPlace: 'Phone Number Verification',
-      //     polishPath: '/weryfikacja_numeru_telefonu',
-      //     englishPath: '/phone_number_verification'
-      //   })
-      //   break;
-      // case 'myAccountCard':
-      //   routeSetter({
-      //     polishPlace: 'Edycja wizytówki',
-      //     englishPlace: 'Card Editing',
-      //     polishPath: '/mojekonto/wizytowka',
-      //     englishPath:'/myaccount/card'
-      //   })
-      //   break;
-      // case 'resetpassword':
-      //   newPlace = languageHandler('Reset hasła', 'Reset password')
-      //   newPath = languageHandler('/resethasla', '/resetpassword')
-      //   this.props.changePath(newPath)
-      //   history.pushState({currentPlace: newPlace}, {}, newPath)
-      //   break;
-      case 'myAccountSettings':
-        routeSetter({
-          polishPlace: 'Moje Konto / Ustawienia',
-          englishPlace: 'My Account / Settings',
-          polishPath: '/mojekonto/ustawienia',
-          englishPath:'/myaccount/settings'
-        })
-        break;
-      case 'about':
-        routeSetter({
-          polishPlace: 'O nas',
-          englishPlace: 'About',
-          polishPath: '/o_serwisie',
-          englishPath:'/about'
-        })
-        break;
-      case 'contact':
-        routeSetter({
-          polishPlace: 'Kontakt',
-          englishPlace: 'Contact',
-          polishPath: '/kontakt',
-          englishPath:'/contact'
-        })
-        break;
-      case 'termsOfService':
-        routeSetter({
-          polishPlace: 'Regulamin',
-          englishPlace: 'Terms Of Service',
-          polishPath: '/regulamin',
-          englishPath:'/terms_of_service'
-        })
-        break;
-      case 'cookiesPolicy':
-        routeSetter({
-          polishPlace: 'Polityka Plików Cookies',
-          englishPlace: 'Cookies Policy',
-          polishPath: '/polityka_plikow_cookies',
-          englishPath:'/cookies_policy'
-        })
-        break;
-      case 'privacyPolicy':
-        routeSetter({
-          polishPlace: 'Polityka Prywatności',
-          englishPlace: 'Privacy Policy',
-          polishPath: '/polityka_prywatnosci',
-          englishPath:'/privacy_policy'
-        })
-        break;
-      case 'privacySettings':
-        routeSetter({
-          polishPlace: 'Ustawienia Prywatności',
-          englishPlace: 'Privacy Settings',
-          polishPath: '/ustawienia_prywatnosci',
-          englishPath:'/privacy_settings'
-        })
-        break;
       default:
         break
     }
   }
 }
 
-const userCreatePaths =        ['/signup',
-                                '/zarejestruj']
-const userAuthorizePaths =     ['/signin',
-                                '/zaloguj']                
-const userShowPaths =          ['/mojekonto',
-                                '/myaccount']
-const userEditPaths =          ['/signin',
-                                '/logowanie',
-                                '/myaccount',
-                                '/mojekonto',
-                                '/mojekonto/ustawienia',
-                                '/myaccount/settings',
-                                '/resetpassword',
-                                '/resethasla',
-                                '/weryfikacja_numeru_telefonu',
-                                '/phone_number_verification',
-                                '/myaccount/card',
-                                '/mojekonto/wizytowka']
 const announcementCreatePaths = ['/add_announcement',
                                  '/dodaj_ogloszenie']
 const announcementIndexPaths = ['/search_results',
                                 '/wyniki_wyszukiwania',
                                 '/mojekonto/mojeogloszenia',
                                 '/myaccount/myannouncements']                   
-const userPaths = [ ...userEditPaths, ...userAuthorizePaths, ...userCreatePaths, ...userShowPaths ]
 
 export function checkRoute(route) {
   const path = this.props.path.toLowerCase()
   let result
   switch (route) {
-    case 'about':
-      return checkRouteHelper(path, [ '/o_serwisie', '/about' ])
-    case 'contact':
-      return checkRouteHelper(path, [ '/kontakt', '/contact' ])
-    case 'privacyMonit':
-      return !checkRouteHelper(path, [ '/ustawienia_prywatnosci', '/privacy_settings' ])
-    case 'visitorTermsOfService':
-      return checkRouteHelper(path, [ '/regulamin', '/terms_of_service' ])
-    case 'cookiesPolicy':
-      return checkRouteHelper(path, [ '/polityka_plikow_cookies', '/cookies_policy' ])
-    case 'privacyPolicy':
-      return checkRouteHelper(path, [ '/polityka_prywatnosci', '/privacy_policy' ])
-    case 'privacySettings':
-      return checkRouteHelper(path, [ '/ustawienia_prywatnosci', '/privacy_settings' ])
-    case 'user':
-      return checkRouteHelper(path, userPaths)
     case 'announcementCreate':
       return checkRouteHelper(path, announcementCreatePaths)
     case 'announcementIndex':
@@ -229,7 +88,7 @@ export function checkRoute(route) {
         if (path.indexOf(indexPath) !== -1) result = true
       })
       return result
-    case 'announcementEditing':
+    case 'editAnnouncement':
       result = false;
       (['/edytowanie_ogloszenia/', '/announcement_editing/']).map(indexPath => {
         if (path.indexOf(indexPath) != -1) {
@@ -237,8 +96,7 @@ export function checkRoute(route) {
         }
       })
       return result
-    case 'phoneVerify':
-      return checkRouteHelper(path, [ '/phone_number_verification', '/weryfikacja_numeru_telefonu' ])
+
     case 'announcementIndexFull':
       if (path == '/') return true
       result = false;
@@ -250,16 +108,6 @@ export function checkRoute(route) {
       return result
     case 'announcementIndexList':
       return checkRouteHelper(path, [ '/mojekonto/mojeogloszenia', '/myaccount/myannouncements' ])
-    case 'userAuthorize':
-      return checkRouteHelper(path, userAuthorizePaths)
-    case 'userCreate':
-      return checkRouteHelper(path, userCreatePaths)
-    case 'userShow':
-      return checkRouteHelper(path, userShowPaths)
-    case 'UserShowAccount':
-      return checkRouteHelper(path, [ '/mojekonto', '/myaccount' ])
-    case 'userEdit':
-      return checkRouteHelper(path, userEditPaths)
     case 'mainPage':
       return this.props.path === '/'
     default: 

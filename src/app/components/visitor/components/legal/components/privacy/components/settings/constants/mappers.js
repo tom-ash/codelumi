@@ -10,10 +10,6 @@ export const mapDispatchToProps = (dispatch) => {
     changeSettings: (value) => dispatch({
       type: 'visitor/privacy/settings',
       value: value
-    }),
-    changePath: (value) => dispatch({
-      type: 'app/path',
-      value: value
     })
   }
 }

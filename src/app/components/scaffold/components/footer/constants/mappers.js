@@ -7,7 +7,6 @@ export const mapStateToProps = (store) => {
   
 export const mapDispatchToProps = (dispatch) => {
   return {
-    changePath: (value) => dispatch({ type: 'app/path', value: value })
   }
 }
   

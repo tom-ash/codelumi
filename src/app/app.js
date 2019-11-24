@@ -27,8 +27,14 @@ class App extends React.Component {
     this.popStateHandler = popStateHandler.bind(this)
   }
 
+  showUser = () => {
+    const { showUserCreate, showUserAuthorize } = this.props
+
+    return showUserCreate || showUserAuthorize
+  }
+
   render() {
-    const { showUser } = this.props
+    // const { showUser } = this.props
 
     return (
       <div id='app-container'>
@@ -36,7 +42,7 @@ class App extends React.Component {
         <div id='app-inner-container'>
           <Visitor />
           <Announcement />
-          {showUser &&
+          {this.showUser() &&
           <User />}
         </div>
         <Footer />

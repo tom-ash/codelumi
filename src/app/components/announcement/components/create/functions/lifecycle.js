@@ -1,13 +1,13 @@
 // import { getAnnouncementAmount } from "../../index/functions/get-announcement-amount";
 
 export function componentDidMount() {
-  if (announcementEditing()) {
+  if (editAnnouncement()) {
     this.getAnnouncement()
     this.props.changeControl({ editing: true })
   }
 }
 
-function announcementEditing() {
+function editAnnouncement() {
   const path = window.location.pathname
   let result = false;
   (['/edytowanie_ogloszenia/', '/announcement_editing/']).map(indexPath => {

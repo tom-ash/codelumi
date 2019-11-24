@@ -1,17 +1,17 @@
 export const mapStateToProps = (store) => {
-  const { showCreate } = store.user.create.control
+  const { showUserCreate: showCreate, showUserAuthorize: showAuthorize } = store.app
 
   return {
     language: store.app.language,
     path: store.app.path,
-    showCreate
-    // showCreate: true
+    showCreate,
+    showAuthorize
   }
 }
     
 export const mapDispatchToProps = (dispatch) => {
   return {
-    changeShowUser: (value) => dispatch({ type: 'app/show/user', value: value }),
+    changeApp: (value) => dispatch({ type: 'app', value: value }),
     changeControl: (value) => dispatch({ type: 'user/create/control', value: value }),
   }
 }

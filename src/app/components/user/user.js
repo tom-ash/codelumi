@@ -14,26 +14,31 @@ class User extends React.Component {
     this.checkRoute = checkRoute.bind(this)
   }
 
-  hideCreate = () => {
-    console.log('here')
-    const { changeControl, changeShowUser } = this.props
-    changeControl({ showCreate: false })
-    changeShowUser(false)
+  hideUser = () => {
+    const { changeApp } = this.props
+    
+    changeApp({ showUserCreate: false, showUserAuthorize: false })
   }
 
   render() {
-    const { changeControl, showCreate, showAuthorize } = this.props
+    const { showCreate, showAuthorize } = this.props
+
+    console.log(showCreate)
 
     return (
       <div id='user'>
         {showCreate &&
         <div
-        onClick={this.hideCreate}
-        className='cover'>
+          onClick={this.hideUser}
+          className='cover'
+        >
           <UserCreate />
         </div>}
         {showAuthorize &&
-        <div className='cover'>
+        <div
+          onClick={this.hideUser}
+          className='cover'
+        >
           <UserAuthorize />
         </div>}
         {

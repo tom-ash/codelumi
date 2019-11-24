@@ -15,7 +15,10 @@ class UserEdit extends React.Component {
   }
   render() {
     return (
-      <div id='user-edit'>
+      <div
+        id='user-edit'
+        // onClick={e => e.stopPropagation()}
+      >
         {
         this.checkRoute('phoneVerify') &&
         <UserEditPhoneNumberVerify />
