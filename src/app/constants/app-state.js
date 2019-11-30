@@ -9,6 +9,7 @@ export const appState = {
   showUserCreate: false,
   showUserAuthorize: false,
   showUserPasswordReset: false,
+  showUserAccount: false,
   showUserSettings: false,
   showVisitorAbout: false,
   showVisitorContact: false,

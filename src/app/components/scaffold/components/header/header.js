@@ -55,14 +55,10 @@ class Header extends React.Component {
             </span>
           </h1>
           <div className='links'>
-            {isLargePc &&
-            <ManagedButton {...this.addAnnouncementManager()} />}
-            {isLargePc &&
-            <ManagedButton {...this.signUpManager()} />}
-            {isLargePc &&
-            <ManagedButton {...this.signInManager()} />}
-            {isLargePc &&
-            <ManagedButton {...this.myAccountManager()} />}
+            {isLargePc && <ManagedButton {...this.addAnnouncementManager()} />}
+            {isLargePc && <ManagedButton {...this.signUpManager()} />}
+            {isLargePc && <ManagedButton {...this.signInManager()} />}
+            {isLargePc && <ManagedButton {...this.myAccountManager()} />}
             <ManagedButton {...this.languageManager()} />
             {this.props.showLinks &&
               <div

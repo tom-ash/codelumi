@@ -1,6 +1,7 @@
 export const mapStateToProps = (store) => {
   return {
     language: store.app.language,
+    authorized: store.user.authorize.data.authorized,
     name: store.user.authorize.data.name,
     screenSize: store.app.screenSize,
     showLinks: store.scaffold.header.control.showLinks

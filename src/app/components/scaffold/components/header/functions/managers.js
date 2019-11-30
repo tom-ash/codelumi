@@ -26,7 +26,7 @@ export function signUpManager() {
 }
 
 export function signInManager() {
-  const { changeApp, name } = this.props
+  const { changeApp, changeControl, name } = this.props
 
   return {
     display: name && 'none',
@@ -34,21 +34,21 @@ export function signInManager() {
     label: this.labelProvider('fas fa-sign-in-alt', { polish: 'Zaloguj', english: 'Sign In'}),
     onClick: () => {
         changeApp({ showUserAuthorize: true })
-        this.props.changeControl({ showLinks: false })
+        changeControl({ showLinks: false })
     }
   }
 }
 
-export function myAccountManager(action) {
-  const { name } = this.props
+export function myAccountManager() {
+  const { changeApp, changeControl, authorized } = this.props
   
   return {
-    display: !name && 'none',
+    display: !authorized && 'none',
     classNames: { container: 'link' },
     label: this.labelProvider('far fa-user-circle', { polish: 'Konto', english: 'Account'}),
     onClick: () => {
-      this.changeRoute(null, 'myAccount')
-      this.props.changeControl({ showLinks: false })
+      changeApp({ showUserAccount: true })
+      changeControl({ showLinks: false })
     }
   }
 }

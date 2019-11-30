@@ -1,0 +1,41 @@
+@import '../../../../../styles/containers';
+@import '../../../../../styles/themes';
+
+#user-show-account {
+  position: absolute;
+  top: 64px;
+  right: 8px;
+  padding: 15px;
+  width: 230px;
+  .button {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    margin-bottom: 15px;
+    &.sign-out {
+      margin-bottom: 0;
+    }
+    .input {
+      font-size: 16px;
+      height: 100%;
+      width: 100%;
+      border: none;
+      border-radius: 4px;
+      background: #212f3d;
+      color: white;
+      &.hover {
+        color: #F0B27A;
+      }
+      .text {
+        color: #212f3d;
+        position: absolute;
+        left: 46px;
+        width: 200px;
+        text-align: left;
+        top: 0;
+        bottom: 0;
+        line-height: 32px;
+      }
+    }
+  }
+}

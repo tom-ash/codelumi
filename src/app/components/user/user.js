@@ -17,11 +17,12 @@ class User extends React.Component {
   hideUser = () => {
     const { changeApp } = this.props
     
-    changeApp({ showUserCreate: false, showUserAuthorize: false, showUserPasswordReset: false })
+    changeApp({ showUserCreate: false, showUserAuthorize: false, showUserPasswordReset: false,
+                showUserAccount: false })
   }
 
   render() {
-    const { showCreate, showAuthorize, showPasswordReset } = this.props
+    const { showCreate, showAuthorize, showPasswordReset, showAccount } = this.props
 
     return (
       <div id='user'>
@@ -31,7 +32,10 @@ class User extends React.Component {
           {showAuthorize     && <UserAuthorize />}
           {showPasswordReset && <UserEdit />}
         </div>}
-        {this.checkRoute('userShow') && <UserShow />}
+        {showAccount &&
+        <div onClick={this.hideUser} className='transparent-cover'>
+          <UserShow />
+        </div>}
       </div>
     )
   }
