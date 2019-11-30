@@ -16,15 +16,15 @@ export const inputs = {
     label: { polish: 'Numer telefonu', english: 'Phone number' }
   },
   email: {
-    icon: 'far fa-envelope',
+    icon: 'fas fa-envelope',
     label: { polish: 'Adres email', english: 'Email address' }
   },
   password: {
-    icon: 'far fa-eye-slash',
+    icon: 'fas fa-lock',
     label: { polish: 'Hasło', english: 'Password' }
   },
   verification: {
-    icon: 'fas fa-certificate',
+    icon: 'fas fa-lock',
     label: { polish: 'Kod weryfikacyjny', english: 'Verification Code' }
   }
 }

@@ -2,18 +2,5 @@
 @import '../../../../../../../styles/inputs/form/form';
 
 #user-edit-account {
-  @extend %narrow-container;
-  .page-header {
-    @extend %page-header;
-  }
-  .form-input {
-    &.button {
-      width: 50%!important;
-      height: 36px;
-      margin: 0 0 0 auto;
-      .input {
-        font-size: 16px;
-      }
-    }
-  }
+  
 }

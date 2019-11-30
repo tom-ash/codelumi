@@ -8,8 +8,12 @@ export const appState = {
   isMobile: null,
   showUserCreate: false,
   showUserAuthorize: false,
-  showVisitorPrivacyPolicy: false,
+  showUserPasswordReset: false,
+  showUserSettings: false,
   showVisitorAbout: false,
   showVisitorContact: false,
-  
+  showVisitorTermsOfService: false,
+  showVisitorCookiesPolicy: false,
+  showVisitorPrivacyPolicy: false,
+  showVisitorPrivacySettings: false
 }

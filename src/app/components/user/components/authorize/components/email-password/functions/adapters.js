@@ -24,7 +24,7 @@ export function logIn() {
   .then(json => {
     this.props.changeData({ authorized: true, name: json.name, phoneVerified: json.phoneVerified })
     saveTokens.call(this, json.accessToken)
-    this.changeRoute(null, 'myAccount')
+    this.props.changeApp({ showUserAuthorize: false })
   })
   .catch(() => {
     this.props.changeErrors({

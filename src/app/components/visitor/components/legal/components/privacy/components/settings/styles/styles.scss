@@ -2,12 +2,7 @@
 @import '../../../../../../../../../styles/inputs/form/form';
 
 #visitor-privacy-settings {
-  @extend %narrow-container;
   color: $theme-primary-color;
-  .page-header {
-    @extend %page-header;
-    margin-bottom: 24px;
-  }
   .text {
     text-align: justify;
     font-size: 16px;

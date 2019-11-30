@@ -17,38 +17,21 @@ class User extends React.Component {
   hideUser = () => {
     const { changeApp } = this.props
     
-    changeApp({ showUserCreate: false, showUserAuthorize: false })
+    changeApp({ showUserCreate: false, showUserAuthorize: false, showUserPasswordReset: false })
   }
 
   render() {
-    const { showCreate, showAuthorize } = this.props
-
-    console.log(showCreate)
+    const { showCreate, showAuthorize, showPasswordReset } = this.props
 
     return (
       <div id='user'>
-        {showCreate &&
-        <div
-          onClick={this.hideUser}
-          className='cover'
-        >
-          <UserCreate />
+        {(showCreate || showAuthorize || showPasswordReset) &&
+        <div onClick={this.hideUser} className='darkened-cover '>
+          {showCreate        && <UserCreate />}
+          {showAuthorize     && <UserAuthorize />}
+          {showPasswordReset && <UserEdit />}
         </div>}
-        {showAuthorize &&
-        <div
-          onClick={this.hideUser}
-          className='cover'
-        >
-          <UserAuthorize />
-        </div>}
-        {
-        this.checkRoute('userShow') &&
-        <UserShow />
-        }
-        {
-        this.checkRoute('userEdit') &&
-        <UserEdit />
-        }
+        {this.checkRoute('userShow') && <UserShow />}
       </div>
     )
   }

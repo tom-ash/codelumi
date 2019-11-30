@@ -1,9 +1,7 @@
 @import '../../../../../../../../../styles/themes.scss';
 
 #user-edit-phone-verify {
-  @extend %narrow-container;
   .page-header {
-    @extend %page-header;
     .far {
       margin-right: 10px;
     }
@@ -24,7 +22,6 @@
     &.button {
       width: 50%!important;
       .input {
-        @extend %blue-button;
         display: block;
         height: 36px!important;
         margin-left: auto;

@@ -3,21 +3,8 @@
 
 #user-edit {
   .form-input {
-    &.text {
-      height: 40px;
-    }
     &.button {
       margin: 0 0 0 auto;
-      width: 96px;
-    }
-    .fas, .far {
-      margin-right: 8px;
-      color: #2471A3;
-    }
-    .error {
-      .fas, .far {
-        color: red;
-      }
     }
   }
 }

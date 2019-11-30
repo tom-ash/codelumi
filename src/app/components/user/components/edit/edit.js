@@ -14,26 +14,18 @@ class UserEdit extends React.Component {
     this.checkRoute = checkRoute.bind(this)
   }
   render() {
+    const { showPasswordReset } = this.props
+
     return (
-      <div
-        id='user-edit'
-        // onClick={e => e.stopPropagation()}
-      >
+      <div id='user-edit' onClick={e => e.stopPropagation()}>
         {
         this.checkRoute('phoneVerify') &&
         <UserEditPhoneNumberVerify />
         }
-        {
-        (this.props.path === '/resetpassword' ||  this.props.path === '/resethasla') &&
-        <UserEditAccountPassword />
-        }
+        {showPasswordReset && <UserEditAccountPassword />}
         {
         (this.props.path === '/myaccount/settings' ||  this.props.path === '/mojekonto/ustawienia') &&
         <UserEditAccount />
-        }
-        {
-        (this.props.path === '/myaccount/card' ||  this.props.path === '/mojekonto/wizytowka') &&
-        <UserEditCard />
         }
       </div>
     )

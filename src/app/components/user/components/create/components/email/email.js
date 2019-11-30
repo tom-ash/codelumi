@@ -8,34 +8,20 @@ import UserCreateEmailVerify from './components/verify/verify'
 import * as mappers from './constants/mappers'
 import './styles/styles.scss'
 
-class UserCreateEmail extends React.Component {  
+class UserCreateEmail extends React.Component {
   render() {
+    const { token } = this.props
+
     return (
       <div id='user-create-email'>
-        {
-        !this.props.token ?
-        <div>
-          {
-          !this.props.connecting ?
-          <div>
-            <UserCreateEmailInputs />
-            <UserCreateConsents />
-            <UserCreateSubmit />
-          </div>
-          :
-          <UserCreateConnecting />
-          }
-        </div>
+        {!token ?
+        <React.Fragment>
+          <UserCreateEmailInputs />
+          <UserCreateConsents />
+          <UserCreateSubmit />
+        </React.Fragment>
         :
-        <div>
-          {
-          !this.props.connecting ?
-          <UserCreateEmailVerify />
-          :
-          <UserCreateConnecting />
-          }
-        </div>
-        }
+        <UserCreateEmailVerify />}
       </div>
     )
   }

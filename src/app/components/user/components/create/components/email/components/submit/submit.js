@@ -7,6 +7,8 @@ import * as consentValidators from '../../../consents/functions/validators'
 import './styles/styles.scss'
 import { languageHandler } from '../../../../../../../../functions/language-handler'
 import { errorSetter } from '../../../../../../functions/error-setter'
+import { buttonManager } from './functions/managers'
+import { ManagedButton } from 'managed-inputs'
 
 class UserCreateSubmit extends React.Component {
   constructor(props) {
@@ -20,16 +22,13 @@ class UserCreateSubmit extends React.Component {
     this.termsValidator = consentValidators.termsValidator.bind(this)
     this.privacyValidator = consentValidators.privacyValidator.bind(this)
     this.errorSetter = errorSetter.bind(this)
+    this.buttonManager = buttonManager.bind(this)
   }
 
   render() {
     return (
       <div id='user-create-email-submit'>
-        <button
-        className='button'
-        onClick={this.prepareUserAccount}>
-          {this.languageHandler('Dalej', 'Next')}
-        </button>
+        <ManagedButton {...this.buttonManager()} />
       </div>
     )
   }

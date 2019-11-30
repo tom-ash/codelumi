@@ -1,10 +1,6 @@
 @import '../../../../../styles/themes';
 
 #visitor-about {
-  @extend %narrow-container;
-  .page-header {
-    @extend %page-header;
-  }
   text-align: justify;
   line-height: 20px;
   .paragraph {

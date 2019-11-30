@@ -1,6 +1,7 @@
 export const mapStateToProps = (store) => {
   return {
-    language: store.app.language
+    language: store.app.language,
+    connecting: store.user.create.control.connecting
   }
 }
 

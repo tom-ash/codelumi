@@ -19,15 +19,14 @@ class UserCreate extends React.Component {
     return (
       <div
         id='user-create-container'
+        className='container narrow-container shadowed'
         onClick={e => e.stopPropagation()}
       >
         <h2 className='page-header'>
           <i className='fas fa-user-plus' /> Rejestracja konta
         </h2>
-        {
-        this.props.success === null &&
-        <UserCreateEmail />
-        }
+        {this.props.success === null &&
+        <UserCreateEmail />}
       </div>
     )
   }

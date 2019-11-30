@@ -32,7 +32,16 @@ class User extends React.Component {
   hide = () => {
     const { changeApp } = this.props
 
-    // TODO
+    changeApp({
+      showUserCreate: false,
+      showUserAuthorize: false,
+      showVisitorAbout: false,
+      showVisitorContact: false,
+      showVisitorTermsOfService: false,
+      showVisitorCookiesPolicy: false,
+      showVisitorPrivacyPolicy: false,
+      showVisitorPrivacySettings: false
+    })
   }
   
   render() {
@@ -42,7 +51,7 @@ class User extends React.Component {
     return (
       <div id='visitor'>
         {this.show() &&
-        <div className='cover'>
+        <div className='cover' onClick={() => this.hide()}>
           {showPrivacyMonit    && <VisitorPrivacyMonit />}
           {showAbout           && <VisitorAbout />}
           {showContact         && <VisitorContact />}

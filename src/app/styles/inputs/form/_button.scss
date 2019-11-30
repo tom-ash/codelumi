@@ -1,17 +1,19 @@
 %button {
-  display: block;
-  padding: 0;
+  height: 36px;
+  width: 144px;
   .input {
     height: 100%;
     width: 100%;
     border: none;
     border-radius: 2.5px;
     outline: none;
-    background: $button-index-background-color;
-    color: $button-index-color;
+    background: #D35400;
+    color: #FBFCFC;
     cursor: pointer;
-    &.hover {
-      background: transparentize($button-index-background-color, 0.2)
+    font-size: 15px;
+    &.hover, &.focus {
+      background: #BA4A00;
     }
+    transition: .2s ease-in-out;
   }
 }

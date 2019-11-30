@@ -5,13 +5,11 @@
   right: 0;
   bottom: 0;
   left: 0;
-  .cover {
-    background: rgba(0, 0, 0, .4);
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    backdrop-filter: blur(2px);
+  .very-small-windmill-spinner {
+    left: -53px;
+    top: -53px;
+    div:after {
+      background: #F0F3F4;
+    }
   }
 }

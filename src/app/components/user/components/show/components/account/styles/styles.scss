@@ -2,10 +2,7 @@
 @import '../../../../../../../styles/themes';
 
 #user-show-account {
-  @extend %narrow-container;
   .page-header {
-    @extend %page-header;
-    color: #2471A3;
     margin-bottom: 48px;
     .fa-user-circle {
       font-size: 25px;

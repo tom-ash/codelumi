@@ -2,12 +2,13 @@
 @import '../../../../../styles/inputs/form/form';
 
 #user-authorize {
-  @extend %narrow-container;
-  padding: 48px;
+  padding: 25px;
+  max-width: 420px;
   @media only screen and (max-width: $breakpoint-phone-large-max) {
     padding: 12px;
   }
-  .page-header {
-    @extend %page-header;
+  .form-input {
+    width: 100%;
+    width: 370px;
   }
 }

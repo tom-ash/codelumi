@@ -3,14 +3,6 @@
 @import './headers/headers';
 @import './pagination';
 
-%blue-button {
-  border: none;
-  border-radius: 2.5px;
-  font-size: 16px;
-  background: #3498DB;
-  color: white;
-}
-
 %error {
   color: $primary-error-color;
   text-align: center;

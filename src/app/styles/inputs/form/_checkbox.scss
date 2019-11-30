@@ -6,20 +6,21 @@
   .input {
     position: absolute;
     cursor: pointer;
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     cursor: pointer;
     border-radius: 2px;
-    background: #2471A3;
-    top: 8px;
+    // background: white;
+    // top: 9px;
     right: 0;
     bottom: 0;
     left: 12px;
     .tick {
       transform: rotate(45deg);
       width: 5px;
-      height: 11px;
+      height: 10px;
       margin-left: 5px;
+      margin-top: 0;
     }
   }
   .label {

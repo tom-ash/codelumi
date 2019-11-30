@@ -9,5 +9,6 @@ export function deauthorizeUser() {
     name: null,
     phoneVerified: null
   })
-  changeRoute(null, 'signIn')
+  // changeApp()
+  // changeRoute(null, '/')
 }

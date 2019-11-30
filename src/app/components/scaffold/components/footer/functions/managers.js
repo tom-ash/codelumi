@@ -1,49 +1,59 @@
-import React from 'react'
+export function aboutManager() {
+  const { changeApp } = this.props
 
-export function aboutManager(action) {
   return {
     classNames: { container: 'button-container link' },
     label: this.languageHandler('O Serwisie', 'About'),
-    onClick: () => this.changeRoute(null, 'about')
+    onClick: () => changeApp({ showVisitorAbout: true })
   }
 }
 
-export function contactManager(action) {
+export function contactManager() {
+  const { changeApp } = this.props
+
   return {
     classNames: { container: 'button-container link' },
     label: this.languageHandler('Kontakt', 'Contact'),
-    onClick: () => this.changeRoute(null, 'contact')
+    onClick: () => changeApp({ showVisitorContact: true })
   }
 }
 
-export function termsOfServiceManager(action) {
+export function termsOfServiceManager() {
+  const { changeApp } = this.props
+
   return {
     classNames: { container: 'button-container link' },
     label: this.languageHandler('Regulamin', 'Terms and Conditions'),
-    onClick: () => this.changeRoute(null, 'termsOfService')
+    onClick: () => changeApp({ showVisitorTermsOfService: true })
   }
 }
 
-export function cookiesPolicyManager(action) {
+export function cookiesPolicyManager() {
+  const { changeApp } = this.props
+
   return {
     classNames: { container: 'button-container link' },
     label: this.languageHandler('Polityka Plików Cookies', 'Cookies Policy'),
-    onClick: () => this.changeRoute(null, 'cookiesPolicy')
+    onClick: () => changeApp({ showVisitorCookiesPolicy: true })
   }
 }
 
-export function privacyPolicyManager(action) {
+export function privacyPolicyManager() {
+  const { changeApp } = this.props
+
   return {
     classNames: { container: 'button-container link' },
     label: this.languageHandler('Polityka Prywatności', 'Privacy Policy'),
-    onClick: () => this.changeRoute(null, 'privacyPolicy')
+    onClick: () => changeApp({ showVisitorPrivacyPolicy: true })
   }
 }
 
-export function privacySettingsManager(action) {
+export function privacySettingsManager() {
+  const { changeApp } = this.props
+
   return {
     classNames: { container: 'button-container link' },
     label: this.languageHandler('Ustawienia Prywatności', 'Privacy Settings'),
-    onClick: () => this.changeRoute(null, 'privacySettings')
+    onClick: () => changeApp({ showVisitorPrivacySettings: true })
   }
 }

@@ -1,7 +1,6 @@
 @import '../../../../../../../styles/themes.scss';
 
 #user-authorize-email {
-  max-width: 360px;
   .error-container {
     display: none;
   }
@@ -11,23 +10,39 @@
     color: #922B21;
     font-size: 14px;
   }
-  .remember-me {
-    position: relative;
-    margin-bottom: 24px;
-    .input {
+
+  .submit {
+    .checkbox {
       position: absolute;
+      padding: 0;
+      margin: 0;
+      height: 36px;
+      .input {
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+      }
+      .label {
+        line-height: 37px;
+        margin-left: 25px;
+      }
     }
-    .label {
-      margin-left: 28px;
+    .form-input {
+      &.button {
+        width: 50%;
+        margin: 0 0 0 auto;
+      }
     }
   }
-  .password {
+  
+  .reset-password {
     text-align: center;
-    line-height: 36px;
-    float: left;
-    width: 180px;
-    font-size: 13px;
+    font-size: 14px;
     color: gray;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid lightgray;
     @media only screen and (max-width: $breakpoint-phone-large-max) {
       width: 50%;
     }
@@ -36,10 +51,8 @@
     }
   }
   .button {
-    @extend %blue-button;
     position: relative;
     display: block;
-    float: left;
     width: 180px;
     height: 36px;
     @media only screen and (max-width: $breakpoint-phone-large-max) {

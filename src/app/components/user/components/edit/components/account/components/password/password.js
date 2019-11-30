@@ -8,9 +8,11 @@ import { sendEmail, sendVerification, sendPassword } from './functions/adapters'
 import { monitProvider } from './functions/monit-provider'
 import WindmillSpinner from '../../../../../../../support/components/spinner/components/windmill/windmill.js'
 import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
-import './styles/styles.scss'
+
 import { labelProvider } from '../../../../../../../../functions/providers/label'
 import { showHeader } from './functions/show-header'
+
+import './styles/styles.scss'
 
 class UserEditAccountPassword extends React.Component {
   constructor(props) {
@@ -30,14 +32,17 @@ class UserEditAccountPassword extends React.Component {
   }
 
   render() {
+    const { showReset } = this.props
+    
     return (
-      <div id={this.props.path === '/resethasla' || this.props.path === '/resetpassword' ? 'user-reset-password' : 'user-edit-account-password'}>
-        {
-        showHeader() &&
+      <div
+        id='user-edit-account-password'
+        className='container narrow-container shadowed'
+      >
+        {showReset &&
         <h2 className='page-header'>
           <i className='fas fa-user-plus' /> {this.languageHandler('Resetowanie hasła', 'Password Resetting')}
-        </h2>
-        }
+        </h2>}
         {
         (this.props.path === '/resethasla' || this.props.path === '/resetpassword') && this.props.connecting &&
         <div>
@@ -45,12 +50,10 @@ class UserEditAccountPassword extends React.Component {
         </div>
         }
         <div className='inputs'>
-          {
-          !this.props.connecting &&
+          {!this.props.connecting &&
           <div className='monit'>
             {this.monitProvider()}
-          </div>
-          }
+          </div>}
           <ManagedText key='emailAddress' {...this.emailManager()} />
           <ManagedText key='verificationCode' {...this.verificationManager()} />
           <ManagedText key='password' {...this.passwordManager()} />

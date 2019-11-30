@@ -17,7 +17,7 @@ class UserAuthorize extends React.Component {
 
   render() {
     return (
-      <div id='user-authorize' onClick={e => e.stopPropagation()}>
+      <div id='user-authorize' className='container narrow-container shadowed' onClick={e => e.stopPropagation()}>
         <h2 className='page-header'>
           <i className='fas fa-sign-in-alt' /> {this.languageHandler('Logowanie', 'Signing In')}
         </h2>

@@ -1,21 +1,24 @@
+import React from 'react'
 import { noError } from '../constants/no-error'
 import { inputs } from '../../../../../../../constants/inputs'
 import { emailValidator } from '../../../../../../../../../functions/email-validator'
 
 export function emailManager() {
-  const input = inputs.email
+  const { label, icon } = inputs.email
   const { step, connecting, changeErrors, error } = this.props
   return {
     id: 'user-edit-password-email',
     display: step === null && !connecting ? 'block' : 'none',
     controlled: false,
     classNames: { container: 'form-input text' },
-    label: this.labelProvider(input.icon, input.label),
+    label: this.languageObjectHandler(label),
+    children: <i className={icon} />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.emailManager().validate(value),
     validate: value => {
       const { isValid, error } = emailValidator(value)
       if (isValid) return
+
       changeErrors({ password: error })
     },
     error: this.languageObjectHandler(error)
@@ -23,13 +26,15 @@ export function emailManager() {
 }
 
 export function verificationManager() {
-  const input = inputs.verification
+  const { label, icon } = inputs.verification
+
   return {
     id: 'user-edit-password-verification',
     display: this.props.step === 'verificationCode' && !this.props.connecting ? 'block' : 'none',
     controlled: false,
     classNames: { container: 'form-input text' },
-    label: this.labelProvider(input.icon, input.label),
+    label: this.languageObjectHandler(label),
+    children: <i className={icon} />,
     onChange: () => this.props.changeErrors({ password: noError }),
     onBlur: (value) => this.verificationManager().validate(value),
     validate: (value) => {
@@ -44,7 +49,7 @@ export function verificationManager() {
 }
 
 export function passwordManager() {
-  const input = inputs.password
+  const { label, icon } = inputs.password
   return {
     id: 'user-edit-password',
     display: this.props.step === 'password' && !this.props.connecting ? 'block' : 'none',
@@ -52,7 +57,8 @@ export function passwordManager() {
     type: 'password',
     autoComplete: 'new-password',
     classNames: { container: 'form-input text' },
-    label: this.labelProvider(input.icon, input.label),
+    label: this.languageObjectHandler(label),
+    children: <i className={icon} />,
     onChange: () => this.props.changeErrors({ password: noError }),
     onBlur: (value) => this.passwordManager().validate(value),
     validate: (value) => {
@@ -80,6 +86,7 @@ export function buttonManager() {
 
 function buttonOnClickProvider() {
   if (this.props.connecting) return
+  
   switch (this.props.step) {
     case null: return () => {
       const value = document.getElementById('user-edit-password-email').value

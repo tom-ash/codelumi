@@ -20,7 +20,6 @@ export function sendEmail() {
     }
     throw new Error('ServerError')
   })
-  .catch(() => {/*TODO*/})
   .finally(() => this.props.changeControl({ passwordConnecting: false }))
 }
 

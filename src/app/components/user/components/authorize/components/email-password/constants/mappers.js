@@ -1,4 +1,6 @@
 export const mapStateToProps = (store) => {
+  
+
   return {
     language: store.app.language,
     connecting: store.user.authorize.control.connecting,
@@ -10,6 +12,7 @@ export const mapStateToProps = (store) => {
   
 export const mapDispatchToProps = (dispatch) => {
   return {
+    changeApp: (value) => dispatch({ type: 'app', value: value}),
     changeEditControl: (value) => dispatch({ type: 'user/edit/control', value: value }),
     changeControl: (value) => dispatch({ type: 'user/authorize/control', value: value }),
     changeInputs: (value) => dispatch({ type: 'user/authorize/inputs', value: value }),

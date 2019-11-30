@@ -3,20 +3,19 @@
 #user-create-email-verify {
   position: relative;
   width: 100%;
-  max-width: 360px;
   .monit {
-    line-height: 20px;
-    font-size: 16px;
+    line-height: 19px;
+    font-size: 15px;
     text-align: justify;
-    margin-bottom: 24px;
+    margin-bottom: 25px;
   }
-  .button {
-    .input {
-      @extend %blue-button;
-      display: block;
-      width: 180px;
-      height: 36px;
+  .form-input {
+    &.text {
+      margin-bottom: 25px;
+    }
+    &.button {
       margin: 0 0 0 auto;
+      width: 50%;
     }
   }
 }

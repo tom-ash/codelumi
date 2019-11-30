@@ -5,7 +5,10 @@
 @import './textarea';
 @import './button';
 
-$border-color: #909497;
+$untached-color: #2E4053;
+$touched-color: #212F3D;
+$border-color: $untached-color;
+$touched-border-color: #34495E;
 
 %form-input {
   &.text, &.select, &.textarea {
@@ -18,13 +21,9 @@ $border-color: #909497;
       border-radius: 2px;
       background: $color-background;
       color: #374049;
-      &.hover {
-        border: 1px solid transparentize($form-input-border-color, 0.3);
-        background: #EBF5FB;
-      }
       &.error {
-        border-right: 2px solid $primary-error-color;
-        color: $primary-error-color!important;
+        border: 1px solid $primary-error-color;
+        color: $primary-error-color;
       }
     }
     .label {
@@ -46,11 +45,6 @@ $border-color: #909497;
       &.focus, &.value {
         background: white;
       }
-      &.error {
-        .fas, .far {
-          color: $form-input-error-color;
-        }
-      }
     }
     .error-container {
       padding-top: 4px;
@@ -62,25 +56,31 @@ $border-color: #909497;
     height: 42px;
     margin-bottom: 24px;
     .input {
+      color: $touched-color;
       width: 100%;
-      height: 42px;
+      height: 100%;
       font-size: 16px;
       padding-left: 42px;
+      transition: .2s ease-in-out;
+      &.hover, &.focus {
+        border-color: $touched-border-color;
+        box-shadow: 0 0 0 1px $touched-border-color;
+      }
     }
     .fas, .far {
       position: absolute;
+      cursor: pointer;
       top: 0;
       bottom: 0;
       left: 0;
       margin: auto;
       line-height: 42px;
-      color: #626567;
-      background: #E5E7E9;
+      color: $untached-color;
+      background: #F2F3F4;
       width: 32px;
       text-align: center;
       border-top-left-radius: 2px;
       border-bottom-left-radius: 2px;
-
       border-top: 1px solid $border-color;
       border-left: 1px solid $border-color;
       border-bottom: 1px solid $border-color;
@@ -92,11 +92,11 @@ $border-color: #909497;
       font-size: 15px;
       transition: 0.18s;
       text-align: left;
-      color: #626567;
+      color: $untached-color;
+      padding: 0 2px;
       &.value, &.focus {
-        top: -5px;
+        top: -6px;
         font-size: 12px;
-        color: #797D7F;
       }
     }
     .error-container {
@@ -121,27 +121,22 @@ $border-color: #909497;
   &.checkbox {
     @extend %checkbox;
     .input {
+      transition: .2s ease-in-out;
+      border: 1px solid $border-color;
       outline: none;
-      background: #D0D3D4;
       transition: 0.18s;
       &.hover, &.focus {
-        background: #909497;
-      }
-      &.value, &.checked {
-        background: #2471A3;
+        box-shadow: 0 0 0 1px $touched-border-color;
       }
       .tick {
-        border-bottom: 1px solid white;
-        border-right: 1px solid white;
+        border-bottom: 1px solid $touched-color;
+        border-right: 1px solid $touched-color;
       }
     }
     .label {
-      color: $input-color;
-      &.focus {
-        color: $form-input-hover-color
-      }
-      &.hover {
-        color: $form-input-hover-color
+      color: $untached-color;
+      &.focus, &.hover, &.value {
+        color: $touched-color;
       }
     }
   }
@@ -164,7 +159,17 @@ $border-color: #909497;
   &.error {
     .fas, .far {
       color: $form-input-error-color;
+      border-top: 1px solid $primary-error-color;
+      border-left: 1px solid $primary-error-color;
+      border-bottom: 1px solid $primary-error-color;
     }
   }
 
+  &.hover, &.focus {
+    .fas, .far {
+      border-top: 1px solid $touched-border-color;
+      border-left: 1px solid $touched-border-color;
+      border-bottom: 1px solid $touched-border-color;
+    }
+  }
 }

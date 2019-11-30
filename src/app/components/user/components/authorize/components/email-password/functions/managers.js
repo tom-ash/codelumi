@@ -1,16 +1,13 @@
 import React from 'react'
 import { emailAddressValidator } from '../../../../../functions/shared'
 import { inputs } from '../../../../../constants/inputs'
+import WindmillSpinner from '../../../../../../support/components/spinner/components/windmill/windmill.js'
 
 const noError = { polish: '', english: '' }
 
 export function emailAddressManager() {
-  const {
-    icon,
-    label
-  } = inputs.email
+  const { icon, label } = inputs.email
 
-  const input = inputs.email
   return {
     id: 'user-logon-email-address',
     controlled: false,
@@ -34,12 +31,7 @@ export function emailAddressManager() {
 }
 
 export function passwordManager() {
-  const {
-    icon,
-    label
-  } = inputs.password
-
-  const input = inputs.password
+  const { icon, label } = inputs.password
 
   return {
     id: 'user-logon-password',
@@ -58,11 +50,23 @@ export function passwordManager() {
   }
 }
 
-export function rememberMeManager(aspect, value) {
+export function rememberMeManager() {
+  const { rememberMe } = this.props
+
   return {
     classNames: { container: 'form-input checkbox'},
     checked: this.props.rememberMe,
     label: this.languageHandler('Zapamiętaj mnie', 'Remember me'),
-    onClick: () => this.props.changeInputs({ rememberMe: !this.props.rememberMe })
+    onClick: () => this.props.changeInputs({ rememberMe: !rememberMe })
+  }
+}
+
+export function buttonManager() {
+  const { connecting } = this.props
+
+  return {
+    classNames: { container: 'form-input button' },
+    label: connecting ? <WindmillSpinner spinnerClass='very-small-windmill-spinner'/> : this.languageHandler('Zaloguje', 'Sign in'),
+    onClick: this.logIn
   }
 }

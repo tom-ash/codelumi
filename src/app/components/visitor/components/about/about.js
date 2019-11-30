@@ -17,7 +17,7 @@ class About extends React.Component {
   }
   render() {
     return(
-      <div id='visitor-about'>
+      <div id='visitor-about' className='shadowed'>
         {this.pageHeaderProvider('fas fa-info-circle', { polish: 'O Serwisie', english: 'About' })}
         <div className='paragraph'>
           {

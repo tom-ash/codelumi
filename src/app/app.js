@@ -28,22 +28,19 @@ class App extends React.Component {
   }
 
   showUser = () => {
-    const { showUserCreate, showUserAuthorize } = this.props
+    const { showUserCreate, showUserAuthorize, showUserPasswordReset } = this.props
 
-    return showUserCreate || showUserAuthorize
+    return showUserCreate || showUserAuthorize || showUserPasswordReset
   }
 
   render() {
-    // const { showUser } = this.props
-
     return (
       <div id='app-container'>
         <Header />
         <div id='app-inner-container'>
           <Visitor />
           <Announcement />
-          {this.showUser() &&
-          <User />}
+          {this.showUser() && <User />}
         </div>
         <Footer />
       </div>

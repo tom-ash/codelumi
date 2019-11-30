@@ -1,13 +1,11 @@
 @import '../../../../../../../../../styles/themes.scss';
 
 #user-create-email-submit {
-  max-width: 360px;
-  .button {
-    @extend %blue-button;
-    display: block;
-    width: 180px;
-    height: 36px;
-    margin-left: auto;
-    margin-right: 0;
+  .form-input {
+    &.button {
+      position: relative;
+      margin: 0 0 0 auto;
+      width: 50%;
+    }
   }
 }

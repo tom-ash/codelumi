@@ -1,8 +1,7 @@
 .user-create-email-inputs-container {
-  max-width: 360px;
   .form-input {
     &.phone-country-code {
-      position: absolute!important;
+      position: absolute;
       width: 84px;
     }
     &.phone-body {
