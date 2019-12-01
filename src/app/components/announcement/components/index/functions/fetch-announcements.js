@@ -23,9 +23,6 @@ export function fetchAnnouncements() {
     if (response.ok) return response.json()
   })
   .then(json => {
-
-    console.log(json)
-    
     const { amount } = json
     const announcements = json.announcements.map(announcement => {
       announcement.pictureIndex = 0
@@ -37,44 +34,3 @@ export function fetchAnnouncements() {
     changeControl({ connecting: false })
   })
 }
-
-// import { apiUrl } from '../../../../../../../constants/urls'
-
-
-// export function getAnnouncements() {
-//   const { connecting, changeControl, changeData } = this.props
-//   if (connecting) return
-//   changeControl({ connecting: true })
-//   changeData({ announcements: [] })
-//   const access_token = getAccessToken()
-//   fetch(apiUrl + `/announcements?type=list&page=${this.props.page}`,
-//     {
-//       headers: {
-//         'Content-Type': 'application/json',
-//         access_token,
-//         offices: this.props.switches.offices,
-//         usablePremises: this.props.switches.usablePremises,
-//         visible: this.props.switches.visible,
-//         hidden: this.props.switches.hidden,
-//         sort: this.props.sort
-//       }
-//     }
-//   )
-//   .then(response => {
-//     if (response.ok) return response.json()
-//   })
-//   .then(json => {
-//     const announcements = json.announcements.map(announcement => {
-//       announcement.pictureIndex = 0
-//       return announcement
-//     })
-//     changeControl({
-//       fetch: false,
-//       connecting: false
-//     })
-//     changeData({
-//       amount: json.amount,
-//       announcements: announcements
-//     })
-//   })
-// }

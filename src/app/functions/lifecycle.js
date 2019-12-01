@@ -7,12 +7,7 @@ export function componentDidMount() {
   if (isMobile()) changeApp({ isMobile: true })
   loadGoogleMaps.apply(this)
   this.screenSizeHandler()
-
-
-  changeApp({ path: window.location.pathname })
-
-  
-  window.addEventListener('resize', this.screenSizeHandler, false);
+  window.addEventListener('resize', this.screenSizeHandler, false)  
   this.authorizeUserWithTokens()
   window.onpopstate = () => this.popStateHandler()
 
@@ -23,6 +18,7 @@ export function componentDidMount() {
     }
   });
 
+  this.checkRoute()
 
 }
 

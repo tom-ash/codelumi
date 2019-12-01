@@ -1,32 +1,29 @@
 import { deauthorizeUser } from '../../authorize/functions/adapters'
 
-export function addAnnouncementManager(action) {
+export function addAnnouncementManager() {
   return {
     id: 'user-show-account-add-announcemt',
     classNames: { container: 'button'},
     label: this.labelProvider('fas fa-plus', 'Dodaj ogłoszenie', 'Add announcement'),
-    onClick: () => this.changeRoute(null, 'addAnnouncement')
+    onClick: () => this.changeRoute({ showAnnouncementCreate: true })
   }
 }
 
-export function listAnnouncementsManager(action) {
+export function listAnnouncementsManager() {
   return {
     id: 'user-show-account-list-announcements',
     classNames: { container: 'button'},
     label: this.labelProvider('fas fa-list-ul', 'Dodane ogłoszenia', 'Added announcements'),
-    onClick: () => {
-      this.props.changeAnnouncementControl({ type: 'list' })
-      this.changeRoute(null, 'myAnnouncements')
-    }
+    onClick: () => this.changeRoute({ showAnnouncementIndexUser: true })
   }
 }
 
-export function accountManager(action) {
+export function accountManager() {
   return {
     id: 'user-show-account-account',
     classNames: { container: 'button'},
     label: this.labelProvider('fas fa-cog', 'Ustawienia', 'Settings'),
-    onClick: () => this.changeRoute(null, 'myAccountSettings')
+    onClick: () => this.changeRoute({ showUserEditAccount: true })
   }
 }
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { changeRoute } from '../../../../functions/routers'
 import './styles/styles.scss'
 import { pageHeaderProvider } from '../../../../functions/providers/headers'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
@@ -9,7 +8,6 @@ import { languageHandler, languageObjectHandler } from '../../../../functions/la
 class Footer extends React.Component {
   constructor(props) {
     super(props)
-    this.changeRoute = changeRoute.bind(this)
     this.pageHeaderProvider = pageHeaderProvider.bind(this)
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)

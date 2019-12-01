@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import { ManagedButton } from 'managed-inputs'
-import { changeRoute } from '../../../../../../../../functions/routers'
 import { agreeManager, settingsManager } from './functions/manager'
 import { languageManager } from '../../../../../../../scaffold/components/header/functions/managers'
 import './styles/styles.scss'
@@ -13,7 +12,6 @@ class VisitorPrivacyMonit extends React.Component {
   constructor(props) {
     super(props)
     this.languageHandler = languageHandler.bind(this)
-    this.changeRoute = changeRoute.bind(this)
     this.agreeManager = agreeManager.bind(this)
     this.settingsManager =  settingsManager.bind(this)
     this.languageManager = languageManager.bind(this)

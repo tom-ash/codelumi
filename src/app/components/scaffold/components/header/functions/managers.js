@@ -47,7 +47,7 @@ export function myAccountManager() {
     classNames: { container: 'link' },
     label: this.labelProvider('far fa-user-circle', { polish: 'Konto', english: 'Account'}),
     onClick: () => {
-      changeApp({ showUserAccount: true })
+      changeApp({ showUserShow: true })
       changeControl({ showLinks: false })
     }
   }

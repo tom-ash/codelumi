@@ -2,8 +2,9 @@ export const mapStateToProps = (store) => {
   const {
     showUserCreate,
     showUserAuthorize,
-    showUserPasswordReset,
-    showUserAccount
+    showUserEditPasswordReset,
+    showUserEditAccount,
+    showUserShow
   } = store.app
 
   return {
@@ -12,8 +13,9 @@ export const mapStateToProps = (store) => {
     scrollY: store.app.scrollY,
     showUserCreate,
     showUserAuthorize,
-    showUserPasswordReset,
-    showUserAccount
+    showUserEditPasswordReset,
+    showUserEditAccount,
+    showUserShow
   }
 }
   

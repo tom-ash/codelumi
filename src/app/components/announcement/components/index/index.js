@@ -7,7 +7,6 @@ import AnnouncementIndexMap from './components/map/map'
 import AnnouncementIndexList from './components/list/list'
 import { buildRequestParameters } from './functions/build-parameters'
 import { fetchAnnouncements } from './functions/fetch-announcements'
-import { checkRoute } from '../../../../functions/routers'
 import { paramsReader } from './functions/params-reader'
 import * as lifecycle from './functions/lifecycle'
 import { paramsBuilder } from './functions/params-builder'
@@ -23,7 +22,6 @@ class AnnouncementIndexSearch extends React.Component {
     super(props)
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
-    this.checkRoute = checkRoute.bind(this)
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.paramsReader = paramsReader.bind(this)
@@ -41,6 +39,8 @@ class AnnouncementIndexSearch extends React.Component {
 
   render() {
     const {
+      showIndexVisitor,
+      showIndexUser,
       changeInputs,
       changeControl,
       offset,
@@ -50,8 +50,7 @@ class AnnouncementIndexSearch extends React.Component {
     return (
       <div id='announcement-index'>
         <AnnouncementIndexPanel />
-        {
-        this.checkRoute('announcementIndexFull') &&
+        {showIndexVisitor &&
         <React.Fragment>
           <OffsetSwitcher
             changeInputs={changeInputs}
@@ -62,12 +61,9 @@ class AnnouncementIndexSearch extends React.Component {
           />
           <AnnouncementIndexFull />
           <AnnouncementIndexMap />
-        </React.Fragment>
-        }
-        {
-        this.checkRoute('announcementIndexList') &&
-        <AnnouncementIndexList />
-        }
+        </React.Fragment>}
+        {showIndexUser &&
+        <AnnouncementIndexList />}
       </div>
     )
   }

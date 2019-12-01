@@ -16,7 +16,7 @@ class UserEditAccount extends React.Component {
 
   render() {
     return (
-      <div id='user-edit-account'>
+      <div id='user-edit-account' className='container narrow-container shadowed'>
         <h2 className='page-header'>
           <i className='fas fa-cog' /> {this.languageHandler('Ustawienia', 'Settings')}
         </h2>

@@ -6,7 +6,6 @@ import { publish } from './functions/publish'
 import { savePicture } from './functions/save-picture'
 import { saveAnnouncement } from './functions/save-announcement'
 import * as lifecycle from './functions/lifecycle'
-import { changeRoute } from '../../../../../../functions/routers'
 import WindmillSpinner from '../../../../../support/components/spinner/components/windmill/windmill.js'
 import { handleErrorOnValidate } from '../primary/functions/errors-handler'
 import { validatePictures } from '../pictures/functions/validate-pictures'
@@ -39,7 +38,6 @@ class AnnouncementCreateFeatures extends React.Component {
     this.publish = publish.bind(this)
     this.savePicture = savePicture.bind(this)
     this.saveAnnouncement = saveAnnouncement.bind(this)
-    this.changeRoute = changeRoute.bind(this)
     this.validatePictures = validatePictures.bind(this)
     this.validateMap = validateMap.bind(this)
     this.buttonManager = buttonManager.bind(this)

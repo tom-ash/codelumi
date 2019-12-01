@@ -14,7 +14,6 @@ import { triggerVisible } from './functions/trigger-visible'
 import { extend } from './functions/extend'
 import { destroy } from './functions/destroy'
 import { edit } from './functions/edit'
-import { changeRoute } from '../../../../../../functions/routers'
 import { pageHeaderProvider, sectionHeaderProvider } from '../../../../../../functions/header-providers'
 
 class AnnouncementIndexList extends React.Component {
@@ -32,7 +31,6 @@ class AnnouncementIndexList extends React.Component {
     this.edit = edit.bind(this)
     this.triggerVisible = triggerVisible.bind(this)
     this.destroy = destroy.bind(this)
-    this.changeRoute = changeRoute.bind(this)
 
     this.pageHeaderProvider = pageHeaderProvider.bind(this)
     this.sectionHeaderProvider = sectionHeaderProvider.bind(this)

@@ -4,7 +4,6 @@ import { ManagedText, ManagedCheckbox, ManagedButton } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { logIn } from './functions/adapters'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { changeRoute } from '../../../../../../functions/routers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import { labelProvider } from '../../../../../../functions/providers/label'
 import './styles/styles.scss'
@@ -17,7 +16,6 @@ class UserAuthorizeEmailPassword extends React.Component {
     this.rememberMeManager = managers.rememberMeManager.bind(this)
     this.buttonManager = managers.buttonManager.bind(this)
     this.logIn = logIn.bind(this)
-    this.changeRoute = changeRoute.bind(this)
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
@@ -43,7 +41,7 @@ class UserAuthorizeEmailPassword extends React.Component {
           className='reset-password'>
           <span onClick={(e) => {
             // TODO RESET PASSWORD RESET STATE
-            this.props.changeApp({ showUserAuthorize: false, showUserPasswordReset: true })
+            this.props.changeApp({ showUserAuthorize: false, showUserEditPasswordReset: true })
           }}>
             Resetuj hasło
           </span>

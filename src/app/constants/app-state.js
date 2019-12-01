@@ -1,3 +1,5 @@
+import { routes } from './routes'
+
 export const appState = {
   screenSize: null,
   scrollY: null,
@@ -6,15 +8,5 @@ export const appState = {
   connecting: false,
   scripts: {},
   isMobile: null,
-  showUserCreate: false,
-  showUserAuthorize: false,
-  showUserPasswordReset: false,
-  showUserAccount: false,
-  showUserSettings: false,
-  showVisitorAbout: false,
-  showVisitorContact: false,
-  showVisitorTermsOfService: false,
-  showVisitorCookiesPolicy: false,
-  showVisitorPrivacyPolicy: false,
-  showVisitorPrivacySettings: false
+  ...routes
 }

@@ -24,7 +24,7 @@ class Header extends React.Component {
 
   render() {
     const { screenSize, resetAnnouncementIndexControl, resetAnnouncementIndexInputs, resetAnnouncementIndexData,
-      changeAnnouncementIndexControl } = this.props
+            changeAnnouncementIndexControl } = this.props
     const isLargePc = screenSize === 'largePc'
 
     return (
@@ -45,7 +45,7 @@ class Header extends React.Component {
             resetAnnouncementIndexInputs()
             resetAnnouncementIndexData()
             changeAnnouncementIndexControl({ fetch: true })
-            this.changeRoute(null, '/')
+            this.changeRoute({ showAnnouncementIndexVisitor: true })
           }}>
             <span className='city'>
               WARSAW

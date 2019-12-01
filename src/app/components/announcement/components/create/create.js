@@ -9,7 +9,6 @@ import AnnouncementCreateDescription from './components/description/description'
 import AnnouncementCreateMap from './components/map/map'
 import AnnouncementCreatePublishing from './components/publishing/publishing'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
-import { changeRoute } from '../../../../functions/routers'
 import { monitBuilder } from '../create/functions/monit-builder'
 import { redirectToUserCreate } from '../create/functions/redirect-to-user-create'
 import { getAnnouncement } from './functions/get-announcement'
@@ -25,7 +24,6 @@ class AnnouncementCreate extends React.Component {
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.monitBuilder = monitBuilder.bind(this)
-    this.changeRoute = changeRoute.bind(this)
     this.redirectToUserCreate = redirectToUserCreate.bind(this)
     this.getAnnouncement = getAnnouncement.bind(this)
     this.sectionHeaderProvider = sectionHeaderProvider.bind(this)

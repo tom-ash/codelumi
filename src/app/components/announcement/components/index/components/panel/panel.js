@@ -12,13 +12,12 @@ class AnnouncementIndexPanel extends React.Component {
   }
 
   render() {
-    const { path } = this.props
+    const { path, showVisitor, showUser } = this.props
+
     return (
       <div id='announcement-index-panel'>
-        {path.indexOf('mojeogloszenia') === -1 && path.indexOf('myannouncements') === -1 ?
-        <AnnouncementIndexPanelVisitor />
-        :
-        <AnnouncementIndexPanelUser />}
+        {showVisitor && <AnnouncementIndexPanelVisitor />}
+        {showUser    && <AnnouncementIndexPanelUser />}
       </div>
     )
   }

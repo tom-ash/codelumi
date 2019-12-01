@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { componentDidMount } from './functions/lifecycle'
-import { checkRoute } from '../../functions/routers'
 import { checkConsents } from './functions/check-consents'
 import VisitorAbout from './components/about/about'
 import VisitorContact from './components/contact/contact'
@@ -16,7 +15,6 @@ import './styles/styles.scss'
 class User extends React.Component {
   constructor(props) {
     super(props)
-    this.checkRoute = checkRoute.bind(this)
     this.checkConsents = checkConsents.bind(this)
     this.componentDidMount = componentDidMount
   }

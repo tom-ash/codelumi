@@ -1,10 +1,20 @@
 export const mapStateToProps = (store) => {
-  const { language, isMobile, screenSize, path } = store.app
-
-  return {
+  const {
+    language,
+    path,
     isMobile,
     screenSize,
-    path
+    showAnnouncementIndexVisitor: showVisitor,
+    showAnnouncementIndexUser: showUser
+  } = store.app
+
+  return {
+    language,
+    path,
+    isMobile,
+    screenSize,
+    showVisitor,
+    showUser
   }
 }
     
