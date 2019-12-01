@@ -6,6 +6,18 @@
       margin-right: 10px;
     }
   }
+  .button {
+    position: relative;
+    .very-small-windmill-spinner {
+      z-index: 2000000;
+      left: -52px;
+      top: -52px;
+      div:after {
+        background: #F0F3F4;
+      }
+    }
+  }
+
   .monit-inputs {
     max-width: 360px;
     .monit {

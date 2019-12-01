@@ -30,15 +30,14 @@ class AnnouncementCreate extends React.Component {
   }
 
   render() {
+    const { publishing } = this.props
+
     return (
-      <div id='announcement-create'>
-        {
-        !this.props.publishing &&
+      <div id='announcement-create' className='container medium-container shadowed'>
         <div>
           <h2 className='page-header'>
             <i className='fas fa-plus' /> {this.languageHandler('Dodawanie ogłoszenia', 'Announcement Adding')}
           </h2>
-          {/* {this.monitBuilder()} */}
           {this.sectionHeaderProvider('fas fa-info-circle', { polish: 'Dane podstawowe', english: 'Primary Data'})}
           <AnnouncementCreatePrimary />
           {this.sectionHeaderProvider('fas fa-images', { polish: 'Zdjęcia', english: 'Pictures'})}
@@ -52,13 +51,6 @@ class AnnouncementCreate extends React.Component {
           {this.sectionHeaderProvider('fas fa-map-marker-alt', { polish: 'Mapa', english: 'Map'})}
           <AnnouncementCreateMap />
         </div>
-        }
-        {
-        !this.props.publishing &&
-        <div>
-          {this.sectionHeaderProvider('fas fa-play', { polish: 'Publikowanie', english: 'Publishing' })}
-        </div>
-        }
         <AnnouncementCreatePublishing />
       </div>
     )

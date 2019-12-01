@@ -5,16 +5,17 @@ export function fetchAnnouncements() {
   const {
     changeControl,
     changeData,
-    connecting
+    connecting,
+    showUser
   } = this.props
   
   if (connecting) return
 
   let headers = { 'Content-Type': 'application/json' }
-  if (this.userIndex()) headers = { ...headers, access_token: getAccessToken() }
+  if (showUser) headers = { ...headers, access_token: getAccessToken() }
 
   changeControl({ connecting: true, fetch: false })
-  changeData({ amount: null, announcements: null })
+  changeData({ announcements: null, amount: null })
 
   fetch(apiUrl + `/announcements${this.buildRequestParameters()}`, {
     headers

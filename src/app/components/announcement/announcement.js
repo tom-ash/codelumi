@@ -12,12 +12,12 @@ class Announcement extends React.Component {
     super(props)
   }
   render() {
-    const { showCreate, showIndexVisitor, showIndexUser } = this.props
+    const { showCreate, showVisitor, showUser } = this.props
 
     return (
       <div id='announcement'>
         {showCreate                          && <AnnouncementCreate />}
-        {(showIndexVisitor || showIndexUser) && <AnnouncementIndex />}
+        {(showVisitor || showUser) && <AnnouncementIndex />}
         {showAnnouncement()                  && <AnnouncementShow />}
       </div>
     )

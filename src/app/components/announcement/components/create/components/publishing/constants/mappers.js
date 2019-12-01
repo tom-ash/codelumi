@@ -1,5 +1,10 @@
 export const mapStateToProps = (store) => {
-  const { language } = store.app
+  const {
+    language,
+    showUserCreate,
+    showUserAuthorize,
+    showUserEditPhoneVerify
+  } = store.app
   const { control, inputs, data, errors } = store.announcement.create
   const { editing, connecting, success, publishing } = control
 
@@ -8,13 +13,13 @@ export const mapStateToProps = (store) => {
   const { rentNetPerSqm, rentGross, rentGrossPerSqm } = data
 
   return {
-
     rentNetPerSqm,
     rentGross,
     rentGrossPerSqm,
-
-
     language,
+    showUserCreate,
+    showUserAuthorize,
+    showUserEditPhoneVerify,
     authorized,
     phoneVerified,
     editing,
@@ -48,6 +53,7 @@ export const mapStateToProps = (store) => {
     
 export const mapDispatchToProps = (dispatch) => {
   return {
+    changeApp: (value) => dispatch({ type: 'app', value: value}),
     changeControl: (value) => dispatch({ type: 'announcement/create/control', value: value }),
     changeInputs: (value) => dispatch({ type: 'announcement/create/inputs', value: value }),
     changeErrors: (value) => dispatch({ type: 'announcement/create/errors', value: value })

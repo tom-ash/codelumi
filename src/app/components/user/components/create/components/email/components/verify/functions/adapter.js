@@ -24,9 +24,10 @@ export function verify() {
   .then(json => {
     const { accessToken, name } = json
     saveTokens.call(this, accessToken)
-    changeAuthorizeData({ authorized: true, name, phoneVerified: false })
-    changeControl({ connecting: false, success: true })
+
+    changeControl({ connecting: false })
     changeApp({ showUserCreate: false })
+    changeAuthorizeData({ authorized: true, name, phoneVerified: false })
   })
   .catch(() => {
     changeErrors({

@@ -4,6 +4,8 @@ import { createClientServerParams } from '../../../../../constants/client-server
 import { getAccessToken } from '../../../../../../user/components/authorize/components/tokens/functions/get-tokens'
 
 export function saveAnnouncement() {
+  const { changeControl } = this.props
+
   let destination = '/announcements'
   let method = 'POST'
   if (this.props.connecting) return
@@ -22,10 +24,11 @@ export function saveAnnouncement() {
     body: JSON.stringify(buildAnouncementParams.apply(this))
   })
   .then(response => {
-    if (response.ok) this.props.changeControl({
-      connecting: false,
-      success: true
-    })
+    if (response.ok) return response.json()
+  })
+  .then(jsonResponse => {
+    changeControl({ connecting: false, publishing: false })
+    this.changeRoute({ showAnnouncementIndexVisitor: true })
   })
 }
 

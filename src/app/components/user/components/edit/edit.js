@@ -12,16 +12,15 @@ class UserEdit extends React.Component {
   }
 
   render() {
-    const { showPasswordReset, showAccount } = this.props
+    const { showPasswordReset, showPhoneVerify, showAccount } = this.props
 
     return (
       <div
         id='user-edit'
-        // className='container narrow-container shadowed'
         onClick={e => e.stopPropagation()}
       >
-        {false             && <UserEditPhoneNumberVerify />}
         {showPasswordReset && <UserEditAccountPassword />}
+        {showPhoneVerify   && <UserEditPhoneNumberVerify />}
         {showAccount       && <UserEditAccount />}
       </div>
     )

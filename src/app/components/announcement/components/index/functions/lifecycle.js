@@ -1,7 +1,7 @@
 export function componentDidMount() {
-  const { fetch } = this.props
+  const { fetch, showUser } = this.props
 
-  if (!this.userIndex()) {
+  if (!showUser) {
     if (fetch) return this.fetchAnnouncements()
 
     this.paramsReader()
@@ -11,11 +11,11 @@ export function componentDidMount() {
 }
 
 export function componentDidUpdate(prevProps) {
-  const { fetch } = this.props
+  const { fetch, showUser } = this.props
   const { fetch: prevFetch } = prevProps
 
   if (!prevFetch && fetch) {
     this.fetchAnnouncements()
-    if (!this.userIndex()) this.paramsBuilder()
-  }  
+    if (!showUser) this.paramsBuilder()
+  }
 }

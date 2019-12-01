@@ -5,7 +5,7 @@ export function addAnnouncementManager() {
     classNames: { container: 'link' },
     label: this.labelProvider('fas fa-plus', { polish: 'Dodaj nieodpłatne ogłoszenie', english: 'Add unpaid announcement'}),
     onClick: () => {
-      this.changeRoute(null, 'addAnnouncement')
+      this.changeRoute({ showAnnouncementCreate: true })
       this.props.changeControl({ showLinks: false })
     }
   }
@@ -33,8 +33,8 @@ export function signInManager() {
     classNames: { container: 'link' },
     label: this.labelProvider('fas fa-sign-in-alt', { polish: 'Zaloguj', english: 'Sign In'}),
     onClick: () => {
-        changeApp({ showUserAuthorize: true })
-        changeControl({ showLinks: false })
+      changeApp({ showUserAuthorize: true })
+      changeControl({ showLinks: false })
     }
   }
 }

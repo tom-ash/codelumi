@@ -1,11 +1,12 @@
 import React from 'react'
+import ReactDOM from 'react-dom';
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import { publish } from './functions/publish'
 import { savePicture } from './functions/save-picture'
 import { saveAnnouncement } from './functions/save-announcement'
-import * as lifecycle from './functions/lifecycle'
+import { componentDidUpdate } from './functions/lifecycle'
 import WindmillSpinner from '../../../../../support/components/spinner/components/windmill/windmill.js'
 import { handleErrorOnValidate } from '../primary/functions/errors-handler'
 import { validatePictures } from '../pictures/functions/validate-pictures'
@@ -16,13 +17,13 @@ import { buttonManager } from './functions/manager'
 import { labelProvider } from '../../../../../../functions/providers/label'
 import { parseCurrency } from '../../../../functions/currency-parsers'
 import DerivedRents from './components/derived-rents/derived-rents'
+import { changeRoute } from '../../../../../../functions/routers'
 import './styles/styles.scss'
 
 class AnnouncementCreateFeatures extends React.Component {
   constructor(props) {
     super(props)
-    this.componentDidMount = lifecycle.componentDidMount
-    this.componentDidUpdate = lifecycle.componentDidUpdate
+    this.componentDidUpdate = componentDidUpdate
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.handleErrorOnValidate = handleErrorOnValidate.bind(this)
@@ -45,55 +46,41 @@ class AnnouncementCreateFeatures extends React.Component {
     this.availabilityDateSelectManager = managers.availabilityDateSelectManager.bind(this)
     this.availableDateManager = managers.availableDateManager.bind(this)
     this.parseCurrency = parseCurrency.bind(this)
+    this.changeRoute = changeRoute.bind(this)
   }
   
   render() {
     const { languageHandler } = this
-    const { area, netRentAmount, rentCurrency, rentNetPerSqm, rentGross, rentGrossPerSqm } = this.props
+    const { connecting, showUserCreate, showUserAuthorize, showUserEditPhoneVerify, area, netRentAmount, rentCurrency,
+            rentNetPerSqm, rentGross, rentGrossPerSqm, publishing } = this.props
     const parsedRentCurrency = this.parseCurrency(rentCurrency)
 
     return (
       <div id='announcement-create-publishing'>
-        {
-        !this.props.publishing &&
-        <div>
-          <DerivedRents
-            languageHandler={languageHandler}
-            area={area}
-            rentCurrency={rentCurrency}
-            parsedRentCurrency={parsedRentCurrency}
-            netRentAmount={netRentAmount}
-            rentGross={rentGross}
-            rentNetPerSqm={rentNetPerSqm}
-            rentGrossPerSqm={rentGrossPerSqm}
-          />
-          <ManagedButton {...this.buttonManager()} />
-        </div>
-        }
-        {
-        this.props.publishing &&
-        <div>
-          <h2 className='page-header'>
-            <i className='fas fa-ellipsis-h' /> {languageHandler('Publikowanie ogłoszenia', 'Announcement Publishing')}
-          </h2>
-          {
-          !this.props.success &&
-          <div className='publishing'>
-            <WindmillSpinner spinnerClass='windmill-medium-spinner'/>
-          </div>
-          }
-          {
-          this.props.success &&
-          <div className='publishing'>
-            {this.languageHandler('Gratulacje! Ogłoszenie zostało dodane.',
-                                  'Congratulations! The announcement has been added!')}
-          </div>
-          }
-        </div>
-        }
+        <DerivedRents
+          languageHandler={languageHandler}
+          area={area}
+          rentCurrency={rentCurrency}
+          parsedRentCurrency={parsedRentCurrency}
+          netRentAmount={netRentAmount}
+          rentGross={rentGross}
+          rentNetPerSqm={rentNetPerSqm}
+          rentGrossPerSqm={rentGrossPerSqm}
+        />
+        <ManagedButton {...this.buttonManager()} />
+        {publishing && !showUserCreate && !showUserAuthorize && !showUserEditPhoneVerify && <PublishingCover />}
       </div>
     )
   }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementCreateFeatures)
+
+function PublishingCover() {  
+  return ReactDOM.createPortal(
+    <div className='darkened-cover'>
+      <WindmillSpinner spinnerClass='windmill-medium-spinner'/>
+    </div>,
+    document.body
+  )
+}

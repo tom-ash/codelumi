@@ -15,7 +15,9 @@ export function startVerification() {
 }
 
 export function sendVerification() {
-  this.props.changeControl({ connecting: true })
+  const { changeApp, changeAuthorizeData, changeControl } =  this.props
+
+  changeControl({ connecting: true })
   const verificationCode = document.getElementById('user-edit-phone-verification-code').value
   const access_token = getAccessToken()
   fetch(apiUrl + '/users/verify_phone', {
@@ -27,7 +29,12 @@ export function sendVerification() {
     body: JSON.stringify({ verificationCode })
   })
   .then(response => {
-    if (response.status === 200) this.props.changeAuthorizeData({ phoneVerified: true })
+    if (response.status === 200) {
+      changeAuthorizeData({ phoneVerified: true })
+      changeApp({ showUserEditPhoneVerify: false })
+      return
+    }
+
     throw new Error('Verification Invalid')
   })
   .catch(() => {
@@ -35,5 +42,5 @@ export function sendVerification() {
       phoneVerification: { polish: 'nieprawidłowy kod weryfikacyjny', english: 'invalid verification code' }
     })
   })
-  .finally(() => this.props.changeControl({ connecting: false }))
+  .finally(() => changeControl({ connecting: false }))
 }

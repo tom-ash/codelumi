@@ -3,16 +3,16 @@ export const mapStateToProps = (store) => {
     language,
     path,
     showAnnouncementCreate: showCreate,
-    showAnnouncementIndexVisitor: showIndexVisitor,
-    showAnnouncementIndexUser: showIndexUser
+    showAnnouncementIndexVisitor: showVisitor,
+    showAnnouncementIndexUser: showUser
   } = store.app
   
   return {
     language,
     path,
     showCreate,
-    showIndexVisitor,
-    showIndexUser
+    showVisitor,
+    showUser
   }
 }
     

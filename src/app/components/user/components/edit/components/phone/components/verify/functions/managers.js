@@ -1,11 +1,17 @@
+import React from 'react'
+import { inputs } from '../../../../../../../constants/inputs'
 const noError = { polish: '', english: '' }
+import WindmillSpinner from '../../../../../../../../support/components/spinner/components/windmill/windmill.js'
 
 export function verificationManager() {
+  const { label, icon } = inputs.verification
+
   return {
     id: 'user-edit-phone-verification-code',
     controlled: false,
     classNames: { container: 'form-input text'},
-    label: this.languageHandler('kod weryfikacyjny', 'verification code'),
+    label: this.languageObjectHandler(label),
+    children: <i className={icon} />,
     onFocus: () => this.props.changeErrors({ phoneVerification: noError }),
     onBlur: (value) => this.verificationManager().validate(value),
     validate: (value) => {
@@ -22,13 +28,16 @@ export function verificationManager() {
   }
 }
 
-export function buttonManager(aspect) {
+export function buttonManager() {
+  const { connecting } = this.props
+
   return {
     classNames: { container: 'form-input button'},
-    label: this.languageHandler('Dalej', 'Next'),
-    onClick: () => this.sendVerification()
+    label: connecting ? <WindmillSpinner spinnerClass='very-small-windmill-spinner'/> : this.languageHandler('Zweryfikuj', 'Verify'),
+    onClick: () => {
+      if (connecting) return
+
+      this.sendVerification()
+    }
   }
 }
-
-
-

@@ -33,14 +33,10 @@ class AnnouncementIndexSearch extends React.Component {
     this.parseDistrictForUrl = parseDistrictForUrl.bind(this)
   }
 
-  visitorIndex = () => this.props.path.indexOf('account') === -1 && this.props.path.indexOf('konto') === -1
-
-  userIndex = () => this.props.path.indexOf('account') !== -1 || this.props.path.indexOf('konto') !== -1
-
   render() {
     const {
-      showIndexVisitor,
-      showIndexUser,
+      showVisitor,
+      showUser,
       changeInputs,
       changeControl,
       offset,
@@ -50,7 +46,7 @@ class AnnouncementIndexSearch extends React.Component {
     return (
       <div id='announcement-index'>
         <AnnouncementIndexPanel />
-        {showIndexVisitor &&
+        {showVisitor &&
         <React.Fragment>
           <OffsetSwitcher
             changeInputs={changeInputs}
@@ -62,7 +58,7 @@ class AnnouncementIndexSearch extends React.Component {
           <AnnouncementIndexFull />
           <AnnouncementIndexMap />
         </React.Fragment>}
-        {showIndexUser &&
+        {showUser &&
         <AnnouncementIndexList />}
       </div>
     )

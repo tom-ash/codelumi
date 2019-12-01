@@ -5,6 +5,7 @@ export const mapStateToProps = (store) => {
     showUserCreate: showCreate,
     showUserAuthorize: showAuthorize,
     showUserEditPasswordReset: showPasswordReset,
+    showUserEditPhoneVerify: showEditPhoneVerify,
     showUserEditAccount: showEdit,
     showUserShow: showAccount
   } = store.app
@@ -15,6 +16,7 @@ export const mapStateToProps = (store) => {
     showCreate,
     showAuthorize,
     showPasswordReset,
+    showEditPhoneVerify,
     showAccount,
     showEdit
   }

@@ -17,6 +17,7 @@
 
 .darkened-cover {
   display: flex;
+  z-index: 100000;
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, .56);
@@ -25,6 +26,11 @@
   right: 0;
   bottom: 0;
   left: 0;
+  .windmill-medium-spinner {
+    div:after {
+      background: #F0F3F4;
+    }
+  }
 }
 
 .transparent-cover {
@@ -151,7 +157,6 @@ a {
 }
 
 .options {
-  // z-index: 4000;
   position: absolute;
   max-height: 208px;
   background: #F7F9F9;
@@ -167,7 +172,7 @@ a {
     padding-left: 7px;
     cursor: pointer;
     &.preselected {
-      background: #D6EAF8;
+      background: #F5CBA7;
     }
   }
 }

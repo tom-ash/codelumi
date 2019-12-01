@@ -28,9 +28,16 @@ class App extends React.Component {
   }
 
   showUser = () => {
-    const { showUserCreate, showUserAuthorize, showUserEditPasswordReset, showUserShow, showUserEditAccount } = this.props
+    const {
+      showUserCreate,
+      showUserAuthorize,
+      showUserEditPasswordReset,
+      showUserShow,
+      showUserEditAccount,
+      showUserEditPhoneVerify
+    } = this.props
 
-    return showUserCreate || showUserAuthorize || showUserEditPasswordReset || showUserShow || showUserEditAccount
+    return showUserCreate || showUserAuthorize || showUserEditPasswordReset || showUserShow || showUserEditAccount || showUserEditPhoneVerify
   }
 
   render() {

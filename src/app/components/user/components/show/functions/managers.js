@@ -10,11 +10,16 @@ export function addAnnouncementManager() {
 }
 
 export function listAnnouncementsManager() {
+  const { changeAnnouncementIndexData, changeAnnouncementIndexControl } = this.props
   return {
     id: 'user-show-account-list-announcements',
     classNames: { container: 'button'},
     label: this.labelProvider('fas fa-list-ul', 'Dodane ogłoszenia', 'Added announcements'),
-    onClick: () => this.changeRoute({ showAnnouncementIndexUser: true })
+    onClick: () => {
+      changeAnnouncementIndexData({ announcements: null, amount: null })
+      this.changeRoute({ showAnnouncementIndexUser: true })
+      changeAnnouncementIndexControl({ fetch: true })
+    }
   }
 }
 

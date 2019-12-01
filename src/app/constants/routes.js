@@ -6,6 +6,7 @@ export const routes = {
   showUserAuthorize: false,
   showUserShow: false,
   showUserEditPasswordReset: false,
+  showUserEditPhoneVerify: false,
   showUserEditAccount: false,
   showVisitorAbout: false,
   showVisitorContact: false,

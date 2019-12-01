@@ -20,15 +20,15 @@ class User extends React.Component {
   }
 
   render() {
-    const { showCreate, showAuthorize, showPasswordReset, showAccount, showEdit } = this.props
+    const { showCreate, showAuthorize, showPasswordReset, showEditPhoneVerify, showAccount, showEdit } = this.props
 
     return (
       <div id='user'>
-        {(showCreate || showAuthorize || showPasswordReset) &&
+        {(showCreate || showAuthorize || showPasswordReset || showEditPhoneVerify) &&
         <div onClick={this.hideUser} className='darkened-cover '>
-          {showCreate          && <UserCreate />}
-          {showAuthorize       && <UserAuthorize />}
-          {(showPasswordReset) && <UserEdit />}
+          {showCreate                                 && <UserCreate />}
+          {showAuthorize                              && <UserAuthorize />}
+          {(showPasswordReset || showEditPhoneVerify) && <UserEdit />}
         </div>}
         {showAccount &&
         <div onClick={this.hideUser} className='transparent-cover'>
