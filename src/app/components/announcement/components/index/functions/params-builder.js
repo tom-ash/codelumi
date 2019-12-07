@@ -40,6 +40,7 @@ export function paramsBuilder() {
       urlParams += this.languageObjectHandler(this[param.parser](value))
     }
   })
-  if (urlParams.length == 1) urlParams = '/'
-  window.history.pushState({ path: urlParams }, '', urlParams)
+  if (urlParams.length == 1) urlParams = ''
+  const fullPathname = window.location.pathname + urlParams
+  window.history.pushState({ path: fullPathname }, '', fullPathname)
 }

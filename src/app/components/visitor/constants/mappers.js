@@ -21,7 +21,6 @@ export const mapStateToProps = (store) => {
     path: store.app.path,
     consents: store.visitor.legal.privacy.settings.consents,
     language: store.app.language,
-    path: store.app.path,
     showCreate,
     showAuthorize,
     showAbout,

@@ -1,23 +1,46 @@
 export const mapStateToProps = (store) => {
   const {
+    language,
+    screenSize,
+    path,
+    scrollY,
+    showAnnouncementCreate,
+    showAnnouncementIndexVisitor,
+    showAnnouncementIndexUser,
     showUserCreate,
     showUserAuthorize,
+    showUserShow,
     showUserEditPasswordReset,
     showUserEditPhoneVerify,
     showUserEditAccount,
-    showUserShow
+    showVisitorAbout,
+    showVisitorContact,
+    showVisitorTermsOfService,
+    showVisitorCookiesPolicy,
+    showVisitorPrivacyPolicy,
+    showVisitorPrivacySettings
   } = store.app
 
   return {
-    screenSize: store.app.screenSize,
-    path: store.app.path,
-    scrollY: store.app.scrollY,
+    language,
+    screenSize,
+    path,
+    scrollY,
+    showAnnouncementCreate,
+    showAnnouncementIndexVisitor,
+    showAnnouncementIndexUser,
     showUserCreate,
     showUserAuthorize,
+    showUserShow,
     showUserEditPasswordReset,
     showUserEditPhoneVerify,
     showUserEditAccount,
-    showUserShow
+    showVisitorAbout,
+    showVisitorContact,
+    showVisitorTermsOfService,
+    showVisitorCookiesPolicy,
+    showVisitorPrivacyPolicy,
+    showVisitorPrivacySettings
   }
 }
   

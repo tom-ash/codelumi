@@ -1,5 +1,7 @@
 import { loadGoogleMaps } from './load-google-maps'
 import { isMobile } from './is-mobile'
+import { routes } from '../constants/routes'
+import { routeMatchers } from '../constants/route-matchers'
 
 export function componentDidMount() {
   const { changeApp } = this.props
@@ -21,8 +23,6 @@ export function componentDidMount() {
   this.checkRoute()
 }
 
-export function componentWillMount() {
-}
-
-export function componentDidUpdate() {
+export function componentDidUpdate(prevProps) {
+  this.handlePathname(prevProps)
 }

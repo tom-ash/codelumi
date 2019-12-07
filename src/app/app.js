@@ -12,11 +12,12 @@ import { authorizeUserWithTokens } from './components/user/components/authorize/
 import './styles/styles.scss'
 import { screenSizeHandler } from './functions/screen-size-handler'
 import { popStateHandler } from './functions/popStateHandler'
+import { languageObjectHandler } from './functions/language-handler'
+import { handlePathname } from './functions/routers'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.componentWillMount = lifecycle.componentWillMount
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.changeRoute = routers.changeRoute.bind(this)
@@ -25,6 +26,8 @@ class App extends React.Component {
     this.authorizeUserWithTokens = authorizeUserWithTokens.bind(this)
     this.screenSizeHandler = screenSizeHandler.bind(this)
     this.popStateHandler = popStateHandler.bind(this)
+    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.handlePathname = handlePathname.bind(this)
   }
 
   showUser = () => {
