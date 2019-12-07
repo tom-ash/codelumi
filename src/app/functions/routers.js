@@ -11,6 +11,10 @@ export function checkRoute() {
     if (path.match(new RegExp(`(${matcher.route.polish}|${matcher.route.english})`))) {
       newRoutes[key] = true
       if (matcher.main) newRoutes.showAnnouncementIndexVisitor = false
+      if (matcher.announcementId) {
+        let announcementId = path.match(/\d+/)
+        if (announcementId) newRoutes.announcementId = announcementId[0]
+      }
     }
   }
   changeApp(newRoutes)
@@ -38,6 +42,11 @@ export function handlePathname(prevProps) {
       if (this.props[key]) {
         const route = this.languageObjectHandler(routeMatchers[key].route)
         fullPathname = `${fullPathname}/${route}`
+        if (matcher.announcementId) {
+          const { announcementId } = this.props
+          
+          fullPathname = `${fullPathname}/${announcementId}`
+        }
       }
     }
 

@@ -1,3 +1,3 @@
 export function edit(announcement) {
-  console.log("TODO")
+  this.changeRoute({ showAnnouncementIndexUser: false, showAnnouncementEdit: true, announcementId: announcement.id })
 }

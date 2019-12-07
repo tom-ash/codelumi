@@ -3,6 +3,8 @@ export const mapStateToProps = (store) => {
     language,
     path,
     showAnnouncementCreate: showCreate,
+    showAnnouncementEdit: showEdit,
+    announcementId,
     showAnnouncementIndexVisitor: showVisitor,
     showAnnouncementIndexUser: showUser
   } = store.app
@@ -11,6 +13,8 @@ export const mapStateToProps = (store) => {
     language,
     path,
     showCreate,
+    showEdit,
+    announcementId,
     showVisitor,
     showUser
   }

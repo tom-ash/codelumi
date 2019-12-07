@@ -15,6 +15,7 @@ import { extend } from './functions/extend'
 import { destroy } from './functions/destroy'
 import { edit } from './functions/edit'
 import { pageHeaderProvider, sectionHeaderProvider } from '../../../../../../functions/header-providers'
+import { changeRoute } from '../../../../../../functions/routers'
 
 class AnnouncementIndexList extends React.Component {
   constructor(props) {
@@ -24,21 +25,19 @@ class AnnouncementIndexList extends React.Component {
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
-
     this.controlProvider = controlProvider.bind(this)
     this.activeProvider = activeProvider.bind(this)
     this.buttonProvider = buttonProvider.bind(this)
     this.edit = edit.bind(this)
     this.triggerVisible = triggerVisible.bind(this)
     this.destroy = destroy.bind(this)
-
     this.pageHeaderProvider = pageHeaderProvider.bind(this)
     this.sectionHeaderProvider = sectionHeaderProvider.bind(this)
-    
     this.paginationManager = managers.paginationManager.bind(this)
     this.destroyManager = managers.destroyManager.bind(this)
     this.cancelDestroyManager = managers.cancelDestroyManager.bind(this)
     this.extend = extend.bind(this)
+    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {
@@ -68,21 +67,19 @@ class AnnouncementIndexList extends React.Component {
           <ManagedPagination {...this.paginationManager()} />
         </div>
         <div className='announcements'>
-          {
-          this.props.announcements && this.props.announcements.map((announcement, index) => (
+          {this.props.announcements && this.props.announcements.map((announcement, index) => (
           <AnnouncementIndexTile
-          key={`${announcement.id}`}
-          index={index}
-          first={index == 0}
-          last={index == this.props.announcements.length - 1}
-          venue='list'
-          announcement={announcement}
-          announcements={this.props.announcements}
-          control={this.controlProvider(announcement, index)}
-          active={this.activeProvider(announcement, index)}
-          changeAnnouncement={this.props.changeAnnouncement} />
-          ))
-          }
+            key={`${announcement.id}`}
+            index={index}
+            first={index == 0}
+            last={index == this.props.announcements.length - 1}
+            venue='list'
+            announcement={announcement}
+            announcements={this.props.announcements}
+            control={this.controlProvider(announcement, index)}
+            active={this.activeProvider(announcement, index)}
+            changeAnnouncement={this.props.changeAnnouncement}
+          />))}
           <div className='float-clear' />
         </div>
         <div className='pagination-container bottom'>

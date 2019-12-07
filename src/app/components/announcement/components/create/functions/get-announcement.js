@@ -4,11 +4,11 @@ import { furnishings } from '../../../constants/furnishings'
 import { getAccessToken } from '../../../../user/components/authorize/components/tokens/functions/get-tokens'
 
 export function getAnnouncement() {
-  const path = window.location.pathname
-  let announcementId = path.match(/\d+/)
+  const { announcementId } = this.props
+
   if (!announcementId) return
   const access_token = getAccessToken()
-  fetch(`${apiUrl}/announcements/${announcementId[0]}/edit`, {
+  fetch(`${apiUrl}/announcements/${announcementId}/edit`, {
     headers: {
       'Content-Type': 'application/json',
       access_token
@@ -20,49 +20,19 @@ export function getAnnouncement() {
     }
   })
   .then(json => {
-
     const { changeInputs } = this.props
-
     const {
-      id,
-      category,
-      district,
-      rentCurrency,
-      netRentAmount,
-      additionalFees,
-      area,
-      rooms,
-      floor,
-      totalFloors,
-      pictures,
-      features,
-      furnishings,
-      polishDescription,
-      englishDescription,
-      latitude,
-      longitude,
-      availabilityDate
+      id, category, district, rentCurrency, netRentAmount, additionalFees, area, rooms, floor, totalFloors, pictures,
+      features, furnishings, polishDescription, englishDescription, latitude, longitude, availabilityDate
     } = json
 
     setBlobs.call(this, id, pictures)
 
     let announcementInputs = {
-      id,
-      category,
-      district,
-      rentCurrency,
-      netRentAmount,
-      additionalFees,
-      area,
-      rooms,
-      floor,
-      totalFloors,
-      features: parseFeatures(features),
-      furnishings: parseFurnishings(furnishings),
-      descriptionPolish: polishDescription || '',
-      descriptionEnglish: englishDescription || '',
-      mapLatitude: latitude / 1000000,
-      mapLongitude: longitude / 1000000
+      id, category, district, rentCurrency, netRentAmount, additionalFees, area, rooms, floor, totalFloors,
+      features: parseFeatures(features), furnishings: parseFurnishings(furnishings),
+      descriptionPolish: polishDescription || '', descriptionEnglish: englishDescription || '',
+      mapLatitude: latitude / 1000000, mapLongitude: longitude / 1000000
     }
     changeInputs(appendAvailabilityDate(availabilityDate, announcementInputs))
   })

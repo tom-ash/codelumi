@@ -19,6 +19,14 @@ export const routeMatchers = {
     },
     main: true
   },
+  showAnnouncementEdit: {
+    route: {
+      polish: 'edytuj_ogloszenie',
+      english: 'edit_announcement'
+    },
+    main: true,
+    announcementId: true
+  },
   showVisitorPrivacySettings: {
     route: {
       polish: 'ustawienia_prywatnosci',

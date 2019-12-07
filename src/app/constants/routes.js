@@ -1,7 +1,9 @@
 export const routes = {
   showAnnouncementCreate: false,
+  showAnnouncementEdit: false,
   showAnnouncementIndexVisitor: false,
   showAnnouncementIndexUser: false,
+  announcementId: null,
   showUserCreate: false,
   showUserAuthorize: false,
   showUserShow: false,
