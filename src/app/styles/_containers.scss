@@ -12,7 +12,6 @@
 
 .wide-container {
   width: 1200px;
-  // min-height: 480px;
   @media only screen and (max-width: $breakpoint-phone-large-max) {
     width: 100%;
     padding: 12px;
@@ -21,7 +20,7 @@
 
 .medium-container {
   width: 768px;
-  // min-height: 480px;
+
   @media only screen and (max-width: $breakpoint-phone-large-max) {
     width: 100%;
     padding: 12px;

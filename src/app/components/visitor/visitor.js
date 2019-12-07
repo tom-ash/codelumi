@@ -48,11 +48,10 @@ class User extends React.Component {
 
     return (
       <div id='visitor'>
-        {(additionalFunctionsConsent === null || statisticsAndMarketingConsent === null) && !showPrivacySettings &&
+        {!this.show() && (additionalFunctionsConsent === null || statisticsAndMarketingConsent === null) && !showPrivacySettings &&
         <VisitorPrivacyMonit />}
         {this.show() &&
         <div className='darkened-cover' onClick={() => this.hide()}>
-          
           {showAbout           && <VisitorAbout />}
           {showContact         && <VisitorContact />}
           {showTermsOfService  && <VisitorTermsOfService/>}

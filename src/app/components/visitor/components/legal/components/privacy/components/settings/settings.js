@@ -2,10 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
-import './styles/styles.scss'
 import { ManagedRadio } from 'managed-inputs'
 import { additionalFunctionsConsentManager, statisticsAndMarketingConsentManager } from './functions/managers'
 import { pageHeaderProvider } from '../../../../../../../../functions/header-providers'
+import { textsProvider } from './functions/texts-provider'
+import './styles/styles.scss'
 
 class VisitorPrivacySettings extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class VisitorPrivacySettings extends React.Component {
     this.additionalFunctionsConsentManager = additionalFunctionsConsentManager.bind(this)
     this.statisticsAndMarketingConsentManager = statisticsAndMarketingConsentManager.bind(this)
     this.pageHeaderProvider = pageHeaderProvider.bind(this)
+    this.textsProvider = textsProvider.bind(this)
   }
 
   render() {
@@ -26,13 +28,13 @@ class VisitorPrivacySettings extends React.Component {
         {this.pageHeaderProvider('fas fa-user-shield',
                                  { polish: 'Ustawienia prywatności', english: 'Privacy Settings' } )}
         <div className='text'>
-          Czy zgadzasz się na przetwarzanie Twoich danych osobowych przez Warsaw Digital Sp. z o.o., z siedzibą w Warszawie, oraz jej Zaufanych Partnerów, na warunkach przewidzianych w&nbsp;<u>Polityce Prywatności</u>, w celu rozszerzenia funkcjonalności Serwisu?
+          {this.languageObjectHandler(this.textsProvider('statistics'))}
         </div>
         <div className='consent'>
           <ManagedRadio {...this.additionalFunctionsConsentManager()} />
         </div>
         <div className='text'>
-          Czy zgadzasz się na przetwarzanie Twoich danych osobowych przez Warsaw Digital Sp. z o.o., z siedzibą w Warszawie, oraz jej Zaufanych Partnerów, na warunkach przewidzianych w&nbsp;<u>Polityce Prywatności</u>, w celach prowadzenia statystyki oraz marketingowych?
+          {this.languageObjectHandler(this.textsProvider('marketing'))}
         </div>
         <div className='consent'>
           <ManagedRadio {...this.statisticsAndMarketingConsentManager()} />

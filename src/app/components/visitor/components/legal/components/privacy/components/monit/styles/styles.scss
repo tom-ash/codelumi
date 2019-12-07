@@ -38,6 +38,12 @@
         margin-bottom: 6px;
       }
     }
+    u {
+      cursor: pointer;
+      &:hover {
+        color: #D35400;
+      }
+    }
   }
   .buttons {
     padding: 0;

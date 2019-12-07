@@ -8,6 +8,12 @@
     font-size: 15px;
     line-height: 20px;
     margin: 25px 0 10px;
+    u {
+      cursor: pointer;
+      &:hover {
+        color: #D35400;
+      }
+    }
   }
   .consent {
     font-size: 16px;
