@@ -1,4 +1,5 @@
 export const routes = {
+  showAnnouncementShow: false,
   showAnnouncementCreate: false,
   showAnnouncementEdit: false,
   showAnnouncementIndexVisitor: false,

@@ -14,14 +14,13 @@ import { parseDistrict } from '../../../../functions/district-parsers'
 import { getPicture } from './functions/get-picture'
 import { closeTile } from './functions/close-tile'
 import { deepCopyAnnouncement } from './functions/deep-copy-announcement'
-import { showAnnouncement } from './functions/show-announcement'
-import { changeRoute } from '../../../../../../functions/routers'
 import { phoneSwitchProvider } from '../../../../functions/phone-switch-provider'
 import { togglePhone } from '../../../../functions/toggle-phone'
 import { rentPerSqmCounter } from '../../../../functions/rent-per-sqm-counter'
 import { parseAvailabilityDate } from '../../../../functions/parse-availability-date'
 import WindmillSpinner from '../../../../../support/components/spinner/components/windmill/windmill'
 import { viewAnnouncement } from '../../../../functions/view-announcement'
+import { changeRoute } from '../../../../../../functions/routers'
 
 class AnnouncementIndexTile extends React.Component {
   constructor(props) {
@@ -35,8 +34,6 @@ class AnnouncementIndexTile extends React.Component {
     this.getPicture = getPicture.bind(this)
     this.closeTile = closeTile.bind(this)
     this.deepCopyAnnouncement = deepCopyAnnouncement.bind(this)
-    this.showAnnouncement = showAnnouncement.bind(this)
-    this.changeRoute = changeRoute.bind(this)
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
     this.rentCurrency = parseCurrency(this.props.announcement.rentCurrency)
     this.togglePhone = togglePhone.bind(this)
@@ -44,13 +41,13 @@ class AnnouncementIndexTile extends React.Component {
     this.parseAvailabilityDate = parseAvailabilityDate.bind(this)
     this.viewAnnouncement = viewAnnouncement.bind(this)
     this.SecondaryData = SecondaryData.bind(this)
+    this.changeRoute = changeRoute.bind(this)
   }
   
   render() {
     const {
       languageHandler,
       getPicture,
-      showAnnouncement,
       changePicture,
       phoneSwitchProvider,
       parseAvailabilityDate
@@ -110,8 +107,9 @@ class AnnouncementIndexTile extends React.Component {
         />
         <div className={coreClass}>
           <Picture
+            announcementId={announcement.id}
             getPicture={getPicture}
-            showAnnouncement={showAnnouncement}
+            changeRoute={this.changeRoute}
             venue={venue}
             phoneSwitchProvider={phoneSwitchProvider}
             changePicture={changePicture}

@@ -13,7 +13,9 @@ export function checkRoute() {
       if (matcher.main) newRoutes.showAnnouncementIndexVisitor = false
       if (matcher.announcementId) {
         let announcementId = path.match(/\d+/)
-        if (announcementId) newRoutes.announcementId = announcementId[0]
+        if (announcementId) {
+          newRoutes.announcementId = announcementId[0]
+        }
       }
     }
   }
@@ -42,10 +44,11 @@ export function handlePathname(prevProps) {
       if (this.props[key]) {
         const route = this.languageObjectHandler(routeMatchers[key].route)
         fullPathname = `${fullPathname}/${route}`
+
         if (matcher.announcementId) {
           const { announcementId } = this.props
-          
-          fullPathname = `${fullPathname}/${announcementId}`
+
+          fullPathname = `${key === 'showAnnouncementShow' ? '' : fullPathname}/${announcementId}`
         }
       }
     }
@@ -62,21 +65,4 @@ export function popStateRoute() {
   if (window.location.pathname === '/') {
     this.changeRoute(null, '/')
   }
-  if (/^\d+$/.test(window.location.pathname.slice(1))) {
-    this.setState({
-      showAnnouncement: true
-    })
-  } else {
-    this.setState({
-      showAnnouncement: false
-    })
-  }
-}
-
-export function showAnnouncement() {
-  this.setState({showAnnouncement: true})
-}
-
-export function hideAnnouncement() {
-  this.setState({showAnnouncement: false})
 }

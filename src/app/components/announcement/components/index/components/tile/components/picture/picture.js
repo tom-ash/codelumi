@@ -2,9 +2,10 @@ import React from 'react'
 
 export default function Picture(props) {
   const {
+    announcementId,
     getPicture,
     changePicture,
-    showAnnouncement,
+    changeRoute,
     phoneSwitchProvider,
     parseAvailabilityDate,
     venue,
@@ -14,7 +15,7 @@ export default function Picture(props) {
   return (
     <div
       style={{ backgroundImage: getPicture() }}
-      onClick={() => showAnnouncement()}
+      onClick={() => changeRoute({ showAnnouncementShow: true, announcementId })}
       className={`picture ${venue}`}
     >
       {phoneSwitchProvider()}

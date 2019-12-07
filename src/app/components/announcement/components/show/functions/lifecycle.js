@@ -1,11 +1,11 @@
-import { getAnnouncementPath, validId } from '../../../functions/routers'
 import { fetchAnnouncement } from './fetch-announcement'
 
 export function componentDidMount() {
-  const id = getAnnouncementPath()
-  if (validId(id)) {
-    fetchAnnouncement.call(this, id)
-    this.viewAnnouncement(id)
+  const { announcementId } = this.props
+
+  if (announcementId) {
+    fetchAnnouncement.call(this)
+    this.viewAnnouncement(announcementId)
   }
   addEventListener('scroll', this.fixedPhoneHandler)
 }

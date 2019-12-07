@@ -1,5 +1,10 @@
 export const mapStateToProps = (store) => {
+  const {
+    announcementId
+  } = store.app
+
   return {
+    announcementId,
     language: store.app.language,
     phone: store.announcement.show.data.phone,
     id: store.announcement.show.data.id,

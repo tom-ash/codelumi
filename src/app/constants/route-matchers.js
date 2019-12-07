@@ -1,8 +1,8 @@
 export const routeMatchers = {
   showAnnouncementIndexVisitor: {
     route: {
-      polish: '',
-      english: ''
+      polish: '/',
+      english: '/'
     }
   },
   showAnnouncementIndexUser: {
@@ -11,6 +11,14 @@ export const routeMatchers = {
       english: 'added_announcements'
     },
     main: true
+  },
+  showAnnouncementShow: {
+    route: {
+      polish: '\\d+',
+      english: '\\d+'
+    },
+    main: true,
+    announcementId: true
   },
   showAnnouncementCreate: {
     route: {

@@ -4,6 +4,7 @@ export const mapStateToProps = (store) => {
     path,
     showAnnouncementCreate: showCreate,
     showAnnouncementEdit: showEdit,
+    showAnnouncementShow: showShow,
     announcementId,
     showAnnouncementIndexVisitor: showVisitor,
     showAnnouncementIndexUser: showUser
@@ -14,6 +15,7 @@ export const mapStateToProps = (store) => {
     path,
     showCreate,
     showEdit,
+    showShow,
     announcementId,
     showVisitor,
     showUser

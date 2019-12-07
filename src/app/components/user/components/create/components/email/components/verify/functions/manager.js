@@ -3,7 +3,8 @@ import { inputs } from '../../../../../../../constants/inputs'
 import WindmillSpinner from '../../../../../../../../support/components/spinner/components/windmill/windmill.js'
 
 export function verificationManager() {
-  const { icon, label } = inputs.verification
+  const { icon } = inputs.verification
+  const { changeErrors, verification } = this.props
 
   return {
     id: 'user-create-email-verification',
@@ -11,12 +12,12 @@ export function verificationManager() {
     classNames: { container: 'form-input text' },
     label: this.languageHandler('Kod weryfikacyjny', 'Verification Code'),
     children: <i className={icon} />,
-    onChange: () => this.props.changeErrors({ verification: { polish: '', english: '' }}),
+    onChange: () => changeErrors({ verification: { polish: '', english: '' }}),
     onBlur: (value) => this.verificationManager().validate(value),
     validate: () => {
       const verificationCode = document.getElementById('user-create-email-verification').value
       if (verificationCode.length !== 8) {
-        this.props.changeErrors({
+        changeErrors({
           verification: {
             polish: 'kod weryfikacyjny musi składać się z 8 znaków',
             english: 'the verification code must consist of 8 characters'
@@ -26,7 +27,7 @@ export function verificationManager() {
       }
       return true
     },
-    error: this.languageObjectHandler(this.props.verification)
+    error: this.languageObjectHandler(verification)
   }
 }
 

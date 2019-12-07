@@ -9,12 +9,12 @@ import { parseDistrict } from '../../functions/district-parsers'
 import { languageHandler } from '../../../../functions/language-handler'
 import AnnouncementShowFeaturesFurnishings from './components/features-furnishings/features-furnishings'
 import AnnouncementShowDescription from './components/description/description'
-import './styles/styles.scss'
 import { phoneSwitchProvider } from '../../functions/phone-switch-provider'
 import { togglePhone } from '../../functions/toggle-phone'
 import { fixedPhoneHandler } from './functions/fixed-phone-handler'
 import { changeRoute } from '../../../../functions/routers'
 import { viewAnnouncement } from '../../functions/view-announcement'
+import './styles/styles.scss'
 
 class AnnouncementShow extends React.Component {
   constructor(props) {
