@@ -1,7 +1,13 @@
 export const mapStateToProps = (store) => {
+  const {
+    additionalFunctionsConsent,
+    statisticsAndMarketingConsent
+  } = store.visitor.legal.privacy.settings
+
   return {
     language: store.app.language,
-    consents: store.visitor.legal.privacy.settings.consents
+    additionalFunctionsConsent,
+    statisticsAndMarketingConsent
   }
 }
     

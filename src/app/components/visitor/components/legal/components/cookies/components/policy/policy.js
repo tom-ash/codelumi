@@ -16,7 +16,7 @@ class VisitorCookiesPolicy extends React.Component {
   }
   render() {
     return (
-      <div id='visitor-cookies-policy'>
+      <div id='visitor-cookies-policy' className='container medium-container shadowed'>
         {this.pageHeaderProvider('fas fa-cookie-bite', { polish: 'Polityka Plików Cookies', english: 'Cookies Policy' })}
         <div className='cookies-policy'>
         {

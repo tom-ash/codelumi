@@ -3,6 +3,7 @@ export const mapStateToProps = (store) => {
   const { verification } = store.user.create.errors
   const { token } = store.user.create.data
   const { publishing: publishingAnnouncement, connecting } = store.announcement.create.control
+  
   return {
     language,
     verification,

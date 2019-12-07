@@ -1,14 +1,14 @@
 export const mapStateToProps = (store) => {
+  // const { }
   return {
-    language: store.app.language,
-    consents: store.visitor.legal.privacy.settings.consents
+    language: store.app.language
   }
 }
     
 export const mapDispatchToProps = (dispatch) => {
   return {
-    changeSettings: (value) => dispatch({ type: 'visitor/privacy/settings', value: value }),
-
+    changeApp: (value) => dispatch({ type: 'app', value: value}),
+    changeSettings: (value) => dispatch({ type: 'visitor/privacy/settings', value: value })
   }
 }
     

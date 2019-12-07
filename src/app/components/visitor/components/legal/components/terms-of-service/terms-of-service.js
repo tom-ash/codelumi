@@ -16,7 +16,7 @@ class VisitorTermsOfService extends React.Component {
   }
   render() {
     return (
-      <div id='visitor-terms-of-service'>
+      <div id='visitor-terms-of-service' className='container medium-container shadowed'>
         {this.pageHeaderProvider('fas fa-align-justify', { polish: 'Regulamin', english: 'Terms Of Service' })}
         <div className='terms-of-service'>
         {

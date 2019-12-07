@@ -1,6 +1,7 @@
 @import '../../../../../styles/themes';
 
 #visitor-about {
+  max-width: 550px;
   text-align: justify;
   line-height: 20px;
   .paragraph {
@@ -17,7 +18,7 @@
       position: absolute;
       top: 3px;
       left: 0;
-      color: #2874A6;
+      color: #D35400;
     }
   }
 }

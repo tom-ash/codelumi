@@ -4,13 +4,13 @@ export function textsProvider(text) {
   switch (text) {
     case 'cookies':
       return {
-        polish: <span>W niniejszym Serwisie korzystamy z plików cookies i podobnych technologii, aby&nbsp;zapewnić bezpieczeństwo i&nbsp;prawidłowe funkcjonowanie niniejszego serwisu, jak&nbsp;również w&nbsp;celu prowadzenia statystyki i&nbsp;dostosowywania treści marketingowych. Więcej informacji możesz znaleźć w naszej <u>Polityce Plików Cookies</u>.</span>,
-        english: <span>We use cookies and similar technologies to ensure security and proper functioning of this service, as well as to maintain statistics and adjust marketing content. You can find my more information with that regard in our <u>Cookies and Similar Technologies Policy</u>.</span>
+        polish: <span>W Serwisie korzystamy z plików cookies i podobnych technologii w celu świadczenia najwyższej jakości usług, prowadzenia statystyki oraz&nbsp;dostosowywania treści marketingowych. Więcej informacji znajdziesz w  <u>Polityce Plików Cookies</u>.</span>,
+        english: <span>In this Service we use cookies and similar technologies to render services of the highest quality, maintain statistics and adjust marketing content. You will find more information in the <u>Cookies and Similar Technologies Policy</u>.</span>
       }
     case 'dataProcessing':
       return {
-        polish: <span>Klikając przycisk 'Zgadzam się' wyrażasz zgodę na przetwarzanie Twoich danych osobowych przez nas oraz naszych zaufanych partnerów w calach rozszerzenia funkcjonalności niniejszego serwisu, prowadzenia statystyki oraz dostosowywania tresći marketingowych zgodnie z naszą <u>Polityką Prywatności</u>. Wyrażenie tej zgody jest dobrowolne i mozesz ją w każdej chwili wycofać lub ograniczyć jej zakres, co pozostaje jednakże bez wpływu na dotychczasowe przetwarzanie. Jezeli chcesz korzystać z&nbsp;niniejszego serwisu bez wyrażenia tej zgody lub chcesz ograniczyć jej zakres przejdź do <u onClick={() => console.log("TODO")}>Ustawień Prywatności</u>.</span>,
-        english: <span>Through clicking 'I Agree' you grant your consent to processing of your personal data by us and our trusted partners wit the purposes of enhancing functionality of this service, maintaining statists and adjusting marketing contant pursuant to our <u>Privacy Policy</u>. Granting of that consent is voluntary and, at any time, you can revoke the consent or limit its extent, which hovever does not affect past processing. If you wish to use this service without granting that consent or you wish to limit its extent visit <u onClick={() => console.log("TODO")}>Privacy Settings</u>.</span>
+        polish: <span>Klikając OK wyrażasz zgodę na przetwarzanie Twoich danych osobowych przez nas oraz naszych Zaufanych Partnerów w calach prowadzenia statystyki oraz dostosowywania tresći marketingowych zgodnie z <u>Polityką Prywatności</u>. Jezeli chcesz nie wyrażać tej zgody lub ograniczyć jej zakres kliknij Ustawienia.</span>,
+        english: <span>By clicking OK you grant consent to processing of your personal data by us and our Trusted Partners with the purpose of maintain statistics and adjustment of the marketing content pursuant to the <u>Privacy Policy</u>. If you wish to not grant that consent and/or limit its extent click Settings.</span>
       }
   }
 }

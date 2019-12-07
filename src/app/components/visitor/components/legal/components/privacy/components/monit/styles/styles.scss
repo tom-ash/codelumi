@@ -3,68 +3,70 @@
 @import '../../../../../../../../../styles/inputs/form/form';
 
 #visitor-privacy-monit {
-  .cover {
-    z-index: 10;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: transparentize($primary-icon-color, $amount: .8)
-  }
-  .text-buttons {
-    z-index: 11;
-    position: fixed;
-    background: rgba(251, 252, 252, 0.92);
-    box-shadow: 0px 0px 12px 0px #424949;
-    top: 168px;
-    right: 12px;
-    left: 12px;
-    margin: auto;
-    border-radius: 2.5px;
-    padding: 12px;
-    max-width: 480px;
-    .text-container {
-      font-size: 14px;
-      text-align: justify;
-      .text-line {
-        margin-bottom: 12px;
-        .icon {
-          position: absolute;
-          width: 36px;
-          height: 36px;
-          .fas {
-            font-size: 18px;
-            color: $primary-icon-color;
-          }
-        }
-        .text {
-          margin-left: 36px;
-          line-height: 20px;
+  position: fixed;
+  z-index: 200000000;
+  right: 0;
+  left: 0;
+  bottom: 30px;
+  width: 1320px;
+  max-width: none;
+  margin: 0 auto;
+  padding: 12px;
+  border-radius: 2.5px;
+  .text-container {
+    font-size: 15px;
+    text-align: justify;
+    margin: 0 172px 0 35px;
+    padding: 0;
+    .text-line {
+      padding: 0;
+      margin: 0;
+      .icon {
+        position: absolute;
+        left: 15px;
+        width: 36px;
+        line-height: 20px;
+        .fas {
+          font-size: 17px;
+          color: #212F3D;
         }
       }
+      .text {
+        line-height: 20px;
+      }
+      &.cookies {
+        margin-bottom: 6px;
+      }
     }
-    .buttons {
-      top: 0;
-      right: 0;
-      min-width: 280px;
-      .form-input {
-        &.button {
-          float: right;
-          height: 42px;
-          width: 49%;
-          margin: 0 auto;
+  }
+  .buttons {
+    padding: 0;
+    position: absolute;
+    top: 12px;
+    bottom: 12px;
+    right: 12px;
+    width: 160px;
+    .form-input {
+      &.button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        &.agree {
+          bottom: 43px;
+          width: 160px;
+          height: 43px;
+        }
+        &.settings {
+          top: 43px;
+          width: 90px;
+          height: 20px;
           .input {
-            height: 100%;
+            background: none;
+            color: #D35400;
             font-size: 16px;
-          }
-          &.agree {
-            margin-left: 2%;
-          }
-          &.settings {
-            .input {
-              background: none;
-            }
           }
         }
       }
@@ -96,10 +98,13 @@
           &.button {
             float: none;
             width: 100%;
-            &.agree {
-              margin-left: 0;
-              margin-bottom: 12px;
-            }
+            // &.agree {
+            //   margin-left: 0;
+            //   margin-bottom: 12px;
+            // }
+            // &.settings {
+            //   color: red!important;
+            // }
           }
         }
       }

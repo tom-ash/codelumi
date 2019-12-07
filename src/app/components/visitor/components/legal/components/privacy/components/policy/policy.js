@@ -16,7 +16,7 @@ class VisitorPrivacyPolicy extends React.Component {
   }
   render() {
     return (
-      <div id='visitor-privacy-policy'>
+      <div id='visitor-privacy-policy' className='container medium-container shadowed'>
         {this.pageHeaderProvider('fas fa-user-shield', { polish: 'Polityka Prywatności', english: 'Privacy Policy' })}
         <div className='privacy-policy'>
         {

@@ -21,7 +21,7 @@ class User extends React.Component {
 
   show = () => {
     const { showAbout, showContact, showTermsOfService, showPrivacyMonit, showPrivacyPolicy, showCookiesPolicy,
-            showPrivacySettings } = this.props
+            showPrivacySettings, additionalFunctionsConsent, statisticsAndMarketingConsent } = this.props
 
     return showAbout || showContact || showTermsOfService || showPrivacyMonit || showPrivacyPolicy ||
            showCookiesPolicy || showPrivacySettings
@@ -43,14 +43,16 @@ class User extends React.Component {
   }
   
   render() {
-    const { showAbout, showContact, showTermsOfService, showPrivacyMonit, showPrivacyPolicy, showCookiesPolicy,
-            showPrivacySettings } = this.props
+    const { showAbout, showContact, showTermsOfService, showPrivacyPolicy, showCookiesPolicy,
+            showPrivacySettings, additionalFunctionsConsent, statisticsAndMarketingConsent } = this.props
 
     return (
       <div id='visitor'>
+        {(additionalFunctionsConsent === null || statisticsAndMarketingConsent === null) && !showPrivacySettings &&
+        <VisitorPrivacyMonit />}
         {this.show() &&
-        <div className='cover' onClick={() => this.hide()}>
-          {showPrivacyMonit    && <VisitorPrivacyMonit />}
+        <div className='darkened-cover' onClick={() => this.hide()}>
+          
           {showAbout           && <VisitorAbout />}
           {showContact         && <VisitorContact />}
           {showTermsOfService  && <VisitorTermsOfService/>}

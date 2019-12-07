@@ -15,7 +15,7 @@ class Footer extends React.Component {
   
   render() {
     return(
-      <div id='visitor-contact' className='shadowed'>
+      <div id='visitor-contact' className='container narrow-container shadowed'>
         {this.pageHeaderProvider('far fa-envelope', { polish: 'Kontakt', english: 'Contact' })}
         <div className='company'>
           Warsaw Digital Sp. z o.o.

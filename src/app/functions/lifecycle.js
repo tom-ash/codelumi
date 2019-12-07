@@ -19,7 +19,6 @@ export function componentDidMount() {
   });
 
   this.checkRoute()
-
 }
 
 export function componentWillMount() {

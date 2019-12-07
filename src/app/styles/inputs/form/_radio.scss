@@ -5,9 +5,16 @@
     border-radius: 2.5px;
     background: #E5E7E9;
     cursor: pointer;
+    transition: box-shadow .2s ease-in-out;
     &.checked {
-      background: $button-index-background-color;
+      background: #D35400;
       color: $button-index-color;
+      &.hover {
+        box-shadow: none;
+      }
+    }
+    &.hover {
+      box-shadow: 0 0 0 2px #D35400;
     }
     .input {
       float: left;
@@ -24,16 +31,16 @@
         border-radius: 4px;
         margin: 1px;
         background: white;
-        background: $button-index-background-color;
+        background: #D35400;//$button-index-background-color;
       }
     }
     .label {
       cursor: pointer;
       float: left;
       color: $input-color;
-      font-size: 16px;
+      font-size: 15px;
       text-align: justify;
-      line-height: 16px;
+      line-height: 15px;
       &.checked {
         color: $button-index-color;
       }

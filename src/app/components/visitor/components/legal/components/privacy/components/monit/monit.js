@@ -7,6 +7,7 @@ import { agreeManager, settingsManager } from './functions/manager'
 import { languageManager } from '../../../../../../../scaffold/components/header/functions/managers'
 import './styles/styles.scss'
 import { textsProvider } from './functions/texts-provider'
+import { changeRoute } from '../../../../../../../../functions/routers'
 
 class VisitorPrivacyMonit extends React.Component {
   constructor(props) {
@@ -17,14 +18,18 @@ class VisitorPrivacyMonit extends React.Component {
     this.languageManager = languageManager.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.textsProvider = textsProvider.bind(this)
+    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {
     return (
-      <div id='visitor-privacy-monit'>
-        <div className='text-buttons'>
+      <div
+        id='visitor-privacy-monit' className='container narrow-container shadowed'
+        onClick={e => e.stopPropagation()}
+      >
+        {/* <div className='text-buttons'> */}
           <div className='text-container'>
-            <div className='text-line'>
+            <div className='text-line cookies'>
               <div className='icon'>
                 <i className='fas fa-cookie'/>
               </div>
@@ -44,10 +49,10 @@ class VisitorPrivacyMonit extends React.Component {
           <div className='buttons'>
             <ManagedButton {...this.agreeManager()} />
             <ManagedButton {...this.settingsManager()} />
-            <div className='float-clear' />
+            {/* <div className='float-clear' /> */}
           </div>
-          <div className='float-clear' />
-        </div>
+          {/* <div className='float-clear' />
+        </div> */}
       </div>
     )
   }
