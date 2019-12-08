@@ -6,6 +6,7 @@ import { ManagedRadio } from 'managed-inputs'
 import { additionalFunctionsConsentManager, statisticsAndMarketingConsentManager } from './functions/managers'
 import { pageHeaderProvider } from '../../../../../../../../functions/header-providers'
 import { textsProvider } from './functions/texts-provider'
+import { CloseButton } from '../../../../../../../../components/support/components/close-button/close-button'
 import './styles/styles.scss'
 
 class VisitorPrivacySettings extends React.Component {
@@ -21,25 +22,28 @@ class VisitorPrivacySettings extends React.Component {
 
   render() {
     return (
-      <div
-        id='visitor-privacy-settings' className='container narrow-container shadowed'
-        onClick={e => e.stopPropagation()}
-      >
-        {this.pageHeaderProvider('fas fa-user-shield',
-                                 { polish: 'Ustawienia prywatności', english: 'Privacy Settings' } )}
-        <div className='text'>
-          {this.languageObjectHandler(this.textsProvider('statistics'))}
+      <React.Fragment>
+        <CloseButton />
+        <div
+          id='visitor-privacy-settings' className='container narrow-container shadowed'
+          onClick={e => e.stopPropagation()}
+        >
+          {this.pageHeaderProvider('fas fa-user-shield',
+                                  { polish: 'Ustawienia prywatności', english: 'Privacy Settings' } )}
+          <div className='text'>
+            {this.languageObjectHandler(this.textsProvider('statistics'))}
+          </div>
+          <div className='consent'>
+            <ManagedRadio {...this.additionalFunctionsConsentManager()} />
+          </div>
+          <div className='text'>
+            {this.languageObjectHandler(this.textsProvider('marketing'))}
+          </div>
+          <div className='consent'>
+            <ManagedRadio {...this.statisticsAndMarketingConsentManager()} />
+          </div>
         </div>
-        <div className='consent'>
-          <ManagedRadio {...this.additionalFunctionsConsentManager()} />
-        </div>
-        <div className='text'>
-          {this.languageObjectHandler(this.textsProvider('marketing'))}
-        </div>
-        <div className='consent'>
-          <ManagedRadio {...this.statisticsAndMarketingConsentManager()} />
-        </div>
-      </div>
+      </React.Fragment>
     )
   }
 }

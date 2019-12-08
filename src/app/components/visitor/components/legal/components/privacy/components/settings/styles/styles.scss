@@ -3,6 +3,17 @@
 
 #visitor-privacy-settings {
   color: $theme-primary-color;
+  z-index: 200000001;
+  @media #{$phone} {
+    margin: 0;
+    position: absolute;
+    top: 68px;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    width: auto;
+    overflow-y: scroll;
+  }
   .text {
     text-align: justify;
     font-size: 15px;
