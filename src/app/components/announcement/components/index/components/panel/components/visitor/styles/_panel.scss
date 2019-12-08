@@ -70,6 +70,7 @@
       line-height: 40px;
     }
     .input {
+      transition: .2s ease-in-out;
       font-weight: normal;
       width: 100%;
       height: 100%;
@@ -79,12 +80,12 @@
       padding: 0;
       border: none;
       border-radius: 2.5px;
-      background: #DC7633;
+      background: #D35400;
       color: #F7F9F9;
       cursor: pointer;
       font-size: 16px;
       &.hover {
-        background: transparentize(#5DADE2, 0.2)
+        background: #BA4A00;
       }
       .fa-search {
         margin-right: 8px;
