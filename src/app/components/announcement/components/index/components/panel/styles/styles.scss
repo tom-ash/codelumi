@@ -1,31 +1,29 @@
+@import '../../../../../../../styles/media-breakpoints';
+
 #announcement-index-panel {
   z-index: 3;
   position: relative;
-
-    padding-top: 68px;
-    position: relative;
-    background: #212F3D;
-    height: 168px;
-
-
-
-    // .panel {
-    //   @extend %panel;
-    //   margin: 0 auto;
-    // }
-    // @media only screen and (max-width: 744px) {
-    //   width: 456px;
-    // }
-    // @media #{$phone} {
-    //   width: 100%;
-    // }
-
-
-  // .connecting {
-  //   .pagination {
-  //     .input, .arrow {
-  //       background: lightgray;
-  //     }
-  //   }
-  // }
+  padding-top: 68px;
+  position: relative;
+  background: #212F3D;
+  height: 168px;
+  @media #{$phone} {
+    height: 328px;
+  }
 }
+
+// 56
+// 12
+// 40
+// 12
+// 40
+// 12
+// 40
+// 12
+// 40
+// 12
+// 40
+// 12
+
+// 5 * 40 = 200
+// 6 * 12 = 72
