@@ -21,14 +21,18 @@ class User extends React.Component {
 
   show = () => {
     const { showAbout, showContact, showTermsOfService, showPrivacyMonit, showPrivacyPolicy, showCookiesPolicy,
-            showPrivacySettings, additionalFunctionsConsent, statisticsAndMarketingConsent } = this.props
+            showPrivacySettings } = this.props
 
     return showAbout || showContact || showTermsOfService || showPrivacyMonit || showPrivacyPolicy ||
            showCookiesPolicy || showPrivacySettings
   }
 
   hide = () => {
-    const { changeApp } = this.props
+    const { changeApp, showTermsOfService, showPrivacyPolicy, showCreate } = this.props
+
+    if ((showTermsOfService || showPrivacyPolicy) && showCreate) {
+      return changeApp({ showVisitorTermsOfService: false, showVisitorPrivacyPolicy: false })
+    }
 
     changeApp({
       showUserCreate: false,

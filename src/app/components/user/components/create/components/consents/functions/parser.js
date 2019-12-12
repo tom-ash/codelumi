@@ -1,21 +1,11 @@
-import { consents } from '../constants/consents'
+import { textProvider } from '../functions/text-provider'
 
 export function parser(userObject) {
-  let timeNow = new Date()
-  timeNow.setHours(timeNow.getHours() - timeNow.getTimezoneOffset()/60)
-  timeNow = timeNow.toJSON().slice(0,19)
-  userObject.terms = {
+
+  console.log(textProvider.call(this, { pureText: true }).termsAndPrivacyConsent)
+
+  userObject.termsAndPrivacyConsent = {
     value: 'granted',
-    language: this.props.language,
-    time: timeNow,
-    version: 'TODO: VERSION',
-    text: consents[this.props.language]
-  }
-  userObject.privacy = {
-    value: 'granted',
-    language: this.props.language,
-    time: timeNow,
-    version: 'TODO: VERSION',
-    text: consents[this.props.language]
+    text: textProvider.call(this, { pureText: true }).termsAndPrivacyConsent
   }
 }

@@ -23,9 +23,10 @@ class VisitorPrivacySettings extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <CloseButton />
+        <CloseButton width='narrow'/>
         <div
-          id='visitor-privacy-settings' className='container narrow-container shadowed'
+          id='visitor-privacy-settings'
+          className='container narrow-container shadowed'
           onClick={e => e.stopPropagation()}
         >
           {this.pageHeaderProvider('fas fa-user-shield',

@@ -1,5 +1,8 @@
 .user-create-email-inputs-container {
   .form-input {
+    &.text, &.select {
+      margin-bottom: 20px;
+    }
     &.phone-country-code {
       position: absolute;
       width: 84px;

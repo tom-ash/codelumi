@@ -1,8 +1,9 @@
 export const mapStateToProps = (store) => {
   const { language } = store.app
-  const { verification } = store.user.create.errors
+  const { connecting } = store.user.create.control
   const { token } = store.user.create.data
-  const { publishing: publishingAnnouncement, connecting } = store.announcement.create.control
+  const { verification } = store.user.create.errors
+  const { publishing: publishingAnnouncement } = store.announcement.create.control
   
   return {
     language,

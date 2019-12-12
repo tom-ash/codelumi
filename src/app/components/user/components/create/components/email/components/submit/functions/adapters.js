@@ -19,8 +19,7 @@ function prepareUserObject() {
     phone: document.getElementById('user-create-email-phone-number').value,
     email: document.getElementById('user-create-email-email-address').value,
     password: document.getElementById('user-create-email-password').value,
-    terms: document.getElementById('user-create-consents-terms').checked,
-    privacy: document.getElementById('user-create-consents-privacy').checked
+    termsAndPrivacyConsent: document.getElementById('user-create-consents-terms-and-privacy').checked
   }
   return userObject
 }
@@ -31,8 +30,7 @@ function validateUserObject(userObject) {
     this.phoneValidator(userObject.phone),
     this.emailValidator(userObject.email),
     this.passwordValidator(userObject.password),
-    this.termsValidator(userObject.terms),
-    this.privacyValidator(userObject.privacy)
+    this.termsAndPrivacyConsentValidator(userObject.termsAndPrivacyConsent)
   ]
   return validationArray.every((element => element))
 }

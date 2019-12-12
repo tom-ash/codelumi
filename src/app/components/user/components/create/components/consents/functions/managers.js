@@ -1,29 +1,15 @@
-import { consents } from '../constants/consents.js'
+// import { consents } from './text-provider.js/index.js.js.js'
 
-export function termsOfServiceManager() {
+export function termsAndPrivacyConsentManager() {
   return {
-    id: 'user-create-consents-terms',
+    id: 'user-create-consents-terms-and-privacy',
     classNames: { container: 'form-input checkbox' },
-    checked: this.props.terms,
-    label: this.languageObjectHandler(consents.terms),
+    checked: this.props.termsAndPrivacyConsent,
+    label: this.textProvider({ pureText: false }).termsAndPrivacyConsent,
     onClick: (value) => {
-      this.props.changeInputs({ terms: value })
-      this.termsOfServiceManager().validate(value)
+      this.props.changeInputs({ termsAndPrivacyConsent: value })
+      this.termsAndPrivacyConsentManager().validate(value)
     },
-    validate: (value) => this.termsValidator(value)
-  }
-}
-
-export function privacyPolicyManager() {
-  return {
-    id: 'user-create-consents-privacy',
-    classNames: { container: 'form-input checkbox' },
-    checked: this.props.privacy,
-    label: this.languageObjectHandler(consents.privacy),
-    onClick: (value) => {
-      this.props.changeInputs({ privacy: value })
-      this.privacyPolicyManager().validate(value)
-    },
-    validate: (value) => this.privacyValidator(value)
+    validate: (value) => this.termsAndPrivacyConsentValidator(value)
   }
 }

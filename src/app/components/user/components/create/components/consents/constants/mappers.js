@@ -1,15 +1,15 @@
 export const mapStateToProps = (store) => {
   return {
     language: store.app.language,
-    terms: store.user.create.inputs.terms,
-    privacy: store.user.create.inputs.privacy,
-    termsError: store.user.create.errors.terms,
+    termsAndPrivacyConsent: store.user.create.inputs.termsAndPrivacyConsent,
+    termsError: store.user.create.errors.termsAndPrivacyConsent,
     privacyError: store.user.create.errors.privacy
   }
 }
 
 export const mapDispatchToProps = (dispatch) => {
   return {
+    changeApp: (value) => dispatch({ type: 'app', value: value}),
     changeInputs: (value) => dispatch({ type: 'user/create/inputs', value: value }),
     changeErrors: (value) => dispatch({ type: 'user/create/errors', value: value })
   }

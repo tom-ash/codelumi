@@ -1,32 +1,31 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { ManagedCheckbox } from 'managed-inputs'
-import * as mappers from './constants/mappers'
-import * as managers from './functions/managers'
-import { termsValidator, privacyValidator } from './functions/validators'
+import { termsAndPrivacyConsentValidator } from './functions/validators'
 import { containerClassHandler } from './functions/conteiner-class-handler'
 import { errorTextProvider } from './functions/error-text-provider'
 import { languageObjectHandler } from '../../../../../../functions/language-handler'
+import * as mappers from './constants/mappers'
+import * as managers from './functions/managers'
+import { textProvider } from './functions/text-provider'
 import './styles/styles.scss'
 
 class UserCreateConsents extends React.Component {
   constructor(props) {
     super(props)
-    this.termsOfServiceManager = managers.termsOfServiceManager.bind(this)
-    this.privacyPolicyManager = managers.privacyPolicyManager.bind(this)
+    this.termsAndPrivacyConsentManager = managers.termsAndPrivacyConsentManager.bind(this)
     this.containerClassHandler = containerClassHandler.bind(this)
     this.errorTextProvider = errorTextProvider.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
-    this.termsValidator = termsValidator.bind(this)
-    this.privacyValidator = privacyValidator.bind(this)
+    this.termsAndPrivacyConsentValidator = termsAndPrivacyConsentValidator.bind(this)
+    this.textProvider = textProvider.bind(this)
   }
 
   render() {
     return (
       <div id='user-create-consents-container'>
         <div className={this.containerClassHandler()}>
-          <ManagedCheckbox {...this.termsOfServiceManager()}/>
-          <ManagedCheckbox {...this.privacyPolicyManager()}/>
+          <ManagedCheckbox {...this.termsAndPrivacyConsentManager()}/>
         </div>
         <div className='error'>
           {this.errorTextProvider()}

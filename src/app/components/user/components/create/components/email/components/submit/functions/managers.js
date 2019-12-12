@@ -1,12 +1,18 @@
 import React from 'react'
-import WindmillSpinner from '../../../../../../../../support/components/spinner/components/windmill/windmill.js'
+import ButtonSpinner from '../../../../../../../../support/components/button-spinner/button-spinner'
 
 export function buttonManager() {
   const { connecting } = this.props
   
   return {
     classNames: { container: 'form-input button' },
-    label: connecting ? <WindmillSpinner spinnerClass='very-small-windmill-spinner'/> : this.languageHandler('Dalej', 'Next'),
+    label: (
+      <ButtonSpinner
+        connecting={connecting}
+        label={{ polish: 'Dalej', english: 'Next' }}
+        languageObjectHandler={this.languageObjectHandler}
+      />
+    ),
     onClick: this.prepareUserAccount
   }
 }

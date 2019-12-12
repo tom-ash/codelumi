@@ -1,9 +1,4 @@
-export function termsValidator(value) {
-  this.props.changeErrors({ terms: !value })
-  return (value)
-}
-
-export function privacyValidator(value) {
-  this.props.changeErrors({ privacy: !value })
+export function termsAndPrivacyConsentValidator(value) {
+  this.props.changeErrors({ termsAndPrivacyConsent: !value })
   return (value)
 }

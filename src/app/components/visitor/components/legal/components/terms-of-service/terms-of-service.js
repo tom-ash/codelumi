@@ -5,6 +5,7 @@ import { languageHandler, languageObjectHandler } from '../../../../../../functi
 import { text } from './constants/text'
 import Provision from '../provision/provision'
 import { pageHeaderProvider } from '../../../../../../functions/header-providers'
+import { CloseButton } from '../../../../../../components/support/components/close-button/close-button'
 import './styles/styles.scss'
 
 class VisitorTermsOfService extends React.Component {
@@ -16,24 +17,30 @@ class VisitorTermsOfService extends React.Component {
   }
   render() {
     return (
-      <div id='visitor-terms-of-service' className='container medium-container shadowed'>
-        {this.pageHeaderProvider('fas fa-align-justify', { polish: 'Regulamin', english: 'Terms Of Service' })}
-        <div className='terms-of-service'>
-        {
-        text.map((provision, index) => (
-          <Provision
-          key={'termsOfService'+index}
-          data={{
-            tier: provision.tier,
-            item: provision.item,
-            polish: provision.polish,
-            english: provision.english
-          }}/>
-        ))
-        }
+      <React.Fragment>
+        <CloseButton width='medium'/>
+        <div
+          id='visitor-terms-of-service'
+          className='container medium-container shadowed'
+          onClick={e => e.stopPropagation()}
+        >
+          {this.pageHeaderProvider('fas fa-align-justify', { polish: 'Regulamin', english: 'Terms Of Service' })}
+          <div className='terms-of-service'>
+          {
+          text.map((provision, index) => (
+            <Provision
+            key={'termsOfService'+index}
+            data={{
+              tier: provision.tier,
+              item: provision.item,
+              polish: provision.polish,
+              english: provision.english
+            }}/>
+          ))
+          }
+          </div>
         </div>
-
-      </div>
+      </React.Fragment>
     )
   }
 }

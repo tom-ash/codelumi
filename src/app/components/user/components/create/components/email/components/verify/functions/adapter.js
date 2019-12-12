@@ -7,7 +7,7 @@ export function verify() {
   const verificationCode = document.getElementById('user-create-email-verification').value
   const { changeApp, changeAuthorizeData, changeControl, changeErrors } = this.props
 
-  changeControl({ connecting: false })
+  changeControl({ connecting: true })
 
   fetch(apiUrl + '/user_create_with_email', {
     method: 'POST',
@@ -24,8 +24,6 @@ export function verify() {
   .then(json => {
     const { accessToken, name } = json
     saveTokens.call(this, accessToken)
-
-    changeControl({ connecting: false })
     changeApp({ showUserCreate: false })
     changeAuthorizeData({ authorized: true, name, phoneVerified: false })
   })
@@ -33,6 +31,8 @@ export function verify() {
     changeErrors({
       verification: { polish: 'nieprawidłowy kod weryfikacyjny', english: 'invalid verification code' }
     })
+  })
+  .finally(() => {
     changeControl({ connecting: false })
   })
 }

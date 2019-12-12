@@ -2,7 +2,7 @@
 @import '../../../../../../../styles/colors';
 
 #user-create-consents-container {
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   .checkbox-container {
     .checkbox.form-input {
       padding: 6px 12px 0 0;
@@ -17,5 +17,11 @@
   }
   .error {
     @extend %error;
+  }
+  .link {
+    color: #D35400;
+    &:hover {
+      color: #BA4A00;
+    }
   }
 }

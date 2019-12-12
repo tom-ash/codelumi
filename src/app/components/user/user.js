@@ -5,6 +5,7 @@ import UserCreate from './components/create/create'
 import UserAuthorize from './components/authorize/authorize'
 import UserShow from './components/show/show'
 import UserEdit from './components/edit/edit'
+import UserEditAccountPassword from './components/edit/components/account/components/password/password'
 import './styles/styles.scss'
 
 class User extends React.Component {
@@ -26,9 +27,10 @@ class User extends React.Component {
       <div id='user'>
         {(showCreate || showAuthorize || showPasswordReset || showEditPhoneVerify) &&
         <div onClick={this.hideUser} className='darkened-cover '>
-          {showCreate                                 && <UserCreate />}
-          {showAuthorize                              && <UserAuthorize />}
-          {(showPasswordReset || showEditPhoneVerify) && <UserEdit />}
+          {showCreate          && <UserCreate />}
+          {showAuthorize       && <UserAuthorize />}
+          {showPasswordReset   && <UserEditAccountPassword />}
+          {showEditPhoneVerify && <UserEdit />}
         </div>}
         {showAccount &&
         <div onClick={this.hideUser} className='transparent-cover'>

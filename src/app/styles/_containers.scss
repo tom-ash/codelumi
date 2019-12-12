@@ -4,39 +4,35 @@
   position: relative;
   background: #FDFEFE;
   border-radius: 3px;
-  padding: 30px;
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
-    margin: 76px auto 12px;
-  }
+  padding: 25px;
 }
 
 .wide-container {
   width: 1200px;
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
-    width: 100%;
-    padding: 12px;
-  }
 }
 
 .medium-container {
-  width: 768px;
-
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
-    width: 100%;
-    padding: 12px;
+  width: 720px;
+  @media #{$small-tablet} {
+    width: auto;
+  }
+  @media #{$phone} {
+    padding: 15px;
   }
 }
 
 .narrow-container {
-  width: 640px;
-  padding: 25px;
-  max-width: 420px;
-  @media only screen and (max-width: 688px) {
+  width: 456px;
+  @media #{$phone} {
+    padding: 15px;
     width: 100%;
   }
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
-    padding: 12px;
-  }
+}
+
+.shadowed {
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0px 3px 8px 3px rgba(0, 0, 0, 0.14),
+              0px 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
 
 %checkbox-container {

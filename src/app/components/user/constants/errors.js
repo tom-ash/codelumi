@@ -8,8 +8,8 @@ export const errors = {
     english: 'tax identification number should consist of 10 numbers'
   },
   phone: {
-    polish: 'numer telefonu powinien składać się z 9 cyfr',
-    english: 'phone number should consist of 9 numbers'
+    polish: 'nieprawidłowy numer telefonu',
+    english: 'invalid phone number'
   },
   email: {
     polish: 'nieprawidłowy adres email',

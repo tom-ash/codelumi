@@ -9,8 +9,7 @@ export const control = {
 
 export const inputs = {
   areaCode: '+48',
-  terms: false,
-  privacy: false
+  termsAndPrivacyConsent: false
 }
 
 export const data = {
@@ -23,7 +22,7 @@ export const errors = {
   phone: noError,
   email: noError,
   password: noError,
-  terms: false,
+  termsAndPrivacyConsent: false,
   privacy: false,
   verification: noError
 }

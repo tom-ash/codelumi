@@ -1,7 +1,7 @@
 @import '../../../../../styles/themes';
 
 #visitor-about {
-  max-width: 550px;
+  // max-width: 432px;
   text-align: justify;
   line-height: 20px;
   .paragraph {
@@ -20,5 +20,9 @@
       left: 0;
       color: #D35400;
     }
+  }
+  overflow-y: scroll;
+  @media #{$phone} {
+    max-height: none;
   }
 }

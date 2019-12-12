@@ -1,16 +1,6 @@
 @import '../../../../../../../../../styles/themes.scss';
 
 #user-edit-account-password {
-  padding: 25px;
-  max-width: 420px;
-  min-height: 256px;
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
-    padding: 12px;
-  }
-  .form-input {
-    width: 100%;
-    width: 370px;
-  }
   .monit {
     text-align: justify;
     line-height: 18px;

@@ -1,6 +1,7 @@
 import React from 'react'
 import { inputs } from '../../../../../../../constants/inputs'
-import WindmillSpinner from '../../../../../../../../support/components/spinner/components/windmill/windmill.js'
+import ButtonSpinner from '../../../../../../../../support/components/button-spinner/button-spinner'
+// import WindmillSpinner from '../../../../../../../../support/components/spinner/components/windmill/windmill.js'
 
 export function verificationManager() {
   const { icon } = inputs.verification
@@ -33,10 +34,18 @@ export function verificationManager() {
 
 export function buttonManager() {
   const { connecting } = this.props
+
+  console.log(connecting)
   
   return {
     classNames: { container: 'form-input button' },
-    label: connecting ? <WindmillSpinner spinnerClass='very-small-windmill-spinner'/> : this.languageHandler('Dalej', 'Next'),
+    label: (
+      <ButtonSpinner
+        connecting={connecting}
+        label={{ polish: 'Dalej', english: 'Next' }}
+        languageObjectHandler={this.languageObjectHandler}
+      />
+    ),
     onClick: () => this.verify()
   }
 }
