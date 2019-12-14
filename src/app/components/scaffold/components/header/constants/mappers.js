@@ -15,7 +15,10 @@ export const mapDispatchToProps = (dispatch) => {
     resetAnnouncementIndexInputs: (value) => dispatch({ type: 'announcement/index/inputs/reset', value: value }),
     resetAnnouncementIndexData: (value) => dispatch({ type: 'announcement/index/data/reset', value: value }),
     changeAnnouncementIndexControl: (value) => dispatch({ type: 'announcement/index/control', value: value }),
-    changeControl: (value) => dispatch({ type: 'scaffold/header/control', value: value }),
+    resetUserAuthorizeControl: (value) => dispatch({ type: 'user/authorize/control/reset', value: value }),
+    resetUserAuthorizeInputs: (value) => dispatch({ type: 'user/authorize/inputs/reset', value: value }),
+    resetUserAuthorizeErrors: (value) => dispatch({ type: 'user/authorize/errors/reset', value: value }),
+    changeControl: (value) => dispatch({ type: 'scaffold/header/control', value: value })
   }
 }
   

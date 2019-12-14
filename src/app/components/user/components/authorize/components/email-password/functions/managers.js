@@ -1,7 +1,8 @@
 import React from 'react'
-import { emailAddressValidator } from '../../../../../functions/shared'
 import { inputs } from '../../../../../constants/inputs'
 import WindmillSpinner from '../../../../../../support/components/spinner/components/windmill/windmill.js'
+import ButtonSpinner from '../../../../../../support/components/button-spinner/button-spinner'
+import { emailValidator } from '../../../../../../../functions/email-validator'
 
 const noError = { polish: '', english: '' }
 
@@ -11,22 +12,21 @@ export function emailAddressManager() {
   return {
     id: 'user-logon-email-address',
     controlled: false,
-    classNames: { container: 'form-input text'},
+    classNames: { container: 'form-input text email'},
     label: this.languageObjectHandler(label),
     children: <i className={icon} />,
-    onChange: () => this.props.changeErrors({ emailOrPassword: noError, email: noError }),
+    onChange: () => this.props.changeErrors({ emailOrPassword: noError }),
     onBlur: (value) => this.emailAddressManager().validate(value),
     validate: (value) => {
-      emailAddressValidator.call(this, value, 'changeErrors', {
-        email: { polish: 'nieprawidłowy adres email', english: 'invalid email address' }
-      })
-    },
-    error: (() => {
-      if (this.props.emailError.polish) {
-        return this.languageHandler(this.props.emailError.polish, this.props.emailError.english)
+      if (!emailValidator(value).isValid) {
+        this.props.changeErrors({
+          emailOrPassword: {
+            polish: 'nieprawidłowy adres email lub hasło', english: 'invalid email address and/or password'
+          }
+        })
       }
-      return this.languageHandler(this.props.emailOrPasswordError.polish, this.props.emailOrPasswordError.english)
-    })()
+    },
+    error: this.languageHandler(this.props.emailOrPasswordError.polish, this.props.emailOrPasswordError.english)
   }
 }
 
@@ -43,7 +43,14 @@ export function passwordManager() {
     onChange: () => this.props.changeErrors({ emailOrPassword: noError, email: noError }),
     onBlur: (value) => this.passwordManager().validate(value),
     validate: ((value) => {
-      if (value.length < 1) return false
+      if (value.length < 1) {
+        this.props.changeErrors({
+          emailOrPassword: {
+            polish: 'nieprawidłowy adres email lub hasło', english: 'invalid email address and/or password'
+          }
+        })
+        return false
+      }
       return true
     }),
     error: this.languageHandler(this.props.emailOrPasswordError.polish, this.props.emailOrPasswordError.english)
@@ -66,7 +73,13 @@ export function buttonManager() {
 
   return {
     classNames: { container: 'form-input button' },
-    label: connecting ? <WindmillSpinner spinnerClass='very-small-windmill-spinner'/> : this.languageHandler('Zaloguje', 'Sign in'),
+    label: (
+      <ButtonSpinner
+        connecting={connecting}
+        label={{ polish: 'Zaloguj', english: 'Sign In' }}
+        languageObjectHandler={this.languageObjectHandler}
+      />
+    ),
     onClick: this.logIn
   }
 }

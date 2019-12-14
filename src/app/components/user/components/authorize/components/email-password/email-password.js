@@ -28,22 +28,16 @@ class UserAuthorizeEmailPassword extends React.Component {
           <ManagedText {...this.emailAddressManager()}/>
           <ManagedText {...this.passwordManager()}/>
         </form>
-        <div className='email-or-password-error'>
-          {this.languageObjectHandler(this.props.emailOrPasswordError)}
-        </div>
-
         <div className='submit'>
           <ManagedCheckbox {...this.rememberMeManager()} />
           <ManagedButton {...this.buttonManager()} />
         </div>
-
         <div
           className='reset-password'>
           <span onClick={(e) => {
-            // TODO RESET PASSWORD RESET STATE
             this.props.changeApp({ showUserAuthorize: false, showUserEditPasswordReset: true })
           }}>
-            Resetuj hasło
+            {this.languageObjectHandler({ polish: 'Zresetuj hasło', english: 'Reset password' })}
           </span>
         </div>
       </div>

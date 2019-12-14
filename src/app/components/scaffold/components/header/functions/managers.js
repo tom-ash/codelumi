@@ -26,15 +26,20 @@ export function signUpManager() {
 }
 
 export function signInManager() {
-  const { changeApp, changeControl, name } = this.props
+  const {
+    changeApp, resetUserAuthorizeControl, resetUserAuthorizeInputs, changeControl, resetUserAuthorizeErrors, name
+  } = this.props
 
   return {
     display: name && 'none',
     classNames: { container: 'link' },
     label: this.labelProvider('fas fa-sign-in-alt', { polish: 'Zaloguj', english: 'Sign In'}),
     onClick: () => {
-      changeApp({ showUserAuthorize: true })
+      resetUserAuthorizeErrors()
+      resetUserAuthorizeInputs()
+      resetUserAuthorizeControl()
       changeControl({ showLinks: false })
+      changeApp({ showUserAuthorize: true })
     }
   }
 }

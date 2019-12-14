@@ -54,9 +54,6 @@
     background: white;
     position: relative;
     border-radius: 2.5px;
-    .page-header {
-      @extend %show-page-header;
-    }
     .primary-map {
       width: 694px;
       margin: 0 auto;

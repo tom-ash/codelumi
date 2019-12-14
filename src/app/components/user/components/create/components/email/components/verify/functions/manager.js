@@ -1,7 +1,6 @@
 import React from 'react'
 import { inputs } from '../../../../../../../constants/inputs'
 import ButtonSpinner from '../../../../../../../../support/components/button-spinner/button-spinner'
-// import WindmillSpinner from '../../../../../../../../support/components/spinner/components/windmill/windmill.js'
 
 export function verificationManager() {
   const { icon } = inputs.verification
@@ -35,8 +34,6 @@ export function verificationManager() {
 export function buttonManager() {
   const { connecting } = this.props
 
-  console.log(connecting)
-  
   return {
     classNames: { container: 'form-input button' },
     label: (

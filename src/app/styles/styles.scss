@@ -110,17 +110,14 @@ body {
   }
 }
 
-
-
 .page-header {
   margin-bottom: 24px;
   color: #212F3D;
-  font-size: 18px;
+  font-size: 17px;
+  line-height: 17px;
   .far, .fas {
-    margin-right: 8px;
-  }
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
-    text-align: center;
+    font-size: 15px;
+    margin-right: 6px; 
   }
 }
 
@@ -132,8 +129,6 @@ body {
     width: 24px;
   }
 }
-
-
 
 input, textarea {
   outline: none;
