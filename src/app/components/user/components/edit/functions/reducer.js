@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-const noError = { polish: '', english: '' }
+const noError = { pl: '', en: '' }
 
 const control = {
   connecting: false,

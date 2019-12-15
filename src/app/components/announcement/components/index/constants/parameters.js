@@ -5,8 +5,8 @@ export const parameters = [
   {
     state: 'category',
     api: 'category',
-    polish: 'kategoria',
-    english: 'category',
+    pl: 'kategoria',
+    en: 'category',
     value: function(categoryNumber) {
       return this.languageObjectHandler(parseCategoryForUrl(categoryNumber))
     },
@@ -15,104 +15,104 @@ export const parameters = [
   {
     state: 'district',
     api: 'district',
-    polish: 'dzielnica',
-    english: 'district',
+    pl: 'dzielnica',
+    en: 'district',
     value: districtNumber => parseDistrictForUrl(districtNumber),
     stateValue: districtName => reverseParseDistrict(districtName)
   },
   {
     state: 'rentCurrency',
     api: 'rentCurrency',
-    polish: 'waluta_czynszu',
-    english: 'rentCurrency',
+    pl: 'waluta_czynszu',
+    en: 'rentCurrency',
     value: (value) => value,
     stateValue: (value) => parseInt(value)
   },
   {
     state: 'rentMin',
     api: 'min_netRentAmount',
-    polish: 'min_czynsz',
-    english: 'min_rent',
+    pl: 'min_czynsz',
+    en: 'min_rent',
     value: (value) => value,
     stateValue: (value) => value
   },
   {
     state: 'rentMax',
     api: 'max_netRentAmount',
-    polish: 'maks_czynsz',
-    english: 'max_rent',
+    pl: 'maks_czynsz',
+    en: 'max_rent',
     value: (value) => value,
     stateValue: (value) => value
   },
   {
     state: 'areaMin',
     api: 'min_area',
-    polish: 'min_powierzchnia',
-    english: 'min_area',
+    pl: 'min_powierzchnia',
+    en: 'min_area',
     value: (value) => value,
     stateValue: (value) => value
   },
   {
     state: 'areaMax',
     api: 'max_area',
-    polish: 'maks_powierzchnia',
-    english: 'max_area',
+    pl: 'maks_powierzchnia',
+    en: 'max_area',
     value: (value) => value,
     stateValue: (value) => value
   },
   {
     state: 'roomsMin',
     api: 'min_rooms',
-    polish: 'min_pomieszczenia',
-    english: 'min_rooms',
+    pl: 'min_pomieszczenia',
+    en: 'min_rooms',
     value: (value) => value,
     stateValue: (value) => value
   },
   {
     state: 'roomsMax',
     api: 'max_rooms',
-    polish: 'maks_pomieszczenia',
-    english: 'max_rooms',
+    pl: 'maks_pomieszczenia',
+    en: 'max_rooms',
     value: (value) => value,
     stateValue: (value) => value
   },
   {
     state: 'floorMin',
     api: 'min_floor',
-    polish: 'min_pietro',
-    english: 'min_floor',
+    pl: 'min_pietro',
+    en: 'min_floor',
     value: (value) => value,
     stateValue: (value) => value
   },
   {
     state: 'floorMax',
     api: 'max_floor',
-    polish: 'maks_pietro',
-    english: 'max_floor',
+    pl: 'maks_pietro',
+    en: 'max_floor',
     value: (value) => value,
     stateValue: (value) => value
   },
   {
     state: 'totalFloorsMin',
     api: 'min_totalFloors',
-    polish: 'min_pietra_budynku',
-    english: 'min_building_floors',
+    pl: 'min_pietra_budynku',
+    en: 'min_building_floors',
     value: (value) => value,
     stateValue: (value) => value
   },
   {
     state: 'totalFloorsMax',
     api: 'max_totalFloors',
-    polish: 'maks_pietra_budynku',
-    english: 'max_building_floors',
+    pl: 'maks_pietra_budynku',
+    en: 'max_building_floors',
     value: (value) => value,
     stateValue: (value) => value
   },
   {
     state: 'page',
     api: 'page',
-    polish: 'strona',
-    english: 'page',
+    pl: 'strona',
+    en: 'page',
     value: (value) => value,
     stateValue: (value) => value
   },
@@ -120,8 +120,8 @@ export const parameters = [
   {
     state: 'availabilityDate',
     api: 'availabilityDate',
-    polish: 'data dostępności',
-    english: 'availability date',
+    pl: 'data dostępności',
+    en: 'availability date',
     value: (value) => value,
     stateValue: (value) => value
   },

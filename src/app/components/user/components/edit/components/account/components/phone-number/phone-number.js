@@ -19,7 +19,7 @@ class UserEditAccountPhoneNumber extends React.Component {
     return (
       <div>
         <div className='monit'>
-          {monit.polish}
+          {monit.pl}
         </div>
         <ManagedSelect {...this.phoneCodeManager()}/>
         <ManagedText {...this.bodyManager()} />

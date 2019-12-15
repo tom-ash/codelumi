@@ -29,7 +29,7 @@ export function verify() {
   })
   .catch(() => {
     changeErrors({
-      verification: { polish: 'nieprawidłowy kod weryfikacyjny', english: 'invalid verification code' }
+      verification: { pl: 'nieprawidłowy kod weryfikacyjny', en: 'invalid verification code' }
     })
   })
   .finally(() => {

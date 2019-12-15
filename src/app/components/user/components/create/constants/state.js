@@ -1,4 +1,4 @@
-const noError = { polish: '', english: '' }
+const noError = { pl: '', en: '' }
 
 export const control = {
   connecting: false,

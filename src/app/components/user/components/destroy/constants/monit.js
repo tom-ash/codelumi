@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const monit = {
-  polish: (
+  pl: (
     <div>
       Kod weryfikacyjny został wysłany na adres email przypisany do konta. Wklej go ponizej i&nbsp;naciśnij przycisk 'Usuń konto', aby nieodwracalnie usunąć konto.
       {/* <div>
@@ -9,7 +9,7 @@ export const monit = {
       </div> */}
     </div>
   ),
-  english: (
+  en: (
     <span>
       The verification code has been sent to&nbsp;the&nbsp;account email address. Paste it below and click 'Delete account' to irreversibly delete the account.
     </span>

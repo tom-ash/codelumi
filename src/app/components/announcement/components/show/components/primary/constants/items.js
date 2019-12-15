@@ -4,52 +4,52 @@ export const items = [
   {
     icon: inputs.area.icon,
     label: {
-      polish: 'Powierzchnia:',
-      english: 'Area:'
+      pl: 'Powierzchnia:',
+      en: 'Area:'
     },
     stateKey: 'area'
   },
   {
     icon: inputs.rentCurrency.icon,
-    label: { polish: 'Miesięczny czynsz:', english: 'Monthly Rent' },
+    label: { pl: 'Miesięczny czynsz:', en: 'Monthly Rent' },
     stateKey: 'rent'
   },
   {
-    label: { polish: '', english: '' },
+    label: { pl: '', en: '' },
     stateKey: 'rentGross'
   },
   {
     icon: inputs.rentCurrency.icon,
-    label: { polish: 'Miesięczny czynsz / m2:', english: 'Monthly Rent / sqm' },
+    label: { pl: 'Miesięczny czynsz / m2:', en: 'Monthly Rent / sqm' },
     stateKey: 'rentNetPerSqm'
   },
   {
-    label: { polish: '', english: '' },
+    label: { pl: '', en: '' },
     stateKey: 'rentGrossPerSqm'
   },
   {
     icon: inputs.rentCurrency.icon,
-    label: { polish: 'Opłaty dodatkowe:', english: 'Additional Fees:' },
+    label: { pl: 'Opłaty dodatkowe:', en: 'Additional Fees:' },
     stateKey: 'additionalFees'
   },
   {
     icon: inputs.rooms.icon,
-    label: { polish: 'Liczba pomieszczeń:', english: 'Rooms Amount:' },
+    label: { pl: 'Liczba pomieszczeń:', en: 'Rooms Amount:' },
     stateKey: 'rooms'
   },
   {
     icon: inputs.floor.icon,
-    label: { polish: 'Piętro:', english: 'Floor:' },
+    label: { pl: 'Piętro:', en: 'Floor:' },
     stateKey: 'floor'
   },
   {
     icon: inputs.totalFloors.icon,
-    label: { polish: 'Liczba pięter budynku:', english: 'Building Floors Amount:' },
+    label: { pl: 'Liczba pięter budynku:', en: 'Building Floors Amount:' },
     stateKey: 'totalFloors'
   },
   {
     icon: inputs.availabilityDate.icon,
-    label: { polish: 'Dostępne od:', english: 'Available From:' },
+    label: { pl: 'Dostępne od:', en: 'Available From:' },
     stateKey: 'availabilityDate'
   }
 ]

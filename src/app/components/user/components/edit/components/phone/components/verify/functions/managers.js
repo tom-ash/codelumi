@@ -1,6 +1,6 @@
 import React from 'react'
 import { inputs } from '../../../../../../../constants/inputs'
-const noError = { polish: '', english: '' }
+const noError = { pl: '', en: '' }
 import WindmillSpinner from '../../../../../../../../support/components/spinner/components/windmill/windmill.js'
 
 export function verificationManager() {
@@ -18,8 +18,8 @@ export function verificationManager() {
       if (value.length === 8) return true
       this.props.changeErrors({
         phoneVerification: {
-          polish: 'nieprawidłowy kod weryfikacyjny',
-          english: 'invalid verification code'
+          pl: 'nieprawidłowy kod weryfikacyjny',
+          en: 'invalid verification code'
         }
       })
       return false

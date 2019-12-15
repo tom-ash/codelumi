@@ -27,7 +27,7 @@ class AnnouncementCreatePictures extends React.Component {
   render() {
     return (
       <div id='announcement-create-pictures' className='section'>
-        <div className={`drag-and-drop${this.props.error.polish ? ' error-drag-and-drop' : ''}`}>
+        <div className={`drag-and-drop${this.props.error.pl ? ' error-drag-and-drop' : ''}`}>
           <div>
             {this.languageHandler('Przeciągnij i upuść zdjęcia tutaj', 'Drag and drop pictures here')}
           </div>

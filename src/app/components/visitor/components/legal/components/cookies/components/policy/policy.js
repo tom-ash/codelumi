@@ -24,7 +24,7 @@ class VisitorCookiesPolicy extends React.Component {
           className='container medium-container shadowed'
           onClick={e => e.stopPropagation()}
         >
-          {this.pageHeaderProvider('fas fa-cookie-bite', { polish: 'Polityka Plików Cookies', english: 'Cookies Policy' })}
+          {this.pageHeaderProvider('fas fa-cookie-bite', { pl: 'Polityka Plików Cookies', en: 'Cookies Policy' })}
           <div className='cookies-policy'>
           {
           text.map((provision, index) => (
@@ -33,8 +33,8 @@ class VisitorCookiesPolicy extends React.Component {
             data={{
               tier: provision.tier,
               item: provision.item,
-              polish: provision.polish,
-              english: provision.english
+              pl: provision.pl,
+              en: provision.en
             }}/>
           ))
           }

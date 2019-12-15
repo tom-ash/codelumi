@@ -37,7 +37,7 @@ class UserAuthorizeEmailPassword extends React.Component {
           <span onClick={(e) => {
             this.props.changeApp({ showUserAuthorize: false, showUserEditPasswordReset: true })
           }}>
-            {this.languageObjectHandler({ polish: 'Zresetuj hasło', english: 'Reset password' })}
+            {this.languageObjectHandler({ pl: 'Zresetuj hasło', en: 'Reset password' })}
           </span>
         </div>
       </div>

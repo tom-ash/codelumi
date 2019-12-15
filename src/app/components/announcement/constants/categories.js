@@ -4,8 +4,8 @@ export const categories = [
   {
     number: 0,
     value: 0,
-    label: { polish: 'Biuro', english: 'Office' },
-    url: { polish: 'biuro', english: 'office' },
+    label: { pl: 'Biuro', en: 'Office' },
+    url: { pl: 'biuro', en: 'office' },
     icon: <i className='fas fa-briefcase' />,
     stringIcon: "<i class='fas fa-briefcase' />",
     pinClassName: 'office'
@@ -13,8 +13,8 @@ export const categories = [
   {
     number: 1,
     value: 1,
-    label: { polish: 'Lokal użytkowy', english: 'Usable Premises' },
-    url: { polish: 'lokal_uzytkowy', english: 'usable_premises' },
+    label: { pl: 'Lokal użytkowy', en: 'Usable Premises' },
+    url: { pl: 'lokal_uzytkowy', en: 'usable_premises' },
     icon: <i className='fas fa-cash-register' />,
     stringIcon: "<i class='fas fa-cash-register' />",
     pinClassName: 'usable-premises'

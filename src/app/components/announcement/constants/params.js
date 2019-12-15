@@ -2,63 +2,63 @@ export const params = {
   category: {
     minMax: false,
     url: {
-      polish: 'kategoria',
-      english: 'category'
+      pl: 'kategoria',
+      en: 'category'
     },
     parser: 'parseCategoryForUrl'
   },
   district: {
     minMax: false,
     url: {
-      polish: 'dzielnica',
-      english: 'district'
+      pl: 'dzielnica',
+      en: 'district'
     },
     parser: 'parseDistrictForUrl'
   },
   area: {
     minMax: true,
     url: {
-      polish: 'powierzchnia',
-      english: 'area'
+      pl: 'powierzchnia',
+      en: 'area'
     },
     unit: {
-      polish: 'm2',
-      english: 'sqm'
+      pl: 'm2',
+      en: 'sqm'
     }
   },
   rent: {
     minMax: true,
     url: {
-      polish: 'miesieczny_czynsz',
-      english: 'monthly_rent'
+      pl: 'miesieczny_czynsz',
+      en: 'monthly_rent'
     }
   },
   rooms: {
     minMax: true,
     url: {
-      polish: 'liczba_pomieszczen',
-      english: 'rooms_amount'
+      pl: 'liczba_pomieszczen',
+      en: 'rooms_amount'
     }
   },
   floor: {
     minMax: true,
     url: {
-      polish: 'pietro',
-      english: 'floor'
+      pl: 'pietro',
+      en: 'floor'
     }
   },
   totalFloors: {
     minMax: true,
     url: {
-      polish: 'liczba_pieter_budynku',
-      english: 'building_floors_amount'
+      pl: 'liczba_pieter_budynku',
+      en: 'building_floors_amount'
     }
   },
   availabilityDate: {
     minMax: false,
     url: {
-      polish: 'dostepnosc_od',
-      english: 'availability_from'
+      pl: 'dostepnosc_od',
+      en: 'availability_from'
     }
   }
 }

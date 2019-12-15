@@ -1,30 +1,30 @@
 export const inputs = {
   businessName: {
     icon: 'fas fa-ellipsis-h',
-    label: { polish: 'Nazwa (firma) Ogłoszeniodawcy', english: 'Announcer Business Name' }
+    label: { pl: 'Nazwa (firma) Ogłoszeniodawcy', en: 'Announcer Business Name' }
   },
   taxNumberNumber: {
     icon: 'fas fa-ellipsis-h',
-    label: { polish: 'Numer identifikacji podatkowej', english: 'Tax Identification Number' }
+    label: { pl: 'Numer identifikacji podatkowej', en: 'Tax Identification Number' }
   },
   areaCode: {
     icon: 'fas fa-phone',
-    label: { polish: 'ZZZ', english: 'ZZZ' }
+    label: { pl: 'ZZZ', en: 'ZZZ' }
   },
   phone: {
     icon: 'fas fa-phone',
-    label: { polish: 'Numer telefonu', english: 'Phone number' }
+    label: { pl: 'Numer telefonu', en: 'Phone number' }
   },
   email: {
     icon: 'fas fa-envelope',
-    label: { polish: 'Adres email', english: 'Email address' }
+    label: { pl: 'Adres email', en: 'Email address' }
   },
   password: {
     icon: 'fas fa-lock',
-    label: { polish: 'Hasło', english: 'Password' }
+    label: { pl: 'Hasło', en: 'Password' }
   },
   verification: {
     icon: 'fas fa-lock',
-    label: { polish: 'Kod weryfikacyjny', english: 'Verification Code' }
+    label: { pl: 'Kod weryfikacyjny', en: 'Verification Code' }
   }
 }

@@ -24,7 +24,7 @@ class VisitorTermsOfService extends React.Component {
           className='container medium-container shadowed'
           onClick={e => e.stopPropagation()}
         >
-          {this.pageHeaderProvider('fas fa-align-justify', { polish: 'Regulamin', english: 'Terms Of Service' })}
+          {this.pageHeaderProvider('fas fa-align-justify', { pl: 'Regulamin', en: 'Terms Of Service' })}
           <div className='terms-of-service'>
           {
           text.map((provision, index) => (
@@ -33,8 +33,8 @@ class VisitorTermsOfService extends React.Component {
             data={{
               tier: provision.tier,
               item: provision.item,
-              polish: provision.polish,
-              english: provision.english
+              pl: provision.pl,
+              en: provision.en
             }}/>
           ))
           }

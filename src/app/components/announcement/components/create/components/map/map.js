@@ -23,7 +23,7 @@ class AnnouncementCreatMap extends React.Component {
     return (
       <div id='announcement-create-map' className='section'>
         <div id='google-map-container' className='map'>
-          <div id='google-map' className={this.props.error.polish ? 'map-error' : ''}/>
+          <div id='google-map' className={this.props.error.pl ? 'map-error' : ''}/>
         </div>
         <div className='error'>
           {this.languageObjectHandler(this.props.error)}

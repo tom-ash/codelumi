@@ -1,8 +1,8 @@
 import React from 'react'
 
 const activeMonit = {
-  polish: 'Aktywne do ',
-  english: 'Active until '
+  pl: 'Aktywne do ',
+  en: 'Active until '
 }
 
 export function activeProvider(announcement, index) {

@@ -1,4 +1,4 @@
 export const additionalFees = [
-  { label: { polish: 'Tak', english: 'Yes' }, value: true },
-  { label: { polish: 'Nie', english: 'No' }, value: false }
+  { label: { pl: 'Tak', en: 'Yes' }, value: true },
+  { label: { pl: 'Nie', en: 'No' }, value: false }
 ]

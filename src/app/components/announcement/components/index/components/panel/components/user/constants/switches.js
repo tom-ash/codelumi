@@ -1,22 +1,22 @@
 export const switches = [
   {
     ref: 'offices',
-    polish: 'Biura',
-    english: 'Offices'
+    pl: 'Biura',
+    en: 'Offices'
   },
   {
     ref: 'usablePremises',
-    polish: 'Lokale użytkowe',
-    english: 'Usable Premises'
+    pl: 'Lokale użytkowe',
+    en: 'Usable Premises'
   },
   {
     ref: 'visible',
-    polish: 'Widoczne',
-    english: 'Visible'
+    pl: 'Widoczne',
+    en: 'Visible'
   },
   {
     ref: 'hidden',
-    polish: 'Ukryte',
-    english: 'Hidden'
+    pl: 'Ukryte',
+    en: 'Hidden'
   }
 ]

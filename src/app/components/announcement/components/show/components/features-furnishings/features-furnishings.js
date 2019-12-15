@@ -18,9 +18,9 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
 
   getHeader() {
     if (this.props.items === 'features') {
-      return  { polish: 'Zalety', english: 'Features' }
+      return  { pl: 'Zalety', en: 'Features' }
     }
-    return { polish: 'Wyposażenie', english: 'Furnishings' }
+    return { pl: 'Wyposażenie', en: 'Furnishings' }
   }
   
   render() {

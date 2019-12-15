@@ -1,6 +1,6 @@
 import { errors } from '../constants/errors'
 
-const noError = { polish: '', english: '' }
+const noError = { pl: '', en: '' }
 
 export function handleErrorOnSelect(input, value) {
   if (value !== '') return  this.props.changeErrors({ [input]: noError })

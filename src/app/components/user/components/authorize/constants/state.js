@@ -7,8 +7,8 @@ export const inputs = {
 }
 
 export const errors = {
-  email: { polish: '', english: '' },
-  emailOrPassword: { polish: '', english: '' }
+  email: { pl: '', en: '' },
+  emailOrPassword: { pl: '', en: '' }
 }
 
 export const data = {

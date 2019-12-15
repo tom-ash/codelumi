@@ -1,10 +1,10 @@
 const paths = {
   about: {
-    polish: '/o_serwisie',
-    english: '/about'
+    pl: '/o_serwisie',
+    en: '/about'
   },
   name: {
-    polish: '/kontakt',
-    english: 'contact'
+    pl: '/kontakt',
+    en: 'contact'
   }
 }

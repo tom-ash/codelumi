@@ -43,7 +43,7 @@ export function verificationManager() {
     validate: (value) => {
       if (value.length === 8) return true
       changeErrors({
-        password: { polish: 'nieprawidłowy kod weryfikacyjny', english: 'invalid verification code' }
+        password: { pl: 'nieprawidłowy kod weryfikacyjny', en: 'invalid verification code' }
       })
       return false
     },
@@ -71,8 +71,8 @@ export function passwordManager() {
 
       changeErrors({
         password: {
-          polish: 'hasło musi mieć przynajmniej sześć znaków',
-          english: 'the password has to be at least six characters long'
+          pl: 'hasło musi mieć przynajmniej sześć znaków',
+          en: 'the password has to be at least six characters long'
         }
       })
       return false
@@ -118,7 +118,7 @@ function buttonOnClickProvider() {
 function buttonTextProvider() {
   const { step } = this.props
 
-  if (step === 'password') return { polish: 'Zmień', english: 'Change' }
+  if (step === 'password') return { pl: 'Zmień', en: 'Change' }
 
-  return { polish: 'Dalej', english: 'Next' }
+  return { pl: 'Dalej', en: 'Next' }
 }

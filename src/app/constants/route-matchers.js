@@ -1,104 +1,104 @@
 export const routeMatchers = {
   showAnnouncementIndexVisitor: {
     route: {
-      polish: '/',
-      english: '/'
+      pl: '/',
+      en: '/'
     }
   },
   showAnnouncementIndexUser: {
     route: {
-      polish: 'dodane_ogloszenia',
-      english: 'added_announcements'
+      pl: 'dodane_ogloszenia',
+      en: 'added_announcements'
     },
     main: true
   },
   showAnnouncementShow: {
     route: {
-      polish: '\\d+',
-      english: '\\d+'
+      pl: '\\d+',
+      en: '\\d+'
     },
     main: true,
     announcementId: true
   },
   showAnnouncementCreate: {
     route: {
-      polish: 'dodaj_ogloszenie',
-      english: 'add_announcement'
+      pl: 'dodaj_ogloszenie',
+      en: 'add_announcement'
     },
     main: true
   },
   showAnnouncementEdit: {
     route: {
-      polish: 'edytuj_ogloszenie',
-      english: 'edit_announcement'
+      pl: 'edytuj_ogloszenie',
+      en: 'edit_announcement'
     },
     main: true,
     announcementId: true
   },
   showVisitorPrivacySettings: {
     route: {
-      polish: 'ustawienia_prywatnosci',
-      english: 'privacy_settings'
+      pl: 'ustawienia_prywatnosci',
+      en: 'privacy_settings'
     }
   },
   showUserCreate: {
     route: {
-      polish: 'zarejestruj',
-      english: 'sign_up'
+      pl: 'zarejestruj',
+      en: 'sign_up'
     }
   },
   showUserAuthorize: {
     route: {
-      polish: 'zaloguj',
-      english: 'sign_in'
+      pl: 'zaloguj',
+      en: 'sign_in'
     }
   },
   showUserEditPasswordReset: {
     route: {
-      polish: 'zresetuj_haslo',
-      english: 'reset_password'
+      pl: 'zresetuj_haslo',
+      en: 'reset_password'
     }
   },
   showUserEditAccount: {
     route: {
-      polish: 'ustawienia_konta',
-      english: 'account_settings'
+      pl: 'ustawienia_konta',
+      en: 'account_settings'
     }
   },
   showVisitorAbout: {
     route: {
-      polish: 'o_serwisie',
-      english: 'about'
+      pl: 'o_serwisie',
+      en: 'about'
     }
   },
   showVisitorContact: {
     route: {
-      polish: 'kontakt',
-      english: 'contact'
+      pl: 'kontakt',
+      en: 'contact'
     }
   },
   showVisitorTermsOfService: {
     route: {
-      polish: 'regulamin',
-      english: 'terms_of_service'
+      pl: 'regulamin',
+      en: 'terms_of_service'
     }
   },
   showVisitorCookiesPolicy: {
     route: {
-      polish: 'polityka_plikow_cookies',
-      english: 'cookies_policy'
+      pl: 'polityka_plikow_cookies',
+      en: 'cookies_policy'
     }
   },
   showVisitorPrivacyPolicy: {
     route: {
-      polish: 'polityka_prywatnosci',
-      english: 'privacy_policy'
+      pl: 'polityka_prywatnosci',
+      en: 'privacy_policy'
     }
   },
   showVisitorPrivacySettings: {
     route: {
-      polish: 'ustawienia_prywatnosci',
-      english: 'privacy_settings'
+      pl: 'ustawienia_prywatnosci',
+      en: 'privacy_settings'
     }
   }
 }

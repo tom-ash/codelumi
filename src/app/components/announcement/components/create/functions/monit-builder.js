@@ -5,12 +5,12 @@ export function monitBuilder() {
   return (
     <div className='monit'>
       {this.languageObjectHandler({
-        polish: (
+        pl: (
           <span>
             Dodanie ogłoszenia wymaga rejestracji konta. Mozesz to zrobić <span className='link' onClick={this.redirectToUserCreate}>teraz</span> lub podczas publikacji ogłoszenia.
           </span>
         ),
-        english: (
+        en: (
           <span>
             Adding an announcement requires account registration. You can do it <span className='link' onClick={this.redirectToUserCreate}>now</span> or during announcement publishing.
           </span>

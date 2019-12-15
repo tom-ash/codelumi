@@ -1,7 +1,7 @@
 import { handleLanguageVersions } from '../../../../../../../../../functions/shared.js'
 import { changePhone } from './adapters'
 
-const noError = { polish: '', english: '' }
+const noError = { pl: '', en: '' }
 
 export function phoneCodeManager() {
   return {
@@ -20,8 +20,8 @@ export function bodyManager() {
     controlled: false,
     classNames: { container: 'form-input text phone-body' },
     label: handleLanguageVersions(this.props.language, {
-      polish: 'numer telefonu',
-      english: 'phone number'
+      pl: 'numer telefonu',
+      en: 'phone number'
     }),
     onChange: (value) => {
       if (/^\d*$/.test(value)) {

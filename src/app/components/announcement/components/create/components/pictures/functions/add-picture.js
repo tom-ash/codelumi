@@ -11,7 +11,7 @@ export function addPicture(files) {
       }])
     })
     this.props.changeControl({ addingPicture: false })
-    this.props.changeErrors({ pictures: { polish: '', english: '' } })
+    this.props.changeErrors({ pictures: { pl: '', en: '' } })
   })
 }
 

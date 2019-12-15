@@ -1,1 +1,1 @@
-export const noError = { polish: '', english: '' }
+export const noError = { pl: '', en: '' }

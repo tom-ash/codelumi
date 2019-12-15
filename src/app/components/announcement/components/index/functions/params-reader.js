@@ -15,7 +15,7 @@ export function paramsReader() {
   Object.keys(params).map(paramKey => {
     const paramUrlKey = params[paramKey].url
     Object.keys(urlParamsObject).map(urlParam => {
-      if (urlParam === paramUrlKey.english || urlParam === paramUrlKey.polish) {
+      if (urlParam === paramUrlKey.en || urlParam === paramUrlKey.pl) {
         const value = urlParamsObject[urlParam]
         const min = value.match(/min_\d*/)
         let max = value.match(/max_\d*/)

@@ -94,7 +94,7 @@ export function availabilityDateManager() {
     onFocusCoverZIndex: 98,
     substituteOptions:(
       <Calendar
-        locale={language == 'polish' ? 'pl' : 'en'}
+        locale={language == 'pl' ? 'pl' : 'en'}
         onChange = {(date) => {
           changeInputs({ availabilityDate: parseDate(date), offset: 0 })
           changeControl({ [fetchKey]: true })

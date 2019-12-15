@@ -38,17 +38,17 @@ class AnnouncementCreate extends React.Component {
           <h2 className='page-header'>
             <i className='fas fa-plus' /> {this.languageHandler('Dodawanie ogłoszenia', 'Announcement Adding')}
           </h2>
-          {this.sectionHeaderProvider('fas fa-info-circle', { polish: 'Dane podstawowe', english: 'Primary Data'})}
+          {this.sectionHeaderProvider('fas fa-info-circle', { pl: 'Dane podstawowe', en: 'Primary Data'})}
           <AnnouncementCreatePrimary />
-          {this.sectionHeaderProvider('fas fa-images', { polish: 'Zdjęcia', english: 'Pictures'})}
+          {this.sectionHeaderProvider('fas fa-images', { pl: 'Zdjęcia', en: 'Pictures'})}
           <AnnouncementCreatePictures />
-          {this.sectionHeaderProvider('fas fa-list', { polish: 'Zalety', english: 'Features'})}
+          {this.sectionHeaderProvider('fas fa-list', { pl: 'Zalety', en: 'Features'})}
           <AnnouncementCreateFeatures />
-          {this.sectionHeaderProvider('fas fa-list', { polish: 'Wyposażenie', english: 'Furnishings'})}
+          {this.sectionHeaderProvider('fas fa-list', { pl: 'Wyposażenie', en: 'Furnishings'})}
           <AnnouncementCreateFurnishings />
-          {this.sectionHeaderProvider('fas fa-align-left', { polish: 'Opis', english: 'Description'})}
+          {this.sectionHeaderProvider('fas fa-align-left', { pl: 'Opis', en: 'Description'})}
           <AnnouncementCreateDescription />
-          {this.sectionHeaderProvider('fas fa-map-marker-alt', { polish: 'Mapa', english: 'Map'})}
+          {this.sectionHeaderProvider('fas fa-map-marker-alt', { pl: 'Mapa', en: 'Map'})}
           <AnnouncementCreateMap />
         </div>
         <AnnouncementCreatePublishing />

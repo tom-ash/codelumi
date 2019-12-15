@@ -3,92 +3,92 @@ export const requiredInputs = {
     id: 'announcement-create-category',
     label: {},
     error: {
-      polish: 'wybierz kategorię',
-      english: 'select category'
+      pl: 'wybierz kategorię',
+      en: 'select category'
     }
   },
   district: {
     id: 'announcement-create-district',
     errors: {
-      polish: 'wybierz dzielnicę',
-      english: 'select district'
+      pl: 'wybierz dzielnicę',
+      en: 'select district'
     }
   },
   rentCurrency: {
     id: 'announcement-create-rent-currency',
     error: {
-      polish: 'wybierz walutę czynszu',
-      english: 'select rent currency'
+      pl: 'wybierz walutę czynszu',
+      en: 'select rent currency'
     }
   },
   netRentAmount: {
     id: 'announcement-create-rent-amount',
     error: {
-      polish: 'podaj wysokość miesięcznego czynszu netto',
-      english: 'provide rent amount'
+      pl: 'podaj wysokość miesięcznego czynszu netto',
+      en: 'provide rent amount'
     }
   },
   additionalFees: {
     id: 'announcement-create-additional-fees',
     error: {
-      polish: 'wybierz opłaty dodatkowe',
-      english: 'select additional fees'
+      pl: 'wybierz opłaty dodatkowe',
+      en: 'select additional fees'
     }
   },
   area: {
     id: 'announcement-create-area',
     error: {
-      polish: 'podaj powierzchnię',
-      english: 'provide area'
+      pl: 'podaj powierzchnię',
+      en: 'provide area'
     }
   },
   rooms: {
     id: 'announcement-create-rooms',
     error: {
-      polish: 'wybierz liczbę pomieszczeń',
-      english: 'select rooms amount'
+      pl: 'wybierz liczbę pomieszczeń',
+      en: 'select rooms amount'
     }
   },
   floor: {
     id: 'announcement-create-floor',
     error: {
-      polish: 'wybierz piętro',
-      english: 'select floor'
+      pl: 'wybierz piętro',
+      en: 'select floor'
     }
   },
   totalFloors: {
     id: 'annoucement-create-total-floors',
     error: {
-      polish: 'wybierz całkowitą liczbę pięter',
-      english: 'select total floors'
+      pl: 'wybierz całkowitą liczbę pięter',
+      en: 'select total floors'
     }
   },
   availabilityDateSelect: {
     id: 'availability-date-select',
     error: {
-      polish: 'wybierz datę dostępności',
-      english: 'select availability date'
+      pl: 'wybierz datę dostępności',
+      en: 'select availability date'
     }
   },
   availabilityDate: {
     id: 'availability-date',
     error: {
-      polish: 'wybierz datę dostępności',
-      english: 'select availability date'
+      pl: 'wybierz datę dostępności',
+      en: 'select availability date'
     }
   },
   pictures: {
     id: 'announcement-create-pictures-input',
     error: {
-      polish: 'dodaj przynajmniej jedno zdjęcie',
-      english: 'add at least one picture'
+      pl: 'dodaj przynajmniej jedno zdjęcie',
+      en: 'add at least one picture'
     }
   },
   map: {
     id: 'google-map-container',
     error: {
-      polish: 'wybierz lokalizację',
-      english: 'select location'
+      pl: 'wybierz lokalizację',
+      en: 'select location'
     }
   }
 }

@@ -1,10 +1,10 @@
 import React from 'react'
 
-export function labelProvider(icon, polish, english) {
+export function labelProvider(icon, pl, en) {
   return (
     <span>
       <i className={icon}></i>
-      <span className='text'>{this.languageHandler(polish, english)}</span>
+      <span className='text'>{this.languageHandler(pl, en)}</span>
     </span>
   )
 }

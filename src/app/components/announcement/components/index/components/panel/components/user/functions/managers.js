@@ -8,7 +8,7 @@ export function switchesManager() {
       {
         ref: switchChecbkox.ref,
         checked: this.props.switches[switchChecbkox.ref],
-        label: this.languageHandler(switchChecbkox.polish, switchChecbkox.english)
+        label: this.languageHandler(switchChecbkox.pl, switchChecbkox.en)
       }
     )),
     onClick: (value, ref) => {

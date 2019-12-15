@@ -29,7 +29,7 @@ export function logIn() {
   .catch(() => {
     this.props.changeErrors({
       emailOrPassword: {
-        polish: 'nieprawidłowy adres email lub hasło', english: 'invalid email address and/or password'
+        pl: 'nieprawidłowy adres email lub hasło', en: 'invalid email address and/or password'
       }
     })
   })

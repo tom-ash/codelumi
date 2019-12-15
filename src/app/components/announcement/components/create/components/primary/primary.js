@@ -65,7 +65,7 @@ class AnnouncementCreatePrimary extends React.Component {
                 this.props.changeInputs({ availabilityDate: parseDate(date) })
                 this.props.changeControl({ availabilityDateFocus: false })
               }}
-              locale={this.props.language == 'polish' ? 'pl' : 'en'}/>
+              locale={this.props.language == 'pl' ? 'pl' : 'en'}/>
             </div>
           </div>
       </div>

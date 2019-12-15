@@ -1,38 +1,38 @@
 export const labels = {
   category: {
     icon: 'far fa-list-alt',
-    text: { polish: 'Kategoria najmu', english: 'Lease Category' }
+    text: { pl: 'Kategoria najmu', en: 'Lease Category' }
   },
   district: {
     icon: 'fas fa-city',
-    text: { polish: 'Dzielnica', english: 'District' }
+    text: { pl: 'Dzielnica', en: 'District' }
   },
   rent: {
     icon: 'fas fa-coins',
-    text: { polish: 'Miesięczny czynsz netto', english: 'Monthly Net Rent' }
+    text: { pl: 'Miesięczny czynsz netto', en: 'Monthly Net Rent' }
   },
   rentCurrency: {
     icon: 'fas fa-coins',
-    text: { polish: 'Waluta czynszu', english: 'Rent currency' }
+    text: { pl: 'Waluta czynszu', en: 'Rent currency' }
   },
   area: {
     icon: 'fas fa-square',
-    text: { polish: 'Powierzchnia (m2)', english: 'Area (sqm)' }
+    text: { pl: 'Powierzchnia (m2)', en: 'Area (sqm)' }
   },
   rooms: {
     icon: 'fas fa-door-closed',
-    text: { polish: 'Liczba pomieszczeń', english: 'Rooms Amount' }
+    text: { pl: 'Liczba pomieszczeń', en: 'Rooms Amount' }
   },
   floor: {
     icon: 'fas fa-layer-group',
-    text: { polish: 'Piętro', english: 'Floor' }
+    text: { pl: 'Piętro', en: 'Floor' }
   },
   totalFloors: {
     icon: 'fas fa-building',
-    text: { polish: 'Liczba pięter budynku', english: 'Building Floors Amount' }
+    text: { pl: 'Liczba pięter budynku', en: 'Building Floors Amount' }
   },
   availabilityDate: {
     icon: 'far fa-calendar-alt',
-    text: { polish: 'Dostępność od', english: 'Available from' }
+    text: { pl: 'Dostępność od', en: 'Available from' }
   }
 }

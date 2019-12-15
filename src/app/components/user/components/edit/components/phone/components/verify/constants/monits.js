@@ -2,7 +2,7 @@ import React from 'react'
 
 export const monits = {
   reason: {
-    polish: (
+    pl: (
       <div className='monit'>
         <div>
           Dodanie ogłoszenia wymaga <b>jednorazowej</b> weryfikacji numeru telefonu.
@@ -12,7 +12,7 @@ export const monits = {
         </div>
       </div>
     ),
-    english: (
+    en: (
       <div className='monit'>
         <div>
           To add the Announcement the phone number has&nbsp;to be verified (only <b>once</b>).
@@ -24,11 +24,11 @@ export const monits = {
     )
   },
   success: {
-    polish: 'Numer telefonu został zweryfikowany.',
-    english: 'The phone number has been verified.'
+    pl: 'Numer telefonu został zweryfikowany.',
+    en: 'The phone number has been verified.'
   },
   already: {
-    polish: 'Numer telefonu jest już zweryfiowany.',
-    english: 'The phone number is already verified.'
+    pl: 'Numer telefonu jest już zweryfiowany.',
+    en: 'The phone number is already verified.'
   }
 }

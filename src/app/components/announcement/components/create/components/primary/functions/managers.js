@@ -5,7 +5,7 @@ import { categories } from '../../../../../constants/categories'
 import { districts } from '../../../../../constants/districts'
 import { numberOptionsProvider } from '../../../../../../../functions/shared'
 
-const noError = { polish: '', english: '' }
+const noError = { pl: '', en: '' }
 
 export function categoryManager() {
   const {

@@ -1,5 +1,5 @@
 export function handleLanguageVersions(languageVersion, bilingualObject) {
-  return languageVersion === 'polish' ? bilingualObject.polish : bilingualObject.english
+  return languageVersion === 'pl' ? bilingualObject.pl : bilingualObject.en
 }
 
 export function numberOptionsProvider(number) {

@@ -1,26 +1,26 @@
 export const errors = {
   businessName: {
-    polish: 'nazwa nie może być pusta',
-    english: 'business name can\'t be blank'
+    pl: 'nazwa nie może być pusta',
+    en: 'business name can\'t be blank'
   },
   taxNumber: {
-    polish: 'numer identyfikacji podatkowej powinien składać się z 10 cyfr',
-    english: 'tax identification number should consist of 10 numbers'
+    pl: 'numer identyfikacji podatkowej powinien składać się z 10 cyfr',
+    en: 'tax identification number should consist of 10 numbers'
   },
   phone: {
-    polish: 'nieprawidłowy numer telefonu',
-    english: 'invalid phone number'
+    pl: 'nieprawidłowy numer telefonu',
+    en: 'invalid phone number'
   },
   email: {
-    polish: 'nieprawidłowy adres email',
-    english: 'incorrect email address'
+    pl: 'nieprawidłowy adres email',
+    en: 'incorrect email address'
   },
   password: {
-    polish: 'hasło powinno się składać z przynajmniej 6 znaków',
-    english: 'the password should consists of at least 6 characters'
+    pl: 'hasło powinno się składać z przynajmniej 6 znaków',
+    en: 'the password should consists of at least 6 characters'
   },
   verificationCode: {
-    polish: 'nieprawidłowy kod weryfikacyjny',
-    english: 'invalid verification code'
+    pl: 'nieprawidłowy kod weryfikacyjny',
+    en: 'invalid verification code'
   }
 }

@@ -1,8 +1,8 @@
-export function languageHandler(polish, english) {
-  return this.props.language === 'polish' ? polish : english
+export function languageHandler(pl, en) {
+  return this.props.language === 'pl' ? pl : en
 }
 
 export function languageObjectHandler(languageObject) {
-  languageObject = languageObject || { polish: '', english: '' }
-  return this.props.language === 'polish' ? languageObject.polish : languageObject.english
+  languageObject = languageObject || { pl: '', en: '' }
+  return this.props.language === 'pl' ? languageObject.pl : languageObject.en
 }

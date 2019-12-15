@@ -25,7 +25,7 @@ class About extends React.Component {
           className='container medium-container shadowed'
           onClick={e => e.stopPropagation()}
         >
-          {this.pageHeaderProvider('fas fa-info-circle', { polish: 'O Serwisie', english: 'About' })}
+          {this.pageHeaderProvider('fas fa-info-circle', { pl: 'O Serwisie', en: 'About' })}
           <div className='paragraph'>
             {
             this.languageHandler(

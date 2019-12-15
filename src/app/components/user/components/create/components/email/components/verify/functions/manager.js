@@ -12,15 +12,15 @@ export function verificationManager() {
     classNames: { container: 'form-input text' },
     label: this.languageHandler('Kod weryfikacyjny', 'Verification Code'),
     children: <i className={icon} />,
-    onChange: () => changeErrors({ verification: { polish: '', english: '' }}),
+    onChange: () => changeErrors({ verification: { pl: '', en: '' }}),
     onBlur: (value) => this.verificationManager().validate(value),
     validate: () => {
       const verificationCode = document.getElementById('user-create-email-verification').value
       if (verificationCode.length !== 8) {
         changeErrors({
           verification: {
-            polish: 'kod weryfikacyjny musi składać się z 8 znaków',
-            english: 'the verification code must consist of 8 characters'
+            pl: 'kod weryfikacyjny musi składać się z 8 znaków',
+            en: 'the verification code must consist of 8 characters'
           }
         })
         return false
@@ -39,7 +39,7 @@ export function buttonManager() {
     label: (
       <ButtonSpinner
         connecting={connecting}
-        label={{ polish: 'Dalej', english: 'Next' }}
+        label={{ pl: 'Dalej', en: 'Next' }}
         languageObjectHandler={this.languageObjectHandler}
       />
     ),

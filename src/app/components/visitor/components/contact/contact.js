@@ -23,7 +23,7 @@ class Footer extends React.Component {
           className='container narrow-container shadowed'
           onClick={e => e.stopPropagation()}
         >
-          {this.pageHeaderProvider('far fa-envelope', { polish: 'Kontakt', english: 'Contact' })}
+          {this.pageHeaderProvider('far fa-envelope', { pl: 'Kontakt', en: 'Contact' })}
           <div className='company'>
             Warsaw Digital Sp. z o.o.
           </div>

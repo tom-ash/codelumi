@@ -37,7 +37,7 @@ class AnnouncementCreatePrimary extends React.Component {
             </div>
             <div className='label-value'>
               <div className='label'>
-                {this.languageHandler(item.label.polish, item.label.english)}
+                {this.languageHandler(item.label.pl, item.label.en)}
               </div>
               <div className={`value${this.classProvider(item.stateKey)}`}>
                 {
@@ -71,8 +71,8 @@ class AnnouncementCreatePrimary extends React.Component {
                 }
                 {
                 item.stateKey === 'additionalFees' &&
-                this.languageHandler(parseAdditionalFees(this.props.additionalFees).polish,
-                                    parseAdditionalFees(this.props.additionalFees).english)
+                this.languageHandler(parseAdditionalFees(this.props.additionalFees).pl,
+                                    parseAdditionalFees(this.props.additionalFees).en)
                 }
                 {
                 item.stateKey === 'area' &&

@@ -8,7 +8,7 @@ export function checkRoute() {
   const newRoutes = { showAnnouncementIndexVisitor: true }
 
   for (let [key, matcher] of Object.entries(routeMatchers)) {
-    if (path.match(new RegExp(`(${matcher.route.polish}|${matcher.route.english})`))) {
+    if (path.match(new RegExp(`(${matcher.route.pl}|${matcher.route.en})`))) {
       newRoutes[key] = true
       if (matcher.main) newRoutes.showAnnouncementIndexVisitor = false
       if (matcher.announcementId) {

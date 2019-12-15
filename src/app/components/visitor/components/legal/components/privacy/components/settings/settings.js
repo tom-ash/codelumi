@@ -30,7 +30,7 @@ class VisitorPrivacySettings extends React.Component {
           onClick={e => e.stopPropagation()}
         >
           {this.pageHeaderProvider('fas fa-user-shield',
-                                  { polish: 'Ustawienia prywatności', english: 'Privacy Settings' } )}
+                                  { pl: 'Ustawienia prywatności', en: 'Privacy Settings' } )}
           <div className='text'>
             {this.languageObjectHandler(this.textsProvider('statistics'))}
           </div>

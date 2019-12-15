@@ -17,7 +17,7 @@ class UserEditAccountBusinessName extends React.Component {
     return (
       <div id='user-edit-account-business-name'>
         <div className='monit'>
-          {monit.polish}
+          {monit.pl}
         </div>
         <ManagedText {...this.textManager()} />
         <ManagedButton {...this.buttonManager()} />

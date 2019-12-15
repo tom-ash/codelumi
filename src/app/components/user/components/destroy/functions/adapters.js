@@ -38,7 +38,7 @@ export function destroy() {
   .then(response => {
     if (response.status == 200) return this.deauthorizeUser()
     this.props.changeErrors({
-      verification: { polish: 'nieprawidłowy kod weryfikacyjny', english: 'invalid verification code' }
+      verification: { pl: 'nieprawidłowy kod weryfikacyjny', en: 'invalid verification code' }
     })
     throw new Error('SomethingWentWrong')
   })

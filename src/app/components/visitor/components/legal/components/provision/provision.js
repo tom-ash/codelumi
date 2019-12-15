@@ -18,7 +18,7 @@ class VisitorLegalProvision extends React.Component {
           {this.props.data.item}
         </div>
         <div className='text'>
-          {this.languageHandler(this.props.data.polish, this.props.data.english)}
+          {this.languageHandler(this.props.data.pl, this.props.data.en)}
         </div>
         <div className='float-clear' />
       </div>

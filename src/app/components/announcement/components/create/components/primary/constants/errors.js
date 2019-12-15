@@ -1,46 +1,46 @@
 export const errors = {
   category: {
-    polish: 'wybierz kategorię',
-    english: 'select category'
+    pl: 'wybierz kategorię',
+    en: 'select category'
   },
   district: {
-    polish: 'wybierz dzielnicę',
-    english: 'select district'
+    pl: 'wybierz dzielnicę',
+    en: 'select district'
   },
   rentCurrency: {
-    polish: 'wybierz walutę czynszu',
-    english: 'select rent currency'
+    pl: 'wybierz walutę czynszu',
+    en: 'select rent currency'
   },
   netRentAmount: {
-    polish: 'podaj wysokość miesięcznego czynszu netto',
-    english: 'provide monthly net rent amount'
+    pl: 'podaj wysokość miesięcznego czynszu netto',
+    en: 'provide monthly net rent amount'
   },
   additionalFees: {
-    polish: 'wybierz opłaty dodatkowe',
-    english: 'select additional fees'
+    pl: 'wybierz opłaty dodatkowe',
+    en: 'select additional fees'
   },
   area: {
-    polish: 'podaj powierzchnię',
-    english: 'provide area'
+    pl: 'podaj powierzchnię',
+    en: 'provide area'
   },
   rooms: {
-    polish: 'wybierz liczbę pomieszczeń',
-    english: 'select rooms amount'
+    pl: 'wybierz liczbę pomieszczeń',
+    en: 'select rooms amount'
   },
   floor: {
-    polish: 'wybierz piętro',
-    english: 'select floor'
+    pl: 'wybierz piętro',
+    en: 'select floor'
   },
   totalFloors: {
-    polish: 'wybierz całkowitą liczbę pięter',
-    english: 'select total floors'
+    pl: 'wybierz całkowitą liczbę pięter',
+    en: 'select total floors'
   },
   availabilityDateSelect: {
-    polish: 'wybierz dostępność',
-    english: 'provide availability'
+    pl: 'wybierz dostępność',
+    en: 'provide availability'
   },
   availabilityDate: {
-    polish: 'wybierz datę',
-    english: 'provide date'
+    pl: 'wybierz datę',
+    en: 'provide date'
   }
 }

@@ -1,4 +1,4 @@
-const noError = { polish: '', english: '' }
+const noError = { pl: '', en: '' }
 import { verificationCodeValidator } from '../../../../../../../functions/verification-code-validator'
 import { emailValidator } from '../../../../../../../../../functions/email-validator'
 import { passwordValidator } from '../../../../../../../functions/password-validator'
@@ -134,7 +134,7 @@ export function buttonManager(aspect) {
     id: 'user-edit-email-button',
     display: this.props.step === 'success' ? 'none' : 'block',
     classNames: { container: 'form-input button' },
-    label: this.props.language === 'polish' ? 'Dalej' : 'Next',
+    label: this.props.language === 'pl' ? 'Dalej' : 'Next',
     onClick: buttonOnClickProvider.call(this)
   }
 }

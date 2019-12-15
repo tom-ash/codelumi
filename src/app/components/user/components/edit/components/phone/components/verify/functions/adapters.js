@@ -39,7 +39,7 @@ export function sendVerification() {
   })
   .catch(() => {
     this.props.changeErrors({
-      phoneVerification: { polish: 'nieprawidłowy kod weryfikacyjny', english: 'invalid verification code' }
+      phoneVerification: { pl: 'nieprawidłowy kod weryfikacyjny', en: 'invalid verification code' }
     })
   })
   .finally(() => changeControl({ connecting: false }))

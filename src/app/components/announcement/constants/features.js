@@ -1,127 +1,127 @@
 export const features = [
   {
     ref: 'undergroundgarage',
-    polish: 'Garaż podziemny',
-    english: 'Underground Garage'
+    pl: 'Garaż podziemny',
+    en: 'Underground Garage'
   },
   {
     ref: 'highceilings',
-    polish: 'Wysokie sufity',
-    english: 'High ceilings'
+    pl: 'Wysokie sufity',
+    en: 'High ceilings'
   },
   {
     ref: 'wellcommunicated',
-    polish: 'Dobrze skomunikowane',
-    english: 'Well communicated'
+    pl: 'Dobrze skomunikowane',
+    en: 'Well communicated'
   },
   {
     ref: 'standalonegarage',
-    polish: 'Garaż wolnostojący',
-    english: 'Standalone garage'
+    pl: 'Garaż wolnostojący',
+    en: 'Standalone garage'
   },
   {
     ref: 'parkingspaces',
-    polish: 'Miejsca postojowe',
-    english: 'Parking spaces'
+    pl: 'Miejsca postojowe',
+    en: 'Parking spaces'
   },
   {
     ref: 'entryphone',
-    polish: 'Domofon',
-    english: 'Entry phone'
+    pl: 'Domofon',
+    en: 'Entry phone'
   },
   {
     ref: 'monitoring',
-    polish: 'Monitoring',
-    english: 'Video surveillance'
+    pl: 'Monitoring',
+    en: 'Video surveillance'
   },
   {
     ref: 'lifts',
-    polish: 'Windy',
-    english: 'Lifts'
+    pl: 'Windy',
+    en: 'Lifts'
   },
   {
     ref: 'renovatedbuilding',
-    polish: 'Odremontowany budynek',
-    english: 'Renovated building'
+    pl: 'Odremontowany budynek',
+    en: 'Renovated building'
   },
   {
     ref: 'renovatedcommonareas',
-    polish: 'Odremontowane części wspólne',
-    english: 'Renovated commona reas'
+    pl: 'Odremontowane części wspólne',
+    en: 'Renovated commona reas'
   },
   {
     ref: 'highspeedelevator',
-    polish: 'Szybka winda',
-    english: 'High-speed elevator'
+    pl: 'Szybka winda',
+    en: 'High-speed elevator'
   },
   {
     ref: 'classabuilding',
-    polish: 'Budynek klasy A',
-    english: 'Class A building'
+    pl: 'Budynek klasy A',
+    en: 'Class A building'
   },
   {
     ref: 'classbbuilding',
-    polish: 'Budynek klasy B',
-    english: 'Class B building'
+    pl: 'Budynek klasy B',
+    en: 'Class B building'
   },
   {
     ref: 'classcbuilding',
-    polish: 'Budynek klasy C',
-    english: 'Class C building'
+    pl: 'Budynek klasy C',
+    en: 'Class C building'
   },
   {
     ref: 'redundantpowersupply',
-    polish: 'Zasilanie zapasowe',
-    english: 'Redundant power supply'
+    pl: 'Zasilanie zapasowe',
+    en: 'Redundant power supply'
   },
   {
     ref: 'poured flooring',
-    polish: 'Wylana posadzka',
-    english: 'Poured flooring'
+    pl: 'Wylana posadzka',
+    en: 'Poured flooring'
   },
   {
     ref: 'divisionwallsrearrangementpossibility',
-    polish: 'Możliwość rearanżacji ścian działowych',
-    english: 'Division walls re-arrangement possibility'
+    pl: 'Możliwość rearanżacji ścian działowych',
+    en: 'Division walls re-arrangement possibility'
   },
   {
     ref: 'kitchenette',
-    polish: 'Aneks kuchenny',
-    english: 'Kitchenette'
+    pl: 'Aneks kuchenny',
+    en: 'Kitchenette'
   },
   {
     ref: 'kitchen',
-    polish: 'Kuchnia',
-    english: 'Kitchen'
+    pl: 'Kuchnia',
+    en: 'Kitchen'
   },
   {
     ref: 'electricitypiping',
-    polish: 'Instalacja prądowa',
-    english: 'Electricity piping'
+    pl: 'Instalacja prądowa',
+    en: 'Electricity piping'
   },
   {
     ref: 'gaspiping',
-    polish: 'Instalacja gazowa',
-    english: 'Gas piping'
+    pl: 'Instalacja gazowa',
+    en: 'Gas piping'
   },
   {
     ref: 'waterpiping',
-    polish: 'Instalacja wodna',
-    english: 'Water piping'
+    pl: 'Instalacja wodna',
+    en: 'Water piping'
   },
   {
     ref: 'exclusivebathroom',
-    polish: 'Łazienka na wyłączność',
-    english: 'Exclusive bathroom'
+    pl: 'Łazienka na wyłączność',
+    en: 'Exclusive bathroom'
   },
   {
     ref: 'electricity',
-    polish: 'Prąd',
-    english: 'Electricity'
+    pl: 'Prąd',
+    en: 'Electricity'
   },
   {
     ref: 'windowedkitchen',
-    polish: 'Kuchnia z oknem',
-    english: 'Windowed kitchen'
+    pl: 'Kuchnia z oknem',
+    en: 'Windowed kitchen'
   }
 ]

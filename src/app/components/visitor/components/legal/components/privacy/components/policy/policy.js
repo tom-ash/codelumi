@@ -24,7 +24,7 @@ class VisitorPrivacyPolicy extends React.Component {
           className='container medium-container shadowed'
           onClick={e => e.stopPropagation()}
         >
-          {this.pageHeaderProvider('fas fa-user-shield', { polish: 'Polityka Prywatności', english: 'Privacy Policy' })}
+          {this.pageHeaderProvider('fas fa-user-shield', { pl: 'Polityka Prywatności', en: 'Privacy Policy' })}
           <div className='privacy-policy'>
           {
           text.map((provision, index) => (
@@ -33,8 +33,8 @@ class VisitorPrivacyPolicy extends React.Component {
             data={{
               tier: provision.tier,
               item: provision.item,
-              polish: provision.polish,
-              english: provision.english
+              pl: provision.pl,
+              en: provision.en
             }}/>
           ))
           }

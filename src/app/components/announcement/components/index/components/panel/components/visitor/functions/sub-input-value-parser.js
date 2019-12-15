@@ -32,40 +32,40 @@ export function subInputValueParser(input) {
 function roomsProvider(min, max) {
   if (min && !max || max) {
     const value = max || min
-    if (value == 1) return { polish: ` pomieszczenie`, english: ' room' }
-    if ([12, 13, 14].indexOf(value) !== -1) return { polish: ` pomieszczeń`, english: ' rooms' }
-    if ([2, 3, 4].indexOf(value % 10) !== -1) return { polish: ` pomieszczenia`, english: ' rooms' }
+    if (value == 1) return { pl: ` pomieszczenie`, en: ' room' }
+    if ([12, 13, 14].indexOf(value) !== -1) return { pl: ` pomieszczeń`, en: ' rooms' }
+    if ([2, 3, 4].indexOf(value % 10) !== -1) return { pl: ` pomieszczenia`, en: ' rooms' }
   }
-  return { polish: ' pomieszczeń', english: 'rooms' }
+  return { pl: ' pomieszczeń', en: 'rooms' }
 }
 
 function floorsProvider(value, min, max) {
-  if (max === -1) return { polish: `Podziemie`, english: 'Underground' }  
-  if (min === 0 && max === 0) return { polish: `Parter`, english: 'Groundfloor' }
-  if (max === 0) return { polish: `Podziemie lub parter`, english: 'Underground or groundfloor' }
-  if (min === 0 && max === '') return { polish: `≥ Parter`, english: '≥ Groundfloor' }
+  if (max === -1) return { pl: `Podziemie`, en: 'Underground' }  
+  if (min === 0 && max === 0) return { pl: `Parter`, en: 'Groundfloor' }
+  if (max === 0) return { pl: `Podziemie lub parter`, en: 'Underground or groundfloor' }
+  if (min === 0 && max === '') return { pl: `≥ Parter`, en: '≥ Groundfloor' }
 
-  return { polish: `${value} piętro`, english: `${value} floor` }
+  return { pl: `${value} piętro`, en: `${value} floor` }
 }
 
 function totalFloorsProvider(value, min, max) {
-  if (max === -1) return { polish: `Budynek podziemny`, english: 'Underground building' } 
-  if (min === 0 && max === 0) return { polish: `Budynek parterowy`, english: 'Groundfloor building' }
-  if (max === 0) return { polish: `≤ Budynek parterowy`, english: '≤ Groundfloor building' }
-  if (min === 0 && max === '') return { polish: `≥ Budynek parterowy`, english: '≥ Groundfloor building' }
+  if (max === -1) return { pl: `Budynek podziemny`, en: 'Underground building' } 
+  if (min === 0 && max === 0) return { pl: `Budynek parterowy`, en: 'Groundfloor building' }
+  if (max === 0) return { pl: `≤ Budynek parterowy`, en: '≤ Groundfloor building' }
+  if (min === 0 && max === '') return { pl: `≥ Budynek parterowy`, en: '≥ Groundfloor building' }
 
   if (min === -1 && max > 0) {
-    if (max === 1) return { polish: `≤ ${max} piętro budynku`, english: `≤ ${max} building floors` }
-    if ([12, 13, 14].indexOf(max) !== -1) return { polish: `≤ ${max} pięter budynku`, english: `≤ ${max} building floors` }
-    if ([2, 3, 4].indexOf(max % 10) !== -1) return { polish: `≤ ${max} piętra budynku`, english: `≤ ${max} building floors` }
-    return { polish: `≤ ${max} pięter budynku`, english: `≤ ${max} building floors` }
+    if (max === 1) return { pl: `≤ ${max} piętro budynku`, en: `≤ ${max} building floors` }
+    if ([12, 13, 14].indexOf(max) !== -1) return { pl: `≤ ${max} pięter budynku`, en: `≤ ${max} building floors` }
+    if ([2, 3, 4].indexOf(max % 10) !== -1) return { pl: `≤ ${max} piętra budynku`, en: `≤ ${max} building floors` }
+    return { pl: `≤ ${max} pięter budynku`, en: `≤ ${max} building floors` }
   }
 
   if (min !== '' || max !== '') {
     const minMax = max || min
-    if (minMax === 1) return { polish: `${value} piętro budynku`, english: `${value} building floors` }
-    if ([12, 13, 14].indexOf(minMax) !== -1) return { polish: `${value} pięter budynku`, english: `${value} building floors` }
-    if ([2, 3, 4].indexOf(minMax % 10) !== -1) return { polish: `${value} piętra budynku`, english: `${value} building floors` }
-    return { polish: `${value} pięter budynku`, english: `${value} building floors` }
+    if (minMax === 1) return { pl: `${value} piętro budynku`, en: `${value} building floors` }
+    if ([12, 13, 14].indexOf(minMax) !== -1) return { pl: `${value} pięter budynku`, en: `${value} building floors` }
+    if ([2, 3, 4].indexOf(minMax % 10) !== -1) return { pl: `${value} piętra budynku`, en: `${value} building floors` }
+    return { pl: `${value} pięter budynku`, en: `${value} building floors` }
   }
 }

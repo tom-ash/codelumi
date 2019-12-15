@@ -7,7 +7,7 @@ export function furnishingsManager() {
       {
         ref: furnishing.ref,
         checked: this.props.furnishings[furnishing.ref],
-        label: this.languageHandler(furnishing.polish, furnishing.english)
+        label: this.languageHandler(furnishing.pl, furnishing.en)
       }
     )),
     onClick: (value, ref) => {

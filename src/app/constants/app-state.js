@@ -4,7 +4,7 @@ export const appState = {
   screenSize: null,
   scrollY: null,
   path: '/',
-  language: 'polish',
+  language: 'pl',
   connecting: false,
   scripts: {},
   isMobile: null,

@@ -3,7 +3,7 @@ import { inputs } from '../../../../../constants/inputs'
 import ButtonSpinner from '../../../../../../support/components/button-spinner/button-spinner'
 import { emailValidator } from '../../../../../../../functions/email-validator'
 
-const noError = { polish: '', english: '' }
+const noError = { pl: '', en: '' }
 
 export function emailAddressManager() {
   const { icon, label } = inputs.email
@@ -20,12 +20,12 @@ export function emailAddressManager() {
       if (!emailValidator(value).isValid) {
         this.props.changeErrors({
           emailOrPassword: {
-            polish: 'nieprawidłowy adres email lub hasło', english: 'invalid email address and/or password'
+            pl: 'nieprawidłowy adres email lub hasło', en: 'invalid email address and/or password'
           }
         })
       }
     },
-    error: this.languageHandler(this.props.emailOrPasswordError.polish, this.props.emailOrPasswordError.english)
+    error: this.languageHandler(this.props.emailOrPasswordError.pl, this.props.emailOrPasswordError.en)
   }
 }
 
@@ -45,14 +45,14 @@ export function passwordManager() {
       if (value.length < 1) {
         this.props.changeErrors({
           emailOrPassword: {
-            polish: 'nieprawidłowy adres email lub hasło', english: 'invalid email address and/or password'
+            pl: 'nieprawidłowy adres email lub hasło', en: 'invalid email address and/or password'
           }
         })
         return false
       }
       return true
     }),
-    error: this.languageHandler(this.props.emailOrPasswordError.polish, this.props.emailOrPasswordError.english)
+    error: this.languageHandler(this.props.emailOrPasswordError.pl, this.props.emailOrPasswordError.en)
   }
 }
 
@@ -75,7 +75,7 @@ export function buttonManager() {
     label: (
       <ButtonSpinner
         connecting={connecting}
-        label={{ polish: 'Zaloguj', english: 'Sign In' }}
+        label={{ pl: 'Zaloguj', en: 'Sign In' }}
         languageObjectHandler={this.languageObjectHandler}
       />
     ),

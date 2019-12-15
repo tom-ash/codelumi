@@ -1,6 +1,6 @@
 import { destroy } from './adapters'
 
-const noError = { polish: '', english: '' }
+const noError = { pl: '', en: '' }
 
 export function verificationManager() {
   return {
@@ -13,7 +13,7 @@ export function verificationManager() {
     validate: (value) => {
       if (value.length < 8) {
         this.props.changeErrors({
-          verification: { polish: 'nieprawidłowy kod weryfikacyjny', english: 'invalid verification code' }
+          verification: { pl: 'nieprawidłowy kod weryfikacyjny', en: 'invalid verification code' }
         })
         return false
       }

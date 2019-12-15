@@ -1,7 +1,7 @@
 import { features } from '../../../constants/features'
 import { furnishings } from '../../../constants/furnishings'
 
-const noError = { polish: '', english: '' }
+const noError = { pl: '', en: '' }
 
 function parseFeaturesForState() {
   let initialState = {}
