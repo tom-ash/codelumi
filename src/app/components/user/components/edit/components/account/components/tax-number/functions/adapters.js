@@ -2,24 +2,22 @@ import { apiUrl } from '../../../../../../../../../constants/urls.js'
 import { getAccessToken } from '../../../../../../authorize/components/tokens/functions/get-tokens'
 
 export function changetaxNumber(taxNumber) {
-  this.props.changeControl({ taxNumberConnecting: true })
-  const access_token = getAccessToken()
+  const { connecting, changeControl, changeData } = this.props
+
+  if (connecting) return
+
+  changeControl({ taxNumberConnecting: true })
   fetch(apiUrl + '/user/edit/tax_number', {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-      access_token
-    },
+    method: 'PUT', headers: { 'Content-Type': 'application/json', access_token: getAccessToken() },
     body: JSON.stringify({ taxNumber })
   })
   .then(response => {
     if (response.status == 200) {
-      this.props.changeData({ taxNumber })
-      this.props.changeControl({ taxNumberStage: 'success' })
-      return
+      changeData({ taxNumber })
+      return changeControl({ taxNumberStage: 'success' })
     }
     throw new Error('SomethingWentWrong')
   })
   .catch((error) => console.dir(error))
-  .finally(() => this.props.changeControl({ taxNumberConnecting: true }))
+  .finally(() => changeControl({ taxNumberConnecting: false }))
 }

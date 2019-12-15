@@ -5,6 +5,7 @@ import { monit } from './constants/monit'
 import { ManagedSelect } from 'managed-inputs'
 import { ManagedText } from 'managed-inputs'
 import { ManagedButton } from 'managed-inputs'
+import { languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import * as managers from './functions/managers'
 
 class UserEditAccountPhoneNumber extends React.Component {
@@ -13,6 +14,7 @@ class UserEditAccountPhoneNumber extends React.Component {
     this.phoneCodeManager = managers.phoneCodeManager.bind(this)
     this.bodyManager = managers.bodyManager.bind(this)
     this.buttonManager = managers.buttonManager.bind(this)
+    this.languageObjectHandler = languageObjectHandler.bind(this)
   }
 
   render() {

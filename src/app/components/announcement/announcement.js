@@ -14,11 +14,11 @@ class Announcement extends React.Component {
     const { showCreate, showEdit, showVisitor, showUser, showShow } = this.props
 
     return (
-      <div id='announcement'>
+      <React.Fragment>
         {(showCreate || showEdit)  && <AnnouncementCreate />}
         {(showVisitor || showUser) && <AnnouncementIndex />}
         {showShow                  && <AnnouncementShow />}
-      </div>
+      </React.Fragment>
     )
   }
 }

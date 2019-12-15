@@ -3,7 +3,6 @@
   border-bottom: 1px solid gray;
   border-left: 1px solid gray;
   height: 240px;
-  max-width: 360px;
   margin: 0 auto;
   transition: 0.72s ease-out;
   &.closed {
@@ -23,33 +22,37 @@
       position: relative;
     }
   }
-  .input {
+  .inputs-container {
     margin: 0 auto;
+    padding: 20px;
     &.hidden {
       visibility: hidden;
     }
     &.hiding {
       visibility: hidden;
-      padding: 20px;
     }
     &.shown {
       visibility: visible;
-      padding: 20px;
     }
     .monit {
       width: 100%;
-      max-width: 320px;
       text-align: justify;
       line-height: 1.2;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       font-size: 15px;
     }
     .country-code {
       position: absolute!important;
-      width: 72px;
+      width: 96px;
     }
     .phone-body {
-      margin-left: 84px;
+      margin-left: 108px;
+    }
+    .form-input {
+      &.button {
+        width: 50%;
+        margin-left: auto;
+      }
     }
   }
 }

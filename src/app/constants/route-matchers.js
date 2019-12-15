@@ -63,7 +63,8 @@ export const routeMatchers = {
     route: {
       pl: 'ustawienia_konta',
       en: 'account_settings'
-    }
+    },
+    main: true,
   },
   showVisitorAbout: {
     route: {

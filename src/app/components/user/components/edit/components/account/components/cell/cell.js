@@ -11,7 +11,7 @@ class UserEditAccountCell extends React.Component {
     super(props)
     this.state = {
       ...initialReducerState,
-      inputClass: 'input hidden'
+      inputClass: 'inputs-container hidden'
     }
     this.centralManager = centralManager.bind(this)
     this.componentDidUpdate = lifecycle.componentDidUpdate.bind(this)

@@ -47,10 +47,10 @@ export function getDerivedStateFromProps(props, state) {
 
 export function componentDidUpdate() {
   if (this.state.stage === 'success') {
-    this.setState({ inputClass: 'input hidden' })
+    this.setState({ inputClass: 'inputs-container hidden' })
     this.props.changeControl({ [`${this.props.item}Stage`]: 'closed-after-open' })
     setTimeout(() => {
-      this.setState({ inputClass: 'input hidden' })
+      this.setState({ inputClass: 'inputs-container hidden' })
       this.props.changeControl({ [`${this.props.item}Stage`]: null })
     }, 960);
   }

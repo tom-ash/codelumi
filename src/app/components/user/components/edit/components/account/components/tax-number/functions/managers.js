@@ -1,44 +1,52 @@
-import { handleLanguageVersions } from '../../../../../../../../../functions/shared.js'
+import React from 'react'
+import ButtonSpinner from '../../../../../../../../support/components/button-spinner/button-spinner'
 import { changetaxNumber } from './adapters'
+import { inputs } from '../../../../../../../constants/inputs'
 const noError = { pl: '', en: '' }
 
 export function textManager() {
+  const { changeErrors } = this.props
+  const { icon, label } = inputs.taxNumber
+  const { pl, en } = this.props.error
+
   return {
     id: 'user-edit-account-tax-identification-text',
     controlled: false,
     classNames: { container: 'form-input text' },
-    label: handleLanguageVersions(this.props.language, {
-      pl: 'numer identyfikacji podatkowej (NIP)',
-      en: 'tax identification number'
-    }),
-    onChange: () => this.props.changeErrors({ taxNumber: noError }),
-    onBlur: (value) => this.textManager().validate(value),
-    validate: (value) => {
+    label: this.languageObjectHandler(label),
+    children: <i className={icon} />,
+    onChange: () => changeErrors({ taxNumber: noError }),
+    onBlur: value => this.textManager().validate(value),
+    validate: value => {
       if (value.length < 10) {
-        this.props.changeErrors({ taxNumber: {
-          pl: 'nieprawidłowy numer identyfikacji podatkowej',
-          en: 'invalid tax identification number' }
+        changeErrors({
+          taxNumber: { pl: 'nieprawidłowy numer identyfikacji podatkowej', en: 'invalid tax identification number' }
         })
         return false
       }
       return true
     },
-    error: handleLanguageVersions(this.props.language, {
-      pl: this.props.error.pl,
-      en: this.props.error.en
-    })
+    error: this.languageObjectHandler({ pl, en })
   }
 }
 
 export function buttonManager() {
+  const { connecting } = this.props
+
   return {
     classNames: { container: 'form-input button' },
-    label: handleLanguageVersions(this.props.language, { pl: 'Zmień', en: 'Change' }),
+    label: (
+      <ButtonSpinner
+        connecting={connecting}
+        label={{ pl: 'Zmień', en: 'Change' }}
+        languageObjectHandler={this.languageObjectHandler}
+      />
+    ),
     onClick: () => {
       const taxNumber = document.getElementById('user-edit-account-tax-identification-text').value
       if (!this.textManager().validate(taxNumber)) return
+
       changetaxNumber.call(this, taxNumber)
-    },
-    error: ''
+    }
   }
 }

@@ -1,7 +1,7 @@
 export const mapStateToProps = (store) => {
   return {
     language: store.app.language,
-    connecting: store.user.edit.businessNameConnecting,
+    connecting: store.user.edit.control.businessNameConnecting,
     stage: store.user.edit.control.businessNameStage,
     currentValue: store.user.edit.data.businessName,
     error: store.user.edit.errors.businessName

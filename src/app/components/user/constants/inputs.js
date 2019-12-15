@@ -3,11 +3,11 @@ export const inputs = {
     icon: 'fas fa-ellipsis-h',
     label: { pl: 'Nazwa (firma) Ogłoszeniodawcy', en: 'Announcer Business Name' }
   },
-  taxNumberNumber: {
+  taxNumber: {
     icon: 'fas fa-ellipsis-h',
     label: { pl: 'Numer identifikacji podatkowej', en: 'Tax Identification Number' }
   },
-  areaCode: {
+  phoneCode: {
     icon: 'fas fa-phone',
     label: { pl: 'ZZZ', en: 'ZZZ' }
   },

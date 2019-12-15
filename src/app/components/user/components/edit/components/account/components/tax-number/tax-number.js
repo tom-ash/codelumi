@@ -4,6 +4,7 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { monit } from './constants/monit'
 import { ManagedText } from 'managed-inputs'
 import { ManagedButton } from 'managed-inputs'
+import { languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import * as managers from './functions/managers'
 
 class UserEditAccountTaxNumber extends React.Component {
@@ -11,6 +12,7 @@ class UserEditAccountTaxNumber extends React.Component {
     super(props)
     this.textManager = managers.textManager.bind(this)
     this.buttonManager = managers.buttonManager.bind(this)
+    this.languageObjectHandler = languageObjectHandler.bind(this)
   }
 
   render() {

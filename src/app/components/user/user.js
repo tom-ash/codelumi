@@ -4,8 +4,9 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import UserCreate from './components/create/create'
 import UserAuthorize from './components/authorize/authorize'
 import UserShow from './components/show/show'
-import UserEdit from './components/edit/edit'
 import UserEditAccountPassword from './components/edit/components/account/components/password/password'
+import UserEditPhoneNumberVerify from './components/edit/components/phone/components/verify/verify'
+import UserEditAccount from './components/edit/components/account/account'
 import './styles/styles.scss'
 
 class User extends React.Component {
@@ -24,20 +25,20 @@ class User extends React.Component {
     const { showCreate, showAuthorize, showPasswordReset, showEditPhoneVerify, showAccount, showEdit } = this.props
 
     return (
-      <div id='user'>
+      <React.Fragment>
         {(showCreate || showAuthorize || showPasswordReset || showEditPhoneVerify) &&
         <div onClick={this.hideUser} className='darkened-cover '>
           {showCreate          && <UserCreate />}
           {showAuthorize       && <UserAuthorize />}
           {showPasswordReset   && <UserEditAccountPassword />}
-          {showEditPhoneVerify && <UserEdit />}
+          {showEditPhoneVerify && <UserEditPhoneNumberVerify />}
         </div>}
         {showAccount &&
         <div onClick={this.hideUser} className='transparent-cover'>
           <UserShow />
         </div>}
-        {showEdit && <UserEdit />}
-      </div>
+        {showEdit && <UserEditAccount />}
+      </React.Fragment>
     )
   }
 }

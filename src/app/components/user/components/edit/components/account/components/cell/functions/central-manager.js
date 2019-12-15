@@ -77,11 +77,11 @@ function triggerOnClickHandler() {
   }
   if (this.state.stage !== 'opened') {
     controlChanger({ [stateKey]: 'opened' })
-    setTimeout(() => this.setState({ inputClass: 'input shown' }), 480);
+    setTimeout(() => this.setState({ inputClass: 'inputs-container shown' }), 480);
   } else {
     controlChanger({ [stateKey]: 'closed-after-open' })
-    this.setState({ inputClass: 'input hiding' })
-    setTimeout(() => this.setState({ inputClass: 'input hidden' }), 960);
+    this.setState({ inputClass: 'inputs-container hiding' })
+    setTimeout(() => this.setState({ inputClass: 'inputs-container hidden' }), 960);
     setTimeout(() => controlChanger({ [stateKey]: null }), 960);
   }
 }
@@ -118,7 +118,7 @@ function editClassProvider() {
 }
 
 function inputClassProvider() {
-  let inputClass = 'input'
+  let inputClass = 'inputs-container'
   if (this.state.stage === null) {
     inputClass += ' ' + 'closed'
   } else if (this.state.stage === 'closed-after-open'){

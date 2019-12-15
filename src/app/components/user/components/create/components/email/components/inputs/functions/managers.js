@@ -2,10 +2,7 @@ import React from 'react'
 import { inputs } from '../../../../../../../constants/inputs'
 
 export function businessNameManager() {
-  const {
-    icon,
-    label
-  } = inputs.businessName
+  const { icon, label } = inputs.businessName
 
   return {
     id: 'user-create-email-business-name',
@@ -32,9 +29,9 @@ export function areaCodeManager() {
     id: 'user-create-email-area-code',
     children: <i className='fas fa-globe-europe' />,
     classNames: { container: 'form-input select phone-country-code'},
-    value: this.props.areaCode,
+    value: this.props.phoneCode,
     options: [ { value: '+48', text: '+48' }, { value: '+1', text: '+1' }, { value: '+44', text: '+44' } ],
-    onSelect: (option) => this.props.changeInputs({ areaCode: option.value })
+    onSelect: (option) => this.props.changeInputs({ phoneCode: option.value })
   }
 }
 

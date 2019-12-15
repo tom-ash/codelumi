@@ -48,9 +48,9 @@ class App extends React.Component {
       <div id='app-container'>
         <Header />
         <div id='app-inner-container'>
-          <Visitor />
           <Announcement />
           {this.showUser() && <User />}
+          <Visitor />
         </div>
         <Footer />
       </div>

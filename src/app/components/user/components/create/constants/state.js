@@ -8,7 +8,7 @@ export const control = {
 }
 
 export const inputs = {
-  areaCode: '+48',
+  phoneCode: '+48',
   termsAndPrivacyConsent: false
 }
 
