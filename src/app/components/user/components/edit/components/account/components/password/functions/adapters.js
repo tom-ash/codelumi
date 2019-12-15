@@ -1,82 +1,78 @@
 import { apiUrl } from '../../../../../../../../../constants/urls.js'
 import { hashPassword } from '../../../../../../../functions/shared.js'
 import { noError } from '../constants/no-error'
-import { changeRoute } from '../../../../../../../../../functions/routers'
 
 export function sendEmail() {
-  const { language } = this.props
-  if (this.props.connecting) return
+  const { language, connecting, changeControl, changeErrors } = this.props
   const email = document.getElementById('user-edit-password-email').value
-  if (!this.emailManager('validate', email)) return
-  this.props.changeControl({ passwordConnecting: true })
+  
+  if (connecting || !this.emailManager('validate', email)) return
+
+  changeControl({ passwordConnecting: true })
   fetch(apiUrl + '/user/edit/password/email', {
     method: 'PUT', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, language })
   })
   .then(response => {
     if (response.status == 200) {
-      this.props.changeControl({ passwordStep: 'verificationCode' })
-      this.props.changeErrors({ password: noError })
+      changeControl({ passwordStep: 'verificationCode' })
+      changeErrors({ password: noError })
     }
     throw new Error('ServerError')
   })
-  .finally(() => this.props.changeControl({ passwordConnecting: false }))
+  .finally(() => changeControl({ passwordConnecting: false }))
 }
 
 export function sendVerification() {
-  if (this.props.connecting) return
+  const { connecting, changeControl, changeErrors } = this.props
   const verificationCode = document.getElementById('user-edit-password-verification').value
-  if (!this.verificationManager('validate', verificationCode)) return
-  this.props.changeControl({ passwordConnecting: false })
   const email = document.getElementById('user-edit-password-email').value
+
+  if (connecting || !this.verificationManager('validate', verificationCode)) return
+
+  changeControl({ passwordConnecting: true })
   fetch(apiUrl + '/user/edit/password/verification', {
     method: 'PUT', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, verification_code: verificationCode })
   })
   .then(response => {
     if (response.status == 200) {
-      this.props.changeControl({ passwordStep: 'password' })
-      this.props.changeErrors({ password: noError })
-      return
+      changeControl({ passwordStep: 'password' })
+      return changeErrors({ password: noError })
     }
     throw new Error('ServerError')
   })
   .catch(() => {
-    this.props.changeErrors({
+    changeErrors({
       password: { polish: 'nieprawidłowy kod weryfikacyjny', english: 'invalid verification code' }
     })
   })
-  .finally(() => this.props.changeControl({ passwordConnecting: false }))
+  .finally(() => changeControl({ passwordConnecting: false }))
 }
 
 export function sendPassword() {
-  if (this.props.connecting) return
+  const { connecting, changeControl } = this.props
   const password = document.getElementById('user-edit-password').value
-  if (!this.passwordManager('validate', password)) return
-  this.props.changeControl({ passwordConnecting: false })
   const email = document.getElementById('user-edit-password-email').value
   const verificationCode = document.getElementById('user-edit-password-verification').value
   const hashedPassword = hashPassword(password, email)
 
+  if (connecting || !this.passwordManager('validate', password)) return
+
+  changeControl({ passwordConnecting: true })
   fetch(apiUrl + '/user/edit/password', {
     method: 'PUT', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ email, verification_code: verificationCode, password: hashedPassword })
   })
   .then(response => {
     if (response.status == 200) {
-      this.props.changeControl({ passwordStep: 'success' })
-      this.props.changeErrors({ password: noError })
-      setTimeout(() => { this.props.changeControl({ passwordStage: 'success' }) }, 1000)
-      if (this.props.path === '/resethasla' || this.props.path === '/resetpassword') {
-        setTimeout(() => {
-          this.props.changeControl({ passwordStage: null })
-          changeRoute.call(this, null, '/signin')
-        }, 2000)
-      }
+      changeControl({ passwordStep: 'success' })
+      changeErrors({ password: noError })
+      setTimeout(() => { changeControl({ passwordStage: 'success' }) }, 1000)
       return
     }
     throw new Error('ServerError')
   })
   .catch((e) => console.dir(e))
-  .finally(() => this.props.changeControl({ passwordConnecting: false }))
+  .finally(() => changeControl({ passwordConnecting: false }))
 }

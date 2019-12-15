@@ -1,6 +1,5 @@
 import React from 'react'
 import { inputs } from '../../../../../constants/inputs'
-import WindmillSpinner from '../../../../../../support/components/spinner/components/windmill/windmill.js'
 import ButtonSpinner from '../../../../../../support/components/button-spinner/button-spinner'
 import { emailValidator } from '../../../../../../../functions/email-validator'
 

@@ -1,14 +1,16 @@
 import React from 'react'
 import { noError } from '../constants/no-error'
 import { inputs } from '../../../../../../../constants/inputs'
+import ButtonSpinner from '../../../../../../../../support/components/button-spinner/button-spinner'
 import { emailValidator } from '../../../../../../../../../functions/email-validator'
 
 export function emailManager() {
   const { label, icon } = inputs.email
-  const { step, connecting, changeErrors, error } = this.props
+  const { step, changeErrors, error } = this.props
+  
   return {
     id: 'user-edit-password-email',
-    display: step === null && !connecting ? 'block' : 'none',
+    display: step === null ? 'block' : 'none',
     controlled: false,
     classNames: { container: 'form-input text' },
     label: this.languageObjectHandler(label),
@@ -26,20 +28,21 @@ export function emailManager() {
 }
 
 export function verificationManager() {
+  const { step, changeErrors } = this.props
   const { label, icon } = inputs.verification
 
   return {
     id: 'user-edit-password-verification',
-    display: this.props.step === 'verificationCode' && !this.props.connecting ? 'block' : 'none',
+    display: step === 'verificationCode' ? 'block' : 'none',
     controlled: false,
     classNames: { container: 'form-input text' },
     label: this.languageObjectHandler(label),
     children: <i className={icon} />,
-    onChange: () => this.props.changeErrors({ password: noError }),
+    onChange: () => changeErrors({ password: noError }),
     onBlur: (value) => this.verificationManager().validate(value),
     validate: (value) => {
       if (value.length === 8) return true
-      this.props.changeErrors({
+      changeErrors({
         password: { polish: 'nieprawidłowy kod weryfikacyjny', english: 'invalid verification code' }
       })
       return false
@@ -49,21 +52,24 @@ export function verificationManager() {
 }
 
 export function passwordManager() {
+  const { step, changeErrors } = this.props
   const { label, icon } = inputs.password
+
   return {
     id: 'user-edit-password',
-    display: this.props.step === 'password' && !this.props.connecting ? 'block' : 'none',
+    display: step === 'password' ? 'block' : 'none',
     controlled: false,
     type: 'password',
     autoComplete: 'new-password',
     classNames: { container: 'form-input text' },
     label: this.languageObjectHandler(label),
     children: <i className={icon} />,
-    onChange: () => this.props.changeErrors({ password: noError }),
+    onChange: () => changeErrors({ password: noError }),
     onBlur: (value) => this.passwordManager().validate(value),
     validate: (value) => {
       if (value.length > 5) return true
-      this.props.changeErrors({
+
+      changeErrors({
         password: {
           polish: 'hasło musi mieć przynajmniej sześć znaków',
           english: 'the password has to be at least six characters long'
@@ -76,23 +82,33 @@ export function passwordManager() {
 }
 
 export function buttonManager() {
+  const { step, connecting } = this.props
+
   return {
-    display: this.props.step !== 'success' && !this.props.connecting ? 'block' : 'none',
+    display: step === 'success' ? 'none' : 'block',
     classNames: { container: 'form-input button' },
-    label: buttonTextProvider.call(this),
+    label: (
+      <ButtonSpinner
+        connecting={connecting}
+        label={buttonTextProvider.call(this)}
+        languageObjectHandler={this.languageObjectHandler}
+      />
+    ),
     onClick: buttonOnClickProvider.call(this)
   }
 }
 
 function buttonOnClickProvider() {
-  if (this.props.connecting) return
+  const { connecting, step, changeErrors } = this.props
+
+  if (connecting) return
   
-  switch (this.props.step) {
+  switch (step) {
     case null: return () => {
       const value = document.getElementById('user-edit-password-email').value
       const { isValid, error } = emailValidator(value)
       if (isValid) return this.sendEmail()
-      this.props.changeErrors({ password: error })
+      changeErrors({ password: error })
     }
     case 'verificationCode': return this.sendVerification
     case 'password': return this.sendPassword
@@ -100,6 +116,9 @@ function buttonOnClickProvider() {
 }
 
 function buttonTextProvider() {
-  if (this.props.step === 'password') return this.languageHandler('Zmień', 'Change')
-  return this.languageHandler('Dalej', 'Next')
+  const { step } = this.props
+
+  if (step === 'password') return { polish: 'Zmień', english: 'Change' }
+
+  return { polish: 'Dalej', english: 'Next' }
 }
