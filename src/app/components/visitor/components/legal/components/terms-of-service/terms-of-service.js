@@ -18,7 +18,7 @@ class VisitorTermsOfService extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <CloseButton width='medium'/>
+        <CloseButton classNames='page medium'/>
         <div
           id='visitor-terms-of-service'
           className='container medium-container shadowed'

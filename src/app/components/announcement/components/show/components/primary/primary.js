@@ -8,12 +8,14 @@ import { parseAdditionalFees } from '../../../../functions/additional-fee-parser
 import { parseAvailabilityDate } from './functions/parse-availability-date'
 import './styles/styles.scss'
 import { rentPerSqmCounter } from '../../../../functions/rent-per-sqm-counter'
+import DataTile from '../../../index/components/tile/components/data-tile/data-tile'
 
 class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {
     super(props)
     this.languageHandler = languageHandler.bind(this)
     this.rentPerSqmCounter = rentPerSqmCounter.bind(this)
+    this.parseAvailabilityDate = parseAvailabilityDate.bind(this)
   }
 
   classProvider(itemName) {
@@ -25,70 +27,93 @@ class AnnouncementCreatePrimary extends React.Component {
   }
   
   render() {
+    const {
+      area, rooms, netRentAmount, rentCurrency, grossRentAmount, netRentAmountPerSqm, grossRentAmountPerSqm, floor,
+      totalFloors, availabilityDate
+    } = this.props
+
+    const currency = parseCurrency(rentCurrency)
+
     return (
       <div id='announcement-show-primary'>
-        {
-        items.map((item, index) => (
-          <div
-          key={index}
-          className='item'>
-            <div className='icon'>
-              <i className={item.icon}/>
-            </div>
-            <div className='label-value'>
-              <div className='label'>
-                {this.languageHandler(item.label.pl, item.label.en)}
+        <div className='left-container'>
+          <DataTile classNames='area' icon='fas fa-ruler-combined' value={`${area} ${this.languageHandler('m2', 'sqm')}`} />
+        </div>
+        <div className='right-container'>
+          <DataTile classNames='rooms' icon='fas fa-door-closed' value={`${rooms} ${this.languageHandler('pomieszczeń', 'rooms')}`} />
+        </div>
+        <div className='float-clear' />
+        <div className='left-container rent'>
+          <DataTile
+            classNames='rent'
+            icon='fas fa-coins'
+            value={(
+              <div>
+                <div className='net'>
+                  <div className='amount'>
+                    {netRentAmount} {currency}
+                  </div>
+                  <div className='meta'>
+                    {this.languageHandler('netto + VAT / mc', 'net + VAT / mo')}
+                  </div>
+                </div>
+                <div className='gross'>
+                  <div className='inner'>
+                    <div className='amount'>
+                      {grossRentAmount / 100} {currency}
+                    </div>
+                    <div className='meta'>
+                      {this.languageHandler('brutto / mc', 'gross / mo')}
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className={`value${this.classProvider(item.stateKey)}`}>
-                {
-                item.stateKey !== 'rent' &&
-                item.stateKey !== 'rentPerSqm' &&
-                item.stateKey !== 'availabilityDate' &&
-                item.stateKey !== 'rentGross' &&
-                this.props[item.stateKey]
-                }
-                {
-                item.stateKey === 'rent' &&
-                `${this.props.netRentAmount} ${parseCurrency(this.props.rentCurrency)} ${this.languageHandler('netto', 'net')} + VAT`
-                }
-                {
-                item.stateKey === 'rentGross' &&
-                <span className='gross'>
-                  {this.props.grossRentAmount / 100} {parseCurrency(this.props.rentCurrency)} {this.languageHandler('brutto', 'gross')}
-                </span>
-                }
-                {
-                item.stateKey === 'rentNetPerSqm' &&
-                <span className='net'>
-                  {this.props.netRentAmountPerSqm / 100} {parseCurrency(this.props.rentCurrency)} {this.languageHandler('netto + VAT', 'net + VAT')}
-                </span>
-                }
-                {
-                item.stateKey === 'rentGrossPerSqm' &&
-                <span className='gross'>
-                  {this.props.grossRentAmountPerSqm / 100} {parseCurrency(this.props.rentCurrency)} {this.languageHandler('brutto', 'gross')}
-                </span>
-                }
-                {
-                item.stateKey === 'additionalFees' &&
-                this.languageHandler(parseAdditionalFees(this.props.additionalFees).pl,
-                                    parseAdditionalFees(this.props.additionalFees).en)
-                }
-                {
-                item.stateKey === 'area' &&
-                this.languageHandler(' m2', ' sqm')
-                }
-                {
-                item.stateKey === 'availabilityDate' &&
-                parseAvailabilityDate.call(this, this.props[item.stateKey])
-                }
+            )}
+          />
+        </div>
+        <div className='right-container rent'>
+          <DataTile
+            classNames='rent'
+            icon='fas fa-coins'
+            value={(
+              <div>
+                <div className='net'>
+                  <div className='amount'>
+                    {netRentAmountPerSqm / 100} {currency} / {this.languageHandler('m2', 'sqm')}
+                  </div>
+                  <div className='meta'>
+                    {this.languageHandler('netto + VAT / mc', 'net + VAT / mo')}
+                  </div>
+                </div>
+                <div className='gross'>
+                  <div className='inner'>
+                    <div className='amount'>
+                      {grossRentAmountPerSqm / 100} {currency} / {this.languageHandler('m2', 'sqm')}
+                    </div>
+                    <div className='meta'>
+                      {this.languageHandler('brutto / mc', 'gross / mo')}
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className='float-clear' />
-            </div>
-            <div className='float-clear' />
-          </div>
-        ))
-        }
+            )}
+          />
+        </div>
+        <div className='float-clear' />
+        <div className='left-container'>
+          <DataTile
+            classNames='floor'
+            icon='fas fa-layer-group'
+            value={`${floor} ${this.languageHandler('piętro', 'floor')} (${this.languageHandler('z', 'of')} ${totalFloors})`}
+          />
+        </div>
+        <div className='right-container'>
+          <DataTile
+            classNames='availability-date'
+            icon='fas fa-calendar-alt'
+            value={`${this.parseAvailabilityDate(availabilityDate)}`}
+          />
+        </div>
         <div className='float-clear' />
       </div>
     )

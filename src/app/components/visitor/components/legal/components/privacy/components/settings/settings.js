@@ -23,7 +23,7 @@ class VisitorPrivacySettings extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <CloseButton width='narrow'/>
+        <CloseButton classNames='page narrow'/>
         <div
           id='visitor-privacy-settings'
           className='container narrow-container shadowed'

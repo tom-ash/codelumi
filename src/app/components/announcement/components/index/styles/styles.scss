@@ -3,8 +3,8 @@
 #announcement-index {
   position: relative;
   min-height: 752px;
-  @media #{$phone} {
-    min-height: 808px;
+  @media #{$small-pc} {
+    min-height: 970px;
   }
   .offset-switcher {
     z-index: 9;
@@ -20,7 +20,7 @@
     background: rgba(33, 47, 61, 0.8);
     font-size: 16px;
     color: white;
-    @media #{$phone} {
+    @media #{$small-pc} {
       top: 340px;
     }
     .switch, .text {

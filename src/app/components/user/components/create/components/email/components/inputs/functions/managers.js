@@ -19,11 +19,6 @@ export function businessNameManager() {
 }
 
 export function areaCodeManager() {
-  const {
-    icon,
-    label
-  } = inputs.phone
-
   return {
     onFocusCoverZIndex: 3001,
     id: 'user-create-email-area-code',

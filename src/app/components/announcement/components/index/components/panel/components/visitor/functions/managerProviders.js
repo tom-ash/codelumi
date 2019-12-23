@@ -4,6 +4,7 @@ import { areaOptions } from '../../../../../constants/area-options'
 import { rooms } from '../../../../../../../constants/rooms'
 import { inputs } from '../../../../../../../constants/inputs'
 import { ManagedSelect } from 'managed-inputs'
+import { CloseButton } from '../../../../../../../../support/components/close-button/close-button'
 const options = { rent: rentOptions, area: areaOptions, rooms: rooms }
 
 export function compositeManagerProvider(inputName) {
@@ -28,18 +29,15 @@ export function compositeManagerProvider(inputName) {
       label: this.labelProvider(inputName),
       children: <React.Fragment>
         <i className={`icon ${inputs[inputName].icon}`} />
-        {value &&
-        <i
-          className='close fas fa-times'
-          onClick={() => {
-            this.props.changeInputs({
-              [`${inputName}Min`]: '',
-              [`${inputName}Max`]: '',
-              ...inputName === 'rent' && { rentCurrency: '' }
-            })
-            this.props.changeControl({ fetch: true })
-          }}
-        />}
+
+        {value !== '' && <CloseButton classNames='index' onClick={() => {
+          this.props.changeInputs({
+            [`${inputName}Min`]: '', [`${inputName}Max`]: '',
+            ...inputName === 'rent' && { rentCurrency: '' },
+            offset: 0
+          })
+          this.props.changeControl({ fetch: true })
+        }}/>}
       </React.Fragment>,
       value: value ? 'filled' : '',
       options: [{ value: '', text: '' },  { value: 'filled', text: value }]

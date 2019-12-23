@@ -1,18 +1,24 @@
+import React from 'react'
+import ButtonSpinner from '../../../../support/components/button-spinner/button-spinner'
 import { destroy } from './adapters'
-
+import { inputs } from '../../../constants/inputs'
 const noError = { pl: '', en: '' }
 
 export function verificationManager() {
+  const { changeErrors } = this.props
+  const { icon, label } = inputs.verification
+
   return {
     id: 'user-destroy-verification',
     controlled: false,
     classNames: { container: 'form-input text' },
-    label: this.languageHandler('Kod weryfikacyjny', 'Verification Code'),
-    onChange: () => this.props.changeErrors({ verification: noError }),
+    label: this.languageObjectHandler(label),
+    children: <i className={icon} />,
+    onChange: () => changeErrors({ verification: noError }),
     onBlur: (value) => this.verificationManager().validate(value),
     validate: (value) => {
       if (value.length < 8) {
-        this.props.changeErrors({
+        changeErrors({
           verification: { pl: 'nieprawidłowy kod weryfikacyjny', en: 'invalid verification code' }
         })
         return false
@@ -23,11 +29,19 @@ export function verificationManager() {
   }
 }
 
-export function buttonManager(action) {
+export function buttonManager() {
+  const { connecting } = this.props
+
   return {
     id: 'user-destroy-button',
-    classNames: { container: 'form-input button' },
-    label: this.languageHandler('Usuń konto', 'Delete account'),
+    classNames: { container: 'form-input button destroy' },
+    label: (
+      <ButtonSpinner
+        connecting={connecting}
+        label={{ pl: 'Usuń konto', en: 'Delete Account' }}
+        languageObjectHandler={this.languageObjectHandler}
+      />
+    ),
     onClick: () => destroy.call(this)
   }
 }

@@ -1,35 +1,21 @@
 @import '../../../../../../../styles/themes.scss';
 
 #announcement-show-features {
-  margin: 24px;
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
-    padding: 12px;
-    margin: 0;
-  }
-  h3 {
-    .fas, .far {
-      font-size: 14px;
-      width: 18px;
-    }
-    color: #1B4F72;
-    font-weight: normal;
-    font-size: 16px;
-    padding-bottom: 4px;
-    @media only screen and (max-width: 360px) {
-      font-size: 15px;
-    }
+  margin: 24px 12px 12px;
+  background: white;
+  font-size: 14px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 12px;
+  position: relative;
+  @media #{$phone} {
+    margin: 24px 14px 14px;
   }
   .item {
     float: left;
-    height: 30px;
-    margin-right: 18px;
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
-      clear: both;
+    margin-right: 12px;
+    @media #{$phone} {
       float: none;
-    }
-    @media only screen and (max-width: 360px) {
-      font-size: 15px;
-      height: 24px;
     }
     .icon, .text {
       float: left;
@@ -38,6 +24,9 @@
       height: 12px;
       line-height: 19px;
       padding-right: 5px;
+      @media #{$phone} {
+        position: absolute;
+      }
       .fa-circle {
         font-size: 6px;
       }
@@ -45,9 +34,9 @@
     .text {
       height: 24px;
       line-height: 24px;
-      font-size: 16px;
-      @media only screen and (max-width: 360px) {
-        font-size: 15px;
+      @media #{$phone} {
+        height: auto;
+        margin-left: 14px;
       }
     }
   }

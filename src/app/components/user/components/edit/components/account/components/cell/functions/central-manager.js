@@ -5,7 +5,6 @@ import UserEditAccountPhoneNumber from '../../phone-number/phone-number'
 import UserEditAccountEmail from '../../email-address/email-address'
 import UserEditAccountPassword from '../../password/password'
 import UserDestroy from '../../../../../../destroy/destroy'
-import WindmillSpinner from '../../../../../../../../support/components/spinner/components/windmill/windmill.js'
 
 export function centralManager(element) {
   switch (element) {
@@ -145,7 +144,7 @@ function editInputProvider() {
       component =  <UserEditAccountEmail />
       break
     case 'password':
-      component =  <UserEditAccountPassword />
+      component =  <UserEditAccountPassword editAccount={true}/>
       break
     case 'destroy':
       component =  <UserDestroy />

@@ -19,7 +19,7 @@ class About extends React.Component {
   render() {
     return(
       <React.Fragment>
-        <CloseButton width='medium'/>
+        <CloseButton classNames='page medium'/>
         <div
           id='visitor-about'
           className='container medium-container shadowed'

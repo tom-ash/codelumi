@@ -6,7 +6,6 @@ import { componentWillUnmount } from './functions/lifecycle'
 import { emailManager, verificationManager, passwordManager, buttonManager } from './functions/managers'
 import { sendEmail, sendVerification, sendPassword } from './functions/adapters'
 import { monitProvider } from './functions/monit-provider'
-import WindmillSpinner from '../../../../../../../support/components/spinner/components/windmill/windmill.js'
 import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import { labelProvider } from '../../../../../../../../functions/providers/label'
 import { CloseButton } from '../../../../../../../../components/support/components/close-button/close-button'
@@ -30,17 +29,17 @@ class UserEditAccountPassword extends React.Component {
   }
 
   render() {
-    const { showReset } = this.props
+    const { editAccount } = this.props
     
     return (
       <React.Fragment>
-        <CloseButton width='narrow'/>
+        {!editAccount && <CloseButton classNames='page narrow'/>}
         <div
           id='user-edit-account-password'
-          className='container narrow-container shadowed'
+          className={`${editAccount ? '' : 'container narrow-container shadowed'}`}
           onClick={e => e.stopPropagation()}
         >
-          {showReset &&
+          {!editAccount &&
           <h2 className='page-header'>
             <i className='fas fa-user-plus' /> {this.languageHandler('Resetowanie hasła', 'Password Resetting')}
           </h2>}

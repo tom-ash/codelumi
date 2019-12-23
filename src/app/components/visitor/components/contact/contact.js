@@ -17,7 +17,7 @@ class Footer extends React.Component {
   render() {
     return(
       <React.Fragment>
-        <CloseButton width='narrow contact'/>
+        <CloseButton classNames='page narrow contact'/>
         <div
           id='visitor-contact'
           className='container narrow-container shadowed'

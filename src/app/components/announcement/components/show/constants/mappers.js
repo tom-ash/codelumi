@@ -1,6 +1,7 @@
 export const mapStateToProps = (store) => {
   const {
-    announcementId
+    announcementId,
+    // language
   } = store.app
 
   return {

@@ -47,13 +47,16 @@ function setUpPinCreator() {
 }
 
 export function removeOldPins() {
-  if (!this.props.pins) return
-  this.props.pins.map(pin => pin.setMap(null))
+  const { pins } = this.props
+
+  pins.length && pins.map(pin => pin.setMap(null))
 }
 
 function addNewPins() {
+  const { changeData, announcements } = this.props
+
   let pins = []
-  this.props.announcements.map(announcement => {
+  announcements.map(announcement => {
     pins.push(new window.pinCreator(
       { latitude: announcement.latitude / 1000000, longitude: announcement.longitude / 1000000, },
       {
@@ -61,11 +64,11 @@ function addNewPins() {
         className: `pin ${categories[announcement.category].pinClassName}`,
         onClick: () => {
           if (this.props.tile.id === announcement.id) return
-          this.props.changeData({ tile: { id: announcement.id }})
+          changeData({ tile: { id: announcement.id }})
         }
       }
     )
   )})
-  this.props.changeData({ pins: pins })
+  changeData({ pins })
 }
 

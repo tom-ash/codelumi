@@ -3,7 +3,6 @@
   background: #D7DBDD;
   background-size: 100%;
   cursor: pointer;
-  border-radius: 2.5px;
   .phone {
     position: absolute;
     top: 6px;
@@ -79,18 +78,27 @@
               0px 3px 8px 3px rgba(0, 0, 0, 0.14),
               0px 3px 14px 2px rgba(0, 0, 0, 0.12);
   }
-  .calendar {
+  .district, .calendar {
     position: absolute;
-    bottom: 6px;
     left: 6px;
     font-size: 15px;
     color: #D0D3D4;
     padding: 4px 6px;
     border-radius: 2.5px;
-    background: rgba(0, 0, 0, 0.32);
+    background: rgba(0, 0, 0, 0.72);
+    padding-left: 28px;
+    &.district {
+      top: 6px;
+    }
+    &.calendar {
+      bottom: 6px;
+    }
     .fas {
+      position: absolute;
+      left: 8px;
+      line-height: 15px;
+      font-size: 10px;
       margin-right: 6px;
     }
-
   }
 }

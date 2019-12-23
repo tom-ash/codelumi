@@ -5,7 +5,6 @@ import * as lifecycle from './functions/lifecycle'
 import PrimaryData from './components/primary-data/primary-data'
 import SecondaryData from './components/secondary-data.js/secondary-data'
 import Picture from './components/picture/picture'
-import TertiaryData from './components/tertiary-data/tertiary-data'
 import { languageHandler } from '../../../../../../functions/language-handler'
 import { fetchPicture } from './functions/fetch-picture'
 import { changePicture } from './functions/change-picture'
@@ -21,6 +20,7 @@ import { parseAvailabilityDate } from '../../../../functions/parse-availability-
 import WindmillSpinner from '../../../../../support/components/spinner/components/windmill/windmill'
 import { viewAnnouncement } from '../../../../functions/view-announcement'
 import { changeRoute } from '../../../../../../functions/routers'
+import { CloseButton } from '../../../../../support/components/close-button/close-button'
 
 class AnnouncementIndexTile extends React.Component {
   constructor(props) {
@@ -45,55 +45,20 @@ class AnnouncementIndexTile extends React.Component {
   }
   
   render() {
+    const { languageHandler, getPicture, changePicture, phoneSwitchProvider, parseAvailabilityDate } = this
+    const { announcement, control, venue, isMobile } = this.props
     const {
-      languageHandler,
-      getPicture,
-      changePicture,
-      phoneSwitchProvider,
-      parseAvailabilityDate
-    } = this
-    const {
-      announcement,
-      control,
-      active,
-      venue,
-      isMobile,
-      first,
-      scrollY
-    } = this.props
-    const {
-      id,
-      category,
-      district,
-      showLoader,
-      visible,
-      area,
-      rentCurrency,
-      netRentAmount,
-      netRentAmountPerSqm,
-      grossRentAmount,
-      grossRentAmountPerSqm,
-      availabilityDate,
-      rooms,
-      floor,
-      totalFloors
+      id, category, district, showLoader, area, rentCurrency, netRentAmount, netRentAmountPerSqm,
+      grossRentAmount, grossRentAmountPerSqm, availabilityDate, rooms, floor, totalFloors
     } = announcement
 
-    let coreClass = `core ${venue}`
-    if (showLoader) coreClass += ' loader'
-    if (!visible) coreClass += ' invisible'
     if (!announcement.pictures) return null
-
-    // console.log(announcement)
 
     return (
       <div
       ref={this.container}
       className={`announcement-index-tile${this.props.first ? ' first': ''}${this.props.last ? ' last': ''}${this.props.index % 2 === 0 ? ' even' : ''}`}>
-        {venue === 'full' &&
-        <div className='divider'/>}
-        {venue == 'map' &&
-        <i className='fas fa-times close' onClick={this.closeTile}/>}
+        {venue == 'map' && <CloseButton classNames='map-tile' onClick={this.closeTile}/>}
         {showLoader &&
         <WindmillSpinner spinnerClass='windmill-medium-spinner'/>}
         <PrimaryData
@@ -102,41 +67,40 @@ class AnnouncementIndexTile extends React.Component {
           id={id}
           category={category}
           languageHandler={languageHandler}
-          parseDistrict={parseDistrict}
+          
           district={district}
+          parseDistrict={parseDistrict}
+
+          area={area}
+          rooms={rooms}
         />
-        <div className={coreClass}>
-          <Picture
-            announcementId={announcement.id}
-            getPicture={getPicture}
-            changeRoute={this.changeRoute}
-            venue={venue}
-            phoneSwitchProvider={phoneSwitchProvider}
-            changePicture={changePicture}
-            parseAvailabilityDate={parseAvailabilityDate}
-            availabilityDate={availabilityDate}
-          />
-          <SecondaryData
-            venue={venue}
-            languageHandler={languageHandler}
-            area={area}
-            rentCurrency={rentCurrency}
-            parseCurrency={parseCurrency}
-            netRentAmount={netRentAmount}
-            netRentAmountPerSqm={netRentAmountPerSqm}
-            grossRentAmount={grossRentAmount}
-            grossRentAmountPerSqm={grossRentAmountPerSqm}
-          />
-          <TertiaryData
-            languageHandler={languageHandler}
-            venue={venue}
-            rooms={rooms}
-            floor={floor}
-            totalFloors={totalFloors}
-          />
-        </div>
+        <Picture
+          announcementId={announcement.id}
+          getPicture={getPicture}
+          changeRoute={this.changeRoute}
+          venue={venue}
+          phoneSwitchProvider={phoneSwitchProvider}
+          changePicture={changePicture}
+          
+        />
+        <SecondaryData
+          venue={venue}
+          languageHandler={languageHandler}
+          area={area}
+          rooms={rooms}
+          rentCurrency={rentCurrency}
+          parseCurrency={parseCurrency}
+          netRentAmount={netRentAmount}
+          netRentAmountPerSqm={netRentAmountPerSqm}
+          grossRentAmount={grossRentAmount}
+          grossRentAmountPerSqm={grossRentAmountPerSqm}
+          rooms={rooms}
+          floor={floor}
+          totalFloors={totalFloors}
+          parseAvailabilityDate={parseAvailabilityDate}
+          availabilityDate={availabilityDate}
+        />
         {control}
-        {active}
       </div>
     )
   }

@@ -1,64 +1,6 @@
 @import '../../../../../../../styles/themes.scss';
 
 #announcement-show-primary {
-  padding: 24px;
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
-    padding: 12px;
-  }
-  .item {
-    line-height: 24px;
-    font-size: 16px;
-    color: #2E4053;
-    @media only screen and (max-width: 360px) {
-      font-size: 15px;
-    }
-    .icon {
-      float: left;
-      font-size: 14px;
-      width: 28px;
-      height: 28px;
-      // @media only screen and (max-width: $breakpoint-phone-large-max) {
-      //   font-size: 12px;
-      //   width: 24px;
-      // }
-      // @media only screen and (max-width: 420px) {
-      //   font-size: 11px;
-      //   width: 22px;
-      // }
-      // @media only screen and (max-width: 370px) {
-      //   font-size: 10px;
-      //   width: 20px;
-      // }
-      @media only screen and (max-width: 360px) {
-        font-size: 13px;
-      }
-    }
-    .label-value {
-      float: left;
-    }
-    .label {
-      float: left;
-      margin-bottom: 4px;
-      width: 200px;
-      @media only screen and (max-width: $breakpoint-phone-large-max) {
-        margin-bottom: 0;
-      }
-    }
-    .value {
-      float: left;
-      font-weight: bold;
-      .gross {
-        font-weight: normal;
-        color: #85929E;
-      }
-      @media only screen and (max-width: $breakpoint-phone-large-max) {
-        clear: both;
-        float: none;
-        margin-bottom: 8px;
-        &.net {
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
+  // padding: 24px;
+
 }

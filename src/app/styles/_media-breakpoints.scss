@@ -1,15 +1,17 @@
 $screen: "only screen" !default;
-$breakpoint-pc-large-min: 1201px;
-$breakpoint-pc-small-max: 1200px;
+$breakpoint-pc-large-min: 1225;
+$breakpoint-pc-small-max: 1224px;
 $breakpoint-pc-small-min: 961px;
 $breakpoint-tablet-large-max: 960px;
 $breakpoint-tablet-large-min: 769px;
 $breakpoint-tablet-small-max: 768px;
 $breakpoint-tablet-small-min: 481px;
 $breakpoint-phone-large-max: 480px;
+$breakpoint-phone-smal-max: 336px;
 
-$pc: "#{$screen} and (min-width: #{$breakpoint-pc-small-min})" !default;
+$small-pc: "#{$screen} and (max-width: #{$breakpoint-pc-small-max})" !default;
 $tablet: "#{$screen} and (max-width: #{$breakpoint-tablet-large-max})" !default;
 $small-tablet: "#{$screen} and (max-width: #{$breakpoint-tablet-large-min})" !default;
 $phone: "#{$screen} and (max-width: #{$breakpoint-phone-large-max})" !default;
+$small-phone: "#{$screen} and (max-width: #{$breakpoint-phone-smal-max})" !default;
 

@@ -1,121 +1,16 @@
 %secondary-data {
   position: relative;
-  height: 86px;
-  padding-left: 24%;
-  margin-top: 2px;
-  .outer {
-    &.area {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      width: 24%;
-      padding-right: 2px;
-      .inner {
-        background: white;
-        text-align: center;
-        line-height: 86px;
-        font-weight: bold;
-        color: #154360;
-      }
-    }
+  background: #F8F9F9;
+  padding-bottom: 12px;
+  .data-container {
+    float: left;
+    height: 47px;
+    width: 50%;
+    position: relative;
     &.rent {
-      position: absolute;
-      width: 38%;
-      &.net {
-        font-weight: bold;
-      }
-      &.gross {
-        top: 44px;
-      }
-      &.per-sqm {
-        right: 0;
-        color: #4A235A;
-        &.gross {
-          color: transparentize(#4A235A, .3)
-        }
-      }
-      &.total {
-        padding-right: 2px;
-        color: #6E2C00;
-        &.gross {
-          color: transparentize(#6E2C00, .3)
-        }
-      }
-      .inner {
-        background: white;
-        height: 42px;
-        padding: 8px 0 0 12px;
-        .amount {
-          font-size: 14px;
-          margin-bottom: 2px;
-          // font-weight: bold;
-        }
-        .meta {
-          font-size: 10px;
-        }
-      }
-    }
-  }
-  @media #{$pc} {
-    &.full {
-      position: absolute;
-      margin-top: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      bottom: 42px;
-      width: 184px;
-      height: auto;
-      padding-left: 0;
-      .outer {
-        $height: 20%;
-        height: $height;
-        .inner {
-          width: 100%;
-          height: 100%;
-          background: white;
-          margin-left: 6px;
-          padding-left: 24px;
-        }
-        &.area, &.net, &.gross.total {
-          padding-bottom: 6px;
-          top: 0;
-        }
-        &.area {
-          position: relative;
-          width: 100%;
-          padding-right: 0;
-          .inner {
-            text-align: left;
-            line-height: 54.69px;
-            font-weight: bold;
-            font-size: 18px;
-          }
-        }
-        &.rent {
-          position: relative;
-          width: 100%;
-          &.gross {
-            top: 0;
-          }
-          &.per-sqm {
-            right: 0;
-          }
-          &.total {
-            padding-right: 0;
-          }
-          .inner {
-            padding-top: 14px;
-            .amount {
-              font-size: 16px;
-              margin-bottom: 2px;
-            }
-            .meta {
-              font-size: 12px;
-            }
-          }
-        }
+      height: 108px;
+      @media #{$phone} {
+        height: 104px;
       }
     }
   }

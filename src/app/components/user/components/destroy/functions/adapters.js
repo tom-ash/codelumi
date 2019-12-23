@@ -2,46 +2,40 @@ import { apiUrl } from '../../../../../constants/urls.js'
 import { getAccessToken } from '../../authorize/components/tokens/functions/get-tokens'
 
 export function sendEmail() {
-  const { email } = this.props
-  if (this.props.connecting) return
-  this.props.changeControl({ connecting: true })
-  const access_token = getAccessToken()
+  const { changeControl, connecting, email } = this.props
+  if (connecting) return
+
+  changeControl({ connecting: true })
   fetch(apiUrl + '/user/destroy/email', {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-      access_token
-    },
+    method: 'PUT', headers: { 'Content-Type': 'application/json', access_token: getAccessToken() },
     body: JSON.stringify({ email })
   })
   .then(response => {
-    if (response.status == 200) return this.props.changeControl({ step: 'verification' })
+    if (response.of) return changeControl({ step: 'verification' })
     throw new Error('Server Error')
   })
-  .catch((error) => console.dir(error))
-  .finally(() => this.props.changeControl({ connecting: false }))
+  .catch(error => console.dir(error))
+  .finally(() => changeControl({ connecting: false }))
 }
 
 export function destroy() {
-  if (this.props.connecting) return
+  const { changeControl, connecting } = this.props
   const verificationCode = document.getElementById('user-destroy-verification').value
-  if (!this.verificationManager('validate', verificationCode)) return
-  this.props.changeControl({ connecting: true })
-  const access_token = getAccessToken()
+
+  if (connecting || !this.verificationManager('validate', verificationCode)) return
+
+  changeControl({ connecting: true })
   fetch(apiUrl + '/user/destroy', {
-    method: 'DELETE', headers: {
-      'Content-Type': 'application/json',
-      access_token
-    },
+    method: 'DELETE', headers: { 'Content-Type': 'application/json', access_token: getAccessToken() },
     body: JSON.stringify({ verificationCode })
   })
   .then(response => {
-    if (response.status == 200) return this.deauthorizeUser()
+    if (response.ok) return this.deauthorizeUser()
     this.props.changeErrors({
       verification: { pl: 'nieprawidłowy kod weryfikacyjny', en: 'invalid verification code' }
     })
     throw new Error('SomethingWentWrong')
   })
-  .catch((error) => console.dir(error))
-  .finally(() => this.props.changeControl({ connecting: false }))
+  .catch(error => console.dir(error))
+  .finally(() => changeControl({ connecting: false }))
 }

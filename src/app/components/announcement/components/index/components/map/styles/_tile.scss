@@ -5,45 +5,32 @@
   @extend %tile;
   z-index: 3;
   position: absolute;
-  top: 24px;
+  top: 56px;
   right: 24px;
   width: 400px;
-  .close {
-    z-index: 1;
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    cursor: pointer;
-    &:hover {
-      color: gray;
-    }
-  }
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
-    top: 64px;
-    right: 12px;
-    left: 12px;
+  @media #{$small-pc} {
+    top: 87px;
+    right: 8px;
+    left: 8px;
     width: auto;
-    max-width: 348px;
+    max-width: 360px;
     margin: 0 auto;
     padding: 0;
   }
-  .core {
-    .picture {
-      position: relative!important;
-      $width: 400px;
-      width: $width;
+  .picture {
+    position: relative!important;
+    $width: 400px;
+    width: $width;
+    height: 0;
+    background-size: ($width * 1.17777) auto;
+    padding-bottom: ($width / 1.7777);
+    @media #{$small-pc} {
+      $width: 100%;
+      width: $width!important;
       height: 0;
-      background-size: ($width * 1.17777) auto;
-      padding-bottom: ($width / 1.7777);
-      border-radius: 0;
-      @media only screen and (max-width: $breakpoint-phone-large-max) {
-        $width: 100%;
-        width: $width!important;
-        height: 0;
-        background-size: ($width * 1.3333) auto;
-        padding-bottom: ($width / 1.3333);
-        background-position: center; 
-      }
+      background-size: ($width * 1.3333) auto;
+      padding-bottom: ($width / 1.3333);
+      background-position: center; 
     }
   }
 }

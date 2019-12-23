@@ -7,7 +7,6 @@ import * as managers from './functions/managers'
 import { ManagedPagination, ManagedButton } from 'managed-inputs'
 import AnnouncementIndexTile from '../tile/tile'
 import { controlProvider } from './functions/control-provider'
-import { activeProvider } from './functions/active-provider'
 import './styles/styles.scss'
 import { buttonProvider } from './functions/button-provider'
 import { triggerVisible } from './functions/trigger-visible'
@@ -26,7 +25,6 @@ class AnnouncementIndexList extends React.Component {
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
     this.controlProvider = controlProvider.bind(this)
-    this.activeProvider = activeProvider.bind(this)
     this.buttonProvider = buttonProvider.bind(this)
     this.edit = edit.bind(this)
     this.triggerVisible = triggerVisible.bind(this)
@@ -77,7 +75,6 @@ class AnnouncementIndexList extends React.Component {
             announcement={announcement}
             announcements={this.props.announcements}
             control={this.controlProvider(announcement, index)}
-            active={this.activeProvider(announcement, index)}
             changeAnnouncement={this.props.changeAnnouncement}
           />))}
           <div className='float-clear' />

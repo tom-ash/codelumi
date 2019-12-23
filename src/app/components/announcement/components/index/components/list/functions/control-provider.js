@@ -2,7 +2,11 @@ import React from 'react'
 
 export function controlProvider(announcement, index) {
   return (
-    <div className='control'>
+    <div className='control small-shadow'>
+      <div className='active'>
+        {this.languageObjectHandler({ pl: 'Aktywne do ', en: 'Active until '})} <strong>{announcement.activeUntil}</strong>
+        {this.buttonProvider('Przedłuż', 'Extend', announcement, index, this.extend, ' extend')}
+      </div>
       <div className='info-pieces'>
         <div className='info'>
           {
@@ -22,17 +26,14 @@ export function controlProvider(announcement, index) {
         </div>
         <div className='float-clear' />
       </div>
-      <div className='buttons'>
-        {this.buttonProvider('Edytuj', 'Edit', announcement, index, this.edit)}
-        {
-        announcement.visible ?
-        this.buttonProvider('Ukryj', 'Hide', announcement, index, this.triggerVisible)
-        :
-        this.buttonProvider('Pokaż', 'Show', announcement, index, this.triggerVisible)
-        }
-        {this.buttonProvider('Usuń', 'Delete', announcement, index, () => this.props.changeControl({ beingDeleted: announcement.id }), ' last')}
-        <div className='float-clear' />
-      </div>
+      {this.buttonProvider('Edytuj', 'Edit', announcement, index, this.edit, ' edit')}
+      {
+      announcement.visible ?
+      this.buttonProvider('Ukryj', 'Hide', announcement, index, this.triggerVisible, ' hide-show')
+      :
+      this.buttonProvider('Pokaż', 'Show', announcement, index, this.triggerVisible, ' hide-show')
+      }
+      {this.buttonProvider('Usuń', 'Delete', announcement, index, () => this.props.changeControl({ beingDeleted: announcement.id }), ' delete')}
       <div className='float-clear' />
     </div>
   )

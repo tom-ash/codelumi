@@ -1,3 +1,67 @@
-#announcement {
-  position: relative;
+@import '../../../styles/media-breakpoints';
+
+.data-tile {
+  color: #212F3C;
+  border: 1px solid #D7DBDD;
+  position: absolute;
+  top: 12px;
+  height: 35px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  border-radius: 2.5px;
+  width: 160px;
+  background: white;
+  font-size: 15px;
+  text-align: center;
+  line-height: 35px;
+  @media #{$phone} {
+    width: auto;
+    max-width: 160px;
+    right: 12px;
+    left: 12px;
+    font-size: 14px;
+  }
+  .icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -10px;
+    height: 20px;
+    width: 20px;
+    margin: auto 0;
+    font-size: 8px;
+    border-radius: 10px;
+    background: white;
+    line-height: 20px;
+    text-align: center;
+    color: #212F3D;
+    .fas, .far {
+      font-size: 8px;
+      text-align: center;
+      width: 20px;
+    }
+  }
+  &.category, &.district, &.area, &.rooms {
+    font-weight: bold;
+  }
+  &.rent {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    line-height: normal;
+    height: 96px;
+    text-align: left;
+    justify-content: center;
+    font-weight: bold;
+    @media #{$phone} {
+      height: 92px;
+    }
+    .net {
+      margin-bottom: 10px;
+    }
+    .gross {
+      color: #515A5A;
+    }
+  }
 }

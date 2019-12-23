@@ -5,11 +5,13 @@
   position: relative;
   height: 584px;
   border: none;
+  @media #{$small-pc} {
+    height: 642px;
+  }
   .gm-bundled-control {
     right: 48px!important;
   }
-  @media #{$phone} {
-    height: 480px;
+  @media #{$small-pc} {
     .gm-bundled-control {
       display: none;
     }

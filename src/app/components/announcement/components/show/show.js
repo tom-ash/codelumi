@@ -14,6 +14,7 @@ import { togglePhone } from '../../functions/toggle-phone'
 import { fixedPhoneHandler } from './functions/fixed-phone-handler'
 import { changeRoute } from '../../../../functions/routers'
 import { viewAnnouncement } from '../../functions/view-announcement'
+import DataTile from '../index/components/tile/components/data-tile/data-tile'
 import './styles/styles.scss'
 
 class AnnouncementShow extends React.Component {
@@ -30,10 +31,10 @@ class AnnouncementShow extends React.Component {
   }
 
   render() {
-    const { phone, venue, features, furnishings, descriptionPolish, descriptionEnglish, id, district } = this.props
+    const { phone, venue, category, features, furnishings, descriptionPolish, descriptionEnglish, id, district } = this.props
     return (
       <div id='announcement-show'>
-        <div id='showcase'>
+        <div id='showcase' className='small-shadow'>
           <div className='name'>
             {this.props.name}
           </div>
@@ -43,10 +44,8 @@ class AnnouncementShow extends React.Component {
             </div>
             <div className='text'>
               {` ${phone}`}
-            {
-            phone && phone.length < 9 &&
-            <u onClick={(e) => this.togglePhone(e, venue)}>{this.languageHandler('Pokaż', 'Show')}</u>
-            }
+              {phone && phone.length < 9 &&
+              <u onClick={(e) => this.togglePhone(e, venue)}>{this.languageHandler('Pokaż', 'Show')}</u>}
             </div>
             <div className='float-clear' />
           </div>
@@ -54,21 +53,24 @@ class AnnouncementShow extends React.Component {
             {this.phoneSwitchProvider()}
           </div>
         </div>
-        <div className='announcement'>
+        <div className='announcement small-shadow'>
           <div className='headers'>
             <h2 className='page-header'>
-              <div className='number'>
-                {id}
-              </div>
-              <div className='pin'>
-                <i className="fas fa-briefcase"></i>
-              </div>
-              <div className='district'>
-                {parseDistrict(district)}
-              </div>
-              <div className='float-clear'/>
             </h2>
           </div>
+          <div className='left-container category'>
+            <DataTile classNames='area' icon='far fa-list-alt'
+            value={(
+              <strong>
+                {category === 0 ? this.languageHandler('Biuro', 'Office') : this.languageHandler('Lokal użytkowy', 'Usable Premises')}
+              </strong>
+            )}
+            />
+          </div>
+          <div className='right-container district'>
+            <DataTile classNames='district' icon='fas fa-city' value={parseDistrict(district)} />
+          </div>
+          <div className='float-clear' />
           <AnnouncementShowPictures />
           <AnnouncementShowPrimary />
           {

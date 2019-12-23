@@ -43,7 +43,6 @@ class Header extends React.Component {
           <h1 onClick={() => {
             resetAnnouncementIndexControl()
             resetAnnouncementIndexInputs()
-            resetAnnouncementIndexData()
             changeAnnouncementIndexControl({ fetch: true })
             this.changeRoute({ showAnnouncementIndexVisitor: true })
           }}>

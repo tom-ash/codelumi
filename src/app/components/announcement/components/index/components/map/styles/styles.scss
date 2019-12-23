@@ -11,7 +11,7 @@
   right: 0;
   left: 0;
   padding: 0px;
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
+  @media #{$small-pc} {
     top: 328px;
     left: 0;
     right: 0;

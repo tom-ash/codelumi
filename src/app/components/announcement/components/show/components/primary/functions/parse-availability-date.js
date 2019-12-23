@@ -5,5 +5,5 @@ export function parseAvailabilityDate(availabilityDate) {
 }
 
 function nowProvider() {
-  return this.languageHandler('Teraz', 'Now')
+  return this.languageHandler('Dostępne teraz', 'Available now')
 }

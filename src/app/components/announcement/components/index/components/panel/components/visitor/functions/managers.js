@@ -2,6 +2,7 @@ import React from 'react'
 import Calendar from 'react-calendar';
 import { currencies } from '../../../../../../../constants/currencies'
 import { parseDate } from '../../../../../../../../../functions/date-parsers'
+import { CloseButton } from '../../../../../../../../support/components/close-button/close-button'
 
 export function categoryManager() {
   const { category: value } = this.props
@@ -15,14 +16,10 @@ export function categoryManager() {
     label: this.labelProvider('category'),
     children: <React.Fragment>
       <i className='icon far fa-list-alt' />
-      {value !== '' &&
-      <i
-        className='close fas fa-times'
-        onClick={() => {
-          this.props.changeInputs({ category: '', offset: 0 })
-          this.props.changeControl({ fetch: true })
-        }}
-      />
+      {value !== '' && <CloseButton classNames='index' onClick={() => {
+        this.props.changeInputs({ category: '', offset: 0 })
+        this.props.changeControl({ fetch: true })
+      }}/>}
       }
     </React.Fragment>,
     options: this.buildSelectCategories(),
@@ -43,14 +40,10 @@ export function districtManager() {
     label: this.labelProvider('district'),
     children: <React.Fragment>
       <i className='icon fas fa-city' />
-      {value !== '' &&
-      <i
-        className='close fas fa-times'
-        onClick={() => {
-          this.props.changeInputs({ district: '', offset: 0 })
-          this.props.changeControl({ fetch: true })
-        }}
-      />
+      {value !== '' && <CloseButton classNames='index' onClick={() => {
+        this.props.changeInputs({ district: '', offset: 0 })
+        this.props.changeControl({ fetch: true })
+      }}/>}
       }
     </React.Fragment>,
     options: this.buildSelectDistricts(),

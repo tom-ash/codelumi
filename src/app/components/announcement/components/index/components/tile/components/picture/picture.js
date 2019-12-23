@@ -2,14 +2,7 @@ import React from 'react'
 
 export default function Picture(props) {
   const {
-    announcementId,
-    getPicture,
-    changePicture,
-    changeRoute,
-    phoneSwitchProvider,
-    parseAvailabilityDate,
-    venue,
-    availabilityDate
+    announcementId, getPicture, changePicture, changeRoute, phoneSwitchProvider, venue,
   } = props
 
   return (
@@ -35,10 +28,10 @@ export default function Picture(props) {
           <i className='fas fa-chevron-right' />
         </div>
       </div>
-      <div className='calendar'>
+      {/* <div className='calendar'>
         <i className='fas fa-calendar-alt'/>
         {parseAvailabilityDate(availabilityDate)}
-      </div>
+      </div> */}
     </div>
   )
 }

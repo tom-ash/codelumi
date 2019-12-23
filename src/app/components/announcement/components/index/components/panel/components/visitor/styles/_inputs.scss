@@ -2,15 +2,43 @@
 @import '../../../../../../../styles/pin.scss';
 
 %inputs {
+  .close-button {
+    &.index {
+      min-height: auto;
+      min-width: auto;
+      height: 40px;
+      width: 25px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto 0;
+      padding: none;
+      .fas {
+        font-size: 15px;
+      }
+      border: none;
+      background: none;
+    }
+  }
   .simple-index-input {
+    position: relative;
+
     @extend %simple-index-input;
-    @media #{$phone} {
+    @media #{$small-pc} {
       width: auto;
     }
     &.category, &.district {
       margin-right: 10px;
       @media #{$phone} {
         margin: 0;
+      }
+    }
+    &.category {
+      .pin {
+        box-shadow: none;
+        background: none;
+        font-size: 16px;
       }
     }
   }

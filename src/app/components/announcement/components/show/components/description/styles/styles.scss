@@ -1,31 +1,20 @@
 @import '../../../../../../../styles/themes.scss';
 
 #announcement-show-description {
-  margin: 24px;
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
-    margin: 0;
+  margin: 24px 12px 12px;
+  background: white;
+  font-size: 14px;
+  border: 1px solid lightgray;
+  position: relative;
+  border-radius: 4px;
+  padding: 12px;
+  @media #{$phone} {
+    margin: 24px 14px 14px;
     padding: 12px;
   }
   .description {
     text-align: justify;
-    font-size: 16px;
-    line-height: 22px;
+    line-height: 20px;
     white-space: pre-wrap;
-    @media only screen and (max-width: 360px) {
-      font-size: 15px;
-    }
-  }
-  h3 {
-    .fas, .far {
-      font-size: 14px;
-      width: 20px;
-    }
-    color: #1B4F72;
-    font-weight: normal;
-    font-size: 16px;
-    padding-bottom: 4px;
-    @media only screen and (max-width: 360px) {
-      font-size: 15px;
-    }
   }
 }

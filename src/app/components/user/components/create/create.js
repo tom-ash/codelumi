@@ -19,7 +19,7 @@ class UserCreate extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <CloseButton width='narrow'/>
+        <CloseButton classNames='page narrow'/>
         <div
           id='user-create-container'
           className='container narrow-container shadowed'

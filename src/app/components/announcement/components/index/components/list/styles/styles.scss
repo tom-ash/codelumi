@@ -8,12 +8,11 @@
   position: relative;
   width: 640px;
   margin: 0 auto;
-  // padding-top: 48px;
-  @media only screen and (max-width: $breakpoint-phone-large-max) {
+  @media #{$small-pc} {
+    max-width: 456px;
     width: 100%;
+    padding: 0 8px;
   }
-
-  text-align: center;
   .list-pagination {
     @extend %list-pagination;
   }
@@ -26,14 +25,11 @@
     border-radius: 2.5px;
     position: absolute;
     left: 0;
-    // width
   }
   .pagination-container {
-    // position: absolute;
     min-height: 36px;
     margin-left: 160px;
     padding: 0;
-    // background: #212F3D;
   }
   .announcements {
     margin-top: 64px;
@@ -84,8 +80,13 @@
     }
   }
 
-  .form-input {
 
+
+
+
+
+
+  .form-input {
     &.button {
       display: block!important;
       position: relative;

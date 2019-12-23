@@ -18,7 +18,7 @@ class VisitorCookiesPolicy extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <CloseButton width='medium'/>
+        <CloseButton classNames='page medium'/>
         <div
           id='visitor-cookies-policy'
           className='container medium-container shadowed'
