@@ -22,7 +22,6 @@ class AnnouncementCreatePrimary extends React.Component {
     this.districtManager = managers.districtManager.bind(this)
     this.rentCurrencyManager = managers.rentCurrencyManager.bind(this)
     this.rentAmountManager = managers.rentAmountManager.bind(this)
-    this.additionalFeesManager = managers.additionalFeesManager.bind(this)
     this.areaManager = managers.areaManager.bind(this)
     this.roomsManager = managers.roomsManager.bind(this)
     this.floorManager = managers.floorManager.bind(this)
@@ -44,7 +43,6 @@ class AnnouncementCreatePrimary extends React.Component {
           <ManagedSelect {...this.rentCurrencyManager()}/>
           <ManagedText {...this.rentAmountManager()}/>
           <div className='float-clear'/>
-          <ManagedSelect {...this.additionalFeesManager()}/>
           <ManagedText {...this.areaManager()}/>
           <ManagedSelect {...this.roomsManager()}/>
           <ManagedSelect {...this.floorManager()}/>

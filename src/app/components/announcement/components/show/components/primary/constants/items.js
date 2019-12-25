@@ -28,11 +28,6 @@ export const items = [
     stateKey: 'rentGrossPerSqm'
   },
   {
-    icon: inputs.rentCurrency.icon,
-    label: { pl: 'Opłaty dodatkowe:', en: 'Additional Fees:' },
-    stateKey: 'additionalFees'
-  },
-  {
     icon: inputs.rooms.icon,
     label: { pl: 'Liczba pomieszczeń:', en: 'Rooms Amount:' },
     stateKey: 'rooms'

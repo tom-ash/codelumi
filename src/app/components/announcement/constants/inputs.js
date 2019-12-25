@@ -26,10 +26,6 @@ export const inputs = {
     indexMin: {},
     indexMax: {}
   },
-  additionalFees: {
-    icon: 'fas fa-coins',
-    all: { pl: 'Opłaty dodatkowe', en: 'Additional fees' }
-  },
   area: {
     icon: 'fas fa-ruler-combined',
     create: { pl: 'Powierzchnia (m2)', en: 'Area (sqm)' },

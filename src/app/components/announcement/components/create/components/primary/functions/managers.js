@@ -120,29 +120,6 @@ export function rentAmountManager() {
   }
 }
 
-export function additionalFeesManager() {
-  const {
-    icon,
-    all: text
-  } = inputs.additionalFees
-
-  return {
-    id: requiredInputs.additionalFees.id,
-    classNames: { container: 'form-input select' },
-    value: this.props.additionalFees,
-    label: this.languageObjectHandler(text),
-    children: <i className={icon} />,
-    options: [{ value: '', text: '' },
-              { value: true, text: this.languageHandler('Tak', 'Yes') },
-              { value: false, text: this.languageHandler('Nie', 'No') }],
-    onFocus: () => this.props.changeErrors({ additionalFees: noError }),
-    onSelect: (option) => this.onSelectHandler('additionalFees', option.value),
-    onBlur: () => this.additionalFeesManager().validate(),
-    validate: () => this.handleErrorOnValidate('additionalFees', this.props.additionalFees),
-    error: this.languageObjectHandler(this.props.errors.additionalFees)
-  }
-}
-
 export function areaManager() {
   const {
     icon,

@@ -31,7 +31,6 @@ class AnnouncementCreateFeatures extends React.Component {
     this.districtManager = managers.districtManager.bind(this)
     this.rentCurrencyManager = managers.rentCurrencyManager.bind(this)
     this.rentAmountManager = managers.rentAmountManager.bind(this)
-    this.additionalFeesManager = managers.additionalFeesManager.bind(this)
     this.areaManager = managers.areaManager.bind(this)
     this.roomsManager = managers.roomsManager.bind(this)
     this.floorManager = managers.floorManager.bind(this)

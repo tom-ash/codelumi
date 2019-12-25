@@ -10,7 +10,6 @@ export const data = {
   district: null,
   rentCurrency: null,
   netRentAmount: null,
-  additionalFees: null,
   area: null,
   rooms: null,
   floor: null,

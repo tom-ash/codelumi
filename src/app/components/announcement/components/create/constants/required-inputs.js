@@ -28,13 +28,6 @@ export const requiredInputs = {
       en: 'provide rent amount'
     }
   },
-  additionalFees: {
-    id: 'announcement-create-additional-fees',
-    error: {
-      pl: 'wybierz opłaty dodatkowe',
-      en: 'select additional fees'
-    }
-  },
   area: {
     id: 'announcement-create-area',
     error: {
@@ -98,7 +91,6 @@ export const requiredInputsArray = [
   'district',
   'rentCurrency',
   'netRentAmount',
-  'additionalFees',
   'area',
   'rooms',
   'floor',

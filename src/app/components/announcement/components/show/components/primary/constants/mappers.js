@@ -7,7 +7,6 @@ export const mapStateToProps = (store) => {
     netRentAmountPerSqm: store.announcement.show.data.netRentAmountPerSqm,
     grossRentAmount: store.announcement.show.data.grossRentAmount,
     grossRentAmountPerSqm: store.announcement.show.data.grossRentAmountPerSqm,
-    additionalFees: store.announcement.show.data.additionalFees,
     rooms: store.announcement.show.data.rooms,
     floor: store.announcement.show.data.floor,
     totalFloors: store.announcement.show.data.totalFloors,

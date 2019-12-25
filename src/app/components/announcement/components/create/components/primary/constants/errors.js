@@ -15,10 +15,6 @@ export const errors = {
     pl: 'podaj wysokość miesięcznego czynszu netto',
     en: 'provide monthly net rent amount'
   },
-  additionalFees: {
-    pl: 'wybierz opłaty dodatkowe',
-    en: 'select additional fees'
-  },
   area: {
     pl: 'podaj powierzchnię',
     en: 'provide area'

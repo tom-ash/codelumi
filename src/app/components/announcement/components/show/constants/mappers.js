@@ -12,7 +12,6 @@ export const mapStateToProps = (store) => {
     category: store.announcement.show.data.category,
     district: store.announcement.show.data.district,
     rentCurrency: store.announcement.show.data.rentCurrency,
-    additionalFees: store.announcement.show.data.additionalFees,
     netRentAmount: store.announcement.show.data.netRentAmount,
     area: store.announcement.show.data.area,
     rooms: store.announcement.show.data.rooms,

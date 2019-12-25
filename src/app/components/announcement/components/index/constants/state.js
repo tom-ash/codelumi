@@ -4,8 +4,7 @@ export const control = {
   connecting: false,
   readParams: true,
   fetch: false,
-  // type: 'map',
-  type: 'full',
+  type: 'map',
   mapLoaded: false,
   deletedAnnouncement: null
 }
