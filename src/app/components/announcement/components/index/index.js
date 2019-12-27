@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import AnnouncementIndexPanel from './components/panel/panel'
 import AnnouncementIndexFull from './components/full/full'
 import AnnouncementIndexMap from './components/map/map'
-import AnnouncementIndexList from './components/list/list'
+const AnnouncementIndexList = lazy(() => import('./components/list/list'))
 import { buildRequestParameters } from './functions/build-parameters'
 import { fetchAnnouncements } from './functions/fetch-announcements'
 import { paramsReader } from './functions/params-reader'
@@ -58,8 +58,7 @@ class AnnouncementIndexSearch extends React.Component {
           <AnnouncementIndexFull />
           <AnnouncementIndexMap />
         </React.Fragment>}
-        {showUser &&
-        <AnnouncementIndexList />}
+        {showUser && <Suspense fallback={null}><AnnouncementIndexList /></Suspense>}
       </div>
     )
   }

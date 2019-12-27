@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import UserCreate from './components/create/create'
-import UserAuthorize from './components/authorize/authorize'
-import UserShow from './components/show/show'
-import UserEditAccountPassword from './components/edit/components/account/components/password/password'
-import UserEditPhoneNumberVerify from './components/edit/components/phone/components/verify/verify'
-import UserEditAccount from './components/edit/components/account/account'
+const UserCreate = lazy(() => import('./components/create/create'))
+const UserAuthorize = lazy(() => import('./components/authorize/authorize'))
+const UserShow = lazy(() => import('./components/show/show'))
+const UserEditAccountPassword = lazy(() => import('./components/edit/components/account/components/password/password'))
+const UserEditPhoneNumberVerify = lazy(() => import('./components/edit/components/phone/components/verify/verify'))
+const UserEditAccount = lazy(() => import('./components/edit/components/account/account'))
 import './styles/styles.scss'
 
 class User extends React.Component {
@@ -25,7 +25,7 @@ class User extends React.Component {
     const { showCreate, showAuthorize, showPasswordReset, showEditPhoneVerify, showAccount, showEdit } = this.props
 
     return (
-      <React.Fragment>
+      <Suspense fallback={null}>
         {(showCreate || showAuthorize || showPasswordReset || showEditPhoneVerify) &&
         <div onClick={this.hideUser} className='darkened-cover '>
           {showCreate          && <UserCreate />}
@@ -38,7 +38,7 @@ class User extends React.Component {
           <UserShow />
         </div>}
         {showEdit && <UserEditAccount />}
-      </React.Fragment>
+      </Suspense>
     )
   }
 }

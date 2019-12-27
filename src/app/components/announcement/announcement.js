@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import AnnouncementCreate from './components/create/create'
-import AnnouncementShow from './components/show/show'
 import AnnouncementIndex from './components/index/index'
+const AnnouncementCreate = lazy(() => import('./components/create/create'))
+const AnnouncementShow = lazy(() => import('./components/show/show'))
 import './styles/styles.scss'
 
 class Announcement extends React.Component {
@@ -15,9 +15,11 @@ class Announcement extends React.Component {
 
     return (
       <React.Fragment>
-        {(showCreate || showEdit)  && <AnnouncementCreate />}
         {(showVisitor || showUser) && <AnnouncementIndex />}
-        {showShow                  && <AnnouncementShow />}
+        <Suspense fallback={null}>
+          {(showCreate || showEdit) && <AnnouncementCreate />}
+          {showShow && <AnnouncementShow />}
+        </Suspense>
       </React.Fragment>
     )
   }

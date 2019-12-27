@@ -5,10 +5,10 @@ var DIST_DIR = path.join(__dirname, "dist/app");
 var SRC_DIR = path.join(__dirname, "src");
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 var config = {
     mode: 'production',
-    devtool: 'cheap-module-source-map',
     entry: {
       app: SRC_DIR + '/index.js'
     },
@@ -42,6 +42,13 @@ var config = {
                 ]
             }
         ]
+    },
+    optimization: {
+      minimizer: [
+        new UglifyJsPlugin({
+          test: /\.js(\?.*)?$/i,
+        }),
+      ],
     },
     plugins: [
         new HtmlWebpackPlugin({
