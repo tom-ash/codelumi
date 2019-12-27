@@ -2,8 +2,8 @@ import React from 'react'
 
 export function addAnnouncementManager() {
   return {
-    classNames: { container: 'link' },
-    label: this.labelProvider('fas fa-plus', { pl: 'Dodaj nieodpłatne ogłoszenie', en: 'Add unpaid announcement'}),
+    classNames: { container: 'header-link' },
+    label: this.labelProvider('fas fa-plus', 'Dodaj nieodpłatne ogłoszenie', 'Add free announcement'),
     onClick: () => {
       this.changeRoute({ showAnnouncementCreate: true })
       this.props.changeControl({ showLinks: false })
@@ -16,8 +16,8 @@ export function signUpManager() {
 
   return {
     display: name && 'none',
-    classNames: { container: 'link' },
-    label: this.labelProvider('fas fa-user-plus', { pl: 'Zarejestruj', en: 'Sign Up'}),
+    classNames: { container: 'header-link' },
+    label: this.labelProvider('fas fa-user-plus', 'Zarejestruj', 'Sign Up'),
     onClick: () => {
       changeApp({ showUserCreate: true })
       this.props.changeControl({ showLinks: false })
@@ -32,8 +32,8 @@ export function signInManager() {
 
   return {
     display: name && 'none',
-    classNames: { container: 'link' },
-    label: this.labelProvider('fas fa-sign-in-alt', { pl: 'Zaloguj', en: 'Sign In'}),
+    classNames: { container: 'header-link sign-in' },
+    label: this.labelProvider('fas fa-sign-in-alt', 'Zaloguj', 'Sign In'),
     onClick: () => {
       resetUserAuthorizeErrors()
       resetUserAuthorizeInputs()
@@ -49,8 +49,8 @@ export function myAccountManager() {
   
   return {
     display: !authorized && 'none',
-    classNames: { container: 'link' },
-    label: this.labelProvider('far fa-user-circle', { pl: 'Konto', en: 'Account'}),
+    classNames: { container: 'header-link' },
+    label: this.labelProvider('far fa-user-circle', 'Konto', 'Account'),
     onClick: () => {
       changeApp({ showUserShow: true })
       changeControl({ showLinks: false })
@@ -58,15 +58,12 @@ export function myAccountManager() {
   }
 }
 
-export function languageManager(action) {
-  const { changeApp } = this.props
+export function languageManager() {
+  const { changeApp, language } = this.props
 
   return {
     classNames: { container: 'button language' },
     label: <span><i className='fas fa-globe'/> {this.languageHandler('English', 'Polski')}</span>,
-    onClick: () => {
-      const language = this.props.language === 'pl' ? 'en' : 'pl'
-      changeApp({ language })
-    }
+    onClick: () => changeApp({ language: language === 'pl' ? 'en' : 'pl' })
   }
 }

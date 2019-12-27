@@ -4,7 +4,7 @@ export function addAnnouncementManager() {
   return {
     id: 'user-show-account-add-announcemt',
     classNames: { container: 'button'},
-    label: this.labelProvider('fas fa-plus', 'Dodaj ogłoszenie', 'Add announcement'),
+    label: this.labelProvider('fas fa-plus', 'Dodaj ogłoszenie', 'Add free announcement'),
     onClick: () => this.changeRoute({ showAnnouncementCreate: true })
   }
 }

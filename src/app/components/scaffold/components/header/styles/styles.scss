@@ -22,35 +22,48 @@
     .side-links {
       z-index: 9999;
       position: absolute;
-      top: 72px;
-      left: 16px;
+      top: 68px;
+      left: 12px;
       background: white;
       padding: 12px;
+      border-radius: 4px;
       box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
                   0px 3px 8px 3px rgba(0, 0, 0, 0.14),
                   0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-      .link {
-        display: block;
+      width: 296px;
+      .header-link {
+        width: 32px;
+        height: 32px;
         position: relative;
-        margin-right: 12px;
-        text-align: left;
-        margin-right: 0;
+        margin-bottom: 15px;
+        &.sign-in {
+          margin-bottom: 0;
+        }
         .input {
+          font-size: 16px;
+          height: 100%;
+          width: 100%;
           border: none;
-          font-size: 15px;
-          color: #4D5656;
-          background: none;
-          margin-left: 32px;
-          .fas, .far {
+          border-radius: 4px;
+          background: #212f3d;
+          color: white;
+          &.hover {
+            color: #F0B27A;
+          }
+          .text {
+            color: #212f3d;
             position: absolute;
-            left: 0;
+            left: 46px;
+            width: 240px;
+            text-align: left;
+            top: 0;
+            bottom: 0;
+            line-height: 32px;
           }
         }
       }
     }
   }
-
-
 
   .inner {
     position: relative;
@@ -62,40 +75,28 @@
     h1 {
       @extend %site-title;
     }
-    .links {
-      @extend %links;
-
+    .top-links {
+      @extend %top-links;
     }
   }
 
   .links-icon-container {
-    @extend %links-icon-container;
+    @extend %top-links-icon-container;
   }
 
-
-  .map-marker {
-    transition: 0.1s ease-in;
-    &.visible {
-      opacity: 1;
-    }
-    &.hidden {
-      opacity: 0;
-    }
-  }
-
-    .button.language {
-      display: inline-block;
+  .button.language {
+    display: inline-block;
+    width: 96px;
+    .input {
+      height: 56px;
       width: 96px;
-      .input {
-        height: 56px;
-        width: 96px;
-        font-size: 15px;
-        border: none;
-        color: #661a00;
-        background: none;
-        .fas {
-          margin-right: 4px;
-        }
+      font-size: 15px;
+      border: none;
+      color: #661a00;
+      background: none;
+      .fas {
+        margin-right: 4px;
       }
     }
   }
+}

@@ -1,7 +1,7 @@
 import { routes } from './routes'
 
 export const appState = {
-  screenSize: null,
+  device: null,
   scrollY: null,
   path: '/',
   language: 'pl',

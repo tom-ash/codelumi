@@ -1,5 +1,5 @@
 export const mapStateToProps = (store) => {
-  const { language, isMobile, screenSize, path } = store.app
+  const { language, isMobile, device, path } = store.app
   const inputs = store.announcement.index.inputs
 
   const {
@@ -10,7 +10,7 @@ export const mapStateToProps = (store) => {
   return {
     language,
     isMobile,
-    screenSize,
+    device,
     switches,
     sort
   }

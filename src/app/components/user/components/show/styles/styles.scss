@@ -4,10 +4,14 @@
 #user-show-account {
   position: absolute;
   z-index: 100000;
-  top: 64px;
-  right: 8px;
+  top: 68px;
+  right: 12px;
   padding: 15px;
   width: 230px;
+  @media #{$small-pc} {
+    right: auto;
+    left: 12px;
+  }
   .button {
     width: 32px;
     height: 32px;

@@ -3,7 +3,7 @@ export const mapStateToProps = (store) => {
     language,
     path,
     isMobile,
-    screenSize,
+    device,
     showAnnouncementIndexVisitor: showVisitor,
     showAnnouncementIndexUser: showUser
   } = store.app
@@ -12,7 +12,7 @@ export const mapStateToProps = (store) => {
     language,
     path,
     isMobile,
-    screenSize,
+    device,
     showVisitor,
     showUser
   }

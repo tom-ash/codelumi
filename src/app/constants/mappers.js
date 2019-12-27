@@ -1,7 +1,7 @@
 export const mapStateToProps = (store) => {
   const {
     language,
-    screenSize,
+    device,
     path,
     scrollY,
     showAnnouncementCreate,
@@ -26,7 +26,7 @@ export const mapStateToProps = (store) => {
 
   return {
     language,
-    screenSize,
+    device,
     path,
     scrollY,
     showAnnouncementCreate,

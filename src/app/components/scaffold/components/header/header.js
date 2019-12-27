@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 import * as reduxMappers from './constants/mappers'
 import { ManagedButton } from 'managed-inputs'
 import * as managers from './functions/managers'
-import './styles/styles.scss'
 import { changeRoute } from '../../../../functions/routers'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
-import { labelProvider } from './functions/label-provider'
+import { labelProvider } from '../../../user/components/show/functions/label-provider'
+import './styles/styles.scss'
 
 class Header extends React.Component {
   constructor(props) {
@@ -23,29 +23,39 @@ class Header extends React.Component {
   }
 
   render() {
-    const { screenSize, resetAnnouncementIndexControl, resetAnnouncementIndexInputs, resetAnnouncementIndexData,
-            changeAnnouncementIndexControl } = this.props
-    const isLargePc = screenSize === 'largePc'
+    const { changeControl, device, resetAnnouncementIndexControl, resetAnnouncementIndexInputs, resetAnnouncementIndexData,
+            changeAnnouncementIndexControl, authorized } = this.props
+    const isLargePc = device === 'largePc'
 
     return (
       <div id='header'>
         <div className='inner'>
+          {!isLargePc &&
           <div
             className='links-icon-container'
-            onClick={() => this.props.changeControl({ showLinks: !this.props.showLinks })}
+            onClick={() => {
+              if (!authorized) {
+                this.props.changeControl({ showLinks: !this.props.showLinks })
+              } else {
+                this.props.changeApp({ showUserShow: !this.props.showUserShow })
+              }
+            }}
           >
             <div className='links-icon'>
               <div className='link-icon' />
               <div className='link-icon' />
               <div className='link-icon' />
             </div>
-          </div>
-          <h1 onClick={() => {
-            resetAnnouncementIndexControl()
-            resetAnnouncementIndexInputs()
-            changeAnnouncementIndexControl({ fetch: true })
-            this.changeRoute({ showAnnouncementIndexVisitor: true })
-          }}>
+          </div>}
+          <h1
+            onClick={() => {
+              resetAnnouncementIndexControl()
+              resetAnnouncementIndexInputs()
+              changeAnnouncementIndexControl({ fetch: true })
+              this.changeRoute({ showAnnouncementIndexVisitor: true })
+            }}
+            { ...!isLargePc && { className: 'shifted' } }
+          >
             <span className='city'>
               WARSAW
             </span>
@@ -53,30 +63,25 @@ class Header extends React.Component {
               LEASE
             </span>
           </h1>
-          <div className='links'>
+          <div className='top-links'>
             {isLargePc && <ManagedButton {...this.addAnnouncementManager()} />}
             {isLargePc && <ManagedButton {...this.signUpManager()} />}
             {isLargePc && <ManagedButton {...this.signInManager()} />}
             {isLargePc && <ManagedButton {...this.myAccountManager()} />}
             <ManagedButton {...this.languageManager()} />
-            {this.props.showLinks &&
-              <div
-                className='side-links-cover'
-                onClick={() => this.props.changeControl({ showLinks: false })}
-              >
-                <div className='side-links'>
-                  <ManagedButton {...this.addAnnouncementManager()} />
-                  <ManagedButton {...this.signUpManager()} />
-                  <ManagedButton {...this.signInManager()} />
-                  <ManagedButton {...this.myAccountManager()} />
-                </div>
-              </div>
-              }
           </div>
+          {this.props.showLinks &&
+          <div className='side-links-cover' onClick={() => changeControl({ showLinks: false })}>
+            <div className='side-links'>
+              <ManagedButton {...this.addAnnouncementManager()} />
+              <ManagedButton {...this.signUpManager()} />
+              <ManagedButton {...this.signInManager()} />
+            </div>
+          </div>}
         </div>
       </div>
     )
   }
 }
 
-export default connect(reduxMappers.mapStateToProps, reduxMappers.mapDispatchToProps)(Header);
+export default connect(reduxMappers.mapStateToProps, reduxMappers.mapDispatchToProps)(Header)

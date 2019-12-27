@@ -2,7 +2,7 @@ export const mapStateToProps = (store) => {
   const {
     language,
     isMobile,
-    screenSize,
+    device,
     scrollY
   } = store.app
   const {
@@ -15,7 +15,7 @@ export const mapStateToProps = (store) => {
   return {
     language,
     isMobile,
-    screenSize,
+    device,
     type,
     connecting,
     page,
