@@ -1,19 +1,24 @@
-import { addMarker, removeMarker } from '../../../../../functions/marker-handlers'
-
 export function componentDidMount() {
   this.googleMapHandler(() => this.props.changeControl({ mapLoaded: true }))
 }
 
-export function componentDidUpdate(prevProps) {
-  const { mapLoaded, latitude: lat, longitude: lng} = this.props
+export function componentDidUpdate() {
+  const { changeControl, mapLoaded, markerLoaded, latitude: lat, longitude: lng} = this.props
+
   this.googleMapHandler(() => this.props.changeControl({ mapLoaded: true }))
-  if (mapLoaded && !prevProps.mapLoaded && lat && lng) {
-    window.marker = addMarker(window.googleMap, lat, lng)
+
+  if (mapLoaded && lat && lng && !markerLoaded) {
+    changeControl({ markerLoaded: true })
+    window.marker = new google.maps.Marker({
+      position: { lat: this.props.latitude, lng: this.props.longitude },  map: window.googleMap
+    })
     window.googleMap.setOptions({ center: { lat, lng }, zoom: 13.6 })
   }
 }
 
 export function componentWillUnmount() {
-  this.props.changeControl({ mapLoaded: false } )
-  removeMarker(window.marker)
+  const { resetControl } = this.props
+
+  if (window.marker) window.marker.setMap(null)
+  resetControl()
 }

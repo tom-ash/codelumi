@@ -4,6 +4,7 @@ import { control, data } from '../constants/state'
 export const controlReducer = (state = control, action) => {
   switch (action.type) {
     case 'announcement/show/control': return { ...state, ...action.value }
+    case 'announcement/show/control/reset': return { ...control }
     default: return state
   }
 }

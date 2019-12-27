@@ -19,7 +19,7 @@ export function componentWillUnmount() {
   if (window.marker) window.marker.setMap(null)
 }
 
-function placeMarker(location) {
+function placeMarker() {
   const map = window.googleMap
   if (!map) return
 
@@ -27,5 +27,6 @@ function placeMarker(location) {
   if (!this.props.latitude || !this.props.longitude) return
   
   window.marker = new google.maps.Marker({
-    position: { lat: this.props.latitude, lng: this.props.longitude },  map: map })
+    position: { lat: this.props.latitude, lng: this.props.longitude },  map: map
+  })
 }

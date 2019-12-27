@@ -44,7 +44,6 @@ export function districtManager() {
         this.props.changeInputs({ district: '', offset: 0 })
         this.props.changeControl({ fetch: true })
       }}/>}
-      }
     </React.Fragment>,
     options: this.buildSelectDistricts(),
     onSelect: (option) => {

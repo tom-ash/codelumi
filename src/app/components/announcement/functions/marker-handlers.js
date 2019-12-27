@@ -4,5 +4,5 @@ export function addMarker(map, latitude, longitude) {
 
 export function removeMarker(marker) {
   if (!marker) return
-  window.marker.setMap(null)
+  marker.setMap(null)
 }

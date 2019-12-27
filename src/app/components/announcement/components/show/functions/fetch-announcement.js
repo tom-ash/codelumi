@@ -4,8 +4,6 @@ import { showClientServerParams } from '../../../constants/client-server-params'
 export function fetchAnnouncement() {
   const { announcementId } = this.props
 
-  console.log('asdasdasdasdasd')
-
   fetch(`${apiUrl}/announcements/${announcementId}`, {
     headers: { 'Content-Type': 'application/json' }
   })

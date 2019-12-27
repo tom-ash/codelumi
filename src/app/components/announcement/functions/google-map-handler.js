@@ -132,35 +132,3 @@ const styles =
 
 
 ]
-
-
-
-
-
-
-
-
-// [
-//   // {
-//   //   featureType: "poi",
-//   //   elementType: "labels",
-//   //   stylers: [
-//   //     { visibility: "off" }
-//   //   ]
-//   // },
-//   // {
-//   //   featureType: "roads.administrative",
-//   //   elementType: "labels",
-//   //   stylers: [
-//   //     { visibility: "off" }
-//   //   ]
-//   // }
-
-
-
-
-
-
-
-  
-// ]
