@@ -17,9 +17,7 @@
       }
     }
   }
-
   .monit-inputs {
-    max-width: 360px;
     .monit {
       font-size: 16px;
       line-height: 20px;
@@ -33,11 +31,11 @@
   .form-input {
     &.button {
       width: 50%!important;
+      margin-left: auto;
+      margin-right: 0;
       .input {
         display: block;
         height: 36px!important;
-        margin-left: auto;
-        margin-right: 0;
       }
     }
   }

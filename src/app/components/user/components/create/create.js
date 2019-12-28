@@ -7,6 +7,7 @@ import UserCreateEmail from './components/email/email'
 import { CloseButton } from '../../../../components/support/components/close-button/close-button'
 import * as lifecycle from './functions/lifecycle'
 import './styles/styles.scss'
+import { languageHandler } from '../../../../functions/language-handler'
 
 class UserCreate extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class UserCreate extends React.Component {
     this.componentDidUpdate = componentDidUpdate.bind(this)
     this.componentWillUnmount = lifecycle.componentWillUnmount
     this.changeRoute = changeRoute.bind(this)
+    this.languageHandler = languageHandler.bind(this)
   }
 
   render() {
@@ -26,7 +28,7 @@ class UserCreate extends React.Component {
           onClick={e => e.stopPropagation()}
         >
           <h2 className='page-header'>
-            <i className='fas fa-user-plus' /> Rejestracja konta
+            <i className='fas fa-user-plus' /> {this.languageHandler('Zarejestruj', 'Sign Up')}
           </h2>
           {this.props.success === null &&
           <UserCreateEmail />}

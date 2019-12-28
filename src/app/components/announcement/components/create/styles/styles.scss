@@ -3,7 +3,16 @@
 @import '../../../../../styles/monits/blue-monit';
 
 #announcement-create {
-  margin: 96px auto;
+  margin: 96px auto 40px;
+  background: #F8F9F9;
+  padding: 36px;
+  @media #{$phone} {
+    margin: 64px 8px 8px;
+    padding: 12px;
+  }
+  .page-header, .section-header {
+    color: #1B2631;
+  }
   .monit {
     margin-bottom: 24px;
   }

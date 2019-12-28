@@ -33,7 +33,7 @@ class AnnouncementCreate extends React.Component {
     const { publishing } = this.props
 
     return (
-      <div id='announcement-create' className='container medium-container shadowed'>
+      <div id='announcement-create' className='container medium-container small-shadow'>
         <div>
           <h2 className='page-header'>
             <i className='fas fa-plus' /> {this.languageHandler('Dodawanie ogłoszenia', 'Announcement Adding')}

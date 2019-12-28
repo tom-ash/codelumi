@@ -26,6 +26,7 @@ class UserEditPhoneVerify extends React.Component {
       <div
         id='user-edit-phone-verify'
         className='container narrow-container shadowed'
+        onClick={e => e.stopPropagation()}
       >
         <h2 className='page-header'>
           <i className='far fa-check-circle' />

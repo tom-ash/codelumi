@@ -20,8 +20,8 @@ export const inputs = {
   rentHeight: {
     icon: 'fas fa-coins',
     create: {
-      pl: 'Kwota miesięcznego czynszu netto',
-      en: 'Monthly net rent amount'
+      pl: 'Miesięczny czynsz netto',
+      en: 'Monthly net rent'
     },
     indexMin: {},
     indexMax: {}

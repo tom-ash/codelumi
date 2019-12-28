@@ -15,10 +15,11 @@ class User extends React.Component {
   }
 
   hideUser = () => {
-    const { changeApp } = this.props
-    
+    const { changeApp, changeAnnouncementControl } = this.props
+
     changeApp({ showUserCreate: false, showUserAuthorize: false, showUserEditPasswordReset: false,
-                showUserShow: false, showUserEditAccount: false })
+                showUserShow: false, showUserEditAccount: false, showUserEditPhoneVerify: false })
+    changeAnnouncementControl({ publishing: false })
   }
 
   render() {
