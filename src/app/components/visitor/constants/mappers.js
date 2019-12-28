@@ -11,8 +11,8 @@ export const mapStateToProps = (store) => {
   } = store.app
 
   const {
-    additionalFunctionsConsent,
-    statisticsAndMarketingConsent
+    statisticsConsent,
+    marketingConsent
   } = store.visitor.legal.privacy.settings
 
   return {
@@ -29,8 +29,8 @@ export const mapStateToProps = (store) => {
     showCookiesPolicy,
     showPrivacyPolicy,
     showPrivacySettings,
-    additionalFunctionsConsent,
-    statisticsAndMarketingConsent
+    statisticsConsent,
+    marketingConsent
   }
 }
     

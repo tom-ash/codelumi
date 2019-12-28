@@ -3,6 +3,9 @@ import { isMobile } from './is-mobile'
 import { routes } from '../constants/routes'
 import { routeMatchers } from '../constants/route-matchers'
 
+
+import { loadGoogleAnalytics } from './load-google-analytics'
+
 export function componentDidMount() {
   const { changeApp } = this.props
 
@@ -24,5 +27,11 @@ export function componentDidMount() {
 }
 
 export function componentDidUpdate(prevProps) {
+  const { googleAnalyticsLoaded, googleAnalyticsLoading, statisticsConsent } = this.props
+  
   this.handlePathname(prevProps)
+
+  if (!googleAnalyticsLoaded && !googleAnalyticsLoading && statisticsConsent) {
+    loadGoogleAnalytics.call(this)
+  }
 }

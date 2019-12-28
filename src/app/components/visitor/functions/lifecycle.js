@@ -8,7 +8,15 @@ function setCookies() {
   const { changeSettings } = this.props
 
   changeSettings({
-    additionalFunctionsConsent: getCookieValue('_pdpaf'),
-    statisticsAndMarketingConsent: getCookieValue('_pdpsm')
+    statisticsConsent: getBoolCookieValue(getCookieValue('_pdpaf')),
+    marketingConsent: getBoolCookieValue(getCookieValue('_pdpsm')),
   })
+}
+
+function getBoolCookieValue(cookieValue) {
+  switch(cookieValue) {
+    case 'true': return true
+    case 'false': return false
+    default: return null
+  }
 }

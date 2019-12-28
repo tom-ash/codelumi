@@ -8,8 +8,8 @@ export function agreeManager() {
     label: 'OK',
     onClick: () => {
       changeSettings({
-        additionalFunctionsConsent: true,
-        statisticsAndMarketingConsent: true
+        statisticsConsent: true,
+        marketingConsent: true
       })
       saveCookie('_pdpaf', 'true', 'oneYear')
       saveCookie('_pdpsm', 'true', 'oneYear')

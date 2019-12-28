@@ -1,37 +1,37 @@
 import { saveCookie } from '../../../../cookies/functions/save'
 
-export function additionalFunctionsConsentManager() {
-  const { additionalFunctionsConsent } = this.props
+export function statisticsConsentManager() {
+  const { statisticsConsent } = this.props
 
   return {
     name: 'additional-functions',
     classNames: { container: 'form-input radio'},
-    checked: additionalFunctionsConsent,
+    checked: statisticsConsent,
     radios: [
-      { value: 'true', label: 'Zgadzam się' },
-      { value: 'false', label: 'Nie zgadzam się' }
+      { value: true, label: 'Zgadzam się' },
+      { value: false, label: 'Nie zgadzam się' }
     ],
     onClick: (value) => {
-      this.props.changeSettings({ additionalFunctionsConsent: value })
+      this.props.changeSettings({ statisticsConsent: value })
       saveCookie('_pdpaf', value, 'oneYear')
       location.reload()
     }
   }
 }
 
-export function statisticsAndMarketingConsentManager() {
-  const { statisticsAndMarketingConsent } = this.props
+export function marketingConsentManager() {
+  const { marketingConsent } = this.props
   
   return {
     name: 'statistics-marketing',
     classNames: { container: 'form-input radio'},
-    checked: statisticsAndMarketingConsent,
+    checked: marketingConsent,
     radios: [
-      { value: 'true', label: 'Zgadzam się' },
-      { value: 'false', label: 'Nie zgadzam się' }
+      { value: true, label: 'Zgadzam się' },
+      { value: false, label: 'Nie zgadzam się' }
     ],
     onClick: (value) => {
-      this.props.changeSettings({ statisticsAndMarketingConsent: value })
+      this.props.changeSettings({ marketingConsent: value })
       saveCookie('_pdpsm', value, 'oneYear')
       location.reload()
     }

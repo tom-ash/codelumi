@@ -21,8 +21,13 @@ export const mapStateToProps = (store) => {
     showVisitorTermsOfService,
     showVisitorCookiesPolicy,
     showVisitorPrivacyPolicy,
-    showVisitorPrivacySettings
+    showVisitorPrivacySettings,
+    scripts
   } = store.app
+
+  const {
+    statisticsConsent, marketingConsent
+  } = store.visitor.legal.privacy.settings
 
   return {
     language,
@@ -46,7 +51,12 @@ export const mapStateToProps = (store) => {
     showVisitorTermsOfService,
     showVisitorCookiesPolicy,
     showVisitorPrivacyPolicy,
-    showVisitorPrivacySettings
+    showVisitorPrivacySettings,
+    statisticsConsent,
+    marketingConsent,
+    scripts,
+    googleAnalyticsLoaded: store.app.scripts.googleAnalytics,
+    googleAnalyticsLoading: store.app.scripts.googleAnalyticsLoading
   }
 }
   

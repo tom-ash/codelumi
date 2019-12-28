@@ -6,7 +6,11 @@ export const appState = {
   path: '/',
   language: 'pl',
   connecting: false,
-  scripts: {},
+  scripts: {
+    googleMaps: false,
+    googleAnalytics: false,
+    googleAnalyticsLoading: false
+  },
   isMobile: null,
   ...routes
 }
