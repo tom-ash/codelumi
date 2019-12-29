@@ -7,11 +7,17 @@
     min-height: 970px;
   }
   .offset-switcher {
-    z-index: 9;
-    position: absolute;
-    top: 180px;
-    right: 0;
-    left: 0;
+    position: relative;
+    &.shared {
+      z-index: 9;
+      position: absolute;
+      top: 180px;
+      right: 0;
+      left: 0;
+    }
+    &.only-amount {
+      text-align: center;
+    }
     width: 200px;
     height: 33px;
     line-height: 33px;

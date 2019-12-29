@@ -1,12 +1,39 @@
 import React from 'react'
+import WindmillSpinner from '../../../../../support/components/spinner/components/windmill/windmill'
+import { instantScroll } from '../../../../../../functions/scrollers/instant-scroll'
 
-export function OffsetSwitcher({ languageHandler, changeInputs, changeControl, offset, amount }) {
+export function OffsetSwitcher({
+  languageHandler, changeInputs, changeControl, offset, amount, classNames, scrollTop
+}) {
+
+  let className = 'offset-switcher'
+  if (classNames) className += ` ${classNames}`
+
+  if (amount === null) {
+    return (
+      <div className={className}>
+        <WindmillSpinner spinnerClass='very-small-windmill-spinner'/>
+      </div>
+    )
+  }
+
+  if (amount <= 50) {
+    className += ' only-amount'
+
+    return (
+      <div className={className}>
+        {amount}
+      </div>
+    )
+  }
+
   return (
-    <div className='offset-switcher'>
+    <div className={className}>
       {offset !== 0 &&
       <div
         className='switch min'
         onClick = {() => {
+          if (scrollTop) instantScroll()
           changeInputs({ offset: offset - 50 })
           changeControl({ fetch: true })
         }}
@@ -20,6 +47,7 @@ export function OffsetSwitcher({ languageHandler, changeInputs, changeControl, o
       <div
         className='switch max'
         onClick = {() => {
+          if (scrollTop) instantScroll()
           changeInputs({ offset: offset + 50 })
           changeControl({ fetch: true })
         }}
@@ -32,5 +60,8 @@ export function OffsetSwitcher({ languageHandler, changeInputs, changeControl, o
 }
 
 function offsetCounter(offset, amount) {
-  return `${offset} - ${offset + 50 > amount ? amount : offset + 50}`
+  const offsetPlusOne = offset + 1
+
+  if (offsetPlusOne === amount) return offsetPlusOne
+  return `${offsetPlusOne} - ${offset + 50 > amount ? amount : offset + 50}`
 }

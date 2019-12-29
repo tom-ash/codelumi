@@ -2,13 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
-import { ManagedPagination } from 'managed-inputs'
 import AnnouncementIndexTile from '../tile/tile'
 import { paginationManager } from './functions/managers'
-import './styles/styles.scss'
 import { parseCategoryForUrl } from '../../../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../../../functions/district-parsers'
 import { parseCurrency } from '../../../../functions/currency-parsers'
+import { OffsetSwitcher } from '../offset-switcher/offset-switcher'
+import './styles/styles.scss'
 
 class AnnouncementIndexFull extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class AnnouncementIndexFull extends React.Component {
   }
 
   render() {
-    const { type, announcements } = this.props
+    const { changeControl, changeInputs, offset, amount, type, announcements } = this.props
 
     return (
       <div id='announcement-index-full'>
@@ -48,11 +48,15 @@ class AnnouncementIndexFull extends React.Component {
               )
             })
             }
-            <div className='float-clear' />
-            {/* {
-            announcements && announcements[announcements.length - 1] && announcements[announcements.length - 1].show &&
-            <ManagedPagination {...this.paginationManager()} />
-            } */}
+            {amount > 50 && offset + 1 !== amount &&
+            <OffsetSwitcher
+              changeControl={changeControl}
+              changeInputs={changeInputs}
+              offset={offset}
+              amount={amount}
+              languageHandler={this.languageHandler}
+              scrollTop={true}
+            />}
           </div>
         </div>
         }

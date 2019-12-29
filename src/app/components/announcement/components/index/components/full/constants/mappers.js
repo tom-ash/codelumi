@@ -9,10 +9,12 @@ export const mapStateToProps = (store) => {
     connecting,
     type
   } = store.announcement.index.control
-  const { page } = store.announcement.index.inputs
-  const { announcements } = store.announcement.index.data
+  const { page, offset } = store.announcement.index.inputs
+  const { announcements, amount } = store.announcement.index.data
 
   return {
+    offset,
+    amount,
     language,
     isMobile,
     device,

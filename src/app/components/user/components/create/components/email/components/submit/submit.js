@@ -10,8 +10,6 @@ import { errorSetter } from '../../../../../../functions/error-setter'
 import { buttonManager } from './functions/managers'
 import { ManagedButton } from 'managed-inputs'
 
-
-
 class UserCreateSubmit extends React.Component {
   constructor(props) {
     super(props)

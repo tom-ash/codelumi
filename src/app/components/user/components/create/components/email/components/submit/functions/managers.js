@@ -9,7 +9,7 @@ export function buttonManager() {
     label: (
       <ButtonSpinner
         connecting={connecting}
-        label={{ pl: 'Dalej', en: 'Next' }}
+        label={{ pl: 'Dalej', english: 'Next' }}
         languageObjectHandler={this.languageObjectHandler}
       />
     ),

@@ -54,6 +54,7 @@ class AnnouncementIndexSearch extends React.Component {
             offset={offset}
             amount={amount}
             languageHandler={this.languageHandler}
+            classNames={'shared'}
           />
           <AnnouncementIndexFull />
           <AnnouncementIndexMap />
