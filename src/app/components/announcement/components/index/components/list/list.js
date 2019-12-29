@@ -39,6 +39,11 @@ class AnnouncementIndexList extends React.Component {
   }
 
   render() {
+    const { amount, offset } = this.props
+
+    const toValue = offset + 10 < amount ? offset + 10 : amount
+    let whichAnnouncements = `${offset + 1} - ${toValue} ${this.languageHandler('z', 'of')}`
+    if (offset + 1 === amount) whichAnnouncements = `${offset + 1} ${this.languageHandler('z', 'of')}`
 
     return (
       <div id='announcement-index-list'>
@@ -59,7 +64,9 @@ class AnnouncementIndexList extends React.Component {
         </div>
         }
         <div className='announcements-amount'>
-          {this.props.amount} {this.languageHandler('Ogłoszenia', 'Announcements')} 
+          {amount !== null &&
+          `${whichAnnouncements} ${amount}`
+          }
         </div>
         <div className='pagination-container'>
           <ManagedPagination {...this.paginationManager()} />
@@ -79,7 +86,7 @@ class AnnouncementIndexList extends React.Component {
           />))}
           <div className='float-clear' />
         </div>
-        <div className='pagination-container bottom'>
+        <div className='pagination-container'>
           <ManagedPagination {...this.paginationManager()} />
         </div>
       </div>

@@ -13,6 +13,7 @@ export function switchesManager() {
     )),
     onClick: (value, ref) => {
       this.props.changeInputs({
+        offset: 0,
         switches: {
           ...this.props.switches,
           [ref]: value
@@ -38,7 +39,7 @@ export function sortManager() {
       text: this.languageObjectHandler(sorter.text)
     })),
     onSelect: (option) => {
-      changeInputs({ sort: option.value })
+      changeInputs({ sort: option.value, offset: 0 })
       changeControl({ fetch: true, page: 1 })
     }
   }

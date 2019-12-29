@@ -2,15 +2,24 @@
 
 #announcement-index-panel-user {
   position: relative;
-  width: 640px;
+  max-width: 640px;
   margin: 0 auto;
   padding-top: 8px;
+  padding-bottom: 6px;
+  @media #{$small-pc} {
+    padding: 8px;
+  }
   .switches {
-    max-width: 360px;
+    position: relative;
+    width: 487px;
+    @media #{$small-pc} {
+      width: auto;
+      margin-bottom: 12px;
+    }
     .switches-label {
       color: #ECF0F1;
       font-size: 15px;
-      margin-bottom: 8px;
+      margin-bottom: 8px; 
     }
   }
   .form-input {
@@ -26,6 +35,10 @@
             color: lightgray;
             font-weight: normal!important;
           }
+          margin-right: 0;
+          @media #{$small-pc} {
+            width: auto;
+          }
         }
         .input {
           background: #F7F9F9!important;
@@ -37,8 +50,8 @@
             border-right: 2px solid #2471A3;
           }
         }
-        @media only screen and (max-width: $breakpoint-phone-large-max) {
-          width: 100%!important;
+        @media #{$small-pc} {
+          width: 50%!important;
         }
       }
       &.select {
@@ -46,8 +59,9 @@
         top: 8px;
         left: 426px;
         width: 201px;
+        height: 68px;
         background: none;
-        @media only screen and (max-width: $breakpoint-phone-large-max) {
+        @media #{$small-pc} {
           position: relative!important;
           top: 0!important;
           left: 0!important;
@@ -70,7 +84,8 @@
           padding: 11px 0 0 32px!important;
           line-height: 15px;
           color: #2C3E50!important;
-          @media only screen and (max-width: $breakpoint-phone-large-max) {
+          @media #{$small-pc} {
+            max-width: 201px;
             width: 100%!important;
           }
         }

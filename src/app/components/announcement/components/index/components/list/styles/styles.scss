@@ -8,28 +8,33 @@
   position: relative;
   width: 640px;
   margin: 0 auto;
+  padding: 12px;
   @media #{$small-pc} {
     max-width: 456px;
     width: 100%;
-    padding: 0 8px;
+    padding: 12px 8px;
   }
   .list-pagination {
     @extend %list-pagination;
   }
   .announcements-amount {
-    margin-top: 24px;
     background: #212F3D;
     color: white;
-    display: inline-block;
     padding: 8px;
     border-radius: 2.5px;
-    position: absolute;
     left: 0;
+    width: 160px;
+    text-align: center;
+    margin: 0 auto;
+    min-height: 32px;
   }
   .pagination-container {
-    min-height: 36px;
-    margin-left: 160px;
-    padding: 0;
+    position: relative;
+    text-align: center;
+    margin-top: 12px;
+    .input {
+      margin-bottom: 8px;
+    }
   }
   .announcements {
     margin-top: 64px;

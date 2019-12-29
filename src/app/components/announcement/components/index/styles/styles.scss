@@ -14,6 +14,9 @@
       top: 180px;
       right: 0;
       left: 0;
+      @media #{$small-pc} {
+        top: 340px;
+      }
     }
     &.only-amount {
       text-align: center;
@@ -26,9 +29,7 @@
     background: rgba(33, 47, 61, 0.8);
     font-size: 16px;
     color: white;
-    @media #{$small-pc} {
-      top: 340px;
-    }
+
     .switch, .text {
       position: absolute;
       text-align: center;

@@ -9,8 +9,6 @@ export function componentDidUpdate(prevProps) {
   const { announcements, index, venue, scrollY } = this.props
   const { announcements: precedingAnnouncements } = prevProps
 
-  
-
   if (prevProps.announcement.pictureIndex !== this.props.announcement.pictureIndex) {
     return this.fetchPicture()
   }
@@ -18,11 +16,7 @@ export function componentDidUpdate(prevProps) {
 
   const announcement = announcements[index]
 
-  // console.log()
-
   if (announcement.pictures[announcement.pictureIndex].fetched) return
-
-
 
   const precedingAnnouncement = announcements[index - 1]
   const prevPrecedingAnnouncement = precedingAnnouncements[index - 1]

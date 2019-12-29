@@ -1,17 +1,21 @@
 $screen: "only screen" !default;
-$breakpoint-pc-large-min: 1225;
+
 $breakpoint-pc-small-max: 1224px;
-$breakpoint-pc-small-min: 961px;
 $breakpoint-tablet-large-max: 960px;
-$breakpoint-tablet-large-min: 769px;
 $breakpoint-tablet-small-max: 768px;
-$breakpoint-tablet-small-min: 481px;
 $breakpoint-phone-large-max: 480px;
 $breakpoint-phone-smal-max: 336px;
 
 $small-pc: "#{$screen} and (max-width: #{$breakpoint-pc-small-max})" !default;
 $tablet: "#{$screen} and (max-width: #{$breakpoint-tablet-large-max})" !default;
-$small-tablet: "#{$screen} and (max-width: #{$breakpoint-tablet-large-min})" !default;
+$small-tablet: "#{$screen} and (max-width: #{$breakpoint-tablet-small-max})" !default;
 $phone: "#{$screen} and (max-width: #{$breakpoint-phone-large-max})" !default;
 $small-phone: "#{$screen} and (max-width: #{$breakpoint-phone-smal-max})" !default;
 
+
+
+
+
+// TODO: DELETE
+$breakpoint-tablet-large-min: 769px;
+$breakpoint-tablet-small-min: 481px;
