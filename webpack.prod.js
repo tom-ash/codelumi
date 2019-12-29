@@ -6,6 +6,7 @@ var SRC_DIR = path.join(__dirname, "src");
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+var CompressionPlugin = require('compression-webpack-plugin');
 
 var config = {
     mode: 'production',
@@ -54,7 +55,8 @@ var config = {
         new HtmlWebpackPlugin({
           template: './src/index.html',
           favicon: './src/favicon.png'
-        })
+        }),
+        new CompressionPlugin()
       ]
 };
 
