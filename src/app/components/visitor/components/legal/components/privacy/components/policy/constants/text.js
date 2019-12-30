@@ -1,8 +1,9 @@
 import React from 'react'
 
 const versions = {
-  '1.0': '1.0 (2019.07.28)'
+  '1.0': '2020.01.01'
 }
+
 export const text = [
   {
     item: '1.', tier: 'header', version: versions['1.0'],
@@ -11,7 +12,7 @@ export const text = [
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    pl: <span>Administratorem zbierancyh w Serwisie danych osobowych w rozumieniu Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w&nbsp;sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz&nbsp;uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) jest Administrator, czyli Warsaw Digital Sp. z o.o., z siedzibą w&nbsp;Warszawie.</span>,
+    pl: <span>Administratorem zbieranych w Serwisie danych osobowych w rozumieniu Rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w&nbsp;sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz&nbsp;uchylenia dyrektywy 95/46/WE (ogólne rozporządzenie o ochronie danych) jest Administrator, czyli Warsaw Digital Sp. z o.o., z siedzibą w&nbsp;Warszawie.</span>,
     en: <span>The administrator of the personal data gathered in the Service with the meaning of the Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation) is the Administrator, i.e. Warsaw Digital Sp. z o.o., with its registered office in Warsaw.</span>
   },
   {
@@ -36,13 +37,13 @@ export const text = [
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    pl: <span>Ponadto, Administrator może gromadzić informacje o Odwiedzającyh Serwis odnoszące się do ich zachowań w Serwisie oraz rodzaju urządzeń wykorzystywanych do odwiedzania serwisu.</span>,
-    en: <span>Furthermore, the Administrator may gather data regarding Service's Visitors regarding their behavior in the Service and kinds of devices used during visiting the Service.</span>
+    pl: <span>Ponadto, Administrator może gromadzić informacje o Odwiedzających Serwis odnoszące się do ich zachowań w Serwisie, ich lokalizacji oraz rodzaju urządzeń wykorzystywanych do odwiedzania serwisu.</span>,
+    en: <span>Furthermore, the Administrator may gather data regarding Service's Visitors regarding their behavior in the Service, their location and kinds of devices used during visiting the Service.</span>
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    pl: <span>Dane, o których mowa powyżej przechowywane są na serwerach usługodawców świadczących usługi hostingu na rzecz Administratora. W bazie danych Administratora firma (nazwa) przedsiębiorcy, numer NIP, numer telefonu oraz adres email są szyfrowane, a hasło podwójnie haszowane (ang. <i>hashing</i>).</span>,
-    en: <span>The data referred to above is hosted on the servers of entites providing hosting services to the Administrator. In the Administrator's database the business name, NIP (tax ID) number, phone number and email address are encrypted, and the password is doubly hashed.</span>
+    pl: <span>Dane, o których mowa powyżej przechowywane są na serwerach usługodawców świadczących usługi hostingu na rzecz Administratora.</span>,
+    en: <span>The data referred to above is hosted on the servers of entites providing hosting services to the Administrator.</span>
   },
   {
     item: '4.', tier: 'header', version: versions['1.0'],
@@ -61,7 +62,7 @@ export const text = [
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    pl: <span>Administrator gromadzi dane osobowe pozyskane od Użytkowników przy tworzeniu i zmianie danych Konta oraz od Odwiedzających poprzez zanonimizowaną, zsumowaną analizę ich zachowań w Serwisie przy zastosowaniu między innymi technologii, o których mowa w <u>Polityce Plików Cookies</u>.</span>,
+    pl: <span>Administrator gromadzi dane osobowe pozyskane od Użytkowników przy tworzeniu i&nbsp;zmianie danych Konta oraz od Odwiedzających poprzez zanonimizowaną, zsumowaną analizę ich zachowań w Serwisie przy zastosowaniu między innymi technologii, o których mowa w <u>Polityce Plików Cookies</u>.</span>,
     en: <span>The Administrator gathers personal data acquired from the Users at the Account registration and changing Account data, and, from the Visitors through anonymised, combined analysis of their behaviour through usage of - among others - technologies reffered to under the <u>Cookies Policy</u>.</span>
   },
   {
@@ -121,7 +122,7 @@ export const text = [
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    pl: <span>W przypadku, w którym w Serwisie zawarte są przekierowania (<i>linki</i>) lub Ogłoszeniodawcy zawierają w treści ogłoszeń przekierowania do stron internetowych innych niż Serwis, Odwiedzający podążający za takim przekierowaniem przyjmuje do wiadomości, że niniejsza Polityka Prywatności nie znajduje zastosowania do tych stron, a&nbsp;proces przetwarzania tych danych odbywa się na zasadach i warunkach przewidzianych przez regułu odnoszące się do tych stron.</span>,
+    pl: <span>W przypadku, w którym w Serwisie zawarte są przekierowania (<i>linki</i>) lub Ogłoszeniodawcy zawierają w treści ogłoszeń przekierowania do stron internetowych innych niż Serwis, Odwiedzający podążający za takim przekierowaniem przyjmuje do wiadomości, że niniejsza Polityka Prywatności nie znajduje zastosowania do tych stron, a&nbsp;proces przetwarzania tych danych odbywa się na zasadach i warunkach przewidzianych przez reguły odnoszące się do tych stron.</span>,
     en: <span>In case in which the Service includes redirests (<i>links</i>) and/or Announcers include in their Announcements redirects to websites other than the Service, the Visitor following such a redirect acknowledges that this Privacy Policy is not applicable to those websites, and data processing is governed by the terms and conditions envisioned by the rules relevant to those websites.</span>
   },
   {
@@ -150,34 +151,34 @@ export const text = [
     en: <span>objection to the processing,</span>
   },
   {
-    item: 'c)', tier: 'subpoint', version: versions['1.0'],
+    item: 'd)', tier: 'subpoint', version: versions['1.0'],
     pl: <span>żądania ograniczenia ich przetwarzania,</span>,
     en: <span>demanding processing restriction,</span>
   },
   {
-    item: 'd)', tier: 'subpoint', version: versions['1.0'],
+    item: 'e)', tier: 'subpoint', version: versions['1.0'],
     pl: <span>żądania ich usunięcia,</span>,
     en: <span>demanding its erasure,</span>
   },
   {
-    item: 'd)', tier: 'subpoint', version: versions['1.0'],
+    item: 'f)', tier: 'subpoint', version: versions['1.0'],
     pl: <span>cofnięcia wyrażonych zgód, oraz</span>,
     en: <span>withdrawal of the consents, and</span>
   },
   {
-    item: 'e)', tier: 'subpoint', version: versions['1.0'],
+    item: 'g)', tier: 'subpoint', version: versions['1.0'],
     pl: <span>transferu.</span>,
     en: <span>transfer.</span>
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    pl: <span>Wykonanie powyższych praw pozostaje bez wpływu na dotychczasowe przetwarzanie, a ponadto może wiązać się z ograniczeniem funkcjonalności Serwisu, takich jak, między innymi, posiadanie Konta oraz&nbsp;dodawanie Ogłoszeń.</span>,
-    en: <span>The execution of the abovementioned rights does not influence the past processing, and, furthermore, may be connected with limitation of the Service's functionality, such as, among others, Account possession and adding Announcements.</span>
+    pl: <span>Wykonanie powyższych praw pozostaje bez wpływu na dotychczasowe przetwarzanie, a&nbsp;ponadto może wiązać się z ograniczeniem funkcjonalności Serwisu, takich jak, między innymi, posiadanie Konta oraz&nbsp;dodawanie Ogłoszeń.</span>,
+    en: <span>The execution of the abovementioned rights does not affect the past processing, and, furthermore, may be connected with limitation of the Service's functionality, such as, among others, Account possession and adding Announcements.</span>
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    pl: <span>Wykonanie powyższych praw następuje poprzez wysłanie pisma na adres korespondencyjny Administratora lub emaila na adres <i>kontakt@warsaw.digital</i> wskazujących wykonywane prawa.</span>,
-    en: <span>The execution of the abovementioned rights is made through sending a letter to the Administrator's correspondence address or an email to <i>contact@warsaw.digital</i> with indication of the rights being executed.</span>
+    pl: <span>Wykonanie powyższych praw następuje poprzez wysłanie pisma na adres korespondencyjny Administratora lub emaila na adres <i>kontakt@warsawlease.pl</i> wskazujących wykonywane prawa.</span>,
+    en: <span>The execution of the abovementioned rights is made through sending a letter to the Administrator's correspondence address or an email to <i>contact@warsawlease.pl</i> with indication of the rights being executed.</span>
   },
   {
     item: '10.', tier: 'header', version: versions['1.0'],
@@ -186,8 +187,8 @@ export const text = [
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    pl: <span>W celach wskazanych w Punkcie 6. niniejszej Polityki Prywatności, Administrator korzysta z usług Zaufanych Partnerów mających siedziby na obszarze Europejskiego Obszaru Gospodarczego (EOG) lub w Stanach Zjednoczonych. W związku z tym dane osobowe mogą być przekazywane poza granice EOG. Gwarancje należytej ochrony danych osobowych przez Zaufanych Partnerów mających siedziby w Stanach Zjednoczoncyh opierają się między innymi na zobowiązaniach do stosowania przez te podmioty standardowych klauzul umownych przyjętych przez Komisję Unii Europejskiej oraz&nbsp;uczestnictwa w Tarczy Prywatności (ang. Privacy Shield).</span>,
-    en: <span>With the purposes referred to under Point 6 of this Privacy Policy, the Administrator employs the services of Trusted Partners with registered offices within the European Economic Area and/or in the the United States. Therefore, the personal data may be transferred outside of EEA. The guarantees of the proper protection of the personal data by the Trusted Partners with their registered offices in United States are based, among others, on the obligations of those entities to apply standard contractual clauses approved by the Commission of the European Union and the participation in the Privacy Shield program.</span>
+    pl: <span>W celach wskazanych w Punkcie 6. niniejszej Polityki Prywatności, Administrator korzysta z usług Zaufanych Partnerów mających siedziby na obszarze Europejskiego Obszaru Gospodarczego (EOG) lub w Stanach Zjednoczonych. W związku z tym dane osobowe mogą być przekazywane poza granice EOG. Gwarancje należytej ochrony danych osobowych przez Zaufanych Partnerów mających siedziby w Stanach Zjednoczonych opierają się między innymi na zobowiązaniach do stosowania przez te podmioty standardowych klauzul umownych przyjętych przez Komisję Unii Europejskiej oraz&nbsp;uczestnictwa w Tarczy Prywatności (ang. Privacy Shield).</span>,
+    en: <span>With the purposes referred to under Point 6 of this Privacy Policy, the Administrator employs the services of Trusted Partners with registered offices within the European Economic Area and/or in the United States. Therefore, the personal data may be transferred outside of EEA. The guarantees of the proper protection of the personal data by the Trusted Partners with their registered offices in United States are based, among others, on the obligations of those entities to apply standard contractual clauses approved by the Commission of the European Union and the participation in the Privacy Shield program.</span>
   },
   {
     item: '11.', tier: 'header', version: versions['1.0'],
@@ -198,10 +199,5 @@ export const text = [
     item: '', tier: 'point', version: versions['1.0'],
     pl: <span>Dane osobowe przechowywane są przez Administratora przez okres nieprzekraczający terminu przedawnienia roszczeń w odniesieniu do relacji łączących Administratora z daną osobą.</span>,
     en: <span>The personal data is stored by the Administrator for the period not surpassing the period of limitation with respect to relations connecting the Administrator with a given person.</span>
-  },
-  {
-    item: '', tier: '', version: versions['1.0'],
-    pl: <span></span>,
-    en: <span></span>
   }
 ]
