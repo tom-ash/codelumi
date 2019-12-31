@@ -17,7 +17,7 @@ function prepareUserObject() {
     businessName: document.getElementById('user-create-email-business-name').value,
     phoneCode: document.getElementById('user-create-email-area-code').value,
     phone: document.getElementById('user-create-email-phone-number').value,
-    email: document.getElementById('user-create-email-email-address').value,
+    email: document.getElementById('user-create-email-email-address').value.toLowerCase(),
     password: document.getElementById('user-create-email-password').value,
     termsAndPrivacyConsent: document.getElementById('user-create-consents-terms-and-privacy').checked
   }
