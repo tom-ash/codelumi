@@ -6,6 +6,6 @@ import { rootReducer } from './app/functions/root_reducer'
 import App from './app/app'
 
 let store = createStore(rootReducer)
-const unsubscribe = store.subscribe(() => console.log(store.getState()))
+// const unsubscribe = store.subscribe(() => console.log(store.getState()))
 
 render(<Provider store={store}><App/></Provider>, window.document.getElementById("app"));
