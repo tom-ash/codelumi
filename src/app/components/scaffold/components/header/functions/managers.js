@@ -1,4 +1,5 @@
 import React from 'react'
+import { saveCookie } from '../../../../../functions/cookie-handlers'
 
 export function addAnnouncementManager() {
   return {
@@ -64,6 +65,11 @@ export function languageManager() {
   return {
     classNames: { container: 'button language' },
     label: <span><i className='fas fa-globe'/> {this.languageHandler('English', 'Polski')}</span>,
-    onClick: () => changeApp({ language: language === 'pl' ? 'en' : 'pl' })
+    onClick: () => {
+      const newLanguage = language === 'pl' ? 'en' : 'pl'
+
+      saveCookie('lang', newLanguage, 'oneYear')
+      changeApp({ language: newLanguage })
+    }
   }
 }
