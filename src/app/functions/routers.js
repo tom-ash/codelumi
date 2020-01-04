@@ -19,7 +19,8 @@ export function checkRoute() {
       }
     }
   }
-  changeApp(newRoutes)
+
+  changeApp({ ...routes, ...newRoutes })
 }
 
 export function changeRoute(newRoutes) {
@@ -37,7 +38,6 @@ export function handlePathname(prevProps) {
   }
 
   if (shouldUpdatePath || prevProps.language !== this.props.language) {
-    let search = window.location.search
     let fullPathname = ''
 
     for (let [key, matcher] of Object.entries(routeMatchers)) {
@@ -56,13 +56,10 @@ export function handlePathname(prevProps) {
     fullPathname = fullPathname.replace(/\/{2,}/, '/')
     fullPathname = fullPathname.replace(/\/$/, '')
     if (fullPathname === '') fullPathname = '/'
-    if (this.props.showAnnouncementIndexVisitor) fullPathname = fullPathname + search
-    window.history.pushState({ path: fullPathname }, '', fullPathname)
-  }
-}
-
-export function popStateRoute() {
-  if (window.location.pathname === '/') {
-    this.changeRoute(null, '/')
+    
+    if (window.location.pathname !== fullPathname) {
+      if (this.props.showAnnouncementIndexVisitor) fullPathname = fullPathname + window.location.search
+      window.history.pushState({ path: fullPathname }, '', fullPathname)
+    }
   }
 }

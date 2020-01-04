@@ -37,7 +37,7 @@ class Footer extends React.Component {
             <div className='float-clear' />
           </div>
           <div className='copyright'>
-            <i className='far fa-copyright' /> warsawlease.pl 2019
+            <i className='far fa-copyright' /> warsawlease.pl 2020
           </div>
           <div className='float-clear' />
         </div>

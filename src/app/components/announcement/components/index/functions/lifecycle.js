@@ -8,6 +8,8 @@ export function componentDidMount() {
   } else {
     this.fetchAnnouncements()
   }
+
+  window.addEventListener('popstate', () => this.paramsReader())
 }
 
 export function componentDidUpdate(prevProps) {

@@ -49,6 +49,9 @@ var config = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       favicon: './src/favicon.png'
+    }),
+    new webpack.DefinePlugin({
+      'ENV': JSON.stringify('dev')
     })
   ]
 };

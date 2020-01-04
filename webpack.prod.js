@@ -56,7 +56,10 @@ var config = {
           template: './src/index.html',
           favicon: './src/favicon.png'
         }),
-        new CompressionPlugin()
+        new CompressionPlugin(),
+        new webpack.DefinePlugin({
+          'ENV': JSON.stringify('prod')
+        })
       ]
 };
 

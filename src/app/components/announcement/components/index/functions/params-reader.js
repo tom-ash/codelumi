@@ -2,9 +2,11 @@ import { params } from '../../../constants/params'
 import { reverseParseCategory } from '../../../functions/category-parsers'
 import { reverseParseDistrict } from '../../../functions/district-parsers'
 import { reverseParseCurrency } from '../../../functions/currency-parsers'
+import { inputs } from '../constants/state'
 
 export function paramsReader() {
   const { changeControl, changeInputs } = this.props
+
   let urlParams = window.location.search.replace('?', '').split('&')
   let urlParamsObject = {}
   let stateParams = {}
@@ -32,6 +34,6 @@ export function paramsReader() {
       }
     })
   })
-  changeInputs(stateParams)
+  changeInputs({ ...inputs, ... stateParams })
   changeControl({ readParams: false, fetch: true })
 }

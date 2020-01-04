@@ -22,7 +22,6 @@ class App extends React.Component {
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.changeRoute = routers.changeRoute.bind(this)
     this.checkRoute = routers.checkRoute.bind(this)
-    this.popStateRoute = routers.popStateRoute.bind(this)
     this.authorizeUserWithTokens = authorizeUserWithTokens.bind(this)
     this.screenSizeHandler = screenSizeHandler.bind(this)
     this.popStateHandler = popStateHandler.bind(this)

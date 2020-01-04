@@ -20,7 +20,6 @@ import { compositeInputProvider } from './functions/composite-input-provider'
 import { parseCurrency } from '../../../../../../functions/currency-parsers'
 import './styles/styles.scss'
 import { ManagedSelect, ManagedButton } from 'managed-inputs'
-import { paramsBuilder } from '../../../../functions/params-builder'
 
 class AnnouncementIndexPanelVisitor extends React.Component {
   constructor(props) {
@@ -48,7 +47,6 @@ class AnnouncementIndexPanelVisitor extends React.Component {
     this.changeInput = changeInput.bind(this)
     this.buttonManager = buttonManager.bind(this)
     this.buttonLabelHandler = buttonLabelHandler.bind(this)
-    this.paramsBuilder = paramsBuilder.bind(this)
   }
 
   render() {
