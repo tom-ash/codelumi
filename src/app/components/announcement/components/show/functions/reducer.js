@@ -12,6 +12,7 @@ export const controlReducer = (state = control, action) => {
 export const dataReducer = (state = data, action) => {
   switch (action.type) {
     case 'announcement/show/data': return { ...state, ...action.value }
+    case 'announcement/show/data/reset': return { ...data }
     default: return state
   }
 }

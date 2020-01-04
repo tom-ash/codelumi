@@ -6,7 +6,8 @@ export const mapStateToProps = (store) => {
     markerLoaded: store.announcement.show.control.markerLoaded,
     latitude: store.announcement.show.data.mapLatitude,
     longitude: store.announcement.show.data.mapLongitude,
-    mapLoaded: store.announcement.show.control.mapLoaded
+    mapLoaded: store.announcement.show.control.mapLoaded,
+    mapLoading: store.announcement.show.control.mapLoading,
   }
 }
 
@@ -15,6 +16,7 @@ export const mapDispatchToProps = (dispatch) => {
     changeControl: value => dispatch({ type: 'announcement/show/control', value: value }),
     resetControl: value => dispatch({ type: 'announcement/show/control/reset', value: value }),
     changeData: value => dispatch({ type: 'announcement/show/data', value: value }),
+    resetData: value => dispatch({ type: 'announcement/show/data/reset', value: value }),
   }
 }
     
