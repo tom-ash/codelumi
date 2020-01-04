@@ -13,19 +13,21 @@ export function publish() {
     rooms: this.roomsManager().validate(),
     floor: this.floorManager().validate(),
     totalFloors: this.totalFloorsManager().validate(),
-    availabilityDate: this.availabilityDateSelectManager().validate(),
+    availabilityDateSelect: this.availabilityDateSelectManager().validate(),
     pictures: this.validatePictures(),
     map: this.validateMap()
   }
-  
+
   if (availabilityDateSelect === 'date') {
-    validationObject.availabilityDateSelect = this.availableDateManager().validate()
+    validationObject.availabilityDate = this.availableDateManager().validate()
+  } else {
+    validationObject.availabilityDate = true
   }
 
   if (!Object.values(validationObject).every((element => element))) {
     for(let i = 0; i < requiredInputsArray.length; i++) {
       if (!validationObject[requiredInputsArray[i]]) {
-        return scrollToElement(document.getElementById(requiredInputs[requiredInputsArray[i]].id), 16, -160)
+        return scrollToElement(document.getElementById(requiredInputs[requiredInputsArray[i]].id), 16, -120)
       }
     }
   }
