@@ -22,6 +22,13 @@ class AnnouncementCreatMap extends React.Component {
   render() {
     return (
       <div id='announcement-create-map' className='section'>
+        <div className='hint'>
+          <i className='fas fa-info-circle' />
+          {this.languageObjectHandler({
+            pl: 'Kliknij lewym przyciskiem na mapie, aby dodać marker.',
+            en: 'Left click on the map to add marker.'
+          })}
+        </div>
         <div id='google-map-container' className='map'>
           <div id='google-map' className={this.props.error.pl ? 'map-error' : ''}/>
         </div>

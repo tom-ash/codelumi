@@ -6,6 +6,20 @@
   margin: 96px auto 40px;
   background: #F8F9F9;
   padding: 36px;
+  .hint {
+    position: relative;
+    margin-bottom: 12px;
+    font-size: 15px;
+    text-align: justify;
+    padding-left: 22px;
+    line-height: 18px;
+    .fas {
+      position: absolute;
+      left: 0;
+      margin-right: 8px;
+      font-size: 14px;
+    }
+  }
   @media #{$phone} {
     margin: 64px 8px 8px;
     padding: 12px;
