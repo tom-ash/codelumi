@@ -4,7 +4,7 @@ import { saveCookie } from '../../../../../functions/cookie-handlers'
 export function addAnnouncementManager() {
   return {
     classNames: { container: 'header-link' },
-    label: this.labelProvider('fas fa-plus', 'Dodaj nieodpłatne ogłoszenie', 'Add free announcement'),
+    label: <strong>{this.labelProvider('fas fa-plus', 'Dodaj bezpłatne ogłoszenie', 'Add Free Announcement')}</strong>,
     onClick: () => {
       this.changeRoute({ showAnnouncementCreate: true })
       this.props.changeControl({ showLinks: false })
