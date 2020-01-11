@@ -25,7 +25,7 @@ function setOptions(options) {
       lat: options.latitude || (this.props.isMobile ? 52.220: 52.222),
       lng: options.longitude || (this.props.isMobile ? 21.012 : 20.985)
     },
-    zoom: options.zoom || (this.props.isMobile ? 12.2 : 12.2),
+    zoom: options.zoom || (this.props.isMobile ? 11.8 : 11.7),
     mapTypeControl: false,
     fullscreenControl: false,
     streetViewControl: false,
