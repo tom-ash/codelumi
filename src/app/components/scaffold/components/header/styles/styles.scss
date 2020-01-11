@@ -47,6 +47,11 @@
           border-radius: 4px;
           background: #212f3d;
           color: white;
+          line-height: 32px;
+          text-align: center;
+          .fas, .far {
+            font-size: 14px;
+          }
           &.hover {
             color: #F0B27A;
           }

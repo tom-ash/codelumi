@@ -1,9 +1,13 @@
 import { deauthorizeUser } from '../../authorize/functions/adapters'
 
+const origin = `${window.location.origin}/`
+
 export function addAnnouncementManager() {
   return {
     id: 'user-show-account-add-announcemt',
     classNames: { container: 'button'},
+    href: this.languageObjectHandler({ pl: `${origin}dodaj_ogloszenie'`, en: `${origin}add_announcement'` }),
+    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     label: this.labelProvider('fas fa-plus', 'Dodaj ogłoszenie', 'Add free announcement'),
     onClick: () => this.changeRoute({ showAnnouncementCreate: true })
   }
@@ -14,6 +18,8 @@ export function listAnnouncementsManager() {
   return {
     id: 'user-show-account-list-announcements',
     classNames: { container: 'button'},
+    href: this.languageObjectHandler({ pl: `${origin}dodane_ogloszenia'`, en: `${origin}added_announcements'` }),
+    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     label: this.labelProvider('fas fa-list-ul', 'Dodane ogłoszenia', 'Added announcements'),
     onClick: () => {
       changeAnnouncementIndexData({ announcements: null, amount: null })
@@ -27,6 +33,8 @@ export function accountManager() {
   return {
     id: 'user-show-account-account',
     classNames: { container: 'button'},
+    href: this.languageObjectHandler({ pl: `${origin}account_settings'`, en: `${origin}ustawienia_konta'` }),
+    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     label: this.labelProvider('fas fa-cog', 'Ustawienia', 'Settings'),
     onClick: () => this.changeRoute({ showUserEditAccount: true })
   }

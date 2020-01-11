@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { changeRoute } from '../../../../functions/routers'
 import * as managers from './functions/managers'
-import { ManagedButton } from 'managed-inputs'
-import { languageHandler } from '../../../../functions/language-handler'
+import { ManagedLink } from 'managed-inputs'
+import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import './styles/styles.scss'
 
 class Footer extends React.Component {
@@ -12,6 +12,7 @@ class Footer extends React.Component {
     super(props)
     this.changeRoute = changeRoute.bind(this)
     this.languageHandler = languageHandler.bind(this)
+    this.languageObjectHandler = languageObjectHandler.bind(this)
     this.aboutManger = managers.aboutManager.bind(this)
     this.contactManager = managers.contactManager.bind(this)
     this.termsOfServiceManager = managers.termsOfServiceManager.bind(this)
@@ -25,14 +26,14 @@ class Footer extends React.Component {
         <div className='inner'>
           <div className='links'>
             <div className='column'>
-              <ManagedButton {...this.aboutManger()} />
-              <ManagedButton {...this.contactManager()} />
-              <ManagedButton {...this.termsOfServiceManager()} />
+              <ManagedLink {...this.aboutManger()} />
+              <ManagedLink {...this.contactManager()} />
+              <ManagedLink {...this.termsOfServiceManager()} />
             </div>
             <div className='column'>
-              <ManagedButton {...this.cookiesPolicyManager()} />
-              <ManagedButton {...this.privacyPolicyManager()} />
-              <ManagedButton {...this.privacySettingsManager()} />
+              <ManagedLink {...this.cookiesPolicyManager()} />
+              <ManagedLink {...this.privacyPolicyManager()} />
+              <ManagedLink {...this.privacySettingsManager()} />
             </div>
             <div className='float-clear' />
           </div>

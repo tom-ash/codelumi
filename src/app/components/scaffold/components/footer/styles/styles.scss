@@ -1,7 +1,7 @@
 @import '../../../../../styles/themes';
 
 #footer {
-  background: #212F3D;// #212F3C;
+  background: #212F3D;
   color: white;
   padding: 24px 24px;
   .inner {
@@ -21,16 +21,14 @@
         width: 100%;
         height: 32px;
         .input {
+          display: inline;
           background: none;
-          width: 100%;
-          height: 100%;
           border: none;
           color: white;
           font-size: 15px;
           text-align: left;
-          padding-left: 8px;
           &:hover {
-            background: transparentize(white, .9)  
+            color: #D7DBDD;
           }
         }
       }

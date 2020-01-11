@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import * as reduxMappers from './constants/mappers'
-import { ManagedButton } from 'managed-inputs'
+import { ManagedButton, ManagedLink } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { changeRoute } from '../../../../functions/routers'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
@@ -12,6 +12,7 @@ class Header extends React.Component {
   constructor(props) {
     super(props)
     this.addAnnouncementManager = managers.addAnnouncementManager.bind(this)
+    this.titleManager = managers.titleManager.bind(this)
     this.signUpManager = managers.signUpManager.bind(this)
     this.signInManager = managers.signInManager.bind(this)
     this.myAccountManager = managers.myAccountManager.bind(this)
@@ -23,8 +24,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const { changeControl, device, resetAnnouncementIndexControl, resetAnnouncementIndexInputs, resetAnnouncementIndexData,
-            changeAnnouncementIndexControl, authorized } = this.props
+    const { changeControl, device, authorized } = this.props
     const isLargePc = device === 'largePc'
 
     return (
@@ -47,35 +47,22 @@ class Header extends React.Component {
               <div className='link-icon' />
             </div>
           </div>}
-          <h1
-            onClick={() => {
-              resetAnnouncementIndexControl()
-              resetAnnouncementIndexInputs()
-              changeAnnouncementIndexControl({ fetch: true })
-              this.changeRoute({ showAnnouncementIndexVisitor: true })
-            }}
-            { ...!isLargePc && { className: 'shifted' } }
-          >
-            <span className='city'>
-              WARSAW
-            </span>
-            <span className='lease'>
-              LEASE
-            </span>
+          <h1 { ...!isLargePc && { className: 'shifted' } }>
+            <ManagedLink {...this.titleManager()} />
           </h1>
           <div className='top-links'>
-            {isLargePc && <ManagedButton {...this.addAnnouncementManager()} />}
-            {isLargePc && <ManagedButton {...this.signUpManager()} />}
-            {isLargePc && <ManagedButton {...this.signInManager()} />}
-            {isLargePc && <ManagedButton {...this.myAccountManager()} />}
+            {isLargePc && <ManagedLink {...this.addAnnouncementManager()} />}
+            {isLargePc && <ManagedLink {...this.signUpManager()} />}
+            {isLargePc && <ManagedLink {...this.signInManager()} />}
+            {isLargePc && <ManagedLink {...this.myAccountManager()} />}
             <ManagedButton {...this.languageManager()} />
           </div>
           {this.props.showLinks &&
           <div className='side-links-cover' onClick={() => changeControl({ showLinks: false })}>
             <div className='side-links'>
-              <ManagedButton {...this.addAnnouncementManager()} />
-              <ManagedButton {...this.signUpManager()} />
-              <ManagedButton {...this.signInManager()} />
+              <ManagedLink {...this.addAnnouncementManager()} />
+              <ManagedLink {...this.signUpManager()} />
+              <ManagedLink {...this.signInManager()} />
             </div>
           </div>}
         </div>

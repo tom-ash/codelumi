@@ -1,8 +1,13 @@
+const origin = `${window.location.origin}/`
+
 export function aboutManager() {
   const { changeApp } = this.props
 
   return {
-    classNames: { container: 'button-container link' },
+    classNames: { container: 'link' },
+    href: this.languageObjectHandler({ pl: `${origin}o_serwisie'`, en: `${origin}about'` }),
+    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
+    title: this.languageObjectHandler({ pl: 'O Serwisie', en: 'About' }),
     label: this.languageHandler('O Serwisie', 'About'),
     onClick: () => changeApp({ showVisitorAbout: true })
   }
@@ -12,7 +17,10 @@ export function contactManager() {
   const { changeApp } = this.props
 
   return {
-    classNames: { container: 'button-container link' },
+    classNames: { container: 'link' },
+    href: this.languageObjectHandler({ pl: `${origin}kontakt'`, en: `${origin}contact'` }),
+    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
+    title: this.languageObjectHandler({ pl: 'Kontakt', en: 'Contact' }),
     label: this.languageHandler('Kontakt', 'Contact'),
     onClick: () => changeApp({ showVisitorContact: true })
   }
@@ -22,7 +30,10 @@ export function termsOfServiceManager() {
   const { changeApp } = this.props
 
   return {
-    classNames: { container: 'button-container link' },
+    classNames: { container: 'link' },
+    href: this.languageObjectHandler({ pl: `${origin}regulamin'`, en: `${origin}terms_of_service'` }),
+    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
+    title: this.languageObjectHandler({ pl: 'Regulamin', en: 'Terms and Conditions' }),
     label: this.languageHandler('Regulamin', 'Terms and Conditions'),
     onClick: () => changeApp({ showVisitorTermsOfService: true })
   }
@@ -32,7 +43,10 @@ export function cookiesPolicyManager() {
   const { changeApp } = this.props
 
   return {
-    classNames: { container: 'button-container link' },
+    classNames: { container: 'link' },
+    href: this.languageObjectHandler({ pl: `${origin}polityka_plikow_cookies'`, en: `${origin}cookies_policy'` }),
+    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
+    title: this.languageObjectHandler({ pl: 'Polityka Plików Cookies', en: 'Cookies Policy' }),
     label: this.languageHandler('Polityka Plików Cookies', 'Cookies Policy'),
     onClick: () => changeApp({ showVisitorCookiesPolicy: true })
   }
@@ -42,7 +56,10 @@ export function privacyPolicyManager() {
   const { changeApp } = this.props
 
   return {
-    classNames: { container: 'button-container link' },
+    classNames: { container: 'link' },
+    href: this.languageObjectHandler({ pl: `${origin}polityka_prywatnosci'`, en: `${origin}privacy_policy'` }),
+    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
+    title: this.languageObjectHandler({ pl: 'Polityka Prywatności', en: 'Privacy Policy' }),
     label: this.languageHandler('Polityka Prywatności', 'Privacy Policy'),
     onClick: () => changeApp({ showVisitorPrivacyPolicy: true })
   }
@@ -52,7 +69,10 @@ export function privacySettingsManager() {
   const { changeApp } = this.props
 
   return {
-    classNames: { container: 'button-container link' },
+    classNames: { container: 'link' },
+    href: this.languageObjectHandler({ pl: `${origin}ustawienia_prywatnosci'`, en: `${origin}privacy_settings'` }),
+    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
+    title: this.languageObjectHandler({ pl: 'Ustawienia Prywatności', en: 'Privacy Settings' }),
     label: this.languageHandler('Ustawienia Prywatności', 'Privacy Settings'),
     onClick: () => changeApp({ showVisitorPrivacySettings: true })
   }

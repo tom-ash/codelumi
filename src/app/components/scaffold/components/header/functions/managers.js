@@ -1,9 +1,45 @@
 import React from 'react'
 import { saveCookie } from '../../../../../functions/cookie-handlers'
 
+const origin = `${window.location.origin}/`
+
+export function titleManager() {
+  const {
+    resetAnnouncementIndexControl,
+    resetAnnouncementIndexInputs,
+    changeAnnouncementIndexControl
+  } = this.props
+
+  return {
+    classNames: { container: '' },
+    href: window.location.origin,
+    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
+    title: 'warsawlease.pl',
+    label: (
+      <React.Fragment>
+        <span className='city'>
+          WARSAW
+        </span>
+        <span className='lease'>
+          LEASE
+        </span>
+      </React.Fragment>
+    ),
+    onClick: () => {
+      resetAnnouncementIndexControl()
+      resetAnnouncementIndexInputs()
+      changeAnnouncementIndexControl({ fetch: true })
+      this.changeRoute({ showAnnouncementIndexVisitor: true })
+    }
+  }
+}
+
 export function addAnnouncementManager() {
   return {
     classNames: { container: 'header-link' },
+    href: this.languageObjectHandler({ pl: `${origin}dodaj_ogloszenie'`, en: `${origin}add_announcement'` }),
+    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
+    title: this.languageObjectHandler({ pl: 'Dodaj ogłoszenie', en: 'Add Announcement' }),
     label: <strong>{this.labelProvider('fas fa-plus', 'Dodaj bezpłatne ogłoszenie', 'Add Free Announcement')}</strong>,
     onClick: () => {
       this.changeRoute({ showAnnouncementCreate: true })
@@ -18,6 +54,9 @@ export function signUpManager() {
   return {
     display: name && 'none',
     classNames: { container: 'header-link' },
+    href: this.languageObjectHandler({ pl: `${origin}zarejestruj'`, en: `${origin}sign_up'` }),
+    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
+    title: this.languageObjectHandler({ pl: 'Zarejestruj', en: 'Sign Up' }),
     label: this.labelProvider('fas fa-user-plus', 'Zarejestruj', 'Sign Up'),
     onClick: () => {
       changeApp({ showUserCreate: true })
@@ -34,6 +73,9 @@ export function signInManager() {
   return {
     display: name && 'none',
     classNames: { container: 'header-link sign-in' },
+    href: this.languageObjectHandler({ pl: `${origin}zaloguj'`, en: `${origin}sign_in'` }),
+    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
+    title: this.languageObjectHandler({ pl: 'Zaloguj', en: 'Sign In' }),
     label: this.labelProvider('fas fa-sign-in-alt', 'Zaloguj', 'Sign In'),
     onClick: () => {
       resetUserAuthorizeErrors()

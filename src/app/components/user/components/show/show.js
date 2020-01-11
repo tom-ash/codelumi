@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { ManagedButton } from 'managed-inputs'
+import { ManagedButton, ManagedLink } from 'managed-inputs'
 import { pageHeaderProvider } from '../../../../functions/header-providers'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import * as managers from './functions/managers'
@@ -30,9 +30,9 @@ class UserShow extends React.Component {
         className='container narrow-container shadowed'
         onClick={e => e.stopPropagation()}
       >
-        <ManagedButton {...this.addAnnouncementManager()} />
-        <ManagedButton {...this.listAnnouncementsManager()} />
-        <ManagedButton {...this.accountManager()} />
+        <ManagedLink {...this.addAnnouncementManager()} />
+        <ManagedLink {...this.listAnnouncementsManager()} />
+        <ManagedLink {...this.accountManager()} />
         <ManagedButton {...this.deAuthorizeManager()} />
       </div>
     )
