@@ -59,7 +59,11 @@ export function handlePathname(prevProps) {
     
     if (window.location.pathname !== fullPathname) {
       if (this.props.showAnnouncementIndexVisitor) fullPathname = fullPathname + window.location.search
-      window.history.pushState({ path: fullPathname }, '', fullPathname)
+
+      const origin = window.location.origin
+      if (origin.indexOf('warsawlease.pl') !== -1 || origin.indexOf('localhost') !== -1) {
+        window.history.pushState({ path: fullPathname }, '', fullPathname)
+      }
     }
   }
 }

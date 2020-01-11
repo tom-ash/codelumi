@@ -43,7 +43,10 @@ export function paramsBuilder() {
   if (urlParams.length == 1) urlParams = ''
   const fullPathname = window.location.pathname + urlParams
   
-  if (window.location.search !== urlParams) {
-    window.history.pushState({ path: fullPathname }, '', fullPathname)
+  const origin = window.location.origin
+  if (origin.indexOf('warsawlease.pl') !== -1 || origin.indexOf('localhost') !== -1) {
+    if (window.location.search !== urlParams) {
+      window.history.pushState({ path: fullPathname }, '', fullPathname)
+    }
   }
 }
