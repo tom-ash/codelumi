@@ -77,3 +77,16 @@ export function privacySettingsManager() {
     onClick: () => changeApp({ showVisitorPrivacySettings: true })
   }
 }
+
+export function announcementsListManager() {
+  const { changeApp } = this.props
+
+  return {
+    classNames: { container: 'link' },
+    href: this.languageObjectHandler({ pl: `${origin}lista_ogloszen'`, en: `${origin}announcements_list'` }),
+    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
+    title: this.languageObjectHandler({ pl: 'Lista Ogłoszeń', en: 'Announcements\' List' }),
+    label: this.languageObjectHandler({ pl: 'Lista Ogłoszeń', en: 'Announcements\' List' }),
+    onClick: () => changeApp({ showAnnouncementsList: true })
+  }
+}
