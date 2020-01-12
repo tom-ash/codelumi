@@ -58,4 +58,9 @@
       }
     }
   }
+  &.new {
+    .text {
+      font-style: italic;
+    }
+  }
 }

@@ -1,7 +1,8 @@
 import React from 'react'
 
 const versions = {
-  '1.0': '2020.01.01'
+  '1.0': '2020.01.01',
+  '1.1': '2020.02.15'
 }
 
 export const text = [
@@ -25,7 +26,6 @@ export const text = [
     pl: <span>W niniejszym Regulaminie wyrażenia pisane z wielkiej litery będą miały następujące znaczenia:</span>,
     en: <span>In these Terms of Service the capitalized expressions shall have the following meanings:</span>
   },
-
   {
     item: 'a)', tier: 'subpoint', version: versions['1.0'],
     pl: <span><strong>Serwis</strong> - serwis internetowy znajdujący się pod adresem <u>www.warsawlease.pl</u>.</span>,
@@ -77,6 +77,11 @@ export const text = [
     en: <span>The Service is intended to present Announcements regarding lease of offices and usable premises located in the area of the capital city of Warsaw.</span>
   },
   {
+    item: '', tier: 'point', version: versions['1.1'],
+    pl: <span>Od 15 lutego 2020 r.: "<i>Serwis przeznaczony jest do prezentowania Ogłoszeń odnoszących się do wynajmu długoterminowego (przynajmniej 3-miesięcznego) mieszkań, biur oraz lokali użytkowych znajdujących się w obrębie m.st.&nbsp;Warszawy.</i>"</span>,
+    en: <span>From 15 February 2020: "<i>The Service is intended to present Announcements regarding long-term lease (at least 3 months long) of apartments, offices and usable premises located within the area of the capital city of Warsaw.</i>"</span>
+  },
+  {
     item: '3.', tier: 'header', version: versions['1.0'],
     pl: <span>Konta</span>,
     en: <span>Accounts</span>
@@ -85,6 +90,11 @@ export const text = [
     item: '3.1.', tier: 'point', version: versions['1.0'],
     pl: <span>Konto w Serwisie może założyć wyłącznie podmiot posiadający status przedsiębiorcy działający samodzielnie lub poprzez osobę reprezentującą tego przedsiębiorcę.</span>,
     en: <span>An Account in the Service can only be registered by an entity being an entrepreneur acting in its own name or by a person representing such an entrepreneur.</span>
+  },
+  {
+    item: '', tier: 'point', version: versions['1.1'],
+    pl: <span>Od 15 lutego 2020 r.: "<i>Konto w Serwisie może założyć a) osoba fizyczna niedziałająca przy dodawaniu Ogłoszenia jako przedsiębiorca (Osoba Prywatna) lub b) podmiot działający przy dodawaniu ogłoszenia jako przedsiębiorca (Konto Profesjonalne).</i>"</span>,
+    en: <span>From 15 February 2020: "<i>An Account in the Service can be registered by a) a natural person not acting at adding of an Announcement as an entrepreneur (Private Person) and/or b) an entity acting at adding of an Announcement as an entrepreneur (Professional Account).</i>"</span>
   },
   {
     item: '3.2.', tier: 'point', version: versions['1.0'],
@@ -117,9 +127,19 @@ export const text = [
     en: <span>During adding an Annoucement, on the basis of the provided by its Announcer monthly net rent, the Service's algorithms automatically calculate monthly gross rent through mutliplying the monthly net rent by 1.23. The Announcer adding the Announcement confirms the correctness of those calculations.</span>
   },
   {
+    item: '', tier: 'point', version: versions['1.1'],
+    pl: <span>Od 15 lutego 2020 r.: "<i>Jeżeli przy danym Ogłoszeniu podano miesięczny czynsz netto, algorytmy Serwisu automatycznie wyliczają miesięczny czynsz brutto, poprzez pomnożenie miesięcznego czynszu netto przez 1,23. Ogłoszeniodawca dodający dane Ogłoszenie powinien potwierdzić poprawność tych wyliczeń.</i>"</span>,
+    en: <span>From 15 February 2020: "<i>If at a given Annoucement monthly net rent has been provided, the Service's algorithms automatically calculate monthly gross rent through mutliplying the monthly net rent by 1.23. The Announcer adding the Announcement should confirm the correctness of those calculations.</i>"</span>
+  },
+  {
     item: '4.5.', tier: 'point', version: versions['1.0'],
     pl: <span>W trakcie dodawania Ogłoszenia, na podstawie podawanych przez Ogłoszeniodawcę miesięcznego czynszu netto oraz powierzchni, oraz wyliczonego zgodnie z Punktem 4.4 miesięcznego czynszu brutto, algorytmy Serwisu automatycznie wyliczają stawki miesięcznego czynszu netto oraz brutto w odniesieniu do jednego metra kwadratowego powierzchni poprzez odpowiednie podzielenie tych czynszów przez podaną powierzchnię. Ogłoszeniodawca dodający dane Ogłoszenie potwierdza poprawność tych wyliczeń.</span>,
     en: <span>During adding an Announcement, on the basis of the provided by its Announcer monthly net rent and the area, and monthly gross rent calculated pursuant to Point 4.4, the Service's algorithms automatically calculate the amounts of the monthly net rent and the monthly gross rent with respect to one square meter of the area through division of those rents by the provided area. The Announcer adding the respective Announcement confirms correctness of those calculations.</span>
+  },
+  {
+    item: '', tier: 'point', version: versions['1.1'],
+    pl: <span>Od 15 lutego 2020 r.: "<i>Algorytmy Serwisu automatycznie wyliczają stawki miesięcznego czynszu netto, jeżeli został podany, oraz podanego albo wyliczonego zgodnie z Punktem 4.4 miesięcznego czynszu brutto w odniesieniu do jednego metra kwadratowego powierzchni poprzez podzielenie tych kwot przez podaną powierzchnię. Ogłoszeniodawca dodający dane Ogłoszenie powinien potwierdzić poprawność tych wyliczeń.</i>"</span>,
+    en: <span>From 15 February 2020: "<i>The Service's algorithms automatically calculate the amounts of the monthly net rent if it was provided and the provided or calculated pursuant to Point 4.4 monthly gross rent with respect to one square meter of the area through division of those amounts by the provided area. The Announcer adding the Announcement should confirm the correctness of those calculations.</i>"</span>
   },
   {
     item: '4.6.', tier: 'point', version: versions['1.0'],
@@ -172,6 +192,11 @@ export const text = [
     en: <span>The liability of the Administrator to a given Announcer with respect to a given Announcement is limited to the amount paid by that Announcer with respect to that Announcement to the Administrator.</span>
   },
   {
+    item: '', tier: 'point', version: versions['1.1'],
+    pl: <span>Od 15 lutego 2020 Punkt 5.3 zostaje wykreślony.</span>,
+    en: <span>From 15 February 2020 the Point 5.3 is deleted.</span>
+  },
+  {
     item: '6.', tier: 'header', version: versions['1.0'],
     pl: <span>Ochrona danych osobowych</span>,
     en: <span>Personal Data Protection</span>
@@ -192,6 +217,11 @@ export const text = [
     en: <span>Users acknowledge that the adding of an Announcement in the Service is connected with unlimited publication of their business name and phone numbers, provided during creation of the Account or later.</span>
   },
   {
+    item: '', tier: 'point', version: versions['1.1'],
+    pl: <span>Od 15 lutego 2020 r.: "<i>Użytkownicy przyjmują do wiadomości, że dodanie Ogłoszenia w Serwisie wiąże się z upublicznieniem ich numeru telefonu, imienia lub nazwy (firmy), podanych przy rejestracji ich Konta lub później, które będą wyświetlane jako dane kontaktowe przy ich Ogłoszeniach.</i>"</span>,
+    en: <span>From 15 February 2020: "<i>Users acknowledge that adding of an Announcement in the Service is connected with publication of their phone number, first name and/or business name, provided during creation of their Account or later, which will be displayed as contact data at their Announcements.</i>"</span>
+  },
+  {
     item: '7.', tier: 'header', version: versions['1.0'],
     pl: <span>Postanowienia końcowe</span>,
     en: <span>Final Provisions</span>
@@ -210,6 +240,11 @@ export const text = [
     item: '7.3.', tier: 'point', version: versions['1.0'],
     pl: <span>Niniejszy Regulamin obowiązuje od dnia 1 stycznia 2020 r.</span>,
     en: <span>These Terms of Service are applicable as of 1st January 2020.</span>
+  },
+  {
+    item: '', tier: 'point', version: versions['1.1'],
+    pl: <span>Od 15 lutego 2020 r.: "<i>Niniejszy Regulamin obowiązuje od dnia 15 lutego 2020 r.</i>"</span>,
+    en: <span>From 15 February 2020: "<i>These Terms of Service are applicable as of 15 February 2020.</i>"</span>
   },
   {
     item: '7.4.', tier: 'point', version: versions['1.0'],
