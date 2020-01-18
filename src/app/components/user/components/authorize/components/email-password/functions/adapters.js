@@ -22,7 +22,12 @@ export function logIn() {
     throw new Error('InvalidCredentials')
   })
   .then(json => {
-    this.props.changeData({ authorized: true, name: json.name, phoneVerified: json.phoneVerified })
+    this.props.changeData({
+      accountType: json.accountType,
+      authorized: true,
+      name: json.name,
+      phoneVerified: json.phoneVerified
+    })
     saveTokens.call(this, json.accessToken)
     this.props.changeApp({ showUserAuthorize: false })
   })

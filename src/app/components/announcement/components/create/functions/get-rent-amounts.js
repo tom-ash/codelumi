@@ -1,10 +1,10 @@
 import { apiUrl } from '../../../../../constants/urls'
 
 export function getRentAmounts() {
-  const { area, netRentAmount, changeData } = this.props
-  if (!area || !netRentAmount) return
+  const { category, area, netRentAmount, changeData } = this.props
+  if (!area || !netRentAmount || category === 2) return
 
-  const params = `?area=${area}&netRentAmount=${netRentAmount}`
+  const params = `?area=${area}&category=${category}&netRentAmount=${netRentAmount}`
   fetch(`${apiUrl}/calculate_rent_amounts${params}`, {
     headers: { 'Content-Type': 'application/json' }
   })
@@ -18,9 +18,9 @@ export function getRentAmounts() {
       grossRentAmountPerSqm
     } = json
     changeData({
-      rentNetPerSqm: netRentAmountPerSqm / 100,
-      rentGross: grossRentAmount / 100,
-      rentGrossPerSqm: grossRentAmountPerSqm / 100
+      netRentAmountPerSqm: netRentAmountPerSqm,
+      grossRentAmount: grossRentAmount,
+      grossRentAmountPerSqm: grossRentAmountPerSqm
     })
   })
 }

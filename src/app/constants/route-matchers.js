@@ -15,15 +15,15 @@ export const routeMatchers = {
 
   showAnnouncementIndexUser: {
     route: {
-      pl: 'dodane_ogloszenia',
-      en: 'added_announcements'
+      pl: 'dodane-ogloszenia',
+      en: 'added-announcements'
     },
     main: true
   },
   showAnnouncementShow: {
     route: {
-      pl: '\\d+',
-      en: '\\d+'
+      pl: '^(\\/\\d+)',
+      en: '^(\\/\\d+)'
     },
     main: true,
     announcementId: true
@@ -37,8 +37,8 @@ export const routeMatchers = {
   },
   showAnnouncementEdit: {
     route: {
-      pl: 'edytuj_ogloszenie',
-      en: 'edit_announcement'
+      pl: 'edytuj-ogloszenie',
+      en: 'edit-announcement'
     },
     main: true,
     announcementId: true

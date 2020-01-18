@@ -5,7 +5,6 @@ import { languageHandler, languageObjectHandler } from '../../../../../../functi
 import { items } from './constants/items'
 import { parseCurrency } from '../../../../functions/currency-parsers'
 import { parseAvailabilityDate } from './functions/parse-availability-date'
-import { rentPerSqmCounter } from '../../../../functions/rent-per-sqm-counter'
 import { floorParser } from '../../../../functions/floor-parser'
 import DataTile from '../../../index/components/tile/components/data-tile/data-tile'
 
@@ -13,7 +12,6 @@ class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {
     super(props)
     this.languageHandler = languageHandler.bind(this)
-    this.rentPerSqmCounter = rentPerSqmCounter.bind(this)
     this.parseAvailabilityDate = parseAvailabilityDate.bind(this)
     this.floorParser = floorParser.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
@@ -22,15 +20,23 @@ class AnnouncementCreatePrimary extends React.Component {
   classProvider(itemName) {
     switch (itemName) {
       case 'rent': return ' net'
-      case 'rentNetPerSqm': return ' net'
+      case 'netRentAmountPerSqm': return ' net'
       default: return ''
     }
   }
   
   render() {
     const {
-      area, rooms, netRentAmount, rentCurrency, grossRentAmount, netRentAmountPerSqm, grossRentAmountPerSqm, floor,
-      totalFloors, availabilityDate
+      area,
+      rooms,
+      rentCurrency,
+      netRentAmount,
+      netRentAmountPerSqm,
+      grossRentAmount,
+      grossRentAmountPerSqm,
+      floor,
+      totalFloors,
+      availabilityDate
     } = this.props
 
     const currency = parseCurrency(rentCurrency)
@@ -61,7 +67,7 @@ class AnnouncementCreatePrimary extends React.Component {
                 <div className='gross'>
                   <div className='inner'>
                     <div className='amount'>
-                      {grossRentAmount / 100} {currency}
+                      {grossRentAmount} {currency}
                     </div>
                     <div className='meta'>
                       {this.languageHandler('brutto / mc', 'gross / mo')}
@@ -80,7 +86,7 @@ class AnnouncementCreatePrimary extends React.Component {
               <div>
                 <div className='net'>
                   <div className='amount'>
-                    {netRentAmountPerSqm / 100} {currency} / {this.languageHandler('m2', 'sqm')}
+                    {netRentAmountPerSqm} {currency} / {this.languageHandler('m2', 'sqm')}
                   </div>
                   <div className='meta'>
                     {this.languageHandler('netto + VAT / mc', 'net + VAT / mo')}
@@ -89,7 +95,7 @@ class AnnouncementCreatePrimary extends React.Component {
                 <div className='gross'>
                   <div className='inner'>
                     <div className='amount'>
-                      {grossRentAmountPerSqm / 100} {currency} / {this.languageHandler('m2', 'sqm')}
+                      {grossRentAmountPerSqm} {currency} / {this.languageHandler('m2', 'sqm')}
                     </div>
                     <div className='meta'>
                       {this.languageHandler('brutto / mc', 'gross / mo')}

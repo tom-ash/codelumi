@@ -1,6 +1,10 @@
 import config from '../../../constants/config'
 
-export function businessNameVerifier(value) {
+export function accountTypeVerifier(value) {
+  return value !== ''
+}
+
+export function nameVerifier(value) {
   return value.length > 0
 }
 

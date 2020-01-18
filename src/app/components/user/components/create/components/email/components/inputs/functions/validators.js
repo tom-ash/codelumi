@@ -1,8 +1,16 @@
 import * as verifiers from '../../../../../../../functions/verifiers'
 
-export function businesstNameValidator(value) {
-  if (verifiers.businessNameVerifier(value)) return true
-  this.errorSetter('businessName')
+export function accountTypeValidator(value) {
+  if (verifiers.accountTypeVerifier(value)) return true
+
+  this.errorSetter('accountType')
+  return false
+}
+
+export function nameValidator(inputName, value) {
+  if (verifiers.nameVerifier(value)) return true
+
+  this.errorSetter(inputName)
   return false
 }
 

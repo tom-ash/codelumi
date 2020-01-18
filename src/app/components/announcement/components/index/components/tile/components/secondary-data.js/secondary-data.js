@@ -26,6 +26,7 @@ export default function SecondaryData(props) {
           icon='fas fa-coins'
           value={(
             <div>
+              {netRentAmount &&
               <div className='net'>
                 <div className='amount'>
                   {netRentAmount} {currency}
@@ -33,14 +34,14 @@ export default function SecondaryData(props) {
                 <div className='meta'>
                   {languageHandler('netto + VAT / mc', 'net + VAT / mo')}
                 </div>
-              </div>
+              </div>}
               <div className='gross'>
                 <div className='inner'>
                   <div className='amount'>
-                    {grossRentAmount / 100} {currency}
+                    {grossRentAmount} {currency} {!netRentAmount && languageHandler(' / mc', ' / mo')}
                   </div>
                   <div className='meta'>
-                    {languageHandler('brutto / mc', 'gross / mo')}
+                    {netRentAmount && languageHandler('brutto / mc', 'gross / mo')} 
                   </div>
                 </div>
               </div>
@@ -54,21 +55,22 @@ export default function SecondaryData(props) {
           icon='fas fa-coins'
           value={(
             <div>
+              {netRentAmountPerSqm &&
               <div className='net'>
                 <div className='amount'>
-                  {netRentAmountPerSqm / 100} {currency} / {languageHandler('m2', 'sqm')}
+                  {netRentAmountPerSqm} {currency} / {languageHandler('m2', 'sqm')}
                 </div>
                 <div className='meta'>
                   {languageHandler('netto + VAT / mc', 'net + VAT / mo')}
                 </div>
-              </div>
+              </div>}
               <div className='gross'>
                 <div className='inner'>
                   <div className='amount'>
-                    {grossRentAmountPerSqm / 100} {currency} / {languageHandler('m2', 'sqm')}
+                    {grossRentAmountPerSqm} {currency} / {languageHandler('m2', 'sqm')} {!netRentAmountPerSqm && languageHandler(' / mc', ' / mo')}
                   </div>
                   <div className='meta'>
-                    {languageHandler('brutto / mc', 'gross / mo')}
+                    {netRentAmountPerSqm && languageHandler('brutto / mc', 'gross / mo')}
                   </div>
                 </div>
               </div>

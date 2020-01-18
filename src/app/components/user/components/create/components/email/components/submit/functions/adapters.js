@@ -13,25 +13,41 @@ export function prepareUserAccount() {
 }
 
 function prepareUserObject() {
+  const { accountType } = this.props
+
   let userObject = {
-    businessName: document.getElementById('user-create-email-business-name').value,
+    accountType,
     phoneCode: document.getElementById('user-create-email-area-code').value,
     phone: document.getElementById('user-create-email-phone-number').value,
     email: document.getElementById('user-create-email-email-address').value.toLowerCase(),
     password: document.getElementById('user-create-email-password').value,
-    termsAndPrivacyConsent: document.getElementById('user-create-consents-terms-and-privacy').checked
+    termsAndPrivacyConsent: document.getElementById('user-create-consents-terms-and-privacy').checked,
+    ...accountType === 'private' ? {
+      firstName: document.getElementById('user-create-email-first-name').value,
+      lastName: document.getElementById('user-create-email-last-name').value,
+    } : {
+      businessName: document.getElementById('user-create-email-business-name').value,
+    }
   }
+
   return userObject
 }
 
 function validateUserObject(userObject) {
+  const { accountType } = this.props
+
   const validationArray = [
-    this.businesstNameValidator(userObject.businessName),
+    this.accountTypeValidator(userObject.accountType),
     this.phoneValidator(userObject.phone),
     this.emailValidator(userObject.email),
     this.passwordValidator(userObject.password),
-    this.termsAndPrivacyConsentValidator(userObject.termsAndPrivacyConsent)
+    this.termsAndPrivacyConsentValidator(userObject.termsAndPrivacyConsent),
+    ...accountType === 'private' ? [
+      this.nameValidator('firstName', userObject.firstName),
+      this.nameValidator('lastName', userObject.lastName)
+    ] : [ this.nameValidator('businessName', userObject.businessName) ]
   ]
+
   return validationArray.every((element => element))
 }
 

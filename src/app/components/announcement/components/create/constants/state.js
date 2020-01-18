@@ -32,6 +32,7 @@ export const inputs = {
   district: '',
   rentCurrency: '',
   netRentAmount: '',
+  grossRentAmount: '',
   area: '',
   rooms: '',
   availabilityDateSelect: '',
@@ -50,9 +51,9 @@ export const inputs = {
 }
 
 export const data = {
-  rentNetPerSqm: null,
-  rentGross: null,
-  rentGrossPerSqm: null
+  netRentAmountPerSqm: null,
+  grossRentAmount: null,
+  grossRentAmountPerSqm: null
 }
 
 export const errors = {

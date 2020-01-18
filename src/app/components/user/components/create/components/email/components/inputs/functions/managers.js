@@ -1,10 +1,93 @@
 import React from 'react'
 import { inputs } from '../../../../../../../constants/inputs'
 
+export function accountTypeManager() {
+  const { changeInputs } = this.props
+
+  const privateAccount = (
+    <div className='account-type'>
+      {this.languageObjectHandler({ pl: 'Osoba prywatna', en: 'Private Person' })} <i className="far fa-question-circle" />
+    </div>
+  )
+
+  const professionalAccount = (
+    <div className='account-type'>
+      {this.languageObjectHandler({ pl: 'Profesjonalne', en: 'Professional' })} <i className="far fa-question-circle" />
+    </div>
+  )
+
+  const { icon, label } = inputs.accountType
+
+  const { accountType } = this.props
+
+  return {
+    onFocusCoverZIndex: 3001,
+    id: 'user-create-email-account-type',
+    children: <i className={icon} />,
+    classNames: { container: 'form-input select'},
+    label: this.languageObjectHandler(label),
+    value: accountType,
+    options: [
+      { value: 'private', text: privateAccount },
+      { value: 'professional', text: professionalAccount }
+    ],
+    onBlur: () => this.accountTypeManager().validate(),
+    validate: () => this.accountTypeValidator(accountType),
+    onSelect: option => {
+      this.errorResetter('firstName')
+      this.errorResetter('lastName')
+      this.errorResetter('businessName')
+      this.errorResetter('accountType')
+      changeInputs({ accountType: option.value })
+    },
+    error: this.languageObjectHandler(this.props.accountTypeError)
+  }
+}
+
+export function firstNameManager() {
+  const { accountType } = this.props
+  const { icon, label } = inputs.firstName
+
+  return {
+    display: accountType === 'private' ? undefined : 'none',
+    id: 'user-create-email-first-name',
+    autoComplete: 'off',
+    controlled: false,
+    classNames: { container: 'form-input text'},
+    label: this.languageObjectHandler(label),
+    children: <i className={icon} />,
+    onFocus: () => this.errorResetter('firstName'),
+    onBlur: (value) => this.firstNameManager().validate(value),
+    validate: value => this.nameValidator('firstName', value),
+    error: this.languageObjectHandler(this.props.firstNameError)
+  }
+}
+
+export function lastNameManager() {
+  const { accountType } = this.props
+  const { icon, label } = inputs.lastName
+
+  return {
+    display: accountType === 'private' ? undefined : 'none',
+    id: 'user-create-email-last-name',
+    autoComplete: 'off',
+    controlled: false,
+    classNames: { container: 'form-input text'},
+    label: this.languageObjectHandler(label),
+    children: <i className={icon} />,
+    onFocus: () => this.errorResetter('lastName'),
+    onBlur: value => this.lastNameManager().validate(value),
+    validate: value => this.nameValidator('lastName', value),
+    error: this.languageObjectHandler(this.props.lastNameError)
+  }
+}
+
 export function businessNameManager() {
+  const { accountType } = this.props
   const { icon, label } = inputs.businessName
 
   return {
+    display: accountType === 'professional' ? undefined : 'none',
     id: 'user-create-email-business-name',
     autoComplete: 'off',
     controlled: false,
@@ -13,7 +96,7 @@ export function businessNameManager() {
     children: <i className={icon} />,
     onFocus: () => this.errorResetter('businessName'),
     onBlur: (value) => this.businessNameManager().validate(value),
-    validate: (value) => this.businesstNameValidator(value),
+    validate: (value) => this.nameValidator('businessName', value),
     error: this.languageObjectHandler(this.props.businessNameError)
   }
 }
@@ -36,7 +119,6 @@ export function phoneNumberManager() {
     label
   } = inputs.phone
 
-  const input = inputs.phone
   return {
     id: 'user-create-email-phone-number',
     autoComplete: 'off',

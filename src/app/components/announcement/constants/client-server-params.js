@@ -16,6 +16,10 @@ export const clientServerParams = [
     server: 'netRentAmount'
   },
   {
+    client: 'grossRentAmount',
+    server: 'grossRentAmount'
+  },
+  {
     client: 'area',
     server: 'area'
   },

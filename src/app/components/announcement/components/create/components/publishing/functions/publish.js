@@ -8,7 +8,7 @@ export function publish() {
     category: this.categoryManager().validate(),
     district: this.districtManager().validate(),
     rentCurrency: this.rentCurrencyManager().validate(),
-    netRentAmount: this.rentAmountManager().validate(),
+    rentAmount: this.rentAmountManager().validate(),
     area: this.areaManager().validate(),
     rooms: this.roomsManager().validate(),
     floor: this.floorManager().validate(),

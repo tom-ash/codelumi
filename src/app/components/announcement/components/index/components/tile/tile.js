@@ -15,19 +15,20 @@ import { closeTile } from './functions/close-tile'
 import { deepCopyAnnouncement } from './functions/deep-copy-announcement'
 import { phoneSwitchProvider } from '../../../../functions/phone-switch-provider'
 import { togglePhone } from '../../../../functions/toggle-phone'
-import { rentPerSqmCounter } from '../../../../functions/rent-per-sqm-counter'
 import { parseAvailabilityDate } from '../../../../functions/parse-availability-date'
 import WindmillSpinner from '../../../../../support/components/spinner/components/windmill/windmill'
 import { viewAnnouncement } from '../../../../functions/view-announcement'
 import { changeRoute } from '../../../../../../functions/routers'
 import { CloseButton } from '../../../../../support/components/close-button/close-button'
 import { floorParser } from '../../../../functions/floor-parser'
+import { parseCategory } from '../../../../functions/category-parsers'
 
 class AnnouncementIndexTile extends React.Component {
   constructor(props) {
     super(props)
     this.container = React.createRef()
     this.languageHandler = languageHandler.bind(this)
+    this.languageObjectHandler = languageObjectHandler.bind(this)
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.fetchPicture = fetchPicture.bind(this)
@@ -38,21 +39,33 @@ class AnnouncementIndexTile extends React.Component {
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
     this.rentCurrency = parseCurrency(this.props.announcement.rentCurrency)
     this.togglePhone = togglePhone.bind(this)
-    this.rentPerSqmCounter = rentPerSqmCounter.bind(this)
     this.parseAvailabilityDate = parseAvailabilityDate.bind(this)
     this.viewAnnouncement = viewAnnouncement.bind(this)
     this.SecondaryData = SecondaryData.bind(this)
     this.changeRoute = changeRoute.bind(this)
     this.floorParser = floorParser.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.parseCategory = parseCategory.bind(this)
   }
   
   render() {
     const { languageHandler, getPicture, changePicture, phoneSwitchProvider, parseAvailabilityDate } = this
     const { announcement, control, venue, isMobile } = this.props
     const {
-      id, category, district, showLoader, area, rentCurrency, netRentAmount, netRentAmountPerSqm,
-      grossRentAmount, grossRentAmountPerSqm, availabilityDate, rooms, floor, totalFloors
+      id,
+      category,
+      district,
+      showLoader,
+      area,
+      rentCurrency,
+      netRentAmount,
+      netRentAmountPerSqm,
+      grossRentAmount,
+      grossRentAmountPerSqm,
+      availabilityDate,
+      rooms,
+      floor,
+      totalFloors
     } = announcement
 
     if (!announcement.pictures) return null
@@ -65,6 +78,7 @@ class AnnouncementIndexTile extends React.Component {
         {showLoader &&
         <WindmillSpinner spinnerClass='windmill-medium-spinner'/>}
         <PrimaryData
+          languageHandler={languageHandler}
           venue={venue}
           isMobile={isMobile}
           id={id}
@@ -74,6 +88,9 @@ class AnnouncementIndexTile extends React.Component {
           parseDistrict={parseDistrict}
           area={area}
           rooms={rooms}
+          parseCategory={this.parseCategory}
+          district={district}
+          parseDistrict={parseDistrict}
         />
         <Picture
           announcementId={announcement.id}
@@ -82,7 +99,6 @@ class AnnouncementIndexTile extends React.Component {
           venue={venue}
           phoneSwitchProvider={phoneSwitchProvider}
           changePicture={changePicture}
-          
         />
         <SecondaryData
           venue={venue}

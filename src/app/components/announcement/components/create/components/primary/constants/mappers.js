@@ -7,6 +7,9 @@ export const mapStateToProps = (store) => {
     district: store.announcement.create.inputs.district,
     rentCurrency: store.announcement.create.inputs.rentCurrency,
     netRentAmount: store.announcement.create.inputs.netRentAmount,
+
+    grossRentAmount: store.announcement.create.inputs.grossRentAmount,
+
     area: store.announcement.create.inputs.area,
     rooms: store.announcement.create.inputs.rooms,
     floor: store.announcement.create.inputs.floor,

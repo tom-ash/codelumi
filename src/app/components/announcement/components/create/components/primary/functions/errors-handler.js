@@ -7,11 +7,12 @@ export function handleErrorOnSelect(input, value) {
   this.props.changeErrors({ [input]: errors[input] })
 }
 
-export function handleErrorOnValidate(input, value) {
-  const { changeErrors } = this.props
-  if (value !== '') return true
+export function handleErrorOnValidate(inputName) {
+  const { changeErrors, [inputName]: value } = this.props
 
-  changeErrors({ [input]: errors[input] })
+  if (value !== '' && value !== null && value !== undefined) return true
+
+  changeErrors({ [inputName]: errors[inputName] })
   return false
 }
 

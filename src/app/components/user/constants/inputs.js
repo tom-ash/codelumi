@@ -1,7 +1,19 @@
 export const inputs = {
+  accountType: {
+    icon: 'fas fa-user-friends',
+    label: { pl: 'Rodzaj konta', en: 'Account Type' }
+  },
+  firstName: {
+    icon: 'fas fa-user',
+    label: { pl: 'Imię', en: 'First name' }
+  },
+  lastName: {
+    icon: 'fas fa-user',
+    label: { pl: 'Nazwisko', en: 'Last name' }
+  },
   businessName: {
-    icon: 'fas fa-ellipsis-h',
-    label: { pl: 'Nazwa (firma) Ogłoszeniodawcy', en: 'Announcer Business Name' }
+    icon: 'fas fa-industry',
+    label: { pl: 'Nazwa (firma)', en: 'Business Name' }
   },
   taxNumber: {
     icon: 'fas fa-ellipsis-h',

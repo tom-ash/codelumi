@@ -1,13 +1,11 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { monit } from './constants/monit'
 import { ManagedText } from 'managed-inputs'
 import { ManagedButton } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { languageObjectHandler } from '../../../../../../../../functions/language-handler'
 
-class UserEditAccountBusinessName extends React.Component {
+class UserEditAttribute extends React.Component {
   constructor(props) {
     super(props)
     this.textManager = managers.textManager.bind(this)
@@ -28,4 +26,4 @@ class UserEditAccountBusinessName extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserEditAccountBusinessName)
+export default UserEditAttribute

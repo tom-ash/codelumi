@@ -6,7 +6,7 @@ import AnnouncementShowPrimary from './components/primary/primary'
 import AnnouncementShowMap from './components/map/map'
 import * as lifecycle from './functions/lifecycle'
 import { parseDistrict } from '../../functions/district-parsers'
-import { languageHandler } from '../../../../functions/language-handler'
+import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import AnnouncementShowFeaturesFurnishings from './components/features-furnishings/features-furnishings'
 import AnnouncementShowDescription from './components/description/description'
 import { phoneSwitchProvider } from '../../functions/phone-switch-provider'
@@ -16,21 +16,36 @@ import { changeRoute } from '../../../../functions/routers'
 import { viewAnnouncement } from '../../functions/view-announcement'
 import DataTile from '../index/components/tile/components/data-tile/data-tile'
 
+import { parseCategory } from '../../functions/category-parsers'
+
 class AnnouncementShow extends React.Component {
   constructor(props) {
     super(props)
     this.componentDidMount = lifecycle.componentDidMount
     this.componentWillUnmount = lifecycle.componentWillUnmount
     this.languageHandler = languageHandler.bind(this)
+    this.languageObjectHandler = languageObjectHandler.bind(this)
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
     this.togglePhone = togglePhone.bind(this)
     this.fixedPhoneHandler = fixedPhoneHandler.bind(this)
     this.changeRoute = changeRoute.bind(this)
     this.viewAnnouncement = viewAnnouncement.bind(this)
+    this.parseCategory = parseCategory.bind(this)
   }
 
   render() {
-    const { phone, venue, category, features, furnishings, descriptionPolish, descriptionEnglish, id, district } = this.props
+    const {
+      phone,
+      venue,
+      category,
+      features,
+      furnishings,
+      descriptionPolish,
+      descriptionEnglish,
+      id,
+      district
+    } = this.props
+
     return (
       <div id='announcement-show'>
         <div id='showcase' className='small-shadow'>
@@ -61,13 +76,13 @@ class AnnouncementShow extends React.Component {
             <DataTile classNames='area' icon='far fa-list-alt'
             value={(
               <strong>
-                {category === 0 ? this.languageHandler('Biuro', 'Office') : this.languageHandler('Lokal użytkowy', 'Usable Premises')}
+                {category !== null && this.parseCategory(category)}
               </strong>
             )}
             />
           </div>
           <div className='right-container district'>
-            <DataTile classNames='district' icon='fas fa-city' value={parseDistrict(district)} />
+            <DataTile classNames='district' icon='fas fa-map-marker-alt' value={parseDistrict(district)} />
           </div>
           <div className='float-clear' />
           <AnnouncementShowPictures />

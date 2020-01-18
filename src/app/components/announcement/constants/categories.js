@@ -18,5 +18,14 @@ export const categories = [
     icon: <i className='fas fa-cash-register' />,
     stringIcon: "<i class='fas fa-cash-register' />",
     pinClassName: 'usable-premises'
+  },
+  {
+    number: 2,
+    value: 2,
+    label: { pl: 'Mieszkanie', en: 'Apartment' },
+    url: { pl: 'mieszkanie', en: 'apartment' },
+    icon: <i className='fas fa-door-closed' />,
+    stringIcon: "<i class='fas fa-door-closed' />",
+    pinClassName: 'apartment'
   }
 ]

@@ -51,8 +51,18 @@ class AnnouncementCreateFeatures extends React.Component {
   
   render() {
     const { languageHandler } = this
-    const { connecting, showUserCreate, showUserAuthorize, showUserEditPhoneVerify, area, netRentAmount, rentCurrency,
-            rentNetPerSqm, rentGross, rentGrossPerSqm, publishing } = this.props
+    const {
+      showUserCreate,
+      showUserAuthorize,
+      showUserEditPhoneVerify,
+      area,
+      netRentAmount,
+      rentCurrency,
+      calculatedNetRentAmountPerSqm,
+      calculatedGrossRentAmount,
+      calculatedGrossRentAmountPerSqm,
+      publishing
+    } = this.props
     const parsedRentCurrency = this.parseCurrency(rentCurrency)
 
     return (
@@ -63,9 +73,9 @@ class AnnouncementCreateFeatures extends React.Component {
           rentCurrency={rentCurrency}
           parsedRentCurrency={parsedRentCurrency}
           netRentAmount={netRentAmount}
-          rentGross={rentGross}
-          rentNetPerSqm={rentNetPerSqm}
-          rentGrossPerSqm={rentGrossPerSqm}
+          calculatedNetRentAmountPerSqm={calculatedNetRentAmountPerSqm}
+          calculatedGrossRentAmount={calculatedGrossRentAmount}
+          calculatedGrossRentAmountPerSqm={calculatedGrossRentAmountPerSqm}
         />
         <ManagedButton {...this.buttonManager()} />
         {publishing && !showUserCreate && !showUserAuthorize && !showUserEditPhoneVerify && <PublishingCover />}

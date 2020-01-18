@@ -8,6 +8,7 @@ export const control = {
 }
 
 export const inputs = {
+  accountType: '',
   phoneCode: '+48',
   termsAndPrivacyConsent: false
 }
@@ -17,6 +18,9 @@ export const data = {
 }
 
 export const errors = {
+  accountType: noError,
+  firstName: noError,
+  lastName: noError,
   businessName: noError,
   taxNumber: noError,
   phone: noError,

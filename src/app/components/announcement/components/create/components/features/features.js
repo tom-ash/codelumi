@@ -5,12 +5,15 @@ import { languageHandler, languageObjectHandler } from '../../../../../../functi
 import { ManagedMultipleCheckbox } from 'managed-inputs'
 import { featuresManager } from './functions/managers'
 
+import { pickElementsForCategory } from '../../functions/pick-elements'
+
 class AnnouncementCreateFeatures extends React.Component {
   constructor(props) {
     super(props)
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.featuresManager = featuresManager.bind(this)
+    this.pickElementsForCategory = pickElementsForCategory.bind(this)
   }
   render() {
     return (

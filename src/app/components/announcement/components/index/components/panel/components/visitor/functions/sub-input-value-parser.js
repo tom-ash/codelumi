@@ -18,7 +18,7 @@ export function subInputValueParser(input) {
       parsedCurrency = ` ${parseCurrency(rentCurrency)}`
       value += parsedCurrency
     }
-    if (value !== '' && value.length !== parsedCurrency.length) value += this.languageHandler(' netto / mc', ' net / mo')
+    if (value !== '' && value.length !== parsedCurrency.length) value += this.languageHandler(' / mc', ' / mo')
   } else if (input == 'rooms') {
     if (value !== '') value += this.languageObjectHandler(roomsProvider(min, max))
   } else if (input == 'floor') {

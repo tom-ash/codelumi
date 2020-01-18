@@ -12,8 +12,8 @@ export function sendAnnouncementResponse(res, announcementId) {
   .then(json => {
     let clientParams = {}
     showClientServerParams.map(param => ( clientParams[param.client] = json[param.server] ))
-    clientParams.mapLatitude = json.latitude / 1000000
-    clientParams.mapLongitude = json.longitude / 1000000
+    clientParams.mapLatitude = json.latitude
+    clientParams.mapLongitude = json.longitude
     clientParams.name = json.name
     clientParams.features = json.features
     clientParams.furnishings = json.furnishings

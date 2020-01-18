@@ -22,17 +22,48 @@ export function getAnnouncement() {
   .then(json => {
     const { changeInputs } = this.props
     const {
-      id, category, district, rentCurrency, netRentAmount, area, rooms, floor, totalFloors, pictures,
-      features, furnishings, polishDescription, englishDescription, latitude, longitude, availabilityDate
+      id,
+      category,
+      district, 
+      rentCurrency,
+      netRentAmount,
+      grossRentAmount,
+      area,
+      rooms,
+      floor,
+      totalFloors,
+      pictures,
+      features,
+      furnishings,
+      polishDescription,
+      englishDescription, 
+      latitude,
+      longitude,
+      availabilityDate
     } = json
 
     setBlobs.call(this, id, pictures)
 
+    console.log(json)
+    console.log(grossRentAmount)
+
     let announcementInputs = {
-      id, category, district, rentCurrency, netRentAmount, area, rooms, floor, totalFloors,
-      features: parseFeatures(features), furnishings: parseFurnishings(furnishings),
-      descriptionPolish: polishDescription || '', descriptionEnglish: englishDescription || '',
-      mapLatitude: latitude / 1000000, mapLongitude: longitude / 1000000
+      id,
+      category,
+      district,
+      rentCurrency,
+      netRentAmount,
+      grossRentAmount,
+      area,
+      rooms,
+      floor,
+      totalFloors,
+      features: parseFeatures(features),
+      furnishings: parseFurnishings(furnishings),
+      descriptionPolish: polishDescription || '',
+      descriptionEnglish: englishDescription || '',
+      mapLatitude: latitude,
+      mapLongitude: longitude
     }
     changeInputs(appendAvailabilityDate(availabilityDate, announcementInputs))
   })

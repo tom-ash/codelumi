@@ -30,7 +30,7 @@ export const parameters = [
   },
   {
     state: 'rentMin',
-    api: 'min_netRentAmount',
+    api: 'minRent',
     pl: 'min_czynsz',
     en: 'min_rent',
     value: (value) => value,
@@ -38,7 +38,7 @@ export const parameters = [
   },
   {
     state: 'rentMax',
-    api: 'max_netRentAmount',
+    api: 'maxRent',
     pl: 'maks_czynsz',
     en: 'max_rent',
     value: (value) => value,

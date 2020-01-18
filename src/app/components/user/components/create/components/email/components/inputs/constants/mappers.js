@@ -1,20 +1,40 @@
 export const mapStateToProps = (store) => {
+  const {
+    accountType,
+    phoneCode
+  } = store.user.create.inputs
+
+  const {
+    accountType: accountTypeError,
+    firstName: firstNameError,
+    lastName: lastNameError,
+    businessName: businessNameError,
+    taxNumber: taxNumberError,
+    phone: phoneError,
+    email: emailError,
+    password: passwordError
+  } = store.user.create.errors
+  
   return {
     language: store.app.language,
-    phoneCode: store.user.create.inputs.phoneCode,
-    businessNameError: store.user.create.errors.businessName,
-    taxNumberError: store.user.create.errors.taxNumber,
-    phoneError: store.user.create.errors.phone,
-    emailError: store.user.create.errors.email,
-    passwordError: store.user.create.errors.password
+    accountType,
+    phoneCode,
+    accountTypeError,
+    firstNameError,
+    lastNameError,
+    businessNameError,
+    taxNumberError,
+    phoneError,
+    emailError,
+    passwordError
   }
 }
   
 export const mapDispatchToProps = (dispatch) => {
   return {
-    changeControl: (value) => dispatch({ type: 'user/create/control', value: value }),
-    changeInputs: (value) => dispatch({ type: 'user/create/inputs', value: value }),
-    changeErrors: (value) => dispatch({ type: 'user/create/errors', value: value })
+    changeControl: value => dispatch({ type: 'user/create/control', value: value }),
+    changeInputs: value => dispatch({ type: 'user/create/inputs', value: value }),
+    changeErrors: value => dispatch({ type: 'user/create/errors', value: value })
   }
 }
   

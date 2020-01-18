@@ -39,7 +39,7 @@ export function districtManager() {
     onFocusCoverZIndex: 10,
     label: this.labelProvider('district'),
     children: <React.Fragment>
-      <i className='icon fas fa-city' />
+      <i className='icon fas fa-map-marker-alt' />
       {value !== '' && <CloseButton classNames='index' onClick={() => {
         this.props.changeInputs({ district: '', offset: 0 })
         this.props.changeControl({ fetch: true })

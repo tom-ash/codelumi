@@ -21,12 +21,8 @@ export const requiredInputs = {
       en: 'select rent currency'
     }
   },
-  netRentAmount: {
-    id: 'announcement-create-rent-amount',
-    error: {
-      pl: 'podaj wysokość miesięcznego czynszu netto',
-      en: 'provide rent amount'
-    }
+  rentAmount: {
+    id: 'announcement-create-rent-amount'
   },
   area: {
     id: 'announcement-create-area',
@@ -90,7 +86,7 @@ export const requiredInputsArray = [
   'category',
   'district',
   'rentCurrency',
-  'netRentAmount',
+  'rentAmount',
   'area',
   'rooms',
   'floor',

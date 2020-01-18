@@ -1,4 +1,16 @@
 export const errors = {
+  accountType: {
+    pl: 'wybierz rodzaj konta',
+    en: 'select account type'
+  },
+  firstName: {
+    pl: 'imię nie może być puste',
+    en: 'first name name can\'t be blank'
+  },
+  lastName: {
+    pl: 'nazwisko nie może być puste',
+    en: 'last name name can\'t be blank'
+  },
   businessName: {
     pl: 'nazwa nie może być pusta',
     en: 'business name can\'t be blank'

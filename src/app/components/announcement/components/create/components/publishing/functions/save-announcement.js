@@ -39,8 +39,8 @@ function buildAnouncementParams() {
   serverParams.availabilityDate = handleAvailabilityDate.call(this)
   serverParams.features = buildElements.call(this, 'features')
   serverParams.furnishings = buildElements.call(this, 'furnishings')
-  serverParams.latitude = Math.round(this.props.mapLatitude * 1000000)
-  serverParams.longitude = Math.round(this.props.mapLongitude * 1000000)
+  serverParams.latitude = this.props.mapLatitude
+  serverParams.longitude = this.props.mapLongitude
   return serverParams
 }
 

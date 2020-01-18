@@ -18,7 +18,7 @@ export function listAnnouncementsManager() {
   return {
     id: 'user-show-account-list-announcements',
     classNames: { container: 'button'},
-    href: this.languageObjectHandler({ pl: `${origin}dodane_ogloszenia'`, en: `${origin}added_announcements'` }),
+    href: this.languageObjectHandler({ pl: `${origin}dodane-ogloszenia'`, en: `${origin}added-announcements'` }),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     label: this.labelProvider('fas fa-list-ul', 'Dodane ogłoszenia', 'Added announcements'),
     onClick: () => {

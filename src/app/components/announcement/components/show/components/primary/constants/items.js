@@ -16,16 +16,16 @@ export const items = [
   },
   {
     label: { pl: '', en: '' },
-    stateKey: 'rentGross'
+    stateKey: 'grossRentAmount'
   },
   {
     icon: inputs.rentCurrency.icon,
     label: { pl: 'Miesięczny czynsz / m2:', en: 'Monthly Rent / sqm' },
-    stateKey: 'rentNetPerSqm'
+    stateKey: 'netRentAmountPerSqm'
   },
   {
     label: { pl: '', en: '' },
-    stateKey: 'rentGrossPerSqm'
+    stateKey: 'grossRentAmountPerSqm'
   },
   {
     icon: inputs.rooms.icon,

@@ -1,4 +1,18 @@
 export function getDerivedStateFromProps(props, state) {
+  if (props.item === 'firstName') {
+    return {
+      item: 'firstName',
+      currentValue: props.firstNameCurrentValue,
+      stage: props.firstNameStage
+    }
+  }
+  if (props.item === 'lastName') {
+    return {
+      item: 'lastName',
+      currentValue: props.lastNameCurrentValue,
+      stage: props.lastNameStage
+    }
+  }
   if (props.item === 'businessName') {
     return {
       item: 'businessName',

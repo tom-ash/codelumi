@@ -5,17 +5,18 @@ export default function DerivedRents(props) {
     languageHandler,
     rentCurrency,
     parsedRentCurrency,
-    netRentAmount,
     area,
-    rentGross,
-    rentNetPerSqm,
-    rentGrossPerSqm
+    netRentAmount,
+    calculatedNetRentAmountPerSqm,
+    calculatedGrossRentAmount,
+    calculatedGrossRentAmountPerSqm
   } = props
 
   if (+area <= 0 ||
-      +netRentAmount <=0 ||
-      rentNetPerSqm === null ||
-      rentCurrency === null ||
+      +netRentAmount <= 0 ||
+      +calculatedNetRentAmountPerSqm <= 0 ||
+      +calculatedGrossRentAmount <= 0 ||
+      +calculatedGrossRentAmountPerSqm <= 0 ||
       rentCurrency === '') return null
 
   return (
@@ -47,19 +48,19 @@ export default function DerivedRents(props) {
       <div className='line'>
         <i className='fas fa-circle' />
         <div className='amount'>
-          {rentGross} {parsedRentCurrency} {languageHandler('brutto', 'gross')}
+          {calculatedGrossRentAmount} {parsedRentCurrency} {languageHandler('brutto', 'gross')}
         </div>
       </div>
       <div className='line'>
         <i className='fas fa-circle' />
         <div className='amount'>
-            {rentNetPerSqm} {parsedRentCurrency} {languageHandler('netto / m2', 'net / sqm')}
+            {calculatedNetRentAmountPerSqm} {parsedRentCurrency} {languageHandler('netto + VAT / m2', 'net + VAT  / sqm')}
         </div>
       </div>
       <div className='line'>
         <i className='fas fa-circle' />
         <div className='amount'>
-          {rentGrossPerSqm} {parsedRentCurrency} {languageHandler('brutto / m2', 'gross / sqm')}
+          {calculatedGrossRentAmountPerSqm} {parsedRentCurrency} {languageHandler('brutto / m2', 'gross / sqm')}
         </div>
       </div>
     </div>

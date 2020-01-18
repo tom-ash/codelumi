@@ -11,10 +11,32 @@ export const mapStateToProps = (store) => {
     taxNumberCurrentValue: store.user.edit.data.taxNumber,
     phonephoneCodeCurrentValue: store.user.edit.data.phoneCode,
     phoneBodyCurrentValue: store.user.edit.data.phoneBody,
-    emailCurrentValue: store.user.edit.data.email
+    emailCurrentValue: store.user.edit.data.email,
+
+
+
+    firstNameConnecting: store.user.edit.control.firstNameConnecting,
+    lastNameConnecting: store.user.edit.control.lastNameConnecting,
+    businessNameConnecting: store.user.edit.control.businessNameConnecting,
+
+    firstNameStage: store.user.edit.control.firstNameStage,
+    lastNameStage: store.user.edit.control.lastNameStage,
+    businessNameStage: store.user.edit.control.businessNameStage,
+
+    firstNameCurrentValue: store.user.edit.data.firstName,
+    lastNameCurrentValue: store.user.edit.data.lastName,
+    businessNameCurrentValue: store.user.edit.data.businessName,
+
+    firstNameError: store.user.edit.errors.firstName,
+    lastNameError: store.user.edit.errors.lastName,
+    businessNameError: store.user.edit.errors.businessName
+
+
+
+
   }
 }
-    
+
 export const mapDispatchToProps = (dispatch) => {
   return {
     changeDestroyControl: (value) => dispatch({ type: 'user/destroy/control', value: value }),

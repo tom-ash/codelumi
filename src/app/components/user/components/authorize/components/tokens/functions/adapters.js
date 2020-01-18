@@ -18,6 +18,7 @@ export function authorizeUserWithTokens() {
   })
   .then(json => {
     this.props.changeUserAuthorizeData({
+      accountType: json.accountType,
       authorized: true,
       name: json.name,
       phoneVerified: json.phoneVerified

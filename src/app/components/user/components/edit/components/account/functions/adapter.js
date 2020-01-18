@@ -14,10 +14,26 @@ export function getAccountData() {
     throw new Error('Network/Server Error')
   })
   .then(json => {
+    const {
+      firstName,
+      lastName,
+      businessName,
+      taxNumber,
+      phoneCode,
+      phoneBody,
+      email
+    } = json
+
     this.props.changeData({
-      businessName: json.businessName, taxNumber: json.taxNumber,
-      phoneCode: json.phoneCode, phoneBody: json.phoneBody, email:  json.email
+      firstName,
+      lastName,
+      businessName,
+      taxNumber,
+      phoneCode,
+      phoneBody,
+      email
     })
+
     this.props.changeInputs({ phoneCode: json.phoneCode })
   })
   .catch((error) => { console.dir(error) })

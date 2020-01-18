@@ -4,11 +4,15 @@ const noError = { pl: '', en: '' }
 
 const control = {
   connecting: false,
+  firstNameConnecting: false,
+  lastNameConnecting: false,
   businessNameConnecting: false,
   taxNumberConnecting: false,
   phoneConnecting: false,
   emailConnecting: false,
   passwordConnecting: false,
+  firstNameStage: null,
+  lastNameStage: null,
   businessNameStage: null,
   taxNumberStage: null,
   phoneStage: null,
@@ -26,6 +30,8 @@ const inputs = {
 
 const errors = {
   phoneVerification: noError,
+  firstName: noError,
+  lastName: noError,
   businessName: noError,
   taxNumber: noError,
   phone: noError,
@@ -37,6 +43,8 @@ const errors = {
 }
 
 const data = {
+  firstName: null,
+  lastName: null,
   businessName: null,
   taxNumber: null,
   phoneBody: null,

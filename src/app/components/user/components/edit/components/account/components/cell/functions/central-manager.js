@@ -1,10 +1,11 @@
 import React from 'react'
-import UserEditAccountBusinessName from '../../business-name/business-name'
+import UserEditAttribute from '../../attribute/attribute'
 import UserEditAccountTaxNumber from '../../tax-number/tax-number'
 import UserEditAccountPhoneNumber from '../../phone-number/phone-number'
 import UserEditAccountEmail from '../../email-address/email-address'
 import UserEditAccountPassword from '../../password/password'
 import UserDestroy from '../../../../../../destroy/destroy'
+import { inputs } from '../../../../../../../constants/inputs'
 
 export function centralManager(element) {
   switch (element) {
@@ -23,19 +24,28 @@ export function centralManager(element) {
 }
 
 function titleProvider() {
-  switch (this.state.item) {
-    case 'businessName': return 'BUSINESS NAME'
-    case 'taxNumber': return 'TAX IDENTIFICATION NUMBER'
-    case 'phone': return 'PHONE NUMBER'
-    case 'email': return 'EMAIL ADDRESS'
-    case 'password': return 'PASSWORD'
-    case 'destroy': return 'DELETE ACCOUNT'
+  const { item } = this.state
+
+  switch (item) {
+    case 'firstName': return this.languageObjectHandler({ pl: 'Imię', en: 'First Name' })
+    case 'lastName': return this.languageObjectHandler({ pl: 'Nazwisko', en: 'Last Name' })
+    case 'businessName': return this.languageObjectHandler({ pl: 'Nazwa (firma)', en: 'Business name' })
+    case 'businessName': return this.languageObjectHandler({ pl: 'Nazwa (firma)', en: 'Business name' })
+    case 'taxNumber': return this.languageObjectHandler({ pl: 'Numer identyfikacji podatkowej', en: 'Tax ID' })
+    case 'phone': return this.languageObjectHandler({ pl: 'Numer telefonu', en: 'Phone Number' })
+    case 'email': return this.languageObjectHandler({ pl: 'Adres email', en: 'Email Address' })
+    case 'password': return this.languageObjectHandler({ pl: 'Hasło', en: 'Password' })
+    case 'destroy': return this.languageObjectHandler({ pl: 'Usuwanie konta', en: 'Account Deletion' })
     default: break;
   }
 }
 
 function iconProvider() {
-  switch (this.state.item) {
+  const { item } = this.state
+  
+  switch (item) {
+    case 'firstName': return <i className="fas fa-user-edit"></i>
+    case 'lastName': return <i className="fas fa-user-edit"></i>
     case 'businessName': return <i className="fas fa-user-edit"></i>
     case 'taxNumber': return <i className="fas fa-file-alt"></i>
     case 'phone': return <i className="fas fa-mobile"></i>
@@ -47,20 +57,24 @@ function iconProvider() {
 }
 
 function currentValueProvider() {
-  if (this.state.item === 'phone') return this.state.phoneCode + ' ' + this.state.body
-  if (this.state.item === 'password') return <i className="far fa-eye-slash"></i>
-  return this.state.currentValue
+  const { item, currentValue, phoneCode, body } = this.state
+
+  if (item === 'phone') return phoneCode + ' ' + body
+  if (item === 'password') return <i className="far fa-eye-slash"></i>
+  return currentValue
 }
 
 function triggerClassProvider() {
-  if (this.state.item === 'destroy') {
-    switch (this.state.stage) {
+  const { item, stage } = this.state
+
+  if (item === 'destroy') {
+    switch (stage) {
       case null: return 'trigger destroy closed'
       case 'closed-after-open': return 'trigger destroy closed-after-open'
       default: return 'trigger destroy opened'
     }
   }
-  switch (this.state.stage) {
+  switch (stage) {
     case null: return 'trigger closed'
     case 'closed-after-open': return 'trigger closed-after-open'
     default: return 'trigger opened'
@@ -94,12 +108,12 @@ function triggerIconProvider() {
 }
 
 function triggerTextProvider() {
-  let triggerText = 'CHANGE'
+  let triggerText = this.languageObjectHandler({ pl: 'Zmień', en: 'Change' })
   if (this.state.item === 'destroy') {
-    triggerText = 'DELETE ACCOUNT'
+    triggerText = this.languageObjectHandler({ pl: 'Usuń konto', en: 'Delete Account' })
   }
   if (this.state.stage !== null && this.state.stage !== 'closed-after-open') {
-    triggerText = 'CANCEL'
+    triggerText = this.languageObjectHandler({ pl: 'Anuluj', en: 'Cancel' })
   }
   return triggerText
 }
@@ -130,9 +144,74 @@ function inputClassProvider() {
 
 function editInputProvider() {
   let component
+
+  const {
+    changeData,
+    changeErrors,
+    changeControl,
+    language,
+    firstNameConnecting,
+    lastNameConnecting,
+    businessNameConnecting,
+    firstNameCurrentValue,
+    lastNameCurrentValue,
+    businessNameCurrentValue,
+    firstNameError,
+    lastNameError,
+    businessNameError
+  } = this.props
+
   switch (this.state.item) {
+    case 'firstName':
+      component = <UserEditAttribute
+        language={language}
+        inputName='firstName'
+        id='user-edit-account-first-name-text'
+        api_suffix={'first_name'}
+        label={this.languageObjectHandler({ pl: 'Imię', en: 'First Name' })}
+        icon={inputs.firstName.icon}
+        currentValue={firstNameCurrentValue}
+        connecting={firstNameConnecting}
+        errorText={{ pl: 'Imię nie może być puste.', en: 'First Name can\'t be blank.' }}
+        error={firstNameError}
+        changeErrors={changeErrors}
+        changeControl={changeControl}
+        changeData={changeData}
+      />
+      break
+    case 'lastName':
+      component = <UserEditAttribute
+        language={language}
+        inputName='lastName'
+        id='user-edit-account-last-name-text'
+        api_suffix={'last_name'}
+        label={this.languageObjectHandler({ pl: 'Nazwisko', en: 'Last Name' })}
+        icon={inputs.lastName.icon}
+        currentValue={lastNameCurrentValue}
+        connecting={lastNameConnecting}
+        errorText={{ pl: 'Nazwisko nie może być puste.', en: 'Last Name can\'t be blank.' }}
+        error={lastNameError}
+        changeErrors={changeErrors}
+        changeControl={changeControl}
+        changeData={changeData}
+      />
+      break
     case 'businessName':
-      component = <UserEditAccountBusinessName />
+      component = <UserEditAttribute
+        language={language}
+        inputName='businessName'
+        id='user-edit-account-business-name-text'
+        api_suffix={'business_name'}
+        label={this.languageObjectHandler({ pl: 'Nazwa (firma)', en: 'Business Name' })}
+        icon={inputs.businessName.icon}
+        currentValue={businessNameCurrentValue}
+        connecting={businessNameConnecting}
+        errorText={{ pl: 'Nazwa (firma) nie może być puste.', en: 'Business Name can\'t be blank.' }}
+        error={businessNameError}
+        changeErrors={changeErrors}
+        changeControl={changeControl}
+        changeData={changeData}
+      />
       break
     case 'taxNumber':
       component =  <UserEditAccountTaxNumber />  

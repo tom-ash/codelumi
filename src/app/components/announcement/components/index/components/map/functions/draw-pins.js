@@ -62,7 +62,10 @@ function addNewPins() {
   let pins = []
   announcements.map(announcement => {
     pins.push(new window.pinCreator(
-      { latitude: announcement.latitude / 1000000, longitude: announcement.longitude / 1000000, },
+      {
+        latitude: announcement.latitude, 
+        longitude: announcement.longitude
+      },
       {
         pinId: `${announcement.id}`, htmlContent: categories[announcement.category].stringIcon,
         className: `pin ${categories[announcement.category].pinClassName}`,

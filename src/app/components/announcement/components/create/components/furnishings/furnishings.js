@@ -5,12 +5,15 @@ import { languageHandler, languageObjectHandler } from '../../../../../../functi
 import { ManagedMultipleCheckbox } from 'managed-inputs'
 import { furnishingsManager } from './functions/managers'
 
+import { pickElementsForCategory } from '../../functions/pick-elements'
+
 class AnnouncementCreateFurnishings extends React.Component {
   constructor(props) {
     super(props)
     this.languageHandler = languageHandler.bind(this)
     this.furnishingsManager = furnishingsManager.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.pickElementsForCategory = pickElementsForCategory.bind(this)
   }
 
   render() {

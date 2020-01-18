@@ -14,13 +14,23 @@ class UserEditAccount extends React.Component {
   }
 
   render() {
+    const { accountType } = this.props
+
     return (
       <div id='user-edit-account' className='container narrow-container shadowed'>
         <h2 className='page-header'>
           <i className='fas fa-cog' /> {this.languageHandler('Ustawienia', 'Settings')}
         </h2>
-        <UserEditAccountCell item='businessName' />
-        <UserEditAccountCell item='taxNumber' />
+        {accountType == 'private' ?
+        <React.Fragment>
+          <UserEditAccountCell key='firstName' item='firstName' />
+          <UserEditAccountCell key='lastName' item='lastName' />
+        </React.Fragment>
+        :
+        <React.Fragment>
+          <UserEditAccountCell key='businessName' item='businessName' />
+          <UserEditAccountCell key='taxNumber' item='taxNumber' />
+        </React.Fragment>}
         <UserEditAccountCell item='phone'/>
         <UserEditAccountCell item='email'/>
         <UserEditAccountCell item='password'/>

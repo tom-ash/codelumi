@@ -5,17 +5,59 @@ export const mapStateToProps = (store) => {
     showUserAuthorize,
     showUserEditPhoneVerify
   } = store.app
-  const { control, inputs, data, errors } = store.announcement.create
-  const { editing, connecting, success, publishing } = control
 
-  const { authorized, phoneVerified } = store.user.authorize.data
+  const {
+    authorized,
+    phoneVerified
+  } = store.user.authorize.data
 
-  const { rentNetPerSqm, rentGross, rentGrossPerSqm } = data
+  const {
+    control,
+    inputs,
+    data,
+    errors
+  } = store.announcement.create
+
+  const {
+    editing,
+    connecting,
+    success,
+    publishing
+  } = control
+
+  const {
+    id,
+    category,
+    district,
+    rentCurrency,
+    netRentAmount,
+    grossRentAmount,
+    area,
+    rooms,
+    floor,
+    totalFloors,
+    availabilityDateSelect,
+    availabilityDate,
+    pictureBlobs: blobs,
+    pictureUploads: uploads,
+    features,
+    furnishings,
+    descriptionPolish,
+    descriptionEnglish,
+    mapLatitude,
+    mapLongitude
+  } = inputs
+
+  const {
+    netRentAmountPerSqm: calculatedNetRentAmountPerSqm,
+    grossRentAmount: calculatedGrossRentAmount,
+    grossRentAmountPerSqm: calculatedGrossRentAmountPerSqm
+  } = data
 
   return {
-    rentNetPerSqm,
-    rentGross,
-    rentGrossPerSqm,
+    calculatedNetRentAmountPerSqm,
+    calculatedGrossRentAmount,
+    calculatedGrossRentAmountPerSqm,
     language,
     showUserCreate,
     showUserAuthorize,
@@ -26,27 +68,27 @@ export const mapStateToProps = (store) => {
     connecting,    
     success,
     publishing,
-    id: store.announcement.create.inputs.id,
-    category: store.announcement.create.inputs.category,
-    district: store.announcement.create.inputs.district,
-    rentCurrency: store.announcement.create.inputs.rentCurrency,
-    netRentAmount: store.announcement.create.inputs.netRentAmount,
-    area: store.announcement.create.inputs.area,
-    rooms: store.announcement.create.inputs.rooms,
-    floor: store.announcement.create.inputs.floor,
-    totalFloors: store.announcement.create.inputs.totalFloors,
-    availabilityDateSelect: store.announcement.create.inputs.availabilityDateSelect,
-    availabilityDate: store.announcement.create.inputs.availabilityDate,
-    blobs: store.announcement.create.inputs.pictureBlobs,
-    uploads: store.announcement.create.inputs.pictureUploads,
-    features: store.announcement.create.inputs.features,
-    furnishings: store.announcement.create.inputs.furnishings,
-    descriptionPolish: store.announcement.create.inputs.descriptionPolish,
-    descriptionEnglish: store.announcement.create.inputs.descriptionEnglish,
-    mapLatitude: store.announcement.create.inputs.mapLatitude,
-    mapLongitude: store.announcement.create.inputs.mapLongitude,
-    errors: store.announcement.create.errors,
-
+    id,
+    category,
+    district,
+    rentCurrency,
+    netRentAmount,
+    grossRentAmount,
+    area,
+    rooms,
+    floor,
+    totalFloors,
+    availabilityDateSelect,
+    availabilityDate,
+    blobs,
+    uploads,
+    features,
+    furnishings,
+    descriptionPolish,
+    descriptionEnglish,
+    mapLatitude,
+    mapLongitude,
+    errors
   }
 }
     

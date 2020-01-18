@@ -14,7 +14,10 @@ import { labelProvider } from '../../../../../../../../functions/providers/label
 class UserCreateEmailInputs extends React.Component {
   constructor(props) {
     super(props)
+    this.firstNameManager = managers.firstNameManager.bind(this)
+    this.lastNameManager = managers.lastNameManager.bind(this)
     this.businessNameManager = managers.businessNameManager.bind(this)
+    this.accountTypeManager = managers.accountTypeManager.bind(this)
     this.areaCodeManager = managers.areaCodeManager.bind(this)
     this.phoneNumberManager = managers.phoneNumberManager.bind(this)
     this.emailAddressManager = managers.emailAddressManager.bind(this)
@@ -23,7 +26,8 @@ class UserCreateEmailInputs extends React.Component {
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.errorSetter = errorSetter.bind(this)
     this.errorResetter = errorResetter.bind(this)
-    this.businesstNameValidator = validators.businesstNameValidator.bind(this)
+    this.accountTypeValidator = validators.accountTypeValidator.bind(this)
+    this.nameValidator = validators.nameValidator.bind(this)
     this.phoneValidator = validators.phoneValidator.bind(this)
     this.emailValidator = validators.emailValidator.bind(this)
     this.passwordValidator = validators.passwordValidator.bind(this)
@@ -33,6 +37,18 @@ class UserCreateEmailInputs extends React.Component {
   render() {
     return (
       <div className='user-create-email-inputs-container'>
+
+
+
+        <ManagedSelect {...this.accountTypeManager()}/>
+
+        <div className='first-name-and-surname'>
+          <ManagedText {...this.firstNameManager()}/>
+          <ManagedText {...this.lastNameManager()}/>
+        </div>
+
+
+
         <ManagedText {...this.businessNameManager()}/>
         <ManagedSelect {...this.areaCodeManager()}/>
         <ManagedText {...this.phoneNumberManager()}/>

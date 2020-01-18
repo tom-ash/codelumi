@@ -12,8 +12,12 @@ export const errors = {
     en: 'select rent currency'
   },
   netRentAmount: {
-    pl: 'podaj wysokość miesięcznego czynszu netto',
-    en: 'provide monthly net rent amount'
+    pl: 'Podaj wysokość miesięcznego czynszu netto.',
+    en: 'Provide monthly net rent amount.'
+  },
+  grossRentAmount: {
+    pl: 'Podaj wysokość miesięcznego czynszu.',
+    en: 'Provide monthly rent amount.'
   },
   area: {
     pl: 'podaj powierzchnię',

@@ -1,7 +1,17 @@
 export const mapStateToProps = (store) => {
+  const {
+    language
+  } = store.app
+  
+  const {
+    name,
+    accountType
+  } = store.user.authorize.data
+
   return {
-    language: store.app.language,
-    name: store.user.authorize.data.name
+    language,
+    name,
+    accountType
   }
 }
     

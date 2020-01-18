@@ -4,12 +4,12 @@ export const labels = {
     text: { pl: 'Kategoria najmu', en: 'Lease Category' }
   },
   district: {
-    icon: 'fas fa-city',
+    icon: 'fas fa-map-marker-alt',
     text: { pl: 'Dzielnica', en: 'District' }
   },
   rent: {
     icon: 'fas fa-coins',
-    text: { pl: 'Miesięczny czynsz netto', en: 'Monthly Net Rent' }
+    text: { pl: 'Miesięczny czynsz', en: 'Monthly Rent' }
   },
   rentCurrency: {
     icon: 'fas fa-coins',

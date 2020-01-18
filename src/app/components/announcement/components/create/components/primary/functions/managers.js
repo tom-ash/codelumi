@@ -12,17 +12,25 @@ export function categoryManager() {
     value: officeValue,
     label: officeLabel
   } = categories[0]
+
   const {
     value: usablePremisesValue,
     label: usablePremisesLabel
   } = categories[1]
+
+  const {
+    value: apartmentValue,
+    label: apartmentLabel
+  } = categories[2]
+
   const {
     category: { id }
   } = requiredInputs
   const {
-    category,
+    category: value,
     errors,
-    changeErrors
+    changeErrors,
+    changeInputs
   } = this.props
   const {
     icon,
@@ -35,18 +43,29 @@ export function categoryManager() {
   return {
     id,
     classNames: { container: 'form-input select' },
-    value: category,
+    value,
     label: this.languageObjectHandler(text),
     children: <i className={icon} />,
     options: [
       { value: '', text: '' },
+      { value: apartmentValue, text: this.languageObjectHandler(apartmentLabel) },
       { value: officeValue, text: this.languageObjectHandler(officeLabel) },
       { value: usablePremisesValue, text: this.languageObjectHandler(usablePremisesLabel) }
     ],
     onFocus: () => changeErrors({ category: noError }),
-    onSelect: (option) => this.onSelectHandler('category', option.value),
+    onSelect: (option) => {
+      this.onSelectHandler('category', option.value)
+
+      changeInputs({
+        netRentAmount: '',
+        netRentAmountPerSqm: '',
+        grossRentAmount: '',
+        grossRentAmountPerSqm: ''
+      })
+      
+    },
     onBlur: () => this.categoryManager().validate(),
-    validate: () => this.handleErrorOnValidate('category', category),
+    validate: () => this.handleErrorOnValidate('category', value),
     error: this.languageObjectHandler(categoryError)
   }
 }
@@ -102,21 +121,35 @@ export function rentAmountManager() {
     create: text
   } = inputs.rentHeight
 
+  const {
+    category,
+    errors,
+    changeInputs,
+    changeErrors
+  } = this.props
+
+  let label = this.languageObjectHandler(text)
+
+  if (category === 0 || category === 1) label = this.languageObjectHandler({ pl: 'Miesięczny czynsz netto', en: 'Monthly Net Rent'})
+  
+  const rentAmountType = category === 2 ? 'grossRentAmount' : 'netRentAmount'
+
   return {
-    id: requiredInputs.netRentAmount.id,
+    display: category === '' ? 'none' : 'block',
+    id: requiredInputs.rentAmount.id,
     classNames: { container: 'form-input text rent amount' },
-    value: this.props.netRentAmount,
+    value: this.props[rentAmountType],
     match: /^\d+$/,
-    label: this.languageObjectHandler(text),
+    label,
     children: <i className={icon} />,
-    onFocus: () => this.props.changeErrors({ netRentAmount: noError }),
-    onChange: (value) => this.props.changeInputs({ netRentAmount: value }),
+    onFocus: () => changeErrors({ [rentAmountType]: noError }),
+    onChange: (value) => changeInputs({ [rentAmountType]: value }),
     onBlur: () => {
       this.rentAmountManager().validate()
       this.getRentAmounts()
     },
-    validate: () => this.handleErrorOnValidate('netRentAmount', this.props.netRentAmount),
-    error: this.languageObjectHandler(this.props.errors.netRentAmount)
+    validate: () => this.handleErrorOnValidate(rentAmountType),
+    error: this.languageObjectHandler(errors[rentAmountType])
   }
 }
 
@@ -150,11 +183,18 @@ export function roomsManager() {
     create: text
   } = inputs.rooms
 
+  const { category } = this.props
+
+  let label = this.languageObjectHandler(text)
+
+  if (category === 2) label = this.languageObjectHandler({ pl: 'Liczba pokoi', en: 'Rooms Amount' })
+
   return {
+    display: category === '' ? 'none' : 'block',
     id: requiredInputs.rooms.id,
     classNames: { container: 'form-input select' },
     value: this.props.rooms,
-    label: this.languageObjectHandler(text),
+    label,
     children: <i className={icon} />,
     options: numberOptionsProvider(99),
     onFocus: () => this.props.changeErrors({ rooms: noError }),
