@@ -3,7 +3,7 @@ import { apiUrl } from '../../../../../../../constants/urls.js'
 import { saveTokens } from '../../../../../functions/token-handlers'
 
 export function logIn() {
-  const email = document.getElementById('user-logon-email-address').value
+  const email = document.getElementById('user-logon-email-address').value.toLowerCase()
   let password = document.getElementById('user-logon-password').value
   this.props.changeControl({ connecting: true })
   password = hashPassword(password, email)
