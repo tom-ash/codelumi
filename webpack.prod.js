@@ -45,9 +45,19 @@ var config = {
   plugins: [
     new CompressionPlugin(),
     new webpack.DefinePlugin({
-      'ENV': JSON.stringify('prod')
+      'APP_ENV': JSON.stringify(process.env.APP_ENV),
+      'API_URL': JSON.stringify(getApiUrl(process.env.APP_ENV))
     })
   ]
 };
+
+function getApiUrl(appEnv) {
+  switch (appEnv) {
+    case 'development': return 'http://localhost:3001'
+    case 'staging': return 'https://warsaw-lease-server-staging.herokuapp.com'
+    case 'production': return 'https://warsawleaseserver.herokuapp.com'
+    default: return ''
+  }
+}
 
 module.exports = config;

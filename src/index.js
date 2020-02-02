@@ -7,6 +7,6 @@ import App from './app/app'
 
 let store = createStore(rootReducer)
 
-if (ENV === 'dev') store.subscribe(() => console.log(store.getState()))
+if (['development', 'staging'].indexOf(APP_ENV) !== -1) store.subscribe(() => console.log(store.getState()))
 
 render(<Provider store={store}><App/></Provider>, window.document.getElementById("app"));
