@@ -1,12 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { languageHandler } from '../../../../../../functions/language-handler'
+import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import { items } from './constants/items'
 import { parseCurrency } from '../../../../functions/currency-parsers'
 import { parseAvailabilityDate } from './functions/parse-availability-date'
 import './styles/styles.scss'
 import { rentPerSqmCounter } from '../../../../functions/rent-per-sqm-counter'
+import { floorParser } from '../../../../functions/floor-parser'
 import DataTile from '../../../index/components/tile/components/data-tile/data-tile'
 
 class AnnouncementCreatePrimary extends React.Component {
@@ -15,6 +16,8 @@ class AnnouncementCreatePrimary extends React.Component {
     this.languageHandler = languageHandler.bind(this)
     this.rentPerSqmCounter = rentPerSqmCounter.bind(this)
     this.parseAvailabilityDate = parseAvailabilityDate.bind(this)
+    this.floorParser = floorParser.bind(this)
+    this.languageObjectHandler = languageObjectHandler.bind(this)
   }
 
   classProvider(itemName) {
@@ -103,7 +106,7 @@ class AnnouncementCreatePrimary extends React.Component {
           <DataTile
             classNames='floor'
             icon='fas fa-layer-group'
-            value={`${floor} ${this.languageHandler('piętro', 'floor')} (${this.languageHandler('z', 'of')} ${totalFloors})`}
+            value={`${this.floorParser(floor)} (${this.languageHandler('z', 'of')} ${totalFloors})`}
           />
         </div>
         <div className='right-container'>

@@ -11,6 +11,7 @@ import Calendar from 'react-calendar';
 import { parseDate } from '../../../../../../functions/date-parsers'
 import { labelProvider } from '../../../../../../functions/providers/label'
 import { getRentAmounts } from '../../functions/get-rent-amounts'
+import { floorsProvider } from './functions/floors-provider'
 import './styles/styles.scss'
 
 class AnnouncementCreatePrimary extends React.Component {
@@ -33,6 +34,7 @@ class AnnouncementCreatePrimary extends React.Component {
     this.availableDateManager = managers.availableDateManager.bind(this)
     this.labelProvider = labelProvider.bind(this)
     this.getRentAmounts = getRentAmounts.bind(this)
+    this.floorsProvider = floorsProvider.bind(this)
   }
   
   render() {

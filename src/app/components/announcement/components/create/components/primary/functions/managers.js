@@ -177,7 +177,7 @@ export function floorManager() {
     value: this.props.floor,
     label: this.languageObjectHandler(text),
     children: <i className={icon} />,
-    options: numberOptionsProvider(99),
+    options: this.floorsProvider(),
     onFocus: () => this.props.changeErrors({ floor: noError }),
     onSelect: (option) => this.onSelectHandler('floor', option.value),
     onBlur: () => this.floorManager().validate(),

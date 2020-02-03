@@ -81,7 +81,7 @@ export default function SecondaryData(props) {
         <DataTile
           classNames='floor'
           icon='fas fa-layer-group'
-          value={`${floor} ${languageHandler('piętro', 'floor')} (${languageHandler('z', 'of')} ${totalFloors})`}
+          value={`${floor} (${languageHandler('z', 'of')} ${totalFloors})`}
         />
       </div>
       <div className='data-container availability-date'>
