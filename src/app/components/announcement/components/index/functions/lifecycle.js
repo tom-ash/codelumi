@@ -1,4 +1,6 @@
 export function componentDidMount() {
+  if (typeof window === 'undefined') return
+  
   const { fetch, showUser } = this.props
 
   if (!showUser) {

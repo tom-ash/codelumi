@@ -6,7 +6,6 @@ import { text } from './constants/text'
 import Provision from '../provision/provision'
 import { pageHeaderProvider } from '../../../../../../functions/header-providers'
 import { CloseButton } from '../../../../../../components/support/components/close-button/close-button'
-import './styles/styles.scss'
 
 class VisitorTermsOfService extends React.Component {
   constructor(props) {

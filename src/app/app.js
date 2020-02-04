@@ -9,11 +9,13 @@ import Footer from './components/scaffold/components/footer/Footer'
 import * as lifecycle from './functions/lifecycle'
 import * as routers from './functions/routers'
 import { authorizeUserWithTokens } from './components/user/components/authorize/components/tokens/functions/adapters.js'
-import './styles/styles.scss'
 import { screenSizeHandler } from './functions/screen-size-handler'
 import { popStateHandler } from './functions/popStateHandler'
 import { languageObjectHandler } from './functions/language-handler'
 import { handlePathname } from './functions/routers'
+
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class App extends React.Component {
   constructor(props) {
@@ -57,4 +59,4 @@ class App extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(App))

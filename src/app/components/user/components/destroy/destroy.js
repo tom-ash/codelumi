@@ -10,7 +10,6 @@ import { deauthorizeUser } from '../authorize/functions/adapters'
 import { changeRoute } from '../../../../functions/routers'
 import * as managers from './functions/managers'
 import * as adapters from './functions/adapters'
-import './styles/styles.scss'
 
 class UserDestroy extends React.Component {
   constructor(props) {

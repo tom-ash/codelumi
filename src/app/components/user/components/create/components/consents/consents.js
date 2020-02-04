@@ -8,7 +8,6 @@ import { languageObjectHandler } from '../../../../../../functions/language-hand
 import * as mappers from './constants/mappers'
 import * as managers from './functions/managers'
 import { textProvider } from './functions/text-provider'
-import './styles/styles.scss'
 
 class UserCreateConsents extends React.Component {
   constructor(props) {

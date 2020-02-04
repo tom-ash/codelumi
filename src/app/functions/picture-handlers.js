@@ -1,5 +1,6 @@
-import ImageCompressor from 'image-compressor.js'
 import { apiUrl } from '../constants/urls'
+let ImageCompressor
+if (typeof window !== 'undefined') ImageCompressor = require('image-compressor.js').default
 
 export function compressAndSaveBlobPicture(destination, blob, callback) {
   fetch(blob)

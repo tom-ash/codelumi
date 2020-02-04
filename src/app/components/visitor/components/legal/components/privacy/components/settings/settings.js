@@ -7,7 +7,6 @@ import { statisticsConsentManager, marketingConsentManager } from './functions/m
 import { pageHeaderProvider } from '../../../../../../../../functions/header-providers'
 import { textsProvider } from './functions/texts-provider'
 import { CloseButton } from '../../../../../../../../components/support/components/close-button/close-button'
-import './styles/styles.scss'
 
 class VisitorPrivacySettings extends React.Component {
   constructor(props) {

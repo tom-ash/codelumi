@@ -4,7 +4,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { ManagedTextarea } from 'managed-inputs'
 import { polishManager, englishManager } from './functions/managers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
-import './styles/styles.scss'
 
 class AnnouncementCreateDescription extends React.Component {
   constructor(props) {

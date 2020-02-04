@@ -14,7 +14,6 @@ import { redirectToUserCreate } from '../create/functions/redirect-to-user-creat
 import { getAnnouncement } from './functions/get-announcement'
 import { sectionHeaderProvider } from '../../../../functions/providers/headers'
 import * as lifecycle from './functions/lifecycle'
-import './styles/styles.scss'
 
 class AnnouncementCreate extends React.Component {
   constructor(props) {

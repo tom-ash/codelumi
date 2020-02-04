@@ -4,7 +4,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
 import { languageHandler } from '../../../../../../functions/language-handler'
 import { googleMapHandler } from '../../../../functions/google-map-handler'
-import './styles/styles.scss'
 
 class AnnouncementCreateMap extends React.Component {
   constructor(props) {

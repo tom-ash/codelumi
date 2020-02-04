@@ -10,7 +10,6 @@ import { errorSetter } from '../../../../../../functions/error-setter'
 import { errorResetter } from './functions/error-resetter'
 import * as validators from './functions/validators'
 import { labelProvider } from '../../../../../../../../functions/providers/label'
-import './styles/styles.scss'
 
 class UserCreateEmailInputs extends React.Component {
   constructor(props) {

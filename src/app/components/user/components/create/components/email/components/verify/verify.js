@@ -7,7 +7,6 @@ import { verificationManager, buttonManager } from './functions/manager'
 import { verify } from './functions/adapter'
 import { monit } from './constants/monit'
 import { changeRoute } from '../../../../../../../../functions/routers'
-import './styles/styles.scss'
 
 class UserCreateEmailVerify extends React.Component {
   constructor(props) {

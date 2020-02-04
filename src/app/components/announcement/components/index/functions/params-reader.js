@@ -5,6 +5,8 @@ import { reverseParseCurrency } from '../../../functions/currency-parsers'
 import { inputs } from '../constants/state'
 
 export function paramsReader() {
+  if (typeof window === 'undefined') return
+  
   const { changeControl, changeInputs } = this.props
 
   let urlParams = window.location.search.replace('?', '').split('&')

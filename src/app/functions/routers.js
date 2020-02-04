@@ -3,6 +3,8 @@ import { routes } from '../constants/routes'
 import { routeMatchers } from '../constants/route-matchers'
 
 export function checkRoute() {
+  if (typeof window === 'undefined') return
+
   const { changeApp } = this.props
   const path = window.location.pathname
   const newRoutes = { showAnnouncementIndexVisitor: true }
@@ -53,6 +55,8 @@ export function handlePathname(prevProps) {
       }
     }
 
+    if (typeof window === 'undefined') return
+
     fullPathname = fullPathname.replace(/\/{2,}/, '/')
     fullPathname = fullPathname.replace(/\/$/, '')
     if (fullPathname === '') fullPathname = '/'
@@ -60,10 +64,7 @@ export function handlePathname(prevProps) {
     if (window.location.pathname !== fullPathname) {
       if (this.props.showAnnouncementIndexVisitor) fullPathname = fullPathname + window.location.search
 
-      const origin = window.location.origin
-      if (origin.indexOf('warsawlease.pl') !== -1 || origin.indexOf('localhost') !== -1) {
-        window.history.pushState({ path: fullPathname }, '', fullPathname)
-      }
+      window.history.pushState({ path: fullPathname }, '', fullPathname)
     }
   }
 }

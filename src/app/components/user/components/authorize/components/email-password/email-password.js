@@ -6,7 +6,6 @@ import { logIn } from './functions/adapters'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import { labelProvider } from '../../../../../../functions/providers/label'
-import './styles/styles.scss'
 
 class UserAuthorizeEmailPassword extends React.Component {
   constructor(props) {

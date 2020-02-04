@@ -5,7 +5,6 @@ import * as lifecycle from './functions/lifecycle'
 import { languageHandler } from '../../../../../../functions/language-handler'
 import { fetchPicture } from './functions/fetch-picture'
 import { changePicture } from './functions/change-picture'
-import './styles/styles.scss'
 
 class AnnouncementShowPictures extends React.Component {
   constructor(props) {

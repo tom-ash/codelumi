@@ -49,6 +49,8 @@ function appendAvailabilityDate(availabilityDate, announcementInputs) {
 }
 
 function setBlobs(id, pictures) {
+  if (typeof window === 'undefined') return
+  
   pictures.map((picture, index) => {
     fetch(`${apiUrl}/pictures`, {
       headers: { 'key': `announcements/${id}/${picture.database}`, 'Content-Type': 'application/json' }

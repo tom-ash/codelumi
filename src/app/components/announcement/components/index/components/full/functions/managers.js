@@ -1,4 +1,6 @@
 export function paginationManager() {
+  if (typeof window === 'undefined') return
+  
     const { connecting, offset, amount, changeControl } = this.props
     return {
       classNames: { container: 'pagination' },

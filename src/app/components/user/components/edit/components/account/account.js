@@ -4,7 +4,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { componentDidMount, componentWillUnmount } from './functions/lifecycle'
 import UserEditAccountCell from './components/cell/cell'
 import { languageHandler } from '../../../../../../functions/language-handler'
-import './styles/styles.scss'
 
 class UserEditAccount extends React.Component {
   constructor(props) {

@@ -6,7 +6,6 @@ import AnnouncementIndexTile from '../tile/tile'
 import { googleMapHandler } from '../../../../functions/google-map-handler'
 import { fetchTile } from './functions/fetch-tile'
 import { drawPins } from './functions/draw-pins'
-import './styles/styles.scss'
 
 class AnnouncementIndexSearchFull extends React.Component {
   constructor(props) {

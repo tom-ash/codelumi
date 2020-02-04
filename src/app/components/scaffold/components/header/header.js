@@ -6,7 +6,6 @@ import * as managers from './functions/managers'
 import { changeRoute } from '../../../../functions/routers'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import { labelProvider } from '../../../user/components/show/functions/label-provider'
-import './styles/styles.scss'
 
 class Header extends React.Component {
   constructor(props) {

@@ -14,12 +14,16 @@ export function componentDidUpdate(prevProps) {
 }
 
 export function componentWillUnmount() {
+  if (typeof window === 'undefined') return
+
   this.props.changeControl({ mapLoaded: false })
   removeGoogleMapListeners.call(this)
   if (window.marker) window.marker.setMap(null)
 }
 
 function placeMarker() {
+  if (typeof window === 'undefined') return
+  
   const map = window.googleMap
   if (!map) return
 

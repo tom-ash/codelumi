@@ -1,16 +1,15 @@
-import React, { lazy, Suspense } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { componentDidMount } from './functions/lifecycle'
 import { checkConsents } from './functions/check-consents'
 import VisitorPrivacyMonit from './components/legal/components/privacy/components/monit/monit'
-const VisitorAbout = lazy(() => import('./components/about/about'))
-const VisitorContact = lazy(() => import('./components/contact/contact'))
-const VisitorTermsOfService = lazy(() => import('./components/legal/components/terms-of-service/terms-of-service'))
-const VisitorCookiesPolicy = lazy(() => import('./components/legal/components/cookies/components/policy/policy'))
-const VisitorPrivacyPolicy = lazy(() => import('./components/legal/components/privacy/components/policy/policy'))
-const VisitorPrivacySettings = lazy(() => import('./components/legal/components/privacy/components/settings/settings'))
-import './styles/styles.scss'
+import VisitorAbout from './components/about/about'
+import VisitorContact from './components/contact/contact'
+import VisitorTermsOfService from './components/legal/components/terms-of-service/terms-of-service'
+import VisitorCookiesPolicy from './components/legal/components/cookies/components/policy/policy'
+import VisitorPrivacyPolicy from './components/legal/components/privacy/components/policy/policy'
+import VisitorPrivacySettings from './components/legal/components/privacy/components/settings/settings'
 
 class User extends React.Component {
   constructor(props) {
@@ -56,14 +55,12 @@ class User extends React.Component {
         <VisitorPrivacyMonit />}
         {this.show() &&
         <div className='darkened-cover' onClick={() => this.hide()}>
-          <Suspense fallback={null}>
-            {showAbout           && <VisitorAbout />}
-            {showContact         && <VisitorContact />}
-            {showTermsOfService  && <VisitorTermsOfService/>}
-            {showCookiesPolicy   && <VisitorCookiesPolicy />}
-            {showPrivacyPolicy   && <VisitorPrivacyPolicy/>}
-            {showPrivacySettings && <VisitorPrivacySettings/>}
-          </Suspense>
+          {showAbout           && <VisitorAbout />}
+          {showContact         && <VisitorContact />}
+          {showTermsOfService  && <VisitorTermsOfService/>}
+          {showCookiesPolicy   && <VisitorCookiesPolicy />}
+          {showPrivacyPolicy   && <VisitorPrivacyPolicy/>}
+          {showPrivacySettings && <VisitorPrivacySettings/>}
         </div>}
       </div>
     )

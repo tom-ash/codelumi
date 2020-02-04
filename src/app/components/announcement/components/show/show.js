@@ -15,7 +15,6 @@ import { fixedPhoneHandler } from './functions/fixed-phone-handler'
 import { changeRoute } from '../../../../functions/routers'
 import { viewAnnouncement } from '../../functions/view-announcement'
 import DataTile from '../index/components/tile/components/data-tile/data-tile'
-import './styles/styles.scss'
 
 class AnnouncementShow extends React.Component {
   constructor(props) {

@@ -4,7 +4,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import { ManagedMultipleCheckbox } from 'managed-inputs'
 import { furnishingsManager } from './functions/managers'
-import '../features/styles/styles.scss'
 
 class AnnouncementCreateFurnishings extends React.Component {
   constructor(props) {

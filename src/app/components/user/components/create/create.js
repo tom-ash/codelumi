@@ -6,7 +6,6 @@ import { changeRoute } from '../../../../functions/routers'
 import UserCreateEmail from './components/email/email'
 import { CloseButton } from '../../../../components/support/components/close-button/close-button'
 import * as lifecycle from './functions/lifecycle'
-import './styles/styles.scss'
 import { languageHandler } from '../../../../functions/language-handler'
 
 class UserCreate extends React.Component {

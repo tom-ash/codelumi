@@ -8,7 +8,6 @@ import { parseCategoryForUrl } from '../../../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../../../functions/district-parsers'
 import { parseCurrency } from '../../../../functions/currency-parsers'
 import { OffsetSwitcher } from '../offset-switcher/offset-switcher'
-import './styles/styles.scss'
 
 class AnnouncementIndexFull extends React.Component {
   constructor(props) {

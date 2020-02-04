@@ -40,13 +40,13 @@ export function paramsBuilder() {
       urlParams += this.languageObjectHandler(this[param.parser](value))
     }
   })
+  
+  if (typeof window === 'undefined') return
+
   if (urlParams.length == 1) urlParams = ''
   const fullPathname = window.location.pathname + urlParams
   
-  const origin = window.location.origin
-  if (origin.indexOf('warsawlease.pl') !== -1 || origin.indexOf('localhost') !== -1) {
-    if (window.location.search !== urlParams) {
-      window.history.pushState({ path: fullPathname }, '', fullPathname)
-    }
+  if (window.location.search !== urlParams) {
+    window.history.pushState({ path: fullPathname }, '', fullPathname)
   }
 }

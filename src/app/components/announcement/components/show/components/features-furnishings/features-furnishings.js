@@ -5,7 +5,6 @@ import { languageHandler } from '../../../../../../functions/language-handler'
 import { languageObjectHandler } from '../../../../../../functions/language-handler'
 import { features } from '../../../../constants/features'
 import { furnishings } from '../../../../constants/furnishings'
-import './styles/styles.scss'
 
 class AnnouncementShowFeaturesFurnishings extends React.Component {
   constructor(props) {

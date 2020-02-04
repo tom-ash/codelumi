@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler } from '../../../../../../functions/language-handler'
 import { languageObjectHandler } from '../../../../../../functions/language-handler'
-import './styles/styles.scss'
 
 class AnnouncementShowDescription extends React.Component {
   constructor(props) {

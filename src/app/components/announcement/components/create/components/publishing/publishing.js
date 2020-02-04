@@ -19,7 +19,6 @@ import { parseCurrency } from '../../../../functions/currency-parsers'
 import DerivedRents from './components/derived-rents/derived-rents'
 import { changeRoute } from '../../../../../../functions/routers'
 import { floorsProvider } from '../primary/functions/floors-provider'
-import './styles/styles.scss'
 
 class AnnouncementCreateFeatures extends React.Component {
   constructor(props) {

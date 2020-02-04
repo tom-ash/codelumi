@@ -5,7 +5,6 @@ import { changeRoute } from '../../../../functions/routers'
 import * as managers from './functions/managers'
 import { ManagedLink } from 'managed-inputs'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
-import './styles/styles.scss'
 
 class Footer extends React.Component {
   constructor(props) {

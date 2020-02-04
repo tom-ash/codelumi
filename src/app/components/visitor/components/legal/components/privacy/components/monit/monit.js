@@ -7,7 +7,6 @@ import { agreeManager, settingsManager } from './functions/manager'
 import { languageManager } from '../../../../../../../scaffold/components/header/functions/managers'
 import { textsProvider } from './functions/texts-provider'
 import { changeRoute } from '../../../../../../../../functions/routers'
-import './styles/styles.scss'
 
 class VisitorPrivacyMonit extends React.Component {
   constructor(props) {

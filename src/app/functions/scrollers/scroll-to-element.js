@@ -1,6 +1,8 @@
 import { findScrollingElement } from './find-scrolling-element'
 
 export function scrollToElement(element, speed, translation = 0, callback) {
+  if (typeof window === 'undefined') return
+  
   speed = speed || 42
   const scrollingElement = findScrollingElement()
   let direction = 'up'

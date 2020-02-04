@@ -4,7 +4,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { pageHeaderProvider } from '../../../../functions/providers/headers'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import { CloseButton } from '../../../../components/support/components/close-button/close-button'
-import './styles/styles.scss'
 
 class Footer extends React.Component {
   constructor(props) {

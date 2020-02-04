@@ -1,6 +1,8 @@
 import { apiUrl } from '../../../constants/urls'
 
 export function togglePhone(e, showVenue, call) {
+  if (typeof window === 'undefined') return
+  
   e.stopPropagation()
   const phone = showVenue ? this.props.phone : this.props.announcement.phone
   if (phone && phone.length > 8) return

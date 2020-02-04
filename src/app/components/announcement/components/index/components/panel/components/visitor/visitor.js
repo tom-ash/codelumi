@@ -18,7 +18,6 @@ import {
 } from './functions/managerProviders'
 import { compositeInputProvider } from './functions/composite-input-provider'
 import { parseCurrency } from '../../../../../../functions/currency-parsers'
-import './styles/styles.scss'
 import { ManagedSelect, ManagedButton } from 'managed-inputs'
 
 class AnnouncementIndexPanelVisitor extends React.Component {

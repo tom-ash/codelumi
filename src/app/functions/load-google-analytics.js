@@ -1,6 +1,8 @@
 import { loadScript } from './load-script'
 
 export function loadGoogleAnalytics() {
+  if (typeof window === 'undefined') return
+  
   const { changeApp, scripts } = this.props
 
   changeApp({ scripts: { ...scripts, googleAnalyticsLoading: true } })

@@ -7,12 +7,11 @@ import * as managers from './functions/managers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import { handleErrorOnSelect, handleErrorOnValidate } from './functions/errors-handler'
 import { onSelectHandler } from './functions/on-select-handler'
-import Calendar from 'react-calendar';
+import Calendar from 'react-calendar/dist/entry.nostyle'
 import { parseDate } from '../../../../../../functions/date-parsers'
 import { labelProvider } from '../../../../../../functions/providers/label'
 import { getRentAmounts } from '../../functions/get-rent-amounts'
 import { floorsProvider } from './functions/floors-provider'
-import './styles/styles.scss'
 
 class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {

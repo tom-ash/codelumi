@@ -10,7 +10,6 @@ import { movePicture } from './functions/move-picture'
 import { requiredInputs } from '../../constants/required-inputs'
 import { sectionHeaderProvider } from '../../../../../../functions/providers/headers'
 import { pictureClassProvider } from './functions/picture-class-provider'
-import './styles/styles.scss'
 
 class AnnouncementCreatePictures extends React.Component {
   constructor(props) {

@@ -4,7 +4,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { centralManager } from './functions/central-manager'
 import { initialReducerState } from '../../constants/initial-reducer-state'
 import * as lifecycle from './functions/lifecycle'
-import './styles/styles.scss'
 
 class UserEditAccountCell extends React.Component {
   constructor(props) {

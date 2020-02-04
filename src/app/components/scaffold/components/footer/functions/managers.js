@@ -1,4 +1,4 @@
-const origin = `${window.location.origin}/`
+const origin = ''//`${window.location.origin}/`
 
 export function aboutManager() {
   const { changeApp } = this.props

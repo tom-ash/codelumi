@@ -4,7 +4,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import { ManagedMultipleCheckbox } from 'managed-inputs'
 import { featuresManager } from './functions/managers'
-import './styles/styles.scss'
 
 class AnnouncementCreateFeatures extends React.Component {
   constructor(props) {

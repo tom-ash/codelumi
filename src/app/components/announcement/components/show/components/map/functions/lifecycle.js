@@ -5,6 +5,8 @@ export function componentDidMount() {
 }
 
 export function componentDidUpdate() {
+  if (typeof window === 'undefined') return
+  
   const { changeControl, mapLoaded, mapLoading, markerLoaded, latitude: lat, longitude: lng} = this.props
 
   if (!mapLoaded && !mapLoading) {

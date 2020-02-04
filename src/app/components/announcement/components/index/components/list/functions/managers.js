@@ -1,4 +1,6 @@
 export function paginationManager() {
+  if (typeof window === 'undefined') return
+  
   const { offset, amount, connecting, changeControl, changeInputs } = this.props
   const resultsPerPage = 10
 

@@ -1,7 +1,12 @@
-const oc = document.createElement('canvas')
-const octx = oc.getContext('2d')
+let oc
+let octx
+
+if (typeof document !== 'undefined') oc = document.createElement('canvas')
+if (typeof document !== 'undefined') octx = oc.getContext('2d')
 
 export function addPicture(files) {
+  if (typeof window === 'undefined') return
+  
   this.props.changeControl({ addingPicture: true })
   createBlob(window.URL.createObjectURL(files.pop()), (blob) => {
     this.props.changeInputs({

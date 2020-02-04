@@ -4,7 +4,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler } from '../../../../functions/language-handler'
 import UserAuthorizeEmailTrack from './components/email-password/email-password'
 import { CloseButton } from '../../../../components/support/components/close-button/close-button'
-import './styles/styles.scss'
 
 class UserAuthorize extends React.Component {
   constructor(props) {

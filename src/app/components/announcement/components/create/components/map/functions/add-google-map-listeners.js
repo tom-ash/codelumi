@@ -1,4 +1,6 @@
 export function addGoogleMapListeners() {
+  if (typeof window === 'undefined') return
+  
   const map = window.googleMap
   google.maps.event.addListener(map, 'click', function(event) {
     this.props.changeInputs({ mapLatitude: event.latLng.lat(), mapLongitude: event.latLng.lng()} )

@@ -4,6 +4,8 @@ import { getCookieValue } from './cookie-handlers'
 import { loadGoogleAnalytics } from './load-google-analytics'
 
 export function componentDidMount() {
+  if (typeof window === 'undefined') return
+  
   const { changeApp } = this.props
 
   if (isMobile()) changeApp({ isMobile: true })

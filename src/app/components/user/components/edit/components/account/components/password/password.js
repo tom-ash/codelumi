@@ -9,7 +9,6 @@ import { monitProvider } from './functions/monit-provider'
 import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import { labelProvider } from '../../../../../../../../functions/providers/label'
 import { CloseButton } from '../../../../../../../../components/support/components/close-button/close-button'
-import './styles/styles.scss'
 
 class UserEditAccountPassword extends React.Component {
   constructor(props) {

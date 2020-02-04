@@ -6,7 +6,6 @@ import UserCreateSubmit from './components/submit/submit'
 import UserCreateConnecting from '../connecting/connecting'
 import UserCreateEmailVerify from './components/verify/verify'
 import * as mappers from './constants/mappers'
-import './styles/styles.scss'
 
 class UserCreateEmail extends React.Component {
   render() {

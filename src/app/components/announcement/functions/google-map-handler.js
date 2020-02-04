@@ -1,4 +1,6 @@
 export function googleMapHandler(callback, options) {
+  if (typeof window === 'undefined') return
+
   if (this.props.mapLoaded) return
   if (this.props.scripts.googleMaps && window.googleMap) return replaceGoogleMap.call(this, callback, options)
   if (!this.props.scripts.googleMaps || window.googleMap) return
@@ -10,6 +12,8 @@ export function googleMapHandler(callback, options) {
 }
 
 export function replaceGoogleMap(callback, options) {
+  if (typeof window === 'undefined') return
+  
   const googleMapContainer = document.getElementById('google-map-container')
   if (!googleMapContainer) return
   const map = window.googleMap

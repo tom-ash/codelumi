@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import AnnouncementIndexPanelVisitor from './components/visitor/visitor'
 import AnnouncementIndexPanelUser from './components/user/user'
-import './styles/styles.scss'
-
 
 class AnnouncementIndexPanel extends React.Component {
   constructor(props) {

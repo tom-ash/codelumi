@@ -1,4 +1,6 @@
 export function screenSizeHandler() {
+  if (typeof window === 'undefined') return
+  
   const { changeApp } = this.props
   const width = window.innerWidth
 

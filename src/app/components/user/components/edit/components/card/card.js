@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import './styles/styles.scss'
 
 class UserEditCard extends React.Component {
   constructor(props) {

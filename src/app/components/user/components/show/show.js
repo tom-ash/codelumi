@@ -7,7 +7,6 @@ import { languageHandler, languageObjectHandler } from '../../../../functions/la
 import * as managers from './functions/managers'
 import { labelProvider } from './functions/label-provider'
 import { changeRoute } from '../../../../functions/routers'
-import './styles/styles.scss'
 
 class UserShow extends React.Component {
   constructor(props) {

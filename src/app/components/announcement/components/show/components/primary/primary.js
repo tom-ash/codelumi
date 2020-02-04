@@ -5,7 +5,6 @@ import { languageHandler, languageObjectHandler } from '../../../../../../functi
 import { items } from './constants/items'
 import { parseCurrency } from '../../../../functions/currency-parsers'
 import { parseAvailabilityDate } from './functions/parse-availability-date'
-import './styles/styles.scss'
 import { rentPerSqmCounter } from '../../../../functions/rent-per-sqm-counter'
 import { floorParser } from '../../../../functions/floor-parser'
 import DataTile from '../../../index/components/tile/components/data-tile/data-tile'

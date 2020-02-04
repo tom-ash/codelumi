@@ -4,7 +4,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import * as managers from './functions/managers'
 import { ManagedSelect, ManagedMultipleCheckbox } from 'managed-inputs'
-import './styles/styles.scss'
 
 class AnnouncementIndexPanelUser extends React.Component {
   constructor(props) {

@@ -7,7 +7,6 @@ import { verificationManager, buttonManager } from './functions/managers'
 import { startVerification, sendVerification } from './functions/adapters'
 import { monits } from './constants/monits'
 import { componentDidMount } from './functions/lifecycle'
-import './styles/styles.scss'
 
 class UserEditPhoneVerify extends React.Component {
   constructor(props) {

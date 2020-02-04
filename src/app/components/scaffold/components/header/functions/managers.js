@@ -1,7 +1,7 @@
 import React from 'react'
 import { saveCookie } from '../../../../../functions/cookie-handlers'
 
-const origin = `${window.location.origin}/`
+const origin = ''//`${window.location.origin}/`
 
 export function titleManager() {
   const {
@@ -12,7 +12,7 @@ export function titleManager() {
 
   return {
     classNames: { container: '' },
-    href: window.location.origin,
+    href: '',//window.location.origin,
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: 'warsawlease.pl',
     label: (
