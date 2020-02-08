@@ -1,7 +1,7 @@
 import React from 'react'
 import { saveCookie } from '../../../../../functions/cookie-handlers'
 
-const origin = ''//`${window.location.origin}/`
+const origin = `${CLIENT_URL}/`
 
 export function titleManager() {
   const {
@@ -12,7 +12,7 @@ export function titleManager() {
 
   return {
     classNames: { container: '' },
-    href: '',//window.location.origin,
+    href: CLIENT_URL,
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: 'warsawlease.pl',
     label: (
@@ -37,7 +37,7 @@ export function titleManager() {
 export function addAnnouncementManager() {
   return {
     classNames: { container: 'header-link' },
-    href: this.languageObjectHandler({ pl: `${origin}dodaj_ogloszenie'`, en: `${origin}add_announcement'` }),
+    href: this.languageObjectHandler({ pl: `${origin}dodaj_ogloszenie`, en: `${origin}add_announcement` }),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Dodaj ogłoszenie', en: 'Add Announcement' }),
     label: <strong>{this.labelProvider('fas fa-plus', 'Dodaj bezpłatne ogłoszenie', 'Add Free Announcement')}</strong>,
@@ -54,7 +54,7 @@ export function signUpManager() {
   return {
     display: name && 'none',
     classNames: { container: 'header-link' },
-    href: this.languageObjectHandler({ pl: `${origin}zarejestruj'`, en: `${origin}sign_up'` }),
+    href: this.languageObjectHandler({ pl: `${origin}zarejestruj`, en: `${origin}sign_up` }),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Zarejestruj', en: 'Sign Up' }),
     label: this.labelProvider('fas fa-user-plus', 'Zarejestruj', 'Sign Up'),
@@ -73,7 +73,7 @@ export function signInManager() {
   return {
     display: name && 'none',
     classNames: { container: 'header-link sign-in' },
-    href: this.languageObjectHandler({ pl: `${origin}zaloguj'`, en: `${origin}sign_in'` }),
+    href: this.languageObjectHandler({ pl: `${origin}zaloguj`, en: `${origin}sign_in` }),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Zaloguj', en: 'Sign In' }),
     label: this.labelProvider('fas fa-sign-in-alt', 'Zaloguj', 'Sign In'),

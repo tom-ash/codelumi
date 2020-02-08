@@ -1,6 +1,6 @@
 import { deauthorizeUser } from '../../authorize/functions/adapters'
 
-const origin = ''//`${window.location.origin}/`
+const origin = `${CLIENT_URL}/`
 
 export function addAnnouncementManager() {
   return {

@@ -80,10 +80,7 @@ function renderFullPage(html, preloadedState) {
       <body>
         ${html}
         <script>
-          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
-            /</g,
-            '\\u003c'
-          )}
+          window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
         </script>
         <script type="text/javascript" src="/bundle.js"></script>
       </body>
@@ -92,5 +89,3 @@ function renderFullPage(html, preloadedState) {
 }
 
 app.listen(process.env.PORT || 8080)
-
-// <script type="text/javascript" src="/bundle.js"></script>
