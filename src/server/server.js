@@ -74,7 +74,9 @@ function renderFullPage(html, preloadedState) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <title>Redux Universal Example</title>
+        <title>warsawlease.pl</title>
+        <meta name="description" content="Dwujęzyczna baza ogłoszeń wynajmu warszawskich biur oraz lokali użytkowych. A bilingual database of lease announcements regarding Warsaw offices and usable premises.">
+        <meta name="keywords" content="wynajem, najem, biura, biuro, lokale użytkowe, lokal użytkowy, Warszawa, mapa, lease, offices, office, usable premises, Warsaw, map">
         <style type="text/css">${[...css].join('')}</style>
       </head>
       <body>
