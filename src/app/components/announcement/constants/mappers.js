@@ -6,7 +6,7 @@ export const mapStateToProps = (store) => {
     showAnnouncementEdit: showEdit,
     showAnnouncementShow: showShow,
     announcementId,
-    showAnnouncementIndexVisitor: showVisitor,
+    showAnnouncementIndexVisitorMap: showVisitor,
     showAnnouncementIndexUser: showUser
   } = store.app
   

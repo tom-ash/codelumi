@@ -21,12 +21,12 @@ class AnnouncementIndexFull extends React.Component {
   }
 
   render() {
-    const { changeControl, changeInputs, offset, amount, type, announcements } = this.props
+    const { changeControl, changeInputs, offset, amount, showAnnouncementIndexVisitorList, announcements } = this.props
 
     return (
       <div id='announcement-index-full'>
         {
-        type === 'full' &&
+        showAnnouncementIndexVisitorList &&
         <div>
           <div id='announcement-index-full-scroll-anchor' />
           <div className='announcements'>

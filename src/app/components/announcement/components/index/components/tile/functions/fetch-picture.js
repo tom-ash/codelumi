@@ -1,6 +1,8 @@
 import { apiUrl } from '../../../../../../../constants/urls'
 
 export function fetchPicture() {
+  if (typeof window === 'undefined') return
+  
   const { changeAnnouncement } = this.props
   const announcement = { ...this.props.announcement }
   changeAnnouncement(superDeepCopyAnnouncement.call(this))

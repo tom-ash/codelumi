@@ -8,9 +8,18 @@ export default function Picture(props) {
   return (
     <div
       style={{ backgroundImage: getPicture() }}
-      onClick={() => changeRoute({ showAnnouncementShow: true, announcementId })}
       className={`picture ${venue}`}
     >
+      <a 
+        className='link'
+        href={`${CLIENT_URL}/${announcementId}`}
+        onClick={e => {
+          e.preventDefault()
+          changeRoute({ showAnnouncementShow: true, announcementId })
+        }}
+      >
+
+      </a>
       {phoneSwitchProvider()}
       <div
         className='arrow left'
@@ -28,10 +37,8 @@ export default function Picture(props) {
           <i className='fas fa-chevron-right' />
         </div>
       </div>
-      {/* <div className='calendar'>
-        <i className='fas fa-calendar-alt'/>
-        {parseAvailabilityDate(availabilityDate)}
-      </div> */}
+
+
     </div>
   )
 }

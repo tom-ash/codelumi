@@ -1,3 +1,56 @@
+export function shouldLoadMap() {
+  const { loadMap } = this.props
+
+  if (loadMap) return false
+  if (typeof window === 'undefined') return false
+
+  const { googleMaps: googleMapScript } = this.props.scripts
+
+  if (!googleMapScript) return false
+  if (!document.getElementById('google-map')) return false
+
+  return true
+}
+
+export function loadGoogleMap(options) {
+  const div = document.getElementById('google-map')
+
+  if (!div) return
+  if (window.googleMap) return replaceGoogleMap.call(this, undefined, options)
+
+  const { changeControl } = this.props
+
+  window.googleMap = new google.maps.Map(div, setOptions.call(this, options))
+  changeControl({ mapLoaded: true })
+}
+
+export function shouldLoadMarker() {
+  const {
+    loadMarker,
+    latitude: lat,
+    longitude: lng
+  } = this.props
+
+  if (loadMarker) return false
+  if (!window.googleMap) return false
+  if (lat && lng) return true
+  
+  return false
+}
+
+export function loadGoogleMarker(position) {
+  window.marker = new google.maps.Marker({ position,  map: window.googleMap })
+}
+
+
+
+
+
+
+
+
+// !!! LEGACY !!! START
+
 export function googleMapHandler(callback, options) {
   if (typeof window === 'undefined') return
 
@@ -10,6 +63,8 @@ export function googleMapHandler(callback, options) {
   initializeMap()
   if (callback) callback()
 }
+
+// !!! LEGACY !!! END
 
 export function replaceGoogleMap(callback, options) {
   if (typeof window === 'undefined') return
@@ -24,17 +79,19 @@ export function replaceGoogleMap(callback, options) {
 
 function setOptions(options) {
   options = options || {}
+
   return {
     center: {
-      lat: options.latitude || (this.props.isMobile ? 52.220: 52.222),
-      lng: options.longitude || (this.props.isMobile ? 21.012 : 20.985)
+      lat: this.props.isMobile ? 52.220: 52.222,
+      lng: this.props.isMobile ? 21.012 : 20.985
     },
-    zoom: options.zoom || (this.props.isMobile ? 11.8 : 11.7),
+    zoom: this.props.isMobile ? 11.8 : 11.7,
     mapTypeControl: false,
     fullscreenControl: false,
     streetViewControl: false,
     clickableIcons: false,
-    styles
+    styles,
+    ...options
   }
 }
 

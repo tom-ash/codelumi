@@ -1,10 +1,9 @@
-import { apiUrl } from '../../../../../constants/urls'
-import { showClientServerParams } from '../../../constants/client-server-params'
+const fetch = require("node-fetch")
+import { sendResponse } from './send-response'
+import { showClientServerParams } from '../../app/components/announcement/constants/client-server-params'
 
-export function fetchAnnouncement() {
-  const { announcementId } = this.props
-
-  fetch(`${apiUrl}/announcements/${announcementId}`, {
+export function sendAnnouncementResponse(res, announcementId) {
+  fetch(`${API_URL}/announcements/${announcementId}`, {
     headers: { 'Content-Type': 'application/json' }
   })
   .then(response => {
@@ -20,7 +19,12 @@ export function fetchAnnouncement() {
     clientParams.furnishings = json.furnishings
     clientParams.descriptionPolish = json.polishDescription
     clientParams.descriptionEnglish = json.englishDescription
-    this.props.changeData(clientParams)
+
+    sendResponse(res, {
+      route: {
+        showAnnouncementShow: true
+      },
+      announcement: clientParams
+    })
   })
-  .catch(() => this.changeRoute(null, '/'))
 }

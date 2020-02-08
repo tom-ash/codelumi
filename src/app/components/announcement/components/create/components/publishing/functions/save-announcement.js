@@ -28,7 +28,7 @@ export function saveAnnouncement() {
   })
   .then(jsonResponse => {
     changeControl({ connecting: false, publishing: false })
-    this.changeRoute({ showAnnouncementIndexVisitor: true })
+    this.changeRoute({ showAnnouncementIndexVisitorMap: true })
   })
 }
 

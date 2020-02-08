@@ -1,7 +1,11 @@
 export const control = {
-  mapLoaded: false,
+  
   markerLoaded: false,
-  showFixedPhone: false
+  showFixedPhone: false,
+
+  loadMap: false,
+  mapLoaded: false,
+  loadMarker: false
 }
 
 export const data = {

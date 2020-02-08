@@ -18,7 +18,7 @@ import {
 } from './functions/managerProviders'
 import { compositeInputProvider } from './functions/composite-input-provider'
 import { parseCurrency } from '../../../../../../functions/currency-parsers'
-import { ManagedSelect, ManagedButton } from 'managed-inputs'
+import { ManagedSelect, ManagedLink } from 'managed-inputs'
 
 class AnnouncementIndexPanelVisitor extends React.Component {
   constructor(props) {
@@ -58,7 +58,7 @@ class AnnouncementIndexPanelVisitor extends React.Component {
           {this.compositeInputProvider('rent')}
           <div className='float-clear' />
         </div>
-        <ManagedButton {...this.buttonManager()}/>
+        <ManagedLink {...this.buttonManager()}/>
         <div className='pane secondary'>
           {this.compositeInputProvider('rooms')}
           {this.compositeInputProvider('floor')}

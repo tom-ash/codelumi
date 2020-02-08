@@ -1,4 +1,6 @@
 export function getPicture() {
+  if (typeof window === 'undefined') return
+  
   const announcement = this.props.announcement
   if (!announcement.pictures) return
   const pictureIndex = announcement.pictureIndex

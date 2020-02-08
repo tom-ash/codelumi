@@ -20,7 +20,7 @@ class AnnouncementIndexSearchFull extends React.Component {
 
   render() {
     const {
-      type,
+      showAnnouncementIndexVisitorList,
       tile,
       changeAnnouncement
     } = this.props
@@ -28,7 +28,7 @@ class AnnouncementIndexSearchFull extends React.Component {
     return (
       <div
         id='announcement-index-map'
-        className={`${type === 'map' ? 'visible' : 'hidden'}`}
+        className={`${showAnnouncementIndexVisitorList ? 'hidden' : 'visible'}`}
       >
         <div id='google-map-container'>
           <div id='google-map' />

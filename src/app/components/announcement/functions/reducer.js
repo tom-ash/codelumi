@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux'
 import { createReducer } from '../components/create/functions/reducer'
-import { showReducer } from '../components/show/functions/reducer'
-import { indexReducer } from '../components/index/functions/reducers'
+import { showReducerProvider } from '../components/show/functions/reducer'
+import { indexReducerProvider } from '../components/index/functions/reducers'
 
-export const announcementReducer = combineReducers({
+export const announcementReducerProvider = ({
+  announcementsList,
+  announcement
+}) => combineReducers({
   create: createReducer,
-  show: showReducer,
-  index: indexReducer
+  show: showReducerProvider(announcement),
+  index: indexReducerProvider(announcementsList)
 })

@@ -1,6 +1,8 @@
 import { apiUrl } from '../../../../../../../constants/urls'
 
 export function fetchPicture() {
+  if (typeof window === 'undefined') return
+  
   if (this.props.pictures[this.props.pictureIndex] && this.props.pictures[this.props.pictureIndex].url) return
   fetch(`${apiUrl}/pictures`, {
     headers: {

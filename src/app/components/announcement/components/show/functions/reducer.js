@@ -9,7 +9,7 @@ export const controlReducer = (state = control, action) => {
   }
 }
 
-export const dataReducer = (state = data, action) => {
+export const dataReducerProvider = announcement => (state = { ...data, ...announcement }, action) => {
   switch (action.type) {
     case 'announcement/show/data': return { ...state, ...action.value }
     case 'announcement/show/data/reset': return { ...data }
@@ -17,7 +17,7 @@ export const dataReducer = (state = data, action) => {
   }
 }
 
-export const showReducer = combineReducers({
+export const showReducerProvider = announcement => combineReducers({
   control: controlReducer,
-  data: dataReducer
+  data: dataReducerProvider(announcement || {})
 })

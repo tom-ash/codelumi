@@ -1,5 +1,5 @@
 export const mapStateToProps = (store) => {
-  const { language, isMobile, device, path } = store.app
+  const { language, isMobile, device, path, showAnnouncementIndexVisitorList } = store.app
   const control = store.announcement.index.control
   const inputs = store.announcement.index.inputs
 
@@ -30,6 +30,7 @@ export const mapStateToProps = (store) => {
   } = inputs
 
   return {
+    showAnnouncementIndexVisitorList,
     language,
     isMobile,
     device,
@@ -59,6 +60,7 @@ export const mapStateToProps = (store) => {
     
 export const mapDispatchToProps = (dispatch) => {
   return {
+    changeApp: value => dispatch({ type: 'app', value: value}),
     changeControl: (value) => dispatch({ type: 'announcement/index/control', value: value }),
     changeInputs: (value) => dispatch({ type: 'announcement/index/inputs', value: value })
   }

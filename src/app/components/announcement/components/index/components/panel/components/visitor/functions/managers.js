@@ -112,15 +112,22 @@ export function availabilityDateManager() {
 }
 
 export function buttonManager(action) {
-  const { changeControl } = this.props
+  const {
+    changeApp,
+    showAnnouncementIndexVisitorList
+  } = this.props
+
   return {
     id: 'announcement-index-full-search-button',
     classNames: { container: 'simple-index-input button' },
-    label: <div>
-      <i className='fas fa-map-marker-alt' /> <i className='fas fa-th-list' />
-    </div>,
+    href: this.languageObjectHandler({ pl: `${CLIENT_URL}/lista`, en: `${CLIENT_URL}/list` }),
+    label: (
+      <div>
+        <i className='fas fa-map-marker-alt' /> <i className='fas fa-th-list' />
+      </div>
+    ),
     onClick: () => {
-      changeControl({ type: this.props.type === 'map' ? 'full' : 'map' })
+      changeApp({ showAnnouncementIndexVisitorList: !showAnnouncementIndexVisitorList })
     }
   }
 }

@@ -1,27 +1,29 @@
+import { loadGoogleMap, loadGoogleMarker } from '../../../../../functions/google-map-handler'
+
 export function componentDidMount() {
-  if (!this.props.mapLoaded) {
-    this.googleMapHandler(() => this.props.changeControl({ mapLoaded: true }))
-  }
+  const { changeControl } = this.props
+
+  if (this.shouldLoadMap()) changeControl({ loadMap: true })
 }
 
-export function componentDidUpdate() {
-  if (typeof window === 'undefined') return
-  
-  const { changeControl, mapLoaded, mapLoading, markerLoaded, latitude: lat, longitude: lng} = this.props
+export function componentDidUpdate(prevProps) {
+  const {
+    loadMap: prevLoadMap,
+    loadMarker: prevLoadMarker
+  } = prevProps
 
-  if (!mapLoaded && !mapLoading) {
-    this.props.changeControl({ mapLoading: true })
+  const {
+    changeControl,
+    loadMap,
+    loadMarker,
+    latitude: lat,
+    longitude: lng
+  } = this.props
 
-    this.googleMapHandler(() => {
-      this.props.changeControl({ mapLoaded: true, mapLoading: false })
-      window.googleMap.setOptions({ center: { lat, lng }, zoom: 12.6 })
-    })
-  }
-
-  if (mapLoaded && lat && lng && !markerLoaded) {
-    changeControl({ markerLoaded: true })
-    window.marker = new google.maps.Marker({ position: { lat, lng },  map: window.googleMap })
-  }
+  if (this.shouldLoadMap()) changeControl({ loadMap: true })
+  if (!prevLoadMap && loadMap) loadGoogleMap.call(this, { center: { lat, lng }, zoom: 12.6 })
+  if (this.shouldLoadMarker()) changeControl({ loadMarker: true })
+  if (!prevLoadMarker && loadMarker) loadGoogleMarker.call(this, { lat, lng })
 }
 
 export function componentWillUnmount() {

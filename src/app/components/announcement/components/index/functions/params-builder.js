@@ -1,6 +1,8 @@
 import { params } from '../../../constants/params'
 
 export function paramsBuilder() {
+  if (typeof window === 'undefined') return
+  
   let urlParams = '?'
   Object.keys(params).map(paramKey => {
     const param = params[paramKey]

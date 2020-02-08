@@ -1,12 +1,21 @@
 export const mapStateToProps = (store) => {
+  const { 
+    loadMap,
+    mapLoaded,
+    loadMarker
+  } = store.announcement.show.control
+
   return {
+    loadMap,
+    mapLoaded,
+    loadMarker,
     language: store.app.language,
     scripts: store.app.scripts,
-    mapLoaded: store.announcement.show.control.mapLoaded,
+    
     markerLoaded: store.announcement.show.control.markerLoaded,
     latitude: store.announcement.show.data.mapLatitude,
     longitude: store.announcement.show.data.mapLongitude,
-    mapLoaded: store.announcement.show.control.mapLoaded,
+    
     mapLoading: store.announcement.show.control.mapLoading,
   }
 }

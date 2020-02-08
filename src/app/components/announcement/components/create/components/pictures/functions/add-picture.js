@@ -9,6 +9,8 @@ export function addPicture(files) {
   
   this.props.changeControl({ addingPicture: true })
   createBlob(window.URL.createObjectURL(files.pop()), (blob) => {
+    if (typeof window === 'undefined') return
+    
     this.props.changeInputs({
       pictureFiles: files,  
       pictureBlobs: [...this.props.blobs].concat([{

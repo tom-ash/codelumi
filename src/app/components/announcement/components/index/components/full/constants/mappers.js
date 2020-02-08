@@ -3,14 +3,24 @@ export const mapStateToProps = (store) => {
     language,
     isMobile,
     device,
-    scrollY
+    scrollY,
+    showAnnouncementIndexVisitorList
   } = store.app
+
   const {
     connecting,
     type
   } = store.announcement.index.control
-  const { page, offset } = store.announcement.index.inputs
-  const { announcements, amount } = store.announcement.index.data
+
+  const {
+    page,
+    offset
+  } = store.announcement.index.inputs
+
+  const {
+    announcements,
+    amount
+  } = store.announcement.index.data
 
   return {
     offset,
@@ -22,7 +32,8 @@ export const mapStateToProps = (store) => {
     connecting,
     page,
     announcements,
-    scrollY
+    scrollY,
+    showAnnouncementIndexVisitorList
   }
 }
     

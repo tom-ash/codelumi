@@ -29,7 +29,7 @@ export function titleManager() {
       resetAnnouncementIndexControl()
       resetAnnouncementIndexInputs()
       changeAnnouncementIndexControl({ fetch: true })
-      this.changeRoute({ showAnnouncementIndexVisitor: true })
+      this.changeRoute({ showAnnouncementIndexVisitorMap: true })
     }
   }
 }

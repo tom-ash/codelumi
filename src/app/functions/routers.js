@@ -7,12 +7,12 @@ export function checkRoute() {
 
   const { changeApp } = this.props
   const path = window.location.pathname
-  const newRoutes = { showAnnouncementIndexVisitor: true }
+  const newRoutes = { showAnnouncementIndexVisitorMap: true }
 
   for (let [key, matcher] of Object.entries(routeMatchers)) {
     if (path.match(new RegExp(`(${matcher.route.pl}|${matcher.route.en})`))) {
       newRoutes[key] = true
-      if (matcher.main) newRoutes.showAnnouncementIndexVisitor = false
+      if (matcher.main) newRoutes.showAnnouncementIndexVisitorMap = false
       if (matcher.announcementId) {
         let announcementId = path.match(/\d+/)
         if (announcementId) {
@@ -62,7 +62,7 @@ export function handlePathname(prevProps) {
     if (fullPathname === '') fullPathname = '/'
     
     if (window.location.pathname !== fullPathname) {
-      if (this.props.showAnnouncementIndexVisitor) fullPathname = fullPathname + window.location.search
+      if (this.props.showAnnouncementIndexVisitorMap) fullPathname = fullPathname + window.location.search
 
       window.history.pushState({ path: fullPathname }, '', fullPathname)
     }

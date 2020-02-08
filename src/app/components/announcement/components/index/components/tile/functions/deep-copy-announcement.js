@@ -1,4 +1,6 @@
 export function deepCopyAnnouncement(json) {
+  if (typeof window === 'undefined') return
+  
   const announcement = { ...this.props.announcement }
   const pictureIndex = this.props.announcement.pictureIndex
   const pictures = [ ...announcement.pictures ]

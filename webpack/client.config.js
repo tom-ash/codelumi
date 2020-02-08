@@ -5,7 +5,7 @@ var CopyPlugin = require('copy-webpack-plugin');
 
 var config = {
   entry: {
-    server: './src/client/index.js',
+    index: './src/client/index.js',
   },
   output: {
     filename: './client/bundle.js'

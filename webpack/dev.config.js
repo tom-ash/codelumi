@@ -7,7 +7,7 @@ var config = {
   mode: 'development',
   devtool: 'cheap-module-source-map',
   entry: {
-    server: './src/client/index.js',
+    server: './src/dev/index.js',
   },
   output: {
     filename: './client/bundle.js'
@@ -24,7 +24,7 @@ var config = {
     rules: [
       {
         test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
           options: {

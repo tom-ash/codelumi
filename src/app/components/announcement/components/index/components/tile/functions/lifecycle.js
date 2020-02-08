@@ -20,6 +20,8 @@ export function componentDidUpdate(prevProps) {
 
   const precedingAnnouncement = announcements[index - 1]
   const prevPrecedingAnnouncement = precedingAnnouncements[index - 1]
+  if (typeof window === 'undefined') return
+
   if (precedingAnnouncement.pictures[0].url && !prevPrecedingAnnouncement.pictures[0].url) {
     if (index === 1 || index === 2) return this.fetchPicture()
   }
@@ -29,6 +31,8 @@ export function componentDidUpdate(prevProps) {
   const offset   = elemRect.top - bodyRect.top;
 
   if (scrollY + 1000 < offset) return
+
+  if (typeof window === 'undefined') return
 
   if (!announcements[index].pictures[0].url) this.fetchPicture()
 }

@@ -10,6 +10,7 @@ class AnnouncementShowPictures extends React.Component {
   constructor(props) {
     super(props)
     this.languageHandler = languageHandler.bind(this)
+    this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.fetchPicture = fetchPicture.bind(this)
     this.changePicture = changePicture.bind(this)

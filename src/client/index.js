@@ -3,7 +3,7 @@ import React from 'react'
 import { hydrate } from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import { rootReducer } from '../app/functions/root_reducer'
+import { rootReducerProvider } from '../app/functions/root_reducer'
 import StyleContext from 'isomorphic-style-loader/StyleContext'
 import App from '../app/app'
 
@@ -14,7 +14,7 @@ const insertCss = (...styles) => {
 
 const preloadedState = window.__PRELOADED_STATE__
 delete window.__PRELOADED_STATE__
-const store = createStore(rootReducer(), preloadedState)
+const store = createStore(rootReducerProvider({}), preloadedState)
 
 hydrate(
   <StyleContext.Provider value={{ insertCss }}>

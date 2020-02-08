@@ -3,7 +3,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import { rootReducer } from '../app/functions/root_reducer'
+import { rootReducerProvider } from '../app/functions/root_reducer'
 import StyleContext from 'isomorphic-style-loader/StyleContext'
 import App from '../app/app'
 
@@ -12,7 +12,7 @@ const insertCss = (...styles) => {
   return () => removeCss.forEach(dispose => dispose())
 }
 
-let store = createStore(rootReducer)
+let store = createStore(rootReducerProvider({}))
 store.subscribe(() => console.log(store.getState()))
 
 render(

@@ -5,6 +5,9 @@ import * as lifecycle from './functions/lifecycle'
 import { languageHandler } from '../../../../../../functions/language-handler'
 import { googleMapHandler } from '../../../../functions/google-map-handler'
 
+import { shouldLoadMap } from '../../../../functions/google-map-handler'
+import { shouldLoadMarker } from '../../../../functions/google-map-handler'
+
 class AnnouncementCreateMap extends React.Component {
   constructor(props) {
     super(props)
@@ -13,6 +16,8 @@ class AnnouncementCreateMap extends React.Component {
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
     this.googleMapHandler = googleMapHandler.bind(this)
+    this.shouldLoadMap = shouldLoadMap.bind(this)
+    this.shouldLoadMarker = shouldLoadMarker.bind(this)
   }
   
   render() {
