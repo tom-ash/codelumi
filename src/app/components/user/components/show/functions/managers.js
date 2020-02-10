@@ -6,7 +6,7 @@ export function addAnnouncementManager() {
   return {
     id: 'user-show-account-add-announcemt',
     classNames: { container: 'button'},
-    href: this.languageObjectHandler({ pl: `${origin}dodaj_ogloszenie'`, en: `${origin}add_announcement'` }),
+    href: this.languageObjectHandler({ pl: `${origin}dodaj-ogloszenie'`, en: `${origin}add-announcement'` }),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     label: this.labelProvider('fas fa-plus', 'Dodaj ogłoszenie', 'Add free announcement'),
     onClick: () => this.changeRoute({ showAnnouncementCreate: true })

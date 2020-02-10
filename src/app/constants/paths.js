@@ -1,6 +1,6 @@
 const paths = {
   about: {
-    pl: '/o_serwisie',
+    pl: '/o-serwisie',
     en: '/about'
   },
   name: {

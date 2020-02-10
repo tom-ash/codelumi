@@ -30,8 +30,8 @@ export const routeMatchers = {
   },
   showAnnouncementCreate: {
     route: {
-      pl: 'dodaj_ogloszenie',
-      en: 'add_announcement'
+      pl: 'dodaj-ogloszenie',
+      en: 'add-announcement'
     },
     main: true
   },
@@ -45,20 +45,20 @@ export const routeMatchers = {
   },
   showVisitorPrivacySettings: {
     route: {
-      pl: 'ustawienia_prywatnosci',
-      en: 'privacy_settings'
+      pl: 'ustawienia-prywatnosci',
+      en: 'privacy-settings'
     }
   },
   showUserCreate: {
     route: {
       pl: 'zarejestruj',
-      en: 'sign_up'
+      en: 'sign-up'
     }
   },
   showUserAuthorize: {
     route: {
       pl: 'zaloguj',
-      en: 'sign_in'
+      en: 'sign-in'
     }
   },
   showUserEditPasswordReset: {
@@ -76,7 +76,7 @@ export const routeMatchers = {
   },
   showVisitorAbout: {
     route: {
-      pl: 'o_serwisie',
+      pl: 'o-serwisie',
       en: 'about'
     }
   },
@@ -89,25 +89,25 @@ export const routeMatchers = {
   showVisitorTermsOfService: {
     route: {
       pl: 'regulamin',
-      en: 'terms_of_service'
+      en: 'terms-of-service'
     }
   },
   showVisitorCookiesPolicy: {
     route: {
-      pl: 'polityka_plikow_cookies',
-      en: 'cookies_policy'
+      pl: 'polityka-plikow-cookies',
+      en: 'cookies-policy'
     }
   },
   showVisitorPrivacyPolicy: {
     route: {
-      pl: 'polityka_prywatnosci',
-      en: 'privacy_policy'
+      pl: 'polityka-prywatnosci',
+      en: 'privacy-policy'
     }
   },
   showVisitorPrivacySettings: {
     route: {
-      pl: 'ustawienia_prywatnosci',
-      en: 'privacy_settings'
+      pl: 'ustawienia-prywatnosci',
+      en: 'privacy-settings'
     }
   }
 }
