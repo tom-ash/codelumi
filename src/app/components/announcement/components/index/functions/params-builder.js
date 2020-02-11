@@ -49,6 +49,8 @@ export function paramsBuilder() {
   const fullPathname = window.location.pathname + urlParams
   
   if (window.location.search !== urlParams) {
+    // if (window.)
+    console.log(window.origin)
     window.history.pushState({ path: fullPathname }, '', fullPathname)
   }
 }
