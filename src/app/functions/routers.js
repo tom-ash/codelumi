@@ -1,6 +1,7 @@
 import { instantScroll } from './scrollers/instant-scroll'
 import { routes } from '../constants/routes'
 import { routeMatchers } from '../constants/route-matchers'
+import { allowedOrigins } from '../constants/allowed-origins'
 
 export function checkRoute() {
   if (typeof window === 'undefined') return
@@ -56,6 +57,7 @@ export function handlePathname(prevProps) {
     }
 
     if (typeof window === 'undefined') return
+    if (allowedOrigins.indexOf(window.origin) === -1) return
 
     fullPathname = fullPathname.replace(/\/{2,}/, '/')
     fullPathname = fullPathname.replace(/\/$/, '')

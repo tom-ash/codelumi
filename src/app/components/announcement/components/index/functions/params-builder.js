@@ -1,4 +1,5 @@
 import { params } from '../../../constants/params'
+import { allowedOrigins } from '../../../../../constants/allowed-origins'
 
 export function paramsBuilder() {
   if (typeof window === 'undefined') return
@@ -44,13 +45,12 @@ export function paramsBuilder() {
   })
   
   if (typeof window === 'undefined') return
+  if (allowedOrigins.indexOf(window.origin) === -1) return
 
   if (urlParams.length == 1) urlParams = ''
   const fullPathname = window.location.pathname + urlParams
   
   if (window.location.search !== urlParams) {
-    // if (window.)
-    console.log(window.origin)
     window.history.pushState({ path: fullPathname }, '', fullPathname)
   }
 }
