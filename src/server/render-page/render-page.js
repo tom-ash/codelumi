@@ -1,6 +1,11 @@
-const title = 'warsawlease.pl: Ogłoszenia wynajmu warszawskich biur i lokali użytkowych'
+const title = 'Mapa wynajmu mieszkań, lokali użytkowych oraz biur w Warszawie: warsawlease.pl'
+const description = 'Dwujęzyczna mapa wynajmu mieszkań, biur oraz lokali użytkowych w Warszawie. A bilingual lease map of apartments, offices and usable premises in Warsaw.'
 
-export function renderPage({ html, preloadedState, css }) {
+export function renderPage({
+  html,
+  css,
+  preloadedState
+}) {
   return `
     <!doctype html>
     <html>
@@ -9,8 +14,8 @@ export function renderPage({ html, preloadedState, css }) {
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <title>${title}</title>
-        <meta name="description" content="Dwujęzyczna baza ogłoszeń wynajmu warszawskich biur oraz lokali użytkowych. A bilingual database of lease announcements regarding Warsaw offices and usable premises.">
-        <meta name="keywords" content="wynajem, najem, biura, biuro, lokale użytkowe, lokal użytkowy, Warszawa, mapa, lease, offices, office, usable premises, Warsaw, map">
+        <meta name="description" content="${description}">
+        <meta name="keywords" content="mapa, wynajem, najem, Warszawa, nieruchomość, nieruchomości, mieszkanie, mieszkania, lokal użytkowy, lokale użytkowe, biuro, biura, map, lease, rent, Warsaw, apartment, apartments, usable premises, office, offices">
         <style type="text/css">${[...css].join('')}</style>
       </head>
       <body>
