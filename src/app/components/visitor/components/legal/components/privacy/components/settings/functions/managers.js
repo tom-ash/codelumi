@@ -4,7 +4,7 @@ export function statisticsConsentManager() {
   const { statisticsConsent } = this.props
 
   return {
-    name: 'additional-functions',
+    name: 'statistics',
     classNames: { container: 'form-input radio'},
     checked: statisticsConsent,
     radios: [
@@ -23,7 +23,7 @@ export function marketingConsentManager() {
   const { marketingConsent } = this.props
   
   return {
-    name: 'statistics-marketing',
+    name: 'marketing',
     classNames: { container: 'form-input radio'},
     checked: marketingConsent,
     radios: [

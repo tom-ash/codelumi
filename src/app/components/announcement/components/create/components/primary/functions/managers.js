@@ -40,33 +40,25 @@ export function categoryManager() {
     category: categoryError
   } = errors
 
-  return {
-    id,
-    classNames: { container: 'form-input select' },
-    value,
-    label: this.languageObjectHandler(text),
-    children: <i className={icon} />,
-    options: [
-      { value: '', text: '' },
-      { value: apartmentValue, text: this.languageObjectHandler(apartmentLabel) },
-      { value: officeValue, text: this.languageObjectHandler(officeLabel) },
-      { value: usablePremisesValue, text: this.languageObjectHandler(usablePremisesLabel) }
-    ],
-    onFocus: () => changeErrors({ category: noError }),
-    onSelect: (option) => {
-      this.onSelectHandler('category', option.value)
 
+  return {
+    name: 'announcement-category',
+    classNames: { container: 'form-input radio'},
+    checked: value,
+    radios: [
+      { value: apartmentValue, label: this.languageObjectHandler(apartmentLabel) },
+      { value: officeValue, label: this.languageObjectHandler(officeLabel) },
+      { value: usablePremisesValue, label: this.languageObjectHandler(usablePremisesLabel) }
+    ],
+    onClick: value => {
+      this.onSelectHandler('category', value)
       changeInputs({
         netRentAmount: '',
         netRentAmountPerSqm: '',
         grossRentAmount: '',
         grossRentAmountPerSqm: ''
       })
-      
-    },
-    onBlur: () => this.categoryManager().validate(),
-    validate: () => this.handleErrorOnValidate('category', value),
-    error: this.languageObjectHandler(categoryError)
+    }
   }
 }
 
@@ -92,26 +84,16 @@ export function districtManager() {
 }
 
 export function rentCurrencyManager() {
-  const {
-    icon,
-    all: text
-  } = inputs.rentCurrency
-
   return {
-    id: requiredInputs.rentCurrency.id,
-    classNames: { container: 'form-input select rent' },
-    value: this.props.rentCurrency,
-    label: this.languageObjectHandler(text),
-    children: <i className={icon} />,
-    options: [{ value: '', text: '' },
-              { value: 0, text: 'zł (PLN)' },
-              { value: 1, text: '€ (EUR)' },
-              { value: 2, text: '$ (USD)' }],
-    onFocus: () => this.props.changeErrors({ rentCurrency: noError }),
-    onSelect: (option) => this.onSelectHandler('rentCurrency', option.value),
-    onBlur: () => this.rentCurrencyManager().validate(),
-    validate: () => this.handleErrorOnValidate('rentCurrency', this.props.rentCurrency),
-    error: this.languageObjectHandler(this.props.errors.rentCurrency)
+    name: 'announcement-rent-currency',
+    classNames: { container: 'form-input radio'},
+    checked: this.props.rentCurrency,
+    radios: [
+      { value: 0, label: 'zł' },
+      { value: 1, label: '€' },
+      { value: 2, label: '$' }
+    ],
+    onClick: value => this.onSelectHandler('rentCurrency', value)
   }
 }
 
@@ -247,71 +229,19 @@ export function totalFloorsManager() {
   }
 }
 
+
+
+
+
 export function availabilityDateSelectManager() {
-  const {
-    icon,
-    all: text
-  } = inputs.availabilityDate
-
   return {
-    id: requiredInputs.availabilityDateSelect.id,
-    classNames: { container: 'form-input select' },
-    value: this.props.availabilityDateSelect,
-    label: this.languageObjectHandler(text),
-    children: <i className={icon} />,
-    options: [{ value: '', text: '' },
-              { value: 'now', text: this.languageHandler('Już dostępne', 'Already available') },
-              { value: 'date', text: this.languageHandler('Podaj datę', 'Provide date') }],
-    onSelect: (option) => this.props.changeInputs({
-      availabilityDateSelect: option.value,
-      ...option.value == 'now' && { availabilityDate: '' }
-    }),
-    onFocus: () => this.props.changeErrors({ availabilityDateSelect: noError }),
-    onBlur: () => this.availabilityDateSelectManager().validate(),
-    validate: () => this.handleErrorOnValidate('availabilityDateSelect', this.props.availabilityDateSelect),
-    error: this.languageObjectHandler(this.props.errors.availabilityDateSelect)
-  }
-}
-
-export function availableDateManager() {
-  const {
-    availabilityDate,
-    changeControl,
-    errors
-  } = this.props
-  const {
-    availableDateManager: thisManager,
-    labelProvider,
-    handleErrorOnValidate,
-    languageObjectHandler
-  } = this
-  const {
-    availabilityDate: { id }
-  } = requiredInputs
-  const {
-    availabilityDate: { icon, all: text }
-  } = inputs
-
-  return {
-    id,
-    classNames: { container: 'form-input select' },
-    value: availabilityDate || '',
-    options: [
-      { value: '', text: '' }, 
-      { value: availabilityDate, text: availabilityDate }
+    name: 'announcement-rent-availability-date',
+    classNames: { container: 'form-input radio'},
+    checked: this.props.availabilityDateSelect,
+    radios: [
+      { value: 'now', label: this.languageHandler('Już dostępne', 'Already available') },
+      { value: 'date', label: this.languageHandler('Podaj datę', 'Provide date') },
     ],
-    label: this.languageObjectHandler(text),
-    children: <i className={icon} />,
-    disableSelectOptions: true,
-    onBlur: () => {
-      changeControl({ availabilityDateFocus: false })
-      thisManager().validate()
-    },
-    validate: () => handleErrorOnValidate('availabilityDate', availabilityDate),
-    onFocus: () => changeControl({ availabilityDateFocus: true }),
-    error: (() => {
-      if (availabilityDate) return null
-      return languageObjectHandler(errors.availabilityDate)
-    })()
+    onClick: value => this.props.changeInputs({ availabilityDateSelect: value })
   }
 }

@@ -28,14 +28,14 @@ export const control = {
 
 export const inputs = {
   id: '',
-  category: '',
+  category: 2,
   district: '',
-  rentCurrency: '',
+  rentCurrency: 0,
   netRentAmount: '',
   grossRentAmount: '',
   area: '',
   rooms: '',
-  availabilityDateSelect: '',
+  availabilityDateSelect: 'now',
   availabilityDate: '',
   floor: '',
   totalFloors: '',

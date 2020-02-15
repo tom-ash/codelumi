@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { ManagedSelect } from 'managed-inputs'
-import { ManagedText } from 'managed-inputs'
+import { ManagedRadio, ManagedText } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import { handleErrorOnSelect, handleErrorOnValidate } from './functions/errors-handler'
@@ -30,7 +30,6 @@ class AnnouncementCreatePrimary extends React.Component {
     this.handleErrorOnValidate = handleErrorOnValidate.bind(this)
     this.onSelectHandler = onSelectHandler.bind(this)
     this.availabilityDateSelectManager = managers.availabilityDateSelectManager.bind(this)
-    this.availableDateManager = managers.availableDateManager.bind(this)
     this.labelProvider = labelProvider.bind(this)
     this.getRentAmounts = getRentAmounts.bind(this)
     this.floorsProvider = floorsProvider.bind(this)
@@ -39,26 +38,35 @@ class AnnouncementCreatePrimary extends React.Component {
   render() {
     return (
       <div id='announcement-create-primary' className='section'>
-          <ManagedSelect {...this.categoryManager()}/>
+          <div className='radio-container'>
+            <div className='title'>
+              <i className='icon far fa-list-alt' /> {this.languageObjectHandler({ pl: 'Kategoria', en: 'Category' })}
+            </div>
+            <ManagedRadio {...this.categoryManager()}/>
+          </div>
           <ManagedSelect {...this.districtManager()}/>
-          <ManagedSelect {...this.rentCurrencyManager()}/>
+          <div className='radio-container currency'>
+            <div className='title'>
+              <i className='icon fas fa-coins' /> {this.languageObjectHandler({ pl: 'Waluta czynszu', en: 'Rent Currency' })}
+            </div>
+            <ManagedRadio {...this.rentCurrencyManager()}/>
+          </div>
           <ManagedText {...this.rentAmountManager()}/>
           <div className='float-clear'/>
           <ManagedText {...this.areaManager()}/>
           <ManagedSelect {...this.roomsManager()}/>
           <ManagedSelect {...this.floorManager()}/>
           <ManagedSelect {...this.totalFloorsManager()}/>
-          <div className={this.props.availabilityDateSelect == 'date' ? 'date' : ''}>
-          <ManagedSelect {...this.availabilityDateSelectManager()} />
+          <div className='radio-container availability-date-select'>
+            <div className='title'>
+              <i className='far fa-calendar-alt' /> {this.languageObjectHandler({ pl: 'Dostępne od', en: 'Available from' })}
+            </div>
+            <ManagedRadio {...this.availabilityDateSelectManager()}/>
           </div>
           <div
-          className='calendar'>       
-            {
-            this.props.availabilityDateSelect == 'date' &&
-            <ManagedSelect {...this.availableDateManager()}/>
-            }
+          className='calendar'>
             <div
-            style={{ display: this.props.availabilityDateFocus ? 'block' : 'none' }}>
+            style={{ display: this.props.availabilityDateSelect == 'date' ? 'block' : 'none' }}>
               <Calendar 
               onChange = {(date) => {
                 this.props.changeInputs({ availabilityDate: parseDate(date) })

@@ -83,16 +83,12 @@ export const requiredInputs = {
 }
 
 export const requiredInputsArray = [
-  'category',
   'district',
-  'rentCurrency',
   'rentAmount',
   'area',
   'rooms',
   'floor',
   'totalFloors',
-  'availabilityDateSelect',
-  'availabilityDate',
   'pictures',
   'map'
 ]
