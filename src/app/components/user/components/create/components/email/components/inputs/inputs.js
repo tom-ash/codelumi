@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { ManagedText } from 'managed-inputs'
-import { ManagedSelect } from 'managed-inputs'
+import { ManagedRadio, ManagedText, ManagedSelect } from 'managed-inputs'
 import * as managers from './functions/managers'
 import * as mappers from './constants/mappers'
 import { languageHandler } from '../../../../../../../../functions/language-handler'
@@ -37,18 +36,13 @@ class UserCreateEmailInputs extends React.Component {
   render() {
     return (
       <div className='user-create-email-inputs-container'>
-
-
-
-        <ManagedSelect {...this.accountTypeManager()}/>
-
-        <div className='first-name-and-surname'>
-          <ManagedText {...this.firstNameManager()}/>
-          <ManagedText {...this.lastNameManager()}/>
+        <div className='radio-container'>
+          <div className='title'>
+            <i className='icon far fa-list-alt' /> {this.languageObjectHandler({ pl: 'Rodzaj konta', en: 'Account Type' })}
+          </div>
+          <ManagedRadio {...this.accountTypeManager()}/>
         </div>
-
-
-
+        <ManagedText {...this.firstNameManager()}/>
         <ManagedText {...this.businessNameManager()}/>
         <ManagedSelect {...this.areaCodeManager()}/>
         <ManagedText {...this.phoneNumberManager()}/>

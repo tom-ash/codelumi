@@ -17,9 +17,9 @@ export function verificationManager() {
     onChange: () => changeErrors({ verification: noError }),
     onBlur: (value) => this.verificationManager().validate(value),
     validate: (value) => {
-      if (value.length < 8) {
+      if (value.length < 4) {
         changeErrors({
-          verification: { pl: 'nieprawidłowy kod weryfikacyjny', en: 'invalid verification code' }
+          verification: { pl: 'Nieprawidłowy kod weryfikacyjny.', en: 'Invalid verification code.' }
         })
         return false
       }

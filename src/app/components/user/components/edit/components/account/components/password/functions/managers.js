@@ -28,8 +28,15 @@ export function emailManager() {
 }
 
 export function verificationManager() {
-  const { step, changeErrors } = this.props
-  const { label, icon } = inputs.verification
+  const {
+    step,
+    changeErrors
+  } = this.props
+
+  const {
+    label,
+    icon
+  } = inputs.verification
 
   return {
     id: 'user-edit-password-verification',
@@ -41,9 +48,9 @@ export function verificationManager() {
     onChange: () => changeErrors({ password: noError }),
     onBlur: (value) => this.verificationManager().validate(value),
     validate: (value) => {
-      if (value.length === 8) return true
+      if (value.length === 4) return true
       changeErrors({
-        password: { pl: 'nieprawidłowy kod weryfikacyjny', en: 'invalid verification code' }
+        password: { pl: 'Nieprawidłowy kod weryfikacyjny.', en: 'Invalid verification code.' }
       })
       return false
     },

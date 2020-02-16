@@ -6,41 +6,32 @@ export function accountTypeManager() {
 
   const privateAccount = (
     <div className='account-type'>
-      {this.languageObjectHandler({ pl: 'Osoba prywatna', en: 'Private Person' })} <i className="far fa-question-circle" />
+      {this.languageObjectHandler({ pl: 'Prywatne', en: 'Private' })}
     </div>
   )
 
   const professionalAccount = (
     <div className='account-type'>
-      {this.languageObjectHandler({ pl: 'Profesjonalne', en: 'Professional' })} <i className="far fa-question-circle" />
+      {this.languageObjectHandler({ pl: 'Firmowe', en: 'Business' })}
     </div>
   )
-
-  const { icon, label } = inputs.accountType
 
   const { accountType } = this.props
 
   return {
-    onFocusCoverZIndex: 3001,
-    id: 'user-create-email-account-type',
-    children: <i className={icon} />,
-    classNames: { container: 'form-input select'},
-    label: this.languageObjectHandler(label),
-    value: accountType,
-    options: [
-      { value: 'private', text: privateAccount },
-      { value: 'professional', text: professionalAccount }
+    name: 'announcement-category',
+    classNames: { container: 'form-input radio'},
+    checked: accountType,
+    radios: [
+      { value: 'private', label: privateAccount },
+      { value: 'professional', label: professionalAccount }
     ],
-    onBlur: () => this.accountTypeManager().validate(),
-    validate: () => this.accountTypeValidator(accountType),
-    onSelect: option => {
+    onClick: value => {
       this.errorResetter('firstName')
-      this.errorResetter('lastName')
       this.errorResetter('businessName')
       this.errorResetter('accountType')
-      changeInputs({ accountType: option.value })
-    },
-    error: this.languageObjectHandler(this.props.accountTypeError)
+      changeInputs({ accountType: value })
+    }
   }
 }
 

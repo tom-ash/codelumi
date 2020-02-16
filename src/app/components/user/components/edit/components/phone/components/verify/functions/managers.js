@@ -15,11 +15,11 @@ export function verificationManager() {
     onFocus: () => this.props.changeErrors({ phoneVerification: noError }),
     onBlur: (value) => this.verificationManager().validate(value),
     validate: (value) => {
-      if (value.length === 8) return true
+      if (value.length === 4) return true
       this.props.changeErrors({
         phoneVerification: {
-          pl: 'nieprawidłowy kod weryfikacyjny',
-          en: 'invalid verification code'
+          pl: 'Nieprawidłowy kod weryfikacyjny.',
+          en: 'Invalid verification code.'
         }
       })
       return false

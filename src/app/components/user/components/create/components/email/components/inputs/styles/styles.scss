@@ -1,4 +1,40 @@
 .user-create-email-inputs-container {
+
+  .radio-container {
+    margin-bottom: 12px;
+    .title {
+      margin-bottom: 12px;
+      font-size: 14px;
+      .fas, .far {
+        margin-right: 4px;
+        font-size: 13px;
+      }
+    }
+    .radio {
+      position: relative;
+      height: 42px;
+      float: left;
+      width: 48.25%;
+      &:nth-child(1) {
+        margin-right: 3.5%;
+      }
+      .input {
+        margin-top: 3px;
+      }
+      .label {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin-top: 2px;
+        line-height: 40px;
+        padding-left: 32px;
+      }
+    }
+  }
+
+
   .form-input {
     &.text, &.select {
       margin-bottom: 20px;

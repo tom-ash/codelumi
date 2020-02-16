@@ -8,7 +8,7 @@ export const control = {
 }
 
 export const inputs = {
-  accountType: '',
+  accountType: 'private',
   phoneCode: '+48',
   termsAndPrivacyConsent: false
 }

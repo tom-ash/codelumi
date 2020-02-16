@@ -23,8 +23,7 @@ function prepareUserObject() {
     password: document.getElementById('user-create-email-password').value,
     termsAndPrivacyConsent: document.getElementById('user-create-consents-terms-and-privacy').checked,
     ...accountType === 'private' ? {
-      firstName: document.getElementById('user-create-email-first-name').value,
-      lastName: document.getElementById('user-create-email-last-name').value,
+      firstName: document.getElementById('user-create-email-first-name').value
     } : {
       businessName: document.getElementById('user-create-email-business-name').value,
     }
@@ -43,8 +42,7 @@ function validateUserObject(userObject) {
     this.passwordValidator(userObject.password),
     this.termsAndPrivacyConsentValidator(userObject.termsAndPrivacyConsent),
     ...accountType === 'private' ? [
-      this.nameValidator('firstName', userObject.firstName),
-      this.nameValidator('lastName', userObject.lastName)
+      this.nameValidator('firstName', userObject.firstName)
     ] : [ this.nameValidator('businessName', userObject.businessName) ]
   ]
 

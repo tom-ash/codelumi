@@ -16,11 +16,11 @@ export function verificationManager() {
     onBlur: (value) => this.verificationManager().validate(value),
     validate: () => {
       const verificationCode = document.getElementById('user-create-email-verification').value
-      if (verificationCode.length !== 8) {
+      if (verificationCode.length !== 4) {
         changeErrors({
           verification: {
-            pl: 'kod weryfikacyjny musi składać się z 8 znaków',
-            en: 'the verification code must consist of 8 characters'
+            pl: 'Nieprawidłowy kod weryfikacyjny.',
+            en: 'Invalid verification code.'
           }
         })
         return false
