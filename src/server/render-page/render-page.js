@@ -17,6 +17,7 @@ export function renderPage({
         <meta name="description" content="${description}">
         <meta name="keywords" content="mapa, wynajem, najem, Warszawa, nieruchomość, nieruchomości, mieszkanie, mieszkania, lokal użytkowy, lokale użytkowe, biuro, biura, map, lease, rent, Warsaw, apartment, apartments, usable premises, office, offices">
         <style type="text/css">${[...css].join('')}</style>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Oswald:300|Roboto&display=swap" rel="stylesheet">
       </head>
       <body>
         ${html}

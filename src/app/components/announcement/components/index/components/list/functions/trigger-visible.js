@@ -5,7 +5,7 @@ export function triggerVisible(announcement, index) {
   if (this.props.connecting) return
   this.props.changeControl({ connecting: true })
   const access_token = getAccessToken()
-  fetch(`${apiUrl}/announcements/${announcement.id}?attribute=visible`, {
+  fetch(`${apiUrl}/announcements/trigger_visible/${announcement.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

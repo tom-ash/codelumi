@@ -5,7 +5,7 @@ import * as lifecycle from './functions/lifecycle'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import * as managers from './functions/managers'
 import { ManagedPagination, ManagedButton } from 'managed-inputs'
-import AnnouncementIndexTile from '../tile/tile'
+import AnnouncementTile from '../../../show/components/tile/tile'
 import { controlProvider } from './functions/control-provider'
 import { buttonProvider } from './functions/button-provider'
 import { triggerVisible } from './functions/trigger-visible'
@@ -72,16 +72,29 @@ class AnnouncementIndexList extends React.Component {
         </div>
         <div className='announcements'>
           {this.props.announcements && this.props.announcements.map((announcement, index) => (
-          <AnnouncementIndexTile
+          <AnnouncementTile
+            venue='list'
             key={`${announcement.id}`}
             index={index}
+            control={this.controlProvider(announcement, index)}
             first={index == 0}
             last={index == this.props.announcements.length - 1}
-            venue='list'
-            announcement={announcement}
-            announcements={this.props.announcements}
+            id={announcement.id}
+            category={announcement.category}
+            district={announcement.district}
+            pictures={announcement.pictures}
+            area={announcement.area}
+            netRentAmount={announcement.netRentAmount}
+            netRentAmountPerSqm={announcement.netRentAmountPerSqm}
+            grossRentAmount={announcement.grossRentAmount}
+            grossRentAmountPerSqm={announcement.grossRentAmountPerSqm}
+            rooms={announcement.rooms}
+            rentCurrency={announcement.rentCurrency}
+            floor={announcement.floor}
+            totalFloors={announcement.totalFloors}
+            availabilityDate={announcement.availabilityDate}
             control={this.controlProvider(announcement, index)}
-            changeAnnouncement={this.props.changeAnnouncement}
+            control={this.controlProvider(announcement, index)}
           />))}
           <div className='float-clear' />
         </div>

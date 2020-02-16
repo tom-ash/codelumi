@@ -1,0 +1,113 @@
+@import '../../../../../../../../../styles/themes.scss';
+
+#announcement-show-tile-primary {
+  padding: 24px 24px 12px;
+
+  @media #{$phone} {
+    padding: 12px;
+  }
+
+  .rent-column {
+    float: left;
+    &.right {
+      margin-left: 36px;
+    }
+  }
+  .rent-container {
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 24px;
+    &.total {
+      font-size: 24px;
+      margin-bottom: 6px;
+      &.gross {
+        color: #BA4A00;
+      }
+      &.net {
+        color: #196F3D;
+      }
+      .amount {
+        padding-right: 28px;
+        position: relative;
+        float: left;
+        font-family: 'Oswald', sans-serif;
+      }
+      .decimal {
+        font-size: 16px;
+        position: absolute;
+        top: 2px;
+        right: 0;
+        text-decoration: underline;
+        margin-right: 6px;
+      }
+      .currency {
+        float: left;
+      }
+      .per-sqm {
+        float: left;
+      }
+      .per-month {
+        float: left;
+        padding-left: 6px;
+        margin-top: 14px;
+        font-size: 10px;
+      }
+      &.gross {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+    &.per-sqm {
+      font-size: 14px;
+      .amount, .currency, .per-sqm, .per-month, .basis, .decimal {
+        float: left;
+      }
+      .decimal {
+        font-size: 10px;
+        margin-left: 2px;
+        margin-right: 4px;
+        text-decoration: underline;
+      }
+      .currency {
+        margin-right: 4px;
+      }
+      .m, .sq {
+        float: left;
+      }
+      .sq {
+        margin-left: 1px;
+        font-size: 10px;
+      }
+      .per-month {
+        float: left;
+        padding-left: 6px;
+        margin-top: 5px;
+        font-size: 8px;
+      }
+      &.gross {
+        color: #BA4A00;
+      }
+      &.net {
+        color: #229954;
+      }
+    }
+  }
+  .rooms {
+    color: #566573;
+    margin-right: 24px;
+    margin-bottom: 12px;
+  }
+  .floor {
+    color: #566573;
+    margin-right: 24px;
+    margin-bottom: 12px;
+  }
+  .total-floors {
+    color: #566573;
+    margin-right: 24px;
+    margin-bottom: 12px;
+  }
+  .available-from {
+    color: #566573;
+    margin-bottom: 12px;
+  }
+}

@@ -1,0 +1,18 @@
+@import '../../../../../../../../../styles/themes.scss';
+
+#announcement-show-tile-description {
+  background: white;
+  font-size: 14px;
+  position: relative;
+  border-radius: 4px;
+  padding: 0 24px 24px;
+  @media #{$phone} {
+    padding: 0 12px 12px;
+  }
+  .description {
+    text-align: justify;
+    line-height: 20px;
+    white-space: pre-wrap;
+    color: #2C3E50;
+  }
+}

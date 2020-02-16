@@ -12,7 +12,6 @@ export function fetchTile() {
   .then(json => {
     const announcement = { ...json }
     announcement.show = true
-    announcement.pictureIndex = 0
     changeData({
       tile: announcement
     })

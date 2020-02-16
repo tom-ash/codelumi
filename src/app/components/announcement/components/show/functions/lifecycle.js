@@ -10,6 +10,13 @@ export function componentDidMount() {
   addEventListener('scroll', this.fixedPhoneHandler)
 }
 
+export function componentDidUpdate(prevProps) {
+  const { phone: prevPhone } = prevProps
+  const { phone } = this.props
+
+  if (!prevPhone && phone) this.setState({ phone })
+}
+
 export function componentWillUnmount() {
   removeEventListener('scroll', this.fixedPhoneHandler)
 }

@@ -1,11 +1,31 @@
 @import '../../../../../../../styles/themes.scss';
-@import '../../tile/styles/tile';
 @import './google-map';
-@import './tile';
 @import '../../../../../../../styles/media-breakpoints';
 @import './pin';
 
 #announcement-index-map {
+  .announcement-tile-container {
+    .announcement-show-tile {
+      position: relative;
+    }
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 420px;
+    margin: 0;
+    @media #{$small-pc} {
+      top: 57px;
+    }
+    @media only screen and (max-width: 444px) {
+      width: 100%;
+      right: 0;
+      left: 0;
+      padding: 0 24px;
+    }
+    @media #{$phone} {
+      padding: 0 12px;
+    }
+  }
   position: absolute;
   top: 168px;
   right: 0;
@@ -18,9 +38,6 @@
   }
   #google-map-container {
     @extend %google-map;
-    .announcement-index-tile {
-      @extend %map-tile;
-    }
     .pin {
       @extend %map-pin;
     }

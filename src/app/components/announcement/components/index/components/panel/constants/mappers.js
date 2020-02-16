@@ -4,8 +4,8 @@ export const mapStateToProps = (store) => {
     path,
     isMobile,
     device,
-    showAnnouncementIndexVisitorMap: showVisitor,
-    showAnnouncementIndexUser: showUser
+    showAnnouncementIndexMap: showVisitor,
+    showAnnouncementIndexAdded: showUser
   } = store.app
 
   return {

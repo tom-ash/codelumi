@@ -1,19 +1,19 @@
 export const routeMatchers = {
-  showAnnouncementIndexVisitorMap: {
+  showAnnouncementIndexMap: {
     route: {
       pl: '/',
       en: '/'
     }
   },
 
-  showAnnouncementIndexVisitorList: {
+  showAnnouncementIndexList: {
     route: {
       pl: '/lista',
       en: '/list'
     }
   },
 
-  showAnnouncementIndexUser: {
+  showAnnouncementIndexAdded: {
     route: {
       pl: 'dodane-ogloszenia',
       en: 'added-announcements'

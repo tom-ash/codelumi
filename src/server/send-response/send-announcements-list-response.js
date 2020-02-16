@@ -21,8 +21,8 @@ export function sendAnnouncementsListResponse(res, language) {
 
     sendResponse(res, {
       route: {
-        showAnnouncementIndexVisitorMap: true,
-        showAnnouncementIndexVisitorList: true,
+        showAnnouncementIndexMap: true,
+        showAnnouncementIndexList: true,
         language
       },
       announcementsList: {

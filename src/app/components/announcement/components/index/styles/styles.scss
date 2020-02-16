@@ -1,6 +1,40 @@
 @import '../../../../../styles/media-breakpoints';
 
 #announcement-index {
+
+  .phone {
+    cursor: pointer;
+    z-index: 3;
+    position: absolute;
+    top: 84px;
+    right: 12px;
+    height: 36px;
+    width: 36px;
+    border-radius: 18px;
+    background: rgba(236, 240, 241, 0.96);
+    white-space: nowrap;
+    overflow:hidden;
+    &.open {
+      width: 190px;
+      transition: 0.72s ease-out;
+    }
+    .fa-phone {
+      height: 36px;
+      width: 36px;
+      font-size: 18px;
+      color: #FBFCFC;
+      background: #28B463;
+      border-radius: 18px;
+      line-height: 36px;
+      text-align: center;
+      opacity: 0.92;
+      margin-right: 12px;
+    }
+    a {
+      display: inline;
+    }
+  }
+
   position: relative;
   min-height: 752px;
   @media #{$small-pc} {

@@ -1,0 +1,158 @@
+@import '../../../../../../../styles/themes';
+@import './headers';
+@import './contact';
+
+.announcement-show-tile {
+  width: 100%;
+  background: white;
+
+  position: relative;
+
+  .close-button {
+    z-index: 3;
+    right: 0;
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    min-height: 32px;
+    min-width: 32px;
+    margin-bottom: 8px;
+    flex-shrink: 0;
+    border: none;
+    background: white;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 32px;
+    font-size: 16px;
+    &:hover {
+      background: rgba(146, 43, 33, 0.2);
+    }
+    &.medium {
+      margin-left: 688px;
+      @media #{$small-tablet} {
+        margin-left: auto;
+      }
+    }
+    &.narrow {
+      margin-left: 424px;
+      @media #{$phone} {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &.show {
+    padding-bottom: 24px;
+    @media #{$phone} {
+      padding-bottom: 12px;
+    }
+  }
+  &.map {
+    .area {
+      margin-right: 24px;
+    }
+  }
+  .area {
+    .area-amount {
+      float: left;
+      margin-right: 4px;
+    }
+    .m, .sq {
+      float: left;
+    }
+    .sq {
+      margin-left: 1px;
+      font-size: 12px;
+      line-height: 63px;
+    }
+  }
+  .header-container {
+    height: 72px;
+    padding-left: 12px;
+    color: #2C3E50;
+    h2 {
+      position: relative;
+      .header-row {
+        &.category {
+          padding-top: 12px;
+          font-size: 20px;
+          margin-bottom: 12px;
+        }
+        &.district {
+          color: #566573;
+          font-size: 16px;
+        }
+      }
+      .area {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        line-height: 72px;
+        padding-right: 24px;
+        color: #21618C;
+        font-family: 'Oswald', sans-serif;
+      }
+    }
+  }
+  h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: #566573;
+  }
+}
+
+#announcement-show {
+  position: relative;
+  width: 640px;
+  margin: 0 auto;
+  padding: 96px 0;
+
+  @media only screen and (max-width: 688px) {
+    width: 100%;
+    padding: 96px 24px;
+  }
+
+  @media #{$phone} {
+    padding: 96px 12px;
+  }
+
+  #showcase {
+    margin: 0 0 0 auto;
+    background: white;
+    padding: 12px;
+    width: 240px;
+    margin-bottom: 24px;
+    .phone-showcase {
+      min-width: 50px;
+      margin-top: 12px;
+      line-height: 24px;
+      height: 24px;
+      .icon {
+        float: left;
+        color: #FBFCFC;
+        background: #28B463;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        border-radius: 12px;
+        font-size: 13px;
+        padding: 1px 0 0 2px;
+        margin-right: 8px;
+      }
+      .text {
+        float: left;
+        u {
+          cursor: pointer;
+          margin-left: 4px;
+        }
+      }
+    }
+    .contact {
+      @extend %contact;
+    }
+  }  
+}
+
+

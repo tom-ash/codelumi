@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
-import AnnouncementIndexTile from '../tile/tile'
+import AnnouncementTile from '../../../show/components/tile/tile'
 import { paginationManager } from './functions/managers'
 import { parseCategoryForUrl } from '../../../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../../../functions/district-parsers'
@@ -21,28 +21,43 @@ class AnnouncementIndexFull extends React.Component {
   }
 
   render() {
-    const { changeControl, changeInputs, offset, amount, showAnnouncementIndexVisitorList, announcements } = this.props
+    const {
+      language,
+      changeControl, changeInputs, offset, amount, showAnnouncementIndexList, announcements
+    } = this.props
 
     return (
       <div id='announcement-index-full'>
         {
-        showAnnouncementIndexVisitorList &&
+        showAnnouncementIndexList &&
         <div>
           <div id='announcement-index-full-scroll-anchor' />
           <div className='announcements'>
             {
             announcements && announcements.map((announcement, index) => {
+              console.log(announcement)
               return (
-                <AnnouncementIndexTile
-                  index={index}
-                  first={index === 0}
+                <AnnouncementTile
                   venue='full'
+                  showPhoneSwitch
+                  index={index}
+                  first={index === 0}                  
                   key={announcement.id}
-                  selectedAvailabilityDate={this.props.availabilityDate}
-                  announcement={announcement}
-                  announcements={announcements}
-                  changeAnnouncement={this.props.changeAnnouncement}
-                  scrollY={this.props.scrollY}
+                  language={language}
+                  id={announcement.id}
+                  category={announcement.category}
+                  district={announcement.district}
+                  pictures={announcement.pictures}
+                  area={announcement.area}
+                  netRentAmount={announcement.netRentAmount}
+                  netRentAmountPerSqm={announcement.netRentAmountPerSqm}
+                  grossRentAmount={announcement.grossRentAmount}
+                  grossRentAmountPerSqm={announcement.grossRentAmountPerSqm}
+                  rooms={announcement.rooms}
+                  rentCurrency={announcement.rentCurrency}
+                  floor={announcement.floor}
+                  totalFloors={announcement.totalFloors}
+                  availabilityDate={announcement.availabilityDate}
                 />
               )
             })

@@ -1,0 +1,41 @@
+@import '../../../../../../../../../styles/themes.scss';
+
+#announcement-show-tile-features {
+  background: white;
+  font-size: 14px;
+  padding: 0 24px 24px;
+  position: relative;
+  @media #{$phone} {
+    padding: 0 12px 12px;
+  }
+  .item {
+    float: left;
+    margin-right: 12px;
+    color: #2C3E50;
+    @media #{$phone} {
+      float: none;
+    }
+    .icon, .text {
+      float: left;
+    }
+    .icon {
+      height: 12px;
+      line-height: 19px;
+      padding-right: 5px;
+      @media #{$phone} {
+        position: absolute;
+      }
+      .fa-circle {
+        font-size: 6px;
+      }
+    }
+    .text {
+      height: 24px;
+      line-height: 24px;
+      @media #{$phone} {
+        height: auto;
+        margin-left: 14px;
+      }
+    }
+  }
+}

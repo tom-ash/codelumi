@@ -1,5 +1,4 @@
 @import '../../../../../../../styles/themes.scss';
-@import '../../tile/styles/tile';
 @import './list-tile';
 @import '../../../../../../../styles/inputs/form/form';
 @import './list-pagination';
@@ -9,6 +8,15 @@
   width: 640px;
   margin: 0 auto;
   padding: 12px;
+
+  // .announcement-show-tile {
+  //   position: absolute!important;
+  //   top: 24px;
+  //   right: 24px;
+  //   width: 360px;
+  //   margin: 0;
+  // }
+
   @media #{$small-pc} {
     max-width: 456px;
     width: 100%;
@@ -40,7 +48,7 @@
     margin-top: 64px;
     min-height: 480px;
     text-align: left;
-    .announcement-index-tile {
+    .announcement-show-tile {
       @extend %list-tile;
     }
   }

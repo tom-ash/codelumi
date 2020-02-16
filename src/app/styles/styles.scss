@@ -1,7 +1,4 @@
-
-
 @import '../components/announcement/styles/styles.scss';
-
 @import '../components/announcement/components/create/styles/styles.scss';
 @import '../components/announcement/components/create/components/primary/styles/styles.scss';
 @import '../components/announcement/components/create/components/pictures/styles/styles.scss';
@@ -9,23 +6,19 @@
 @import '../components/announcement/components/create/components/description/styles/styles.scss';
 @import '../components/announcement/components/create/components/map/styles/styles.scss';
 @import '../components/announcement/components/create/components/publishing/styles/styles.scss';
-
-
 @import '../components/announcement/components/index/components/full/styles/styles.scss';
 @import '../components/announcement/components/index/components/list/styles/styles.scss';
 @import '../components/announcement/components/index/components/map/styles/styles.scss';
-
 @import '../components/announcement/components/index/components/panel/components/user/styles/styles.scss';
-
 @import '../components/announcement/components/index/components/panel/components/visitor/styles/styles.scss';
 @import '../components/announcement/components/index/components/panel/styles/styles.scss';
 @import '../components/announcement/components/index/styles/styles.scss';
-@import '../components/announcement/components/show/components/description/styles/styles.scss';
-@import '../components/announcement/components/show/components/features-furnishings/styles/styles.scss';
-@import '../components/announcement/components/show/components/map/styles/styles.scss';
-@import '../components/announcement/components/show/components/pictures/styles/styles.scss';
-@import '../components/announcement/components/show/components/primary/styles/styles.scss';
-@import '../components/announcement/components/show/styles/styles.scss';
+@import '../components/announcement/components/show/components/tile/components/description/styles/styles.scss';
+@import '../components/announcement/components/show/components/tile/components/features-furnishings/styles/styles.scss';
+@import '../components/announcement/components/show/components/tile/components/map/styles/styles.scss';
+@import '../components/announcement/components/show/components/tile/components/pictures/styles/styles.scss';
+@import '../components/announcement/components/show/components/tile/components/primary/styles/styles.scss';
+@import '../components/announcement/components/show/components/tile/styles/styles.scss';
 @import '../components/support/components/spinner/components/windmill/styles/styles.scss';
 @import '../components/user/components/authorize/styles/styles.scss';
 @import '../components/user/components/authorize/components/email-password/styles/styles.scss';
@@ -53,27 +46,22 @@
 @import '../components/visitor/components/legal/components/privacy/components/settings/styles/styles.scss';
 @import '../components/visitor/components/legal/components/provision/styles/styles.scss';
 @import '../components/visitor/components/legal/components/terms-of-service/styles/styles.scss';
-
 @import '../components/announcement/components/index/components/full/styles/styles.scss';
-
-
-
-
 @import '../components/scaffold/components/header/styles/styles.scss';
 @import '../components/scaffold/components/footer/styles/styles.scss';
-
-
-
 @import './media-breakpoints';
 @import './themes';
 @import '../components/announcement/styles/pin';
 @import './inputs/form/form';
 
+body {
+  font-family: Helvetica, Arial;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Helvetica Neue', 'Arial', sans-serif;
 }
 
 .float-clear {
@@ -95,6 +83,9 @@ body {
 #app-container {
   position: relative;
   min-width: 320px;
+
+  background: #F7F9F9;
+
 }
 
 #app-inner-container {
