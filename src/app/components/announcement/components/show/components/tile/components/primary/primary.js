@@ -2,17 +2,16 @@ import React from 'react'
 import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import { parseCurrency } from '../../../../../../functions/currency-parsers'
 import { parseAvailabilityDate } from './functions/parse-availability-date'
-import { floorParser } from '../../../../../../functions/floor-parser'
 import { presentRooms } from './functions/present-rooms'
+import { presentFloor } from './functions/present-floor'
+import { presentTotalFloors } from './functions/present-total-floors'
 
 class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {
     super(props)
     this.languageHandler = languageHandler.bind(this)
     this.parseAvailabilityDate = parseAvailabilityDate.bind(this)
-    this.floorParser = floorParser.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
-    this.presentRooms = presentRooms.bind(this)
   }
 
   classProvider(itemName) {
@@ -25,6 +24,7 @@ class AnnouncementCreatePrimary extends React.Component {
   
   render() {
     const {
+      category,
       netRentAmount,
       netRentAmountPerSqm,
       grossRentAmount,
@@ -77,19 +77,19 @@ class AnnouncementCreatePrimary extends React.Component {
         </div>
         }
         <div className='float-clear' />
-        {rooms &&
+        {rooms !== null &&
         <div className='rooms'>
-          {this.presentRooms()}
+          {rooms} {this.languageObjectHandler(presentRooms({ rooms, category }))}
         </div>}
-        {floor &&
+        {floor !== null &&
         <div className='floor'>
-          {this.floorParser(floor)}
+          {this.languageObjectHandler(presentFloor({ floor }))}
         </div>}
-        {totalFloors &&
+        {totalFloors !== null &&
         <div className='total-floors'>
-          {totalFloors}{this.languageObjectHandler({ pl: '-piętrowy budynek', en: '-storied building' })}
+          {this.languageObjectHandler(presentTotalFloors({ totalFloors: 2 }))}
         </div>}
-        {availabilityDate &&
+        {availabilityDate !== null &&
         <div className='available-from'>
           {this.languageObjectHandler({ pl: 'Dostępne od ', en: 'Available from ' })}{this.parseAvailabilityDate(availabilityDate)}
         </div>}
