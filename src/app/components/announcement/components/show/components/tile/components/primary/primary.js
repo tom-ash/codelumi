@@ -1,16 +1,15 @@
 import React from 'react'
 import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import { parseCurrency } from '../../../../../../functions/currency-parsers'
-import { parseAvailabilityDate } from './functions/parse-availability-date'
 import { presentRooms } from './functions/present-rooms'
 import { presentFloor } from './functions/present-floor'
 import { presentTotalFloors } from './functions/present-total-floors'
+import { presentAvailabilityDate } from './functions/present-availability-date'
 
 class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {
     super(props)
     this.languageHandler = languageHandler.bind(this)
-    this.parseAvailabilityDate = parseAvailabilityDate.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
   }
 
@@ -91,7 +90,7 @@ class AnnouncementCreatePrimary extends React.Component {
         </div>}
         {availabilityDate !== null &&
         <div className='available-from'>
-          {this.languageObjectHandler({ pl: 'Dostępne od ', en: 'Available from ' })}{this.parseAvailabilityDate(availabilityDate)}
+          {this.languageObjectHandler(presentAvailabilityDate({ availabilityDate, category }))}
         </div>}
         <div className='float-clear' />
       </div>
