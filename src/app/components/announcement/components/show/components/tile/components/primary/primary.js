@@ -3,6 +3,7 @@ import { languageHandler, languageObjectHandler } from '../../../../../../../../
 import { parseCurrency } from '../../../../../../functions/currency-parsers'
 import { parseAvailabilityDate } from './functions/parse-availability-date'
 import { floorParser } from '../../../../../../functions/floor-parser'
+import { presentRooms } from './functions/present-rooms'
 
 class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class AnnouncementCreatePrimary extends React.Component {
     this.parseAvailabilityDate = parseAvailabilityDate.bind(this)
     this.floorParser = floorParser.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.presentRooms = presentRooms.bind(this)
   }
 
   classProvider(itemName) {
@@ -77,7 +79,7 @@ class AnnouncementCreatePrimary extends React.Component {
         <div className='float-clear' />
         {rooms &&
         <div className='rooms'>
-          {rooms} {this.languageHandler('pomieszczeń', 'rooms')}
+          {this.presentRooms()}
         </div>}
         {floor &&
         <div className='floor'>

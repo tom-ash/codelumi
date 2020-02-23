@@ -102,6 +102,7 @@ class AnnouncementTile extends React.Component {
         />
         <AnnouncementShowPrimary
           language={language}
+          category={category}
           netRentAmount={netRentAmount}
           netRentAmountPerSqm={netRentAmountPerSqm}
           grossRentAmount={grossRentAmount}
