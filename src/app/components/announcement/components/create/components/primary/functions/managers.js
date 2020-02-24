@@ -112,7 +112,7 @@ export function rentAmountManager() {
 
   let label = this.languageObjectHandler(text)
 
-  if (category === 0 || category === 1) label = this.languageObjectHandler({ pl: 'Miesięczny czynsz netto', en: 'Monthly Net Rent'})
+  if (category === 0 || category === 1) label = this.languageObjectHandler({ pl: 'Miesięczna cena (czynsz) netto', en: 'Monthly Net Price (Rent)'})
   
   const rentAmountType = category === 2 ? 'grossRentAmount' : 'netRentAmount'
 
@@ -179,11 +179,7 @@ export function roomsManager() {
     label,
     children: <i className={icon} />,
     options: numberOptionsProvider(99),
-    onFocus: () => this.props.changeErrors({ rooms: noError }),
-    onSelect: (option) => this.onSelectHandler('rooms', option.value),
-    onBlur: () => this.roomsManager().validate(),
-    validate: () => this.handleErrorOnValidate('rooms', this.props.rooms),
-    error: this.languageObjectHandler(this.props.errors.rooms)
+    onSelect: (option) => this.onSelectHandler('rooms', option.value)
   }
 }
 
@@ -200,11 +196,7 @@ export function floorManager() {
     label: this.languageObjectHandler(text),
     children: <i className={icon} />,
     options: this.floorsProvider(),
-    onFocus: () => this.props.changeErrors({ floor: noError }),
     onSelect: (option) => this.onSelectHandler('floor', option.value),
-    onBlur: () => this.floorManager().validate(),
-    validate: () => this.handleErrorOnValidate('floor', this.props.floor),
-    error: this.languageObjectHandler(this.props.errors.floor)
   }
 }
 
@@ -221,11 +213,7 @@ export function totalFloorsManager() {
     label: this.languageObjectHandler(text),
     children: <i className={icon} />,
     options: numberOptionsProvider(99),
-    onFocus: () => this.props.changeErrors({ totalFloors: noError }),
     onSelect: (option) => this.onSelectHandler('totalFloors', option.value),
-    onBlur: () => this.totalFloorsManager().validate(),
-    validate: () => this.handleErrorOnValidate('totalFloors', this.props.totalFloors),
-    error: this.languageObjectHandler(this.props.errors.totalFloors)
   }
 }
 

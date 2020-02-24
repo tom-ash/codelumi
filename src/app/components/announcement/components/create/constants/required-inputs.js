@@ -15,11 +15,7 @@ export const requiredInputs = {
     }
   },
   rentCurrency: {
-    id: 'announcement-create-rent-currency',
-    error: {
-      pl: 'wybierz walutę czynszu',
-      en: 'select rent currency'
-    }
+    id: 'announcement-create-rent-currency'
   },
   rentAmount: {
     id: 'announcement-create-rent-amount'

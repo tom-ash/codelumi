@@ -12,6 +12,7 @@ import { parseDate } from '../../../../../../functions/date-parsers'
 import { labelProvider } from '../../../../../../functions/providers/label'
 import { getRentAmounts } from '../../functions/get-rent-amounts'
 import { floorsProvider } from './functions/floors-provider'
+import { sectionHeaderProvider } from '../../../../../../functions/providers/headers'
 
 class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {
@@ -33,11 +34,13 @@ class AnnouncementCreatePrimary extends React.Component {
     this.labelProvider = labelProvider.bind(this)
     this.getRentAmounts = getRentAmounts.bind(this)
     this.floorsProvider = floorsProvider.bind(this)
+    this.sectionHeaderProvider = sectionHeaderProvider.bind(this)
   }
   
   render() {
     return (
       <div id='announcement-create-primary' className='section'>
+        {this.sectionHeaderProvider('fas fa-info-circle', { pl: 'Dane podstawowe (wymagane)', en: 'Primary Data (required)'})}
           <div className='radio-container'>
             <div className='title'>
               <i className='icon far fa-list-alt' /> {this.languageObjectHandler({ pl: 'Kategoria', en: 'Category' })}
@@ -45,15 +48,16 @@ class AnnouncementCreatePrimary extends React.Component {
             <ManagedRadio {...this.categoryManager()}/>
           </div>
           <ManagedSelect {...this.districtManager()}/>
+          <ManagedText {...this.areaManager()}/>
+          <ManagedText {...this.rentAmountManager()}/>
           <div className='radio-container currency'>
             <div className='title'>
-              <i className='icon fas fa-coins' /> {this.languageObjectHandler({ pl: 'Waluta czynszu', en: 'Rent Currency' })}
+              <i className='icon fas fa-coins' /> {this.languageObjectHandler({ pl: 'Waluta ceny (czynszu)', en: 'Price (Rent) Currency' })}
             </div>
             <ManagedRadio {...this.rentCurrencyManager()}/>
           </div>
-          <ManagedText {...this.rentAmountManager()}/>
           <div className='float-clear'/>
-          <ManagedText {...this.areaManager()}/>
+          {this.sectionHeaderProvider('fas fa-info-circle', { pl: 'Dane dodatkowe (opcjonalne)', en: 'Additional Data (optional)'}, 'additional-data')}
           <ManagedSelect {...this.roomsManager()}/>
           <ManagedSelect {...this.floorManager()}/>
           <ManagedSelect {...this.totalFloorsManager()}/>
@@ -61,12 +65,10 @@ class AnnouncementCreatePrimary extends React.Component {
             <div className='title'>
               <i className='far fa-calendar-alt' /> {this.languageObjectHandler({ pl: 'Dostępne od', en: 'Available from' })}
             </div>
-            <ManagedRadio {...this.availabilityDateSelectManager()}/>
           </div>
           <div
           className='calendar'>
-            <div
-            style={{ display: this.props.availabilityDateSelect == 'date' ? 'block' : 'none' }}>
+            <div>
               <Calendar 
               onChange = {(date) => {
                 this.props.changeInputs({ availabilityDate: parseDate(date) })

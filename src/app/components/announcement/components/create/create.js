@@ -37,7 +37,7 @@ class AnnouncementCreate extends React.Component {
           <h2 className='page-header'>
             <i className='fas fa-plus' /> {this.languageHandler('Dodaj bezpłatne ogłoszenie', 'Add Free Announcement')}
           </h2>
-          {this.sectionHeaderProvider('fas fa-info-circle', { pl: 'Dane podstawowe (wymagane)', en: 'Primary Data (required)'})}
+          
           <AnnouncementCreatePrimary />
           {this.sectionHeaderProvider('fas fa-images', { pl: 'Zdjęcia (wymagane)', en: 'Pictures (required)'})}
           <AnnouncementCreatePictures />

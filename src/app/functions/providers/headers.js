@@ -9,9 +9,9 @@ export function pageHeaderProvider(icon, labelObject) {
   )
 }
 
-export function sectionHeaderProvider(icon, labelObject) {
+export function sectionHeaderProvider(icon, labelObject, classNames) {
   return (
-    <h3 className='section-header'>
+    <h3 className={`section-header${classNames ? ` ${classNames}` : ''}`}>
       <i className={icon}></i>
       <span className='text'>{this.languageObjectHandler(labelObject)}</span>
     </h3>

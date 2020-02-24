@@ -4,11 +4,8 @@ import { requiredInputs, requiredInputsArray } from '../../../constants/required
 export function publish() {
   const validationObject = {
     district: this.districtManager().validate(),
-    rentAmount: this.rentAmountManager().validate(),
     area: this.areaManager().validate(),
-    rooms: this.roomsManager().validate(),
-    floor: this.floorManager().validate(),
-    totalFloors: this.totalFloorsManager().validate(),
+    rentAmount: this.rentAmountManager().validate(),
     pictures: this.validatePictures(),
     map: this.validateMap()
   }

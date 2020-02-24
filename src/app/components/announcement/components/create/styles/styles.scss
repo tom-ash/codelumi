@@ -4,7 +4,7 @@
 
 #announcement-create {
   margin: 96px auto 40px;
-  background: #F8F9F9;
+  background: white;
   padding: 36px;
   .hint {
     position: relative;
@@ -26,6 +26,9 @@
   }
   .page-header, .section-header {
     color: #1B2631;
+    &.additional-data {
+      margin-top: 32px;
+    }
   }
   .monit {
     margin-bottom: 24px;

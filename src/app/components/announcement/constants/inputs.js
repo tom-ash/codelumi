@@ -19,15 +19,15 @@ export const inputs = {
   rentCurrency: {
     icon: 'fas fa-coins',
     all: {
-      pl: 'Waluta czynszu',
+      pl: 'Waluta ceny (czynszu)',
       en: 'Rent Rurrency'
     }
   },
   rentHeight: {
     icon: 'fas fa-coins',
     create: {
-      pl: 'Miesięczny czynsz',
-      en: 'Monthly Rent'
+      pl: 'Miesięczna cena (czynsz)',
+      en: 'Monthly Price (Rent)'
     },
     indexMin: {},
     indexMax: {}
