@@ -23,7 +23,8 @@ export function sendAnnouncementResponse(res, announcementId, language) {
     sendResponse(res, {
       routeState: {
         route: {
-          showAnnouncementShow: true
+          showAnnouncementShow: true,
+          language
         },
         announcement: clientParams
       },

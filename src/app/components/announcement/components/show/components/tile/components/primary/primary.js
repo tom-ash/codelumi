@@ -104,7 +104,7 @@ function PresentRent({ amount, currency, type, perSqm, languageObjectHandler, ne
   return (
     <div className={`rent-container ${type}`}>
       <div className='amount'>
-        {presentAmount(amount, net)}
+        {presentAmount(amount)}
       </div>
       <div className='currency'>
         {currency} 
@@ -133,22 +133,18 @@ function PresentRent({ amount, currency, type, perSqm, languageObjectHandler, ne
 }
 
 
-function presentAmount(amount, net) {
+function presentAmount(amount) {
   if (!amount) return
 
-  const basis = Math.floor(amount)
-  let decimal = JSON.stringify(amount)
-
-  if (decimal[1] === '.') decimal = JSON.stringify(amount).slice(-2)
-  else decimal = JSON.stringify(amount).slice(-1) + '0'
+  const multipliedAmount = `${amount * 100}`
 
   return (
     <React.Fragment>
       <div className='basis'>
-        {basis}
+        {multipliedAmount.slice(0, -2)}
       </div>
       <div className='decimal'>
-        {decimal}
+        {multipliedAmount.slice(-2)}
       </div>
     </React.Fragment>
   )
