@@ -88,8 +88,8 @@ export const text = [
   },
   {
     item: '', tier: 'point', version: versions['1.1'],
-    pl: <span>Od 2 marca 2020 r.: "<i>Konto w Serwisie może założyć a) osoba fizyczna niedziałająca przy dodawaniu Ogłoszenia jako przedsiębiorca (Konto Prywatne) lub b) podmiot działający przy dodawaniu ogłoszenia jako przedsiębiorca (Konto Firmowe).</i>"</span>,
-    en: <span>From 2 March 2020: "<i>An Account in the Service can be registered by a) a natural person not acting at adding of an Announcement as an entrepreneur (Private Account) and/or b) an entity acting at adding of an Announcement as an entrepreneur (Business Account).</i>"</span>
+    pl: <span>Od 12 marca 2020 r.: "<i>Konto w Serwisie może założyć a) osoba fizyczna niedziałająca przy dodawaniu Ogłoszenia jako przedsiębiorca (Konto Prywatne) lub b) podmiot działający przy dodawaniu ogłoszenia jako przedsiębiorca (Konto Firmowe).</i>"</span>,
+    en: <span>From 12 March 2020: "<i>An Account in the Service can be registered by a) a natural person not acting at adding of an Announcement as an entrepreneur (Private Account) and/or b) an entity acting at adding of an Announcement as an entrepreneur (Business Account).</i>"</span>
   },
   {
     item: '3.2.', tier: 'point', version: versions['1.0'],
@@ -148,8 +148,8 @@ export const text = [
   },
   {
     item: '', tier: 'point', version: versions['1.1'],
-    pl: <span>Od 2 marca 2020 r.: "<i>Dodane Ogłoszenie pozostaje aktywne przez okres 60 dni, chyba, że zostanie wcześniej usunięte przez Ogłoszeniodawcę lub Administratora. Po upływie okresu aktywacji Ogłoszenie jest niewidoczne dla Odwiedzających, za wyjątkiem Ogłoszeniodawcy. Po upływie 90 dni od końca okresu aktywacji Ogłoszenie jest automatycznie usuwane. Ogłoszeniodawca może usunąć ogłoszenie w każdym momencie.</i>"</span>,
-    en: <span>From 2 March 2020: "<i>An added Announcement stays active for the period of 60 days, unless, it is earlier deleted by the Announcer or the Administrator. After the lapse of the activation period the Announcement is not visible to Visitors, excluding the Announcer. After 90 days from the end of the activation period the Announcement is automatically deleted. The Announcement can be deleted by the Announcer at any time.</i>"</span>
+    pl: <span>Od 12 marca 2020 r.: "<i>Dodane Ogłoszenie pozostaje aktywne przez okres 60 dni, chyba, że zostanie wcześniej usunięte przez Ogłoszeniodawcę lub Administratora. Po upływie okresu aktywacji Ogłoszenie jest niewidoczne dla Odwiedzających, za wyjątkiem Ogłoszeniodawcy. Po upływie 30 dni od końca okresu aktywacji Ogłoszenie jest automatycznie usuwane. Ogłoszeniodawca może usunąć ogłoszenie w każdym momencie.</i>"</span>,
+    en: <span>From 12 March 2020: "<i>An added Announcement stays active for the period of 60 days, unless, it is earlier deleted by the Announcer or the Administrator. After the lapse of the activation period the Announcement is not visible to Visitors, excluding the Announcer. After 30 days from the end of the activation period the Announcement is automatically deleted. The Announcement can be deleted by the Announcer at any time.</i>"</span>
   },
   {
     item: '4.10.', tier: 'point', version: versions['1.0'],
@@ -218,8 +218,8 @@ export const text = [
   },
   {
     item: '', tier: 'point', version: versions['1.1'],
-    pl: <span>Od 2 marca 2020 r.: "<i>Niniejszy Regulamin obowiązuje od dnia 2 marca 2020 r.</i>"</span>,
-    en: <span>From 2 March 2020: "<i>These Terms of Service are applicable as of 2 March 2020.</i>"</span>
+    pl: <span>Od 12 marca 2020 r.: "<i>Niniejszy Regulamin obowiązuje od dnia 12 marca 2020 r.</i>"</span>,
+    en: <span>From 12 March 2020: "<i>These Terms of Service are applicable as of 12 March 2020.</i>"</span>
   },
   {
     item: '7.4.', tier: 'point', version: versions['1.0'],

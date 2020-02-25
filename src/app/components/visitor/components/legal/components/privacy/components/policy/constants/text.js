@@ -37,8 +37,8 @@ export const text = [
   },
   {
     item: '', tier: 'point', version: versions['1.1'],
-    pl: <span>Od 2 marca 2020 r.: "<i>Założenie Konta w Serwisie wymaga podania adresu email, numeru telefonu oraz hasła, a ponadto imienia w przypadku Konta Prywatnego albo firmy (nazwy) przedsiębiorcy w przypadku Konta firmowego. Wystawienie faktury może wymagać podania dalszych danych.</i>"</span>,
-    en: <span>From 2 March 2020: "<i>The registration of an Account in the Service requires provision of an email, phone number and password, and furthermore a first name in case of the Private Account or a business name in case of the Business Account. Invoice issuance may require provision of additional data.</i>"</span>
+    pl: <span>Od 12 marca 2020 r.: "<i>Założenie Konta w Serwisie wymaga podania adresu email, numeru telefonu oraz hasła, a ponadto imienia w przypadku Konta Prywatnego albo firmy (nazwy) przedsiębiorcy w przypadku Konta firmowego. Wystawienie faktury może wymagać podania dalszych danych.</i>"</span>,
+    en: <span>From 12 March 2020: "<i>The registration of an Account in the Service requires provision of an email, phone number and password, and furthermore a first name in case of the Private Account or a business name in case of the Business Account. Invoice issuance may require provision of additional data.</i>"</span>
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
@@ -62,8 +62,8 @@ export const text = [
   },
   {
     item: '', tier: 'point', version: versions['1.1'],
-    pl: <span>Od 2 marca 2020 r.: "<i>Przy każdym dodanym Ogłoszeniu numer telefonu Ogłoszeniodawcy oraz jego imię w przypadku Konta Prywatnego albo firma (nazwa) w przypadku Konta firmowego dostępne są publicznie.</i>"</span>,
-    en: <span>From 2 March 2020: "<i>With each added Announcement the phone number of its Announcer and furthermore the Announcer's first name in case of the Private Account or a business name in case of the Business Account are available publicly .</i>"</span>
+    pl: <span>Od 12 marca 2020 r.: "<i>Przy każdym dodanym Ogłoszeniu numer telefonu Ogłoszeniodawcy oraz jego imię w przypadku Konta Prywatnego albo firma (nazwa) w przypadku Konta firmowego dostępne są publicznie.</i>"</span>,
+    en: <span>From 12 March 2020: "<i>With each added Announcement the phone number of its Announcer and furthermore the Announcer's first name in case of the Private Account or a business name in case of the Business Account are available publicly .</i>"</span>
   },
   {
     item: '5.', tier: 'header', version: versions['1.0'],
