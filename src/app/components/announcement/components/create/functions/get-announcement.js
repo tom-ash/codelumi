@@ -44,9 +44,6 @@ export function getAnnouncement() {
 
     setBlobs.call(this, id, pictures)
 
-    console.log(json)
-    console.log(grossRentAmount)
-
     let announcementInputs = {
       id,
       category,

@@ -20,15 +20,18 @@ export function sendAnnouncementsListResponse(res, language) {
     if (announcements && announcements[0]) announcements[0].show = true
 
     sendResponse(res, {
-      route: {
-        showAnnouncementIndexMap: true,
-        showAnnouncementIndexList: true,
-        language
+      routeState: {
+        route: {
+          showAnnouncementIndexMap: true,
+          showAnnouncementIndexList: true,
+          language
+        },
+        announcementsList: {
+          announcements,
+          amount
+        }
       },
-      announcementsList: {
-        announcements,
-        amount
-      }
+      title: `${language === 'pl' ? 'Lista Ogłoszeń Wynajmu Nieruchomości w Warszawie' : 'List of Real Estate Lease Announcements in Warsaw'} | warsawlease.pl`
     })
   })
 }

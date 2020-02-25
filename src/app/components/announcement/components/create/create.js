@@ -9,8 +9,6 @@ import AnnouncementCreateDescription from './components/description/description'
 import AnnouncementCreateMap from './components/map/map'
 import AnnouncementCreatePublishing from './components/publishing/publishing'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
-import { monitBuilder } from '../create/functions/monit-builder'
-import { redirectToUserCreate } from '../create/functions/redirect-to-user-create'
 import { getAnnouncement } from './functions/get-announcement'
 import { sectionHeaderProvider } from '../../../../functions/providers/headers'
 import * as lifecycle from './functions/lifecycle'
@@ -22,8 +20,6 @@ class AnnouncementCreate extends React.Component {
     this.componentWillUnmount = lifecycle.componentWillUnmount
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
-    this.monitBuilder = monitBuilder.bind(this)
-    this.redirectToUserCreate = redirectToUserCreate.bind(this)
     this.getAnnouncement = getAnnouncement.bind(this)
     this.sectionHeaderProvider = sectionHeaderProvider.bind(this)
   }
@@ -37,7 +33,6 @@ class AnnouncementCreate extends React.Component {
           <h2 className='page-header'>
             <i className='fas fa-plus' /> {this.languageHandler('Dodaj bezpłatne ogłoszenie', 'Add Free Announcement')}
           </h2>
-          
           <AnnouncementCreatePrimary />
           {this.sectionHeaderProvider('fas fa-images', { pl: 'Zdjęcia (wymagane)', en: 'Pictures (required)'})}
           <AnnouncementCreatePictures />

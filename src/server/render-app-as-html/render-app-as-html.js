@@ -6,7 +6,7 @@ import { rootReducerProvider } from '../../app/functions/root_reducer.js'
 import StyleContext from 'isomorphic-style-loader/StyleContext'
 import App from '../../app/app'
 
-export function renderAppAsHtml(routeState) {
+export function renderAppAsHtml({ routeState, title, description }) {
   const css = new Set()
   const insertCss = (...styles) => styles.forEach(style => css.add(style._getCss()))
   const store = createStore(rootReducerProvider(routeState))
@@ -23,5 +23,5 @@ export function renderAppAsHtml(routeState) {
 
   const preloadedState = store.getState()
 
-  return { html, css, preloadedState }
+  return { html, css, preloadedState, title, description }
 }

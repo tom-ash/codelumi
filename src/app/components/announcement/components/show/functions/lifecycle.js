@@ -1,13 +1,15 @@
 import { fetchAnnouncement } from './fetch-announcement'
 
 export function componentDidMount() {
-  const { announcementId } = this.props
+  const { announcementId, phone } = this.props
 
   if (announcementId) {
     fetchAnnouncement.call(this)
     this.viewAnnouncement(announcementId)
   }
   addEventListener('scroll', this.fixedPhoneHandler)
+
+  if (phone) this.setState({ phone })
 }
 
 export function componentDidUpdate(prevProps) {

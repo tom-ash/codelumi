@@ -2,7 +2,7 @@ const fetch = require("node-fetch")
 import { sendResponse } from './send-response'
 import { showClientServerParams } from '../../app/components/announcement/constants/client-server-params'
 
-export function sendAnnouncementResponse(res, announcementId) {
+export function sendAnnouncementResponse(res, announcementId, language) {
   fetch(`${API_URL}/announcements/${announcementId}`, {
     headers: { 'Content-Type': 'application/json' }
   })
@@ -21,10 +21,13 @@ export function sendAnnouncementResponse(res, announcementId) {
     clientParams.descriptionEnglish = json.englishDescription
 
     sendResponse(res, {
-      route: {
-        showAnnouncementShow: true
+      routeState: {
+        route: {
+          showAnnouncementShow: true
+        },
+        announcement: clientParams
       },
-      announcement: clientParams
+      title: `${language === 'pl' ? `Ogłoszenie ${announcementId}` : `Announcement ${announcementId}`} | warsawlease.pl`
     })
   })
 }

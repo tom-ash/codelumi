@@ -35,7 +35,6 @@ class AnnouncementIndexFull extends React.Component {
           <div className='announcements'>
             {
             announcements && announcements.map((announcement, index) => {
-              console.log(announcement)
               return (
                 <AnnouncementTile
                   venue='full'
