@@ -1,6 +1,6 @@
 export function getSimpleRouteData(route) {
   switch(route) {
-    case '/':
+    case 'root':
       return {
         routeState: {
           route: {}
@@ -177,9 +177,6 @@ export function getSimpleRouteData(route) {
         },
         title: 'Privacy Settings | warsawlease.pl'
       }
-    // default: return 404
-    default: return {
-      routeState: {}
-    }
+    default: return 404
   }
 }

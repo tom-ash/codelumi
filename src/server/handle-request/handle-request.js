@@ -5,13 +5,18 @@ import { sendAnnouncementResponse } from '../send-response/send-announcement-res
 
 export function handleRequest(req, res) {
   // const language = getLanguage(req.headers["accept-language"])
+  let originalUrl = req.originalUrl
 
-  if (req.originalUrl === '/lista') return sendAnnouncementsListResponse(res, 'pl')
-  else if (req.originalUrl === '/list') return sendAnnouncementsListResponse(res, 'en')
-  else if (req.originalUrl.match(/^\/\d+$/)) return sendAnnouncementResponse(res, req.originalUrl.slice(1), 'pl')
-  // else if (getSimpleRouteData(req.originalUrl) === 404) return res.status(404).send('404')
+  if (originalUrl.indexOf('?') !== -1) originalUrl = originalUrl.substring(0, originalUrl.indexOf('?'))
+  if (originalUrl.slice(-1) === '/') originalUrl = originalUrl.slice(0, -1)
 
-  sendResponse(res, getSimpleRouteData(req.originalUrl))
+  if (originalUrl === '' || originalUrl === '/') return sendResponse(res, getSimpleRouteData('root'))
+  else if (originalUrl === '/lista') return sendAnnouncementsListResponse(res, 'pl')
+  else if (originalUrl === '/list') return sendAnnouncementsListResponse(res, 'en')
+  else if (originalUrl.match(/^\/\d+$/)) return sendAnnouncementResponse(res, req.originalUrl.slice(1), 'pl')
+  else if (getSimpleRouteData(originalUrl) === 404) return res.status(404).send('404')
+
+  sendResponse(res, getSimpleRouteData(originalUrl))
 }
 
 function getLanguage(acceptedLanguages) {
