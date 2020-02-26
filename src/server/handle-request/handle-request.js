@@ -9,7 +9,7 @@ export function handleRequest(req, res) {
   if (req.originalUrl === '/lista') return sendAnnouncementsListResponse(res, 'pl')
   else if (req.originalUrl === '/list') return sendAnnouncementsListResponse(res, 'en')
   else if (req.originalUrl.match(/^\/\d+$/)) return sendAnnouncementResponse(res, req.originalUrl.slice(1), 'pl')
-  else if (getSimpleRouteData(req.originalUrl) === 404) return res.status(404).send('404')
+  // else if (getSimpleRouteData(req.originalUrl) === 404) return res.status(404).send('404')
 
   sendResponse(res, getSimpleRouteData(req.originalUrl))
 }

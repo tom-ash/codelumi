@@ -177,6 +177,9 @@ export function getSimpleRouteData(route) {
         },
         title: 'Privacy Settings | warsawlease.pl'
       }
-    default: return 404
+    // default: return 404
+    default: return {
+      routeState: {}
+    }
   }
 }
