@@ -47,6 +47,7 @@ var config = {
       { from: './src/client/robots.txt', to: './client/robots.txt' },
       { from: './src/client/sitemap.xml', to: './client/sitemap.xml' },
       { from: './src/client/favicon.png', to: './client/favicon.png' },
+      { from: './src/client/favicon.ico', to: './client/favicon.ico' },
     ]),
   ]
 };
