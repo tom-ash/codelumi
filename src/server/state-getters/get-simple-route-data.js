@@ -1,5 +1,12 @@
 export function getSimpleRouteData(route) {
   switch(route) {
+    case '/':
+      return {
+        routeState: {
+          route: {}
+        },
+        title: 'Mapa wynajmu mieszkań, lokali użytkowych oraz biur w Warszawie | warsawlease.pl'
+      }
     case '/dodaj-ogloszenie':
       return {
         routeState: {
@@ -170,10 +177,6 @@ export function getSimpleRouteData(route) {
         },
         title: 'Privacy Settings | warsawlease.pl'
       }
-    default: return {
-      routeState: {
-        route: {}
-      }
-    }
+    default: return 404
   }
 }

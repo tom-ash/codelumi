@@ -1,4 +1,4 @@
-const defaultTitle = 'Mapa wynajmu mieszkań, lokali użytkowych oraz biur w Warszawie: warsawlease.pl'
+const defaultTitle = 'Mapa wynajmu mieszkań, lokali użytkowych oraz biur w Warszawie | warsawlease.pl'
 const defaultDescription = 'Dwujęzyczna mapa wynajmu mieszkań, biur oraz lokali użytkowych w Warszawie. A bilingual lease map of apartments, offices and usable premises in Warsaw.'
 
 export function renderPage({
