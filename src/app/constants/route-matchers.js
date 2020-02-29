@@ -1,22 +1,20 @@
 export const routeMatchers = {
   showAnnouncementIndexMap: {
     route: {
-      pl: '/',
-      en: '/'
+      pl: '',
+      en: ''
     }
   },
-
   showAnnouncementIndexList: {
     route: {
       pl: '/lista',
       en: '/list'
     }
   },
-
   showAnnouncementIndexAdded: {
     route: {
-      pl: 'dodane-ogloszenia',
-      en: 'added-announcements'
+      pl: '/dodane-ogloszenia',
+      en: '/added-announcements'
     },
     main: true
   },
@@ -30,84 +28,84 @@ export const routeMatchers = {
   },
   showAnnouncementCreate: {
     route: {
-      pl: 'dodaj-ogloszenie',
-      en: 'add-announcement'
+      pl: '/dodaj-ogloszenie',
+      en: '/add-announcement'
     },
     main: true
   },
   showAnnouncementEdit: {
     route: {
-      pl: 'edytuj-ogloszenie',
-      en: 'edit-announcement'
+      pl: '/edytuj-ogloszenie',
+      en: '/edit-announcement'
     },
     main: true,
     announcementId: true
   },
   showVisitorPrivacySettings: {
     route: {
-      pl: 'ustawienia-prywatnosci',
-      en: 'privacy-settings'
+      pl: '/ustawienia-prywatnosci',
+      en: '/privacy-settings'
     }
   },
   showUserCreate: {
     route: {
-      pl: 'zarejestruj',
-      en: 'sign-up'
+      pl: '/zarejestruj',
+      en: '/sign-up'
     }
   },
   showUserAuthorize: {
     route: {
-      pl: 'zaloguj',
-      en: 'sign-in'
+      pl: '/zaloguj',
+      en: '/sign-in'
     }
   },
   showUserEditPasswordReset: {
     route: {
-      pl: 'zresetuj_haslo',
-      en: 'reset_password'
+      pl: '/zresetuj_haslo',
+      en: '/reset_password'
     }
   },
   showUserEditAccount: {
     route: {
-      pl: 'ustawienia_konta',
-      en: 'account_settings'
+      pl: '/ustawienia_konta',
+      en: '/account_settings'
     },
     main: true,
   },
   showVisitorAbout: {
     route: {
-      pl: 'o-serwisie',
-      en: 'about'
+      pl: '/o-serwisie',
+      en: '/about'
     }
   },
   showVisitorContact: {
     route: {
-      pl: 'kontakt',
-      en: 'contact'
+      pl: '/kontakt',
+      en: '/contact'
     }
   },
   showVisitorTermsOfService: {
     route: {
-      pl: 'regulamin',
-      en: 'terms-of-service'
+      pl: '/regulamin',
+      en: '/terms-of-service'
     }
   },
   showVisitorCookiesPolicy: {
     route: {
-      pl: 'polityka-plikow-cookies',
-      en: 'cookies-policy'
+      pl: '/polityka-plikow-cookies',
+      en: '/cookies-policy'
     }
   },
   showVisitorPrivacyPolicy: {
     route: {
-      pl: 'polityka-prywatnosci',
-      en: 'privacy-policy'
+      pl: '/polityka-prywatnosci',
+      en: '/privacy-policy'
     }
   },
   showVisitorPrivacySettings: {
     route: {
-      pl: 'ustawienia-prywatnosci',
-      en: 'privacy-settings'
+      pl: '/ustawienia-prywatnosci',
+      en: '/privacy-settings'
     }
   }
 }

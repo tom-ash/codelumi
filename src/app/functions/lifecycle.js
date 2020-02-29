@@ -21,7 +21,7 @@ export function componentDidMount() {
     }
   });
 
-  this.checkRoute()
+  this.checkRoute({ popState: false })
   window.onpopstate = () => this.popStateHandler()
   this.authorizeUserWithTokens()
 }
@@ -42,8 +42,8 @@ function setLanguage() {
   const cookieLanguage = getCookieValue('lang')
   if (cookieLanguage) return changeApp({ language: cookieLanguage })
 
-  const navigatorLanguage = navigator.language
-  if (typeof navigatorLanguage === 'string' && navigatorLanguage.toLowerCase().indexOf('pl') === -1) {
-    changeApp({ language: 'en' })
-  }
+  // const navigatorLanguage = navigator.language
+  // if (typeof navigatorLanguage === 'string' && navigatorLanguage.toLowerCase().indexOf('pl') === -1) {
+  //   changeApp({ language: 'en' })
+  // }
 }

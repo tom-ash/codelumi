@@ -12,6 +12,7 @@ export const mapStateToProps = (store) => {
 export const mapDispatchToProps = (dispatch) => {
   return {
     changeApp: (value) => dispatch({ type: 'app', value: value}),
+    changeRoute: (value) => dispatch({ type: 'route', value: value}),
     resetAnnouncementIndexControl: (value) => dispatch({ type: 'announcement/index/control/reset', value: value }),
     resetAnnouncementIndexInputs: (value) => dispatch({ type: 'announcement/index/inputs/reset', value: value }),
     resetAnnouncementIndexData: (value) => dispatch({ type: 'announcement/index/data/reset', value: value }),

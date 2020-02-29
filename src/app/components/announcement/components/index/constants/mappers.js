@@ -34,6 +34,7 @@ export const mapStateToProps = (store) => {
   } = store.announcement.index.inputs
 
   const {
+    announcements,
     amount
   } = store.announcement.index.data
 
@@ -63,6 +64,7 @@ export const mapStateToProps = (store) => {
     sort,
     page,
     offset,
+    announcements,
     amount
   }
 }

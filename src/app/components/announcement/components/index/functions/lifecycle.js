@@ -1,17 +1,11 @@
 export function componentDidMount() {
   if (typeof window === 'undefined') return
   
-  const { fetch, showUser } = this.props
+  const {
+    announcements
+  } = this.props
 
-  if (!showUser) {
-    if (fetch) return this.fetchAnnouncements()
-
-    this.paramsReader()
-  } else {
-    this.fetchAnnouncements()
-  }
-
-  window.addEventListener('popstate', () => this.paramsReader())
+  if (announcements === null) this.fetchAnnouncements()
 }
 
 export function componentDidUpdate(prevProps) {

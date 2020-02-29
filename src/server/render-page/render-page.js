@@ -31,3 +31,5 @@ export function renderPage({
     </html>
   `
 }
+
+// <script type="text/javascript" src="/bundle.js"></script>

@@ -1,7 +1,7 @@
 const fetch = require("node-fetch")
 import { sendResponse } from './send-response'
 
-export function sendAnnouncementsListResponse(res, language) {
+export function sendAnnouncementsListResponse({ res, initialState: { route: { language } }, title }) {
   fetch(API_URL + `/announcements`, {
     headers: {
       'Content-Type': 'application/json'
@@ -19,8 +19,9 @@ export function sendAnnouncementsListResponse(res, language) {
     })
     if (announcements && announcements[0]) announcements[0].show = true
 
-    sendResponse(res, {
-      routeState: {
+    sendResponse({
+      res,
+      initialState: {
         route: {
           showAnnouncementIndexMap: true,
           showAnnouncementIndexList: true,
@@ -31,7 +32,7 @@ export function sendAnnouncementsListResponse(res, language) {
           amount
         }
       },
-      title: `${language === 'pl' ? 'Lista Ogłoszeń Wynajmu Nieruchomości w Warszawie' : 'List of Real Estate Lease Announcements in Warsaw'} | warsawlease.pl`
+      title
     })
   })
 }
