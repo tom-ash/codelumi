@@ -30,7 +30,16 @@ export const mapStateToProps = (store) => {
     statisticsConsent, marketingConsent
   } = store.visitor.legal.privacy.settings
 
+  const {
+    category,
+    district,
+    area
+  } = store.announcement.show.data
+
   return {
+    category,
+    district,
+    area,
     language,
     device,
     path,

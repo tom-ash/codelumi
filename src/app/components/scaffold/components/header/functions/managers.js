@@ -29,7 +29,7 @@ export function titleManager() {
       resetAnnouncementIndexControl()
       resetAnnouncementIndexInputs()
       changeAnnouncementIndexControl({ fetch: true })
-      this.changeRoute({ showAnnouncementIndexMap: true })
+      this.changePath({ showAnnouncementIndexMap: true })
     }
   }
 }
@@ -42,7 +42,7 @@ export function addAnnouncementManager() {
     title: this.languageObjectHandler({ pl: 'Dodaj ogłoszenie', en: 'Add Announcement' }),
     label: <strong>{this.labelProvider('fas fa-plus', 'Dodaj bezpłatne ogłoszenie', 'Add Free Announcement')}</strong>,
     onClick: () => {
-      this.changeRoute({ showAnnouncementCreate: true })
+      this.changePath({ showAnnouncementCreate: true })
       this.props.changeControl({ showLinks: false })
     }
   }

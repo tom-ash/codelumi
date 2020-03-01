@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import * as reduxMappers from './constants/mappers'
 import { ManagedButton, ManagedLink } from 'managed-inputs'
 import * as managers from './functions/managers'
-import { changeRoute } from '../../../../functions/routers'
+import { changePath } from '../../../../functions/routers/change-path'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import { labelProvider } from '../../../user/components/show/functions/label-provider'
 
@@ -16,7 +16,7 @@ class Header extends React.Component {
     this.signInManager = managers.signInManager.bind(this)
     this.myAccountManager = managers.myAccountManager.bind(this)
     this.languageManager = managers.languageManager.bind(this)
-    this.changeRoute = changeRoute.bind(this)
+    this.changePath = changePath.bind(this)
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)

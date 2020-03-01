@@ -1,8 +1,8 @@
 export function componentDidUpdate() {
   const { publishingAnnouncement, authorized } = this.props
   if (!authorized) return
-  // if (publishingAnnouncement) return this.changeRoute(null, 'addAnnouncement')
-  // this.changeRoute(null, 'myAccount')
+  // if (publishingAnnouncement) return this.changePath(null, 'addAnnouncement')
+  // this.changePath(null, 'myAccount')
 }
 
 export function componentWillUnmount() {

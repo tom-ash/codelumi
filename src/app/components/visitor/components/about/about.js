@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { changeRoute } from '../../../../functions/routers'
+import { changePath } from '../../../../functions/routers/change-path'
 import { pageHeaderProvider } from '../../../../functions/providers/headers'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import { features } from './constants/features'
@@ -10,7 +10,7 @@ import { CloseButton } from '../../../../components/support/components/close-but
 class About extends React.Component {
   constructor(props) {
     super(props)
-    this.changeRoute = changeRoute.bind(this)
+    this.changePath = changePath.bind(this)
     this.pageHeaderProvider = pageHeaderProvider.bind(this)
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)

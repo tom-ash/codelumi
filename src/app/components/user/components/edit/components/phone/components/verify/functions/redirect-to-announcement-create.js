@@ -1,3 +1,3 @@
 export function redirectToPhoneVerify() {
-  this.changeRoute(null, 'announcementCreate')
+  this.changePath(null, 'announcementCreate')
 }

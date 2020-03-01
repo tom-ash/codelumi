@@ -6,7 +6,7 @@ import { ManagedButton } from 'managed-inputs'
 import { agreeManager, settingsManager } from './functions/manager'
 import { languageManager } from '../../../../../../../scaffold/components/header/functions/managers'
 import { textsProvider } from './functions/texts-provider'
-import { changeRoute } from '../../../../../../../../functions/routers'
+import { changePath } from '../../../../../../../../functions/routers/change-path'
 
 class VisitorPrivacyMonit extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class VisitorPrivacyMonit extends React.Component {
     this.languageManager = languageManager.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.textsProvider = textsProvider.bind(this)
-    this.changeRoute = changeRoute.bind(this)
+    this.changePath = changePath.bind(this)
   }
 
   render() {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { changeRoute } from '../../../../functions/routers'
+import { changePath } from '../../../../functions/routers/change-path'
 import * as managers from './functions/managers'
 import { ManagedLink } from 'managed-inputs'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
@@ -9,7 +9,7 @@ import { languageHandler, languageObjectHandler } from '../../../../functions/la
 class Footer extends React.Component {
   constructor(props) {
     super(props)
-    this.changeRoute = changeRoute.bind(this)
+    this.changePath = changePath.bind(this)
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.aboutManger = managers.aboutManager.bind(this)

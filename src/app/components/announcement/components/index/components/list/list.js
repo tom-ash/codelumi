@@ -13,7 +13,7 @@ import { extend } from './functions/extend'
 import { destroy } from './functions/destroy'
 import { edit } from './functions/edit'
 import { pageHeaderProvider, sectionHeaderProvider } from '../../../../../../functions/header-providers'
-import { changeRoute } from '../../../../../../functions/routers'
+import { changePath } from '../../../../../../functions/routers/change-path'
 
 class AnnouncementIndexList extends React.Component {
   constructor(props) {
@@ -34,7 +34,7 @@ class AnnouncementIndexList extends React.Component {
     this.destroyManager = managers.destroyManager.bind(this)
     this.cancelDestroyManager = managers.cancelDestroyManager.bind(this)
     this.extend = extend.bind(this)
-    this.changeRoute = changeRoute.bind(this)
+    this.changePath = changePath.bind(this)
   }
 
   render() {

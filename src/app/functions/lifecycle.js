@@ -21,7 +21,7 @@ export function componentDidMount() {
     }
   });
 
-  this.checkRoute({ popState: false })
+  this.matchStateToPath({ popState: false })
   window.onpopstate = () => this.popStateHandler()
   this.authorizeUserWithTokens()
 }
@@ -29,7 +29,7 @@ export function componentDidMount() {
 export function componentDidUpdate(prevProps) {
   const { googleAnalyticsLoaded, googleAnalyticsLoading, statisticsConsent } = this.props
   
-  this.handlePathname(prevProps)
+  this.matchPathToState(prevProps)
 
   if (!googleAnalyticsLoaded && !googleAnalyticsLoading && statisticsConsent) {
     loadGoogleAnalytics.call(this)

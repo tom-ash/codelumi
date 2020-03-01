@@ -7,28 +7,33 @@ import Announcement from './components/announcement/announcement'
 import User from './components/user/user'
 import Footer from './components/scaffold/components/footer/Footer'
 import * as lifecycle from './functions/lifecycle'
-import * as routers from './functions/routers'
+import * as routers from './functions/routers/change-path'
 import { authorizeUserWithTokens } from './components/user/components/authorize/components/tokens/functions/adapters.js'
 import { screenSizeHandler } from './functions/screen-size-handler'
 import { popStateHandler } from './functions/popStateHandler'
 import { languageObjectHandler } from './functions/language-handler'
-import { handlePathname } from './functions/routers'
+
 
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+
+import { matchStateToPath } from './functions/routers/match-state-to-path'
+import { matchPathToState } from './functions/routers/match-path-to-state'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
-    this.changeRoute = routers.changeRoute.bind(this)
-    this.checkRoute = routers.checkRoute.bind(this)
+
     this.authorizeUserWithTokens = authorizeUserWithTokens.bind(this)
     this.screenSizeHandler = screenSizeHandler.bind(this)
     this.popStateHandler = popStateHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
-    this.handlePathname = handlePathname.bind(this)
+
+    this.changePath = routers.changePath.bind(this)
+    this.matchStateToPath = matchStateToPath.bind(this)
+    this.matchPathToState = matchPathToState.bind(this)
   }
 
   showUser = () => {

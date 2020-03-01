@@ -9,7 +9,7 @@ export function addAnnouncementManager() {
     href: this.languageObjectHandler({ pl: `${origin}dodaj-ogloszenie'`, en: `${origin}add-announcement'` }),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     label: this.labelProvider('fas fa-plus', 'Dodaj ogłoszenie', 'Add free announcement'),
-    onClick: () => this.changeRoute({ showAnnouncementCreate: true })
+    onClick: () => this.changePath({ showAnnouncementCreate: true })
   }
 }
 
@@ -23,7 +23,7 @@ export function listAnnouncementsManager() {
     label: this.labelProvider('fas fa-list-ul', 'Dodane ogłoszenia', 'Added announcements'),
     onClick: () => {
       changeAnnouncementIndexData({ announcements: null, amount: null })
-      this.changeRoute({ showAnnouncementIndexAdded: true })
+      this.changePath({ showAnnouncementIndexAdded: true })
       changeAnnouncementIndexControl({ fetch: true })
     }
   }
@@ -33,10 +33,10 @@ export function accountManager() {
   return {
     id: 'user-show-account-account',
     classNames: { container: 'button'},
-    href: this.languageObjectHandler({ pl: `${origin}account_settings'`, en: `${origin}ustawienia_konta'` }),
+    href: this.languageObjectHandler({ pl: `${origin}account-settings'`, en: `${origin}ustawienia-konta'` }),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     label: this.labelProvider('fas fa-cog', 'Ustawienia', 'Settings'),
-    onClick: () => this.changeRoute({ showUserEditAccount: true })
+    onClick: () => this.changePath({ showUserEditAccount: true })
   }
 }
 

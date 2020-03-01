@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import * as mappers from './constants/mappers'
 import { componentDidUpdate } from './functions/lifecycle'
-import { changeRoute } from '../../../../functions/routers'
+import { changePath } from '../../../../functions/routers/change-path'
 import UserCreateEmail from './components/email/email'
 import { CloseButton } from '../../../../components/support/components/close-button/close-button'
 import * as lifecycle from './functions/lifecycle'
@@ -13,7 +13,7 @@ class UserCreate extends React.Component {
     super(props)
     this.componentDidUpdate = componentDidUpdate.bind(this)
     this.componentWillUnmount = lifecycle.componentWillUnmount
-    this.changeRoute = changeRoute.bind(this)
+    this.changePath = changePath.bind(this)
     this.languageHandler = languageHandler.bind(this)
   }
 

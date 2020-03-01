@@ -1,8 +1,13 @@
 import { apiUrl } from '../../../../../constants/urls'
 import { showClientServerParams } from '../../../constants/client-server-params'
+import { provideTitle } from '../../../../../../shared/functions/providers/provide-title'
 
 export function fetchAnnouncement() {
-  const { announcementId } = this.props
+  const {
+    announcementId,
+    language,
+    changeData
+  } = this.props
 
   fetch(`${apiUrl}/announcements/${announcementId}`, {
     headers: { 'Content-Type': 'application/json' }
@@ -20,7 +25,12 @@ export function fetchAnnouncement() {
     clientParams.furnishings = json.furnishings
     clientParams.descriptionPolish = json.polishDescription
     clientParams.descriptionEnglish = json.englishDescription
-    this.props.changeData(clientParams)
+
+    document.title = provideTitle({ ...clientParams, language })
+    changeData(clientParams)    
   })
-  .catch(() => this.changeRoute(null, '/'))
+  .catch(e => {
+    console.error(e)
+    this.changePath(null, '/')
+  })
 }

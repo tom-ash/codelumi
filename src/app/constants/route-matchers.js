@@ -61,14 +61,14 @@ export const routeMatchers = {
   },
   showUserEditPasswordReset: {
     route: {
-      pl: '/zresetuj_haslo',
-      en: '/reset_password'
+      pl: '/zresetuj-haslo',
+      en: '/reset-password'
     }
   },
   showUserEditAccount: {
     route: {
-      pl: '/ustawienia_konta',
-      en: '/account_settings'
+      pl: '/ustawienia-konta',
+      en: '/account-settings'
     },
     main: true,
   },

@@ -6,7 +6,7 @@ import { pageHeaderProvider } from '../../../../functions/header-providers'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import * as managers from './functions/managers'
 import { labelProvider } from './functions/label-provider'
-import { changeRoute } from '../../../../functions/routers'
+import { changePath } from '../../../../functions/routers/change-path'
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class UserShow extends React.Component {
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
-    this.changeRoute = changeRoute.bind(this)
+    this.changePath = changePath.bind(this)
   }
 
   render() {

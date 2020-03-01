@@ -17,7 +17,7 @@ import { buttonManager } from './functions/manager'
 import { labelProvider } from '../../../../../../functions/providers/label'
 import { parseCurrency } from '../../../../functions/currency-parsers'
 import DerivedRents from './components/derived-rents/derived-rents'
-import { changeRoute } from '../../../../../../functions/routers'
+import { changePath } from '../../../../../../functions/routers/change-path'
 import { floorsProvider } from '../primary/functions/floors-provider'
 
 class AnnouncementCreateFeatures extends React.Component {
@@ -44,7 +44,7 @@ class AnnouncementCreateFeatures extends React.Component {
     this.labelProvider = labelProvider.bind(this)
     this.availabilityDateSelectManager = managers.availabilityDateSelectManager.bind(this)
     this.parseCurrency = parseCurrency.bind(this)
-    this.changeRoute = changeRoute.bind(this)
+    this.changePath = changePath.bind(this)
     this.floorsProvider = floorsProvider.bind(this) // DELETE
   }
   
