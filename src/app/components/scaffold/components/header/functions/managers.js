@@ -102,10 +102,14 @@ export function myAccountManager() {
 }
 
 export function languageManager() {
-  const { changeApp, language } = this.props
+  const {
+    changeApp,
+    language
+  } = this.props
 
   return {
     classNames: { container: 'button language' },
+    href: `${CLIENT_URL}${this.matchPathToLanguage()}`,
     label: <span><i className='fas fa-globe'/> {this.languageHandler('English', 'Polski')}</span>,
     onClick: () => {
       const newLanguage = language === 'pl' ? 'en' : 'pl'

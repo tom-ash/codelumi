@@ -1,11 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import * as reduxMappers from './constants/mappers'
-import { ManagedButton, ManagedLink } from 'managed-inputs'
+import { ManagedLink } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { changePath } from '../../../../functions/routers/change-path'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import { labelProvider } from '../../../user/components/show/functions/label-provider'
+import { matchPathToLanguage } from '../../../../functions/routers/match-path-to-language'
 
 class Header extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class Header extends React.Component {
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
+    this.matchPathToLanguage = matchPathToLanguage.bind(this)
   }
 
   render() {
@@ -54,7 +56,7 @@ class Header extends React.Component {
             {isLargePc && <ManagedLink {...this.signUpManager()} />}
             {isLargePc && <ManagedLink {...this.signInManager()} />}
             {isLargePc && <ManagedLink {...this.myAccountManager()} />}
-            <ManagedButton {...this.languageManager()} />
+            <ManagedLink {...this.languageManager()} />
           </div>
           {this.props.showLinks &&
           <div className='side-links-cover' onClick={() => changeControl({ showLinks: false })}>

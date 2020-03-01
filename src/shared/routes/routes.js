@@ -11,6 +11,7 @@ export const routes = {
       url: '/',
       title: 'Map of Warsaw property lease | warsawlease.pl'
     },
+    overshadow: false
   },
   showAnnouncementIndexList: {
     sender: 'list',
@@ -24,6 +25,7 @@ export const routes = {
       url: '/list',
       title: 'List of Annoucements of Warsaw Property Lease | warsawlease.pl'
     },
+    overshadow: true
   },
   showAnnouncementShow: {
     sender: 'announcement',
@@ -33,6 +35,7 @@ export const routes = {
     en: {
       regEx: /(^\d+$)/
     },
+    overshadow: false
   },  
   showAnnouncementCreate: {
     sender: 'generic',
@@ -45,7 +48,8 @@ export const routes = {
       regEx: /^add-announcement$/,
       url: '/add-announcement',
       title: 'Add Free Announcement of Real Estate Lease in Warsaw | warsawlease.pl'
-    }
+    },
+    overshadow: false
   },
   showUserCreate: {
     sender: 'generic',
@@ -59,7 +63,8 @@ export const routes = {
       url: '/sign-up',
       title: 'Sign Up | warsawlease.pl'
     },
-    needsBackground: true
+    needsBackground: true,
+    overshadow: true
   },
   showUserAuthorize: {
     sender: 'generic',
@@ -73,7 +78,8 @@ export const routes = {
       url: '/sign-in',
       title: 'Sign In | warsawlease.pl'
     },
-    needsBackground: true
+    needsBackground: true,
+    overshadow: true
   },
   showVisitorAbout: {
     sender: 'generic',
@@ -87,7 +93,8 @@ export const routes = {
       url: '/about',
       title: 'About | warsawlease.pl'
     },
-    needsBackground: true
+    needsBackground: true,
+    overshadow: true
   },
   showVisitorContact: {
     sender: 'generic',
@@ -101,7 +108,8 @@ export const routes = {
       url: '/contact',
       title: 'Contact | warsawlease.pl'
     },
-    needsBackground: true
+    needsBackground: true,
+    overshadow: true
   },
   showVisitorTermsOfService: {
     sender: 'generic',
@@ -115,7 +123,8 @@ export const routes = {
       url: '/terms-of-service',
       title: 'Terms of Service | warsawlease.pl'
     },
-    needsBackground: true
+    needsBackground: true,
+    overshadow: true
   },
   showVisitorCookiesPolicy: {
     sender: 'generic',
@@ -129,7 +138,8 @@ export const routes = {
       url: '/cookies-policy',
       title: 'Cookies Policy | warsawlease.pl'
     },
-    needsBackground: true
+    needsBackground: true,
+    overshadow: true
   },
   showVisitorPrivacyPolicy: {
     sender: 'generic',
@@ -143,7 +153,8 @@ export const routes = {
       url: '/privacy-policy',
       title: 'Privacy Policy | warsawlease.pl'
     },
-    needsBackground: true
+    needsBackground: true,
+    overshadow: true
   },
   showVisitorPrivacySettings: {
     sender: 'generic',
@@ -157,7 +168,8 @@ export const routes = {
       url: '/privacy-settings',
       title: 'Privacy Settings | warsawlease.pl'
     },
-    needsBackground: true
+    needsBackground: true,
+    overshadow: true
   },
   showAnnouncementIndexAdded: {
     sender: 'generic',
@@ -171,7 +183,8 @@ export const routes = {
       url: '/added-announcements',
       title: 'Added Announcements | warsawlease.pl'
     },
-    needsBackground: false
+    needsBackground: false,
+    overshadow: false
   },
   showAnnouncementEdit: {
     sender: 'generic',
@@ -185,7 +198,8 @@ export const routes = {
       url: '/edit-announcement',
       title: 'Edit Announcement | warsawlease.pl'
     },
-    needsBackground: false
+    needsBackground: false,
+    overshadow: false
   },
   showUserShow: {
     sender: 'generic',
@@ -199,7 +213,8 @@ export const routes = {
       url: '/account',
       title: 'Account | warsawlease.pl'
     },
-    needsBackground: true
+    needsBackground: true,
+    overshadow: true
   },
 
   showUserEditPasswordReset: {
@@ -214,7 +229,8 @@ export const routes = {
       url: '/reset-password',
       title: 'Reset Password | warsawlease.pl'
     },
-    needsBackground: true
+    needsBackground: true,
+    overshadow: true
   },
   showUserEditPhoneVerify: {
     sender: 'generic',
@@ -228,7 +244,8 @@ export const routes = {
       url: '/verify-phone-number',
       title: 'Verify Phone Number | warsawlease.pl'
     },
-    needsBackground: true
+    needsBackground: true,
+    overshadow: true
   },
   showUserEditAccount: {
     sender: 'generic',
@@ -242,6 +259,7 @@ export const routes = {
       url: '/account-settings',
       title: 'Account Settings | warsawlease.pl'
     },
-    needsBackground: false
+    needsBackground: false,
+    overshadow: false
   }
 }
