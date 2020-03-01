@@ -86,7 +86,7 @@ class AnnouncementCreatePrimary extends React.Component {
         </div>}
         {totalFloors !== null &&
         <div className='total-floors'>
-          {this.languageObjectHandler(presentTotalFloors({ totalFloors: 2 }))}
+          {this.languageObjectHandler(presentTotalFloors({ totalFloors }))}
         </div>}
         {availabilityDate !== null &&
         <div className='available-from'>
