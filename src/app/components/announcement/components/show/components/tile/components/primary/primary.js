@@ -86,7 +86,7 @@ class AnnouncementCreatePrimary extends React.Component {
         </div>}
         {totalFloors !== null &&
         <div className='total-floors'>
-          {this.languageObjectHandler(presentTotalFloors({ totalFloors }))}
+          {this.languageObjectHandler(presentTotalFloors({ totalFloors   }))}
         </div>}
         {availabilityDate !== null &&
         <div className='available-from'>
@@ -100,7 +100,14 @@ class AnnouncementCreatePrimary extends React.Component {
 
 export default AnnouncementCreatePrimary
 
-function PresentRent({ amount, currency, type, perSqm, languageObjectHandler, net}) {
+function PresentRent({
+  amount,
+  currency,
+  type,
+  perSqm,
+  languageObjectHandler,
+  net
+}) {
   return (
     <div className={`rent-container ${type}`}>
       <div className='amount'>
