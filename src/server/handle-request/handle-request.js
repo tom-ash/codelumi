@@ -1,4 +1,5 @@
 import { sendResponse } from '../send-response/send-response'
+import { sendAnnouncementsMapResponse } from '../send-response/send-announcements-map-response'
 import { sendAnnouncementsListResponse } from '../send-response/send-announcements-list-response'
 import { sendAnnouncementResponse } from '../send-response/send-announcement-response'
 import { routes } from '../../shared/routes/routes'
@@ -13,6 +14,7 @@ export function handleRequest(req, res) {
   } = getRouteData(pureUrl)
 
   if (!sender) return res.status(404).send('404')
+  else if (sender === 'map') return sendAnnouncementsMapResponse({ res, initialState, title })
   else if (sender === 'list') return sendAnnouncementsListResponse({ res, initialState, title })
   else if (sender === 'announcement') return sendAnnouncementResponse({ res, initialState, announcementId: pureUrl })
 

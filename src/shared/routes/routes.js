@@ -1,6 +1,6 @@
 export const routes = {
   showAnnouncementIndexMap: {
-    sender: 'generic',
+    sender: 'map',
     pl: {
       regEx: /(^$)/,
       url: '/',

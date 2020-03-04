@@ -35,7 +35,7 @@ class AnnouncementIndexMap extends React.Component {
       device
     } = this.props
 
-    const minListDevices = ['largePc', 'smallPc']
+    const minListDevices = [null, 'largePc', 'smallPc']
 
     return (
       <div
@@ -47,9 +47,12 @@ class AnnouncementIndexMap extends React.Component {
           {minListDevices.indexOf(device) !== -1 &&
           <div id='mini-list'>
             {announcements !== null && announcements.map(announcement => (
-              <div
+              <a
                 key={announcement.id}
-                onClick={() => {
+                rel='canonical'
+                href={`${CLIENT_URL}/${announcement.id}`}
+                onClick={e => {
+                  e.preventDefault()
                   const map = window.googleMap
                   const options = {
                     center: {
@@ -85,12 +88,10 @@ class AnnouncementIndexMap extends React.Component {
                   />
                 </div>
                 <div className='float-clear' />
-                {/* abc */}
-              </div>
+              </a>
             ))
             }
           </div>}
-
           {tile && Object.keys(tile).length > 1 &&
           <div className='announcement-tile-container'>
             <AnnouncementTile
@@ -121,7 +122,6 @@ class AnnouncementIndexMap extends React.Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementIndexMap)
-
 
 
 
