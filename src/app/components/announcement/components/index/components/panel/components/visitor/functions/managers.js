@@ -20,7 +20,6 @@ export function categoryManager() {
         this.props.changeInputs({ category: '', offset: 0 })
         this.props.changeControl({ fetch: true })
       }}/>}
-      }
     </React.Fragment>,
     options: this.buildSelectCategories(),
     onSelect: (option) => {

@@ -1,7 +1,8 @@
 @import '../../../../../styles/media-breakpoints';
 
 #announcement-index {
-
+  padding-top: 60px;
+  text-align: center;
   .phone {
     cursor: pointer;
     z-index: 3;
@@ -36,20 +37,20 @@
   }
 
   position: relative;
-  min-height: 752px;
+  min-height: 784px;
   @media #{$small-pc} {
-    min-height: 970px;
+    min-height: 842px;
   }
   .offset-switcher {
     position: relative;
     &.shared {
       z-index: 9;
       position: absolute;
-      top: 180px;
+      top: 182px;
       right: 0;
       left: 0;
       @media #{$small-pc} {
-        top: 340px;
+        top: 330px;
       }
     }
     &.only-amount {
@@ -91,4 +92,5 @@
       left: 30px;
     }
   }
+
 }

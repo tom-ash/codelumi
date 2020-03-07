@@ -3,10 +3,12 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import AnnouncementIndexPanelVisitor from './components/visitor/visitor'
 import AnnouncementIndexPanelUser from './components/user/user'
+import { languageObjectHandler } from '../../../../../../functions/language-handler'
 
 class AnnouncementIndexPanel extends React.Component {
   constructor(props) {
     super(props)
+    this.languageObjectHandler = languageObjectHandler.bind(this)
   }
 
   render() {

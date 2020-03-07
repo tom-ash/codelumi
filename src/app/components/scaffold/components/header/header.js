@@ -48,9 +48,12 @@ class Header extends React.Component {
               <div className='link-icon' />
             </div>
           </div>}
-          <h1 { ...!isLargePc && { className: 'shifted' } }>
+          <div
+            id='warsaw-lease'
+            { ...!isLargePc && { className: 'shifted' } }
+          >
             <ManagedLink {...this.titleManager()} />
-          </h1>
+          </div>
           <div className='top-links'>
             {isLargePc && <ManagedLink {...this.addAnnouncementManager()} />}
             {isLargePc && <ManagedLink {...this.signUpManager()} />}

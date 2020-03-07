@@ -1,9 +1,10 @@
 @import '../../../../../../../styles/media-breakpoints';
 
 #announcement-index-panel {
-  z-index: 3;
+  z-index: 2;
   position: relative;
-  padding-top: 68px;
-  position: relative;
-  background: #212F3D;
+  @media #{$small-pc} {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }

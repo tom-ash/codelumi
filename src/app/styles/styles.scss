@@ -84,7 +84,7 @@ body {
   position: relative;
   min-width: 320px;
 
-  background: #F7F9F9;
+  background: #F2F3F4;
 
 }
 
@@ -507,4 +507,21 @@ a {
 }
 .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #e6e6e6;
+}
+h1 {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  position: relative;
+  background: #212F3D;
+  color: #ECF0F1;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  .main {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  .supplementary {
+    font-size: 13px;
+  }
 }

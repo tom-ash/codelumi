@@ -4,12 +4,12 @@ export const routes = {
     pl: {
       regEx: /(^$)/,
       url: '/',
-      title: 'Mapa wynajmu warszawskich nieruchomości | warsawlease.pl'
+      title: 'Mapa ogłoszeń wynajmu nieruchomości w Warszawie'
     },
     en: {
       regEx: /(^$)/,
       url: '/',
-      title: 'Map of Warsaw property lease | warsawlease.pl'
+      title: 'Map of Warsaw Real Estate Lease Announcements'
     },
     overshadow: false
   },
@@ -18,12 +18,12 @@ export const routes = {
     pl: {
       regEx: /(^lista$)/,
       url: '/lista',
-      title: 'Lista ogłoszeń wynajmu warszawskich nieruchomości | warsawlease.pl'
+      title: 'Lista ogłoszeń wynajmu nieruchomości w Warszawie'
     },
     en: {
       regEx: /(^list$)/,
       url: '/list',
-      title: 'List of Annoucements of Warsaw Property Lease | warsawlease.pl'
+      title: 'List of Warsaw Real Estate Lease Announcements'
     },
     overshadow: true
   },
@@ -42,12 +42,12 @@ export const routes = {
     pl: {
       regEx: /^dodaj-ogloszenie$/,
       url: '/dodaj-ogloszenie',
-      title: 'Dodaj Bezpłatne Ogłoszenie Wynajmu Nieruchomości w Warszawie | warsawlease.pl'
+      title: 'Dodaj Bezpłatne Ogłoszenie Wynajmu Nieruchomości w Warszawie'
     },
     en: {
       regEx: /^add-announcement$/,
       url: '/add-announcement',
-      title: 'Add Free Announcement of Real Estate Lease in Warsaw | warsawlease.pl'
+      title: 'Add Free Announcement of Real Estate Lease in Warsaw'
     },
     overshadow: false
   },
@@ -56,12 +56,12 @@ export const routes = {
     pl: {
       regEx: /^zarejestruj$/,
       url: '/zarejestruj',
-      title: 'Zarejestruj | warsawlease.pl'
+      title: 'Zarejestruj'
     },
     en: {
       regEx: /^sign-up$/,
       url: '/sign-up',
-      title: 'Sign Up | warsawlease.pl'
+      title: 'Sign Up'
     },
     needsBackground: true,
     overshadow: true
@@ -71,12 +71,12 @@ export const routes = {
     pl: {
       regEx: /^zaloguj$/,
       url: '/zaloguj',
-      title: 'Zaloguj | warsawlease.pl'
+      title: 'Zaloguj'
     },
     en: {
       regEx: /^sign-in$/,
       url: '/sign-in',
-      title: 'Sign In | warsawlease.pl'
+      title: 'Sign In'
     },
     needsBackground: true,
     overshadow: true
@@ -86,12 +86,12 @@ export const routes = {
     pl: {
       regEx: /^o-serwisie$/,
       url: '/o-serwisie',
-      title: 'O Serwisie | warsawlease.pl'
+      title: 'O Serwisie'
     },
     en: {
       regEx: /^about$/,
       url: '/about',
-      title: 'About | warsawlease.pl'
+      title: 'About'
     },
     needsBackground: true,
     overshadow: true
@@ -101,12 +101,12 @@ export const routes = {
     pl: {
       regEx: /^kontakt$/,
       url: '/kontakt',
-      title: 'Kontakt | warsawlease.pl'
+      title: 'Kontakt'
     },
     en: {
       regEx: /^contact$/,
       url: '/contact',
-      title: 'Contact | warsawlease.pl'
+      title: 'Contact'
     },
     needsBackground: true,
     overshadow: true
@@ -116,12 +116,12 @@ export const routes = {
     pl: {
       regEx: /^regulamin$/,
       url: '/regulamin',
-      title: 'Kontakt | warsawlease.pl'
+      title: 'Regulamin'
     },
     en: {
       regEx: /^terms-of-service$/,
       url: '/terms-of-service',
-      title: 'Terms of Service | warsawlease.pl'
+      title: 'Terms of Service'
     },
     needsBackground: true,
     overshadow: true
@@ -131,12 +131,12 @@ export const routes = {
     pl: {
       regEx: /^polityka-plikow-cookies$/,
       url: '/polityka-plikow-cookies',
-      title: 'Polityka Plików Cookies | warsawlease.pl'
+      title: 'Polityka Plików Cookies'
     },
     en: {
       regEx: /^cookies-policy$/,
       url: '/cookies-policy',
-      title: 'Cookies Policy | warsawlease.pl'
+      title: 'Cookies Policy'
     },
     needsBackground: true,
     overshadow: true
@@ -146,12 +146,12 @@ export const routes = {
     pl: {
       regEx: /^polityka-prywatnosci$/,
       url: '/polityka-prywatnosci',
-      title: 'Polityka Prywatności | warsawlease.pl'
+      title: 'Polityka Prywatności'
     },
     en: {
       regEx: /^privacy-policy$/,
       url: '/privacy-policy',
-      title: 'Privacy Policy | warsawlease.pl'
+      title: 'Privacy Policy'
     },
     needsBackground: true,
     overshadow: true
@@ -161,12 +161,12 @@ export const routes = {
     pl: {
       regEx: /^ustawienia-prywatnosci$/,
       url: '/ustawienia-prywatnosci',
-      title: 'Ustawienia Prywatności | warsawlease.pl'
+      title: 'Ustawienia Prywatności'
     },
     en: {
       regEx: /^privacy-settings$/,
       url: '/privacy-settings',
-      title: 'Privacy Settings | warsawlease.pl'
+      title: 'Privacy Settings'
     },
     needsBackground: true,
     overshadow: true
@@ -176,12 +176,12 @@ export const routes = {
     pl: {
       regEx: /^dodane-ogloszenia$/,
       url: '/dodane-ogloszenia',
-      title: 'Dodane ogłoszenia | warsawlease.pl'
+      title: 'Dodane ogłoszenia'
     },
     en: {
       regEx: /^added-announcements$/,
       url: '/added-announcements',
-      title: 'Added Announcements | warsawlease.pl'
+      title: 'Added Announcements'
     },
     needsBackground: false,
     overshadow: false
@@ -191,12 +191,12 @@ export const routes = {
     pl: {
       regEx: /^edytuj-ogloszenie\/\d+$/,
       url: '/edytuj-ogloszenie',
-      title: 'Edytuj ogłoszenie | warsawlease.pl'
+      title: 'Edytuj ogłoszenie'
     },
     en: {
       regEx: /^edit-announcement\/\d+$/,
       url: '/edit-announcement',
-      title: 'Edit Announcement | warsawlease.pl'
+      title: 'Edit Announcement'
     },
     needsBackground: false,
     overshadow: false
@@ -206,12 +206,12 @@ export const routes = {
     pl: {
       regEx: /^konto$/,
       url: '/konto',
-      title: 'Konto | warsawlease.pl'
+      title: 'Konto'
     },
     en: {
       regEx: /^account$/,
       url: '/account',
-      title: 'Account | warsawlease.pl'
+      title: 'Account'
     },
     needsBackground: true,
     overshadow: true
@@ -222,12 +222,12 @@ export const routes = {
     pl: {
       regEx: /^zresetuj-haslo$/,
       url: '/zresetuj-haslo',
-      title: 'Zresetuj hasło | warsawlease.pl'
+      title: 'Zresetuj hasło'
     },
     en: {
       regEx: /^reset-password$/,
       url: '/reset-password',
-      title: 'Reset Password | warsawlease.pl'
+      title: 'Reset Password'
     },
     needsBackground: true,
     overshadow: true
@@ -237,12 +237,12 @@ export const routes = {
     pl: {
       regEx: /^zweryfikuj-numer-telefonu$/,
       url: '/zweryfikuj-numer-telefonu',
-      title: 'Zweryfikuj numer telefonu | warsawlease.pl'
+      title: 'Zweryfikuj numer telefonu'
     },
     en: {
       regEx: /^verify-phone-number$/,
       url: '/verify-phone-number',
-      title: 'Verify Phone Number | warsawlease.pl'
+      title: 'Verify Phone Number'
     },
     needsBackground: true,
     overshadow: true
@@ -252,12 +252,12 @@ export const routes = {
     pl: {
       regEx: /^ustawienia-konta$/,
       url: '/ustawienia-konta',
-      title: 'Ustawienia konta | warsawlease.pl'
+      title: 'Ustawienia konta'
     },
     en: {
       regEx: /^account-settings$/,
       url: '/account-settings',
-      title: 'Account Settings | warsawlease.pl'
+      title: 'Account Settings'
     },
     needsBackground: false,
     overshadow: false

@@ -25,12 +25,10 @@ class App extends React.Component {
     super(props)
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
-
     this.authorizeUserWithTokens = authorizeUserWithTokens.bind(this)
     this.screenSizeHandler = screenSizeHandler.bind(this)
     this.popStateHandler = popStateHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
-
     this.changePath = routers.changePath.bind(this)
     this.matchStateToPath = matchStateToPath.bind(this)
     this.matchPathToState = matchPathToState.bind(this)

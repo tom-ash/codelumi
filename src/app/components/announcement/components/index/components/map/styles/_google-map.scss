@@ -2,10 +2,10 @@
 
 %google-map {
   position: relative;
-  height: 584px;
+  height: 784px;
   border: none;
   @media #{$small-pc} {
-    height: 642px;
+    height: 842px;
   }
   .gm-bundled-control {
     right: 48px!important;
