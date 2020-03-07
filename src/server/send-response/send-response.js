@@ -5,13 +5,15 @@ export function sendResponse({
   res,
   initialState,
   title,
+  url,
   description
 }) {
   res.send(
     renderPage({ 
       ...renderAppAsHtml(initialState),
       title,
-      description
+      description,
+      url
     }) 
   )
 }

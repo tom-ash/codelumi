@@ -1,7 +1,12 @@
 const fetch = require("node-fetch")
 import { sendResponse } from './send-response'
 
-export function sendAnnouncementsListResponse({ res, initialState: { route: { language } }, title }) {
+export function sendAnnouncementsListResponse({
+  res,
+  initialState: { route: { language } },
+  title,
+  url
+}) {
   fetch(API_URL + `/announcements`, {
     headers: {
       'Content-Type': 'application/json'
@@ -32,7 +37,8 @@ export function sendAnnouncementsListResponse({ res, initialState: { route: { la
           amount
         }
       },
-      title
+      title,
+      url
     })
   })
 }

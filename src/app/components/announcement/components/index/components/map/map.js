@@ -49,7 +49,6 @@ class AnnouncementIndexMap extends React.Component {
             {announcements !== null && announcements.map(announcement => (
               <a
                 key={announcement.id}
-                rel='canonical'
                 href={`${CLIENT_URL}/${announcement.id}`}
                 onClick={e => {
                   e.preventDefault()

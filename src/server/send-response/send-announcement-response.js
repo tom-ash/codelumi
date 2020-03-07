@@ -2,7 +2,13 @@ const fetch = require("node-fetch")
 import { sendResponse } from './send-response'
 import { showClientServerParams } from '../../app/components/announcement/constants/client-server-params'
 
-export function sendAnnouncementResponse({ res, initialState: { route: { language } }, announcementId }) {
+export function sendAnnouncementResponse({
+  res,
+  initialState: {
+    route: { language }
+  },
+  announcementId
+}) {
   fetch(`${API_URL}/announcements/${announcementId}`, {
     headers: { 'Content-Type': 'application/json' }
   })
@@ -31,7 +37,8 @@ export function sendAnnouncementResponse({ res, initialState: { route: { languag
         },
         announcement: clientParams
       },
-      title: titleProvider({ ...clientParams, language })
+      title: titleProvider({ ...clientParams, language }),
+      url: announcementId
     })
   })
   .catch(() => res.status(404).send('404'))

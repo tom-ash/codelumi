@@ -18,7 +18,6 @@ class Footer extends React.Component {
     this.cookiesPolicyManager = managers.cookiesPolicyManager.bind(this)
     this.privacyPolicyManager = managers.privacyPolicyManager.bind(this)
     this.privacySettingsManager = managers.privacySettingsManager.bind(this)
-    this.announcementsListManager = managers.announcementsListManager.bind(this)
   }
   render() {
     return(
@@ -29,7 +28,6 @@ class Footer extends React.Component {
               <ManagedLink {...this.aboutManger()} />
               <ManagedLink {...this.contactManager()} />
               <ManagedLink {...this.termsOfServiceManager()} />
-              {/* <ManagedLink {...this.announcementsListManager()} /> */}
             </div>
             <div className='column'>
               <ManagedLink {...this.cookiesPolicyManager()} />

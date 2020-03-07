@@ -14,14 +14,15 @@ export function handleRequest(req, res) {
   } = getRouteData(pureUrl)
 
   if (!sender) return res.status(404).send('404')
-  else if (sender === 'map') return sendAnnouncementsMapResponse({ res, initialState, title })
-  else if (sender === 'list') return sendAnnouncementsListResponse({ res, initialState, title })
+  else if (sender === 'map') return sendAnnouncementsMapResponse({ res, initialState, title, url: pureUrl })
+  else if (sender === 'list') return sendAnnouncementsListResponse({ res, initialState, title, url: pureUrl })
   else if (sender === 'announcement') return sendAnnouncementResponse({ res, initialState, announcementId: pureUrl })
 
   sendResponse({
     res,
     initialState,
-    title
+    title,
+    url: pureUrl
   })
 }
 
