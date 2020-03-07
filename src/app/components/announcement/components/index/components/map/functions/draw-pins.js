@@ -61,15 +61,20 @@ function addNewPins() {
 
   let pins = []
   announcements.map(announcement => {
+    const htmlContent = `<a href="${CLIENT_URL}/${announcement.id}">${categories[announcement.category].stringIcon}</a>`
+
     pins.push(new window.pinCreator(
       {
         latitude: announcement.latitude, 
         longitude: announcement.longitude
       },
       {
-        pinId: `${announcement.id}`, htmlContent: categories[announcement.category].stringIcon,
+        pinId: `${announcement.id}`,
+        htmlContent,
         className: `pin ${categories[announcement.category].pinClassName}`,
-        onClick: () => {
+        onClick: e => {
+          e.preventDefault()
+
           if (this.props.tile.id === announcement.id) return
           changeData({ tile: { id: announcement.id }})
         }
