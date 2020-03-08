@@ -5,8 +5,8 @@ export function sendResponse({
   res,
   initialState,
   title,
+  description,
   url,
-  description
 }) {
   res.send(
     renderPage({ 

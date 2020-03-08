@@ -44,10 +44,10 @@ export function cookiesPolicyManager() {
 
   return {
     classNames: { container: 'link' },
-    href: this.languageObjectHandler({ pl: `${origin}polityka-plikow-cookies`, en: `${origin}cookies-policy` }),
+    href: this.languageObjectHandler({ pl: `${origin}polityka-cookies`, en: `${origin}cookies-policy` }),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
-    title: this.languageObjectHandler({ pl: 'Polityka Plików Cookies', en: 'Cookies Policy' }),
-    label: this.languageHandler('Polityka Plików Cookies', 'Cookies Policy'),
+    title: this.languageObjectHandler({ pl: 'Polityka Cookies', en: 'Cookies Policy' }),
+    label: this.languageHandler('Polityka Cookies', 'Cookies Policy'),
     onClick: () => changeApp({ showVisitorCookiesPolicy: true })
   }
 }

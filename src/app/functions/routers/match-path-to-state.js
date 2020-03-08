@@ -48,7 +48,11 @@ export function matchPathToState(prevProps) {
         language
       } = this.props
 
-      if (category !== null) document.title = provideTitle({ category, district, area, language })
+      if (category !== null) {
+        const title = provideTitle({ category, district, area, language })
+        document.title = title
+        document.querySelector('meta[name="description"]').content = title
+      }
       document.querySelector('link[rel="canonical"]').href = `${CLIENT_URL}${fullPathname}`
     } else if (updatedRoute === 'showAnnouncementEdit') {
       const { announcementId } = this.props
@@ -56,6 +60,7 @@ export function matchPathToState(prevProps) {
       fullPathname = `${this.languageObjectHandler(routes[updatedRoute]).url}/${announcementId}`
 
       document.title = this.languageObjectHandler(routes[updatedRoute]).title
+      document.querySelector('meta[name="description"]').content = this.languageObjectHandler(routes[updatedRoute]).description
       document.querySelector('link[rel="canonical"]').href = `${CLIENT_URL}${fullPathname}`
     } else {
       const route = this.languageObjectHandler(routes[updatedRoute]).url
@@ -65,6 +70,7 @@ export function matchPathToState(prevProps) {
       fullPathname = fullPathname.replace(/\/$/, '')
 
       document.title = this.languageObjectHandler(routes[updatedRoute]).title
+      document.querySelector('meta[name="description"]').content = this.languageObjectHandler(routes[updatedRoute]).description
       document.querySelector('link[rel="canonical"]').href = `${CLIENT_URL}${fullPathname}`
     }
     

@@ -92,7 +92,7 @@ export const routeMatchers = {
   },
   showVisitorCookiesPolicy: {
     route: {
-      pl: '/polityka-plikow-cookies',
+      pl: '/polityka-cookies',
       en: '/cookies-policy'
     }
   },

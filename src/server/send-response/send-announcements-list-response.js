@@ -5,6 +5,7 @@ export function sendAnnouncementsListResponse({
   res,
   initialState: { route: { language } },
   title,
+  description,
   url
 }) {
   fetch(API_URL + `/announcements`, {
@@ -38,6 +39,7 @@ export function sendAnnouncementsListResponse({
         }
       },
       title,
+      description,
       url
     })
   })

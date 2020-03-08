@@ -4,12 +4,14 @@ export const routes = {
     pl: {
       regEx: /(^$)/,
       url: '/',
-      title: 'Mapa ogłoszeń wynajmu nieruchomości w Warszawie'
+      title: 'Mapa ogłoszeń wynajmu nieruchomości w Warszawie',
+      description: 'Nieruchomości (mieszkania, lokale użytkowe oraz biura) na wynajem w Warszawie.'
     },
     en: {
       regEx: /(^$)/,
       url: '/',
-      title: 'Map of Warsaw Real Estate Lease Announcements'
+      title: 'Map of Warsaw Real Estate Lease Announcements',
+      description: 'Real Estate (Apartments, Usable Premises and Offices) for Lease in Warsaw.'
     },
     overshadow: false
   },
@@ -18,23 +20,21 @@ export const routes = {
     pl: {
       regEx: /(^lista$)/,
       url: '/lista',
-      title: 'Lista ogłoszeń wynajmu nieruchomości w Warszawie'
+      title: 'Lista ogłoszeń wynajmu nieruchomości w Warszawie',
+      description: 'Nieruchomości (mieszkania, lokale użytkowe oraz biura) na wynajem w Warszawie.'
     },
     en: {
       regEx: /(^list$)/,
       url: '/list',
-      title: 'List of Warsaw Real Estate Lease Announcements'
+      title: 'List of Warsaw Real Estate Lease Announcements',
+      description: 'Real Estate (Apartments, Usable Premises and Offices) for Lease in Warsaw.'
     },
     overshadow: true
   },
   showAnnouncementShow: {
     sender: 'announcement',
-    pl: {
-      regEx: /(^\d+$)/
-    },
-    en: {
-      regEx: /(^\d+$)/
-    },
+    pl: { regEx: /(^\d+$)/ },
+    en: { regEx: /(^\d+$)/ },
     overshadow: false
   },  
   showAnnouncementCreate: {
@@ -42,12 +42,14 @@ export const routes = {
     pl: {
       regEx: /^dodaj-ogloszenie$/,
       url: '/dodaj-ogloszenie',
-      title: 'Dodaj Bezpłatne Ogłoszenie Wynajmu Nieruchomości w Warszawie'
+      title: 'Dodaj Bezpłatne Ogłoszenie Wynajmu Nieruchomości w Warszawie',
+      description: 'Dodaj Bezpłatne Ogłoszenie Wynajmu Nieruchomości (mieszkania, lokalu użytkowego lub biura) w Warszawie'
     },
     en: {
       regEx: /^add-announcement$/,
       url: '/add-announcement',
-      title: 'Add Free Announcement of Real Estate Lease in Warsaw'
+      title: 'Add Free Announcement of Real Estate Lease in Warsaw',
+      description: 'Add Free Announcement of Real Estate (apartment, usable premises or office) Lease in Warsaw',
     },
     overshadow: false
   },
@@ -56,12 +58,14 @@ export const routes = {
     pl: {
       regEx: /^zarejestruj$/,
       url: '/zarejestruj',
-      title: 'Zarejestruj'
+      title: 'Zarejestruj',
+      description: 'Zarejestruj'
     },
     en: {
       regEx: /^sign-up$/,
       url: '/sign-up',
-      title: 'Sign Up'
+      title: 'Sign Up',
+      description: 'Sign Up'
     },
     needsBackground: true,
     overshadow: true
@@ -71,12 +75,14 @@ export const routes = {
     pl: {
       regEx: /^zaloguj$/,
       url: '/zaloguj',
-      title: 'Zaloguj'
+      title: 'Zaloguj',
+      description: 'Zaloguj'
     },
     en: {
       regEx: /^sign-in$/,
       url: '/sign-in',
-      title: 'Sign In'
+      title: 'Sign In',
+      description: 'Sign In'
     },
     needsBackground: true,
     overshadow: true
@@ -86,12 +92,14 @@ export const routes = {
     pl: {
       regEx: /^o-serwisie$/,
       url: '/o-serwisie',
-      title: 'O Serwisie'
+      title: 'O Serwisie',
+      description: 'O Serwisie'
     },
     en: {
       regEx: /^about$/,
       url: '/about',
-      title: 'About'
+      title: 'About',
+      description: 'About'
     },
     needsBackground: true,
     overshadow: true
@@ -101,12 +109,14 @@ export const routes = {
     pl: {
       regEx: /^kontakt$/,
       url: '/kontakt',
-      title: 'Kontakt'
+      title: 'Kontakt',
+      description: 'Kontakt'
     },
     en: {
       regEx: /^contact$/,
       url: '/contact',
-      title: 'Contact'
+      title: 'Contact',
+      description: 'Contact'
     },
     needsBackground: true,
     overshadow: true
@@ -116,12 +126,14 @@ export const routes = {
     pl: {
       regEx: /^regulamin$/,
       url: '/regulamin',
-      title: 'Regulamin'
+      title: 'Regulamin',
+      description: 'Regulamin'
     },
     en: {
       regEx: /^terms-of-service$/,
       url: '/terms-of-service',
-      title: 'Terms of Service'
+      title: 'Terms of Service',
+      description: 'Terms of Service'
     },
     needsBackground: true,
     overshadow: true
@@ -129,14 +141,16 @@ export const routes = {
   showVisitorCookiesPolicy: {
     sender: 'generic',
     pl: {
-      regEx: /^polityka-plikow-cookies$/,
-      url: '/polityka-plikow-cookies',
-      title: 'Polityka Plików Cookies'
+      regEx: /^polityka-cookies$/,
+      url: '/polityka-cookies',
+      title: 'Polityka Cookies',
+      description: 'Polityka Cookies'
     },
     en: {
       regEx: /^cookies-policy$/,
       url: '/cookies-policy',
-      title: 'Cookies Policy'
+      title: 'Cookies Policy',
+      description: 'Cookies Policy'
     },
     needsBackground: true,
     overshadow: true
@@ -146,12 +160,14 @@ export const routes = {
     pl: {
       regEx: /^polityka-prywatnosci$/,
       url: '/polityka-prywatnosci',
-      title: 'Polityka Prywatności'
+      title: 'Polityka Prywatności',
+      description: 'Polityka Prywatności'
     },
     en: {
       regEx: /^privacy-policy$/,
       url: '/privacy-policy',
-      title: 'Privacy Policy'
+      title: 'Privacy Policy',
+      description: 'Privacy Policy'
     },
     needsBackground: true,
     overshadow: true
@@ -161,12 +177,14 @@ export const routes = {
     pl: {
       regEx: /^ustawienia-prywatnosci$/,
       url: '/ustawienia-prywatnosci',
-      title: 'Ustawienia Prywatności'
+      title: 'Ustawienia Prywatności',
+      description: 'Ustawienia Prywatności'
     },
     en: {
       regEx: /^privacy-settings$/,
       url: '/privacy-settings',
-      title: 'Privacy Settings'
+      title: 'Privacy Settings',
+      description: 'Privacy Settings'
     },
     needsBackground: true,
     overshadow: true
@@ -176,12 +194,14 @@ export const routes = {
     pl: {
       regEx: /^dodane-ogloszenia$/,
       url: '/dodane-ogloszenia',
-      title: 'Dodane ogłoszenia'
+      title: 'Dodane ogłoszenia',
+      description: 'Dodane ogłoszenia'
     },
     en: {
       regEx: /^added-announcements$/,
       url: '/added-announcements',
-      title: 'Added Announcements'
+      title: 'Added Announcements',
+      description: 'Added Announcements'
     },
     needsBackground: false,
     overshadow: false
@@ -191,12 +211,14 @@ export const routes = {
     pl: {
       regEx: /^edytuj-ogloszenie\/\d+$/,
       url: '/edytuj-ogloszenie',
-      title: 'Edytuj ogłoszenie'
+      title: 'Edytuj ogłoszenie',
+      description: 'Edytuj ogłoszenie'
     },
     en: {
       regEx: /^edit-announcement\/\d+$/,
       url: '/edit-announcement',
-      title: 'Edit Announcement'
+      title: 'Edit Announcement',
+      description: 'Edit Announcement'
     },
     needsBackground: false,
     overshadow: false
@@ -206,12 +228,14 @@ export const routes = {
     pl: {
       regEx: /^konto$/,
       url: '/konto',
-      title: 'Konto'
+      title: 'Konto',
+      description: 'Konto'
     },
     en: {
       regEx: /^account$/,
       url: '/account',
-      title: 'Account'
+      title: 'Account',
+      description: 'Account'
     },
     needsBackground: true,
     overshadow: true
@@ -222,12 +246,14 @@ export const routes = {
     pl: {
       regEx: /^zresetuj-haslo$/,
       url: '/zresetuj-haslo',
-      title: 'Zresetuj hasło'
+      title: 'Zresetuj hasło',
+      description: 'Zresetuj hasło'
     },
     en: {
       regEx: /^reset-password$/,
       url: '/reset-password',
-      title: 'Reset Password'
+      title: 'Reset Password',
+      description: 'Reset Password'
     },
     needsBackground: true,
     overshadow: true
@@ -237,12 +263,14 @@ export const routes = {
     pl: {
       regEx: /^zweryfikuj-numer-telefonu$/,
       url: '/zweryfikuj-numer-telefonu',
-      title: 'Zweryfikuj numer telefonu'
+      title: 'Zweryfikuj numer telefonu',
+      description: 'Zweryfikuj numer telefonu'
     },
     en: {
       regEx: /^verify-phone-number$/,
       url: '/verify-phone-number',
-      title: 'Verify Phone Number'
+      title: 'Verify Phone Number',
+      description: 'Verify Phone Number'
     },
     needsBackground: true,
     overshadow: true
@@ -252,12 +280,14 @@ export const routes = {
     pl: {
       regEx: /^ustawienia-konta$/,
       url: '/ustawienia-konta',
-      title: 'Ustawienia konta'
+      title: 'Ustawienia konta',
+      description: 'Ustawienia konta'
     },
     en: {
       regEx: /^account-settings$/,
       url: '/account-settings',
-      title: 'Account Settings'
+      title: 'Account Settings',
+      description: 'Account Settings'
     },
     needsBackground: false,
     overshadow: false

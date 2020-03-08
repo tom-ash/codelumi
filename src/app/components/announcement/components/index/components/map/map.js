@@ -35,7 +35,7 @@ class AnnouncementIndexMap extends React.Component {
       device
     } = this.props
 
-    const minListDevices = [null, 'largePc', 'smallPc']
+    const minListDevices = ['largePc', 'smallPc']
 
     return (
       <div

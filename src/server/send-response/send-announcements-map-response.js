@@ -5,6 +5,7 @@ export function sendAnnouncementsMapResponse({
   res,
   initialState: { route: { language } },
   title,
+  description,
   url
 }) {
   fetch(API_URL + `/announcements`, {
@@ -37,6 +38,7 @@ export function sendAnnouncementsMapResponse({
         }
       },
       title,
+      description,
       url
     })
   })

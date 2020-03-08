@@ -10,18 +10,20 @@ export function handleRequest(req, res) {
   const {
     initialState,
     title,
+    description,
     sender
   } = getRouteData(pureUrl)
 
   if (!sender) return res.status(404).send('404')
-  else if (sender === 'map') return sendAnnouncementsMapResponse({ res, initialState, title, url: pureUrl })
-  else if (sender === 'list') return sendAnnouncementsListResponse({ res, initialState, title, url: pureUrl })
+  else if (sender === 'map') return sendAnnouncementsMapResponse({ res, initialState, title, description, url: pureUrl })
+  else if (sender === 'list') return sendAnnouncementsListResponse({ res, initialState, title, description, url: pureUrl })
   else if (sender === 'announcement') return sendAnnouncementResponse({ res, initialState, announcementId: pureUrl })
 
   sendResponse({
     res,
     initialState,
     title,
+    description,
     url: pureUrl
   })
 }
@@ -39,6 +41,7 @@ function purifyUrl(dirtyUrl) {
 function getRouteData(url) {
   let initialState
   let title
+  let description
   let sender
 
   Object.keys(routes).some(routeKey => {
@@ -52,6 +55,7 @@ function getRouteData(url) {
       }
 
       title = routes[routeKey].pl.title
+      description = routes[routeKey].pl.description
       sender = routes[routeKey].sender
       return true
     } else if (url.match(routes[routeKey].en.regEx)) {
@@ -64,6 +68,7 @@ function getRouteData(url) {
       }
 
       title = routes[routeKey].en.title
+      description = routes[routeKey].en.description
       sender = routes[routeKey].sender
       return true
     }
@@ -72,6 +77,7 @@ function getRouteData(url) {
   return {
     initialState,
     title,
+    description,
     sender
   }
 }
