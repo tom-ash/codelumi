@@ -217,19 +217,21 @@ export function totalFloorsManager() {
   }
 }
 
+export function showAvailabilityDateManager() {
+  const {
+    showAvilabilityDate,
+    changeControl
+  } = this.props
 
-
-
-
-export function availabilityDateSelectManager() {
   return {
-    name: 'announcement-rent-availability-date',
-    classNames: { container: 'form-input radio'},
-    checked: this.props.availabilityDateSelect,
-    radios: [
-      { value: 'now', label: this.languageHandler('Już dostępne', 'Already available') },
-      { value: 'date', label: this.languageHandler('Podaj datę', 'Provide date') },
-    ],
-    onClick: value => this.props.changeInputs({ availabilityDateSelect: value })
+    classNames: { container: 'form-input checkbox availability-date' },
+    checked: showAvilabilityDate,
+    label: this.languageObjectHandler({
+      pl: 'Dodaj datę dostępności',
+      en: 'Add Availability Date'
+    }),
+    onClick: value => {
+      changeControl({ showAvilabilityDate: value })
+    }
   }
 }

@@ -42,7 +42,6 @@ class AnnouncementCreateFeatures extends React.Component {
     this.validateMap = validateMap.bind(this)
     this.buttonManager = buttonManager.bind(this)
     this.labelProvider = labelProvider.bind(this)
-    this.availabilityDateSelectManager = managers.availabilityDateSelectManager.bind(this)
     this.parseCurrency = parseCurrency.bind(this)
     this.changePath = changePath.bind(this)
     this.floorsProvider = floorsProvider.bind(this) // DELETE

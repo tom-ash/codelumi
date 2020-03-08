@@ -23,7 +23,8 @@ export const control = {
   editing: false,
   availabilityDateFocus: false,
   calendarMouseOver: false,
-  addingPicture: false
+  addingPicture: false,
+  showAvilabilityDate: false
 }
 
 export const inputs = {
@@ -35,8 +36,7 @@ export const inputs = {
   grossRentAmount: '',
   area: '',
   rooms: '',
-  availabilityDateSelect: 'now',
-  availabilityDate: '',
+  availabilityDate: null,
   floor: '',
   totalFloors: '',
   pictureBlobs: [],

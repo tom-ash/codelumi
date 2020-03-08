@@ -15,7 +15,7 @@ export const mapStateToProps = (store) => {
     floor: store.announcement.create.inputs.floor,
     totalFloors: store.announcement.create.inputs.totalFloors,
 
-    availabilityDateSelect: store.announcement.create.inputs.availabilityDateSelect,
+    showAvilabilityDate: store.announcement.create.control.showAvilabilityDate,
     availabilityDate: store.announcement.create.inputs.availabilityDate,
     errors: store.announcement.create.errors
   }

@@ -3,6 +3,18 @@
 #announcement-create-primary {
   max-width: 360px;
   padding-top: 0!important;
+  .checkbox {
+    &.availability-date {
+      margin-bottom: 18px;
+      .input {
+        left: 0;
+      }
+      .label {
+        margin-top: 1px;
+        margin-left: 18px;
+      }
+    }
+  }
   .radio-container {
     margin-bottom: 18px;
     .title {
