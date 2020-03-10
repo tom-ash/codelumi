@@ -22,6 +22,7 @@ export function componentDidUpdate(prevProps) {
 
   if (this.shouldLoadMap()) changeControl({ loadMap: true })
   if (!prevLoadMap && loadMap) loadGoogleMap.call(this, { center: { lat, lng }, zoom: 12.6 })
+  
   if (this.shouldLoadMarker()) changeControl({ loadMarker: true })
   if (!prevLoadMarker && loadMarker) loadGoogleMarker.call(this, { lat, lng })
 }

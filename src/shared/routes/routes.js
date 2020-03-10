@@ -64,13 +64,13 @@ export const routes = {
       regEx: /^zarejestruj$/,
       url: '/zarejestruj',
       title: 'Zarejestruj',
-      description: 'Zarejestruj'
+      description: 'Zarejestruj konto na warsawlease.pl. Na warsawlease.pl w łatwy sposób dodasz bezpłatne ogłoszenie wynajmu mieszkania, lokalu użytkowego lub biura.'
     },
     en: {
       regEx: /^sign-up$/,
       url: '/sign-up',
       title: 'Sign Up',
-      description: 'Sign Up'
+      description: 'Sign Up to an Account on warsawlease.pl. On warsawlease.pl you can easily add a free announcement of lease of an apartment, usable premises and/or and office.'
     },
     needsBackground: true,
     overshadow: true
@@ -81,13 +81,13 @@ export const routes = {
       regEx: /^zaloguj$/,
       url: '/zaloguj',
       title: 'Zaloguj',
-      description: 'Zaloguj'
+      description: 'Zaloguj do konta na warsawlease.pl. Na warsawlease.pl w łatwy sposób dodasz bezpłatne ogłoszenie wynajmu mieszkania, lokalu użytkowego lub biura.'
     },
     en: {
       regEx: /^sign-in$/,
       url: '/sign-in',
       title: 'Sign In',
-      description: 'Sign In'
+      description: 'Sign In to the Account on warsawlease.pl. On warsawlease.pl you can easily add a free announcement of lease of an apartment, usable premises and/or and office.'
     },
     needsBackground: true,
     overshadow: true
@@ -98,13 +98,13 @@ export const routes = {
       regEx: /^o-serwisie$/,
       url: '/o-serwisie',
       title: 'O Serwisie',
-      description: 'O Serwisie'
+      description: genericDescription.pl
     },
     en: {
       regEx: /^about$/,
       url: '/about',
       title: 'About',
-      description: 'About'
+      description: genericDescription.en
     },
     needsBackground: true,
     overshadow: true
@@ -245,7 +245,6 @@ export const routes = {
     needsBackground: true,
     overshadow: true
   },
-
   showUserEditPasswordReset: {
     sender: 'generic',
     pl: {
