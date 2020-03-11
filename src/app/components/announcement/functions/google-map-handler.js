@@ -1,4 +1,13 @@
-export function shouldLoadMap() {
+export function setUpGoogleMaps(options) {
+  if (window.googleMap) return replaceGoogleMap.call(this, undefined, options)
+
+  const { changeControl } = this.props
+
+  window.googleMap = new google.maps.Map(document.getElementById('google-map'), setOptions.call(this, options))
+  changeControl({ mapLoaded: true })
+}
+
+export function shouldSetUpGoogleMaps() {
   const { loadMap } = this.props
 
   if (loadMap) return false
@@ -12,19 +21,20 @@ export function shouldLoadMap() {
   return true
 }
 
-export function loadGoogleMap(options) {
-  const div = document.getElementById('google-map')
+export function shouldSetUpPins() {
+  const {
+    loadPins,
+    announcements
+  } = this.props
 
-  if (!div) return
-  if (window.googleMap) return replaceGoogleMap.call(this, undefined, options)
-
-  const { changeControl } = this.props
-
-  window.googleMap = new google.maps.Map(div, setOptions.call(this, options))
-  changeControl({ mapLoaded: true })
+  if (loadPins) return false
+  if (!window.googleMap) return false
+  if (!announcements) return false
+  
+  return true
 }
 
-export function shouldLoadMarker() {
+export function shouldSetUpMarker() {
   const {
     loadMarker,
     latitude: lat,

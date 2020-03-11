@@ -14,8 +14,16 @@ export function fetchAnnouncements() {
   let headers = { 'Content-Type': 'application/json' }
   if (showUser) headers = { ...headers, access_token: getAccessToken() }
 
-  changeControl({ connecting: true, fetch: false })
-  changeData({ announcements: null, amount: null })
+  changeData({
+    announcements: null,
+    amount: null
+  })
+
+  changeControl({
+    connecting: true,
+    fetch: false,
+    loadPins: false
+  })
 
   fetch(apiUrl + `/announcements${this.buildRequestParameters()}`, {
     headers

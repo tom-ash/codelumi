@@ -1,9 +1,12 @@
-import { loadGoogleMap, loadGoogleMarker } from '../../../../../../../functions/google-map-handler'
+import {
+  setUpGoogleMaps,
+  loadGoogleMarker
+} from '../../../../../../../functions/google-map-handler'
 
 export function componentDidMount() {
   const { changeControl } = this.props
 
-  if (this.shouldLoadMap()) changeControl({ loadMap: true })
+  if (this.shouldSetUpGoogleMaps()) changeControl({ loadMap: true })
 }
 
 export function componentDidUpdate(prevProps) {
@@ -20,10 +23,10 @@ export function componentDidUpdate(prevProps) {
     longitude: lng
   } = this.props
 
-  if (this.shouldLoadMap()) changeControl({ loadMap: true })
-  if (!prevLoadMap && loadMap) loadGoogleMap.call(this, { center: { lat, lng }, zoom: 12.6 })
-  
-  if (this.shouldLoadMarker()) changeControl({ loadMarker: true })
+  if (this.shouldSetUpGoogleMaps()) changeControl({ loadMap: true })
+  if (!prevLoadMap && loadMap) setUpGoogleMaps.call(this, { center: { lat, lng }, zoom: 12.6 })
+
+  if (this.shouldSetUpMarker()) changeControl({ loadMarker: true })
   if (!prevLoadMarker && loadMarker) loadGoogleMarker.call(this, { lat, lng })
 }
 

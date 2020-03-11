@@ -13,6 +13,8 @@ import { AreaPresenter } from '../../../show/functions/area-presenter'
 import { languageObjectHandler } from '../../../../../../functions/language-handler'
 import { RentPresenter } from '../../../show/functions/rent-presenter'
 
+import { shouldSetUpGoogleMaps, shouldSetUpPins } from '../../../../functions/google-map-handler'
+
 class AnnouncementIndexMap extends React.Component {
   constructor(props) {
     super(props)
@@ -23,6 +25,8 @@ class AnnouncementIndexMap extends React.Component {
     this.drawPins = drawPins.bind(this)
     this.fetchTile = fetchTile.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.shouldSetUpGoogleMaps = shouldSetUpGoogleMaps.bind(this)
+    this.shouldSetUpPins = shouldSetUpPins.bind(this)
   }
 
   render() {
@@ -61,7 +65,7 @@ class AnnouncementIndexMap extends React.Component {
                     zoom: 14
                   }
                   map.setOptions(setOptions.call(this, options))
-                  changeData({ tile: { id: announcement.id }})
+                  changeData({ tileId: announcement.id })
                 }}
                 className='announcement-show-container'
               >
@@ -111,7 +115,7 @@ class AnnouncementIndexMap extends React.Component {
               floor={tile.floor}
               totalFloors={tile.totalFloors}
               availabilityDate={tile.availabilityDate}
-              closeButtonOnClick={() => this.props.changeData({ tile: {} })}
+              closeButtonOnClick={() => this.props.changeData({ tileId: null, tile: null })}
             />
           </div>}
         </div>

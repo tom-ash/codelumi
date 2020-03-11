@@ -9,15 +9,20 @@ export const mapStateToProps = (store) => {
   const {
     connecting,
     mapLoaded,
-    type
+    type,
+    loadMap,
+    loadPins
   } = store.announcement.index.control
   const {
     announcements,
     pins,
+    tileId,
     tile
   } = store.announcement.index.data
 
   return {
+    loadMap,
+    loadPins,
     device,
     language,
     isMobile,
@@ -28,6 +33,7 @@ export const mapStateToProps = (store) => {
     mapLoaded,
     announcements,
     pins,
+    tileId,
     tile
   }
 }

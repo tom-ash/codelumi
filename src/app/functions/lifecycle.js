@@ -1,4 +1,4 @@
-import { loadGoogleMaps } from './load-google-maps'
+import { initializeGoogleMaps } from './load-google-maps'
 import { isMobile } from './is-mobile'
 import { getCookieValue } from './cookie-handlers'
 import { loadGoogleAnalytics } from './load-google-analytics'
@@ -10,7 +10,7 @@ export function componentDidMount() {
 
   if (isMobile()) changeApp({ isMobile: true })
   setLanguage.apply(this)
-  loadGoogleMaps.apply(this)
+  initializeGoogleMaps.apply(this)
 
   this.screenSizeHandler()
   window.addEventListener('resize', this.screenSizeHandler, false)  

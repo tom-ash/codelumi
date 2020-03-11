@@ -51,6 +51,8 @@ function setUpPinCreator() {
 export function removeOldPins() {
   const { pins } = this.props
 
+  if (pins === null) return
+
   pins.length && pins.map(pin => pin.setMap(null))
 }
 
@@ -75,8 +77,8 @@ function addNewPins() {
         onClick: e => {
           e.preventDefault()
 
-          if (this.props.tile.id === announcement.id) return
-          changeData({ tile: { id: announcement.id }})
+          if (this.props.tileId === announcement.id) return
+          changeData({ tileId: announcement.id })
         }
       }
     )

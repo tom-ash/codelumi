@@ -1,10 +1,18 @@
 import { apiUrl } from '../../../../../../../constants/urls'
 
 export function fetchTile() {
-  const { tile, changeData } = this.props
-  if (!tile.id) return
-  fetch(`${apiUrl}/announcements/${tile.id}`, {
-    headers: { 'Content-Type': 'application/json', 'Only-Tile': true },
+  const {
+    tileId,
+    changeData
+  } = this.props
+
+  changeData({ tile: null })
+  
+  fetch(`${apiUrl}/announcements/${tileId}`, {
+    headers: {
+      'Content-Type': 'application/json',
+      'Only-Tile': true
+    },
   })
   .then(response => {
     if (response.ok) return response.json()

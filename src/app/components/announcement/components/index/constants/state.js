@@ -6,15 +6,19 @@ export const control = {
   fetch: false,
   type: 'map',
   mapLoaded: false,
-  deletedAnnouncement: null
+  deletedAnnouncement: null,
+  loadMap: false,
+  loadPins: false,
+  loadTile: false
 }
 
 export const data = {
   listAmount: null,
   amount: null,
   announcements: null,
-  tile: {},
-  pins: []
+  tileId: null,
+  tile: null,
+  pins: null
 }
 
 export const inputs = {
