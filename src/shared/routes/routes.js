@@ -9,13 +9,13 @@ export const routes = {
     pl: {
       regEx: /(^$)/,
       url: '/',
-      title: 'Mapa ogłoszeń wynajmu nieruchomości w Warszawie',
+      title: 'Nieruchomości na wynajem | Warszawa | Mapa | Mieszkania, lokale użytkowe i biura do wynajęcia w Warszawie',
       description: genericDescription.pl
     },
     en: {
       regEx: /(^$)/,
       url: '/',
-      title: 'Map of Warsaw Real Estate Lease Announcements',
+      title: 'Real Estates for lease | Warsaw | Map | Apartments, usable premises and offices for lease in Warsaw',
       description: genericDescription.en
     },
     overshadow: false
@@ -25,13 +25,13 @@ export const routes = {
     pl: {
       regEx: /(^lista$)/,
       url: '/lista',
-      title: 'Lista ogłoszeń wynajmu nieruchomości w Warszawie',
+      title: 'Nieruchomości na wynajem | Warszawa | Lista | Mieszkania, lokale użytkowe i biura do wynajęcia w Warszawie',
       description: genericDescription.pl
     },
     en: {
       regEx: /(^list$)/,
       url: '/list',
-      title: 'List of Warsaw Real Estate Lease Announcements',
+      title: 'Real Estates for lease | Warsaw | List | Apartments, usable premises and offices for lease in Warsaw',
       description: genericDescription.en
     },
     overshadow: true
