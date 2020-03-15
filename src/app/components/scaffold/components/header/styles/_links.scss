@@ -16,5 +16,21 @@
         margin-right: 8px;
       }
     }
+    &.add-announcement {
+      // line-height: 50px;
+      .input {
+        font-weight: normal!important;
+        line-height: 30px;
+        margin-top: 10px;
+        // display: inline-block;
+        // color: #D35400;
+        // background: yellow;
+        height: 30px;
+        background: #D35400;
+        color: #F4F6F7;
+        padding: 0 8px;
+        border-radius: 4px;
+      }
+    }
   }
 }

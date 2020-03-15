@@ -36,7 +36,7 @@ export function titleManager() {
 
 export function addAnnouncementManager() {
   return {
-    classNames: { container: 'header-link' },
+    classNames: { container: 'header-link add-announcement' },
     href: this.languageObjectHandler({ pl: `${origin}dodaj-ogloszenie`, en: `${origin}add-announcement` }),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Dodaj ogłoszenie', en: 'Add Announcement' }),
