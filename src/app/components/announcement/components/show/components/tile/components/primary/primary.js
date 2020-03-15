@@ -143,7 +143,7 @@ function PresentRent({
 function presentAmount(amount) {
   if (!amount) return
 
-  const multipliedAmount = `${amount * 100}`
+  const multipliedAmount = `${Math.ceil(amount * 100)}`
 
   return (
     <React.Fragment>
