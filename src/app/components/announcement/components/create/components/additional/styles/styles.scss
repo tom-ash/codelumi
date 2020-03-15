@@ -1,11 +1,12 @@
 @import '../../../../../../../styles/themes.scss';
 
-#announcement-create-primary {
+#announcement-create-additional {
   max-width: 360px;
   padding-top: 0!important;
+  padding-bottom: 4px;
   .checkbox {
     &.availability-date {
-      margin-bottom: 18px;
+      // margin-bottom: 18px;
       .input {
         left: 0;
       }
@@ -77,6 +78,7 @@
 
   .calendar {
     position: relative;
+    margin-bottom: 12px;
     .react-calendar {
       z-index: 1;
       width: 100%;
@@ -86,30 +88,6 @@
       border: 1px solid black;
       .react-calendar__navigation button {
         font-size: 16px;
-      }
-    }
-  }
-  .rent-inputs-container {
-    position: relative;
-    .form-input {
-      &.rent-amount {
-        margin-right: 72px;
-      }
-      &.rent-currency {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 64px;
-        .input {
-          padding: 0;
-          padding-left: 20px;
-        }
-        .fa-caret-down {
-          background: none;
-          margin-left: 38px;
-          width: 13px;
-          border: none;
-        }
       }
     }
   }

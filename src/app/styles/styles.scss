@@ -2,6 +2,7 @@
 @import '../components/announcement/components/create/styles/styles.scss';
 @import '../components/announcement/components/create/components/primary/styles/styles.scss';
 @import '../components/announcement/components/create/components/pictures/styles/styles.scss';
+@import '../components/announcement/components/create/components/additional/styles/styles.scss';
 @import '../components/announcement/components/create/components/features/styles/styles.scss';
 @import '../components/announcement/components/create/components/description/styles/styles.scss';
 @import '../components/announcement/components/create/components/map/styles/styles.scss';
@@ -509,19 +510,13 @@ a {
   background-color: #e6e6e6;
 }
 h1 {
-  padding-top: 24px;
-  padding-bottom: 24px;
-  position: relative;
-  background: #212F3D;
-  color: #ECF0F1;
-  font-size: 14px;
-  font-weight: normal;
-  text-align: center;
-  .main {
-    font-size: 15px;
-    margin-bottom: 4px;
-  }
-  .supplementary {
-    font-size: 13px;
-  }
+  color: #5F6A6A;
+  font-size: 17px;
+  margin-bottom: 18px;
+}
+h2 {
+  color: #797D7F;
+  font-size: 16px;
+  margin-top: 24px;
+  margin-bottom: 18px;
 }

@@ -26,12 +26,15 @@ class AnnouncementCreatePictures extends React.Component {
   render() {
     return (
       <div id='announcement-create-pictures' className='section'>
+        <div className='hint'>
+          {this.languageObjectHandler({
+            pl: 'Możesz wybrać więcej niż jedno zdjęcie naraz.',
+            en: 'You can select more than one picture at the same time.'
+          })}
+        </div>
         <div className={`drag-and-drop${this.props.error.pl ? ' error-drag-and-drop' : ''}`}>
           <div>
-            {this.languageHandler('Przeciągnij i upuść zdjęcia tutaj', 'Drag and drop pictures here')}
-          </div>
-          <div>
-            {this.languageHandler('lub kliknij, aby przeglądać', 'or click to browse')}
+            {this.languageHandler('Przeglądaj', 'Browse')}
           </div>
           <input
           id={requiredInputs.pictures.id}

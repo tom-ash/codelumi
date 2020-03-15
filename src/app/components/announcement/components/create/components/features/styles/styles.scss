@@ -1,11 +1,18 @@
 @import '../../../../../../../styles/themes.scss';
 @import '../../../../../../../styles/inputs/form/form';
 
+// #announcement-create-features {
+//   // margin-top: 4px;
+// }
+
 #announcement-create-features, #announcement-create-furnishings {
   position: relative;
   max-width: 360px;
   color: $primary-text-color;
   padding-right: 24px;
+  .form-input.checkbox.add-switcher {
+    margin-bottom: 4px;
+  }
   .box {
     position: relative;
     border: 1px solid $primary-element-color;
@@ -19,10 +26,14 @@
     width: 100%;
     max-width: 360px;
   }
+  .box-with-scroll {
+    position: relative;
+    margin-bottom: 24px;
+  }
   .scroll {
     position: absolute;
     top: 0;
-    right: 0;
+    right: -18px;
     bottom: 0;
     font-size: 20px;
     margin: auto;

@@ -6,14 +6,49 @@
   margin: 96px auto 40px;
   background: white;
   padding: 36px;
+  h1 {
+    color: #566573;
+  }
+  h2 {
+    margin-top: 36px;
+    color: #566573;
+    .number {
+      float: left;
+      line-height: 18px;
+      font-size: 12px;
+      height: 19px;
+      width: 19px;
+      text-align: center;
+      border-radius: 12px;
+      border: 1px solid #566573;
+      margin-right: 6px;
+    }
+    .text {
+      float: left;
+      line-height: 22px;
+    }
+  }
+  .checkbox {
+    &.add-switcher {
+      margin-bottom: 18px;
+      .input {
+        left: 0;
+      }
+      .label {
+        margin-top: 1px;
+        margin-left: 18px;
+      }
+    }
+  }
   .hint {
     position: relative;
     margin-bottom: 12px;
-    font-size: 15px;
+    font-size: 13px;
     text-align: justify;
-    padding-left: 22px;
     line-height: 18px;
+    color: #566573;
     .fas {
+      display: none;
       position: absolute;
       left: 0;
       margin-right: 8px;
@@ -33,7 +68,63 @@
   .monit {
     margin-bottom: 24px;
   }
-  .section {
-    margin-bottom: 56px;
+
+  .input-label {
+
+    margin-bottom: 12px;
+    color: #566573;
+    font-size: 15px;
+    .fas {
+      color: #626567;
+      font-size: 13px;
+      line-height: 15px;
+      margin-right: 2px;
+    }
+  }
+
+  .form-input {
+    &.radio {
+      &.checked {
+        background: #21618C;
+      }
+      &.hover {
+        box-shadow: 0 0 0 2px #21618C;
+      }
+      .input {
+        .tick {
+          background: #21618C;
+        }
+      }
+      .label {
+        padding-left: 36px!important;
+      }
+    }
+
+    &.text, &.select {
+      $border-color: #AEB6BF;
+      .input {
+        border-color: $border-color;
+        &.hover, &.focus {
+          border-color: #5D6D7E;
+          box-shadow: 0 0 0 1px #5D6D7E;
+        }
+      }
+      .fas, .far {
+        background: none;
+        width: 42px;
+        border-top: 1px solid $border-color;
+        border-left: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        font-size: 12px;
+        color: #5D6D7E;
+      }
+      &.hover, &.focus {
+        .fas, .far {
+          border-top: 1px solid #5D6D7E;
+          border-left: 1px solid #5D6D7E;
+          border-bottom: 1px solid #5D6D7E;
+        }
+      }
+    }
   }
 }

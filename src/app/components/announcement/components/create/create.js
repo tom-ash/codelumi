@@ -12,6 +12,7 @@ import { languageHandler, languageObjectHandler } from '../../../../functions/la
 import { getAnnouncement } from './functions/get-announcement'
 import { sectionHeaderProvider } from '../../../../functions/providers/headers'
 import * as lifecycle from './functions/lifecycle'
+import AnnouncementCreateAdditional from './components/additional/additional'
 
 class AnnouncementCreate extends React.Component {
   constructor(props) {
@@ -30,20 +31,27 @@ class AnnouncementCreate extends React.Component {
     return (
       <div id='announcement-create' className='container medium-container small-shadow'>
         <div>
-          <h2 className='page-header'>
+          <h1>
             <i className='fas fa-plus' /> {this.languageHandler('Dodaj bezpłatne ogłoszenie', 'Add Free Announcement')}
-          </h2>
+          </h1>
           <AnnouncementCreatePrimary />
-          {this.sectionHeaderProvider('fas fa-images', { pl: 'Zdjęcia (wymagane)', en: 'Pictures (required)'})}
+          <div className='input-label'>
+            <i className='fas fa-images' /> {this.languageObjectHandler({ pl: 'Zdjęcia', en: 'Pictures' })}
+          </div>
           <AnnouncementCreatePictures />
-          {this.sectionHeaderProvider('fas fa-list', { pl: 'Zalety (opcjonalne)', en: 'Features (optional)'})}
-          <AnnouncementCreateFeatures />
-          {this.sectionHeaderProvider('fas fa-list', { pl: 'Wyposażenie (opcjonalne)', en: 'Furnishings (optional)'})}
-          <AnnouncementCreateFurnishings />
-          {this.sectionHeaderProvider('fas fa-align-left', { pl: 'Opis (opcjonalny)', en: 'Description (optional)'})}
-          <AnnouncementCreateDescription />
-          {this.sectionHeaderProvider('fas fa-map-marker-alt', { pl: 'Lokalizacja (wymagana)', en: 'Location (required)'})}
+          <div className='input-label'>
+            <i className='fas fa-map-marker-alt' /> {this.languageObjectHandler({ pl: 'Lokalizacja', en: 'Location' })}
+          </div>
           <AnnouncementCreateMap />
+          <h2>
+            <div className='number'>3</div>
+            <div className='text'>{this.languageObjectHandler({ pl: 'Dane opcjonalne', en: 'Optional data' })}</div>
+            <div className='float-clear' />
+          </h2>
+          <AnnouncementCreateAdditional />
+          <AnnouncementCreateFeatures />
+          <AnnouncementCreateFurnishings />
+          <AnnouncementCreateDescription />
         </div>
         <AnnouncementCreatePublishing />
       </div>

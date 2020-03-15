@@ -1,19 +1,55 @@
-export function polishManager(action, value) {
+export function addPolishDescriptionManager() {
+  const {
+    addPolishDescription: checked,
+    changeInputs
+  } = this.props
+
   return {
-    classNames: { container: 'form-input textarea'},
-    value: this.props.pl,
-    label: this.languageHandler('W języku polskim (opcjonalny)', 'In Polish (optional)'),
-    counterLimit: 3000,
-    onChange: (value) => this.props.changeInputs({ descriptionPolish: value })
+    classNames: { container: 'form-input checkbox add-switcher pl' },
+    checked,
+    label: this.languageObjectHandler({
+      pl: 'Dodaj Opis w języku polskim',
+      en: 'Add Description in Polish Language'
+    }),
+    onClick: value => {
+      changeInputs({ addPolishDescription: value })
+    }
   }
 }
 
-export function englishManager(action, value) {
+export function polishManager() {
+  return {
+    classNames: { container: 'form-input textarea pl'},
+    value: this.props.pl,
+    counterLimit: 3000,
+    onChange: value => this.props.changeInputs({ descriptionPolish: value })
+  }
+}
+
+export function addEnglishDescriptionManager() {
+  const {
+    addEnglishDescription: checked,
+    changeInputs
+  } = this.props
+
+  return {
+    classNames: { container: 'form-input checkbox add-switcher en' },
+    checked,
+    label: this.languageObjectHandler({
+      pl: 'Dodaj Opis w języku angielskim',
+      en: 'Add Description in English Language'
+    }),
+    onClick: value => {
+      changeInputs({ addEnglishDescription: value })
+    }
+  }
+}
+
+export function englishManager() {
   return {
     classNames: { container: 'form-input textarea'},
     value: this.props.en,
-    label: this.languageHandler('W języku angielskim (opcjonalny)', 'In English (optional)'),
     counterLimit: 3000,
-    onChange: (value) => this.props.changeInputs({ descriptionEnglish: value })
+    onChange: value => this.props.changeInputs({ descriptionEnglish: value })
   }
 }

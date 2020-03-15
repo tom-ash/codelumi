@@ -2,8 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
-import { ManagedMultipleCheckbox } from 'managed-inputs'
-import { featuresManager } from './functions/managers'
+import { ManagedCheckbox, ManagedMultipleCheckbox } from 'managed-inputs'
+import { addFeaturesManager, featuresManager } from './functions/managers'
 
 import { pickElementsForCategory } from '../../functions/pick-elements'
 
@@ -12,12 +12,19 @@ class AnnouncementCreateFeatures extends React.Component {
     super(props)
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.addFeaturesManager = addFeaturesManager.bind(this)
     this.featuresManager = featuresManager.bind(this)
     this.pickElementsForCategory = pickElementsForCategory.bind(this)
   }
   render() {
+    const {
+      addFeatures
+    } = this.props
+
     return (
-      <React.Fragment>
+      <div id='announcement-create-features'>
+        <ManagedCheckbox {...this.addFeaturesManager()} />
+        {addFeatures && <>
         <div className='hint'>
           <i className='fas fa-info-circle' />
           {this.languageObjectHandler({
@@ -25,7 +32,7 @@ class AnnouncementCreateFeatures extends React.Component {
             en: 'Elements selected from the list are automatically added in Polish and English languages.'
           })}
         </div>
-        <div id='announcement-create-features' className='section'>
+        <div className='box-with-scroll'>
           <div className='box'>
             <ManagedMultipleCheckbox {...this.featuresManager()} />
           </div>
@@ -34,7 +41,8 @@ class AnnouncementCreateFeatures extends React.Component {
           </div>
           <div className='float-clear' />
         </div>
-      </React.Fragment>
+        </>}
+      </div>
     )
   }
 }

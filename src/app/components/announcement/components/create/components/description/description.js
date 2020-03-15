@@ -1,8 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { ManagedTextarea } from 'managed-inputs'
-import { polishManager, englishManager } from './functions/managers'
+import { ManagedCheckbox, ManagedTextarea } from 'managed-inputs'
+import {
+  addPolishDescriptionManager,
+  addEnglishDescriptionManager,
+  polishManager,
+  englishManager
+} from './functions/managers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 
 class AnnouncementCreateDescription extends React.Component {
@@ -10,21 +15,23 @@ class AnnouncementCreateDescription extends React.Component {
     super(props)
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.addPolishDescriptionManager = addPolishDescriptionManager.bind(this)
     this.polishManager = polishManager.bind(this)
+    this.addEnglishDescriptionManager = addEnglishDescriptionManager.bind(this)
     this.englishManager = englishManager.bind(this)
   }
   render() {
+    const {
+      addPolishDescription,
+      addEnglishDescription
+    } = this.props
+
     return (
       <div id='announcement-create-description' className='section'>
-        <div className='hint'>
-          <i className='fas fa-info-circle' />
-          {this.languageObjectHandler({
-            pl: <span>Dodanie opisu nie jest wymagane. Ponadto, opis możesz dodać w obu językach lub tylko w&nbsp;jednym.</span>,
-            en: 'Adding description is not required. Furthermore, you can add description in both languages or in one only.'
-          })}
-        </div>
-        <ManagedTextarea {...this.polishManager()} />
-        <ManagedTextarea {...this.englishManager()} />
+        <ManagedCheckbox {...this.addPolishDescriptionManager()} />
+        {addPolishDescription && <ManagedTextarea {...this.polishManager()} />}
+        <ManagedCheckbox {...this.addEnglishDescriptionManager()} />
+        {addEnglishDescription && <ManagedTextarea {...this.englishManager()} />}
       </div>
     )
   }

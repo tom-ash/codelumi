@@ -42,9 +42,13 @@ export const inputs = {
   pictureBlobs: [],
   pictureFiles: [],
   pictureUploads: [],
+  addFeatures: false,
   features: parseFeaturesForState(),
+  showFurnishings: false,
   furnishings: parseFurnishingsForState(),
+  addPolishDescription: false,
   descriptionPolish: '',
+  addEnglishDescription: false,
   descriptionEnglish: '',
   mapLatitude: null,
   mapLongitude: null

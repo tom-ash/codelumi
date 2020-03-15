@@ -2,7 +2,8 @@ export const mapStateToProps = (store) => {
   return {
     language: store.app.language,
     features: store.announcement.create.inputs.features,
-    category: store.announcement.create.inputs.category
+    category: store.announcement.create.inputs.category,
+    addFeatures: store.announcement.create.inputs.addFeatures,
   }
 }
     

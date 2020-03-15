@@ -6,11 +6,11 @@
     position: relative;
     border: 1px solid $primary-element-color;
     width: 360px;
-    height: 54px;
-    line-height: 20px;
+    height: 42px;
+    line-height: 42px;
     text-align: center;
-    padding-top: 5px;
-    font-size: 14px;
+    // padding-top: 5px;
+    font-size: 15px;
     border-radius: 2.5px;
     cursor: pointer;
     @media only screen and (max-width: $breakpoint-phone-large-max) {
@@ -40,7 +40,7 @@
     text-align: center;
     font-size: 12px;
     height: 12px;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
   }
   .picture {
     position: relative;

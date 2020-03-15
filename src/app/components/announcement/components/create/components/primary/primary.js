@@ -6,8 +6,6 @@ import * as managers from './functions/managers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import { handleErrorOnSelect, handleErrorOnValidate } from './functions/errors-handler'
 import { onSelectHandler } from './functions/on-select-handler'
-import Calendar from 'react-calendar/dist/entry.nostyle'
-import { parseDate } from '../../../../../../functions/date-parsers'
 import { labelProvider } from '../../../../../../functions/providers/label'
 import { getRentAmounts } from '../../functions/get-rent-amounts'
 import { floorsProvider } from './functions/floors-provider'
@@ -23,10 +21,7 @@ class AnnouncementCreatePrimary extends React.Component {
     this.rentCurrencyManager = managers.rentCurrencyManager.bind(this)
     this.rentAmountManager = managers.rentAmountManager.bind(this)
     this.areaManager = managers.areaManager.bind(this)
-    this.roomsManager = managers.roomsManager.bind(this)
-    this.floorManager = managers.floorManager.bind(this)
-    this.totalFloorsManager = managers.totalFloorsManager.bind(this)
-    this.showAvailabilityDateManager = managers.showAvailabilityDateManager.bind(this)
+    
     this.handleErrorOnSelect = handleErrorOnSelect.bind(this)
     this.handleErrorOnValidate = handleErrorOnValidate.bind(this)
     this.onSelectHandler = onSelectHandler.bind(this)
@@ -37,55 +32,28 @@ class AnnouncementCreatePrimary extends React.Component {
   }
   
   render() {
-
-    const {
-      showAvilabilityDate
-    } = this.props
-
     return (
       <div id='announcement-create-primary' className='section'>
-        {this.sectionHeaderProvider('fas fa-info-circle', { pl: 'Dane podstawowe (wymagane)', en: 'Primary Data (required)'})}
-          <div className='radio-container'>
-            <div className='title'>
-              <i className='icon far fa-list-alt' /> {this.languageObjectHandler({ pl: 'Kategoria', en: 'Category' })}
-            </div>
-            <ManagedRadio {...this.categoryManager()}/>
-          </div>
-          <ManagedSelect {...this.districtManager()}/>
-          <ManagedText {...this.areaManager()}/>
+        <h2>
+          <div className='number'>1</div>
+          <div className='text'>{this.languageObjectHandler({ pl: 'Kategoria', en: 'Category' })}</div>
+          <div className='float-clear' />
+        </h2>
+        <div className='radio-container'>
+          <ManagedRadio {...this.categoryManager()}/>
+        </div>
+        <h2>
+          <div className='number'>2</div>
+          <div className='text'>{this.languageObjectHandler({ pl: 'Dane wymagane', en: 'Required Data' })}</div>
+          <div className='float-clear' />
+        </h2>
+        <ManagedSelect {...this.districtManager()}/>
+        <ManagedText {...this.areaManager()}/>
+        <div className='rent-inputs-container'>
           <ManagedText {...this.rentAmountManager()}/>
-          <div className='radio-container currency'>
-            <div className='title'>
-              <i className='icon fas fa-coins' /> {this.languageObjectHandler({ pl: 'Waluta ceny (czynszu)', en: 'Price (Rent) Currency' })}
-            </div>
-            <ManagedRadio {...this.rentCurrencyManager()}/>
-          </div>
+          <ManagedSelect {...this.rentCurrencyManager()}/>
           <div className='float-clear'/>
-          {this.sectionHeaderProvider('fas fa-info-circle', { pl: 'Dane dodatkowe (opcjonalne)', en: 'Additional Data (optional)'}, 'additional-data')}
-          <ManagedSelect {...this.roomsManager()}/>
-          <ManagedSelect {...this.floorManager()}/>
-          <ManagedSelect {...this.totalFloorsManager()}/>
-          <ManagedCheckbox {...this.showAvailabilityDateManager()}/>
-          {showAvilabilityDate &&
-          <React.Fragment>
-            <div className='radio-container availability-date-select'>
-              <div className='title'>
-                <i className='far fa-calendar-alt' /> {this.languageObjectHandler({ pl: 'Dostępne od', en: 'Available from' })}
-              </div>
-            </div>
-            <div
-            className='calendar'>
-              <div>
-                <Calendar 
-                onChange = {(date) => {
-                  this.props.changeInputs({ availabilityDate: parseDate(date) })
-                  this.props.changeControl({ availabilityDateFocus: false })
-                }}
-                locale={this.props.language == 'pl' ? 'pl' : 'en'}/>
-              </div>
-            </div>
-          </React.Fragment>
-          }
+        </div>
       </div>
     )
   }

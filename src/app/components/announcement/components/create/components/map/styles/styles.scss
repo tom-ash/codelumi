@@ -4,9 +4,9 @@
   color: $primary-text-color;
   position: relative;
   #google-map-container {
-    width: 670px;
-    height: 377px;
-    border: 1px solid gray;
+    width: 480px;
+    height: 360px;
+    border: 1px solid #ABB2B9;
     border-radius: 2.5px;
     @media only screen and (max-width: $breakpoint-phone-large-max) {
       width: 100%;
