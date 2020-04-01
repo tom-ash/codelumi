@@ -8,12 +8,12 @@
     border: none;
     border-radius: 2.5px;
     outline: none;
-    background: #D35400;
+    background: #1F618D;
     color: #FBFCFC;
     cursor: pointer;
     font-size: 15px;
     &.hover, &.focus {
-      background: #BA4A00;
+      background: #2980B9;
     }
     transition: .2s ease-in-out;
   }
