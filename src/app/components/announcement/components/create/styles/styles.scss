@@ -68,9 +68,7 @@
   .monit {
     margin-bottom: 24px;
   }
-
   .input-label {
-
     margin-bottom: 12px;
     color: #566573;
     font-size: 15px;
@@ -81,7 +79,6 @@
       margin-right: 2px;
     }
   }
-
   .form-input {
     &.radio {
       &.checked {
@@ -99,7 +96,6 @@
         padding-left: 36px!important;
       }
     }
-
     &.text, &.select {
       $border-color: #AEB6BF;
       .input {

@@ -3,18 +3,16 @@
 @import './links_icon-container';
 @import './links';
 
-
 #header {
   z-index: 2048;
   position: fixed;
   left: 0;
   right: 0;
   height: 50px;
-  background: #FDFEFE;
-  color: #273746;
-  opacity: 0.96;
-  font-size: 14px!important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.12);
+  background: #091d2a;
+  color: #D0D3D4;
+  font-size: 14px;
+  opacity: .96;
   .side-links-cover {
     position: fixed;
     top: 0;
@@ -26,7 +24,7 @@
       position: absolute;
       top: 68px;
       left: 12px;
-      background: white;
+      background: #091d2a;
       padding: 12px;
       border-radius: 4px;
       box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
@@ -46,7 +44,7 @@
           width: 100%;
           border: none;
           border-radius: 4px;
-          background: #212f3d;
+          background: #091d2a;
           line-height: 32px;
           text-align: center;
           .fas, .far {
@@ -65,7 +63,6 @@
       }
     }
   }
-
   .inner {
     position: relative;
     max-width: 1920px;
@@ -82,11 +79,9 @@
       @extend %top-links;
     }
   }
-
   .links-icon-container {
     @extend %top-links-icon-container;
   }
-
   .button.language {
     display: inline-block;
     width: 96px;
@@ -94,9 +89,8 @@
     .input {
       height: 50px;
       width: 96px;
-      // font-size: 15px;
       border: none;
-      color: #34495E;
+      color: #D0D3D4;
       background: none;
       .fas {
         margin-right: 4px;

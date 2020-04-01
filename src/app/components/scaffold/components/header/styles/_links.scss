@@ -17,19 +17,15 @@
       }
     }
     &.add-announcement {
-      // line-height: 50px;
       .input {
         font-weight: normal!important;
-        line-height: 30px;
-        margin-top: 10px;
-        // display: inline-block;
-        // color: #D35400;
-        // background: yellow;
-        height: 30px;
-        background: #D35400;
-        color: #F4F6F7;
+        line-height: 28px;
+        margin-top: 11px;
+        height: 28px;
         padding: 0 8px;
-        border-radius: 4px;
+        border-radius: 2px;
+        background: #D0D3D4;
+        color: #091d2a;
       }
     }
   }
