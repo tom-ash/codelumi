@@ -5,57 +5,42 @@
 #visitor-privacy-monit {
   position: fixed;
   z-index: 200000000;
-  right: 0;
-  left: 0;
-  bottom: 30px;
-  width: 1320px;
-  max-width: none;
-  margin: 0 auto;
-  padding: 12px;
-  border-radius: 2.5px;
+  max-width: 360px;
+  top: 56px;
+  right: 6px;
+  left: 6px;
+  width: auto;
+  height: auto;
+  margin: auto;
+  overflow-y: scroll;
+  padding: 18px;
   @media #{$phone} {
-    right: 6px;
+    top: auto;
     bottom: 6px;
-    left: 6px;
-    width: auto;
-    margin: auto;
-    height: 300px;
   }
   .text-container {
     font-size: 15px;
     text-align: justify;
-    margin: 0 172px 0 35px;
-    padding: 0;
-    @media #{$phone} {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      bottom: 63px;
-      left: 10px;
-      margin: 0;
-      overflow-y: scroll;
-    }
+    margin: 0;
+    color: #5D6D7E;
     .text-line {
-      padding: 0;
-      margin: 0;
       .icon {
-        position: absolute;
+        text-align: center;
         left: 15px;
-        width: 36px;
         line-height: 20px;
-        @media #{$phone} {
-          position: static;
-          text-align: center;
-          width: 100%;
-          margin: 12px 0 6px;
+        color: #34495E;
+        &.cookies {
+          margin: 0 0 8px;
+        }
+        &.privacy {
+          margin: 18px 0 8px;
         }
         .fas {
-          font-size: 17px;
-          color: #212F3D;
+          color: #34495E;
         }
       }
       .text {
-        line-height: 20px;
+        line-height: 21px;
       }
       &.cookies {
         margin-bottom: 6px;
@@ -63,58 +48,38 @@
     }
     u {
       cursor: pointer;
+      color: #1F618D;
       &:hover {
-        color: #D35400;
+        color: #2471A3;
       }
     }
   }
   .buttons {
-    padding: 0;
-    position: absolute;
-    top: 12px;
-    bottom: 12px;
-    right: 12px;
-    width: 160px;
-    @media #{$phone} {
-      top: auto;
-      right: 10px;
-      bottom: 10px;
-      left: 10px;
-      height: 43px;
-      width: auto;
-    }
+    margin-top: 18px;
+    position: relative;
+    height: 43px;
     .form-input {
       &.button {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        margin: auto;
         &.agree {
-          bottom: 43px;
+          position: absolute;
+          top: 0;
+          right: 0;
           width: 160px;
-          height: 43px;
-          @media #{$phone} {
-            bottom: 0;
-            left: 50%;
-            width: auto;
-          }
+          height: 42px;
+          width: 50%;
         }
         &.settings {
-          top: 43px;
-          width: 90px;
-          height: 20px;
-          @media #{$phone} {
-            left: 0;
-            right: 50%;
-            bottom: 0;
-            top: 0;
-          }
+          line-height: 42px;
+          width: 50%;
           .input {
+            margin: 0;
+            padding: 0;
+            text-align: center;
             background: none;
-            color: #D35400;
-            font-size: 16px;
+            color: #1F618D;
+            &.hover {
+              color: #2471A3;
+            }
           }
         }
       }

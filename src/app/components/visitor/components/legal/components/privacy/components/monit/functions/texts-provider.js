@@ -6,7 +6,7 @@ export function textsProvider(text) {
   switch (text) {
     case 'cookies':
       return {
-        pl: <span>W Serwisie korzystamy z plików cookies i podobnych technologii w celu świadczenia najwyższej jakości usług, prowadzenia statystyki oraz&nbsp;dostosowywania treści marketingowych. Więcej informacji znajdziesz w  <u onClick={() => changeApp({ showVisitorCookiesPolicy: true })}>Polityce Cookies</u>.</span>,
+        pl: <span>W Serwisie korzystamy z plików cookies i&nbsp;podobnych technologii w celu świadczenia najwyższej jakości usług, prowadzenia statystyki oraz&nbsp;dostosowywania treści marketingowych. Więcej informacji znajdziesz w  <u onClick={() => changeApp({ showVisitorCookiesPolicy: true })}>Polityce Cookies</u>.</span>,
         en: <span>In this Service we use cookies and similar technologies to render services of the highest quality, maintain statistics and adjust marketing content. You will find more information in the <u onClick={() => changeApp({ showVisitorCookiesPolicy: true })}>Cookies Policy</u>.</span>
       }
     case 'dataProcessing':

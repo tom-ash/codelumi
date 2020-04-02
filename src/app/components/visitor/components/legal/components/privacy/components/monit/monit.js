@@ -28,7 +28,7 @@ class VisitorPrivacyMonit extends React.Component {
       >
         <div className='text-container'>
           <div className='text-line cookies'>
-            <div className='icon'>
+            <div className='icon cookies'>
               <i className='fas fa-cookie'/>
             </div>
             <div className='text'>
@@ -36,7 +36,7 @@ class VisitorPrivacyMonit extends React.Component {
             </div>
           </div>
           <div className='text-line'>
-            <div className='icon'>
+            <div className='icon privacy'>
               <i className='fas fa-user-shield'/> 
             </div>
             <div className='text'>
