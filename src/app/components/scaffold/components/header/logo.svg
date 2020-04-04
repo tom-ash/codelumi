@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="361.244mm" height="62.4417mm"
+ viewBox="0 0 1024 177"
+ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">
+<title>Qt Svg Document</title>
+<desc>Generated with Qt</desc>
+<defs>
+</defs>
+<g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel" >
+
+<g fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="12" font-weight="400" font-style="normal" 
+>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M0,0 L1024,0 L1024,177 L0,177 L0,0"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M0,0 L1024,0 L1024,177 L0,177 L0,0"/>
+</g>
+
+<g fill="#d0d3d4" fill-opacity="1" stroke="#d0d3d4" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Arial" font-size="70" font-weight="400" font-style="normal" 
+>
+<text fill="#d0d3d4" fill-opacity="1" stroke="none" xml:space="preserve" x="0" y="126" font-family="Arial" font-size="70" font-weight="400" font-style="normal" 
+ >WARSAW</text>
+<text fill="#d0d3d4" fill-opacity="1" stroke="none" xml:space="preserve" x="474" y="126" font-family="Arial" font-size="70" font-weight="400" font-style="normal" 
+ >LEASE</text>
+</g>
+
+<g fill="#d0d3d4" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,0,0)"
+font-family="Arial" font-size="70" font-weight="400" font-style="normal" 
+>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M388,77 L408,77 L408,127 L388,127 L388,77"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M412,47 L432,47 L432,127 L412,127 L412,47"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M422,31 L425,31 L425,47 L422,47 L422,31"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M436,67 L450,67 L450,127 L436,127 L436,67"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M450,67 L450,97 L454,97 L458,67 L450,67"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M450,67 L450,127 L454,97 L454,67 L450,67"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M346,67 L384,67 L384,127 L346,127 L346,67"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M355,43 L375,43 L375,67 L355,67 L355,43"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M360,25 L370,25 L370,43 L360,43 L360,25"/>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M364,15 L366,15 L366,25 L364,25 L364,15"/>
+</g>
+</g>
+</svg>

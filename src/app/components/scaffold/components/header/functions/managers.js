@@ -1,5 +1,6 @@
 import React from 'react'
 import { saveCookie } from '../../../../../functions/cookie-handlers'
+import Logo from '../logo.svg';
 
 const origin = `${CLIENT_URL}/`
 
@@ -16,14 +17,7 @@ export function titleManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: 'warsawlease.pl',
     label: (
-      <React.Fragment>
-        <span className='city'>
-          WARSAW
-        </span>
-        <span className='lease'>
-          LEASE
-        </span>
-      </React.Fragment>
+      <Logo width="19em" height="36px"/>
     ),
     onClick: () => {
       resetAnnouncementIndexControl()

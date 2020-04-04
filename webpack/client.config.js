@@ -34,6 +34,10 @@ var config = {
           },
           'sass-loader'
         ]
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
       }
     ]
   },

@@ -48,10 +48,7 @@ class Header extends React.Component {
               <div className='link-icon' />
             </div>
           </div>}
-          <div
-            id='warsaw-lease'
-            { ...!isLargePc && { className: 'shifted' } }
-          >
+          <div id='warsaw-lease'>
             <ManagedLink {...this.titleManager()} />
           </div>
           <div className='top-links'>
