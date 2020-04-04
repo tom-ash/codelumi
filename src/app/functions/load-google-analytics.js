@@ -13,7 +13,7 @@ export function loadGoogleAnalytics() {
     window.dataLayer = window.dataLayer || []
     function gtag() { dataLayer.push(arguments) }
     gtag('js', new Date())
-    gtag('config', 'UA-155051695-1')
+    gtag('config', 'UA-155051695-2')
 
     if (window.dataLayer.length === 0) return
 
