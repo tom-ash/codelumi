@@ -20,6 +20,8 @@ import styles from './styles/styles.scss'
 import { matchStateToPath } from './functions/routers/match-state-to-path'
 import { matchPathToState } from './functions/routers/match-path-to-state'
 
+import VisitorWelcome from './components/visitor/components/welcome/welcome'
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -32,6 +34,7 @@ class App extends React.Component {
     this.changePath = routers.changePath.bind(this)
     this.matchStateToPath = matchStateToPath.bind(this)
     this.matchPathToState = matchPathToState.bind(this)
+    this.appContainer = React.createRef()
   }
 
   showUser = () => {
@@ -44,17 +47,23 @@ class App extends React.Component {
       showUserEditPhoneVerify
     } = this.props
 
-    return showUserCreate || showUserAuthorize || showUserEditPasswordReset || showUserShow || showUserEditAccount || showUserEditPhoneVerify
+    return showUserCreate ||
+           showUserAuthorize ||
+           showUserEditPasswordReset ||
+           showUserShow ||
+           showUserEditAccount ||
+           showUserEditPhoneVerify
   }
 
   render() {
     return (
-      <div id='app-container'>
+      <div id='app-container' ref={this.appContainer}>
+        <VisitorWelcome />
         <Header />
         <div id='app-inner-container'>
-          <Announcement />
           {this.showUser() && <User />}
-          <Visitor />
+          <Visitor appContainer={this.appContainer.current}/>
+          <Announcement />
         </div>
         <Footer />
       </div>

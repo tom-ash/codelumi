@@ -3,6 +3,9 @@
 @import './contact';
 
 .announcement-show-tile {
+  a {
+    min-height: 32px;
+  }
   width: 100%;
   background: white;
   position: relative;

@@ -37,12 +37,11 @@ class AnnouncementShowPictures extends React.Component {
       id
     } = this.props
 
-    if (downloadedPictures.length === 0) return null
+    if (downloadedPictures.length === 0) return <ManagedLink {...this.linkManager()} />
 
     return (
       <div
         className='announcement-show-tile-pictures'
-        // onClick={() => onClick(id)}
       >
         <div
         style={{
@@ -72,9 +71,5 @@ class AnnouncementShowPictures extends React.Component {
     )
   }
 }
-
-// AnnouncementShowPictures.defaultProps = {
-//   onClick: () => null
-// }
 
 export default connect(null, mapDispatchToProps)(AnnouncementShowPictures)

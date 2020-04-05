@@ -40,6 +40,7 @@
 @import '../components/user/styles/styles.scss';
 @import '../components/visitor/components/about/styles/styles.scss';
 @import '../components/visitor/components/contact/styles/styles.scss';
+@import '../components/visitor/components/welcome/styles/styles.scss';
 @import '../components/visitor/components/legal/components/cookies/components/policy/styles/styles.scss';
 @import '../components/visitor/components/legal/components/privacy/components/monit/styles/styles.scss';
 @import '../components/visitor/components/legal/components/privacy/components/policy/styles/styles.scss';
@@ -94,6 +95,8 @@ body {
   min-height: 400px;
   margin: 0 auto;
   overflow: hidden;
+
+  min-height: 944px;
 }
 
 .form-input {
