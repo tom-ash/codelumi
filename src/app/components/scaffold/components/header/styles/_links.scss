@@ -3,10 +3,9 @@
   top: 0;
   right: 0;
   bottom: 0;
-  left: 216px;
   line-height: 52px;
   text-align: right;
-  @media #{$phone} {
+  @media #{$small-pc} {
     right: 52px;
   }
   .header-link {
