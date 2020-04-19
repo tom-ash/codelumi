@@ -32,8 +32,9 @@ class Header extends React.Component {
       <div id='header'>
         <div className='inner'>
           {!isLargePc &&
-          <div
-            className='links-icon-container'
+          <div className='links-icon-container'>
+            <div
+            className='links-icon'
             onClick={() => {
               if (!authorized) {
                 this.props.changeControl({ showLinks: !this.props.showLinks })
@@ -41,8 +42,7 @@ class Header extends React.Component {
                 this.props.changeApp({ showUserShow: !this.props.showUserShow })
               }
             }}
-          >
-            <div className='links-icon'>
+            >
               <div className='link-icon' />
               <div className='link-icon' />
               <div className='link-icon' />
