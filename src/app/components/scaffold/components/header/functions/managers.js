@@ -17,7 +17,15 @@ export function titleManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: 'warsawlease.pl',
     label: (
-      <Logo width="36px" height="36px"/>
+      <div className='logo-and-title'>
+        <div className='logo'>
+          <Logo width="36px" height="36px"/>
+        </div>
+        <div className='title'>
+          warsawlease.pl
+        </div>
+        <div className='float-clear' />
+      </div>
     ),
     onClick: () => {
       resetAnnouncementIndexControl()
