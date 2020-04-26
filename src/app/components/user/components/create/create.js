@@ -7,6 +7,7 @@ import UserCreateEmail from './components/email/email'
 import { CloseButton } from '../../../../components/support/components/close-button/close-button'
 import * as lifecycle from './functions/lifecycle'
 import { languageHandler } from '../../../../functions/language-handler'
+import { hideUser } from '../../functions/hide-user'
 
 class UserCreate extends React.Component {
   constructor(props) {
@@ -15,20 +16,20 @@ class UserCreate extends React.Component {
     this.componentWillUnmount = lifecycle.componentWillUnmount
     this.changePath = changePath.bind(this)
     this.languageHandler = languageHandler.bind(this)
+    this.hideUser = hideUser.bind(this)
   }
 
   render() {
     return (
       <React.Fragment>
-        <CloseButton classNames='page narrow'/>
         <div
           id='user-create-container'
           className='container narrow-container shadowed'
-          onClick={e => e.stopPropagation()}
         >
-          <h2 className='page-header'>
+          <h1 className='page-header'>
             <i className='fas fa-user-plus' /> {this.languageHandler('Zarejestruj', 'Sign Up')}
-          </h2>
+          </h1>
+          <CloseButton onClick={this.hideUser} classNames='page narrow'/>
           {this.props.success === null &&
           <UserCreateEmail />}
         </div>

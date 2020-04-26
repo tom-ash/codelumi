@@ -13,28 +13,31 @@ class User extends React.Component {
     super(props)
   }
 
-  hideUser = () => {
-    const { changeApp, changeAnnouncementControl } = this.props
-
-    changeApp({ showUserCreate: false, showUserAuthorize: false, showUserEditPasswordReset: false,
-                showUserShow: false, showUserEditAccount: false, showUserEditPhoneVerify: false })
-    changeAnnouncementControl({ publishing: false })
-  }
-
   render() {
-    const { showCreate, showAuthorize, showPasswordReset, showEditPhoneVerify, showAccount, showEdit } = this.props
+    const {
+      changeApp,
+      showCreate,
+      showAuthorize,
+      showPasswordReset,
+      showEditPhoneVerify,
+      showAccount,
+      showEdit
+    } = this.props
 
     return (
       <React.Fragment>
         {(showCreate || showAuthorize || showPasswordReset || showEditPhoneVerify) &&
-        <div onClick={this.hideUser} className='darkened-cover '>
+        <div className='darkened-cover'>
           {showCreate          && <UserCreate />}
           {showAuthorize       && <UserAuthorize />}
           {showPasswordReset   && <UserEditAccountPassword />}
           {showEditPhoneVerify && <UserEditPhoneNumberVerify />}
         </div>}
         {showAccount &&
-        <div onClick={this.hideUser} className='transparent-cover'>
+        <div
+          onClick={() => changeApp({ showUserShow: false })}
+          className='transparent-cover'
+        >
           <UserShow />
         </div>}
         {showEdit && <UserEditAccount />}

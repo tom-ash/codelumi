@@ -7,6 +7,8 @@ import { verificationManager, buttonManager } from './functions/managers'
 import { startVerification, sendVerification } from './functions/adapters'
 import { monits } from './constants/monits'
 import { componentDidMount } from './functions/lifecycle'
+import { hideUser } from '../../../../../../functions/hide-user'
+import { CloseButton } from '../../../../../../../support/components/close-button/close-button'
 
 class UserEditPhoneVerify extends React.Component {
   constructor(props) {
@@ -18,6 +20,7 @@ class UserEditPhoneVerify extends React.Component {
     this.buttonManager = buttonManager.bind(this)
     this.startVerification = startVerification.bind(this)
     this.sendVerification = sendVerification.bind(this)
+    this.hideUser = hideUser.bind(this)
   }
 
   render() {
@@ -25,12 +28,12 @@ class UserEditPhoneVerify extends React.Component {
       <div
         id='user-edit-phone-verify'
         className='container narrow-container shadowed'
-        onClick={e => e.stopPropagation()}
       >
-        <h2 className='page-header'>
+        <h1 className='page-header'>
           <i className='far fa-check-circle' />
           {this.languageHandler('Weryfikacja numeru telefonu', 'Phone Number Verification')}
-        </h2>
+        </h1>
+        <CloseButton onClick={this.hideUser} classNames='page narrow'/>
         <div className='monit-inputs'>
           <div className='monit'>
             {this.languageObjectHandler(monits.reason)}

@@ -9,6 +9,7 @@ import { monitProvider } from './functions/monit-provider'
 import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import { labelProvider } from '../../../../../../../../functions/providers/label'
 import { CloseButton } from '../../../../../../../../components/support/components/close-button/close-button'
+import { hideUser } from '../../../../../../functions/hide-user'
 
 class UserEditAccountPassword extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class UserEditAccountPassword extends React.Component {
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
+    this.hideUser = hideUser.bind(this)
   }
 
   render() {
@@ -32,16 +34,16 @@ class UserEditAccountPassword extends React.Component {
     
     return (
       <React.Fragment>
-        {!editAccount && <CloseButton classNames='page narrow'/>}
         <div
           id='user-edit-account-password'
           className={`${editAccount ? '' : 'container narrow-container shadowed'}`}
           onClick={e => e.stopPropagation()}
         >
           {!editAccount &&
-          <h2 className='page-header'>
+          <h1 className='page-header'>
             <i className='fas fa-user-plus' /> {this.languageHandler('Resetowanie hasła', 'Password Resetting')}
-          </h2>}
+          </h1>}
+          {!editAccount && <CloseButton onClick={this.hideUser} classNames='page narrow'/>}
           <div className='inputs'>
             <div className='monit'>
               {this.monitProvider()}

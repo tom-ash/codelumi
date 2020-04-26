@@ -14,4 +14,20 @@
       margin-left: auto;
     }
   }
+  h1 {
+    font-size: 18px;
+    color: #566573;
+  }
+  
+.close-button {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: white;
+    box-shadow: none;
+    &:hover {
+      color: #C0392B;
+    }
+  }
 }
