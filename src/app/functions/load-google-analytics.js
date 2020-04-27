@@ -6,7 +6,7 @@ export function loadGoogleAnalytics() {
   const { changeApp, scripts } = this.props
 
   changeApp({ scripts: { ...scripts, googleAnalyticsLoading: true } })
-  loadScript(`https://www.googletagmanager.com/gtag/js?id=UA-155051695-1`)
+  loadScript(`https://www.googletagmanager.com/gtag/js?id=UA-155051695-2`)
   .then(() => {
     const { scripts } = this.props
 
