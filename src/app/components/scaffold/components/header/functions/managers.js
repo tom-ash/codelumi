@@ -1,6 +1,6 @@
 import React from 'react'
 import { saveCookie } from '../../../../../functions/cookie-handlers'
-import Logo from '../logo.svg';
+import Logo from '../../../../../assets/logo-header.svg'
 
 const origin = `${CLIENT_URL}/`
 

@@ -11,8 +11,6 @@ import VisitorCookiesPolicy from './components/legal/components/cookies/componen
 import VisitorPrivacyPolicy from './components/legal/components/privacy/components/policy/policy'
 import VisitorPrivacySettings from './components/legal/components/privacy/components/settings/settings'
 
-import VisitorWelcome from './components/welcome/welcome'
-
 class User extends React.Component {
   constructor(props) {
     super(props)
@@ -63,7 +61,6 @@ class User extends React.Component {
       <div id='visitor'>
         {!this.show() && (statisticsConsent === null || marketingConsent === null) && !showPrivacySettings &&
         <VisitorPrivacyMonit />}
-        <VisitorWelcome appContainer={this.props.appContainer}/>
         {this.show() &&
         <div className='darkened-cover' onClick={() => this.hide()}>
           {showAbout           && <VisitorAbout />}

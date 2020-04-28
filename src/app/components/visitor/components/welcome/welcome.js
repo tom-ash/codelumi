@@ -5,7 +5,7 @@ import { changePath } from '../../../../functions/routers/change-path'
 import { pageHeaderProvider } from '../../../../functions/providers/headers'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 
-import LogoFull from '../../../../assets/logo-full.svg';
+import Logo from '../../../../assets/logo-welcome.svg'
 
 class VisitorWelcome extends React.Component {
   constructor(props) {
@@ -26,12 +26,14 @@ class VisitorWelcome extends React.Component {
 
     return (
       <div id='visitor-welcome' className={showAnnouncementIndexList ? 'hidden' : 'visible'}>
-        <div className='logo-full'>
-          <LogoFull width='12em' fill="#F9E79F" />
+        <div className='container medium-container small-shadow'>
+          <div className='logo'>
+            <Logo fill='red' width="48px" height="48px"/>
+          </div>
+          <h1>
+            {this.languageObjectHandler({ pl: 'Odnajdź się w Warszawie', en: 'Find Yourself in Warsaw' })}
+          </h1>
         </div>
-        <h1>
-          {this.languageObjectHandler({ pl: 'Odnajdź się w Warszawie', en: 'Find Yourself in Warsaw' })}
-        </h1>
       </div>
     )
   }
