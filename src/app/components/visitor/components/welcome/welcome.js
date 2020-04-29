@@ -28,15 +28,45 @@ class VisitorWelcome extends React.Component {
       <div id='visitor-welcome' className={showAnnouncementIndexList ? 'hidden' : 'visible'}>
         <div className='container medium-container small-shadow'>
           <div className='logo'>
-            <Logo fill='red' width="48px" height="48px"/>
+            <Logo fill='red' width="42px" height="42px"/>
           </div>
           <h1>
             {this.languageObjectHandler({ pl: 'Odnajdź się w Warszawie', en: 'Find Yourself in Warsaw' })}
           </h1>
+          <div className='text'>
+            {
+              this.languageObjectHandler({
+                pl,
+                en
+              })
+            }
+          </div>
         </div>
       </div>
     )
   }
 }
+
+const pl = (
+  <React.Fragment>
+    <p className='blog-paragraph'>
+      Na <span className='title'>warsawlease.pl</span> możesz dodawać i przeglądać darmowe ogłoszenia wynajmu mieszkań, lokali użytkowych i biur w&nbsp;Warszawie.
+    </p>
+    <p className='blog-paragraph last'>
+      Ogłoszenia prezentowane są w ergonomiczny sposób na mapie oraz na liście.
+    </p>
+  </React.Fragment>
+)
+
+const en = (
+  <React.Fragment>
+    <p className='blog-paragraph'>
+      On <span className='title'>warsawlease.pl</span> you can add and peruse free announcements of lease of apartments, usable premises and offices in Warsaw.
+    </p>
+    <p className='blog-paragraph last'>
+      The announcements are presented in an ergonomic manner on the map and on the list.
+    </p>
+  </React.Fragment>
+)
 
 export default connect(mapStateToProps, mapDispatchToProps)(VisitorWelcome)
