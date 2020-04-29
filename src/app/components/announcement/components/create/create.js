@@ -28,12 +28,37 @@ class AnnouncementCreate extends React.Component {
   render() {
     const { publishing } = this.props
 
+    const pl = (
+      <React.Fragment>
+        <p className='blog-paragraph'>
+          Dodaj darmowe ogłoszenie wynajmu mieszkania, lokalu użytkowego lub biura w&nbsp;Warszawie.
+        </p>
+        <p className='blog-paragraph'>
+          Twoje ogłoszenie prezentowane będzie na mapie oraz na liście.
+        </p>
+      </React.Fragment>
+    )
+    
+    const en = (
+      <React.Fragment>
+        <p className='blog-paragraph'>
+          Add a free announcement of lease of an apartment, usable premises or an office in Warsaw.
+        </p>
+        <p className='blog-paragraph'>
+          Your announcement shall be presented on the map and on the list.
+        </p>
+      </React.Fragment>
+    )
+
     return (
       <div id='announcement-create' className='container medium-container small-shadow'>
         <div>
           <h1>
             <i className='fas fa-plus' /> {this.languageHandler('Dodaj bezpłatne ogłoszenie', 'Add Free Announcement')}
           </h1>
+          <div className='text'>
+            {this.languageObjectHandler({ pl, en })}
+          </div>
           <AnnouncementCreatePrimary />
           <div className='input-label'>
             <i className='fas fa-images' /> {this.languageObjectHandler({ pl: 'Zdjęcia', en: 'Pictures' })}

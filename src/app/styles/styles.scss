@@ -522,3 +522,17 @@ h2 {
   margin-top: 24px;
   margin-bottom: 18px;
 }
+
+.blog-paragraph {
+  text-align: justify;
+  color: #34495E;
+  font-size: 15px;
+  line-height: 20px;
+  margin-bottom: 12px;
+  &.last {
+    margin-bottom: 0;
+  }
+  .title {
+    font-family: 'Oxanium';
+  }
+}

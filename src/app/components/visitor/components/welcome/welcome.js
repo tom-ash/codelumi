@@ -34,12 +34,7 @@ class VisitorWelcome extends React.Component {
             {this.languageObjectHandler({ pl: 'Odnajdź się w Warszawie', en: 'Find Yourself in Warsaw' })}
           </h1>
           <div className='text'>
-            {
-              this.languageObjectHandler({
-                pl,
-                en
-              })
-            }
+            {this.languageObjectHandler({ pl, en })}
           </div>
         </div>
       </div>
