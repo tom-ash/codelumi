@@ -1,2 +1,13 @@
 User-agent: *
-Disallow:
+Disallow: /o-serwisie
+Disallow: /about
+Disallow: /kontakt
+Disallow: /contact
+Disallow: /regulamin
+Disallow: /terms-of-service
+Disallow: /polityka-cookies
+Disallow: /cookies-policy
+Disallow: /polityka-prywatnosci
+Disallow: /privacy-policy
+Disallow: /ustawienia-prywatnosci
+Disallow: /privacy-settings
