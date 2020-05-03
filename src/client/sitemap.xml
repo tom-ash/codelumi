@@ -16,84 +16,12 @@
       href="https://www.warsawlease.pl/list"/>
   </url>
   <url>
-    <loc>https://www.warsawlease.pl/o-serwisie</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.warsawlease.pl/dodaj-ogloszenie</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.warsawlease.pl/about"/>
-  </url>
-  <url>
-    <loc>https://www.warsawlease.pl/dodaj-ogloszenie</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
       href="https://www.warsawlease.pl/add-announcement"/>
-  </url>
-  <url>
-    <loc>https://www.warsawlease.pl/zarejestruj</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.warsawlease.pl/sign-up"/>
-  </url>
-  <url>
-    <loc>https://www.warsawlease.pl/zaloguj</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.warsawlease.pl/sign-in"/>
-  </url>
-  <url>
-    <loc>https://www.warsawlease.pl/kontakt</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.warsawlease.pl/contact"/>
-  </url>
-  <url>
-    <loc>https://www.warsawlease.pl/regulamin</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.warsawlease.pl/terms-of-service"/>
-  </url>
-  <url>
-    <loc>https://www.warsawlease.pl/polityka-prywatnosci</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.warsawlease.pl/privacy-policy"/>
-  </url>
-  <url>
-    <loc>https://www.warsawlease.pl/polityka-cookies</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.warsawlease.pl/cookies-policy"/>
-  </url>
-  <url>
-    <loc>https://www.warsawlease.pl/ustawienia-prywatnosci</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.warsawlease.pl/privacy-settings"/>
   </url>
 </urlset>
