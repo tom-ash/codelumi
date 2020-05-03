@@ -11,3 +11,8 @@ Disallow: /polityka-prywatnosci
 Disallow: /privacy-policy
 Disallow: /ustawienia-prywatnosci
 Disallow: /privacy-settings
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.warsawlease.pl/sitemap.xml
