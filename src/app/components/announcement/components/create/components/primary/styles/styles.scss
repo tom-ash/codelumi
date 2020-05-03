@@ -113,4 +113,19 @@
       }
     }
   }
+  .input-explanation {
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 28px;
+    .fas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      height: 16px;
+      margin: auto;
+      font-size: 17px;
+      color: #7FB3D5;
+    }
+  }
 }

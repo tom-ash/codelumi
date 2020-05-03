@@ -10,6 +10,7 @@ import { labelProvider } from '../../../../../../functions/providers/label'
 import { getRentAmounts } from '../../functions/get-rent-amounts'
 import { floorsProvider } from './functions/floors-provider'
 import { sectionHeaderProvider } from '../../../../../../functions/providers/headers'
+import { rentInputInfoProvider } from './functions/rent-input-info-provider'
 
 class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {
@@ -21,7 +22,6 @@ class AnnouncementCreatePrimary extends React.Component {
     this.rentCurrencyManager = managers.rentCurrencyManager.bind(this)
     this.rentAmountManager = managers.rentAmountManager.bind(this)
     this.areaManager = managers.areaManager.bind(this)
-    
     this.handleErrorOnSelect = handleErrorOnSelect.bind(this)
     this.handleErrorOnValidate = handleErrorOnValidate.bind(this)
     this.onSelectHandler = onSelectHandler.bind(this)
@@ -29,6 +29,7 @@ class AnnouncementCreatePrimary extends React.Component {
     this.getRentAmounts = getRentAmounts.bind(this)
     this.floorsProvider = floorsProvider.bind(this)
     this.sectionHeaderProvider = sectionHeaderProvider.bind(this)
+    this.rentInputInfoProvider = rentInputInfoProvider.bind(this)
   }
   
   render() {
@@ -49,6 +50,7 @@ class AnnouncementCreatePrimary extends React.Component {
         </h2>
         <ManagedSelect {...this.districtManager()}/>
         <ManagedText {...this.areaManager()}/>
+        {this.rentInputInfoProvider()}
         <div className='rent-inputs-container'>
           <ManagedText {...this.rentAmountManager()}/>
           <ManagedSelect {...this.rentCurrencyManager()}/>
