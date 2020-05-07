@@ -92,10 +92,10 @@ function setOptions(options) {
 
   return {
     center: {
-      lat: this.props.isMobile ? 52.258: 52.240,
-      lng: 21.011
+      lat: this.props.isMobile ? 52.28 : 52.26,
+      lng: 21.009
     },
-    zoom: this.props.isMobile ? 11.8 : 11.7,
+    zoom: this.props.isMobile ? 11 : 11,
     mapTypeControl: false,
     fullscreenControl: false,
     streetViewControl: false,
