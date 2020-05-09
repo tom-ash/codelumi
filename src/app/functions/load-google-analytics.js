@@ -6,14 +6,14 @@ export function loadGoogleAnalytics() {
   const { changeApp, scripts } = this.props
 
   changeApp({ scripts: { ...scripts, googleAnalyticsLoading: true } })
-  loadScript(`https://www.googletagmanager.com/gtag/js?id=UA-155051695-2`)
+  loadScript(`https://www.googletagmanager.com/gtag/js?id=UA-165973681-1`)
   .then(() => {
     const { scripts } = this.props
 
     window.dataLayer = window.dataLayer || []
     function gtag() { dataLayer.push(arguments) }
     gtag('js', new Date())
-    gtag('config', 'UA-155051695-2')
+    gtag('config', 'UA-165973681-1')
 
     if (window.dataLayer.length === 0) return
 
