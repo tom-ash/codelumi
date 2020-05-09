@@ -11,7 +11,8 @@ export function handleRequest(req, res) {
     initialState,
     title,
     description,
-    sender
+    sender,
+    noIndex
   } = getRouteData(pureUrl)
 
   if (!sender) return res.status(404).send('404')
@@ -24,7 +25,8 @@ export function handleRequest(req, res) {
     initialState,
     title,
     description,
-    url: pureUrl
+    url: pureUrl,
+    noIndex
   })
 }
 
@@ -43,6 +45,7 @@ function getRouteData(url) {
   let title
   let description
   let sender
+  let noIndex
 
   Object.keys(routes).some(routeKey => {
     if (url.match(routes[routeKey].pl.regEx)) {
@@ -57,6 +60,7 @@ function getRouteData(url) {
       title = routes[routeKey].pl.title
       description = routes[routeKey].pl.description
       sender = routes[routeKey].sender
+      noIndex = routes[routeKey].noIndex
       return true
     } else if (url.match(routes[routeKey].en.regEx)) {
       initialState = {
@@ -70,6 +74,7 @@ function getRouteData(url) {
       title = routes[routeKey].en.title
       description = routes[routeKey].en.description
       sender = routes[routeKey].sender
+      noIndex = routes[routeKey].noIndex
       return true
     }
   })
@@ -78,6 +83,7 @@ function getRouteData(url) {
     initialState,
     title,
     description,
-    sender
+    sender,
+    noIndex
   }
 }

@@ -9,7 +9,7 @@ export function rentInputInfoProvider() {
 
   return (
     <div className='input-explanation'>
-      <i class='fas fa-info-circle' /> {text}
+      <i className='fas fa-info-circle' /> {text}
     </div>
   )
 }

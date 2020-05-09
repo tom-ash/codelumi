@@ -73,7 +73,8 @@ export const routes = {
       description: 'Sign Up to an Account on warsawlease.pl. On warsawlease.pl you can easily add a free announcement of lease of an apartment, usable premises and/or and office.'
     },
     needsBackground: true,
-    overshadow: true
+    overshadow: true,
+    noIndex: true
   },
   showUserAuthorize: {
     sender: 'generic',
@@ -90,7 +91,8 @@ export const routes = {
       description: 'Sign In to the Account on warsawlease.pl. On warsawlease.pl you can easily add a free announcement of lease of an apartment, usable premises and/or and office.'
     },
     needsBackground: true,
-    overshadow: true
+    overshadow: true,
+    noIndex: true
   },
   showVisitorAbout: {
     sender: 'generic',
@@ -107,7 +109,8 @@ export const routes = {
       description: genericDescription.en
     },
     needsBackground: true,
-    overshadow: true
+    overshadow: true,
+    noIndex: true
   },
   showVisitorContact: {
     sender: 'generic',
@@ -124,7 +127,8 @@ export const routes = {
       description: 'Contact'
     },
     needsBackground: true,
-    overshadow: true
+    overshadow: true,
+    noIndex: true
   },
   showVisitorTermsOfService: {
     sender: 'generic',
@@ -141,7 +145,8 @@ export const routes = {
       description: 'Terms of Service'
     },
     needsBackground: true,
-    overshadow: true
+    overshadow: true,
+    noIndex: true
   },
   showVisitorCookiesPolicy: {
     sender: 'generic',
@@ -158,7 +163,8 @@ export const routes = {
       description: 'Cookies Policy'
     },
     needsBackground: true,
-    overshadow: true
+    overshadow: true,
+    noIndex: true
   },
   showVisitorPrivacyPolicy: {
     sender: 'generic',
@@ -175,7 +181,8 @@ export const routes = {
       description: 'Privacy Policy'
     },
     needsBackground: true,
-    overshadow: true
+    overshadow: true,
+    noIndex: true
   },
   showVisitorPrivacySettings: {
     sender: 'generic',
@@ -192,7 +199,8 @@ export const routes = {
       description: 'Privacy Settings'
     },
     needsBackground: true,
-    overshadow: true
+    overshadow: true,
+    noIndex: true
   },
   showAnnouncementIndexAdded: {
     sender: 'generic',
@@ -209,7 +217,8 @@ export const routes = {
       description: 'Added Announcements'
     },
     needsBackground: false,
-    overshadow: false
+    overshadow: false,
+    noIndex: true
   },
   showAnnouncementEdit: {
     sender: 'generic',
@@ -226,7 +235,8 @@ export const routes = {
       description: 'Edit Announcement'
     },
     needsBackground: false,
-    overshadow: false
+    overshadow: false,
+    noIndex: true
   },
   showUserShow: {
     sender: 'generic',
@@ -243,7 +253,8 @@ export const routes = {
       description: 'Account'
     },
     needsBackground: true,
-    overshadow: true
+    overshadow: true,
+    noIndex: true
   },
   showUserEditPasswordReset: {
     sender: 'generic',
@@ -260,7 +271,8 @@ export const routes = {
       description: 'Reset Password'
     },
     needsBackground: true,
-    overshadow: true
+    overshadow: true,
+    noIndex: true
   },
   showUserEditPhoneVerify: {
     sender: 'generic',
@@ -277,7 +289,8 @@ export const routes = {
       description: 'Verify Phone Number'
     },
     needsBackground: true,
-    overshadow: true
+    overshadow: true,
+    noIndex: true
   },
   showUserEditAccount: {
     sender: 'generic',
@@ -294,6 +307,7 @@ export const routes = {
       description: 'Account Settings'
     },
     needsBackground: false,
-    overshadow: false
+    overshadow: false,
+    noIndex: true
   }
 }

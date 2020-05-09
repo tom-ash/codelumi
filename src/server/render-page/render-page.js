@@ -4,12 +4,14 @@ export function renderPage({
   preloadedState,
   title,
   description,
-  url
+  url,
+  noIndex
 }) {
   return `
     <!doctype html>
     <html>
       <head>
+        ${noIndex ? '<meta name="robots" content="noindex">' : ''}
         <link rel="canonical" href="${CLIENT_URL}/${url}">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">

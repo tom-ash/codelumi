@@ -7,13 +7,15 @@ export function sendResponse({
   title,
   description,
   url,
+  noIndex
 }) {
   res.send(
     renderPage({ 
       ...renderAppAsHtml(initialState),
       title,
       description,
-      url
+      url,
+      noIndex
     }) 
   )
 }
