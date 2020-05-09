@@ -1,4 +1,5 @@
 import { categories } from '../../../../../constants/categories'
+import { viewAnnouncement } from '../../../../../functions/view-announcement'
 
 export function drawPins() {
   setUpPinCreator()
@@ -76,9 +77,12 @@ function addNewPins() {
         className: `pin ${categories[announcement.category].pinClassName}`,
         onClick: e => {
           e.preventDefault()
+          const { id } = announcement
+          const { tileId } = this.props
 
-          if (this.props.tileId === announcement.id) return
-          changeData({ tileId: announcement.id })
+          if (tileId === id) return
+          viewAnnouncement(id)
+          changeData({ tileId: id })
         }
       }
     )

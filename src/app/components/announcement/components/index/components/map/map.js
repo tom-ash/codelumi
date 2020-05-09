@@ -12,8 +12,8 @@ import { parseDistrict } from '../../../../../../../shared/functions/parsers/par
 import { AreaPresenter } from '../../../show/functions/area-presenter'
 import { languageObjectHandler } from '../../../../../../functions/language-handler'
 import { RentPresenter } from '../../../show/functions/rent-presenter'
-
 import { shouldSetUpGoogleMaps, shouldSetUpPins } from '../../../../functions/google-map-handler'
+import { viewAnnouncement } from '../../../../functions/view-announcement'
 
 class AnnouncementIndexMap extends React.Component {
   constructor(props) {
@@ -50,50 +50,63 @@ class AnnouncementIndexMap extends React.Component {
           <div id='google-map' />
           {minListDevices.indexOf(device) !== -1 &&
           <div id='mini-list'>
-            {announcements !== null && announcements.map(announcement => (
-              <a
-                key={announcement.id}
-                href={`${CLIENT_URL}/${announcement.id}`}
-                onClick={e => {
-                  e.preventDefault()
-                  const map = window.googleMap
-                  const options = {
-                    center: {
-                      lat: announcement.latitude,
-                      lng: announcement.longitude
-                    },
-                    zoom: 14
-                  }
-                  map.setOptions(setOptions.call(this, options))
-                  changeData({ tileId: announcement.id })
-                }}
-                className='announcement-show-container'
-              >
-                <AnnouncementShowPictures
-                  language={language}
-                  venue={'mini-list'}
-                  key={announcement.id}
-                  id={announcement.id}
-                  pictures={announcement.pictures}
-                />
-                <div className='category-and-location'>
-                  {parseCategory(announcement.category)[language]}, {parseDistrict(announcement.district)}
-                </div>
-                <div className='data'>
-                  <AreaPresenter
-                    area={announcement.area}
-                    languageObjectHandler={this.languageObjectHandler}
+            {announcements !== null && announcements.map(announcement => {
+              const {
+                id,
+                latitude: lat,
+                longitude: lng,
+                pictures,
+                category,
+                district,
+                area,
+                grossRentAmount,
+                rentCurrency: currency
+              } = announcement
+
+              return (
+                <a
+                  className='announcement-show-container'
+                  key={id}
+                  href={`${CLIENT_URL}/${id}`}
+                  onClick={e => {
+                    e.preventDefault()
+                    const map = window.googleMap
+                    const options = {
+                      center: {
+                        lat,
+                        lng
+                      },
+                      zoom: 13.5
+                    }
+                    map.setOptions(setOptions.call(this, options))
+                    viewAnnouncement(id)
+                    changeData({ tileId: id })
+                  }}
+                >
+                  <AnnouncementShowPictures
+                    language={language}
+                    venue={'mini-list'}
+                    key={id}
+                    id={id}
+                    pictures={pictures}
                   />
-                  <RentPresenter
-                    amount={announcement.grossRentAmount}
-                    currency={announcement.currency}
-                    languageObjectHandler={this.languageObjectHandler}
-                  />
-                </div>
-                <div className='float-clear' />
-              </a>
-            ))
-            }
+                  <div className='category-and-location'>
+                    {parseCategory(category)[language]}, {parseDistrict(district)}
+                  </div>
+                  <div className='data'>
+                    <AreaPresenter
+                      area={area}
+                      languageObjectHandler={this.languageObjectHandler}
+                    />
+                    <RentPresenter
+                      amount={grossRentAmount}
+                      currency={currency}
+                      languageObjectHandler={this.languageObjectHandler}
+                    />
+                  </div>
+                  <div className='float-clear' />
+                </a>
+              )})}
           </div>}
           {tile && Object.keys(tile).length > 1 &&
           <div className='announcement-tile-container'>

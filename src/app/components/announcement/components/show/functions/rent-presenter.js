@@ -1,4 +1,5 @@
 import React from 'react'
+import { parseCurrency } from '../../../functions/currency-parsers'
 
 export const RentPresenter = ({
   amount,
@@ -13,7 +14,7 @@ export const RentPresenter = ({
       {presentAmount(amount)}
     </div>
     <div className='currency'>
-      {currency} 
+      {parseCurrency(currency)}
     </div>
     {perSqm &&
     <div className='per-sqm'>
@@ -38,19 +39,19 @@ export const RentPresenter = ({
 )
 
 function presentAmount(amount) {
-    if (!amount) return
-  
-    const multipliedAmount = `${amount * 100}`
-  
-    return (
-      <React.Fragment>
-        <div className='basis'>
-          {multipliedAmount.slice(0, -2)}
-        </div>
-        <div className='decimal'>
-          {multipliedAmount.slice(-2)}
-        </div>
-        <div className='float-clear' />
-      </React.Fragment>
-    )
-  }
+  if (!amount) return
+
+  const multipliedAmount = `${amount * 100}`
+
+  return (
+    <React.Fragment>
+      <div className='basis'>
+        {multipliedAmount.slice(0, -2)}
+      </div>
+      <div className='decimal'>
+        {multipliedAmount.slice(-2)}
+      </div>
+      <div className='float-clear' />
+    </React.Fragment>
+  )
+}

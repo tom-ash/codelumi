@@ -7,7 +7,6 @@ import { phoneSwitchProvider } from '../../functions/phone-switch-provider'
 import { togglePhone } from '../../functions/toggle-phone'
 import { fixedPhoneHandler } from './functions/fixed-phone-handler'
 import { changePath } from '../../../../functions/routers/change-path'
-import { viewAnnouncement } from '../../functions/view-announcement'
 import { parseCategory } from '../../functions/category-parsers'
 import AnnouncementTile from './components/tile/tile'
 
@@ -22,7 +21,6 @@ class AnnouncementShow extends React.Component {
     this.togglePhone = togglePhone.bind(this)
     this.fixedPhoneHandler = fixedPhoneHandler.bind(this)
     this.changePath = changePath.bind(this)
-    this.viewAnnouncement = viewAnnouncement.bind(this)
     this.parseCategory = parseCategory.bind(this)
     this.state = {
       phone: null
