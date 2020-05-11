@@ -1,10 +1,6 @@
 import { combineReducers } from 'redux'
 import { changeAnnouncement, changeAnnouncements } from './change-announcements'
-import {
-  control,
-  inputs,
-  data
-} from '../constants/state'
+import { control, inputs, data } from '../constants/state'
 
 const controlReducer = (state = control, action) => {
   switch (action.type) {
@@ -22,7 +18,7 @@ const inputsReducer = (state = inputs, action) => {
   }
 }
 
-const dataReducerProvider = announcementsList => (state = { ...data, ...announcementsList }, action) => {
+const dataReducer = (state = data, action) => {
   switch (action.type) {
     case 'announcement/index/data': return { ...state, ...action.value }
     case 'announcement/index/data/announcements':  return changeAnnouncements(state, action.value)
@@ -32,8 +28,8 @@ const dataReducerProvider = announcementsList => (state = { ...data, ...announce
   }
 }
 
-export const indexReducerProvider = announcementsList => combineReducers({
+export const indexReducer = combineReducers({
   control: controlReducer,
   inputs: inputsReducer,
-  data: dataReducerProvider(announcementsList || {})
+  data: dataReducer
 })

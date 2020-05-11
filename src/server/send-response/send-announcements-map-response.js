@@ -1,9 +1,13 @@
 const fetch = require("node-fetch")
 import { sendResponse } from './send-response'
+import { appState } from '../../app/constants/app-state'
+import { data } from '../../app/components/announcement/components/index/constants/state'
 
 export function sendAnnouncementsMapResponse({
   res,
-  initialState: { route: { language } },
+  initialState: {
+    app: { language }
+  },
   title,
   description,
   url
@@ -28,13 +32,19 @@ export function sendAnnouncementsMapResponse({
     sendResponse({
       res,
       initialState: {
-        route: {
+        app: {
+          ...appState,
           showAnnouncementIndexMap: true,
           language
         },
-        announcementsList: {
-          announcements,
-          amount
+        announcement: {
+          index: {
+            data: {
+              ...data,
+              announcements,
+              amount
+            }
+          }
         }
       },
       title,

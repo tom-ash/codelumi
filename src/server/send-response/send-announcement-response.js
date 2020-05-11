@@ -2,11 +2,13 @@ const fetch = require("node-fetch")
 import { sendResponse } from './send-response'
 import { showClientServerParams } from '../../app/components/announcement/constants/client-server-params'
 import { provideTitle } from '../../shared/functions/providers/provide-title'
+import { appState } from '../../app/constants/app-state'
+import { data } from '../../app/components/announcement/components/show/constants/state'
 
 export function sendAnnouncementResponse({
   res,
   initialState: {
-    route: { language }
+    app: { language }
   },
   announcementId
 }) {
@@ -34,12 +36,17 @@ export function sendAnnouncementResponse({
     sendResponse({
       res,
       initialState: {
-        route: {
+        app: {
+          ...appState,
           showAnnouncementShow: true,
-          announcementId,
           language
         },
-        announcement: clientParams
+        announcement: {
+          show: {
+            ...data,
+            data: clientParams
+          }
+        }
       },
       title,
       description: title,

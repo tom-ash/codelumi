@@ -1,18 +1,14 @@
 import { combineReducers } from 'redux'
-import { appReducerProvider } from './reducers'
-import { announcementReducerProvider } from '../components/announcement/functions/reducer'
+import { appReducer } from './reducers'
+import { announcementReducer } from '../components/announcement/functions/reducer'
 import { userReducer } from '../components/user/functions/reducers.js'
 import { visitorReducer } from '../components/visitor/functions/reducers.js'
 import { scaffoldReducer } from '../components/scaffold/functions/reducer'
 import { blogReducer } from '../components/blog/functions/reducer'
 
-export const rootReducerProvider = ({
-  route,
-  announcementsList,
-  announcement
-}) => combineReducers({
-  app: appReducerProvider(route || {}),
-  announcement: announcementReducerProvider({ announcementsList, announcement }),
+export const rootReducer = combineReducers({
+  app: appReducer,
+  announcement: announcementReducer,
   user: userReducer,
   visitor: visitorReducer,
   scaffold: scaffoldReducer,

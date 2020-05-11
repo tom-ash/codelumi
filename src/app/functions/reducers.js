@@ -1,7 +1,7 @@
 import { appState } from '../constants/app-state'
 import { emptyRoutes } from '../../shared/routes/routes'
 
-export const appReducerProvider = route => (state = { ...appState, ...route }, action) => {
+export const appReducer = (state = appState, action) => {
   switch (action.type) {
     case 'app': return { ...state, ...action.value }
     case 'route': return { ...state, ...emptyRoutes, ...action.value }

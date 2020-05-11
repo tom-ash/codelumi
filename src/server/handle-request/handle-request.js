@@ -3,6 +3,7 @@ import { sendAnnouncementsMapResponse } from '../send-response/send-announcement
 import { sendAnnouncementsListResponse } from '../send-response/send-announcements-list-response'
 import { sendAnnouncementResponse } from '../send-response/send-announcement-response'
 import { routes } from '../../shared/routes/routes'
+import { appState } from '../../app/constants/app-state'
 
 export function handleRequest(req, res) {
   const pureUrl = purifyUrl(req.originalUrl)
@@ -50,10 +51,11 @@ function getRouteData(url) {
   Object.keys(routes).some(routeKey => {
     if (url.match(routes[routeKey].pl.regEx)) {
       initialState = {
-        route: {
+        app: {
+          ...appState,
           [routeKey]: true,
-          language: 'pl',
-          ...routes[routeKey].needsBackground && { showAnnouncementIndexMap: true }
+          ...routes[routeKey].needsBackground && { showAnnouncementIndexMap: true },
+          language: 'pl'
         }
       }
 
@@ -64,10 +66,11 @@ function getRouteData(url) {
       return true
     } else if (url.match(routes[routeKey].en.regEx)) {
       initialState = {
-        route: {
+        app: {
+          ...appState,
           [routeKey]: true,
-          language: 'en',
-          ...routes[routeKey].needsBackground && { showAnnouncementIndexMap: true }
+          ...routes[routeKey].needsBackground && { showAnnouncementIndexMap: true },
+          language: 'en'
         }
       }
 
