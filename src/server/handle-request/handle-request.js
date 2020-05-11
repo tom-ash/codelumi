@@ -54,7 +54,7 @@ function getRouteData(url) {
         app: {
           ...appState,
           [routeKey]: true,
-          ...routes[routeKey].needsBackground && { showAnnouncementIndexMap: true },
+          ...routes[routeKey].needsAnnouncementIndexMap && { showAnnouncementIndexMap: true },
           language: 'pl'
         }
       }
@@ -69,7 +69,7 @@ function getRouteData(url) {
         app: {
           ...appState,
           [routeKey]: true,
-          ...routes[routeKey].needsBackground && { showAnnouncementIndexMap: true },
+          ...routes[routeKey].needsAnnouncementIndexMap && { showAnnouncementIndexMap: true },
           language: 'en'
         }
       }

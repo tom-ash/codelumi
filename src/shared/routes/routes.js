@@ -34,6 +34,7 @@ export const routes = {
       title: 'List of Real Estates for Lease, Warsaw - Apartments, Usable Premises and Offices for Lease in Warsaw',
       description: genericDescription.en
     },
+    needsAnnouncementIndexMap: true,
     overshadow: true
   },
   showAnnouncementShow: {
@@ -91,7 +92,7 @@ export const routes = {
       title: 'Sign Up',
       description: 'Sign Up to an Account on warsawlease.pl. On warsawlease.pl you can easily add a free announcement of lease of an apartment, usable premises and/or and office.'
     },
-    needsBackground: true,
+    needsAnnouncementIndexMap: true,
     overshadow: true,
     noIndex: true
   },
@@ -109,7 +110,7 @@ export const routes = {
       title: 'Sign In',
       description: 'Sign In to the Account on warsawlease.pl. On warsawlease.pl you can easily add a free announcement of lease of an apartment, usable premises and/or and office.'
     },
-    needsBackground: true,
+    needsAnnouncementIndexMap: true,
     overshadow: true,
     noIndex: true
   },
@@ -127,7 +128,7 @@ export const routes = {
       title: 'About',
       description: genericDescription.en
     },
-    needsBackground: true,
+    needsAnnouncementIndexMap: true,
     overshadow: true,
     noIndex: true
   },
@@ -145,7 +146,7 @@ export const routes = {
       title: 'Contact',
       description: 'Contact'
     },
-    needsBackground: true,
+    needsAnnouncementIndexMap: true,
     overshadow: true,
     noIndex: true
   },
@@ -163,7 +164,7 @@ export const routes = {
       title: 'Terms of Service',
       description: 'Terms of Service'
     },
-    needsBackground: true,
+    needsAnnouncementIndexMap: true,
     overshadow: true,
     noIndex: true
   },
@@ -181,7 +182,7 @@ export const routes = {
       title: 'Cookies Policy',
       description: 'Cookies Policy'
     },
-    needsBackground: true,
+    needsAnnouncementIndexMap: true,
     overshadow: true,
     noIndex: true
   },
@@ -199,7 +200,7 @@ export const routes = {
       title: 'Privacy Policy',
       description: 'Privacy Policy'
     },
-    needsBackground: true,
+    needsAnnouncementIndexMap: true,
     overshadow: true,
     noIndex: true
   },
@@ -217,7 +218,7 @@ export const routes = {
       title: 'Privacy Settings',
       description: 'Privacy Settings'
     },
-    needsBackground: true,
+    needsAnnouncementIndexMap: true,
     overshadow: true,
     noIndex: true
   },
@@ -235,7 +236,7 @@ export const routes = {
       title: 'Added Announcements',
       description: 'Added Announcements'
     },
-    needsBackground: false,
+    needsAnnouncementIndexMap: false,
     overshadow: false,
     noIndex: true
   },
@@ -253,7 +254,7 @@ export const routes = {
       title: 'Edit Announcement',
       description: 'Edit Announcement'
     },
-    needsBackground: false,
+    needsAnnouncementIndexMap: false,
     overshadow: false,
     noIndex: true
   },
@@ -271,7 +272,7 @@ export const routes = {
       title: 'Account',
       description: 'Account'
     },
-    needsBackground: true,
+    needsAnnouncementIndexMap: true,
     overshadow: true,
     noIndex: true
   },
@@ -289,7 +290,7 @@ export const routes = {
       title: 'Reset Password',
       description: 'Reset Password'
     },
-    needsBackground: true,
+    needsAnnouncementIndexMap: true,
     overshadow: true,
     noIndex: true
   },
@@ -307,7 +308,7 @@ export const routes = {
       title: 'Verify Phone Number',
       description: 'Verify Phone Number'
     },
-    needsBackground: true,
+    needsAnnouncementIndexMap: true,
     overshadow: true,
     noIndex: true
   },
@@ -325,7 +326,7 @@ export const routes = {
       title: 'Account Settings',
       description: 'Account Settings'
     },
-    needsBackground: false,
+    needsAnnouncementIndexMap: false,
     overshadow: false,
     noIndex: true
   }

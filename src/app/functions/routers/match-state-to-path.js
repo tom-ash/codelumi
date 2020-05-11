@@ -12,7 +12,7 @@ export function matchStateToPath({ popState }) {
     if (path.match(matcher.pl.regEx) || path.match(matcher.en.regEx)) {
       newRoutes[key] = true
       if (key === 'showAnnouncementShow') newRoutes.announcementId = path.slice(1)
-      if (matcher.needsBackground) newRoutes.showAnnouncementIndexMap = true
+      if (matcher.needsAnnouncementIndexMap) newRoutes.showAnnouncementIndexMap = true
     }
   }
 
