@@ -75,8 +75,8 @@ export function matchPathToState(prevProps) {
     }
     
     if (window.location.pathname !== fullPathname) {
-      if (this.props.showAnnouncementIndexMap) fullPathname = fullPathname + window.location.search
       if (fullPathname === '') fullPathname = '/'
+
       window.history.pushState({ path: fullPathname }, '', fullPathname)
       if (window.ga) window.ga('set', 'page', fullPathname)
     }

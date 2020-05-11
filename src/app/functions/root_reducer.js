@@ -4,6 +4,7 @@ import { announcementReducerProvider } from '../components/announcement/function
 import { userReducer } from '../components/user/functions/reducers.js'
 import { visitorReducer } from '../components/visitor/functions/reducers.js'
 import { scaffoldReducer } from '../components/scaffold/functions/reducer'
+import { blogReducer } from '../components/blog/functions/reducer'
 
 export const rootReducerProvider = ({
   route,
@@ -14,5 +15,6 @@ export const rootReducerProvider = ({
   announcement: announcementReducerProvider({ announcementsList, announcement }),
   user: userReducer,
   visitor: visitorReducer,
-  scaffold: scaffoldReducer
+  scaffold: scaffoldReducer,
+  blog: blogReducer
 })

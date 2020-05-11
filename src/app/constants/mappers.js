@@ -23,6 +23,7 @@ export const mapStateToProps = (store) => {
     showVisitorCookiesPolicy,
     showVisitorPrivacyPolicy,
     showVisitorPrivacySettings,
+    showBlog,
     scripts
   } = store.app
 
@@ -65,6 +66,7 @@ export const mapStateToProps = (store) => {
     showVisitorPrivacySettings,
     statisticsConsent,
     marketingConsent,
+    showBlog,
     scripts,
     googleAnalyticsLoaded: store.app.scripts.googleAnalytics,
     googleAnalyticsLoading: store.app.scripts.googleAnalyticsLoading

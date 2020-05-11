@@ -12,15 +12,13 @@ import { authorizeUserWithTokens } from './components/user/components/authorize/
 import { screenSizeHandler } from './functions/screen-size-handler'
 import { popStateHandler } from './functions/popStateHandler'
 import { languageObjectHandler } from './functions/language-handler'
-
-
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-
 import { matchStateToPath } from './functions/routers/match-state-to-path'
 import { matchPathToState } from './functions/routers/match-path-to-state'
-
 import VisitorWelcome from './components/visitor/components/welcome/welcome'
+
+import Blog from './components/blog/blog'
 
 class App extends React.Component {
   constructor(props) {
@@ -56,6 +54,8 @@ class App extends React.Component {
   }
 
   render() {
+    const { showBlog } = this.props
+
     return (
       <div id='app-container' ref={this.appContainer}>
         <VisitorWelcome />
@@ -65,6 +65,8 @@ class App extends React.Component {
           <Visitor appContainer={this.appContainer.current}/>
           <Announcement />
         </div>
+        {/* {conso} */}
+        {showBlog && <Blog />}
         <Footer />
       </div>
     )

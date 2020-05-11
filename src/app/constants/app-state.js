@@ -1,4 +1,4 @@
-import { routes } from './routes'
+import { emptyRoutes } from '../../shared/routes/routes'
 
 export const appState = {
   device: null,
@@ -12,5 +12,5 @@ export const appState = {
     googleAnalyticsLoading: false
   },
   isMobile: null,
-  ...routes
+  ...emptyRoutes
 }
