@@ -20,6 +20,7 @@ export function handleRequest(req, res) {
   else if (sender === 'map') return sendAnnouncementsMapResponse({ res, initialState, title, description, url: pureUrl })
   else if (sender === 'list') return sendAnnouncementsListResponse({ res, initialState, title, description, url: pureUrl })
   else if (sender === 'announcement') return sendAnnouncementResponse({ res, initialState, announcementId: pureUrl })
+  // else if (sender === 'blog') return sendBlogResponse({ res, pureUrl })
 
   sendResponse({
     res,
