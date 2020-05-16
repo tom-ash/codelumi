@@ -26,7 +26,7 @@ class VisitorWelcome extends React.Component {
 
     return (
       <div id='visitor-welcome' className={showAnnouncementIndexList ? 'hidden' : 'visible'}>
-        <div className='container medium-container small-shadow'>
+        <div className='container'>
           <div className='logo'>
             <Logo fill='red' width="42px" height="42px"/>
           </div>
@@ -46,9 +46,6 @@ const pl = (
   <React.Fragment>
     <p className='blog-paragraph'>
       Na <span className='title'>warsawlease.pl</span> możesz dodawać i przeglądać darmowe ogłoszenia wynajmu mieszkań, lokali użytkowych i biur w&nbsp;Warszawie.
-    </p>
-    <p className='blog-paragraph last'>
-      Ogłoszenia prezentowane są w ergonomiczny sposób na mapie oraz na liście.
     </p>
   </React.Fragment>
 )

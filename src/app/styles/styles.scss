@@ -94,8 +94,6 @@ body {
   min-height: 400px;
   margin: 0 auto;
   overflow: hidden;
-
-  min-height: 1104px;
 }
 
 .form-input {
@@ -524,7 +522,7 @@ h2 {
 }
 
 .blog-paragraph {
-  text-align: justify;
+  // text-align: justify;
   color: #34495E;
   font-size: 15px;
   line-height: 20px;

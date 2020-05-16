@@ -58,13 +58,13 @@ class App extends React.Component {
 
     return (
       <div id='app-container' ref={this.appContainer}>
-        <VisitorWelcome />
         <Header />
         <div id='app-inner-container'>
           {this.showUser() && <User />}
           <Visitor appContainer={this.appContainer.current}/>
           <Announcement />
         </div>
+        <VisitorWelcome />
         {/* {conso} */}
         {showBlog && <Blog />}
         <Footer />

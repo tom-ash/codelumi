@@ -47,14 +47,14 @@ class AnnouncementIndexSearch extends React.Component {
         <AnnouncementIndexPanel />
         {showVisitor &&
         <React.Fragment>
-          <OffsetSwitcher
+          {/* <OffsetSwitcher
             changeInputs={changeInputs}
             changeControl={changeControl}
             offset={offset}
             amount={amount}
             languageHandler={this.languageHandler}
             classNames={'shared'}
-          />
+          /> */}
           <AnnouncementIndexFull />
           <AnnouncementIndexMap />
         </React.Fragment>}

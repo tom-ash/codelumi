@@ -3,6 +3,13 @@
 #announcement-index {
   padding-top: 60px;
   text-align: center;
+  min-height: 745px;
+
+  @media #{$small-pc} {
+    min-height: 881px;
+  }
+
+
   .phone {
     cursor: pointer;
     z-index: 3;
@@ -36,60 +43,6 @@
     }
   }
   position: relative;
-  min-height: 784px;
-  @media #{$small-pc} {
-    min-height: 842px;
-  }
-  .offset-switcher {
-    position: relative;
-    &.shared {
-      z-index: 9;
-      position: absolute;
-      top: 182px;
-      right: 0;
-      left: 0;
-      @media #{$small-pc} {
-        top: 330px;
-      }
-    }
-    &.only-amount {
-      text-align: center;
-    }
-    width: 200px;
-    height: 33px;
-    line-height: 33px;
-    margin: 0 auto;
-    border-radius: 2px;
-    background: rgba(33, 47, 61, 0.8);
-    font-size: 16px;
-    color: white;
 
-    .switch, .text {
-      position: absolute;
-      text-align: center;
-    }
-    .switch {
-      font-size: 16px;
-      width: 30px;
-      cursor: pointer;
-      &.min {
-        border-top-left-radius: 2px;
-        border-bottom-left-radius: 2px;
-      }
-      &.max {
-        left: 170px;
-        border-top-right-radius: 2px;
-        border-bottom-right-radius: 2px;
-      }
-      &:hover {
-        background: rgba(33, 47, 61, 1);
-        color: #DC7633;
-      }
-    }
-    .text {
-      width: 140px;
-      left: 30px;
-    }
-  }
 
 }

@@ -39,7 +39,7 @@ class AnnouncementIndexMap extends React.Component {
       device
     } = this.props
 
-    const minListDevices = ['largePc', 'smallPc']
+    const minListDevices = ['largePc', 'smallPc', 'largeTablet']
 
     return (
       <div
@@ -74,7 +74,7 @@ class AnnouncementIndexMap extends React.Component {
                     const options = {
                       center: {
                         lat,
-                        lng
+                        lng: lng + .016
                       },
                       zoom: 13.5
                     }
