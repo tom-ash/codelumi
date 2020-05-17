@@ -13,6 +13,9 @@
   @media #{$small-pc} {
     top: 371px;
   }
+  @media #{$small-tablet} {
+    top: 402px;
+  }
   @media #{$tablet} {
     left: 0;
     right: 0;

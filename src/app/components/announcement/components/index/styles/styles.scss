@@ -7,6 +7,9 @@
   @media #{$small-pc} {
     min-height: 923px;
   }
+  @media #{$small-tablet} {
+    min-height: 955px;
+  }
   .phone {
     cursor: pointer;
     z-index: 3;
@@ -40,6 +43,22 @@
     }
   }
   position: relative;
+
+  .add-announcement-link {
+    color: #F2F3F4;
+    font-size: 14px;
+    .fas {
+      margin-right: 4px;
+    }
+
+    background: #E74C3C;
+    display: inline-block;
+    padding: 5px;
+    font-weight: normal !important;
+
+    border-radius: 2px;
+    margin-bottom: 10px;
+  }
 }
 
 #header-panel {

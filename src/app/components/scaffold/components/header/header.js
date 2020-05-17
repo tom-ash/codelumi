@@ -28,6 +28,8 @@ class Header extends React.Component {
     const { changeControl, device, authorized } = this.props
     const isLargePc = device === 'largePc'
 
+    const showAddAnnouncement = ['largePc', 'smallPc', 'largeTablet'].indexOf(device) !== -1
+
     return (
       <div id='header'>
         <div className='inner'>
@@ -52,7 +54,7 @@ class Header extends React.Component {
             <ManagedLink {...this.titleManager()} />
           </div>
           <div className='top-links'>
-            {isLargePc && <ManagedLink {...this.addAnnouncementManager()} />}
+            {showAddAnnouncement && <ManagedLink {...this.addAnnouncementManager()} />}
             {isLargePc && <ManagedLink {...this.signUpManager()} />}
             {isLargePc && <ManagedLink {...this.signInManager()} />}
             {isLargePc && <ManagedLink {...this.myAccountManager()} />}

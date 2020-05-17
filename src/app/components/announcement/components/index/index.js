@@ -15,6 +15,12 @@ import { parseCurrency } from '../../functions/currency-parsers'
 import { parseCategoryForUrl } from '../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../functions/district-parsers'
 import { OffsetSwitcher } from './components/offset-switcher/offset-switcher'
+import { ManagedLink } from 'managed-inputs'
+
+import { addAnnouncementManager } from './functions/managers'
+
+import { labelProvider } from '../../../../components/user/components/show/functions/label-provider'
+import { changePath } from '../../../../functions/routers/change-path'
 
 class AnnouncementIndexSearch extends React.Component {
   constructor(props) {
@@ -30,6 +36,9 @@ class AnnouncementIndexSearch extends React.Component {
     this.parseCurrency = parseCurrency.bind(this)
     this.parseCategoryForUrl = parseCategoryForUrl.bind(this)
     this.parseDistrictForUrl = parseDistrictForUrl.bind(this)
+    this.addAnnouncementManager = addAnnouncementManager.bind(this)
+    this.labelProvider = labelProvider.bind(this)
+    this.changePath = changePath.bind(this)
   }
 
   render() {
@@ -39,8 +48,11 @@ class AnnouncementIndexSearch extends React.Component {
       changeInputs,
       changeControl,
       offset,
-      amount
+      amount,
+      device
     } = this.props
+
+    const showAddAnnouncement = [null, 'smallTablet', 'largePhone', 'smallPhone'].indexOf(device) !== -1
 
     const mainHeader = {
       pl: 'Odnajdź się w Warszawie! Wynajem nieruchomości - Warszawa - ogłoszenia. Mieszkania, lokale użytkowe i biura.',
@@ -52,6 +64,9 @@ class AnnouncementIndexSearch extends React.Component {
         <h1 id='header-panel'>
           {this.languageObjectHandler(mainHeader)}
         </h1>
+
+        {showAddAnnouncement && <ManagedLink {...this.addAnnouncementManager()} />}
+
         <AnnouncementIndexPanel />
         {showVisitor &&
         <React.Fragment>
