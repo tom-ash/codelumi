@@ -42,8 +42,16 @@ class AnnouncementIndexSearch extends React.Component {
       amount
     } = this.props
 
+    const mainHeader = {
+      pl: 'Odnajdź się w Warszawie! Wynajem nieruchomości - Warszawa - ogłoszenia. Mieszkania, lokale użytkowe i biura.',
+      en: 'Find Yourself in Warsaw! Real Estate Lease - Warsaw - Announcements. Apartments, Usable Premises and Offices.'
+    }
+
     return (
       <div id='announcement-index'>
+        <h1 id='header-panel'>
+          {this.languageObjectHandler(mainHeader)}
+        </h1>
         <AnnouncementIndexPanel />
         {showVisitor &&
         <React.Fragment>

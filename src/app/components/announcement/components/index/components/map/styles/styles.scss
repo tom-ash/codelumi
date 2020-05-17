@@ -6,24 +6,17 @@
 #announcement-index-map {
   max-width: 1214px;
   margin: 0 auto;
-  top: 181px;
+  top: 217px;
   position: absolute;  
   right: 12px;
   left: 12px;
-
-  // padding: 4px;
-
-
   @media #{$small-pc} {
-    top: 331px;
+    top: 371px;
   }
-
   @media #{$tablet} {
-
     left: 0;
     right: 0;
   }
-
   #google-map-container {
     @extend %google-map;
     .pin {
@@ -34,8 +27,6 @@
     opacity: 0;
   }
   transition: 0.16s ease-in;
-
-
   .announcement-tile-container {
     .announcement-show-tile {
       position: relative;

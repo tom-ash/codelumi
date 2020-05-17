@@ -30,9 +30,9 @@ class VisitorWelcome extends React.Component {
           <div className='logo'>
             <Logo fill='red' width="42px" height="42px"/>
           </div>
-          <h1>
+          <h2>
             {this.languageObjectHandler({ pl: 'Odnajdź się w Warszawie', en: 'Find Yourself in Warsaw' })}
-          </h1>
+          </h2>
           <div className='text'>
             {this.languageObjectHandler({ pl, en })}
           </div>

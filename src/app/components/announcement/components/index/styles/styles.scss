@@ -3,13 +3,10 @@
 #announcement-index {
   padding-top: 60px;
   text-align: center;
-  min-height: 745px;
-
+  min-height: 787px;
   @media #{$small-pc} {
-    min-height: 881px;
+    min-height: 923px;
   }
-
-
   .phone {
     cursor: pointer;
     z-index: 3;
@@ -43,6 +40,22 @@
     }
   }
   position: relative;
+}
 
-
+#header-panel {
+  font-weight: normal;
+  background: #21618C;
+  color: #F2F3F4;
+  max-width: 1214px;
+  margin: 0 auto;
+  border-radius: 2px;
+  line-height: 28px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0 12px;
+  @media #{$small-pc} {
+    border-radius: 0;
+  }
 }
