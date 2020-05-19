@@ -2,7 +2,7 @@ import { emptyRoutes } from '../../shared/routes/routes'
 
 export const appState = {
   device: null,
-  scrollY: null,
+  scrollY: 0,
   path: '/',
   language: 'pl',
   connecting: false,

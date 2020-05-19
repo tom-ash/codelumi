@@ -6,7 +6,7 @@ import { data } from '../../app/components/announcement/components/index/constan
 export function sendAnnouncementsMapResponse({
   res,
   initialState: {
-    app: { language }
+    app: { language, device }
   },
   title,
   description,
@@ -35,7 +35,8 @@ export function sendAnnouncementsMapResponse({
         app: {
           ...appState,
           showAnnouncementIndexMap: true,
-          language
+          language,
+          device
         },
         announcement: {
           index: {

@@ -14,7 +14,7 @@ export function handleRequest(req, res) {
     description,
     sender,
     noIndex
-  } = getRouteData(pureUrl)
+  } = getRouteData(pureUrl, req.headers['user-agent'])
 
   if (!sender) return res.status(404).send('404')
   else if (sender === 'map') return sendAnnouncementsMapResponse({ res, initialState, title, description, url: pureUrl })
@@ -42,7 +42,7 @@ function purifyUrl(dirtyUrl) {
   return pureUrl
 }
 
-function getRouteData(url) {
+function getRouteData(url, userAgent) {
   let initialState
   let title
   let description
@@ -56,7 +56,8 @@ function getRouteData(url) {
           ...appState,
           [routeKey]: true,
           ...routes[routeKey].needsAnnouncementIndexMap && { showAnnouncementIndexMap: true },
-          language: 'pl'
+          language: 'pl',
+          device: getDevice(userAgent)
         }
       }
 
@@ -71,7 +72,8 @@ function getRouteData(url) {
           ...appState,
           [routeKey]: true,
           ...routes[routeKey].needsAnnouncementIndexMap && { showAnnouncementIndexMap: true },
-          language: 'en'
+          language: 'en',
+          device: getDevice(userAgent)
         }
       }
 
@@ -90,4 +92,12 @@ function getRouteData(url) {
     sender,
     noIndex
   }
+}
+
+function getDevice(userAgent) {
+  if (/Android|BlackBerry|IEMobile|Opera Mini|iPad|iPhone|iPod|webOS/i.test(userAgent)) {
+    return 'largePhone'
+  }
+
+  return 'largePc'
 }

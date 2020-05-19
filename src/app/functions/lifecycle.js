@@ -9,7 +9,7 @@ export function componentDidMount() {
   const { changeApp } = this.props
 
   if (isMobile()) changeApp({ isMobile: true })
-  setLanguage.apply(this)
+
   initializeGoogleMaps.apply(this)
 
   this.screenSizeHandler()
@@ -34,16 +34,4 @@ export function componentDidUpdate(prevProps) {
   if (!googleAnalyticsLoaded && !googleAnalyticsLoading && statisticsConsent) {
     loadGoogleAnalytics.call(this)
   }
-}
-
-function setLanguage() {
-  const { changeApp } = this.props
-
-  const cookieLanguage = getCookieValue('lang')
-  if (cookieLanguage) return changeApp({ language: cookieLanguage })
-
-  // const navigatorLanguage = navigator.language
-  // if (typeof navigatorLanguage === 'string' && navigatorLanguage.toLowerCase().indexOf('pl') === -1) {
-  //   changeApp({ language: 'en' })
-  // }
 }

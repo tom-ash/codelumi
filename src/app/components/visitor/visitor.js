@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { componentDidMount } from './functions/lifecycle'
-import { checkConsents } from './functions/check-consents'
 import VisitorPrivacyMonit from './components/legal/components/privacy/components/monit/monit'
 import VisitorAbout from './components/about/about'
 import VisitorContact from './components/contact/contact'
@@ -14,7 +13,6 @@ import VisitorPrivacySettings from './components/legal/components/privacy/compon
 class User extends React.Component {
   constructor(props) {
     super(props)
-    this.checkConsents = checkConsents.bind(this)
     this.componentDidMount = componentDidMount
   }
 

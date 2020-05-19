@@ -8,7 +8,7 @@ import { data } from '../../app/components/announcement/components/show/constant
 export function sendAnnouncementResponse({
   res,
   initialState: {
-    app: { language }
+    app: { language, device }
   },
   announcementId
 }) {
@@ -39,7 +39,8 @@ export function sendAnnouncementResponse({
         app: {
           ...appState,
           showAnnouncementShow: true,
-          language
+          language,
+          device
         },
         announcement: {
           show: {
