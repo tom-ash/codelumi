@@ -19,7 +19,7 @@ export function titleManager() {
     label: (
       <div className='logo-and-title'>
         <div className='logo'>
-          <Logo width="36px" height="36px"/>
+          <Logo width="32px" height="32px"/>
         </div>
         <div className='title'>
           warsawlease.pl
@@ -42,7 +42,7 @@ export function addAnnouncementManager() {
     href: this.languageObjectHandler({ pl: `${origin}dodaj-ogloszenie`, en: `${origin}add-announcement` }),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Dodaj ogłoszenie', en: 'Add Announcement' }),
-    label: <strong>{this.labelProvider('fas fa-plus', 'Dodaj bezpłatne ogłoszenie', 'Add Free Announcement')}</strong>,
+    label: this.languageObjectHandler({ pl: 'Dodaj bezpłatne ogłoszenie', en: 'Add Free Announcement' }),
     onClick: () => {
       this.changePath({ showAnnouncementCreate: true })
       this.props.changeControl({ showLinks: false })
@@ -59,7 +59,7 @@ export function signUpManager() {
     href: this.languageObjectHandler({ pl: `${origin}zarejestruj`, en: `${origin}sign-up` }),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Zarejestruj', en: 'Sign Up' }),
-    label: this.labelProvider('fas fa-user-plus', 'Zarejestruj', 'Sign Up'),
+    label: this.languageObjectHandler({ pl: 'Zarejestruj', en: 'Sign Up' }),
     onClick: () => {
       changeApp({ showUserCreate: true })
       this.props.changeControl({ showLinks: false })
@@ -78,7 +78,7 @@ export function signInManager() {
     href: this.languageObjectHandler({ pl: `${origin}zaloguj`, en: `${origin}sign-in` }),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Zaloguj', en: 'Sign In' }),
-    label: this.labelProvider('fas fa-sign-in-alt', 'Zaloguj', 'Sign In'),
+    label: this.languageObjectHandler({ pl: 'Zaloguj', en: 'Sign In' }),
     onClick: () => {
       resetUserAuthorizeErrors()
       resetUserAuthorizeInputs()
@@ -95,7 +95,7 @@ export function myAccountManager() {
   return {
     display: !authorized && 'none',
     classNames: { container: 'header-link' },
-    label: this.labelProvider('far fa-user-circle', 'Konto', 'Account'),
+    label: this.languageObjectHandler({ pl: 'Konto', en: 'Account' }),
     onClick: () => {
       changeApp({ showUserShow: true })
       changeControl({ showLinks: false })
@@ -112,7 +112,7 @@ export function languageManager() {
   return {
     classNames: { container: 'button language' },
     href: `${CLIENT_URL}${this.matchPathToLanguage()}`,
-    label: <span><i className='fas fa-globe'/> {this.languageHandler('English', 'Polski')}</span>,
+    label: this.languageHandler('English', 'Polski'),
     onClick: () => {
       const newLanguage = language === 'pl' ? 'en' : 'pl'
 

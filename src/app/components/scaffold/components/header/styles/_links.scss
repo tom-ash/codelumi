@@ -3,14 +3,14 @@
   top: 0;
   right: 0;
   bottom: 0;
-  line-height: 52px;
+  line-height: 46px;
   text-align: right;
   @media #{$small-pc} {
     right: 52px;
   }
   .header-link {
     display: inline-block;
-    margin-right: 12px;
+    margin-right: 20px;
     .input {
       border: none;
       background: none;
@@ -21,13 +21,12 @@
     &.add-announcement {
       .input {
         font-weight: normal!important;
-        line-height: 28px;
-        margin-top: 11px;
-        height: 28px;
-        padding: 0 8px;
+        line-height: 26px;
+        margin-top: 10px;
+        padding: 0 6px;
         border-radius: 2px;
-        background: #D0D3D4;
-        color: #091d2a;
+        background: #F9EBEA;
+        color: rgba(34, 34, 34, .98);
       }
     }
   }
