@@ -1,42 +1,32 @@
 @import '../../../../../styles/themes';
 
 #footer {
-  background: #212F3D;
-  color: white;
-  padding: 24px 24px;
+  font-size: 13px;
+  margin: 0 12px;
   .inner {
-    max-width: 1226px;
-    height: 320px;
+    padding: 48px 0 24px;
+    max-width: 1214px;
     margin: 0 auto;
     .links {
-      max-width: 400px;
-      .column {
-        float: left;
-        width: 50%;
-        @media only screen and (max-width: $breakpoint-phone-large-max) {
-          width: 100%;
-        }
-      }
+      width: 100%;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #85929E;
+      color: #5D6D7E;
       .link {
         width: 100%;
-        height: 32px;
-        .input {
-          display: inline;
-          background: none;
-          border: none;
-          color: white;
-          font-size: 15px;
-          text-align: left;
-          &:hover {
-            color: #D7DBDD;
-          }
+        line-height: 25px;
+        display: inline-block;
+        width: auto;
+        margin-right: 12px;
+        &.hover {
+          text-decoration: underline;
         }
       }
     }
     .copyright {
-      padding-top: 50px;
-      text-align: center;
-      font-size: 15px;
+      padding-top: 12px;
+      line-height: 20px;
+      color: #85929E;
     }
   }
 }
