@@ -74,7 +74,7 @@ function addNewPins() {
 
     const { language } = this.props
 
-    const htmlContent = `<a href="${CLIENT_URL}/${buildLink({ id, category, district, language })}">${categories[announcement.category].stringIcon}</a>`
+    const htmlContent = `<a href="${buildLink({ id, category, district, language })}">${categories[announcement.category].stringIcon}</a>`
 
     pins.push(new window.pinCreator(
       {
