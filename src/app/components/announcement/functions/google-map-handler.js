@@ -96,10 +96,12 @@ function setOptions(options) {
       lng: this.props.isMobile ? 21.009 : 21.105
     },
     zoom: this.props.isMobile ? 11 : 11,
-    mapTypeControl: false,
+    // mapTypeControl: false,
     fullscreenControl: false,
     streetViewControl: false,
     clickableIcons: false,
+    zoomControl: false,
+    gestureHandling: 'greedy',
     styles,
     ...options
   }
