@@ -26,12 +26,12 @@ export const districts = [
   },
   {
     text: 'Praga Południe',
-    url: 'praga_poludnie',
+    url: 'praga-poludnie',
     value: 5
   },
   {
     text: 'Praga-Północ',
-    url: 'praga_polnoc',
+    url: 'praga-polnoc',
     value: 6
   },
   {
