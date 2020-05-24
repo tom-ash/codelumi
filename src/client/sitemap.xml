@@ -6,14 +6,23 @@
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://www.warsawlease.pl/lista</loc>
+    <url>
+    <loc>https://www.warsawlease.pl/nieruchomosci-wynajem-warszawa-mapa</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.warsawlease.pl/list"/>
+      href="https://www.warsawlease.pl/real-estates-lease-warsaw-map"/>
+  </url>
+  <url>
+    <loc>https://www.warsawlease.pl/nieruchomosci-wynajem-warszawa-lista</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.warsawlease.pl/real-estates-lease-warsaw-list"/>
   </url>
   <url>
     <loc>https://www.warsawlease.pl/dodaj-ogloszenie</loc>

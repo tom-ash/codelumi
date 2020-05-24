@@ -119,7 +119,7 @@ export function buttonManager(action) {
   return {
     id: 'announcement-index-full-search-button',
     classNames: { container: 'simple-index-input button' },
-    href: this.languageObjectHandler({ pl: `${CLIENT_URL}/lista`, en: `${CLIENT_URL}/list` }),
+    href: this.languageObjectHandler({ pl: `${CLIENT_URL}/nieruchomosci-wynajem-warszawa-lista`, en: `${CLIENT_URL}/real-estates-lease-warsaw-list` }),
     label: (
       <div>
         <i className='fas fa-map-marker-alt' /> <i className='fas fa-th-list' />
