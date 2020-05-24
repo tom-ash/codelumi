@@ -90,16 +90,20 @@ export function replaceGoogleMap(callback, options) {
 function setOptions(options) {
   options = options || {}
 
+  const {
+    isMobile
+  } = this.props
+
   return {
     center: {
       lat: 52.227,
-      lng: this.props.isMobile ? 21.009 : 21.105
+      lng: isMobile ? 21.009 : 21.105
     },
-    zoom: this.props.isMobile ? 11 : 11,
+    zoom: isMobile ? 11 : 11,
     fullscreenControl: false,
     clickableIcons: false,
     zoomControl: false,
-    gestureHandling: 'greedy',
+    ...!isMobile && { gestureHandling: 'greedy' },
     styles,
     ...options
   }

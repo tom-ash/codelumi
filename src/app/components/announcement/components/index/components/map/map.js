@@ -148,16 +148,20 @@ export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementIndexMap
 function setOptions(options) {
   options = options || {}
 
+  const {
+    isMobile
+  } = this.props
+
   return {
     center: {
-      lat: this.props.isMobile ? 52.220: 52.202,
-      lng: this.props.isMobile ? 21.012 : 20.985
+      lat: isMobile ? 52.220: 52.202,
+      lng: isMobile ? 21.012 : 20.985
     },
-    zoom: this.props.isMobile ? 11.8 : 11.6,
+    zoom: isMobile ? 11.8 : 11.6,
     fullscreenControl: false,
     clickableIcons: false,
     zoomControl: false,
-    gestureHandling: 'greedy',
+    ...!isMobile && { gestureHandling: 'greedy' },
     styles,
     ...options
   }
