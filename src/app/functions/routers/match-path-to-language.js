@@ -1,4 +1,5 @@
 import { routes } from '../../../shared/routes/routes'
+import { buildLink } from '../../components/announcement/functions/build-link'
 
 export function matchPathToLanguage() {
   let overshadowingRoute
@@ -14,15 +15,25 @@ export function matchPathToLanguage() {
   })
 
   if ([overshadowingRoute, overshadowedRoute].indexOf('showAnnouncementShow') !== -1) {
-    return `/${this.props.announcementId}`
+
+    const {
+      announcementId,
+      category,
+      district,
+      area
+    } = this.props
+
+    if (category === null && district === null) return `/${announcementId}`
+
+    return buildLink({ id: announcementId, category, district, area, language })
   }
 
   if ([overshadowingRoute, overshadowedRoute].indexOf('showAnnouncementEdit') !== -1) {
-    return `${routes.showAnnouncementEdit[language].url}/${this.props.announcementId}`
+    return `${CLIENT_URL}/${routes.showAnnouncementEdit[language].url}/${this.props.announcementId}`
   }
 
   if (overshadowingRoute) return routes[overshadowingRoute][language].url
   if (overshadowedRoute) return routes[overshadowedRoute][language].url
 
-  return '/'
+  return ''
 }

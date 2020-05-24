@@ -1,21 +1,32 @@
+import { buildLink } from '../../../../../../../functions/build-link'
+
 export function linkManager() {
   const {
     id,
-    changeApp
+    changeApp,
+    changeData,
+    category,
+    district,
+    area
   } = this.props
 
   return {
     classNames: { container: 'link' },
-    href: this.languageObjectHandler({ pl: `${CLIENT_URL}/${id}`, en: `${CLIENT_URL}/${id}` }),
+    href: buildLink(this.props),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: `Ogłoszenie ${id}`, en: `Announcement ${id}` }),
     onClick: () => {
+      changeData({
+        category,
+        district,
+        area
+      })
       changeApp({
-        showAnnouncementShow: true,
         announcementId: id,
+        showAnnouncementShow: true,
         showAnnouncementIndexMap: false,
         showAnnouncementIndexList: false,
-        showAnnouncementIndexAdded: false,
+        showAnnouncementIndexAdded: false
       })
     }
   }

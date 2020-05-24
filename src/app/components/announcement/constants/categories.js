@@ -14,7 +14,7 @@ export const categories = [
     number: 1,
     value: 1,
     label: { pl: 'Lokal użytkowy', en: 'Usable Premises' },
-    url: { pl: 'lokal_uzytkowy', en: 'usable_premises' },
+    url: { pl: 'lokal-uzytkowy', en: 'usable-premises' },
     icon: <i className='fas fa-cash-register' />,
     stringIcon: "<i class='fas fa-cash-register' />",
     pinClassName: 'usable-premises'

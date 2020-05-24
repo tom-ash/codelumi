@@ -19,7 +19,7 @@ export function handleRequest(req, res) {
   if (!sender) return res.status(404).send('404')
   else if (sender === 'map') return sendAnnouncementsMapResponse({ res, initialState, title, description, url: pureUrl })
   else if (sender === 'list') return sendAnnouncementsListResponse({ res, initialState, title, description, url: pureUrl })
-  else if (sender === 'announcement') return sendAnnouncementResponse({ res, initialState, announcementId: pureUrl })
+  else if (sender === 'announcement') return sendAnnouncementResponse({ res, initialState, announcementId: +pureUrl.match(/\d+/)[0] })
   // else if (sender === 'blog') return sendBlogResponse({ res, pureUrl })
 
   sendResponse({

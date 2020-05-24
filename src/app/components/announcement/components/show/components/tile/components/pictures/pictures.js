@@ -27,16 +27,15 @@ class AnnouncementShowPictures extends React.Component {
   render() {
     const {
       downloadedPictures,
-      pictureIndex
+      pictureIndex,
     } = this.state
 
     const {
       pictures,
-      venue,
-      onClick,
-      id
+      venue
     } = this.props
 
+    if (downloadedPictures.length === 0 && venue === 'show') return null
     if (downloadedPictures.length === 0) return <ManagedLink {...this.linkManager()} />
 
     return (

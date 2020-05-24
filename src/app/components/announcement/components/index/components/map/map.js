@@ -14,6 +14,7 @@ import { languageObjectHandler } from '../../../../../../functions/language-hand
 import { RentPresenter } from '../../../show/functions/rent-presenter'
 import { shouldSetUpGoogleMaps, shouldSetUpPins } from '../../../../functions/google-map-handler'
 import { viewAnnouncement } from '../../../../functions/view-announcement'
+import { buildLink } from '../../../../functions/build-link'
 
 class AnnouncementIndexMap extends React.Component {
   constructor(props) {
@@ -67,7 +68,7 @@ class AnnouncementIndexMap extends React.Component {
                 <a
                   className='announcement-show-container'
                   key={id}
-                  href={`${CLIENT_URL}/${id}`}
+                  href={buildLink({ ...announcement, language })}
                   onClick={e => {
                     e.preventDefault()
                     const map = window.googleMap
@@ -89,6 +90,9 @@ class AnnouncementIndexMap extends React.Component {
                     key={id}
                     id={id}
                     pictures={pictures}
+                    category={category}
+                    district={district}
+                    area={area}
                   />
                   <div className='category-and-location'>
                     {parseCategory(category)[language]}, {parseDistrict(district)}

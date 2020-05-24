@@ -1,6 +1,7 @@
 import { allowedOrigins } from '../../constants/allowed-origins'
 import { routes } from '../../../shared/routes/routes'
 import { provideTitle } from '../../../shared/functions/providers/provide-title'
+import { buildLink } from '../../components/announcement/functions/build-link'
 
 export function matchPathToState(prevProps) {
   if (typeof window === 'undefined' ||
@@ -39,8 +40,6 @@ export function matchPathToState(prevProps) {
     if (updatedRoute === 'showAnnouncementShow') {
       const { announcementId } = this.props
 
-      fullPathname = `/${announcementId}`
-
       const {
         category,
         district,
@@ -48,10 +47,14 @@ export function matchPathToState(prevProps) {
         language
       } = this.props
 
+      if (category === null && district === null) return `/${announcementId}`
+
+      fullPathname = buildLink({ id: announcementId, category, district, area, language })
+
       if (category !== null) {
         const title = provideTitle({ category, district, area, language })
         document.title = title
-        document.querySelector('meta[name="description"]').content = title
+        document.querySelector('meta[name="description"]').content = title        
       }
       document.querySelector('link[rel="canonical"]').href = `${CLIENT_URL}${fullPathname}`
     } else if (updatedRoute === 'showAnnouncementEdit') {

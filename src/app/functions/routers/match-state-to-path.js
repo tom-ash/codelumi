@@ -11,7 +11,10 @@ export function matchStateToPath({ popState }) {
   for (let [key, matcher] of Object.entries(routes)) {
     if (path.match(matcher.pl.regEx) || path.match(matcher.en.regEx)) {
       newRoutes[key] = true
-      if (key === 'showAnnouncementShow') newRoutes.announcementId = path.slice(1)
+
+      if (key === 'showAnnouncementShow') {
+        newRoutes.announcementId = +path.match(/\d+/)[0]
+      }
       if (matcher.needsAnnouncementIndexMap) newRoutes.showAnnouncementIndexMap = true
     }
   }

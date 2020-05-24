@@ -23,6 +23,12 @@ export const mapStateToProps = (store) => {
     showVisitorPrivacySettings
   } = store.app
 
+  const {
+    category,
+    district,
+    area
+  } = store.announcement.show.data
+
   return {
     language,
     showAnnouncementCreate,
@@ -48,7 +54,10 @@ export const mapStateToProps = (store) => {
     name: store.user.authorize.data.name,
     device: store.app.device,
     showLinks: store.scaffold.header.control.showLinks,
-    showUserShow: store.app.showUserShow
+    showUserShow: store.app.showUserShow,
+    category,
+    district,
+    area
   }
 }
   

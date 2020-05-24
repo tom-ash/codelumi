@@ -34,8 +34,8 @@ export const coreIndexRoutes = {
   },
   showAnnouncementShow: {
     sender: 'announcement',
-    pl: { regEx: /^\/?\d+$/ },
-    en: { regEx: /^\/?\d+$/ },
+    pl: { regEx: /^\/?nieruchomosc-warszawa-wynajem-.*-.*-nr-\d+$/ },
+    en: { regEx: /^\/?real-estate-warsaw-lease-.*-.*-no-\d+$/ },
     overshadow: false
   },  
   showAnnouncementCreate: {

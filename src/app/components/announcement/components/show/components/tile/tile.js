@@ -99,6 +99,9 @@ class AnnouncementTile extends React.Component {
           venue={venue}
           id={id}
           pictures={pictures}
+          category={category}
+          district={district}
+          area={area}
         />
         <AnnouncementShowPrimary
           language={language}
