@@ -1,5 +1,6 @@
 import { categories } from '../../../../../constants/categories'
 import { viewAnnouncement } from '../../../../../functions/view-announcement'
+import { buildLink } from '../../../../../functions/build-link'
 
 export function drawPins() {
   setUpPinCreator()
@@ -64,7 +65,16 @@ function addNewPins() {
 
   let pins = []
   announcements.map(announcement => {
-    const htmlContent = `<a href="${CLIENT_URL}/${announcement.id}">${categories[announcement.category].stringIcon}</a>`
+
+    const {
+      id,
+      category,
+      district
+    } = announcement
+
+    const { language } = this.props
+
+    const htmlContent = `<a href="${CLIENT_URL}/${buildLink({ id, category, district, language })}">${categories[announcement.category].stringIcon}</a>`
 
     pins.push(new window.pinCreator(
       {
