@@ -8,10 +8,13 @@
   padding: 36px;
   h1 {
     color: #566573;
+    line-height: 24px;
+    text-align: justify;
   }
   h2 {
     margin-top: 36px;
     color: #566573;
+    text-align: justify;
     .number {
       float: left;
       line-height: 18px;
@@ -27,6 +30,9 @@
       float: left;
       line-height: 22px;
     }
+  }
+  .blog-paragraph {
+    text-align: justify;
   }
   .checkbox {
     &.add-switcher {

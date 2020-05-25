@@ -1,6 +1,7 @@
 import React from 'react'
 import { saveCookie } from '../../../../../functions/cookie-handlers'
 import Logo from '../../../../../assets/logo-header.svg'
+import { routes } from '../../../../../../shared/routes/routes'
 
 const origin = `${CLIENT_URL}/`
 
@@ -37,12 +38,17 @@ export function titleManager() {
 }
 
 export function addAnnouncementManager() {
+  const {
+    pl,
+    en,
+  } = routes.showAnnouncementCreate
+
   return {
     classNames: { container: 'header-link add-announcement' },
-    href: this.languageObjectHandler({ pl: `${origin}dodaj-ogloszenie`, en: `${origin}add-announcement` }),
+    href: this.languageObjectHandler({ pl: `${CLIENT_URL}${pl.url}`, en: `${CLIENT_URL}${en.url}` }),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
-    title: this.languageObjectHandler({ pl: 'Dodaj ogłoszenie', en: 'Add Announcement' }),
-    label: this.languageObjectHandler({ pl: 'Dodaj bezpłatne ogłoszenie', en: 'Add Free Announcement' }),
+    title: this.languageObjectHandler({ pl: pl.title, en: en.title }),
+    label: this.languageObjectHandler({ pl: pl.label, en: en.label }),
     onClick: () => {
       this.changePath({ showAnnouncementCreate: true })
       this.props.changeControl({ showLinks: false })

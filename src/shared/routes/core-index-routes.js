@@ -34,23 +34,29 @@ export const coreIndexRoutes = {
   },
   showAnnouncementShow: {
     sender: 'announcement',
-    pl: { regEx: /^\/?nieruchomosc-wynajem-warszawa-.*-.*-nr-\d+$/ },
-    en: { regEx: /^\/?real-estate-lease-warsaw-.*-.*-no-\d+$/ },
+    pl: {
+      regEx: /^\/?nieruchomosc-wynajem-warszawa-.*-.*-nr-\d+$/
+    },
+    en: {
+      regEx: /^\/?real-estate-lease-warsaw-.*-.*-no-\d+$/
+    },
     overshadow: false
   },  
   showAnnouncementCreate: {
     sender: 'generic',
     pl: {
-      regEx: /^\/?dodaj-ogloszenie\/?$/,
-      url: '/dodaj-ogloszenie',
+      regEx: /^\/?dodaj-ogloszenie-wynajmu-nieruchomosci-w-warszawie\/?$/,
+      url: '/dodaj-ogloszenie-wynajmu-nieruchomosci-w-warszawie',
       title: 'Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w Warszawie w kategorii: mieszkanie, lokal użytkowy, biuro',
-      description: 'Dodaj darmowe ogłoszenie wynajmu nieruchomości w Warszawie w kategorii: mieszkanie, lokal użytkowy lub biuro.'
+      description: 'Dodaj darmowe ogłoszenie wynajmu nieruchomości w Warszawie w kategorii: mieszkanie, lokal użytkowy lub biuro.',
+      label: 'Dodaj bezpłatne ogłoszenie'
     },
     en: {
-      regEx: /^\/?add-announcement\/?$/,
-      url: '/add-announcement',
+      regEx: /^\/?add-announcement-of-real-estate-lease-in-warsaw\/?$/,
+      url: '/add-announcement-of-real-estate-lease-in-warsaw',
       title: 'Add Free Announcement of Lease of Real Estate in Warsaw in the category: Apartment, Usable premises, Office',
-      description: 'Add free announcement of lease of real estate in Warsaw in the category: Apartment, Usable premises, Office.'
+      description: 'Add free announcement of lease of real estate in Warsaw in the category: Apartment, Usable premises, Office.',
+      label: 'Add Free Announcement'
     },
     overshadow: false
   }

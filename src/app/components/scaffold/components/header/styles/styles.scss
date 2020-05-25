@@ -90,18 +90,17 @@
   }
   .button.language {
     display: inline-block;
-    // width: 96px;
     text-align: center;
     padding-right: 6px;
+    :hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
     .input {
       height: 52px;
-      // width: 96px;
       border: none;
       color: #D0D3D4;
       background: none;
-      // .fas {
-      //   margin-right: 4px;
-      // }
     }
   }
 }

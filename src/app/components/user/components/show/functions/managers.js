@@ -1,14 +1,21 @@
 import { deauthorizeUser } from '../../authorize/functions/adapters'
+import { routes } from '../../../../../../shared/routes/routes'
 
 const origin = `${CLIENT_URL}/`
 
 export function addAnnouncementManager() {
+  const {
+    pl,
+    en,
+  } = routes.showAnnouncementCreate
+
   return {
     id: 'user-show-account-add-announcemt',
     classNames: { container: 'button'},
-    href: this.languageObjectHandler({ pl: `${origin}dodaj-ogloszenie'`, en: `${origin}add-announcement'` }),
+    href: this.languageObjectHandler({ pl: `${CLIENT_URL}${pl.url}`, en: `${CLIENT_URL}${en.url}` }),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
-    label: this.labelProvider('fas fa-plus', 'Dodaj ogłoszenie', 'Add free announcement'),
+    title: this.languageObjectHandler({ pl: pl.title, en: en.title }),
+    label: this.labelProvider('fas fa-plus', pl.label, en.label),
     onClick: () => this.changePath({ showAnnouncementCreate: true })
   }
 }

@@ -14,10 +14,9 @@ import { languageHandler, languageObjectHandler } from '../../../../functions/la
 import { parseCurrency } from '../../functions/currency-parsers'
 import { parseCategoryForUrl } from '../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../functions/district-parsers'
-import { OffsetSwitcher } from './components/offset-switcher/offset-switcher'
-import { ManagedLink } from 'managed-inputs'
 
-import { addAnnouncementManager } from './functions/managers'
+import { ManagedLink } from 'managed-inputs'
+import { addAnnouncementManager } from '../../../../components/scaffold/components/header/functions/managers'
 
 import { labelProvider } from '../../../../components/user/components/show/functions/label-provider'
 import { changePath } from '../../../../functions/routers/change-path'

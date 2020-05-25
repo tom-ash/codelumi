@@ -54,7 +54,7 @@ class AnnouncementCreate extends React.Component {
       <div id='announcement-create' className='container medium-container small-shadow'>
         <div>
           <h1>
-            <i className='fas fa-plus' /> {this.languageHandler('Dodaj bezpłatne ogłoszenie', 'Add Free Announcement')}
+            {this.languageHandler(<span>Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w&nbsp;Warszawie</span>, 'Add Free Announcement of Real Estate Lease in Warsaw')}
           </h1>
           <div className='text'>
             {this.languageObjectHandler({ pl, en })}

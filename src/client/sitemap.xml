@@ -25,12 +25,12 @@
       href="https://www.warsawlease.pl/real-estates-lease-warsaw-list"/>
   </url>
   <url>
-    <loc>https://www.warsawlease.pl/dodaj-ogloszenie</loc>
+    <loc>https://www.warsawlease.pl/dodaj-ogloszenie-wynajmu-nieruchomosci-w-warszawie</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.warsawlease.pl/add-announcement"/>
+      href="https://www.warsawlease.pl/add-announcement-of-real-estate-lease-in-warsaw"/>
   </url>
 </urlset>

@@ -11,6 +11,10 @@
   .header-link {
     display: inline-block;
     margin-right: 20px;
+    :hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
     .input {
       border: none;
       background: none;
@@ -19,15 +23,7 @@
       }
     }
     &.add-announcement {
-      .input {
-        font-weight: normal!important;
-        line-height: 26px;
-        margin-top: 10px;
-        padding: 0 6px;
-        border-radius: 2px;
-        background: #F9EBEA;
-        color: rgba(34, 34, 34, .98);
-      }
+      color: #F0B27A;
     }
   }
 }
