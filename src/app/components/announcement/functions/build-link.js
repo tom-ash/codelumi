@@ -9,6 +9,6 @@ export function buildLink({
   language
 }) {
   return (
-    `${CLIENT_URL}/${{ pl: 'nieruchomosc', en: 'real-estate' }[language]}-${{ pl: 'wynajem', en: 'lease' }[language]}-${{ pl: 'warszawa', en: 'warsaw'}[language]}-${parseDistrictForUrl(district)[language]}-${parseCategoryForUrl(category)[language]}-${{ pl: 'nr', en: 'no'}[language]}-${id}`
+    `${CLIENT_URL}/${id}-${parseCategoryForUrl(category)[language]}-${{ pl: 'na-wynajem', en: 'for-lease' }[language]}-${{ pl: 'warszawa', en: 'warsaw'}[language]}-${parseDistrictForUrl(district)[language]}`
   )
 }

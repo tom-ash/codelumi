@@ -35,10 +35,10 @@ export const coreIndexRoutes = {
   showAnnouncementShow: {
     sender: 'announcement',
     pl: {
-      regEx: /^\/?nieruchomosc-wynajem-warszawa-.*-.*-nr-\d+$/
+      regEx: /^\/?\d+-.*-na-wynajem-warszawa-.*$/
     },
     en: {
-      regEx: /^\/?real-estate-lease-warsaw-.*-.*-no-\d+$/
+      regEx: /^\/?\d+-.*-for-lease-warsaw-.*$/
     },
     overshadow: false
   },  
