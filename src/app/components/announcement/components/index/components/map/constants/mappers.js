@@ -3,7 +3,7 @@ export const mapStateToProps = (store) => {
     language,
     isMobile,
     scripts,
-    showAnnouncementIndexList,
+    showAnnouncementIndexCatalogue,
     device
   } = store.app
   const {
@@ -27,7 +27,7 @@ export const mapStateToProps = (store) => {
     language,
     isMobile,
     scripts,
-    showAnnouncementIndexList,
+    showAnnouncementIndexCatalogue,
     connecting,
     type,
     mapLoaded,

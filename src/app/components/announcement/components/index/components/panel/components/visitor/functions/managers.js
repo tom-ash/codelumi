@@ -3,6 +3,7 @@ import Calendar from 'react-calendar/dist/entry.nostyle'
 import { currencies } from '../../../../../../../constants/currencies'
 import { parseDate } from '../../../../../../../../../functions/date-parsers'
 import { CloseButton } from '../../../../../../../../support/components/close-button/close-button'
+import { routes } from '../../../../../../../../../../shared/routes/routes'
 
 export function categoryManager() {
   const { category: value } = this.props
@@ -113,20 +114,25 @@ export function availabilityDateManager() {
 export function buttonManager(action) {
   const {
     changeApp,
-    showAnnouncementIndexList
+    showAnnouncementIndexCatalogue
   } = this.props
+
+  const {
+    pl,
+    en,
+  } = routes.showAnnouncementIndexCatalogue
 
   return {
     id: 'announcement-index-full-search-button',
     classNames: { container: 'simple-index-input button' },
-    href: this.languageObjectHandler({ pl: `${CLIENT_URL}/nieruchomosci-wynajem-warszawa-lista`, en: `${CLIENT_URL}/real-estates-lease-warsaw-list` }),
+    href: this.languageObjectHandler({ pl: `${CLIENT_URL}${pl.url}`, en: `${CLIENT_URL}${en.url}` }),
     label: (
       <div>
         <i className='fas fa-map-marker-alt' /> <i className='fas fa-th-list' />
       </div>
     ),
     onClick: () => {
-      changeApp({ showAnnouncementIndexList: !showAnnouncementIndexList })
+      changeApp({ showAnnouncementIndexCatalogue: !showAnnouncementIndexCatalogue })
     }
   }
 }

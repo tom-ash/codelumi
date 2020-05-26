@@ -31,8 +31,8 @@ export function matchPathToState(prevProps) {
       prevProps.language !== this.props.language) {
     let fullPathname = ''
     
-    if (this.props['showAnnouncementIndexList']) {
-      updatedRoute = 'showAnnouncementIndexList'
+    if (this.props['showAnnouncementIndexCatalogue']) {
+      updatedRoute = 'showAnnouncementIndexCatalogue'
     } else {
       updatedRoute = updatedRoute || routesList.find(routeKey => this.props[routeKey])
     }

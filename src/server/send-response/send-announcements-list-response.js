@@ -35,7 +35,7 @@ export function sendAnnouncementsListResponse({
         app: {
           ...appState,
           showAnnouncementIndexMap: true,
-          showAnnouncementIndexList: true,
+          showAnnouncementIndexCatalogue: true,
           language,
           device
         },

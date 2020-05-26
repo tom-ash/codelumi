@@ -19,13 +19,13 @@ class VisitorWelcome extends React.Component {
   render() {
     const {
       showAnnouncementIndexMap,
-      showAnnouncementIndexList
+      showAnnouncementIndexCatalogue
     } = this.props
 
     if (!showAnnouncementIndexMap) return null
 
     return (
-      <div id='visitor-welcome' className={showAnnouncementIndexList ? 'hidden' : 'visible'}>
+      <div id='visitor-welcome' className={showAnnouncementIndexCatalogue ? 'hidden' : 'visible'}>
         <div className='container'>
           <div className='logo'>
             <Logo fill='red' width="42px" height="42px"/>

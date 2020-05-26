@@ -1,5 +1,5 @@
 export const mapStateToProps = (store) => {
-  const { language, isMobile, device, path, showAnnouncementIndexList } = store.app
+  const { language, isMobile, device, path, showAnnouncementIndexCatalogue } = store.app
   const control = store.announcement.index.control
   const inputs = store.announcement.index.inputs
 
@@ -30,7 +30,7 @@ export const mapStateToProps = (store) => {
   } = inputs
 
   return {
-    showAnnouncementIndexList,
+    showAnnouncementIndexCatalogue,
     language,
     isMobile,
     device,

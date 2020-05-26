@@ -23,13 +23,13 @@ class AnnouncementIndexFull extends React.Component {
   render() {
     const {
       language,
-      changeControl, changeInputs, offset, amount, showAnnouncementIndexList, announcements
+      changeControl, changeInputs, offset, amount, showAnnouncementIndexCatalogue, announcements
     } = this.props
 
     return (
       <div id='announcement-index-full'>
         {
-        showAnnouncementIndexList &&
+        showAnnouncementIndexCatalogue &&
         <div>
           <div id='announcement-index-full-scroll-anchor' />
           <div className='announcements'>

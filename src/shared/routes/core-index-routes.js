@@ -2,31 +2,31 @@ export const coreIndexRoutes = {
   showAnnouncementIndexMap: {
     sender: 'map',
     pl: {
-      regEx: /(^\/?nieruchomosci-wynajem-warszawa-mapa\/?)|(^\/?)$/,
+      regEx: /(^\/?mapa-nieruchomosci-na-wynajem-warszawa\/?)|(^\/?)$/,
       url: '/',
-      title: 'Ogłoszenia nieruchomości na wynajem - Warszawa - Mapa - Mieszkania, biura i lokale użytkowe',
+      title: 'Mapa nieruchomości na wynajem w Warszawie - Mieszkania, biura i lokale użytkowe',
       description: 'Bezpłatne ogłoszenia nieruchomości na wynajem w Warszawie na mapie. Przeglądaj i dodawaj darmowe ogłoszenia wynajmu w kategorii: mieszkanie, biuro, lokal użytkowy.'
     },
     en: {
-      regEx: /(^\/?real-estates-lease-warsaw-map\/?)|(^\/?)$/,
+      regEx: /(^\/?map-of-real-estates-for-lease-warsaw\/?)|(^\/?)$/,
       url: '/',
-      title: 'Announcements of Real Estate Lease - Warsaw - Map - Apartments, Offices and Usable premises',
+      title: 'Map of Real Estates for Lease in Warsaw - Apartments, Offices and Usable premises',
       description: 'Free announcements of real estate lease in Warsaw on the map. Search and add free announcements of lease in the categories: apartment, office, usable premises.'
     },
     overshadow: false
   },
-  showAnnouncementIndexList: {
+  showAnnouncementIndexCatalogue: {
     sender: 'list',
     pl: {
-      regEx: /^\/?nieruchomosci-wynajem-warszawa-lista\/?$/,
-      url: '/nieruchomosci-wynajem-warszawa-lista',
-      title: 'Ogłoszenia nieruchomości na wynajem - Warszawa - Lista - Mieszkania, biura i lokale użytkowe',
+      regEx: /^\/?katalog-nieruchomosci-na-wynajem-warszawa\/?$/,
+      url: '/katalog-nieruchomosci-na-wynajem-warszawa',
+      title: 'Katalog nieruchomości na wynajem w Warszawie - Mieszkania, biura i lokale użytkowe',
       description: 'Bezpłatne ogłoszenia nieruchomości na wynajem w Warszawie na liście. Przeglądaj i dodawaj darmowe ogłoszenia wynajmu w kategorii: mieszkanie, biuro, lokal użytkowy.'
     },
     en: {
-      regEx: /^\/?real-estates-lease-warsaw-list\/?$/,
-      url: '/real-estates-lease-warsaw-list',
-      title: 'Announcements of Real Estate Lease - Warsaw - List - Apartments, offices and usable premises',
+      regEx: /^\/?catalogue-of-real-estates-for-lease-warsaw\/?$/,
+      url: '/catalogue-of-real-estates-for-lease-warsaw',
+      title: 'Catalogue of Real Estates for Lease in Warsaw - Apartments, offices and usable premises',
       description: 'Free announcements of real estate lease in Warsaw on the list. Search and add free announcements of lease in the categories: apartment, office, usable premises.'
     },
     needsAnnouncementIndexMap: true,
