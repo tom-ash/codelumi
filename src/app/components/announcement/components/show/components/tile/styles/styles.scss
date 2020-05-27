@@ -3,47 +3,30 @@
 @import './contact';
 
 .announcement-show-tile {
+  position: relative;
+  top: 24px;
+  width: 100%;
   a {
     min-height: 32px;
   }
-  width: 100%;
   background: white;
-  position: relative;
   text-align: left;
-  border-radius: 5px;
   .close-button {
     z-index: 3;
+    top: 0;
     right: 0;
     position: absolute;
-    height: 32px;
-    width: 32px;
-    min-height: 32px;
-    min-width: 32px;
-    margin-bottom: 8px;
-    flex-shrink: 0;
+    height: 24px;
+    width: 24px;
+    right: 3px;
     border: none;
-    background: white;
-    border-radius: 2px;
-    text-align: center;
     line-height: 32px;
     font-size: 16px;
+    background: white;
     &:hover {
-      background: rgba(146, 43, 33, 0.2);
-    }
-    &.medium {
-      margin-left: 688px;
-      @media #{$small-tablet} {
-        margin-left: auto;
-      }
-    }
-    &.narrow {
-      margin-left: 424px;
-      @media #{$phone} {
-        margin-left: auto;
-      }
+      color: gray;
     }
   }
-
   &.show {
     padding-bottom: 24px;
     @media #{$phone} {
@@ -52,7 +35,7 @@
   }
   &.map {
     .area {
-      margin-right: 24px;
+      margin-right: 8px;
     }
   }
   .area {
@@ -66,20 +49,24 @@
     .sq {
       margin-left: 1px;
       font-size: 12px;
-      line-height: 63px;
     }
   }
   .header-container {
-    height: 72px;
-    padding-left: 12px;
-    color: #2C3E50;
     h2 {
       position: relative;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 12px 0 12px 12px;
       .header-row {
         &.category {
-          padding-top: 12px;
-          font-size: 20px;
-          margin-bottom: 12px;
+          font-size: 18px;
+          margin-bottom: 8px;
+          color: rgba(34, 34, 34, 0.8);
+          .for-lease {
+            margin-left: 4px;
+            font-size: 14px;
+            color: rgba(34, 34, 34, 0.5);
+          }
         }
         &.district {
           color: #566573;
@@ -91,10 +78,18 @@
         top: 0;
         right: 0;
         bottom: 0;
-        line-height: 72px;
-        padding-right: 24px;
+        padding-right: 23px;
         color: #21618C;
         font-family: 'Oswald', sans-serif;
+        font-size: 20px;
+        padding-top: 23px;
+        .m, .sq {
+          float: left;
+        }
+        .sq {
+          margin-left: 2px;
+          font-size: 10px;
+        }
       }
     }
   }

@@ -61,10 +61,11 @@ class AnnouncementTile extends React.Component {
         <div className='header-container'>
           <h2>
             <div className='header-row category'>
-              {category !== null && this.parseCategory(category)}
+              <span>{category !== null && this.parseCategory(category)}</span>
+              <span className='for-lease'>{this.languageObjectHandler({ pl: 'na wynajem', en: 'for lease' })}</span>
             </div>
             <div className='header-row district'>
-              {parseDistrict(district)}
+              {parseDistrict(district)}{this.languageObjectHandler({ pl: ', Warszawa', en: ', Warsaw' })}
             </div>
             <div className='area'>
               <div className='area-amount'>
