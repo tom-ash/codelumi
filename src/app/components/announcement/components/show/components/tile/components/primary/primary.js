@@ -39,7 +39,7 @@ class AnnouncementCreatePrimary extends React.Component {
 
     return (
       <div id='announcement-show-tile-primary'>
-        <div className='rent-column'>
+        <div className='rent-column left'>
           <PresentRent
             amount={grossRentAmount}
             currency={currency}

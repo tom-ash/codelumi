@@ -1,24 +1,22 @@
 @import '../../../../../../../../../styles/themes.scss';
 
 #announcement-show-tile-primary {
-  padding: 24px 24px 12px;
-
+  padding: 24px 24px 24px;
   @media #{$phone} {
     padding: 12px;
   }
-
   .rent-column {
     float: left;
-    &.right {
-      margin-left: 36px;
+    &.left {
+      margin-right: 24px;
     }
   }
   .rent-container {
     font-family: 'Oswald', sans-serif;
     margin-bottom: 24px;
     &.total {
-      font-size: 24px;
-      margin-bottom: 6px;
+      font-size: 22px;
+      margin-bottom: 12px;
       &.gross {
         color: #BA4A00;
       }
@@ -26,15 +24,15 @@
         color: #196F3D;
       }
       .amount {
-        padding-right: 28px;
+        padding-right: 24px;
         position: relative;
         float: left;
         font-family: 'Oswald', sans-serif;
       }
       .decimal {
-        font-size: 16px;
+        font-size: 13px;
         position: absolute;
-        top: 2px;
+        top: 1px;
         right: 0;
         text-decoration: underline;
         margin-right: 6px;
@@ -48,16 +46,12 @@
       .per-month {
         float: left;
         padding-left: 6px;
-        margin-top: 14px;
+        margin-top: 11px;
         font-size: 10px;
-      }
-      &.gross {
-        font-size: 24px;
-        font-weight: bold;
       }
     }
     &.per-sqm {
-      font-size: 14px;
+      font-size: 15px;
       .amount, .currency, .per-sqm, .per-month, .basis, .decimal {
         float: left;
       }
@@ -80,7 +74,7 @@
       .per-month {
         float: left;
         padding-left: 6px;
-        margin-top: 5px;
+        margin-top: 6px;
         font-size: 8px;
       }
       &.gross {
@@ -92,22 +86,26 @@
     }
   }
   .rooms {
+    font-size: 15px;
     color: #566573;
     margin-right: 24px;
     margin-bottom: 12px;
   }
   .floor {
+    font-size: 15px;
     color: #566573;
     margin-right: 24px;
     margin-bottom: 12px;
   }
   .total-floors {
+    font-size: 15px;
     color: #566573;
     margin-right: 24px;
     margin-bottom: 12px;
   }
   .available-from {
+    font-size: 15px;
     color: #566573;
-    margin-bottom: 12px;
+    // margin-bottom: 12px;
   }
 }
