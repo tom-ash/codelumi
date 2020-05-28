@@ -52,11 +52,13 @@
     }
   }
   .header-container {
+
     h2 {
       position: relative;
       margin-top: 0;
       margin-bottom: 0;
       padding: 12px 0 12px 12px;
+      font-weight: normal;
       .header-row {
         &.category {
           font-size: 18px;
