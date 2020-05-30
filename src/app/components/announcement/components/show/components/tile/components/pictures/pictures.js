@@ -1,52 +1,39 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapDispatchToProps } from './constants/mappers'
-import * as lifecycle from './functions/lifecycle'
 import { languageObjectHandler } from '../../../../../../../../functions/language-handler'
-import { fetchPicture } from './functions/fetch-picture'
 import { changePicture } from './functions/change-picture'
 import { ManagedLink } from 'managed-inputs'
 import { linkManager } from './functions/managers'
-import PropTypes from 'prop-types';
 
 class AnnouncementShowPictures extends React.Component {
   constructor(props) {
     super(props)
     this.languageObjectHandler = languageObjectHandler.bind(this)
-    this.componentDidMount = lifecycle.componentDidMount
-    this.componentDidUpdate = lifecycle.componentDidUpdate
-    this.fetchPicture = fetchPicture.bind(this)
     this.changePicture = changePicture.bind(this)
     this.linkManager = linkManager.bind(this)
-    this.state = {
-      downloadedPictures: [],
-      pictureIndex: 0
-    }
+    this.state = { pictureIndex: 0 }
   }
   
   render() {
-    const {
-      downloadedPictures,
-      pictureIndex,
-    } = this.state
+    const { pictureIndex } = this.state
 
     const {
       pictures,
-      venue
+      venue,
+      id
     } = this.props
 
-    if (downloadedPictures.length === 0 && venue === 'show') return null
-    if (downloadedPictures.length === 0) return <ManagedLink {...this.linkManager()} />
+    if (pictures === null || pictures.length === 0 && venue === 'show') return null
+    if (pictures.length === 0) return <ManagedLink {...this.linkManager()} />
 
     return (
-      <div
-        className='announcement-show-tile-pictures'
-      >
-        <div
-        style={{
-          backgroundImage: `url('${downloadedPictures[pictureIndex]}')`
-        }}
-        className='pictures'>
+      <div className='announcement-show-tile-pictures'>
+        <div className='pictures'>
+          <img
+            src={`${AWS_S3_URL}/announcements/${id}/${pictures[pictureIndex].database}`}
+            className='picture'
+          />
           {venue !== 'mini-list' &&
           <React.Fragment>
             <div
@@ -62,8 +49,7 @@ class AnnouncementShowPictures extends React.Component {
             <div className='counter'>
               <i className='far fa-image' /> {pictureIndex + 1} / {pictures.length}
             </div>
-          </React.Fragment>
-          }
+          </React.Fragment>}
           {venue !== 'show' && venue !== 'mini-list' && <ManagedLink {...this.linkManager()} />}
         </div>        
       </div>

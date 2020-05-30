@@ -2,6 +2,7 @@
 
 #announcement-show-tile-primary {
   padding: 24px 24px 24px;
+  z-index: 1000;
   @media #{$phone} {
     padding: 12px;
   }

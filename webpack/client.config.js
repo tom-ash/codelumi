@@ -2,6 +2,7 @@ var webpack = require("webpack");
 var provideClientUrl = require('./providers/provide-client-url')
 var provideApiUrl = require('./providers/provide-api-url')
 var CopyPlugin = require('copy-webpack-plugin');
+var provideAwsS3Url = require('./providers/provide-aws-s3-url')
 
 var config = {
   entry: {
@@ -45,7 +46,8 @@ var config = {
     new webpack.DefinePlugin({
       'APP_ENV': JSON.stringify(process.env.APP_ENV),
       'CLIENT_URL': JSON.stringify(provideClientUrl(process.env.APP_ENV)),
-      'API_URL': JSON.stringify(provideApiUrl(process.env.APP_ENV))
+      'API_URL': JSON.stringify(provideApiUrl(process.env.APP_ENV)),
+      'AWS_S3_URL': JSON.stringify(provideAwsS3Url(process.env.APP_ENV))
     }),
     new CopyPlugin([
       { from: './src/client/robots.txt', to: './client/robots.txt' },
