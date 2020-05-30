@@ -7,7 +7,9 @@ export function sendResponse({
   title,
   description,
   url,
-  noIndex
+  announcementUrl,
+  noIndex,
+  fbMeta
 }) {
   res.send(
     renderPage({ 
@@ -15,7 +17,9 @@ export function sendResponse({
       title,
       description,
       url,
-      noIndex
+      announcementUrl,
+      noIndex,
+      fbMeta
     }) 
   )
 }

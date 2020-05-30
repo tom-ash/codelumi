@@ -22,7 +22,14 @@ export function savePicture(destination, file, callback) {
     Object.keys(json.fields).forEach((key) => { formData.append(key, json.fields[key]) })
     formData.append('file', file)
     formData.append('Content-Type', file.type)
-    fetch(json.url, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
+    fetch(json.url, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json',
+        'acl': 'public-read'
+      }
+    })
     .then(response => { if (response.ok) callback(json.key) })
   })
 }
