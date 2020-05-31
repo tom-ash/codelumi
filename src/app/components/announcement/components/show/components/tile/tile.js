@@ -62,6 +62,7 @@ class AnnouncementTile extends React.Component {
           <h2>
             <div className='header-row category'>
               <span>{category !== null && this.parseCategory(category)}</span>
+              &nbsp;
               <span className='for-lease'>{this.languageObjectHandler({ pl: 'na wynajem', en: 'for lease' })}</span>
             </div>
             <div className='header-row district'>
