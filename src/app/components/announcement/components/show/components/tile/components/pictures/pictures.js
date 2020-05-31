@@ -5,6 +5,7 @@ import { languageObjectHandler } from '../../../../../../../../functions/languag
 import { changePicture } from './functions/change-picture'
 import { ManagedLink } from 'managed-inputs'
 import { linkManager } from './functions/managers'
+import { buildLink } from '../../../../../../functions/build-link'
 
 class AnnouncementShowPictures extends React.Component {
   constructor(props) {
@@ -49,6 +50,13 @@ class AnnouncementShowPictures extends React.Component {
             <div className='counter'>
               <i className='far fa-image' /> {pictureIndex + 1} / {pictures.length}
             </div>
+            <a
+              className='share'
+              target='_blank'
+              href={`https://www.facebook.com/sharer/sharer.php?u=${buildLink(this.props)}`}
+            >
+              <i class='fab fa-facebook-square' /> {this.languageObjectHandler({ pl: 'Udostępnij', en: 'Share' })}
+            </a>
           </React.Fragment>}
           {venue !== 'show' && venue !== 'mini-list' && <ManagedLink {...this.linkManager()} />}
         </div>        

@@ -65,7 +65,6 @@ class App extends React.Component {
           <Announcement />
         </div>
         <VisitorWelcome />
-        {/* {conso} */}
         {showBlog && <Blog />}
         <Footer />
       </div>
