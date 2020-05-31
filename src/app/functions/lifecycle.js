@@ -21,7 +21,8 @@ export function componentDidMount() {
     }
   });
 
-  this.matchStateToPath({ popState: false })
+  if (APP_ENV === 'development') this.matchStateToPath({ popState: false })
+
   window.onpopstate = () => this.popStateHandler()
   this.authorizeUserWithTokens()
 }
