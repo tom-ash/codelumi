@@ -2,6 +2,7 @@ const fetch = require("node-fetch")
 import { sendResponse } from './send-response'
 import { appState } from '../../app/constants/app-state'
 import { data } from '../../app/components/announcement/components/index/constants/state'
+import { openGraphProvider } from '../../shared/functions/providers/open-graph-provider'
 
 export function sendAnnouncementsMapResponse({
   res,
@@ -29,6 +30,14 @@ export function sendAnnouncementsMapResponse({
     })
     if (announcements && announcements[0]) announcements[0].show = true
 
+    const openGraph = openGraphProvider({
+      title,
+      description,
+      image: "https://warsawlease.s3.eu-central-1.amazonaws.com/assets/warsawlease-logo-on-white.png",
+      imageWidth: "1200",
+      imageHeight: "630"
+    })
+
     sendResponse({
       res,
       initialState: {
@@ -50,7 +59,8 @@ export function sendAnnouncementsMapResponse({
       },
       title,
       description,
-      url
+      url,
+      openGraph
     })
   })
 }

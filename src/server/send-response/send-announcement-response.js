@@ -37,7 +37,7 @@ export function sendAnnouncementResponse({
 
     const title = provideTitle({ ...clientParams, language })
 
-    const fbMeta = `
+    const openGraph = `
       <meta property="og:type" content="website" />
       <meta property="og:title" content="${title}" />
       <meta property="og:description" content="${{ pl: clientParams.descriptionPolish, en: clientParams.descriptionEnglish }[language]}" />
@@ -73,7 +73,7 @@ export function sendAnnouncementResponse({
       title,
       description: title,
       announcementUrl,
-      fbMeta
+      openGraph
     })
   })
   .catch(() => res.status(404).send('404'))

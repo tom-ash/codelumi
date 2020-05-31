@@ -7,7 +7,7 @@ export function renderPage({
   url,
   announcementUrl,
   noIndex,
-  fbMeta
+  openGraph
 }) {
 
   const canonical = announcementUrl ? announcementUrl : `${CLIENT_URL}/${url}`
@@ -17,7 +17,7 @@ export function renderPage({
     <html>
       <head>
         ${noIndex ? '<meta name="robots" content="noindex">' : ''}
-        ${fbMeta ? fbMeta : ''}
+        ${openGraph ? openGraph : ''}
         <link rel="canonical" href="${canonical}">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">

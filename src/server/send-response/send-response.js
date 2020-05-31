@@ -9,7 +9,7 @@ export function sendResponse({
   url,
   announcementUrl,
   noIndex,
-  fbMeta
+  openGraph
 }) {
   res.send(
     renderPage({ 
@@ -19,7 +19,7 @@ export function sendResponse({
       url,
       announcementUrl,
       noIndex,
-      fbMeta
+      openGraph
     }) 
   )
 }
