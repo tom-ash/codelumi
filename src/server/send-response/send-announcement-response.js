@@ -60,6 +60,7 @@ export function sendAnnouncementResponse({
         app: {
           ...appState,
           showAnnouncementShow: true,
+          announcementId,
           language,
           device
         },

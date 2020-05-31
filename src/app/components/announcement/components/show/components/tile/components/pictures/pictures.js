@@ -55,7 +55,7 @@ class AnnouncementShowPictures extends React.Component {
               target='_blank'
               href={`https://www.facebook.com/sharer/sharer.php?u=${buildLink(this.props)}`}
             >
-              <i class='fab fa-facebook-square' /> {this.languageObjectHandler({ pl: 'Udostępnij', en: 'Share' })}
+              <i className='fab fa-facebook-square' /> {this.languageObjectHandler({ pl: 'Udostępnij', en: 'Share' })}
             </a>
           </React.Fragment>}
           {venue !== 'show' && venue !== 'mini-list' && <ManagedLink {...this.linkManager()} />}
