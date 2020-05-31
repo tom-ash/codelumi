@@ -7,5 +7,5 @@ export function provideTitle({
   area,
   language
 }) {
-  return `${parseCategory(category)[language]}, ${parseDistrict(district)}, ${area} ${{ pl: 'm2', en: 'sqm' }[language]}`
+  return `${parseCategory(category)[language]} ${{ pl: 'na wynajem', en: 'for lease' }[language]}, ${parseDistrict(district)}, ${{ pl: 'Warszawa', en: 'Warsaw' }[language]}, ${area} ${{ pl: 'm2', en: 'sqm' }[language]}`
 }
