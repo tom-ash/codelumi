@@ -13,6 +13,7 @@ import { getAnnouncement } from './functions/get-announcement'
 import { sectionHeaderProvider } from '../../../../functions/providers/headers'
 import * as lifecycle from './functions/lifecycle'
 import AnnouncementCreateAdditional from './components/additional/additional'
+import { provideDescription } from './functions/provide-description'
 
 class AnnouncementCreate extends React.Component {
   constructor(props) {
@@ -23,32 +24,11 @@ class AnnouncementCreate extends React.Component {
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.getAnnouncement = getAnnouncement.bind(this)
     this.sectionHeaderProvider = sectionHeaderProvider.bind(this)
+    this.provideDescription = provideDescription.bind(this)
   }
 
   render() {
-    const { publishing } = this.props
-
-    const pl = (
-      <React.Fragment>
-        <p className='blog-paragraph'>
-          Dodaj darmowe ogłoszenie wynajmu mieszkania, lokalu użytkowego lub biura w&nbsp;Warszawie.
-        </p>
-        <p className='blog-paragraph'>
-          Twoje ogłoszenie prezentowane będzie na mapie oraz na liście.
-        </p>
-      </React.Fragment>
-    )
-    
-    const en = (
-      <React.Fragment>
-        <p className='blog-paragraph'>
-          Add a free announcement of lease of an apartment, usable premises or an office in Warsaw.
-        </p>
-        <p className='blog-paragraph'>
-          Your announcement shall be presented on the map and on the list.
-        </p>
-      </React.Fragment>
-    )
+    const { publishing, language } = this.props
 
     return (
       <div id='announcement-create' className='container medium-container small-shadow'>
@@ -56,9 +36,7 @@ class AnnouncementCreate extends React.Component {
           <h1>
             {this.languageHandler(<span>Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w&nbsp;Warszawie</span>, 'Add Free Announcement of Real Estate Lease in Warsaw')}
           </h1>
-          <div className='text'>
-            {this.languageObjectHandler({ pl, en })}
-          </div>
+          {this.provideDescription()}
           <AnnouncementCreatePrimary />
           <div className='input-label'>
             <i className='fas fa-images' /> {this.languageObjectHandler({ pl: 'Zdjęcia', en: 'Pictures' })}

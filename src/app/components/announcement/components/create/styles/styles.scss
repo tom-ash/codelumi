@@ -3,6 +3,7 @@
 @import '../../../../../styles/monits/blue-monit';
 
 #announcement-create {
+  box-shadow: none;
   margin: 96px auto 40px;
   background: white;
   padding: 36px;
@@ -10,6 +11,26 @@
     color: #566573;
     line-height: 24px;
     text-align: justify;
+  }
+  .description {
+    max-width: 520px;
+    text-align: justify;
+    .blog-paragraph {
+      position: relative;
+      font-size: 15px;
+      margin-bottom: 4px;
+      color: #566573;
+      .fa-check {
+        left: 0;
+        margin-right: 4px;
+        font-size: 11px;
+        position: absolute;
+        top: 4px;
+      }
+      &.check {
+        padding-left: 18px;
+      }
+    }
   }
   h2 {
     margin-top: 36px;
@@ -31,9 +52,7 @@
       line-height: 22px;
     }
   }
-  .blog-paragraph {
-    text-align: justify;
-  }
+
   .checkbox {
     &.add-switcher {
       margin-bottom: 18px;
