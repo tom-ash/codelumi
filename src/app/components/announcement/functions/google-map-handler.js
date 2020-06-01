@@ -1,3 +1,5 @@
+import { styles } from '../constants/google-map-styles'
+
 export function setUpGoogleMaps(options) {
   if (window.googleMap) return replaceGoogleMap.call(this, undefined, options)
 
@@ -105,105 +107,8 @@ function setOptions(options) {
     zoomControl: false,
     ...!isMobile && { gestureHandling: 'greedy' },
     styles,
+    mapTypeControl: false,
+    streetViewControl: false,
     ...options
   }
 }
-
-const styles = 
-[
-
- {
-   "featureType": "poi",
-   "stylers": [
-     {
-       "visibility": "off"
-     }
-   ]
- },
- {
-   "featureType": "road",
-   "elementType": "labels.icon",
-   "stylers": [
-     {
-       "visibility": "off"
-     }
-   ]
- },
-
- {
-  "featureType": "transit.line",
-  "elementType": "geometry",
-  "stylers": [
-    { "color": "#AEB6BF" }
-  ]
-},
-
-{
-  "featureType": "road.arterial",
-  "elementType": "geometry",
-  "stylers": [
-    { "color": "#FDFEFE" }
-  ]
-},
-
-{
-  "featureType": "road.highway",
-  "elementType": "geometry",
-  "stylers": [
-    { "color": "#FAD7A0" }
-  ]
-},
-
-{
-  "featureType": "water",
-  // "elementType": "geometry",
-  "stylers": [
-    { "color": "#5DADE2" }
-  ]
-},
-
-
-
-//  transit.station.rail
-
- {
-  "featureType": "administrative.country",
-  "elementType": "geometry",
-  "stylers": [
-      {
-          "visibility": "simplified"
-      },
-      {
-          "hue": "#ff0000"
-      }
-  ]
-},
-// {
-//   "featureType": "water",
-//   "elementType": "geometry",
-//   "stylers": [
-//       {
-//           "saturation": "46"
-//       },
-//       {
-//           "color": 'red'
-//       }
-//   ]
-// }
-
-{
-  "featureType": "poi.park",
-  "elementType": "geometry",
-  "stylers": [
-      {
-          "color": "#A9DFBF"
-      },
-      {
-          "visibility": "on"
-      }
-  ]
-},
-
-
-
-]

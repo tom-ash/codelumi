@@ -23,7 +23,32 @@
       }
     }
     &.add-announcement {
-      color: #F0B27A;
+      color: #F2F3F4;
+      font-size: 14px;
+      .fas {
+        margin-right: 4px;
+      }
+      background: #E74C3C;
+      display: inline-block;
+      font-weight: normal !important;
+
+      border-radius: 2px;
+      margin-bottom: 10px;
+
+      height: 24px;
+      line-height: 24px;
+      padding: 0 10px;
+      border-radius: 12px;
+
+      :hover {
+        text-decoration: none;
+      }
+
+      &.hover {
+        
+        background: #F1948A;
+      }
+
     }
   }
 }
