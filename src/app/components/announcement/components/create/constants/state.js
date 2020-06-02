@@ -24,7 +24,8 @@ export const control = {
   availabilityDateFocus: false,
   calendarMouseOver: false,
   addingPicture: false,
-  showAvilabilityDate: false
+  showAvilabilityDate: false,
+  showDescription: false
 }
 
 export const inputs = {

@@ -5,10 +5,16 @@ export const mapStateToProps = (store) => {
     showAnnouncementEdit: showEdit,
     announcementId
   } = store.app
+
   const {
     control
   } = store.announcement.create
-  const { success, publishing } = control
+
+  const {
+    success,
+    publishing,
+    showDescription
+  } = control
 
   return {
     language,
@@ -18,7 +24,8 @@ export const mapStateToProps = (store) => {
     authorized: store.user.authorize.data.authorized,
     pictureBlobs: store.announcement.create.inputs.pictureBlobs,
     success,
-    publishing
+    publishing,
+    showDescription
   }
 }
     
