@@ -44,6 +44,19 @@
   }
   position: relative;
 
+  .add-announcement {
+    color: #F2F3F4;
+    font-size: 14px;
+    .fas {
+      margin-right: 4px;
+    }
+    border-radius: 12px;
+    background: #E74C3C;
+    display: inline-block;
+    padding: 5px 10px;
+    font-weight: normal !important;
+    margin-bottom: 10px;
+  }
 }
 
 #header-panel {
