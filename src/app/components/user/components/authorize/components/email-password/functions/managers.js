@@ -13,7 +13,6 @@ export function emailAddressManager() {
     controlled: false,
     classNames: { container: 'form-input text email'},
     label: this.languageObjectHandler(label),
-    children: <i className={icon} />,
     onChange: () => this.props.changeErrors({ emailOrPassword: noError }),
     onBlur: (value) => this.emailAddressManager().validate(value),
     validate: (value) => {
@@ -38,7 +37,6 @@ export function passwordManager() {
     controlled: false,
     classNames: { container: 'form-input text'},
     label: this.languageObjectHandler(label),
-    children: <i className={icon} />,
     onChange: () => this.props.changeErrors({ emailOrPassword: noError, email: noError }),
     onBlur: (value) => this.passwordManager().validate(value),
     validate: ((value) => {

@@ -1,40 +1,57 @@
 @import '../../../../../styles/themes';
-@import './headers';
-@import '../../../../../styles/monits/blue-monit';
+@import '../components/steps/styles/styles.scss';
 
 #announcement-create {
   box-shadow: none;
-  margin: 96px auto 40px;
-  background: white;
-  padding: 36px;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 82px 0;
+  @media #{$tablet} {
+    margin: 12px auto;
+    padding: 58px 12px;
+  }
+  .inner {
+    margin-top: 24px;
+    background: white;
+    padding: 36px;
+    @media #{$tablet} {
+      padding: 12px;
+    }
+  }
+
   h1 {
-    color: #566573;
     line-height: 24px;
     text-align: justify;
+    color: #7B7D7D;
+    font-size: 16px;
   }
+
   .description-question {
-    margin-bottom: 12px;
     font-size: 14px;
     display: inline-block;
     cursor: pointer;
     text-decoration: underline;
+    color: #626567;
     &:hover {
       color: gray;
     }
   }
+
   .description {
     text-align: justify;
     overflow: hidden;
-    transition: height 2s;
-    height: 116px;
+    transition: max-height 2s ease-in;
+    max-height: 200px;
+
+    
     &.rolled-up {
-      height: 0;
+      max-height: 0;
     }
     .blog-paragraph {
       position: relative;
       font-size: 14px;
       margin-bottom: 4px;
-      color: #566573;
+      color: #626567;
       .bull {
         left: 0;
         margin-right: 4px;
@@ -49,6 +66,9 @@
     margin-top: 36px;
     color: #566573;
     text-align: justify;
+
+    font-size: 15px;
+
     .number {
       float: left;
       line-height: 18px;
@@ -93,10 +113,10 @@
       font-size: 14px;
     }
   }
-  @media #{$phone} {
-    margin: 64px 8px 8px;
-    padding: 12px;
-  }
+  // @media #{$phone} {
+  //   margin: 64px 8px 8px;
+  //   padding: 12px;
+  // }
   .page-header, .section-header {
     color: #1B2631;
     &.additional-data {

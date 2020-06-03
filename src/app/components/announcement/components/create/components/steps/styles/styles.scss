@@ -1,0 +1,41 @@
+#announcement-create {
+  .create-points {
+
+    display: none;
+
+    position: relative;
+    height: 32px;
+    margin: 0 0 16px;
+    .line {
+      height: 15px;
+      border-bottom: 2px solid #A9CCE3;
+    }
+    .point {
+      color: #FDFEFE;
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border-radius: 16px;
+      background: #A9CCE3;
+      text-align: center;
+      line-height: 32px;
+      &.first {
+        top: 0;
+        left: 0;
+      }
+      &.second {
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background: #D7DBDD;
+      }
+      &.last {
+        top: 0;
+        right: 0;
+        background: #D7DBDD;
+        line-height: 34px;
+      }
+    }
+  }
+}

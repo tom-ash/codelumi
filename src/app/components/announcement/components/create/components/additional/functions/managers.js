@@ -7,133 +7,9 @@ import { numberOptionsProvider } from '../../../../../../../functions/shared'
 
 const noError = { pl: '', en: '' }
 
-export function categoryManager() {
-  const {
-    value: officeValue,
-    label: officeLabel
-  } = categories[0]
-
-  const {
-    value: usablePremisesValue,
-    label: usablePremisesLabel
-  } = categories[1]
-
-  const {
-    value: apartmentValue,
-    label: apartmentLabel
-  } = categories[2]
-
-  const {
-    category: { id }
-  } = requiredInputs
-  const {
-    category: value,
-    errors,
-    changeErrors,
-    changeInputs
-  } = this.props
-  const {
-    icon,
-    all: text
-  } = inputs.category
-  const {
-    category: categoryError
-  } = errors
 
 
-  return {
-    name: 'announcement-category',
-    classNames: { container: 'form-input radio'},
-    checked: value,
-    radios: [
-      { value: apartmentValue, label: this.languageObjectHandler(apartmentLabel) },
-      { value: officeValue, label: this.languageObjectHandler(officeLabel) },
-      { value: usablePremisesValue, label: this.languageObjectHandler(usablePremisesLabel) }
-    ],
-    onClick: value => {
-      this.onSelectHandler('category', value)
-      changeInputs({
-        netRentAmount: '',
-        netRentAmountPerSqm: '',
-        grossRentAmount: '',
-        grossRentAmountPerSqm: ''
-      })
-    }
-  }
-}
 
-export function districtManager() {
-  const {
-    icon,
-    all: text
-  } = inputs.district
-
-  return {
-    id: requiredInputs.district.id,
-    classNames: { container: 'form-input select' },
-    value: this.props.district,
-    label: this.languageObjectHandler(text),
-    children: <i className={icon} />,
-    options: [{ value: '', text: '' }].concat(districts),
-    onFocus: () => this.props.changeErrors({ district: noError }),
-    onSelect: (option) => this.onSelectHandler('district', option.value),
-    onBlur: () => this.districtManager().validate(),
-    validate: () => this.handleErrorOnValidate('district', this.props.district),
-    error: this.languageObjectHandler(this.props.errors.district)
-  }
-}
-
-export function rentCurrencyManager() {
-  return {
-    name: 'announcement-rent-currency',
-    classNames: { container: 'form-input radio'},
-    checked: this.props.rentCurrency,
-    radios: [
-      { value: 0, label: 'zł' },
-      { value: 1, label: '€' },
-      { value: 2, label: '$' }
-    ],
-    onClick: value => this.onSelectHandler('rentCurrency', value)
-  }
-}
-
-export function rentAmountManager() {
-  const {
-    icon,
-    create: text
-  } = inputs.rentHeight
-
-  const {
-    category,
-    errors,
-    changeInputs,
-    changeErrors
-  } = this.props
-
-  let label = this.languageObjectHandler(text)
-
-  if (category === 0 || category === 1) label = this.languageObjectHandler({ pl: 'Miesięczna cena (czynsz) netto', en: 'Monthly Net Price (Rent)'})
-  
-  const rentAmountType = category === 2 ? 'grossRentAmount' : 'netRentAmount'
-
-  return {
-    display: category === '' ? 'none' : 'block',
-    id: requiredInputs.rentAmount.id,
-    classNames: { container: 'form-input text rent amount' },
-    value: this.props[rentAmountType],
-    match: /^\d+$/,
-    label,
-    children: <i className={icon} />,
-    onFocus: () => changeErrors({ [rentAmountType]: noError }),
-    onChange: (value) => changeInputs({ [rentAmountType]: value }),
-    onBlur: () => {
-      this.rentAmountManager().validate()
-      this.getRentAmounts()
-    },
-    validate: () => this.handleErrorOnValidate(rentAmountType),
-    error: this.languageObjectHandler(errors[rentAmountType])
-  }
-}
 
 export function areaManager() {
   const {
@@ -177,7 +53,6 @@ export function roomsManager() {
     classNames: { container: 'form-input select' },
     value: this.props.rooms,
     label,
-    children: <i className={icon} />,
     options: numberOptionsProvider(99),
     onSelect: (option) => this.onSelectHandler('rooms', option.value)
   }
@@ -194,7 +69,6 @@ export function floorManager() {
     classNames: { container: 'form-input select' },
     value: this.props.floor,
     label: this.languageObjectHandler(text),
-    children: <i className={icon} />,
     options: this.floorsProvider(),
     onSelect: (option) => this.onSelectHandler('floor', option.value),
   }
@@ -211,7 +85,6 @@ export function totalFloorsManager() {
     classNames: { container: 'form-input select' },
     value: this.props.totalFloors,
     label: this.languageObjectHandler(text),
-    children: <i className={icon} />,
     options: numberOptionsProvider(99),
     onSelect: (option) => this.onSelectHandler('totalFloors', option.value),
   }

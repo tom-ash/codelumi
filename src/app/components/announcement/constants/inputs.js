@@ -35,8 +35,8 @@ export const inputs = {
   area: {
     icon: 'fas fa-ruler-combined',
     create: {
-      pl: 'Powierzchnia (m2)',
-      en: 'Area (sqm)'
+      pl: 'Powierzchnia',
+      en: 'Area'
     },
     indexMin: {},
     indexMax: {}

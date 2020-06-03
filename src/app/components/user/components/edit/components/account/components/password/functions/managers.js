@@ -14,7 +14,6 @@ export function emailManager() {
     controlled: false,
     classNames: { container: 'form-input text' },
     label: this.languageObjectHandler(label),
-    children: <i className={icon} />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.emailManager().validate(value),
     validate: value => {
@@ -44,7 +43,6 @@ export function verificationManager() {
     controlled: false,
     classNames: { container: 'form-input text' },
     label: this.languageObjectHandler(label),
-    children: <i className={icon} />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: (value) => this.verificationManager().validate(value),
     validate: (value) => {
@@ -70,7 +68,6 @@ export function passwordManager() {
     autoComplete: 'new-password',
     classNames: { container: 'form-input text' },
     label: this.languageObjectHandler(label),
-    children: <i className={icon} />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: (value) => this.passwordManager().validate(value),
     validate: (value) => {

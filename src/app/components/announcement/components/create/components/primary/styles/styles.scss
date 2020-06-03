@@ -15,6 +15,31 @@
       }
     }
   }
+
+  .form-input {
+    .sqm {
+      position: absolute;
+      top: 1px;
+      right: 12px;
+      bottom: 0;
+      line-height: 42px;
+      opacity: 0;
+    }
+    &.value, &.focus {
+      .sqm {
+        opacity: 1;
+        transition: opacity .2s ease-in;
+        .sq {
+          top: -4px;
+          position: relative;
+          font-size: 12px;
+          padding-left: 1px;
+        }
+      }
+    }
+
+  }
+
   .radio-container {
     margin-bottom: 18px;
     .title {
@@ -102,13 +127,16 @@
         width: 64px;
         .input {
           padding: 0;
-          padding-left: 20px;
+          padding-left: 16px;
         }
-        .fa-caret-down {
+        .fa-chevron-down {
           background: none;
-          margin-left: 38px;
           width: 13px;
           border: none;
+          position: absolute;
+          top: 17px;
+          right: 11px;
+          margin: auto;
         }
       }
     }
@@ -116,12 +144,11 @@
   .input-explanation {
     position: relative;
     margin-bottom: 12px;
-    padding-left: 28px;
+    padding-left: 30px;
     .fas {
       position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
+      top: 3px;
+      left: 3px;
       height: 16px;
       margin: auto;
       font-size: 17px;

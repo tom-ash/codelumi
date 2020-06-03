@@ -73,7 +73,7 @@ export function districtManager() {
     classNames: { container: 'form-input select' },
     value: this.props.district,
     label: this.languageObjectHandler(text),
-    children: <i className={icon} />,
+    // children: <i className={icon} />,
     options: [{ value: '', text: '' }].concat(districts),
     onFocus: () => this.props.changeErrors({ district: noError }),
     onSelect: (option) => this.onSelectHandler('district', option.value),
@@ -95,7 +95,7 @@ export function areaManager() {
     value: this.props.area,
     match: /^\d+$/,
     label: this.languageObjectHandler(text),
-    children: <i className={icon} />,
+    children: <div className='sqm'>{this.languageObjectHandler({ pl: <span>m<span className='sq'>2</span></span>, en: 'sqm' })}</div>,
     onFocus: () => this.props.changeErrors({ area: noError }),
     onChange: (value) => this.props.changeInputs({ area: value }),
     onBlur: () => {
@@ -133,7 +133,6 @@ export function rentAmountManager() {
     value: this.props[rentAmountType],
     match: /^\d+$/,
     label,
-    children: <i className={icon} />,
     onFocus: () => changeErrors({ [rentAmountType]: noError }),
     onChange: (value) => changeInputs({ [rentAmountType]: value }),
     onBlur: () => {
@@ -155,7 +154,7 @@ export function rentCurrencyManager() {
 
   return {
     classNames: { container: 'form-input select rent-currency' },
-    children: <i className="fas fa-caret-down"></i>,
+    children: <i className="fas fa-chevron-down" />,
     value,
     options: currencies,
     onSelect: ({ value: optionValue }) => this.onSelectHandler('rentCurrency', optionValue),

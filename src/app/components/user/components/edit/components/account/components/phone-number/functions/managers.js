@@ -11,7 +11,6 @@ export function phoneCodeManager() {
   return {
     controlled: false,
     classNames: { container: 'form-input select country-code' },
-    children: <i className={icon} />,
     value: this.props.phoneCode,
     options: [{ value: '+48', text: '+48' }, { value: '+1', text: '+1' }, { value: '+44', text: '+44' }],
     onSelect: (option) => this.props.changeInputs({ phoneCode: option.value })
@@ -28,7 +27,6 @@ export function bodyManager() {
     controlled: false,
     classNames: { container: 'form-input text phone-body' },
     label: this.languageObjectHandler(label),
-    children: <i className={icon} />,
     onChange: (value) => {
       if (/^\d*$/.test(value)) {
         changeErrors({ phone: noError })

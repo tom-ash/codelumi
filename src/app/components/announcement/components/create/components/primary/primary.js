@@ -36,7 +36,6 @@ class AnnouncementCreatePrimary extends React.Component {
     return (
       <div id='announcement-create-primary' className='section'>
         <h2>
-          <div className='number'>1</div>
           <div className='text'>{this.languageObjectHandler({ pl: 'Kategoria', en: 'Category' })}</div>
           <div className='float-clear' />
         </h2>
@@ -44,7 +43,6 @@ class AnnouncementCreatePrimary extends React.Component {
           <ManagedRadio {...this.categoryManager()}/>
         </div>
         <h2>
-          <div className='number'>2</div>
           <div className='text'>{this.languageObjectHandler({ pl: 'Dane wymagane', en: 'Required Data' })}</div>
           <div className='float-clear' />
         </h2>

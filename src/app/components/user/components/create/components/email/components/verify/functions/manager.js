@@ -11,7 +11,6 @@ export function verificationManager() {
     controlled: false,
     classNames: { container: 'form-input text' },
     label: this.languageHandler('Kod weryfikacyjny', 'Verification Code'),
-    children: <i className={icon} />,
     onChange: () => changeErrors({ verification: { pl: '', en: '' }}),
     onBlur: (value) => this.verificationManager().validate(value),
     validate: () => {

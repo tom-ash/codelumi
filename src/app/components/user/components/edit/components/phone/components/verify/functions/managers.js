@@ -11,7 +11,6 @@ export function verificationManager() {
     controlled: false,
     classNames: { container: 'form-input text'},
     label: this.languageObjectHandler(label),
-    children: <i className={icon} />,
     onFocus: () => this.props.changeErrors({ phoneVerification: noError }),
     onBlur: (value) => this.verificationManager().validate(value),
     validate: (value) => {

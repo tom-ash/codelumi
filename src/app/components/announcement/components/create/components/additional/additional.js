@@ -10,7 +10,6 @@ import Calendar from 'react-calendar/dist/entry.nostyle'
 import { parseDate } from '../../../../../../functions/date-parsers'
 import { labelProvider } from '../../../../../../functions/providers/label'
 import { floorsProvider } from './functions/floors-provider'
-// im
 
 class AnnouncementCreateAdditional extends React.Component {
   constructor(props) {

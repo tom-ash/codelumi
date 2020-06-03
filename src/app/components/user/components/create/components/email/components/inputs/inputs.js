@@ -38,7 +38,7 @@ class UserCreateEmailInputs extends React.Component {
       <div className='user-create-email-inputs-container'>
         <div className='radio-container'>
           <div className='title'>
-            <i className='icon far fa-list-alt' /> {this.languageObjectHandler({ pl: 'Rodzaj konta', en: 'Account Type' })}
+            {this.languageObjectHandler({ pl: 'Rodzaj konta', en: 'Account Type' })}
           </div>
           <ManagedRadio {...this.accountTypeManager()}/>
         </div>
