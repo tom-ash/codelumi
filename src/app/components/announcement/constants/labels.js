@@ -17,7 +17,7 @@ export const labels = {
   },
   area: {
     icon: 'fas fa-square',
-    text: { pl: 'Powierzchnia (m2)', en: 'Area (sqm)' }
+    text: { pl: 'Powierzchnia', en: 'Area' }
   },
   rooms: {
     icon: 'fas fa-door-closed',

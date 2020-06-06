@@ -27,7 +27,6 @@ export function categoryManager() {
   } = errors
 
   const categoryOptions = categories.map(category => {
-
     return { value: category.value, text: category.label[language]}
   })
 

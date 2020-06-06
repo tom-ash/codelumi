@@ -28,9 +28,9 @@ export function compositeManagerProvider(inputName) {
       onFocusCoverZIndex: 9,
       label: this.labelProvider(inputName),
       children: <React.Fragment>
-        <i className={`icon ${inputs[inputName].icon}`} />
-
-        {value !== '' && <CloseButton classNames='index' onClick={() => {
+        {value === '' ?
+        <i className="fas fa-chevron-down" />
+        : <CloseButton classNames='index' onClick={() => {
           this.props.changeInputs({
             [`${inputName}Min`]: '', [`${inputName}Max`]: '',
             ...inputName === 'rent' && { rentCurrency: '' },

@@ -16,8 +16,9 @@ export function categoryManager() {
     onFocusCoverZIndex: 10,
     label: this.labelProvider('category'),
     children: <React.Fragment>
-      <i className='icon far fa-list-alt' />
-      {value !== '' && <CloseButton classNames='index' onClick={() => {
+      {value === '' ?
+      <i className="fas fa-chevron-down" />
+      : <CloseButton classNames='index' onClick={() => {
         this.props.changeInputs({ category: '', offset: 0 })
         this.props.changeControl({ fetch: true })
       }}/>}
@@ -39,8 +40,9 @@ export function districtManager() {
     onFocusCoverZIndex: 10,
     label: this.labelProvider('district'),
     children: <React.Fragment>
-      <i className='icon fas fa-map-marker-alt' />
-      {value !== '' && <CloseButton classNames='index' onClick={() => {
+      {value === '' ?
+      <i className="fas fa-chevron-down" />
+      : <CloseButton classNames='index' onClick={() => {
         this.props.changeInputs({ district: '', offset: 0 })
         this.props.changeControl({ fetch: true })
       }}/>}
@@ -94,7 +96,6 @@ export function availabilityDateManager() {
       />
     ),
     children: <React.Fragment>
-    <i className='icon far fa-calendar-alt' />
     {value !== '' &&
     <i
       className='close fas fa-times'
