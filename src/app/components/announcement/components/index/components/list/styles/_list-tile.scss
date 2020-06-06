@@ -3,24 +3,18 @@
   z-index: 3;
   border-radius: 4px;
   width: 400px;
-  margin-top: 96px;
+  margin-bottom: 72px;
+
+  min-height: 400px;
+
   .invisible {
     opacity: 0.4;
   }
   &.last {
-    margin-bottom: 72px;
+    margin-bottom: 144px;
   }
   @media #{$small-pc} {
     width: 100%;
-  }
-  .picture {
-    position: relative!important;
-    $width: 100%;
-    width: $width;
-    height: 0;
-    background-size: ($width * 1.17777) auto;
-    padding-bottom: ($width / 1.7777);
-    border-radius: 0;
   }
   .control {
     position: absolute;

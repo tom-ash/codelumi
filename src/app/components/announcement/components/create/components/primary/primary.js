@@ -10,7 +10,6 @@ import { labelProvider } from '../../../../../../functions/providers/label'
 import { getRentAmounts } from '../../functions/get-rent-amounts'
 import { floorsProvider } from './functions/floors-provider'
 import { sectionHeaderProvider } from '../../../../../../functions/providers/headers'
-import { rentInputInfoProvider } from './functions/rent-input-info-provider'
 
 class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {
@@ -19,8 +18,7 @@ class AnnouncementCreatePrimary extends React.Component {
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.categoryManager = managers.categoryManager.bind(this)
     this.districtManager = managers.districtManager.bind(this)
-    this.rentCurrencyManager = managers.rentCurrencyManager.bind(this)
-    this.rentAmountManager = managers.rentAmountManager.bind(this)
+    
     this.areaManager = managers.areaManager.bind(this)
     this.handleErrorOnSelect = handleErrorOnSelect.bind(this)
     this.handleErrorOnValidate = handleErrorOnValidate.bind(this)
@@ -29,31 +27,18 @@ class AnnouncementCreatePrimary extends React.Component {
     this.getRentAmounts = getRentAmounts.bind(this)
     this.floorsProvider = floorsProvider.bind(this)
     this.sectionHeaderProvider = sectionHeaderProvider.bind(this)
-    this.rentInputInfoProvider = rentInputInfoProvider.bind(this)
   }
   
   render() {
     return (
       <div id='announcement-create-primary' className='section'>
         <h2>
-          <div className='text'>{this.languageObjectHandler({ pl: 'Kategoria', en: 'Category' })}</div>
-          <div className='float-clear' />
-        </h2>
-        <div className='radio-container'>
-          <ManagedRadio {...this.categoryManager()}/>
-        </div>
-        <h2>
           <div className='text'>{this.languageObjectHandler({ pl: 'Dane wymagane', en: 'Required Data' })}</div>
           <div className='float-clear' />
         </h2>
+        <ManagedSelect {...this.categoryManager()}/>
         <ManagedSelect {...this.districtManager()}/>
         <ManagedText {...this.areaManager()}/>
-        {this.rentInputInfoProvider()}
-        <div className='rent-inputs-container'>
-          <ManagedText {...this.rentAmountManager()}/>
-          <ManagedSelect {...this.rentCurrencyManager()}/>
-          <div className='float-clear'/>
-        </div>
       </div>
     )
   }

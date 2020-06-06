@@ -20,7 +20,7 @@
     .sqm {
       position: absolute;
       top: 1px;
-      right: 12px;
+      right: 42px;
       bottom: 0;
       line-height: 42px;
       opacity: 0;
@@ -37,7 +37,17 @@
         }
       }
     }
-
+    .fa-chevron-down {
+      background: none;
+      border: none !important;
+      width: 13px;
+      border: none;
+      position: absolute;
+      top: 17px;
+      right: 11px;
+      margin: auto;
+      width: 13px !important;
+    }
   }
 
   .radio-container {
@@ -112,47 +122,6 @@
       .react-calendar__navigation button {
         font-size: 16px;
       }
-    }
-  }
-  .rent-inputs-container {
-    position: relative;
-    .form-input {
-      &.rent-amount {
-        margin-right: 72px;
-      }
-      &.rent-currency {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 64px;
-        .input {
-          padding: 0;
-          padding-left: 16px;
-        }
-        .fa-chevron-down {
-          background: none;
-          width: 13px;
-          border: none;
-          position: absolute;
-          top: 17px;
-          right: 11px;
-          margin: auto;
-        }
-      }
-    }
-  }
-  .input-explanation {
-    position: relative;
-    margin-bottom: 12px;
-    padding-left: 30px;
-    .fas {
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      height: 16px;
-      margin: auto;
-      font-size: 17px;
-      color: #7FB3D5;
     }
   }
 }

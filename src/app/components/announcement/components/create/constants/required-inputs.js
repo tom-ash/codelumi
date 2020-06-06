@@ -80,7 +80,6 @@ export const requiredInputs = {
 
 export const requiredInputsArray = [
   'district',
-  'rentAmount',
   'area',
   'rooms',
   'floor',

@@ -4,9 +4,37 @@
   max-width: 360px;
   padding-top: 0!important;
   padding-bottom: 4px;
+
+  .rent-inputs-container {
+    position: relative;
+    .form-input {
+      &.rent-amount {
+        margin-right: 72px;
+      }
+      &.rent-currency {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 64px;
+        .input {
+          padding: 0;
+          padding-left: 16px;
+        }
+        .fa-chevron-down {
+          background: none;
+          width: 13px;
+          border: none;
+          position: absolute;
+          top: 17px;
+          right: 11px;
+          margin: auto;
+        }
+      }
+    }
+  }
+
   .checkbox {
     &.availability-date {
-      // margin-bottom: 18px;
       .input {
         left: 0;
       }

@@ -62,11 +62,6 @@ class AnnouncementIndexList extends React.Component {
           </div>
         </div>
         }
-        <div className='announcements-amount'>
-          {amount !== null &&
-          `${whichAnnouncements} ${amount}`
-          }
-        </div>
         <div className='pagination-container'>
           <ManagedPagination {...this.paginationManager()} />
         </div>

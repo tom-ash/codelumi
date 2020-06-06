@@ -29,8 +29,6 @@ class AnnouncementCreateFeatures extends React.Component {
     this.handleErrorOnValidate = handleErrorOnValidate.bind(this)
     this.categoryManager = managers.categoryManager.bind(this)
     this.districtManager = managers.districtManager.bind(this)
-    this.rentCurrencyManager = managers.rentCurrencyManager.bind(this)
-    this.rentAmountManager = managers.rentAmountManager.bind(this)
     this.areaManager = managers.areaManager.bind(this)
     this.publish = publish.bind(this)
     this.savePicture = savePicture.bind(this)

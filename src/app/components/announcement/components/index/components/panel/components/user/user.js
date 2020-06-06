@@ -15,6 +15,8 @@ class AnnouncementIndexPanelUser extends React.Component {
   }
 
   render() {
+    return null
+    
     return (
       <div id='announcement-index-panel-user'>
         <div className='switches'>

@@ -7,58 +7,24 @@
   position: relative;
   width: 640px;
   margin: 0 auto;
-  padding: 12px;
-
-  // .announcement-show-tile {
-  //   position: absolute!important;
-  //   top: 24px;
-  //   right: 24px;
-  //   width: 360px;
-  //   margin: 0;
-  // }
+  padding-bottom: 0 12px 72px;
 
   @media #{$small-pc} {
     max-width: 456px;
     width: 100%;
     padding: 12px 8px;
   }
-  .list-pagination {
-    @extend %list-pagination;
-  }
-  .announcements-amount {
-    background: #212F3D;
-    color: white;
-    padding: 8px;
-    border-radius: 2.5px;
-    left: 0;
-    width: 160px;
-    text-align: center;
-    margin: 0 auto;
-    min-height: 32px;
-  }
-  .pagination-container {
-    position: relative;
-    text-align: center;
-    margin-top: 12px;
-    .input {
-      margin-bottom: 8px;
-    }
-  }
+
+
+
   .announcements {
-    margin-top: 64px;
     min-height: 480px;
     text-align: left;
     .announcement-show-tile {
       @extend %list-tile;
     }
   }
-  .loading {
-    .list-pagination {
-      .input, .arrow {
-        background: lightgray;
-      }
-    }
-  }
+
   .delete {
     .cover {
       z-index: 10;

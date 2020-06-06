@@ -63,20 +63,10 @@ class AnnouncementIndexSearch extends React.Component {
         <h1 id='header-panel'>
           {this.languageObjectHandler(mainHeader)}
         </h1>
-
         {showAddAnnouncement && <ManagedLink {...this.addAnnouncementManager()} />}
-
         <AnnouncementIndexPanel />
         {showVisitor &&
         <React.Fragment>
-          {/* <OffsetSwitcher
-            changeInputs={changeInputs}
-            changeControl={changeControl}
-            offset={offset}
-            amount={amount}
-            languageHandler={this.languageHandler}
-            classNames={'shared'}
-          /> */}
           <AnnouncementIndexFull />
           <AnnouncementIndexMap />
         </React.Fragment>}

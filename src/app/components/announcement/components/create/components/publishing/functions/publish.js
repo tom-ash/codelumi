@@ -3,9 +3,9 @@ import { requiredInputs, requiredInputsArray } from '../../../constants/required
 
 export function publish() {
   const validationObject = {
+    category: this.categoryManager().validate(),
     district: this.districtManager().validate(),
     area: this.areaManager().validate(),
-    rentAmount: this.rentAmountManager().validate(),
     pictures: this.validatePictures(),
     map: this.validateMap()
   }

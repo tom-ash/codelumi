@@ -1,37 +1,52 @@
 import React from 'react'
 import { inputs } from '../../../../../constants/inputs'
-import { requiredInputs } from '../../../constants/required-inputs'
-import { categories } from '../../../../../constants/categories'
-import { districts } from '../../../../../constants/districts'
 import { numberOptionsProvider } from '../../../../../../../functions/shared'
 
-const noError = { pl: '', en: '' }
-
-
-
-
-
-export function areaManager() {
+export function rentAmountManager() {
   const {
-    icon,
     create: text
-  } = inputs.area
+  } = inputs.rentHeight
+
+  const {
+    category,
+    errors,
+    changeInputs
+  } = this.props
+
+  let label = this.languageObjectHandler(text)
+
+  if (category === 0 || category === 1) label = this.languageObjectHandler({ pl: 'Miesięczny czynsz netto', en: 'Monthly Net Rent'})
+  
+  const rentAmountType = category === 2 ? 'grossRentAmount' : 'netRentAmount'
 
   return {
-    id: requiredInputs.area.id,
-    classNames: { container: 'form-input text' },
-    value: this.props.area,
+    classNames: { container: 'form-input text rent-amount' },
+    value: this.props[rentAmountType],
+    children: <i className='fas fa-pen' />,
     match: /^\d+$/,
-    label: this.languageObjectHandler(text),
-    children: <i className={icon} />,
-    onFocus: () => this.props.changeErrors({ area: noError }),
-    onChange: (value) => this.props.changeInputs({ area: value }),
+    label,
+    onChange: (value) => changeInputs({ [rentAmountType]: value }),
     onBlur: () => {
-      this.areaManager().validate()
       this.getRentAmounts()
     },
-    validate: () => this.handleErrorOnValidate('area', this.props.area),
-    error: this.languageObjectHandler(this.props.errors.area)
+    error: this.languageObjectHandler(errors[rentAmountType])
+  }
+}
+
+export function rentCurrencyManager() {
+  const { rentCurrency: value } = this.props
+  const currencies = [
+    { value: 0, text: 'zł' },
+    { value: 1, text: '€' },
+    { value: 2, text: '$' }
+  ]
+
+  return {
+    classNames: { container: 'form-input select rent-currency' },
+    children: <i className="fas fa-chevron-down" />,
+    value,
+    options: currencies,
+    onSelect: ({ value: optionValue }) => this.onSelectHandler('rentCurrency', optionValue),
   }
 }
 
@@ -48,9 +63,8 @@ export function roomsManager() {
   if (category === 2) label = this.languageObjectHandler({ pl: 'Liczba pokoi', en: 'Rooms Amount' })
 
   return {
-    display: category === '' ? 'none' : 'block',
-    id: requiredInputs.rooms.id,
     classNames: { container: 'form-input select' },
+    children: <i className="fas fa-chevron-down" />,
     value: this.props.rooms,
     label,
     options: numberOptionsProvider(99),
@@ -65,8 +79,8 @@ export function floorManager() {
   } = inputs.floor
 
   return {
-    id: requiredInputs.floor.id,
     classNames: { container: 'form-input select' },
+    children: <i className="fas fa-chevron-down" />,
     value: this.props.floor,
     label: this.languageObjectHandler(text),
     options: this.floorsProvider(),
@@ -81,8 +95,8 @@ export function totalFloorsManager() {
   } = inputs.totalFloors
 
   return {
-    id: requiredInputs.totalFloors.id,
     classNames: { container: 'form-input select' },
+    children: <i className="fas fa-chevron-down" />,
     value: this.props.totalFloors,
     label: this.languageObjectHandler(text),
     options: numberOptionsProvider(99),

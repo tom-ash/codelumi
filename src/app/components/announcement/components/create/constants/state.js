@@ -30,7 +30,7 @@ export const control = {
 
 export const inputs = {
   id: '',
-  category: 2,
+  category: '',
   district: '',
   rentCurrency: 0,
   netRentAmount: '',

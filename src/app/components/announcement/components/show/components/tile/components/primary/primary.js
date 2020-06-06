@@ -37,6 +37,8 @@ class AnnouncementCreatePrimary extends React.Component {
 
     const currency = parseCurrency(rentCurrency)
 
+    if (!grossRentAmount && !rooms && !floor && !totalFloors && !availabilityDate) return null
+
     return (
       <div id='announcement-show-tile-primary'>
         <div className='rent-column left'>
@@ -108,6 +110,8 @@ function PresentRent({
   languageObjectHandler,
   net
 }) {
+  if (!amount) return null
+
   return (
     <div className={`rent-container ${type}`}>
       <div className='amount'>
