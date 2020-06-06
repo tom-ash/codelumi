@@ -95,17 +95,16 @@ export function availabilityDateManager() {
         }}
       />
     ),
-    children: <React.Fragment>
-    {value !== '' &&
-    <i
-      className='close fas fa-times'
-      onClick={() => {
-        this.props.changeInputs({ availabilityDate: '', offset: 0 })
-        this.props.changeControl({ fetch: true })
-      }}
-    />
-    }
-  </React.Fragment>,
+    children: (
+      <React.Fragment>
+        {value === '' ?
+        <i className="fas fa-chevron-down" />
+        : <CloseButton classNames='index' onClick={() => {
+          this.props.changeInputs({ availabilityDate: '', offset: 0 })
+          this.props.changeControl({ fetch: true })
+        }}/>}
+      </React.Fragment>
+    ),
     value: value ? value : '',
     options: [ { value: '', text: '' }, { value, text: value } ],
     label: this.labelProvider('availabilityDate')
