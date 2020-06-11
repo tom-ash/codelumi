@@ -38,6 +38,7 @@ export const requiredInputs = {
 }
 
 export const requiredInputsArray = [
+  'category',
   'district',
   'area',
   'pictures',

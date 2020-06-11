@@ -69,6 +69,21 @@ class AnnouncementIndexMap extends React.Component {
                   className='announcement-show-container'
                   key={id}
                   href={buildLink({ ...announcement, language })}
+
+                  onMouseOver={() => {
+                    const pin = document.getElementById(`googl-map-pin-${id}`)
+                    if (!pin) return
+
+                    pin.classList.add('focused');
+                  }}
+
+                  onMouseLeave={() => {
+                    const pin = document.getElementById(`googl-map-pin-${id}`)
+                    if (!pin) return
+
+                    pin.classList.remove('focused');
+                  }}
+
                   onClick={e => {
                     e.preventDefault()
                     const map = window.googleMap
