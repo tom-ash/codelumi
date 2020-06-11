@@ -2,7 +2,25 @@
 @import '../components/steps/styles/styles.scss';
 
 #announcement-create {
-
+  box-shadow: none;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 58px 0;
+  @media #{$tablet} {
+    margin: 12px auto;
+  }
+  .required-inputs {
+    margin-top: 36px;
+    border-left: 3px solid #85C1E9;
+    padding: 18px;
+    background: white;
+  }
+  .optional-inputs {
+    margin-top: 36px;
+    border-left: 3px solid #A9DFBF;
+    padding: 18px;
+    background: white;
+  }
   .form-input {
     .fa-chevron-down, .fa-pen {
       color: #A6ACAF !important;
@@ -22,6 +40,7 @@
     position: relative;
     margin-bottom: 12px;
     padding-left: 30px;
+    // color: 
     .fas {
       position: absolute;
       top: 3px;
@@ -33,28 +52,17 @@
     }
   }
 
-  box-shadow: none;
-  max-width: 768px;
-  margin: 0 auto;
-  padding: 82px 0;
-  @media #{$tablet} {
-    margin: 12px auto;
-    padding: 58px 12px;
-  }
-  .inner {
-    margin-top: 24px;
-    background: white;
-    padding: 36px;
-    @media #{$tablet} {
-      padding: 12px;
-    }
-  }
+
 
   h1 {
     line-height: 24px;
     text-align: justify;
     color: #7B7D7D;
     font-size: 16px;
+    margin: 0;
+    @media #{$tablet} {
+      padding: 0 18px;
+    }
   }
 
   .description-question {
@@ -62,9 +70,16 @@
     display: inline-block;
     cursor: pointer;
     text-decoration: underline;
-    color: #626567;
+    color: #909497;
+
+    // margin-bottom: 24px;
+    margin-top: 4px;
+    
     &:hover {
       color: gray;
+    }
+    @media #{$tablet} {
+      padding: 0 18px;
     }
   }
 
@@ -81,8 +96,9 @@
     .blog-paragraph {
       position: relative;
       font-size: 14px;
-      margin-bottom: 4px;
-      color: #626567;
+      margin-top: 4px;
+      margin-bottom: 0;
+      // color: #A6ACAF;
       .bull {
         left: 0;
         margin-right: 4px;
@@ -94,11 +110,15 @@
     }
   }
   h2 {
-    margin-top: 36px;
-    color: #566573;
+    margin-top: 0;
+    color: #3498DB;//#566573;
     text-align: justify;
 
     font-size: 15px;
+
+    &.optional {
+      color: #229954;
+    }
 
     .number {
       float: left;
@@ -110,10 +130,6 @@
       border-radius: 12px;
       border: 1px solid #566573;
       margin-right: 6px;
-    }
-    .text {
-      float: left;
-      line-height: 22px;
     }
   }
 
@@ -158,9 +174,9 @@
     margin-bottom: 24px;
   }
   .input-label {
-    margin-bottom: 12px;
+    margin-bottom: 9px;
     color: #566573;
-    font-size: 15px;
+    font-size: 14px;
     .fas {
       color: #626567;
       font-size: 13px;

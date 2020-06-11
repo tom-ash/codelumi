@@ -13,7 +13,7 @@ export const inputs = {
   },
   businessName: {
     icon: 'fas fa-industry',
-    label: { pl: 'Nazwa (firma)', en: 'Business Name' }
+    label: { pl: 'Nazwa przedsiębiorcy', en: 'Business Name' }
   },
   taxNumber: {
     icon: 'fas fa-ellipsis-h',

@@ -29,8 +29,7 @@ function titleProvider() {
   switch (item) {
     case 'firstName': return this.languageObjectHandler({ pl: 'Imię', en: 'First Name' })
     case 'lastName': return this.languageObjectHandler({ pl: 'Nazwisko', en: 'Last Name' })
-    case 'businessName': return this.languageObjectHandler({ pl: 'Nazwa (firma)', en: 'Business name' })
-    case 'businessName': return this.languageObjectHandler({ pl: 'Nazwa (firma)', en: 'Business name' })
+    case 'businessName': return this.languageObjectHandler({ pl: 'Nazwa przedsiębiorcy', en: 'Business name' })
     case 'taxNumber': return this.languageObjectHandler({ pl: 'Numer identyfikacji podatkowej', en: 'Tax ID' })
     case 'phone': return this.languageObjectHandler({ pl: 'Numer telefonu', en: 'Phone Number' })
     case 'email': return this.languageObjectHandler({ pl: 'Adres email', en: 'Email Address' })
@@ -202,11 +201,11 @@ function editInputProvider() {
         inputName='businessName'
         id='user-edit-account-business-name-text'
         api_suffix={'business_name'}
-        label={this.languageObjectHandler({ pl: 'Nazwa (firma)', en: 'Business Name' })}
+        label={this.languageObjectHandler({ pl: 'Nazwa przedsiębiorcy', en: 'Business Name' })}
         icon={inputs.businessName.icon}
         currentValue={businessNameCurrentValue}
         connecting={businessNameConnecting}
-        errorText={{ pl: 'Nazwa (firma) nie może być puste.', en: 'Business Name can\'t be blank.' }}
+        errorText={{ pl: 'Nazwa przedsiębiorcy nie może być puste.', en: 'Business Name can\'t be blank.' }}
         error={businessNameError}
         changeErrors={changeErrors}
         changeControl={changeControl}

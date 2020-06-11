@@ -6,14 +6,13 @@
       &.pl {
         margin-bottom: 6px;
       }
+      &.en {
+        margin-bottom: 0;
+      }
     }
   }
   .form-input.textarea {
-    margin-top: -12px;
-    &.pl {
-      margin-top: 0;
-      margin-bottom: 12px;
-    }
+    margin-top: 0;
   }
 }
   

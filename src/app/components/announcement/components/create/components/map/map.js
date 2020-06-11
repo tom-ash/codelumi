@@ -21,6 +21,9 @@ class AnnouncementCreatMap extends React.Component {
   render() {
     return (
       <div id='announcement-create-map' className='section'>
+        <div className='input-label'>
+          {this.languageObjectHandler({ pl: 'Lokalizacja', en: 'Location' })}
+        </div>
         <div className='hint'>
           {this.languageObjectHandler({
             pl: 'Kliknij lewym przyciskiem na mapie, aby dodać marker.',

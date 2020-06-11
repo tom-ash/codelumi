@@ -14,12 +14,6 @@ export const requiredInputs = {
       en: 'select district'
     }
   },
-  rentCurrency: {
-    id: 'announcement-create-rent-currency'
-  },
-  rentAmount: {
-    id: 'announcement-create-rent-amount'
-  },
   area: {
     id: 'announcement-create-area',
     error: {
@@ -27,53 +21,18 @@ export const requiredInputs = {
       en: 'provide area'
     }
   },
-  rooms: {
-    id: 'announcement-create-rooms',
-    error: {
-      pl: 'wybierz liczbę pomieszczeń',
-      en: 'select rooms amount'
-    }
-  },
-  floor: {
-    id: 'announcement-create-floor',
-    error: {
-      pl: 'wybierz piętro',
-      en: 'select floor'
-    }
-  },
-  totalFloors: {
-    id: 'annoucement-create-total-floors',
-    error: {
-      pl: 'wybierz całkowitą liczbę pięter',
-      en: 'select total floors'
-    }
-  },
-  availabilityDateSelect: {
-    id: 'availability-date-select',
-    error: {
-      pl: 'wybierz datę dostępności',
-      en: 'select availability date'
-    }
-  },
-  availabilityDate: {
-    id: 'availability-date',
-    error: {
-      pl: 'wybierz datę dostępności',
-      en: 'select availability date'
-    }
-  },
   pictures: {
     id: 'announcement-create-pictures-input',
     error: {
-      pl: 'dodaj przynajmniej jedno zdjęcie',
-      en: 'add at least one picture'
+      pl: 'Dodaj przynajmniej jedno zdjęcie.',
+      en: 'Add at least one picture.'
     }
   },
   map: {
     id: 'google-map-container',
     error: {
-      pl: 'wybierz lokalizację',
-      en: 'select location'
+      pl: 'Wskaż lokalizację.',
+      en: 'Pinpoint location.'
     }
   }
 }
@@ -81,9 +40,6 @@ export const requiredInputs = {
 export const requiredInputsArray = [
   'district',
   'area',
-  'rooms',
-  'floor',
-  'totalFloors',
   'pictures',
   'map'
 ]

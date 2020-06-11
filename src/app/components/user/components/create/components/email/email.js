@@ -3,13 +3,15 @@ import { connect } from 'react-redux'
 import UserCreateEmailInputs from './components/inputs/inputs'
 import UserCreateConsents from '../consents/consents'
 import UserCreateSubmit from './components/submit/submit'
-import UserCreateConnecting from '../connecting/connecting'
 import UserCreateEmailVerify from './components/verify/verify'
 import * as mappers from './constants/mappers'
 
 class UserCreateEmail extends React.Component {
   render() {
-    const { token } = this.props
+    const {
+      token,
+      showAnnouncementCreate
+    } = this.props
 
     return (
       <div id='user-create-email'>
@@ -17,6 +19,7 @@ class UserCreateEmail extends React.Component {
         <React.Fragment>
           <UserCreateEmailInputs />
           <UserCreateConsents />
+          {/* {!showAnnouncementCreate && <UserCreateSubmit />} */}
           <UserCreateSubmit />
         </React.Fragment>
         :

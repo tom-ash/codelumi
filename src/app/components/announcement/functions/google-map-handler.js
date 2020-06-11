@@ -101,7 +101,7 @@ function setOptions(options) {
       lat: 52.227,
       lng: isMobile ? 21.009 : 21.105
     },
-    zoom: isMobile ? 11 : 11,
+    zoom: 11,
     fullscreenControl: false,
     clickableIcons: false,
     zoomControl: false,

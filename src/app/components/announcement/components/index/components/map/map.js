@@ -75,11 +75,11 @@ class AnnouncementIndexMap extends React.Component {
                     const options = {
                       center: {
                         lat,
-                        lng: lng + .016
+                        lng: lng + .037
                       },
-                      zoom: 13.5
+                      zoom: 12.4
                     }
-                    map.setOptions(setOptions.call(this, options))
+                    map.setOptions(options)
                     viewAnnouncement(id)
                     changeData({ tileId: id })
                   }}
@@ -142,129 +142,3 @@ class AnnouncementIndexMap extends React.Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementIndexMap)
-
-
-
-function setOptions(options) {
-  options = options || {}
-
-  const {
-    isMobile
-  } = this.props
-
-  return {
-    center: {
-      lat: isMobile ? 52.220: 52.202,
-      lng: isMobile ? 21.012 : 20.985
-    },
-    zoom: isMobile ? 11.8 : 11.6,
-    fullscreenControl: false,
-    clickableIcons: false,
-    zoomControl: false,
-    ...!isMobile && { gestureHandling: 'greedy' },
-    styles,
-    ...options
-  }
-}
-
-
-
-
-const styles = 
-[
-
- {
-   "featureType": "poi",
-   "stylers": [
-     {
-       "visibility": "off"
-     }
-   ]
- },
- {
-   "featureType": "road",
-   "elementType": "labels.icon",
-   "stylers": [
-     {
-       "visibility": "off"
-     }
-   ]
- },
-
- {
-  "featureType": "transit.line",
-  "elementType": "geometry",
-  "stylers": [
-    { "color": "#AEB6BF" }
-  ]
-},
-
-{
-  "featureType": "road.arterial",
-  "elementType": "geometry",
-  "stylers": [
-    { "color": "#FDFEFE" }
-  ]
-},
-
-{
-  "featureType": "road.highway",
-  "elementType": "geometry",
-  "stylers": [
-    { "color": "#FAD7A0" }
-  ]
-},
-
-{
-  "featureType": "water",
-  // "elementType": "geometry",
-  "stylers": [
-    { "color": "#5DADE2" }
-  ]
-},
-
-
-
-//  transit.station.rail
-
- {
-  "featureType": "administrative.country",
-  "elementType": "geometry",
-  "stylers": [
-      {
-          "visibility": "simplified"
-      },
-      {
-          "hue": "#ff0000"
-      }
-  ]
-},
-// {
-//   "featureType": "water",
-//   "elementType": "geometry",
-//   "stylers": [
-//       {
-//           "saturation": "46"
-//       },
-//       {
-//           "color": 'red'
-//       }
-//   ]
-// }
-
-{
-  "featureType": "poi.park",
-  "elementType": "geometry",
-  "stylers": [
-      {
-          "color": "#A9DFBF"
-      },
-      {
-          "visibility": "on"
-      }
-  ]
-},
-
-
-
-]

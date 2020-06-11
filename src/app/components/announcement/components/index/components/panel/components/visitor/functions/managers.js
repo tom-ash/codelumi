@@ -17,11 +17,11 @@ export function categoryManager() {
     label: this.labelProvider('category'),
     children: <React.Fragment>
       {value === '' ?
-      <i className="fas fa-chevron-down" />
-      : <CloseButton classNames='index' onClick={() => {
+      <i className="fas fa-chevron-down" /> :
+      <CloseButton classNames='index' onClick={() => {
         this.props.changeInputs({ category: '', offset: 0 })
         this.props.changeControl({ fetch: true })
-      }}/>}
+      }} />}
     </React.Fragment>,
     options: this.buildSelectCategories(),
     onSelect: (option) => {

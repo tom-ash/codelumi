@@ -42,6 +42,9 @@
     &.phone-country-code {
       position: absolute;
       width: 84px;
+      .input {
+        padding-left: 15px;
+      }
     }
     &.phone-body {
       margin-left: 96px;

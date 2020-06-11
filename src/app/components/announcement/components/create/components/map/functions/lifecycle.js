@@ -1,12 +1,25 @@
 import { addGoogleMapListeners } from './add-google-map-listeners'
 import { removeGoogleMapListeners } from './remove-google-map-listeners'
 
+const options = {
+  center: {
+    lat: 52.227,
+    lng: 21.015,
+  }
+}
+
 export function componentDidMount() {
-  this.googleMapHandler(() => this.props.changeControl({ mapLoaded: true }))
+  this.googleMapHandler(
+    () => this.props.changeControl({ mapLoaded: true }),
+    options
+  )
 }
 
 export function componentDidUpdate(prevProps) {
-  this.googleMapHandler(() => this.props.changeControl({ mapLoaded: true }))
+  this.googleMapHandler(
+    () => this.props.changeControl({ mapLoaded: true }),
+    options
+  )
   if (this.props.mapLoaded && !prevProps.mapLoaded) addGoogleMapListeners.call(this)
   if (this.props.latitude != prevProps.latitude && this.props.longitude != prevProps.longitude) {
     placeMarker.call(this)

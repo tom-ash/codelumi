@@ -4,12 +4,11 @@
 #announcement-create-pictures {
   .drag-and-drop {
     position: relative;
-    border: 1px solid $primary-element-color;
+    border: 1px solid #AEB6BF;
     width: 360px;
     height: 42px;
     line-height: 42px;
     text-align: center;
-    // padding-top: 5px;
     font-size: 15px;
     border-radius: 2.5px;
     cursor: pointer;
@@ -17,7 +16,7 @@
       width: 100%;
     }
     &.error-drag-and-drop {
-      border-right: 3px solid #CB4335;
+      border: 1px solid #E74C3C;
     }
     &:hover {
       background: #EBF5FB;
@@ -36,10 +35,10 @@
   .error {
     width: 360px;
     padding-top: 4px;
-    color: #CB4335;
+    color: #E74C3C;
     text-align: center;
-    font-size: 12px;
-    height: 12px;
+    font-size: 13px;
+    // height: 12px;
     margin-bottom: 12px;
   }
   .picture {
