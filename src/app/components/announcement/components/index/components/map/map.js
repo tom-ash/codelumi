@@ -37,7 +37,8 @@ class AnnouncementIndexMap extends React.Component {
       language,
       announcements,
       changeData,
-      device
+      device,
+      isMobile
     } = this.props
 
     const minListDevices = ['largePc', 'smallPc', 'largeTablet']
@@ -48,8 +49,6 @@ class AnnouncementIndexMap extends React.Component {
         className={`${showAnnouncementIndexCatalogue ? 'hidden' : 'visible'}`}
       >
         <div id='google-map-container'>
-          <div id='google-map' />
-          {minListDevices.indexOf(device) !== -1 &&
           <div id='mini-list'>
             {announcements !== null && announcements.map(announcement => {
               const {
@@ -87,16 +86,22 @@ class AnnouncementIndexMap extends React.Component {
                   onClick={e => {
                     e.preventDefault()
                     const map = window.googleMap
+
+                    const alteredLng = lng + (isMobile ? 0 : .037)
+
+                    console.log(alteredLng)
+
                     const options = {
                       center: {
                         lat,
-                        lng: lng + .037
+                        lng: alteredLng
                       },
                       zoom: 12.4
                     }
                     map.setOptions(options)
                     viewAnnouncement(id)
-                    changeData({ tileId: id })
+
+                    if (!isMobile) changeData({ tileId: id })
                   }}
                 >
                   <AnnouncementShowPictures
@@ -125,8 +130,11 @@ class AnnouncementIndexMap extends React.Component {
                   </div>
                   <div className='float-clear' />
                 </a>
-              )})}
-          </div>}
+              )
+            })}
+            <div className='float-clear' />
+          </div>
+          <div id='google-map' />
           {tile && Object.keys(tile).length > 1 &&
           <div className='announcement-tile-container'>
             <AnnouncementTile

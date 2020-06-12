@@ -43,7 +43,9 @@
     right: 12px;
     width: 420px;
     margin: 0;
-
+    @media #{$small-tablet} {
+      top: 178px;
+    }
     @media only screen and (max-width: 444px) {
       width: 100%;
       right: 0;
@@ -66,11 +68,29 @@
   overflow-y: scroll;
   cursor: pointer;
   padding: 0 4px;
+  @media #{$small-tablet} {
+    position: relative;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height: 184px;
+    background: white;
+    top: 0;
+  }
   .announcement-show-container {
     position: relative;
     color: #F2F3F4;
-    min-height: 100px;
     margin-bottom: 4px;
+    @media #{$small-tablet} {
+      position: relative;
+      margin-right: 4px;
+      display: inline-block;
+      width: 320px;
+      @media #{$phone} {
+        width: 240px;
+      }
+    }
     .category-and-location {
       position: absolute;
       top: 0;
