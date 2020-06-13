@@ -15,15 +15,17 @@ class UserCreateEmail extends React.Component {
 
     return (
       <div id='user-create-email'>
-        {!token ?
-        <React.Fragment>
-          <UserCreateEmailInputs />
-          <UserCreateConsents />
-          {/* {!showAnnouncementCreate && <UserCreateSubmit />} */}
-          <UserCreateSubmit />
-        </React.Fragment>
-        :
-        <UserCreateEmailVerify />}
+        <form>
+          {!token ?
+          <React.Fragment>
+            <UserCreateEmailInputs />
+            <UserCreateConsents />
+            {/* {!showAnnouncementCreate && <UserCreateSubmit />} */}
+            <UserCreateSubmit />
+          </React.Fragment>
+          :
+          <UserCreateEmailVerify />}
+        </form>
       </div>
     )
   }

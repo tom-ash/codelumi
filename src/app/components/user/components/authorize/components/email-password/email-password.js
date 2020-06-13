@@ -26,11 +26,11 @@ class UserAuthorizeEmailPassword extends React.Component {
         <form>
           <ManagedText {...this.emailAddressManager()}/>
           <ManagedText {...this.passwordManager()}/>
+          <div className='submit'>
+            <ManagedCheckbox {...this.rememberMeManager()} />
+            <ManagedButton {...this.buttonManager()} />
+          </div>
         </form>
-        <div className='submit'>
-          <ManagedCheckbox {...this.rememberMeManager()} />
-          <ManagedButton {...this.buttonManager()} />
-        </div>
         <div
           className='reset-password'>
           <span onClick={(e) => {

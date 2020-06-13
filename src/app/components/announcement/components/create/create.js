@@ -38,37 +38,39 @@ class AnnouncementCreate extends React.Component {
     return (
       <React.Fragment>
         <div id='announcement-create'>
-            <AnnouncementCreateSteps />
-          <div className='inner'>
-            <h1>
-              {this.languageHandler(<span>Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w&nbsp;Warszawie</span>, 'Add Free Announcement of Real Estate Lease in Warsaw')}
-            </h1>
-            <AnnouncementCreateEditorial
-              languageObjectHandler={this.languageObjectHandler}
-              showDescription={showDescription}
-              changeControl={changeControl}
-            />
-            <div className='required-inputs'>
-              <AnnouncementCreatePrimary />
-              <AnnouncementCreatePictures />
-              <AnnouncementCreateMap />
-            </div>
-            <div className='optional-inputs'>
-              <h2 className='optional'>
-                <div className='text'>{this.languageObjectHandler({ pl: 'Dane dodatkowe - niewymagane', en: 'Optional data - not required' })}</div>
-                <div className='float-clear' />
+          <h1>
+            {this.languageHandler(<span>Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w&nbsp;Warszawie</span>, 'Add Free Announcement of Real Estate Lease in Warsaw')}
+          </h1>
+          <AnnouncementCreateEditorial
+            languageObjectHandler={this.languageObjectHandler}
+            showDescription={showDescription}
+            changeControl={changeControl}
+          />
+          <form>
+            <div className='inner'>
+              <AnnouncementCreateSteps />
+              <div className='required-inputs'>
+                <AnnouncementCreatePrimary />
+                <AnnouncementCreatePictures />
+                <AnnouncementCreateMap />
+              </div>
+              <div className='optional-inputs'>
+                <h2 className='optional'>
+                  <div className='text'>{this.languageObjectHandler({ pl: 'Dane dodatkowe - niewymagane', en: 'Optional data - not required' })}</div>
+                  <div className='float-clear' />
+                </h2>
+                <AnnouncementCreateAdditional />
+                <AnnouncementCreateFeatures />
+                <AnnouncementCreateFurnishings />
+                <AnnouncementCreateDescription />
+              </div>
+              {/* <h2>
+                {this.languageObjectHandler({ pl: 'Dane konta', en: 'Account data' })}
               </h2>
-              <AnnouncementCreateAdditional />
-              <AnnouncementCreateFeatures />
-              <AnnouncementCreateFurnishings />
-              <AnnouncementCreateDescription />
+              <UserCreateEmail /> */}
             </div>
-            {/* <h2>
-              {this.languageObjectHandler({ pl: 'Dane konta', en: 'Account data' })}
-            </h2>
-            <UserCreateEmail /> */}
-          </div>
-          <AnnouncementCreatePublishing />
+            <AnnouncementCreatePublishing />
+          </form>
         </div>
       </React.Fragment>
     )

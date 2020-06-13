@@ -103,10 +103,7 @@ class AnnouncementIndexMap extends React.Component {
 
                     if (!isMobile) return changeData({ tileId: id })
 
-                    // console.log(scrollToElement)
-
-                    // console.log(document.getElementById('google-map'))
-                    scrollToElement(document.getElementById('google-map'), 3, -64)
+                    scrollToElement(document.getElementById('google-map'), 5, -64)
                   }}
                 >
                   <AnnouncementShowPictures

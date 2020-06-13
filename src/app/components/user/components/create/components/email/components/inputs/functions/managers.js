@@ -42,7 +42,7 @@ export function firstNameManager() {
   return {
     display: accountType === 'private' ? undefined : 'none',
     id: 'user-create-email-first-name',
-    autoComplete: 'off',
+    autoComplete: 'given-name',
     controlled: false,
     classNames: { container: 'form-input text'},
     label: this.languageObjectHandler(label),
@@ -111,7 +111,7 @@ export function phoneNumberManager() {
 
   return {
     id: 'user-create-email-phone-number',
-    autoComplete: 'off',
+    autoComplete: 'tel-local',
     type: 'tel',
     controlled: false,
     classNames: { container: 'form-input text phone-body'},
@@ -133,7 +133,7 @@ export function emailAddressManager() {
   const input = inputs.email
   return {
     id: 'user-create-email-email-address',
-    autoComplete: 'off',
+    autoComplete: 'email',
     type: 'email',
     controlled: false,
     classNames: { container: 'form-input text'},
@@ -158,7 +158,6 @@ export function passwordManager() {
     autoComplete: 'new-password',
     type: 'password',
     controlled: false,
-    autoComplete: 'new-password',
     classNames: { container: 'form-input text'},
     label: this.languageObjectHandler(label),
     children: <i className='fas fa-pen' />,

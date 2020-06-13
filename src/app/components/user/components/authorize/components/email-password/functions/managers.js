@@ -10,6 +10,7 @@ export function emailAddressManager() {
 
   return {
     id: 'user-logon-email-address',
+    autoComplete: 'email',
     controlled: false,
     classNames: { container: 'form-input text email'},
     label: this.languageObjectHandler(label),
@@ -33,6 +34,7 @@ export function passwordManager() {
 
   return {
     id: 'user-logon-password',
+    autoComplete: 'current-password',
     type: 'password',
     controlled: false,
     classNames: { container: 'form-input text'},
