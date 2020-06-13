@@ -1,6 +1,8 @@
 export const mapStateToProps = (store) => {
   const {
-    isMobile
+    isMobile,
+    language,
+    scripts
   } = store.app
 
   const { 
@@ -14,13 +16,11 @@ export const mapStateToProps = (store) => {
     loadMap,
     mapLoaded,
     loadMarker,
-    language: store.app.language,
-    scripts: store.app.scripts,
-    
+    language,
+    scripts,
     markerLoaded: store.announcement.show.control.markerLoaded,
     latitude: store.announcement.show.data.mapLatitude,
     longitude: store.announcement.show.data.mapLongitude,
-    
     mapLoading: store.announcement.show.control.mapLoading,
   }
 }
