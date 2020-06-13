@@ -9,7 +9,7 @@ export function aboutManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'O Serwisie', en: 'About' }),
     label: this.languageHandler('O Serwisie', 'About'),
-    onClick: () => changeApp({ showVisitorAbout: true })
+    onClick: () => changeApp({ showVisitorAbout: true, showNotFound: false })
   }
 }
 
@@ -22,7 +22,7 @@ export function contactManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Kontakt', en: 'Contact' }),
     label: this.languageHandler('Kontakt', 'Contact'),
-    onClick: () => changeApp({ showVisitorContact: true })
+    onClick: () => changeApp({ showVisitorContact: true, showNotFound: false })
   }
 }
 
@@ -35,7 +35,7 @@ export function termsOfServiceManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Regulamin', en: 'Terms and Conditions' }),
     label: this.languageHandler('Regulamin', 'Terms and Conditions'),
-    onClick: () => changeApp({ showVisitorTermsOfService: true })
+    onClick: () => changeApp({ showVisitorTermsOfService: true, showNotFound: false })
   }
 }
 
@@ -48,7 +48,7 @@ export function cookiesPolicyManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Polityka Cookies', en: 'Cookies Policy' }),
     label: this.languageHandler('Polityka Cookies', 'Cookies Policy'),
-    onClick: () => changeApp({ showVisitorCookiesPolicy: true })
+    onClick: () => changeApp({ showVisitorCookiesPolicy: true, showNotFound: false })
   }
 }
 
@@ -61,7 +61,7 @@ export function privacyPolicyManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Polityka Prywatności', en: 'Privacy Policy' }),
     label: this.languageHandler('Polityka Prywatności', 'Privacy Policy'),
-    onClick: () => changeApp({ showVisitorPrivacyPolicy: true })
+    onClick: () => changeApp({ showVisitorPrivacyPolicy: true, showNotFound: false })
   }
 }
 
@@ -74,6 +74,6 @@ export function privacySettingsManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Ustawienia Prywatności', en: 'Privacy Settings' }),
     label: this.languageHandler('Ustawienia Prywatności', 'Privacy Settings'),
-    onClick: () => changeApp({ showVisitorPrivacySettings: true })
+    onClick: () => changeApp({ showVisitorPrivacySettings: true, showNotFound: false })
   }
 }

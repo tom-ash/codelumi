@@ -9,9 +9,10 @@ export function sendResponse({
   url,
   announcementUrl,
   noIndex,
-  openGraph
+  openGraph,
+  status
 }) {
-  res.send(
+  res.status(status || 200).send(
     renderPage({ 
       ...renderAppAsHtml(initialState),
       title,

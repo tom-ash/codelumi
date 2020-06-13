@@ -17,8 +17,8 @@ import styles from './styles/styles.scss'
 import { matchStateToPath } from './functions/routers/match-state-to-path'
 import { matchPathToState } from './functions/routers/match-path-to-state'
 import VisitorWelcome from './components/visitor/components/welcome/welcome'
-
 import Blog from './components/blog/blog'
+import NotFound from './components/scaffold/components/not-found/not-found'
 
 class App extends React.Component {
   constructor(props) {
@@ -54,7 +54,21 @@ class App extends React.Component {
   }
 
   render() {
-    const { showBlog } = this.props
+    const {
+      showBlog,
+      showNotFound,
+      language
+    } = this.props
+
+    if (showNotFound) {
+      return (
+        <div id='app-container' ref={this.appContainer}>
+          <Header />
+          <NotFound language={language}/>
+          <Footer />
+        </div>
+      )
+    }
 
     return (
       <div id='app-container' ref={this.appContainer}>

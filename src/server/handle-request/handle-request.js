@@ -7,6 +7,7 @@ import { appState } from '../../app/constants/app-state'
 
 export function handleRequest(req, res) {
   const pureUrl = purifyUrl(req.originalUrl)
+  const userAgent = req.headers['user-agent']
 
   const {
     initialState,
@@ -14,9 +15,26 @@ export function handleRequest(req, res) {
     description,
     sender,
     noIndex
-  } = getRouteData(pureUrl, req.headers['user-agent'])
+  } = getRouteData(pureUrl, userAgent)
 
-  if (!sender) return res.status(404).send('404')
+  if (!sender) return (
+    sendResponse({
+      res,
+      initialState: {
+        app: {
+          ...appState,
+          showNotFound: true,
+          language: 'pl',
+          device: getDevice(userAgent)
+        }
+      },
+      title: '404',
+      description: '404',
+      url: pureUrl,
+      noIndex: true,
+      status: 404
+    })
+  )
   else if (sender === 'map') return sendAnnouncementsMapResponse({ res, initialState, title, description, url: pureUrl })
   else if (sender === 'list') return sendAnnouncementsListResponse({ res, initialState, title, description, url: pureUrl })
   else if (sender === 'announcement') return sendAnnouncementResponse({ res, initialState, announcementId: +pureUrl.match(/\d+/)[0] })

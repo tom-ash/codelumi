@@ -64,6 +64,7 @@
 
 body {
   font-family: 'Arimo', sans-serif;
+  background: #F2F3F4;
 }
 
 .float-clear {
@@ -84,9 +85,6 @@ body {
 #app-container {
   position: relative;
   min-width: 320px;
-
-  background: #F2F3F4;
-
 }
 
 #app-inner-container {
@@ -414,7 +412,7 @@ a {
   max-width: 100%;
   background: white;
   border: 1px solid #a0a096;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Arimo', sans-serif;
   line-height: 1.125em;
 }
 .react-calendar,
@@ -540,4 +538,29 @@ h2 {
   font-size: 14px;
   line-height: 18px;
   color: #797D7F;
+}
+
+#not-found {
+  position: relative;
+  height: 700px;
+  .inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 320px;
+    height: 300px;
+    margin: auto;
+    color: #7B7D7D;
+    .number {
+      text-align: center;
+      font-size: 48px;
+      margin-top: 48px;
+    }
+    .text {
+      text-align: center;
+      margin-top: 12px;
+    }
+  }
 }
