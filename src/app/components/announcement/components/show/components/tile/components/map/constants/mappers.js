@@ -1,4 +1,8 @@
 export const mapStateToProps = (store) => {
+  const {
+    isMobile
+  } = store.app
+
   const { 
     loadMap,
     mapLoaded,
@@ -6,6 +10,7 @@ export const mapStateToProps = (store) => {
   } = store.announcement.show.control
 
   return {
+    isMobile,
     loadMap,
     mapLoaded,
     loadMarker,

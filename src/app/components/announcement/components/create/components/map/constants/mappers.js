@@ -1,6 +1,12 @@
 export const mapStateToProps = (store) => {
+  const {
+    language,
+    isMobile
+  } = store.app
+
   return {
-    language: store.app.language,
+    isMobile,
+    language,
     scripts: store.app.scripts,
     latitude: store.announcement.create.inputs.mapLatitude,
     longitude: store.announcement.create.inputs.mapLongitude,
@@ -11,8 +17,8 @@ export const mapStateToProps = (store) => {
     
 export const mapDispatchToProps = (dispatch) => {
   return {
-    changeControl: (value) => dispatch({ type: 'announcement/create/control', value: value }),
-    changeInputs: (value) => dispatch({ type: 'announcement/create/inputs', value: value }),
-    changeErrors: (value) => dispatch({ type: 'announcement/create/errors', value: value })
+    changeControl: value => dispatch({ type: 'announcement/create/control', value: value }),
+    changeInputs: value => dispatch({ type: 'announcement/create/inputs', value: value }),
+    changeErrors: value => dispatch({ type: 'announcement/create/errors', value: value })
   }
 }
