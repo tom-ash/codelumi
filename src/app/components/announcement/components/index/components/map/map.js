@@ -16,6 +16,8 @@ import { shouldSetUpGoogleMaps, shouldSetUpPins } from '../../../../functions/go
 import { viewAnnouncement } from '../../../../functions/view-announcement'
 import { buildLink } from '../../../../functions/build-link'
 
+import { scrollToElement } from '../../../../../../functions/scrollers/scroll-to-element'
+
 class AnnouncementIndexMap extends React.Component {
   constructor(props) {
     super(props)
@@ -89,8 +91,6 @@ class AnnouncementIndexMap extends React.Component {
 
                     const alteredLng = lng + (isMobile ? 0 : .037)
 
-                    console.log(alteredLng)
-
                     const options = {
                       center: {
                         lat,
@@ -101,7 +101,12 @@ class AnnouncementIndexMap extends React.Component {
                     map.setOptions(options)
                     viewAnnouncement(id)
 
-                    if (!isMobile) changeData({ tileId: id })
+                    if (!isMobile) return changeData({ tileId: id })
+
+                    // console.log(scrollToElement)
+
+                    // console.log(document.getElementById('google-map'))
+                    scrollToElement(document.getElementById('google-map'), 3, -64)
                   }}
                 >
                   <AnnouncementShowPictures
