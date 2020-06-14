@@ -17,6 +17,8 @@ export function loadGoogleAnalytics() {
 
     if (window.dataLayer.length === 0) return
 
+    window.ga('create', 'UA-165973681-1', 'auto')
+
     changeApp({ scripts: { ...scripts, googleAnalyticsLoading: false, googleAnalytics: true } })
   })
 }

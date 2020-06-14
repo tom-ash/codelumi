@@ -80,8 +80,12 @@ export function matchPathToState(prevProps) {
     if (window.location.pathname !== fullPathname) {
       if (fullPathname === '') fullPathname = '/'
 
+      if (window.ga) {
+        window.ga('set', 'page', fullPathname)
+        window.ga('send', 'pageview')
+      }
+
       window.history.pushState({ path: fullPathname }, '', fullPathname)
-      if (window.ga) window.ga('set', 'page', fullPathname)
     }
   }
 }
