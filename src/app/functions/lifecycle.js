@@ -1,6 +1,5 @@
 import { initializeGoogleMaps } from './load-google-maps'
 import { isMobile } from './is-mobile'
-import { getCookieValue } from './cookie-handlers'
 import { loadGoogleAnalytics } from './load-google-analytics'
 
 export function componentDidMount() {

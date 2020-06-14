@@ -1,7 +1,7 @@
 import { getCookieValue } from '../components/legal/components/cookies/functions/get'
 
 export function componentDidMount() {
-  setCookies.call(this)
+  setTimeout(() => setCookies.call(this), 500)
 }
 
 function setCookies() {

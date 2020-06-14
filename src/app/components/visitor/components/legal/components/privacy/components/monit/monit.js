@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
@@ -22,35 +23,38 @@ class VisitorPrivacyMonit extends React.Component {
 
   render() {
     return (
-      <div
-        id='visitor-privacy-monit' className='container narrow-container shadowed'
-        onClick={e => e.stopPropagation()}
-      >
-        <div className='text-container'>
-          <div className='text-line cookies'>
-            <div className='icon cookies'>
-              <i className='fas fa-cookie'/>
+      ReactDOM.createPortal(
+        <div
+          id='visitor-privacy-monit' className='container narrow-container shadowed'
+          onClick={e => e.stopPropagation()}
+        >
+          <div className='text-container'>
+            <div className='text-line cookies'>
+              <div className='icon cookies'>
+                <i className='fas fa-cookie'/>
+              </div>
+              <div className='text'>
+                {this.languageObjectHandler(this.textsProvider('cookies'))}
+              </div>
             </div>
-            <div className='text'>
-              {this.languageObjectHandler(this.textsProvider('cookies'))}
+            <div className='text-line'>
+              <div className='icon privacy'>
+                <i className='fas fa-user-shield'/> 
+              </div>
+              <div className='text'>
+                {this.languageObjectHandler(this.textsProvider('dataProcessing'))}
+              </div>
             </div>
           </div>
-          <div className='text-line'>
-            <div className='icon privacy'>
-              <i className='fas fa-user-shield'/> 
-            </div>
-            <div className='text'>
-              {this.languageObjectHandler(this.textsProvider('dataProcessing'))}
-            </div>
+          <div className='buttons'>
+            <ManagedButton {...this.agreeManager()} />
+            <ManagedButton {...this.settingsManager()} />
           </div>
-        </div>
-        <div className='buttons'>
-          <ManagedButton {...this.agreeManager()} />
-          <ManagedButton {...this.settingsManager()} />
-        </div>
-      </div>
+        </div>,
+        document.body
+      )
     )
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(VisitorPrivacyMonit)
+export default (connect(mapStateToProps, mapDispatchToProps)(VisitorPrivacyMonit))
