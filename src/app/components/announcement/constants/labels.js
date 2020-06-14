@@ -1,7 +1,7 @@
 export const labels = {
   category: {
     icon: 'far fa-list-alt',
-    text: { pl: 'Kategoria najmu', en: 'Lease Category' }
+    text: { pl: 'Rodzaj nieruchomości', en: 'Real Estate Type' }
   },
   district: {
     icon: 'fas fa-map-marker-alt',
@@ -13,7 +13,7 @@ export const labels = {
   },
   rentCurrency: {
     icon: 'fas fa-coins',
-    text: { pl: 'Waluta czynszu', en: 'Rent currency' }
+    text: { pl: 'Waluta czynszu', en: 'Rent Currency' }
   },
   area: {
     icon: 'fas fa-square',

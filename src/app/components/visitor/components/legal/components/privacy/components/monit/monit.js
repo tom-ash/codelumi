@@ -22,25 +22,23 @@ class VisitorPrivacyMonit extends React.Component {
   }
 
   render() {
+    const {
+      language
+    } = this.props
+
     return (
       ReactDOM.createPortal(
         <div
-          id='visitor-privacy-monit' className='container narrow-container shadowed'
+          id='visitor-privacy-monit' className={`container narrow-container shadowed${language === 'pl' ? '' : ' en'}`}
           onClick={e => e.stopPropagation()}
         >
           <div className='text-container'>
             <div className='text-line cookies'>
-              <div className='icon cookies'>
-                <i className='fas fa-cookie'/>
-              </div>
               <div className='text'>
                 {this.languageObjectHandler(this.textsProvider('cookies'))}
               </div>
             </div>
             <div className='text-line'>
-              <div className='icon privacy'>
-                <i className='fas fa-user-shield'/> 
-              </div>
               <div className='text'>
                 {this.languageObjectHandler(this.textsProvider('dataProcessing'))}
               </div>

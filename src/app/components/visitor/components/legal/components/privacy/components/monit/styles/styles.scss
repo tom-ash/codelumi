@@ -6,56 +6,51 @@
   position: fixed;
   z-index: 200000000;
   max-width: 360px;
-  top: 56px;
-  right: 6px;
-  left: 6px;
+  top: 12px;
+  right: 12px;
+  left: 12px;
+  bottom: 12px;
   width: auto;
-  height: auto;
+  height: 331px;
   margin: auto;
   overflow-y: scroll;
-  padding: 18px;
+  padding: 12px;
+  background: rgba(251, 252, 252, .88);
+  &.en {
+    height: 291px;
+  }
   @media #{$phone} {
     top: auto;
+    right: 6px;
+    left: 6px;
     bottom: 6px;
+    height: auto;
+    &.en {
+      height: auto;
+    }
   }
   .text-container {
     font-size: 15px;
     text-align: justify;
     margin: 0;
-    color: #5D6D7E;
+    color: #566573;
     .text-line {
-      .icon {
-        text-align: center;
-        left: 15px;
-        line-height: 20px;
-        color: #34495E;
-        &.cookies {
-          margin: 0 0 8px;
-        }
-        &.privacy {
-          margin: 18px 0 8px;
-        }
-        .fas {
-          color: #34495E;
-        }
-      }
       .text {
-        line-height: 21px;
+        line-height: 20px;
       }
       &.cookies {
-        margin-bottom: 6px;
+        margin-bottom: 12px;
       }
     }
     u {
       cursor: pointer;
-      color: #1F618D;
       &:hover {
-        color: #2471A3;
+        color: #5DADE2;
       }
     }
   }
   .buttons {
-    margin-top: 18px;
+    margin-top: 12px;
     position: relative;
     height: 43px;
     .form-input {
@@ -67,6 +62,13 @@
           width: 160px;
           height: 42px;
           width: 50%;
+          .input {
+            background: #5DADE2;
+            &:hover {
+              background: #85C1E9;
+            }
+          }
+          
         }
         &.settings {
           line-height: 42px;
@@ -76,9 +78,9 @@
             padding: 0;
             text-align: center;
             background: none;
-            color: #1F618D;
+            color: #566573;
             &.hover {
-              color: #2471A3;
+              text-decoration: underline;
             }
           }
         }
