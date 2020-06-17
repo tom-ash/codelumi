@@ -9,20 +9,31 @@ import * as mappers from './constants/mappers'
 class UserCreateEmail extends React.Component {
   render() {
     const {
-      token,
-      showAnnouncementCreate
+      showAnnouncementCreate,
+      token
     } = this.props
+
+    if (showAnnouncementCreate) {
+      return (
+        <div id='user-create-email'>
+          <form>
+            <UserCreateEmailInputs />
+            <UserCreateConsents />
+            <UserCreateSubmit />
+          </form>
+        </div>
+      )
+    }
 
     return (
       <div id='user-create-email'>
         <form>
           {!token ?
-          <React.Fragment>
+          <>
             <UserCreateEmailInputs />
             <UserCreateConsents />
-            {/* {!showAnnouncementCreate && <UserCreateSubmit />} */}
             <UserCreateSubmit />
-          </React.Fragment>
+          </>
           :
           <UserCreateEmailVerify />}
         </form>

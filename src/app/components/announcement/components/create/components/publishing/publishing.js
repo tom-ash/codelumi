@@ -13,12 +13,9 @@ import { validatePictures } from '../pictures/functions/validate-pictures'
 import { validateMap } from '../map/functions/validate-map'
 import * as managers from '../primary/functions/managers'
 import { ManagedButton } from 'managed-inputs'
-import { buttonManager } from './functions/manager'
-import { labelProvider } from '../../../../../../functions/providers/label'
-import { parseCurrency } from '../../../../functions/currency-parsers'
+
 import DerivedRents from './components/derived-rents/derived-rents'
-import { changePath } from '../../../../../../functions/routers/change-path'
-import { floorsProvider } from '../primary/functions/floors-provider'
+
 
 class AnnouncementCreateFeatures extends React.Component {
   constructor(props) {
@@ -27,19 +24,7 @@ class AnnouncementCreateFeatures extends React.Component {
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.handleErrorOnValidate = handleErrorOnValidate.bind(this)
-    this.categoryManager = managers.categoryManager.bind(this)
-    this.districtManager = managers.districtManager.bind(this)
-    this.areaManager = managers.areaManager.bind(this)
-    this.publish = publish.bind(this)
-    this.savePicture = savePicture.bind(this)
-    this.saveAnnouncement = saveAnnouncement.bind(this)
-    this.validatePictures = validatePictures.bind(this)
-    this.validateMap = validateMap.bind(this)
-    this.buttonManager = buttonManager.bind(this)
-    this.labelProvider = labelProvider.bind(this)
-    this.parseCurrency = parseCurrency.bind(this)
-    this.changePath = changePath.bind(this)
-    this.floorsProvider = floorsProvider.bind(this) // DELETE
+
   }
   
   render() {

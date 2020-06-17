@@ -7,36 +7,96 @@ export const mapStateToProps = (store) => {
   } = store.app
 
   const {
-    control
+    control,
+    inputs,
+    errors,
+    data
   } = store.announcement.create
 
   const {
-    success,
-    publishing,
-    showDescription
+    step,
+    editing,
+    connecting
   } = control
+
+  const {
+    savedId
+  } = data
+
+  const {
+    id,
+    category,
+    district,
+    rentCurrency,
+    netRentAmount,
+    grossRentAmount,
+    area,
+    rooms,
+    floor,
+    totalFloors,
+    availabilityDateSelect,
+    availabilityDate,
+    pictureBlobs: blobs,
+    pictureUploads: uploads,
+    features,
+    furnishings,
+    descriptionPolish,
+    descriptionEnglish,
+    mapLatitude,
+    mapLongitude,
+    verificationCode
+  } = inputs
+
+  const {
+    token
+  } = store.user.create.data
 
   return {
     language,
     path,
     showEdit,
-    announcementId,
     authorized: store.user.authorize.data.authorized,
-    pictureBlobs: store.announcement.create.inputs.pictureBlobs,
-    success,
-    publishing,
-    showDescription
+    step,
+    editing,
+    connecting,
+    announcementId,
+    savedId,
+    id,
+    category,
+    district,
+    area,
+    rooms,
+    blobs,
+    uploads,
+    mapLatitude,
+    mapLongitude,
+    rentCurrency,
+    netRentAmount,
+    grossRentAmount,
+    features,
+    furnishings,
+    descriptionPolish,
+    descriptionEnglish,
+    availabilityDate,
+    floor,
+    totalFloors,
+    errors,
+    verificationCode,
+    token
   }
 }
     
 export const mapDispatchToProps = (dispatch) => {
   return {
-    changeControl: (value) => dispatch({ type: 'announcement/create/control', value: value }),
-    changeInputs: (value) => dispatch({ type: 'announcement/create/inputs', value: value }),
-    changeErrors: (value) => dispatch({ type: 'announcement/create/errors', value: value }),
-    resetControl: (value) => dispatch({ type: 'announcement/create/control/reset', value: value }),
-    resetInputs: (value) => dispatch({ type: 'announcement/create/inputs/reset', value: value }),
-    resetErrors: (value) => dispatch({ type: 'announcement/create/errors/reset', value: value }),
+    changeApp: value => dispatch({ type: 'app', value: value}),
+    changeUserAuthorizeData: value => dispatch({ type: 'user/authorize/data', value }),
+    changeControl: value => dispatch({ type: 'announcement/create/control', value }),
+    changeData: value => dispatch({ type: 'announcement/create/data', value }),
+    changeInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
+    changeErrors: value => dispatch({ type: 'announcement/create/errors', value }),
+    resetControl: value => dispatch({ type: 'announcement/create/control/reset', value }),
+    resetInputs: value => dispatch({ type: 'announcement/create/inputs/reset', value }),
+    resetErrors: value => dispatch({ type: 'announcement/create/errors/reset', value }),
   }
 }
     

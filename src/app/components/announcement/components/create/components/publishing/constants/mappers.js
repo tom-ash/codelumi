@@ -12,13 +12,6 @@ export const mapStateToProps = (store) => {
   } = store.user.authorize.data
 
   const {
-    control,
-    inputs,
-    data,
-    errors
-  } = store.announcement.create
-
-  const {
     editing,
     connecting,
     success,

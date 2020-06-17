@@ -1,13 +1,13 @@
-import { apiUrl } from '../../../../../../../constants/urls'
-import { createClientServerParams } from '../../../../../constants/client-server-params'
-import { getAccessToken } from '../../../../../../user/components/authorize/components/tokens/functions/get-tokens'
+import { apiUrl } from '../../../../../constants/urls'
+import { createClientServerParams } from '../../../constants/client-server-params'
+import { getAccessToken } from '../../../../user/components/authorize/components/tokens/functions/get-tokens'
 
 export function saveAnnouncement() {
-  const { changeControl } = this.props
+  const { changeControl, changeData, connecting } = this.props
 
   let destination = '/announcements'
   let method = 'POST'
-  if (this.props.connecting) return
+  if (connecting) return
   this.props.changeControl({ connecting: true })
   if (this.props.editing) {
     destination = `/announcements/${this.props.id}`
@@ -25,9 +25,12 @@ export function saveAnnouncement() {
   .then(response => {
     if (response.ok) return response.json()
   })
-  .then(jsonResponse => {
-    changeControl({ connecting: false, publishing: false })
-    this.changePath({ showAnnouncementIndexMap: true })
+  .then(({ id: savedId }) => {
+    changeData({ savedId })
+    changeControl({
+      connecting: false,
+      step: 'success'
+    })
   })
 }
 

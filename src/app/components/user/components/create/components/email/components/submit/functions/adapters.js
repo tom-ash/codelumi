@@ -50,6 +50,13 @@ function validateUserObject(userObject) {
 }
 
 function createProspectiveUser(userObject) {
+  const {
+    showAnnouncementCreate,
+    changeAnnouncementCreateControl,
+    changeControl,
+    changeData
+  } = this.props
+
   fetch(apiUrl + '/prospective_users', {
     method: "POST",
     headers: {
@@ -64,8 +71,9 @@ function createProspectiveUser(userObject) {
   },
   networkError => console.dir(networkError.message))
   .then((json) => {
-    this.props.changeControl({ connecting: false })
-    this.props.changeData({ token: json.token })
+    changeData({ token: json.token })
+    if (showAnnouncementCreate) changeAnnouncementCreateControl({ step: 'confirmation' })
+    changeControl({ connecting: false })
   })
   .catch(e => console.dir(e))
 }

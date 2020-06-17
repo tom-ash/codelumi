@@ -11,6 +11,7 @@ export function categoryManager() {
   const {
     category: { id }
   } = requiredInputs
+
   const {
     category: value,
     errors,
@@ -18,10 +19,14 @@ export function categoryManager() {
     changeInputs,
     language
   } = this.props
+
   const {
     icon,
     all: label
   } = inputs.category
+
+
+
   const {
     category: categoryError
   } = errors

@@ -20,7 +20,7 @@ export function getAnnouncement() {
     }
   })
   .then(json => {
-    const { changeInputs } = this.props
+    const { changeInputs, changeControl } = this.props
     const {
       id,
       category,
@@ -60,9 +60,15 @@ export function getAnnouncement() {
       descriptionPolish: polishDescription || '',
       descriptionEnglish: englishDescription || '',
       mapLatitude: latitude,
-      mapLongitude: longitude
+      mapLongitude: longitude,
+      ...features && features.length && { addFeatures: true },
+      ...furnishings && furnishings.length && { addFurnishings: true },
+      ...polishDescription && { addPolishDescription: true },
+      ...englishDescription && { addEnglishDescription: true },
     }
+
     changeInputs(appendAvailabilityDate(availabilityDate, announcementInputs))
+    if (availabilityDate) changeControl({ showAvilabilityDate: true })
   })
 }
 
@@ -80,18 +86,24 @@ function setBlobs(id, pictures) {
   if (typeof window === 'undefined') return
   
   pictures.map((picture, index) => {
-    fetch(`${apiUrl}/pictures`, {
+    fetch(`${API_URL}/pictures`, {
       headers: { 'key': `announcements/${id}/${picture.database}`, 'Content-Type': 'application/json' }
     })
-    .then(response => { if (response.ok) return response.json() })
+    .then(response => {
+      if (response.ok) return response.json()
+    })
     .then(json => {
       fetch(json.url, {
-        headers: { 'key': `announcements/${id}/${picture.database}`, 'Content-Type': 'application/json' }
+        headers: {
+          'key': `announcements/${id}/${picture.database}`,
+          'Content-Type': 'application/json'
+        }
       })
-      .then(response => { if (response.ok) return response.blob() })
+      .then(response => {
+        if (response.ok) return response.blob()
+      })
       .then(blobResponse => {
-
-        let pictureBlobs = [ ...this.props.pictureBlobs ]
+        let pictureBlobs = [ ...this.props.blobs ]
         pictureBlobs[index] = {
           blob: window.URL.createObjectURL(blobResponse),
           database: picture.database,

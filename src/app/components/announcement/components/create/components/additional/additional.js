@@ -60,11 +60,12 @@ class AnnouncementCreateAdditional extends React.Component {
           className='calendar'>
             <div>
               <Calendar 
-              onChange = {(date) => {
-                this.props.changeInputs({ availabilityDate: parseDate(date) })
-                this.props.changeControl({ availabilityDateFocus: false })
-              }}
-              locale={this.props.language == 'pl' ? 'pl' : 'en'}/>
+                onChange = {(date) => {
+                  this.props.changeInputs({ availabilityDate: parseDate(date) })
+                }}
+                value={this.props.availabilityDate ? new Date(this.props.availabilityDate) : null}
+                locale={this.props.language == 'pl' ? 'pl' : 'en'}
+              />
             </div>
           </div>
         </React.Fragment>

@@ -1,18 +1,22 @@
 import React from 'react'
 
 export function AnnouncementCreateSteps({
-  step
+  step,
+  authorized
 }) {
   return (
     <div className='create-points'>
-      <div className='line' />
-      <div className='point first'>
-        1
+      <div className='linear-border' />
+      <div className={`line${step === 'success' ? ' success' : ''}`} />
+      <div className={`point first${step !== 'form' ? ' success' : ''}`}>
+        <i className='fas fa-scroll' />
       </div>
-      <div className='point second'>
-        2
+      {!authorized &&
+      <div className={`point second${step === 'account-data' ? ' current' : ''}${step === 'confirmation'  || step === 'success' ? ' success' : ''}`}>
+        <i className='fas fa-user-alt' />
       </div>
-      <div className='point last'>
+      }
+      <div className={`point last${step === 'confirmation' ? ' current' : ''}${step === 'success' ? ' success' : ''}`}>
         <i className='fas fa-check' />
       </div>
       <div className='float-clear' />

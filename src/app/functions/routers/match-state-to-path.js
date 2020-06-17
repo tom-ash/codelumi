@@ -12,9 +12,10 @@ export function matchStateToPath({ popState }) {
     if (path.match(matcher.pl.regEx) || path.match(matcher.en.regEx)) {
       newRoutes[key] = true
 
-      if (key === 'showAnnouncementShow') {
+      if (key === 'showAnnouncementShow' || key === 'showAnnouncementEdit') {
         newRoutes.announcementId = +path.match(/\d+/)[0]
       }
+
       if (matcher.needsAnnouncementIndexMap) newRoutes.showAnnouncementIndexMap = true
     }
   }

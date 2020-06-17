@@ -25,7 +25,8 @@ export const control = {
   calendarMouseOver: false,
   addingPicture: false,
   showAvilabilityDate: false,
-  showDescription: false
+  showDescription: false,
+  step: 'form'
 }
 
 export const inputs = {
@@ -45,14 +46,15 @@ export const inputs = {
   pictureUploads: [],
   addFeatures: false,
   features: parseFeaturesForState(),
-  showFurnishings: false,
+  addFurnishings: false,
   furnishings: parseFurnishingsForState(),
   addPolishDescription: false,
   descriptionPolish: '',
   addEnglishDescription: false,
   descriptionEnglish: '',
   mapLatitude: null,
-  mapLongitude: null
+  mapLongitude: null,
+  verificationCode: ''
 }
 
 export const data = {

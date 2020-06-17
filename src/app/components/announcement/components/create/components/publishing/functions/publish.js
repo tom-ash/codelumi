@@ -2,6 +2,11 @@ import { scrollToElement } from '../../../../../../../functions/scrollers/scroll
 import { requiredInputs, requiredInputsArray } from '../../../constants/required-inputs'
 
 export function publish() {
+  const {
+    changeControl,
+    authorized
+  } = this.props
+
   const validationObject = {
     category: this.categoryManager().validate(),
     district: this.districtManager().validate(),
@@ -17,5 +22,6 @@ export function publish() {
       }
     }
   }
-  this.props.changeControl({ publishing: true })
+
+  changeControl({ step: authorized ? 'publishing' : 'account-data' })
 }
