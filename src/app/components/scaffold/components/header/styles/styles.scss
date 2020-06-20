@@ -21,8 +21,9 @@
   left: 0;
   right: 0;
   height: 46px;
-  background: rgba(34, 34, 34, .98);
-  color: #D0D3D4;
+  background: rgba(251, 252, 252, .8);
+  border-bottom: 1px solid gray;
+  color: #4D5656;
   font-size: 14px;
   .side-links-cover {
     position: fixed;
@@ -35,7 +36,7 @@
       position: absolute;
       top: 58px;
       right: 12px;
-      background: rgba(34, 34, 34, .98);
+      background: rgba(251, 252, 252, .9);
       padding: 12px 12px 0 12px;
       border-radius: 4px;
       box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
@@ -45,7 +46,7 @@
       .header-link {
         position: relative;
         margin-bottom: 12px;
-        border-bottom: 1px solid rgba(248, 249, 249, 0.2);
+        border-bottom: 1px solid lightgray;
         padding-bottom: 12px;
         &.sign-in {
           margin-bottom: 0;
@@ -99,7 +100,7 @@
     .input {
       height: 52px;
       border: none;
-      color: #D0D3D4;
+      color: #4D5656;
       background: none;
     }
   }

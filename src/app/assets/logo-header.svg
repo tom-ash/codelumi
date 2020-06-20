@@ -21,13 +21,13 @@ font-family="Helvetica" font-size="12" font-weight="400" font-style="normal"
 <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M0,0 L1024,0 L1024,364 L0,364 L0,0"/>
 </g>
 
-<g fill="#ffffff" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,0,0)"
+<g fill="#17202A" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,0,0)"
 font-family="Helvetica" font-size="12" font-weight="400" font-style="normal" 
 >
 <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M30,0 L330,0 C346.56,0 360,13.44 360,30 L360,330 C360,346.56 346.56,360 330,360 L30,360 C13.44,360 0,346.56 0,330 L0,30 C0,13.44 13.44,0 30,0 "/>
 </g>
 
-<g fill="rgba(34, 40, 43, .98)" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,0,0)"
+<g fill="#F7F9F9" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,0,0)"
 font-family="Helvetica" font-size="12" font-weight="400" font-style="normal" 
 >
 <path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M160,120 L230,120 L230,360 L160,360 L160,120"/>
