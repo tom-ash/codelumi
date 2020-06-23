@@ -4,10 +4,11 @@ import * as mappers from './constants/mappers'
 import { componentDidUpdate } from './functions/lifecycle'
 import { changePath } from '../../../../functions/routers/change-path'
 import UserCreateEmail from './components/email/email'
-import { CloseButton } from '../../../../components/support/components/close-button/close-button'
 import * as lifecycle from './functions/lifecycle'
 import { languageHandler } from '../../../../functions/language-handler'
 import { hideUser } from '../../functions/hide-user'
+
+import { UserCreateSteps } from './components/steps/steps'
 
 class UserCreate extends React.Component {
   constructor(props) {
@@ -20,18 +21,22 @@ class UserCreate extends React.Component {
   }
 
   render() {
+    const {
+      success,
+      step
+    } = this.props
+
     return (
       <React.Fragment>
         <div
           id='user-create-container'
-          className='container narrow-container shadowed'
+          className='container'
         >
           <h1 className='page-header'>
-            <i className='fas fa-user-plus' /> {this.languageHandler('Zarejestruj', 'Sign Up')}
+            {this.languageHandler('Zarejestruj', 'Sign Up')}
           </h1>
-          <CloseButton onClick={this.hideUser} classNames='page narrow'/>
-          {this.props.success === null &&
-          <UserCreateEmail />}
+          <UserCreateSteps step={step} />
+          {success === null && <UserCreateEmail />}
         </div>
       </React.Fragment>
     )

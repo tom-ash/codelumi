@@ -16,6 +16,7 @@ class UserCreateEmail extends React.Component {
     if (showAnnouncementCreate) {
       return (
         <div id='user-create-email'>
+          {/* <i className="fas fa-user-alt"></i> */}
           <form>
             <UserCreateEmailInputs />
             <UserCreateConsents />
@@ -30,6 +31,7 @@ class UserCreateEmail extends React.Component {
         <form>
           {!token ?
           <>
+            {/* <i className="fas fa-user-alt"></i> */}
             <UserCreateEmailInputs />
             <UserCreateConsents />
             <UserCreateSubmit />

@@ -60,4 +60,5 @@ class UserCreateEmailInputs extends React.Component {
     )
   }
 }
+
 export default connect(mappers.mapStateToProps, mappers.mapDispatchToProps)(UserCreateEmailInputs);

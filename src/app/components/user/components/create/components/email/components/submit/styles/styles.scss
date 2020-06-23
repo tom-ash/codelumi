@@ -1,11 +1,28 @@
 @import '../../../../../../../../../styles/themes.scss';
 
 #user-create-email-submit {
+  padding: 24px 18px;
+  border-left: 3px solid #85C1E9;
+  .separation-line {
+    margin-bottom: 24px;
+  }
   .form-input {
     &.button {
-      position: relative;
-      margin: 0 0 0 auto;
-      width: 50%;
+      display: block;
+      width: 240px;
+      height: 36px;
+      margin: 0 auto;
+      .input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 3px;
+        background: #3498DB;
+        color: #F7F9F9;
+        &.hover {
+          background: #5DADE2;
+        }
+      }
     }
   }
 }

@@ -67,7 +67,7 @@ export function signUpManager() {
     title: this.languageObjectHandler({ pl: 'Zarejestruj', en: 'Sign Up' }),
     label: this.languageObjectHandler({ pl: 'Zarejestruj', en: 'Sign Up' }),
     onClick: () => {
-      changeApp({ showUserCreate: true })
+      this.changePath({ showUserCreate: true })
       this.props.changeControl({ showLinks: false })
     }
   }

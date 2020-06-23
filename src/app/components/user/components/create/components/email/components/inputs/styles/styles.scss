@@ -1,25 +1,10 @@
 .user-create-email-inputs-container {
-
-  // #user-create-email-email-address {
-  //   // margin-top: 32px;
-  // }
-
-  .gap {
-    // height: 16px;
-  }
-
-  .input-explanation {
-    font-size: 13px;
-    margin-top: 32px;
-    margin-bottom: 8px;
-  }
-
-  
+  max-width: 396px;
+  margin: 0;
+  padding: 0 18px 12px 18px;
+  border-left: 3px solid #85C1E9;
   .radio-container {
     margin-bottom: 12px;
-
-
-
     .title {
       margin-bottom: 12px;
       font-size: 14px;
@@ -51,8 +36,6 @@
       }
     }
   }
-
-
   .form-input {
     &.text, &.select {
       margin-bottom: 20px;
@@ -66,6 +49,7 @@
     }
     &.phone-body {
       margin-left: 96px;
+      margin-bottom: 0;
     }
   }
 }

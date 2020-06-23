@@ -72,14 +72,6 @@ export function confirmManager() {
         changeUserAuthorizeData({ authorized: true, name })
         changeControl({ step: 'publishing' })
       })
-      // .catch(() => {
-      //   changeErrors({
-      //     verification: { pl: 'nieprawidłowy kod weryfikacyjny', en: 'invalid verification code' }
-      //   })
-      // })
-      // .finally(() => {
-      //   changeControl({ connecting: false })
-      // })
     }
   }
 }

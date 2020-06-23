@@ -6,10 +6,11 @@
   max-width: 768px;
   margin: 72px auto 0;
 
-  .separation-line {
-    height: 1px;
-    background: lightgray;
-  }
+  $border-color: #E5E7E9;
+
+  border-top: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
 
   .new-form-input, .form-input {
     &.button {
@@ -146,13 +147,9 @@
     background: white;
   }
   .account-data {
-    border-left: 3px solid #85C1E9;
-    padding: 18px;
     background: white;
-    #user-create-consents-container {
-      margin: 0;
-      padding: 0;
-      margin-bottom: 18px !important;
+    .title {
+      padding-top: 24px;
     }
   }
   .form-input {
@@ -179,7 +176,7 @@
   .page-header {
     background: white;
     margin: 0;
-    border-left: 3px solid #2E4053;
+    border-left: 3px solid #F4D03F;
     padding: 12px 18px;
   }
 

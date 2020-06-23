@@ -44,7 +44,7 @@ export function sendVerification() {
   })
   .catch(() => {
     changeErrors({
-      password: { pl: 'nieprawidłowy kod weryfikacyjny', en: 'invalid verification code' }
+      password: { pl: 'Nieprawidłowy kod weryfikacyjny', en: 'Invalid verification code' }
     })
   })
   .finally(() => changeControl({ passwordConnecting: false }))

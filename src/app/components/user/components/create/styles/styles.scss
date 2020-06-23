@@ -2,22 +2,25 @@
 @import '../../../../../styles/inputs/form/form';
 
 #user-create-container {
-  overflow-y: scroll;
-
+  margin: 70px auto 0;
+  padding: 0 !important;
+  max-width: 640px;
+  border-top: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
   h1 {
-    font-size: 18px;
+    font-size: 16px;
     color: #566573;
+    border-left: 3px solid #F4D03F;
+    margin: 0;
+    padding: 18px;
   }
-
-  .close-button {
-    z-index: 3;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: white;
-    box-shadow: none;
-    &:hover {
-      color: #C0392B;
-    }
+  .create-points {
+    padding-bottom: 60px;
+  }
+  .input-explanation {
+    color: #424949;
+    margin-top: 40px;
+    margin-bottom: 20px;
   }
 }

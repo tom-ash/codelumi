@@ -1,7 +1,7 @@
 const errors = {
   email: {
-    pl: 'nieprawidłowy adres email',
-    en: 'invalid email address'
+    pl: 'Nieprawidłowy adres email',
+    en: 'Invalid email address'
   }
 }
 

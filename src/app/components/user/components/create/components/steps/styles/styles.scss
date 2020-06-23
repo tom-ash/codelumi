@@ -1,0 +1,68 @@
+#user-create {
+  $current-color: #3498DB;
+  .create-points {
+    background: white;
+    position: relative;
+    height: 32px;
+    .linear-border {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, #2E4053 0%, #85C1E9 100%);
+    }
+    height: 44px;
+    .line {
+      height: 22px;
+      border-bottom: 2px solid #D7DBDD;
+      margin: 0 18px;
+      &.success {
+        border-bottom: 2px solid #27AE60;
+      }
+    }
+    .point {
+      color: #FDFEFE;
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border-radius: 16px;
+      background: $current-color;
+      text-align: center;
+      line-height: 32px;
+      &.first {
+        top: 6px;
+        left: 18px;
+      }
+      &.second {
+        top: 6px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background: #D7DBDD;
+        &.current {
+          background: $current-color;
+        }
+      }
+      &.last {
+        top: 6px;
+        right: 18px;
+        background: #D7DBDD;
+        line-height: 34px;
+        &.current {
+          background: $current-color;
+        }
+      }
+      &.success {
+        background: #27AE60;
+      }
+      .fa-scroll {
+        padding-top: 4px;
+        font-size: 14px;
+      }
+      .fa-user-alt {
+        font-size: 15px;
+      }
+    }
+  }
+}

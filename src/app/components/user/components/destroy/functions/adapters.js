@@ -32,7 +32,7 @@ export function destroy() {
   .then(response => {
     if (response.ok) return this.deauthorizeUser()
     this.props.changeErrors({
-      verification: { pl: 'nieprawidłowy kod weryfikacyjny', en: 'invalid verification code' }
+      verification: { pl: 'Nieprawidłowy kod weryfikacyjny', en: 'Invalid verification code' }
     })
     throw new Error('SomethingWentWrong')
   })

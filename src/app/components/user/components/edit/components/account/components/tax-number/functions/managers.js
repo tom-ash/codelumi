@@ -20,7 +20,7 @@ export function textManager() {
     validate: value => {
       if (value.length < 10) {
         changeErrors({
-          taxNumber: { pl: 'nieprawidłowy numer identyfikacji podatkowej', en: 'invalid tax identification number' }
+          taxNumber: { pl: 'Nieprawidłowy numer identyfikacji podatkowej', en: 'Invalid tax identification number' }
         })
         return false
       }

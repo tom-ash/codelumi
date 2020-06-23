@@ -3,6 +3,8 @@
 #user-create-email-verify {
   position: relative;
   width: 100%;
+  padding: 0 18px 18px;
+  border-left: 3px solid #85C1E9;
   .monit {
     line-height: 19px;
     font-size: 15px;
@@ -12,10 +14,12 @@
   .form-input {
     &.text {
       margin-bottom: 25px;
+      width: 50%;
+      margin: 0 auto 24px;
     }
     &.button {
       position: relative;
-      margin: 0 0 0 auto;
+      margin: 0 auto;
       width: 50%;
     }
   }

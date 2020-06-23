@@ -20,7 +20,7 @@ export function emailAddressManager() {
       if (!emailValidator(value).isValid) {
         this.props.changeErrors({
           emailOrPassword: {
-            pl: 'nieprawidłowy adres email lub hasło', en: 'invalid email address and/or password'
+            pl: 'Nieprawidłowy adres email lub hasło.', en: 'Invalid email address and/or password.'
           }
         })
       }
@@ -45,7 +45,7 @@ export function passwordManager() {
       if (value.length < 1) {
         this.props.changeErrors({
           emailOrPassword: {
-            pl: 'nieprawidłowy adres email lub hasło', en: 'invalid email address and/or password'
+            pl: 'Nieprawidłowy adres email lub hasło.', en: 'Invalid email address and/or password.'
           }
         })
         return false

@@ -26,13 +26,13 @@ class User extends React.Component {
 
     return (
       <React.Fragment>
-        {(showCreate || showAuthorize || showPasswordReset || showEditPhoneVerify) &&
+        {(showAuthorize || showPasswordReset || showEditPhoneVerify) &&
         <div className='darkened-cover'>
-          {showCreate          && <UserCreate />}
           {showAuthorize       && <UserAuthorize />}
           {showPasswordReset   && <UserEditAccountPassword />}
           {showEditPhoneVerify && <UserEditPhoneNumberVerify />}
         </div>}
+        {showCreate && <UserCreate />}
         {showAccount &&
         <div
           onClick={() => changeApp({ showUserShow: false })}

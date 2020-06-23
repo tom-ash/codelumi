@@ -3,11 +3,23 @@ export const mapStateToProps = (store) => {
     showAnnouncementCreate
   } = store.app
 
+  const {
+    authorized
+  } = store.user.authorize.data
+
+  const {
+    connecting
+  } = store.user.create.control
+
+  const {
+    token
+  } = store.user.create.data
+
   return {
     showAnnouncementCreate,
-    authorized: store.user.authorize.data.authorized,
-    connecting: store.user.create.control.connecting,
-    token: store.user.create.data.token
+    authorized,
+    connecting,
+    token
   }
 }
 
