@@ -73,7 +73,7 @@ function createProspectiveUser(userObject) {
   .then((json) => {
     changeData({ token: json.token })
     if (showAnnouncementCreate) changeAnnouncementCreateControl({ step: 'confirmation' })
-    changeControl({ connecting: false })
+    changeControl({ connecting: false, step: 'confirmation' })
   })
   .catch(e => console.dir(e))
 }

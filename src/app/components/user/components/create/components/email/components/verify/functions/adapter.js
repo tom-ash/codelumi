@@ -26,6 +26,7 @@ export function verify() {
     saveTokens.call(this, accessToken)
     changeApp({ showUserCreate: false })
     changeAuthorizeData({ authorized: true, name, phoneVerified: false })
+    changeControl({ step: 'success' })
   })
   .catch(() => {
     changeErrors({
