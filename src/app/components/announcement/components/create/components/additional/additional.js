@@ -4,7 +4,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { ManagedText, ManagedSelect, ManagedCheckbox } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
-import { handleErrorOnSelect, handleErrorOnValidate } from './functions/errors-handler'
 import { onSelectHandler } from './functions/on-select-handler'
 import Calendar from 'react-calendar/dist/entry.nostyle'
 import { parseDate } from '../../../../../../functions/date-parsers'
@@ -22,12 +21,9 @@ class AnnouncementCreateAdditional extends React.Component {
     this.floorManager = managers.floorManager.bind(this)
     this.totalFloorsManager = managers.totalFloorsManager.bind(this)
     this.showAvailabilityDateManager = managers.showAvailabilityDateManager.bind(this)
-    this.handleErrorOnSelect = handleErrorOnSelect.bind(this)
-    this.handleErrorOnValidate = handleErrorOnValidate.bind(this)
     this.onSelectHandler = onSelectHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
     this.floorsProvider = floorsProvider.bind(this)
-
     this.rentCurrencyManager = managers.rentCurrencyManager.bind(this)
     this.rentAmountManager = managers.rentAmountManager.bind(this)
     this.getRentAmounts = getRentAmounts.bind(this)
@@ -35,7 +31,6 @@ class AnnouncementCreateAdditional extends React.Component {
   }
   
   render() {
-
     const {
       showAvilabilityDate
     } = this.props
@@ -75,4 +70,4 @@ class AnnouncementCreateAdditional extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementCreateAdditional);
+export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementCreateAdditional)

@@ -1,5 +1,6 @@
 import { scrollToElement } from '../../../../../../../functions/scrollers/scroll-to-element'
 import { requiredInputs, requiredInputsArray } from '../../../constants/required-inputs'
+import { instantScroll } from '../../../../../../../functions/scrollers/instant-scroll'
 
 export function publish() {
   const {
@@ -18,10 +19,11 @@ export function publish() {
   if (!Object.values(validationObject).every((element => element))) {
     for(let i = 0; i < requiredInputsArray.length; i++) {
       if (!validationObject[requiredInputsArray[i]]) {
-        return scrollToElement(document.getElementById(requiredInputs[requiredInputsArray[i]].id), 16, -120)
+        return scrollToElement(document.getElementById(requiredInputs[requiredInputsArray[i]].id), 12, -120)
       }
     }
   }
 
+  instantScroll()
   changeControl({ step: authorized ? 'publishing' : 'account-data' })
 }

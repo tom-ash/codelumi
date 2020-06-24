@@ -8,7 +8,6 @@ export function addAnnouncementManager() {
     label: this.languageHandler('Dalej', 'Next'),
     onClick: () => {
       this.publish()
-      instantScroll()
     }
   }
 }

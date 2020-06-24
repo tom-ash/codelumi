@@ -9,7 +9,6 @@ export function rentAmountManager() {
 
   const {
     category,
-    errors,
     changeInputs
   } = this.props
 
@@ -28,8 +27,7 @@ export function rentAmountManager() {
     onChange: (value) => changeInputs({ [rentAmountType]: value }),
     onBlur: () => {
       this.getRentAmounts()
-    },
-    error: this.languageObjectHandler(errors[rentAmountType])
+    }
   }
 }
 

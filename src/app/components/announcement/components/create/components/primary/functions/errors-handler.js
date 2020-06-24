@@ -1,19 +1,28 @@
-import { errors } from '../constants/errors'
+import { requiredInputs } from '../../../constants/required-inputs'
 
-const noError = { pl: '', en: '' }
+const noError = {
+  pl: '',
+  en: ''
+}
 
 export function handleErrorOnSelect(input, value) {
-  if (value !== '') return  this.props.changeErrors({ [input]: noError })
-  this.props.changeErrors({ [input]: errors[input] })
+  const {
+    changeErrors
+  } = this.props
+
+  if (value !== '') return changeErrors({ [input]: noError })
+
+  changeErrors({ [input]: requiredInputs[input].error })
 }
 
 export function handleErrorOnValidate(inputName) {
-  const { changeErrors, [inputName]: value } = this.props
+  const {
+    changeErrors,
+    [inputName]: value
+  } = this.props
 
   if (value !== '' && value !== null && value !== undefined) return true
 
-  changeErrors({ [inputName]: errors[inputName] })
+  changeErrors({ [inputName]: requiredInputs[inputName].error })
   return false
 }
-
-

@@ -3,22 +3,22 @@ export const requiredInputs = {
     id: 'announcement-create-category',
     label: {},
     error: {
-      pl: 'wybierz kategorię',
-      en: 'select category'
+      pl: 'Wybierz kategorię.',
+      en: 'Select category.'
     }
   },
   district: {
     id: 'announcement-create-district',
-    errors: {
-      pl: 'wybierz dzielnicę',
-      en: 'select district'
+    error: {
+      pl: 'Wybierz dzielnicę.',
+      en: 'Select district.'
     }
   },
   area: {
     id: 'announcement-create-area',
     error: {
-      pl: 'podaj powierzchnię',
-      en: 'provide area'
+      pl: 'Podaj powierzchnię.',
+      en: 'Provide area.'
     }
   },
   pictures: {

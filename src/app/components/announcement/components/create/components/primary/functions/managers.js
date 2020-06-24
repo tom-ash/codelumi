@@ -4,7 +4,10 @@ import { requiredInputs } from '../../../constants/required-inputs'
 import { categories } from '../../../../../constants/categories'
 import { districts } from '../../../../../constants/districts'
 
-const noError = { pl: '', en: '' }
+const noError = {
+  pl: '',
+  en: ''
+}
 
 export function categoryManager() {
 
@@ -16,7 +19,6 @@ export function categoryManager() {
     category: value,
     errors,
     changeErrors,
-    changeInputs,
     language
   } = this.props
 
@@ -24,8 +26,6 @@ export function categoryManager() {
     icon,
     all: label
   } = inputs.category
-
-
 
   const {
     category: categoryError
@@ -42,10 +42,10 @@ export function categoryManager() {
     label: label[language],
     options: [{ value: '', text: '' }].concat(categoryOptions),
     children: <i className="fas fa-chevron-down" />,
-    onFocus: () => this.props.changeErrors({ category: noError }),
+    onFocus: () => changeErrors({ category: noError }),
     onSelect: (option) => this.onSelectHandler('category', option.value),
     onBlur: () => this.categoryManager().validate(),
-    validate: () => this.handleErrorOnValidate('category', this.props.district),
+    validate: () => this.handleErrorOnValidate('category', value),
     error: this.languageObjectHandler(categoryError)
   }
 }
@@ -104,5 +104,3 @@ export function areaManager() {
     error: this.languageObjectHandler(this.props.errors.area)
   }
 }
-
-
