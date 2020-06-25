@@ -31,8 +31,8 @@ export const coreNoIndexRoutes = {
       title: 'Sign In',
       description: 'Sign In to the Account on warsawlease.pl. On warsawlease.pl you can easily add a free announcement of lease of an apartment, usable premises and/or and office.'
     },
-    needsAnnouncementIndexMap: true,
-    overshadow: true,
+    needsAnnouncementIndexMap: false,
+    overshadow: false,
     noIndex: true
   },
   showVisitorAbout: {

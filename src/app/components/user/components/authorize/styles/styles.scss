@@ -2,20 +2,17 @@
 @import '../../../../../styles/inputs/form/form';
 
 #user-authorize {
-    h1 {
-        font-size: 18px;
-        color: #566573;
-      }
-      
-    .close-button {
-        z-index: 3;
-        position: absolute;
-        top: 0;
-        right: 0;
-        background: white;
-        box-shadow: none;
-        &:hover {
-          color: #C0392B;
-        }
-      }
+  max-width: 640px;
+  margin: 0 auto;
+  margin-top: 200px;
+  padding: 18px;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  @media #{$phone} {
+    margin: 58px 12px;
+  }
+  h1 {
+    font-size: 16px;
+    color: #566573;
+  }
 }

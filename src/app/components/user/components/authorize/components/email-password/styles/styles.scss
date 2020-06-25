@@ -1,6 +1,9 @@
 @import '../../../../../../../styles/themes.scss';
 
 #user-authorize-email {
+  .inputs {
+    max-width: 396px;
+  }
   .form-input {
     &.email {
       margin-bottom: 12px;
@@ -9,12 +12,13 @@
       }
     }
   }
+  .separation-line {
+    margin: 24px 0;
+  }
   .submit {
     .checkbox {
-      position: absolute;
       padding: 0;
       margin: 0;
-      height: 36px;
       @media #{$phone} {
         position: relative;
         height: 14px;
@@ -29,7 +33,6 @@
       }
       .label {
         font-size: 14px;
-        line-height: 36px;
         margin-left: 25px;
         @media #{$phone} {
           line-height: 14px;
@@ -38,31 +41,31 @@
     }
     .form-input {
       &.button {
-        position: relative;
         display: block;
-        width: 50%;
+        width: 240px;
         height: 36px;
-        @media #{$phone} {
+        margin: 0 auto;
+        .input {
           width: 100%;
-        }
-        margin: 0 0 0 auto;
-        .very-small-windmill-spinner {
-          left: -51px;
-          top: -51px;
-          div:after {
-            background: #F0F3F4;
+          height: 100%;
+          border: none;
+          border-radius: 3px;
+          background: #3498DB;
+          color: #F7F9F9;
+          &.hover {
+            background: #5DADE2;
           }
         }
       }
     }
   }
   .reset-password {
+    display: block;
     text-align: center;
     font-size: 14px;
     color: #566573;
     margin-top: 15px;
     padding-top: 15px;
-    border-top: 1px solid #B2BABB;
     span {
       cursor: pointer;
     }

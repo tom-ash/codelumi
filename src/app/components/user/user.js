@@ -5,7 +5,6 @@ import UserCreate from './components/create/create'
 import UserAuthorize from './components/authorize/authorize'
 import UserShow from './components/show/show'
 import UserEditAccountPassword from './components/edit/components/account/components/password/password'
-import UserEditPhoneNumberVerify from './components/edit/components/phone/components/verify/verify'
 import UserEditAccount from './components/edit/components/account/account'
 
 class User extends React.Component {
@@ -19,20 +18,19 @@ class User extends React.Component {
       showCreate,
       showAuthorize,
       showPasswordReset,
-      showEditPhoneVerify,
       showAccount,
       showEdit
     } = this.props
 
     return (
       <React.Fragment>
-        {(showAuthorize || showPasswordReset || showEditPhoneVerify) &&
+        {(showPasswordReset) &&
         <div className='darkened-cover'>
-          {showAuthorize       && <UserAuthorize />}
           {showPasswordReset   && <UserEditAccountPassword />}
-          {showEditPhoneVerify && <UserEditPhoneNumberVerify />}
         </div>}
-        {showCreate && <UserCreate />}
+        
+        {showCreate    && <UserCreate />}
+        {showAuthorize && <UserAuthorize />}
         {showAccount &&
         <div
           onClick={() => changeApp({ showUserShow: false })}

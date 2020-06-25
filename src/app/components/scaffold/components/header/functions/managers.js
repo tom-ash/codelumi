@@ -75,7 +75,7 @@ export function signUpManager() {
 
 export function signInManager() {
   const {
-    changeApp, resetUserAuthorizeControl, resetUserAuthorizeInputs, changeControl, resetUserAuthorizeErrors, name
+    name
   } = this.props
 
   return {
@@ -85,13 +85,7 @@ export function signInManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Zaloguj', en: 'Sign In' }),
     label: this.languageObjectHandler({ pl: 'Zaloguj', en: 'Sign In' }),
-    onClick: () => {
-      resetUserAuthorizeErrors()
-      resetUserAuthorizeInputs()
-      resetUserAuthorizeControl()
-      changeControl({ showLinks: false })
-      changeApp({ showUserAuthorize: true })
-    }
+    onClick: () => this.changePath({ showUserAuthorize: true })
   }
 }
 

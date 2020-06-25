@@ -24,10 +24,13 @@ class UserAuthorizeEmailPassword extends React.Component {
     return (
       <div id='user-authorize-email'>
         <form>
-          <ManagedText {...this.emailAddressManager()}/>
-          <ManagedText {...this.passwordManager()}/>
+          <div className='inputs'>
+            <ManagedText {...this.emailAddressManager()}/>
+            <ManagedText {...this.passwordManager()}/>
+          </div>
           <div className='submit'>
             <ManagedCheckbox {...this.rememberMeManager()} />
+            <div className='separation-line' />
             <ManagedButton {...this.buttonManager()} />
           </div>
         </form>
