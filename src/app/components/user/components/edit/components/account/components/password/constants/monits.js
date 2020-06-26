@@ -1,8 +1,8 @@
 import React from 'react'
 
 export const emailAddress = {
-  pl: <span>Jeżeli chcesz zresetować hasło podaj adres email przypisany do tego konta i&nbsp;naciśnij 'Dalej'.</span>,
-  en: <span>If you wish to reset the password please provide the account email address and&nbsp;press `Next`.</span>
+  pl: <span>Podaj adres email przypisany do Twojego konta.</span>,
+  en: <span>Provide the email address associated with your account.</span>
 }
 
 export const verificationCode = {

@@ -211,26 +211,8 @@ export const coreNoIndexRoutes = {
       title: 'Reset Password',
       description: 'Reset Password'
     },
-    needsAnnouncementIndexMap: true,
-    overshadow: true,
-    noIndex: true
-  },
-  showUserEditPhoneVerify: {
-    sender: 'generic',
-    pl: {
-      regEx: /^\/?zweryfikuj-numer-telefonu\/?$/,
-      url: '/zweryfikuj-numer-telefonu',
-      title: 'Zweryfikuj numer telefonu',
-      description: 'Zweryfikuj numer telefonu'
-    },
-    en: {
-      regEx: /^\/?verify-phone-number\/?$/,
-      url: '/verify-phone-number',
-      title: 'Verify Phone Number',
-      description: 'Verify Phone Number'
-    },
-    needsAnnouncementIndexMap: true,
-    overshadow: true,
+    needsAnnouncementIndexMap: false,
+    overshadow: false,
     noIndex: true
   },
   showUserEditAccount: {

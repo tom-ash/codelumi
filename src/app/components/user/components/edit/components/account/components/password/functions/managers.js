@@ -14,6 +14,7 @@ export function emailManager() {
     controlled: false,
     classNames: { container: 'form-input text' },
     label: this.languageObjectHandler(label),
+    children: <i className='fas fa-pen' />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.emailManager().validate(value),
     validate: value => {

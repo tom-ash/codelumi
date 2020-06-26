@@ -8,7 +8,6 @@ import { sendEmail, sendVerification, sendPassword } from './functions/adapters'
 import { monitProvider } from './functions/monit-provider'
 import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import { labelProvider } from '../../../../../../../../functions/providers/label'
-import { CloseButton } from '../../../../../../../../components/support/components/close-button/close-button'
 import { hideUser } from '../../../../../../functions/hide-user'
 
 class UserEditAccountPassword extends React.Component {
@@ -36,21 +35,23 @@ class UserEditAccountPassword extends React.Component {
       <React.Fragment>
         <div
           id='user-edit-account-password'
-          className={`${editAccount ? '' : 'container narrow-container shadowed'}`}
+          className={`${editAccount ? '' : 'container full'}`}
           onClick={e => e.stopPropagation()}
         >
           {!editAccount &&
           <h1 className='page-header'>
-            <i className='fas fa-user-plus' /> {this.languageHandler('Resetowanie hasła', 'Password Resetting')}
+            {this.languageHandler('Zresetuj hasło', 'Reset password')}
           </h1>}
-          {!editAccount && <CloseButton onClick={this.hideUser} classNames='page narrow'/>}
           <div className='inputs'>
-            <div className='monit'>
-              {this.monitProvider()}
+            <div className='monit-and-text-inputs'>
+              <div className='monit'>
+                {this.monitProvider()}
+              </div>
+              <ManagedText key='emailAddress' {...this.emailManager()} />
+              <ManagedText key='verificationCode' {...this.verificationManager()} />
+              <ManagedText key='password' {...this.passwordManager()} />
             </div>
-            <ManagedText key='emailAddress' {...this.emailManager()} />
-            <ManagedText key='verificationCode' {...this.verificationManager()} />
-            <ManagedText key='password' {...this.passwordManager()} />
+            <div className='separation-line' />
             <ManagedButton key='button' {...this.buttonManager()} />
           </div>
         </div>

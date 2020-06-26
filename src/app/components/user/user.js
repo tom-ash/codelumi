@@ -24,13 +24,9 @@ class User extends React.Component {
 
     return (
       <React.Fragment>
-        {(showPasswordReset) &&
-        <div className='darkened-cover'>
-          {showPasswordReset   && <UserEditAccountPassword />}
-        </div>}
-        
         {showCreate    && <UserCreate />}
         {showAuthorize && <UserAuthorize />}
+        {showPasswordReset   && <UserEditAccountPassword />}
         {showAccount &&
         <div
           onClick={() => changeApp({ showUserShow: false })}
