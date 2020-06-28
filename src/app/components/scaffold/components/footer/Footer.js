@@ -18,6 +18,7 @@ class Footer extends React.Component {
     this.cookiesPolicyManager = managers.cookiesPolicyManager.bind(this)
     this.privacyPolicyManager = managers.privacyPolicyManager.bind(this)
     this.privacySettingsManager = managers.privacySettingsManager.bind(this)
+    this.changePath = changePath.bind(this)
   }
   render() {
     return(

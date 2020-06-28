@@ -9,7 +9,7 @@ export function aboutManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'O Serwisie', en: 'About' }),
     label: this.languageHandler('O Serwisie', 'About'),
-    onClick: () => changeApp({ showVisitorAbout: true, showNotFound: false })
+    onClick: () => this.changePath({ showVisitorAbout: true }) //changeApp({ showVisitorAbout: true, showNotFound: false })
   }
 }
 
@@ -22,7 +22,7 @@ export function contactManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Kontakt', en: 'Contact' }),
     label: this.languageHandler('Kontakt', 'Contact'),
-    onClick: () => changeApp({ showVisitorContact: true, showNotFound: false })
+    onClick: () => this.changePath({ showVisitorContact: true })
   }
 }
 

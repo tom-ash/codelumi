@@ -67,8 +67,8 @@ export const coreNoIndexRoutes = {
       title: 'Contact',
       description: 'Contact'
     },
-    needsAnnouncementIndexMap: true,
-    overshadow: true,
+    needsAnnouncementIndexMap: false,
+    overshadow: false,
     noIndex: true
   },
   showVisitorTermsOfService: {
@@ -85,8 +85,8 @@ export const coreNoIndexRoutes = {
       title: 'Terms of Service',
       description: 'Terms of Service'
     },
-    needsAnnouncementIndexMap: true,
-    overshadow: true,
+    needsAnnouncementIndexMap: false,
+    overshadow: false,
     noIndex: true
   },
   showVisitorCookiesPolicy: {
@@ -103,8 +103,8 @@ export const coreNoIndexRoutes = {
       title: 'Cookies Policy',
       description: 'Cookies Policy'
     },
-    needsAnnouncementIndexMap: true,
-    overshadow: true,
+    needsAnnouncementIndexMap: false,
+    overshadow: false,
     noIndex: true
   },
   showVisitorPrivacyPolicy: {
@@ -121,8 +121,8 @@ export const coreNoIndexRoutes = {
       title: 'Privacy Policy',
       description: 'Privacy Policy'
     },
-    needsAnnouncementIndexMap: true,
-    overshadow: true,
+    needsAnnouncementIndexMap: false,
+    overshadow: false,
     noIndex: true
   },
   showVisitorPrivacySettings: {
@@ -139,8 +139,8 @@ export const coreNoIndexRoutes = {
       title: 'Privacy Settings',
       description: 'Privacy Settings'
     },
-    needsAnnouncementIndexMap: true,
-    overshadow: true,
+    needsAnnouncementIndexMap: false,
+    overshadow: false,
     noIndex: true
   },
   showAnnouncementIndexAdded: {

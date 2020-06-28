@@ -16,7 +16,8 @@ export const mapStateToProps = (store) => {
   const {
     step,
     editing,
-    connecting
+    connecting,
+    showDescription
   } = control
 
   const {
@@ -52,6 +53,7 @@ export const mapStateToProps = (store) => {
   } = store.user.create.data
 
   return {
+    showDescription,
     language,
     path,
     showEdit,

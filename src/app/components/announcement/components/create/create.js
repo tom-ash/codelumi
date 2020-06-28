@@ -38,9 +38,6 @@ import {
 
 import { handleErrorOnValidate } from './components/primary/functions/errors-handler'
 
-
-
-
 class AnnouncementCreate extends React.Component {
   constructor(props) {
     super(props)
