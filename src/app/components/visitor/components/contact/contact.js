@@ -16,13 +16,14 @@ class Footer extends React.Component {
   render() {
     return(
       <React.Fragment>
-        <CloseButton classNames='page narrow contact'/>
         <div
           id='visitor-contact'
-          className='container narrow-container shadowed'
+          className='container'
           onClick={e => e.stopPropagation()}
         >
-          {this.pageHeaderProvider('far fa-envelope', { pl: 'Kontakt', en: 'Contact' })}
+          <h1>
+            {this.languageObjectHandler({ pl: 'Kontakt', en: 'Contact' })}
+          </h1>
           <div className='company'>
             Warsaw Digital Sp. z o.o.
           </div>
@@ -33,7 +34,9 @@ class Footer extends React.Component {
             {this.languageHandler('00-105 Warszawa', '00-105 Warsaw')}
           </div>
           <div className='email'>
-            Email: <i>{this.languageHandler('kontakt@warsaw.digital', 'contact@warsaw.digital')}</i>
+            <i>
+              {this.languageHandler('kontakt@warsaw.digital', 'contact@warsaw.digital')}
+            </i>
           </div>
         </div>
       </React.Fragment>

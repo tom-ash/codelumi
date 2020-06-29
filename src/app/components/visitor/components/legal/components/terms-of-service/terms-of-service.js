@@ -17,13 +17,14 @@ class VisitorTermsOfService extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <CloseButton classNames='page medium'/>
         <div
           id='visitor-terms-of-service'
-          className='container medium-container shadowed'
+          className='container__legal'
           onClick={e => e.stopPropagation()}
         >
-          {this.pageHeaderProvider('fas fa-align-justify', { pl: 'Regulamin', en: 'Terms Of Service' })}
+          <h1>
+            {this.languageObjectHandler({ pl: 'Regulamin', en: 'Terms Of Service' })}
+          </h1>
           <div className='terms-of-service'>
           {
           text.map((provision, index) => (

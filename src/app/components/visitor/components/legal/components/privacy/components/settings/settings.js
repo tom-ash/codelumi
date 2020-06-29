@@ -22,14 +22,14 @@ class VisitorPrivacySettings extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <CloseButton classNames='page narrow'/>
         <div
           id='visitor-privacy-settings'
-          className='container narrow-container shadowed'
+          className='container__legal'
           onClick={e => e.stopPropagation()}
         >
-          {this.pageHeaderProvider('fas fa-user-shield',
-                                  { pl: 'Ustawienia prywatności', en: 'Privacy Settings' } )}
+          <h1>
+            {this.languageObjectHandler({ pl: 'Ustawienia prywatności', en: 'Privacy Settings' })}
+          </h1>
           <div className='text'>
             {this.languageObjectHandler(this.textsProvider('statistics'))}
           </div>

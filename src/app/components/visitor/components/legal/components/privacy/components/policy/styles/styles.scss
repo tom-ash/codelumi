@@ -2,8 +2,4 @@
 
 #visitor-privacy-policy {
   overflow-y: scroll;
-  max-height: 72%;
-  @media #{$phone} {
-    max-height: none;
-  }
 }

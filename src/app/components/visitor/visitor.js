@@ -60,7 +60,7 @@ class User extends React.Component {
         {!this.show() && (statisticsConsent === null || marketingConsent === null) && !showPrivacySettings &&
         <VisitorPrivacyMonit />}
         {this.show() &&
-        <div className='darkened-cover' onClick={() => this.hide()}>
+        <div>
           {showAbout           && <VisitorAbout />}
           {showContact         && <VisitorContact />}
           {showTermsOfService  && <VisitorTermsOfService/>}

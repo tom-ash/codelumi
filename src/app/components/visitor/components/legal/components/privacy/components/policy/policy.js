@@ -17,26 +17,27 @@ class VisitorPrivacyPolicy extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <CloseButton classNames='page medium'/>
         <div
           id='visitor-privacy-policy'
-          className='container medium-container shadowed'
+          className='container__legal'
           onClick={e => e.stopPropagation()}
         >
-          {this.pageHeaderProvider('fas fa-user-shield', { pl: 'Polityka Prywatności', en: 'Privacy Policy' })}
+          <h1>
+            {this.languageObjectHandler({ pl: 'Polityka Prywatności', en: 'Privacy Policy' })}
+          </h1>
           <div className='privacy-policy'>
-          {
-          text.map((provision, index) => (
-            <Provision
-            key={'privacyPolicy' + index}
-            data={{
-              tier: provision.tier,
-              item: provision.item,
-              pl: provision.pl,
-              en: provision.en
-            }}/>
-          ))
-          }
+            {
+            text.map((provision, index) => (
+              <Provision
+              key={'privacyPolicy' + index}
+              data={{
+                tier: provision.tier,
+                item: provision.item,
+                pl: provision.pl,
+                en: provision.en
+              }}/>
+            ))
+            }
           </div>
         </div>
       </React.Fragment>

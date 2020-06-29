@@ -12,7 +12,6 @@ class Footer extends React.Component {
     this.changePath = changePath.bind(this)
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
-    this.aboutManger = managers.aboutManager.bind(this)
     this.contactManager = managers.contactManager.bind(this)
     this.termsOfServiceManager = managers.termsOfServiceManager.bind(this)
     this.cookiesPolicyManager = managers.cookiesPolicyManager.bind(this)
