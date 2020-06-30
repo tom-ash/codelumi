@@ -18,11 +18,9 @@ export function agreeManager() {
 }
 
 export function settingsManager() {
-  const { changeApp } = this.props
-
   return {
     classNames: { container: 'form-input button settings' },
     label: this.languageHandler('Ustawienia', 'Settings'),
-    onClick: () => changeApp({ showVisitorPrivacySettings: true })
+    onClick: () => this.changePath({ showVisitorPrivacySettings: true })
   }
 }
