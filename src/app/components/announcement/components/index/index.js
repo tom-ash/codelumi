@@ -42,8 +42,9 @@ class AnnouncementIndexSearch extends React.Component {
 
   render() {
     const {
-      showVisitor,
-      showUser,
+      showMap,
+      showCatalogue,
+      showList,
       changeInputs,
       changeControl,
       offset,
@@ -58,19 +59,43 @@ class AnnouncementIndexSearch extends React.Component {
       en: 'Find Yourself in Warsaw! Real Estate Lease - Warsaw - Announcements. Apartments, Usable Premises and Offices.'
     }
 
+    function MainHeaderProvider({ showList, showMap, showCatalogue, languageObjectHandler }) {
+      if (showCatalogue) {
+        return languageObjectHandler({
+          pl: 'Katalog nieruchomości na wynajem w Warszawie',
+          en: 'Catalogue of Real Estate Lease in Warsaw'
+        })
+      }
+      if (showMap) {
+        return languageObjectHandler({
+          pl: 'Mapa nieruchomości na wynajem w Warszawie',
+          en: 'Map of Real Estate Lease in Warsaw'
+        })
+      }
+
+      return null
+    }
+
     return (
       <div id='announcement-index'>
         <h1 id='header-panel'>
-          {this.languageObjectHandler(mainHeader)}
+          <MainHeaderProvider
+            showMap={showMap}
+            showCatalogue={showCatalogue}
+            showList={showList}
+            languageObjectHandler={this.languageObjectHandler}
+          />
         </h1>
-        {showAddAnnouncement && <ManagedLink {...this.addAnnouncementManager()} />}
+        <div>
+          {showAddAnnouncement && <ManagedLink {...this.addAnnouncementManager()} />}
+        </div>
         <AnnouncementIndexPanel />
-        {showVisitor &&
+        {showMap &&
         <React.Fragment>
           <AnnouncementIndexFull />
           <AnnouncementIndexMap />
         </React.Fragment>}
-        {showUser && <AnnouncementIndexList />}
+        {showList && <AnnouncementIndexList />}
       </div>
     )
   }

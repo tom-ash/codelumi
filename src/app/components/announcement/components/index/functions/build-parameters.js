@@ -1,10 +1,10 @@
 import { parameters } from '../constants/parameters'
 
 export function buildRequestParameters() {
-  const { showUser } = this.props
+  const { showList } = this.props
   let params = '?'
 
-  if (showUser) {
+  if (showList) {
     params += `type=list&offset=${this.props.offset}&`;
     (['offices', 'usablePremises', 'visible', 'hidden']).map(parameter => {
       params += `${parameter}=${this.props.switches[parameter]}&`

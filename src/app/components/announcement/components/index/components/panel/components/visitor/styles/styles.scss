@@ -4,9 +4,10 @@
 
 #announcement-index-panel-visitor {
   @extend %panel;
+
   margin: 0 auto;
-  display: inline-block;
   text-align: left;
+  max-width: 1214px;
 
   .fa-chevron-down {
     background: none;

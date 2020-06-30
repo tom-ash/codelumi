@@ -143,7 +143,7 @@ export const coreNoIndexRoutes = {
     overshadow: false,
     noIndex: true
   },
-  showAnnouncementIndexAdded: {
+  showAnnouncementIndexList: {
     sender: 'generic',
     pl: {
       regEx: /^\/?dodane-ogloszenia\/?$/,

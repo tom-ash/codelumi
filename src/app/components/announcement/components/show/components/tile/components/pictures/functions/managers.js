@@ -26,7 +26,7 @@ export function linkManager() {
         showAnnouncementShow: true,
         showAnnouncementIndexMap: false,
         showAnnouncementIndexCatalogue: false,
-        showAnnouncementIndexAdded: false
+        showAnnouncementIndexList: false
       })
     }
   }

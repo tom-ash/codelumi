@@ -30,7 +30,7 @@ export function listAnnouncementsManager() {
     label: this.labelProvider('fas fa-list-ul', 'Dodane ogłoszenia', 'Added announcements'),
     onClick: () => {
       changeAnnouncementIndexData({ announcements: null, amount: null })
-      this.changePath({ showAnnouncementIndexAdded: true })
+      this.changePath({ showAnnouncementIndexList: true })
       changeAnnouncementIndexControl({ fetch: true })
     }
   }

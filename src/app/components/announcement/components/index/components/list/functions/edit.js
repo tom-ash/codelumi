@@ -1,3 +1,3 @@
 export function edit(announcement) {
-  this.changePath({ showAnnouncementIndexAdded: false, showAnnouncementEdit: true, announcementId: announcement.id })
+  this.changePath({ showAnnouncementIndexList: false, showAnnouncementEdit: true, announcementId: announcement.id })
 }

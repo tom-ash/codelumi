@@ -10,11 +10,11 @@ class Announcement extends React.Component {
     super(props)
   }
   render() {
-    const { showCreate, showEdit, showVisitor, showUser, showShow } = this.props
+    const { showCreate, showEdit, showMap, showList, showShow } = this.props
 
     return (
       <React.Fragment>
-        {(showVisitor || showUser) && <AnnouncementIndex />}
+        {(showMap || showList) && <AnnouncementIndex />}
         {(showCreate || showEdit) && <AnnouncementCreate />}
         {showShow && <AnnouncementShow />}
       </React.Fragment>

@@ -9,11 +9,11 @@ export function componentDidMount() {
 }
 
 export function componentDidUpdate(prevProps) {
-  const { fetch, showUser } = this.props
+  const { fetch, showList } = this.props
   const { fetch: prevFetch } = prevProps
 
   if (!prevFetch && fetch) {
     this.fetchAnnouncements()
-    if (!showUser) this.paramsBuilder()
+    if (!showList) this.paramsBuilder()
   }
 }

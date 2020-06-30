@@ -2,7 +2,6 @@
 
 #announcement-index {
   padding-top: 60px;
-  text-align: center;
   min-height: 787px;
   @media #{$small-pc} {
     min-height: 923px;
@@ -10,6 +9,8 @@
   @media #{$small-tablet} {
     min-height: 1200px;
   }
+  max-width: 1214px;
+  margin: 0 auto;
   .phone {
     cursor: pointer;
     z-index: 3;
@@ -47,19 +48,27 @@
   .add-announcement {
     color: #F2F3F4;
     font-size: 14px;
-    .fas {
-      margin-right: 4px;
-    }
-    border-radius: 12px;
-    background: #229954;
-    display: inline-block;
-    padding: 5px 10px;
+
+    text-decoration: underline;
+    
+
+    border-radius: 20px;
+    background: #17A589;
+    padding: 7px 12px;
+
     font-weight: normal !important;
-    margin-bottom: 10px;
+
+    width: 196px;
+
+    margin: 12px auto 10px !important;
+    text-align: center;
   }
 }
 
 #header-panel {
+
+  display: inline-block;
+
   font-weight: normal;
   background: #21618C;
   color: #F2F3F4;
@@ -72,7 +81,19 @@
   overflow-x: auto;
   white-space: nowrap;
   padding: 0 12px;
+
+  text-align: left;
+
+  width: auto;
+
   @media #{$small-pc} {
+    margin-left: 12px;
+    margin-bottom: 0;
+  }
+  @media #{$phone} {
     border-radius: 0;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
   }
 }
