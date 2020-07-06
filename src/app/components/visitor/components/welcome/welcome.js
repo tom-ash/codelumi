@@ -5,7 +5,7 @@ import { changePath } from '../../../../functions/routers/change-path'
 import { pageHeaderProvider } from '../../../../functions/providers/headers'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 
-import Logo from '../../../../assets/logo-welcome.svg'
+import PostCreate from '../../../post/components/create/create'
 
 class VisitorWelcome extends React.Component {
   constructor(props) {
@@ -16,49 +16,76 @@ class VisitorWelcome extends React.Component {
     this.languageObjectHandler = languageObjectHandler.bind(this)
   }
 
-  render() {
+  componentDidMount() {
     const {
-      showAnnouncementIndexMap,
-      showAnnouncementIndexCatalogue
+      changePostIndexData,
+      posts
     } = this.props
 
-    if (!showAnnouncementIndexMap) return null
+    if (posts && posts.welcome) return
+    
+    fetch(`${API_URL}/posts/welcome`, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      }
+    })
+    .then(json => {
+      changePostIndexData({ posts: { ...posts, welcome: json }})
+    })
+  }
+
+  render() {
+    const {
+      changePostCreateInputs,
+      showAnnouncementIndexMap,
+      showAnnouncementIndexCatalogue,
+      editedName,
+      posts,
+      admin
+    } = this.props
+
+    if (!showAnnouncementIndexMap || showAnnouncementIndexCatalogue) return null
+
+    const welcomePost = posts.welcome
 
     return (
       <div id='visitor-welcome' className={showAnnouncementIndexCatalogue ? 'hidden' : 'visible'}>
         <div className='container'>
-          <div className='logo'>
-            <Logo fill='red' width="42px" height="42px"/>
+          <div className='cancel-edit'>
+            {admin ?
+            <div>
+              {editedName === 'welcome' ?
+              <i className='far fa-window-close' onClick={() => changePostCreateInputs({ name: '' })} />
+              : <i className='far fa-edit' onClick={() => changePostCreateInputs({
+                name: 'welcome',
+                ...welcomePost && {
+                  title: welcomePost && welcomePost.title,
+                  body: welcomePost && welcomePost.body
+                }
+              })} />}
+            </div>
+            : null
+            }
           </div>
-          <h2>
-            {this.languageObjectHandler({ pl: 'Odnajdź się w Warszawie', en: 'Find Yourself in Warsaw' })}
-          </h2>
-          <div className='text'>
-            {this.languageObjectHandler({ pl, en })}
-          </div>
+          {welcomePost && editedName !== 'welcome' &&
+          <div>
+            <h1>
+              {this.languageObjectHandler(welcomePost.title)}
+            </h1>
+            <div className='posts'>
+              {this.languageObjectHandler(welcomePost.body)}
+            </div>
+          </div>}
+          {editedName === 'welcome' && <PostCreate />}
         </div>
       </div>
     )
   }
 }
-
-const pl = (
-  <React.Fragment>
-    <p className='blog-paragraph'>
-      Na <span className='title'>warsawlease.pl</span> możesz dodawać i przeglądać darmowe ogłoszenia wynajmu mieszkań, lokali użytkowych i biur w&nbsp;Warszawie.
-    </p>
-  </React.Fragment>
-)
-
-const en = (
-  <React.Fragment>
-    <p className='blog-paragraph'>
-      On <span className='title'>warsawlease.pl</span> you can add and peruse free announcements of lease of apartments, usable premises and offices in Warsaw.
-    </p>
-    <p className='blog-paragraph last'>
-      The announcements are presented in an ergonomic manner on the map and on the list.
-    </p>
-  </React.Fragment>
-)
 
 export default connect(mapStateToProps, mapDispatchToProps)(VisitorWelcome)

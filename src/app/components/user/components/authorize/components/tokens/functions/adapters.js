@@ -21,7 +21,8 @@ export function authorizeUserWithTokens() {
       accountType: json.accountType,
       authorized: true,
       name: json.name,
-      phoneVerified: json.phoneVerified
+      phoneVerified: json.phoneVerified,
+      admin: json.admin
     })
   })
   .catch(() => deleteCookie('access_token'))

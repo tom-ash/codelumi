@@ -13,7 +13,7 @@ export function sendAnnouncementsMapResponse({
   description,
   url
 }) {
-  fetch(API_URL + `/announcements`, {
+  fetch(API_URL + `/announcements?with_welcome=true`, {
     headers: {
       'Content-Type': 'application/json'
     }
@@ -53,6 +53,15 @@ export function sendAnnouncementsMapResponse({
               ...data,
               announcements,
               amount
+            }
+          }
+        },
+        post: {
+          index: {
+            data: {
+              posts: {
+                welcome: json.welcome
+              }
             }
           }
         }

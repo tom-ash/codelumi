@@ -17,7 +17,6 @@ import styles from './styles/styles.scss'
 import { matchStateToPath } from './functions/routers/match-state-to-path'
 import { matchPathToState } from './functions/routers/match-path-to-state'
 import VisitorWelcome from './components/visitor/components/welcome/welcome'
-import Blog from './components/blog/blog'
 import NotFound from './components/scaffold/components/not-found/not-found'
 
 class App extends React.Component {
@@ -55,7 +54,6 @@ class App extends React.Component {
 
   render() {
     const {
-      showBlog,
       showNotFound,
       language
     } = this.props
@@ -79,7 +77,6 @@ class App extends React.Component {
           <Announcement />
         </div>
         <VisitorWelcome />
-        {showBlog && <Blog />}
         <Footer />
       </div>
     )

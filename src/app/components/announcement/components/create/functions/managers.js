@@ -24,14 +24,7 @@ export function emailVerificationCodeManager() {
     match: /^(\d){0,4}$/,
     children: <i className='fas fa-pen' />,
     value: verificationCode,
-    // onFocus: () => this.props.changeErrors({ area: noError }),
-    onChange: value => changeInputs({ verificationCode: value }),
-    // onBlur: () => {
-    //   this.areaManager().validate()
-    //   this.getRentAmounts()
-    // },
-    // validate: () => this.handleErrorOnValidate('area', this.props.area),
-    // error: this.languageObjectHandler(this.props.errors.area)
+    onChange: value => changeInputs({ verificationCode: value })
   }
 }
 
@@ -47,7 +40,6 @@ export function confirmManager() {
     classNames: { container: 'new-form-input button' },
     label: this.languageHandler('Potwierdź', 'Confirm'),
     onClick: () => {
-      // changeControl({ connecting: true })
       fetch(API_URL + '/user_create_with_email', {
         method: 'POST',
         headers: {
