@@ -23,8 +23,8 @@ export function sendAnnouncementCreateResponse({
     imageWidth: "1200",
     imageHeight: "630"
   })
-
-  fetch(`${API_URL}/posts/announcement_create_editorial`, {
+  
+  fetch(`${API_URL}/posts/announcementCreateEditorial`, {
     headers: {
       'Content-Type': 'application/json'
     }

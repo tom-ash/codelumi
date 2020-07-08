@@ -18,7 +18,7 @@ class AnnouncementCreateEditorial extends React.Component {
 
     if (posts && posts.announcementCreateEditorial) return
     
-    fetch(`${API_URL}/posts/announcement_create_editorial`, {
+    fetch(`${API_URL}/posts/announcementCreateEditorial`, {
       headers: {
         'Content-Type': 'application/json'
       }
