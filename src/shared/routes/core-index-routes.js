@@ -43,7 +43,7 @@ export const coreIndexRoutes = {
     overshadow: false
   },  
   showAnnouncementCreate: {
-    sender: 'generic',
+    sender: 'announcementCreate',
     pl: {
       regEx: /^\/?dodaj-ogloszenie-wynajmu-nieruchomosci-w-warszawie\/?$/,
       url: '/dodaj-ogloszenie-wynajmu-nieruchomosci-w-warszawie',

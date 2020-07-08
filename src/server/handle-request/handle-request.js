@@ -2,6 +2,7 @@ import { sendResponse } from '../send-response/send-response'
 import { sendAnnouncementsMapResponse } from '../send-response/send-announcements-map-response'
 import { sendAnnouncementsListResponse } from '../send-response/send-announcements-list-response'
 import { sendAnnouncementResponse } from '../send-response/send-announcement-response'
+import { sendAnnouncementCreateResponse } from '../send-response/announcement-create'
 import { routes } from '../../shared/routes/routes'
 import { appState } from '../../app/constants/app-state'
 
@@ -38,7 +39,7 @@ export function handleRequest(req, res) {
   else if (sender === 'map') return sendAnnouncementsMapResponse({ res, initialState, title, description, url: pureUrl })
   else if (sender === 'list') return sendAnnouncementsListResponse({ res, initialState, title, description, url: pureUrl })
   else if (sender === 'announcement') return sendAnnouncementResponse({ res, initialState, announcementId: +pureUrl.match(/\d+/)[0] })
-  // else if (sender === 'blog') return sendBlogResponse({ res, pureUrl })
+  else if (sender === 'announcementCreate') return sendAnnouncementCreateResponse({ res, initialState, title, description, url: pureUrl })  
 
   sendResponse({
     res,

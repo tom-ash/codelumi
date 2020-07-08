@@ -1,51 +1,90 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
+import { languageObjectHandler } from '../../../../../../functions/language-handler'
+import PostCreate from '../../../../../post/components/create/create'
 
-export function AnnouncementCreateEditorial({
-  languageObjectHandler,
-  showDescription,
-  changeControl
-}) {
-  return (
-    <React.Fragment>
-      <div
-        className='description-question'
-        onClick={() => changeControl({ showDescription: !showDescription })}
-      >
-        {languageObjectHandler({
-          pl: 'Dlaczego warto dodać ogłoszenie na warsawlease.pl?',
-          en: 'Why it\'s expedient to add an announcement on warsawlease.pl?'
-        })}
+class AnnouncementCreateEditorial extends React.Component {
+  constructor(props) {
+    super(props)
+    this.languageObjectHandler = languageObjectHandler.bind(this)
+  }
+
+  componentDidMount() {
+    const {
+      changePostIndexData,
+      posts
+    } = this.props
+
+    if (posts && posts.announcementCreateEditorial) return
+    
+    fetch(`${API_URL}/posts/announcement_create_editorial`, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) return response.json()
+    })
+    .then(json => changePostIndexData({
+      posts: {
+        ...posts,
+        announcementCreateEditorial: json
+      }
+    }))
+  }
+
+  render() {
+    const {
+      changePostCreateInputs,
+      editedName,
+      posts,
+      admin
+    } = this.props
+
+    const post = posts.announcementCreateEditorial
+
+    return (
+      <div id='announcement-create-editorial'>
+        <div className='container-abc'>
+          <div className='cancel-edit'>
+            {admin ?
+            <div>
+              {editedName === 'announcementCreateEditorial' ?
+              <i
+                className='far fa-window-close'
+                onClick={() => changePostCreateInputs({ name: '' })}
+              />
+              :
+              <i
+                className='far fa-edit'
+                onClick={() => changePostCreateInputs({
+                  name: 'announcementCreateEditorial',
+                  ...post && {
+                    url: post && post.url,
+                    title: post && post.title,
+                    body: post && post.body
+                  }
+                })}
+              />}
+            </div>
+            : null
+            }
+          </div>
+          {post && editedName !== 'announcementCreateEditorial' &&
+          <div>
+            <h1>
+              {this.languageObjectHandler(post.title)}
+            </h1>
+            <div className='posts'>
+              {this.languageObjectHandler(post.body)}
+            </div>
+          </div>}
+          {editedName === 'announcementCreateEditorial' && <PostCreate />}
+        </div>
       </div>
-      <div className={`description${showDescription ? '' : ' rolled-up'}`}>
-        <p className='blog-paragraph check'>
-          <span className='bull'>&bull;</span>
-          {languageObjectHandler({
-            pl: <span>Ogłoszenie prezentowane jest na mapie oraz w katalogu.</span>,
-            en: 'The announcement is presented on the map and in the catalogue.'
-          })}
-        </p>
-        <p className='blog-paragraph check'>
-          <span className='bull'>&bull;</span>
-          {languageObjectHandler({
-            pl: <span>Ogłoszenie dodawane jest automatycznie w języku polskim oraz&nbsp;angielskim.</span>,
-            en: 'The announcement is automatically added in Polish and English languages.'
-          })}
-        </p>
-        <p className='blog-paragraph check'>
-          <span className='bull'>&bull;</span>
-          {languageObjectHandler({
-            pl: <span>Ogłoszenie może być w łatwy sposób udostępnione na Facebooku za pomocą przycisku <i className="fab fa-facebook-square" /> Udostępnij.</span>,
-            en: <span>The announcement can be easily shared on Facebook with the <i className="fab fa-facebook-square" /> Share button.</span>
-          })}
-        </p>
-        <p className='blog-paragraph check'>
-          <span className='bull'>&bull;</span>
-          {languageObjectHandler({
-            pl: <span>Ogłoszenie może być w każdym momencie edytowane lub usunięte.</span>,
-            en: <span>The announcement can be edited and/or deleted at any time.</span>
-          })}
-        </p>
-      </div>
-    </React.Fragment>
-  )
+    )
+  }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementCreateEditorial)

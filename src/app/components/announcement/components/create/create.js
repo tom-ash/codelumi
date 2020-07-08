@@ -14,7 +14,7 @@ import { sectionHeaderProvider } from '../../../../functions/providers/headers'
 import * as lifecycle from './functions/lifecycle'
 import AnnouncementCreateAdditional from './components/additional/additional'
 import { AnnouncementCreateSteps } from './components/steps/steps'
-import { AnnouncementCreateEditorial } from './components/editorial/editorial'
+import AnnouncementCreateEditorial from './components/editorial/editorial'
 
 import UserCreateEmail from '../../../user/components/create/components/email/email'
 
@@ -82,11 +82,6 @@ class AnnouncementCreate extends React.Component {
               {step === 'publishing' && this.languageHandler('Zapisywanie Ogłoszenia', 'Saving Announcement')}
               {step === 'success' && this.languageHandler('Gratulacje!', 'Congratulations!')}
             </h1>
-            {step === 'form' && !authorized && <AnnouncementCreateEditorial
-              languageObjectHandler={this.languageObjectHandler}
-              showDescription={showDescription}
-              changeControl={changeControl}
-            />}
           </div>
           <AnnouncementCreateSteps
             authorized={authorized}
@@ -157,6 +152,7 @@ class AnnouncementCreate extends React.Component {
             <ManagedButton {...this.goToAnnouncementManager()} />
           </div>}
         </div>
+        <AnnouncementCreateEditorial />
       </React.Fragment>
     )
   }
