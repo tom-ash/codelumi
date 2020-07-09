@@ -73,9 +73,9 @@ class AnnouncementCreateEditorial extends React.Component {
           </div>
           {post && editedName !== 'announcementCreateEditorial' &&
           <div>
-            <h1>
+            <h2>
               {this.languageObjectHandler(post.title)}
-            </h1>
+            </h2>
             <div className='posts'>
               {this.languageObjectHandler(post.body)}
             </div>

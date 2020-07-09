@@ -69,9 +69,9 @@ class VisitorWelcome extends React.Component {
           </div>
           {welcomePost && editedName !== 'welcome' &&
           <div>
-            <h1>
+            <h2>
               {this.languageObjectHandler(welcomePost.title)}
-            </h1>
+            </h2>
             <div className='posts'>
               {this.languageObjectHandler(welcomePost.body)}
             </div>
