@@ -66,12 +66,9 @@
 }
 
 #header-panel {
-
   display: inline-block;
-
+  color: #626567;
   font-weight: normal;
-  background: #21618C;
-  color: #F2F3F4;
   max-width: 1214px;
   margin: 0 auto;
   border-radius: 2px;
@@ -80,12 +77,8 @@
   margin-bottom: 10px;
   overflow-x: auto;
   white-space: nowrap;
-  padding: 0 12px;
-
   text-align: left;
-
   width: auto;
-
   @media #{$small-pc} {
     margin-left: 12px;
     margin-bottom: 0;

@@ -20,6 +20,9 @@
     left: 0;
     right: 0;
   }
+
+  // border: 1px solid lightgray;
+
   #google-map-container {
     @extend %google-map;
     .pin {

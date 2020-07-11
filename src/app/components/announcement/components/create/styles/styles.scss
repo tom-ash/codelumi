@@ -6,13 +6,10 @@
   box-shadow: none;
   max-width: 768px;
   margin: 72px auto 0;
-
   $border-color: #E5E7E9;
-
-  border-top: 1px solid $border-color;
-  border-right: 1px solid $border-color;
-  border-bottom: 1px solid $border-color;
-
+  border: 1px solid #D0D3D4;
+  background: white;
+  padding: 6px;
   .new-form-input, .form-input {
     &.button {
       display: block;
@@ -31,48 +28,25 @@
       }
     }
   }
-
   .form-input {
     &.button {
       width: 240px !important;
     }
   }
-
-
-
   .windmill-medium-spinner {
     display: block;
     position: relative;
     margin: 18px auto;
   }
-
-  .linear-container {
-    position: relative;
-    height: 32px;
-    background: white;
-    .linear-line {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 3px;
-      background: linear-gradient(to bottom, #85C1E9 0%, #A9DFBF 100%);
-      &.blue-green {
-        background: linear-gradient(to bottom, #A9DFBF 0%, #85C1E9 100%);
-      }
-    }
-  }
   @media #{$small-tablet} {
-    padding: 46px 0;
+    padding: 46px 0 6px;
     margin: 0 auto;
   }
   .required-inputs {
-    border-left: 3px solid #85C1E9;
     padding: 18px 18px 0 18px;
     background: white;
   }
   .add-announcement-button-container {
-    border-left: 3px solid #85C1E9;
     padding: 0 18px 24px 18px;
     background: white; 
     margin: 0 0 0 auto;
@@ -101,7 +75,7 @@
     }
   }
   .confirmation, .success-container, .requesting {
-    border-left: 3px solid #85C1E9;
+    // border-left: 3px solid #85C1E9;
     padding: 18px;
     background: white;
     padding: 18px 18px 24px 18px;
@@ -128,22 +102,18 @@
         }
       } 
     }
-
     .new-form-input {
       &.button {
         margin: 24px auto 0;
       }
     }
   }
-
   .success-container {
     .input-explanation {
       text-align: center;
     }
   }
-
   .optional-inputs {
-    border-left: 3px solid #A9DFBF;
     padding: 0 18px 0 18px;
     background: white;
   }
@@ -167,20 +137,16 @@
       width: 13px !important;
     }
   }
-
   .input-explanation {
     position: relative;
     margin-bottom: 8px;
     font-size: 13px;
   }
-
   .page-header {
     background: white;
     margin: 0;
-    border-left: 3px solid #F4D03F;
     padding: 12px 18px;
   }
-
   h1 {
     line-height: 24px;
     text-align: justify;
@@ -188,7 +154,6 @@
     font-size: 16px;
     margin: 0;
   }
-
   .description-question {
     font-size: 14px;
     display: inline-block;
@@ -203,7 +168,10 @@
       color: #4D5656;
     }
   }
-
+  .separation-line {
+    margin-top: 24px;
+    margin-bottom: 6px;
+  }
   .description {
     text-align: justify;
     overflow: hidden;
@@ -217,7 +185,6 @@
       font-size: 14px;
       margin-top: 4px;
       margin-bottom: 0;
-      // color: #A6ACAF;
       .bull {
         left: 0;
         margin-right: 4px;
@@ -229,7 +196,7 @@
     }
   }
   h2 {
-    margin-top: 0;
+    margin-top: 24px;
     color: #3498DB;
     text-align: justify;
     font-size: 15px;
@@ -318,15 +285,6 @@
           border-color: #5D6D7E;
           box-shadow: 0 0 0 1px #5D6D7E;
         }
-      }
-      .fas, .far {
-        background: none;
-        width: 42px;
-        border-top: 1px solid $border-color;
-        border-left: 1px solid $border-color;
-        border-bottom: 1px solid $border-color;
-        font-size: 12px;
-        color: #5D6D7E;
       }
       &.hover, &.focus {
         .fas, .far {

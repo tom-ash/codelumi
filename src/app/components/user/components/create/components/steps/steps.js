@@ -5,7 +5,6 @@ export function UserCreateSteps({
 }) {
   return (
     <div className='create-points'>
-      <div className='linear-border' />
       <div className={`line${step === 'success' ? ' success' : ''}`} />
       <div className={`point first${step !== 'form' ? ' success' : ''}`}>
         <i className='fas fa-user-alt' />

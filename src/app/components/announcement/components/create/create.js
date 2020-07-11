@@ -94,10 +94,8 @@ class AnnouncementCreate extends React.Component {
               <AnnouncementCreatePictures />
               <AnnouncementCreateMap />
             </div>
-            <div className='linear-container'>
-              <div className='linear-line' />
-            </div>
             <div className='optional-inputs'>
+              <div className='separation-line' />
               <h2 className='optional'>
                 <div className='text'>{this.languageObjectHandler({ pl: 'Dane dodatkowe - niewymagane', en: 'Optional data - not required' })}</div>
                 <div className='float-clear' />
@@ -106,9 +104,6 @@ class AnnouncementCreate extends React.Component {
               <AnnouncementCreateFeatures />
               <AnnouncementCreateFurnishings />
               <AnnouncementCreateDescription />
-            </div>
-            <div className='linear-container'>
-              <div className='linear-line blue-green' />
             </div>
             <div className='add-announcement-button-container'>
               <div className='separation-line' />
