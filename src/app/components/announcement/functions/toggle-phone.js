@@ -6,6 +6,14 @@ export function togglePhone() {
   
   if (phone && phone.length > 8) return
 
+  if (window.ga) {
+    window.ga('send', {
+      hitType: 'event',
+      eventCategory: 'Button Click',
+      eventAction: 'Tile Phone Toggle Clicked'
+    })
+  }
+
   fetch(`${API_URL}/announcement/phone/${id}`, {
     headers: { 'Content-Type': 'application/json' }
   })
