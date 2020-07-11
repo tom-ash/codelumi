@@ -11,6 +11,11 @@ $border-color: $untached-color;
 $touched-border-color: #34495E;
 
 %form-input {
+  &.text {
+    input {
+      -webkit-appearance: none;
+    }
+  }
   &.text, &.select, &.textarea {
     position: relative;
     background: $color-background;
