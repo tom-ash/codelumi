@@ -22,7 +22,7 @@ export function rentAmountManager() {
     classNames: { container: 'form-input text rent-amount' },
     value: this.props[rentAmountType],
     children: <i className='fas fa-pen' />,
-    match: /^\d+$/,
+    type: 'number',
     label,
     onChange: (value) => changeInputs({ [rentAmountType]: value }),
     onBlur: () => {

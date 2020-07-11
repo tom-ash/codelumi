@@ -81,8 +81,8 @@ export function areaManager() {
     id: requiredInputs.area.id,
     classNames: { container: 'form-input text' },
     value: this.props.area,
-    match: /^\d+$/,
     label: this.languageObjectHandler(text),
+    type: 'number',
     children: (
       <React.Fragment>
       <i className='fas fa-pen' />
