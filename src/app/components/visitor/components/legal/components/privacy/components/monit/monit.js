@@ -28,25 +28,27 @@ class VisitorPrivacyMonit extends React.Component {
 
     return (
       ReactDOM.createPortal(
-        <div
-          id='visitor-privacy-monit' className={`container narrow-container shadowed${language === 'pl' ? '' : ' en'}`}
-          onClick={e => e.stopPropagation()}
-        >
-          <div className='text-container'>
-            <div className='text-line cookies'>
-              <div className='text'>
-                {this.languageObjectHandler(this.textsProvider('cookies'))}
+        <div className='cover'>
+          <div
+            id='visitor-privacy-monit' className={`container narrow-container shadowed${language === 'pl' ? '' : ' en'}`}
+            onClick={e => e.stopPropagation()}
+          >
+            <div className='text-container'>
+              <div className='text-line cookies'>
+                <div className='text'>
+                  {this.languageObjectHandler(this.textsProvider('cookies'))}
+                </div>
+              </div>
+              <div className='text-line'>
+                <div className='text'>
+                  {this.languageObjectHandler(this.textsProvider('dataProcessing'))}
+                </div>
               </div>
             </div>
-            <div className='text-line'>
-              <div className='text'>
-                {this.languageObjectHandler(this.textsProvider('dataProcessing'))}
-              </div>
+            <div className='buttons'>
+              <ManagedButton {...this.agreeManager()} />
+              <ManagedButton {...this.settingsManager()} />
             </div>
-          </div>
-          <div className='buttons'>
-            <ManagedButton {...this.agreeManager()} />
-            <ManagedButton {...this.settingsManager()} />
           </div>
         </div>,
         document.body
