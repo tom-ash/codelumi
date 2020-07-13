@@ -14,7 +14,7 @@ export function rentAmountManager() {
 
   let label = this.languageObjectHandler(text)
 
-  if (category === 0 || category === 1) label = this.languageObjectHandler({ pl: 'Miesięczny czynsz netto', en: 'Monthly Net Rent'})
+  if (category === 0 || category === 1) label = this.languageObjectHandler({ pl: 'Miesięczna cena netto', en: 'Monthly Net Price'})
   
   const rentAmountType = category === 2 ? 'grossRentAmount' : 'netRentAmount'
 

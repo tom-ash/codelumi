@@ -9,7 +9,7 @@ export const labels = {
   },
   rent: {
     icon: 'fas fa-coins',
-    text: { pl: 'Miesięczny czynsz', en: 'Monthly Rent' }
+    text: { pl: 'Miesięczna cena', en: 'Monthly Price' }
   },
   rentCurrency: {
     icon: 'fas fa-coins',
