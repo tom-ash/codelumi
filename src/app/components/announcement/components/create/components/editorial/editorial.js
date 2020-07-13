@@ -46,7 +46,7 @@ class AnnouncementCreateEditorial extends React.Component {
 
     return (
       <div id='announcement-create-editorial'>
-        <div className='container-abc'>
+        <div className='editorial-container'>
           <div className='cancel-edit'>
             {admin ?
             <div>
