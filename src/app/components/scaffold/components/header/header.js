@@ -7,6 +7,7 @@ import { changePath } from '../../../../functions/routers/change-path'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import { labelProvider } from '../../../user/components/show/functions/label-provider'
 import { matchPathToLanguage } from '../../../../functions/routers/match-path-to-language'
+import { HeaderProvider } from '../../../announcement/components/index/functions/header-provider'
 
 class Header extends React.Component {
   constructor(props) {
@@ -25,7 +26,13 @@ class Header extends React.Component {
   }
 
   render() {
-    const { changeControl, device, authorized } = this.props
+    const {
+      changeControl,
+      device,
+      authorized,
+      showAnnouncementIndexMap,
+      showAnnouncementIndexCatalogue
+    } = this.props
     const isLargePc = device === 'largePc'
 
     const showAddAnnouncement = ['largePc', 'smallPc', 'largeTablet'].indexOf(device) !== -1
@@ -36,14 +43,14 @@ class Header extends React.Component {
           {!isLargePc &&
           <div className='links-icon-container'>
             <div
-            className='links-icon'
-            onClick={() => {
-              if (!authorized) {
-                this.props.changeControl({ showLinks: !this.props.showLinks })
-              } else {
-                this.props.changeApp({ showUserShow: !this.props.showUserShow })
-              }
-            }}
+              className='links-icon'
+              onClick={() => {
+                if (!authorized) {
+                  this.props.changeControl({ showLinks: !this.props.showLinks })
+                } else {
+                  this.props.changeApp({ showUserShow: !this.props.showUserShow })
+                }
+              }}
             >
               <div className='link-icon' />
               <div className='link-icon' />
@@ -53,6 +60,15 @@ class Header extends React.Component {
           <div id='warsaw-lease'>
             <ManagedLink {...this.titleManager()} />
           </div>
+
+          <h1 className='title'>
+            <HeaderProvider
+              showMap={showAnnouncementIndexMap}
+              showCatalogue={showAnnouncementIndexCatalogue}
+              languageObjectHandler={this.languageObjectHandler}
+            />
+          </h1>
+
           <div className='top-links'>
             {showAddAnnouncement && <ManagedLink {...this.addAnnouncementManager()} />}
             {isLargePc && <ManagedLink {...this.signUpManager()} />}

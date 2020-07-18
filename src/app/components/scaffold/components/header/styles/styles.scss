@@ -4,17 +4,33 @@
 @import './links';
 
 #header {
-  .logo-and-title {
-    .logo, .title {
+  .logo-and-site {
+    .logo, .site {
       float: left;
       text-align: left;
-      padding-top: 1px;
+      padding-top: 2px;
     }
-    .title {
+    .site {
       padding-left: 8px;
-      line-height: 36px;
+      line-height: 16px;
+      position: relative;
       font-size: 14px;
       font-family: 'Oxanium';
+      line-height: 32px;
+    }
+  }
+  .title {
+    text-align: left;
+    position: absolute;
+    font-size: 14px;
+    font-weight: normal;
+    color: #979A9A;
+    left: 160px;
+    top: 0;
+    width: 320px;
+    line-height: 50px;
+    @media #{$tablet} {
+      visibility: hidden;
     }
   }
   z-index: 2048;

@@ -18,11 +18,11 @@ export function titleManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: 'warsawlease.pl',
     label: (
-      <div className='logo-and-title'>
+      <div className='logo-and-site'>
         <div className='logo'>
           <Logo width="32px" height="32px"/>
         </div>
-        <div className='title'>
+        <div className='site'>
           warsawlease.pl
         </div>
         <div className='float-clear' />
