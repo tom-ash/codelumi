@@ -8,6 +8,7 @@
     .logo, .title {
       float: left;
       text-align: left;
+      padding-top: 1px;
     }
     .title {
       padding-left: 8px;
@@ -20,8 +21,8 @@
   position: fixed;
   left: 0;
   right: 0;
-  height: 46px;
-  background: rgba(251, 252, 252, .8);
+  height: 50px;
+  background: rgba(251, 252, 252, 1);
   border-bottom: 1px solid gray;
   color: #4D5656;
   font-size: 14px;

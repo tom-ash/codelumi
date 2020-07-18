@@ -5,37 +5,11 @@
   height: 40px;
   position: relative;
   float: left;
-  margin-bottom: 10px;
-  width: 266px;
+  width: 271px;
   @media #{$phone} {
     float: none;
     width: 100%;
     margin: 0;
-  }
-  .icon {
-    cursor: pointer;
-    position: absolute;
-    color: #2C3E50;
-    width: 32px;
-    text-align: center;
-    line-height: 40px;
-    font-size: 12px;
-    padding-top: 1px;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-  }
-  .close {
-    font-size: 13px;
-    width: 13px;
-    height: 13px;
-    cursor: pointer;
-    position: absolute;
-    display: block;
-    color: #2C3E50;
-    top: 0;
-    right: 6px;
-    bottom: 0;
-    margin: auto;
   }
   .input {
     border: 1px solid #A6ACAF;

@@ -5,27 +5,22 @@
 %panel {
   z-index: 2;
   position: relative;
-  @extend %inputs;
-  background: white;
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
   margin: 0 auto;
-  @media #{$small-pc} {
-    width: 100%;
-    height: 260px;
-    max-width: 456px;
-    padding: 0;
-    padding-top: 10px;
-    margin-right: 10px;
-    .simple-index-input.select {
-      margin-right: 0;
-    }
-  }
+  background: white;
+  @extend %inputs;
   .pane {
     float: left;
-    width: 542px;
-    margin: 0;
+    width: 552px;
+    .simple-index-input {
+      &.category {
+        margin-bottom: 10px;
+      }
+    }
+    .composite-input-container {
+      &.area, &.rooms, &.floor {
+        margin-bottom: 10px;
+      }
+    }
     @media #{$small-pc} {
       position: relative;
       float: none;
@@ -44,7 +39,7 @@
         }
         .composite-input-container {
           position: absolute;
-          right: 12px;
+          right: 0;
           left: 12px;
           width: auto;
           &.area {
@@ -70,9 +65,9 @@
     @media #{$small-pc} {
       position: absolute;
       float: none;
-      top: 210px;
-      left: 12px;
-      right: 12px;
+      top: 200px;
+      left: 0;
+      right: 0;
       width: auto;
       margin: 0;
       height: 40px;
@@ -91,7 +86,6 @@
       border: none;
       border-radius: 2.5px;
       background: #DC7633;
-      
       color: #F7F9F9;
       cursor: pointer;
       font-size: 16px;

@@ -4,11 +4,23 @@
 
 #announcement-index-panel-visitor {
   @extend %panel;
-
   margin: 0 auto;
   text-align: left;
   max-width: 1214px;
-
+  background: none;
+  @media #{$small-pc} {
+    max-width: 456px;
+    .simple-index-input.select {
+      margin-right: 0;
+      &.category, &.district, &.area, &.rent {
+        right: 0;
+        left: 0;
+      }
+    }
+    .composite-input-container {
+      left: 0 !important;
+    }
+  }
   .fa-chevron-down {
     background: none;
     border: none !important;
@@ -22,7 +34,6 @@
     width: 13px !important;
     color: #909497;
   }
-
   .fa-times {
     color: #797D7F;
     margin-right: 13px;

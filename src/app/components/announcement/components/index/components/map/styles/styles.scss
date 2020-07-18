@@ -6,23 +6,20 @@
 #announcement-index-map {
   max-width: 1214px;
   margin: 0 auto;
-  top: 217px;
+  top: 114px;
   position: absolute;  
   right: 0;
   left: 0;
   @media #{$small-pc} {
-    top: 371px;
+    top: 264px;
   }
   @media #{$small-tablet} {
-    top: 402px;
+    top: 304px;
   }
   @media #{$tablet} {
     left: 0;
     right: 0;
   }
-
-  // border: 1px solid lightgray;
-
   #google-map-container {
     @extend %google-map;
     .pin {
@@ -63,29 +60,28 @@
 
 #mini-list {
   position: absolute;
-  width: 280px;
-  top: 4px;
-  bottom: 4px;
+  width: 300px;
+  top: 0;
+  bottom: 0;
   left: 0;
   z-index: 2;
   overflow-y: scroll;
-  cursor: pointer;
-  padding: 0 4px;
-  @media #{$small-tablet} {
+  padding-right: 4px;
+  background: #F8F9F9;
+  @media #{$tablet} {
     position: relative;
     width: 100%;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
     height: 184px;
-    background: white;
     top: 0;
   }
   .announcement-show-container {
     position: relative;
     color: #F2F3F4;
     margin-bottom: 4px;
-    @media #{$small-tablet} {
+    @media #{$tablet} {
       position: relative;
       margin-right: 4px;
       display: inline-block;

@@ -1,15 +1,16 @@
 @import '../../../../../styles/media-breakpoints';
 
 #announcement-index {
-  padding-top: 60px;
-  min-height: 787px;
+  position: relative;
+  min-height: 726px;
+  max-width: 1366px;
+  padding-top: 12px;
   @media #{$small-pc} {
-    min-height: 923px;
+    min-height: 1058px;
   }
   @media #{$small-tablet} {
-    min-height: 1200px;
+    min-height: 1100px;
   }
-  max-width: 1214px;
   margin: 0 auto;
   .phone {
     cursor: pointer;
@@ -43,50 +44,22 @@
       display: inline;
     }
   }
-  position: relative;
-
   .add-announcement {
     color: #F2F3F4;
     font-size: 14px;
-
     text-decoration: underline;
-    
-
     border-radius: 20px;
     background: #17A589;
     padding: 7px 12px;
-
     font-weight: normal !important;
-
     width: 196px;
-
-    margin: 12px auto 10px !important;
+    margin: 0 auto 12px !important;
     text-align: center;
+    white-space: nowrap;
   }
 }
 
 #header-panel {
-  display: inline-block;
-  color: #626567;
-  font-weight: normal;
-  max-width: 1214px;
-  margin: 0 auto;
-  border-radius: 2px;
-  line-height: 28px;
-  font-size: 14px;
-  margin-bottom: 10px;
-  overflow-x: auto;
-  white-space: nowrap;
-  text-align: left;
-  width: auto;
-  @media #{$small-pc} {
-    margin-left: 12px;
-    margin-bottom: 0;
-  }
-  @media #{$phone} {
-    border-radius: 0;
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-  }
+  position: absolute;
+  top: -32px;
 }

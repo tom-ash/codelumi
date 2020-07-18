@@ -23,7 +23,6 @@
   }
   .simple-index-input {
     position: relative;
-
     @extend %simple-index-input;
     @media #{$small-pc} {
       width: auto;
