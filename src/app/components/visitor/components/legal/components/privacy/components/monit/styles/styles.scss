@@ -15,6 +15,9 @@
   @media #{$phone} {
     padding: 8px;
   }
+  @media #{$small-phone} {
+    padding: 6px;
+  }
   #visitor-privacy-monit {
     max-width: 480px;
     margin: auto;
@@ -24,9 +27,15 @@
     padding: 24px;
     .title {
       margin-bottom: 18px;
+      @media #{$small-phone} {
+        margin-bottom: 12px;
+      }
     }
     @media #{$phone} {
       padding: 18px;
+    }
+    @media #{$small-phone} {
+      padding: 12px;
     }
     .title {
       color: #0f3c64;
@@ -42,6 +51,9 @@
         }
         &.cookies {
           margin-bottom: 18px;
+          @media #{$small-phone} {
+            margin-bottom: 12px;
+          }
         }
       }
       u {
@@ -54,6 +66,9 @@
     .buttons {
       margin-top: 18px;
       position: relative;
+      @media #{$small-phone} {
+        margin-top: 12px;
+      }
       .form-input {
         &.button {
           &.agree {
