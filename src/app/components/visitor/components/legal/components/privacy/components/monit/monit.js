@@ -28,11 +28,17 @@ class VisitorPrivacyMonit extends React.Component {
 
     return (
       ReactDOM.createPortal(
-        <div className='cover'>
+        <div id='visitor-privacy-monit-cover' className='cover'>
           <div
             id='visitor-privacy-monit' className={`container narrow-container shadowed${language === 'pl' ? '' : ' en'}`}
             onClick={e => e.stopPropagation()}
           >
+            <div className='title'>
+              {this.languageObjectHandler({
+                pl: 'Twoja prywatność jest dla nas ważna.',
+                en: 'Your privacy is important to us.'
+              })}
+            </div>
             <div className='text-container'>
               <div className='text-line cookies'>
                 <div className='text'>
@@ -46,8 +52,9 @@ class VisitorPrivacyMonit extends React.Component {
               </div>
             </div>
             <div className='buttons'>
-              <ManagedButton {...this.agreeManager()} />
               <ManagedButton {...this.settingsManager()} />
+              <ManagedButton {...this.agreeManager()} />
+              <div className='float-clear' />
             </div>
           </div>
         </div>,
