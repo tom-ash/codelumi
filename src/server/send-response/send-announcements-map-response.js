@@ -33,7 +33,7 @@ export function sendAnnouncementsMapResponse({
     const openGraph = openGraphProvider({
       title,
       description,
-      image: "https://warsawlease.s3.eu-central-1.amazonaws.com/assets/warsawlease-logo-on-white.png",
+      image: "https://warsawlease.s3.eu-central-1.amazonaws.com/assets/warsawlease.pl-darmowe-ogloszenia-nieruchomosci-wynajem-warszawa.png",
       imageWidth: "1200",
       imageHeight: "630"
     })
