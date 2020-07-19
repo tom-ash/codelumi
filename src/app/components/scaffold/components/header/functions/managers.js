@@ -20,7 +20,7 @@ export function titleManager() {
     label: (
       <div className='logo-and-site'>
         <div className='logo'>
-          <Logo width="32px" height="32px"/>
+          <Logo />
         </div>
         <div className='site'>
           warsawlease.pl

@@ -8,14 +8,13 @@
     .logo, .site {
       float: left;
       text-align: left;
-      padding-top: 2px;
     }
     .site {
       padding-left: 8px;
       line-height: 16px;
       position: relative;
       font-size: 14px;
-      line-height: 32px;
+      line-height: 38px;
     }
   }
   .title {
@@ -24,10 +23,10 @@
     font-size: 14px;
     font-weight: normal;
     color: #979A9A;
-    left: 160px;
+    left: 170px;
     top: 0;
     width: 320px;
-    line-height: 50px;
+    line-height: 54px;
     @media #{$tablet} {
       visibility: hidden;
     }
