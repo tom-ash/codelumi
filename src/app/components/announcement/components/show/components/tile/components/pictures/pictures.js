@@ -1,8 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapDispatchToProps } from './constants/mappers'
+import ManagedSlider from '../../../../../../../support/components/managed-slider/managed-slider'
+import { getDerivedStateFromProps } from './functions/get-derived-state-from-props'
+
 import { languageObjectHandler } from '../../../../../../../../functions/language-handler'
-import { changePicture } from './functions/change-picture'
 import { ManagedLink } from 'managed-inputs'
 import { linkManager } from './functions/managers'
 import { buildLink } from '../../../../../../functions/build-link'
@@ -10,56 +12,39 @@ import { buildLink } from '../../../../../../functions/build-link'
 class AnnouncementShowPictures extends React.Component {
   constructor(props) {
     super(props)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
-    this.changePicture = changePicture.bind(this)
-    this.linkManager = linkManager.bind(this)
-    this.state = { pictureIndex: 0 }
-  }
-  
-  render() {
-    const { pictureIndex } = this.state
 
+    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.linkManager = linkManager.bind(this)
+
+    this.state = {
+      pictures: []
+    }
+  }
+
+  static getDerivedStateFromProps = getDerivedStateFromProps
+
+  render() {
     const {
-      pictures,
-      venue,
-      id
+      disableSLides,
+      heightQuantifier,
+      venue
     } = this.props
 
-    if (pictures === null || pictures.length === 0 && venue === 'show') return null
+    const {
+      pictures
+    } = this.state
+
+    if (pictures.length === 0 && venue === 'show') return null
     if (pictures.length === 0) return <ManagedLink {...this.linkManager()} />
 
     return (
-      <div className='announcement-show-tile-pictures'>
-        <div className='pictures'>
-          <img
-            src={`${AWS_S3_URL}/announcements/${id}/${pictures[pictureIndex].database}`}
-            className='picture'
-          />
-          {venue !== 'mini-list' &&
-          <React.Fragment>
-            <div
-            className='arrow left'
-            onClick={() => this.changePicture('previous')}>
-              <i className='fas fa-chevron-left' />
-            </div>
-            <div
-            className='arrow right'
-            onClick={() => this.changePicture('next')}>
-              <i className='fas fa-chevron-right' />
-            </div>
-            <div className='counter'>
-              <i className='far fa-image' /> {pictureIndex + 1} / {pictures.length}
-            </div>
-            <a
-              className='share'
-              target='_blank'
-              href={`https://www.facebook.com/sharer/sharer.php?u=${buildLink(this.props)}`}
-            >
-              <i className='fab fa-facebook-square' /> {this.languageObjectHandler({ pl: 'Udostępnij', en: 'Share' })}
-            </a>
-          </React.Fragment>}
-          {venue !== 'show' && venue !== 'mini-list' && <ManagedLink {...this.linkManager()} />}
-        </div>        
+      <div className='announcement-show-pictures'>
+        <ManagedSlider
+          pictures={pictures}
+          disableSLides={disableSLides}
+          heightQuantifier={heightQuantifier}
+        />
+        {venue !== 'show' && venue !== 'mini-list' && <ManagedLink {...this.linkManager()} />}
       </div>
     )
   }

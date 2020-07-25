@@ -115,6 +115,8 @@ class AnnouncementIndexMap extends React.Component {
                     category={category}
                     district={district}
                     area={area}
+                    disableSLides
+                    heightQuantifier={isMobile ? 1.3333 : null}
                   />
                   <div className='category-and-location'>
                     {parseCategory(category)[language]}, {parseDistrict(district)}

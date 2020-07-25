@@ -12,6 +12,7 @@ export function linkManager() {
 
   return {
     classNames: { container: 'link' },
+    label: this.languageObjectHandler({ pl: 'Zobacz szczegóły', en: 'See details'}),
     href: buildLink(this.props),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: `Ogłoszenie ${id}`, en: `Announcement ${id}` }),

@@ -1,96 +1,21 @@
-@import '../../../../../../../../../styles/themes.scss';
-
-.announcement-show-tile-pictures {
-  .pictures {
-    position: relative;
-    $width: 100%;
-    width: $width;
-    padding-bottom: ($width / 1.7777);
-    .share {
-      position: absolute;
-      bottom: 12px;
-      left: 12px;
-      z-index: 5;
-      height: auto;
-      color: rgba(255, 255, 255, .85);
-      background: rgba(128, 128, 128, 0.85);
-      opacity: 0.8;
-      padding: 5px 12px;
-      border-radius: 12.5px;
-      font-size: 14px;
-      &:hover {
-        color: rgba(255, 255, 255, 1);
-        background: rgba(128, 128, 128, 1);
-      }
-    }
-
-    @media only screen and (max-width: $breakpoint-phone-large-max) {
-      $width: 100%;
-      width: $width;
-      margin: 0;
-      padding: 0;
-      padding-bottom: ($width / 1.3333)
-    }
-    .picture {
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      $width: 100%;
+.announcement-show-pictures {
+  position: relative;
+  .link {
+    position: absolute;
+    height: 24px;
+    line-height: 24px;
+    right: 36px;
+    bottom: 12px;
+    left: 36px;
+    width: 150px;
+    text-align: center;
+    margin: 0 auto;
+    .input {
+      font-size: 15px;
+      border-radius: 12px;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-    }
-    .arrow {
-      z-index: 2;
-      user-select: none;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      height: 36px;
-      margin: auto;
-      color: rgba(255, 255, 255, 0.64);
-      font-size: 36px;
-      cursor: pointer;
-      &:hover {
-        color: rgba(255, 255, 255, 0.88);
-      }
-      &.right {
-        right: 12px;
-      }
-      &.left {
-        left: 12px;
-      }
-    }
-    .counter {
-      user-select: none;
-      position: absolute;
-      right: 12px;
-      bottom: 12px;
-      height: 22px;
-      line-height: 22px;
-      font-size: 16px;
-      color: rgba(255, 255, 255, 0.72);
-      padding: 0px 6px;
-      background: rgba(128, 128, 128, 0.72);
-      border-radius: 2px;
-    }
-    .link {
-      z-index: 1;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      &:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
-      .input {
-        height: 100%;
-        width: 100%;
-      }
+      background: rgba(255, 255, 255, 0.8);
     }
   }
 }
