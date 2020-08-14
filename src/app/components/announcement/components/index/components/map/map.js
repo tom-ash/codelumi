@@ -15,7 +15,6 @@ import { RentPresenter } from '../../../show/functions/rent-presenter'
 import { shouldSetUpGoogleMaps, shouldSetUpPins } from '../../../../functions/google-map-handler'
 import { viewAnnouncement } from '../../../../functions/view-announcement'
 import { buildLink } from '../../../../functions/build-link'
-
 import { scrollToElement } from '../../../../../../functions/scrollers/scroll-to-element'
 
 class AnnouncementIndexMap extends React.Component {
@@ -116,7 +115,6 @@ class AnnouncementIndexMap extends React.Component {
                     district={district}
                     area={area}
                     disableSLides
-                    heightQuantifier={isMobile ? 1.3333 : null}
                   />
                   <div className='category-and-location'>
                     {parseCategory(category)[language]}, {parseDistrict(district)}

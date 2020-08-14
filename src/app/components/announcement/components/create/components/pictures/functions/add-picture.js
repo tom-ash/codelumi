@@ -14,7 +14,10 @@ export function addPicture(files) {
     this.props.changeInputs({
       pictureFiles: files,  
       pictureBlobs: [...this.props.blobs].concat([{
-        blob: window.URL.createObjectURL(blob), database: '', description: ''
+        blob: window.URL.createObjectURL(blob),
+        database: '',
+        description: '',
+        file: blob
       }])
     })
     this.props.changeControl({ addingPicture: false })
@@ -23,8 +26,10 @@ export function addPicture(files) {
 }
 
 function createBlob(picture, callback) {
-  let img = document.createElement('img');
+  const img = document.createElement('img');
   img.src = picture
+  const ratio = .64
+
   img.onload = () => {
     let sourceWidth = img.width
     let sourceHeight = img.height
@@ -32,22 +37,33 @@ function createBlob(picture, callback) {
     let widthIndent = 0
     let targetHeight = 0
     let heightIndent = 0
-    if (sourceHeight / sourceWidth > 0.75) {
-      targetHeight = Math.round(sourceWidth * 0.75)
+    
+    if (sourceHeight / sourceWidth > ratio) {
+      targetHeight = Math.round(sourceWidth * ratio)
       heightIndent = Math.round((sourceHeight - targetHeight) / 2)
       targetWidth = img.width
       widthIndent = 0
     } else {
-      targetWidth = Math.round(sourceHeight / 0.75)
+      targetWidth = Math.round(sourceHeight / ratio)
       widthIndent = Math.round((sourceWidth - targetWidth) / 2)
       targetHeight = img.height
       heightIndent = 0
     }
-    oc.width = 1024
+    oc.width = 1200
     oc.height = 768
-    octx.drawImage(img, widthIndent, heightIndent, sourceWidth - (2 * widthIndent), sourceHeight - (2 *heightIndent), 0, 0, 1024, 768);
-    oc.toBlob((blob) => {
-      callback(blob)
-    })
+
+    octx.drawImage(
+      img,
+      widthIndent,
+      heightIndent,
+      sourceWidth - (2 * widthIndent),
+      sourceHeight - (2 * heightIndent),
+      0,
+      0,
+      1200,
+      768
+    )
+
+    oc.toBlob((blob) => callback(blob))
   }
 }

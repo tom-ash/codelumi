@@ -18,7 +18,7 @@ export function componentDidMount() {
   } = this.props
 
   const width = this.container.current.getBoundingClientRect().width
-  this.container.current.style.height = `${width / (heightQuantifier || 1.7777)}px`
+  this.container.current.style.height = `${width * .64}px`
   this.setState({ width })
 
   this.slider.current.addEventListener('touchmove', this.onTouchMoveHandler)

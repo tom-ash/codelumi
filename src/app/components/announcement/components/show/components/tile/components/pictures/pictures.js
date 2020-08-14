@@ -7,15 +7,12 @@ import { getDerivedStateFromProps } from './functions/get-derived-state-from-pro
 import { languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import { ManagedLink } from 'managed-inputs'
 import { linkManager } from './functions/managers'
-import { buildLink } from '../../../../../../functions/build-link'
 
 class AnnouncementShowPictures extends React.Component {
   constructor(props) {
     super(props)
-
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.linkManager = linkManager.bind(this)
-
     this.state = {
       pictures: []
     }
