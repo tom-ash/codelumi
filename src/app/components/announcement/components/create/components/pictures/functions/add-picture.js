@@ -8,7 +8,8 @@ export function addPicture(files) {
   if (typeof window === 'undefined') return
   
   this.props.changeControl({ addingPicture: true })
-  createBlob(window.URL.createObjectURL(files.pop()), (blob) => {
+  const file = files.pop()
+  createBlob(window.URL.createObjectURL(file), (blob) => {
     if (typeof window === 'undefined') return
     
     this.props.changeInputs({
@@ -17,7 +18,7 @@ export function addPicture(files) {
         blob: window.URL.createObjectURL(blob),
         database: '',
         description: '',
-        file: blob
+        file
       }])
     })
     this.props.changeControl({ addingPicture: false })

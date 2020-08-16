@@ -10,6 +10,7 @@ import { movePicture } from './functions/move-picture'
 import { requiredInputs } from '../../constants/required-inputs'
 import { sectionHeaderProvider } from '../../../../../../functions/providers/headers'
 import { pictureClassProvider } from './functions/picture-class-provider'
+import { rotatePicture } from './functions/rotate-picture'
 
 class AnnouncementCreatePictures extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class AnnouncementCreatePictures extends React.Component {
     this.deletePicture = deletePicture.bind(this)
     this.movePicture = movePicture.bind(this)
     this.sectionHeaderProvider = sectionHeaderProvider.bind(this)
+    this.rotatePicture = rotatePicture.bind(this)
   }
   render() {
     return (
@@ -50,34 +52,41 @@ class AnnouncementCreatePictures extends React.Component {
             if (!picture) return undefined
             return (
               <div
-              key={`${picture.blob}`}
-              style = {{ backgroundImage: `url('${picture.blob}')` }}
-              className={pictureClassProvider(index)}>
+                key={`${picture.blob}`}
+                style = {{ backgroundImage: `url('${picture.blob}')` }}
+                className={pictureClassProvider(index)}
+              >
                 <div
-                onClick={() => this.deletePicture(index)}
-                className='button delete'>
-                  <i className='far fa-minus-square'></i>
+                  onClick={() => this.deletePicture(index)}
+                  className='button delete'
+                >
+                  <i className='fas fa-times'></i>
                 </div>
                 {
                 this.props.blobs && (index !== 0) &&
                 <div
-                onClick={() => this.movePicture('up', index)}
-                className='button up'>
-                  <i className='far fa-caret-square-up'></i>
+                  onClick={() => this.movePicture('up', index)}
+                  className='button up'
+                >
+                  <i className='fas fa-caret-up'></i>
                 </div>
                 }
                 {
                 this.props.blobs && (this.props.blobs.length !== index + 1) &&
                 <div
-                onClick={() => this.movePicture('down', index)}
-                className='button down'>
-                  <i className='far fa-caret-square-down'></i>
+                  onClick={() => this.movePicture('down', index)}
+                  className='button down'
+                >
+                  <i className='fas fa-caret-down'></i>
                 </div>
                 }
                 {
                 false &&
-                <div className='button comment'>
-                  <i className="far fa-comment-alt"></i>
+                <div
+                  onClick={() => this.rotatePicture(index)}
+                  className='button comment'
+                >
+                  <i className="fas fa-redo"></i>
                 </div>
                 }
               </div>
