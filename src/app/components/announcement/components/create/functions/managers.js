@@ -70,15 +70,25 @@ export function confirmManager() {
 export function goToAnnouncementManager() {
   const {
     changeApp,
-    savedId
+    savedId,
+    id,
+    category,
+    district,
+    area,
+    changeAnnouncementShowData
   } = this.props
 
   return {
     classNames: { container: 'new-form-input button' },
     label: this.languageHandler('Przejdź do Ogłoszenia', 'Go to the Announcement'),
     onClick: () => {
+      changeAnnouncementShowData({
+        category,
+        district,
+        area
+      })
       changeApp({
-        announcementId: savedId,
+        announcementId: savedId || id,
         showAnnouncementShow: true,
         showAnnouncementCreate: false,
         showAnnouncementEdit: false,
