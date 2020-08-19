@@ -26,6 +26,10 @@ class AnnouncementCreatePictures extends React.Component {
     this.rotatePicture = rotatePicture.bind(this)
   }
   render() {
+    const {
+      showAnnouncementEdit
+    } = this.props
+
     return (
       <div id='announcement-create-pictures' className='section'>
         <div className='input-label'>
@@ -81,7 +85,7 @@ class AnnouncementCreatePictures extends React.Component {
                 </div>
                 }
                 {
-                false &&
+                !showAnnouncementEdit &&
                 <div
                   onClick={() => this.rotatePicture(index)}
                   className='button comment'

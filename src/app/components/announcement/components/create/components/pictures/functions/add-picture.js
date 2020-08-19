@@ -18,7 +18,8 @@ export function addPicture(files) {
         blob: window.URL.createObjectURL(blob),
         database: '',
         description: '',
-        file
+        file,
+        rotate: 0
       }])
     })
     this.props.changeControl({ addingPicture: false })
