@@ -8,6 +8,8 @@ import { languageObjectHandler } from '../../../../../../../../functions/languag
 import { ManagedLink } from 'managed-inputs'
 import { linkManager } from './functions/managers'
 
+import { buildLink } from '../../../../../../functions/build-link'
+
 class AnnouncementShowPictures extends React.Component {
   constructor(props) {
     super(props)
@@ -41,6 +43,15 @@ class AnnouncementShowPictures extends React.Component {
           disableSLides={disableSLides}
           heightQuantifier={heightQuantifier}
         />
+        {venue !== 'mini-list' &&
+        <div
+          className='share'
+          onClick={() => {
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${buildLink(this.props)}`)
+          }}
+        >
+          <i className='fab fa-facebook-f' />
+        </div>}
         {venue !== 'show' && venue !== 'mini-list' && <ManagedLink {...this.linkManager()} />}
       </div>
     )
