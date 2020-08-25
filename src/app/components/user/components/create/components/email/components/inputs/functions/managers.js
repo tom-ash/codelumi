@@ -112,6 +112,7 @@ export function phoneNumberManager() {
   return {
     id: 'user-create-email-phone-number',
     autoComplete: 'tel-local',
+    match: /^(\d){0,9}$/,
     type: 'tel',
     controlled: false,
     classNames: { container: 'form-input text phone-body'},
