@@ -13,6 +13,7 @@ export const RentPresenter = ({
   
   return (
     <div className={`rent-container${type ? ` ${type}` : ''}`}>
+      {/* {console.log(amount)} */}
       <div className='amount'>
         {presentAmount(amount)}
       </div>
@@ -45,7 +46,7 @@ export const RentPresenter = ({
 function presentAmount(amount) {
   if (!amount) return
 
-  const multipliedAmount = `${amount * 100}`
+  const multipliedAmount = `${Math.round(amount * 100)}`
 
   return (
     <React.Fragment>
