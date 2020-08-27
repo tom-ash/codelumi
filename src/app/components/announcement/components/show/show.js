@@ -51,7 +51,8 @@ class AnnouncementShow extends React.Component {
       mapLatitude,
       mapLongitude,
       descriptionPolish,
-      descriptionEnglish
+      descriptionEnglish,
+      isMobile
     } = this.props
 
     const { phone } = this.state
@@ -101,6 +102,7 @@ class AnnouncementShow extends React.Component {
           mapLongitude={mapLongitude}
           descriptionPolish={descriptionPolish}
           descriptionEnglish={descriptionEnglish}
+          isMobile={isMobile}
         />
       </div>
     )

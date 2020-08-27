@@ -158,6 +158,7 @@ class AnnouncementIndexMap extends React.Component {
               totalFloors={tile.totalFloors}
               availabilityDate={tile.availabilityDate}
               closeButtonOnClick={() => this.props.changeData({ tileId: null, tile: null })}
+              isMobile={isMobile}
             />
           </div>}
         </div>

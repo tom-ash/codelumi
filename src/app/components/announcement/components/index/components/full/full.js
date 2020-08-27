@@ -23,7 +23,13 @@ class AnnouncementIndexFull extends React.Component {
   render() {
     const {
       language,
-      changeControl, changeInputs, offset, amount, showAnnouncementIndexCatalogue, announcements
+      changeControl,
+      changeInputs,
+      offset,
+      amount,
+      showAnnouncementIndexCatalogue,
+      announcements,
+      isMobile
     } = this.props
 
     return (
@@ -37,6 +43,7 @@ class AnnouncementIndexFull extends React.Component {
             announcements && announcements.map((announcement, index) => {
               return (
                 <AnnouncementTile
+                  isMobile={isMobile}
                   venue='full'
                   showPhoneSwitch
                   index={index}

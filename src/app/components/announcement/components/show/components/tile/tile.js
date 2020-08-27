@@ -47,7 +47,8 @@ class AnnouncementTile extends React.Component {
       descriptionPolish,
       descriptionEnglish,
       control,
-      closeButtonOnClick
+      closeButtonOnClick,
+      isMobile
     } = this.props
 
     const venueShow = venue === 'show'
@@ -104,6 +105,7 @@ class AnnouncementTile extends React.Component {
           category={category}
           district={district}
           area={area}
+          isMobile={isMobile}
         />
         <AnnouncementShowPrimary
           language={language}

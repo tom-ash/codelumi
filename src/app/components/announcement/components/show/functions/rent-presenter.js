@@ -13,7 +13,6 @@ export const RentPresenter = ({
   
   return (
     <div className={`rent-container${type ? ` ${type}` : ''}`}>
-      {/* {console.log(amount)} */}
       <div className='amount'>
         {presentAmount(amount)}
       </div>

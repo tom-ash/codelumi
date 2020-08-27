@@ -7,8 +7,8 @@ import { getDerivedStateFromProps } from './functions/get-derived-state-from-pro
 import { languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import { ManagedLink } from 'managed-inputs'
 import { linkManager } from './functions/managers'
-
 import { buildLink } from '../../../../../../functions/build-link'
+import { shareOnFacebook } from '../../../../../../functions/share-on-facebook'
 
 class AnnouncementShowPictures extends React.Component {
   constructor(props) {
@@ -26,7 +26,8 @@ class AnnouncementShowPictures extends React.Component {
     const {
       disableSLides,
       heightQuantifier,
-      venue
+      venue,
+      isMobile
     } = this.props
 
     const {
@@ -46,9 +47,7 @@ class AnnouncementShowPictures extends React.Component {
         {venue !== 'mini-list' &&
         <div
           className='share'
-          onClick={() => {
-            window.open(`https://www.facebook.com/sharer/sharer.php?u=${buildLink(this.props)}`)
-          }}
+          onClick={() => shareOnFacebook(buildLink(this.props), isMobile)}
         >
           <i className='fab fa-facebook-f' />
         </div>}
