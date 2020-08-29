@@ -5,7 +5,6 @@ export function buildLink({
   id,
   category,
   district,
-  area,
   language
 }) {
   return (

@@ -18,25 +18,4 @@
       background: rgba(255, 255, 255, 0.8);
     }
   }
-
-  .share {
-    cursor: pointer;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    width: 36px;
-    height: 36px;
-    font-size: 28px;
-    color: white;
-    background: rgba(46, 134, 193, .6);
-    text-align: center;
-    border-radius: 5px;
-    padding-top: 8px;
-    border: 1px solid rgba(255, 255, 255, .6);
-    transition: background-color .4s, border-color .4s;
-    &:hover {
-      background: rgba(46, 134, 193, .8);
-      border: 1px solid rgba(255, 255, 255, 1);
-    }
-  }
 }

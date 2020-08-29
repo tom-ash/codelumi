@@ -2,10 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapDispatchToProps } from './constants/mappers'
 import ManagedSlider from '../../../../../../../support/components/managed-slider/managed-slider'
-import { getDerivedStateFromProps } from './functions/get-derived-state-from-props'
-
-import { languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import { ManagedLink } from 'managed-inputs'
+import { getDerivedStateFromProps } from './functions/get-derived-state-from-props'
+import { languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import { linkManager } from './functions/managers'
 import { buildLink } from '../../../../../../functions/build-link'
 import { shareOnFacebook } from '../../../../../../functions/share-on-facebook'
@@ -46,7 +45,7 @@ class AnnouncementShowPictures extends React.Component {
         />
         {venue !== 'mini-list' &&
         <div
-          className='share'
+          className='share-on-facebook-button show'
           onClick={() => shareOnFacebook(buildLink(this.props), isMobile)}
         >
           <i className='fab fa-facebook-f' />

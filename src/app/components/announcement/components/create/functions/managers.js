@@ -1,5 +1,4 @@
 import React from 'react'
-import { instantScroll } from '../../../../../functions/scrollers/instant-scroll'
 import { saveTokens } from '../../../../user/functions/token-handlers'
 
 export function addAnnouncementManager() {
@@ -62,36 +61,6 @@ export function confirmManager() {
         saveTokens.call(this, accessToken)
         changeUserAuthorizeData({ authorized: true, name })
         changeControl({ step: 'publishing' })
-      })
-    }
-  }
-}
-
-export function goToAnnouncementManager() {
-  const {
-    changeApp,
-    savedId,
-    id,
-    category,
-    district,
-    area,
-    changeAnnouncementShowData
-  } = this.props
-
-  return {
-    classNames: { container: 'new-form-input button' },
-    label: this.languageHandler('Przejdź do Ogłoszenia', 'Go to the Announcement'),
-    onClick: () => {
-      changeAnnouncementShowData({
-        category,
-        district,
-        area
-      })
-      changeApp({
-        announcementId: savedId || id,
-        showAnnouncementShow: true,
-        showAnnouncementCreate: false,
-        showAnnouncementEdit: false,
       })
     }
   }

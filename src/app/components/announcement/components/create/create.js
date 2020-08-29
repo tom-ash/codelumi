@@ -3,30 +3,24 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import AnnouncementCreatePrimary from './components/primary/primary'
 import AnnouncementCreatePictures from './components/pictures/pictures'
+import AnnouncementCreateMap from './components/map/map'
+import AnnouncementCreateAdditional from './components/additional/additional'
 import AnnouncementCreateFeatures from './components/features/features'
 import AnnouncementCreateFurnishings from './components/furnishings/furnishings'
 import AnnouncementCreateDescription from './components/description/description'
-import AnnouncementCreateMap from './components/map/map'
-
+import AnnouncementCreateSuccess from './components/success/success'
+import AnnouncementCreateEditorial from './components/editorial/editorial'
+import UserCreateEmail from '../../../user/components/create/components/email/email'
+import WindmillSpinner from '../../../support/components/spinner/components/windmill/windmill.js'
+import * as lifecycle from './functions/lifecycle'
+import * as managers from './functions/managers'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import { getAnnouncement } from './functions/get-announcement'
-import { sectionHeaderProvider } from '../../../../functions/providers/headers'
-import * as lifecycle from './functions/lifecycle'
-import AnnouncementCreateAdditional from './components/additional/additional'
 import { AnnouncementCreateSteps } from './components/steps/steps'
-import AnnouncementCreateEditorial from './components/editorial/editorial'
-
-import UserCreateEmail from '../../../user/components/create/components/email/email'
-
-import * as managers from './functions/managers'
 import { ManagedText, ManagedButton } from 'managed-inputs'
-
 import { publish } from './components/publishing/functions/publish'
-import WindmillSpinner from '../../../support/components/spinner/components/windmill/windmill.js'
-
 import { validatePictures } from './components/pictures/functions/validate-pictures'
 import { validateMap } from './components/map/functions/validate-map'
-
 import { savePicture } from './functions/save-picture'
 import { saveAnnouncement } from './functions/save-announcement'
 
@@ -47,10 +41,8 @@ class AnnouncementCreate extends React.Component {
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.getAnnouncement = getAnnouncement.bind(this)
-    this.sectionHeaderProvider = sectionHeaderProvider.bind(this)
     this.emailVerificationCodeManager = managers.emailVerificationCodeManager.bind(this)
     this.confirmManager = managers.confirmManager.bind(this)
-    this.goToAnnouncementManager = managers.goToAnnouncementManager.bind(this)
     this.addAnnouncementManager = managers.addAnnouncementManager.bind(this)
     this.categoryManager = categoryManager.bind(this)
     this.districtManager = districtManager.bind(this)
@@ -65,10 +57,17 @@ class AnnouncementCreate extends React.Component {
 
   render() {
     const {
+      changeApp,
+      changeAnnouncementShowData,
       authorized,
-      showDescription,
-      changeControl,
-      step
+      step,
+      savedId,
+      id,
+      category,
+      district,
+      area,
+      isMobile,
+      language
     } = this.props
 
     return (
@@ -136,16 +135,17 @@ class AnnouncementCreate extends React.Component {
             </div>
           </div>}
           {step === 'success' &&
-          <div className='success-container'>
-            <div className='input-explanation'>
-              {this.languageObjectHandler({
-                pl: 'Ogłoszenie zostało dodane pomyślnie!',
-                en: 'The Announcement has been added successfully.'
-              })}
-            </div>
-            <div className='separation-line' />
-            <ManagedButton {...this.goToAnnouncementManager()} />
-          </div>}
+          <AnnouncementCreateSuccess
+            changeApp={changeApp}
+            id={id || savedId}
+            category={category}
+            district={district}
+            area={area}
+            changeAnnouncementShowData={changeAnnouncementShowData}
+            languageObjectHandler={this.languageObjectHandler}
+            isMobile={isMobile}
+            language={language}
+          />}
         </div>
         <AnnouncementCreateEditorial />
       </React.Fragment>
