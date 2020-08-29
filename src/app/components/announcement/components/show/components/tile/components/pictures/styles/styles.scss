@@ -5,7 +5,7 @@
     height: 24px;
     line-height: 24px;
     right: 36px;
-    bottom: 12px;
+    bottom: 10px;
     left: 36px;
     width: 150px;
     text-align: center;
@@ -22,19 +22,21 @@
   .share {
     cursor: pointer;
     position: absolute;
-    bottom: 8px;
-    left: 8px;
+    bottom: 10px;
+    left: 10px;
     width: 36px;
     height: 36px;
     font-size: 28px;
     color: white;
-    background: rgba(46, 134, 193, .8);
+    background: rgba(46, 134, 193, .6);
     text-align: center;
-    border-radius: 18px;
+    border-radius: 5px;
     padding-top: 8px;
+    border: 1px solid rgba(255, 255, 255, .6);
+    transition: background-color .4s, border-color .4s;
     &:hover {
-      border: 1px solid white;
-      padding-top: 7px;
+      background: rgba(46, 134, 193, .8);
+      border: 1px solid rgba(255, 255, 255, 1);
     }
   }
 }
