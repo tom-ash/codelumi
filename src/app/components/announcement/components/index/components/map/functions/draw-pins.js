@@ -1,6 +1,7 @@
 import { categories } from '../../../../../constants/categories'
 import { viewAnnouncement } from '../../../../../functions/view-announcement'
 import { buildLink } from '../../../../../functions/build-link'
+import { sendAnalyticsEvent } from '../../../../../../../functions/google-analytics/send-analytics-event'
 
 export function drawPins() {
   setUpPinCreator()
@@ -91,6 +92,12 @@ function addNewPins() {
           const { tileId } = this.props
 
           if (tileId === id) return
+
+          sendAnalyticsEvent({
+            eventCategory: 'Click',
+            eventAction: `Map Pin ${id}`
+          })
+
           viewAnnouncement(id)
           changeData({ tileId: id })
         }

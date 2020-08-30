@@ -16,6 +16,7 @@ import { shouldSetUpGoogleMaps, shouldSetUpPins } from '../../../../functions/go
 import { viewAnnouncement } from '../../../../functions/view-announcement'
 import { buildLink } from '../../../../functions/build-link'
 import { scrollToElement } from '../../../../../../functions/scrollers/scroll-to-element'
+import { sendAnalyticsEvent } from '../../../../../../functions/google-analytics/send-analytics-event'
 
 class AnnouncementIndexMap extends React.Component {
   constructor(props) {
@@ -89,6 +90,11 @@ class AnnouncementIndexMap extends React.Component {
                     const map = window.googleMap
 
                     const alteredLng = lng + (isMobile ? 0 : .037)
+
+                    sendAnalyticsEvent({
+                      eventCategory: 'Click',
+                      eventAction: `MiniList Tile ${id}`
+                    })
 
                     const options = {
                       center: {

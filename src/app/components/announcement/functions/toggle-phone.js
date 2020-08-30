@@ -1,3 +1,5 @@
+import { sendAnalyticsEvent } from '../../../functions/google-analytics/send-analytics-event'
+
 export function togglePhone() {
   if (typeof window === 'undefined') return
 
@@ -6,13 +8,10 @@ export function togglePhone() {
   
   if (phone && phone.length > 8) return
 
-  if (window.ga) {
-    window.ga('send', {
-      hitType: 'event',
-      eventCategory: 'Button Click',
-      eventAction: 'Tile Phone Toggle Clicked'
-    })
-  }
+  sendAnalyticsEvent({
+    eventCategory: 'Click',
+    eventAction: `Phone Toggle ${id}`
+  })
 
   fetch(`${API_URL}/announcement/phone/${id}`, {
     headers: { 'Content-Type': 'application/json' }
