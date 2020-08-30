@@ -3,6 +3,8 @@ import { inputs } from '../../../../../constants/inputs'
 import { requiredInputs } from '../../../constants/required-inputs'
 import { categories } from '../../../../../constants/categories'
 import { districts } from '../../../../../constants/districts'
+import { sendGaEvent } from '../../../../../../../functions/google-analytics/send-ga-event'
+import { analyticsEvents } from '../../../../../../../constants/analytics-events'
 
 const noError = {
   pl: '',
@@ -43,7 +45,10 @@ export function categoryManager() {
     options: [{ value: '', text: '' }].concat(categoryOptions),
     children: <i className="fas fa-chevron-down" />,
     onFocus: () => changeErrors({ category: noError }),
-    onSelect: (option) => this.onSelectHandler('category', option.value),
+    onSelect: option => {
+      sendGaEvent(analyticsEvents.announcement.create.category)
+      this.onSelectHandler('category', option.value)
+    },
     onBlur: () => this.categoryManager().validate(),
     validate: () => this.handleErrorOnValidate('category', value),
     error: this.languageObjectHandler(categoryError)
@@ -64,7 +69,10 @@ export function districtManager() {
     options: [{ value: '', text: '' }].concat(districts),
     children: <i className="fas fa-chevron-down" />,
     onFocus: () => this.props.changeErrors({ district: noError }),
-    onSelect: (option) => this.onSelectHandler('district', option.value),
+    onSelect: option => {
+      sendGaEvent(analyticsEvents.announcement.create.district)
+      this.onSelectHandler('district', option.value)
+    },
     onBlur: () => this.districtManager().validate(),
     validate: () => this.handleErrorOnValidate('district', this.props.district),
     error: this.languageObjectHandler(this.props.errors.district)
@@ -95,8 +103,9 @@ export function areaManager() {
       </React.Fragment>
     ),
     onFocus: () => this.props.changeErrors({ area: noError }),
-    onChange: (value) => this.props.changeInputs({ area: value }),
+    onChange: value => this.props.changeInputs({ area: value }),
     onBlur: () => {
+      sendGaEvent(analyticsEvents.announcement.create.area)
       this.areaManager().validate()
       this.getRentAmounts()
     },
