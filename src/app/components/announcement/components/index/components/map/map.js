@@ -92,8 +92,9 @@ class AnnouncementIndexMap extends React.Component {
                     const alteredLng = lng + (isMobile ? 0 : .037)
 
                     sendAnalyticsEvent({
-                      eventCategory: 'Click',
-                      eventAction: `MiniList Tile ${id}`
+                      eventCategory: 'Announcement MiniList',
+                      eventAction: 'Tile Click',
+                      eventLabel: id
                     })
 
                     const options = {

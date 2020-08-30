@@ -9,6 +9,7 @@ import { fixedPhoneHandler } from './functions/fixed-phone-handler'
 import { changePath } from '../../../../functions/routers/change-path'
 import { parseCategory } from '../../functions/category-parsers'
 import AnnouncementTile from './components/tile/tile'
+import { sendAnalyticsEvent } from '../../../../functions/google-analytics/send-analytics-event'
 
 class AnnouncementShow extends React.Component {
   constructor(props) {
@@ -70,7 +71,18 @@ class AnnouncementShow extends React.Component {
             <div className='text'>
               {` ${phone}`}
               {phone && phone.length < 9 &&
-              <u onClick={(e) => this.togglePhone(e, venue)}>{this.languageObjectHandler({ pl: 'Pokaż', en: 'Show' })}</u>}
+              <u
+                onClick={(e) => {
+                  sendAnalyticsEvent({
+                    eventCategory: 'Announcement Show',
+                    eventAction: 'Phone Reveal Click',
+                    eventLabel: id
+                  })
+                  this.togglePhone(e, venue)}
+                }
+              >
+                {this.languageObjectHandler({ pl: 'Pokaż', en: 'Show' })}
+              </u>}
             </div>
             <div className='float-clear' />
           </div>

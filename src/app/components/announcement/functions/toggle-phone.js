@@ -9,8 +9,9 @@ export function togglePhone() {
   if (phone && phone.length > 8) return
 
   sendAnalyticsEvent({
-    eventCategory: 'Click',
-    eventAction: `Phone Toggle ${id}`
+    eventCategory: 'Announcement Tile',
+    eventAction: 'Phone Toggle Click',
+    eventLabel: id
   })
 
   fetch(`${API_URL}/announcement/phone/${id}`, {

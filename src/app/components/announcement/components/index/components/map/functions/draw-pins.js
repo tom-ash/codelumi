@@ -94,8 +94,9 @@ function addNewPins() {
           if (tileId === id) return
 
           sendAnalyticsEvent({
-            eventCategory: 'Click',
-            eventAction: `Map Pin ${id}`
+            eventCategory: 'Announcement Map',
+            eventAction: 'Pin Click',
+            eventLabel: id
           })
 
           viewAnnouncement(id)
