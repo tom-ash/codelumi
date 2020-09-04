@@ -2,12 +2,24 @@ import { apiUrl } from '../../../../../constants/urls.js'
 import { getAccessToken } from '../../authorize/components/tokens/functions/get-tokens'
 
 export function sendEmail() {
-  const { changeControl, connecting, email } = this.props
+  const {
+    changeControl,
+    connecting,
+    email,
+    language
+  } = this.props
+
   if (connecting) return
 
   changeControl({ connecting: true })
+  
   fetch(apiUrl + '/user/destroy/email', {
-    method: 'PUT', headers: { 'Content-Type': 'application/json', access_token: getAccessToken() },
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      access_token: getAccessToken(),
+      language
+    },
     body: JSON.stringify({ email })
   })
   .then(response => {
