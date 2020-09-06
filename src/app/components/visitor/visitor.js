@@ -2,14 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 import loadable from '@loadable/component'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { componentDidMount } from './functions/lifecycle'
-import VisitorPrivacyMonit from './components/legal/components/privacy/components/monit/monit'
-import VisitorAbout from './components/about/about'
-import VisitorContact from './components/contact/contact'
+const VisitorPrivacyMonit = loadable(() => import('./components/legal/components/privacy/components/monit/monit'))
+const VisitorAbout = loadable(() => import('./components/about/about'))
+const VisitorContact = loadable(() => import('./components/contact/contact'))
 const VisitorTermsOfService = loadable(() => import('./components/legal/components/terms-of-service/terms-of-service'))
-import VisitorCookiesPolicy from './components/legal/components/cookies/components/policy/policy'
-import VisitorPrivacyPolicy from './components/legal/components/privacy/components/policy/policy'
-import VisitorPrivacySettings from './components/legal/components/privacy/components/settings/settings'
+const VisitorCookiesPolicy = loadable(() => import('./components/legal/components/cookies/components/policy/policy'))
+const VisitorPrivacyPolicy = loadable(() => import('./components/legal/components/privacy/components/policy/policy'))
+const VisitorPrivacySettings = loadable(() => import('./components/legal/components/privacy/components/settings/settings'))
+import { componentDidMount } from './functions/lifecycle'
 
 class User extends React.Component {
   constructor(props) {
