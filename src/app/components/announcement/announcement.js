@@ -3,8 +3,7 @@ import loadable from '@loadable/component'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 const AnnouncementCreate = loadable(() => import('./components/create/create'))
-import AnnouncementShow from './components/show/show'
-
+const AnnouncementShow = loadable(() => import('./components/show/show'))
 const AnnouncementIndex = loadable(() => import('./components/index/index'))
 
 class Announcement extends React.Component {
