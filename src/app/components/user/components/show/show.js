@@ -7,6 +7,8 @@ import { languageHandler, languageObjectHandler } from '../../../../functions/la
 import * as managers from './functions/managers'
 import { labelProvider } from './functions/label-provider'
 import { changePath } from '../../../../functions/routers/change-path'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -38,4 +40,4 @@ class UserShow extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserShow)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(UserShow))
