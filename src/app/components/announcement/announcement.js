@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 const AnnouncementCreate = loadable(() => import('./components/create/create'))
 import AnnouncementShow from './components/show/show'
-import AnnouncementIndex from './components/index/index'
+
+const AnnouncementIndex = loadable(() => import('./components/index/index'))
 
 class Announcement extends React.Component {
   constructor(props) {
