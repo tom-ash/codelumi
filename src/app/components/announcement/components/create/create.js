@@ -23,6 +23,8 @@ import { validatePictures } from './components/pictures/functions/validate-pictu
 import { validateMap } from './components/map/functions/validate-map'
 import { savePicture } from './functions/save-picture'
 import { saveAnnouncement } from './functions/save-announcement'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 import {
   categoryManager,
@@ -153,4 +155,4 @@ class AnnouncementCreate extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementCreate)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(AnnouncementCreate))
