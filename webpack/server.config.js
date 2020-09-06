@@ -1,15 +1,20 @@
 var webpack = require("webpack");
+const LoadablePlugin = require('@loadable/webpack-plugin')
 const nodeExternals = require('webpack-node-externals')
 var provideClientUrl = require('./providers/provide-client-url')
 var provideApiUrl = require('./providers/provide-api-url')
 var provideAwsS3Url = require('./providers/provide-aws-s3-url')
+var path = require('path')
+var DIST_DIR = path.join(__dirname, "../dist/server")
 
 var config = {
   entry: {
     server: './src/server/server.js',
   },
   output: {
-    filename: './server/server.js'
+    path: DIST_DIR,
+    filename: 'server.js',
+    publicPath: '/'
   },
   target: 'node',
   externals: [nodeExternals()],
@@ -45,6 +50,7 @@ var config = {
     ]
   },
   plugins: [
+    new LoadablePlugin({ filename: 'stats.json', writeToDisk: true }),
     new webpack.DefinePlugin({
       'APP_ENV': JSON.stringify(process.env.APP_ENV),
       'CLIENT_URL': JSON.stringify(provideClientUrl(process.env.APP_ENV)),

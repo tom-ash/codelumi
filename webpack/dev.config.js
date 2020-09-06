@@ -3,12 +3,9 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var provideClientUrl = require('./providers/provide-client-url')
 var provideApiUrl = require('./providers/provide-api-url')
 var provideAwsS3Url = require('./providers/provide-aws-s3-url')
-
 var path = require('path')
-
-
-var SRC_DIR = path.join(__dirname, "../src/dev");
-var DIST_DIR = path.join(__dirname, "../dist/client");
+var SRC_DIR = path.join(__dirname, "../src/dev")
+var DIST_DIR = path.join(__dirname, "../dist/client")
 
 var config = {
   mode: 'development',

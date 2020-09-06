@@ -1,6 +1,7 @@
 import 'react-app-polyfill/ie9';
 import React from 'react'
 import { hydrate } from 'react-dom'
+import { loadableReady } from '@loadable/component'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { rootReducer } from '../app/functions/root_reducer'
@@ -16,11 +17,12 @@ const preloadedState = window.__PRELOADED_STATE__
 delete window.__PRELOADED_STATE__
 const store = createStore(rootReducer, preloadedState)
 
-hydrate(
-  <StyleContext.Provider value={{ insertCss }}>
+loadableReady(() => {
+  const root = document.getElementById('main')
+  hydrate(  <StyleContext.Provider value={{ insertCss }}>
     <Provider store={store}>
       <App />
     </Provider>
   </StyleContext.Provider>,
-  document.getElementById('app')
-)
+  document.getElementById('app'), root)
+})

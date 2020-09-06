@@ -1,9 +1,10 @@
 import React from 'react'
+import loadable from '@loadable/component'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import AnnouncementIndex from './components/index/index'
-import AnnouncementCreate from './components/create/create'
+const AnnouncementCreate = loadable(() => import('./components/create/create'))
 import AnnouncementShow from './components/show/show'
+import AnnouncementIndex from './components/index/index'
 
 class Announcement extends React.Component {
   constructor(props) {
