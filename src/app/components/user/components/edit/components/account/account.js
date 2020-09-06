@@ -4,6 +4,8 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { componentDidMount, componentWillUnmount } from './functions/lifecycle'
 import UserEditAccountCell from './components/cell/cell'
 import { languageHandler } from '../../../../../../functions/language-handler'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class UserEditAccount extends React.Component {
   constructor(props) {
@@ -40,4 +42,4 @@ class UserEditAccount extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserEditAccount)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(UserEditAccount))

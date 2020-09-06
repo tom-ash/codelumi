@@ -6,7 +6,7 @@ const UserCreate = loadable(() => import('./components/create/create'))
 import UserAuthorize from './components/authorize/authorize'
 import UserShow from './components/show/show'
 import UserEditAccountPassword from './components/edit/components/account/components/password/password'
-import UserEditAccount from './components/edit/components/account/account'
+const UserEditAccount = loadable(() => import('./components/edit/components/account/account'))
 
 class User extends React.Component {
   constructor(props) {
