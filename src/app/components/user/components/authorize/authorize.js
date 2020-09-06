@@ -4,6 +4,8 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler } from '../../../../functions/language-handler'
 import UserAuthorizeEmailTrack from './components/email-password/email-password'
 import { hideUser } from '../../functions/hide-user'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class UserAuthorize extends React.Component {
   constructor(props) {
@@ -29,4 +31,4 @@ class UserAuthorize extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserAuthorize)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(UserAuthorize))
