@@ -5,7 +5,7 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 const UserCreate = loadable(() => import('./components/create/create'))
 const UserAuthorize = loadable(() => import('./components/authorize/authorize'))
 const UserShow = loadable(() => import('./components/show/show'))
-import UserEditAccountPassword from './components/edit/components/account/components/password/password'
+const UserEditAccountPassword = loadable(() => import('./components/edit/components/account/components/password/password'))
 const UserEditAccount = loadable(() => import('./components/edit/components/account/account'))
 
 class User extends React.Component {
