@@ -20,6 +20,6 @@ export const mapStateToProps = (store) => {
     
 export const mapDispatchToProps = (dispatch) => {
   return {
-    changeControl: (value) => dispatch({ type: 'announcement/index/control', value: value })
+    changeControl: (value) => dispatch({ type: 'announcement/index/control', value })
   }
 }

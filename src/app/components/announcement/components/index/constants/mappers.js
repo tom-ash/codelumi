@@ -76,13 +76,13 @@ export const mapStateToProps = (store) => {
 export const mapDispatchToProps = (dispatch) => {
   return {
     changeApp: (value) => dispatch({ type: 'app', value: value}),
-    changeControl: (value) => dispatch({ type: 'announcement/index/control', value: value }),
-    changeInputs: (value) => dispatch({ type: 'announcement/index/inputs', value: value }),
-    changeData: (value) => dispatch({ type: 'announcement/index/data', value: value }),
-    changeAnnouncements: (value) => dispatch({ type: 'announcement/index/data/announcements', value: value }),
-    resetControl: (value) => dispatch({ type: 'announcement/index/control/reset', value: value }),
-    resetInputs: (value) => dispatch({ type: 'announcement/index/inputs/reset', value: value }),
-    resetData: (value) => dispatch({ type: 'announcement/index/data/reset', value: value })
+    changeControl: (value) => dispatch({ type: 'announcement/index/control', value }),
+    changeInputs: (value) => dispatch({ type: 'announcement/index/inputs', value }),
+    changeData: (value) => dispatch({ type: 'announcement/index/data', value }),
+    changeAnnouncements: (value) => dispatch({ type: 'announcement/index/data/announcements', value }),
+    resetControl: (value) => dispatch({ type: 'announcement/index/control/reset', value }),
+    resetInputs: (value) => dispatch({ type: 'announcement/index/inputs/reset', value }),
+    resetData: (value) => dispatch({ type: 'announcement/index/data/reset', value })
   }
 }
     

@@ -1,7 +1,8 @@
 import React from 'react'
+import loadable from '@loadable/component'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import UserCreate from './components/create/create'
+const UserCreate = loadable(() => import('./components/create/create'))
 import UserAuthorize from './components/authorize/authorize'
 import UserShow from './components/show/show'
 import UserEditAccountPassword from './components/edit/components/account/components/password/password'

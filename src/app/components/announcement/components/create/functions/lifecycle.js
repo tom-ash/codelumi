@@ -22,11 +22,21 @@ export function componentDidUpdate() {
 }
 
 export function componentWillUnmount() {
-  const { resetControl, resetInputs, resetErrors } = this.props
+  const {
+    resetControl,
+    resetInputs,
+    resetErrors,
+    resetUserCreateControl,
+    resetUserCreateInputs,
+    resetUserCreateData,
+    resetUserCreateErrors
+  } = this.props
 
-  const { publishing, success } = this.props
-  if (publishing && !success) return
   resetControl()
   resetInputs()
   resetErrors()
+  resetUserCreateControl()
+  resetUserCreateInputs()
+  resetUserCreateData()
+  resetUserCreateErrors()
 }

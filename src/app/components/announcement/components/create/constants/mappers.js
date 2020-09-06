@@ -102,6 +102,10 @@ export const mapDispatchToProps = (dispatch) => {
     resetControl: value => dispatch({ type: 'announcement/create/control/reset', value }),
     resetInputs: value => dispatch({ type: 'announcement/create/inputs/reset', value }),
     resetErrors: value => dispatch({ type: 'announcement/create/errors/reset', value }),
+    resetUserCreateControl: value => dispatch({ type: 'user/create/control/reset', value }),
+    resetUserCreateInputs: value => dispatch({ type: 'user/create/inputs/reset', value }),
+    resetUserCreateData: value => dispatch({ type: 'user/create/data/reset', value }),
+    resetUserCreateErrors: value => dispatch({ type: 'user/create/errors/reset', value })
   }
 }
     

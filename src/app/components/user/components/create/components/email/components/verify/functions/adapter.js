@@ -5,7 +5,12 @@ export function verify() {
   if (!this.verificationManager('validate')) return
   
   const verificationCode = document.getElementById('user-create-email-verification').value
-  const { changeApp, changeAuthorizeData, changeControl, changeErrors } = this.props
+  const {
+    changeApp,
+    changeAuthorizeData,
+    changeControl,
+    changeErrors
+  } = this.props
 
   changeControl({ connecting: true })
 

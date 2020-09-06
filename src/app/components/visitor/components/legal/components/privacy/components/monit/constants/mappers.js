@@ -8,7 +8,7 @@ export const mapStateToProps = (store) => {
 export const mapDispatchToProps = (dispatch) => {
   return {
     changeApp: (value) => dispatch({ type: 'app', value: value}),
-    changeSettings: (value) => dispatch({ type: 'visitor/privacy/settings', value: value })
+    changeSettings: (value) => dispatch({ type: 'visitor/privacy/settings', value })
   }
 }
     

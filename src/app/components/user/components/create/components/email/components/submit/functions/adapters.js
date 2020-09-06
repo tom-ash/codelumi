@@ -71,6 +71,9 @@ function createProspectiveUser(userObject) {
   },
   networkError => console.dir(networkError.message))
   .then((json) => {
+
+    console.log(json.token)
+
     changeData({ token: json.token })
     if (showAnnouncementCreate) changeAnnouncementCreateControl({ step: 'confirmation' })
     changeControl({ connecting: false, step: 'confirmation' })

@@ -39,10 +39,10 @@ export const mapStateToProps = (store) => {
     
 export const mapDispatchToProps = (dispatch) => {
   return {
-    changeControl: (value) => dispatch({ type: 'announcement/index/control', value: value }),
-    changeInputs: (value) => dispatch({ type: 'announcement/index/inputs', value: value }),
-    changeData: (value) => dispatch({ type: 'announcement/index/data', value: value }),
+    changeControl: (value) => dispatch({ type: 'announcement/index/control', value }),
+    changeInputs: (value) => dispatch({ type: 'announcement/index/inputs', value }),
+    changeData: (value) => dispatch({ type: 'announcement/index/data', value }),
 
-    changeAnnouncement: (value) => dispatch({ type: 'announcement/index/data/announcements', value: value })
+    changeAnnouncement: (value) => dispatch({ type: 'announcement/index/data/announcements', value })
   }
 }

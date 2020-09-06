@@ -1,4 +1,5 @@
 import React from 'react'
+import loadable from '@loadable/component'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import AnnouncementCreatePrimary from './components/primary/primary'
@@ -10,7 +11,6 @@ import AnnouncementCreateFurnishings from './components/furnishings/furnishings'
 import AnnouncementCreateDescription from './components/description/description'
 import AnnouncementCreateSuccess from './components/success/success'
 import AnnouncementCreateEditorial from './components/editorial/editorial'
-import UserCreateEmail from '../../../user/components/create/components/email/email'
 import WindmillSpinner from '../../../support/components/spinner/components/windmill/windmill.js'
 import * as lifecycle from './functions/lifecycle'
 import * as managers from './functions/managers'
@@ -25,6 +25,8 @@ import { savePicture } from './functions/save-picture'
 import { saveAnnouncement } from './functions/save-announcement'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+
+const UserCreate = loadable(() => import('../../../user/components/create/create'), { ssr: false })
 
 import {
   categoryManager,
@@ -115,7 +117,7 @@ class AnnouncementCreate extends React.Component {
           </form>}
           {step === 'account-data' &&
           <div className='account-data'>
-            <UserCreateEmail />
+            <UserCreate venue='announcementCreate'/>
           </div>}
           {step === 'confirmation' &&
           <div className='success-container'>

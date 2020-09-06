@@ -12,11 +12,11 @@ export const mapStateToProps = (store) => {
 export const mapDispatchToProps = (dispatch) => {
   return {
     changeApp: (value) => dispatch({ type: 'app', value: value}),
-    resetAuthorizeData: (value) => dispatch({ type: 'user/authorize/data/reset', value: value }),
-    changeControl: (value) => dispatch({ type: 'user/destroy/control', value: value }),
-    resetControl: (value) => dispatch({ type: 'user/destroy/control/reset', value: value }),
-    changeErrors: (value) => dispatch({ type: 'user/destroy/errors', value: value }),
-    resetErrors: (value) => dispatch({ type: 'user/destroy/errors/reset', value: value })
+    resetAuthorizeData: (value) => dispatch({ type: 'user/authorize/data/reset', value }),
+    changeControl: (value) => dispatch({ type: 'user/destroy/control', value }),
+    resetControl: (value) => dispatch({ type: 'user/destroy/control/reset', value }),
+    changeErrors: (value) => dispatch({ type: 'user/destroy/errors', value }),
+    resetErrors: (value) => dispatch({ type: 'user/destroy/errors/reset', value })
   }
 }
     

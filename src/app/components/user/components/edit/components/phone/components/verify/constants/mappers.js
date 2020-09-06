@@ -13,11 +13,11 @@ export const mapStateToProps = (store) => {
     
 export const mapDispatchToProps = (dispatch) => {
   return {
-    changeApp: (value) => dispatch({ type: 'app', value: value }),
-    changeAnnouncementControl: (value) => dispatch({ type: 'announcement/create/control', value: value }),
-    changeAuthorizeData: (value) => dispatch({ type: 'user/authorize/data', value: value }),
-    changeControl: (value) => dispatch({ type: 'user/edit/control', value: value }),
-    changeErrors: (value) => dispatch({ type: 'user/edit/errors', value: value })
+    changeApp: (value) => dispatch({ type: 'app', value }),
+    changeAnnouncementControl: (value) => dispatch({ type: 'announcement/create/control', value }),
+    changeAuthorizeData: (value) => dispatch({ type: 'user/authorize/data', value }),
+    changeControl: (value) => dispatch({ type: 'user/edit/control', value }),
+    changeErrors: (value) => dispatch({ type: 'user/edit/errors', value })
   }
 }
     

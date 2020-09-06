@@ -27,10 +27,10 @@ export const mapStateToProps = (store) => {
 
 export const mapDispatchToProps = (dispatch) => {
   return {
-    changeControl: value => dispatch({ type: 'announcement/show/control', value: value }),
-    resetControl: value => dispatch({ type: 'announcement/show/control/reset', value: value }),
-    changeData: value => dispatch({ type: 'announcement/show/data', value: value }),
-    resetData: value => dispatch({ type: 'announcement/show/data/reset', value: value }),
+    changeControl: value => dispatch({ type: 'announcement/show/control', value }),
+    resetControl: value => dispatch({ type: 'announcement/show/control/reset', value }),
+    changeData: value => dispatch({ type: 'announcement/show/data', value }),
+    resetData: value => dispatch({ type: 'announcement/show/data/reset', value }),
   }
 }
     

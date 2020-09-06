@@ -1,5 +1,12 @@
 @import '../../../../../styles/themes.scss';
 @import '../../../../../styles/inputs/form/form';
+@import '../components/connecting/styles/styles.scss';
+@import '../components/consents/styles/styles.scss';
+@import '../components/email/components/inputs/styles/styles.scss';
+@import '../components/email/components/submit/styles/styles.scss';
+@import '../components/email/components/verify/styles/styles.scss';
+@import '../components/email/styles/styles.scss';
+@import '../../../../announcement/components/create/components/steps/styles/styles.scss';
 
 #user-create-container {
   margin: 70px auto 0;
