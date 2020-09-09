@@ -10,8 +10,6 @@ export function goToAnnouncementManager() {
     changeAnnouncementShowData
   } = this.props
 
-  console.log(this.props)
-
   return {
     classNames: { container: 'go-to-announcement' },
     label: languageObjectHandler({ pl: 'Pokaż dodane ogłoszenie', en: 'Show the added announcement' }),

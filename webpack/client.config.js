@@ -5,6 +5,7 @@ var CopyPlugin = require('copy-webpack-plugin');
 var provideAwsS3Url = require('./providers/provide-aws-s3-url')
 var path = require('path')
 var DIST_DIR = path.join(__dirname, "../dist/client")
+const LoadablePlugin = require('@loadable/webpack-plugin')
 
 var config = {
   entry: {
@@ -47,6 +48,10 @@ var config = {
     ]
   },
   plugins: [
+    new LoadablePlugin({
+      filename: 'loadable-stats.json',
+      writeToDisk: true
+    }),
     new webpack.DefinePlugin({
       'APP_ENV': JSON.stringify(process.env.APP_ENV),
       'CLIENT_URL': JSON.stringify(provideClientUrl(process.env.APP_ENV)),

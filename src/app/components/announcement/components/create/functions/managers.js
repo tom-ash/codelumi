@@ -35,8 +35,6 @@ export function confirmManager() {
     verificationCode
   } = this.props
 
-  console.log(this.props)
-
   return {
     classNames: { container: 'new-form-input button' },
     label: this.languageHandler('Potwierdź', 'Confirm'),

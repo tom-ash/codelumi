@@ -17,12 +17,13 @@ const preloadedState = window.__PRELOADED_STATE__
 delete window.__PRELOADED_STATE__
 const store = createStore(rootReducer, preloadedState)
 
-loadableReady(() => {
-  const root = document.getElementById('main')
-  hydrate(  <StyleContext.Provider value={{ insertCss }}>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </StyleContext.Provider>,
-  document.getElementById('app'), root)
-})
+loadableReady(() =>
+  hydrate(
+    <StyleContext.Provider value={{ insertCss }}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </StyleContext.Provider>,
+    document.getElementById('app')
+  )
+)

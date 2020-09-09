@@ -1,5 +1,4 @@
-var webpack = require("webpack");
-const LoadablePlugin = require('@loadable/webpack-plugin')
+var webpack = require("webpack")
 const nodeExternals = require('webpack-node-externals')
 var provideClientUrl = require('./providers/provide-client-url')
 var provideApiUrl = require('./providers/provide-api-url')
@@ -50,7 +49,6 @@ var config = {
     ]
   },
   plugins: [
-    new LoadablePlugin({ filename: 'stats.json', writeToDisk: true }),
     new webpack.DefinePlugin({
       'APP_ENV': JSON.stringify(process.env.APP_ENV),
       'CLIENT_URL': JSON.stringify(provideClientUrl(process.env.APP_ENV)),

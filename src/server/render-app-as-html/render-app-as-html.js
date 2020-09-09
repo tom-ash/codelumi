@@ -8,8 +8,8 @@ import App from '../../app/app'
 
 var path = require('path')
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server'
-const statsFile = path.resolve('./dist/server/stats.json')
-const extractor = new ChunkExtractor({ statsFile, entrypoints: ["server"] })
+const statsFile = path.resolve('./dist/client/loadable-stats.json')
+const extractor = new ChunkExtractor({ statsFile, entrypoints: ['index'] })
 
 export function renderAppAsHtml(initialState) {
   const css = new Set()
@@ -28,11 +28,13 @@ export function renderAppAsHtml(initialState) {
     </ChunkExtractorManager>
   )
 
+  const scriptTags = extractor.getScriptTags()
   const preloadedState = store.getState()
 
   return {
     html,
     css,
-    preloadedState
+    preloadedState,
+    scriptTags
   }
 }

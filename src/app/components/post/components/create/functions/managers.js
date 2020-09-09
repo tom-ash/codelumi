@@ -21,8 +21,6 @@ export function metaManager() {
     meta
   } = this.props
 
-  console.log(this.languageObjectHandler(meta))
-
   return {
     classNames: { container: 'form-input textarea' },
     label: 'Meta',

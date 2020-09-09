@@ -2,6 +2,7 @@ export function renderPage({
   html,
   css,
   preloadedState,
+  scriptTags,
   title,
   description,
   url,
@@ -32,7 +33,7 @@ export function renderPage({
         <script>
           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
         </script>
-        <script type="text/javascript" src="/bundle.js"></script>
+        ${scriptTags}
       </body>
     </html>
   `
