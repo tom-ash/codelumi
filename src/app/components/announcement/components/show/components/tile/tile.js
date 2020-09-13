@@ -10,6 +10,8 @@ import { parseDistrict } from '../../../../functions/district-parsers'
 import { CloseButton } from '../../../../../support/components/close-button/close-button'
 import { phoneSwitchProvider } from '../../../../functions/phone-switch-provider'
 import { togglePhone } from '../../../../functions/toggle-phone'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class AnnouncementTile extends React.Component {
   constructor(props) {
@@ -153,4 +155,4 @@ class AnnouncementTile extends React.Component {
   }
 }
 
-export default AnnouncementTile
+export default withStyles(styles)(AnnouncementTile)
