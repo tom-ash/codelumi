@@ -19,6 +19,8 @@ import {
 import { compositeInputProvider } from './functions/composite-input-provider'
 import { parseCurrency } from '../../../../../../functions/currency-parsers'
 import { ManagedSelect, ManagedLink } from 'managed-inputs'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class AnnouncementIndexPanelVisitor extends React.Component {
   constructor(props) {
@@ -74,4 +76,4 @@ class AnnouncementIndexPanelVisitor extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementIndexPanelVisitor)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(AnnouncementIndexPanelVisitor))

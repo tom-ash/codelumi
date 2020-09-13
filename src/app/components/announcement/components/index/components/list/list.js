@@ -14,6 +14,8 @@ import { destroy } from './functions/destroy'
 import { edit } from './functions/edit'
 import { pageHeaderProvider, sectionHeaderProvider } from '../../../../../../functions/header-providers'
 import { changePath } from '../../../../../../functions/routers/change-path'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class AnnouncementIndexList extends React.Component {
   constructor(props) {
@@ -101,4 +103,4 @@ class AnnouncementIndexList extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementIndexList)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(AnnouncementIndexList))

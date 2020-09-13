@@ -18,6 +18,8 @@ import { viewAnnouncement } from '../../../../functions/view-announcement'
 import { buildLink } from '../../../../functions/build-link'
 import { scrollToElement } from '../../../../../../functions/scrollers/scroll-to-element'
 import { sendAnalyticsEvent } from '../../../../../../functions/google-analytics/send-analytics-event'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class AnnouncementIndexMap extends React.Component {
   constructor(props) {
@@ -175,4 +177,4 @@ class AnnouncementIndexMap extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementIndexMap)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(AnnouncementIndexMap))

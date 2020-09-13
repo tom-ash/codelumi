@@ -7,7 +7,6 @@ import * as lifecycle from './functions/lifecycle'
 import { languageHandler } from '../../../../functions/language-handler'
 import { hideUser } from '../../functions/hide-user'
 import { UserCreateSteps } from './components/steps/steps'
-
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 

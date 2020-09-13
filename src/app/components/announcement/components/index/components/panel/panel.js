@@ -4,6 +4,8 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import AnnouncementIndexPanelVisitor from './components/visitor/visitor'
 import AnnouncementIndexPanelUser from './components/user/user'
 import { languageObjectHandler } from '../../../../../../functions/language-handler'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class AnnouncementIndexPanel extends React.Component {
   constructor(props) {
@@ -23,4 +25,4 @@ class AnnouncementIndexPanel extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementIndexPanel)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(AnnouncementIndexPanel))

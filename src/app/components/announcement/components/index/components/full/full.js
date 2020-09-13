@@ -8,6 +8,8 @@ import { parseCategoryForUrl } from '../../../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../../../functions/district-parsers'
 import { parseCurrency } from '../../../../functions/currency-parsers'
 import { OffsetSwitcher } from '../offset-switcher/offset-switcher'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class AnnouncementIndexFull extends React.Component {
   constructor(props) {
@@ -85,4 +87,4 @@ class AnnouncementIndexFull extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementIndexFull)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(AnnouncementIndexFull))

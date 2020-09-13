@@ -1,22 +1,4 @@
 
-
-
-
-@import '../components/announcement/styles/styles.scss';
-
-@import '../components/announcement/components/index/styles/styles.scss';
-
-@import '../components/announcement/components/index/components/map/styles/styles.scss';
-@import '../components/announcement/components/index/components/full/styles/styles.scss';
-@import '../components/announcement/components/index/components/list/styles/styles.scss';
-
-@import '../components/announcement/components/index/components/panel/styles/styles.scss';
-@import '../components/announcement/components/index/components/panel/components/user/styles/styles.scss';
-@import '../components/announcement/components/index/components/panel/components/visitor/styles/styles.scss';
-
-
-
-
 @import '../components/announcement/components/show/components/tile/components/description/styles/styles.scss';
 @import '../components/announcement/components/show/components/tile/components/features-furnishings/styles/styles.scss';
 @import '../components/announcement/components/show/components/tile/components/map/styles/styles.scss';
@@ -24,12 +6,16 @@
 @import '../components/announcement/components/show/components/tile/components/primary/styles/styles.scss';
 @import '../components/announcement/components/show/components/tile/styles/styles.scss';
 
+
+
 @import '../components/support/components/spinner/components/windmill/styles/styles.scss';
 @import '../components/user/components/destroy/styles/styles.scss';
 @import '../components/user/styles/styles.scss';
+
+@import '../components/visitor/components/welcome/styles/styles.scss';
+
 @import '../components/visitor/components/about/styles/styles.scss';
 @import '../components/visitor/components/contact/styles/styles.scss';
-@import '../components/visitor/components/welcome/styles/styles.scss';
 
 @import '../components/visitor/components/legal/components/cookies/components/policy/styles/styles.scss';
 @import '../components/visitor/components/legal/components/privacy/components/monit/styles/styles.scss';
@@ -38,12 +24,16 @@
 
 @import '../components/visitor/components/legal/components/provision/styles/styles.scss';
 @import '../components/visitor/components/legal/components/terms-of-service/styles/styles.scss';
+
 @import '../components/announcement/components/index/components/full/styles/styles.scss';
+@import '../components/announcement/styles/pin';
+
 @import '../components/scaffold/components/header/styles/styles.scss';
 @import '../components/scaffold/components/footer/styles/styles.scss';
+
 @import './media-breakpoints';
 @import './themes';
-@import '../components/announcement/styles/pin';
+
 @import './inputs/form/form';
 
 input::-webkit-outer-spin-button,

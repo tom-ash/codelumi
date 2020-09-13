@@ -4,6 +4,8 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import * as managers from './functions/managers'
 import { ManagedSelect, ManagedMultipleCheckbox } from 'managed-inputs'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class AnnouncementIndexPanelUser extends React.Component {
   constructor(props) {
@@ -31,4 +33,4 @@ class AnnouncementIndexPanelUser extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementIndexPanelUser)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(AnnouncementIndexPanelUser))

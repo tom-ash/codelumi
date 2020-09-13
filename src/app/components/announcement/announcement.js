@@ -5,6 +5,8 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 const AnnouncementCreate = loadable(() => import('./components/create/create'))
 const AnnouncementShow = loadable(() => import('./components/show/show'))
 const AnnouncementIndex = loadable(() => import('./components/index/index'))
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class Announcement extends React.Component {
   constructor(props) {
@@ -23,4 +25,4 @@ class Announcement extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Announcement)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Announcement))

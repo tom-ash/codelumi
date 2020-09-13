@@ -15,12 +15,12 @@ import { languageHandler, languageObjectHandler } from '../../../../functions/la
 import { parseCurrency } from '../../functions/currency-parsers'
 import { parseCategoryForUrl } from '../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../functions/district-parsers'
-
 import { ManagedLink } from 'managed-inputs'
 import { addAnnouncementManager } from '../../../../components/scaffold/components/header/functions/managers'
-
 import { labelProvider } from '../../../../components/user/components/show/functions/label-provider'
 import { changePath } from '../../../../functions/routers/change-path'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class AnnouncementIndexSearch extends React.Component {
   constructor(props) {
@@ -72,4 +72,4 @@ class AnnouncementIndexSearch extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementIndexSearch)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(AnnouncementIndexSearch))
