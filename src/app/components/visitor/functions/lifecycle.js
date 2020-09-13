@@ -13,7 +13,7 @@ function setCookies() {
 
   const consents = {
     ...statisticsConsent === null && { statisticsConsent: getBoolCookieValue(getCookieValue('_pdpaf')) },
-    ...marketingConsent === null && { marketingConsent: getBoolCookieValue(getCookieValue('_pdpaf')) }
+    ...marketingConsent === null && { marketingConsent: getBoolCookieValue(getCookieValue('_pdpsm')) }
   }
 
   changeSettings(consents)
