@@ -10,13 +10,41 @@ export function handleRequest(req, res) {
   const pureUrl = purifyUrl(req.originalUrl)
   const userAgent = req.headers['user-agent']
 
+  function getBoolCookieValue(cookieValue) {
+    switch(cookieValue) {
+      case 'true': return true
+      case 'false': return false
+      default: return null
+    }
+  }
+
+  function getParsedCookieValue(cookieValue) {
+    if (cookieValue === undefined) return null
+
+    return getBoolCookieValue(cookieValue)
+  }
+
+  const visitorState = {
+    visitor: {
+      legal: {
+        privacy: {
+          settings: {
+            marketingConsent: getParsedCookieValue(req.cookies._pdpsm),
+            statisticsConsent: getParsedCookieValue(req.cookies._pdpaf)
+          }
+        }
+      }
+    }
+  }
+
   const {
     initialState,
     title,
     description,
     sender,
     noIndex
-  } = getRouteData(pureUrl, userAgent)
+  } = getRouteData(pureUrl, userAgent, visitorState)
+
 
   if (!sender) return (
     sendResponse({
@@ -27,7 +55,8 @@ export function handleRequest(req, res) {
           showNotFound: true,
           language: 'pl',
           device: getDevice(userAgent)
-        }
+        },
+        ...visitorState
       },
       title: '404',
       description: '404',
@@ -61,7 +90,7 @@ function purifyUrl(dirtyUrl) {
   return pureUrl
 }
 
-function getRouteData(url, userAgent) {
+function getRouteData(url, userAgent, visitorState) {
   let initialState
   let title
   let description
@@ -76,8 +105,9 @@ function getRouteData(url, userAgent) {
           [routeKey]: true,
           ...routes[routeKey].needsAnnouncementIndexMap && { showAnnouncementIndexMap: true },
           language: 'pl',
-          device: getDevice(userAgent)
-        }
+          device: getDevice(userAgent),
+        },
+        ...visitorState
       }
 
       title = routes[routeKey].pl.title
@@ -93,7 +123,8 @@ function getRouteData(url, userAgent) {
           ...routes[routeKey].needsAnnouncementIndexMap && { showAnnouncementIndexMap: true },
           language: 'en',
           device: getDevice(userAgent)
-        }
+        },
+        ...visitorState
       }
 
       title = routes[routeKey].en.title

@@ -27,7 +27,6 @@ class VisitorPrivacyMonit extends React.Component {
     } = this.props
 
     return (
-      ReactDOM.createPortal(
         <div id='visitor-privacy-monit-cover' className='cover'>
           <div
             id='visitor-privacy-monit' className={`container narrow-container shadowed${language === 'pl' ? '' : ' en'}`}
@@ -57,9 +56,7 @@ class VisitorPrivacyMonit extends React.Component {
               <div className='float-clear' />
             </div>
           </div>
-        </div>,
-        document.body
-      )
+        </div>
     )
   }
 }

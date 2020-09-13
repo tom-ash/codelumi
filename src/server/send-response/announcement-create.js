@@ -9,7 +9,8 @@ export function sendAnnouncementCreateResponse({
     app: {
       language,
       device
-    }
+    },
+    visitor
   },
   title,
   description,
@@ -50,7 +51,8 @@ export function sendAnnouncementCreateResponse({
               }
             }
           }
-        }
+        },
+        visitor
       },
       title,
       description,

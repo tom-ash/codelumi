@@ -1,6 +1,6 @@
 const initialState = {
-  statisticsConsent: undefined,
-  marketingConsent: undefined
+  statisticsConsent: null,
+  marketingConsent: null
 }
 
 export const settingsReducer = (state = initialState, action) => {

@@ -18,8 +18,15 @@ class User extends React.Component {
   }
 
   show = () => {
-    const { showAbout, showContact, showTermsOfService, showPrivacyMonit, showPrivacyPolicy, showCookiesPolicy,
-            showPrivacySettings } = this.props
+    const {
+      showAbout,
+      showContact,
+      showTermsOfService,
+      showPrivacyMonit,
+      showPrivacyPolicy,
+      showCookiesPolicy,
+      showPrivacySettings
+    } = this.props
 
     return showAbout || showContact || showTermsOfService || showPrivacyMonit || showPrivacyPolicy ||
            showCookiesPolicy || showPrivacySettings

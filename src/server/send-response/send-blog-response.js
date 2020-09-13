@@ -8,7 +8,8 @@ import { data } from '../../app/components/announcement/components/show/constant
 export function sendAnnouncementResponse({
   res,
   initialState: {
-    app: { language, device }
+    app: { language, device },
+    visitor
   },
   announcementId
 }) {
@@ -47,7 +48,8 @@ export function sendAnnouncementResponse({
             ...data,
             data: clientParams
           }
-        }
+        },
+        visitor
       },
       title,
       description: title,

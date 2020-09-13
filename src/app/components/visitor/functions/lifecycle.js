@@ -5,12 +5,18 @@ export function componentDidMount() {
 }
 
 function setCookies() {
-  const { changeSettings } = this.props
+  const {
+    statisticsConsent,
+    marketingConsent,
+    changeSettings
+  } = this.props
 
-  changeSettings({
-    statisticsConsent: getBoolCookieValue(getCookieValue('_pdpaf')),
-    marketingConsent: getBoolCookieValue(getCookieValue('_pdpsm')),
-  })
+  const consents = {
+    ...statisticsConsent === null && { statisticsConsent: getBoolCookieValue(getCookieValue('_pdpaf')) },
+    ...marketingConsent === null && { marketingConsent: getBoolCookieValue(getCookieValue('_pdpaf')) }
+  }
+
+  changeSettings(consents)
 }
 
 function getBoolCookieValue(cookieValue) {

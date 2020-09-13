@@ -7,7 +7,8 @@ import { openGraphProvider } from '../../shared/functions/providers/open-graph-p
 export function sendAnnouncementsListResponse({
   res,
   initialState: {
-    app: { language, device }
+    app: { language, device },
+    visitor
   },
   title,
   description,
@@ -56,7 +57,8 @@ export function sendAnnouncementsListResponse({
               amount
             }
           }
-        }
+        },
+        visitor
       },
       title,
       description,

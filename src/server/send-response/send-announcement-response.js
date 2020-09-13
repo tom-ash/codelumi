@@ -10,7 +10,8 @@ import { buildLink } from '../../app/components/announcement/functions/build-lin
 export function sendAnnouncementResponse({
   res,
   initialState: {
-    app: { language, device }
+    app: { language, device },
+    visitor
   },
   announcementId
 }) {
@@ -69,7 +70,8 @@ export function sendAnnouncementResponse({
             ...data,
             data: clientParams
           }
-        }
+        },
+        visitor
       },
       title,
       description: title,

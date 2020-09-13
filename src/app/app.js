@@ -32,7 +32,6 @@ class App extends React.Component {
     this.changePath = routers.changePath.bind(this)
     this.matchStateToPath = matchStateToPath.bind(this)
     this.matchPathToState = matchPathToState.bind(this)
-    this.appContainer = React.createRef()
   }
 
   showUser = () => {
@@ -61,7 +60,7 @@ class App extends React.Component {
 
     if (showNotFound) {
       return (
-        <div id='app-container' ref={this.appContainer}>
+        <div id='app-container'>
           <Header />
           <NotFound language={language}/>
           <Footer />
@@ -70,14 +69,14 @@ class App extends React.Component {
     }
 
     return (
-      <div id='app-container' ref={this.appContainer}>
+      <div id='app-container'>
         <Header />
         <div id='app-inner-container'>
           {this.showUser() && <User />}
-          <Visitor appContainer={this.appContainer.current}/>
           <Announcement />
+          <VisitorWelcome />
+          <Visitor />
         </div>
-        <VisitorWelcome />
         <Footer />
       </div>
     )
