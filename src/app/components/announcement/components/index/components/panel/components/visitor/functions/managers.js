@@ -1,5 +1,6 @@
 import React from 'react'
-import Calendar from 'react-calendar/dist/entry.nostyle'
+import loadable from '@loadable/component'
+const Calendar = loadable(() => import('../../../../../../../../support/components/calendar/calendar'), { ssr: false })
 import { currencies } from '../../../../../../../constants/currencies'
 import { parseDate } from '../../../../../../../../../functions/date-parsers'
 import { CloseButton } from '../../../../../../../../support/components/close-button/close-button'

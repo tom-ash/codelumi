@@ -1,16 +1,16 @@
 import React from 'react'
+import loadable from '@loadable/component'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { ManagedText, ManagedSelect, ManagedCheckbox } from 'managed-inputs'
+const Calendar = loadable(() => import('../../../../../support/components/calendar/calendar'), { ssr: false })
 import * as managers from './functions/managers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import { onSelectHandler } from './functions/on-select-handler'
-import Calendar from 'react-calendar/dist/entry.nostyle'
 import { parseDate } from '../../../../../../functions/date-parsers'
 import { labelProvider } from '../../../../../../functions/providers/label'
 import { floorsProvider } from './functions/floors-provider'
 import { getRentAmounts } from '../../functions/get-rent-amounts'
-import { rentInputInfoProvider } from './functions/rent-input-info-provider'
 
 class AnnouncementCreateAdditional extends React.Component {
   constructor(props) {
