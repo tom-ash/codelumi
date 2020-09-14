@@ -4,6 +4,8 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import { text } from './constants/text'
 import Provision from '../../../provision/provision'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class VisitorCookiesPolicy extends React.Component {
   constructor(props) {
@@ -41,4 +43,4 @@ class VisitorCookiesPolicy extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(VisitorCookiesPolicy)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(VisitorCookiesPolicy))

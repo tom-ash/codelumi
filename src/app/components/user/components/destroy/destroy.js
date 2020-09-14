@@ -10,6 +10,8 @@ import { deauthorizeUser } from '../authorize/functions/adapters'
 import { changePath } from '../../../../functions/routers/change-path'
 import * as managers from './functions/managers'
 import * as adapters from './functions/adapters'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class UserDestroy extends React.Component {
   constructor(props) {
@@ -39,4 +41,4 @@ class UserDestroy extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserDestroy)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(UserDestroy))

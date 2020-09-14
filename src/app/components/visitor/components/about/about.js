@@ -6,6 +6,8 @@ import { pageHeaderProvider } from '../../../../functions/providers/headers'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import { features } from './constants/features'
 import { CloseButton } from '../../../../components/support/components/close-button/close-button'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class About extends React.Component {
   constructor(props) {
@@ -52,4 +54,4 @@ class About extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(About)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(About))

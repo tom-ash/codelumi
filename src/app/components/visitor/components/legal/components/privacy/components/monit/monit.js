@@ -8,6 +8,8 @@ import { agreeManager, settingsManager } from './functions/manager'
 import { languageManager } from '../../../../../../../scaffold/components/header/functions/managers'
 import { textsProvider } from './functions/texts-provider'
 import { changePath } from '../../../../../../../../functions/routers/change-path'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class VisitorPrivacyMonit extends React.Component {
   constructor(props) {
@@ -61,4 +63,4 @@ class VisitorPrivacyMonit extends React.Component {
   }
 }
 
-export default (connect(mapStateToProps, mapDispatchToProps)(VisitorPrivacyMonit))
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(VisitorPrivacyMonit))

@@ -2,8 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageObjectHandler } from '../../../../functions/language-handler'
-
 import PostCreate from '../../../post/components/create/create'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class VisitorWelcome extends React.Component {
   constructor(props) {
@@ -83,4 +84,4 @@ class VisitorWelcome extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(VisitorWelcome)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(VisitorWelcome))

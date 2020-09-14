@@ -6,7 +6,8 @@ import { ManagedRadio } from 'managed-inputs'
 import { statisticsConsentManager, marketingConsentManager } from './functions/managers'
 import { pageHeaderProvider } from '../../../../../../../../functions/header-providers'
 import { textsProvider } from './functions/texts-provider'
-import { CloseButton } from '../../../../../../../../components/support/components/close-button/close-button'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class VisitorPrivacySettings extends React.Component {
   constructor(props) {
@@ -48,4 +49,4 @@ class VisitorPrivacySettings extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(VisitorPrivacySettings)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(VisitorPrivacySettings))

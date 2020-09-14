@@ -5,6 +5,8 @@ import { languageHandler, languageObjectHandler } from '../../../../../../functi
 import { text } from './constants/text'
 import Provision from '../provision/provision'
 import { pageHeaderProvider } from '../../../../../../functions/header-providers'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class VisitorTermsOfService extends React.Component {
   constructor(props) {
@@ -44,4 +46,4 @@ class VisitorTermsOfService extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(VisitorTermsOfService)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(VisitorTermsOfService))

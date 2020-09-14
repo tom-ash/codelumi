@@ -5,7 +5,8 @@ import { languageHandler, languageObjectHandler } from '../../../../../../../../
 import { text } from './constants/text'
 import Provision from '../../../provision/provision'
 import { pageHeaderProvider } from '../../../../../../../../functions/header-providers'
-import { CloseButton } from '../../../../../../../../components/support/components/close-button/close-button'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class VisitorPrivacyPolicy extends React.Component {
   constructor(props) {
@@ -45,4 +46,4 @@ class VisitorPrivacyPolicy extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(VisitorPrivacyPolicy)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(VisitorPrivacyPolicy))

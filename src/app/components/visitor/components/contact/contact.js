@@ -3,9 +3,10 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { pageHeaderProvider } from '../../../../functions/providers/headers'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
-import { CloseButton } from '../../../../components/support/components/close-button/close-button'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
-class Footer extends React.Component {
+class VisitorContact extends React.Component {
   constructor(props) {
     super(props)
     this.pageHeaderProvider = pageHeaderProvider.bind(this)
@@ -44,4 +45,4 @@ class Footer extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Footer)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(VisitorContact))
