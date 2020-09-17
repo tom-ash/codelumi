@@ -83,9 +83,10 @@
     border-radius: 5px;
     border: 1px solid rgba(255, 255, 255, .6);
     transition: all .4s;
+    padding-left: 4px;
     svg {
       fill: rgba(255, 255, 255, .6);
-      transform: translate(10px, 7px);
+      transform: translate(6px, 5px);
       transition: fill .4s;
     }
     &:hover {

@@ -10,6 +10,7 @@ import { changePath } from '../../../../functions/routers/change-path'
 import { parseCategory } from '../../functions/category-parsers'
 import AnnouncementTile from './components/tile/tile'
 import { sendAnalyticsEvent } from '../../../../functions/google-analytics/send-analytics-event'
+import ScalableVectorGraphic from '../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 
 class AnnouncementShow extends React.Component {
   constructor(props) {
@@ -67,7 +68,7 @@ class AnnouncementShow extends React.Component {
           </div>
           <div className='phone-showcase'>
             <div className='icon'>
-              <i className='fas fa-phone' />
+              <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.phone} />
             </div>
             <div className='text'>
               {` ${phone}`}

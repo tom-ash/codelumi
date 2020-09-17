@@ -28,20 +28,22 @@
       width: 190px;
       transition: 0.72s ease-out;
     }
-    .fa-phone {
-      height: 36px;
+    .svg-container {
+      position: absolute;
+      left: 0;
       width: 36px;
-      font-size: 18px;
-      color: #FBFCFC;
+      height: 36px;
       background: #28B463;
       border-radius: 18px;
-      line-height: 36px;
-      text-align: center;
-      opacity: 0.92;
-      margin-right: 12px;
+      padding: 9px;
+      svg {
+        fill: white;
+      }
     }
     a {
-      display: inline;
+      display: block;
+      margin-left: 48px;
+      line-height: 36px;
     }
   }
   .add-announcement {

@@ -131,16 +131,17 @@
       height: 24px;
       .icon {
         float: left;
-        color: #FBFCFC;
-        background: #28B463;
         width: 24px;
         height: 24px;
-        line-height: 24px;
-        text-align: center;
-        border-radius: 12px;
-        font-size: 13px;
-        padding: 1px 0 0 2px;
         margin-right: 8px;
+        border-radius: 12px;
+        padding: 6px;
+        background: #28B463;
+        line-height: 12px;
+        color: #FBFCFC;
+        svg {
+          fill: white;
+        }
       }
       .text {
         float: left;
@@ -155,5 +156,3 @@
     }
   }  
 }
-
-
