@@ -10,7 +10,7 @@ export function componentDidMount() {
     changeApp
   } = this.props
 
-  if (scalableVectorGraphics === null) {
+  if (Object.keys(scalableVectorGraphics).length === 0) {
     getScalableVectorGraphics.apply(this)
   } else {
     initializeGoogleMaps.apply(this)

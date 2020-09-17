@@ -53,7 +53,8 @@ class AnnouncementShow extends React.Component {
       mapLongitude,
       descriptionPolish,
       descriptionEnglish,
-      isMobile
+      isMobile,
+      scalableVectorGraphics
     } = this.props
 
     const { phone } = this.state
@@ -115,6 +116,7 @@ class AnnouncementShow extends React.Component {
           descriptionPolish={descriptionPolish}
           descriptionEnglish={descriptionEnglish}
           isMobile={isMobile}
+          scalableVectorGraphics={scalableVectorGraphics}
         />
       </div>
     )

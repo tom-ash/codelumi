@@ -50,7 +50,8 @@ class AnnouncementTile extends React.Component {
       descriptionEnglish,
       control,
       closeButtonOnClick,
-      isMobile
+      isMobile,
+      scalableVectorGraphics
     } = this.props
 
     const venueShow = venue === 'show'
@@ -108,6 +109,7 @@ class AnnouncementTile extends React.Component {
           district={district}
           area={area}
           isMobile={isMobile}
+          scalableVectorGraphics={scalableVectorGraphics}
         />
         <AnnouncementShowPrimary
           language={language}

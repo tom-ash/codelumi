@@ -4,7 +4,8 @@ export const mapStateToProps = (store) => {
     isMobile,
     device,
     scrollY,
-    showAnnouncementIndexCatalogue
+    showAnnouncementIndexCatalogue,
+    scalableVectorGraphics
   } = store.app
 
   const {
@@ -33,7 +34,8 @@ export const mapStateToProps = (store) => {
     page,
     announcements,
     scrollY,
-    showAnnouncementIndexCatalogue
+    showAnnouncementIndexCatalogue,
+    scalableVectorGraphics
   }
 }
     

@@ -1,6 +1,7 @@
 export const mapStateToProps = (store) => {
   const {
-    language
+    language,
+    scalableVectorGraphics
   } = store.app
   const {
     connecting,
@@ -27,7 +28,8 @@ export const mapStateToProps = (store) => {
     switches,
     sort,
     amount,
-    announcements
+    announcements,
+    scalableVectorGraphics
   }
 }
     

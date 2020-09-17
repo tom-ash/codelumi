@@ -7,6 +7,7 @@ export const mapStateToProps = (store) => {
     device,
     scalableVectorGraphics
   } = store.app
+
   const {
     connecting,
     mapLoaded,
@@ -14,6 +15,7 @@ export const mapStateToProps = (store) => {
     loadMap,
     loadPins
   } = store.announcement.index.control
+  
   const {
     announcements,
     pins,

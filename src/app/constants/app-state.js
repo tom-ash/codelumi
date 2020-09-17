@@ -13,6 +13,6 @@ export const appState = {
   },
   isMobile: null,
   showNotFound: false,
-  scalableVectorGraphics: null,
+  scalableVectorGraphics: {},
   ...emptyRoutes
 }

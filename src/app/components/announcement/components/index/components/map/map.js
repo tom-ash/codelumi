@@ -43,7 +43,8 @@ class AnnouncementIndexMap extends React.Component {
       announcements,
       changeData,
       device,
-      isMobile
+      isMobile,
+      scalableVectorGraphics
     } = this.props
 
     const minListDevices = ['largePc', 'smallPc', 'largeTablet']
@@ -169,6 +170,7 @@ class AnnouncementIndexMap extends React.Component {
               availabilityDate={tile.availabilityDate}
               closeButtonOnClick={() => this.props.changeData({ tileId: null, tile: null })}
               isMobile={isMobile}
+              scalableVectorGraphics={scalableVectorGraphics}
             />
           </div>}
         </div>

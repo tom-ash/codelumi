@@ -129,7 +129,10 @@ export function buttonManager(action) {
     href: this.languageObjectHandler({ pl: `${CLIENT_URL}${pl.url}`, en: `${CLIENT_URL}${en.url}` }),
     label: (
       <div>
-        <i className='fas fa-map-marker-alt' /> <i className='fas fa-th-list' />
+        {showAnnouncementIndexCatalogue ?
+        this.languageObjectHandler({ pl: 'Mapa', en: 'Map' }) :
+        this.languageObjectHandler({ pl: 'Katalog', en: 'Catalogue' })
+        }
       </div>
     ),
     onClick: () => {

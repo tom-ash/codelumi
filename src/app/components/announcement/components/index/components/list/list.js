@@ -40,7 +40,11 @@ class AnnouncementIndexList extends React.Component {
   }
 
   render() {
-    const { amount, offset } = this.props
+    const {
+      amount,
+      offset,
+      scalableVectorGraphics
+    } = this.props
 
     const toValue = offset + 10 < amount ? offset + 10 : amount
     let whichAnnouncements = `${offset + 1} - ${toValue} ${this.languageHandler('z', 'of')}`
@@ -92,6 +96,7 @@ class AnnouncementIndexList extends React.Component {
             availabilityDate={announcement.availabilityDate}
             control={this.controlProvider(announcement, index)}
             control={this.controlProvider(announcement, index)}
+            scalableVectorGraphics={scalableVectorGraphics}
           />))}
           <div className='float-clear' />
         </div>

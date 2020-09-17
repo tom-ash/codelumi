@@ -9,6 +9,8 @@ import { linkManager } from './functions/managers'
 import { buildLink } from '../../../../../../functions/build-link'
 import { shareOnFacebook } from '../../../../../../functions/share-on-facebook'
 
+import ScalableVectorGraphic from '../../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+
 class AnnouncementShowPictures extends React.Component {
   constructor(props) {
     super(props)
@@ -26,7 +28,8 @@ class AnnouncementShowPictures extends React.Component {
       disableSLides,
       heightQuantifier,
       venue,
-      isMobile
+      isMobile,
+      scalableVectorGraphics
     } = this.props
 
     const {
@@ -48,7 +51,10 @@ class AnnouncementShowPictures extends React.Component {
           className='share-on-facebook-button show'
           onClick={() => shareOnFacebook(buildLink(this.props), isMobile)}
         >
-          <i className='fab fa-facebook-f' />
+          <ScalableVectorGraphic
+            pathData={scalableVectorGraphics && scalableVectorGraphics.facebook}
+            color='#FDFEFE'
+          />
         </div>}
         {venue !== 'show' && venue !== 'mini-list' && <ManagedLink {...this.linkManager()} />}
       </div>

@@ -31,7 +31,8 @@ class AnnouncementIndexFull extends React.Component {
       amount,
       showAnnouncementIndexCatalogue,
       announcements,
-      isMobile
+      isMobile,
+      scalableVectorGraphics
     } = this.props
 
     return (
@@ -66,6 +67,7 @@ class AnnouncementIndexFull extends React.Component {
                   floor={announcement.floor}
                   totalFloors={announcement.totalFloors}
                   availabilityDate={announcement.availabilityDate}
+                  scalableVectorGraphics={scalableVectorGraphics}
                 />
               )
             })
