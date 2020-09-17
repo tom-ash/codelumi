@@ -4,7 +4,8 @@ export const mapStateToProps = (store) => {
     isMobile,
     scripts,
     showAnnouncementIndexCatalogue,
-    device
+    device,
+    scalableVectorGraphics
   } = store.app
   const {
     connecting,
@@ -34,7 +35,8 @@ export const mapStateToProps = (store) => {
     announcements,
     pins,
     tileId,
-    tile
+    tile,
+    scalableVectorGraphics
   }
 }
     

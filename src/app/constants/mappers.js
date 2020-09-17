@@ -25,7 +25,8 @@ export const mapStateToProps = (store) => {
     showVisitorPrivacySettings,
     showBlog,
     scripts,
-    showNotFound
+    showNotFound,
+    scalableVectorGraphics
   } = store.app
 
   const {
@@ -71,7 +72,8 @@ export const mapStateToProps = (store) => {
     scripts,
     googleAnalyticsLoaded: store.app.scripts.googleAnalytics,
     googleAnalyticsLoading: store.app.scripts.googleAnalyticsLoading,
-    showNotFound
+    showNotFound,
+    scalableVectorGraphics
   }
 }
   

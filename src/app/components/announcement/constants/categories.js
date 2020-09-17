@@ -6,8 +6,6 @@ export const categories = [
     value: 0,
     label: { pl: 'Biuro', en: 'Office' },
     url: { pl: 'biuro', en: 'office' },
-    icon: <i className='fas fa-briefcase' />,
-    stringIcon: "<i class='fas fa-briefcase' />",
     pinClassName: 'office'
   },
   {
@@ -15,8 +13,6 @@ export const categories = [
     value: 1,
     label: { pl: 'Lokal użytkowy', en: 'Usable Premises' },
     url: { pl: 'lokal-uzytkowy', en: 'usable-premises' },
-    icon: <i className='fas fa-cash-register' />,
-    stringIcon: "<i class='fas fa-cash-register' />",
     pinClassName: 'usable-premises'
   },
   {
@@ -24,8 +20,6 @@ export const categories = [
     value: 2,
     label: { pl: 'Mieszkanie', en: 'Apartment' },
     url: { pl: 'mieszkanie', en: 'apartment' },
-    icon: <i className='fas fa-door-closed' />,
-    stringIcon: "<i class='fas fa-door-closed' />",
     pinClassName: 'apartment'
   }
 ]

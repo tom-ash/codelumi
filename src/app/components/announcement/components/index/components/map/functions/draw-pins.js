@@ -62,7 +62,11 @@ export function removeOldPins() {
 function addNewPins() {
   if (typeof window === 'undefined') return
   
-  const { changeData, announcements } = this.props
+  const {
+    changeData,
+    announcements,
+    scalableVectorGraphics
+  } = this.props
 
   let pins = []
   announcements.map(announcement => {
@@ -75,7 +79,39 @@ function addNewPins() {
 
     const { language } = this.props
 
-    const htmlContent = `<a href="${buildLink({ id, category, district, language })}">${categories[announcement.category].stringIcon}</a>`
+    const pathDataKey = [
+      'officeIcon',
+      'usablePremisesIcon',
+      'apartmentIcon'
+    ]
+
+    const classes = [
+      'office',
+      'usable-premises',
+      'apartment'
+    ]
+
+    const colors = [
+      '#3498DB',
+      '#D35400',
+      '#1E8449'
+    ]
+
+    const htmlContent = (
+      `<a href="${buildLink({ id, category, district, language })}">
+        <div class='icon ${classes[category]}'>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 512"
+          >
+            <path
+              style="fill:${colors[category]};"
+              d="${scalableVectorGraphics[pathDataKey[category]]}"
+            />
+          </svg>
+        </div>
+      </a>`
+    )
 
     pins.push(new window.pinCreator(
       {

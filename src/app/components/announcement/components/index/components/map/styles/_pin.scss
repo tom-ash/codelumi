@@ -18,6 +18,14 @@
     z-index: 2;
     animation: pulse 1s infinite;
   }
+
+  .icon {
+    padding: 3px 3px 10px 9px;
+    text-align: center;
+    &.apartment {
+      padding: 2px 6px 5px 7px;
+    }
+  }
 }
 
 @keyframes pulse {
