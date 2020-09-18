@@ -4,7 +4,8 @@ export const mapStateToProps = (store) => {
     path,
     showAnnouncementEdit: showEdit,
     announcementId,
-    isMobile
+    isMobile,
+    scalableVectorGraphics
   } = store.app
 
   const {
@@ -86,7 +87,8 @@ export const mapStateToProps = (store) => {
     errors,
     verificationCode,
     token,
-    isMobile
+    isMobile,
+    scalableVectorGraphics
   }
 }
     

@@ -13,7 +13,6 @@ $current-color: #3498DB;
     }
   }
   .point {
-    color: #FDFEFE;
     position: absolute;
     width: 32px;
     height: 32px;
@@ -21,9 +20,22 @@ $current-color: #3498DB;
     background: $current-color;
     text-align: center;
     line-height: 32px;
+    svg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      fill: #FDFEFE;
+      height: 16px;
+    }
     &.first {
       top: 6px;
       left: 18px;
+      svg {
+        left: -1px;
+      }
     }
     &.second {
       top: 6px;
@@ -33,6 +45,9 @@ $current-color: #3498DB;
       background: #D7DBDD;
       &.current {
         background: $current-color;
+      }
+      svg {
+        left: 0.75px;
       }
     }
     &.last {

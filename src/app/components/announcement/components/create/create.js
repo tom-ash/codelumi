@@ -71,7 +71,8 @@ class AnnouncementCreate extends React.Component {
       district,
       area,
       isMobile,
-      language
+      language,
+      scalableVectorGraphics
     } = this.props
 
     return (
@@ -89,6 +90,7 @@ class AnnouncementCreate extends React.Component {
           <AnnouncementCreateSteps
             authorized={authorized}
             step={step}
+            scalableVectorGraphics={scalableVectorGraphics}
           />
           {step === 'form' &&
           <form>

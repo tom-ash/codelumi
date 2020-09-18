@@ -23,7 +23,8 @@ class UserCreate extends React.Component {
     const {
       success,
       step,
-      venue
+      venue,
+      scalableVectorGraphics
     } = this.props
 
     if (venue === 'announcementCreate') return  <UserCreateEmail />
@@ -37,7 +38,10 @@ class UserCreate extends React.Component {
           <h1 className='page-header'>
             {this.languageHandler('Zarejestruj', 'Sign Up')}
           </h1>
-          <UserCreateSteps step={step} />
+          <UserCreateSteps
+            step={step}
+            scalableVectorGraphics={scalableVectorGraphics}
+          />
           {success === null && <UserCreateEmail />}
         </div>
       </React.Fragment>
