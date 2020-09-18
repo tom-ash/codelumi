@@ -39,12 +39,16 @@ class AnnouncementShowPictures extends React.Component {
     if (pictures.length === 0 && venue === 'show') return null
     if (pictures.length === 0) return <ManagedLink {...this.linkManager()} />
 
+    const Chevron = () => <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />
+
     return (
       <div className='announcement-show-pictures'>
         <ManagedSlider
           pictures={pictures}
           disableSLides={disableSLides}
           heightQuantifier={heightQuantifier}
+          chevronLeft={<Chevron />}
+          chevronRight={<Chevron />}
         />
         {venue !== 'mini-list' &&
         <div

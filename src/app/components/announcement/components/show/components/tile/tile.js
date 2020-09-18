@@ -61,6 +61,7 @@ class AnnouncementTile extends React.Component {
         {venue === 'map' &&
         <CloseButton
           onClick={closeButtonOnClick}
+          pathData={scalableVectorGraphics && scalableVectorGraphics.close}
         />}
         <div className='header-container'>
           <h2>

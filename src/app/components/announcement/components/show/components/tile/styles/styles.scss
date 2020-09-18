@@ -14,19 +14,22 @@
   background: white;
   text-align: left;
   .close-button {
-    z-index: 3;
-    top: 0;
-    right: 0;
     position: absolute;
-    height: 24px;
-    width: 24px;
+    top: 6px;
     right: 3px;
+    z-index: 3;
+    width: 16px;
+    height: 16px;
     border: none;
-    line-height: 32px;
-    font-size: 16px;
+    line-height: 16px;
     background: white;
+    svg {
+      fill: #5F6A6A;
+    }
     &:hover {
-      color: gray;
+      svg {
+        fill: #BDC3C7;
+      }
     }
   }
   &.show {

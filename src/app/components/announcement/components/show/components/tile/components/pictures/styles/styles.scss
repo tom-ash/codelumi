@@ -18,4 +18,29 @@
       background: rgba(255, 255, 255, 0.8);
     }
   }
+  .managed-slider {
+    .arrow {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 24px;
+      height: 100%;
+      &.left {
+        left: 8px;
+      }
+      &.right {
+        right: 8px;
+        transform: rotate(180deg);
+      }
+      svg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 26px;
+        fill: white;
+        cursor: pointer;
+      }
+    }
+  }
 }

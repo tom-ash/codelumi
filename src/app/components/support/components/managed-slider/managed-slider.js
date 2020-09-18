@@ -39,7 +39,9 @@ class ManagedSlider extends React.Component {
 
   render() {
     const {
-      disableSLides
+      disableSLides,
+      chevronLeft,
+      chevronRight
     } = this.props
     
     const {
@@ -53,7 +55,7 @@ class ManagedSlider extends React.Component {
     return (
       <div
         ref={this.container}
-        className='managed-pictures-container'
+        className='managed-slider'
         style={{
           overflow: 'hidden',
           position: 'relative'
@@ -103,36 +105,14 @@ class ManagedSlider extends React.Component {
         <div
           className='arrow right'
           onClick={e => this.onArrowClickHandler(e, '>')}
-          style={{
-            position: 'absolute',
-            top: 0,
-            right: 12,
-            bottom: 0,
-            margin: 'auto',
-            color: 'white',
-            height: 12,
-            fontSize: 24,
-            cursor: 'pointer'
-          }}
         >
-          <i className='fas fa-chevron-right' />
+          {chevronRight}
         </div>}
         {!disableSLides && this.state.currentPicture !== 0 && <div
           className='arrow left'
           onClick={e => this.onArrowClickHandler(e, '<')}
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 12,
-            bottom: 0,
-            margin: 'auto',
-            color: 'white',
-            height: 12,
-            fontSize: 24,
-            cursor: 'pointer'
-          }}
         >
-          <i className='fas fa-chevron-left' />
+          {chevronLeft}
         </div>}
       </div>
     )

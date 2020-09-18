@@ -6,8 +6,6 @@ export function phoneSwitchProvider() {
   const { scalableVectorGraphics } = this.props
   let phoneClass =`phone${phone && phone.length > 8 ? ' open' : ''}`
 
-  console.log(scalableVectorGraphics && scalableVectorGraphics.phone)
-
   return (
     <div
       className={phoneClass}

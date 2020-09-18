@@ -5,23 +5,8 @@
     font-size: 18px;
     color: #566573;
   }
+
   
-.close-button {
-    z-index: 3;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: white;
-    box-shadow: none;
-    &:hover {
-      color: #C0392B;
-    }
-  }
-  .page-header {
-    .far {
-      margin-right: 10px;
-    }
-  }
   .button {
     position: relative;
     .very-small-windmill-spinner {

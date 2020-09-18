@@ -20,14 +20,4 @@
       margin-bottom: 44px;
     }
   }
-  .pagination {
-    @extend %full-pagination;
-  }
-  .connecting {
-    .pagination {
-      .input, .arrow {
-        background: lightgray;
-      }
-    }
-  }
 }
