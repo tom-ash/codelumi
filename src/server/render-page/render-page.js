@@ -25,7 +25,11 @@ export function renderPage({
         <title>${title}</title>
         <meta name="description" content="${description}">
         <style type="text/css">${[...css].join('')}</style>
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+        <link
+          href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&text=1234567890msqm&display=swap"
+          rel="stylesheet"
+          onload="this.media='all'"
+        >
       </head>
       <body>
         ${html}
