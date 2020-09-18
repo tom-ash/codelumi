@@ -133,6 +133,7 @@ class AnnouncementTile extends React.Component {
               language={language}
               itemsName='features'
               items={features}
+              scalableVectorGraphics={scalableVectorGraphics}
             />
           </div>}
           {furnishings && furnishings.length > 0 &&
@@ -141,6 +142,7 @@ class AnnouncementTile extends React.Component {
               language={language}
               itemsName='furnishings'
               items={furnishings}
+              scalableVectorGraphics={scalableVectorGraphics}
             />
           </div>}
           {(descriptionPolish || descriptionEnglish) &&

@@ -3,6 +3,7 @@ import { languageHandler } from '../../../../../../../../functions/language-hand
 import { languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import { features } from '../../../../../../constants/features'
 import { furnishings } from '../../../../../../constants/furnishings'
+import ScalableVectorGraphic from '../../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 
 class AnnouncementShowFeaturesFurnishings extends React.Component {
   constructor(props) {
@@ -15,7 +16,8 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
   render() {
     const {
       itemsName,
-      items
+      items,
+      scalableVectorGraphics
     } = this.props
 
     return (
@@ -30,7 +32,7 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
         className='item'
         key={item}>
           <div className='icon'>
-            <i className='fas fa-circle' />
+            <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.check} />
           </div>
           <div className='text'>
             {this.languageObjectHandler(this.nodes.find(node => node.ref === item))}

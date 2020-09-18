@@ -25,8 +25,9 @@
       @media #{$phone} {
         position: absolute;
       }
-      .fa-circle {
-        font-size: 6px;
+      svg {
+        margin-top: 6px;
+        width: 12px;
       }
     }
     .text {
