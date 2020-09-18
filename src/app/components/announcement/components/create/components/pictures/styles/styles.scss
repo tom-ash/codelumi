@@ -40,6 +40,9 @@
     font-size: 13px;
     margin-bottom: 12px;
   }
+  svg {
+    width: 18px;
+  }
   .picture {
     position: relative;
     float: left;
@@ -48,70 +51,41 @@
     background-size: 100%;
     margin: 0 48px 24px 0;
     border-radius: 2.5px;
-    .button {
-      cursor: pointer;
-      background: white;
-    }
-    .delete {
-      font-size: 19px;
+    text-align: center;
+    .buttons {
       position: absolute;
-      background: none;
-      color: #C0392B;
       top: 0;
-      right: -24px;
-      &:hover {
-        color: red;
+      right: -40px;
+      bottom: 0;
+      width: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .button {
+        cursor: pointer;
+        &.delete {
+          svg {
+            fill: #E74C3C;
+            width: 20px;
+            transform: translate(3px);
+          }
+        }
+        &.up {
+          svg {
+            transform: rotate(90deg);
+          }
+        }
+        &.down {
+          svg {
+            transform: rotate(270deg);
+          }
+        }
+        &.rotate {
+          svg {
+            width: 14px;
+          }
+        }
       }
-    }
-    .up {
-      font-size: 21px;
-      background: none;
-      position: absolute;
-      top: 24px;
-      right: -24px;
-      &:hover {
-        color: gray;
-      }
-    }
-    .down {
-      font-size: 21px;
-      background: none;
-      position: absolute;
-      top: 48px;
-      right: -24px;
-      &:hover {
-        color: gray;
-      }
-    }
-    .comment {
-      font-size: 13px;
-      background: none;
-      position: absolute;
-      top: 80px;
-      right: -24px;
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 }

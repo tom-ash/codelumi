@@ -11,6 +11,7 @@ import { requiredInputs } from '../../constants/required-inputs'
 import { sectionHeaderProvider } from '../../../../../../functions/providers/headers'
 import { pictureClassProvider } from './functions/picture-class-provider'
 import { rotatePicture } from './functions/rotate-picture'
+import ScalableVectorGraphic from '../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 
 class AnnouncementCreatePictures extends React.Component {
   constructor(props) {
@@ -27,7 +28,8 @@ class AnnouncementCreatePictures extends React.Component {
   }
   render() {
     const {
-      showAnnouncementEdit
+      showAnnouncementEdit,
+      scalableVectorGraphics
     } = this.props
 
     return (
@@ -60,39 +62,41 @@ class AnnouncementCreatePictures extends React.Component {
                 style = {{ backgroundImage: `url('${picture.blob}')` }}
                 className={pictureClassProvider(index)}
               >
-                <div
-                  onClick={() => this.deletePicture(index)}
-                  className='button delete'
-                >
-                  <i className='fas fa-times'></i>
+                <div className='buttons'>
+                  <div
+                    onClick={() => this.deletePicture(index)}
+                    className='button delete'
+                  >
+                    <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.close} />
+                  </div>
+                  {
+                  this.props.blobs && (index !== 0) &&
+                  <div
+                    onClick={() => this.movePicture('up', index)}
+                    className='button up'
+                  >
+                    <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />
+                  </div>
+                  }
+                  {
+                  this.props.blobs && (this.props.blobs.length !== index + 1) &&
+                  <div
+                    onClick={() => this.movePicture('down', index)}
+                    className='button down'
+                  >
+                    <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />
+                  </div>
+                  }
+                  {
+                  !showAnnouncementEdit &&
+                  <div
+                    onClick={() => this.rotatePicture(index)}
+                    className='button rotate'
+                  >
+                    <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.rotate} />
+                  </div>
+                  }
                 </div>
-                {
-                this.props.blobs && (index !== 0) &&
-                <div
-                  onClick={() => this.movePicture('up', index)}
-                  className='button up'
-                >
-                  <i className='fas fa-caret-up'></i>
-                </div>
-                }
-                {
-                this.props.blobs && (this.props.blobs.length !== index + 1) &&
-                <div
-                  onClick={() => this.movePicture('down', index)}
-                  className='button down'
-                >
-                  <i className='fas fa-caret-down'></i>
-                </div>
-                }
-                {
-                !showAnnouncementEdit &&
-                <div
-                  onClick={() => this.rotatePicture(index)}
-                  className='button comment'
-                >
-                  <i className="fas fa-redo"></i>
-                </div>
-                }
               </div>
             )
           })
