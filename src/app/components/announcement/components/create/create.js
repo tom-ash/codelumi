@@ -151,6 +151,7 @@ class AnnouncementCreate extends React.Component {
             languageObjectHandler={this.languageObjectHandler}
             isMobile={isMobile}
             language={language}
+            scalableVectorGraphics={scalableVectorGraphics}
           />}
         </div>
         <AnnouncementCreateEditorial />

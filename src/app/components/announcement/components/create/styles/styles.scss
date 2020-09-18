@@ -291,24 +291,21 @@
 
 
   .share-on-facebook {
-    cursor: pointer;
     position: relative;
     margin-top: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     .button {
       width: 48px;
       height: 48px;
-      font-size: 40px;
-      color: white;
       background: rgba(46, 134, 193, 1);
-      text-align: center;
       border-radius: 5px;
-      padding-top: 8px;
-      transition: background-color .4s, border-color .4s;
-      &:hover {
-        background: rgba(46, 134, 193, .8);
+      svg {
+        fill: white;
+        height: 36px;
+        transform: translate(17px, 12px);
       }
     }
     .text {
