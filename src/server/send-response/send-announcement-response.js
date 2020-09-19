@@ -68,8 +68,10 @@ export function sendAnnouncementResponse({
         },
         announcement: {
           show: {
-            ...data,
-            data: clientParams
+            data: {
+              ...data,
+              ...clientParams
+            }
           }
         },
         visitor
