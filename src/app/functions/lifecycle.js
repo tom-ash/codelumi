@@ -1,9 +1,12 @@
 import { initializeGoogleMaps } from './load-google-maps'
 import { isMobile } from './is-mobile'
 import { loadGoogleAnalytics } from './load-google-analytics'
+import { loadFonts } from './load-fonts'
 
 export function componentDidMount() {
   if (typeof window === 'undefined') return
+
+  loadFonts()
   
   const {
     scalableVectorGraphics,
