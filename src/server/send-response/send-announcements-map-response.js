@@ -3,7 +3,7 @@ import { sendResponse } from './send-response'
 import { appState } from '../../app/constants/app-state'
 import { data } from '../../app/components/announcement/components/index/constants/state'
 import { openGraphProvider } from '../../shared/functions/providers/open-graph-provider'
-import visitor from '../../app/components/visitor/visitor'
+import { parseScalableVectorGraphics } from '../../shared/functions/parsers/parse-scalable-vector-graphics'
 
 export function sendAnnouncementsMapResponse({
   res,
@@ -50,7 +50,8 @@ export function sendAnnouncementsMapResponse({
           ...appState,
           showAnnouncementIndexMap: true,
           language,
-          device
+          device,
+          scalableVectorGraphics: parseScalableVectorGraphics(json.scalableVectorGraphics)
         },
         announcement: {
           index: {

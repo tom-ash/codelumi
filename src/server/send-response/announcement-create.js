@@ -2,6 +2,7 @@ const fetch = require("node-fetch")
 import { appState } from '../../app/constants/app-state'
 import { openGraphProvider } from '../../shared/functions/providers/open-graph-provider'
 import { sendResponse } from './send-response'
+import { parseScalableVectorGraphics } from '../../shared/functions/parsers/parse-scalable-vector-graphics'
 
 export function sendAnnouncementCreateResponse({
   res,
@@ -16,7 +17,6 @@ export function sendAnnouncementCreateResponse({
   description,
   url
 }) {
-
   const openGraph = openGraphProvider({
     title,
     description,
@@ -41,13 +41,14 @@ export function sendAnnouncementCreateResponse({
           ...appState,
           showAnnouncementCreate: true,
           language,
-          device
+          device,
+          scalableVectorGraphics: parseScalableVectorGraphics(json.scalableVectorGraphics)
         },
         post: {
           index: {
             data: {
               posts: {
-                announcementCreateEditorial: json
+                announcementCreateEditorial: json.post
               }
             }
           }
