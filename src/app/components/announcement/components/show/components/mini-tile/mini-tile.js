@@ -38,7 +38,6 @@ const AnnouncementShowMiniTile = ({
     return (
       <a
         className='announcement-show-container'
-        key={id}
         href={buildLink({
           id,
           category,

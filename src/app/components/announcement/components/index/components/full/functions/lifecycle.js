@@ -1,11 +1,18 @@
-export function componentDidMount() {
-  // this.paramsReader()
+
+function handleScroll() {
+  const {
+    indexFullFarthestScrollTop,
+    changeControl
+  } = this.props
+
+  const scrollTop = window.scrollY
+
+  if (scrollTop > indexFullFarthestScrollTop + 100) {
+    changeControl({ indexFullFarthestScrollTop: scrollTop })
+  }
 }
 
-export function componentDidUpdate(prevProps) {
-  // const { readParams, fetchAmount, fetchList } = this.props
-  // const { paramsReader: prevReadParams, fetchAmount: prevFetchAmount, fetchList: prevFetchList } = prevProps
-  // if (readParams && !prevReadParams) return this.paramsReader()
-  // if (fetchAmount && !prevFetchAmount) return this.getAnnouncementAmount()
-  // if (fetchList && !prevFetchList) return this.getAnnouncements()
+export function componentDidMount() {
+  window.addEventListener('scroll', () => handleScroll.apply(this))
+  // TODO REMOVE EVENT LISTENER
 }

@@ -12,10 +12,18 @@ import { phoneSwitchProvider } from '../../../../functions/phone-switch-provider
 import { togglePhone } from '../../../../functions/toggle-phone'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import { buildLink } from '../../../../functions/build-link'
+
+function getPositionFromTop() {
+  if (!this.container.current) return
+
+  return this.container.current.getBoundingClientRect().top + window.scrollY
+}
 
 class AnnouncementTile extends React.Component {
   constructor(props) {
     super(props)
+    this.container = React.createRef()
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.parseCategory = parseCategory.bind(this)
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
@@ -51,13 +59,37 @@ class AnnouncementTile extends React.Component {
       control,
       closeButtonOnClick,
       isMobile,
-      scalableVectorGraphics
+      scalableVectorGraphics,
+      indexFullFarthestScrollTop,
+      index
     } = this.props
 
     const venueShow = venue === 'show'
+    const positionFromTop = getPositionFromTop.apply(this)
+
+    if (
+      index !== 0 && index !== 1 &&
+      (positionFromTop === undefined || positionFromTop  > indexFullFarthestScrollTop + 1000)
+    ) {
+      return (
+        <a
+          ref={this.container}
+          className='announcement-show-tile-anchor'
+          href={buildLink({
+            id,
+            category,
+            district,
+            language
+          })}
+        />
+      )
+    }
 
     return (
-      <div className={`announcement-show-tile small-shadow ${venue}`}>
+      <div
+        ref={this.container}
+        className={`announcement-show-tile small-shadow ${venue}`}
+      >
         {venue === 'map' &&
         <CloseButton
           onClick={closeButtonOnClick}

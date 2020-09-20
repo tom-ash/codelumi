@@ -7,6 +7,10 @@
 @import '../components/pictures/styles/styles.scss';
 @import '../components/primary/styles/styles.scss';
 
+.announcement-show-tile-anchor {
+  min-height: 500px;
+}
+
 .announcement-show-tile {
   position: relative;
   top: 24px;

@@ -41,8 +41,6 @@ class AnnouncementIndexMap extends React.Component {
       miniListFarthestScrollLeft
     } = this.props
 
-    const minListDevices = ['largePc', 'smallPc', 'largeTablet']
-
     return (
       <div
         id='announcement-index-map'

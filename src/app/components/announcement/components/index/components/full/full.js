@@ -8,12 +8,15 @@ import { parseCategoryForUrl } from '../../../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../../../functions/district-parsers'
 import { parseCurrency } from '../../../../functions/currency-parsers'
 import { OffsetSwitcher } from '../offset-switcher/offset-switcher'
+import * as lifecycle from './functions/lifecycle'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
 class AnnouncementIndexFull extends React.Component {
   constructor(props) {
     super(props)
+    this.container = React.createRef()
+    this.componentDidMount = lifecycle.componentDidMount
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.parseCategoryForUrl = parseCategoryForUrl.bind(this)
@@ -32,11 +35,15 @@ class AnnouncementIndexFull extends React.Component {
       showAnnouncementIndexCatalogue,
       announcements,
       isMobile,
-      scalableVectorGraphics
+      scalableVectorGraphics,
+      indexFullFarthestScrollTop
     } = this.props
 
     return (
-      <div id='announcement-index-full'>
+      <div
+        ref={this.container}
+        id='announcement-index-full'
+      >
         {
         showAnnouncementIndexCatalogue &&
         <div>
@@ -68,6 +75,7 @@ class AnnouncementIndexFull extends React.Component {
                   totalFloors={announcement.totalFloors}
                   availabilityDate={announcement.availabilityDate}
                   scalableVectorGraphics={scalableVectorGraphics}
+                  indexFullFarthestScrollTop={indexFullFarthestScrollTop}
                 />
               )
             })

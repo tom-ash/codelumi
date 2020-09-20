@@ -11,7 +11,8 @@ export const control = {
   loadPins: false,
   loadTile: false,
   miniListFarthestScrollTop: 0,
-  miniListFarthestScrollLeft: 0
+  miniListFarthestScrollLeft: 0,
+  indexFullFarthestScrollTop: 0
 }
 
 export const data = {

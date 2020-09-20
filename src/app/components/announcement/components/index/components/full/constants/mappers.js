@@ -10,7 +10,8 @@ export const mapStateToProps = (store) => {
 
   const {
     connecting,
-    type
+    type,
+    indexFullFarthestScrollTop
   } = store.announcement.index.control
 
   const {
@@ -35,7 +36,8 @@ export const mapStateToProps = (store) => {
     announcements,
     scrollY,
     showAnnouncementIndexCatalogue,
-    scalableVectorGraphics
+    scalableVectorGraphics,
+    indexFullFarthestScrollTop
   }
 }
     
