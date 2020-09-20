@@ -45,8 +45,8 @@ export function verificationManager() {
     classNames: { container: 'form-input text' },
     label: this.languageObjectHandler(label),
     onChange: () => changeErrors({ password: noError }),
-    onBlur: (value) => this.verificationManager().validate(value),
-    validate: (value) => {
+    onBlur: value => this.verificationManager().validate(value),
+    validate: value => {
       if (value.length === 4) return true
       changeErrors({
         password: { pl: 'Nieprawidłowy kod weryfikacyjny.', en: 'Invalid verification code.' }
@@ -70,8 +70,8 @@ export function passwordManager() {
     classNames: { container: 'form-input text' },
     label: this.languageObjectHandler(label),
     onChange: () => changeErrors({ password: noError }),
-    onBlur: (value) => this.passwordManager().validate(value),
-    validate: (value) => {
+    onBlur: value => this.passwordManager().validate(value),
+    validate: value => {
       if (value.length > 5) return true
 
       changeErrors({

@@ -16,8 +16,8 @@ export function emailAddressManager() {
     label: this.languageObjectHandler(label),
     children: <i className='fas fa-pen' />,
     onChange: () => this.props.changeErrors({ emailOrPassword: noError }),
-    onBlur: (value) => this.emailAddressManager().validate(value),
-    validate: (value) => {
+    onBlur: value => this.emailAddressManager().validate(value),
+    validate: value => {
       if (!emailValidator(value).isValid) {
         this.props.changeErrors({
           emailOrPassword: {
@@ -42,8 +42,8 @@ export function passwordManager() {
     label: this.languageObjectHandler(label),
     children: <i className='fas fa-pen' />,
     onChange: () => this.props.changeErrors({ emailOrPassword: noError, email: noError }),
-    onBlur: (value) => this.passwordManager().validate(value),
-    validate: ((value) => {
+    onBlur: value => this.passwordManager().validate(value),
+    validate: (value => {
       if (value.length < 1) {
         this.props.changeErrors({
           emailOrPassword: {

@@ -48,7 +48,7 @@ export function firstNameManager() {
     label: this.languageObjectHandler(label),
     children: <i className='fas fa-pen' />,
     onFocus: () => this.errorResetter('firstName'),
-    onBlur: (value) => this.firstNameManager().validate(value),
+    onBlur: value => this.firstNameManager().validate(value),
     validate: value => this.nameValidator('firstName', value),
     error: this.languageObjectHandler(this.props.firstNameError)
   }
@@ -85,8 +85,8 @@ export function businessNameManager() {
     label: this.languageObjectHandler(label),
     children: <i className='fas fa-pen' />,
     onFocus: () => this.errorResetter('businessName'),
-    onBlur: (value) => this.businessNameManager().validate(value),
-    validate: (value) => this.nameValidator('businessName', value),
+    onBlur: value => this.businessNameManager().validate(value),
+    validate: value => this.nameValidator('businessName', value),
     error: this.languageObjectHandler(this.props.businessNameError)
   }
 }
@@ -119,8 +119,8 @@ export function phoneNumberManager() {
     label: this.languageObjectHandler(label),
     children: <i className='fas fa-pen' />,
     onFocus: () => this.errorResetter('phone'),
-    onBlur: (value) => this.phoneNumberManager().validate(value),
-    validate: (value) => this.phoneValidator(value),
+    onBlur: value => this.phoneNumberManager().validate(value),
+    validate: value => this.phoneValidator(value),
     error: this.languageObjectHandler(this.props.phoneError)
   }
 }
@@ -141,8 +141,8 @@ export function emailAddressManager() {
     label: this.languageObjectHandler(label),
     children: <i className='fas fa-pen' />,
     onFocus: () => this.errorResetter('email'),
-    onBlur: (value) => this.emailAddressManager().validate(value),
-    validate: (value) => this.emailValidator(value),
+    onBlur: value => this.emailAddressManager().validate(value),
+    validate: value => this.emailValidator(value),
     error: this.languageObjectHandler(this.props.emailError)
   }
 }
@@ -163,8 +163,8 @@ export function passwordManager() {
     label: this.languageObjectHandler(label),
     children: <i className='fas fa-pen' />,
     onFocus: () => this.errorResetter('password'),
-    onBlur: (value) => this.passwordManager().validate(value),
-    validate: (value) => this.passwordValidator(value),
+    onBlur: value => this.passwordManager().validate(value),
+    validate: value => this.passwordValidator(value),
     error: this.languageObjectHandler(this.props.passwordError)
   }
 }

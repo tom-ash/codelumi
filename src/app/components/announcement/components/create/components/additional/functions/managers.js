@@ -24,7 +24,7 @@ export function rentAmountManager() {
     children: <i className='fas fa-pen' />,
     type: 'number',
     label,
-    onChange: (value) => changeInputs({ [rentAmountType]: value }),
+    onChange: value => changeInputs({ [rentAmountType]: value }),
     onBlur: () => {
       this.getRentAmounts()
     }

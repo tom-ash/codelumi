@@ -12,7 +12,7 @@ export function verificationManager() {
     classNames: { container: 'form-input text' },
     label: this.languageHandler('Kod weryfikacyjny', 'Verification Code'),
     onChange: () => changeErrors({ verification: { pl: '', en: '' }}),
-    onBlur: (value) => this.verificationManager().validate(value),
+    onBlur: value => this.verificationManager().validate(value),
     validate: () => {
       const verificationCode = document.getElementById('user-create-email-verification').value
       if (verificationCode.length !== 4) {

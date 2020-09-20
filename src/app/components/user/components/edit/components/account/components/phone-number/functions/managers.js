@@ -27,7 +27,7 @@ export function bodyManager() {
     controlled: false,
     classNames: { container: 'form-input text phone-body' },
     label: this.languageObjectHandler(label),
-    onChange: (value) => {
+    onChange: value => {
       if (/^\d*$/.test(value)) {
         changeErrors({ phone: noError })
       } else {

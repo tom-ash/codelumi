@@ -12,8 +12,8 @@ export function verificationManager() {
     classNames: { container: 'form-input text'},
     label: this.languageObjectHandler(label),
     onFocus: () => this.props.changeErrors({ phoneVerification: noError }),
-    onBlur: (value) => this.verificationManager().validate(value),
-    validate: (value) => {
+    onBlur: value => this.verificationManager().validate(value),
+    validate: value => {
       if (value.length === 4) return true
       this.props.changeErrors({
         phoneVerification: {

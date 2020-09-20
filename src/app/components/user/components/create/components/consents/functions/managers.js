@@ -6,10 +6,10 @@ export function termsAndPrivacyConsentManager() {
     classNames: { container: 'form-input checkbox' },
     checked: this.props.termsAndPrivacyConsent,
     label: this.textProvider({ pureText: false }).termsAndPrivacyConsent,
-    onClick: (value) => {
+    onClick: value => {
       this.props.changeInputs({ termsAndPrivacyConsent: value })
       this.termsAndPrivacyConsentManager().validate(value)
     },
-    validate: (value) => this.termsAndPrivacyConsentValidator(value)
+    validate: value => this.termsAndPrivacyConsentValidator(value)
   }
 }

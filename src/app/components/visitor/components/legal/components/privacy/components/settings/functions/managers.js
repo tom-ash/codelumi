@@ -11,7 +11,7 @@ export function statisticsConsentManager() {
       { value: true, label: 'Zgadzam się' },
       { value: false, label: 'Nie zgadzam się' }
     ],
-    onClick: (value) => {
+    onClick: value => {
       this.props.changeSettings({ statisticsConsent: value })
       saveCookie('_pdpaf', value, 'oneYear')
       location.reload()
@@ -30,7 +30,7 @@ export function marketingConsentManager() {
       { value: true, label: 'Zgadzam się' },
       { value: false, label: 'Nie zgadzam się' }
     ],
-    onClick: (value) => {
+    onClick: value => {
       this.props.changeSettings({ marketingConsent: value })
       saveCookie('_pdpsm', value, 'oneYear')
       location.reload()

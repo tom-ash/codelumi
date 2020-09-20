@@ -25,96 +25,96 @@ export const parameters = [
     api: 'rentCurrency',
     pl: 'waluta_czynszu',
     en: 'rentCurrency',
-    value: (value) => value,
-    stateValue: (value) => parseInt(value)
+    value: value => value,
+    stateValue: value => parseInt(value)
   },
   {
     state: 'rentMin',
     api: 'minRent',
     pl: 'min_czynsz',
     en: 'min_rent',
-    value: (value) => value,
-    stateValue: (value) => value
+    value: value => value,
+    stateValue: value => value
   },
   {
     state: 'rentMax',
     api: 'maxRent',
     pl: 'maks_czynsz',
     en: 'max_rent',
-    value: (value) => value,
-    stateValue: (value) => value
+    value: value => value,
+    stateValue: value => value
   },
   {
     state: 'areaMin',
     api: 'min_area',
     pl: 'min_powierzchnia',
     en: 'min_area',
-    value: (value) => value,
-    stateValue: (value) => value
+    value: value => value,
+    stateValue: value => value
   },
   {
     state: 'areaMax',
     api: 'max_area',
     pl: 'maks_powierzchnia',
     en: 'max_area',
-    value: (value) => value,
-    stateValue: (value) => value
+    value: value => value,
+    stateValue: value => value
   },
   {
     state: 'roomsMin',
     api: 'min_rooms',
     pl: 'min_pomieszczenia',
     en: 'min_rooms',
-    value: (value) => value,
-    stateValue: (value) => value
+    value: value => value,
+    stateValue: value => value
   },
   {
     state: 'roomsMax',
     api: 'max_rooms',
     pl: 'maks_pomieszczenia',
     en: 'max_rooms',
-    value: (value) => value,
-    stateValue: (value) => value
+    value: value => value,
+    stateValue: value => value
   },
   {
     state: 'floorMin',
     api: 'min_floor',
     pl: 'min_pietro',
     en: 'min_floor',
-    value: (value) => value,
-    stateValue: (value) => value
+    value: value => value,
+    stateValue: value => value
   },
   {
     state: 'floorMax',
     api: 'max_floor',
     pl: 'maks_pietro',
     en: 'max_floor',
-    value: (value) => value,
-    stateValue: (value) => value
+    value: value => value,
+    stateValue: value => value
   },
   {
     state: 'totalFloorsMin',
     api: 'min_totalFloors',
     pl: 'min_pietra_budynku',
     en: 'min_building_floors',
-    value: (value) => value,
-    stateValue: (value) => value
+    value: value => value,
+    stateValue: value => value
   },
   {
     state: 'totalFloorsMax',
     api: 'max_totalFloors',
     pl: 'maks_pietra_budynku',
     en: 'max_building_floors',
-    value: (value) => value,
-    stateValue: (value) => value
+    value: value => value,
+    stateValue: value => value
   },
   {
     state: 'page',
     api: 'page',
     pl: 'strona',
     en: 'page',
-    value: (value) => value,
-    stateValue: (value) => value
+    value: value => value,
+    stateValue: value => value
   },
 
   {
@@ -122,8 +122,8 @@ export const parameters = [
     api: 'availabilityDate',
     pl: 'data dostępności',
     en: 'availability date',
-    value: (value) => value,
-    stateValue: (value) => value
+    value: value => value,
+    stateValue: value => value
   },
   {
     state: 'offset',

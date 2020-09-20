@@ -15,8 +15,8 @@ export function verificationManager() {
     label: this.languageObjectHandler(label),
     children: <i className={icon} />,
     onChange: () => changeErrors({ verification: noError }),
-    onBlur: (value) => this.verificationManager().validate(value),
-    validate: (value) => {
+    onBlur: value => this.verificationManager().validate(value),
+    validate: value => {
       if (value.length < 4) {
         changeErrors({
           verification: { pl: 'Nieprawidłowy kod weryfikacyjny.', en: 'Invalid verification code.' }

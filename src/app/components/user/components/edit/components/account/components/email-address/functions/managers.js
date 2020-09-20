@@ -22,7 +22,7 @@ export function currentEmailVerificationManager() {
     label: languageObjectHandler(label),
     onChange: () => changeErrors({ currentEmailVerification: noError }),
     onBlur: value => thisManager().validate(value),
-    validate: (value) => {
+    validate: value => {
       const { isValid, error } = verificationCodeValidator(value)
       if (isValid) return
       changeErrors({ currentEmailVerification: error })
