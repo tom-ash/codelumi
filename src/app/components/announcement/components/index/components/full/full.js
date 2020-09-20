@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import AnnouncementTile from '../../../show/components/tile/tile'
-import { paginationManager } from './functions/managers'
 import { parseCategoryForUrl } from '../../../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../../../functions/district-parsers'
 import { parseCurrency } from '../../../../functions/currency-parsers'
@@ -21,8 +20,7 @@ class AnnouncementIndexFull extends React.Component {
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.parseCategoryForUrl = parseCategoryForUrl.bind(this)
     this.parseDistrictForUrl = parseDistrictForUrl.bind(this)
-    this.parseCurrency = parseCurrency.bind(this)    
-    this.paginationManager = paginationManager.bind(this)
+    this.parseCurrency = parseCurrency.bind(this)
   }
 
   render() {

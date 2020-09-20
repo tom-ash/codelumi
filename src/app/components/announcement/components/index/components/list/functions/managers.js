@@ -1,24 +1,3 @@
-export function paginationManager() {
-  if (typeof window === 'undefined') return
-  
-  const { offset, amount, connecting, changeControl, changeInputs } = this.props
-  const resultsPerPage = 10
-
-  return {
-    classNames: { container: 'list-pagination' },
-    display: amount > resultsPerPage ? 'inline-block' : 'none',
-    current: +offset / resultsPerPage + 1,
-    resultsPerPage,
-    resultAmount: +amount,
-    onClick: (button) => {
-      if (connecting) return
-      changeControl({ fetch: true })
-      changeInputs({ offset: button * resultsPerPage - resultsPerPage })
-      window.scrollTo(0, 0)
-    }
-  }
-}
-
 export function destroyManager() {
   return {
     classNames: { container: 'form-input button destroy' },

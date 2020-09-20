@@ -94,32 +94,6 @@ body {
   justify-content: center;
 }
 
-.darkened-cover {
-  z-index: 3000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, .56);
-  position: fixed;
-  top: -38px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 24px;
-  .windmill-medium-spinner {
-    div:after {
-      background: #F0F3F4;
-    }
-  }
-  @media #{$small-tablet} {
-    top: 0;
-  }
-  @media #{$phone} {
-    padding: 12px;
-  }
-}
-
 .page-header {
   margin-bottom: 24px;
   color: #212F3D;
@@ -138,7 +112,6 @@ body {
   .far, .fas {
     width: 24px;
   }
-  
 }
 
 input, textarea {
@@ -146,10 +119,6 @@ input, textarea {
   user-select: none;
   cursor: pointer;
 }
-
-
-
-
 
 button {
   outline: none;
@@ -290,27 +259,6 @@ a {
   }
 }
 
-.react-calendar {
-  z-index: 3000;
-  position: relative;
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
-              0px 3px 8px 3px rgba(0, 0, 0, 0.14),
-              0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-  padding-right: 6px;
-  border-radius: 2.5px;
-  border: none;
-  cursor: auto;
-  .react-calendar__navigation button, .react-calendar__tile {
-    font-size: 12px;
-    &:hover {
-      background: #EBF5FB;
-    }
-  }
-  .react-calendar__navigation__arrow {
-    font-size: 22px!important;
-  }
-}
-
 .category-option {
   position: relative;
   .pin {
@@ -339,10 +287,6 @@ a {
     background: #F0F3F4;
   }
 }
-
-
-
-
 
 h1 {
   color: #5F6A6A;

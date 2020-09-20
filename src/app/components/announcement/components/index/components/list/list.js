@@ -4,7 +4,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import * as managers from './functions/managers'
-import { ManagedPagination, ManagedButton } from 'managed-inputs'
 import AnnouncementTile from '../../../show/components/tile/tile'
 import { controlProvider } from './functions/control-provider'
 import { buttonProvider } from './functions/button-provider'
@@ -32,7 +31,6 @@ class AnnouncementIndexList extends React.Component {
     this.destroy = destroy.bind(this)
     this.pageHeaderProvider = pageHeaderProvider.bind(this)
     this.sectionHeaderProvider = sectionHeaderProvider.bind(this)
-    this.paginationManager = managers.paginationManager.bind(this)
     this.destroyManager = managers.destroyManager.bind(this)
     this.cancelDestroyManager = managers.cancelDestroyManager.bind(this)
     this.extend = extend.bind(this)
@@ -68,9 +66,6 @@ class AnnouncementIndexList extends React.Component {
           </div>
         </div>
         }
-        <div className='pagination-container'>
-          <ManagedPagination {...this.paginationManager()} />
-        </div>
         <div className='announcements'>
           {this.props.announcements && this.props.announcements.map((announcement, index) => (
           <AnnouncementTile
@@ -99,9 +94,6 @@ class AnnouncementIndexList extends React.Component {
             scalableVectorGraphics={scalableVectorGraphics}
           />))}
           <div className='float-clear' />
-        </div>
-        <div className='pagination-container'>
-          <ManagedPagination {...this.paginationManager()} />
         </div>
       </div>
     )
