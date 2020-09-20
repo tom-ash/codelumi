@@ -115,6 +115,7 @@ export function availabilityDateManager() {
 export function buttonManager(action) {
   const {
     changeApp,
+    showAnnouncementIndexMap,
     showAnnouncementIndexCatalogue
   } = this.props
 
@@ -136,7 +137,10 @@ export function buttonManager(action) {
       </div>
     ),
     onClick: () => {
-      changeApp({ showAnnouncementIndexCatalogue: !showAnnouncementIndexCatalogue })
+      changeApp({
+        showAnnouncementIndexMap: !showAnnouncementIndexMap,
+        showAnnouncementIndexCatalogue: !showAnnouncementIndexCatalogue
+      })
     }
   }
 }

@@ -13,11 +13,18 @@ class Announcement extends React.Component {
     super(props)
   }
   render() {
-    const { showCreate, showEdit, showMap, showList, showShow } = this.props
+    const {
+      showCreate,
+      showEdit,
+      showMap,
+      showList,
+      showShow,
+      showCatalogue
+    } = this.props
 
     return (
       <React.Fragment>
-        {(showMap || showList) && <AnnouncementIndex />}
+        {(showMap || showCatalogue || showList) && <AnnouncementIndex />}
         {(showCreate || showEdit) && <AnnouncementCreate />}
         {showShow && <AnnouncementShow />}
       </React.Fragment>

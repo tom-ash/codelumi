@@ -45,7 +45,7 @@ export function sendAnnouncementsListResponse({
       initialState: {
         app: {
           ...appState,
-          showAnnouncementIndexMap: true,
+          // showAnnouncementIndexMap: false,
           showAnnouncementIndexCatalogue: true,
           language,
           device,

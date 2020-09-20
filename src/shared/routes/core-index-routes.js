@@ -12,8 +12,7 @@ export const coreIndexRoutes = {
       url: '/',
       title: 'Map of Real Estates for Lease in Warsaw - Apartments, Offices and Usable premises',
       description: 'Free announcements of real estate lease in Warsaw on the map. Search and add free announcements of lease in the categories: apartment, office, usable premises.'
-    },
-    overshadow: false
+    }
   },
   showAnnouncementIndexCatalogue: {
     sender: 'list',
@@ -28,9 +27,7 @@ export const coreIndexRoutes = {
       url: '/catalogue-of-real-estates-for-lease-warsaw',
       title: 'Catalogue of Real Estates for Lease in Warsaw - Apartments, offices and usable premises',
       description: 'Free announcements of real estate lease in Warsaw on the list. Search and add free announcements of lease in the categories: apartment, office, usable premises.'
-    },
-    needsAnnouncementIndexMap: true,
-    overshadow: true
+    }
   },
   showAnnouncementShow: {
     sender: 'announcement',

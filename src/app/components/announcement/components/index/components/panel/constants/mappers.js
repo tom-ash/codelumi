@@ -5,7 +5,8 @@ export const mapStateToProps = (store) => {
     isMobile,
     device,
     showAnnouncementIndexMap: showMap,
-    showAnnouncementIndexList: showList
+    showAnnouncementIndexList: showList,
+    showAnnouncementIndexCatalogue: showCatalogue
   } = store.app
 
   return {
@@ -14,7 +15,8 @@ export const mapStateToProps = (store) => {
     isMobile,
     device,
     showMap,
-    showList
+    showList,
+    showCatalogue
   }
 }
     

@@ -14,12 +14,16 @@ class AnnouncementIndexPanel extends React.Component {
   }
 
   render() {
-    const { path, showMap, showList } = this.props
+    const {
+      showMap,
+      showList,
+      showCatalogue
+    } = this.props
 
     return (
       <div id='announcement-index-panel'>
-        {showMap && <AnnouncementIndexPanelVisitor />}
-        {showList    && <AnnouncementIndexPanelUser />}
+        {(showMap || showCatalogue) && <AnnouncementIndexPanelVisitor />}
+        {showList && <AnnouncementIndexPanelUser />}
       </div>
     )
   }
