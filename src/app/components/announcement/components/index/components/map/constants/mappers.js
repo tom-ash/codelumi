@@ -13,7 +13,9 @@ export const mapStateToProps = (store) => {
     mapLoaded,
     type,
     loadMap,
-    loadPins
+    loadPins,
+    miniListFarthestScrollTop,
+    miniListFarthestScrollLeft
   } = store.announcement.index.control
   
   const {
@@ -38,7 +40,9 @@ export const mapStateToProps = (store) => {
     pins,
     tileId,
     tile,
-    scalableVectorGraphics
+    scalableVectorGraphics,
+    miniListFarthestScrollTop,
+    miniListFarthestScrollLeft
   }
 }
     

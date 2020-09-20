@@ -9,7 +9,9 @@ export const control = {
   deletedAnnouncement: null,
   loadMap: false,
   loadPins: false,
-  loadTile: false
+  loadTile: false,
+  miniListFarthestScrollTop: 0,
+  miniListFarthestScrollLeft: 0
 }
 
 export const data = {

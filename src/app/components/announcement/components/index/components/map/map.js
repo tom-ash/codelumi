@@ -3,27 +3,20 @@ import loadable from '@loadable/component'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
+import AnnouncementShowMiniTile from '../../../show/components/mini-tile/mini-tile'
 const AnnouncementTile = loadable(() => import('../../../show/components/tile/tile'), { ssr: false })
 import { googleMapHandler } from '../../../../functions/google-map-handler'
 import { fetchTile } from './functions/fetch-tile'
 import { drawPins } from './functions/draw-pins'
-import AnnouncementShowPictures from '../../../show/components/tile/components/pictures/pictures'
-import { parseCategory } from '../../../../../../../shared/functions/parsers/parse-category'
-import { parseDistrict } from '../../../../../../../shared/functions/parsers/parse-district'
-import { AreaPresenter } from '../../../show/functions/area-presenter'
 import { languageObjectHandler } from '../../../../../../functions/language-handler'
-import { RentPresenter } from '../../../show/functions/rent-presenter'
 import { shouldSetUpGoogleMaps, shouldSetUpPins } from '../../../../functions/google-map-handler'
-import { viewAnnouncement } from '../../../../functions/view-announcement'
-import { buildLink } from '../../../../functions/build-link'
-import { scrollToElement } from '../../../../../../functions/scrollers/scroll-to-element'
-import { sendAnalyticsEvent } from '../../../../../../functions/google-analytics/send-analytics-event'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
 class AnnouncementIndexMap extends React.Component {
   constructor(props) {
     super(props)
+    this.miniList = React.createRef()
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
@@ -42,9 +35,10 @@ class AnnouncementIndexMap extends React.Component {
       language,
       announcements,
       changeData,
-      device,
       isMobile,
-      scalableVectorGraphics
+      scalableVectorGraphics,
+      miniListFarthestScrollTop,
+      miniListFarthestScrollLeft
     } = this.props
 
     const minListDevices = ['largePc', 'smallPc', 'largeTablet']
@@ -55,96 +49,31 @@ class AnnouncementIndexMap extends React.Component {
         className={`${showAnnouncementIndexCatalogue ? 'hidden' : 'visible'}`}
       >
         <div id='google-map-container'>
-          <div id='mini-list'>
-            {announcements !== null && announcements.map(announcement => {
-              const {
-                id,
-                latitude: lat,
-                longitude: lng,
-                pictures,
-                category,
-                district,
-                area,
-                grossRentAmount,
-                rentCurrency: currency
-              } = announcement
-
-              return (
-                <a
-                  className='announcement-show-container'
-                  key={id}
-                  href={buildLink({ ...announcement, language })}
-
-                  onMouseOver={() => {
-                    const pin = document.getElementById(`googl-map-pin-${id}`)
-                    if (!pin) return
-
-                    pin.classList.add('focused');
-                  }}
-
-                  onMouseLeave={() => {
-                    const pin = document.getElementById(`googl-map-pin-${id}`)
-                    if (!pin) return
-
-                    pin.classList.remove('focused');
-                  }}
-
-                  onClick={e => {
-                    e.preventDefault()
-                    const map = window.googleMap
-
-                    const alteredLng = lng + (isMobile ? 0 : .037)
-
-                    sendAnalyticsEvent({
-                      eventCategory: 'Announcement MiniList',
-                      eventAction: 'Tile Click',
-                      eventLabel: id
-                    })
-
-                    const options = {
-                      center: {
-                        lat,
-                        lng: alteredLng
-                      },
-                      zoom: 12.4
-                    }
-                    map.setOptions(options)
-                    viewAnnouncement(id)
-
-                    if (!isMobile) return changeData({ tileId: id })
-
-                    scrollToElement(document.getElementById('google-map'), 5, -64)
-                  }}
-                >
-                  <AnnouncementShowPictures
-                    language={language}
-                    venue={'mini-list'}
-                    key={id}
-                    id={id}
-                    pictures={pictures}
-                    category={category}
-                    district={district}
-                    area={area}
-                    disableSLides
-                  />
-                  <div className='category-and-location'>
-                    {parseCategory(category)[language]}, {parseDistrict(district)}
-                  </div>
-                  <div className='data'>
-                    <AreaPresenter
-                      area={area}
-                      languageObjectHandler={this.languageObjectHandler}
-                    />
-                    <RentPresenter
-                      amount={grossRentAmount}
-                      currency={currency}
-                      languageObjectHandler={this.languageObjectHandler}
-                    />
-                  </div>
-                  <div className='float-clear' />
-                </a>
-              )
-            })}
+          <div 
+            ref={this.miniList}
+            id='mini-list'
+          >
+            {announcements !== null && announcements.map((announcement, index) => (
+              <AnnouncementShowMiniTile
+                key={index}
+                index={index}
+                id={announcement.id}
+                lat={announcement.latitude}
+                lng={announcement.longitude}
+                pictures={announcement.pictures}
+                category={announcement.category}
+                district={announcement.district}
+                area={announcement.area}
+                grossRentAmount={announcement.grossRentAmount}
+                rentCurrency={announcement.currency}
+                language={language}
+                languageObjectHandler={this.languageObjectHandler}
+                changeData={changeData}
+                isMobile={isMobile}
+                miniListFarthestScrollTop={miniListFarthestScrollTop}
+                miniListFarthestScrollLeft={miniListFarthestScrollLeft}
+              />
+            ))}
             <div className='float-clear' />
           </div>
           <div id='google-map' />

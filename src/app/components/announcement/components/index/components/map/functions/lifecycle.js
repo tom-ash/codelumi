@@ -1,11 +1,32 @@
 import { removeOldPins } from './draw-pins'
-
 import { setUpGoogleMaps } from '../../../../../functions/google-map-handler'
+
+function handleScroll() {
+  const {
+    miniListFarthestScrollTop,
+    miniListFarthestScrollLeft,
+    changeControl
+  } = this.props
+
+  const scrollTop = this.miniList.current.scrollTop
+
+  if (scrollTop > miniListFarthestScrollTop + 100) {
+    changeControl({ miniListFarthestScrollTop: scrollTop })
+  }
+
+  const scrollLeft = this.miniList.current.scrollLeft
+
+  if (scrollLeft > miniListFarthestScrollLeft + 100) {
+    changeControl({ miniListFarthestScrollLeft: scrollLeft })
+  }
+}
 
 export function componentDidMount() {
   const { changeControl } = this.props
 
   this.googleMapHandler(() => changeControl({ mapLoaded: true }))
+
+  this.miniList.current.addEventListener('scroll', () => handleScroll.apply(this))
 }
 
 export function componentDidUpdate(prevProps) {
