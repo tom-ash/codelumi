@@ -69,7 +69,8 @@ class AnnouncementTile extends React.Component {
 
     if (
       index !== 0 && index !== 1 &&
-      (positionFromTop === undefined || positionFromTop  > indexFullFarthestScrollTop + 1000)
+      (positionFromTop === undefined || positionFromTop  > indexFullFarthestScrollTop + 1000) &&
+      venue !== 'map'
     ) {
       return (
         <a
