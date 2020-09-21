@@ -44,12 +44,14 @@ class App extends React.Component {
       showUserEditPhoneVerify
     } = this.props
 
-    return showUserCreate ||
-           showUserAuthorize ||
-           showUserEditPasswordReset ||
-           showUserShow ||
-           showUserEditAccount ||
-           showUserEditPhoneVerify
+    return (
+      showUserCreate ||
+      showUserAuthorize ||
+      showUserEditPasswordReset ||
+      showUserShow ||
+      showUserEditAccount ||
+      showUserEditPhoneVerify
+    )
   }
 
   render() {

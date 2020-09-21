@@ -1,7 +1,6 @@
 @import '../../themes.scss';
 @import './select';
 @import './radio';
-@import './checkbox';
 @import './textarea';
 @import './button';
 
@@ -19,18 +18,6 @@ $touched-border-color: #34495E;
   &.text, &.select, &.textarea {
     position: relative;
     background: $color-background;
-    .fa-chevron-down, .fa-pen {
-      color: #A6ACAF !important;
-      background: none;
-      border: none !important;
-      width: 13px;
-      border: none;
-      position: absolute;
-      top: 17px;
-      right: 11px;
-      margin: auto;
-      width: 13px !important;
-    }
     .input {
       width: 100%;
       padding-left: 8px;
@@ -84,7 +71,6 @@ $touched-border-color: #34495E;
         box-shadow: 0 0 0 1px #5D6D7E;
       }
     }
-
     .label {
       top: 14px;
       left: 12px;
@@ -117,58 +103,10 @@ $touched-border-color: #34495E;
   &.radio {
     @extend %radio;
   }
-  &.checkbox {
-    @extend %checkbox;
-    .input {
-      transition: .2s ease-in-out;
-      border: 1px solid $border-color;
-      outline: none;
-      transition: 0.18s;
-      &.hover, &.focus {
-        box-shadow: 0 0 0 1px $touched-border-color;
-      }
-      .tick {
-        border-bottom: 1px solid $touched-color;
-        border-right: 1px solid $touched-color;
-      }
-    }
-    .label {
-      color: $untached-color;
-      &.focus, &.hover, &.value {
-        color: $touched-color;
-      }
-    }
-  }
+
+
+
   &.button {
     @extend %button;
-  }
-  .fas, .far {
-    width: 26px;
-    font-size: 14px;
-    color: $form-input-icon-color;
-    transition: 0.18s;
-  }
-  .focus, .value {
-    .fas, .far {
-      width: 20px;
-      font-size: 12px;
-      transition: 0.18s;
-    }
-  }
-  &.error {
-    .fas, .far {
-      color: $form-input-error-color;
-      border-top: 1px solid $primary-error-color;
-      border-left: 1px solid $primary-error-color;
-      border-bottom: 1px solid $primary-error-color;
-    }
-  }
-
-  &.hover, &.focus {
-    .fas, .far {
-      border-top: 1px solid $touched-border-color;
-      border-left: 1px solid $touched-border-color;
-      border-bottom: 1px solid $touched-border-color;
-    }
   }
 }

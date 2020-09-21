@@ -8,7 +8,7 @@
 @import '../components/description/styles/styles.scss';
 @import '../components/map/styles/styles.scss';
 @import '../components/publishing/styles/styles.scss';
-// @import '../../../../user/components/create/styles/styles.scss';
+@import '../../../../../styles/inputs/form/checkbox.scss';
 
 #announcement-create {
   box-shadow: none;
@@ -100,20 +100,6 @@
     background: white;
     .title {
       padding-top: 24px;
-    }
-  }
-  .form-input {
-    .fa-chevron-down, .fa-pen {
-      color: #A6ACAF !important;
-      background: none;
-      border: none !important;
-      width: 13px;
-      border: none;
-      position: absolute;
-      top: 17px;
-      right: 11px;
-      margin: auto;
-      width: 13px !important;
     }
   }
   .input-explanation {
@@ -235,12 +221,6 @@
     margin-bottom: 9px;
     color: #566573;
     font-size: 14px;
-    .fas {
-      color: #626567;
-      font-size: 13px;
-      line-height: 15px;
-      margin-right: 2px;
-    }
   }
   .form-input {
     &.radio {
