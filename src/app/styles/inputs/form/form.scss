@@ -1,8 +1,5 @@
 @import '../../themes.scss';
 @import './select';
-// @import './radio';
-@import './textarea';
-@import './button';
 
 $untached-color: #2E4053;
 $touched-color: #212F3D;
@@ -15,7 +12,8 @@ $touched-border-color: #34495E;
       -webkit-appearance: none;
     }
   }
-  &.text, &.select, &.textarea {
+
+  &.text, &.select {
     position: relative;
     background: $color-background;
     .input {
@@ -56,6 +54,7 @@ $touched-border-color: #34495E;
       font-size: 12px;
     }
   }
+
   &.text, &.select {
     height: 42px;
     margin-bottom: 24px;
@@ -96,15 +95,5 @@ $touched-border-color: #34495E;
   }
   &.select {
     @extend %select;
-  }
-  &.textarea {
-    @extend %textarea;
-  }
-
-
-
-
-  &.button {
-    @extend %button;
   }
 }

@@ -1,20 +1,22 @@
-%button {
-  position: relative;
-  height: 36px;
-  width: 144px;
-  .input {
-    height: 100%;
-    width: 100%;
-    border: none;
-    border-radius: 2.5px;
-    outline: none;
-    background: #1F618D;
-    color: #FBFCFC;
-    cursor: pointer;
-    font-size: 15px;
-    &.hover, &.focus {
-      background: #2980B9;
+.form-input {
+  &.button {
+    position: relative;
+    height: 36px;
+    width: 144px;
+    .input {
+      height: 100%;
+      width: 100%;
+      border: none;
+      border-radius: 2.5px;
+      outline: none;
+      background: #1F618D;
+      color: #FBFCFC;
+      cursor: pointer;
+      font-size: 15px;
+      &.hover, &.focus {
+        background: #2980B9;
+      }
+      transition: .2s ease-in-out;
     }
-    transition: .2s ease-in-out;
   }
 }
