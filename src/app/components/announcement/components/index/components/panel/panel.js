@@ -1,8 +1,9 @@
 import React from 'react'
+import loadable from '@loadable/component'
+const AnnouncementIndexPanelVisitor = loadable(() => import('./components/visitor/visitor'))
+const AnnouncementIndexPanelUser = loadable(() => import('./components/user/user'))
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import AnnouncementIndexPanelVisitor from './components/visitor/visitor'
-import AnnouncementIndexPanelUser from './components/user/user'
 import { languageObjectHandler } from '../../../../../../functions/language-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'

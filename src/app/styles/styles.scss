@@ -3,7 +3,6 @@
 @import '../components/scaffold/components/footer/styles/styles.scss';
 @import './media-breakpoints';
 @import './themes';
-@import './inputs/form/form';
 @import '../components/support/components/spinner/components/windmill/styles/styles.scss';
 
 input::-webkit-outer-spin-button,
@@ -68,10 +67,6 @@ body {
   margin: 0 auto;
   padding-top: 50px;
   overflow: hidden;
-}
-
-.form-input {
-  @extend %form-input;
 }
 
 .transparent-cover {

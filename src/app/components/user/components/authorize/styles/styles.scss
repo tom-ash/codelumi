@@ -1,6 +1,7 @@
 @import '../../../../../styles/themes.scss';
-@import '../../../../../styles/inputs/form/form';
 @import '../components/email-password/styles/styles.scss';
+@import '../../../../../styles/inputs/form/text.scss';
+@import '../../../../../styles/inputs/form/select.scss';
 @import '../../../../../styles/inputs/form/checkbox.scss';
 
 #user-authorize {

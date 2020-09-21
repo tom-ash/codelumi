@@ -1,9 +1,87 @@
-%select {
+.form-input {
   &.select {
+    position: relative;
+    background: $color-background;
+    .input {
+      width: 100%;
+      padding-left: 8px;
+      border: 1px solid #AEB6BF;
+      border-radius: 2px;
+      background: $color-background;
+      color: #374049;
+      &.error {
+        border: 1px solid $primary-error-color;
+        color: $primary-error-color;
+      }
+    }
+    .label {
+      display: inline-block;
+      position: absolute;
+      background: $color-background;
+      color: #374049;
+      cursor: pointer;
+      background: none;
+      &.hover {
+        color: $form-input-label-hover-color;
+      }
+      &.focus {
+        color: $form-input-label-focus-color;
+      }
+      &.error {
+        color: $primary-error-color!important;
+      }
+      &.focus, &.value {
+        background: white;
+      }
+    }
+    .error-container {
+      padding-top: 4px;
+      text-align: center;
+      font-size: 12px;
+    }
+      height: 42px;
+      margin-bottom: 24px;
+      .input {
+        color: $touched-color;
+        width: 100%;
+        height: 42px;
+        font-size: 16px;
+        padding-left: 12px;
+        transition: .2s ease-in-out;
+        &.hover, &.focus {
+          border-color: #5D6D7E;
+          box-shadow: 0 0 0 1px #5D6D7E;
+        }
+      }
+      .label {
+        top: 14px;
+        left: 12px;
+        font-size: 15px;
+        transition: 0.18s;
+        text-align: left;
+        color: $untached-color;
+        padding: 0 2px;
+        &.value, &.focus {
+          top: -6px;
+          font-size: 12px;
+        }
+      }
+      .error-container {
+        opacity: 0;
+        transition: 0.18s;
+        color: $primary-error-color;
+        &.error {
+          opacity: 1;
+          color: $primary-error-color;
+        }
+      }
+    }
     .input {
       z-index: 2;
       line-height: 42px;
       cursor: pointer;
     }
-  }
+
+
+
 }
