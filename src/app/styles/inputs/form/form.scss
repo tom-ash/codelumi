@@ -1,6 +1,6 @@
 @import '../../themes.scss';
 @import './select';
-@import './radio';
+// @import './radio';
 @import './textarea';
 @import './button';
 
@@ -100,9 +100,7 @@ $touched-border-color: #34495E;
   &.textarea {
     @extend %textarea;
   }
-  &.radio {
-    @extend %radio;
-  }
+
 
 
 
