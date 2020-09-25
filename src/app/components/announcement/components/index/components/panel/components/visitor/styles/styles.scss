@@ -1,6 +1,7 @@
 @import './panel';
 @import '../../../../../../../../../styles/colors';
 @import '../../../../../../../../../styles/media-breakpoints';
+@import '../../../../../../../../../styles/inputs/form/select-options.scss';
 
 #announcement-index-panel-visitor {
   @extend %panel;
@@ -20,22 +21,5 @@
     .composite-input-container {
       left: 0 !important;
     }
-  }
-  .fa-chevron-down {
-    background: none;
-    border: none !important;
-    width: 13px;
-    border: none;
-    position: absolute;
-    top: 14px;
-    right: 12px;
-    font-size: 12px;
-    margin: auto;
-    width: 13px !important;
-    color: #909497;
-  }
-  .fa-times {
-    color: #797D7F;
-    margin-right: 13px;
   }
 }

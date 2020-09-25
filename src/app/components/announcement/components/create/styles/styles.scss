@@ -148,20 +148,6 @@
     &.rolled-up {
       max-height: 0;
     }
-    .blog-paragraph {
-      position: relative;
-      font-size: 14px;
-      margin-top: 4px;
-      margin-bottom: 0;
-      .bull {
-        left: 0;
-        margin-right: 4px;
-        position: absolute;
-      }
-      &.check {
-        padding-left: 12px;
-      }
-    }
   }
   h2 {
     margin-top: 24px;
