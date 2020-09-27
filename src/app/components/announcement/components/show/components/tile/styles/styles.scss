@@ -17,12 +17,6 @@
   width: 100%;
   background: white;
   text-align: left;
-  &.show {
-    padding-bottom: 24px;
-    @media #{$phone} {
-      padding-bottom: 12px;
-    }
-  }
   &.map {
     .area {
       margin-right: 8px;

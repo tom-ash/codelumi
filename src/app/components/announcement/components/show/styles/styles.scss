@@ -5,7 +5,6 @@
   width: 640px;
   margin: 0 auto;
   padding: 36px 0 0;
-
   &.large-pc {
     width: 1024px;
     .announcement-show-pictures {
@@ -40,21 +39,10 @@
     .announcement-show-tile-features {
       padding: 18px 18px 0;
       font-size: 16px;
-      h3 {
-        font-weight: normal;
-        .item {
-          color: #909497;
-        }
-      }
     }
 
     .announcement-show-tile-description {
       padding: 18px;
-      font-size: 16px;
-      .description {
-        line-height: 26px;
-        color: #626567;
-      }
     }
 
     .announcement-show-tile-map {
@@ -64,11 +52,15 @@
 
   @media only screen and (max-width: 688px) {
     width: 100%;
-    padding: 36px 12px;
+    // padding: 36px 12px;
   }
 
   @media #{$phone} {
-    padding: 36px 6px;
+    padding: 0;
+    .announcement-show-tile {
+      top: 0;
+      box-shadow: none;
+    }
   }
 
   #showcase {
@@ -77,6 +69,12 @@
     padding: 12px;
     width: 256px;
     margin-bottom: 24px;
+    @media #{$phone} {
+      width: 100%;
+      margin: 0;
+      box-shadow: none;
+      border-bottom: 1px solid lightgray;
+    }
     .phone-showcase {
       min-width: 50px;
       margin-top: 12px;
