@@ -6,6 +6,7 @@ $breakpoint-tablet-small-max: 768px;
 $breakpoint-phone-large-max: 480px;
 $breakpoint-phone-smal-max: 336px;
 
+$large-pc: "#{$screen} and (min-width: #{$breakpoint-pc-small-max + 1})" !default;
 $small-pc: "#{$screen} and (max-width: #{$breakpoint-pc-small-max})" !default;
 $tablet: "#{$screen} and (max-width: #{$breakpoint-tablet-large-max})" !default;
 $small-tablet: "#{$screen} and (max-width: #{$breakpoint-tablet-small-max})" !default;
