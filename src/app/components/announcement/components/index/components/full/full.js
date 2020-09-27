@@ -34,7 +34,9 @@ class AnnouncementIndexFull extends React.Component {
       announcements,
       isMobile,
       scalableVectorGraphics,
-      indexFullFarthestScrollTop
+      indexFullFarthestScrollTop,
+      changeApp,
+      changeAnnouncementShowData
     } = this.props
 
     return (
@@ -74,6 +76,8 @@ class AnnouncementIndexFull extends React.Component {
                   availabilityDate={announcement.availabilityDate}
                   scalableVectorGraphics={scalableVectorGraphics}
                   indexFullFarthestScrollTop={indexFullFarthestScrollTop}
+                  changeApp={changeApp}
+                  changeData={changeAnnouncementShowData}
                 />
               )
             })

@@ -1,6 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { mapDispatchToProps } from './constants/mappers'
 import ManagedSlider from '../../../../../../../support/components/managed-slider/managed-slider'
 import { ManagedLink } from 'managed-inputs'
 import { getDerivedStateFromProps } from './functions/get-derived-state-from-props'
@@ -66,4 +64,4 @@ class AnnouncementShowPictures extends React.Component {
   }
 }
 
-export default connect(null, mapDispatchToProps)(AnnouncementShowPictures)
+export default AnnouncementShowPictures

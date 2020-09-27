@@ -70,7 +70,8 @@ class AnnouncementShow extends React.Component {
       changeControl,
       resetControl,
       changeData,
-      resetData
+      resetData,
+      changeApp
     } = this.props
 
     const { phone } = this.state
@@ -147,6 +148,7 @@ class AnnouncementShow extends React.Component {
           resetControl={resetControl}
           changeData={changeData}
           resetData={resetData}
+          changeApp={changeApp}
         />
       </div>
     )

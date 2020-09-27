@@ -38,7 +38,9 @@ class AnnouncementIndexMap extends React.Component {
       isMobile,
       scalableVectorGraphics,
       miniListFarthestScrollTop,
-      miniListFarthestScrollLeft
+      miniListFarthestScrollLeft,
+      changeApp,
+      changeAnnouncementShowData
     } = this.props
 
     return (
@@ -98,6 +100,8 @@ class AnnouncementIndexMap extends React.Component {
               closeButtonOnClick={() => this.props.changeData({ tileId: null, tile: null })}
               isMobile={isMobile}
               scalableVectorGraphics={scalableVectorGraphics}
+              changeApp={changeApp}
+              changeData={changeAnnouncementShowData}
             />
           </div>}
         </div>
