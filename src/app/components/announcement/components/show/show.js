@@ -11,6 +11,8 @@ import { parseCategory } from '../../functions/category-parsers'
 import AnnouncementTile from './components/tile/tile'
 import { sendAnalyticsEvent } from '../../../../functions/google-analytics/send-analytics-event'
 import ScalableVectorGraphic from '../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class AnnouncementShow extends React.Component {
   constructor(props) {
@@ -55,13 +57,15 @@ class AnnouncementShow extends React.Component {
       descriptionPolish,
       descriptionEnglish,
       isMobile,
-      scalableVectorGraphics
+      scalableVectorGraphics,
+      device
     } = this.props
 
     const { phone } = this.state
+    const deviceClasss = device === 'largePc' ? ' large-pc' : ''
 
     return (
-      <div id='announcement-show'>
+      <div id='announcement-show' className={deviceClasss}>
         <div id='showcase' className='small-shadow'>
           <div className='name'>
             {this.props.name}
@@ -118,10 +122,11 @@ class AnnouncementShow extends React.Component {
           descriptionEnglish={descriptionEnglish}
           isMobile={isMobile}
           scalableVectorGraphics={scalableVectorGraphics}
+          device={device}
         />
       </div>
     )
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementShow)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(AnnouncementShow))

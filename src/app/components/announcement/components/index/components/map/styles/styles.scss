@@ -33,6 +33,26 @@
   .announcement-tile-container {
     .announcement-show-tile {
       position: relative;
+      .close-button {
+        position: absolute;
+        top: 6px;
+        right: 3px;
+        z-index: 3;
+        width: 16px;
+        height: 16px;
+        border: none;
+        line-height: 16px;
+        background: white;
+        cursor: pointer;
+        svg {
+          fill: #5F6A6A;
+        }
+        &:hover {
+          svg {
+            fill: #BDC3C7;
+          }
+        }
+      }
     }
     text-align: left;
     position: absolute;

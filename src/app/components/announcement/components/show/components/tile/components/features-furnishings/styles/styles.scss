@@ -1,6 +1,6 @@
 @import '../../../../../../../../../styles/themes.scss';
 
-#announcement-show-tile-features {
+.announcement-show-tile-features {
   background: white;
   font-size: 14px;
   padding: 0 24px 24px;
@@ -11,7 +11,7 @@
   .item {
     float: left;
     margin-right: 12px;
-    color: #2C3E50;
+    color: #626567;
     @media #{$phone} {
       float: none;
     }
@@ -20,14 +20,14 @@
     }
     .icon {
       height: 12px;
-      line-height: 19px;
       padding-right: 5px;
       @media #{$phone} {
         position: absolute;
       }
       svg {
-        margin-top: 6px;
-        width: 12px;
+        margin-top: 7px;
+        width: 11px;
+        fill: #626567;
       }
     }
     .text {

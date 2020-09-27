@@ -21,11 +21,7 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
     } = this.props
 
     return (
-      <div id='announcement-show-tile-features'>
-        {itemsName == 'features' &&
-        <h3>{this.languageHandler('Zalety', 'Features')}</h3>}
-        {itemsName == 'furnishings' &&
-        <h3>{this.languageHandler('Wyposażenie', 'Furnishings')}</h3>}
+      <div className='announcement-show-tile-features'>
         {
         items && items.map(item => (
         <div

@@ -17,25 +17,6 @@
   width: 100%;
   background: white;
   text-align: left;
-  .close-button {
-    position: absolute;
-    top: 6px;
-    right: 3px;
-    z-index: 3;
-    width: 16px;
-    height: 16px;
-    border: none;
-    line-height: 16px;
-    background: white;
-    svg {
-      fill: #5F6A6A;
-    }
-    &:hover {
-      svg {
-        fill: #BDC3C7;
-      }
-    }
-  }
   &.show {
     padding-bottom: 24px;
     @media #{$phone} {
@@ -61,7 +42,6 @@
     }
   }
   .header-container {
-
     h2 {
       position: relative;
       margin-top: 0;
@@ -108,58 +88,4 @@
     margin-bottom: 4px;
     color: #566573;
   }
-}
-
-#announcement-show {
-  position: relative;
-  width: 640px;
-  margin: 0 auto;
-  padding: 96px 0;
-
-  @media only screen and (max-width: 688px) {
-    width: 100%;
-    padding: 96px 24px;
-  }
-
-  @media #{$phone} {
-    padding: 96px 12px;
-  }
-
-  #showcase {
-    margin: 0 0 0 auto;
-    background: white;
-    padding: 12px;
-    width: 240px;
-    margin-bottom: 24px;
-    .phone-showcase {
-      min-width: 50px;
-      margin-top: 12px;
-      line-height: 24px;
-      height: 24px;
-      .icon {
-        float: left;
-        width: 24px;
-        height: 24px;
-        margin-right: 8px;
-        border-radius: 12px;
-        padding: 6px;
-        background: #28B463;
-        line-height: 12px;
-        color: #FBFCFC;
-        svg {
-          fill: white;
-        }
-      }
-      .text {
-        float: left;
-        u {
-          cursor: pointer;
-          margin-left: 4px;
-        }
-      }
-    }
-    .contact {
-      @extend %contact;
-    }
-  }  
 }

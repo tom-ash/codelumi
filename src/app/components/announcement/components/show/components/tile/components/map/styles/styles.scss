@@ -1,6 +1,6 @@
 @import '../../../../../../../../../styles/themes.scss';
 
-#announcement-show-tile-map {
+.announcement-show-tile-map {
   position: relative;
   margin: 0 24px;
   @media #{$phone} {

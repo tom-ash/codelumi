@@ -24,7 +24,7 @@ class AnnouncementCreateMap extends React.Component {
     if (!(this.props.latitude && this.props.longitude)) return null
 
     return (
-      <div id='announcement-show-tile-map'>
+      <div className='announcement-show-tile-map'>
         <div id='google-map-container'>
           <div id='google-map' />
         </div>

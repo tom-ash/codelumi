@@ -1,7 +1,8 @@
 export const mapStateToProps = (store) => {
   const {
     announcementId,
-    scalableVectorGraphics
+    scalableVectorGraphics,
+    device
   } = store.app
 
   return {
@@ -33,7 +34,8 @@ export const mapStateToProps = (store) => {
     name: store.announcement.show.data.name,
     isMobile: store.app.isMobile,
     showFixedPhone: store.announcement.show.control.showFixedPhone,
-    scalableVectorGraphics
+    scalableVectorGraphics,
+    device
   }
 }
     

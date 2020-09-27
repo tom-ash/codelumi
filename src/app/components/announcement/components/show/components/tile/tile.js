@@ -61,11 +61,13 @@ class AnnouncementTile extends React.Component {
       isMobile,
       scalableVectorGraphics,
       indexFullFarthestScrollTop,
-      index
+      index,
+      device
     } = this.props
 
     const venueShow = venue === 'show'
     const positionFromTop = getPositionFromTop.apply(this)
+    const deviceClasss = device === 'largePc' ? ' large-pc' : ''
 
     if (
       index !== 0 && index !== 1 && index !== 2 &&
@@ -90,7 +92,7 @@ class AnnouncementTile extends React.Component {
     return (
       <div
         ref={this.container}
-        className={`announcement-show-tile small-shadow ${venue}`}
+        className={`announcement-show-tile small-shadow ${venue}${deviceClasss}`}
       >
         {venue === 'map' &&
         <CloseButton

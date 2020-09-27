@@ -1,6 +1,6 @@
 @import '../../../../../../../../../styles/themes.scss';
 
-#announcement-show-tile-primary {
+.announcement-show-tile-primary {
   padding: 24px 24px 24px;
   z-index: 1000;
   @media #{$phone} {

@@ -1,0 +1,111 @@
+@import '../components/tile/styles/styles.scss';
+
+#announcement-show {
+  position: relative;
+  width: 640px;
+  margin: 0 auto;
+  padding: 36px 0 0;
+
+  &.large-pc {
+    width: 1024px;
+    .announcement-show-pictures {
+      width: 768px;
+    }
+    .header-container {
+      position: absolute;
+      width: 256px;
+      top: 0;
+      right: 0;
+      padding: 18px;
+      h2 {
+        position: relative;
+        padding: 0;
+      }
+      .area {
+        position: relative;
+        width: 100%;
+        font-size: 28px;
+        padding-top: 24px;
+      }
+    }
+    
+    .announcement-show-tile-primary {
+      position: absolute;
+      top: 136px;
+      right: 0;
+      width: 256px;
+      padding: 0 18px;
+    }
+
+    .announcement-show-tile-features {
+      padding: 18px 18px 0;
+      font-size: 16px;
+      h3 {
+        font-weight: normal;
+        .item {
+          color: #909497;
+        }
+      }
+    }
+
+    .announcement-show-tile-description {
+      padding: 18px;
+      font-size: 16px;
+      .description {
+        line-height: 26px;
+        color: #626567;
+      }
+    }
+
+    .announcement-show-tile-map {
+      margin: 0;
+    }
+  }
+
+  @media only screen and (max-width: 688px) {
+    width: 100%;
+    padding: 36px 12px;
+  }
+
+  @media #{$phone} {
+    padding: 36px 6px;
+  }
+
+  #showcase {
+    margin: 0 0 0 auto;
+    background: white;
+    padding: 12px;
+    width: 256px;
+    margin-bottom: 24px;
+    .phone-showcase {
+      min-width: 50px;
+      margin-top: 12px;
+      line-height: 24px;
+      height: 24px;
+      .icon {
+        float: left;
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        border-radius: 12px;
+        padding: 6px;
+        background: #28B463;
+        line-height: 12px;
+        color: #FBFCFC;
+        svg {
+          fill: white;
+        }
+      }
+      .text {
+        float: left;
+        u {
+          cursor: pointer;
+          margin-left: 4px;
+        }
+      }
+    }
+    .contact {
+      @extend %contact;
+    }
+  }  
+}

@@ -14,8 +14,7 @@ class AnnouncementShowDescription extends React.Component {
     } = this.props
 
     return (
-      <div id='announcement-show-tile-description'>
-        <h3>{this.languageObjectHandler({ pl: 'Opis', en: 'Description' })}</h3>
+      <div className='announcement-show-tile-description'>
         <div className='description'>
           {this.languageObjectHandler({ pl: descriptionPolish, en: descriptionEnglish })}
         </div>
