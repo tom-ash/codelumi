@@ -58,7 +58,19 @@ class AnnouncementShow extends React.Component {
       descriptionEnglish,
       isMobile,
       scalableVectorGraphics,
-      device
+      device,
+      scripts,
+      loadMap,
+      mapLoaded,
+      loadMarker,
+      latitude,
+      longitude,
+      markerLoaded,
+      mapLoading,
+      changeControl,
+      resetControl,
+      changeData,
+      resetData
     } = this.props
 
     const { phone } = this.state
@@ -123,6 +135,18 @@ class AnnouncementShow extends React.Component {
           isMobile={isMobile}
           scalableVectorGraphics={scalableVectorGraphics}
           device={device}
+          scripts={scripts}
+          loadMap={loadMap}
+          mapLoaded={mapLoaded}
+          loadMarker={loadMarker}
+          latitude={latitude}
+          longitude={longitude}
+          markerLoaded={markerLoaded}
+          mapLoading={mapLoading}
+          changeControl={changeControl}
+          resetControl={resetControl}
+          changeData={changeData}
+          resetData={resetData}
         />
       </div>
     )

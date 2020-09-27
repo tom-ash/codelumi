@@ -2,48 +2,95 @@ export const mapStateToProps = (store) => {
   const {
     announcementId,
     scalableVectorGraphics,
-    device
+    device,
+    isMobile,
+    language,
+    scripts
   } = store.app
+
+  const { 
+    loadMap,
+    mapLoading,
+    mapLoaded,
+    loadMarker,
+    markerLoaded,
+    showFixedPhone
+  } = store.announcement.show.control
+
+  const { 
+    mapLatitude: latitude,
+    mapLongitude: longitude,
+    phone,
+    id,
+    category,
+    district,
+    rentCurrency,
+    netRentAmount,
+    netRentAmountPerSqm,
+    grossRentAmount,
+    grossRentAmountPerSqm,
+    area,
+    rooms,
+    floor,
+    totalFloors,
+    availabilityDate,
+    pictures,
+    pictureIndex,
+    features,
+    furnishings,
+    descriptionPolish,
+    descriptionEnglish,
+    name
+  } = store.announcement.show.data
 
   return {
     announcementId,
-    language: store.app.language,
-    phone: store.announcement.show.data.phone,
-    id: store.announcement.show.data.id,
-    category: store.announcement.show.data.category,
-    district: store.announcement.show.data.district,
-    rentCurrency: store.announcement.show.data.rentCurrency,
-    netRentAmount: store.announcement.show.data.netRentAmount,
-    netRentAmountPerSqm: store.announcement.show.data.netRentAmountPerSqm,
-    grossRentAmount: store.announcement.show.data.grossRentAmount,
-    grossRentAmountPerSqm: store.announcement.show.data.grossRentAmountPerSqm,
-    area: store.announcement.show.data.area,
-    rooms: store.announcement.show.data.rooms,
-    floor: store.announcement.show.data.floor,
-    totalFloors: store.announcement.show.data.totalFloors,
-    availabilityDate: store.announcement.show.data.availabilityDate,
-    pictures: store.announcement.show.data.pictures,
-    pictureIndex: store.announcement.show.data.pictureIndex,
-    features: store.announcement.show.data.features,
-    furnishings: store.announcement.show.data.furnishings,
-    descriptionPolish: store.announcement.show.data.descriptionPolish,
-    descriptionEnglish: store.announcement.show.data.descriptionEnglish,
-    mapLatitude: store.announcement.show.data.mapLatitude,
-    mapLongitude: store.announcement.show.data.mapLongitude,
+    language,
+    phone,
+    id,
+    category,
+    district,
+    rentCurrency,
+    netRentAmount,
+    netRentAmountPerSqm,
+    grossRentAmount,
+    grossRentAmountPerSqm,
+    area,
+    rooms,
+    floor,
+    totalFloors,
+    availabilityDate,
+    pictures,
+    pictureIndex,
+    features,
+    furnishings,
+    descriptionPolish,
+    descriptionEnglish,
     venue: 'show',
-    name: store.announcement.show.data.name,
-    isMobile: store.app.isMobile,
-    showFixedPhone: store.announcement.show.control.showFixedPhone,
+    name,
+    showFixedPhone,
     scalableVectorGraphics,
-    device
+    device,
+    isMobile,
+    language,
+    scripts,
+    loadMap,
+    mapLoaded,
+    loadMarker,
+    latitude,
+    longitude,
+    markerLoaded,
+    mapLoading
   }
 }
     
 export const mapDispatchToProps = (dispatch) => {
   return {
     changeApp: value => dispatch({ type: 'app', value: value}),
+    changeControl: value => dispatch({ type: 'announcement/show/control', value }),
+    resetControl: value => dispatch({ type: 'announcement/show/control/reset', value }),
     changeData: value => dispatch({ type: 'announcement/show/data', value }),
-    changeControl: value => dispatch({ type: 'announcement/show/control', value })
+    resetData: value => dispatch({ type: 'announcement/show/data/reset', value }),
   }
 }
     

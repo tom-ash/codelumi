@@ -62,7 +62,19 @@ class AnnouncementTile extends React.Component {
       scalableVectorGraphics,
       indexFullFarthestScrollTop,
       index,
-      device
+      device,
+      scripts,
+      loadMap,
+      mapLoaded,
+      loadMarker,
+      latitude,
+      longitude,
+      markerLoaded,
+      mapLoading,
+      changeControl,
+      resetControl,
+      changeData,
+      resetData
     } = this.props
 
     const venueShow = venue === 'show'
@@ -188,7 +200,20 @@ class AnnouncementTile extends React.Component {
             descriptionEnglish={descriptionEnglish}
           />}
           <div className='float-clear' />
-          <AnnouncementShowMap />
+          <AnnouncementShowMap
+            scripts={scripts}
+            loadMap={loadMap}
+            mapLoaded={mapLoaded}
+            loadMarker={loadMarker}
+            latitude={latitude}
+            longitude={longitude}
+            markerLoaded={markerLoaded}
+            mapLoading={mapLoading}
+            changeControl={changeControl}
+            resetControl={resetControl}
+            changeData={changeData}
+            resetData={resetData}
+          />
         </React.Fragment>}
         {control}
       </div>
