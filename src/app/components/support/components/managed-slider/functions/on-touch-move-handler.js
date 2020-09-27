@@ -5,7 +5,7 @@ export function onTouchMoveHandler(e) {
   
   if (disableSLides) return
 
-  e.preventDefault()
+  // e.preventDefault()
 
   if (this.state.clientX === null) {
     this.setState({ clientX: e.touches[0].clientX })
