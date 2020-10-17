@@ -20,10 +20,27 @@ export function sendAnnouncementCreateResponse({
   const openGraph = openGraphProvider({
     title,
     description,
-    image: "https://warsawlease.s3.eu-central-1.amazonaws.com/assets/warsawlease.pl-darmowe-ogloszenia-nieruchomosci-wynajem-warszawa.png",
     imageWidth: "1200",
     imageHeight: "630"
   })
+
+  const keywords = {
+    pl: 'ogłoszenie, wynajem, nieruchomości, dodaj, bezpłatne, za darmo',
+    en: 'announcement, lease, real estate, add, free'
+  }[language]
+
+  const schemaOrg = `
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org", 
+        "@type": "WebPage",
+        "name": "${title}",
+        "description": "${description}",
+        "keywords": "${keywords}",
+        "inLanguage": "${language}"
+      }
+    </script>
+  `
   
   fetch(`${API_URL}/posts/announcementCreateEditorial`, {
     headers: {
@@ -58,7 +75,8 @@ export function sendAnnouncementCreateResponse({
       title,
       description,
       url,
-      openGraph
+      openGraph,
+      schemaOrg
     })
   })
 }
