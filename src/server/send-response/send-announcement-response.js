@@ -37,14 +37,33 @@ export function sendAnnouncementResponse({
     clientParams.id = json.id
 
     const title = provideTitle({ ...clientParams, language })
+    const image = `${AWS_S3_URL}/announcements/${clientParams.id}/${clientParams.pictures[0].database}`
+    const description = { pl: clientParams.descriptionPolish, en: clientParams.descriptionEnglish }[language]
+    const keywords = {
+      pl: 'nieruchomość, wynajem',
+      en: 'real estate, lease'
+    }[language]
 
     const openGraph = `
       <meta property="og:type" content="website" />
       <meta property="og:title" content="${title}" />
-      <meta property="og:description" content="${{ pl: clientParams.descriptionPolish, en: clientParams.descriptionEnglish }[language]}" />
-      <meta property="og:image" content="${`${AWS_S3_URL}/announcements/${clientParams.id}/${clientParams.pictures[0].database}`}" />
+      <meta property="og:description" content="${description}" />
+      <meta property="og:image" content="${image}" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="675" />
+    `
+
+    const schemaOrg = `
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org", 
+          "@type": "RealEstateListing",
+          "image": "${image}",
+          "description": "${description}",
+          "keywords": "${keywords}",
+          "inLanguage": "${language}"
+        }
+      </script>
     `
 
     const announcementUrl = buildLink({
@@ -79,7 +98,8 @@ export function sendAnnouncementResponse({
       title,
       description: title,
       announcementUrl,
-      openGraph
+      openGraph,
+      schemaOrg
     })
   })
   .catch(() => res.status(404).send('404'))

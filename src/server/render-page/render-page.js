@@ -8,7 +8,8 @@ export function renderPage({
   url,
   announcementUrl,
   noIndex,
-  openGraph
+  openGraph,
+  schemaOrg
 }) {
 
   const canonical = announcementUrl ? announcementUrl : `${CLIENT_URL}/${url}`
@@ -27,6 +28,7 @@ export function renderPage({
         <style type="text/css">${[...css].join('')}</style>
       </head>
       <body>
+        ${schemaOrg || ''}
         ${html}
         <script>
           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}

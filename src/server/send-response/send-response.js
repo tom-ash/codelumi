@@ -10,6 +10,7 @@ export function sendResponse({
   announcementUrl,
   noIndex,
   openGraph,
+  schemaOrg,
   status
 }) {
   res.status(status || 200).send(
@@ -20,7 +21,8 @@ export function sendResponse({
       url,
       announcementUrl,
       noIndex,
-      openGraph
+      openGraph,
+      schemaOrg
     }) 
   )
 }
