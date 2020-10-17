@@ -1,8 +1,8 @@
 const fetch = require("node-fetch")
-import { appState } from '../../app/constants/app-state'
-import { openGraphProvider } from '../../shared/functions/providers/open-graph-provider'
-import { sendResponse } from './send-response'
-import { parseScalableVectorGraphics } from '../../shared/functions/parsers/parse-scalable-vector-graphics'
+import { appState } from '../../../app/constants/app-state'
+import { openGraphProvider } from '../../../shared/functions/providers/open-graph-provider'
+import { sendResponse } from '../send-response'
+import { parseScalableVectorGraphics } from '../../../shared/functions/parsers/parse-scalable-vector-graphics'
 
 export function sendAnnouncementCreateResponse({
   res,

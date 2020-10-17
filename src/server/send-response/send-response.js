@@ -1,5 +1,5 @@
 import { renderPage } from '../render-page/render-page'
-import { renderAppAsHtml } from '../render-app-as-html/render-app-as-html'
+import { renderApp } from '../render-app/render-app'
 
 export function sendResponse({
   res,
@@ -16,7 +16,7 @@ export function sendResponse({
 }) {
   res.status(status || 200).send(
     renderPage({ 
-      ...renderAppAsHtml(initialState),
+      ...renderApp(initialState),
       title,
       description,
       url,

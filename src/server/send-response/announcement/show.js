@@ -1,11 +1,11 @@
 const fetch = require("node-fetch")
-import { sendResponse } from './send-response'
-import { showClientServerParams } from '../../app/components/announcement/constants/client-server-params'
-import { provideTitle } from '../../shared/functions/providers/provide-title'
-import { appState } from '../../app/constants/app-state'
-import { data } from '../../app/components/announcement/components/show/constants/state'
-import { buildLink } from '../../app/components/announcement/functions/build-link'
-import { parseScalableVectorGraphics } from '../../shared/functions/parsers/parse-scalable-vector-graphics'
+import { sendResponse } from '../send-response'
+import { showClientServerParams } from '../../../app/components/announcement/constants/client-server-params'
+import { provideTitle } from '../../../shared/functions/providers/provide-title'
+import { appState } from '../../../app/constants/app-state'
+import { data } from '../../../app/components/announcement/components/show/constants/state'
+import { buildLink } from '../../../app/components/announcement/functions/build-link'
+import { parseScalableVectorGraphics } from '../../../shared/functions/parsers/parse-scalable-vector-graphics'
 
 export function sendAnnouncementResponse({
   res,

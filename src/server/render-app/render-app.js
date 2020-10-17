@@ -11,7 +11,7 @@ import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server'
 const statsFile = path.resolve('./dist/client/loadable-stats.json')
 const extractor = new ChunkExtractor({ statsFile, entrypoints: ['index'] })
 
-export function renderAppAsHtml(initialState) {
+export function renderApp(initialState) {
   const css = new Set()
   const insertCss = (...styles) => styles.forEach(style => css.add(style._getCss()))
   const store = createStore(rootReducer, initialState)
