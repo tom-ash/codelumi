@@ -38,10 +38,27 @@ export function sendAnnouncementsMapResponse({
     const openGraph = openGraphProvider({
       title,
       description,
-      image: "https://warsawlease.s3.eu-central-1.amazonaws.com/assets/warsawlease.pl-darmowe-ogloszenia-nieruchomosci-wynajem-warszawa.png",
       imageWidth: "1200",
       imageHeight: "630"
     })
+
+    const keywords = {
+      pl: 'mapa, warszawa, nieruchomość, nieruchomości, wynajem, najem, wynajęcie, mieszkania, lokale użytkowe, biura, mieszkanie, lokal użytkowy, biuro, ogłoszenia, ogłoszenie',
+      en: 'map, warsaw, real estate, real estates, lease, apartments, usable premises, offices, apartment, office, announcements, announcement'
+    }[language]
+
+    const schemaOrg = `
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org", 
+          "@type": "WebPage",
+          "name": "warsawlease.pl",
+          "description": "${description}",
+          "keywords": "${keywords}",
+          "inLanguage": "${language}"
+        }
+      </script>
+    `
 
     sendResponse({
       res,
@@ -76,7 +93,8 @@ export function sendAnnouncementsMapResponse({
       title,
       description,
       url,
-      openGraph
+      openGraph,
+      schemaOrg
     })
   })
 }

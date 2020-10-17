@@ -40,12 +40,29 @@ export function sendAnnouncementsListResponse({
       imageHeight: "630"
     })
 
+    const keywords = {
+      pl: 'katalog, warszawa, nieruchomość, nieruchomości, wynajem, najem, wynajęcie, mieszkania, lokale użytkowe, biura, mieszkanie, lokal użytkowy, biuro, ogłoszenia, ogłoszenie',
+      en: 'catalogue, warsaw, real estate, real estates, lease, apartments, usable premises, offices, apartment, office, announcements, announcement'
+    }[language]
+
+    const schemaOrg = `
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org", 
+          "@type": "WebPage",
+          "name": "warsawlease.pl",
+          "description": "${description}",
+          "keywords": "${keywords}",
+          "inLanguage": "${language}"
+        }
+      </script>
+    `
+
     sendResponse({
       res,
       initialState: {
         app: {
           ...appState,
-          // showAnnouncementIndexMap: false,
           showAnnouncementIndexCatalogue: true,
           language,
           device,
@@ -65,7 +82,8 @@ export function sendAnnouncementsListResponse({
       title,
       description,
       url,
-      openGraph
+      openGraph,
+      schemaOrg
     })
   })
 }
