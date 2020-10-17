@@ -11,7 +11,8 @@ export function sendResponse({
   noIndex,
   openGraph,
   schemaOrg,
-  status
+  status,
+  language
 }) {
   res.status(status || 200).send(
     renderPage({ 
@@ -22,7 +23,8 @@ export function sendResponse({
       announcementUrl,
       noIndex,
       openGraph,
-      schemaOrg
+      schemaOrg,
+      language
     }) 
   )
 }

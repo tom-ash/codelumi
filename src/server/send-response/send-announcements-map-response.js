@@ -94,7 +94,8 @@ export function sendAnnouncementsMapResponse({
       description,
       url,
       openGraph,
-      schemaOrg
+      schemaOrg,
+      language
     })
   })
 }

@@ -99,7 +99,8 @@ export function sendAnnouncementResponse({
       description: title,
       announcementUrl,
       openGraph,
-      schemaOrg
+      schemaOrg,
+      language
     })
   })
   .catch(() => res.status(404).send('404'))

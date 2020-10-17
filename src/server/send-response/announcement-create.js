@@ -76,7 +76,8 @@ export function sendAnnouncementCreateResponse({
       description,
       url,
       openGraph,
-      schemaOrg
+      schemaOrg,
+      language
     })
   })
 }

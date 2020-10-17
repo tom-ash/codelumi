@@ -83,7 +83,8 @@ export function sendAnnouncementsListResponse({
       description,
       url,
       openGraph,
-      schemaOrg
+      schemaOrg,
+      language
     })
   })
 }

@@ -9,14 +9,15 @@ export function renderPage({
   announcementUrl,
   noIndex,
   openGraph,
-  schemaOrg
+  schemaOrg,
+  language
 }) {
 
   const canonical = announcementUrl ? announcementUrl : `${CLIENT_URL}/${url}`
 
   return `
     <!doctype html>
-    <html>
+    <html lang="${language}">
       <head>
         ${noIndex ? '<meta name="robots" content="noindex">' : ''}
         ${openGraph ? openGraph : ''}
