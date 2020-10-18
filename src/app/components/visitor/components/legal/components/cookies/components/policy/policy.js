@@ -20,7 +20,7 @@ class VisitorCookiesPolicy extends React.Component {
           className='container__legal'
           onClick={e => e.stopPropagation()}
         >
-          <h1>
+          <h1 className='page-header'>
             {this.languageObjectHandler({ pl: 'Polityka Cookies', en: 'Cookies Policy' })}
           </h1>
           <div className='cookies-policy'>

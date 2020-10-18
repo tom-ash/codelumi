@@ -22,7 +22,7 @@ class VisitorContact extends React.Component {
           className='container'
           onClick={e => e.stopPropagation()}
         >
-          <h1>
+          <h1 className='page-header'>
             {this.languageObjectHandler({ pl: 'Kontakt', en: 'Contact' })}
           </h1>
           <div className='company'>

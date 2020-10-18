@@ -6,14 +6,20 @@
   }
   .form-input {
     &.email {
-      margin-bottom: 12px;
       .error-container {
         display: none;
       }
     }
+    &.password {
+      margin-bottom: 36px;
+      .error-container {
+        padding-top: 12px;
+        font-size: 13px;
+      }
+    }
   }
   .separation-line {
-    margin: 24px 0;
+    margin: 36px 0;
   }
   .submit {
     .checkbox {

@@ -38,7 +38,7 @@ export function passwordManager() {
     autoComplete: 'current-password',
     type: 'password',
     controlled: false,
-    classNames: { container: 'form-input text'},
+    classNames: { container: 'form-input text password'},
     label: this.languageObjectHandler(label),
     children: <i className='fas fa-pen' />,
     onChange: () => this.props.changeErrors({ emailOrPassword: noError, email: noError }),

@@ -28,7 +28,7 @@ class VisitorPrivacySettings extends React.Component {
           className='container__legal'
           onClick={e => e.stopPropagation()}
         >
-          <h1>
+          <h1 className='page-header'>
             {this.languageObjectHandler({ pl: 'Ustawienia prywatności', en: 'Privacy Settings' })}
           </h1>
           <div className='text'>

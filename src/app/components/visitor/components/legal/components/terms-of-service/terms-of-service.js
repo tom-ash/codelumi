@@ -23,7 +23,7 @@ class VisitorTermsOfService extends React.Component {
           className='container__legal'
           onClick={e => e.stopPropagation()}
         >
-          <h1>
+          <h1 className='page-header'>
             {this.languageObjectHandler({ pl: 'Regulamin', en: 'Terms Of Service' })}
           </h1>
           <div className='terms-of-service'>
