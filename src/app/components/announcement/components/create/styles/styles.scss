@@ -16,7 +16,7 @@
 #announcement-create {
   box-shadow: none;
   max-width: 768px;
-  margin: 72px auto 0;
+  margin: 24px auto 0;
   $border-color: #E5E7E9;
   border: 1px solid #D0D3D4;
   background: white;
@@ -50,7 +50,7 @@
     margin: 18px auto;
   }
   @media #{$small-tablet} {
-    padding: 46px 0 6px;
+    padding: 6px 0 6px;
     margin: 0 auto;
   }
   .required-inputs {
@@ -150,11 +150,11 @@
     }
   }
   h2 {
-    margin-top: 24px;
     margin-bottom: 24px;
     color: #3498DB;
     font-size: 15px;
     &.optional {
+      margin-top: 24px;
       color: #229954;
     }
   }
@@ -220,6 +220,7 @@
     }
   }
   .add-announcement-button-container {
+    padding: 0 18px;
     .new-form-input {
       &.button {
         margin: 24px auto;
