@@ -151,22 +151,11 @@
   }
   h2 {
     margin-top: 24px;
+    margin-bottom: 24px;
     color: #3498DB;
-    text-align: justify;
     font-size: 15px;
     &.optional {
       color: #229954;
-    }
-    .number {
-      float: left;
-      line-height: 18px;
-      font-size: 12px;
-      height: 19px;
-      width: 19px;
-      text-align: center;
-      border-radius: 12px;
-      border: 1px solid #566573;
-      margin-right: 6px;
     }
   }
 
@@ -189,19 +178,6 @@
     text-align: justify;
     line-height: 18px;
     color: #566573;
-    .fas {
-      display: none;
-      position: absolute;
-      left: 0;
-      margin-right: 8px;
-      font-size: 14px;
-    }
-  }
-  .section-header {
-    color: #1B2631;
-    &.additional-data {
-      margin-top: 32px;
-    }
   }
   .monit {
     margin-bottom: 24px;
