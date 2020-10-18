@@ -101,9 +101,7 @@
   }
   .account-data {
     background: white;
-    .title {
-      padding-top: 24px;
-    }
+    padding: 18px 18px 0;
   }
   .input-explanation {
     position: relative;
@@ -188,19 +186,6 @@
     font-size: 14px;
   }
   .form-input {
-    &.radio {
-      &.checked {
-        background: #21618C;
-      }
-      &.hover {
-        box-shadow: 0 0 0 2px #21618C;
-      }
-      .input {
-        .tick {
-          background: #21618C;
-        }
-      }
-    }
     &.text, &.select {
       $border-color: #AEB6BF;
       .input {
@@ -274,5 +259,7 @@
   }
 
 
-
+  .separation-line {
+    margin-bottom: 18px;
+  }
 }

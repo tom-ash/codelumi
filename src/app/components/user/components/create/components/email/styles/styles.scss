@@ -1,16 +1,6 @@
 #user-create-email {
   position: relative;
   overflow-y: hidden;
-  .fa-user-alt {
-    position: absolute;
-    right: 55px;
-    font-size: 150px;
-    height: 150px;
-    top: 0;
-    bottom: 91px;
-    margin: auto;
-    color: #F7F9F9;
-  }
   .form-input {
     &.text, &.select {
       padding-bottom: 44px;
@@ -24,5 +14,8 @@
       font-size: 14px;
       margin-bottom: 8px;
     }
+  }
+  .separation-line {
+    margin-top: 24px;
   }
 }

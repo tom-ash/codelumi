@@ -40,6 +40,9 @@ class UserCreateEmailInputs extends React.Component {
 
     return (
       <div className='user-create-email-inputs-container'>
+        <h2>
+          {this.languageObjectHandler({ pl: 'Dane konta', en: 'Account  data' })}
+        </h2>
         <div className='radio-container'>
           <div className='title'>
             {this.languageObjectHandler({ pl: 'Rodzaj konta', en: 'Account Type' })}
@@ -49,8 +52,14 @@ class UserCreateEmailInputs extends React.Component {
         <div className='gap' />
         <ManagedText {...this.emailAddressManager()}/>
         <ManagedText {...this.passwordManager()}/>
-        <div className='input-explanation'>
-          Imię oraz numer telefonu będą służyły jako dane kontaktowe przy Twoich ogłoszeniach.
+        <h2>
+          {this.languageObjectHandler({ pl: 'Dane kontaktowe', en: 'Contact  data' })}
+        </h2>
+        <div className='input-explanation-user'>
+          {this.languageObjectHandler({
+            pl: 'Imię oraz numer telefonu będą służyły jako dane kontaktowe przy Twoich ogłoszeniach.',
+            en: 'The name and phone number shall be used as a contact data with your announcements.'
+          })}
         </div>
         <ManagedText {...this.firstNameManager()}/>
         <ManagedText {...this.businessNameManager()}/>

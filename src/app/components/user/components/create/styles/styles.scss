@@ -13,22 +13,29 @@
 @import '../../../../../styles/inputs/form/button.scss';
 
 #user-create-container {
-  margin: 70px auto 0;
-  padding: 0 !important;
+  margin: 24px auto 0;
   max-width: 640px;
   border: 1px solid #D0D3D4;
+  @media #{$small-tablet} {
+    margin: 0 auto;
+  }
   h1 {
     font-size: 16px;
     color: #566573;
-    margin: 0;
-    padding: 18px;
+    margin-bottom: 12px;
   }
   .create-points {
-    padding-bottom: 60px;
-  }
-  .input-explanation {
-    color: #424949;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    padding: 0 0 60px 0;
+    .line {
+      margin: 0;
+    }
+    .point {
+      &.first {
+        left: 0;
+      }
+      &.last {
+        right: 0;
+      }
+    }
   }
 }
