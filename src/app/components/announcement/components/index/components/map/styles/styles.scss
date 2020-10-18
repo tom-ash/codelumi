@@ -99,16 +99,18 @@
     margin-bottom: 4px;
     min-height: 200px;
     @media #{$tablet} {
-      min-height: auto;
+      min-height: 204.8px;
       position: relative;
       margin-right: 4px;
       display: inline-block;
       width: 320px;
       @media #{$phone} {
-        width: 240px;
+        min-height: 179px;
+        width: 280px;
       }
     }
     .category-and-location {
+      z-index: 2;
       position: absolute;
       top: 0;
       padding: 4px;
@@ -118,6 +120,7 @@
       font-size: 14px;
     }
     .data {
+      z-index: 2;
       position: absolute;
       right: 0;
       bottom: 0;
