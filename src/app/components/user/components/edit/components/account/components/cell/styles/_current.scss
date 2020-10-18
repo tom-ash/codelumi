@@ -11,29 +11,6 @@
     padding-left: 8px;
     background: #EBF5FB;
     color: $primary-icon-color;
-    .fas {
-      font-size: 26px;
-      margin-top: 2px;
-      &.fa-user-edit {
-        margin-left: 2px;
-      }
-      &.fa-mobile {
-        font-size: 32px;
-        margin-left: 8px;
-      }
-      &.fa-file-alt {
-        margin-left: 8px;
-      }
-      &.fa-envelope {
-        margin-left: 3px;
-      }
-      &.fa-key {
-        margin-left: 4px;
-      }
-      &.fa-user {
-        margin-left: 8px;
-      }
-    }
   }
   .text {
     position: relative;
