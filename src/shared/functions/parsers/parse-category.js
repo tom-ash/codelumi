@@ -1,8 +1,5 @@
-export function parseCategory(categoryNumber) {
-  switch (categoryNumber) {
-    case 0: return { pl: 'Biuro', en: 'Office' }
-    case 1: return { pl: 'Lokal użytkowy', en: 'Usable Premises' }
-    case 2: return { pl: 'Mieszkanie', en: 'Apartment' }
-    default: break
-  }
+import { categories } from  '../../../app/components/announcement/constants/categories'
+
+export function parseCategory({ categoryNumber, language }) {
+  return categories.find(category => category.number === categoryNumber).label[language]
 }

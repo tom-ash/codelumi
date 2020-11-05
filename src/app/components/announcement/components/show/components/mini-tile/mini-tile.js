@@ -106,7 +106,7 @@ const AnnouncementShowMiniTile = ({
         disableSLides
       />
       <div className='category-and-location'>
-        {parseCategory(category)[language]}, {parseDistrict(district)}
+        {parseCategory({ categoryNumber: category, language })}, {parseDistrict(district)}
       </div>
       <div className='data'>
         <AreaPresenter

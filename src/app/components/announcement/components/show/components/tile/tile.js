@@ -5,7 +5,7 @@ import AnnouncementShowFeaturesFurnishings from './components/features-furnishin
 import AnnouncementShowDescription from './components/description/description'
 import AnnouncementShowMap from './components/map/map'
 import { languageObjectHandler } from '../../../../../../functions/language-handler'
-import { parseCategory } from '../../../../functions/category-parsers'
+import { parseCategory } from '../../../../../../../shared/functions/parsers/parse-category'
 import { parseDistrict } from '../../../../functions/district-parsers'
 import { CloseButton } from '../../../../../support/components/close-button/close-button'
 import { phoneSwitchProvider } from '../../../../functions/phone-switch-provider'
@@ -25,7 +25,6 @@ class AnnouncementTile extends React.Component {
     super(props)
     this.container = React.createRef()
     this.languageObjectHandler = languageObjectHandler.bind(this)
-    this.parseCategory = parseCategory.bind(this)
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
     this.togglePhone = togglePhone.bind(this)
     this.state = {
@@ -115,7 +114,7 @@ class AnnouncementTile extends React.Component {
         <div className='header-container'>
           <h2>
             <div className='header-row category'>
-              <span>{category !== null && this.parseCategory(category)}</span>
+              <span>{category !== null && parseCategory({ categoryNumber: category, language })}</span>
               &nbsp;
               <span className='for-lease'>{this.languageObjectHandler({ pl: 'na wynajem', en: 'for lease' })}</span>
             </div>

@@ -70,43 +70,25 @@ function addNewPins() {
 
   let pins = []
   announcements.map(announcement => {
-
     const {
       id,
-      category,
+      category: categoryNumber,
       district
     } = announcement
-
     const { language } = this.props
-
-    const pathDataKey = [
-      'officeIcon',
-      'usablePremisesIcon',
-      'apartmentIcon'
-    ]
-
-    const classes = [
-      'office',
-      'usable-premises',
-      'apartment'
-    ]
-
-    const colors = [
-      '#3498DB',
-      '#D35400',
-      '#1E8449'
-    ]
+    const category = categories.find(category => category.number === categoryNumber)
+    const pin = category.pin
 
     const htmlContent = (
-      `<a href="${buildLink({ id, category, district, language })}">
-        <div class='icon ${classes[category]}'>
+      `<a href="${buildLink({ id, category: categoryNumber, district, language })}">
+        <div class='icon ${pin.class}'>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 640 512"
           >
             <path
-              style="fill:${colors[category]};"
-              d="${scalableVectorGraphics[pathDataKey[category]]}"
+              style="fill:${pin.color};"
+              d="${scalableVectorGraphics[pin.svg]}"
             />
           </svg>
         </div>
@@ -121,7 +103,6 @@ function addNewPins() {
       {
         pinId: `${announcement.id}`,
         htmlContent,
-        className: `pin ${categories[announcement.category].pinClassName}`,
         onClick: e => {
           e.preventDefault()
           const { id } = announcement
@@ -143,4 +124,3 @@ function addNewPins() {
   )})
   changeData({ pins })
 }
-
