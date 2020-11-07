@@ -14,9 +14,11 @@ export function rentAmountManager() {
 
   let label = this.languageObjectHandler(text)
 
-  if (category === 0 || category === 1) label = this.languageObjectHandler({ pl: 'Miesięczna cena netto', en: 'Monthly Net Price'})
-  
-  const rentAmountType = category === 2 ? 'grossRentAmount' : 'netRentAmount'
+  const rentAmountType = [0, 1, 6, 7].indexOf(category) !== -1 ? 'netRentAmount' : 'grossRentAmount'
+
+  if(rentAmountType === 'netRentAmount') {
+    label = this.languageObjectHandler({ pl: 'Miesięczna cena netto', en: 'Monthly Net Price'})
+  }
 
   return {
     classNames: { container: 'form-input text rent-amount' },

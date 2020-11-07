@@ -2,7 +2,7 @@ import { apiUrl } from '../../../../../constants/urls'
 
 export function getRentAmounts() {
   const { category, area, netRentAmount, changeData } = this.props
-  if (!area || !netRentAmount || category === 2) return
+  if (!area || !netRentAmount) return
 
   const params = `?area=${area}&category=${category}&netRentAmount=${netRentAmount}`
   fetch(`${apiUrl}/calculate_rent_amounts${params}`, {
