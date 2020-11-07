@@ -19,8 +19,11 @@ class AnnouncementCreateFurnishings extends React.Component {
 
   render() {
     const {
+      category,
       addFurnishings
     } = this.props
+
+    if ([0, 1, 2].indexOf(category) === -1) return null
 
     return (
       <div id='announcement-create-furnishings'>
