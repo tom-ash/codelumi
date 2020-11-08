@@ -9,17 +9,4 @@
   text-align: left;
   max-width: 1214px;
   background: none;
-  @media #{$small-pc} {
-    max-width: 456px;
-    .simple-index-input.select {
-      margin-right: 0;
-      &.category, &.district, &.area, &.rent {
-        right: 0;
-        left: 0;
-      }
-    }
-    .composite-input-container {
-      left: 0 !important;
-    }
-  }
 }

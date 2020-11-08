@@ -7,6 +7,7 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageObjectHandler } from '../../../../../../functions/language-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import AnnouncementIndexPanelCategories from './components/categories/categories'
 
 class AnnouncementIndexPanel extends React.Component {
   constructor(props) {
@@ -16,13 +17,24 @@ class AnnouncementIndexPanel extends React.Component {
 
   render() {
     const {
+      currentCategory,
       showMap,
       showList,
-      showCatalogue
+      showCatalogue,
+      scalableVectorGraphics,
+      changeInputs,
+      changeControl
     } = this.props
 
     return (
       <div id='announcement-index-panel'>
+        <AnnouncementIndexPanelCategories
+          languageObjectHandler={this.languageObjectHandler}
+          scalableVectorGraphics={scalableVectorGraphics}
+          changeInputs={changeInputs}
+          changeControl={changeControl}
+          currentCategory={currentCategory}
+        />
         {(showMap || showCatalogue) && <AnnouncementIndexPanelVisitor />}
         {showList && <AnnouncementIndexPanelUser />}
       </div>

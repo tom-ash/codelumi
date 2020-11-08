@@ -6,8 +6,13 @@ export const mapStateToProps = (store) => {
     device,
     showAnnouncementIndexMap: showMap,
     showAnnouncementIndexList: showList,
-    showAnnouncementIndexCatalogue: showCatalogue
+    showAnnouncementIndexCatalogue: showCatalogue,
+    scalableVectorGraphics,
   } = store.app
+
+  const {
+    category: currentCategory
+  } = store.announcement.index.inputs
 
   return {
     language,
@@ -16,12 +21,15 @@ export const mapStateToProps = (store) => {
     device,
     showMap,
     showList,
-    showCatalogue
+    showCatalogue,
+    scalableVectorGraphics,
+    currentCategory
   }
 }
     
 export const mapDispatchToProps = (dispatch) => {
   return {
+    changeInputs: value => dispatch({ type: 'announcement/index/inputs', value }),
     changeControl: value => dispatch({ type: 'announcement/index/control', value })
   }
 }

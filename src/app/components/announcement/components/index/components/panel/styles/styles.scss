@@ -8,4 +8,36 @@
     padding-right: 10px;
     height: 240px;
   }
+
+  .categories {
+    max-width: 1214px;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    background: white;
+    border: 1px solid lightgray;
+    padding: 14px 0 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    overflow: scroll;
+    .category {
+      position: relative;
+      cursor: pointer;
+      padding-left: 38px;
+      white-space: nowrap;
+      margin-right: 16px;
+      color: #909497;
+      svg {
+        position: absolute;
+        left: 0;
+        height: 18px;
+        width: 36px;
+        transform: translate(1px, -2px);
+        margin-right: 6px;
+      }
+      &.active {
+        color: #4D5656;
+      }
+    }
+  }
 }

@@ -53,24 +53,7 @@ class AnnouncementIndexPanelVisitor extends React.Component {
   render() {
     return (
       <div id='announcement-index-panel-visitor'>
-        <form>
-          <div className='pane primary'>
-            <ManagedSelect {...this.categoryManager()} />
-            {this.compositeInputProvider('area')}
-            <ManagedSelect {...this.districtManager()}/>
-            {this.compositeInputProvider('rent')}
-            <div className='float-clear' />
-          </div>
-          <ManagedLink {...this.buttonManager()}/>
-          <div className='pane secondary'>
-            {this.compositeInputProvider('rooms')}
-            {this.compositeInputProvider('floor')}
-            {this.compositeInputProvider('totalFloors')}
-            <ManagedSelect {...this.availabilityDateManager()}/>
-            <div className='float-clear' />
-          </div>
-          <div className='float-clear' />
-        </form>
+        <ManagedLink {...this.buttonManager()}/>
       </div>
     )
   }

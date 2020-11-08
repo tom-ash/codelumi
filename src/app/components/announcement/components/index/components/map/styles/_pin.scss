@@ -19,11 +19,12 @@
     animation: pulse 1s infinite;
   }
 
-  border-radius: 18px;
+  border-radius: 5px!important;
 
   .icon {
     padding: 3px 3px 10px 9px;
     text-align: center;
+    border-radius: 100px!important;
     &.apartment {
       padding: 3px 2px 10px 10px;
     }

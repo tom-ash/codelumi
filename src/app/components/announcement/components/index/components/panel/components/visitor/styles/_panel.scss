@@ -7,72 +7,12 @@
   position: relative;
   margin: 0 auto;
   background: white;
-  @extend %inputs;
-  .pane {
-    float: left;
-    width: 552px;
-    .simple-index-input {
-      &.category {
-        margin-bottom: 10px;
-      }
-    }
-    .composite-input-container {
-      &.area, &.rooms, &.floor {
-        margin-bottom: 10px;
-      }
-    }
-    @media #{$small-pc} {
-      position: relative;
-      float: none;
-      width: 100%;
-      &.primary {
-        .simple-index-input {
-          position: absolute;
-          right: 12px;
-          left: 12px;
-          &.category {
-            top: 0;
-          }
-          &.district {
-            top: 50px;
-          }
-        }
-        .composite-input-container {
-          position: absolute;
-          right: 0;
-          left: 12px;
-          width: auto;
-          &.area {
-            top: 100px;
-          }
-          &.rent {
-            top: 150px;
-          }
-        }
-      }
-      &.secondary {
-        display: none;
-      }
-    }
-  }
+  padding-bottom: 12px;
   .button {
     position: relative;
-    float: left;
-    width: 90px;
-    height: 90px;
-    margin: 0 10px;
+    width: 100%;
+    height: 45px;
     border: none;
-    @media #{$small-pc} {
-      position: absolute;
-      float: none;
-      top: 200px;
-      left: 0;
-      right: 0;
-      width: auto;
-      margin: 0;
-      height: 40px;
-      line-height: 40px;
-    }
     .input {
       text-align: center;
       transition: .2s ease-in-out;
@@ -80,7 +20,7 @@
       width: 100%;
       height: 100%;
       display: block;
-      line-height: 90px;
+      line-height: 45px;
       margin: 0;
       padding: 0;
       border: none;
@@ -91,11 +31,6 @@
       font-size: 16px;
       &.hover {
         background: #EB984E;
-      }
-      @media #{$small-pc} {
-        width: 100%;
-        height: 40px;
-        line-height: 40px;
       }
     }
   }

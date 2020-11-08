@@ -6,12 +6,6 @@
   width: 640px;
   margin: 0 auto;
   padding-bottom: 0 12px 72px;
-
-  @media #{$small-pc} {
-    max-width: 456px;
-    width: 100%;
-    padding: 12px 8px;
-  }
   .announcements {
     min-height: 480px;
     text-align: left;
@@ -19,7 +13,6 @@
       @extend %list-tile;
     }
   }
-
   .delete {
     .cover {
       z-index: 10;

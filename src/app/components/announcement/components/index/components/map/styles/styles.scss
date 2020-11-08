@@ -6,19 +6,12 @@
 #announcement-index-map {
   max-width: 1214px;
   margin: 0 auto;
-  top: 114px;
+  top: 126px;
   position: absolute;  
   right: 0;
   left: 0;
   @media #{$small-pc} {
-    top: 264px;
-  }
-  @media #{$small-tablet} {
-    top: 304px;
-  }
-  @media #{$tablet} {
-    left: 0;
-    right: 0;
+    top: 164px;
   }
   #google-map-container {
     @extend %google-map;
