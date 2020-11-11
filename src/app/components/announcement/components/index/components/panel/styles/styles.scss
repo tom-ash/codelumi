@@ -21,9 +21,14 @@
     font-size: 15px;
     overflow: scroll;
 
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    &::-webkit-scrollbar { /* WebKit */
+    /* Firefox */
+    scrollbar-width: none;
+
+    /* Internet Explorer 10+ */
+    -ms-overflow-style: none;
+    
+    /* WebKit */
+    &::-webkit-scrollbar { 
       width: 0;
       height: 0;
     }
