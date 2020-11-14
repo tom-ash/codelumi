@@ -1,5 +1,6 @@
 import React from 'react'
 import { inputs } from '../../../../../../../constants/inputs'
+import ScalableVectorGraphic from '../../../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 
 export function accountTypeManager() {
   const { changeInputs } = this.props
@@ -36,7 +37,10 @@ export function accountTypeManager() {
 }
 
 export function firstNameManager() {
-  const { accountType } = this.props
+  const {
+    accountType,
+    scalableVectorGraphics
+  } = this.props
   const { icon, label } = inputs.firstName
 
   return {
@@ -46,7 +50,7 @@ export function firstNameManager() {
     controlled: false,
     classNames: { container: 'form-input text'},
     label: this.languageObjectHandler(label),
-    children: <i className='fas fa-pen' />,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onFocus: () => this.errorResetter('firstName'),
     onBlur: value => this.firstNameManager().validate(value),
     validate: value => this.nameValidator('firstName', value),
@@ -54,26 +58,11 @@ export function firstNameManager() {
   }
 }
 
-export function lastNameManager() {
-  const { accountType } = this.props
-  const { icon, label } = inputs.lastName
-
-  return {
-    display: accountType === 'private' ? undefined : 'none',
-    id: 'user-create-email-last-name',
-    autoComplete: 'off',
-    controlled: false,
-    classNames: { container: 'form-input text'},
-    label: this.languageObjectHandler(label),
-    onFocus: () => this.errorResetter('lastName'),
-    onBlur: value => this.lastNameManager().validate(value),
-    validate: value => this.nameValidator('lastName', value),
-    error: this.languageObjectHandler(this.props.lastNameError)
-  }
-}
-
 export function businessNameManager() {
-  const { accountType } = this.props
+  const {
+    accountType,
+    scalableVectorGraphics
+  } = this.props
   const { icon, label } = inputs.businessName
 
   return {
@@ -83,7 +72,7 @@ export function businessNameManager() {
     controlled: false,
     classNames: { container: 'form-input text'},
     label: this.languageObjectHandler(label),
-    children: <i className='fas fa-pen' />,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onFocus: () => this.errorResetter('businessName'),
     onBlur: value => this.businessNameManager().validate(value),
     validate: value => this.nameValidator('businessName', value),
@@ -92,11 +81,15 @@ export function businessNameManager() {
 }
 
 export function areaCodeManager() {
+  const {
+    scalableVectorGraphics
+  } = this.props
+
   return {
     onFocusCoverZIndex: 3001,
     id: 'user-create-email-area-code',
     classNames: { container: 'form-input select phone-country-code'},
-    children: <i className="fas fa-chevron-down" />,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
     value: this.props.phoneCode,
     options: [ { value: '+48', text: '+48' }, { value: '+1', text: '+1' }, { value: '+44', text: '+44' } ],
     onSelect: (option) => this.props.changeInputs({ phoneCode: option.value })
@@ -104,6 +97,10 @@ export function areaCodeManager() {
 }
 
 export function phoneNumberManager() {
+  const {
+    scalableVectorGraphics
+  } = this.props
+
   const {
     icon,
     label
@@ -117,7 +114,7 @@ export function phoneNumberManager() {
     controlled: false,
     classNames: { container: 'form-input text phone-body'},
     label: this.languageObjectHandler(label),
-    children: <i className='fas fa-pen' />,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onFocus: () => this.errorResetter('phone'),
     onBlur: value => this.phoneNumberManager().validate(value),
     validate: value => this.phoneValidator(value),
@@ -126,6 +123,10 @@ export function phoneNumberManager() {
 }
 
 export function emailAddressManager() {
+  const {
+    scalableVectorGraphics
+  } = this.props
+  
   const {
     icon,
     label
@@ -139,7 +140,7 @@ export function emailAddressManager() {
     controlled: false,
     classNames: { container: 'form-input text'},
     label: this.languageObjectHandler(label),
-    children: <i className='fas fa-pen' />,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onFocus: () => this.errorResetter('email'),
     onBlur: value => this.emailAddressManager().validate(value),
     validate: value => this.emailValidator(value),
@@ -148,6 +149,10 @@ export function emailAddressManager() {
 }
 
 export function passwordManager() {
+  const {
+    scalableVectorGraphics
+  } = this.props
+
   const {
     icon,
     label
@@ -161,7 +166,7 @@ export function passwordManager() {
     controlled: false,
     classNames: { container: 'form-input text'},
     label: this.languageObjectHandler(label),
-    children: <i className='fas fa-pen' />,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onFocus: () => this.errorResetter('password'),
     onBlur: value => this.passwordManager().validate(value),
     validate: value => this.passwordValidator(value),

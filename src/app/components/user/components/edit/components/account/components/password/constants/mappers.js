@@ -1,11 +1,16 @@
 export const mapStateToProps = (store) => {
+  const {
+    scalableVectorGraphics
+  } = store.app
+
   return {
     language: store.app.language,
     path: store.app.path,
     connecting: store.user.edit.control.passwordConnecting,
     stage: store.user.edit.control.passwordStage,
     step: store.user.edit.control.passwordStep,
-    error: store.user.edit.errors.password
+    error: store.user.edit.errors.password,
+    scalableVectorGraphics
   }
 }
     

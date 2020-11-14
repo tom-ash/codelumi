@@ -2,31 +2,28 @@
   &.text {
     position: relative;
     background: $color-background;
-    height: 42px;
+    height: 48px;
     margin-bottom: 24px;
+    cursor: pointer;
     input {
       -webkit-appearance: none;
     }
     .input {
       width: 100%;
-      padding-left: 8px;
-      border: 1px solid #AEB6BF;
+      height: 45px;
+      padding-left: 15px;
+      border: 1px solid #4D5656;
       border-radius: 2px;
-      background: $color-background;
-      color: #374049;
+      color: $touched-color;
+      font-size: 15px;
+      transition: .2s ease-in-out;
+      cursor: pointer;
+      &.hover, &.focus {
+        box-shadow: 0 0 0 1px #4D5656;
+      }
       &.error {
         border: 1px solid $primary-error-color;
         color: $primary-error-color;
-      }
-      color: $touched-color;
-      width: 100%;
-      height: 42px;
-      font-size: 16px;
-      padding-left: 12px;
-      transition: .2s ease-in-out;
-      &.hover, &.focus {
-        border-color: #5D6D7E;
-        box-shadow: 0 0 0 1px #5D6D7E;
       }
     }
     .label {
@@ -34,18 +31,17 @@
       position: absolute;
       background: $color-background;
       color: #374049;
-      cursor: pointer;
       background: none;
-      top: 14px;
-      left: 12px;
+      top: 15px;
+      left: 15px;
       font-size: 15px;
       transition: 0.18s;
       text-align: left;
       color: $untached-color;
       padding: 0 2px;
       &.value, &.focus {
-        top: -6px;
-        font-size: 12px;
+        top: -7px;
+        font-size: 13px;
       }
       &.hover {
         color: $form-input-label-hover-color;
@@ -70,6 +66,22 @@
       &.error {
         opacity: 1;
         color: $primary-error-color;
+      }
+    }
+    svg {
+      position: absolute;
+      top: 0;
+      right: 15px;
+      bottom: 0;
+      height: 15px;
+      margin: auto;
+      fill: #979A9A;
+      cursor: pointer;
+      transition: .2s ease-in-out;
+    }
+    &.error {
+      svg {
+        fill: $primary-error-color;
       }
     }
   }

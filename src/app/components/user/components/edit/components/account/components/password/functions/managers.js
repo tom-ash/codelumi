@@ -3,10 +3,11 @@ import { noError } from '../constants/no-error'
 import { inputs } from '../../../../../../../constants/inputs'
 import ButtonSpinner from '../../../../../../../../support/components/button-spinner/button-spinner'
 import { emailValidator } from '../../../../../../../../../functions/email-validator'
+import ScalableVectorGraphic from '../../../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 
 export function emailManager() {
   const { label, icon } = inputs.email
-  const { step, changeErrors, error } = this.props
+  const { step, changeErrors, error, scalableVectorGraphics } = this.props
   
   return {
     id: 'user-edit-password-email',
@@ -14,7 +15,7 @@ export function emailManager() {
     controlled: false,
     classNames: { container: 'form-input text' },
     label: this.languageObjectHandler(label),
-    children: <i className='fas fa-pen' />,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.emailManager().validate(value),
     validate: value => {
@@ -30,7 +31,8 @@ export function emailManager() {
 export function verificationManager() {
   const {
     step,
-    changeErrors
+    changeErrors,
+    scalableVectorGraphics
   } = this.props
 
   const {
@@ -44,6 +46,7 @@ export function verificationManager() {
     controlled: false,
     classNames: { container: 'form-input text' },
     label: this.languageObjectHandler(label),
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.verificationManager().validate(value),
     validate: value => {
@@ -58,7 +61,7 @@ export function verificationManager() {
 }
 
 export function passwordManager() {
-  const { step, changeErrors } = this.props
+  const { step, changeErrors, scalableVectorGraphics } = this.props
   const { label, icon } = inputs.password
 
   return {
@@ -69,6 +72,7 @@ export function passwordManager() {
     autoComplete: 'new-password',
     classNames: { container: 'form-input text' },
     label: this.languageObjectHandler(label),
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.passwordManager().validate(value),
     validate: value => {

@@ -14,7 +14,6 @@ class UserCreateEmailInputs extends React.Component {
   constructor(props) {
     super(props)
     this.firstNameManager = managers.firstNameManager.bind(this)
-    this.lastNameManager = managers.lastNameManager.bind(this)
     this.businessNameManager = managers.businessNameManager.bind(this)
     this.accountTypeManager = managers.accountTypeManager.bind(this)
     this.areaCodeManager = managers.areaCodeManager.bind(this)

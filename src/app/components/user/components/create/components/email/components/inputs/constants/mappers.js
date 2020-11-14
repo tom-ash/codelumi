@@ -1,5 +1,9 @@
 export const mapStateToProps = (store) => {
   const {
+    scalableVectorGraphics
+  } = store.app
+
+  const {
     accountType,
     phoneCode
   } = store.user.create.inputs
@@ -26,7 +30,8 @@ export const mapStateToProps = (store) => {
     taxNumberError,
     phoneError,
     emailError,
-    passwordError
+    passwordError,
+    scalableVectorGraphics
   }
 }
   
