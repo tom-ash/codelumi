@@ -9,6 +9,8 @@ import { monitProvider } from './functions/monit-provider'
 import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import { labelProvider } from '../../../../../../../../functions/providers/label'
 import { hideUser } from '../../../../../../functions/hide-user'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class UserEditAccountPassword extends React.Component {
   constructor(props) {
@@ -60,4 +62,4 @@ class UserEditAccountPassword extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserEditAccountPassword)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(UserEditAccountPassword))
