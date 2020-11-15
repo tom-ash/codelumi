@@ -4,10 +4,10 @@ $current-color: #3498DB;
   position: relative;
   height: 32px;
   height: 44px;
+  margin-bottom: 12px;
   .line {
     height: 22px;
     border-bottom: 2px solid #D7DBDD;
-    margin: 0 18px;
     &.success {
       border-bottom: 2px solid #27AE60;
     }
@@ -21,18 +21,13 @@ $current-color: #3498DB;
     text-align: center;
     line-height: 32px;
     svg {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      margin: auto;
       fill: #FDFEFE;
-      height: 16px;
+      height: 14px;
     }
     &.first {
       top: 6px;
-      left: 18px;
+      left: 0;
+      padding-top: 1px;
       svg {
         left: -1px;
       }
@@ -52,7 +47,7 @@ $current-color: #3498DB;
     }
     &.last {
       top: 6px;
-      right: 18px;
+      right: 0;
       background: #D7DBDD;
       line-height: 34px;
       &.current {

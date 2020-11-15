@@ -26,7 +26,7 @@ class AnnouncementCreatePrimary extends React.Component {
     return (
       <div id='announcement-create-primary' className='section'>
         <h2>
-          <div className='text'>{this.languageObjectHandler({ pl: 'Dane podstawowe - wymagane', en: 'Primary Data - Required' })}</div>
+          <div className='text'>{this.languageObjectHandler({ pl: 'Dane wymagane', en: 'Required Data' })}</div>
           <div className='float-clear' />
         </h2>
         <ManagedSelect {...this.categoryManager()}/>

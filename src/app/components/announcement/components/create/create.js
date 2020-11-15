@@ -102,7 +102,7 @@ class AnnouncementCreate extends React.Component {
             <div className='optional-inputs'>
               <div className='separation-line' />
               <h2 className='optional'>
-                <div className='text'>{this.languageObjectHandler({ pl: 'Dane dodatkowe - niewymagane', en: 'Optional data - not required' })}</div>
+                <div className='text'>{this.languageObjectHandler({ pl: 'Dane niewymagane', en: 'Optional data' })}</div>
                 <div className='float-clear' />
               </h2>
               <AnnouncementCreateAdditional />

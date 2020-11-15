@@ -21,24 +21,21 @@
   $border-color: #E5E7E9;
   border: 1px solid #D0D3D4;
   background: white;
-  padding: 6px;
+  padding: 36px;
+
   .windmill-medium-spinner {
     display: block;
     position: relative;
     margin: 18px auto;
   }
+
   @media #{$small-tablet} {
-    padding: 6px 0 6px;
     margin: 0 auto;
-  }
-  .required-inputs {
-    padding: 18px 18px 0 18px;
-    background: white;
-  }
-  .confirmation, .success-container, .requesting {
     padding: 18px;
+  }
+
+  .confirmation, .success-container, .requesting {
     background: white;
-    padding: 18px 18px 24px 18px;
     margin: 0;
     .input-explanation {
       font-size: 14px;
@@ -57,30 +54,16 @@
       text-align: center;
     }
   }
-  .optional-inputs {
-    padding: 0 18px 0 18px;
-    background: white;
-  }
-  .account-data {
-    background: white;
-    padding: 18px 18px 0;
-  }
+
   .input-explanation {
     position: relative;
     margin-bottom: 8px;
     font-size: 13px;
   }
-  .page-header {
-    background: white;
-    margin: 0;
-    padding: 12px 18px;
-  }
   h1 {
-    line-height: 24px;
-    text-align: justify;
-    color: #2E4053;
-    font-size: 16px;
-    margin: 0;
+    margin-bottom: 12px;
+    font-size: 17px;
+    color: #4D5656;
   }
   .description-question {
     font-size: 14px;
@@ -111,11 +94,10 @@
   }
   h2 {
     margin-bottom: 24px;
-    color: #3498DB;
-    font-size: 15px;
+    color: #4D5656;
+    font-size: 16px;
     &.optional {
       margin-top: 24px;
-      color: #229954;
     }
   }
 
@@ -194,9 +176,8 @@
   }
 
   .add-announcement-button-container {
-    padding: 0 18px 18px;
     .separation-line {
-      margin-bottom: 24px;
+      margin-bottom: 30px;
     }
   }
   

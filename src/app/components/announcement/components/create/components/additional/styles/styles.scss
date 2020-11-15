@@ -2,8 +2,6 @@
 
 #announcement-create-additional {
   max-width: 360px;
-  padding-top: 0!important;
-  padding-bottom: 4px;
 
   .rent-inputs-container {
     position: relative;
@@ -38,14 +36,14 @@
 
   .calendar {
     position: relative;
-    margin-bottom: 12px;
+    margin: 12px 0 24px;
     .react-calendar {
       z-index: 1;
       width: 100%;
       border: none;
       border-radius: 2.5px;
       box-shadow: none;
-      border: 1px solid black;
+      border: 1px solid #4D5656;
       .react-calendar__navigation button {
         font-size: 16px;
       }
