@@ -3,7 +3,7 @@ import { saveTokens } from '../../../../user/functions/token-handlers'
 
 export function addAnnouncementManager() {
   return {
-    classNames: { container: 'new-form-input button' },
+    classNames: { container: 'form-input button' },
     label: this.languageHandler('Dalej', 'Next'),
     onClick: () => {
       this.publish()
@@ -36,7 +36,7 @@ export function confirmManager() {
   } = this.props
 
   return {
-    classNames: { container: 'new-form-input button' },
+    classNames: { container: 'form-input button' },
     label: this.languageHandler('Potwierdź', 'Confirm'),
     onClick: () => {
       fetch(API_URL + '/user_create_with_email', {

@@ -6,10 +6,7 @@ import * as managers from './functions/managers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import { handleErrorOnSelect, handleErrorOnValidate } from './functions/errors-handler'
 import { onSelectHandler } from './functions/on-select-handler'
-import { labelProvider } from '../../../../../../functions/providers/label'
 import { getRentAmounts } from '../../functions/get-rent-amounts'
-import { floorsProvider } from './functions/floors-provider'
-import { sectionHeaderProvider } from '../../../../../../functions/providers/headers'
 
 class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {
@@ -22,10 +19,7 @@ class AnnouncementCreatePrimary extends React.Component {
     this.handleErrorOnSelect = handleErrorOnSelect.bind(this)
     this.handleErrorOnValidate = handleErrorOnValidate.bind(this)
     this.onSelectHandler = onSelectHandler.bind(this)
-    this.labelProvider = labelProvider.bind(this)
     this.getRentAmounts = getRentAmounts.bind(this)
-    this.floorsProvider = floorsProvider.bind(this)
-    this.sectionHeaderProvider = sectionHeaderProvider.bind(this)
   }
   
   render() {

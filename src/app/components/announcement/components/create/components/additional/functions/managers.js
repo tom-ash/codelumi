@@ -1,6 +1,7 @@
 import React from 'react'
 import { inputs } from '../../../../../constants/inputs'
 import { numberOptionsProvider } from '../../../../../../../functions/shared'
+import ScalableVectorGraphic from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 
 export function rentAmountManager() {
   const {
@@ -9,7 +10,8 @@ export function rentAmountManager() {
 
   const {
     category,
-    changeInputs
+    changeInputs,
+    scalableVectorGraphics
   } = this.props
 
   let label = this.languageObjectHandler(text)
@@ -23,7 +25,7 @@ export function rentAmountManager() {
   return {
     classNames: { container: 'form-input text rent-amount' },
     value: this.props[rentAmountType],
-    children: <i className='fas fa-pen' />,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     type: 'number',
     label,
     onChange: value => changeInputs({ [rentAmountType]: value }),
@@ -34,7 +36,7 @@ export function rentAmountManager() {
 }
 
 export function rentCurrencyManager() {
-  const { rentCurrency: value } = this.props
+  const { rentCurrency: value, scalableVectorGraphics } = this.props
   const currencies = [
     { value: 0, text: 'zł' },
     { value: 1, text: '€' },
@@ -43,7 +45,7 @@ export function rentCurrencyManager() {
 
   return {
     classNames: { container: 'form-input select rent-currency' },
-    children: <i className="fas fa-chevron-down" />,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
     value,
     options: currencies,
     onSelect: ({ value: optionValue }) => this.onSelectHandler('rentCurrency', optionValue),
@@ -56,7 +58,7 @@ export function roomsManager() {
     create: text
   } = inputs.rooms
 
-  const { category } = this.props
+  const { category, scalableVectorGraphics } = this.props
 
   let label = this.languageObjectHandler(text)
 
@@ -64,7 +66,7 @@ export function roomsManager() {
 
   return {
     classNames: { container: 'form-input select' },
-    children: <i className="fas fa-chevron-down" />,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
     value: this.props.rooms,
     label,
     options: numberOptionsProvider(99),
@@ -78,9 +80,13 @@ export function floorManager() {
     create: text
   } = inputs.floor
 
+  const {
+    scalableVectorGraphics
+  } = this.props
+
   return {
     classNames: { container: 'form-input select' },
-    children: <i className="fas fa-chevron-down" />,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
     value: this.props.floor,
     label: this.languageObjectHandler(text),
     options: this.floorsProvider(),
@@ -94,9 +100,13 @@ export function totalFloorsManager() {
     create: text
   } = inputs.totalFloors
 
+  const {
+    scalableVectorGraphics
+  } = this.props
+
   return {
     classNames: { container: 'form-input select' },
-    children: <i className="fas fa-chevron-down" />,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
     value: this.props.totalFloors,
     label: this.languageObjectHandler(text),
     options: numberOptionsProvider(99),

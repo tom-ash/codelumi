@@ -5,6 +5,7 @@ import { categories } from '../../../../../constants/categories'
 import { districts } from '../../../../../constants/districts'
 import { sendGaEvent } from '../../../../../../../functions/google-analytics/send-ga-event'
 import { analyticsEvents } from '../../../../../../../constants/analytics-events'
+import ScalableVectorGraphic from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 
 const noError = {
   pl: '',
@@ -12,7 +13,6 @@ const noError = {
 }
 
 export function categoryManager() {
-
   const {
     category: { id }
   } = requiredInputs
@@ -21,7 +21,8 @@ export function categoryManager() {
     category: value,
     errors,
     changeErrors,
-    language
+    language,
+    scalableVectorGraphics
   } = this.props
 
   const {
@@ -43,7 +44,7 @@ export function categoryManager() {
     value,
     label: label[language],
     options: [{ value: '', text: '' }].concat(categoryOptions),
-    children: <i className="fas fa-chevron-down" />,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
     onFocus: () => changeErrors({ category: noError }),
     onSelect: option => {
       sendGaEvent(analyticsEvents.announcement.create.category)
@@ -57,9 +58,12 @@ export function categoryManager() {
 
 export function districtManager() {
   const {
-    icon,
     all: text
   } = inputs.district
+
+  const {
+    scalableVectorGraphics
+  } = this.props
 
   return {
     id: requiredInputs.district.id,
@@ -67,7 +71,7 @@ export function districtManager() {
     value: this.props.district,
     label: this.languageObjectHandler(text),
     options: [{ value: '', text: '' }].concat(districts),
-    children: <i className="fas fa-chevron-down" />,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
     onFocus: () => this.props.changeErrors({ district: noError }),
     onSelect: option => {
       sendGaEvent(analyticsEvents.announcement.create.district)
@@ -85,6 +89,10 @@ export function areaManager() {
     create: text
   } = inputs.area
 
+  const {
+    scalableVectorGraphics
+  } = this.props
+
   return {
     id: requiredInputs.area.id,
     classNames: { container: 'form-input text' },
@@ -93,13 +101,13 @@ export function areaManager() {
     type: 'number',
     children: (
       <React.Fragment>
-      <i className='fas fa-pen' />
-      <div className='sqm'>
-        {this.languageObjectHandler({
-          pl: <span>m<span className='sq'>2</span></span>,
-          en: 'sqm'
-        })}
-      </div>
+        <div className='sqm'>
+          {this.languageObjectHandler({
+            pl: <span>m<span className='sq'>2</span></span>,
+            en: 'sqm'
+          })}
+        </div>
+        <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />
       </React.Fragment>
     ),
     onFocus: () => this.props.changeErrors({ area: noError }),

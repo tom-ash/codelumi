@@ -1,10 +1,15 @@
 export const mapStateToProps = (store) => {
+  const {
+    scalableVectorGraphics
+  } = store.app
+
   return {
     language: store.app.language,
     category: store.announcement.create.inputs.category,
     district: store.announcement.create.inputs.district,
     area: store.announcement.create.inputs.area,
-    errors: store.announcement.create.errors
+    errors: store.announcement.create.errors,
+    scalableVectorGraphics
   }
 }
   

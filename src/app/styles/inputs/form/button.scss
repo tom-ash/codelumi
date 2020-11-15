@@ -1,20 +1,20 @@
 .form-input {
   &.button {
     position: relative;
-    height: 36px;
-    width: 144px;
+    height: 42px;
+    width: 168px;
     .input {
       height: 100%;
       width: 100%;
       border: none;
       border-radius: 2.5px;
       outline: none;
-      background: #1F618D;
+      background: #1A5276;
       color: #FBFCFC;
       cursor: pointer;
       font-size: 15px;
       &.hover, &.focus {
-        background: #2980B9;
+        background: #1F618D;
       }
       transition: .2s ease-in-out;
     }

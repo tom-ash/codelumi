@@ -1,54 +1,23 @@
-@import '../../../../../../../styles/themes.scss';
-
 #announcement-create-primary {
   max-width: 360px;
-  .checkbox {
-    &.availability-date {
-      margin-bottom: 18px;
-      .input {
-        left: 0;
-      }
-      .label {
-        margin-top: 1px;
-        margin-left: 18px;
-      }
-    }
-  }
-
   .form-input {
     .sqm {
       position: absolute;
-      top: 1px;
-      right: 42px;
-      bottom: 0;
-      line-height: 42px;
+      top: 0px;
+      right: 45px;
+      line-height: 45px;
       opacity: 0;
+      transition: .2s opacity ease-in;
+      .sq {
+        top: -4px;
+        position: relative;
+        font-size: 12px;
+        padding-left: 1px;
+      } 
     }
     &.value, &.focus {
       .sqm {
         opacity: 1;
-        transition: opacity .2s ease-in;
-        .sq {
-          top: -4px;
-          position: relative;
-          font-size: 12px;
-          padding-left: 1px;
-        }
-      }
-    }
-  }
-
-  .calendar {
-    position: relative;
-    .react-calendar {
-      z-index: 1;
-      width: 100%;
-      border: none;
-      border-radius: 2.5px;
-      box-shadow: none;
-      border: 1px solid black;
-      .react-calendar__navigation button {
-        font-size: 16px;
       }
     }
   }
