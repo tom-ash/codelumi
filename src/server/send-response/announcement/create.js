@@ -42,7 +42,7 @@ export function sendAnnouncementCreateResponse({
     </script>
   `
   
-  fetch(`${API_URL}/posts/announcementCreateEditorial`, {
+  fetch(`${API_URL}/posts/create_announcement`, {
     headers: {
       'Content-Type': 'application/json'
     }
@@ -64,9 +64,7 @@ export function sendAnnouncementCreateResponse({
         post: {
           index: {
             data: {
-              posts: {
-                announcementCreateEditorial: json.post
-              }
+              create_announcement: json
             }
           }
         },

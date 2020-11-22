@@ -54,6 +54,10 @@ export const mapStateToProps = (store) => {
     token
   } = store.user.create.data
 
+  const {
+    create_announcement: postData
+  } = store.post.index.data
+
   return {
     showDescription,
     language,
@@ -88,7 +92,8 @@ export const mapStateToProps = (store) => {
     verificationCode,
     token,
     isMobile,
-    scalableVectorGraphics
+    scalableVectorGraphics,
+    postData
   }
 }
     
@@ -107,7 +112,8 @@ export const mapDispatchToProps = (dispatch) => {
     resetUserCreateControl: value => dispatch({ type: 'user/create/control/reset', value }),
     resetUserCreateInputs: value => dispatch({ type: 'user/create/inputs/reset', value }),
     resetUserCreateData: value => dispatch({ type: 'user/create/data/reset', value }),
-    resetUserCreateErrors: value => dispatch({ type: 'user/create/errors/reset', value })
+    resetUserCreateErrors: value => dispatch({ type: 'user/create/errors/reset', value }),
+    changePostData: value => dispatch({ type: 'post/index/data', value })
   }
 }
     

@@ -2,16 +2,15 @@
 
 #announcement-index {
   position: relative;
-  min-height: 726px;
   max-width: 1366px;
   padding-top: 12px;
-  @media #{$small-pc} {
-    min-height: 1058px;
+
+  .inner-container {
+    padding-top: 636px;
   }
-  @media #{$small-tablet} {
-    min-height: 1100px;
-  }
+
   margin: 0 auto;
+
   .phone {
     cursor: pointer;
     z-index: 3;

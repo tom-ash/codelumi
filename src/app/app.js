@@ -12,10 +12,8 @@ import { authorizeUserWithTokens } from './components/user/components/authorize/
 import { screenSizeHandler } from './functions/screen-size-handler'
 import { popStateHandler } from './functions/popStateHandler'
 import { languageObjectHandler } from './functions/language-handler'
-
 import { matchStateToPath } from './functions/routers/match-state-to-path'
 import { matchPathToState } from './functions/routers/match-path-to-state'
-import VisitorWelcome from './components/visitor/components/welcome/welcome'
 import NotFound from './components/scaffold/components/not-found/not-found'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
@@ -76,7 +74,6 @@ class App extends React.Component {
         <div id='app-inner-container'>
           {this.showUser() && <User />}
           <Announcement />
-          <VisitorWelcome />
           <Visitor />
         </div>
         <Footer />

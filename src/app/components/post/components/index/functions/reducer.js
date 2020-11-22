@@ -1,10 +1,9 @@
 import { combineReducers } from 'redux'
-import { data } from '../constants/state'
 
-export const dataReducer = (state = data, action) => {
+export const dataReducer = (state = {}, action) => {
   switch (action.type) {
     case 'post/index/data': return { ...state, ...action.value }
-    case 'post/index/data/reset': return { ...data }
+    case 'post/index/data/reset': return {}
     default: return state
   }
 }

@@ -82,9 +82,7 @@ export function sendAnnouncementsMapResponse({
         post: {
           index: {
             data: {
-              posts: {
-                welcome: json.welcome
-              }
+              welcome: json.welcome
             }
           }
         },

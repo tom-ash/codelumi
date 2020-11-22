@@ -21,6 +21,7 @@ import { labelProvider } from '../../../../components/user/components/show/funct
 import { changePath } from '../../../../functions/routers/change-path'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import PostShow from '../../../post/components/show/show'
 
 class AnnouncementIndexSearch extends React.Component {
   constructor(props) {
@@ -46,7 +47,10 @@ class AnnouncementIndexSearch extends React.Component {
       showMap,
       showCatalogue,
       showList,
-      device
+      device,
+      changePostIndexData,
+      welcomePostData,
+      language
     } = this.props
 
     const showAddAnnouncement = [null, 'smallTablet', 'largePhone', 'smallPhone'].indexOf(device) !== -1
@@ -62,7 +66,19 @@ class AnnouncementIndexSearch extends React.Component {
           {showAddAnnouncement && <ManagedLink {...this.addAnnouncementManager()} />}
         </div>
         <AnnouncementIndexPanel />
-        {showMap && <AnnouncementIndexMap />}
+        {showMap &&
+          <div className='inner-container'>
+            <AnnouncementIndexMap />
+            <PostShow
+              className='welcome'
+              name='welcome'
+              data={welcomePostData}
+              changeData={changePostIndexData}
+              languageHandler={this.languageObjectHandler}
+              language={language}
+            />
+          </div>
+        }
         {showCatalogue && <AnnouncementIndexFull />}
         {showList && <AnnouncementIndexList />}
       </div>

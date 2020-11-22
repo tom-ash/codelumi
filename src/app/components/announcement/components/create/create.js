@@ -10,7 +10,6 @@ import AnnouncementCreateFeatures from './components/features/features'
 import AnnouncementCreateFurnishings from './components/furnishings/furnishings'
 import AnnouncementCreateDescription from './components/description/description'
 import AnnouncementCreateSuccess from './components/success/success'
-import AnnouncementCreateEditorial from './components/editorial/editorial'
 import WindmillSpinner from '../../../support/components/spinner/components/windmill/windmill.js'
 import * as lifecycle from './functions/lifecycle'
 import * as managers from './functions/managers'
@@ -25,6 +24,7 @@ import { savePicture } from './functions/save-picture'
 import { saveAnnouncement } from './functions/save-announcement'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import PostShow from '../../../post/components/show/show'
 
 const UserCreate = loadable(() => import('../../../user/components/create/create'), { ssr: false })
 
@@ -72,7 +72,9 @@ class AnnouncementCreate extends React.Component {
       area,
       isMobile,
       language,
-      scalableVectorGraphics
+      scalableVectorGraphics,
+      postData,
+      changePostData
     } = this.props
 
     return (
@@ -154,7 +156,14 @@ class AnnouncementCreate extends React.Component {
             scalableVectorGraphics={scalableVectorGraphics}
           />}
         </div>
-        <AnnouncementCreateEditorial />
+        <PostShow
+          className='create_announcement'
+          name='create_announcement'
+          data={postData}
+          changeData={changePostData}
+          languageHandler={this.languageObjectHandler}
+          language={language}
+        />
       </React.Fragment>
     )
   }

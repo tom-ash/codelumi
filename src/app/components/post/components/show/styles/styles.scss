@@ -1,0 +1,21 @@
+.post-container {
+  position: relative;
+  max-width: 1214px;
+  margin: 0 auto;
+  background: white;
+  border: 1px solid #E5E7E9;
+  border-radius: 3px;
+  padding: 15px;
+  h2 {
+    margin-bottom: 15px;
+    font-size: 17px;
+    color: #424949;
+  }
+  .body {
+    white-space: pre-wrap;
+    color: 'red' !important;
+    font-size: 15px;
+    text-align: justify;
+    line-height: 22px;
+  }
+}

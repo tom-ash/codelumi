@@ -14,6 +14,10 @@ export const mapStateToProps = (store) => {
   } = store.announcement.index.control
 
   const {
+    welcome: welcomePostData
+  } = store.post.index.data
+
+  const {
     category,
     district,
     areaMin,
@@ -69,7 +73,8 @@ export const mapStateToProps = (store) => {
     page,
     offset,
     announcements,
-    amount
+    amount,
+    welcomePostData
   }
 }
     
@@ -82,7 +87,8 @@ export const mapDispatchToProps = (dispatch) => {
     changeAnnouncements: value => dispatch({ type: 'announcement/index/data/announcements', value }),
     resetControl: value => dispatch({ type: 'announcement/index/control/reset', value }),
     resetInputs: value => dispatch({ type: 'announcement/index/inputs/reset', value }),
-    resetData: value => dispatch({ type: 'announcement/index/data/reset', value })
+    resetData: value => dispatch({ type: 'announcement/index/data/reset', value }),
+    changePostIndexData: value => dispatch({ type: 'post/index/data', value })
   }
 }
     
