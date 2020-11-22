@@ -67,16 +67,18 @@ class AnnouncementIndexSearch extends React.Component {
         </div>
         <AnnouncementIndexPanel />
         {showMap &&
-          <div className='inner-container'>
+          <div className={`inner-container${!showCatalogue ? ' with-padding' : ''}`}>
             <AnnouncementIndexMap />
-            <PostShow
-              className='welcome'
-              name='welcome'
-              data={welcomePostData}
-              changeData={changePostIndexData}
-              languageHandler={this.languageObjectHandler}
-              language={language}
-            />
+            {!showCatalogue &&
+              <PostShow
+                className='welcome'
+                name='welcome'
+                data={welcomePostData}
+                changeData={changePostIndexData}
+                languageHandler={this.languageObjectHandler}
+                language={language}
+              />
+            }
           </div>
         }
         {showCatalogue && <AnnouncementIndexFull />}

@@ -157,7 +157,7 @@ class AnnouncementCreate extends React.Component {
           />}
         </div>
         <PostShow
-          className='create_announcement'
+          className='create-announcement'
           name='create_announcement'
           data={postData}
           changeData={changePostData}

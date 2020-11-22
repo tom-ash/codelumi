@@ -6,7 +6,9 @@
   padding-top: 12px;
 
   .inner-container {
-    padding-top: 636px;
+    &.with-padding {
+      padding-top: 636px;
+    }
   }
 
   margin: 0 auto;

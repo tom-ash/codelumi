@@ -190,5 +190,7 @@
 }
 
 .post-container {
-  margin-top: 240px!important;
+  &.create-announcement {
+    margin-top: 240px!important;
+  }
 }
