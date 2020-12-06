@@ -50,8 +50,15 @@ class AnnouncementIndexSearch extends React.Component {
       device,
       changePostIndexData,
       welcomePostData,
-      language
+      language,
+      changePostCreateInputs,
+      welcomePostCreateName,
+      welcomePostCreateBody,
+      scalableVectorGraphics,
+      admin
     } = this.props
+
+    const newWelcomePostData = welcomePostCreateBody.en ? { body: welcomePostCreateBody } : welcomePostData
 
     const showAddAnnouncement = [null, 'smallTablet', 'largePhone', 'smallPhone'].indexOf(device) !== -1
 
@@ -73,10 +80,14 @@ class AnnouncementIndexSearch extends React.Component {
               <PostShow
                 className='welcome'
                 name='welcome'
-                data={welcomePostData}
+                data={newWelcomePostData}
                 changeData={changePostIndexData}
                 languageHandler={this.languageObjectHandler}
                 language={language}
+                changePostCreateInputs={changePostCreateInputs}
+                beingEdited={'welcome' === welcomePostCreateName}
+                scalableVectorGraphics={scalableVectorGraphics}
+                admin={admin}
               />
             }
           </div>

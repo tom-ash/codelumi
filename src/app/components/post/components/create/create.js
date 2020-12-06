@@ -5,6 +5,8 @@ import { ManagedText, ManagedTextarea, ManagedButton } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { save } from './functions/save'
 import { languageObjectHandler } from '../../../../functions/language-handler'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 class PostCreate extends React.Component {
   constructor(props) {
@@ -14,19 +16,17 @@ class PostCreate extends React.Component {
     this.metaManager = managers.metaManager.bind(this)
     this.saveManager = managers.saveManager.bind(this)
     this.urlManager = managers.urlManager.bind(this)
-    this.titleManager = managers.titleManager.bind(this)
     this.bodyManager = managers.bodyManager.bind(this)
     this.save = save.bind(this)
   }
 
   render() {
     return (
-      <div id='post-create' className='container'>
+      <div className='post-create'>
         <form>
           <ManagedText {...this.nameManager()} />
-          <ManagedTextarea {...this.metaManager()} />
-          <ManagedText {...this.urlManager()} />
-          <ManagedText {...this.titleManager()} />
+          {/* <ManagedTextarea {...this.metaManager()} /> */}
+          {/* <ManagedText {...this.urlManager()} /> */}
           <ManagedTextarea {...this.bodyManager()} />
           <ManagedButton {...this.saveManager()} />
         </form>
@@ -35,4 +35,4 @@ class PostCreate extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostCreate)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(PostCreate))

@@ -5,7 +5,8 @@ export const mapStateToProps = (store) => {
     showAnnouncementIndexMap: showMap,
     showAnnouncementIndexCatalogue: showCatalogue,
     showAnnouncementIndexList: showList,
-    device
+    device,
+    scalableVectorGraphics
   } = store.app
 
   const {
@@ -16,6 +17,15 @@ export const mapStateToProps = (store) => {
   const {
     welcome: welcomePostData
   } = store.post.index.data
+
+  const {
+    name: welcomePostCreateName,
+    body: welcomePostCreateBody
+  } = store.post.create.inputs
+
+  const {
+    admin
+  } = store.user.authorize.data
 
   const {
     category,
@@ -74,7 +84,11 @@ export const mapStateToProps = (store) => {
     offset,
     announcements,
     amount,
-    welcomePostData
+    welcomePostData,
+    welcomePostCreateName,
+    welcomePostCreateBody,
+    scalableVectorGraphics,
+    admin
   }
 }
     
@@ -88,7 +102,8 @@ export const mapDispatchToProps = (dispatch) => {
     resetControl: value => dispatch({ type: 'announcement/index/control/reset', value }),
     resetInputs: value => dispatch({ type: 'announcement/index/inputs/reset', value }),
     resetData: value => dispatch({ type: 'announcement/index/data/reset', value }),
-    changePostIndexData: value => dispatch({ type: 'post/index/data', value })
+    changePostIndexData: value => dispatch({ type: 'post/index/data', value }),
+    changePostCreateInputs: value => dispatch({ type: 'post/create/inputs', value })
   }
 }
     

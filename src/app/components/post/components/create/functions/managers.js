@@ -73,13 +73,16 @@ export function bodyManager() {
     label: 'Body',
     value: this.languageObjectHandler(body),
     counterLimit: 10000,
-    onChange: value => changeInputs({ body: { ...body, [language]: value } })
+    onChange: value => {
+      const newBody = { ...body, [language]: value }
+      changeInputs({ body: newBody })
+    }
   }
 }
 
 export function saveManager() {
   return {
-    classNames: { container: 'new-form-input button' },
+    classNames: { container: 'form-input button' },
     label: 'Save',
     onClick: () => this.save()
   }

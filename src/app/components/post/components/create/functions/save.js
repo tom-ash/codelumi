@@ -6,11 +6,16 @@ export function save() {
     resetInputs,
     posts,
     name,
-    meta,
-    url,
-    title,
+    // meta,
+    // url,
+    // title,
     body
   } = this.props
+
+  const parsedBody = {
+    en: JSON.parse(body.en),
+    pl: JSON.parse(body.pl)
+  }
 
   fetch(API_URL + '/posts', {
     method: 'POST',
@@ -20,10 +25,7 @@ export function save() {
     },
     body: JSON.stringify({
       name,
-      meta,
-      url,
-      title,
-      body 
+      body: parsedBody
     })
   })
   .then(response => {
@@ -31,15 +33,12 @@ export function save() {
   })
   .then(jsonRespone => {
     changePostIndexData({
-      posts: {
-        ...posts,
-        [name]: {
-          name,
-          meta,
-          url,
-          title,
-          body
-        }
+      [name]: {
+        name,
+        // meta,
+        // url,
+        // title,
+        body: parsedBody
       }
     })
     resetInputs()
