@@ -74,8 +74,14 @@ class AnnouncementCreate extends React.Component {
       language,
       scalableVectorGraphics,
       postData,
-      changePostData
+      changePostData,
+      postCreateName,
+      postCreateBody,
+      changePostCreateInputs,
+      admin
     } = this.props
+
+    const newPostData = postCreateBody.en ? { body: postCreateBody } : postData
 
     return (
       <React.Fragment>
@@ -159,10 +165,14 @@ class AnnouncementCreate extends React.Component {
         <PostShow
           className='create-announcement'
           name='create_announcement'
-          data={postData}
-          changeData={changePostData}
+          data={newPostData}
+          beingEdited={'create_announcement' === postCreateName}
+          scalableVectorGraphics={scalableVectorGraphics}
           languageHandler={this.languageObjectHandler}
+          admin={admin}
           language={language}
+          changeData={changePostData}
+          changePostCreateInputs={changePostCreateInputs}
         />
       </React.Fragment>
     )

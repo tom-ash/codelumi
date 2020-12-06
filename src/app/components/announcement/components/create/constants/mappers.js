@@ -58,6 +58,15 @@ export const mapStateToProps = (store) => {
     create_announcement: postData
   } = store.post.index.data
 
+  const {
+    name: postCreateName,
+    body: postCreateBody
+  } = store.post.create.inputs
+
+  const {
+    admin
+  } = store.user.authorize.data
+
   return {
     showDescription,
     language,
@@ -93,7 +102,10 @@ export const mapStateToProps = (store) => {
     token,
     isMobile,
     scalableVectorGraphics,
-    postData
+    postData,
+    postCreateName,
+    postCreateBody,
+    admin
   }
 }
     
@@ -113,7 +125,8 @@ export const mapDispatchToProps = (dispatch) => {
     resetUserCreateInputs: value => dispatch({ type: 'user/create/inputs/reset', value }),
     resetUserCreateData: value => dispatch({ type: 'user/create/data/reset', value }),
     resetUserCreateErrors: value => dispatch({ type: 'user/create/errors/reset', value }),
-    changePostData: value => dispatch({ type: 'post/index/data', value })
+    changePostData: value => dispatch({ type: 'post/index/data', value }),
+    changePostCreateInputs: value => dispatch({ type: 'post/create/inputs', value })
   }
 }
     
