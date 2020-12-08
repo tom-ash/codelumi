@@ -24,7 +24,7 @@ import { savePicture } from './functions/save-picture'
 import { saveAnnouncement } from './functions/save-announcement'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import PostShow from '../../../post/components/show/show'
+import PostTile from '../../../post/components/shared/components/tile/tile'
 
 const UserCreate = loadable(() => import('../../../user/components/create/create'), { ssr: false })
 
@@ -162,7 +162,7 @@ class AnnouncementCreate extends React.Component {
             scalableVectorGraphics={scalableVectorGraphics}
           />}
         </div>
-        <PostShow
+        <PostTile
           className='create-announcement'
           name='create_announcement'
           data={newPostData}

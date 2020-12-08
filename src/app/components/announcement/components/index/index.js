@@ -21,7 +21,7 @@ import { labelProvider } from '../../../../components/user/components/show/funct
 import { changePath } from '../../../../functions/routers/change-path'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import PostShow from '../../../post/components/show/show'
+import PostTile from '../../../post/components/shared/components/tile/tile'
 
 class AnnouncementIndexSearch extends React.Component {
   constructor(props) {
@@ -77,7 +77,7 @@ class AnnouncementIndexSearch extends React.Component {
           <div className={`inner-container${!showCatalogue ? ' with-padding' : ''}`}>
             <AnnouncementIndexMap />
             {!showCatalogue &&
-              <PostShow
+              <PostTile
                 className='welcome'
                 name='welcome'
                 data={newWelcomePostData}
