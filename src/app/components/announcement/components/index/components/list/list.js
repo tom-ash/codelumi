@@ -15,6 +15,7 @@ import { pageHeaderProvider, sectionHeaderProvider } from '../../../../../../fun
 import { changePath } from '../../../../../../functions/routers/change-path'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import { ManagedButton } from 'managed-inputs'
 
 class AnnouncementIndexList extends React.Component {
   constructor(props) {

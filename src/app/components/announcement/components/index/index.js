@@ -44,6 +44,7 @@ class AnnouncementIndexSearch extends React.Component {
 
   render() {
     const {
+      showMap,
       showCatalogue,
       showList,
       device
@@ -56,8 +57,8 @@ class AnnouncementIndexSearch extends React.Component {
         <div>
           {showAddAnnouncement && <ManagedLink {...this.addAnnouncementManager()} />}
         </div>
-        <AnnouncementIndexPanel />
-        <AnnouncementIndexMap />
+        {(showMap || showCatalogue) && <AnnouncementIndexPanel />}
+        {showMap && <AnnouncementIndexMap />}
         {showCatalogue && <AnnouncementIndexFull />}
         {showList && <AnnouncementIndexList />}
       </div>
