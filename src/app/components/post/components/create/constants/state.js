@@ -3,9 +3,9 @@ export const control = {
 }
 
 export const inputs = {
-  name: '',
-  meta: { pl: '', en: '' },
-  url: { pl: '', en: '' },
-  title: { pl: '', en: '' },
-  body: { pl: '', en: '' }
+  name: null,
+  meta: null,
+  url: null,
+  title: null,
+  body: null
 }

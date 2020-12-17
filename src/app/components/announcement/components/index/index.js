@@ -44,28 +44,12 @@ class AnnouncementIndexSearch extends React.Component {
 
   render() {
     const {
-      showMap,
       showCatalogue,
       showList,
-      device,
-      changePostIndexData,
-      welcomePostData,
-      language,
-      changePostCreateInputs,
-      welcomePostCreateName,
-      welcomePostCreateBody,
-      scalableVectorGraphics,
-      admin
+      device
     } = this.props
 
-    const newWelcomePostData = welcomePostCreateBody.en ? { body: welcomePostCreateBody } : welcomePostData
-
     const showAddAnnouncement = [null, 'smallTablet', 'largePhone', 'smallPhone'].indexOf(device) !== -1
-
-    const mainHeader = {
-      pl: 'Odnajdź się w Warszawie! Wynajem nieruchomości - Warszawa - ogłoszenia. Mieszkania, lokale użytkowe i biura.',
-      en: 'Find Yourself in Warsaw! Real Estate Lease - Warsaw - Announcements. Apartments, Usable Premises and Offices.'
-    }
 
     return (
       <div id='announcement-index'>
@@ -73,25 +57,7 @@ class AnnouncementIndexSearch extends React.Component {
           {showAddAnnouncement && <ManagedLink {...this.addAnnouncementManager()} />}
         </div>
         <AnnouncementIndexPanel />
-        {showMap &&
-          <div className={`inner-container${!showCatalogue ? ' with-padding' : ''}`}>
-            <AnnouncementIndexMap />
-            {!showCatalogue &&
-              <PostTile
-                className='welcome'
-                name='welcome'
-                data={newWelcomePostData}
-                changeData={changePostIndexData}
-                languageHandler={this.languageObjectHandler}
-                language={language}
-                changePostCreateInputs={changePostCreateInputs}
-                beingEdited={'welcome' === welcomePostCreateName}
-                scalableVectorGraphics={scalableVectorGraphics}
-                admin={admin}
-              />
-            }
-          </div>
-        }
+        <AnnouncementIndexMap />
         {showCatalogue && <AnnouncementIndexFull />}
         {showList && <AnnouncementIndexList />}
       </div>

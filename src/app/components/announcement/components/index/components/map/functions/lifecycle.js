@@ -22,11 +22,18 @@ function handleScroll() {
 }
 
 export function componentDidMount() {
-  const { changeControl } = this.props
+  const {
+    changeControl,
+    changePostShowData,
+    changePostRender
+  } = this.props
 
   this.googleMapHandler(() => changeControl({ mapLoaded: true }))
 
   this.miniList.current.addEventListener('scroll', () => handleScroll.apply(this))
+
+  changePostShowData({ name: 'welcome' })
+  changePostRender({ show: true })
 }
 
 export function componentDidUpdate(prevProps) {
@@ -56,11 +63,17 @@ export function componentWillUnmount() {
   const {
     resetControl,
     resetInputs,
-    resetData
+    resetData,
+    changePostShowData,
+    changePostRender
   } = this.props
 
   removeOldPins.call(this)
+
+  console.log("HERE 1111")
   
+  changePostRender({ show: false })
+  changePostShowData({ name: null, body: null })
   resetControl()
   resetInputs()
   resetData()

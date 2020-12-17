@@ -80,10 +80,11 @@ export function sendAnnouncementsMapResponse({
           }
         },
         post: {
-          index: {
-            data: {
-              welcome: json.welcome
-            }
+          render: {
+            show: true
+          },
+          show: {
+            data: json.welcome
           }
         },
         visitor

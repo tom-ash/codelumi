@@ -62,10 +62,11 @@ export function sendAnnouncementCreateResponse({
           scalableVectorGraphics: parseScalableVectorGraphics(json.scalableVectorGraphics)
         },
         post: {
-          index: {
-            data: {
-              create_announcement: json
-            }
+          render: {
+            show: true
+          },
+          show: {
+            data: json
           }
         },
         visitor

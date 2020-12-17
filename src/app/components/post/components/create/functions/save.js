@@ -2,13 +2,10 @@ import { getAccessToken } from '../../../../user/components/authorize/components
 
 export function save() {
   const {
-    changePostIndexData,
+    changeShowData,
     resetInputs,
-    posts,
+    changeRender,
     name,
-    // meta,
-    // url,
-    // title,
     body
   } = this.props
 
@@ -32,14 +29,10 @@ export function save() {
     if (response.status == 201) return response.json()
   })
   .then(jsonRespone => {
-    changePostIndexData({
-      [name]: {
-        name,
-        // meta,
-        // url,
-        // title,
-        body: parsedBody
-      }
+    changeRender({ create: false  })
+    changeShowData({
+      name,
+      body: parsedBody
     })
     resetInputs()
   })

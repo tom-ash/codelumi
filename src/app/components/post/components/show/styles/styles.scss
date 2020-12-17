@@ -1,3 +1,17 @@
 #post-show {
-
+  position: relative;
+  max-width: 1214px;
+  margin: 0 auto;
+  button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    height: 20px;
+    width: 20px;
+    padding: 2px;
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
 }

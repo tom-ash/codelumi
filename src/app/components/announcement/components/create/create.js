@@ -24,7 +24,6 @@ import { savePicture } from './functions/save-picture'
 import { saveAnnouncement } from './functions/save-announcement'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import PostTile from '../../../post/components/shared/components/tile/tile'
 
 const UserCreate = loadable(() => import('../../../user/components/create/create'), { ssr: false })
 
@@ -72,16 +71,8 @@ class AnnouncementCreate extends React.Component {
       area,
       isMobile,
       language,
-      scalableVectorGraphics,
-      postData,
-      changePostData,
-      postCreateName,
-      postCreateBody,
-      changePostCreateInputs,
-      admin
+      scalableVectorGraphics
     } = this.props
-
-    const newPostData = postCreateBody.en ? { body: postCreateBody } : postData
 
     return (
       <React.Fragment>
@@ -162,18 +153,6 @@ class AnnouncementCreate extends React.Component {
             scalableVectorGraphics={scalableVectorGraphics}
           />}
         </div>
-        <PostTile
-          className='create-announcement'
-          name='create_announcement'
-          data={newPostData}
-          beingEdited={'create_announcement' === postCreateName}
-          scalableVectorGraphics={scalableVectorGraphics}
-          languageHandler={this.languageObjectHandler}
-          admin={admin}
-          language={language}
-          changeData={changePostData}
-          changePostCreateInputs={changePostCreateInputs}
-        />
       </React.Fragment>
     )
   }
