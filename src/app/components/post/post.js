@@ -3,8 +3,9 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import PostShow from './components/show/show'
-import PostCreate from './components/create/create'
+import loadable from '@loadable/component'
+const PostShow = loadable(() => import('./components/show/show'))
+const PostCreate = loadable(() => import('./components/create/create'))
 
 class Post extends React.Component {
   constructor(props) {
