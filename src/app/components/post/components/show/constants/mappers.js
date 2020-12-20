@@ -9,23 +9,24 @@ export const mapStateToProps = (store) => {
   } = store.user.authorize.data
 
   const {
-    name,
-    title,
-    body
-  } = store.post.show.data
+    data: postData
+  } = store.post.show
+
+  const {
+    name
+  } = postData
 
   const {
     name: nameCreate
   } = store.post.create.inputs
 
   return {
-    language,
     name,
-    title,
-    body,
+    postData,
     isAdmin,
     beingEdited: name === nameCreate,
-    scalableVectorGraphics
+    scalableVectorGraphics,
+    language
   }
 }
   

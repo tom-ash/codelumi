@@ -6,13 +6,19 @@ export function save() {
     resetInputs,
     changeRender,
     name,
-    body
+    inputs
   } = this.props
 
-  const parsedBody = {
-    en: JSON.parse(body.en),
-    pl: JSON.parse(body.pl)
-  }
+  const {
+    pl: unparsedPl,
+    en: unparsedEn
+  } = inputs
+
+  const parsedPl = { ...unparsedPl }
+  parsedPl.body = JSON.parse(unparsedPl.body)
+
+  const parsedEn = { ...unparsedEn }
+  parsedEn.body = JSON.parse(unparsedEn.body)
 
   fetch(API_URL + '/posts', {
     method: 'POST',
@@ -22,18 +28,19 @@ export function save() {
     },
     body: JSON.stringify({
       name,
-      body: parsedBody
+      pl: parsedPl,
+      en: parsedEn
     })
   })
   .then(response => {
     if (response.status == 201) return response.json()
   })
   .then(jsonRespone => {
+
+    console.log(jsonRespone)
+
     changeRender({ create: false  })
-    changeShowData({
-      name,
-      body: parsedBody
-    })
+    changeShowData(jsonRespone)
     resetInputs()
   })
 }

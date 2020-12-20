@@ -63,19 +63,24 @@ export function titleManager() {
 export function bodyManager() {
   const {
     language,
-    changeInputs,
-    body
+    inputs,
+    changeInputs
   } = this.props
+  const localizedInputs = this.languageObjectHandler(inputs)
+  const {
+    body
+  } = localizedInputs
 
   return {
     id: 'abc',
     classNames: { container: 'form-input textarea' },
     label: 'Body',
-    value: this.languageObjectHandler(body),
+    value: body,
     counterLimit: 10000,
     onChange: value => {
-      const newBody = { ...body, [language]: value }
-      changeInputs({ body: newBody })
+      const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
+      newLocalizedInputs.body = value
+      changeInputs({ [language]: newLocalizedInputs })
     }
   }
 }

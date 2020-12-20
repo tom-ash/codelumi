@@ -1,20 +1,26 @@
 export function componentDidMount() {
   const {
-    showName: name,
-    showTitle: title,
-    showBody: {
-      en,
-      pl
+    showName,
+    showEn: {
+      title: showEnTitle,
+      body: showEnBody
+    },
+    showPl: {
+      title: showPlTitle,
+      body: showPlBody
     },
     changeInputs
   } = this.props
 
   changeInputs({
-    name,
-    title,
-    body: {
-      en: JSON.stringify(en, null, 2),
-      pl: JSON.stringify(pl, null, 2)
+    name: showName,
+    en: {
+      title: showEnTitle,
+      body: JSON.stringify(showEnBody, null, 2)
+    },
+    pl: {
+      title: showPlTitle,
+      body: JSON.stringify(showPlBody, null, 2)
     }
   })
 }

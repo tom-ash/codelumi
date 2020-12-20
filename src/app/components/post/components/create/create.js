@@ -25,19 +25,30 @@ class PostCreate extends React.Component {
 
   render() {
     const {
-      body
+      name,
+      inputs
     } = this.props
+
+    const localizedInputs = this.languageObjectHandler(inputs)
+    if (localizedInputs === undefined) return null
+
+    const {
+      body
+    } = localizedInputs
+
+    let parsedBody
+    try {
+      parsedBody = JSON.parse(body)
+    } catch {}
 
     return (
       <div className='post-create'>
         <PostTile
           name='welcome'
-          body={this.languageObjectHandler(body)}
+          body={parsedBody}
         />
         <form>
           <ManagedText {...this.nameManager()} />
-          {/* <ManagedTextarea {...this.metaManager()} /> */}
-          {/* <ManagedText {...this.urlManager()} /> */}
           <ManagedTextarea {...this.bodyManager()} />
           <ManagedButton {...this.saveManager()} />
         </form>

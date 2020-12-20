@@ -1,11 +1,10 @@
 export function componentDidMount() {
   const {
     name,
-    body,
     changeData
   } = this.props
 
-  if (name === null || body !== null ) return
+  if (name === null) return
 
   fetch(`${API_URL}/posts/${name}`, {
     headers: {

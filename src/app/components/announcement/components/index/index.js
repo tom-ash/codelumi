@@ -21,7 +21,6 @@ import { labelProvider } from '../../../../components/user/components/show/funct
 import { changePath } from '../../../../functions/routers/change-path'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import PostTile from '../../../post/components/shared/components/tile/tile'
 
 class AnnouncementIndexSearch extends React.Component {
   constructor(props) {

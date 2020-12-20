@@ -4,25 +4,26 @@ export const mapStateToProps = (store) => {
   } = store.app
 
   const {
-    name,
-    title,
-    body
-  } = store.post.create.inputs
+    inputs
+  } = store.post.create
+
+  const {
+    name
+  } = inputs
 
   const {
     name: showName,
-    title: showTitle,
-    body: showBody
+    en: showEn,
+    pl: showPl
   } = store.post.show.data
 
   return {
     language,
     name,
-    title,
-    body,
+    inputs,
     showName,
-    showTitle,
-    showBody
+    showEn,
+    showPl
   }
 }
   

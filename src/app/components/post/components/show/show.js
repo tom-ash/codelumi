@@ -18,17 +18,20 @@ class PostShow extends React.Component {
 
   render() {
     const {
-      name,
-      body,
+      postData,
       isAdmin,
       beingEdited,
       changeRender,
       scalableVectorGraphics
     } = this.props
 
-    if  (name === null || body === null) return null
+    const localizedPostData = this.languageObjectHandler(postData)
+    if (localizedPostData === null) return null
 
-    if (beingEdited) return null
+    const {
+      body
+    } = localizedPostData
+    if (body === undefined) return null
 
     return (
       <div id='post-show'>
@@ -40,7 +43,7 @@ class PostShow extends React.Component {
         {!beingEdited &&
         <PostTile
           name='welcome'
-          body={this.languageObjectHandler(body)}
+          body={body}
         />
         }
       </div>
