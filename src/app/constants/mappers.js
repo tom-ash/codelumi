@@ -39,6 +39,11 @@ export const mapStateToProps = (store) => {
     area
   } = store.announcement.show.data
 
+  const {
+    show: renderPostShow,
+    create: renderPostCreate
+  } = store.post.render
+
   return {
     category,
     district,
@@ -73,13 +78,17 @@ export const mapStateToProps = (store) => {
     googleAnalyticsLoaded: store.app.scripts.googleAnalytics,
     googleAnalyticsLoading: store.app.scripts.googleAnalyticsLoading,
     showNotFound,
-    scalableVectorGraphics
+    scalableVectorGraphics,
+    renderPostShow,
+    renderPostCreate
   }
 }
   
 export const mapDispatchToProps = (dispatch) => {
   return {
     changeUserAuthorizeData: value => dispatch({ type: 'user/authorize/data', value }),
-    changeApp: value => dispatch({ type: 'app', value: value})
+    changeApp: value => dispatch({ type: 'app', value: value}),
+    changePostRender: value => dispatch({ type: 'post/render', value: value}),
+    changePostData: value => dispatch({ type: 'post/show/data', value })
   }
 }

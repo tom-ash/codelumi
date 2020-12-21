@@ -7,6 +7,20 @@ export function matchPathToState(prevProps) {
   if (typeof window === 'undefined' ||
       allowedOrigins.indexOf(window.origin) === -1) return
 
+  // TODO: FIX ME
+  const {
+    renderPostShow,
+    renderPostCreate
+  } = this.props
+
+  if (window.location.pathname ==='/add-post') {
+    return
+  }
+
+  if (window.location.pathname.match(/\/posts\/(.*)/)) {
+    return
+  }
+
   const routesList = Object.keys(routes)
   let shouldUpdatePath = false
   let updatedRoute

@@ -1,11 +1,11 @@
 import { coreIndexRoutes } from './core-index-routes'
 import { coreNoIndexRoutes } from './core-noindex-routes'
-import { blogRoutes } from './blog-routes'
+// import { postRoutes } from './post-routes'
 
 export const routes = {
   ...coreIndexRoutes,
   ...coreNoIndexRoutes,
-  ...blogRoutes  
+  // ...postRoutes  
 }
 
 export const emptyRoutes = (function() {

@@ -1,6 +1,6 @@
 export function nameManager() {
   const {
-    language,
+    renderShow,
     changeInputs,
     name
   } = this.props
@@ -8,57 +8,67 @@ export function nameManager() {
   return {
     classNames: { container: 'form-input text' },
     label: 'Name',
-    disabled: true,
-    value: name,
-    onChange: value => changeInputs({ name })
-  }
-}
-
-export function metaManager() {
-  const {
-    language,
-    changeInputs,
-    meta
-  } = this.props
-
-  return {
-    classNames: { container: 'form-input textarea' },
-    label: 'Meta',
-    value: this.languageObjectHandler(meta),
-    counterLimit: 10000,
-    onChange: value => changeInputs({ meta: { ...meta, [language]: value } })
+    disabled: renderShow,
+    value: name || '',
+    onChange: value => changeInputs({ name: value })
   }
 }
 
 export function urlManager() {
   const {
+    inputs,
     language,
-    changeInputs,
-    url
+    changeInputs
   } = this.props
+
+  const localizedInputs = this.languageObjectHandler(inputs)
+
+  let url
+  if (localizedInputs === null) {
+    url = ''
+  } else {
+    url = localizedInputs.url
+  }
 
   return {
     classNames: { container: 'form-input text' },
     label: 'Url',
-    value: this.languageObjectHandler(url),
-    onChange: value => changeInputs({ url: { ...url, [language]: value } })
+    value: url || '',
+    onChange: value => {
+      const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
+      newLocalizedInputs.url = value
+      changeInputs({ [language]: newLocalizedInputs })
+    }
   }
 }
 
 export function titleManager() {
-    const {
-      language,
-      changeInputs,
-      title
-    } = this.props
-  
-    return {
-      classNames: { container: 'form-input text' },
-      label: 'Title',
-      value: this.languageObjectHandler(title),
-      onChange: value => changeInputs({ title: { ...title, [language]: value } })
+  const {
+    inputs,
+    language,
+    changeInputs
+  } = this.props
+
+  const localizedInputs = this.languageObjectHandler(inputs)
+
+  let title
+  if (localizedInputs === null) {
+    title = ''
+  } else {
+    title = localizedInputs.title
+  }
+
+  return {
+    classNames: { container: 'form-input text' },
+    label: 'Title',
+    value: title,
+    onChange: value => {
+      const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
+      newLocalizedInputs.title = value
+      changeInputs({ [language]: newLocalizedInputs })
     }
   }
+}
 
 export function bodyManager() {
   const {
@@ -66,16 +76,20 @@ export function bodyManager() {
     inputs,
     changeInputs
   } = this.props
+
   const localizedInputs = this.languageObjectHandler(inputs)
-  const {
-    body
-  } = localizedInputs
+
+  let body
+  if (localizedInputs === null) {
+    body = {}
+  } else {
+    body = localizedInputs.body
+  }
 
   return {
-    id: 'abc',
     classNames: { container: 'form-input textarea' },
     label: 'Body',
-    value: body,
+    value: body || '',
     counterLimit: 10000,
     onChange: value => {
       const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
@@ -84,6 +98,37 @@ export function bodyManager() {
     }
   }
 }
+
+export function metaManager() {
+  const {
+    language,
+    inputs,
+    changeInputs
+  } = this.props
+
+  const localizedInputs = this.languageObjectHandler(inputs)
+
+  let meta
+  if (localizedInputs === null) {
+    meta = {}
+  } else {
+    meta = localizedInputs.meta
+  }
+
+  return {
+    classNames: { container: 'form-input textarea' },
+    label: 'Meta',
+    value: meta || '',
+    counterLimit: 10000,
+    onChange: value => {
+      const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
+      newLocalizedInputs.meta = value
+      changeInputs({ [language]: newLocalizedInputs })
+    }
+  }
+}
+
+
 
 export function saveManager() {
   return {

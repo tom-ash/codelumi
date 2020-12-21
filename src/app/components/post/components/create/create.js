@@ -16,10 +16,11 @@ class PostCreate extends React.Component {
     this.componentDidMount = componentDidMount
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.nameManager = managers.nameManager.bind(this)
+    this.urlManager = managers.urlManager.bind(this)
+    this.titleManager = managers.titleManager.bind(this)
+    this.bodyManager = managers.bodyManager.bind(this)
     this.metaManager = managers.metaManager.bind(this)
     this.saveManager = managers.saveManager.bind(this)
-    this.urlManager = managers.urlManager.bind(this)
-    this.bodyManager = managers.bodyManager.bind(this)
     this.save = save.bind(this)
   }
 
@@ -30,11 +31,12 @@ class PostCreate extends React.Component {
     } = this.props
 
     const localizedInputs = this.languageObjectHandler(inputs)
-    if (localizedInputs === undefined) return null
-
-    const {
-      body
-    } = localizedInputs
+    let body
+    if (localizedInputs === null) {
+      body = {}
+    } else {
+      body = localizedInputs.body
+    }
 
     let parsedBody
     try {
@@ -44,12 +46,15 @@ class PostCreate extends React.Component {
     return (
       <div className='post-create'>
         <PostTile
-          name='welcome'
+          name={name}
           body={parsedBody}
         />
         <form>
           <ManagedText {...this.nameManager()} />
+          <ManagedText {...this.urlManager()} />
+          <ManagedText {...this.titleManager()} />
           <ManagedTextarea {...this.bodyManager()} />
+          <ManagedTextarea {...this.metaManager()} />
           <ManagedButton {...this.saveManager()} />
         </form>
       </div>

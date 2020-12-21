@@ -4,6 +4,10 @@ export const mapStateToProps = (store) => {
   } = store.app
 
   const {
+    show: renderShow
+  } = store.post.render
+
+  const {
     inputs
   } = store.post.create
 
@@ -19,6 +23,7 @@ export const mapStateToProps = (store) => {
 
   return {
     language,
+    renderShow,
     name,
     inputs,
     showName,

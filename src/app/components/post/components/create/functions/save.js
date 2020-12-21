@@ -14,11 +14,19 @@ export function save() {
     en: unparsedEn
   } = inputs
 
-  const parsedPl = { ...unparsedPl }
-  parsedPl.body = JSON.parse(unparsedPl.body)
+  let parsedPl = null
+  if (unparsedPl) {
+    parsedPl = { ...unparsedPl }
+    parsedPl.body = JSON.parse(unparsedPl.body)
+    parsedPl.meta = JSON.parse(unparsedPl.meta)
+  }
 
-  const parsedEn = { ...unparsedEn }
-  parsedEn.body = JSON.parse(unparsedEn.body)
+  let parsedEn = null
+  if (unparsedEn) {
+    parsedEn = { ...unparsedEn }
+    parsedEn.body = JSON.parse(unparsedEn.body)
+    parsedEn.meta = JSON.parse(unparsedEn.meta)
+  }
 
   fetch(API_URL + '/posts', {
     method: 'POST',
@@ -36,11 +44,8 @@ export function save() {
     if (response.status == 201) return response.json()
   })
   .then(jsonRespone => {
-
-    console.log(jsonRespone)
-
-    changeRender({ create: false  })
     changeShowData(jsonRespone)
+    changeRender({ create: false })
     resetInputs()
   })
 }
