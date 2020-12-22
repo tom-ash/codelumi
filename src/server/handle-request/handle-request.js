@@ -1,4 +1,5 @@
 import { sendResponse } from '../send-response/send-response'
+import { sendPostCreateResponse } from '../send-response/post/create'
 import { sendPostShowResponse } from '../send-response/post/show'
 import { sendAnnouncementsMapResponse } from '../send-response/announcement/map'
 import { sendAnnouncementsListResponse } from '../send-response/announcement/catalogue'
@@ -46,11 +47,15 @@ export function handleRequest(req, res) {
     noIndex
   } = getRouteData(pureUrl, userAgent, visitorState)
 
+  if (pureUrl === 'add-post' || pureUrl === 'dodaj-post') {
+    return sendPostCreateResponse({ res, device: getDevice(userAgent), visitorState, url: pureUrl }) 
+  }
+
   if (!sender) return sendPostShowResponse({ res, device: getDevice(userAgent), visitorState, url: pureUrl })
-  else if (sender === 'map') return sendAnnouncementsMapResponse({ res, initialState, title, description, url: pureUrl })
-  else if (sender === 'list') return sendAnnouncementsListResponse({ res, initialState, title, description, url: pureUrl })
-  else if (sender === 'announcement') return sendAnnouncementResponse({ res, initialState, announcementId: +pureUrl.match(/\d+/)[0] })
-  else if (sender === 'announcementCreate') return sendAnnouncementCreateResponse({ res, initialState, title, description, url: pureUrl })
+  if (sender === 'map') return sendAnnouncementsMapResponse({ res, initialState, title, description, url: pureUrl })
+  if (sender === 'list') return sendAnnouncementsListResponse({ res, initialState, title, description, url: pureUrl })
+  if (sender === 'announcement') return sendAnnouncementResponse({ res, initialState, announcementId: +pureUrl.match(/\d+/)[0] })
+  if (sender === 'announcementCreate') return sendAnnouncementCreateResponse({ res, initialState, title, description, url: pureUrl })
 
   sendResponse({
     res,

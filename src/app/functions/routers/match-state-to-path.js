@@ -3,7 +3,6 @@ import { routes, emptyRoutes } from '../../../shared/routes/routes'
 export function matchStateToPath({ popState }) {
   const {
     changeApp,
-    changePostShowData,
     changePostRender
   } = this.props
   
@@ -12,14 +11,7 @@ export function matchStateToPath({ popState }) {
   let path = window.location.pathname
   const newRoutes = {}
 
-  const postMatch = path.match(/\/posts\/(.*)/)
-  if (postMatch) {
-    changePostShowData({ name: postMatch[1] })
-    changePostRender({ show: true })
-    return
-  }
-
-  if (path === '/add-post') {
+  if (path === '/dodaj-post' || path === '/add-post') {
     return changePostRender({ create: true })
   }
 
@@ -37,8 +29,7 @@ export function matchStateToPath({ popState }) {
 
   if (Object.keys(newRoutes).length === 0) {
     const {
-      changePostShowData,
-      changePostRender
+      changePostShowData
     } = this.props
 
     const postUrl = window.location.pathname.slice(1)

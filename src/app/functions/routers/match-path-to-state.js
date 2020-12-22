@@ -88,8 +88,12 @@ export function matchPathToState(prevProps) {
         } = this.props
 
         if (renderPostShow || renderPostCreate) {
-          if (language === 'en') fullPathname = postEn.url
-          if (language === 'pl') fullPathname = postPl.url
+          if (postEn || postPl) {
+            if (language === 'en') fullPathname = postEn.url
+            if (language === 'pl') fullPathname = postPl.url
+          } else {
+            fullPathname = language === 'pl' ? '/dodaj-post' : '/add-post'
+          }
         } else {
           return
         }
