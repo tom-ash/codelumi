@@ -1,4 +1,5 @@
 import { sendResponse } from '../send-response/send-response'
+import { sendPostShowResponse } from '../send-response/post/show'
 import { sendAnnouncementsMapResponse } from '../send-response/announcement/map'
 import { sendAnnouncementsListResponse } from '../send-response/announcement/catalogue'
 import { sendAnnouncementResponse } from '../send-response/announcement/show'
@@ -45,30 +46,11 @@ export function handleRequest(req, res) {
     noIndex
   } = getRouteData(pureUrl, userAgent, visitorState)
 
-
-  if (!sender) return (
-    sendResponse({
-      res,
-      initialState: {
-        app: {
-          ...appState,
-          showNotFound: true,
-          language: 'pl',
-          device: getDevice(userAgent)
-        },
-        ...visitorState
-      },
-      title: '404',
-      description: '404',
-      url: pureUrl,
-      noIndex: true,
-      status: 404
-    })
-  )
+  if (!sender) return sendPostShowResponse({ res, device: getDevice(userAgent), visitorState, url: pureUrl })
   else if (sender === 'map') return sendAnnouncementsMapResponse({ res, initialState, title, description, url: pureUrl })
   else if (sender === 'list') return sendAnnouncementsListResponse({ res, initialState, title, description, url: pureUrl })
   else if (sender === 'announcement') return sendAnnouncementResponse({ res, initialState, announcementId: +pureUrl.match(/\d+/)[0] })
-  else if (sender === 'announcementCreate') return sendAnnouncementCreateResponse({ res, initialState, title, description, url: pureUrl })  
+  else if (sender === 'announcementCreate') return sendAnnouncementCreateResponse({ res, initialState, title, description, url: pureUrl })
 
   sendResponse({
     res,

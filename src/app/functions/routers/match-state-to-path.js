@@ -3,7 +3,7 @@ import { routes, emptyRoutes } from '../../../shared/routes/routes'
 export function matchStateToPath({ popState }) {
   const {
     changeApp,
-    changePostData,
+    changePostShowData,
     changePostRender
   } = this.props
   
@@ -14,7 +14,7 @@ export function matchStateToPath({ popState }) {
 
   const postMatch = path.match(/\/posts\/(.*)/)
   if (postMatch) {
-    changePostData({ name: postMatch[1] })
+    changePostShowData({ name: postMatch[1] })
     changePostRender({ show: true })
     return
   }
@@ -33,6 +33,35 @@ export function matchStateToPath({ popState }) {
 
       if (matcher.needsAnnouncementIndexMap) newRoutes.showAnnouncementIndexMap = true
     }
+  }
+
+  if (Object.keys(newRoutes).length === 0) {
+    const {
+      changePostShowData,
+      changePostRender
+    } = this.props
+
+    const postUrl = window.location.pathname.slice(1)
+    fetch(`${API_URL}/posts/urls/${postUrl}`, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      }
+
+      throw new Error('Page Not Found')
+    })
+    .then(json => {
+      changeApp({ language: json.language })
+      changePostShowData(json)
+      changePostRender({ show: true })
+    })
+    .catch(error => {
+      changeApp({ showNotFound: true })
+    })
   }
 
   changeApp({ ...emptyRoutes, ...newRoutes })
