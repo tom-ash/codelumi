@@ -8,8 +8,8 @@ export function sendPostCreateResponse({
   visitorState,
   url
 }) {
-  const language = url === 'add-post' ? 'en' : 'pl'
-  const title = url === 'add-post' ? 'Add Post' : 'Dodaj post'
+  const language = url === 'add-page' ? 'en' : 'pl'
+  const title = url === 'add-page' ? 'Add Post' : 'Dodaj post'
 
   sendResponse({ 
     res,

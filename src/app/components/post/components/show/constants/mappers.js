@@ -13,7 +13,8 @@ export const mapStateToProps = (store) => {
   } = store.post.show
 
   const {
-    name
+    name,
+    standalone
   } = postData
 
   const {
@@ -26,7 +27,8 @@ export const mapStateToProps = (store) => {
     isAdmin,
     beingEdited: name === nameCreate,
     scalableVectorGraphics,
-    language
+    language,
+    standalone
   }
 }
   

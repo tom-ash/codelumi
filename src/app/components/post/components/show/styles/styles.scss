@@ -1,7 +1,8 @@
 #post-show {
   position: relative;
-  max-width: 1214px;
+  max-width: 768px;
   margin: 0 auto;
+  text-align: left;
   button {
     position: absolute;
     top: 12px;
@@ -12,6 +13,18 @@
     padding: 2px;
     &:disabled {
       cursor: not-allowed;
+    }
+  }
+  &.standalone {
+    margin-top: 24px;
+    
+    h2 {
+      font-size: 20px;
+    }
+    .post-container {
+      padding: 20px;
+      text-align: initial;
+      border-radius: 0;
     }
   }
 }

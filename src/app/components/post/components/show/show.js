@@ -22,7 +22,8 @@ class PostShow extends React.Component {
       isAdmin,
       beingEdited,
       changeRender,
-      scalableVectorGraphics
+      scalableVectorGraphics,
+      standalone
     } = this.props
 
     const localizedPostData = this.languageObjectHandler(postData)
@@ -34,7 +35,7 @@ class PostShow extends React.Component {
     if (body === undefined) return null
 
     return (
-      <div id='post-show'>
+      <div id='post-show' className={standalone ? 'standalone' : 'attached'}>
         {isAdmin &&
         <button onClick={() => changeRender({ create: true })}>
           <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />

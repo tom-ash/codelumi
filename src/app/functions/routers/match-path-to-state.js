@@ -92,7 +92,7 @@ export function matchPathToState(prevProps) {
             if (language === 'en') fullPathname = postEn.url
             if (language === 'pl') fullPathname = postPl.url
           } else {
-            fullPathname = language === 'pl' ? '/dodaj-post' : '/add-post'
+            fullPathname = language === 'pl' ? '/dodaj-strone' : '/add-page'
           }
         } else {
           return

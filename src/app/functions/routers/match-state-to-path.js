@@ -11,7 +11,7 @@ export function matchStateToPath({ popState }) {
   let path = window.location.pathname
   const newRoutes = {}
 
-  if (path === '/dodaj-post' || path === '/add-post') {
+  if (path === '/dodaj-strone' || path === '/add-page') {
     return changePostRender({ create: true })
   }
 
@@ -47,7 +47,7 @@ export function matchStateToPath({ popState }) {
     })
     .then(json => {
       changeApp({ language: json.language })
-      changePostShowData(json)
+      changePostShowData({ ...json, standalone: true })
       changePostRender({ show: true })
     })
     .catch(error => {

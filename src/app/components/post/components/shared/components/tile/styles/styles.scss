@@ -1,11 +1,12 @@
 .post-container {
   position: relative;
-  max-width: 1214px;
+  max-width: 768px;
   margin: 0 auto;
   background: white;
   border: 1px solid #E5E7E9;
   border-radius: 3px;
-  padding: 15px;
+  padding: 20px;
+  line-height: 1.65;
   button {
     position: absolute;
     top: 15px;
@@ -17,24 +18,24 @@
       cursor: not-allowed;
     }
   }
+
+  color: #424242;
+
   h2 {
     margin-bottom: 16px;
-    font-size: 16px;
-    color: #424949;
+    font-size: 18px;
+    color: #565656;
   }
   h3 {
-    font-size: 15px;
-    margin-top: 16px;
-    margin-bottom: 8px;
+    font-size: 17px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: #565656;
   }
   .body {
-    white-space: pre-wrap;
-    color: 'red' !important;
-    font-size: 15px;
-    text-align: justify;
+    font-size: 16px;
     p {
       margin-bottom: 10px;
-      line-height: 23px;
     }
   }
 }

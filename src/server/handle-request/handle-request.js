@@ -47,7 +47,7 @@ export function handleRequest(req, res) {
     noIndex
   } = getRouteData(pureUrl, userAgent, visitorState)
 
-  if (pureUrl === 'add-post' || pureUrl === 'dodaj-post') {
+  if (pureUrl === 'add-page' || pureUrl === 'dodaj-strone') {
     return sendPostCreateResponse({ res, device: getDevice(userAgent), visitorState, url: pureUrl }) 
   }
 
