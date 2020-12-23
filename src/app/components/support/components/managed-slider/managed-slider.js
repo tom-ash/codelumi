@@ -86,6 +86,7 @@ class ManagedSlider extends React.Component {
               }}
             >
               <img
+                loading='lazy'
                 src={picture.database}
                 className='managed-pictures-picture'
                 draggable={false}
