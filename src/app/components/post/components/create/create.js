@@ -17,8 +17,12 @@ class PostCreate extends React.Component {
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.nameManager = managers.nameManager.bind(this)
     this.urlManager = managers.urlManager.bind(this)
-    this.titleManager = managers.titleManager.bind(this)
     this.bodyManager = managers.bodyManager.bind(this)
+    this.titleManager = managers.titleManager.bind(this)
+    this.descriptionManager = managers.descriptionManager.bind(this)
+    this.keywordsManager = managers.keywordsManager.bind(this)
+    this.canonicalUrlManager = managers.canonicalUrlManager.bind(this)
+    this.pictureManager = managers.pictureManager.bind(this)
     this.metaManager = managers.metaManager.bind(this)
     this.saveManager = managers.saveManager.bind(this)
     this.save = save.bind(this)
@@ -52,9 +56,17 @@ class PostCreate extends React.Component {
         <form>
           <ManagedText {...this.nameManager()} />
           <ManagedText {...this.urlManager()} />
-          <ManagedText {...this.titleManager()} />
+          <div className='separation-line' />
           <ManagedTextarea {...this.bodyManager()} />
+          <div className='separation-line' />
+          <ManagedText {...this.titleManager()} />
+          <ManagedTextarea {...this.descriptionManager()} />
+          <ManagedTextarea {...this.keywordsManager()} />
+          <ManagedText {...this.canonicalUrlManager()} />
+          <ManagedText {...this.pictureManager()} />
+          <div className='separation-line' />
           <ManagedTextarea {...this.metaManager()} />
+          <div className='separation-line' />
           <ManagedButton {...this.saveManager()} />
         </form>
       </div>

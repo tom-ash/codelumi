@@ -42,6 +42,35 @@ export function urlManager() {
   }
 }
 
+export function bodyManager() {
+  const {
+    language,
+    inputs,
+    changeInputs
+  } = this.props
+
+  const localizedInputs = this.languageObjectHandler(inputs)
+
+  let body
+  if (localizedInputs === null) {
+    body = {}
+  } else {
+    body = localizedInputs.body
+  }
+
+  return {
+    classNames: { container: 'form-input textarea' },
+    label: 'Body',
+    value: body || '',
+    counterLimit: 10000,
+    onChange: value => {
+      const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
+      newLocalizedInputs.body = value
+      changeInputs({ [language]: newLocalizedInputs })
+    }
+  }
+}
+
 export function titleManager() {
   const {
     inputs,
@@ -70,30 +99,95 @@ export function titleManager() {
   }
 }
 
-export function bodyManager() {
+export function descriptionManager() {
   const {
     language,
     inputs,
     changeInputs
   } = this.props
 
-  const localizedInputs = this.languageObjectHandler(inputs)
-
-  let body
-  if (localizedInputs === null) {
-    body = {}
-  } else {
-    body = localizedInputs.body
-  }
+  const {
+    description
+  } = this.languageObjectHandler(inputs) || {}
 
   return {
-    classNames: { container: 'form-input textarea' },
-    label: 'Body',
-    value: body || '',
+    classNames: { container: 'form-input textarea slim' },
+    label: 'Description',
+    value: description || '',
     counterLimit: 10000,
     onChange: value => {
       const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
-      newLocalizedInputs.body = value
+      newLocalizedInputs.description = value
+      changeInputs({ [language]: newLocalizedInputs })
+    }
+  }
+}
+
+export function keywordsManager() {
+  const {
+    language,
+    inputs,
+    changeInputs
+  } = this.props
+
+  const {
+    keywords
+  } = this.languageObjectHandler(inputs) || {}
+
+  return {
+    classNames: { container: 'form-input textarea slim' },
+    label: 'Keywords',
+    value: keywords || '',
+    counterLimit: 10000,
+    onChange: value => {
+      const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
+      newLocalizedInputs.keywords = value
+      changeInputs({ [language]: newLocalizedInputs })
+    }
+  }
+}
+
+export function canonicalUrlManager() {
+  const {
+    inputs,
+    language,
+    changeInputs
+  } = this.props
+
+  const {
+    canonical_url
+  } = this.languageObjectHandler(inputs) || {}
+
+  return {
+    classNames: { container: 'form-input text' },
+    label: 'Canonical URL',
+    value: canonical_url || '',
+    onChange: value => {
+      const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
+      newLocalizedInputs.canonical_url = value
+      changeInputs({ [language]: newLocalizedInputs })
+    }
+  }
+}
+
+export function pictureManager() {
+  const {
+    inputs,
+    language,
+    changeInputs
+  } = this.props
+
+  const {
+    picture
+  } = this.languageObjectHandler(inputs) || {}
+
+  return {
+    classNames: { container: 'form-input text' },
+    label: 'Picture',
+    value: picture || '',
+    onChange: value => {
+      const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
+      newLocalizedInputs.picture = value
       changeInputs({ [language]: newLocalizedInputs })
     }
   }
