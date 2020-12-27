@@ -3,28 +3,34 @@ import { renderApp } from '../render-app/render-app'
 
 export function sendResponse({
   res,
-  initialState,
-  title,
-  description,
+  status,
+  language,
+  noIndex,
   url,
   announcementUrl,
-  noIndex,
+  canonicalUrl,
+  title,
+  description,
+  keywords,
+  image,
   openGraph,
   schemaOrg,
-  status,
-  language
+  initialState
 }) {
   res.status(status || 200).send(
-    renderPage({ 
-      ...renderApp(initialState),
-      title,
-      description,
+    renderPage({
       url,
       announcementUrl,
+      canonicalUrl,
+      language,
       noIndex,
+      title,
+      description,
+      keywords,
+      image,
       openGraph,
       schemaOrg,
-      language
+      ...renderApp(initialState)
     }) 
   )
 }

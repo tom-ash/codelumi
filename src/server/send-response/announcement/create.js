@@ -17,30 +17,10 @@ export function sendAnnouncementCreateResponse({
   description,
   url
 }) {
-  const openGraph = openGraphProvider({
-    title,
-    description,
-    imageWidth: "1200",
-    imageHeight: "630"
-  })
-
   const keywords = {
     pl: 'ogłoszenie, wynajem, nieruchomości, dodaj, bezpłatne, za darmo',
     en: 'announcement, lease, real estate, add, free'
   }[language]
-
-  const schemaOrg = `
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org", 
-        "@type": "WebPage",
-        "name": "${title}",
-        "description": "${description}",
-        "keywords": "${keywords}",
-        "inLanguage": "${language}"
-      }
-    </script>
-  `
   
   fetch(`${API_URL}/posts/create_announcement`, {
     headers: {
@@ -53,6 +33,11 @@ export function sendAnnouncementCreateResponse({
   .then(json => {
     sendResponse({
       res,
+      url,
+      language,
+      title,
+      description,
+      keywords,
       initialState: {
         app: {
           ...appState,
@@ -70,13 +55,7 @@ export function sendAnnouncementCreateResponse({
           }
         },
         visitor
-      },
-      title,
-      description,
-      url,
-      openGraph,
-      schemaOrg,
-      language
+      }
     })
   })
 }

@@ -1,35 +1,38 @@
+import { openGraphProvider } from '../../shared/functions/providers/open-graph-provider'
+import { schemaOrgProvider } from '../../shared/functions/providers/schema-org-provider'
+
 export function renderPage({
-  html,
-  css,
-  preloadedState,
-  scriptTags,
+  url,
+  canonicalUrl,
+  announcementUrl,
+  language,
+  noIndex,
   title,
   description,
-  url,
-  announcementUrl,
-  noIndex,
+  keywords,
+  image,
   openGraph,
   schemaOrg,
-  language
+  css,
+  html,
+  preloadedState,
+  scriptTags
 }) {
-
-  const canonical = announcementUrl ? announcementUrl : `${CLIENT_URL}/${url}`
-
   return `
     <!doctype html>
     <html lang="${language}">
       <head>
-        ${noIndex ? '<meta name="robots" content="noindex">' : ''}
-        ${openGraph ? openGraph : ''}
-        <link rel="canonical" href="${canonical}">
+        <link rel="canonical" href="${canonicalUrl || announcementUrl || `${CLIENT_URL}/${url}`}">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta name="description" content="${description}">
+        <meta name="robots" content="${noIndex ? 'noindex' : 'index,follow,all'}">
         <title>${title}</title>
+        <meta name="description" content="${description}">
+        ${openGraphProvider({ title, description, image, ...openGraph })}
+        ${schemaOrgProvider({ language, title, description, keywords, ...schemaOrg })}
         <style type="text/css">${[...css].join('')}</style>
       </head>
       <body>
-        ${schemaOrg || ''}
         ${html}
         <script>
           window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}

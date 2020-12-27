@@ -20,15 +20,24 @@ export function sendPostShowResponse({
   })
   .then(json => {
     const language = json.language
+    const page = json[language]
+    const {
+      title,
+      description,
+    } = page
 
     sendResponse({
       res,
+      url,
+      title,
+      description,
       initialState: {
         app: {
           ...appState,
           language,
           device
         },
+        ...visitorState,
         post: {
           show: {
             data: {
@@ -40,31 +49,26 @@ export function sendPostShowResponse({
           render: {
             show: true
           }
-        },
-        ...visitorState
-      },
-      title: json[language].title,
-      description: json[language].meta && json[language].meta.description,
-      url
+        }
+      }
     })
   })
   .catch(error => {
     sendResponse({
       res,
+      status: 404,
+      url,
+      title: 'Not Found',
+      description: 'Not Found',
       initialState: {
         app: {
           ...appState,
-          showNotFound: true,
           language: 'pl',
+          showNotFound: true,
           device
         },
         ...visitorState
-      },
-      title: '404',
-      description: error,
-      url,
-      noIndex: true,
-      status: 404
+      }
     })
   })
 }

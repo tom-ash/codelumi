@@ -7,16 +7,16 @@ import { parseScalableVectorGraphics } from '../../../shared/functions/parsers/p
 
 export function sendAnnouncementsMapResponse({
   res,
+  url,
+  title,
+  description,
   initialState: {
     app: {
       language,
       device
     },
     visitor
-  },
-  title,
-  description,
-  url
+  }
 }) {
   fetch(API_URL + `/announcements?with_welcome=true`, {
     headers: {
@@ -35,33 +35,18 @@ export function sendAnnouncementsMapResponse({
     })
     if (announcements && announcements[0]) announcements[0].show = true
 
-    const openGraph = openGraphProvider({
-      title,
-      description,
-      imageWidth: "1200",
-      imageHeight: "630"
-    })
-
     const keywords = {
       pl: 'mapa, warszawa, nieruchomość, nieruchomości, wynajem, najem, wynajęcie, mieszkania, lokale użytkowe, biura, mieszkanie, lokal użytkowy, biuro, ogłoszenia, ogłoszenie',
       en: 'map, warsaw, real estate, real estates, lease, apartments, usable premises, offices, apartment, office, announcements, announcement'
     }[language]
 
-    const schemaOrg = `
-      <script type="application/ld+json">
-        {
-          "@context": "https://schema.org", 
-          "@type": "WebPage",
-          "name": "warsawlease.pl",
-          "description": "${description}",
-          "keywords": "${keywords}",
-          "inLanguage": "${language}"
-        }
-      </script>
-    `
-
     sendResponse({
       res,
+      url,
+      language,
+      title,
+      description,
+      keywords,
       initialState: {
         app: {
           ...appState,
@@ -88,13 +73,7 @@ export function sendAnnouncementsMapResponse({
           }
         },
         visitor
-      },
-      title,
-      description,
-      url,
-      openGraph,
-      schemaOrg,
-      language
+      }
     })
   })
 }
