@@ -2,7 +2,6 @@ const fetch = require("node-fetch")
 import { sendResponse } from '../send-response'
 import { appState } from '../../../app/constants/app-state'
 import { data } from '../../../app/components/announcement/components/index/constants/state'
-import { openGraphProvider } from '../../../shared/functions/providers/open-graph-provider'
 import { parseScalableVectorGraphics } from '../../../shared/functions/parsers/parse-scalable-vector-graphics'
 
 export function sendAnnouncementsMapResponse({

@@ -57,7 +57,7 @@ export function sendAnnouncementResponse({
       announcementUrl,
       language,
       title,
-      description: title,
+      description,
       keywords,
       image,
       schemaOrg: { type: 'RealEstateListing' },
