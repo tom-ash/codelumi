@@ -56,5 +56,23 @@ export const coreIndexRoutes = {
       label: 'Add Free Announcement'
     },
     overshadow: false
+  },
+  showSiteMap: {
+    sender: 'siteMap',
+    pl: {
+      regEx: /^\/?mapa-strony\/?$/,
+      url: '/mapa-strony',
+      title: 'Mapa strony warsawlease.pl',
+      description: 'Mapa strony warsawlease.pl',
+      label: 'Mapa strony warsawlease.pl'
+    },
+    en: {
+      regEx: /^\/?site-map\/?$/,
+      url: '/site-map',
+      title: 'Site Map warsawlease.pl',
+      description: 'Site Map warsawlease.pl',
+      label: 'Site Map warsawlease.pl'
+    },
+    overshadow: false
   }
 }

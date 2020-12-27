@@ -33,4 +33,13 @@
       hreflang="en"
       href="https://www.warsawlease.pl/add-announcement-of-real-estate-lease-in-warsaw"/>
   </url>
+  <url>
+    <loc>https://www.warsawlease.pl/mapa-strony</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.warsawlease.pl/site-map"/>
+  </url>
 </urlset>

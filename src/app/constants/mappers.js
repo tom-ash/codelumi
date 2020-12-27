@@ -26,7 +26,8 @@ export const mapStateToProps = (store) => {
     showBlog,
     scripts,
     showNotFound,
-    scalableVectorGraphics
+    scalableVectorGraphics,
+    showSiteMap
   } = store.app
 
   const {
@@ -87,7 +88,8 @@ export const mapStateToProps = (store) => {
     renderPostShow,
     renderPostCreate,
     postPl,
-    postEn
+    postEn,
+    showSiteMap
   }
 }
   

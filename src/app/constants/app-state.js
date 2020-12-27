@@ -14,5 +14,6 @@ export const appState = {
   isMobile: null,
   showNotFound: false,
   scalableVectorGraphics: {},
+  siteMapLinks: null,
   ...emptyRoutes
 }

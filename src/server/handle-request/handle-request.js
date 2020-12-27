@@ -7,6 +7,7 @@ import { sendAnnouncementResponse } from '../send-response/announcement/show'
 import { sendAnnouncementCreateResponse } from '../send-response/announcement/create'
 import { routes } from '../../shared/routes/routes'
 import { appState } from '../../app/constants/app-state'
+import { sendSiteMapResponse } from '../send-response/send-site-map-response'
 
 export function handleRequest(req, res) {
   const pureUrl = purifyUrl(req.originalUrl)
@@ -49,6 +50,10 @@ export function handleRequest(req, res) {
 
   if (pureUrl === 'add-page' || pureUrl === 'dodaj-strone') {
     return sendPostCreateResponse({ res, device: getDevice(userAgent), visitorState, url: pureUrl }) 
+  }
+
+  if (pureUrl === 'mapa-strony' || pureUrl === 'site-map') {
+    return sendSiteMapResponse({ res, initialState, title, description, url: pureUrl })
   }
 
   if (!sender) return sendPostShowResponse({ res, device: getDevice(userAgent), visitorState, url: pureUrl })

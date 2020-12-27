@@ -35,24 +35,6 @@ export const coreNoIndexRoutes = {
     overshadow: false,
     noIndex: true
   },
-  showVisitorAbout: {
-    sender: 'generic',
-    pl: {
-      regEx: /^\/?o-serwisie\/?$/,
-      url: '/o-serwisie',
-      title: 'O Serwisie',
-      description: 'O Serwisie warsawlease.pl'
-    },
-    en: {
-      regEx: /^\/?about\/?$/,
-      url: '/about',
-      title: 'About',
-      description: 'About warsawlease.pl'
-    },
-    needsAnnouncementIndexMap: true,
-    overshadow: true,
-    noIndex: true
-  },
   showVisitorContact: {
     sender: 'generic',
     pl: {

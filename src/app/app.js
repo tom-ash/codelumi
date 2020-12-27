@@ -18,6 +18,7 @@ import { matchPathToState } from './functions/routers/match-path-to-state'
 import NotFound from './components/scaffold/components/not-found/not-found'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import SiteMap from './components/scaffold/components/site-map/site-map'
 
 class App extends React.Component {
   constructor(props) {
@@ -56,7 +57,8 @@ class App extends React.Component {
   render() {
     const {
       showNotFound,
-      language
+      language,
+      showSiteMap
     } = this.props
 
     if (showNotFound) {
@@ -77,6 +79,7 @@ class App extends React.Component {
           <Announcement />
           <Post />
           <Visitor />
+          {showSiteMap && <SiteMap />}
         </div>
         <Footer />
       </div>
