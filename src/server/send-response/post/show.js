@@ -22,15 +22,22 @@ export function sendPostShowResponse({
     const language = json.language
     const page = json[language]
     const {
+      canonical_url: canonicalUrl,
       title,
       description,
+      keywords,
+      picture: image
     } = page
 
     sendResponse({
       res,
       url,
+      canonicalUrl,
+      language,
       title,
       description,
+      keywords,
+      image,
       initialState: {
         app: {
           ...appState,

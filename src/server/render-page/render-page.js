@@ -22,7 +22,7 @@ export function renderPage({
 `<!doctype html>
 <html lang="${language}">
   <head>
-    <link rel="canonical" href="${canonicalUrl || announcementUrl || `${CLIENT_URL}/${url}`}">
+    <link rel="canonical" href="${announcementUrl || `${CLIENT_URL}/${canonicalUrl === '/' ? '' : canonicalUrl || url}`}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="robots" content="${noIndex ? 'noindex' : 'index,follow,all'}">
