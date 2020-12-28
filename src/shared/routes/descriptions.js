@@ -27,7 +27,7 @@ export const routeDescriptions = {
     [PL]: 'Ustawienia Prywatności',
     [EN]: 'Privacy Settings'
   },
- [VISITOR_COOKIES_POLICY]: {
+  [VISITOR_COOKIES_POLICY]: {
     [PL]: 'Polityka Cookies',
     [EN]: 'Cookies Policy'
   },
