@@ -2,25 +2,7 @@ export const mapStateToProps = (store) => {
 
   const {
     language,
-    showAnnouncementCreate,
-    showAnnouncementEdit,
-    showAnnouncementShow,
-    announcementId,
-    showAnnouncementIndexMap,
-    showAnnouncementIndexCatalogue,
-    showAnnouncementIndexList,
-    showUserCreate,
-    showUserAuthorize,
-    showUserShow,
-    showUserEditPasswordReset,
-    showUserEditPhoneVerify,
-    showUserEditAccount,
-    showVisitorAbout,
-    showVisitorContact,
-    showVisitorTermsOfService,
-    showVisitorCookiesPolicy,
-    showVisitorPrivacyPolicy,
-    showVisitorPrivacySettings
+    TODO
   } = store.app
 
   const {
@@ -31,30 +13,10 @@ export const mapStateToProps = (store) => {
 
   return {
     language,
-    showAnnouncementCreate,
-    showAnnouncementEdit,
-    showAnnouncementShow,
-    announcementId,
-    showAnnouncementIndexMap,
-    showAnnouncementIndexCatalogue,
-    showAnnouncementIndexList,
-    showUserCreate,
-    showUserAuthorize,
-    showUserShow,
-    showUserEditPasswordReset,
-    showUserEditPhoneVerify,
-    showUserEditAccount,
-    showVisitorAbout,
-    showVisitorContact,
-    showVisitorTermsOfService,
-    showVisitorCookiesPolicy,
-    showVisitorPrivacyPolicy,
-    showVisitorPrivacySettings,
+    TODO,
     authorized: store.user.authorize.data.authorized,
     name: store.user.authorize.data.name,
     device: store.app.device,
-    showLinks: store.scaffold.header.control.showLinks,
-    showUserShow: store.app.showUserShow,
     category,
     district,
     area

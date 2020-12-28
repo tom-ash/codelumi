@@ -4,5 +4,5 @@ export function deauthorizeUser() {
   const { changeApp, resetAuthorizeData } = this.props
   deleteCookie('access_token')
   resetAuthorizeData({ authorized: false, name: null, phoneVerified: null })
-  this.changePath({ showUserShow: false, showAnnouncementIndexMap: true })
+  TODO
 }

@@ -32,16 +32,13 @@ export function titleManager() {
       resetAnnouncementIndexControl()
       resetAnnouncementIndexInputs()
       changeAnnouncementIndexControl({ fetch: true })
-      this.changePath({ showAnnouncementIndexMap: true })
+      TODO
     }
   }
 }
 
 export function addAnnouncementManager() {
-  const {
-    pl,
-    en,
-  } = routes.showAnnouncementCreate
+  TODO
 
   return {
     classNames: { container: 'header-link add-announcement' },
@@ -50,8 +47,7 @@ export function addAnnouncementManager() {
     title: this.languageObjectHandler({ pl: pl.title, en: en.title }),
     label: this.languageObjectHandler({ pl: pl.label, en: en.label }),
     onClick: () => {
-      this.changePath({ showAnnouncementCreate: true })
-      this.props.changeControl({ showLinks: false })
+      TODO
     }
   }
 }
@@ -67,8 +63,7 @@ export function signUpManager() {
     title: this.languageObjectHandler({ pl: 'Zarejestruj', en: 'Sign Up' }),
     label: this.languageObjectHandler({ pl: 'Zarejestruj', en: 'Sign Up' }),
     onClick: () => {
-      this.changePath({ showUserCreate: true })
-      this.props.changeControl({ showLinks: false })
+      TODO
     }
   }
 }
@@ -85,7 +80,7 @@ export function signInManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Zaloguj', en: 'Sign In' }),
     label: this.languageObjectHandler({ pl: 'Zaloguj', en: 'Sign In' }),
-    onClick: () => this.changePath({ showUserAuthorize: true })
+    TODO
   }
 }
 
@@ -97,8 +92,7 @@ export function myAccountManager() {
     classNames: { container: 'header-link' },
     label: this.languageObjectHandler({ pl: 'Konto', en: 'Account' }),
     onClick: () => {
-      changeApp({ showUserShow: true })
-      changeControl({ showLinks: false })
+      TODO
     }
   }
 }

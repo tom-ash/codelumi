@@ -34,34 +34,14 @@ class App extends React.Component {
     this.matchPathToState = matchPathToState.bind(this)
   }
 
-  showUser = () => {
-    const {
-      showUserCreate,
-      showUserAuthorize,
-      showUserEditPasswordReset,
-      showUserShow,
-      showUserEditAccount,
-      showUserEditPhoneVerify
-    } = this.props
-
-    return (
-      showUserCreate ||
-      showUserAuthorize ||
-      showUserEditPasswordReset ||
-      showUserShow ||
-      showUserEditAccount ||
-      showUserEditPhoneVerify
-    )
-  }
-
   render() {
     const {
-      showNotFound,
       language,
-      showSiteMap
+      TODO,
+      
     } = this.props
 
-    if (showNotFound) {
+    if (TODO) {
       return (
         <div id='app-container'>
           <Header />
@@ -75,11 +55,11 @@ class App extends React.Component {
       <div id='app-container'>
         <Header />
         <div id='app-inner-container'>
-          {this.showUser() && <User />}
+          {TODO && <User />}
           <Announcement />
           <Post />
           <Visitor />
-          {showSiteMap && <SiteMap />}
+          {TODO && <SiteMap />}
         </div>
         <Footer />
       </div>

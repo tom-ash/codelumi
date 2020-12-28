@@ -19,12 +19,7 @@ export function goToAnnouncementManager() {
         district,
         area
       })
-      changeApp({
-        announcementId: savedId || id,
-        showAnnouncementShow: true,
-        showAnnouncementCreate: false,
-        showAnnouncementEdit: false,
-      })
+      // RENDER
     }
   }
 }

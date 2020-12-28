@@ -5,35 +5,30 @@ export function matchPathToLanguage() {
   let overshadowingRoute
   let overshadowedRoute
 
-  const language = this.props.language === 'pl' ? 'en' : 'pl'
+  TODO
+  // const language = this.props.language === 'pl' ? 'en' : 'pl'
 
-  Object.keys(routes).map(routeKey => {
-    if (this.props[routeKey]) {
-      if (routes[routeKey].overshadow) overshadowingRoute = routeKey
-      else overshadowedRoute = routeKey
-    }
-  })
+  // Object.keys(routes).map(routeKey => {
+  //   if (this.props[routeKey]) {
+  //     if (routes[routeKey].overshadow) overshadowingRoute = routeKey
+  //     else overshadowedRoute = routeKey
+  //   }
+  // })
 
-  if ([overshadowingRoute, overshadowedRoute].indexOf('showAnnouncementShow') !== -1) {
+  //   const {
+  //     announcementId,
+  //     category,
+  //     district,
+  //     area
+  //   } = this.props
 
-    const {
-      announcementId,
-      category,
-      district,
-      area
-    } = this.props
+  //   if (category === null && district === null) return `/${announcementId}`
 
-    if (category === null && district === null) return `/${announcementId}`
+  //   return buildLink({ id: announcementId, category, district, area, language })
+  // }
 
-    return buildLink({ id: announcementId, category, district, area, language })
-  }
+  // if (overshadowingRoute) return routes[overshadowingRoute][language].url
+  // if (overshadowedRoute) return routes[overshadowedRoute][language].url
 
-  if ([overshadowingRoute, overshadowedRoute].indexOf('showAnnouncementEdit') !== -1) {
-    return `${CLIENT_URL}/${routes.showAnnouncementEdit[language].url}/${this.props.announcementId}`
-  }
-
-  if (overshadowingRoute) return routes[overshadowingRoute][language].url
-  if (overshadowedRoute) return routes[overshadowedRoute][language].url
-
-  return ''
+  // return ''
 }

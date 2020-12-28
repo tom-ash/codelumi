@@ -30,7 +30,6 @@ class AnnouncementIndexFull extends React.Component {
       changeInputs,
       offset,
       amount,
-      showAnnouncementIndexCatalogue,
       announcements,
       isMobile,
       scalableVectorGraphics,
@@ -45,7 +44,7 @@ class AnnouncementIndexFull extends React.Component {
         id='announcement-index-full'
       >
         {
-        showAnnouncementIndexCatalogue &&
+        renderCatalogue &&
         <div>
           <div id='announcement-index-full-scroll-anchor' />
           <div className='announcements'>

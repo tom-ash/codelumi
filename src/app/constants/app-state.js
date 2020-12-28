@@ -12,7 +12,7 @@ export const appState = {
     googleAnalyticsLoading: false
   },
   isMobile: null,
-  showNotFound: false,
+  TODO,
   scalableVectorGraphics: {},
   siteMapLinks: null,
   ...emptyRoutes

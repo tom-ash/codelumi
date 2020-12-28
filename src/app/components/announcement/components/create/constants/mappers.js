@@ -2,8 +2,6 @@ export const mapStateToProps = (store) => {
   const {
     language,
     path,
-    showAnnouncementEdit: showEdit,
-    announcementId,
     isMobile,
     scalableVectorGraphics
   } = store.app
@@ -37,7 +35,6 @@ export const mapStateToProps = (store) => {
     rooms,
     floor,
     totalFloors,
-    availabilityDateSelect,
     availabilityDate,
     pictureBlobs: blobs,
     pictureUploads: uploads,
@@ -71,7 +68,6 @@ export const mapStateToProps = (store) => {
     showDescription,
     language,
     path,
-    showEdit,
     authorized: store.user.authorize.data.authorized,
     step,
     editing,

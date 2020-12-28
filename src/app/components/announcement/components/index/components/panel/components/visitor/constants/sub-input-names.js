@@ -1,1 +1,0 @@
-export const subInputNames = ['rent', 'area', 'rooms', 'floor', 'totalFloors']

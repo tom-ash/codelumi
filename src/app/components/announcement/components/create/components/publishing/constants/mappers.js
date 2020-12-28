@@ -1,9 +1,6 @@
 export const mapStateToProps = (store) => {
   const {
-    language,
-    showUserCreate,
-    showUserAuthorize,
-    showUserEditPhoneVerify
+    language
   } = store.app
 
   const {
@@ -52,9 +49,6 @@ export const mapStateToProps = (store) => {
     calculatedGrossRentAmount,
     calculatedGrossRentAmountPerSqm,
     language,
-    showUserCreate,
-    showUserAuthorize,
-    showUserEditPhoneVerify,
     authorized,
     phoneVerified,
     editing,

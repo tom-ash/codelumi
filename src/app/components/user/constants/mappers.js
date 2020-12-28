@@ -2,23 +2,13 @@ export const mapStateToProps = (store) => {
   const {
     language,
     path,
-    showUserCreate: showCreate,
-    showUserAuthorize: showAuthorize,
-    showUserEditPasswordReset: showPasswordReset,
-    showUserEditPhoneVerify: showEditPhoneVerify,
-    showUserEditAccount: showEdit,
-    showUserShow: showAccount
+    TODO
   } = store.app
 
   return {
     language,
     path,
-    showCreate,
-    showAuthorize,
-    showPasswordReset,
-    showEditPhoneVerify,
-    showAccount,
-    showEdit
+    TODO
   }
 }
     

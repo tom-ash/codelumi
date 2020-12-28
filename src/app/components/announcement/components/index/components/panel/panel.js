@@ -1,7 +1,5 @@
 import React from 'react'
 import loadable from '@loadable/component'
-const AnnouncementIndexPanelVisitor = loadable(() => import('./components/visitor/visitor'))
-const AnnouncementIndexPanelUser = loadable(() => import('./components/user/user'))
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageObjectHandler } from '../../../../../../functions/language-handler'
@@ -18,9 +16,6 @@ class AnnouncementIndexPanel extends React.Component {
   render() {
     const {
       currentCategory,
-      showMap,
-      showList,
-      showCatalogue,
       scalableVectorGraphics,
       changeInputs,
       changeControl
@@ -35,8 +30,6 @@ class AnnouncementIndexPanel extends React.Component {
           changeControl={changeControl}
           currentCategory={currentCategory}
         />
-        {(showMap || showCatalogue) && <AnnouncementIndexPanelVisitor />}
-        {showList && <AnnouncementIndexPanelUser />}
       </div>
     )
   }

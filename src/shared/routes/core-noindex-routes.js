@@ -193,8 +193,6 @@ export const coreNoIndexRoutes = {
       title: 'Reset Password',
       description: 'Reset Password'
     },
-    needsAnnouncementIndexMap: false,
-    overshadow: false,
     noIndex: true
   },
   showUserEditAccount: {

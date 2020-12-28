@@ -6,13 +6,13 @@ export function fetchAnnouncements() {
     changeControl,
     changeData,
     connecting,
-    showList
+    TODO
   } = this.props
   
   if (connecting) return
 
   let headers = { 'Content-Type': 'application/json' }
-  if (showList) headers = { ...headers, access_token: getAccessToken() }
+  if (TODO) headers = { ...headers, access_token: getAccessToken() }
 
   changeData({
     announcements: null,

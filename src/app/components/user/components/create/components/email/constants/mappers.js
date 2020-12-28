@@ -1,6 +1,6 @@
 export const mapStateToProps = (store) => {
   const {
-    showAnnouncementCreate
+    TODO
   } = store.app
 
   const {
@@ -16,7 +16,7 @@ export const mapStateToProps = (store) => {
   } = store.user.create.data
 
   return {
-    showAnnouncementCreate,
+    TODO,
     authorized,
     connecting,
     token

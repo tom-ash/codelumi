@@ -9,21 +9,8 @@ import * as mappers from './constants/mappers'
 class UserCreateEmail extends React.Component {
   render() {
     const {
-      showAnnouncementCreate,
       token
     } = this.props
-
-    if (showAnnouncementCreate) {
-      return (
-        <div id='user-create-email'>
-          <form>
-            <UserCreateEmailInputs />
-            <UserCreateConsents />
-            <UserCreateSubmit />
-          </form>
-        </div>
-      )
-    }
 
     return (
       <div id='user-create-email'>

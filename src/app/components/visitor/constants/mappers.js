@@ -1,13 +1,6 @@
 export const mapStateToProps = (store) => {
   const {
-    showUserCreate: showCreate,
-    showUserAuthorize: showAuthorize,
-    showVisitorAbout: showAbout,
-    showVisitorContact: showContact,
-    showVisitorTermsOfService: showTermsOfService,
-    showVisitorCookiesPolicy: showCookiesPolicy,
-    showVisitorPrivacyPolicy: showPrivacyPolicy,
-    showVisitorPrivacySettings: showPrivacySettings
+    TODO
   } = store.app
 
   const {
@@ -16,19 +9,12 @@ export const mapStateToProps = (store) => {
   } = store.visitor.legal.privacy.settings
 
   return {
-    showPrivacySettings,
+    TODO,
     language: store.app.language,
     path: store.app.path,
     consents: store.visitor.legal.privacy.settings.consents,
     language: store.app.language,
-    showCreate,
-    showAuthorize,
-    showAbout,
-    showContact,
-    showTermsOfService,
-    showCookiesPolicy,
-    showPrivacyPolicy,
-    showPrivacySettings,
+    TODO,
     statisticsConsent,
     marketingConsent
   }

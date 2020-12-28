@@ -9,7 +9,7 @@ export function contactManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Kontakt', en: 'Contact' }),
     label: this.languageHandler('Kontakt', 'Contact'),
-    onClick: () => this.changePath({ showVisitorContact: true })
+    onClick: CHANGE_PATH
   }
 }
 
@@ -22,7 +22,7 @@ export function termsOfServiceManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Regulamin', en: 'Terms and Conditions' }),
     label: this.languageHandler('Regulamin', 'Terms and Conditions'),
-    onClick: () => this.changePath({ showVisitorTermsOfService: true })
+    onClick: CHANGE_PATH
   }
 }
 
@@ -35,7 +35,7 @@ export function cookiesPolicyManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Polityka Cookies', en: 'Cookies Policy' }),
     label: this.languageHandler('Polityka Cookies', 'Cookies Policy'),
-    onClick: () => this.changePath({ showVisitorCookiesPolicy: true })
+    onClick: CHANGE_PATH
   }
 }
 
@@ -48,7 +48,7 @@ export function privacyPolicyManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Polityka Prywatności', en: 'Privacy Policy' }),
     label: this.languageHandler('Polityka Prywatności', 'Privacy Policy'),
-    onClick: () => this.changePath({ showVisitorPrivacyPolicy: true })
+    onClick: CHANGE_PATH
   }
 }
 
@@ -61,6 +61,6 @@ export function privacySettingsManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Ustawienia Prywatności', en: 'Privacy Settings' }),
     label: this.languageHandler('Ustawienia Prywatności', 'Privacy Settings'),
-    onClick: () => this.changePath({ showVisitorPrivacySettings: true })
+    onClick: CHANGE_PATH
   }
 }

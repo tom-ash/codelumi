@@ -30,7 +30,6 @@ class AnnouncementIndexMap extends React.Component {
 
   render() {
     const {
-      showAnnouncementIndexCatalogue,
       tile,
       language,
       announcements,
@@ -46,7 +45,6 @@ class AnnouncementIndexMap extends React.Component {
     return (
       <div
         id='announcement-index-map'
-        className={`${showAnnouncementIndexCatalogue ? 'hidden' : 'visible'}`}
       >
         <div id='google-map-container'>
           <div 

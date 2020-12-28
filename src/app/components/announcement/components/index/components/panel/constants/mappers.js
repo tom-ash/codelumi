@@ -4,9 +4,6 @@ export const mapStateToProps = (store) => {
     path,
     isMobile,
     device,
-    showAnnouncementIndexMap: showMap,
-    showAnnouncementIndexList: showList,
-    showAnnouncementIndexCatalogue: showCatalogue,
     scalableVectorGraphics,
   } = store.app
 
@@ -19,9 +16,6 @@ export const mapStateToProps = (store) => {
     path,
     isMobile,
     device,
-    showMap,
-    showList,
-    showCatalogue,
     scalableVectorGraphics,
     currentCategory
   }

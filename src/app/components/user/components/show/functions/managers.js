@@ -4,10 +4,7 @@ import { routes } from '../../../../../../shared/routes/routes'
 const origin = `${CLIENT_URL}/`
 
 export function addAnnouncementManager() {
-  const {
-    pl,
-    en,
-  } = routes.showAnnouncementCreate
+  TODO
 
   return {
     id: 'user-show-account-add-announcemt',
@@ -16,7 +13,7 @@ export function addAnnouncementManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: pl.title, en: en.title }),
     label: this.labelProvider('fas fa-plus', pl.label, en.label),
-    onClick: () => this.changePath({ showAnnouncementCreate: true })
+    TODO
   }
 }
 
@@ -30,7 +27,7 @@ export function listAnnouncementsManager() {
     label: this.labelProvider('fas fa-list-ul', 'Dodane ogłoszenia', 'Added announcements'),
     onClick: () => {
       changeAnnouncementIndexData({ announcements: null, amount: null })
-      this.changePath({ showAnnouncementIndexList: true })
+      TODO
       changeAnnouncementIndexControl({ fetch: true })
     }
   }
@@ -43,7 +40,7 @@ export function accountManager() {
     href: this.languageObjectHandler({ pl: `${origin}account-settings'`, en: `${origin}ustawienia-konta'` }),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     label: this.labelProvider('fas fa-cog', 'Ustawienia', 'Settings'),
-    onClick: () => this.changePath({ showUserEditAccount: true })
+    onClick: () => TODO
   }
 }
 

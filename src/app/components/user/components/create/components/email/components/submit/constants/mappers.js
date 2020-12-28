@@ -1,14 +1,12 @@
 export const mapStateToProps = (store) => {
   const {
-    language,
-    showAnnouncementCreate
+    language
   } = store.app
 
   return {
     language,
     connecting: store.user.create.control.connecting,
-    accountType: store.user.create.inputs.accountType,
-    showAnnouncementCreate
+    accountType: store.user.create.inputs.accountType
   }
 }
 

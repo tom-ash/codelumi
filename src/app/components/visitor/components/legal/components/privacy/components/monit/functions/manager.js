@@ -21,6 +21,6 @@ export function settingsManager() {
   return {
     classNames: { container: 'form-input button settings' },
     label: this.languageHandler('Ustawienia', 'Settings'),
-    onClick: () => this.changePath({ showVisitorPrivacySettings: true })
+    onClick: TODO
   }
 }

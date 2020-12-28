@@ -12,21 +12,21 @@ export function textProvider({ pureText }) {
     }
   }
 
-  const showTerms = e => {
+  const TODO = e => {
     e.stopPropagation()
-    changeApp({ showVisitorTermsOfService: true })
+    TODO
   }
 
-  const showPrivacyPolicy = e => {
+  const TODO = e => {
     e.stopPropagation()
-    changeApp({ showVisitorPrivacyPolicy: true })
+    TODO
   }
 
   return (
     {
       termsAndPrivacyConsent: this.languageObjectHandler({
-        pl: <span>Akceptuję <u className='link' onClick={showTerms}>Regulamin</u> i&nbsp;<u className='link' onClick={showPrivacyPolicy}>Politykę Prywatności</u>.</span>,
-        en: <span>I accept the <u className='link' onClick={showTerms}>Terms and Conditions</u> and the <u className='link' onClick={showPrivacyPolicy}>Privacy Policy</u>.</span>
+        pl: <span>Akceptuję <u className='link' onClick={TODO}>Regulamin</u> i&nbsp;<u className='link' onClick={TODO}>Politykę Prywatności</u>.</span>,
+        en: <span>I accept the <u className='link' onClick={TODO}>Terms and Conditions</u> and the <u className='link' onClick={TODO}>Privacy Policy</u>.</span>
       })
     }
   )

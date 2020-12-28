@@ -5,10 +5,8 @@ export function hideUser() {
   } = this.props
 
   changeApp({
-    showUserCreate: false,
-    showUserAuthorize: false,
-    showUserEditPasswordReset: false,
-    showUserEditPhoneVerify: false
+    TODO
   })
+
   changeAnnouncementControl({ publishing: false })
 }

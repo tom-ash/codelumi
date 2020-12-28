@@ -29,7 +29,7 @@ export function logIn() {
       phoneVerified: json.phoneVerified
     })
     saveTokens.call(this, json.accessToken)
-    this.props.changeApp({ showUserAuthorize: false, showAnnouncementIndexMap: true })
+    TODO
   })
   .catch(() => {
     this.props.changeErrors({

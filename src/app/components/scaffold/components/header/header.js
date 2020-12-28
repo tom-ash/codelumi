@@ -29,9 +29,7 @@ class Header extends React.Component {
     const {
       changeControl,
       device,
-      authorized,
-      showAnnouncementIndexMap,
-      showAnnouncementIndexCatalogue
+      authorized
     } = this.props
     const isLargePc = device === 'largePc'
 
@@ -46,9 +44,9 @@ class Header extends React.Component {
               className='links-icon'
               onClick={() => {
                 if (!authorized) {
-                  this.props.changeControl({ showLinks: !this.props.showLinks })
+                  TODO
                 } else {
-                  this.props.changeApp({ showUserShow: !this.props.showUserShow })
+                  TODO
                 }
               }}
             >
@@ -63,8 +61,7 @@ class Header extends React.Component {
 
           <h1 className='title'>
             <HeaderProvider
-              showMap={showAnnouncementIndexMap}
-              showCatalogue={showAnnouncementIndexCatalogue}
+              TODO
               languageObjectHandler={this.languageObjectHandler}
             />
           </h1>
@@ -76,8 +73,8 @@ class Header extends React.Component {
             {isLargePc && <ManagedLink {...this.myAccountManager()} />}
             <ManagedLink {...this.languageManager()} />
           </div>
-          {this.props.showLinks &&
-          <div className='side-links-cover' onClick={() => changeControl({ showLinks: false })}>
+          {TODO &&
+          <div className='side-links-cover' onClick={() => changeControl({ TODO: false })}>
             <div className='side-links'>
               <ManagedLink {...this.addAnnouncementManager()} />
               <ManagedLink {...this.signUpManager()} />

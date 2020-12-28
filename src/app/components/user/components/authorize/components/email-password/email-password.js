@@ -36,8 +36,8 @@ class UserAuthorizeEmailPassword extends React.Component {
         </form>
         <div
           className='reset-password'>
-          <span onClick={(e) => {
-            this.props.changeApp({ showUserAuthorize: false, showUserEditPasswordReset: true })
+          <span onClick={() => {
+            TODO
           }}>
             {this.languageObjectHandler({ pl: 'Zresetuj hasło', en: 'Reset password' })}
           </span>

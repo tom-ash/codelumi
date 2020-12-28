@@ -43,9 +43,9 @@ class AnnouncementIndexSearch extends React.Component {
 
   render() {
     const {
-      showMap,
-      showCatalogue,
-      showList,
+      renderMap,
+      renderCatalogue,
+      renderList,
       device
     } = this.props
 
@@ -56,10 +56,10 @@ class AnnouncementIndexSearch extends React.Component {
         <div>
           {showAddAnnouncement && <ManagedLink {...this.addAnnouncementManager()} />}
         </div>
-        {(showMap || showCatalogue) && <AnnouncementIndexPanel />}
-        {showMap && <AnnouncementIndexMap />}
-        {showCatalogue && <AnnouncementIndexFull />}
-        {showList && <AnnouncementIndexList />}
+        <AnnouncementIndexPanel />
+        {renderMap && <AnnouncementIndexMap />}
+        {renderCatalogue && <AnnouncementIndexFull />}
+        {renderList && <AnnouncementIndexList />}
       </div>
     )
   }

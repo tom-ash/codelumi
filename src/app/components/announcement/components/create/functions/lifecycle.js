@@ -1,18 +1,16 @@
 export function componentDidMount() {
   const {
     changeControl,
-    showEdit,
     changePostShowData,
     changePostRender
   } = this.props
 
-  if (showEdit) {
+  if (RENDER_EDIT) {
     this.getAnnouncement()
     changeControl({ editing: true })
   }
 
-  changePostShowData({ name: 'create_announcement' })
-  changePostRender({ show: true })
+  CHANGE_RENDERS
 }
 
 export function componentDidUpdate() {
@@ -42,7 +40,7 @@ export function componentWillUnmount() {
     changePostRender
   } = this.props
 
-  changePostRender({ show: false })
+  CHANGE_RENDER
   changePostShowData({ name: null, body: null })
   resetControl()
   resetInputs()

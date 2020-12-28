@@ -64,7 +64,7 @@ export function sendAnnouncementResponse({
       initialState: {
         app: {
           ...appState,
-          showAnnouncementShow: true,
+          TODO,
           announcementId,
           language,
           device,

@@ -40,7 +40,7 @@ export function sendAnnouncementCreateResponse({
       initialState: {
         app: {
           ...appState,
-          showAnnouncementCreate: true,
+          TODO,
           language,
           device,
           scalableVectorGraphics: parseScalableVectorGraphics(json.scalableVectorGraphics)

@@ -4,6 +4,6 @@ import { emptyRoutes } from '../../../shared/routes/routes'
 export function changePath(newRoutes) {
   const { changeApp } = this.props
 
-  changeApp({ showNotFound: false, ...emptyRoutes, ...newRoutes })
+  TODO
   instantScroll()
 }

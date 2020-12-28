@@ -15,27 +15,26 @@ class User extends React.Component {
 
   render() {
     const {
-      changeApp,
-      showCreate,
-      showAuthorize,
-      showPasswordReset,
-      showAccount,
-      showEdit
+      renderCreate,
+      renderAuthorize,
+      renderPasswordReset,
+      renderAccount,
+      renderEdit
     } = this.props
 
     return (
       <React.Fragment>
-        {showCreate    && <UserCreate />}
-        {showAuthorize && <UserAuthorize />}
-        {showPasswordReset   && <UserEditAccountPassword />}
-        {showAccount &&
+        {renderCreate && <UserCreate />}
+        {renderAuthorize && <UserAuthorize />}
+        {renderPasswordReset && <UserEditAccountPassword />}
+        {renderAccount &&
         <div
-          onClick={() => changeApp({ showUserShow: false })}
+          TODO
           className='transparent-cover'
         >
           <UserShow />
         </div>}
-        {showEdit && <UserEditAccount />}
+        {renderEdit && <UserEditAccount />}
       </React.Fragment>
     )
   }

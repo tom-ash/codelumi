@@ -29,7 +29,7 @@ export function verify() {
   .then(json => {
     const { accessToken, name } = json
     saveTokens.call(this, accessToken)
-    changeApp({ showUserCreate: false })
+    TODO
     changeAuthorizeData({ authorized: true, name, phoneVerified: false })
     changeControl({ step: 'success' })
   })

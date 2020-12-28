@@ -70,7 +70,7 @@ export function componentWillUnmount() {
 
   removeOldPins.call(this)
 
-  changePostRender({ show: false })
+  // changePostRender({ show: false })
   changePostShowData({ name: null, body: null })
   resetControl()
   resetInputs()

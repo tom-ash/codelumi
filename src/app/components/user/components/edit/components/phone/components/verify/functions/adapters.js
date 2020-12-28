@@ -31,7 +31,7 @@ export function sendVerification() {
   .then(response => {
     if (response.status === 200) {
       changeAuthorizeData({ phoneVerified: true })
-      changeApp({ showUserEditPhoneVerify: false })
+      TODO
       return
     }
 

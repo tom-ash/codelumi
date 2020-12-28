@@ -49,7 +49,7 @@ export function sendAnnouncementsMapResponse({
       initialState: {
         app: {
           ...appState,
-          showAnnouncementIndexMap: true,
+          TODO,
           language,
           device,
           scalableVectorGraphics: parseScalableVectorGraphics(json.scalableVectorGraphics)

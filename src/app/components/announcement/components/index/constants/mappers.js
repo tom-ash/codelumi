@@ -2,9 +2,6 @@ export const mapStateToProps = (store) => {
   const {
     language,
     path,
-    showAnnouncementIndexMap: showMap,
-    showAnnouncementIndexCatalogue: showCatalogue,
-    showAnnouncementIndexList: showList,
     device,
     scalableVectorGraphics
   } = store.app
@@ -58,9 +55,6 @@ export const mapStateToProps = (store) => {
     language,
     path,
     device,
-    showMap,
-    showList,
-    showCatalogue,
     fetch,
     type,
     category,

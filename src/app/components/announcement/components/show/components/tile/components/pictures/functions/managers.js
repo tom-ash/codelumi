@@ -23,11 +23,8 @@ export function linkManager() {
         area
       })
       changeApp({
-        announcementId: id,
-        showAnnouncementShow: true,
-        showAnnouncementIndexMap: false,
-        showAnnouncementIndexCatalogue: false,
-        showAnnouncementIndexList: false
+        announcementId: id, // TODO
+        TODO
       })
     }
   }
