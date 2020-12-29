@@ -1,10 +1,6 @@
-const origin = `${CLIENT_URL}/`
 import {
-  PL,
-  EN,
   LANGS
 } from '../../../../../../shared/constants/langs/langs'
-
 
 import {
   VISITOR_COOKIES_POLICY,
@@ -22,8 +18,16 @@ import {
   VISITOR_CONTACT_URLS
 } from '../../../../../../shared/constants/routes/urls'
 
+import {
+  VISITOR_COOKIES_POLICY_TITLES,
+  VISITOR_PRIVACY_SETTINGS_TITLES,
+  VISITOR_PRIVACY_POLICY_TITLES,
+  VISITOR_TERMS_OF_SERVICE_TITLES,
+  VISITOR_CONTACT_TITLES
+} from '../../../../../../shared/constants/routes/titles'
+
 export function cookiesPolicyManager() {
-  const title = this.languageHandler(VISITOR_COOKIES_POLICY_URLS)
+  const title = this.languageHandler(VISITOR_COOKIES_POLICY_TITLES)
 
   return {
     classNames: { container: 'link' },
@@ -36,53 +40,53 @@ export function cookiesPolicyManager() {
 }
 
 export function privacySettingsManager() {
-  const { changeApp } = this.props
+  const title = this.languageHandler(VISITOR_PRIVACY_SETTINGS_TITLES)
 
   return {
     classNames: { container: 'link' },
-    href: this.languageHandler({ pl: `${origin}ustawienia-prywatnosci`, en: `${origin}privacy-settings` }),
-    hrefLang: this.languageHandler({ pl: 'pl', en: 'en' }),
-    title: this.languageHandler({ pl: 'Ustawienia Prywatności', en: 'Privacy Settings' }),
-    label: this.languageHandler('Ustawienia Prywatności', 'Privacy Settings'),
+    href: `${CLIENT_URL}/${this.languageHandler(VISITOR_PRIVACY_SETTINGS_URLS)}`,
+    hrefLang: this.languageHandler(LANGS),
+    title,
+    label: title,
     onClick: () => this.changeRoute(VISITOR_PRIVACY_SETTINGS)
   }
 }
 
-export function termsOfServiceManager() {
-  const { changeApp } = this.props
-
-  return {
-    classNames: { container: 'link' },
-    href: this.languageHandler({ pl: `${origin}regulamin`, en: `${origin}terms-of-service` }),
-    hrefLang: this.languageHandler({ pl: 'pl', en: 'en' }),
-    title: this.languageHandler({ pl: 'Regulamin', en: 'Terms and Conditions' }),
-    label: this.languageHandler('Regulamin', 'Terms and Conditions'),
-    onClick: () => this.changeRoute(VISITOR_TERMS_OF_SERVICE)
-  }
-}
-
 export function privacyPolicyManager() {
-  const { changeApp } = this.props
+  const title = this.languageHandler(VISITOR_PRIVACY_POLICY_TITLES)
 
   return {
     classNames: { container: 'link' },
-    href: this.languageHandler({ pl: `${origin}polityka-prywatnosci`, en: `${origin}privacy-policy` }),
-    hrefLang: this.languageHandler({ pl: 'pl', en: 'en' }),
-    title: this.languageHandler({ pl: 'Polityka Prywatności', en: 'Privacy Policy' }),
-    label: this.languageHandler('Polityka Prywatności', 'Privacy Policy'),
+    href: `${CLIENT_URL}/${this.languageHandler(VISITOR_PRIVACY_POLICY_URLS)}`,
+    hrefLang: this.languageHandler(LANGS),
+    title,
+    label: title,
     onClick: () => this.changeRoute(VISITOR_PRIVACY_POLICY)
   }
 }
 
-export function contactManager() {
-  const { changeRender } = this.props
+export function termsOfServiceManager() {
+  const title = this.languageHandler(VISITOR_TERMS_OF_SERVICE_TITLES)
 
   return {
     classNames: { container: 'link' },
-    href: this.languageHandler({ pl: `${origin}kontakt`, en: `${origin}contact` }),
-    hrefLang: this.languageHandler({ pl: 'pl', en: 'en' }),
-    title: this.languageHandler({ pl: 'Kontakt', en: 'Contact' }),
-    label: this.languageHandler('Kontakt', 'Contact'),
+    href: `${CLIENT_URL}/${this.languageHandler(VISITOR_TERMS_OF_SERVICE_URLS)}`,
+    hrefLang: this.languageHandler(LANGS),
+    title,
+    label: title,
+    onClick: () => this.changeRoute(VISITOR_TERMS_OF_SERVICE)
+  }
+}
+
+export function contactManager() {
+  const title = this.languageHandler(VISITOR_CONTACT_TITLES)
+
+  return {
+    classNames: { container: 'link' },
+    href: `${CLIENT_URL}/${this.languageHandler(VISITOR_CONTACT_URLS)}`,
+    hrefLang: this.languageHandler(LANGS),
+    title,
+    label: title,
     onClick: () => this.changeRoute(VISITOR_CONTACT)
   }
 }
