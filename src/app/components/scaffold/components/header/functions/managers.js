@@ -1,8 +1,24 @@
 import React from 'react'
 import { saveCookie } from '../../../../../functions/cookie-handlers'
 import Logo from '../../../../../assets/logo-header.svg'
-
-const origin = `${CLIENT_URL}/`
+import {
+  LANGS
+} from '../../../../../../shared/constants/langs/langs'
+import {
+  ROOT_TRACK,
+  ANNOUNCEMENT_CREATE_TRACK,
+  USER_CREATE_TRACK
+} from '../../../../../../shared/constants/tracks/tracks'
+import {
+  ROOT_URLS,
+  ANNOUNCEMENT_CREATE_URLS,
+  USER_CREATE_URLS
+} from '../../../../../../shared/constants/routes/urls'
+import {
+  ROOT_TITLES,
+  ANNOUNCEMENT_CREATE_TITLES,
+  USER_CREATE_TITLES
+} from '../../../../../../shared/constants/routes/titles'
 
 export function titleManager() {
   const {
@@ -11,11 +27,13 @@ export function titleManager() {
     changeAnnouncementIndexControl
   } = this.props
 
+  const title = this.languageObjectHandler(ROOT_TITLES)
+
   return {
     classNames: { container: '' },
-    href: CLIENT_URL,
-    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
-    title: 'warsawlease.pl',
+    href: this.languageObjectHandler(ROOT_URLS),
+    hrefLang: this.languageObjectHandler(LANGS),
+    title,
     label: (
       <div className='logo-and-site'>
         <div className='logo'>
@@ -28,26 +46,24 @@ export function titleManager() {
       </div>
     ),
     onClick: () => {
-      resetAnnouncementIndexControl()
-      resetAnnouncementIndexInputs()
-      changeAnnouncementIndexControl({ fetch: true })
-      TODO
+      this.changeRoute(ROOT_TRACK)
+      // resetAnnouncementIndexControl()
+      // resetAnnouncementIndexInputs()
+      // changeAnnouncementIndexControl({ fetch: true })
     }
   }
 }
 
 export function addAnnouncementManager() {
-  // TODO
+  const title = this.languageObjectHandler(ANNOUNCEMENT_CREATE_TITLES)
 
   return {
     classNames: { container: 'header-link add-announcement' },
-    // href: this.languageObjectHandler({ pl: `${CLIENT_URL}${pl.url}`, en: `${CLIENT_URL}${en.url}` }),
+    href: `${CLIENT_URL}/${this.languageObjectHandler(ANNOUNCEMENT_CREATE_URLS)}`,
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
-    // title: this.languageObjectHandler({ pl: pl.title, en: en.title }),
-  // label: this.languageObjectHandler({ pl: pl.label, en: en.label }),
-    // onClick: () => {
-    //   TODO
-    // }
+    title,
+    label: title,
+    onClick: () => this.changeRoute(ANNOUNCEMENT_CREATE_TRACK)
   }
 }
 

@@ -3,12 +3,11 @@ import { connect } from 'react-redux'
 import * as reduxMappers from './constants/mappers'
 import { ManagedLink } from 'managed-inputs'
 import * as managers from './functions/managers'
-import { changePath } from '../../../../functions/routers/change-path'
+import { changeRoute } from '../../../../functions/routers/change-route'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import { labelProvider } from '../../../user/components/show/functions/label-provider'
 import { matchPathToLanguage } from '../../../../functions/routers/match-path-to-language'
 import { HeaderProvider } from '../../../announcement/components/index/functions/header-provider'
-import { changeRoute } from '../../../../functions/routers/change-route'
 
 class Header extends React.Component {
   constructor(props) {
@@ -19,7 +18,6 @@ class Header extends React.Component {
     this.signInManager = managers.signInManager.bind(this)
     this.myAccountManager = managers.myAccountManager.bind(this)
     this.languageManager = managers.languageManager.bind(this)
-    this.changePath = changePath.bind(this)
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
@@ -61,12 +59,12 @@ class Header extends React.Component {
             <ManagedLink {...this.titleManager()} />
           </div>
 
-          <h1 className='title'>
+          {/* <h1 className='title'>
             <HeaderProvider
               TODO
               languageObjectHandler={this.languageObjectHandler}
             />
-          </h1>
+          </h1> */}
 
           <div className='top-links'>
             {showAddAnnouncement && <ManagedLink {...this.addAnnouncementManager()} />}

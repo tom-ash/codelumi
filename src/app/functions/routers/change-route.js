@@ -8,6 +8,8 @@ export function changeRoute(track) {
     changeRender
   } = this.props
 
+  console.log(track)
+
   changeApp({ shouldMatchRouteToRender: true })
   changeRender({ ...renderState, [track]: true, ...routeRenders[track] })
   instantScroll()

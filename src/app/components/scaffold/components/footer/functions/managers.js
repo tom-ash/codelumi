@@ -3,11 +3,11 @@ import {
 } from '../../../../../../shared/constants/langs/langs'
 
 import {
-  VISITOR_COOKIES_POLICY,
-  VISITOR_PRIVACY_SETTINGS,
-  VISITOR_TERMS_OF_SERVICE,
-  VISITOR_PRIVACY_POLICY,
-  VISITOR_CONTACT
+  VISITOR_COOKIES_POLICY_TRACK,
+  VISITOR_PRIVACY_SETTINGS_TRACK,
+  VISITOR_TERMS_OF_SERVICE_TRACK,
+  VISITOR_PRIVACY_POLICY_TRACK,
+  VISITOR_CONTACT_TRACK
 } from '../../../../../../shared/constants/tracks/tracks'
 
 import {
@@ -35,7 +35,7 @@ export function cookiesPolicyManager() {
     hrefLang: this.languageHandler(LANGS),
     title,
     label: title,
-    onClick: () => this.changeRoute(VISITOR_COOKIES_POLICY)
+    onClick: () => this.changeRoute(VISITOR_COOKIES_POLICY_TRACK)
   }
 }
 
@@ -48,7 +48,7 @@ export function privacySettingsManager() {
     hrefLang: this.languageHandler(LANGS),
     title,
     label: title,
-    onClick: () => this.changeRoute(VISITOR_PRIVACY_SETTINGS)
+    onClick: () => this.changeRoute(VISITOR_PRIVACY_SETTINGS_TRACK)
   }
 }
 
@@ -61,7 +61,7 @@ export function privacyPolicyManager() {
     hrefLang: this.languageHandler(LANGS),
     title,
     label: title,
-    onClick: () => this.changeRoute(VISITOR_PRIVACY_POLICY)
+    onClick: () => this.changeRoute(VISITOR_PRIVACY_POLICY_TRACK)
   }
 }
 
@@ -74,7 +74,7 @@ export function termsOfServiceManager() {
     hrefLang: this.languageHandler(LANGS),
     title,
     label: title,
-    onClick: () => this.changeRoute(VISITOR_TERMS_OF_SERVICE)
+    onClick: () => this.changeRoute(VISITOR_TERMS_OF_SERVICE_TRACK)
   }
 }
 
@@ -87,6 +87,6 @@ export function contactManager() {
     hrefLang: this.languageHandler(LANGS),
     title,
     label: title,
-    onClick: () => this.changeRoute(VISITOR_CONTACT)
+    onClick: () => this.changeRoute(VISITOR_CONTACT_TRACK)
   }
 }

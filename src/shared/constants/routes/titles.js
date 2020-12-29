@@ -3,6 +3,11 @@ import {
   EN
 } from '../langs/langs'
 
+export const ROOT_TITLES = {
+  [PL]: 'TODO WARSAWLEASE.PL',
+  [EN]: 'TODO WARSAWLEASE.PL'
+}
+
 export const VISITOR_PRIVACY_SETTINGS_TITLES  = {
   [PL]: 'Ustawienia Prywatności',
   [EN]: 'Privacy Settings'

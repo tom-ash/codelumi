@@ -1,9 +1,9 @@
 import {
-  VISITOR_COOKIES_POLICY,
-  VISITOR_PRIVACY_SETTINGS,
-  VISITOR_TERMS_OF_SERVICE,
-  VISITOR_PRIVACY_POLICY,
-  VISITOR_CONTACT
+  VISITOR_COOKIES_POLICY_TRACK,
+  VISITOR_PRIVACY_SETTINGS_TRACK,
+  VISITOR_TERMS_OF_SERVICE_TRACK,
+  VISITOR_PRIVACY_POLICY_TRACK,
+  VISITOR_CONTACT_TRACK
 } from '../../../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = (store) => {
@@ -17,11 +17,11 @@ export const mapStateToProps = (store) => {
   } = store.visitor.legal.privacy.settings
 
   const {
-    [VISITOR_COOKIES_POLICY]: renderCookiesPolicy,
-    [VISITOR_PRIVACY_SETTINGS]: renderPrivacySettings,
-    [VISITOR_TERMS_OF_SERVICE]: renderTermsOfService,
-    [VISITOR_PRIVACY_POLICY]: renderPrivacyPolicy,
-    [VISITOR_CONTACT]: renderContact
+    [VISITOR_COOKIES_POLICY_TRACK]: renderCookiesPolicy,
+    [VISITOR_PRIVACY_SETTINGS_TRACK]: renderPrivacySettings,
+    [VISITOR_TERMS_OF_SERVICE_TRACK]: renderTermsOfService,
+    [VISITOR_PRIVACY_POLICY_TRACK]: renderPrivacyPolicy,
+    [VISITOR_CONTACT_TRACK]: renderContact
   } = store.render
 
   return {
