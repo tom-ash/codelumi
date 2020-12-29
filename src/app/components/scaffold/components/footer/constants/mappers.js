@@ -1,13 +1,17 @@
 export const mapStateToProps = (store) => {
+  const {
+    language
+  } = store.app
+
   return {
-    language: store.app.language,
-    name: store.user.authorize.data.name,
+    language
   }
 }
   
 export const mapDispatchToProps = (dispatch) => {
   return {
     changeApp: value => dispatch({ type: 'app', value: value}),
+    changeRender: value => dispatch({ type: 'render', value })
   }
 }
   

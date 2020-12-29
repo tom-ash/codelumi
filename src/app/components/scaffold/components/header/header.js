@@ -8,6 +8,7 @@ import { languageHandler, languageObjectHandler } from '../../../../functions/la
 import { labelProvider } from '../../../user/components/show/functions/label-provider'
 import { matchPathToLanguage } from '../../../../functions/routers/match-path-to-language'
 import { HeaderProvider } from '../../../announcement/components/index/functions/header-provider'
+import { changeRoute } from '../../../../functions/routers/change-route'
 
 class Header extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class Header extends React.Component {
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
     this.matchPathToLanguage = matchPathToLanguage.bind(this)
+    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {

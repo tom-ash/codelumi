@@ -26,8 +26,6 @@ class Visitor extends React.Component {
       renderPrivacyMonit
     } = this.props
 
-    console.log(renderCookiesPolicy)
-
     return (
       <div id='visitor'>
         {renderContact && <VisitorContact />}

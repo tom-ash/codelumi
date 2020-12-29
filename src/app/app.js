@@ -41,8 +41,6 @@ class App extends React.Component {
       renderUser
     } = this.props
 
-    // console.log(renderVisitor)
-
     return (
       <div id='app-container'>
         <Header />

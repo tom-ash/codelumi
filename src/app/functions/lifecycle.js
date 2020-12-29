@@ -37,9 +37,20 @@ export function componentDidMount() {
 }
 
 export function componentDidUpdate(prevProps) {
-  const { googleAnalyticsLoaded, googleAnalyticsLoading, statisticsConsent } = this.props
-  
-  this.matchPathToState(prevProps)
+  const {
+    shouldMatchRouteToRender: prevShouldMatchRouteToRender
+  } = prevProps
+
+  const {
+    googleAnalyticsLoaded,
+    googleAnalyticsLoading,
+    statisticsConsent,
+    shouldMatchRouteToRender
+  } = this.props
+
+  if (shouldMatchRouteToRender && !prevShouldMatchRouteToRender) {
+    this.matchPathToState()
+  }
 
   if (!googleAnalyticsLoaded && !googleAnalyticsLoading && statisticsConsent) {
     loadGoogleAnalytics.call(this)

@@ -12,7 +12,8 @@ export const mapStateToProps = (store) => {
     path,
     scrollY,
     scripts,
-    scalableVectorGraphics
+    scalableVectorGraphics,
+    shouldMatchRouteToRender
   } = store.app
 
   const {
@@ -52,7 +53,8 @@ export const mapStateToProps = (store) => {
     renderPage,
     renderVisitor,
     renderAnnouncement,
-    renderUser
+    renderUser,
+    shouldMatchRouteToRender
   }
 }
   

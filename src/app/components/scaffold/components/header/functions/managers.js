@@ -102,8 +102,6 @@ export function languageManager() {
     language
   } = this.props
 
-  console.log(this.matchPathToLanguage())
-
   return {
     classNames: { container: 'button language' },
     href: this.matchPathToLanguage(),
@@ -112,7 +110,7 @@ export function languageManager() {
       const newLanguage = language === 'pl' ? 'en' : 'pl'
 
       saveCookie('lang', newLanguage, 'oneYear')
-      changeApp({ language: newLanguage })
+      changeApp({ language: newLanguage, shouldMatchRouteToRender: true })
     }
   }
 }

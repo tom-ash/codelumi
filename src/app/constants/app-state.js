@@ -11,5 +11,6 @@ export const appState = {
   },
   isMobile: null,
   scalableVectorGraphics: {},
-  siteMapLinks: null
+  siteMapLinks: null,
+  shouldMatchRouteToRender: false
 }
