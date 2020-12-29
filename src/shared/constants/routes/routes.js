@@ -25,9 +25,9 @@ import {
   USER_SHOW
 } from '../tracks/tracks'
 
-const routes = [
+export default [
   {
-    url: '/',
+    url: /^\/$/,
     track: ROOT,
     lang: PL
   },

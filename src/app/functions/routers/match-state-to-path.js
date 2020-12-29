@@ -1,17 +1,23 @@
+import routes from '../../../shared/constants/routes/routes'
+import routeRenders from '../../../shared/constants/routes/renders'
+
 export function matchRenderToRoute({ popState }) {
   if (typeof window === 'undefined') return
 
   const {
-    // changeApp,
-    // changePostRender
-    render
+    changeApp,
+    changeRender
   } = this.props
 
   const path = window.location.pathname
+  const route = routes.find(route => path.match(route.url))
+  const {
+    track,
+    lang: language
+  } = route
 
-  console.log('HERE')
-  console.log(render)
-  console.log(path)
+  changeApp({ language })
+  changeRender({ [track]: true, ...routeRenders[track] })
 
   // TODO
   

@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import loadable from '@loadable/component'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 const VisitorPrivacyMonit = loadable(() => import('./components/legal/components/privacy/components/monit/monit'))
-const VisitorAbout = loadable(() => import('./components/about/about'))
 const VisitorContact = loadable(() => import('./components/contact/contact'))
 const VisitorTermsOfService = loadable(() => import('./components/legal/components/terms-of-service/terms-of-service'))
 const VisitorCookiesPolicy = loadable(() => import('./components/legal/components/cookies/components/policy/policy'))
@@ -19,7 +18,6 @@ class Visitor extends React.Component {
   
   render() {
     const {
-      renderAbout,
       renderContact,
       renderTermsOfService,
       renderCookiesPolicy,
@@ -28,9 +26,10 @@ class Visitor extends React.Component {
       renderPrivacyMonit
     } = this.props
 
+    console.log(renderCookiesPolicy)
+
     return (
       <div id='visitor'>
-        {renderAbout && <VisitorAbout />}
         {renderContact && <VisitorContact />}
         {renderTermsOfService && <VisitorTermsOfService/>}
         {renderCookiesPolicy && <VisitorCookiesPolicy />}

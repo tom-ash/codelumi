@@ -17,6 +17,7 @@ import { matchRenderToRoute } from './functions/routers/match-state-to-path'
 import { matchPathToState } from './functions/routers/match-path-to-state'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import { render } from 'react-dom'
 
 class App extends React.Component {
   constructor(props) {
@@ -39,6 +40,8 @@ class App extends React.Component {
       renderAnnouncement,
       renderUser
     } = this.props
+
+    // console.log(renderVisitor)
 
     return (
       <div id='app-container'>

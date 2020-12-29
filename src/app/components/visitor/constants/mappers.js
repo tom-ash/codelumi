@@ -1,6 +1,14 @@
+import {
+  VISITOR_COOKIES_POLICY,
+  VISITOR_PRIVACY_SETTINGS,
+  VISITOR_TERMS_OF_SERVICE,
+  VISITOR_PRIVACY_POLICY,
+  VISITOR_CONTACT
+} from '../../../../shared/constants/tracks/tracks'
+
 export const mapStateToProps = (store) => {
   const {
-    TODO
+    language
   } = store.app
 
   const {
@@ -8,15 +16,24 @@ export const mapStateToProps = (store) => {
     marketingConsent
   } = store.visitor.legal.privacy.settings
 
+  const {
+    [VISITOR_COOKIES_POLICY]: renderCookiesPolicy,
+    [VISITOR_PRIVACY_SETTINGS]: renderPrivacySettings,
+    [VISITOR_TERMS_OF_SERVICE]: renderTermsOfService,
+    [VISITOR_PRIVACY_POLICY]: renderPrivacyPolicy,
+    [VISITOR_CONTACT]: renderContact
+  } = store.render
+
   return {
-    TODO,
-    language: store.app.language,
-    path: store.app.path,
+    language,
     consents: store.visitor.legal.privacy.settings.consents,
-    language: store.app.language,
-    TODO,
     statisticsConsent,
-    marketingConsent
+    marketingConsent,
+    renderCookiesPolicy,
+    renderPrivacySettings,
+    renderTermsOfService,
+    renderPrivacyPolicy,
+    renderContact
   }
 }
     
