@@ -102,6 +102,8 @@ export function languageManager() {
     language
   } = this.props
 
+  console.log(this.matchPathToLanguage())
+
   return {
     classNames: { container: 'button language' },
     href: this.matchPathToLanguage(),

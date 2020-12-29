@@ -1,32 +1,21 @@
-import { buildLink } from '../../components/announcement/functions/build-link'
+import routes from '../../../shared/constants/routes/routes'
+// import { buildLink } from '../../components/announcement/functions/build-link'
 
 export function matchPathToLanguage() {
-  
+  if (typeof window === 'undefined') return
 
-  // TODO
-  // const language = this.props.language === 'pl' ? 'en' : 'pl'
+  const {
+    language
+  } = this.props
 
-  // Object.keys(routes).map(routeKey => {
-  //   if (this.props[routeKey]) {
-  //     if (routes[routeKey].overshadow) overshadowingRoute = routeKey
-  //     else overshadowedRoute = routeKey
-  //   }
-  // })
+  const path = window.location.pathname
+  const route = routes.find(route => path.match(route.url))
+  const {
+    track
+  } = route
 
-  //   const {
-  //     announcementId,
-  //     category,
-  //     district,
-  //     area
-  //   } = this.props
+  const lang = language === 'pl' ? 'en' : 'pl'
+  const localizedRoute = routes.find(route => route.track === track && route.lang === lang)
 
-  //   if (category === null && district === null) return `/${announcementId}`
-
-  //   return buildLink({ id: announcementId, category, district, area, language })
-  // }
-
-  // if (overshadowingRoute) return routes[overshadowingRoute][language].url
-  // if (overshadowedRoute) return routes[overshadowedRoute][language].url
-
-  // return ''
+  return localizedRoute.url
 }
