@@ -5,7 +5,6 @@ import { sendAnnouncementsMapResponse } from '../send-response/announcement/map'
 import { sendAnnouncementsListResponse } from '../send-response/announcement/catalogue'
 import { sendAnnouncementResponse } from '../send-response/announcement/show'
 import { sendAnnouncementCreateResponse } from '../send-response/announcement/create'
-import { routes } from '../../shared/routes/routes'
 import { appState } from '../../app/constants/app-state'
 import { sendSiteMapResponse } from '../send-response/send-site-map-response'
 

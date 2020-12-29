@@ -1,5 +1,3 @@
-import { emptyRoutes } from '../../shared/routes/routes'
-
 export const appState = {
   device: null,
   scrollY: 0,
@@ -12,8 +10,6 @@ export const appState = {
     googleAnalyticsLoading: false
   },
   isMobile: null,
-  TODO,
   scalableVectorGraphics: {},
-  siteMapLinks: null,
-  ...emptyRoutes
+  siteMapLinks: null
 }

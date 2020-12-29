@@ -1,5 +1,4 @@
 import { deauthorizeUser } from '../../authorize/functions/adapters'
-import { routes } from '../../../../../../shared/routes/routes'
 
 const origin = `${CLIENT_URL}/`
 

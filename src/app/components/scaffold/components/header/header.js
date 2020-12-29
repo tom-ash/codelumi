@@ -73,14 +73,14 @@ class Header extends React.Component {
             {isLargePc && <ManagedLink {...this.myAccountManager()} />}
             <ManagedLink {...this.languageManager()} />
           </div>
-          {TODO &&
+          {/* {TODO &&
           <div className='side-links-cover' onClick={() => changeControl({ TODO: false })}>
             <div className='side-links'>
               <ManagedLink {...this.addAnnouncementManager()} />
               <ManagedLink {...this.signUpManager()} />
               <ManagedLink {...this.signInManager()} />
             </div>
-          </div>}
+          </div>} */}
         </div>
       </div>
     )

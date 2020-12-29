@@ -1,5 +1,3 @@
-import { switches } from '../components/panel/components/user/constants/switches'
-
 export const control = {
   connecting: false,
   readParams: true,
@@ -40,7 +38,6 @@ export const inputs = {
   totalFloorsMax: '',
   availabilityDate: '',
   offset: 0,
-  switches: parseSwitches(),
   sort: 'updatedesc',
 }
 

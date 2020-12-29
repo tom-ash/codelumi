@@ -20,7 +20,7 @@ export function sendVerification() {
   changeControl({ connecting: true })
   const verificationCode = document.getElementById('user-edit-phone-verification-code').value
   const access_token = getAccessToken()
-  fetch(apiUrl + '/users/verify_phone', {
+  fetch(apiUrl + '/user/verify_phone', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

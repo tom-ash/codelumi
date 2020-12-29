@@ -1,10 +1,16 @@
+import {
+  PAGE,
+  VISITOR,
+  ANNOUNCEMENT,
+  USER
+} from '../../shared/constants/tracks/tracks'
+
 export const mapStateToProps = (store) => {
   const {
     language,
     device,
     path,
     scrollY,
-    TODO,
     scripts,
     scalableVectorGraphics
   } = store.app
@@ -19,15 +25,14 @@ export const mapStateToProps = (store) => {
     area
   } = store.announcement.show.data
 
-  const {
-    show: renderPostShow,
-    create: renderPostCreate
-  } = store.post.render
+  const render = store.render
 
   const {
-    pl: postPl,
-    en: postEn
-  } = store.post.show.data
+    [PAGE]: renderPage,
+    [VISITOR]: renderVisitor,
+    [ANNOUNCEMENT]: renderAnnouncement,
+    [USER]: renderUser
+  } = render
 
   return {
     category,
@@ -37,17 +42,17 @@ export const mapStateToProps = (store) => {
     device,
     path,
     scrollY,
-    TODO,
     statisticsConsent,
     marketingConsent,
     scripts,
     googleAnalyticsLoaded: store.app.scripts.googleAnalytics,
     googleAnalyticsLoading: store.app.scripts.googleAnalyticsLoading,
     scalableVectorGraphics,
-    renderPostShow,
-    renderPostCreate,
-    postPl,
-    postEn
+    render,
+    renderPage,
+    renderVisitor,
+    renderAnnouncement,
+    renderUser
   }
 }
   

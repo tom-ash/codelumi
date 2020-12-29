@@ -4,7 +4,7 @@ import {
 } from '../langs/langs'
 
 import {
-  //VISITOR_MAIN_PAGE,
+  ROOT,
   VISITOR_PRIVACY_SETTINGS,
   VISITOR_COOKIES_POLICY,
   VISITOR_PRIVACY_POLICY,
@@ -19,12 +19,18 @@ import {
   ANNOUNCEMENT_INDEX_MY,
   ANNOUNCEMENT_SHOW,
   USER_CREATE,
-  USER_RESET_PASSWORD,
   USER_EDIT,
-  USER_AUTHORIZE
+  USER_RESET_PASSWORD,
+  USER_AUTHORIZE,
+  USER_SHOW
 } from '../tracks/tracks'
 
 const routes = [
+  {
+    url: '/',
+    track: ROOT,
+    lang: PL
+  },
   {
     url: 'ustawienia-prywatnosci',
     track: VISITOR_PRIVACY_SETTINGS,

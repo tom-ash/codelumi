@@ -1,10 +1,17 @@
 import { appState } from '../constants/app-state'
-import { emptyRoutes } from '../../shared/routes/routes'
+import { renderState } from '../constants/render-state'
 
 export const appReducer = (state = appState, action) => {
   switch (action.type) {
     case 'app': return { ...state, ...action.value }
-    case 'route': return { ...state, ...emptyRoutes, ...action.value }
+    default: return state
+  }
+}
+
+export const renderReducer = (state = renderState, action) => {
+  switch (action.type) {
+    case 'render': return { ...state, ...action.value }
+    case 'render/reset': return renderState
     default: return state
   }
 }

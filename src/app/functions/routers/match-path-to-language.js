@@ -1,11 +1,9 @@
-import { routes } from '../../../shared/routes/routes'
 import { buildLink } from '../../components/announcement/functions/build-link'
 
 export function matchPathToLanguage() {
-  let overshadowingRoute
-  let overshadowedRoute
+  
 
-  TODO
+  // TODO
   // const language = this.props.language === 'pl' ? 'en' : 'pl'
 
   // Object.keys(routes).map(routeKey => {

@@ -1,5 +1,4 @@
 import { allowedOrigins } from '../../constants/allowed-origins'
-import { routes } from '../../../shared/routes/routes'
 import { provideTitle } from '../../../shared/functions/providers/provide-title'
 import { buildLink } from '../../components/announcement/functions/build-link'
 
@@ -7,7 +6,7 @@ export function matchPathToState(prevProps) {
   if (typeof window === 'undefined' ||
       allowedOrigins.indexOf(window.origin) === -1) return
 
-  TODO
+  // TODO
 
   // const routesList = Object.keys(routes)
   // let shouldUpdatePath = false

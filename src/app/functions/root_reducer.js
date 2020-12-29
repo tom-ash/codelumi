@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { appReducer } from './reducers'
+import { appReducer, renderReducer } from './reducers'
 import { announcementReducer } from '../components/announcement/functions/reducer'
 import { userReducer } from '../components/user/functions/reducers.js'
 import { visitorReducer } from '../components/visitor/functions/reducers.js'
@@ -8,6 +8,7 @@ import { postReducer } from '../components/post/functions/reducer'
 
 export const rootReducer = combineReducers({
   app: appReducer,
+  render: renderReducer,
   announcement: announcementReducer,
   user: userReducer,
   visitor: visitorReducer,

@@ -1,7 +1,6 @@
 import React from 'react'
 import { saveCookie } from '../../../../../functions/cookie-handlers'
 import Logo from '../../../../../assets/logo-header.svg'
-import { routes } from '../../../../../../shared/routes/routes'
 
 const origin = `${CLIENT_URL}/`
 
@@ -38,17 +37,17 @@ export function titleManager() {
 }
 
 export function addAnnouncementManager() {
-  TODO
+  // TODO
 
   return {
     classNames: { container: 'header-link add-announcement' },
-    href: this.languageObjectHandler({ pl: `${CLIENT_URL}${pl.url}`, en: `${CLIENT_URL}${en.url}` }),
+    // href: this.languageObjectHandler({ pl: `${CLIENT_URL}${pl.url}`, en: `${CLIENT_URL}${en.url}` }),
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
-    title: this.languageObjectHandler({ pl: pl.title, en: en.title }),
-    label: this.languageObjectHandler({ pl: pl.label, en: en.label }),
-    onClick: () => {
-      TODO
-    }
+    // title: this.languageObjectHandler({ pl: pl.title, en: en.title }),
+  // label: this.languageObjectHandler({ pl: pl.label, en: en.label }),
+    // onClick: () => {
+    //   TODO
+    // }
   }
 }
 
@@ -62,9 +61,9 @@ export function signUpManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Zarejestruj', en: 'Sign Up' }),
     label: this.languageObjectHandler({ pl: 'Zarejestruj', en: 'Sign Up' }),
-    onClick: () => {
-      TODO
-    }
+    // onClick: () => {
+    //   TODO
+    // }
   }
 }
 
@@ -80,7 +79,7 @@ export function signInManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Zaloguj', en: 'Sign In' }),
     label: this.languageObjectHandler({ pl: 'Zaloguj', en: 'Sign In' }),
-    TODO
+    // TODO
   }
 }
 
@@ -91,9 +90,9 @@ export function myAccountManager() {
     display: !authorized && 'none',
     classNames: { container: 'header-link' },
     label: this.languageObjectHandler({ pl: 'Konto', en: 'Account' }),
-    onClick: () => {
-      TODO
-    }
+    // onClick: () => {
+    //   TODO
+    // }
   }
 }
 

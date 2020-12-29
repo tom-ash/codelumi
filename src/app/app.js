@@ -13,12 +13,10 @@ import { authorizeUserWithTokens } from './components/user/components/authorize/
 import { screenSizeHandler } from './functions/screen-size-handler'
 import { popStateHandler } from './functions/popStateHandler'
 import { languageObjectHandler } from './functions/language-handler'
-import { matchStateToPath } from './functions/routers/match-state-to-path'
+import { matchRenderToRoute } from './functions/routers/match-state-to-path'
 import { matchPathToState } from './functions/routers/match-path-to-state'
-import NotFound from './components/scaffold/components/not-found/not-found'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import SiteMap from './components/scaffold/components/site-map/site-map'
 
 class App extends React.Component {
   constructor(props) {
@@ -30,36 +28,26 @@ class App extends React.Component {
     this.popStateHandler = popStateHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.changePath = routers.changePath.bind(this)
-    this.matchStateToPath = matchStateToPath.bind(this)
+    this.matchRenderToRoute = matchRenderToRoute.bind(this)
     this.matchPathToState = matchPathToState.bind(this)
   }
 
   render() {
     const {
-      language,
-      TODO,
-      
+      renderPage,
+      renderVisitor,
+      renderAnnouncement,
+      renderUser
     } = this.props
-
-    if (TODO) {
-      return (
-        <div id='app-container'>
-          <Header />
-          <NotFound language={language}/>
-          <Footer />
-        </div>
-      )
-    }
 
     return (
       <div id='app-container'>
         <Header />
         <div id='app-inner-container'>
-          {TODO && <User />}
-          <Announcement />
-          <Post />
-          <Visitor />
-          {TODO && <SiteMap />}
+          {renderUser && <User />}
+          {renderAnnouncement && <Announcement />}
+          {renderPage && <Post />}
+          {renderVisitor && <Visitor />}
         </div>
         <Footer />
       </div>

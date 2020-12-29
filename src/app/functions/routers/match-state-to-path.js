@@ -1,12 +1,19 @@
-import { routes, emptyRoutes } from '../../../shared/routes/routes'
+export function matchRenderToRoute({ popState }) {
+  if (typeof window === 'undefined') return
 
-export function matchStateToPath({ popState }) {
   const {
-    changeApp,
-    changePostRender
+    // changeApp,
+    // changePostRender
+    render
   } = this.props
 
-  TODO
+  const path = window.location.pathname
+
+  console.log('HERE')
+  console.log(render)
+  console.log(path)
+
+  // TODO
   
   // if (typeof window === 'undefined') return
 

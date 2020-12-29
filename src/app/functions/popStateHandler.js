@@ -1,3 +1,3 @@
 export function popStateHandler() {
-  this.matchStateToPath({ popState: true })
+  this.matchRenderToRoute({ popState: true })
 }
