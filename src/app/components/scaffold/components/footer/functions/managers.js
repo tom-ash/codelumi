@@ -9,14 +9,24 @@ import {
   VISITOR_CONTACT
 } from '../../../../../../shared/constants/tracks/tracks'
 
-// const VISITOR_COOKIES_POLICY_ROUTE_PL = routes.find(route => )
+// const VISITOR_COOKIES_POLICY_ROUTE_URL_PL = routes.find(route => )
+import {
+  VISITOR_COOKIES_POLICY_URL_PL,
+  VISITOR_COOKIES_POLICY_URL_EN,
+  VISITOR_PRIVACY_SETTINGS_URL_PL,
+  VISITOR_PRIVACY_SETTINGS_URL_EN,
+  VISITOR_PRIVACY_POLICY_URL_PL,
+  VISITOR_PRIVACY_POLICY_URL_EN,
+  VISITOR_TERMS_OF_SERVICE_URL_PL,
+  VISITOR_TERMS_OF_SERVICE_URL_EN,
+  VISITOR_CONTACT_URL_PL,
+  VISITOR_CONTACT_URL_EN
+} from '../../../../../../shared/constants/routes/urls'
 
 export function cookiesPolicyManager() {
-  console.log(routes)
-
   return {
     classNames: { container: 'link' },
-    href: this.languageObjectHandler({ pl: `${origin}polityka-cookies`, en: `${origin}cookies-policy` }),
+    href: `${CLIENT_URL}/${this.languageObjectHandler({ pl: VISITOR_COOKIES_POLICY_URL_PL, en: VISITOR_COOKIES_POLICY_URL_EN})}`,
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: 'Polityka Cookies', en: 'Cookies Policy' }),
     label: this.languageHandler('Polityka Cookies', 'Cookies Policy'),

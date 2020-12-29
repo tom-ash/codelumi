@@ -4,7 +4,47 @@ import {
 } from '../langs/langs'
 
 import {
-  ROOT,
+  ROOT_URL,
+  VISITOR_PRIVACY_SETTINGS_URL_PL,
+  VISITOR_PRIVACY_SETTINGS_URL_EN,
+  VISITOR_COOKIES_POLICY_URL_PL,
+  VISITOR_COOKIES_POLICY_URL_EN,
+  VISITOR_PRIVACY_POLICY_URL_PL,
+  VISITOR_PRIVACY_POLICY_URL_EN,
+  VISITOR_TERMS_OF_SERVICE_URL_PL,
+  VISITOR_TERMS_OF_SERVICE_URL_EN,
+  VISITOR_CONTACT_URL_PL,
+  VISITOR_CONTACT_URL_EN,
+  PAGE_CREATE_URL_PL,
+  PAGE_CREATE_URL_EN,
+  PAGE_INDEX_MAP_URL_PL,
+  PAGE_INDEX_MAP_URL_EN,
+  ANNOUNCEMENT_CREATE_URL_PL,
+  ANNOUNCEMENT_CREATE_URL_EN,
+  ANNOUNCEMENT_EDIT_URL_PL,
+  ANNOUNCEMENT_EDIT_URL_EN,
+  ANNOUNCEMENT_INDEX_MAP_URL_PL,
+  ANNOUNCEMENT_INDEX_MAP_URL_EN,
+  ANNOUNCEMENT_INDEX_CATALOGUE_URL_PL,
+  ANNOUNCEMENT_INDEX_CATALOGUE_URL_EN,
+  ANNOUNCEMENT_INDEX_MY_URL_PL,
+  ANNOUNCEMENT_INDEX_MY_URL_EN,
+  ANNOUNCEMENT_SHOW_URL_PL,
+  ANNOUNCEMENT_SHOW_URL_EN,
+  USER_CREATE_URL_PL,
+  USER_CREATE_URL_EN,
+  USER_AUTHORIZE_URL_PL,
+  USER_AUTHORIZE_URL_EN,
+  USER_RESET_PASSWORD_URL_PL,
+  USER_RESET_PASSWORD_URL_EN,
+  USER_EDIT_URL_PL,
+  USER_EDIT_URL_EN,
+  USER_SHOW_URL_PL,
+  USER_SHOW_URL_EN
+} from './urls'
+
+import {
+  ROOT_TRACK,
   VISITOR_PRIVACY_SETTINGS,
   VISITOR_COOKIES_POLICY,
   VISITOR_PRIVACY_POLICY,
@@ -27,191 +67,191 @@ import {
 
 export default [
   {
-    url: /^\/$/,
-    track: ROOT,
+    url: ROOT_URL,
+    track: ROOT_TRACK,
     lang: PL
   },
   {
-    url: 'ustawienia-prywatnosci',
+    url: VISITOR_PRIVACY_SETTINGS_URL_PL,
     track: VISITOR_PRIVACY_SETTINGS,
     lang: PL
   },
   {
-    url: 'privacy-settings',
+    url: VISITOR_PRIVACY_SETTINGS_URL_EN,
     track: VISITOR_PRIVACY_SETTINGS,
     lang: EN
   },
   {
-    url: 'polityka-cookies',
+    url: VISITOR_COOKIES_POLICY_URL_PL,
     track: VISITOR_COOKIES_POLICY,
     lang: PL
   },
   {
-    url: 'cookies-policy',
+    url: VISITOR_COOKIES_POLICY_URL_EN,
     track: VISITOR_COOKIES_POLICY,
     lang: EN
   },
   {
-    url: 'polityka-prywatnosci',
+    url: VISITOR_PRIVACY_POLICY_URL_PL,
     track: VISITOR_PRIVACY_POLICY,
     lang: PL
   },
   {
-    url: 'privacy-policy',
+    url: VISITOR_PRIVACY_POLICY_URL_EN,
     track: VISITOR_PRIVACY_POLICY,
     lang: EN
   },
   {
-    url: 'regulamin',
+    url: VISITOR_TERMS_OF_SERVICE_URL_PL,
     track: VISITOR_TERMS_OF_SERVICE,
     lang: PL
   },
   {
-    url: 'terms-of-service',
+    url: VISITOR_TERMS_OF_SERVICE_URL_EN,
     track: VISITOR_TERMS_OF_SERVICE,
     lang: EN
   },
   {
-    url: 'kontakt',
+    url: VISITOR_CONTACT_URL_PL,
     track: VISITOR_CONTACT,
     lang: PL
   },
   {
-    url: 'contact',
+    url: VISITOR_CONTACT_URL_EN,
     track: VISITOR_CONTACT,
     lang: EN
   },
   {
-    url: 'dodaj-strone',
+    url: PAGE_CREATE_URL_PL,
     track: PAGE_CREATE,
     lang: PL
   },
   {
-    url: 'add-page',
+    url: PAGE_CREATE_URL_EN,
     track: PAGE_CREATE,
     lang: EN
   },
   {
-    url: 'mapa-stron',
+    url: PAGE_INDEX_MAP_URL_PL,
     track: PAGE_INDEX_MAP,
     lang: PL
   },
   {
-    url: 'pages-map',
+    url: PAGE_INDEX_MAP_URL_EN,
     track: PAGE_INDEX_MAP,
     lang: EN
   },
   {
-    url: 'dodaj-ogloszenie-wynajmu-nieruchomosci-w-warszawie',
+    url: ANNOUNCEMENT_CREATE_URL_PL,
     track: ANNOUNCEMENT_CREATE,
     lang: PL
   },
   {
-    url: 'add-announcement-of-real-estate-lease-in-warsaw',
+    url: ANNOUNCEMENT_CREATE_URL_EN,
     track: ANNOUNCEMENT_CREATE,
     lang: EN
   },
   {
-    url: 'edytuj-ogloszenie',
+    url: ANNOUNCEMENT_EDIT_URL_PL,
     track: ANNOUNCEMENT_EDIT,
     lang: PL,
     withWildcards: true
   },
   {
-    url: 'edit-announcement',
+    url: ANNOUNCEMENT_EDIT_URL_EN,
     track: ANNOUNCEMENT_EDIT,
     lang: EN,
     withWildcards: true
   },
   {
-    url: 'mapa-nieruchomosci-na-wynajem-warszawa',
+    url: ANNOUNCEMENT_INDEX_MAP_URL_PL,
     track: ANNOUNCEMENT_INDEX_MAP,
     lang: PL
   },
   {
-    url: 'map-of-real-estates-for-lease-warsaw',
+    url: ANNOUNCEMENT_INDEX_MAP_URL_EN,
     track: ANNOUNCEMENT_INDEX_MAP,
     lang: EN
   },
   {
-    url: 'katalog-nieruchomosci-na-wynajem-warszawa',
+    url: ANNOUNCEMENT_INDEX_CATALOGUE_URL_PL,
     track: ANNOUNCEMENT_INDEX_CATALOGUE,
     lang: PL
   },
   {
-    url: 'catalogue-of-real-estates-for-lease-warsaw',
+    url: ANNOUNCEMENT_INDEX_CATALOGUE_URL_EN,
     track: ANNOUNCEMENT_INDEX_CATALOGUE,
     lang: EN
   },
   {
-    url: 'moje-ogloszenia',
+    url: ANNOUNCEMENT_INDEX_MY_URL_PL,
     track: ANNOUNCEMENT_INDEX_MY,
     lang: PL
   },
   {
-    url: 'my-announcements',
+    url: ANNOUNCEMENT_INDEX_MY_URL_EN,
     track: ANNOUNCEMENT_INDEX_MY,
     lang: EN
   },
   {
-    url: /^\/?\d+-.*-na-wynajem-warszawa-.*$/,
+    url: ANNOUNCEMENT_SHOW_URL_PL,
     track: ANNOUNCEMENT_SHOW,
     lang: PL,
     withWildcards: true
   },
   {
-    url: /^\/?\d+-.*-for-lease-warsaw-.*$/,
+    url: ANNOUNCEMENT_SHOW_URL_EN,
     track: ANNOUNCEMENT_SHOW,
     lang: EN,
     withWildcards: true
   },
   {
-    url: 'zarejestruj',
+    url: USER_CREATE_URL_PL,
     track: USER_CREATE,
     lang: PL
   },
   {
-    url: 'sign-up',
+    url: USER_CREATE_URL_EN,
     track: USER_CREATE,
     lang: EN
   },
   {
-    url: 'zaloguj',
+    url: USER_AUTHORIZE_URL_PL,
     track: USER_AUTHORIZE,
     lang: PL
   },
   {
-    url: 'sign-in',
+    url: USER_AUTHORIZE_URL_EN,
     track: USER_AUTHORIZE,
     lang: EN
   },
   {
-    url: 'zresetuj-haslo',
+    url: USER_RESET_PASSWORD_URL_PL,
     track: USER_RESET_PASSWORD,
     lang: PL
   },
   {
-    url: 'reset-password',
+    url: USER_RESET_PASSWORD_URL_EN,
     track: USER_RESET_PASSWORD,
     lang: EN
   },
   {
-    url: 'ustawienia-konta',
+    url: USER_EDIT_URL_PL,
     track: USER_EDIT,
     lang: PL
   },
   {
-    url: 'account-settings',
+    url: USER_EDIT_URL_EN,
     track: USER_EDIT,
     lang: EN
   },
   {
-    url: 'konto',
+    url: USER_SHOW_URL_PL,
     track: USER_SHOW,
     lang: PL
   },
   {
-    url: 'account',
+    url: USER_SHOW_URL_EN,
     track: USER_SHOW,
     lang: EN
   }

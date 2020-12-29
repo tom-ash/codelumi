@@ -19,7 +19,8 @@ export const mapStateToProps = (store) => {
     device: store.app.device,
     category,
     district,
-    area
+    area,
+    render: store.render
   }
 }
   

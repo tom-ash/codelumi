@@ -10,20 +10,16 @@ export function matchPathToState() {
     allowedOrigins.indexOf(window.origin) === -1
   ) return
 
-  console.log("matchPathToState")
-
   const {
     language,
     render,
     changeApp
   } = this.props
 
-  const path = window.location.pathname
   const route = routes.find(route => render[route.track] && route.lang === language)
-  const newPath = route.url
+  const { url: newPath } = route
 
   changeApp({ shouldMatchRouteToRender: false })
-
   window.history.pushState(
     { path: newPath },
     '',

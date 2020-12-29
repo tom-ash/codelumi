@@ -1,4 +1,4 @@
-export const ROOT = 'root'
+export const ROOT_TRACK = 'root'
 export const PAGE = 'page'
 export const PAGE_CREATE = 'page/create'
 export const PAGE_INDEX_MAP = 'page/index/map'

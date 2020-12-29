@@ -1,5 +1,5 @@
 import {
-  ROOT,
+  ROOT_TRACK,
   VISITOR,
   VISITOR_PRIVACY_SETTINGS,
   VISITOR_COOKIES_POLICY,
@@ -24,7 +24,7 @@ import {
 } from '../tracks/tracks'
 
 export default {
-  [ROOT]: {
+  [ROOT_TRACK]: {
     [VISITOR]: true,
     [ANNOUNCEMENT]: true,
     [ANNOUNCEMENT_INDEX_MAP]: true,

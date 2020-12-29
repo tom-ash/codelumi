@@ -10,7 +10,18 @@ export function matchRenderToRoute({ popState }) {
   } = this.props
 
   const path = window.location.pathname
-  const route = routes.find(route => path.match(route.url))
+  
+  const route = routes.find(route => {
+    const { url: routeUrl } = route
+    const pathUrl = path === '/' ? '/' : path.replace(/^\/|\/$/g, '')
+
+    if (typeof routeUrl === 'string') {
+      return pathUrl === routeUrl
+    } else {
+      return pathUrl.match(routeUrl)
+    }
+  })
+
   const {
     track,
     lang: language
