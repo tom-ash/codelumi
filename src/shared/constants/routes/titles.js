@@ -4,8 +4,8 @@ import {
 } from '../langs/langs'
 
 export const ROOT_TITLES = {
-  [PL]: 'TODO WARSAWLEASE.PL',
-  [EN]: 'TODO WARSAWLEASE.PL'
+  [PL]: 'Mapa nieruchomości na wynajem w Warszawie - Mieszkania, biura i lokale użytkowe',
+  [EN]: 'Map of Real Estates for Lease in Warsaw - Apartments, Offices and Usable premises'
 }
 
 export const VISITOR_PRIVACY_SETTINGS_TITLES  = {

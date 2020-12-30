@@ -12,14 +12,14 @@ function setCookies() {
   } = this.props
 
   const consents = {
-    ...statisticsConsent === null && { statisticsConsent: getBoolCookieValue(getCookieValue('_pdpaf')) },
-    ...marketingConsent === null && { marketingConsent: getBoolCookieValue(getCookieValue('_pdpsm')) }
+    ...statisticsConsent === null && { statisticsConsent: getBooleanCookieValue(getCookieValue('_pdpaf')) },
+    ...marketingConsent === null && { marketingConsent: getBooleanCookieValue(getCookieValue('_pdpsm')) }
   }
 
   changeSettings(consents)
 }
 
-function getBoolCookieValue(cookieValue) {
+function getBooleanCookieValue(cookieValue) {
   switch(cookieValue) {
     case 'true': return true
     case 'false': return false

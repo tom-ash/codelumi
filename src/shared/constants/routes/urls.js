@@ -53,11 +53,6 @@ export const ANNOUNCEMENT_EDIT_URLS = {
   [EN]: 'edit-announcement'
 }
 
-export const ANNOUNCEMENT_INDEX_MAP_URLS = {
-  [PL]: 'mapa-nieruchomosci-na-wynajem-warszawa',
-  [EN]: 'map-of-real-estates-for-lease-warsaw'
-}
-
 export const ANNOUNCEMENT_INDEX_CATALOGUE_URLS = {
   [PL]: 'katalog-nieruchomosci-na-wynajem-warszawa',
   [EN]: 'catalogue-of-real-estates-for-lease-warsaw'

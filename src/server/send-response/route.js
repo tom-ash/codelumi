@@ -1,13 +1,11 @@
 import { renderPage } from '../render-page/render-page'
 import { renderApp } from '../render-app/render-app'
 
-export function sendResponse({
+export function sendRouteResponse({
   res,
-  status,
   language,
   noIndex,
   url,
-  announcementUrl,
   canonicalUrl,
   title,
   description,
@@ -17,10 +15,11 @@ export function sendResponse({
   schemaOrg,
   initialState
 }) {
-  res.status(status || 200).send(
+  const appAsHtml = renderApp(initialState)
+
+  res.status(200).send(
     renderPage({
       url,
-      announcementUrl,
       canonicalUrl,
       language,
       noIndex,
@@ -30,7 +29,7 @@ export function sendResponse({
       image,
       openGraph,
       schemaOrg,
-      ...renderApp(initialState)
+      ...appAsHtml
     }) 
   )
 }
