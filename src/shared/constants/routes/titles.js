@@ -48,6 +48,11 @@ export const ANNOUNCEMENT_CREATE_TITLES  = {
   [EN]: 'Add Free Announcement of Lease of Real Estate in Warsaw in the category: Apartment, Usable premises, Office'
 }
 
+export const ANNOUNCEMENT_EDIT_TITLES  = {
+  [PL]: 'Edytuj ogłoszenie',
+  [EN]: 'Edit Announcement'
+}
+
 export const ANNOUNCEMENT_INDEX_MAP_TITLES  = {
   [PL]: 'Mapa nieruchomości na wynajem w Warszawie - Mieszkania, biura i lokale użytkowe',
   [EN]: 'Map of Real Estates for Lease in Warsaw - Apartments, Offices and Usable premises'
@@ -61,6 +66,11 @@ export const ANNOUNCEMENT_INDEX_CATALOGUE_TITLES  = {
 export const ANNOUNCEMENT_INDEX_MY_TITLES  = {
   [PL]: 'Moje ogłoszenia',
   [EN]: 'My Announcements'
+}
+
+export const ANNOUNCEMENT_SHOW_TITLES  = {
+  [PL]: '',
+  [EN]: ''
 }
 
 export const USER_CREATE_TITLES  = {

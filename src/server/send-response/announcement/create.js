@@ -16,10 +16,7 @@ export function sendAnnouncementCreateResponse({
   description,
   url
 }) {
-  const keywords = {
-    pl: 'ogłoszenie, wynajem, nieruchomości, dodaj, bezpłatne, za darmo',
-    en: 'announcement, lease, real estate, add, free'
-  }[language]
+
   
   fetch(`${API_URL}/posts/create_announcement`, {
     headers: {

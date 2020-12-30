@@ -31,11 +31,6 @@ export function sendAnnouncementsListResponse({
     })
     if (announcements && announcements[0]) announcements[0].show = true
 
-    const keywords = {
-      pl: 'katalog, warszawa, nieruchomość, nieruchomości, wynajem, najem, wynajęcie, mieszkania, lokale użytkowe, biura, mieszkanie, lokal użytkowy, biuro, ogłoszenia, ogłoszenie',
-      en: 'catalogue, warsaw, real estate, real estates, lease, apartments, usable premises, offices, apartment, office, announcements, announcement'
-    }[language]
-
     sendResponse({
       res,
       url,

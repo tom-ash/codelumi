@@ -39,10 +39,6 @@ export function sendAnnouncementResponse({
     const title = provideTitle({ ...clientParams, language })
     const image = `${AWS_S3_URL}/announcements/${clientParams.id}/${clientParams.pictures[0].database}`
     const description = { pl: clientParams.descriptionPolish, en: clientParams.descriptionEnglish }[language]
-    const keywords = {
-      pl: 'nieruchomość, wynajem',
-      en: 'real estate, lease'
-    }[language]
 
     const announcementUrl = buildLink({
       id: clientParams.id,
