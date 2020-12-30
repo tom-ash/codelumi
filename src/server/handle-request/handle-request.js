@@ -4,7 +4,6 @@ import { getPureUrl } from '../../shared/functions/getters/get-pure-url'
 import { getDevice } from '../../shared/functions/getters/get-device'
 import { getVisitorState } from './get-visitor-state'
 import routes from '../../shared/constants/routes/routes'
-import { appState } from '../../app/constants/app-state'
 
 export function handleRequest(req, res) {
   const {
@@ -27,31 +26,12 @@ export function handleRequest(req, res) {
     }
   })
 
-  if (route) {
-    const {
-      lang: language,
-      title,
-      description,
-      keywords
-    } = route
-
-    const initialState = {
-      app: {
-        ...appState,
-        language,
-        device,
-      },
-      ...visitorState
-    }
-  
+  if (route) {  
     sendRouteResponse({
+      route,
       res,
-      language,
-      url,
-      title,
-      description,
-      keywords,
-      initialState
+      device,
+      visitorState
     })
   } else {
     sendPageResponse({

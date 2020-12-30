@@ -1,35 +1,43 @@
 import { renderPage } from '../render-page/render-page'
 import { renderApp } from '../render-app/render-app'
+import stateInitializers from '../state-initializers/state-initializers'
 
 export function sendRouteResponse({
+  route,
   res,
-  language,
-  noIndex,
-  url,
-  canonicalUrl,
-  title,
-  description,
-  keywords,
-  image,
-  openGraph,
-  schemaOrg,
-  initialState
+  device,
+  visitorState
 }) {
-  const appAsHtml = renderApp(initialState)
+  const {
+    lang,
+    noIndex,
+    title,
+    description,
+    keywords,
+    track
+  } = route
+  const stateInitializer = stateInitializers[track]
 
-  res.status(200).send(
-    renderPage({
-      url,
-      canonicalUrl,
-      language,
-      noIndex,
-      title,
-      description,
-      keywords,
-      image,
-      openGraph,
-      schemaOrg,
-      ...appAsHtml
-    }) 
-  )
+  stateInitializer({
+    route,
+    device,
+    visitorState
+  }).then(initialState => {
+    const appAsHtml = renderApp(initialState)
+    const status = 200
+
+    res.status(status).send(
+      renderPage({
+        lang,
+        noIndex,
+        title,
+        description,
+        keywords,
+        // image,
+        // openGraph,
+        // schemaOrg,
+        ...appAsHtml
+      }) 
+    )
+  })
 }

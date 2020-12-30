@@ -80,11 +80,11 @@ import {
 
 export default [
   {
-    url: ROOT_URLS,
+    url: ROOT_URLS[PL],
     track: ROOT_TRACK,
     title: ROOT_TITLES[PL],
     keywords: ROOT_KEYWORDS[PL],
-    descriptions: ROOT_DESCRIPTIONS[PL],
+    description: ROOT_DESCRIPTIONS[PL],
     lang: PL
   },
   {
@@ -176,7 +176,7 @@ export default [
     track: ANNOUNCEMENT_CREATE_TRACK,
     title: ANNOUNCEMENT_CREATE_TITLES[PL],
     keywords: ANNOUNCEMENT_CREATE_KEYWORDS[PL],
-    descriptions: ANNOUNCEMENT_CREATE_DESCRIPTIONS[PL],
+    description: ANNOUNCEMENT_CREATE_DESCRIPTIONS[PL],
     lang: PL
   },
   {
@@ -205,7 +205,7 @@ export default [
     title: ANNOUNCEMENT_INDEX_CATALOGUE_TITLES[PL],
     track: ANNOUNCEMENT_INDEX_CATALOGUE_TRACK,
     keywords: ANNOUNCEMENT_INDEX_CATALOGUE_KEYWORDS[PL],
-    descriptions: ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS[PL],
+    description: ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS[PL],
     lang: PL
   },
   {
@@ -213,7 +213,7 @@ export default [
     track: ANNOUNCEMENT_INDEX_CATALOGUE_TRACK,
     title: ANNOUNCEMENT_INDEX_CATALOGUE_TITLES[EN],
     keywords: ANNOUNCEMENT_INDEX_CATALOGUE_KEYWORDS[EN],
-    descriptions: ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS[EN],
+    description: ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS[EN],
     lang: EN
   },
   {
