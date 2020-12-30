@@ -13,7 +13,7 @@ export const mapStateToProps = (store) => {
     scrollY,
     scripts,
     scalableVectorGraphics,
-    shouldMatchRouteToRender
+    shouldMatchRouteToRenderAndLanguage
   } = store.app
 
   const {
@@ -54,7 +54,7 @@ export const mapStateToProps = (store) => {
     renderVisitor,
     renderAnnouncement,
     renderUser,
-    shouldMatchRouteToRender
+    shouldMatchRouteToRenderAndLanguage
   }
 }
   

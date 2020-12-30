@@ -4,7 +4,7 @@ import * as reduxMappers from './constants/mappers'
 import { ManagedLink } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { changeRoute } from '../../../../functions/routers/change-route'
-import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
+import { languageObjectHandler } from '../../../../functions/language-handler'
 import { labelProvider } from '../../../user/components/show/functions/label-provider'
 import { matchPathToLanguage } from '../../../../functions/routers/match-path-to-language'
 import { HeaderProvider } from '../../../announcement/components/index/functions/header-provider'
@@ -18,7 +18,6 @@ class Header extends React.Component {
     this.signInManager = managers.signInManager.bind(this)
     this.myAccountManager = managers.myAccountManager.bind(this)
     this.languageManager = managers.languageManager.bind(this)
-    this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
     this.matchPathToLanguage = matchPathToLanguage.bind(this)
@@ -32,7 +31,6 @@ class Header extends React.Component {
       authorized
     } = this.props
     const isLargePc = device === 'largePc'
-
     const showAddAnnouncement = ['largePc', 'smallPc', 'largeTablet'].indexOf(device) !== -1
 
     return (
@@ -58,19 +56,20 @@ class Header extends React.Component {
           <div id='warsaw-lease'>
             <ManagedLink {...this.titleManager()} />
           </div>
-
           {/* <h1 className='title'>
             <HeaderProvider
               TODO
               languageObjectHandler={this.languageObjectHandler}
             />
           </h1> */}
-
           <div className='top-links'>
             {showAddAnnouncement && <ManagedLink {...this.addAnnouncementManager()} />}
-            {isLargePc && <ManagedLink {...this.signUpManager()} />}
-            {isLargePc && <ManagedLink {...this.signInManager()} />}
-            {isLargePc && <ManagedLink {...this.myAccountManager()} />}
+            {isLargePc &&
+            <>
+              {!authorized && <ManagedLink {...this.signUpManager()} />}
+              {!authorized && <ManagedLink {...this.signInManager()} />}
+              {authorized && <ManagedLink {...this.myAccountManager()} />}
+            </>}
             <ManagedLink {...this.languageManager()} />
           </div>
           {/* {TODO &&

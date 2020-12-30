@@ -10,7 +10,7 @@ export function changeRoute(track) {
 
   console.log(track)
 
-  changeApp({ shouldMatchRouteToRender: true })
+  changeApp({ shouldMatchRouteToRenderAndLanguage: true })
   changeRender({ ...renderState, [track]: true, ...routeRenders[track] })
   instantScroll()
 }

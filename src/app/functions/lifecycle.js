@@ -38,18 +38,18 @@ export function componentDidMount() {
 
 export function componentDidUpdate(prevProps) {
   const {
-    shouldMatchRouteToRender: prevShouldMatchRouteToRender
+    shouldMatchRouteToRenderAndLanguage: prevShouldMatchRouteToRender
   } = prevProps
 
   const {
     googleAnalyticsLoaded,
     googleAnalyticsLoading,
     statisticsConsent,
-    shouldMatchRouteToRender
+    shouldMatchRouteToRenderAndLanguage
   } = this.props
 
-  if (shouldMatchRouteToRender && !prevShouldMatchRouteToRender) {
-    this.matchPathToState()
+  if (shouldMatchRouteToRenderAndLanguage && !prevShouldMatchRouteToRender) {
+    this.matchRouteToRenderAndLanguage()
   }
 
   if (!googleAnalyticsLoaded && !googleAnalyticsLoading && statisticsConsent) {

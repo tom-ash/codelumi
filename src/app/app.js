@@ -14,7 +14,7 @@ import { screenSizeHandler } from './functions/screen-size-handler'
 import { popStateHandler } from './functions/popStateHandler'
 import { languageObjectHandler } from './functions/language-handler'
 import { matchRenderToRoute } from './functions/routers/match-state-to-path'
-import { matchPathToState } from './functions/routers/match-path-to-state'
+import { matchRouteToRenderAndLanguage } from './functions/routers/match-path-to-state'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { render } from 'react-dom'
@@ -30,7 +30,7 @@ class App extends React.Component {
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.changePath = routers.changePath.bind(this)
     this.matchRenderToRoute = matchRenderToRoute.bind(this)
-    this.matchPathToState = matchPathToState.bind(this)
+    this.matchRouteToRenderAndLanguage = matchRouteToRenderAndLanguage.bind(this)
   }
 
   render() {

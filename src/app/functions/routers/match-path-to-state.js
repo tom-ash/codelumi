@@ -4,7 +4,7 @@ import { buildLink } from '../../components/announcement/functions/build-link'
 
 import routes from '../../../shared/constants/routes/routes'
 
-export function matchPathToState() {
+export function matchRouteToRenderAndLanguage() {
   if (
     typeof window === 'undefined' ||
     allowedOrigins.indexOf(window.origin) === -1
@@ -19,7 +19,7 @@ export function matchPathToState() {
   const route = routes.find(route => render[route.track] && route.lang === language)
   const { url: newPath } = route
 
-  changeApp({ shouldMatchRouteToRender: false })
+  changeApp({ shouldMatchRouteToRenderAndLanguage: false })
   window.history.pushState(
     { path: newPath },
     '',

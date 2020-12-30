@@ -7,22 +7,30 @@ import {
 import {
   ROOT_TRACK,
   ANNOUNCEMENT_CREATE_TRACK,
-  USER_CREATE_TRACK
+  USER_CREATE_TRACK,
+  USER_AUTHORIZE_TRACK,
+  USER_SHOW_TRACK
 } from '../../../../../../shared/constants/tracks/tracks'
 import {
   ROOT_URLS,
   ANNOUNCEMENT_CREATE_URLS,
-  USER_CREATE_URLS
+  USER_CREATE_URLS,
+  USER_AUTHORIZE_URLS,
+  USER_SHOW_URLS
 } from '../../../../../../shared/constants/routes/urls'
 import {
   ROOT_TITLES,
   ANNOUNCEMENT_CREATE_TITLES,
-  USER_CREATE_TITLES
+  USER_CREATE_TITLES,
+  USER_AUTHORIZE_TITLES,
+  USER_SHOW_TITLES
 } from '../../../../../../shared/constants/routes/titles'
+import {
+  ANNOUNCEMENT_CREATE_LABELS, LANG_LABELS
+} from '../../../../../../shared/constants/routes/labels'
 
 export function titleManager() {
   const {
-    resetAnnouncementIndexControl,
     resetAnnouncementIndexInputs,
     changeAnnouncementIndexControl
   } = this.props
@@ -47,68 +55,60 @@ export function titleManager() {
     ),
     onClick: () => {
       this.changeRoute(ROOT_TRACK)
-      // resetAnnouncementIndexControl()
+      // TODO
       // resetAnnouncementIndexInputs()
-      // changeAnnouncementIndexControl({ fetch: true })
+      // resetAnnouncementIndexControl({ fetch: true })
     }
   }
 }
 
 export function addAnnouncementManager() {
-  const title = this.languageObjectHandler(ANNOUNCEMENT_CREATE_TITLES)
-
   return {
     classNames: { container: 'header-link add-announcement' },
     href: `${CLIENT_URL}/${this.languageObjectHandler(ANNOUNCEMENT_CREATE_URLS)}`,
-    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
-    title,
-    label: title,
+    hrefLang: this.languageObjectHandler(LANGS),
+    title: this.languageObjectHandler(ANNOUNCEMENT_CREATE_TITLES),
+    label: this.languageObjectHandler(ANNOUNCEMENT_CREATE_LABELS),
     onClick: () => this.changeRoute(ANNOUNCEMENT_CREATE_TRACK)
   }
 }
 
 export function signUpManager() {
-  const { name, changeApp } = this.props
+  const title = this.languageObjectHandler(USER_CREATE_TITLES)
 
   return {
-    display: name && 'none',
     classNames: { container: 'header-link' },
-    href: this.languageObjectHandler({ pl: `${origin}zarejestruj`, en: `${origin}sign-up` }),
-    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
-    title: this.languageObjectHandler({ pl: 'Zarejestruj', en: 'Sign Up' }),
-    label: this.languageObjectHandler({ pl: 'Zarejestruj', en: 'Sign Up' }),
-    // onClick: () => {
-    //   TODO
-    // }
+    href: `${CLIENT_URL}/${this.languageObjectHandler(USER_CREATE_URLS)}`,
+    hrefLang: this.languageObjectHandler(LANGS),
+    title,
+    label: title,
+    onClick: () => this.changeRoute(USER_CREATE_TRACK)
   }
 }
 
 export function signInManager() {
-  const {
-    name
-  } = this.props
+  const title = this.languageObjectHandler(USER_AUTHORIZE_TITLES)
 
   return {
-    display: name && 'none',
     classNames: { container: 'header-link sign-in' },
-    href: this.languageObjectHandler({ pl: `${origin}zaloguj`, en: `${origin}sign-in` }),
-    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
-    title: this.languageObjectHandler({ pl: 'Zaloguj', en: 'Sign In' }),
-    label: this.languageObjectHandler({ pl: 'Zaloguj', en: 'Sign In' }),
-    // TODO
+    href: `${CLIENT_URL}/${this.languageObjectHandler(USER_AUTHORIZE_URLS)}`,
+    hrefLang: this.languageObjectHandler(LANGS),
+    title,
+    label: title,
+    onClick: () => this.changeRoute(USER_AUTHORIZE_TRACK)
   }
 }
 
 export function myAccountManager() {
-  const { changeApp, changeControl, authorized } = this.props
+  const title = this.languageObjectHandler(USER_SHOW_TITLES)
   
   return {
-    display: !authorized && 'none',
     classNames: { container: 'header-link' },
-    label: this.languageObjectHandler({ pl: 'Konto', en: 'Account' }),
-    // onClick: () => {
-    //   TODO
-    // }
+    href: `${CLIENT_URL}/${this.languageObjectHandler(USER_SHOW_URLS)}`,
+    hrefLang: this.languageObjectHandler(LANGS),
+    title,
+    label: title,
+    onClick: () => this.changeRoute(USER_SHOW_TRACK)
   }
 }
 
@@ -121,12 +121,12 @@ export function languageManager() {
   return {
     classNames: { container: 'button language' },
     href: this.matchPathToLanguage(),
-    label: this.languageHandler('English', 'Polski'),
+    label: this.languageObjectHandler(LANG_LABELS),
     onClick: () => {
       const newLanguage = language === 'pl' ? 'en' : 'pl'
 
       saveCookie('lang', newLanguage, 'oneYear')
-      changeApp({ language: newLanguage, shouldMatchRouteToRender: true })
+      changeApp({ language: newLanguage, shouldMatchRouteToRenderAndLanguage: true })
     }
   }
 }
