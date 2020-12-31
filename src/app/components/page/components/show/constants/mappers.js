@@ -10,7 +10,7 @@ export const mapStateToProps = (store) => {
 
   const {
     data: postData
-  } = store.post.show
+  } = store.page.show
 
   const {
     name,
@@ -19,7 +19,7 @@ export const mapStateToProps = (store) => {
 
   const {
     name: nameCreate
-  } = store.post.create.inputs
+  } = store.page.create.inputs
 
   return {
     name,
@@ -34,7 +34,7 @@ export const mapStateToProps = (store) => {
   
 export const mapDispatchToProps = (dispatch) => {
   return {
-    changeData: value => dispatch({ type: 'post/show/data', value }),
-    changeRender: value => dispatch({ type: 'post/render', value: value})
+    changeData: value => dispatch({ type: 'page/show/data', value }),
+    changeRender: value => dispatch({ type: 'page/render', value: value})
   }
 }

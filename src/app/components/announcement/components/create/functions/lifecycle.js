@@ -1,7 +1,7 @@
 export function componentDidMount() {
   const {
     changeControl,
-    changePostShowData,
+    changePageShowData,
     changePostRender
   } = this.props
 
@@ -36,12 +36,12 @@ export function componentWillUnmount() {
     resetUserCreateInputs,
     resetUserCreateData,
     resetUserCreateErrors,
-    changePostShowData,
+    changePageShowData,
     changePostRender
   } = this.props
 
   CHANGE_RENDER
-  changePostShowData({ name: null, body: null })
+  changePageShowData({ name: null, body: null })
   resetControl()
   resetInputs()
   resetErrors()

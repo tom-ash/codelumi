@@ -63,6 +63,6 @@ export const mapDispatchToProps = (dispatch) => {
     changeUserAuthorizeData: value => dispatch({ type: 'user/authorize/data', value }),
     changeApp: value => dispatch({ type: 'app', value }),
     changeRender: value => dispatch({ type: 'render', value }),
-    changePostShowData: value => dispatch({ type: 'post/show/data', value })
+    changePageShowData: value => dispatch({ type: 'page/show/data', value })
   }
 }

@@ -10,7 +10,7 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import PostTile from '../shared/components/tile/tile'
 
-class PostCreate extends React.Component {
+class PageCreate extends React.Component {
   constructor(props) {
     super(props)
     this.componentDidMount = componentDidMount
@@ -74,4 +74,4 @@ class PostCreate extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(PostCreate))
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(PageCreate))

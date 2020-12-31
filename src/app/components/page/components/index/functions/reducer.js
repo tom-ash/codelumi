@@ -2,8 +2,8 @@ import { combineReducers } from 'redux'
 
 export const dataReducer = (state = {}, action) => {
   switch (action.type) {
-    case 'post/index/data': return { ...state, ...action.value }
-    case 'post/index/data/reset': return {}
+    case 'page/index/data': return { ...state, ...action.value }
+    case 'page/index/data/reset': return {}
     default: return state
   }
 }

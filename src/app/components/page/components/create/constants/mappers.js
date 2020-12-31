@@ -5,11 +5,11 @@ export const mapStateToProps = (store) => {
 
   const {
     show: renderShow
-  } = store.post.render
+  } = store.page.render
 
   const {
     inputs
-  } = store.post.create
+  } = store.page.create
 
   const {
     name
@@ -19,7 +19,7 @@ export const mapStateToProps = (store) => {
     name: showName,
     en: showEn,
     pl: showPl
-  } = store.post.show.data
+  } = store.page.show.data
 
   return {
     language,
@@ -34,9 +34,9 @@ export const mapStateToProps = (store) => {
   
 export const mapDispatchToProps = (dispatch) => {
   return {
-    changeInputs: value => dispatch({ type: 'post/create/inputs', value }),
-    resetInputs: value => dispatch({ type: 'post/create/inputs/reset', value }),
-    changeShowData: value => dispatch({ type: 'post/show/data', value }),
-    changeRender: value => dispatch({ type: 'post/render', value: value})
+    changeInputs: value => dispatch({ type: 'page/create/inputs', value }),
+    resetInputs: value => dispatch({ type: 'page/create/inputs/reset', value }),
+    changeShowData: value => dispatch({ type: 'page/show/data', value }),
+    changeRender: value => dispatch({ type: 'page/render', value: value})
   }
 }

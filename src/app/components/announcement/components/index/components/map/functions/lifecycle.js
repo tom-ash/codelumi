@@ -24,7 +24,7 @@ function handleScroll() {
 export function componentDidMount() {
   const {
     changeControl,
-    changePostShowData,
+    changePageShowData,
     changePostRender
   } = this.props
 
@@ -32,7 +32,7 @@ export function componentDidMount() {
 
   this.miniList.current.addEventListener('scroll', () => handleScroll.apply(this))
 
-  changePostShowData({ name: 'welcome' })
+  changePageShowData({ name: 'welcome' })
   changePostRender({ show: true })
 }
 
@@ -64,14 +64,14 @@ export function componentWillUnmount() {
     resetControl,
     resetInputs,
     resetData,
-    changePostShowData,
+    changePageShowData,
     changePostRender
   } = this.props
 
   removeOldPins.call(this)
 
   // changePostRender({ show: false })
-  changePostShowData({ name: null, body: null })
+  changePageShowData({ name: null, body: null })
   resetControl()
   resetInputs()
   resetData()

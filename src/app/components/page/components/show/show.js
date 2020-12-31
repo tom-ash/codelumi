@@ -8,7 +8,7 @@ import PostTile from '../shared/components/tile/tile'
 import { languageObjectHandler } from '../../../../functions/language-handler'
 import ScalableVectorGraphic from '../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 
-class PostShow extends React.Component {
+class PageShow extends React.Component {
   constructor(props) {
     super(props)
     this.componentDidMount = lifecycle.componentDidMount
@@ -52,4 +52,4 @@ class PostShow extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(PostShow))
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(PageShow))

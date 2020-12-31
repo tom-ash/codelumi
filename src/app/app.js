@@ -4,7 +4,7 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import Header from './components/scaffold/components/header/header'
 import Visitor from './components/visitor/visitor'
 import Announcement from './components/announcement/announcement'
-import Post from './components/post/post'
+import Page from './components/page/page'
 import User from './components/user/user'
 import Footer from './components/scaffold/components/footer/Footer'
 import * as lifecycle from './functions/lifecycle'
@@ -47,7 +47,7 @@ class App extends React.Component {
         <div id='app-inner-container'>
           {renderUser && <User />}
           {renderAnnouncement && <Announcement />}
-          {renderPage && <Post />}
+          {renderPage && <Page />}
           {renderVisitor && <Visitor />}
         </div>
         <Footer />

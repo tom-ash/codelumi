@@ -1,7 +1,7 @@
 import React from 'react'
 import { languageObjectHandler } from '../../../../functions/language-handler'
 
-class NotFound extends React.Component {
+class PageNotFound extends React.Component {
   constructor(props) {
     super(props)
     this.languageObjectHandler = languageObjectHandler.bind(this)
@@ -26,4 +26,4 @@ class NotFound extends React.Component {
   }
 }
 
-export default NotFound
+export default PageNotFound

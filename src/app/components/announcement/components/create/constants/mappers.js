@@ -53,12 +53,12 @@ export const mapStateToProps = (store) => {
 
   const {
     create_announcement: postData
-  } = store.post.index.data
+  } = store.page.index.data
 
   const {
     name: postCreateName,
     body: postCreateBody
-  } = store.post.create.inputs
+  } = store.page.create.inputs
 
   const {
     admin
@@ -121,8 +121,8 @@ export const mapDispatchToProps = (dispatch) => {
     resetUserCreateInputs: value => dispatch({ type: 'user/create/inputs/reset', value }),
     resetUserCreateData: value => dispatch({ type: 'user/create/data/reset', value }),
     resetUserCreateErrors: value => dispatch({ type: 'user/create/errors/reset', value }),
-    changePostShowData: value => dispatch({ type: 'post/show/data', value }),
-    changePostRender: value => dispatch({ type: 'post/render', value: value})
+    changePageShowData: value => dispatch({ type: 'page/show/data', value }),
+    changePostRender: value => dispatch({ type: 'page/render', value: value})
   }
 }
     
