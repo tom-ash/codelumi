@@ -1,9 +1,9 @@
 const fetch = require("node-fetch")
-import { appState } from '../../app/constants/app-state'
-import { parseScalableVectorGraphics } from '../../shared/functions/parsers/parse-scalable-vector-graphics'
-import routeRenders from '../../shared/constants/routes/renders'
+import { appState } from '../../../app/constants/app-state'
+import { parseScalableVectorGraphics } from '../../../shared/functions/parsers/parse-scalable-vector-graphics'
+import routeRenders from '../../../shared/constants/routes/renders'
 
-export function genericStateInitializer({
+export function genericResponseInitializer({
   route,
   device,
   visitorState

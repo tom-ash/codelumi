@@ -1,9 +1,9 @@
-import { sendRouteResponse } from '../send-response/route'
-import { sendPageResponse } from '../send-response/page'
 import { getPureUrl } from '../../shared/functions/getters/get-pure-url'
 import { getDevice } from '../../shared/functions/getters/get-device'
+import { getRoute } from '../../shared/functions/getters/get-route'
 import { getVisitorState } from './get-visitor-state'
-import routes from '../../shared/constants/routes/routes'
+import { sendRouteResponse } from '../send-response/route'
+import { sendPageResponse } from '../send-response/page'
 
 export function handleRequest(req, res) {
   const {
@@ -11,34 +11,25 @@ export function handleRequest(req, res) {
     originalUrl,
     headers
   } = req
-
   const url = getPureUrl(originalUrl)
+  const route = getRoute(url)
   const device = getDevice(headers['user-agent'])
   const visitorState = getVisitorState(cookies)
 
-  const route = routes.find(route => {
-    const { url: routeUrl } = route
-
-    if (typeof routeUrl === 'string') {
-      return url === routeUrl
-    } else {
-      return url.match(routeUrl)
-    }
-  })
-
   if (route) {  
-    sendRouteResponse({
+    return sendRouteResponse({
+      res,
       route,
-      res,
-      device,
-      visitorState
-    })
-  } else {
-    sendPageResponse({
-      res,
-      device,
       url,
+      device,
       visitorState
     })
   }
+
+  sendPageResponse({
+    res,
+    url,
+    device,
+    visitorState
+  })
 }

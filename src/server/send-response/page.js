@@ -3,10 +3,18 @@ import { renderApp } from '../render-app/render-app'
 
 export function sendPageResponse({
   res,
-  language,
   url,
-  initialState
+  route,
+  device,
+  visitorState
 }) {
+  const {
+    lang,
+    noIndex,
+    track
+  } = route
+  const ResponseInitializer = ResponseInitializers[track]
+
   const appAsHtml = renderApp(initialState)
 
   res.status(200).send(

@@ -1,10 +1,10 @@
 const fetch = require("node-fetch")
-import { appState } from '../../app/constants/app-state'
-import { data } from '../../app/components/announcement/components/index/constants/state'
-import { parseScalableVectorGraphics } from '../../shared/functions/parsers/parse-scalable-vector-graphics'
-import routeRenders from '../../shared/constants/routes/renders'
+import { appState } from '../../../app/constants/app-state'
+import { data } from '../../../app/components/announcement/components/index/constants/state'
+import { parseScalableVectorGraphics } from '../../../shared/functions/parsers/parse-scalable-vector-graphics'
+import routeRenders from '../../../shared/constants/routes/renders'
 
-export function announcementIndexStateInitializer({
+export function announcementIndexResponseInitializer({
   route,
   device,
   visitorState
