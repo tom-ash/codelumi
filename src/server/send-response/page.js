@@ -4,7 +4,8 @@ import { renderApp } from '../render-app/render-app'
 import {
   VISITOR_TRACK,
   PAGE_TRACK,
-  PAGE_SHOW_TRACK
+  PAGE_SHOW_TRACK,
+  PAGE_NOT_FOUND_TRACK
 } from '../../shared/constants/tracks/tracks'
 import { appState } from '../../app/constants/app-state'
 
@@ -70,6 +71,31 @@ export function sendPageResponse({
       }) 
     )
   })
+  .catch(error => {
+    const initialState = {
+      app: {
+        ...appState,
+        language: 'pl',
+        device
+      },
+      render: {
+        [VISITOR_TRACK]: true,
+        [PAGE_TRACK]: true,
+        [PAGE_NOT_FOUND_TRACK]: true
+      },
+      ...visitorState
+    }
 
+    const appAsHtml = renderApp(initialState)
 
+    res.status(404).send(
+      renderPage({
+        url,
+        language: 'pl',
+        title: 'Not Found',
+        description: 'Not Found',
+        ...appAsHtml
+      }) 
+    )
+  })
 }
