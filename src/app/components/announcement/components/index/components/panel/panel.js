@@ -5,16 +5,24 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageObjectHandler } from '../../../../../../functions/language-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import AnnouncementIndexPanelCategories from './components/categories/categories'
+import PanelCategories from './components/categories/categories'
+import PanelVisitor from './components/visitor/visitor'
+import { buttonManager } from './components/visitor/managers/managers'
 
 class AnnouncementIndexPanel extends React.Component {
   constructor(props) {
     super(props)
     this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.languageHandler = languageObjectHandler.bind(this)
+    this.buttonManager = buttonManager.bind(this)
   }
 
   render() {
     const {
+      language,
+      renderMap,
+      renderCatalogue,
+      renderMy,
       currentCategory,
       scalableVectorGraphics,
       changeInputs,
@@ -23,13 +31,23 @@ class AnnouncementIndexPanel extends React.Component {
 
     return (
       <div id='announcement-index-panel'>
-        <AnnouncementIndexPanelCategories
+        <PanelCategories
           languageObjectHandler={this.languageObjectHandler}
           scalableVectorGraphics={scalableVectorGraphics}
           changeInputs={changeInputs}
           changeControl={changeControl}
           currentCategory={currentCategory}
         />
+        {(renderMap || renderCatalogue) &&
+        <>
+          <PanelVisitor
+            language={language}
+            languageHandler={this.languageObjectHandler}
+            buttonManager={buttonManager.bind(this)}
+            renderMap={renderMap}
+          />
+        </>
+        }
       </div>
     )
   }

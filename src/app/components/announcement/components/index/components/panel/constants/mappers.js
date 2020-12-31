@@ -1,11 +1,22 @@
+import {
+  ANNOUNCEMENT_INDEX_MAP_TRACK,
+  ANNOUNCEMENT_INDEX_CATALOGUE_TRACK,
+  ANNOUNCEMENT_INDEX_MY_TRACK
+} from '../../../../../../../../shared/constants/tracks/tracks'
+
 export const mapStateToProps = (store) => {
   const {
     language,
-    path,
     isMobile,
     device,
     scalableVectorGraphics,
   } = store.app
+
+  const {
+    [ANNOUNCEMENT_INDEX_MAP_TRACK]: renderMap,
+    [ANNOUNCEMENT_INDEX_CATALOGUE_TRACK]: renderCatalogue,
+    [ANNOUNCEMENT_INDEX_MY_TRACK]: renderMy
+  } = store.render
 
   const {
     category: currentCategory
@@ -13,10 +24,12 @@ export const mapStateToProps = (store) => {
 
   return {
     language,
-    path,
     isMobile,
     device,
     scalableVectorGraphics,
+    renderMap,
+    renderCatalogue,
+    renderMy,
     currentCategory
   }
 }
