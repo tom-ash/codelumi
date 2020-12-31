@@ -17,7 +17,6 @@ import { matchRenderToRoute } from './functions/routers/match-state-to-path'
 import { matchRouteToRenderAndLanguage } from './functions/routers/match-path-to-state'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import { render } from 'react-dom'
 
 class App extends React.Component {
   constructor(props) {

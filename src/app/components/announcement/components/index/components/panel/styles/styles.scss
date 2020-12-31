@@ -9,6 +9,33 @@
     height: 240px;
   }
 
+  .button {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    border: none;
+    .input {
+      text-align: center;
+      transition: .2s ease-in-out;
+      font-weight: normal;
+      width: 100%;
+      height: 100%;
+      display: block;
+      line-height: 45px;
+      margin: 0;
+      padding: 0;
+      border: none;
+      border-radius: 2.5px;
+      background: #DC7633;
+      color: #F7F9F9;
+      cursor: pointer;
+      font-size: 16px;
+      &.hover {
+        background: #EB984E;
+      }
+    }
+  }
+
   .categories {
     max-width: 1214px;
     margin: 0 auto;

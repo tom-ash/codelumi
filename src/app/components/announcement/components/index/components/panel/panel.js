@@ -8,6 +8,7 @@ import styles from './styles/styles.scss'
 import PanelCategories from './components/categories/categories'
 import PanelVisitor from './components/visitor/visitor'
 import { buttonManager } from './components/visitor/managers/managers'
+import { changeRoute } from '../../../../../../functions/routers/change-route'
 
 class AnnouncementIndexPanel extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class AnnouncementIndexPanel extends React.Component {
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.languageHandler = languageObjectHandler.bind(this)
     this.buttonManager = buttonManager.bind(this)
+    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {
@@ -41,10 +43,13 @@ class AnnouncementIndexPanel extends React.Component {
         {(renderMap || renderCatalogue) &&
         <>
           <PanelVisitor
+            abc='asdad'
+            changeRoute={this.changeRoute}
             language={language}
             languageHandler={this.languageObjectHandler}
-            buttonManager={buttonManager.bind(this)}
-            renderMap={renderMap}
+            buttonManager={this.buttonManager}
+            // renderMap={renderMap}
+            // changeRoute={this.changeRoute}
           />
         </>
         }

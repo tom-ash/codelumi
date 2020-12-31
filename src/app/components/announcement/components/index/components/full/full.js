@@ -26,10 +26,6 @@ class AnnouncementIndexFull extends React.Component {
   render() {
     const {
       language,
-      changeControl,
-      changeInputs,
-      offset,
-      amount,
       announcements,
       isMobile,
       scalableVectorGraphics,
@@ -43,56 +39,40 @@ class AnnouncementIndexFull extends React.Component {
         ref={this.container}
         id='announcement-index-full'
       >
-        {
-        renderCatalogue &&
-        <div>
-          <div id='announcement-index-full-scroll-anchor' />
-          <div className='announcements'>
-            {
-            announcements && announcements.map((announcement, index) => {
-              return (
-                <AnnouncementTile
-                  isMobile={isMobile}
-                  venue='full'
-                  showPhoneSwitch
-                  index={index}
-                  first={index === 0}                  
-                  key={announcement.id}
-                  language={language}
-                  id={announcement.id}
-                  category={announcement.category}
-                  district={announcement.district}
-                  pictures={announcement.pictures}
-                  area={announcement.area}
-                  netRentAmount={announcement.netRentAmount}
-                  netRentAmountPerSqm={announcement.netRentAmountPerSqm}
-                  grossRentAmount={announcement.grossRentAmount}
-                  grossRentAmountPerSqm={announcement.grossRentAmountPerSqm}
-                  rooms={announcement.rooms}
-                  rentCurrency={announcement.rentCurrency}
-                  floor={announcement.floor}
-                  totalFloors={announcement.totalFloors}
-                  availabilityDate={announcement.availabilityDate}
-                  scalableVectorGraphics={scalableVectorGraphics}
-                  indexFullFarthestScrollTop={indexFullFarthestScrollTop}
-                  changeApp={changeApp}
-                  changeData={changeAnnouncementShowData}
-                />
-              )
-            })
-            }
-            {amount > 50 && offset + 1 !== amount &&
-            <OffsetSwitcher
-              changeControl={changeControl}
-              changeInputs={changeInputs}
-              offset={offset}
-              amount={amount}
-              languageHandler={this.languageHandler}
-              scrollTop={true}
-            />}
+        <div id='announcement-index-full-scroll-anchor' />
+        <div className='announcements'>
+          {announcements && announcements.map((announcement, index) => {
+            return (
+              <AnnouncementTile
+                isMobile={isMobile}
+                venue='full'
+                showPhoneSwitch
+                index={index}
+                first={index === 0}                  
+                key={announcement.id}
+                language={language}
+                id={announcement.id}
+                category={announcement.category}
+                district={announcement.district}
+                pictures={announcement.pictures}
+                area={announcement.area}
+                netRentAmount={announcement.netRentAmount}
+                netRentAmountPerSqm={announcement.netRentAmountPerSqm}
+                grossRentAmount={announcement.grossRentAmount}
+                grossRentAmountPerSqm={announcement.grossRentAmountPerSqm}
+                rooms={announcement.rooms}
+                rentCurrency={announcement.rentCurrency}
+                floor={announcement.floor}
+                totalFloors={announcement.totalFloors}
+                availabilityDate={announcement.availabilityDate}
+                scalableVectorGraphics={scalableVectorGraphics}
+                indexFullFarthestScrollTop={indexFullFarthestScrollTop}
+                changeApp={changeApp}
+                changeData={changeAnnouncementShowData}
+              />
+            )
+          })}
           </div>
-        </div>
-        }
       </div>
     )
   }
