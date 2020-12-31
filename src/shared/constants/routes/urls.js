@@ -5,7 +5,7 @@ import {
 
 export const ROOT_URLS = {
   [PL]: '/',
-  [EN]: '/'
+  [EN]: 'en'
 }
 
 export const VISITOR_PRIVACY_SETTINGS_URLS = {

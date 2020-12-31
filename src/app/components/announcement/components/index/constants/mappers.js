@@ -1,3 +1,9 @@
+import {
+  ANNOUNCEMENT_INDEX_MAP_TRACK,
+  ANNOUNCEMENT_INDEX_CATALOGUE_TRACK,
+  ANNOUNCEMENT_INDEX_MY_TRACK
+} from '../../../../../../shared/constants/tracks/tracks'
+
 export const mapStateToProps = (store) => {
   const {
     language,
@@ -7,18 +13,15 @@ export const mapStateToProps = (store) => {
   } = store.app
 
   const {
+    [ANNOUNCEMENT_INDEX_MAP_TRACK]: renderMap,
+    [ANNOUNCEMENT_INDEX_CATALOGUE_TRACK]: renderCatalogue,
+    [ANNOUNCEMENT_INDEX_MY_TRACK]: renderMy
+  } = store.render
+
+  const {
     fetch,
     type
   } = store.announcement.index.control
-
-  const {
-    welcome: welcomePostData
-  } = store.page.index.data
-
-  const {
-    name: welcomePostCreateName,
-    body: welcomePostCreateBody
-  } = store.page.create.inputs
 
   const {
     admin
@@ -55,6 +58,9 @@ export const mapStateToProps = (store) => {
     language,
     path,
     device,
+    renderMap,
+    renderCatalogue,
+    renderMy,
     fetch,
     type,
     category,
@@ -78,9 +84,6 @@ export const mapStateToProps = (store) => {
     offset,
     announcements,
     amount,
-    welcomePostData,
-    welcomePostCreateName,
-    welcomePostCreateBody,
     scalableVectorGraphics,
     admin
   }

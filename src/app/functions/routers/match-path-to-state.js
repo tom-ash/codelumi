@@ -19,6 +19,8 @@ export function matchRouteToRenderAndLanguage() {
   
 
   const route = routes.find(route => render[route.track] && route.lang === language)
+
+
   const { url: newPath } = route
 
   changeApp({ shouldMatchRouteToRenderAndLanguage: false })

@@ -11,7 +11,7 @@ export const appReducer = (state = appState, action) => {
 export const renderReducer = (state = renderState, action) => {
   switch (action.type) {
     case 'render': return { ...state, ...action.value }
-    case 'render/reset': return renderState
+    case 'render/reset': return { ...renderState, ...action.value }
     default: return state
   }
 }

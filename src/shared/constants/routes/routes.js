@@ -88,6 +88,14 @@ export default [
     lang: PL
   },
   {
+    url: ROOT_URLS[EN],
+    track: ROOT_TRACK,
+    title: ROOT_TITLES[EN],
+    keywords: ROOT_KEYWORDS[EN],
+    description: ROOT_DESCRIPTIONS[EN],
+    lang: EN
+  },
+  {
     url: VISITOR_PRIVACY_SETTINGS_URLS[PL],
     title: VISITOR_PRIVACY_SETTINGS_TITLES[PL],
     track: VISITOR_PRIVACY_SETTINGS_TRACK,

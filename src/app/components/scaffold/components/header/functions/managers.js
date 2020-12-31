@@ -121,7 +121,7 @@ export function languageManager() {
   return {
     classNames: { container: 'button language' },
     href: this.matchPathToLanguage(),
-    label: this.languageObjectHandler(LANG_LABELS),
+    label: LANG_LABELS[language === 'pl' ? 'en' : 'pl'],
     onClick: () => {
       const newLanguage = language === 'pl' ? 'en' : 'pl'
 

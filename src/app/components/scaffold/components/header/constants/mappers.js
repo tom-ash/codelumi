@@ -1,8 +1,7 @@
 export const mapStateToProps = (store) => {
   const {
     language,
-    device,
-    TODO
+    device
   } = store.app
 
   const {
