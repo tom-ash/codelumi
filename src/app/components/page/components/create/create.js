@@ -8,7 +8,7 @@ import { save } from './functions/save'
 import { languageObjectHandler } from '../../../../functions/language-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import PostTile from '../shared/components/tile/tile'
+import PageTile from '../shared/components/tile/tile'
 
 class PageCreate extends React.Component {
   constructor(props) {
@@ -49,7 +49,7 @@ class PageCreate extends React.Component {
 
     return (
       <div className='post-create'>
-        <PostTile
+        <PageTile
           name={name}
           body={parsedBody}
         />

@@ -18,23 +18,17 @@ class User extends React.Component {
       renderCreate,
       renderAuthorize,
       renderPasswordReset,
-      renderAccount,
+      renderShow,
       renderEdit
     } = this.props
 
     return (
       <React.Fragment>
         {renderCreate && <UserCreate />}
+        {renderEdit && <UserEditAccount />}
         {renderAuthorize && <UserAuthorize />}
         {renderPasswordReset && <UserEditAccountPassword />}
-        {renderAccount &&
-        <div
-          TODO
-          className='transparent-cover'
-        >
-          <UserShow />
-        </div>}
-        {renderEdit && <UserEditAccount />}
+        {renderShow && <UserShow />}
       </React.Fragment>
     )
   }

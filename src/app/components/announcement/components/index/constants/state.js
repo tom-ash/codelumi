@@ -14,7 +14,6 @@ export const control = {
 }
 
 export const data = {
-  listAmount: null,
   amount: null,
   announcements: null,
   tileId: null,

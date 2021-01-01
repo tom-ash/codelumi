@@ -1,53 +1,72 @@
+import {
+  ANNOUNCEMENT_CREATE_TRACK,
+  ANNOUNCEMENT_INDEX_MY_TRACK,
+  USER_EDIT_TRACK
+} from '../../../../../../shared/constants/tracks/tracks'
+import {
+  ANNOUNCEMENT_CREATE_URLS,
+  ANNOUNCEMENT_INDEX_MY_URLS,
+  USER_EDIT_URLS
+} from '../../../../../../shared/constants/routes/urls'
+import {
+  ANNOUNCEMENT_CREATE_TITLES,
+  ANNOUNCEMENT_INDEX_MY_TITLES,
+  USER_EDIT_TITLES
+} from '../../../../../../shared/constants/routes/titles'
+import {
+  ANNOUNCEMENT_CREATE_LABELS
+} from '../../../../../../shared/constants/routes/labels'
 import { deauthorizeUser } from '../../authorize/functions/adapters'
+import { SIGN_OUT_LABEL } from '../constants/labels'
 
-const origin = `${CLIENT_URL}/`
-
-export function addAnnouncementManager() {
-  TODO
-
+export function addAnnouncementManager({ hrefLang }) {
   return {
-    id: 'user-show-account-add-announcemt',
-    classNames: { container: 'button'},
-    href: this.languageObjectHandler({ pl: `${CLIENT_URL}${pl.url}`, en: `${CLIENT_URL}${en.url}` }),
-    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
-    title: this.languageObjectHandler({ pl: pl.title, en: en.title }),
-    label: this.labelProvider('fas fa-plus', pl.label, en.label),
-    TODO
+    href: `${CLIENT_URL}/${this.languageHandler(ANNOUNCEMENT_CREATE_URLS)}`,
+    hrefLang,
+    title: this.languageHandler(ANNOUNCEMENT_CREATE_TITLES),
+    label: this.languageHandler(ANNOUNCEMENT_CREATE_LABELS),
+    onClick: () => this.changeRoute(ANNOUNCEMENT_CREATE_TRACK)
   }
 }
 
-export function listAnnouncementsManager() {
-  const { changeAnnouncementIndexData, changeAnnouncementIndexControl } = this.props
+export function myAnnouncementsManager({ hrefLang }) {
+  const {
+    changeAnnouncementIndexData,
+    changeAnnouncementIndexControl
+  } = this.props
+  const title = this.languageHandler(ANNOUNCEMENT_INDEX_MY_TITLES)
+
   return {
-    id: 'user-show-account-list-announcements',
-    classNames: { container: 'button'},
-    href: this.languageObjectHandler({ pl: `${origin}dodane-ogloszenia'`, en: `${origin}added-announcements'` }),
-    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
-    label: this.labelProvider('fas fa-list-ul', 'Dodane ogłoszenia', 'Added announcements'),
+    href: `${CLIENT_URL}/${this.languageHandler(ANNOUNCEMENT_INDEX_MY_URLS)}`,
+    hrefLang,
+    title,
+    label: title,
     onClick: () => {
-      changeAnnouncementIndexData({ announcements: null, amount: null })
-      TODO
+      changeAnnouncementIndexData({
+        announcements: null,
+        amount: null
+      })
       changeAnnouncementIndexControl({ fetch: true })
+      this.changeRoute(ANNOUNCEMENT_INDEX_MY_TRACK)
     }
   }
 }
 
-export function accountManager() {
+export function accountManager({ hrefLang }) {
+  const title = this.languageHandler(USER_EDIT_TITLES)
+
   return {
-    id: 'user-show-account-account',
-    classNames: { container: 'button'},
-    href: this.languageObjectHandler({ pl: `${origin}account-settings'`, en: `${origin}ustawienia-konta'` }),
-    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
-    label: this.labelProvider('fas fa-cog', 'Ustawienia', 'Settings'),
-    onClick: () => TODO
+    href: this.languageHandler(USER_EDIT_URLS),
+    hrefLang,
+    title,
+    label: title,
+    onClick: () => this.changeRoute(USER_EDIT_TRACK)
   }
 }
 
 export function deAuthorizeManager() {
   return {
-    id: 'user-show-account-de-authorize',
-    classNames: { container: 'button sign-out'},
-    label: this.labelProvider('fas fa-sign-out-alt', 'Wyloguj', 'Sign Out'),
+    label: this.languageHandler(SIGN_OUT_LABEL),
     onClick: () => deauthorizeUser.call(this)
   }
 }

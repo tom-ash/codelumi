@@ -9,6 +9,7 @@ import {
   ANNOUNCEMENT_CREATE_TRACK,
   USER_CREATE_TRACK,
   USER_AUTHORIZE_TRACK,
+  USER_TRACK,
   USER_SHOW_TRACK
 } from '../../../../../../shared/constants/tracks/tracks'
 import {
@@ -100,6 +101,7 @@ export function signInManager() {
 }
 
 export function myAccountManager() {
+  const { changeRender } = this.props
   const title = this.languageObjectHandler(USER_SHOW_TITLES)
   
   return {
@@ -108,7 +110,10 @@ export function myAccountManager() {
     hrefLang: this.languageObjectHandler(LANGS),
     title,
     label: title,
-    onClick: () => this.changeRoute(USER_SHOW_TRACK)
+    onClick: () => changeRender({
+      [USER_TRACK]: true,
+      [USER_SHOW_TRACK]: true
+    })
   }
 }
 

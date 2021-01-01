@@ -4,10 +4,6 @@ export const mapStateToProps = (store) => {
   } = store.app
 
   const {
-    show: renderShow
-  } = store.page.render
-
-  const {
     inputs
   } = store.page.create
 
@@ -23,7 +19,6 @@ export const mapStateToProps = (store) => {
 
   return {
     language,
-    renderShow,
     name,
     inputs,
     showName,
@@ -37,6 +32,6 @@ export const mapDispatchToProps = (dispatch) => {
     changeInputs: value => dispatch({ type: 'page/create/inputs', value }),
     resetInputs: value => dispatch({ type: 'page/create/inputs/reset', value }),
     changeShowData: value => dispatch({ type: 'page/show/data', value }),
-    changeRender: value => dispatch({ type: 'page/render', value: value})
+    changeRender: value => dispatch({ type: 'page/render', value })
   }
 }

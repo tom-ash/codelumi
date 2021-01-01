@@ -68,11 +68,11 @@ export function componentWillUnmount() {
     changePostRender
   } = this.props
 
-  removeOldPins.call(this)
+  // removeOldPins.call(this)
 
   // changePostRender({ show: false })
-  changePageShowData({ name: null, body: null })
+  // changePageShowData({ name: null, body: null })
   resetControl()
-  resetInputs()
-  resetData()
+  // resetInputs()
+  // resetData()
 }

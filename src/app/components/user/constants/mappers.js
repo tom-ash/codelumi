@@ -1,14 +1,23 @@
+import {
+  USER_AUTHORIZE_TRACK,
+  USER_SHOW_TRACK
+} from '../../../../shared/constants/tracks/tracks'
+
 export const mapStateToProps = (store) => {
   const {
     language,
-    path,
-    TODO
+    path
   } = store.app
+
+  const {
+    [USER_AUTHORIZE_TRACK]: renderAuthorize,
+    [USER_SHOW_TRACK]: renderShow
+  } = store.render
 
   return {
     language,
-    path,
-    TODO
+    renderAuthorize,
+    renderShow
   }
 }
     

@@ -107,7 +107,7 @@ export const mapStateToProps = (store) => {
     
 export const mapDispatchToProps = (dispatch) => {
   return {
-    changeApp: value => dispatch({ type: 'app', value: value}),
+    changeApp: value => dispatch({ type: 'app', value }),
     changeUserAuthorizeData: value => dispatch({ type: 'user/authorize/data', value }),
     changeAnnouncementShowData: value => dispatch({ type: 'announcement/show/data', value }),
     changeControl: value => dispatch({ type: 'announcement/create/control', value }),
@@ -122,7 +122,7 @@ export const mapDispatchToProps = (dispatch) => {
     resetUserCreateData: value => dispatch({ type: 'user/create/data/reset', value }),
     resetUserCreateErrors: value => dispatch({ type: 'user/create/errors/reset', value }),
     changePageShowData: value => dispatch({ type: 'page/show/data', value }),
-    changePostRender: value => dispatch({ type: 'page/render', value: value})
+    changePostRender: value => dispatch({ type: 'page/render', value })
   }
 }
     

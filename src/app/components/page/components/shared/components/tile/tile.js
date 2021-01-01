@@ -3,7 +3,7 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { jsonToJsxParser } from './functions/json_to_jsx_parser'
 
-class PostTile extends React.Component {
+class PageTile extends React.Component {
   constructor(props) {
     super(props)
     this.jsonToJsxParser = jsonToJsxParser.bind(this)
@@ -27,4 +27,4 @@ class PostTile extends React.Component {
   }
 }
 
-export default withStyles(styles)(PostTile)
+export default withStyles(styles)(PageTile)

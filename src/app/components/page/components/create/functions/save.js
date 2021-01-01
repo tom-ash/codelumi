@@ -17,15 +17,15 @@ export function save() {
   let parsedPl = null
   if (unparsedPl) {
     parsedPl = { ...unparsedPl }
-    parsedPl.body = JSON.parse(unparsedPl.body)
-    parsedPl.meta = JSON.parse(unparsedPl.meta)
+    parsedPl.body = JSON.parse(unparsedPl.body || [])
+    parsedPl.meta = JSON.parse(unparsedPl.meta || {})
   }
 
   let parsedEn = null
   if (unparsedEn) {
     parsedEn = { ...unparsedEn }
-    parsedEn.body = JSON.parse(unparsedEn.body)
-    parsedEn.meta = JSON.parse(unparsedEn.meta)
+    parsedEn.body = JSON.parse(unparsedEn.body || [])
+    parsedEn.meta = JSON.parse(unparsedEn.meta || {})
   }
 
   fetch(API_URL + '/posts', {

@@ -54,9 +54,9 @@ export const mapDispatchToProps = (dispatch) => {
     resetInputs: value => dispatch({ type: 'announcement/index/inputs/reset', value }),
     resetData: value => dispatch({ type: 'announcement/index/data/reset', value }),
     changeAnnouncement: value => dispatch({ type: 'announcement/index/data/announcement', value }),
-    changeApp: value => dispatch({ type: 'app', value: value}),
+    changeApp: value => dispatch({ type: 'app', value }),
     changeAnnouncementShowData: value => dispatch({ type: 'announcement/show/data', value }),
-    changePostRender: value => dispatch({ type: 'page/render', value: value}),
-    changePageShowData: value => dispatch({ type: 'page/show/data', value: value})
+    changePostRender: value => dispatch({ type: 'page/render', value }),
+    changePageShowData: value => dispatch({ type: 'page/show/data', value })
   }
 }

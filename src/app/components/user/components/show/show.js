@@ -2,39 +2,48 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { ManagedButton, ManagedLink } from 'managed-inputs'
-import { pageHeaderProvider } from '../../../../functions/header-providers'
-import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
+import { languageObjectHandler } from '../../../../functions/language-handler'
 import * as managers from './functions/managers'
 import { labelProvider } from './functions/label-provider'
-import { changePath } from '../../../../functions/routers/change-path'
+import { changeRoute } from '../../../../functions/routers/change-route'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import { USER_SHOW_TRACK } from '../../../../../shared/constants/tracks/tracks'
 
 class UserShow extends React.Component {
   constructor(props) {
     super(props)
     this.addAnnouncementManager = managers.addAnnouncementManager.bind(this)
-    this.listAnnouncementsManager = managers.listAnnouncementsManager.bind(this)
+    this.myAnnouncementsManager = managers.myAnnouncementsManager.bind(this)
     this.accountManager = managers.accountManager.bind(this)
     this.deAuthorizeManager = managers.deAuthorizeManager.bind(this)
-    this.pageHeaderProvider = pageHeaderProvider.bind(this)
-    this.languageHandler = languageHandler.bind(this)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.languageHandler = languageObjectHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
-    this.changePath = changePath.bind(this)
+    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {
+    const {
+      language: hrefLang,
+      changeRender
+    } = this.props
+
     return (
       <div
-        id='user-show-account'
-        className='container narrow-container shadowed'
-        onClick={e => e.stopPropagation()}
+        id='user-show'
+        onClick={() => changeRender({
+          [USER_SHOW_TRACK]: false
+        })}
       >
-        <ManagedLink {...this.addAnnouncementManager()} />
-        <ManagedLink {...this.listAnnouncementsManager()} />
-        <ManagedLink {...this.accountManager()} />
-        <ManagedButton {...this.deAuthorizeManager()} />
+        <div
+          id='user-show-account'
+          onClick={e => e.stopPropagation()}
+        >
+          <ManagedLink {...this.addAnnouncementManager({ hrefLang })} />
+          <ManagedLink {...this.myAnnouncementsManager({ hrefLang })} />
+          <ManagedLink {...this.accountManager({ hrefLang })} />
+          <ManagedButton {...this.deAuthorizeManager({ hrefLang })} />
+        </div>
       </div>
     )
   }

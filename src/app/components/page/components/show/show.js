@@ -4,7 +4,7 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import * as lifecycle from './functions/lifecycle'
-import PostTile from '../shared/components/tile/tile'
+import PageTile from '../shared/components/tile/tile'
 import { languageObjectHandler } from '../../../../functions/language-handler'
 import ScalableVectorGraphic from '../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 
@@ -42,7 +42,7 @@ class PageShow extends React.Component {
         </ button >
         }
         {!beingEdited &&
-        <PostTile
+        <PageTile
           name='welcome'
           body={body}
         />

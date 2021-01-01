@@ -20,6 +20,8 @@ class Page extends React.Component {
       renderNotFound
     } = this.props
 
+    console.log(renderCreate)
+
     return (
       <div id='post'>
         {renderShow && <PageShow />}
