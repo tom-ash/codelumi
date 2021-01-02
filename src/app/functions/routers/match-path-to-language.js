@@ -1,4 +1,4 @@
-import routes from '../../../shared/constants/routes/routes'
+import { getRouteByRender } from '../../../shared/functions/getters/route-by-render'
 import { getPath } from './get-path'
 
 export function matchPathToLanguage() {
@@ -7,7 +7,7 @@ export function matchPathToLanguage() {
     language
   } = this.props
   const lang = language === 'pl' ? 'en' : 'pl'
-  const route = routes.find(route => render[route.track] && route.lang === lang)
+  const route = getRouteByRender({ render, lang })
 
   return getPath.apply(this, [route])
 }

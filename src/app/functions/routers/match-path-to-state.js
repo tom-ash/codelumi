@@ -1,5 +1,5 @@
 import { allowedOrigins } from '../../constants/allowed-origins'
-import routes from '../../../shared/constants/routes/routes'
+import { getRouteByRender } from '../../../shared/functions/getters/route-by-render'
 import { getPath } from './get-path'
 
 export function matchRouteToRenderAndLanguage() {
@@ -9,13 +9,12 @@ export function matchRouteToRenderAndLanguage() {
   ) return
 
   const {
-    language,
     render,
+    language: lang,
     changeApp
   } = this.props
 
-  const route = routes.find(route => render[route.track] && route.lang === language)
-
+  const route = getRouteByRender({ render, lang })
   let path = getPath.apply(this, [route])
   if (path === null) return
 
