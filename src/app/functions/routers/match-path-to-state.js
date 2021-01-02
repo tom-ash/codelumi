@@ -16,17 +16,20 @@ export function matchRouteToRenderAndLanguage() {
     changeApp
   } = this.props
 
-  
-
   const route = routes.find(route => render[route.track] && route.lang === language)
 
-
-  const { url: newPath } = route
+  const url = (() => {
+    if (route.buildUrl) {
+      return route.buildUrl.apply(this)
+    } else {
+      return route.url
+    }
+  })()
 
   changeApp({ shouldMatchRouteToRenderAndLanguage: false })
   window.history.pushState(
-    { path: newPath },
+    { path: url },
     '',
-    newPath
+    url
   )
 }

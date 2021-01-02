@@ -13,14 +13,14 @@ export const mapStateToProps = (store) => {
   } = store.user.authorize.data
 
   const {
-    data: announcementData
-  } = store.announcement
+    data: announcementShowData
+  } = store.announcement.show
 
   return {
     language,
     authorized,
     device,
-    announcementData,
+    announcementShowData,
     render
   }
 }

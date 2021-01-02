@@ -2,12 +2,18 @@ import { fetchAnnouncement } from './fetch-announcement'
 import { viewAnnouncement } from '../../../functions/view-announcement'
 
 export function componentDidMount() {
-  const { announcementId, phone } = this.props
+  const {
+    id,
+    phone
+  } = this.props
 
-  if (announcementId) {
-    fetchAnnouncement.call(this)
-    viewAnnouncement(announcementId)
+  if (!id) {
+    const id = +window.location.pathname.match(/\d+/)[0]
+
+    fetchAnnouncement.call(this, id)
+    viewAnnouncement(id)
   }
+
   addEventListener('scroll', this.fixedPhoneHandler)
 
   if (phone) this.setState({ phone })

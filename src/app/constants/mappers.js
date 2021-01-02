@@ -21,10 +21,8 @@ export const mapStateToProps = (store) => {
   } = store.visitor.legal.privacy.settings
 
   const {
-    category,
-    district,
-    area
-  } = store.announcement.show.data
+    data: announcementShowData
+  } = store.announcement.show
 
   const render = store.render
 
@@ -36,9 +34,7 @@ export const mapStateToProps = (store) => {
   } = render
 
   return {
-    category,
-    district,
-    area,
+    
     language,
     device,
     path,
@@ -54,6 +50,7 @@ export const mapStateToProps = (store) => {
     renderVisitor,
     renderAnnouncement,
     renderUser,
+    announcementShowData,
     shouldMatchRouteToRenderAndLanguage
   }
 }

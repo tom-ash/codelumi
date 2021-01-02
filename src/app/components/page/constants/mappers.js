@@ -2,7 +2,7 @@ import {
   PAGE_CREATE_TRACK,
   PAGE_INDEX_MAP_TRACK,
   PAGE_SHOW_TRACK,
-  PAGE_NOT_FOUND_TRACK
+  PAGE_SHOW_NOT_FOUND_TRACK
 } from '../../../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = (store) => {
@@ -14,7 +14,7 @@ export const mapStateToProps = (store) => {
     [PAGE_CREATE_TRACK]: renderCreate,
     [PAGE_INDEX_MAP_TRACK]: renderIndexMap,
     [PAGE_SHOW_TRACK]: renderShow,
-    [PAGE_NOT_FOUND_TRACK]: renderNotFound
+    [PAGE_SHOW_NOT_FOUND_TRACK]: renderNotFound
   } = store.render
 
   return {

@@ -22,8 +22,6 @@ class User extends React.Component {
       renderEdit
     } = this.props
 
-    console.log(renderEdit)
-
     return (
       <React.Fragment>
         {renderCreate && <UserCreate />}

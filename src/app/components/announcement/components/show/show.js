@@ -6,7 +6,7 @@ import { languageObjectHandler } from '../../../../functions/language-handler'
 import { phoneSwitchProvider } from '../../functions/phone-switch-provider'
 import { togglePhone } from '../../functions/toggle-phone'
 import { fixedPhoneHandler } from './functions/fixed-phone-handler'
-import { changePath } from '../../../../functions/routers/change-path'
+import { changeRoute } from '../../../../functions/routers/change-route'
 import AnnouncementTile from './components/tile/tile'
 import { sendAnalyticsEvent } from '../../../../functions/google-analytics/send-analytics-event'
 import ScalableVectorGraphic from '../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
@@ -23,7 +23,7 @@ class AnnouncementShow extends React.Component {
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
     this.togglePhone = togglePhone.bind(this)
     this.fixedPhoneHandler = fixedPhoneHandler.bind(this)
-    this.changePath = changePath.bind(this)
+    this.changeRoute = changeRoute.bind(this)
     this.state = {
       phone: null
     }

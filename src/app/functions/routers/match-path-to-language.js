@@ -1,5 +1,4 @@
 import routes from '../../../shared/constants/routes/routes'
-// import { buildLink } from '../../components/announcement/functions/build-link'
 
 export function matchPathToLanguage() {
   const {
@@ -9,7 +8,16 @@ export function matchPathToLanguage() {
 
   const lang = language === 'pl' ? 'en' : 'pl'
   const route = routes.find(route => render[route.track] && route.lang === lang)
-  if (!route) return
 
-  return route.url
+  if (route) {
+    return (() => {
+      if (route.buildUrl) {
+        return route.buildUrl.apply(this, [lang])
+      } else {
+        return route.url
+      }
+    })()
+  }
+
+  // HANDLE PAGE SHOW FOUND & NOT FOUND
 }

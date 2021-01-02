@@ -2,7 +2,6 @@ import {
   PL,
   EN
 } from '../langs/langs'
-
 import {
   ROOT_URLS,
   VISITOR_PRIVACY_SETTINGS_URLS,
@@ -22,7 +21,6 @@ import {
   USER_RESET_PASSWORD_URLS,
   USER_EDIT_URLS
 } from './urls'
-
 import {
   ROOT_TRACK,
   VISITOR_PRIVACY_SETTINGS_TRACK,
@@ -42,7 +40,6 @@ import {
   USER_EDIT_PASSWORD_TRACK,
   USER_AUTHORIZE_TRACK
 } from '../tracks/tracks'
-
 import {
   ROOT_TITLES,  
   VISITOR_CONTACT_TITLES,
@@ -62,18 +59,17 @@ import {
   USER_RESET_PASSWORD_TITLES,
   USER_EDIT_TITLES
 } from './titles'
-
 import {
   ROOT_KEYWORDS,
   ANNOUNCEMENT_CREATE_KEYWORDS,
   ANNOUNCEMENT_INDEX_CATALOGUE_KEYWORDS
 } from './keywords'
-
 import {
   ROOT_DESCRIPTIONS,
   ANNOUNCEMENT_CREATE_DESCRIPTIONS,
   ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS
 } from './descriptions'
+import { buildAnnouncementUrl } from '../../functions/builders/announcement/url'
 
 export default [
   {
@@ -235,6 +231,7 @@ export default [
   },
   {
     url: ANNOUNCEMENT_SHOW_URLS[PL],
+    buildUrl: buildAnnouncementUrl,
     title: ANNOUNCEMENT_SHOW_TITLES[PL],
     track: ANNOUNCEMENT_SHOW_TRACK,
     lang: PL,
@@ -242,6 +239,7 @@ export default [
   },
   {
     url: ANNOUNCEMENT_SHOW_URLS[EN],
+    buildUrl: buildAnnouncementUrl,
     title: ANNOUNCEMENT_SHOW_TITLES[EN],
     track: ANNOUNCEMENT_SHOW_TRACK,
     lang: EN,

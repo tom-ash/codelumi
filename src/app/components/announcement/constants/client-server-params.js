@@ -1,5 +1,9 @@
 export const clientServerParams = [
   {
+    client: 'id',
+    server: 'id'
+  },
+  {
     client: 'category',
     server: 'category'
   },
@@ -60,8 +64,20 @@ export const showClientServerParams = [
     server: 'id'
   },
   {
+    client: 'name',
+    server: 'name'
+  },
+  {
     client: 'phone',
     server: 'phone'
+  },
+  {
+    client: 'latitude',
+    server: 'latitude'
+  },
+  {
+    client: 'longitude',
+    server: 'longitude'
   },
   {
     client: 'availabilityDate',

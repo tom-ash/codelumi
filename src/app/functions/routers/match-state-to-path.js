@@ -4,7 +4,7 @@ import { getRoute } from '../../../shared/functions/getters/get-route'
 import {
   PAGE_TRACK,
   PAGE_SHOW_TRACK,
-  PAGE_NOT_FOUND_TRACK
+  PAGE_SHOW_NOT_FOUND_TRACK
 } from '../../../shared/constants/tracks/tracks'
 
 export function matchRenderToRoute({ popState }) {
@@ -48,7 +48,7 @@ export function matchRenderToRoute({ popState }) {
     })
     .catch(error => {
       changeApp({ language: 'pl' })
-      changeRender({ [PAGE_TRACK]: true, [PAGE_NOT_FOUND_TRACK]: true })
+      changeRender({ [PAGE_TRACK]: true, [PAGE_SHOW_NOT_FOUND_TRACK]: true })
     })
   }
 }

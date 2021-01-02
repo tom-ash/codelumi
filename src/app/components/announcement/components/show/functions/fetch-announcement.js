@@ -1,36 +1,23 @@
 import { apiUrl } from '../../../../../constants/urls'
 import { showClientServerParams } from '../../../constants/client-server-params'
-import { provideTitle } from '../../../../../../shared/functions/providers/provide-title'
+import { PAGE_SHOW_NOT_FOUND_TRACK } from '../../../../../../shared/constants/tracks/tracks'
 
-export function fetchAnnouncement() {
-  const {
-    announcementId,
-    language,
-    changeData
-  } = this.props
+export function fetchAnnouncement(id) {
+  const { changeData } = this.props
 
-  fetch(`${apiUrl}/announcements/${announcementId}`, {
+  fetch(`${apiUrl}/announcements/${id}`, {
     headers: { 'Content-Type': 'application/json' }
   })
   .then(response => {
     if (response.ok) return response.json()
   })
   .then(json => {
-    let clientParams = {}
-    showClientServerParams.map(param => ( clientParams[param.client] = json[param.server] ))
-    clientParams.latitude = json.latitude
-    clientParams.longitude = json.longitude
-    clientParams.name = json.name
-    clientParams.features = json.features
-    clientParams.furnishings = json.furnishings
-    clientParams.polishDescription = json.polishDescription
-    clientParams.englishDescription = json.englishDescription
+    const clientParams = {}
 
-    document.title = provideTitle({ ...clientParams, language })
+    showClientServerParams.map(param => ( clientParams[param.client] = json[param.server] ))
     changeData(clientParams)    
   })
   .catch(e => {
-    console.error(e)
-    this.changePath(null, '/')
+    this.changeRoute(PAGE_SHOW_NOT_FOUND_TRACK)
   })
 }

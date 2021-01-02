@@ -123,15 +123,15 @@ export function languageManager() {
     language
   } = this.props
 
+  const invertedLanguage = language === 'pl' ? 'en' : 'pl'
+
   return {
     classNames: { container: 'button language' },
     href: this.matchPathToLanguage(),
-    label: LANG_LABELS[language === 'pl' ? 'en' : 'pl'],
+    label: LANG_LABELS[invertedLanguage],
     onClick: () => {
-      const newLanguage = language === 'pl' ? 'en' : 'pl'
-
-      saveCookie('lang', newLanguage, 'oneYear')
-      changeApp({ language: newLanguage, shouldMatchRouteToRenderAndLanguage: true })
+      saveCookie('lang', invertedLanguage, 'oneYear')
+      changeApp({ language: invertedLanguage, shouldMatchRouteToRenderAndLanguage: true })
     }
   }
 }
