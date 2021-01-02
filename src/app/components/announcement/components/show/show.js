@@ -50,10 +50,10 @@ class AnnouncementShow extends React.Component {
       availabilityDate,
       features,
       furnishings,
-      mapLatitude,
-      mapLongitude,
-      descriptionPolish,
-      descriptionEnglish,
+      latitude,
+      longitude,
+      polishDescription,
+      englishDescription,
       isMobile,
       scalableVectorGraphics,
       device,
@@ -61,8 +61,6 @@ class AnnouncementShow extends React.Component {
       loadMap,
       mapLoaded,
       loadMarker,
-      latitude,
-      longitude,
       markerLoaded,
       mapLoading,
       changeControl,
@@ -127,10 +125,10 @@ class AnnouncementShow extends React.Component {
           availabilityDate={availabilityDate}
           features={features}
           furnishings={furnishings}
-          mapLatitude={mapLatitude}
-          mapLongitude={mapLongitude}
-          descriptionPolish={descriptionPolish}
-          descriptionEnglish={descriptionEnglish}
+          latitude={latitude}
+          longitude={longitude}
+          polishDescription={polishDescription}
+          englishDescription={englishDescription}
           isMobile={isMobile}
           scalableVectorGraphics={scalableVectorGraphics}
           device={device}

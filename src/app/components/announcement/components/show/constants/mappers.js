@@ -18,8 +18,8 @@ export const mapStateToProps = (store) => {
   } = store.announcement.show.control
 
   const { 
-    mapLatitude: latitude,
-    mapLongitude: longitude,
+    latitude: latitude,
+    longitude: longitude,
     phone,
     id,
     category,
@@ -38,8 +38,8 @@ export const mapStateToProps = (store) => {
     pictureIndex,
     features,
     furnishings,
-    descriptionPolish,
-    descriptionEnglish,
+    polishDescription,
+    englishDescription,
     name
   } = store.announcement.show.data
 
@@ -64,8 +64,8 @@ export const mapStateToProps = (store) => {
     pictureIndex,
     features,
     furnishings,
-    descriptionPolish,
-    descriptionEnglish,
+    polishDescription,
+    englishDescription,
     venue: 'show',
     name,
     showFixedPhone,

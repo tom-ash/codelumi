@@ -11,20 +11,20 @@ export function savePicture() {
   changeControl({ connecting: true })
   const blobs = [ ...this.props.blobs ]
   const blob = blobs.shift()
-  const uploads = [ ...this.props.uploads ]
+  const picUploads = [ ...this.props.picUploads ]
   if (blob.database === '') {
     const destination = editing ? `/pictures/create/announcement/${id}` : '/pictures/create/temporary'
     compressAndSaveBlobPicture(destination, blob.blob, (key) => {
       delete blob.blob
       blob.database = key
-      uploads.push(blob)
+      picUploads.push(blob)
       changeControl({ connecting: false })
-      changeInputs({ pictureBlobs: blobs, pictureUploads: uploads })
+      changeInputs({ blobs: blobs, picUploads: picUploads })
     })
   } else {
     delete blob.blob
-    uploads.push(blob)
+    picUploads.push(blob)
     changeControl({ connecting: false })
-    changeInputs({ pictureBlobs: blobs, pictureUploads: uploads })
+    changeInputs({ blobs: blobs, picUploads: picUploads })
   }
 }

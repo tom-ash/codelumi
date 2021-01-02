@@ -64,7 +64,6 @@ class AnnouncementCreate extends React.Component {
       changeAnnouncementShowData,
       authorized,
       step,
-      savedId,
       id,
       category,
       district,
@@ -75,85 +74,87 @@ class AnnouncementCreate extends React.Component {
     } = this.props
 
     return (
-      <React.Fragment>
-        <div id='announcement-create'>
-          <div className='page-header'>
-            <h1>
-              {step === 'form' && this.languageHandler(<span>Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w&nbsp;Warszawie</span>, 'Add Free Announcement of Real Estate Lease in Warsaw')}
-              {step === 'account-data' && this.languageHandler('Dane konta', 'Account Data')}
-              {step === 'confirmation' && this.languageHandler('Potwierdzenie adresu email', 'Email Address Confirmation')}
-              {step === 'publishing' && this.languageHandler('Zapisywanie Ogłoszenia', 'Saving Announcement')}
-              {step === 'success' && this.languageHandler('Gratulacje!', 'Congratulations!')}
-            </h1>
-          </div>
-          <AnnouncementCreateSteps
-            authorized={authorized}
-            step={step}
-            scalableVectorGraphics={scalableVectorGraphics}
-          />
-          {step === 'form' &&
-          <form>
-            <div className='required-inputs'>
-              <AnnouncementCreatePrimary />
-              <AnnouncementCreatePictures />
-              <AnnouncementCreateMap />
-            </div>
-            <div className='optional-inputs'>
-              <div className='separation-line' />
-              <h2 className='optional'>
-                <div className='text'>{this.languageObjectHandler({ pl: 'Dane niewymagane', en: 'Optional data' })}</div>
-                <div className='float-clear' />
-              </h2>
-              <AnnouncementCreateAdditional />
-              <AnnouncementCreateFeatures />
-              <AnnouncementCreateFurnishings />
-              <AnnouncementCreateDescription />
-            </div>
-            <div className='add-announcement-button-container'>
-              <div className='separation-line' />
-              <div className='inner'>
-                <ManagedButton {...this.addAnnouncementManager()} />
-              </div>
-            </div>
-          </form>}
-          {step === 'account-data' &&
-          <div className='account-data'>
-            <UserCreate venue='announcementCreate'/>
-          </div>}
-          {step === 'confirmation' &&
-          <div className='success-container'>
-            <div className='inner'>
-              <div className='input-explanation'>
-                {this.languageObjectHandler({
-                  pl: 'W celu potwierdzenia adresu email prosimy o podanie kodu potwierdzającego, który został wysłany na podany adres email.',
-                  en: 'To confirm the email address we ask to provide the confirmation code that was sent to the provided email address.'
-                })}
-              </div>
-              <ManagedText {...this.emailVerificationCodeManager()} />
-              <ManagedButton {...this.confirmManager()} />
-            </div>
-          </div>}
-          {step === 'publishing' &&
-          <div className='requesting'>
-            <div className='inner'>
-              <WindmillSpinner spinnerClass='windmill-medium-spinner'/>
-            </div>
-          </div>}
-          {step === 'success' &&
-          <AnnouncementCreateSuccess
-            changeApp={changeApp}
-            id={id || savedId}
-            category={category}
-            district={district}
-            area={area}
-            changeAnnouncementShowData={changeAnnouncementShowData}
-            languageObjectHandler={this.languageObjectHandler}
-            isMobile={isMobile}
-            language={language}
-            scalableVectorGraphics={scalableVectorGraphics}
-          />}
+      <div id='announcement-create'>
+        <div className='page-header'>
+          <h1>
+            {step === 'form' && this.languageHandler(<span>Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w&nbsp;Warszawie</span>, 'Add Free Announcement of Real Estate Lease in Warsaw')}
+            {step === 'account-data' && this.languageHandler('Dane konta', 'Account Data')}
+            {step === 'confirmation' && this.languageHandler('Potwierdzenie adresu email', 'Email Address Confirmation')}
+            {step === 'publishing' && this.languageHandler('Zapisywanie Ogłoszenia', 'Saving Announcement')}
+            {step === 'success' && this.languageHandler('Gratulacje!', 'Congratulations!')}
+          </h1>
         </div>
-      </React.Fragment>
+        <AnnouncementCreateSteps
+          authorized={authorized}
+          step={step}
+          scalableVectorGraphics={scalableVectorGraphics}
+        />
+        {step === 'form' &&
+        <form>
+          <div className='required-inputs'>
+            <AnnouncementCreatePrimary />
+            <AnnouncementCreatePictures />
+            <AnnouncementCreateMap />
+          </div>
+          <div className='optional-inputs'>
+            <div className='separation-line' />
+            <h2 className='optional'>
+              <div className='text'>{this.languageObjectHandler({ pl: 'Dane niewymagane', en: 'Optional data' })}</div>
+              <div className='float-clear' />
+            </h2>
+            <AnnouncementCreateAdditional />
+            <AnnouncementCreateFeatures />
+            <AnnouncementCreateFurnishings />
+            <AnnouncementCreateDescription />
+          </div>
+          <div className='add-announcement-button-container'>
+            <div className='separation-line' />
+            <div className='inner'>
+              <ManagedButton {...this.addAnnouncementManager()} />
+            </div>
+          </div>
+        </form>}
+
+
+        {/* {step === 'account-data' &&
+        <div className='account-data'>
+          <UserCreate venue='announcementCreate'/>
+        </div>}
+        {step === 'confirmation' &&
+        <div className='success-container'>
+          <div className='inner'>
+            <div className='input-explanation'>
+              {this.languageObjectHandler({
+                pl: 'W celu potwierdzenia adresu email prosimy o podanie kodu potwierdzającego, który został wysłany na podany adres email.',
+                en: 'To confirm the email address we ask to provide the confirmation code that was sent to the provided email address.'
+              })}
+            </div>
+            <ManagedText {...this.emailVerificationCodeManager()} />
+            <ManagedButton {...this.confirmManager()} />
+          </div>
+        </div>} */}
+
+
+        {step === 'publishing' &&
+        <div className='requesting'>
+          <div className='inner'>
+            <WindmillSpinner spinnerClass='windmill-medium-spinner'/>
+          </div>
+        </div>}
+        {step === 'success' &&
+        <AnnouncementCreateSuccess
+          changeApp={changeApp}
+          id={id}
+          category={category}
+          district={district}
+          area={area}
+          changeAnnouncementShowData={changeAnnouncementShowData}
+          languageObjectHandler={this.languageObjectHandler}
+          isMobile={isMobile}
+          language={language}
+          scalableVectorGraphics={scalableVectorGraphics}
+        />}
+      </div>
     )
   }
 }

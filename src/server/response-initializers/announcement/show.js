@@ -27,22 +27,22 @@ export function announcementShowResponseInitializer({
   })
   .then(json => {
     const {
-      latitude: mapLatitude,
-      longitude: mapLongitude,
+      latitude: latitude,
+      longitude: longitude,
       name,
       features,
       furnishings,
-      polishDescription: descriptionPolish,
-      englishDescription: descriptionEnglish
+      polishDescription: polishDescription,
+      englishDescription: englishDescription
     } = json
     let showData = {
-      mapLatitude,
-      mapLongitude,
+      latitude,
+      longitude,
       name,
       features,
       furnishings,
-      descriptionPolish,
-      descriptionEnglish
+      polishDescription,
+      englishDescription
     }
 
     showClientServerParams.map(param => {
@@ -51,7 +51,7 @@ export function announcementShowResponseInitializer({
 
     // const title = provideTitle({ ...clientParams, language })
     // const image = `${AWS_S3_URL}/announcements/${clientParams.id}/${clientParams.pictures[0].database}`
-    // const description = { pl: clientParams.descriptionPolish, en: clientParams.descriptionEnglish }[language]
+    // const description = { pl: clientParams.polishDescription, en: clientParams.englishDescription }[language]
 
     return {
       app: {

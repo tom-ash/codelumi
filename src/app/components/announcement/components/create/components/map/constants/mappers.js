@@ -8,8 +8,8 @@ export const mapStateToProps = (store) => {
     isMobile,
     language,
     scripts: store.app.scripts,
-    latitude: store.announcement.create.inputs.mapLatitude,
-    longitude: store.announcement.create.inputs.mapLongitude,
+    latitude: store.announcement.create.inputs.latitude,
+    longitude: store.announcement.create.inputs.longitude,
     mapLoaded: store.announcement.create.control.mapLoaded,
     error: store.announcement.create.errors.map
   }

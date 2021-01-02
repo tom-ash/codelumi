@@ -36,11 +36,11 @@ export const clientServerParams = [
     server: 'totalFloors'
   },
   {
-    client: 'descriptionPolish',
+    client: 'polishDescription',
     server: 'polishDescription'
   },
   {
-    client: 'descriptionEnglish',
+    client: 'englishDescription',
     server: 'englishDescription'
   }
 ]
@@ -48,7 +48,7 @@ export const clientServerParams = [
 export const createClientServerParams = [
   ...clientServerParams,
   {
-    client: 'uploads',
+    client: 'picUploads',
     server: 'pictures'
   }
 ]

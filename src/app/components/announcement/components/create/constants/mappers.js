@@ -1,10 +1,14 @@
 export const mapStateToProps = (store) => {
   const {
     language,
-    path,
     isMobile,
     scalableVectorGraphics
   } = store.app
+
+  const {
+    authorized,
+    admin
+  } = store.user.authorize.data
 
   const {
     control,
@@ -21,86 +25,63 @@ export const mapStateToProps = (store) => {
   } = control
 
   const {
-    savedId
+    id
   } = data
 
   const {
-    id,
     category,
     district,
+    area,
+    blobs,
+    picUploads,
+    latitude,
+    longitude,
     rentCurrency,
     netRentAmount,
     grossRentAmount,
-    area,
     rooms,
     floor,
     totalFloors,
     availabilityDate,
-    pictureBlobs: blobs,
-    pictureUploads: uploads,
     features,
     furnishings,
-    descriptionPolish,
-    descriptionEnglish,
-    mapLatitude,
-    mapLongitude,
-    verificationCode
+    polishDescription,
+    englishDescription
   } = inputs
 
   const {
     token
   } = store.user.create.data
 
-  const {
-    create_announcement: postData
-  } = store.page.index.data
-
-  const {
-    name: postCreateName,
-    body: postCreateBody
-  } = store.page.create.inputs
-
-  const {
-    admin
-  } = store.user.authorize.data
-
   return {
-    showDescription,
     language,
-    path,
-    authorized: store.user.authorize.data.authorized,
+    scalableVectorGraphics,
     step,
     editing,
     connecting,
-    announcementId,
-    savedId,
     id,
     category,
     district,
     area,
     rooms,
     blobs,
-    uploads,
-    mapLatitude,
-    mapLongitude,
+    picUploads,
+    latitude,
+    longitude,
     rentCurrency,
     netRentAmount,
     grossRentAmount,
     features,
     furnishings,
-    descriptionPolish,
-    descriptionEnglish,
+    showDescription,
+    polishDescription,
+    englishDescription,
     availabilityDate,
     floor,
     totalFloors,
     errors,
-    verificationCode,
-    token,
     isMobile,
-    scalableVectorGraphics,
-    postData,
-    postCreateName,
-    postCreateBody,
+    authorized,
     admin
   }
 }
@@ -121,8 +102,7 @@ export const mapDispatchToProps = (dispatch) => {
     resetUserCreateInputs: value => dispatch({ type: 'user/create/inputs/reset', value }),
     resetUserCreateData: value => dispatch({ type: 'user/create/data/reset', value }),
     resetUserCreateErrors: value => dispatch({ type: 'user/create/errors/reset', value }),
-    changePageShowData: value => dispatch({ type: 'page/show/data', value }),
-    changePostRender: value => dispatch({ type: 'page/render', value })
+    // changePageShowData: value => dispatch({ type: 'page/show/data', value })
   }
 }
     

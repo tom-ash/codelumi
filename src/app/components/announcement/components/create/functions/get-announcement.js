@@ -57,10 +57,10 @@ export function getAnnouncement() {
       totalFloors,
       features: parseFeatures(features),
       furnishings: parseFurnishings(furnishings),
-      descriptionPolish: polishDescription || '',
-      descriptionEnglish: englishDescription || '',
-      mapLatitude: latitude,
-      mapLongitude: longitude,
+      polishDescription: polishDescription || '',
+      englishDescription: englishDescription || '',
+      latitude: latitude,
+      longitude: longitude,
       ...features && features.length && { addFeatures: true },
       ...furnishings && furnishings.length && { addFurnishings: true },
       ...polishDescription && { addPolishDescription: true },
@@ -103,15 +103,15 @@ function setBlobs(id, pictures) {
         if (response.ok) return response.blob()
       })
       .then(blobResponse => {
-        let pictureBlobs = [ ...this.props.blobs ]
-        pictureBlobs[index] = {
+        let blobs = [ ...this.props.blobs ]
+        blobs[index] = {
           blob: window.URL.createObjectURL(blobResponse),
           database: picture.database,
           description: ''
         }
 
         this.props.changeInputs({
-          pictureBlobs
+          blobs
         })
       })
     })

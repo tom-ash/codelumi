@@ -28,14 +28,14 @@ export const mapStateToProps = (store) => {
     totalFloors,
     availabilityDateSelect,
     availabilityDate,
-    pictureBlobs: blobs,
-    pictureUploads: uploads,
+    blobs: blobs,
+    picUploads: picUploads,
     features,
     furnishings,
-    descriptionPolish,
-    descriptionEnglish,
-    mapLatitude,
-    mapLongitude
+    polishDescription,
+    englishDescription,
+    latitude,
+    longitude
   } = inputs
 
   const {
@@ -68,13 +68,13 @@ export const mapStateToProps = (store) => {
     availabilityDateSelect,
     availabilityDate,
     blobs,
-    uploads,
+    picUploads,
     features,
     furnishings,
-    descriptionPolish,
-    descriptionEnglish,
-    mapLatitude,
-    mapLongitude,
+    polishDescription,
+    englishDescription,
+    latitude,
+    longitude,
     errors
   }
 }

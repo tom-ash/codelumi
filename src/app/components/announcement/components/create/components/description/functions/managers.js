@@ -22,7 +22,7 @@ export function polishManager() {
     classNames: { container: 'form-input textarea pl'},
     value: this.props.pl,
     counterLimit: 3000,
-    onChange: value => this.props.changeInputs({ descriptionPolish: value })
+    onChange: value => this.props.changeInputs({ polishDescription: value })
   }
 }
 
@@ -50,6 +50,6 @@ export function englishManager() {
     classNames: { container: 'form-input textarea'},
     value: this.props.en,
     counterLimit: 3000,
-    onChange: value => this.props.changeInputs({ descriptionEnglish: value })
+    onChange: value => this.props.changeInputs({ englishDescription: value })
   }
 }

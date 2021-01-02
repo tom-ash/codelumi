@@ -53,8 +53,8 @@ class AnnouncementTile extends React.Component {
       availabilityDate,
       features,
       furnishings,
-      descriptionPolish,
-      descriptionEnglish,
+      polishDescription,
+      englishDescription,
       control,
       closeButtonOnClick,
       isMobile,
@@ -195,11 +195,11 @@ class AnnouncementTile extends React.Component {
               scalableVectorGraphics={scalableVectorGraphics}
             />
           </div>}
-          {(descriptionPolish || descriptionEnglish) &&
+          {(polishDescription || englishDescription) &&
           <AnnouncementShowDescription
             language={language}
-            descriptionPolish={descriptionPolish}
-            descriptionEnglish={descriptionEnglish}
+            polishDescription={polishDescription}
+            englishDescription={englishDescription}
           />}
           <div className='float-clear' />
           <AnnouncementShowMap

@@ -9,14 +9,14 @@ class AnnouncementShowDescription extends React.Component {
   
   render() {
     const {
-      descriptionPolish,
-      descriptionEnglish
+      polishDescription,
+      englishDescription
     } = this.props
 
     return (
       <div className='announcement-show-tile-description'>
         <div className='description'>
-          {this.languageObjectHandler({ pl: descriptionPolish, en: descriptionEnglish })}
+          {this.languageObjectHandler({ pl: polishDescription, en: englishDescription })}
         </div>
       </div>
     )

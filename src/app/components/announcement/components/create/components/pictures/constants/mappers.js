@@ -3,8 +3,8 @@ export const mapStateToProps = (store) => {
     showAnnouncementEdit: store.app.showAnnouncementEdit,
     language: store.app.language,
     scalableVectorGraphics: store.app.scalableVectorGraphics,
-    files: store.announcement.create.inputs.pictureFiles,
-    blobs: store.announcement.create.inputs.pictureBlobs,
+    files: store.announcement.create.inputs.picFiles,
+    blobs: store.announcement.create.inputs.blobs,
     error: store.announcement.create.errors.pictures,
     addingPicture: store.announcement.create.control.addingPicture
   }

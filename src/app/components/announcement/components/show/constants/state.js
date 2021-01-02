@@ -24,8 +24,8 @@ export const data = {
   pictureIndex: 0,
   features: null,
   furnishings: null,
-  mapLatitude: null,
-  mapLongitude: null,
-  descriptionPolish: null,
-  descriptionEnglish: null
+  latitude: null,
+  longitude: null,
+  polishDescription: null,
+  englishDescription: null
 }

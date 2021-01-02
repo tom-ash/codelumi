@@ -18,13 +18,13 @@ export function fetchAnnouncement() {
   .then(json => {
     let clientParams = {}
     showClientServerParams.map(param => ( clientParams[param.client] = json[param.server] ))
-    clientParams.mapLatitude = json.latitude
-    clientParams.mapLongitude = json.longitude
+    clientParams.latitude = json.latitude
+    clientParams.longitude = json.longitude
     clientParams.name = json.name
     clientParams.features = json.features
     clientParams.furnishings = json.furnishings
-    clientParams.descriptionPolish = json.polishDescription
-    clientParams.descriptionEnglish = json.englishDescription
+    clientParams.polishDescription = json.polishDescription
+    clientParams.englishDescription = json.englishDescription
 
     document.title = provideTitle({ ...clientParams, language })
     changeData(clientParams)    

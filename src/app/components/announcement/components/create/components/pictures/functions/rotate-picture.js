@@ -25,7 +25,7 @@ export function rotatePicture(index) {
     }
     
     this.props.changeInputs({
-      pictureBlobs: newBlobs
+      blobs: newBlobs
     })
   })
 }

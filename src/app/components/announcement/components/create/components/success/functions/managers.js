@@ -1,6 +1,5 @@
 export function goToAnnouncementManager() {
   const {
-    savedId,
     id,
     category,
     district,

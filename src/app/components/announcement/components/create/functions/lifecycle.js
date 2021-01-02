@@ -5,12 +5,12 @@ export function componentDidMount() {
     changePostRender
   } = this.props
 
-  if (RENDER_EDIT) {
-    this.getAnnouncement()
-    changeControl({ editing: true })
-  }
+  // if (RENDER_EDIT) {
+  //   this.getAnnouncement()
+  //   changeControl({ editing: true })
+  // }
 
-  CHANGE_RENDERS
+  // CHANGE_RENDERS
 }
 
 export function componentDidUpdate() {
@@ -31,22 +31,13 @@ export function componentWillUnmount() {
   const {
     resetControl,
     resetInputs,
-    resetErrors,
-    resetUserCreateControl,
-    resetUserCreateInputs,
-    resetUserCreateData,
-    resetUserCreateErrors,
-    changePageShowData,
-    changePostRender
+    resetErrors
   } = this.props
 
-  CHANGE_RENDER
-  changePageShowData({ name: null, body: null })
+  // TODO
+
   resetControl()
   resetInputs()
   resetErrors()
-  resetUserCreateControl()
-  resetUserCreateInputs()
-  resetUserCreateData()
-  resetUserCreateErrors()
+
 }

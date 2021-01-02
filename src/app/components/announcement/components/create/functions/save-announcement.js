@@ -3,7 +3,11 @@ import { createClientServerParams } from '../../../constants/client-server-param
 import { getAccessToken } from '../../../../user/components/authorize/components/tokens/functions/get-tokens'
 
 export function saveAnnouncement() {
-  const { changeControl, changeData, connecting } = this.props
+  const {
+    changeControl,
+    changeData,
+    connecting
+  } = this.props
 
   let destination = '/announcements'
   let method = 'POST'
@@ -25,8 +29,8 @@ export function saveAnnouncement() {
   .then(response => {
     if (response.ok) return response.json()
   })
-  .then(({ id: savedId }) => {
-    changeData({ savedId })
+  .then(({ id }) => {
+    changeData({ id })
     changeControl({
       connecting: false,
       step: 'success'
@@ -41,8 +45,8 @@ function buildAnouncementParams() {
   serverParams.availabilityDate = this.props.availabilityDate
   serverParams.features = buildElements.call(this, 'features')
   serverParams.furnishings = buildElements.call(this, 'furnishings')
-  serverParams.latitude = this.props.mapLatitude
-  serverParams.longitude = this.props.mapLongitude
+  serverParams.latitude = this.props.latitude
+  serverParams.longitude = this.props.longitude
   return serverParams
 }
 

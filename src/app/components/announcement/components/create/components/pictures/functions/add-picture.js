@@ -13,8 +13,8 @@ export function addPicture(files) {
     if (typeof window === 'undefined') return
     
     this.props.changeInputs({
-      pictureFiles: files,  
-      pictureBlobs: [...this.props.blobs].concat([{
+      picFiles: files,  
+      blobs: [...this.props.blobs].concat([{
         blob: window.URL.createObjectURL(blob),
         database: '',
         description: '',

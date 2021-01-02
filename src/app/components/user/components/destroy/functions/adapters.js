@@ -33,20 +33,29 @@ export function sendEmail() {
 }
 
 export function destroy() {
-  const { changeControl, connecting } = this.props
+  const {
+    changeControl,
+    connecting
+  } = this.props
   const verificationCode = document.getElementById('user-destroy-verification').value
 
   if (connecting || !this.verificationManager('validate', verificationCode)) return
 
   changeControl({ connecting: true })
+
   fetch(apiUrl + '/user/destroy', {
-    method: 'DELETE', headers: { 'Content-Type': 'application/json', access_token: getAccessToken() },
+    headers: {
+      'Content-Type': 'application/json',
+      access_token: getAccessToken()
+    },
+    method: 'DELETE', 
     body: JSON.stringify({ verificationCode })
   })
   .then(response => {
     if (response.ok) {
       this.changeRoute(ROOT_TRACK)
-      return this.deauthorizeUser()
+      this.deauthorizeUser()
+      return
     }
 
     this.props.changeErrors({
