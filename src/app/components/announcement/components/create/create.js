@@ -16,7 +16,7 @@ import * as managers from './functions/managers'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import { getAnnouncement } from './functions/get-announcement'
 import { AnnouncementCreateSteps } from './components/steps/steps'
-import { ManagedText, ManagedButton } from 'managed-inputs'
+import { ManagedButton } from 'managed-inputs'
 import { publish } from './components/publishing/functions/publish'
 import { validatePictures } from './components/pictures/functions/validate-pictures'
 import { validateMap } from './components/map/functions/validate-map'
@@ -78,8 +78,6 @@ class AnnouncementCreate extends React.Component {
         <div className='page-header'>
           <h1>
             {step === 'form' && this.languageHandler(<span>Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w&nbsp;Warszawie</span>, 'Add Free Announcement of Real Estate Lease in Warsaw')}
-            {step === 'account-data' && this.languageHandler('Dane konta', 'Account Data')}
-            {step === 'confirmation' && this.languageHandler('Potwierdzenie adresu email', 'Email Address Confirmation')}
             {step === 'publishing' && this.languageHandler('Zapisywanie Ogłoszenia', 'Saving Announcement')}
             {step === 'success' && this.languageHandler('Gratulacje!', 'Congratulations!')}
           </h1>
@@ -114,27 +112,6 @@ class AnnouncementCreate extends React.Component {
             </div>
           </div>
         </form>}
-
-
-        {/* {step === 'account-data' &&
-        <div className='account-data'>
-          <UserCreate venue='announcementCreate'/>
-        </div>}
-        {step === 'confirmation' &&
-        <div className='success-container'>
-          <div className='inner'>
-            <div className='input-explanation'>
-              {this.languageObjectHandler({
-                pl: 'W celu potwierdzenia adresu email prosimy o podanie kodu potwierdzającego, który został wysłany na podany adres email.',
-                en: 'To confirm the email address we ask to provide the confirmation code that was sent to the provided email address.'
-              })}
-            </div>
-            <ManagedText {...this.emailVerificationCodeManager()} />
-            <ManagedButton {...this.confirmManager()} />
-          </div>
-        </div>} */}
-
-
         {step === 'publishing' &&
         <div className='requesting'>
           <div className='inner'>

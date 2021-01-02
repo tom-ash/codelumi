@@ -5,7 +5,7 @@ import {
   VISITOR_TRACK,
   PAGE_TRACK,
   PAGE_SHOW_TRACK,
-  PAGE_SHOW_NOT_FOUND_TRACK
+  PAGE_NOT_FOUND_TRACK
 } from '../../shared/constants/tracks/tracks'
 import { appState } from '../../app/constants/app-state'
 
@@ -81,7 +81,7 @@ export function sendPageResponse({
       render: {
         [VISITOR_TRACK]: true,
         [PAGE_TRACK]: true,
-        [PAGE_SHOW_NOT_FOUND_TRACK]: true
+        [PAGE_NOT_FOUND_TRACK]: true
       },
       ...visitorState
     }

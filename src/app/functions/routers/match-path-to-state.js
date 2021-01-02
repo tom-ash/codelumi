@@ -1,5 +1,6 @@
 import { allowedOrigins } from '../../constants/allowed-origins'
 import routes from '../../../shared/constants/routes/routes'
+import { getPath } from './get-path'
 
 export function matchRouteToRenderAndLanguage() {
   if (
@@ -15,18 +16,9 @@ export function matchRouteToRenderAndLanguage() {
 
   const route = routes.find(route => render[route.track] && route.lang === language)
 
-  const url = (() => {
-    if (route.buildUrl) {
-      return route.buildUrl.apply(this)
-    } else {
-      return route.url
-    }
-  })()
+  let path = getPath.apply(this, [route])
+  if (path === null) return
 
   changeApp({ shouldMatchRouteToRenderAndLanguage: false })
-  window.history.pushState(
-    { path: url },
-    '',
-    url
-  )
+  window.history.pushState({ path }, '', path)
 }

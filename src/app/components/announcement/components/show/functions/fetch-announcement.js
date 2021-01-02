@@ -1,6 +1,6 @@
 import { apiUrl } from '../../../../../constants/urls'
 import { showClientServerParams } from '../../../constants/client-server-params'
-import { PAGE_SHOW_NOT_FOUND_TRACK } from '../../../../../../shared/constants/tracks/tracks'
+import { PAGE_NOT_FOUND_TRACK } from '../../../../../../shared/constants/tracks/tracks'
 
 export function fetchAnnouncement(id) {
   const { changeData } = this.props
@@ -18,6 +18,6 @@ export function fetchAnnouncement(id) {
     changeData(clientParams)    
   })
   .catch(e => {
-    this.changeRoute(PAGE_SHOW_NOT_FOUND_TRACK)
+    this.changeRoute(PAGE_NOT_FOUND_TRACK)
   })
 }

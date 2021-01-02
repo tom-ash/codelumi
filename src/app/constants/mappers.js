@@ -2,7 +2,8 @@ import {
   PAGE_TRACK,
   VISITOR_TRACK,
   ANNOUNCEMENT_TRACK,
-  USER_TRACK
+  USER_TRACK,
+  PAGE_NOT_FOUND_TRACK
 } from '../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = (store) => {
@@ -15,29 +16,30 @@ export const mapStateToProps = (store) => {
     scalableVectorGraphics,
     shouldMatchRouteToRenderAndLanguage
   } = store.app
-
   const {
-    statisticsConsent, marketingConsent
+    statisticsConsent,
+    marketingConsent
   } = store.visitor.legal.privacy.settings
-
   const {
     data: announcementShowData
   } = store.announcement.show
-
-  const render = store.render
-
   const {
-    [PAGE_TRACK]: renderPage,
+    data: pageShowData
+  } = store.page.show
+  const render = store.render
+  const {
     [VISITOR_TRACK]: renderVisitor,
     [ANNOUNCEMENT_TRACK]: renderAnnouncement,
-    [USER_TRACK]: renderUser
+    [USER_TRACK]: renderUser,
+    [PAGE_TRACK]: renderPage,
+    [PAGE_NOT_FOUND_TRACK]: renderPageNotFound
   } = render
 
   return {
-    
     language,
     device,
     path,
+    shouldMatchRouteToRenderAndLanguage,
     scrollY,
     statisticsConsent,
     marketingConsent,
@@ -50,16 +52,17 @@ export const mapStateToProps = (store) => {
     renderVisitor,
     renderAnnouncement,
     renderUser,
+    renderPageNotFound,
     announcementShowData,
-    shouldMatchRouteToRenderAndLanguage
+    pageShowData
   }
 }
   
 export const mapDispatchToProps = (dispatch) => {
   return {
-    changeUserAuthorizeData: value => dispatch({ type: 'user/authorize/data', value }),
     changeApp: value => dispatch({ type: 'app', value }),
     changeRender: value => dispatch({ type: 'render', value }),
+    changeUserAuthorizeData: value => dispatch({ type: 'user/authorize/data', value }),
     changePageShowData: value => dispatch({ type: 'page/show/data', value })
   }
 }
