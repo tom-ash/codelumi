@@ -51,7 +51,6 @@ function validateUserObject(userObject) {
 
 function createProspectiveUser(userObject) {
   const {
-    TODO,
     changeControl,
     changeData
   } = this.props
@@ -71,7 +70,6 @@ function createProspectiveUser(userObject) {
   networkError => console.dir(networkError.message))
   .then((json) => {
     changeData({ token: json.token })
-    if (TODO) changeAnnouncementCreateControl({ step: 'confirmation' })
     changeControl({ connecting: false, step: 'confirmation' })
   })
   .catch(e => console.dir(e))

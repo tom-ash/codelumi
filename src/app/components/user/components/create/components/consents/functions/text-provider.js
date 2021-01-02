@@ -1,35 +1,35 @@
 import React from 'react'
+import {
+  VISITOR_TERMS_OF_SERVICE_TRACK,
+  VISITOR_PRIVACY_POLICY_TRACK
+} from '../../../../../../../../shared/constants/tracks/tracks'
 
 export function textProvider({ pureText }) {
-  const { changeApp } = this.props
+  if (pureText) {
+    return {
+      termsAndPrivacyConsent: this.languageObjectHandler({
+        pl: 'Akceptuję Regulamin i Politykę Prywatności.',
+        en: 'I accept the Terms and Conditions and the Privacy Policy.'
+      })
+    }
+  }
 
-  return null
+  const changeRouteToTermsOfService = e => {
+    e.stopPropagation()
+    this.changeRoute(VISITOR_TERMS_OF_SERVICE_TRACK)
+  }
 
-  // if (pureText) {
-  //   return {
-  //     termsAndPrivacyConsent: this.languageObjectHandler({
-  //       pl: 'Akceptuję Regulamin i Politykę Prywatności.',
-  //       en: 'I accept the Terms and Conditions and the Privacy Policy.'
-  //     })
-  //   }
-  // }
+  const changeRouteToPrivacyPolicy = e => {
+    e.stopPropagation()
+    this.changeRoute(VISITOR_PRIVACY_POLICY_TRACK)
+  }
 
-  // const TODO = e => {
-  //   e.stopPropagation()
-  //   TODO
-  // }
-
-  // const TODO = e => {
-  //   e.stopPropagation()
-  //   TODO
-  // }
-
-  // return (
-  //   {
-  //     termsAndPrivacyConsent: this.languageObjectHandler({
-  //       pl: <span>Akceptuję <u className='link' onClick={TODO}>Regulamin</u> i&nbsp;<u className='link' onClick={TODO}>Politykę Prywatności</u>.</span>,
-  //       en: <span>I accept the <u className='link' onClick={TODO}>Terms and Conditions</u> and the <u className='link' onClick={TODO}>Privacy Policy</u>.</span>
-  //     })
-  //   }
-  // )
+  return (
+    {
+      termsAndPrivacyConsent: this.languageObjectHandler({
+        pl: <span>Akceptuję <u className='link' onClick={changeRouteToTermsOfService}>Regulamin</u> i&nbsp;<u className='link' onClick={changeRouteToPrivacyPolicy}>Politykę Prywatności</u>.</span>,
+        en: <span>I accept the <u className='link' onClick={changeRouteToTermsOfService}>Terms and Conditions</u> and the <u className='link' onClick={changeRouteToPrivacyPolicy}>Privacy Policy</u>.</span>
+      })
+    }
+  )
 }

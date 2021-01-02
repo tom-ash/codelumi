@@ -6,6 +6,8 @@ import { logIn } from './functions/adapters'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
 import { labelProvider } from '../../../../../../functions/providers/label'
+import { changeRoute } from '../../../../../../functions/routers/change-route'
+import { USER_EDIT_PASSWORD_TRACK } from '../../../../../../../shared/constants/tracks/tracks'
 
 class UserAuthorizeEmailPassword extends React.Component {
   constructor(props) {
@@ -18,6 +20,7 @@ class UserAuthorizeEmailPassword extends React.Component {
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
+    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {
@@ -36,9 +39,7 @@ class UserAuthorizeEmailPassword extends React.Component {
         </form>
         <div
           className='reset-password'>
-          <span onClick={() => {
-            TODO
-          }}>
+          <span onClick={() => this.changeRoute(USER_EDIT_PASSWORD_TRACK)}>
             {this.languageObjectHandler({ pl: 'Zresetuj hasło', en: 'Reset password' })}
           </span>
         </div>

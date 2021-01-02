@@ -8,7 +8,6 @@ import { sendEmail, sendVerification, sendPassword } from './functions/adapters'
 import { monitProvider } from './functions/monit-provider'
 import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import { labelProvider } from '../../../../../../../../functions/providers/label'
-import { hideUser } from '../../../../../../functions/hide-user'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
@@ -27,7 +26,6 @@ class UserEditAccountPassword extends React.Component {
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
-    this.hideUser = hideUser.bind(this)
   }
 
   render() {

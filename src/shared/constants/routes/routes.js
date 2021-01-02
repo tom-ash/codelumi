@@ -20,8 +20,7 @@ import {
   USER_CREATE_URLS,
   USER_AUTHORIZE_URLS,
   USER_RESET_PASSWORD_URLS,
-  USER_EDIT_URLS,
-  USER_SHOW_URLS
+  USER_EDIT_URLS
 } from './urls'
 
 import {
@@ -40,9 +39,8 @@ import {
   ANNOUNCEMENT_SHOW_TRACK,
   USER_CREATE_TRACK,
   USER_EDIT_TRACK,
-  USER_RESET_PASSWORD_TRACK,
-  USER_AUTHORIZE_TRACK,
-  USER_SHOW_TRACK
+  USER_EDIT_PASSWORD_TRACK,
+  USER_AUTHORIZE_TRACK
 } from '../tracks/tracks'
 
 import {
@@ -62,8 +60,7 @@ import {
   USER_CREATE_TITLES,
   USER_AUTHORIZE_TITLES,
   USER_RESET_PASSWORD_TITLES,
-  USER_EDIT_TITLES,
-  USER_SHOW_TITLES
+  USER_EDIT_TITLES
 } from './titles'
 
 import {
@@ -277,13 +274,13 @@ export default [
   {
     url: USER_RESET_PASSWORD_URLS[PL],
     title: USER_RESET_PASSWORD_TITLES[PL],
-    track: USER_RESET_PASSWORD_TRACK,
+    track: USER_EDIT_PASSWORD_TRACK,
     lang: PL
   },
   {
     url: USER_RESET_PASSWORD_URLS[EN],
     title: USER_RESET_PASSWORD_TITLES[EN],
-    track: USER_RESET_PASSWORD_TRACK,
+    track: USER_EDIT_PASSWORD_TRACK,
     lang: EN
   },
   {
@@ -296,18 +293,6 @@ export default [
     url: USER_EDIT_URLS[EN],
     title: USER_EDIT_TITLES[EN],
     track: USER_EDIT_TRACK,
-    lang: EN
-  },
-  {
-    url: USER_SHOW_URLS[PL],
-    title: USER_SHOW_TITLES[PL],
-    track: USER_SHOW_TRACK,
-    lang: PL
-  },
-  {
-    url: USER_SHOW_URLS[EN],
-    title: USER_SHOW_TITLES[EN],
-    track: USER_SHOW_TRACK,
     lang: EN
   }
 ]

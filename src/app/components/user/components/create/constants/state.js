@@ -4,7 +4,6 @@ export const control = {
   connecting: false,
   verifying: false,
   success: null,
-  TODO: false,
   step: 'form'
 }
 

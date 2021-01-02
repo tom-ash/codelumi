@@ -1,5 +1,6 @@
 import { apiUrl } from '../../../../../constants/urls.js'
 import { getAccessToken } from '../../authorize/components/tokens/functions/get-tokens'
+import { ROOT_TRACK } from '../../../../../../shared/constants/tracks/tracks'
 
 export function sendEmail() {
   const {
@@ -23,7 +24,8 @@ export function sendEmail() {
     body: JSON.stringify({ email })
   })
   .then(response => {
-    if (response.of) return changeControl({ step: 'verification' })
+    if (response.ok) return changeControl({ step: 'verification' })
+    
     throw new Error('Server Error')
   })
   .catch(error => console.dir(error))
@@ -42,9 +44,16 @@ export function destroy() {
     body: JSON.stringify({ verificationCode })
   })
   .then(response => {
-    if (response.ok) return this.deauthorizeUser()
+    if (response.ok) {
+      this.changeRoute(ROOT_TRACK)
+      return this.deauthorizeUser()
+    }
+
     this.props.changeErrors({
-      verification: { pl: 'Nieprawidłowy kod weryfikacyjny', en: 'Invalid verification code' }
+      verification: {
+        pl: 'Nieprawidłowy kod weryfikacyjny',
+        en: 'Invalid verification code'
+      }
     })
     throw new Error('SomethingWentWrong')
   })

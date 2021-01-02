@@ -17,17 +17,19 @@ class User extends React.Component {
     const {
       renderCreate,
       renderAuthorize,
-      renderPasswordReset,
+      renderEditPassword,
       renderShow,
       renderEdit
     } = this.props
+
+    console.log(renderEdit)
 
     return (
       <React.Fragment>
         {renderCreate && <UserCreate />}
         {renderEdit && <UserEditAccount />}
         {renderAuthorize && <UserAuthorize />}
-        {renderPasswordReset && <UserEditAccountPassword />}
+        {renderEditPassword && <UserEditAccountPassword />}
         {renderShow && <UserShow />}
       </React.Fragment>
     )

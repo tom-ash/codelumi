@@ -1,13 +1,19 @@
 import { hashPassword } from '../../../../../functions/shared.js'
 import { apiUrl } from '../../../../../../../constants/urls.js'
 import { saveTokens } from '../../../../../functions/token-handlers'
+import { ROOT_TRACK } from '../../../../../../../../shared/constants/tracks/tracks'
 
 export function logIn() {
   const email = document.getElementById('user-logon-email-address').value.toLowerCase()
   let password = document.getElementById('user-logon-password').value
-  this.props.changeControl({ connecting: true })
+  const {
+    changeControl,
+    changeData,
+    changeErrors
+  } = this.props
+
+  changeControl({ connecting: true })
   password = hashPassword(password, email)
-  this.props.changeControl({ connecting: true })
 
   fetch(apiUrl + '/authorize_with_email', {
     method: 'PUT',
@@ -22,23 +28,23 @@ export function logIn() {
     throw new Error('InvalidCredentials')
   })
   .then(json => {
-    this.props.changeData({
+    changeData({
       accountType: json.accountType,
       authorized: true,
       name: json.name,
       phoneVerified: json.phoneVerified
     })
     saveTokens.call(this, json.accessToken)
-    TODO
+    this.changeRoute(ROOT_TRACK)
   })
   .catch(() => {
-    this.props.changeErrors({
+    changeErrors({
       emailOrPassword: {
         pl: 'Nieprawidłowy adres email lub hasło.', en: 'Invalid email address and/or password.'
       }
     })
   })
   .finally(() => {
-    this.props.changeControl({ connecting: false })
+    changeControl({ connecting: false })
   })
 }

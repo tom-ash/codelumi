@@ -1,9 +1,5 @@
 export const mapStateToProps = (store) => {
   const {
-    TODO
-  } = store.app
-
-  const {
     authorized
   } = store.user.authorize.data
 
@@ -16,7 +12,6 @@ export const mapStateToProps = (store) => {
   } = store.user.create.data
 
   return {
-    TODO,
     authorized,
     connecting,
     token

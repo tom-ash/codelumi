@@ -19,7 +19,7 @@ import {
   USER_TRACK,
   USER_CREATE_TRACK,
   USER_AUTHORIZE_TRACK,
-  USER_RESET_PASSWORD_TRACK,
+  USER_EDIT_PASSWORD_TRACK,
   USER_EDIT_TRACK,
   USER_SHOW_TRACK
 } from '../tracks/tracks'
@@ -81,7 +81,7 @@ export default {
     [VISITOR_TRACK]: true,
     [USER_TRACK]: true
   },
-  [USER_RESET_PASSWORD_TRACK]: {
+  [USER_EDIT_PASSWORD_TRACK]: {
     [VISITOR_TRACK]: true,
     [USER_TRACK]: true
   },

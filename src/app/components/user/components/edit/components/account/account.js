@@ -24,10 +24,7 @@ class UserEditAccount extends React.Component {
           <i className='fas fa-cog' /> {this.languageHandler('Ustawienia', 'Settings')}
         </h2>
         {accountType == 'private' ?
-        <React.Fragment>
-          <UserEditAccountCell key='firstName' item='firstName' />
-          <UserEditAccountCell key='lastName' item='lastName' />
-        </React.Fragment>
+        <UserEditAccountCell key='firstName' item='firstName' />
         :
         <React.Fragment>
           <UserEditAccountCell key='businessName' item='businessName' />

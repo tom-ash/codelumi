@@ -7,7 +7,7 @@ import { componentDidMount, componentWillUnmount } from './functions/lifecycle'
 import { monit } from './constants/monit'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import { deauthorizeUser } from '../authorize/functions/adapters'
-import { changePath } from '../../../../functions/routers/change-path'
+import { changeRoute } from '../../../../functions/routers/change-route'
 import * as managers from './functions/managers'
 import * as adapters from './functions/adapters'
 import withStyles from 'isomorphic-style-loader/withStyles'
@@ -25,7 +25,7 @@ class UserDestroy extends React.Component {
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.deauthorizeUser = deauthorizeUser.bind(this)
-    this.changePath = changePath.bind(this)
+    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {
