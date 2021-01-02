@@ -4,12 +4,12 @@ import { data } from '../../../app/components/announcement/components/show/const
 import { parseScalableVectorGraphics } from '../../../shared/functions/parsers/parse-scalable-vector-graphics'
 import routeRenders from '../../../shared/constants/routes/renders'
 import { showClientServerParams } from '../../../app/components/announcement/constants/client-server-params'
+import { provideTitle } from '../../../shared/functions/providers/provide-title'
 
 export function announcementShowResponseInitializer({
   route,
   url,
-  device,
-  visitorState
+  device
 }) {
   const {
     track,
@@ -17,7 +17,7 @@ export function announcementShowResponseInitializer({
   } = route
   const id = +url.match(/\d+/)[0]
 
-  fetch(`${API_URL}/announcements/${id}`, {
+  return fetch(`${API_URL}/announcements/${id}`, {
     headers: {
       'Content-Type': 'application/json'
     },
@@ -26,53 +26,45 @@ export function announcementShowResponseInitializer({
     if (response.ok) return response.json()
   })
   .then(json => {
-    const {
-      latitude: latitude,
-      longitude: longitude,
-      name,
-      features,
-      furnishings,
-      polishDescription: polishDescription,
-      englishDescription: englishDescription
-    } = json
-    let showData = {
-      latitude,
-      longitude,
-      name,
-      features,
-      furnishings,
-      polishDescription,
-      englishDescription
-    }
-
+    const showData = {}
     showClientServerParams.map(param => {
       showData[param.client] = json[param.server]
     })
 
-    // const title = provideTitle({ ...clientParams, language })
-    // const image = `${AWS_S3_URL}/announcements/${clientParams.id}/${clientParams.pictures[0].database}`
-    // const description = { pl: clientParams.polishDescription, en: clientParams.englishDescription }[language]
+    const title = provideTitle({ ...showData, language })
+    const description = { pl: showData.polishDescription, en: showData.englishDescription }[language]
+    const keywords = ''
+    const image = `${AWS_S3_URL}/announcements/${showData.id}/${showData.pictures[0].database}`
+    const openGraph = {}
+    const schemaOrg = {}
 
     return {
-      app: {
-        ...appState,
-        language,
-        device,
-        scalableVectorGraphics: parseScalableVectorGraphics(json.scalableVectorGraphics)
-      },
-      render: {
-        [track]: true,
-        ...routeRenders[track]
-      },
-      announcement: {
-        show: {
-          data: {
-            ...data,
-            ...showData
+      title,
+      description,
+      keywords,
+      image,
+      openGraph,
+      schemaOrg,
+      initialState: {
+        app: {
+          ...appState,
+          language,
+          device,
+          scalableVectorGraphics: parseScalableVectorGraphics(json.scalableVectorGraphics)
+        },
+        render: {
+          [track]: true,
+          ...routeRenders[track]
+        },
+        announcement: {
+          show: {
+            data: {
+              ...data,
+              ...showData
+            }
           }
-        }
-      },
-      ...visitorState
+        },
+      }
     }
   })
 }

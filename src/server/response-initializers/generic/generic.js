@@ -5,12 +5,14 @@ import routeRenders from '../../../shared/constants/routes/renders'
 
 export function genericResponseInitializer({
   route,
-  device,
-  visitorState
+  device
 }) {
   const {
+    lang: language,
     track,
-    lang: language
+    title,
+    description,
+    keywords,
   } = route
 
   return (
@@ -24,17 +26,21 @@ export function genericResponseInitializer({
     })
     .then(json => {
       return {
-        app: {
-          ...appState,
-          language,
-          device,
-          scalableVectorGraphics: parseScalableVectorGraphics(json)
-        },
-        render: {
-          [track]: true,
-          ...routeRenders[track]
-        },
-        ...visitorState
+        title,
+        description,
+        keywords,
+        initialState: {
+          app: {
+            ...appState,
+            language,
+            device,
+            scalableVectorGraphics: parseScalableVectorGraphics(json)
+          },
+          render: {
+            [track]: true,
+            ...routeRenders[track]
+          }
+        }
       }
     })
   )

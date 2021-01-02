@@ -19,24 +19,25 @@ export function sendRouteResponse({
   ResponseInitializer({
     route,
     url,
-    device,
-    visitorState
+    device
   }).then(({
-    initialState,
     title,
     description,
     keywords,
     image,
     openGraph,
-    schemaOrg
+    schemaOrg,
+    initialState
   }) => {
-    const appAsHtml = renderApp(initialState)
+    const appAsHtml = renderApp({ ...initialState, ...visitorState })
     const status = 200
 
     res.status(status).send(
       renderPage({
         lang,
         noIndex,
+        url,
+        // canonicalUrl,
         title,
         description,
         keywords,

@@ -6,12 +6,17 @@ import routeRenders from '../../../shared/constants/routes/renders'
 
 export function announcementIndexResponseInitializer({
   route,
-  device,
-  visitorState
+  device
 }) {
   const {
+    lang: language,
     track,
-    lang: language
+    title,
+    description,
+    keywords,
+    // image,
+    // openGraph,
+    // schemaOrg,
   } = route
 
   return (
@@ -33,26 +38,30 @@ export function announcementIndexResponseInitializer({
       if (announcements && announcements[0]) announcements[0].show = true
 
       return {
-        app: {
-          ...appState,
-          language,
-          device,
-          scalableVectorGraphics: parseScalableVectorGraphics(json.scalableVectorGraphics)
-        },
-        render: {
-          [track]: true,
-          ...routeRenders[track]
-        },
-        announcement: {
-          index: {
-            data: {
-              ...data,
-              announcements,
-              amount
+        title,
+        description,
+        keywords,
+        initialState: {
+          app: {
+            ...appState,
+            language,
+            device,
+            scalableVectorGraphics: parseScalableVectorGraphics(json.scalableVectorGraphics)
+          },
+          render: {
+            [track]: true,
+            ...routeRenders[track]
+          },
+          announcement: {
+            index: {
+              data: {
+                ...data,
+                announcements,
+                amount
+              }
             }
           }
-        },
-        ...visitorState
+        }
       }
     })
   )

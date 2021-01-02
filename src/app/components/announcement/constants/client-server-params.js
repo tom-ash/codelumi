@@ -72,6 +72,22 @@ export const showClientServerParams = [
     server: 'phone'
   },
   {
+    client: 'netRentAmountPerSqm',
+    server: 'netRentAmountPerSqm'
+  },
+  {
+    client: 'grossRentAmount',
+    server: 'grossRentAmount'
+  },
+  {
+    client: 'grossRentAmountPerSqm',
+    server: 'grossRentAmountPerSqm'
+  },
+  {
+    client: 'pictures',
+    server: 'pictures'
+  },
+  {
     client: 'latitude',
     server: 'latitude'
   },
@@ -84,20 +100,11 @@ export const showClientServerParams = [
     server: 'availabilityDate'
   },
   {
-    client: 'pictures',
-    server: 'pictures'
-  },
-
-  {
-    client: 'netRentAmountPerSqm',
-    server: 'netRentAmountPerSqm'
+    client: 'features',
+    server: 'features'
   },
   {
-    client: 'grossRentAmount',
-    server: 'grossRentAmount'
+    client: 'furnishings',
+    server: 'furnishings'
   },
-  {
-    client: 'grossRentAmountPerSqm',
-    server: 'grossRentAmountPerSqm'
-  }
 ]
