@@ -8,7 +8,7 @@ export function changeRoute(track) {
     changeRender
   } = this.props
 
-  changeApp({ shouldMatchRouteToRenderAndLanguage: true })
   changeRender({ ...renderState, [track]: true, ...routeRenders[track] })
+  changeApp({ shouldMatchRouteToRenderAndLanguage: true })
   instantScroll()
 }

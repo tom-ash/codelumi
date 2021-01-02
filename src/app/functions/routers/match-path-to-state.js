@@ -13,9 +13,9 @@ export function matchRouteToRenderAndLanguage() {
     language: lang,
     changeApp
   } = this.props
-
   const route = getRouteByRender({ render, lang })
   let path = getPath.apply(this, [route])
+
   if (path === null) return
 
   changeApp({ shouldMatchRouteToRenderAndLanguage: false })
