@@ -2,8 +2,7 @@ import {
   PAGE_TRACK,
   VISITOR_TRACK,
   ANNOUNCEMENT_TRACK,
-  USER_TRACK,
-  PAGE_NOT_FOUND_TRACK
+  USER_TRACK
 } from '../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = (store) => {
@@ -31,8 +30,7 @@ export const mapStateToProps = (store) => {
     [VISITOR_TRACK]: renderVisitor,
     [ANNOUNCEMENT_TRACK]: renderAnnouncement,
     [USER_TRACK]: renderUser,
-    [PAGE_TRACK]: renderPage,
-    [PAGE_NOT_FOUND_TRACK]: renderPageNotFound
+    [PAGE_TRACK]: renderPage
   } = render
 
   return {
@@ -52,7 +50,6 @@ export const mapStateToProps = (store) => {
     renderVisitor,
     renderAnnouncement,
     renderUser,
-    renderPageNotFound,
     announcementShowData,
     pageShowData
   }

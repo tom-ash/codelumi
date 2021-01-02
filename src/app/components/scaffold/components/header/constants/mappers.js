@@ -1,3 +1,6 @@
+import { strike } from 'managed-inputs'
+import { PAGE_NOT_FOUND_TRACK } from '../../../../../../shared/constants/tracks/tracks'
+
 export const mapStateToProps = (store) => {
   const {
     language,
@@ -16,12 +19,17 @@ export const mapStateToProps = (store) => {
     data: announcementShowData
   } = store.announcement.show
 
+  const {
+    data: pageShowData
+  } = store.page.show
+
   return {
     language,
     authorized,
     device,
     announcementShowData,
-    render
+    render,
+    pageShowData
   }
 }
   
@@ -32,11 +40,7 @@ export const mapDispatchToProps = (dispatch) => {
     resetAnnouncementIndexControl: value => dispatch({ type: 'announcement/index/control/reset', value }),
     resetAnnouncementIndexInputs: value => dispatch({ type: 'announcement/index/inputs/reset', value }),
     resetAnnouncementIndexData: value => dispatch({ type: 'announcement/index/data/reset', value }),
-    // resetUserAuthorizeControl: value => dispatch({ type: 'user/authorize/control/reset', value }),
-    // resetUserAuthorizeInputs: value => dispatch({ type: 'user/authorize/inputs/reset', value }),
-    // resetUserAuthorizeErrors: value => dispatch({ type: 'user/authorize/errors/reset', value }),
-    changeControl: value => dispatch({ type: 'scaffold/header/control', value }),
-    
+    changeControl: value => dispatch({ type: 'scaffold/header/control', value })
   }
 }
   
