@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { changePath } from '../../../../functions/routers/change-path'
 import { pageHeaderProvider } from '../../../../functions/providers/headers'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import { features } from './constants/features'
@@ -12,7 +11,6 @@ import styles from './styles/styles.scss'
 class About extends React.Component {
   constructor(props) {
     super(props)
-    this.changePath = changePath.bind(this)
     this.pageHeaderProvider = pageHeaderProvider.bind(this)
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)

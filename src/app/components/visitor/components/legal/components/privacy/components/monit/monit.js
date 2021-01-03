@@ -1,13 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
 import { ManagedButton } from 'managed-inputs'
 import { agreeManager, settingsManager } from './functions/manager'
-import { languageManager } from '../../../../../../../scaffold/components/header/functions/managers'
 import { textsProvider } from './functions/texts-provider'
-import { changePath } from '../../../../../../../../functions/routers/change-path'
+import { changeRoute } from '../../../../../../../../functions/routers/change-route'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
@@ -17,10 +15,9 @@ class VisitorPrivacyMonit extends React.Component {
     this.languageHandler = languageHandler.bind(this)
     this.agreeManager = agreeManager.bind(this)
     this.settingsManager =  settingsManager.bind(this)
-    this.languageManager = languageManager.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.textsProvider = textsProvider.bind(this)
-    this.changePath = changePath.bind(this)
+    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {

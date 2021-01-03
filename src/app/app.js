@@ -8,7 +8,6 @@ import Page from './components/page/page'
 import User from './components/user/user'
 import Footer from './components/scaffold/components/footer/Footer'
 import * as lifecycle from './functions/lifecycle'
-import * as routers from './functions/routers/change-path'
 import { authorizeUserWithTokens } from './components/user/components/authorize/components/tokens/functions/adapters.js'
 import { screenSizeHandler } from './functions/screen-size-handler'
 import { popStateHandler } from './functions/popStateHandler'
@@ -27,7 +26,6 @@ class App extends React.Component {
     this.screenSizeHandler = screenSizeHandler.bind(this)
     this.popStateHandler = popStateHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
-    this.changePath = routers.changePath.bind(this)
     this.matchRenderToRoute = matchRenderToRoute.bind(this)
     this.matchRouteToRenderAndLanguage = matchRouteToRenderAndLanguage.bind(this)
   }

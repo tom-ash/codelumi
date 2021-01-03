@@ -25,8 +25,6 @@ import { saveAnnouncement } from './functions/save-announcement'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
-const UserCreate = loadable(() => import('../../../user/components/create/create'), { ssr: false })
-
 import {
   categoryManager,
   districtManager,

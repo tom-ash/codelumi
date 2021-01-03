@@ -1,6 +1,7 @@
 import {
-  VISITOR_COOKIES_POLICY_TRACK,
+  VISITOR_PRIVACY_MONIT_TRACK,
   VISITOR_PRIVACY_SETTINGS_TRACK,
+  VISITOR_COOKIES_POLICY_TRACK,
   VISITOR_TERMS_OF_SERVICE_TRACK,
   VISITOR_PRIVACY_POLICY_TRACK,
   VISITOR_CONTACT_TRACK
@@ -17,6 +18,7 @@ export const mapStateToProps = (store) => {
   } = store.visitor.legal.privacy.settings
 
   const {
+    [VISITOR_PRIVACY_MONIT_TRACK]: renderPrivacyMonit,
     [VISITOR_COOKIES_POLICY_TRACK]: renderCookiesPolicy,
     [VISITOR_PRIVACY_SETTINGS_TRACK]: renderPrivacySettings,
     [VISITOR_TERMS_OF_SERVICE_TRACK]: renderTermsOfService,
@@ -29,10 +31,11 @@ export const mapStateToProps = (store) => {
     consents: store.visitor.legal.privacy.settings.consents,
     statisticsConsent,
     marketingConsent,
-    renderCookiesPolicy,
+    renderPrivacyMonit,
     renderPrivacySettings,
-    renderTermsOfService,
     renderPrivacyPolicy,
+    renderCookiesPolicy,
+    renderTermsOfService,
     renderContact
   }
 }
@@ -40,6 +43,7 @@ export const mapStateToProps = (store) => {
 export const mapDispatchToProps = (dispatch) => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
+    changeRender: value => dispatch({ type: 'render', value }),
     changeSettings: value => dispatch({ type: 'visitor/privacy/settings', value })
   }
 }

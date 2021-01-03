@@ -14,7 +14,6 @@ export function statisticsConsentManager() {
     onClick: value => {
       this.props.changeSettings({ statisticsConsent: value })
       saveCookie('_pdpaf', value, 'oneYear')
-      location.reload()
     }
   }
 }
@@ -33,7 +32,6 @@ export function marketingConsentManager() {
     onClick: value => {
       this.props.changeSettings({ marketingConsent: value })
       saveCookie('_pdpsm', value, 'oneYear')
-      location.reload()
     }
   }
 }

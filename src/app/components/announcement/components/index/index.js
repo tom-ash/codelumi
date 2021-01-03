@@ -18,7 +18,6 @@ import { parseDistrictForUrl } from '../../functions/district-parsers'
 import { ManagedLink } from 'managed-inputs'
 import { addAnnouncementManager } from '../../../../components/scaffold/components/header/functions/managers'
 import { labelProvider } from '../../../../components/user/components/show/functions/label-provider'
-import { changePath } from '../../../../functions/routers/change-path'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
@@ -38,7 +37,6 @@ class AnnouncementIndexSearch extends React.Component {
     this.parseDistrictForUrl = parseDistrictForUrl.bind(this)
     this.addAnnouncementManager = addAnnouncementManager.bind(this)
     this.labelProvider = labelProvider.bind(this)
-    this.changePath = changePath.bind(this)
   }
 
   render() {
