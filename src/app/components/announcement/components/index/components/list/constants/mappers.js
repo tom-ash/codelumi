@@ -1,8 +1,15 @@
+import {
+  ANNOUNCEMENT_INDEX_MY_TRACK
+} from '../../../../../../../../shared/constants/tracks/tracks'
+
 export const mapStateToProps = (store) => {
   const {
     language,
     scalableVectorGraphics
   } = store.app
+  const {
+    [ANNOUNCEMENT_INDEX_MY_TRACK]: renderMy
+  } = store.render
   const {
     connecting,
     fetch,
@@ -29,7 +36,8 @@ export const mapStateToProps = (store) => {
     sort,
     amount,
     announcements,
-    scalableVectorGraphics
+    scalableVectorGraphics,
+    renderMy
   }
 }
     
@@ -41,8 +49,8 @@ export const mapDispatchToProps = (dispatch) => {
     changeData: value => dispatch({ type: 'announcement/index/data', value }),
     changeInputs: value => dispatch({ type: 'announcement/index/inputs', value }),
     changeAnnouncement: value => dispatch({ type: 'announcement/index/data/announcements', value }),
-    resetControl: value => dispatch({ type: 'announcement/index/control/list/reset', value }),
-    resetInputs: value => dispatch({ type: 'announcement/index/inputs/list/reset', value }),
-    resetData: value => dispatch({ type: 'announcement/index/data/list/reset', value })
+    resetControl: value => dispatch({ type: 'announcement/index/control/reset', value }),
+    resetInputs: value => dispatch({ type: 'announcement/index/inputs/reset', value }),
+    resetData: value => dispatch({ type: 'announcement/index/data/reset', value })
   }
 }

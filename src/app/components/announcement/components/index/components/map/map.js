@@ -13,6 +13,8 @@ import { shouldSetUpGoogleMaps, shouldSetUpPins } from '../../../../functions/go
 import { changeRoute } from '../../../../../../functions/routers/change-route'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import { buildRequestParameters } from '../../functions/build-parameters'
+import { fetchAnnouncements } from '../../functions/fetch-announcements'
 
 class AnnouncementIndexMap extends React.Component {
   constructor(props) {
@@ -28,6 +30,8 @@ class AnnouncementIndexMap extends React.Component {
     this.shouldSetUpGoogleMaps = shouldSetUpGoogleMaps.bind(this)
     this.shouldSetUpPins = shouldSetUpPins.bind(this)
     this.changeRoute = changeRoute.bind(this)
+    this.fetchAnnouncements = fetchAnnouncements.bind(this)
+    this.buildRequestParameters = buildRequestParameters.bind(this)
   }
 
   render() {
@@ -41,18 +45,21 @@ class AnnouncementIndexMap extends React.Component {
       miniListFarthestScrollTop,
       miniListFarthestScrollLeft,
       changeApp,
-      changeAnnouncementShowData
+      changeAnnouncementShowData,
+      renderCatalogue
     } = this.props
 
     return (
       <div
         id='announcement-index-map'
+        className={renderCatalogue ? 'hidden' : ''}
       >
         <div id='google-map-container'>
           <div 
             ref={this.miniList}
             id='mini-list'
           >
+            {console.log(renderCatalogue)}
             {announcements !== null && announcements.map((announcement, index) => (
               <AnnouncementShowMiniTile
                 key={index}

@@ -1,3 +1,7 @@
+import {
+  ANNOUNCEMENT_INDEX_CATALOGUE_TRACK
+} from '../../../../../../../../shared/constants/tracks/tracks'
+
 export const mapStateToProps = (store) => {
   const {
     language,
@@ -6,6 +10,9 @@ export const mapStateToProps = (store) => {
     device,
     scalableVectorGraphics
   } = store.app
+  const {
+    [ANNOUNCEMENT_INDEX_CATALOGUE_TRACK]: renderCatalogue
+  } = store.render
 
   const {
     connecting,
@@ -14,7 +21,8 @@ export const mapStateToProps = (store) => {
     loadMap,
     loadPins,
     miniListFarthestScrollTop,
-    miniListFarthestScrollLeft
+    miniListFarthestScrollLeft,
+    fetch
   } = store.announcement.index.control
   
   const {
@@ -40,7 +48,9 @@ export const mapStateToProps = (store) => {
     tile,
     scalableVectorGraphics,
     miniListFarthestScrollTop,
-    miniListFarthestScrollLeft
+    miniListFarthestScrollLeft,
+    fetch,
+    renderCatalogue
   }
 }
     

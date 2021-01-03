@@ -1,12 +1,18 @@
 import { strike } from 'managed-inputs'
-import { PAGE_NOT_FOUND_TRACK } from '../../../../../../shared/constants/tracks/tracks'
+import {
+  ANNOUNCEMENT_INDEX_MAP_TRACK,
+  ANNOUNCEMENT_INDEX_CATALOGUE_TRACK
+} from '../../../../../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = (store) => {
   const {
     language,
     device
   } = store.app
-
+  const {
+    [ANNOUNCEMENT_INDEX_MAP_TRACK]: renderMap,
+    [ANNOUNCEMENT_INDEX_CATALOGUE_TRACK]: renderCatalogue
+  } = store.render
   const {
     render
   } = store
@@ -29,7 +35,9 @@ export const mapStateToProps = (store) => {
     device,
     announcementShowData,
     render,
-    pageShowData
+    pageShowData,
+    renderMap,
+    renderCatalogue
   }
 }
   

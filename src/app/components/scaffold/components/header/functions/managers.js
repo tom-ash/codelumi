@@ -32,8 +32,11 @@ import {
 
 export function titleManager() {
   const {
+    renderMap,
+    renderCatalogue,
+    resetAnnouncementIndexControl,
     resetAnnouncementIndexInputs,
-    changeAnnouncementIndexControl
+    resetAnnouncementIndexData
   } = this.props
 
   const title = this.languageObjectHandler(ROOT_TITLES)
@@ -55,10 +58,13 @@ export function titleManager() {
       </div>
     ),
     onClick: () => {
+      if (renderMap) return
+      if (renderCatalogue) return this.changeRoute(ROOT_TRACK)
+
+      resetAnnouncementIndexControl()
+      resetAnnouncementIndexInputs()
+      resetAnnouncementIndexData()
       this.changeRoute(ROOT_TRACK)
-      // TODO
-      // resetAnnouncementIndexInputs()
-      // resetAnnouncementIndexControl({ fetch: true })
     }
   }
 }

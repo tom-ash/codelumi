@@ -16,6 +16,7 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { ManagedButton } from 'managed-inputs'
 import { changeRoute } from '../../../../../../functions/routers/change-route'
+import { fetchAnnouncements } from '../../functions/fetch-announcements'
 
 class AnnouncementIndexList extends React.Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class AnnouncementIndexList extends React.Component {
     this.cancelDestroyManager = managers.cancelDestroyManager.bind(this)
     this.extend = extend.bind(this)
     this.changeRoute = changeRoute.bind(this)
+    this.fetchAnnouncements = fetchAnnouncements.bind(this)
   }
 
   render() {

@@ -1,5 +1,7 @@
 export function componentDidMount() {
-  // if (!this.props.fetched) this.getAnnouncements()
+  const { fetch } = this.props
+
+  if (fetch) this.fetchAnnouncements()
 }
 
 export function componentDidUpdate(prevProps) {
@@ -7,8 +9,14 @@ export function componentDidUpdate(prevProps) {
 }
 
 export function componentWillUnmount() {
-  const { resetControl, resetInputs, resetData } = this.props
-  resetControl()
-  resetInputs()
-  resetData()
+  // TODO
+  // const {
+  //   resetControl,
+  //   resetInputs,
+  //   resetData
+  // } = this.props
+
+  // resetControl()
+  // resetInputs()
+  // resetData()
 }

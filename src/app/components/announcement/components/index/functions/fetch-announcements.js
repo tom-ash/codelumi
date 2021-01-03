@@ -6,13 +6,17 @@ export function fetchAnnouncements() {
     changeControl,
     changeData,
     connecting,
-    TODO
+    renderMy
   } = this.props
   
   if (connecting) return
 
   let headers = { 'Content-Type': 'application/json' }
-  if (TODO) headers = { ...headers, access_token: getAccessToken() }
+  if (renderMy) headers = {
+    ...headers,
+    access_token: getAccessToken(),
+    my: true
+  }
 
   changeData({
     announcements: null,
@@ -25,7 +29,7 @@ export function fetchAnnouncements() {
     loadPins: false
   })
 
-  fetch(apiUrl + `/announcements${this.buildRequestParameters()}`, {
+  fetch(apiUrl + `/announcements`, {
     headers
   })
   .then(response => {

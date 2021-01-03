@@ -25,7 +25,8 @@ export function componentDidMount() {
   const {
     changeControl,
     changePageShowData,
-    changePostRender
+    changePostRender,
+    fetch
   } = this.props
 
   this.googleMapHandler(() => changeControl({ mapLoaded: true }))
@@ -34,28 +35,32 @@ export function componentDidMount() {
 
   changePageShowData({ name: 'welcome' })
   changePostRender({ show: true })
+
+  if (fetch) this.fetchAnnouncements()
 }
 
 export function componentDidUpdate(prevProps) {
   const {
     loadMap: prevLoadMap,
     tileId: prevTileId,
-    loadPins: prevLoadPins
+    loadPins: prevLoadPins,
+    fetch: prevFetch
   } = prevProps
 
   const {
     changeControl,
     loadMap,
     tileId,
-    loadPins
+    loadPins,
+    fetch
   } = this.props
+
+  if (fetch && !prevFetch) this.fetchAnnouncements()
 
   if (this.shouldSetUpGoogleMaps()) changeControl({ loadMap: true })
   if (!prevLoadMap && loadMap) setUpGoogleMaps.call(this)
-
   if (this.shouldSetUpPins()) changeControl({ loadPins: true })
   if (!prevLoadPins && loadPins) this.drawPins()
-
   if (tileId && prevTileId !== tileId) this.fetchTile()
 }
 
@@ -63,16 +68,11 @@ export function componentWillUnmount() {
   const {
     resetControl,
     resetInputs,
-    resetData,
-    changePageShowData,
-    changePostRender
+    resetData
   } = this.props
 
-  // removeOldPins.call(this)
-
-  // changePostRender({ show: false })
-  // changePageShowData({ name: null, body: null })
+  removeOldPins.call(this)
   resetControl()
-  // resetInputs()
-  // resetData()
+  resetInputs()
+  resetData()
 }
