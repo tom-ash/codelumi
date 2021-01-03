@@ -3,7 +3,10 @@ import { showClientServerParams } from '../../../constants/client-server-params'
 import { PAGE_NOT_FOUND_TRACK } from '../../../../../../shared/constants/tracks/tracks'
 
 export function fetchAnnouncement(id) {
-  const { changeData } = this.props
+  const {
+    changeControl,
+    changeData
+  } = this.props
 
   fetch(`${apiUrl}/announcements/${id}`, {
     headers: { 'Content-Type': 'application/json' }
@@ -15,6 +18,7 @@ export function fetchAnnouncement(id) {
     const clientParams = {}
 
     showClientServerParams.map(param => ( clientParams[param.client] = json[param.server] ))
+    changeControl({ fetched: true })
     changeData(clientParams)    
   })
   .catch(e => {

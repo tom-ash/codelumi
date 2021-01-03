@@ -10,6 +10,7 @@ import { fetchTile } from './functions/fetch-tile'
 import { drawPins } from './functions/draw-pins'
 import { languageObjectHandler } from '../../../../../../functions/language-handler'
 import { shouldSetUpGoogleMaps, shouldSetUpPins } from '../../../../functions/google-map-handler'
+import { changeRoute } from '../../../../../../functions/routers/change-route'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
@@ -26,6 +27,7 @@ class AnnouncementIndexMap extends React.Component {
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.shouldSetUpGoogleMaps = shouldSetUpGoogleMaps.bind(this)
     this.shouldSetUpPins = shouldSetUpPins.bind(this)
+    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {
@@ -100,6 +102,7 @@ class AnnouncementIndexMap extends React.Component {
               scalableVectorGraphics={scalableVectorGraphics}
               changeApp={changeApp}
               changeData={changeAnnouncementShowData}
+              changeRoute={this.changeRoute}
             />
           </div>}
         </div>

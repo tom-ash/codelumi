@@ -34,10 +34,7 @@ export function componentWillUnmount() {
     resetErrors
   } = this.props
 
-  // TODO
-
   resetControl()
   resetInputs()
   resetErrors()
-
 }

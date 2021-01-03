@@ -10,6 +10,7 @@ import { OffsetSwitcher } from '../offset-switcher/offset-switcher'
 import * as lifecycle from './functions/lifecycle'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import { changeRoute } from '../../../../../../functions/routers/change-route'
 
 class AnnouncementIndexFull extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class AnnouncementIndexFull extends React.Component {
     this.parseCategoryForUrl = parseCategoryForUrl.bind(this)
     this.parseDistrictForUrl = parseDistrictForUrl.bind(this)
     this.parseCurrency = parseCurrency.bind(this)
+    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {
@@ -31,7 +33,8 @@ class AnnouncementIndexFull extends React.Component {
       scalableVectorGraphics,
       indexFullFarthestScrollTop,
       changeApp,
-      changeAnnouncementShowData
+      changeAnnouncementShowData,
+      changeRoute
     } = this.props
 
     return (
@@ -69,6 +72,7 @@ class AnnouncementIndexFull extends React.Component {
                 indexFullFarthestScrollTop={indexFullFarthestScrollTop}
                 changeApp={changeApp}
                 changeData={changeAnnouncementShowData}
+                changeRoute={this.changeRoute}
               />
             )
           })}

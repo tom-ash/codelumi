@@ -14,7 +14,8 @@ export const mapStateToProps = (store) => {
     mapLoaded,
     loadMarker,
     markerLoaded,
-    showFixedPhone
+    showFixedPhone,
+    fetch
   } = store.announcement.show.control
 
   const { 
@@ -80,7 +81,8 @@ export const mapStateToProps = (store) => {
     latitude,
     longitude,
     markerLoaded,
-    mapLoading
+    mapLoading,
+    fetch
   }
 }
     

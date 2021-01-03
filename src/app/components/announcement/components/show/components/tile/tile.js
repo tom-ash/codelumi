@@ -74,7 +74,8 @@ class AnnouncementTile extends React.Component {
       resetControl,
       changeData,
       resetData,
-      changeApp
+      changeApp,
+      changeRoute
     } = this.props
 
     const venueShow = venue === 'show'
@@ -161,6 +162,7 @@ class AnnouncementTile extends React.Component {
           scalableVectorGraphics={scalableVectorGraphics}
           changeApp={changeApp}
           changeData={changeData}
+          changeRoute={changeRoute}
         />
         <AnnouncementShowPrimary
           language={language}

@@ -89,6 +89,7 @@ export const mapStateToProps = (store) => {
 export const mapDispatchToProps = (dispatch) => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
+    changeRender: value => dispatch({ type: 'render', value }),
     changeUserAuthorizeData: value => dispatch({ type: 'user/authorize/data', value }),
     changeAnnouncementShowData: value => dispatch({ type: 'announcement/show/data', value }),
     changeControl: value => dispatch({ type: 'announcement/create/control', value }),
@@ -101,8 +102,7 @@ export const mapDispatchToProps = (dispatch) => {
     resetUserCreateControl: value => dispatch({ type: 'user/create/control/reset', value }),
     resetUserCreateInputs: value => dispatch({ type: 'user/create/inputs/reset', value }),
     resetUserCreateData: value => dispatch({ type: 'user/create/data/reset', value }),
-    resetUserCreateErrors: value => dispatch({ type: 'user/create/errors/reset', value }),
-    // changePageShowData: value => dispatch({ type: 'page/show/data', value })
+    resetUserCreateErrors: value => dispatch({ type: 'user/create/errors/reset', value })
   }
 }
     

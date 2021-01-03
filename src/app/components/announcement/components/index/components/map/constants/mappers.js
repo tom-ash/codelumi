@@ -46,6 +46,8 @@ export const mapStateToProps = (store) => {
     
 export const mapDispatchToProps = (dispatch) => {
   return {
+    changeApp: value => dispatch({ type: 'app', value }),
+    changeRender: value => dispatch({ type: 'render', value }),
     changeControl: value => dispatch({ type: 'announcement/index/control', value }),
     changeInputs: value => dispatch({ type: 'announcement/index/inputs', value }),
     changeData: value => dispatch({ type: 'announcement/index/data', value }),
@@ -54,7 +56,6 @@ export const mapDispatchToProps = (dispatch) => {
     resetInputs: value => dispatch({ type: 'announcement/index/inputs/reset', value }),
     resetData: value => dispatch({ type: 'announcement/index/data/reset', value }),
     changeAnnouncement: value => dispatch({ type: 'announcement/index/data/announcement', value }),
-    changeApp: value => dispatch({ type: 'app', value }),
     changeAnnouncementShowData: value => dispatch({ type: 'announcement/show/data', value }),
     changePostRender: value => dispatch({ type: 'page/render', value }),
     changePageShowData: value => dispatch({ type: 'page/show/data', value })

@@ -22,6 +22,7 @@ import { validatePictures } from './components/pictures/functions/validate-pictu
 import { validateMap } from './components/map/functions/validate-map'
 import { savePicture } from './functions/save-picture'
 import { saveAnnouncement } from './functions/save-announcement'
+import { changeRoute } from '../../../../functions/routers/change-route'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
@@ -54,6 +55,7 @@ class AnnouncementCreate extends React.Component {
     this.handleErrorOnValidate = handleErrorOnValidate.bind(this)
     this.savePicture = savePicture.bind(this)
     this.saveAnnouncement = saveAnnouncement.bind(this)
+    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {
@@ -119,6 +121,7 @@ class AnnouncementCreate extends React.Component {
         {step === 'success' &&
         <AnnouncementCreateSuccess
           changeApp={changeApp}
+          changeRoute={this.changeRoute}
           id={id}
           category={category}
           district={district}

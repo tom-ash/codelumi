@@ -15,6 +15,7 @@ import { pageHeaderProvider, sectionHeaderProvider } from '../../../../../../fun
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { ManagedButton } from 'managed-inputs'
+import { changeRoute } from '../../../../../../functions/routers/change-route'
 
 class AnnouncementIndexList extends React.Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class AnnouncementIndexList extends React.Component {
     this.destroyManager = managers.destroyManager.bind(this)
     this.cancelDestroyManager = managers.cancelDestroyManager.bind(this)
     this.extend = extend.bind(this)
+    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {
@@ -91,6 +93,7 @@ class AnnouncementIndexList extends React.Component {
             control={this.controlProvider(announcement, index)}
             control={this.controlProvider(announcement, index)}
             scalableVectorGraphics={scalableVectorGraphics}
+            changeRoute={this.changeRoute}
           />))}
           <div className='float-clear' />
         </div>

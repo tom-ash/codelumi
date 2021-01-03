@@ -3,15 +3,17 @@ import { viewAnnouncement } from '../../../functions/view-announcement'
 
 export function componentDidMount() {
   const {
-    id,
-    phone
+    phone,
+    fetched,
+    changeControl
   } = this.props
 
-  if (!id) {
-    const id = +window.location.pathname.match(/\d+/)[0]
+  if (!fetched) {
+    const id = this.props.id || +window.location.pathname.match(/\d+/)[0]
 
     fetchAnnouncement.call(this, id)
     viewAnnouncement(id)
+    changeControl({ fetched: true })
   }
 
   addEventListener('scroll', this.fixedPhoneHandler)

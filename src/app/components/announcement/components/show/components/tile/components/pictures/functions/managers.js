@@ -1,13 +1,13 @@
 import { buildLink } from '../../../../../../../functions/build-link'
+import { ANNOUNCEMENT_SHOW_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
 
 export function linkManager() {
   const {
     id,
-    changeApp,
     changeData,
     category,
     district,
-    area
+    changeRoute
   } = this.props
 
   return {
@@ -17,15 +17,8 @@ export function linkManager() {
     hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
     title: this.languageObjectHandler({ pl: `Ogłoszenie ${id}`, en: `Announcement ${id}` }),
     onClick: () => {
-      changeData({
-        category,
-        district,
-        area
-      })
-      changeApp({
-        announcementId: id, // TODO
-        TODO
-      })
+      changeData({ id, category, district })
+      changeRoute(ANNOUNCEMENT_SHOW_TRACK)
     }
   }
 }
