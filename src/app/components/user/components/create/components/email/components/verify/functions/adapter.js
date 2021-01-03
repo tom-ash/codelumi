@@ -1,6 +1,10 @@
 import { apiUrl } from '../../../../../../../../../constants/urls.js'
 import { saveTokens } from '../../../../../../../functions/token-handlers'
-import { ROOT_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
+import {
+  ROOT_TRACK,
+  USER_TRACK,
+  USER_CREATE_TRACK
+} from '../../../../../../../../../../shared/constants/tracks/tracks'
 
 export function verify() {
   if (!this.verificationManager('validate')) return
@@ -9,7 +13,10 @@ export function verify() {
   const {
     changeAuthorizeData,
     changeControl,
-    changeErrors
+    changeErrors,
+    creatingAnnouncement,
+    changeAnnouncementCreateControl,
+    changeRender
   } = this.props
 
   changeControl({ connecting: true })
@@ -41,6 +48,13 @@ export function verify() {
       name,
       phoneVerified: false
     })
+
+    if (creatingAnnouncement) {
+      changeAnnouncementCreateControl({ step: 'publishing' })
+      changeRender({ [USER_TRACK]: false, [USER_CREATE_TRACK]: false })
+      return
+    }
+
     this.changeRoute(ROOT_TRACK)
   })
   .catch(() => {

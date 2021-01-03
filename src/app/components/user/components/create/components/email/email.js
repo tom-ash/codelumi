@@ -8,9 +8,7 @@ import * as mappers from './constants/mappers'
 
 class UserCreateEmail extends React.Component {
   render() {
-    const {
-      token
-    } = this.props
+    const { token } = this.props
 
     return (
       <div id='user-create-email'>

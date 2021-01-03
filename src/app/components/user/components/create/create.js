@@ -18,21 +18,25 @@ class UserCreate extends React.Component {
   render() {
     const {
       step,
-      scalableVectorGraphics
+      scalableVectorGraphics,
+      creatingAnnouncement
     } = this.props
 
     return (
       <div
         id='user-create-container'
-        className='container'
+        className={`container${creatingAnnouncement ? ' creating-announcement' : ''}`}
       >
-        <h1 className='page-header'>
-          {this.languageHandler('Zarejestruj', 'Sign Up')}
-        </h1>
-        <UserCreateSteps
-          step={step}
-          scalableVectorGraphics={scalableVectorGraphics}
-        />
+        {!creatingAnnouncement &&
+        <>
+          <h1 className='page-header'>
+            {this.languageHandler('Zarejestruj', 'Sign Up')}
+          </h1>
+          <UserCreateSteps
+            step={step}
+            scalableVectorGraphics={scalableVectorGraphics}
+          />
+        </>}
         <UserCreateEmail />
       </div>
     )

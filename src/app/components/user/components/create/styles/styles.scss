@@ -19,6 +19,12 @@
   @media #{$small-tablet} {
     margin: 0 auto;
   }
+  &.creating-announcement {
+    max-width: 768px;
+    margin-top: 0;
+    border-top: none;
+    padding: 0 36px 36px;
+  }
   h1 {
     font-size: 16px;
     color: #566573;

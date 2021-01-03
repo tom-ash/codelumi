@@ -74,10 +74,14 @@ class AnnouncementCreate extends React.Component {
     } = this.props
 
     return (
-      <div id='announcement-create'>
+      <div
+        id='announcement-create'
+        className={step}
+      >
         <div className='page-header'>
           <h1>
             {step === 'form' && this.languageHandler(<span>Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w&nbsp;Warszawie</span>, 'Add Free Announcement of Real Estate Lease in Warsaw')}
+            {step === 'creating-user' && this.languageHandler('Rejestracja konta', 'Account Registration')}
             {step === 'publishing' && this.languageHandler('Zapisywanie Ogłoszenia', 'Saving Announcement')}
             {step === 'success' && this.languageHandler('Gratulacje!', 'Congratulations!')}
           </h1>

@@ -73,7 +73,11 @@ export default {
   },
   [ANNOUNCEMENT_CREATE_TRACK]: {
     [VISITOR_TRACK]: true,
-    [ANNOUNCEMENT_TRACK]: true
+    [ANNOUNCEMENT_TRACK]: true,
+
+    // TODO
+    // [USER_CREATE_TRACK]: true,
+    // [USER_TRACK]: true
   },
   [ANNOUNCEMENT_INDEX_CATALOGUE_TRACK]: {
     [VISITOR_TRACK]: true,

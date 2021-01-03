@@ -13,7 +13,7 @@ export function AnnouncementCreateSteps({
         <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.announcement} />
       </div>
       {!authorized &&
-      <div className={`point second${step === 'account-data' ? ' current' : ''}${step === 'confirmation'  || step === 'success' ? ' success' : ''}`}>
+      <div className={`point second${step === 'creating-user' ? ' current' : ''}${step === 'confirmation'  || step === 'success' ? ' success' : ''}`}>
         <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.user} />
       </div>
       }

@@ -16,12 +16,15 @@
 #announcement-create {
   box-shadow: none;
   max-width: 768px;
-  margin: 24px auto 320px;
+  margin: 24px auto 0;
   $border-color: #E5E7E9;
   border: 1px solid #D0D3D4;
   background: white;
   padding: 36px;
-
+  &.creating-user {
+    border-bottom: none;
+    padding-bottom: 6px;
+  }
   .windmill-medium-spinner {
     display: block;
     position: relative;

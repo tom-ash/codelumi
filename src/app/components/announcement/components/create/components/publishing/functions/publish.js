@@ -1,11 +1,16 @@
 import { scrollToElement } from '../../../../../../../functions/scrollers/scroll-to-element'
 import { requiredInputs, requiredInputsArray } from '../../../constants/required-inputs'
 import { instantScroll } from '../../../../../../../functions/scrollers/instant-scroll'
+import {
+  USER_TRACK,
+  USER_CREATE_TRACK
+} from '../../../../../../../../shared/constants/tracks/tracks'
 
 export function publish() {
   const {
     changeControl,
-    authorized
+    authorized,
+    changeRender
   } = this.props
 
   const validationObject = {
@@ -25,5 +30,10 @@ export function publish() {
   }
 
   instantScroll()
-  changeControl({ step: authorized ? 'publishing' : 'account-data' })
+  if (authorized) {
+    return changeControl({ step: 'publishing' })
+  }
+  
+  changeControl({ step: 'creating-user' })
+  changeRender({ [USER_TRACK]: true, [USER_CREATE_TRACK]: true })
 }

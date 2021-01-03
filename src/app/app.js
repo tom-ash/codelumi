@@ -42,10 +42,10 @@ class App extends React.Component {
       <div id='app-container'>
         <Header />
         <div id='app-inner-container'>
-          {renderUser && <User />}
-          {renderAnnouncement && <Announcement />}
-          {renderPage && <Page />}
           {renderVisitor && <Visitor />}
+          {renderAnnouncement && <Announcement />}
+          {renderUser && <User />}
+          {renderPage && <Page />}
         </div>
         <Footer />
       </div>
