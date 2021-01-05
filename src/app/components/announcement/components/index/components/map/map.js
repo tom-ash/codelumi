@@ -59,7 +59,6 @@ class AnnouncementIndexMap extends React.Component {
             ref={this.miniList}
             id='mini-list'
           >
-            {console.log(renderCatalogue)}
             {announcements !== null && announcements.map((announcement, index) => (
               <AnnouncementShowMiniTile
                 key={index}

@@ -49,8 +49,8 @@ export const ANNOUNCEMENT_CREATE_URLS = {
 }
 
 export const ANNOUNCEMENT_EDIT_URLS = {
-  [PL]: 'edytuj-ogloszenie',
-  [EN]: 'edit-announcement'
+  [PL]: /^edytuj-ogloszenie\/\d+$/,
+  [EN]: /^edit-announcement\/\d+$/
 }
 
 export const ANNOUNCEMENT_INDEX_CATALOGUE_URLS = {

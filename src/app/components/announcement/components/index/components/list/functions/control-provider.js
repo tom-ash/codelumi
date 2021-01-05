@@ -33,7 +33,10 @@ export function controlProvider(announcement, index) {
       :
       this.buttonProvider('Pokaż', 'Show', announcement, index, this.triggerVisible, ' hide-show')
       }
-      {this.buttonProvider('Usuń', 'Delete', announcement, index, () => this.props.changeControl({ beingDeleted: announcement.id }), ' delete')}
+      {this.buttonProvider('Usuń', 'Delete', announcement, index, () => {
+        this.props.changeControl({ beingDeleted: announcement.id })
+        // window.location.reload()
+      }, ' delete')}
       <div className='float-clear' />
     </div>
   )

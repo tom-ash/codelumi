@@ -11,7 +11,7 @@ const WARSAW_URL = {
   [EN]: 'warsaw'
 }
 
-export function buildAnnouncementUrl(overridenLang) {
+export function buildAnnouncementShowUrl() {
   const {
     language,
     announcementShowData: {
@@ -20,11 +20,11 @@ export function buildAnnouncementUrl(overridenLang) {
       district
     }
   } = this.props
-  const lang = overridenLang || language
+  const lang = language
 
   if (!id) return ''
 
   return (
-    `${CLIENT_URL}/${id}-${parseCategoryForUrl(category)[lang]}-${FOR_LEASE[lang]}-${WARSAW_URL[lang]}-${parseDistrictForUrl(district)}`
+    `${id}-${parseCategoryForUrl(category)[lang]}-${FOR_LEASE[lang]}-${WARSAW_URL[lang]}-${parseDistrictForUrl(district)}`
   )
 }

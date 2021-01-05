@@ -1,13 +1,14 @@
-import routeRenders from '../../../shared/constants/routes/renders'
 import { getPureUrl } from '../../../shared/functions/getters/get-pure-url'
 import { getRoute } from '../../../shared/functions/getters/get-route'
+import routeRenders from '../../../shared/constants/routes/renders'
+import { renderState } from '../../constants/render-state'
 import {
   PAGE_TRACK,
   PAGE_SHOW_TRACK,
   PAGE_NOT_FOUND_TRACK
 } from '../../../shared/constants/tracks/tracks'
 
-export function matchRenderToRoute({ popState }) {
+export function matchRenderToRoute() {
   if (typeof window === 'undefined') return
 
   const {
@@ -25,7 +26,7 @@ export function matchRenderToRoute({ popState }) {
     } = route
   
     changeApp({ language })
-    changeRender({ [track]: true, ...routeRenders[track] })
+    changeRender({ ...renderState, [track]: true, ...routeRenders[track] })
   } else {
     const {
       changePageShowData

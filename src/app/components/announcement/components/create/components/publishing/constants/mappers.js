@@ -9,7 +9,6 @@ export const mapStateToProps = (store) => {
   } = store.user.authorize.data
 
   const {
-    editing,
     connecting,
     success,
     publishing
@@ -51,7 +50,6 @@ export const mapStateToProps = (store) => {
     language,
     authorized,
     phoneVerified,
-    editing,
     connecting,    
     success,
     publishing,

@@ -17,7 +17,8 @@ export function matchRouteToRenderAndLanguage() {
   let path = getPath.apply(this, [route])
 
   if (path === null) return
+  const absolutePath = `${CLIENT_URL}/${path === '/' ? '' : `${path}`}`
 
   changeApp({ shouldMatchRouteToRenderAndLanguage: false })
-  window.history.pushState({ path }, '', path)
+  window.history.pushState({}, '', absolutePath)
 }

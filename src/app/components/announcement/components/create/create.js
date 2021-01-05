@@ -92,7 +92,7 @@ class AnnouncementCreate extends React.Component {
           scalableVectorGraphics={scalableVectorGraphics}
         />
         {step === 'form' &&
-        <form>
+        <>
           <div className='required-inputs'>
             <AnnouncementCreatePrimary />
             <AnnouncementCreatePictures />
@@ -115,7 +115,7 @@ class AnnouncementCreate extends React.Component {
               <ManagedButton {...this.addAnnouncementManager()} />
             </div>
           </div>
-        </form>}
+        </>}
         {step === 'publishing' &&
         <div className='requesting'>
           <div className='inner'>

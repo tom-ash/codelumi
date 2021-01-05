@@ -52,10 +52,9 @@ export function componentDidUpdate(prevProps) {
     this.matchRouteToRenderAndLanguage()
   }
 
-  // TODO !!! TURN ON
-  // if (!googleAnalyticsLoaded && !googleAnalyticsLoading && statisticsConsent) {
-  //   loadGoogleAnalytics.call(this)
-  // }
+  if (!googleAnalyticsLoaded && !googleAnalyticsLoading && statisticsConsent) {
+    loadGoogleAnalytics.call(this)
+  }
 }
 
 function getScalableVectorGraphics() {

@@ -20,6 +20,9 @@ export const mapStateToProps = (store) => {
     marketingConsent
   } = store.visitor.legal.privacy.settings
   const {
+    data: announcementCreateData
+  } = store.announcement.create
+  const {
     data: announcementShowData
   } = store.announcement.show
   const {
@@ -50,6 +53,7 @@ export const mapStateToProps = (store) => {
     renderVisitor,
     renderAnnouncement,
     renderUser,
+    announcementCreateData,
     announcementShowData,
     pageShowData
   }

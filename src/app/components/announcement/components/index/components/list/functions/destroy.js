@@ -14,5 +14,6 @@ export function destroy(id) {
   })
   .then(() => {
     this.props.changeControl({ fetch: true, connecting: false, beingDeleted: null })
+    this.fetchAnnouncements()
   })
 }

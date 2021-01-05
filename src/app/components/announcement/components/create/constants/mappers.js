@@ -1,15 +1,18 @@
+import { ANNOUNCEMENT_EDIT_TRACK } from '../../../../../../shared/constants/tracks/tracks'
+
 export const mapStateToProps = (store) => {
   const {
     language,
     isMobile,
     scalableVectorGraphics
   } = store.app
-
+  const {
+    [ANNOUNCEMENT_EDIT_TRACK]: renderEdit
+  } = store.render
   const {
     authorized,
     admin
   } = store.user.authorize.data
-
   const {
     control,
     inputs,
@@ -19,7 +22,6 @@ export const mapStateToProps = (store) => {
 
   const {
     step,
-    editing,
     connecting,
     showDescription
   } = control
@@ -54,10 +56,10 @@ export const mapStateToProps = (store) => {
   } = store.user.create.data
 
   return {
+    renderEdit,
     language,
     scalableVectorGraphics,
     step,
-    editing,
     connecting,
     id,
     category,

@@ -78,6 +78,8 @@ class AnnouncementTile extends React.Component {
       changeRoute
     } = this.props
 
+    console.log(this.props)
+
     const venueShow = venue === 'show'
     const positionFromTop = getPositionFromTop.apply(this)
     const deviceClasss = device === 'largePc' ? ' large-pc' : ''

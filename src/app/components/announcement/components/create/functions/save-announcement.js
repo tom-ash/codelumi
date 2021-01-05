@@ -4,6 +4,7 @@ import { getAccessToken } from '../../../../user/components/authorize/components
 
 export function saveAnnouncement() {
   const {
+    renderEdit,
     changeControl,
     changeData,
     connecting
@@ -12,11 +13,14 @@ export function saveAnnouncement() {
   let destination = '/announcements'
   let method = 'POST'
   if (connecting) return
-  this.props.changeControl({ connecting: true })
-  if (this.props.editing) {
+
+  changeControl({ connecting: true })
+
+  if (renderEdit) {
     destination = `/announcements/${this.props.id}`
     method = 'PUT'
   }
+
   const access_token = getAccessToken()
   fetch(apiUrl + destination, {
     method: method,
@@ -30,7 +34,7 @@ export function saveAnnouncement() {
     if (response.ok) return response.json()
   })
   .then(({ id }) => {
-    changeData({ id })
+    if (id) changeData({ id })
     changeControl({
       connecting: false,
       step: 'success'

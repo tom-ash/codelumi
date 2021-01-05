@@ -1,16 +1,7 @@
 export function componentDidMount() {
-  const {
-    changeControl,
-    changePageShowData,
-    changePostRender
-  } = this.props
+  const { renderEdit } = this.props
 
-  // if (RENDER_EDIT) {
-  //   this.getAnnouncement()
-  //   changeControl({ editing: true })
-  // }
-
-  // CHANGE_RENDERS
+  if (renderEdit) this.getAnnouncement()
 }
 
 export function componentDidUpdate() {

@@ -14,6 +14,7 @@ import { popStateHandler } from './functions/popStateHandler'
 import { languageObjectHandler } from './functions/language-handler'
 import { matchRenderToRoute } from './functions/routers/match-state-to-path'
 import { matchRouteToRenderAndLanguage } from './functions/routers/match-path-to-state'
+import { changeRoute } from './functions/routers/change-route'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
@@ -28,6 +29,7 @@ class App extends React.Component {
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.matchRenderToRoute = matchRenderToRoute.bind(this)
     this.matchRouteToRenderAndLanguage = matchRouteToRenderAndLanguage.bind(this)
+    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {

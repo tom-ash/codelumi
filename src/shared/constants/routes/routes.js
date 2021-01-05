@@ -69,7 +69,8 @@ import {
   ANNOUNCEMENT_CREATE_DESCRIPTIONS,
   ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS
 } from './descriptions'
-import { buildAnnouncementUrl } from '../../functions/builders/announcement/url'
+import { buildAnnouncementShowUrl } from '../../functions/builders/announcement/show-url'
+import { buildAnnouncementEditUrl } from '../../functions/builders/announcement/edit-url'
 
 export default [
   {
@@ -189,6 +190,7 @@ export default [
   },
   {
     url: ANNOUNCEMENT_EDIT_URLS[PL],
+    buildUrl: buildAnnouncementEditUrl,
     title: ANNOUNCEMENT_EDIT_TITLES[PL],
     track: ANNOUNCEMENT_EDIT_TRACK,
     lang: PL,
@@ -196,6 +198,7 @@ export default [
   },
   {
     url: ANNOUNCEMENT_EDIT_URLS[EN],
+    buildUrl: buildAnnouncementEditUrl,
     title: ANNOUNCEMENT_EDIT_TITLES[EN],
     track: ANNOUNCEMENT_EDIT_TRACK,
     lang: EN,
@@ -231,7 +234,7 @@ export default [
   },
   {
     url: ANNOUNCEMENT_SHOW_URLS[PL],
-    buildUrl: buildAnnouncementUrl,
+    buildUrl: buildAnnouncementShowUrl,
     title: ANNOUNCEMENT_SHOW_TITLES[PL],
     track: ANNOUNCEMENT_SHOW_TRACK,
     lang: PL,
@@ -239,7 +242,7 @@ export default [
   },
   {
     url: ANNOUNCEMENT_SHOW_URLS[EN],
-    buildUrl: buildAnnouncementUrl,
+    buildUrl: buildAnnouncementShowUrl,
     title: ANNOUNCEMENT_SHOW_TITLES[EN],
     track: ANNOUNCEMENT_SHOW_TRACK,
     lang: EN,

@@ -1,4 +1,3 @@
-import { strike } from 'managed-inputs'
 import {
   ANNOUNCEMENT_INDEX_MAP_TRACK,
   ANNOUNCEMENT_INDEX_CATALOGUE_TRACK
@@ -20,7 +19,9 @@ export const mapStateToProps = (store) => {
   const {
     authorized
   } = store.user.authorize.data
-
+  const {
+    data: announcementCreateData
+  } = store.announcement.create
   const {
     data: announcementShowData
   } = store.announcement.show
@@ -33,6 +34,7 @@ export const mapStateToProps = (store) => {
     language,
     authorized,
     device,
+    announcementCreateData,
     announcementShowData,
     render,
     pageShowData,

@@ -4,11 +4,10 @@ import { furnishings } from '../../../constants/furnishings'
 import { getAccessToken } from '../../../../user/components/authorize/components/tokens/functions/get-tokens'
 
 export function getAnnouncement() {
-  const { announcementId } = this.props
+  const id = this.props.id || +window.location.pathname.match(/\d+/)[0]
 
-  if (!announcementId) return
   const access_token = getAccessToken()
-  fetch(`${apiUrl}/announcements/${announcementId}/edit`, {
+  fetch(`${apiUrl}/announcements/${id}/edit`, {
     headers: {
       'Content-Type': 'application/json',
       access_token
@@ -20,7 +19,11 @@ export function getAnnouncement() {
     }
   })
   .then(json => {
-    const { changeInputs, changeControl } = this.props
+    const {
+      changeControl,
+      changeInputs,
+      changeData
+    } = this.props
     const {
       id,
       category,
@@ -67,6 +70,7 @@ export function getAnnouncement() {
       ...englishDescription && { addEnglishDescription: true },
     }
 
+    changeData({ id })
     changeInputs(appendAvailabilityDate(availabilityDate, announcementInputs))
     if (availabilityDate) changeControl({ showAvilabilityDate: true })
   })

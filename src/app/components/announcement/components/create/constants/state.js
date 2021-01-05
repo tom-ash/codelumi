@@ -20,7 +20,6 @@ export const control = {
   connecting: false,
   publishing: false,
   success: false,
-  editing: false,
   availabilityDateFocus: false,
   calendarMouseOver: false,
   addingPicture: false,

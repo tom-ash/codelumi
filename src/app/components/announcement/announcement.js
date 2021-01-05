@@ -16,13 +16,14 @@ class Announcement extends React.Component {
   render() {
     const {
       renderCreate,
+      renderEdit,
       renderIndex,
       renderShow
     } = this.props
 
     return (
       <React.Fragment>
-        {renderCreate && <AnnouncementCreate />}
+        {(renderCreate || renderEdit) && <AnnouncementCreate />}
         {renderIndex && <AnnouncementIndex />}
         {renderShow && <AnnouncementShow />}
       </React.Fragment>
