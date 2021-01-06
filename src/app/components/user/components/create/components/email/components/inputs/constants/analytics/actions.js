@@ -1,0 +1,7 @@
+export const ACCOUNT_TYPE_SELECTED_ACTION = 'Account Type Selected'
+export const EMAIL_ADDRESS_INPUTTED_ACTION = 'Email Address Inputted'
+export const PASSWORD_INPUTTED_ACTION = 'Password Inputted'
+export const FIRST_NAME_INPUTTED_ACTION = 'First Name Inputted'
+export const BUSINESS_NAME_INPUTTED_ACTION = 'Business Name Inputted'
+export const AREA_CODE_SELECTED_ACTION = 'Area Code Selected'
+export const PHONE_NUMBER_INPUTTED_ACTION = 'Phone Number Inputted'

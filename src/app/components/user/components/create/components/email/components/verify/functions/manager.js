@@ -1,6 +1,13 @@
 import React from 'react'
 import { inputs } from '../../../../../../../constants/inputs'
 import ButtonSpinner from '../../../../../../../../support/components/button-spinner/button-spinner'
+import { sendGaEvent } from '../../../../../../../../../functions/google-analytics/send-ga-event'
+import analyticEvents from '../constants/analytics/events'
+
+const {
+  VERIFICATION_CODE_INPUTTED_EVENT,
+  VERIFY_CLICKED_EVENT
+} = analyticEvents
 
 export function verificationManager() {
   const { icon } = inputs.verification
@@ -12,7 +19,10 @@ export function verificationManager() {
     classNames: { container: 'form-input text' },
     label: this.languageHandler('Kod weryfikacyjny', 'Verification Code'),
     onChange: () => changeErrors({ verification: { pl: '', en: '' }}),
-    onBlur: value => this.verificationManager().validate(value),
+    onBlur: value => {
+      this.verificationManager().validate(value)
+      sendGaEvent(VERIFICATION_CODE_INPUTTED_EVENT)
+    },
     validate: () => {
       const verificationCode = document.getElementById('user-create-email-verification').value
       if (verificationCode.length !== 4) {
@@ -42,6 +52,9 @@ export function buttonManager() {
         languageObjectHandler={this.languageObjectHandler}
       />
     ),
-    onClick: () => this.verify()
+    onClick: () => {
+      this.verify()
+      sendGaEvent(VERIFY_CLICKED_EVENT)
+    }
   }
 }
