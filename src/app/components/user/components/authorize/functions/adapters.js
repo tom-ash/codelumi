@@ -10,5 +10,4 @@ export function deauthorizeUser() {
   deleteCookie('access_token')
   resetAuthorizeData({ authorized: false, name: null, phoneVerified: null })
   changeRender({ [USER_SHOW_TRACK]: false })
-  // TODO CHANGE ROUTE WHEN USER EDIT, MY ANNOUNCEMENTS
 }

@@ -13,7 +13,5 @@ $small-tablet: "#{$screen} and (max-width: #{$breakpoint-tablet-small-max})" !de
 $phone: "#{$screen} and (max-width: #{$breakpoint-phone-large-max})" !default;
 $small-phone: "#{$screen} and (max-width: #{$breakpoint-phone-smal-max})" !default;
 
-
-// TODO: DELETE
 $breakpoint-tablet-large-min: 769px;
 $breakpoint-tablet-small-min: 481px;

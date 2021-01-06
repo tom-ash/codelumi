@@ -2,6 +2,9 @@ import {
   ANNOUNCEMENT_INDEX_MAP_TRACK,
   ANNOUNCEMENT_INDEX_CATALOGUE_TRACK
 } from '../../../../../../shared/constants/tracks/tracks'
+import {
+  RENDER_SIDE_LINKS_TRACK
+} from '../constants/tracks'
 
 export const mapStateToProps = (store) => {
   const {
@@ -12,23 +15,17 @@ export const mapStateToProps = (store) => {
     [ANNOUNCEMENT_INDEX_MAP_TRACK]: renderMap,
     [ANNOUNCEMENT_INDEX_CATALOGUE_TRACK]: renderCatalogue
   } = store.render
-  const {
-    render
-  } = store
-
-  const {
-    authorized
-  } = store.user.authorize.data
+  const { render } = store
+  const { authorized } = store.user.authorize.data
   const {
     data: announcementCreateData
   } = store.announcement.create
   const {
     data: announcementShowData
   } = store.announcement.show
+  const { data: pageShowData } = store.page.show
+  const { [RENDER_SIDE_LINKS_TRACK]: renderSideLinks } = store.scaffold.header.control
 
-  const {
-    data: pageShowData
-  } = store.page.show
 
   return {
     language,
@@ -39,7 +36,8 @@ export const mapStateToProps = (store) => {
     render,
     pageShowData,
     renderMap,
-    renderCatalogue
+    renderCatalogue,
+    renderSideLinks
   }
 }
   

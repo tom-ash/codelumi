@@ -19,7 +19,7 @@ export function controlProvider(announcement, index) {
           {announcement.createdAt && announcement.createdAt.slice(0, 10)}
         </div>
         <div className='info'>
-          {announcement.createdAt && announcement.updatedAt.slice(0, 10)}
+          {announcement.updatedAt && announcement.updatedAt.slice(0, 10)}
         </div>
         <div className='info'>
           <i className='fas fa-users' />{announcement.views}

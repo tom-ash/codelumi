@@ -58,7 +58,7 @@ export function titleManager() {
       </div>
     ),
     onClick: () => {
-      if (renderMap) return
+      if (renderMap && !renderCatalogue) return
       if (renderCatalogue) return this.changeRoute(ROOT_TRACK)
 
       resetAnnouncementIndexControl()

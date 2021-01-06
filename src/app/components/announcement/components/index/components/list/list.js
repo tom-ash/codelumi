@@ -24,8 +24,6 @@ class AnnouncementIndexList extends React.Component {
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.componentDidMount = lifecycle.componentDidMount
-    this.componentDidUpdate = lifecycle.componentDidUpdate
-    this.componentWillUnmount = lifecycle.componentWillUnmount
     this.controlProvider = controlProvider.bind(this)
     this.buttonProvider = buttonProvider.bind(this)
     this.edit = edit.bind(this)

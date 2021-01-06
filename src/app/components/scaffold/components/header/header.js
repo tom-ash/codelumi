@@ -8,6 +8,8 @@ import { languageObjectHandler } from '../../../../functions/language-handler'
 import { labelProvider } from '../../../user/components/show/functions/label-provider'
 import { matchPathToLanguage } from '../../../../functions/routers/match-path-to-language'
 import { HeaderProvider } from '../../../announcement/components/index/functions/header-provider'
+import { linksProvider } from './functions/links-provider'
+import { RENDER_SIDE_LINKS_TRACK } from './constants/tracks'
 
 class Header extends React.Component {
   constructor(props) {
@@ -22,16 +24,21 @@ class Header extends React.Component {
     this.labelProvider = labelProvider.bind(this)
     this.matchPathToLanguage = matchPathToLanguage.bind(this)
     this.changeRoute = changeRoute.bind(this)
+    this.linksProvider = linksProvider.bind(this)
   }
 
   render() {
     const {
+      renderMap,
+      renderCatalogue,
+      renderSideLinks,
       changeControl,
       device,
       authorized
     } = this.props
     const isLargePc = device === 'largePc'
     const showAddAnnouncement = ['largePc', 'smallPc', 'largeTablet'].indexOf(device) !== -1
+    const links = this.linksProvider({ authorized })
 
     return (
       <div id='header'>
@@ -40,13 +47,7 @@ class Header extends React.Component {
           <div className='links-icon-container'>
             <div
               className='links-icon'
-              onClick={() => {
-                if (!authorized) {
-                  TODO
-                } else {
-                  TODO
-                }
-              }}
+              onClick={() => changeControl({ [RENDER_SIDE_LINKS_TRACK]: true })}
             >
               <div className='link-icon' />
               <div className='link-icon' />
@@ -56,30 +57,28 @@ class Header extends React.Component {
           <div id='warsaw-lease'>
             <ManagedLink {...this.titleManager()} />
           </div>
-          {/* <h1 className='title'>
+          <h1 className='title'>
             <HeaderProvider
-              TODO
+              renderMap={renderMap}
+              renderCatalogue={renderCatalogue}
               languageObjectHandler={this.languageObjectHandler}
             />
-          </h1> */}
+          </h1>
           <div className='top-links'>
             {showAddAnnouncement && <ManagedLink {...this.addAnnouncementManager()} />}
-            {isLargePc &&
-            <>
-              {!authorized && <ManagedLink {...this.signUpManager()} />}
-              {!authorized && <ManagedLink {...this.signInManager()} />}
-              {authorized && <ManagedLink {...this.myAccountManager()} />}
-            </>}
+            {isLargePc && links}
             <ManagedLink {...this.languageManager()} />
           </div>
-          {/* {TODO &&
-          <div className='side-links-cover' onClick={() => changeControl({ TODO: false })}>
+          {renderSideLinks &&
+          <div
+            className='side-links-cover'
+            onClick={() => changeControl({ [RENDER_SIDE_LINKS_TRACK]: false })}
+          >
             <div className='side-links'>
               <ManagedLink {...this.addAnnouncementManager()} />
-              <ManagedLink {...this.signUpManager()} />
-              <ManagedLink {...this.signInManager()} />
+              {links}
             </div>
-          </div>} */}
+          </div>}
         </div>
       </div>
     )

@@ -9,7 +9,6 @@ const AnnouncementIndexList = loadable(() => import('./components/list/list'))
 import { buildRequestParameters } from './functions/build-parameters'
 import { fetchAnnouncements } from './functions/fetch-announcements'
 import { paramsReader } from './functions/params-reader'
-import * as lifecycle from './functions/lifecycle'
 import { paramsBuilder } from './functions/params-builder'
 import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
 import { parseCurrency } from '../../functions/currency-parsers'
@@ -26,8 +25,6 @@ class AnnouncementIndexSearch extends React.Component {
     super(props)
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
-    this.componentDidMount = lifecycle.componentDidMount
-    this.componentDidUpdate = lifecycle.componentDidUpdate
     this.paramsReader = paramsReader.bind(this)
     this.fetchAnnouncements = fetchAnnouncements.bind(this)
     this.buildRequestParameters = buildRequestParameters.bind(this)
