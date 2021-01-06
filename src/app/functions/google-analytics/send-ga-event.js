@@ -4,9 +4,11 @@ export function sendGaEvent(
 ) {
   if (!window || !window.ga || !event) return
 
-  window.ga('send', {
-    hitType: 'event',
-    ...event,
-    ...eventLabel && eventLabel
-  })
+  try {
+    window.ga('send', {
+      hitType: 'event',
+      ...event,
+      ...eventLabel && eventLabel
+    })
+  } catch {}
 }

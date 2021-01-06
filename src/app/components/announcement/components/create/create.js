@@ -43,8 +43,6 @@ class AnnouncementCreate extends React.Component {
     this.languageHandler = languageHandler.bind(this)
     this.languageObjectHandler = languageObjectHandler.bind(this)
     this.getAnnouncement = getAnnouncement.bind(this)
-    this.emailVerificationCodeManager = managers.emailVerificationCodeManager.bind(this)
-    this.confirmManager = managers.confirmManager.bind(this)
     this.addAnnouncementManager = managers.addAnnouncementManager.bind(this)
     this.categoryManager = categoryManager.bind(this)
     this.districtManager = districtManager.bind(this)

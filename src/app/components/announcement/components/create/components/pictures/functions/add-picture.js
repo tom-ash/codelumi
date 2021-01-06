@@ -1,3 +1,6 @@
+import { sendGaEvent } from '../../../../../../../functions/google-analytics/send-ga-event'
+import { ANNOUNCEMENT_CREATE_PICTURE_ADDED_EVENT } from '../../../../../../../constants/analytics-events'
+
 let oc
 let octx
 
@@ -25,6 +28,8 @@ export function addPicture(files) {
     this.props.changeControl({ addingPicture: false })
     this.props.changeErrors({ pictures: { pl: '', en: '' } })
   })
+
+  sendGaEvent(ANNOUNCEMENT_CREATE_PICTURE_ADDED_EVENT)
 }
 
 function createBlob(picture, callback) {

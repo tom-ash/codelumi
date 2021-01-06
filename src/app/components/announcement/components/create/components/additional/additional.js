@@ -11,6 +11,8 @@ import { parseDate } from '../../../../../../functions/date-parsers'
 import { labelProvider } from '../../../../../../functions/providers/label'
 import { floorsProvider } from './functions/floors-provider'
 import { getRentAmounts } from '../../functions/get-rent-amounts'
+import { sendGaEvent } from '../../../../../../functions/google-analytics/send-ga-event'
+import { ANNOUNCEMENT_CREATE_AVAILABILITY_DATE_SELECTED_EVENT } from '../../../../../../constants/analytics-events'
 
 class AnnouncementCreateAdditional extends React.Component {
   constructor(props) {
@@ -55,6 +57,7 @@ class AnnouncementCreateAdditional extends React.Component {
               <Calendar 
                 onChange = {(date) => {
                   this.props.changeInputs({ availabilityDate: parseDate(date) })
+                  sendGaEvent(ANNOUNCEMENT_CREATE_AVAILABILITY_DATE_SELECTED_EVENT)
                 }}
                 value={this.props.availabilityDate ? new Date(this.props.availabilityDate) : null}
                 locale={this.props.language == 'pl' ? 'pl' : 'en'}
