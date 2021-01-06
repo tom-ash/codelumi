@@ -1,23 +1,19 @@
 export const inputs = {
   category: {
-    icon: 'far fa-list-alt',
     all: {
       pl: 'Kategoria',
       en: 'Category'
     }
   },
   district: {
-    icon: 'fas fa-map-marker-alt',
     all: {
       pl: 'Dzielnica',
       en: 'District'
     }
   },
   rent: {
-    icon: 'fas fa-coins',
   },
   rentCurrency: {
-    icon: 'fas fa-coins',
     all: {
       pl: 'Waluta ceny (czynszu)',
       en: 'Rent Rurrency'

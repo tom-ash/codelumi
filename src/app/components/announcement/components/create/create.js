@@ -1,5 +1,4 @@
 import React from 'react'
-import loadable from '@loadable/component'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import AnnouncementCreatePrimary from './components/primary/primary'

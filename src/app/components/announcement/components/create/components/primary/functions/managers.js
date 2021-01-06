@@ -3,9 +3,15 @@ import { inputs } from '../../../../../constants/inputs'
 import { requiredInputs } from '../../../constants/required-inputs'
 import { categories } from '../../../../../constants/categories'
 import { districts } from '../../../../../constants/districts'
-import { sendGaEvent } from '../../../../../../../functions/google-analytics/send-ga-event'
-import { analyticsEvents } from '../../../../../../../constants/analytics-events'
 import ScalableVectorGraphic from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import { sendGaEvent } from '../../../../../../../functions/google-analytics/send-ga-event'
+import analyticEvents from '../constants/analytics/events'
+
+const {
+  CATEGORY_SELECTED_EVENT,
+  DISTRICT_SELECTED_EVENT,
+  AREA_INPUTTED_EVENT
+} = analyticEvents
 
 const noError = {
   pl: '',
@@ -47,8 +53,8 @@ export function categoryManager() {
     children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
     onFocus: () => changeErrors({ category: noError }),
     onSelect: option => {
-      sendGaEvent(analyticsEvents.announcement.create.category)
       this.onSelectHandler('category', option.value)
+      sendGaEvent(CATEGORY_SELECTED_EVENT)
     },
     onBlur: () => this.categoryManager().validate(),
     validate: () => this.handleErrorOnValidate('category', value),
@@ -74,8 +80,8 @@ export function districtManager() {
     children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
     onFocus: () => this.props.changeErrors({ district: noError }),
     onSelect: option => {
-      sendGaEvent(analyticsEvents.announcement.create.district)
       this.onSelectHandler('district', option.value)
+      sendGaEvent(DISTRICT_SELECTED_EVENT)
     },
     onBlur: () => this.districtManager().validate(),
     validate: () => this.handleErrorOnValidate('district', this.props.district),
@@ -113,9 +119,9 @@ export function areaManager() {
     onFocus: () => this.props.changeErrors({ area: noError }),
     onChange: value => this.props.changeInputs({ area: value }),
     onBlur: () => {
-      sendGaEvent(analyticsEvents.announcement.create.area)
       this.areaManager().validate()
       this.getRentAmounts()
+      sendGaEvent(AREA_INPUTTED_EVENT)
     },
     validate: () => this.handleErrorOnValidate('area', this.props.area),
     error: this.languageObjectHandler(this.props.errors.area)

@@ -1,5 +1,5 @@
 import { sendGaEvent } from '../../../../../functions/google-analytics/send-ga-event'
-import { ANNOUNCEMENT_CREATE_PUBLISH_CLICKED_EVENT } from '../../../../../constants/analytics-events'
+import { analyticEvent } from '../constants/analytic-event'
 
 export function addAnnouncementManager() {
   return {
@@ -7,7 +7,7 @@ export function addAnnouncementManager() {
     label: this.languageHandler('Dalej', 'Next'),
     onClick: () => {
       this.publish()
-      sendGaEvent(ANNOUNCEMENT_CREATE_PUBLISH_CLICKED_EVENT)
+      sendGaEvent(analyticEvent)
     }
   }
 }

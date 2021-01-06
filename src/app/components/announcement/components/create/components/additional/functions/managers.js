@@ -3,14 +3,16 @@ import { inputs } from '../../../../../constants/inputs'
 import { numberOptionsProvider } from '../../../../../../../functions/shared'
 import ScalableVectorGraphic from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 import { sendGaEvent } from '../../../../../../../functions/google-analytics/send-ga-event'
-import {
-  ANNOUNCEMENT_CREATE_RENT_INPUTTED_EVENT,
-  ANNOUNCEMENT_CREATE_RENT_CURRENCY_SELECTED_EVENT,
-  ANNOUNCEMENT_CREATE_ROOMS_INPUTTED_EVENT,
-  ANNOUNCEMENT_CREATE_FLOOR_INPUTTED_EVENT,
-  ANNOUNCEMENT_CREATE_TOTAL_FLOORS_INPUTTED_EVENT,
-  ANNOUNCEMENT_CREATE_SHOW_AVAILABILITY_DATE_EVENT
-} from '../../../../../../../constants/analytics-events'
+import analyticEvents from '../constants/analytics/events'
+
+const {
+  RENT_INPUTTED_EVENT,
+  RENT_CURRENCY_SELECTED_EVENT,
+  ROOMS_INPUTTED_EVENT,
+  FLOOR_INPUTTED_EVENT,
+  TOTAL_FLOORS_INPUTTED_EVENT,
+  SHOW_AVAILABILITY_DATE_EVENT
+} = analyticEvents
 
 export function rentAmountManager() {
   const {
@@ -40,7 +42,7 @@ export function rentAmountManager() {
     onChange: value => changeInputs({ [rentAmountType]: value }),
     onBlur: () => {
       this.getRentAmounts()
-      sendGaEvent(ANNOUNCEMENT_CREATE_RENT_INPUTTED_EVENT)
+      sendGaEvent(RENT_INPUTTED_EVENT)
     }
   }
 }
@@ -60,7 +62,7 @@ export function rentCurrencyManager() {
     options: currencies,
     onSelect: ({ value: optionValue }) => {
       this.onSelectHandler('rentCurrency', optionValue)
-      sendGaEvent(ANNOUNCEMENT_CREATE_RENT_CURRENCY_SELECTED_EVENT)
+      sendGaEvent(RENT_CURRENCY_SELECTED_EVENT)
     }
   }
 }
@@ -85,7 +87,7 @@ export function roomsManager() {
     options: numberOptionsProvider(99),
     onSelect: (option) => {
       this.onSelectHandler('rooms', option.value)
-      sendGaEvent(ANNOUNCEMENT_CREATE_ROOMS_INPUTTED_EVENT)
+      sendGaEvent(ROOMS_INPUTTED_EVENT)
     }
   }
 }
@@ -108,7 +110,7 @@ export function floorManager() {
     options: this.floorsProvider(),
     onSelect: (option) => {
       this.onSelectHandler('floor', option.value)
-      sendGaEvent(ANNOUNCEMENT_CREATE_FLOOR_INPUTTED_EVENT)
+      sendGaEvent(FLOOR_INPUTTED_EVENT)
     }
   }
 }
@@ -131,7 +133,7 @@ export function totalFloorsManager() {
     options: numberOptionsProvider(99),
     onSelect: (option) => {
       this.onSelectHandler('totalFloors', option.value)
-      sendGaEvent(ANNOUNCEMENT_CREATE_TOTAL_FLOORS_INPUTTED_EVENT)
+      sendGaEvent(TOTAL_FLOORS_INPUTTED_EVENT)
     }
   }
 }
@@ -151,7 +153,7 @@ export function showAvailabilityDateManager() {
     }),
     onClick: value => {
       changeControl({ showAvilabilityDate: value })
-      sendGaEvent(ANNOUNCEMENT_CREATE_SHOW_AVAILABILITY_DATE_EVENT)
+      sendGaEvent(SHOW_AVAILABILITY_DATE_EVENT)
     }
   }
 }

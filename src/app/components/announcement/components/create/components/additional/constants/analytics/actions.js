@@ -1,0 +1,7 @@
+export const RENT_INPUTTED_ACTION = 'Rent Inputted'
+export const RENT_CURRENCY_SELECTED_ACTION = 'Rent Currency Selected'
+export const ROOMS_INPUTTED_ACTION = 'Rooms Inputted'
+export const FLOOR_INPUTTED_ACTION = 'Floor Inputted'
+export const TOTAL_FLOORS_INPUTTED_ACTION = 'Total Floors Inputted'
+export const SHOW_AVAILABILITY_DATE_ACTION = 'Availability Date Shown'
+export const AVAILABILITY_DATE_SELECTED_ACTION = 'Availability Date Selected'

@@ -1,9 +1,11 @@
 import { furnishings } from '../../../../../constants/furnishings'
 import { sendGaEvent } from '../../../../../../../functions/google-analytics/send-ga-event'
-import {
-  ANNOUNCEMENT_CREATE_SHOW_FURNISHINGS_EVENT,
-  ANNOUNCEMENT_CREATE_FURNISHINGS_ADDED_EVENT
-} from '../../../../../../../constants/analytics-events'
+import analyticEvents from '../constants/analytics/events'
+
+const {
+  FURNISHINGS_SHOWN_EVENT,
+  FURNISHINGS_SELECTED_EVENT
+} = analyticEvents
 
 export function addFurnishingsManager() {
   const {
@@ -20,7 +22,7 @@ export function addFurnishingsManager() {
     }),
     onClick: value => {
       changeInputs({ addFurnishings: value })
-      sendGaEvent(ANNOUNCEMENT_CREATE_SHOW_FURNISHINGS_EVENT)
+      sendGaEvent(FURNISHINGS_SHOWN_EVENT)
     }
   }
 }
@@ -31,7 +33,7 @@ export function furnishingsManager() {
     checkboxes: this.pickElementsForCategory(furnishings, 'furnishings'),
     onClick: (value, ref) => {
       this.props.changeInputs({ furnishings: { ...this.props.furnishings, [ref]: value}})
-      sendGaEvent(ANNOUNCEMENT_CREATE_FURNISHINGS_ADDED_EVENT)
+      sendGaEvent(FURNISHINGS_SELECTED_EVENT)
     }
   }
 }

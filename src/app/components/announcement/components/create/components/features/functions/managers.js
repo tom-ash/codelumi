@@ -1,9 +1,11 @@
 import { features } from '../../../../../constants/features'
 import { sendGaEvent } from '../../../../../../../functions/google-analytics/send-ga-event'
-import {
-  ANNOUNCEMENT_CREATE_SHOW_FEATURES_EVENT,
-  ANNOUNCEMENT_CREATE_FEATURES_ADDED_EVENT
-} from '../../../../../../../constants/analytics-events'
+import analyticEvents from '../constants/analytics/events'
+
+const {
+  FEATURES_SHOWN_EVENT,
+  FEATURES_SELECTED_EVENT
+} = analyticEvents
 
 export function addFeaturesManager() {
   const {
@@ -20,7 +22,7 @@ export function addFeaturesManager() {
     }),
     onClick: value => {
       changeInputs({ addFeatures: value })
-      sendGaEvent(ANNOUNCEMENT_CREATE_SHOW_FEATURES_EVENT)
+      sendGaEvent(FEATURES_SHOWN_EVENT)
     }
   }
 }
@@ -31,7 +33,7 @@ export function featuresManager() {
     checkboxes: this.pickElementsForCategory(features, 'features'),
     onClick: (value, ref) => {
       this.props.changeInputs({ features: { ...this.props.features, [ref]: value}})
-      sendGaEvent(ANNOUNCEMENT_CREATE_FEATURES_ADDED_EVENT)
+      sendGaEvent(FEATURES_SELECTED_EVENT)
     }
   }
 }
