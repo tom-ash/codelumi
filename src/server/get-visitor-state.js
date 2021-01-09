@@ -1,4 +1,4 @@
-import { getBooleanCookieValue } from '../../shared/functions/getters/get-boolean-cookie-value'
+import { getBooleanCookieValue } from '../shared/functions/getters/get-boolean-cookie-value'
 
 export function getVisitorState(cookies) {
   const {

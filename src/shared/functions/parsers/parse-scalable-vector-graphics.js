@@ -1,6 +1,7 @@
-export function parseScalableVectorGraphics(json) {
+export function parseScalableVectorGraphics({ svgs }) {
   const scalableVectorGraphics = {}
-  json.map(svg => {
+
+  svgs.map(svg => {
     scalableVectorGraphics[svg.name] = svg.path_data || svg.pathData
   })
 

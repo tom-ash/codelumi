@@ -1,7 +1,7 @@
 import 'react-app-polyfill/ie9';
 import Express from 'express'
 import { redirectToHTTPS } from 'express-http-to-https'
-import { handleRequest } from './handle-request/handle-request'
+import { handleRequest } from './handle-request'
 import compression from 'compression'
 import cookieParser from 'cookie-parser'
 

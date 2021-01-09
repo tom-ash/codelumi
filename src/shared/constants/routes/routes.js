@@ -71,23 +71,26 @@ import {
 } from './descriptions'
 import { buildAnnouncementShowUrl } from '../../functions/builders/announcement/show-url'
 import { buildAnnouncementEditUrl } from '../../functions/builders/announcement/edit-url'
+import { announcementIndexInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement'
 
 export default [
   {
     url: ROOT_URLS[PL],
+    lang: PL,
     track: ROOT_TRACK,
     title: ROOT_TITLES[PL],
     keywords: ROOT_KEYWORDS[PL],
     description: ROOT_DESCRIPTIONS[PL],
-    lang: PL
+    initialStateParser: announcementIndexInitialStateParser
   },
   {
     url: ROOT_URLS[EN],
+    lang: EN,
     track: ROOT_TRACK,
     title: ROOT_TITLES[EN],
     keywords: ROOT_KEYWORDS[EN],
     description: ROOT_DESCRIPTIONS[EN],
-    lang: EN
+    initialStateParser: announcementIndexInitialStateParser
   },
   {
     url: VISITOR_PRIVACY_SETTINGS_URLS[PL],
@@ -206,19 +209,21 @@ export default [
   },
   {
     url: ANNOUNCEMENT_INDEX_CATALOGUE_URLS[PL],
+    lang: PL,
     title: ANNOUNCEMENT_INDEX_CATALOGUE_TITLES[PL],
     track: ANNOUNCEMENT_INDEX_CATALOGUE_TRACK,
     keywords: ANNOUNCEMENT_INDEX_CATALOGUE_KEYWORDS[PL],
     description: ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS[PL],
-    lang: PL
+    initialStateParser: announcementIndexInitialStateParser
   },
   {
     url: ANNOUNCEMENT_INDEX_CATALOGUE_URLS[EN],
+    lang: EN,
     track: ANNOUNCEMENT_INDEX_CATALOGUE_TRACK,
     title: ANNOUNCEMENT_INDEX_CATALOGUE_TITLES[EN],
     keywords: ANNOUNCEMENT_INDEX_CATALOGUE_KEYWORDS[EN],
     description: ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS[EN],
-    lang: EN
+    initialStateParser: announcementIndexInitialStateParser
   },
   {
     url: ANNOUNCEMENT_INDEX_MY_URLS[PL],
