@@ -68,11 +68,6 @@ export const ANNOUNCEMENT_INDEX_MY_TITLES  = {
   [EN]: 'My Announcements'
 }
 
-export const ANNOUNCEMENT_SHOW_TITLES  = {
-  [PL]: '',
-  [EN]: ''
-}
-
 export const USER_CREATE_TITLES  = {
   [PL]: 'Zarejestruj',
   [EN]: 'Sign Up'

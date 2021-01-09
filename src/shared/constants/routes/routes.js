@@ -53,7 +53,6 @@ import {
   ANNOUNCEMENT_EDIT_TITLES,
   ANNOUNCEMENT_INDEX_CATALOGUE_TITLES,
   ANNOUNCEMENT_INDEX_MY_TITLES,
-  ANNOUNCEMENT_SHOW_TITLES,
   USER_CREATE_TITLES,
   USER_AUTHORIZE_TITLES,
   USER_RESET_PASSWORD_TITLES,
@@ -78,6 +77,8 @@ import { announcementShowMetaDataDescriptionParser } from '../../functions/parse
 import { announcementShowMetaDataKeywordsParser } from '../../functions/parsers/meta-data/announcement/show/keywords'
 import { announcementShowMetaDataImageParser } from '../../functions/parsers/meta-data/announcement/show/image'
 
+const DEFAULT_IMAGE_PL = `${AWS_S3_URL}/assets/mapa-wynajmu-nieruchomosci-w-warszawie.png`
+
 export default [
   {
     url: ROOT_URLS[PL],
@@ -86,6 +87,7 @@ export default [
     title: ROOT_TITLES[PL],
     keywords: ROOT_KEYWORDS[PL],
     description: ROOT_DESCRIPTIONS[PL],
+    image: DEFAULT_IMAGE_PL,
     initialStateParser: announcementIndexInitialStateParser
   },
   {
@@ -95,129 +97,149 @@ export default [
     title: ROOT_TITLES[EN],
     keywords: ROOT_KEYWORDS[EN],
     description: ROOT_DESCRIPTIONS[EN],
+    image: DEFAULT_IMAGE_PL,
     initialStateParser: announcementIndexInitialStateParser
   },
   {
     url: VISITOR_PRIVACY_SETTINGS_URLS[PL],
-    title: VISITOR_PRIVACY_SETTINGS_TITLES[PL],
+    lang: PL,
     track: VISITOR_PRIVACY_SETTINGS_TRACK,
-    lang: PL
+    title: VISITOR_PRIVACY_SETTINGS_TITLES[PL],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: VISITOR_PRIVACY_SETTINGS_URLS[EN],
-    title: VISITOR_PRIVACY_SETTINGS_TITLES[EN],
+    lang: EN,
     track: VISITOR_PRIVACY_SETTINGS_TRACK,
-    lang: EN
+    title: VISITOR_PRIVACY_SETTINGS_TITLES[EN],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: VISITOR_COOKIES_POLICY_URLS[PL],
-    title: VISITOR_COOKIES_POLICY_TITLES[PL],
+    lang: PL,
     track: VISITOR_COOKIES_POLICY_TRACK,
-    lang: PL
+    title: VISITOR_COOKIES_POLICY_TITLES[PL],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: VISITOR_COOKIES_POLICY_URLS[EN],
-    title: VISITOR_COOKIES_POLICY_TITLES[EN],
+    lang: EN,
     track: VISITOR_COOKIES_POLICY_TRACK,
-    lang: EN
+    title: VISITOR_COOKIES_POLICY_TITLES[EN],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: VISITOR_PRIVACY_POLICY_URLS[PL],
-    title: VISITOR_PRIVACY_POLICY_TITLES[PL],
+    lang: PL,
     track: VISITOR_PRIVACY_POLICY_TRACK,
-    lang: PL
+    title: VISITOR_PRIVACY_POLICY_TITLES[PL],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: VISITOR_PRIVACY_POLICY_URLS[EN],
-    title: VISITOR_PRIVACY_POLICY_TITLES[EN],
+    lang: EN,
     track: VISITOR_PRIVACY_POLICY_TRACK,
-    lang: EN
+    title: VISITOR_PRIVACY_POLICY_TITLES[EN],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: VISITOR_TERMS_OF_SERVICE_URLS[PL],
-    title: VISITOR_TERMS_OF_SERVICE_TITLES[PL],
+    lang: PL,
     track: VISITOR_TERMS_OF_SERVICE_TRACK,
-    lang: PL
+    title: VISITOR_TERMS_OF_SERVICE_TITLES[PL],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: VISITOR_TERMS_OF_SERVICE_URLS[EN],
-    title: VISITOR_TERMS_OF_SERVICE_TITLES[EN],
+    lang: EN,
     track: VISITOR_TERMS_OF_SERVICE_TRACK,
-    lang: EN
+    title: VISITOR_TERMS_OF_SERVICE_TITLES[EN],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: VISITOR_CONTACT_URLS[PL],
-    title: VISITOR_CONTACT_TITLES[PL],
+    lang: PL,
     track: VISITOR_CONTACT_TRACK,
-    lang: PL
+    title: VISITOR_CONTACT_TITLES[PL],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: VISITOR_CONTACT_URLS[EN],
-    title: VISITOR_CONTACT_TITLES[EN],
+    lang: EN,
     track: VISITOR_CONTACT_TRACK,
-    lang: EN
+    title: VISITOR_CONTACT_TITLES[EN],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_CREATE_URLS[PL],
-    title: PAGE_CREATE_TITLES[PL],
+    lang: PL,
     track: PAGE_CREATE_TRACK,
-    lang: PL
+    title: PAGE_CREATE_TITLES[PL],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_CREATE_URLS[EN],
-    title: PAGE_CREATE_TITLES[EN],
+    lang: EN,
     track: PAGE_CREATE_TRACK,
-    lang: EN
+    title: PAGE_CREATE_TITLES[EN],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_INDEX_MAP_URLS[PL],
-    title: PAGE_INDEX_MAP_TITLES[PL],
+    lang: PL,
     track: PAGE_INDEX_MAP_TRACK,
-    lang: PL
+    title: PAGE_INDEX_MAP_TITLES[PL],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_INDEX_MAP_URLS[EN],
-    title: PAGE_INDEX_MAP_TITLES[EN],
+    lang: EN,
     track: PAGE_INDEX_MAP_TRACK,
-    lang: EN
+    title: PAGE_INDEX_MAP_TITLES[EN],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: ANNOUNCEMENT_CREATE_URLS[PL],
+    lang: PL,
     track: ANNOUNCEMENT_CREATE_TRACK,
     title: ANNOUNCEMENT_CREATE_TITLES[PL],
     keywords: ANNOUNCEMENT_CREATE_KEYWORDS[PL],
     description: ANNOUNCEMENT_CREATE_DESCRIPTIONS[PL],
-    lang: PL
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: ANNOUNCEMENT_CREATE_URLS[EN],
+    lang: EN,
     track: ANNOUNCEMENT_CREATE_TRACK,
     title: ANNOUNCEMENT_CREATE_TITLES[EN],
     keywords: ANNOUNCEMENT_CREATE_DESCRIPTIONS[EN],
-    lang: EN
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: ANNOUNCEMENT_EDIT_URLS[PL],
+    lang: PL,
+    track: ANNOUNCEMENT_EDIT_TRACK,
     urlBuilder: buildAnnouncementEditUrl,
     title: ANNOUNCEMENT_EDIT_TITLES[PL],
-    track: ANNOUNCEMENT_EDIT_TRACK,
-    lang: PL
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: ANNOUNCEMENT_EDIT_URLS[EN],
+    lang: EN,
+    track: ANNOUNCEMENT_EDIT_TRACK,
     urlBuilder: buildAnnouncementEditUrl,
     title: ANNOUNCEMENT_EDIT_TITLES[EN],
-    track: ANNOUNCEMENT_EDIT_TRACK,
-    lang: EN
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: ANNOUNCEMENT_INDEX_CATALOGUE_URLS[PL],
     lang: PL,
-    title: ANNOUNCEMENT_INDEX_CATALOGUE_TITLES[PL],
     track: ANNOUNCEMENT_INDEX_CATALOGUE_TRACK,
+    title: ANNOUNCEMENT_INDEX_CATALOGUE_TITLES[PL],
     keywords: ANNOUNCEMENT_INDEX_CATALOGUE_KEYWORDS[PL],
     description: ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS[PL],
-    initialStateParser: announcementIndexInitialStateParser
+    initialStateParser: announcementIndexInitialStateParser,
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: ANNOUNCEMENT_INDEX_CATALOGUE_URLS[EN],
@@ -226,19 +248,22 @@ export default [
     title: ANNOUNCEMENT_INDEX_CATALOGUE_TITLES[EN],
     keywords: ANNOUNCEMENT_INDEX_CATALOGUE_KEYWORDS[EN],
     description: ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS[EN],
-    initialStateParser: announcementIndexInitialStateParser
+    initialStateParser: announcementIndexInitialStateParser,
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: ANNOUNCEMENT_INDEX_MY_URLS[PL],
-    title: ANNOUNCEMENT_INDEX_MY_TITLES[PL],
+    lang: PL,
     track: ANNOUNCEMENT_INDEX_MY_TRACK,
-    lang: PL
+    title: ANNOUNCEMENT_INDEX_MY_TITLES[PL],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: ANNOUNCEMENT_INDEX_MY_URLS[EN],
-    title: ANNOUNCEMENT_INDEX_MY_TITLES[EN],
+    lang: EN,
     track: ANNOUNCEMENT_INDEX_MY_TRACK,
-    lang: EN
+    title: ANNOUNCEMENT_INDEX_MY_TITLES[EN],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: ANNOUNCEMENT_SHOW_URLS[PL],
@@ -266,50 +291,58 @@ export default [
   },
   {
     url: USER_CREATE_URLS[PL],
-    title: USER_CREATE_TITLES[PL],
+    lang: PL,
     track: USER_CREATE_TRACK,
-    lang: PL
+    title: USER_CREATE_TITLES[PL],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: USER_CREATE_URLS[EN],
-    title: USER_CREATE_TITLES[EN],
+    lang: EN,
     track: USER_CREATE_TRACK,
-    lang: EN
+    title: USER_CREATE_TITLES[EN],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: USER_AUTHORIZE_URLS[PL],
-    title: USER_AUTHORIZE_TITLES[PL],
+    lang: PL,
     track: USER_AUTHORIZE_TRACK,
-    lang: PL
+    title: USER_AUTHORIZE_TITLES[PL],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: USER_AUTHORIZE_URLS[EN],
-    title: USER_AUTHORIZE_TITLES[EN],
+    lang: EN,
     track: USER_AUTHORIZE_TRACK,
-    lang: EN
+    title: USER_AUTHORIZE_TITLES[EN],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: USER_RESET_PASSWORD_URLS[PL],
-    title: USER_RESET_PASSWORD_TITLES[PL],
+    lang: PL,
     track: USER_EDIT_PASSWORD_TRACK,
-    lang: PL
+    title: USER_RESET_PASSWORD_TITLES[PL],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: USER_RESET_PASSWORD_URLS[EN],
-    title: USER_RESET_PASSWORD_TITLES[EN],
+    lang: EN,
     track: USER_EDIT_PASSWORD_TRACK,
-    lang: EN
+    title: USER_RESET_PASSWORD_TITLES[EN],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: USER_EDIT_URLS[PL],
-    title: USER_EDIT_TITLES[PL],
+    lang: PL,
     track: USER_EDIT_TRACK,
-    lang: PL
+    title: USER_EDIT_TITLES[PL],
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: USER_EDIT_URLS[EN],
-    title: USER_EDIT_TITLES[EN],
+    lang: EN,
     track: USER_EDIT_TRACK,
-    lang: EN
+    title: USER_EDIT_TITLES[EN],
+    image: DEFAULT_IMAGE_PL
   }
 ]
