@@ -17,6 +17,9 @@ const preloadedState = window.__PRELOADED_STATE__
 delete window.__PRELOADED_STATE__
 const store = createStore(rootReducer, preloadedState)
 
+// TODO
+store.subscribe(() => console.log(store.getState()))
+
 loadableReady(() =>
   hydrate(
     <StyleContext.Provider value={{ insertCss }}>

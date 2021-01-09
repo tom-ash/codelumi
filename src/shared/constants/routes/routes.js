@@ -71,7 +71,8 @@ import {
 } from './descriptions'
 import { buildAnnouncementShowUrl } from '../../functions/builders/announcement/show-url'
 import { buildAnnouncementEditUrl } from '../../functions/builders/announcement/edit-url'
-import { announcementIndexInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement'
+import { announcementIndexInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement/index'
+import { announcementShowInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement/show'
 
 export default [
   {
@@ -239,19 +240,21 @@ export default [
   },
   {
     url: ANNOUNCEMENT_SHOW_URLS[PL],
+    lang: PL,
     buildUrl: buildAnnouncementShowUrl,
     title: ANNOUNCEMENT_SHOW_TITLES[PL],
     track: ANNOUNCEMENT_SHOW_TRACK,
-    lang: PL,
-    withWildcards: true
+    withWildcards: true,
+    initialStateParser: announcementShowInitialStateParser
   },
   {
     url: ANNOUNCEMENT_SHOW_URLS[EN],
+    lang: EN,
     buildUrl: buildAnnouncementShowUrl,
     title: ANNOUNCEMENT_SHOW_TITLES[EN],
     track: ANNOUNCEMENT_SHOW_TRACK,
-    lang: EN,
-    withWildcards: true
+    withWildcards: true,
+    initialStateParser: announcementShowInitialStateParser
   },
   {
     url: USER_CREATE_URLS[PL],

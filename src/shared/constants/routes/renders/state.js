@@ -1,4 +1,4 @@
-import * as tracks from '../../shared/constants/tracks/tracks'
+import * as tracks from '../../tracks/tracks'
 
 export const renderState = Object.assign(
   {},

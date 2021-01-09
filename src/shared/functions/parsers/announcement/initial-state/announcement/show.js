@@ -1,12 +1,11 @@
-import { data } from '../../../../app/components/announcement/components/index/constants/state'
-import { data } from '../../../../app/components/announcement/components/show/constants/mappers'
-import { showClientServerParams } from '../../../../app/components/announcement/constants/client-server-params'
+import { showClientServerParams } from '../../../../../../app/components/announcement/constants/client-server-params'
+import { data } from '../../../../../../app/components/announcement/components/show/constants/state'
 
-export function announcementShowInitialStateParser(routeData) {
+export function announcementShowInitialStateParser({ announcement }) {
   const showData = {}
   
   showClientServerParams.map(param => {
-    showData[param.client] = routeData[param.server]
+    showData[param.client] = announcement[param.server]
   })
 
   return {

@@ -1,8 +1,10 @@
 const fetch = require("node-fetch")
-import { renderHtml } from '../render-html'
 import { renderApp } from '../render-app'
-import { VISITOR_TRACK, PAGE_TRACK, PAGE_SHOW_TRACK, PAGE_NOT_FOUND_TRACK } from '../../shared/constants/tracks/tracks'
+import { renderHtml } from '../render-html'
+import { VISITOR_TRACK, PAGE_TRACK, PAGE_SHOW_TRACK } from '../../shared/constants/tracks/tracks'
 import { appState } from '../../app/constants/app-state'
+import { sendNotFoundResponse } from './exceptions/not-found'
+import { renderState } from '../../shared/constants/routes/renders/state'
 
 export function sendPageResponse({ res, url, device, visitorState }) {
   fetch(`${API_URL}/posts/urls/${url}`, {
@@ -19,7 +21,7 @@ export function sendPageResponse({ res, url, device, visitorState }) {
             title, description, keywords, image, openGraph, schemaOrg } = jsonResponse[language]
     const initialState = {
       app: { ...appState, language, device },
-      render: { [VISITOR_TRACK]: true, [PAGE_TRACK]: true, [PAGE_SHOW_TRACK]: true },
+      render: { ...renderState, [VISITOR_TRACK]: true, [PAGE_TRACK]: true, [PAGE_SHOW_TRACK]: true },
       page: { show: { data: jsonResponse } },
       ...visitorState
     }
@@ -35,18 +37,6 @@ export function sendPageResponse({ res, url, device, visitorState }) {
     )
   })
   .catch(error => {
-    const initialState = {
-      app: { ...appState, language: 'pl', device },
-      render: { [VISITOR_TRACK]: true, [PAGE_TRACK]: true, [PAGE_NOT_FOUND_TRACK]: true },
-      ...visitorState
-    }
-
-    const appAsHtml = renderApp(initialState)
-
-    res.status(404).send(
-      renderHtml({
-        url, language: 'pl', title: 'Not Found', description: 'Not Found', ...appAsHtml
-      })
-    )
+    sendNotFoundResponse({ res, url, device, visitorState })
   })
 }
