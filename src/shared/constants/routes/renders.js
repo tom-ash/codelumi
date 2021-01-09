@@ -74,7 +74,9 @@ export default {
   },
   [ANNOUNCEMENT_CREATE_TRACK]: {
     [VISITOR_TRACK]: true,
-    [ANNOUNCEMENT_TRACK]: true
+    [ANNOUNCEMENT_TRACK]: true,
+    [PAGE_TRACK]: true,
+    [PAGE_SHOW_TRACK]: true
   },
   [ANNOUNCEMENT_EDIT_TRACK]: {
     [VISITOR_TRACK]: true,

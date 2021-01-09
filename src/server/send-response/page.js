@@ -25,7 +25,6 @@ export function sendPageResponse({ res, url, device, visitorState }) {
       page: { show: { data: jsonResponse } },
       ...visitorState
     }
-
     const appAsHtml = renderApp(initialState)
 
     res.status(200).send(

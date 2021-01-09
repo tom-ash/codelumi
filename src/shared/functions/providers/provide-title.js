@@ -5,7 +5,9 @@ export function provideTitle({
   category,
   district,
   area,
-  language
+  lang
 }) {
-  return `${parseCategory({ categoryNumber: category, language })} ${{ pl: 'na wynajem', en: 'for lease' }[language]}, ${parseDistrict(district)}, ${{ pl: 'Warszawa', en: 'Warsaw' }[language]}, ${area} ${{ pl: 'm2', en: 'sqm' }[language]}`
+  const language = lang
+
+  return `${parseCategory({ categoryNumber: +category, language })} ${{ pl: 'na wynajem', en: 'for lease' }[lang]}, ${parseDistrict(district)}, ${{ pl: 'Warszawa', en: 'Warsaw' }[lang]}, ${area} ${{ pl: 'm2', en: 'sqm' }[lang]}`
 }

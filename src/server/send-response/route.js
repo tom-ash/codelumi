@@ -13,7 +13,7 @@ export function sendRouteResponse({ res, url, route, device, visitorState }) {
       renderHtml({ url, ...metaData, ...appAsHtml }) 
     )
   })
-  .catch(error => {
-    sendNotFoundResponse({ res, url, device, visitorState })
-  })
+  // .catch(error => {
+  //   sendNotFoundResponse({ res, url, device, visitorState })
+  // })
 }

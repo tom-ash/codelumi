@@ -1,21 +1,19 @@
-export function metaDataParser(metaData) {
-  const {
-    lang,
-    title, titleParser,
-    description, descriptionParser,
-    keywords, keywordsParser,
-    image, imageParser,
-    openGraph, openGraphParser,
-    schemaOrg, schemaOrgParser
-  } = metaData
-
+export function metaDataParser({
+  lang,
+  title, titleParser,
+  description, descriptionParser,
+  keywords, keywordsParser,
+  image, imageParser,
+  openGraph, openGraphParser,
+  schemaOrg, schemaOrgParser
+}) {
   return {
-    lang,
-    title: titleParser && titleParser(metaData) || title,
-    description: descriptionParser && descriptionParser(metaData) || description,
-    keywords: keywordsParser && keywordsParser(metaData) || keywords,
-    image: imageParser && imageParser(metaData) || image,
-    openGraph: openGraphParser && openGraphParser(metaData) || openGraph,
-    schemaOrg: schemaOrgParser && schemaOrgParser(metaData) || schemaOrg
+    language: lang,
+    title: titleParser && titleParser({ title, lang }) || title,
+    description: descriptionParser && descriptionParser({ description, lang }) || description,
+    keywords: keywordsParser && keywordsParser({ keywords, lang }) || keywords,
+    image: imageParser && imageParser({ image, lang }) || image,
+    openGraph: openGraphParser && openGraphParser({ openGraph, lang }) || openGraph,
+    schemaOrg: schemaOrgParser && schemaOrgParser({ schemaOrg, lang }) || schemaOrg
   }
 }

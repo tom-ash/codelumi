@@ -18,7 +18,7 @@ export function renderHtml({
         <title>${title}</title>
         <meta name="description" content="${description}">
         <meta name="keywords" content="${keywords}">
-        ${openGraphProvider({ title, description, image, ...openGraph })}
+        ${openGraphProvider({ title, description, keywords, image, ...openGraph })}
         ${schemaOrgProvider({ language, title, description, keywords, ...schemaOrg })}
         <style type="text/css">${[...css].join('')}</style>
       </head>

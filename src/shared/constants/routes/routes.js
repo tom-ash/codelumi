@@ -73,6 +73,10 @@ import { buildAnnouncementShowUrl } from '../../functions/builders/announcement/
 import { buildAnnouncementEditUrl } from '../../functions/builders/announcement/edit-url'
 import { announcementIndexInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement/index'
 import { announcementShowInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement/show'
+import { announcementShowMetaDataTitleParser } from '../../functions/parsers/meta-data/announcement/show/title'
+import { announcementShowMetaDataDescriptionParser } from '../../functions/parsers/meta-data/announcement/show/description'
+import { announcementShowMetaDataKeywordsParser } from '../../functions/parsers/meta-data/announcement/show/keywords'
+import { announcementShowMetaDataImageParser } from '../../functions/parsers/meta-data/announcement/show/image'
 
 export default [
   {
@@ -194,19 +198,17 @@ export default [
   },
   {
     url: ANNOUNCEMENT_EDIT_URLS[PL],
-    buildUrl: buildAnnouncementEditUrl,
+    urlBuilder: buildAnnouncementEditUrl,
     title: ANNOUNCEMENT_EDIT_TITLES[PL],
     track: ANNOUNCEMENT_EDIT_TRACK,
-    lang: PL,
-    withWildcards: true
+    lang: PL
   },
   {
     url: ANNOUNCEMENT_EDIT_URLS[EN],
-    buildUrl: buildAnnouncementEditUrl,
+    urlBuilder: buildAnnouncementEditUrl,
     title: ANNOUNCEMENT_EDIT_TITLES[EN],
     track: ANNOUNCEMENT_EDIT_TRACK,
-    lang: EN,
-    withWildcards: true
+    lang: EN
   },
   {
     url: ANNOUNCEMENT_INDEX_CATALOGUE_URLS[PL],
@@ -241,19 +243,25 @@ export default [
   {
     url: ANNOUNCEMENT_SHOW_URLS[PL],
     lang: PL,
-    buildUrl: buildAnnouncementShowUrl,
-    title: ANNOUNCEMENT_SHOW_TITLES[PL],
     track: ANNOUNCEMENT_SHOW_TRACK,
-    withWildcards: true,
+    needsDataInitialization: true,
+    urlBuilder: buildAnnouncementShowUrl,
+    titleParser: announcementShowMetaDataTitleParser,
+    descriptionParser: announcementShowMetaDataDescriptionParser,
+    keywordsParser: announcementShowMetaDataKeywordsParser,
+    imageParser: announcementShowMetaDataImageParser,
     initialStateParser: announcementShowInitialStateParser
   },
   {
     url: ANNOUNCEMENT_SHOW_URLS[EN],
     lang: EN,
-    buildUrl: buildAnnouncementShowUrl,
-    title: ANNOUNCEMENT_SHOW_TITLES[EN],
     track: ANNOUNCEMENT_SHOW_TRACK,
-    withWildcards: true,
+    needsDataInitialization: true,
+    urlBuilder: buildAnnouncementShowUrl,
+    titleParser: announcementShowMetaDataTitleParser,
+    descriptionParser: announcementShowMetaDataDescriptionParser,
+    keywordsParser: announcementShowMetaDataKeywordsParser,
+    imageParser: announcementShowMetaDataImageParser,
     initialStateParser: announcementShowInitialStateParser
   },
   {

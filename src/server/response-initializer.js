@@ -18,15 +18,21 @@ export function responseInitializer({ url, route, device }) {
       throw new Error('Page Not Found')
     })
     .then(jsonResponse => {
-      const { initialState: unparsedInitialState } = jsonResponse
+      const lang = language
+      const { metaData: unparsedMetaData, initialState: unparsedInitialState } = jsonResponse
       const scalableVectorGraphics = parseScalableVectorGraphics(jsonResponse)
-      const metaData = metaDataParser({ ...route, ...jsonResponse })
+      const metaData = metaDataParser({ ...route, ...unparsedMetaData, lang })
+      const app = { ...appState, language: lang, device, scalableVectorGraphics }
+      let render = { ...renderState, [track]: true, ...routeRenders[track] }
+      let page = {}
+      const residualState = initialStateParser && initialStateParser(unparsedInitialState) || {}
+      const { pageShow } = jsonResponse
 
-      const initialState = {
-        app: { ...appState, language, device, scalableVectorGraphics },
-        render: { ...renderState, [track]: true, ...routeRenders[track] },
-        ...initialStateParser && { ...initialStateParser(unparsedInitialState) }
+      if (pageShow) {
+        page = { show: { data: pageShow } }
       }
+    
+      const initialState = { app, render, page, ...residualState }
 
       return {
         metaData,

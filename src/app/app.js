@@ -34,7 +34,7 @@ class App extends React.Component {
 
   render() {
     const {
-      renderHtml,
+      renderPage,
       renderVisitor,
       renderAnnouncement,
       renderUser
@@ -47,7 +47,7 @@ class App extends React.Component {
           {renderVisitor && <Visitor />}
           {renderAnnouncement && <Announcement />}
           {renderUser && <User />}
-          {renderHtml && <Page />}
+          {renderPage && <Page />}
         </div>
         <Footer />
       </div>
