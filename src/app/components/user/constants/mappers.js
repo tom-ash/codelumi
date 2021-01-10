@@ -8,7 +8,7 @@ import {
 
 export const mapStateToProps = (store) => {
   const {
-    language,
+    lang,
     path
   } = store.app
 
@@ -21,7 +21,7 @@ export const mapStateToProps = (store) => {
   } = store.render
 
   return {
-    language,
+    lang,
     renderCreate,
     renderEdit,
     renderEditPassword,

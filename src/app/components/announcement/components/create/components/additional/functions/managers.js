@@ -25,12 +25,12 @@ export function rentAmountManager() {
     scalableVectorGraphics
   } = this.props
 
-  let label = this.languageObjectHandler(text)
+  let label = this.langObjHandler(text)
 
   const rentAmountType = [0, 1, 6, 7].indexOf(category) !== -1 ? 'netRentAmount' : 'grossRentAmount'
 
   if(rentAmountType === 'netRentAmount') {
-    label = this.languageObjectHandler({ pl: 'Miesięczna cena netto', en: 'Monthly Net Price'})
+    label = this.langObjHandler({ pl: 'Miesięczna cena netto', en: 'Monthly Net Price'})
   }
 
   return {
@@ -75,9 +75,9 @@ export function roomsManager() {
 
   const { category, scalableVectorGraphics } = this.props
 
-  let label = this.languageObjectHandler(text)
+  let label = this.langObjHandler(text)
 
-  if (category === 2) label = this.languageObjectHandler({ pl: 'Liczba pokoi', en: 'Rooms Amount' })
+  if (category === 2) label = this.langObjHandler({ pl: 'Liczba pokoi', en: 'Rooms Amount' })
 
   return {
     classNames: { container: 'form-input select' },
@@ -106,7 +106,7 @@ export function floorManager() {
     classNames: { container: 'form-input select' },
     children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
     value: this.props.floor,
-    label: this.languageObjectHandler(text),
+    label: this.langObjHandler(text),
     options: this.floorsProvider(),
     onSelect: (option) => {
       this.onSelectHandler('floor', option.value)
@@ -129,7 +129,7 @@ export function totalFloorsManager() {
     classNames: { container: 'form-input select' },
     children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
     value: this.props.totalFloors,
-    label: this.languageObjectHandler(text),
+    label: this.langObjHandler(text),
     options: numberOptionsProvider(99),
     onSelect: (option) => {
       this.onSelectHandler('totalFloors', option.value)
@@ -147,7 +147,7 @@ export function showAvailabilityDateManager() {
   return {
     classNames: { container: 'form-input checkbox availability-date' },
     checked: showAvilabilityDate,
-    label: this.languageObjectHandler({
+    label: this.langObjHandler({
       pl: 'Dodaj datę dostępności',
       en: 'Add Availability Date'
     }),

@@ -6,7 +6,7 @@ import { componentWillUnmount } from './functions/lifecycle'
 import { emailManager, verificationManager, passwordManager, buttonManager } from './functions/managers'
 import { sendEmail, sendVerification, sendPassword } from './functions/adapters'
 import { monitProvider } from './functions/monit-provider'
-import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
+import { langHandler, langObjHandler } from '../../../../../../../../functions/lang-handler'
 import { labelProvider } from '../../../../../../../../functions/providers/label'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
@@ -23,8 +23,8 @@ class UserEditAccountPassword extends React.Component {
     this.sendVerification = sendVerification.bind(this)
     this.sendPassword = sendPassword.bind(this)
     this.monitProvider = monitProvider.bind(this)
-    this.languageHandler = languageHandler.bind(this)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
   }
 
@@ -40,7 +40,7 @@ class UserEditAccountPassword extends React.Component {
         >
           {!editAccount &&
           <h1 className='page-header'>
-            {this.languageHandler('Zresetuj hasło', 'Reset password')}
+            {this.langHandler('Zresetuj hasło', 'Reset password')}
           </h1>}
           <div className='inputs'>
             <div className='monit-and-text-inputs'>

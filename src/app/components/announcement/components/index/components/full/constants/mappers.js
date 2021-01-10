@@ -1,6 +1,6 @@
 export const mapStateToProps = (store) => {
   const {
-    language,
+    lang,
     isMobile,
     device,
     scrollY,
@@ -26,7 +26,7 @@ export const mapStateToProps = (store) => {
   return {
     offset,
     amount,
-    language,
+    lang,
     isMobile,
     device,
     type,

@@ -2,7 +2,7 @@ const DEFAULT_TYPE = 'WebPage'
 
 export function schemaOrgProvider({
   type,
-  language,
+  lang,
   title,
   description,
   keywords
@@ -10,7 +10,7 @@ export function schemaOrgProvider({
   const schemaOrg = JSON.stringify({
     "@context": "https://schema.org", 
     "@type": type || DEFAULT_TYPE,
-    "inLanguage": language,
+    "inLanguage": lang,
     "name": title,
     "description": description,
     "keywords": keywords

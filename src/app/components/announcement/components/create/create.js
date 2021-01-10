@@ -12,7 +12,7 @@ import AnnouncementCreateSuccess from './components/success/success'
 import WindmillSpinner from '../../../support/components/spinner/components/windmill/windmill.js'
 import * as lifecycle from './functions/lifecycle'
 import * as managers from './functions/managers'
-import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
+import { langHandler, langObjHandler } from '../../../../functions/lang-handler'
 import { getAnnouncement } from './functions/get-announcement'
 import { AnnouncementCreateSteps } from './components/steps/steps'
 import { ManagedButton } from 'managed-inputs'
@@ -39,8 +39,8 @@ class AnnouncementCreate extends React.Component {
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
-    this.languageHandler = languageHandler.bind(this)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
     this.getAnnouncement = getAnnouncement.bind(this)
     this.addAnnouncementManager = managers.addAnnouncementManager.bind(this)
     this.categoryManager = categoryManager.bind(this)
@@ -66,7 +66,7 @@ class AnnouncementCreate extends React.Component {
       district,
       area,
       isMobile,
-      language,
+      lang,
       scalableVectorGraphics
     } = this.props
 
@@ -77,10 +77,10 @@ class AnnouncementCreate extends React.Component {
       >
         <div className='page-header'>
           <h1>
-            {step === 'form' && this.languageHandler(<span>Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w&nbsp;Warszawie</span>, 'Add Free Announcement of Real Estate Lease in Warsaw')}
-            {step === 'creating-user' && this.languageHandler('Rejestracja konta', 'Account Registration')}
-            {step === 'publishing' && this.languageHandler('Zapisywanie Ogłoszenia', 'Saving Announcement')}
-            {step === 'success' && this.languageHandler('Gratulacje!', 'Congratulations!')}
+            {step === 'form' && this.langHandler(<span>Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w&nbsp;Warszawie</span>, 'Add Free Announcement of Real Estate Lease in Warsaw')}
+            {step === 'creating-user' && this.langHandler('Rejestracja konta', 'Account Registration')}
+            {step === 'publishing' && this.langHandler('Zapisywanie Ogłoszenia', 'Saving Announcement')}
+            {step === 'success' && this.langHandler('Gratulacje!', 'Congratulations!')}
           </h1>
         </div>
         <AnnouncementCreateSteps
@@ -98,7 +98,7 @@ class AnnouncementCreate extends React.Component {
           <div className='optional-inputs'>
             <div className='separation-line' />
             <h2 className='optional'>
-              <div className='text'>{this.languageObjectHandler({ pl: 'Dane niewymagane', en: 'Optional data' })}</div>
+              <div className='text'>{this.langObjHandler({ pl: 'Dane niewymagane', en: 'Optional data' })}</div>
               <div className='float-clear' />
             </h2>
             <AnnouncementCreateAdditional />
@@ -128,9 +128,9 @@ class AnnouncementCreate extends React.Component {
           district={district}
           area={area}
           changeAnnouncementShowData={changeAnnouncementShowData}
-          languageObjectHandler={this.languageObjectHandler}
+          langObjHandler={this.langObjHandler}
           isMobile={isMobile}
-          language={language}
+          lang={lang}
           scalableVectorGraphics={scalableVectorGraphics}
         />}
       </div>

@@ -3,7 +3,7 @@ import { hashPassword } from '../../../../../../../functions/shared.js'
 import { noError } from '../constants/no-error'
 
 export function sendEmail() {
-  const { language, connecting, changeControl, changeErrors } = this.props
+  const { lang, connecting, changeControl, changeErrors } = this.props
   const email = document.getElementById('user-edit-password-email').value
   
   if (connecting || !this.emailManager('validate', email)) return
@@ -11,7 +11,7 @@ export function sendEmail() {
   changeControl({ passwordConnecting: true })
   fetch(apiUrl + '/user/edit/password/email', {
     method: 'PUT', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, language })
+    body: JSON.stringify({ email, lang })
   })
   .then(response => {
     if (response.status == 200) {

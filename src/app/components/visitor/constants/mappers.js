@@ -9,7 +9,7 @@ import {
 
 export const mapStateToProps = (store) => {
   const {
-    language
+    lang
   } = store.app
 
   const {
@@ -27,7 +27,7 @@ export const mapStateToProps = (store) => {
   } = store.render
 
   return {
-    language,
+    lang,
     consents: store.visitor.legal.privacy.settings.consents,
     statisticsConsent,
     marketingConsent,

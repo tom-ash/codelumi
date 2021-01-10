@@ -16,7 +16,7 @@ export function addFurnishingsManager() {
   return {
     classNames: { container: 'form-input checkbox add-switcher' },
     checked: addFurnishings,
-    label: this.languageObjectHandler({
+    label: this.langObjHandler({
       pl: 'Dodaj Wyposażenie',
       en: 'Add Furnishings'
     }),

@@ -19,13 +19,13 @@ export function accountTypeManager() {
 
   const privateAccount = (
     <div className='account-type'>
-      {this.languageObjectHandler({ pl: 'Prywatne', en: 'Private' })}
+      {this.langObjHandler({ pl: 'Prywatne', en: 'Private' })}
     </div>
   )
 
   const professionalAccount = (
     <div className='account-type'>
-      {this.languageObjectHandler({ pl: 'Firmowe', en: 'Business' })}
+      {this.langObjHandler({ pl: 'Firmowe', en: 'Business' })}
     </div>
   )
 
@@ -66,7 +66,7 @@ export function emailAddressManager() {
     type: 'email',
     controlled: false,
     classNames: { container: 'form-input text'},
-    label: this.languageObjectHandler(label),
+    label: this.langObjHandler(label),
     children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onFocus: () => this.errorResetter('email'),
     onBlur: value => {
@@ -74,7 +74,7 @@ export function emailAddressManager() {
       sendGaEvent(EMAIL_ADDRESS_INPUTTED_EVENT)
     },
     validate: value => this.emailValidator(value),
-    error: this.languageObjectHandler(this.props.emailError)
+    error: this.langObjHandler(this.props.emailError)
   }
 }
 
@@ -95,7 +95,7 @@ export function passwordManager() {
     type: 'password',
     controlled: false,
     classNames: { container: 'form-input text'},
-    label: this.languageObjectHandler(label),
+    label: this.langObjHandler(label),
     children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onFocus: () => this.errorResetter('password'),
     onBlur: value => {
@@ -103,7 +103,7 @@ export function passwordManager() {
       sendGaEvent(PASSWORD_INPUTTED_EVENT)
     },
     validate: value => this.passwordValidator(value),
-    error: this.languageObjectHandler(this.props.passwordError)
+    error: this.langObjHandler(this.props.passwordError)
   }
 }
 
@@ -120,7 +120,7 @@ export function firstNameManager() {
     autoComplete: 'given-name',
     controlled: false,
     classNames: { container: 'form-input text'},
-    label: this.languageObjectHandler(label),
+    label: this.langObjHandler(label),
     children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onFocus: () => this.errorResetter('firstName'),
     onBlur: value => {
@@ -128,7 +128,7 @@ export function firstNameManager() {
       sendGaEvent(FIRST_NAME_INPUTTED_EVENT)
     },
     validate: value => this.nameValidator('firstName', value),
-    error: this.languageObjectHandler(this.props.firstNameError)
+    error: this.langObjHandler(this.props.firstNameError)
   }
 }
 
@@ -145,7 +145,7 @@ export function businessNameManager() {
     autoComplete: 'off',
     controlled: false,
     classNames: { container: 'form-input text'},
-    label: this.languageObjectHandler(label),
+    label: this.langObjHandler(label),
     children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onFocus: () => this.errorResetter('businessName'),
     onBlur: value => {
@@ -153,7 +153,7 @@ export function businessNameManager() {
       sendGaEvent(BUSINESS_NAME_INPUTTED_EVENT)
     },
     validate: value => this.nameValidator('businessName', value),
-    error: this.languageObjectHandler(this.props.businessNameError)
+    error: this.langObjHandler(this.props.businessNameError)
   }
 }
 
@@ -193,7 +193,7 @@ export function phoneNumberManager() {
     type: 'tel',
     controlled: false,
     classNames: { container: 'form-input text phone-body'},
-    label: this.languageObjectHandler(label),
+    label: this.langObjHandler(label),
     children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onFocus: () => this.errorResetter('phone'),
     onBlur: value => {
@@ -201,7 +201,7 @@ export function phoneNumberManager() {
       sendGaEvent(PHONE_NUMBER_INPUTTED_EVENT)
     },
     validate: value => this.phoneValidator(value),
-    error: this.languageObjectHandler(this.props.phoneError)
+    error: this.langObjHandler(this.props.phoneError)
   }
 }
 

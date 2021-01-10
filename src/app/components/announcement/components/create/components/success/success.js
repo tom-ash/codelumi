@@ -13,7 +13,7 @@ class AnnouncementCreateSuccess extends React.Component {
 
   render() {
     const {
-      languageObjectHandler,
+      langObjHandler,
       isMobile,
       scalableVectorGraphics
     } = this.props
@@ -21,14 +21,14 @@ class AnnouncementCreateSuccess extends React.Component {
     return (
       <div className='success-container'>
         <div className='input-explanation'>
-          {languageObjectHandler({
+          {langObjHandler({
             pl: 'Ogłoszenie zostało dodane.',
             en: 'The Announcement has been added.'
           })}
         </div>
         <div className='separation-line' />
         <div className='reach-more'>
-          {languageObjectHandler({
+          {langObjHandler({
             pl: 'Dotrzyj do większego grona odbiorców.',
             en: 'Reach more recipients.'
           })}
@@ -41,7 +41,7 @@ class AnnouncementCreateSuccess extends React.Component {
             <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.facebook} />
           </div>
           <div className='text'>
-            {languageObjectHandler({
+            {langObjHandler({
               pl: 'Udostępnij na Facebook\'u',
               en: 'Share on Facebook'
             })}

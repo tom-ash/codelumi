@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { languageHandler } from '../../../../functions/language-handler'
+import { langHandler } from '../../../../functions/lang-handler'
 import UserAuthorizeEmailTrack from './components/email-password/email-password'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
@@ -9,7 +9,7 @@ import styles from './styles/styles.scss'
 class UserAuthorize extends React.Component {
   constructor(props) {
     super(props)
-    this.languageHandler = languageHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
   }
 
   render() {
@@ -20,7 +20,7 @@ class UserAuthorize extends React.Component {
           className='container'
         >
           <h1 className='page-header'>
-            {this.languageHandler('Zaloguj', 'Sign In')}
+            {this.langHandler('Zaloguj', 'Sign In')}
           </h1>
           <UserAuthorizeEmailTrack />
         </div>

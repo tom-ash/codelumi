@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import * as mappers from './constants/mappers'
 import UserCreateEmail from './components/email/email'
 import * as lifecycle from './functions/lifecycle'
-import { languageHandler } from '../../../../functions/language-handler'
+import { langHandler } from '../../../../functions/lang-handler'
 import { UserCreateSteps } from './components/steps/steps'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
@@ -12,7 +12,7 @@ class UserCreate extends React.Component {
   constructor(props) {
     super(props)
     this.componentWillUnmount = lifecycle.componentWillUnmount
-    this.languageHandler = languageHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
   }
 
   render() {
@@ -30,7 +30,7 @@ class UserCreate extends React.Component {
         {!creatingAnnouncement &&
         <>
           <h1 className='page-header'>
-            {this.languageHandler('Zarejestruj', 'Sign Up')}
+            {this.langHandler('Zarejestruj', 'Sign Up')}
           </h1>
           <UserCreateSteps
             step={step}

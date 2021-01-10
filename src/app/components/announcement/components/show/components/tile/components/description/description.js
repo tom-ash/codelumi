@@ -1,10 +1,10 @@
 import React from 'react'
-import { languageObjectHandler } from '../../../../../../../../functions/language-handler'
+import { langObjHandler } from '../../../../../../../../functions/lang-handler'
 
 class AnnouncementShowDescription extends React.Component {
   constructor(props) {
     super(props)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
   }
   
   render() {
@@ -16,7 +16,7 @@ class AnnouncementShowDescription extends React.Component {
     return (
       <div className='announcement-show-tile-description'>
         <div className='description'>
-          {this.languageObjectHandler({ pl: polishDescription, en: englishDescription })}
+          {this.langObjHandler({ pl: polishDescription, en: englishDescription })}
         </div>
       </div>
     )

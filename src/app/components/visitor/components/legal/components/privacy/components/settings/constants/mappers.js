@@ -5,7 +5,7 @@ export const mapStateToProps = (store) => {
   } = store.visitor.legal.privacy.settings
 
   return {
-    language: store.app.language,
+    lang: store.app.lang,
     statisticsConsent,
     marketingConsent
   }

@@ -2,7 +2,7 @@ export const appState = {
   device: null,
   scrollY: 0,
   path: '/',
-  language: 'pl',
+  lang: 'pl',
   connecting: false,
   scripts: {
     googleMaps: false,

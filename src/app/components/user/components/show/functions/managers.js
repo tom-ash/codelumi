@@ -21,10 +21,10 @@ import { SIGN_OUT_LABEL } from '../constants/labels'
 
 export function addAnnouncementManager({ hrefLang }) {
   return {
-    href: `${CLIENT_URL}/${this.languageHandler(ANNOUNCEMENT_CREATE_URLS)}`,
+    href: `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_CREATE_URLS)}`,
     hrefLang,
-    title: this.languageHandler(ANNOUNCEMENT_CREATE_TITLES),
-    label: this.languageHandler(ANNOUNCEMENT_CREATE_LABELS),
+    title: this.langHandler(ANNOUNCEMENT_CREATE_TITLES),
+    label: this.langHandler(ANNOUNCEMENT_CREATE_LABELS),
     onClick: () => this.changeRoute(ANNOUNCEMENT_CREATE_TRACK)
   }
 }
@@ -34,10 +34,10 @@ export function myAnnouncementsManager({ hrefLang }) {
     changeAnnouncementIndexData,
     changeAnnouncementIndexControl
   } = this.props
-  const title = this.languageHandler(ANNOUNCEMENT_INDEX_MY_TITLES)
+  const title = this.langHandler(ANNOUNCEMENT_INDEX_MY_TITLES)
 
   return {
-    href: `${CLIENT_URL}/${this.languageHandler(ANNOUNCEMENT_INDEX_MY_URLS)}`,
+    href: `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_INDEX_MY_URLS)}`,
     hrefLang,
     title,
     label: title,
@@ -53,10 +53,10 @@ export function myAnnouncementsManager({ hrefLang }) {
 }
 
 export function accountManager({ hrefLang }) {
-  const title = this.languageHandler(USER_EDIT_TITLES)
+  const title = this.langHandler(USER_EDIT_TITLES)
 
   return {
-    href: this.languageHandler(USER_EDIT_URLS),
+    href: this.langHandler(USER_EDIT_URLS),
     hrefLang,
     title,
     label: title,
@@ -66,7 +66,7 @@ export function accountManager({ hrefLang }) {
 
 export function deAuthorizeManager() {
   return {
-    label: this.languageHandler(SIGN_OUT_LABEL),
+    label: this.langHandler(SIGN_OUT_LABEL),
     onClick: () => deauthorizeUser.call(this)
   }
 }

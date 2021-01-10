@@ -1,10 +1,10 @@
 export const mapStateToProps = (store) => {
   const {
-    language
+    lang
   } = store.app
 
   return {
-    language
+    lang
   }
 }
   

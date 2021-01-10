@@ -19,8 +19,8 @@ const AnnouncementShowMiniTile = ({
   area,
   grossRentAmount,
   rentCurrency: currency,
-  language,
-  languageObjectHandler,
+  lang,
+  langObjHandler,
   changeData,
   isMobile,
   miniListFarthestScrollTop,
@@ -42,7 +42,7 @@ const AnnouncementShowMiniTile = ({
           id,
           category,
           district,
-          language
+          lang
         })}
       />
     )
@@ -56,7 +56,7 @@ const AnnouncementShowMiniTile = ({
         id,
         category,
         district,
-        language
+        lang
       })}
       onMouseOver={() => {
         const pin = document.getElementById(`googl-map-pin-${id}`)
@@ -95,7 +95,7 @@ const AnnouncementShowMiniTile = ({
       }}
     >
       <AnnouncementShowPictures
-        language={language}
+        lang={lang}
         venue={'mini-list'}
         key={id}
         id={id}
@@ -106,17 +106,17 @@ const AnnouncementShowMiniTile = ({
         disableSLides
       />
       <div className='category-and-location'>
-        {parseCategory({ categoryNumber: category, language })}, {parseDistrict(district)}
+        {parseCategory({ categoryNumber: category, lang })}, {parseDistrict(district)}
       </div>
       <div className='data'>
         <AreaPresenter
           area={area}
-          languageObjectHandler={languageObjectHandler}
+          langObjHandler={langObjHandler}
         />
         <RentPresenter
           amount={grossRentAmount}
           currency={currency}
-          languageObjectHandler={languageObjectHandler}
+          langObjHandler={langObjHandler}
         />
       </div>
       <div className='float-clear' />

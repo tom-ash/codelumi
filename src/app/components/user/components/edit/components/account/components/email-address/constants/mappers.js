@@ -1,6 +1,6 @@
 export const mapStateToProps = (store) => {
   return {
-    language: store.app.language,
+    lang: store.app.lang,
     connecting: store.user.edit.control.emailConnecting,
     currentValue: store.user.edit.data.email,
     stage: store.user.edit.control.emailStage,

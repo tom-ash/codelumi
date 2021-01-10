@@ -6,7 +6,7 @@ import { renderState } from '../../../shared/constants/routes/renders/state'
 
 export function sendNotFoundResponse({ res, url, device, visitorState }) {
   const initialState = {
-    app: { ...appState, language: 'pl', device },
+    app: { ...appState, lang: 'pl', device },
     render: { ...renderState, [VISITOR_TRACK]: true, [PAGE_TRACK]: true, [PAGE_NOT_FOUND_TRACK]: true },
     ...visitorState
   }
@@ -15,7 +15,7 @@ export function sendNotFoundResponse({ res, url, device, visitorState }) {
 
   res.status(404).send(
     renderHtml({
-      url, language: 'pl', title: 'Not Found', description: 'Not Found', ...appAsHtml
+      url, lang: 'pl', title: 'Not Found', description: 'Not Found', ...appAsHtml
     })
   )
 }

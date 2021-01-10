@@ -1,12 +1,12 @@
 export const mapStateToProps = (store) => {
   const {
-    language,
+    lang,
     isMobile
   } = store.app
 
   return {
     isMobile,
-    language,
+    lang,
     scripts: store.app.scripts,
     latitude: store.announcement.create.inputs.latitude,
     longitude: store.announcement.create.inputs.longitude,

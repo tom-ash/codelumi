@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
-import { languageObjectHandler } from '../../../../functions/language-handler'
+import { langObjHandler } from '../../../../functions/lang-handler'
 import { phoneSwitchProvider } from '../../functions/phone-switch-provider'
 import { togglePhone } from '../../functions/toggle-phone'
 import { fixedPhoneHandler } from './functions/fixed-phone-handler'
@@ -18,7 +18,7 @@ class AnnouncementShow extends React.Component {
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
     this.togglePhone = togglePhone.bind(this)
     this.fixedPhoneHandler = fixedPhoneHandler.bind(this)
@@ -29,7 +29,7 @@ class AnnouncementShow extends React.Component {
 
   render() {
     const {
-      language,
+      lang,
       venue,
       id,
       category,
@@ -94,7 +94,7 @@ class AnnouncementShow extends React.Component {
                   this.togglePhone(e, venue)}
                 }
               >
-                {this.languageObjectHandler({ pl: 'Pokaż', en: 'Show' })}
+                {this.langObjHandler({ pl: 'Pokaż', en: 'Show' })}
               </u>}
             </div>
             <div className='float-clear' />
@@ -105,7 +105,7 @@ class AnnouncementShow extends React.Component {
         </div>
         <AnnouncementTile
           venue='show'
-          language={language}
+          lang={lang}
           id={id}
           category={category}
           district={district}

@@ -4,10 +4,9 @@ import { getPath } from './get-path'
 export function matchPathToLanguage() {
   const {
     render,
-    language
+    lang
   } = this.props
-  const lang = language === 'pl' ? 'en' : 'pl'
-  const route = getRouteByRender({ render, lang })
+  const route = getRouteByRender({ render, lang: lang === 'pl' ? 'en' : 'pl' })
 
   return getPath.apply(this, [route])
 }

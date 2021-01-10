@@ -24,12 +24,12 @@ import {
 } from '../../../../../../shared/constants/routes/titles'
 
 export function cookiesPolicyManager() {
-  const title = this.languageHandler(VISITOR_COOKIES_POLICY_TITLES)
+  const title = this.langHandler(VISITOR_COOKIES_POLICY_TITLES)
 
   return {
     classNames: { container: 'link' },
-    href: `${CLIENT_URL}/${this.languageHandler(VISITOR_COOKIES_POLICY_URLS)}`,
-    hrefLang: this.languageHandler(LANGS),
+    href: `${CLIENT_URL}/${this.langHandler(VISITOR_COOKIES_POLICY_URLS)}`,
+    hrefLang: this.langHandler(LANGS),
     title,
     label: title,
     onClick: () => this.changeRoute(VISITOR_COOKIES_POLICY_TRACK)
@@ -37,12 +37,12 @@ export function cookiesPolicyManager() {
 }
 
 export function privacySettingsManager() {
-  const title = this.languageHandler(VISITOR_PRIVACY_SETTINGS_TITLES)
+  const title = this.langHandler(VISITOR_PRIVACY_SETTINGS_TITLES)
 
   return {
     classNames: { container: 'link' },
-    href: `${CLIENT_URL}/${this.languageHandler(VISITOR_PRIVACY_SETTINGS_URLS)}`,
-    hrefLang: this.languageHandler(LANGS),
+    href: `${CLIENT_URL}/${this.langHandler(VISITOR_PRIVACY_SETTINGS_URLS)}`,
+    hrefLang: this.langHandler(LANGS),
     title,
     label: title,
     onClick: () => this.changeRoute(VISITOR_PRIVACY_SETTINGS_TRACK)
@@ -50,12 +50,12 @@ export function privacySettingsManager() {
 }
 
 export function privacyPolicyManager() {
-  const title = this.languageHandler(VISITOR_PRIVACY_POLICY_TITLES)
+  const title = this.langHandler(VISITOR_PRIVACY_POLICY_TITLES)
 
   return {
     classNames: { container: 'link' },
-    href: `${CLIENT_URL}/${this.languageHandler(VISITOR_PRIVACY_POLICY_URLS)}`,
-    hrefLang: this.languageHandler(LANGS),
+    href: `${CLIENT_URL}/${this.langHandler(VISITOR_PRIVACY_POLICY_URLS)}`,
+    hrefLang: this.langHandler(LANGS),
     title,
     label: title,
     onClick: () => this.changeRoute(VISITOR_PRIVACY_POLICY_TRACK)
@@ -63,12 +63,12 @@ export function privacyPolicyManager() {
 }
 
 export function termsOfServiceManager() {
-  const title = this.languageHandler(VISITOR_TERMS_OF_SERVICE_TITLES)
+  const title = this.langHandler(VISITOR_TERMS_OF_SERVICE_TITLES)
 
   return {
     classNames: { container: 'link' },
-    href: `${CLIENT_URL}/${this.languageHandler(VISITOR_TERMS_OF_SERVICE_URLS)}`,
-    hrefLang: this.languageHandler(LANGS),
+    href: `${CLIENT_URL}/${this.langHandler(VISITOR_TERMS_OF_SERVICE_URLS)}`,
+    hrefLang: this.langHandler(LANGS),
     title,
     label: title,
     onClick: () => this.changeRoute(VISITOR_TERMS_OF_SERVICE_TRACK)
@@ -76,12 +76,12 @@ export function termsOfServiceManager() {
 }
 
 export function contactManager() {
-  const title = this.languageHandler(VISITOR_CONTACT_TITLES)
+  const title = this.langHandler(VISITOR_CONTACT_TITLES)
 
   return {
     classNames: { container: 'link' },
-    href: `${CLIENT_URL}/${this.languageHandler(VISITOR_CONTACT_URLS)}`,
-    hrefLang: this.languageHandler(LANGS),
+    href: `${CLIENT_URL}/${this.langHandler(VISITOR_CONTACT_URLS)}`,
+    hrefLang: this.langHandler(LANGS),
     title,
     label: title,
     onClick: () => this.changeRoute(VISITOR_CONTACT_TRACK)

@@ -10,7 +10,7 @@ export function matchRouteToRenderAndLanguage() {
 
   const {
     render,
-    language: lang,
+    lang,
     changeApp
   } = this.props
   const route = getRouteByRender({ render, lang })

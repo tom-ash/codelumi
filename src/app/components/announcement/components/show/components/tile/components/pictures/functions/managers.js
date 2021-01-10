@@ -12,10 +12,10 @@ export function linkManager() {
 
   return {
     classNames: { container: 'link' },
-    label: this.languageObjectHandler({ pl: 'Zobacz szczegóły', en: 'See details'}),
+    label: this.langObjHandler({ pl: 'Zobacz szczegóły', en: 'See details'}),
     href: buildLink(this.props),
-    hrefLang: this.languageObjectHandler({ pl: 'pl', en: 'en' }),
-    title: this.languageObjectHandler({ pl: `Ogłoszenie ${id}`, en: `Announcement ${id}` }),
+    hrefLang: this.langObjHandler({ pl: 'pl', en: 'en' }),
+    title: this.langObjHandler({ pl: `Ogłoszenie ${id}`, en: `Announcement ${id}` }),
     onClick: () => {
       changeData({ id, category, district })
       changeRoute(ANNOUNCEMENT_SHOW_TRACK)

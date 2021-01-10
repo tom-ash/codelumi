@@ -1,6 +1,6 @@
 export const mapStateToProps = (store) => {
   return {
-    language: store.app.language,
+    lang: store.app.lang,
     termsAndPrivacyConsent: store.user.create.inputs.termsAndPrivacyConsent,
     termsError: store.user.create.errors.termsAndPrivacyConsent,
     privacyError: store.user.create.errors.privacy

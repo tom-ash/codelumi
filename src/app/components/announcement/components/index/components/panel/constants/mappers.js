@@ -6,7 +6,7 @@ import {
 
 export const mapStateToProps = (store) => {
   const {
-    language,
+    lang,
     isMobile,
     device,
     scalableVectorGraphics,
@@ -23,7 +23,7 @@ export const mapStateToProps = (store) => {
   } = store.announcement.index.inputs
 
   return {
-    language,
+    lang,
     isMobile,
     device,
     scalableVectorGraphics,

@@ -5,7 +5,7 @@ import { centralManager } from './functions/central-manager'
 import { initialReducerState } from '../../constants/initial-reducer-state'
 import * as lifecycle from './functions/lifecycle'
 
-import { languageObjectHandler } from '../../../../../../../../functions/language-handler'
+import { langObjHandler } from '../../../../../../../../functions/lang-handler'
 
 class UserEditAccountCell extends React.Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class UserEditAccountCell extends React.Component {
     }
     this.centralManager = centralManager.bind(this)
     this.componentDidUpdate = lifecycle.componentDidUpdate.bind(this)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
   }
 
   static getDerivedStateFromProps(props, state) {

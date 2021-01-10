@@ -9,7 +9,7 @@ export function buildSelectCategories() {
         {category.icon}
       </div>
       <div className='text'>
-        {this.languageHandler(category.label.pl, category.label.en)}
+        {this.langHandler(category.label.pl, category.label.en)}
       </div>
       </div>
   })))

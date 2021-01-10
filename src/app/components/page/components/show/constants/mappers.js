@@ -1,6 +1,6 @@
 export const mapStateToProps = (store) => {
   const {
-    language,
+    lang,
     scalableVectorGraphics
   } = store.app
 
@@ -27,7 +27,7 @@ export const mapStateToProps = (store) => {
     isAdmin,
     beingEdited: name === nameCreate,
     scalableVectorGraphics,
-    language,
+    lang,
     standalone
   }
 }

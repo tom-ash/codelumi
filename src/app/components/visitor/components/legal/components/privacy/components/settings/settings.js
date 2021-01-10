@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
+import { langHandler, langObjHandler } from '../../../../../../../../functions/lang-handler'
 import { ManagedRadio } from 'managed-inputs'
 import { statisticsConsentManager, marketingConsentManager } from './functions/managers'
 import { pageHeaderProvider } from '../../../../../../../../functions/header-providers'
@@ -13,8 +13,8 @@ import styles from './styles/styles.scss'
 class VisitorPrivacySettings extends React.Component {
   constructor(props) {
     super(props)
-    this.languageHandler = languageHandler.bind(this)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
     this.statisticsConsentManager = statisticsConsentManager.bind(this)
     this.marketingConsentManager = marketingConsentManager.bind(this)
     this.pageHeaderProvider = pageHeaderProvider.bind(this)
@@ -31,16 +31,16 @@ class VisitorPrivacySettings extends React.Component {
           onClick={e => e.stopPropagation()}
         >
           <h1 className='page-header'>
-            {this.languageObjectHandler({ pl: 'Ustawienia prywatności', en: 'Privacy Settings' })}
+            {this.langObjHandler({ pl: 'Ustawienia prywatności', en: 'Privacy Settings' })}
           </h1>
           <div className='text'>
-            {this.languageObjectHandler(this.textsProvider('statistics'))}
+            {this.langObjHandler(this.textsProvider('statistics'))}
           </div>
           <div className='consent'>
             <ManagedRadio {...this.statisticsConsentManager()} />
           </div>
           <div className='text'>
-            {this.languageObjectHandler(this.textsProvider('marketing'))}
+            {this.langObjHandler(this.textsProvider('marketing'))}
           </div>
           <div className='consent'>
             <ManagedRadio {...this.marketingConsentManager()} />

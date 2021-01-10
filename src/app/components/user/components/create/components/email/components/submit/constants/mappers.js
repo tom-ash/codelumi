@@ -1,10 +1,10 @@
 export const mapStateToProps = (store) => {
   const {
-    language
+    lang
   } = store.app
 
   return {
-    language,
+    lang,
     connecting: store.user.create.control.connecting,
     accountType: store.user.create.inputs.accountType
   }

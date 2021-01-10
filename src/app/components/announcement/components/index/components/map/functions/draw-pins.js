@@ -75,12 +75,12 @@ function addNewPins() {
       category: categoryNumber,
       district
     } = announcement
-    const { language } = this.props
+    const { lang } = this.props
     const category = categories.find(category => category.number === categoryNumber)
     const pin = category.pin
 
     const htmlContent = (
-      `<a href="${buildLink({ id, category: categoryNumber, district, language })}">
+      `<a href="${buildLink({ id, category: categoryNumber, district, lang })}">
         <div class='icon ${pin.class}'>
           <svg
             xmlns="http://www.w3.org/2000/svg"

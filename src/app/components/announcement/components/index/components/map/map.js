@@ -8,7 +8,7 @@ const AnnouncementTile = loadable(() => import('../../../show/components/tile/ti
 import { googleMapHandler } from '../../../../functions/google-map-handler'
 import { fetchTile } from './functions/fetch-tile'
 import { drawPins } from './functions/draw-pins'
-import { languageObjectHandler } from '../../../../../../functions/language-handler'
+import { langObjHandler } from '../../../../../../functions/lang-handler'
 import { shouldSetUpGoogleMaps, shouldSetUpPins } from '../../../../functions/google-map-handler'
 import { changeRoute } from '../../../../../../functions/routers/change-route'
 import withStyles from 'isomorphic-style-loader/withStyles'
@@ -26,7 +26,7 @@ class AnnouncementIndexMap extends React.Component {
     this.googleMapHandler = googleMapHandler.bind(this)
     this.drawPins = drawPins.bind(this)
     this.fetchTile = fetchTile.bind(this)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
     this.shouldSetUpGoogleMaps = shouldSetUpGoogleMaps.bind(this)
     this.shouldSetUpPins = shouldSetUpPins.bind(this)
     this.changeRoute = changeRoute.bind(this)
@@ -37,7 +37,7 @@ class AnnouncementIndexMap extends React.Component {
   render() {
     const {
       tile,
-      language,
+      lang,
       announcements,
       changeData,
       isMobile,
@@ -72,8 +72,8 @@ class AnnouncementIndexMap extends React.Component {
                 area={announcement.area}
                 grossRentAmount={announcement.grossRentAmount}
                 rentCurrency={announcement.currency}
-                language={language}
-                languageObjectHandler={this.languageObjectHandler}
+                lang={lang}
+                langObjHandler={this.langObjHandler}
                 changeData={changeData}
                 isMobile={isMobile}
                 miniListFarthestScrollTop={miniListFarthestScrollTop}
@@ -87,7 +87,7 @@ class AnnouncementIndexMap extends React.Component {
           <div className='announcement-tile-container'>
             <AnnouncementTile
               venue='map'
-              language={language}
+              lang={lang}
               showPhoneSwitch
               id={tile.id}
               category={tile.category}

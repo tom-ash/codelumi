@@ -11,7 +11,7 @@ import * as lifecycle from './functions/lifecycle'
 import { authorizeUserWithTokens } from './components/user/components/authorize/components/tokens/functions/adapters.js'
 import { screenSizeHandler } from './functions/screen-size-handler'
 import { popStateHandler } from './functions/popStateHandler'
-import { languageObjectHandler } from './functions/language-handler'
+import { langObjHandler } from './functions/lang-handler'
 import { matchRenderToRoute } from './functions/routers/match-state-to-path'
 import { matchRouteToRenderAndLanguage } from './functions/routers/match-path-to-state'
 import { changeRoute } from './functions/routers/change-route'
@@ -26,7 +26,7 @@ class App extends React.Component {
     this.authorizeUserWithTokens = authorizeUserWithTokens.bind(this)
     this.screenSizeHandler = screenSizeHandler.bind(this)
     this.popStateHandler = popStateHandler.bind(this)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
     this.matchRenderToRoute = matchRenderToRoute.bind(this)
     this.matchRouteToRenderAndLanguage = matchRouteToRenderAndLanguage.bind(this)
     this.changeRoute = changeRoute.bind(this)

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
+import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
 import { ManagedCheckbox, ManagedMultipleCheckbox } from 'managed-inputs'
 import { addFurnishingsManager, furnishingsManager } from './functions/managers'
 
@@ -10,10 +10,10 @@ import { pickElementsForCategory } from '../../functions/pick-elements'
 class AnnouncementCreateFurnishings extends React.Component {
   constructor(props) {
     super(props)
-    this.languageHandler = languageHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.addFurnishingsManager = addFurnishingsManager.bind(this)
     this.furnishingsManager = furnishingsManager.bind(this)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
     this.pickElementsForCategory = pickElementsForCategory.bind(this)
   }
 
@@ -32,7 +32,7 @@ class AnnouncementCreateFurnishings extends React.Component {
         <>
           <div className='hint'>
             <i className='fas fa-info-circle' />
-            {this.languageObjectHandler({
+            {this.langObjHandler({
               pl: 'Elementy wybrane z listy dodawane są automatycznie w językach polskim oraz angielskim.',
               en: 'Elements selected from the list are automatically added in Polish and English languages.'
             })}

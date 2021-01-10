@@ -7,7 +7,7 @@ export function buttonProvider(pl, en, announcement, index, callback, className)
         onClick={() => callback(announcement, index)}
         className={`button${className ? className : ''}`}
       >
-          {this.languageHandler(pl, en)}
+          {this.langHandler(pl, en)}
       </button>
     </div>
   )

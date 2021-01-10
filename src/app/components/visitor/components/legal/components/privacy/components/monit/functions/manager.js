@@ -28,7 +28,7 @@ export function agreeManager() {
 export function settingsManager() {
   return {
     classNames: { container: 'form-input button settings' },
-    label: this.languageHandler('Ustawienia', 'Settings'),
+    label: this.langHandler('Ustawienia', 'Settings'),
     onClick: () => this.changeRoute(VISITOR_PRIVACY_SETTINGS_TRACK)
   }
 }

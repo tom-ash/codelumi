@@ -7,7 +7,7 @@ export function getPath(route) {
     return route.url
   }
   
-  const localizedPageShowData = this.languageObjectHandler(pageShowData)
+  const localizedPageShowData = this.langObjHandler(pageShowData)
   if (localizedPageShowData) return localizedPageShowData.url
   return null
 }

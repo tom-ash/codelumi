@@ -4,7 +4,7 @@ export const mapStateToProps = (store) => {
   } = store.app
 
   return {
-    language: store.app.language,
+    lang: store.app.lang,
     connecting: store.user.authorize.control.connecting,
     emailError: store.user.authorize.errors.email,
     emailOrPasswordError: store.user.authorize.errors.emailOrPassword,

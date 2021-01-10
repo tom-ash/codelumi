@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { ManagedButton, ManagedLink } from 'managed-inputs'
-import { languageObjectHandler } from '../../../../functions/language-handler'
+import { langObjHandler } from '../../../../functions/lang-handler'
 import * as managers from './functions/managers'
 import { labelProvider } from './functions/label-provider'
 import { changeRoute } from '../../../../functions/routers/change-route'
@@ -17,14 +17,14 @@ class UserShow extends React.Component {
     this.myAnnouncementsManager = managers.myAnnouncementsManager.bind(this)
     this.accountManager = managers.accountManager.bind(this)
     this.deAuthorizeManager = managers.deAuthorizeManager.bind(this)
-    this.languageHandler = languageObjectHandler.bind(this)
+    this.langHandler = langObjHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
     this.changeRoute = changeRoute.bind(this)
   }
 
   render() {
     const {
-      language: hrefLang,
+      lang: hrefLang,
       changeRender
     } = this.props
 

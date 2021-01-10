@@ -5,7 +5,7 @@ import { ManagedText, ManagedTextarea, ManagedButton } from 'managed-inputs'
 import { componentDidMount } from './functions/lifecycle'
 import * as managers from './functions/managers'
 import { save } from './functions/save'
-import { languageObjectHandler } from '../../../../functions/language-handler'
+import { langObjHandler } from '../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import PageTile from '../shared/components/tile/tile'
@@ -14,7 +14,7 @@ class PageCreate extends React.Component {
   constructor(props) {
     super(props)
     this.componentDidMount = componentDidMount
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
     this.nameManager = managers.nameManager.bind(this)
     this.urlManager = managers.urlManager.bind(this)
     this.bodyManager = managers.bodyManager.bind(this)
@@ -34,7 +34,7 @@ class PageCreate extends React.Component {
       inputs
     } = this.props
 
-    const localizedInputs = this.languageObjectHandler(inputs)
+    const localizedInputs = this.langObjHandler(inputs)
     let body
     if (localizedInputs === null) {
       body = {}

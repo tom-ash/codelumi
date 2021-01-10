@@ -3,13 +3,13 @@ import { schemaOrgProvider } from '../shared/functions/providers/schema-org-prov
 
 export function renderHtml({
   url, canonicalUrl, announcementUrl, noIndex,
-  language,
+  lang,
   title, description, keywords, image, openGraph, schemaOrg,
   css, html, preloadedState, scriptTags
 }) {
   return (
     `<!doctype html>
-    <html lang="${language}">
+    <html lang="${lang}">
       <head>
         <link rel="canonical" href="${announcementUrl || `${CLIENT_URL}/${canonicalUrl === '/' ? '' : canonicalUrl || url}`}">
         <meta charset="UTF-8">
@@ -19,7 +19,7 @@ export function renderHtml({
         <meta name="description" content="${description}">
         <meta name="keywords" content="${keywords}">
         ${openGraphProvider({ title, description, keywords, image, ...openGraph })}
-        ${schemaOrgProvider({ language, title, description, keywords, ...schemaOrg })}
+        ${schemaOrgProvider({ lang, title, description, keywords, ...schemaOrg })}
         <style type="text/css">${[...css].join('')}</style>
       </head>
       <body>

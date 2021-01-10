@@ -7,7 +7,7 @@ export function sendEmail() {
     changeControl,
     connecting,
     email,
-    language
+    lang
   } = this.props
 
   if (connecting) return
@@ -19,7 +19,7 @@ export function sendEmail() {
     headers: {
       'Content-Type': 'application/json',
       access_token: getAccessToken(),
-      language
+      lang
     },
     body: JSON.stringify({ email })
   })

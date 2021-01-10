@@ -5,7 +5,7 @@ import { categories } from '../../../../../../constants/categories'
 
 const AnnouncementIndexPanelCategories = ({
   scalableVectorGraphics,
-  languageObjectHandler,
+  langObjHandler,
   changeInputs,
   changeControl,
   currentCategory
@@ -27,7 +27,7 @@ const AnnouncementIndexPanelCategories = ({
                 pathData={scalableVectorGraphics && scalableVectorGraphics[category.pin.svg]}
                 {...active ? { fill: category.pin.color } : { fill: '#909497' }}
               />
-              {languageObjectHandler(category.label)}
+              {langObjHandler(category.label)}
             </div>
           </React.Fragment>
         )

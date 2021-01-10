@@ -2,7 +2,7 @@ import { ANNOUNCEMENT_CREATE_TRACK } from '../../../../../../shared/constants/tr
 
 export const mapStateToProps = (store) => {
   const {
-    language,
+    lang,
     scalableVectorGraphics
   } = store.app
   const { publishing: publishingAnnouncement } = store.announcement.create.control
@@ -16,7 +16,7 @@ export const mapStateToProps = (store) => {
    } = store.render
 
   return {
-    language,
+    lang,
     authorized: store.user.authorize.data.authorized,
     success: store.user.create.control.success,
     step,

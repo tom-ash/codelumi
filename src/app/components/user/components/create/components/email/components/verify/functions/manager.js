@@ -17,7 +17,7 @@ export function verificationManager() {
     id: 'user-create-email-verification',
     controlled: false,
     classNames: { container: 'form-input text' },
-    label: this.languageHandler('Kod weryfikacyjny', 'Verification Code'),
+    label: this.langHandler('Kod weryfikacyjny', 'Verification Code'),
     onChange: () => changeErrors({ verification: { pl: '', en: '' }}),
     onBlur: value => {
       this.verificationManager().validate(value)
@@ -36,7 +36,7 @@ export function verificationManager() {
       }
       return true
     },
-    error: this.languageObjectHandler(verification)
+    error: this.langObjHandler(verification)
   }
 }
 
@@ -49,7 +49,7 @@ export function buttonManager() {
       <ButtonSpinner
         connecting={connecting}
         label={{ pl: 'Dalej', en: 'Next' }}
-        languageObjectHandler={this.languageObjectHandler}
+        langObjHandler={this.langObjHandler}
       />
     ),
     onClick: () => {

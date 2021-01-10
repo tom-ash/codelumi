@@ -4,15 +4,15 @@ export function controlProvider(announcement, index) {
   return (
     <div className='control small-shadow'>
       <div className='active'>
-        {this.languageObjectHandler({ pl: 'Aktywne do ', en: 'Active until '})} <strong>{announcement.activeUntil}</strong>
+        {this.langObjHandler({ pl: 'Aktywne do ', en: 'Active until '})} <strong>{announcement.activeUntil}</strong>
         {this.buttonProvider('Przedłuż', 'Extend', announcement, index, this.extend, ' extend')}
       </div>
       <div className='info-pieces'>
         <div className='info'>
           {
           announcement.visible ?
-          <span><i className='far fa-eye' /> {this.languageHandler('Widoczne', 'Visible')}</span> :
-          <span><i className='far fa-eye-slash' /> {this.languageHandler('Ukryte', 'Hidden')}</span>
+          <span><i className='far fa-eye' /> {this.langHandler('Widoczne', 'Visible')}</span> :
+          <span><i className='far fa-eye-slash' /> {this.langHandler('Ukryte', 'Hidden')}</span>
           }
         </div>
         <div className='info'>

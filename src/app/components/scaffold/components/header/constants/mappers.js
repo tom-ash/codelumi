@@ -8,7 +8,7 @@ import {
 
 export const mapStateToProps = (store) => {
   const {
-    language,
+    lang,
     device
   } = store.app
   const {
@@ -28,7 +28,7 @@ export const mapStateToProps = (store) => {
 
 
   return {
-    language,
+    lang,
     authorized,
     device,
     announcementCreateData,

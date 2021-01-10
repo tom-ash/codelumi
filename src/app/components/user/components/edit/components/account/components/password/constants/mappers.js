@@ -4,7 +4,7 @@ export const mapStateToProps = (store) => {
   } = store.app
 
   return {
-    language: store.app.language,
+    lang: store.app.lang,
     path: store.app.path,
     connecting: store.user.edit.control.passwordConnecting,
     stage: store.user.edit.control.passwordStage,

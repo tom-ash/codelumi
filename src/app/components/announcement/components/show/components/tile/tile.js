@@ -4,7 +4,7 @@ import AnnouncementShowPrimary from './components/primary/primary'
 import AnnouncementShowFeaturesFurnishings from './components/features-furnishings/features-furnishings'
 import AnnouncementShowDescription from './components/description/description'
 import AnnouncementShowMap from './components/map/map'
-import { languageObjectHandler } from '../../../../../../functions/language-handler'
+import { langObjHandler } from '../../../../../../functions/lang-handler'
 import { parseCategory } from '../../../../../../../shared/functions/parsers/parse-category'
 import { parseDistrict } from '../../../../functions/district-parsers'
 import { CloseButton } from '../../../../../support/components/close-button/close-button'
@@ -24,7 +24,7 @@ class AnnouncementTile extends React.Component {
   constructor(props) {
     super(props)
     this.container = React.createRef()
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
     this.togglePhone = togglePhone.bind(this)
     this.state = {
@@ -34,7 +34,7 @@ class AnnouncementTile extends React.Component {
 
   render() {
     const {
-      language,
+      lang,
       venue,
       showPhoneSwitch,
       id,
@@ -96,7 +96,7 @@ class AnnouncementTile extends React.Component {
             id,
             category,
             district,
-            language
+            lang
           })}
         />
       )
@@ -115,18 +115,18 @@ class AnnouncementTile extends React.Component {
         <div className='header-container'>
           <h2>
             <div className='header-row category'>
-              <span>{category !== null && parseCategory({ categoryNumber: category, language })}</span>
+              <span>{category !== null && parseCategory({ categoryNumber: category, lang })}</span>
               &nbsp;
-              <span className='for-lease'>{this.languageObjectHandler({ pl: 'na wynajem', en: 'for lease' })}</span>
+              <span className='for-lease'>{this.langObjHandler({ pl: 'na wynajem', en: 'for lease' })}</span>
             </div>
             <div className='header-row district'>
-              {parseDistrict(district)}{this.languageObjectHandler({ pl: ', Warszawa', en: ', Warsaw' })}
+              {parseDistrict(district)}{this.langObjHandler({ pl: ', Warszawa', en: ', Warsaw' })}
             </div>
             <div className='area'>
               <div className='area-amount'>
               {area}
               </div>
-              {this.languageObjectHandler({
+              {this.langObjHandler({
                 pl: (
                   <React.Fragment>
                     <div className='m'>
@@ -151,7 +151,7 @@ class AnnouncementTile extends React.Component {
         {showPhoneSwitch &&
         this.phoneSwitchProvider()}
         <AnnouncementShowPictures
-          language={language}
+          lang={lang}
           venue={venue}
           id={id}
           pictures={pictures}
@@ -165,7 +165,7 @@ class AnnouncementTile extends React.Component {
           changeRoute={changeRoute}
         />
         <AnnouncementShowPrimary
-          language={language}
+          lang={lang}
           category={category}
           netRentAmount={netRentAmount}
           netRentAmountPerSqm={netRentAmountPerSqm}
@@ -182,7 +182,7 @@ class AnnouncementTile extends React.Component {
           {features && features.length > 0 &&
           <div>
             <AnnouncementShowFeaturesFurnishings
-              language={language}
+              lang={lang}
               itemsName='features'
               items={features}
               scalableVectorGraphics={scalableVectorGraphics}
@@ -191,7 +191,7 @@ class AnnouncementTile extends React.Component {
           {furnishings && furnishings.length > 0 &&
           <div>
             <AnnouncementShowFeaturesFurnishings
-              language={language}
+              lang={lang}
               itemsName='furnishings'
               items={furnishings}
               scalableVectorGraphics={scalableVectorGraphics}
@@ -199,7 +199,7 @@ class AnnouncementTile extends React.Component {
           </div>}
           {(polishDescription || englishDescription) &&
           <AnnouncementShowDescription
-            language={language}
+            lang={lang}
             polishDescription={polishDescription}
             englishDescription={englishDescription}
           />}

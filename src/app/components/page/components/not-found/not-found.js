@@ -1,10 +1,10 @@
 import React from 'react'
-import { languageObjectHandler } from '../../../../functions/language-handler'
+import { langObjHandler } from '../../../../functions/lang-handler'
 
 class PageNotFound extends React.Component {
   constructor(props) {
     super(props)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
   }
 
   render() {
@@ -15,7 +15,7 @@ class PageNotFound extends React.Component {
             404
           </div>
           <div className='text'>
-            {this.languageObjectHandler({
+            {this.langObjHandler({
               pl: 'Strona nie została odnaleziona.',
               en: 'Page not found.'
             })}

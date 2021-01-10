@@ -4,9 +4,9 @@ import * as reduxMappers from './constants/mappers'
 import { ManagedLink } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { changeRoute } from '../../../../functions/routers/change-route'
-import { languageObjectHandler } from '../../../../functions/language-handler'
+import { langObjHandler } from '../../../../functions/lang-handler'
 import { labelProvider } from '../../../user/components/show/functions/label-provider'
-import { matchPathToLanguage } from '../../../../functions/routers/match-path-to-language'
+import { matchPathToLanguage } from '../../../../functions/routers/match-path-to-lang'
 import { HeaderProvider } from '../../../announcement/components/index/functions/header-provider'
 import { linksProvider } from './functions/links-provider'
 import { RENDER_SIDE_LINKS_TRACK } from './constants/tracks'
@@ -20,7 +20,7 @@ class Header extends React.Component {
     this.signInManager = managers.signInManager.bind(this)
     this.myAccountManager = managers.myAccountManager.bind(this)
     this.languageManager = managers.languageManager.bind(this)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
     this.matchPathToLanguage = matchPathToLanguage.bind(this)
     this.changeRoute = changeRoute.bind(this)
@@ -61,7 +61,7 @@ class Header extends React.Component {
             <HeaderProvider
               renderMap={renderMap}
               renderCatalogue={renderCatalogue}
-              languageObjectHandler={this.languageObjectHandler}
+              langObjHandler={this.langObjHandler}
             />
           </h1>
           <div className='top-links'>

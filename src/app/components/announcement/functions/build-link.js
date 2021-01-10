@@ -5,9 +5,9 @@ export function buildLink({
   id,
   category,
   district,
-  language
+  lang
 }) {
   return (
-    `${CLIENT_URL}/${id}-${parseCategoryForUrl(category)[language]}-${{ pl: 'na-wynajem', en: 'for-lease' }[language]}-${{ pl: 'warszawa', en: 'warsaw'}[language]}-${parseDistrictForUrl(district)[language]}`
+    `${CLIENT_URL}/${id}-${parseCategoryForUrl(category)[lang]}-${{ pl: 'na-wynajem', en: 'for-lease' }[lang]}-${{ pl: 'warszawa', en: 'warsaw'}[lang]}-${parseDistrictForUrl(district)[lang]}`
   )
 }

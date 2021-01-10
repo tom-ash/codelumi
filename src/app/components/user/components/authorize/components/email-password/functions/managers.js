@@ -17,7 +17,7 @@ export function emailAddressManager() {
     autoComplete: 'email',
     controlled: false,
     classNames: { container: 'form-input text email'},
-    label: this.languageObjectHandler(label),
+    label: this.langObjHandler(label),
     children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onChange: () => this.props.changeErrors({ emailOrPassword: noError }),
     onBlur: value => this.emailAddressManager().validate(value),
@@ -30,7 +30,7 @@ export function emailAddressManager() {
         })
       }
     },
-    error: this.languageHandler(this.props.emailOrPasswordError.pl, this.props.emailOrPasswordError.en)
+    error: this.langHandler(this.props.emailOrPasswordError.pl, this.props.emailOrPasswordError.en)
   }
 }
 
@@ -46,7 +46,7 @@ export function passwordManager() {
     type: 'password',
     controlled: false,
     classNames: { container: 'form-input text password'},
-    label: this.languageObjectHandler(label),
+    label: this.langObjHandler(label),
     children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onChange: () => this.props.changeErrors({ emailOrPassword: noError, email: noError }),
     onBlur: value => this.passwordManager().validate(value),
@@ -61,7 +61,7 @@ export function passwordManager() {
       }
       return true
     }),
-    error: this.languageHandler(this.props.emailOrPasswordError.pl, this.props.emailOrPasswordError.en)
+    error: this.langHandler(this.props.emailOrPasswordError.pl, this.props.emailOrPasswordError.en)
   }
 }
 
@@ -71,7 +71,7 @@ export function rememberMeManager() {
   return {
     classNames: { container: 'form-input checkbox'},
     checked: this.props.rememberMe,
-    label: this.languageHandler('Zapamiętaj mnie', 'Remember me'),
+    label: this.langHandler('Zapamiętaj mnie', 'Remember me'),
     onClick: () => this.props.changeInputs({ rememberMe: !rememberMe })
   }
 }
@@ -85,7 +85,7 @@ export function buttonManager() {
       <ButtonSpinner
         connecting={connecting}
         label={{ pl: 'Zaloguj', en: 'Sign In' }}
-        languageObjectHandler={this.languageObjectHandler}
+        langObjHandler={this.langObjHandler}
       />
     ),
     onClick: this.logIn

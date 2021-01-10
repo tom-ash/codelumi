@@ -1,6 +1,6 @@
 export function componentDidMount() {
   const {
-    language,
+    lang,
     changeApp,
     siteMapLinks
   } = this.props
@@ -10,7 +10,7 @@ export function componentDidMount() {
   fetch(`${API_URL}/site_map`, {
     headers: {
       'Content-Type': 'application/json',
-      'Language': language
+      'Language': lang
     }
   })
   .then(response => {

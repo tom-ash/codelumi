@@ -30,7 +30,7 @@ export function textManager() {
       }
       return true
     },
-    error: this.languageObjectHandler(error)
+    error: this.langObjHandler(error)
   }
 }
 
@@ -43,7 +43,7 @@ export function buttonManager() {
       <ButtonSpinner
         connecting={connecting}
         label={{ pl: 'Zmień', en: 'Change' }}
-        languageObjectHandler={this.languageObjectHandler}
+        langObjHandler={this.langObjHandler}
       />
     ),
     onClick: () => {

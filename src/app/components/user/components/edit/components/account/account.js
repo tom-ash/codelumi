@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { componentDidMount, componentWillUnmount } from './functions/lifecycle'
 import UserEditAccountCell from './components/cell/cell'
-import { languageHandler } from '../../../../../../functions/language-handler'
+import { langHandler } from '../../../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
@@ -12,7 +12,7 @@ class UserEditAccount extends React.Component {
     super(props)
     this.componentDidMount = componentDidMount.bind(this)
     this.componentWillUnmount = componentWillUnmount.bind(this)
-    this.languageHandler = languageHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
   }
 
   render() {
@@ -21,7 +21,7 @@ class UserEditAccount extends React.Component {
     return (
       <div id='user-edit-account' className='container narrow-container shadowed'>
         <h2 className='page-header'>
-          <i className='fas fa-cog' /> {this.languageHandler('Ustawienia', 'Settings')}
+          <i className='fas fa-cog' /> {this.langHandler('Ustawienia', 'Settings')}
         </h2>
         {accountType == 'private' ?
         <UserEditAccountCell key='firstName' item='firstName' />

@@ -1,5 +1,5 @@
 import { errors } from '../constants/errors'
 
 export function errorTextProvider() {
-  if (this.props.termsError) return this.languageObjectHandler(errors.termsAndPrivacyConsent)
+  if (this.props.termsError) return this.langObjHandler(errors.termsAndPrivacyConsent)
 }

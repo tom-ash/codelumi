@@ -8,7 +8,7 @@ export function metaDataParser({
   schemaOrg, schemaOrgParser
 }) {
   return {
-    language: lang,
+    lang,
     title: titleParser && titleParser({ title, lang }) || title,
     description: descriptionParser && descriptionParser({ description, lang }) || description,
     keywords: keywordsParser && keywordsParser({ keywords, lang }) || keywords,

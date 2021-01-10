@@ -2,7 +2,7 @@ import React from 'react'
 import loadable from '@loadable/component'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { languageObjectHandler } from '../../../../../../functions/language-handler'
+import { langObjHandler } from '../../../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import PanelCategories from './components/categories/categories'
@@ -13,15 +13,15 @@ import { changeRoute } from '../../../../../../functions/routers/change-route'
 class AnnouncementIndexPanel extends React.Component {
   constructor(props) {
     super(props)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
-    this.languageHandler = languageObjectHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langObjHandler.bind(this)
     this.buttonManager = buttonManager.bind(this)
     this.changeRoute = changeRoute.bind(this)
   }
 
   render() {
     const {
-      language,
+      lang,
       renderMap,
       renderCatalogue,
       renderMy,
@@ -34,7 +34,7 @@ class AnnouncementIndexPanel extends React.Component {
     return (
       <div id='announcement-index-panel'>
         <PanelCategories
-          languageObjectHandler={this.languageObjectHandler}
+          langObjHandler={this.langObjHandler}
           scalableVectorGraphics={scalableVectorGraphics}
           changeInputs={changeInputs}
           changeControl={changeControl}
@@ -45,8 +45,8 @@ class AnnouncementIndexPanel extends React.Component {
           <PanelVisitor
             abc='asdad'
             changeRoute={this.changeRoute}
-            language={language}
-            languageHandler={this.languageObjectHandler}
+            lang={lang}
+            langHandler={this.langObjHandler}
             buttonManager={this.buttonManager}
             // renderMap={renderMap}
             // changeRoute={this.changeRoute}

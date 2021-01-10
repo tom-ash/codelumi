@@ -8,14 +8,14 @@ export function goToAnnouncementManager() {
     category,
     district,
     area,
-    languageObjectHandler,
+    langObjHandler,
     changeAnnouncementShowData,
     changeRoute
   } = this.props
 
   return {
     classNames: { container: 'go-to-announcement' },
-    label: languageObjectHandler({ pl: 'Pokaż dodane ogłoszenie', en: 'Show the added announcement' }),
+    label: langObjHandler({ pl: 'Pokaż dodane ogłoszenie', en: 'Show the added announcement' }),
     onClick: () => {
       changeAnnouncementShowData({ id, category, district, area })
       changeRoute(ANNOUNCEMENT_SHOW_TRACK)

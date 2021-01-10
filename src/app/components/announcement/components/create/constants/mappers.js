@@ -2,7 +2,7 @@ import { ANNOUNCEMENT_EDIT_TRACK } from '../../../../../../shared/constants/trac
 
 export const mapStateToProps = (store) => {
   const {
-    language,
+    lang,
     isMobile,
     scalableVectorGraphics
   } = store.app
@@ -57,7 +57,7 @@ export const mapStateToProps = (store) => {
 
   return {
     renderEdit,
-    language,
+    lang,
     scalableVectorGraphics,
     step,
     connecting,

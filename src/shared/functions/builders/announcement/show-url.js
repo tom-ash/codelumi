@@ -13,14 +13,13 @@ const WARSAW_URL = {
 
 export function buildAnnouncementShowUrl() {
   const {
-    language,
+    lang,
     announcementShowData: {
       id,
       category,
       district
     }
   } = this.props
-  const lang = language
 
   if (!id) return ''
 

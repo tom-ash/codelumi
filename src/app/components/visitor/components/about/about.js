@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { pageHeaderProvider } from '../../../../functions/providers/headers'
-import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
+import { langHandler, langObjHandler } from '../../../../functions/lang-handler'
 import { features } from './constants/features'
 import { CloseButton } from '../../../../components/support/components/close-button/close-button'
 import withStyles from 'isomorphic-style-loader/withStyles'
@@ -12,8 +12,8 @@ class About extends React.Component {
   constructor(props) {
     super(props)
     this.pageHeaderProvider = pageHeaderProvider.bind(this)
-    this.languageHandler = languageHandler.bind(this)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
   }
   render() {
     return(
@@ -27,14 +27,14 @@ class About extends React.Component {
           {this.pageHeaderProvider('fas fa-info-circle', { pl: 'O Serwisie', en: 'About' })}
           <div className='paragraph'>
             {
-            this.languageHandler(
+            this.langHandler(
             <span>Serwis internetowy znajdujący się po adresem <u>warsawlease.pl</u> umożliwia wyszukiwanie biur oraz&nbsp;lokali użytkowych znajdujących się w obszarze m.&nbsp;st.&nbsp;Warszawy.</span>,
             <span>The Internet Service located under the address <u>warsawlease.pl</u> alllows searching of offices and commercial premises located within the area of&nbsp;the&nbsp;Capital City of Warsaw.</span>)
             }
           </div>
           <div className='paragraph features'>
             {
-            this.languageHandler(
+            this.langHandler(
             <span>Serwis jest:</span>,
             <span>The Service is:</span>)
             }
@@ -42,7 +42,7 @@ class About extends React.Component {
           {
           features.map((feature, index) => (
             <div className='feature' key={index}>
-              <i className="fas fa-check-circle"></i>  {this.languageObjectHandler(feature)}
+              <i className="fas fa-check-circle"></i>  {this.langObjHandler(feature)}
             </div>
           ))
           }

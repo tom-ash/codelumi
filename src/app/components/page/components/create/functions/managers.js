@@ -17,11 +17,11 @@ export function nameManager() {
 export function urlManager() {
   const {
     inputs,
-    language,
+    lang,
     changeInputs
   } = this.props
 
-  const localizedInputs = this.languageObjectHandler(inputs)
+  const localizedInputs = this.langObjHandler(inputs)
 
   let url
   if (localizedInputs === null) {
@@ -35,21 +35,21 @@ export function urlManager() {
     label: 'Url',
     value: url || '',
     onChange: value => {
-      const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
+      const newLocalizedInputs = { ...this.langObjHandler(inputs) }
       newLocalizedInputs.url = value
-      changeInputs({ [language]: newLocalizedInputs })
+      changeInputs({ [lang]: newLocalizedInputs })
     }
   }
 }
 
 export function bodyManager() {
   const {
-    language,
+    lang,
     inputs,
     changeInputs
   } = this.props
 
-  const localizedInputs = this.languageObjectHandler(inputs)
+  const localizedInputs = this.langObjHandler(inputs)
 
   let body
   if (localizedInputs === null) {
@@ -64,9 +64,9 @@ export function bodyManager() {
     value: body || '',
     counterLimit: 10000,
     onChange: value => {
-      const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
+      const newLocalizedInputs = { ...this.langObjHandler(inputs) }
       newLocalizedInputs.body = value
-      changeInputs({ [language]: newLocalizedInputs })
+      changeInputs({ [lang]: newLocalizedInputs })
     }
   }
 }
@@ -74,11 +74,11 @@ export function bodyManager() {
 export function titleManager() {
   const {
     inputs,
-    language,
+    lang,
     changeInputs
   } = this.props
 
-  const localizedInputs = this.languageObjectHandler(inputs)
+  const localizedInputs = this.langObjHandler(inputs)
 
   let title
   if (localizedInputs === null) {
@@ -92,23 +92,23 @@ export function titleManager() {
     label: 'Title',
     value: title,
     onChange: value => {
-      const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
+      const newLocalizedInputs = { ...this.langObjHandler(inputs) }
       newLocalizedInputs.title = value
-      changeInputs({ [language]: newLocalizedInputs })
+      changeInputs({ [lang]: newLocalizedInputs })
     }
   }
 }
 
 export function descriptionManager() {
   const {
-    language,
+    lang,
     inputs,
     changeInputs
   } = this.props
 
   const {
     description
-  } = this.languageObjectHandler(inputs) || {}
+  } = this.langObjHandler(inputs) || {}
 
   return {
     classNames: { container: 'form-input textarea slim' },
@@ -116,23 +116,23 @@ export function descriptionManager() {
     value: description || '',
     counterLimit: 10000,
     onChange: value => {
-      const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
+      const newLocalizedInputs = { ...this.langObjHandler(inputs) }
       newLocalizedInputs.description = value
-      changeInputs({ [language]: newLocalizedInputs })
+      changeInputs({ [lang]: newLocalizedInputs })
     }
   }
 }
 
 export function keywordsManager() {
   const {
-    language,
+    lang,
     inputs,
     changeInputs
   } = this.props
 
   const {
     keywords
-  } = this.languageObjectHandler(inputs) || {}
+  } = this.langObjHandler(inputs) || {}
 
   return {
     classNames: { container: 'form-input textarea slim' },
@@ -140,9 +140,9 @@ export function keywordsManager() {
     value: keywords || '',
     counterLimit: 10000,
     onChange: value => {
-      const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
+      const newLocalizedInputs = { ...this.langObjHandler(inputs) }
       newLocalizedInputs.keywords = value
-      changeInputs({ [language]: newLocalizedInputs })
+      changeInputs({ [lang]: newLocalizedInputs })
     }
   }
 }
@@ -150,22 +150,22 @@ export function keywordsManager() {
 export function canonicalUrlManager() {
   const {
     inputs,
-    language,
+    lang,
     changeInputs
   } = this.props
 
   const {
     canonical_url
-  } = this.languageObjectHandler(inputs) || {}
+  } = this.langObjHandler(inputs) || {}
 
   return {
     classNames: { container: 'form-input text' },
     label: 'Canonical URL',
     value: canonical_url || '',
     onChange: value => {
-      const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
+      const newLocalizedInputs = { ...this.langObjHandler(inputs) }
       newLocalizedInputs.canonical_url = value
-      changeInputs({ [language]: newLocalizedInputs })
+      changeInputs({ [lang]: newLocalizedInputs })
     }
   }
 }
@@ -173,34 +173,34 @@ export function canonicalUrlManager() {
 export function pictureManager() {
   const {
     inputs,
-    language,
+    lang,
     changeInputs
   } = this.props
 
   const {
     picture
-  } = this.languageObjectHandler(inputs) || {}
+  } = this.langObjHandler(inputs) || {}
 
   return {
     classNames: { container: 'form-input text' },
     label: 'Picture',
     value: picture || '',
     onChange: value => {
-      const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
+      const newLocalizedInputs = { ...this.langObjHandler(inputs) }
       newLocalizedInputs.picture = value
-      changeInputs({ [language]: newLocalizedInputs })
+      changeInputs({ [lang]: newLocalizedInputs })
     }
   }
 }
 
 export function metaManager() {
   const {
-    language,
+    lang,
     inputs,
     changeInputs
   } = this.props
 
-  const localizedInputs = this.languageObjectHandler(inputs)
+  const localizedInputs = this.langObjHandler(inputs)
 
   let meta
   if (localizedInputs === null) {
@@ -215,9 +215,9 @@ export function metaManager() {
     value: meta || '',
     counterLimit: 10000,
     onChange: value => {
-      const newLocalizedInputs = { ...this.languageObjectHandler(inputs) }
+      const newLocalizedInputs = { ...this.langObjHandler(inputs) }
       newLocalizedInputs.meta = value
-      changeInputs({ [language]: newLocalizedInputs })
+      changeInputs({ [lang]: newLocalizedInputs })
     }
   }
 }

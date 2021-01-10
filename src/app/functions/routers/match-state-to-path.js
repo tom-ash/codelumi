@@ -22,10 +22,10 @@ export function matchRenderToRoute() {
   if (route) {
     const {
       track,
-      lang: language
+      lang
     } = route
   
-    changeApp({ language })
+    changeApp({ lang })
     changeRender({ ...renderState, [track]: true, ...routeRenders[track] })
   } else {
     const {
@@ -43,12 +43,12 @@ export function matchRenderToRoute() {
       throw new Error('Page Not Found')
     })
     .then(json => {
-      changeApp({ language: json.language })
+      changeApp({ lang: json.lang })
       changePageShowData(json)
       changeRender({ [PAGE_TRACK]: true, [PAGE_SHOW_TRACK]: true })
     })
     .catch(error => {
-      changeApp({ language: 'pl' })
+      changeApp({ lang: 'pl' })
       changeRender({ [PAGE_TRACK]: true, [PAGE_NOT_FOUND_TRACK]: true })
     })
   }

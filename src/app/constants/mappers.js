@@ -7,7 +7,7 @@ import {
 
 export const mapStateToProps = (store) => {
   const {
-    language,
+    lang,
     device,
     path,
     scrollY,
@@ -37,7 +37,7 @@ export const mapStateToProps = (store) => {
   } = render
 
   return {
-    language,
+    lang,
     device,
     path,
     shouldMatchRouteToRenderAndLanguage,

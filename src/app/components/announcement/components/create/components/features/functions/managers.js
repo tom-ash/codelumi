@@ -16,7 +16,7 @@ export function addFeaturesManager() {
   return {
     classNames: { container: 'form-input checkbox add-switcher' },
     checked: addFeatures,
-    label: this.languageObjectHandler({
+    label: this.langObjHandler({
       pl: 'Dodaj Zalety',
       en: 'Add Features'
     }),

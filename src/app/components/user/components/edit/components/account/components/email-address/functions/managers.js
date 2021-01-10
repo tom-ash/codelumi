@@ -9,7 +9,7 @@ import { passwordValidator } from '../../../../../../../functions/password-valid
 const noError = { pl: '', en: '' }
 
 export function currentEmailVerificationManager() {
-  const { languageObjectHandler, currentEmailVerificationManager: thisManager, props } = this
+  const { langObjHandler, currentEmailVerificationManager: thisManager, props } = this
   const { step, changeErrors, currentEmailVerificationError: error, connecting } = props
   const { icon, label } = inputs.verification
 
@@ -19,7 +19,7 @@ export function currentEmailVerificationManager() {
     controlled: false,
     classNames: { container: 'form-input text' },
     children: <i className={icon} />,
-    label: languageObjectHandler(label),
+    label: langObjHandler(label),
     onChange: () => changeErrors({ currentEmailVerification: noError }),
     onBlur: value => thisManager().validate(value),
     validate: value => {
@@ -27,12 +27,12 @@ export function currentEmailVerificationManager() {
       if (isValid) return
       changeErrors({ currentEmailVerification: error })
     },
-    error: languageObjectHandler(error)
+    error: langObjHandler(error)
   }
 }
 
 export function newEmailManager() {
-  const { languageObjectHandler, newEmailManager: thisManager, props } = this
+  const { langObjHandler, newEmailManager: thisManager, props } = this
   const { step, changeErrors, newEmailError: error } = props
   const { icon, label } = inputs.email
 
@@ -42,7 +42,7 @@ export function newEmailManager() {
     controlled: false,
     classNames: { container: 'form-input text' },
     children: <i className={icon} />,
-    label: languageObjectHandler(label),
+    label: langObjHandler(label),
     onChange: () => changeErrors({ newEmail: noError }),
     onBlur: value => thisManager().validate(value),
     validate: value => {
@@ -50,12 +50,12 @@ export function newEmailManager() {
       if (isValid) return
       changeErrors({ newEmail: error })
     },
-    error: languageObjectHandler(error)
+    error: langObjHandler(error)
   }
 }
 
 export function newEmailVerificationManager() {
-  const { languageObjectHandler, newEmailVerificationManager: thisManager, props } = this
+  const { langObjHandler, newEmailVerificationManager: thisManager, props } = this
   const { step, changeErrors, newEmailVerificationError: error } = props
   const { icon, label } = inputs.verification
 
@@ -65,7 +65,7 @@ export function newEmailVerificationManager() {
     controlled: false,
     classNames: { container: 'form-input text' },
     children: <i className={icon} />,
-    label: languageObjectHandler(label),
+    label: langObjHandler(label),
     onChange: () => changeErrors({ newEmailVerification: noError }),
     onBlur: value => thisManager().validate(value),
     validate: value => {
@@ -73,12 +73,12 @@ export function newEmailVerificationManager() {
       if (isValid) return
       changeErrors({ newEmailVerification: error })
     },
-    error: languageObjectHandler(error)
+    error: langObjHandler(error)
   }
 }
 
 export function passwordManager() {
-  const { languageObjectHandler, passwordManager: thisManager, props } = this
+  const { langObjHandler, passwordManager: thisManager, props } = this
   const { step, changeErrors, newEmailPasswordError: error } = props
   const { icon, label } = inputs.password
 
@@ -90,7 +90,7 @@ export function passwordManager() {
     type: 'password',
     autoComplete: 'new-password',
     children: <i className={icon} />,
-    label: languageObjectHandler(label),
+    label: langObjHandler(label),
     onChange: () => changeErrors({ newEmailPassword: noError }),
     onBlur: value => thisManager().validate(value),
     validate: value => {
@@ -98,7 +98,7 @@ export function passwordManager() {
       if (isValid) return
       changeErrors({ newEmailPassword: error })
     },
-    error: languageObjectHandler(error)
+    error: langObjHandler(error)
   }
 }
 
@@ -113,7 +113,7 @@ export function buttonManager() {
       <ButtonSpinner
         connecting={connecting}
         label={{ pl: 'Dalej', en: 'Next' }}
-        languageObjectHandler={this.languageObjectHandler}
+        langObjHandler={this.langObjHandler}
       />
     ),
     onClick: buttonOnClickProvider.call(this)

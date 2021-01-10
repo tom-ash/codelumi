@@ -1,6 +1,6 @@
 export const mapStateToProps = (store) => {
   const {
-    language
+    lang
   } = store.app
 
   const {
@@ -18,7 +18,7 @@ export const mapStateToProps = (store) => {
   } = store.page.show.data
 
   return {
-    language,
+    lang,
     name,
     inputs,
     showName,

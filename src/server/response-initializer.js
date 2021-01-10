@@ -6,7 +6,7 @@ import { renderState } from '../shared/constants/routes/renders/state'
 import { metaDataParser } from '../shared/functions/parsers/meta-data'
 
 export function responseInitializer({ url, route, device }) {
-  const { lang: language, track, initialStateParser } = route
+  const { lang, track, initialStateParser } = route
 
   return (
     fetch(API_URL + `/route_data`, {
@@ -18,11 +18,10 @@ export function responseInitializer({ url, route, device }) {
       throw new Error('Page Not Found')
     })
     .then(jsonResponse => {
-      const lang = language
       const { metaData: unparsedMetaData, initialState: unparsedInitialState } = jsonResponse
       const scalableVectorGraphics = parseScalableVectorGraphics(jsonResponse)
       const metaData = metaDataParser({ ...route, ...unparsedMetaData, lang })
-      const app = { ...appState, language: lang, device, scalableVectorGraphics }
+      const app = { ...appState, lang, device, scalableVectorGraphics }
       let render = { ...renderState, [track]: true, ...routeRenders[track] }
       let page = {}
       const residualState = initialStateParser && initialStateParser(unparsedInitialState) || {}

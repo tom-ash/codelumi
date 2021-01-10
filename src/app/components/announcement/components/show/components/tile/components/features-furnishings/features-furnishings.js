@@ -1,6 +1,6 @@
 import React from 'react'
-import { languageHandler } from '../../../../../../../../functions/language-handler'
-import { languageObjectHandler } from '../../../../../../../../functions/language-handler'
+import { langHandler } from '../../../../../../../../functions/lang-handler'
+import { langObjHandler } from '../../../../../../../../functions/lang-handler'
 import { features } from '../../../../../../constants/features'
 import { furnishings } from '../../../../../../constants/furnishings'
 import ScalableVectorGraphic from '../../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
@@ -8,8 +8,8 @@ import ScalableVectorGraphic from '../../../../../../../support/components/scala
 class AnnouncementShowFeaturesFurnishings extends React.Component {
   constructor(props) {
     super(props)
-    this.languageHandler = languageHandler.bind(this)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
     this.nodes = this.props.itemsName === 'features' ? features : furnishings
   }
   
@@ -31,7 +31,7 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
             <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.check} />
           </div>
           <div className='text'>
-            {this.languageObjectHandler(this.nodes.find(node => node.ref === item))}
+            {this.langObjHandler(this.nodes.find(node => node.ref === item))}
           </div>
           <div className='float-clear' />
         </div>

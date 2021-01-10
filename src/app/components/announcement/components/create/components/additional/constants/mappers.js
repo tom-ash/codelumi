@@ -4,7 +4,7 @@ export const mapStateToProps = (store) => {
   } = store.app
 
   return {
-    language: store.app.language,
+    lang: store.app.lang,
     availabilityDateFocus: store.announcement.create.control.availabilityDateFocus,
     calendarMouseOver: store.announcement.create.control.calendarMouseOver,
     category: store.announcement.create.inputs.category,

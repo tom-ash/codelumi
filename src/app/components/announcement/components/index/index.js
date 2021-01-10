@@ -10,7 +10,7 @@ import { buildRequestParameters } from './functions/build-parameters'
 import { fetchAnnouncements } from './functions/fetch-announcements'
 import { paramsReader } from './functions/params-reader'
 import { paramsBuilder } from './functions/params-builder'
-import { languageHandler, languageObjectHandler } from '../../../../functions/language-handler'
+import { langHandler, langObjHandler } from '../../../../functions/lang-handler'
 import { parseCurrency } from '../../functions/currency-parsers'
 import { parseCategoryForUrl } from '../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../functions/district-parsers'
@@ -23,8 +23,8 @@ import styles from './styles/styles.scss'
 class AnnouncementIndexSearch extends React.Component {
   constructor(props) {
     super(props)
-    this.languageHandler = languageHandler.bind(this)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
     this.paramsReader = paramsReader.bind(this)
     this.fetchAnnouncements = fetchAnnouncements.bind(this)
     this.buildRequestParameters = buildRequestParameters.bind(this)

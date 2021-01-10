@@ -5,7 +5,7 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { ManagedText, ManagedSelect, ManagedCheckbox } from 'managed-inputs'
 const Calendar = loadable(() => import('../../../../../support/components/calendar/calendar'), { ssr: false })
 import * as managers from './functions/managers'
-import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
+import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
 import { onSelectHandler } from './functions/on-select-handler'
 import { parseDate } from '../../../../../../functions/date-parsers'
 import { labelProvider } from '../../../../../../functions/providers/label'
@@ -19,8 +19,8 @@ const { AVAILABILITY_DATE_SELECTED_EVENT } = analyticEvents
 class AnnouncementCreateAdditional extends React.Component {
   constructor(props) {
     super(props)
-    this.languageHandler = languageHandler.bind(this)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
     this.roomsManager = managers.roomsManager.bind(this)
     this.floorManager = managers.floorManager.bind(this)
     this.totalFloorsManager = managers.totalFloorsManager.bind(this)
@@ -62,7 +62,7 @@ class AnnouncementCreateAdditional extends React.Component {
                   sendGaEvent(AVAILABILITY_DATE_SELECTED_EVENT)
                 }}
                 value={this.props.availabilityDate ? new Date(this.props.availabilityDate) : null}
-                locale={this.props.language == 'pl' ? 'pl' : 'en'}
+                locale={this.props.lang == 'pl' ? 'pl' : 'en'}
               />
             </div>
           </div>

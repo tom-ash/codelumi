@@ -4,12 +4,12 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { changeRoute } from '../../../../functions/routers/change-route'
 import * as managers from './functions/managers'
 import { ManagedLink } from 'managed-inputs'
-import { languageObjectHandler } from '../../../../functions/language-handler'
+import { langObjHandler } from '../../../../functions/lang-handler'
 
 class Footer extends React.Component {
   constructor(props) {
     super(props)
-    this.languageHandler = languageObjectHandler.bind(this)
+    this.langHandler = langObjHandler.bind(this)
     this.contactManager = managers.contactManager.bind(this)
     this.termsOfServiceManager = managers.termsOfServiceManager.bind(this)
     this.cookiesPolicyManager = managers.cookiesPolicyManager.bind(this)
@@ -29,7 +29,7 @@ class Footer extends React.Component {
             <ManagedLink {...this.privacySettingsManager()} />
           </div>
           <div className='copyright'>
-            <i className='far fa-copyright' /> Warsaw Digital Sp. z o.o. 2020 {this.languageHandler({ pl: 'Wszelkie prawa zastrzeżone.', en: 'All rights reserved.' })}
+            <i className='far fa-copyright' /> Warsaw Digital Sp. z o.o. 2020 {this.langHandler({ pl: 'Wszelkie prawa zastrzeżone.', en: 'All rights reserved.' })}
           </div>
           <div className='float-clear' />
         </div>

@@ -1,14 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { languageHandler } from '../../../../../../functions/language-handler'
+import { langHandler } from '../../../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
 class VisitorLegalProvision extends React.Component {
   constructor(props) {
     super(props)
-    this.languageHandler = languageHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
   }
 
   render() {
@@ -19,7 +19,7 @@ class VisitorLegalProvision extends React.Component {
           {this.props.data.item}
         </div>
         <div className='text'>
-          {this.languageHandler(this.props.data.pl, this.props.data.en)}
+          {this.langHandler(this.props.data.pl, this.props.data.en)}
         </div>
         <div className='float-clear' />
       </div>

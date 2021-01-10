@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
-import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
+import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
 import * as managers from './functions/managers'
 import AnnouncementTile from '../../../show/components/tile/tile'
 import { controlProvider } from './functions/control-provider'
@@ -21,8 +21,8 @@ import { fetchAnnouncements } from '../../functions/fetch-announcements'
 class AnnouncementIndexList extends React.Component {
   constructor(props) {
     super(props)
-    this.languageHandler = languageHandler.bind(this)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
     this.componentDidMount = lifecycle.componentDidMount
     this.controlProvider = controlProvider.bind(this)
     this.buttonProvider = buttonProvider.bind(this)
@@ -43,13 +43,13 @@ class AnnouncementIndexList extends React.Component {
       amount,
       offset,
       scalableVectorGraphics,
-      language,
+      lang,
       changeAnnouncementShowData
     } = this.props
 
     const toValue = offset + 10 < amount ? offset + 10 : amount
-    let whichAnnouncements = `${offset + 1} - ${toValue} ${this.languageHandler('z', 'of')}`
-    if (offset + 1 === amount) whichAnnouncements = `${offset + 1} ${this.languageHandler('z', 'of')}`
+    let whichAnnouncements = `${offset + 1} - ${toValue} ${this.langHandler('z', 'of')}`
+    if (offset + 1 === amount) whichAnnouncements = `${offset + 1} ${this.langHandler('z', 'of')}`
 
     return (
       <div id='announcement-index-list'>
@@ -60,7 +60,7 @@ class AnnouncementIndexList extends React.Component {
           <div className='monit'>
             <div className='text'>
               {
-              this.languageHandler(`Usunięte ogłoszenie nie może być przywrócone. Czy na pewno chcesz usunąć ogłoszenie Nr ${this.props.beingDeleted}. `, `The deleted announcement cannot be restored. Are you sure you want to delete the announcement No. ${this.props.beingDeleted}`)
+              this.langHandler(`Usunięte ogłoszenie nie może być przywrócone. Czy na pewno chcesz usunąć ogłoszenie Nr ${this.props.beingDeleted}. `, `The deleted announcement cannot be restored. Are you sure you want to delete the announcement No. ${this.props.beingDeleted}`)
               }
             </div>
             <ManagedButton {...this.cancelDestroyManager()} />
@@ -96,7 +96,7 @@ class AnnouncementIndexList extends React.Component {
             control={this.controlProvider(announcement, index)}
             scalableVectorGraphics={scalableVectorGraphics}
             changeRoute={this.changeRoute}
-            language={language}
+            lang={lang}
             changeData={changeAnnouncementShowData}
           />))}
           <div className='float-clear' />

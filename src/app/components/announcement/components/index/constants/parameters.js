@@ -8,7 +8,7 @@ export const parameters = [
     pl: 'kategoria',
     en: 'category',
     value: function(categoryNumber) {
-      return this.languageObjectHandler(parseCategoryForUrl(categoryNumber))
+      return this.langObjHandler(parseCategoryForUrl(categoryNumber))
     },
     stateValue: categoryName => reverseParseCategory(categoryName)
   },

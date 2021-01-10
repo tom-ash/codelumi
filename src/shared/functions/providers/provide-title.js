@@ -7,8 +7,7 @@ export function provideTitle({
   area,
   lang
 }) {
-  const language = lang
-  const parsedCategory = parseCategory({ categoryNumber, language })
+  const parsedCategory = parseCategory({ categoryNumber, lang })
   const forLease = { pl: 'na wynajem', en: 'for lease' }[lang]
   const categoryForLease = `${parsedCategory} ${forLease}`
   const warsaw = { pl: 'Warszawa', en: 'Warsaw' }[lang]

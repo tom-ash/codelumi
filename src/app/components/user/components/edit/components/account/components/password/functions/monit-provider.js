@@ -2,10 +2,10 @@ import * as monits from '../constants/monits'
 
 export function monitProvider() {
   switch (this.props.step) {
-    case null: return this.languageObjectHandler(monits.emailAddress)
-    case 'verificationCode': return this.languageObjectHandler(monits.verificationCode)
-    case 'password': return this.languageObjectHandler(monits.password)
-    case 'success': return this.languageObjectHandler(monits.success)
+    case null: return this.langObjHandler(monits.emailAddress)
+    case 'verificationCode': return this.langObjHandler(monits.verificationCode)
+    case 'password': return this.langObjHandler(monits.password)
+    case 'success': return this.langObjHandler(monits.success)
     default: break
   }
 }

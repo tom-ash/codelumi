@@ -3,14 +3,14 @@ import { hashPassword } from '../../../../../../../functions/shared.js'
 import { getAccessToken } from '../../../../../../authorize/components/tokens/functions/get-tokens'
 
 export function sendCurrentEmailAddress() {
-  const { changeControl, connecting, language, currentValue } = this.props
+  const { changeControl, connecting, lang, currentValue } = this.props
 
   if (connecting) return
 
   changeControl({ emailConnecting: true })
   fetch(apiUrl + '/user/edit/email/send_current', {
     method: 'PUT',
-    headers: { 'Content-Type': 'application/json', access_token: getAccessToken(), language },
+    headers: { 'Content-Type': 'application/json', access_token: getAccessToken(), lang },
     body: JSON.stringify({ email: currentValue })
   })
   .then(response => {
@@ -41,13 +41,13 @@ export function sendCurrentEmailVerification(verificationCode) {
 }
 
 export function sendNewEmail(newEmail) {
-  const { changeControl, connecting, language } = this.props
+  const { changeControl, connecting, lang } = this.props
 
   if (connecting) return
 
   changeControl({ emailConnecting: true })
   fetch(apiUrl + '/user/edit/email/new', {
-    method: 'PUT', headers: { 'Content-Type': 'application/json', access_token: getAccessToken(), language },
+    method: 'PUT', headers: { 'Content-Type': 'application/json', access_token: getAccessToken(), lang },
     body: JSON.stringify({ new_email: newEmail })
   })
   .then(response => {

@@ -16,11 +16,11 @@ export function sendPageResponse({ res, url, device, visitorState }) {
     throw new Error('Page Not Found')
   })
   .then(jsonResponse => {
-    const { language } = jsonResponse
+    const { lang } = jsonResponse
     const { canonicalUrl, noIndex,
-            title, description, keywords, image, openGraph, schemaOrg } = jsonResponse[language]
+            title, description, keywords, image, openGraph, schemaOrg } = jsonResponse[lang]
     const initialState = {
-      app: { ...appState, language, device },
+      app: { ...appState, lang, device },
       render: { ...renderState, [VISITOR_TRACK]: true, [PAGE_TRACK]: true, [PAGE_SHOW_TRACK]: true },
       page: { show: { data: jsonResponse } },
       ...visitorState
@@ -29,7 +29,7 @@ export function sendPageResponse({ res, url, device, visitorState }) {
 
     res.status(200).send(
       renderHtml({
-        url, language, canonicalUrl, noIndex,
+        url, lang, canonicalUrl, noIndex,
         title, description, keywords, image, openGraph, schemaOrg,
         ...appAsHtml
       }) 

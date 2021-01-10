@@ -4,7 +4,7 @@ import {
 
 export const mapStateToProps = (store) => {
   const {
-    language,
+    lang,
     scalableVectorGraphics
   } = store.app
   const {
@@ -27,7 +27,7 @@ export const mapStateToProps = (store) => {
   } = store.announcement.index.data
 
   return {
-    language,
+    lang,
     connecting,
     fetch,
     beingDeleted,

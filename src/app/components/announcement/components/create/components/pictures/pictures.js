@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { languageHandler, languageObjectHandler } from '../../../../../../functions/language-handler'
+import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
 import * as lifecycle from './functions/lifecycle'
 import { addFiles } from './functions/add-files'
 import { addPicture } from './functions/add-picture'
@@ -16,8 +16,8 @@ import ScalableVectorGraphic from '../../../../../support/components/scalable-ve
 class AnnouncementCreatePictures extends React.Component {
   constructor(props) {
     super(props)
-    this.languageHandler = languageHandler.bind(this)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.addFiles = addFiles.bind(this)
     this.addPicture = addPicture.bind(this)
@@ -35,11 +35,11 @@ class AnnouncementCreatePictures extends React.Component {
     return (
       <div id='announcement-create-pictures' className='section'>
         <div className='input-label'>
-          {this.languageObjectHandler({ pl: 'Zdjęcia', en: 'Pictures' })}
+          {this.langObjHandler({ pl: 'Zdjęcia', en: 'Pictures' })}
         </div>
         <div className={`drag-and-drop${this.props.error.pl ? ' error-drag-and-drop' : ''}`}>
           <div>
-            {this.languageHandler('Przeglądaj', 'Browse')}
+            {this.langHandler('Przeglądaj', 'Browse')}
           </div>
           <input
           id={requiredInputs.pictures.id}
@@ -50,7 +50,7 @@ class AnnouncementCreatePictures extends React.Component {
           </input>
         </div>
         <div className='error'>
-          {this.languageObjectHandler(this.props.error)}
+          {this.langObjHandler(this.props.error)}
         </div>
         <div>
           {

@@ -20,7 +20,7 @@ export const mapStateToProps = (store) => {
   } = store.user.create.errors
   
   return {
-    language: store.app.language,
+    lang: store.app.lang,
     accountType,
     phoneCode,
     accountTypeError,

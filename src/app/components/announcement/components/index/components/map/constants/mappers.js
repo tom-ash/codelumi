@@ -4,7 +4,7 @@ import {
 
 export const mapStateToProps = (store) => {
   const {
-    language,
+    lang,
     isMobile,
     scripts,
     device,
@@ -36,7 +36,7 @@ export const mapStateToProps = (store) => {
     loadMap,
     loadPins,
     device,
-    language,
+    lang,
     isMobile,
     scripts,
     connecting,

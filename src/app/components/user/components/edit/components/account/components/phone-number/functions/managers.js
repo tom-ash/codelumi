@@ -26,7 +26,7 @@ export function bodyManager() {
     type: 'tel',
     controlled: false,
     classNames: { container: 'form-input text phone-body' },
-    label: this.languageObjectHandler(label),
+    label: this.langObjHandler(label),
     onChange: value => {
       if (/^\d*$/.test(value)) {
         changeErrors({ phone: noError })
@@ -42,7 +42,7 @@ export function bodyManager() {
       }
       return true
     },
-    error: this.languageObjectHandler(this.props.error)
+    error: this.langObjHandler(this.props.error)
   }
 }
 
@@ -55,7 +55,7 @@ export function buttonManager() {
       <ButtonSpinner
         connecting={connecting}
         label={{ pl: 'Zmień', en: 'Change' }}
-        languageObjectHandler={this.languageObjectHandler}
+        langObjHandler={this.langObjHandler}
       />
     ),
     onClick: () => {

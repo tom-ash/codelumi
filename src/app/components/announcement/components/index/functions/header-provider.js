@@ -1,12 +1,12 @@
-export function HeaderProvider({ renderMap, renderCatalogue, languageObjectHandler }) {
+export function HeaderProvider({ renderMap, renderCatalogue, langObjHandler }) {
   if (renderCatalogue) {
-    return languageObjectHandler({
+    return langObjHandler({
       pl: 'Katalog nieruchomości na wynajem w Warszawie',
       en: 'Catalogue of Real Estate Lease in Warsaw'
     })
   }
   if (renderMap) {
-    return languageObjectHandler({
+    return langObjHandler({
       pl: 'Mapa nieruchomości na wynajem w Warszawie',
       en: 'Map of Real Estate Lease in Warsaw'
     })

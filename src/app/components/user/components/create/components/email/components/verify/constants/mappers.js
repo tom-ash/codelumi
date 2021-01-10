@@ -1,14 +1,14 @@
 import { ANNOUNCEMENT_CREATE_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = (store) => {
-  const { language } = store.app
+  const { lang } = store.app
   const { [ANNOUNCEMENT_CREATE_TRACK]: creatingAnnouncement } = store.render
   const { connecting } = store.user.create.control
   const { token } = store.user.create.data
   const { verification } = store.user.create.errors
 
   return {
-    language,
+    lang,
     verification,
     token,
     creatingAnnouncement,

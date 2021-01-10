@@ -27,7 +27,7 @@ export function categoryManager() {
     category: value,
     errors,
     changeErrors,
-    language,
+    lang,
     scalableVectorGraphics
   } = this.props
 
@@ -41,14 +41,14 @@ export function categoryManager() {
   } = errors
 
   const categoryOptions = categories.map(category => {
-    return { value: category.value, text: category.label[language]}
+    return { value: category.value, text: category.label[lang]}
   })
 
   return {
     id: requiredInputs.category.id,
     classNames: { container: 'form-input select' },
     value,
-    label: label[language],
+    label: label[lang],
     options: [{ value: '', text: '' }].concat(categoryOptions),
     children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
     onFocus: () => changeErrors({ category: noError }),
@@ -58,7 +58,7 @@ export function categoryManager() {
     },
     onBlur: () => this.categoryManager().validate(),
     validate: () => this.handleErrorOnValidate('category', value),
-    error: this.languageObjectHandler(categoryError)
+    error: this.langObjHandler(categoryError)
   }
 }
 
@@ -75,7 +75,7 @@ export function districtManager() {
     id: requiredInputs.district.id,
     classNames: { container: 'form-input select' },
     value: this.props.district,
-    label: this.languageObjectHandler(text),
+    label: this.langObjHandler(text),
     options: [{ value: '', text: '' }].concat(districts),
     children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
     onFocus: () => this.props.changeErrors({ district: noError }),
@@ -85,7 +85,7 @@ export function districtManager() {
     },
     onBlur: () => this.districtManager().validate(),
     validate: () => this.handleErrorOnValidate('district', this.props.district),
-    error: this.languageObjectHandler(this.props.errors.district)
+    error: this.langObjHandler(this.props.errors.district)
   }
 }
 
@@ -103,12 +103,12 @@ export function areaManager() {
     id: requiredInputs.area.id,
     classNames: { container: 'form-input text' },
     value: this.props.area,
-    label: this.languageObjectHandler(text),
+    label: this.langObjHandler(text),
     type: 'number',
     children: (
       <React.Fragment>
         <div className='sqm'>
-          {this.languageObjectHandler({
+          {this.langObjHandler({
             pl: <span>m<span className='sq'>2</span></span>,
             en: 'sqm'
           })}
@@ -124,6 +124,6 @@ export function areaManager() {
       sendGaEvent(AREA_INPUTTED_EVENT)
     },
     validate: () => this.handleErrorOnValidate('area', this.props.area),
-    error: this.languageObjectHandler(this.props.errors.area)
+    error: this.langObjHandler(this.props.errors.area)
   }
 }

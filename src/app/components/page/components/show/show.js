@@ -5,7 +5,7 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import * as lifecycle from './functions/lifecycle'
 import PageTile from '../shared/components/tile/tile'
-import { languageObjectHandler } from '../../../../functions/language-handler'
+import { langObjHandler } from '../../../../functions/lang-handler'
 import ScalableVectorGraphic from '../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 
 class PageShow extends React.Component {
@@ -13,7 +13,7 @@ class PageShow extends React.Component {
     super(props)
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
-    this.languageObjectHandler = languageObjectHandler
+    this.langObjHandler = langObjHandler
   }
 
   render() {
@@ -26,7 +26,7 @@ class PageShow extends React.Component {
       standalone
     } = this.props
 
-    const localizedPostData = this.languageObjectHandler(postData)
+    const localizedPostData = this.langObjHandler(postData)
     if (localizedPostData === null) return null
 
     const {

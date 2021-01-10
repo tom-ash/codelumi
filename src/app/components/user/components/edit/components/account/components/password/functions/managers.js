@@ -14,7 +14,7 @@ export function emailManager() {
     display: step === null ? 'block' : 'none',
     controlled: false,
     classNames: { container: 'form-input text' },
-    label: this.languageObjectHandler(label),
+    label: this.langObjHandler(label),
     children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.emailManager().validate(value),
@@ -24,7 +24,7 @@ export function emailManager() {
 
       changeErrors({ password: error })
     },
-    error: this.languageObjectHandler(error)
+    error: this.langObjHandler(error)
   }
 }
 
@@ -45,7 +45,7 @@ export function verificationManager() {
     display: step === 'verificationCode' ? 'block' : 'none',
     controlled: false,
     classNames: { container: 'form-input text' },
-    label: this.languageObjectHandler(label),
+    label: this.langObjHandler(label),
     children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.verificationManager().validate(value),
@@ -56,7 +56,7 @@ export function verificationManager() {
       })
       return false
     },
-    error: this.languageObjectHandler(this.props.error)
+    error: this.langObjHandler(this.props.error)
   }
 }
 
@@ -71,7 +71,7 @@ export function passwordManager() {
     type: 'password',
     autoComplete: 'new-password',
     classNames: { container: 'form-input text' },
-    label: this.languageObjectHandler(label),
+    label: this.langObjHandler(label),
     children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.passwordManager().validate(value),
@@ -86,7 +86,7 @@ export function passwordManager() {
       })
       return false
     },
-    error: this.languageObjectHandler(this.props.error)
+    error: this.langObjHandler(this.props.error)
   }
 }
 
@@ -100,7 +100,7 @@ export function buttonManager() {
       <ButtonSpinner
         connecting={connecting}
         label={buttonTextProvider.call(this)}
-        languageObjectHandler={this.languageObjectHandler}
+        langObjHandler={this.langObjHandler}
       />
     ),
     onClick: buttonOnClickProvider.call(this)

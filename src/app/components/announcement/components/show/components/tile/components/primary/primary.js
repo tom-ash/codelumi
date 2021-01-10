@@ -1,5 +1,5 @@
 import React from 'react'
-import { languageHandler, languageObjectHandler } from '../../../../../../../../functions/language-handler'
+import { langHandler, langObjHandler } from '../../../../../../../../functions/lang-handler'
 import { parseCurrency } from '../../../../../../functions/currency-parsers'
 import { presentRooms } from './functions/present-rooms'
 import { presentFloor } from './functions/present-floor'
@@ -9,8 +9,8 @@ import { presentAvailabilityDate } from './functions/present-availability-date'
 class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {
     super(props)
-    this.languageHandler = languageHandler.bind(this)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
   }
 
   classProvider(itemName) {
@@ -47,14 +47,14 @@ class AnnouncementCreatePrimary extends React.Component {
             currency={currency}
             type='gross total'
             perSqm={false}
-            languageObjectHandler={this.languageObjectHandler}
+            langObjHandler={this.langObjHandler}
           />
           <PresentRent
             amount={grossRentAmountPerSqm}
             currency={currency}
             type='gross per-sqm'
             perSqm={true}
-            languageObjectHandler={this.languageObjectHandler}
+            langObjHandler={this.langObjHandler}
           />
         </div>
         {netRentAmount && netRentAmountPerSqm &&
@@ -64,7 +64,7 @@ class AnnouncementCreatePrimary extends React.Component {
             currency={currency}
             type='net total'
             perSqm={false}
-            languageObjectHandler={this.languageObjectHandler}
+            langObjHandler={this.langObjHandler}
             net={true}
           />
           <PresentRent
@@ -72,7 +72,7 @@ class AnnouncementCreatePrimary extends React.Component {
             currency={currency}
             type='net per-sqm'
             perSqm={true}
-            languageObjectHandler={this.languageObjectHandler}
+            langObjHandler={this.langObjHandler}
             net={true}
           />
         </div>
@@ -80,19 +80,19 @@ class AnnouncementCreatePrimary extends React.Component {
         <div className='float-clear' />
         {rooms !== null &&
         <div className='rooms'>
-          {rooms} {this.languageObjectHandler(presentRooms({ rooms, category }))}
+          {rooms} {this.langObjHandler(presentRooms({ rooms, category }))}
         </div>}
         {floor !== null &&
         <div className='floor'>
-          {this.languageObjectHandler(presentFloor({ floor }))}
+          {this.langObjHandler(presentFloor({ floor }))}
         </div>}
         {totalFloors !== null &&
         <div className='total-floors'>
-          {this.languageObjectHandler(presentTotalFloors({ totalFloors   }))}
+          {this.langObjHandler(presentTotalFloors({ totalFloors   }))}
         </div>}
         {availabilityDate !== null &&
         <div className='available-from'>
-          {this.languageObjectHandler(presentAvailabilityDate({ availabilityDate, category }))}
+          {this.langObjHandler(presentAvailabilityDate({ availabilityDate, category }))}
         </div>}
         <div className='float-clear' />
       </div>
@@ -107,7 +107,7 @@ function PresentRent({
   currency,
   type,
   perSqm,
-  languageObjectHandler,
+  langObjHandler,
   net
 }) {
   if (!amount) return null
@@ -122,7 +122,7 @@ function PresentRent({
       </div>
       {perSqm &&
       <div className='per-sqm'>
-        {languageObjectHandler({
+        {langObjHandler({
           pl: (
             <React.Fragment>
               <div className='m'>
@@ -136,7 +136,7 @@ function PresentRent({
           en: `/sqm` })}
       </div>}
       <div className='per-month'>
-        {languageObjectHandler({ pl: `${net ? 'NETTO' : ''}/MC`, en: `${net ? 'NET' : ''}/MO` })}
+        {langObjHandler({ pl: `${net ? 'NETTO' : ''}/MC`, en: `${net ? 'NET' : ''}/MO` })}
       </div>
       <div className='float-clear' />
     </div>

@@ -59,7 +59,7 @@ function createProspectiveUser(userObject) {
     method: "POST",
     headers: {
       'Content-Type': 'application/json',
-      language: this.props.language
+      lang: this.props.lang
     },
     body: JSON.stringify(userObject)
   })

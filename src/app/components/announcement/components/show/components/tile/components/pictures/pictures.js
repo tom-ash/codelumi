@@ -2,7 +2,7 @@ import React from 'react'
 import ManagedSlider from '../../../../../../../support/components/managed-slider/managed-slider'
 import { ManagedLink } from 'managed-inputs'
 import { getDerivedStateFromProps } from './functions/get-derived-state-from-props'
-import { languageObjectHandler } from '../../../../../../../../functions/language-handler'
+import { langObjHandler } from '../../../../../../../../functions/lang-handler'
 import { linkManager } from './functions/managers'
 import { buildLink } from '../../../../../../functions/build-link'
 import { shareOnFacebook } from '../../../../../../functions/share-on-facebook'
@@ -12,7 +12,7 @@ import ScalableVectorGraphic from '../../../../../../../support/components/scala
 class AnnouncementShowPictures extends React.Component {
   constructor(props) {
     super(props)
-    this.languageObjectHandler = languageObjectHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
     this.linkManager = linkManager.bind(this)
     this.state = {
       pictures: []

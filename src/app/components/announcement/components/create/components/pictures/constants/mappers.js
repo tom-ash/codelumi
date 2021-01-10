@@ -1,7 +1,7 @@
 export const mapStateToProps = (store) => {
   return {
     showAnnouncementEdit: store.app.showAnnouncementEdit,
-    language: store.app.language,
+    lang: store.app.lang,
     scalableVectorGraphics: store.app.scalableVectorGraphics,
     files: store.announcement.create.inputs.picFiles,
     blobs: store.announcement.create.inputs.blobs,

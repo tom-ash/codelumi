@@ -13,7 +13,7 @@ export function textManager() {
     id: 'user-edit-account-tax-identification-text',
     controlled: false,
     classNames: { container: 'form-input text' },
-    label: this.languageObjectHandler(label),
+    label: this.langObjHandler(label),
     children: <i className={icon} />,
     onChange: () => changeErrors({ taxNumber: noError }),
     onBlur: value => this.textManager().validate(value),
@@ -26,7 +26,7 @@ export function textManager() {
       }
       return true
     },
-    error: this.languageObjectHandler({ pl, en })
+    error: this.langObjHandler({ pl, en })
   }
 }
 
@@ -39,7 +39,7 @@ export function buttonManager() {
       <ButtonSpinner
         connecting={connecting}
         label={{ pl: 'Zmień', en: 'Change' }}
-        languageObjectHandler={this.languageObjectHandler}
+        langObjHandler={this.langObjHandler}
       />
     ),
     onClick: () => {

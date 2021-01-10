@@ -27,14 +27,14 @@ function titleProvider() {
   const { item } = this.state
 
   switch (item) {
-    case 'firstName': return this.languageObjectHandler({ pl: 'Imię', en: 'First Name' })
-    case 'lastName': return this.languageObjectHandler({ pl: 'Nazwisko', en: 'Last Name' })
-    case 'businessName': return this.languageObjectHandler({ pl: 'Nazwa przedsiębiorcy', en: 'Business name' })
-    case 'taxNumber': return this.languageObjectHandler({ pl: 'Numer identyfikacji podatkowej', en: 'Tax ID' })
-    case 'phone': return this.languageObjectHandler({ pl: 'Numer telefonu', en: 'Phone Number' })
-    case 'email': return this.languageObjectHandler({ pl: 'Adres email', en: 'Email Address' })
-    case 'password': return this.languageObjectHandler({ pl: 'Hasło', en: 'Password' })
-    case 'destroy': return this.languageObjectHandler({ pl: 'Usuwanie konta', en: 'Account Deletion' })
+    case 'firstName': return this.langObjHandler({ pl: 'Imię', en: 'First Name' })
+    case 'lastName': return this.langObjHandler({ pl: 'Nazwisko', en: 'Last Name' })
+    case 'businessName': return this.langObjHandler({ pl: 'Nazwa przedsiębiorcy', en: 'Business name' })
+    case 'taxNumber': return this.langObjHandler({ pl: 'Numer identyfikacji podatkowej', en: 'Tax ID' })
+    case 'phone': return this.langObjHandler({ pl: 'Numer telefonu', en: 'Phone Number' })
+    case 'email': return this.langObjHandler({ pl: 'Adres email', en: 'Email Address' })
+    case 'password': return this.langObjHandler({ pl: 'Hasło', en: 'Password' })
+    case 'destroy': return this.langObjHandler({ pl: 'Usuwanie konta', en: 'Account Deletion' })
     default: break;
   }
 }
@@ -107,12 +107,12 @@ function triggerIconProvider() {
 }
 
 function triggerTextProvider() {
-  let triggerText = this.languageObjectHandler({ pl: 'Zmień', en: 'Change' })
+  let triggerText = this.langObjHandler({ pl: 'Zmień', en: 'Change' })
   if (this.state.item === 'destroy') {
-    triggerText = this.languageObjectHandler({ pl: 'Usuń konto', en: 'Delete Account' })
+    triggerText = this.langObjHandler({ pl: 'Usuń konto', en: 'Delete Account' })
   }
   if (this.state.stage !== null && this.state.stage !== 'closed-after-open') {
-    triggerText = this.languageObjectHandler({ pl: 'Anuluj', en: 'Cancel' })
+    triggerText = this.langObjHandler({ pl: 'Anuluj', en: 'Cancel' })
   }
   return triggerText
 }
@@ -148,7 +148,7 @@ function editInputProvider() {
     changeData,
     changeErrors,
     changeControl,
-    language,
+    lang,
     firstNameConnecting,
     lastNameConnecting,
     businessNameConnecting,
@@ -163,11 +163,11 @@ function editInputProvider() {
   switch (this.state.item) {
     case 'firstName':
       component = <UserEditAttribute
-        language={language}
+        lang={lang}
         inputName='firstName'
         id='user-edit-account-first-name-text'
         api_suffix={'first_name'}
-        label={this.languageObjectHandler({ pl: 'Imię', en: 'First Name' })}
+        label={this.langObjHandler({ pl: 'Imię', en: 'First Name' })}
         icon={inputs.firstName.icon}
         currentValue={firstNameCurrentValue}
         connecting={firstNameConnecting}
@@ -180,11 +180,11 @@ function editInputProvider() {
       break
     case 'lastName':
       component = <UserEditAttribute
-        language={language}
+        lang={lang}
         inputName='lastName'
         id='user-edit-account-last-name-text'
         api_suffix={'last_name'}
-        label={this.languageObjectHandler({ pl: 'Nazwisko', en: 'Last Name' })}
+        label={this.langObjHandler({ pl: 'Nazwisko', en: 'Last Name' })}
         icon={inputs.lastName.icon}
         currentValue={lastNameCurrentValue}
         connecting={lastNameConnecting}
@@ -197,11 +197,11 @@ function editInputProvider() {
       break
     case 'businessName':
       component = <UserEditAttribute
-        language={language}
+        lang={lang}
         inputName='businessName'
         id='user-edit-account-business-name-text'
         api_suffix={'business_name'}
-        label={this.languageObjectHandler({ pl: 'Nazwa przedsiębiorcy', en: 'Business Name' })}
+        label={this.langObjHandler({ pl: 'Nazwa przedsiębiorcy', en: 'Business Name' })}
         icon={inputs.businessName.icon}
         currentValue={businessNameCurrentValue}
         connecting={businessNameConnecting}
