@@ -2,8 +2,8 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import { rootReducer } from '../app/functions/root_reducer.js'
 import StyleContext from 'isomorphic-style-loader/StyleContext'
+import { rootReducer } from '../app/functions/root_reducer.js'
 import App from '../app/app'
 
 var path = require('path')

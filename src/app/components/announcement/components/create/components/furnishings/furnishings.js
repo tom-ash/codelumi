@@ -1,11 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
 import { ManagedCheckbox, ManagedMultipleCheckbox } from 'managed-inputs'
-import { addFurnishingsManager, furnishingsManager } from './functions/managers'
-
-import { pickElementsForCategory } from '../../functions/pick-elements'
+import { mapStateToProps, mapDispatchToProps } from './constants/mappers.js'
+import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler.js'
+import { addFurnishingsManager, furnishingsManager } from './functions/managers.js'
+import { pickElementsForCategory } from '../../functions/pick-elements.js'
 
 class AnnouncementCreateFurnishings extends React.Component {
   constructor(props) {

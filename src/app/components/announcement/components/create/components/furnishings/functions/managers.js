@@ -1,6 +1,6 @@
-import { furnishings } from '../../../../../constants/furnishings'
-import { sendGaEvent } from '../../../../../../../functions/google-analytics/send-ga-event'
-import analyticEvents from '../constants/analytics/events'
+import { furnishings } from '../../../../../constants/furnishings.js'
+import { sendGaEvent } from '../../../../../../../functions/google-analytics/send-ga-event.js'
+import analyticEvents from '../constants/analytics/events.js'
 
 const {
   FURNISHINGS_SHOWN_EVENT,

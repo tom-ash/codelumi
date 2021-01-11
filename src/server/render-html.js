@@ -2,8 +2,7 @@ import { openGraphProvider } from '../shared/functions/providers/open-graph-prov
 import { schemaOrgProvider } from '../shared/functions/providers/schema-org-provider'
 
 export function renderHtml({
-  url, canonicalUrl, announcementUrl, noIndex,
-  lang,
+  url, lang, canonicalUrl, announcementUrl, noIndex,
   title, description, keywords, image, openGraph, schemaOrg,
   css, html, preloadedState, scriptTags
 }) {
