@@ -1,0 +1,25 @@
+#announcement-create {
+  .header {
+    &.section {
+      position: relative;
+      margin: 18px 0;
+      font-size: 17px;
+      color: #616A6B;
+      .required {
+        position: relative;
+        top: -6px;
+        left: 4px;
+        padding-left: 14px;
+        font-size: 13px;
+        font-weight: normal;
+        color: #CB4335;
+        span {
+          position: absolute;
+          top: -14px;
+          left: 0;
+          font-size: 42px!important;
+        }
+      }
+    }   
+  }
+}

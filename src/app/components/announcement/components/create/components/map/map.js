@@ -5,6 +5,7 @@ import { langHandler, langObjHandler } from '../../../../../../functions/lang-ha
 import { validateMap } from './functions/validate-map'
 import * as lifecycle from './functions/lifecycle'
 import { googleMapHandler } from '../../../../functions/google-map-handler'
+import { HeaderSection } from '../shared/headers/section/section.js'
 
 class AnnouncementCreatMap extends React.Component {
   constructor(props) {
@@ -21,13 +22,15 @@ class AnnouncementCreatMap extends React.Component {
   render() {
     return (
       <div id='announcement-create-map' className='section'>
-        <div className='input-label'>
-          {this.langObjHandler({ pl: 'Lokalizacja', en: 'Location' })}
-        </div>
+        <HeaderSection
+          textObj={{ pl: 'Lokalizacja', en: 'Location' }}
+          required={true}
+          langHandler={this.langObjHandler}
+        />
         <div className='hint'>
           {this.langObjHandler({
-            pl: 'Kliknij lewym przyciskiem na mapie, aby dodać marker.',
-            en: 'Left click on the map to add marker.'
+            pl: 'Kliknij lewym przyciskiem na mapie, aby wybrać lokalizację.',
+            en: 'Mouse left click on the map to select localisation.'
           })}
         </div>
         <div id='google-map-container' className='map'>

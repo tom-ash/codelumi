@@ -12,6 +12,8 @@ import { sectionHeaderProvider } from '../../../../../../functions/providers/hea
 import { pictureClassProvider } from './functions/picture-class-provider'
 import { rotatePicture } from './functions/rotate-picture'
 import ScalableVectorGraphic from '../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import { HeaderSection } from '../shared/headers/section/section.js'
+import { HEADER, ADDING_REQUIRED, NOT_ADDED } from './constants/texts'
 
 class AnnouncementCreatePictures extends React.Component {
   constructor(props) {
@@ -34,23 +36,32 @@ class AnnouncementCreatePictures extends React.Component {
 
     return (
       <div id='announcement-create-pictures' className='section'>
-        <div className='input-label'>
-          {this.langObjHandler({ pl: 'Zdjęcia', en: 'Pictures' })}
-        </div>
+        <HeaderSection
+          textObj={HEADER}
+          required={true}
+          langHandler={this.langObjHandler}
+        />
         <div className={`drag-and-drop${this.props.error.pl ? ' error-drag-and-drop' : ''}`}>
           <div>
-            {this.langHandler('Przeglądaj', 'Browse')}
+            {this.langHandler('Kliknij tutaj, aby przeglądać zdjęcia.', 'Click here to browse pictures.')}
           </div>
           <input
-          id={requiredInputs.pictures.id}
-          className='input'
-          type='file'
-          multiple
-          onChange={this.addFiles}>
+            id={requiredInputs.pictures.id}
+            className='input'
+            type='file'
+            multiple
+            onChange={this.addFiles}>
           </input>
         </div>
         <div className='error'>
           {this.langObjHandler(this.props.error)}
+        </div>
+        {this.props.blobs && this.props.blobs.length === 0 &&
+        <div className='not-added'>
+          {this.langObjHandler(NOT_ADDED)}
+        </div>}
+        <div>
+
         </div>
         <div>
           {

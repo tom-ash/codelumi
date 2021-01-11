@@ -7,6 +7,7 @@ import { langHandler, langObjHandler } from '../../../../../../functions/lang-ha
 import { handleErrorOnSelect, handleErrorOnValidate } from './functions/errors-handler'
 import { onSelectHandler } from './functions/on-select-handler'
 import { getRentAmounts } from '../../functions/get-rent-amounts'
+import { HeaderSection } from '../shared/headers/section/section.js'
 
 class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {
@@ -25,10 +26,11 @@ class AnnouncementCreatePrimary extends React.Component {
   render() {
     return (
       <div id='announcement-create-primary' className='section'>
-        <h2>
-          <div className='text'>{this.langObjHandler({ pl: 'Dane wymagane', en: 'Required Data' })}</div>
-          <div className='float-clear' />
-        </h2>
+        <HeaderSection
+          textObj={{ pl: 'Dane podstawowe', en: 'Primary Data' }}
+          required={true}
+          langHandler={this.langObjHandler}
+        />
         <ManagedSelect {...this.categoryManager()}/>
         <ManagedSelect {...this.districtManager()}/>
         <ManagedText {...this.areaManager()}/>

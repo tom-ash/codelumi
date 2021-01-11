@@ -2,16 +2,25 @@
 @import '../../../../../../../styles/colors';
 
 #announcement-create-pictures {
+  .adding-required {
+    margin-bottom: 12px;
+  }
+  .not-added {
+    margin: 24px 0;
+    font-size: 18px;
+    color: #B3B6B7;
+  }
+
   .drag-and-drop {
     position: relative;
     border: 1px solid #AEB6BF;
-    width: 360px;
-    height: 42px;
-    line-height: 42px;
+    height: 60px;
+    line-height: 60px;
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
     border-radius: 2.5px;
-    cursor: pointer;
+    cursor: pointer!important;
+    color: #515A5A;
     @media only screen and (max-width: $breakpoint-phone-large-max) {
       width: 100%;
     }
@@ -19,8 +28,9 @@
       border: 1px solid #E74C3C;
     }
     &:hover {
-      background: #EBF5FB;
+      background: #F2F3F4;
     }
+
     .input {
       position: absolute;
       top: 0;
@@ -30,6 +40,7 @@
       height: 100%;
       width: 100%;
       opacity: 0;
+      cursor: pointer;
     }
   }
   .error {
@@ -62,7 +73,6 @@
       flex-direction: column;
       justify-content: space-between;
       .button {
-        cursor: pointer;
         &.delete {
           svg {
             fill: #E74C3C;

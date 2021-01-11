@@ -92,7 +92,9 @@ class AnnouncementCreate extends React.Component {
         <>
           <div className='required-inputs'>
             <AnnouncementCreatePrimary />
+            <div className='separation-line' />
             <AnnouncementCreatePictures />
+            <div className='separation-line' />
             <AnnouncementCreateMap />
           </div>
           <div className='optional-inputs'>
