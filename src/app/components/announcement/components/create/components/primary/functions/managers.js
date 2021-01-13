@@ -23,18 +23,8 @@ export function categoryManager() {
     category: { id }
   } = requiredInputs
 
-  const {
-    category: value,
-    errors,
-    changeErrors,
-    lang,
-    scalableVectorGraphics
-  } = this.props
-
-  const {
-    icon,
-    all: label
-  } = inputs.category
+  const { category: value, errors, changeErrors, lang, scalableVectorGraphics } = this.props
+  const { icon, all: label } = inputs.category
 
   const {
     category: categoryError
@@ -46,11 +36,14 @@ export function categoryManager() {
 
   return {
     id: requiredInputs.category.id,
-    classNames: { container: 'form-input select' },
+    classNames: { container: 'form-input with-icon select' },
     value,
     label: label[lang],
     options: [{ value: '', text: '' }].concat(categoryOptions),
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
+    children: <>
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.category} />
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />
+    </>,
     onFocus: () => changeErrors({ category: noError }),
     onSelect: option => {
       this.onSelectHandler('category', option.value)
@@ -73,11 +66,14 @@ export function districtManager() {
 
   return {
     id: requiredInputs.district.id,
-    classNames: { container: 'form-input select' },
+    classNames: { container: 'form-input with-icon select' },
     value: this.props.district,
     label: this.langObjHandler(text),
     options: [{ value: '', text: '' }].concat(districts),
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
+    children: <>
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.city} />
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />
+    </>,
     onFocus: () => this.props.changeErrors({ district: noError }),
     onSelect: option => {
       this.onSelectHandler('district', option.value)
@@ -101,20 +97,21 @@ export function areaManager() {
 
   return {
     id: requiredInputs.area.id,
-    classNames: { container: 'form-input text' },
+    classNames: { container: 'form-input with-icon text' },
     value: this.props.area,
     label: this.langObjHandler(text),
     type: 'number',
     children: (
-      <React.Fragment>
+      <>
         <div className='sqm'>
           {this.langObjHandler({
             pl: <span>m<span className='sq'>2</span></span>,
             en: 'sqm'
           })}
         </div>
+        <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.area} />
         <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />
-      </React.Fragment>
+      </>
     ),
     onFocus: () => this.props.changeErrors({ area: noError }),
     onChange: value => this.props.changeInputs({ area: value }),

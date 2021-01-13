@@ -3,4 +3,7 @@ export const ADDING_REQUIRED = {
   en: 'Adding at least one picture is required.'
 }
 export const HEADER = { pl: 'Zdjęcia', en: 'Pictures' }
-export const NOT_ADDED = { pl: 'Nie dodano zdjęć.', en: 'No pictures were added.' }
+export const NOT_ADDED = {
+  pl: 'Dodanie przynajmniej jednego zdjęcia jest wymagane.',
+  en: 'Adding of at least one picture is required.'
+}

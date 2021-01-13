@@ -36,30 +36,32 @@ class AnnouncementCreatePictures extends React.Component {
 
     return (
       <div id='announcement-create-pictures' className='section'>
-        <HeaderSection
-          textObj={HEADER}
-          required={true}
-          langHandler={this.langObjHandler}
-        />
-        <div className={`drag-and-drop${this.props.error.pl ? ' error-drag-and-drop' : ''}`}>
-          <div>
-            {this.langHandler('Kliknij tutaj, aby przeglądać zdjęcia.', 'Click here to browse pictures.')}
+                {/* {this.props.blobs && this.props.blobs.length === 0 &&
+        <div className='not-added'>
+          {this.langObjHandler(NOT_ADDED)}
+        </div>} */}
+        <div className='drag-and-drop-container'>
+          <div className={`drag-and-drop${this.props.error.pl ? ' error-drag-and-drop' : ''}`}>
+            <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.camera} />
+            <input
+              id={requiredInputs.pictures.id}
+              className='input'
+              type='file'
+              multiple
+              onChange={this.addFiles}>
+            </input>
           </div>
-          <input
-            id={requiredInputs.pictures.id}
-            className='input'
-            type='file'
-            multiple
-            onChange={this.addFiles}>
-          </input>
+          <p>
+            {this.langObjHandler({
+              pl: 'Kliknij w ikonę aparatu, aby wybrać zdjęcia.',
+              en: 'Click the camera to select pictures.'
+            })}
+          </p>
         </div>
         <div className='error'>
           {this.langObjHandler(this.props.error)}
         </div>
-        {this.props.blobs && this.props.blobs.length === 0 &&
-        <div className='not-added'>
-          {this.langObjHandler(NOT_ADDED)}
-        </div>}
+
         <div>
 
         </div>

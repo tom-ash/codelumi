@@ -21,7 +21,76 @@
   $border-color: #E5E7E9;
   border: 1px solid #D0D3D4;
   background: white;
-  padding: 36px;
+  padding: 40px;
+
+  svg {
+    position: relative;
+    top: 3px;
+    fill: #BDC3C7;
+    display: inline-block;
+    margin-right: 20px;
+    width: 20px;
+  }
+
+  h3 {
+    display: inline-block;
+  }
+
+  .form-input {
+    svg {
+      position: absolute;
+      top: -6px;
+      margin-right: 0;
+    }
+  }
+
+  .form-input {
+    &.with-icon {
+      padding-left: 35px;
+      .label {
+        padding-top: 6px;
+        padding-left: 35px;
+      }
+      .input {
+        padding-left: 5px;
+      }
+      .sqm {
+        position: absolute;
+        top: 8px;
+        right: 45px;
+        line-height: 45px;
+        opacity: 0;
+        transition: .2s opacity ease-in;
+        .sq {
+          top: -4px;
+          position: relative;
+          font-size: 12px;
+          padding-left: 1px;
+        } 
+      }
+      &.value, &.focus {
+        .sqm {
+          opacity: 1;
+        }
+      }
+      svg:first-of-type {
+        fill: #BDC3C7;
+        transform: rotate(0);
+        position: relative;
+        height: 16px;
+        top: -28px;
+        left: -35px;
+        bottom: 0;
+        margin: auto;
+      }
+      svg:last-of-type {
+        position: absolute;
+      }
+    }
+
+  }
+
+
   &.creating-user {
     border-bottom: none;
     padding-bottom: 6px;
@@ -83,8 +152,7 @@
     }
   }
   .separation-line {
-    margin-top: 24px;
-    margin-bottom: 6px;
+    margin: 0;
   }
   .description {
     text-align: justify;
@@ -116,14 +184,6 @@
       }
     }
   }
-  .hint {
-    position: relative;
-    margin-bottom: 12px;
-    font-size: 13px;
-    text-align: justify;
-    line-height: 18px;
-    color: #566573;
-  }
   .monit {
     margin-bottom: 24px;
   }
@@ -147,6 +207,7 @@
     align-items: center;
     cursor: pointer;
     .button {
+      // margin-top: ;
       width: 48px;
       height: 48px;
       background: rgba(46, 134, 193, 1);
@@ -174,19 +235,10 @@
     cursor: pointer;
   }
 
-  .separation-line {
-    margin-bottom: 18px;
-  }
-
-  .add-announcement-button-container {
-    .separation-line {
-      margin-bottom: 30px;
-    }
-  }
   
   .form-input {
     &.button {
-      margin: 0 auto;
+      margin: 40px auto 0;
       font-size: 15px;
       height: 45px;
     }

@@ -1,10 +1,12 @@
 $current-color: #3498DB;
+
 .create-points {
-  background: white;
   position: relative;
   height: 32px;
   height: 44px;
-  margin-bottom: 12px;
+  max-width: 750px;
+  margin: 0 auto;
+  margin-top: 30px;
   .line {
     height: 22px;
     border-bottom: 2px solid #D7DBDD;

@@ -34,9 +34,12 @@ export function rentAmountManager() {
   }
 
   return {
-    classNames: { container: 'form-input text rent-amount' },
+    classNames: { container: 'form-input text with-icon rent-amount' },
     value: this.props[rentAmountType],
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
+    children: <>
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.coins} />
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />
+    </>,
     type: 'number',
     label,
     onChange: value => changeInputs({ [rentAmountType]: value }),
@@ -80,8 +83,11 @@ export function roomsManager() {
   if (category === 2) label = this.langObjHandler({ pl: 'Liczba pokoi', en: 'Rooms Amount' })
 
   return {
-    classNames: { container: 'form-input select' },
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
+    classNames: { container: 'form-input with-icon select' },
+    children: <>
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.door_open} />
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />
+    </>,
     value: this.props.rooms,
     label,
     options: numberOptionsProvider(99),
@@ -103,8 +109,11 @@ export function floorManager() {
   } = this.props
 
   return {
-    classNames: { container: 'form-input select' },
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
+    classNames: { container: 'form-input with-icon select' },
+    children: <>
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.layers} />
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />
+    </>,
     value: this.props.floor,
     label: this.langObjHandler(text),
     options: this.floorsProvider(),
@@ -126,8 +135,11 @@ export function totalFloorsManager() {
   } = this.props
 
   return {
-    classNames: { container: 'form-input select' },
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
+    classNames: { container: 'form-input with-icon select' },
+    children: <>
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.building} />
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />
+    </>,
     value: this.props.totalFloors,
     label: this.langObjHandler(text),
     options: numberOptionsProvider(99),

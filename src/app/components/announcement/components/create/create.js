@@ -24,6 +24,7 @@ import { saveAnnouncement } from './functions/save-announcement'
 import { changeRoute } from '../../../../functions/routers/change-route'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import SeparationLine from '../../../support/components/separation-line/separation-line'
 
 import {
   categoryManager,
@@ -71,71 +72,50 @@ class AnnouncementCreate extends React.Component {
     } = this.props
 
     return (
-      <div
-        id='announcement-create'
-        className={step}
-      >
-        <div className='page-header'>
-          <h1>
-            {step === 'form' && this.langHandler(<span>Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w&nbsp;Warszawie</span>, 'Add Free Announcement of Real Estate Lease in Warsaw')}
-            {step === 'creating-user' && this.langHandler('Rejestracja konta', 'Account Registration')}
-            {step === 'publishing' && this.langHandler('Zapisywanie Ogłoszenia', 'Saving Announcement')}
-            {step === 'success' && this.langHandler('Gratulacje!', 'Congratulations!')}
-          </h1>
-        </div>
-        <AnnouncementCreateSteps
-          authorized={authorized}
-          step={step}
-          scalableVectorGraphics={scalableVectorGraphics}
-        />
-        {step === 'form' &&
-        <>
-          <div className='required-inputs'>
+      <>
+        <AnnouncementCreateSteps authorized={authorized} step={step} scalableVectorGraphics={scalableVectorGraphics} />
+        <div
+          id='announcement-create'
+          className={step}
+        >
+          {step === 'form' &&
+          <>
             <AnnouncementCreatePrimary />
-            <div className='separation-line' />
+            <SeparationLine />
             <AnnouncementCreatePictures />
-            <div className='separation-line' />
+            <SeparationLine />
             <AnnouncementCreateMap />
-          </div>
-          <div className='optional-inputs'>
-            <div className='separation-line' />
-            <h2 className='optional'>
-              <div className='text'>{this.langObjHandler({ pl: 'Dane niewymagane', en: 'Optional data' })}</div>
-              <div className='float-clear' />
-            </h2>
+            <SeparationLine />
             <AnnouncementCreateAdditional />
+            <SeparationLine />
             <AnnouncementCreateFeatures />
             <AnnouncementCreateFurnishings />
             <AnnouncementCreateDescription />
-          </div>
-          <div className='add-announcement-button-container'>
-            <div className='separation-line' />
+            <SeparationLine />
+            <ManagedButton {...this.addAnnouncementManager()} />
+          </>}
+          {step === 'publishing' &&
+          <div className='requesting'>
             <div className='inner'>
-              <ManagedButton {...this.addAnnouncementManager()} />
+              <WindmillSpinner spinnerClass='windmill-medium-spinner'/>
             </div>
-          </div>
-        </>}
-        {step === 'publishing' &&
-        <div className='requesting'>
-          <div className='inner'>
-            <WindmillSpinner spinnerClass='windmill-medium-spinner'/>
-          </div>
-        </div>}
-        {step === 'success' &&
-        <AnnouncementCreateSuccess
-          changeApp={changeApp}
-          changeRoute={this.changeRoute}
-          id={id}
-          category={category}
-          district={district}
-          area={area}
-          changeAnnouncementShowData={changeAnnouncementShowData}
-          langObjHandler={this.langObjHandler}
-          isMobile={isMobile}
-          lang={lang}
-          scalableVectorGraphics={scalableVectorGraphics}
-        />}
-      </div>
+          </div>}
+          {step === 'success' &&
+          <AnnouncementCreateSuccess
+            changeApp={changeApp}
+            changeRoute={this.changeRoute}
+            id={id}
+            category={category}
+            district={district}
+            area={area}
+            changeAnnouncementShowData={changeAnnouncementShowData}
+            langObjHandler={this.langObjHandler}
+            isMobile={isMobile}
+            lang={lang}
+            scalableVectorGraphics={scalableVectorGraphics}
+          />}
+        </div>
+      </>
     )
   }
 }

@@ -1,24 +1,8 @@
 #announcement-create-primary {
   max-width: 360px;
-  .form-input {
-    .sqm {
-      position: absolute;
-      top: 0px;
-      right: 45px;
-      line-height: 45px;
-      opacity: 0;
-      transition: .2s opacity ease-in;
-      .sq {
-        top: -4px;
-        position: relative;
-        font-size: 12px;
-        padding-left: 1px;
-      } 
-    }
-    &.value, &.focus {
-      .sqm {
-        opacity: 1;
-      }
-    }
-  }
+
+  padding: 0 0 5px;
+
+
+
 }

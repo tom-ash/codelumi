@@ -22,15 +22,10 @@ class AnnouncementCreatMap extends React.Component {
   render() {
     return (
       <div id='announcement-create-map' className='section'>
-        <HeaderSection
-          textObj={{ pl: 'Lokalizacja', en: 'Location' }}
-          required={true}
-          langHandler={this.langObjHandler}
-        />
         <div className='hint'>
           {this.langObjHandler({
-            pl: 'Kliknij lewym przyciskiem na mapie, aby wybrać lokalizację.',
-            en: 'Mouse left click on the map to select localisation.'
+            pl: 'Kliknij lewym przyciskiem na mapie, aby wybrać lokalizację wynajmowanej nieruchomości.',
+            en: 'Mouse left click on the map to select location of the real estate being leased.'
           })}
         </div>
         <div id='google-map-container' className='map'>

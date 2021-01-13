@@ -4,26 +4,27 @@
   &.select {
     position: relative;
     background: $color-background;
-    height: 45px;
-    margin-bottom: 24px;
+    height: 50px;
+    margin-bottom: 32px;
     .input {
       width: 100%;
-      border: 1px solid #4D5656;
-      border-radius: 2px;
+      padding-top: 5px;
+      border: none;
+      border-bottom: 1px solid #979A9A;
       background: $color-background;
       z-index: 2;
-      line-height: 45px;
+      line-height: 50px;
       cursor: pointer;
       color: $touched-color;
-      height: 45px;
+      height: 50px;
       font-size: 15px;
-      padding-left: 15px;
+      padding-left: 7px;
       transition: .2s ease-in-out;
-      &.hover, &.focus {
-        box-shadow: 0 0 0 1px #4D5656;
-      }
+      // &.hover {
+      //   border-bottom: 2px solid #979A9A;
+      // }
       &.error {
-        border: 1px solid $primary-error-color;
+        border-bottom: 1px solid $primary-error-color;
         color: $primary-error-color;
       }
     }
@@ -34,7 +35,7 @@
       cursor: pointer;
       background: none;
       top: 15px;
-      left: 15px;
+      left: 5px;
       font-size: 15px;
       transition: 0.18s;
       text-align: left;
@@ -42,7 +43,7 @@
       padding: 0 2px;
       &.value, &.focus {
         top: -6px;
-        font-size: 12px;
+        font-size: 13px;
       }
       &.hover {
         color: $form-input-label-hover-color;
@@ -58,9 +59,9 @@
       }
     }
     .error-container {
-      padding-top: 4px;
+      top: 50px;
       text-align: center;
-      font-size: 12px;
+      font-size: 14px;
       opacity: 0;
       transition: 0.18s;
       color: $primary-error-color;

@@ -2,21 +2,22 @@
 
 #announcement-create-additional {
   max-width: 360px;
+  padding: 30px 0;
 
   .rent-inputs-container {
     position: relative;
     .form-input {
       &.rent-amount {
-        margin-right: 72px;
+        margin-right: 80px;
       }
       &.rent-currency {
         position: absolute;
         top: 0;
         right: 0;
-        width: 64px;
+        width: 80px;
         .input {
           padding: 0;
-          padding-left: 16px;
+          padding-left: 25px;
         }
       }
     }
