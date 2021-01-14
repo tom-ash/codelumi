@@ -1,12 +1,14 @@
 export const mapStateToProps = (store) => {
   const {
-    lang,
     scalableVectorGraphics
   } = store.app
 
   return {
-    lang,
+    lang: store.app.lang,
+    availabilityDateFocus: store.announcement.create.control.availabilityDateFocus,
+    calendarMouseOver: store.announcement.create.control.calendarMouseOver,
     category: store.announcement.create.inputs.category,
+    district: store.announcement.create.inputs.district,
     rentCurrency: store.announcement.create.inputs.rentCurrency,
     netRentAmount: store.announcement.create.inputs.netRentAmount,
     grossRentAmount: store.announcement.create.inputs.grossRentAmount,
@@ -14,6 +16,9 @@ export const mapStateToProps = (store) => {
     rooms: store.announcement.create.inputs.rooms,
     floor: store.announcement.create.inputs.floor,
     totalFloors: store.announcement.create.inputs.totalFloors,
+    showAvilabilityDate: store.announcement.create.control.showAvilabilityDate,
+    availabilityDate: store.announcement.create.inputs.availabilityDate,
+    errors: store.announcement.create.errors,
     scalableVectorGraphics
   }
 }

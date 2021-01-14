@@ -21,7 +21,9 @@
   $border-color: #E5E7E9;
   border: 1px solid #D0D3D4;
   background: white;
-  padding: 40px;
+  padding: 55px 40px 40px;
+
+  position: relative;
 
   svg {
     position: relative;
@@ -133,9 +135,13 @@
     font-size: 13px;
   }
   h1 {
-    margin-bottom: 12px;
-    font-size: 17px;
-    color: #4D5656;
+    position: absolute;
+    top: 0;
+    background: #E5E7E9;
+    font-size: 15px;
+    padding: 5px;
+    color: #979A9A;
+    font-weight: normal;
   }
   .description-question {
     font-size: 14px;
@@ -243,6 +249,8 @@
       height: 45px;
     }
   }
+
+  
 }
 
 .post-container {

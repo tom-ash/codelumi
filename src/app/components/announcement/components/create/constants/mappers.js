@@ -23,7 +23,8 @@ export const mapStateToProps = (store) => {
   const {
     step,
     connecting,
-    showDescription
+    showDescription,
+    showAvilabilityDate
   } = control
 
   const {
@@ -84,7 +85,8 @@ export const mapStateToProps = (store) => {
     errors,
     isMobile,
     authorized,
-    admin
+    admin,
+    showAvilabilityDate
   }
 }
     

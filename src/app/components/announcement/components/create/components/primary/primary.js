@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { ManagedSelect, ManagedRadio, ManagedText, ManagedCheckbox } from 'managed-inputs'
+import { ManagedSelect, ManagedText } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
 import { handleErrorOnSelect, handleErrorOnValidate } from './functions/errors-handler'

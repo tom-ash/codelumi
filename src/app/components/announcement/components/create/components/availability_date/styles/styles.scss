@@ -1,0 +1,31 @@
+#announcement-create-availability-date {
+  padding-top: 30px;
+  padding-bottom: 6px;
+  max-width: 360px;
+  .checkbox {
+    &.availability-date {
+      .input {
+        left: 0;
+      }
+      .label {
+        margin-top: 1px;
+        margin-left: 18px;
+      }
+    }
+  }
+
+  .calendar {
+    position: relative;
+    margin: 12px 0 24px;
+    .react-calendar {
+      background: #F2F3F4;
+      z-index: 1;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      .react-calendar__navigation button {
+        font-size: 16px;
+      }
+    }
+  }
+}

@@ -1,14 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import AnnouncementCreatePrimary from './components/primary/primary'
-import AnnouncementCreatePictures from './components/pictures/pictures'
-import AnnouncementCreateMap from './components/map/map'
-import AnnouncementCreateAdditional from './components/additional/additional'
-import AnnouncementCreateFeatures from './components/features/features'
-import AnnouncementCreateFurnishings from './components/furnishings/furnishings'
-import AnnouncementCreateDescription from './components/description/description'
-import AnnouncementCreateSuccess from './components/success/success'
+import Primary from './components/primary/primary'
+import Pictures from './components/pictures/pictures'
+import Map from './components/map/map'
+import Additional from './components/additional/additional'
+import Features from './components/features/features'
+import Furnishings from './components/furnishings/furnishings'
+import Description from './components/description/description'
+import Success from './components/success/success'
 import WindmillSpinner from '../../../support/components/spinner/components/windmill/windmill.js'
 import * as lifecycle from './functions/lifecycle'
 import * as managers from './functions/managers'
@@ -24,7 +24,8 @@ import { saveAnnouncement } from './functions/save-announcement'
 import { changeRoute } from '../../../../functions/routers/change-route'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import SeparationLine from '../../../support/components/separation-line/separation-line'
+import Line from '../../../support/components/separation-line/separation-line'
+import AvailabilityDate from './components/availability_date/availability_date'
 
 import {
   categoryManager,
@@ -58,40 +59,38 @@ class AnnouncementCreate extends React.Component {
 
   render() {
     const {
-      changeApp,
-      changeAnnouncementShowData,
-      authorized,
-      step,
-      id,
-      category,
-      district,
-      area,
-      isMobile,
-      lang,
-      scalableVectorGraphics
+      lang, isMobile, authorized, step, scalableVectorGraphics, showAvilabilityDate,
+      id, category, district, area, availabilityDate,
+      changeApp, changeAnnouncementShowData, changeControl, changeInputs
     } = this.props
+
+    const availabilityDateProps = { lang, availabilityDate, showAvilabilityDate, changeControl, changeInputs }
 
     return (
       <>
         <AnnouncementCreateSteps authorized={authorized} step={step} scalableVectorGraphics={scalableVectorGraphics} />
-        <div
-          id='announcement-create'
-          className={step}
-        >
+        <div id='announcement-create' className={step}>
+          <h1>
+            {this.langObjHandler({
+              pl: 'Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w Warszawie',
+              en: 'Add Free Announcement of Real Estate Lease in Warsaw'
+            })}
+          </h1>
           {step === 'form' &&
           <>
-            <AnnouncementCreatePrimary />
-            <SeparationLine />
-            <AnnouncementCreatePictures />
-            <SeparationLine />
-            <AnnouncementCreateMap />
-            <SeparationLine />
-            <AnnouncementCreateAdditional />
-            <SeparationLine />
-            <AnnouncementCreateFeatures />
-            <AnnouncementCreateFurnishings />
-            <AnnouncementCreateDescription />
-            <SeparationLine />
+            <Primary />
+            <Line />
+            <Pictures />
+            <Line />
+            <Map />
+            <Line />
+            <Additional />
+            <Line />
+            <AvailabilityDate { ...availabilityDateProps } />
+            <Features />
+            <Furnishings />
+            <Description />
+            <Line />
             <ManagedButton {...this.addAnnouncementManager()} />
           </>}
           {step === 'publishing' &&
@@ -101,7 +100,7 @@ class AnnouncementCreate extends React.Component {
             </div>
           </div>}
           {step === 'success' &&
-          <AnnouncementCreateSuccess
+          <Success
             changeApp={changeApp}
             changeRoute={this.changeRoute}
             id={id}

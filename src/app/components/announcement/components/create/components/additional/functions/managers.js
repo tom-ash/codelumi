@@ -10,8 +10,7 @@ const {
   RENT_CURRENCY_SELECTED_EVENT,
   ROOMS_INPUTTED_EVENT,
   FLOOR_INPUTTED_EVENT,
-  TOTAL_FLOORS_INPUTTED_EVENT,
-  SHOW_AVAILABILITY_DATE_EVENT
+  TOTAL_FLOORS_INPUTTED_EVENT
 } = analyticEvents
 
 export function rentAmountManager() {
@@ -146,26 +145,6 @@ export function totalFloorsManager() {
     onSelect: (option) => {
       this.onSelectHandler('totalFloors', option.value)
       sendGaEvent(TOTAL_FLOORS_INPUTTED_EVENT)
-    }
-  }
-}
-
-export function showAvailabilityDateManager() {
-  const {
-    showAvilabilityDate,
-    changeControl
-  } = this.props
-
-  return {
-    classNames: { container: 'form-input checkbox availability-date' },
-    checked: showAvilabilityDate,
-    label: this.langObjHandler({
-      pl: 'Dodaj datę dostępności',
-      en: 'Add Availability Date'
-    }),
-    onClick: value => {
-      changeControl({ showAvilabilityDate: value })
-      sendGaEvent(SHOW_AVAILABILITY_DATE_EVENT)
     }
   }
 }
