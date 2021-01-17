@@ -13,8 +13,9 @@ export function emailManager() {
     id: 'user-edit-password-email',
     display: step === null ? 'block' : 'none',
     controlled: false,
-    classNames: { container: 'form-input text' },
+    classNames: { container: 'form-input with-icon text' },
     label: this.langObjHandler(label),
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.envelope} />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.emailManager().validate(value),
     validate: value => {
@@ -43,8 +44,9 @@ export function verificationManager() {
     id: 'user-edit-password-verification',
     display: step === 'verificationCode' ? 'block' : 'none',
     controlled: false,
-    classNames: { container: 'form-input text' },
+    classNames: { container: 'form-input with-icon text' },
     label: this.langObjHandler(label),
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.lock} />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.verificationManager().validate(value),
     validate: value => {
@@ -68,8 +70,9 @@ export function passwordManager() {
     controlled: false,
     type: 'password',
     autoComplete: 'new-password',
-    classNames: { container: 'form-input text' },
+    classNames: { container: 'form-input with-icon text' },
     label: this.langObjHandler(label),
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.lock} />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.passwordManager().validate(value),
     validate: value => {

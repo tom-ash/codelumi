@@ -22,6 +22,13 @@
     }
     &.button {
       margin: 0 auto;
+      .very-small-windmill-spinner {
+        top: -54px;
+        left: -49px;
+        div:after {
+          background: gray;
+        }
+      }
     }
   }
   .separation-line {

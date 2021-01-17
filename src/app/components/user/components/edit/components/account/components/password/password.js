@@ -10,6 +10,7 @@ import { langHandler, langObjHandler } from '../../../../../../../../functions/l
 import { labelProvider } from '../../../../../../../../functions/providers/label'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import Header from '../../../../../../../support/components/header/header.js'
 
 class UserEditAccountPassword extends React.Component {
   constructor(props) {
@@ -29,33 +30,31 @@ class UserEditAccountPassword extends React.Component {
   }
 
   render() {
-    const { editAccount } = this.props
+    const { editAccount, scalableVectorGraphics } = this.props
+
+    const svgs = scalableVectorGraphics
+    const headerText = this.langHandler('Zresetuj hasło', 'Reset password')
+    const headerSvgPathData = scalableVectorGraphics && scalableVectorGraphics.lock
     
     return (
-      <React.Fragment>
-        <div
-          id='user-edit-account-password'
-          className={`${editAccount ? '' : 'container full'}`}
-          onClick={e => e.stopPropagation()}
-        >
-          {!editAccount &&
-          <h1 className='page-header'>
-            {this.langHandler('Zresetuj hasło', 'Reset password')}
-          </h1>}
-          <div className='inputs'>
-            <div className='monit-and-text-inputs'>
-              <div className='monit'>
-                {this.monitProvider()}
-              </div>
-              <ManagedText key='emailAddress' {...this.emailManager()} />
-              <ManagedText key='verificationCode' {...this.verificationManager()} />
-              <ManagedText key='password' {...this.passwordManager()} />
+      <div
+        id='user-edit-account-password'
+        className={`${editAccount ? '' : 'container full'}`}
+      >
+        {!editAccount && <Header tier={1} text={headerText} svgPathData={headerSvgPathData} />}
+        <div className='inputs'>
+          <div className='monit-and-text-inputs'>
+            <div className='monit'>
+              {this.monitProvider()}
             </div>
-            <div className='separation-line' />
-            <ManagedButton key='button' {...this.buttonManager()} />
+            <ManagedText key='emailAddress' {...this.emailManager()} />
+            <ManagedText key='verificationCode' {...this.verificationManager()} />
+            <ManagedText key='password' {...this.passwordManager()} />
           </div>
+          <div className='separation-line' />
+          <ManagedButton key='button' {...this.buttonManager()} />
         </div>
-      </React.Fragment>
+      </div>
     )
   }
 }

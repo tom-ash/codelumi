@@ -153,10 +153,7 @@ export function areaCodeManager() {
     onFocusCoverZIndex: 3001,
     id: 'user-create-email-area-code',
     classNames: { container: 'form-input select phone-country-code' },
-    children: <>
-      {/* <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.phone} /> */}
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />
-    </>,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
     value: this.props.phoneCode,
     options: [ { value: '+48', text: '+48' }, { value: '+1', text: '+1' }, { value: '+44', text: '+44' } ],
     onSelect: (option) => {
