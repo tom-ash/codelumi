@@ -2,18 +2,21 @@ import React from 'react'
 import { inputs } from '../../../../../constants/inputs'
 import ButtonSpinner from '../../../../../../support/components/button-spinner/button-spinner'
 import { emailValidator } from '../../../../../../../functions/email-validator'
+import ScalableVectorGraphic from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 
 const noError = { pl: '', en: '' }
 
 export function emailAddressManager() {
-  const { icon, label } = inputs.email
+  const { scalableVectorGraphics } = this.props
+  const { label } = inputs.email
 
   return {
     id: 'user-logon-email-address',
+    classNames: { container: 'form-input text with-icon email'},
     autoComplete: 'email',
     controlled: false,
-    classNames: { container: 'form-input text email'},
     label: this.langObjHandler(label),
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.envelope} />,
     onChange: () => this.props.changeErrors({ emailOrPassword: noError }),
     onBlur: value => this.emailAddressManager().validate(value),
     validate: value => {
@@ -30,15 +33,17 @@ export function emailAddressManager() {
 }
 
 export function passwordManager() {
-  const { icon, label } = inputs.password
+  const { scalableVectorGraphics } = this.props
+  const { label } = inputs.password
 
   return {
     id: 'user-logon-password',
     autoComplete: 'current-password',
     type: 'password',
     controlled: false,
-    classNames: { container: 'form-input text password'},
+    classNames: { container: 'form-input text with-icon password'},
     label: this.langObjHandler(label),
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.lock} />,
     onChange: () => this.props.changeErrors({ emailOrPassword: noError, email: noError }),
     onBlur: value => this.passwordManager().validate(value),
     validate: (value => {

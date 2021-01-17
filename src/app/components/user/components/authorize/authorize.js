@@ -5,6 +5,7 @@ import { langHandler } from '../../../../functions/lang-handler'
 import UserAuthorizeEmailTrack from './components/email-password/email-password'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import Header from '../../../support/components/header/header'
 
 class UserAuthorize extends React.Component {
   constructor(props) {
@@ -13,15 +14,18 @@ class UserAuthorize extends React.Component {
   }
 
   render() {
+    const { scalableVectorGraphics } = this.props
+
+    const headerText = this.langHandler('Zaloguj', 'Sign In')
+    const headerSvgPathData = scalableVectorGraphics && scalableVectorGraphics.user
+
     return (
       <React.Fragment>
         <div
           id='user-authorize'
           className='container'
         >
-          <h1 className='page-header'>
-            {this.langHandler('Zaloguj', 'Sign In')}
-          </h1>
+          <Header tier={1} text={headerText} svgPathData={headerSvgPathData} />
           <UserAuthorizeEmailTrack />
         </div>
       </React.Fragment>

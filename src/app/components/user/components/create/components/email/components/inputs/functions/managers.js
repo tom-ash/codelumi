@@ -50,14 +50,8 @@ export function accountTypeManager() {
 }
 
 export function emailAddressManager() {
-  const {
-    scalableVectorGraphics
-  } = this.props
-  
-  const {
-    icon,
-    label
-  } = inputs.email
+  const { scalableVectorGraphics } = this.props
+  const { label } = inputs.email
 
   const input = inputs.email
   return {
@@ -67,9 +61,7 @@ export function emailAddressManager() {
     autoComplete: 'email',
     controlled: false,
     label: this.langObjHandler(label),
-    children: <>
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.envelope} />
-    </>,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.envelope} />,
     onFocus: () => this.errorResetter('email'),
     onBlur: value => {
       this.emailAddressManager().validate(value)
@@ -81,14 +73,8 @@ export function emailAddressManager() {
 }
 
 export function passwordManager() {
-  const {
-    scalableVectorGraphics
-  } = this.props
-
-  const {
-    icon,
-    label
-  } = inputs.password
+  const { scalableVectorGraphics } = this.props
+  const { label } = inputs.password
 
   const input = inputs.password
   return {

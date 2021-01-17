@@ -24,6 +24,16 @@
   padding: 55px 40px 40px;
   position: relative;
 
+  .page-header {
+    .icon {
+      svg {
+        top: 4px;
+        left: 8px;
+        fill: white;
+        height: 17px;
+      }
+    }
+  }
 
   .hint {
     font-size: 15px;
@@ -180,13 +190,4 @@
 
 
 
-.page-header {
-  .icon {
-    svg {
-      top: 3px;
-      left: 8px;
-      fill: white;
-      height: 17px;
-    }
-  }
-}
+
