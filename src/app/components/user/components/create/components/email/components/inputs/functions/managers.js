@@ -152,7 +152,7 @@ export function areaCodeManager() {
   return {
     onFocusCoverZIndex: 3001,
     id: 'user-create-email-area-code',
-    classNames: { container: 'form-input with-icon select phone-country-code' },
+    classNames: { container: 'form-input select phone-country-code' },
     children: <>
       {/* <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.phone} /> */}
       <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />

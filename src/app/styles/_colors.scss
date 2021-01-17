@@ -1,3 +1,21 @@
+$TEXT-COLOR: #424242;
+$HEADER-COLOR: #565656;
+$GRAYED-OUT-TEXT-COLOR: #999999;
+$ERROR-COLOR: #C0392B;
+$SUCCESS-ICON-COLOR: #16A085;
+$FORM-INPUT-ICON-COLOR: #CACFD2;
+$FORM-INPUT-CHEVRON-COLOR: #979A9A;
+
+
+
+
+
+
+
+
+
+
+// DEPRECATED
 $primary-element-color: #34495E;
 $primary-text-color: #2E4053;
 $primary-text-transparentized-color: transparentize($primary-text-color, .3);
@@ -40,3 +58,4 @@ $untached-color: #2E4053;
 $touched-color: #212F3D;
 $border-color: $untached-color;
 $touched-border-color: #34495E;
+// END OF DEPRECATED

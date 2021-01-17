@@ -1,72 +1,66 @@
 .form-input {
+  svg {
+    position: absolute;
+    transition: .2s ease-in-out;
+  }
   &.with-icon {
-    svg {
-      transition: .2s ease-in-out;
-    }
     &.text, &.select {
       padding-left: 35px;  
       .label {
         left: 40px;
       }
     }
+  }
+  &.with-icon {
     &.text {
       svg {
-        fill: #CACFD2;
-        position: absolute;
+        fill: $FORM-INPUT-ICON-COLOR;
         height: 16px;
-        top: 0;
+        bottom: 10px;
         left: 0;
-        bottom: 0;
-        margin: auto;
       }
       &.value {
         svg {
-          fill: green;
+          fill: $SUCCESS-ICON-COLOR;
         }
       }
       &.error {
         svg {
-          fill: $primary-error-color;
+          fill: $ERROR-COLOR;
+        }
+      }
+    }
+    &.select {
+      svg:first-of-type {
+        fill: $FORM-INPUT-ICON-COLOR;
+        height: 16px;
+        bottom: 10px;
+        left: 0;
+      }
+      &.value {
+        svg:first-of-type {
+          fill: $SUCCESS-ICON-COLOR;
+        }
+      }
+      &.error {
+        svg:first-of-type {
+          fill: $ERROR-COLOR;
         }
       }
     }
   }
   &.select {
     svg:last-of-type {
-      position: absolute;
-      top: 0;
-      right: 15px;
-      bottom: 0;
+      right: 10px;
+      bottom: 12px;
       height: 15px;
       margin: auto;
-      fill: #979A9A;
-      cursor: pointer;
+      fill: $FORM-INPUT-CHEVRON-COLOR;
       transform: rotate(270deg);
-    }
-    &.with-icon {
-      svg:nth-last-of-type(2) {
-        fill: #CACFD2;
-        position: absolute;
-        height: 16px;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        margin: auto;
-      }
-      &.value {
-        svg:nth-last-of-type(2) {
-          fill: green;
-        }
-      }
-      &.error {
-        svg:nth-last-of-type(2) {
-          fill: $primary-error-color;
-        }
-      }
     }
     &.focus {
       svg:last-of-type {
-        top: 3px;
+        bottom: 6px;
         transform: rotate(90deg);
       }
     }

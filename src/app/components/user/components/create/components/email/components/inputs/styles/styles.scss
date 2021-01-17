@@ -1,21 +1,7 @@
 @import '../../../../../../../../../styles/inputs/form/svgs.scss';
 
 .user-create-email-inputs-container {
-  max-width: 400px;
-  .form-input {
-    max-width: 400px;
-    &.phone-country-code {
-      position: absolute;
-      width: 120px;
-      .input {
-        padding-left: 15px;
-      }
-    }
-    &.phone-body {
-      margin-left: 130px;
-      margin-bottom: 0;
-    }
-  }
+  max-width: 360px;
   .input-explanation-user {
     margin-top: 50px;
     margin-bottom: 20px;
@@ -23,12 +9,25 @@
     line-height: 20px;
     color: #5F6A6A;
   }
+
   .form-input {
+    &.phone-country-code {
+      position: absolute;
+      width: 120px;
+      padding-left: 35px;
+      .input {
+        padding-left: 15px;
+      }
+    }
     &.phone-body {
-      &.text, &.select {
+      &.text {
+        margin-left: 130px;
         padding-left: 0;  
+        .input {
+          padding-left: 5px;
+        }
         .label {
-          left: 3px;
+          left: 5px;
         }
       }
       svg {

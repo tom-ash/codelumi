@@ -4,9 +4,10 @@
 
 #user-authorize-email {
   .inputs {
-    max-width: 396px;
+    max-width: 360px;
   }
   .form-input {
+    margin-bottom: 20px;
     &.email {
       .error-container {
         display: none;
@@ -28,8 +29,7 @@
   }
   .submit {
     .checkbox {
-      padding: 0;
-      margin: 0;
+      margin-top: 40px;
       @media #{$phone} {
         position: relative;
         height: 14px;

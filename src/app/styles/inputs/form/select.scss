@@ -1,64 +1,10 @@
+@import './text-select';
 @import './select-options.scss';
 
 .form-input {
   &.select {
-    position: relative;
-    height: 50px;
-    margin-bottom: 32px;
     .input {
-      width: 100%;
-      padding-top: 5px;
-      border: none;
-      border-bottom: 1px solid #979A9A;
-      z-index: 2;
-      line-height: 50px;
-      cursor: pointer;
-      color: $touched-color;
-      height: 50px;
-      font-size: 15px;
-      padding-left: 7px;
-      transition: .2s ease-in-out;
-      &.error {
-        border-bottom: 1px solid $primary-error-color;
-        color: $primary-error-color;
-      }
-    }
-    .label {
-      position: absolute;
-      color: #374049;
-      cursor: pointer;
-      top: 15px;
-      left: 5px;
-      font-size: 15px;
-      transition: 0.18s;
-      text-align: left;
-      color: $untached-color;
-      padding: 0 2px;
-      &.value, &.focus {
-        top: -6px;
-        font-size: 13px;
-      }
-      &.hover {
-        color: $form-input-label-hover-color;
-      }
-      &.focus {
-        color: $form-input-label-focus-color;
-      }
-      &.error {
-        color: $primary-error-color!important;
-      }
-    }
-    .error-container {
-      top: 50px;
-      text-align: center;
-      font-size: 14px;
-      opacity: 0;
-      transition: 0.18s;
-      color: $primary-error-color;
-      &.error {
-        opacity: 1;
-        color: $primary-error-color;
-      }
+      padding-top: 20px;
     }
   }
 }
