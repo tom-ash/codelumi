@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import UserCreateEmailInputs from './components/inputs/inputs'
-import UserCreateConsents from '../consents/consents'
-import UserCreateSubmit from './components/submit/submit'
-import UserCreateEmailVerify from './components/verify/verify'
+import Inputs from './components/inputs/inputs'
+import Consents from '../consents/consents'
+import Submit from './components/submit/submit'
+import Verify from './components/verify/verify'
 import * as mappers from './constants/mappers'
 
 class UserCreateEmail extends React.Component {
@@ -15,12 +15,12 @@ class UserCreateEmail extends React.Component {
         <form>
           {!token ?
           <>
-            <UserCreateEmailInputs />
-            <UserCreateConsents />
-            <UserCreateSubmit />
+            <Inputs />
+            <Consents />
+            <Submit />
           </>
           :
-          <UserCreateEmailVerify />}
+          <Verify />}
         </form>
       </div>
     )

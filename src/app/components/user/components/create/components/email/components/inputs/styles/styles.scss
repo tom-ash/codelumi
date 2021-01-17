@@ -1,63 +1,36 @@
+@import '../../../../../../../../../styles/inputs/form/svgs.scss';
+
 .user-create-email-inputs-container {
-  max-width: 396px;
-  .radio-container {
-    margin: 18px 0 12px 0;
-    .title {
-      margin-bottom: 12px;
-      font-size: 14px;
-    }
-    .radio {
-      position: relative;
-      height: 42px;
-      float: left;
-      width: 48.25%;
-      &:nth-child(1) {
-        margin-right: 3.5%;
-      }
-      .input {
-        margin-top: 3px;
-      }
-      .label {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        margin-top: 2px;
-        line-height: 40px;
-        padding-left: 32px;
-      }
-    }
-  }
+  max-width: 400px;
   .form-input {
     &.text, &.select {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      .label {
+        padding-top: 6px;
+        left: 35px;
+      }
     }
     &.phone-country-code {
       position: absolute;
-      width: 84px;
+      width: 120px;
       .input {
         padding-left: 15px;
       }
     }
     &.phone-body {
-      margin-left: 96px;
+      margin-left: 120px;
       margin-bottom: 0;
-    }
-  }
-  h2 {
-    color: #3498DB;
-    font-size: 15px;
-    margin-bottom: 0!important;
-    &:nth-child(2n) {
-      margin-top: 36px!important;
+      .label {
+        left: 2px;
+
+      }
     }
   }
   .input-explanation-user {
-    color: #424949;
-    margin-top: 18px;
-    margin-bottom: 18px;
-    font-size: 14px;
+    color: gray;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 15px;
     text-align: justify;
     line-height: 20px;
     color: #5F6A6A;

@@ -26,6 +26,7 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import Line from '../../../support/components/separation-line/separation-line'
 import AvailabilityDate from './components/availability_date/availability_date'
+import { OPTIONAL } from './constants/texts'
 
 import {
   categoryManager,
@@ -68,14 +69,14 @@ class AnnouncementCreate extends React.Component {
 
     return (
       <>
-        <AnnouncementCreateSteps authorized={authorized} step={step} scalableVectorGraphics={scalableVectorGraphics} />
-        <div id='announcement-create' className={step}>
-          <h1>
+        <h1>
             {this.langObjHandler({
               pl: 'Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w Warszawie',
               en: 'Add Free Announcement of Real Estate Lease in Warsaw'
             })}
           </h1>
+        <AnnouncementCreateSteps authorized={authorized} step={step} scalableVectorGraphics={scalableVectorGraphics} />
+        <div id='announcement-create' className={step}>
           {step === 'form' &&
           <>
             <Primary />
@@ -86,6 +87,7 @@ class AnnouncementCreate extends React.Component {
             <Line />
             <Additional />
             <Line />
+            <p className='hint create'>{this.langObjHandler(OPTIONAL)}</p>
             <AvailabilityDate { ...availabilityDateProps } />
             <Features />
             <Furnishings />

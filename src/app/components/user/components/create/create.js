@@ -23,10 +23,7 @@ class UserCreate extends React.Component {
     } = this.props
 
     return (
-      <div
-        id='user-create-container'
-        className={`container${creatingAnnouncement ? ' creating-announcement' : ''}`}
-      >
+      <>
         {!creatingAnnouncement &&
         <>
           <h1 className='page-header'>
@@ -37,8 +34,12 @@ class UserCreate extends React.Component {
             scalableVectorGraphics={scalableVectorGraphics}
           />
         </>}
-        <UserCreateEmail />
-      </div>
+        <div id='user-create-container'
+          className={`container${creatingAnnouncement ? ' creating-announcement' : ''}`}
+        >
+          <UserCreateEmail />
+        </div>
+      </>
     )
   }
 }

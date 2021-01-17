@@ -13,9 +13,12 @@
 @import '../../../../../styles/inputs/form/button.scss';
 
 #user-create-container {
-  margin: 24px auto 0;
-  max-width: 640px;
+  margin: 0 auto;
+  max-width: 600px;
   border: 1px solid #D0D3D4;
+
+  padding: 50px;
+
   @media #{$small-tablet} {
     margin: 0 auto;
   }
@@ -25,12 +28,11 @@
     border-top: none;
     padding: 0 36px 36px;
   }
-  h1 {
-    font-size: 16px;
-    color: #566573;
-    margin-bottom: 12px;
-  }
-  .create-points {
+}
+
+.create-points {
+  &.user {
+    max-width: 580px;
     padding: 0 0 60px 0;
     .line {
       margin: 0;

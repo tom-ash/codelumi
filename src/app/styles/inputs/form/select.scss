@@ -20,9 +20,6 @@
       font-size: 15px;
       padding-left: 7px;
       transition: .2s ease-in-out;
-      // &.hover {
-      //   border-bottom: 2px solid #979A9A;
-      // }
       &.error {
         border-bottom: 1px solid $primary-error-color;
         color: $primary-error-color;
@@ -68,29 +65,6 @@
       &.error {
         opacity: 1;
         color: $primary-error-color;
-      }
-    }
-    svg {
-      position: absolute;
-      top: 0;
-      right: 15px;
-      bottom: 0;
-      height: 15px;
-      margin: auto;
-      fill: #979A9A;
-      cursor: pointer;
-      transition: .2s ease-in-out;
-      transform: rotate(270deg);
-    }
-    &.focus {
-      svg {
-        top: 3px;
-        transform: rotate(90deg);
-      }
-    }
-    &.error {
-      svg {
-        fill: $primary-error-color;
       }
     }
   }

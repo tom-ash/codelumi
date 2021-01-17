@@ -1,18 +1,15 @@
 import React from 'react'
-import loadable from '@loadable/component'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { ManagedText, ManagedSelect, ManagedCheckbox } from 'managed-inputs'
-const Calendar = loadable(() => import('../../../../../support/components/calendar/calendar'), { ssr: false })
+import { ManagedText, ManagedSelect } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
 import { onSelectHandler } from './functions/on-select-handler'
 import { labelProvider } from '../../../../../../functions/providers/label'
 import { floorsProvider } from './functions/floors-provider'
 import { getRentAmounts } from '../../functions/get-rent-amounts'
-import analyticEvents from './constants/analytics/events'
-
-const { AVAILABILITY_DATE_SELECTED_EVENT } = analyticEvents
+import analyticEvents from './constants/analytics/events.js'
+import { OPTIONAL } from '../../constants/texts.js'
 
 class AnnouncementCreateAdditional extends React.Component {
   constructor(props) {
@@ -31,8 +28,10 @@ class AnnouncementCreateAdditional extends React.Component {
   }
   
   render() {
+    console.log(OPTIONAL)
     return (
       <div id='announcement-create-additional' className='section'>
+        <p className='hint'>{this.langObjHandler(OPTIONAL)}</p>
         <div className='rent-inputs-container'>
           <ManagedText {...this.rentAmountManager()}/>
           <ManagedSelect {...this.rentCurrencyManager()}/>

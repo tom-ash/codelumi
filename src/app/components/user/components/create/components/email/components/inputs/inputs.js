@@ -33,27 +33,16 @@ class UserCreateEmailInputs extends React.Component {
   }
 
   render() {
-    const {
-      accountType
-    } = this.props
+    // const {
+    //   accountType
+    // } = this.props
 
     return (
       <div className='user-create-email-inputs-container'>
-        <h2>
-          {this.langObjHandler({ pl: 'Dane konta', en: 'Account  data' })}
-        </h2>
-        <div className='radio-container'>
-          <div className='title'>
-            {this.langObjHandler({ pl: 'Rodzaj konta', en: 'Account Type' })}
-          </div>
-          <ManagedRadio {...this.accountTypeManager()}/>
-        </div>
+        {/* <ManagedRadio {...this.accountTypeManager()}/> */}
         <div className='gap' />
         <ManagedText {...this.emailAddressManager()}/>
         <ManagedText {...this.passwordManager()}/>
-        <h2>
-          {this.langObjHandler({ pl: 'Dane kontaktowe', en: 'Contact  data' })}
-        </h2>
         <div className='input-explanation-user'>
           {this.langObjHandler({
             pl: 'Imię oraz numer telefonu będą służyły jako dane kontaktowe przy Twoich ogłoszeniach.',

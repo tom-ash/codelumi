@@ -10,7 +10,7 @@ export function AnnouncementCreateSteps({
     <div className='create-points'>
       <div className={`line${step === 'success' ? ' success' : ''}`} />
       <div className={`point first${step !== 'form' ? ' success' : ''}`}>
-        <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.announcement} />
+        <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.align_left} />
       </div>
       {!authorized &&
       <div className={`point second${step === 'creating-user' ? ' current' : ''}${step === 'confirmation'  || step === 'success' ? ' success' : ''}`}>

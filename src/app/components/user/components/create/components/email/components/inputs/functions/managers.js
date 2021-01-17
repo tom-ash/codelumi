@@ -62,12 +62,15 @@ export function emailAddressManager() {
   const input = inputs.email
   return {
     id: 'user-create-email-email-address',
-    autoComplete: 'email',
+    classNames: { container: 'form-input with-icon text' },
     type: 'email',
+    autoComplete: 'email',
     controlled: false,
-    classNames: { container: 'form-input text'},
     label: this.langObjHandler(label),
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
+    children: <>
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.envelope} />
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />
+    </>,
     onFocus: () => this.errorResetter('email'),
     onBlur: value => {
       this.emailAddressManager().validate(value)
@@ -91,12 +94,15 @@ export function passwordManager() {
   const input = inputs.password
   return {
     id: 'user-create-email-password',
-    autoComplete: 'new-password',
+    classNames: { container: 'form-input with-icon text' },
     type: 'password',
+    autoComplete: 'new-password',
     controlled: false,
-    classNames: { container: 'form-input text'},
     label: this.langObjHandler(label),
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
+    children: <>
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.lock} />
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />
+    </>,
     onFocus: () => this.errorResetter('password'),
     onBlur: value => {
       this.passwordManager().validate(value)
@@ -116,12 +122,15 @@ export function firstNameManager() {
 
   return {
     display: accountType === 'private' ? undefined : 'none',
+    classNames: { container: 'form-input with-icon text' },
     id: 'user-create-email-first-name',
     autoComplete: 'given-name',
     controlled: false,
-    classNames: { container: 'form-input text'},
     label: this.langObjHandler(label),
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
+    children: <>
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.user} />
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />
+    </>,
     onFocus: () => this.errorResetter('firstName'),
     onBlur: value => {
       this.firstNameManager().validate(value)
@@ -165,8 +174,11 @@ export function areaCodeManager() {
   return {
     onFocusCoverZIndex: 3001,
     id: 'user-create-email-area-code',
-    classNames: { container: 'form-input select phone-country-code'},
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
+    classNames: { container: 'form-input with-icon select phone-country-code' },
+    children: <>
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.phone} />
+      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />
+    </>,
     value: this.props.phoneCode,
     options: [ { value: '+48', text: '+48' }, { value: '+1', text: '+1' }, { value: '+44', text: '+44' } ],
     onSelect: (option) => {
