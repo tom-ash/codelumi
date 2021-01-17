@@ -3,13 +3,7 @@
 .user-create-email-inputs-container {
   max-width: 400px;
   .form-input {
-    &.text, &.select {
-      margin-bottom: 30px;
-      .label {
-        padding-top: 6px;
-        left: 35px;
-      }
-    }
+    max-width: 400px;
     &.phone-country-code {
       position: absolute;
       width: 120px;
@@ -18,21 +12,28 @@
       }
     }
     &.phone-body {
-      margin-left: 140px;
+      margin-left: 130px;
       margin-bottom: 0;
-      .label {
-        left: 2px;
-
-      }
     }
   }
   .input-explanation-user {
-    color: gray;
     margin-top: 50px;
     margin-bottom: 20px;
     font-size: 15px;
-    text-align: justify;
     line-height: 20px;
     color: #5F6A6A;
+  }
+  .form-input {
+    &.phone-body {
+      &.text, &.select {
+        padding-left: 0;  
+        .label {
+          left: 3px;
+        }
+      }
+      svg {
+        left: -130px;
+      }
+    }
   }
 }

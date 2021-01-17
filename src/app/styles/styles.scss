@@ -163,30 +163,3 @@ button {
 input {
   outline: none;
 }
-
-.page-header {
-  display: flex;
-  flex-direction: row;
-  font-size: 15px;
-  line-height: 30px;
-  .icon {
-    margin-right: 10px;
-    background: #E5E7E9;
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    svg {
-      position: relative;
-      top: 1px;
-      left: 9px;
-      fill: white;
-      height: 15px;
-    }
-  }
-  h1 {
-    color: #BDC3C7;
-    margin-bottom: 35px;
-    font-size: 15px;
-    font-weight: normal;
-  }
-}

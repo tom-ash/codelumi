@@ -1,5 +1,7 @@
 import React from 'react'
 import ScalableVectorGraphic from '../scalable-vector-graphic/scalable-vector-graphic'
+import withStyles from 'isomorphic-style-loader/withStyles'
+import styles from './styles/styles.scss'
 
 const Header = ({
   tier,
@@ -18,5 +20,5 @@ const Header = ({
   )
 }
 
-export default Header
-
+// export default Header
+export default withStyles(styles)(Header)

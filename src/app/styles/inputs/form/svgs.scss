@@ -1,5 +1,8 @@
 .form-input {
   &.with-icon {
+    svg {
+      transition: .2s ease-in-out;
+    }
     &.text, &.select {
       padding-left: 35px;  
       .label {
@@ -16,6 +19,16 @@
         bottom: 0;
         margin: auto;
       }
+      &.value {
+        svg {
+          fill: green;
+        }
+      }
+      &.error {
+        svg {
+          fill: $primary-error-color;
+        }
+      }
     }
   }
   &.select {
@@ -28,13 +41,7 @@
       margin: auto;
       fill: #979A9A;
       cursor: pointer;
-      transition: .2s ease-in-out;
       transform: rotate(270deg);
-    }
-    &.error {
-      svg:last-of-type {
-        fill: $primary-error-color;
-      }
     }
     &.with-icon {
       svg:nth-last-of-type(2) {
@@ -45,6 +52,16 @@
         left: 0;
         bottom: 0;
         margin: auto;
+      }
+      &.value {
+        svg:nth-last-of-type(2) {
+          fill: green;
+        }
+      }
+      &.error {
+        svg:nth-last-of-type(2) {
+          fill: $primary-error-color;
+        }
       }
     }
     &.focus {

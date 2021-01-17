@@ -168,7 +168,7 @@ export function areaCodeManager() {
     id: 'user-create-email-area-code',
     classNames: { container: 'form-input with-icon select phone-country-code' },
     children: <>
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.phone} />
+      {/* <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.phone} /> */}
       <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />
     </>,
     value: this.props.phoneCode,
@@ -196,8 +196,9 @@ export function phoneNumberManager() {
     match: /^(\d){0,9}$/,
     type: 'tel',
     controlled: false,
-    classNames: { container: 'form-input text phone-body'},
+    classNames: { container: 'form-input text with-icon phone-body'},
     label: this.langObjHandler(label),
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.phone} />,
     onFocus: () => this.errorResetter('phone'),
     onBlur: value => {
       this.phoneNumberManager().validate(value)
