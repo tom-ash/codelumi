@@ -1,9 +1,8 @@
 @import '../../../../../../../../../styles/themes.scss';
 
 #user-create-email-submit {
-  padding: 0 0 18px;
   .separation-line {
-    margin-bottom: 24px;
+    margin-bottom: 30px;
   }
   .form-input {
     &.button {
@@ -12,7 +11,7 @@
         top: -54px;
         left: -49px;
         div:after {
-          background: white;
+          background: gray;
         }
       }
     }

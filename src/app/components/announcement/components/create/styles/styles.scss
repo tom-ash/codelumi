@@ -173,17 +173,11 @@
     color: #707B7C;
     cursor: pointer;
   }
-
-  
   .form-input {
     &.button {
-      margin: 40px auto 0;
-      font-size: 15px;
-      height: 45px;
+      margin: 30px auto 0;
     }
   }
-
-  
 }
 
 .post-container {
@@ -191,15 +185,3 @@
     margin-top: 240px!important;
   }
 }
-
-// h1 {
-//   margin-top: 30px;
-//   text-align: center;
-//   top: 0;
-//   font-size: 15px;
-//   padding: 5px;
-//   color: #979A9A;
-//   width: fit-content;
-//   margin: 30px auto;
-//   font-weight: normal;
-// }

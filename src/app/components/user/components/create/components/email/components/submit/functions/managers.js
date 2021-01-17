@@ -11,7 +11,7 @@ export function buttonManager() {
     label: (
       <ButtonSpinner
         connecting={connecting}
-        label={{ pl: 'Dalej', en: 'Next' }}
+        label={{ pl: 'Zarejestruj', en: 'Register' }}
         langObjHandler={this.langObjHandler}
       />
     ),
