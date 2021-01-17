@@ -76,15 +76,7 @@
     margin-bottom: 8px;
     font-size: 13px;
   }
-  // h1 {
-  //   position: absolute;
-  //   top: 0;
-  //   background: #E5E7E9;
-  //   font-size: 15px;
-  //   padding: 5px;
-  //   color: #979A9A;
-  //   font-weight: normal;
-  // }
+
   .description-question {
     font-size: 14px;
     display: inline-block;
@@ -183,5 +175,18 @@
 .post-container {
   &.create-announcement {
     margin-top: 240px!important;
+  }
+}
+
+
+
+.page-header {
+  .icon {
+    svg {
+      top: 3px;
+      left: 8px;
+      fill: white;
+      height: 17px;
+    }
   }
 }

@@ -69,7 +69,6 @@ export function emailAddressManager() {
     label: this.langObjHandler(label),
     children: <>
       <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.envelope} />
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />
     </>,
     onFocus: () => this.errorResetter('email'),
     onBlur: value => {
@@ -99,10 +98,7 @@ export function passwordManager() {
     autoComplete: 'new-password',
     controlled: false,
     label: this.langObjHandler(label),
-    children: <>
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.lock} />
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />
-    </>,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.lock} />,
     onFocus: () => this.errorResetter('password'),
     onBlur: value => {
       this.passwordManager().validate(value)
@@ -127,10 +123,7 @@ export function firstNameManager() {
     autoComplete: 'given-name',
     controlled: false,
     label: this.langObjHandler(label),
-    children: <>
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.user} />
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />
-    </>,
+    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.user} />,
     onFocus: () => this.errorResetter('firstName'),
     onBlur: value => {
       this.firstNameManager().validate(value)
@@ -155,7 +148,6 @@ export function businessNameManager() {
     controlled: false,
     classNames: { container: 'form-input text'},
     label: this.langObjHandler(label),
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onFocus: () => this.errorResetter('businessName'),
     onBlur: value => {
       this.businessNameManager().validate(value)
@@ -206,7 +198,6 @@ export function phoneNumberManager() {
     controlled: false,
     classNames: { container: 'form-input text phone-body'},
     label: this.langObjHandler(label),
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onFocus: () => this.errorResetter('phone'),
     onBlur: value => {
       this.phoneNumberManager().validate(value)

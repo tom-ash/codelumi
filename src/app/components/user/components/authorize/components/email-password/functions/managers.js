@@ -2,14 +2,10 @@ import React from 'react'
 import { inputs } from '../../../../../constants/inputs'
 import ButtonSpinner from '../../../../../../support/components/button-spinner/button-spinner'
 import { emailValidator } from '../../../../../../../functions/email-validator'
-import ScalableVectorGraphic from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 
 const noError = { pl: '', en: '' }
 
 export function emailAddressManager() {
-  const {
-    scalableVectorGraphics
-  } = this.props
   const { icon, label } = inputs.email
 
   return {
@@ -18,7 +14,6 @@ export function emailAddressManager() {
     controlled: false,
     classNames: { container: 'form-input text email'},
     label: this.langObjHandler(label),
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onChange: () => this.props.changeErrors({ emailOrPassword: noError }),
     onBlur: value => this.emailAddressManager().validate(value),
     validate: value => {
@@ -35,9 +30,6 @@ export function emailAddressManager() {
 }
 
 export function passwordManager() {
-  const {
-    scalableVectorGraphics
-  } = this.props
   const { icon, label } = inputs.password
 
   return {
@@ -47,7 +39,6 @@ export function passwordManager() {
     controlled: false,
     classNames: { container: 'form-input text password'},
     label: this.langObjHandler(label),
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />,
     onChange: () => this.props.changeErrors({ emailOrPassword: noError, email: noError }),
     onBlur: value => this.passwordManager().validate(value),
     validate: (value => {

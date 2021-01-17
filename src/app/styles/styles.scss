@@ -42,7 +42,7 @@ input[type=number] {
   .sqm {
     position: absolute;
     top: 8px;
-    right: 45px;
+    right: 10px;
     line-height: 45px;
     opacity: 0;
     transition: .2s opacity ease-in;
@@ -58,18 +58,6 @@ input[type=number] {
       opacity: 1;
     }
   }
-}
-
-h1 {
-  margin-top: 30px;
-  text-align: center;
-  top: 0;
-  font-size: 15px;
-  padding: 5px;
-  color: #979A9A;
-  width: fit-content;
-  margin: 30px auto;
-  font-weight: normal;
 }
 
 * {
@@ -174,4 +162,31 @@ button {
 
 input {
   outline: none;
+}
+
+.page-header {
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+  line-height: 30px;
+  .icon {
+    margin-right: 10px;
+    background: #E5E7E9;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    svg {
+      position: relative;
+      top: 1px;
+      left: 9px;
+      fill: white;
+      height: 15px;
+    }
+  }
+  h1 {
+    color: #BDC3C7;
+    margin-bottom: 35px;
+    font-size: 15px;
+    font-weight: normal;
+  }
 }

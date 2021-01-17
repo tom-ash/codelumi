@@ -65,20 +65,5 @@
         color: $primary-error-color;
       }
     }
-    svg:last-of-type {
-      position: absolute;
-      top: 0;
-      right: 15px;
-      bottom: 0;
-      height: 15px;
-      margin: auto;
-      fill: #979A9A;
-      transition: .2s ease-in-out;
-    }
-    &.error {
-      svg {
-        fill: $primary-error-color;
-      }
-    }
   }
 }

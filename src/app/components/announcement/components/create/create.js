@@ -27,6 +27,7 @@ import styles from './styles/styles.scss'
 import Line from '../../../support/components/separation-line/separation-line'
 import AvailabilityDate from './components/availability_date/availability_date'
 import { OPTIONAL } from './constants/texts'
+import Header from '../../../support/components/header/header'
 
 import {
   categoryManager,
@@ -66,17 +67,14 @@ class AnnouncementCreate extends React.Component {
     } = this.props
 
     const availabilityDateProps = { lang, availabilityDate, showAvilabilityDate, changeControl, changeInputs }
+    const headerText = this.langObjHandler({ pl: 'Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w Warszawie', en: 'Add Free Announcement of Real Estate Lease in Warsaw' })
+    const headerSvgPathData = scalableVectorGraphics && scalableVectorGraphics.plus
 
     return (
       <>
-        <h1>
-            {this.langObjHandler({
-              pl: 'Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w Warszawie',
-              en: 'Add Free Announcement of Real Estate Lease in Warsaw'
-            })}
-          </h1>
         <AnnouncementCreateSteps authorized={authorized} step={step} scalableVectorGraphics={scalableVectorGraphics} />
         <div id='announcement-create' className={step}>
+          <Header tier={1} text={headerText} svgPathData={headerSvgPathData} />
           {step === 'form' &&
           <>
             <Primary />

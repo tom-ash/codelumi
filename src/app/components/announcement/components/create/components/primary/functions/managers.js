@@ -110,7 +110,6 @@ export function areaManager() {
           })}
         </div>
         <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.area} />
-        <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />
       </>
     ),
     onFocus: () => this.props.changeErrors({ area: noError }),

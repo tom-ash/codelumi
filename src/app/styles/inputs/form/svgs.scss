@@ -1,37 +1,13 @@
 .form-input {
-  &.text, &.select {
-    svg:last-of-type {
-      position: absolute;
-      top: 0;
-      right: 15px;
-      bottom: 0;
-      height: 15px;
-      margin: auto;
-      fill: #979A9A;
-      cursor: pointer;
-      transition: .2s ease-in-out;
-      transform: rotate(270deg);
+  &.with-icon {
+    &.text, &.select {
+      padding-left: 35px;  
       .label {
-        padding-top: 6px;
-        padding-left: 35px;
-      }
-      .input {
-        padding-left: 5px;
+        left: 40px;
       }
     }
-    &.error {
-      svg:last-of-type {
-        fill: $primary-error-color;
-      }
-    }
-    &.with-icon {
-      &.text, &.select {
-        padding-left: 35px;  
-        .label {
-          left: 40px;
-        }
-      }
-      svg:nth-last-of-type(2) {
+    &.text {
+      svg {
         fill: #CACFD2;
         position: absolute;
         height: 16px;
@@ -43,6 +19,34 @@
     }
   }
   &.select {
+    svg:last-of-type {
+      position: absolute;
+      top: 0;
+      right: 15px;
+      bottom: 0;
+      height: 15px;
+      margin: auto;
+      fill: #979A9A;
+      cursor: pointer;
+      transition: .2s ease-in-out;
+      transform: rotate(270deg);
+    }
+    &.error {
+      svg:last-of-type {
+        fill: $primary-error-color;
+      }
+    }
+    &.with-icon {
+      svg:nth-last-of-type(2) {
+        fill: #CACFD2;
+        position: absolute;
+        height: 16px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
     &.focus {
       svg:last-of-type {
         top: 3px;
