@@ -1,52 +1,29 @@
-@import '../components/tile/styles/styles.scss';
+@import '../../../../../styles/colors.scss';
+@import '../../../../../styles/media-breakpoints.scss';
+@import './tile.scss';
 
 #announcement-show {
   position: relative;
-  width: 640px;
   margin: 0 auto;
-  padding: 36px 0 0;
+  padding: 20px 0 0 0;
   &.large-pc {
-    width: 1024px;
-    .announcement-show-pictures {
-      width: 768px;
-    }
+    max-width: 768px;
     .header-container {
-      position: absolute;
-      width: 256px;
-      top: 0;
-      right: 0;
-      padding: 18px;
+      padding: 20px;
       h2 {
         position: relative;
         padding: 0;
       }
       .area {
-        position: relative;
-        width: 100%;
-        font-size: 28px;
-        padding-top: 24px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 28px;
+        margin: auto;
+        font-size: 30px;
+        padding: 0;
       }
-    }
-    
-    .announcement-show-tile-primary {
-      position: absolute;
-      top: 136px;
-      right: 0;
-      width: 256px;
-      padding: 0 18px;
-    }
-
-    .announcement-show-tile-features {
-      padding: 18px 18px 0;
-      font-size: 16px;
-    }
-
-    .announcement-show-tile-description {
-      padding: 18px;
-    }
-
-    .announcement-show-tile-map {
-      margin: 0;
     }
   }
 
@@ -55,54 +32,10 @@
   }
 
   @media #{$phone} {
-    padding: 0;
+    padding: 20px 0 0;
     .announcement-show-tile {
       top: 0;
       box-shadow: none;
     }
   }
-
-  #showcase {
-    margin: 0 0 0 auto;
-    background: white;
-    padding: 12px;
-    width: 256px;
-    margin-bottom: 24px;
-    @media #{$phone} {
-      width: 100%;
-      margin: 0;
-      box-shadow: none;
-      border-bottom: 1px solid lightgray;
-    }
-    .phone-showcase {
-      min-width: 50px;
-      margin-top: 12px;
-      line-height: 24px;
-      height: 24px;
-      .icon {
-        float: left;
-        width: 24px;
-        height: 24px;
-        margin-right: 8px;
-        border-radius: 112px;
-        padding: 6px;
-        background: #28B463;
-        line-height: 12px;
-        color: #FBFCFC;
-        svg {
-          fill: white;
-        }
-      }
-      .text {
-        float: left;
-        u {
-          cursor: pointer;
-          margin-left: 4px;
-        }
-      }
-    }
-    .contact {
-      @extend %contact;
-    }
-  }  
 }

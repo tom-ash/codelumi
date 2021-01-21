@@ -1,0 +1,39 @@
+#announcement-show {
+  .announcement-show-tile {
+    width: 100%;
+    box-shadow: none;
+    border: 1px solid $CONTAINER-BORDER-COLOR;
+    h2 {
+      font-size: 16px;
+      color: $HEADER-COLOR;
+      margin-bottom: 5px;
+    }
+    .announcement-show-tile-primary {
+      .rent-container {
+        &.total {
+          font-size: 28px;
+          margin-bottom: 15px;
+          .decimal {
+            font-size: 15px;
+            top: 1px;
+            right: -1px;
+          }
+          .per-month {
+            margin-top: 15px;
+            font-size: 12px;
+          }
+        }
+        &.per-sqm {
+          font-size: 18px;
+          .sq {
+            font-size: 12px;
+          }
+          .per-month {
+            margin-top: 8px;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+}

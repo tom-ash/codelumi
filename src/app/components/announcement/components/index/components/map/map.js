@@ -3,8 +3,8 @@ import loadable from '@loadable/component'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
-import AnnouncementShowMiniTile from '../../../show/components/mini-tile/mini-tile'
-const AnnouncementTile = loadable(() => import('../../../show/components/tile/tile'), { ssr: false })
+import AnnouncementShowMiniTile from './components/mini-tile/mini-tile.js'
+const AnnouncementTile = loadable(() => import('../../../common/tile/tile.js'), { ssr: false })
 import { googleMapHandler } from '../../../../functions/google-map-handler'
 import { fetchTile } from './functions/fetch-tile'
 import { drawPins } from './functions/draw-pins'

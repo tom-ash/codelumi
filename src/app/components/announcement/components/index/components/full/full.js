@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
-import AnnouncementTile from '../../../show/components/tile/tile'
+import Tile from '../../../common/tile/tile.js'
 import { parseCategoryForUrl } from '../../../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../../../functions/district-parsers'
 import { parseCurrency } from '../../../../functions/currency-parsers'
@@ -46,7 +46,7 @@ class AnnouncementIndexFull extends React.Component {
         <div className='announcements'>
           {announcements && announcements.map((announcement, index) => {
             return (
-              <AnnouncementTile
+              <Tile
                 isMobile={isMobile}
                 venue='full'
                 showPhoneSwitch

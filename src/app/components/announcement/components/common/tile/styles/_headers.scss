@@ -1,0 +1,43 @@
+
+.announcement-show-tile {
+  .header-container {
+    h1 {
+      position: relative;
+      margin: 0;
+      font-weight: normal;
+      .header-row {
+        &.category {
+          font-size: 18px;
+          margin-bottom: 8px;
+          color: rgba(34, 34, 34, 0.8);
+          .for-lease {
+            font-size: 14px;
+            color: rgba(34, 34, 34, 0.5);
+          }
+        }
+        &.district {
+          color: #566573;
+          font-size: 16px;
+        }
+      }
+      .area {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding-right: 23px;
+        color: #21618C;
+        font-family: 'Oswald', sans-serif;
+        font-size: 22px;
+        padding-top: 22px;
+        .m, .sq {
+          float: left;
+        }
+        .sq {
+          margin-left: 2px;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}

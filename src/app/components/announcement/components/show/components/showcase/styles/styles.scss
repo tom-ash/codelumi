@@ -1,0 +1,39 @@
+@import '../../../../../../../styles/colors';
+@import '../../../../../../../styles/media-breakpoints';
+
+#announcement-show {
+  #showcase {
+    width: 180px;
+    margin: 0 0 20px auto;
+    padding: 12px;
+    background: white;
+    border: 1px solid $CONTAINER-BORDER-COLOR;
+    @media #{$phone} {
+      margin-right: 20px;
+    }
+    .phone-showcase {
+      min-width: 50px;
+      margin-top: 12px;
+      line-height: 24px;
+      height: 24px;
+      .icon {
+        position: relative;
+        top: 6px;
+        float: left;
+        width: 14px;
+        margin-right: 8px;
+        line-height: 12px;
+        svg {
+          fill: $TEXT-COLOR;
+        }
+      }
+      .text {
+        float: left;
+        u {
+          cursor: pointer;
+          margin-left: 4px;
+        }
+      }
+    }
+  }  
+}

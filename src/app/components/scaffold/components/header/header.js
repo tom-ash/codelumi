@@ -57,13 +57,14 @@ class Header extends React.Component {
           <div id='warsaw-lease'>
             <ManagedLink {...this.titleManager()} />
           </div>
+          {(renderMap || renderCatalogue) &&
           <h1 className='title'>
             <HeaderProvider
               renderMap={renderMap}
               renderCatalogue={renderCatalogue}
               langObjHandler={this.langObjHandler}
             />
-          </h1>
+          </h1>}
           <div className='top-links'>
             {showAddAnnouncement && <ManagedLink {...this.addAnnouncementManager()} />}
             {isLargePc && links}

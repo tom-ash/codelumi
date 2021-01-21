@@ -4,7 +4,7 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
 import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
 import * as managers from './functions/managers'
-import AnnouncementTile from '../../../show/components/tile/tile'
+import Tile from '../../../common/tile/tile.js'
 import { controlProvider } from './functions/control-provider'
 import { buttonProvider } from './functions/button-provider'
 import { triggerVisible } from './functions/trigger-visible'
@@ -71,7 +71,7 @@ class AnnouncementIndexList extends React.Component {
         }
         <div className='announcements'>
           {this.props.announcements && this.props.announcements.map((announcement, index) => (
-          <AnnouncementTile
+          <Tile
             venue='list'
             key={`${announcement.id}`}
             index={index}

@@ -6,9 +6,8 @@ import { langObjHandler } from '../../../../functions/lang-handler'
 import { phoneSwitchProvider } from '../../functions/phone-switch-provider'
 import { togglePhone } from '../../functions/toggle-phone'
 import { fixedPhoneHandler } from './functions/fixed-phone-handler'
-import AnnouncementTile from './components/tile/tile'
-import { sendAnalyticsEvent } from '../../../../functions/google-analytics/send-analytics-event'
-import ScalableVectorGraphic from '../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import Showcase from './components/showcase/showcase.js'
+import Tile from '../common/tile/tile.js'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
@@ -65,45 +64,22 @@ class AnnouncementShow extends React.Component {
       resetControl,
       changeData,
       resetData,
-      changeApp
+      changeApp,
+      name
     } = this.props
 
     const { phone } = this.state
     const deviceClasss = device === 'largePc' ? ' large-pc' : ''
+    const showcaseProps = { scalableVectorGraphics, announcerName: name, announcerPhone: phone,
+      announcementId: id, togglePhone: this.togglePhone, langObjHandler: this.langObjHandler, venue }
 
     return (
       <div id='announcement-show' className={deviceClasss}>
-        <div id='showcase' className='small-shadow'>
-          <div className='name'>
-            {this.props.name}
-          </div>
-          <div className='phone-showcase'>
-            <div className='icon'>
-              <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.phone} />
-            </div>
-            <div className='text'>
-              {` ${phone}`}
-              {phone && phone.length < 9 &&
-              <u
-                onClick={(e) => {
-                  sendAnalyticsEvent({
-                    eventCategory: 'Announcement Show',
-                    eventAction: 'Phone Reveal Click',
-                    eventLabel: id
-                  })
-                  this.togglePhone(e, venue)}
-                }
-              >
-                {this.langObjHandler({ pl: 'Pokaż', en: 'Show' })}
-              </u>}
-            </div>
-            <div className='float-clear' />
-          </div>
-          <div className='contact'>
-            {this.phoneSwitchProvider()}
-          </div>
+        <Showcase { ...showcaseProps } />
+        <div className='contact'>
+          {this.phoneSwitchProvider()}
         </div>
-        <AnnouncementTile
+        <Tile
           venue='show'
           lang={lang}
           id={id}
