@@ -3,9 +3,9 @@ import loadable from '@loadable/component'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import AnnouncementIndexPanel from './components/panel/panel'
-import AnnouncementIndexFull from './components/full/full'
+import AnnouncementIndexCatalogue from './components/catalogue/catalogue'
 import AnnouncementIndexMap from './components/map/map'
-const AnnouncementIndexList = loadable(() => import('./components/list/list'))
+const AnnouncementIndexMy = loadable(() => import('./components/my/my'))
 import { buildRequestParameters } from './functions/build-parameters'
 import { fetchAnnouncements } from './functions/fetch-announcements'
 import { paramsReader } from './functions/params-reader'
@@ -53,8 +53,8 @@ class AnnouncementIndexSearch extends React.Component {
         </div>
         {(renderMap || renderCatalogue) && <AnnouncementIndexPanel />}
         {renderMap && <AnnouncementIndexMap />}
-        {renderCatalogue && <AnnouncementIndexFull />}
-        {renderMy && <AnnouncementIndexList />}
+        {renderCatalogue && <AnnouncementIndexCatalogue />}
+        {renderMy && <AnnouncementIndexMy />}
       </div>
     )
   }

@@ -18,7 +18,7 @@ import { ManagedButton } from 'managed-inputs'
 import { changeRoute } from '../../../../../../functions/routers/change-route'
 import { fetchAnnouncements } from '../../functions/fetch-announcements'
 
-class AnnouncementIndexList extends React.Component {
+class AnnouncementIndexMy extends React.Component {
   constructor(props) {
     super(props)
     this.langHandler = langHandler.bind(this)
@@ -106,4 +106,4 @@ class AnnouncementIndexList extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(AnnouncementIndexList))
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(AnnouncementIndexMy))

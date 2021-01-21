@@ -1,6 +1,6 @@
 import React from 'react'
-import WindmillSpinner from '../../../../../support/components/spinner/components/windmill/windmill'
-import { instantScroll } from '../../../../../../functions/scrollers/instant-scroll'
+import WindmillSpinner from '../../../../../../support/components/spinner/components/windmill/windmill'
+import { instantScroll } from '../../../../../../../functions/scrollers/instant-scroll'
 
 export function OffsetSwitcher({
   langHandler, changeInputs, changeControl, offset, amount, classNames, scrollTop
