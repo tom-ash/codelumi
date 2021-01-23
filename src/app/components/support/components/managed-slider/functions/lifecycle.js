@@ -1,3 +1,5 @@
+import elementResizeEvent, { unbind } from 'element-resize-event'
+
 export function getDerivedStateFromProps(props, state) {
   const { pictures } = props
   
@@ -13,17 +15,27 @@ export function getDerivedStateFromProps(props, state) {
 }
 
 export function componentDidMount() {
-  const {
-    heightQuantifier
-  } = this.props
+  const { width } = this.state
+  const container = this.container.current
 
-  const width = this.container.current.getBoundingClientRect().width
-  this.container.current.style.height = `${width * .64}px`
-  this.setState({ width })
+  const containerWidth = container.getBoundingClientRect().width
+  this.setState({ width: containerWidth })
 
   this.slider.current.addEventListener('touchmove', this.onTouchMoveHandler)
+  elementResizeEvent(container, () => {
+    const newContainerWidth = container.getBoundingClientRect().width
+    if (width === newContainerWidth) return
+
+    this.setState({ width: newContainerWidth })
+  })
 }
 
 export function componentDidUpdate(prevProps, prevState) {
   this.onDragHandler(prevState)
+}
+
+export function componentWillUnmount() {
+  const container = this.container.current
+
+  unbind(container)
 }

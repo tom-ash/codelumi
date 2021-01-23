@@ -14,8 +14,9 @@ class ManagedSlider extends React.Component {
     super(props)
     this.container = React.createRef()
     this.slider = React.createRef()
-    this.componentDidMount = lifecycle.componentDidMount.bind(this)
+    this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
+    this.componentWillUnmount = lifecycle.componentWillUnmount
     this.onArrowClickHandler = onArrowClickHandler.bind(this)
     this.onMouseDownHandler = onMouseDownHandler.bind(this)
     this.onMouseMoveHandler = onMouseMoveHandler.bind(this)
@@ -51,6 +52,10 @@ class ManagedSlider extends React.Component {
     } = this.state
 
     if (statePictures.length === 0) return null
+
+    if (this.container.current) {
+      this.container.current.style.height = `${width * .64}px`
+    }
 
     return (
       <div

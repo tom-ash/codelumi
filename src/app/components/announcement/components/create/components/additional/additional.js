@@ -28,7 +28,6 @@ class AnnouncementCreateAdditional extends React.Component {
   }
   
   render() {
-    console.log(OPTIONAL)
     return (
       <div id='announcement-create-additional' className='section'>
         <p className='hint'>{this.langObjHandler(OPTIONAL)}</p>
