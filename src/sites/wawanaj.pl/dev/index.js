@@ -7,6 +7,8 @@ import { rootReducer } from '../app/functions/root_reducer'
 import StyleContext from 'isomorphic-style-loader/StyleContext'
 import App from '../app/app'
 
+console.log("HERE!!!")
+
 const insertCss = (...styles) => {
   const removeCss = styles.map(style => style._insertCss())
   return () => removeCss.forEach(dispose => dispose())

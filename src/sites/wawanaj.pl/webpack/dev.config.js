@@ -4,8 +4,8 @@ var provideClientUrl = require('./providers/provide-client-url')
 var provideApiUrl = require('./providers/provide-api-url')
 var provideAwsS3Url = require('./providers/provide-aws-s3-url')
 var path = require('path')
-var SRC_DIR = path.join(__dirname, "../src/dev")
-var DIST_DIR = path.join(__dirname, "../dist/client")
+var SRC_DIR = path.join(__dirname, '../dev')
+var DIST_DIR = path.join(__dirname, '../client')
 
 var config = {
   mode: 'development',
@@ -59,8 +59,8 @@ var config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/dev/index.html',
-      favicon: './src/dev/favicon.png'
+      template: './src/sites/wawanaj.pl/dev/index.html',
+      favicon: './src/sites/wawanaj.pl/dev/favicon.png'
     }),
     new webpack.DefinePlugin({
       'APP_ENV': JSON.stringify(process.env.APP_ENV),
