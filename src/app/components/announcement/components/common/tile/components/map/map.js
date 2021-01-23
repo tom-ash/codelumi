@@ -27,7 +27,7 @@ class AnnouncementCreateMap extends React.Component {
     if (!(latitude && longitude)) return null
 
     return (
-      <div className='announcement-show-tile-map'>
+      <div className='announcement-tile-map'>
         <Header tier={2} text={langObjHandler(HEADER)} />
         <div id='google-map-container'>
           <div id='google-map' />

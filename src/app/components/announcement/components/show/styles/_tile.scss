@@ -1,5 +1,5 @@
 #announcement-show {
-  .announcement-show-tile {
+  .announcement-tile {
     width: 100%;
     box-shadow: none;
     border: 1px solid $CONTAINER-BORDER-COLOR;
@@ -8,7 +8,40 @@
       color: $HEADER-COLOR;
       margin-bottom: 5px;
     }
-    .announcement-show-tile-primary {
+    .header-container {
+      padding: $PADDING-PC;
+      .header-row {
+        font-size: 18px;
+        &.category {
+          margin-bottom: 10px;
+          color: $HEADER-COLOR;
+        }
+        &.district {
+          font-weight: normal;
+          color: #566573;
+        }
+      }
+      .area {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 30px;
+        margin: auto;
+        font-size: 30px;
+      }
+    }
+    @media #{$LARGE-PHONE} {
+      .header-container {
+        padding: $PADDING-PHONE;
+        .area {
+          right: 8px;
+          height: 22px;
+          font-size: 22px;
+        }
+      }
+    }
+    .announcement-tile-primary {
       .rent-container {
         &.total {
           font-size: 28px;

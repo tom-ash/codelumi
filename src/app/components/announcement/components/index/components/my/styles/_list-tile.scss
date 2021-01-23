@@ -13,7 +13,7 @@
   &.last {
     margin-bottom: 144px;
   }
-  @media #{$small-pc} {
+  @media #{$SMALL-PC} {
     width: 100%;
   }
   .control {
@@ -26,7 +26,7 @@
     color: #2C3E50;
     font-size: 16px;
     padding: 12px 12px 0;
-    @media #{$small-pc} {
+    @media #{$SMALL-PC} {
       position: relative;
       right: 0;
       left: 0;
@@ -39,7 +39,7 @@
       .info {
         margin-bottom: 12px;
         font-size: 15px;
-        @media #{$small-pc} {
+        @media #{$SMALL-PC} {
           font-size: 14px;
         }
       }
@@ -49,7 +49,7 @@
       position: absolute;
       left: 12px;
       right: 12px;
-      @media #{$small-pc} {
+      @media #{$SMALL-PC} {
         width: 100px;
         right: 12px;
         left: auto;
@@ -84,7 +84,7 @@
     line-height: 36px;
     text-align: center;
     margin-bottom: 34px;
-    @media #{$small-pc} {
+    @media #{$SMALL-PC} {
       text-align: left;
       font-size: 14px;
     }
@@ -92,7 +92,7 @@
       position: relative;
       left: 0;
       right: 0;
-      @media #{$small-pc} {
+      @media #{$SMALL-PC} {
         position: absolute;
         top: 12px;
         right: 12px;

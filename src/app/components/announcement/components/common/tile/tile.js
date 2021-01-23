@@ -91,7 +91,7 @@ class AnnouncementTile extends React.Component {
       return (
         <a
           ref={this.container}
-          className='announcement-show-tile-anchor'
+          className='announcement-tile-anchor'
           href={buildLink({
             id,
             category,
@@ -105,7 +105,7 @@ class AnnouncementTile extends React.Component {
     return (
       <div
         ref={this.container}
-        className={`announcement-show-tile ${venue}${deviceClasss}`}
+        className={`announcement-tile ${venue}${deviceClasss}`}
       >
         {venue === 'map' &&
         <CloseButton

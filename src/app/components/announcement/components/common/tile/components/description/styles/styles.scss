@@ -1,17 +1,16 @@
 @import '../../../../../../../../styles/themes.scss';
 
-.announcement-show-tile-description {
+.announcement-tile-description {
   background: white;
   font-size: 16px;
   position: relative;
   border-radius: 4px;
   padding: 30px 30px 0;
-  @media #{$phone} {
+  @media #{$LARGE-PHONE} {
     padding: 0 12px 12px;
   }
   .description {
-    text-align: justify;
-    line-height: 22px;
+    line-height: 24px;
     white-space: pre-wrap;
     color: #797D7F;
   }

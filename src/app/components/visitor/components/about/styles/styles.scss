@@ -16,7 +16,7 @@
     padding-left: 28px;
   }
   overflow-y: scroll;
-  @media #{$phone} {
+  @media #{$LARGE-PHONE} {
     max-height: none;
   }
 }

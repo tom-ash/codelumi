@@ -1,0 +1,109 @@
+#mini-list {
+  /* Firefox */
+  scrollbar-width: none;
+  /* Internet Explorer 10+ */
+  -ms-overflow-style: none;
+  /* WebKit */
+  &::-webkit-scrollbar { 
+    width: 0;
+    height: 0;
+  }
+  position: absolute;
+  width: 360px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  overflow-y: scroll;
+  padding-right: 4px;
+  background: #F8F9F9;
+  @media #{$LARGE-TABLET} {
+    position: relative;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    top: 0;
+  }
+  .announcement-show-container {
+    position: relative;
+    color: #F2F3F4;
+    margin-bottom: 4px;
+    min-height: 200px;
+    @media #{$LARGE-TABLET} {
+      min-height: 204.8px;
+      position: relative;
+      margin-right: 4px;
+      display: inline-block;
+      width: 320px;
+      @media #{$LARGE-PHONE} {
+        min-height: 179px;
+        width: 280px;
+      }
+    }
+    .category-and-location {
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      padding: 4px;
+      border-radius: 3px;
+      background: rgba(44, 62, 80, 0.75);
+      border-radius: 3px;
+      font-size: 14px;
+    }
+    .data {
+      z-index: 2;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding: 5px;
+      font-size: 17px;
+      font-family: 'Oswald', sans-serif;
+      background: rgba(44, 62, 80, 0.75);
+      border-top-left-radius: 3px;
+      text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+      .area {
+        float: left;
+        color: #D5F5E3;
+        .amount, .m, .sq {
+          float: left;
+        }
+        .m {
+          margin-left: 4px;
+        }
+        .sq {
+          font-size: 11px;
+          margin-top: 1px;
+          margin-left: 2px;
+        }
+      }
+      .rent-container {
+        float: left;
+        margin-left: 12px;
+        color: #FDEBD0;
+        .amount {
+          float: left;
+          .basis {
+            float: left;
+          }
+          .decimal {
+            float: left;
+            font-size: 11px;
+            margin-left: 2px;
+            margin-top: 1px;
+          }
+        }
+        .currency {
+          margin-left: 6px;
+          float: left;
+        }
+        .per-month {
+          float: left;
+          margin-left: 4px;
+          font-size: 11px;
+          margin-top: 6px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.announcement-tile {
+  position: relative;
+  background: white;
+  .area {
+    .area-amount {
+      float: left;
+      margin-right: 4px;
+    }
+    .m, .sq {
+      float: left;
+    }
+    .sq {
+      margin-left: 1px;
+      font-size: 12px;
+    }
+  }
+}

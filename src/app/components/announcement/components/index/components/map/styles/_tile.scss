@@ -1,0 +1,65 @@
+@import '../../../../../../../styles/shadows.scss';
+
+#announcement-index-map {
+  position: relative;
+  .announcement-tile-container {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 420px;
+    text-align: left;
+    margin: 0;
+    .announcement-tile {
+      position: relative;
+      box-shadow: $CONTAINER-HIGH-SHADOW;
+      .header-container {
+        padding: 15px;
+        position: relative;
+        h1 {
+          font-size: 17px;
+          .header-row {
+            &.category {
+              margin-bottom: 10px;
+            }
+          }
+          .area {
+            height: 20px;
+            margin: auto;
+          }
+        }
+      }
+      .announcement-tile-primary {
+        padding: 15px;
+      }
+      .close-button {
+        position: absolute;
+        top: 5px;
+        right: 3px;
+        z-index: 3;
+        width: 16px;
+        height: 16px;
+        border: none;
+        line-height: 16px;
+        background: white;
+        cursor: pointer;
+        svg {
+          fill: #5F6A6A;
+        }
+        &:hover {
+          svg {
+            fill: #BDC3C7;
+          }
+        }
+      }
+    }
+    @media #{$LARGE-TABLET} {
+      top: 225px;
+    }
+    @media #{$LARGE-PHONE} {
+      top: 199px;
+      right: 0;
+      width: 100%;
+      padding: 0 15px;
+    }
+  }
+}

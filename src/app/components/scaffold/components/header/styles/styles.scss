@@ -43,7 +43,7 @@
     top: 0;
     width: 320px;
     line-height: 54px;
-    @media #{$tablet} {
+    @media #{$LARGE-TABLET} {
       visibility: hidden;
     }
   }
@@ -108,7 +108,7 @@
       left: 0;
       padding-top: 7px;
       padding-left: 8px;
-      @media #{$phone} {
+      @media #{$LARGE-PHONE} {
         left: 8px;
         padding-left: 0;
       }

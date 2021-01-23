@@ -19,7 +19,7 @@
 
   padding: 50px;
 
-  @media #{$small-tablet} {
+  @media #{$SMALL-TABLET} {
     margin: 0 auto;
   }
   &.creating-announcement {

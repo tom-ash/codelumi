@@ -14,5 +14,4 @@ function handleScroll() {
 
 export function componentDidMount() {
   window.addEventListener('scroll', () => handleScroll.apply(this))
-  // CONSIDER: REMOVE EVENT LISTENER
 }

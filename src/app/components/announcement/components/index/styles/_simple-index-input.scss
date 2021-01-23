@@ -6,7 +6,7 @@
   position: relative;
   float: left;
   width: 271px;
-  @media #{$phone} {
+  @media #{$LARGE-PHONE} {
     float: none;
     width: 100%;
     margin: 0;

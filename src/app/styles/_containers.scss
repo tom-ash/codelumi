@@ -13,10 +13,10 @@
     border: 1px solid lightgray;
     border-radius: 4px;
     padding: 18px;
-    @media #{$small-tablet} {
+    @media #{$SMALL-TABLET} {
       margin: 58px 12px;
     }
-    @media #{$phone} {
+    @media #{$LARGE-PHONE} {
       margin: 46px 0;
       padding: 12px;
       border: none;
@@ -31,17 +31,17 @@
 
 .medium-container {
   width: 720px;
-  @media #{$small-tablet} {
+  @media #{$SMALL-TABLET} {
     width: auto;
   }
-  @media #{$phone} {
+  @media #{$LARGE-PHONE} {
     padding: 15px;
   }
 }
 
 .narrow-container {
   width: 456px;
-  @media #{$phone} {
+  @media #{$LARGE-PHONE} {
     padding: 15px;
     width: 100%;
   }

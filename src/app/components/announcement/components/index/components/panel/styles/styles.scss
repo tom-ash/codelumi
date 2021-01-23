@@ -1,14 +1,9 @@
 @import '../../../../../../../styles/media-breakpoints';
+@import '../../../../../../../styles/colors.scss';
 
 #announcement-index-panel {
   z-index: 2;
   position: relative;
-  @media #{$small-pc} {
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 240px;
-  }
-
   .button {
     position: relative;
     width: 100%;
@@ -27,7 +22,6 @@
       margin: 0;
       padding: 0;
       border: none;
-      border-radius: 2.5px;
       background: #DC7633;
       color: #F7F9F9;
       cursor: pointer;
@@ -43,7 +37,7 @@
     margin: 0 auto;
     margin-bottom: 12px;
     background: white;
-    border: 1px solid lightgray;
+    border: 1px solid $CONTAINER-BORDER-COLOR;
     padding: 14px 0 14px 16px;
     display: flex;
     justify-content: space-between;

@@ -1,40 +1,18 @@
 @import '../../../../../../styles/themes.scss';
-@import '../components/description/styles/styles.scss';
-@import '../components/features-furnishings/styles/styles.scss';
-@import '../components/map/styles/styles.scss';
-@import '../components/pictures/styles/styles.scss';
 @import '../components/primary/styles/styles.scss';
+@import '../components/pictures/styles/styles.scss';
+@import '../components/features-furnishings/styles/styles.scss';
+@import '../components/description/styles/styles.scss';
+@import '../components/map/styles/styles.scss';
 @import './headers.scss';
 @import './contact.scss';
+@import './area.scss';
 
-.announcement-show-tile-anchor {
-  min-height: 500px;
+.announcement-tile {
+  position: relative;
+  background: white;
 }
 
-.announcement-show-tile {
-  position: relative;
-  width: 100%;
-  background: white;
-  text-align: left;
-
-  &.map {
-    .area {
-      margin-right: 8px;
-    }
-  }
-
-  .area {
-    .area-amount {
-      float: left;
-      margin-right: 4px;
-    }
-    .m, .sq {
-      float: left;
-    }
-    .sq {
-      margin-left: 1px;
-      font-size: 12px;
-    }
-  }
-  
+.announcement-tile-anchor {
+  min-height: 500px;
 }

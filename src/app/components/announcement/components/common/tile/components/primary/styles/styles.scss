@@ -1,7 +1,7 @@
-.announcement-show-tile-primary {
+.announcement-tile-primary {
   padding: 30px 30px 0;
   z-index: 1000;
-  @media #{$phone} {
+  @media #{$LARGE-PHONE} {
     padding: 12px;
   }
   .rent-column {

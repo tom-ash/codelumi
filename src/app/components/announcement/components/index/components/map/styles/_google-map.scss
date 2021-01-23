@@ -3,13 +3,13 @@
 %google-map {
   position: relative;
   height: 600px;
-  @media #{$tablet} {
+  @media #{$LARGE-TABLET} {
     .gm-bundled-control {
       display: none;
     }
   }
   padding-left: 300px;
-  @media #{$tablet} {
+  @media #{$LARGE-TABLET} {
     padding-left: 0;
     height: 626px;
   }

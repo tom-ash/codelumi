@@ -1,9 +1,14 @@
-.announcement-show-tile-map {
+@import '../../../../../show/styles/dimensions.scss';
+
+.announcement-tile-map {
   position: relative;
-  padding: 30px;
+  padding: $PADDING-PC;
   #google-map-container {
     #google-map {
       height: 320px;
     }
+  }
+  @media #{$LARGE-PHONE} {
+    padding: $PADDING-PHONE;
   }
 }

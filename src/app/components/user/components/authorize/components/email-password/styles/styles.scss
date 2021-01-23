@@ -37,7 +37,7 @@
   .submit {
     .checkbox {
       margin-top: 40px;
-      @media #{$phone} {
+      @media #{$LARGE-PHONE} {
         position: relative;
         height: 14px;
         width: 100%;
@@ -52,7 +52,7 @@
       .label {
         font-size: 14px;
         margin-left: 25px;
-        @media #{$phone} {
+        @media #{$LARGE-PHONE} {
           line-height: 14px;
         }
       }

@@ -1,7 +1,9 @@
 @import '../../../../../../../styles/themes.scss';
-@import './google-map';
 @import '../../../../../../../styles/media-breakpoints';
+@import './google-map';
 @import './pin';
+@import './tile.scss';
+@import './mini_list.scss';
 
 #announcement-index-map {
   max-width: 1214px;
@@ -10,7 +12,7 @@
   position: absolute;  
   right: 0;
   left: 0;
-  @media #{$small-pc} {
+  @media #{$SMALL-PC} {
     top: 164px;
   }
   #google-map-container {
@@ -23,161 +25,4 @@
     opacity: 0;
   }
   transition: 0.16s ease-in;
-  .announcement-tile-container {
-    .announcement-show-tile {
-      position: relative;
-      .close-button {
-        position: absolute;
-        top: 6px;
-        right: 3px;
-        z-index: 3;
-        width: 16px;
-        height: 16px;
-        border: none;
-        line-height: 16px;
-        background: white;
-        cursor: pointer;
-        svg {
-          fill: #5F6A6A;
-        }
-        &:hover {
-          svg {
-            fill: #BDC3C7;
-          }
-        }
-      }
-    }
-    text-align: left;
-    position: absolute;
-    top: -12px;
-    right: 12px;
-    width: 420px;
-    margin: 0;
-    @media #{$small-tablet} {
-      top: 178px;
-    }
-    @media only screen and (max-width: 444px) {
-      width: 100%;
-      right: 0;
-      left: 0;
-      padding: 0 24px;
-    }
-    @media #{$phone} {
-      padding: 0 12px;
-    }
-  }
-}
-
-#mini-list {
-
-  /* Firefox */
-  scrollbar-width: none;
-
-  /* Internet Explorer 10+ */
-  -ms-overflow-style: none;
-  
-  /* WebKit */
-  &::-webkit-scrollbar { 
-    width: 0;
-    height: 0;
-  }
-
-  position: absolute;
-  width: 360px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  overflow-y: scroll;
-  padding-right: 4px;
-  background: #F8F9F9;
-  @media #{$tablet} {
-    position: relative;
-    width: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    top: 0;
-  }
-  .announcement-show-container {
-    position: relative;
-    color: #F2F3F4;
-    margin-bottom: 4px;
-    min-height: 200px;
-    @media #{$tablet} {
-      min-height: 204.8px;
-      position: relative;
-      margin-right: 4px;
-      display: inline-block;
-      width: 320px;
-      @media #{$phone} {
-        min-height: 179px;
-        width: 280px;
-      }
-    }
-    .category-and-location {
-      z-index: 2;
-      position: absolute;
-      top: 0;
-      padding: 4px;
-      border-radius: 3px;
-      background: rgba(44, 62, 80, 0.75);
-      border-radius: 3px;
-      font-size: 14px;
-    }
-    .data {
-      z-index: 2;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      padding: 5px;
-      font-size: 17px;
-      font-family: 'Oswald', sans-serif;
-      background: rgba(44, 62, 80, 0.75);
-      border-top-left-radius: 3px;
-      text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
-      .area {
-        float: left;
-        color: #D5F5E3;
-        .amount, .m, .sq {
-          float: left;
-        }
-        .m {
-          margin-left: 4px;
-        }
-        .sq {
-          font-size: 11px;
-          margin-top: 1px;
-          margin-left: 2px;
-        }
-      }
-      .rent-container {
-        float: left;
-        margin-left: 12px;
-        color: #FDEBD0;
-        .amount {
-          float: left;
-          .basis {
-            float: left;
-          }
-          .decimal {
-            float: left;
-            font-size: 11px;
-            margin-left: 2px;
-            margin-top: 1px;
-          }
-        }
-        .currency {
-          margin-left: 6px;
-          float: left;
-        }
-        .per-month {
-          float: left;
-          margin-left: 4px;
-          font-size: 11px;
-          margin-top: 6px;
-        }
-      }
-    }
-  }
 }

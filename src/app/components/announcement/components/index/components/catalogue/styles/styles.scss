@@ -1,63 +1,23 @@
-@import './full-tile';
 @import '../../../../../../../styles/colors';
+@import '../../../../../../../styles/media-breakpoints.scss';
+@import './tile.scss';
 
-#announcement-index-full {
-  z-index: 3;
+#announcement-index-catalogue {
   position: relative;
   .announcements {
     min-height: 640px;
     margin: 0 auto;
     padding-top: 36px;
     width: 520px;
-    @media #{$large-pc} {
+    @media #{$LARGE-PC} {
       width: 800px;
     }
     @media only screen and (max-width: 688px) {
       width: 100%;
-      padding: 18px 24px;
+      padding: 20px;
     }
-    @media #{$phone} {
-      padding: 24px 12px;
-    }
-    .announcement-show-tile {
-      margin-bottom: 48px;
-      @media #{$large-pc} {
-        margin-bottom: 96px;
-        .announcement-show-pictures {
-          width: 572px;
-        }
-        .header-container {
-          position: absolute;
-          width: 230px;
-          top: 0;
-          right: 0;
-          padding: 12px;
-          h2 {
-            position: relative;
-            padding: 0;
-          }
-          .area {
-            position: relative;
-            width: 100%;
-            font-size: 24px;
-            padding-top: 20px;
-          }
-        }
-        .phone {
-          top: 12px!important;
-          right: 240px!important;
-        }
-        .announcement-show-tile-primary {
-          position: absolute;
-          top: 124px;
-          right: 0;
-          width: 228px;
-          padding: 0 12px;
-          .per-sqm {
-            margin-bottom: 8px;
-          }
-        }
-      }
+    @media #{$LARGE-PHONE} {
+      padding: 15px;
     }
   }
 }

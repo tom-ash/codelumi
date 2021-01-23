@@ -5,12 +5,8 @@
   #showcase {
     width: 180px;
     margin: 0 0 20px auto;
-    padding: 12px;
-    background: white;
+    padding: 15px;
     border: 1px solid $CONTAINER-BORDER-COLOR;
-    @media #{$phone} {
-      margin-right: 20px;
-    }
     .phone-showcase {
       min-width: 50px;
       margin-top: 12px;

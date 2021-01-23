@@ -9,7 +9,7 @@
   .announcements {
     min-height: 480px;
     text-align: left;
-    .announcement-show-tile {
+    .announcement-tile {
       @extend %list-tile;
     }
   }

@@ -39,9 +39,9 @@ class AnnouncementIndexCatalogue extends React.Component {
     return (
       <div
         ref={this.container}
-        id='announcement-index-full'
+        id='announcement-index-catalogue'
       >
-        <div id='announcement-index-full-scroll-anchor' />
+        <div id='announcement-index-catalogue-scroll-anchor' />
         <div className='announcements'>
           {announcements && announcements.map((announcement, index) => {
             return (

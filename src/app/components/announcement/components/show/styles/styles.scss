@@ -1,41 +1,11 @@
 @import '../../../../../styles/colors.scss';
 @import '../../../../../styles/media-breakpoints.scss';
+@import './dimensions.scss';
 @import './tile.scss';
 
 #announcement-show {
   position: relative;
+  max-width: 768px;
   margin: 0 auto;
   padding: 20px 0 0 0;
-  &.large-pc {
-    max-width: 768px;
-    .header-container {
-      padding: 20px;
-      h2 {
-        position: relative;
-        padding: 0;
-      }
-      .area {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        height: 28px;
-        margin: auto;
-        font-size: 30px;
-        padding: 0;
-      }
-    }
-  }
-
-  @media only screen and (max-width: 688px) {
-    width: 100%;
-  }
-
-  @media #{$phone} {
-    padding: 20px 0 0;
-    .announcement-show-tile {
-      top: 0;
-      box-shadow: none;
-    }
-  }
 }

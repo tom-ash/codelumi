@@ -12,10 +12,10 @@
   display: flex;
   background: rgba(0, 0, 0, 0.4);
   padding: 12px;
-  @media #{$phone} {
+  @media #{$LARGE-PHONE} {
     padding: 8px;
   }
-  @media #{$small-phone} {
+  @media #{$SMALL-PHONE} {
     padding: 6px;
   }
   #visitor-privacy-monit {
@@ -27,14 +27,14 @@
     padding: 24px;
     .title {
       margin-bottom: 18px;
-      @media #{$small-phone} {
+      @media #{$SMALL-PHONE} {
         margin-bottom: 12px;
       }
     }
-    @media #{$phone} {
+    @media #{$LARGE-PHONE} {
       padding: 18px;
     }
-    @media #{$small-phone} {
+    @media #{$SMALL-PHONE} {
       padding: 12px;
     }
     .title {
@@ -51,7 +51,7 @@
         }
         &.cookies {
           margin-bottom: 18px;
-          @media #{$small-phone} {
+          @media #{$SMALL-PHONE} {
             margin-bottom: 12px;
           }
         }
@@ -66,7 +66,7 @@
     .buttons {
       margin-top: 18px;
       position: relative;
-      @media #{$small-phone} {
+      @media #{$SMALL-PHONE} {
         margin-top: 12px;
       }
       .form-input {
