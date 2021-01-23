@@ -4,16 +4,17 @@ var provideClientUrl = require('./providers/provide-client-url')
 var provideApiUrl = require('./providers/provide-api-url')
 var provideAwsS3Url = require('./providers/provide-aws-s3-url')
 var path = require('path')
-var DIST_DIR = path.join(__dirname, "../dist/server")
+var SRC_DIR = path.join(__dirname, '../server')
+var DIST_DIR = path.join(__dirname, "../../../../dist/sites/wawanaj.pl/server")
 
 var config = {
   entry: {
-    server: './src/server/server.js',
+    server: SRC_DIR + '/server.js'
   },
   output: {
     path: DIST_DIR,
     filename: 'server.js',
-    publicPath: '/'
+    publicPath: './src/sites/wawanaj.pl/client'
   },
   target: 'node',
   externals: [nodeExternals()],

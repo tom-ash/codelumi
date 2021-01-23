@@ -4,17 +4,19 @@ var provideApiUrl = require('./providers/provide-api-url')
 var CopyPlugin = require('copy-webpack-plugin');
 var provideAwsS3Url = require('./providers/provide-aws-s3-url')
 var path = require('path')
-var DIST_DIR = path.join(__dirname, "../dist/client")
+var SRC_DIR = path.join(__dirname, '../client')
+var DIST_DIR = path.join(__dirname, "../../../../dist/sites/wawanaj.pl/client")
+
 const LoadablePlugin = require('@loadable/webpack-plugin')
 
 var config = {
   entry: {
-    index: './src/client/index.js',
+    index: SRC_DIR + '/index.js'
   },
   output: {
     path: DIST_DIR,
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: './src/sites/wawanaj.pl/client'
   },
   module: {
     rules: [
@@ -59,10 +61,10 @@ var config = {
       'AWS_S3_URL': JSON.stringify(provideAwsS3Url(process.env.APP_ENV))
     }),
     new CopyPlugin([
-      { from: './src/client/robots.txt', to: 'robots.txt' },
-      { from: './src/client/sitemap.xml', to: 'sitemap.xml' },
-      { from: './src/client/favicon.png', to: 'favicon.png' },
-      { from: './src/client/favicon.ico', to: 'favicon.ico' },
+      { from: './src/sites/wawanaj.pl/client/robots.txt', to: 'robots.txt' },
+      { from: './src/sites/wawanaj.pl/client/sitemap.xml', to: 'sitemap.xml' },
+      { from: './src/sites/wawanaj.pl/client/favicon.png', to: 'favicon.png' },
+      { from: './src/sites/wawanaj.pl/client/favicon.ico', to: 'favicon.ico' },
     ]),
   ]
 };

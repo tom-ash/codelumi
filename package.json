@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./src/sites/wawanaj.pl/webpack/dev.config",
-    "build": "rm -rf ./dist && webpack --mode production --config ./webpack/server.config && webpack --mode production --config ./webpack/client.config",
-    "prod": "node ./dist/server/server.js"
+    "build": "rm -rf ./dist && webpack --mode production --config ./src/sites/wawanaj.pl/webpack/server.config && webpack --mode production --config ./src/sites/wawanaj.pl/webpack/client.config",
+    "prod": "node ./dist/sites/wawanaj.pl/server/server.js"
   },
   "author": "tom-ash",
   "license": "None",
