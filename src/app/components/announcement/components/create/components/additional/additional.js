@@ -8,7 +8,6 @@ import { onSelectHandler } from './functions/on-select-handler'
 import { labelProvider } from '../../../../../../functions/providers/label'
 import { floorsProvider } from './functions/floors-provider'
 import { getRentAmounts } from '../../functions/get-rent-amounts'
-import analyticEvents from './constants/analytics/events.js'
 import { OPTIONAL } from '../../constants/texts.js'
 
 class AnnouncementCreateAdditional extends React.Component {
