@@ -16,7 +16,7 @@ var config = {
   output: {
     path: DIST_DIR,
     filename: 'bundle.js',
-    publicPath: './src/sites/wawanaj.pl/client'
+    // publicPath: '/wawanaj.pl/client/'
   },
   module: {
     rules: [

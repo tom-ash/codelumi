@@ -13,8 +13,7 @@ var config = {
   },
   output: {
     path: DIST_DIR,
-    filename: 'server.js',
-    publicPath: './src/sites/wawanaj.pl/client'
+    filename: 'server.js'
   },
   target: 'node',
   externals: [nodeExternals()],
