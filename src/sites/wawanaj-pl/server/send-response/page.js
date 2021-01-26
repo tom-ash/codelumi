@@ -16,7 +16,7 @@ export function sendPageResponse({ res, url, device, visitorState }) {
     throw new Error('Page Not Found')
   })
   .then(jsonResponse => {
-    const { lang } = jsonResponse
+    const { language: lang } = jsonResponse
     const { canonicalUrl, noIndex,
             title, description, keywords, image, openGraph, schemaOrg } = jsonResponse[lang]
     const initialState = {
