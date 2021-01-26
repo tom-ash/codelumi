@@ -1,10 +1,12 @@
 import 'react-app-polyfill/ie9';
 import Express from 'express'
 import { redirectToHTTPS } from 'express-http-to-https'
-import { handleRequest } from './handle-request'
 import compression from 'compression'
 import cookieParser from 'cookie-parser'
 import vhost from 'vhost'
+
+import { handleRequest } from '../sites/wawanaj.pl/server/handle-request'
+import handleWarsawDigitalRequest from '../sites/warsaw-digital/server/handle-request'
 
 function allowCompression (req, res) {
   if (req.headers['x-no-compression']) return false
@@ -24,7 +26,11 @@ app.use(compression({ filter: allowCompression }))
 const warsawLeasePlStatic = vhost(/^.*(wawanaj|warsawlease).*$/, Express.static('dist/sites/wawanaj.pl/client'))
 const warsawLeasePlRequestHandler = vhost(/^.*(wawanaj|warsawlease).*$/, handleRequest)
 
+const warsawDigitalRequestHost = vhost(/^.*warsaw.digital.*$/, handleWarsawDigitalRequest)
+
 app.use(warsawLeasePlStatic)
 app.use(warsawLeasePlRequestHandler)
+
+app.use(warsawDigitalRequestHost)
 
 app.listen(process.env.PORT || 8080)

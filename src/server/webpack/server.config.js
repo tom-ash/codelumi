@@ -4,8 +4,8 @@ var provideClientUrl = require('./providers/provide-client-url')
 var provideApiUrl = require('./providers/provide-api-url')
 var provideAwsS3Url = require('./providers/provide-aws-s3-url')
 var path = require('path')
-var SRC_DIR = path.join(__dirname, '../server')
-var DIST_DIR = path.join(__dirname, "../../../../dist/sites/wawanaj.pl/server")
+var SRC_DIR = path.join(__dirname, '../')
+var DIST_DIR = path.join(__dirname, "../../../dist/server")
 
 var config = {
   entry: {
