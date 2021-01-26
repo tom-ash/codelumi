@@ -3,7 +3,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import { rootReducer } from '../app/functions/root_reducer'
+import rootReducer from '../app/functions/root_reducer'
 import StyleContext from 'isomorphic-style-loader/StyleContext'
 import App from '../app/app'
 

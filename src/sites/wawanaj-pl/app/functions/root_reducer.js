@@ -6,7 +6,7 @@ import { visitorReducer } from '../components/visitor/functions/reducers.js'
 import { scaffoldReducer } from '../components/scaffold/functions/reducer'
 import { postReducer } from '../components/page/functions/reducer'
 
-export const rootReducer = combineReducers({
+const rootReducer = combineReducers({
   app: appReducer,
   render: renderReducer,
   announcement: announcementReducer,
@@ -15,3 +15,5 @@ export const rootReducer = combineReducers({
   scaffold: scaffoldReducer,
   page: postReducer
 })
+
+export default rootReducer

@@ -11,12 +11,6 @@ export function handleRequest(req, res) {
     originalUrl,
     headers
   } = req
-
-
-
-
-  
-
   const url = getPureUrl(originalUrl)
   const route = getRoute(url)
   const device = getDevice(headers['user-agent'])

@@ -17,8 +17,10 @@ export function sendPageResponse({ res, url, device, visitorState }) {
   })
   .then(jsonResponse => {
     const { language: lang } = jsonResponse
-    const { canonicalUrl, noIndex,
-            title, description, keywords, image, openGraph, schemaOrg } = jsonResponse[lang]
+    const {
+      canonicalUrl, noIndex,
+      title, description, keywords, image, openGraph, schemaOrg
+    } = jsonResponse[lang]
     const initialState = {
       app: { ...appState, lang, device },
       render: { ...renderState, [VISITOR_TRACK]: true, [PAGE_TRACK]: true, [PAGE_SHOW_TRACK]: true },
