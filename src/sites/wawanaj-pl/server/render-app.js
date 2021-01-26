@@ -8,7 +8,7 @@ import App from '../app/app'
 
 var path = require('path')
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server'
-const statsFile = path.resolve('./dist/sites/wawanaj.pl/client/loadable-stats.json')
+const statsFile = path.resolve('./dist/sites/wawanaj-pl/client/loadable-stats.json')
 const extractor = new ChunkExtractor({ statsFile, entrypoints: ['index'] })
 
 export function renderApp(initialState) {
