@@ -15,8 +15,7 @@ var config = {
   },
   output: {
     path: DIST_DIR,
-    filename: 'bundle.js',
-    publicPath: '/'
+    filename: 'bundle.js'
   },
   devServer: {
     port: 8080,

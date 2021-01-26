@@ -18,18 +18,13 @@ if (['production', 'staging'].indexOf(APP_ENV) !== -1) {
   app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301))
 }
 
-function createVirtualHost(domainName, dirPath) {
-  return vhost(domainName, Express.static( dirPath ))
-}
-
-
-const warsawlease_pl = vhost(/^.*(wawanaj|warsawlease).*$/, Express.static('dist/sites/wawanaj.pl/client'))
-
-
 app.use(cookieParser())
 app.use(compression({ filter: allowCompression }))
 
-app.use(warsawlease_pl)
+const warsawLeasePlStatic = vhost(/^.*(wawanaj|warsawlease).*$/, Express.static('dist/sites/wawanaj.pl/client'))
+const warsawLeasePlRequestHandler = vhost(/^.*(wawanaj|warsawlease).*$/, handleRequest)
 
-app.use(handleRequest)
+app.use(warsawLeasePlStatic)
+app.use(warsawLeasePlRequestHandler)
+
 app.listen(process.env.PORT || 8080)
