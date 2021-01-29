@@ -5,7 +5,7 @@ import compression from 'compression'
 import cookieParser from 'cookie-parser'
 import vhost from 'vhost'
 
-import { handleRequest } from '../sites/wawanaj-pl/server/handle-request'
+import { handleRequest } from '../sites/warsawlease-pl/server/handle-request'
 import handleWarsawDigitalRequest from '../sites/warsaw-digital/server/handle-request'
 
 function allowCompression (req, res) {
@@ -23,7 +23,7 @@ if (['production', 'staging'].indexOf(APP_ENV) !== -1) {
 app.use(cookieParser())
 app.use(compression({ filter: allowCompression }))
 
-const warsawLeasePlStatic = vhost(/^.*(wawanaj|warsawlease).*$/, Express.static('dist/sites/wawanaj-pl/client'))
+const warsawLeasePlStatic = vhost(/^.*(wawanaj|warsawlease).*$/, Express.static('dist/sites/warsawlease-pl/client'))
 const warsawLeasePlRequestHandler = vhost(/^.*(wawanaj|warsawlease).*$/, handleRequest)
 app.use(warsawLeasePlStatic)
 app.use(warsawLeasePlRequestHandler)

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./src/sites/wawanaj-pl/webpack/dev.config",
-    "build": "rm -rf ./dist && webpack --mode production --config ./src/server/webpack/server.config && webpack --mode production --config ./src/sites/wawanaj-pl/webpack/client.config",
+    "start": "webpack-dev-server --config ./src/sites/warsawlease-pl/webpack/dev.config",
+    "build": "rm -rf ./dist && webpack --mode production --config ./src/server/webpack/server.config && webpack --mode production --config ./src/sites/warsawlease-pl/webpack/client.config",
     "prod": "node ./dist/server/server.js"
   },
   "author": "tom-ash",
