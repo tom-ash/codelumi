@@ -23,8 +23,8 @@ function renderAppAsHtml({ App, statsFile, rootReducer, initialState }) {
     </ChunkExtractorManager>
   )
 
-  const scriptTags = extractor.getScriptTags()
   const preloadedState = store.getState()
+  const scriptTags = extractor.getScriptTags()
 
   return {
     html,

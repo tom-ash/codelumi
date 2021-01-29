@@ -1,5 +1,5 @@
-import { renderHtml } from '../../render-html'
 import { renderApp } from '../../render-app'
+import renderIndexAsHtml from '../../../../shared/functions/renderers/index-as-html'
 import { VISITOR_TRACK, PAGE_TRACK, PAGE_NOT_FOUND_TRACK } from '../../../shared/constants/tracks/tracks'
 import { appState } from '../../../app/constants/app-state'
 import { renderState } from '../../../shared/constants/routes/renders/state'
@@ -14,7 +14,7 @@ export function sendNotFoundResponse({ res, url, device, visitorState }) {
   const appAsHtml = renderApp(initialState)
 
   res.status(404).send(
-    renderHtml({
+    renderIndexAsHtml({
       url, lang: 'pl', title: 'Not Found', description: 'Not Found', ...appAsHtml
     })
   )

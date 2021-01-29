@@ -1,6 +1,6 @@
 const fetch = require("node-fetch")
 import { renderApp } from '../render-app'
-import { renderHtml } from '../render-html'
+import renderIndexAsHtml from '../../../shared/functions/renderers/index-as-html'
 import { VISITOR_TRACK, PAGE_TRACK, PAGE_SHOW_TRACK } from '../../shared/constants/tracks/tracks'
 import { appState } from '../../app/constants/app-state'
 import { sendNotFoundResponse } from './exceptions/not-found'
@@ -30,7 +30,7 @@ export function sendPageResponse({ res, url, device, visitorState }) {
     const appAsHtml = renderApp(initialState)
 
     res.status(200).send(
-      renderHtml({
+      renderIndexAsHtml({
         url, lang, canonicalUrl, noIndex,
         title, description, keywords, image, openGraph, schemaOrg,
         ...appAsHtml

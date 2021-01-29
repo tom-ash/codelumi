@@ -1,5 +1,6 @@
-import { openGraphProvider } from '../shared/functions/providers/open-graph-provider'
-import { schemaOrgProvider } from '../shared/functions/providers/schema-org-provider'
+import { openGraphProvider } from '../providers/open-graph'
+import { schemaOrgProvider } from '../providers/schema-org'
+import pretty from 'pretty'
 
 function renderIndexAsHtml({
   url, canonicalUrl, lang, noIndex,
@@ -16,13 +17,8 @@ function renderIndexAsHtml({
   const openGraphMeta = openGraphProvider({ title, description, keywords, image, ...openGraph })
   const schemaOrgMeta = schemaOrgProvider({ lang, title, description, keywords, ...schemaOrg })
   const style = `<style type="text/css">${[...css].join('')}</style>`
-  const preloadedStateScript = (
-    `<script>
-      window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
-    </script>`
-  )
-
-  return (
+  const preloadedStateScript = `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}</script>`
+  const indexAsHtml = (
     `<!doctype html>
     <html lang="${lang}">
       <head>
@@ -39,11 +35,13 @@ function renderIndexAsHtml({
       </head>
       <body>
         ${html}
-        ${preloadedStateScript}
         ${scriptTags}
+        ${preloadedStateScript}
       </body>
     </html>`
   )
+
+  return pretty(indexAsHtml)
 }
 
 export default renderIndexAsHtml

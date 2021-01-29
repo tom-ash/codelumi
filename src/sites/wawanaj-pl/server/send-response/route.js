@@ -1,7 +1,8 @@
 import { renderApp } from '../render-app'
-import { renderHtml } from '../render-html'
 import { responseInitializer } from '../response-initializer'
 import { sendNotFoundResponse } from './exceptions/not-found'
+
+import renderIndexAsHtml from '../../../shared/functions/renderers/index-as-html'
 
 export function sendRouteResponse({ res, url, route, device, visitorState }) {
   responseInitializer({ url, route, device })
@@ -10,7 +11,7 @@ export function sendRouteResponse({ res, url, route, device, visitorState }) {
     const status = 200
 
     res.status(status).send(
-      renderHtml({ url, ...metaData, ...appAsHtml }) 
+      renderIndexAsHtml({ url, ...metaData, ...appAsHtml }) 
     )
   })
   // .catch(error => {

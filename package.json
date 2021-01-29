@@ -27,6 +27,7 @@
     "isomorphic-style-loader": "^5.1.0",
     "managed-inputs": "^0.5.0",
     "node-fetch": "^2.6.1",
+    "pretty": "^2.0.0",
     "react": "^16.14.0",
     "react-app-polyfill": "^1.0.6",
     "react-calendar": "^2.19.2",
