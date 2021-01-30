@@ -1,7 +1,7 @@
 import { parseCategory } from '../../parsers/parse-category'
 import { parseDistrict } from '../../parsers/parse-district'
 
-export function announcementTitleProvider({
+function announcementTitleProvider({
   category: categoryNumber,
   district,
   area,
@@ -23,3 +23,5 @@ export function announcementTitleProvider({
 
   return title
 }
+
+export default announcementTitleProvider

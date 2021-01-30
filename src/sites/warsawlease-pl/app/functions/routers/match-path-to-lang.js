@@ -1,4 +1,4 @@
-import { getRouteByRender } from '../../../../shared/shared/functions/getters/route-by-render'
+import getRouteByRender from '../../../../shared/shared/functions/getters/route-by-render'
 import { getPath } from './get-path'
 
 export function matchPathToLanguage() {

@@ -1,5 +1,5 @@
 import routeRenders from '../../../shared/constants/routes/renders'
-import renderState from '../../constants/render-state'
+import renderState from '../../constants/render-state.js'
 import { instantScroll } from '../scrollers/instant-scroll'
 
 export function changeRoute(track) {

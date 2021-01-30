@@ -4,7 +4,7 @@ import exceptionSender from './exception'
 
 function pageSender({
   res,
-  apiUrl,
+  apiUrl, tracks,
   url, device,
   appState, renderState, visitorState,
   appRenderer
@@ -23,6 +23,7 @@ function pageSender({
       canonicalUrl, noIndex,
       title, description, keywords, image, openGraph, schemaOrg
     } = jsonResponse[lang]
+    const { VISITOR_TRACK, PAGE_TRACK, PAGE_SHOW_TRACK } = tracks
     const initialState = {
       app: { ...appState, lang, device },
       render: { ...renderState, [VISITOR_TRACK]: true, [PAGE_TRACK]: true, [PAGE_SHOW_TRACK]: true },

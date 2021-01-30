@@ -19,17 +19,17 @@ function routeSender({
     throw new Error('Page Not Found')
   })
   .then(jsonResponse => {
+    const { metaData: unparsedMetaData, initialState: unparsedInitialState, pageShow } = jsonResponse
+
     const scalableVectorGraphics = svgsParser(jsonResponse)
     
     const { track, lang, initialStateParser } = route
-    const { metaData: unparsedMetaData, initialState: unparsedInitialState } = jsonResponse
     const metaData = metaDataParser({ ...route, ...unparsedMetaData, lang })
     const app = { ...appState, lang, device, scalableVectorGraphics }
     const render = { ...renderState, [track]: true, ...routeRenders[track] }
     const residualState = initialStateParser && initialStateParser(unparsedInitialState) || {}
 
     const page = {}
-    const { pageShow } = jsonResponse
     if (pageShow) {
       page = { show: { data: pageShow } }
     }

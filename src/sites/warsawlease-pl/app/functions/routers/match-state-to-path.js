@@ -1,5 +1,5 @@
-import { getPureUrl } from '../../../../shared/shared/functions/getters/pure-url'
-import { getRouteByUrl } from '../../../../shared/shared/functions/getters/route-by-url'
+import getPureUrl from '../../../../shared/shared/functions/getters/pure-url'
+import getRouteByUrl from '../../../../shared/shared/functions/getters/route-by-url'
 import routeRenders from '../../../shared/constants/routes/renders'
 import renderState from '../../constants/render-state'
 import {

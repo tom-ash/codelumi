@@ -1,6 +1,6 @@
-import { getCookieAsBool } from './cookie-as-bool'
+import getCookieAsBool from './cookie-as-bool'
 
-export function getVisitorState(cookies) {
+function getVisitorState(cookies) {
   const {
     _pdpsm,
     _pdpaf
@@ -21,3 +21,5 @@ export function getVisitorState(cookies) {
     }
   }
 }
+
+export default getVisitorState
