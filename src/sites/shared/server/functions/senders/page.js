@@ -18,7 +18,7 @@ function pageSender({
     throw new Error('Page Not Found')
   })
   .then(jsonResponse => {
-    const { language: lang } = jsonResponse
+    const { lang } = jsonResponse
     const {
       canonicalUrl, noIndex,
       title, description, keywords, image, openGraph, schemaOrg
