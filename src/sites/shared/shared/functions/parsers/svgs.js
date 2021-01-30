@@ -1,4 +1,4 @@
-export function parseScalableVectorGraphics({ svgs }) {
+export function svgsParser({ svgs }) {
   const scalableVectorGraphics = {}
 
   svgs.map(svg => {

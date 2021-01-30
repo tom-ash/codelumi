@@ -1,18 +1,15 @@
-const fetch = require("node-fetch")
+import fetch from 'node-fetch'
 import indexRenderer from '../../renderers'
 import exceptionSender from './exception'
 
-// import { VISITOR_TRACK, PAGE_TRACK, PAGE_SHOW_TRACK } from '../../../../../warsawlease-pl/shared/constants/tracks/tracks'
-// import appState from '../../../../../warsawlease-pl/app/constants/app-state'
-// import renderState from '../../../../../warsawlease-pl/shared/constants/routes/renders/state'
-
-export function pageSender({ res, url, device, appRenderer, visitorState }) {
-
-
-  // tracks
-
-
-  fetch(`${API_URL}/posts/urls/${url}`, {
+function pageSender({
+  res,
+  apiUrl,
+  url, device,
+  appState, renderState, visitorState,
+  appRenderer
+}) {
+  fetch(`${apiUrl}/posts/urls/${url}`, {
     headers: { 'Content-Type': 'application/jsonResponse' }
   })
   .then(response => {
@@ -46,3 +43,5 @@ export function pageSender({ res, url, device, appRenderer, visitorState }) {
     exceptionSender({ exception, res, url, device, visitorState })
   })
 }
+
+export default pageSender
