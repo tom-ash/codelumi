@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import indexRenderer from '../../renderers'
+import indexRenderer from '../renderers/index.js'
 import exceptionSender from './exception'
 
 function pageSender({
@@ -41,7 +41,13 @@ function pageSender({
     )
   })
   .catch(exception => {
-    exceptionSender({ exception, res, url, device, visitorState })
+    exceptionSender({
+      exception,
+      res, url, device,
+      tracks,
+      appState, renderState, visitorState,
+      appRenderer
+    })
   })
 }
 

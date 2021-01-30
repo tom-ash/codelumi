@@ -8,6 +8,9 @@ var SRC_DIR = path.join(__dirname, '../')
 var DIST_DIR = path.join(__dirname, "../../../dist/server")
 
 var config = {
+  optimization: {
+    minimize: false
+  },
   entry: {
     server: SRC_DIR + '/server.js'
   },

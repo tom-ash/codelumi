@@ -1,4 +1,4 @@
-export function metaDataParser({
+function metaDataParser({
   lang,
   title, titleParser,
   description, descriptionParser,
@@ -17,3 +17,5 @@ export function metaDataParser({
     schemaOrg: schemaOrgParser && schemaOrgParser({ schemaOrg, lang }) || schemaOrg
   }
 }
+
+export default metaDataParser

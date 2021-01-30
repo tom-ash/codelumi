@@ -1,3 +1,5 @@
+import routeSender from '../senders/route.js'
+import pageSender from '../senders/page.js'
 import getPureUrl from '../../../shared/functions/getters/pure-url.js'
 import getRouteByUrl from '../../../shared/functions/getters/route-by-url.js'
 import getDevice from '../../../shared/functions/getters/device.js'
@@ -6,7 +8,7 @@ import getVisitorState from '../../../shared/functions/getters/visitor-state.js'
 function genericRequestHandler({
   req, res,
   apiUrl,
-  routes, tracks,
+  routes, routeRenders, tracks,
   appState, renderState,
   appRenderer
 }) {
@@ -20,7 +22,7 @@ function genericRequestHandler({
     routeSender({
       res,
       apiUrl,
-      route, url, device,
+      route, url, device, routeRenders, tracks,
       appState, renderState, visitorState,
       appRenderer
     })

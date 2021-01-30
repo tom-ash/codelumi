@@ -1,5 +1,6 @@
 import getPureUrl from '../../../../shared/shared/functions/getters/pure-url'
 import getRouteByUrl from '../../../../shared/shared/functions/getters/route-by-url'
+import routes from '../../../shared/constants/routes/routes.js'
 import routeRenders from '../../../shared/constants/routes/renders'
 import renderState from '../../constants/render-state'
 import {
@@ -17,7 +18,7 @@ export function matchRenderToRoute() {
   } = this.props
 
   const url = getPureUrl(window.location.pathname)
-  const route = getRouteByUrl(url)
+  const route = getRouteByUrl({ url, routes })
 
   if (route) {
     const {

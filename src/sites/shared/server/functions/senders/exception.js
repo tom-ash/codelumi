@@ -1,11 +1,13 @@
-import indexRenderer from '../../renderers'
+import indexRenderer from '../renderers'
 
 function exceptionSender({
   exception,
   res, url, device,
-  appState, visitorState,
+  tracks,
+  appState, renderState, visitorState,
   appRenderer
 }) {
+  const { VISITOR_TRACK, PAGE_TRACK, PAGE_NOT_FOUND_TRACK } = tracks
   const initialState = {
     app: { ...appState, lang: 'pl', device },
     render: { ...renderState, [VISITOR_TRACK]: true, [PAGE_TRACK]: true, [PAGE_NOT_FOUND_TRACK]: true },

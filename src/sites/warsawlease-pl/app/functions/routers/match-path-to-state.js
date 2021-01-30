@@ -1,3 +1,4 @@
+import routes from '../../../shared/constants/routes/routes.js'
 import { allowedOrigins } from '../../constants/allowed-origins'
 import getRouteByRender from '../../../../shared/shared/functions/getters/route-by-render'
 import { getPath } from './get-path'
@@ -14,8 +15,7 @@ export function matchRouteToRenderAndLanguage() {
     changeApp
   } = this.props
 
-  // TODO FIX ADD ROUTES
-  const route = getRouteByRender({ render, lang })
+  const route = getRouteByRender({ render, lang, routes })
   let path = getPath.apply(this, [route])
 
   if (path === null) return

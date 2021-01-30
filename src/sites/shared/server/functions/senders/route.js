@@ -1,11 +1,12 @@
 import fetch from 'node-fetch'
-import indexRenderer from '../../renderers'
-import exceptionSender from './exception'
-import svgsParser from '../../../../shared/functions/parsers/svgs.js'
+import indexRenderer from '../renderers/index.js'
+import exceptionSender from './exception.js'
+import svgsParser from '../../../shared/functions/parsers/svgs.js'
+import metaDataParser from '../../../shared/functions/parsers/meta-data.js'
 
 function routeSender({
   res,
-  apiUrl,
+  apiUrl, tracks, routeRenders,
   url, route, device,
   appState, renderState, visitorState,
   appRenderer
@@ -29,7 +30,7 @@ function routeSender({
     const render = { ...renderState, [track]: true, ...routeRenders[track] }
     const residualState = initialStateParser && initialStateParser(unparsedInitialState) || {}
 
-    const page = {}
+    let page = {}
     if (pageShow) {
       page = { show: { data: pageShow } }
     }
@@ -43,7 +44,13 @@ function routeSender({
     )
   })
   .catch(exception => {
-    exceptionSender({ exception, res, url, device, visitorState })
+    exceptionSender({
+      exception,
+      res, url, device,
+      tracks,
+      appState, renderState, visitorState,
+      appRenderer
+    })
   })
 }
 
