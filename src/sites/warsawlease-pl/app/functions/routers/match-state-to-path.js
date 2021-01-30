@@ -1,7 +1,7 @@
-import { getPureUrl } from '../../../shared/functions/getters/get-pure-url'
-import { getRoute } from '../../../shared/functions/getters/get-route'
+import { getPureUrl } from '../../../../shared/shared/functions/getters/pure-url'
+import { getRouteByUrl } from '../../../../shared/shared/functions/getters/route-by-url'
 import routeRenders from '../../../shared/constants/routes/renders'
-import { renderState } from '../../constants/render-state'
+import renderState from '../../constants/render-state'
 import {
   PAGE_TRACK,
   PAGE_SHOW_TRACK,
@@ -17,7 +17,7 @@ export function matchRenderToRoute() {
   } = this.props
 
   const url = getPureUrl(window.location.pathname)
-  const route = getRoute(url)
+  const route = getRouteByUrl(url)
 
   if (route) {
     const {

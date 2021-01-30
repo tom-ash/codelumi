@@ -49,8 +49,8 @@ function setCookies() {
     statisticsConsent,
     marketingConsent
   })) {
-    const statisticsConsentCookieValue = getBooleanCookieValue(getCookieValue('_pdpaf'))
-    const marketingConsentCookieValue = getBooleanCookieValue(getCookieValue('_pdpsm'))
+    const statisticsConsentCookieValue = getCookieAsBool(getCookieValue('_pdpaf'))
+    const marketingConsentCookieValue = getCookieAsBool(getCookieValue('_pdpsm'))
     const consents = {
       ...statisticsConsent === null && { statisticsConsent: statisticsConsentCookieValue },
       ...marketingConsent === null && { marketingConsent: marketingConsentCookieValue }
@@ -74,7 +74,7 @@ function setCookies() {
   }
 }
 
-function getBooleanCookieValue(cookieValue) {
+function getCookieAsBool(cookieValue) {
   switch(cookieValue) {
     case 'true': return true
     case 'false': return false

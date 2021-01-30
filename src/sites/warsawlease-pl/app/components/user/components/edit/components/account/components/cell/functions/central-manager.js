@@ -9,7 +9,7 @@ import { inputs } from '../../../../../../../constants/inputs'
 
 export function centralManager(element) {
   switch (element) {
-    case 'title': return titleProvider.call(this)
+    case 'title': return announcementTitleProvider.call(this)
     case 'icon': return iconProvider.call(this)
     case 'currentValue': return currentValueProvider.call(this)
     case 'triggerClass': return triggerClassProvider.call(this)
@@ -23,7 +23,7 @@ export function centralManager(element) {
   }
 }
 
-function titleProvider() {
+function announcementTitleProvider() {
   const { item } = this.state
 
   switch (item) {

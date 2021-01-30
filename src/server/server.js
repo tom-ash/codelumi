@@ -5,7 +5,7 @@ import compression from 'compression'
 import cookieParser from 'cookie-parser'
 import vhost from 'vhost'
 
-import { handleRequest } from '../sites/warsawlease-pl/server/handle-request'
+import { handleRequest } from '../sites/warsawlease-pl/server/functions/request-handler'
 import handleWarsawDigitalRequest from '../sites/warsaw-digital/server/handle-request'
 
 function allowCompression (req, res) {

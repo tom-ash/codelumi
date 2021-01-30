@@ -1,11 +1,12 @@
-import routes from '../../constants/routes/routes'
-
-export function getRouteByRender({
+function getRouteByRender({
   render,
-  lang
+  lang,
+  routes
 }) {
   return routes.find(route =>
     render[route.track] &&
     route.lang === lang
   )
 }
+
+export default getRouteByRender

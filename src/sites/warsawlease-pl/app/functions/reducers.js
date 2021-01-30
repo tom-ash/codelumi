@@ -1,5 +1,5 @@
-import { appState } from '../constants/app-state'
-import { renderState } from '../constants/render-state'
+import appState from '../constants/app-state'
+import renderState from '../constants/render-state'
 
 export const appReducer = (state = appState, action) => {
   switch (action.type) {

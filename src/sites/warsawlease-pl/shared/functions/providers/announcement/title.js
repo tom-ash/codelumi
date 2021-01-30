@@ -1,7 +1,7 @@
-import { parseCategory } from '../parsers/parse-category'
-import { parseDistrict } from '../parsers/parse-district'
+import { parseCategory } from '../../parsers/parse-category'
+import { parseDistrict } from '../../parsers/parse-district'
 
-export function provideTitle({
+export function announcementTitleProvider({
   category: categoryNumber,
   district,
   area,

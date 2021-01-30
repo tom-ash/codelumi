@@ -2,7 +2,7 @@ import { openGraphProvider } from '../providers/open-graph'
 import { schemaOrgProvider } from '../providers/schema-org'
 import pretty from 'pretty'
 
-function renderIndexAsHtml({
+function indexRenderer({
   url, canonicalUrl, lang, noIndex,
   title, description, keywords, image, openGraph, schemaOrg,
   css, html, preloadedState, scriptTags
@@ -44,4 +44,4 @@ function renderIndexAsHtml({
   return pretty(indexAsHtml)
 }
 
-export default renderIndexAsHtml
+export default indexRenderer

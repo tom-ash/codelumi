@@ -1,4 +1,4 @@
-export const appState = {
+const appState = {
   device: null,
   scrollY: 0,
   path: '/',
@@ -14,3 +14,5 @@ export const appState = {
   siteMapLinks: null,
   shouldMatchRouteToRenderAndLanguage: false
 }
+
+export default appState

@@ -1,5 +1,5 @@
-import { provideTitle } from '../../../../providers/provide-title'
+import { announcementTitleProvider } from '../../../../providers/title'
 
 export function announcementShowMetaDataTitleParser({ title, lang }) {
-  return provideTitle({ ...title, lang })
+  return announcementTitleProvider({ ...title, lang })
 }

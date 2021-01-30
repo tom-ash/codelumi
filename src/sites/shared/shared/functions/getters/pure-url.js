@@ -1,4 +1,4 @@
-export function getPureUrl(originalUrl) {
+function getPureUrl(originalUrl) {
   let pureUrl = originalUrl
 
   if (pureUrl.indexOf('?') !== -1) pureUrl = pureUrl.substring(0, pureUrl.indexOf('?'))
@@ -9,3 +9,5 @@ export function getPureUrl(originalUrl) {
 
   return pureUrl
 }
+
+export default getPureUrl

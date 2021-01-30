@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import StyleContext from 'isomorphic-style-loader/StyleContext'
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server'
 
-function renderAppAsHtml({ App, statsFile, rootReducer, initialState }) {
+function genericAppRenderer({ App, statsFile, rootReducer, initialState }) {
   const extractor = new ChunkExtractor({ statsFile, entrypoints: ['index'] })
   const css = new Set()
   const insertCss = (...styles) => styles.forEach(style => css.add(style._getCss()))
@@ -34,4 +34,4 @@ function renderAppAsHtml({ App, statsFile, rootReducer, initialState }) {
   }
 }
 
-export default renderAppAsHtml
+export default genericAppRenderer

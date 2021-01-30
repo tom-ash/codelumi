@@ -1,12 +1,17 @@
 const fetch = require("node-fetch")
-import { renderApp } from '../render-app'
-import renderIndexAsHtml from '../../../shared/functions/renderers/index-as-html'
-import { VISITOR_TRACK, PAGE_TRACK, PAGE_SHOW_TRACK } from '../../shared/constants/tracks/tracks'
-import { appState } from '../../app/constants/app-state'
-import { sendNotFoundResponse } from './exceptions/not-found'
-import { renderState } from '../../shared/constants/routes/renders/state'
+import indexRenderer from '../../renderers'
+import exceptionSender from './exception'
 
-export function sendPageResponse({ res, url, device, visitorState }) {
+// import { VISITOR_TRACK, PAGE_TRACK, PAGE_SHOW_TRACK } from '../../../../../warsawlease-pl/shared/constants/tracks/tracks'
+// import appState from '../../../../../warsawlease-pl/app/constants/app-state'
+// import renderState from '../../../../../warsawlease-pl/shared/constants/routes/renders/state'
+
+export function pageSender({ res, url, device, appRenderer, visitorState }) {
+
+
+  // tracks
+
+
   fetch(`${API_URL}/posts/urls/${url}`, {
     headers: { 'Content-Type': 'application/jsonResponse' }
   })
@@ -27,17 +32,17 @@ export function sendPageResponse({ res, url, device, visitorState }) {
       page: { show: { data: jsonResponse } },
       ...visitorState
     }
-    const appAsHtml = renderApp(initialState)
+    const appAsHtml = appRenderer(initialState)
 
     res.status(200).send(
-      renderIndexAsHtml({
+      indexRenderer({
         url, lang, canonicalUrl, noIndex,
         title, description, keywords, image, openGraph, schemaOrg,
         ...appAsHtml
       }) 
     )
   })
-  .catch(error => {
-    sendNotFoundResponse({ res, url, device, visitorState })
+  .catch(exception => {
+    exceptionSender({ exception, res, url, device, visitorState })
   })
 }

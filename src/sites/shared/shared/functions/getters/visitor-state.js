@@ -1,12 +1,12 @@
-import { getBooleanCookieValue } from '../shared/functions/getters/get-boolean-cookie-value'
+import { getCookieAsBool } from './cookie-as-bool'
 
 export function getVisitorState(cookies) {
   const {
     _pdpsm,
     _pdpaf
   } = cookies
-  const marketingConsent = getBooleanCookieValue(_pdpsm)
-  const statisticsConsent = getBooleanCookieValue(_pdpaf)
+  const marketingConsent = getCookieAsBool(_pdpsm)
+  const statisticsConsent = getCookieAsBool(_pdpaf)
 
   return {
     visitor: {

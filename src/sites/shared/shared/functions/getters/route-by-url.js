@@ -1,6 +1,4 @@
-import routes from '../../constants/routes/routes'
-
-export function getRoute(url) {
+function getRouteByUrl({ url, routes }) {
   return routes.find(route => {
     const { url: routeUrl } = route
 
@@ -11,3 +9,5 @@ export function getRoute(url) {
     return url.match(routeUrl)
   })
 }
+
+export default getRouteByUrl
