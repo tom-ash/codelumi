@@ -41,7 +41,7 @@ class AnnouncementIndexMap extends React.Component {
       announcements,
       changeData,
       isMobile,
-      scalableVectorGraphics,
+      svgs,
       miniListFarthestScrollTop,
       miniListFarthestScrollLeft,
       changeApp,
@@ -59,6 +59,7 @@ class AnnouncementIndexMap extends React.Component {
             ref={this.miniList}
             id='mini-list'
           >
+            
             {announcements !== null && announcements.map((announcement, index) => (
               <AnnouncementShowMiniTile
                 key={index}
@@ -105,7 +106,7 @@ class AnnouncementIndexMap extends React.Component {
               availabilityDate={tile.availabilityDate}
               closeButtonOnClick={() => this.props.changeData({ tileId: null, tile: null })}
               isMobile={isMobile}
-              scalableVectorGraphics={scalableVectorGraphics}
+              svgs={svgs}
               changeApp={changeApp}
               changeData={changeAnnouncementShowData}
               changeRoute={this.changeRoute}
