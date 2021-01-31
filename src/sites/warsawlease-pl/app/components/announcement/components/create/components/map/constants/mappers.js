@@ -2,7 +2,7 @@ export const mapStateToProps = (store) => {
   const {
     lang,
     isMobile,
-    scalableVectorGraphics
+    svgs
   } = store.app
 
   return {
@@ -13,7 +13,7 @@ export const mapStateToProps = (store) => {
     longitude: store.announcement.create.inputs.longitude,
     mapLoaded: store.announcement.create.control.mapLoaded,
     error: store.announcement.create.errors.map,
-    scalableVectorGraphics
+    svgs
   }
 }
     

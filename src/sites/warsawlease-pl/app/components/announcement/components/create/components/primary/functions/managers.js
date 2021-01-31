@@ -3,7 +3,7 @@ import { inputs } from '../../../../../constants/inputs'
 import { requiredInputs } from '../../../constants/required-inputs'
 import { categories } from '../../../../../constants/categories'
 import { districts } from '../../../../../constants/districts'
-import ScalableVectorGraphic from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 import { sendGaEvent } from '../../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from '../constants/analytics/events'
 
@@ -23,7 +23,7 @@ export function categoryManager() {
     category: { id }
   } = requiredInputs
 
-  const { category: value, errors, changeErrors, lang, scalableVectorGraphics } = this.props
+  const { category: value, errors, changeErrors, lang, svgs } = this.props
   const { icon, all: label } = inputs.category
 
   const {
@@ -41,8 +41,8 @@ export function categoryManager() {
     label: label[lang],
     options: [{ value: '', text: '' }].concat(categoryOptions),
     children: <>
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.category} />
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />
+      <SVG pathData={svgs && svgs.category} />
+      <SVG pathData={svgs && svgs.chevron} />
     </>,
     onFocus: () => changeErrors({ category: noError }),
     onSelect: option => {
@@ -61,7 +61,7 @@ export function districtManager() {
   } = inputs.district
 
   const {
-    scalableVectorGraphics
+    svgs
   } = this.props
 
   return {
@@ -71,8 +71,8 @@ export function districtManager() {
     label: this.langObjHandler(text),
     options: [{ value: '', text: '' }].concat(districts),
     children: <>
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.city} />
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />
+      <SVG pathData={svgs && svgs.city} />
+      <SVG pathData={svgs && svgs.chevron} />
     </>,
     onFocus: () => this.props.changeErrors({ district: noError }),
     onSelect: option => {
@@ -92,7 +92,7 @@ export function areaManager() {
   } = inputs.area
 
   const {
-    scalableVectorGraphics
+    svgs
   } = this.props
 
   return {
@@ -109,7 +109,7 @@ export function areaManager() {
             en: 'sqm'
           })}
         </div>
-        <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.area} />
+        <SVG pathData={svgs && svgs.area} />
       </>
     ),
     onFocus: () => this.props.changeErrors({ area: noError }),

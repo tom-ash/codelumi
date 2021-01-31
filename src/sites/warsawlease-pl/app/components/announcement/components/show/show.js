@@ -52,7 +52,7 @@ class AnnouncementShow extends React.Component {
       polishDescription,
       englishDescription,
       isMobile,
-      scalableVectorGraphics,
+      svgs,
       device,
       scripts,
       loadMap,
@@ -70,7 +70,7 @@ class AnnouncementShow extends React.Component {
 
     const { phone } = this.state
     const deviceClasss = device === 'largePc' ? ' large-pc' : ''
-    const showcaseProps = { scalableVectorGraphics, announcerName: name, announcerPhone: phone,
+    const showcaseProps = { svgs, announcerName: name, announcerPhone: phone,
       announcementId: id, togglePhone: this.togglePhone, langObjHandler: this.langObjHandler, venue }
 
     return (
@@ -104,7 +104,7 @@ class AnnouncementShow extends React.Component {
           polishDescription={polishDescription}
           englishDescription={englishDescription}
           isMobile={isMobile}
-          scalableVectorGraphics={scalableVectorGraphics}
+          svgs={svgs}
           device={device}
           scripts={scripts}
           loadMap={loadMap}

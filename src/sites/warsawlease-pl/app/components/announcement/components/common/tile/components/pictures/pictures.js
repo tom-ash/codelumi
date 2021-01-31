@@ -7,7 +7,7 @@ import { linkManager } from './functions/managers'
 import { buildLink } from '../../../../../functions/build-link'
 import { shareOnFacebook } from '../../../../../functions/share-on-facebook'
 
-import ScalableVectorGraphic from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 
 class AnnouncementShowPictures extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class AnnouncementShowPictures extends React.Component {
       heightQuantifier,
       venue,
       isMobile,
-      scalableVectorGraphics
+      svgs
     } = this.props
 
     const {
@@ -37,7 +37,7 @@ class AnnouncementShowPictures extends React.Component {
     if (pictures.length === 0 && venue === 'show') return null
     if (pictures.length === 0) return <ManagedLink {...this.linkManager()} />
 
-    const Chevron = () => <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />
+    const Chevron = () => <SVG pathData={svgs && svgs.chevron} />
 
     return (
       <div className='announcement-show-pictures'>
@@ -53,8 +53,8 @@ class AnnouncementShowPictures extends React.Component {
           className='share-on-facebook-button show'
           onClick={() => shareOnFacebook(buildLink(this.props), isMobile)}
         >
-          <ScalableVectorGraphic
-            pathData={scalableVectorGraphics && scalableVectorGraphics.facebook}
+          <SVG
+            pathData={svgs && svgs.facebook}
             color='#FDFEFE'
           />
         </div>}

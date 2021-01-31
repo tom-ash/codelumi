@@ -1,14 +1,14 @@
 export const mapStateToProps = (store) => {
   const {
     lang,
-    scalableVectorGraphics
+    svgs
   } = store.app
 
   return {
     lang,
     connecting: store.user.create.control.connecting,
     accountType: store.user.create.inputs.accountType,
-    scalableVectorGraphics
+    svgs
   }
 }
 

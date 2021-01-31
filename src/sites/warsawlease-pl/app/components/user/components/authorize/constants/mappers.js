@@ -1,12 +1,12 @@
 export const mapStateToProps = (store) => {
   const {
-    scalableVectorGraphics
+    svgs
   } = store.app
 
   return {
     lang: store.app.lang,
     authorized: store.user.authorize.data.authorized,
-    scalableVectorGraphics
+    svgs
   }
 }
     

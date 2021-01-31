@@ -9,7 +9,7 @@ export const mapStateToProps = (store) => {
     lang,
     path,
     device,
-    scalableVectorGraphics
+    svgs
   } = store.app
 
   const {
@@ -84,7 +84,7 @@ export const mapStateToProps = (store) => {
     offset,
     announcements,
     amount,
-    scalableVectorGraphics,
+    svgs,
     admin
   }
 }

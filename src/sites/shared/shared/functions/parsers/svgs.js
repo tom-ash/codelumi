@@ -1,11 +1,11 @@
-function svgsParser({ svgs }) {
-  const scalableVectorGraphics = {}
+function svgsParser({ svgs: unparsedSvgs }) {
+  const svgs = {}
 
-  svgs.map(svg => {
-    scalableVectorGraphics[svg.name] = svg.path_data || svg.pathData
+  unparsedSvgs.map(unparsedSvg => {
+    svgs[unparsedSvg.name] = unparsedSvg.path_data || unparsedSvg.pathData
   })
 
-  return scalableVectorGraphics
+  return svgs
 }
 
 export default svgsParser

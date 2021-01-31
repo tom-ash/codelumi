@@ -9,12 +9,12 @@ export function componentDidMount() {
   loadFonts()
   
   const {
-    scalableVectorGraphics,
+    svgs,
     changeApp
   } = this.props
 
-  if (Object.keys(scalableVectorGraphics).length === 0) {
-    getScalableVectorGraphics.apply(this)
+  if (Object.keys(svgs).length === 0) {
+    getsvgs.apply(this)
   } else {
     initializeGoogleMaps.apply(this)
   }
@@ -57,12 +57,12 @@ export function componentDidUpdate(prevProps) {
   }
 }
 
-function getScalableVectorGraphics() {
+function getsvgs() {
   const {
     changeApp
   } = this.props
 
-  fetch(`${API_URL}/scalable_vector_graphics`, {
+  fetch(`${API_URL}/svgs`, {
     headers: {
       'Content-Type': 'application/json'
     }
@@ -71,10 +71,10 @@ function getScalableVectorGraphics() {
     if (response.ok) return response.json()
   })
   .then(json => {
-    const scalableVectorGraphics = {}
+    const svgs = {}
     json.map(svg => {
-      scalableVectorGraphics[svg.name] = svg.path_data
+      svgs[svg.name] = svg.path_data
     })
-    changeApp({ scalableVectorGraphics }, initializeGoogleMaps.apply(this))
+    changeApp({ svgs }, initializeGoogleMaps.apply(this))
   })
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ScalableVectorGraphic = ({ pathData, fill }) => {
+const SVG = ({ pathData, fill }) => {
   if (!pathData) return null
   const defaultColor = '#000000'
 
@@ -17,4 +17,4 @@ const ScalableVectorGraphic = ({ pathData, fill }) => {
   )
 }
 
-export default ScalableVectorGraphic
+export default SVG

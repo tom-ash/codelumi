@@ -12,7 +12,7 @@ export const mapStateToProps = (store) => {
     path,
     scrollY,
     scripts,
-    scalableVectorGraphics,
+    svgs,
     shouldMatchRouteToRenderAndLanguage
   } = store.app
   const {
@@ -47,7 +47,7 @@ export const mapStateToProps = (store) => {
     scripts,
     googleAnalyticsLoaded: store.app.scripts.googleAnalytics,
     googleAnalyticsLoading: store.app.scripts.googleAnalyticsLoading,
-    scalableVectorGraphics,
+    svgs,
     render,
     renderPage,
     renderVisitor,

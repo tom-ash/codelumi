@@ -1,6 +1,6 @@
 export const mapStateToProps = (store) => {
   const {
-    scalableVectorGraphics
+    svgs
   } = store.app
 
   const {
@@ -31,7 +31,7 @@ export const mapStateToProps = (store) => {
     phoneError,
     emailError,
     passwordError,
-    scalableVectorGraphics
+    svgs
   }
 }
   

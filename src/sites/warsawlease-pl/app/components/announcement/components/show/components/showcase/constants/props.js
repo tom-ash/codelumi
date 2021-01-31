@@ -5,7 +5,7 @@
 
 
 // export const showcaseProps = {
-//   scalableVectorGraphics,
+//   svgs,
 //   announcerName: name,
 //   announcerPhone: phone,
 //   announcementId: id,

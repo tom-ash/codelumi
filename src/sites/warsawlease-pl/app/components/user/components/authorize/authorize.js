@@ -14,10 +14,10 @@ class UserAuthorize extends React.Component {
   }
 
   render() {
-    const { scalableVectorGraphics } = this.props
+    const { svgs } = this.props
 
     const headerText = this.langHandler('Zaloguj', 'Sign In')
-    const headerSvgPathData = scalableVectorGraphics && scalableVectorGraphics.user
+    const headerSvgPathData = svgs && svgs.user
 
     return (
       <React.Fragment>

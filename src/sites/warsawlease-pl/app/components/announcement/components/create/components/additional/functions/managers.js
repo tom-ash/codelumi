@@ -1,7 +1,7 @@
 import React from 'react'
 import { inputs } from '../../../../../constants/inputs'
 import { numberOptionsProvider } from '../../../../../../../functions/shared'
-import ScalableVectorGraphic from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 import { sendGaEvent } from '../../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from '../constants/analytics/events'
 
@@ -21,7 +21,7 @@ export function rentAmountManager() {
   const {
     category,
     changeInputs,
-    scalableVectorGraphics
+    svgs
   } = this.props
 
   let label = this.langObjHandler(text)
@@ -35,7 +35,7 @@ export function rentAmountManager() {
   return {
     classNames: { container: 'form-input text with-icon rent-amount' },
     value: this.props[rentAmountType],
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.coins} />,
+    children: <SVG pathData={svgs && svgs.coins} />,
     type: 'number',
     label,
     onChange: value => changeInputs({ [rentAmountType]: value }),
@@ -47,7 +47,7 @@ export function rentAmountManager() {
 }
 
 export function rentCurrencyManager() {
-  const { rentCurrency: value, scalableVectorGraphics } = this.props
+  const { rentCurrency: value, svgs } = this.props
   const currencies = [
     { value: 0, text: 'zł' },
     { value: 1, text: '€' },
@@ -56,7 +56,7 @@ export function rentCurrencyManager() {
 
   return {
     classNames: { container: 'form-input select rent-currency' },
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
+    children: <SVG pathData={svgs && svgs.chevron} />,
     value,
     options: currencies,
     onSelect: ({ value: optionValue }) => {
@@ -72,7 +72,7 @@ export function roomsManager() {
     create: text
   } = inputs.rooms
 
-  const { category, scalableVectorGraphics } = this.props
+  const { category, svgs } = this.props
 
   let label = this.langObjHandler(text)
 
@@ -81,8 +81,8 @@ export function roomsManager() {
   return {
     classNames: { container: 'form-input with-icon select' },
     children: <>
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.door_open} />
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />
+      <SVG pathData={svgs && svgs.door_open} />
+      <SVG pathData={svgs && svgs.chevron} />
     </>,
     value: this.props.rooms,
     label,
@@ -101,14 +101,14 @@ export function floorManager() {
   } = inputs.floor
 
   const {
-    scalableVectorGraphics
+    svgs
   } = this.props
 
   return {
     classNames: { container: 'form-input with-icon select' },
     children: <>
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.layers} />
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />
+      <SVG pathData={svgs && svgs.layers} />
+      <SVG pathData={svgs && svgs.chevron} />
     </>,
     value: this.props.floor,
     label: this.langObjHandler(text),
@@ -127,14 +127,14 @@ export function totalFloorsManager() {
   } = inputs.totalFloors
 
   const {
-    scalableVectorGraphics
+    svgs
   } = this.props
 
   return {
     classNames: { container: 'form-input with-icon select' },
     children: <>
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.building} />
-      <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />
+      <SVG pathData={svgs && svgs.building} />
+      <SVG pathData={svgs && svgs.chevron} />
     </>,
     value: this.props.totalFloors,
     label: this.langObjHandler(text),

@@ -1,13 +1,13 @@
 import React from 'react'
 import withStyles from 'isomorphic-style-loader/withStyles'
-import ScalableVectorGraphic from '../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 import { sendAnalyticsEvent } from '../../../../../../functions/google-analytics/send-analytics-event'
 import styles from './styles/styles.scss'
 
 const AnnouncementShowShowcase = ({
   announcerName,
   announcerPhone,
-  scalableVectorGraphics,
+  svgs,
   togglePhone,
   langObjHandler,
   announcementId,
@@ -20,7 +20,7 @@ const AnnouncementShowShowcase = ({
       </div>
       <div className='phone-showcase'>
         <div className='icon'>
-          <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.phone} />
+          <SVG pathData={svgs && svgs.phone} />
         </div>
         <div className='text'>
           {` ${announcerPhone}`}

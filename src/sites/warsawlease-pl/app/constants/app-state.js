@@ -10,7 +10,7 @@ const appState = {
     googleAnalyticsLoading: false
   },
   isMobile: null,
-  scalableVectorGraphics: {},
+  svgs: {},
   siteMapLinks: null,
   shouldMatchRouteToRenderAndLanguage: false
 }

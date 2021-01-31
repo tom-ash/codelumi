@@ -58,7 +58,7 @@ class AnnouncementTile extends React.Component {
       control,
       closeButtonOnClick,
       isMobile,
-      scalableVectorGraphics,
+      svgs,
       indexFullFarthestScrollTop,
       index,
       device,
@@ -110,7 +110,7 @@ class AnnouncementTile extends React.Component {
         {venue === 'map' &&
         <CloseButton
           onClick={closeButtonOnClick}
-          pathData={scalableVectorGraphics && scalableVectorGraphics.close}
+          pathData={svgs && svgs.close}
         />}
         <div className='header-container'>
           <h1>
@@ -159,7 +159,7 @@ class AnnouncementTile extends React.Component {
           district={district}
           area={area}
           isMobile={isMobile}
-          scalableVectorGraphics={scalableVectorGraphics}
+          svgs={svgs}
           changeApp={changeApp}
           changeData={changeData}
           changeRoute={changeRoute}
@@ -184,14 +184,14 @@ class AnnouncementTile extends React.Component {
             lang={lang}
             itemsName='features'
             items={features}
-            scalableVectorGraphics={scalableVectorGraphics}
+            svgs={svgs}
           />}
           {furnishings && furnishings.length > 0 &&
           <AnnouncementShowFeaturesFurnishings
             lang={lang}
             itemsName='furnishings'
             items={furnishings}
-            scalableVectorGraphics={scalableVectorGraphics}
+            svgs={svgs}
           />}
           {(polishDescription || englishDescription) &&
           <AnnouncementShowDescription

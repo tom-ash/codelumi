@@ -3,7 +3,7 @@ import { langHandler } from '../../../../../../../functions/lang-handler'
 import { langObjHandler } from '../../../../../../../functions/lang-handler'
 import { features } from '../../../../../constants/features'
 import { furnishings } from '../../../../../constants/furnishings'
-import ScalableVectorGraphic from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 import Header from '../../../../../../support/components/header/header.js'
 import { FEATURES_HEADER, FURNISHINGS_HEADER } from './constants/texts.js'
 
@@ -19,7 +19,7 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
     const {
       itemsName,
       items,
-      scalableVectorGraphics
+      svgs
     } = this.props
 
     const isFeatures = itemsName === 'features'
@@ -36,7 +36,7 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
           key={item}
         >
           <div className='icon'>
-            <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.check} />
+            <SVG pathData={svgs && svgs.check} />
           </div>
           <div className='text'>
             {this.langObjHandler(nodes.find(node => node.ref === item))}

@@ -1,6 +1,6 @@
 export const mapStateToProps = (store) => {
   const {
-    scalableVectorGraphics
+    svgs
   } = store.app
 
   return {
@@ -19,7 +19,7 @@ export const mapStateToProps = (store) => {
     showAvilabilityDate: store.announcement.create.control.showAvilabilityDate,
     availabilityDate: store.announcement.create.inputs.availabilityDate,
     errors: store.announcement.create.errors,
-    scalableVectorGraphics
+    svgs
   }
 }
   

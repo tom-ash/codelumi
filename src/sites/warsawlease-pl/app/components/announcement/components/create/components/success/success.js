@@ -3,7 +3,7 @@ import { buildLink } from '../../../../functions/build-link'
 import { ManagedLink } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { shareOnFacebook } from '../../../../functions/share-on-facebook'
-import ScalableVectorGraphic from '../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 
 class AnnouncementCreateSuccess extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class AnnouncementCreateSuccess extends React.Component {
     const {
       langObjHandler,
       isMobile,
-      scalableVectorGraphics
+      svgs
     } = this.props
 
     return (
@@ -38,7 +38,7 @@ class AnnouncementCreateSuccess extends React.Component {
           onClick={() => shareOnFacebook(buildLink(this.props), isMobile)}
         >
           <div className='button'>
-            <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.facebook} />
+            <SVG pathData={svgs && svgs.facebook} />
           </div>
           <div className='text'>
             {langObjHandler({

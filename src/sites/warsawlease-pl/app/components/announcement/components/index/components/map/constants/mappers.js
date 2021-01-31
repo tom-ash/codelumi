@@ -8,7 +8,7 @@ export const mapStateToProps = (store) => {
     isMobile,
     scripts,
     device,
-    scalableVectorGraphics
+    svgs
   } = store.app
   const {
     [ANNOUNCEMENT_INDEX_CATALOGUE_TRACK]: renderCatalogue
@@ -46,7 +46,7 @@ export const mapStateToProps = (store) => {
     pins,
     tileId,
     tile,
-    scalableVectorGraphics,
+    svgs,
     miniListFarthestScrollTop,
     miniListFarthestScrollLeft,
     fetch,

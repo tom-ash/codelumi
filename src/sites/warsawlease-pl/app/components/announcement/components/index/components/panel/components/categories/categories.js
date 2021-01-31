@@ -1,10 +1,10 @@
 import React from 'react'
-import ScalableVectorGraphic from '../../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 import { categories } from '../../../../../../constants/categories'
 
 
 const AnnouncementIndexPanelCategories = ({
-  scalableVectorGraphics,
+  svgs,
   langObjHandler,
   changeInputs,
   changeControl,
@@ -23,8 +23,8 @@ const AnnouncementIndexPanelCategories = ({
                 changeControl({ fetch: true })
               }}
             >
-              <ScalableVectorGraphic
-                pathData={scalableVectorGraphics && scalableVectorGraphics[category.pin.svg]}
+              <SVG
+                pathData={svgs && svgs[category.pin.svg]}
                 {...active ? { fill: category.pin.color } : { fill: '#909497' }}
               />
               {langObjHandler(category.label)}
@@ -34,8 +34,6 @@ const AnnouncementIndexPanelCategories = ({
       })}
     </div>
   )
-
-
 }
 
 export default AnnouncementIndexPanelCategories

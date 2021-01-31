@@ -65,7 +65,7 @@ function addNewPins() {
   const {
     changeData,
     announcements,
-    scalableVectorGraphics
+    svgs
   } = this.props
 
   let pins = []
@@ -82,13 +82,13 @@ function addNewPins() {
     const htmlContent = (
       `<a href="${buildLink({ id, category: categoryNumber, district, lang })}">
         <div class='icon ${pin.class}'>
-          <svg
+          <SVG
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 640 512"
           >
             <path
               style="fill:${pin.color};"
-              d="${scalableVectorGraphics[pin.svg]}"
+              d="${svgs[pin.svg]}"
             />
           </svg>
         </div>

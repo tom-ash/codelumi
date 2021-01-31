@@ -1,6 +1,6 @@
 export const mapStateToProps = (store) => {
   const {
-    scalableVectorGraphics
+    svgs
   } = store.app
 
   return {
@@ -9,7 +9,7 @@ export const mapStateToProps = (store) => {
     district: store.announcement.create.inputs.district,
     area: store.announcement.create.inputs.area,
     errors: store.announcement.create.errors,
-    scalableVectorGraphics
+    svgs
   }
 }
   

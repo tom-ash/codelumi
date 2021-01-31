@@ -7,7 +7,7 @@ import { langHandler } from '../../../../functions/lang-handler'
 import { UserCreateSteps } from './components/steps/steps'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import ScalableVectorGraphic from '../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 import Header from '../../../support/components/header/header'
 
 class UserCreate extends React.Component {
@@ -20,17 +20,16 @@ class UserCreate extends React.Component {
   render() {
     const {
       step,
-      scalableVectorGraphics,
+      svgs,
       creatingAnnouncement
     } = this.props
 
-    const svgs = scalableVectorGraphics
     const headerText = this.langHandler('Zarejestruj', 'Register')
-    const headerSvgPathData = scalableVectorGraphics && scalableVectorGraphics.user
+    const headerSvgPathData = svgs && svgs.user
 
     return (
       <>
-        {!creatingAnnouncement && <UserCreateSteps step={step} scalableVectorGraphics={svgs} />}
+        {!creatingAnnouncement && <UserCreateSteps step={step} svgs={svgs} />}
         <div id='user-create-container'
           className={`container${creatingAnnouncement ? ' creating-announcement' : ''}`}
         >

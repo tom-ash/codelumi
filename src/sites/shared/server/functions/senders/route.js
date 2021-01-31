@@ -22,11 +22,11 @@ function routeSender({
   .then(jsonResponse => {
     const { metaData: unparsedMetaData, initialState: unparsedInitialState, pageShow } = jsonResponse
 
-    const scalableVectorGraphics = svgsParser(jsonResponse)
+    const svgs = svgsParser(jsonResponse)
     
     const { track, lang, initialStateParser } = route
     const metaData = metaDataParser({ ...route, ...unparsedMetaData, lang })
-    const app = { ...appState, lang, device, scalableVectorGraphics }
+    const app = { ...appState, lang, device, svgs }
     const render = { ...renderState, [track]: true, ...routeRenders[track] }
     const residualState = initialStateParser && initialStateParser(unparsedInitialState) || {}
 
@@ -43,15 +43,15 @@ function routeSender({
       indexRenderer({ url, ...metaData, ...appAsHtml }) 
     )
   })
-  .catch(exception => {
-    exceptionSender({
-      exception,
-      res, url, device,
-      tracks,
-      appState, renderState, visitorState,
-      appRenderer
-    })
-  })
+  // .catch(exception => {
+  //   exceptionSender({
+  //     exception,
+  //     res, url, device,
+  //     tracks,
+  //     appState, renderState, visitorState,
+  //     appRenderer
+  //   })
+  // })
 }
 
 export default routeSender

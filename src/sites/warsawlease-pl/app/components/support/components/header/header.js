@@ -1,5 +1,5 @@
 import React from 'react'
-import ScalableVectorGraphic from '../scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../scalable-vector-graphic/scalable-vector-graphic'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
@@ -8,7 +8,7 @@ const Header = ({
   text,
   svgPathData
 }) => {
-  const icon = svgPathData ? <div className='icon'><ScalableVectorGraphic pathData={svgPathData} /></div> : null
+  const icon = svgPathData ? <div className='icon'><SVG pathData={svgPathData} /></div> : null
   const tag = `h${tier}`
   const header = React.createElement(tag, {}, text)
     

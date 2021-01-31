@@ -6,7 +6,7 @@ import styles from './styles/styles.scss'
 import * as lifecycle from './functions/lifecycle'
 import PageTile from '../shared/components/tile/tile'
 import { langObjHandler } from '../../../../functions/lang-handler'
-import ScalableVectorGraphic from '../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 
 class PageShow extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class PageShow extends React.Component {
       isAdmin,
       beingEdited,
       changeRender,
-      scalableVectorGraphics,
+      svgs,
       standalone
     } = this.props
 
@@ -38,7 +38,7 @@ class PageShow extends React.Component {
       <div id='post-show' className={standalone ? 'standalone' : 'attached'}>
         {isAdmin &&
         <button onClick={() => changeRender({ create: true })}>
-          <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.pen} />
+          <SVG pathData={svgs && svgs.pen} />
         </ button >
         }
         {!beingEdited &&

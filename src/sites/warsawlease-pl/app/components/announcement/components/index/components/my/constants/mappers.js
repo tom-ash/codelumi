@@ -5,7 +5,7 @@ import {
 export const mapStateToProps = (store) => {
   const {
     lang,
-    scalableVectorGraphics
+    svgs
   } = store.app
   const {
     [ANNOUNCEMENT_INDEX_MY_TRACK]: renderMy
@@ -36,7 +36,7 @@ export const mapStateToProps = (store) => {
     sort,
     amount,
     announcements,
-    scalableVectorGraphics,
+    svgs,
     renderMy
   }
 }

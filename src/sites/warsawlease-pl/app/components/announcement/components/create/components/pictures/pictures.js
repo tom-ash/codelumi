@@ -11,7 +11,7 @@ import { requiredInputs } from '../../constants/required-inputs'
 import { sectionHeaderProvider } from '../../../../../../functions/providers/headers'
 import { pictureClassProvider } from './functions/picture-class-provider'
 import { rotatePicture } from './functions/rotate-picture'
-import ScalableVectorGraphic from '../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 import { HeaderSection } from '../shared/headers/section/section.js'
 import { HEADER, ADDING_REQUIRED, NOT_ADDED } from './constants/texts'
 
@@ -31,7 +31,7 @@ class AnnouncementCreatePictures extends React.Component {
   render() {
     const {
       showAnnouncementEdit,
-      scalableVectorGraphics
+      svgs
     } = this.props
 
     return (
@@ -42,7 +42,7 @@ class AnnouncementCreatePictures extends React.Component {
         </div>} */}
         <div className='drag-and-drop-container'>
           <div className={`drag-and-drop${this.props.error.pl ? ' error-drag-and-drop' : ''}`}>
-            <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.camera} />
+            <SVG pathData={svgs && svgs.camera} />
             <input
               id={requiredInputs.pictures.id}
               className='input'
@@ -80,7 +80,7 @@ class AnnouncementCreatePictures extends React.Component {
                     onClick={() => this.deletePicture(index)}
                     className='button delete'
                   >
-                    <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.close} />
+                    <SVG pathData={svgs && svgs.close} />
                   </div>
                   {
                   this.props.blobs && (index !== 0) &&
@@ -88,7 +88,7 @@ class AnnouncementCreatePictures extends React.Component {
                     onClick={() => this.movePicture('up', index)}
                     className='button up'
                   >
-                    <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />
+                    <SVG pathData={svgs && svgs.chevron} />
                   </div>
                   }
                   {
@@ -97,7 +97,7 @@ class AnnouncementCreatePictures extends React.Component {
                     onClick={() => this.movePicture('down', index)}
                     className='button down'
                   >
-                    <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />
+                    <SVG pathData={svgs && svgs.chevron} />
                   </div>
                   }
                   {
@@ -106,7 +106,7 @@ class AnnouncementCreatePictures extends React.Component {
                     onClick={() => this.rotatePicture(index)}
                     className='button rotate'
                   >
-                    <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.rotate} />
+                    <SVG pathData={svgs && svgs.rotate} />
                   </div>
                   }
                 </div>

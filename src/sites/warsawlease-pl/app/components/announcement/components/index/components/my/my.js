@@ -42,7 +42,7 @@ class AnnouncementIndexMy extends React.Component {
     const {
       amount,
       offset,
-      scalableVectorGraphics,
+      svgs,
       lang,
       changeAnnouncementShowData
     } = this.props
@@ -94,7 +94,7 @@ class AnnouncementIndexMy extends React.Component {
             availabilityDate={announcement.availabilityDate}
             control={this.controlProvider(announcement, index)}
             control={this.controlProvider(announcement, index)}
-            scalableVectorGraphics={scalableVectorGraphics}
+            svgs={svgs}
             changeRoute={this.changeRoute}
             lang={lang}
             changeData={changeAnnouncementShowData}

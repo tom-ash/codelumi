@@ -26,7 +26,7 @@ class AnnouncementIndexPanel extends React.Component {
       renderCatalogue,
       renderMy,
       currentCategory,
-      scalableVectorGraphics,
+      svgs,
       changeInputs,
       changeControl
     } = this.props
@@ -35,7 +35,7 @@ class AnnouncementIndexPanel extends React.Component {
       <div id='announcement-index-panel'>
         <PanelCategories
           langObjHandler={this.langObjHandler}
-          scalableVectorGraphics={scalableVectorGraphics}
+          svgs={svgs}
           changeInputs={changeInputs}
           changeControl={changeControl}
           currentCategory={currentCategory}

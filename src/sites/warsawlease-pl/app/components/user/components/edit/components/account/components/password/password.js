@@ -30,11 +30,10 @@ class UserEditAccountPassword extends React.Component {
   }
 
   render() {
-    const { editAccount, scalableVectorGraphics } = this.props
+    const { editAccount, svgs } = this.props
 
-    const svgs = scalableVectorGraphics
     const headerText = this.langHandler('Zresetuj hasło', 'Reset password')
-    const headerSvgPathData = scalableVectorGraphics && scalableVectorGraphics.lock
+    const headerSvgPathData = svgs && svgs.lock
     
     return (
       <div

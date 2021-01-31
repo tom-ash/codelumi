@@ -1,6 +1,6 @@
 import React from 'react'
 import { inputs } from '../../../../../../../constants/inputs'
-import ScalableVectorGraphic from '../../../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 import { sendGaEvent } from '../../../../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from '../constants/analytics/events'
 
@@ -50,7 +50,7 @@ export function accountTypeManager() {
 }
 
 export function emailAddressManager() {
-  const { scalableVectorGraphics } = this.props
+  const { svgs } = this.props
   const { label } = inputs.email
 
   const input = inputs.email
@@ -61,7 +61,7 @@ export function emailAddressManager() {
     autoComplete: 'email',
     controlled: false,
     label: this.langObjHandler(label),
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.envelope} />,
+    children: <SVG pathData={svgs && svgs.envelope} />,
     onFocus: () => this.errorResetter('email'),
     onBlur: value => {
       this.emailAddressManager().validate(value)
@@ -73,10 +73,10 @@ export function emailAddressManager() {
 }
 
 export function passwordManager() {
-  const { scalableVectorGraphics } = this.props
+  const { svgs } = this.props
   const { label } = inputs.password
-
   const input = inputs.password
+  
   return {
     id: 'user-create-email-password',
     classNames: { container: 'form-input with-icon text' },
@@ -84,7 +84,7 @@ export function passwordManager() {
     autoComplete: 'new-password',
     controlled: false,
     label: this.langObjHandler(label),
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.lock} />,
+    children: <SVG pathData={svgs && svgs.lock} />,
     onFocus: () => this.errorResetter('password'),
     onBlur: value => {
       this.passwordManager().validate(value)
@@ -98,7 +98,7 @@ export function passwordManager() {
 export function firstNameManager() {
   const {
     accountType,
-    scalableVectorGraphics
+    svgs
   } = this.props
   const { icon, label } = inputs.firstName
 
@@ -109,7 +109,7 @@ export function firstNameManager() {
     autoComplete: 'given-name',
     controlled: false,
     label: this.langObjHandler(label),
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.user} />,
+    children: <SVG pathData={svgs && svgs.user} />,
     onFocus: () => this.errorResetter('firstName'),
     onBlur: value => {
       this.firstNameManager().validate(value)
@@ -123,7 +123,7 @@ export function firstNameManager() {
 export function businessNameManager() {
   const {
     accountType,
-    scalableVectorGraphics
+    svgs
   } = this.props
   const { icon, label } = inputs.businessName
 
@@ -146,14 +146,14 @@ export function businessNameManager() {
 
 export function areaCodeManager() {
   const {
-    scalableVectorGraphics
+    svgs
   } = this.props
 
   return {
     onFocusCoverZIndex: 3001,
     id: 'user-create-email-area-code',
     classNames: { container: 'form-input select phone-country-code' },
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.chevron} />,
+    children: <SVG pathData={svgs && svgs.chevron} />,
     value: this.props.phoneCode,
     options: [ { value: '+48', text: '+48' }, { value: '+1', text: '+1' }, { value: '+44', text: '+44' } ],
     onSelect: (option) => {
@@ -165,7 +165,7 @@ export function areaCodeManager() {
 
 export function phoneNumberManager() {
   const {
-    scalableVectorGraphics
+    svgs
   } = this.props
 
   const {
@@ -181,7 +181,7 @@ export function phoneNumberManager() {
     controlled: false,
     classNames: { container: 'form-input text with-icon phone-body'},
     label: this.langObjHandler(label),
-    children: <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.phone} />,
+    children: <SVG pathData={svgs && svgs.phone} />,
     onFocus: () => this.errorResetter('phone'),
     onBlur: value => {
       this.phoneNumberManager().validate(value)

@@ -1,9 +1,9 @@
 import React from 'react'
-import ScalableVectorGraphic from '../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../support/components/scalable-vector-graphic/scalable-vector-graphic'
 
 export function phoneSwitchProvider() {
   const { phone } = this.state
-  const { scalableVectorGraphics } = this.props
+  const { svgs } = this.props
   let phoneClass =`phone${phone && phone.length > 8 ? ' open' : ''}`
 
   return (
@@ -12,7 +12,7 @@ export function phoneSwitchProvider() {
       onClick={e => this.togglePhone()}
     >
       <div className='svg-container'>
-        <ScalableVectorGraphic pathData={scalableVectorGraphics && scalableVectorGraphics.phone} />
+        <SVG pathData={svgs && svgs.phone} />
       </div>
       {phone &&
       <a href={`tel:${phone}`}>

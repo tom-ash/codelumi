@@ -4,7 +4,7 @@ export const mapStateToProps = (store) => {
   const {
     lang,
     isMobile,
-    scalableVectorGraphics
+    svgs
   } = store.app
   const {
     [ANNOUNCEMENT_EDIT_TRACK]: renderEdit
@@ -59,7 +59,7 @@ export const mapStateToProps = (store) => {
   return {
     renderEdit,
     lang,
-    scalableVectorGraphics,
+    svgs,
     step,
     connecting,
     id,
