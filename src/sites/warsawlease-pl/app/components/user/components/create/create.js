@@ -7,7 +7,7 @@ import { langHandler } from '../../../../functions/lang-handler'
 import { UserCreateSteps } from './components/steps/steps'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import SVG from '../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../support/components/svg/svg'
 import Header from '../../../support/components/header/header'
 
 class UserCreate extends React.Component {

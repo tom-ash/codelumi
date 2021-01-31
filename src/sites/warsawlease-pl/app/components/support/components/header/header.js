@@ -1,5 +1,5 @@
 import React from 'react'
-import SVG from '../scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../svg/svg'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 

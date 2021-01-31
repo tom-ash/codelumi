@@ -3,7 +3,7 @@ import { langHandler } from '../../../../../../../functions/lang-handler'
 import { langObjHandler } from '../../../../../../../functions/lang-handler'
 import { features } from '../../../../../constants/features'
 import { furnishings } from '../../../../../constants/furnishings'
-import SVG from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../../../../support/components/svg/svg'
 import Header from '../../../../../../support/components/header/header.js'
 import { FEATURES_HEADER, FURNISHINGS_HEADER } from './constants/texts.js'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { inputs } from '../../../../../constants/inputs'
 import { numberOptionsProvider } from '../../../../../../../functions/shared'
-import SVG from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../../../../support/components/svg/svg'
 import { sendGaEvent } from '../../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from '../constants/analytics/events'
 

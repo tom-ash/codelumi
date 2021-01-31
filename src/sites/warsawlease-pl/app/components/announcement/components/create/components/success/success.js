@@ -3,7 +3,7 @@ import { buildLink } from '../../../../functions/build-link'
 import { ManagedLink } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { shareOnFacebook } from '../../../../functions/share-on-facebook'
-import SVG from '../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../../../support/components/svg/svg'
 
 class AnnouncementCreateSuccess extends React.Component {
   constructor(props) {

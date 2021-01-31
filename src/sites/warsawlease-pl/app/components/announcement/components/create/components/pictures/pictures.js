@@ -11,7 +11,7 @@ import { requiredInputs } from '../../constants/required-inputs'
 import { sectionHeaderProvider } from '../../../../../../functions/providers/headers'
 import { pictureClassProvider } from './functions/picture-class-provider'
 import { rotatePicture } from './functions/rotate-picture'
-import SVG from '../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../../../support/components/svg/svg'
 import { HeaderSection } from '../shared/headers/section/section.js'
 import { HEADER, ADDING_REQUIRED, NOT_ADDED } from './constants/texts'
 

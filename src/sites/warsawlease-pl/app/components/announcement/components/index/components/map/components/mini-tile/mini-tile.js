@@ -30,7 +30,7 @@ const AnnouncementShowMiniTile = ({
 
   const DESKTOP_TILE_HEIGHT = 227
   const MOBILE_TILE_WIDTH = 240
-
+  
   if (
     !isMobile && miniListFarthestScrollTop + 4 * DESKTOP_TILE_HEIGHT < index * DESKTOP_TILE_HEIGHT ||
     isMobile && miniListFarthestScrollLeft + 3 * MOBILE_TILE_WIDTH < index * MOBILE_TILE_WIDTH

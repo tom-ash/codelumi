@@ -41,7 +41,7 @@ class AnnouncementIndexMap extends React.Component {
       announcements,
       changeData,
       isMobile,
-      svgs,
+      scalableVectorGraphics,
       miniListFarthestScrollTop,
       miniListFarthestScrollLeft,
       changeApp,
@@ -71,7 +71,7 @@ class AnnouncementIndexMap extends React.Component {
                 district={announcement.district}
                 area={announcement.area}
                 grossRentAmount={announcement.grossRentAmount}
-                rentCurrency={announcement.currency}
+                rentCurrency={announcement.rentCurrency}
                 lang={lang}
                 langObjHandler={this.langObjHandler}
                 changeData={changeData}
@@ -105,7 +105,7 @@ class AnnouncementIndexMap extends React.Component {
               availabilityDate={tile.availabilityDate}
               closeButtonOnClick={() => this.props.changeData({ tileId: null, tile: null })}
               isMobile={isMobile}
-              svgs={svgs}
+              scalableVectorGraphics={scalableVectorGraphics}
               changeApp={changeApp}
               changeData={changeAnnouncementShowData}
               changeRoute={this.changeRoute}

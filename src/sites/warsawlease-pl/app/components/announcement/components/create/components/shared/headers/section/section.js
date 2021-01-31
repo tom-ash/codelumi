@@ -1,7 +1,7 @@
 import React from 'react'
 // import { REQUIRED_CLASS, NOT_REQUIRED_CLASS } from './constants/classes'
 // import { REQUIRED, NOT_REQUIRED } from './constants/texts.js'
-import SVG from '../../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../../../../../support/components/svg/svg'
 
 export const HeaderSection = ({
   textObj,

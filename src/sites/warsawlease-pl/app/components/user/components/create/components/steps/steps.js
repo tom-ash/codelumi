@@ -1,5 +1,5 @@
 import React from 'react'
-import SVG from '../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../../../support/components/svg/svg'
 
 export function UserCreateSteps({
   step,

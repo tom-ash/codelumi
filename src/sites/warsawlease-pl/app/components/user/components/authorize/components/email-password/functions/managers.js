@@ -2,7 +2,7 @@ import React from 'react'
 import { inputs } from '../../../../../constants/inputs'
 import ButtonSpinner from '../../../../../../support/components/button-spinner/button-spinner'
 import { emailValidator } from '../../../../../../../functions/email-validator'
-import SVG from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../../../../support/components/svg/svg'
 
 const noError = { pl: '', en: '' }
 

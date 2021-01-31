@@ -6,7 +6,7 @@ import styles from './styles/styles.scss'
 import * as lifecycle from './functions/lifecycle'
 import PageTile from '../shared/components/tile/tile'
 import { langObjHandler } from '../../../../functions/lang-handler'
-import SVG from '../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../support/components/svg/svg'
 
 class PageShow extends React.Component {
   constructor(props) {

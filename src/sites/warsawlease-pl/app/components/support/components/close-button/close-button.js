@@ -1,5 +1,5 @@
 import React from 'react'
-import SVG from '../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../svg/svg'
 
 export const CloseButton = ({ classNames, onClick, pathData}) => {
   const classes = ` ${classNames}` || ''

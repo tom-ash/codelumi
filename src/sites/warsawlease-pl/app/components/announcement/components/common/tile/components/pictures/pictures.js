@@ -7,7 +7,7 @@ import { linkManager } from './functions/managers'
 import { buildLink } from '../../../../../functions/build-link'
 import { shareOnFacebook } from '../../../../../functions/share-on-facebook'
 
-import SVG from '../../../../../../support/components/scalable-vector-graphic/scalable-vector-graphic'
+import SVG from '../../../../../../support/components/svg/svg'
 
 class AnnouncementShowPictures extends React.Component {
   constructor(props) {
