@@ -43,15 +43,15 @@ function routeSender({
       indexRenderer({ url, ...metaData, ...appAsHtml }) 
     )
   })
-  // .catch(exception => {
-  //   exceptionSender({
-  //     exception,
-  //     res, url, device,
-  //     tracks,
-  //     appState, renderState, visitorState,
-  //     appRenderer
-  //   })
-  // })
+  .catch(exception => {
+    exceptionSender({
+      exception,
+      res, url, device,
+      tracks,
+      appState, renderState, visitorState,
+      appRenderer
+    })
+  })
 }
 
 export default routeSender
