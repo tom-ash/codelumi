@@ -6,19 +6,47 @@ export function AnnouncementCreateSteps({
   authorized,
   svgs
 }) {
+  if (!svgs) return null
+
+  const { align_left, user, check } = svgs
+
+  const lineClasses = ['line']
+  const firstPointClasses = ['point', 'first']
+  const secondPointClasses = ['point', 'second']
+  const thirdPointClasses = ['point', 'last']
+
+  if (step === 'form') {
+    firstPointClasses.push('current')
+  }
+  if (step === 'creating-user') {
+    firstPointClasses.push('success')
+    secondPointClasses.push('current')
+  }
+  if (step === 'confirmation') {
+    firstPointClasses.push('success')
+    secondPointClasses.push('success')
+    thirdPointClasses.push('currrent')
+  }
+  if (step === 'success') {
+    lineClasses.push('success')
+    firstPointClasses.push('success')
+    secondPointClasses.push('success')
+    thirdPointClasses.push('success')
+  }
+  
   return (
     <div className='create-points'>
-      <div className={`line${step === 'success' ? ' success' : ''}`} />
-      <div className={`point first${step !== 'form' ? ' success' : ''}`}>
-        <SVG pathData={svgs && svgs.align_left} />
+      <div className={lineClasses.join(' ')} />
+      <div className={firstPointClasses.join(' ')}>
+        <SVG pathData={align_left} />
       </div>
       {!authorized &&
-      <div className={`point second${step === 'creating-user' ? ' current' : ''}${step === 'confirmation'  || step === 'success' ? ' success' : ''}`}>
-        <SVG pathData={svgs && svgs.user} />
+      <div className={secondPointClasses.join(' ')}>
+        <SVG pathData={user} />
       </div>
       }
-      <div className={`point last${step === 'confirmation' ? ' current' : ''}${step === 'success' ? ' success' : ''}`}>
-        <SVG pathData={svgs && svgs.check} />
+      <div className={thirdPointClasses.join(' ')}>
+        <SVG pathData={check} />
       </div>
       <div className='float-clear' />
     </div>

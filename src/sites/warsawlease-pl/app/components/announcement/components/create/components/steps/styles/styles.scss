@@ -1,17 +1,15 @@
-$current-color: #3498DB;
-
 .create-points {
   position: relative;
-  height: 32px;
-  height: 44px;
   max-width: 750px;
-  margin: 0 auto;
-  margin-top: 30px;
+  margin: 10px auto 30px;
+  @media #{$LARGE-PHONE} {
+    margin: 10px 10px 30px;
+  }
   .line {
     height: 22px;
-    border-bottom: 2px solid #D7DBDD;
+    border-bottom: 2px solid $STEPS-LINE-COLOR;
     &.success {
-      border-bottom: 2px solid #27AE60;
+      border-bottom: 2px solid $STEPS-SUCCESS-COLOR;
     }
   }
   .point {
@@ -19,17 +17,16 @@ $current-color: #3498DB;
     width: 32px;
     height: 32px;
     border-radius: 16px;
-    background: $current-color;
+    background: white;
     text-align: center;
     line-height: 32px;
+    border: 1px solid $STEPS-FILL-COLOR;
     svg {
-      fill: #FDFEFE;
+      fill: $STEPS-FILL-COLOR;
       height: 14px;
     }
     &.first {
       top: 6px;
-      left: 0;
-      padding-top: 1px;
       svg {
         margin-left: 2px;
       }
@@ -39,25 +36,26 @@ $current-color: #3498DB;
       left: 0;
       right: 0;
       margin: 0 auto;
-      background: #D7DBDD;
-      &.current {
-        background: $current-color;
-      }
       svg {
-        left: 0.75px;
+        margin-left: 2px;
       }
     }
     &.last {
       top: 6px;
       right: 0;
-      background: #D7DBDD;
       line-height: 34px;
-      &.current {
-        background: $current-color;
+    }
+    &.current {
+      border: 1px solid $STEPS-CURRENT-COLOR;
+      svg {
+        fill: $STEPS-CURRENT-COLOR;
       }
     }
     &.success {
-      background: #27AE60;
+      border: 1px solid $STEPS-SUCCESS-COLOR;
+      svg {
+        fill: $STEPS-SUCCESS-COLOR;
+      }
     }
   }
 }
