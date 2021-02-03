@@ -1,17 +1,26 @@
 @import '../../../../../../../../../styles/themes.scss';
+@import '../../../../../../../../../styles/dimensions.scss';
 @import '../../../../../../../../../styles/inputs/form/text.scss';
 @import '../../../../../../../../../styles/inputs/form/svgs.scss';
 @import '../../../../../../../../../styles/inputs//form//button.scss';
 
 #user-edit-account-password {
   &.full {
-    max-width: 640px;
-    margin: 96px auto;
-    padding: 50px;
-    border-radius: 4px;
-    border: 1px solid lightgray;
+    margin: 120px auto;
+    max-width: 600px;
+    border: 1px solid #D0D3D4;
+    padding: $FORM-PADDING-PC;
+    background: white;
     @media #{$LARGE-PHONE} {
-      margin: 58px 12px;
+      margin: 0 auto;
+      border: none;
+      padding: $FORM-PADDING-PHONE;
+    }
+    .page-header {
+      .icon {
+        padding-top: 5px;
+        width: 20px;
+      }
     }
   }
   .monit-and-text-inputs {
@@ -24,7 +33,10 @@
     margin-bottom: 20px;
   }
   .separation-line {
-    margin: 24px 0;
+    margin: 40px 0;
+    @media #{$LARGE-PHONE} {
+      margin: 25px 0;
+    }
   }
   .form-input {
     &.button {
