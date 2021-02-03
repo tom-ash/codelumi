@@ -80,7 +80,10 @@ input:-webkit-autofill:active  {
 
 body {
   font-family: 'Helvetica Neue', 'Arial', sans-serif;
-  background: #F8F9F9;
+  background: $APP-BACKGROUND-COLOR;
+  @media #{$LARGE-PHONE} {
+    background: $APP-BACKGROUND-PHONE-COLOR
+  }
 }
 
 .float-clear {
@@ -94,7 +97,6 @@ body {
 body {
   overflow-x: hidden;
   overflow-y: scroll;
-  color: #212F3D;
   line-height: 1;
 }
 

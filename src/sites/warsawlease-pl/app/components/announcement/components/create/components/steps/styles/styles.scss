@@ -1,9 +1,11 @@
+@import '../../../../../../../styles/dimensions.scss';
+
 .create-points {
   position: relative;
   max-width: 750px;
   margin: 10px auto 30px;
   @media #{$LARGE-PHONE} {
-    margin: 10px 10px 30px;
+    margin: 10px $FORM-PADDING-PHONE 30px;
   }
   .line {
     height: 22px;

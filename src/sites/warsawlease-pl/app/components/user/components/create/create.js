@@ -7,7 +7,6 @@ import { langHandler } from '../../../../functions/lang-handler'
 import { UserCreateSteps } from './components/steps/steps'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import SVG from '../../../support/components/svg/svg'
 import Header from '../../../support/components/header/header'
 
 class UserCreate extends React.Component {
@@ -18,22 +17,18 @@ class UserCreate extends React.Component {
   }
 
   render() {
-    const {
-      step,
-      svgs,
-      creatingAnnouncement
-    } = this.props
-
+    const { step, svgs, creatingAnnouncement } = this.props
     const headerText = this.langHandler('Zarejestruj', 'Register')
-    const headerSvgPathData = svgs && svgs.user
+    const headerSvgPathData = svgs && svgs.user_plus
+    const classNames = []
+
+    if (creatingAnnouncement) classNames.push('creating-announcement')
 
     return (
       <>
         {!creatingAnnouncement && <UserCreateSteps step={step} svgs={svgs} />}
-        <div id='user-create-container'
-          className={`container${creatingAnnouncement ? ' creating-announcement' : ''}`}
-        >
-          <Header tier={1} text={headerText} svgPathData={headerSvgPathData} />
+        <div id='user-create' className={classNames.join(' ')}>
+          {!creatingAnnouncement && <Header viewBox={'0 0 640 512'} tier={1} text={headerText} svgPathData={headerSvgPathData} />}
           <UserCreateEmail />
         </div>
       </>
