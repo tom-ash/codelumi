@@ -17,18 +17,13 @@ class UserAuthorize extends React.Component {
     const { svgs } = this.props
 
     const headerText = this.langHandler('Zaloguj', 'Sign In')
-    const headerSvgPathData = svgs && svgs.user
+    const headerSvgPathData = svgs && svgs.sign_in
 
     return (
-      <React.Fragment>
-        <div
-          id='user-authorize'
-          className='container'
-        >
-          <Header tier={1} text={headerText} svgPathData={headerSvgPathData} />
-          <UserAuthorizeEmailTrack />
-        </div>
-      </React.Fragment>
+      <div id='user-authorize'>
+        <Header tier={1} text={headerText} svgPathData={headerSvgPathData} />
+        <UserAuthorizeEmailTrack />
+      </div>
     )
   }
 }

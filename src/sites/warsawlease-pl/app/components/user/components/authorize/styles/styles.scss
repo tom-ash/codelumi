@@ -1,14 +1,23 @@
-@import '../components/email-password/styles/styles.scss';
-@import '../../../../../styles/themes.scss';
+@import '../../../../../styles/dimensions.scss';
 @import '../../../../../styles/inputs/form/text.scss';
 @import '../../../../../styles/inputs/form/checkbox.scss';
+@import '../components/email-password/styles/styles.scss';
 
 #user-authorize {
-  max-width: 640px;
-  margin: 96px auto;
-  padding: 50px;
-  border: 1px solid lightgray;
+  margin: 120px auto;
+  max-width: 600px;
+  border: 1px solid #D0D3D4;
+  padding: $FORM-PADDING-PC;
+  background: white;
   @media #{$LARGE-PHONE} {
-    margin: 58px 12px;
+    margin: 0 auto;
+    border: none;
+    padding: $FORM-PADDING-PHONE;
+  }
+  .page-header {
+    .icon {
+      padding-top: 4px;
+      width: 23px;
+    }
   }
 }
