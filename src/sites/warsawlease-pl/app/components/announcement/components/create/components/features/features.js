@@ -25,7 +25,6 @@ class AnnouncementCreateFeatures extends React.Component {
         <ManagedCheckbox {...this.addFeaturesManager()} />
         {addFeatures && <>
         <div className='hint'>
-          <i className='fas fa-info-circle' />
           {this.langObjHandler({
             pl: 'Elementy wybrane z listy dodawane są automatycznie w języku polskim oraz angielskim.',
             en: 'Elements selected from the list are automatically added in Polish and English languages.'
@@ -34,9 +33,6 @@ class AnnouncementCreateFeatures extends React.Component {
         <div className='box-with-scroll'>
           <div className='box'>
             <ManagedMultipleCheckbox {...this.featuresManager()} />
-          </div>
-          <div className='scroll'>
-            <i className="fas fa-sort"></i>
           </div>
           <div className='float-clear' />
         </div>

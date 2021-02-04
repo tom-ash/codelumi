@@ -29,7 +29,7 @@ class Footer extends React.Component {
             <ManagedLink {...this.privacySettingsManager()} />
           </div>
           <div className='copyright'>
-            <i className='far fa-copyright' /> Warsaw Digital Sp. z o.o. 2020 {this.langHandler({ pl: 'Wszelkie prawa zastrzeżone.', en: 'All rights reserved.' })}
+            Warsaw Digital Sp. z o.o. 2020 {this.langHandler({ pl: 'Wszelkie prawa zastrzeżone.', en: 'All rights reserved.' })}
           </div>
           <div className='float-clear' />
         </div>

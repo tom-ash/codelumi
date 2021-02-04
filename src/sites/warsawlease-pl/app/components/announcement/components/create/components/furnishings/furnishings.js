@@ -30,7 +30,6 @@ class AnnouncementCreateFurnishings extends React.Component {
         {addFurnishings &&
         <>
           <div className='hint'>
-            <i className='fas fa-info-circle' />
             {this.langObjHandler({
               pl: 'Elementy wybrane z listy dodawane są automatycznie w językach polskim oraz angielskim.',
               en: 'Elements selected from the list are automatically added in Polish and English languages.'
@@ -39,9 +38,6 @@ class AnnouncementCreateFurnishings extends React.Component {
           <div className='box-with-scroll'>
             <div className='box'>
               <ManagedMultipleCheckbox {...this.furnishingsManager()} />
-            </div>
-            <div className='scroll'>
-              <i className='fas fa-sort'></i>
             </div>
             <div className='float-clear' />
           </div>

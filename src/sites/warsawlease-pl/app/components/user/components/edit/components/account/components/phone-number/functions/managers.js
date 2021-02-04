@@ -6,8 +6,6 @@ import ButtonSpinner from '../../../../../../../../support/components/button-spi
 const noError = { pl: '', en: '' }
 
 export function phoneCodeManager() {
-  const { icon } = inputs.phoneCode
-
   return {
     controlled: false,
     classNames: { container: 'form-input select country-code' },
@@ -19,7 +17,7 @@ export function phoneCodeManager() {
 
 export function bodyManager() {
   const { changeErrors } = this.props
-  const { icon, label } = inputs.phone
+  const { label } = inputs.phone
 
   return {
     id: 'user-edit-account-phone-number-body',

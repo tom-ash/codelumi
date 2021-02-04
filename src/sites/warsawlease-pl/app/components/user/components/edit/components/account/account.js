@@ -3,9 +3,11 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { componentDidMount, componentWillUnmount } from './functions/lifecycle'
 import UserEditAccountCell from './components/cell/cell'
-import { langHandler } from '../../../../../../functions/lang-handler'
+import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import Header from '../../../../../support/components/header/header.js'
+import { HEADER_TEXT } from './constants/texts.js'
 
 class UserEditAccount extends React.Component {
   constructor(props) {
@@ -13,16 +15,17 @@ class UserEditAccount extends React.Component {
     this.componentDidMount = componentDidMount.bind(this)
     this.componentWillUnmount = componentWillUnmount.bind(this)
     this.langHandler = langHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
   }
 
   render() {
-    const { accountType } = this.props
+    const { accountType, svgs } = this.props
+    const headerText = this.langObjHandler(HEADER_TEXT)
+    const headerSvgPathData = svgs && svgs.user_cog
 
     return (
       <div id='user-edit-account' className='container narrow-container shadowed'>
-        <h2 className='page-header'>
-          <i className='fas fa-cog' /> {this.langHandler('Ustawienia', 'Settings')}
-        </h2>
+        <Header viewBox={'0 0 640 512'} tier={1} text={headerText} svgPathData={headerSvgPathData} />
         {accountType == 'private' ?
         <UserEditAccountCell key='firstName' item='firstName' />
         :

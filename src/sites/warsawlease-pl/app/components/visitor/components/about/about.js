@@ -42,7 +42,7 @@ class About extends React.Component {
           {
           features.map((feature, index) => (
             <div className='feature' key={index}>
-              <i className="fas fa-check-circle"></i>  {this.langObjHandler(feature)}
+              {this.langObjHandler(feature)}
             </div>
           ))
           }

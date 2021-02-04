@@ -20,7 +20,6 @@ export const inputs = {
     }
   },
   rentHeight: {
-    icon: 'fas fa-coins',
     create: {
       pl: 'Miesięczna cena',
       en: 'Monthly Price'
@@ -29,7 +28,6 @@ export const inputs = {
     indexMax: {}
   },
   area: {
-    icon: 'fas fa-ruler-combined',
     create: {
       pl: 'Powierzchnia',
       en: 'Area'
@@ -38,7 +36,6 @@ export const inputs = {
     indexMax: {}
   },
   rooms: {
-    icon: 'fas fa-vector-square',
     create: {
       pl: 'Liczba pomieszczeń',
       en: 'Rooms amount'
@@ -47,7 +44,6 @@ export const inputs = {
     indexMax: {}
   },
   floor: {
-    icon: 'fas fa-layer-group',
     create: {
       pl: 'Piętro',
       en: 'Floor'
@@ -56,7 +52,6 @@ export const inputs = {
     indexMax: {}
   },
   totalFloors: {
-    icon: 'fas fa-building',
     create: {
       pl: 'Liczba pięter budynku',
       en: 'Building floors amount'
@@ -65,7 +60,6 @@ export const inputs = {
     indexMax: {}
   },
   availabilityDate: {
-    icon: 'far fa-calendar-alt',
     all: {
       pl: 'Data dostępności',
       en: 'Availability date'

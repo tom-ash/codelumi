@@ -11,8 +11,8 @@ export function controlProvider(announcement, index) {
         <div className='info'>
           {
           announcement.visible ?
-          <span><i className='far fa-eye' /> {this.langHandler('Widoczne', 'Visible')}</span> :
-          <span><i className='far fa-eye-slash' /> {this.langHandler('Ukryte', 'Hidden')}</span>
+          <span>{this.langHandler('Widoczne', 'Visible')}</span> :
+          <span>{this.langHandler('Ukryte', 'Hidden')}</span>
           }
         </div>
         <div className='info'>
@@ -22,7 +22,7 @@ export function controlProvider(announcement, index) {
           {announcement.updatedAt && announcement.updatedAt.slice(0, 10)}
         </div>
         <div className='info'>
-          <i className='fas fa-users' />{announcement.views}
+          {announcement.views}
         </div>
         <div className='float-clear' />
       </div>

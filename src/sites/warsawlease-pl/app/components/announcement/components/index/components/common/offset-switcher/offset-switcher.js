@@ -38,7 +38,6 @@ export function OffsetSwitcher({
           changeControl({ fetch: true })
         }}
       >
-        <i className='fas fa-angle-left' />
       </div>}
       <div className='text'>
         {offsetCounter(offset, amount)} {langHandler('z', 'of')} {amount}
@@ -52,7 +51,6 @@ export function OffsetSwitcher({
           changeControl({ fetch: true })
         }}
       >
-        <i className='fas fa-angle-right' />
       </div>}
       <div className='float-clear' />
     </div>

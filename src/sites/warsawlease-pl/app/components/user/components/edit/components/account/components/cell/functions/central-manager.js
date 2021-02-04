@@ -41,25 +41,14 @@ function announcementTitleProvider() {
 
 function iconProvider() {
   const { item } = this.state
-  
-  switch (item) {
-    case 'firstName': return <i className="fas fa-user-edit"></i>
-    case 'lastName': return <i className="fas fa-user-edit"></i>
-    case 'businessName': return <i className="fas fa-user-edit"></i>
-    case 'taxNumber': return <i className="fas fa-file-alt"></i>
-    case 'phone': return <i className="fas fa-mobile"></i>
-    case 'email': return <i className="fas fa-envelope"></i>
-    case 'password': return <i className="fas fa-key"></i>
-    case 'destroy': return <i className="fas fa-user-times"></i>
-    default: break;
-  }
+
+  return null
 }
 
 function currentValueProvider() {
   const { item, currentValue, phoneCode, body } = this.state
 
   if (item === 'phone') return phoneCode + ' ' + body
-  if (item === 'password') return <i className="far fa-eye-slash"></i>
   return currentValue
 }
 
@@ -99,11 +88,7 @@ function triggerOnClickHandler() {
 }
 
 function triggerIconProvider() {
-  let triggerIcon = <i className='far fa-edit fa-1x'></i>
-  if (this.state.stage !== null && this.state.stage !== 'closed-after-open') {
-    triggerIcon = <i className='fas fa-times'></i>
-  }
-  return triggerIcon
+  return null
 }
 
 function triggerTextProvider() {

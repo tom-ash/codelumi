@@ -2,5 +2,20 @@
 @import '../components/password/styles/styles.scss';
 
 #user-edit-account {
-  margin: 100px auto;
+  margin: 50px auto;
+  max-width: 600px;
+  border: 1px solid #D0D3D4;
+  padding: $FORM-PADDING-PC;
+  background: white;
+  @media #{$LARGE-PHONE} {
+    border: none;
+    padding: $FORM-PADDING-PHONE;
+  }
+  .page-header {
+    .icon {
+      padding-top: 3px;
+      width: 24px;
+    }
+  }
+
 }
