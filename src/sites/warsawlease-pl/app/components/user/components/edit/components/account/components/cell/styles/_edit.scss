@@ -1,7 +1,4 @@
 %edit {
-  border-right: 1px solid gray;
-  border-bottom: 1px solid gray;
-  border-left: 1px solid gray;
   height: 240px;
   margin: 0 auto;
   transition: 0.72s ease-out;
@@ -12,19 +9,9 @@
   &.closed-after-open {
     height: 0px;
   }
-  &.opened {
-    height: 240px;
-  }
-  .spinner {
-    position: relative;
-    padding-top: 64px;
-    .windmill-medium-spinner {
-      position: relative;
-    }
-  }
   .inputs-container {
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 360px;
+    padding: 35px 0 0 35px;
     &.hidden {
       visibility: hidden;
     }
@@ -50,8 +37,15 @@
     }
     .form-input {
       &.button {
-        width: 50%;
-        margin-left: auto;
+        width: 100px;
+        height: 40px;
+        .very-small-windmill-spinner {
+          top: -54px;
+          left: -49px;
+          div:after {
+            background: gray;
+          }
+        }
       }
     }
   }
