@@ -6,6 +6,7 @@ import UserEditAccountEmail from '../../email-address/email-address'
 import UserEditAccountPassword from '../../password/password'
 import UserDestroy from '../../../../../../destroy/destroy'
 import { inputs } from '../../../../../../../constants/inputs'
+import SVG from '../../../../../../../../support/components/svg/svg.js'
 
 export function centralManager(element) {
   switch (element) {
@@ -42,13 +43,24 @@ function announcementTitleProvider() {
 function iconProvider() {
   const { item } = this.state
 
+  switch (item) {
+    case 'firstName': return 'user'
+    case 'phone': return 'phone'
+    case 'email': return 'envelope'
+    case 'password': return 'lock'
+    case 'destroy': return 'user_times'
+    default: break;
+  }
+
   return null
 }
 
 function currentValueProvider() {
+  const { svgs } = this.props
   const { item, currentValue, phoneCode, body } = this.state
 
   if (item === 'phone') return phoneCode + ' ' + body
+  if (item === 'password') return <SVG pathData={svgs && svgs.eye_slash} />
   return currentValue
 }
 

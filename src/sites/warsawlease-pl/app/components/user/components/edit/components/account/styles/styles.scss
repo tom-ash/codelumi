@@ -3,7 +3,7 @@
 
 #user-edit-account {
   margin: 50px auto;
-  max-width: 600px;
+  max-width: 768px;
   border: 1px solid #D0D3D4;
   padding: $FORM-PADDING-PC;
   background: white;
@@ -17,5 +17,7 @@
       width: 24px;
     }
   }
-
+  .separation-line {
+    margin: 35px 0;
+  }
 }

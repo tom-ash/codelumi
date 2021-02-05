@@ -50,9 +50,11 @@ export function getDerivedStateFromProps(props, state) {
     }
   }
   if (props.item === 'destroy') {
+    const { lang } = props
+
     return {
       item: 'destroy',
-      currentValue: 'Account deletion is irreversible.',
+      currentValue: lang === 'pl' ? 'Usunięcie konta jest nieodwracalne.' : 'Account deletion is irreversible.',
       stage: props.destroyStage
     }
   }

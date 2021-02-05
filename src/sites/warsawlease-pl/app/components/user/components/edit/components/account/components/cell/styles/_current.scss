@@ -1,31 +1,30 @@
 %current {
   position: relative;
-  border: 1px solid $primary-element-color;
-  height: 96px;
   border-radius: 2px;
   .icon {
     position: absolute;
-    width: 48px;
-    height: 94px;
-    padding-top: 30px;
-    padding-left: 8px;
-    background: #EBF5FB;
-    color: $primary-icon-color;
+    width: 35px;
+    svg {
+      width: 15px;
+      fill: $primary-text-transparentized-color;
+      transform: translate(0, -1px);
+    }
   }
   .text {
     position: relative;
-    padding: 8px 8px 8px 8px;
-    margin-left: 48px;
-    height: 96px;
+    margin-left: 35px;
     .title {
-      font-size: 12px;
+      margin-bottom: 12px;
+      font-size: 14px;
       color: $primary-text-transparentized-color;
     }
     .value {
-      margin-top: 6px;
-      font-size: 16px;
+      font-size: 15px;
       overflow-x: auto;
       color: $primary-text-color;
+      svg {
+        width: 20px;
+      }
     }
   }
 }

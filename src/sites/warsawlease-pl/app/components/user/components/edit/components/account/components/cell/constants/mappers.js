@@ -1,5 +1,10 @@
 export const mapStateToProps = (store) => {
+  const {
+    svgs
+  } = store.app
+
   return {
+    svgs,
     lang: store.app.lang,
     businessNameStage: store.user.edit.control.businessNameStage,
     taxNumberStage: store.user.edit.control.taxNumberStage,

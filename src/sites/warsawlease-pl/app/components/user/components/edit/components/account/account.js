@@ -8,6 +8,7 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import Header from '../../../../../support/components/header/header.js'
 import { HEADER_TEXT } from './constants/texts.js'
+import SeparationLine from '../../../../../support/components/separation-line/separation-line.js'
 
 class UserEditAccount extends React.Component {
   constructor(props) {
@@ -24,18 +25,23 @@ class UserEditAccount extends React.Component {
     const headerSvgPathData = svgs && svgs.user_cog
 
     return (
-      <div id='user-edit-account' className='container narrow-container shadowed'>
+      <div id='user-edit-account'>
         <Header viewBox={'0 0 640 512'} tier={1} text={headerText} svgPathData={headerSvgPathData} />
         {accountType == 'private' ?
         <UserEditAccountCell key='firstName' item='firstName' />
         :
-        <React.Fragment>
+        <>
           <UserEditAccountCell key='businessName' item='businessName' />
+          <SeparationLine />
           <UserEditAccountCell key='taxNumber' item='taxNumber' />
-        </React.Fragment>}
+        </>}
+        <SeparationLine />
         <UserEditAccountCell item='phone'/>
+        <SeparationLine />
         <UserEditAccountCell item='email'/>
+        <SeparationLine />
         <UserEditAccountCell item='password'/>
+        <SeparationLine />
         <UserEditAccountCell item='destroy'/>
       </div>
     )

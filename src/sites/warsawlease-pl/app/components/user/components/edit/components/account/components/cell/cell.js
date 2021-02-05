@@ -4,8 +4,8 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { centralManager } from './functions/central-manager'
 import { initialReducerState } from '../../constants/initial-reducer-state'
 import * as lifecycle from './functions/lifecycle'
-
 import { langObjHandler } from '../../../../../../../../functions/lang-handler'
+import SVG from '../../../../../../../support/components/svg/svg.js'
 
 class UserEditAccountCell extends React.Component {
   constructor(props) {
@@ -24,11 +24,14 @@ class UserEditAccountCell extends React.Component {
   }
 
   render() {
+    const { svgs } = this.props
+    const iconPathData = svgs && svgs[this.centralManager('icon')]
+
     return (
       <div className='user-edit-account-cell'>
         <div className='current'>
           <div className='icon'>
-            {this.centralManager('icon')}
+            <SVG pathData={iconPathData} />
           </div>
           <div className='text'>
             <div>
