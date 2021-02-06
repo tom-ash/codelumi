@@ -4,8 +4,7 @@ export const mapStateToProps = (store) => {
   } = store.app
 
   const {
-    authorized,
-    phoneVerified
+    authorized
   } = store.user.authorize.data
 
   const {
@@ -49,7 +48,6 @@ export const mapStateToProps = (store) => {
     calculatedGrossRentAmountPerSqm,
     lang,
     authorized,
-    phoneVerified,
     connecting,    
     success,
     publishing,

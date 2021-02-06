@@ -8,6 +8,6 @@ export function deauthorizeUser() {
   } = this.props
 
   deleteCookie('access_token')
-  resetAuthorizeData({ authorized: false, name: null, phoneVerified: null })
+  resetAuthorizeData({ authorized: false, name: null })
   changeRender({ [USER_SHOW_TRACK]: false })
 }

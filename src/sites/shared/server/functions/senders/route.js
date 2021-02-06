@@ -9,10 +9,13 @@ function routeSender({
   apiUrl, tracks, routeRenders,
   url, route, device,
   appState, renderState, visitorState,
+  accessToken,
   appRenderer
 }) {
+  const { track, lang, initialStateParser } = route
+
   fetch(apiUrl + `/route_data`, {
-    headers: { 'Content-Type': 'application/json', 'Route-Url': url }
+    headers: { 'Content-Type': 'application/json', 'Route-Url': url, 'Track': track, 'Lang': lang, 'Access-Token': accessToken }
   })
   .then(response => {
     if (response.ok) return response.json()
@@ -20,23 +23,17 @@ function routeSender({
     throw new Error('Page Not Found')
   })
   .then(jsonResponse => {
-    const { metaData: unparsedMetaData, initialState: unparsedInitialState, pageShow } = jsonResponse
-
+    const { metaData: unparsedMetaData, initialState: unparsedInitialState, pageShow, user } = jsonResponse
     const svgs = svgsParser(jsonResponse)
-    
-    const { track, lang, initialStateParser } = route
     const metaData = metaDataParser({ ...route, ...unparsedMetaData, lang })
     const app = { ...appState, lang, device, svgs }
     const render = { ...renderState, [track]: true, ...routeRenders[track] }
     const residualState = initialStateParser && initialStateParser(unparsedInitialState) || {}
-
-    let page = {}
-    if (pageShow) {
-      page = { show: { data: pageShow } }
-    }
-  
-    const initialState = { app, render, page, ...residualState }
-    const appAsHtml = appRenderer({ ...initialState, ...visitorState })
+    const page = pageShow ? { show: { data: pageShow } } : {}
+    const { authorized, account_type: accountType, first_name: firstName, business_name: businessName, role } = user
+    const userState = { user: { authorize: { data: { authorized, accountType, firstName, businessName, admin: role === 'admin' } } } }
+    const initialState = { app, render, page, ...visitorState, ...userState, ...residualState }
+    const appAsHtml = appRenderer(initialState)
     const status = 200
 
     res.status(status).send(

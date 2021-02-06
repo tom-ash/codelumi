@@ -31,8 +31,7 @@ export function logIn() {
     changeData({
       accountType: json.accountType,
       authorized: true,
-      name: json.name,
-      phoneVerified: json.phoneVerified
+      name: json.name
     })
     saveTokens.call(this, json.accessToken)
     this.changeRoute(ROOT_TRACK)

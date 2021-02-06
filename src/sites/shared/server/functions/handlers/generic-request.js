@@ -13,6 +13,7 @@ function genericRequestHandler({
   appRenderer
 }) {
   const { cookies, originalUrl, headers } = req
+  const { access_token: accessToken } = cookies
   const url = getPureUrl(originalUrl)
   const route = getRouteByUrl({ url, routes })
   const device = getDevice(headers['user-agent'])
@@ -24,6 +25,7 @@ function genericRequestHandler({
       apiUrl,
       route, url, device, routeRenders, tracks,
       appState, renderState, visitorState,
+      accessToken,
       appRenderer
     })
   )
@@ -33,6 +35,7 @@ function genericRequestHandler({
     apiUrl,
     url, device,
     appState, renderState, tracks, visitorState,
+    accessToken,
     appRenderer
   })
 }

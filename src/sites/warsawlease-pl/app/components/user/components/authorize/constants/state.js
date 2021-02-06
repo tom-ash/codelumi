@@ -13,6 +13,5 @@ export const errors = {
 
 export const data = {
   authorized: false,
-  name: null,
-  phoneVerified: null
+  name: null
 }

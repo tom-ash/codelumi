@@ -45,8 +45,7 @@ export function verify() {
     saveTokens.call(this, accessToken)
     changeAuthorizeData({
       authorized: true,
-      name,
-      phoneVerified: false
+      name
     })
 
     if (creatingAnnouncement) {

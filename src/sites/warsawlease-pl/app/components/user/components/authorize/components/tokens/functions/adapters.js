@@ -21,7 +21,6 @@ export function authorizeUserWithTokens() {
       accountType: json.accountType,
       authorized: true,
       name: json.name,
-      phoneVerified: json.phoneVerified,
       admin: json.admin
     })
   })
