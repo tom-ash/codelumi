@@ -1,119 +1,20 @@
+@import '../../shared/styles/announcement-tile.scss';
+@import '../../../../../../../styles/dimensions.scss';
+
 %list-tile {
-  position: relative;
-  z-index: 3;
-  border-radius: 4px;
-  width: 400px;
-  margin-bottom: 72px;
-
-  min-height: 400px;
-
-  .invisible {
-    opacity: 0.4;
-  }
-  &.last {
-    margin-bottom: 144px;
-  }
-  @media #{$SMALL-PC} {
-    width: 100%;
-  }
+  @extend %announcement-tile;
   .control {
-    position: absolute;
-    background: #F2F3F4;
-    left: 412px;
-    top: 0;
-    bottom: 0;
-    width: 226px;
-    color: #2C3E50;
-    font-size: 16px;
-    padding: 12px 12px 0;
-    @media #{$SMALL-PC} {
-      position: relative;
-      right: 0;
-      left: 0;
-      width: 100%;
-      box-shadow: none;
-      border-top: 1px solid lightgray;
-      height: 200px;
+    border-top: 1px solid $CONTAINER-BORDER-COLOR;
+    padding: 20px;
+    @media #{$LARGE-PHONE} {
+      padding: 10px;
     }
-    .info-pieces {
-      .info {
-        margin-bottom: 12px;
-        font-size: 15px;
-        @media #{$SMALL-PC} {
-          font-size: 14px;
-        }
-      }
+    .info {
+      margin-bottom: 5px;
     }
-    .button-container {
-      height: 32px;
-      position: absolute;
-      left: 12px;
-      right: 12px;
-      @media #{$SMALL-PC} {
-        width: 100px;
-        right: 12px;
-        left: auto;
-      }
-      &.delete {
-        bottom: 12px;
-      }
-      &.hide-show {
-        bottom: 56px;
-      }
-      &.edit {
-        bottom: 100px;
-      }
-      .button {
-        width: 100%;
-        height: 100%;
-        border: none;
-        background: #3498DB;
-        color: white;
-        border-radius: 2.5px;
-        height: 32px;
-        margin-bottom: 12px;
-        font-size: 13px;
-        &:hover {
-          background: transparentize(#3498DB, .2)
-        }
-      }
-    }
-  }
-  .active {
-    width: 100%;
-    line-height: 36px;
-    text-align: center;
-    margin-bottom: 34px;
-    @media #{$SMALL-PC} {
-      text-align: left;
-      font-size: 14px;
-    }
-    .button-container {
-      position: relative;
-      left: 0;
-      right: 0;
-      @media #{$SMALL-PC} {
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        left: auto;
-        width: 100px;
-        font-size: 13px;
-      }
-      .button {
-        width: 100%;
-        border-radius: 2.5px;
-        height: 32px;
-        margin: auto;
-        border: none;
-        font-size: 14px;
-        color: white;
-        $background-color: #DC7633;
-        background: $background-color;
-        &:hover {
-          background: transparentize($background-color, .2)
-        }
-      }
+    .separation-line {
+      max-width: 360px;
+      margin: 10px 0;
     }
   }
 }

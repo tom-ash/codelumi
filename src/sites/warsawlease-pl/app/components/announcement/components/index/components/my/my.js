@@ -55,7 +55,7 @@ class AnnouncementIndexMy extends React.Component {
       <div id='announcement-index-list'>
         {
         this.props.beingDeleted &&
-        <div className='delete'>
+        <div className='destroy'>
           <div className='cover' />
           <div className='monit'>
             <div className='text'>
