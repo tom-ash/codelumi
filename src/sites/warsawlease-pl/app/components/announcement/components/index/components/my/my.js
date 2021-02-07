@@ -14,6 +14,7 @@ import { pageHeaderProvider, sectionHeaderProvider } from '../../../../../../fun
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { ManagedButton } from 'managed-inputs'
+import AppContext from '../../../../../../constants/context.js'
 
 class AnnouncementIndexMy extends React.Component {
   constructor(props) {
@@ -30,8 +31,9 @@ class AnnouncementIndexMy extends React.Component {
     this.destroyManager = managers.destroyManager.bind(this)
     this.cancelDestroyManager = managers.cancelDestroyManager.bind(this)
     this.extend = extend.bind(this)
-    this.changeRoute = changeRoute.bind(this)
   }
+
+  static contextType = AppContext
 
   render() {
     const {
@@ -90,7 +92,6 @@ class AnnouncementIndexMy extends React.Component {
             control={this.controlProvider(announcement, index)}
             control={this.controlProvider(announcement, index)}
             svgs={svgs}
-            changeRoute={this.changeRoute}
             lang={lang}
             changeData={changeAnnouncementShowData}
           />))}

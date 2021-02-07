@@ -4,9 +4,5 @@ import { ManagedLink } from 'managed-inputs'
 export default ({
   buttonManager
 }) => {
-  return (
-    <>
-      <ManagedLink {...buttonManager()} />
-    </>
-  )
+  return <ManagedLink {...buttonManager()} />
 }

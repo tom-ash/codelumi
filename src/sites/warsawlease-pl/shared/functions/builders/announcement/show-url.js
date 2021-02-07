@@ -11,17 +11,15 @@ const WARSAW_URL = {
   [EN]: 'warsaw'
 }
 
-export function buildAnnouncementShowUrl() {
-  const {
-    lang,
-    announcementShowData: {
-      id,
-      category,
-      district
-    }
-  } = this.props
-
-  if (!id) return ''
+export function buildAnnouncementShowUrl({
+  announcementShowData: {
+    id,
+    category,
+    district
+  },
+  lang
+}) {
+  if (!id) return null
 
   return (
     `${id}-${parseCategoryForUrl(category)[lang]}-${FOR_LEASE[lang]}-${WARSAW_URL[lang]}-${parseDistrictForUrl(district)}`

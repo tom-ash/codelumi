@@ -108,7 +108,6 @@ class AnnouncementIndexMap extends React.Component {
               svgs={svgs}
               changeApp={changeApp}
               changeData={changeAnnouncementShowData}
-              changeRoute={this.changeRoute}
             />
           </div>}
         </div>

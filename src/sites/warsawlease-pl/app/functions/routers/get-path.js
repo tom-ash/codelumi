@@ -2,7 +2,7 @@ export function getPath(route) {
   const { pageShowData } = this.props
 
   if (route) {
-    if (route.urlBuilder) return route.urlBuilder.apply(this, [route.lang])
+    if (route.urlBuilder) return route.urlBuilder({ ...this.props, lang: [route.lang] })
     
     return route.url
   }

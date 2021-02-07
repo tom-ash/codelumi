@@ -7,6 +7,7 @@ import styles from './styles/styles.scss'
 import PanelCategories from './components/categories/categories'
 import PanelVisitor from './components/visitor/visitor'
 import { buttonManager } from './components/visitor/managers/managers'
+import AppContext from '../../../../../../constants/context.js'
 
 class AnnouncementIndexPanel extends React.Component {
   constructor(props) {
@@ -15,6 +16,8 @@ class AnnouncementIndexPanel extends React.Component {
     this.langHandler = langObjHandler.bind(this)
     this.buttonManager = buttonManager.bind(this)
   }
+
+  static contextType = AppContext
 
   render() {
     const {
@@ -41,12 +44,9 @@ class AnnouncementIndexPanel extends React.Component {
         <>
           <PanelVisitor
             abc='asdad'
-            changeRoute={this.changeRoute}
             lang={lang}
             langHandler={this.langObjHandler}
             buttonManager={this.buttonManager}
-            // renderMap={renderMap}
-            // changeRoute={this.changeRoute}
           />
         </>
         }
