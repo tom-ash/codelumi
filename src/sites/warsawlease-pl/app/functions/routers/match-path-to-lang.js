@@ -3,10 +3,7 @@ import getRouteByRender from '../../../../shared/shared/functions/getters/route-
 import { getPath } from './get-path'
 
 export function matchPathToLanguage() {
-  const {
-    render,
-    lang
-  } = this.props
+  const { render, lang } = this.props
 
   const route = getRouteByRender({ render, lang: lang === 'pl' ? 'en' : 'pl', routes })
 
