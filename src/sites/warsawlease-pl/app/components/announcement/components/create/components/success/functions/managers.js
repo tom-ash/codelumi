@@ -1,24 +1,19 @@
-import {
-  ANNOUNCEMENT_SHOW_TRACK
-} from '../../../../../../../../shared/constants/tracks/tracks'
+import { ANNOUNCEMENT_SHOW_TRACK } from '../../../../../../../../shared/constants/tracks/tracks'
+import { buildLink } from '../../../../../functions/build-link.js'
 
 export function goToAnnouncementManager() {
-  const {
-    id,
-    category,
-    district,
-    area,
-    langObjHandler,
-    changeAnnouncementShowData,
-    changeRoute
-  } = this.props
+  const { langObjHandler } = this.props
+
+  const { changeRoute } = this.context
+  const href = buildLink(this.props)
+  const track = ANNOUNCEMENT_SHOW_TRACK
 
   return {
     classNames: { container: 'go-to-announcement' },
+    href,
     label: langObjHandler({ pl: 'Pokaż dodane ogłoszenie', en: 'Show the added announcement' }),
     onClick: () => {
-      changeAnnouncementShowData({ id, category, district, area })
-      changeRoute(ANNOUNCEMENT_SHOW_TRACK)
+      changeRoute({ href, track })
     }
   }
 }

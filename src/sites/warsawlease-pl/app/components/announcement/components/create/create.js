@@ -100,7 +100,6 @@ class AnnouncementCreate extends React.Component {
           {step === 'success' &&
           <Success
             changeApp={changeApp}
-            changeRoute={this.changeRoute}
             id={id}
             category={category}
             district={district}
