@@ -30,7 +30,7 @@ export function componentDidMount() {
     }
   });
 
-  if (APP_ENV === 'development') this.matchRenderToRoute({ popState: false })
+  if (APP_ENV === 'development') this.matchStateToRoute({ popState: false })
 
   window.onpopstate = () => this.popStateHandler()
   this.authorizeUserWithTokens()

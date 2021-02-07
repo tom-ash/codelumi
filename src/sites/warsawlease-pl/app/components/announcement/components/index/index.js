@@ -7,7 +7,6 @@ import AnnouncementIndexCatalogue from './components/catalogue/catalogue'
 import AnnouncementIndexMap from './components/map/map'
 const AnnouncementIndexMy = loadable(() => import('./components/my/my'))
 import { buildRequestParameters } from './functions/build-parameters'
-import { fetchAnnouncements } from './functions/fetch-announcements'
 import { paramsReader } from './functions/params-reader'
 import { paramsBuilder } from './functions/params-builder'
 import { langHandler, langObjHandler } from '../../../../functions/lang-handler'
@@ -27,7 +26,6 @@ class AnnouncementIndexSearch extends React.Component {
     this.langHandler = langHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
     this.paramsReader = paramsReader.bind(this)
-    this.fetchAnnouncements = fetchAnnouncements.bind(this)
     this.buildRequestParameters = buildRequestParameters.bind(this)
     this.paramsBuilder = paramsBuilder.bind(this)
     this.parseCurrency = parseCurrency.bind(this)

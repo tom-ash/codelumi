@@ -15,7 +15,7 @@ function routeSender({
   const { track, lang, initialStateParser } = route
 
   fetch(apiUrl + `/route_data`, {
-    headers: { 'Content-Type': 'application/json', 'Route-Url': url, 'Track': track, 'Lang': lang, 'Access-Token': accessToken }
+    headers: { 'Content-Type': 'application/json', 'Type': 'ssr', 'Route-Url': url, 'Track': track, 'Lang': lang, 'Access-Token': accessToken }
   })
   .then(response => {
     if (response.ok) return response.json()

@@ -76,6 +76,7 @@ import { announcementShowMetaDataTitleParser } from '../../functions/parsers/met
 import { announcementShowMetaDataDescriptionParser } from '../../functions/parsers/meta-data/announcement/show/description'
 import { announcementShowMetaDataKeywordsParser } from '../../functions/parsers/meta-data/announcement/show/keywords'
 import { announcementShowMetaDataImageParser } from '../../functions/parsers/meta-data/announcement/show/image'
+import announcementIndexStateSetter from '../../../app/components/announcement/components/index/functions/state-setter.js'
 
 const DEFAULT_IMAGE_PL = `${AWS_S3_URL}/assets/mapa-wynajmu-nieruchomosci-w-warszawie.png`
 
@@ -88,7 +89,8 @@ export default [
     keywords: ROOT_KEYWORDS[PL],
     description: ROOT_DESCRIPTIONS[PL],
     image: DEFAULT_IMAGE_PL,
-    initialStateParser: announcementIndexInitialStateParser
+    initialStateParser: announcementIndexInitialStateParser,
+    stateSetter: announcementIndexStateSetter
   },
   {
     url: ROOT_URLS[EN],
@@ -98,7 +100,8 @@ export default [
     keywords: ROOT_KEYWORDS[EN],
     description: ROOT_DESCRIPTIONS[EN],
     image: DEFAULT_IMAGE_PL,
-    initialStateParser: announcementIndexInitialStateParser
+    initialStateParser: announcementIndexInitialStateParser,
+    stateSetter: announcementIndexStateSetter
   },
   {
     url: VISITOR_PRIVACY_SETTINGS_URLS[PL],
@@ -239,6 +242,7 @@ export default [
     keywords: ANNOUNCEMENT_INDEX_CATALOGUE_KEYWORDS[PL],
     description: ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS[PL],
     initialStateParser: announcementIndexInitialStateParser,
+    stateSetter: announcementIndexStateSetter,
     image: DEFAULT_IMAGE_PL
   },
   {
@@ -249,6 +253,7 @@ export default [
     keywords: ANNOUNCEMENT_INDEX_CATALOGUE_KEYWORDS[EN],
     description: ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS[EN],
     initialStateParser: announcementIndexInitialStateParser,
+    stateSetter: announcementIndexStateSetter,
     image: DEFAULT_IMAGE_PL
   },
   {

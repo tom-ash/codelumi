@@ -48,7 +48,9 @@ export const mapDispatchToProps = (dispatch) => {
     resetAnnouncementIndexControl: value => dispatch({ type: 'announcement/index/control/reset', value }),
     resetAnnouncementIndexInputs: value => dispatch({ type: 'announcement/index/inputs/reset', value }),
     resetAnnouncementIndexData: value => dispatch({ type: 'announcement/index/data/reset', value }),
-    changeControl: value => dispatch({ type: 'scaffold/header/control', value })
+    changeControl: value => dispatch({ type: 'scaffold/header/control', value }),
+    changeAnnouncementIndexData: value => dispatch({ type: 'announcement/index/data', value }),
+    changeAnnouncementIndexControl: value => dispatch({ type: 'announcement/index/control', value })
   }
 }
   

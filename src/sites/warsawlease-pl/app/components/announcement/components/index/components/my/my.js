@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import * as lifecycle from './functions/lifecycle'
 import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
 import * as managers from './functions/managers'
 import Tile from '../../../common/tile/tile.js'
@@ -16,14 +15,12 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { ManagedButton } from 'managed-inputs'
 import { changeRoute } from '../../../../../../functions/routers/change-route'
-import { fetchAnnouncements } from '../../functions/fetch-announcements'
 
 class AnnouncementIndexMy extends React.Component {
   constructor(props) {
     super(props)
     this.langHandler = langHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
-    this.componentDidMount = lifecycle.componentDidMount
     this.controlProvider = controlProvider.bind(this)
     this.buttonProvider = buttonProvider.bind(this)
     this.edit = edit.bind(this)
@@ -35,7 +32,6 @@ class AnnouncementIndexMy extends React.Component {
     this.cancelDestroyManager = managers.cancelDestroyManager.bind(this)
     this.extend = extend.bind(this)
     this.changeRoute = changeRoute.bind(this)
-    this.fetchAnnouncements = fetchAnnouncements.bind(this)
   }
 
   render() {

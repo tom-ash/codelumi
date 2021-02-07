@@ -1,33 +1,26 @@
 import getPureUrl from '../../../../shared/shared/functions/getters/pure-url'
 import getRouteByUrl from '../../../../shared/shared/functions/getters/route-by-url'
 import routes from '../../../shared/constants/routes/routes.js'
-import routeRenders from '../../../shared/constants/routes/renders'
-import renderState from '../../constants/render-state'
+import getRouteData from '../getters/route-data.js'
 import {
   PAGE_TRACK,
   PAGE_SHOW_TRACK,
   PAGE_NOT_FOUND_TRACK
 } from '../../../shared/constants/tracks/tracks'
+import genericRouteStateSetter from '../setters/generic-route-state.js'
 
-export function matchRenderToRoute() {
+function matchStateToRoute() {
   if (typeof window === 'undefined') return
-
-  const {
-    changeApp,
-    changeRender
-  } = this.props
 
   const url = getPureUrl(window.location.pathname)
   const route = getRouteByUrl({ url, routes })
 
   if (route) {
-    const {
-      track,
-      lang
-    } = route
-  
-    changeApp({ lang })
-    changeRender({ ...renderState, [track]: true, ...routeRenders[track] })
+    const { track, lang, stateSetter } = route
+
+    stateSetter && getRouteData(route).then(routeData => stateSetter.call(this, routeData))
+
+    genericRouteStateSetter.call(this, { track, lang })
   } else {
     const {
       changePageShowData
@@ -54,3 +47,5 @@ export function matchRenderToRoute() {
     })
   }
 }
+
+export default matchStateToRoute

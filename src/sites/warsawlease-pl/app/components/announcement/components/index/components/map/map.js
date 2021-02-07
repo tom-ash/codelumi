@@ -14,7 +14,6 @@ import { changeRoute } from '../../../../../../functions/routers/change-route'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { buildRequestParameters } from '../../functions/build-parameters'
-import { fetchAnnouncements } from '../../functions/fetch-announcements'
 
 class AnnouncementIndexMap extends React.Component {
   constructor(props) {
@@ -30,7 +29,6 @@ class AnnouncementIndexMap extends React.Component {
     this.shouldSetUpGoogleMaps = shouldSetUpGoogleMaps.bind(this)
     this.shouldSetUpPins = shouldSetUpPins.bind(this)
     this.changeRoute = changeRoute.bind(this)
-    this.fetchAnnouncements = fetchAnnouncements.bind(this)
     this.buildRequestParameters = buildRequestParameters.bind(this)
   }
 

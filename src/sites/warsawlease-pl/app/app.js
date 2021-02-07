@@ -12,7 +12,7 @@ import { authorizeUserWithTokens } from './components/user/components/authorize/
 import { screenSizeHandler } from './functions/screen-size-handler'
 import { popStateHandler } from './functions/popStateHandler'
 import { langObjHandler } from './functions/lang-handler'
-import { matchRenderToRoute } from './functions/routers/match-state-to-path'
+import matchStateToRoute from './functions/routers/match-state-to-route'
 import { matchRouteToRenderAndLanguage } from './functions/routers/match-path-to-state'
 import { changeRoute } from './functions/routers/change-route'
 import withStyles from 'isomorphic-style-loader/withStyles'
@@ -27,7 +27,7 @@ class App extends React.Component {
     this.screenSizeHandler = screenSizeHandler.bind(this)
     this.popStateHandler = popStateHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
-    this.matchRenderToRoute = matchRenderToRoute.bind(this)
+    this.matchStateToRoute = matchStateToRoute.bind(this)
     this.matchRouteToRenderAndLanguage = matchRouteToRenderAndLanguage.bind(this)
     this.changeRoute = changeRoute.bind(this)
   }

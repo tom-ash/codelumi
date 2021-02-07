@@ -18,16 +18,16 @@ export function fetchAnnouncements() {
     my: true
   }
 
-  changeData({
-    announcements: null,
-    amount: null
-  })
+  // changeData({
+  //   announcements: null,
+  //   amount: null
+  // })
 
-  changeControl({
-    connecting: true,
-    fetch: false,
-    loadPins: false
-  })
+  // changeControl({
+  //   connecting: true,
+  //   fetch: false,
+  //   loadPins: false
+  // })
 
   fetch(apiUrl + `/announcements`, {
     headers
