@@ -4,6 +4,7 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as managers from './functions/managers'
 import { ManagedLink } from 'managed-inputs'
 import { langObjHandler } from '../../../../functions/lang-handler'
+import AppContext from '../../../../constants/context.js'
 
 class Footer extends React.Component {
   constructor(props) {
@@ -15,6 +16,9 @@ class Footer extends React.Component {
     this.privacyPolicyManager = managers.privacyPolicyManager.bind(this)
     this.privacySettingsManager = managers.privacySettingsManager.bind(this)
   }
+
+  static contextType = AppContext
+  
   render() {
     return(
       <div id='footer'>
