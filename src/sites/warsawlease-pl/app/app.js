@@ -16,7 +16,7 @@ import matchStateToRoute from './functions/routers/match-state-to-route'
 import { changeRoute } from './functions/routers/change-route'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import { ThemeContext } from './constants/contexts.js'
+import AppContext from './constants/context.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -40,7 +40,7 @@ class App extends React.Component {
     } = this.props
 
     return (
-      <ThemeContext.Provider value={{ changeRoute: this.changeRoute}}>
+      <AppContext.Provider value={{ changeRoute: this.changeRoute}}>
         <div id='app-container'>
           <Header />
           <div id='app-inner-container'>
@@ -51,7 +51,7 @@ class App extends React.Component {
           </div>
           <Footer />
         </div>
-      </ThemeContext.Provider>
+      </AppContext.Provider>
     )
   }
 }

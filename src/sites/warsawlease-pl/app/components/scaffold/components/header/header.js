@@ -9,7 +9,7 @@ import { matchPathToLanguage } from '../../../../functions/routers/match-path-to
 import { HeaderProvider } from '../../../announcement/components/index/functions/header-provider'
 import { linksProvider } from './functions/links-provider'
 import { RENDER_SIDE_LINKS_TRACK } from './constants/tracks'
-import { ThemeContext } from '../../../../constants/contexts.js'
+import AppContext from '../../../../constants/context.js'
 
 class Header extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class Header extends React.Component {
     this.linksProvider = linksProvider.bind(this)
   }
 
-  static contextType = ThemeContext
+  static contextType = AppContext
 
   render() {
     const {

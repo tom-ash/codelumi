@@ -13,7 +13,7 @@ import { shouldSetUpGoogleMaps, shouldSetUpPins } from '../../../../functions/go
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { buildRequestParameters } from '../../functions/build-parameters'
-import { ThemeContext } from '../../../../../../constants/contexts.js'
+import AppContext from '../../../../../../constants/context.js'
 
 class AnnouncementIndexMap extends React.Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class AnnouncementIndexMap extends React.Component {
     this.buildRequestParameters = buildRequestParameters.bind(this)
   }
 
-  static contextType = ThemeContext
+  static contextType = AppContext
 
   render() {
     const {
