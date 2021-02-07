@@ -1,4 +1,3 @@
-import { fetchAnnouncement } from './fetch-announcement'
 import { viewAnnouncement } from '../../../functions/view-announcement'
 
 export function componentDidMount() {
@@ -11,7 +10,6 @@ export function componentDidMount() {
   if (!fetched) {
     const id = this.props.id || +window.location.pathname.match(/\d+/)[0]
 
-    fetchAnnouncement.call(this, id)
     viewAnnouncement(id)
     changeControl({ fetched: true })
   }

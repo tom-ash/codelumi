@@ -5,14 +5,16 @@ import getRouteData from '../getters/route-data.js'
 import getRouteByTrack from '../../../../shared/shared/functions/getters/route-by-track.js'
 import routes from '../../../shared/constants/routes/routes.js'
 
-export function changeRoute(track) {
-  const { changeApp, changeRender } = this.props
+export function changeRoute({ href, track }) {
+  const { changeRender } = this.props
   const route = getRouteByTrack({ track, routes })
-  const { stateSetter } = route
+  const { url, stateSetter } = route
 
-  stateSetter && getRouteData(route).then(routeData => stateSetter.call(this, routeData))
+  window.history.pushState({}, '', href)
+
+  stateSetter && getRouteData({ url, route }).then(routeData => stateSetter.call(this, routeData))
 
   changeRender({ ...renderState, [track]: true, ...routeRenders[track] })
-  changeApp({ shouldMatchRouteToRenderAndLanguage: true })
+
   instantScroll()
 }

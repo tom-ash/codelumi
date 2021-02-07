@@ -1,5 +1,5 @@
-function getRouteData(route) {
-  const { url, track, lang } = route
+function getRouteData({ url, route }) {
+  const { track, lang } = route
 
   return fetch(API_URL + `/route_data`, {
     headers: { 'Content-Type': 'application/json', 'Route-Url': url, 'Track': track, 'Lang': lang }

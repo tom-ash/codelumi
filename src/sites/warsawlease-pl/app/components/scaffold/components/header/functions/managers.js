@@ -31,6 +31,7 @@ import {
 } from '../../../../../../shared/constants/routes/labels'
 
 export function titleManager() {
+  const { changeRoute } = this.context
   const {
     renderMap,
     renderCatalogue,
@@ -40,10 +41,12 @@ export function titleManager() {
   } = this.props
 
   const title = this.langObjHandler(ROOT_TITLES)
+  const href = this.langObjHandler(ROOT_URLS)
+  const track = ROOT_TRACK
 
   return {
     classNames: { container: '' },
-    href: this.langObjHandler(ROOT_URLS),
+    href,
     hrefLang: this.langObjHandler(LANGS),
     title,
     label: (
@@ -59,28 +62,33 @@ export function titleManager() {
     ),
     onClick: () => {
       if (renderMap && !renderCatalogue) return
-      if (renderCatalogue) return this.changeRoute(ROOT_TRACK)
+      if (renderCatalogue) return changeRoute({ href, track })
 
       resetAnnouncementIndexControl()
       resetAnnouncementIndexInputs()
       resetAnnouncementIndexData()
-      this.changeRoute(ROOT_TRACK)
+      changeRoute({ href, track })
     }
   }
 }
 
 export function addAnnouncementManager() {
+  const { changeRoute } = this.context
+  const href = `${CLIENT_URL}/${this.langObjHandler(ANNOUNCEMENT_CREATE_URLS)}`
+  const track = ANNOUNCEMENT_CREATE_TRACK
+
   return {
     classNames: { container: 'header-link add-announcement' },
-    href: `${CLIENT_URL}/${this.langObjHandler(ANNOUNCEMENT_CREATE_URLS)}`,
+    href,
     hrefLang: this.langObjHandler(LANGS),
     title: this.langObjHandler(ANNOUNCEMENT_CREATE_TITLES),
     label: this.langObjHandler(ANNOUNCEMENT_CREATE_LABELS),
-    onClick: () => this.changeRoute(ANNOUNCEMENT_CREATE_TRACK)
+    onClick: () => changeRoute({ href, track })
   }
 }
 
 export function signUpManager() {
+  const { changeRoute } = this.context
   const title = this.langObjHandler(USER_CREATE_TITLES)
 
   return {
@@ -89,11 +97,12 @@ export function signUpManager() {
     hrefLang: this.langObjHandler(LANGS),
     title,
     label: title,
-    onClick: () => this.changeRoute(USER_CREATE_TRACK)
+    onClick: () => changeRoute(USER_CREATE_TRACK)
   }
 }
 
 export function signInManager() {
+  const { changeRoute } = this.context
   const title = this.langObjHandler(USER_AUTHORIZE_TITLES)
 
   return {
@@ -102,7 +111,7 @@ export function signInManager() {
     hrefLang: this.langObjHandler(LANGS),
     title,
     label: title,
-    onClick: () => this.changeRoute(USER_AUTHORIZE_TRACK)
+    onClick: () => changeRoute(USER_AUTHORIZE_TRACK)
   }
 }
 
@@ -137,7 +146,10 @@ export function languageManager() {
     label: LANG_LABELS[invertedLanguage],
     onClick: () => {
       saveCookie('lang', invertedLanguage, 'oneYear')
-      changeApp({ lang: invertedLanguage, shouldMatchRouteToRenderAndLanguage: true })
+
+      // TODO
+
+      // changeApp({ lang: invertedLanguage })
     }
   }
 }

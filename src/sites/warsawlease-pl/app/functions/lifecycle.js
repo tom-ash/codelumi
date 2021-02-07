@@ -38,19 +38,10 @@ export function componentDidMount() {
 
 export function componentDidUpdate(prevProps) {
   const {
-    shouldMatchRouteToRenderAndLanguage: prevShouldMatchRouteToRender
-  } = prevProps
-
-  const {
     googleAnalyticsLoaded,
     googleAnalyticsLoading,
-    statisticsConsent,
-    shouldMatchRouteToRenderAndLanguage
+    statisticsConsent
   } = this.props
-
-  if (shouldMatchRouteToRenderAndLanguage && !prevShouldMatchRouteToRender) {
-    this.matchRouteToRenderAndLanguage()
-  }
 
   if (!googleAnalyticsLoaded && !googleAnalyticsLoading && statisticsConsent) {
     loadGoogleAnalytics.call(this)

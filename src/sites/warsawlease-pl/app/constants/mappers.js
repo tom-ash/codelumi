@@ -12,8 +12,7 @@ export const mapStateToProps = (store) => {
     path,
     scrollY,
     scripts,
-    svgs,
-    shouldMatchRouteToRenderAndLanguage
+    svgs
   } = store.app
   const {
     statisticsConsent,
@@ -40,7 +39,6 @@ export const mapStateToProps = (store) => {
     lang,
     device,
     path,
-    shouldMatchRouteToRenderAndLanguage,
     scrollY,
     statisticsConsent,
     marketingConsent,
@@ -67,6 +65,8 @@ export const mapDispatchToProps = (dispatch) => {
     changePageShowData: value => dispatch({ type: 'page/show/data', value }),
 
     changeAnnouncementIndexData: value => dispatch({ type: 'announcement/index/data', value }),
-    changeAnnouncementIndexControl: value => dispatch({ type: 'announcement/index/control', value })
+    changeAnnouncementIndexControl: value => dispatch({ type: 'announcement/index/control', value }),
+
+    
   }
 }

@@ -18,7 +18,8 @@ function matchStateToRoute() {
   if (route) {
     const { track, lang, stateSetter } = route
 
-    stateSetter && getRouteData(route).then(routeData => stateSetter.call(this, routeData))
+    stateSetter && getRouteData({ url, route })
+    .then(routeData => stateSetter.call(this, routeData))
 
     genericRouteStateSetter.call(this, { track, lang })
   } else {

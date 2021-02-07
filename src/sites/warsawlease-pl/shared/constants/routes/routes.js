@@ -77,6 +77,7 @@ import { announcementShowMetaDataDescriptionParser } from '../../functions/parse
 import { announcementShowMetaDataKeywordsParser } from '../../functions/parsers/meta-data/announcement/show/keywords'
 import { announcementShowMetaDataImageParser } from '../../functions/parsers/meta-data/announcement/show/image'
 import announcementIndexStateSetter from '../../../app/components/announcement/components/index/functions/state-setter.js'
+import announcementShowRouteDataSetter from '../../../app/components/announcement/components/show/functions/setters/route-data.js'
 
 const DEFAULT_IMAGE_PL = `${AWS_S3_URL}/assets/mapa-wynajmu-nieruchomosci-w-warszawie.png`
 
@@ -280,7 +281,8 @@ export default [
     descriptionParser: announcementShowMetaDataDescriptionParser,
     keywordsParser: announcementShowMetaDataKeywordsParser,
     imageParser: announcementShowMetaDataImageParser,
-    initialStateParser: announcementShowInitialStateParser
+    initialStateParser: announcementShowInitialStateParser,
+    stateSetter: announcementShowRouteDataSetter
   },
   {
     url: ANNOUNCEMENT_SHOW_URLS[EN],
@@ -292,7 +294,8 @@ export default [
     descriptionParser: announcementShowMetaDataDescriptionParser,
     keywordsParser: announcementShowMetaDataKeywordsParser,
     imageParser: announcementShowMetaDataImageParser,
-    initialStateParser: announcementShowInitialStateParser
+    initialStateParser: announcementShowInitialStateParser,
+    stateSetter: announcementShowRouteDataSetter
   },
   {
     url: USER_CREATE_URLS[PL],

@@ -13,10 +13,10 @@ import { screenSizeHandler } from './functions/screen-size-handler'
 import { popStateHandler } from './functions/popStateHandler'
 import { langObjHandler } from './functions/lang-handler'
 import matchStateToRoute from './functions/routers/match-state-to-route'
-import { matchRouteToRenderAndLanguage } from './functions/routers/match-path-to-state'
 import { changeRoute } from './functions/routers/change-route'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import { ThemeContext } from './constants/contexts.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -28,7 +28,6 @@ class App extends React.Component {
     this.popStateHandler = popStateHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
     this.matchStateToRoute = matchStateToRoute.bind(this)
-    this.matchRouteToRenderAndLanguage = matchRouteToRenderAndLanguage.bind(this)
     this.changeRoute = changeRoute.bind(this)
   }
 
@@ -41,16 +40,18 @@ class App extends React.Component {
     } = this.props
 
     return (
-      <div id='app-container'>
-        <Header />
-        <div id='app-inner-container'>
-          {renderVisitor && <Visitor />}
-          {renderAnnouncement && <Announcement />}
-          {renderUser && <User />}
-          {renderPage && <Page />}
+      <ThemeContext.Provider value={{ changeRoute: this.changeRoute}}>
+        <div id='app-container'>
+          <Header />
+          <div id='app-inner-container'>
+            {renderVisitor && <Visitor />}
+            {renderAnnouncement && <Announcement />}
+            {renderUser && <User />}
+            {renderPage && <Page />}
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </ThemeContext.Provider>
     )
   }
 }
