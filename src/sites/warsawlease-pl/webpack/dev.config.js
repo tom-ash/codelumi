@@ -15,11 +15,11 @@ var config = {
   },
   output: {
     path: DIST_DIR,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   devServer: {
     port: 8080,
-    publicPath: '/',
     disableHostCheck: true,
     historyApiFallback: {
       index: '/index.html'
