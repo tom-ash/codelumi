@@ -2,6 +2,7 @@ import { hashPassword } from '../../../../../functions/shared.js'
 import { apiUrl } from '../../../../../../../constants/urls.js'
 import { saveTokens } from '../../../../../functions/token-handlers'
 import { ROOT_TRACK } from '../../../../../../../../shared/constants/tracks/tracks'
+import changeRouteWithHref from '../../../../../../../functions/routers/change-route-with-href.js'
 
 export function logIn() {
   const email = document.getElementById('user-logon-email-address').value.toLowerCase()
@@ -28,13 +29,13 @@ export function logIn() {
     throw new Error('InvalidCredentials')
   })
   .then(json => {
-    changeData({
-      accountType: json.accountType,
-      authorized: true,
-      name: json.name
-    })
+    const track = ROOT_TRACK
+    const { lang } = this.props
+    const { changeRoute } = this.context
+
+    changeData({ accountType: json.accountType, authorized: true, name: json.name })
     saveTokens.call(this, json.accessToken)
-    this.changeRoute(ROOT_TRACK)
+    changeRouteWithHref({ track, lang, changeRoute })
   })
   .catch(() => {
     changeErrors({

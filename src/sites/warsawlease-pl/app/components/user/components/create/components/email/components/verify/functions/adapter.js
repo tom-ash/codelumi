@@ -1,10 +1,6 @@
 import { apiUrl } from '../../../../../../../../../constants/urls.js'
 import { saveTokens } from '../../../../../../../functions/token-handlers'
-import {
-  ROOT_TRACK,
-  USER_TRACK,
-  USER_CREATE_TRACK
-} from '../../../../../../../../../../shared/constants/tracks/tracks'
+import { ROOT_TRACK, USER_TRACK, USER_CREATE_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
 
 export function verify() {
   if (!this.verificationManager('validate')) return

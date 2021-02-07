@@ -45,7 +45,7 @@ class UserAuthorizeEmailPassword extends React.Component {
         </form>
         <div
           className='reset-password'>
-          <span onClick={() => changeRouteWithHref({ track, lang, changeRoute})}>
+          <span onClick={() => changeRouteWithHref({ track, lang, changeRoute })}>
             {this.langObjHandler({ pl: 'Zresetuj hasło', en: 'Reset password' })}
           </span>
         </div>

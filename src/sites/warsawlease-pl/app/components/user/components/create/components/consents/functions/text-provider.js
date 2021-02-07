@@ -1,8 +1,5 @@
 import React from 'react'
-import {
-  VISITOR_TERMS_OF_SERVICE_TRACK,
-  VISITOR_PRIVACY_POLICY_TRACK
-} from '../../../../../../../../shared/constants/tracks/tracks'
+import { VISITOR_TERMS_OF_SERVICE_TRACK, VISITOR_PRIVACY_POLICY_TRACK } from '../../../../../../../../shared/constants/tracks/tracks'
 
 export function textProvider({ pureText }) {
   if (pureText) {
