@@ -67,6 +67,8 @@ export const mapDispatchToProps = (dispatch) => {
     changeAnnouncementIndexData: value => dispatch({ type: 'announcement/index/data', value }),
     changeAnnouncementIndexControl: value => dispatch({ type: 'announcement/index/control', value }),
 
+    changeAnnouncementShowData: value => dispatch({ type: 'announcement/show/data', value })
+
     
   }
 }

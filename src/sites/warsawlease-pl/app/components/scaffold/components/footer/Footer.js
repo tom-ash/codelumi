@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { changeRoute } from '../../../../functions/routers/change-route'
 import * as managers from './functions/managers'
 import { ManagedLink } from 'managed-inputs'
 import { langObjHandler } from '../../../../functions/lang-handler'
@@ -15,7 +14,6 @@ class Footer extends React.Component {
     this.cookiesPolicyManager = managers.cookiesPolicyManager.bind(this)
     this.privacyPolicyManager = managers.privacyPolicyManager.bind(this)
     this.privacySettingsManager = managers.privacySettingsManager.bind(this)
-    this.changeRoute = changeRoute.bind(this)
   }
   render() {
     return(

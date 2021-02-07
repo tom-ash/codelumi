@@ -5,7 +5,6 @@ import { langHandler, langObjHandler } from '../../../../../../../../functions/l
 import { ManagedButton } from 'managed-inputs'
 import { agreeManager, settingsManager } from './functions/manager'
 import { textsProvider } from './functions/texts-provider'
-import { changeRoute } from '../../../../../../../../functions/routers/change-route'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
@@ -17,7 +16,6 @@ class VisitorPrivacyMonit extends React.Component {
     this.settingsManager =  settingsManager.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
     this.textsProvider = textsProvider.bind(this)
-    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {

@@ -1,5 +1,4 @@
 import React from 'react'
-import loadable from '@loadable/component'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { langObjHandler } from '../../../../../../functions/lang-handler'
@@ -8,7 +7,6 @@ import styles from './styles/styles.scss'
 import PanelCategories from './components/categories/categories'
 import PanelVisitor from './components/visitor/visitor'
 import { buttonManager } from './components/visitor/managers/managers'
-import { changeRoute } from '../../../../../../functions/routers/change-route'
 
 class AnnouncementIndexPanel extends React.Component {
   constructor(props) {
@@ -16,7 +14,6 @@ class AnnouncementIndexPanel extends React.Component {
     this.langObjHandler = langObjHandler.bind(this)
     this.langHandler = langObjHandler.bind(this)
     this.buttonManager = buttonManager.bind(this)
-    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {

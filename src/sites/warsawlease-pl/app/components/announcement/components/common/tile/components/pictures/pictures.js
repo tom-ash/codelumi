@@ -6,8 +6,8 @@ import { langObjHandler } from '../../../../../../../functions/lang-handler'
 import { linkManager } from './functions/managers'
 import { buildLink } from '../../../../../functions/build-link'
 import { shareOnFacebook } from '../../../../../functions/share-on-facebook'
-
 import SVG from '../../../../../../support/components/svg/svg'
+import { ThemeContext } from '../../../../../../../constants/contexts.js'
 
 class AnnouncementShowPictures extends React.Component {
   constructor(props) {
@@ -19,6 +19,7 @@ class AnnouncementShowPictures extends React.Component {
     }
   }
 
+  static contextType = ThemeContext
   static getDerivedStateFromProps = getDerivedStateFromProps
 
   render() {

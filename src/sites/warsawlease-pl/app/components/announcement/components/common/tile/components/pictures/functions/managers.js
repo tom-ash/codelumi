@@ -7,18 +7,21 @@ export function linkManager() {
     changeData,
     category,
     district,
-    changeRoute
   } = this.props
+
+  const { changeRoute } = this.context
+  const href = buildLink(this.props)
+  const track = ANNOUNCEMENT_SHOW_TRACK
 
   return {
     classNames: { container: 'link' },
     label: this.langObjHandler({ pl: 'Zobacz szczegóły', en: 'See details'}),
-    href: buildLink(this.props),
+    href,
     hrefLang: this.langObjHandler({ pl: 'pl', en: 'en' }),
     title: this.langObjHandler({ pl: `Ogłoszenie ${id}`, en: `Announcement ${id}` }),
     onClick: () => {
       changeData({ id, category, district })
-      changeRoute(ANNOUNCEMENT_SHOW_TRACK)
+      changeRoute({ href, track })
     }
   }
 }

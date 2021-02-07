@@ -8,7 +8,6 @@ import { langObjHandler } from '../../../../../../functions/lang-handler'
 import * as mappers from './constants/mappers'
 import * as managers from './functions/managers'
 import { textProvider } from './functions/text-provider'
-import { changeRoute } from '../../../../../../functions/routers/change-route'
 
 class UserCreateConsents extends React.Component {
   constructor(props) {
@@ -19,7 +18,6 @@ class UserCreateConsents extends React.Component {
     this.langObjHandler = langObjHandler.bind(this)
     this.termsAndPrivacyConsentValidator = termsAndPrivacyConsentValidator.bind(this)
     this.textProvider = textProvider.bind(this)
-    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {

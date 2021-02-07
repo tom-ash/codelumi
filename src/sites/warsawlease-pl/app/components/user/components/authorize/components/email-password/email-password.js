@@ -6,7 +6,6 @@ import { logIn } from './functions/adapters'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
 import { labelProvider } from '../../../../../../functions/providers/label'
-import { changeRoute } from '../../../../../../functions/routers/change-route'
 import { USER_EDIT_PASSWORD_TRACK } from '../../../../../../../shared/constants/tracks/tracks'
 
 class UserAuthorizeEmailPassword extends React.Component {
@@ -20,7 +19,6 @@ class UserAuthorizeEmailPassword extends React.Component {
     this.langHandler = langHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
-    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {

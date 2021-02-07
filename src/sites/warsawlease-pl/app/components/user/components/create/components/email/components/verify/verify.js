@@ -6,7 +6,6 @@ import { langHandler, langObjHandler } from '../../../../../../../../functions/l
 import { verificationManager, buttonManager } from './functions/manager'
 import { verify } from './functions/adapter'
 import { monit } from './constants/monit'
-import { changeRoute } from '../../../../../../../../functions/routers/change-route'
 
 class UserCreateEmailVerify extends React.Component {
   constructor(props) {
@@ -16,7 +15,6 @@ class UserCreateEmailVerify extends React.Component {
     this.langHandler = langHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
     this.buttonManager = buttonManager.bind(this)
-    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {

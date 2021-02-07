@@ -90,28 +90,32 @@ export function addAnnouncementManager() {
 export function signUpManager() {
   const { changeRoute } = this.context
   const title = this.langObjHandler(USER_CREATE_TITLES)
+  const href = `${CLIENT_URL}/${this.langObjHandler(USER_CREATE_URLS)}`
+  const track = USER_CREATE_TRACK
 
   return {
     classNames: { container: 'header-link' },
-    href: `${CLIENT_URL}/${this.langObjHandler(USER_CREATE_URLS)}`,
+    track,
     hrefLang: this.langObjHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeRoute(USER_CREATE_TRACK)
+    onClick: () => changeRoute({ href, track })
   }
 }
 
 export function signInManager() {
   const { changeRoute } = this.context
   const title = this.langObjHandler(USER_AUTHORIZE_TITLES)
+  const href = `${CLIENT_URL}/${this.langObjHandler(USER_AUTHORIZE_URLS)}`
+  const track = USER_AUTHORIZE_TRACK
 
   return {
     classNames: { container: 'header-link sign-in' },
-    href: `${CLIENT_URL}/${this.langObjHandler(USER_AUTHORIZE_URLS)}`,
+    href,
     hrefLang: this.langObjHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeRoute(USER_AUTHORIZE_TRACK)
+    onClick: () => changeRoute({ href, track })
   }
 }
 
@@ -133,23 +137,22 @@ export function myAccountManager() {
 }
 
 export function languageManager() {
-  const {
-    changeApp,
-    lang
-  } = this.props
-
+  const { changeRoute } = this.context
+  const { changeApp, lang } = this.props
   const invertedLanguage = lang === 'pl' ? 'en' : 'pl'
+  const { route, url } = this.matchPathToLanguage()
+  const href = `${CLIENT_URL}/${url === '/' ? '' : `${url}`}`
+  const { track } = route || {}
 
   return {
     classNames: { container: 'button lang' },
-    href: this.matchPathToLanguage(),
+    href,
     label: LANG_LABELS[invertedLanguage],
     onClick: () => {
       saveCookie('lang', invertedLanguage, 'oneYear')
 
-      // TODO
-
-      // changeApp({ lang: invertedLanguage })
+      changeApp({ lang: invertedLanguage })
+      changeRoute({ href, track })
     }
   }
 }

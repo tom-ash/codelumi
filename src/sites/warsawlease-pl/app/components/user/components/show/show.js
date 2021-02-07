@@ -5,7 +5,6 @@ import { ManagedButton, ManagedLink } from 'managed-inputs'
 import { langObjHandler } from '../../../../functions/lang-handler'
 import * as managers from './functions/managers'
 import { labelProvider } from './functions/label-provider'
-import { changeRoute } from '../../../../functions/routers/change-route'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { USER_SHOW_TRACK } from '../../../../../shared/constants/tracks/tracks'
@@ -19,7 +18,6 @@ class UserShow extends React.Component {
     this.deAuthorizeManager = managers.deAuthorizeManager.bind(this)
     this.langHandler = langObjHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
-    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {

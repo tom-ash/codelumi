@@ -10,5 +10,5 @@ export function matchPathToLanguage() {
 
   const route = getRouteByRender({ render, lang: lang === 'pl' ? 'en' : 'pl', routes })
 
-  return getPath.apply(this, [route])
+  return { route, url: getPath.apply(this, [route]) }
 }

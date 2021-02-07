@@ -11,8 +11,8 @@ export function changeRoute({ href, track }) {
   const { url, stateSetter } = route
 
   window.history.pushState({}, '', href)
-
-  stateSetter && getRouteData({ url, route }).then(routeData => stateSetter.call(this, routeData))
+  
+  stateSetter && getRouteData({ url: href, route }).then(routeData => stateSetter.call(this, routeData))
 
   changeRender({ ...renderState, [track]: true, ...routeRenders[track] })
 

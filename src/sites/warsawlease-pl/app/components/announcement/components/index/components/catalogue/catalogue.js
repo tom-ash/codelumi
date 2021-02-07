@@ -9,7 +9,6 @@ import { parseCurrency } from '../../../../functions/currency-parsers'
 import * as lifecycle from './functions/lifecycle'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import { changeRoute } from '../../../../../../functions/routers/change-route'
 
 class AnnouncementIndexCatalogue extends React.Component {
   constructor(props) {
@@ -21,7 +20,6 @@ class AnnouncementIndexCatalogue extends React.Component {
     this.parseCategoryForUrl = parseCategoryForUrl.bind(this)
     this.parseDistrictForUrl = parseDistrictForUrl.bind(this)
     this.parseCurrency = parseCurrency.bind(this)
-    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {
@@ -32,8 +30,7 @@ class AnnouncementIndexCatalogue extends React.Component {
       svgs,
       indexFullFarthestScrollTop,
       changeApp,
-      changeAnnouncementShowData,
-      changeRoute
+      changeAnnouncementShowData
     } = this.props
 
     return (
@@ -71,7 +68,6 @@ class AnnouncementIndexCatalogue extends React.Component {
                 indexFullFarthestScrollTop={indexFullFarthestScrollTop}
                 changeApp={changeApp}
                 changeData={changeAnnouncementShowData}
-                changeRoute={this.changeRoute}
               />
             )
           })}

@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import * as reduxMappers from './constants/mappers'
 import { ManagedLink } from 'managed-inputs'
 import * as managers from './functions/managers'
-import { changeRoute } from '../../../../functions/routers/change-route'
 import { langObjHandler } from '../../../../functions/lang-handler'
 import { labelProvider } from '../../../user/components/show/functions/label-provider'
 import { matchPathToLanguage } from '../../../../functions/routers/match-path-to-lang'
@@ -24,7 +23,6 @@ class Header extends React.Component {
     this.langObjHandler = langObjHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
     this.matchPathToLanguage = matchPathToLanguage.bind(this)
-    this.changeRoute = changeRoute.bind(this)
     this.linksProvider = linksProvider.bind(this)
   }
 

@@ -10,10 +10,10 @@ import { fetchTile } from './functions/fetch-tile'
 import { drawPins } from './functions/draw-pins'
 import { langObjHandler } from '../../../../../../functions/lang-handler'
 import { shouldSetUpGoogleMaps, shouldSetUpPins } from '../../../../functions/google-map-handler'
-import { changeRoute } from '../../../../../../functions/routers/change-route'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { buildRequestParameters } from '../../functions/build-parameters'
+import { ThemeContext } from '../../../../../../constants/contexts.js'
 
 class AnnouncementIndexMap extends React.Component {
   constructor(props) {
@@ -28,9 +28,10 @@ class AnnouncementIndexMap extends React.Component {
     this.langObjHandler = langObjHandler.bind(this)
     this.shouldSetUpGoogleMaps = shouldSetUpGoogleMaps.bind(this)
     this.shouldSetUpPins = shouldSetUpPins.bind(this)
-    this.changeRoute = changeRoute.bind(this)
     this.buildRequestParameters = buildRequestParameters.bind(this)
   }
+
+  static contextType = ThemeContext
 
   render() {
     const {
