@@ -1,14 +1,12 @@
 import React from 'react'
-import {
-  VISITOR_COOKIES_POLICY_TRACK,
-  VISITOR_PRIVACY_POLICY_TRACK
-} from '../../../../../../../../../../shared/constants/tracks/tracks'
+import { VISITOR_COOKIES_POLICY_TRACK, VISITOR_PRIVACY_POLICY_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
+import changeRouteWithHref from '../../../../../../../../../functions/routers/change-route-with-href.js'
 
 export function textsProvider(text) {
-  const { changeApp } = this.props
-
-  const changeRouteToCookiesPolicy = () => this.changeRoute(VISITOR_COOKIES_POLICY_TRACK)
-  const changeRouteToPrivacyPolicy = () => this.changeRoute(VISITOR_PRIVACY_POLICY_TRACK)
+  const { lang } = this.props
+  const { changeRoute } = this.context
+  const changeRouteToCookiesPolicy = () => changeRouteWithHref({ lang, track: VISITOR_COOKIES_POLICY_TRACK, changeRoute })
+  const changeRouteToPrivacyPolicy = () => changeRouteWithHref({ lang, track: VISITOR_PRIVACY_POLICY_TRACK, changeRoute })
 
   switch (text) {
     case 'cookies':

@@ -11,6 +11,7 @@ import * as managers from './functions/managers'
 import * as adapters from './functions/adapters'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import AppContext from '../../../../constants/context.js'
 
 class UserDestroy extends React.Component {
   constructor(props) {
@@ -25,6 +26,8 @@ class UserDestroy extends React.Component {
     this.langObjHandler = langObjHandler.bind(this)
     this.deauthorizeUser = deauthorizeUser.bind(this)
   }
+
+  static contextType = AppContext
 
   render() {
     return (

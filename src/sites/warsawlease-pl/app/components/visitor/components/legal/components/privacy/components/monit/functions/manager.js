@@ -1,14 +1,9 @@
 import { saveCookie } from '../../../../cookies/functions/save'
-import {
-  VISITOR_PRIVACY_MONIT_TRACK,
-  VISITOR_PRIVACY_SETTINGS_TRACK
-} from '../../../../../../../../../../shared/constants/tracks/tracks'
+import { VISITOR_PRIVACY_MONIT_TRACK, VISITOR_PRIVACY_SETTINGS_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
+import changeRouteWithHref from '../../../../../../../../../functions/routers/change-route-with-href.js'
 
 export function agreeManager() {
-  const {
-    changeSettings,
-    changeRender
-  } = this.props
+  const { changeSettings, changeRender } = this.props
   
   return {
     classNames: { container: 'form-input button agree' },
@@ -26,9 +21,13 @@ export function agreeManager() {
 }
 
 export function settingsManager() {
+  const { lang } = this.props
+  const track = VISITOR_PRIVACY_SETTINGS_TRACK
+  const { changeRoute } = this.context
+
   return {
     classNames: { container: 'form-input button settings' },
     label: this.langHandler('Ustawienia', 'Settings'),
-    onClick: () => this.changeRoute(VISITOR_PRIVACY_SETTINGS_TRACK)
+    onClick: () => changeRouteWithHref({ lang, track, changeRoute })
   }
 }

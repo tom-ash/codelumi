@@ -8,6 +8,7 @@ import { pageHeaderProvider } from '../../../../../../../../functions/header-pro
 import { textsProvider } from './functions/texts-provider'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import AppContext from '../../../../../../../../constants/context.js'
 
 class VisitorPrivacySettings extends React.Component {
   constructor(props) {
@@ -19,6 +20,8 @@ class VisitorPrivacySettings extends React.Component {
     this.pageHeaderProvider = pageHeaderProvider.bind(this)
     this.textsProvider = textsProvider.bind(this)
   }
+
+  static contextType = AppContext
 
   render() {
     return (

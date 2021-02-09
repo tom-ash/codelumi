@@ -1,6 +1,7 @@
 import { apiUrl } from '../../../../../constants/urls.js'
 import { getAccessToken } from '../../authorize/components/tokens/functions/get-tokens'
 import { ROOT_TRACK } from '../../../../../../shared/constants/tracks/tracks'
+import changeRouteWithHref from '../../../../../functions/routers/change-route-with-href.js'
 
 export function sendEmail() {
   const {
@@ -33,10 +34,7 @@ export function sendEmail() {
 }
 
 export function destroy() {
-  const {
-    changeControl,
-    connecting
-  } = this.props
+  const { lang, connecting, changeControl } = this.props
   const verificationCode = document.getElementById('user-destroy-verification').value
 
   if (connecting || !this.verificationManager('validate', verificationCode)) return
@@ -53,7 +51,10 @@ export function destroy() {
   })
   .then(response => {
     if (response.ok) {
-      this.changeRoute(ROOT_TRACK)
+      const { changeRoute } = this.context
+      const track = ROOT_TRACK
+  
+      changeRouteWithHref({ lang, track, changeRoute })
       this.deauthorizeUser()
       return
     }

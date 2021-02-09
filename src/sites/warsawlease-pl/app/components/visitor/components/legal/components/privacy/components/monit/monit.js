@@ -7,6 +7,7 @@ import { agreeManager, settingsManager } from './functions/manager'
 import { textsProvider } from './functions/texts-provider'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import AppContext from '../../../../../../../../constants/context.js'
 
 class VisitorPrivacyMonit extends React.Component {
   constructor(props) {
@@ -17,6 +18,8 @@ class VisitorPrivacyMonit extends React.Component {
     this.langObjHandler = langObjHandler.bind(this)
     this.textsProvider = textsProvider.bind(this)
   }
+
+  static contextType = AppContext
 
   render() {
     const {

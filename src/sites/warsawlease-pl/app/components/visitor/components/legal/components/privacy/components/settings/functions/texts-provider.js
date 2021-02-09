@@ -1,8 +1,12 @@
 import React from 'react'
 import { VISITOR_PRIVACY_POLICY_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
+import changeRouteWithHref from '../../../../../../../../../functions/routers/change-route-with-href.js'
 
 export function textsProvider(text) {
-  const changeRouteToPrivacyPolicy = () => this.changeRoute(VISITOR_PRIVACY_POLICY_TRACK)
+  const { lang } = this.props
+  const { changeRoute } = this.context
+  const track = VISITOR_PRIVACY_POLICY_TRACK
+  const changeRouteToPrivacyPolicy = () => changeRouteWithHref({ lang, track, changeRoute })
 
   switch (text) {
     case 'statistics':
