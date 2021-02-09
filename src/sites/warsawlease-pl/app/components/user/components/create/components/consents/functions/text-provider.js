@@ -1,5 +1,6 @@
 import React from 'react'
 import { VISITOR_TERMS_OF_SERVICE_TRACK, VISITOR_PRIVACY_POLICY_TRACK } from '../../../../../../../../shared/constants/tracks/tracks'
+import changeRouteWithHref from '../../../../../../../functions/routers/change-route-with-href.js'
 
 export function textProvider({ pureText }) {
   if (pureText) {
@@ -11,14 +12,19 @@ export function textProvider({ pureText }) {
     }
   }
 
+  const { changeRoute } = this.context
+  const { lang } = this.props
+
   const changeRouteToTermsOfService = e => {
-    e.stopPropagation()
-    this.changeRoute(VISITOR_TERMS_OF_SERVICE_TRACK)
+    const track = VISITOR_TERMS_OF_SERVICE_TRACK
+
+    changeRouteWithHref({ track, lang, changeRoute })
   }
 
   const changeRouteToPrivacyPolicy = e => {
-    e.stopPropagation()
-    this.changeRoute(VISITOR_PRIVACY_POLICY_TRACK)
+    const track = VISITOR_PRIVACY_POLICY_TRACK
+
+    changeRouteWithHref({ track, lang, changeRoute })
   }
 
   return (

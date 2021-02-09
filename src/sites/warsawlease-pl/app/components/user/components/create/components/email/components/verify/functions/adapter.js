@@ -1,12 +1,14 @@
 import { apiUrl } from '../../../../../../../../../constants/urls.js'
 import { saveTokens } from '../../../../../../../functions/token-handlers'
 import { ROOT_TRACK, USER_TRACK, USER_CREATE_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
+import changeRouteWithHref from '../../../../../../../../../functions/routers/change-route-with-href.js'
 
 export function verify() {
   if (!this.verificationManager('validate')) return
   
   const verificationCode = document.getElementById('user-create-email-verification').value
   const {
+    lang,
     changeAuthorizeData,
     changeControl,
     changeErrors,
@@ -50,7 +52,10 @@ export function verify() {
       return
     }
 
-    this.changeRoute(ROOT_TRACK)
+    const { changeRoute } = this.context
+    const track = ROOT_TRACK
+
+    changeRouteWithHref({ lang, track, changeRoute })
   })
   .catch(() => {
     changeErrors({

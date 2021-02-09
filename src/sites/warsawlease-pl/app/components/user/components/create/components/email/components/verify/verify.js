@@ -6,6 +6,7 @@ import { langHandler, langObjHandler } from '../../../../../../../../functions/l
 import { verificationManager, buttonManager } from './functions/manager'
 import { verify } from './functions/adapter'
 import { monit } from './constants/monit'
+import AppContext from '../../../../../../../../constants/context.js'
 
 class UserCreateEmailVerify extends React.Component {
   constructor(props) {
@@ -16,6 +17,8 @@ class UserCreateEmailVerify extends React.Component {
     this.langObjHandler = langObjHandler.bind(this)
     this.buttonManager = buttonManager.bind(this)
   }
+
+  static contextType = AppContext
 
   render() {
     return (

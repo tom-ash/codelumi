@@ -8,6 +8,7 @@ import { langObjHandler } from '../../../../../../functions/lang-handler'
 import * as mappers from './constants/mappers'
 import * as managers from './functions/managers'
 import { textProvider } from './functions/text-provider'
+import AppContext from '../../../../../../constants/context.js'
 
 class UserCreateConsents extends React.Component {
   constructor(props) {
@@ -19,6 +20,8 @@ class UserCreateConsents extends React.Component {
     this.termsAndPrivacyConsentValidator = termsAndPrivacyConsentValidator.bind(this)
     this.textProvider = textProvider.bind(this)
   }
+
+  static contextType = AppContext
 
   render() {
     return (
