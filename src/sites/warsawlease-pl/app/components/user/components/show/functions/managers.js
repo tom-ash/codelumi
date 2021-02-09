@@ -1,66 +1,51 @@
-import {
-  ANNOUNCEMENT_CREATE_TRACK,
-  ANNOUNCEMENT_INDEX_MY_TRACK,
-  USER_EDIT_TRACK
-} from '../../../../../../shared/constants/tracks/tracks'
-import {
-  ANNOUNCEMENT_CREATE_URLS,
-  ANNOUNCEMENT_INDEX_MY_URLS,
-  USER_EDIT_URLS
-} from '../../../../../../shared/constants/routes/urls'
-import {
-  ANNOUNCEMENT_CREATE_TITLES,
-  ANNOUNCEMENT_INDEX_MY_TITLES,
-  USER_EDIT_TITLES
-} from '../../../../../../shared/constants/routes/titles'
-import {
-  ANNOUNCEMENT_CREATE_LABELS
-} from '../../../../../../shared/constants/routes/labels'
+import { ANNOUNCEMENT_CREATE_TRACK, ANNOUNCEMENT_INDEX_MY_TRACK, USER_EDIT_TRACK } from '../../../../../../shared/constants/tracks/tracks'
+import { ANNOUNCEMENT_CREATE_URLS, ANNOUNCEMENT_INDEX_MY_URLS, USER_EDIT_URLS } from '../../../../../../shared/constants/routes/urls'
+import { ANNOUNCEMENT_CREATE_TITLES, ANNOUNCEMENT_INDEX_MY_TITLES, USER_EDIT_TITLES } from '../../../../../../shared/constants/routes/titles'
+import { ANNOUNCEMENT_CREATE_LABELS } from '../../../../../../shared/constants/routes/labels'
 import { deauthorizeUser } from '../../authorize/functions/adapters'
 import { SIGN_OUT_LABEL } from '../constants/labels'
 
 export function addAnnouncementManager({ hrefLang }) {
+  const { changeRoute } = this.context
+  const href = `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_CREATE_URLS)}`
+  const track = ANNOUNCEMENT_CREATE_TRACK
+
   return {
-    href: `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_CREATE_URLS)}`,
+    href,
     hrefLang,
     title: this.langHandler(ANNOUNCEMENT_CREATE_TITLES),
     label: this.langHandler(ANNOUNCEMENT_CREATE_LABELS),
-    onClick: () => this.changeRoute(ANNOUNCEMENT_CREATE_TRACK)
+    onClick: () => changeRoute({ href, track })
   }
 }
 
 export function myAnnouncementsManager({ hrefLang }) {
-  const {
-    changeAnnouncementIndexData,
-    changeAnnouncementIndexControl
-  } = this.props
+  const href = `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_INDEX_MY_URLS)}`
   const title = this.langHandler(ANNOUNCEMENT_INDEX_MY_TITLES)
+  const track = ANNOUNCEMENT_INDEX_MY_TRACK
+  const { changeRoute } = this.context
 
   return {
-    href: `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_INDEX_MY_URLS)}`,
+    href,
     hrefLang,
     title,
     label: title,
-    onClick: () => {
-      changeAnnouncementIndexData({
-        announcements: null,
-        amount: null
-      })
-      changeAnnouncementIndexControl({ fetch: true })
-      this.changeRoute(ANNOUNCEMENT_INDEX_MY_TRACK)
-    }
+    onClick: () => changeRoute({ href, track })
   }
 }
 
 export function accountManager({ hrefLang }) {
+  const href = `${CLIENT_URL}/${this.langHandler(USER_EDIT_URLS)}`
   const title = this.langHandler(USER_EDIT_TITLES)
+  const track = USER_EDIT_TRACK
+  const { changeRoute } = this.context
 
   return {
-    href: this.langHandler(USER_EDIT_URLS),
+    href,
     hrefLang,
     title,
     label: title,
-    onClick: () => this.changeRoute(USER_EDIT_TRACK)
+    onClick: () => changeRoute({ href, track })
   }
 }
 

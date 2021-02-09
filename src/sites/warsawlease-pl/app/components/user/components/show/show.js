@@ -8,6 +8,7 @@ import { labelProvider } from './functions/label-provider'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { USER_SHOW_TRACK } from '../../../../../shared/constants/tracks/tracks'
+import AppContext from '../../../../constants/context.js'
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -19,6 +20,8 @@ class UserShow extends React.Component {
     this.langHandler = langObjHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
   }
+
+  static contextType = AppContext
 
   render() {
     const {
