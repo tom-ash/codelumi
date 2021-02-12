@@ -1,13 +1,12 @@
 import { showClientServerParams } from '../../../../constants/client-server-params.js'
 
 function announcementShowRouteDataSetter(routeData) {
-    console.log(routeData)
-    const { changeAnnouncementShowData: changeData } = this.props
-    const { initialState: { announcement } } = routeData
-    const clientParams = {}
-    showClientServerParams.map(param => ( clientParams[param.client] = announcement[param.server] ))
+  const { changeAnnouncementShowData: changeData } = this.props
+  const { initialState: { announcement } } = routeData
+  const clientParams = {}
+  showClientServerParams.map(param => ( clientParams[param.client] = announcement[param.server] ))
 
-    changeData(clientParams)
+  changeData(clientParams)
 }
 
 export default announcementShowRouteDataSetter

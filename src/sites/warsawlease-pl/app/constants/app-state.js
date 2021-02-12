@@ -11,7 +11,8 @@ const appState = {
   },
   isMobile: null,
   svgs: {},
-  siteMapLinks: null
+  siteMapLinks: null,
+  routeDataSet: false
 }
 
 export default appState

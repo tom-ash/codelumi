@@ -262,14 +262,16 @@ export default [
     lang: PL,
     track: ANNOUNCEMENT_INDEX_MY_TRACK,
     title: ANNOUNCEMENT_INDEX_MY_TITLES[PL],
-    image: DEFAULT_IMAGE_PL
+    image: DEFAULT_IMAGE_PL,
+    stateSetter: announcementIndexStateSetter
   },
   {
     url: ANNOUNCEMENT_INDEX_MY_URLS[EN],
     lang: EN,
     track: ANNOUNCEMENT_INDEX_MY_TRACK,
     title: ANNOUNCEMENT_INDEX_MY_TITLES[EN],
-    image: DEFAULT_IMAGE_PL
+    image: DEFAULT_IMAGE_PL,
+    stateSetter: announcementIndexStateSetter
   },
   {
     url: ANNOUNCEMENT_SHOW_URLS[PL],

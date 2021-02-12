@@ -5,7 +5,8 @@ import {
 export const mapStateToProps = (store) => {
   const {
     lang,
-    svgs
+    svgs,
+    routeDataSet
   } = store.app
   const {
     [ANNOUNCEMENT_INDEX_MY_TRACK]: renderMy
@@ -37,7 +38,8 @@ export const mapStateToProps = (store) => {
     amount,
     announcements,
     svgs,
-    renderMy
+    renderMy,
+    routeDataSet
   }
 }
     

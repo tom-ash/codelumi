@@ -41,12 +41,15 @@ class AnnouncementIndexMy extends React.Component {
       offset,
       svgs,
       lang,
-      changeAnnouncementShowData
+      changeAnnouncementShowData,
+      routeDataSet
     } = this.props
 
     const toValue = offset + 10 < amount ? offset + 10 : amount
     let whichAnnouncements = `${offset + 1} - ${toValue} ${this.langHandler('z', 'of')}`
     if (offset + 1 === amount) whichAnnouncements = `${offset + 1} ${this.langHandler('z', 'of')}`
+
+    if (!routeDataSet) return null
 
     return (
       <div id='announcement-index-list'>

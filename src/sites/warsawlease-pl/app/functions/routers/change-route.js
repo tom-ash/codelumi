@@ -8,11 +8,11 @@ import routes from '../../../shared/constants/routes/routes.js'
 export function changeRoute({ href, track }) {
   const { changeRender } = this.props
   const route = getRouteByTrack({ track, routes })
-  const { url, stateSetter } = route
+  const { stateSetter } = route
 
   window.history.pushState({}, '', href)
   
-  stateSetter && getRouteData({ url: href, route }).then(routeData => stateSetter.call(this, routeData))
+  stateSetter && getRouteData.call(this, { url: href, route }).then(routeData => stateSetter.call(this, routeData))
 
   changeRender({ ...renderState, [track]: true, ...routeRenders[track] })
 
