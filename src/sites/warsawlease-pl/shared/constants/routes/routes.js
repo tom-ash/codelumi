@@ -78,6 +78,7 @@ import { announcementShowMetaDataKeywordsParser } from '../../functions/parsers/
 import { announcementShowMetaDataImageParser } from '../../functions/parsers/meta-data/announcement/show/image'
 import announcementIndexStateSetter from '../../../app/components/announcement/components/index/functions/state-setter.js'
 import announcementShowRouteDataSetter from '../../../app/components/announcement/components/show/functions/setters/route-data.js'
+import userEditAccountStateSetter from '../../../app/components/user/components/edit/components/account/functions/state-setter.js'
 
 const DEFAULT_IMAGE_PL = `${AWS_S3_URL}/assets/mapa-wynajmu-nieruchomosci-w-warszawie.png`
 
@@ -346,13 +347,15 @@ export default [
     lang: PL,
     track: USER_EDIT_TRACK,
     title: USER_EDIT_TITLES[PL],
-    image: DEFAULT_IMAGE_PL
+    image: DEFAULT_IMAGE_PL,
+    stateSetter: userEditAccountStateSetter
   },
   {
     url: USER_EDIT_URLS[EN],
     lang: EN,
     track: USER_EDIT_TRACK,
     title: USER_EDIT_TITLES[EN],
-    image: DEFAULT_IMAGE_PL
+    image: DEFAULT_IMAGE_PL,
+    stateSetter: userEditAccountStateSetter
   }
 ]

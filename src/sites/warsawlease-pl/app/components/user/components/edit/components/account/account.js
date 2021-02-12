@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { componentDidMount, componentWillUnmount } from './functions/lifecycle'
 import UserEditAccountCell from './components/cell/cell'
 import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
@@ -13,8 +12,6 @@ import SeparationLine from '../../../../../support/components/separation-line/se
 class UserEditAccount extends React.Component {
   constructor(props) {
     super(props)
-    this.componentDidMount = componentDidMount.bind(this)
-    this.componentWillUnmount = componentWillUnmount.bind(this)
     this.langHandler = langHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
   }

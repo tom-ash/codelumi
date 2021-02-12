@@ -63,12 +63,9 @@ export const mapDispatchToProps = (dispatch) => {
     changeRender: value => dispatch({ type: 'render', value }),
     changeUserAuthorizeData: value => dispatch({ type: 'user/authorize/data', value }),
     changePageShowData: value => dispatch({ type: 'page/show/data', value }),
-
     changeAnnouncementIndexData: value => dispatch({ type: 'announcement/index/data', value }),
     changeAnnouncementIndexControl: value => dispatch({ type: 'announcement/index/control', value }),
-
-    changeAnnouncementShowData: value => dispatch({ type: 'announcement/show/data', value })
-
-    
+    changeAnnouncementShowData: value => dispatch({ type: 'announcement/show/data', value }),
+    changeUserEditData: value => dispatch({ type: 'user/edit/data', value })
   }
 }
