@@ -142,17 +142,27 @@ export function languageManager() {
   const invertedLanguage = lang === 'pl' ? 'en' : 'pl'
   const { route, url } = this.matchPathToLanguage()
   const href = `${CLIENT_URL}/${url === '/' ? '' : `${url}`}`
-  const { track } = route || {}
-
+  
   return {
     classNames: { container: 'button lang' },
     href,
     label: LANG_LABELS[invertedLanguage],
     onClick: () => {
       saveCookie('lang', invertedLanguage, 'oneYear')
-
       changeApp({ lang: invertedLanguage })
-      changeRoute({ href, track })
+
+      if (route) {
+        const { track } = route
+        const href = `${CLIENT_URL}/${url}`
+
+        changeRoute({ href, track })
+      } else {
+        const { pageShowData } = this.props
+        const page = pageShowData[invertedLanguage]
+        const href = `${CLIENT_URL}/${page.url}`
+
+        window.history.pushState({}, '', href)
+      }
     }
   }
 }

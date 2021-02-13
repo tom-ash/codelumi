@@ -20,12 +20,15 @@ function matchStateToRoute() {
   const consents = { statisticsConsent, marketingConsent }
   const renderPrivacyMonit = { [VISITOR_PRIVACY_MONIT_TRACK]: anyNull({ statisticsConsent, marketingConsent }) }
 
+  console.log("HERE")
+
+  changeVisitorPrivacySettings(consents)
+
   if (route) {
     const { track, lang } = route
     const stateSetter = route.stateSetter || genericRouteStateSetter
     
     changeApp({ lang })
-    changeVisitorPrivacySettings(consents)
     changeRender({ ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] })
     getRouteData.call(this, { url, route, requestType: 'ssr' }).then(routeData => stateSetter.call(this, { ...route, ...routeData, ...consents}))
   } else {
@@ -44,7 +47,7 @@ function matchStateToRoute() {
     .then(json => {
       changeApp({ lang: json.lang })
       changePageShowData(json)
-      changeRender({ ...renderPrivacyMonit, [PAGE_TRACK]: true, [PAGE_SHOW_TRACK]: true })
+      changeRender({ ...renderState, ...renderPrivacyMonit, [PAGE_TRACK]: true, [PAGE_SHOW_TRACK]: true })
     })
     .catch(error => {
       changeApp({ lang: 'pl' })
