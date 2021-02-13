@@ -1,12 +1,13 @@
+import { VISITOR_PRIVACY_MONIT_TRACK, PAGE_TRACK, PAGE_SHOW_TRACK, PAGE_NOT_FOUND_TRACK } from '../../../shared/constants/tracks/tracks'
+import routes from '../../../shared/constants/routes/routes.js'
+import routeRenders from '../../../shared/constants/routes/renders'
+import renderState from '../../constants/render-state'
 import getPureUrl from '../../../../shared/shared/functions/getters/pure-url'
 import getRouteByUrl from '../../../../shared/shared/functions/getters/route-by-url'
-import routes from '../../../shared/constants/routes/routes.js'
 import getRouteData from '../getters/route-data.js'
-import { PAGE_TRACK, PAGE_SHOW_TRACK, PAGE_NOT_FOUND_TRACK } from '../../../shared/constants/tracks/tracks'
 import genericRouteStateSetter from '../setters/generic-route-state.js'
 import { getCookieValue } from '../cookie-handlers.js'
 import { anyNull } from '../../../shared/functions/helpers/any-null.js'
-import { VISITOR_PRIVACY_MONIT_TRACK } from '../../../shared/constants/tracks/tracks.js'
 
 function matchStateToRoute() {
   if (typeof window === 'undefined') return
@@ -14,15 +15,17 @@ function matchStateToRoute() {
   const { changeApp, changeRender, changeVisitorPrivacySettings } = this.props
   const url = getPureUrl(window.location.pathname)
   const route = getRouteByUrl({ url, routes })
-  const { lang } = route
+  const { track, lang } = route
   const stateSetter = route.stateSetter || genericRouteStateSetter
   const statisticsConsent = getCookieAsBool(getCookieValue('_pdpaf'))
   const marketingConsent = getCookieAsBool(getCookieValue('_pdpsm'))
   const consents = { statisticsConsent, marketingConsent }
+  const renderPrivacyMonit = { [VISITOR_PRIVACY_MONIT_TRACK]: anyNull({ statisticsConsent, marketingConsent }) }
 
   if (route) {
     changeApp({ lang })
     changeVisitorPrivacySettings(consents)
+    changeRender({ ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] })
     getRouteData.call(this, { url, route, requestType: 'ssr' }).then(routeData => stateSetter.call(this, { ...route, ...routeData, ...consents}))
   } else {
     const { changePageShowData } = this.props
@@ -40,8 +43,7 @@ function matchStateToRoute() {
     .then(json => {
       changeApp({ lang: json.lang })
       changePageShowData(json)
-      changeRender({ [PAGE_TRACK]: true, [PAGE_SHOW_TRACK]: true })
-      if (anyNull({ statisticsConsent, marketingConsent })) changeRender({ [VISITOR_PRIVACY_MONIT_TRACK]: true })
+      changeRender({ ...renderPrivacyMonit, [PAGE_TRACK]: true, [PAGE_SHOW_TRACK]: true })
     })
     .catch(error => {
       changeApp({ lang: 'pl' })
