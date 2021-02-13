@@ -18,26 +18,19 @@ export const mapStateToProps = (store) => {
   const { render } = store
   const { authorized } = store.user.authorize.data
   const {
-    data: announcementCreateData
-  } = store.announcement.create
-  const {
-    data: announcementShowData
-  } = store.announcement.show
-  const { data: pageShowData } = store.page.show
+    lang_vers: pageLangUrls
+  } = store.page.show.data
   const { [RENDER_SIDE_LINKS_TRACK]: renderSideLinks } = store.scaffold.header.control
-
 
   return {
     lang,
     authorized,
     device,
-    announcementCreateData,
-    announcementShowData,
     render,
-    pageShowData,
     renderMap,
     renderCatalogue,
-    renderSideLinks
+    renderSideLinks,
+    pageLangUrls
   }
 }
   

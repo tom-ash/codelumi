@@ -1,34 +1,30 @@
 export const mapStateToProps = (store) => {
-  const {
-    lang,
-    svgs
-  } = store.app
+  // const {
+  //   admin: isAdmin
+  // } = store.user.authorize.data
 
-  const {
-    admin: isAdmin
-  } = store.user.authorize.data
+  // const {
+    // name,
+    // url,
+    // body,
+    // style,
+    // title,
+    // description,
+    // keywords,
+    // canonical_url,
+    // picture,
+    // meta,
+    // lang_vers
+  // } = store.page.show
 
-  const {
-    data: postData
-  } = store.page.show
+  // const {
+  //   name: nameCreate
+  // } = store.page.create.inputs
 
-  const {
-    name,
-    standalone
-  } = postData
-
-  const {
-    name: nameCreate
-  } = store.page.create.inputs
+  // console.log(body)
 
   return {
-    name,
-    postData,
-    isAdmin,
-    beingEdited: name === nameCreate,
-    svgs,
-    lang,
-    standalone
+    ...store.page.show.data
   }
 }
   

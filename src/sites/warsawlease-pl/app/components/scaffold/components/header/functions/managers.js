@@ -137,7 +137,7 @@ export function myAccountManager() {
 }
 
 export function languageManager() {
-  const { changeRoute } = this.context
+  const { changeRoute, matchStateToRoute } = this.context
   const { changeApp, lang } = this.props
   const invertedLanguage = lang === 'pl' ? 'en' : 'pl'
   const { route, url } = this.matchPathToLanguage()
@@ -157,11 +157,11 @@ export function languageManager() {
 
         changeRoute({ href, track })
       } else {
-        const { pageShowData } = this.props
-        const page = pageShowData[invertedLanguage]
-        const href = `${CLIENT_URL}/${page.url}`
+        const { pageLangUrls } = this.props
+        const href = `${CLIENT_URL}/${pageLangUrls[invertedLanguage]}`
 
         window.history.pushState({}, '', href)
+        matchStateToRoute({ pathname: url })
       }
     }
   }

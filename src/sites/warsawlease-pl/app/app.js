@@ -40,7 +40,7 @@ class App extends React.Component {
     } = this.props
 
     return (
-      <AppContext.Provider value={{ changeRoute: this.changeRoute}}>
+      <AppContext.Provider value={{ changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute }}>
         <div id='app-container'>
           <Header />
           <div id='app-inner-container'>

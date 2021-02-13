@@ -9,18 +9,16 @@ import genericRouteStateSetter from '../setters/generic-route-state.js'
 import { getCookieValue } from '../cookie-handlers.js'
 import { anyNull } from '../../../shared/functions/helpers/any-null.js'
 
-function matchStateToRoute() {
+function matchStateToRoute({ pathname }) {
   if (typeof window === 'undefined') return
 
   const { changeApp, changeRender, changeVisitorPrivacySettings } = this.props
-  const url = getPureUrl(window.location.pathname)
+  const url = getPureUrl(pathname || window.location.pathname)
   const route = getRouteByUrl({ url, routes })
   const statisticsConsent = getCookieAsBool(getCookieValue('_pdpaf'))
   const marketingConsent = getCookieAsBool(getCookieValue('_pdpsm'))
   const consents = { statisticsConsent, marketingConsent }
   const renderPrivacyMonit = { [VISITOR_PRIVACY_MONIT_TRACK]: anyNull({ statisticsConsent, marketingConsent }) }
-
-  console.log("HERE")
 
   changeVisitorPrivacySettings(consents)
 
@@ -45,8 +43,13 @@ function matchStateToRoute() {
       throw new Error('Page Not Found')
     })
     .then(json => {
-      changeApp({ lang: json.lang })
-      changePageShowData(json)
+      const { page } = json
+      changeApp({ lang: page.lang })
+
+      console.log("HERE!!!!!!")
+      console.log(json)
+
+      changePageShowData(page)
       changeRender({ ...renderState, ...renderPrivacyMonit, [PAGE_TRACK]: true, [PAGE_SHOW_TRACK]: true })
     })
     .catch(error => {

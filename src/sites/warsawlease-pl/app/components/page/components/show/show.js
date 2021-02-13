@@ -14,37 +14,14 @@ class PageShow extends React.Component {
   }
 
   render() {
-    const {
-      postData,
-      isAdmin,
-      beingEdited,
-      changeRender,
-      svgs,
-      standalone
-    } = this.props
-
-    const localizedPostData = this.langObjHandler(postData)
-    if (localizedPostData === null) return null
-
-    const {
-      body
-    } = localizedPostData
-    if (body === undefined) return null
+    const { name } = this.props
+    
+    if (!name) return null
 
     return (
-      <div id='post-show' className={standalone ? 'standalone' : 'attached'}>
-        {isAdmin &&
-        <button onClick={() => changeRender({ create: true })}>
-          <SVG pathData={svgs && svgs.pen} />
-        </ button >
-        }
-        {!beingEdited &&
-        <PageTile
-          name='welcome'
-          body={body}
-        />
-        }
-      </div>
+      <PageTile
+        { ...this.props }
+      />
     )
   }
 }
