@@ -8,16 +8,9 @@ export function componentDidMount() {
 
   loadFonts()
   
-  const {
-    svgs,
-    changeApp
-  } = this.props
+  const { changeApp } = this.props
 
-  if (Object.keys(svgs).length === 0) {
-    getsvgs.apply(this)
-  } else {
-    initializeGoogleMaps.apply(this)
-  }
+  initializeGoogleMaps.apply(this)
 
   if (isMobile()) changeApp({ isMobile: true })
 
@@ -37,35 +30,9 @@ export function componentDidMount() {
 }
 
 export function componentDidUpdate(prevProps) {
-  const {
-    googleAnalyticsLoaded,
-    googleAnalyticsLoading,
-    statisticsConsent
-  } = this.props
+  const { googleAnalyticsLoaded, googleAnalyticsLoading, statisticsConsent } = this.props
 
   if (!googleAnalyticsLoaded && !googleAnalyticsLoading && statisticsConsent) {
     loadGoogleAnalytics.call(this)
   }
-}
-
-function getsvgs() {
-  const {
-    changeApp
-  } = this.props
-
-  fetch(`${API_URL}/svgs`, {
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  .then(response => {
-    if (response.ok) return response.json()
-  })
-  .then(json => {
-    const svgs = {}
-    json.map(svg => {
-      svgs[svg.name] = svg.path_data
-    })
-    changeApp({ svgs }, initializeGoogleMaps.apply(this))
-  })
 }
