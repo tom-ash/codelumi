@@ -8,16 +8,10 @@ const VisitorTermsOfService = loadable(() => import('./components/legal/componen
 const VisitorCookiesPolicy = loadable(() => import('./components/legal/components/cookies/components/policy/policy'))
 const VisitorPrivacyPolicy = loadable(() => import('./components/legal/components/privacy/components/policy/policy'))
 const VisitorPrivacySettings = loadable(() => import('./components/legal/components/privacy/components/settings/settings'))
-import {
-  componentDidMount,
-  componentDidUpdate
-} from './functions/lifecycle'
 
 class Visitor extends React.Component {
   constructor(props) {
     super(props)
-    this.componentDidMount = componentDidMount
-    this.componentDidUpdate = componentDidUpdate
   }
   
   render() {

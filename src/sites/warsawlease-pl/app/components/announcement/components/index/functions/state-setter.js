@@ -1,3 +1,5 @@
+import genericRouteStateSetter from '../../../../../functions/setters/generic-route-state.js'
+
 function announcementIndexStateSetter(routeData) {
   const { initialState: state } = routeData
   const { changeApp, changeAnnouncementIndexData: changeData, changeAnnouncementIndexControl: changeControl } = this.props
@@ -10,8 +12,8 @@ function announcementIndexStateSetter(routeData) {
   if (announcements && announcements[0]) announcements[0].show = true
 
   changeData({ amount, announcements })
-  changeControl({ connecting: false })
   changeApp({ routeDataSet: true })
+  genericRouteStateSetter.call(this, routeData)
 }
 
 export default announcementIndexStateSetter
