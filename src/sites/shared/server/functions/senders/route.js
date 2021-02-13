@@ -3,6 +3,7 @@ import indexRenderer from '../renderers/index.js'
 import exceptionSender from './exception.js'
 import svgsParser from '../../../shared/functions/parsers/svgs.js'
 import metaDataParser from '../../../shared/functions/parsers/meta-data.js'
+import anyNull from '../helpers/any-null.js'
 
 function routeSender({
   res,
@@ -27,7 +28,9 @@ function routeSender({
     const svgs = svgsParser(jsonResponse)
     const metaData = metaDataParser({ ...route, ...unparsedMetaData, lang })
     const app = { ...appState, lang, device, svgs }
-    const render = { ...renderState, [track]: true, ...routeRenders[track] }
+    const { visitor: { legal: { privacy: { settings: { statisticsConsent, marketingConsent }}}}} = visitorState
+    const renderPrivacyMonit = { 'visitor/privacy-monit': anyNull({ statisticsConsent, marketingConsent }) }
+    const render = { ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] }
     const residualState = initialStateParser && initialStateParser(unparsedInitialState) || {}
     const page = pageShow ? { show: { data: pageShow } } : {}
     const { authorized, account_type: accountType, first_name: firstName, business_name: businessName, role } = user
