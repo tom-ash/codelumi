@@ -12,7 +12,8 @@ export const mapStateToProps = (store) => {
     path,
     scrollY,
     scripts,
-    svgs
+    svgs,
+    routeDataSet
   } = store.app
   const {
     statisticsConsent,
@@ -53,7 +54,8 @@ export const mapStateToProps = (store) => {
     renderUser,
     announcementCreateData,
     announcementShowData,
-    pageShowData
+    pageShowData,
+    routeDataSet
   }
 }
   

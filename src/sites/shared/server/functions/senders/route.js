@@ -27,7 +27,7 @@ function routeSender({
     const { metaData: unparsedMetaData, initialState: unparsedInitialState, pageShow, user } = jsonResponse
     const svgs = svgsParser(jsonResponse)
     const metaData = metaDataParser({ ...route, ...unparsedMetaData, lang })
-    const app = { ...appState, lang, device, svgs }
+    const app = { ...appState, lang, device, svgs, routeDataSet: true }
     const { visitor: { legal: { privacy: { settings: { statisticsConsent, marketingConsent }}}}} = visitorState
     const renderPrivacyMonit = { 'visitor/privacy-monit': anyNull({ statisticsConsent, marketingConsent }) }
     const render = { ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] }

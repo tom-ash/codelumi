@@ -8,7 +8,7 @@ export function componentDidMount() {
 
   loadFonts()
   
-  const { changeApp } = this.props
+  const { routeDataSet, changeApp } = this.props
 
   initializeGoogleMaps.apply(this)
 
@@ -21,9 +21,9 @@ export function componentDidMount() {
     if (this.props.scrollY + 100 > scrollY || this.props.scrollY - 100 < scrollY) {
       changeApp({ scrollY: 100 * Math.ceil(scrollY / 100) })
     }
-  });
+  })
 
-  if (APP_ENV === 'development') this.matchStateToRoute({ popState: false })
+  if (!routeDataSet) this.matchStateToRoute({ popState: false })
 
   window.onpopstate = () => this.popStateHandler()
   this.authorizeUserWithTokens()
