@@ -10,6 +10,9 @@ export function changeRoute({ href, track }) {
   const { statisticsConsent, marketingConsent } = this.props
   const consents = { statisticsConsent, marketingConsent }
 
+  console.log('changeRoute')
+  console.log(consents)
+
   window.history.pushState({}, '', href)
   
   stateSetter && getRouteData.call(this, { url: href, route }).then(routeData => stateSetter.call(this, { ...route, ...routeData, ...consents }))

@@ -4,12 +4,11 @@ import { VISITOR_PRIVACY_MONIT_TRACK } from '../../../shared/constants/tracks/tr
 import { anyNull } from '../../../shared/functions/helpers/any-null.js'
 
 function genericRouteStateSetter(routeData) {
-  const { statisticsConsent, marketingConsent, track, lang } = routeData
+  const { statisticsConsent, marketingConsent, track } = routeData
   const { changeRender } = this.props
+  const renderPrivacyMonit = { [VISITOR_PRIVACY_MONIT_TRACK]: anyNull({ statisticsConsent, marketingConsent }) }
 
-  if (anyNull({ statisticsConsent, marketingConsent })) renderState[VISITOR_PRIVACY_MONIT_TRACK] = true
-
-  changeRender({ ...renderState, [track]: true, ...routeRenders[track] })
+  changeRender({ ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] })
 }
 
 export default genericRouteStateSetter
