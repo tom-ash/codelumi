@@ -13,10 +13,19 @@ function routeSender({
   accessToken,
   appRenderer
 }) {
-  const { track, lang, initialStateParser } = route
+  const { track, lang, pageName, initialStateParser } = route
+  const pageNameHeader = pageName ? { 'Page-Name': pageName } : {}
 
   fetch(apiUrl + `/route_data`, {
-    headers: { 'Content-Type': 'application/json', 'Type': 'ssr', 'Route-Url': url, 'Track': track, 'Lang': lang, 'Access-Token': accessToken }
+    headers: {
+      'Content-Type': 'application/json',
+      'Type': 'ssr',
+      'Route-Url': url,
+      'Track': track,
+      'Lang': lang,
+      'Access-Token': accessToken,
+      ...pageNameHeader
+    }
   })
   .then(response => {
     if (response.ok) return response.json()
@@ -24,7 +33,7 @@ function routeSender({
     throw new Error('Page Not Found')
   })
   .then(jsonResponse => {
-    const { metaData: unparsedMetaData, initialState: unparsedInitialState, pageShow, user } = jsonResponse
+    const { metaData: unparsedMetaData, initialState: unparsedInitialState, page: pageShow, user } = jsonResponse
     const svgs = svgsParser(jsonResponse)
     const metaData = metaDataParser({ ...route, ...unparsedMetaData, lang })
     const app = { ...appState, lang, device, svgs, routeDataSet: true }

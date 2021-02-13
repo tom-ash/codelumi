@@ -1,6 +1,6 @@
 function genericRouteStateSetter(routeData) {
-  const { changeApp } = this.props
-  const { svgs } = routeData
+  const { changeApp, changePageShowData } = this.props
+  const { svgs, page } = routeData
   const appState = { routeDataSet: true }
 
   if (svgs) {
@@ -9,6 +9,8 @@ function genericRouteStateSetter(routeData) {
     })
     appState.svgs = svgs
   }
+
+  if (page) changePageShowData(page)
 
   changeApp(appState)
 }

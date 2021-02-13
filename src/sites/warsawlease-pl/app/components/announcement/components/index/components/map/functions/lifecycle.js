@@ -22,18 +22,11 @@ function handleScroll() {
 }
 
 export function componentDidMount() {
-  const {
-    changeControl,
-    changePageShowData,
-    changePostRender
-  } = this.props
+  const { changeControl } = this.props
 
   this.googleMapHandler(() => changeControl({ mapLoaded: true }))
 
   this.miniList.current.addEventListener('scroll', () => handleScroll.apply(this))
-
-  changePageShowData({ name: 'welcome' })
-  changePostRender({ show: true })
 }
 
 export function componentDidUpdate(prevProps) {

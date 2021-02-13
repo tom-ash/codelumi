@@ -91,6 +91,7 @@ export default [
     keywords: ROOT_KEYWORDS[PL],
     description: ROOT_DESCRIPTIONS[PL],
     image: DEFAULT_IMAGE_PL,
+    pageName: 'welcome',
     initialStateParser: announcementIndexInitialStateParser,
     stateSetter: announcementIndexStateSetter
   },
@@ -102,6 +103,7 @@ export default [
     keywords: ROOT_KEYWORDS[EN],
     description: ROOT_DESCRIPTIONS[EN],
     image: DEFAULT_IMAGE_PL,
+    pageName: 'welcome',
     initialStateParser: announcementIndexInitialStateParser,
     stateSetter: announcementIndexStateSetter
   },
@@ -210,7 +212,8 @@ export default [
     title: ANNOUNCEMENT_CREATE_TITLES[PL],
     keywords: ANNOUNCEMENT_CREATE_KEYWORDS[PL],
     description: ANNOUNCEMENT_CREATE_DESCRIPTIONS[PL],
-    image: DEFAULT_IMAGE_PL
+    image: DEFAULT_IMAGE_PL,
+    pageName: 'create_announcement'
   },
   {
     url: ANNOUNCEMENT_CREATE_URLS[EN],

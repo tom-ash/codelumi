@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import * as lifecycle from './functions/lifecycle'
 import PageTile from '../shared/components/tile/tile'
 import { langObjHandler } from '../../../../functions/lang-handler'
 import SVG from '../../../support/components/svg/svg'
@@ -11,8 +10,6 @@ import SVG from '../../../support/components/svg/svg'
 class PageShow extends React.Component {
   constructor(props) {
     super(props)
-    this.componentDidMount = lifecycle.componentDidMount
-    this.componentDidUpdate = lifecycle.componentDidUpdate
     this.langObjHandler = langObjHandler
   }
 

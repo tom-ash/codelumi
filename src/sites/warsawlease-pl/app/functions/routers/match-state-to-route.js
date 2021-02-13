@@ -15,14 +15,15 @@ function matchStateToRoute() {
   const { changeApp, changeRender, changeVisitorPrivacySettings } = this.props
   const url = getPureUrl(window.location.pathname)
   const route = getRouteByUrl({ url, routes })
-  const { track, lang } = route
-  const stateSetter = route.stateSetter || genericRouteStateSetter
   const statisticsConsent = getCookieAsBool(getCookieValue('_pdpaf'))
   const marketingConsent = getCookieAsBool(getCookieValue('_pdpsm'))
   const consents = { statisticsConsent, marketingConsent }
   const renderPrivacyMonit = { [VISITOR_PRIVACY_MONIT_TRACK]: anyNull({ statisticsConsent, marketingConsent }) }
 
   if (route) {
+    const { track, lang } = route
+    const stateSetter = route.stateSetter || genericRouteStateSetter
+    
     changeApp({ lang })
     changeVisitorPrivacySettings(consents)
     changeRender({ ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] })
