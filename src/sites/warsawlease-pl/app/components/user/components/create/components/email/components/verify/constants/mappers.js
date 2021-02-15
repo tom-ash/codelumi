@@ -1,6 +1,6 @@
 import { ANNOUNCEMENT_CREATE_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
 
-export const mapStateToProps = (store) => {
+export const mapStateToProps = store => {
   const { lang } = store.app
   const { [ANNOUNCEMENT_CREATE_TRACK]: creatingAnnouncement } = store.render
   const { connecting } = store.user.create.control

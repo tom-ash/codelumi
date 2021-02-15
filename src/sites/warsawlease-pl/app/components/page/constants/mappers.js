@@ -5,7 +5,7 @@ import {
   PAGE_NOT_FOUND_TRACK
 } from '../../../../shared/constants/tracks/tracks'
 
-export const mapStateToProps = (store) => {
+export const mapStateToProps = store => {
   const {
     name: showName
   } = store.page.show.data

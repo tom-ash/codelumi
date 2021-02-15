@@ -1,4 +1,4 @@
-export const mapStateToProps = (store) => {
+export const mapStateToProps = store => {
   return {
     lang: store.app.lang,
     features: store.announcement.create.inputs.features,

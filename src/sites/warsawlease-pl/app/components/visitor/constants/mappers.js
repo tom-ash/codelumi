@@ -7,7 +7,7 @@ import {
   VISITOR_CONTACT_TRACK
 } from '../../../../shared/constants/tracks/tracks'
 
-export const mapStateToProps = (store) => {
+export const mapStateToProps = store => {
   const {
     lang
   } = store.app

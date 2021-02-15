@@ -1,6 +1,6 @@
 import { ANNOUNCEMENT_CREATE_TRACK } from '../../../../../../shared/constants/tracks/tracks'
 
-export const mapStateToProps = (store) => {
+export const mapStateToProps = store => {
   const {
     lang,
     svgs

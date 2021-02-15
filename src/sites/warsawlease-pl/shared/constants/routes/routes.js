@@ -221,7 +221,8 @@ export default [
     track: ANNOUNCEMENT_CREATE_TRACK,
     title: ANNOUNCEMENT_CREATE_TITLES[EN],
     keywords: ANNOUNCEMENT_CREATE_DESCRIPTIONS[EN],
-    image: DEFAULT_IMAGE_PL
+    image: DEFAULT_IMAGE_PL,
+    pageName: 'create_announcement'
   },
   {
     url: ANNOUNCEMENT_EDIT_URLS[PL],

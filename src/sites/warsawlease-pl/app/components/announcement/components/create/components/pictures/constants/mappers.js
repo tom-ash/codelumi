@@ -1,4 +1,4 @@
-export const mapStateToProps = (store) => {
+export const mapStateToProps = store => {
   return {
     showAnnouncementEdit: store.app.showAnnouncementEdit,
     lang: store.app.lang,

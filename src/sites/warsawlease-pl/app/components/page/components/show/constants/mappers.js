@@ -1,28 +1,4 @@
-export const mapStateToProps = (store) => {
-  // const {
-  //   admin: isAdmin
-  // } = store.user.authorize.data
-
-  // const {
-    // name,
-    // url,
-    // body,
-    // style,
-    // title,
-    // description,
-    // keywords,
-    // canonical_url,
-    // picture,
-    // meta,
-    // lang_vers
-  // } = store.page.show
-
-  // const {
-  //   name: nameCreate
-  // } = store.page.create.inputs
-
-  // console.log(body)
-
+export const mapStateToProps = store => {
   return {
     ...store.page.show.data
   }

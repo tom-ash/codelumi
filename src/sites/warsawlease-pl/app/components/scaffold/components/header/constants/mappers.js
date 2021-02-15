@@ -6,7 +6,7 @@ import {
   RENDER_SIDE_LINKS_TRACK
 } from '../constants/tracks'
 
-export const mapStateToProps = (store) => {
+export const mapStateToProps = store => {
   const {
     lang,
     device

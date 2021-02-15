@@ -14,7 +14,7 @@ export function changeRoute({ href, track }) {
   const stateSetter = route.stateSetter || genericRouteStateSetter
   const renderPrivacyMonit = { [VISITOR_PRIVACY_MONIT_TRACK]: anyNull({ statisticsConsent, marketingConsent }) }
 
-  window.history.pushState({}, '', href)
+  window.history.pushState({}, '', href.replace(/\/\/$/, '/'))
 
   changeRender({ ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] })
   

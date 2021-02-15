@@ -1,4 +1,4 @@
-export const mapStateToProps = (store) => {
+export const mapStateToProps = store => {
   return {
     lang: store.app.lang,
     connecting: store.user.edit.control.emailConnecting,

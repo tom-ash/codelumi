@@ -160,7 +160,7 @@ export function languageManager() {
         const { pageLangUrls } = this.props
         const href = `${CLIENT_URL}/${pageLangUrls[invertedLanguage]}`
 
-        window.history.pushState({}, '', href)
+        // window.history.pushState({}, '', href === '/' ? '' : href)
         matchStateToRoute({ pathname: url })
       }
     }
