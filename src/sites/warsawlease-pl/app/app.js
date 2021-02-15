@@ -13,6 +13,7 @@ import { screenSizeHandler } from './functions/screen-size-handler'
 import { popStateHandler } from './functions/popStateHandler'
 import { langObjHandler } from './functions/lang-handler'
 import matchStateToRoute from './functions/routers/match-state-to-route'
+import matchPathToLanguage from './functions/routers/match-path-to-lang.js'
 import { changeRoute } from './functions/routers/change-route'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
@@ -29,18 +30,16 @@ class App extends React.Component {
     this.langObjHandler = langObjHandler.bind(this)
     this.matchStateToRoute = matchStateToRoute.bind(this)
     this.changeRoute = changeRoute.bind(this)
+    this.matchPathToLanguage = matchPathToLanguage.bind(this)
   }
 
   render() {
-    const {
-      renderPage,
-      renderVisitor,
-      renderAnnouncement,
-      renderUser
-    } = this.props
+    const { renderPage, renderVisitor, renderAnnouncement, renderUser } = this.props
+
+    const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, matchPathToLanguage: this.matchPathToLanguage }
 
     return (
-      <AppContext.Provider value={{ changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute }}>
+      <AppContext.Provider value={AppContextValue}>
         <div id='app-container'>
           <Header />
           <div id='app-inner-container'>

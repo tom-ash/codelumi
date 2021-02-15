@@ -15,7 +15,7 @@ export function buildAnnouncementShowUrl({
   announcementShowData: {
     id,
     category,
-    district
+    district,
   },
   lang
 }) {

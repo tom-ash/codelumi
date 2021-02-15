@@ -5,7 +5,6 @@ import { ManagedLink } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { langObjHandler } from '../../../../functions/lang-handler'
 import { labelProvider } from '../../../user/components/show/functions/label-provider'
-import { matchPathToLanguage } from '../../../../functions/routers/match-path-to-lang'
 import { HeaderProvider } from '../../../announcement/components/index/functions/header-provider'
 import { linksProvider } from './functions/links-provider'
 import { RENDER_SIDE_LINKS_TRACK } from './constants/tracks'
@@ -22,7 +21,6 @@ class Header extends React.Component {
     this.languageManager = managers.languageManager.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
-    this.matchPathToLanguage = matchPathToLanguage.bind(this)
     this.linksProvider = linksProvider.bind(this)
   }
 
