@@ -31,7 +31,7 @@ import {
 } from '../../../../../../shared/constants/routes/labels'
 
 export function titleManager() {
-  const { changeRoute } = this.context
+  const { changeUrl } = this.context
   const {
     renderMap,
     renderCatalogue,
@@ -61,18 +61,18 @@ export function titleManager() {
     ),
     onClick: () => {
       if (renderMap && !renderCatalogue) return
-      if (renderCatalogue) return changeRoute({ href })
+      if (renderCatalogue) return changeUrl({ href })
 
       resetAnnouncementIndexControl()
       resetAnnouncementIndexInputs()
       resetAnnouncementIndexData()
-      changeRoute({ href })
+      changeUrl({ href })
     }
   }
 }
 
 export function addAnnouncementManager() {
-  const { changeRoute } = this.context
+  const { changeUrl } = this.context
   const href = `${CLIENT_URL}/${this.langObjHandler(ANNOUNCEMENT_CREATE_URLS)}`
 
   return {
@@ -81,12 +81,12 @@ export function addAnnouncementManager() {
     hrefLang: this.langObjHandler(LANGS),
     title: this.langObjHandler(ANNOUNCEMENT_CREATE_TITLES),
     label: this.langObjHandler(ANNOUNCEMENT_CREATE_LABELS),
-    onClick: () => changeRoute({ href })
+    onClick: () => changeUrl({ href })
   }
 }
 
 export function signUpManager() {
-  const { changeRoute } = this.context
+  const { changeUrl } = this.context
   const title = this.langObjHandler(USER_CREATE_TITLES)
   const href = `${CLIENT_URL}/${this.langObjHandler(USER_CREATE_URLS)}`
 
@@ -96,12 +96,12 @@ export function signUpManager() {
     hrefLang: this.langObjHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeRoute({ href })
+    onClick: () => changeUrl({ href })
   }
 }
 
 export function signInManager() {
-  const { changeRoute } = this.context
+  const { changeUrl } = this.context
   const title = this.langObjHandler(USER_AUTHORIZE_TITLES)
   const href = `${CLIENT_URL}/${this.langObjHandler(USER_AUTHORIZE_URLS)}`
 
@@ -111,7 +111,7 @@ export function signInManager() {
     hrefLang: this.langObjHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeRoute({ href })
+    onClick: () => changeUrl({ href })
   }
 }
 
@@ -133,7 +133,7 @@ export function myAccountManager() {
 }
 
 export function languageManager() {
-  const { changeRoute, matchPathToLanguage } = this.context
+  const { changeUrl, matchPathToLanguage } = this.context
   const { changeApp, lang, pageLangUrls } = this.props
   const invertedLanguage = lang === 'pl' ? 'en' : 'pl'
   const { route, url } = matchPathToLanguage()
@@ -149,7 +149,7 @@ export function languageManager() {
 
       const href = route ? `${CLIENT_URL}/${url}` : `${CLIENT_URL}/${pageLangUrls[invertedLanguage]}`
 
-      changeRoute({ href, withoutScroll: true })
+      changeUrl({ href, withoutScroll: true })
     }
   }
 }

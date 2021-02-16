@@ -1,10 +1,10 @@
 import getHrefByTrackAndLang from '../../../../shared/shared/functions/getters/href-by-track-and-lang.js'
 import routes from '../../../shared/constants/routes/routes.js'
 
-function changeRouteWithHref({ track, lang, changeRoute }) {
+function changeRouteWithHref({ track, lang, changeUrl }) {
   const href = getHrefByTrackAndLang({ track, lang, routes })
   
-  changeRoute({ href })
+  changeUrl({ href })
 }
 
 export default changeRouteWithHref

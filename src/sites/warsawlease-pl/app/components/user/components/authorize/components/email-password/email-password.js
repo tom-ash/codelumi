@@ -8,7 +8,7 @@ import { langHandler, langObjHandler } from '../../../../../../functions/lang-ha
 import { labelProvider } from '../../../../../../functions/providers/label'
 import { USER_EDIT_PASSWORD_TRACK } from '../../../../../../../shared/constants/tracks/tracks'
 import AppContext from '../../../../../../constants/context.js'
-import changeRouteWithHref from '../../../../../../functions/routers/change-route-with-href.js'
+import changeRouteWithHref from '../../../../../../functions/routers/build-and-change-url.js'
 
 class UserAuthorizeEmailPassword extends React.Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class UserAuthorizeEmailPassword extends React.Component {
   render() {
     const { lang } = this.props
     const track = USER_EDIT_PASSWORD_TRACK
-    const { changeRoute } = this.context
+    const { changeUrl } = this.context
 
     return (
       <div id='user-authorize-email'>
@@ -45,7 +45,7 @@ class UserAuthorizeEmailPassword extends React.Component {
         </form>
         <div
           className='reset-password'>
-          <span onClick={() => changeRouteWithHref({ track, lang, changeRoute })}>
+          <span onClick={() => changeRouteWithHref({ track, lang, changeUrl })}>
             {this.langObjHandler({ pl: 'Zresetuj hasło', en: 'Reset password' })}
           </span>
         </div>

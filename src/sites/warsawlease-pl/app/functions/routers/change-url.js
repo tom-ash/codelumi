@@ -1,6 +1,6 @@
 import { instantScroll } from '../scrollers/instant-scroll'
 
-export function changeRoute({ href, withoutScroll }) {
+export function changeUrl({ href, withoutScroll }) {
   window.history.pushState({}, '', href.replace(/\/\/$/, '/'))
 
   this.matchStateToRoute({})

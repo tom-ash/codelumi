@@ -24,7 +24,7 @@ import {
 } from '../../../../../../shared/constants/routes/titles'
 
 export function cookiesPolicyManager() {
-  const { changeRoute } = this.context
+  const { changeUrl } = this.context
   const title = this.langHandler(VISITOR_COOKIES_POLICY_TITLES)
   const href = `${CLIENT_URL}/${this.langHandler(VISITOR_COOKIES_POLICY_URLS)}`
 
@@ -34,12 +34,12 @@ export function cookiesPolicyManager() {
     hrefLang: this.langHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeRoute({ href })
+    onClick: () => changeUrl({ href })
   }
 }
 
 export function privacySettingsManager() {
-  const { changeRoute } = this.context
+  const { changeUrl } = this.context
   const title = this.langHandler(VISITOR_PRIVACY_SETTINGS_TITLES)
   const href = `${CLIENT_URL}/${this.langHandler(VISITOR_PRIVACY_SETTINGS_URLS)}`
 
@@ -49,12 +49,12 @@ export function privacySettingsManager() {
     hrefLang: this.langHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeRoute({ href })
+    onClick: () => changeUrl({ href })
   }
 }
 
 export function privacyPolicyManager() {
-  const { changeRoute } = this.context
+  const { changeUrl } = this.context
   const title = this.langHandler(VISITOR_PRIVACY_POLICY_TITLES)
   const href = `${CLIENT_URL}/${this.langHandler(VISITOR_PRIVACY_POLICY_URLS)}`
 
@@ -64,12 +64,12 @@ export function privacyPolicyManager() {
     hrefLang: this.langHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeRoute({ href })
+    onClick: () => changeUrl({ href })
   }
 }
 
 export function termsOfServiceManager() {
-  const { changeRoute } = this.context
+  const { changeUrl } = this.context
   const title = this.langHandler(VISITOR_TERMS_OF_SERVICE_TITLES)
   const href = `${CLIENT_URL}/${this.langHandler(VISITOR_TERMS_OF_SERVICE_URLS)}`
 
@@ -79,12 +79,12 @@ export function termsOfServiceManager() {
     hrefLang: this.langHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeRoute({ href })
+    onClick: () => changeUrl({ href })
   }
 }
 
 export function contactManager() {
-  const { changeRoute } = this.context
+  const { changeUrl } = this.context
   const title = this.langHandler(VISITOR_CONTACT_TITLES)
   const href = `${CLIENT_URL}/${this.langHandler(VISITOR_CONTACT_URLS)}`
 
@@ -94,6 +94,6 @@ export function contactManager() {
     hrefLang: this.langHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeRoute({ href })
+    onClick: () => changeUrl({ href })
   }
 }

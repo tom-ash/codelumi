@@ -9,7 +9,7 @@ export function linkManager() {
     district,
   } = this.props
 
-  const { changeRoute } = this.context
+  const { changeUrl } = this.context
   const href = buildLink(this.props)
 
   return {
@@ -20,7 +20,7 @@ export function linkManager() {
     title: this.langObjHandler({ pl: `Ogłoszenie ${id}`, en: `Announcement ${id}` }),
     onClick: () => {
       changeData({ id, category, district })
-      changeRoute({ href })
+      changeUrl({ href })
     }
   }
 }

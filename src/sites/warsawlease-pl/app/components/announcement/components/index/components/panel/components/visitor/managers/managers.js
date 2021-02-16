@@ -4,7 +4,7 @@ import getRouteByTrack from '../../../../../../../../../../../shared/shared/func
 import routes from '../../../../../../../../../../shared/constants/routes/routes.js'
 
 export function buttonManager() {
-  const { changeRoute } = this.context
+  const { changeUrl } = this.context
   const { renderCatalogue } = this.props
   const track = renderCatalogue ? ROOT_TRACK : ANNOUNCEMENT_INDEX_CATALOGUE_TRACK
   const route = getRouteByTrack({ track, routes })
@@ -21,6 +21,6 @@ export function buttonManager() {
         }
       </>
     ),
-    onClick: () => changeRoute({ href })
+    onClick: () => changeUrl({ href })
   }
 }

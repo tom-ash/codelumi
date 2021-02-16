@@ -2,7 +2,7 @@ import { hashPassword } from '../../../../../functions/shared.js'
 import { apiUrl } from '../../../../../../../constants/urls.js'
 import { saveTokens } from '../../../../../functions/token-handlers'
 import { ROOT_TRACK } from '../../../../../../../../shared/constants/tracks/tracks'
-import changeRouteWithHref from '../../../../../../../functions/routers/change-route-with-href.js'
+import changeRouteWithHref from '../../../../../../../functions/routers/build-and-change-url.js'
 
 export function logIn() {
   const email = document.getElementById('user-logon-email-address').value.toLowerCase()
@@ -31,11 +31,11 @@ export function logIn() {
   .then(json => {
     const track = ROOT_TRACK
     const { lang } = this.props
-    const { changeRoute } = this.context
+    const { changeUrl } = this.context
 
     changeData({ accountType: json.accountType, authorized: true, name: json.name })
     saveTokens.call(this, json.accessToken)
-    changeRouteWithHref({ track, lang, changeRoute })
+    changeRouteWithHref({ track, lang, changeUrl })
   })
   .catch(() => {
     changeErrors({

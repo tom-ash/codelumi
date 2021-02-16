@@ -1,7 +1,7 @@
 import { apiUrl } from '../../../../../../../../../constants/urls.js'
 import { saveTokens } from '../../../../../../../functions/token-handlers'
 import { ROOT_TRACK, USER_TRACK, USER_CREATE_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
-import changeRouteWithHref from '../../../../../../../../../functions/routers/change-route-with-href.js'
+import changeRouteWithHref from '../../../../../../../../../functions/routers/build-and-change-url.js'
 
 export function verify() {
   if (!this.verificationManager('validate')) return
@@ -52,10 +52,10 @@ export function verify() {
       return
     }
 
-    const { changeRoute } = this.context
+    const { changeUrl } = this.context
     const track = ROOT_TRACK
 
-    changeRouteWithHref({ lang, track, changeRoute })
+    changeRouteWithHref({ lang, track, changeUrl })
   })
   .catch(() => {
     changeErrors({

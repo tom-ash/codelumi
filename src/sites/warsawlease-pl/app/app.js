@@ -14,7 +14,7 @@ import { popStateHandler } from './functions/popStateHandler'
 import { langObjHandler } from './functions/lang-handler'
 import matchStateToRoute from './functions/routers/match-state-to-route'
 import matchPathToLanguage from './functions/routers/match-path-to-lang.js'
-import { changeRoute } from './functions/routers/change-route'
+import { changeUrl } from './functions/routers/change-url'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import AppContext from './constants/context.js'
@@ -29,14 +29,14 @@ class App extends React.Component {
     this.popStateHandler = popStateHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
     this.matchStateToRoute = matchStateToRoute.bind(this)
-    this.changeRoute = changeRoute.bind(this)
+    this.changeUrl = changeUrl.bind(this)
     this.matchPathToLanguage = matchPathToLanguage.bind(this)
   }
 
   render() {
     const { renderPage, renderVisitor, renderAnnouncement, renderUser } = this.props
 
-    const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, matchPathToLanguage: this.matchPathToLanguage }
+    const AppContextValue = { changeUrl: this.changeUrl, matchStateToRoute: this.matchStateToRoute, matchPathToLanguage: this.matchPathToLanguage }
 
     return (
       <AppContext.Provider value={AppContextValue}>

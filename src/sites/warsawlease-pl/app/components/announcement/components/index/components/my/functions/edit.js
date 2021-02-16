@@ -3,8 +3,8 @@ import { buildAnnouncementEditUrl } from '../../../../../../../../shared/functio
 
 export function edit({ id }) {
   const { lang } = this.props
-  const { changeRoute } = this.context
+  const { changeUrl } = this.context
   const href = `${CLIENT_URL}/${buildAnnouncementEditUrl({ announcementCreateData: { id }, lang })}`
 
-  changeRoute({ href })
+  changeUrl({ href })
 }

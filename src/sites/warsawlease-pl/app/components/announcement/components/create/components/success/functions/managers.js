@@ -4,7 +4,7 @@ import { buildLink } from '../../../../../functions/build-link.js'
 export function goToAnnouncementManager() {
   const { langObjHandler } = this.props
 
-  const { changeRoute } = this.context
+  const { changeUrl } = this.context
   const href = buildLink(this.props)
 
   return {
@@ -12,7 +12,7 @@ export function goToAnnouncementManager() {
     href,
     label: langObjHandler({ pl: 'Pokaż dodane ogłoszenie', en: 'Show the added announcement' }),
     onClick: () => {
-      changeRoute({ href })
+      changeUrl({ href })
     }
   }
 }
