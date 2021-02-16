@@ -6,14 +6,13 @@ export function goToAnnouncementManager() {
 
   const { changeRoute } = this.context
   const href = buildLink(this.props)
-  const track = ANNOUNCEMENT_SHOW_TRACK
 
   return {
     classNames: { container: 'go-to-announcement' },
     href,
     label: langObjHandler({ pl: 'Pokaż dodane ogłoszenie', en: 'Show the added announcement' }),
     onClick: () => {
-      changeRoute({ href, track })
+      changeRoute({ href })
     }
   }
 }

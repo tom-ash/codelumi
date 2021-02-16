@@ -5,7 +5,6 @@ export function edit({ id }) {
   const { lang } = this.props
   const { changeRoute } = this.context
   const href = `${CLIENT_URL}/${buildAnnouncementEditUrl({ announcementCreateData: { id }, lang })}`
-  const track = ANNOUNCEMENT_EDIT_TRACK
 
-  changeRoute({ href, track })
+  changeRoute({ href })
 }

@@ -42,7 +42,6 @@ export function titleManager() {
 
   const title = this.langObjHandler(ROOT_TITLES)
   const href = this.langObjHandler(ROOT_URLS)
-  const track = ROOT_TRACK
 
   return {
     classNames: { container: '' },
@@ -62,12 +61,12 @@ export function titleManager() {
     ),
     onClick: () => {
       if (renderMap && !renderCatalogue) return
-      if (renderCatalogue) return changeRoute({ href, track })
+      if (renderCatalogue) return changeRoute({ href })
 
       resetAnnouncementIndexControl()
       resetAnnouncementIndexInputs()
       resetAnnouncementIndexData()
-      changeRoute({ href, track })
+      changeRoute({ href })
     }
   }
 }
@@ -75,7 +74,6 @@ export function titleManager() {
 export function addAnnouncementManager() {
   const { changeRoute } = this.context
   const href = `${CLIENT_URL}/${this.langObjHandler(ANNOUNCEMENT_CREATE_URLS)}`
-  const track = ANNOUNCEMENT_CREATE_TRACK
 
   return {
     classNames: { container: 'header-link add-announcement' },
@@ -83,7 +81,7 @@ export function addAnnouncementManager() {
     hrefLang: this.langObjHandler(LANGS),
     title: this.langObjHandler(ANNOUNCEMENT_CREATE_TITLES),
     label: this.langObjHandler(ANNOUNCEMENT_CREATE_LABELS),
-    onClick: () => changeRoute({ href, track })
+    onClick: () => changeRoute({ href })
   }
 }
 
@@ -91,15 +89,14 @@ export function signUpManager() {
   const { changeRoute } = this.context
   const title = this.langObjHandler(USER_CREATE_TITLES)
   const href = `${CLIENT_URL}/${this.langObjHandler(USER_CREATE_URLS)}`
-  const track = USER_CREATE_TRACK
 
   return {
     classNames: { container: 'header-link' },
-    track,
+    href,
     hrefLang: this.langObjHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeRoute({ href, track })
+    onClick: () => changeRoute({ href })
   }
 }
 
@@ -107,7 +104,6 @@ export function signInManager() {
   const { changeRoute } = this.context
   const title = this.langObjHandler(USER_AUTHORIZE_TITLES)
   const href = `${CLIENT_URL}/${this.langObjHandler(USER_AUTHORIZE_URLS)}`
-  const track = USER_AUTHORIZE_TRACK
 
   return {
     classNames: { container: 'header-link sign-in' },
@@ -115,7 +111,7 @@ export function signInManager() {
     hrefLang: this.langObjHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeRoute({ href, track })
+    onClick: () => changeRoute({ href })
   }
 }
 
@@ -137,7 +133,7 @@ export function myAccountManager() {
 }
 
 export function languageManager() {
-  const { changeRoute, matchStateToRoute, matchPathToLanguage } = this.context
+  const { changeRoute, matchPathToLanguage } = this.context
   const { changeApp, lang, pageLangUrls } = this.props
   const invertedLanguage = lang === 'pl' ? 'en' : 'pl'
   const { route, url } = matchPathToLanguage()
@@ -154,17 +150,6 @@ export function languageManager() {
       const href = route ? `${CLIENT_URL}/${url}` : `${CLIENT_URL}/${pageLangUrls[invertedLanguage]}`
 
       changeRoute({ href, withoutScroll: true })
-
-      // if (route) {
-      //   const href = `${CLIENT_URL}/${url}`
-
-      //   changeRoute({ href, withoutScroll: true })
-      // } else {
-      //   const { pageLangUrls } = this.props
-      //   const href = `${CLIENT_URL}/${this.props.pageLangUrls[invertedLanguage]}`
-
-      //   changeRoute({ href, withoutScroll: true })
-      // }
     }
   }
 }

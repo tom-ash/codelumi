@@ -4,7 +4,7 @@ import routes from '../../../shared/constants/routes/routes.js'
 function changeRouteWithHref({ track, lang, changeRoute }) {
   const href = getHrefByTrackAndLang({ track, lang, routes })
   
-  changeRoute({ href, track })
+  changeRoute({ href })
 }
 
 export default changeRouteWithHref

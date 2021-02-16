@@ -27,7 +27,6 @@ export function cookiesPolicyManager() {
   const { changeRoute } = this.context
   const title = this.langHandler(VISITOR_COOKIES_POLICY_TITLES)
   const href = `${CLIENT_URL}/${this.langHandler(VISITOR_COOKIES_POLICY_URLS)}`
-  const track = VISITOR_COOKIES_POLICY_TRACK
 
   return {
     classNames: { container: 'link' },
@@ -35,7 +34,7 @@ export function cookiesPolicyManager() {
     hrefLang: this.langHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeRoute({ href, track })
+    onClick: () => changeRoute({ href })
   }
 }
 
@@ -43,7 +42,6 @@ export function privacySettingsManager() {
   const { changeRoute } = this.context
   const title = this.langHandler(VISITOR_PRIVACY_SETTINGS_TITLES)
   const href = `${CLIENT_URL}/${this.langHandler(VISITOR_PRIVACY_SETTINGS_URLS)}`
-  const track = VISITOR_PRIVACY_SETTINGS_TRACK
 
   return {
     classNames: { container: 'link' },
@@ -51,7 +49,7 @@ export function privacySettingsManager() {
     hrefLang: this.langHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeRoute({ href, track })
+    onClick: () => changeRoute({ href })
   }
 }
 
@@ -59,7 +57,6 @@ export function privacyPolicyManager() {
   const { changeRoute } = this.context
   const title = this.langHandler(VISITOR_PRIVACY_POLICY_TITLES)
   const href = `${CLIENT_URL}/${this.langHandler(VISITOR_PRIVACY_POLICY_URLS)}`
-  const track = VISITOR_PRIVACY_POLICY_TRACK
 
   return {
     classNames: { container: 'link' },
@@ -67,7 +64,7 @@ export function privacyPolicyManager() {
     hrefLang: this.langHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeRoute({ href, track })
+    onClick: () => changeRoute({ href })
   }
 }
 
@@ -75,7 +72,6 @@ export function termsOfServiceManager() {
   const { changeRoute } = this.context
   const title = this.langHandler(VISITOR_TERMS_OF_SERVICE_TITLES)
   const href = `${CLIENT_URL}/${this.langHandler(VISITOR_TERMS_OF_SERVICE_URLS)}`
-  const track = VISITOR_TERMS_OF_SERVICE_TRACK
 
   return {
     classNames: { container: 'link' },
@@ -83,7 +79,7 @@ export function termsOfServiceManager() {
     hrefLang: this.langHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeRoute({ href, track })
+    onClick: () => changeRoute({ href })
   }
 }
 
@@ -91,7 +87,6 @@ export function contactManager() {
   const { changeRoute } = this.context
   const title = this.langHandler(VISITOR_CONTACT_TITLES)
   const href = `${CLIENT_URL}/${this.langHandler(VISITOR_CONTACT_URLS)}`
-  const track = VISITOR_CONTACT_TRACK
 
   return {
     classNames: { container: 'link' },
@@ -99,6 +94,6 @@ export function contactManager() {
     hrefLang: this.langHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeRoute({ href, track })
+    onClick: () => changeRoute({ href })
   }
 }

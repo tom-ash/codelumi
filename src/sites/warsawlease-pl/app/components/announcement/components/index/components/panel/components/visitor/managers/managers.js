@@ -21,6 +21,6 @@ export function buttonManager() {
         }
       </>
     ),
-    onClick: () => changeRoute({ href, track })
+    onClick: () => changeRoute({ href })
   }
 }
