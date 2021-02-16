@@ -133,10 +133,10 @@ export function myAccountManager() {
 }
 
 export function languageManager() {
-  const { changeUrl, matchPathToLanguage } = this.context
+  const { changeUrl, matchUrlToLang } = this.context
   const { changeApp, lang, pageLangUrls } = this.props
   const invertedLanguage = lang === 'pl' ? 'en' : 'pl'
-  const { route, url } = matchPathToLanguage()
+  const { route, url } = matchUrlToLang()
   const href = `${CLIENT_URL}/${url === '/' ? '' : `${url}`}`
   
   return {

@@ -28,7 +28,7 @@ class PageShow extends React.Component {
     console.log(href)
 
     window.history.pushState({}, '', href.replace(/\/\/$/, '/'))
-    matchStateToRoute({ pathname: url })
+    matchStateToUrl({ pathname: url })
   }
 
   render() {

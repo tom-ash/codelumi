@@ -23,7 +23,7 @@ export function componentDidMount() {
     }
   })
 
-  if (!routeDataSet) this.matchStateToRoute({ popState: false })
+  if (!routeDataSet) this.matchStateToUrl({ popState: false })
 
   window.onpopstate = () => this.popStateHandler()
   this.authorizeUserWithTokens()

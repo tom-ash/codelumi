@@ -9,7 +9,7 @@ import genericRouteStateSetter from '../setters/generic-route-state.js'
 import { getCookieValue } from '../cookie-handlers.js'
 import { anyNull } from '../../../shared/functions/helpers/any-null.js'
 
-function matchStateToRoute({ pathname }) {
+function matchStateToUrl({ pathname }) {
   if (typeof window === 'undefined') return
 
   const { changeApp, changeRender, changeVisitorPrivacySettings } = this.props
@@ -56,7 +56,7 @@ function matchStateToRoute({ pathname }) {
   }
 }
 
-export default matchStateToRoute
+export default matchStateToUrl
 
 function getCookieAsBool(cookieValue) {
   switch(cookieValue) {

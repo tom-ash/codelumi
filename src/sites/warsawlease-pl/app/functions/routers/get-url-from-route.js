@@ -1,4 +1,4 @@
-export function getPath(route) {
+export function getUrlFromRoute(route) {
   const { pageShowData } = this.props
 
   if (route) {
