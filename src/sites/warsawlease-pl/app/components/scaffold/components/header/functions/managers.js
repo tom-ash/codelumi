@@ -138,7 +138,7 @@ export function myAccountManager() {
 
 export function languageManager() {
   const { changeRoute, matchStateToRoute, matchPathToLanguage } = this.context
-  const { changeApp, lang } = this.props
+  const { changeApp, lang, pageLangUrls } = this.props
   const invertedLanguage = lang === 'pl' ? 'en' : 'pl'
   const { route, url } = matchPathToLanguage()
   const href = `${CLIENT_URL}/${url === '/' ? '' : `${url}`}`
@@ -151,18 +151,20 @@ export function languageManager() {
       saveCookie('lang', invertedLanguage, 'oneYear')
       changeApp({ lang: invertedLanguage })
 
-      if (route) {
-        const { track } = route
-        const href = `${CLIENT_URL}/${url}`
+      const href = route ? `${CLIENT_URL}/${url}` : `${CLIENT_URL}/${pageLangUrls[invertedLanguage]}`
 
-        changeRoute({ href, track })
-      } else {
-        const { pageLangUrls } = this.props
-        const href = `${CLIENT_URL}/${pageLangUrls[invertedLanguage]}`
+      changeRoute({ href, withoutScroll: true })
 
-        // window.history.pushState({}, '', href === '/' ? '' : href)
-        matchStateToRoute({ pathname: url })
-      }
+      // if (route) {
+      //   const href = `${CLIENT_URL}/${url}`
+
+      //   changeRoute({ href, withoutScroll: true })
+      // } else {
+      //   const { pageLangUrls } = this.props
+      //   const href = `${CLIENT_URL}/${this.props.pageLangUrls[invertedLanguage]}`
+
+      //   changeRoute({ href, withoutScroll: true })
+      // }
     }
   }
 }

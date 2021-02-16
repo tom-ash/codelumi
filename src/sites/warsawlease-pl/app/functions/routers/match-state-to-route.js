@@ -46,9 +46,6 @@ function matchStateToRoute({ pathname }) {
       const { page } = json
       changeApp({ lang: page.lang })
 
-      console.log("HERE!!!!!!")
-      console.log(json)
-
       changePageShowData(page)
       changeRender({ ...renderState, ...renderPrivacyMonit, [PAGE_TRACK]: true, [PAGE_SHOW_TRACK]: true })
     })
