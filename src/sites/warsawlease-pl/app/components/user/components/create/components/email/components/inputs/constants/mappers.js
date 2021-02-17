@@ -35,7 +35,7 @@ export const mapStateToProps = store => {
   }
 }
   
-export const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = dispatch => {
   return {
     changeControl: value => dispatch({ type: 'user/create/control', value }),
     changeInputs: value => dispatch({ type: 'user/create/inputs', value }),

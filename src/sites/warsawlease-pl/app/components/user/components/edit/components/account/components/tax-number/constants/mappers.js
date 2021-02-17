@@ -8,7 +8,7 @@ export const mapStateToProps = store => {
   }
 }
     
-export const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = dispatch => {
   return {
     changeControl: value => dispatch({ type: 'user/edit/control', value }),
     changeData: value => dispatch({ type: 'user/edit/data', value }),

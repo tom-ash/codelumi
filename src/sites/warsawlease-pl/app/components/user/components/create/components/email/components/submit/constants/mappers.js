@@ -12,7 +12,7 @@ export const mapStateToProps = store => {
   }
 }
 
-export const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = dispatch => {
   return {
     changeAuthorized: value => dispatch({ type: 'user/authorize/authorized', value }),
     changeControl: value => dispatch({ type: 'user/create/control', value }),

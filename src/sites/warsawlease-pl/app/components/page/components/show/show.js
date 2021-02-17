@@ -25,8 +25,6 @@ class PageShow extends React.Component {
 
     const href = `${CLIENT_URL}/${this.langObjHandler(EDIT_PAGE_URL)}/${url}`
 
-    console.log(href)
-
     window.history.pushState({}, '', href.replace(/\/\/$/, '/'))
     matchStateToUrl({ pathname: url })
   }

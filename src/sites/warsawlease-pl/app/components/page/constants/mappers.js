@@ -1,5 +1,6 @@
 import {
   PAGE_CREATE_TRACK,
+  PAGE_EDIT_TRACK,
   PAGE_INDEX_MAP_TRACK,
   PAGE_SHOW_TRACK,
   PAGE_NOT_FOUND_TRACK
@@ -12,6 +13,7 @@ export const mapStateToProps = store => {
 
   const {
     [PAGE_CREATE_TRACK]: renderCreate,
+    [PAGE_EDIT_TRACK]: renderEdit,
     [PAGE_INDEX_MAP_TRACK]: renderIndexMap,
     [PAGE_SHOW_TRACK]: renderShow,
     [PAGE_NOT_FOUND_TRACK]: renderNotFound
@@ -19,6 +21,7 @@ export const mapStateToProps = store => {
 
   return {
     renderCreate,
+    renderEdit,
     renderIndexMap,
     renderShow,
     renderNotFound,
@@ -26,7 +29,7 @@ export const mapStateToProps = store => {
   }
 }
   
-export const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = dispatch => {
   return {
     changeShowData: value => dispatch({ type: 'page/show/data', value })
   }

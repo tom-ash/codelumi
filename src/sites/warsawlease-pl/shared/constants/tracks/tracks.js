@@ -1,6 +1,7 @@
 export const ROOT_TRACK = 'root'
 export const PAGE_TRACK = 'page'
 export const PAGE_CREATE_TRACK = 'page/create'
+export const PAGE_EDIT_TRACK = 'page/edit'
 export const PAGE_INDEX_MAP_TRACK = 'page/index/map'
 export const PAGE_SHOW_TRACK = 'page/show'
 export const PAGE_NOT_FOUND_TRACK = 'page/not-found'

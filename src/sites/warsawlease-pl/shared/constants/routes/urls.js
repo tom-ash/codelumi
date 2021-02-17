@@ -38,6 +38,11 @@ export const PAGE_CREATE_URLS = {
   [EN]: 'add-page'
 }
 
+export const PAGE_EDIT_URLS = {
+  [PL]: /^edytuj-strone\/.+$/,
+  [EN]: /^edit-page\/.+$/
+}
+
 export const PAGE_INDEX_MAP_URLS = {
   [PL]: 'mapa-stron',
   [EN]: 'pages-map'

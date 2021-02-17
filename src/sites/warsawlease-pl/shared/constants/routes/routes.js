@@ -10,6 +10,7 @@ import {
   VISITOR_TERMS_OF_SERVICE_URLS,
   VISITOR_CONTACT_URLS,
   PAGE_CREATE_URLS,
+  PAGE_EDIT_URLS,
   PAGE_INDEX_MAP_URLS,
   ANNOUNCEMENT_CREATE_URLS,
   ANNOUNCEMENT_EDIT_URLS,
@@ -29,6 +30,7 @@ import {
   VISITOR_TERMS_OF_SERVICE_TRACK,
   VISITOR_CONTACT_TRACK,
   PAGE_CREATE_TRACK,
+  PAGE_EDIT_TRACK,
   PAGE_INDEX_MAP_TRACK,
   ANNOUNCEMENT_CREATE_TRACK,
   ANNOUNCEMENT_EDIT_TRACK,
@@ -76,6 +78,7 @@ import { announcementShowMetaDataTitleParser } from '../../functions/parsers/met
 import { announcementShowMetaDataDescriptionParser } from '../../functions/parsers/meta-data/announcement/show/description'
 import { announcementShowMetaDataKeywordsParser } from '../../functions/parsers/meta-data/announcement/show/keywords'
 import { announcementShowMetaDataImageParser } from '../../functions/parsers/meta-data/announcement/show/image'
+import pageCreateStateSetter from '../../../app/components/page/components/create/functions/state-setter.js'
 import announcementIndexStateSetter from '../../../app/components/announcement/components/index/functions/state-setter.js'
 import announcementShowRouteDataSetter from '../../../app/components/announcement/components/show/functions/setters/route-data.js'
 import userEditAccountStateSetter from '../../../app/components/user/components/edit/components/account/functions/state-setter.js'
@@ -190,6 +193,22 @@ export default [
     track: PAGE_CREATE_TRACK,
     title: PAGE_CREATE_TITLES[EN],
     image: DEFAULT_IMAGE_PL
+  },
+  {
+    url: PAGE_EDIT_URLS[PL],
+    lang: PL,
+    track: PAGE_EDIT_TRACK,
+    title: PAGE_CREATE_TITLES[PL],
+    image: DEFAULT_IMAGE_PL,
+    stateSetter: pageCreateStateSetter,
+  },
+  {
+    url: PAGE_EDIT_URLS[EN],
+    lang: EN,
+    track: PAGE_EDIT_TRACK,
+    title: PAGE_CREATE_TITLES[EN],
+    image: DEFAULT_IMAGE_PL,
+    stateSetter: pageCreateStateSetter,
   },
   {
     url: PAGE_INDEX_MAP_URLS[PL],

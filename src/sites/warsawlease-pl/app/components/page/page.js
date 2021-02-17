@@ -16,6 +16,7 @@ class Page extends React.Component {
   render() {
     const {
       renderCreate,
+      renderEdit,
       renderShow,
       renderNotFound
     } = this.props
@@ -23,7 +24,7 @@ class Page extends React.Component {
     return (
       <div id='post'>
         {renderShow && <PageShow />}
-        {renderCreate && <PageCreate />}
+        {(renderCreate || renderEdit) && <PageCreate />}
         {renderNotFound && <PageNotFound />}
       </div>
     )

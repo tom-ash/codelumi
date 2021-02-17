@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { ManagedText, ManagedTextarea, ManagedButton } from 'managed-inputs'
-import { componentDidMount } from './functions/lifecycle'
 import * as managers from './functions/managers'
 import { save } from './functions/save'
 import { langObjHandler } from '../../../../functions/lang-handler'
@@ -13,7 +12,6 @@ import PageTile from '../shared/components/tile/tile'
 class PageCreate extends React.Component {
   constructor(props) {
     super(props)
-    this.componentDidMount = componentDidMount
     this.langObjHandler = langObjHandler.bind(this)
     this.nameManager = managers.nameManager.bind(this)
     this.urlManager = managers.urlManager.bind(this)
@@ -31,41 +29,28 @@ class PageCreate extends React.Component {
   render() {
     const {
       name,
-      inputs
+      body
     } = this.props
-
-    const localizedInputs = this.langObjHandler(inputs)
-    let body
-    if (localizedInputs === null) {
-      body = {}
-    } else {
-      body = localizedInputs.body
-    }
-
-    let parsedBody
-    try {
-      parsedBody = JSON.parse(body)
-    } catch {}
 
     return (
       <div className='post-create'>
         <PageTile
           name={name}
-          body={parsedBody}
+          body={body}
         />
         <form>
-          <ManagedText {...this.nameManager()} />
-          <ManagedText {...this.urlManager()} />
-          <div className='separation-line' />
           <ManagedTextarea {...this.bodyManager()} />
           <div className='separation-line' />
           <ManagedText {...this.titleManager()} />
           <ManagedTextarea {...this.descriptionManager()} />
           <ManagedTextarea {...this.keywordsManager()} />
-          <ManagedText {...this.canonicalUrlManager()} />
           <ManagedText {...this.pictureManager()} />
           <div className='separation-line' />
           <ManagedTextarea {...this.metaManager()} />
+          <div className='separation-line' />
+          <ManagedText {...this.urlManager()} />
+          <ManagedText {...this.canonicalUrlManager()} />
+          <ManagedText {...this.nameManager()} />
           <div className='separation-line' />
           <ManagedButton {...this.saveManager()} />
         </form>
