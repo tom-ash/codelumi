@@ -12,7 +12,7 @@ function announcementIndexStateSetter(routeData) {
   if (announcements && announcements[0]) announcements[0].show = true
 
   changeData({ amount, announcements })
-  changeApp({ routeDataSet: true })
+  changeApp({ urlDataSynced: true })
   genericRouteStateSetter.call(this, routeData)
 }
 

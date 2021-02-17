@@ -5,7 +5,7 @@ function userEditAccountStateSetter(routeData) {
   const { changeApp, changeUserEditData: changeData } = this.props
 
   changeData(state)
-  changeApp({ routeDataSet: true })
+  changeApp({ urlDataSynced: true })
   genericRouteStateSetter.call(this, routeData)
 }
   

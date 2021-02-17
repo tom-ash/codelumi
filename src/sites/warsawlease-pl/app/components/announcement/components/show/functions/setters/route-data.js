@@ -1,7 +1,7 @@
 import { showClientServerParams } from '../../../../constants/client-server-params.js'
 import genericRouteStateSetter from '../../../../../../functions/setters/generic-route-state.js'
 
-function announcementShowRouteDataSetter(routeData) {
+function announcementShowurlDataSyncedter(routeData) {
   const { changeAnnouncementShowData: changeData } = this.props
   const { initialState: { announcement } } = routeData
   const clientParams = {}
@@ -11,4 +11,4 @@ function announcementShowRouteDataSetter(routeData) {
   genericRouteStateSetter.call(this, routeData)
 }
 
-export default announcementShowRouteDataSetter
+export default announcementShowurlDataSyncedter

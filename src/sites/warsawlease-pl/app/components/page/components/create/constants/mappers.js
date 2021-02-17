@@ -1,6 +1,7 @@
 export const mapStateToProps = store => {
   const {
-    lang
+    lang,
+    urlDataSynced
   } = store.app
 
   const {
@@ -11,7 +12,7 @@ export const mapStateToProps = store => {
     title,
     description,
     keywords,
-    canonical_url,
+    canonicalUrl,
     picture,
     meta,
     lang_vers
@@ -19,6 +20,7 @@ export const mapStateToProps = store => {
 
   return {
     lang,
+    urlDataSynced,
     name,
     url,
     body,
@@ -26,7 +28,7 @@ export const mapStateToProps = store => {
     title,
     description,
     keywords,
-    canonical_url,
+    canonicalUrl,
     picture,
     meta,
     lang_vers

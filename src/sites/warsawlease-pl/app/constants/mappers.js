@@ -13,7 +13,7 @@ export const mapStateToProps = store => {
     scrollY,
     scripts,
     svgs,
-    routeDataSet
+    urlDataSynced
   } = store.app
   const {
     statisticsConsent,
@@ -55,7 +55,7 @@ export const mapStateToProps = store => {
     announcementCreateData,
     announcementShowData,
     pageShowData,
-    routeDataSet
+    urlDataSynced
   }
 }
   

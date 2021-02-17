@@ -28,9 +28,12 @@ class PageCreate extends React.Component {
 
   render() {
     const {
+      urlDataSynced,
       name,
       body
     } = this.props
+
+    if (!urlDataSynced) return null
 
     return (
       <div className='post-create'>

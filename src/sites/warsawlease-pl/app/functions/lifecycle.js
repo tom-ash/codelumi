@@ -8,7 +8,7 @@ export function componentDidMount() {
 
   loadFonts()
   
-  const { routeDataSet, changeApp } = this.props
+  const { urlDataSynced, changeApp } = this.props
 
   initializeGoogleMaps.apply(this)
 
@@ -23,7 +23,7 @@ export function componentDidMount() {
     }
   })
 
-  if (!routeDataSet) this.matchStateToUrl({ popState: false })
+  if (!urlDataSynced) this.matchStateToUrl({ popState: false })
 
   window.onpopstate = () => this.popStateHandler()
   this.authorizeUserWithTokens()

@@ -6,7 +6,7 @@ export const mapStateToProps = store => {
   const {
     lang,
     svgs,
-    routeDataSet
+    urlDataSynced
   } = store.app
   const {
     [ANNOUNCEMENT_INDEX_MY_TRACK]: renderMy
@@ -39,7 +39,7 @@ export const mapStateToProps = store => {
     announcements,
     svgs,
     renderMy,
-    routeDataSet
+    urlDataSynced
   }
 }
     

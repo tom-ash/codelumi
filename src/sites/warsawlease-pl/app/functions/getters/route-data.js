@@ -5,7 +5,7 @@ function getRouteData({ url, route, requestType }) {
   const { track, lang, pageName } = route
   const pageNameHeader = pageName ? { 'Page-Name': pageName } : {}
 
-  changeApp({ routeDataSet: false })
+  changeApp({ urlDataSynced: false })
 
   return fetch(API_URL + `/route_data`, {
     headers: {

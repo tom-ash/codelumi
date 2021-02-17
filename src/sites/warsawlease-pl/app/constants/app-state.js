@@ -12,7 +12,7 @@ const appState = {
   isMobile: null,
   svgs: {},
   siteMapLinks: null,
-  routeDataSet: false
+  urlDataSynced: false
 }
 
 export default appState

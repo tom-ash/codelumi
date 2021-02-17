@@ -1,7 +1,7 @@
 function genericRouteStateSetter(routeData) {
   const { changeApp, changePageShowData } = this.props
   const { svgs, page } = routeData
-  const appState = { routeDataSet: true }
+  const appState = { urlDataSynced: true }
 
   if (svgs) {
     svgs.map(svg => {
