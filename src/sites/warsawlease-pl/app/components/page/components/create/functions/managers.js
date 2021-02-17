@@ -101,8 +101,6 @@ export function metaManager() {
   }
 }
 
-
-
 export function saveManager() {
   return {
     classNames: { container: 'form-input button' },
