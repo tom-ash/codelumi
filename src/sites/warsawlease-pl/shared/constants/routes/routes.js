@@ -72,6 +72,7 @@ import {
 } from './descriptions'
 import { buildAnnouncementShowUrl } from '../../functions/builders/announcement/show-url'
 import { buildAnnouncementEditUrl } from '../../functions/builders/announcement/edit-url'
+import buildPageEditUrl from '../../functions/builders/page/edit-url'
 import { announcementIndexInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement/index'
 import { announcementShowInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement/show'
 import { announcementShowMetaDataTitleParser } from '../../functions/parsers/meta-data/announcement/show/title'
@@ -201,6 +202,7 @@ export default [
     title: PAGE_CREATE_TITLES[PL],
     image: DEFAULT_IMAGE_PL,
     stateSetter: pageCreateStateSetter,
+    urlBuilder: buildPageEditUrl
   },
   {
     url: PAGE_EDIT_URLS[EN],
@@ -209,6 +211,7 @@ export default [
     title: PAGE_CREATE_TITLES[EN],
     image: DEFAULT_IMAGE_PL,
     stateSetter: pageCreateStateSetter,
+    urlBuilder: buildPageEditUrl
   },
   {
     url: PAGE_INDEX_MAP_URLS[PL],

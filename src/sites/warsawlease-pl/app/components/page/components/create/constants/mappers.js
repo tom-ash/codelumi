@@ -15,7 +15,7 @@ export const mapStateToProps = store => {
     canonicalUrl,
     picture,
     meta,
-    lang_vers
+    lang_ver_urls
   } = store.page.create.inputs
 
   return {
@@ -31,7 +31,7 @@ export const mapStateToProps = store => {
     canonicalUrl,
     picture,
     meta,
-    lang_vers
+    lang_ver_urls
   }
 }
   

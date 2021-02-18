@@ -4,7 +4,6 @@ export function save() {
   const body = JSON.parse(this.props.body)
   const meta = JSON.parse(this.props.meta)
 
-
   fetch(API_URL + '/posts', {
     method: 'POST',
     headers: {

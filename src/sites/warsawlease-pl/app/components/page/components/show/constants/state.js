@@ -9,5 +9,5 @@ export const data = {
   canonical_url: null,
   picture: null,
   meta: null,
-  lang_vers: null
+  lang_ver_urls: null
 }
