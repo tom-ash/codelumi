@@ -1,15 +1,13 @@
-#post-show {
+#page-show {
   position: relative;
   max-width: 768px;
-  margin: 0 auto;
+  margin: 40px auto;
   text-align: left;
   button {
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 10px;
+    right: 10px;
     z-index: 2;
-    height: 20px;
-    width: 20px;
     padding: 2px;
     &:disabled {
       cursor: not-allowed;

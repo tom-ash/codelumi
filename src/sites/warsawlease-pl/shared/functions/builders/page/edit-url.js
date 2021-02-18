@@ -1,8 +1,6 @@
 import { PL, EN } from '../../../constants/langs/langs'
 
-function buildPageEditUrl(props) {
-  const { pageCreateData: { name, langVerUrls }, lang } = props
-
+function buildPageEditUrl({ pageCreateData: { name, langVerUrls }, lang }) {
   if (!name || !langVerUrls) return 
 
   return `${{ [PL]: 'edytuj-strone', [EN]: 'edit-page' }[lang]}/${langVerUrls[lang] || `${name}/${lang}`}`
