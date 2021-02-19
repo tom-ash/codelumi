@@ -1,10 +1,10 @@
 export const mapStateToProps = store => {
-  const {
-    lang
-  } = store.app
+  const { lang } = store.app
+  const { admin: isAdmin } = store.user.authorize.data
 
   return {
-    lang
+    lang,
+    isAdmin
   }
 }
   

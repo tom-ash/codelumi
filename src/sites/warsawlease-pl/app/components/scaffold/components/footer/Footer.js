@@ -15,11 +15,14 @@ class Footer extends React.Component {
     this.cookiesPolicyManager = managers.cookiesPolicyManager.bind(this)
     this.privacyPolicyManager = managers.privacyPolicyManager.bind(this)
     this.privacySettingsManager = managers.privacySettingsManager.bind(this)
+    this.addPageManager = managers.addPageManager.bind(this)
   }
 
   static contextType = AppContext
   
   render() {
+    const { isAdmin } = this.props
+
     return(
       <div id='footer'>
         <div className='inner'>
@@ -29,6 +32,7 @@ class Footer extends React.Component {
             <ManagedLink {...this.cookiesPolicyManager()} />
             <ManagedLink {...this.privacyPolicyManager()} />
             <ManagedLink {...this.privacySettingsManager()} />
+            {isAdmin && <ManagedLink {...this.addPageManager()} />}
           </div>
           <div className='copyright'>
             Warsaw Digital Sp. z o.o. 2020 {this.langHandler({ pl: 'Wszelkie prawa zastrzeżone.', en: 'All rights reserved.' })}

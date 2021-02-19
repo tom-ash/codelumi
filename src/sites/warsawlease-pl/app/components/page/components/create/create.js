@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { ManagedText } from 'managed-inputs'
+import { ManagedText, ManagedButton } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { save } from './functions/save'
 import { langObjHandler } from '../../../../functions/lang-handler'
@@ -19,9 +19,10 @@ class PageCreate extends React.Component {
 
   render() {
     return (
-      <div id='page-create1'>
+      <div id='page-create'>
         <form>
           <ManagedText {...this.nameManager()} />
+          <ManagedButton {...this.saveManager()} />
         </form>
       </div>
     )
