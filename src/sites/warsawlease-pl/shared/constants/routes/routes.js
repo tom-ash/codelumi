@@ -79,7 +79,7 @@ import { announcementShowMetaDataTitleParser } from '../../functions/parsers/met
 import { announcementShowMetaDataDescriptionParser } from '../../functions/parsers/meta-data/announcement/show/description'
 import { announcementShowMetaDataKeywordsParser } from '../../functions/parsers/meta-data/announcement/show/keywords'
 import { announcementShowMetaDataImageParser } from '../../functions/parsers/meta-data/announcement/show/image'
-import pageCreateStateSetter from '../../../app/components/page/components/create/functions/state-setter.js'
+import pageCreateStateSetter from '../../../app/components/page/components/edit/functions/state-setter.js'
 import announcementIndexStateSetter from '../../../app/components/announcement/components/index/functions/state-setter.js'
 import announcementShowurlDataSyncedter from '../../../app/components/announcement/components/show/functions/setters/route-data.js'
 import userEditAccountStateSetter from '../../../app/components/user/components/edit/components/account/functions/state-setter.js'

@@ -7,10 +7,10 @@ function pageCreateStateSetter(routeData) {
   const body = JSON.stringify(value.body, null, 2)
   const meta = JSON.stringify(value.meta, null, 2)
 
-  const typeInputs = 'page/create/inputs'
+  const typeInputs = 'page/edit/inputs'
   dispatch({ type: typeInputs, value: { ...value, body, meta }})
 
-  const typeData = 'page/create/data'
+  const typeData = 'page/edit/data'
   dispatch({ type: typeData, value: { name, langVerUrls }})
   
   genericRouteStateSetter.call(this, routeData)

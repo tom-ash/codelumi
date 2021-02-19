@@ -1,0 +1,40 @@
+@import '../../../../../styles/themes';
+@import '../../../../../styles/inputs/form/text.scss';
+@import '../../../../../styles/inputs/form/textarea.scss';
+@import '../../../../../styles/inputs/form/button.scss';
+
+.page-edit {
+  .post-container {
+    margin-top: 40px;
+  }
+  form {
+    max-width: 768px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid #E5E7E9;
+    margin-top: 40px;
+    padding: 20px;
+    .separation-line {
+      margin: 20px 0;
+    }
+    .form-input {
+      margin-bottom: 15px;
+      &.textarea {
+        height: 300px;
+        .input {
+          height: 300px;
+        }
+        &.slim {
+          height: 100px;
+          .input {
+            height: 100px;
+          } 
+        }
+      }
+      &.button {
+        margin-top: 15px;
+        margin-left: auto;
+      }
+    }
+  }
+}

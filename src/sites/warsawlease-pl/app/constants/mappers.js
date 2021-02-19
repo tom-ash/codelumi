@@ -29,8 +29,8 @@ export const mapStateToProps = store => {
     data: pageShowData
   } = store.page.show
   const {
-    data: pageCreateData
-  } = store.page.create
+    data: pageEditData
+  } = store.page.edit
   const render = store.render
   const {
     [VISITOR_TRACK]: renderVisitor,
@@ -59,7 +59,7 @@ export const mapStateToProps = store => {
     announcementShowData,
     pageShowData,
     urlDataSynced,
-    pageCreateData
+    pageEditData
   }
 }
   

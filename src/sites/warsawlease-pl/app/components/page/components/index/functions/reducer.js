@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-export const dataReducer = (state = {}, action) => {
+const dataReducer = (state = {}, action) => {
   switch (action.type) {
     case 'page/index/data': return { ...state, ...action.value }
     case 'page/index/data/reset': return {}
@@ -8,6 +8,8 @@ export const dataReducer = (state = {}, action) => {
   }
 }
 
-export const indexReducer = combineReducers({
+const indexReducer = combineReducers({
   data: dataReducer
 })
+
+export default indexReducer

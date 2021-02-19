@@ -1,32 +1,23 @@
 import { combineReducers } from 'redux'
 import { control, inputs, data } from '../constants/state'
 
-export const controlReducer = (state = control, action) => {
+const controlReducer = (state = control, action) => {
   switch (action.type) {
     case 'page/create/control': return { ...state, ...action.value }
-    case 'page/create/control/reset': return { ...control }
     default: return state
   }
 }
 
-export const inputsReducer = (state = inputs, action) => {
+const inputsReducer = (state = inputs, action) => {
   switch (action.type) {
     case 'page/create/inputs': return { ...state, ...action.value }
-    case 'page/create/inputs/reset': return { ...inputs }
     default: return state
   }
 }
 
-export const dataReducer = (state = data, action) => {
-  switch (action.type) {
-    case 'page/create/data': return { ...state, ...action.value }
-    case 'page/create/control/reset': return { ...control }
-    default: return state
-  }
-}
-
-export const createReducer = combineReducers({
+const createReducer = combineReducers({
   control: controlReducer,
-  inputs: inputsReducer,
-  data: dataReducer
+  inputs: inputsReducer
 })
+
+export default createReducer
