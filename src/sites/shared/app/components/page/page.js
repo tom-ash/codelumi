@@ -15,14 +15,7 @@ class Page extends React.Component {
   }
 
   render() {
-    const {
-      renderCreate,
-      renderEdit,
-      renderShow,
-      renderNotFound,
-      changeUrl
-    } = this.props
-
+    const { renderCreate, renderEdit, renderShow, renderNotFound, changeUrl } = this.props
     const editProps = { changeUrl }
 
     return (
