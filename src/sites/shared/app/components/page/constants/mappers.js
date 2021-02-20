@@ -1,7 +1,7 @@
 import {
   PAGE_CREATE_TRACK,
   PAGE_EDIT_TRACK,
-  PAGE_INDEX_MAP_TRACK,
+  PAGE_INDEX_TRACK,
   PAGE_SHOW_TRACK,
   PAGE_NOT_FOUND_TRACK
 } from '../../../../shared/constants/tracks/tracks.js'
@@ -14,7 +14,7 @@ export const mapStateToProps = store => {
   const {
     [PAGE_CREATE_TRACK]: renderCreate,
     [PAGE_EDIT_TRACK]: renderEdit,
-    [PAGE_INDEX_MAP_TRACK]: renderIndexMap,
+    [PAGE_INDEX_TRACK]: renderIndex,
     [PAGE_SHOW_TRACK]: renderShow,
     [PAGE_NOT_FOUND_TRACK]: renderNotFound
   } = store.render
@@ -22,7 +22,7 @@ export const mapStateToProps = store => {
   return {
     renderCreate,
     renderEdit,
-    renderIndexMap,
+    renderIndex,
     renderShow,
     renderNotFound,
     showName

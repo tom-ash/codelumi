@@ -10,7 +10,9 @@ import {
   PAGE_TRACK,
   PAGE_CREATE_TRACK,
   PAGE_EDIT_TRACK,
+  PAGE_INDEX_TRACK,
   PAGE_INDEX_MAP_TRACK,
+  PAGE_INDEX_MANAGE_TRACK,
   PAGE_SHOW_TRACK,
   PAGE_NOT_FOUND_TRACK,
   ANNOUNCEMENT_TRACK,
@@ -67,7 +69,13 @@ export default {
   },
   [PAGE_INDEX_MAP_TRACK]: {
     [VISITOR_TRACK]: true,
-    [PAGE_TRACK]: true
+    [PAGE_TRACK]: true,
+    [PAGE_INDEX_TRACK]: true
+  },
+  [PAGE_INDEX_MANAGE_TRACK]: {
+    [VISITOR_TRACK]: true,
+    [PAGE_TRACK]: true,
+    [PAGE_INDEX_TRACK]: true
   },
   [PAGE_SHOW_TRACK]: {
     [VISITOR_TRACK]: true,

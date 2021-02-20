@@ -43,6 +43,11 @@ export const PAGE_INDEX_MAP_TITLES  = {
   [EN]: 'Pages Map'
 }
 
+export const PAGE_INDEX_MANAGE_TITLES  = {
+  [PL]: 'Zarządzaj stronami',
+  [EN]: 'Manage Pages'
+}
+
 export const ANNOUNCEMENT_CREATE_TITLES  = {
   [PL]: 'Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w Warszawie w kategorii: mieszkanie, lokal użytkowy, biuro',
   [EN]: 'Add Free Announcement of Lease of Real Estate in Warsaw in the category: Apartment, Usable premises, Office'

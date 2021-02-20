@@ -48,6 +48,11 @@ export const PAGE_INDEX_MAP_URLS = {
   [EN]: 'pages-map'
 }
 
+export const PAGE_INDEX_MANAGE_URLS = {
+  [PL]: 'zarzadzaj-stronami',
+  [EN]: 'manage-pages'
+}
+
 export const ANNOUNCEMENT_CREATE_URLS = {
   [PL]: 'dodaj-ogloszenie-wynajmu-nieruchomosci-w-warszawie',
   [EN]: 'add-announcement-of-real-estate-lease-in-warsaw'
