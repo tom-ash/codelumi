@@ -5,7 +5,7 @@ export function save() {
   const meta = JSON.parse(this.props.meta)
 
   fetch(API_URL + '/posts', {
-    method: 'POST',
+    method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
       'Access-Token': getAccessToken()
@@ -13,14 +13,11 @@ export function save() {
     body: JSON.stringify({ ...this.props, body, meta })
   })
   .then(response => {
-    if (response.status == 201) return response.json()
-  })
-  .then(jsonRespone => {
+    if (response.status == 200) {
+      const { url, changeUrl } = this.props
+      const href = `${CLIENT_URL}/${url}`
 
-    
-
-    // changeShowData(jsonRespone)
-    // changeRender({ create: false })
-    // resetInputs()
+      changeUrl({ href })
+    }
   })
 }

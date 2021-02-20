@@ -33,6 +33,8 @@ class PageCreate extends React.Component {
       body
     } = this.props
 
+    console.log(this.props)
+
     if (!urlDataSynced) return null
 
     return (

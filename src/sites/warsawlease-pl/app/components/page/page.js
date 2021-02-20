@@ -19,14 +19,17 @@ class Page extends React.Component {
       renderCreate,
       renderEdit,
       renderShow,
-      renderNotFound
+      renderNotFound,
+      changeUrl
     } = this.props
+
+    const editProps = { changeUrl }
 
     return (
       <div id='post'>
         {renderCreate && <PageCreate />}
         {renderShow && <PageShow />}
-        {renderEdit && <PageEdit />}
+        {renderEdit && <PageEdit { ...editProps } />}
         {renderNotFound && <PageNotFound />}
       </div>
     )

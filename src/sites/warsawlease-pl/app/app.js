@@ -37,6 +37,7 @@ class App extends React.Component {
     const { renderPage, renderVisitor, renderAnnouncement, renderUser } = this.props
 
     const AppContextValue = { changeUrl: this.changeUrl, matchStateToUrl: this.matchStateToUrl, matchUrlToLang: this.matchUrlToLang }
+    const pageProps = { changeUrl: this.changeUrl }
 
     return (
       <AppContext.Provider value={AppContextValue}>
@@ -46,7 +47,7 @@ class App extends React.Component {
             {renderVisitor && <Visitor />}
             {renderAnnouncement && <Announcement />}
             {renderUser && <User />}
-            {renderPage && <Page />}
+            {renderPage && <Page { ...pageProps } />}
           </div>
           <Footer />
         </div>
