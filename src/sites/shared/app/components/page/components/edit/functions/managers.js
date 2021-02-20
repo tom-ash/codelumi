@@ -24,7 +24,7 @@ export function bodyManager() {
   const { body, changeInputs } = this.props
 
   return {
-    classNames: { container: 'form-input textarea' },
+    classNames: { container: 'form-input textarea body' },
     label: 'Body',
     value: body,
     counterLimit: 10000,

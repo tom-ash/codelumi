@@ -41,18 +41,18 @@ class PageCreate extends React.Component {
         />
         <form>
           <ManagedTextarea {...this.bodyManager()} />
-          <div className='separation-line' />
+          {/* <div className='separation-line' /> */}
           <ManagedText {...this.titleManager()} />
           <ManagedTextarea {...this.descriptionManager()} />
           <ManagedTextarea {...this.keywordsManager()} />
           <ManagedText {...this.pictureManager()} />
-          <div className='separation-line' />
+          {/* <div className='separation-line' /> */}
           <ManagedTextarea {...this.metaManager()} />
-          <div className='separation-line' />
+          {/* <div className='separation-line' /> */}
           <ManagedText {...this.urlManager()} />
           <ManagedText {...this.canonicalUrlManager()} />
           <ManagedText {...this.nameManager()} />
-          <div className='separation-line' />
+          {/* <div className='separation-line' /> */}
           <ManagedButton {...this.saveManager()} />
         </form>
       </div>

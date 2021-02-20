@@ -23,7 +23,6 @@ export const mapStateToProps = store => {
 export const mapDispatchToProps = dispatch => {
   return {
     changeInputs: value => dispatch({ type: 'page/create/inputs', value }),
-    resetInputs: value => dispatch({ type: 'page/create/inputs/reset', value }),
     dispatch
   }
 }
