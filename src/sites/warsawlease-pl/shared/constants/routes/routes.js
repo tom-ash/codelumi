@@ -80,7 +80,8 @@ import { announcementShowMetaDataTitleParser } from '../../functions/parsers/met
 import { announcementShowMetaDataDescriptionParser } from '../../functions/parsers/meta-data/announcement/show/description'
 import { announcementShowMetaDataKeywordsParser } from '../../functions/parsers/meta-data/announcement/show/keywords'
 import { announcementShowMetaDataImageParser } from '../../functions/parsers/meta-data/announcement/show/image'
-import pageCreateStateSetter from '../../../../shared/app/components/page/components/edit/functions/state-setter.js'
+import pageCreateStateSetter from '../../../../shared/app/components/page/components/create/functions/state-setter.js'
+import pageEditStateSetter from '../../../../shared/app/components/page/components/edit/functions/state-setter.js'
 import announcementIndexStateSetter from '../../../app/components/announcement/components/index/functions/state-setter.js'
 import announcementShowurlDataSyncedter from '../../../app/components/announcement/components/show/functions/setters/route-data.js'
 import userEditAccountStateSetter from '../../../app/components/user/components/edit/components/account/functions/state-setter.js'
@@ -187,14 +188,16 @@ export default [
     lang: PL,
     track: PAGE_CREATE_TRACK,
     title: PAGE_CREATE_TITLES[PL],
-    image: DEFAULT_IMAGE_PL
+    image: DEFAULT_IMAGE_PL,
+    stateSetter: pageCreateStateSetter
   },
   {
     url: PAGE_CREATE_URLS[EN],
     lang: EN,
     track: PAGE_CREATE_TRACK,
     title: PAGE_CREATE_TITLES[EN],
-    image: DEFAULT_IMAGE_PL
+    image: DEFAULT_IMAGE_PL,
+    stateSetter: pageCreateStateSetter
   },
   {
     url: PAGE_EDIT_URLS[PL],
@@ -203,7 +206,7 @@ export default [
     title: PAGE_CREATE_TITLES[PL],
     image: DEFAULT_IMAGE_PL,
     initialStateParser: pageEditInitialStateParser,
-    stateSetter: pageCreateStateSetter,
+    stateSetter: pageEditStateSetter,
     urlBuilder: buildPageEditUrl
   },
   {
@@ -213,7 +216,7 @@ export default [
     title: PAGE_CREATE_TITLES[EN],
     image: DEFAULT_IMAGE_PL,
     initialStateParser: pageEditInitialStateParser,
-    stateSetter: pageCreateStateSetter,
+    stateSetter: pageEditStateSetter,
     urlBuilder: buildPageEditUrl
   },
   {

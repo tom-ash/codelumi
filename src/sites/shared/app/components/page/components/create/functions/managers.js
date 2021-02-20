@@ -1,18 +1,21 @@
 export function nameManager() {
-  const { name, changeInputs } = this.props
+  const { name, changeInputs, langHandler } = this.props
+  const value = name || ''
 
   return {
     classNames: { container: 'form-input text' },
-    label: 'Name',
-    value: name,
+    label: langHandler({ pl: 'Nazwa strony', en: 'Page Name' }),
+    value,
     onChange: value => changeInputs({ name: value })
   }
 }
 
 export function saveManager() {
+  const { langHandler } = this.props
+
   return {
     classNames: { container: 'form-input button' },
-    label: 'Save',
+    label: langHandler({ pl: 'Dodaj stronę', en: 'Add Page' }),
     onClick: () => this.save()
   }
 }

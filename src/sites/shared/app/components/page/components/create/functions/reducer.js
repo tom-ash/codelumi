@@ -15,9 +15,17 @@ const inputsReducer = (state = inputs, action) => {
   }
 }
 
+const dataReducer = (state = data, action) => {
+  switch (action.type) {
+    case 'page/create/data': return { ...state, ...action.value }
+    default: return state
+  }
+}
+
 const createReducer = combineReducers({
   control: controlReducer,
-  inputs: inputsReducer
+  inputs: inputsReducer,
+  data: dataReducer
 })
 
 export default createReducer

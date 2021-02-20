@@ -5,39 +5,25 @@ export const mapStateToProps = store => {
   } = store.app
 
   const {
-    name,
-    url,
-    body,
-    style,
-    title,
-    description,
-    keywords,
-    canonicalUrl,
-    picture,
-    meta,
-    lang_ver_urls
+    name
   } = store.page.create.inputs
+
+  const {
+    names
+  } = store.page.create.data
 
   return {
     lang,
     urlDataSynced,
     name,
-    url,
-    body,
-    style,
-    title,
-    description,
-    keywords,
-    canonicalUrl,
-    picture,
-    meta,
-    lang_ver_urls
+    names
   }
 }
   
 export const mapDispatchToProps = dispatch => {
   return {
     changeInputs: value => dispatch({ type: 'page/create/inputs', value }),
-    resetInputs: value => dispatch({ type: 'page/create/inputs/reset', value })
+    resetInputs: value => dispatch({ type: 'page/create/inputs/reset', value }),
+    dispatch
   }
 }

@@ -1,6 +1,6 @@
 import genericRouteStateSetter from '../../../../../functions/setters/generic-route-state.js'
 
-function pageCreateStateSetter(routeData) {
+function pageEditStateSetter(routeData) {
   const { initialState: { pageCreate: value } } = routeData
   const { dispatch } = this.props
   const { name, langVerUrls } = value
@@ -16,4 +16,4 @@ function pageCreateStateSetter(routeData) {
   genericRouteStateSetter.call(this, routeData)
 }
 
-export default pageCreateStateSetter
+export default pageEditStateSetter

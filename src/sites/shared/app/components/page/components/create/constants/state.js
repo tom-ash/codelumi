@@ -5,3 +5,7 @@ export const control = {
 export const inputs = {
   name: null
 }
+
+export const data = {
+  names: null
+}

@@ -16,10 +16,29 @@ class PageCreate extends React.Component {
   }
 
   render() {
+    const { name, names } = this.props
+    const newName = name || ''
+
+    if (!names) return null
+
     return (
       <div id='page-create'>
         <form>
           <ManagedText {...this.nameManager()} />
+          <div className='names'>
+            {names.map(name => {
+              const newNameRegex = `^${newName}`
+              if (name.match(newNameRegex)) {
+                return (
+                  <div key={name}>
+                    {name}
+                  </div>
+                )
+              }
+
+              return null
+            })}
+          </div>
           <ManagedButton {...this.saveManager()} />
         </form>
       </div>
