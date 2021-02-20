@@ -4,22 +4,15 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import PageTile from '../shared/components/tile/tile'
-import { langObjHandler } from '../../../../functions/lang-handler'
-import SVG from '../../../support/components/svg/svg'
-import AppContext from '../../../../constants/context.js'
-import buildPageEditUrl from '../../../../../shared/functions/builders/page/edit-url'
+import buildPageEditUrl from '../edit/functions/build-page-edit-url.js'
 
 class PageShow extends React.Component {
   constructor(props) {
     super(props)
-    this.langObjHandler = langObjHandler
   }
 
-  static contextType = AppContext
-
   changePage = () => {
-    const { changeUrl } = this.context
-    const { name, lang_ver_urls: langVerUrls, lang } = this.props
+    const { name, lang_ver_urls: langVerUrls, lang, changeUrl } = this.props
     const path = buildPageEditUrl({ pageEditData: { name, langVerUrls }, lang })
     const href = `${CLIENT_URL}/${path}`
 

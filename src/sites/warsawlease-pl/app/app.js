@@ -4,7 +4,7 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import Header from './components/scaffold/components/header/header'
 import Visitor from './components/visitor/visitor'
 import Announcement from './components/announcement/announcement'
-import Page from './components/page/page'
+import Page from '../../shared/app/components/page/page.js'
 import User from './components/user/user'
 import Footer from './components/scaffold/components/footer/Footer'
 import * as lifecycle from './functions/lifecycle'
@@ -37,7 +37,7 @@ class App extends React.Component {
     const { renderPage, renderVisitor, renderAnnouncement, renderUser } = this.props
 
     const AppContextValue = { changeUrl: this.changeUrl, matchStateToUrl: this.matchStateToUrl, matchUrlToLang: this.matchUrlToLang }
-    const pageProps = { changeUrl: this.changeUrl }
+    const pageProps = { changeUrl: this.changeUrl, langHandler: this.langObjHandler }
 
     return (
       <AppContext.Provider value={AppContextValue}>

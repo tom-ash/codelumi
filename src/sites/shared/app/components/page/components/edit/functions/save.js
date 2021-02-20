@@ -1,4 +1,4 @@
-import { getAccessToken } from '../../../../user/components/authorize/components/tokens/functions/get-tokens'
+import { getAccessToken } from '../../../../../functions/getters/get-tokens.js'
 
 export function save() {
   const body = JSON.parse(this.props.body)

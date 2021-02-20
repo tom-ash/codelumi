@@ -4,7 +4,7 @@ import { announcementReducer } from '../components/announcement/functions/reduce
 import { userReducer } from '../components/user/functions/reducers.js'
 import { visitorReducer } from '../components/visitor/functions/reducers.js'
 import { scaffoldReducer } from '../components/scaffold/functions/reducer'
-import { postReducer } from '../components/page/functions/reducer'
+import { pageReducer } from '../../../shared/app/components/page/functions/reducer.js'
 
 const rootReducer = combineReducers({
   app: appReducer,
@@ -13,7 +13,7 @@ const rootReducer = combineReducers({
   user: userReducer,
   visitor: visitorReducer,
   scaffold: scaffoldReducer,
-  page: postReducer
+  page: pageReducer
 })
 
 export default rootReducer

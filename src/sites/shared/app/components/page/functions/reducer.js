@@ -4,7 +4,7 @@ import editReducer from '../components/edit/functions/reducer'
 import indexReducer from '../components/index/functions/reducer'
 import showReducer from '../components/show/functions/reducer'
 
-export const postReducer = combineReducers({
+export const pageReducer = combineReducers({
   create: createReducer,
   show: showReducer,
   index: indexReducer,

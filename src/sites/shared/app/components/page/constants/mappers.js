@@ -4,7 +4,7 @@ import {
   PAGE_INDEX_MAP_TRACK,
   PAGE_SHOW_TRACK,
   PAGE_NOT_FOUND_TRACK
-} from '../../../../shared/constants/tracks/tracks'
+} from '../../../../shared/constants/tracks/tracks.js'
 
 export const mapStateToProps = store => {
   const {
