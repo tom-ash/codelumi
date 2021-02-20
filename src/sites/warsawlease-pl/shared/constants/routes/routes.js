@@ -75,6 +75,7 @@ import { buildAnnouncementEditUrl } from '../../functions/builders/announcement/
 import buildPageEditUrl from '../../../../shared/app/components/page/components/edit/functions/build-page-edit-url.js'
 import { announcementIndexInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement/index'
 import { announcementShowInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement/show'
+import pageEditInitialStateParser from '../../../../shared/app/components/page/components/edit/functions/initial-state-parser.js'
 import { announcementShowMetaDataTitleParser } from '../../functions/parsers/meta-data/announcement/show/title'
 import { announcementShowMetaDataDescriptionParser } from '../../functions/parsers/meta-data/announcement/show/description'
 import { announcementShowMetaDataKeywordsParser } from '../../functions/parsers/meta-data/announcement/show/keywords'
@@ -201,6 +202,7 @@ export default [
     track: PAGE_EDIT_TRACK,
     title: PAGE_CREATE_TITLES[PL],
     image: DEFAULT_IMAGE_PL,
+    initialStateParser: pageEditInitialStateParser,
     stateSetter: pageCreateStateSetter,
     urlBuilder: buildPageEditUrl
   },
@@ -210,6 +212,7 @@ export default [
     track: PAGE_EDIT_TRACK,
     title: PAGE_CREATE_TITLES[EN],
     image: DEFAULT_IMAGE_PL,
+    initialStateParser: pageEditInitialStateParser,
     stateSetter: pageCreateStateSetter,
     urlBuilder: buildPageEditUrl
   },

@@ -19,10 +19,7 @@ function pageSender({
   })
   .then(jsonResponse => {
     const { lang } = jsonResponse
-    const {
-      canonicalUrl, noIndex,
-      title, description, keywords, image, openGraph, schemaOrg
-    } = jsonResponse[lang]
+    const { canonicalUrl, noIndex, title, description, keywords, image, openGraph, schemaOrg } = jsonResponse
     const { VISITOR_TRACK, PAGE_TRACK, PAGE_SHOW_TRACK } = tracks
     const initialState = {
       app: { ...appState, lang, device },

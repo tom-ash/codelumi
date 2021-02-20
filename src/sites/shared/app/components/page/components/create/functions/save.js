@@ -15,12 +15,6 @@ export function save() {
     if (response.status == 201) return response.json()
   })
   .then(jsonRespone => {
-
-    console.log("CREATED!!!")
-    
-
-    // changeShowData(jsonRespone)
-    // changeRender({ create: false })
-    // resetInputs()
+    // TODO
   })
 }

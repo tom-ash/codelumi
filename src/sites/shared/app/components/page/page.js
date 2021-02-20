@@ -20,13 +20,14 @@ class Page extends React.Component {
     const createProps = { changeUrl, langObjHandler }
     const showProps = { changeUrl, langObjHandler }
     const editProps = { changeUrl, langObjHandler }
+    const notFoundProps = { changeUrl, langObjHandler }
 
     return (
       <div id='post'>
         {renderCreate && <PageCreate {...createProps} />}
         {renderShow && <PageShow {...showProps}/>}
-        {renderEdit && <PageEdit { ...editProps } />}
-        {renderNotFound && <PageNotFound />}
+        {renderEdit && <PageEdit {...editProps} />}
+        {renderNotFound && <PageNotFound {...notFoundProps} />}
       </div>
     )
   }
