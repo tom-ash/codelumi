@@ -3,8 +3,6 @@ import {
   PAGE_INDEX_MAP_TRACK
 } from '../../../../../../shared/constants/tracks/tracks.js'
 
-console.log(PAGE_INDEX_MANAGE_TRACK)
-
 export const mapStateToProps = store => {
   const {
     lang,
@@ -16,16 +14,22 @@ export const mapStateToProps = store => {
     [PAGE_INDEX_MAP_TRACK]: renderMap
   } = store.render
 
+  const {
+    name
+  } = store.page.index.inputs
+
   return {
     lang,
     urlDataSynced,
     renderManage,
-    renderMap
+    renderMap,
+    name
   }
 }
   
 export const mapDispatchToProps = dispatch => {
   return {
+    changeInputs: value => dispatch({ type: 'page/index/inputs', value }),
     dispatch
   }
 }

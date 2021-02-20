@@ -17,7 +17,6 @@ class Page extends React.Component {
 
   render() {
     const { renderCreate, renderEdit, renderShow, renderIndex, renderNotFound, changeUrl, langHandler } = this.props
-
     const createProps = { changeUrl, langHandler }
     const showProps = { changeUrl, langHandler }
     const editProps = { changeUrl, langHandler }
