@@ -3,10 +3,7 @@ function genericRouteStateSetter({ routeData }) {
   const { svgs, page, state } = routeData
   const appState = { urlDataSynced: true }
 
-  console.log("ADADASDSD")
-
   if (state) {
-    console.log("HERE")
     Object.keys(state).map(stateKey => {
       dispatch({ type: stateKey, value: state[stateKey] })
     })

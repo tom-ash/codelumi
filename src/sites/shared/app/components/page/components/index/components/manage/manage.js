@@ -11,21 +11,20 @@ class PageIndexManage extends React.Component {
   }
 
   render() {
-    const { names: pageNames, name: inputtedPageNam } = this.props
+    const { pages, inputtedName } = this.props
 
-    console.log(this.props)
-    if (!pageNames) return null
+    if (!pages) return null
 
     return (
       <div id='page-index-manage'>
         <ManagedText {...this.nameManager()} />
         <div className='list'>
-          {Object.keys(pageNames).map(pageName => {
+          {Object.keys(pages).map(pageName => {
             return (
               <div>
                 {pageName}
                 <div>
-                  {pageNames[pageName][0]}
+                  {pages[pageName][0]}
                 </div>
                 <div>
                 </div>

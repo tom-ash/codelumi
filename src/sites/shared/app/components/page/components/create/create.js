@@ -16,8 +16,7 @@ class PageCreate extends React.Component {
   }
 
   render() {
-    const { name, names } = this.props
-    const newName = name || ''
+    const { names, inputtedName } = this.props
 
     if (!names) return null
 
@@ -27,7 +26,7 @@ class PageCreate extends React.Component {
           <ManagedText {...this.nameManager()} />
           <div className='names'>
             {names.map(name => {
-              const newNameRegex = `^${newName}`
+              const newNameRegex = `^${inputtedName || ''}`
               if (name.match(newNameRegex)) {
                 return (
                   <div key={name}>

@@ -24,7 +24,7 @@ function matchStateToUrl({ pathname }) {
 
   if (route) {
     const { track, lang } = route
-    const stateSetter = genericRouteStateSetter //route.stateSetter || genericRouteStateSetter
+    const stateSetter = route.stateSetter || genericRouteStateSetter
     
     changeApp({ lang })
     changeRender({ ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] })

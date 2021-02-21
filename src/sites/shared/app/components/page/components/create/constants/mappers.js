@@ -5,7 +5,7 @@ export const mapStateToProps = store => {
   } = store.app
 
   const {
-    name
+    inputtedName
   } = store.page.create.inputs
 
   const {
@@ -15,7 +15,7 @@ export const mapStateToProps = store => {
   return {
     lang,
     urlDataSynced,
-    name,
+    inputtedName,
     names
   }
 }

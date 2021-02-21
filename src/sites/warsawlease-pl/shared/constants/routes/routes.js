@@ -74,28 +74,20 @@ import {
   ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS
 } from './descriptions'
 
+import { announcementIndexInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement/index'
+import { announcementShowInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement/show'
 
 import { buildAnnouncementShowUrl } from '../../functions/builders/announcement/show-url'
 import { buildAnnouncementEditUrl } from '../../functions/builders/announcement/edit-url'
 import buildPageEditUrl from '../../../../shared/app/components/page/components/edit/functions/build-page-edit-url.js'
 
-
-import { announcementIndexInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement/index'
-import { announcementShowInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement/show'
-import pageEditInitialStateParser from '../../../../shared/app/components/page/components/edit/functions/initial-state-parser.js'
 import { announcementShowMetaDataTitleParser } from '../../functions/parsers/meta-data/announcement/show/title'
 import { announcementShowMetaDataDescriptionParser } from '../../functions/parsers/meta-data/announcement/show/description'
 import { announcementShowMetaDataKeywordsParser } from '../../functions/parsers/meta-data/announcement/show/keywords'
 import { announcementShowMetaDataImageParser } from '../../functions/parsers/meta-data/announcement/show/image'
 
-
-
-
-
-
-import pageCreateStateSetter from '../../../../shared/app/components/page/components/create/functions/state-setter.js'
+import pageEditInitialStateParser from '../../../../shared/app/components/page/components/edit/functions/initial-state-parser.js'
 import pageEditStateSetter from '../../../../shared/app/components/page/components/edit/functions/state-setter.js'
-import pageIndexManageStateSetter from '../../../../shared/app/components/page/components/index/components/manage/functions/state-setter.js'
 
 const DEFAULT_IMAGE_PL = `${AWS_S3_URL}/assets/mapa-wynajmu-nieruchomosci-w-warszawie.png`
 
@@ -197,16 +189,14 @@ export default [
     lang: PL,
     track: PAGE_CREATE_TRACK,
     title: PAGE_CREATE_TITLES[PL],
-    image: DEFAULT_IMAGE_PL,
-    stateSetter: pageCreateStateSetter
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_CREATE_URLS[EN],
     lang: EN,
     track: PAGE_CREATE_TRACK,
     title: PAGE_CREATE_TITLES[EN],
-    image: DEFAULT_IMAGE_PL,
-    stateSetter: pageCreateStateSetter
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_EDIT_URLS[PL],
@@ -247,16 +237,14 @@ export default [
     lang: PL,
     track: PAGE_INDEX_MANAGE_TRACK,
     title: PAGE_INDEX_MANAGE_TITLES[PL],
-    image: DEFAULT_IMAGE_PL,
-    stateSetter: pageIndexManageStateSetter
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_INDEX_MANAGE_URLS[EN],
     lang: EN,
     track: PAGE_INDEX_MANAGE_TRACK,
     title: PAGE_INDEX_MANAGE_TITLES[EN],
-    image: DEFAULT_IMAGE_PL,
-    stateSetter: pageIndexManageStateSetter
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: ANNOUNCEMENT_CREATE_URLS[PL],
