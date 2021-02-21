@@ -1,19 +1,17 @@
 function genericRouteStateSetter({ routeData }) {
   const { changeApp, changePageShowData, dispatch } = this.props
-  const { svgs, page, initialState } = routeData
+  const { svgs, page, state } = routeData
   const appState = { urlDataSynced: true }
 
-  if (initialState) {
-    Object.keys(initialState).map(stateKey => {
-      dispatch({ type: stateKey, value: initialState[stateKey] })
+  if (state) {
+    Object.keys(state).map(stateKey => {
+      dispatch({ type: stateKey, value: state[stateKey] })
     })
   }
 
-  console.log("HERE")
-
   if (svgs) {
     svgs.map(svg => {
-      svgs[svg.name] = svg.pathData
+      svgs[svg.name] = svg.path_data
     })
     appState.svgs = svgs
   }

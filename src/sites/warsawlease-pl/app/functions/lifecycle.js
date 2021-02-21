@@ -26,7 +26,6 @@ export function componentDidMount() {
   if (!urlDataSynced) this.matchStateToUrl({ popState: false })
 
   window.onpopstate = () => this.popStateHandler()
-  this.authorizeUserWithTokens()
 }
 
 export function componentDidUpdate(prevProps) {

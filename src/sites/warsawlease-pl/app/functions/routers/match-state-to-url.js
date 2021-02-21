@@ -5,7 +5,7 @@ import renderState from '../../constants/render-state'
 import getPureUrl from '../../../../shared/shared/functions/getters/pure-url'
 import getRouteByUrl from '../../../../shared/shared/functions/getters/route-by-url'
 import getRouteData from '../getters/route-data.js'
-import genericRouteStateSetter from '../setters/generic-route-state.js'
+import genericRouteStateSetter from '../../../../shared/app/functions/setters/generic-route-state.js'
 import { getCookieValue } from '../cookie-handlers.js'
 import { anyNull } from '../../../shared/functions/helpers/any-null.js'
 
