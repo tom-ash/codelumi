@@ -73,9 +73,13 @@ import {
   ANNOUNCEMENT_CREATE_DESCRIPTIONS,
   ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS
 } from './descriptions'
+
+
 import { buildAnnouncementShowUrl } from '../../functions/builders/announcement/show-url'
 import { buildAnnouncementEditUrl } from '../../functions/builders/announcement/edit-url'
 import buildPageEditUrl from '../../../../shared/app/components/page/components/edit/functions/build-page-edit-url.js'
+
+
 import { announcementIndexInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement/index'
 import { announcementShowInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement/show'
 import pageEditInitialStateParser from '../../../../shared/app/components/page/components/edit/functions/initial-state-parser.js'
@@ -83,11 +87,15 @@ import { announcementShowMetaDataTitleParser } from '../../functions/parsers/met
 import { announcementShowMetaDataDescriptionParser } from '../../functions/parsers/meta-data/announcement/show/description'
 import { announcementShowMetaDataKeywordsParser } from '../../functions/parsers/meta-data/announcement/show/keywords'
 import { announcementShowMetaDataImageParser } from '../../functions/parsers/meta-data/announcement/show/image'
+
+
+
+
+
+
 import pageCreateStateSetter from '../../../../shared/app/components/page/components/create/functions/state-setter.js'
 import pageEditStateSetter from '../../../../shared/app/components/page/components/edit/functions/state-setter.js'
 import pageIndexManageStateSetter from '../../../../shared/app/components/page/components/index/components/manage/functions/state-setter.js'
-import announcementShowurlDataSyncedter from '../../../app/components/announcement/components/show/functions/setters/route-data.js'
-import userEditAccountStateSetter from '../../../app/components/user/components/edit/components/account/functions/state-setter.js'
 
 const DEFAULT_IMAGE_PL = `${AWS_S3_URL}/assets/mapa-wynajmu-nieruchomosci-w-warszawie.png`
 
@@ -329,8 +337,7 @@ export default [
     descriptionParser: announcementShowMetaDataDescriptionParser,
     keywordsParser: announcementShowMetaDataKeywordsParser,
     imageParser: announcementShowMetaDataImageParser,
-    initialStateParser: announcementShowInitialStateParser,
-    stateSetter: announcementShowurlDataSyncedter
+    initialStateParser: announcementShowInitialStateParser
   },
   {
     url: ANNOUNCEMENT_SHOW_URLS[EN],
@@ -342,8 +349,7 @@ export default [
     descriptionParser: announcementShowMetaDataDescriptionParser,
     keywordsParser: announcementShowMetaDataKeywordsParser,
     imageParser: announcementShowMetaDataImageParser,
-    initialStateParser: announcementShowInitialStateParser,
-    stateSetter: announcementShowurlDataSyncedter
+    initialStateParser: announcementShowInitialStateParser
   },
   {
     url: USER_CREATE_URLS[PL],
@@ -392,15 +398,13 @@ export default [
     lang: PL,
     track: USER_EDIT_TRACK,
     title: USER_EDIT_TITLES[PL],
-    image: DEFAULT_IMAGE_PL,
-    stateSetter: userEditAccountStateSetter
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: USER_EDIT_URLS[EN],
     lang: EN,
     track: USER_EDIT_TRACK,
     title: USER_EDIT_TITLES[EN],
-    image: DEFAULT_IMAGE_PL,
-    stateSetter: userEditAccountStateSetter
+    image: DEFAULT_IMAGE_PL
   }
 ]
