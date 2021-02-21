@@ -74,9 +74,6 @@ import {
   ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS
 } from './descriptions'
 
-import { announcementIndexInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement/index'
-import { announcementShowInitialStateParser } from '../../functions/parsers/announcement/initial-state/announcement/show'
-
 import { buildAnnouncementShowUrl } from '../../functions/builders/announcement/show-url'
 import { buildAnnouncementEditUrl } from '../../functions/builders/announcement/edit-url'
 import buildPageEditUrl from '../../../../shared/app/components/page/components/edit/functions/build-page-edit-url.js'
@@ -100,8 +97,7 @@ export default [
     keywords: ROOT_KEYWORDS[PL],
     description: ROOT_DESCRIPTIONS[PL],
     image: DEFAULT_IMAGE_PL,
-    pageName: 'welcome',
-    initialStateParser: announcementIndexInitialStateParser
+    pageName: 'welcome'
   },
   {
     url: ROOT_URLS[EN],
@@ -111,8 +107,7 @@ export default [
     keywords: ROOT_KEYWORDS[EN],
     description: ROOT_DESCRIPTIONS[EN],
     image: DEFAULT_IMAGE_PL,
-    pageName: 'welcome',
-    initialStateParser: announcementIndexInitialStateParser
+    pageName: 'welcome'
   },
   {
     url: VISITOR_PRIVACY_SETTINGS_URLS[PL],
@@ -288,7 +283,6 @@ export default [
     title: ANNOUNCEMENT_INDEX_CATALOGUE_TITLES[PL],
     keywords: ANNOUNCEMENT_INDEX_CATALOGUE_KEYWORDS[PL],
     description: ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS[PL],
-    initialStateParser: announcementIndexInitialStateParser,
     image: DEFAULT_IMAGE_PL
   },
   {
@@ -298,7 +292,6 @@ export default [
     title: ANNOUNCEMENT_INDEX_CATALOGUE_TITLES[EN],
     keywords: ANNOUNCEMENT_INDEX_CATALOGUE_KEYWORDS[EN],
     description: ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS[EN],
-    initialStateParser: announcementIndexInitialStateParser,
     image: DEFAULT_IMAGE_PL
   },
   {
@@ -324,8 +317,7 @@ export default [
     titleParser: announcementShowMetaDataTitleParser,
     descriptionParser: announcementShowMetaDataDescriptionParser,
     keywordsParser: announcementShowMetaDataKeywordsParser,
-    imageParser: announcementShowMetaDataImageParser,
-    initialStateParser: announcementShowInitialStateParser
+    imageParser: announcementShowMetaDataImageParser
   },
   {
     url: ANNOUNCEMENT_SHOW_URLS[EN],
@@ -336,8 +328,7 @@ export default [
     titleParser: announcementShowMetaDataTitleParser,
     descriptionParser: announcementShowMetaDataDescriptionParser,
     keywordsParser: announcementShowMetaDataKeywordsParser,
-    imageParser: announcementShowMetaDataImageParser,
-    initialStateParser: announcementShowInitialStateParser
+    imageParser: announcementShowMetaDataImageParser
   },
   {
     url: USER_CREATE_URLS[PL],

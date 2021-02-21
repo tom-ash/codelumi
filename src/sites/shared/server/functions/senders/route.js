@@ -4,6 +4,7 @@ import exceptionSender from './exception.js'
 import svgsParser from '../../../shared/functions/parsers/svgs.js'
 import metaDataParser from '../../../shared/functions/parsers/meta-data.js'
 import anyNull from '../helpers/any-null.js'
+import initialStateParserV2 from '../parsers/initial-state.js' 
 
 function routeSender({
   res,
@@ -33,18 +34,15 @@ function routeSender({
     throw new Error('Page Not Found')
   })
   .then(jsonResponse => {
-    const { metaData: unparsedMetaData, initialState: unparsedInitialState, page: pageShow, user } = jsonResponse
+    const { metaData: unparsedMetaData, state } = jsonResponse
     const svgs = svgsParser(jsonResponse)
     const metaData = metaDataParser({ ...route, ...unparsedMetaData, lang })
     const app = { ...appState, lang, device, svgs, urlDataSynced: true }
     const { visitor: { legal: { privacy: { settings: { statisticsConsent, marketingConsent }}}}} = visitorState
     const renderPrivacyMonit = { 'visitor/privacy-monit': anyNull({ statisticsConsent, marketingConsent }) }
     const render = { ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] }
-    const residualState = initialStateParser && initialStateParser(unparsedInitialState) || {}
-    const page = pageShow ? { show: { data: pageShow } } : {}
-    const { authorized, account_type: accountType, first_name: firstName, business_name: businessName, role } = user
-    const userState = { user: { authorize: { data: { authorized, accountType, firstName, businessName, admin: role === 'admin' } } } }
-    const initialState = { app, render, page, ...visitorState, ...userState, ...residualState }
+    const residualState = initialStateParser && initialStateParser(state) || {}
+    const initialState = { app, render, ...visitorState, ...residualState, ...initialStateParserV2(state) }
     const appAsHtml = appRenderer(initialState)
     const status = 200
 

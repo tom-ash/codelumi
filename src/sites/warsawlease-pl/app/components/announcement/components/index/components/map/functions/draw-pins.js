@@ -54,7 +54,7 @@ function setUpPinCreator() {
 export function removeOldPins() {
   const { pins } = this.props
 
-  if (pins === null) return
+  if (!pins) return
 
   pins.length && pins.map(pin => pin.setMap(null))
 }
