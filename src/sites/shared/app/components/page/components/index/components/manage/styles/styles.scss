@@ -1,5 +1,5 @@
 #page-index-manage {
-  max-width: 768px;
+  max-width: 960px;
   margin: 200px auto;
   border: 1px solid #E5E7E9;
   padding: 30px;
@@ -29,6 +29,20 @@
         height: 30px;
         margin: 30px auto 0;
       }
+    }
+  }
+  .list {
+    .name {
+      margin-top: 15px;
+    }
+    .url {
+      margin-top: 5px;
+      padding-left: 10px;
+      color: gray;
+      max-width: 700px;
+      overflow-y: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
   }
 }

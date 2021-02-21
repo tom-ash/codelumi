@@ -20,19 +20,20 @@ class PageIndexManage extends React.Component {
         <ManagedText {...this.nameManager()} />
         <div className='list'>
           {Object.keys(pages).map(pageName => {
+            if (!pageName.match(inputtedName)) return null
+
             return (
-              <div>
+              <div key={pageName} className='name'>
                 {pageName}
-                <div>
-                  {pages[pageName][0]}
+                <div className='url'>
+                  PL: {pages[pageName].pl}
                 </div>
-                <div>
+                <div className='url'>
+                  EN: {pages[pageName].en}
                 </div>
               </div>
             )
-          })
-
-          }
+          })}
         </div>
       </div>
     )
