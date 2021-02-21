@@ -85,7 +85,7 @@ import { announcementShowMetaDataKeywordsParser } from '../../functions/parsers/
 import { announcementShowMetaDataImageParser } from '../../functions/parsers/meta-data/announcement/show/image'
 import pageCreateStateSetter from '../../../../shared/app/components/page/components/create/functions/state-setter.js'
 import pageEditStateSetter from '../../../../shared/app/components/page/components/edit/functions/state-setter.js'
-import announcementIndexStateSetter from '../../../app/components/announcement/components/index/functions/state-setter.js'
+import pageIndexManageStateSetter from '../../../../shared/app/components/page/components/index/components/manage/functions/state-setter.js'
 import announcementShowurlDataSyncedter from '../../../app/components/announcement/components/show/functions/setters/route-data.js'
 import userEditAccountStateSetter from '../../../app/components/user/components/edit/components/account/functions/state-setter.js'
 
@@ -101,8 +101,7 @@ export default [
     description: ROOT_DESCRIPTIONS[PL],
     image: DEFAULT_IMAGE_PL,
     pageName: 'welcome',
-    initialStateParser: announcementIndexInitialStateParser,
-    stateSetter: announcementIndexStateSetter
+    initialStateParser: announcementIndexInitialStateParser
   },
   {
     url: ROOT_URLS[EN],
@@ -113,8 +112,7 @@ export default [
     description: ROOT_DESCRIPTIONS[EN],
     image: DEFAULT_IMAGE_PL,
     pageName: 'welcome',
-    initialStateParser: announcementIndexInitialStateParser,
-    stateSetter: announcementIndexStateSetter
+    initialStateParser: announcementIndexInitialStateParser
   },
   {
     url: VISITOR_PRIVACY_SETTINGS_URLS[PL],
@@ -241,14 +239,16 @@ export default [
     lang: PL,
     track: PAGE_INDEX_MANAGE_TRACK,
     title: PAGE_INDEX_MANAGE_TITLES[PL],
-    image: DEFAULT_IMAGE_PL
+    image: DEFAULT_IMAGE_PL,
+    stateSetter: pageIndexManageStateSetter
   },
   {
     url: PAGE_INDEX_MANAGE_URLS[EN],
     lang: EN,
     track: PAGE_INDEX_MANAGE_TRACK,
     title: PAGE_INDEX_MANAGE_TITLES[EN],
-    image: DEFAULT_IMAGE_PL
+    image: DEFAULT_IMAGE_PL,
+    stateSetter: pageIndexManageStateSetter
   },
   {
     url: ANNOUNCEMENT_CREATE_URLS[PL],
@@ -293,7 +293,6 @@ export default [
     keywords: ANNOUNCEMENT_INDEX_CATALOGUE_KEYWORDS[PL],
     description: ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS[PL],
     initialStateParser: announcementIndexInitialStateParser,
-    stateSetter: announcementIndexStateSetter,
     image: DEFAULT_IMAGE_PL
   },
   {
@@ -304,7 +303,6 @@ export default [
     keywords: ANNOUNCEMENT_INDEX_CATALOGUE_KEYWORDS[EN],
     description: ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS[EN],
     initialStateParser: announcementIndexInitialStateParser,
-    stateSetter: announcementIndexStateSetter,
     image: DEFAULT_IMAGE_PL
   },
   {
@@ -312,16 +310,14 @@ export default [
     lang: PL,
     track: ANNOUNCEMENT_INDEX_MY_TRACK,
     title: ANNOUNCEMENT_INDEX_MY_TITLES[PL],
-    image: DEFAULT_IMAGE_PL,
-    stateSetter: announcementIndexStateSetter
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: ANNOUNCEMENT_INDEX_MY_URLS[EN],
     lang: EN,
     track: ANNOUNCEMENT_INDEX_MY_TRACK,
     title: ANNOUNCEMENT_INDEX_MY_TITLES[EN],
-    image: DEFAULT_IMAGE_PL,
-    stateSetter: announcementIndexStateSetter
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: ANNOUNCEMENT_SHOW_URLS[PL],

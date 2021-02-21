@@ -13,7 +13,7 @@ function pageEditStateSetter(routeData) {
   const typeData = 'page/edit/data'
   dispatch({ type: typeData, value: { name, langVerUrls }})
   
-  genericRouteStateSetter.call(this, routeData)
+  genericRouteStateSetter.call(this, { routeData })
 }
 
 export default pageEditStateSetter

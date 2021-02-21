@@ -10,7 +10,7 @@ function pageCreateStateSetter(routeData) {
   const typeData = 'page/create/data'
   dispatch({ type: typeData, value: { names }})
 
-  genericRouteStateSetter.call(this, routeData)
+  genericRouteStateSetter.call(this, { routeData })
 }
 
 export default pageCreateStateSetter

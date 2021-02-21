@@ -15,6 +15,10 @@ export const mapStateToProps = store => {
   } = store.render
 
   const {
+    names
+  } = store.page.index.data
+
+  const {
     name
   } = store.page.index.inputs
 
@@ -23,6 +27,7 @@ export const mapStateToProps = store => {
     urlDataSynced,
     renderManage,
     renderMap,
+    names,
     name
   }
 }

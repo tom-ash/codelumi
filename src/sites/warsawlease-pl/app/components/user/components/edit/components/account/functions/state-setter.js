@@ -6,7 +6,7 @@ function userEditAccountStateSetter(routeData) {
 
   changeData(state)
   changeApp({ urlDataSynced: true })
-  genericRouteStateSetter.call(this, routeData)
+  genericRouteStateSetter.call(this, { routeData })
 }
   
 export default userEditAccountStateSetter

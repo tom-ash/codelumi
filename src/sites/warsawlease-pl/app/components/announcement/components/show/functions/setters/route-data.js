@@ -8,7 +8,7 @@ function announcementShowurlDataSyncedter(routeData) {
   showClientServerParams.map(param => ( clientParams[param.client] = announcement[param.server] ))
 
   changeData(clientParams)
-  genericRouteStateSetter.call(this, routeData)
+  genericRouteStateSetter.call(this, { routeData })
 }
 
 export default announcementShowurlDataSyncedter

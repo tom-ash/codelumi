@@ -24,11 +24,11 @@ function matchStateToUrl({ pathname }) {
 
   if (route) {
     const { track, lang } = route
-    const stateSetter = route.stateSetter || genericRouteStateSetter
+    const stateSetter = genericRouteStateSetter //route.stateSetter || genericRouteStateSetter
     
     changeApp({ lang })
     changeRender({ ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] })
-    getRouteData.call(this, { url, route, requestType: 'ssr' }).then(routeData => stateSetter.call(this, { ...route, ...routeData, ...consents}))
+    getRouteData.call(this, { url, route, requestType: 'ssr' }).then(routeData => stateSetter.call(this, { routeData: { ...route, ...routeData, ...consents} }))
   } else {
     const { changePageShowData } = this.props
 
