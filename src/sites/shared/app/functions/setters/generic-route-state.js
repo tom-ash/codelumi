@@ -1,7 +1,11 @@
 function genericRouteStateSetter({ routeData }) {
   const { changeApp, changePageShowData, dispatch } = this.props
-  const { svgs, page, state } = routeData
+  const { svgs, page, state, state: { lang: pageLang } } = routeData
   const appState = { urlDataSynced: true }
+
+  if (pageLang) {
+    dispatch({ type: 'app', value: { lang: pageLang } })
+  }
 
   if (state) {
     Object.keys(state).map(stateKey => {

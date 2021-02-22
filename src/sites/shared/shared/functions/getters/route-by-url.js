@@ -1,5 +1,7 @@
+import { PAGE_SHOW_TRACK } from '../../constants/tracks/tracks.js'
+
 function getRouteByUrl({ url, routes }) {
-  return routes.find(route => {
+  const route = routes.find(route => {
     const { url: routeUrl } = route
 
     if (typeof routeUrl === 'string') {
@@ -8,6 +10,8 @@ function getRouteByUrl({ url, routes }) {
 
     return url.match(routeUrl)
   })
+
+  return route || { track: PAGE_SHOW_TRACK }
 }
 
 export default getRouteByUrl

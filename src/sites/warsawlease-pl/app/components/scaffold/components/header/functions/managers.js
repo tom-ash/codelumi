@@ -134,9 +134,9 @@ export function myAccountManager() {
 
 export function languageManager() {
   const { changeUrl, matchUrlToLang } = this.context
-  const { changeApp, lang, pageLangUrls } = this.props
+  const { changeApp, lang } = this.props
   const invertedLanguage = lang === 'pl' ? 'en' : 'pl'
-  const { route, url } = matchUrlToLang()
+  const { url } = matchUrlToLang({ lang: invertedLanguage })
   const href = `${CLIENT_URL}/${url === '/' ? '' : `${url}`}`
   
   return {
@@ -147,7 +147,7 @@ export function languageManager() {
       saveCookie('lang', invertedLanguage, 'oneYear')
       changeApp({ lang: invertedLanguage })
 
-      const href = route ? `${CLIENT_URL}/${url}` : `${CLIENT_URL}/${pageLangUrls[invertedLanguage]}`
+      const href = `${CLIENT_URL}/${url}`
 
       changeUrl({ href, withoutScroll: true })
     }

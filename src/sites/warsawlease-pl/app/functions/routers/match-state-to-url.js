@@ -1,4 +1,4 @@
-import { VISITOR_PRIVACY_MONIT_TRACK, PAGE_TRACK, PAGE_SHOW_TRACK, PAGE_NOT_FOUND_TRACK } from '../../../shared/constants/tracks/tracks'
+import { VISITOR_PRIVACY_MONIT_TRACK } from '../../../shared/constants/tracks/tracks'
 import routes from '../../../shared/constants/routes/routes.js'
 import routeRenders from '../../../shared/constants/routes/renders'
 import renderState from '../../constants/render-state'
@@ -12,7 +12,7 @@ import { anyNull } from '../../../shared/functions/helpers/any-null.js'
 function matchStateToUrl({ pathname }) {
   if (typeof window === 'undefined') return
 
-  const { changeApp, changeRender, changeVisitorPrivacySettings } = this.props
+  const { changeRender, changeVisitorPrivacySettings } = this.props
   const url = getPureUrl(pathname || window.location.pathname)
   const route = getRouteByUrl({ url, routes })
   const statisticsConsent = getCookieAsBool(getCookieValue('_pdpaf'))
@@ -23,36 +23,12 @@ function matchStateToUrl({ pathname }) {
   changeVisitorPrivacySettings(consents)
 
   if (route) {
-    const { track, lang } = route
+    const { track } = route
     const stateSetter = route.stateSetter || genericRouteStateSetter
     
-    changeApp({ lang })
     changeRender({ ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] })
-    getRouteData.call(this, { url, route, requestType: 'ssr' }).then(routeData => stateSetter.call(this, { routeData: { ...route, ...routeData, ...consents} }))
-  } else {
-    const { changePageShowData } = this.props
-
-    fetch(`${API_URL}/posts/urls/${url}`, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(response => {
-      if (response.ok) return response.json()
-  
-      throw new Error('Page Not Found')
-    })
-    .then(json => {
-      const { page } = json
-      changeApp({ lang: page.lang })
-
-      changePageShowData(page)
-      changeRender({ ...renderState, ...renderPrivacyMonit, [PAGE_TRACK]: true, [PAGE_SHOW_TRACK]: true })
-    })
-    .catch(error => {
-      changeApp({ lang: 'pl' })
-      changeRender({ [PAGE_TRACK]: true, [PAGE_NOT_FOUND_TRACK]: true })
-    })
+    getRouteData.call(this, { url, route, requestType: 'ssr' })
+    .then(routeData => stateSetter.call(this, { routeData: { ...route, ...routeData, ...consents} }))
   }
 }
 
