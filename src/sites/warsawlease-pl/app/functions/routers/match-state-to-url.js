@@ -9,6 +9,15 @@ import genericRouteStateSetter from '../../../../shared/app/functions/setters/ge
 import { getCookieValue } from '../cookie-handlers.js'
 import { anyNull } from '../../../shared/functions/helpers/any-null.js'
 
+// TODO EXTRACT
+function getCookieAsBool(cookieValue) {
+  switch(cookieValue) {
+    case 'true': return true
+    case 'false': return false
+    default: return null
+  }
+}
+
 function matchStateToUrl({ pathname }) {
   if (typeof window === 'undefined') return
 
@@ -27,17 +36,10 @@ function matchStateToUrl({ pathname }) {
     const stateSetter = route.stateSetter || genericRouteStateSetter
     
     changeRender({ ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] })
+
     getRouteData.call(this, { url, route, requestType: 'ssr' })
     .then(routeData => stateSetter.call(this, { routeData: { ...route, ...routeData, ...consents} }))
   }
 }
 
 export default matchStateToUrl
-
-function getCookieAsBool(cookieValue) {
-  switch(cookieValue) {
-    case 'true': return true
-    case 'false': return false
-    default: return null
-  }
-}

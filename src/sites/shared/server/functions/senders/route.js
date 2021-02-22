@@ -14,7 +14,7 @@ function routeSender({
   accessToken,
   appRenderer
 }) {
-  const { track, lang, pageName, initialStateParser } = route
+  const { track, lang: routeLang, pageName, initialStateParser } = route
   const pageNameHeader = pageName ? { 'Page-Name': pageName } : {}
 
   fetch(apiUrl + `/route_data`, {
@@ -23,7 +23,7 @@ function routeSender({
       'Type': 'ssr',
       'Route-Url': url,
       'Track': track,
-      'Lang': lang,
+      'Lang': routeLang,
       'Access-Token': accessToken,
       ...pageNameHeader
     }
@@ -34,9 +34,11 @@ function routeSender({
     throw new Error('Page Not Found')
   })
   .then(jsonResponse => {
-    const { metaData: unparsedMetaData, state } = jsonResponse
+    const { metaData: unparsedMeta, state, state: { 'page/show/data': pageData }} = jsonResponse
+    let lang = routeLang
+    if (pageData) { lang = pageData.lang }
     const svgs = svgsParser(jsonResponse)
-    const metaData = metaDataParser({ ...route, ...unparsedMetaData, lang })
+    const metaData = metaDataParser({ ...route, ...unparsedMeta, lang })
     const app = { ...appState, lang, device, svgs, urlDataSynced: true }
     const { visitor: { legal: { privacy: { settings: { statisticsConsent, marketingConsent }}}}} = visitorState
     const renderPrivacyMonit = { 'visitor/privacy-monit': anyNull({ statisticsConsent, marketingConsent }) }

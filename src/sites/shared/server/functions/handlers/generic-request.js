@@ -1,5 +1,4 @@
 import routeSender from '../senders/route.js'
-import pageSender from '../senders/page.js'
 import getPureUrl from '../../../shared/functions/getters/pure-url.js'
 import getRouteByUrl from '../../../shared/functions/getters/route-by-url.js'
 import getDevice from '../../../shared/functions/getters/device.js'
@@ -19,22 +18,11 @@ function genericRequestHandler({
   const device = getDevice(headers['user-agent'])
   const visitorState = getVisitorState(cookies)
 
-  if (route) return (
-    routeSender({
-      res,
-      apiUrl,
-      route, url, device, routeRenders, tracks,
-      appState, renderState, visitorState,
-      accessToken,
-      appRenderer
-    })
-  )
-
-  pageSender({
+  routeSender({
     res,
     apiUrl,
-    url, device,
-    appState, renderState, tracks, visitorState,
+    route, url, device, routeRenders, tracks,
+    appState, renderState, visitorState,
     accessToken,
     appRenderer
   })
