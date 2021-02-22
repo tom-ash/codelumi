@@ -1,7 +1,7 @@
-function pageEditInitialStateParser({ pageCreate }) {
-  const { name, langVerUrls } = pageCreate
-  const body = JSON.stringify(pageCreate.body, null, 2)
-  const meta = JSON.stringify(pageCreate.meta, null, 2)
+function pageEditInitialStateParser({ 'page/edit': pageEdit }) {
+  const { name, langVerUrls } = pageEdit
+  const body = JSON.stringify(pageEdit.body, null, 2)
+  const meta = JSON.stringify(pageEdit.meta, null, 2)
 
   return {
     page: {
@@ -11,7 +11,7 @@ function pageEditInitialStateParser({ pageCreate }) {
           langVerUrls
         },
         inputs: {
-          ...pageCreate,
+          ...pageEdit,
           body,
           meta
         }
