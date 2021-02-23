@@ -1,3 +1,13 @@
+import buildAnnouncementShowUrl from '../../functions/builders/announcement/show-url'
+import buildAnnouncementEditUrl from '../../functions/builders/announcement/edit-url'
+import buildPageEditUrl from '../../../../shared/app/components/page/components/edit/functions/build-page-edit-url.js'
+import pageEditStateParser from '../../../../shared/app/components/page/components/edit/functions/initial-state-parser.js'
+import pageEditStateSetter from '../../../../shared/app/components/page/components/edit/functions/state-setter.js'
+import announcementShowTitleParser from '../../functions/parsers/meta-data/announcement/show/title'
+import announcementShowDescriptionParser from '../../functions/parsers/meta-data/announcement/show/description'
+import announcementShowKeywordsParser from '../../functions/parsers/meta-data/announcement/show/keywords'
+import announcementShowMetaDataImageParser from '../../functions/parsers/meta-data/announcement/show/image'
+
 import {
   PL,
   EN
@@ -73,18 +83,6 @@ import {
   ANNOUNCEMENT_CREATE_DESCRIPTIONS,
   ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS
 } from './descriptions'
-
-import { buildAnnouncementShowUrl } from '../../functions/builders/announcement/show-url'
-import { buildAnnouncementEditUrl } from '../../functions/builders/announcement/edit-url'
-import buildPageEditUrl from '../../../../shared/app/components/page/components/edit/functions/build-page-edit-url.js'
-
-import { announcementShowMetaDataTitleParser } from '../../functions/parsers/meta-data/announcement/show/title'
-import { announcementShowMetaDataDescriptionParser } from '../../functions/parsers/meta-data/announcement/show/description'
-import { announcementShowMetaDataKeywordsParser } from '../../functions/parsers/meta-data/announcement/show/keywords'
-import { announcementShowMetaDataImageParser } from '../../functions/parsers/meta-data/announcement/show/image'
-
-import pageEditInitialStateParser from '../../../../shared/app/components/page/components/edit/functions/initial-state-parser.js'
-import pageEditStateSetter from '../../../../shared/app/components/page/components/edit/functions/state-setter.js'
 
 const DEFAULT_IMAGE_PL = `${AWS_S3_URL}/assets/mapa-wynajmu-nieruchomosci-w-warszawie.png`
 
@@ -199,7 +197,7 @@ export default [
     track: PAGE_EDIT_TRACK,
     title: PAGE_CREATE_TITLES[PL],
     image: DEFAULT_IMAGE_PL,
-    initialStateParser: pageEditInitialStateParser,
+    initialStateParser: pageEditStateParser,
     stateSetter: pageEditStateSetter,
     urlBuilder: buildPageEditUrl
   },
@@ -209,7 +207,7 @@ export default [
     track: PAGE_EDIT_TRACK,
     title: PAGE_CREATE_TITLES[EN],
     image: DEFAULT_IMAGE_PL,
-    initialStateParser: pageEditInitialStateParser,
+    initialStateParser: pageEditStateParser,
     stateSetter: pageEditStateSetter,
     urlBuilder: buildPageEditUrl
   },
@@ -314,9 +312,9 @@ export default [
     track: ANNOUNCEMENT_SHOW_TRACK,
     needsDataInitialization: true,
     urlBuilder: buildAnnouncementShowUrl,
-    titleParser: announcementShowMetaDataTitleParser,
-    descriptionParser: announcementShowMetaDataDescriptionParser,
-    keywordsParser: announcementShowMetaDataKeywordsParser,
+    titleParser: announcementShowTitleParser,
+    descriptionParser: announcementShowDescriptionParser,
+    keywordsParser: announcementShowKeywordsParser,
     imageParser: announcementShowMetaDataImageParser
   },
   {
@@ -325,9 +323,9 @@ export default [
     track: ANNOUNCEMENT_SHOW_TRACK,
     needsDataInitialization: true,
     urlBuilder: buildAnnouncementShowUrl,
-    titleParser: announcementShowMetaDataTitleParser,
-    descriptionParser: announcementShowMetaDataDescriptionParser,
-    keywordsParser: announcementShowMetaDataKeywordsParser,
+    titleParser: announcementShowTitleParser,
+    descriptionParser: announcementShowDescriptionParser,
+    keywordsParser: announcementShowKeywordsParser,
     imageParser: announcementShowMetaDataImageParser
   },
   {

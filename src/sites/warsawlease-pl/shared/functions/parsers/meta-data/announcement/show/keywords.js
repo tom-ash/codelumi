@@ -1,7 +1,7 @@
 import { parseCategory } from '../../../parse-category'
 import { parseDistrict } from '../../../parse-district'
 
-export function announcementShowMetaDataKeywordsParser({ keywords, lang }) {
+function announcementShowKeywordsParser({ keywords, lang }) {
   const { category, district } = keywords
 
   const parsedKeywords = [
@@ -13,3 +13,5 @@ export function announcementShowMetaDataKeywordsParser({ keywords, lang }) {
 
   return parsedKeywords
 }
+
+export default announcementShowKeywordsParser

@@ -11,7 +11,7 @@ const WARSAW_URL = {
   [EN]: 'warsaw'
 }
 
-export function buildAnnouncementShowUrl({
+function buildAnnouncementShowUrl({
   announcementShowData: {
     id,
     category,
@@ -25,3 +25,5 @@ export function buildAnnouncementShowUrl({
     `${id}-${parseCategoryForUrl(category)[lang]}-${FOR_LEASE[lang]}-${WARSAW_URL[lang]}-${parseDistrictForUrl(district)}`
   )
 }
+
+export default buildAnnouncementShowUrl

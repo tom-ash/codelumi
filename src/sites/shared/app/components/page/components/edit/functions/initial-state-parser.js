@@ -1,4 +1,4 @@
-function pageEditInitialStateParser({ 'page/edit': pageEdit }) {
+function pageEditStateParser({ 'page/edit': pageEdit }) {
   const { name, langVerUrls } = pageEdit
   const body = JSON.stringify(pageEdit.body, null, 2)
   const meta = JSON.stringify(pageEdit.meta, null, 2)
@@ -20,4 +20,4 @@ function pageEditInitialStateParser({ 'page/edit': pageEdit }) {
   }
 }
 
-export default pageEditInitialStateParser
+export default pageEditStateParser

@@ -1,3 +1,5 @@
-export function announcementShowMetaDataDescriptionParser({ description, lang }) {
+function announcementShowDescriptionParser({ description, lang }) {
   return description[lang]
 }
+
+export default announcementShowDescriptionParser
