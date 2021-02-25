@@ -40,7 +40,6 @@ class AnnouncementIndexMap extends React.Component {
       announcements,
       changeData,
       isMobile,
-      svgs,
       miniListFarthestScrollTop,
       miniListFarthestScrollLeft,
       changeApp,
@@ -105,7 +104,6 @@ class AnnouncementIndexMap extends React.Component {
               availabilityDate={tile.availabilityDate}
               closeButtonOnClick={() => this.props.changeData({ tileId: null, tile: null })}
               isMobile={isMobile}
-              svgs={svgs}
               changeApp={changeApp}
               changeData={changeAnnouncementShowData}
             />

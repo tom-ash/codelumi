@@ -33,8 +33,6 @@ export function logIn() {
     const { lang } = this.props
     const { changeUrl } = this.context
 
-    console.log('sadadsadasdasdad')
-
     changeData({ accountType: json.accountType, authorized: true, name: json.name })
     saveTokens.call(this, json.accessToken)
     changeRouteWithHref({ track, lang, changeUrl })

@@ -7,9 +7,11 @@ export const mapStateToProps = store => {
     lang,
     isMobile,
     scripts,
-    device,
-    svgs
+    device
   } = store.app
+  const {
+    svgs
+  } = store.assets
   const {
     [ANNOUNCEMENT_INDEX_CATALOGUE_TRACK]: renderCatalogue
   } = store.render

@@ -1,19 +1,32 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { mapStateToProps } from './constants/mappers'
 
-const SVG = ({ pathData, fill, viewBox }) => {
-  if (!pathData) return null
+class SVG extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
-  return (
-    <svg
-      fill={fill}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox={viewBox || "0 0 512 512"}
-    >
-      <path
-        d={pathData}
-      />
-    </svg>
-  )
+  render() {
+    const { svgs, name, fill } = this.props
+    const svgData = svgs[name]
+
+    if (!svgData) return null
+
+    const { viewBox, pathData } = svgData
+
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill={fill}
+        viewBox={viewBox}
+      >
+        <path
+          d={pathData}
+        />
+      </svg>
+    )
+  }
 }
 
-export default SVG
+export default connect(mapStateToProps)(SVG)

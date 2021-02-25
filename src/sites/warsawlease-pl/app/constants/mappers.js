@@ -12,7 +12,6 @@ export const mapStateToProps = store => {
     path,
     scrollY,
     scripts,
-    svgs,
     urlDataSynced
   } = store.app
   const {
@@ -49,7 +48,6 @@ export const mapStateToProps = store => {
     scripts,
     googleAnalyticsLoaded: store.app.scripts.googleAnalytics,
     googleAnalyticsLoading: store.app.scripts.googleAnalyticsLoading,
-    svgs,
     render,
     renderPage,
     renderVisitor,

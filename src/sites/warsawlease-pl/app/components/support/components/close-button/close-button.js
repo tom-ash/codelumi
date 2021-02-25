@@ -9,7 +9,7 @@ export const CloseButton = ({ classNames, onClick, pathData}) => {
       className={`close-button${classes}`}
       onClick={onClick}
     >
-      <SVG pathData={pathData} />
+      <SVG name='close' />
     </button>
   )
 }

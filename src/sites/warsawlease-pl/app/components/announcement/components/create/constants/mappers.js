@@ -4,8 +4,13 @@ export const mapStateToProps = store => {
   const {
     lang,
     isMobile,
-    svgs
+    // svgs
   } = store.app
+
+  const {
+    svgs
+  } = store.assets
+
   const {
     [ANNOUNCEMENT_EDIT_TRACK]: renderEdit
   } = store.render

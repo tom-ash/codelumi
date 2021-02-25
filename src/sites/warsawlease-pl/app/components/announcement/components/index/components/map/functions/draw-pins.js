@@ -78,17 +78,18 @@ function addNewPins() {
     const { lang } = this.props
     const category = categories.find(category => category.number === categoryNumber)
     const pin = category.pin
+    const svg = svgs[pin.svg]
 
     const htmlContent = (
       `<a href="${buildLink({ id, category: categoryNumber, district, lang })}">
         <div class='icon ${pin.class}'>
           <SVG
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 640 512"
+            viewBox="${svg && svg.viewBox}"
           >
             <path
               style="fill:${pin.color};"
-              d="${svgs[pin.svg]}"
+              d="${svg && svg.pathData}"
             />
           </svg>
         </div>

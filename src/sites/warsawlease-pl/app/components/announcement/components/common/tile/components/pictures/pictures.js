@@ -27,8 +27,7 @@ class AnnouncementShowPictures extends React.Component {
       disableSLides,
       heightQuantifier,
       venue,
-      isMobile,
-      svgs
+      isMobile
     } = this.props
 
     const {
@@ -38,7 +37,7 @@ class AnnouncementShowPictures extends React.Component {
     if (pictures.length === 0 && venue === 'show') return null
     if (pictures.length === 0) return <ManagedLink {...this.linkManager()} />
 
-    const Chevron = () => <SVG pathData={svgs && svgs.chevron} />
+    const Chevron = () => <SVG name='chevron' />
 
     return (
       <div className='announcement-show-pictures'>
@@ -54,10 +53,7 @@ class AnnouncementShowPictures extends React.Component {
           className='share-on-facebook-button show'
           onClick={() => shareOnFacebook(buildLink(this.props), isMobile)}
         >
-          <SVG
-            pathData={svgs && svgs.facebook}
-            color='#FDFEFE'
-          />
+          <SVG name='facebook' />
         </div>}
         {venue !== 'show' && venue !== 'mini-list' && <ManagedLink {...this.linkManager()} />}
       </div>

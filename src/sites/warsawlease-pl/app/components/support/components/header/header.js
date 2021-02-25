@@ -6,10 +6,9 @@ import styles from './styles/styles.scss'
 const Header = ({
   tier,
   text,
-  svgPathData,
-  viewBox
+  svg
 }) => {
-  const icon = svgPathData ? <div className='icon'><SVG viewBox={viewBox} pathData={svgPathData} /></div> : null
+  const icon = svg ? <div className='icon'><SVG name={svg} /></div> : null
   const tag = `h${tier}`
   const header = React.createElement(tag, {}, text)
     

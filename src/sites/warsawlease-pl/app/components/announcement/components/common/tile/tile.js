@@ -109,7 +109,6 @@ class AnnouncementTile extends React.Component {
         {venue === 'map' &&
         <CloseButton
           onClick={closeButtonOnClick}
-          pathData={svgs && svgs.close}
         />}
         <div className='header-container'>
           <h1>

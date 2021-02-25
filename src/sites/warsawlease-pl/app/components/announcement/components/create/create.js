@@ -27,6 +27,7 @@ import Line from '../../../support/components/separation-line/separation-line'
 import AvailabilityDate from './components/availability_date/availability_date'
 import { OPTIONAL } from './constants/texts'
 import Header from '../../../support/components/header/header'
+import SVG from '../../../support/components/svg/svg.js'
 
 import {
   categoryManager,
@@ -67,12 +68,13 @@ class AnnouncementCreate extends React.Component {
     const availabilityDateProps = { lang, availabilityDate, showAvilabilityDate, changeControl, changeInputs }
     const headerText = this.langObjHandler({ pl: 'Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w Warszawie', en: 'Add Free Announcement of Real Estate Lease in Warsaw' })
     const headerSvgPathData = svgs && svgs.plus
+    const arr = Array.from(Array(100).keys())
 
     return (
       <>
         <AnnouncementCreateSteps authorized={authorized} step={step} svgs={svgs} />
         <div id='announcement-create' className={step}>
-          <Header tier={1} text={headerText} svgPathData={headerSvgPathData} />
+          <Header tier={1} text={headerText} svg='plus' />
           {step === 'form' &&
           <>
             <Primary />
