@@ -3,8 +3,7 @@ export const mapStateToProps = store => {
     lang,
     isMobile,
     device,
-    scrollY,
-    svgs
+    scrollY
   } = store.app
 
   const {
@@ -34,7 +33,6 @@ export const mapStateToProps = store => {
     page,
     announcements,
     scrollY,
-    svgs,
     indexFullFarthestScrollTop
   }
 }

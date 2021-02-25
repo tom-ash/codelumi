@@ -1,7 +1,6 @@
 import fetch from 'node-fetch'
 import indexRenderer from '../renderers/index.js'
 import exceptionSender from './exception.js'
-import svgsParser from '../../../shared/functions/parsers/svgs.js'
 import metaDataParser from '../../../shared/functions/parsers/meta-data.js'
 import anyNull from '../helpers/any-null.js'
 import initialStateParserV2 from '../parsers/initial-state.js' 
@@ -37,9 +36,8 @@ function routeSender({
     const { metaData: unparsedMeta, state, state: { 'page/show/data': pageData }} = jsonResponse
     let lang = routeLang
     if (pageData) { lang = pageData.lang }
-    const svgs = svgsParser(jsonResponse)
     const metaData = metaDataParser({ ...route, ...unparsedMeta, lang })
-    const app = { ...appState, lang, device, svgs, urlDataSynced: true }
+    const app = { ...appState, lang, device, urlDataSynced: true }
     const { visitor: { legal: { privacy: { settings: { statisticsConsent, marketingConsent }}}}} = visitorState
     const renderPrivacyMonit = { 'visitor/privacy-monit': anyNull({ statisticsConsent, marketingConsent }) }
     const render = { ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] }

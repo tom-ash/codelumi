@@ -3,10 +3,6 @@ import { connect } from 'react-redux'
 import { mapStateToProps } from './constants/mappers'
 
 class SVG extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const { svgs, name, fill } = this.props
     const svgData = svgs[name]

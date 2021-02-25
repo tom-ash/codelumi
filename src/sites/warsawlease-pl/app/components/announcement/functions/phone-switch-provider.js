@@ -12,7 +12,7 @@ export function phoneSwitchProvider() {
       onClick={e => this.togglePhone()}
     >
       <div className='svg-container'>
-        <SVG pathData={svgs && svgs.phone} />
+        <SVG name='phone' />
       </div>
       {phone &&
       <a href={`tel:${phone}`}>

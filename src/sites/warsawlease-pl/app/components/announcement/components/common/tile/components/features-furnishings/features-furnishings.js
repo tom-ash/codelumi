@@ -18,8 +18,7 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
   render() {
     const {
       itemsName,
-      items,
-      svgs
+      items
     } = this.props
 
     const isFeatures = itemsName === 'features'
@@ -36,7 +35,7 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
           key={item}
         >
           <div className='icon'>
-            <SVG pathData={svgs && svgs.check} />
+            <SVG name='check' />
           </div>
           <div className='text'>
             {this.langObjHandler(nodes.find(node => node.ref === item))}

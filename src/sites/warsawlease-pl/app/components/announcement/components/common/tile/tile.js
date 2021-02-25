@@ -58,7 +58,6 @@ class AnnouncementTile extends React.Component {
       control,
       closeButtonOnClick,
       isMobile,
-      svgs,
       indexFullFarthestScrollTop,
       index,
       device,
@@ -157,7 +156,6 @@ class AnnouncementTile extends React.Component {
           district={district}
           area={area}
           isMobile={isMobile}
-          svgs={svgs}
           changeApp={changeApp}
           changeData={changeData}
         />
@@ -181,14 +179,12 @@ class AnnouncementTile extends React.Component {
             lang={lang}
             itemsName='features'
             items={features}
-            svgs={svgs}
           />}
           {furnishings && furnishings.length > 0 &&
           <AnnouncementShowFeaturesFurnishings
             lang={lang}
             itemsName='furnishings'
             items={furnishings}
-            svgs={svgs}
           />}
           {(polishDescription || englishDescription) &&
           <AnnouncementShowDescription

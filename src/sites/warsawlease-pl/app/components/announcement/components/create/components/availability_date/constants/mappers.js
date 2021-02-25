@@ -1,8 +1,4 @@
 export const mapStateToProps = store => {
-  const {
-    svgs
-  } = store.app
-
   return {
     lang: store.app.lang,
     availabilityDateFocus: store.announcement.create.control.availabilityDateFocus,
@@ -18,8 +14,7 @@ export const mapStateToProps = store => {
     totalFloors: store.announcement.create.inputs.totalFloors,
     showAvilabilityDate: store.announcement.create.control.showAvilabilityDate,
     availabilityDate: store.announcement.create.inputs.availabilityDate,
-    errors: store.announcement.create.errors,
-    svgs
+    errors: store.announcement.create.errors
   }
 }
   

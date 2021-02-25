@@ -8,8 +8,7 @@ export const mapStateToProps = store => {
   const {
     lang,
     path,
-    device,
-    svgs
+    device
   } = store.app
 
   const {
@@ -84,7 +83,6 @@ export const mapStateToProps = store => {
     offset,
     announcements,
     amount,
-    svgs,
     admin
   }
 }

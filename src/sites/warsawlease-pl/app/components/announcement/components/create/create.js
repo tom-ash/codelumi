@@ -60,19 +60,17 @@ class AnnouncementCreate extends React.Component {
 
   render() {
     const {
-      lang, isMobile, authorized, step, svgs, showAvilabilityDate,
+      lang, isMobile, authorized, step, showAvilabilityDate,
       id, category, district, area, availabilityDate,
       changeApp, changeAnnouncementShowData, changeControl, changeInputs
     } = this.props
 
     const availabilityDateProps = { lang, availabilityDate, showAvilabilityDate, changeControl, changeInputs }
     const headerText = this.langObjHandler({ pl: 'Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w Warszawie', en: 'Add Free Announcement of Real Estate Lease in Warsaw' })
-    const headerSvgPathData = svgs && svgs.plus
-    const arr = Array.from(Array(100).keys())
 
     return (
       <>
-        <AnnouncementCreateSteps authorized={authorized} step={step} svgs={svgs} />
+        <AnnouncementCreateSteps authorized={authorized} step={step} />
         <div id='announcement-create' className={step}>
           <Header tier={1} text={headerText} svg='plus' />
           {step === 'form' &&
@@ -110,7 +108,6 @@ class AnnouncementCreate extends React.Component {
             langObjHandler={this.langObjHandler}
             isMobile={isMobile}
             lang={lang}
-            svgs={svgs}
           />}
         </div>
       </>

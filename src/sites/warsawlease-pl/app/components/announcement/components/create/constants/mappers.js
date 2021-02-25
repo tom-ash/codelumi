@@ -3,13 +3,8 @@ import { ANNOUNCEMENT_EDIT_TRACK } from '../../../../../../shared/constants/trac
 export const mapStateToProps = store => {
   const {
     lang,
-    isMobile,
-    // svgs
+    isMobile
   } = store.app
-
-  const {
-    svgs
-  } = store.assets
 
   const {
     [ANNOUNCEMENT_EDIT_TRACK]: renderEdit
@@ -64,7 +59,6 @@ export const mapStateToProps = store => {
   return {
     renderEdit,
     lang,
-    svgs,
     step,
     connecting,
     id,

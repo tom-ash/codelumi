@@ -20,7 +20,7 @@ const AnnouncementShowShowcase = ({
       </div>
       <div className='phone-showcase'>
         <div className='icon'>
-          <SVG pathData={svgs && svgs.phone} />
+          <SVG name='phone' />
         </div>
         <div className='text'>
           {` ${announcerPhone}`}

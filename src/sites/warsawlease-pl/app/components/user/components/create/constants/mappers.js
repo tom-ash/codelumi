@@ -2,8 +2,7 @@ import { ANNOUNCEMENT_CREATE_TRACK } from '../../../../../../shared/constants/tr
 
 export const mapStateToProps = store => {
   const {
-    lang,
-    svgs
+    lang
   } = store.app
   const { publishing: publishingAnnouncement } = store.announcement.create.control
 
@@ -21,7 +20,6 @@ export const mapStateToProps = store => {
     success: store.user.create.control.success,
     step,
     publishingAnnouncement,
-    svgs,
     creatingAnnouncement
   }
 }

@@ -61,7 +61,7 @@ export function emailAddressManager() {
     autoComplete: 'email',
     controlled: false,
     label: this.langObjHandler(label),
-    children: <SVG pathData={svgs && svgs.envelope} />,
+    children: <SVG name='envelope' />,
     onFocus: () => this.errorResetter('email'),
     onBlur: value => {
       this.emailAddressManager().validate(value)
@@ -84,7 +84,7 @@ export function passwordManager() {
     autoComplete: 'new-password',
     controlled: false,
     label: this.langObjHandler(label),
-    children: <SVG pathData={svgs && svgs.lock} />,
+    children: <SVG name='lock' />,
     onFocus: () => this.errorResetter('password'),
     onBlur: value => {
       this.passwordManager().validate(value)
@@ -109,7 +109,7 @@ export function firstNameManager() {
     autoComplete: 'given-name',
     controlled: false,
     label: this.langObjHandler(label),
-    children: <SVG pathData={svgs && svgs.user} />,
+    children: <SVG name='user' />,
     onFocus: () => this.errorResetter('firstName'),
     onBlur: value => {
       this.firstNameManager().validate(value)
@@ -153,7 +153,7 @@ export function areaCodeManager() {
     onFocusCoverZIndex: 3001,
     id: 'user-create-email-area-code',
     classNames: { container: 'form-input select phone-country-code' },
-    children: <SVG pathData={svgs && svgs.chevron} />,
+    children: <SVG name='chevron' />,
     value: this.props.phoneCode,
     options: [ { value: '+48', text: '+48' }, { value: '+1', text: '+1' }, { value: '+44', text: '+44' } ],
     onSelect: (option) => {
@@ -181,7 +181,7 @@ export function phoneNumberManager() {
     controlled: false,
     classNames: { container: 'form-input text with-icon phone-body'},
     label: this.langObjHandler(label),
-    children: <SVG pathData={svgs && svgs.phone} />,
+    children: <SVG name='phone' />,
     onFocus: () => this.errorResetter('phone'),
     onBlur: value => {
       this.phoneNumberManager().validate(value)

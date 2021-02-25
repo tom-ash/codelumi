@@ -20,8 +20,7 @@ export function rentAmountManager() {
 
   const {
     category,
-    changeInputs,
-    svgs
+    changeInputs
   } = this.props
 
   let label = this.langObjHandler(text)
@@ -35,7 +34,7 @@ export function rentAmountManager() {
   return {
     classNames: { container: 'form-input text with-icon rent-amount' },
     value: this.props[rentAmountType],
-    children: <SVG pathData={svgs && svgs.coins} />,
+    children: <SVG name='coins' />,
     type: 'number',
     label,
     onChange: value => changeInputs({ [rentAmountType]: value }),
@@ -47,7 +46,7 @@ export function rentAmountManager() {
 }
 
 export function rentCurrencyManager() {
-  const { rentCurrency: value, svgs } = this.props
+  const { rentCurrency: value } = this.props
   const currencies = [
     { value: 0, text: 'zł' },
     { value: 1, text: '€' },
@@ -56,7 +55,7 @@ export function rentCurrencyManager() {
 
   return {
     classNames: { container: 'form-input select rent-currency' },
-    children: <SVG pathData={svgs && svgs.chevron} />,
+    children: <SVG name='chevron' />,
     value,
     options: currencies,
     onSelect: ({ value: optionValue }) => {
@@ -72,7 +71,7 @@ export function roomsManager() {
     create: text
   } = inputs.rooms
 
-  const { category, svgs } = this.props
+  const { category } = this.props
 
   let label = this.langObjHandler(text)
 
@@ -81,8 +80,8 @@ export function roomsManager() {
   return {
     classNames: { container: 'form-input with-icon select' },
     children: <>
-      <SVG pathData={svgs && svgs.door_open} />
-      <SVG pathData={svgs && svgs.chevron} />
+      <SVG name='door_open' />
+      <SVG name='chevron' />
     </>,
     value: this.props.rooms,
     label,
@@ -100,15 +99,11 @@ export function floorManager() {
     create: text
   } = inputs.floor
 
-  const {
-    svgs
-  } = this.props
-
   return {
     classNames: { container: 'form-input with-icon select' },
     children: <>
-      <SVG pathData={svgs && svgs.layers} />
-      <SVG pathData={svgs && svgs.chevron} />
+      <SVG name='layers' />
+      <SVG name='chevron' />
     </>,
     value: this.props.floor,
     label: this.langObjHandler(text),
@@ -133,8 +128,8 @@ export function totalFloorsManager() {
   return {
     classNames: { container: 'form-input with-icon select' },
     children: <>
-      <SVG pathData={svgs && svgs.building} />
-      <SVG pathData={svgs && svgs.chevron} />
+      <SVG name='building' />
+      <SVG name='chevron' />
     </>,
     value: this.props.totalFloors,
     label: this.langObjHandler(text),

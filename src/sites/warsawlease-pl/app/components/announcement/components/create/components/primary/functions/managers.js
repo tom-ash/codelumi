@@ -41,8 +41,8 @@ export function categoryManager() {
     label: label[lang],
     options: [{ value: '', text: '' }].concat(categoryOptions),
     children: <>
-      <SVG pathData={svgs && svgs.category} />
-      <SVG pathData={svgs && svgs.chevron} />
+      <SVG name='category' />
+      <SVG name='chevron' />
     </>,
     onFocus: () => changeErrors({ category: noError }),
     onSelect: option => {
@@ -71,8 +71,8 @@ export function districtManager() {
     label: this.langObjHandler(text),
     options: [{ value: '', text: '' }].concat(districts),
     children: <>
-      <SVG pathData={svgs && svgs.city} />
-      <SVG pathData={svgs && svgs.chevron} />
+      <SVG name='city' />
+      <SVG name='chevron' />
     </>,
     onFocus: () => this.props.changeErrors({ district: noError }),
     onSelect: option => {
@@ -109,7 +109,7 @@ export function areaManager() {
             en: 'sqm'
           })}
         </div>
-        <SVG pathData={svgs && svgs.area} />
+        <SVG name='area' />
       </>
     ),
     onFocus: () => this.props.changeErrors({ area: noError }),

@@ -42,7 +42,7 @@ class AnnouncementCreatePictures extends React.Component {
         </div>} */}
         <div className='drag-and-drop-container'>
           <div className={`drag-and-drop${this.props.error.pl ? ' error-drag-and-drop' : ''}`}>
-            <SVG pathData={svgs && svgs.camera} />
+            <SVG name='camera' />
             <input
               id={requiredInputs.pictures.id}
               className='input'
@@ -80,7 +80,7 @@ class AnnouncementCreatePictures extends React.Component {
                     onClick={() => this.deletePicture(index)}
                     className='button delete'
                   >
-                    <SVG pathData={svgs && svgs.close} />
+                    <SVG name='close' />
                   </div>
                   {
                   this.props.blobs && (index !== 0) &&
@@ -88,7 +88,7 @@ class AnnouncementCreatePictures extends React.Component {
                     onClick={() => this.movePicture('up', index)}
                     className='button up'
                   >
-                    <SVG pathData={svgs && svgs.chevron} />
+                    <SVG name='chevron' />
                   </div>
                   }
                   {
@@ -97,7 +97,7 @@ class AnnouncementCreatePictures extends React.Component {
                     onClick={() => this.movePicture('down', index)}
                     className='button down'
                   >
-                    <SVG pathData={svgs && svgs.chevron} />
+                    <SVG name='chevron' />
                   </div>
                   }
                   {
@@ -106,7 +106,7 @@ class AnnouncementCreatePictures extends React.Component {
                     onClick={() => this.rotatePicture(index)}
                     className='button rotate'
                   >
-                    <SVG pathData={svgs && svgs.rotate} />
+                    <SVG name='rotate' />
                   </div>
                   }
                 </div>

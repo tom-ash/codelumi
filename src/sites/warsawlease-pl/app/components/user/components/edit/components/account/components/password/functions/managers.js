@@ -15,7 +15,7 @@ export function emailManager() {
     controlled: false,
     classNames: { container: 'form-input with-icon text' },
     label: this.langObjHandler(label),
-    children: <SVG pathData={svgs && svgs.envelope} />,
+    children: <SVG name='envelope' />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.emailManager().validate(value),
     validate: value => {
@@ -46,7 +46,7 @@ export function verificationManager() {
     controlled: false,
     classNames: { container: 'form-input with-icon text' },
     label: this.langObjHandler(label),
-    children: <SVG pathData={svgs && svgs.lock} />,
+    children: <SVG name='lock' />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.verificationManager().validate(value),
     validate: value => {
@@ -72,7 +72,7 @@ export function passwordManager() {
     autoComplete: 'new-password',
     classNames: { container: 'form-input with-icon text' },
     label: this.langObjHandler(label),
-    children: <SVG pathData={svgs && svgs.lock} />,
+    children: <SVG name='lock' />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.passwordManager().validate(value),
     validate: value => {

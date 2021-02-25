@@ -8,8 +8,7 @@ export const mapStateToProps = store => {
   const {
     lang,
     isMobile,
-    device,
-    svgs,
+    device
   } = store.app
 
   const {
@@ -26,7 +25,6 @@ export const mapStateToProps = store => {
     lang,
     isMobile,
     device,
-    svgs,
     renderMap,
     renderCatalogue,
     renderMy,

@@ -1,10 +1,5 @@
 export const mapStateToProps = store => {
-  const {
-    svgs
-  } = store.app
-
   return {
-    svgs,
     lang: store.app.lang,
     businessNameStage: store.user.edit.control.businessNameStage,
     taxNumberStage: store.user.edit.control.taxNumberStage,
@@ -17,28 +12,18 @@ export const mapStateToProps = store => {
     phonephoneCodeCurrentValue: store.user.edit.data.phoneCode,
     phoneBodyCurrentValue: store.user.edit.data.phoneBody,
     emailCurrentValue: store.user.edit.data.email,
-
-
-
     firstNameConnecting: store.user.edit.control.firstNameConnecting,
     lastNameConnecting: store.user.edit.control.lastNameConnecting,
     businessNameConnecting: store.user.edit.control.businessNameConnecting,
-
     firstNameStage: store.user.edit.control.firstNameStage,
     lastNameStage: store.user.edit.control.lastNameStage,
     businessNameStage: store.user.edit.control.businessNameStage,
-
     firstNameCurrentValue: store.user.edit.data.firstName,
     lastNameCurrentValue: store.user.edit.data.lastName,
     businessNameCurrentValue: store.user.edit.data.businessName,
-
     firstNameError: store.user.edit.errors.firstName,
     lastNameError: store.user.edit.errors.lastName,
     businessNameError: store.user.edit.errors.businessName
-
-
-
-
   }
 }
 

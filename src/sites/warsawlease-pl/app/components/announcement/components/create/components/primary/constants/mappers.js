@@ -1,15 +1,10 @@
 export const mapStateToProps = store => {
-  const {
-    svgs
-  } = store.app
-
   return {
     lang: store.app.lang,
     category: store.announcement.create.inputs.category,
     district: store.announcement.create.inputs.district,
     area: store.announcement.create.inputs.area,
-    errors: store.announcement.create.errors,
-    svgs
+    errors: store.announcement.create.errors
   }
 }
   

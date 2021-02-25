@@ -1,16 +1,11 @@
 export const mapStateToProps = store => {
-  const {
-    svgs
-  } = store.app
-
   return {
     lang: store.app.lang,
     path: store.app.path,
     connecting: store.user.edit.control.passwordConnecting,
     stage: store.user.edit.control.passwordStage,
     step: store.user.edit.control.passwordStep,
-    error: store.user.edit.errors.password,
-    svgs
+    error: store.user.edit.errors.password
   }
 }
     

@@ -1,7 +1,6 @@
 export const mapStateToProps = store => {
   const {
-    lang,
-    svgs
+    lang
   } = store.app
 
   return {
@@ -13,8 +12,7 @@ export const mapStateToProps = store => {
     area: store.announcement.create.inputs.area,
     rooms: store.announcement.create.inputs.rooms,
     floor: store.announcement.create.inputs.floor,
-    totalFloors: store.announcement.create.inputs.totalFloors,
-    svgs
+    totalFloors: store.announcement.create.inputs.totalFloors
   }
 }
   

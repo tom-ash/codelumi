@@ -5,7 +5,6 @@ import {
 export const mapStateToProps = store => {
   const {
     lang,
-    svgs,
     urlDataSynced
   } = store.app
   const {
@@ -37,7 +36,6 @@ export const mapStateToProps = store => {
     sort,
     amount,
     announcements,
-    svgs,
     renderMy,
     urlDataSynced
   }

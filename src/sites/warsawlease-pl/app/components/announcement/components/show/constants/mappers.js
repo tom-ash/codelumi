@@ -1,7 +1,6 @@
 export const mapStateToProps = store => {
   const {
     announcementId,
-    svgs,
     device,
     isMobile,
     lang,
@@ -70,7 +69,6 @@ export const mapStateToProps = store => {
     venue: 'show',
     name,
     showFixedPhone,
-    svgs,
     device,
     isMobile,
     lang,

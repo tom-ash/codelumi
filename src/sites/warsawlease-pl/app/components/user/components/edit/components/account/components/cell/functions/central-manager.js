@@ -60,7 +60,7 @@ function currentValueProvider() {
   const { item, currentValue, phoneCode, body } = this.state
 
   if (item === 'phone') return phoneCode + ' ' + body
-  if (item === 'password') return <SVG pathData={svgs && svgs.eye_slash} />
+  if (item === 'password') return <SVG name='eye_slash' />
   return currentValue
 }
 

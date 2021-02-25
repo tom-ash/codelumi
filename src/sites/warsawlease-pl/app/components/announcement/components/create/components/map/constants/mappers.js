@@ -1,8 +1,7 @@
 export const mapStateToProps = store => {
   const {
     lang,
-    isMobile,
-    svgs
+    isMobile
   } = store.app
 
   return {
@@ -12,8 +11,7 @@ export const mapStateToProps = store => {
     latitude: store.announcement.create.inputs.latitude,
     longitude: store.announcement.create.inputs.longitude,
     mapLoaded: store.announcement.create.control.mapLoaded,
-    error: store.announcement.create.errors.map,
-    svgs
+    error: store.announcement.create.errors.map
   }
 }
     

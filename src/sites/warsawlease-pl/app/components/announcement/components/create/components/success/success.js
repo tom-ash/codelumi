@@ -41,7 +41,7 @@ class AnnouncementCreateSuccess extends React.Component {
           onClick={() => shareOnFacebook(buildLink(this.props), isMobile)}
         >
           <div className='button'>
-            <SVG pathData={svgs && svgs.facebook} />
+            <SVG name='facebook' />
           </div>
           <div className='text'>
             {langObjHandler({
