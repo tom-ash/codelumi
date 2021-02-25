@@ -56,11 +56,10 @@ function iconProvider() {
 }
 
 function currentValueProvider() {
-  const { svgs } = this.props
   const { item, currentValue, phoneCode, body } = this.state
 
   if (item === 'phone') return phoneCode + ' ' + body
-  if (item === 'password') return <SVG name='eye_slash' />
+  if (item === 'password') return <SVG name='eyeSlash' />
   return currentValue
 }
 

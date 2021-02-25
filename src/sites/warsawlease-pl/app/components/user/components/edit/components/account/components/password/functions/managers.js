@@ -7,7 +7,7 @@ import SVG from '../../../../../../../../support/components/svg/svg'
 
 export function emailManager() {
   const { label, icon } = inputs.email
-  const { step, changeErrors, error, svgs } = this.props
+  const { step, changeErrors, error } = this.props
   
   return {
     id: 'user-edit-password-email',
@@ -31,14 +31,10 @@ export function emailManager() {
 export function verificationManager() {
   const {
     step,
-    changeErrors,
-    svgs
+    changeErrors
   } = this.props
 
-  const {
-    label,
-    icon
-  } = inputs.verification
+  const { label } = inputs.verification
 
   return {
     id: 'user-edit-password-verification',
@@ -61,7 +57,7 @@ export function verificationManager() {
 }
 
 export function passwordManager() {
-  const { step, changeErrors, svgs } = this.props
+  const { step, changeErrors } = this.props
   const { label, icon } = inputs.password
 
   return {

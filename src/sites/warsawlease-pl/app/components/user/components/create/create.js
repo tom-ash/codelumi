@@ -17,18 +17,17 @@ class UserCreate extends React.Component {
   }
 
   render() {
-    const { step, svgs, creatingAnnouncement } = this.props
+    const { step, creatingAnnouncement } = this.props
     const headerText = this.langHandler('Zarejestruj', 'Register')
-    const headerSvgPathData = svgs && svgs.user_plus
     const classNames = []
 
     if (creatingAnnouncement) classNames.push('creating-announcement')
 
     return (
       <>
-        {!creatingAnnouncement && <UserCreateSteps step={step} svgs={svgs} />}
+        {!creatingAnnouncement && <UserCreateSteps step={step} />}
         <div id='user-create' className={classNames.join(' ')}>
-          {!creatingAnnouncement && <Header viewBox={'0 0 640 512'} tier={1} text={headerText} svgPathData={headerSvgPathData} />}
+          {!creatingAnnouncement && <Header viewBox={'0 0 640 512'} tier={1} text={headerText} svg='userPlus' />}
           <UserCreateEmail />
         </div>
       </>

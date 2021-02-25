@@ -39,7 +39,6 @@ class AnnouncementIndexMy extends React.Component {
     const {
       amount,
       offset,
-      svgs,
       lang,
       changeAnnouncementShowData,
       urlDataSynced
@@ -94,7 +93,6 @@ class AnnouncementIndexMy extends React.Component {
             availabilityDate={announcement.availabilityDate}
             control={this.controlProvider(announcement, index)}
             control={this.controlProvider(announcement, index)}
-            svgs={svgs}
             lang={lang}
             changeData={changeAnnouncementShowData}
           />))}

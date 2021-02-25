@@ -7,7 +7,6 @@ import styles from './styles/styles.scss'
 const AnnouncementShowShowcase = ({
   announcerName,
   announcerPhone,
-  svgs,
   togglePhone,
   langObjHandler,
   announcementId,

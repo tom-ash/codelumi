@@ -10,7 +10,6 @@ const appState = {
     googleAnalyticsLoading: false
   },
   isMobile: null,
-  svgs: {},
   siteMapLinks: null,
   urlDataSynced: false
 }

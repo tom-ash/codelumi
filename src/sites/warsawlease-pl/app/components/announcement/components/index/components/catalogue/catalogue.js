@@ -27,7 +27,6 @@ class AnnouncementIndexCatalogue extends React.Component {
       lang,
       announcements,
       isMobile,
-      svgs,
       indexFullFarthestScrollTop,
       changeApp,
       changeAnnouncementShowData
@@ -64,7 +63,6 @@ class AnnouncementIndexCatalogue extends React.Component {
                 floor={announcement.floor}
                 totalFloors={announcement.totalFloors}
                 availabilityDate={announcement.availabilityDate}
-                svgs={svgs}
                 indexFullFarthestScrollTop={indexFullFarthestScrollTop}
                 changeApp={changeApp}
                 changeData={changeAnnouncementShowData}

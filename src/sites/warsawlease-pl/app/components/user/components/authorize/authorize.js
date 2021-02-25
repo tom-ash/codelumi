@@ -14,14 +14,11 @@ class UserAuthorize extends React.Component {
   }
 
   render() {
-    const { svgs } = this.props
-
     const headerText = this.langHandler('Zaloguj', 'Sign In')
-    const headerSvgPathData = svgs && svgs.sign_in
 
     return (
       <div id='user-authorize'>
-        <Header tier={1} text={headerText} svgPathData={headerSvgPathData} />
+        <Header tier={1} text={headerText} svg='sign_in' />
         <UserAuthorizeEmailTrack />
       </div>
     )

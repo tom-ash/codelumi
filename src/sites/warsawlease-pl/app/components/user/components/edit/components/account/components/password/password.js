@@ -30,17 +30,16 @@ class UserEditAccountPassword extends React.Component {
   }
 
   render() {
-    const { editAccount, svgs } = this.props
+    const { editAccount } = this.props
 
     const headerText = this.langHandler('Zresetuj hasło', 'Reset password')
-    const headerSvgPathData = svgs && svgs.lock
     
     return (
       <div
         id='user-edit-account-password'
         className={`${editAccount ? '' : 'container full'}`}
       >
-        {!editAccount && <Header tier={1} text={headerText} svgPathData={headerSvgPathData} />}
+        {!editAccount && <Header tier={1} text={headerText} svg='lock' />}
         <div className='inputs'>
           <div className='monit-and-text-inputs'>
             <div className='monit'>

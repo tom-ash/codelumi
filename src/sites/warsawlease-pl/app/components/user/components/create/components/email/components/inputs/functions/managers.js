@@ -50,7 +50,6 @@ export function accountTypeManager() {
 }
 
 export function emailAddressManager() {
-  const { svgs } = this.props
   const { label } = inputs.email
 
   const input = inputs.email
@@ -73,9 +72,7 @@ export function emailAddressManager() {
 }
 
 export function passwordManager() {
-  const { svgs } = this.props
   const { label } = inputs.password
-  const input = inputs.password
   
   return {
     id: 'user-create-email-password',
@@ -97,8 +94,7 @@ export function passwordManager() {
 
 export function firstNameManager() {
   const {
-    accountType,
-    svgs
+    accountType
   } = this.props
   const { icon, label } = inputs.firstName
 
@@ -122,8 +118,7 @@ export function firstNameManager() {
 
 export function businessNameManager() {
   const {
-    accountType,
-    svgs
+    accountType
   } = this.props
   const { icon, label } = inputs.businessName
 
@@ -145,10 +140,6 @@ export function businessNameManager() {
 }
 
 export function areaCodeManager() {
-  const {
-    svgs
-  } = this.props
-
   return {
     onFocusCoverZIndex: 3001,
     id: 'user-create-email-area-code',
@@ -164,14 +155,7 @@ export function areaCodeManager() {
 }
 
 export function phoneNumberManager() {
-  const {
-    svgs
-  } = this.props
-
-  const {
-    icon,
-    label
-  } = inputs.phone
+  const { label } = inputs.phone
 
   return {
     id: 'user-create-email-phone-number',

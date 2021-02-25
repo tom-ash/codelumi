@@ -3,13 +3,8 @@ import SVG from '../../../../../support/components/svg/svg'
 
 export function AnnouncementCreateSteps({
   step,
-  authorized,
-  svgs
+  authorized
 }) {
-  if (!svgs) return null
-
-  const { align_left, user, check } = svgs
-
   const lineClasses = ['line']
   const firstPointClasses = ['point', 'first']
   const secondPointClasses = ['point', 'second']
@@ -38,15 +33,15 @@ export function AnnouncementCreateSteps({
     <div className='create-points'>
       <div className={lineClasses.join(' ')} />
       <div className={firstPointClasses.join(' ')}>
-        <SVG pathData={align_left} />
+        <SVG name='alignLeft' />
       </div>
       {!authorized &&
       <div className={secondPointClasses.join(' ')}>
-        <SVG pathData={user} />
+        <SVG name='user' />
       </div>
       }
       <div className={thirdPointClasses.join(' ')}>
-        <SVG pathData={check} />
+        <SVG name='check' />
       </div>
       <div className='float-clear' />
     </div>

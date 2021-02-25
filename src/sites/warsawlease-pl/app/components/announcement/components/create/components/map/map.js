@@ -5,7 +5,6 @@ import { langHandler, langObjHandler } from '../../../../../../functions/lang-ha
 import { validateMap } from './functions/validate-map'
 import * as lifecycle from './functions/lifecycle'
 import { googleMapHandler } from '../../../../functions/google-map-handler'
-import { HeaderSection } from '../shared/headers/section/section.js'
 
 class AnnouncementCreatMap extends React.Component {
   constructor(props) {

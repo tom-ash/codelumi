@@ -12,8 +12,6 @@ import { sectionHeaderProvider } from '../../../../../../functions/providers/hea
 import { pictureClassProvider } from './functions/picture-class-provider'
 import { rotatePicture } from './functions/rotate-picture'
 import SVG from '../../../../../support/components/svg/svg'
-import { HeaderSection } from '../shared/headers/section/section.js'
-import { HEADER, ADDING_REQUIRED, NOT_ADDED } from './constants/texts'
 
 class AnnouncementCreatePictures extends React.Component {
   constructor(props) {
@@ -30,16 +28,11 @@ class AnnouncementCreatePictures extends React.Component {
   }
   render() {
     const {
-      showAnnouncementEdit,
-      svgs
+      showAnnouncementEdit
     } = this.props
 
     return (
       <div id='announcement-create-pictures' className='section'>
-                {/* {this.props.blobs && this.props.blobs.length === 0 &&
-        <div className='not-added'>
-          {this.langObjHandler(NOT_ADDED)}
-        </div>} */}
         <div className='drag-and-drop-container'>
           <div className={`drag-and-drop${this.props.error.pl ? ' error-drag-and-drop' : ''}`}>
             <SVG name='camera' />

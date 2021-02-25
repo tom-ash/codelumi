@@ -17,8 +17,7 @@ class AnnouncementCreateSuccess extends React.Component {
   render() {
     const {
       langObjHandler,
-      isMobile,
-      svgs
+      isMobile
     } = this.props
 
     return (

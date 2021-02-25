@@ -23,7 +23,7 @@ export function categoryManager() {
     category: { id }
   } = requiredInputs
 
-  const { category: value, errors, changeErrors, lang, svgs } = this.props
+  const { category: value, errors, changeErrors, lang } = this.props
   const { icon, all: label } = inputs.category
 
   const {
@@ -60,10 +60,6 @@ export function districtManager() {
     all: text
   } = inputs.district
 
-  const {
-    svgs
-  } = this.props
-
   return {
     id: requiredInputs.district.id,
     classNames: { container: 'form-input with-icon select' },
@@ -87,13 +83,8 @@ export function districtManager() {
 
 export function areaManager() {
   const {
-    icon,
     create: text
   } = inputs.area
-
-  const {
-    svgs
-  } = this.props
 
   return {
     id: requiredInputs.area.id,

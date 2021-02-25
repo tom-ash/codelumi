@@ -7,7 +7,6 @@ import SVG from '../../../../../../support/components/svg/svg'
 const noError = { pl: '', en: '' }
 
 export function emailAddressManager() {
-  const { svgs } = this.props
   const { label } = inputs.email
 
   return {
@@ -33,7 +32,6 @@ export function emailAddressManager() {
 }
 
 export function passwordManager() {
-  const { svgs } = this.props
   const { label } = inputs.password
 
   return {

@@ -121,10 +121,6 @@ export function totalFloorsManager() {
     create: text
   } = inputs.totalFloors
 
-  const {
-    svgs
-  } = this.props
-
   return {
     classNames: { container: 'form-input with-icon select' },
     children: <>

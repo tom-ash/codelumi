@@ -17,13 +17,12 @@ class UserEditAccount extends React.Component {
   }
 
   render() {
-    const { accountType, svgs } = this.props
+    const { accountType } = this.props
     const headerText = this.langObjHandler(HEADER_TEXT)
-    const headerSvgPathData = svgs && svgs.user_cog
 
     return (
       <div id='user-edit-account'>
-        <Header viewBox={'0 0 640 512'} tier={1} text={headerText} svgPathData={headerSvgPathData} />
+        <Header viewBox={'0 0 640 512'} tier={1} text={headerText} svg='userCog' />
         {accountType == 'private' ?
         <UserEditAccountCell key='firstName' item='firstName' />
         :

@@ -3,7 +3,6 @@ import SVG from '../../support/components/svg/svg'
 
 export function phoneSwitchProvider() {
   const { phone } = this.state
-  const { svgs } = this.props
   let phoneClass =`phone${phone && phone.length > 8 ? ' open' : ''}`
 
   return (

@@ -24,14 +24,11 @@ class UserEditAccountCell extends React.Component {
   }
 
   render() {
-    const { svgs } = this.props
-    const iconPathData = svgs && svgs[this.centralManager('icon')]
-
     return (
       <div className='user-edit-account-cell'>
         <div className='current'>
           <div className='icon'>
-            <SVG pathData={iconPathData} />
+            <SVG name={this.centralManager('icon')} />
           </div>
           <div className='text'>
             <div>
