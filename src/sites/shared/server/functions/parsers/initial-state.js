@@ -10,6 +10,9 @@ function initialStateParserV2(state) {
     const detailKey = nestedKeys[nestedKeys.length - 1]
     const mainObject = parsedState[mainKey]
 
+    // TODO: ABSTRACT
+    if (stateKey == 'assets/svgs') return parsedState = { ...parsedState, [middleKey]: { [detailKey]: state[stateKey]}}
+
     if (!mainObject) {
       return parsedState = { ...parsedState, [mainKey]: { [middleKey]: { [detailKey]: state[stateKey] }}}
     }
