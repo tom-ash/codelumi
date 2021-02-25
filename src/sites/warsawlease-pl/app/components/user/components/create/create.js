@@ -27,7 +27,7 @@ class UserCreate extends React.Component {
       <>
         {!creatingAnnouncement && <UserCreateSteps step={step} />}
         <div id='user-create' className={classNames.join(' ')}>
-          {!creatingAnnouncement && <Header viewBox={'0 0 640 512'} tier={1} text={headerText} svg='userPlus' />}
+          {!creatingAnnouncement && <Header tier={1} text={headerText} svg='userPlus' />}
           <UserCreateEmail />
         </div>
       </>

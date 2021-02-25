@@ -22,7 +22,7 @@ class UserEditAccount extends React.Component {
 
     return (
       <div id='user-edit-account'>
-        <Header viewBox={'0 0 640 512'} tier={1} text={headerText} svg='userCog' />
+        <Header tier={1} text={headerText} svg='userCog' />
         {accountType == 'private' ?
         <UserEditAccountCell key='firstName' item='firstName' />
         :

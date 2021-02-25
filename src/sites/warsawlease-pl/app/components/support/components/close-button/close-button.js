@@ -1,7 +1,7 @@
 import React from 'react'
 import SVG from '../svg/svg'
 
-export const CloseButton = ({ classNames, onClick, pathData}) => {
+export const CloseButton = ({ classNames, onClick }) => {
   const classes = ` ${classNames}` || ''
 
   return (

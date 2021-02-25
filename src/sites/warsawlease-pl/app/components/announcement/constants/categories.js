@@ -39,7 +39,7 @@ export const categories = [
     url: { pl: 'miejsce-postojowe', en: 'parking-space' },
     pin: {
       class: 'parking-space',
-      svg: 'parking_space',
+      svg: 'parkingSpace',
       color: '#34495E'
     }
   },
@@ -50,7 +50,7 @@ export const categories = [
     url: { pl: 'lokal-uzytkowy', en: 'usable-premises' },
     pin: {
       class: 'usable-premises',
-      svg: 'usable_premises',
+      svg: 'usablePremises',
       color: '#D35400'
     }
   },
@@ -72,7 +72,7 @@ export const categories = [
     url: { pl: 'biuro-wirtualne', en: 'virtual-office' },
     pin: {
       class: 'virtual-office',
-      svg: 'virtual_office',
+      svg: 'virtualOffice',
       color: '#7D3C98'
     }
   },
@@ -83,7 +83,7 @@ export const categories = [
     url: { pl: 'przestrzen-coworkingowa', en: 'coworking-space' },
     pin: {
       class: 'coworking-space',
-      svg: 'coworking_space',
+      svg: 'coworkingSpace',
       color: '#4A235A'
     }
   }
