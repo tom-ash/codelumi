@@ -80,7 +80,7 @@ export function roomsManager() {
   return {
     classNames: { container: 'form-input with-icon select' },
     children: <>
-      <SVG name='door_open' />
+      <SVG name='doorOpen' />
       <SVG name='chevron' />
     </>,
     value: this.props.rooms,

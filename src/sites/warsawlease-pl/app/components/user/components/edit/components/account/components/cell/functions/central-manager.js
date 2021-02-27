@@ -48,7 +48,7 @@ function iconProvider() {
     case 'phone': return 'phone'
     case 'email': return 'envelope'
     case 'password': return 'lock'
-    case 'destroy': return 'user_times'
+    case 'destroy': return 'userTimes'
     default: break;
   }
 

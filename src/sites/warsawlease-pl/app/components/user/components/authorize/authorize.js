@@ -18,7 +18,7 @@ class UserAuthorize extends React.Component {
 
     return (
       <div id='user-authorize'>
-        <Header tier={1} text={headerText} svg='sign_in' />
+        <Header tier={1} text={headerText} svg='signIn' />
         <UserAuthorizeEmailTrack />
       </div>
     )

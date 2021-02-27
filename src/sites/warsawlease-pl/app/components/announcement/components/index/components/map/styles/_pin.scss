@@ -22,14 +22,9 @@
   border-radius: 5px!important;
 
   .icon {
-    padding: 3px 3px 10px 9px;
-    text-align: center;
-    border-radius: 100px!important;
-    &.apartment {
-      padding: 3px 2px 10px 10px;
-    }
-    &.room, &.coworking-space {
-      padding: 2px 6px 5px 7px;
+    padding-top: 3px;
+    svg {
+      height: 19px;
     }
   }
 }
