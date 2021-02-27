@@ -39,7 +39,6 @@ class App extends React.Component {
 
     return (
       <AppContext.Provider value={AppContextValue}>
-        {console.log(APP_ENV)}
         <div id='app-container'>
           <Header />
           <div id='app-inner-container'>
