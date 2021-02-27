@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { langObjHandler } from '../../../../../../functions/lang-handler'
+import langObjHandler from '../../../../../../functions/lang-handler'
 import { validateMap } from './functions/validate-map'
 import * as lifecycle from './functions/lifecycle'
 import { googleMapHandler } from '../../../../functions/google-map-handler'

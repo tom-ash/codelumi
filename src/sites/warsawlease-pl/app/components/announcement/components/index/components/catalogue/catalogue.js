@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { langObjHandler } from '../../../../../../functions/lang-handler'
+import langObjHandler from '../../../../../../functions/lang-handler'
 import Tile from '../../../common/tile/tile.js'
 import { parseCategoryForUrl } from '../../../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../../../functions/district-parsers'

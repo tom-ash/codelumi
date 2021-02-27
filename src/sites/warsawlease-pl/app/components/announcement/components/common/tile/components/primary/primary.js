@@ -1,5 +1,5 @@
 import React from 'react'
-import { langObjHandler } from '../../../../../../../functions/lang-handler'
+import langObjHandler from '../../../../../../../functions/lang-handler'
 import { parseCurrency } from '../../../../../functions/currency-parsers'
 import { presentRooms } from './functions/present-rooms'
 import { presentFloor } from './functions/present-floor'

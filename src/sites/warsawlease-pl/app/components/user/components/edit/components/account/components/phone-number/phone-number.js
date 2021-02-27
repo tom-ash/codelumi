@@ -5,7 +5,7 @@ import { monit } from './constants/monit'
 import { ManagedSelect } from 'managed-inputs'
 import { ManagedText } from 'managed-inputs'
 import { ManagedButton } from 'managed-inputs'
-import { langObjHandler } from '../../../../../../../../functions/lang-handler'
+import langObjHandler from '../../../../../../../../functions/lang-handler'
 import * as managers from './functions/managers'
 
 class UserEditAccountPhoneNumber extends React.Component {

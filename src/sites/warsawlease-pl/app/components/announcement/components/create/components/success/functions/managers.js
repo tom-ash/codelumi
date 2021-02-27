@@ -2,7 +2,7 @@ import { ANNOUNCEMENT_SHOW_TRACK } from '../../../../../../../../shared/constant
 import { buildLink } from '../../../../../functions/build-link.js'
 
 export function goToAnnouncementManager() {
-  const { langObjHandler } = this.props
+  const langObjHandler = this.props
 
   const { changeUrl } = this.context
   const href = buildLink(this.props)

@@ -8,7 +8,7 @@ import {
   polishManager,
   englishManager
 } from './functions/managers'
-import { langObjHandler } from '../../../../../../functions/lang-handler'
+import langObjHandler from '../../../../../../functions/lang-handler'
 
 class AnnouncementCreateDescription extends React.Component {
   constructor(props) {

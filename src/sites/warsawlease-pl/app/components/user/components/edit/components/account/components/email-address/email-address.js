@@ -7,7 +7,7 @@ import { ManagedButton } from 'managed-inputs'
 import { monitProvider } from './functions/monit-provider'
 import * as managers from './functions/managers'
 import * as adapters from './functions/adapters'
-import { langObjHandler } from '../../../../../../../../functions/lang-handler'
+import langObjHandler from '../../../../../../../../functions/lang-handler'
 
 class UserEditAccountEmail extends React.Component {
   constructor(props) {

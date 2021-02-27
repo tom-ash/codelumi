@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { langObjHandler } from '../../../../../../../../functions/lang-handler'
+import langObjHandler from '../../../../../../../../functions/lang-handler'
 import { ManagedRadio } from 'managed-inputs'
 import { statisticsConsentManager, marketingConsentManager } from './functions/managers'
 import { pageHeaderProvider } from '../../../../../../../../functions/header-providers'

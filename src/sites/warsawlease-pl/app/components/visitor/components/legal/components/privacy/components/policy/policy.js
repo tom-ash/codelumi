@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { langObjHandler } from '../../../../../../../../functions/lang-handler'
+import langObjHandler from '../../../../../../../../functions/lang-handler'
 import { text } from './constants/text'
 import Provision from '../../../provision/provision'
 import { pageHeaderProvider } from '../../../../../../../../functions/header-providers'

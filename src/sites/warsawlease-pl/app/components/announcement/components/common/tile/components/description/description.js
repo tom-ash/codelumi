@@ -1,5 +1,5 @@
 import React from 'react'
-import { langObjHandler } from '../../../../../../../functions/lang-handler'
+import langObjHandler from '../../../../../../../functions/lang-handler'
 import Header from '../../../../../../support/components/header/header.js'
 import { HEADER } from './constants/texts.js'
 

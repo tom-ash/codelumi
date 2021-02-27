@@ -8,7 +8,7 @@ const AnnouncementTile = loadable(() => import('../../../common/tile/tile.js'), 
 import { googleMapHandler } from '../../../../functions/google-map-handler'
 import { fetchTile } from './functions/fetch-tile'
 import { drawPins } from './functions/draw-pins'
-import { langObjHandler } from '../../../../../../functions/lang-handler'
+import langObjHandler from '../../../../../../functions/lang-handler'
 import { shouldSetUpGoogleMaps, shouldSetUpPins } from '../../../../functions/google-map-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'

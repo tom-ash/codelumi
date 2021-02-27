@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as managers from './functions/managers'
 import { ManagedLink } from 'managed-inputs'
-import { langObjHandler } from '../../../../functions/lang-handler'
+import langObjHandler from '../../../../functions/lang-handler'
 import AppContext from '../../../../constants/context.js'
 
 class Footer extends React.Component {
