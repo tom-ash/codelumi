@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import langObjHandler from '../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import PanelCategories from './components/categories/categories'
@@ -12,7 +12,7 @@ import AppContext from '../../../../../../constants/context.js'
 class AnnouncementIndexPanel extends React.Component {
   constructor(props) {
     super(props)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.buttonManager = buttonManager.bind(this)
   }
 
@@ -32,7 +32,7 @@ class AnnouncementIndexPanel extends React.Component {
     return (
       <div id='announcement-index-panel'>
         <PanelCategories
-          langObjHandler={this.langObjHandler}
+          langHandler={this.langHandler}
           changeInputs={changeInputs}
           changeControl={changeControl}
           currentCategory={currentCategory}
@@ -42,7 +42,7 @@ class AnnouncementIndexPanel extends React.Component {
           <PanelVisitor
             abc='asdad'
             lang={lang}
-            langHandler={this.langObjHandler}
+            langHandler={this.langHandler}
             buttonManager={this.buttonManager}
           />
         </>

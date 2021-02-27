@@ -14,7 +14,7 @@ export function emailManager() {
     display: step === null ? 'block' : 'none',
     controlled: false,
     classNames: { container: 'form-input with-icon text' },
-    label: this.langObjHandler(label),
+    label: this.langHandler(label),
     children: <SVG name='envelope' />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.emailManager().validate(value),
@@ -24,7 +24,7 @@ export function emailManager() {
 
       changeErrors({ password: error })
     },
-    error: this.langObjHandler(error)
+    error: this.langHandler(error)
   }
 }
 
@@ -41,7 +41,7 @@ export function verificationManager() {
     display: step === 'verificationCode' ? 'block' : 'none',
     controlled: false,
     classNames: { container: 'form-input with-icon text' },
-    label: this.langObjHandler(label),
+    label: this.langHandler(label),
     children: <SVG name='lock' />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.verificationManager().validate(value),
@@ -52,7 +52,7 @@ export function verificationManager() {
       })
       return false
     },
-    error: this.langObjHandler(this.props.error)
+    error: this.langHandler(this.props.error)
   }
 }
 
@@ -67,7 +67,7 @@ export function passwordManager() {
     type: 'password',
     autoComplete: 'new-password',
     classNames: { container: 'form-input with-icon text' },
-    label: this.langObjHandler(label),
+    label: this.langHandler(label),
     children: <SVG name='lock' />,
     onChange: () => changeErrors({ password: noError }),
     onBlur: value => this.passwordManager().validate(value),
@@ -82,7 +82,7 @@ export function passwordManager() {
       })
       return false
     },
-    error: this.langObjHandler(this.props.error)
+    error: this.langHandler(this.props.error)
   }
 }
 
@@ -96,7 +96,7 @@ export function buttonManager() {
       <ButtonSpinner
         connecting={connecting}
         label={buttonTextProvider.call(this)}
-        langObjHandler={this.langObjHandler}
+        langHandler={this.langHandler}
       />
     ),
     onClick: buttonOnClickProvider.call(this)

@@ -4,7 +4,7 @@ import { ManagedCheckbox } from 'managed-inputs'
 import { termsAndPrivacyConsentValidator } from './functions/validators'
 import { containerClassHandler } from './functions/conteiner-class-handler'
 import { errorTextProvider } from './functions/error-text-provider'
-import langObjHandler from '../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../functions/lang-handler'
 import * as mappers from './constants/mappers'
 import * as managers from './functions/managers'
 import { textProvider } from './functions/text-provider'
@@ -16,7 +16,7 @@ class UserCreateConsents extends React.Component {
     this.termsAndPrivacyConsentManager = managers.termsAndPrivacyConsentManager.bind(this)
     this.containerClassHandler = containerClassHandler.bind(this)
     this.errorTextProvider = errorTextProvider.bind(this)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.termsAndPrivacyConsentValidator = termsAndPrivacyConsentValidator.bind(this)
     this.textProvider = textProvider.bind(this)
   }

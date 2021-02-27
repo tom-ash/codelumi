@@ -9,7 +9,7 @@ import { passwordValidator } from '../../../../../../../functions/password-valid
 const noError = { pl: '', en: '' }
 
 export function currentEmailVerificationManager() {
-  const { langObjHandler, currentEmailVerificationManager: thisManager, props } = this
+  const { langHandler, currentEmailVerificationManager: thisManager, props } = this
   const { step, changeErrors, currentEmailVerificationError: error, connecting } = props
   const { icon, label } = inputs.verification
 
@@ -19,7 +19,7 @@ export function currentEmailVerificationManager() {
     controlled: false,
     classNames: { container: 'form-input text' },
     children: <i className={icon} />,
-    label: langObjHandler(label),
+    label: langHandler(label),
     onChange: () => changeErrors({ currentEmailVerification: noError }),
     onBlur: value => thisManager().validate(value),
     validate: value => {
@@ -27,12 +27,12 @@ export function currentEmailVerificationManager() {
       if (isValid) return
       changeErrors({ currentEmailVerification: error })
     },
-    error: langObjHandler(error)
+    error: langHandler(error)
   }
 }
 
 export function newEmailManager() {
-  const { langObjHandler, newEmailManager: thisManager, props } = this
+  const { langHandler, newEmailManager: thisManager, props } = this
   const { step, changeErrors, newEmailError: error } = props
   const { icon, label } = inputs.email
 
@@ -42,7 +42,7 @@ export function newEmailManager() {
     controlled: false,
     classNames: { container: 'form-input text' },
     children: <i className={icon} />,
-    label: langObjHandler(label),
+    label: langHandler(label),
     onChange: () => changeErrors({ newEmail: noError }),
     onBlur: value => thisManager().validate(value),
     validate: value => {
@@ -50,12 +50,12 @@ export function newEmailManager() {
       if (isValid) return
       changeErrors({ newEmail: error })
     },
-    error: langObjHandler(error)
+    error: langHandler(error)
   }
 }
 
 export function newEmailVerificationManager() {
-  const { langObjHandler, newEmailVerificationManager: thisManager, props } = this
+  const { langHandler, newEmailVerificationManager: thisManager, props } = this
   const { step, changeErrors, newEmailVerificationError: error } = props
   const { icon, label } = inputs.verification
 
@@ -65,7 +65,7 @@ export function newEmailVerificationManager() {
     controlled: false,
     classNames: { container: 'form-input text' },
     children: <i className={icon} />,
-    label: langObjHandler(label),
+    label: langHandler(label),
     onChange: () => changeErrors({ newEmailVerification: noError }),
     onBlur: value => thisManager().validate(value),
     validate: value => {
@@ -73,12 +73,12 @@ export function newEmailVerificationManager() {
       if (isValid) return
       changeErrors({ newEmailVerification: error })
     },
-    error: langObjHandler(error)
+    error: langHandler(error)
   }
 }
 
 export function passwordManager() {
-  const { langObjHandler, passwordManager: thisManager, props } = this
+  const { langHandler, passwordManager: thisManager, props } = this
   const { step, changeErrors, newEmailPasswordError: error } = props
   const { icon, label } = inputs.password
 
@@ -90,7 +90,7 @@ export function passwordManager() {
     type: 'password',
     autoComplete: 'new-password',
     children: <i className={icon} />,
-    label: langObjHandler(label),
+    label: langHandler(label),
     onChange: () => changeErrors({ newEmailPassword: noError }),
     onBlur: value => thisManager().validate(value),
     validate: value => {
@@ -98,7 +98,7 @@ export function passwordManager() {
       if (isValid) return
       changeErrors({ newEmailPassword: error })
     },
-    error: langObjHandler(error)
+    error: langHandler(error)
   }
 }
 
@@ -113,7 +113,7 @@ export function buttonManager() {
       <ButtonSpinner
         connecting={connecting}
         label={{ pl: 'Dalej', en: 'Next' }}
-        langObjHandler={this.langObjHandler}
+        langHandler={this.langHandler}
       />
     ),
     onClick: buttonOnClickProvider.call(this)

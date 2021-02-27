@@ -2,7 +2,7 @@ import { ANNOUNCEMENT_SHOW_TRACK } from '../../../../../../../../shared/constant
 import { buildLink } from '../../../../../functions/build-link.js'
 
 export function goToAnnouncementManager() {
-  const langObjHandler = this.props
+  const langHandler = this.props
 
   const { changeUrl } = this.context
   const href = buildLink(this.props)
@@ -10,7 +10,7 @@ export function goToAnnouncementManager() {
   return {
     classNames: { container: 'go-to-announcement' },
     href,
-    label: langObjHandler({ pl: 'Pokaż dodane ogłoszenie', en: 'Show the added announcement' }),
+    label: langHandler({ pl: 'Pokaż dodane ogłoszenie', en: 'Show the added announcement' }),
     onClick: () => {
       changeUrl({ href })
     }

@@ -28,14 +28,14 @@ function announcementTitleProvider() {
   const { item } = this.state
 
   switch (item) {
-    case 'firstName': return this.langObjHandler({ pl: 'Imię', en: 'First Name' })
-    case 'lastName': return this.langObjHandler({ pl: 'Nazwisko', en: 'Last Name' })
-    case 'businessName': return this.langObjHandler({ pl: 'Nazwa przedsiębiorcy', en: 'Business name' })
-    case 'taxNumber': return this.langObjHandler({ pl: 'Numer identyfikacji podatkowej', en: 'Tax ID' })
-    case 'phone': return this.langObjHandler({ pl: 'Numer telefonu', en: 'Phone Number' })
-    case 'email': return this.langObjHandler({ pl: 'Adres email', en: 'Email Address' })
-    case 'password': return this.langObjHandler({ pl: 'Hasło', en: 'Password' })
-    case 'destroy': return this.langObjHandler({ pl: 'Usuwanie konta', en: 'Account Deletion' })
+    case 'firstName': return this.langHandler({ pl: 'Imię', en: 'First Name' })
+    case 'lastName': return this.langHandler({ pl: 'Nazwisko', en: 'Last Name' })
+    case 'businessName': return this.langHandler({ pl: 'Nazwa przedsiębiorcy', en: 'Business name' })
+    case 'taxNumber': return this.langHandler({ pl: 'Numer identyfikacji podatkowej', en: 'Tax ID' })
+    case 'phone': return this.langHandler({ pl: 'Numer telefonu', en: 'Phone Number' })
+    case 'email': return this.langHandler({ pl: 'Adres email', en: 'Email Address' })
+    case 'password': return this.langHandler({ pl: 'Hasło', en: 'Password' })
+    case 'destroy': return this.langHandler({ pl: 'Usuwanie konta', en: 'Account Deletion' })
     default: break;
   }
 }
@@ -103,12 +103,12 @@ function triggerIconProvider() {
 }
 
 function triggerTextProvider() {
-  let triggerText = this.langObjHandler({ pl: 'Zmień', en: 'Change' })
+  let triggerText = this.langHandler({ pl: 'Zmień', en: 'Change' })
   if (this.state.item === 'destroy') {
-    triggerText = this.langObjHandler({ pl: 'Usuń konto', en: 'Delete Account' })
+    triggerText = this.langHandler({ pl: 'Usuń konto', en: 'Delete Account' })
   }
   if (this.state.stage !== null && this.state.stage !== 'closed-after-open') {
-    triggerText = this.langObjHandler({ pl: 'Anuluj', en: 'Cancel' })
+    triggerText = this.langHandler({ pl: 'Anuluj', en: 'Cancel' })
   }
   return triggerText
 }
@@ -163,7 +163,7 @@ function editInputProvider() {
         inputName='firstName'
         id='user-edit-account-first-name-text'
         api_suffix={'first_name'}
-        label={this.langObjHandler({ pl: 'Imię', en: 'First Name' })}
+        label={this.langHandler({ pl: 'Imię', en: 'First Name' })}
         icon={inputs.firstName.icon}
         currentValue={firstNameCurrentValue}
         connecting={firstNameConnecting}
@@ -180,7 +180,7 @@ function editInputProvider() {
         inputName='lastName'
         id='user-edit-account-last-name-text'
         api_suffix={'last_name'}
-        label={this.langObjHandler({ pl: 'Nazwisko', en: 'Last Name' })}
+        label={this.langHandler({ pl: 'Nazwisko', en: 'Last Name' })}
         icon={inputs.lastName.icon}
         currentValue={lastNameCurrentValue}
         connecting={lastNameConnecting}
@@ -197,7 +197,7 @@ function editInputProvider() {
         inputName='businessName'
         id='user-edit-account-business-name-text'
         api_suffix={'business_name'}
-        label={this.langObjHandler({ pl: 'Nazwa przedsiębiorcy', en: 'Business Name' })}
+        label={this.langHandler({ pl: 'Nazwa przedsiębiorcy', en: 'Business Name' })}
         icon={inputs.businessName.icon}
         currentValue={businessNameCurrentValue}
         connecting={businessNameConnecting}

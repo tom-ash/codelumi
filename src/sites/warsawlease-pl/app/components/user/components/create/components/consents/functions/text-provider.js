@@ -5,7 +5,7 @@ import changeRouteWithHref from '../../../../../../../functions/routers/build-an
 export function textProvider({ pureText }) {
   if (pureText) {
     return {
-      termsAndPrivacyConsent: this.langObjHandler({
+      termsAndPrivacyConsent: this.langHandler({
         pl: 'Akceptuję Regulamin i Politykę Prywatności.',
         en: 'I accept the Terms and Conditions and the Privacy Policy.'
       })
@@ -29,7 +29,7 @@ export function textProvider({ pureText }) {
 
   return (
     {
-      termsAndPrivacyConsent: this.langObjHandler({
+      termsAndPrivacyConsent: this.langHandler({
         pl: <span>Akceptuję <u className='link' onClick={changeRouteToTermsOfService}>Regulamin</u> i&nbsp;<u className='link' onClick={changeRouteToPrivacyPolicy}>Politykę Prywatności</u>.</span>,
         en: <span>I accept the <u className='link' onClick={changeRouteToTermsOfService}>Terms and Conditions</u> and the <u className='link' onClick={changeRouteToPrivacyPolicy}>Privacy Policy</u>.</span>
       })

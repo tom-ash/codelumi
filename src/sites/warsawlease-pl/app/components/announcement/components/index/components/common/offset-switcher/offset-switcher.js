@@ -3,7 +3,7 @@ import WindmillSpinner from '../../../../../../support/components/spinner/compon
 import { instantScroll } from '../../../../../../../functions/scrollers/instant-scroll'
 
 export function OffsetSwitcher({
-  langObjHandler, changeInputs, changeControl, offset, amount, classNames, scrollTop
+  langHandler, changeInputs, changeControl, offset, amount, classNames, scrollTop
 }) {
 
   let className = 'offset-switcher'
@@ -40,7 +40,7 @@ export function OffsetSwitcher({
       >
       </div>}
       <div className='text'>
-        {offsetCounter(offset, amount)} {langObjHandler({ pl: 'z', en: 'of' })} {amount}
+        {offsetCounter(offset, amount)} {langHandler({ pl: 'z', en: 'of' })} {amount}
       </div>
       {offset + 50 < amount &&
       <div

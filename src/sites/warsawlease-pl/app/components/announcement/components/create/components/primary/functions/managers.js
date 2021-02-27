@@ -51,7 +51,7 @@ export function categoryManager() {
     },
     onBlur: () => this.categoryManager().validate(),
     validate: () => this.handleErrorOnValidate('category', value),
-    error: this.langObjHandler(categoryError)
+    error: this.langHandler(categoryError)
   }
 }
 
@@ -64,7 +64,7 @@ export function districtManager() {
     id: requiredInputs.district.id,
     classNames: { container: 'form-input with-icon select' },
     value: this.props.district,
-    label: this.langObjHandler(text),
+    label: this.langHandler(text),
     options: [{ value: '', text: '' }].concat(districts),
     children: <>
       <SVG name='city' />
@@ -77,7 +77,7 @@ export function districtManager() {
     },
     onBlur: () => this.districtManager().validate(),
     validate: () => this.handleErrorOnValidate('district', this.props.district),
-    error: this.langObjHandler(this.props.errors.district)
+    error: this.langHandler(this.props.errors.district)
   }
 }
 
@@ -90,12 +90,12 @@ export function areaManager() {
     id: requiredInputs.area.id,
     classNames: { container: 'form-input with-icon text' },
     value: this.props.area,
-    label: this.langObjHandler(text),
+    label: this.langHandler(text),
     type: 'number',
     children: (
       <>
         <div className='sqm'>
-          {this.langObjHandler({
+          {this.langHandler({
             pl: <span>m<span className='sq'>2</span></span>,
             en: 'sqm'
           })}
@@ -111,6 +111,6 @@ export function areaManager() {
       sendGaEvent(AREA_INPUTTED_EVENT)
     },
     validate: () => this.handleErrorOnValidate('area', this.props.area),
-    error: this.langObjHandler(this.props.errors.area)
+    error: this.langHandler(this.props.errors.area)
   }
 }

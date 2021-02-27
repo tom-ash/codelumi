@@ -7,25 +7,25 @@ export function controlProvider(announcement, index) {
   return (
     <div className='control'>
       <div className='info'>
-        {this.langObjHandler({ pl: 'Aktywne do ', en: 'Active until '})} <strong>{announcement.activeUntil.slice(0, 10)}</strong>
+        {this.langHandler({ pl: 'Aktywne do ', en: 'Active until '})} <strong>{announcement.activeUntil.slice(0, 10)}</strong>
       </div>
       {this.buttonProvider('Przedłuż', 'Extend', announcement, index, this.extend, ' extend')}
       <SeparationLine />
       <div className='info'>
         {announcement.visible ?
-        <span>{this.langObjHandler({ pl: 'Widoczne', en: 'Visible' })}</span>
-        : <span>{this.langObjHandler('Ukryte', 'Hidden')}</span>}
+        <span>{this.langHandler({ pl: 'Widoczne', en: 'Visible' })}</span>
+        : <span>{this.langHandler('Ukryte', 'Hidden')}</span>}
       </div>
       {announcement.visible ?
       this.buttonProvider('Ukryj', 'Hide', announcement, index, this.triggerVisible, ' hide-show')
       : this.buttonProvider('Pokaż', 'Show', announcement, index, this.triggerVisible, ' hide-show')}
       <SeparationLine />
       <div className='info'>
-      {this.langObjHandler({ pl: 'Data utworzenia', en: 'Crated at' })} <strong>{announcement.createdAt.slice(0, 10)}</strong>
+      {this.langHandler({ pl: 'Data utworzenia', en: 'Crated at' })} <strong>{announcement.createdAt.slice(0, 10)}</strong>
       </div>
       <SeparationLine />
       <div className='info'>
-        {this.langObjHandler({ pl: 'Liczba odwiedzin', en: 'Visitors' })} <strong>{announcement.views}</strong>
+        {this.langHandler({ pl: 'Liczba odwiedzin', en: 'Visitors' })} <strong>{announcement.views}</strong>
       </div>
       <SeparationLine />
       {this.buttonProvider('Edytuj', 'Edit', announcement, index, this.edit, ' edit')}

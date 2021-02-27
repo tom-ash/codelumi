@@ -2,13 +2,13 @@ import React from 'react'
 
 export const AreaPresenter = ({
   area,
-  langObjHandler
+  langHandler
 }) => (
   <div className='area'>
     <div className='amount'>
       {area}
     </div>
-    {langObjHandler({
+    {langHandler({
       pl: (
         <React.Fragment>
           <div className='m'>

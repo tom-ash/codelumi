@@ -40,13 +40,13 @@ export function titleManager() {
     resetAnnouncementIndexData
   } = this.props
 
-  const title = this.langObjHandler(ROOT_TITLES)
-  const href = this.langObjHandler(ROOT_URLS)
+  const title = this.langHandler(ROOT_TITLES)
+  const href = this.langHandler(ROOT_URLS)
 
   return {
     classNames: { container: '' },
     href,
-    hrefLang: this.langObjHandler(LANGS),
+    hrefLang: this.langHandler(LANGS),
     title,
     label: (
       <div className='logo-and-site'>
@@ -73,27 +73,27 @@ export function titleManager() {
 
 export function addAnnouncementManager() {
   const { changeUrl } = this.context
-  const href = `${CLIENT_URL}/${this.langObjHandler(ANNOUNCEMENT_CREATE_URLS)}`
+  const href = `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_CREATE_URLS)}`
 
   return {
     classNames: { container: 'header-link add-announcement' },
     href,
-    hrefLang: this.langObjHandler(LANGS),
-    title: this.langObjHandler(ANNOUNCEMENT_CREATE_TITLES),
-    label: this.langObjHandler(ANNOUNCEMENT_CREATE_LABELS),
+    hrefLang: this.langHandler(LANGS),
+    title: this.langHandler(ANNOUNCEMENT_CREATE_TITLES),
+    label: this.langHandler(ANNOUNCEMENT_CREATE_LABELS),
     onClick: () => changeUrl({ href })
   }
 }
 
 export function signUpManager() {
   const { changeUrl } = this.context
-  const title = this.langObjHandler(USER_CREATE_TITLES)
-  const href = `${CLIENT_URL}/${this.langObjHandler(USER_CREATE_URLS)}`
+  const title = this.langHandler(USER_CREATE_TITLES)
+  const href = `${CLIENT_URL}/${this.langHandler(USER_CREATE_URLS)}`
 
   return {
     classNames: { container: 'header-link' },
     href,
-    hrefLang: this.langObjHandler(LANGS),
+    hrefLang: this.langHandler(LANGS),
     title,
     label: title,
     onClick: () => changeUrl({ href })
@@ -102,13 +102,13 @@ export function signUpManager() {
 
 export function signInManager() {
   const { changeUrl } = this.context
-  const title = this.langObjHandler(USER_AUTHORIZE_TITLES)
-  const href = `${CLIENT_URL}/${this.langObjHandler(USER_AUTHORIZE_URLS)}`
+  const title = this.langHandler(USER_AUTHORIZE_TITLES)
+  const href = `${CLIENT_URL}/${this.langHandler(USER_AUTHORIZE_URLS)}`
 
   return {
     classNames: { container: 'header-link sign-in' },
     href,
-    hrefLang: this.langObjHandler(LANGS),
+    hrefLang: this.langHandler(LANGS),
     title,
     label: title,
     onClick: () => changeUrl({ href })
@@ -117,12 +117,12 @@ export function signInManager() {
 
 export function myAccountManager() {
   const { changeRender } = this.props
-  const title = this.langObjHandler(USER_SHOW_TITLES)
+  const title = this.langHandler(USER_SHOW_TITLES)
   
   return {
     classNames: { container: 'header-link' },
-    href: `${CLIENT_URL}/${this.langObjHandler(USER_SHOW_URLS)}`,
-    hrefLang: this.langObjHandler(LANGS),
+    href: `${CLIENT_URL}/${this.langHandler(USER_SHOW_URLS)}`,
+    hrefLang: this.langHandler(LANGS),
     title,
     label: title,
     onClick: () => changeRender({

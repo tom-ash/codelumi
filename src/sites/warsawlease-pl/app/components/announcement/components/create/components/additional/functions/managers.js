@@ -23,12 +23,12 @@ export function rentAmountManager() {
     changeInputs
   } = this.props
 
-  let label = this.langObjHandler(text)
+  let label = this.langHandler(text)
 
   const rentAmountType = [0, 1, 6, 7].indexOf(category) !== -1 ? 'netRentAmount' : 'grossRentAmount'
 
   if(rentAmountType === 'netRentAmount') {
-    label = this.langObjHandler({ pl: 'Miesięczna cena netto', en: 'Monthly Net Price'})
+    label = this.langHandler({ pl: 'Miesięczna cena netto', en: 'Monthly Net Price'})
   }
 
   return {
@@ -73,9 +73,9 @@ export function roomsManager() {
 
   const { category } = this.props
 
-  let label = this.langObjHandler(text)
+  let label = this.langHandler(text)
 
-  if (category === 2) label = this.langObjHandler({ pl: 'Liczba pokoi', en: 'Rooms Amount' })
+  if (category === 2) label = this.langHandler({ pl: 'Liczba pokoi', en: 'Rooms Amount' })
 
   return {
     classNames: { container: 'form-input with-icon select' },
@@ -106,7 +106,7 @@ export function floorManager() {
       <SVG name='chevron' />
     </>,
     value: this.props.floor,
-    label: this.langObjHandler(text),
+    label: this.langHandler(text),
     options: this.floorsProvider(),
     onSelect: (option) => {
       this.onSelectHandler('floor', option.value)
@@ -128,7 +128,7 @@ export function totalFloorsManager() {
       <SVG name='chevron' />
     </>,
     value: this.props.totalFloors,
-    label: this.langObjHandler(text),
+    label: this.langHandler(text),
     options: numberOptionsProvider(99),
     onSelect: (option) => {
       this.onSelectHandler('totalFloors', option.value)

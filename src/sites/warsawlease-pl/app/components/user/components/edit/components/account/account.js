@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import UserEditAccountCell from './components/cell/cell'
-import langObjHandler from '../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import Header from '../../../../../support/components/header/header.js'
@@ -12,12 +12,12 @@ import SeparationLine from '../../../../../support/components/separation-line/se
 class UserEditAccount extends React.Component {
   constructor(props) {
     super(props)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
   }
 
   render() {
     const { accountType } = this.props
-    const headerText = this.langObjHandler(HEADER_TEXT)
+    const headerText = this.langHandler(HEADER_TEXT)
 
     return (
       <div id='user-edit-account'>

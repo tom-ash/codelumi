@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { ManagedSelect, ManagedText } from 'managed-inputs'
 import * as managers from './functions/managers'
-import langObjHandler from '../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../functions/lang-handler'
 import { handleErrorOnSelect, handleErrorOnValidate } from './functions/errors-handler'
 import { onSelectHandler } from './functions/on-select-handler'
 import { getRentAmounts } from '../../functions/get-rent-amounts'
@@ -11,7 +11,7 @@ import { getRentAmounts } from '../../functions/get-rent-amounts'
 class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {
     super(props)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.categoryManager = managers.categoryManager.bind(this)
     this.districtManager = managers.districtManager.bind(this)
     this.areaManager = managers.areaManager.bind(this)

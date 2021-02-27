@@ -12,7 +12,7 @@ export function showAvailabilityDateManager({
   return {
     classNames: { container: 'form-input checkbox availability-date' },
     checked: showAvilabilityDate,
-    label: this.langObjHandler({
+    label: this.langHandler({
       pl: 'Dodaj datę dostępności',
       en: 'Add Availability Date'
     }),

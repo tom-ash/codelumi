@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import langObjHandler from '../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../functions/lang-handler'
 import * as lifecycle from './functions/lifecycle'
 import { addFiles } from './functions/add-files'
 import { addPicture } from './functions/add-picture'
@@ -16,7 +16,7 @@ import SVG from '../../../../../support/components/svg/svg'
 class AnnouncementCreatePictures extends React.Component {
   constructor(props) {
     super(props)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.addFiles = addFiles.bind(this)
     this.addPicture = addPicture.bind(this)
@@ -44,14 +44,14 @@ class AnnouncementCreatePictures extends React.Component {
             </input>
           </div>
           <p>
-            {this.langObjHandler({
+            {this.langHandler({
               pl: 'Kliknij w ikonę aparatu, aby wybrać zdjęcia.',
               en: 'Click the camera to select pictures.'
             })}
           </p>
         </div>
         <div className='error'>
-          {this.langObjHandler(this.props.error)}
+          {this.langHandler(this.props.error)}
         </div>
 
         <div>

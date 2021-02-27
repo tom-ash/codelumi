@@ -9,7 +9,7 @@ const AnnouncementIndexMy = loadable(() => import('./components/my/my'))
 import { buildRequestParameters } from './functions/build-parameters'
 import { paramsReader } from './functions/params-reader'
 import { paramsBuilder } from './functions/params-builder'
-import langObjHandler from '../../../../functions/lang-handler'
+import langHandler from '../../../../functions/lang-handler'
 import { parseCurrency } from '../../functions/currency-parsers'
 import { parseCategoryForUrl } from '../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../functions/district-parsers'
@@ -22,7 +22,7 @@ import styles from './styles/styles.scss'
 class AnnouncementIndexSearch extends React.Component {
   constructor(props) {
     super(props)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.paramsReader = paramsReader.bind(this)
     this.buildRequestParameters = buildRequestParameters.bind(this)
     this.paramsBuilder = paramsBuilder.bind(this)

@@ -8,12 +8,12 @@ import {
   polishManager,
   englishManager
 } from './functions/managers'
-import langObjHandler from '../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../functions/lang-handler'
 
 class AnnouncementCreateDescription extends React.Component {
   constructor(props) {
     super(props)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.addPolishDescriptionManager = addPolishDescriptionManager.bind(this)
     this.polishManager = polishManager.bind(this)
     this.addEnglishDescriptionManager = addEnglishDescriptionManager.bind(this)

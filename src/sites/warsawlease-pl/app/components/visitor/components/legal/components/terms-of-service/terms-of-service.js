@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import langObjHandler from '../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../functions/lang-handler'
 import { text } from './constants/text'
 import Provision from '../provision/provision'
 import { pageHeaderProvider } from '../../../../../../functions/header-providers'
@@ -11,7 +11,7 @@ import styles from './styles/styles.scss'
 class VisitorTermsOfService extends React.Component {
   constructor(props) {
     super(props)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.pageHeaderProvider = pageHeaderProvider.bind(this)
   }
   render() {
@@ -23,7 +23,7 @@ class VisitorTermsOfService extends React.Component {
           onClick={e => e.stopPropagation()}
         >
           <h1 className='page-header'>
-            {this.langObjHandler({ pl: 'Regulamin', en: 'Terms Of Service' })}
+            {this.langHandler({ pl: 'Regulamin', en: 'Terms Of Service' })}
           </h1>
           <div className='terms-of-service'>
           {

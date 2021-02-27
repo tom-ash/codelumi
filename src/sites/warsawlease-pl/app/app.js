@@ -10,7 +10,7 @@ import Footer from './components/scaffold/components/footer/Footer'
 import * as lifecycle from './functions/lifecycle'
 import { screenSizeHandler } from './functions/screen-size-handler'
 import { popStateHandler } from './functions/popStateHandler'
-import langObjHandler from './functions/lang-handler'
+import langHandler from './functions/lang-handler'
 import matchStateToUrl from './functions/routers/match-state-to-url'
 import matchUrlToLang from './functions/routers/match-url-to-lang.js'
 import { changeUrl } from './functions/routers/change-url'
@@ -25,7 +25,7 @@ class App extends React.Component {
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.screenSizeHandler = screenSizeHandler.bind(this)
     this.popStateHandler = popStateHandler.bind(this)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.matchStateToUrl = matchStateToUrl.bind(this)
     this.changeUrl = changeUrl.bind(this)
     this.matchUrlToLang = matchUrlToLang.bind(this)
@@ -35,7 +35,7 @@ class App extends React.Component {
     const { renderPage, renderVisitor, renderAnnouncement, renderUser } = this.props
 
     const AppContextValue = { changeUrl: this.changeUrl, matchStateToUrl: this.matchStateToUrl, matchUrlToLang: this.matchUrlToLang }
-    const pageProps = { changeUrl: this.changeUrl, langHandler: this.langObjHandler }
+    const pageProps = { changeUrl: this.changeUrl, langHandler: this.langHandler }
 
     return (
       <AppContext.Provider value={AppContextValue}>

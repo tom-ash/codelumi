@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import * as mappers from './constants/mappers'
 import { ManagedText, ManagedButton } from 'managed-inputs'
-import langObjHandler from '../../../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../../../functions/lang-handler'
 import { verificationManager, buttonManager } from './functions/manager'
 import { verify } from './functions/adapter'
 import { monit } from './constants/monit'
@@ -13,7 +13,7 @@ class UserCreateEmailVerify extends React.Component {
     super(props)
     this.verify = verify.bind(this)
     this.verificationManager = verificationManager.bind(this)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.buttonManager = buttonManager.bind(this)
   }
 
@@ -23,7 +23,7 @@ class UserCreateEmailVerify extends React.Component {
     return (
       <div id='user-create-email-verify'>
         <div className='monit'>
-          {this.langObjHandler(monit)}
+          {this.langHandler(monit)}
         </div>
         <ManagedText {...this.verificationManager()} />
         <ManagedButton {...this.buttonManager()} />

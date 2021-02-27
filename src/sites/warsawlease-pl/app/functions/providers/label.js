@@ -4,7 +4,7 @@ export function labelProvider(icon, labelObject) {
   return (
     <span>
       <i className={icon}></i>
-      <span className='text'>{this.langObjHandler(labelObject)}</span>
+      <span className='text'>{this.langHandler(labelObject)}</span>
     </span>
   )
 }

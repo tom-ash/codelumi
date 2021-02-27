@@ -4,7 +4,7 @@ import AnnouncementShowPrimary from './components/primary/primary'
 import AnnouncementShowFeaturesFurnishings from './components/features-furnishings/features-furnishings'
 import AnnouncementShowDescription from './components/description/description'
 import AnnouncementShowMap from './components/map/map'
-import langObjHandler from '../../../../../functions/lang-handler.js'
+import langHandler from '../../../../../functions/lang-handler.js'
 import { parseCategory } from '../../../../../../shared/functions/parsers/parse-category'
 import { parseDistrict } from '../../../functions/district-parsers'
 import { CloseButton } from '../../../../support/components/close-button/close-button'
@@ -24,7 +24,7 @@ class AnnouncementTile extends React.Component {
   constructor(props) {
     super(props)
     this.container = React.createRef()
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
     this.togglePhone = togglePhone.bind(this)
     this.state = {
@@ -114,16 +114,16 @@ class AnnouncementTile extends React.Component {
             <div className='header-row category'>
               <span>{category !== null && parseCategory({ categoryNumber: category, lang })}</span>
               &nbsp;
-              <span className='for-lease'>{this.langObjHandler({ pl: 'na wynajem', en: 'for lease' })}</span>
+              <span className='for-lease'>{this.langHandler({ pl: 'na wynajem', en: 'for lease' })}</span>
             </div>
             <div className='header-row district'>
-              {parseDistrict(district)}{this.langObjHandler({ pl: ', Warszawa', en: ', Warsaw' })}
+              {parseDistrict(district)}{this.langHandler({ pl: ', Warszawa', en: ', Warsaw' })}
             </div>
             <div className='area'>
               <div className='area-amount'>
               {area}
               </div>
-              {this.langObjHandler({
+              {this.langHandler({
                 pl: (
                   <React.Fragment>
                     <div className='m'>
@@ -206,7 +206,7 @@ class AnnouncementTile extends React.Component {
             resetControl={resetControl}
             changeData={changeData}
             resetData={resetData}
-            langObjHandler={this.langObjHandler}
+            langHandler={this.langHandler}
           />
         </React.Fragment>}
         {control}

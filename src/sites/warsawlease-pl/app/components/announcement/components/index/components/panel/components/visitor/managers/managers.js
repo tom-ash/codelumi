@@ -16,8 +16,8 @@ export function buttonManager() {
     label: (
       <>
         {renderCatalogue ?
-        this.langObjHandler({ pl: 'Mapa', en: 'Map' })
-        : this.langObjHandler({ pl: 'Katalog', en: 'Catalogue' })
+        this.langHandler({ pl: 'Mapa', en: 'Map' })
+        : this.langHandler({ pl: 'Katalog', en: 'Catalogue' })
         }
       </>
     ),

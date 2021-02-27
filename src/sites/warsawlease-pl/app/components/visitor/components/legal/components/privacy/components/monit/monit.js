@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import langObjHandler from '../../../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../../../functions/lang-handler'
 import { ManagedButton } from 'managed-inputs'
 import { agreeManager, settingsManager } from './functions/manager'
 import { textsProvider } from './functions/texts-provider'
@@ -14,7 +14,7 @@ class VisitorPrivacyMonit extends React.Component {
     super(props)
     this.agreeManager = agreeManager.bind(this)
     this.settingsManager =  settingsManager.bind(this)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.textsProvider = textsProvider.bind(this)
   }
 
@@ -32,7 +32,7 @@ class VisitorPrivacyMonit extends React.Component {
             onClick={e => e.stopPropagation()}
           >
             <div className='title'>
-              {this.langObjHandler({
+              {this.langHandler({
                 pl: 'Twoja prywatność jest dla nas ważna.',
                 en: 'Your privacy is important to us.'
               })}
@@ -40,12 +40,12 @@ class VisitorPrivacyMonit extends React.Component {
             <div className='text-container'>
               <div className='text-line cookies'>
                 <div className='text'>
-                  {this.langObjHandler(this.textsProvider('cookies'))}
+                  {this.langHandler(this.textsProvider('cookies'))}
                 </div>
               </div>
               <div className='text-line'>
                 <div className='text'>
-                  {this.langObjHandler(this.textsProvider('dataProcessing'))}
+                  {this.langHandler(this.textsProvider('dataProcessing'))}
                 </div>
               </div>
             </div>

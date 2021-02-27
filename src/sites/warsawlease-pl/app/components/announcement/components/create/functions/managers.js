@@ -5,7 +5,7 @@ export function addAnnouncementManager() {
   return {
     classNames: { container: 'form-input button' },
     label: 'TODO LANG',
-    // label: this.langObjHandler('Dalej', 'Next'),
+    // label: this.langHandler('Dalej', 'Next'),
     onClick: () => {
       this.publish()
       sendGaEvent(analyticEvent)

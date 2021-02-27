@@ -20,7 +20,7 @@ const AnnouncementShowMiniTile = ({
   grossRentAmount,
   rentCurrency: currency,
   lang,
-  langObjHandler,
+  langHandler,
   changeData,
   isMobile,
   miniListFarthestScrollTop,
@@ -111,12 +111,12 @@ const AnnouncementShowMiniTile = ({
       <div className='data'>
         <AreaPresenter
           area={area}
-          langObjHandler={langObjHandler}
+          langHandler={langHandler}
         />
         <RentPresenter
           amount={grossRentAmount}
           currency={currency}
-          langObjHandler={langObjHandler}
+          langHandler={langHandler}
         />
       </div>
       <div className='float-clear' />

@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
-import langObjHandler from '../../../../functions/lang-handler'
+import langHandler from '../../../../functions/lang-handler'
 import { phoneSwitchProvider } from '../../functions/phone-switch-provider'
 import { togglePhone } from '../../functions/toggle-phone'
 import { fixedPhoneHandler } from './functions/fixed-phone-handler'
@@ -17,7 +17,7 @@ class AnnouncementShow extends React.Component {
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
     this.togglePhone = togglePhone.bind(this)
     this.fixedPhoneHandler = fixedPhoneHandler.bind(this)
@@ -70,7 +70,7 @@ class AnnouncementShow extends React.Component {
     const { phone } = this.state
     const deviceClasss = device === 'largePc' ? ' large-pc' : ''
     const showcaseProps = { announcerName: name, announcerPhone: phone,
-      announcementId: id, togglePhone: this.togglePhone, langObjHandler: this.langObjHandler, venue }
+      announcementId: id, togglePhone: this.togglePhone, langHandler: this.langHandler, venue }
 
     return (
       <div id='announcement-show' className={deviceClasss}>

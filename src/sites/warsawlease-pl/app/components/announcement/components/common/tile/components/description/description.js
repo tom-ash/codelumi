@@ -1,12 +1,12 @@
 import React from 'react'
-import langObjHandler from '../../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../../functions/lang-handler'
 import Header from '../../../../../../support/components/header/header.js'
 import { HEADER } from './constants/texts.js'
 
 class AnnouncementShowDescription extends React.Component {
   constructor(props) {
     super(props)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
   }
   
   render() {
@@ -17,9 +17,9 @@ class AnnouncementShowDescription extends React.Component {
 
     return (
       <div className='announcement-tile-description'>
-        <Header tier={2} text={this.langObjHandler(HEADER)} />
+        <Header tier={2} text={this.langHandler(HEADER)} />
         <div className='description'>
-          {this.langObjHandler({ pl: polishDescription, en: englishDescription })}
+          {this.langHandler({ pl: polishDescription, en: englishDescription })}
         </div>
       </div>
     )

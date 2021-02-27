@@ -21,14 +21,14 @@ class AnnouncementCreateMap extends React.Component {
     const {
       latitude,
       longitude,
-      langObjHandler
+      langHandler
     } = this.props
     
     if (!(latitude && longitude)) return null
 
     return (
       <div className='announcement-tile-map'>
-        <Header tier={2} text={langObjHandler(HEADER)} />
+        <Header tier={2} text={langHandler(HEADER)} />
         <div id='google-map-container'>
           <div id='google-map' />
         </div>

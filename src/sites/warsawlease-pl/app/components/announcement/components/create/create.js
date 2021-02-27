@@ -12,7 +12,7 @@ import Success from './components/success/success'
 import WindmillSpinner from '../../../support/components/spinner/components/windmill/windmill.js'
 import * as lifecycle from './functions/lifecycle'
 import * as managers from './functions/managers'
-import langObjHandler from '../../../../functions/lang-handler'
+import langHandler from '../../../../functions/lang-handler'
 import { getAnnouncement } from './functions/get-announcement'
 import { AnnouncementCreateSteps } from './components/steps/steps'
 import { ManagedButton } from 'managed-inputs'
@@ -43,7 +43,7 @@ class AnnouncementCreate extends React.Component {
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.getAnnouncement = getAnnouncement.bind(this)
     this.addAnnouncementManager = managers.addAnnouncementManager.bind(this)
     this.categoryManager = categoryManager.bind(this)
@@ -65,7 +65,7 @@ class AnnouncementCreate extends React.Component {
     } = this.props
 
     const availabilityDateProps = { lang, availabilityDate, showAvilabilityDate, changeControl, changeInputs }
-    const headerText = this.langObjHandler({ pl: 'Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w Warszawie', en: 'Add Free Announcement of Real Estate Lease in Warsaw' })
+    const headerText = this.langHandler({ pl: 'Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w Warszawie', en: 'Add Free Announcement of Real Estate Lease in Warsaw' })
 
     return (
       <>
@@ -82,7 +82,7 @@ class AnnouncementCreate extends React.Component {
             <Line />
             <Additional />
             <Line />
-            <p className='hint create'>{this.langObjHandler(OPTIONAL)}</p>
+            <p className='hint create'>{this.langHandler(OPTIONAL)}</p>
             <AvailabilityDate { ...availabilityDateProps } />
             <Features />
             <Furnishings />
@@ -104,7 +104,7 @@ class AnnouncementCreate extends React.Component {
             district={district}
             area={area}
             changeAnnouncementShowData={changeAnnouncementShowData}
-            langObjHandler={this.langObjHandler}
+            langHandler={this.langHandler}
             isMobile={isMobile}
             lang={lang}
           />}

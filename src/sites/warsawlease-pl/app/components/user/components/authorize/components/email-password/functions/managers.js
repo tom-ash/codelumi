@@ -14,7 +14,7 @@ export function emailAddressManager() {
     classNames: { container: 'form-input text with-icon email'},
     autoComplete: 'email',
     controlled: false,
-    label: this.langObjHandler(label),
+    label: this.langHandler(label),
     children: <SVG name='envelope' />,
     onChange: () => this.props.changeErrors({ emailOrPassword: noError }),
     onBlur: value => this.emailAddressManager().validate(value),
@@ -27,7 +27,7 @@ export function emailAddressManager() {
         })
       }
     },
-    error: this.langObjHandler({ pl: this.props.emailOrPasswordError.pl, en: this.props.emailOrPasswordError.en })
+    error: this.langHandler({ pl: this.props.emailOrPasswordError.pl, en: this.props.emailOrPasswordError.en })
   }
 }
 
@@ -40,7 +40,7 @@ export function passwordManager() {
     type: 'password',
     controlled: false,
     classNames: { container: 'form-input text with-icon password'},
-    label: this.langObjHandler(label),
+    label: this.langHandler(label),
     children: <SVG name='lock' />,
     onChange: () => this.props.changeErrors({ emailOrPassword: noError, email: noError }),
     onBlur: value => this.passwordManager().validate(value),
@@ -55,7 +55,7 @@ export function passwordManager() {
       }
       return true
     }),
-    error: this.langObjHandler({ pl: this.props.emailOrPasswordError.pl, en: this.props.emailOrPasswordError.en })
+    error: this.langHandler({ pl: this.props.emailOrPasswordError.pl, en: this.props.emailOrPasswordError.en })
   }
 }
 
@@ -65,7 +65,7 @@ export function rememberMeManager() {
   return {
     classNames: { container: 'form-input checkbox'},
     checked: this.props.rememberMe,
-    label: this.langObjHandler({ pl: 'Zapamiętaj mnie', en: 'Remember me' }),
+    label: this.langHandler({ pl: 'Zapamiętaj mnie', en: 'Remember me' }),
     onClick: () => this.props.changeInputs({ rememberMe: !rememberMe })
   }
 }
@@ -79,7 +79,7 @@ export function buttonManager() {
       <ButtonSpinner
         connecting={connecting}
         label={{ pl: 'Zaloguj', en: 'Sign In' }}
-        langObjHandler={this.langObjHandler}
+        langHandler={this.langHandler}
       />
     ),
     onClick: this.logIn

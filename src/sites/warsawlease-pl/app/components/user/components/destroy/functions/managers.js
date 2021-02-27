@@ -12,7 +12,7 @@ export function verificationManager() {
     id: 'user-destroy-verification',
     controlled: false,
     classNames: { container: 'form-input text' },
-    label: this.langObjHandler(label),
+    label: this.langHandler(label),
     children: <i className={icon} />,
     onChange: () => changeErrors({ verification: noError }),
     onBlur: value => this.verificationManager().validate(value),
@@ -25,7 +25,7 @@ export function verificationManager() {
       }
       return true
     },
-    error: this.langObjHandler(this.props.error)
+    error: this.langHandler(this.props.error)
   }
 }
 
@@ -39,7 +39,7 @@ export function buttonManager() {
       <ButtonSpinner
         connecting={connecting}
         label={{ pl: 'Usuń konto', en: 'Delete Account' }}
-        langObjHandler={this.langObjHandler}
+        langHandler={this.langHandler}
       />
     ),
     onClick: () => destroy.call(this)

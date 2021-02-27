@@ -8,7 +8,7 @@ const AnnouncementShowShowcase = ({
   announcerName,
   announcerPhone,
   togglePhone,
-  langObjHandler,
+  langHandler,
   announcementId,
   venue
 }) => {
@@ -34,7 +34,7 @@ const AnnouncementShowShowcase = ({
               togglePhone(e, venue)}
             }
           >
-            {langObjHandler({ pl: 'Pokaż', en: 'Show' })}
+            {langHandler({ pl: 'Pokaż', en: 'Show' })}
           </u>}
         </div>
         <div className='float-clear' />

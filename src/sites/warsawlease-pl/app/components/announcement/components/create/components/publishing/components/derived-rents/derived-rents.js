@@ -22,39 +22,39 @@ export default function DerivedRents(props) {
   return (
     <div className='derived-rents'>
       <div>
-        {langObjHandler({ pl: 'Na podstawie:', en: 'Pursuant to:' })}
+        {langHandler({ pl: 'Na podstawie:', en: 'Pursuant to:' })}
       </div>
       <div className='line'>
         <div className='amount'>
-          {langObjHandler({ pl: 'podanego miesięcznego czynszu netto', en: 'the provided monthly net rent' })} (<span>{netRentAmount}&nbsp;{parsedRentCurrency}</span>),
+          {langHandler({ pl: 'podanego miesięcznego czynszu netto', en: 'the provided monthly net rent' })} (<span>{netRentAmount}&nbsp;{parsedRentCurrency}</span>),
         </div>
       </div>
       <div className='line'>
         <div className='amount'>
-          {langObjHandler({ pl: 'podanej powierzchni', en: 'the provided area' })} (<span>{area}&nbsp;{langObjHandler({ pl: 'm2', en: 'sqm' })}</span>), {langObjHandler({ pl: 'oraz', en: 'and' })}
+          {langHandler({ pl: 'podanej powierzchni', en: 'the provided area' })} (<span>{area}&nbsp;{langHandler({ pl: 'm2', en: 'sqm' })}</span>), {langHandler({ pl: 'oraz', en: 'and' })}
         </div>
       </div>
       <div className='line'>
         <div className='amount'>
-          {langObjHandler({ pl: '23% stawki VAT', en: 'the VAT rate of 23%' })},
+          {langHandler({ pl: '23% stawki VAT', en: 'the VAT rate of 23%' })},
         </div>
       </div>
       <div>
-        {langObjHandler('automatycznie zostały wyliczene następujące pochodne miesięczne kwoty czynszu:', <span>the following derived monthly rent amounts have been automatically calculated:</span>)}
+        {langHandler('automatycznie zostały wyliczene następujące pochodne miesięczne kwoty czynszu:', <span>the following derived monthly rent amounts have been automatically calculated:</span>)}
       </div>
       <div className='line'>
         <div className='amount'>
-          {calculatedGrossRentAmount} {parsedRentCurrency} {langObjHandler({ pl: 'brutto', en: 'gross' })}
+          {calculatedGrossRentAmount} {parsedRentCurrency} {langHandler({ pl: 'brutto', en: 'gross' })}
         </div>
       </div>
       <div className='line'>
         <div className='amount'>
-            {calculatedNetRentAmountPerSqm} {parsedRentCurrency} {langObjHandler({ pl: 'netto + VAT / m2', en: 'net + VAT  / sqm' })}
+            {calculatedNetRentAmountPerSqm} {parsedRentCurrency} {langHandler({ pl: 'netto + VAT / m2', en: 'net + VAT  / sqm' })}
         </div>
       </div>
       <div className='line'>
         <div className='amount'>
-          {calculatedGrossRentAmountPerSqm} {parsedRentCurrency} {langObjHandler({ pl: 'brutto / m2', en: 'gross / sqm' })}
+          {calculatedGrossRentAmountPerSqm} {parsedRentCurrency} {langHandler({ pl: 'brutto / m2', en: 'gross / sqm' })}
         </div>
       </div>
     </div>

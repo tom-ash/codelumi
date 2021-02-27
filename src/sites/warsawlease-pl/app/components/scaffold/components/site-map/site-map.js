@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import langObjHandler from '../../../../functions/lang-handler'
+import langHandler from '../../../../functions/lang-handler'
 import { componentDidMount } from './functions/lifecycle'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
@@ -9,7 +9,7 @@ import styles from './styles/styles.scss'
 class SiteMap extends React.Component {
   constructor(props) {
     super(props)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.componentDidMount = componentDidMount.bind(this)
   }
 

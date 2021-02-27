@@ -19,13 +19,13 @@ export function accountTypeManager() {
 
   const privateAccount = (
     <div className='account-type'>
-      {this.langObjHandler({ pl: 'Prywatne', en: 'Private' })}
+      {this.langHandler({ pl: 'Prywatne', en: 'Private' })}
     </div>
   )
 
   const professionalAccount = (
     <div className='account-type'>
-      {this.langObjHandler({ pl: 'Firmowe', en: 'Business' })}
+      {this.langHandler({ pl: 'Firmowe', en: 'Business' })}
     </div>
   )
 
@@ -59,7 +59,7 @@ export function emailAddressManager() {
     type: 'email',
     autoComplete: 'email',
     controlled: false,
-    label: this.langObjHandler(label),
+    label: this.langHandler(label),
     children: <SVG name='envelope' />,
     onFocus: () => this.errorResetter('email'),
     onBlur: value => {
@@ -67,7 +67,7 @@ export function emailAddressManager() {
       sendGaEvent(EMAIL_ADDRESS_INPUTTED_EVENT)
     },
     validate: value => this.emailValidator(value),
-    error: this.langObjHandler(this.props.emailError)
+    error: this.langHandler(this.props.emailError)
   }
 }
 
@@ -80,7 +80,7 @@ export function passwordManager() {
     type: 'password',
     autoComplete: 'new-password',
     controlled: false,
-    label: this.langObjHandler(label),
+    label: this.langHandler(label),
     children: <SVG name='lock' />,
     onFocus: () => this.errorResetter('password'),
     onBlur: value => {
@@ -88,7 +88,7 @@ export function passwordManager() {
       sendGaEvent(PASSWORD_INPUTTED_EVENT)
     },
     validate: value => this.passwordValidator(value),
-    error: this.langObjHandler(this.props.passwordError)
+    error: this.langHandler(this.props.passwordError)
   }
 }
 
@@ -104,7 +104,7 @@ export function firstNameManager() {
     id: 'user-create-email-first-name',
     autoComplete: 'given-name',
     controlled: false,
-    label: this.langObjHandler(label),
+    label: this.langHandler(label),
     children: <SVG name='user' />,
     onFocus: () => this.errorResetter('firstName'),
     onBlur: value => {
@@ -112,7 +112,7 @@ export function firstNameManager() {
       sendGaEvent(FIRST_NAME_INPUTTED_EVENT)
     },
     validate: value => this.nameValidator('firstName', value),
-    error: this.langObjHandler(this.props.firstNameError)
+    error: this.langHandler(this.props.firstNameError)
   }
 }
 
@@ -128,14 +128,14 @@ export function businessNameManager() {
     autoComplete: 'off',
     controlled: false,
     classNames: { container: 'form-input text'},
-    label: this.langObjHandler(label),
+    label: this.langHandler(label),
     onFocus: () => this.errorResetter('businessName'),
     onBlur: value => {
       this.businessNameManager().validate(value)
       sendGaEvent(BUSINESS_NAME_INPUTTED_EVENT)
     },
     validate: value => this.nameValidator('businessName', value),
-    error: this.langObjHandler(this.props.businessNameError)
+    error: this.langHandler(this.props.businessNameError)
   }
 }
 
@@ -164,7 +164,7 @@ export function phoneNumberManager() {
     type: 'tel',
     controlled: false,
     classNames: { container: 'form-input text with-icon phone-body'},
-    label: this.langObjHandler(label),
+    label: this.langHandler(label),
     children: <SVG name='phone' />,
     onFocus: () => this.errorResetter('phone'),
     onBlur: value => {
@@ -172,7 +172,7 @@ export function phoneNumberManager() {
       sendGaEvent(PHONE_NUMBER_INPUTTED_EVENT)
     },
     validate: value => this.phoneValidator(value),
-    error: this.langObjHandler(this.props.phoneError)
+    error: this.langHandler(this.props.phoneError)
   }
 }
 

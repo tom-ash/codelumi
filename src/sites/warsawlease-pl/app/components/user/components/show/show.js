@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { ManagedButton, ManagedLink } from 'managed-inputs'
-import langObjHandler from '../../../../functions/lang-handler'
+import langHandler from '../../../../functions/lang-handler'
 import * as managers from './functions/managers'
 import { labelProvider } from './functions/label-provider'
 import withStyles from 'isomorphic-style-loader/withStyles'
@@ -17,7 +17,7 @@ class UserShow extends React.Component {
     this.myAnnouncementsManager = managers.myAnnouncementsManager.bind(this)
     this.accountManager = managers.accountManager.bind(this)
     this.deAuthorizeManager = managers.deAuthorizeManager.bind(this)
-    this.langHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
   }
 

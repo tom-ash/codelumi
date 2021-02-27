@@ -6,7 +6,7 @@ export const RentPresenter = ({
   currency,
   type,
   perSqm,
-  langObjHandler,
+  langHandler,
   net
 }) => {
   if (!amount) return null
@@ -21,7 +21,7 @@ export const RentPresenter = ({
       </div>
       {perSqm &&
       <div className='per-sqm'>
-        {langObjHandler({
+        {langHandler({
           pl: (
             <React.Fragment>
               <div className='m'>
@@ -35,7 +35,7 @@ export const RentPresenter = ({
           en: `/sqm` })}
       </div>}
       <div className='per-month'>
-        {langObjHandler({ pl: `${net ? 'NETTO' : ''}/MC`, en: `${net ? 'NET' : ''}/MO` })}
+        {langHandler({ pl: `${net ? 'NETTO' : ''}/MC`, en: `${net ? 'NET' : ''}/MO` })}
       </div>
       <div className='float-clear' />
     </div>

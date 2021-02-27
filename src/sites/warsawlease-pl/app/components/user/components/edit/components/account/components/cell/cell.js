@@ -4,7 +4,7 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { centralManager } from './functions/central-manager'
 import { initialReducerState } from '../../constants/initial-reducer-state'
 import * as lifecycle from './functions/lifecycle'
-import langObjHandler from '../../../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../../../functions/lang-handler'
 import SVG from '../../../../../../../support/components/svg/svg.js'
 
 class UserEditAccountCell extends React.Component {
@@ -16,7 +16,7 @@ class UserEditAccountCell extends React.Component {
     }
     this.centralManager = centralManager.bind(this)
     this.componentDidUpdate = lifecycle.componentDidUpdate.bind(this)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
   }
 
   static getDerivedStateFromProps(props, state) {

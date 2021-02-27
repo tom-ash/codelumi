@@ -3,13 +3,13 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as managers from './functions/managers'
 import { ManagedLink } from 'managed-inputs'
-import langObjHandler from '../../../../functions/lang-handler'
+import langHandler from '../../../../functions/lang-handler'
 import AppContext from '../../../../constants/context.js'
 
 class Footer extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.contactManager = managers.contactManager.bind(this)
     this.termsOfServiceManager = managers.termsOfServiceManager.bind(this)
     this.cookiesPolicyManager = managers.cookiesPolicyManager.bind(this)

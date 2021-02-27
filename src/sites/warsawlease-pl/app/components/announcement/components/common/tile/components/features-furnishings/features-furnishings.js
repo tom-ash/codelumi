@@ -1,5 +1,5 @@
 import React from 'react'
-import langObjHandler from '../../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../../functions/lang-handler'
 import { features } from '../../../../../constants/features'
 import { furnishings } from '../../../../../constants/furnishings'
 import SVG from '../../../../../../support/components/svg/svg'
@@ -9,7 +9,7 @@ import { FEATURES_HEADER, FURNISHINGS_HEADER } from './constants/texts.js'
 class AnnouncementShowFeaturesFurnishings extends React.Component {
   constructor(props) {
     super(props)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
   }
   
   render() {
@@ -24,7 +24,7 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
 
     return (
       <div className='announcement-tile-features'>
-        <Header tier={2} text={this.langObjHandler(headerText)} />
+        <Header tier={2} text={this.langHandler(headerText)} />
         {
         items && items.map(item => (
         <div
@@ -35,7 +35,7 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
             <SVG name='check' />
           </div>
           <div className='text'>
-            {this.langObjHandler(nodes.find(node => node.ref === item))}
+            {this.langHandler(nodes.find(node => node.ref === item))}
           </div>
           <div className='float-clear' />
         </div>

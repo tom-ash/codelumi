@@ -4,7 +4,7 @@ import { ManagedText, ManagedCheckbox, ManagedButton } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { logIn } from './functions/adapters'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import langObjHandler from '../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../functions/lang-handler'
 import { labelProvider } from '../../../../../../functions/providers/label'
 import { USER_EDIT_PASSWORD_TRACK } from '../../../../../../../shared/constants/tracks/tracks'
 import AppContext from '../../../../../../constants/context.js'
@@ -18,7 +18,7 @@ class UserAuthorizeEmailPassword extends React.Component {
     this.rememberMeManager = managers.rememberMeManager.bind(this)
     this.buttonManager = managers.buttonManager.bind(this)
     this.logIn = logIn.bind(this)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
   }
 
@@ -45,7 +45,7 @@ class UserAuthorizeEmailPassword extends React.Component {
         <div
           className='reset-password'>
           <span onClick={() => changeRouteWithHref({ track, lang, changeUrl })}>
-            {this.langObjHandler({ pl: 'Zresetuj hasło', en: 'Reset password' })}
+            {this.langHandler({ pl: 'Zresetuj hasło', en: 'Reset password' })}
           </span>
         </div>
       </div>

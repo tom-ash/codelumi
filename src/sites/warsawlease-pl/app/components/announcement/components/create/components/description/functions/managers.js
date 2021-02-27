@@ -17,7 +17,7 @@ export function addPolishDescriptionManager() {
   return {
     classNames: { container: 'form-input checkbox add-switcher pl' },
     checked,
-    label: this.langObjHandler({
+    label: this.langHandler({
       pl: 'Dodaj Opis w języku polskim',
       en: 'Add Description in Polish Language'
     }),
@@ -47,7 +47,7 @@ export function addEnglishDescriptionManager() {
   return {
     classNames: { container: 'form-input checkbox add-switcher en' },
     checked,
-    label: this.langObjHandler({
+    label: this.langHandler({
       pl: 'Dodaj Opis w języku angielskim',
       en: 'Add Description in English Language'
     }),

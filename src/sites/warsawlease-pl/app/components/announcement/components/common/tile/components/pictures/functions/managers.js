@@ -14,10 +14,10 @@ export function linkManager() {
 
   return {
     classNames: { container: 'link' },
-    label: this.langObjHandler({ pl: 'Zobacz szczegóły', en: 'See details'}),
+    label: this.langHandler({ pl: 'Zobacz szczegóły', en: 'See details'}),
     href,
-    hrefLang: this.langObjHandler({ pl: 'pl', en: 'en' }),
-    title: this.langObjHandler({ pl: `Ogłoszenie ${id}`, en: `Announcement ${id}` }),
+    hrefLang: this.langHandler({ pl: 'pl', en: 'en' }),
+    title: this.langHandler({ pl: `Ogłoszenie ${id}`, en: `Announcement ${id}` }),
     onClick: () => {
       changeData({ id, category, district })
       changeUrl({ href })

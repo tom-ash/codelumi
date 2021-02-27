@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { ManagedText, ManagedSelect } from 'managed-inputs'
 import * as managers from './functions/managers'
-import langObjHandler from '../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../functions/lang-handler'
 import { onSelectHandler } from './functions/on-select-handler'
 import { labelProvider } from '../../../../../../functions/providers/label'
 import { floorsProvider } from './functions/floors-provider'
@@ -13,7 +13,7 @@ import { OPTIONAL } from '../../constants/texts.js'
 class AnnouncementCreateAdditional extends React.Component {
   constructor(props) {
     super(props)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.roomsManager = managers.roomsManager.bind(this)
     this.floorManager = managers.floorManager.bind(this)
     this.totalFloorsManager = managers.totalFloorsManager.bind(this)
@@ -28,7 +28,7 @@ class AnnouncementCreateAdditional extends React.Component {
   render() {
     return (
       <div id='announcement-create-additional' className='section'>
-        <p className='hint'>{this.langObjHandler(OPTIONAL)}</p>
+        <p className='hint'>{this.langHandler(OPTIONAL)}</p>
         <div className='rent-inputs-container'>
           <ManagedText {...this.rentAmountManager()}/>
           <ManagedSelect {...this.rentCurrencyManager()}/>

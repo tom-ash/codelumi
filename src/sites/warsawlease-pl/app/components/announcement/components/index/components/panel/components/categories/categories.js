@@ -4,7 +4,7 @@ import { categories } from '../../../../../../constants/categories'
 
 
 const AnnouncementIndexPanelCategories = ({
-  langObjHandler,
+  langHandler,
   changeInputs,
   changeControl,
   currentCategory
@@ -26,7 +26,7 @@ const AnnouncementIndexPanelCategories = ({
                 name={category.pin.svg}
                 {...active ? { fill: category.pin.color } : { fill: '#909497' }}
               />
-              {langObjHandler(category.label)}
+              {langHandler(category.label)}
             </div>
           </React.Fragment>
         )

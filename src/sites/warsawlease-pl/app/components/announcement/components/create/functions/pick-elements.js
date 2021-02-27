@@ -12,7 +12,7 @@ export function pickElementsForCategory(elements, elementsName) {
     return {
       ref: element.ref,
       checked: this.props[elementsName][element.ref],
-      label: this.langObjHandler({ pl: element.pl, en: element.en })
+      label: this.langHandler({ pl: element.pl, en: element.en })
     }
   })
 

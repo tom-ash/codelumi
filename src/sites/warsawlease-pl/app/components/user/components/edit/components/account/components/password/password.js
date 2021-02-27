@@ -6,7 +6,7 @@ import { componentWillUnmount } from './functions/lifecycle'
 import { emailManager, verificationManager, passwordManager, buttonManager } from './functions/managers'
 import { sendEmail, sendVerification, sendPassword } from './functions/adapters'
 import { monitProvider } from './functions/monit-provider'
-import langObjHandler from '../../../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../../../functions/lang-handler'
 import { labelProvider } from '../../../../../../../../functions/providers/label'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
@@ -24,14 +24,14 @@ class UserEditAccountPassword extends React.Component {
     this.sendVerification = sendVerification.bind(this)
     this.sendPassword = sendPassword.bind(this)
     this.monitProvider = monitProvider.bind(this)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.labelProvider = labelProvider.bind(this)
   }
 
   render() {
     const { editAccount } = this.props
 
-    const headerText = this.langObjHandler({ pl: 'Zresetuj hasło', en: 'Reset password' })
+    const headerText = this.langHandler({ pl: 'Zresetuj hasło', en: 'Reset password' })
     
     return (
       <div

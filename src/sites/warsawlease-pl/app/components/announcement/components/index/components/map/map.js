@@ -8,7 +8,7 @@ const AnnouncementTile = loadable(() => import('../../../common/tile/tile.js'), 
 import { googleMapHandler } from '../../../../functions/google-map-handler'
 import { fetchTile } from './functions/fetch-tile'
 import { drawPins } from './functions/draw-pins'
-import langObjHandler from '../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../functions/lang-handler'
 import { shouldSetUpGoogleMaps, shouldSetUpPins } from '../../../../functions/google-map-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
@@ -25,7 +25,7 @@ class AnnouncementIndexMap extends React.Component {
     this.googleMapHandler = googleMapHandler.bind(this)
     this.drawPins = drawPins.bind(this)
     this.fetchTile = fetchTile.bind(this)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.shouldSetUpGoogleMaps = shouldSetUpGoogleMaps.bind(this)
     this.shouldSetUpPins = shouldSetUpPins.bind(this)
     this.buildRequestParameters = buildRequestParameters.bind(this)
@@ -72,7 +72,7 @@ class AnnouncementIndexMap extends React.Component {
                 grossRentAmount={announcement.grossRentAmount}
                 rentCurrency={announcement.rentCurrency}
                 lang={lang}
-                langObjHandler={this.langObjHandler}
+                langHandler={this.langHandler}
                 changeData={changeData}
                 isMobile={isMobile}
                 miniListFarthestScrollTop={miniListFarthestScrollTop}

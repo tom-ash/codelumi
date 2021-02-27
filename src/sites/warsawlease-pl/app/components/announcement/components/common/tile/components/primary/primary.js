@@ -1,5 +1,5 @@
 import React from 'react'
-import langObjHandler from '../../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../../functions/lang-handler'
 import { parseCurrency } from '../../../../../functions/currency-parsers'
 import { presentRooms } from './functions/present-rooms'
 import { presentFloor } from './functions/present-floor'
@@ -9,7 +9,7 @@ import { presentAvailabilityDate } from './functions/present-availability-date'
 class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {
     super(props)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
   }
 
   classProvider(itemName) {
@@ -46,14 +46,14 @@ class AnnouncementCreatePrimary extends React.Component {
             currency={currency}
             type='gross total'
             perSqm={false}
-            langObjHandler={this.langObjHandler}
+            langHandler={this.langHandler}
           />
           <PresentRent
             amount={grossRentAmountPerSqm}
             currency={currency}
             type='gross per-sqm'
             perSqm={true}
-            langObjHandler={this.langObjHandler}
+            langHandler={this.langHandler}
           />
         </div>
         {netRentAmount && netRentAmountPerSqm &&
@@ -63,7 +63,7 @@ class AnnouncementCreatePrimary extends React.Component {
             currency={currency}
             type='net total'
             perSqm={false}
-            langObjHandler={this.langObjHandler}
+            langHandler={this.langHandler}
             net={true}
           />
           <PresentRent
@@ -71,7 +71,7 @@ class AnnouncementCreatePrimary extends React.Component {
             currency={currency}
             type='net per-sqm'
             perSqm={true}
-            langObjHandler={this.langObjHandler}
+            langHandler={this.langHandler}
             net={true}
           />
         </div>
@@ -79,19 +79,19 @@ class AnnouncementCreatePrimary extends React.Component {
         <div className='float-clear' />
         {rooms !== null &&
         <div className='rooms'>
-          {rooms} {this.langObjHandler(presentRooms({ rooms, category }))}
+          {rooms} {this.langHandler(presentRooms({ rooms, category }))}
         </div>}
         {floor !== null &&
         <div className='floor'>
-          {this.langObjHandler(presentFloor({ floor }))}
+          {this.langHandler(presentFloor({ floor }))}
         </div>}
         {totalFloors !== null &&
         <div className='total-floors'>
-          {this.langObjHandler(presentTotalFloors({ totalFloors   }))}
+          {this.langHandler(presentTotalFloors({ totalFloors   }))}
         </div>}
         {availabilityDate !== null &&
         <div className='available-from'>
-          {this.langObjHandler(presentAvailabilityDate({ availabilityDate, category }))}
+          {this.langHandler(presentAvailabilityDate({ availabilityDate, category }))}
         </div>}
         <div className='float-clear' />
       </div>
@@ -106,7 +106,7 @@ function PresentRent({
   currency,
   type,
   perSqm,
-  langObjHandler,
+  langHandler,
   net
 }) {
   if (!amount) return null
@@ -121,7 +121,7 @@ function PresentRent({
       </div>
       {perSqm &&
       <div className='per-sqm'>
-        {langObjHandler({
+        {langHandler({
           pl: (
             <React.Fragment>
               <div className='m'>
@@ -135,7 +135,7 @@ function PresentRent({
           en: `/sqm` })}
       </div>}
       <div className='per-month'>
-        {langObjHandler({ pl: `${net ? 'NETTO' : ''}/MC`, en: `${net ? 'NET' : ''}/MO` })}
+        {langHandler({ pl: `${net ? 'NETTO' : ''}/MC`, en: `${net ? 'NET' : ''}/MO` })}
       </div>
       <div className='float-clear' />
     </div>

@@ -3,7 +3,7 @@ import loadable from '@loadable/component'
 import { ManagedCheckbox } from 'managed-inputs'
 const Calendar = loadable(() => import('../../../../../support/components/calendar/calendar'), { ssr: false })
 import * as managers from './functions/managers'
-import langObjHandler from '../../../../../../functions/lang-handler'
+import langHandler from '../../../../../../functions/lang-handler'
 import { parseDate } from '../../../../../../functions/date-parsers'
 import { sendGaEvent } from '../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from './constants/analytics/events'
@@ -15,7 +15,7 @@ const { AVAILABILITY_DATE_SELECTED_EVENT } = analyticEvents
 class AnnouncementCreateAvailabilityDate extends React.Component {
   constructor(props) {
     super(props)
-    this.langObjHandler = langObjHandler.bind(this)
+    this.langHandler = langHandler.bind(this)
     this.showAvailabilityDateManager = managers.showAvailabilityDateManager.bind(this)
   }
   
