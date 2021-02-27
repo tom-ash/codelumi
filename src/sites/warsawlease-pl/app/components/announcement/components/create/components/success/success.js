@@ -5,11 +5,13 @@ import * as managers from './functions/managers'
 import { shareOnFacebook } from '../../../../functions/share-on-facebook'
 import SVG from '../../../../../support/components/svg/svg'
 import AppContext from '../../../../../../constants/context.js'
+import langHandler from '../../../../../../functions/lang-handler.js'
 
 class AnnouncementCreateSuccess extends React.Component {
   constructor(props) {
     super(props)
     this.goToAnnouncementManager = managers.goToAnnouncementManager.bind(this)
+    this.langHandler = langHandler.bind(this)
   }
 
   static contextType = AppContext
