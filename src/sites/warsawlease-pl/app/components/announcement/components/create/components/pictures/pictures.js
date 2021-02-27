@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
+import { langObjHandler } from '../../../../../../functions/lang-handler'
 import * as lifecycle from './functions/lifecycle'
 import { addFiles } from './functions/add-files'
 import { addPicture } from './functions/add-picture'
@@ -16,7 +16,6 @@ import SVG from '../../../../../support/components/svg/svg'
 class AnnouncementCreatePictures extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.addFiles = addFiles.bind(this)

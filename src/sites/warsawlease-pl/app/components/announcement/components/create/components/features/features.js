@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
+import { langObjHandler } from '../../../../../../functions/lang-handler'
 import { ManagedCheckbox, ManagedMultipleCheckbox } from 'managed-inputs'
 import { addFeaturesManager, featuresManager } from './functions/managers'
 import { pickElementsForCategory } from '../../functions/pick-elements'
@@ -9,7 +9,6 @@ import { pickElementsForCategory } from '../../functions/pick-elements'
 class AnnouncementCreateFeatures extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
     this.addFeaturesManager = addFeaturesManager.bind(this)
     this.featuresManager = featuresManager.bind(this)

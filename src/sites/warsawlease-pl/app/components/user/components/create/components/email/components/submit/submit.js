@@ -4,7 +4,7 @@ import { prepareUserAccount } from './functions/adapters'
 import * as mappers from './constants/mappers'
 import * as inputValidators from '../inputs/functions/validators'
 import * as consentValidators from '../../../consents/functions/validators'
-import { langHandler, langObjHandler } from '../../../../../../../../functions/lang-handler'
+import { langObjHandler } from '../../../../../../../../functions/lang-handler'
 import { errorSetter } from '../../../../../../functions/error-setter'
 import { buttonManager } from './functions/managers'
 import { ManagedButton } from 'managed-inputs'
@@ -13,7 +13,6 @@ class UserCreateSubmit extends React.Component {
   constructor(props) {
     super(props)
     this.prepareUserAccount = prepareUserAccount.bind(this)
-    this.langHandler = langHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
     this.accountTypeValidator = inputValidators.accountTypeValidator.bind(this)
     this.nameValidator = inputValidators.nameValidator.bind(this)

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { langHandler } from '../../../../functions/lang-handler'
+import { langObjHandler } from '../../../../functions/lang-handler'
 import UserAuthorizeEmailTrack from './components/email-password/email-password'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
@@ -10,11 +10,11 @@ import Header from '../../../support/components/header/header'
 class UserAuthorize extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langHandler.bind(this)
+    this.langObjHandler = langObjHandler.bind(this)
   }
 
   render() {
-    const headerText = this.langHandler('Zaloguj', 'Sign In')
+    const headerText = this.langObjHandler({ pl: 'Zaloguj', en: 'Sign In' })
 
     return (
       <div id='user-authorize'>

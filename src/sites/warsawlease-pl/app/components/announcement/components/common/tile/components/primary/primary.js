@@ -1,5 +1,5 @@
 import React from 'react'
-import { langHandler, langObjHandler } from '../../../../../../../functions/lang-handler'
+import { langObjHandler } from '../../../../../../../functions/lang-handler'
 import { parseCurrency } from '../../../../../functions/currency-parsers'
 import { presentRooms } from './functions/present-rooms'
 import { presentFloor } from './functions/present-floor'
@@ -9,7 +9,6 @@ import { presentAvailabilityDate } from './functions/present-availability-date'
 class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
   }
 

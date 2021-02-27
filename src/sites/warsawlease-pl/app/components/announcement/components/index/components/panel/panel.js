@@ -13,7 +13,6 @@ class AnnouncementIndexPanel extends React.Component {
   constructor(props) {
     super(props)
     this.langObjHandler = langObjHandler.bind(this)
-    this.langHandler = langObjHandler.bind(this)
     this.buttonManager = buttonManager.bind(this)
   }
 

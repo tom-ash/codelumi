@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
+import { langObjHandler } from '../../../../../../functions/lang-handler'
 import Tile from '../../../common/tile/tile.js'
 import { parseCategoryForUrl } from '../../../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../../../functions/district-parsers'
@@ -15,7 +15,6 @@ class AnnouncementIndexCatalogue extends React.Component {
     super(props)
     this.container = React.createRef()
     this.componentDidMount = lifecycle.componentDidMount
-    this.langHandler = langHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
     this.parseCategoryForUrl = parseCategoryForUrl.bind(this)
     this.parseDistrictForUrl = parseDistrictForUrl.bind(this)

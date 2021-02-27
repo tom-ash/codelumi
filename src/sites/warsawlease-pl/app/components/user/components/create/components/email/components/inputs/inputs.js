@@ -1,9 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { ManagedRadio, ManagedText, ManagedSelect } from 'managed-inputs'
+import { ManagedText, ManagedSelect } from 'managed-inputs'
 import * as managers from './functions/managers'
 import * as mappers from './constants/mappers'
-import { langHandler } from '../../../../../../../../functions/lang-handler'
 import { langObjHandler } from '../../../../../../../../functions/lang-handler'
 import { errorSetter } from '../../../../../../functions/error-setter'
 import { errorResetter } from './functions/error-resetter'
@@ -20,7 +19,6 @@ class UserCreateEmailInputs extends React.Component {
     this.phoneNumberManager = managers.phoneNumberManager.bind(this)
     this.emailAddressManager = managers.emailAddressManager.bind(this)
     this.passwordManager = managers.passwordManager.bind(this)
-    this.langHandler = langHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
     this.errorSetter = errorSetter.bind(this)
     this.errorResetter = errorResetter.bind(this)
@@ -33,13 +31,8 @@ class UserCreateEmailInputs extends React.Component {
   }
 
   render() {
-    // const {
-    //   accountType
-    // } = this.props
-
     return (
       <div className='user-create-email-inputs-container'>
-        {/* <ManagedRadio {...this.accountTypeManager()}/> */}
         <div className='gap' />
         <ManagedText {...this.emailAddressManager()}/>
         <ManagedText {...this.passwordManager()}/>

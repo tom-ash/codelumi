@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import UserEditAccountCell from './components/cell/cell'
-import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
+import { langObjHandler } from '../../../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import Header from '../../../../../support/components/header/header.js'
@@ -12,7 +12,6 @@ import SeparationLine from '../../../../../support/components/separation-line/se
 class UserEditAccount extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
   }
 

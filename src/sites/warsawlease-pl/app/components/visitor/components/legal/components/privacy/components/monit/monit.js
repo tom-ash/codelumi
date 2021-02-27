@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { langHandler, langObjHandler } from '../../../../../../../../functions/lang-handler'
+import { langObjHandler } from '../../../../../../../../functions/lang-handler'
 import { ManagedButton } from 'managed-inputs'
 import { agreeManager, settingsManager } from './functions/manager'
 import { textsProvider } from './functions/texts-provider'
@@ -12,7 +12,6 @@ import AppContext from '../../../../../../../../constants/context.js'
 class VisitorPrivacyMonit extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langHandler.bind(this)
     this.agreeManager = agreeManager.bind(this)
     this.settingsManager =  settingsManager.bind(this)
     this.langObjHandler = langObjHandler.bind(this)

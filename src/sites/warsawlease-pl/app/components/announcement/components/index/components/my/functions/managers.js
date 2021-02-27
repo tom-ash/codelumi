@@ -1,7 +1,7 @@
 export function destroyManager() {
   return {
     classNames: { container: 'form-input button destroy' },
-    label: this.langHandler('Tak', 'Yes'),
+    label: this.langObjHandler({ pl: 'Tak', en: 'Yes' }),
     onClick: () => this.destroy(this.props.beingDeleted)
   }
 }
@@ -9,7 +9,7 @@ export function destroyManager() {
 export function cancelDestroyManager() {
   return {
     classNames: { container: 'form-input button cancel' },
-    label: this.langHandler('Anuluj', 'Cancel'),
+    label: this.langObjHandler({ pl: 'Anuluj', en: 'Cancel' }),
     onClick: () => this.props.changeControl({ beingDeleted: null })
   }
 }

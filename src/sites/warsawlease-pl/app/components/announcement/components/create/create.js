@@ -12,7 +12,7 @@ import Success from './components/success/success'
 import WindmillSpinner from '../../../support/components/spinner/components/windmill/windmill.js'
 import * as lifecycle from './functions/lifecycle'
 import * as managers from './functions/managers'
-import { langHandler, langObjHandler } from '../../../../functions/lang-handler'
+import { langObjHandler } from '../../../../functions/lang-handler'
 import { getAnnouncement } from './functions/get-announcement'
 import { AnnouncementCreateSteps } from './components/steps/steps'
 import { ManagedButton } from 'managed-inputs'
@@ -43,7 +43,6 @@ class AnnouncementCreate extends React.Component {
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
-    this.langHandler = langHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
     this.getAnnouncement = getAnnouncement.bind(this)
     this.addAnnouncementManager = managers.addAnnouncementManager.bind(this)

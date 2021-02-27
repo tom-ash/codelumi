@@ -27,7 +27,7 @@ export function settingsManager() {
 
   return {
     classNames: { container: 'form-input button settings' },
-    label: this.langHandler('Ustawienia', 'Settings'),
+    label: this.langObjHandler({ pl: 'Ustawienia', en: 'Settings' }),
     onClick: () => changeRouteWithHref({ lang, track, changeUrl })
   }
 }

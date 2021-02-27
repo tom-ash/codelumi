@@ -1,5 +1,4 @@
 import React from 'react'
-import { langHandler } from '../../../../../../../functions/lang-handler'
 import { langObjHandler } from '../../../../../../../functions/lang-handler'
 import { features } from '../../../../../constants/features'
 import { furnishings } from '../../../../../constants/furnishings'
@@ -10,9 +9,7 @@ import { FEATURES_HEADER, FURNISHINGS_HEADER } from './constants/texts.js'
 class AnnouncementShowFeaturesFurnishings extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
-    // this.nodes = this.props.itemsName === 'features' ? features : furnishings
   }
   
   render() {

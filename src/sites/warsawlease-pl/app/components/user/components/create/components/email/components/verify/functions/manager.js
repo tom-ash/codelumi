@@ -17,7 +17,7 @@ export function verificationManager() {
     id: 'user-create-email-verification',
     controlled: false,
     classNames: { container: 'form-input text' },
-    label: this.langHandler('Kod weryfikacyjny', 'Verification Code'),
+    label: this.langObjHandler({ pl: 'Kod weryfikacyjny', en: 'Verification Code' }),
     onChange: () => changeErrors({ verification: { pl: '', en: '' }}),
     onBlur: value => {
       this.verificationManager().validate(value)

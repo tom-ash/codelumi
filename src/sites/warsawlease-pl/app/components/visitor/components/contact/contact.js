@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { pageHeaderProvider } from '../../../../functions/providers/headers'
-import { langHandler, langObjHandler } from '../../../../functions/lang-handler'
+import { langObjHandler } from '../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
@@ -10,7 +10,6 @@ class VisitorContact extends React.Component {
   constructor(props) {
     super(props)
     this.pageHeaderProvider = pageHeaderProvider.bind(this)
-    this.langHandler = langHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
   }
   
@@ -29,14 +28,14 @@ class VisitorContact extends React.Component {
             Warsaw Digital Sp. z o.o.
           </div>
           <div className='address'>
-            {this.langHandler('ul. Twarda 18', 'Twarda 18 St.')}
+            {this.langObjHandler({ pl: 'ul. Twarda 18', en: 'Twarda 18 St.' })}
           </div>
           <div className='address'>
-            {this.langHandler('00-105 Warszawa', '00-105 Warsaw')}
+            {this.langObjHandler({ pl: '00-105 Warszawa', en: '00-105 Warsaw' })}
           </div>
           <div className='email'>
             <i>
-              {this.langHandler('kontakt@warsaw.digital', 'contact@warsaw.digital')}
+              {this.langObjHandler({ pl: 'kontakt@warsaw.digital', en: 'contact@warsaw.digital' })}
             </i>
           </div>
         </div>

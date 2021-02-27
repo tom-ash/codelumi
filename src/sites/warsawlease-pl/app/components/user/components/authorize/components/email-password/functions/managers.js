@@ -27,7 +27,7 @@ export function emailAddressManager() {
         })
       }
     },
-    error: this.langHandler(this.props.emailOrPasswordError.pl, this.props.emailOrPasswordError.en)
+    error: this.langObjHandler({ pl: this.props.emailOrPasswordError.pl, en: this.props.emailOrPasswordError.en })
   }
 }
 
@@ -55,7 +55,7 @@ export function passwordManager() {
       }
       return true
     }),
-    error: this.langHandler(this.props.emailOrPasswordError.pl, this.props.emailOrPasswordError.en)
+    error: this.langObjHandler({ pl: this.props.emailOrPasswordError.pl, en: this.props.emailOrPasswordError.en })
   }
 }
 
@@ -65,7 +65,7 @@ export function rememberMeManager() {
   return {
     classNames: { container: 'form-input checkbox'},
     checked: this.props.rememberMe,
-    label: this.langHandler('Zapamiętaj mnie', 'Remember me'),
+    label: this.langObjHandler({ pl: 'Zapamiętaj mnie', en: 'Remember me' }),
     onClick: () => this.props.changeInputs({ rememberMe: !rememberMe })
   }
 }

@@ -17,20 +17,20 @@ export function paramsBuilder() {
           if (!rentCurrency && rentCurrency !== 0) return
           if (urlParams.length != 1) urlParams += '&'
           urlParams += `${this.langObjHandler(param.url)}=`
-          urlParams += `${this.langHandler('w', 'in')}_${this.parseCurrency(rentCurrency)}`
+          urlParams += `${this.langObjHandler({ pl: 'w', en: 'in' })}_${this.parseCurrency(rentCurrency)}`
         }
         return
       }
       if (urlParams.length != 1) urlParams += '&'
       urlParams += `${this.langObjHandler(param.url)}=`
       if (min) urlParams += `min_${min}`
-      if (max) urlParams += `${min ? '_' : ''}${this.langHandler('maks', 'max')}_${max}`
+      if (max) urlParams += `${min ? '_' : ''}${this.langObjHandler({ pl: 'maks', en: 'max' })}_${max}`
       if (paramKey === 'rent') {
         const { rentCurrency } = this.props
         if (rentCurrency || rentCurrency === 0) {
           urlParams += `_${this.parseCurrency(rentCurrency)}`
         }
-        urlParams += this.langHandler('_netto')
+        urlParams += this.langObjHandler({ pl: '_netto', en: '_net' })
       }
       const unit = param.unit
       if (unit) urlParams += `${min || max ? '_' : ''}${this.langObjHandler(unit)}`

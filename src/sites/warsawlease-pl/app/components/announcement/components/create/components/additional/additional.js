@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { ManagedText, ManagedSelect } from 'managed-inputs'
 import * as managers from './functions/managers'
-import { langHandler, langObjHandler } from '../../../../../../functions/lang-handler'
+import { langObjHandler } from '../../../../../../functions/lang-handler'
 import { onSelectHandler } from './functions/on-select-handler'
 import { labelProvider } from '../../../../../../functions/providers/label'
 import { floorsProvider } from './functions/floors-provider'
@@ -13,7 +13,6 @@ import { OPTIONAL } from '../../constants/texts.js'
 class AnnouncementCreateAdditional extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
     this.roomsManager = managers.roomsManager.bind(this)
     this.floorManager = managers.floorManager.bind(this)

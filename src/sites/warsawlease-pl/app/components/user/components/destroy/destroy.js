@@ -5,7 +5,7 @@ import { ManagedText } from 'managed-inputs'
 import { ManagedButton } from 'managed-inputs'
 import { componentDidMount, componentWillUnmount } from './functions/lifecycle'
 import { monit } from './constants/monit'
-import { langHandler, langObjHandler } from '../../../../functions/lang-handler'
+import { langObjHandler } from '../../../../functions/lang-handler'
 import { deauthorizeUser } from '../authorize/functions/adapters'
 import * as managers from './functions/managers'
 import * as adapters from './functions/adapters'
@@ -22,7 +22,6 @@ class UserDestroy extends React.Component {
     this.componentWillUnmount = componentWillUnmount
     this.verificationManager = managers.verificationManager.bind(this)
     this.buttonManager = managers.buttonManager.bind(this)
-    this.langHandler = langHandler.bind(this)
     this.langObjHandler = langObjHandler.bind(this)
     this.deauthorizeUser = deauthorizeUser.bind(this)
   }
