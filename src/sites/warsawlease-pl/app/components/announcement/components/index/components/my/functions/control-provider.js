@@ -14,7 +14,7 @@ export function controlProvider(announcement, index) {
       <div className='info'>
         {announcement.visible ?
         <span>{this.langHandler({ pl: 'Widoczne', en: 'Visible' })}</span>
-        : <span>{this.langHandler('Ukryte', 'Hidden')}</span>}
+        : <span>{this.langHandler({ pl: 'Ukryte', en: 'Hidden' })}</span>}
       </div>
       {announcement.visible ?
       this.buttonProvider('Ukryj', 'Hide', announcement, index, this.triggerVisible, ' hide-show')
