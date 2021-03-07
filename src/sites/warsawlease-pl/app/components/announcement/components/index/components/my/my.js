@@ -10,7 +10,6 @@ import { triggerVisible } from './functions/trigger-visible'
 import { extend } from './functions/extend'
 import { destroy } from './functions/destroy'
 import { edit } from './functions/edit'
-import { pageHeaderProvider, sectionHeaderProvider } from '../../../../../../functions/header-providers'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { ManagedButton } from 'managed-inputs'
@@ -25,8 +24,6 @@ class AnnouncementIndexMy extends React.Component {
     this.edit = edit.bind(this)
     this.triggerVisible = triggerVisible.bind(this)
     this.destroy = destroy.bind(this)
-    this.pageHeaderProvider = pageHeaderProvider.bind(this)
-    this.sectionHeaderProvider = sectionHeaderProvider.bind(this)
     this.destroyManager = managers.destroyManager.bind(this)
     this.cancelDestroyManager = managers.cancelDestroyManager.bind(this)
     this.extend = extend.bind(this)

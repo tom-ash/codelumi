@@ -8,12 +8,12 @@ import Page from '../../shared/app/components/page/page.js'
 import User from './components/user/user'
 import Footer from './components/scaffold/components/footer/Footer'
 import * as lifecycle from './functions/lifecycle'
-import { screenSizeHandler } from './functions/screen-size-handler'
-import { popStateHandler } from './functions/popStateHandler'
+import screenSizeHandler from '../../shared/app/functions/screen/handlers/screen-size.js'
+import popStateHandler from '../../shared/app/functions/routes/handlers/pop-state.js'
 import langHandler from './functions/lang-handler'
-import matchStateToUrl from './functions/routers/match-state-to-url'
-import matchUrlToLang from './functions/routers/match-url-to-lang.js'
-import { changeUrl } from './functions/routers/change-url'
+import matchStateToRoute from './functions/routes/matchers/state-to-route.js'
+import getRouteByLang from '../../shared/app/functions/routes/getters/route-by-lang.js'
+import changeRoute from '../../shared/app/functions/routes/changers/change-route.js'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import AppContext from './constants/context.js'
@@ -26,16 +26,16 @@ class App extends React.Component {
     this.screenSizeHandler = screenSizeHandler.bind(this)
     this.popStateHandler = popStateHandler.bind(this)
     this.langHandler = langHandler.bind(this)
-    this.matchStateToUrl = matchStateToUrl.bind(this)
-    this.changeUrl = changeUrl.bind(this)
-    this.matchUrlToLang = matchUrlToLang.bind(this)
+    this.matchStateToRoute = matchStateToRoute.bind(this)
+    this.changeRoute = changeRoute.bind(this)
+    this.getRouteByLang = getRouteByLang.bind(this)
   }
 
   render() {
     const { renderPage, renderVisitor, renderAnnouncement, renderUser } = this.props
 
-    const AppContextValue = { changeUrl: this.changeUrl, matchStateToUrl: this.matchStateToUrl, matchUrlToLang: this.matchUrlToLang }
-    const pageProps = { changeUrl: this.changeUrl, langHandler: this.langHandler }
+    const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
+    const pageProps = { changeRoute: this.changeRoute, langHandler: this.langHandler }
 
     return (
       <AppContext.Provider value={AppContextValue}>

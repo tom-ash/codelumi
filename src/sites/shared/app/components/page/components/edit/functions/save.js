@@ -1,4 +1,4 @@
-import { getAccessToken } from '../../../../../functions/getters/get-tokens.js'
+import { getAccessToken } from '../../../../../../app/functions/tokens/getters/get-tokens.js'
 
 export function save() {
   const body = JSON.parse(this.props.body)
@@ -14,10 +14,10 @@ export function save() {
   })
   .then(response => {
     if (response.status == 200) {
-      const { url, changeUrl } = this.props
+      const { url, changeRoute } = this.props
       const href = `${CLIENT_URL}/${url}`
 
-      changeUrl({ href })
+      changeRoute({ href })
     }
   })
 }

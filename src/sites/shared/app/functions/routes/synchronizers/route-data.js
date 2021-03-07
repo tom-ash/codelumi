@@ -1,6 +1,6 @@
-import { getAccessToken } from '../../components/user/components/authorize/components/tokens/functions/get-tokens.js'
+import { getAccessToken } from '../../tokens/getters/get-tokens.js'
 
-function getRouteData({ url, route, requestType }) {
+function syncRouteData({ url, route, requestType }) {
   const { changeApp } = this.props
   const { track, lang, pageName } = route
   const pageNameHeader = pageName ? { 'Page-Name': pageName } : {}
@@ -25,4 +25,4 @@ function getRouteData({ url, route, requestType }) {
   })
 }
 
-export default getRouteData
+export default syncRouteData

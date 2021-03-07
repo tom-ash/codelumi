@@ -1,6 +1,6 @@
-function langHandler(languageObject) {
-  languageObject = languageObject || { pl: '', en: '' }
-  return this.props.lang === 'pl' ? languageObject.pl : languageObject.en
+function langHandler(langObject) {
+  langObject = langObject || { pl: '', en: '' }
+  return this.props.lang === 'pl' ? langObject.pl : langObject.en
 }
 
 export default langHandler

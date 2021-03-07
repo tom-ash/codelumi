@@ -5,7 +5,7 @@ import { deauthorizeUser } from '../../authorize/functions/adapters'
 import { SIGN_OUT_LABEL } from '../constants/labels'
 
 export function addAnnouncementManager({ hrefLang }) {
-  const { changeUrl } = this.context
+  const { changeRoute } = this.context
   const href = `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_CREATE_URLS)}`
 
   return {
@@ -13,35 +13,35 @@ export function addAnnouncementManager({ hrefLang }) {
     hrefLang,
     title: this.langHandler(ANNOUNCEMENT_CREATE_TITLES),
     label: this.langHandler(ANNOUNCEMENT_CREATE_LABELS),
-    onClick: () => changeUrl({ href })
+    onClick: () => changeRoute({ href })
   }
 }
 
 export function myAnnouncementsManager({ hrefLang }) {
   const href = `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_INDEX_MY_URLS)}`
   const title = this.langHandler(ANNOUNCEMENT_INDEX_MY_TITLES)
-  const { changeUrl } = this.context
+  const { changeRoute } = this.context
 
   return {
     href,
     hrefLang,
     title,
     label: title,
-    onClick: () => changeUrl({ href })
+    onClick: () => changeRoute({ href })
   }
 }
 
 export function accountManager({ hrefLang }) {
   const href = `${CLIENT_URL}/${this.langHandler(USER_EDIT_URLS)}`
   const title = this.langHandler(USER_EDIT_TITLES)
-  const { changeUrl } = this.context
+  const { changeRoute } = this.context
 
   return {
     href,
     hrefLang,
     title,
     label: title,
-    onClick: () => changeUrl({ href })
+    onClick: () => changeRoute({ href })
   }
 }
 

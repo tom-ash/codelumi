@@ -1,10 +1,10 @@
 import React from 'react'
 import { ROOT_TRACK, ANNOUNCEMENT_INDEX_CATALOGUE_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
-import getRouteByTrack from '../../../../../../../../../../../shared/shared/functions/getters/route-by-track.js'
+import getRouteByTrack from '../../../../../../../../../../../shared/app/functions/routes/getters/route-by-track.js'
 import routes from '../../../../../../../../../../shared/constants/routes/routes.js'
 
 export function buttonManager() {
-  const { changeUrl } = this.context
+  const { changeRoute } = this.context
   const { renderCatalogue } = this.props
   const track = renderCatalogue ? ROOT_TRACK : ANNOUNCEMENT_INDEX_CATALOGUE_TRACK
   const route = getRouteByTrack({ track, routes })
@@ -21,6 +21,6 @@ export function buttonManager() {
         }
       </>
     ),
-    onClick: () => changeUrl({ href })
+    onClick: () => changeRoute({ href })
   }
 }

@@ -1,6 +1,6 @@
 import routeSender from '../senders/route.js'
-import getPureUrl from '../../../shared/functions/getters/pure-url.js'
-import getRouteByUrl from '../../../shared/functions/getters/route-by-url.js'
+import getPureUrl from '../../../shared/functions/routes/getters/pure-url.js'
+import getRouteByUrl from '../../../shared/functions/routes/getters/route-by-url.js'
 import getDevice from '../../../shared/functions/getters/device.js'
 import getVisitorState from '../../../shared/functions/getters/visitor-state.js'
 

@@ -1,4 +1,4 @@
-export function screenSizeHandler() {
+function screenSizeHandler() {
   if (typeof window === 'undefined') return
   
   const { changeApp } = this.props
@@ -12,3 +12,5 @@ export function screenSizeHandler() {
   
   changeApp({ device: 'smallPhone'})
 }
+
+export default screenSizeHandler

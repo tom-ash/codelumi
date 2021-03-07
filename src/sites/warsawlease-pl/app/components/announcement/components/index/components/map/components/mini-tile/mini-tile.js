@@ -6,7 +6,7 @@ import { AreaPresenter } from '../../../../../show/functions/area-presenter'
 import { RentPresenter } from '../../../../../show/functions/rent-presenter'
 import { viewAnnouncement } from '../../../../../../functions/view-announcement'
 import { buildLink } from '../../../../../../functions/build-link'
-import { scrollToElement } from '../../../../../../../../functions/scrollers/scroll-to-element'
+import scrollToElement from '../../../../../../../../../../shared/app/functions/screen/scrollers/to-element.js'
 import { sendAnalyticsEvent } from '../../../../../../../../functions/google-analytics/send-analytics-event'
 
 const AnnouncementShowMiniTile = ({

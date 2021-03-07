@@ -2,7 +2,7 @@ import { ANNOUNCEMENT_SHOW_TRACK } from '../../../../../../../../shared/constant
 import { buildLink } from '../../../../../functions/build-link.js'
 
 export function goToAnnouncementManager() {
-  const { changeUrl } = this.context
+  const { changeRoute } = this.context
   const href = buildLink(this.props)
 
   return {
@@ -10,7 +10,7 @@ export function goToAnnouncementManager() {
     href,
     label: this.langHandler({ pl: 'Pokaż dodane ogłoszenie', en: 'Show the added announcement' }),
     onClick: () => {
-      changeUrl({ href })
+      changeRoute({ href })
     }
   }
 }

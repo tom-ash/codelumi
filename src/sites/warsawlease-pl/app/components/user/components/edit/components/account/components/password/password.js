@@ -7,7 +7,6 @@ import { emailManager, verificationManager, passwordManager, buttonManager } fro
 import { sendEmail, sendVerification, sendPassword } from './functions/adapters'
 import { monitProvider } from './functions/monit-provider'
 import langHandler from '../../../../../../../../functions/lang-handler'
-import { labelProvider } from '../../../../../../../../functions/providers/label'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import Header from '../../../../../../../support/components/header/header.js'
@@ -25,7 +24,6 @@ class UserEditAccountPassword extends React.Component {
     this.sendPassword = sendPassword.bind(this)
     this.monitProvider = monitProvider.bind(this)
     this.langHandler = langHandler.bind(this)
-    this.labelProvider = labelProvider.bind(this)
   }
 
   render() {

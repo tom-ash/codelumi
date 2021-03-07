@@ -15,7 +15,6 @@ import { parseCategoryForUrl } from '../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../functions/district-parsers'
 import { ManagedLink } from 'managed-inputs'
 import { addAnnouncementManager } from '../../../../components/scaffold/components/header/functions/managers'
-import { labelProvider } from '../../../../components/user/components/show/functions/label-provider'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
@@ -30,7 +29,6 @@ class AnnouncementIndexSearch extends React.Component {
     this.parseCategoryForUrl = parseCategoryForUrl.bind(this)
     this.parseDistrictForUrl = parseDistrictForUrl.bind(this)
     this.addAnnouncementManager = addAnnouncementManager.bind(this)
-    this.labelProvider = labelProvider.bind(this)
   }
 
   render() {

@@ -16,6 +16,4 @@ function genericRouteStateSetter({ routeData }) {
   changeApp(appState)
 }
 
-// TODO HANDLE META
-
 export default genericRouteStateSetter

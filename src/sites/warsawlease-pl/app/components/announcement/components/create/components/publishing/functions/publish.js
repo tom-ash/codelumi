@@ -1,6 +1,6 @@
-import { scrollToElement } from '../../../../../../../functions/scrollers/scroll-to-element'
+import scrollToElement from '../../../../../../../../../shared/app/functions/screen/scrollers/to-element.js'
 import { requiredInputs, requiredInputsArray } from '../../../constants/required-inputs'
-import { instantScroll } from '../../../../../../../functions/scrollers/instant-scroll'
+import scrollToTop from '../../../../../../../../../shared/app/functions/screen/scrollers/to-top.js'
 import {
   USER_TRACK,
   USER_CREATE_TRACK
@@ -29,7 +29,7 @@ export function publish() {
     }
   }
 
-  instantScroll()
+  scrollToTop()
   if (authorized) {
     return changeControl({ step: 'publishing' })
   }

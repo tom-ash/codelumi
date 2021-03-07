@@ -1,4 +1,4 @@
-import genericRouteStateSetter from '../../../../../functions/setters/generic-route-state.js'
+import genericRouteStateSetter from '../../../../../functions/routes/setters/generic-route-state.js'
 
 function pageEditStateSetter({ routeData }) {
   const { state: { 'page/edit': value } } = routeData

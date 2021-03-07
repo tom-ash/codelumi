@@ -8,7 +8,6 @@ import { addPicture } from './functions/add-picture'
 import { deletePicture } from './functions/delete-picture'
 import { movePicture } from './functions/move-picture'
 import { requiredInputs } from '../../constants/required-inputs'
-import { sectionHeaderProvider } from '../../../../../../functions/providers/headers'
 import { pictureClassProvider } from './functions/picture-class-provider'
 import { rotatePicture } from './functions/rotate-picture'
 import SVG from '../../../../../support/components/svg/svg'
@@ -22,7 +21,6 @@ class AnnouncementCreatePictures extends React.Component {
     this.addPicture = addPicture.bind(this)
     this.deletePicture = deletePicture.bind(this)
     this.movePicture = movePicture.bind(this)
-    this.sectionHeaderProvider = sectionHeaderProvider.bind(this)
     this.rotatePicture = rotatePicture.bind(this)
   }
   render() {

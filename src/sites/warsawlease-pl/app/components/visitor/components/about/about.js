@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { pageHeaderProvider } from '../../../../functions/providers/headers'
 import langHandler from '../../../../functions/lang-handler'
 import { features } from './constants/features'
 import { CloseButton } from '../../../../components/support/components/close-button/close-button'
@@ -11,7 +10,6 @@ import styles from './styles/styles.scss'
 class About extends React.Component {
   constructor(props) {
     super(props)
-    this.pageHeaderProvider = pageHeaderProvider.bind(this)
     this.langHandler = langHandler.bind(this)
   }
   render() {
@@ -23,7 +21,6 @@ class About extends React.Component {
           className='container medium-container shadowed'
           onClick={e => e.stopPropagation()}
         >
-          {this.pageHeaderProvider('fas fa-info-circle', { pl: 'O Serwisie', en: 'About' })}
           <div className='paragraph'>
             {
             this.langHandler({

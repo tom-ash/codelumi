@@ -1,6 +1,6 @@
-import { PAGE_SHOW_TRACK } from '../../../../shared/shared/constants/tracks/tracks.js'
+import { PAGE_SHOW_TRACK } from '../../../../shared/constants/tracks/tracks.js'
 
-export function getUrlFromRoute({ route, lang }) {
+function getUrlByRoute({ route, lang }) {
   const { track } = route
 
   if (track === PAGE_SHOW_TRACK) {
@@ -14,3 +14,5 @@ export function getUrlFromRoute({ route, lang }) {
 
   return route.url
 }
+
+export default getUrlByRoute

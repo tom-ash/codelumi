@@ -4,7 +4,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import langHandler from '../../../../../../functions/lang-handler'
 import { text } from './constants/text'
 import Provision from '../provision/provision'
-import { pageHeaderProvider } from '../../../../../../functions/header-providers'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
@@ -12,8 +11,8 @@ class VisitorTermsOfService extends React.Component {
   constructor(props) {
     super(props)
     this.langHandler = langHandler.bind(this)
-    this.pageHeaderProvider = pageHeaderProvider.bind(this)
   }
+
   render() {
     return (
       <React.Fragment>

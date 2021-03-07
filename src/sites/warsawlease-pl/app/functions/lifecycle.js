@@ -23,7 +23,7 @@ export function componentDidMount() {
     }
   })
 
-  if (!urlDataSynced) this.matchStateToUrl({ popState: false })
+  if (!urlDataSynced) this.matchStateToRoute({})
 
   window.onpopstate = () => this.popStateHandler()
 }

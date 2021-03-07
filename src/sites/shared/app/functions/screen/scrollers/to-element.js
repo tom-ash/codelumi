@@ -1,10 +1,10 @@
-import { findScrollingElement } from './find-scrolling-element'
+import getScrollingElement from '../getters/scrolling-element'
 
-export function scrollToElement(element, speed, translation = 0, callback) {
+function scrollToElement(element, speed, translation = 0, callback) {
   if (typeof window === 'undefined') return
 
   speed = speed || 42
-  const scrollingElement = findScrollingElement()
+  const scrollingElement = getScrollingElement()
   let direction = 'up'
   const destination = window.pageYOffset + element.getBoundingClientRect().top + translation
   if (element.getBoundingClientRect().top > scrollingElement.offsetTop) direction = 'down'
@@ -39,3 +39,5 @@ function setScrollingInterval(scrollingElement, direction, destination, speed, c
     if (callback && !callbackFired) callback()
   }, 5000)
 }
+
+export default scrollToElement

@@ -1,4 +1,4 @@
-import { PAGE_SHOW_TRACK } from '../../constants/tracks/tracks.js'
+import { PAGE_SHOW_TRACK } from '../../../constants/tracks/tracks.js'
 
 function getRouteByUrl({ url, routes }) {
   const route = routes.find(route => {

@@ -1,8 +1,8 @@
-import { getAccessToken } from '../../../../../functions/getters/get-tokens.js'
+import { getAccessToken } from '../../../../../../app/functions/tokens/getters/get-tokens.js'
 import buildPageEditUrl from '../../edit/functions/build-page-edit-url.js'
 
 export function save() {
-  const { inputtedName, changeUrl } = this.props
+  const { inputtedName, changeRoute } = this.props
 
   fetch(API_URL + '/posts', {
     method: 'POST',
@@ -20,6 +20,6 @@ export function save() {
     const path = buildPageEditUrl({ pageEditData: { name: inputtedName, langVerUrls }, lang: 'pl' })
     const href = `${CLIENT_URL}/${path}`
 
-    changeUrl({ href })
+    changeRoute({ href })
   })
 }

@@ -4,7 +4,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { ManagedButton, ManagedLink } from 'managed-inputs'
 import langHandler from '../../../../functions/lang-handler'
 import * as managers from './functions/managers'
-import { labelProvider } from './functions/label-provider'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { USER_SHOW_TRACK } from '../../../../../shared/constants/tracks/tracks'
@@ -18,7 +17,6 @@ class UserShow extends React.Component {
     this.accountManager = managers.accountManager.bind(this)
     this.deAuthorizeManager = managers.deAuthorizeManager.bind(this)
     this.langHandler = langHandler.bind(this)
-    this.labelProvider = labelProvider.bind(this)
   }
 
   static contextType = AppContext

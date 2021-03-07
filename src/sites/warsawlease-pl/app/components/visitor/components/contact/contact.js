@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { pageHeaderProvider } from '../../../../functions/providers/headers'
 import langHandler from '../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
@@ -9,7 +8,6 @@ import styles from './styles/styles.scss'
 class VisitorContact extends React.Component {
   constructor(props) {
     super(props)
-    this.pageHeaderProvider = pageHeaderProvider.bind(this)
     this.langHandler = langHandler.bind(this)
   }
   

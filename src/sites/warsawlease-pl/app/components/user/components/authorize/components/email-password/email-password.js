@@ -5,10 +5,9 @@ import * as managers from './functions/managers'
 import { logIn } from './functions/adapters'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import langHandler from '../../../../../../functions/lang-handler'
-import { labelProvider } from '../../../../../../functions/providers/label'
 import { USER_EDIT_PASSWORD_TRACK } from '../../../../../../../shared/constants/tracks/tracks'
 import AppContext from '../../../../../../constants/context.js'
-import changeRouteWithHref from '../../../../../../functions/routers/build-and-change-url.js'
+import changeRouteWithHref from '../../../../../../functions/routes/changers/route-with-href.js'
 
 class UserAuthorizeEmailPassword extends React.Component {
   constructor(props) {
@@ -19,7 +18,6 @@ class UserAuthorizeEmailPassword extends React.Component {
     this.buttonManager = managers.buttonManager.bind(this)
     this.logIn = logIn.bind(this)
     this.langHandler = langHandler.bind(this)
-    this.labelProvider = labelProvider.bind(this)
   }
 
   static contextType = AppContext
@@ -27,7 +25,7 @@ class UserAuthorizeEmailPassword extends React.Component {
   render() {
     const { lang } = this.props
     const track = USER_EDIT_PASSWORD_TRACK
-    const { changeUrl } = this.context
+    const { changeRoute } = this.context
 
     return (
       <div id='user-authorize-email'>
@@ -44,7 +42,7 @@ class UserAuthorizeEmailPassword extends React.Component {
         </form>
         <div
           className='reset-password'>
-          <span onClick={() => changeRouteWithHref({ track, lang, changeUrl })}>
+          <span onClick={() => changeRouteWithHref({ track, lang, changeRoute })}>
             {this.langHandler({ pl: 'Zresetuj hasło', en: 'Reset password' })}
           </span>
         </div>

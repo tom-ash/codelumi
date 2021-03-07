@@ -1,7 +1,7 @@
 import { apiUrl } from '../../../../../constants/urls.js'
 import { getAccessToken } from '../../authorize/components/tokens/functions/get-tokens'
 import { ROOT_TRACK } from '../../../../../../shared/constants/tracks/tracks'
-import changeRouteWithHref from '../../../../../functions/routers/build-and-change-url.js'
+import changeRouteWithHref from '../../../../../functions/routes/changers/route-with-href.js'
 
 export function sendEmail() {
   const {
@@ -51,10 +51,10 @@ export function destroy() {
   })
   .then(response => {
     if (response.ok) {
-      const { changeUrl } = this.context
+      const { changeRoute } = this.context
       const track = ROOT_TRACK
   
-      changeRouteWithHref({ lang, track, changeUrl })
+      changeRouteWithHref({ lang, track, changeRoute })
       this.deauthorizeUser()
       return
     }

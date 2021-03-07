@@ -5,7 +5,6 @@ import { ManagedText, ManagedSelect } from 'managed-inputs'
 import * as managers from './functions/managers'
 import langHandler from '../../../../../../functions/lang-handler'
 import { onSelectHandler } from './functions/on-select-handler'
-import { labelProvider } from '../../../../../../functions/providers/label'
 import { floorsProvider } from './functions/floors-provider'
 import { getRentAmounts } from '../../functions/get-rent-amounts'
 import { OPTIONAL } from '../../constants/texts.js'
@@ -18,7 +17,6 @@ class AnnouncementCreateAdditional extends React.Component {
     this.floorManager = managers.floorManager.bind(this)
     this.totalFloorsManager = managers.totalFloorsManager.bind(this)
     this.onSelectHandler = onSelectHandler.bind(this)
-    this.labelProvider = labelProvider.bind(this)
     this.floorsProvider = floorsProvider.bind(this)
     this.rentCurrencyManager = managers.rentCurrencyManager.bind(this)
     this.rentAmountManager = managers.rentAmountManager.bind(this)

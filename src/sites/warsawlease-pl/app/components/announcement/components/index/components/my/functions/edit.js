@@ -2,8 +2,8 @@ import buildAnnouncementEditUrl from '../../../../../../../../shared/functions/b
 
 export function edit({ id }) {
   const { lang } = this.props
-  const { changeUrl } = this.context
+  const { changeRoute } = this.context
   const href = `${CLIENT_URL}/${buildAnnouncementEditUrl({ announcementCreateData: { id }, lang })}`
 
-  changeUrl({ href })
+  changeRoute({ href })
 }

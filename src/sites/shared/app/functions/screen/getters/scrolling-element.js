@@ -1,4 +1,4 @@
-export function findScrollingElement() {
+function getScrollingElement() {
   let documentElement = document.documentElement
   let parentNode = document.body.parentNode
   let body = document.body
@@ -9,3 +9,5 @@ export function findScrollingElement() {
     if (element && element.scrollTop !== 0) return element
   }
 }
+
+export default getScrollingElement

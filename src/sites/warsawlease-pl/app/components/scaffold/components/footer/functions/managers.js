@@ -17,7 +17,7 @@ import {
 } from '../../../../../../shared/constants/routes/titles'
 
 export function contactManager() {
-  const { changeUrl } = this.context
+  const { changeRoute } = this.context
   const title = this.langHandler(VISITOR_CONTACT_TITLES)
   const href = `${CLIENT_URL}/${this.langHandler(VISITOR_CONTACT_URLS)}`
 
@@ -27,12 +27,12 @@ export function contactManager() {
     hrefLang: this.langHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeUrl({ href })
+    onClick: () => changeRoute({ href })
   }
 }
 
 export function cookiesPolicyManager() {
-  const { changeUrl } = this.context
+  const { changeRoute } = this.context
   const title = this.langHandler(VISITOR_COOKIES_POLICY_TITLES)
   const href = `${CLIENT_URL}/${this.langHandler(VISITOR_COOKIES_POLICY_URLS)}`
 
@@ -42,12 +42,12 @@ export function cookiesPolicyManager() {
     hrefLang: this.langHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeUrl({ href })
+    onClick: () => changeRoute({ href })
   }
 }
 
 export function privacySettingsManager() {
-  const { changeUrl } = this.context
+  const { changeRoute } = this.context
   const title = this.langHandler(VISITOR_PRIVACY_SETTINGS_TITLES)
   const href = `${CLIENT_URL}/${this.langHandler(VISITOR_PRIVACY_SETTINGS_URLS)}`
 
@@ -57,12 +57,12 @@ export function privacySettingsManager() {
     hrefLang: this.langHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeUrl({ href })
+    onClick: () => changeRoute({ href })
   }
 }
 
 export function privacyPolicyManager() {
-  const { changeUrl } = this.context
+  const { changeRoute } = this.context
   const title = this.langHandler(VISITOR_PRIVACY_POLICY_TITLES)
   const href = `${CLIENT_URL}/${this.langHandler(VISITOR_PRIVACY_POLICY_URLS)}`
 
@@ -72,12 +72,12 @@ export function privacyPolicyManager() {
     hrefLang: this.langHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeUrl({ href })
+    onClick: () => changeRoute({ href })
   }
 }
 
 export function termsOfServiceManager() {
-  const { changeUrl } = this.context
+  const { changeRoute } = this.context
   const title = this.langHandler(VISITOR_TERMS_OF_SERVICE_TITLES)
   const href = `${CLIENT_URL}/${this.langHandler(VISITOR_TERMS_OF_SERVICE_URLS)}`
 
@@ -87,12 +87,12 @@ export function termsOfServiceManager() {
     hrefLang: this.langHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeUrl({ href })
+    onClick: () => changeRoute({ href })
   }
 }
 
 export function addPageManager() {
-  const { changeUrl } = this.context
+  const { changeRoute } = this.context
   const title = this.langHandler(PAGE_CREATE_TITLES)
   const href = `${CLIENT_URL}/${this.langHandler(PAGE_CREATE_URLS)}`
 
@@ -102,6 +102,6 @@ export function addPageManager() {
     hrefLang: this.langHandler(LANGS),
     title,
     label: title,
-    onClick: () => changeUrl({ href })
+    onClick: () => changeRoute({ href })
   }
 }

@@ -7,7 +7,6 @@ import langHandler from '../../../../../../../../functions/lang-handler'
 import { errorSetter } from '../../../../../../functions/error-setter'
 import { errorResetter } from './functions/error-resetter'
 import * as validators from './functions/validators'
-import { labelProvider } from '../../../../../../../../functions/providers/label'
 
 class UserCreateEmailInputs extends React.Component {
   constructor(props) {
@@ -27,7 +26,6 @@ class UserCreateEmailInputs extends React.Component {
     this.phoneValidator = validators.phoneValidator.bind(this)
     this.emailValidator = validators.emailValidator.bind(this)
     this.passwordValidator = validators.passwordValidator.bind(this)
-    this.labelProvider = labelProvider.bind(this)
   }
 
   render() {
