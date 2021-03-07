@@ -3,6 +3,7 @@ import { ANNOUNCEMENT_CREATE_TITLES, ANNOUNCEMENT_INDEX_MY_TITLES, USER_EDIT_TIT
 import { ANNOUNCEMENT_CREATE_LABELS } from '../../../../../../shared/constants/routes/labels'
 import { deauthorizeUser } from '../../authorize/functions/adapters'
 import { SIGN_OUT_LABEL } from '../constants/labels'
+import CLIENT_URL from '../../../../../../shared/constants/urls/client.js'
 
 export function addAnnouncementManager({ hrefLang }) {
   const { changeRoute } = this.context

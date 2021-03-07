@@ -1,4 +1,4 @@
-import { apiUrl } from '../../../../../constants/urls'
+import API_URL from '../../../../../../shared/constants/urls/api.js'
 import { createClientServerParams } from '../../../constants/client-server-params'
 import { getAccessToken } from '../../../../user/components/authorize/components/tokens/functions/get-tokens'
 
@@ -22,7 +22,7 @@ export function saveAnnouncement() {
   }
 
   const access_token = getAccessToken()
-  fetch(apiUrl + destination, {
+  fetch(API_URL + destination, {
     method: method,
     headers: {
       'Content-Type': 'application/json',

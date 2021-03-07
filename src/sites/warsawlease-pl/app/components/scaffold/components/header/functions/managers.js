@@ -30,6 +30,7 @@ import {
   ANNOUNCEMENT_CREATE_LABELS, LANG_LABELS
 } from '../../../../../../shared/constants/routes/labels'
 import routes from '../../../../../../shared/constants/routes/routes.js'
+import CLIENT_URL from '../../../../../../shared/constants/urls/client.js'
 
 export function titleManager() {
   const { changeRoute } = this.context

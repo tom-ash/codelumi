@@ -1,5 +1,5 @@
 import { hashPassword } from '../../../../../../../functions/shared.js'
-import { apiUrl } from '../../../../../../../../../constants/urls.js'
+import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
 import { parser as consentsParser } from '../../../../consents/functions/parser'
 
 export function prepareUserAccount() {
@@ -55,7 +55,7 @@ function createProspectiveUser(userObject) {
     changeData
   } = this.props
 
-  fetch(apiUrl + '/prospective_users', {
+  fetch(API_URL + '/prospective_users', {
     method: "POST",
     headers: {
       'Content-Type': 'application/json',

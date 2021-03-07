@@ -1,5 +1,5 @@
 import { hashPassword } from '../../../../../functions/shared.js'
-import { apiUrl } from '../../../../../../../constants/urls.js'
+import API_URL from '../../../../../../../../shared/constants/urls/api.js'
 import { saveTokens } from '../../../../../functions/token-handlers'
 import { ROOT_TRACK } from '../../../../../../../../shared/constants/tracks/tracks'
 import changeRouteWithHref from '../../../../../../../functions/routes/changers/route-with-href.js'
@@ -16,7 +16,7 @@ export function logIn() {
   changeControl({ connecting: true })
   password = hashPassword(password, email)
 
-  fetch(apiUrl + '/authorize_with_email', {
+  fetch(API_URL + '/authorize_with_email', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

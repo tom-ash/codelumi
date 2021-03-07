@@ -1,11 +1,11 @@
-import { apiUrl } from '../../../../../../../constants/urls'
+import API_URL from '../../../../../../../../shared/constants/urls/api.js'
 import { getAccessToken } from '../../../../../../user/components/authorize/components/tokens/functions/get-tokens'
 
 export function triggerVisible(announcement, index) {
   if (this.props.connecting) return
   this.props.changeControl({ connecting: true })
   const access_token = getAccessToken()
-  fetch(`${apiUrl}/announcements/trigger_visible/${announcement.id}`, {
+  fetch(`${API_URL}/announcements/trigger_visible/${announcement.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

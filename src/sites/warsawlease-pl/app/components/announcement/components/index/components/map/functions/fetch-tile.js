@@ -1,4 +1,4 @@
-import { apiUrl } from '../../../../../../../constants/urls'
+import API_URL from '../../../../../../../../shared/constants/urls/api.js'
 
 export function fetchTile() {
   const {
@@ -8,7 +8,7 @@ export function fetchTile() {
 
   changeData({ tile: null })
   
-  fetch(`${apiUrl}/announcements/${tileId}`, {
+  fetch(`${API_URL}/announcements/${tileId}`, {
     headers: {
       'Content-Type': 'application/json',
       'Only-Tile': true

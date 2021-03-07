@@ -3,13 +3,13 @@ import { schemaOrgProvider } from '../providers/schema-org'
 import pretty from 'pretty'
 
 function indexRenderer({
-  url, canonicalUrl, lang, noIndex,
+  clientUrl, url, canonicalUrl, lang, noIndex,
   title, description, keywords, image, openGraph, schemaOrg,
   css, html, preloadedState, scriptTags
 }) {
   const charsetMeta = `<meta charset="UTF-8">`
   const viewportMeta = `<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">`
-  const canonicalMeta = `<link rel="canonical" href="${`${CLIENT_URL}/${canonicalUrl || url}`}">`
+  const canonicalMeta = `<link rel="canonical" href="${`${clientUrl}/${canonicalUrl || url}`}">`
   const robotsMeta = `<meta name="robots" content="${noIndex ? 'noindex' : 'index,follow,all'}">`
   const titleMeta = `<title>${title}</title>`
   const descriptionMeta = `<meta name="description" content="${description}">`

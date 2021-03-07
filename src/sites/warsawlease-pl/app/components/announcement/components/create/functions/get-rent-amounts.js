@@ -1,11 +1,11 @@
-import { apiUrl } from '../../../../../constants/urls'
+import API_URL from '../../../../../../shared/constants/urls/api'
 
 export function getRentAmounts() {
   const { category, area, netRentAmount, changeData } = this.props
   if (!area || !netRentAmount) return
 
   const params = `?area=${area}&category=${category}&netRentAmount=${netRentAmount}`
-  fetch(`${apiUrl}/calculate_rent_amounts${params}`, {
+  fetch(`${API_URL}/calculate_rent_amounts${params}`, {
     headers: { 'Content-Type': 'application/json' }
   })
   .then(response => {

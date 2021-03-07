@@ -1,5 +1,6 @@
 import { parseCategoryForUrl } from './category-parsers'
 import { parseDistrictForUrl } from './district-parsers'
+import CLIENT_URL from '../../../../shared/constants/urls/client.js'
 
 export function buildLink({
   id,

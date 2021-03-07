@@ -1,14 +1,7 @@
 import { buildLink } from '../../../../../../functions/build-link'
-import { ANNOUNCEMENT_SHOW_TRACK } from '../../../../../../../../../shared/constants/tracks/tracks'
 
 export function linkManager() {
-  const {
-    id,
-    changeData,
-    category,
-    district,
-  } = this.props
-
+  const { id } = this.props
   const { changeRoute } = this.context
   const href = buildLink(this.props)
 
@@ -18,9 +11,6 @@ export function linkManager() {
     href,
     hrefLang: this.langHandler({ pl: 'pl', en: 'en' }),
     title: this.langHandler({ pl: `Ogłoszenie ${id}`, en: `Announcement ${id}` }),
-    onClick: () => {
-      changeData({ id, category, district })
-      changeRoute({ href })
-    }
+    onClick: () => changeRoute({ href })
   }
 }

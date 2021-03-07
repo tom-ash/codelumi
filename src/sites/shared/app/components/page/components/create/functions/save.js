@@ -2,9 +2,9 @@ import { getAccessToken } from '../../../../../../app/functions/tokens/getters/g
 import buildPageEditUrl from '../../edit/functions/build-page-edit-url.js'
 
 export function save() {
-  const { inputtedName, changeRoute } = this.props
+  const { clientUrl, apiUrl, inputtedName, changeRoute } = this.props
 
-  fetch(API_URL + '/posts', {
+  fetch(apiUrl + '/pages', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ export function save() {
   .then(jsonRespone => {
     const { lang_ver_urls: langVerUrls } = jsonRespone
     const path = buildPageEditUrl({ pageEditData: { name: inputtedName, langVerUrls }, lang: 'pl' })
-    const href = `${CLIENT_URL}/${path}`
+    const href = `${clientUrl}/${path}`
 
     changeRoute({ href })
   })

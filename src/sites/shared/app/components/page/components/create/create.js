@@ -17,11 +17,12 @@ class PageCreate extends React.Component {
 
   render() {
     const { names, inputtedName } = this.props
-
+    
     if (!names) return null
 
     return (
       <div id='page-create'>
+        AAA
         <form>
           <ManagedText {...this.nameManager()} />
           <div className='names'>

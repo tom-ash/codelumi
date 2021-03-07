@@ -84,7 +84,7 @@ import {
   ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS
 } from './descriptions'
 
-const DEFAULT_IMAGE_PL = `${AWS_S3_URL}/assets/mapa-wynajmu-nieruchomosci-w-warszawie.png`
+const DEFAULT_IMAGE_PL = 'https://warsawlease.s3.eu-central-1.amazonaws.com/assets/mapa-wynajmu-nieruchomosci-w-warszawie.png'
 
 export default [
   {

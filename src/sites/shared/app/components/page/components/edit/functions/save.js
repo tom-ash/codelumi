@@ -3,8 +3,9 @@ import { getAccessToken } from '../../../../../../app/functions/tokens/getters/g
 export function save() {
   const body = JSON.parse(this.props.body)
   const meta = JSON.parse(this.props.meta)
+  const { clientUrl, apiUrl } = this.props
 
-  fetch(API_URL + '/posts', {
+  fetch(apiUrl + '/pages', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -15,7 +16,7 @@ export function save() {
   .then(response => {
     if (response.status == 200) {
       const { url, changeRoute } = this.props
-      const href = `${CLIENT_URL}/${url}`
+      const href = `${clientUrl}/${url}`
 
       changeRoute({ href })
     }

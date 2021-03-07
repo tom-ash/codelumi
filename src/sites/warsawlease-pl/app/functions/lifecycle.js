@@ -2,6 +2,7 @@ import { initializeGoogleMaps } from './load-google-maps'
 import { isMobile } from './is-mobile'
 import { loadGoogleAnalytics } from './load-google-analytics'
 import { loadFonts } from './load-fonts'
+import API_URL from '../../shared/constants/urls/api.js'
 
 export function componentDidMount() {
   if (typeof window === 'undefined') return
@@ -23,9 +24,9 @@ export function componentDidMount() {
     }
   })
 
-  if (!urlDataSynced) this.matchStateToRoute({})
+  if (!urlDataSynced) this.matchStateToRoute({ apiUrl: API_URL })
 
-  window.onpopstate = () => this.popStateHandler()
+  window.onpopstate = () => this.popStateHandler({ apiUrl: API_URL })
 }
 
 export function componentDidUpdate(prevProps) {

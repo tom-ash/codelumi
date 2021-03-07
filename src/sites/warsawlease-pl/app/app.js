@@ -13,10 +13,12 @@ import popStateHandler from '../../shared/app/functions/routes/handlers/pop-stat
 import langHandler from './functions/lang-handler'
 import matchStateToRoute from './functions/routes/matchers/state-to-route.js'
 import getRouteByLang from '../../shared/app/functions/routes/getters/route-by-lang.js'
-import changeRoute from '../../shared/app/functions/routes/changers/change-route.js'
+import changeRoute from './functions/routes/changers/route.js'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import AppContext from './constants/context.js'
+import CLIENT_URL from '../shared/constants/urls/client.js'
+import API_URL from '../shared/constants/urls/api.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -35,7 +37,7 @@ class App extends React.Component {
     const { renderPage, renderVisitor, renderAnnouncement, renderUser } = this.props
 
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
-    const pageProps = { changeRoute: this.changeRoute, langHandler: this.langHandler }
+    const pageProps = { clientUrl: CLIENT_URL, apiUrl: API_URL, changeRoute: this.changeRoute, langHandler: this.langHandler }
 
     return (
       <AppContext.Provider value={AppContextValue}>

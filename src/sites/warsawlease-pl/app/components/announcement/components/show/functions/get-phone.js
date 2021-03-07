@@ -1,8 +1,8 @@
-import { apiUrl } from '../../../../../constants/urls'
+import API_URL from '../../../../../constants/urls'
 
 export function getPhone() {
   if (this.props.phone.length > 7) return
-  fetch(`${apiUrl}/announcement/phone/${this.props.id}`, {
+  fetch(`${API_URL}/announcement/phone/${this.props.id}`, {
     headers: { 'Content-Type': 'application/json' }
   })
   .then(response => {

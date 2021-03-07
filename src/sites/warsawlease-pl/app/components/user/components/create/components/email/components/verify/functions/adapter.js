@@ -1,4 +1,4 @@
-import { apiUrl } from '../../../../../../../../../constants/urls.js'
+import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
 import { saveTokens } from '../../../../../../../functions/token-handlers'
 import { ROOT_TRACK, USER_TRACK, USER_CREATE_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
 import changeRouteWithHref from '../../../../../../../../../functions/routes/changers/route-with-href.js'
@@ -19,7 +19,7 @@ export function verify() {
 
   changeControl({ connecting: true })
 
-  fetch(apiUrl + '/user_create_with_email', {
+  fetch(API_URL + '/user_create_with_email', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

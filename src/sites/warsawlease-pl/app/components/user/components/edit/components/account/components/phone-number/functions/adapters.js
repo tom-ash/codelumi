@@ -1,4 +1,4 @@
-import { apiUrl } from '../../../../../../../../../constants/urls.js'
+import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
 import { getAccessToken } from '../../../../../../authorize/components/tokens/functions/get-tokens'
 
 export function changePhone(phoneCode, body) {
@@ -7,7 +7,7 @@ export function changePhone(phoneCode, body) {
   if (connecting) return
 
   changeControl({ phoneConnecting: true })
-  fetch(apiUrl + '/user/edit/phone', {
+  fetch(API_URL + '/user/edit/phone', {
     method: 'PUT', headers: { 'Content-Type': 'application/json', access_token: getAccessToken() },
     body: JSON.stringify({ phone_code: phoneCode, body })
   })

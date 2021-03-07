@@ -1,4 +1,4 @@
-import { apiUrl } from '../../../../../../../../../constants/urls.js'
+import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
 import { getAccessToken } from '../../../../../../authorize/components/tokens/functions/get-tokens'
 
 export function changetaxNumber(taxNumber) {
@@ -7,7 +7,7 @@ export function changetaxNumber(taxNumber) {
   if (connecting) return
 
   changeControl({ taxNumberConnecting: true })
-  fetch(apiUrl + '/user/edit/tax_number', {
+  fetch(API_URL + '/user/edit/tax_number', {
     method: 'PUT', headers: { 'Content-Type': 'application/json', access_token: getAccessToken() },
     body: JSON.stringify({ taxNumber })
   })

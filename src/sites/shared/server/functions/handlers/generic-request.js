@@ -6,7 +6,7 @@ import getVisitorState from '../../../shared/functions/getters/visitor-state.js'
 
 function genericRequestHandler({
   req, res,
-  apiUrl,
+  clientUrl, apiUrl,
   routes, routeRenders, tracks,
   appState, renderState,
   appRenderer
@@ -20,7 +20,7 @@ function genericRequestHandler({
 
   routeSender({
     res,
-    apiUrl,
+    clientUrl, apiUrl,
     route, url, device, routeRenders, tracks,
     appState, renderState, visitorState,
     accessToken,

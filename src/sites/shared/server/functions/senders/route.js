@@ -7,7 +7,7 @@ import initialStateParserV2 from '../parsers/initial-state.js'
 
 function routeSender({
   res,
-  apiUrl, tracks, routeRenders,
+  clientUrl, apiUrl, tracks, routeRenders,
   url, route, device,
   appState, renderState, visitorState,
   accessToken,
@@ -47,7 +47,7 @@ function routeSender({
     const status = 200
 
     res.status(status).send(
-      indexRenderer({ url, ...metaData, ...appAsHtml }) 
+      indexRenderer({ clientUrl, url, ...metaData, ...appAsHtml }) 
     )
   })
   .catch(exception => {

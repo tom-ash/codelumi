@@ -1,8 +1,8 @@
-function getHrefByTrackAndLang({ track, lang, routes }) {
+function getHrefByTrackAndLang({ clientUrl, track, lang, routes }) {
   const route = routes.find(route => route.track === track && route.lang === lang)
   const url = route.url
 
-  return `${CLIENT_URL}/${url === '/' ? '' : url}`
+  return `${clientUrl}/${url === '/' ? '' : url}`
 }
 
 export default getHrefByTrackAndLang

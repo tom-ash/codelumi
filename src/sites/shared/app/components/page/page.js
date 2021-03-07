@@ -16,12 +16,12 @@ class Page extends React.Component {
   }
 
   render() {
-    const { renderCreate, renderEdit, renderShow, renderIndex, renderNotFound, changeRoute, langHandler } = this.props
-    const createProps = { changeRoute, langHandler }
-    const showProps = { changeRoute, langHandler }
-    const editProps = { changeRoute, langHandler }
-    const indexProps = { changeRoute, langHandler }
-    const notFoundProps = { changeRoute, langHandler }
+    const { clientUrl, apiUrl, renderCreate, renderEdit, renderShow, renderIndex, renderNotFound, changeRoute, langHandler } = this.props
+    const createProps = { clientUrl, apiUrl, changeRoute, langHandler }
+    const showProps = { clientUrl, apiUrl, changeRoute, langHandler }
+    const editProps = { clientUrl, apiUrl, changeRoute, langHandler }
+    const indexProps = { clientUrl, apiUrl, changeRoute, langHandler }
+    const notFoundProps = { clientUrl, apiUrl, changeRoute, langHandler }
 
     return (
       <div id='post'>

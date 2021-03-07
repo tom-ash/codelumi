@@ -1,4 +1,4 @@
-import { apiUrl } from '../../../../../../../../../constants/urls.js'
+import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
 import { getAccessToken } from '../../../../../../authorize/components/tokens/functions/get-tokens'
 
 export function sendNewValue(value) {
@@ -14,7 +14,7 @@ export function sendNewValue(value) {
 
   changeControl({ [`${inputName}Connecting`]: true })
 
-  fetch(apiUrl + `/user/edit/${api_suffix}`, {
+  fetch(API_URL + `/user/edit/${api_suffix}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

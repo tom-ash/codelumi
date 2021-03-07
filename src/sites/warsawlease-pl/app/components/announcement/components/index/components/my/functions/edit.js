@@ -1,4 +1,5 @@
 import buildAnnouncementEditUrl from '../../../../../../../../shared/functions/builders/announcement/edit-url.js'
+import CLIENT_URL from '../../../../../../../../shared/constants/urls/client.js'
 
 export function edit({ id }) {
   const { lang } = this.props

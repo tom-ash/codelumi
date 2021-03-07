@@ -1,4 +1,4 @@
-import { apiUrl } from '../../../../../../../../../constants/urls.js'
+import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
 import { hashPassword } from '../../../../../../../functions/shared.js'
 import { getAccessToken } from '../../../../../../authorize/components/tokens/functions/get-tokens'
 
@@ -8,7 +8,7 @@ export function sendCurrentEmailAddress() {
   if (connecting) return
 
   changeControl({ emailConnecting: true })
-  fetch(apiUrl + '/user/edit/email/send_current', {
+  fetch(API_URL + '/user/edit/email/send_current', {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json', access_token: getAccessToken(), lang },
     body: JSON.stringify({ email: currentValue })
@@ -27,7 +27,7 @@ export function sendCurrentEmailVerification(verificationCode) {
   if (connecting) return
 
   changeControl({ emailConnecting: true })
-  fetch(apiUrl + '/user/edit/email/verify/current', {
+  fetch(API_URL + '/user/edit/email/verify/current', {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json', access_token: getAccessToken() },
     body: JSON.stringify({ verificationCode })
@@ -46,7 +46,7 @@ export function sendNewEmail(newEmail) {
   if (connecting) return
 
   changeControl({ emailConnecting: true })
-  fetch(apiUrl + '/user/edit/email/new', {
+  fetch(API_URL + '/user/edit/email/new', {
     method: 'PUT', headers: { 'Content-Type': 'application/json', access_token: getAccessToken(), lang },
     body: JSON.stringify({ new_email: newEmail })
   })
@@ -65,7 +65,7 @@ export function sendNewEmailVerification(newEmailVerification) {
   if (connecting) return
 
   changeControl({ emailConnecting: true })
-  fetch(apiUrl + '/user/edit/email/verify/new', {
+  fetch(API_URL + '/user/edit/email/verify/new', {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json', access_token: getAccessToken() },
     body: JSON.stringify({ verification_code: currentEmailVerification + newEmailVerification })
@@ -88,7 +88,7 @@ export function sendPassword(password) {
 
   changeControl({ emailConnecting: true })
 
-  fetch(apiUrl + '/user/edit/email', {
+  fetch(API_URL + '/user/edit/email', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

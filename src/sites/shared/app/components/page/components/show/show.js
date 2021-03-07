@@ -11,10 +11,11 @@ class PageShow extends React.Component {
     super(props)
   }
 
+  // FIX
   changePage = () => {
-    const { name, lang_ver_urls: langVerUrls, lang, changeRoute } = this.props
+    const { clientUrl, name, lang_ver_urls: langVerUrls, lang, changeRoute } = this.props
     const path = buildPageEditUrl({ pageEditData: { name, langVerUrls }, lang })
-    const href = `${CLIENT_URL}/${path}`
+    const href = `${clientUrl}/${path}`
 
     changeRoute({ href })
   }
@@ -27,9 +28,7 @@ class PageShow extends React.Component {
     return (
       <div id='page-show'>
         {isAdmin && <button onClick={this.changePage}>Edit</button>}
-        <PageTile
-          { ...this.props }
-        />
+        <PageTile { ...this.props } />
       </div>
     )
   }

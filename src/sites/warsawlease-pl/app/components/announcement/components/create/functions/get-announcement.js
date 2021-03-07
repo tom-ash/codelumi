@@ -1,4 +1,4 @@
-import { apiUrl } from '../../../../../constants/urls'
+import API_URL from '../../../../../../shared/constants/urls/api.js'
 import { features } from '../../../constants/features'
 import { furnishings } from '../../../constants/furnishings'
 import { getAccessToken } from '../../../../user/components/authorize/components/tokens/functions/get-tokens'
@@ -7,7 +7,7 @@ export function getAnnouncement() {
   const id = this.props.id || +window.location.pathname.match(/\d+/)[0]
 
   const access_token = getAccessToken()
-  fetch(`${apiUrl}/announcements/${id}/edit`, {
+  fetch(`${API_URL}/announcements/${id}/edit`, {
     headers: {
       'Content-Type': 'application/json',
       access_token

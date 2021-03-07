@@ -1,4 +1,4 @@
-import { apiUrl } from '../../../../../constants/urls.js'
+import API_URL from '../../../../../../shared/constants/urls/api.js'
 import { getAccessToken } from '../../authorize/components/tokens/functions/get-tokens'
 import { ROOT_TRACK } from '../../../../../../shared/constants/tracks/tracks'
 import changeRouteWithHref from '../../../../../functions/routes/changers/route-with-href.js'
@@ -15,7 +15,7 @@ export function sendEmail() {
 
   changeControl({ connecting: true })
   
-  fetch(apiUrl + '/user/destroy/email', {
+  fetch(API_URL + '/user/destroy/email', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ export function destroy() {
 
   changeControl({ connecting: true })
 
-  fetch(apiUrl + '/user/destroy', {
+  fetch(API_URL + '/user/destroy', {
     headers: {
       'Content-Type': 'application/json',
       access_token: getAccessToken()

@@ -1,3 +1,5 @@
+import API_URL from '../../../../../../shared/constants/urls/api.js'
+
 export function componentDidMount() {
   const {
     lang,

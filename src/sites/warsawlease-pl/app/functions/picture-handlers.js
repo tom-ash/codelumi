@@ -1,4 +1,4 @@
-import { apiUrl } from '../constants/urls'
+import API_URL from '../../shared/constants/urls/api.js'
 let ImageCompressor
 if (typeof window !== 'undefined') ImageCompressor = require('image-compressor.js').default
 
@@ -13,7 +13,7 @@ export function compressAndSaveBlobPicture(destination, blob, callback) {
 }
 
 export function savePicture(destination, file, callback) {
-  fetch(apiUrl + destination, {
+  fetch(API_URL + destination, {
     method: 'post', headers: { 'Content-Type': 'application/json', 'FileType': file.type }
   })
   .then(response => { if (response.ok) return response.json() }, networkError => console.dir(networkError.message))
