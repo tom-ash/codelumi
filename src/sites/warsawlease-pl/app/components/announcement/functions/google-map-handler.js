@@ -26,12 +26,14 @@ export function shouldSetUpGoogleMaps() {
 export function shouldSetUpPins() {
   const {
     loadPins,
-    announcements
+    announcements,
+    svgs
   } = this.props
 
   if (loadPins) return false
   if (!window.googleMap) return false
   if (!announcements) return false
+  if (Object.keys(svgs).length === 0) return
   
   return true
 }
