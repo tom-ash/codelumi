@@ -4,7 +4,7 @@ import { requiredInputs } from '../../../constants/required-inputs'
 import { categories } from '../../../../../constants/categories'
 import { districts } from '../../../../../constants/districts'
 import SVG from '../../../../../../support/components/svg/svg'
-import { sendGaEvent } from '../../../../../../../functions/google-analytics/send-ga-event'
+import sendGaEvent from '../../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from '../constants/analytics/events'
 
 const {

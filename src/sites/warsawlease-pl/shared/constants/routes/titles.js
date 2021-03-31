@@ -73,7 +73,7 @@ export const ANNOUNCEMENT_INDEX_MY_TITLES  = {
   [EN]: 'My Announcements'
 }
 
-export const USER_CREATE_TITLES  = {
+export const USER_CREATE_FORM_TITLES  = {
   [PL]: 'Zarejestruj',
   [EN]: 'Sign Up'
 }

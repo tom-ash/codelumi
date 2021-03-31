@@ -53,9 +53,19 @@ export const PAGE_INDEX_MANAGE_URLS = {
   [EN]: 'manage-pages'
 }
 
-export const ANNOUNCEMENT_CREATE_URLS = {
+export const ANNOUNCEMENT_CREATE_FORM_URLS = {
   [PL]: 'dodaj-ogloszenie-wynajmu-nieruchomosci-w-warszawie',
   [EN]: 'add-announcement-of-real-estate-lease-in-warsaw'
+}
+
+export const ANNOUNCEMENT_CREATE_VERIFICATION_URLS = {
+  [PL]: 'dodaj-ogloszenie-wynajmu-nieruchomosci-w-warszawie/potwierdz',
+  [EN]: 'add-announcement-of-real-estate-lease-in-warsaw/confirm'
+}
+
+export const ANNOUNCEMENT_CREATE_SUCCESS_URLS = {
+  [PL]: 'dodaj-ogloszenie-wynajmu-nieruchomosci-w-warszawie/podsumowanie',
+  [EN]: 'add-announcement-of-real-estate-lease-in-warsaw/summary'
 }
 
 export const ANNOUNCEMENT_EDIT_URLS = {
@@ -78,9 +88,14 @@ export const ANNOUNCEMENT_SHOW_URLS = {
   [EN]: /^\/?\d+-.*-for-lease-warsaw-.*$/
 }
 
-export const USER_CREATE_URLS = {
+export const USER_CREATE_FORM_URLS = {
   [PL]: 'zarejestruj',
   [EN]: 'sign-up'
+}
+
+export const USER_CREATE_VERIFICATION_URLS = {
+  [PL]: 'zarejestruj/potwierdz',
+  [EN]: 'sign-up/confirm'
 }
 
 export const USER_AUTHORIZE_URLS = {

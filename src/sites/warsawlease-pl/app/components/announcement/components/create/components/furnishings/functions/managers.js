@@ -1,5 +1,5 @@
 import { furnishings } from '../../../../../constants/furnishings.js'
-import { sendGaEvent } from '../../../../../../../functions/google-analytics/send-ga-event.js'
+import sendGaEvent from '../../../../../../../functions/google-analytics/send-ga-event.js'
 import analyticEvents from '../constants/analytics/events.js'
 
 const {

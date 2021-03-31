@@ -1,0 +1,17 @@
+@import '../../../../../styles/colors.scss';
+
+.hint {
+  position: relative;
+  color: $TEXT-HINT-COLOR;
+  margin: 5px 0 30px;
+  font-size: 14px;
+  line-height: 20px;
+  svg {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    height: 20px;
+    fill: $TEXT-DEFAULT-COLOR;
+    cursor: pointer;
+  }
+}

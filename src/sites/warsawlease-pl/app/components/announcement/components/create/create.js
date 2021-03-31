@@ -19,27 +19,23 @@ import { ManagedButton } from 'managed-inputs'
 import { publish } from './components/publishing/functions/publish'
 import { validatePictures } from './components/pictures/functions/validate-pictures'
 import { validateMap } from './components/map/functions/validate-map'
-import { savePicture } from './functions/save-picture'
-import { saveAnnouncement } from './functions/save-announcement'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import Line from '../../../support/components/separation-line/separation-line'
 import AvailabilityDate from './components/availability_date/availability_date'
-import { OPTIONAL } from './constants/texts'
+import { PRIMARY_DATA_HEADER, PRIMARY_DATA_HINT, PICTURES_HEADER, PICTURES_HINT, LOCATION_HEADER, LOCATION_HINT, ADDITIONAL_DATA_HEADER, ADDITIONAL_DATA_HINT } from './constants/texts'
 import Header from '../../../support/components/header/header'
-import SVG from '../../../support/components/svg/svg.js'
-
-import {
-  categoryManager,
-  districtManager,
-  areaManager
-} from './components/primary/functions/managers'
-
+import UserCreate from '../../../user/components/create/create.js'
+import UserCreateEmailVerify from '../../../user/components/create/components/email/components/verify/verify.js'
+import Hint from '../../../support/components/hint/hint.js'
+import AppContext from '../../../../constants/context.js'
+import { categoryManager, districtManager, areaManager } from './components/primary/functions/managers'
 import { handleErrorOnValidate } from './components/primary/functions/errors-handler'
 
 class AnnouncementCreate extends React.Component {
   constructor(props) {
     super(props)
+    this.userCreateNode = React.createRef()
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
@@ -53,15 +49,15 @@ class AnnouncementCreate extends React.Component {
     this.validateMap = validateMap.bind(this)
     this.publish = publish.bind(this)
     this.handleErrorOnValidate = handleErrorOnValidate.bind(this)
-    this.savePicture = savePicture.bind(this)
-    this.saveAnnouncement = saveAnnouncement.bind(this)
   }
+
+  static contextType = AppContext
 
   render() {
     const {
-      lang, isMobile, authorized, step, showAvilabilityDate,
-      id, category, district, area, availabilityDate,
-      changeApp, changeAnnouncementShowData, changeControl, changeInputs
+      renderForm, renderVerification, renderSuccess,
+      connecting, lang, authorized, step, showAvilabilityDate, availabilityDate,
+      changeControl, changeInputs
     } = this.props
 
     const availabilityDateProps = { lang, availabilityDate, showAvilabilityDate, changeControl, changeInputs }
@@ -71,43 +67,47 @@ class AnnouncementCreate extends React.Component {
       <>
         <AnnouncementCreateSteps authorized={authorized} step={step} />
         <div id='announcement-create' className={step}>
-          <Header tier={1} text={headerText} svg='plus' />
-          {step === 'form' &&
+          {renderForm &&
           <>
-            <Primary />
-            <Line />
-            <Pictures />
-            <Line />
-            <Map />
-            <Line />
-            <Additional />
-            <Line />
-            <p className='hint create'>{this.langHandler(OPTIONAL)}</p>
-            <AvailabilityDate { ...availabilityDateProps } />
-            <Features />
-            <Furnishings />
-            <Description />
-            <Line />
-            <ManagedButton {...this.addAnnouncementManager()} />
+            <Header tier={1} text={headerText} svg='plus' />
+            {!connecting ?
+            <>  
+              <Header tier={2} text={this.langHandler(PRIMARY_DATA_HEADER)} />
+              <Hint text={this.langHandler(PRIMARY_DATA_HINT)} />
+              <Primary />
+              <Line />
+              <Header tier={2} text={this.langHandler(PICTURES_HEADER)} />
+              <Hint text={this.langHandler(PICTURES_HINT)} />
+              <Pictures />
+              <Line />
+              <Header tier={2} text={this.langHandler(LOCATION_HEADER)} />
+              <Hint text={this.langHandler(LOCATION_HINT)} />
+              <Map />
+              <Line />
+              <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
+              <Hint text={this.langHandler(ADDITIONAL_DATA_HINT)} />
+              <Additional />
+              <AvailabilityDate { ...availabilityDateProps } />
+              <Features />
+              <Furnishings />
+              <Description />
+              <Line />
+              {!authorized &&
+              <>
+                <UserCreate />
+                <Line />
+              </>}
+              <ManagedButton {...this.addAnnouncementManager()} />
+            </>
+            :
+            <div className='requesting'>
+              <div className='inner'>
+                <WindmillSpinner spinnerClass='windmill-medium-spinner'/>
+              </div>
+            </div>}
           </>}
-          {step === 'publishing' &&
-          <div className='requesting'>
-            <div className='inner'>
-              <WindmillSpinner spinnerClass='windmill-medium-spinner'/>
-            </div>
-          </div>}
-          {step === 'success' &&
-          <Success
-            changeApp={changeApp}
-            id={id}
-            category={category}
-            district={district}
-            area={area}
-            changeAnnouncementShowData={changeAnnouncementShowData}
-            langHandler={this.langHandler}
-            isMobile={isMobile}
-            lang={lang}
-          />}
+          {renderVerification && <UserCreateEmailVerify />}
+          {renderSuccess && <Success {...this.props} />}
         </div>
       </>
     )

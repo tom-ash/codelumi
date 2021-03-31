@@ -1,7 +1,9 @@
 import React from 'react'
 import ButtonSpinner from '../../../../../../../../support/components/button-spinner/button-spinner'
-import { sendGaEvent } from '../../../../../../../../../functions/google-analytics/send-ga-event'
+import sendGaEvent from '../../../../../../../../../functions/google-analytics/send-ga-event'
 import { analyticEvent } from '../constants/analytic-event'
+import createUser from './create-user.js'
+import { buildUserObject } from './adapters.js'
 
 export function buttonManager() {
   const { connecting } = this.props
@@ -16,7 +18,10 @@ export function buttonManager() {
       />
     ),
     onClick: () => {
-      this.prepareUserAccount()
+      const userObject = buildUserObject.call(this)
+      if (!userObject) return
+
+      createUser.call(this, userObject)
       sendGaEvent(analyticEvent)
     }
   }

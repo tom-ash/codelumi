@@ -1,13 +1,7 @@
-@import '../../../../../../../styles/themes.scss';
-@import '../../../../../../../styles/colors';
-
 #user-create-consents-container {
-  margin: 0;
-  max-width: 396px;
-  padding-top: 18px;
+  margin: 10px 0 20px;
   .checkbox-container {
     .checkbox.form-input {
-      padding: 6px 12px 0 0;
       .input {
         top: 8px;
         left: 0;
@@ -18,12 +12,16 @@
     }
   }
   .error {
-    @extend %error;
+    margin: 6px 0 0 0;
+    color: $ERROR-COLOR;
+    font-size: 14px;
   }
-  .link {
-    color: #1F618D;
+  a {
+    display: inline-block;
+    text-decoration: underline;
+    color: #34495E;
     &:hover {
-      color: #2980B9;
+      color: #5D6D7E;
     }
   }
 }

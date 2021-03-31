@@ -1,28 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { prepareUserAccount } from './functions/adapters'
 import * as mappers from './constants/mappers'
-import * as inputValidators from '../inputs/functions/validators'
-import * as consentValidators from '../../../consents/functions/validators'
 import langHandler from '../../../../../../../../functions/lang-handler'
-import { errorSetter } from '../../../../../../functions/error-setter'
 import { buttonManager } from './functions/managers'
 import { ManagedButton } from 'managed-inputs'
+import AppContext from '../../../../../../../../constants/context.js'
 
 class UserCreateSubmit extends React.Component {
   constructor(props) {
     super(props)
-    this.prepareUserAccount = prepareUserAccount.bind(this)
     this.langHandler = langHandler.bind(this)
-    this.accountTypeValidator = inputValidators.accountTypeValidator.bind(this)
-    this.nameValidator = inputValidators.nameValidator.bind(this)
-    this.phoneValidator = inputValidators.phoneValidator.bind(this)
-    this.emailValidator = inputValidators.emailValidator.bind(this)
-    this.passwordValidator = inputValidators.passwordValidator.bind(this)
-    this.termsAndPrivacyConsentValidator = consentValidators.termsAndPrivacyConsentValidator.bind(this)
-    this.errorSetter = errorSetter.bind(this)
     this.buttonManager = buttonManager.bind(this)
   }
+
+  static contextType = AppContext
 
   render() {
     return (

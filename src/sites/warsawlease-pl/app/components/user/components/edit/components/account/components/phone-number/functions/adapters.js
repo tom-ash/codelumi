@@ -1,20 +1,20 @@
 import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
 import { getAccessToken } from '../../../../../../authorize/components/tokens/functions/get-tokens'
 
-export function changePhone(phoneCode, body) {
+export function changePhone(countryCode, body) {
   const { changeControl, changeData, changeInputs, connecting } = this.props
 
   if (connecting) return
 
   changeControl({ phoneConnecting: true })
-  fetch(API_URL + '/user/edit/phone', {
+  fetch(API_URL + '/user/update/phone', {
     method: 'PUT', headers: { 'Content-Type': 'application/json', access_token: getAccessToken() },
-    body: JSON.stringify({ phone_code: phoneCode, body })
+    body: JSON.stringify({ country_code: countryCode, phone_number: body })
   })
   .then(response => {
     if (response.status == 200) {
-      changeData({ phoneCode: phoneCode, phoneBody: body })
-      changeInputs({ phoneCode: phoneCode })
+      changeData({ countryCode: countryCode, phoneNumber: body })
+      changeInputs({ countryCode: countryCode })
       return changeControl({ phoneStage: 'success' })
     }
     throw new Error('SomethingWentWrong')

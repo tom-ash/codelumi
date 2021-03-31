@@ -25,14 +25,6 @@ export const errorsReducer = (state = errors, action) => {
   }
 }
 
-export const dataReducer = (state = data, action) => {
-  switch (action.type) {
-    case 'user/create/data': return { ...state, ...action.value }
-    case 'user/create/data/reset': return { ...data }
-    default: return state
-  }
-}
-
 export const createReducer = combineReducers({
-  control: controlReducer, inputs: inputsReducer, data: dataReducer, errors: errorsReducer
+  control: controlReducer, inputs: inputsReducer, errors: errorsReducer
 })

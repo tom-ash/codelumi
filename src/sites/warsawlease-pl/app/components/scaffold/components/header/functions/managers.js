@@ -4,25 +4,18 @@ import Logo from '../../../../../assets/logo-header.svg'
 import {
   LANGS
 } from '../../../../../../shared/constants/langs/langs'
-import {
-  ROOT_TRACK,
-  ANNOUNCEMENT_CREATE_TRACK,
-  USER_CREATE_TRACK,
-  USER_AUTHORIZE_TRACK,
-  USER_TRACK,
-  USER_SHOW_TRACK
-} from '../../../../../../shared/constants/tracks/tracks'
+import { USER_TRACK, USER_SHOW_TRACK } from '../../../../../../shared/constants/tracks/tracks'
 import {
   ROOT_URLS,
-  ANNOUNCEMENT_CREATE_URLS,
-  USER_CREATE_URLS,
+  ANNOUNCEMENT_CREATE_FORM_URLS,
+  USER_CREATE_FORM_URLS,
   USER_AUTHORIZE_URLS,
   USER_SHOW_URLS
 } from '../../../../../../shared/constants/routes/urls'
 import {
   ROOT_TITLES,
   ANNOUNCEMENT_CREATE_TITLES,
-  USER_CREATE_TITLES,
+  USER_CREATE_FORM_TITLES,
   USER_AUTHORIZE_TITLES,
   USER_SHOW_TITLES
 } from '../../../../../../shared/constants/routes/titles'
@@ -34,14 +27,7 @@ import CLIENT_URL from '../../../../../../shared/constants/urls/client.js'
 
 export function titleManager() {
   const { changeRoute } = this.context
-  const {
-    renderMap,
-    renderCatalogue,
-    resetAnnouncementIndexControl,
-    resetAnnouncementIndexInputs,
-    resetAnnouncementIndexData
-  } = this.props
-
+  const { renderMap, renderCatalogue, resetAnnouncementIndexControl, resetAnnouncementIndexInputs, resetAnnouncementIndexData } = this.props
   const title = this.langHandler(ROOT_TITLES)
   const href = this.langHandler(ROOT_URLS)
 
@@ -75,7 +61,7 @@ export function titleManager() {
 
 export function addAnnouncementManager() {
   const { changeRoute } = this.context
-  const href = `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_CREATE_URLS)}`
+  const href = `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_CREATE_FORM_URLS)}`
 
   return {
     classNames: { container: 'header-link add-announcement' },
@@ -89,8 +75,8 @@ export function addAnnouncementManager() {
 
 export function signUpManager() {
   const { changeRoute } = this.context
-  const title = this.langHandler(USER_CREATE_TITLES)
-  const href = `${CLIENT_URL}/${this.langHandler(USER_CREATE_URLS)}`
+  const title = this.langHandler(USER_CREATE_FORM_TITLES)
+  const href = `${CLIENT_URL}/${this.langHandler(USER_CREATE_FORM_URLS)}`
 
   return {
     classNames: { container: 'header-link' },
@@ -151,7 +137,7 @@ export function languageManager() {
 
       const href = `${CLIENT_URL}/${url}`
 
-      changeRoute({ href, withoutScroll: true })
+      changeRoute({ href: href + window.location.search, withoutScroll: true })
     }
   }
 }

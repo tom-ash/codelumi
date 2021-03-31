@@ -1,17 +1,17 @@
-import { ANNOUNCEMENT_CREATE_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
+import { ANNOUNCEMENT_CREATE_VERIFICATION_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = store => {
   const { lang } = store.app
-  const { [ANNOUNCEMENT_CREATE_TRACK]: creatingAnnouncement } = store.render
+  const { [ANNOUNCEMENT_CREATE_VERIFICATION_TRACK]: renderAnnouncementCreateVerification } = store.render
   const { connecting } = store.user.create.control
-  const { token } = store.user.create.data
+  const { email } = store.user.create.inputs
   const { verification } = store.user.create.errors
 
   return {
+    renderAnnouncementCreateVerification,
     lang,
+    email,
     verification,
-    token,
-    creatingAnnouncement,
     connecting
   }
 }

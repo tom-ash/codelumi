@@ -127,21 +127,21 @@ function buttonOnClickProvider() {
 
   switch (step) {
     case 'currentEmailVerification': return () => {
-      const value = document.getElementById('user-edit-email-current-verification').value
-      const { isValid, error } = verificationCodeValidator(value)
-      if (isValid) return this.sendCurrentEmailVerification(value)
+      const verificationCode = document.getElementById('user-edit-email-current-verification').value
+      const { isValid, error } = verificationCodeValidator(verificationCode)
+      if (isValid) return this.sendCurrentEmailVerification(verificationCode)
       changeErrors({ currentEmailVerification: error })
     }
     case 'newEmail': return () => {
-      const newEmail = document.getElementById('user-edit-email-new').value
-      const { isValid, error } = emailValidator(newEmail)
-      if (isValid) return this.sendNewEmail(newEmail)
+      const email = document.getElementById('user-edit-email-new').value
+      const { isValid, error } = emailValidator(email)
+      if (isValid) return this.sendNewEmail(email)
       changeErrors({ newEmail: error })
     }
     case 'newEmailVerification': return () => {
-      const newEmailVerification = document.getElementById('user-edit-email-new-verification').value
-      const { isValid, error } = verificationCodeValidator(newEmailVerification)
-      if (isValid) return this.sendNewEmailVerification(newEmailVerification)
+      const verificationCode = document.getElementById('user-edit-email-new-verification').value
+      const { isValid, error } = verificationCodeValidator(verificationCode)
+      if (isValid) return this.sendNewEmailVerification(verificationCode)
       changeErrors({ newEmailVerification: error }) 
     }
     case 'password': return () => {

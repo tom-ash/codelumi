@@ -1,3 +1,7 @@
-export function errorResetter(field) {
-  this.props.changeErrors({ [field]: { pl: '', en: '' } })
+function errorResetter(field) {
+  const { dispatch } = this.props
+  
+  dispatch({ type: 'user/create/errors', value: { [field]: { pl: '', en: '' } } })
 }
+
+export default errorResetter

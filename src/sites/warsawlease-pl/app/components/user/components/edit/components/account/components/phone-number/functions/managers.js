@@ -9,9 +9,9 @@ export function phoneCodeManager() {
   return {
     controlled: false,
     classNames: { container: 'form-input select country-code' },
-    value: this.props.phoneCode,
+    value: this.props.countryCode,
     options: [{ value: '+48', text: '+48' }, { value: '+1', text: '+1' }, { value: '+44', text: '+44' }],
-    onSelect: (option) => this.props.changeInputs({ phoneCode: option.value })
+    onSelect: (option) => this.props.changeInputs({ countryCode: option.value })
   }
 }
 
@@ -57,10 +57,10 @@ export function buttonManager() {
       />
     ),
     onClick: () => {
-      const phoneCode = this.props.phoneCode
+      const countryCode = this.props.countryCode
       const body = document.getElementById('user-edit-account-phone-number-body').value
       if (!this.bodyManager().validate(body)) return
-      changePhone.call(this, phoneCode, body)
+      changePhone.call(this, countryCode, body)
     }
   }
 }

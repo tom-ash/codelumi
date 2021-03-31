@@ -1,8 +1,10 @@
 import React from 'react'
 import { inputs } from '../../../../../../../constants/inputs'
 import SVG from '../../../../../../../../support/components/svg/svg'
-import { sendGaEvent } from '../../../../../../../../../functions/google-analytics/send-ga-event'
+import sendGaEvent from '../../../../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from '../constants/analytics/events'
+import { accountTypeValidator, nameValidator, phoneValidator, emailValidator, passwordValidator } from './validators.js'
+import errorResetter from './error-resetter.js'
 
 const {
   ACCOUNT_TYPE_SELECTED_EVENT,
@@ -40,9 +42,9 @@ export function accountTypeManager() {
       { value: 'professional', label: professionalAccount }
     ],
     onClick: value => {
-      this.errorResetter('firstName')
-      this.errorResetter('businessName')
-      this.errorResetter('accountType')
+      errorResetter.call(this, 'firstName')
+      errorResetter.call(this, 'businessName')
+      errorResetter.call(this, 'accountType')
       changeInputs({ accountType: value })
       sendGaEvent(ACCOUNT_TYPE_SELECTED_EVENT)
     }
@@ -51,22 +53,22 @@ export function accountTypeManager() {
 
 export function emailAddressManager() {
   const { label } = inputs.email
-
-  const input = inputs.email
+  const { email: value, changeInputs } = this.props
+  
   return {
-    id: 'user-create-email-email-address',
     classNames: { container: 'form-input with-icon text' },
     type: 'email',
     autoComplete: 'email',
-    controlled: false,
     label: this.langHandler(label),
+    value: value || '',
     children: <SVG name='envelope' />,
-    onFocus: () => this.errorResetter('email'),
+    onFocus: () => errorResetter.call(this, 'email'),
     onBlur: value => {
       this.emailAddressManager().validate(value)
       sendGaEvent(EMAIL_ADDRESS_INPUTTED_EVENT)
     },
-    validate: value => this.emailValidator(value),
+    onChange: value => changeInputs({ email: value }),
+    validate: value => emailValidator.call(this, value),
     error: this.langHandler(this.props.emailError)
   }
 }
@@ -82,12 +84,12 @@ export function passwordManager() {
     controlled: false,
     label: this.langHandler(label),
     children: <SVG name='lock' />,
-    onFocus: () => this.errorResetter('password'),
+    onFocus: () => errorResetter.call(this, 'password'),
     onBlur: value => {
       this.passwordManager().validate(value)
       sendGaEvent(PASSWORD_INPUTTED_EVENT)
     },
-    validate: value => this.passwordValidator(value),
+    validate: value => passwordValidator.call(this, value),
     error: this.langHandler(this.props.passwordError)
   }
 }
@@ -106,12 +108,12 @@ export function firstNameManager() {
     controlled: false,
     label: this.langHandler(label),
     children: <SVG name='user' />,
-    onFocus: () => this.errorResetter('firstName'),
+    onFocus: () => errorResetter.call(this, 'firstName'),
     onBlur: value => {
       this.firstNameManager().validate(value)
       sendGaEvent(FIRST_NAME_INPUTTED_EVENT)
     },
-    validate: value => this.nameValidator('firstName', value),
+    validate: value => nameValidator.call(this, 'firstName', value),
     error: this.langHandler(this.props.firstNameError)
   }
 }
@@ -129,12 +131,12 @@ export function businessNameManager() {
     controlled: false,
     classNames: { container: 'form-input text'},
     label: this.langHandler(label),
-    onFocus: () => this.errorResetter('businessName'),
+    onFocus: () => errorResetter.call(this, 'businessName'),
     onBlur: value => {
       this.businessNameManager().validate(value)
       sendGaEvent(BUSINESS_NAME_INPUTTED_EVENT)
     },
-    validate: value => this.nameValidator('businessName', value),
+    validate: value => nameValidator.call(this, 'businessName', value),
     error: this.langHandler(this.props.businessNameError)
   }
 }
@@ -145,10 +147,10 @@ export function areaCodeManager() {
     id: 'user-create-email-area-code',
     classNames: { container: 'form-input select phone-country-code' },
     children: <SVG name='chevron' />,
-    value: this.props.phoneCode,
+    value: this.props.countryCode,
     options: [ { value: '+48', text: '+48' }, { value: '+1', text: '+1' }, { value: '+44', text: '+44' } ],
     onSelect: (option) => {
-      this.props.changeInputs({ phoneCode: option.value })
+      this.props.changeInputs({ countryCode: option.value })
       sendGaEvent(AREA_CODE_SELECTED_EVENT)
     }
   }
@@ -166,12 +168,12 @@ export function phoneNumberManager() {
     classNames: { container: 'form-input text with-icon phone-body'},
     label: this.langHandler(label),
     children: <SVG name='phone' />,
-    onFocus: () => this.errorResetter('phone'),
+    onFocus: () => errorResetter.call(this, 'phone'),
     onBlur: value => {
       this.phoneNumberManager().validate(value)
       sendGaEvent(PHONE_NUMBER_INPUTTED_EVENT)
     },
-    validate: value => this.phoneValidator(value),
+    validate: value => phoneValidator.call(this, value),
     error: this.langHandler(this.props.phoneError)
   }
 }

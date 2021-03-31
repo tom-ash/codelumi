@@ -4,7 +4,6 @@ import { PAGE_SHOW_TRACK } from '../../../../shared/constants/tracks/tracks.js'
 
 function getRouteByLang({ lang, routes }) {
   const { render } = this.props
-
   const route = getRouteByRender({ render, lang, routes }) || { track: PAGE_SHOW_TRACK }
 
   return { url: getUrlByRoute.call(this, { route, lang }) }

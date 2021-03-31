@@ -1,4 +1,5 @@
 @import '../../../../../styles/themes';
+@import '../../../../../styles/colors';
 @import '../../../../../styles//dimensions.scss';
 @import '../../../../../styles/inputs/form/text.scss';
 @import '../../../../../styles/inputs/form/select.scss';
@@ -27,23 +28,22 @@
   @media #{$LARGE-PHONE} {
     border: none;
   }
-
   .page-header {
     .icon {
       padding-top: 3px;
       width: 24px;
     }
   }
-
-  .hint {
+  h2 {
     font-size: 15px;
-    margin: 10px 0 25px;
-    color: gray;
-    &.create {
-      margin: 30px 0;
-    }
+    color: $TEXT-HEADER-TIER-TWO-COLOR;
   }
-
+  .hint {
+    position: relative;
+    color: $TEXT-HINT-COLOR;
+    margin: 5px 0 30px;
+    font-size: 14px;
+  }
   &.creating-user {
     border-bottom: none;
     padding-bottom: 6px;
@@ -53,7 +53,6 @@
     position: relative;
     margin: 18px auto;
   }
-
   @media #{$SMALL-TABLET} {
     margin: 0 auto;
     padding: $FORM-PADDING-PHONE;
@@ -69,11 +68,10 @@
       line-height: 20px;
     }
     .inner {
-      max-width: 420px;
-      margin: 0 auto;
-      padding: 0 !important;
+      padding: 200px 0;
     }
   }
+  
   .success-container {
     .input-explanation {
       text-align: center;
@@ -101,7 +99,7 @@
     }
   }
   .separation-line {
-    margin: 0;
+    margin: 0 0 20px!important;
   }
   .description {
     text-align: justify;
@@ -176,7 +174,8 @@
   }
   .form-input {
     &.button {
-      margin: 30px auto 0;
+      width: 200px;
+      margin: 40px auto 0;
     }
   }
 }

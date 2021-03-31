@@ -1,20 +1,23 @@
+import { ANNOUNCEMENT_CREATE_FORM_TRACK, USER_CREATE_FORM_TRACK, USER_CREATE_VERIFICATION_TRACK } from '../../../../../../../../shared/constants/tracks/tracks'
+
 export const mapStateToProps = store => {
+  const { lang } = store.app
+  const { authorized } = store.user.authorize.data
+  const { connecting, step } = store.user.create.control
   const {
-    authorized
-  } = store.user.authorize.data
-
-  const {
-    connecting
-  } = store.user.create.control
-
-  const {
-    token
-  } = store.user.create.data
+    [USER_CREATE_FORM_TRACK]: renderForm,
+    [USER_CREATE_VERIFICATION_TRACK]: renderVerification,
+    [ANNOUNCEMENT_CREATE_FORM_TRACK]: renderAnnouncementCreate
+  } = store.render
 
   return {
+    renderForm,
+    renderVerification,
+    renderAnnouncementCreate,
+    lang,
     authorized,
     connecting,
-    token
+    step
   }
 }
 

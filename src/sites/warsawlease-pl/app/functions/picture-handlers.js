@@ -12,7 +12,7 @@ export function compressAndSaveBlobPicture(destination, blob, callback) {
   })
 }
 
-export function savePicture(destination, file, callback) {
+function savePicture(destination, file, callback) {
   fetch(API_URL + destination, {
     method: 'post', headers: { 'Content-Type': 'application/json', 'FileType': file.type }
   })

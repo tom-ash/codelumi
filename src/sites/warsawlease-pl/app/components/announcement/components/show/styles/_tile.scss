@@ -5,7 +5,7 @@
     border: 1px solid $CONTAINER-BORDER-COLOR;
     h2 {
       font-size: 16px;
-      color: $HEADER-COLOR;
+      color: $TEXT-HEADER-TIER-ONE-COLOR;
       margin-bottom: 5px;
     }
     .header-container {
@@ -14,7 +14,7 @@
         font-size: 18px;
         &.category {
           margin-bottom: 10px;
-          color: $HEADER-COLOR;
+          color: $TEXT-HEADER-TIER-ONE-COLOR;
         }
         &.district {
           font-weight: normal;

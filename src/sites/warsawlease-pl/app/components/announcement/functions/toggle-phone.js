@@ -15,13 +15,13 @@ export function togglePhone() {
     eventLabel: id
   })
 
-  fetch(`${API_URL}/announcement/phone/${id}`, {
+  fetch(`${API_URL}/announcement/get-phone-number/${id}`, {
     headers: { 'Content-Type': 'application/json' }
   })
   .then(response => {
     if (response.ok) return response.json()
   })
-  .then(({ phone }) => {
+  .then((phone) => {
     if (isMobile) window.location.href=(`tel:${phone}`)
     this.setState({ phone })
   })

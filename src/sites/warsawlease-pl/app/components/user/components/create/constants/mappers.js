@@ -1,26 +1,16 @@
-import { ANNOUNCEMENT_CREATE_TRACK } from '../../../../../../shared/constants/tracks/tracks'
+import { ANNOUNCEMENT_CREATE_FORM_TRACK } from '../../../../../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = store => {
-  const {
-    lang
-  } = store.app
-  const { publishing: publishingAnnouncement } = store.announcement.create.control
-
-  const {
-    step
-  } = store.user.create.control
-
-  const {
-    [ANNOUNCEMENT_CREATE_TRACK]: creatingAnnouncement
-   } = store.render
+  const { lang } = store.app
+  const { step, success } = store.user.create.control
+  const { [ANNOUNCEMENT_CREATE_FORM_TRACK]: renderAnnouncementCreate } = store.render
 
   return {
     lang,
+    renderAnnouncementCreate,
     authorized: store.user.authorize.data.authorized,
-    success: store.user.create.control.success,
-    step,
-    publishingAnnouncement,
-    creatingAnnouncement
+    success,
+    step
   }
 }
 

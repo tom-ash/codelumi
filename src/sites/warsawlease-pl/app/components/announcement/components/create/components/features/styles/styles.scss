@@ -4,34 +4,21 @@
   position: relative;
   max-width: 360px;
   color: $primary-text-color;
-  padding-right: 24px;
-  .form-input.checkbox.add-switcher {
+  .add-switcher {
     margin-bottom: 4px;
   }
   .box {
     position: relative;
-    border: 1px solid $primary-element-color;
-    background: white;
-    height: 240px;
-    overflow-y: scroll;
-    border-radius: 2.5px;
-    overflow: -moz-scrollbars-vertical; 
-    overflow-y: scroll;
-    overflow-y: scroll;
     width: 100%;
     max-width: 360px;
+    height: 245px;
+    padding: 12px 12px 0;
+    border: 1px solid $FORM-BORDER;
+    overflow: -moz-scrollbars-vertical; 
+    overflow-y: scroll;
   }
   .box-with-scroll {
     position: relative;
     margin-bottom: 24px;
-  }
-  .scroll {
-    position: absolute;
-    top: 0;
-    right: -18px;
-    bottom: 0;
-    font-size: 20px;
-    margin: auto;
-    line-height: 240px;
   }
 }

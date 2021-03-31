@@ -30,7 +30,7 @@ export function getDerivedStateFromProps(props, state) {
   if (props.item === 'phone') {
     return {
       item: 'phone',
-      phoneCode: props.phonephoneCodeCurrentValue,
+      countryCode: props.phonephoneCodeCurrentValue,
       body: props.phoneBodyCurrentValue,
       stage: props.phoneStage
     }

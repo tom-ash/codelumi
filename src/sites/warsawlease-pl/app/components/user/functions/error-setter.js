@@ -1,7 +1,9 @@
 import { errors } from '../constants/errors'
 
-export function errorSetter(field) {
-  const { changeErrors } = this.props
+function errorSetter(field) {
+  const { dispatch } = this.props
 
-  changeErrors({ [field]: errors[field] })
+  dispatch({ type: 'user/create/errors', value: { [field]: errors[field] }})
 }
+
+export default errorSetter

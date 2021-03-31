@@ -1,8 +1,6 @@
 export const mapStateToProps = store => {
-  const {
-    accountType,
-    phoneCode
-  } = store.user.create.inputs
+  const { lang } = store.app
+  const { accountType, email, countryCode } = store.user.create.inputs
 
   const {
     accountType: accountTypeError,
@@ -18,7 +16,8 @@ export const mapStateToProps = store => {
   return {
     lang: store.app.lang,
     accountType,
-    phoneCode,
+    email,
+    countryCode,
     accountTypeError,
     firstNameError,
     lastNameError,
@@ -34,7 +33,7 @@ export const mapDispatchToProps = dispatch => {
   return {
     changeControl: value => dispatch({ type: 'user/create/control', value }),
     changeInputs: value => dispatch({ type: 'user/create/inputs', value }),
-    changeErrors: value => dispatch({ type: 'user/create/errors', value })
+    dispatch
   }
 }
   

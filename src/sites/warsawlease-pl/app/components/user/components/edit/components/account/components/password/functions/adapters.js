@@ -1,6 +1,7 @@
 import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
 import { hashPassword } from '../../../../../../../functions/shared.js'
 import { noError } from '../constants/no-error'
+import { VERIFICATION_API_ROUTE, VERIFY_API_AOUTE, UPDATE_API_ROUTE } from '../constants/api_routes.js'
 
 export function sendEmail() {
   const { lang, connecting, changeControl, changeErrors } = this.props
@@ -9,9 +10,9 @@ export function sendEmail() {
   if (connecting || !this.emailManager('validate', email)) return
 
   changeControl({ passwordConnecting: true })
-  fetch(API_URL + '/user/edit/password/email', {
-    method: 'PUT', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, lang })
+  fetch(API_URL + VERIFICATION_API_ROUTE, {
+    method: 'PUT', headers: { 'Content-Type': 'application/json', 'Lang': lang },
+    body: JSON.stringify({ email })
   })
   .then(response => {
     if (response.status == 200) {
@@ -31,9 +32,9 @@ export function sendVerification() {
   if (connecting || !this.verificationManager('validate', verificationCode)) return
 
   changeControl({ passwordConnecting: true })
-  fetch(API_URL + '/user/edit/password/verification', {
+  fetch(API_URL + VERIFY_API_AOUTE, {
     method: 'PUT', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, verification_code: verificationCode })
+    body: JSON.stringify({ email, verificationCode })
   })
   .then(response => {
     if (response.status == 200) {
@@ -60,9 +61,9 @@ export function sendPassword() {
   if (connecting || !this.passwordManager('validate', password)) return
 
   changeControl({ passwordConnecting: true })
-  fetch(API_URL + '/user/edit/password', {
+  fetch(API_URL + UPDATE_API_ROUTE, {
     method: 'PUT', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, verification_code: verificationCode, password: hashedPassword })
+    body: JSON.stringify({ email, password: hashedPassword, verificationCode })
   })
   .then(response => {
     if (response.status == 200) {

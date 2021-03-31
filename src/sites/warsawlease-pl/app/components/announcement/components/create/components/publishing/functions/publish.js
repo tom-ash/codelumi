@@ -1,19 +1,12 @@
 import scrollToElement from '../../../../../../../../../shared/app/functions/screen/scrollers/to-element.js'
 import { requiredInputs, requiredInputsArray } from '../../../constants/required-inputs'
-import scrollToTop from '../../../../../../../../../shared/app/functions/screen/scrollers/to-top.js'
-import {
-  USER_TRACK,
-  USER_CREATE_TRACK
-} from '../../../../../../../../shared/constants/tracks/tracks'
+import { buildUserObject } from '../../../../../../user/components/create/components/email/components/submit/functions/adapters.js'
+import buildAnouncement from '../../../functions/build-announcement.js'
 
 export function publish() {
-  const {
-    changeControl,
-    authorized,
-    changeRender
-  } = this.props
+  const { authorized, changeControl, changeData } = this.props
 
-  const validationObject = {
+  const announcementObject = {
     category: this.categoryManager().validate(),
     district: this.districtManager().validate(),
     area: this.areaManager().validate(),
@@ -21,19 +14,19 @@ export function publish() {
     map: this.validateMap()
   }
 
-  if (!Object.values(validationObject).every((element => element))) {
+  const announcement = buildAnouncement.call(this)
+  const user = authorized ? {} : buildUserObject.call(this)
+
+  if (!Object.values(announcementObject).every((element => element))) {
     for(let i = 0; i < requiredInputsArray.length; i++) {
-      if (!validationObject[requiredInputsArray[i]]) {
+      if (!announcementObject[requiredInputsArray[i]]) {
         return scrollToElement(document.getElementById(requiredInputs[requiredInputsArray[i]].id), 12, -120)
       }
     }
   }
 
-  scrollToTop()
-  if (authorized) {
-    return changeControl({ step: 'publishing' })
-  }
-  
-  changeControl({ step: 'creating-user' })
-  changeRender({ [USER_TRACK]: true, [USER_CREATE_TRACK]: true })
+  if (!authorized && !user) return scrollToElement(document.getElementById('user-create-email-first-name'), 12, -160)
+
+  changeData({ announcement, user })
+  changeControl({ step: 'publishing' })
 }

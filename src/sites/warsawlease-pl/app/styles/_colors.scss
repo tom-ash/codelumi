@@ -1,25 +1,21 @@
-
-$APP-BACKGROUND-COLOR: #F8F9F9;
-$APP-BACKGROUND-PHONE-COLOR: #E5E7E9;
-
-
-$TEXT-COLOR: #424242;
+$BACKGROUND-APP-COLOR: #F8F9F9;
+$BACKGROUND-PHONE-COLOR: #E5E7E9;
+$TEXT-DEFAULT-COLOR: #424242;
 $TEXT-GRAYED-OUT-COLOR: #999999;
-$HEADER-COLOR: #808B96;
+$TEXT-HINT-COLOR: #616A6B;
+$TEXT-HEADER-TIER-ONE-COLOR: #515A5A;
+$TEXT-HEADER-TIER-TWO-COLOR: #515A5A;
 $ERROR-COLOR: #C0392B;
+$BACKGROUND-ERROR-COLOR: rgba(253, 237, 236, 0.35);
 $SUCCESS-ICON-COLOR: #16A085;
-$FORM-INPUT-ICON-COLOR: #CACFD2;
-$FORM-INPUT-CHEVRON-COLOR: #979A9A;
 $CONTAINER-BORDER-COLOR: #E5E7E9;
 $STEPS-LINE-COLOR: #D7DBDD;
 $STEPS-FILL-COLOR: #BDC3C7;
 $STEPS-CURRENT-COLOR: #626567;
 $STEPS-SUCCESS-COLOR: #229954;
-
-
-
-
-
+$FORM-BORDER: #B3B6B7;//#979A9A;//#D7DBDD;
+$FORM-INPUT-ICON-COLOR: #B3B6B7;//#CACFD2;
+$FORM-INPUT-CHEVRON-COLOR: #979A9A;
 
 // DEPRECATED
 $primary-element-color: #34495E;
@@ -54,11 +50,11 @@ $value-color: #7DCEA0;
 $primary-error-color: #C0392B;
 $input-color: #626567;
 $input-border-color: #979A9A;
-$input-hover-border-color: $hover-color;
-$input-focus-border-color: $focus-color;
-$input-value-border-color: $value-color;
-$input-error-border-color: $primary-error-color;
-$button-index-background-color: #CACFD2;
+
+
+
+
+
 $button-index-color: #FBFCFC;
 $untached-color: #2E4053;
 $touched-color: #212F3D;

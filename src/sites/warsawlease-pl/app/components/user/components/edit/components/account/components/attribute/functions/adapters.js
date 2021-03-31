@@ -14,13 +14,13 @@ export function sendNewValue(value) {
 
   changeControl({ [`${inputName}Connecting`]: true })
 
-  fetch(API_URL + `/user/edit/${api_suffix}`, {
+  fetch(API_URL + `/user/update/generic-attr/${api_suffix}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
       access_token: getAccessToken()
     },
-    body: JSON.stringify({ [`${inputName}`]: value })
+    body: JSON.stringify({ value })
   })
   .then(response => {
     if (response.status == 200) {

@@ -1,27 +1,18 @@
 .form-input {
   &.checkbox {
     position: relative;
-    margin: 0;
-    padding: 6px 12px;
-    transition: .24s;
+    margin-bottom: 12px;
     .input {
+      width: 16px;
+      height: 16px;
+      border: 1px solid $border-color;
+      border-radius: 2px;
+      outline: none;
+      transition: 0.18s;
+      cursor: pointer;
       &.hover, &.focus {
         box-shadow: 0 0 0 1px $touched-border-color;
       }
-      transition: .2s ease-in-out;
-      border: 1px solid $border-color;
-      outline: none;
-      transition: 0.18s;
-      position: absolute;
-      cursor: pointer;
-      width: 16px;
-      height: 16px;
-      cursor: pointer;
-      border-radius: 2px;
-      top: 8px;
-      right: 0;
-      bottom: 0;
-      left: 12px;
       .tick {
         width: 5px;
         height: 10px;
@@ -33,15 +24,16 @@
       }
     }
     .label {
+      position: absolute;
+      top: 0;
+      left: 15px;
       color: $untached-color;
+      margin-left: 15px;
+      cursor: pointer;
+      font-size: 15px;
       &.focus, &.hover, &.value {
         color: $touched-color;
       }
-      margin-left: 28px;
-      cursor: pointer;
-      font-size: 15px;
-      line-height: 20px;
-      text-align: justify;
       &.checked {
         font-weight: bold;
       }

@@ -56,9 +56,9 @@ function iconProvider() {
 }
 
 function currentValueProvider() {
-  const { item, currentValue, phoneCode, body } = this.state
+  const { item, currentValue, countryCode, body } = this.state
 
-  if (item === 'phone') return phoneCode + ' ' + body
+  if (item === 'phone') return countryCode + ' ' + body
   if (item === 'password') return <SVG name='eyeSlash' />
   return currentValue
 }

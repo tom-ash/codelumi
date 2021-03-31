@@ -7,6 +7,8 @@ import { verificationManager, buttonManager } from './functions/manager'
 import { verify } from './functions/adapter'
 import { monit } from './constants/monit'
 import AppContext from '../../../../../../../../constants/context.js'
+import Header from '../../../../../../../support/components/header/header'
+import { PAGE_HEADER } from './constants/texts.js'
 
 class UserCreateEmailVerify extends React.Component {
   constructor(props) {
@@ -22,6 +24,7 @@ class UserCreateEmailVerify extends React.Component {
   render() {
     return (
       <div id='user-create-email-verify'>
+        <Header tier={1} text={this.langHandler(PAGE_HEADER)} svg='userPlus' />
         <div className='monit'>
           {this.langHandler(monit)}
         </div>

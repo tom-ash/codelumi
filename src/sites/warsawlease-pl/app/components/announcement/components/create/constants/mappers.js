@@ -1,35 +1,18 @@
-import { ANNOUNCEMENT_EDIT_TRACK } from '../../../../../../shared/constants/tracks/tracks'
+import { ANNOUNCEMENT_CREATE_FORM_TRACK, ANNOUNCEMENT_CREATE_VERIFICATION_TRACK, ANNOUNCEMENT_CREATE_SUCCESS_TRACK, ANNOUNCEMENT_EDIT_TRACK } from '../../../../../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = store => {
+  const { lang, isMobile } = store.app
   const {
-    lang,
-    isMobile
-  } = store.app
-
-  const {
+    [ANNOUNCEMENT_CREATE_FORM_TRACK]: renderForm,
+    [ANNOUNCEMENT_CREATE_VERIFICATION_TRACK]: renderVerification,
+    [ANNOUNCEMENT_CREATE_SUCCESS_TRACK]: renderSuccess,
     [ANNOUNCEMENT_EDIT_TRACK]: renderEdit
   } = store.render
-  const {
-    authorized,
-    admin
-  } = store.user.authorize.data
-  const {
-    control,
-    inputs,
-    errors,
-    data
-  } = store.announcement.create
-
-  const {
-    step,
-    connecting,
-    showDescription,
-    showAvilabilityDate
-  } = control
-
-  const {
-    id
-  } = data
+  const { authorized, admin } = store.user.authorize.data
+  const { control, inputs, errors, data } = store.announcement.create
+  const { step, connecting, savingAnnouncement, showDescription, showAvilabilityDate } = control
+  const { announcement, user } = data
+  const { accountType, email } = store.user.create.inputs
 
   const {
     category,
@@ -52,16 +35,17 @@ export const mapStateToProps = store => {
     englishDescription
   } = inputs
 
-  const {
-    token
-  } = store.user.create.data
-
   return {
+    renderForm,
+    renderVerification,
+    renderSuccess,
     renderEdit,
+    accountType,
+    email,
     lang,
     step,
     connecting,
-    id,
+    savingAnnouncement,
     category,
     district,
     area,
@@ -85,7 +69,9 @@ export const mapStateToProps = store => {
     isMobile,
     authorized,
     admin,
-    showAvilabilityDate
+    showAvilabilityDate,
+    announcement,
+    user
   }
 }
     
@@ -102,10 +88,11 @@ export const mapDispatchToProps = dispatch => {
     resetControl: value => dispatch({ type: 'announcement/create/control/reset', value }),
     resetInputs: value => dispatch({ type: 'announcement/create/inputs/reset', value }),
     resetErrors: value => dispatch({ type: 'announcement/create/errors/reset', value }),
-    resetUserCreateControl: value => dispatch({ type: 'user/create/control/reset', value }),
-    resetUserCreateInputs: value => dispatch({ type: 'user/create/inputs/reset', value }),
-    resetUserCreateData: value => dispatch({ type: 'user/create/data/reset', value }),
-    resetUserCreateErrors: value => dispatch({ type: 'user/create/errors/reset', value })
+    // resetUserCreateControl: value => dispatch({ type: 'user/create/control/reset', value }),
+    // resetUserCreateInputs: value => dispatch({ type: 'user/create/inputs/reset', value }),
+    // resetUserCreateData: value => dispatch({ type: 'user/create/data/reset', value }),
+    // resetUserCreateErrors: value => dispatch({ type: 'user/create/errors/reset', value }),
+    dispatch
   }
 }
     

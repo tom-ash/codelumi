@@ -25,7 +25,7 @@ const control = {
 }
 
 const inputs = {
-  phoneCode: null
+  countryCode: null
 }
 
 const errors = {
@@ -47,7 +47,7 @@ const data = {
   lastName: null,
   businessName: null,
   taxNumber: null,
-  phoneBody: null,
+  phoneNumber: null,
   email: null
 }
 

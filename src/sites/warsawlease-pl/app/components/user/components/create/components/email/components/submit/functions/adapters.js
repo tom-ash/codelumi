@@ -1,27 +1,30 @@
 import { hashPassword } from '../../../../../../../functions/shared.js'
-import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
 import { parser as consentsParser } from '../../../../consents/functions/parser'
+import { accountTypeValidator, nameValidator, phoneValidator, emailValidator, passwordValidator } from '../../inputs/functions/validators.js'
+import termsAndPrivacyConsentValidator from '../../../../consents/functions/validators.js'
 
-export function prepareUserAccount() {
+export function buildUserObject() {
+  const { dispatch } = this.props
   const userObject = prepareUserObject.call(this)
   if (validateUserObject.call(this, userObject)) {
-    this.props.changeControl({ connecting: true })
+    dispatch({ type: 'user/create/control', value: { connecting: true } })
     userObject.password = hashPassword(userObject.password, userObject.email)
     consentsParser.call(this, userObject)
-    createProspectiveUser.call(this, userObject)
+    return userObject
   }
 }
 
 function prepareUserObject() {
-  const { accountType } = this.props
+  const { accountType, email } = this.props
+  const termsAndPrivacyConsent = document.getElementById('user-create-consents-terms-and-privacy').checked
 
   let userObject = {
     accountType,
-    phoneCode: document.getElementById('user-create-email-area-code').value,
-    phone: document.getElementById('user-create-email-phone-number').value,
-    email: document.getElementById('user-create-email-email-address').value.toLowerCase(),
+    countryCode: document.getElementById('user-create-email-area-code').value,
+    phoneNumber: document.getElementById('user-create-email-phone-number').value,
+    email: (email || '').toLowerCase(),
     password: document.getElementById('user-create-email-password').value,
-    termsAndPrivacyConsent: document.getElementById('user-create-consents-terms-and-privacy').checked,
+    termsAndPrivacyConsent,
     ...accountType === 'private' ? {
       firstName: document.getElementById('user-create-email-first-name').value
     } : {
@@ -36,41 +39,17 @@ function validateUserObject(userObject) {
   const { accountType } = this.props
 
   const validationArray = [
-    this.accountTypeValidator(userObject.accountType),
-    this.phoneValidator(userObject.phone),
-    this.emailValidator(userObject.email),
-    this.passwordValidator(userObject.password),
-    this.termsAndPrivacyConsentValidator(userObject.termsAndPrivacyConsent),
+    accountTypeValidator.call(this, userObject.accountType),
+    phoneValidator.call(this, userObject.phoneNumber),
+    emailValidator.call(this, userObject.email),
+    passwordValidator.call(this, userObject.password),
+    termsAndPrivacyConsentValidator.call(this, userObject.termsAndPrivacyConsent),
     ...accountType === 'private' ? [
-      this.nameValidator('firstName', userObject.firstName)
-    ] : [ this.nameValidator('businessName', userObject.businessName) ]
+      nameValidator.call(this, 'firstName', userObject.firstName)
+    ] : [nameValidator.call(this, 'businessName', userObject.businessName)]
   ]
 
   return validationArray.every((element => element))
 }
 
-function createProspectiveUser(userObject) {
-  const {
-    changeControl,
-    changeData
-  } = this.props
 
-  fetch(API_URL + '/prospective_users', {
-    method: "POST",
-    headers: {
-      'Content-Type': 'application/json',
-      lang: this.props.lang
-    },
-    body: JSON.stringify(userObject)
-  })
-  .then(response => {
-    if (response.status == 201) return response.json()
-    throw new Error('Something went wrong.')
-  },
-  networkError => console.dir(networkError.message))
-  .then((json) => {
-    changeData({ token: json.token })
-    changeControl({ connecting: false, step: 'confirmation' })
-  })
-  .catch(e => console.dir(e))
-}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { VISITOR_TERMS_OF_SERVICE_TRACK, VISITOR_PRIVACY_POLICY_TRACK } from '../../../../../../../../shared/constants/tracks/tracks'
-import changeRouteWithHref from '../../../../../../../functions/routes/changers/route-with-href.js'
+import getHrefByTrackAndLang from '../../../../../../../functions/routes/getters/href-by-track-and-lang.js'
 
 export function textProvider({ pureText }) {
   if (pureText) {
@@ -12,27 +12,35 @@ export function textProvider({ pureText }) {
     }
   }
 
-  const { changeRoute } = this.context
   const { lang } = this.props
-
-  const changeRouteToTermsOfService = e => {
-    const track = VISITOR_TERMS_OF_SERVICE_TRACK
-
-    changeRouteWithHref({ track, lang, changeRoute })
-  }
-
-  const changeRouteToPrivacyPolicy = e => {
-    const track = VISITOR_PRIVACY_POLICY_TRACK
-
-    changeRouteWithHref({ track, lang, changeRoute })
-  }
+  const termsAndServiceHref = getHrefByTrackAndLang({ track: VISITOR_TERMS_OF_SERVICE_TRACK, lang })
+  const privacyPolicyHref = getHrefByTrackAndLang({ track: VISITOR_PRIVACY_POLICY_TRACK, lang })
 
   return (
     {
-      termsAndPrivacyConsent: this.langHandler({
-        pl: <span>Akceptuję <u className='link' onClick={changeRouteToTermsOfService}>Regulamin</u> i&nbsp;<u className='link' onClick={changeRouteToPrivacyPolicy}>Politykę Prywatności</u>.</span>,
-        en: <span>I accept the <u className='link' onClick={changeRouteToTermsOfService}>Terms and Conditions</u> and the <u className='link' onClick={changeRouteToPrivacyPolicy}>Privacy Policy</u>.</span>
-      })
+      termsAndPrivacyConsent: (
+        <span>
+          {this.langHandler({ pl: 'Akceptuję', en: 'I accept' })}&nbsp;
+          <a
+            className='link'
+            href={termsAndServiceHref}
+            target='_blank'
+            onClick={e => e.stopPropagation()}
+          >
+          {this.langHandler({ pl: 'Regulamin', en: 'the Terms of Service' })}
+        </a>
+        &nbsp;{this.langHandler({ pl: 'i', en: 'and' })}&nbsp;
+        <a
+          className='link'
+          href={privacyPolicyHref}
+          target='_blank'
+          onClick={e => e.stopPropagation()}
+        >
+          {this.langHandler({ pl: 'Politykę Prywatności', en: 'the Privacy Policy' })}
+        </a>
+        .
+      </span>
+      )
     }
   )
 }

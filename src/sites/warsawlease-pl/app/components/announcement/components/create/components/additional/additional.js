@@ -7,7 +7,6 @@ import langHandler from '../../../../../../functions/lang-handler'
 import { onSelectHandler } from './functions/on-select-handler'
 import { floorsProvider } from './functions/floors-provider'
 import { getRentAmounts } from '../../functions/get-rent-amounts'
-import { OPTIONAL } from '../../constants/texts.js'
 
 class AnnouncementCreateAdditional extends React.Component {
   constructor(props) {
@@ -26,7 +25,6 @@ class AnnouncementCreateAdditional extends React.Component {
   render() {
     return (
       <div id='announcement-create-additional' className='section'>
-        <p className='hint'>{this.langHandler(OPTIONAL)}</p>
         <div className='rent-inputs-container'>
           <ManagedText {...this.rentAmountManager()}/>
           <ManagedSelect {...this.rentCurrencyManager()}/>

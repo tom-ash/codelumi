@@ -17,14 +17,12 @@ class AnnouncementCreateSuccess extends React.Component {
   static contextType = AppContext
 
   render() {
-    const {
-      langHandler,
-      isMobile
-    } = this.props
+    const { isMobile, langHandler } = this.props
 
     return (
       <div className='success-container'>
-        <div className='input-explanation'>
+        Gratulacje! Ogłoszenie zostało dodane!
+        {/* <div className='input-explanation'>
           {langHandler({
             pl: 'Ogłoszenie zostało dodane.',
             en: 'The Announcement has been added.'
@@ -51,7 +49,7 @@ class AnnouncementCreateSuccess extends React.Component {
             })}
           </div>
         </div>
-        <ManagedLink {...this.goToAnnouncementManager()} />
+        <ManagedLink {...this.goToAnnouncementManager()} /> */}
       </div>
     )
   }

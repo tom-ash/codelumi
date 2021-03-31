@@ -2,9 +2,6 @@
   position: relative;
   overflow-y: hidden;
   .form-input {
-    &.text, &.select {
-      padding-bottom: 44px;
-    }
     &.radio {
       margin-bottom: 12px;
     }
@@ -16,6 +13,6 @@
     }
   }
   .separation-line {
-    margin-top: 24px;
+    margin: 20px 0;
   }
 }

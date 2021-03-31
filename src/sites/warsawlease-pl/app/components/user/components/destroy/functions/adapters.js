@@ -2,6 +2,7 @@ import API_URL from '../../../../../../shared/constants/urls/api.js'
 import { getAccessToken } from '../../authorize/components/tokens/functions/get-tokens'
 import { ROOT_TRACK } from '../../../../../../shared/constants/tracks/tracks'
 import changeRouteWithHref from '../../../../../functions/routes/changers/route-with-href.js'
+import { VERIFY_API_ROUTE_DATA, DELETE_API_ROUTE_DATA } from '../constants/api_route_data.js'
 
 export function sendEmail() {
   const {
@@ -13,13 +14,15 @@ export function sendEmail() {
 
   if (connecting) return
 
+  const { method, route } = VERIFY_API_ROUTE_DATA
+
   changeControl({ connecting: true })
   
-  fetch(API_URL + '/user/destroy/email', {
-    method: 'PUT',
+  fetch(API_URL + route, {
+    method,
     headers: {
       'Content-Type': 'application/json',
-      access_token: getAccessToken(),
+      'Access-Token': getAccessToken(),
       lang
     },
     body: JSON.stringify({ email })
@@ -41,12 +44,11 @@ export function destroy() {
 
   changeControl({ connecting: true })
 
-  fetch(API_URL + '/user/destroy', {
-    headers: {
-      'Content-Type': 'application/json',
-      access_token: getAccessToken()
-    },
-    method: 'DELETE', 
+  const { method, route } = DELETE_API_ROUTE_DATA
+
+  fetch(API_URL + route, {
+    method,
+    headers: { 'Content-Type': 'application/json', 'Access-Token': getAccessToken() },
     body: JSON.stringify({ verificationCode })
   })
   .then(response => {

@@ -2,7 +2,8 @@
 @import '../components/scaffold/components/header/styles/styles.scss';
 @import '../components/scaffold/components/footer/styles/styles.scss';
 @import './media-breakpoints';
-@import './themes';
+@import './themes.scss';
+@import './colors.scss';
 @import '../components/support/components/spinner/components/windmill/styles/styles.scss';
 @import './headers/headers';
 
@@ -41,9 +42,8 @@ input[type=number] {
 .form-input {
   .sqm {
     position: absolute;
-    top: 8px;
-    right: 10px;
-    line-height: 45px;
+    top: 34px;
+    right: 14px;
     opacity: 0;
     transition: .2s opacity ease-in;
     .sq {
@@ -75,14 +75,14 @@ input:-webkit-autofill:active  {
 
 .separation-line {
   height: 1px;
-  background: lightgray;
+  background: #EAEDED;
 }
 
 body {
   font-family: 'Helvetica Neue', 'Arial', sans-serif;
-  background: $APP-BACKGROUND-COLOR;
+  background: $BACKGROUND-APP-COLOR;
   @media #{$LARGE-PHONE} {
-    background: $APP-BACKGROUND-PHONE-COLOR
+    background: $BACKGROUND-PHONE-COLOR
   }
 }
 

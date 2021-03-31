@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { ManagedCheckbox } from 'managed-inputs'
-import { termsAndPrivacyConsentValidator } from './functions/validators'
 import { containerClassHandler } from './functions/conteiner-class-handler'
 import { errorTextProvider } from './functions/error-text-provider'
 import langHandler from '../../../../../../functions/lang-handler'
@@ -17,7 +16,6 @@ class UserCreateConsents extends React.Component {
     this.containerClassHandler = containerClassHandler.bind(this)
     this.errorTextProvider = errorTextProvider.bind(this)
     this.langHandler = langHandler.bind(this)
-    this.termsAndPrivacyConsentValidator = termsAndPrivacyConsentValidator.bind(this)
     this.textProvider = textProvider.bind(this)
   }
 

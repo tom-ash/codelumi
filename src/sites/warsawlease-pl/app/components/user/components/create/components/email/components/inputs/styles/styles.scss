@@ -1,37 +1,37 @@
 @import '../../../../../../../../../styles/inputs/form/svgs.scss';
 
 .user-create-email-inputs-container {
-  max-width: 360px;
-  .input-explanation-user {
-    margin-top: 50px;
-    margin-bottom: 20px;
+  h2 {
     font-size: 15px;
-    line-height: 20px;
-    color: #5F6A6A;
+    color: $TEXT-HEADER-TIER-TWO-COLOR;
   }
-
   .form-input {
+    max-width: 360px;
     &.phone-country-code {
       position: absolute;
-      width: 120px;
-      padding-left: 35px;
+      margin: 0;
+      width: 80px;
       .input {
         padding-left: 15px;
+        border-right: none;
       }
     }
     &.phone-body {
+      max-width: 280px;
       &.text {
-        margin-left: 130px;
+        margin-left: 80px;
         padding-left: 0;  
         .input {
-          padding-left: 5px;
+          padding-left: 12px;
         }
         .label {
-          left: 5px;
+          position: relative;
+          left: -80px!important;
         }
-      }
-      svg {
-        left: -130px;
+        .error-container {
+          position: relative;
+          left: -80px!important;
+        }
       }
     }
   }

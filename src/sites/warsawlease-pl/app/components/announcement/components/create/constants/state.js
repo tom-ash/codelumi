@@ -59,7 +59,8 @@ export const inputs = {
 export const data = {
   netRentAmountPerSqm: null,
   grossRentAmount: null,
-  grossRentAmountPerSqm: null
+  grossRentAmountPerSqm: null,
+  user: null
 }
 
 export const errors = {

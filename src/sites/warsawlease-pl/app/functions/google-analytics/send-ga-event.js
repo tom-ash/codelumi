@@ -1,4 +1,4 @@
-export function sendGaEvent(
+function sendGaEvent(
   event,
   eventLabel
 ) {
@@ -12,3 +12,5 @@ export function sendGaEvent(
     })
   } catch {}
 }
+
+export default sendGaEvent

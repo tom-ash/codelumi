@@ -1,4 +1,4 @@
-import { ANNOUNCEMENT_CREATE_URLS, ANNOUNCEMENT_INDEX_MY_URLS, USER_EDIT_URLS } from '../../../../../../shared/constants/routes/urls'
+import { ANNOUNCEMENT_CREATE_FORM_URLS, ANNOUNCEMENT_INDEX_MY_URLS, USER_EDIT_URLS } from '../../../../../../shared/constants/routes/urls'
 import { ANNOUNCEMENT_CREATE_TITLES, ANNOUNCEMENT_INDEX_MY_TITLES, USER_EDIT_TITLES } from '../../../../../../shared/constants/routes/titles'
 import { ANNOUNCEMENT_CREATE_LABELS } from '../../../../../../shared/constants/routes/labels'
 import { deauthorizeUser } from '../../authorize/functions/adapters'
@@ -7,7 +7,7 @@ import CLIENT_URL from '../../../../../../shared/constants/urls/client.js'
 
 export function addAnnouncementManager({ hrefLang }) {
   const { changeRoute } = this.context
-  const href = `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_CREATE_URLS)}`
+  const href = `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_CREATE_FORM_URLS)}`
 
   return {
     href,

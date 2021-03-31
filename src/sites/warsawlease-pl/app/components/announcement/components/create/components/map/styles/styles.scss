@@ -2,11 +2,9 @@
 
 #announcement-create-map {
   position: relative;
-  padding: 40px 0;
+  padding-bottom: 20px;
   .hint {
-    font-size: 15px;
-    color: #515A5A;
-    margin-bottom: 30px;
+    color: #424949!important;
   }
   #google-map-container {
     height: 400px;
@@ -19,17 +17,13 @@
       height: 100%;
       border: 1px solid #ABB2B9;
       &.map-error {
-        border: 1px solid #E74C3C;
+        border: 1px solid $ERROR-COLOR;
       }
     }
   }
-  
-
   .error {
-    text-align: center;
-    font-size: 13px;
-    color: #E74C3C;
-    max-width: 480px;
-    padding-top: 4px;
+    font-size: 14px;
+    color: $ERROR-COLOR;
+    padding-top: 5px;
   }
 }

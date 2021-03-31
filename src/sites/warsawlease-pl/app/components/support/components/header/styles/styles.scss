@@ -7,13 +7,13 @@
   .icon {
     position: absolute;
     svg {
-      fill: $HEADER-COLOR;
+      fill: $TEXT-HEADER-TIER-ONE-COLOR;
     }
   }
   h1 {
     padding-left: 35px;
-    color: $HEADER-COLOR;
-    margin-bottom: 35px;
+    color: $TEXT-HEADER-TIER-ONE-COLOR;
+    margin-bottom: 20px;
     font-size: 15px;
   }
 }

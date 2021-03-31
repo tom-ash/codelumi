@@ -1,5 +1,6 @@
-import { sendGaEvent } from '../../../../../../../functions/google-analytics/send-ga-event'
+import sendGaEvent from '../../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from '../constants/analytics/events'
+import termsAndPrivacyConsentValidator from './validators.js'
 
 const {
   CONSENTS_CHECKED_EVENT,
@@ -19,6 +20,6 @@ export function termsAndPrivacyConsentManager() {
       const analyticEvent = value ? CONSENTS_CHECKED_EVENT : CONSENTS_UNCHECKED_EVENT
       sendGaEvent(analyticEvent)
     },
-    validate: value => this.termsAndPrivacyConsentValidator(value)
+    validate: value => termsAndPrivacyConsentValidator.call(this, value)
   }
 }

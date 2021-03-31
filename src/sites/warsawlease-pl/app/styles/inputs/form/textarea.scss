@@ -10,8 +10,8 @@
       resize: none;
       padding: 4px;
       line-height: 20px;
-      border-radius: 2px;
       background: white;
+      border: 1px solid $FORM-BORDER;
     }
     .label {
       font-size: 14px;
@@ -24,6 +24,6 @@
       top: -20px;
       right: 0px;
       font-size: 14px;
-  }
+    }
   }
 }

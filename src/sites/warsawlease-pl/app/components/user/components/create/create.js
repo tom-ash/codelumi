@@ -7,7 +7,6 @@ import langHandler from '../../../../functions/lang-handler'
 import { UserCreateSteps } from './components/steps/steps'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import Header from '../../../support/components/header/header'
 
 class UserCreate extends React.Component {
   constructor(props) {
@@ -17,17 +16,14 @@ class UserCreate extends React.Component {
   }
 
   render() {
-    const { step, creatingAnnouncement } = this.props
-    const headerText = this.langHandler({ pl: 'Zarejestruj', en: 'Register' })
-    const classNames = []
+    const { step, renderAnnouncementCreate } = this.props
 
-    if (creatingAnnouncement) classNames.push('creating-announcement')
+    if (renderAnnouncementCreate) return <UserCreateEmail />
 
     return (
       <>
-        {!creatingAnnouncement && <UserCreateSteps step={step} />}
-        <div id='user-create' className={classNames.join(' ')}>
-          {!creatingAnnouncement && <Header tier={1} text={headerText} svg='userPlus' />}
+        {!renderAnnouncementCreate && <UserCreateSteps step={step} />}
+        <div id='user-create'>
           <UserCreateEmail />
         </div>
       </>

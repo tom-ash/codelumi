@@ -9,12 +9,11 @@ export const control = {
 
 export const inputs = {
   accountType: 'private',
-  phoneCode: '+48',
+  email: null,
+  firstName: null,
+  countryCode: '+48',
+  phoneNumber: null,
   termsAndPrivacyConsent: false
-}
-
-export const data = {
-  token: null
 }
 
 export const errors = {
