@@ -1,4 +1,4 @@
-import { getAccessToken } from '../../../../../../app/functions/tokens/getters/get-tokens.js'
+import getAccessToken from '../../../../../../app/functions/tokens/getters/get-tokens.js'
 import buildPageEditUrl from '../../edit/functions/build-page-edit-url.js'
 
 export function save() {

@@ -6,18 +6,8 @@ import {
 } from '../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = store => {
-  const {
-    lang,
-    device,
-    path,
-    scrollY,
-    scripts,
-    urlDataSynced
-  } = store.app
-  const {
-    statisticsConsent,
-    marketingConsent
-  } = store.visitor.legal.privacy.settings
+  const { lang, device, path, scrollY, scripts, urlDataSynced } = store.app
+  const { statisticsConsent, marketingConsent } = store.visitor.legal.privacy.settings
   const {
     data: announcementCreateData
   } = store.announcement.create
@@ -65,11 +55,7 @@ export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
     changeRender: value => dispatch({ type: 'render', value }),
-    changeUserAuthorizeData: value => dispatch({ type: 'user/authorize/data', value }),
     changePageShowData: value => dispatch({ type: 'page/show/data', value }),
-    changeAnnouncementIndexData: value => dispatch({ type: 'announcement/index/data', value }),
-    changeAnnouncementIndexControl: value => dispatch({ type: 'announcement/index/control', value }),
-    changeAnnouncementShowData: value => dispatch({ type: 'announcement/show/data', value }),
     changeUserEditData: value => dispatch({ type: 'user/edit/data', value }),
     changeVisitorPrivacySettings: value => dispatch({ type: 'visitor/privacy/settings', value }),
     dispatch

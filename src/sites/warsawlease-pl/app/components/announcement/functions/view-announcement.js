@@ -6,10 +6,8 @@ export function viewAnnouncement(id) {
   if (views.indexOf(id) !== -1) return
   sessionStorage.setItem('views', `${views},${id}`)
   
-  fetch(`${API_URL}/announcements/view/${id}`, {
+  fetch(`${API_URL}/announcement/update/views/${id}`, {
     method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-    }
+    headers: { 'Content-Type': 'application/json' }
   })
 }

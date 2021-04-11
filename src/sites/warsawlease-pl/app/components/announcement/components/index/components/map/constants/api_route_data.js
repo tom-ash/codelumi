@@ -1,0 +1,1 @@
+export const GET_TILE_API_ROUTE = { method: 'GET', route: 'announcement/get-tile' }

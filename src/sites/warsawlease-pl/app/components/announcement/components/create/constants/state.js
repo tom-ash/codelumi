@@ -23,7 +23,7 @@ export const control = {
   availabilityDateFocus: false,
   calendarMouseOver: false,
   addingPicture: false,
-  showAvilabilityDate: false,
+  addAvailabilityDate: false,
   showDescription: false,
   step: 'form'
 }

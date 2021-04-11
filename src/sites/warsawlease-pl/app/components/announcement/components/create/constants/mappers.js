@@ -10,7 +10,7 @@ export const mapStateToProps = store => {
   } = store.render
   const { authorized, admin } = store.user.authorize.data
   const { control, inputs, errors, data } = store.announcement.create
-  const { step, connecting, savingAnnouncement, showDescription, showAvilabilityDate } = control
+  const { step, connecting, savingAnnouncement, showDescription } = control
   const { announcement, user } = data
   const { accountType, email } = store.user.create.inputs
 
@@ -32,14 +32,12 @@ export const mapStateToProps = store => {
     features,
     furnishings,
     polishDescription,
-    englishDescription
+    englishDescription,
+    addAvailabilityDate
   } = inputs
 
   return {
-    renderForm,
-    renderVerification,
-    renderSuccess,
-    renderEdit,
+    renderForm, renderVerification, renderSuccess, renderEdit,
     accountType,
     email,
     lang,
@@ -69,7 +67,7 @@ export const mapStateToProps = store => {
     isMobile,
     authorized,
     admin,
-    showAvilabilityDate,
+    addAvailabilityDate,
     announcement,
     user
   }
@@ -79,19 +77,14 @@ export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
     changeRender: value => dispatch({ type: 'render', value }),
-    changeUserAuthorizeData: value => dispatch({ type: 'user/authorize/data', value }),
-    changeAnnouncementShowData: value => dispatch({ type: 'announcement/show/data', value }),
     changeControl: value => dispatch({ type: 'announcement/create/control', value }),
-    changeData: value => dispatch({ type: 'announcement/create/data', value }),
     changeInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
     changeErrors: value => dispatch({ type: 'announcement/create/errors', value }),
+    changeData: value => dispatch({ type: 'announcement/create/data', value }),
     resetControl: value => dispatch({ type: 'announcement/create/control/reset', value }),
     resetInputs: value => dispatch({ type: 'announcement/create/inputs/reset', value }),
     resetErrors: value => dispatch({ type: 'announcement/create/errors/reset', value }),
-    // resetUserCreateControl: value => dispatch({ type: 'user/create/control/reset', value }),
-    // resetUserCreateInputs: value => dispatch({ type: 'user/create/inputs/reset', value }),
-    // resetUserCreateData: value => dispatch({ type: 'user/create/data/reset', value }),
-    // resetUserCreateErrors: value => dispatch({ type: 'user/create/errors/reset', value }),
+    resetData: value => dispatch({ type: 'announcement/create/data/reset', value }),
     dispatch
   }
 }

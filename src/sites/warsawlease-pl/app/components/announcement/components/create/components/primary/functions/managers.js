@@ -107,7 +107,6 @@ export function areaManager() {
     onChange: value => this.props.changeInputs({ area: value }),
     onBlur: () => {
       this.areaManager().validate()
-      this.getRentAmounts()
       sendGaEvent(AREA_INPUTTED_EVENT)
     },
     validate: () => this.handleErrorOnValidate('area', this.props.area),

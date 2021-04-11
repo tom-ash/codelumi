@@ -1,11 +1,11 @@
 export const CREATE_API_ROUTE_DATA = {
-  method: 'POST', route: '/announcement/create'
+  method: 'POST', route: '/announcement/create/as-user'
 }
 
 export const CREATE_WITH_USER_API_ROUTE_DATA = {
-  method: 'POST', route: '/announcement/create-with-user'
+  method: 'POST', route: '/announcement/create/with-user'
 }
 
 export const UPDATE_API_ROUTE_DATA = {
-  method: 'PUT', route: '/announcement/update'
+  method: 'PUT', route: '/announcement/update/form'
 }

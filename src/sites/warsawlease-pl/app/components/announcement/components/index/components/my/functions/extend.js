@@ -1,12 +1,15 @@
 import API_URL from '../../../../../../../../shared/constants/urls/api.js'
-import { getAccessToken } from '../../../../../../user/components/authorize/components/tokens/functions/get-tokens'
+import getAccessToken from '../../../../../../user/components/authorize/components/tokens/functions/get-tokens'
+import { UPDATE_ACTIVE_UNTIL_ROUTE_DATA } from '../constants/api_route_data.js'
 
 export function extend(announcement, index) {
   if (this.props.connecting) return
   this.props.changeControl({ connecting: true })
   const access_token = getAccessToken()
-  fetch(`${API_URL}/announcements/extend/${announcement.id}`, {
-    method: 'PUT',
+  const { method, route } = UPDATE_ACTIVE_UNTIL_ROUTE_DATA
+
+  fetch(`${API_URL}/${route}/${announcement.id}`, {
+    method,
     headers: { 'Content-Type': 'application/json',
     access_token
   }

@@ -39,7 +39,6 @@ export function rentAmountManager() {
     label,
     onChange: value => changeInputs({ [rentAmountType]: value }),
     onBlur: () => {
-      this.getRentAmounts()
       sendGaEvent(RENT_INPUTTED_EVENT)
     }
   }

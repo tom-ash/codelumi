@@ -43,7 +43,6 @@ class AnnouncementIndexMap extends React.Component {
       miniListFarthestScrollTop,
       miniListFarthestScrollLeft,
       changeApp,
-      changeAnnouncementShowData,
       renderCatalogue
     } = this.props
 
@@ -105,7 +104,6 @@ class AnnouncementIndexMap extends React.Component {
               closeButtonOnClick={() => this.props.changeData({ tileId: null, tile: null })}
               isMobile={isMobile}
               changeApp={changeApp}
-              changeData={changeAnnouncementShowData}
             />
           </div>}
         </div>

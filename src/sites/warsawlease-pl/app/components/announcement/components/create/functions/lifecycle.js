@@ -1,15 +1,18 @@
 import createAnnouncement from './create-announcement.js'
 import savePicture from './save-picture.js'
+import prepareAnnouncement from './prepare-announcement.js'
 
 export function componentDidMount() {
-  const { renderEdit } = this.props
+  const { announcement, renderEdit } = this.props
 
-  if (renderEdit) this.getAnnouncement()
+  if (renderEdit) announcement && prepareAnnouncement.call(this)
 }
 
 export function componentDidUpdate(prevProps) {
-  const { savingAnnouncement: prevSavingAnnouncement } = prevProps
-  const { connecting, savingAnnouncement, step, blobs, changeControl } = this.props
+  const { savingAnnouncement: prevSavingAnnouncement, announcement: prevAnnouncement } = prevProps
+  const { connecting, savingAnnouncement, step, blobs, announcement, changeControl } = this.props
+
+  if (!prevAnnouncement && announcement) return prepareAnnouncement.call(this)
 
   if (step !== 'publishing') return
 
@@ -22,9 +25,10 @@ export function componentDidUpdate(prevProps) {
 }
 
 export function componentWillUnmount() {
-  const { resetControl, resetInputs, resetErrors } = this.props
+  const { resetData, resetControl, resetInputs, resetErrors } = this.props
 
-  resetControl()
-  resetInputs()
+  resetData()
   resetErrors()
+  resetInputs()
+  resetControl()
 }

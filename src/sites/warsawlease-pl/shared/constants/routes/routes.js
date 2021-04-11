@@ -290,7 +290,8 @@ export default [
     track: ANNOUNCEMENT_EDIT_TRACK,
     urlBuilder: buildAnnouncementEditUrl,
     title: ANNOUNCEMENT_EDIT_TITLES[PL],
-    image: DEFAULT_IMAGE_PL
+    image: DEFAULT_IMAGE_PL,
+    // stateSetter: state => console.log(state),
   },
   {
     url: ANNOUNCEMENT_EDIT_URLS[EN],

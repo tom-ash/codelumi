@@ -6,7 +6,6 @@ import * as managers from './functions/managers'
 import langHandler from '../../../../../../functions/lang-handler'
 import { handleErrorOnSelect, handleErrorOnValidate } from './functions/errors-handler'
 import { onSelectHandler } from './functions/on-select-handler'
-import { getRentAmounts } from '../../functions/get-rent-amounts'
 
 class AnnouncementCreatePrimary extends React.Component {
   constructor(props) {
@@ -18,7 +17,6 @@ class AnnouncementCreatePrimary extends React.Component {
     this.handleErrorOnSelect = handleErrorOnSelect.bind(this)
     this.handleErrorOnValidate = handleErrorOnValidate.bind(this)
     this.onSelectHandler = onSelectHandler.bind(this)
-    this.getRentAmounts = getRentAmounts.bind(this)
   }
   
   render() {

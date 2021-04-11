@@ -6,7 +6,6 @@ import * as managers from './functions/managers'
 import langHandler from '../../../../../../functions/lang-handler'
 import { onSelectHandler } from './functions/on-select-handler'
 import { floorsProvider } from './functions/floors-provider'
-import { getRentAmounts } from '../../functions/get-rent-amounts'
 
 class AnnouncementCreateAdditional extends React.Component {
   constructor(props) {
@@ -19,7 +18,6 @@ class AnnouncementCreateAdditional extends React.Component {
     this.floorsProvider = floorsProvider.bind(this)
     this.rentCurrencyManager = managers.rentCurrencyManager.bind(this)
     this.rentAmountManager = managers.rentAmountManager.bind(this)
-    this.getRentAmounts = getRentAmounts.bind(this)
   }
   
   render() {

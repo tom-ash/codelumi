@@ -3,28 +3,11 @@ import {
 } from '../../../../../../../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = store => {
-  const {
-    lang,
-    urlDataSynced
-  } = store.app
-  const {
-    [ANNOUNCEMENT_INDEX_MY_TRACK]: renderMy
-  } = store.render
-  const {
-    connecting,
-    fetch,
-    beingDeleted
-  } = store.announcement.index.control
-  const {
-    page,
-    switches,
-    sort,
-    offset
-  } = store.announcement.index.inputs
-  const {
-    amount,
-    announcements
-  } = store.announcement.index.data
+  const { lang, urlDataSynced } = store.app
+  const { [ANNOUNCEMENT_INDEX_MY_TRACK]: renderMy } = store.render
+  const { connecting, fetch, beingDeleted } = store.announcement.index.control
+  const { page, switches, sort, offset } = store.announcement.index.inputs
+  const { announcements, amount } = store.announcement.index.data
 
   return {
     lang,
@@ -50,7 +33,6 @@ export const mapDispatchToProps = dispatch => {
     changeInputs: value => dispatch({ type: 'announcement/index/inputs', value }),
     changeAnnouncement: value => dispatch({ type: 'announcement/index/data/announcements', value }),
     changeCreateData: value => dispatch({ type: 'announcement/create/data', value }),
-    changeAnnouncementShowData: value => dispatch({ type: 'announcement/show/data', value }),
     resetControl: value => dispatch({ type: 'announcement/index/control/reset', value }),
     resetInputs: value => dispatch({ type: 'announcement/index/inputs/reset', value }),
     resetData: value => dispatch({ type: 'announcement/index/data/reset', value })

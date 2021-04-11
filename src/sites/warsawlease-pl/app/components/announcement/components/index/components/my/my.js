@@ -36,7 +36,6 @@ class AnnouncementIndexMy extends React.Component {
       amount,
       offset,
       lang,
-      changeAnnouncementShowData,
       urlDataSynced
     } = this.props
 
@@ -90,7 +89,6 @@ class AnnouncementIndexMy extends React.Component {
             control={this.controlProvider(announcement, index)}
             control={this.controlProvider(announcement, index)}
             lang={lang}
-            changeData={changeAnnouncementShowData}
           />))}
           <div className='float-clear' />
         </div>

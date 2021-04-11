@@ -16,16 +16,16 @@ class AnnouncementCreateAvailabilityDate extends React.Component {
   constructor(props) {
     super(props)
     this.langHandler = langHandler.bind(this)
-    this.showAvailabilityDateManager = managers.showAvailabilityDateManager.bind(this)
+    this.addAvailabilityDateManager = managers.addAvailabilityDateManager.bind(this)
   }
   
   render() {
-    const { lang, availabilityDate, showAvilabilityDate, changeControl, changeInputs } = this.props
+    const { lang, availabilityDate, addAvailabilityDate, changeInputs } = this.props
 
     return (
       <div id='announcement-create-availability-date' className='section'>
-        <ManagedCheckbox {...this.showAvailabilityDateManager({ showAvilabilityDate, changeControl })}/>
-        {showAvilabilityDate &&
+        <ManagedCheckbox {...this.addAvailabilityDateManager({ addAvailabilityDate, changeInputs })}/>
+        {addAvailabilityDate &&
           <div className='calendar'>
             <div>
               <Calendar 

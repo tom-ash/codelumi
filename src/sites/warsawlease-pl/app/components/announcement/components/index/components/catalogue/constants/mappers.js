@@ -44,8 +44,6 @@ export const mapDispatchToProps = dispatch => {
     changeControl: value => dispatch({ type: 'announcement/index/control', value }),
     changeInputs: value => dispatch({ type: 'announcement/index/inputs', value }),
     changeData: value => dispatch({ type: 'announcement/index/data', value }),
-    changeAnnouncement: value => dispatch({ type: 'announcement/index/data/announcements', value }),
-    
-    changeAnnouncementShowData: value => dispatch({ type: 'announcement/show/data', value })
+    changeAnnouncement: value => dispatch({ type: 'announcement/index/data/announcements', value })
   }
 }

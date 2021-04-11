@@ -1,5 +1,5 @@
 import API_URL from '../../../../../../shared/constants/urls/api.js'
-import { getAccessToken } from '../../../../user/components/authorize/components/tokens/functions/get-tokens'
+import getAccessToken from '../../../../user/components/authorize/components/tokens/functions/get-tokens'
 import { CREATE_API_ROUTE_DATA, CREATE_WITH_USER_API_ROUTE_DATA, UPDATE_API_ROUTE_DATA } from '../constants/api-route-data.js'
 import { ANNOUNCEMENT_CREATE_VERIFICATION_TRACK, ANNOUNCEMENT_CREATE_SUCCESS_TRACK } from '../../../../../../shared/constants/tracks/tracks.js'
 import changeRouteWithHref from '../../../../../../app/functions/routes/changers/route-with-href.js'

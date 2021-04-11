@@ -5,19 +5,16 @@ const {
   SHOW_AVAILABILITY_DATE_EVENT
 } = analyticEvents
 
-export function showAvailabilityDateManager({
-  showAvilabilityDate,
-  changeControl
-}) {
+export function addAvailabilityDateManager({ addAvailabilityDate, changeInputs }) {
   return {
     classNames: { container: 'form-input checkbox availability-date' },
-    checked: showAvilabilityDate,
+    checked: addAvailabilityDate,
     label: this.langHandler({
       pl: 'Dodaj datę dostępności',
       en: 'Add Availability Date'
     }),
     onClick: value => {
-      changeControl({ showAvilabilityDate: value })
+      changeInputs({ addAvailabilityDate: value })
       sendGaEvent(SHOW_AVAILABILITY_DATE_EVENT)
     }
   }

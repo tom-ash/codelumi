@@ -13,7 +13,6 @@ import WindmillSpinner from '../../../support/components/spinner/components/wind
 import * as lifecycle from './functions/lifecycle'
 import * as managers from './functions/managers'
 import langHandler from '../../../../functions/lang-handler'
-import { getAnnouncement } from './functions/get-announcement'
 import { AnnouncementCreateSteps } from './components/steps/steps'
 import { ManagedButton } from 'managed-inputs'
 import { publish } from './components/publishing/functions/publish'
@@ -40,7 +39,6 @@ class AnnouncementCreate extends React.Component {
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
     this.langHandler = langHandler.bind(this)
-    this.getAnnouncement = getAnnouncement.bind(this)
     this.addAnnouncementManager = managers.addAnnouncementManager.bind(this)
     this.categoryManager = categoryManager.bind(this)
     this.districtManager = districtManager.bind(this)
@@ -56,11 +54,11 @@ class AnnouncementCreate extends React.Component {
   render() {
     const {
       renderForm, renderVerification, renderSuccess,
-      connecting, lang, authorized, step, showAvilabilityDate, availabilityDate,
+      connecting, lang, authorized, step, addAvailabilityDate, availabilityDate,
       changeControl, changeInputs
     } = this.props
 
-    const availabilityDateProps = { lang, availabilityDate, showAvilabilityDate, changeControl, changeInputs }
+    const availabilityDateProps = { lang, availabilityDate, addAvailabilityDate, changeControl, changeInputs }
     const headerText = this.langHandler({ pl: 'Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w Warszawie', en: 'Add Free Announcement of Real Estate Lease in Warsaw' })
 
     return (

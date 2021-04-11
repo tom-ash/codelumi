@@ -21,9 +21,7 @@ class AnnouncementShow extends React.Component {
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
     this.togglePhone = togglePhone.bind(this)
     this.fixedPhoneHandler = fixedPhoneHandler.bind(this)
-    this.state = {
-      phone: null
-    }
+    this.state = { phone: null }
   }
 
   render() {

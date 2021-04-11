@@ -12,7 +12,7 @@ export const mapStateToProps = store => {
     rooms: store.announcement.create.inputs.rooms,
     floor: store.announcement.create.inputs.floor,
     totalFloors: store.announcement.create.inputs.totalFloors,
-    showAvilabilityDate: store.announcement.create.control.showAvilabilityDate,
+    addAvailabilityDate: store.announcement.create.control.addAvailabilityDate,
     availabilityDate: store.announcement.create.inputs.availabilityDate,
     errors: store.announcement.create.errors
   }

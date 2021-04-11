@@ -27,8 +27,7 @@ class AnnouncementIndexCatalogue extends React.Component {
       announcements,
       isMobile,
       indexFullFarthestScrollTop,
-      changeApp,
-      changeAnnouncementShowData
+      changeApp
     } = this.props
 
     return (
@@ -64,7 +63,6 @@ class AnnouncementIndexCatalogue extends React.Component {
                 availabilityDate={announcement.availabilityDate}
                 indexFullFarthestScrollTop={indexFullFarthestScrollTop}
                 changeApp={changeApp}
-                changeData={changeAnnouncementShowData}
               />
             )
           })}
