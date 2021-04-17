@@ -22,7 +22,6 @@ class PageCreate extends React.Component {
 
     return (
       <div id='page-create'>
-        AAA
         <form>
           <ManagedText {...this.nameManager()} />
           <div className='names'>

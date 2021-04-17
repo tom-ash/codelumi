@@ -11,9 +11,8 @@ class PageShow extends React.Component {
     super(props)
   }
 
-  // FIX
   changePage = () => {
-    const { clientUrl, name, lang_ver_urls: langVerUrls, lang, changeRoute } = this.props
+    const { clientUrl, name, langVerUrls, lang, changeRoute } = this.props
     const path = buildPageEditUrl({ pageEditData: { name, langVerUrls }, lang })
     const href = `${clientUrl}/${path}`
 
@@ -22,7 +21,7 @@ class PageShow extends React.Component {
 
   render() {
     const { name, isAdmin } = this.props
-    
+
     if (!name) return null
 
     return (

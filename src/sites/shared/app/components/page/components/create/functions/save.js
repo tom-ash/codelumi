@@ -1,23 +1,24 @@
 import getAccessToken from '../../../../../../app/functions/tokens/getters/get-tokens.js'
 import buildPageEditUrl from '../../edit/functions/build-page-edit-url.js'
+import { CREATE_API_ROUTE } from '../constants/api_route_data.js'
 
 export function save() {
-  const { clientUrl, apiUrl, inputtedName, changeRoute } = this.props
+  const { clientUrl, apiUrl, inputtedName: name, changeRoute } = this.props
+  const { method, route } = CREATE_API_ROUTE
 
-  fetch(apiUrl + '/pages', {
-    method: 'POST',
+  fetch(`${apiUrl}/${route}`, {
+    method,
     headers: {
       'Content-Type': 'application/json',
       'Access-Token': getAccessToken()
     },
-    body: JSON.stringify({ name: inputtedName })
+    body: JSON.stringify({ name })
   })
   .then(response => {
     if (response.ok) return response.json()
   })
-  .then(jsonRespone => {
-    const { lang_ver_urls: langVerUrls } = jsonRespone
-    const path = buildPageEditUrl({ pageEditData: { name: inputtedName, langVerUrls }, lang: 'pl' })
+  .then(langVerUrls => {
+    const path = buildPageEditUrl({ pageEditData: { name, langVerUrls }, lang: 'en' })
     const href = `${clientUrl}/${path}`
 
     changeRoute({ href })
