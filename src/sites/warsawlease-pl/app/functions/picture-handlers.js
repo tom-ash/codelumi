@@ -1,25 +1,30 @@
 import API_URL from '../../shared/constants/urls/api.js'
+import getAccessToken from '../../../shared/app/functions/tokens/getters/get-tokens.js'
 let ImageCompressor
 if (typeof window !== 'undefined') ImageCompressor = require('image-compressor.js').default
 
-export function compressAndSaveBlobPicture(destination, blob, callback) {
+export function compressAndSaveBlobPicture(params, blob, callback) {
   fetch(blob)
   .then(response => { return response.blob()})
   .then(blob => {
     const imageCompressor = new ImageCompressor();
     imageCompressor.compress(blob, { quality: 0.6, convertSize: 100000 })
-    .then(file => ( savePicture(destination, file, callback) ))
+    .then(file => ( savePicture(params, file, callback) ))
   })
 }
 
-function savePicture(destination, file, callback) {
-  fetch(API_URL + destination, {
-    method: 'post', headers: { 'Content-Type': 'application/json', 'FileType': file.type }
+function savePicture(params, file, callback) {
+  const body = JSON.stringify(params)
+
+  fetch(API_URL + '/remote-asset/presigned-post', {
+    method: 'post',
+    headers: { 'Content-Type': 'application/json', 'Access-Token': getAccessToken() },
+    body
   })
   .then(response => { if (response.ok) return response.json() }, networkError => console.dir(networkError.message))
   .then(json => {
     let formData = new FormData()
-    Object.keys(json.fields).forEach((key) => { formData.append(key, json.fields[key]) })
+    Object.keys(json.fields).forEach(key => { formData.append(key, json.fields[key]) })
     formData.append('file', file)
     formData.append('Content-Type', file.type)
     fetch(json.url, {

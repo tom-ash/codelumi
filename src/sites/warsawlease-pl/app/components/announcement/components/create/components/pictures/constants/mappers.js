@@ -1,6 +1,13 @@
+import { ANNOUNCEMENT_EDIT_TRACK } from '../../../../../../../../shared/constants/tracks/tracks'
+
 export const mapStateToProps = store => {
+
+  const {
+    [ANNOUNCEMENT_EDIT_TRACK]: renderEdit
+  } = store.render
+
   return {
-    showAnnouncementEdit: store.app.showAnnouncementEdit,
+    renderEdit,
     lang: store.app.lang,
     files: store.announcement.create.inputs.picFiles,
     blobs: store.announcement.create.inputs.blobs,

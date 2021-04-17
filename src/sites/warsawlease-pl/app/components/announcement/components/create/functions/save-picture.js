@@ -14,8 +14,12 @@ function savePicture() {
   const blob = blobs.shift()
   const picUploads = [ ...this.props.picUploads ]
   if (blob.database === '') {
-    const destination = renderEdit ? `/pictures/create/announcement/${window.location.pathname.match(/(edytuj-ogloszenie|edit-announcement)\/(\d+)/)[2]}` : '/pictures/create/temporary'
-    compressAndSaveBlobPicture(destination, blob.blob, (key) => {
+    const params = {
+      prefix: renderEdit ? `announcements/${window.location.pathname.match(/(edytuj-ogloszenie|edit-announcement)\/(\d+)/)[2]}/` : 'temporary/',
+      randomize_key: true,
+      file_type: 'jpeg'
+    }
+    compressAndSaveBlobPicture(params, blob.blob, (key) => {
       delete blob.blob
       blob.database = key
       picUploads.push(blob)
