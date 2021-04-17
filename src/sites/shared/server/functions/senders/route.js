@@ -16,7 +16,7 @@ function routeSender({
   const { track, lang: routeLang, pageName, initialStateParser } = route
   const pageNameHeader = pageName ? { 'Page-Name': pageName } : {}
 
-  fetch(apiUrl + `/route_data`, {
+  fetch(apiUrl + `/sync`, {
     headers: {
       'Content-Type': 'application/json',
       'Type': 'ssr',
@@ -50,15 +50,15 @@ function routeSender({
       indexRenderer({ clientUrl, url, ...metaData, ...appAsHtml }) 
     )
   })
-  .catch(exception => {
-    exceptionSender({
-      exception,
-      res, url, device,
-      tracks,
-      appState, renderState, visitorState,
-      appRenderer
-    })
-  })
+  // .catch(exception => {
+  //   exceptionSender({
+  //     exception,
+  //     res, url, device,
+  //     tracks,
+  //     appState, renderState, visitorState,
+  //     appRenderer
+  //   })
+  // })
 }
 
 export default routeSender

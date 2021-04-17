@@ -7,7 +7,7 @@ function syncRouteData({ apiUrl, url, route, requestType }) {
 
   changeApp({ urlDataSynced: false })
 
-  return fetch(apiUrl + `/route_data`, {
+  return fetch(apiUrl + `/sync`, {
     headers: {
       'Content-Type': 'application/json',
       'Type': requestType,
