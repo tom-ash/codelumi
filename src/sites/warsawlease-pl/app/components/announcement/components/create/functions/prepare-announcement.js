@@ -25,7 +25,15 @@ function setBlobs(id, pictures) {
   if (typeof window === 'undefined') return
   
   pictures.map((picture, index) => {
-    fetch(`${AWS_S3_URL}/announcements/${id}/${picture.database}`, {})
+    fetch(`${AWS_S3_URL}/announcements/${id}/${picture.database}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Access-Control-Request-Headers': 'content-type,mode',
+        'Access-Control-Request-Method': 'GET'
+      }
+    })
     .then(response => {
       if (response.ok) return response.blob()
     })
