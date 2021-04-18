@@ -1,9 +1,9 @@
-import { ANNOUNCEMENT_EDIT_TRACK } from '../../../../../../../../shared/constants/tracks/tracks'
+import { ANNOUNCEMENT_CREATE_EDIT_TRACK } from '../../../../../../../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = store => {
 
   const {
-    [ANNOUNCEMENT_EDIT_TRACK]: renderEdit
+    [ANNOUNCEMENT_CREATE_EDIT_TRACK]: renderEdit
   } = store.render
 
   return {

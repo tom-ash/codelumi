@@ -53,7 +53,7 @@ class AnnouncementCreate extends React.Component {
 
   render() {
     const {
-      renderForm, renderVerification, renderSuccess,
+      renderForm, renderEdit, renderVerification, renderSuccess,
       connecting, lang, authorized, step, addAvailabilityDate, availabilityDate,
       changeControl, changeInputs
     } = this.props
@@ -65,7 +65,7 @@ class AnnouncementCreate extends React.Component {
       <>
         <AnnouncementCreateSteps authorized={authorized} step={step} />
         <div id='announcement-create' className={step}>
-          {renderForm &&
+          {(renderForm || renderEdit) &&
           <>
             <Header tier={1} text={headerText} svg='plus' />
             {!connecting ?
