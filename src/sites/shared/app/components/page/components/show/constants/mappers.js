@@ -1,11 +1,6 @@
 export const mapStateToProps = store => {
-  const {
-    data: pageShowData
-  } = store.page.show
-
-  const {
-    role
-  } = store.user.authorize.data
+  const { data: pageShowData } = store.page.show
+  const { role } = store.user.authorize.data
 
   return {
     ...pageShowData,

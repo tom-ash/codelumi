@@ -27,3 +27,18 @@ export const svgsReducer = (state = {}, action) => {
 export const assetsReducer = combineReducers({
   svgs: svgsReducer
 })
+
+const dataReducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'user/authorize/data': return { ...state, ...action.value }
+    default: return state
+  }
+}
+
+const authorizeReducer = combineReducers({
+  data: dataReducer
+})
+
+export const userReducer = combineReducers({
+  authorize: authorizeReducer
+})
