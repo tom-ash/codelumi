@@ -26,12 +26,12 @@ class PageCreate extends React.Component {
 
   render() {
     const {
-      urlDataSynced,
+      routeSynced,
       name,
       body
     } = this.props
 
-    if (!urlDataSynced) return null
+    if (!routeSynced) return null
 
     return (
       <div className='page-edit'>

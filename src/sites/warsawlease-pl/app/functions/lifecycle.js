@@ -9,7 +9,7 @@ export function componentDidMount() {
 
   loadFonts()
   
-  const { urlDataSynced, changeApp } = this.props
+  const { routeSynced, changeApp } = this.props
 
   initializeGoogleMaps.apply(this)
 
@@ -24,7 +24,7 @@ export function componentDidMount() {
     }
   })
 
-  if (!urlDataSynced) this.matchStateToRoute({ apiUrl: API_URL })
+  if (!routeSynced) this.matchStateToRoute({ apiUrl: API_URL })
 
   window.onpopstate = () => this.popStateHandler({ apiUrl: API_URL })
 }

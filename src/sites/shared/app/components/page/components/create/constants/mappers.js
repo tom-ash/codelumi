@@ -1,20 +1,11 @@
 export const mapStateToProps = store => {
-  const {
-    lang,
-    urlDataSynced
-  } = store.app
-
-  const {
-    inputtedName
-  } = store.page.create.inputs
-
-  const {
-    names
-  } = store.page.create.data
+  const { lang, routeSynced } = store.app
+  const { inputtedName } = store.page.create.inputs
+  const { names } = store.page.create.data
 
   return {
     lang,
-    urlDataSynced,
+    routeSynced,
     inputtedName,
     names
   }

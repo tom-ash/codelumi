@@ -1,9 +1,5 @@
 export const mapStateToProps = store => {
-  const {
-    lang,
-    urlDataSynced
-  } = store.app
-
+  const { lang, routeSynced } = store.app
   const {
     name,
     url,
@@ -20,7 +16,7 @@ export const mapStateToProps = store => {
 
   return {
     lang,
-    urlDataSynced,
+    routeSynced,
     name,
     url,
     body,

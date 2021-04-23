@@ -4,27 +4,14 @@ import {
 } from '../../../../../../shared/constants/tracks/tracks.js'
 
 export const mapStateToProps = store => {
-  const {
-    lang,
-    urlDataSynced
-  } = store.app
-
-  const {
-    [PAGE_INDEX_MANAGE_TRACK]: renderManage,
-    [PAGE_INDEX_MAP_TRACK]: renderMap
-  } = store.render
-
-  const {
-    pages
-  } = store.page.index.data
-
-  const {
-    inputtedName
-  } = store.page.index.inputs
+  const { lang, routeSynced } = store.app
+  const { [PAGE_INDEX_MANAGE_TRACK]: renderManage, [PAGE_INDEX_MAP_TRACK]: renderMap } = store.render
+  const { pages } = store.page.index.data
+  const { inputtedName } = store.page.index.inputs
 
   return {
     lang,
-    urlDataSynced,
+    routeSynced,
     renderManage,
     renderMap,
     pages,

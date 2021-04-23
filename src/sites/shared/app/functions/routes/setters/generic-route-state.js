@@ -1,7 +1,7 @@
 function genericRouteStateSetter({ routeData }) {
   const { changeApp, dispatch } = this.props
   const { state } = routeData
-  const appState = { urlDataSynced: true }
+  const appState = { routeSynced: true }
 
   if (state) {
     Object.keys(state).map(stateKey => {

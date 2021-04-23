@@ -3,7 +3,7 @@ import {
 } from '../../../../../../../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = store => {
-  const { lang, urlDataSynced } = store.app
+  const { lang, routeSynced } = store.app
   const { [ANNOUNCEMENT_INDEX_MY_TRACK]: renderMy } = store.render
   const { connecting, fetch, beingDeleted } = store.announcement.index.control
   const { page, switches, sort, offset } = store.announcement.index.inputs
@@ -20,7 +20,7 @@ export const mapStateToProps = store => {
     amount,
     announcements,
     renderMy,
-    urlDataSynced
+    routeSynced
   }
 }
     

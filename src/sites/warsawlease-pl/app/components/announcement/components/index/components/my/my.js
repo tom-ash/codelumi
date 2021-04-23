@@ -36,14 +36,14 @@ class AnnouncementIndexMy extends React.Component {
       amount,
       offset,
       lang,
-      urlDataSynced
+      routeSynced
     } = this.props
 
     const toValue = offset + 10 < amount ? offset + 10 : amount
     let whichAnnouncements = `${offset + 1} - ${toValue} ${this.langHandler({ pl: 'z', en: 'of' })}`
     if (offset + 1 === amount) whichAnnouncements = `${offset + 1} ${this.langHandler({ pl: 'z', en: 'of' })}`
 
-    if (!urlDataSynced) return null
+    if (!routeSynced) return null
 
     return (
       <div id='announcement-index-list'>

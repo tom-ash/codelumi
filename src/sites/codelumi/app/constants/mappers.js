@@ -7,7 +7,7 @@ export const mapStateToProps = store => {
   const {
     lang,
     scrollY,
-    urlDataSynced
+    routeSynced
   } = store.app
 
   const {
@@ -32,7 +32,7 @@ export const mapStateToProps = store => {
   return {
     lang,
     scrollY,
-    urlDataSynced,
+    routeSynced,
     pageShowData,
     pageEditData,
     renderPage,

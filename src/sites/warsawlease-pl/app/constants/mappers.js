@@ -6,7 +6,7 @@ import {
 } from '../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = store => {
-  const { lang, device, path, scrollY, scripts, urlDataSynced } = store.app
+  const { lang, device, path, scrollY, scripts, routeSynced } = store.app
   const { statisticsConsent, marketingConsent } = store.visitor.legal.privacy.settings
   const {
     data: announcementCreateData
@@ -46,7 +46,7 @@ export const mapStateToProps = store => {
     announcementCreateData,
     announcementShowData,
     pageShowData,
-    urlDataSynced,
+    routeSynced,
     pageEditData
   }
 }

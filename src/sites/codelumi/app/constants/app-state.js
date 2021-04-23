@@ -2,7 +2,7 @@ const appState = {
   device: null,
   scrollY: 0,
   lang: 'pl',
-  urlDataSynced: false
+  routeSynced: false
 }
 
 export default appState

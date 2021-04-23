@@ -5,7 +5,7 @@ function syncRouteData({ apiUrl, url, route, requestType }) {
   const { track, lang, pageName } = route
   const pageNameHeader = pageName ? { 'Page-Name': pageName } : {}
 
-  changeApp({ urlDataSynced: false })
+  changeApp({ routeSynced: false })
 
   return fetch(apiUrl + `/sync`, {
     headers: {
