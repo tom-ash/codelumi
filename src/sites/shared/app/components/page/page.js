@@ -16,10 +16,10 @@ class Page extends React.Component {
   }
 
   render() {
-    const { clientUrl, apiUrl, renderCreate, renderEdit, renderShow, renderIndex, renderNotFound, changeRoute, langHandler } = this.props
+    const { tileStyles, clientUrl, apiUrl, renderCreate, renderEdit, renderShow, renderIndex, renderNotFound, changeRoute, langHandler } = this.props
     const createProps = { clientUrl, apiUrl, changeRoute, langHandler }
-    const showProps = { clientUrl, apiUrl, changeRoute, langHandler }
-    const editProps = { clientUrl, apiUrl, changeRoute, langHandler }
+    const showProps = { tileStyles, clientUrl, apiUrl, changeRoute, langHandler }
+    const editProps = { tileStyles, clientUrl, apiUrl, changeRoute, langHandler }
     const indexProps = { clientUrl, apiUrl, changeRoute, langHandler }
     const notFoundProps = { clientUrl, apiUrl, changeRoute, langHandler }
 

@@ -1,42 +1,22 @@
 import React from 'react'
 
-const allowedTags = [
-  'p',
-  'div',
-  'h1',
-  'h2',
-  'h3'
-]
+const commonTags = ['h1', 'h2', 'h3', 'div', 'p']
 
-export function jsonToJsxParser(json) {
+function jsonToJsxParser({ body }) {
   try {
-    const parsedJson = typeof json === 'object' ? json : JSON.parse(json)
+    const parsedJson = typeof body === 'object' ? body : JSON.parse(body)
 
     const jsx = parsedJson.map(function(node, index) {
       const attrs = node.a || {}
       const nodeTag = node.t || 'p'
 
       if (nodeTag === 'picture') {
-        return (
-          <img
-            key={index}
-            src={node.url}
-            style={{
-              width: '100%',
-              height: 320,
-            }}
-            loading='lazy'
-          />
-        )
+        return <img src={node.url} style={{ width: '100%', height: 320 }} loading='lazy' key={index} />
       }
 
-      if (['p', 'div', 'h1', 'h2', 'h3'].indexOf(nodeTag) === -1) return null
-  
-      return React.createElement(
-        nodeTag,
-        { ...attrs, ...{ key: index } },
-        node.c
-      )
+      if (commonTags.indexOf(nodeTag) === -1) return null
+
+      return React.createElement(nodeTag, { ...attrs, ...{ key: index } }, node.c)
     })
 
     return jsx
@@ -48,3 +28,5 @@ export function jsonToJsxParser(json) {
     )
   }
 }
+
+export default jsonToJsxParser

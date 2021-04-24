@@ -1,8 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import withStyles from 'isomorphic-style-loader/withStyles'
-import styles from './styles/styles.scss'
 import PageTile from '../shared/components/tile/tile'
 import buildPageEditUrl from '../edit/functions/build-page-edit-url.js'
 
@@ -20,17 +18,17 @@ class PageShow extends React.Component {
   }
 
   render() {
-    const { name, isAdmin } = this.props
+    const { name, tileStyles } = this.props
+    const tileProps = { ...this.props, renderShow: true, styles: tileStyles, changePage: this.changePage }
 
     if (!name) return null
 
     return (
       <div id='page-show'>
-        {isAdmin && <button onClick={this.changePage}>Edit</button>}
-        <PageTile { ...this.props } />
+        <PageTile { ...tileProps } />
       </div>
     )
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(PageShow))
+export default connect(mapStateToProps, mapDispatchToProps)(PageShow)

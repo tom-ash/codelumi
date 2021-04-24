@@ -16,6 +16,7 @@ import styles from './styles/styles.scss'
 import AppContext from './constants/context.js'
 import CLIENT_URL from '../shared/constants/urls/client.js'
 import API_URL from '../shared/constants/urls/api.js'
+import pageShowStyles from './components/page/show/styles/styles.scss'
 
 class App extends React.Component {
   constructor(props) {
@@ -33,14 +34,13 @@ class App extends React.Component {
   render() {
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
     const { lang, renderPage, renderVisitor, renderAnnouncement, renderUser } = this.props
-    const pageProps = { clientUrl: CLIENT_URL, apiUrl: API_URL, changeRoute: this.changeRoute, langHandler: this.langHandler }
+    const pageProps = { tileStyles: pageShowStyles, clientUrl: CLIENT_URL, apiUrl: API_URL, changeRoute: this.changeRoute, langHandler: this.langHandler }
     const visitorProps = {  changeRoute: this.changeRoute, langHandler: this.langHandler, changeRouteWithHref }
 
     return (
       <AppContext.Provider value={AppContextValue}>
         <div id='app-container'>
           <div id='app-inner-container'>
-            !!! CODELUMI !!!
             {renderPage && <Page { ...pageProps } />}
             {renderVisitor && <Visitor {...visitorProps} />}
           </div>

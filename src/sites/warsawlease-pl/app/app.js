@@ -19,6 +19,7 @@ import styles from './styles/styles.scss'
 import AppContext from './constants/context.js'
 import CLIENT_URL from '../shared/constants/urls/client.js'
 import API_URL from '../shared/constants/urls/api.js'
+import pageTileStyles from './components/page/show/styles/styles.scss'
 
 class App extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class App extends React.Component {
     const { renderPage, renderVisitor, renderAnnouncement, renderUser } = this.props
 
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
-    const pageProps = { clientUrl: CLIENT_URL, apiUrl: API_URL, changeRoute: this.changeRoute, langHandler: this.langHandler }
+    const pageProps = { tileStyles: pageTileStyles, clientUrl: CLIENT_URL, apiUrl: API_URL, changeRoute: this.changeRoute, langHandler: this.langHandler }
 
     return (
       <AppContext.Provider value={AppContextValue}>

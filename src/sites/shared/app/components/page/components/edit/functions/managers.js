@@ -105,6 +105,6 @@ export function saveManager() {
   return {
     classNames: { container: 'form-input button' },
     label: 'Save',
-    onClick: () => this.save()
+    onClick: () => this.save({ withRouteChange: true })
   }
 }

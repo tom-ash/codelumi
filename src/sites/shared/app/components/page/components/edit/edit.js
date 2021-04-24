@@ -25,34 +25,25 @@ class PageCreate extends React.Component {
   }
 
   render() {
-    const {
-      routeSynced,
-      name,
-      body
-    } = this.props
+    const { routeSynced, name, body, tileStyles } = this.props
 
     if (!routeSynced) return null
 
+    const tileProps = { ...this.props, renderEdit: true, styles: tileStyles, updatePage: this.save }
+
     return (
       <div className='page-edit'>
-        <PageTile
-          name={name}
-          body={body}
-        />
+        <PageTile { ...tileProps } />
         <form>
           <ManagedTextarea {...this.bodyManager()} />
-          {/* <div className='separation-line' /> */}
           <ManagedText {...this.titleManager()} />
           <ManagedTextarea {...this.descriptionManager()} />
           <ManagedTextarea {...this.keywordsManager()} />
           <ManagedText {...this.pictureManager()} />
-          {/* <div className='separation-line' /> */}
           <ManagedTextarea {...this.metaManager()} />
-          {/* <div className='separation-line' /> */}
           <ManagedText {...this.urlManager()} />
           <ManagedText {...this.canonicalUrlManager()} />
           <ManagedText {...this.nameManager()} />
-          {/* <div className='separation-line' /> */}
           <ManagedButton {...this.saveManager()} />
         </form>
       </div>

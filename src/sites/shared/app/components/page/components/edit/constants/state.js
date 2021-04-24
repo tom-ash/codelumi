@@ -1,5 +1,5 @@
 export const control = {
-  edited: false
+  fetching: false
 }
 
 export const inputs = {

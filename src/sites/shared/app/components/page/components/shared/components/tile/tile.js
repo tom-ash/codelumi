@@ -1,30 +1,31 @@
 import React from 'react'
-import withStyles from 'isomorphic-style-loader/withStyles'
-import styles from './styles/styles.scss'
-import { jsonToJsxParser } from './functions/json_to_jsx_parser'
+import jsonToJsxParser from './functions/json_to_jsx_parser'
+import useStyles from 'isomorphic-style-loader/useStyles'
 
-class PageTile extends React.Component {
-  constructor(props) {
-    super(props)
-    this.jsonToJsxParser = jsonToJsxParser.bind(this)
-  }
+const PageTile = props => {
+  const { renderShow, renderEdit, fetching, name, body, styles, isAdmin, changePage, updatePage } = props
 
-  render() {
-    const {
-      name,
-      body
-    } = this.props
+  useStyles(styles)
 
-    return (
-      <>
-        <div className={`post-container ${name}`}>
-          <div className='body'>
-            {this.jsonToJsxParser(body)}
-          </div>
+  const buttonClasses = []
+  if (fetching) buttonClasses.push('fetching')
+  const buttonClassName = buttonClasses.join(' ')
+
+  return (
+    <>
+      <div className={`tile ${name}`}>
+        {isAdmin &&
+        <>
+          {renderShow && <button className={buttonClassName} onClick={changePage}>Edit</button>}
+          {renderEdit && <button className={buttonClassName} onClick={updatePage.bind({ withRouteChange: false })}>Save</button>}
+        </>}
+        
+        <div className='body'>
+          {jsonToJsxParser.call(this, { body })}
         </div>
-      </>
-    )
-  }
+      </div>
+    </>
+  )
 }
 
-export default withStyles(styles)(PageTile)
+export default PageTile
