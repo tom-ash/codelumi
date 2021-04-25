@@ -1,15 +1,17 @@
 import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
 import { VERIFY_API_ROUTE } from '../constants/api_routes.js'
 import { saveTokens } from '../../../../../../../functions/token-handlers'
-import { ANNOUNCEMENT_CREATE_SUCCESS_TRACK, ANNOUNCEMENT_CREATE_FORM_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
+import { ROOT_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
 import changeRouteWithHref from '../../../../../../../../../functions/routes/changers/route-with-href.js'
+import { ANNOUNCEMENT_CREATE_SUCCESS_URLS } from '../../../../../../../../../../shared/constants/routes/urls.js'
+import CLIENT_URL from '../../../../../../../../../../shared/constants/urls/client.js'
 
 export function verify() {
   if (!this.verificationManager('validate')) return
   
   const email = window.location.search.match(/e=(.*)$/)[1]
   const verificationCode = document.getElementById('user-create-email-verification').value
-  const { renderAnnouncementCreateVerification, lang, changeAuthorizeData, changeControl, changeErrors } = this.props
+  const { renderAnnouncementCreateVerification, lang, announcementId, changeAuthorizeData, changeControl, changeErrors } = this.props
 
   changeControl({ connecting: true })
 
@@ -30,9 +32,16 @@ export function verify() {
     changeAuthorizeData({ authorized: true, name })
 
     const { changeRoute } = this.context
-    const track = renderAnnouncementCreateVerification ? ANNOUNCEMENT_CREATE_SUCCESS_TRACK : ANNOUNCEMENT_CREATE_FORM_TRACK
 
-    changeRouteWithHref({ lang, track, changeRoute })
+    if (renderAnnouncementCreateVerification) {
+      const href = `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_CREATE_SUCCESS_URLS)}?id=${announcementId}`
+  
+      changeRoute({ href })
+      changeControl({ connecting: false })
+      return
+    }
+
+    changeRouteWithHref({ lang, track: ROOT_TRACK, changeRoute })
   })
   .catch(() => changeErrors({ verification: { pl: 'Nieprawidłowy kod weryfikacyjny', en: 'Invalid verification code' } }))
   .finally(() => changeControl({ connecting: false }))

@@ -1,0 +1,51 @@
+#announcement-create {
+  #success {
+    .share-on-facebook {
+      position: relative;
+      width: 300px;
+      margin-top: 24px;
+      background: rgba(46, 134, 193, 1);
+      cursor: pointer;
+      color: white;
+      .button {
+        width: 60px;
+        height: 60px;
+        color: white;
+        svg {
+          fill: white;
+          height: 50px;
+          transform: translate(20px, 10px);
+        }
+      }
+      .text {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 60px;
+        height: 15px;
+        margin: auto;
+        font-size: 17px;
+        text-align: center;
+      }
+      &.hover {
+        background: #2874A6;
+      }
+    }
+    svg {
+      fill: #34495E;
+      transform: translate(0, -1px);
+    }
+    h1 {
+      font-size: 20px;
+      color: #34495E;
+    }
+    .congratulations {
+      margin: 30px 0;
+    }
+    .share-on-facebook-text {
+      margin: 30px 0;
+      line-height: 22px;
+    }
+  }
+}

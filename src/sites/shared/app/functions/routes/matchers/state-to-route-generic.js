@@ -18,6 +18,7 @@ function matchStateToRouteGeneric({
 
   const { changeRender, changeVisitorPrivacySettings } = this.props
   const url = getPureUrl(pathname || window.location.pathname)
+  const query = window.location.search
   const route = getRouteByUrl({ url, routes })
   const statisticsConsent = getCookieAsBool(getCookieValue('_pdpaf'))
   const marketingConsent = getCookieAsBool(getCookieValue('_pdpsm'))
@@ -31,7 +32,7 @@ function matchStateToRouteGeneric({
   
   changeRender({ ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] })
 
-  syncRouteData.call(this, { apiUrl, url, route, requestType: 'ssr' })
+  syncRouteData.call(this, { apiUrl, url, query, route, requestType: 'ssr' })
   .then(routeData => stateSetter.call(this, { routeData: { ...route, ...routeData, ...consents} }))
 }
 

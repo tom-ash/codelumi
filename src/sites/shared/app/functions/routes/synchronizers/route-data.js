@@ -1,13 +1,13 @@
 import getAccessToken from '../../tokens/getters/get-tokens.js'
 
-function syncRouteData({ apiUrl, url, route, requestType }) {
+function syncRouteData({ apiUrl, url, query, route, requestType }) {
   const { changeApp } = this.props
   const { track, lang, pageName } = route
   const pageNameHeader = pageName ? { 'Page-Name': pageName } : {}
 
   changeApp({ routeSynced: false })
 
-  return fetch(apiUrl + `/sync`, {
+  return fetch(`${apiUrl}/sync${query}`, {
     headers: {
       'Content-Type': 'application/json',
       'Type': requestType,

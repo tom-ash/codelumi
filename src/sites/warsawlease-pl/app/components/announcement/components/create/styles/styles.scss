@@ -138,32 +138,6 @@
     color: #154360;
   }
 
-  .share-on-facebook {
-    position: relative;
-    margin-top: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    .button {
-      width: 48px;
-      height: 48px;
-      background: rgba(46, 134, 193, 1);
-      border-radius: 5px;
-      svg {
-        fill: white;
-        height: 36px;
-        transform: translate(17px, 12px);
-      }
-    }
-    .text {
-      height: 15px;
-      font-size: 15px;
-      text-decoration: underline;
-      margin-left: 12px;
-    }
-  }
-
   .go-to-announcement {
     text-align: center;
     margin-top: 48px;

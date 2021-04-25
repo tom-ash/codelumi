@@ -4,6 +4,8 @@ import { CREATE_API_ROUTE_DATA, CREATE_WITH_USER_API_ROUTE_DATA, UPDATE_API_ROUT
 import { ANNOUNCEMENT_CREATE_VERIFICATION_TRACK, ANNOUNCEMENT_CREATE_SUCCESS_TRACK } from '../../../../../../shared/constants/tracks/tracks.js'
 import changeRouteWithHref from '../../../../../../app/functions/routes/changers/route-with-href.js'
 import getHrefByTrackAndLang from '../../../../../functions/routes/getters/href-by-track-and-lang.js'
+import { ANNOUNCEMENT_CREATE_SUCCESS_URLS } from '../../../../../../shared/constants/routes/urls.js'
+import CLIENT_URL from '../../../../../../shared/constants/urls/client.js'
 
 function createAnnouncement() {
   const { authorized, renderEdit, changeControl } = this.props
@@ -53,15 +55,16 @@ function create() {
   })
   .then(jsonResponse => {
     const { changeRoute } = this.context
-    const track = ANNOUNCEMENT_CREATE_SUCCESS_TRACK
+    const { id } = jsonResponse
+    const href = `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_CREATE_SUCCESS_URLS)}?id=${id}`
 
-    changeRouteWithHref({ lang, track, changeRoute })
+    changeRoute({ href })
     changeControl({ connecting: false })
   })
 }
 
 function createWithUser() {
-  const { lang, announcement, user, changeControl } = this.props
+  const { lang, announcement, user, changeControl, changeData } = this.props
   const { method, route } = CREATE_WITH_USER_API_ROUTE_DATA
 
   fetch(API_URL + route, {
@@ -70,14 +73,20 @@ function createWithUser() {
     body: JSON.stringify({ announcement, user })
   })
   .then(response => {
-    if (response.ok) {
+    if (response.ok) return response.json()
+  })
+  .then(jsonResponse => {
       const { changeRoute } = this.context
       const track = ANNOUNCEMENT_CREATE_VERIFICATION_TRACK
       const href = `${getHrefByTrackAndLang({ track, lang })}?e=${user.email}`
-  
+
+      console.log(jsonResponse)
+
+      const { id } = jsonResponse
+
+      changeData({ id })
       changeRoute({ href })
       changeControl({ connecting: false })
-    }
   })
 }
 

@@ -14,6 +14,8 @@ function genericRequestHandler({
   const { cookies, originalUrl, headers } = req
   const { access_token: accessToken } = cookies
   const url = getPureUrl(originalUrl)
+  const queryMatch = originalUrl.match(/\?.+$/)
+  const query = queryMatch ? queryMatch[0] : ''
   const route = getRouteByUrl({ url, routes })
   const device = getDevice(headers['user-agent'])
   const visitorState = getVisitorState(cookies)
@@ -21,7 +23,7 @@ function genericRequestHandler({
   routeSender({
     res,
     clientUrl, apiUrl,
-    route, url, device, routeRenders, tracks,
+    url, query, route, device, routeRenders, tracks,
     appState, renderState, visitorState,
     accessToken,
     appRenderer

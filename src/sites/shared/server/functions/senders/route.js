@@ -8,7 +8,7 @@ import initialStateParserV2 from '../parsers/initial-state.js'
 function routeSender({
   res,
   clientUrl, apiUrl, tracks, routeRenders,
-  url, route, device,
+  url, query, route, device,
   appState, renderState, visitorState,
   accessToken,
   appRenderer
@@ -16,7 +16,7 @@ function routeSender({
   const { track, lang: routeLang, pageName, initialStateParser } = route
   const pageNameHeader = pageName ? { 'Page-Name': pageName } : {}
 
-  fetch(apiUrl + `/sync`, {
+  fetch(`${apiUrl}/sync${query}`, {
     headers: {
       'Content-Type': 'application/json',
       'Type': 'ssr',

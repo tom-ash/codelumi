@@ -1,12 +1,10 @@
 import { ANNOUNCEMENT_CREATE_FORM_TRACK, ANNOUNCEMENT_CREATE_VERIFICATION_TRACK, ANNOUNCEMENT_CREATE_SUCCESS_TRACK, ANNOUNCEMENT_CREATE_EDIT_TRACK } from '../../../../../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = store => {
-  const { lang, isMobile } = store.app
+  const { routeSynced, lang, isMobile } = store.app
   const {
-    [ANNOUNCEMENT_CREATE_FORM_TRACK]: renderForm,
-    [ANNOUNCEMENT_CREATE_EDIT_TRACK]: renderEdit,
-    [ANNOUNCEMENT_CREATE_VERIFICATION_TRACK]: renderVerification,
-    [ANNOUNCEMENT_CREATE_SUCCESS_TRACK]: renderSuccess
+    [ANNOUNCEMENT_CREATE_FORM_TRACK]: renderForm, [ANNOUNCEMENT_CREATE_EDIT_TRACK]: renderEdit,
+    [ANNOUNCEMENT_CREATE_VERIFICATION_TRACK]: renderVerification, [ANNOUNCEMENT_CREATE_SUCCESS_TRACK]: renderSuccess
   } = store.render
   const { authorized, admin } = store.user.authorize.data
   const { control, inputs, errors, data } = store.announcement.create
@@ -37,6 +35,7 @@ export const mapStateToProps = store => {
   } = inputs
 
   return {
+    routeSynced,
     renderForm, renderVerification, renderSuccess, renderEdit,
     accountType,
     email,

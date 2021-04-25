@@ -30,7 +30,6 @@ export function titleManager() {
   const { renderMap, renderCatalogue, resetAnnouncementIndexControl, resetAnnouncementIndexInputs, resetAnnouncementIndexData } = this.props
   const title = this.langHandler(ROOT_TITLES)
   const href = `${CLIENT_URL}/${this.langHandler(ROOT_URLS)}`
-  // console.log(href)
 
   return {
     classNames: { container: '' },
