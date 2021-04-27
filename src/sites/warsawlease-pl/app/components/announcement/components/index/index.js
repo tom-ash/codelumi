@@ -13,8 +13,6 @@ import langHandler from '../../../../functions/lang-handler'
 import { parseCurrency } from '../../functions/currency-parsers'
 import { parseCategoryForUrl } from '../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../functions/district-parsers'
-import { ManagedLink } from 'managed-inputs'
-import { addAnnouncementManager } from '../../../../components/scaffold/components/header/functions/managers'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
@@ -28,7 +26,6 @@ class AnnouncementIndexSearch extends React.Component {
     this.parseCurrency = parseCurrency.bind(this)
     this.parseCategoryForUrl = parseCategoryForUrl.bind(this)
     this.parseDistrictForUrl = parseDistrictForUrl.bind(this)
-    this.addAnnouncementManager = addAnnouncementManager.bind(this)
   }
 
   render() {
@@ -43,9 +40,6 @@ class AnnouncementIndexSearch extends React.Component {
 
     return (
       <div id='announcement-index'>
-        <div>
-          {showAddAnnouncement && <ManagedLink {...this.addAnnouncementManager()} />}
-        </div>
         {(renderMap || renderCatalogue) && <AnnouncementIndexPanel />}
         {renderMap && <AnnouncementIndexMap />}
         {renderCatalogue && <AnnouncementIndexCatalogue />}

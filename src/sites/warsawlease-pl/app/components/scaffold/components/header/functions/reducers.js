@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import { RENDER_SIDE_LINKS_TRACK } from '../constants/tracks'
+import { SHOW_MENU } from '../constants/tracks'
 
 const control = {
-  [RENDER_SIDE_LINKS_TRACK]: false
+  [SHOW_MENU]: false
 }
 
 export const controlReducer = (state = control, action) => {

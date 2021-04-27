@@ -6,6 +6,7 @@ import changeRouteWithHref from '../../../../../../app/functions/routes/changers
 import getHrefByTrackAndLang from '../../../../../functions/routes/getters/href-by-track-and-lang.js'
 import { ANNOUNCEMENT_CREATE_SUCCESS_URLS } from '../../../../../../shared/constants/routes/urls.js'
 import CLIENT_URL from '../../../../../../shared/constants/urls/client.js'
+import setConfirmationTokenCookie from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token.js'
 
 function createAnnouncement() {
   const { authorized, renderEdit, changeControl } = this.props
@@ -77,10 +78,12 @@ function createWithUser() {
   })
   .then(jsonResponse => {
     const { changeRoute } = this.context
+    const { confirmationToken } = jsonResponse
     const track = ANNOUNCEMENT_CREATE_VERIFICATION_TRACK
-    const href = `${getHrefByTrackAndLang({ track, lang })}?e=${user.email}`
+    const href = getHrefByTrackAndLang({ track, lang })
     const { id } = jsonResponse
 
+    setConfirmationTokenCookie(confirmationToken)
     changeData({ id })
     changeRoute({ href })
     changeControl({ connecting: false })

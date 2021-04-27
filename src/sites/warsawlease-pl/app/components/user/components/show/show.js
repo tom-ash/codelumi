@@ -28,20 +28,11 @@ class UserShow extends React.Component {
     } = this.props
 
     return (
-      <div
-        id='user-show'
-        onClick={() => changeRender({ [USER_SHOW_TRACK]: false })}
-      >
-        <div
-          id='user-show-account'
-          onClick={e => e.stopPropagation()}
-        >
+      <div id='user-show' onClick={() => changeRender({ [USER_SHOW_TRACK]: false })}>
+        <div id='user-show-account' onClick={e => e.stopPropagation()}>
           <ManagedLink {...this.addAnnouncementManager({ hrefLang })} />
-          <div className='line' />
           <ManagedLink {...this.myAnnouncementsManager({ hrefLang })} />
-          <div className='line' />
           <ManagedLink {...this.accountManager({ hrefLang })} />
-          <div className='line' />
           <ManagedButton {...this.deAuthorizeManager({ hrefLang })} />
         </div>
       </div>

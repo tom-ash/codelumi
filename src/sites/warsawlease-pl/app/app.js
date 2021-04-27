@@ -46,10 +46,10 @@ class App extends React.Component {
         <div id='app-container'>
           <Header />
           <div id='app-inner-container'>
-            {renderVisitor && <Visitor />}
-            {renderAnnouncement && <Announcement />}
-            {renderUser && <User />}
             {renderPage && <Page { ...pageProps } />}
+            {renderVisitor && <Visitor />}
+            {renderUser && <User />}
+            {renderAnnouncement && <Announcement />}
           </div>
           <Footer />
         </div>

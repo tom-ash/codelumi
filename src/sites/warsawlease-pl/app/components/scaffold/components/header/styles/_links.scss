@@ -1,38 +1,49 @@
-%top-links {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  line-height: 50px;
-  text-align: right;
-  @media #{$SMALL-PC} {
-    right: 52px;
-  }
+%links {
+  float: right;
   .header-link {
     display: inline-block;
-    margin-right: 20px;
-    :hover {
-      text-decoration: underline;
-      cursor: pointer;
-    }
-
+    margin-left: 25px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 9px 0;
+    cursor: pointer;
     svg {
       display: block;
       width: 20px;
-      margin: 3px auto 5px;
-      // margin-
+      margin: 0 auto 4px;
     }
-
-    .input {
-      border: none;
-      background: none;
+    &.hover {
+      text-decoration: underline;
     }
     &.add-announcement {
-      width: 200px;
-      text-align: center;
-      font-size: 14px;
-      line-height: 15px;
-      padding: 5px 12px;
+      color: $HEADER-LINK-ADD-ANNOUNCEMENT;
+      svg {
+        fill: $HEADER-LINK-ADD-ANNOUNCEMENT;
+      }
+      :hover {
+        color: $HEADER-LINK-ADD-ANNOUNCEMENT-HOVER;
+        svg {
+          fill: $HEADER-LINK-ADD-ANNOUNCEMENT-HOVER;
+        }
+      }
+    }
+    &.sign-in {
+      svg {
+        width: 24px;
+        transform: translate(0, -1px);
+      }
+    }
+    &.my-account {
+      svg {
+        width: 17px;
+      }
+    }
+    :hover {
+      svg {
+        fill: #34495E;
+      }
+      color: #34495E;
     }
   }
 }

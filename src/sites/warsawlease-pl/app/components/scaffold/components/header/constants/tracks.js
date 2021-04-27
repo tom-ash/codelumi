@@ -1,1 +1,1 @@
-export const RENDER_SIDE_LINKS_TRACK = 'render/side-links'
+export const SHOW_MENU = 'render/side-links'

@@ -3,13 +3,19 @@ import { ManagedLink } from 'managed-inputs'
 
 export function linksProvider({ authorized }) {
   if (authorized) {
-    return <ManagedLink {...this.myAccountManager()} />
+    return (
+      <>
+        <ManagedLink {...this.addAnnouncementManager()} />
+        <ManagedLink {...this.myAccountManager()} />
+      </>
+    )
   }
 
   return (
     <>
-      <ManagedLink {...this.signUpManager()} />
-      <ManagedLink {...this.signInManager()} />
+      <ManagedLink key='add-announcement' {...this.addAnnouncementManager()} />
+      <ManagedLink key='sign-up' {...this.signUpManager()} />
+      <ManagedLink key='sign-in' {...this.signInManager()} />
     </>
   )
 }

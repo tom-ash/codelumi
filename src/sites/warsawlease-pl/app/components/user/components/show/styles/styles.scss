@@ -8,23 +8,31 @@
   bottom: 0;
   left: 0;
   z-index: 999999;
-  font-size: 15px;
-  background: rgba(0, 0, 0, 0.3);
   #user-show-account {
     position: absolute;
     background: white;
-    top: 60px;
-    right: 100px;
-    padding: 20px;
-    width: auto;
+    top: 72px;
+    right: 12px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   }
-  .line {
-    height: 1px;
-    margin: 15px 0;
-    background: lightgray;
-  }
   a, button {
+    display: block;
+    margin: 35px;
+    font-size: 15px;
+    padding-left: 35px;
+    cursor: pointer;
+    svg {
+      position: absolute;
+      left: 25px;
+      display: block;
+      width: 20px;
+      transform: translate(0, -3px);
+    }
+    &.add-announcement {
+      svg {
+        transform: translate(0, -4px);
+      }
+    }
     &:hover {
       text-decoration: underline;
     }
@@ -35,5 +43,26 @@
     background: none;
     text-align: left;
     font-size: 15px;
+  }
+  .add-announcement {
+    svg {
+      transform: translate(0, -4px);
+    }
+  }
+  .my-announcements {
+    svg {
+      transform: rotate(180deg);
+      transform: translate(0, -2px);
+    }
+  }
+  .settings {
+    svg {
+      width: 24px;
+    }
+  }
+  .de-authorize {
+    svg {
+      width: 24px;
+    }
   }
 }

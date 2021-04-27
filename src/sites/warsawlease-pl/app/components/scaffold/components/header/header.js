@@ -1,4 +1,5 @@
 import React from 'react'
+import loadable from '@loadable/component'
 import { connect } from 'react-redux'
 import * as reduxMappers from './constants/mappers'
 import { ManagedLink } from 'managed-inputs'
@@ -6,8 +7,9 @@ import * as managers from './functions/managers'
 import langHandler from '../../../../functions/lang-handler'
 import { HeaderProvider } from '../../../announcement/components/index/functions/header-provider'
 import { linksProvider } from './functions/links-provider'
-import { RENDER_SIDE_LINKS_TRACK } from './constants/tracks'
+import { SHOW_MENU } from './constants/tracks'
 import AppContext from '../../../../constants/context.js'
+const MenuButton = loadable(() => import('./components/menu-button/menu-button.js'))
 
 class Header extends React.Component {
   constructor(props) {
@@ -17,7 +19,7 @@ class Header extends React.Component {
     this.signUpManager = managers.signUpManager.bind(this)
     this.signInManager = managers.signInManager.bind(this)
     this.myAccountManager = managers.myAccountManager.bind(this)
-    this.languageManager = managers.languageManager.bind(this)
+    this.langManager = managers.langManager.bind(this)
     this.langHandler = langHandler.bind(this)
     this.linksProvider = linksProvider.bind(this)
   }
@@ -25,59 +27,31 @@ class Header extends React.Component {
   static contextType = AppContext
 
   render() {
-    const {
-      renderMap,
-      renderCatalogue,
-      renderSideLinks,
-      changeControl,
-      device,
-      authorized
-    } = this.props
-    const isLargePc = device === 'largePc'
-    const showAddAnnouncement = ['largePc', 'smallPc', 'largeTablet'].indexOf(device) !== -1
-    const links = this.linksProvider({ authorized })
+    const { authorized, device, renderMap, renderCatalogue, renderMenu, changeRender, changeControl } = this.props
+    const links = this.linksProvider({ authorized, smallMobile })
+    const smallMobile = ['smallTablet', 'largePhone', 'smallPhone'].indexOf(device) !== -1
 
     return (
       <div id='header'>
         <div className='inner'>
-          {!isLargePc &&
-          <div className='links-icon-container'>
-            <div
-              className='links-icon'
-              onClick={() => changeControl({ [RENDER_SIDE_LINKS_TRACK]: true })}
-            >
-              <div className='link-icon' />
-              <div className='link-icon' />
-              <div className='link-icon' />
-            </div>
-          </div>}
-          <div id='warsaw-lease'>
-            <ManagedLink {...this.titleManager()} />
-          </div>
+          <ManagedLink {...this.titleManager()} />
           {(renderMap || renderCatalogue) &&
-          <h1 className='title'>
-            <HeaderProvider
-              renderMap={renderMap}
-              renderCatalogue={renderCatalogue}
-              langHandler={this.langHandler}
-            />
+          <h1 className='page-header'>
+            <HeaderProvider renderMap={renderMap} renderCatalogue={renderCatalogue} langHandler={this.langHandler} />
           </h1>}
-          <div className='top-links'>
-            {showAddAnnouncement && <ManagedLink {...this.addAnnouncementManager()} />}
-            {isLargePc && links}
-            <ManagedLink {...this.languageManager()} />
+          {smallMobile && <MenuButton authorized={authorized} smallMobile={smallMobile} changeRender={changeRender} changeControl={changeControl} />}
+          <div className='links'>
+            {!smallMobile && links}
+            <ManagedLink {...this.langManager()} />
           </div>
-          {renderSideLinks &&
-          <div
-            className='side-links-cover'
-            onClick={() => changeControl({ [RENDER_SIDE_LINKS_TRACK]: false })}
-          >
-            <div className='side-links'>
-              <ManagedLink {...this.addAnnouncementManager()} />
-              {links}
-            </div>
-          </div>}
+          <div className='float-clear' />
         </div>
+        {renderMenu &&
+        <div className='menu-cover' onClick={() => changeControl({ [SHOW_MENU]: false })}>
+          <div className='menu'>
+          {links}
+          </div>
+        </div>}
       </div>
     )
   }

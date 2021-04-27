@@ -66,7 +66,7 @@ export function addAnnouncementManager() {
     title: this.langHandler(ANNOUNCEMENT_CREATE_TITLES),
     label: (
       <>
-        <SVG name='checkSquare' />
+        <SVG name='plusSquare' />
         {this.langHandler(ANNOUNCEMENT_CREATE_LABELS)}
       </>
     ),
@@ -80,11 +80,16 @@ export function signUpManager() {
   const href = `${CLIENT_URL}/${this.langHandler(USER_CREATE_FORM_URLS)}`
 
   return {
-    classNames: { container: 'header-link' },
+    classNames: { container: 'header-link sign-in' },
     href,
     hrefLang: this.langHandler(LANGS),
     title,
-    label: title,
+    label: (
+      <>
+        <SVG name='userPlus' />
+        {title}
+      </>
+    ),
     onClick: () => changeRoute({ href })
   }
 }
@@ -99,7 +104,12 @@ export function signInManager() {
     href,
     hrefLang: this.langHandler(LANGS),
     title,
-    label: title,
+    label: (
+      <>
+        <SVG name='userCheck' />
+        {title}
+      </>
+    ),
     onClick: () => changeRoute({ href })
   }
 }
@@ -109,11 +119,16 @@ export function myAccountManager() {
   const title = this.langHandler(USER_SHOW_TITLES)
   
   return {
-    classNames: { container: 'header-link' },
+    classNames: { container: 'header-link my-account' },
     href: `${CLIENT_URL}/${this.langHandler(USER_SHOW_URLS)}`,
     hrefLang: this.langHandler(LANGS),
     title,
-    label: title,
+    label: (
+      <>
+        <SVG name='user' />
+        {title}
+      </>
+    ),
     onClick: () => changeRender({
       [USER_TRACK]: true,
       [USER_SHOW_TRACK]: true
@@ -121,7 +136,7 @@ export function myAccountManager() {
   }
 }
 
-export function languageManager() {
+export function langManager() {
   const { changeRoute, getRouteByLang } = this.context
   const { changeApp, lang } = this.props
   const invertedLanguage = lang === 'pl' ? 'en' : 'pl'
@@ -129,9 +144,14 @@ export function languageManager() {
   const href = `${CLIENT_URL}/${url === '/' ? '' : `${url}`}`
   
   return {
-    classNames: { container: 'button lang' },
+    classNames: { container: 'header-link lang' },
     href,
-    label: LANG_LABELS[invertedLanguage],
+    label: (
+      <>
+        <SVG name='globe' />
+        {LANG_LABELS[invertedLanguage]}
+      </>
+    ),
     onClick: () => {
       saveCookie('lang', invertedLanguage, 'oneYear')
       changeApp({ lang: invertedLanguage })

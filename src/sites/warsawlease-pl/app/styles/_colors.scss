@@ -13,12 +13,15 @@ $STEPS-LINE-COLOR: #D7DBDD;
 $STEPS-FILL-COLOR: #BDC3C7;
 $STEPS-CURRENT-COLOR: #626567;
 $STEPS-SUCCESS-COLOR: #229954;
-$FORM-BORDER: #B3B6B7;//#979A9A;//#D7DBDD;
-$FORM-INPUT-ICON-COLOR: #B3B6B7;//#CACFD2;
+$FORM-BORDER: #B3B6B7;
+$FORM-INPUT-ICON-COLOR: #B3B6B7;
 $FORM-INPUT-CHEVRON-COLOR: #979A9A;
+$LINKS-HEADER-COLOR: #34495E;
+$HEADER-LINK-ADD-ANNOUNCEMENT: #BA4A00;
+$HEADER-LINK-ADD-ANNOUNCEMENT-HOVER: #D35400;
 
 // DEPRECATED
-$primary-element-color: #34495E;
+$primary-element-color: #3a4046;
 $primary-text-color: #2E4053;
 $primary-text-transparentized-color: transparentize($primary-text-color, .3);
 $primary-icon-color: #21618C;
@@ -50,11 +53,6 @@ $value-color: #7DCEA0;
 $primary-error-color: #C0392B;
 $input-color: #626567;
 $input-border-color: #979A9A;
-
-
-
-
-
 $button-index-color: #FBFCFC;
 $untached-color: #2E4053;
 $touched-color: #212F3D;

@@ -3,7 +3,7 @@ import {
   ANNOUNCEMENT_INDEX_CATALOGUE_TRACK
 } from '../../../../../../shared/constants/tracks/tracks'
 import {
-  RENDER_SIDE_LINKS_TRACK
+  SHOW_MENU
 } from '../constants/tracks'
 
 export const mapStateToProps = store => {
@@ -20,7 +20,7 @@ export const mapStateToProps = store => {
   const {
     lang_ver_urls: pageLangUrls
   } = store.page.show.data
-  const { [RENDER_SIDE_LINKS_TRACK]: renderSideLinks } = store.scaffold.header.control
+  const { [SHOW_MENU]: renderMenu } = store.scaffold.header.control
 
   return {
     lang,
@@ -29,7 +29,7 @@ export const mapStateToProps = store => {
     render,
     renderMap,
     renderCatalogue,
-    renderSideLinks,
+    renderMenu,
     pageLangUrls
   }
 }
