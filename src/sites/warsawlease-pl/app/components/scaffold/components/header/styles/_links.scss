@@ -15,29 +15,24 @@
       text-decoration: underline;
       cursor: pointer;
     }
+
+    svg {
+      display: block;
+      width: 20px;
+      margin: 3px auto 5px;
+      // margin-
+    }
+
     .input {
       border: none;
       background: none;
     }
     &.add-announcement {
-      color: #F2F3F4;
+      width: 200px;
+      text-align: center;
       font-size: 14px;
-      background: #229954;
-      display: inline-block;
-      font-weight: normal !important;
-      border-radius: 2px;
-      margin-bottom: 10px;
-      height: 24px;
       line-height: 15px;
       padding: 5px 12px;
-      border-radius: 12px;
-      background: #17A589;
-      :hover {
-        text-decoration: none;
-      }
-      &.hover {
-        background: #28B463;
-      }
     }
   }
 }

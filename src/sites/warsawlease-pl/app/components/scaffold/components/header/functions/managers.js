@@ -1,6 +1,5 @@
 import React from 'react'
 import { saveCookie } from '../../../../../functions/cookie-handlers'
-import Logo from '../../../../../assets/logo-header.svg'
 import {
   LANGS
 } from '../../../../../../shared/constants/langs/langs'
@@ -24,6 +23,7 @@ import {
 } from '../../../../../../shared/constants/routes/labels'
 import routes from '../../../../../../shared/constants/routes/routes.js'
 import CLIENT_URL from '../../../../../../shared/constants/urls/client.js'
+import SVG from '../../../../support/components/svg/svg.js'
 
 export function titleManager() {
   const { changeRoute } = this.context
@@ -64,7 +64,12 @@ export function addAnnouncementManager() {
     href,
     hrefLang: this.langHandler(LANGS),
     title: this.langHandler(ANNOUNCEMENT_CREATE_TITLES),
-    label: this.langHandler(ANNOUNCEMENT_CREATE_LABELS),
+    label: (
+      <>
+        <SVG name='checkSquare' />
+        {this.langHandler(ANNOUNCEMENT_CREATE_LABELS)}
+      </>
+    ),
     onClick: () => changeRoute({ href })
   }
 }
