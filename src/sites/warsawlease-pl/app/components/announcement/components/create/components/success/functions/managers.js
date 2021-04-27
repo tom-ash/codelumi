@@ -8,12 +8,7 @@ export function shareOnFacebookManager() {
   if (!announcement) return null
 
   const { id, category, district} = announcement
-
-  console.log(lang, id, category, district)
-
   const href = buildLink({ lang, id, category, district })
-
-
 
   return {
     classNames: { input: 'share-on-facebook' },

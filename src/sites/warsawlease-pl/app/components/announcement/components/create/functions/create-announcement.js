@@ -76,17 +76,14 @@ function createWithUser() {
     if (response.ok) return response.json()
   })
   .then(jsonResponse => {
-      const { changeRoute } = this.context
-      const track = ANNOUNCEMENT_CREATE_VERIFICATION_TRACK
-      const href = `${getHrefByTrackAndLang({ track, lang })}?e=${user.email}`
+    const { changeRoute } = this.context
+    const track = ANNOUNCEMENT_CREATE_VERIFICATION_TRACK
+    const href = `${getHrefByTrackAndLang({ track, lang })}?e=${user.email}`
+    const { id } = jsonResponse
 
-      console.log(jsonResponse)
-
-      const { id } = jsonResponse
-
-      changeData({ id })
-      changeRoute({ href })
-      changeControl({ connecting: false })
+    changeData({ id })
+    changeRoute({ href })
+    changeControl({ connecting: false })
   })
 }
 

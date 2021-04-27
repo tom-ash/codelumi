@@ -1,10 +1,10 @@
-import { openGraphProvider } from '../providers/open-graph'
-import { schemaOrgProvider } from '../providers/schema-org'
+import openGraphProvider from '../providers/open-graph'
+import schemaOrgProvider from '../providers/schema-org'
 import pretty from 'pretty'
 
 function indexRenderer({
   clientUrl, url, canonicalUrl, lang, noIndex,
-  title, description, keywords, image, openGraph, schemaOrg,
+  title, description, keywords, openGraph, schemaOrg,
   css, html, preloadedState, scriptTags
 }) {
   const charsetMeta = `<meta charset="UTF-8">`
@@ -14,8 +14,8 @@ function indexRenderer({
   const titleMeta = `<title>${title}</title>`
   const descriptionMeta = `<meta name="description" content="${description}">`
   const keywordsMeta = `<meta name="keywords" content="${keywords}">`
-  const openGraphMeta = openGraphProvider({ title, description, keywords, image, ...openGraph })
-  const schemaOrgMeta = schemaOrgProvider({ lang, title, description, keywords, ...schemaOrg })
+  const openGraphMeta = openGraphProvider(openGraph)
+  const schemaOrgMeta = schemaOrgProvider(schemaOrg)
   const style = `<style type="text/css">${[...css].join('')}</style>`
   const preloadedStateScript = `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}</script>`
   const indexAsHtml = (

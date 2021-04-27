@@ -1,20 +1,28 @@
+import openGraphGenericParser from './open-graph-generic.js'
+import schemaOrgGenericParser from './schema-org-generic.js'
+
 function metaDataParser({
   lang,
-  title, titleParser,
-  description, descriptionParser,
-  keywords, keywordsParser,
-  image, imageParser,
-  openGraph, openGraphParser,
-  schemaOrg, schemaOrgParser
+  title, titleParser, description, descriptionParser, keywords, keywordsParser, image, imageParser,
+  openGraph, openGraphSpecificParser,
+  schemaOrg, schemaOrgSpecificParser
 }) {
+  const parsedTitle = titleParser && titleParser({ title, lang }) || title
+  const parsedDescription = descriptionParser && descriptionParser({ description, lang }) || description
+  const parsedKeywords = keywordsParser && keywordsParser({ keywords, lang }) || keywords
+  const parsedImage = imageParser && imageParser({ image, lang }) || image
+  const openGraphParser = openGraphSpecificParser || openGraphGenericParser
+  const parsedOpenGraph = openGraphParser({ title: parsedTitle, description: parsedDescription, keywords: parsedKeywords, image: parsedImage, ...openGraph })
+  const schemaParser = schemaOrgGenericParser || schemaOrgSpecificParser
+  const parsedSchemaOrg = schemaParser({ lang, title: parsedTitle, description: parsedDescription, keywords: parsedKeywords, ...schemaOrg })
+
   return {
     lang,
-    title: titleParser && titleParser({ title, lang }) || title,
-    description: descriptionParser && descriptionParser({ description, lang }) || description,
-    keywords: keywordsParser && keywordsParser({ keywords, lang }) || keywords,
-    image: imageParser && imageParser({ image, lang }) || image,
-    openGraph: openGraphParser && openGraphParser({ openGraph, lang }) || openGraph,
-    schemaOrg: schemaOrgParser && schemaOrgParser({ schemaOrg, lang }) || schemaOrg
+    title: parsedTitle,
+    description: parsedDescription,
+    keywords: parsedKeywords,
+    openGraph: parsedOpenGraph,
+    schemaOrg: parsedSchemaOrg
   }
 }
 
