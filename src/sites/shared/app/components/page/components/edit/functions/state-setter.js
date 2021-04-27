@@ -1,7 +1,7 @@
 import genericRouteStateSetter from '../../../../../functions/routes/setters/generic-route-state.js'
 
-function pageEditStateSetter({ routeData }) {
-  const { state: { 'page/edit': value } } = routeData
+function pageEditStateSetter(state) {
+  const { 'page/edit': value } = state
   const { dispatch } = this.props
   const { name, langVerUrls } = value
   const body = JSON.stringify(value.body, null, 2)
@@ -13,7 +13,7 @@ function pageEditStateSetter({ routeData }) {
   const typeData = 'page/edit/data'
   dispatch({ type: typeData, value: { name, langVerUrls }})
   
-  genericRouteStateSetter.call(this, { routeData })
+  genericRouteStateSetter.call(this, state)
 }
 
 export default pageEditStateSetter
