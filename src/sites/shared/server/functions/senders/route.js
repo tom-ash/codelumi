@@ -33,10 +33,10 @@ function routeSender({
     throw new Error('Page Not Found')
   })
   .then(jsonResponse => {
-    const { metaData: unparsedMeta, state, state: { 'page/show/data': pageData }} = jsonResponse
+    const { meta: unparsedMeta, state, state: { 'page/show/data': pageData }} = jsonResponse
     let lang = routeLang
     if (pageData) { lang = pageData.lang }
-    const metaData = metaDataParser({ ...route, ...unparsedMeta, lang })
+    const meta = metaDataParser({ ...route, ...unparsedMeta, lang })
     const app = { ...appState, routeSynced: true, lang, device }
     const { visitor: { legal: { privacy: { settings: { statisticsConsent, marketingConsent }}}}} = visitorState
     const renderPrivacyMonit = { 'visitor/privacy-monit': anyNull({ statisticsConsent, marketingConsent }) }
@@ -47,7 +47,7 @@ function routeSender({
     const status = 200
 
     res.status(status).send(
-      indexRenderer({ clientUrl, url, ...metaData, ...appAsHtml }) 
+      indexRenderer({ clientUrl, url, ...meta, ...appAsHtml }) 
     )
   })
   .catch(exception => {

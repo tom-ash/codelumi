@@ -250,8 +250,8 @@ export default [
     lang: PL,
     track: ANNOUNCEMENT_CREATE_FORM_TRACK,
     title: ANNOUNCEMENT_CREATE_TITLES[PL],
-    keywords: ANNOUNCEMENT_CREATE_KEYWORDS[PL],
     description: ANNOUNCEMENT_CREATE_DESCRIPTIONS[PL],
+    keywords: ANNOUNCEMENT_CREATE_KEYWORDS[PL],
     image: DEFAULT_IMAGE_PL,
     pageName: 'create_announcement'
   },
@@ -260,7 +260,8 @@ export default [
     lang: EN,
     track: ANNOUNCEMENT_CREATE_FORM_TRACK,
     title: ANNOUNCEMENT_CREATE_TITLES[EN],
-    keywords: ANNOUNCEMENT_CREATE_DESCRIPTIONS[EN],
+    description: ANNOUNCEMENT_CREATE_DESCRIPTIONS[EN],
+    keywords: ANNOUNCEMENT_CREATE_KEYWORDS[EN],
     image: DEFAULT_IMAGE_PL,
     pageName: 'create_announcement'
   },

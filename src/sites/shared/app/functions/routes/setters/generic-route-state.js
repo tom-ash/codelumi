@@ -1,6 +1,5 @@
-function genericRouteStateSetter({ routeData }) {
+function genericRouteStateSetter(state) {
   const { changeApp, dispatch } = this.props
-  const { state } = routeData
   const appState = { routeSynced: true }
 
   if (state) {

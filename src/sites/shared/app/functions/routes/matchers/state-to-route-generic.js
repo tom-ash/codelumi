@@ -6,6 +6,7 @@ import genericRouteStateSetter from '../setters/generic-route-state.js'
 import getCookieValue from '../../cookies/getters/get-cookie-value.js'
 import anyNull from '../../helpers/any-null.js'
 import getCookieAsBool from '../../cookies/getters/get-cookie-as-bool.js'
+import metaSetter from '../../../../../shared/app/functions/routes/setters/meta.js'
 
 function matchStateToRouteGeneric({
   apiUrl,
@@ -29,11 +30,15 @@ function matchStateToRouteGeneric({
 
   const { track } = route
   const stateSetter = route.stateSetter || genericRouteStateSetter
-  
+
   changeRender({ ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] })
 
   syncRouteData.call(this, { apiUrl, url, query, route, requestType: 'ssr' })
-  .then(routeData => stateSetter.call(this, { routeData: { ...route, ...routeData, ...consents} }))
+  .then(syncedRouteData => {
+    const { state, meta } = syncedRouteData
+    stateSetter.call(this, state)
+    metaSetter({ ...route, ...meta })
+  })
 }
 
 export default matchStateToRouteGeneric
