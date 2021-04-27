@@ -37,13 +37,9 @@ export function titleManager() {
     hrefLang: this.langHandler(LANGS),
     title,
     label: (
-      <div className='logo-and-site'>
-        <div className='logo'>
-          <Logo />
-        </div>
-        <div className='site'>
-          warsawlease.pl
-        </div>
+      <div className='logo'>
+        <div>WARSAW</div>
+        <div>LEASE</div>
         <div className='float-clear' />
       </div>
     ),
