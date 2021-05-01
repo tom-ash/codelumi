@@ -1,0 +1,19 @@
+#header {
+  z-index: 2048;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #17202A;
+  color: #FDFEFE;
+  .inner {
+    max-width: 1440px;
+    .logo {
+      margin: 18px;
+      font-size: 24px;
+      @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+      font-family: 'Ubuntu', sans-serif;
+    }
+  }
+}

@@ -18,6 +18,7 @@ import CLIENT_URL from '../shared/constants/urls/client.js'
 import API_URL from '../shared/constants/urls/api.js'
 import pageShowStyles from './components/page/show/styles/styles.scss'
 import customNodeParser from './components/page/show/functions/custom-node-parser.js'
+import Header from './components/scaffold/header/header.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -41,7 +42,8 @@ class App extends React.Component {
     return (
       <AppContext.Provider value={AppContextValue}>
         <div id='app-container'>
-          <div id='app-inner-container'>
+          <Header/>
+          <div id='app-inner-container'>  
             {renderPage && <Page { ...pageProps } />}
             {renderVisitor && <Visitor {...visitorProps} />}
           </div>

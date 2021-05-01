@@ -56,7 +56,7 @@ export default [
     keywords: ROOT_KEYWORDS[PL],
     description: ROOT_DESCRIPTIONS[PL],
     image: DEFAULT_IMAGE_PL,
-    pageName: 'welcome'
+    pageName: 'root'
   },
   {
     url: ROOT_URLS[EN],
@@ -66,7 +66,7 @@ export default [
     keywords: ROOT_KEYWORDS[EN],
     description: ROOT_DESCRIPTIONS[EN],
     image: DEFAULT_IMAGE_PL,
-    pageName: 'welcome'
+    pageName: 'root'
   },
   {
     url: PAGE_CREATE_URLS[PL],

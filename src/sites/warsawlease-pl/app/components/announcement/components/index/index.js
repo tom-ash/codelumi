@@ -29,14 +29,7 @@ class AnnouncementIndexSearch extends React.Component {
   }
 
   render() {
-    const {
-      renderMap,
-      renderCatalogue,
-      renderMy,
-      device
-    } = this.props
-
-    const showAddAnnouncement = [null, 'smallTablet', 'largePhone', 'smallPhone'].indexOf(device) !== -1
+    const { renderMap, renderCatalogue, renderMy } = this.props
 
     return (
       <div id='announcement-index'>
