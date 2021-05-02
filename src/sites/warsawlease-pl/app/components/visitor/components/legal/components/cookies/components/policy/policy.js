@@ -13,6 +13,9 @@ class VisitorCookiesPolicy extends React.Component {
     this.langHandler = langHandler.bind(this)
   }
   render() {
+
+    console.log("HERE111")
+
     return (
       <React.Fragment>
         <div

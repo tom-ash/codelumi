@@ -1,11 +1,12 @@
 #footer {
   .inner {
+    padding: 0 20px;
     max-width: 1440px;
-    margin: 0 auto;
+    margin: 0 auto 20px;
+    font-size: 13px;
     .link {
       float: left;
       margin: 0 20px 10px 0;
-      font-size: 15px;
     }
     .copyright {
       border-top: 1px solid gray;

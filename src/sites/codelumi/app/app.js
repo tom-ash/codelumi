@@ -24,6 +24,9 @@ import * as langs from '../shared/constants/langs/langs.js'
 import * as urls from '../shared/constants/routes/urls.js'
 import * as titles from '../shared/constants/routes/titles.js'
 import footerStyles from './components/scaffold/footer/styles/styles.scss'
+import visitorStyles from './components/visitor/styles/styles.scss'
+
+const APP_NAME = 'codelumi'
 
 class App extends React.Component {
   constructor(props) {
@@ -43,7 +46,7 @@ class App extends React.Component {
     const { lang, renderPage, renderVisitor, renderAnnouncement, renderUser } = this.props
     const footerProps = { langs, urls, titles, clientUrl: CLIENT_URL, changeRoute: this.changeRoute, langHandler: this.langHandler, styles: footerStyles }
     const pageProps = { customNodeParser, tileStyles: pageShowStyles, clientUrl: CLIENT_URL, apiUrl: API_URL, changeRoute: this.changeRoute, langHandler: this.langHandler }
-    const visitorProps = {  changeRoute: this.changeRoute, langHandler: this.langHandler, changeRouteWithHref }
+    const visitorProps = { appName: APP_NAME, changeRoute: this.changeRoute, langHandler: this.langHandler, changeRouteWithHref, styles: visitorStyles }
     
     return (
       <AppContext.Provider value={AppContextValue}>

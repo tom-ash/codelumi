@@ -16,22 +16,17 @@ class Visitor extends React.Component {
   
   render() {
     const {
-      renderContact,
-      renderPrivacyMonit,
-      renderPrivacySettings,
-      renderTermsOfService,
-      renderCookiesPolicy,
-      renderPrivacyPolicy,
-      changeRoute,
-      langHandler
+      appName,
+      renderContact, renderPrivacyMonit, renderPrivacySettings, renderTermsOfService, renderCookiesPolicy, renderPrivacyPolicy,
+      changeRoute, langHandler,
+      styles
     } = this.props
-
-    const contactProps = { changeRoute, langHandler }
-    const termsOfServiceProps = { changeRoute, langHandler }
-    const cookiesPolicyProps = { changeRoute, langHandler }
-    const privacyPolicyProps = { changeRoute, langHandler }
-    const privacySettingsProps = { changeRoute, langHandler }
-    const privacyMonitProps = { changeRoute, langHandler }
+    const contactProps = { appName, changeRoute, langHandler }
+    const termsOfServiceProps = { appName, changeRoute, langHandler }
+    const cookiesPolicyProps = { appName, changeRoute, langHandler, styles }
+    const privacyPolicyProps = { appName, changeRoute, langHandler }
+    const privacySettingsProps = { appName, changeRoute, langHandler }
+    const privacyMonitProps = { appName, changeRoute, langHandler }
 
     return (
       <div id='visitor'>

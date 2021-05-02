@@ -1,45 +1,28 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import Provision from '../../../provision/provision'
-import withStyles from 'isomorphic-style-loader/withStyles'
-import styles from './styles/styles.scss'
+import useStyles from 'isomorphic-style-loader/useStyles'
 
-class VisitorCookiesPolicy extends React.Component {
-  constructor(props) {
-    super(props)
-  }
-  render() {
-    const { langHandler } = this.props
+const VisitorCookiesPolicy = ({ appName, langHandler, styles }) => {
+  const nodes = require(`../../../../../../../../../../${appName}/app/components/visitor/components/cookies-policy/constants/nodes.js`).default
 
-    return (
-      <React.Fragment>
-        <div
-          id='visitor-cookies-policy'
-          className='container__legal'
-          onClick={e => e.stopPropagation()}
-        >
-          <h1 className='page-header'>
-            {langHandler({ pl: 'Polityka Cookies', en: 'Cookies Policy' })}
-          </h1>
-          <div className='cookies-policy'>
-            {
-            ([]).map((provision, index) => (
-              <Provision
-              key={'cookiesPolicy' + index}
-              data={{
-                tier: provision.tier,
-                item: provision.item,
-                pl: provision.pl,
-                en: provision.en
-              }}/>
-            ))
-            }
-          </div>
-        </div>
-      </React.Fragment>
-    )
-  }
+  useStyles(styles)
+
+  return (
+    <div className='legal-document' onClick={e => e.stopPropagation()}>
+      <h1 className='page-header'>
+        {langHandler({ pl: 'Polityka Cookies', en: 'Cookies Policy' })}
+      </h1>
+      <div className='cookies-policy'>
+        {nodes.map((provision, index) => (
+          <Provision
+            langHandler={langHandler}
+            key={'cookiesPolicy' + index}
+            data={{ tier: provision.tier, item: provision.item, pl: provision.pl, en: provision.en }}
+          />
+        ))}
+      </div>
+    </div>
+  )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(VisitorCookiesPolicy))
+export default VisitorCookiesPolicy
