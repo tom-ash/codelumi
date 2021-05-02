@@ -6,7 +6,7 @@
   "scripts": {
     "codelumi-dev": "webpack-dev-server --config ./src/sites/codelumi/dev/webpack.config.js",
     "warsawlease-dev": "webpack-dev-server --config ./src/sites/warsawlease-pl/dev/webpack.config.js",
-    "build": "rm -rf ./dist && webpack --mode production --config ./src/server/webpack.config && webpack --mode production --config ./src/sites/codelumi/client/webpack.config && webpack --mode production --config ./src/sites/warsawlease-pl/client/webpack.config.js",
+    "build": "rm -rf ./dist & webpack --mode production --config ./src/server/webpack.config & webpack --mode production --config ./src/sites/codelumi/client/webpack.config & webpack --mode production --config ./src/sites/warsawlease-pl/client/webpack.config.js",
     "prod": "node ./dist/server/server.js"
   },
   "author": "tom-ash",
