@@ -3,7 +3,7 @@ import jsonToJsxParser from './functions/json_to_jsx_parser'
 import useStyles from 'isomorphic-style-loader/useStyles'
 
 const PageTile = props => {
-  const { customNodeParser, renderShow, renderEdit, fetching, name, body, styles, isAdmin, changePage, updatePage } = props
+  const { customNodeParser, renderShow, renderEdit, fetching, name, body, styles, isAdmin, clientUrl, changeRoute, changePage, updatePage } = props
 
   useStyles(styles)
 
@@ -21,7 +21,7 @@ const PageTile = props => {
         </>}
         
         <div className='body'>
-          {jsonToJsxParser.call(this, { body, customNodeParser })}
+          {jsonToJsxParser.call(this, { body, clientUrl, changeRoute, customNodeParser })}
         </div>
       </div>
     </>
