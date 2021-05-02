@@ -19,6 +19,10 @@ import API_URL from '../shared/constants/urls/api.js'
 import pageShowStyles from './components/page/show/styles/styles.scss'
 import customNodeParser from './components/page/show/functions/custom-node-parser.js'
 import Header from './components/scaffold/header/header.js'
+import Footer from '../../shared/app/components/scaffold/footer/footer.js'
+import * as langs from '../shared/constants/langs/langs.js'
+import * as urls from '../shared/constants/routes/urls.js'
+import * as titles from '../shared/constants/routes/titles.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -36,9 +40,10 @@ class App extends React.Component {
   render() {
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
     const { lang, renderPage, renderVisitor, renderAnnouncement, renderUser } = this.props
+    const footerProps = { langs, urls, titles, clientUrl: CLIENT_URL, changeRoute: this.changeRoute, langHandler: this.langHandler }
     const pageProps = { customNodeParser, tileStyles: pageShowStyles, clientUrl: CLIENT_URL, apiUrl: API_URL, changeRoute: this.changeRoute, langHandler: this.langHandler }
     const visitorProps = {  changeRoute: this.changeRoute, langHandler: this.langHandler, changeRouteWithHref }
-
+    
     return (
       <AppContext.Provider value={AppContextValue}>
         <div id='app-container'>
@@ -47,6 +52,7 @@ class App extends React.Component {
             {renderPage && <Page { ...pageProps } />}
             {renderVisitor && <Visitor {...visitorProps} />}
           </div>
+          <Footer {...footerProps}/>
         </div>
       </AppContext.Provider>
     )
