@@ -23,6 +23,7 @@ import Footer from '../../shared/app/components/scaffold/footer/footer.js'
 import * as langs from '../shared/constants/langs/langs.js'
 import * as urls from '../shared/constants/routes/urls.js'
 import * as titles from '../shared/constants/routes/titles.js'
+import footerStyles from './components/scaffold/footer/styles/styles.scss'
 
 class App extends React.Component {
   constructor(props) {
@@ -40,7 +41,7 @@ class App extends React.Component {
   render() {
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
     const { lang, renderPage, renderVisitor, renderAnnouncement, renderUser } = this.props
-    const footerProps = { langs, urls, titles, clientUrl: CLIENT_URL, changeRoute: this.changeRoute, langHandler: this.langHandler }
+    const footerProps = { langs, urls, titles, clientUrl: CLIENT_URL, changeRoute: this.changeRoute, langHandler: this.langHandler, styles: footerStyles }
     const pageProps = { customNodeParser, tileStyles: pageShowStyles, clientUrl: CLIENT_URL, apiUrl: API_URL, changeRoute: this.changeRoute, langHandler: this.langHandler }
     const visitorProps = {  changeRoute: this.changeRoute, langHandler: this.langHandler, changeRouteWithHref }
     
