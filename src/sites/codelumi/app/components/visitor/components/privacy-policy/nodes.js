@@ -162,8 +162,8 @@ const nodes = [
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
-    pl: <span>Wykonanie powyższych praw następuje poprzez wysłanie pisma na adres korespondencyjny Administratora lub emaila na adres <i>kontakt@warsawlease.pl</i> wskazujących wykonywane prawa.</span>,
-    en: <span>The execution of the abovementioned rights is made through sending a letter to the Administrator's correspondence address or an email to <i>contact@warsawlease.pl</i> with indication of the rights being executed.</span>
+    pl: <span>Wykonanie powyższych praw następuje poprzez wysłanie pisma na adres korespondencyjny Administratora lub emaila na adres <i>kontakt@warsaw.digital</i> wskazujących wykonywane prawa.</span>,
+    en: <span>The execution of the abovementioned rights is made through sending a letter to the Administrator's correspondence address or an email to <i>contact@warsaw.digital</i> with indication of the rights being executed.</span>
   },
   {
     item: '9.', tier: 'header', version: versions['1.0'],
