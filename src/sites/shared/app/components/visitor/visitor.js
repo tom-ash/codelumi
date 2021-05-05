@@ -24,7 +24,7 @@ class Visitor extends React.Component {
     const contactProps = { appName, changeRoute, langHandler }
     const termsOfServiceProps = { appName, changeRoute, langHandler }
     const cookiesPolicyProps = { appName, changeRoute, langHandler, styles }
-    const privacyPolicyProps = { appName, changeRoute, langHandler }
+    const privacyPolicyProps = { appName, changeRoute, langHandler, styles }
     const privacySettingsProps = { appName, changeRoute, langHandler }
     const privacyMonitProps = { appName, changeRoute, langHandler }
 

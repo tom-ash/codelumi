@@ -1,46 +1,24 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import Provision from '../../../provision/provision'
-import withStyles from 'isomorphic-style-loader/withStyles'
-import styles from './styles/styles.scss'
+import useStyles from 'isomorphic-style-loader/useStyles'
 
-class VisitorPrivacyPolicy extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+const VisitorPrivacyPolicy = ({ appName, langHandler, styles }) => {
+  const nodes = require(`../../../../../../../../../../${appName}/app/components/visitor/components/privacy-policy/constants/nodes.js`).default
 
-  render() {
-    const { langHandler } = this.props
+  useStyles(styles)
 
-    return (
-      <React.Fragment>
-        <div
-          id='visitor-privacy-policy'
-          className='container__legal'
-          onClick={e => e.stopPropagation()}
-        >
-          <h1 className='page-header'>
-            {langHandler({ pl: 'Polityka Prywatności', en: 'Privacy Policy' })}
-          </h1>
-          <div className='privacy-policy'>
-            {
-            ([]).map((provision, index) => (
-              <Provision
-              key={'privacyPolicy' + index}
-              data={{
-                tier: provision.tier,
-                item: provision.item,
-                pl: provision.pl,
-                en: provision.en
-              }}/>
-            ))
-            }
-          </div>
-        </div>
-      </React.Fragment>
-    )
-  }
+  return (
+    <div className='legal-document' onClick={e => e.stopPropagation()}>
+      <h1 className='page-header'>
+        {langHandler({ pl: 'Polityka Prywatności', en: 'Privacy Policy' })}
+      </h1>
+      <div className='privacy-policy'>
+        {nodes.map((provision, index) => (
+          <Provision key={index} data={provision} langHandler={langHandler}/>
+        ))}
+      </div>
+    </div>
+  )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(VisitorPrivacyPolicy))
+export default VisitorPrivacyPolicy
