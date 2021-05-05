@@ -1,7 +1,7 @@
 const appState = {
   device: null,
   scrollY: 0,
-  lang: 'pl',
+  lang: 'en',
   routeSynced: false
 }
 

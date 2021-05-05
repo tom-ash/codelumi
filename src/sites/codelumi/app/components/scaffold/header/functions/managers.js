@@ -1,9 +1,6 @@
 import React from 'react'
 
-export function logoManager() {
-  const { changeRoute } = this.context
-  const { renderRoot } = this.props
-
+export function logoManager({ changeRoute, langHandler }) {
   const title = 'todo'//this.langHandler(ROOT_TITLES)
   const href = '/'//`${CLIENT_URL}/${this.langHandler(ROOT_URLS)}`
 
