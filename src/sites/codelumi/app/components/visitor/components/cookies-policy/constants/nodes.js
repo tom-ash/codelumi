@@ -45,7 +45,7 @@ const nodes = [
   {
     item: '', tier: 'point', version: versions['1.0'],
     pl: <span>Serwis wykorzystuje Pliki Cookies, które ze względu na swój cel można podzielić na trzy kategorie: niezbędne,  statystyczne oraz marketingowe. Korzystanie z Serwisu oznacza akceptację Plików Cookies o niezbędnym charakterze. Odwiedzający może odmówić zgody na otrzymywanie Plików Cookies statystycznych oraz marketingowych.</span>,
-    en: <span>The Service uses Cookies, which, based on their purpose, can be divided into three cat: indispensable, statistical and marketing. Using of the Service means the acceptance of the indispensalbe Cookies. A Visitor is free to not consent to using by the Service of statistical and marketing Cookies.</span>
+    en: <span>The Service uses Cookies, which, based on their purpose, can be divided into three categories: indispensable, statistical and marketing. Using of the Service means the acceptance of the indispensalbe Cookies. A Visitor is free to not consent to using by the Service of statistical and marketing Cookies.</span>
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
