@@ -18,7 +18,7 @@ import CLIENT_URL from '../shared/constants/urls/client.js'
 import API_URL from '../shared/constants/urls/api.js'
 import pageShowStyles from './components/page/show/styles/styles.scss'
 import customNodeParser from './components/page/show/functions/custom-node-parser.js'
-import Header from './components/scaffold/header/header.js'
+import Header from '../../shared/app/components/scaffold/header/header.js'
 import Footer from '../../shared/app/components/scaffold/footer/footer.js'
 import * as langs from '../shared/constants/langs/langs.js'
 import * as urls from '../shared/constants/routes/urls.js'
@@ -26,6 +26,7 @@ import * as titles from '../shared/constants/routes/titles.js'
 import headerStyles from './components/scaffold/header/styles/styles.scss'
 import footerStyles from './components/scaffold/footer/styles/styles.scss'
 import visitorStyles from './components/visitor/styles/styles.scss'
+import logo from './components/scaffold/header/constants/logo.js'
 
 const APP_NAME = 'codelumi'
 
@@ -44,8 +45,8 @@ class App extends React.Component {
 
   render() {
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
-    const { lang, renderPage, renderVisitor, renderAnnouncement, renderUser } = this.props
-    const headerProps = { clientUrl: CLIENT_URL, changeRoute: this.changeRoute, langHandler: this.langHandler, styles: headerStyles }
+    const { renderPage, renderVisitor } = this.props
+    const headerProps = { logo, langs, urls, titles, clientUrl: CLIENT_URL, changeRoute: this.changeRoute, langHandler: this.langHandler, styles: headerStyles }
     const footerProps = { langs, urls, titles, clientUrl: CLIENT_URL, changeRoute: this.changeRoute, langHandler: this.langHandler, styles: footerStyles }
     const pageProps = { customNodeParser, tileStyles: pageShowStyles, clientUrl: CLIENT_URL, apiUrl: API_URL, changeRoute: this.changeRoute, langHandler: this.langHandler }
     const visitorProps = { appName: APP_NAME, changeRoute: this.changeRoute, langHandler: this.langHandler, changeRouteWithHref, styles: visitorStyles }

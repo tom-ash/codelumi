@@ -1,7 +1,6 @@
 import metaDataParser from '../../../../shared/functions/parsers/meta-data.js'
 
 function metaSetter(meta) {
-  console.log(meta)
   const parsedMeta = metaDataParser(meta)
   const { lang, title, description, keywords, openGraph, schemaOrg } = parsedMeta
 

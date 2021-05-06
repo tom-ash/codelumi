@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function logoManager({ changeRoute, langHandler }) {
+export function logoManager({ logo, changeRoute, langHandler }) {
   const title = 'todo'//this.langHandler(ROOT_TITLES)
   const href = '/'//`${CLIENT_URL}/${this.langHandler(ROOT_URLS)}`
 
@@ -9,11 +9,7 @@ export function logoManager({ changeRoute, langHandler }) {
     href,
     // hrefLang: this.langHandler(LANGS),
     title,
-    label: (
-      <div className='logo'>
-        codelumi.com
-      </div>
-    ),
+    label: logo,
     onClick: () => changeRoute({ href })
   }
 }

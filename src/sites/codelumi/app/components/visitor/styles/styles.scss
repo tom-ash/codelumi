@@ -63,5 +63,46 @@
         }
       }
     }
+    .consent {
+      margin: 35px 0 0 0;
+      line-height: 24px;
+      color: #212F3D;
+      .form-input {
+        &.radio {
+          float: left;
+          margin: 15px 30px 15px 0;
+          line-height: 16px;
+          color: #5D6D7E;
+          cursor: pointer;
+          .input {
+            float: left;
+            width: 16px;
+            height: 16px;
+            border-radius: 8px;
+            margin-right: 12px;
+            cursor: pointer;
+            border: 2px solid #5D6D7E;
+            &.checked {
+              border: 2px solid #212F3D;
+            }
+            .tick {
+              width: 8px;
+              height: 8px;
+              border-radius: 4px;
+              margin: 2px;
+              background: #212F3D;
+            }
+          }
+          .label {
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 16px;
+            &.checked {
+              color: #212F3D;
+            }
+          }
+        }
+      }
+    }
   }
 }

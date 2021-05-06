@@ -1,7 +1,7 @@
 import { saveCookie } from '../../../../cookies/functions/save'
 
-export function statisticsConsentManager() {
-  const { statisticsConsent } = this.props
+export function statisticsConsentManager(props) {
+  const { statisticsConsent, changeConsents } = props
 
   return {
     name: 'statistics',
@@ -12,14 +12,14 @@ export function statisticsConsentManager() {
       { value: false, label: 'Nie zgadzam się' }
     ],
     onClick: value => {
-      this.props.changeSettings({ statisticsConsent: value })
+      changeConsents({ statisticsConsent: value })
       saveCookie('_pdpaf', value, 'oneYear')
     }
   }
 }
 
-export function marketingConsentManager() {
-  const { marketingConsent } = this.props
+export function marketingConsentManager(props) {
+  const { marketingConsent, changeConsents } = props
   
   return {
     name: 'marketing',
@@ -30,7 +30,7 @@ export function marketingConsentManager() {
       { value: false, label: 'Nie zgadzam się' }
     ],
     onClick: value => {
-      this.props.changeSettings({ marketingConsent: value })
+      changeConsents({ marketingConsent: value })
       saveCookie('_pdpsm', value, 'oneYear')
     }
   }

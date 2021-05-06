@@ -57,7 +57,7 @@ export const mapDispatchToProps = dispatch => {
     changeRender: value => dispatch({ type: 'render', value }),
     changePageShowData: value => dispatch({ type: 'page/show/data', value }),
     changeUserEditData: value => dispatch({ type: 'user/edit/data', value }),
-    changeVisitorPrivacySettings: value => dispatch({ type: 'visitor/privacy/settings', value }),
+    changeVisitorConsents: value => dispatch({ type: 'visitor/privacy/settings', value }),
     dispatch
   }
 }

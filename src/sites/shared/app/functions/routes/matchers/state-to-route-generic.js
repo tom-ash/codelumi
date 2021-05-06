@@ -17,7 +17,7 @@ function matchStateToRouteGeneric({
 }) {
   if (typeof window === 'undefined') return
 
-  const { changeRender, changeVisitorPrivacySettings } = this.props
+  const { changeRender, changeVisitorConsents } = this.props
   const url = getPureUrl(pathname || window.location.pathname)
   const query = window.location.search
   const route = getRouteByUrl({ url, routes })
@@ -25,11 +25,10 @@ function matchStateToRouteGeneric({
   const marketingConsent = getCookieAsBool(getCookieValue('_pdpsm'))
   const consents = { statisticsConsent, marketingConsent }
   const renderPrivacyMonit = { [VISITOR_PRIVACY_MONIT_TRACK]: anyNull({ statisticsConsent, marketingConsent }) }
-
-  changeVisitorPrivacySettings(consents)
-
   const { track } = route
   const stateSetter = route.stateSetter || genericRouteStateSetter
+
+  changeVisitorConsents(consents)
 
   changeRender({ ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] })
 
