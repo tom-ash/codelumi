@@ -27,6 +27,7 @@ import headerStyles from './components/scaffold/header/styles/styles.scss'
 import footerStyles from './components/scaffold/footer/styles/styles.scss'
 import visitorStyles from './components/visitor/styles/styles.scss'
 import logo from './components/scaffold/header/constants/logo.js'
+import visitorPrivacyMonitStyles from './components/visitor/components/privacy-monit/styles/styles.scss'
 
 const APP_NAME = 'codelumi'
 
@@ -49,7 +50,7 @@ class App extends React.Component {
     const headerProps = { logo, langs, urls, titles, clientUrl: CLIENT_URL, changeRoute: this.changeRoute, langHandler: this.langHandler, styles: headerStyles }
     const footerProps = { langs, urls, titles, clientUrl: CLIENT_URL, changeRoute: this.changeRoute, langHandler: this.langHandler, styles: footerStyles }
     const pageProps = { customNodeParser, tileStyles: pageShowStyles, clientUrl: CLIENT_URL, apiUrl: API_URL, changeRoute: this.changeRoute, langHandler: this.langHandler }
-    const visitorProps = { appName: APP_NAME, changeRoute: this.changeRoute, langHandler: this.langHandler, changeRouteWithHref, styles: visitorStyles }
+    const visitorProps = { appName: APP_NAME, changeRoute: this.changeRoute, langHandler: this.langHandler, changeRouteWithHref, styles: visitorStyles, visitorPrivacyMonitStyles }
     
     return (
       <AppContext.Provider value={AppContextValue}>
