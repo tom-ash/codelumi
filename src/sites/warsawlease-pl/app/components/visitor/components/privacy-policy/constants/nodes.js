@@ -1,10 +1,11 @@
 import React from 'react'
 
 const versions = {
-  '1.0': '2020.01.01'
+  '1.0': '2020.01.01',
+  '1.1': '2020.03.12'
 }
 
-export const text = [
+const nodes = [
   {
     item: '1.', tier: 'header', version: versions['1.0'],
     pl: <span>Jaki podmiot jest administratorem danych osobowych?</span>,
@@ -31,14 +32,9 @@ export const text = [
     en: <span>What kinds of personal data are gathered by the Administrator?</span>
   },
   {
-    item: '', tier: 'point', version: versions['1.0'],
-    pl: <span>Założenie Konta w Serwisie wymaga podania firmy (nazwy) przedsiębiorcy oraz jego numer telefonu. Ponadto, przedsiębiorca lub osoba reprezentująca przedsiębiorcę przy zakładaniu konta podaje swój adres email oraz hasło. Wystawienie faktury może wymagać podania dalszych danych, takich jak NIP oraz adres przedsiębiorcy.</span>,
-    en: <span>The registration of an Account in the Service requires provision of the business name of the entrepreneur and its phone number. Furthermore, the entrepreneur or the person representing the entrepreneur at the Account registration provides its email address and password. Invoice issuance may require provision of additional data, such as tax ID number of the entreprenur and its address.</span>
-  },
-  {
     item: '', tier: 'point', version: versions['1.1'],
-    pl: <span>Od 12 marca 2020 r.: "<i>Założenie Konta w Serwisie wymaga podania adresu email, numeru telefonu oraz hasła, a ponadto imienia w przypadku Konta Prywatnego albo firmy (nazwy) przedsiębiorcy w przypadku Konta firmowego. Wystawienie faktury może wymagać podania dalszych danych.</i>"</span>,
-    en: <span>From 12 March 2020: "<i>The registration of an Account in the Service requires provision of an email, phone number and password, and furthermore a first name in case of the Private Account or a business name in case of the Business Account. Invoice issuance may require provision of additional data.</i>"</span>
+    pl: <span>Założenie Konta w Serwisie wymaga podania adresu email, numeru telefonu oraz hasła, a ponadto imienia w przypadku Konta Prywatnego albo firmy (nazwy) przedsiębiorcy w przypadku Konta firmowego. Wystawienie faktury może wymagać podania dalszych danych.</span>,
+    en: <span>The registration of an Account in the Service requires provision of an email, phone number and password, and furthermore a first name in case of the Private Account or a business name in case of the Business Account. Invoice issuance may require provision of additional data.</span>
   },
   {
     item: '', tier: 'point', version: versions['1.0'],
@@ -56,14 +52,9 @@ export const text = [
     en: <span>What kinds of personal data are available publicly?</span>
   },
   {
-    item: '', tier: 'point', version: versions['1.0'],
-    pl: <span>Przy każdym dodanym Ogłoszeniu dostępny jest publicznie numer telefonu Ogłoszeniodawcy oraz jego firma (nazwa).</span>,
-    en: <span>With each added Announcement the phone number and the business name of its Announcer are available publicly.</span>
-  },
-  {
     item: '', tier: 'point', version: versions['1.1'],
-    pl: <span>Od 12 marca 2020 r.: "<i>Przy każdym dodanym Ogłoszeniu numer telefonu Ogłoszeniodawcy oraz jego imię w przypadku Konta Prywatnego albo firma (nazwa) w przypadku Konta firmowego dostępne są publicznie.</i>"</span>,
-    en: <span>From 12 March 2020: "<i>With each added Announcement the phone number of its Announcer and furthermore the Announcer's first name in case of the Private Account or a business name in case of the Business Account are available publicly .</i>"</span>
+    pl: <span>Przy każdym dodanym Ogłoszeniu numer telefonu Ogłoszeniodawcy oraz jego imię w przypadku Konta Prywatnego albo firma (nazwa) w przypadku Konta firmowego dostępne są publicznie.</span>,
+    en: <span>With each added Announcement the phone number of its Announcer and furthermore the Announcer's first name in case of the Private Account or a business name in case of the Business Account are available publicly.</span>
   },
   {
     item: '5.', tier: 'header', version: versions['1.0'],
@@ -211,3 +202,5 @@ export const text = [
     en: <span>The personal data is stored by the Administrator for the period not surpassing the period of limitation with respect to relations connecting the Administrator with a given person.</span>
   }
 ]
+
+export default nodes

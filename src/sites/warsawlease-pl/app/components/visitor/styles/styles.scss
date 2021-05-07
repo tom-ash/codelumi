@@ -1,3 +1,108 @@
+@import '../../../../../shared/app/styles/styles.scss';
+
 #visitor {
-  z-index: 200000000;
+  .legal-document {
+    max-width: 768px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    box-shadow: $CONTAINER_BOX_SHADOW_TYPE_THIN;
+    border-radius: 4px;
+    h1 {
+      font-size: 19px;
+    }
+    .provision {
+      margin-bottom: 5px;
+      color: black;
+      font-size: 15px;
+      line-height: 20px;
+      &.header {
+        margin-top: 24px;
+        font-weight: bold;
+        position: relative;
+        .mark {
+          position: absolute;
+          line-height: 20px;
+        }
+        .text {
+          float: left;
+          text-align: justify;
+          line-height: 20px;
+          padding-left: 50px;
+        }
+      }
+      &.point {
+        .mark {
+          position: absolute;
+          line-height: 20px;
+        }
+        .text {
+          float: left;
+          text-align: justify;
+          width: 100%;
+          line-height: 20px;
+          padding-left: 50px;
+        }
+      }
+      &.subpoint {
+        .mark {
+          position: absolute;
+          padding-left: 50px;
+          line-height: 20px;
+        }
+        .text {
+          float: left;
+          padding-left: 75px;
+          text-align: justify;
+          line-height: 20px;
+        }
+      }
+      &.new {
+        .text {
+          font-style: italic;
+        }
+      }
+    }
+    .consent {
+      margin: 35px 0 0 0;
+      line-height: 24px;
+      color: #212F3D;
+      .form-input {
+        &.radio {
+          float: left;
+          margin: 15px 30px 15px 0;
+          line-height: 16px;
+          color: #5D6D7E;
+          cursor: pointer;
+          .input {
+            float: left;
+            width: 16px;
+            height: 16px;
+            border-radius: 8px;
+            margin-right: 12px;
+            cursor: pointer;
+            border: 2px solid #5D6D7E;
+            &.checked {
+              border: 2px solid #212F3D;
+            }
+            .tick {
+              width: 8px;
+              height: 8px;
+              border-radius: 4px;
+              margin: 2px;
+              background: #212F3D;
+            }
+          }
+          .label {
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 16px;
+            &.checked {
+              color: #212F3D;
+            }
+          }
+        }
+      }
+    }
+  }
 }

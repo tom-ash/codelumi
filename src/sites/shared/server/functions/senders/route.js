@@ -38,7 +38,7 @@ function routeSender({
     if (pageData) { lang = pageData.lang }
     const meta = metaDataParser({ ...route, ...unparsedMeta, lang })
     const app = { ...appState, routeSynced: true, lang, device }
-    const { visitor: { legal: { privacy: { settings: { statisticsConsent, marketingConsent }}}}} = visitorState
+    const { visitor: { consents: { statisticsConsent, marketingConsent } } } = visitorState
     const renderPrivacyMonit = { 'visitor/privacy-monit': anyNull({ statisticsConsent, marketingConsent }) }
     const render = { ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] }
     const residualState = initialStateParser && initialStateParser(state) || {}

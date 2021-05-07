@@ -2,10 +2,11 @@ import React from 'react'
 
 const versions = {
   '1.0': '2020.01.01',
-  '1.1': '2020.02.15'
+  '1.1': '2020.02.15',
+  '1.2': '2020.03.12'
 }
 
-export const text = [
+const nodes = [
   {
     item: '1.', tier: 'header', version: versions['1.0'],
     pl: <span>Wprowadzenie</span>,
@@ -82,14 +83,9 @@ export const text = [
     en: <span>Accounts</span>
   },
   {
-    item: '3.1.', tier: 'point', version: versions['1.1'],
-    pl: <span>Konto w Serwisie może założyć a) osoba fizyczna niedziałająca przy dodawaniu Ogłoszenia jako przedsiębiorca (Osoba Prywatna) lub b) podmiot działający przy dodawaniu ogłoszenia jako przedsiębiorca (Konto Profesjonalne).</span>,
-    en: <span>An Account in the Service can be registered by a) a natural person not acting at adding of an Announcement as an entrepreneur (Private Person) and/or b) an entity acting at adding of an Announcement as an entrepreneur (Professional Account).</span>
-  },
-  {
-    item: '', tier: 'point', version: versions['1.1'],
-    pl: <span>Od 12 marca 2020 r.: "<i>Konto w Serwisie może założyć a) osoba fizyczna niedziałająca przy dodawaniu Ogłoszenia jako przedsiębiorca (Konto Prywatne) lub b) podmiot działający przy dodawaniu ogłoszenia jako przedsiębiorca (Konto Firmowe).</i>"</span>,
-    en: <span>From 12 March 2020: "<i>An Account in the Service can be registered by a) a natural person not acting at adding of an Announcement as an entrepreneur (Private Account) and/or b) an entity acting at adding of an Announcement as an entrepreneur (Business Account).</i>"</span>
+    item: '3.1.', tier: 'point', version: versions['1.2'],
+    pl: <span>Konto w Serwisie może założyć a) osoba fizyczna niedziałająca przy dodawaniu Ogłoszenia jako przedsiębiorca (Konto Prywatne) lub b) podmiot działający przy dodawaniu ogłoszenia jako przedsiębiorca (Konto Firmowe).</span>,
+    en: <span>An Account in the Service can be registered by a) a natural person not acting at adding of an Announcement as an entrepreneur (Private Account) and/or b) an entity acting at adding of an Announcement as an entrepreneur (Business Account).</span>
   },
   {
     item: '3.2.', tier: 'point', version: versions['1.0'],
@@ -142,14 +138,9 @@ export const text = [
     en: <span>The beginning, duration and extent of the promotional period is determined by the Administrator.</span>
   },
   {
-    item: '4.9.', tier: 'point', version: versions['1.0'],
-    pl: <span>Dodane Ogłoszenie pozostaje aktywne przez okres 30 dni, chyba, że zostanie wcześniej usunięte przez Ogłoszeniodawcę lub Administratora. Po upływie tego okresu Ogłoszenie zostaje automatycznie usunięte, chyba, że okres aktywacji zostanie przedłużony przez Ogłoszeniodawcę. Ogłoszeniodawca może usunąć ogłoszenie w każdym momencie.</span>,
-    en: <span>An added Announcement stays active for the period of 30 days, unless, it is earlier deleted by the Announcer or the Administrator. After that period the Announcement is automatically deleted, unless the activation period is extended by the Announcer. The Announcement can be deleted by the Announcer at any time.</span>
-  },
-  {
-    item: '', tier: 'point', version: versions['1.1'],
-    pl: <span>Od 12 marca 2020 r.: "<i>Dodane Ogłoszenie pozostaje aktywne przez okres 60 dni, chyba, że zostanie wcześniej usunięte przez Ogłoszeniodawcę lub Administratora. Po upływie okresu aktywacji Ogłoszenie jest niewidoczne dla Odwiedzających, za wyjątkiem Ogłoszeniodawcy. Po upływie 30 dni od końca okresu aktywacji Ogłoszenie jest automatycznie usuwane. Ogłoszeniodawca może usunąć ogłoszenie w każdym momencie.</i>"</span>,
-    en: <span>From 12 March 2020: "<i>An added Announcement stays active for the period of 60 days, unless, it is earlier deleted by the Announcer or the Administrator. After the lapse of the activation period the Announcement is not visible to Visitors, excluding the Announcer. After 30 days from the end of the activation period the Announcement is automatically deleted. The Announcement can be deleted by the Announcer at any time.</i>"</span>
+    item: '4.9.', tier: 'point', version: versions['1.2'],
+    pl: <span>Dodane Ogłoszenie pozostaje aktywne przez okres 60 dni, chyba, że zostanie wcześniej usunięte przez Ogłoszeniodawcę lub Administratora. Po upływie okresu aktywacji Ogłoszenie jest niewidoczne dla Odwiedzających, za wyjątkiem Ogłoszeniodawcy. Po upływie 30 dni od końca okresu aktywacji Ogłoszenie jest automatycznie usuwane. Ogłoszeniodawca może usunąć ogłoszenie w każdym momencie.</span>,
+    en: <span>An added Announcement stays active for the period of 60 days, unless, it is earlier deleted by the Announcer or the Administrator. After the lapse of the activation period the Announcement is not visible to Visitors, excluding the Announcer. After 30 days from the end of the activation period the Announcement is automatically deleted. The Announcement can be deleted by the Announcer at any time.</span>
   },
   {
     item: '4.10.', tier: 'point', version: versions['1.0'],
@@ -212,14 +203,9 @@ export const text = [
     en: <span>Disputes arising out of these Terms of Service shall be determined by the court having jurisdiction over the Administrator.</span>
   },
   {
-    item: '7.3.', tier: 'point', version: versions['1.1'],
-    pl: <span>Niniejszy Regulamin obowiązuje od dnia 15 lutego 2020 r.</span>,
-    en: <span>These Terms of Service are applicable as of 15 February 2020.</span>
-  },
-  {
-    item: '', tier: 'point', version: versions['1.1'],
-    pl: <span>Od 12 marca 2020 r.: "<i>Niniejszy Regulamin obowiązuje od dnia 12 marca 2020 r.</i>"</span>,
-    en: <span>From 12 March 2020: "<i>These Terms of Service are applicable as of 12 March 2020.</i>"</span>
+    item: '7.3.', tier: 'point', version: versions['1.2'],
+    pl: <span>Niniejszy Regulamin obowiązuje od dnia 12 marca 2020 r.</span>,
+    en: <span>These Terms of Service are applicable as of 12 March 2020.</span>
   },
   {
     item: '7.4.', tier: 'point', version: versions['1.0'],
@@ -227,3 +213,5 @@ export const text = [
     en: <span>The Administrator is authorized to amend these Terms of Service, the Privacy Policy, the Cookies Policy and the Pricing through publication of the amendments to those documents within the Service under the address <i>www.warsawlease.pl</i>. The amendments are applicable after the lapse of the period of 14 days from their publication.</span>
   },
 ]
+
+export default nodes

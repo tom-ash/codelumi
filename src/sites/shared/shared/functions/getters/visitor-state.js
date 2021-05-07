@@ -1,25 +1,11 @@
 import getCookieAsBool from './cookie-as-bool'
 
 function getVisitorState(cookies) {
-  const {
-    _pdpsm,
-    _pdpaf
-  } = cookies
-  const marketingConsent = getCookieAsBool(_pdpsm)
+  const { _pdpsm, _pdpaf } = cookies
   const statisticsConsent = getCookieAsBool(_pdpaf)
+  const marketingConsent = getCookieAsBool(_pdpsm)
 
-  return {
-    visitor: {
-      legal: {
-        privacy: {
-          settings: {
-            marketingConsent,
-            statisticsConsent
-          }
-        }
-      }
-    }
-  }
+  return { visitor: { consents: { statisticsConsent, marketingConsent } } }
 }
 
 export default getVisitorState

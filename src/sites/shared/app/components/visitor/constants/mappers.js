@@ -10,7 +10,6 @@ export const mapStateToProps = store => {
     [VISITOR_PRIVACY_SETTINGS_TRACK]: renderPrivacySettings, [VISITOR_TERMS_OF_SERVICE_TRACK]: renderTermsOfService,
     [VISITOR_PRIVACY_POLICY_TRACK]: renderPrivacyPolicy, [VISITOR_CONTACT_TRACK]: renderContact
   } = store.render
-  // const { statistics: statisticsConsent, marketing: marketingConsent } = store.visitor.consents
   const { statisticsConsent, marketingConsent } = store.visitor.consents
 
   return {

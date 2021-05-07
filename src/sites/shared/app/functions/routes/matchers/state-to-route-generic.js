@@ -17,7 +17,7 @@ function matchStateToRouteGeneric({
 }) {
   if (typeof window === 'undefined') return
 
-  const { changeRender, changeVisitorConsents } = this.props
+  const { changeRender, changeConsents } = this.props
   const url = getPureUrl(pathname || window.location.pathname)
   const query = window.location.search
   const route = getRouteByUrl({ url, routes })
@@ -28,7 +28,7 @@ function matchStateToRouteGeneric({
   const { track } = route
   const stateSetter = route.stateSetter || genericRouteStateSetter
 
-  changeVisitorConsents(consents)
+  changeConsents(consents)
 
   changeRender({ ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] })
 

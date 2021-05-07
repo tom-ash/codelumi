@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import Header from './components/scaffold/components/header/header'
-import Visitor from './components/visitor/visitor'
+// import Visitor from './components/visitor/visitor'
 import Announcement from './components/announcement/announcement'
 import Page from '../../shared/app/components/page/page.js'
 import User from './components/user/user'
@@ -21,6 +21,12 @@ import CLIENT_URL from '../shared/constants/urls/client.js'
 import API_URL from '../shared/constants/urls/api.js'
 import pageTileStyles from './components/page/show/styles/styles.scss'
 import customNodeParser from './components/page/show/functions/custom-node-parser.js'
+import Visitor from '../../shared/app/components/visitor/visitor.js'
+import visitorStyles from './components/visitor/styles/styles.scss'
+import changeRouteWithHref from './functions/routes/changers/route-with-href.js'
+import visitorPrivacyMonitStyles from './components/visitor/components/privacy-monit/styles/styles.scss'
+
+const APP_NAME = 'warsawlease-pl'
 
 class App extends React.Component {
   constructor(props) {
@@ -40,13 +46,14 @@ class App extends React.Component {
 
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
     const pageProps = { customNodeParser, tileStyles: pageTileStyles, clientUrl: CLIENT_URL, apiUrl: API_URL, changeRoute: this.changeRoute, langHandler: this.langHandler }
+    const visitorProps = { appName: APP_NAME, changeRoute: this.changeRoute, langHandler: this.langHandler, changeRouteWithHref, styles: visitorStyles, visitorPrivacyMonitStyles }
 
     return (
       <AppContext.Provider value={AppContextValue}>
         <div id='app-container'>
           <Header />
           <div id='app-inner-container'>
-            {renderVisitor && <Visitor />}
+            {renderVisitor && <Visitor {...visitorProps}/>}
             {renderUser && <User />}
             {renderAnnouncement && <Announcement />}
             {renderPage && <Page { ...pageProps } />}

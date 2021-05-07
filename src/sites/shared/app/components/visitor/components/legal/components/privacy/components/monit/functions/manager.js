@@ -8,10 +8,7 @@ export function agreeManager(props) {
     classNames: { container: 'form-input button agree' },
     label: 'OK',
     onClick: () => {
-      changeConsents({
-        statisticsConsent: true,
-        marketingConsent: true
-      })
+      changeConsents({ statisticsConsent: true, marketingConsent: true })
       saveCookie('_pdpaf', 'true', 'oneYear')
       saveCookie('_pdpsm', 'true', 'oneYear')
       changeRender({ [VISITOR_PRIVACY_MONIT_TRACK]: false })

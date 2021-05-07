@@ -5,7 +5,7 @@ export const mapStateToProps = store => {
   const { scrollY } = store.visitor
   const render = store.render
   const { [VISITOR_TRACK]: renderVisitor, [PAGE_TRACK]: renderPage } = render
-  const { statistics: statisticsConsent, marketing: marketingConsent } = store.visitor.consents
+  const { statisticsConsent, marketingConsent } = store.visitor.consents
   const { data: pageShowData } = store.page.show
   const { data: pageEditData } = store.page.edit
   
@@ -16,7 +16,7 @@ export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
     changeRender: value => dispatch({ type: 'render', value }),
-    changeVisitorConsents: value => dispatch({ type: 'visitor/consents', value }),
+    changeConsents: value => dispatch({ type: 'visitor/consents', value }),
     dispatch
   }
 }

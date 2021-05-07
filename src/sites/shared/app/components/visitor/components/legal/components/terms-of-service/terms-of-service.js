@@ -5,6 +5,8 @@ import useStyles from 'isomorphic-style-loader/useStyles'
 const VisitorTermsOfService = ({ appName, langHandler, styles }) => {
   const nodes = require(`../../../../../../../../${appName}/app/components/visitor/components/terms-and-conditions/constants/nodes.js`).default
 
+  // const nodes = require(`../../../../../../../../warsawlease-pl`).default
+
   useStyles(styles)
 
   return (

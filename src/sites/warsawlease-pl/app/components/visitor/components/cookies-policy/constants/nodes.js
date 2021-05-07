@@ -4,7 +4,7 @@ const versions = {
   '1.0': '2020.01.01'
 }
 
-export const text = [
+const nodes = [
   {
     item: '1.', tier: 'header', version: versions['1.0'],
     pl: <span>Czym są Pliki Cookies?</span>,
@@ -68,3 +68,5 @@ export const text = [
     en: <span>Furthermore, in the web browser's settings there is a possibility of management of receiving of the Cookies.</span>
   }
 ]
+
+export default nodes

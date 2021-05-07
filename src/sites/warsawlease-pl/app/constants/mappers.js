@@ -7,26 +7,13 @@ import {
 
 export const mapStateToProps = store => {
   const { lang, device, path, scrollY, scripts, routeSynced } = store.app
-  const { statisticsConsent, marketingConsent } = store.visitor.legal.privacy.settings
-  const {
-    data: announcementCreateData
-  } = store.announcement.create
-  const {
-    data: announcementShowData
-  } = store.announcement.show
-  const {
-    data: pageShowData
-  } = store.page.show
-  const {
-    data: pageEditData
-  } = store.page.edit
+  const { statisticsConsent, marketingConsent } = store.visitor.consents
+  const { data: announcementCreateData } = store.announcement.create
+  const { data: announcementShowData } = store.announcement.show
+  const { data: pageShowData } = store.page.show
+  const { data: pageEditData } = store.page.edit
   const render = store.render
-  const {
-    [VISITOR_TRACK]: renderVisitor,
-    [ANNOUNCEMENT_TRACK]: renderAnnouncement,
-    [USER_TRACK]: renderUser,
-    [PAGE_TRACK]: renderPage
-  } = render
+  const { [PAGE_TRACK]: renderPage, [VISITOR_TRACK]: renderVisitor, [USER_TRACK]: renderUser,  [ANNOUNCEMENT_TRACK]: renderAnnouncement } = render
 
   return {
     lang,
@@ -57,7 +44,7 @@ export const mapDispatchToProps = dispatch => {
     changeRender: value => dispatch({ type: 'render', value }),
     changePageShowData: value => dispatch({ type: 'page/show/data', value }),
     changeUserEditData: value => dispatch({ type: 'user/edit/data', value }),
-    changeVisitorConsents: value => dispatch({ type: 'visitor/privacy/settings', value }),
+    changeConsents: value => dispatch({ type: 'visitor/consents', value }),
     dispatch
   }
 }
