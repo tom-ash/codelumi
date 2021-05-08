@@ -1,6 +1,6 @@
 import React from 'react'
 import { ManagedLink } from 'managed-inputs'
-import { logoManager } from './functions/managers'
+import { logoManager, langManager } from './functions/managers'
 import useStyles from 'isomorphic-style-loader/useStyles'
 
 const Header = props => {
@@ -12,6 +12,7 @@ const Header = props => {
     <div id='header'>
       <div className='inner'>
         <ManagedLink {...logoManager(props)} />
+        <ManagedLink {...langManager(props)} />
       </div>
     </div>
   )

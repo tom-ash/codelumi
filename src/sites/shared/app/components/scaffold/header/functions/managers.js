@@ -1,42 +1,37 @@
 import React from 'react'
+import getRouteByLang from '../../../../../app/functions/routes/getters/route-by-lang'
+import SVG from '../../../support/svg/svg.js'
 
-export function logoManager({ logo, changeRoute, langHandler }) {
-  const title = 'todo'//this.langHandler(ROOT_TITLES)
-  const href = '/'//`${CLIENT_URL}/${this.langHandler(ROOT_URLS)}`
+export function logoManager({ titles, urls, clientUrl, lang, logo, changeRoute, langHandler }) {
+  const title = langHandler(titles.ROOT_TITLES)
+  const url = langHandler(urls.ROOT_URLS)
+  const href = `${clientUrl}/${url === '/' ? '' : url}`
+  const hrefLang = lang
+  const label = logo
+  const onClick = () => changeRoute({ href })
 
-  return {
-    classNames: { container: '' },
-    href,
-    // hrefLang: this.langHandler(LANGS),
-    title,
-    label: logo,
-    onClick: () => changeRoute({ href })
-  }
+  return { href, hrefLang, title, label, onClick }
 }
 
-// export function langManager() {
-//   const { changeRoute, getRouteByLang } = this.context
-//   const { changeApp, lang } = this.props
-//   const invertedLanguage = lang === 'pl' ? 'en' : 'pl'
-//   const { url } = getRouteByLang({ lang: invertedLanguage, routes })
-//   const href = `${CLIENT_URL}/${url === '/' ? '' : `${url}`}`
+export function langManager(props) {
+  const { routes, clientUrl, render, lang, pageShowData, changeRoute } = props
+  const invertedLanguage = lang === 'pl' ? 'en' : 'pl'
+  const { url } = getRouteByLang({ routes, render, lang: invertedLanguage, pageShowData })
+  const href = `${clientUrl}/${url === '/' ? '' : `${url}`}`
   
-//   return {
-//     classNames: { container: 'header-link lang' },
-//     href,
-//     label: (
-//       <>
-//         <SVG name='globe' />
-//         {LANG_LABELS[invertedLanguage]}
-//       </>
-//     ),
-//     onClick: () => {
-//       saveCookie('lang', invertedLanguage, 'oneYear')
-//       changeApp({ lang: invertedLanguage })
+  return {
+    classNames: { container: 'header-link lang' },
+    href,
+    label: (
+      <>
+        <SVG name='globe' />
+        {{ en: 'Polski', pl: 'English' }[lang]}
+      </>
+    ),
+    onClick: () => {      
+      const href = `${clientUrl}/${url}${window.location.search}`
 
-//       const href = `${CLIENT_URL}/${url}`
-
-//       changeRoute({ href: href + window.location.search, withoutScroll: true })
-//     }
-//   }
-// }
+      changeRoute({ href, withoutScroll: true })
+    }
+  }
+}

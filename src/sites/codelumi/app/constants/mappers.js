@@ -9,7 +9,7 @@ export const mapStateToProps = store => {
   const { data: pageShowData } = store.page.show
   const { data: pageEditData } = store.page.edit
   
-  return { lang, routeSynced, renderPage, renderVisitor, scrollY, pageShowData, pageEditData, statisticsConsent, marketingConsent }
+  return { lang, render, routeSynced, renderPage, renderVisitor, scrollY, pageShowData, pageEditData, statisticsConsent, marketingConsent }
 }
   
 export const mapDispatchToProps = dispatch => {

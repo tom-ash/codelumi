@@ -19,6 +19,7 @@ import CLIENT_URL from '../shared/constants/urls/client.js'
 import API_URL from '../shared/constants/urls/api.js'
 import customNodeParser from './components/page/show/functions/custom-node-parser.js'
 import changeRouteWithHref from './functions/routes/changers/route-with-href.js'
+import routes from '../shared/constants/routes/routes.js'
 import * as langs from '../shared/constants/langs/langs.js'
 import * as urls from '../shared/constants/routes/urls.js'
 import * as titles from '../shared/constants/routes/titles.js'
@@ -41,15 +42,15 @@ class App extends React.Component {
   }
 
   render() {
-    const { renderPage, renderVisitor, renderAnnouncement, renderUser } = this.props
+    const { render, renderPage, renderVisitor, renderAnnouncement, renderUser, lang, pageShowData } = this.props
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
-    const sharedProps = { appName: APP_NAME, urls, langs, titles, clientUrl: CLIENT_URL, apiUrl: API_URL, changeRoute: this.changeRoute, changeRouteWithHref, langHandler: this.langHandler }
+    const sharedProps = { appName: APP_NAME, routes, urls, langs, titles, clientUrl: CLIENT_URL, apiUrl: API_URL, render, changeRoute: this.changeRoute, changeRouteWithHref, langHandler: this.langHandler }
     const pageProps = { ...sharedProps, customNodeParser }
 
     return (
       <AppContext.Provider value={AppContextValue}>
         <div id='app-container'>
-          <Header />
+          <Header { ...{ ...sharedProps, lang, pageShowData }}/>
           <div id='app-inner-container'>
             {renderAnnouncement && <Announcement/>}
             {renderPage && <Page {...pageProps}/>}

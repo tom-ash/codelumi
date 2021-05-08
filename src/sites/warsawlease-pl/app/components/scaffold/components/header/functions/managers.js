@@ -1,8 +1,5 @@
 import React from 'react'
-import { saveCookie } from '../../../../../functions/cookie-handlers'
-import {
-  LANGS
-} from '../../../../../../shared/constants/langs/langs'
+import { LANGS } from '../../../../../../shared/constants/langs/langs'
 import { USER_TRACK, USER_SHOW_TRACK } from '../../../../../../shared/constants/tracks/tracks'
 import {
   ROOT_URLS,
@@ -19,11 +16,11 @@ import {
   USER_SHOW_TITLES
 } from '../../../../../../shared/constants/routes/titles'
 import {
-  ANNOUNCEMENT_CREATE_LABELS, LANG_LABELS
+  ANNOUNCEMENT_CREATE_LABELS
 } from '../../../../../../shared/constants/routes/labels'
-import routes from '../../../../../../shared/constants/routes/routes.js'
 import CLIENT_URL from '../../../../../../shared/constants/urls/client.js'
 import SVG from '../../../../support/components/svg/svg.js'
+import getRouteByLang from '../../../../../../../shared/app/functions/routes/getters/route-by-lang.js'
 
 export function titleManager() {
   const { changeRoute } = this.context
@@ -136,29 +133,25 @@ export function myAccountManager() {
   }
 }
 
-export function langManager() {
-  const { changeRoute, getRouteByLang } = this.context
-  const { changeApp, lang } = this.props
+export function langManager(props) {
+  const { routes, clientUrl, render, lang, pageShowData, changeRoute } = props
   const invertedLanguage = lang === 'pl' ? 'en' : 'pl'
-  const { url } = getRouteByLang({ lang: invertedLanguage, routes })
-  const href = `${CLIENT_URL}/${url === '/' ? '' : `${url}`}`
-  
+  const { url } = getRouteByLang({ routes, render, lang: invertedLanguage, pageShowData })
+  const href = `${clientUrl}/${url === '/' ? '' : `${url}`}`
+
   return {
     classNames: { container: 'header-link lang' },
     href,
     label: (
       <>
         <SVG name='globe' />
-        {LANG_LABELS[invertedLanguage]}
+        {{ en: 'Polski', pl: 'English' }[lang]}
       </>
     ),
-    onClick: () => {
-      saveCookie('lang', invertedLanguage, 'oneYear')
-      changeApp({ lang: invertedLanguage })
+    onClick: () => {      
+      const href = `${clientUrl}/${url}${window.location.search}`
 
-      const href = `${CLIENT_URL}/${url}`
-
-      changeRoute({ href: href + window.location.search, withoutScroll: true })
+      changeRoute({ href, withoutScroll: true })
     }
   }
 }

@@ -19,7 +19,6 @@ class Header extends React.Component {
     this.signUpManager = managers.signUpManager.bind(this)
     this.signInManager = managers.signInManager.bind(this)
     this.myAccountManager = managers.myAccountManager.bind(this)
-    this.langManager = managers.langManager.bind(this)
     this.langHandler = langHandler.bind(this)
     this.linksProvider = linksProvider.bind(this)
   }
@@ -42,7 +41,7 @@ class Header extends React.Component {
           {smallMobile && <MenuButton authorized={authorized} smallMobile={smallMobile} changeRender={changeRender} changeControl={changeControl} />}
           <div className='links'>
             {!smallMobile && links}
-            <ManagedLink {...this.langManager()} />
+            <ManagedLink {...managers.langManager(this.props)} />
           </div>
           <div className='float-clear' />
         </div>

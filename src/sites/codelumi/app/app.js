@@ -19,7 +19,8 @@ import API_URL from '../shared/constants/urls/api.js'
 import customNodeParser from './components/page/show/functions/custom-node-parser.js'
 import Header from '../../shared/app/components/scaffold/header/header.js'
 import Footer from '../../shared/app/components/scaffold/footer/footer.js'
-import * as langs from '../shared/constants/langs/langs.js'
+import { LANGS } from '../shared/constants/langs/langs.js'
+import routes from '../shared/constants/routes/routes.js'
 import * as urls from '../shared/constants/routes/urls.js'
 import * as titles from '../shared/constants/routes/titles.js'
 import headerStyles from './components/scaffold/header/styles/styles.scss'
@@ -42,10 +43,9 @@ class App extends React.Component {
 
   render() {
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
-    const { renderPage, renderVisitor } = this.props
-    const sharedProps = { appName: APP_NAME, urls, langs, titles, clientUrl: CLIENT_URL, apiUrl: API_URL, changeRoute: this.changeRoute, changeRouteWithHref, langHandler: this.langHandler }
-    const headerProps = { ...sharedProps, logo, styles: headerStyles }
-
+    const { render, renderPage, renderVisitor, lang, pageShowData, changeApp } = this.props
+    const sharedProps = { appName: APP_NAME, render, routes, urls, langs: LANGS, titles, clientUrl: CLIENT_URL, apiUrl: API_URL, lang, changeRoute: this.changeRoute, changeRouteWithHref, changeApp, langHandler: this.langHandler }
+    const headerProps = { ...sharedProps, pageShowData, logo, styles: headerStyles }
     const pageProps = { ...sharedProps, customNodeParser }
     
     return (
