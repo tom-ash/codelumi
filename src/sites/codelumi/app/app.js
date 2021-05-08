@@ -48,9 +48,9 @@ class App extends React.Component {
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
     const { renderPage, renderVisitor } = this.props
     const headerProps = { logo, langs, urls, titles, clientUrl: CLIENT_URL, changeRoute: this.changeRoute, langHandler: this.langHandler, styles: headerStyles }
-    const footerProps = { langs, urls, titles, clientUrl: CLIENT_URL, changeRoute: this.changeRoute, langHandler: this.langHandler, styles: footerStyles }
     const pageProps = { customNodeParser, tileStyles: pageShowStyles, clientUrl: CLIENT_URL, apiUrl: API_URL, changeRoute: this.changeRoute, langHandler: this.langHandler }
     const visitorProps = { appName: APP_NAME, changeRoute: this.changeRoute, langHandler: this.langHandler, changeRouteWithHref, styles: visitorStyles, visitorPrivacyMonitStyles }
+    const footerProps = { langs, urls, titles, clientUrl: CLIENT_URL, changeRoute: this.changeRoute, langHandler: this.langHandler, styles: footerStyles }
     
     return (
       <AppContext.Provider value={AppContextValue}>
