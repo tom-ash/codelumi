@@ -14,7 +14,7 @@ function getUrlByRoute(props) {
     return langVerUrls[lang]
   }
 
-  if (route.urlBuilder) return route.urlBuilder({ ...this.props, lang: [route.lang] })
+  // if (route.urlBuilder) return route.urlBuilder({ ...props, lang: [route.lang] })
 
   return route.url
 }
