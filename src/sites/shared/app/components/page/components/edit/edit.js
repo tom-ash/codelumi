@@ -25,11 +25,11 @@ class PageCreate extends React.Component {
   }
 
   render() {
-    const { routeSynced, name, body, tileStyles } = this.props
+    const { routeSynced, name, body } = this.props
 
     if (!routeSynced) return null
 
-    const tileProps = { ...this.props, renderEdit: true, styles: tileStyles, updatePage: this.save }
+    const tileProps = { ...this.props, renderEdit: true, updatePage: this.save }
 
     return (
       <div className='page-edit'>

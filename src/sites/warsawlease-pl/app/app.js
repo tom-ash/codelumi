@@ -24,10 +24,6 @@ import * as urls from '../shared/constants/routes/urls.js'
 import * as titles from '../shared/constants/routes/titles.js'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import pageTileStyles from './components/page/show/styles/styles.scss'
-import visitorStyles from './components/visitor/styles/styles.scss'
-import visitorPrivacyMonitStyles from './components/visitor/components/privacy-monit/styles/styles.scss'
-import footerStyles from './components/scaffold/components/footer/styles/styles.scss'
 
 const APP_NAME = 'warsawlease-pl'
 
@@ -48,21 +44,19 @@ class App extends React.Component {
     const { renderPage, renderVisitor, renderAnnouncement, renderUser } = this.props
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
     const sharedProps = { appName: APP_NAME, urls, langs, titles, clientUrl: CLIENT_URL, apiUrl: API_URL, changeRoute: this.changeRoute, changeRouteWithHref, langHandler: this.langHandler }
-    const pageProps = { ...sharedProps, customNodeParser, tileStyles: pageTileStyles }
-    const visitorProps = { ...sharedProps, styles: visitorStyles, visitorPrivacyMonitStyles }
-    const footerProps = { ...sharedProps, styles: footerStyles }
+    const pageProps = { ...sharedProps, customNodeParser }
 
     return (
       <AppContext.Provider value={AppContextValue}>
         <div id='app-container'>
           <Header />
           <div id='app-inner-container'>
-            {renderAnnouncement && <Announcement />}
-            {renderPage && <Page { ...pageProps } />}
-            {renderVisitor && <Visitor {...visitorProps}/>}
-            {renderUser && <User />}
+            {renderAnnouncement && <Announcement/>}
+            {renderPage && <Page {...pageProps}/>}
+            {renderVisitor && <Visitor {...sharedProps}/>}
+            {renderUser && <User/>}
           </div>
-          <Footer {...footerProps}/>
+          <Footer {...sharedProps}/>
         </div>
       </AppContext.Provider>
     )

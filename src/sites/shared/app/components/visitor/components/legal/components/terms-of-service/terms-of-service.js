@@ -2,10 +2,9 @@ import React from 'react'
 import Provision from '../provision/provision'
 import useStyles from 'isomorphic-style-loader/useStyles'
 
-const VisitorTermsOfService = ({ appName, langHandler, styles }) => {
+const VisitorTermsOfService = ({ appName, langHandler }) => {
   const nodes = require(`../../../../../../../../${appName}/app/components/visitor/components/terms-and-conditions/constants/nodes.js`).default
-
-  // const nodes = require(`../../../../../../../../warsawlease-pl`).default
+  const styles = require(`../../../../../../../../${appName}/app/components/visitor/styles/styles.scss`)
 
   useStyles(styles)
 

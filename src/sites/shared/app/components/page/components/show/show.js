@@ -18,8 +18,8 @@ class PageShow extends React.Component {
   }
 
   render() {
-    const { name, tileStyles, clientUrl, changeRoute } = this.props
-    const tileProps = { ...this.props, renderShow: true, styles: tileStyles, clientUrl, changeRoute, changePage: this.changePage }
+    const { name, clientUrl, changeRoute } = this.props
+    const tileProps = { ...this.props, renderShow: true, clientUrl, changeRoute, changePage: this.changePage }
 
     if (!name) return null
 

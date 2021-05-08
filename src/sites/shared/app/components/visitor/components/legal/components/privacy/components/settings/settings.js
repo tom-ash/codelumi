@@ -5,7 +5,8 @@ import { textsProvider } from './functions/texts-provider'
 import useStyles from 'isomorphic-style-loader/useStyles'
 
 const VisitorPrivacySettings = props => {
-  const { styles, langHandler } = props
+  const { appName, langHandler } = props
+  const styles = require(`../../../../../../../../../../${appName}/app/components/visitor/styles/styles.scss`)
 
   useStyles(styles)
 

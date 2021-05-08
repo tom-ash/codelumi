@@ -2,8 +2,9 @@ import React from 'react'
 import Provision from '../../../provision/provision'
 import useStyles from 'isomorphic-style-loader/useStyles'
 
-const VisitorCookiesPolicy = ({ appName, langHandler, styles }) => {
+const VisitorCookiesPolicy = ({ appName, langHandler }) => {
   const nodes = require(`../../../../../../../../../../${appName}/app/components/visitor/components/cookies-policy/constants/nodes.js`).default
+  const styles = require(`../../../../../../../../../../${appName}/app/components/visitor/styles/styles.scss`)
 
   useStyles(styles)
 
