@@ -14,9 +14,9 @@ export function logoManager({ titles, urls, clientUrl, lang, logo, changeRoute, 
 }
 
 export function langManager(props) {
-  const { routes, clientUrl, render, lang, pageShowData, changeRoute } = props
+  const { routes, clientUrl, render, lang, urlComposites, changeRoute } = props
   const invertedLanguage = lang === 'pl' ? 'en' : 'pl'
-  const { url } = getRouteByLang({ routes, render, lang: invertedLanguage, pageShowData })
+  const { url } = getRouteByLang({ routes, render, lang: invertedLanguage, urlComposites })
   const href = `${clientUrl}/${url === '/' ? '' : `${url}`}`
   
   return {

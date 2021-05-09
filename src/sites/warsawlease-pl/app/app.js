@@ -42,15 +42,16 @@ class App extends React.Component {
   }
 
   render() {
-    const { render, renderPage, renderVisitor, renderAnnouncement, renderUser, lang, pageShowData } = this.props
+    const { render, renderPage, renderVisitor, renderAnnouncement, renderUser, lang, pageShowData, pageEditData } = this.props
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
     const sharedProps = { appName: APP_NAME, routes, urls, langs, titles, clientUrl: CLIENT_URL, apiUrl: API_URL, render, changeRoute: this.changeRoute, changeRouteWithHref, langHandler: this.langHandler }
     const pageProps = { ...sharedProps, customNodeParser }
+    const urlComposites = { pageShowData, pageEditData }
 
     return (
       <AppContext.Provider value={AppContextValue}>
         <div id='app-container'>
-          <Header { ...{ ...sharedProps, lang, pageShowData }}/>
+          <Header { ...{ ...sharedProps, urlComposites, lang }}/>
           <div id='app-inner-container'>
             {renderAnnouncement && <Announcement/>}
             {renderPage && <Page {...pageProps}/>}

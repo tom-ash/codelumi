@@ -1,11 +1,14 @@
 import { PAGE_SHOW_TRACK } from '../../../../shared/constants/tracks/tracks.js'
 
 function getUrlByRoute(props) {
-  const { route, lang } = props
+  const { route, lang, urlComposites } = props
   const { track } = route
 
   if (track === PAGE_SHOW_TRACK) {
-    const { pageShowData } = props
+    const { urlComposites } = props
+    if (!urlComposites) return null
+
+    const { pageShowData } = urlComposites
     if (!pageShowData) return null
 
     const { langVerUrls } = pageShowData
@@ -14,7 +17,7 @@ function getUrlByRoute(props) {
     return langVerUrls[lang]
   }
 
-  // if (route.urlBuilder) return route.urlBuilder({ ...props, lang: [route.lang] })
+  if (route.urlBuilder) return route.urlBuilder({ ...urlComposites, lang })
 
   return route.url
 }
