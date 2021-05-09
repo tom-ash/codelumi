@@ -3,7 +3,7 @@ import loadable from '@loadable/component'
 import { connect } from 'react-redux'
 import * as reduxMappers from './constants/mappers'
 import { ManagedLink } from 'managed-inputs'
-import * as managers from './functions/managers'
+import { addAnnouncementManager, titleManager, signUpManager, signInManager, myAccountManager, langManager } from './functions/managers'
 import langHandler from '../../../../functions/lang-handler'
 import { HeaderProvider } from '../../../announcement/components/index/functions/header-provider'
 import { linksProvider } from './functions/links-provider'
@@ -14,11 +14,11 @@ const MenuButton = loadable(() => import('./components/menu-button/menu-button.j
 class Header extends React.Component {
   constructor(props) {
     super(props)
-    this.addAnnouncementManager = managers.addAnnouncementManager.bind(this)
-    this.titleManager = managers.titleManager.bind(this)
-    this.signUpManager = managers.signUpManager.bind(this)
-    this.signInManager = managers.signInManager.bind(this)
-    this.myAccountManager = managers.myAccountManager.bind(this)
+    this.titleManager = titleManager.bind(this)
+    // this.addAnnouncementManager = managers.addAnnouncementManager.bind(this)
+    // this.signUpManager = signUpManager.bind(this)
+    // this.signInManager = signInManager.bind(this)
+    // this.myAccountManager = myAccountManager.bind(this)
     this.langHandler = langHandler.bind(this)
     this.linksProvider = linksProvider.bind(this)
   }
@@ -27,7 +27,7 @@ class Header extends React.Component {
 
   render() {
     const { authorized, device, renderMap, renderCatalogue, renderMenu, changeRender, changeControl } = this.props
-    const links = this.linksProvider({ authorized, smallMobile })
+    const links = this.linksProvider({ ...this.props, addAnnouncementManager, signUpManager, signInManager, myAccountManager })
     const smallMobile = ['smallTablet', 'largePhone', 'smallPhone'].indexOf(device) !== -1
 
     return (
@@ -41,7 +41,7 @@ class Header extends React.Component {
           {smallMobile && <MenuButton authorized={authorized} smallMobile={smallMobile} changeRender={changeRender} changeControl={changeControl} />}
           <div className='links'>
             {!smallMobile && links}
-            <ManagedLink {...managers.langManager(this.props)} />
+            <ManagedLink {...langManager(this.props)} />
           </div>
           <div className='float-clear' />
         </div>

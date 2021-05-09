@@ -1,23 +1,9 @@
 import React from 'react'
 import { LANGS } from '../../../../../../shared/constants/langs/langs'
 import { USER_TRACK, USER_SHOW_TRACK } from '../../../../../../shared/constants/tracks/tracks'
-import {
-  ROOT_URLS,
-  ANNOUNCEMENT_CREATE_FORM_URLS,
-  USER_CREATE_FORM_URLS,
-  USER_AUTHORIZE_URLS,
-  USER_SHOW_URLS
-} from '../../../../../../shared/constants/routes/urls'
-import {
-  ROOT_TITLES,
-  ANNOUNCEMENT_CREATE_TITLES,
-  USER_CREATE_FORM_TITLES,
-  USER_AUTHORIZE_TITLES,
-  USER_SHOW_TITLES
-} from '../../../../../../shared/constants/routes/titles'
-import {
-  ANNOUNCEMENT_CREATE_LABELS
-} from '../../../../../../shared/constants/routes/labels'
+import { ROOT_URLS, ANNOUNCEMENT_CREATE_FORM_URLS, USER_CREATE_FORM_URLS, USER_AUTHORIZE_URLS, USER_SHOW_URLS } from '../../../../../../shared/constants/routes/urls'
+import { ROOT_TITLES, ANNOUNCEMENT_CREATE_TITLES, USER_CREATE_FORM_TITLES, USER_AUTHORIZE_TITLES, USER_SHOW_TITLES } from '../../../../../../shared/constants/routes/titles'
+import { ANNOUNCEMENT_CREATE_LABELS } from '../../../../../../shared/constants/routes/labels'
 import CLIENT_URL from '../../../../../../shared/constants/urls/client.js'
 import SVG from '../../../../support/components/svg/svg.js'
 import getRouteByLang from '../../../../../../../shared/app/functions/routes/getters/route-by-lang.js'
@@ -52,85 +38,72 @@ export function titleManager() {
   }
 }
 
-export function addAnnouncementManager() {
-  const { changeRoute } = this.context
-  const href = `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_CREATE_FORM_URLS)}`
+export function addAnnouncementManager(props) {
+  const { clientUrl, urls, titles, changeRoute, langHandler } = props
+  const classNames = { container: 'header-link add-announcement' }
+  const href = `${clientUrl}/${langHandler(urls.ANNOUNCEMENT_CREATE_FORM_URLS)}`
+  const hrefLang = langHandler(LANGS)
+  const title = langHandler(titles.ANNOUNCEMENT_CREATE_TITLES)
+  const label = (
+    <>
+      <SVG name='plusSquare' />
+      {langHandler(ANNOUNCEMENT_CREATE_LABELS)}
+    </>
+  )
+  const onClick = () => changeRoute({ href })
 
-  return {
-    classNames: { container: 'header-link add-announcement' },
-    href,
-    hrefLang: this.langHandler(LANGS),
-    title: this.langHandler(ANNOUNCEMENT_CREATE_TITLES),
-    label: (
-      <>
-        <SVG name='plusSquare' />
-        {this.langHandler(ANNOUNCEMENT_CREATE_LABELS)}
-      </>
-    ),
-    onClick: () => changeRoute({ href })
-  }
+  return { classNames, href, hrefLang, title, label, onClick }
 }
 
-export function signUpManager() {
-  const { changeRoute } = this.context
-  const title = this.langHandler(USER_CREATE_FORM_TITLES)
-  const href = `${CLIENT_URL}/${this.langHandler(USER_CREATE_FORM_URLS)}`
+export function signUpManager(props) {
+  const { clientUrl, urls, titles, changeRoute, langHandler } = props
+  const classNames = { container: 'header-link sign-in' }
+  const href = `${clientUrl}/${langHandler(urls.USER_CREATE_FORM_URLS)}`
+  const hrefLang = langHandler(LANGS)
+  const title = langHandler(titles.USER_CREATE_FORM_TITLES)
+  const label = (
+    <>
+      <SVG name='userPlus' />
+      {title}
+    </>
+  )
+  const onClick = () => changeRoute({ href })
 
-  return {
-    classNames: { container: 'header-link sign-in' },
-    href,
-    hrefLang: this.langHandler(LANGS),
-    title,
-    label: (
-      <>
-        <SVG name='userPlus' />
-        {title}
-      </>
-    ),
-    onClick: () => changeRoute({ href })
-  }
+  return { classNames, href, hrefLang, title, label, onClick }
 }
 
-export function signInManager() {
-  const { changeRoute } = this.context
-  const title = this.langHandler(USER_AUTHORIZE_TITLES)
-  const href = `${CLIENT_URL}/${this.langHandler(USER_AUTHORIZE_URLS)}`
+export function signInManager(props) {
+  const { clientUrl, urls, titles, changeRoute, langHandler } = props
+  const classNames = { container: 'header-link sign-in' }
+  const href = `${clientUrl}/${langHandler(urls.USER_AUTHORIZE_URLS)}`
+  const hrefLang = langHandler(LANGS)
+  const title = langHandler(titles.USER_AUTHORIZE_TITLES)
+  const label = (
+    <>
+      <SVG name='userCheck' />
+      {title}
+    </>
+  )
+  const onClick = () => changeRoute({ href })
 
-  return {
-    classNames: { container: 'header-link sign-in' },
-    href,
-    hrefLang: this.langHandler(LANGS),
-    title,
-    label: (
-      <>
-        <SVG name='userCheck' />
-        {title}
-      </>
-    ),
-    onClick: () => changeRoute({ href })
-  }
+  return { classNames, href, hrefLang, title, label, onClick }
 }
 
-export function myAccountManager() {
-  const { changeRender } = this.props
-  const title = this.langHandler(USER_SHOW_TITLES)
-  
-  return {
-    classNames: { container: 'header-link my-account' },
-    href: `${CLIENT_URL}/${this.langHandler(USER_SHOW_URLS)}`,
-    hrefLang: this.langHandler(LANGS),
-    title,
-    label: (
-      <>
-        <SVG name='user' />
-        {title}
-      </>
-    ),
-    onClick: () => changeRender({
-      [USER_TRACK]: true,
-      [USER_SHOW_TRACK]: true
-    })
-  }
+export function myAccountManager(props) {
+  const { clientUrl, urls, titles, changeRender, langHandler } = props
+  const classNames = { container: 'header-link my-account' }
+  const href = `${clientUrl}/${langHandler(urls.USER_SHOW_URLS)}`
+  const hrefLang = langHandler(LANGS)
+  const title = langHandler(titles.USER_SHOW_TITLES)
+  const label = (
+    <>
+      <SVG name='user' />
+      {title}
+    </>
+  )
+  const onClick = () => changeRender({ [USER_TRACK]: true, [USER_SHOW_TRACK]: true })
+
+  return { classNames, href, hrefLang, title, label, onClick }
 }
 
 export function langManager(props) {
