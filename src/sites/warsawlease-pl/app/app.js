@@ -1,12 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import Header from './components/scaffold/components/header/header'
 import Visitor from '../../shared/app/components/visitor/visitor.js'
 import Announcement from './components/announcement/announcement'
 import Page from '../../shared/app/components/page/page.js'
 import User from './components/user/user'
 import Footer from '../../shared/app/components/scaffold/footer/footer.js'
+import Header from '../../shared/app/components/scaffold/header/header.js'
 import * as lifecycle from './functions/lifecycle'
 import screenSizeHandler from '../../shared/app/functions/screen/handlers/screen-size.js'
 import popStateHandler from '../../shared/app/functions/routes/handlers/pop-state.js'
@@ -23,8 +23,12 @@ import routes from '../shared/constants/routes/routes.js'
 import * as langs from '../shared/constants/langs/langs.js'
 import * as urls from '../shared/constants/routes/urls.js'
 import * as titles from '../shared/constants/routes/titles.js'
+import * as tracks from '../shared/constants/tracks/tracks.js'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import headerStyles from './components/scaffold/header/styles/styles.scss'
+import Logo from './components/scaffold/header/components/logo/logo.js'
+import HeaderCustomization from './components/scaffold/header/components/customization/customization.js'
 
 const APP_NAME = 'warsawlease-pl'
 
@@ -42,16 +46,16 @@ class App extends React.Component {
   }
 
   render() {
-    const { render, renderPage, renderVisitor, renderAnnouncement, renderUser, lang, pageShowData, pageEditData, announcementShowData, announcementEditData, changeRender } = this.props
+    const { render, renderPage, renderVisitor, renderAnnouncement, renderUser, lang, device, authorized, pageShowData, pageEditData, announcementShowData, announcementEditData, changeRender } = this.props
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
-    const sharedProps = { appName: APP_NAME, routes, urls, langs, titles, clientUrl: CLIENT_URL, apiUrl: API_URL, render, changeRoute: this.changeRoute, changeRouteWithHref, changeRender, langHandler: this.langHandler }
+    const sharedProps = { appName: APP_NAME, routes, tracks, urls, langs, titles, clientUrl: CLIENT_URL, apiUrl: API_URL, render, device, authorized, changeRoute: this.changeRoute, changeRouteWithHref, changeRender, langHandler: this.langHandler }
     const pageProps = { ...sharedProps, customNodeParser }
     const urlComposites = { pageShowData, pageEditData, announcementShowData, announcementEditData }
 
     return (
       <AppContext.Provider value={AppContextValue}>
         <div id='app-container'>
-          <Header { ...{ ...sharedProps, urlComposites, lang }}/>
+          <Header { ...{ ...sharedProps, urlComposites, lang, Logo, HeaderCustomization, styles: headerStyles }}/>
           <div id='app-inner-container'>
             {renderAnnouncement && <Announcement/>}
             {renderPage && <Page {...pageProps}/>}

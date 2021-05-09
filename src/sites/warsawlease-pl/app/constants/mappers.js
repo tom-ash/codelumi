@@ -9,6 +9,7 @@ export const mapStateToProps = store => {
   const { data: pageEditData } = store.page.edit
   const { data: announcementShowData } = store.announcement.show
   const { data: announcementEditData } = store.announcement.create
+  const { authorized, admin } = store.user.authorize.data
 
   return {
     lang,
@@ -29,7 +30,9 @@ export const mapStateToProps = store => {
     announcementShowData,
     pageShowData,
     routeSynced,
-    pageEditData
+    pageEditData,
+    authorized,
+    admin
   }
 }
   

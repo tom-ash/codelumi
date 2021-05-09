@@ -1,0 +1,100 @@
+@import '../../../../styles/themes.scss';
+
+#header {
+  z-index: 2048;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 3px 1px #D0D3D4;
+  .inner {
+    padding: 0 20px;
+    position: relative;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    .logo {
+      float: left;
+      font-size: 14px;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #17202A;
+      div {
+        float: left;
+      }
+      div:nth-of-type(1) {
+        padding: 2px 3px 1px;
+        border-bottom: 2px solid #17202A;
+      }
+      div:nth-of-type(2) {
+        padding: 3px 5px 3px;
+        background: #17202A;
+        color: white;
+        transform: translate(0, -1px);
+      }
+    }
+    h1 {
+      float: left;
+      display: block;
+      font-weight: normal;
+      line-height: 60px;
+    }
+    .links {
+      float: right;
+      .header-link {
+        float: left;
+        margin-left: 25px;
+        text-align: center;
+        font-size: 14px;
+        line-height: 14px;
+        padding: 9px 0;
+        cursor: pointer;
+        svg {
+          display: block;
+          width: 20px;
+          margin: 0 auto 4px;
+        }
+        &.hover {
+          text-decoration: underline;
+          svg {
+            fill: #34495E;
+          }
+          color: #34495E;
+        }
+        &.add-announcement {
+          color: $HEADER-LINK-ADD-ANNOUNCEMENT;
+          svg {
+            fill: $HEADER-LINK-ADD-ANNOUNCEMENT;
+          }
+          :hover {
+            color: $HEADER-LINK-ADD-ANNOUNCEMENT-HOVER;
+            svg {
+              fill: $HEADER-LINK-ADD-ANNOUNCEMENT-HOVER;
+            }
+          }
+        }
+        &.sign-up, &.sign-in {
+          margin-top: 4px;
+          svg {
+            width: 24px;
+            transform: translate(0, -1px);
+          }
+        }
+        &.my-account {
+          margin-top: 4px;
+          svg {
+            width: 17px;
+            transform: translate(0, -1px);
+          }
+        }
+        &.lang {
+          margin-top: 3px;
+          svg {
+            transform: translate(0, -1px);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const logo = (
+const Logo = () => (
   <div className='logo'>
     codelumi.com
   </div>
 )
 
-export default logo
+export default Logo

@@ -24,7 +24,8 @@ import routes from '../shared/constants/routes/routes.js'
 import * as urls from '../shared/constants/routes/urls.js'
 import * as titles from '../shared/constants/routes/titles.js'
 import headerStyles from './components/scaffold/header/styles/styles.scss'
-import logo from './components/scaffold/header/constants/logo.js'
+import Logo from './components/scaffold/header/components/logo/logo.js'
+import HeaderCustomization from './components/scaffold/header/components/customization/customization.js'
 
 const APP_NAME = 'codelumi'
 
@@ -46,7 +47,7 @@ class App extends React.Component {
     const { render, renderPage, renderVisitor, lang, pageShowData, pageEditData, changeApp } = this.props
     const urlComposites = { pageShowData, pageEditData }
     const sharedProps = { appName: APP_NAME, render, routes, urls, langs: LANGS, titles, clientUrl: CLIENT_URL, apiUrl: API_URL, lang, changeRoute: this.changeRoute, changeRouteWithHref, changeApp, langHandler: this.langHandler }
-    const headerProps = { ...sharedProps, urlComposites, logo, styles: headerStyles }
+    const headerProps = { ...sharedProps, urlComposites, Logo, HeaderCustomization, styles: headerStyles }
     const pageProps = { ...sharedProps, customNodeParser }
     
     return (

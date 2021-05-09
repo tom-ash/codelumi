@@ -2,15 +2,16 @@ import React from 'react'
 import getRouteByLang from '../../../../../app/functions/routes/getters/route-by-lang'
 import SVG from '../../../support/svg/svg.js'
 
-export function logoManager({ titles, urls, clientUrl, lang, logo, changeRoute, langHandler }) {
+export function logoManager({ titles, urls, clientUrl, lang, Logo, changeRoute, langHandler }) {
+  const classNames = { container: 'header-link logo' }
   const title = langHandler(titles.ROOT_TITLES)
   const url = langHandler(urls.ROOT_URLS)
   const href = `${clientUrl}/${url === '/' ? '' : url}`
   const hrefLang = lang
-  const label = logo
+  const label = <Logo />
   const onClick = () => changeRoute({ href })
 
-  return { href, hrefLang, title, label, onClick }
+  return { classNames, href, hrefLang, title, label, onClick }
 }
 
 export function langManager(props) {
