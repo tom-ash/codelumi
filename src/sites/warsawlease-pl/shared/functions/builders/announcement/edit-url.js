@@ -1,7 +1,13 @@
 import { PL, EN } from '../../../constants/langs/langs'
 
-function buildAnnouncementEditUrl({ announcementCreateData: { announcement }, lang }) {
-  if (!announcement) return null
+function buildAnnouncementEditUrl(urlComposites) {
+  if (!urlComposites) return null
+
+  const { announcementEditData, lang } = urlComposites
+  if (!announcementEditData) return null
+
+  const { announcement } = announcementEditData
+  if (!announcement) return
 
   const { id } = announcement
 
