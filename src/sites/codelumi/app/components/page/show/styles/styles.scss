@@ -56,6 +56,10 @@
   }
 
   &.root {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
     img {
       display: block;
       margin: 0;
@@ -68,26 +72,36 @@
     a {
       display: block;
       position: relative;
+      width: 320px;
+      height: 100px;
       margin: 0;
-      padding: 0;
+      padding: 20px;
       box-shadow: rgba(128, 128, 128, 0.3) 0px 7px 30px 0px;
+      border-radius: 4px;
+      color: #922B21;
+      svg {
+        fill: #922B21;
+        width: 15px;
+      }
       &.hover {
         box-shadow: rgba(128, 128, 128, 0.5) 0px 7px 30px 0px;
       }
+      .category {
+        position: absolute;
+        top: 20px;
+        font-size: 18px;
+      }
       .title {
         position: absolute;
-        left: 20px;
-        bottom: 80px;
-        font-size: 28px;
-        color: white;
+        bottom: 20px;
+        font-size: 20px;
+        color: #424949;
       }
       .description {
-        position: absolute;
         left: 20px;
         right: 20px;
         bottom: 20px;
         font-size: 16px;
-        color: white;
       }
     }
   }
