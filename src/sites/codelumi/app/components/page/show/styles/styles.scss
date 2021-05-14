@@ -68,40 +68,65 @@
       height: 240px;
       border-radius: 4px;
     }
-  
-    a {
-      display: block;
-      position: relative;
-      width: 320px;
-      height: 100px;
-      margin: 0;
-      padding: 20px;
-      box-shadow: rgba(128, 128, 128, 0.3) 0px 7px 30px 0px;
-      border-radius: 4px;
-      color: #922B21;
-      svg {
-        fill: #922B21;
-        width: 15px;
+
+    .code-link {
+      float: left;
+      margin-right: 20px;
+      a {
+        display: block;
+        position: relative;
+        width: 320px;
+        height: 100px;
+        margin: 0;
+        padding: 20px;
+        box-shadow: rgba(128, 128, 128, 0.3) 0px 7px 30px 0px;
+        border-radius: 4px;
+        &.hover {
+          box-shadow: rgba(128, 128, 128, 0.5) 0px 7px 30px 0px;
+        }
+        .category {
+          position: absolute;
+          top: 20px;
+          font-size: 18px;
+          font-family: 'Ubuntu', sans-serif;
+        }
+        .title {
+          position: absolute;
+          bottom: 20px;
+          font-size: 20px;
+          color: #424949;
+          font-weight: bold;
+          font-family: 'Ubuntu', sans-serif;
+        }
+        .description {
+          left: 20px;
+          right: 20px;
+          bottom: 20px;
+          font-size: 16px;
+        }
       }
-      &.hover {
-        box-shadow: rgba(128, 128, 128, 0.5) 0px 7px 30px 0px;
+      &.ruby {
+        color: #922B21;
+        svg {
+          fill: #922B21;
+          width: 15px;
+        }
       }
-      .category {
-        position: absolute;
-        top: 20px;
-        font-size: 18px;
+      &.js {
+        color: #D4AC0D;
+        svg {
+          fill: #D4AC0D;
+          width: 15px;
+          transform: translate(0, 2px);
+        }
       }
-      .title {
-        position: absolute;
-        bottom: 20px;
-        font-size: 20px;
-        color: #424949;
-      }
-      .description {
-        left: 20px;
-        right: 20px;
-        bottom: 20px;
-        font-size: 16px;
+      &.python {
+        color: #1F618D;
+        svg {
+          fill: #1F618D;
+          width: 15px;
+          transform: translate(0, 2px);
+        }
       }
     }
   }
