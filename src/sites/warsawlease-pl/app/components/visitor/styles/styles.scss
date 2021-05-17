@@ -104,5 +104,20 @@
         }
       }
     }
+    .company {
+      margin-bottom: 8px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .address {
+      margin-bottom: 24px;
+      font-size: 18px;
+      .street {
+        margin-bottom: 4px;
+      }
+    }
+    .email {
+      font-style: italic;
+    }
   }
 }
