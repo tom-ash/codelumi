@@ -1,6 +1,7 @@
 pre {
   padding: 10px 20px;
   background: #1C2833;
+  font-size: 17px;
   code {
     margin: 0 0 10px 0;
     line-height: 30px;
@@ -20,7 +21,7 @@ pre {
     }
 
     .hljs-string {
-      color: #F39C12;
+      color: #D35400;
     }
 
     .hljs-quote,
@@ -33,7 +34,7 @@ pre {
     .hljs-built_in,
     .hljs-name,
     .hljs-tag {
-      color: #00f;
+      color: #FAD7A0;
     }
 
     .hljs-title,
@@ -44,7 +45,7 @@ pre {
     .hljs-template-variable,
     .hljs-type,
     .hljs-addition {
-      color: #a31515;
+      color: #EC7063;
     }
 
     .hljs-deletion,
