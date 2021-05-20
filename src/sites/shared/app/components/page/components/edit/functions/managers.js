@@ -27,7 +27,7 @@ export function bodyManager() {
     classNames: { container: 'form-input textarea body' },
     label: 'Body',
     value: body,
-    counterLimit: 10000,
+    counterLimit: 100000,
     onChange: value => changeInputs({ body: value })
   }
 }
