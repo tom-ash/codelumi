@@ -6,14 +6,13 @@
 @import './mini_list.scss';
 
 #announcement-index-map {
-  max-width: 1214px;
-  margin: 0 auto;
-  top: 126px;
   position: absolute;  
-  right: 0;
-  left: 0;
-  @media #{$SMALL-PC} {
-    top: 164px;
+  right: 20px;
+  left: 20px;
+  margin-top: 5px;
+  @media #{$SMALL-TABLET} {
+    right: 0;
+    left: 0;
   }
   #google-map-container {
     @extend %google-map;

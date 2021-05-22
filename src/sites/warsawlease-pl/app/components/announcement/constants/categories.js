@@ -79,8 +79,8 @@ export const categories = [
   {
     number: 7,
     value: 7,
-    label: { pl: 'Przestrzeń coworkingowa', en: 'Coworking Space' },
-    url: { pl: 'przestrzen-coworkingowa', en: 'coworking-space' },
+    label: { pl: 'Coworking', en: 'Coworking' },
+    url: { pl: 'Coworking', en: 'Coworking' },
     pin: {
       class: 'coworking-space',
       svg: 'coworkingSpace',

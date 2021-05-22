@@ -47,6 +47,7 @@ class AnnouncementIndexPanel extends React.Component {
           />
         </>
         }
+        <div className='float-clear' />
       </div>
     )
   }

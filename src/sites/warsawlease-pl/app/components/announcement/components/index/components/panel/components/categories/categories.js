@@ -26,11 +26,14 @@ const AnnouncementIndexPanelCategories = ({
                 name={category.pin.svg}
                 {...active ? { fill: category.pin.color } : { fill: '#909497' }}
               />
-              {langHandler(category.label)}
+              <p>
+                {langHandler(category.label)}
+              </p>
             </div>
           </React.Fragment>
         )
       })}
+      <div className='float-clear' />
     </div>
   )
 }

@@ -138,13 +138,13 @@ const shared_features = [
   {
     ref: 'parkingspace',
     cat: non_parking_space,
-    pl: 'Miejsce postojowe',
+    pl: 'Miejsce post.',
     en: 'Parking space'
   },
   {
     ref: 'parkingspaces',
     cat: non_parking_space,
-    pl: 'Miejsca postojowe',
+    pl: 'Miejsca post.',
     en: 'Parking spaces'
   },
   {
