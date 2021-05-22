@@ -17,17 +17,18 @@ class AnnouncementIndexPanel extends React.Component {
   }
 
   static contextType = AppContext
+  
 
   render() {
     const {
       lang,
       renderMap,
       renderCatalogue,
-      renderMy,
       currentCategory,
       changeInputs,
       changeControl
     } = this.props
+    const { changeRoute } = this.context
 
     return (
       <div id='announcement-index-panel'>
@@ -36,6 +37,8 @@ class AnnouncementIndexPanel extends React.Component {
           changeInputs={changeInputs}
           changeControl={changeControl}
           currentCategory={currentCategory}
+          changeRoute={changeRoute}
+          lang={lang}
         />
         {(renderMap || renderCatalogue) &&
         <>

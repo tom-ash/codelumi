@@ -73,9 +73,89 @@ export const ANNOUNCEMENT_EDIT_URLS = {
   [EN]: /^edit-announcement\/\d+$/
 }
 
+export const ANNOUNCEMENT_INDEX_MAP_APARTMENTS_URLS = {
+  [PL]: 'warszawa/wynajem/nieruchomosci/mapa/mieszkania',
+  [EN]: 'property/map/apartments'
+}
+
+export const ANNOUNCEMENT_INDEX_MAP_HOUSES_URLS = {
+  [PL]: 'warszawa/wynajem/nieruchomosci/mapa/domy',
+  [EN]: 'property/map/houses'
+}
+
+export const ANNOUNCEMENT_INDEX_MAP_ROOMS_URLS = {
+  [PL]: 'warszawa/wynajem/nieruchomosci/mapa/pokoje',
+  [EN]: 'property/map/rooms'
+}
+
+export const ANNOUNCEMENT_INDEX_MAP_PARKING_SPACES_URLS = {
+  [PL]: 'warszawa/wynajem/nieruchomosci/mapa/miejsca-postojowe',
+  [EN]: 'property/map/parking-spaces'
+}
+
+export const ANNOUNCEMENT_INDEX_MAP_USABLE_PREMISES_URLS = {
+  [PL]: 'warszawa/wynajem/nieruchomosci/mapa/lokale-uzytkowe',
+  [EN]: 'property/map/usable-premises'
+}
+
+export const ANNOUNCEMENT_INDEX_MAP_OFFICES_URLS = {
+  [PL]: 'warszawa/wynajem/nieruchomosci/mapa/biura',
+  [EN]: 'property/map/offices'
+}
+
+export const ANNOUNCEMENT_INDEX_MAP_VIRTUAL_OFFICES_URLS = {
+  [PL]: 'warszawa/wynajem/nieruchomosci/mapa/biura-wirtualne',
+  [EN]: 'property/map/virtual-offices'
+}
+
+export const ANNOUNCEMENT_INDEX_MAP_COWORKING_URLS = {
+  [PL]: 'warszawa/wynajem/nieruchomosci/mapa/coworking',
+  [EN]: 'property/map/coworking'
+}
+
 export const ANNOUNCEMENT_INDEX_CATALOGUE_URLS = {
-  [PL]: 'katalog-nieruchomosci-na-wynajem-warszawa',
-  [EN]: 'catalogue-of-real-estates-for-lease-warsaw'
+  [PL]: 'warszawa/wynajem/nieruchomosci/katalog',
+  [EN]: 'property/catalogue'
+}
+
+export const ANNOUNCEMENT_INDEX_CATALOGUE_APARTMENTS_URLS = {
+  [PL]: 'warszawa/wynajem/nieruchomosci/katalog/mieszkania',
+  [EN]: 'property/catalogue/apartments'
+}
+
+export const ANNOUNCEMENT_INDEX_CATALOGUE_HOUSES_URLS = {
+  [PL]: 'warszawa/wynajem/nieruchomosci/katalog/domy',
+  [EN]: 'property/catalogue/houses'
+}
+
+export const ANNOUNCEMENT_INDEX_CATALOGUE_ROOMS_URLS = {
+  [PL]: 'warszawa/wynajem/nieruchomosci/katalog/pokoje',
+  [EN]: 'property/catalogue/rooms'
+}
+
+export const ANNOUNCEMENT_INDEX_CATALOGUE_PARKING_SPACES_URLS = {
+  [PL]: 'warszawa/wynajem/nieruchomosci/katalog/miejsca-parkingowe',
+  [EN]: 'property/catalogue/parking-spaces'
+}
+
+export const ANNOUNCEMENT_INDEX_CATALOGUE_USABLE_PREMISES_URLS = {
+  [PL]: 'warszawa/wynajem/nieruchomosci/katalog/lokale-uzytkowe',
+  [EN]: 'property/catalogue/usable-premises'
+}
+
+export const ANNOUNCEMENT_INDEX_CATALOGUE_OFFICES_URLS = {
+  [PL]: 'warszawa/wynajem/nieruchomosci/katalog/biura',
+  [EN]: 'property/catalogue/offices'
+}
+
+export const ANNOUNCEMENT_INDEX_CATALOGUE_VIRTUAL_OFFICES_URLS = {
+  [PL]: 'warszawa/wynajem/nieruchomosci/katalog/biura-wirtualne',
+  [EN]: 'property/catalogue/virtual-offices'
+}
+
+export const ANNOUNCEMENT_INDEX_CATALOGUE_COWORKING_URLS = {
+  [PL]: 'warszawa/wynajem/nieruchomosci/katalog/coworking',
+  [EN]: 'property/catalogue/coworking'
 }
 
 export const ANNOUNCEMENT_INDEX_MY_URLS = {

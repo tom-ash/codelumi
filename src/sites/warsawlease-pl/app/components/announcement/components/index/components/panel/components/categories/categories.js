@@ -1,13 +1,13 @@
 import React from 'react'
 import SVG from '../../../../../../../support/components/svg/svg'
 import { categories } from '../../../../../../constants/categories'
-
+import changeRouteWithHref from '../../../../../../../../functions/routes/changers/route-with-href.js'
 
 const AnnouncementIndexPanelCategories = ({
   langHandler,
-  changeInputs,
-  changeControl,
-  currentCategory
+  currentCategory,
+  changeRoute,
+  lang
 }) => {
   return (
     <div className='categories'>
@@ -18,8 +18,8 @@ const AnnouncementIndexPanelCategories = ({
             <div
               className={`category${active ? ' active' : ''}`}
               onClick={() => {
-                changeInputs({ category: category.value, offset: 0 })
-                changeControl({ fetch: true })
+                const track = category.track
+                changeRouteWithHref({ lang, track, changeRoute })
               }}
             >
               <SVG

@@ -1,3 +1,5 @@
+import * as tracks from '../../../../shared/constants/tracks/tracks.js'
+
 export const categories = [
   {
     number: 2,
@@ -8,7 +10,8 @@ export const categories = [
       class: 'apartment',
       svg: 'apartment',
       color: '#1E8449'
-    }
+    },
+    track: tracks.ANNOUNCEMENT_INDEX_MAP_APARTMENTS_TRACK
   },
   {
     number: 3,
@@ -19,7 +22,8 @@ export const categories = [
       class: 'house',
       svg: 'house',
       color: '#0E6655'
-    }
+    },
+    track: tracks.ANNOUNCEMENT_INDEX_MAP_HOUSES_TRACK
   },
   {
     number: 4,
@@ -31,6 +35,8 @@ export const categories = [
       svg: 'room',
       color: '#28B463'
     }
+    ,
+    track: tracks.ANNOUNCEMENT_INDEX_MAP_ROOMS_TRACK
   },
   {
     number: 5,
@@ -41,7 +47,8 @@ export const categories = [
       class: 'parking-space',
       svg: 'parkingSpace',
       color: '#34495E'
-    }
+    },
+    track: tracks.ANNOUNCEMENT_INDEX_MAP_PARKING_SPACES_TRACK
   },
   {
     number: 1,
@@ -52,7 +59,8 @@ export const categories = [
       class: 'usable-premises',
       svg: 'usablePremises',
       color: '#D35400'
-    }
+    },
+    track: tracks.ANNOUNCEMENT_INDEX_MAP_USABLE_PREMISES_TRACK
   },
   {
     number: 0,
@@ -63,7 +71,8 @@ export const categories = [
       class: 'office',
       svg: 'office',
       color: '#3498DB'
-    }
+    },
+    track: tracks.ANNOUNCEMENT_INDEX_MAP_OFFICES_TRACK
   },
   {
     number: 6,
@@ -74,7 +83,8 @@ export const categories = [
       class: 'virtual-office',
       svg: 'virtualOffice',
       color: '#7D3C98'
-    }
+    },
+    track: tracks.ANNOUNCEMENT_INDEX_MAP_VIRTUAL_OFFICES_TRACK
   },
   {
     number: 7,
@@ -85,6 +95,7 @@ export const categories = [
       class: 'coworking-space',
       svg: 'coworkingSpace',
       color: '#4A235A'
-    }
+    },
+    track: tracks.ANNOUNCEMENT_INDEX_MAP_COWORKING_TRACK
   }
 ]
