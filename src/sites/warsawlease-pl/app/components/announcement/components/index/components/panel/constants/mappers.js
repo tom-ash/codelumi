@@ -11,11 +11,13 @@ export const mapStateToProps = store => {
     device
   } = store.app
 
+  const { render } = store
+
   const {
     [ANNOUNCEMENT_INDEX_MAP_TRACK]: renderMap,
     [ANNOUNCEMENT_INDEX_CATALOGUE_TRACK]: renderCatalogue,
     [ANNOUNCEMENT_INDEX_MY_TRACK]: renderMy
-  } = store.render
+  } = render
 
   const {
     category: currentCategory
@@ -25,6 +27,7 @@ export const mapStateToProps = store => {
     lang,
     isMobile,
     device,
+    render,
     renderMap,
     renderCatalogue,
     renderMy,

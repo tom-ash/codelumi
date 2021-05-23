@@ -33,13 +33,15 @@ export function componentDidUpdate(prevProps) {
   const {
     loadMap: prevLoadMap,
     tileId: prevTileId,
-    loadPins: prevLoadPins
+    loadPins: prevLoadPins,
+    announcements: prevAnnouncements
   } = prevProps
 
   const {
     changeControl,
     loadMap,
     tileId,
+    announcements,
     loadPins
   } = this.props
 
@@ -48,6 +50,7 @@ export function componentDidUpdate(prevProps) {
   if (this.shouldSetUpPins()) changeControl({ loadPins: true })
   if (!prevLoadPins && loadPins) this.drawPins()
   if (tileId && prevTileId !== tileId) this.fetchTile()
+  if (prevAnnouncements && announcements && prevAnnouncements !== announcements) this.drawPins()
 }
 
 export function componentWillUnmount() {
