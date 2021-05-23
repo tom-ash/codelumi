@@ -3,10 +3,7 @@ function getRouteByRender({
   lang,
   routes
 }) {
-  return routes.find(route =>
-    render[route.track] &&
-    route.lang === lang
-  )
+  return routes.find(route => render[route.track] && route.lang === lang)
 }
 
 export default getRouteByRender

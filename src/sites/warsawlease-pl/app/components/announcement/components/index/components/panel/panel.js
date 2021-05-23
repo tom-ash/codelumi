@@ -33,6 +33,7 @@ class AnnouncementIndexPanel extends React.Component {
     return (
       <div id='announcement-index-panel'>
         <PanelCategories
+          renderCatalogue={renderCatalogue}
           langHandler={this.langHandler}
           changeInputs={changeInputs}
           changeControl={changeControl}
