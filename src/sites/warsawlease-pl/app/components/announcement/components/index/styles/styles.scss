@@ -3,9 +3,11 @@
 #announcement-index {
   position: relative;
   max-width: 1440px;
-  min-height: 780px;
+  min-height: 734px;
   margin: 0 auto;
-  padding-top: 15px;
+  @media #{$LARGE-TABLET} {
+    min-height: 1200px;
+  }
   .phone {
     cursor: pointer;
     z-index: 3;
