@@ -14,8 +14,8 @@ export const ROOT_LABELS = {
 }
 
 export const ANNOUNCEMENT_CREATE_LABELS = {
-  [PL]: 'Dodaj ogłoszenie',
-  [EN]: 'Add Announcement'
+  [PL]: 'DODAJ BEZPŁATNE OGŁOSZENIE',
+  [EN]: 'ADD FREE ANNOUNCEMENT'
 }
 
 export const ANNOUNCEMENT_INDEX_MAP_LABELS = {

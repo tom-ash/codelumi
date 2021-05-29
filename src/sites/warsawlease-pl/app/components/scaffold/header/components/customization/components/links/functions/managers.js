@@ -4,7 +4,7 @@ import { ANNOUNCEMENT_CREATE_LABELS } from '../../../../../../../../../shared/co
 
 export function addAnnouncementManager(props) {
   const { clientUrl, urls, langs, titles, changeRoute, langHandler } = props
-  const classNames = { container: 'header-link add-announcement' }
+  const classNames = { container: 'add-announcement' }
   const href = `${clientUrl}/${langHandler(urls.ANNOUNCEMENT_CREATE_FORM_URLS)}`
   const hrefLang = langHandler(langs)
   const title = langHandler(titles.ANNOUNCEMENT_CREATE_TITLES)

@@ -42,6 +42,26 @@
     }
     .links {
       float: right;
+      .add-announcement {
+        position: relative;
+        float: left;
+        margin-top: 13px;
+        background: #229954;
+        color: white;
+        line-height: 32px;
+        padding-left: 38px;
+        padding-right: 10px;
+        border-radius: 4px;
+        font-size: 13px;
+        padding-top: 2px;
+        svg {
+          position: absolute;
+          top: 6px;
+          left: 10px;
+          width: 18px;
+          fill: white;
+        }
+      }
       .header-link {
         float: left;
         margin-left: 25px;
@@ -62,18 +82,7 @@
           }
           color: #34495E;
         }
-        &.add-announcement {
-          color: $HEADER-LINK-ADD-ANNOUNCEMENT;
-          svg {
-            fill: $HEADER-LINK-ADD-ANNOUNCEMENT;
-          }
-          :hover {
-            color: $HEADER-LINK-ADD-ANNOUNCEMENT-HOVER;
-            svg {
-              fill: $HEADER-LINK-ADD-ANNOUNCEMENT-HOVER;
-            }
-          }
-        }
+
         &.sign-up, &.sign-in {
           margin-top: 4px;
           svg {
