@@ -88,7 +88,7 @@ function addNewPins() {
             viewBox="${svg && svg.viewBox}"
           >
             <path
-              style="fill:#424949;"
+              style="fill:#4D5656;"
               d="${svg && svg.pathData}"
             />
           </svg>

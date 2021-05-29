@@ -19,9 +19,6 @@ export const mapStateToProps = store => {
     [ANNOUNCEMENT_INDEX_MY_TRACK]: renderMy
   } = render
 
-  const {
-    category: currentCategory
-  } = store.announcement.index.inputs
 
   const {
     apartmentsAmount,
@@ -31,7 +28,8 @@ export const mapStateToProps = store => {
     usablePremisesAmount,
     officesAmount,
     virtualOfficesAmount,
-    coworkingAmount
+    coworkingAmount,
+    currentCategory
   } = store.announcement.index.data
 
   return {

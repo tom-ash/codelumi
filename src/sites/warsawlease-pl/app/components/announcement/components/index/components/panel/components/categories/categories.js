@@ -17,7 +17,7 @@ const AnnouncementIndexPanelCategories = (props) => {
       {categories.map(category => {
         const amount = props[`${category.name}Amount`]
 
-        return <ManagedLink key={`${category.name}${amount}`} {...categoryManger({
+        return <ManagedLink key={`${category.name}${amount}${currentCategory}`} {...categoryManger({
           category, renderCatalogue, lang, currentCategory, changeRoute, langHandler, amount
         })}/>
       })}

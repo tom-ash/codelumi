@@ -26,7 +26,8 @@ export const data = {
   usablePremisesAmount: 0,
   officesAmount: 0,
   virtualOfficesAmount: 0,
-  coworkingAmount: 0
+  coworkingAmount: 0,
+  currentCategory: null
 }
 
 export const inputs = {
