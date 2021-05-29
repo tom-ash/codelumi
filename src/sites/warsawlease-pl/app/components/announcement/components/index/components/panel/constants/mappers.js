@@ -23,6 +23,17 @@ export const mapStateToProps = store => {
     category: currentCategory
   } = store.announcement.index.inputs
 
+  const {
+    apartmentsAmount,
+    housesAmount,
+    roomsAmount,
+    parkingSpacesAmount,
+    usablePremisesAmount,
+    officesAmount,
+    virtualOfficesAmount,
+    coworkingAmount
+  } = store.announcement.index.data
+
   return {
     lang,
     isMobile,
@@ -31,7 +42,15 @@ export const mapStateToProps = store => {
     renderMap,
     renderCatalogue,
     renderMy,
-    currentCategory
+    currentCategory,
+    apartmentsAmount,
+    housesAmount,
+    roomsAmount,
+    parkingSpacesAmount,
+    usablePremisesAmount,
+    officesAmount,
+    virtualOfficesAmount,
+    coworkingAmount
   }
 }
     

@@ -18,7 +18,15 @@ export const data = {
   announcements: null,
   tileId: null,
   tile: null,
-  pins: null
+  pins: null,
+  apartmentsAmount: 0,
+  housesAmount: 0,
+  roomsAmount: 0,
+  parkingSpacesAmount: 0,
+  usablePremisesAmount: 0,
+  officesAmount: 0,
+  virtualOfficesAmount: 0,
+  coworkingAmount: 0
 }
 
 export const inputs = {

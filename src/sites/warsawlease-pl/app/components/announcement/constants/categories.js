@@ -2,6 +2,7 @@ import * as tracks from '../../../../shared/constants/tracks/tracks.js'
 
 export const categories = [
   {
+    name: 'apartments',
     number: 2,
     value: 2,
     label: { pl: 'Mieszkanie', en: 'Apartment' },
@@ -14,6 +15,7 @@ export const categories = [
     track: tracks.ANNOUNCEMENT_INDEX_MAP_APARTMENTS_TRACK
   },
   {
+    name: 'houses',
     number: 3,
     value: 3,
     label: { pl: 'Dom', en: 'House' },
@@ -26,6 +28,7 @@ export const categories = [
     track: tracks.ANNOUNCEMENT_INDEX_MAP_HOUSES_TRACK
   },
   {
+    name: 'rooms',
     number: 4,
     value: 4,
     label: { pl: 'Pokój', en: 'Room' },
@@ -39,6 +42,7 @@ export const categories = [
     track: tracks.ANNOUNCEMENT_INDEX_MAP_ROOMS_TRACK
   },
   {
+    name: 'parkingSpaces',
     number: 5,
     value: 5,
     label: { pl: 'Miejsce postojowe', en: 'Parking Space' },
@@ -51,6 +55,7 @@ export const categories = [
     track: tracks.ANNOUNCEMENT_INDEX_MAP_PARKING_SPACES_TRACK
   },
   {
+    name: 'usablePremises',
     number: 1,
     value: 1,
     label: { pl: 'Lokal użytkowy', en: 'Usable Premises' },
@@ -63,6 +68,7 @@ export const categories = [
     track: tracks.ANNOUNCEMENT_INDEX_MAP_USABLE_PREMISES_TRACK
   },
   {
+    name: 'offices',
     number: 0,
     value: 0,
     label: { pl: 'Biuro', en: 'Office' },
@@ -75,6 +81,7 @@ export const categories = [
     track: tracks.ANNOUNCEMENT_INDEX_MAP_OFFICES_TRACK
   },
   {
+    name: 'virtualOffices',
     number: 6,
     value: 6,
     label: { pl: 'Biuro wirtualne', en: 'Virtual Office' },
@@ -87,6 +94,7 @@ export const categories = [
     track: tracks.ANNOUNCEMENT_INDEX_MAP_VIRTUAL_OFFICES_TRACK
   },
   {
+    name: 'coworking',
     number: 7,
     value: 7,
     label: { pl: 'Coworking', en: 'Coworking' },

@@ -5,23 +5,34 @@ import getRouteByTrackAndLang from '../../../../../../../../../../../shared/app/
 import routes from '../../../../../../../../../../shared/constants/routes/routes.js'
 
 function categoryManger(props) {
-  const { renderCatalogue, category, lang, currentCategory, changeRoute, langHandler } = props
+  const { renderCatalogue, category, lang, currentCategory, changeRoute, langHandler, amount } = props
   const active = category.value === currentCategory
-  const classNames = { container: `category${active ? ' active' : ''}` }
   const track = category.track
   const route = getRouteByTrackAndLang({ track, routes, lang })
   const url = renderCatalogue ? route.relatedToUrl : route.url
   const href = `${CLIENT_URL}/${url}`
   const hrefLang = lang
+  const available = amount !== 0
+  const classNamesArr = ['category']
+  if (available) classNamesArr.push('available')
+  if (active) classNamesArr.push('active')
+  const classNames = { container: classNamesArr.join(' ') }
+
   const label = (
     <>
-      <SVG
-        name={category.pin.svg}
-        {...active ? { fill: category.pin.color } : { fill: '#909497' }}
-      />
-      <p>
-        {langHandler(category.label)}
-      </p>
+      <div className={`icon`}>
+        <SVG
+          name={category.pin.svg}
+          {...active ? { fill: category.pin.color } : { fill: '#909497' }}
+        />
+        <p>
+          {langHandler(category.label)}
+        </p>
+      </div>
+      {
+      <div className='amount'>
+        {available && amount}
+      </div>}
     </>
   )
   const onClick = () => changeRoute({ href })

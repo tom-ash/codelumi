@@ -26,7 +26,16 @@ class AnnouncementIndexPanel extends React.Component {
       renderCatalogue,
       currentCategory,
       changeInputs,
-      changeControl
+      changeControl,
+      categoryAmounts,
+      apartmentsAmount,
+      housesAmount,
+      roomsAmount,
+      parkingSpacesAmount,
+      usablePremisesAmount,
+      officesAmount,
+      virtualOfficesAmount,
+      coworkingAmount
     } = this.props
     const { changeRoute } = this.context
 
@@ -40,6 +49,15 @@ class AnnouncementIndexPanel extends React.Component {
           currentCategory={currentCategory}
           changeRoute={changeRoute}
           lang={lang}
+          categoryAmounts={categoryAmounts}
+          apartmentsAmount={apartmentsAmount}
+          housesAmount={housesAmount}
+          roomsAmount={roomsAmount}
+          parkingSpacesAmount={parkingSpacesAmount}
+          usablePremisesAmount={usablePremisesAmount}
+          officesAmount={officesAmount}
+          virtualOfficesAmount={virtualOfficesAmount}
+          coworkingAmount={coworkingAmount}
         />
         {(renderMap || renderCatalogue) &&
         <>

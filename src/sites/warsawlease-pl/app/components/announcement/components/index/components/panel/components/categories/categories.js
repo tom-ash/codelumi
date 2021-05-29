@@ -3,18 +3,24 @@ import { categories } from '../../../../../../constants/categories'
 import { ManagedLink } from 'managed-inputs'
 import categoryManger from './functions/category-manager.js'
 
-const AnnouncementIndexPanelCategories = ({
-  langHandler,
-  currentCategory,
-  changeRoute,
-  lang,
-  renderCatalogue
-}) => {
+const AnnouncementIndexPanelCategories = (props) => {
+  const {
+    langHandler,
+    currentCategory,
+    changeRoute,
+    lang,
+    renderCatalogue
+  } = props
+
   return (
     <div className='categories'>
-      {categories.map((category, index) => (
-        <ManagedLink key={index} {...categoryManger({ category, renderCatalogue, lang, currentCategory, changeRoute, langHandler })}/>
-      ))}
+      {categories.map(category => {
+        const amount = props[`${category.name}Amount`]
+
+        return <ManagedLink key={`${category.name}${amount}`} {...categoryManger({
+          category, renderCatalogue, lang, currentCategory, changeRoute, langHandler, amount
+        })}/>
+      })}
       <div className='float-clear' />
     </div>
   )
