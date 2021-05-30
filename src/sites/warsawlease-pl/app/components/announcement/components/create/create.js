@@ -13,7 +13,6 @@ import WindmillSpinner from '../../../support/components/spinner/components/wind
 import * as lifecycle from './functions/lifecycle'
 import * as managers from './functions/managers'
 import langHandler from '../../../../functions/lang-handler'
-import { AnnouncementCreateSteps } from './components/steps/steps'
 import { ManagedButton } from 'managed-inputs'
 import { publish } from './components/publishing/functions/publish'
 import { validatePictures } from './components/pictures/functions/validate-pictures'
@@ -63,7 +62,6 @@ class AnnouncementCreate extends React.Component {
 
     return (
       <>
-        <AnnouncementCreateSteps authorized={authorized} step={step} />
         <div id='announcement-create' className={step}>
           {(renderForm || renderEdit) &&
           <>

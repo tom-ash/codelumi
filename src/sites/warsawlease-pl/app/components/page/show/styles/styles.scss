@@ -1,25 +1,27 @@
+@import '../../../../styles/box_shadows.scss';
+
 .tile {
   position: relative;
-  max-width: 768px;
-  margin: 0 auto;
+  max-width: 1400px;
+  margin: 20px auto;
   background: white;
-  border: 1px solid #E5E7E9;
-  border-radius: 3px;
+  border-radius: 4px;
+  box-shadow: $BOX_SHADOW_CONTAINER_DEFAULT;
+  padding: 1px 0;
   line-height: 1.65;
+  color: #424242;
   button {
     position: absolute;
+    background: none;
+    border: none;
     top: 15px;
     right: 15px;
     height: 25px;
-    width: 25px;
     padding: 3px;
     &:disabled {
       cursor: not-allowed;
     }
   }
-
-  color: #424242;
-
   h2 {
     margin-top: 20px;
     margin-bottom: 16px;

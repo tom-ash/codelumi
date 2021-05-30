@@ -11,12 +11,14 @@
 @import '../../../../../styles/inputs/form/checkbox.scss';
 @import '../../../../../styles/inputs/form/radio.scss';
 @import '../../../../../styles/inputs/form/button.scss';
+@import '../../../../../styles/box_shadows.scss';
 
 #user-create {
-  margin: 0 auto;
+  margin: 50px auto 150px;
   max-width: 600px;
-  border: 1px solid #D0D3D4;
+  box-shadow: $BOX_SHADOW_CONTAINER_DEFAULT;
   padding: $FORM-PADDING-PC;
+  border-radius: 4px;
   background: white;
   @media #{$LARGE-PHONE} {
     border: none;

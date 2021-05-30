@@ -15,16 +15,16 @@
 @import '../components/description/styles/styles.scss';
 @import '../components/map/styles/styles.scss';
 @import '../components/publishing/styles/styles.scss';
+@import '../../../../../styles/box_shadows.scss';
 
 #announcement-create {
-  box-shadow: none;
-  max-width: 768px;
-  margin: 24px auto 0;
-  $border-color: #E5E7E9;
-  border: 1px solid #D0D3D4;
-  background: white;
-  padding: $FORM-PADDING-PC;
   position: relative;
+  max-width: 768px;
+  margin: 50px auto 150px;
+  box-shadow: $BOX_SHADOW_CONTAINER_DEFAULT;
+  border-radius: 4px;
+  padding: $FORM-PADDING-PC;
+  background: white;
   @media #{$LARGE-PHONE} {
     border: none;
   }
@@ -57,7 +57,6 @@
     margin: 0 auto;
     padding: $FORM-PADDING-PHONE;
   }
-
   .confirmation, .success-container, .requesting {
     background: white;
     margin: 0;
@@ -71,19 +70,16 @@
       padding: 200px 0;
     }
   }
-  
   .success-container {
     .input-explanation {
       text-align: center;
     }
   }
-
   .input-explanation {
     position: relative;
     margin-bottom: 8px;
     font-size: 13px;
   }
-
   .description-question {
     font-size: 14px;
     display: inline-block;
@@ -151,11 +147,5 @@
       width: 200px;
       margin: 40px auto 0;
     }
-  }
-}
-
-.tile {
-  &.create-announcement {
-    margin-top: 240px!important;
   }
 }
