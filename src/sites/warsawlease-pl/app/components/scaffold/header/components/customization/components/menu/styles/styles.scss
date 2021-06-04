@@ -11,19 +11,11 @@
     right: 10px;
     box-shadow: 0 1px 3px 1px #D0D3D4;
     padding: 20px 25px 0;
+    .add-announcement {
+      margin-bottom: 20px;
+    }
     .header-link {
       margin-bottom: 20px;
-      padding-left: 40px;
-      svg {
-        position: absolute;
-        width: 20px;
-        left: 25px;
-      }
-      &.add-announcement {
-        svg {
-          transform: translate(0, -4px);
-        }
-      }
     }
   }
 }
