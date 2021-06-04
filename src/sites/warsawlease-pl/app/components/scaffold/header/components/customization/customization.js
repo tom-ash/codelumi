@@ -8,7 +8,6 @@ const HeaderCustomization = props => {
 
   return (
     <>
-      {!isMobile && <PageHeader renderMap={renderMap} renderCatalogue={renderCatalogue} langHandler={langHandler}/>}
       <Menu {...props}/>
       <Links {...props}/>
     </>

@@ -25,12 +25,7 @@ export function signUpManager(props) {
   const href = `${clientUrl}/${langHandler(urls.USER_CREATE_FORM_URLS)}`
   const hrefLang = langHandler(langs)
   const title = langHandler(titles.USER_CREATE_FORM_TITLES)
-  const label = (
-    <>
-      <SVG name='userPlus' />
-      {title}
-    </>
-  )
+  const label = title
   const onClick = () => changeRoute({ href })
 
   return { classNames, href, hrefLang, title, label, onClick }
@@ -42,12 +37,7 @@ export function signInManager(props) {
   const href = `${clientUrl}/${langHandler(urls.USER_AUTHORIZE_URLS)}`
   const hrefLang = langHandler(langs)
   const title = langHandler(titles.USER_AUTHORIZE_TITLES)
-  const label = (
-    <>
-      <SVG name='userCheck' />
-      {title}
-    </>
-  )
+  const label = title
   const onClick = () => changeRoute({ href })
 
   return { classNames, href, hrefLang, title, label, onClick }
@@ -59,12 +49,7 @@ export function myAccountManager(props) {
   const href = `${clientUrl}/${langHandler(urls.USER_SHOW_URLS)}`
   const hrefLang = langHandler(langs)
   const title = langHandler(titles.USER_SHOW_TITLES)
-  const label = (
-    <>
-      <SVG name='user' />
-      {title}
-    </>
-  )
+  const label = title
   const onClick = () => changeRender({ [tracks.USER_TRACK]: true, [tracks.USER_SHOW_TRACK]: true })
 
   return { classNames, href, hrefLang, title, label, onClick }

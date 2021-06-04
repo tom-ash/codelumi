@@ -17,22 +17,8 @@
   }
   a, button {
     display: block;
-    margin: 35px;
+    margin: 25px;
     font-size: 15px;
-    padding-left: 35px;
-    cursor: pointer;
-    svg {
-      position: absolute;
-      left: 25px;
-      display: block;
-      width: 20px;
-      transform: translate(0, -3px);
-    }
-    &.add-announcement {
-      svg {
-        transform: translate(0, -4px);
-      }
-    }
     &:hover {
       text-decoration: underline;
     }
@@ -43,26 +29,5 @@
     background: none;
     text-align: left;
     font-size: 15px;
-  }
-  .add-announcement {
-    svg {
-      transform: translate(0, -4px);
-    }
-  }
-  .my-announcements {
-    svg {
-      transform: rotate(180deg);
-      transform: translate(0, -2px);
-    }
-  }
-  .settings {
-    svg {
-      width: 24px;
-    }
-  }
-  .de-authorize {
-    svg {
-      width: 24px;
-    }
   }
 }

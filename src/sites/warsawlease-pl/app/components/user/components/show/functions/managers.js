@@ -10,18 +10,14 @@ import SVG from '../../../../support/components/svg/svg.js'
 export function addAnnouncementManager({ hrefLang }) {
   const { changeRoute } = this.context
   const href = `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_CREATE_FORM_URLS)}`
+  const title = this.langHandler({ pl: 'Dodaj bezpłatne ogłoszenie', en: 'Add Free Announcement' })
 
   return {
     classNames: { container: 'add-announcement' },
     href,
     hrefLang,
-    title: this.langHandler(ANNOUNCEMENT_CREATE_TITLES),
-    label: (
-      <>
-        <SVG name='plusSquare' />
-        {this.langHandler(ANNOUNCEMENT_CREATE_LABELS)}
-      </>
-    ),
+    title,
+    label: title,
     onClick: () => changeRoute({ href })
   }
 }
@@ -36,12 +32,7 @@ export function myAnnouncementsManager({ hrefLang }) {
     href,
     hrefLang,
     title,
-    label: (
-      <>
-        <SVG name='thList' />
-        {title}
-      </>
-    ),
+    label: title,
     onClick: () => changeRoute({ href })
   }
 }
@@ -56,12 +47,7 @@ export function accountManager({ hrefLang }) {
     href,
     hrefLang,
     title,
-    label: (
-      <>
-        <SVG name='userCog' />
-        {title}
-      </>
-    ),
+    label: title,
     onClick: () => changeRoute({ href })
   }
 }
@@ -69,12 +55,7 @@ export function accountManager({ hrefLang }) {
 export function deAuthorizeManager() {
   return {
     classNames: { container: 'de-authorize' },
-    label: (
-      <>
-        <SVG name='userTimes' />
-        {this.langHandler(SIGN_OUT_LABEL)}
-      </>
-    ),
+    label: this.langHandler(SIGN_OUT_LABEL),
     onClick: () => deauthorizeUser.call(this)
   }
 }

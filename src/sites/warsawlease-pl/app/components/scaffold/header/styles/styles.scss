@@ -7,7 +7,7 @@
   right: 0;
   height: 60px;
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 1px 3px 1px #D0D3D4;
+  border-bottom: 1px solid #D7DBDD;
   .inner {
     padding: 0 20px;
     position: relative;
@@ -34,19 +34,13 @@
         transform: translate(0, -1px);
       }
     }
-    h1 {
-      float: left;
-      display: block;
-      font-weight: normal;
-      line-height: 60px;
-    }
     .links {
       float: right;
       .add-announcement {
         position: relative;
         float: left;
         margin-top: 13px;
-        background: #229954;
+        background: #2471A3;
         color: white;
         line-height: 32px;
         padding-left: 38px;
@@ -54,6 +48,10 @@
         border-radius: 4px;
         font-size: 13px;
         padding-top: 2px;
+        &.hover {
+          background: #2980B9;
+          text-decoration: underline;
+        }
         svg {
           position: absolute;
           top: 6px;
@@ -64,43 +62,25 @@
       }
       .header-link {
         float: left;
-        margin-left: 25px;
+        margin-left: 30px;
         text-align: center;
         font-size: 14px;
-        line-height: 14px;
-        padding: 9px 0;
         cursor: pointer;
-        svg {
-          display: block;
-          width: 20px;
-          margin: 0 auto 4px;
-        }
+        line-height: 60px;
         &.hover {
           text-decoration: underline;
-          svg {
-            fill: #34495E;
-          }
           color: #34495E;
         }
-
-        &.sign-up, &.sign-in {
-          margin-top: 4px;
-          svg {
-            width: 24px;
-            transform: translate(0, -1px);
-          }
-        }
-        &.my-account {
-          margin-top: 4px;
-          svg {
-            width: 17px;
-            transform: translate(0, -1px);
-          }
-        }
         &.lang {
-          margin-top: 3px;
+          margin-top: 12px;
+          line-height: 14px;
+          color: #424949;
           svg {
+            display: block;
+            width: 18px;
+            margin: 0 auto 4px;
             transform: translate(0, -1px);
+            fill: #424949;
           }
         }
       }
