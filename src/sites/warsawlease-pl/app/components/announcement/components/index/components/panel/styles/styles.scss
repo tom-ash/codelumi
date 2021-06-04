@@ -55,24 +55,16 @@
         svg {
           display: block;
           margin: 0 auto 6px;
-          fill: lightgray;
+          fill: #424949;
           height: 16px;
         }
         p {
           font-size: 13px;
           text-align: center;
-          color: lightgray;
+          color: #424949;
         }
       }
       &.available {
-        .icon {
-          svg {
-            fill: #424949;
-          }
-          p {
-            color: #424949;
-          }
-        }
         .amount {
           display: none;
           margin: 0 auto;
@@ -95,7 +87,7 @@
     float: left;
     position: relative;
     border: none;
-    padding: 20px;
+    padding: 20px 0 20px 20px;
     @media #{$LARGE-TABLET} {
       float: none;
       margin-left: 0;

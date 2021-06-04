@@ -22,7 +22,7 @@ class UserCreateEmail extends React.Component {
       <div id='user-create-email'>
         {(renderForm || renderAnnouncementCreate) &&
         <>
-        {!renderAnnouncementCreate && <Header tier={1} text={headerText} svg='userPlus' />}
+        {!renderAnnouncementCreate && <Header tier={1} text={headerText} />}
         <form>
           <Inputs renderAnnouncementCreate={renderAnnouncementCreate}/>
           <Consents />

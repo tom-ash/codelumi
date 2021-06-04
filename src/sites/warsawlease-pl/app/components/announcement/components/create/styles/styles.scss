@@ -21,28 +21,28 @@
   position: relative;
   max-width: 768px;
   margin: 50px auto 150px;
-  box-shadow: $BOX_SHADOW_CONTAINER_DEFAULT;
   border-radius: 4px;
   padding: $FORM-PADDING-PC;
   background: white;
+  border: 1px solid #D7DBDD;
   @media #{$LARGE-PHONE} {
     border: none;
   }
   .page-header {
-    .icon {
-      padding-top: 3px;
-      width: 24px;
+    h1 {
+      font-size: 17px;
+      padding: 0;
     }
   }
   h2 {
-    font-size: 15px;
+    font-size: 16px;
     color: $TEXT-HEADER-TIER-TWO-COLOR;
   }
   .hint {
     position: relative;
     color: $TEXT-HINT-COLOR;
     margin: 5px 0 30px;
-    font-size: 14px;
+    font-size: 15px;
   }
   &.creating-user {
     border-bottom: none;

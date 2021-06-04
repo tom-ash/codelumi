@@ -65,7 +65,7 @@ class AnnouncementCreate extends React.Component {
         <div id='announcement-create' className={step}>
           {(renderForm || renderEdit) &&
           <>
-            <Header tier={1} text={headerText} svg='plus' />
+            <Header tier={1} text={headerText} />
             {!connecting ?
             <>  
               <Header tier={2} text={this.langHandler(PRIMARY_DATA_HEADER)} />
