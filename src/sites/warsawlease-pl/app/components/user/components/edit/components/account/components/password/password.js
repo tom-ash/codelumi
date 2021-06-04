@@ -36,7 +36,7 @@ class UserEditAccountPassword extends React.Component {
         id='user-edit-account-password'
         className={`${editAccount ? '' : 'container full'}`}
       >
-        {!editAccount && <Header tier={1} text={headerText} svg='lock' />}
+        {!editAccount && <Header tier={1} text={headerText} />}
         <div className='inputs'>
           <div className='monit-and-text-inputs'>
             <div className='monit'>

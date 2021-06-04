@@ -37,27 +37,6 @@ input[type=number] {
   left: 0;
 }
 
-.form-input {
-  .sqm {
-    position: absolute;
-    top: 34px;
-    right: 14px;
-    opacity: 0;
-    transition: .2s opacity ease-in;
-    .sq {
-      top: -4px;
-      position: relative;
-      font-size: 12px;
-      padding-left: 1px;
-    } 
-  }
-  &.value, &.focus {
-    .sqm {
-      opacity: 1;
-    }
-  }
-}
-
 * {
   margin: 0;
   padding: 0;

@@ -5,9 +5,9 @@
 @import '../../../../../styles/box_shadows.scss';
 
 #user-authorize {
-  margin: 50px auto 150px;
+  margin: 100px auto 150px;
   max-width: 600px;
-  box-shadow: $BOX_SHADOW_CONTAINER_DEFAULT;
+  border: 1px solid #D7DBDD;
   padding: $FORM-PADDING-PC;
   border-radius: 4px;
   background: white;
@@ -17,9 +17,9 @@
     padding: $FORM-PADDING-PHONE;
   }
   .page-header {
-    .icon {
-      padding-top: 4px;
-      width: 23px;
+    h1 {
+      padding: 0;
+      font-size: 18px;
     }
   }
 }

@@ -8,18 +8,19 @@
   &.full {
     margin: 120px auto;
     max-width: 600px;
-    border: 1px solid #D0D3D4;
+    border: 1px solid #D7DBDD;
     padding: $FORM-PADDING-PC;
     background: white;
+    border-radius: 4px;
     @media #{$LARGE-PHONE} {
       margin: 0 auto;
       border: none;
       padding: $FORM-PADDING-PHONE;
     }
     .page-header {
-      .icon {
-        padding-top: 5px;
-        width: 20px;
+      h1 {
+        padding: 0;
+        font-size: 18px;
       }
     }
   }

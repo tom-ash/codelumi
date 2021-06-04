@@ -4,7 +4,6 @@
     transition: .2s ease-in-out;
   }
   &.with-icon {
-    
     &.text {
       svg {
         opacity: 0;
@@ -46,7 +45,7 @@
   }
   &.select {
     svg:last-of-type {
-      top: 34px;
+      top: 40px;
       right: 14px;
       height: 15px;
       fill: $FORM-INPUT-CHEVRON-COLOR;
