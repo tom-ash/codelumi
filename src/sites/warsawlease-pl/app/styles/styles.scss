@@ -43,18 +43,18 @@ input[type=number] {
   box-sizing: border-box;
 }
 
-textarea,
-input:matches(
-  [type="email"],
-  [type="number"],
-  [type="password"],
-  [type="search"],
-  [type="tel"],
-  [type="text"],
-  [type="url"]
-) {
-  -webkit-appearance: none;
-}
+// textarea,
+// input:matches(
+//   [type="email"],
+//   [type="number"],
+//   [type="password"],
+//   [type="search"],
+//   [type="tel"],
+//   [type="text"],
+//   [type="url"]
+// ) {
+//   -webkit-appearance: none;
+// }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
