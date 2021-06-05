@@ -17,6 +17,7 @@ import AppContext from './constants/context.js'
 import CLIENT_URL from '../shared/constants/urls/client.js'
 import API_URL from '../shared/constants/urls/api.js'
 import customNodeParser from './components/page/show/functions/custom-node-parser.js'
+import customMetaParser from './components/page/show/functions/custom-meta-parser.js'
 import Header from '../../shared/app/components/scaffold/header/header.js'
 import Footer from '../../shared/app/components/scaffold/footer/footer.js'
 import { LANGS } from '../shared/constants/langs/langs.js'
@@ -48,7 +49,7 @@ class App extends React.Component {
     const urlComposites = { pageShowData, pageEditData }
     const sharedProps = { appName: APP_NAME, render, routes, urls, langs: LANGS, titles, clientUrl: CLIENT_URL, apiUrl: API_URL, lang, changeRoute: this.changeRoute, changeRouteWithHref, changeApp, langHandler: this.langHandler }
     const headerProps = { ...sharedProps, urlComposites, Logo, HeaderCustomization, styles: headerStyles }
-    const pageProps = { ...sharedProps, customNodeParser }
+    const pageProps = { ...sharedProps, customNodeParser, customMetaParser }
     
     return (
       <AppContext.Provider value={AppContextValue}>

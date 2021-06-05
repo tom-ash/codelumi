@@ -1,142 +1,167 @@
-.tile {
+#page-container {
   position: relative;
-  max-width: 768px;
+  max-width: 1360px;
   margin: 0 auto;
-  background: none;
-  color: #424242;
-  padding: 25px 25px 15px;
-  font-size: 17px;
-  line-height: 30px;
-  color: #424949;
-
-  button {
-    background: white;
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: 0;
-    border: none;
-    outline: none;
-    color: #626567;
-    &.fetching {
-      color: lightgray;
+  .table-of-contents-container {
+    max-width: 1360px;
+    z-index: 1;
+    width: 100%;
+    position: fixed;
+    top: 123px;
+    .table-of-contents {
+      padding: 15px 15px 10px 15px;
+      width: 250px;
+      background: white;
+      line-height: 24px;
+      font-size: 16px;
+      overflow-x: scroll;
+      border: 1px solid #EAEDED;
+      font-weight: bold;
     }
   }
-
-  h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 30px;
-    margin-bottom: 30px;
-    color: #1B2631;
-  }
-
-  h2 {
-    margin: 0;
-    padding: 0;
-    font-size: 22px;
-    margin-top: 50px;
-    margin-bottom: 10px;
-    color: #212F3C;
-  }
-
-  h3 {
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    color: #283747;
-  }
-
-  p {
-    margin: 5px 0;
-    padding: 0;
-    white-space: pre-wrap;
-  }
-
-  &.root {
+  .tile {
     position: relative;
-    max-width: 1440px;
+    z-index: 2;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
-    img {
-      display: block;
+    background: none;
+    color: #424242;
+    padding: 25px 25px 15px;
+    font-size: 17px;
+    line-height: 30px;
+    color: #424949;
+    button {
+      background: white;
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-radius: 0;
+      border: none;
+      outline: none;
+      color: #626567;
+      &.fetching {
+        color: lightgray;
+      }
+    }
+  
+    h1 {
       margin: 0;
       padding: 0;
-      width: 100%;
-      height: 240px;
+      font-size: 30px;
+      margin-bottom: 30px;
+      color: #1B2631;
+    }
+  
+    h2 {
+      margin: 0;
+      padding: 0;
+      font-size: 22px;
+      margin-top: 50px;
+      margin-bottom: 10px;
+      color: #212F3C;
+    }
+  
+    h3 {
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #283747;
+    }
+  
+    p {
+      margin: 5px 0;
+      padding: 0;
+      white-space: pre-wrap;
+    }
+  
+    &.root {
+      position: relative;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 20px;
+      img {
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 240px;
+        border-radius: 4px;
+      }
+  
+      .code-link {
+        float: left;
+        margin-right: 20px;
+        a {
+          display: block;
+          position: relative;
+          width: 240px;
+          margin: 0;
+          padding: 15px 20px;
+          box-shadow: rgba(100, 100, 100, 0.2) 0 1px 2px 0.025px;
+          border-radius: 4px;
+          background: white;
+          transition: box-shadow .3s;
+          &.hover {
+            box-shadow: rgba(100, 100, 100, 0.2) 0 5px 20px 0.025px;
+          }
+          .category {
+            top: 15px;
+            font-size: 16px;
+            font-family: 'Ubuntu', sans-serif;
+          }
+          .title {
+            bottom: 15px;
+            font-size: 17px;
+            color: #424949;
+            font-weight: bold;
+            font-family: 'Ubuntu', sans-serif;
+          }
+          .description {
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            font-size: 16px;
+          }
+        }
+        svg {
+          margin-right: 2px;
+        }
+        &.ruby {
+          color: #922B21;
+          svg {
+            fill: #922B21;
+            width: 14px;
+          }
+        }
+        &.js {
+          color: #D4AC0D;
+          svg {
+            fill: #D4AC0D;
+            width: 14px;
+            transform: translate(0, 2px);
+          }
+        }
+        &.python {
+          color: #1F618D;
+          svg {
+            fill: #1F618D;
+            width: 15px;
+            transform: translate(0, 2px);
+          }
+        }
+      }
+    }
+  
+    &.ruby-cheat-sheet, &.javascript-cheat-sheet {
+      padding: 25px;
+      border: 1px solid #EAEDED;
+      background: white;
       border-radius: 4px;
     }
-
-    .code-link {
-      float: left;
-      margin-right: 20px;
-      a {
-        display: block;
-        position: relative;
-        width: 240px;
-        margin: 0;
-        padding: 15px 20px;
-        box-shadow: rgba(100, 100, 100, 0.2) 0 1px 2px 0.025px;
-        border-radius: 4px;
-        background: white;
-        transition: box-shadow .3s;
-        &.hover {
-          box-shadow: rgba(100, 100, 100, 0.2) 0 5px 20px 0.025px;
-        }
-        .category {
-          top: 15px;
-          font-size: 16px;
-          font-family: 'Ubuntu', sans-serif;
-        }
-        .title {
-          bottom: 15px;
-          font-size: 17px;
-          color: #424949;
-          font-weight: bold;
-          font-family: 'Ubuntu', sans-serif;
-        }
-        .description {
-          left: 20px;
-          right: 20px;
-          bottom: 20px;
-          font-size: 16px;
-        }
-      }
-      svg {
-        margin-right: 2px;
-      }
-      &.ruby {
-        color: #922B21;
-        svg {
-          fill: #922B21;
-          width: 14px;
-        }
-      }
-      &.js {
-        color: #D4AC0D;
-        svg {
-          fill: #D4AC0D;
-          width: 14px;
-          transform: translate(0, 2px);
-        }
-      }
-      &.python {
-        color: #1F618D;
-        svg {
-          fill: #1F618D;
-          width: 15px;
-          transform: translate(0, 2px);
-        }
-      }
-    }
   }
+  
 
-  &.ruby-cheat-sheet, &.javascript-cheat-sheet {
-    padding: 25px;
-    box-shadow: rgba(100, 100, 100, 0.2) 0 1px 2px 0px;
-    background: white;
-    border-radius: 4px;
-  }
 }
+

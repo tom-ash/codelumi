@@ -3,7 +3,7 @@ import jsonToJsxParser from './functions/json_to_jsx_parser'
 import useStyles from 'isomorphic-style-loader/useStyles'
 
 const PageTile = props => {
-  const { appName, customNodeParser, renderShow, renderEdit, fetching, name, body, isAdmin, clientUrl, changeRoute, changePage, updatePage } = props
+  const { appName, customNodeParser, customMetaParser, renderShow, renderEdit, fetching, name, body, meta, isAdmin, clientUrl, changeRoute, changePage, updatePage } = props
   const styles = require(`../../../../../../../../${appName}/app/components/page/show/styles/styles.scss`)
 
   useStyles(styles)
@@ -12,8 +12,17 @@ const PageTile = props => {
   if (fetching) buttonClasses.push('fetching')
   const buttonClassName = buttonClasses.join(' ')
 
+  const jsonBody = (function() {
+    try {
+      return typeof body === 'object' ? body : JSON.parse(body)
+    } catch {
+      return null
+    }
+  })()
+
   return (
-    <>
+    <div id='page-container'>
+      {jsonBody && customMetaParser && customMetaParser({ meta, jsonBody })}
       <div className={`tile ${name}`}>
         {isAdmin &&
         <>
@@ -22,10 +31,10 @@ const PageTile = props => {
         </>}
         
         <div className='body'>
-          {jsonToJsxParser.call(this, { body, clientUrl, changeRoute, customNodeParser })}
+          {jsonBody && jsonToJsxParser.call(this, { jsonBody, clientUrl, changeRoute, customNodeParser })}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
