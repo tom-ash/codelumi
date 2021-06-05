@@ -9,14 +9,30 @@
     position: fixed;
     top: 123px;
     .table-of-contents {
-      padding: 15px 15px 10px 15px;
+      padding: 15px 15px 5px 15px;
       width: 250px;
       background: white;
-      line-height: 24px;
-      font-size: 16px;
+      line-height: 15px;
       overflow-x: scroll;
       border: 1px solid #EAEDED;
-      font-weight: bold;
+      .title {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        line-height: 14px;
+        font-size: 14px;
+        color: gray;
+        border-bottom: 1px solid lightgray;
+      }
+      .h2 {
+        margin-bottom: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #424949;
+        font-size: 15px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
   .tile {
