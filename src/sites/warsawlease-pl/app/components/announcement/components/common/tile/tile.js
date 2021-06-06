@@ -79,6 +79,7 @@ class AnnouncementTile extends React.Component {
     const venueShow = venue === 'show'
     const positionFromTop = getPositionFromTop.apply(this)
     const deviceClasss = device === 'largePc' ? ' large-pc' : ''
+    const description = this.langHandler({ pl: polishDescription, en: englishDescription })
 
     if (
       index !== 0 && index !== 1 && index !== 2 &&
@@ -173,25 +174,12 @@ class AnnouncementTile extends React.Component {
           availabilityDate={availabilityDate}
         />
         {venueShow &&
-        <React.Fragment>
+        <>
           {features && features.length > 0 &&
-          <AnnouncementShowFeaturesFurnishings
-            lang={lang}
-            itemsName='features'
-            items={features}
-          />}
+          <AnnouncementShowFeaturesFurnishings lang={lang} itemsName='features' items={features}/>}
           {furnishings && furnishings.length > 0 &&
-          <AnnouncementShowFeaturesFurnishings
-            lang={lang}
-            itemsName='furnishings'
-            items={furnishings}
-          />}
-          {(polishDescription || englishDescription) &&
-          <AnnouncementShowDescription
-            lang={lang}
-            polishDescription={polishDescription}
-            englishDescription={englishDescription}
-          />}
+          <AnnouncementShowFeaturesFurnishings lang={lang} itemsName='furnishings' items={furnishings}/>}
+          {description && <AnnouncementShowDescription lang={lang} description={description}/>}
           <div className='float-clear' />
           <AnnouncementShowMap
             scripts={scripts}
@@ -208,7 +196,7 @@ class AnnouncementTile extends React.Component {
             resetData={resetData}
             langHandler={this.langHandler}
           />
-        </React.Fragment>}
+        </>}
         {control}
       </div>
     )
