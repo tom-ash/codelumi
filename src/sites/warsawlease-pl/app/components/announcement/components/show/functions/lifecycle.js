@@ -14,7 +14,7 @@ export function componentDidMount() {
     changeControl({ fetched: true })
   }
 
-  addEventListener('scroll', this.fixedPhoneHandler)
+  // addEventListener('scroll', this.fixedPhoneHandler)
 
   if (phone) this.setState({ phone })
 }

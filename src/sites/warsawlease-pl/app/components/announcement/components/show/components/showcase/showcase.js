@@ -22,7 +22,7 @@ const AnnouncementShowShowcase = ({
           <SVG name='phone' />
         </div>
         <div className='text'>
-          {` ${announcerPhone}`}
+          {` ${announcerPhone && announcerPhone.replace('+48 ', '')}`}
           {announcerPhone && announcerPhone.length < 9 &&
           <u
             onClick={(e) => {

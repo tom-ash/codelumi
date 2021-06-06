@@ -49,7 +49,6 @@ class AnnouncementShow extends React.Component {
       longitude,
       polishDescription,
       englishDescription,
-      isMobile,
       device,
       scripts,
       loadMap,
@@ -67,12 +66,12 @@ class AnnouncementShow extends React.Component {
 
     const { phone } = this.state
     const deviceClasss = device === 'largePc' ? ' large-pc' : ''
-    const showcaseProps = { announcerName: name, announcerPhone: phone,
-      announcementId: id, togglePhone: this.togglePhone, langHandler: this.langHandler, venue }
+    const showcaseProps = { announcerName: name, announcerPhone: phone, announcementId: id, togglePhone: this.togglePhone, langHandler: this.langHandler, venue }
+    const isMobile = ['largeTablet', 'smallTablet', 'largePhone', 'smallPhone'].indexOf(device) !== -1
 
     return (
       <div id='announcement-show' className={deviceClasss}>
-        <Showcase { ...showcaseProps } />
+        {!isMobile && <Showcase { ...showcaseProps } />}
         <div className='contact'>
           {this.phoneSwitchProvider()}
         </div>

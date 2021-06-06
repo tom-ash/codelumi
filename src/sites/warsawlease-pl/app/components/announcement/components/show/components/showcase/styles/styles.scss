@@ -3,10 +3,14 @@
 
 #announcement-show {
   #showcase {
+    top: 0;
+    left: 780px;
     width: 180px;
-    margin: 0 0 20px auto;
     padding: 15px;
     border: 1px solid $CONTAINER-BORDER-COLOR;
+    position: absolute;
+    background: white;
+    border-radius: 4px;
     .phone-showcase {
       min-width: 50px;
       margin-top: 12px;
@@ -31,5 +35,10 @@
         }
       }
     }
-  }  
+    @media #{$LARGE-TABLET} {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+  }
 }

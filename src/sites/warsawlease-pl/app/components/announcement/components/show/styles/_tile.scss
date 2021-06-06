@@ -1,8 +1,10 @@
 #announcement-show {
   .announcement-tile {
+    max-width: 768px;
     width: 100%;
-    box-shadow: none;
     border: 1px solid $CONTAINER-BORDER-COLOR;
+    border-radius: 4px;
+    margin-top: 50px;
     h2 {
       font-size: 16px;
       color: $TEXT-HEADER-TIER-ONE-COLOR;
@@ -31,7 +33,15 @@
         font-size: 30px;
       }
     }
+    @media #{$LARGE-TABLET} {
+      max-width: 768px;
+      margin: 0 auto;
+      border: none;
+      border-radius: 0;
+    }
     @media #{$LARGE-PHONE} {
+      border: none;
+      border-radius: 0;
       .header-container {
         padding: $PADDING-PHONE;
         .area {

@@ -5,7 +5,11 @@
 
 #announcement-show {
   position: relative;
-  max-width: 768px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 20px 0 0 0;
+  @media #{$LARGE-TABLET} {
+    // max-width: 768px;
+    background: white;
+    width: 100%;
+  }
 }
