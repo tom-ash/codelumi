@@ -8,6 +8,10 @@ import { ANNOUNCEMENT_CREATE_SUCCESS_URLS } from '../../../../../../shared/const
 import CLIENT_URL from '../../../../../../shared/constants/urls/client.js'
 import setConfirmationTokenCookie from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token.js'
 
+function sendAnnouncementCreatedEvent() {
+  window.dataLayer.push({ 'event': 'announcement_created' })
+}
+
 function createAnnouncement() {
   const { authorized, renderEdit, changeControl } = this.props
 
@@ -61,6 +65,8 @@ function create() {
 
     changeRoute({ href })
     changeControl({ connecting: false })
+
+    sendAnnouncementCreatedEvent()
   })
 }
 
@@ -87,6 +93,8 @@ function createWithUser() {
     changeData({ id })
     changeRoute({ href })
     changeControl({ connecting: false })
+
+    sendAnnouncementCreatedEvent()
   })
 }
 

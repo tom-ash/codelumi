@@ -17,6 +17,7 @@ export function loadGoogleAnalytics() {
     function gtag() { dataLayer.push(arguments) }
     gtag('js', new Date())
     gtag('config', measurementId)
+    // gtag('config', measurementId, { 'debug_mode': true })
 
     changeApp({ scripts: { ...scripts, googleAnalyticsLoading: false, googleAnalytics: true } })
   })
