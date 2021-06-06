@@ -3,6 +3,8 @@ export function sendAnalyticsEvent({
   eventAction,
   eventLabel
 }) {
+  return
+  
   if (!window || !window.ga) return
 
   window.ga('send', {

@@ -2,6 +2,8 @@ function sendGaEvent(
   event,
   eventLabel
 ) {
+  return
+
   if (!window || !window.ga || !event) return
 
   try {

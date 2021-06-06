@@ -1,6 +1,6 @@
 import { initializeGoogleMaps } from './load-google-maps'
 import { isMobile } from './is-mobile'
-import { loadGoogleAnalytics } from './load-google-analytics'
+import { loadGoogleAnalytics } from '../../../shared/app/functions/analytics/google/load.js'
 import { loadFonts } from './load-fonts'
 import API_URL from '../../shared/constants/urls/api.js'
 
