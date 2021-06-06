@@ -6,7 +6,7 @@ import { shouldSetUpMarker } from '../../../../../functions/google-map-handler'
 import Header from '../../../../../../support/components/header/header.js'
 import { HEADER } from './constants/texts.js'
 
-class AnnouncementCreateMap extends React.Component {
+class AnnouncementShowMap extends React.Component {
   constructor(props) {
     super(props)
     this.componentDidMount = lifecycle.componentDidMount
@@ -37,4 +37,4 @@ class AnnouncementCreateMap extends React.Component {
   }
 }
 
-export default AnnouncementCreateMap
+export default AnnouncementShowMap

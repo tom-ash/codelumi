@@ -195,6 +195,7 @@ class AnnouncementTile extends React.Component {
             changeData={changeData}
             resetData={resetData}
             langHandler={this.langHandler}
+            isMobile={isMobile}
           />
         </>}
         {control}
