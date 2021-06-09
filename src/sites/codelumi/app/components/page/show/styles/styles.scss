@@ -159,6 +159,14 @@
             transform: translate(0, 2px);
           }
         }
+        &.postgres {
+          color: #3498DB;
+          svg {
+            fill: #3498DB;
+            width: 14px;
+            transform: translate(0, 2px);
+          }
+        }
         &.python {
           color: #1F618D;
           svg {
