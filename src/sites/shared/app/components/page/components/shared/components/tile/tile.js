@@ -20,9 +20,17 @@ const PageTile = props => {
     }
   })()
 
+  const jsonMeta = (function() {
+    try {
+      return typeof meta === 'object' ? meta : JSON.parse(meta)
+    } catch {
+      return null
+    }
+  })()
+
   return (
     <div id='page-container'>
-      {jsonBody && customMetaParser && customMetaParser({ meta, jsonBody })}
+      {jsonBody && customMetaParser && customMetaParser({ jsonBody, jsonMeta })}
       <div className={`tile ${name}`}>
         {isAdmin &&
         <>
@@ -31,7 +39,7 @@ const PageTile = props => {
         </>}
         
         <div className='body'>
-          {jsonBody && jsonToJsxParser.call(this, { jsonBody, clientUrl, changeRoute, customNodeParser })}
+          {jsonBody && jsonToJsxParser.call(this, { jsonBody, jsonMeta, clientUrl, changeRoute, customNodeParser })}
         </div>
       </div>
     </div>

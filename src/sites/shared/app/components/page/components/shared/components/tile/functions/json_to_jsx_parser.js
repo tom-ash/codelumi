@@ -4,7 +4,7 @@ import Link from '../components/link/link.js'
 const commonTags = ['h1', 'h2', 'h3', 'div', 'p']
 
 const jsonToJsxParser = props => {
-  const { jsonBody, clientUrl, changeRoute, customNodeParser } = props
+  const { jsonBody, jsonMeta, clientUrl, changeRoute, customNodeParser } = props
 
   const jsx = jsonBody.map(function(node, index) {
     const attrs = node.a || {}
@@ -16,7 +16,7 @@ const jsonToJsxParser = props => {
     if (nodeTag === 'link') return <Link key={index} {...{ clientUrl, changeRoute, nodeContent }}/>
     if (nodeTag === 'float-clear') return <div key={index} className='float-clear'/>
 
-    return customNodeParser({  clientUrl, nodeTag, nodeContent, attrs, changeRoute, index })
+    return customNodeParser({ clientUrl, nodeTag, nodeContent, attrs, changeRoute, index, jsonMeta })
   })
 
   return jsx

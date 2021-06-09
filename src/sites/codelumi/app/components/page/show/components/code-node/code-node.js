@@ -4,6 +4,9 @@ import styles from './styles/styles.scss'
 
 const hljs = require('highlight.js/lib/core')
 hljs.registerLanguage('ruby', require('highlight.js/lib/languages/ruby'))
+hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
+
+const AVAILABLE_LANGUAGES = ['javascript', 'ruby']
 
 class CodeNode extends React.Component {
   constructor(props) {
@@ -11,9 +14,10 @@ class CodeNode extends React.Component {
   }
 
   render() {
-    const { nodeContent, attrs } = this.props
+    const { nodeContent, jsonMeta: { codeLang: language }} = this.props
+    if (AVAILABLE_LANGUAGES.indexOf(language) === -1) return null
 
-    const highlightedCode = hljs.highlight(nodeContent, {language: 'ruby'}).value
+    const highlightedCode = hljs.highlight(nodeContent, { language }).value
 
     return (
       <pre>

@@ -1,16 +1,7 @@
 import React from 'react'
 import scrollToElement from '../../../../../../shared/app/functions/screen/scrollers/to-element.js'
 
-function customMetaParser({ meta, jsonBody }) {
-  const jsonMeta = (function() {
-    try {
-      return typeof meta === 'object' ? meta : JSON.parse(meta)
-    } catch {
-      return null
-    }
-  })()
-
-  if (!jsonMeta) return null
+function customMetaParser({ jsonBody, jsonMeta }) {
 
   const { withNavMenu } = jsonMeta
 

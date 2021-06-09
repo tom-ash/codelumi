@@ -177,15 +177,11 @@
         }
       }
     }
-  
-    &.ruby-cheat-sheet, &.javascript-cheat-sheet {
+    &.ruby-cheat-sheet, &.javascript-cheat-sheet, &.postgresql-cheat-sheet {
       padding: 25px;
       border: 1px solid #EAEDED;
       background: white;
       border-radius: 4px;
     }
   }
-  
-
 }
-
