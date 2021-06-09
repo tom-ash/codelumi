@@ -5,8 +5,9 @@ import styles from './styles/styles.scss'
 const hljs = require('highlight.js/lib/core')
 hljs.registerLanguage('ruby', require('highlight.js/lib/languages/ruby'))
 hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
+hljs.registerLanguage('sql', require('highlight.js/lib/languages/sql'))
 
-const AVAILABLE_LANGUAGES = ['javascript', 'ruby']
+const AVAILABLE_LANGUAGES = ['javascript', 'ruby', 'sql']
 
 class CodeNode extends React.Component {
   constructor(props) {
