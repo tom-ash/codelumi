@@ -103,8 +103,16 @@ export function metaManager() {
 
 export function saveManager() {
   return {
-    classNames: { container: 'form-input button' },
+    classNames: { container: 'form-input button save' },
     label: 'Save',
+    onClick: () => this.save({ withRouteChange: false })
+  }
+}
+
+export function saveAndShowManager() {
+  return {
+    classNames: { container: 'form-input button save-and-show' },
+    label: 'Save & Exit',
     onClick: () => this.save({ withRouteChange: true })
   }
 }

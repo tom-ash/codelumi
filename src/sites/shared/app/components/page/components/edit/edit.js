@@ -21,6 +21,7 @@ class PageCreate extends React.Component {
     this.pictureManager = managers.pictureManager.bind(this)
     this.metaManager = managers.metaManager.bind(this)
     this.saveManager = managers.saveManager.bind(this)
+    this.saveAndShowManager = managers.saveAndShowManager.bind(this)
     this.save = save.bind(this)
   }
 
@@ -45,6 +46,7 @@ class PageCreate extends React.Component {
           <ManagedText {...this.canonicalUrlManager()} />
           <ManagedText {...this.nameManager()} />
           <ManagedButton {...this.saveManager()} />
+          <ManagedButton {...this.saveAndShowManager()} />
         </form>
       </div>
     )
