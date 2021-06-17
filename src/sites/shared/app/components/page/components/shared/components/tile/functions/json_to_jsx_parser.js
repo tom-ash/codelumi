@@ -7,9 +7,9 @@ const jsonToJsxParser = props => {
   const { jsonBody, jsonMeta, clientUrl, changeRoute, customNodeParser } = props
 
   const jsx = jsonBody.map(function(node, index) {
-    const attrs = node.a || {}
     const nodeTag = node.t || 'p'
     const nodeContent = node.c
+    const attrs = nodeTag === 'h2' ? { id: nodeContent } : (node.a || {})
 
     if (nodeTag === 'picture') return <img src={node.url} loading='lazy' key={index} />
     if (commonTags.indexOf(nodeTag) !== -1) return React.createElement(nodeTag, { ...attrs, ...{ key: index } }, nodeContent)

@@ -1,5 +1,4 @@
 import React from 'react'
-import scrollToElement from '../../../../../../shared/app/functions/screen/scrollers/to-element.js'
 
 function customMetaParser({ jsonBody, jsonMeta }) {
 
@@ -18,22 +17,13 @@ function customMetaParser({ jsonBody, jsonMeta }) {
           </div>
           {headers.map((header, index) => {
             return (
-              <div
+              <a
                 key={index}
                 className={header.t}
-                onClick={() => {
-                  const nodes = document.querySelectorAll(header.t)
-
-                  for (let i = 0; i < nodes.length; i++) {
-                    if (nodes[i].textContent === header.c) {
-                      scrollToElement(nodes[i], 30, -92)
-                      break
-                    }
-                  }
-                }}
+                href={`#${header.c}`}
               >
                 {header.c}
-              </div>
+              </a>
             )
           })}
         </div>
