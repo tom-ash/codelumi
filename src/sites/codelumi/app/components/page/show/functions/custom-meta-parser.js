@@ -1,7 +1,8 @@
 import React from 'react'
+import urlify from '../../../../../../shared/shared/functions/transformers/routes/urlify.js'
+import setScreenOffsetAtElement from '../../../../../../shared/app/functions/screen/setters/offset-at-element.js'
 
 function customMetaParser({ jsonBody, jsonMeta }) {
-
   const { withNavMenu } = jsonMeta
 
   const headers = jsonBody.filter(node => {
@@ -16,13 +17,34 @@ function customMetaParser({ jsonBody, jsonMeta }) {
             Table of Contents
           </div>
           {headers.map((header, index) => {
+            const headerContent = header.c
+
             return (
               <a
                 key={index}
                 className={header.t}
-                href={`#${header.c}`}
+                href={`#${urlify(headerContent)}`}
+                onClick={e => {
+                  e.preventDefault()
+
+                  history.pushState(null, null, `${window.location.pathname}#${urlify(headerContent)}`)
+
+                  const targetHeader = headers.find(headerNode => urlify(headerContent) === urlify(headerNode.c))
+                  const domHeaders = document.getElementsByTagName('h2')
+                  let element
+
+                  for (var i = 0; i < domHeaders.length; i++) {
+                    if (domHeaders[i].textContent == targetHeader.c) {
+                      element = domHeaders[i]
+                      break
+                    }
+                  }
+
+                  const translation = -80
+                  setScreenOffsetAtElement({ element, translation })
+                }}
               >
-                {header.c}
+                {headerContent}
               </a>
             )
           })}
