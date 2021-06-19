@@ -5,7 +5,7 @@ import { langManager } from '../../../../../../../../../shared/app/components/sc
 const HeaderLinks = props => {
   return (
     <div className='links'>
-      <ManagedLink {...langManager(props)}/>
+      {/* <ManagedLink {...langManager(props)}/> */}
     </div>
   )
 }
