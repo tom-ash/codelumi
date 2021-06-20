@@ -3,9 +3,8 @@ import loadScript from '../../scripts/load.js'
 export function loadGoogleAnalytics(measurementId) {
   if (typeof window === 'undefined') return
   
-  const { changeApp, scripts } = this.props
+  const { changeApp } = this.props
 
-  changeApp({ scripts: { ...scripts, googleAnalyticsLoading: true } })
   loadScript(`https://www.googletagmanager.com/gtag/js?id=${measurementId}`)
   .then(() => {
     const { scripts } = this.props
@@ -15,6 +14,6 @@ export function loadGoogleAnalytics(measurementId) {
     gtag('js', new Date())
     APP_ENV === 'development' ? gtag('config', measurementId, { 'debug_mode': true }) : gtag('config', measurementId)
 
-    changeApp({ scripts: { ...scripts, googleAnalyticsLoading: false, googleAnalytics: true } })
+    changeApp({ scripts: { googleAnalytics: true } })
   })
 }

@@ -1,7 +1,7 @@
 import { PAGE_TRACK, VISITOR_TRACK } from '../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = store => {
-  const { lang, routeSynced } = store.app
+  const { lang, routeSynced, loadGa } = store.app
   const { scrollY } = store.visitor
   const render = store.render
   const { [VISITOR_TRACK]: renderVisitor, [PAGE_TRACK]: renderPage } = render
@@ -9,7 +9,10 @@ export const mapStateToProps = store => {
   const { data: pageShowData } = store.page.show
   const { data: pageEditData } = store.page.edit
   
-  return { lang, render, routeSynced, renderPage, renderVisitor, scrollY, pageShowData, pageEditData, statisticsConsent, marketingConsent }
+  return {
+    loadGa,
+    lang, render, routeSynced, renderPage, renderVisitor, scrollY, pageShowData, pageEditData, statisticsConsent, marketingConsent
+  }
 }
   
 export const mapDispatchToProps = dispatch => {

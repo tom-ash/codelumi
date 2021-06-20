@@ -3,7 +3,7 @@ import { PAGE_TRACK, VISITOR_TRACK, ANNOUNCEMENT_TRACK, USER_TRACK } from '../..
 export const mapStateToProps = store => {
   const render = store.render
   const { [PAGE_TRACK]: renderPage, [VISITOR_TRACK]: renderVisitor, [USER_TRACK]: renderUser,  [ANNOUNCEMENT_TRACK]: renderAnnouncement } = render
-  const { lang, device, path, scrollY, scripts, routeSynced } = store.app
+  const { lang, device, path, scrollY, scripts, routeSynced, loadGa } = store.app
   const { statisticsConsent, marketingConsent } = store.visitor.consents
   const { data: pageShowData } = store.page.show
   const { data: pageEditData } = store.page.edit
@@ -12,6 +12,7 @@ export const mapStateToProps = store => {
   const { authorized, admin } = store.user.authorize.data
 
   return {
+    loadGa,
     lang,
     device,
     path,
@@ -19,8 +20,6 @@ export const mapStateToProps = store => {
     statisticsConsent,
     marketingConsent,
     scripts,
-    googleAnalyticsLoaded: store.app.scripts.googleAnalytics,
-    googleAnalyticsLoading: store.app.scripts.googleAnalyticsLoading,
     render,
     renderPage,
     renderVisitor,

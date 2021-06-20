@@ -6,12 +6,12 @@ const appState = {
   connecting: false,
   scripts: {
     googleMaps: false,
-    googleAnalytics: false,
-    googleAnalyticsLoading: false
+    googleAnalytics: false
   },
   isMobile: null,
   siteMapLinks: null,
-  routeSynced: false
+  routeSynced: false,
+  loadGa: false
 }
 
 export default appState

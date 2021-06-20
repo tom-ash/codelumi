@@ -31,9 +31,11 @@ export function componentDidMount() {
 }
 
 export function componentDidUpdate(prevProps) {
-  const { googleAnalyticsLoaded, googleAnalyticsLoading, statisticsConsent } = this.props
+  const { loadGa: prevLoadGa } = prevProps
+  const { statisticsConsent, loadGa, changeApp } = this.props
 
-  if (!googleAnalyticsLoaded && !googleAnalyticsLoading && statisticsConsent) {
+  if (statisticsConsent && !loadGa) changeApp({ loadGa: true })
+  if (!prevLoadGa && loadGa) {
     loadGoogleAnalytics.call(this, getGoogleAnalyticsMeasurementId())
   }
 }

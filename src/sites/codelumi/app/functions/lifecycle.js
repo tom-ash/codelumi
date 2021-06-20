@@ -1,23 +1,13 @@
 import API_URL from '../../shared/constants/urls/api.js'
+import getGoogleAnalyticsMeasurementId from './analytics/google/getters/measurement-id.js'
+import { loadGoogleAnalytics } from '../../../shared/app/functions/analytics/google/load.js'
 
 export function componentDidMount() {
   if (typeof window === 'undefined') return
 
   const { routeSynced, changeApp } = this.props
 
-  // FIX
-  // if (isMobile()) changeApp({ isMobile: true })
-
   this.screenSizeHandler()
-
-  // FIX
-  // window.addEventListener('resize', this.screenSizeHandler, false)  
-  // window.addEventListener('scroll', () => {
-  //   const scrollY = (window.pageYOffset || document.scrollTop) || 0
-  //   if (this.props.scrollY + 100 > scrollY || this.props.scrollY - 100 < scrollY) {
-  //     changeApp({ scrollY: 100 * Math.ceil(scrollY / 100) })
-  //   }
-  // })
 
   if (!routeSynced) this.matchStateToRoute({ apiUrl: API_URL })
 
@@ -25,11 +15,11 @@ export function componentDidMount() {
 }
 
 export function componentDidUpdate(prevProps) {
+  const { loadGa: prevLoadGa } = prevProps
+  const { statisticsConsent, loadGa, changeApp } = this.props
 
-  // FIX
-  // const { googleAnalyticsLoaded, googleAnalyticsLoading, statisticsConsent } = this.props
-
-  // if (!googleAnalyticsLoaded && !googleAnalyticsLoading && statisticsConsent) {
-  //   loadGoogleAnalytics.call(this)
-  // }
+  if (statisticsConsent && !loadGa) changeApp({ loadGa: true })
+  if (!prevLoadGa && loadGa) {
+    loadGoogleAnalytics.call(this, getGoogleAnalyticsMeasurementId())
+  }
 }
