@@ -1,12 +1,9 @@
 import loadScript from '../../scripts/load.js'
-import getGoogleAnalyticsMeasurementId from '../../../../../warsawlease-pl/app/functions/analytics/google/getters/measurement-id.js'
 
-export function loadGoogleAnalytics() {
+export function loadGoogleAnalytics(measurementId) {
   if (typeof window === 'undefined') return
   
   const { changeApp, scripts } = this.props
-
-  const measurementId = getGoogleAnalyticsMeasurementId()
 
   changeApp({ scripts: { ...scripts, googleAnalyticsLoading: true } })
   loadScript(`https://www.googletagmanager.com/gtag/js?id=${measurementId}`)
@@ -16,8 +13,7 @@ export function loadGoogleAnalytics() {
     window.dataLayer = window.dataLayer || []
     function gtag() { dataLayer.push(arguments) }
     gtag('js', new Date())
-    gtag('config', measurementId)
-    // gtag('config', measurementId, { 'debug_mode': true })
+    APP_ENV === 'development' ? gtag('config', measurementId, { 'debug_mode': true }) : gtag('config', measurementId)
 
     changeApp({ scripts: { ...scripts, googleAnalyticsLoading: false, googleAnalytics: true } })
   })
