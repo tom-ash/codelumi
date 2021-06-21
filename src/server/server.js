@@ -6,6 +6,13 @@ import cookieParser from 'cookie-parser'
 import vhost from 'vhost'
 import warsawleasePlRequestHandler from '../sites/warsawlease-pl/server/functions/request-handler.js'
 import codeLumiHandleRequest from '../sites/codelumi/server/functions/request-handler.js'
+import * as Sentry from '@sentry/node'
+import * as Tracing from '@sentry/tracing'
+
+Sentry.init({
+  dsn: "https://ac81f10d287d4659865d2571d7be7b45@o876363.ingest.sentry.io/5825795",
+  tracesSampleRate: 1.0
+})
 
 function allowCompression (req, res) {
   if (req.headers['x-no-compression']) return false
