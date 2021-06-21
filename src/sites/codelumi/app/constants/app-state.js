@@ -4,7 +4,6 @@ const appState = {
   lang: 'en',
   routeSynced: false,
   scripts: {
-    googleMaps: false,
     googleAnalytics: false
   },
   loadGa: false
