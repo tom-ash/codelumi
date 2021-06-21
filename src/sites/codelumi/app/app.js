@@ -27,6 +27,9 @@ import * as titles from '../shared/constants/routes/titles.js'
 import headerStyles from './components/scaffold/header/styles/styles.scss'
 import Logo from './components/scaffold/header/components/logo/logo.js'
 import HeaderCustomization from './components/scaffold/header/components/customization/customization.js'
+import initSentry from '../../shared/app/functions/analytics/sentry/init.js'
+
+initSentry()
 
 const APP_NAME = 'codelumi'
 
