@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import urlify from '../../../../../../shared/shared/functions/transformers/routes/urlify.js'
 import setScreenOffsetAtElement from '../../../../../../shared/app/functions/screen/setters/offset-at-element.js'
 
@@ -9,10 +9,16 @@ function customMetaParser({ jsonBody, jsonMeta }) {
     if (node.t === 'h2') return node
   })
 
+  const [zIndex, setZIndex] = useState(0)
+
   if (withNavMenu) {
     return (
-      <div className='table-of-contents-container'>
-        <div className='table-of-contents'>
+      <div className='table-of-contents-container' style={{ zIndex }}>
+        <div
+          className='table-of-contents'
+          onMouseEnter={() => setZIndex(4)}
+          onMouseLeave={() => setZIndex(0)}
+        >
           <div className='title'>
             Table of Contents
           </div>
