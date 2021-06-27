@@ -43,6 +43,12 @@
       overflow-y: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+      .managed-input {
+        display: inline;
+        a {
+          display: inline;
+        }
+      }
     }
   }
 }

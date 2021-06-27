@@ -1,13 +1,13 @@
 import React from 'react'
-import { ManagedText } from 'managed-inputs'
-import * as managers from './functions/managers'
+import { ManagedText, ManagedLink } from 'managed-inputs'
+import { nameManager, plVerManager, enVerManager } from './functions/managers'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
 class PageIndexManage extends React.Component {
   constructor(props) {
     super(props)
-    this.nameManager = managers.nameManager.bind(this)
+    this.nameManager = nameManager.bind(this)
   }
 
   render() {
@@ -26,10 +26,10 @@ class PageIndexManage extends React.Component {
               <div key={pageName} className='name'>
                 {pageName}
                 <div className='url'>
-                  PL: {pages[pageName].pl}
+                  PL: <ManagedLink {...plVerManager({ path: pages[pageName].pl, lang: 'PL', ...this.props })} />
                 </div>
                 <div className='url'>
-                  EN: {pages[pageName].en}
+                  EN: <ManagedLink {...enVerManager({ path: pages[pageName].en, lang: 'EN', ...this.props })} />
                 </div>
               </div>
             )

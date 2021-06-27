@@ -9,3 +9,21 @@ export function nameManager() {
     onChange: value => changeInputs({ inputtedName: value })
   }
 }
+
+export function plVerManager({ path, clientUrl, lang, changeRoute }) {
+  const href = `${clientUrl}/${path}`
+  const hrefLang = lang
+  const label = path
+  const onClick = () => changeRoute({ href })
+
+  return { href, hrefLang, label, onClick }
+}
+
+export function enVerManager({ path, clientUrl, lang, changeRoute }) {
+  const href = `${clientUrl}/${path}`
+  const hrefLang = lang
+  const label = path
+  const onClick = () => changeRoute({ href })
+
+  return { href, hrefLang, label, onClick }
+}
