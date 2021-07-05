@@ -1,6 +1,7 @@
 import openGraphProvider from '../providers/open-graph'
 import schemaOrgProvider from '../providers/schema-org'
 import pretty from 'pretty'
+import getPureUrl from '../../../shared/functions/routes/getters/pure-url.js'
 
 function indexRenderer({
   clientUrl, url, canonicalUrl, lang, noIndex,
@@ -9,7 +10,7 @@ function indexRenderer({
 }) {
   const charsetMeta = `<meta charset="UTF-8">`
   const viewportMeta = `<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">`
-  const canonicalMeta = `<link rel="canonical" href="${`${clientUrl}/${canonicalUrl || url}`}">`
+  const canonicalMeta = `<link rel="canonical" href="${getPureUrl(`${clientUrl}/${canonicalUrl || url}`)}">`
   const robotsMeta = `<meta name="robots" content="${noIndex ? 'noindex' : 'index,follow,all'}">`
   const titleMeta = `<title>${title}</title>`
   const descriptionMeta = `<meta name="description" content="${description}">`
