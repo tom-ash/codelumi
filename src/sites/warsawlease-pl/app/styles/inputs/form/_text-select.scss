@@ -9,7 +9,7 @@
       height: 50px;
       padding-left: 12px;
       border: none;
-      border: 1px solid $FORM-BORDER;
+      border: 1px solid $FORM-INPUT-BORDER-COLOR;
       font-size: 16px;
       color: $TEXT-DEFAULT-COLOR;
       border-radius: 4px;
@@ -19,8 +19,8 @@
       background: white;
       outline: none;
       &.error {
-        border: 1px solid $ERROR-COLOR;
-        color: $ERROR-COLOR;
+        border: 1px solid $TEXT-ERROR-COLOR;
+        color: $TEXT-ERROR-COLOR;
         background: $BACKGROUND-ERROR-COLOR;
       }
       &.hover, &.focus {
@@ -39,7 +39,7 @@
       margin-top: 6px;
       transition: 0.18s;
       font-size: 14px;
-      color: $ERROR-COLOR;
+      color: $TEXT-ERROR-COLOR;
       &.error {
         opacity: 1;
       }

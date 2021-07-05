@@ -8,7 +8,7 @@
   &.full {
     margin: 120px auto;
     max-width: 600px;
-    border: 1px solid #D7DBDD;
+    border: 1px solid $CONTAINER-BORDER-COLOR;
     padding: $FORM-PADDING-PC;
     background: white;
     border-radius: 4px;

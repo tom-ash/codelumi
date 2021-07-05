@@ -1,11 +1,11 @@
 @import '../../../../../styles/themes.scss';
+@import '../../../../../styles/dimensions.scss';
 @import '../components/connecting/styles/styles.scss';
 @import '../components/consents/styles/styles.scss';
 @import '../components/email/components/inputs/styles/styles.scss';
 @import '../components/email/components/submit/styles/styles.scss';
 @import '../components/email/components/verify/styles/styles.scss';
 @import '../components/email/styles/styles.scss';
-@import '../../../../announcement/components/create/components/steps/styles/styles.scss';
 @import '../../../../../styles/inputs/form/text.scss';
 @import '../../../../../styles/inputs/form/select.scss';
 @import '../../../../../styles/inputs/form/checkbox.scss';
@@ -16,7 +16,7 @@
 #user-create {
   margin: 50px auto 150px;
   max-width: 600px;
-  border: 1px solid #D7DBDD;
+  border: 1px solid $CONTAINER-BORDER-COLOR;
   padding: $FORM-PADDING-PC;
   border-radius: 4px;
   background: white;

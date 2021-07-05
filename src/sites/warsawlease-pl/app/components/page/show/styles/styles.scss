@@ -1,12 +1,13 @@
 @import '../../../../styles/box_shadows.scss';
+@import '../../../../styles/colors.scss';
 
 .tile {
   position: relative;
   max-width: 1400px;
   margin: 20px auto;
   background: white;
+  border: 1px solid $CONTAINER-BORDER-COLOR;
   border-radius: 4px;
-  box-shadow: $BOX_SHADOW_CONTAINER_DEFAULT;
   padding: 1px 0;
   line-height: 1.65;
   color: #424242;

@@ -4,7 +4,7 @@
 #user-edit-account {
   margin: 50px auto;
   max-width: 768px;
-  border: 1px solid #D0D3D4;
+  border: 1px solid $CONTAINER-BORDER-COLOR;
   padding: $FORM-PADDING-PC;
   background: white;
   @media #{$LARGE-PHONE} {

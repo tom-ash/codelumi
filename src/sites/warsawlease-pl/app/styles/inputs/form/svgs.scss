@@ -19,7 +19,7 @@
       }
       &.error {
         svg {
-          fill: $ERROR-COLOR;
+          fill: $TEXT-ERROR-COLOR;
         }
       }
     }
@@ -38,7 +38,7 @@
       }
       &.error {
         svg:first-of-type {
-          fill: $ERROR-COLOR;
+          fill: $TEXT-ERROR-COLOR;
         }
       }
     }

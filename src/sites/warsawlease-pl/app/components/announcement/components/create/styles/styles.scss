@@ -7,7 +7,6 @@
 @import '../../../../../styles/inputs/form/checkbox.scss';
 @import '../../../../../styles/inputs/form/textarea.scss';
 @import '../../../../../styles/inputs/form/button.scss';
-@import '../components/steps/styles/styles.scss';
 @import '../components/primary/styles/styles.scss';
 @import '../components/pictures/styles/styles.scss';
 @import '../components/additional/styles/styles.scss';
@@ -24,7 +23,7 @@
   border-radius: 4px;
   padding: $FORM-PADDING-PC;
   background: white;
-  border: 1px solid #D7DBDD;
+  border: 1px solid #F5F6F7;
   @media #{$LARGE-PHONE} {
     border: none;
   }

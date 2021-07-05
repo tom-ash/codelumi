@@ -36,10 +36,10 @@
     cursor: pointer!important;
     color: #515A5A;
     &.error-drag-and-drop {
-      border: 1px solid $ERROR-COLOR;
+      border: 1px solid $TEXT-ERROR-COLOR;
       background: $BACKGROUND-ERROR-COLOR;
       svg {
-        fill: $ERROR-COLOR;
+        fill: $TEXT-ERROR-COLOR;
       }
     }
     &:hover {
@@ -59,7 +59,7 @@
     }
   }
   .error {
-    color: $ERROR-COLOR;
+    color: $TEXT-ERROR-COLOR;
     font-size: 14px;
   }
   svg {

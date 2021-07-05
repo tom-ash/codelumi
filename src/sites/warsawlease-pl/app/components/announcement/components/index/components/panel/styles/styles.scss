@@ -48,7 +48,7 @@
         height: 72px;
         flex-direction: column;
         justify-content: center;
-        border: 1px solid #EAEDED;
+        border: 1px solid $CONTAINER-BORDER-COLOR;
         border-radius: 4px;
         transition: .2s ease-in-out;
         background: white;
@@ -104,7 +104,7 @@
       height: 72px;
       display: block;
       line-height: 30px;
-      border: 1px solid #E5E7E9;
+      border: 1px solid $CONTAINER-BORDER-COLOR;
       font-size: 14px;
       background: white;
       cursor: pointer;

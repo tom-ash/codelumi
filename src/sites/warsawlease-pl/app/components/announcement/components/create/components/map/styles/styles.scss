@@ -17,13 +17,13 @@
       height: 100%;
       border: 1px solid #ABB2B9;
       &.map-error {
-        border: 1px solid $ERROR-COLOR;
+        border: 1px solid $TEXT-ERROR-COLOR;
       }
     }
   }
   .error {
     font-size: 14px;
-    color: $ERROR-COLOR;
+    color: $TEXT-ERROR-COLOR;
     padding-top: 5px;
   }
 }
