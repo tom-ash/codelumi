@@ -9,6 +9,7 @@ import getCookieAsBool from '../../cookies/getters/get-cookie-as-bool.js'
 import metaSetter from '../../../../../shared/app/functions/routes/setters/meta.js'
 
 function matchStateToRouteGeneric({
+  clientUrl,
   apiUrl,
   routes,
   routeRenders,
@@ -36,7 +37,7 @@ function matchStateToRouteGeneric({
   .then(syncedRouteData => {
     const { state, meta } = syncedRouteData
     stateSetter.call(this, state)
-    metaSetter({ ...route, ...meta })
+    metaSetter({ clientUrl, url, ...route, ...meta })
   })
 }
 
