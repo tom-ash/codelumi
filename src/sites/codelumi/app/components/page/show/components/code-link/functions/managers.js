@@ -13,6 +13,7 @@ export const linkManager = props => {
   const href = `${clientUrl}/${pathname}`
   const label = (
     <>
+      <div className={`icon ${category}`} />
       <div className='category'>
         <SVG name={category} /> {name}
       </div>
