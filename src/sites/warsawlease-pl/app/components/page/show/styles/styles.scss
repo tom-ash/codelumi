@@ -23,16 +23,23 @@
       cursor: not-allowed;
     }
   }
-  h2 {
+  h1 {
     margin-top: 20px;
     margin-bottom: 16px;
     padding: 0 20px;
     font-size: 17px;
     color: #565656;
   }
-  h3 {
+  h2 {
+    margin-top: 16px;
+    margin-bottom: 8px;
     padding: 0 20px;
     font-size: 16px;
+    color: #565656;
+  }
+  h3 {
+    padding: 0 20px;
+    font-size: 15px;
     margin-top: 20px;
     margin-bottom: 5px;
     color: #565656;
