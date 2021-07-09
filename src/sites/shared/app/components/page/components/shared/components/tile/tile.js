@@ -28,10 +28,16 @@ const PageTile = props => {
     }
   })()
 
+  const tileClassNames = ['tile', name]
+
+  if (jsonMeta && jsonMeta.className) {
+    tileClassNames.push(jsonMeta.className)
+  }
+
   return (
     <div id='page-container'>
       {jsonBody && customMetaParser && customMetaParser({ jsonBody, jsonMeta })}
-      <div className={`tile ${name}`}>
+      <div className={tileClassNames.join(' ')}>
         {isAdmin &&
         <>
           {renderShow && <button className={buttonClassName} onClick={changePage}>Edit</button>}

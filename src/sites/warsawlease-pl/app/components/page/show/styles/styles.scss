@@ -11,6 +11,9 @@
   padding: 1px 0;
   line-height: 1.65;
   color: #424242;
+  img {
+    width: 100%;
+  }
   button {
     position: absolute;
     background: none;
@@ -50,6 +53,22 @@
       padding: 0 20px;
       font-size: 15px;
       white-space: pre-wrap;
+    }
+  }
+  &.article {
+    max-width: 768px;
+    font-family: Helvetica, Arial, sans-serif;
+    h1 {
+      font-size: 18px;
+      color: #212F3C;
+    }
+    h2 {
+      font-size: 17px;
+      color: #212F3C;
+    }
+    p {
+      font-size: 16px;
+      color: #424949;
     }
   }
 }
