@@ -40,4 +40,9 @@
       href="https://www.warsawlease.pl/add-announcement-of-real-estate-lease-in-warsaw"
     />
   </url>
+  <url>
+    <loc>https://www.warsawlease.pl/gdzie-na-facebooku-dodac-ogloszenie-wynajmu-nieruchomosci-w-warszawie</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 </urlset>
