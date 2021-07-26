@@ -4,7 +4,7 @@ import categoryNames from '../constants/category-names.js'
 
 export const linkManager = props => {
   const { clientUrl, changeRoute, nodeContent } = props
-  const { pathname, hrefLang, category, title } = nodeContent
+  const { pathname, hrefLang, category, title, icon, iconHref } = nodeContent
   const classNames = { container: `code-link ${category}` }
   const categoryName = categoryNames[category]
   if (!categoryName) return null
@@ -13,7 +13,7 @@ export const linkManager = props => {
   const href = `${clientUrl}/${pathname}`
   const label = (
     <>
-      <div className={`icon ${category}`} />
+      <div className={`icon ${icon}`} style={{ backgroundImage: `url("${iconHref}")` }} />
       <div className='category'>
         <SVG name={category} /> {name}
       </div>

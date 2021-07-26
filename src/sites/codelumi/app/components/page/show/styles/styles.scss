@@ -143,21 +143,48 @@
             border-bottom-left-radius: 4px;
 
             &.js {
-              background-image: url('https://codelumi.s3.eu-central-1.amazonaws.com/assets/images/codelumi.com-javascript-category.jpeg');
               background-position: bottom 0px left -15px;
               background-size: cover;
             }
 
             &.ruby {
-              background-image: url('https://codelumi.s3.eu-central-1.amazonaws.com/assets/images/codelumi.com-ruby-category+.jpeg');
               background-position: bottom -38px left -83px;
               background-size: 180px auto;
             }
 
+            &.ruby-on-rails {
+              background-position: bottom -30px left -73px;
+              background-size: 200px auto;
+            }
+
             &.postgres {
-              background-image: url('https://codelumi.s3.eu-central-1.amazonaws.com/assets/images/codelumi.com-postgresql-category.jpeg');
               background-position: bottom -40px left -105px;
               background-size: 200px auto;
+            }
+
+            &.react {
+              background-position: bottom -15px left -15px;
+              background-size: 90px auto;
+            }
+
+            &.typescript {
+              background-position: bottom 0px left -10px;
+              background-size: 90px auto;
+            }
+
+            &.unix {
+              background-position: bottom 0px left -10px;
+              background-size: 90px auto;
+            }
+
+            &.css {
+              background-position: bottom 0px left -10px;
+              background-size: 90px auto;
+            }
+
+            &.html {
+              background-position: bottom 0px left -10px;
+              background-size: 90px auto;
             }
 
           }
@@ -185,7 +212,7 @@
         svg {
           margin-right: 2px;
         }
-        &.ruby {
+        &.ruby, &.ruby-on-rails {
           color: #922B21;
           svg {
             fill: #922B21;
@@ -217,7 +244,7 @@
         }
       }
     }
-    &.ruby-cheat-sheet, &.javascript-cheat-sheet, &.postgresql-cheat-sheet {
+    &.ruby-cheat-sheet, &.javascript-cheat-sheet, &.postgresql-cheat-sheet, &.ruby-on-rails {
       padding: 25px;
       border: 1px solid #EAEDED;
       background: white;
