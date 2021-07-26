@@ -108,6 +108,13 @@
       max-width: 1440px;
       margin: 0 auto;
       padding: 20px 0;
+
+      .body {
+        display: flex;
+        flex-direction: row;
+        flex-flow: wrap;
+      }
+
       img {
         display: block;
         margin: 0;
@@ -118,10 +125,10 @@
       }
   
       .code-link {
-        float: left;
         margin-right: 20px;
         margin-bottom: 20px;
         height: 60px;
+        display: block;
         a {
           display: block;
           position: relative;
