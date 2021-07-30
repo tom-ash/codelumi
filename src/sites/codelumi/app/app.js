@@ -48,9 +48,9 @@ class App extends React.Component {
 
   render() {
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
-    const { render, renderPage, renderVisitor, lang, pageShowData, pageEditData, changeApp } = this.props
+    const { render, renderPage, renderVisitor, device, lang, pageShowData, pageEditData, changeApp } = this.props
     const urlComposites = { pageShowData, pageEditData }
-    const sharedProps = { appName: APP_NAME, render, routes, urls, langs: LANGS, titles, clientUrl: CLIENT_URL, apiUrl: API_URL, lang, changeRoute: this.changeRoute, changeRouteWithHref, changeApp, langHandler: this.langHandler }
+    const sharedProps = { appName: APP_NAME, render, routes, urls, langs: LANGS, titles, clientUrl: CLIENT_URL, apiUrl: API_URL, device, lang, changeRoute: this.changeRoute, changeRouteWithHref, changeApp, langHandler: this.langHandler }
     const headerProps = { ...sharedProps, urlComposites, Logo, HeaderCustomization, styles: headerStyles }
     const pageProps = { ...sharedProps, customNodeParser, customMetaParser }
     

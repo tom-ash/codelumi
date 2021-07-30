@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import urlify from '../../../../../../shared/shared/functions/transformers/routes/urlify.js'
 import setScreenOffsetAtElement from '../../../../../../shared/app/functions/screen/setters/offset-at-element.js'
 
-function customMetaParser({ jsonBody, jsonMeta }) {
+function customMetaParser({ jsonBody, jsonMeta, device }) {
   const { withNavMenu } = jsonMeta
 
   const headers = jsonBody.filter(node => {
@@ -11,7 +11,7 @@ function customMetaParser({ jsonBody, jsonMeta }) {
 
   const [zIndex, setZIndex] = useState(0)
 
-  if (withNavMenu) {
+  if (withNavMenu && device === 'largePc') {
     return (
       <div className='table-of-contents-container' style={{ zIndex }}>
         <div

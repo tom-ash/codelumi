@@ -3,7 +3,7 @@ import jsonToJsxParser from './functions/json_to_jsx_parser'
 import useStyles from 'isomorphic-style-loader/useStyles'
 
 const PageTile = props => {
-  const { appName, customNodeParser, customMetaParser, renderShow, renderEdit, fetching, name, body, meta, isAdmin, clientUrl, changeRoute, changePage, updatePage } = props
+  const { device, appName, customNodeParser, customMetaParser, renderShow, renderEdit, fetching, name, body, meta, isAdmin, clientUrl, changeRoute, changePage, updatePage } = props
   const styles = require(`../../../../../../../../${appName}/app/components/page/show/styles/styles.scss`)
 
   useStyles(styles)
@@ -36,7 +36,7 @@ const PageTile = props => {
 
   return (
     <div id='page-container'>
-      {jsonBody && jsonMeta && customMetaParser && customMetaParser({ jsonBody, jsonMeta })}
+      {jsonBody && jsonMeta && customMetaParser && customMetaParser({ jsonBody, jsonMeta, device })}
       <div className={tileClassNames.join(' ')}>
         {isAdmin &&
         <>

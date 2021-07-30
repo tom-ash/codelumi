@@ -17,7 +17,7 @@ export function componentDidMount() {
   if (isMobile()) changeApp({ isMobile: true })
 
   this.screenSizeHandler()
-  window.addEventListener('resize', this.screenSizeHandler, false)  
+  window.addEventListener('resize', this.screenSizeHandler, false)
   window.addEventListener('scroll', () => {
     const scrollY = (window.pageYOffset || document.scrollTop) || 0
     if (this.props.scrollY + 100 > scrollY || this.props.scrollY - 100 < scrollY) {

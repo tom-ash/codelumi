@@ -8,6 +8,7 @@ export function componentDidMount() {
   const { routeSynced, changeApp } = this.props
 
   this.screenSizeHandler()
+  window.addEventListener('resize', this.screenSizeHandler, false)
 
   if (!routeSynced) this.matchStateToRoute({ apiUrl: API_URL })
 
