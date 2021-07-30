@@ -36,7 +36,7 @@ const PageTile = props => {
 
   return (
     <div id='page-container'>
-      {jsonBody && customMetaParser && customMetaParser({ jsonBody, jsonMeta })}
+      {jsonBody && jsonMeta && customMetaParser && customMetaParser({ jsonBody, jsonMeta })}
       <div className={tileClassNames.join(' ')}>
         {isAdmin &&
         <>

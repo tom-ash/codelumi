@@ -9,12 +9,12 @@
     position: fixed;
     top: 123px;
     .table-of-contents {
-      padding: 15px 15px 5px 15px;
+      padding: 15px 0 5px;
       width: 250px;
-      background: white;
       line-height: 15px;
       overflow-x: scroll;
-      border: 1px solid #EAEDED;
+      border-top: 1px solid #D7DBDD;
+      border-bottom: 1px solid #D7DBDD;
       .title {
         margin-bottom: 10px;
         padding-bottom: 5px;
@@ -25,7 +25,6 @@
       }
       .h2 {
         margin-bottom: 10px;
-        font-weight: bold;
         cursor: pointer;
         color: #424949;
         font-size: 15px;
@@ -46,6 +45,11 @@
     font-size: 17px;
     line-height: 30px;
     color: #424949;
+
+    &.article {
+      background: white;
+    }
+
 
     button {
       position: fixed;
@@ -251,11 +255,12 @@
         }
       }
     }
-    &.ruby-cheat-sheet, &.javascript-cheat-sheet, &.postgresql-cheat-sheet, &.ruby-on-rails {
-      padding: 25px;
-      border: 1px solid #EAEDED;
-      background: white;
-      border-radius: 4px;
-    }
+
+
+    // &.ruby-cheat-sheet, &.javascript-cheat-sheet, &.postgresql-cheat-sheet, &.ruby-on-rails {
+    //   padding: 25px;
+    //   background: white;
+    //   border-radius: 4px;
+    // }
   }
 }

@@ -19,9 +19,6 @@ function customMetaParser({ jsonBody, jsonMeta }) {
           onMouseEnter={() => setZIndex(4)}
           onMouseLeave={() => setZIndex(0)}
         >
-          <div className='title'>
-            Table of Contents
-          </div>
           {headers.map((header, index) => {
             const headerContent = header.c
 
