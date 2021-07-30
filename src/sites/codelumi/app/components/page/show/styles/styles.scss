@@ -1,19 +1,26 @@
+@import '../../../../../../shared/app/styles/media-breakpoints.scss';
+
 #page-container {
   position: relative;
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 64px auto;
   padding: 0 20px;
+
+  @media #{$LARGE-PHONE} {
+    margin: 0;
+    padding: 0;
+  }
+
   .table-of-contents-container {
     max-width: 1360px;
     width: 100%;
     position: fixed;
     top: 123px;
     .table-of-contents {
-      padding: 15px 0 5px;
+      padding: 0 0 5px;
       width: 250px;
       line-height: 15px;
       overflow-x: scroll;
-      border-top: 1px solid #D7DBDD;
       border-bottom: 1px solid #D7DBDD;
       .title {
         margin-bottom: 10px;
@@ -34,6 +41,7 @@
       }
     }
   }
+
   .tile {
     position: relative;
     z-index: 2;
@@ -49,7 +57,6 @@
     &.article {
       background: white;
     }
-
 
     button {
       position: fixed;
@@ -254,13 +261,17 @@
           }
         }
       }
+
+      @media #{$LARGE-PHONE} {
+        .body {
+          display: block;
+          padding: 20px;
+        }
+        .code-link {
+          width: 100%;
+          margin-right: 0;
+        }
+      }
     }
-
-
-    // &.ruby-cheat-sheet, &.javascript-cheat-sheet, &.postgresql-cheat-sheet, &.ruby-on-rails {
-    //   padding: 25px;
-    //   background: white;
-    //   border-radius: 4px;
-    // }
   }
 }
