@@ -3,7 +3,7 @@ import SVG from '../../../../../../../../shared/app/components/support/svg/svg.j
 import categoryNames from '../constants/category-names.js'
 
 export const linkManager = props => {
-  const { clientUrl, changeRoute, nodeContent } = props
+  const { published, clientUrl, changeRoute, nodeContent } = props
   const { pathname, hrefLang, category, title, icon, iconHref } = nodeContent
   const classNames = { container: `code-link ${category}` }
   const categoryName = categoryNames[category]

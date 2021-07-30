@@ -45,7 +45,7 @@ const PageTile = props => {
         </>}
         
         <div className='body'>
-          {jsonBody && jsonToJsxParser.call(this, { jsonBody, jsonMeta, clientUrl, changeRoute, customNodeParser })}
+          {jsonBody && jsonToJsxParser.call(this, { jsonBody, jsonMeta, clientUrl, changeRoute, device, isAdmin, customNodeParser })}
         </div>
       </div>
     </div>
