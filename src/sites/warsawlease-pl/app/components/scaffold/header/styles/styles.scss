@@ -14,26 +14,6 @@
     max-width: 1440px;
     width: 100%;
     margin: 0 auto;
-    .logo {
-      float: left;
-      font-size: 14px;
-      margin-top: 20px;
-      font-weight: bold;
-      color: #17202A;
-      div {
-        float: left;
-      }
-      div:nth-of-type(1) {
-        padding: 2px 3px 1px;
-        border-bottom: 2px solid #17202A;
-      }
-      div:nth-of-type(2) {
-        padding: 3px 5px 3px;
-        background: #17202A;
-        color: white;
-        transform: translate(0, -1px);
-      }
-    }
     .links {
       float: right;
       .add-announcement {

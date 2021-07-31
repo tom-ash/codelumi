@@ -150,7 +150,9 @@
           background: white;
           transition: box-shadow .3s;
           padding: 0 11px 0 71px;
-
+          overflow: hidden; 
+          text-overflow: ellipsis;
+          white-space: nowrap;
           .icon {
             position: absolute;
             top: 0;
