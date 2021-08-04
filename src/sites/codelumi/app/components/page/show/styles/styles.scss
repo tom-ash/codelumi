@@ -124,15 +124,16 @@
         justify-content: space-evenly;
       }
 
-      img {
-        display: block;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 240px;
-        border-radius: 4px;
+      .picture {
+        position: relative;
+        img {
+          display: block;
+          margin: 0;
+          width: 100%;
+          aspect-ratio: 3/2; // TODO: MOVE TO JS
+        }
       }
-  
+
       .code-link {
         display: block;
         width: 400px;
