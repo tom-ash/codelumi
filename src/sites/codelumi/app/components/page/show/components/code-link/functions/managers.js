@@ -1,15 +1,13 @@
 import React from 'react'
-import SVG from '../../../../../../../../shared/app/components/support/svg/svg.js'
 import categoryNames from '../constants/category-names.js'
 
 export const linkManager = props => {
-  const { published, clientUrl, changeRoute, nodeContent } = props
+  const { clientUrl, changeRoute, nodeContent } = props
   const { pathname, hrefLang, category, title, description, iconHref } = nodeContent
   const classNames = { container: `code-link ${category}` }
   const categoryName = categoryNames[category]
   if (!categoryName) return null
   
-  const name = categoryName[hrefLang]
   const href = `${clientUrl}/${pathname}`
   const label = (
     <>

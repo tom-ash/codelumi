@@ -12,7 +12,7 @@ const PageTile = props => {
   if (fetching) buttonClasses.push('fetching')
   const buttonClassName = buttonClasses.join(' ')
 
-  const jsonBody = (function() {
+  const jsonBody = (() => {
     try {
       return typeof body === 'object' ? body : JSON.parse(body)
     } catch {
@@ -20,7 +20,7 @@ const PageTile = props => {
     }
   })()
 
-  const jsonMeta = (function() {
+  const jsonMeta = (() => {
     try {
       return typeof meta === 'object' ? meta : JSON.parse(meta)
     } catch {
@@ -28,14 +28,16 @@ const PageTile = props => {
     }
   })()
 
+  const containerClassName = [name]
   const tileClassNames = ['tile', name]
 
   if (jsonMeta && jsonMeta.className) {
+    containerClassName.push(jsonMeta.className)
     tileClassNames.push(jsonMeta.className)
   }
 
   return (
-    <div id='page-container'>
+    <div id='page-container' className={containerClassName.join(' ')}>
       {jsonBody && jsonMeta && customMetaParser && customMetaParser({ jsonBody, jsonMeta, device })}
       <div className={tileClassNames.join(' ')}>
         {isAdmin &&

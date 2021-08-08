@@ -2,7 +2,7 @@ import React from 'react'
 import Link from '../components/link/link.js'
 import urlify from '../../../../../../../../../shared/shared/functions/transformers/routes/urlify.js'
 
-const commonTags = ['h1', 'h2', 'h3', 'div', 'p']
+const commonTags = ['h1', 'h2', 'h3', 'h4', 'div', 'p']
 
 const jsonToJsxParser = props => {
   const { device, isAdmin, jsonBody, jsonMeta, clientUrl, changeRoute, customNodeParser } = props
