@@ -14,6 +14,9 @@
     padding: 0 20px;
     @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
     font-family: 'Titillium Web', sans-serif;
+    @media #{$LARGE-PHONE} {
+      padding: 0;
+    }
   }
 
   .table-of-contents-container {
@@ -179,6 +182,9 @@
         .body {
           display: block;
           padding: 20px;
+          &.article {
+            padding: 0;
+          }
         }
         .code-link {
           width: 100%;
