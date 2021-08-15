@@ -1,19 +1,18 @@
 #warsaw-lease-logo {
-  @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap');
   float: left;
-  font-weight: bold;
-  height: 60px;
-  padding-top: 14px;
+  margin-top: 14px;
+  border-left: 3px solid #154360;
+  height: 32px;
+  padding-top: 1px;
+  padding-left: 5px;
+  @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px;
+  color: #154360;
   #warsaw {
-    width: 100%;
-    font-family: 'Mukta', sans-serif;
-    line-height: 1;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
   }
   #lease {
-    letter-spacing: 0.5px;
-    text-align: justify; 
-    font-family: 'Mukta', sans-serif;
-    line-height: 1;
+    letter-spacing: 0.6px;
   }
 }
