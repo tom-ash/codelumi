@@ -11,13 +11,13 @@ const Header = props => {
   const isMobile = ['largeTablet', 'smallTablet', 'largePhone', 'smallPhone'].indexOf(device) !== -1
 
   return (
-    <div id='header'>
+    <header id='header'>
       <div className='inner'>
         <ManagedLink {...logoManager(props)} />
         <HeaderCustomization {...{ ...props, isMobile }}/>
         <div className='float-clear' />
       </div>
-    </div>
+    </header>
   )
 }
 

@@ -4,14 +4,14 @@ import { ANNOUNCEMENT_CREATE_LABELS } from '../../../../../../../../../shared/co
 
 export function addAnnouncementManager(props) {
   const { clientUrl, urls, isMobile, langs, titles, changeRoute, langHandler } = props
-  const classNames = { container: 'add-announcement' }
+  const classNames = { container: 'header-link add-announcement' }
   const href = `${clientUrl}/${langHandler(urls.ANNOUNCEMENT_CREATE_FORM_URLS)}`
   const hrefLang = langHandler(langs)
   const title = langHandler(titles.ANNOUNCEMENT_CREATE_TITLES)
   const label = (
     <>
-      {!isMobile && <SVG name='plusSquare' />}
-      {langHandler(isMobile ? { pl: 'Dodaj bezpłatne ogłoszenie', en: 'Add Free Announcement'} : ANNOUNCEMENT_CREATE_LABELS)}
+      {!isMobile && <SVG name='plus' />}
+      {langHandler(isMobile ? { pl: 'Dodaj ogłoszenie (bezpłatnie)', en: 'Add Announcement (Free)'} : ANNOUNCEMENT_CREATE_LABELS)}
     </>
   )
   const onClick = () => changeRoute({ href })

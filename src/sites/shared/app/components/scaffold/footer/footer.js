@@ -11,7 +11,7 @@ const Footer = props => {
   useStyles(styles)
 
   return(
-    <div id='footer'>
+    <footer id='footer'>
       <div className='inner'>
         <div className='links'>
           <ManagedLink {...contactManager(props)} />
@@ -26,7 +26,7 @@ const Footer = props => {
           Warsaw Digital Sp. z o.o. 2021 {langHandler({ pl: 'Wszelkie prawa zastrzeżone.', en: 'All rights reserved.' })}
         </div>
       </div>
-    </div>
+    </footer>
   )
 }
 

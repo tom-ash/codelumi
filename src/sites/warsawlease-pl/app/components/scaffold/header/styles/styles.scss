@@ -6,8 +6,8 @@
   left: 0;
   right: 0;
   height: 60px;
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid #D7DBDD;
+  background: white;
+  border-bottom: 1px solid #F2F3F4;
   .inner {
     padding: 0 20px;
     position: relative;
@@ -16,30 +16,6 @@
     margin: 0 auto;
     .links {
       float: right;
-      .add-announcement {
-        position: relative;
-        float: left;
-        margin-top: 13px;
-        background: #2471A3;
-        color: white;
-        line-height: 32px;
-        padding-left: 38px;
-        padding-right: 10px;
-        border-radius: 4px;
-        font-size: 13px;
-        padding-top: 2px;
-        &.hover {
-          background: #2980B9;
-          text-decoration: underline;
-        }
-        svg {
-          position: absolute;
-          top: 6px;
-          left: 10px;
-          width: 18px;
-          fill: white;
-        }
-      }
       .header-link {
         float: left;
         margin-left: 30px;
@@ -61,6 +37,25 @@
             margin: 0 auto 4px;
             transform: translate(0, -1px);
             fill: #424949;
+          }
+        }
+      }
+      .add-announcement {
+        position: relative;
+        float: left;
+        padding-left: 24px;
+        color: #D35400;
+        svg {
+          position: absolute;
+          top: 21px;
+          left: 0;
+          width: 15px;
+          fill: #D35400;
+        }
+        &.hover {
+          color: #E67E22;
+          svg {
+            fill: #E67E22;
           }
         }
       }
