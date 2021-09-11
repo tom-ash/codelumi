@@ -26,7 +26,7 @@ class CodeNode extends React.Component {
 
     return (
       <pre>
-        <code dangerouslySetInnerHTML={{__html: highlightedCode}} />
+        <code className={language} dangerouslySetInnerHTML={{__html: highlightedCode}} />
       </pre>
     )
   }

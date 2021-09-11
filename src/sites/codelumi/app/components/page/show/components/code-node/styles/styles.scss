@@ -2,78 +2,116 @@ pre {
   padding: 10px 20px;
   background: #1C2833;
   font-size: 15px;
-  line-height: 2;
+  line-height: 1.55;
+
   code {
     font-family: monospace;
     padding: 0;
     white-space: pre-wrap;
     color: #E5E7E9;
-  
-    .hljs {
-      display: block;
-      overflow-y: scroll;
-      color: black;
+
+    &.javascript {
+      .hljs-comment {
+        color: rgb(130, 150, 130);
+      }
+
+      .hljs-string {
+        color: rgb(200, 140, 120);
+      }
+
+      // Keywords: var, let, const, class, etc.
+      .hljs-keyword {
+        color: rgb(80, 150, 210);
+      }
+
+      // Object attribute declaration.
+      .hljs-attr {
+        color: rgb(140, 190, 230);
+      }
+
+      // Object property invocation.
+      .hljs-property {
+        color: rgb(100, 150, 180);
+      }
+
+      .hljs-function {
+        color: rgb(100, 150, 180);
+      }
+
+      .hljs-number {
+        color: 180, 200, 160;
+      }
+
+      .hljs-title {
+        &.function_ {
+          color: rgb(240, 220, 170);
+        }
+
+        // Class name.
+        &.class_ {
+          color: rgb(80, 200, 180)
+        }
+      }
+
+      .hljs-variable {
+        // console, this, etc.
+        &.language_ {
+          color: rgb(80, 150, 210);
+        }
+      }
+
+      // Function params.
+      .hljs-params {
+        color: rgb(150, 210, 240);
+      }
     }
 
-    .hljs-comment {
-      color: gray;
-    }
+    &.ruby {
+      .hljs-comment {
+        color: rgb(130, 150, 130);
+      }
 
-    .hljs-string {
-      color: #D35400;
-    }
+      .hljs-string {
+        color: rgb(200, 140, 120);
+      }
 
-    .hljs-quote,
-    .hljs-variable {
-      color: #008000;
-    }
+      .hljs-keyword {
+        // color: rgb(80, 150, 210);
+      }
 
-    .hljs-keyword,
-    .hljs-selector-tag,
-    .hljs-built_in,
-    .hljs-name,
-    .hljs-tag {
-      color: #A569BD;
-    }
+      // Object attribute declaration.
+      .hljs-attr {
+        // color: rgb(140, 190, 230);
+      }
 
-    .hljs-title,
-    .hljs-section,
-    .hljs-attribute,
-    .hljs-literal,
-    .hljs-template-tag,
-    .hljs-template-variable,
-    .hljs-type,
-    .hljs-addition {
-      color: #EC7063;
-    }
+      // Object property invocation.
+      .hljs-property {
+        // color: rgb(100, 150, 180);
+      }
 
-    .hljs-deletion,
-    .hljs-selector-attr,
-    .hljs-selector-pseudo,
-    .hljs-meta {
-      color: #2b91af;
-    }
+      .hljs-function {
+        // color: rgb(100, 150, 180);
+      }
 
-    .hljs-doctag {
-      color: #808080;
-    }
+      .hljs-number {
+        // color: 180, 200, 160;
+      }
 
-    .hljs-attr {
-      color: #f00;
-  }
+      .hljs-title {
+        &.function_ {
+          // color: rgb(220, 220, 170);
+        }
 
-    .hljs-symbol,
-    .hljs-bullet,
-    .hljs-link {
-      color: #00b0e8;
-    }
+        &.class_ {
+          // color: rgb(80, 200, 180)
+        }
+      }
 
-    .hljs-emphasis {
-      font-style: italic;
-    }
-
-    .hljs-strong {
-      font-weight: bold;
+      .hljs-variable {
+        &.language_ {
+          // color: rgb(80, 150, 210);
+        }
+      }
     }
   }
 }
