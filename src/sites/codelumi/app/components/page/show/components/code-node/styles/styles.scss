@@ -1,6 +1,6 @@
 pre {
   padding: 10px 20px;
-  background: #1C2833;
+  background: rgb(20, 20, 20);
   font-size: 15px;
   line-height: 1.58;
   border-radius: 4px;
@@ -13,7 +13,7 @@ pre {
 
     &.javascript {
       .hljs-comment {
-        color: rgb(130, 150, 130);
+        color: rgb(142, 142, 142);
       }
 
       .hljs-string {
@@ -45,7 +45,7 @@ pre {
 
       .hljs-title {
         &.function_ {
-          color: rgb(240, 220, 170);
+          color: rgb(250, 230, 180);
         }
 
         // Class name.
@@ -69,7 +69,7 @@ pre {
 
     &.ruby {
       .hljs-comment {
-        color: rgb(130, 150, 130);
+        color: rgb(142, 142, 142);
       }
 
       .hljs-string {
@@ -77,41 +77,36 @@ pre {
       }
 
       .hljs-keyword {
-        // color: rgb(80, 150, 210);
+        color: rgb(200, 130, 190);
       }
 
-      // Object attribute declaration.
-      .hljs-attr {
-        // color: rgb(140, 190, 230);
-      }
-
-      // Object property invocation.
-      .hljs-property {
-        // color: rgb(100, 150, 180);
+      .hljs-symbol {
+        color: rgb(140, 190, 230);
       }
 
       .hljs-function {
-        // color: rgb(100, 150, 180);
+        .hljs-title {
+          color: rgb(250, 230, 180);
+        }
       }
 
       .hljs-number {
-        // color: 180, 200, 160;
+        color: 180, 200, 160;
       }
 
-      .hljs-title {
-        &.function_ {
-          // color: rgb(220, 220, 170);
-        }
-
-        &.class_ {
-          // color: rgb(80, 200, 180)
+      .hljs-class {
+        .hljs-title {
+          color: rgb(80, 200, 180)
         }
       }
 
       .hljs-variable {
-        &.language_ {
-          // color: rgb(80, 150, 210);
-        }
+        color: rgb(80, 150, 210);
+      }
+
+      // Function params.
+      .hljs-params {
+        color: rgb(150, 210, 240);
       }
     }
   }
