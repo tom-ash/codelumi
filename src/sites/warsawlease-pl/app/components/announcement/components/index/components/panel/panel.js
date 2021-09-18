@@ -6,19 +6,16 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import PanelCategories from './components/categories/categories'
 import PanelVisitor from './components/visitor/visitor'
-import { buttonManager } from './components/visitor/managers/managers'
 import AppContext from '../../../../../../constants/context.js'
 
 class AnnouncementIndexPanel extends React.Component {
   constructor(props) {
     super(props)
     this.langHandler = langHandler.bind(this)
-    this.buttonManager = buttonManager.bind(this)
   }
 
   static contextType = AppContext
   
-
   render() {
     const {
       lang,
@@ -60,11 +57,7 @@ class AnnouncementIndexPanel extends React.Component {
           coworkingAmount={coworkingAmount}
         />
         {(renderMap || renderCatalogue) &&
-        <PanelVisitor
-          lang={lang}
-          langHandler={this.langHandler}
-          buttonManager={this.buttonManager}
-        />}
+        <PanelVisitor {...{ ...this.props, changeRoute, langHandler }} />}
         <div className='float-clear' />
       </div>
     )
