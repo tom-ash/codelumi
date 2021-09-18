@@ -41,13 +41,6 @@ class AnnouncementIndexPanel extends React.Component {
 
     return (
       <div id='announcement-index-panel'>
-        {(renderMap || renderCatalogue) &&
-        <PanelVisitor
-          lang={lang}
-          langHandler={this.langHandler}
-          buttonManager={this.buttonManager}
-        />
-        }
         <PanelCategories
           renderCatalogue={renderCatalogue}
           langHandler={this.langHandler}
@@ -66,6 +59,12 @@ class AnnouncementIndexPanel extends React.Component {
           virtualOfficesAmount={virtualOfficesAmount}
           coworkingAmount={coworkingAmount}
         />
+        {(renderMap || renderCatalogue) &&
+        <PanelVisitor
+          lang={lang}
+          langHandler={this.langHandler}
+          buttonManager={this.buttonManager}
+        />}
         <div className='float-clear' />
       </div>
     )

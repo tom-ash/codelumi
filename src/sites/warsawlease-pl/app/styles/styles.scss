@@ -71,9 +71,6 @@ input:-webkit-autofill:active  {
 body {
   font-family: 'Helvetica Neue', 'Arial', sans-serif;
   background: $BACKGROUND-APP-COLOR;
-  @media #{$LARGE-PHONE} {
-    background: $BACKGROUND-PHONE-COLOR
-  }
 }
 
 .float-clear {

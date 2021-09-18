@@ -10,7 +10,7 @@ export function buttonManager() {
   const href = `${CLIENT_URL}/${url === '/' ? '' : url}`
 
   return {
-    classNames: { container: 'button' },
+    classNames: { container: 'map-catalogue-switch' },
     label: (
       <>
         {renderCatalogue ?

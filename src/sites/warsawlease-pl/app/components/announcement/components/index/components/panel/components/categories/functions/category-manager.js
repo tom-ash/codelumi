@@ -29,10 +29,6 @@ function categoryManger(props) {
           {langHandler(category.label)}
         </p>
       </div>
-      {
-      <div className='amount'>
-        {available && amount}
-      </div>}
     </>
   )
   const onClick = () => changeRoute({ href })
