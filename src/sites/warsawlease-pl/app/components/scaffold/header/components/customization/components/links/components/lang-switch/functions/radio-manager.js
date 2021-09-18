@@ -1,24 +1,30 @@
 import React from 'react'
 import routes from '../../../../../../../../../../../shared/constants/routes/routes.js'
 import CLIENT_URL from '../../../../../../../../../../../shared/constants/urls/client.js'
-import getRouteByRender from '../../../../../../../../../../../../shared/app/functions/routes/getters/route-by-render.js'
+import getRouteByLang from '../../../../../../../../../../../../shared/app/functions/routes/getters/route-by-lang.js'
 
 export function radioManager(props) {
-  const { changeRoute, render, lang } = props
-  const invertedLanguage = lang === 'pl' ? 'en' : 'pl'
-  const route = getRouteByRender({ routes, render, lang: invertedLanguage })
-  const href = route ? `${CLIENT_URL}/${route.url === '/' ? '' : route.url}` : null
+  const { changeRoute, render, lang, urlComposites } = props
+  const { url: plUrl } = getRouteByLang({ routes, render, lang: 'pl', urlComposites })
+  const { url: enUrl } = getRouteByLang({ routes, render, lang: 'en', urlComposites })
 
   return {
     name: 'lang-switch',
     classNames: { container: 'lang-radio-input'},
     checked: lang === 'pl' ? 'pl' : 'en',
     radios: [
-      { value: 'pl', label: <div className='pl-flag' /> },
-      { value: 'en', label: <div className='en-flag' /> }
+      {
+        value: 'pl',
+        label: <a href={plUrl} onClick={(e) => e.preventDefault()} className='pl-flag' />
+      },
+      {
+        value: 'en',
+        label: <a href={enUrl} onClick={(e) => e.preventDefault()}  className='en-flag' />
+      }
     ],
     onClick: value => {
-      // TODO: Base on value.
+      const href = `${CLIENT_URL}/${value === 'pl' ? plUrl : enUrl}`
+
       changeRoute({ href })
     }
   }

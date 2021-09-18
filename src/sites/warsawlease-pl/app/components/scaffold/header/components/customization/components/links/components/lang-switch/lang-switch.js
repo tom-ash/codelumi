@@ -6,9 +6,6 @@ import styles from './styles/styles.scss'
 
 export default props => {
   useStyles(styles)
-
-  const { lang } = props
-  const ballClassNames = ['ball'].concat(lang === 'pl' ? 'pl' : 'en')
   
   return (
     <div className='lang-switch'>
