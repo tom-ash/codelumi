@@ -12,7 +12,6 @@ import langHandler from '../../../../../../functions/lang-handler'
 import { shouldSetUpGoogleMaps, shouldSetUpPins } from '../../../../functions/google-map-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import { buildRequestParameters } from '../../functions/build-parameters'
 import AppContext from '../../../../../../constants/context.js'
 
 class AnnouncementIndexMap extends React.Component {
@@ -28,7 +27,6 @@ class AnnouncementIndexMap extends React.Component {
     this.langHandler = langHandler.bind(this)
     this.shouldSetUpGoogleMaps = shouldSetUpGoogleMaps.bind(this)
     this.shouldSetUpPins = shouldSetUpPins.bind(this)
-    this.buildRequestParameters = buildRequestParameters.bind(this)
   }
 
   static contextType = AppContext
