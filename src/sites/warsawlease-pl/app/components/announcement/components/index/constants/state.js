@@ -10,7 +10,13 @@ export const control = {
   loadTile: false,
   miniListFarthestScrollTop: 0,
   miniListFarthestScrollLeft: 0,
-  indexFullFarthestScrollTop: 0
+  indexFullFarthestScrollTop: 0,
+
+
+
+  showArea: false
+
+
 }
 
 export const data = {

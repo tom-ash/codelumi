@@ -7,6 +7,7 @@ import styles from './styles/styles.scss'
 import PanelCategories from './components/categories/categories'
 import PanelVisitor from './components/visitor/visitor'
 import AppContext from '../../../../../../constants/context.js'
+import Area from './components/area/area.js'
 
 class AnnouncementIndexPanel extends React.Component {
   constructor(props) {
@@ -32,7 +33,8 @@ class AnnouncementIndexPanel extends React.Component {
       usablePremisesAmount,
       officesAmount,
       virtualOfficesAmount,
-      coworkingAmount
+      coworkingAmount,
+      showArea
     } = this.props
     const { changeRoute } = this.context
 
@@ -58,6 +60,9 @@ class AnnouncementIndexPanel extends React.Component {
         />
         {(renderMap || renderCatalogue) &&
         <PanelVisitor {...{ ...this.props, changeRoute, langHandler }} />}
+
+        <Area showArea={showArea} langHandler={this.langHandler} changeControl={changeControl} />
+
         <div className='float-clear' />
       </div>
     )

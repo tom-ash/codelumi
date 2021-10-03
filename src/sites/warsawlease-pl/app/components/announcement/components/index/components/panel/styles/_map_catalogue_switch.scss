@@ -1,9 +1,9 @@
 %map-catalogue-switch {
-  float: left;
+  float: right;
   position: relative;
-  margin-top: 40px;
+  margin-top: 22px;
   padding-left: 28px;
-
+  padding-right: 28px;
   @media #{$LARGE-TABLET} {
     margin-top: 0px;
     margin-left: 10px;
