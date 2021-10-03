@@ -15,6 +15,7 @@ import { parseCategoryForUrl } from '../../functions/category-parsers'
 import { parseDistrictForUrl } from '../../functions/district-parsers'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import { componentDidUpdate } from './functions/lifecycle.js'
 
 class AnnouncementIndexSearch extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class AnnouncementIndexSearch extends React.Component {
     this.parseCurrency = parseCurrency.bind(this)
     this.parseCategoryForUrl = parseCategoryForUrl.bind(this)
     this.parseDistrictForUrl = parseDistrictForUrl.bind(this)
+    this.componentDidUpdate = componentDidUpdate
   }
 
   render() {

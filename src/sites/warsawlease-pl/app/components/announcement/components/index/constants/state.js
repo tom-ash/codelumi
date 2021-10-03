@@ -11,12 +11,8 @@ export const control = {
   miniListFarthestScrollTop: 0,
   miniListFarthestScrollLeft: 0,
   indexFullFarthestScrollTop: 0,
-
-
-
-  showArea: false
-
-
+  showArea: false,
+  rebuildQueryParams: false
 }
 
 export const data = {

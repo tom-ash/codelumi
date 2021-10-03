@@ -4,15 +4,18 @@ import AreaMin from './inputs/area-min.js'
 
 const AreaPanel = ({
   langHandler,
-  changeControl
+  changeControl,
+  changeInputs,
+  areaMin,
+  areaMax
 }) => {
 
   return (
     <>
       <div className='area-panel'>
-        <AreaMin langHandler={langHandler} />
+        <AreaMin langHandler={langHandler} changeInputs={changeInputs} areaMin={areaMin} />
       </div>
-      <div className='area-panel-cover' onClick={() => changeControl({ showArea: false })}/>
+      <div className='area-panel-cover' onClick={() => changeControl({ showArea: false, rebuildQueryParams: true })}/>
     </>
   )
 }
@@ -20,7 +23,10 @@ const AreaPanel = ({
 const Area = ({
   langHandler,
   changeControl,
-  showArea
+  changeInputs,
+  showArea,
+  areaMin,
+  areaMax
 }) => {
   
   return (
@@ -31,7 +37,7 @@ const Area = ({
       <div onClick={() => changeControl({ showArea: !showArea })}>
         Dowolna <SVG name='caretDown' />
       </div>
-      {true && <AreaPanel langHandler={langHandler} changeControl={changeControl} />}
+      {showArea && <AreaPanel langHandler={langHandler} changeControl={changeControl} changeInputs={changeInputs} areaMin={areaMin} areaMax={areaMax} />}
     </div>
   )
 }

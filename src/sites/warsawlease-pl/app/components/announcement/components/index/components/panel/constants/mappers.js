@@ -33,6 +33,11 @@ export const mapStateToProps = store => {
   } = store.announcement.index.data
 
   const {
+    areaMin,
+    areaMax,
+  } = store.announcement.index.inputs
+
+  const {
     showArea
   } = store.announcement.index.control
 
@@ -53,7 +58,9 @@ export const mapStateToProps = store => {
     officesAmount,
     virtualOfficesAmount,
     coworkingAmount,
-    showArea
+    showArea,
+    areaMin,
+    areaMax,
   }
 }
     

@@ -19,7 +19,8 @@ export const mapStateToProps = store => {
 
   const {
     fetch,
-    type
+    type,
+    rebuildQueryParams
   } = store.announcement.index.control
 
   const {
@@ -83,7 +84,8 @@ export const mapStateToProps = store => {
     offset,
     announcements,
     amount,
-    admin
+    admin,
+    rebuildQueryParams
   }
 }
     

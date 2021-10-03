@@ -34,7 +34,9 @@ class AnnouncementIndexPanel extends React.Component {
       officesAmount,
       virtualOfficesAmount,
       coworkingAmount,
-      showArea
+      showArea,
+      areaMin,
+      areaMax,
     } = this.props
     const { changeRoute } = this.context
 
@@ -60,9 +62,14 @@ class AnnouncementIndexPanel extends React.Component {
         />
         {(renderMap || renderCatalogue) &&
         <PanelVisitor {...{ ...this.props, changeRoute, langHandler }} />}
-
-        <Area showArea={showArea} langHandler={this.langHandler} changeControl={changeControl} />
-
+        <Area
+          showArea={showArea}
+          langHandler={this.langHandler}
+          changeControl={changeControl} changeInputs={changeInputs}
+          changeInputs={changeInputs}
+          areaMin={areaMin}
+          areaMax={areaMax}
+        />
         <div className='float-clear' />
       </div>
     )
