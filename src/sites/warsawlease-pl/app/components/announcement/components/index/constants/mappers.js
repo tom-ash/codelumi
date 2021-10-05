@@ -5,6 +5,8 @@ import {
 } from '../../../../../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = store => {
+  const render = store.render
+
   const {
     lang,
     path,
@@ -18,7 +20,6 @@ export const mapStateToProps = store => {
   } = store.render
 
   const {
-    fetch,
     type,
     rebuildQueryParams
   } = store.announcement.index.control
@@ -55,13 +56,13 @@ export const mapStateToProps = store => {
   } = store.announcement.index.data
 
   return {
+    render,
     lang,
     path,
     device,
     renderMap,
     renderCatalogue,
     renderMy,
-    fetch,
     type,
     category,
     district,

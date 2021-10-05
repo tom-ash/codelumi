@@ -1,7 +1,6 @@
 export const control = {
   connecting: false,
   readParams: true,
-  fetch: false,
   type: 'map',
   mapLoaded: false,
   deletedAnnouncement: null,

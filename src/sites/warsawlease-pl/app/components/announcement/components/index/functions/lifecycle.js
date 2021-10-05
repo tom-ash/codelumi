@@ -3,6 +3,8 @@ export function componentDidUpdate(prevProps) {
   const { rebuildQueryParams, changeControl } = this.props
 
   if (!prevRebuildQueryParams && rebuildQueryParams) {
+    changeControl({ rebuildQueryParams: false })
+
     const queryParamMappings = {
       areaMin: { pl: 'powierzchnia_min', en: 'area_min' },
       areaMax: { pl: 'powierzchnia_max', en: 'area_max' },
@@ -20,19 +22,9 @@ export function componentDidUpdate(prevProps) {
       return `${queryParam}=${queryParamValue}`
     })
 
-    const pathnameWithQueryParams = window.location.pathname + '?' + builtQueryParamsArray.join('&')
+    const href = window.location.pathname + '?' + builtQueryParamsArray.join('&')
+    const { changeRoute } = this.context
 
-    history.pushState(null, '', pathnameWithQueryParams)
-
-    return changeControl({ rebuildQueryParams: false, fetch: true })
+    changeRoute({ href })
   }
-
-  const { fetch: prevFetch } = prevProps
-  const { fetch } = this.props
-
-  if (!prevFetch && fetch) {
-    // TODO
-    changeControl({ fetch: false })
-  }
-
 }
