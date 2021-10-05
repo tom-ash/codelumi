@@ -1,6 +1,7 @@
 import React from 'react'
 import SVG from '../../../../../../../../../../shared/app/components/support/svg/svg.js'
 import AreaMin from './inputs/area-min.js'
+import AreaMax from './inputs/area-max.js'
 
 const AreaPanel = ({
   langHandler,
@@ -14,6 +15,8 @@ const AreaPanel = ({
     <>
       <div className='area-panel'>
         <AreaMin langHandler={langHandler} changeInputs={changeInputs} areaMin={areaMin} />
+        <AreaMax langHandler={langHandler} changeInputs={changeInputs} areaMax={areaMax} />
+        <div className='float-clear' />
       </div>
       <div className='area-panel-cover' onClick={() => changeControl({ showArea: false, rebuildQueryParams: true })}/>
     </>
