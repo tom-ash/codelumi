@@ -9,6 +9,10 @@ import CLIENT_URL from '../../shared/constants/urls/client.js'
 import API_URL from '../../shared/constants/urls/api.js'
 
 function handleRequest(req, res) {
+  if (req.hostname === 'warsawlease.pl') {
+    res.redirect('https://www.warsawlease.pl')
+  }
+
   genericRequestHandler({
     req,
     res,
