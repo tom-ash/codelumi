@@ -10,7 +10,7 @@ import CLIENT_URL from '../../shared/constants/urls/client.js'
 import API_URL from '../../shared/constants/urls/api.js'
 
 function handleRequest(req, res) {
-  if (req.hostname === ROOT_DOMAIN) res.redirect(`https://www.${ROOT_DOMAIN}`)
+  if (req.hostname === ROOT_DOMAIN) res.redirect(`https://www.${ROOT_DOMAIN}${req.originalUrl}`)
 
   genericRequestHandler({
     req,
