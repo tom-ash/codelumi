@@ -7,6 +7,8 @@ export function radioManager(props) {
   const { relatedToUrl: url } = getRouteByRender({ routes, render, lang })
   const href = `${CLIENT_URL}/${url === '/' ? '' : url}`
 
+  // console.log(props)
+
   return {
     name: 'map-catalogue-switch',
     classNames: { container: 'form-input radio'},

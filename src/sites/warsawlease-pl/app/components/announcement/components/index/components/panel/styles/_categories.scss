@@ -6,24 +6,18 @@
   margin: 0 20px;
   border-radius: 42px;
   padding: 0 21px;
-  border: 1px solid #E5E7E9;
+  border: 1px solid #CACFD2;
 
-  @media #{$LARGE-TABLET} {
+  @media #{$SMALL-PC} {
     float: none;
-    margin: 20px auto 10px;
     max-width: 684px;
+    margin: 0 auto;
   }
-
-  @media #{$SMALL-TABLET} {
-    border-radius: 0;
+  
+  @media #{$LARGE-TABLET} {
     max-width: 360px;
-    border-radius: 8px;
-  }
-
-  @media #{$MEDIUM-PHONE} {
-    border-radius: 0;
-    border-right: none;
-    border-left: none;
+    max-height: 162px;
+    border-radius: 4px;
   }
 
   .category {
@@ -33,14 +27,9 @@
     margin-left: 5px;
     white-space: normal;
 
-    @media #{$SMALL-TABLET} {
+    @media #{$LARGE-TABLET} {
       width: 25%;
       margin: 0;
-    }
-
-    @media #{$SMALL-PHONE} {
-      margin-right: 0px;
-      margin-left: 0px;
     }
 
     .icon {

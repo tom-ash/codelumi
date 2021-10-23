@@ -7,6 +7,12 @@
   z-index: 2;
   position: relative;
   padding: 17px 0;
+  @media #{$LARGE-TABLET} {
+    padding: 10px 10px 10px 20px;
+  }
+  @media #{$SMALL-TABLET} {
+    padding: 10px;
+  }
   .categories {
     @extend %categories;
   }
@@ -16,28 +22,29 @@
   .area {
     position: relative;
     float: left;
-
     display: flex;
     flex-direction: column;
-
     height: 82px;
-
     justify-content: center;
 
+    @media #{$SMALL-TABLET} {
+      float: none;
+    }
+
     div:first-child {
-      font-size: 13.5px;
+      font-size: 13px;
       margin-bottom: 4px;
       color: #797D7F;
     }
     div:nth-child(2) {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: bold;
       color: #626567;
       cursor: pointer;
       svg {
         height: 15px;
         transform: scale(1.3) translateY(1.2px);
-        margin-left: 2px;
+        margin-left: 6px;
       }
     }
 
