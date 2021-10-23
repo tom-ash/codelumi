@@ -1,18 +1,20 @@
 export function componentDidUpdate(prevProps) {
   const { rebuildQueryParams: prevRebuildQueryParams } = prevProps
-  const { rebuildQueryParams, changeControl } = this.props
+  const { rebuildQueryParams, changeControl, changeInputs } = this.props
 
   if (!prevRebuildQueryParams && rebuildQueryParams) {
     changeControl({ rebuildQueryParams: false })
 
+    const updateAttrs = {}
     const queryParamMappings = {
-      areaMin: { pl: 'powierzchnia_min', en: 'area_min' },
-      areaMax: { pl: 'powierzchnia_max', en: 'area_max' },
+      areaMinInput: { pl: 'powierzchnia_min', en: 'area_min' },
+      areaMaxInput: { pl: 'powierzchnia_max', en: 'area_max' },
     }
-
-    const queryAttrs = ['areaMin', 'areaMax']
+    const queryAttrs = ['areaMinInput', 'areaMaxInput']
     const builtQueryParamsArray = queryAttrs.filter(queryParam => {
       const queryParamValue = this.props[queryParam]
+      
+      updateAttrs[queryParam.replace('Input', '')] = queryParamValue
 
       return queryParamValue !== ''
     }).map(filteredQueryAttr => {
@@ -25,6 +27,7 @@ export function componentDidUpdate(prevProps) {
     const href = window.location.pathname + '?' + builtQueryParamsArray.join('&')
     const { changeRoute } = this.context
 
+    changeInputs(updateAttrs)
     changeRoute({ href })
   }
 }

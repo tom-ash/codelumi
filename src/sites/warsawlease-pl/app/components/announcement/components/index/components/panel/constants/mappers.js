@@ -34,7 +34,9 @@ export const mapStateToProps = store => {
 
   const {
     areaMin,
+    areaMinInput,
     areaMax,
+    areaMaxInput
   } = store.announcement.index.inputs
 
   const {
@@ -60,7 +62,9 @@ export const mapStateToProps = store => {
     coworkingAmount,
     showArea,
     areaMin,
+    areaMinInput,
     areaMax,
+    areaMaxInput
   }
 }
     

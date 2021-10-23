@@ -20,10 +20,15 @@ const AreaPanel = ({
   )
 }
 
-const Area = ({
-  showArea, areaMin, areaMax,
-  langHandler, changeControl, changeInputs
-}) => {
+function presentArea(areaMin, areaMax) {
+  if (areaMin === '' && areaMax === '') return 'Dowolna'
+  if (areaMin !== '' && areaMax !== '') return `od ${areaMin} do ${areaMax} m2`
+  if (areaMin !== '') return `od ${areaMin} m2`
+  if (areaMax !== '') return `do ${areaMax} m2`
+}
+
+const Area = props => {
+  const { showArea, areaMin, areaMinInput, areaMax, areaMaxInput, langHandler, changeControl, changeInputs } = props
   
   return (
     <div className='area'>
@@ -31,13 +36,10 @@ const Area = ({
         Powierzchnia
       </div>
       <div onClick={() => changeControl({ showArea: !showArea })}>
-        {areaMin === '' && areaMax === '' && 'Dowolna'}
-        {areaMin !== '' && areaMax !== '' && `od ${areaMin} do ${areaMax} m2`
-        
-        }
+        {presentArea(areaMin, areaMax)}
         <SVG name='caretDown' />
       </div>
-      {showArea && <AreaPanel langHandler={langHandler} changeControl={changeControl} changeInputs={changeInputs} areaMin={areaMin} areaMax={areaMax} />}
+      {showArea && <AreaPanel langHandler={langHandler} changeControl={changeControl} changeInputs={changeInputs} areaMin={areaMinInput} areaMax={areaMaxInput} />}
     </div>
   )
 }
