@@ -57,7 +57,7 @@ class AnnouncementIndexPanel extends React.Component {
           coworkingAmount={coworkingAmount}
         />
         {(renderMap || renderCatalogue) &&
-        <PanelVisitor {...{ ...this.props, changeRoute, langHandler }} />}
+        <PanelVisitor {...{ ...this.props, changeRoute, langHandler: this.langHandler }} />}
         <div className='float-clear' />
       </div>
     )

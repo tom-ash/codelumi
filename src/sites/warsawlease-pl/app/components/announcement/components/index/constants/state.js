@@ -1,7 +1,6 @@
 export const control = {
   connecting: false,
   readParams: true,
-  fetch: true,
   type: 'map',
   mapLoaded: false,
   deletedAnnouncement: null,
@@ -10,7 +9,9 @@ export const control = {
   loadTile: false,
   miniListFarthestScrollTop: 0,
   miniListFarthestScrollLeft: 0,
-  indexFullFarthestScrollTop: 0
+  indexFullFarthestScrollTop: 0,
+  showArea: false,
+  rebuildQueryParams: false
 }
 
 export const data = {
@@ -37,7 +38,9 @@ export const inputs = {
   rentMin: '',
   rentMax: '',
   areaMin: '',
+  areaMinInput: '',
   areaMax: '',
+  areaMaxInput: '',
   roomsMin: '',
   roomsMax: '',
   floorMin: '',

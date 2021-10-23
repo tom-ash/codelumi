@@ -5,6 +5,8 @@ import {
 } from '../../../../../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = store => {
+  const render = store.render
+
   const {
     lang,
     path,
@@ -18,8 +20,8 @@ export const mapStateToProps = store => {
   } = store.render
 
   const {
-    fetch,
-    type
+    type,
+    rebuildQueryParams
   } = store.announcement.index.control
 
   const {
@@ -30,7 +32,9 @@ export const mapStateToProps = store => {
     category,
     district,
     areaMin,
+    areaMinInput,
     areaMax,
+    areaMaxInput,
     rent,
     rentCurrency,
     rentMin,
@@ -54,18 +58,20 @@ export const mapStateToProps = store => {
   } = store.announcement.index.data
 
   return {
+    render,
     lang,
     path,
     device,
     renderMap,
     renderCatalogue,
     renderMy,
-    fetch,
     type,
     category,
     district,
     areaMin,
+    areaMinInput,
     areaMax,
+    areaMaxInput,
     rent,
     rentCurrency,
     rentMin,
@@ -83,7 +89,8 @@ export const mapStateToProps = store => {
     offset,
     announcements,
     amount,
-    admin
+    admin,
+    rebuildQueryParams
   }
 }
     

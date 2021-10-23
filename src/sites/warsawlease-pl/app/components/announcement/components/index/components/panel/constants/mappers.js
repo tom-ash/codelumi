@@ -32,6 +32,17 @@ export const mapStateToProps = store => {
     currentCategory
   } = store.announcement.index.data
 
+  const {
+    areaMin,
+    areaMinInput,
+    areaMax,
+    areaMaxInput
+  } = store.announcement.index.inputs
+
+  const {
+    showArea
+  } = store.announcement.index.control
+
   return {
     lang,
     isMobile,
@@ -48,7 +59,12 @@ export const mapStateToProps = store => {
     usablePremisesAmount,
     officesAmount,
     virtualOfficesAmount,
-    coworkingAmount
+    coworkingAmount,
+    showArea,
+    areaMin,
+    areaMinInput,
+    areaMax,
+    areaMaxInput
   }
 }
     
