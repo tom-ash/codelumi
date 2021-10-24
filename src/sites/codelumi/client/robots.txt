@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.codelumi.com/sitemap.xml
+Sitemap: https://soundof.it/sitemap.xml

@@ -6,6 +6,6 @@ export const LANG_LABELS = {
 }
 
 export const ROOT_LABELS = {
-  [PL]: 'codelumi.com',
-  [EN]: 'codelumi.com'
+  [PL]: 'soundof.it',
+  [EN]: 'soundof.it'
 }

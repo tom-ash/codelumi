@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.codelumi.com</loc>
+    <loc>https://soundof.it</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.codelumi.com/ruby-cheat-sheet</loc>
+    <loc>https://soundof.it/ruby-cheat-sheet</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.codelumi.com/postgresql-cheat-sheet</loc>
+    <loc>https://soundof.it/postgresql-cheat-sheet</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

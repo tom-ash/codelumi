@@ -1,3 +1,3 @@
-const ROOT_URL = 'codelumi.com'
+const ROOT_URL = 'soundof.it'
 
 export default ROOT_URL

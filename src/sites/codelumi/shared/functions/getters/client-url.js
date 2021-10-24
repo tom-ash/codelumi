@@ -1,7 +1,7 @@
 function getClientUrl() {
   switch (APP_ENV) {
-    case 'development': return 'http://local-codelumi.com:8080'
-    case 'production': return 'https://www.codelumi.com'
+    case 'production': return 'https://soundof.it'
+    case 'development': return 'http://local.soundof.it:8080'
     default: return ''
   }
 }

@@ -1,8 +1,8 @@
 import { PL, EN } from '../langs/langs'
 
 export const ROOT_TITLES = {
-  [PL]: 'codelumi.com',
-  [EN]: 'codelumi.com'
+  [PL]: 'soundof.it',
+  [EN]: 'soundof.it'
 }
 
 export const PAGE_CREATE_TITLES  = {
