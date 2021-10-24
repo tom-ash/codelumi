@@ -13,6 +13,9 @@ const AreaPanel = ({
       <div className='area-panel'>
         <AreaMin langHandler={langHandler} changeInputs={changeInputs} areaMin={areaMin} />
         <AreaMax langHandler={langHandler} changeInputs={changeInputs} areaMax={areaMax} />
+        <div className='sqm'>
+          {langHandler({ pl: <>m<span className='superscript'>2</span></>, en: 'sqm' })}
+        </div>
         <div className='float-clear' />
       </div>
       <div className='area-panel-cover' onClick={() => changeControl({ showArea: false, rebuildQueryParams: true })}/>
@@ -21,10 +24,11 @@ const AreaPanel = ({
 }
 
 function presentArea(areaMin, areaMax) {
+  const m2 = <>m<span className='superscript'>2</span></>
   if (areaMin === '' && areaMax === '') return 'Dowolna'
-  if (areaMin !== '' && areaMax !== '') return `od ${areaMin} do ${areaMax} m2`
-  if (areaMin !== '') return `od ${areaMin} m2`
-  if (areaMax !== '') return `do ${areaMax} m2`
+  if (areaMin !== '' && areaMax !== '') return <>od {areaMin} do {areaMax} {m2}</>
+  if (areaMin !== '') return <>od {areaMin} {m2}</>
+  if (areaMax !== '') return <>do {areaMax} {m2}</>
 }
 
 const Area = props => {
@@ -32,10 +36,10 @@ const Area = props => {
   
   return (
     <div className='area'>
-      <div>
+      <div className='label'>
         Powierzchnia
       </div>
-      <div onClick={() => changeControl({ showArea: !showArea })}>
+      <div className='presentation' onClick={() => changeControl({ showArea: !showArea })}>
         {presentArea(areaMin, areaMax)}
         <SVG name='caretDown' />
       </div>

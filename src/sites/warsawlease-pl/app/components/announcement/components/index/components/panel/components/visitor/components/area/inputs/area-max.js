@@ -7,15 +7,13 @@ const AreaMax = ({
   areaMax
 }) => {
   const classNames={ container: 'panel-input text' }
-  const label = langHandler({ pl: 'Maks. (sqm)', en: 'Max. (m2)' })
+  const label = langHandler({ pl: 'Maks.', en: 'Max.' })
   const value = areaMax
   const onChange = areaMaxInput => changeInputs({ areaMaxInput })
   const params = { classNames, label, value, onChange }
 
   return (
-    <ManagedText
-      { ...params }
-    />
+    <ManagedText { ...params } />
   )
 }
 

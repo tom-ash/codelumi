@@ -31,12 +31,12 @@
       float: none;
     }
 
-    div:first-child {
+    .label {
       font-size: 13px;
       margin-bottom: 4px;
       color: #797D7F;
     }
-    div:nth-child(2) {
+    .presentation {
       font-size: 14px;
       font-weight: bold;
       color: #626567;
@@ -52,7 +52,7 @@
       position: absolute;
       z-index: 2;
       height: 60px;
-      width: 224px;
+      width: 206px;
       background: white;
       top: 72px;
       left: -56px;
@@ -60,18 +60,31 @@
       border-radius: 4px;
       .panel-input {
         float: left;
-        width: 100px;
+        width: 80px;
         height: 100%;
         margin: 0;
         padding: 8px 5px 25px 10px;
+        text-align: center;
         input {
           width: 100%;
           height: 100%;
           border-top: none;
           border-right: none;
           border-left: none;
-          text-align: right;
+          text-align: center;
           font-size: 16px;
+        }
+      }
+      .sqm {
+        float: left;
+        font-size: 16px;
+        padding-top: 28px;
+        padding-left: 5px;
+        .superscript {
+          position: relative;
+          top: -0.5em; 
+          font-size: 80%;
+          margin-left: 2px;
         }
       }
     }
@@ -83,6 +96,12 @@
       bottom: 0;
       left: 0;
     }
+  }
 
+  .superscript {
+    position: relative;
+    top: -0.5em; 
+    font-size: 80%;
+    margin-left: 2px;
   }
 }
