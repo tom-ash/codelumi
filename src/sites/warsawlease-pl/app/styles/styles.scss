@@ -5,6 +5,12 @@
 @import '../components/support/components/spinner/components/windmill/styles/styles.scss';
 @import './headers/headers';
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -37,11 +43,7 @@ input[type=number] {
   left: 0;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 // textarea,
 // input:matches(
@@ -94,7 +96,7 @@ body {
 
 #app-inner-container {
   max-width: 1920px;
-  min-height: 640px;
+  min-height: 700px;
   margin: 0 auto;
   padding-top: 60px;
   overflow: hidden;
