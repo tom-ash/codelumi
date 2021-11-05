@@ -25,7 +25,7 @@ app.use(cookieParser())
 app.use(compression({ filter: allowCompression }))
 
 if (['production', 'staging'].indexOf(APP_ENV) !== -1) {
-  app.use(redirectToHTTPS([], [], 307))
+  app.use(redirectToHTTPS([], [], 301))
 }
 
 app.use(vhost(/^.*(codelumi).*$/, Express.static('dist/sites/codelumi/client')))
