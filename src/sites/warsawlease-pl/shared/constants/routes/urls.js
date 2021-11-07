@@ -59,13 +59,13 @@ export const ANNOUNCEMENT_CREATE_FORM_URLS = {
 }
 
 export const ANNOUNCEMENT_CREATE_VERIFICATION_URLS = {
-  [PL]: 'dodaj-ogloszenie-wynajmu-nieruchomosci-w-warszawie/potwierdz',
-  [EN]: 'add-announcement-of-real-estate-lease-in-warsaw/confirm'
+  [PL]: 'potwierdzenie-adresu-email',
+  [EN]: 'email-address-confirmation'
 }
 
 export const ANNOUNCEMENT_CREATE_SUCCESS_URLS = {
-  [PL]: 'dodaj-ogloszenie-wynajmu-nieruchomosci-w-warszawie/podsumowanie',
-  [EN]: 'add-announcement-of-real-estate-lease-in-warsaw/summary'
+  [PL]: 'podsumowanie-dodanego-ogloszenia',
+  [EN]: 'added-announcement-summary'
 }
 
 export const ANNOUNCEMENT_EDIT_URLS = {
