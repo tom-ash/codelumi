@@ -1,20 +1,12 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader/useStyles'
-import styles from './styles/styles.scss'
+import LogoHtml from '../../../../../assets/logo/logo.html'
+import styles from '../../../../../assets/logo/styles/styles.css'
 
 const Logo = () => {
   useStyles(styles)
 
-  return (
-    <div id='warsaw-lease-logo'>
-      <div id='warsaw'>
-        WARSAW
-      </div>
-      <div id='lease'>
-        LEASE.PL
-      </div>
-    </div>
-  )
+  return <div dangerouslySetInnerHTML={{__html: LogoHtml}} />
 }
 
 export default Logo

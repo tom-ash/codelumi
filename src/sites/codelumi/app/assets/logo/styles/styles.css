@@ -1,0 +1,63 @@
+#logo {
+  position: relative;
+  height: 60px;
+}
+
+#logo .text {
+  font-size: 24px;
+  line-height: 60px;
+  font-family: 'Cairo', sans-serif;
+}
+
+#logo .icon {
+  position: absolute;
+  top: -7px;
+  right: -28px;
+  bottom: 0;
+  margin: auto;
+  width: 20px;
+  height: 30px;
+}
+
+#logo .icon .horizontal {
+  width: 23px;
+  height: 8px;
+  margin-top: 12px;
+  border-top: .09em solid white;
+  border-bottom: .09em solid white;
+  transform: skew(-15deg, 0deg);
+}
+
+#logo .icon .vertical {
+  position: absolute;
+  top: 0;
+  width: 11px;
+  height: 25px;
+  margin-top: 6px;
+  margin-left: 5px;
+  border-right: .09em solid white;
+  border-left: .09em solid white;
+  transform: skew(-15deg, 0deg);
+}
+
+#logo .icon .vertical .one {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  bottom: -2px;
+  left: .01em;
+  border-radius: 5px;
+  background: white;
+  transform: skew(-10deg, 0deg) translate(-100%, 0);
+}
+
+#logo .icon .vertical .two {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  right: -.1em;
+  bottom: -2px;
+  border-radius: 5px;
+  background: white;
+  transform: skew(-10deg, 0deg);
+}

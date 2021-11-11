@@ -35,7 +35,7 @@ var config = {
         }
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: [
           'isomorphic-style-loader',
           {
@@ -50,6 +50,10 @@ var config = {
       {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
+      },
+      {
+        test: /\.html$/i,
+        use: 'raw-loader',
       }
     ]
   },
