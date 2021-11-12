@@ -25,7 +25,7 @@ export function radioManager(props) {
     onClick: value => {
       const href = `${CLIENT_URL}/${value === 'pl' ? plUrl : enUrl}`
 
-      changeRoute({ href })
+      changeRoute({ href, withoutScroll: true })
     }
   }
 }
