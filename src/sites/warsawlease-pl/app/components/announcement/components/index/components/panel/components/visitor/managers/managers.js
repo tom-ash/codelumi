@@ -17,7 +17,7 @@ export function radioManager(props) {
     ],
     onClick: value => {
       // TODO: Base on value.
-      changeRoute({ href })
+      changeRoute({ href, retainQueryParams: true })
     }
   }
 }

@@ -31,7 +31,7 @@ function categoryManger(props) {
       </div>
     </>
   )
-  const onClick = () => changeRoute({ href })
+  const onClick = () => changeRoute({ href, retainQueryParams: true })
 
   return { classNames, href, hrefLang, label, onClick }
 }
