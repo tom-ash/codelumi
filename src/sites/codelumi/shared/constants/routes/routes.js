@@ -5,6 +5,7 @@ import pageEditStateSetter from '../../../../shared/app/components/page/componen
 import { PL, EN } from '../langs/langs'
 import {
   ROOT_URLS,
+  ANNOUNCEMENT_CREATE_URLS,
   PAGE_CREATE_URLS,
   PAGE_EDIT_URLS,
   PAGE_INDEX_MAP_URLS,
@@ -17,6 +18,7 @@ import {
 } from './urls'
 import {
   ROOT_TRACK,
+  ANNOUNCEMENT_CREATE_TRACK,
   PAGE_CREATE_TRACK,
   PAGE_EDIT_TRACK,
   PAGE_INDEX_MAP_TRACK,
@@ -67,6 +69,16 @@ export default [
     description: ROOT_DESCRIPTIONS[EN],
     image: DEFAULT_IMAGE_PL,
     pageName: 'root'
+  },
+  {
+    url: ANNOUNCEMENT_CREATE_URLS[PL],
+    lang: PL,
+    track: ANNOUNCEMENT_CREATE_TRACK
+  },
+  {
+    url: ANNOUNCEMENT_CREATE_URLS[EN],
+    lang: EN,
+    track: ANNOUNCEMENT_CREATE_TRACK
   },
   {
     url: PAGE_CREATE_URLS[PL],

@@ -1,4 +1,6 @@
 export const ROOT_TRACK = 'root'
+export const ANNOUNCEMENT_TRACK = 'announcement'
+export const ANNOUNCEMENT_CREATE_TRACK = 'announcement/create'
 export const PAGE_TRACK = 'page'
 export const PAGE_CREATE_TRACK = 'page/create'
 export const PAGE_EDIT_TRACK = 'page/edit'

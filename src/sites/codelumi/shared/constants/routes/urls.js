@@ -5,6 +5,11 @@ export const ROOT_URLS = {
   [EN]: '/'
 }
 
+export const ANNOUNCEMENT_CREATE_URLS = {
+  [PL]: 'dodaj-oferte',
+  [EN]: 'post-a-job'
+}
+
 export const PAGE_CREATE_URLS = {
   [PL]: 'dodaj-strone',
   [EN]: 'add-page'
