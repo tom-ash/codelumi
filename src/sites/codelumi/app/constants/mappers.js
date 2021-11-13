@@ -1,10 +1,14 @@
-import { PAGE_TRACK, VISITOR_TRACK } from '../../shared/constants/tracks/tracks'
+import { PAGE_TRACK, VISITOR_TRACK, ANNOUNCEMENT_TRACK } from '../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = store => {
   const { device, lang, routeSynced, loadGa } = store.app
   const { scrollY } = store.visitor
   const render = store.render
-  const { [VISITOR_TRACK]: renderVisitor, [PAGE_TRACK]: renderPage } = render
+  const {
+    [VISITOR_TRACK]: renderVisitor,
+    [PAGE_TRACK]: renderPage,
+    [ANNOUNCEMENT_TRACK]: renderAnnouncement
+  } = render
   const { statisticsConsent, marketingConsent } = store.visitor.consents
   const { data: pageShowData } = store.page.show
   const { data: pageEditData } = store.page.edit
@@ -15,8 +19,9 @@ export const mapStateToProps = store => {
     lang,
     render,
     routeSynced,
-    renderPage,
     renderVisitor,
+    renderAnnouncement,
+    renderPage,
     scrollY,
     pageShowData,
     pageEditData,

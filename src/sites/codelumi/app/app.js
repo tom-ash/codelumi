@@ -1,9 +1,13 @@
 import React from 'react'
+import loadable from '@loadable/component'
 import { connect } from 'react-redux'
-import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import Page from '../../shared/app/components/page/page.js'
 import Visitor from '../../shared/app/components/visitor/visitor.js'
+const Announcement = loadable(() => import('./components/announcement/announcement.js'))
+import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
+import styles from './styles/styles.scss'
+import headerStyles from './components/scaffold/header/styles/styles.scss'
 import * as lifecycle from './functions/lifecycle'
 import langHandler from '../../shared/app/functions/lang/handlers/lang.js'
 import screenSizeHandler from '../../shared/app/functions/screen/handlers/screen-size.js'
@@ -12,7 +16,6 @@ import matchStateToRoute from './functions/routes/matchers/state-to-route.js'
 import getRouteByLang from '../../shared/app/functions/routes/getters/route-by-lang.js'
 import changeRoute from './functions/routes/changers/route.js'
 import changeRouteWithHref from './functions/routes/changers/route-with-href.js'
-import styles from './styles/styles.scss'
 import AppContext from './constants/context.js'
 import CLIENT_URL from '../shared/constants/urls/client.js'
 import API_URL from '../shared/constants/urls/api.js'
@@ -24,7 +27,6 @@ import { LANGS } from '../shared/constants/langs/langs.js'
 import routes from '../shared/constants/routes/routes.js'
 import * as urls from '../shared/constants/routes/urls.js'
 import * as titles from '../shared/constants/routes/titles.js'
-import headerStyles from './components/scaffold/header/styles/styles.scss'
 import Logo from './components/scaffold/header/components/logo/logo.js'
 import HeaderCustomization from './components/scaffold/header/components/customization/customization.js'
 import initSentry from '../../shared/app/functions/analytics/sentry/init.js'
@@ -48,7 +50,7 @@ class App extends React.Component {
 
   render() {
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
-    const { render, renderPage, renderVisitor, device, lang, pageShowData, pageEditData, changeApp } = this.props
+    const { render, renderPage, renderVisitor, renderAnnouncement, device, lang, pageShowData, pageEditData, changeApp } = this.props
     const urlComposites = { pageShowData, pageEditData }
     const sharedProps = { appName: APP_NAME, render, routes, urls, langs: LANGS, titles, clientUrl: CLIENT_URL, apiUrl: API_URL, device, lang, changeRoute: this.changeRoute, changeRouteWithHref, changeApp, langHandler: this.langHandler }
     const headerProps = { ...sharedProps, urlComposites, Logo, HeaderCustomization, styles: headerStyles }
@@ -61,6 +63,7 @@ class App extends React.Component {
           <div id='app-inner-container'>  
             {renderPage && <Page {...pageProps} />}
             {renderVisitor && <Visitor {...sharedProps} />}
+            {renderAnnouncement && <Announcement />}
           </div>
           <Footer {...sharedProps}/>
         </div>
