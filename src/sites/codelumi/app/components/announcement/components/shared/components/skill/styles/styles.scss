@@ -1,0 +1,24 @@
+.skill {
+  height: 68px;
+  .name {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .level {
+    float: left;
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    border-radius: 2px;
+    background: lightgray;
+    cursor: pointer;
+    &.filled {
+      background: red;
+    }
+  }
+  .level-name {
+    margin-top: 4px;
+    font-size: 13px;
+    color: gray;
+  }
+}

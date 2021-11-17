@@ -11,12 +11,15 @@ class AnnouncementCreate extends React.Component {
   }
 
   render() {
+    const { selectableSkills, selectedSkill } = this.props
+    const skillSelectorProps = { selectableSkills, selectedSkill }
+
     return (
       <div id='announcement-create'>
         <h1>
           Post a Job
         </h1>
-        <SkillSelector />
+        <SkillSelector {...skillSelectorProps} />
       </div>
     )
   }

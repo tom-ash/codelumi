@@ -2,6 +2,7 @@ import { combineReducers } from 'redux'
 import { appReducer, renderReducer, assetsReducer, userReducer } from './reducers.js'
 import visitorReducer from '../../../shared/app/components/visitor/functions/reducers.js'
 import { pageReducer } from '../../../shared/app/components/page/functions/reducer.js'
+import { announcementReducer } from '../components/announcement/functions/reducer.js'
 
 const rootReducer = combineReducers({
   app: appReducer,
@@ -9,7 +10,8 @@ const rootReducer = combineReducers({
   assets: assetsReducer,
   visitor: visitorReducer,
   page: pageReducer,
-  user: userReducer
+  user: userReducer,
+  announcement: announcementReducer
 })
 
 export default rootReducer

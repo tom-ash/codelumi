@@ -1,21 +1,13 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader/useStyles'
 import styles from './styles/styles.scss'
-import SelectableSkill from './components/selectable-skill/selectable-skill.js'
+import Skill from '../../../shared/components/skill/skill.js'
 
 function SkillSelector(props) {
   useStyles(styles)
 
-  const skills = [
-    {
-      tag: 'javascript',
-      name: 'JavaScript'
-    },
-    {
-      tag: 'ruby',
-      name: 'Ruby'
-    }
-  ]
+  const { selectableSkills, selectedSkill } = props
+  
 
   return (
     <>
@@ -23,18 +15,19 @@ function SkillSelector(props) {
         Select Skills
       </h2>
       <div id='skill-selector'>
-
         <div id='selectable-skills'>
-          {skills.map(skill => (
-            <SelectableSkill {...skill} key={skill.tag}/>
+          {selectableSkills.map(skill => (
+            <Skill {...skill} key={skill.tag}/>
           ))}
         </div>
         <div id='selected-skills'>
-
+          {selectableSkills.map(skill => (
+            <Skill {...skill} key={skill.tag}/>
+          ))}
         </div>
         <div className='float-clear' />
       </div>
-      </>
+    </>
   )
   
 }
