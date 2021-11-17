@@ -5,7 +5,7 @@ import styles from './styles/styles.scss'
 function Skill(props) {
   useStyles(styles)
 
-  const { tag, name, selected, selectSkill } = props
+  const { tag, name, selected, selectSkill, unselectSkill } = props
   const levels = ['Novice', 'Junior', 'Mid', 'Senior', 'Expert']
   const [hovered, setHovered] = useState(0)  
 
@@ -32,6 +32,12 @@ function Skill(props) {
         <div className='level-name'>
           {selected ? levels[selected - 1] : levels[hovered - 1]}  
         </div>
+        {selected && (
+          <div
+            className='delete'
+            onClick={() => unselectSkill({ tag, name, selected: undefined })}
+          />
+        )}
       </div>
     </div>
   )

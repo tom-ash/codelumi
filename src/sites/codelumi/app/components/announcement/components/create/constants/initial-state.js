@@ -9,9 +9,17 @@ const selectableSkills = [
   }
 ]
 
+const selectedSkills = [
+  {
+    tag: 'javascript',
+    name: 'JavaScript',
+    selected: 3
+  }
+]
 const initialState = {
   selectableSkills,
   // selectableSkills: [],
+  // selectedSkills,
   selectedSkills: [],
   companyName: '',
   companyIndustry: '',
