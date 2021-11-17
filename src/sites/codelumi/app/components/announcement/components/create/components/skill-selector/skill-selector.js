@@ -6,8 +6,13 @@ import Skill from '../../../shared/components/skill/skill.js'
 function SkillSelector(props) {
   useStyles(styles)
 
-  const { selectableSkills, selectedSkill } = props
-  
+  const { selectableSkills, selectedSkills, changeState } = props
+
+  function selectSkill(selectedSkill) {
+    const newSelectedSkills = [ ...selectedSkills ].concat([selectedSkill])
+    const newSelectableSkills = [ ...selectableSkills ].filter(skill => skill.tag !== selectedSkill.tag)
+    changeState({ selectableSkills: newSelectableSkills, selectedSkills: newSelectedSkills })
+  }
 
   return (
     <>
@@ -17,11 +22,11 @@ function SkillSelector(props) {
       <div id='skill-selector'>
         <div id='selectable-skills'>
           {selectableSkills.map(skill => (
-            <Skill {...skill} key={skill.tag}/>
+            <Skill {...{ ...skill, selectSkill }} key={skill.tag}/>
           ))}
         </div>
         <div id='selected-skills'>
-          {selectableSkills.map(skill => (
+          {selectedSkills.map(skill => (
             <Skill {...skill} key={skill.tag}/>
           ))}
         </div>

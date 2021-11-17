@@ -11,8 +11,8 @@ class AnnouncementCreate extends React.Component {
   }
 
   render() {
-    const { selectableSkills, selectedSkill } = this.props
-    const skillSelectorProps = { selectableSkills, selectedSkill }
+    const { selectableSkills, selectedSkills, changeState } = this.props
+    const skillSelectorProps = { selectableSkills, selectedSkills, changeState }
 
     return (
       <div id='announcement-create'>

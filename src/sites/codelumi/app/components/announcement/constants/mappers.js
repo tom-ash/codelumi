@@ -13,6 +13,6 @@ export const mapStateToProps = store => {
   
 export const mapDispatchToProps = dispatch => {
   return {
-    // TODO
+    // changeState: value => dispatch({ type: 'announcement/create', value }),
   }
 }

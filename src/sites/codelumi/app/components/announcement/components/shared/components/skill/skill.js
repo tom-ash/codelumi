@@ -5,10 +5,9 @@ import styles from './styles/styles.scss'
 function Skill(props) {
   useStyles(styles)
 
-  const { selected, name } = props
-
+  const { tag, name, selected, selectSkill } = props
   const levels = ['Novice', 'Junior', 'Mid', 'Senior', 'Expert']
-  const [hovered, setHovered] = useState(0)
+  const [hovered, setHovered] = useState(0)  
 
   return (
     <div className='skill'>
@@ -19,12 +18,14 @@ function Skill(props) {
         {levels.map((level, index) => {
           const fillClass = selected > index || hovered > index ? 'filled' : ''
           const classNames = ['level', level.toLowerCase(), fillClass]
+          const sharedLevelProps = { className: classNames.join(' '), key: level }
+          const extendedLevelProps = selected ?
+            {} :
+            { onMouseOver: () => setHovered(index + 1), onMouseLeave: () => setHovered(0), onClick: () => selectSkill({ tag, name, selected: hovered }) }
 
           return <div
-            className={classNames.join(' ')}
-            key={level}
-            onMouseOver={() => setHovered(index + 1)}
-            onMouseLeave={() => setHovered(0)}
+            {...sharedLevelProps}
+            {...extendedLevelProps}
           />
         })}
         <div className='float-clear' />
@@ -34,7 +35,6 @@ function Skill(props) {
       </div>
     </div>
   )
-  
 }
 
 export default Skill
