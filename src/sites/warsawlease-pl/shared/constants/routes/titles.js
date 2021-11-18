@@ -3,11 +3,6 @@ import {
   EN
 } from '../langs/langs'
 
-export const ROOT_TITLES = {
-  [PL]: 'Mapa nieruchomości na wynajem w Warszawie - Mieszkania, biura i lokale użytkowe',
-  [EN]: 'Map of Real Estates for Lease in Warsaw - Apartments, Offices and Usable premises'
-}
-
 export const VISITOR_PRIVACY_SETTINGS_TITLES  = {
   [PL]: 'Ustawienia Prywatności',
   [EN]: 'Privacy Settings'

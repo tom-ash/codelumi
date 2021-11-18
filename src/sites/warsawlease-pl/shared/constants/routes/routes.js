@@ -93,7 +93,6 @@ import {
   ANNOUNCEMENT_CREATE_VERIFICATION_TRACK
 } from '../tracks/tracks'
 import {
-  ROOT_TITLES,  
   VISITOR_CONTACT_TITLES,
   VISITOR_COOKIES_POLICY_TITLES,
   VISITOR_PRIVACY_POLICY_TITLES,
@@ -112,12 +111,10 @@ import {
   USER_EDIT_TITLES
 } from './titles'
 import {
-  ROOT_KEYWORDS,
   ANNOUNCEMENT_CREATE_KEYWORDS,
   ANNOUNCEMENT_INDEX_CATALOGUE_KEYWORDS
 } from './keywords'
 import {
-  ROOT_DESCRIPTIONS,
   ANNOUNCEMENT_CREATE_DESCRIPTIONS,
   ANNOUNCEMENT_INDEX_CATALOGUE_DESCRIPTIONS
 } from './descriptions'
@@ -129,9 +126,6 @@ export default [
     url: ROOT_URLS[PL],
     lang: PL,
     track: ROOT_TRACK,
-    title: ROOT_TITLES[PL],
-    keywords: ROOT_KEYWORDS[PL],
-    description: ROOT_DESCRIPTIONS[PL],
     image: DEFAULT_IMAGE_PL,
     pageName: 'welcome',
     relatedToUrl: ANNOUNCEMENT_INDEX_CATALOGUE_URLS[PL]
@@ -140,9 +134,6 @@ export default [
     url: ROOT_URLS[EN],
     lang: EN,
     track: ROOT_TRACK,
-    title: ROOT_TITLES[EN],
-    keywords: ROOT_KEYWORDS[EN],
-    description: ROOT_DESCRIPTIONS[EN],
     image: DEFAULT_IMAGE_PL,
     pageName: 'welcome',
     relatedToUrl: ANNOUNCEMENT_INDEX_CATALOGUE_URLS[EN]
