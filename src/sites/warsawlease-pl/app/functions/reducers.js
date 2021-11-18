@@ -27,3 +27,10 @@ export const svgsReducer = (state = {}, action) => {
 export const assetsReducer = combineReducers({
   svgs: svgsReducer
 })
+
+export const linksReducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'links': return { ...state, ...action.value }
+    default: return state
+  }
+}

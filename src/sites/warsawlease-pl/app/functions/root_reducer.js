@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { appReducer, renderReducer, assetsReducer } from './reducers'
+import { appReducer, renderReducer, assetsReducer, linksReducer } from './reducers'
 import { announcementReducer } from '../components/announcement/functions/reducer'
 import { userReducer } from '../components/user/functions/reducers.js'
 import visitorReducer from '../../../shared/app/components/visitor/functions/reducers.js'
@@ -12,7 +12,8 @@ const rootReducer = combineReducers({
   announcement: announcementReducer,
   user: userReducer,
   visitor: visitorReducer,
-  page: pageReducer
+  page: pageReducer,
+  links: linksReducer
 })
 
 export default rootReducer
