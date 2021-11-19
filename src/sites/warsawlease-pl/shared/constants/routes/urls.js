@@ -3,34 +3,40 @@ import {
   EN
 } from '../langs/langs'
 
+// Migrated to server
 export const ROOT_URLS = {
   [PL]: '/',
   [EN]: 'en'
 }
 
-export const VISITOR_PRIVACY_SETTINGS_URLS = {
-  [PL]: 'ustawienia-prywatnosci',
-  [EN]: 'privacy-settings'
+// Migrated to server
+export const VISITOR_CONTACT_URLS = {
+  [PL]: 'kontakt',
+  [EN]: 'contact'
 }
 
-export const VISITOR_COOKIES_POLICY_URLS = {
-  [PL]: 'polityka-cookies',
-  [EN]: 'cookies-policy'
-}
-
-export const VISITOR_PRIVACY_POLICY_URLS = {
-  [PL]: 'polityka-prywatnosci',
-  [EN]: 'privacy-policy'
-}
-
+// Migrated to server
 export const VISITOR_TERMS_OF_SERVICE_URLS = {
   [PL]: 'regulamin',
   [EN]: 'terms-of-service'
 }
 
-export const VISITOR_CONTACT_URLS = {
-  [PL]: 'kontakt',
-  [EN]: 'contact'
+// Migrated to server
+export const VISITOR_COOKIES_POLICY_URLS = {
+  [PL]: 'polityka-cookies',
+  [EN]: 'cookies-policy'
+}
+
+// Migrated to server
+export const VISITOR_PRIVACY_POLICY_URLS = {
+  [PL]: 'polityka-prywatnosci',
+  [EN]: 'privacy-policy'
+}
+
+// Migrated to server
+export const VISITOR_PRIVACY_SETTINGS_URLS = {
+  [PL]: 'ustawienia-prywatnosci',
+  [EN]: 'privacy-settings'
 }
 
 export const PAGE_CREATE_URLS = {

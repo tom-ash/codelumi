@@ -1,22 +1,24 @@
-const links_data = [
-  { name: 'contactManager', urls_key: 'VISITOR_CONTACT_URLS', titles_key: 'VISITOR_CONTACT_TITLES' },
-  { name: 'termsOfServiceManager', urls_key: 'VISITOR_TERMS_OF_SERVICE_URLS', titles_key: 'VISITOR_TERMS_OF_SERVICE_TITLES' },
-  { name: 'cookiesPolicyManager', urls_key: 'VISITOR_COOKIES_POLICY_URLS', titles_key: 'VISITOR_COOKIES_POLICY_TITLES' },
-  { name: 'privacySettingsManager', urls_key: 'VISITOR_PRIVACY_SETTINGS_URLS', titles_key: 'VISITOR_PRIVACY_SETTINGS_TITLES' },
-  { name: 'privacyPolicyManager', urls_key: 'VISITOR_PRIVACY_POLICY_URLS', titles_key: 'VISITOR_PRIVACY_POLICY_TITLES' },
-  { name: 'addPageManager', urls_key: 'PAGE_CREATE_URLS', titles_key: 'PAGE_CREATE_TITLES' } 
+const link_tracks = [
+  { name: 'contactManager', track: 'visitor/contact' },
+  { name: 'termsOfServiceManager', track: 'visitor/terms-of-service' },
+  { name: 'cookiesPolicyManager', track: 'visitor/cookies-policy' },
+  { name: 'privacySettingsManager', track: 'visitor/privacy-settings' },
+  { name: 'privacyPolicyManager', track: 'visitor/privacy-policy' },
+  { name: 'addPageManager', track: 'page/create' } 
 ]
 
 const managers = {}
 
-links_data.map(({ name, urls_key, titles_key }) => {
+link_tracks.map(({ name, track  }) => {
   managers[name] = props => {
-    const { langs, urls, titles, clientUrl, changeRoute, langHandler } = props
-    const classNames = { container: 'link' }
+    const { links, langs, changeRoute, langHandler } = props
+    const link = links && links[track]
+    // const link = links[track] // Change to this.
+    const href = link && link.url
     const hrefLang = langHandler(langs)
-    const href = `${clientUrl}/${langHandler(urls[urls_key])}`
-    const title = langHandler(titles[titles_key])
+    const title = link && link.title
     const label = title
+    const classNames = { container: 'link' }
     const onClick = () => changeRoute({ href })
     
     return { classNames, href, hrefLang, title, label, onClick }
