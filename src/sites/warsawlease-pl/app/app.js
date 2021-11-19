@@ -49,9 +49,9 @@ class App extends React.Component {
   }
 
   render() {
-    const { render, renderPage, renderVisitor, renderAnnouncement, renderUser, lang, device, authorized, pageShowData, pageEditData, announcementShowData, announcementEditData, changeRender } = this.props
+    const { render, renderPage, renderVisitor, renderAnnouncement, renderUser, lang, links, device, authorized, pageShowData, pageEditData, announcementShowData, announcementEditData, changeRender } = this.props
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
-    const sharedProps = { appName: APP_NAME, routes, tracks, urls, langs, titles, clientUrl: CLIENT_URL, apiUrl: API_URL, render, device, authorized, changeRoute: this.changeRoute, changeRouteWithHref, changeRender, langHandler: this.langHandler }
+    const sharedProps = { appName: APP_NAME, routes, tracks, urls, langs, titles, links, clientUrl: CLIENT_URL, apiUrl: API_URL, render, device, authorized, changeRoute: this.changeRoute, changeRouteWithHref, changeRender, langHandler: this.langHandler }
     const pageProps = { ...sharedProps, customNodeParser }
     const urlComposites = { pageShowData, pageEditData, announcementShowData, announcementEditData }
 
@@ -63,7 +63,7 @@ class App extends React.Component {
             {renderAnnouncement && <Announcement/>}
             {renderPage && <Page {...pageProps}/>}
             {renderVisitor && <Visitor {...sharedProps}/>}
-            {renderUser && <User/>}
+            {renderUser && <User />}
           </div>
           <Footer {...sharedProps}/>
         </div>

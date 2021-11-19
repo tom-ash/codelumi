@@ -1,7 +1,5 @@
-import React from 'react'
 import { ANNOUNCEMENT_CREATE_FORM_URLS, ANNOUNCEMENT_INDEX_MY_URLS, USER_EDIT_URLS } from '../../../../../../shared/constants/routes/urls'
-import { ANNOUNCEMENT_CREATE_TITLES, ANNOUNCEMENT_INDEX_MY_TITLES, USER_EDIT_TITLES } from '../../../../../../shared/constants/routes/titles'
-import { ANNOUNCEMENT_CREATE_LABELS } from '../../../../../../shared/constants/routes/labels'
+import { ANNOUNCEMENT_INDEX_MY_TITLES, USER_EDIT_TITLES } from '../../../../../../shared/constants/routes/titles'
 import { deauthorizeUser } from '../../authorize/functions/adapters'
 import { SIGN_OUT_LABEL } from '../constants/labels'
 import CLIENT_URL from '../../../../../../shared/constants/urls/client.js'

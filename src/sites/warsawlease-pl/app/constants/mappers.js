@@ -10,6 +10,7 @@ export const mapStateToProps = store => {
   const { data: announcementShowData } = store.announcement.show
   const { data: announcementEditData } = store.announcement.create
   const { authorized, admin } = store.user.authorize.data
+  const { links } = store
 
   return {
     loadGa,
@@ -31,7 +32,8 @@ export const mapStateToProps = store => {
     routeSynced,
     pageEditData,
     authorized,
-    admin
+    admin,
+    links
   }
 }
   

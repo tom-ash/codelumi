@@ -42,7 +42,7 @@ function routeSender({
     const renderPrivacyMonit = { 'visitor/privacy-monit': anyNull({ statisticsConsent, marketingConsent }) }
     const render = { ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] }
     const residualState = initialStateParser && initialStateParser(state) || {}
-    const initialState = { app, render, ...visitorState, ...residualState, ...initialStateParserV2(state) }
+    const initialState = { app, render, links: state.links, ...visitorState, ...residualState, ...initialStateParserV2(state) }
     const appAsHtml = appRenderer(initialState)
     const status = 200
 
