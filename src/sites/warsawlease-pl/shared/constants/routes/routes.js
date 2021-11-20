@@ -92,14 +92,6 @@ import {
   USER_AUTHORIZE_TRACK,
   ANNOUNCEMENT_CREATE_VERIFICATION_TRACK
 } from '../tracks/tracks'
-import {
-  ANNOUNCEMENT_EDIT_TITLES,
-  ANNOUNCEMENT_INDEX_MY_TITLES,
-  USER_CREATE_FORM_TITLES,
-  USER_AUTHORIZE_TITLES,
-  USER_RESET_PASSWORD_TITLES,
-  USER_EDIT_TITLES
-} from './titles'
 
 const DEFAULT_IMAGE_PL = 'https://warsawlease.s3.eu-central-1.amazonaws.com/assets/mapa-wynajmu-nieruchomosci-w-warszawie.png'
 
@@ -273,7 +265,6 @@ export default [
     lang: PL,
     track: ANNOUNCEMENT_CREATE_EDIT_TRACK,
     urlBuilder: buildAnnouncementEditUrl,
-    title: ANNOUNCEMENT_EDIT_TITLES[PL],
     image: DEFAULT_IMAGE_PL
   },
   {
@@ -281,7 +272,6 @@ export default [
     lang: EN,
     track: ANNOUNCEMENT_CREATE_EDIT_TRACK,
     urlBuilder: buildAnnouncementEditUrl,
-    title: ANNOUNCEMENT_EDIT_TITLES[EN],
     image: DEFAULT_IMAGE_PL
   },
   {
@@ -494,14 +484,12 @@ export default [
     url: ANNOUNCEMENT_INDEX_MY_URLS[PL],
     lang: PL,
     track: ANNOUNCEMENT_INDEX_MY_TRACK,
-    title: ANNOUNCEMENT_INDEX_MY_TITLES[PL],
     image: DEFAULT_IMAGE_PL
   },
   {
     url: ANNOUNCEMENT_INDEX_MY_URLS[EN],
     lang: EN,
     track: ANNOUNCEMENT_INDEX_MY_TRACK,
-    title: ANNOUNCEMENT_INDEX_MY_TITLES[EN],
     image: DEFAULT_IMAGE_PL
   },
   {
@@ -530,14 +518,12 @@ export default [
     url: USER_CREATE_FORM_URLS[PL],
     lang: PL,
     track: USER_CREATE_FORM_TRACK,
-    title: USER_CREATE_FORM_TITLES[PL],
     image: DEFAULT_IMAGE_PL
   },
   {
     url: USER_CREATE_FORM_URLS[EN],
     lang: EN,
     track: USER_CREATE_FORM_TRACK,
-    title: USER_CREATE_FORM_TITLES[EN],
     image: DEFAULT_IMAGE_PL
   },
   {
@@ -554,42 +540,36 @@ export default [
     url: USER_AUTHORIZE_URLS[PL],
     lang: PL,
     track: USER_AUTHORIZE_TRACK,
-    title: USER_AUTHORIZE_TITLES[PL],
     image: DEFAULT_IMAGE_PL
   },
   {
     url: USER_AUTHORIZE_URLS[EN],
     lang: EN,
     track: USER_AUTHORIZE_TRACK,
-    title: USER_AUTHORIZE_TITLES[EN],
     image: DEFAULT_IMAGE_PL
   },
   {
     url: USER_RESET_PASSWORD_URLS[PL],
     lang: PL,
     track: USER_EDIT_PASSWORD_TRACK,
-    title: USER_RESET_PASSWORD_TITLES[PL],
     image: DEFAULT_IMAGE_PL
   },
   {
     url: USER_RESET_PASSWORD_URLS[EN],
     lang: EN,
     track: USER_EDIT_PASSWORD_TRACK,
-    title: USER_RESET_PASSWORD_TITLES[EN],
     image: DEFAULT_IMAGE_PL
   },
   {
     url: USER_EDIT_URLS[PL],
     lang: PL,
     track: USER_EDIT_TRACK,
-    title: USER_EDIT_TITLES[PL],
     image: DEFAULT_IMAGE_PL
   },
   {
     url: USER_EDIT_URLS[EN],
     lang: EN,
     track: USER_EDIT_TRACK,
-    title: USER_EDIT_TITLES[EN],
     image: DEFAULT_IMAGE_PL
   }
 ]

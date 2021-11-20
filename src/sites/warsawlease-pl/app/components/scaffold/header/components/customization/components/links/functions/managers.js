@@ -21,11 +21,11 @@ export function addAnnouncementManager(props) {
 }
 
 export function signUpManager(props) {
-  const { clientUrl, urls, langs, titles, changeRoute, langHandler } = props
+  const { clientUrl, urls, langs, changeRoute, langHandler } = props
   const classNames = { container: 'header-link sign-up' }
   const href = `${clientUrl}/${langHandler(urls.USER_CREATE_FORM_URLS)}`
   const hrefLang = langHandler(langs)
-  const title = langHandler(titles.USER_CREATE_FORM_TITLES)
+  const title = '' // TODO
   const label = title
   const onClick = () => changeRoute({ href })
 
@@ -33,11 +33,11 @@ export function signUpManager(props) {
 }
 
 export function signInManager(props) {
-  const { clientUrl, urls, langs, titles, changeRoute, langHandler } = props
+  const { clientUrl, urls, langs, changeRoute, langHandler } = props
   const classNames = { container: 'header-link sign-in' }
   const href = `${clientUrl}/${langHandler(urls.USER_AUTHORIZE_URLS)}`
   const hrefLang = langHandler(langs)
-  const title = langHandler(titles.USER_AUTHORIZE_TITLES)
+  const title = '' // TODO
   const label = title
   const onClick = () => changeRoute({ href })
 
@@ -45,11 +45,11 @@ export function signInManager(props) {
 }
 
 export function myAccountManager(props) {
-  const { clientUrl, tracks, urls, langs, titles, changeRender, langHandler } = props
+  const { clientUrl, tracks, urls, langs, changeRender, langHandler } = props
   const classNames = { container: 'header-link my-account' }
   const href = `${clientUrl}/${langHandler(urls.USER_SHOW_URLS)}`
   const hrefLang = langHandler(langs)
-  const title = langHandler(titles.USER_SHOW_TITLES)
+  const title = '' // TODO
   const label = title
   const onClick = () => changeRender({ [tracks.USER_TRACK]: true, [tracks.USER_SHOW_TRACK]: true })
 

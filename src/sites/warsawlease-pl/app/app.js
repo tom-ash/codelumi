@@ -22,7 +22,6 @@ import changeRouteWithHref from './functions/routes/changers/route-with-href.js'
 import routes from '../shared/constants/routes/routes.js'
 import * as langs from '../shared/constants/langs/langs.js'
 import * as urls from '../shared/constants/routes/urls.js'
-import * as titles from '../shared/constants/routes/titles.js'
 import * as tracks from '../shared/constants/tracks/tracks.js'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
@@ -51,7 +50,7 @@ class App extends React.Component {
   render() {
     const { render, renderPage, renderVisitor, renderAnnouncement, renderUser, lang, links, device, authorized, pageShowData, pageEditData, announcementShowData, announcementEditData, changeRender } = this.props
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
-    const sharedProps = { appName: APP_NAME, routes, tracks, urls, langs, titles, links, clientUrl: CLIENT_URL, apiUrl: API_URL, render, device, authorized, changeRoute: this.changeRoute, changeRouteWithHref, changeRender, langHandler: this.langHandler }
+    const sharedProps = { appName: APP_NAME, routes, tracks, urls, langs, links, clientUrl: CLIENT_URL, apiUrl: API_URL, render, device, authorized, changeRoute: this.changeRoute, changeRouteWithHref, changeRender, langHandler: this.langHandler }
     const pageProps = { ...sharedProps, customNodeParser }
     const urlComposites = { pageShowData, pageEditData, announcementShowData, announcementEditData }
 
