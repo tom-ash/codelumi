@@ -30,10 +30,7 @@ import {
   VISITOR_CONTACT_TRACK
 } from '../tracks/tracks'
 import {
-  ROOT_TITLES,
-  PAGE_CREATE_TITLES,
-  PAGE_INDEX_MAP_TITLES,
-  PAGE_INDEX_MANAGE_TITLES
+  ROOT_TITLES
 } from './titles'
 import {
   ROOT_KEYWORDS
@@ -79,21 +76,18 @@ export default [
     url: PAGE_CREATE_URLS[PL],
     lang: PL,
     track: PAGE_CREATE_TRACK,
-    title: PAGE_CREATE_TITLES[PL],
     image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_CREATE_URLS[EN],
     lang: EN,
     track: PAGE_CREATE_TRACK,
-    title: PAGE_CREATE_TITLES[EN],
     image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_EDIT_URLS[PL],
     lang: PL,
     track: PAGE_EDIT_TRACK,
-    title: PAGE_CREATE_TITLES[PL],
     image: DEFAULT_IMAGE_PL,
     initialStateParser: pageEditStateParser,
     stateSetter: pageEditStateSetter,
@@ -103,7 +97,6 @@ export default [
     url: PAGE_EDIT_URLS[EN],
     lang: EN,
     track: PAGE_EDIT_TRACK,
-    title: PAGE_CREATE_TITLES[EN],
     image: DEFAULT_IMAGE_PL,
     initialStateParser: pageEditStateParser,
     stateSetter: pageEditStateSetter,
@@ -113,28 +106,24 @@ export default [
     url: PAGE_INDEX_MAP_URLS[PL],
     lang: PL,
     track: PAGE_INDEX_MAP_TRACK,
-    title: PAGE_INDEX_MAP_TITLES[PL],
     image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_INDEX_MAP_URLS[EN],
     lang: EN,
     track: PAGE_INDEX_MAP_TRACK,
-    title: PAGE_INDEX_MAP_TITLES[EN],
     image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_INDEX_MANAGE_URLS[PL],
     lang: PL,
     track: PAGE_INDEX_MANAGE_TRACK,
-    title: PAGE_INDEX_MANAGE_TITLES[PL],
     image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_INDEX_MANAGE_URLS[EN],
     lang: EN,
     track: PAGE_INDEX_MANAGE_TRACK,
-    title: PAGE_INDEX_MANAGE_TITLES[EN],
     image: DEFAULT_IMAGE_PL
   },
   {

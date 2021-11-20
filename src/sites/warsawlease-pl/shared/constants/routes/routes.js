@@ -93,9 +93,6 @@ import {
   ANNOUNCEMENT_CREATE_VERIFICATION_TRACK
 } from '../tracks/tracks'
 import {
-  PAGE_CREATE_TITLES,
-  PAGE_INDEX_MAP_TITLES,
-  PAGE_INDEX_MANAGE_TITLES,
   ANNOUNCEMENT_EDIT_TITLES,
   ANNOUNCEMENT_INDEX_MY_TITLES,
   USER_CREATE_FORM_TITLES,
@@ -187,21 +184,18 @@ export default [
     url: PAGE_CREATE_URLS[PL],
     lang: PL,
     track: PAGE_CREATE_TRACK,
-    title: PAGE_CREATE_TITLES[PL],
     image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_CREATE_URLS[EN],
     lang: EN,
     track: PAGE_CREATE_TRACK,
-    title: PAGE_CREATE_TITLES[EN],
     image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_EDIT_URLS[PL],
     lang: PL,
     track: PAGE_EDIT_TRACK,
-    title: PAGE_CREATE_TITLES[PL],
     image: DEFAULT_IMAGE_PL,
     initialStateParser: pageEditStateParser,
     stateSetter: pageEditStateSetter,
@@ -211,7 +205,6 @@ export default [
     url: PAGE_EDIT_URLS[EN],
     lang: EN,
     track: PAGE_EDIT_TRACK,
-    title: PAGE_CREATE_TITLES[EN],
     image: DEFAULT_IMAGE_PL,
     initialStateParser: pageEditStateParser,
     stateSetter: pageEditStateSetter,
@@ -221,28 +214,24 @@ export default [
     url: PAGE_INDEX_MAP_URLS[PL],
     lang: PL,
     track: PAGE_INDEX_MAP_TRACK,
-    title: PAGE_INDEX_MAP_TITLES[PL],
     image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_INDEX_MAP_URLS[EN],
     lang: EN,
     track: PAGE_INDEX_MAP_TRACK,
-    title: PAGE_INDEX_MAP_TITLES[EN],
     image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_INDEX_MANAGE_URLS[PL],
     lang: PL,
     track: PAGE_INDEX_MANAGE_TRACK,
-    title: PAGE_INDEX_MANAGE_TITLES[PL],
     image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_INDEX_MANAGE_URLS[EN],
     lang: EN,
     track: PAGE_INDEX_MANAGE_TRACK,
-    title: PAGE_INDEX_MANAGE_TITLES[EN],
     image: DEFAULT_IMAGE_PL
   },
   {
