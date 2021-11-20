@@ -42,3 +42,10 @@ const authorizeReducer = combineReducers({
 export const userReducer = combineReducers({
   authorize: authorizeReducer
 })
+
+export const linksReducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'links': return { ...state, ...action.value }
+    default: return state
+  }
+}

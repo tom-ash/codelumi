@@ -12,6 +12,7 @@ export const mapStateToProps = store => {
   const { statisticsConsent, marketingConsent } = store.visitor.consents
   const { data: pageShowData } = store.page.show
   const { data: pageEditData } = store.page.edit
+  const { links } = store
   
   return {
     device,
@@ -26,7 +27,8 @@ export const mapStateToProps = store => {
     pageShowData,
     pageEditData,
     statisticsConsent,
-    marketingConsent
+    marketingConsent,
+    links
   }
 }
   
