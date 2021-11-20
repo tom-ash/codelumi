@@ -29,15 +29,6 @@ import {
   VISITOR_TERMS_OF_SERVICE_TRACK,
   VISITOR_CONTACT_TRACK
 } from '../tracks/tracks'
-import {
-  ROOT_TITLES
-} from './titles'
-import {
-  ROOT_KEYWORDS
-} from './keywords'
-import {
-  ROOT_DESCRIPTIONS
-} from './descriptions'
 
 const DEFAULT_IMAGE_PL = ``
 
@@ -46,9 +37,6 @@ export default [
     url: ROOT_URLS[PL],
     lang: PL,
     track: ROOT_TRACK,
-    title: ROOT_TITLES[PL],
-    keywords: ROOT_KEYWORDS[PL],
-    description: ROOT_DESCRIPTIONS[PL],
     image: DEFAULT_IMAGE_PL,
     pageName: 'root'
   },
@@ -56,9 +44,6 @@ export default [
     url: ROOT_URLS[EN],
     lang: EN,
     track: ROOT_TRACK,
-    title: ROOT_TITLES[EN],
-    keywords: ROOT_KEYWORDS[EN],
-    description: ROOT_DESCRIPTIONS[EN],
     image: DEFAULT_IMAGE_PL,
     pageName: 'root'
   },
