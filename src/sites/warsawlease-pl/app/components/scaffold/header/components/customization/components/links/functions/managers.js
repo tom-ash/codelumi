@@ -4,7 +4,7 @@ import { ANNOUNCEMENT_CREATE_LABELS } from '../../../../../../../../../shared/co
 
 export function addAnnouncementManager(props) {
   const { isMobile, langs, links, changeRoute, langHandler } = props
-  const linkData = links['announcement/create']
+  const linkData = links['announcement/create/form']
   const href = linkData && linkData.url
   const hrefLang = langHandler(langs)
   const title = linkData && linkData.title

@@ -4,7 +4,7 @@ import { SIGN_OUT_LABEL } from '../constants/labels'
 export function addAnnouncementManager(props) {
   const { links, lang } = props
   const { changeRoute } = this.context
-  const link = links['announcement/create']
+  const link = links['announcement/create/form']
   const href = link && link.url
   const hrefLang = lang
   const title = this.langHandler({ pl: 'Dodaj bezpłatne ogłoszenie', en: 'Add Free Announcement' })
