@@ -1,11 +1,12 @@
-import { ANNOUNCEMENT_CREATE_FORM_URLS, ANNOUNCEMENT_INDEX_MY_URLS, USER_EDIT_URLS } from '../../../../../../shared/constants/routes/urls'
 import { deauthorizeUser } from '../../authorize/functions/adapters'
 import { SIGN_OUT_LABEL } from '../constants/labels'
-import CLIENT_URL from '../../../../../../shared/constants/urls/client.js'
 
-export function addAnnouncementManager({ hrefLang }) {
+export function addAnnouncementManager(props) {
+  const { links, lang } = props
   const { changeRoute } = this.context
-  const href = `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_CREATE_FORM_URLS)}`
+  const link = links['announcement/create']
+  const href = link && link.url
+  const hrefLang = lang
   const title = this.langHandler({ pl: 'Dodaj bezpłatne ogłoszenie', en: 'Add Free Announcement' })
 
   return {
@@ -18,32 +19,40 @@ export function addAnnouncementManager({ hrefLang }) {
   }
 }
 
-export function myAnnouncementsManager({ hrefLang }) {
-  const href = `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_INDEX_MY_URLS)}`
-  const title = '' // TODO
+export function myAnnouncementsManager(props) {
+  const { links, lang } = props
   const { changeRoute } = this.context
+  const link = links['announcement/index/user']
+  const href = link && link.url
+  const hrefLang = lang
+  const title = link && link.title
+  const label = title
 
   return {
-    classNames: { container: 'my-announcements' },
+    classNames: { container: 'add-announcement' },
     href,
     hrefLang,
     title,
-    label: title,
+    label,
     onClick: () => changeRoute({ href })
   }
 }
 
-export function accountManager({ hrefLang }) {
-  const href = `${CLIENT_URL}/${this.langHandler(USER_EDIT_URLS)}`
-  const title = '' // TODO
+export function accountManager(props) {
+  const { links, lang } = props
   const { changeRoute } = this.context
+  const link = links['user/edit']
+  const href = link && link.url
+  const hrefLang = lang
+  const title = link && link.title
+  const label = title
 
   return {
-    classNames: { container: 'settings' },
+    classNames: { container: 'add-announcement' },
     href,
     hrefLang,
     title,
-    label: title,
+    label,
     onClick: () => changeRoute({ href })
   }
 }

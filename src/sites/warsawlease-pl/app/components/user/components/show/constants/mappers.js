@@ -1,7 +1,6 @@
 export const mapStateToProps = store => {
-  const {
-    lang
-  } = store.app
+  const { lang } = store.app
+  const { links } = store
   
   const {
     name,
@@ -11,7 +10,8 @@ export const mapStateToProps = store => {
   return {
     lang,
     name,
-    accountType
+    accountType,
+    links
   }
 }
     
