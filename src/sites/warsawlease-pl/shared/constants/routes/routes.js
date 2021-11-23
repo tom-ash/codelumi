@@ -497,22 +497,14 @@ export default [
     lang: PL,
     track: ANNOUNCEMENT_SHOW_TRACK,
     needsDataInitialization: true,
-    urlBuilder: buildAnnouncementShowUrl,
-    titleParser: announcementShowTitleParser,
-    descriptionParser: announcementShowDescriptionParser,
-    keywordsParser: announcementShowKeywordsParser,
-    imageParser: announcementShowMetaDataImageParser
+    urlBuilder: buildAnnouncementShowUrl
   },
   {
     url: ANNOUNCEMENT_SHOW_URLS[EN],
     lang: EN,
     track: ANNOUNCEMENT_SHOW_TRACK,
     needsDataInitialization: true,
-    urlBuilder: buildAnnouncementShowUrl,
-    titleParser: announcementShowTitleParser,
-    descriptionParser: announcementShowDescriptionParser,
-    keywordsParser: announcementShowKeywordsParser,
-    imageParser: announcementShowMetaDataImageParser
+    urlBuilder: buildAnnouncementShowUrl
   },
   {
     url: USER_CREATE_FORM_URLS[PL],
