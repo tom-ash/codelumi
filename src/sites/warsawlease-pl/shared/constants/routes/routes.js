@@ -3,10 +3,6 @@ import buildAnnouncementEditUrl from '../../functions/builders/announcement/edit
 import buildPageEditUrl from '../../../../shared/app/components/page/components/edit/functions/build-page-edit-url.js'
 import pageEditStateParser from '../../../../shared/app/components/page/components/edit/functions/initial-state-parser.js'
 import pageEditStateSetter from '../../../../shared/app/components/page/components/edit/functions/state-setter.js'
-import announcementShowTitleParser from '../../functions/parsers/meta-data/announcement/show/title'
-import announcementShowDescriptionParser from '../../functions/parsers/meta-data/announcement/show/description'
-import announcementShowKeywordsParser from '../../functions/parsers/meta-data/announcement/show/keywords'
-import announcementShowMetaDataImageParser from '../../functions/parsers/meta-data/announcement/show/image'
 
 import {
   PL,
