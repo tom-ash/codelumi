@@ -4,9 +4,11 @@ import CLIENT_URL from '../../../../../../../../../../../shared/constants/urls/c
 import getRouteByLang from '../../../../../../../../../../../../shared/app/functions/routes/getters/route-by-lang.js'
 
 export function radioManager(props) {
-  const { changeRoute, render, lang, urlComposites } = props
+  const { links, changeRoute, render, lang, urlComposites } = props
   const { url: plUrl } = getRouteByLang({ routes, render, lang: 'pl', urlComposites })
   const { url: enUrl } = getRouteByLang({ routes, render, lang: 'en', urlComposites })
+  const plHref = links.currentPl || `${CLIENT_URL}/${plUrl == '/' ? '' : plUrl}`
+  const enHref = links.currentEn || `${CLIENT_URL}/${enUrl}`
 
   return {
     name: 'lang-switch',
@@ -15,15 +17,15 @@ export function radioManager(props) {
     radios: [
       {
         value: 'pl',
-        label: <a href={plUrl} onClick={(e) => e.preventDefault()} className='pl-flag' />
+        label: <a href={plHref} onClick={(e) => e.preventDefault()} className='pl-flag' />
       },
       {
         value: 'en',
-        label: <a href={enUrl} onClick={(e) => e.preventDefault()}  className='en-flag' />
+        label: <a href={enHref} onClick={(e) => e.preventDefault()}  className='en-flag' />
       }
     ],
     onClick: value => {
-      const href = `${CLIENT_URL}/${value === 'pl' ? plUrl : enUrl}`
+      const href = value == 'pl' ? plHref : enHref
 
       changeRoute({ href, withoutScroll: true })
     }

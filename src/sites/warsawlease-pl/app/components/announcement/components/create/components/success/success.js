@@ -1,5 +1,4 @@
 import React from 'react'
-import { buildLink } from '../../../../functions/build-link'
 import { ManagedLink } from 'managed-inputs'
 import { shareOnFacebookManager, goToAnnouncementManager } from './functions/managers'
 import SVG from '../../../../../support/components/svg/svg'
@@ -35,34 +34,6 @@ class AnnouncementCreateSuccess extends React.Component {
           {this.langHandler(SHARE_ON_FACEBOOK_TEXT)}
         </div>
         <ManagedLink {...this.shareOnFacebookManager()} />
-        {/* <div className='input-explanation'>
-          {langHandler({
-            pl: 'Ogłoszenie zostało dodane.',
-            en: 'The Announcement has been added.'
-          })}
-        </div>
-        <div className='separation-line' />
-        <div className='reach-more'>
-          {langHandler({
-            pl: 'Dotrzyj do większego grona odbiorców.',
-            en: 'Reach more recipients.'
-          })}
-        </div>
-        <div
-          className='share-on-facebook'
-          onClick={() => shareOnFacebook(buildLink(this.props), isMobile)}
-        >
-          <div className='button'>
-            <SVG name='facebook' />
-          </div>
-          <div className='text'>
-            {langHandler({
-              pl: 'Udostępnij na Facebook\'u',
-              en: 'Share on Facebook'
-            })}
-          </div>
-        </div>
-        <ManagedLink {...this.goToAnnouncementManager()} /> */}
       </div>
     )
   }

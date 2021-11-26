@@ -5,7 +5,6 @@ import { parseDistrict } from '../../../../../../../../../shared/functions/parse
 import { AreaPresenter } from '../../../../../show/functions/area-presenter'
 import { RentPresenter } from '../../../../../show/functions/rent-presenter'
 import { viewAnnouncement } from '../../../../../../functions/view-announcement'
-import { buildLink } from '../../../../../../functions/build-link'
 import scrollToElement from '../../../../../../../../../../shared/app/functions/screen/scrollers/to-element.js'
 import { sendAnalyticsEvent } from '../../../../../../../../functions/google-analytics/send-analytics-event'
 
@@ -25,8 +24,14 @@ const AnnouncementShowMiniTile = ({
   isMobile,
   miniListFarthestScrollTop,
   index,
-  miniListFarthestScrollLeft
+  miniListFarthestScrollLeft,
+  url,
+  title
 }) => {
+
+  console.log("HERE")
+  console.log(url)
+  console.log(title)
 
   const DESKTOP_TILE_HEIGHT = 227
   const MOBILE_TILE_WIDTH = 240
@@ -38,12 +43,8 @@ const AnnouncementShowMiniTile = ({
     return (
       <a
         className='announcement-show-container'
-        href={buildLink({
-          id,
-          category,
-          district,
-          lang
-        })}
+        href={url}
+        title={title}
       />
     )
   }
@@ -52,12 +53,8 @@ const AnnouncementShowMiniTile = ({
     <a
       className='announcement-show-container'
       key={id}
-      href={buildLink({
-        id,
-        category,
-        district,
-        lang
-      })}
+      href={url}
+      title={title}
       onMouseOver={() => {
         const pin = document.getElementById(`googl-map-pin-${id}`)
 

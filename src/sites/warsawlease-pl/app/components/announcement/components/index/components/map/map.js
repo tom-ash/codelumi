@@ -72,6 +72,8 @@ class AnnouncementIndexMap extends React.Component {
                 langHandler={this.langHandler}
                 changeData={changeData}
                 isMobile={isMobile}
+                url={announcement.url}
+                title={announcement.title}
                 miniListFarthestScrollTop={miniListFarthestScrollTop}
                 miniListFarthestScrollLeft={miniListFarthestScrollLeft}
               />

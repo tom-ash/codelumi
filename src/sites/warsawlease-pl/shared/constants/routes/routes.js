@@ -1,4 +1,3 @@
-import buildAnnouncementShowUrl from '../../functions/builders/announcement/show-url'
 import buildAnnouncementEditUrl from '../../functions/builders/announcement/edit-url'
 import buildPageEditUrl from '../../../../shared/app/components/page/components/edit/functions/build-page-edit-url.js'
 import pageEditStateParser from '../../../../shared/app/components/page/components/edit/functions/initial-state-parser.js'
@@ -492,15 +491,13 @@ export default [
     url: ANNOUNCEMENT_SHOW_URLS[PL],
     lang: PL,
     track: ANNOUNCEMENT_SHOW_TRACK,
-    needsDataInitialization: true,
-    urlBuilder: buildAnnouncementShowUrl
+    needsDataInitialization: true
   },
   {
     url: ANNOUNCEMENT_SHOW_URLS[EN],
     lang: EN,
     track: ANNOUNCEMENT_SHOW_TRACK,
-    needsDataInitialization: true,
-    urlBuilder: buildAnnouncementShowUrl
+    needsDataInitialization: true
   },
   {
     url: USER_CREATE_FORM_URLS[PL],

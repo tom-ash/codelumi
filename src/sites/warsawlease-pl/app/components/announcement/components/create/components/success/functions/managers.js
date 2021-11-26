@@ -40,10 +40,3 @@ export function goToAnnouncementManager() {
     }
   }
 }
-
-{/* <div
-className='share-on-facebook'
-onClick={() => shareOnFacebook.call(buildLink(this.props), isMobile)}
->
-
-</div> */}
