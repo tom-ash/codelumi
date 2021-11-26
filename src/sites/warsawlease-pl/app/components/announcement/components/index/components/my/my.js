@@ -89,6 +89,8 @@ class AnnouncementIndexMy extends React.Component {
             control={this.controlProvider(announcement, index)}
             control={this.controlProvider(announcement, index)}
             lang={lang}
+            url={announcement.url}
+            title={announcement.title}
           />))}
           <div className='float-clear' />
         </div>
