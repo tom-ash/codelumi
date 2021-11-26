@@ -4,7 +4,6 @@ import { ManagedLink } from 'managed-inputs'
 import { getDerivedStateFromProps } from './functions/get-derived-state-from-props'
 import langHandler from '../../../../../../../functions/lang-handler'
 import { linkManager } from './functions/managers'
-import { buildLink } from '../../../../../functions/build-link'
 import { shareOnFacebook } from '../../../../../functions/share-on-facebook'
 import SVG from '../../../../../../support/components/svg/svg'
 import AppContext from '../../../../../../../constants/context.js'
@@ -27,7 +26,8 @@ class AnnouncementShowPictures extends React.Component {
       disableSLides,
       heightQuantifier,
       venue,
-      isMobile
+      isMobile,
+      url
     } = this.props
 
     const {
@@ -51,7 +51,7 @@ class AnnouncementShowPictures extends React.Component {
         {venue !== 'mini-list' &&
         <div
           className='share-on-facebook-button show'
-          onClick={() => shareOnFacebook(buildLink(this.props), isMobile)}
+          onClick={() => shareOnFacebook(url, isMobile)}
         >
           <SVG name='facebook' />
         </div>}

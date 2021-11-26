@@ -1,6 +1,5 @@
 import { categories } from '../../../../../constants/categories'
 import { viewAnnouncement } from '../../../../../functions/view-announcement'
-import { buildLink } from '../../../../../functions/build-link'
 import { sendAnalyticsEvent } from '../../../../../../../functions/google-analytics/send-analytics-event'
 
 export function drawPins() {
@@ -71,17 +70,16 @@ function addNewPins() {
   let pins = []
   announcements.map(announcement => {
     const {
-      id,
       category: categoryNumber,
-      district
+      url,
+      title
     } = announcement
-    const { lang } = this.props
     const category = categories.find(category => category.number === categoryNumber)
     const pin = category.pin
     const svg = svgs[pin.svg]
 
     const htmlContent = (
-      `<a href="${buildLink({ id, category: categoryNumber, district, lang })}">
+      `<a href="${url}" title="${title}">
         <div class='icon ${pin.class}'>
           <SVG
             xmlns="http://www.w3.org/2000/svg"

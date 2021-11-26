@@ -1,14 +1,13 @@
 import React from 'react'
 import SVG from '../../../../../../support/components/svg/svg'
-import { buildLink } from '../../../../../functions/build-link.js'
 import { shareOnFacebook } from '../../../../../functions/share-on-facebook.js'
 
 export function shareOnFacebookManager() {
-  const { isMobile, lang, announcement } = this.props
+  const { isMobile, announcement } = this.props
   if (!announcement) return null
 
-  const { id, category, district} = announcement
-  const href = buildLink({ lang, id, category, district })
+  const { url } = announcement
+  const href = url
 
   return {
     classNames: { input: 'share-on-facebook' },
@@ -24,19 +23,5 @@ export function shareOnFacebookManager() {
       </>
     ),
     onClick: () => shareOnFacebook(href, isMobile)
-  }
-}
-
-export function goToAnnouncementManager() {
-  const { changeRoute } = this.context
-  const href = buildLink(this.props)
-
-  return {
-    classNames: { container: 'go-to-announcement' },
-    href,
-    label: this.langHandler({ pl: 'Pokaż dodane ogłoszenie', en: 'Show the added announcement' }),
-    onClick: () => {
-      changeRoute({ href })
-    }
   }
 }

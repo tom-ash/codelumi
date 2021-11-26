@@ -28,11 +28,6 @@ const AnnouncementShowMiniTile = ({
   url,
   title
 }) => {
-
-  console.log("HERE")
-  console.log(url)
-  console.log(title)
-
   const DESKTOP_TILE_HEIGHT = 227
   const MOBILE_TILE_WIDTH = 240
   

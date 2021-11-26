@@ -30,7 +30,7 @@ export const assetsReducer = combineReducers({
 
 export const linksReducer = (state = {}, action) => {
   switch (action.type) {
-    case 'links': return { ...state, ...action.value }
+    case 'links': return action.value
     default: return state
   }
 }

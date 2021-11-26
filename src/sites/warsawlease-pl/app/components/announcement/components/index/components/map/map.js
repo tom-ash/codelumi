@@ -104,6 +104,8 @@ class AnnouncementIndexMap extends React.Component {
               closeButtonOnClick={() => this.props.changeData({ tileId: null, tile: null })}
               isMobile={isMobile}
               changeApp={changeApp}
+              url={tile.url}
+              title={tile.title}
             />
           </div>}
         </div>

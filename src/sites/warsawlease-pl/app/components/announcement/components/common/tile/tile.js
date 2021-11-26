@@ -12,7 +12,6 @@ import { phoneSwitchProvider } from '../../../functions/phone-switch-provider'
 import { togglePhone } from '../../../functions/toggle-phone'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import { buildLink } from '../../../functions/build-link'
 
 function getPositionFromTop() {
   if (!this.container.current) return
@@ -73,9 +72,10 @@ class AnnouncementTile extends React.Component {
       resetControl,
       changeData,
       resetData,
-      changeApp
+      changeApp,
+      url,
+      title
     } = this.props
-
     const venueShow = venue === 'show'
     const positionFromTop = getPositionFromTop.apply(this)
     const deviceClasss = device === 'largePc' ? ' large-pc' : ''
@@ -91,12 +91,8 @@ class AnnouncementTile extends React.Component {
         <a
           ref={this.container}
           className='announcement-tile-anchor'
-          href={buildLink({
-            id,
-            category,
-            district,
-            lang
-          })}
+          href={url}
+          title={title}
         />
       )
     }
@@ -159,6 +155,8 @@ class AnnouncementTile extends React.Component {
           isMobile={isMobile}
           changeApp={changeApp}
           changeData={changeData}
+          url={url}
+          title={title}
         />
         <AnnouncementShowPrimary
           lang={lang}
