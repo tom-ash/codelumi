@@ -1,4 +1,3 @@
-import buildAnnouncementEditUrl from '../../functions/builders/announcement/edit-url'
 import buildPageEditUrl from '../../../../shared/app/components/page/components/edit/functions/build-page-edit-url.js'
 import pageEditStateParser from '../../../../shared/app/components/page/components/edit/functions/initial-state-parser.js'
 import pageEditStateSetter from '../../../../shared/app/components/page/components/edit/functions/state-setter.js'
@@ -259,14 +258,12 @@ export default [
     url: ANNOUNCEMENT_EDIT_URLS[PL],
     lang: PL,
     track: ANNOUNCEMENT_CREATE_EDIT_TRACK,
-    urlBuilder: buildAnnouncementEditUrl,
     image: DEFAULT_IMAGE_PL
   },
   {
     url: ANNOUNCEMENT_EDIT_URLS[EN],
     lang: EN,
     track: ANNOUNCEMENT_CREATE_EDIT_TRACK,
-    urlBuilder: buildAnnouncementEditUrl,
     image: DEFAULT_IMAGE_PL
   },
   {
