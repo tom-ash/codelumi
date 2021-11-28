@@ -7,8 +7,8 @@ export function radioManager(props) {
   const { links, changeRoute, render, lang, urlComposites } = props
   const { url: plUrl } = getRouteByLang({ routes, render, lang: 'pl', urlComposites })
   const { url: enUrl } = getRouteByLang({ routes, render, lang: 'en', urlComposites })
-  const plHref = links.currentPl || `${CLIENT_URL}/${plUrl == '/' ? '' : plUrl}`
-  const enHref = links.currentEn || `${CLIENT_URL}/${enUrl}`
+  const plHref = links.langs && links.langs.pl || links.currentPl || `${CLIENT_URL}/${plUrl == '/' ? '' : plUrl}`
+  const enHref = links.langs && links.langs.en || links.currentEn || `${CLIENT_URL}/${enUrl}`
 
   return {
     name: 'lang-switch',

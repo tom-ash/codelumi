@@ -9,11 +9,8 @@ class PageShow extends React.Component {
   }
 
   changePage = () => {
-    const { clientUrl, name, langVerUrls, lang, changeRoute } = this.props
-
-    // TODO
-    // const path = buildPageEditUrl({ pageEditData: { name, langVerUrls }, lang })
-    const href = `${clientUrl}/${path}`
+    const { links, changeRoute } = this.props
+    const href = links['page/edit']
 
     changeRoute({ href })
   }
