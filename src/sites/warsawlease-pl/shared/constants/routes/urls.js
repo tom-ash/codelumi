@@ -160,7 +160,7 @@ export const ANNOUNCEMENT_INDEX_CATALOGUE_VIRTUAL_OFFICES_URLS = {
 }
 
 export const ANNOUNCEMENT_INDEX_CATALOGUE_COWORKING_URLS = {
-  [PL]: 'warszawa/wynajem/nieruchomosci/katalog/coworking',
+  [PL]: 'warszawa/wynajem/nieruchomosci/katalog/przestrzenie-coworkingowe',
   [EN]: 'property/catalogue/coworking'
 }
 
