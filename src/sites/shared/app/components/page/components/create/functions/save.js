@@ -2,23 +2,20 @@ import getAccessToken from '../../../../../../app/functions/tokens/getters/get-t
 import { CREATE_API_ROUTE } from '../constants/api_route_data.js'
 
 export function save() {
-  const { clientUrl, apiUrl, inputtedName: name, changeRoute } = this.props
+  const { lang, apiUrl, inputtedName: name, changeRoute } = this.props
   const { method, route } = CREATE_API_ROUTE
 
   fetch(`${apiUrl}/${route}`, {
     method,
     headers: {
       'Content-Type': 'application/json',
-      'Access-Token': getAccessToken()
+      'Access-Token': getAccessToken(),
+      'Lang': lang
     },
     body: JSON.stringify({ name })
   })
   .then(response => {
     if (response.ok) return response.json()
   })
-  .then(langVerUrls => {
-    // TODO
-
-    // changeRoute({ href })
-  })
+  .then(href => changeRoute({ href }))
 }
