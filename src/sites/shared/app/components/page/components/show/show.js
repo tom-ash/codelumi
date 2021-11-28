@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import PageTile from '../shared/components/tile/tile'
-import buildPageEditUrl from '../edit/functions/build-page-edit-url.js'
 
 class PageShow extends React.Component {
   constructor(props) {
@@ -11,7 +10,9 @@ class PageShow extends React.Component {
 
   changePage = () => {
     const { clientUrl, name, langVerUrls, lang, changeRoute } = this.props
-    const path = buildPageEditUrl({ pageEditData: { name, langVerUrls }, lang })
+
+    // TODO
+    // const path = buildPageEditUrl({ pageEditData: { name, langVerUrls }, lang })
     const href = `${clientUrl}/${path}`
 
     changeRoute({ href })

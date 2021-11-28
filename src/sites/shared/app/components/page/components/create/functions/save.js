@@ -1,5 +1,4 @@
 import getAccessToken from '../../../../../../app/functions/tokens/getters/get-tokens.js'
-import buildPageEditUrl from '../../edit/functions/build-page-edit-url.js'
 import { CREATE_API_ROUTE } from '../constants/api_route_data.js'
 
 export function save() {
@@ -18,7 +17,8 @@ export function save() {
     if (response.ok) return response.json()
   })
   .then(langVerUrls => {
-    const path = buildPageEditUrl({ pageEditData: { name, langVerUrls }, lang: 'en' })
+    // TODO
+    // const path = buildPageEditUrl({ pageEditData: { name, langVerUrls }, lang: 'en' })
     const href = `${clientUrl}/${path}`
 
     changeRoute({ href })
