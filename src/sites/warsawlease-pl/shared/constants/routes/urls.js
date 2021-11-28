@@ -115,7 +115,7 @@ export const ANNOUNCEMENT_INDEX_MAP_VIRTUAL_OFFICES_URLS = {
 }
 
 export const ANNOUNCEMENT_INDEX_MAP_COWORKING_URLS = {
-  [PL]: 'warszawa/wynajem/nieruchomosci/mapa/coworking',
+  [PL]: 'warszawa/wynajem/nieruchomosci/mapa/przestrzenie-coworkingowe',
   [EN]: 'property/map/coworking'
 }
 
