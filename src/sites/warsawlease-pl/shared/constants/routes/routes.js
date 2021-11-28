@@ -1,6 +1,3 @@
-import pageEditStateParser from '../../../../shared/app/components/page/components/edit/functions/initial-state-parser.js'
-import pageEditStateSetter from '../../../../shared/app/components/page/components/edit/functions/state-setter.js'
-
 import {
   PL,
   EN
@@ -181,17 +178,13 @@ export default [
     url: PAGE_EDIT_URLS[PL],
     lang: PL,
     track: PAGE_EDIT_TRACK,
-    image: DEFAULT_IMAGE_PL,
-    initialStateParser: pageEditStateParser,
-    stateSetter: pageEditStateSetter
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_EDIT_URLS[EN],
     lang: EN,
     track: PAGE_EDIT_TRACK,
-    image: DEFAULT_IMAGE_PL,
-    initialStateParser: pageEditStateParser,
-    stateSetter: pageEditStateSetter
+    image: DEFAULT_IMAGE_PL
   },
   {
     url: PAGE_INDEX_MAP_URLS[PL],

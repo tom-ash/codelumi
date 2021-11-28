@@ -18,9 +18,7 @@ export function save() {
   })
   .then(langVerUrls => {
     // TODO
-    // const path = buildPageEditUrl({ pageEditData: { name, langVerUrls }, lang: 'en' })
-    const href = `${clientUrl}/${path}`
 
-    changeRoute({ href })
+    // changeRoute({ href })
   })
 }
