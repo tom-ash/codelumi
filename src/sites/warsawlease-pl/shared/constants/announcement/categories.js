@@ -35,8 +35,8 @@ export const categories = [
   {
     number: 5,
     value: 5,
-    label: { pl: 'Miejsce postojowe', en: 'Parking Space' },
-    url: { pl: 'miejsce-postojowe', en: 'parking-space' },
+    label: { pl: 'Miejsce parkingowe', en: 'Parking Space' },
+    url: { pl: 'miejsce-parkingowe', en: 'parking-space' },
     pin: {
       class: 'parking-space',
       svg: 'parking_space',

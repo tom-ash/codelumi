@@ -95,7 +95,7 @@ export const ANNOUNCEMENT_INDEX_MAP_ROOMS_URLS = {
 }
 
 export const ANNOUNCEMENT_INDEX_MAP_PARKING_SPACES_URLS = {
-  [PL]: 'warszawa/wynajem/nieruchomosci/mapa/miejsca-postojowe',
+  [PL]: 'warszawa/wynajem/nieruchomosci/mapa/miejsca-parkingowe',
   [EN]: 'property/map/parking-spaces'
 }
 
@@ -116,7 +116,7 @@ export const ANNOUNCEMENT_INDEX_MAP_VIRTUAL_OFFICES_URLS = {
 
 export const ANNOUNCEMENT_INDEX_MAP_COWORKING_URLS = {
   [PL]: 'warszawa/wynajem/nieruchomosci/mapa/przestrzenie-coworkingowe',
-  [EN]: 'property/map/coworking'
+  [EN]: 'property/map/coworking-spaces'
 }
 
 export const ANNOUNCEMENT_INDEX_CATALOGUE_URLS = {
@@ -161,7 +161,7 @@ export const ANNOUNCEMENT_INDEX_CATALOGUE_VIRTUAL_OFFICES_URLS = {
 
 export const ANNOUNCEMENT_INDEX_CATALOGUE_COWORKING_URLS = {
   [PL]: 'warszawa/wynajem/nieruchomosci/katalog/przestrzenie-coworkingowe',
-  [EN]: 'property/catalogue/coworking'
+  [EN]: 'property/catalogue/coworking-spaces'
 }
 
 export const ANNOUNCEMENT_INDEX_MY_URLS = {
