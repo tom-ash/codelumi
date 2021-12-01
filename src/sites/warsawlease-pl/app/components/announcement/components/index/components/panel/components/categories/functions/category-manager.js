@@ -1,5 +1,6 @@
 import React from 'react'
 import SVG from '../../../../../../../../support/components/svg/svg'
+import buildUrl from '../../../../../../../../../../shared/functions/builders/url.js'
 
 function categoryManger(props) {
   const { category, lang, currentCategory, changeRoute, langHandler, amount, links } = props
@@ -12,7 +13,7 @@ function categoryManger(props) {
   if (active) classNamesArr.push('active')
   const classNames = { container: classNamesArr.join(' ') }
   const link = links[linkTrack]
-  const href = link && link.path
+  const href = link && buildUrl({ path: link.path })
 
   const label = (
     <>
