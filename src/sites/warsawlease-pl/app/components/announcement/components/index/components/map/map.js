@@ -72,7 +72,7 @@ class AnnouncementIndexMap extends React.Component {
                 langHandler={this.langHandler}
                 changeData={changeData}
                 isMobile={isMobile}
-                url={announcement.path}
+                path={announcement.path}
                 title={announcement.title}
                 miniListFarthestScrollTop={miniListFarthestScrollTop}
                 miniListFarthestScrollLeft={miniListFarthestScrollLeft}
@@ -83,6 +83,7 @@ class AnnouncementIndexMap extends React.Component {
           <div id='google-map' />
           {tile && Object.keys(tile).length > 1 &&
           <div className='announcement-tile-container'>
+            {console.log(tile)}
             <AnnouncementTile
               venue='map'
               lang={lang}
@@ -104,7 +105,7 @@ class AnnouncementIndexMap extends React.Component {
               closeButtonOnClick={() => this.props.changeData({ tileId: null, tile: null })}
               isMobile={isMobile}
               changeApp={changeApp}
-              url={tile.path}
+              path={tile.path}
               title={tile.title}
             />
           </div>}

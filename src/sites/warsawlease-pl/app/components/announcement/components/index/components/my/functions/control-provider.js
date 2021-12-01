@@ -4,7 +4,7 @@ import SeparationLine from '../../../../../../support/components/separation-line
 export function controlProvider(announcement, index) {
   if (!announcement) return null
 
-  const { editUrl, editTitle } = announcement
+  const { editPath, editTitle } = announcement
 
   return (
     <div className='control'>
@@ -30,7 +30,7 @@ export function controlProvider(announcement, index) {
         {this.langHandler({ pl: 'Liczba odwiedzin', en: 'Visitors' })} <strong>{announcement.views}</strong>
       </div>
       <SeparationLine />
-      {this.buttonProvider('Edytuj', 'Edit', announcement, index, () => this.edit({ editUrl, editTitle }), ' edit')}
+      {this.buttonProvider('Edytuj', 'Edit', announcement, index, () => this.edit({ editPath, editTitle }), ' edit')}
       <SeparationLine />
       {this.buttonProvider('Usuń', 'Delete', announcement, index, () => {
         this.props.changeControl({ beingDeleted: announcement.id })

@@ -25,7 +25,7 @@ const AnnouncementShowMiniTile = ({
   miniListFarthestScrollTop,
   index,
   miniListFarthestScrollLeft,
-  url,
+  path,
   title
 }) => {
   const DESKTOP_TILE_HEIGHT = 227
@@ -38,7 +38,7 @@ const AnnouncementShowMiniTile = ({
     return (
       <a
         className='announcement-show-container'
-        href={url}
+        href={path}
         title={title}
       />
     )
@@ -48,7 +48,7 @@ const AnnouncementShowMiniTile = ({
     <a
       className='announcement-show-container'
       key={id}
-      href={url}
+      href={path}
       title={title}
       onMouseOver={() => {
         const pin = document.getElementById(`googl-map-pin-${id}`)

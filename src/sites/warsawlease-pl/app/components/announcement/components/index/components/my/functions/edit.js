@@ -1,6 +1,6 @@
 export function edit(props) {
-  const { editUrl } = props
+  const { editPath } = props
   const { changeRoute } = this.context
 
-  changeRoute({ href: editUrl })
+  changeRoute({ href: editPath })
 }

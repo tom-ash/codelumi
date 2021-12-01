@@ -27,7 +27,7 @@ class AnnouncementShowPictures extends React.Component {
       heightQuantifier,
       venue,
       isMobile,
-      url
+      path
     } = this.props
 
     const {
@@ -51,7 +51,7 @@ class AnnouncementShowPictures extends React.Component {
         {venue !== 'mini-list' &&
         <div
           className='share-on-facebook-button show'
-          onClick={() => shareOnFacebook(url, isMobile)}
+          onClick={() => shareOnFacebook(path, isMobile)}
         >
           <SVG name='facebook' />
         </div>}

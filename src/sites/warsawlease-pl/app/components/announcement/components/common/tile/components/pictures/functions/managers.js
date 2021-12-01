@@ -1,7 +1,7 @@
 export function linkManager() {
-  const { url, title } = this.props
+  const { path, title } = this.props
   const { changeRoute } = this.context
-  const href = url
+  const href = path
 
   return {
     classNames: { container: 'link' },

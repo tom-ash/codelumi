@@ -73,7 +73,7 @@ class AnnouncementTile extends React.Component {
       changeData,
       resetData,
       changeApp,
-      url,
+      path,
       title
     } = this.props
     const venueShow = venue === 'show'
@@ -91,7 +91,7 @@ class AnnouncementTile extends React.Component {
         <a
           ref={this.container}
           className='announcement-tile-anchor'
-          href={url}
+          href={path}
           title={title}
         />
       )
@@ -155,7 +155,7 @@ class AnnouncementTile extends React.Component {
           isMobile={isMobile}
           changeApp={changeApp}
           changeData={changeData}
-          url={url}
+          path={path}
           title={title}
         />
         <AnnouncementShowPrimary
