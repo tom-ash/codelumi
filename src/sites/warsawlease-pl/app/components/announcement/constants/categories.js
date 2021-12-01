@@ -12,7 +12,8 @@ export const categories = [
       svg: 'apartment',
       color: '#1E8449'
     },
-    track: tracks.ANNOUNCEMENT_INDEX_MAP_APARTMENTS_TRACK
+    track: tracks.ANNOUNCEMENT_INDEX_MAP_APARTMENTS_TRACK,
+    linkTrack: 'root/apartments'
   },
   {
     name: 'houses',
@@ -25,7 +26,8 @@ export const categories = [
       svg: 'house',
       color: '#0E6655'
     },
-    track: tracks.ANNOUNCEMENT_INDEX_MAP_HOUSES_TRACK
+    track: tracks.ANNOUNCEMENT_INDEX_MAP_HOUSES_TRACK,
+    linkTrack: 'root/houses'
   },
   {
     name: 'rooms',
@@ -39,7 +41,8 @@ export const categories = [
       color: '#28B463'
     }
     ,
-    track: tracks.ANNOUNCEMENT_INDEX_MAP_ROOMS_TRACK
+    track: tracks.ANNOUNCEMENT_INDEX_MAP_ROOMS_TRACK,
+    linkTrack: 'root/rooms'
   },
   {
     name: 'parkingSpaces',
@@ -52,7 +55,8 @@ export const categories = [
       svg: 'parkingSpace',
       color: '#34495E'
     },
-    track: tracks.ANNOUNCEMENT_INDEX_MAP_PARKING_SPACES_TRACK
+    track: tracks.ANNOUNCEMENT_INDEX_MAP_PARKING_SPACES_TRACK,
+    linkTrack: 'root/parking_spaces'
   },
   {
     name: 'usablePremises',
@@ -65,7 +69,8 @@ export const categories = [
       svg: 'usablePremises',
       color: '#D35400'
     },
-    track: tracks.ANNOUNCEMENT_INDEX_MAP_USABLE_PREMISES_TRACK
+    track: tracks.ANNOUNCEMENT_INDEX_MAP_USABLE_PREMISES_TRACK,
+    linkTrack: 'root/usable_premises'
   },
   {
     name: 'offices',
@@ -78,7 +83,8 @@ export const categories = [
       svg: 'office',
       color: '#3498DB'
     },
-    track: tracks.ANNOUNCEMENT_INDEX_MAP_OFFICES_TRACK
+    track: tracks.ANNOUNCEMENT_INDEX_MAP_OFFICES_TRACK,
+    linkTrack: 'root/offices'
   },
   {
     name: 'virtualOffices',
@@ -91,7 +97,8 @@ export const categories = [
       svg: 'virtualOffice',
       color: '#7D3C98'
     },
-    track: tracks.ANNOUNCEMENT_INDEX_MAP_VIRTUAL_OFFICES_TRACK
+    track: tracks.ANNOUNCEMENT_INDEX_MAP_VIRTUAL_OFFICES_TRACK,
+    linkTrack: 'root/virtual_offices'
   },
   {
     name: 'coworking',
@@ -104,6 +111,7 @@ export const categories = [
       svg: 'coworkingSpace',
       color: '#4A235A'
     },
-    track: tracks.ANNOUNCEMENT_INDEX_MAP_COWORKING_TRACK
+    track: tracks.ANNOUNCEMENT_INDEX_MAP_COWORKING_TRACK,
+    linkTrack: 'root/coworking_spaces'
   }
 ]

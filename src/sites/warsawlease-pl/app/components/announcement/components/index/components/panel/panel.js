@@ -32,7 +32,8 @@ class AnnouncementIndexPanel extends React.Component {
       usablePremisesAmount,
       officesAmount,
       virtualOfficesAmount,
-      coworkingAmount
+      coworkingAmount,
+      links
     } = this.props
     const { changeRoute } = this.context
 
@@ -55,6 +56,7 @@ class AnnouncementIndexPanel extends React.Component {
           officesAmount={officesAmount}
           virtualOfficesAmount={virtualOfficesAmount}
           coworkingAmount={coworkingAmount}
+          links={links}
         />
         {(renderMap || renderCatalogue) &&
         <PanelVisitor {...{ ...this.props, changeRoute, langHandler: this.langHandler }} />}

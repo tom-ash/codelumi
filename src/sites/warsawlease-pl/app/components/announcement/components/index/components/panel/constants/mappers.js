@@ -11,14 +11,13 @@ export const mapStateToProps = store => {
     device
   } = store.app
 
-  const { render } = store
+  const { render, links } = store
 
   const {
     [ANNOUNCEMENT_INDEX_MAP_TRACK]: renderMap,
     [ANNOUNCEMENT_INDEX_CATALOGUE_TRACK]: renderCatalogue,
     [ANNOUNCEMENT_INDEX_MY_TRACK]: renderMy
   } = render
-
 
   const {
     apartmentsAmount,
@@ -64,7 +63,8 @@ export const mapStateToProps = store => {
     areaMin,
     areaMinInput,
     areaMax,
-    areaMaxInput
+    areaMaxInput,
+    links
   }
 }
     
