@@ -5,7 +5,7 @@ import { ANNOUNCEMENT_CREATE_LABELS } from '../../../../../../../../../shared/co
 export function addAnnouncementManager(props) {
   const { isMobile, langs, links, changeRoute, langHandler } = props
   const linkData = links['announcement/create/form']
-  const href = linkData && linkData.url
+  const href = linkData && linkData.path
   const hrefLang = langHandler(langs)
   const title = linkData && linkData.title
   const classNames = { container: 'header-link add-announcement' }
@@ -24,7 +24,7 @@ export function signUpManager(props) {
   const { langs, links, changeRoute, langHandler } = props
   const classNames = { container: 'header-link sign-up' }
   const link = links['user/create/form']
-  const href = link && link.url
+  const href = link && link.path
   const hrefLang = langHandler(langs)
   const title = link && link.title
   const label = title
@@ -37,7 +37,7 @@ export function signInManager(props) {
   const { links, langs, changeRoute, langHandler } = props
   const classNames = { container: 'header-link sign-in' }
   const link = links['user/authorize']
-  const href = link && link.url
+  const href = link && link.path
   const hrefLang = langHandler(langs)
   const title = link && link.title
   const label = title
@@ -50,7 +50,7 @@ export function myAccountManager(props) {
   const { tracks, links, langs, changeRender, langHandler } = props
   const classNames = { container: 'header-link my-account' }
   const link = links['user/show']
-  const href = link && link.url
+  const href = link && link.path
   const hrefLang = langHandler(langs)
   const title = link && link.title
   const label = title

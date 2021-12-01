@@ -72,7 +72,7 @@ class AnnouncementIndexMap extends React.Component {
                 langHandler={this.langHandler}
                 changeData={changeData}
                 isMobile={isMobile}
-                url={announcement.url}
+                url={announcement.path}
                 title={announcement.title}
                 miniListFarthestScrollTop={miniListFarthestScrollTop}
                 miniListFarthestScrollLeft={miniListFarthestScrollLeft}
@@ -104,7 +104,7 @@ class AnnouncementIndexMap extends React.Component {
               closeButtonOnClick={() => this.props.changeData({ tileId: null, tile: null })}
               isMobile={isMobile}
               changeApp={changeApp}
-              url={tile.url}
+              url={tile.path}
               title={tile.title}
             />
           </div>}

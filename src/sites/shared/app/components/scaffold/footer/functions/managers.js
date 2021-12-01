@@ -13,7 +13,7 @@ link_tracks.map(({ name, track  }) => {
   managers[name] = props => {
     const { links, langs, changeRoute, langHandler } = props
     const link = links[track]
-    const href = link && link.url
+    const href = link && link.path
     const hrefLang = langHandler(langs)
     const title = link && link.title
     const label = title

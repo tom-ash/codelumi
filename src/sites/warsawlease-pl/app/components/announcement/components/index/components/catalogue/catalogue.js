@@ -63,7 +63,7 @@ class AnnouncementIndexCatalogue extends React.Component {
                 availabilityDate={announcement.availabilityDate}
                 indexFullFarthestScrollTop={indexFullFarthestScrollTop}
                 changeApp={changeApp}
-                url={announcement.url}
+                url={announcement.path}
                 title={announcement.title}
               />
             )

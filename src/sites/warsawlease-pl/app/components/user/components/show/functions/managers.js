@@ -5,7 +5,7 @@ export function addAnnouncementManager(props) {
   const { links, lang } = props
   const { changeRoute } = this.context
   const link = links['announcement/create/form']
-  const href = link && link.url
+  const href = link && link.path
   const hrefLang = lang
   const title = this.langHandler({ pl: 'Dodaj bezpłatne ogłoszenie', en: 'Add Free Announcement' })
 
@@ -23,7 +23,7 @@ export function myAnnouncementsManager(props) {
   const { links, lang } = props
   const { changeRoute } = this.context
   const link = links['announcement/index/user']
-  const href = link && link.url
+  const href = link && link.path
   const hrefLang = lang
   const title = link && link.title
   const label = title
@@ -42,7 +42,7 @@ export function accountManager(props) {
   const { links, lang } = props
   const { changeRoute } = this.context
   const link = links['user/edit']
-  const href = link && link.url
+  const href = link && link.path
   const hrefLang = lang
   const title = link && link.title
   const label = title

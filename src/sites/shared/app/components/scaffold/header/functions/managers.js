@@ -4,7 +4,7 @@ export function logoManager({ links, lang, Logo, changeRoute }) {
   const classNames = { container: 'header-link logo' }
   const link = links['root']
   const title = link && link.title
-  const href = link && link.url
+  const href = link && link.path
   const hrefLang = lang
   const label = <Logo />
   const onClick = () => changeRoute({ href })
