@@ -1,12 +1,13 @@
-import routes from '../../../../../../../../../../shared/constants/routes/routes.js'
-import CLIENT_URL from '../../../../../../../../../../shared/constants/urls/client.js'
-import getRouteByRender from '../../../../../../../../../../../shared/app/functions/routes/getters/route-by-render.js'
+import buildUrl from '../../../../../../../../../../shared/functions/builders/url.js'
 
 export function radioManager(props) {
-  const { changeRoute, render, lang, renderCatalogue } = props
-  const { relatedToUrl: url } = getRouteByRender({ routes, render, lang })
-  const href = `${CLIENT_URL}/${url === '/' ? '' : url}`
-
+  const { links, changeRoute, renderCatalogue } = props
+  const mapLink = links['root/map']
+  const catalogueLink = links['root/catalogue']
+  const mapPath = mapLink && mapLink.path
+  const cataloguePath = catalogueLink && catalogueLink.path
+  const href = buildUrl({ path: renderCatalogue ? mapPath : cataloguePath })
+  
   return {
     name: 'map-catalogue-switch',
     classNames: { container: 'form-input radio'},
