@@ -1,10 +1,8 @@
-import { ANNOUNCEMENT_CREATE_EDIT_TRACK } from '../../../../../../shared/constants/tracks/tracks'
-
 export const mapStateToProps = store => {
   const { routeSynced, lang, isMobile } = store.app
   const {
     'announcement/create/form': renderForm,
-    [ANNOUNCEMENT_CREATE_EDIT_TRACK]: renderEdit,
+    'announcement/edit': renderEdit,
     'announcement/create/verification': renderVerification,
     'announcement/create/summary': renderSuccess
   } = store.render

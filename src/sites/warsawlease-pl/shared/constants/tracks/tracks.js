@@ -17,8 +17,6 @@ export const VISITOR_TERMS_OF_SERVICE_TRACK = 'visitor/terms-of-service'
 export const VISITOR_PRIVACY_POLICY_TRACK = 'visitor/privacy-policy'
 export const VISITOR_CONTACT_TRACK = 'visitor/contact'
 
-export const ANNOUNCEMENT_CREATE_EDIT_TRACK = 'announcement/edit'
-
 export const ANNOUNCEMENT_SHOW_TRACK = 'announcement/show'
 
 export const USER_TRACK = 'user'
