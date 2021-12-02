@@ -1,9 +1,7 @@
-import { ANNOUNCEMENT_CREATE_FORM_TRACK } from '../../../../../../shared/constants/tracks/tracks'
-
 export const mapStateToProps = store => {
   const { lang } = store.app
   const { step, success } = store.user.create.control
-  const { [ANNOUNCEMENT_CREATE_FORM_TRACK]: renderAnnouncementCreate } = store.render
+  const { 'announcement/create/form': renderAnnouncementCreate } = store.render
 
   return {
     lang,

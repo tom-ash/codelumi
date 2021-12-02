@@ -1,4 +1,4 @@
-import { ANNOUNCEMENT_CREATE_FORM_TRACK, USER_CREATE_FORM_TRACK, USER_CREATE_VERIFICATION_TRACK } from '../../../../../../../../shared/constants/tracks/tracks'
+import { USER_CREATE_FORM_TRACK, USER_CREATE_VERIFICATION_TRACK } from '../../../../../../../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = store => {
   const { lang } = store.app
@@ -7,7 +7,7 @@ export const mapStateToProps = store => {
   const {
     [USER_CREATE_FORM_TRACK]: renderForm,
     [USER_CREATE_VERIFICATION_TRACK]: renderVerification,
-    [ANNOUNCEMENT_CREATE_FORM_TRACK]: renderAnnouncementCreate
+    'announcement/create/form': renderAnnouncementCreate
   } = store.render
 
   return {

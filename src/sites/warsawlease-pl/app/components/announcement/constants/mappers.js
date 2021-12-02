@@ -1,4 +1,4 @@
-import { ANNOUNCEMENT_CREATE_TRACK, ANNOUNCEMENT_CREATE_EDIT_TRACK, ANNOUNCEMENT_INDEX_TRACK, ANNOUNCEMENT_SHOW_TRACK } from '../../../../shared/constants/tracks/tracks'
+import { ANNOUNCEMENT_CREATE_EDIT_TRACK, ANNOUNCEMENT_INDEX_TRACK, ANNOUNCEMENT_SHOW_TRACK } from '../../../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = store => {
   const {
@@ -6,7 +6,7 @@ export const mapStateToProps = store => {
   } = store.app
 
   const {
-    [ANNOUNCEMENT_CREATE_TRACK]: renderCreate,
+    'announcement/create': renderCreate,
     [ANNOUNCEMENT_CREATE_EDIT_TRACK]: renderEdit,
     [ANNOUNCEMENT_INDEX_TRACK]: renderIndex,
     [ANNOUNCEMENT_SHOW_TRACK]: renderShow

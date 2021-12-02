@@ -1,8 +1,6 @@
-import { ANNOUNCEMENT_CREATE_VERIFICATION_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
-
 export const mapStateToProps = store => {
   const { lang } = store.app
-  const { [ANNOUNCEMENT_CREATE_VERIFICATION_TRACK]: renderAnnouncementCreateVerification } = store.render
+  const { 'announcement/create/verification': renderAnnouncementCreateVerification } = store.render
   const { connecting } = store.user.create.control
   const { email } = store.user.create.inputs
   const { verification } = store.user.create.errors

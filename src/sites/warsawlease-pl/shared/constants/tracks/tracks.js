@@ -6,6 +6,9 @@ export const PAGE_INDEX_TRACK = 'page/index'
 export const PAGE_INDEX_MANAGE_TRACK = 'page/index/manage'
 export const PAGE_INDEX_MAP_TRACK = 'page/index/map'
 export const PAGE_NOT_FOUND_TRACK = 'page/not-found'
+
+
+
 export const VISITOR_TRACK = 'visitor'
 export const VISITOR_PRIVACY_MONIT_TRACK = 'visitor/privacy-monit'
 export const VISITOR_COOKIES_POLICY_TRACK = 'visitor/cookies-policy'
@@ -13,12 +16,9 @@ export const VISITOR_PRIVACY_SETTINGS_TRACK = 'visitor/privacy-settings'
 export const VISITOR_TERMS_OF_SERVICE_TRACK = 'visitor/terms-of-service'
 export const VISITOR_PRIVACY_POLICY_TRACK = 'visitor/privacy-policy'
 export const VISITOR_CONTACT_TRACK = 'visitor/contact'
-export const ANNOUNCEMENT_TRACK = 'announcement'
-export const ANNOUNCEMENT_CREATE_TRACK = 'announcement/create'
-export const ANNOUNCEMENT_CREATE_FORM_TRACK = 'announcement/create/form'
-export const ANNOUNCEMENT_CREATE_VERIFICATION_TRACK= 'announcement/create/verification'
-export const ANNOUNCEMENT_CREATE_SUCCESS_TRACK= 'announcement/create/summary'
+
 export const ANNOUNCEMENT_CREATE_EDIT_TRACK = 'announcement/edit'
+
 export const ANNOUNCEMENT_INDEX_TRACK = 'announcement/index'
 export const ANNOUNCEMENT_INDEX_MAP_TRACK = 'announcement/index/map'
 export const ANNOUNCEMENT_INDEX_MAP_APARTMENTS_TRACK = 'announcement/index/map/apartments'
@@ -38,8 +38,10 @@ export const ANNOUNCEMENT_INDEX_CATALOGUE_USABLE_PREMISES_TRACK = 'announcement/
 export const ANNOUNCEMENT_INDEX_CATALOGUE_OFFICES_TRACK = 'announcement/index/catalogue/offices'
 export const ANNOUNCEMENT_INDEX_CATALOGUE_VIRTUAL_OFFICES_TRACK = 'announcement/index/catalogue/virtual-offices'
 export const ANNOUNCEMENT_INDEX_CATALOGUE_COWORKING_TRACK = 'announcement/index/catalogue/coworking'
+
 export const ANNOUNCEMENT_INDEX_MY_TRACK = 'announcement/index/user'
 export const ANNOUNCEMENT_SHOW_TRACK = 'announcement/show'
+
 export const USER_TRACK = 'user'
 export const USER_CREATE_TRACK = 'user/create'
 export const USER_CREATE_FORM_TRACK = 'user/create/form'
