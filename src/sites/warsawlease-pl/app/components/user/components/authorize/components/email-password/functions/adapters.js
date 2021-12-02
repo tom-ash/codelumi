@@ -1,7 +1,6 @@
 import { hashPassword } from '../../../../../functions/shared.js'
 import API_URL from '../../../../../../../../shared/constants/urls/api.js'
 import { saveTokens } from '../../../../../functions/token-handlers'
-import { ROOT_TRACK } from '../../../../../../../../shared/constants/tracks/tracks'
 import { SIGN_IN_API_ROUTE } from '../constants/api_routes.js'
 
 export function logIn() {
@@ -24,15 +23,13 @@ export function logIn() {
     throw new Error('InvalidCredentials')
   })
   .then(json => {
-    const track = ROOT_TRACK
-    const { lang } = this.props
     const { changeRoute } = this.context
 
     changeData({ accountType: json.accountType, authorized: true, name: json.name })
     saveTokens.call(this, json.accessToken)
 
     // TODO CHANGE ROUTE
-    changeRoute({ track, lang, changeRoute })
+    changeRoute({ href })
   })
   .catch(() => {
     changeErrors({

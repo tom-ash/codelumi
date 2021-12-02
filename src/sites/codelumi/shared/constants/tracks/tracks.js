@@ -1,4 +1,3 @@
-export const ROOT_TRACK = 'root'
 export const ANNOUNCEMENT_TRACK = 'announcement'
 export const ANNOUNCEMENT_CREATE_TRACK = 'announcement/create'
 export const PAGE_TRACK = 'page'

@@ -1,6 +1,5 @@
 import API_URL from '../../../../../../shared/constants/urls/api.js'
 import getAccessToken from '../../authorize/components/tokens/functions/get-tokens'
-import { ROOT_TRACK } from '../../../../../../shared/constants/tracks/tracks'
 import { VERIFY_API_ROUTE_DATA, DELETE_API_ROUTE_DATA } from '../constants/api_route_data.js'
 
 export function sendEmail() {
@@ -53,10 +52,9 @@ export function destroy() {
   .then(response => {
     if (response.ok) {
       const { changeRoute } = this.context
-      const track = ROOT_TRACK
   
       // TODO CHANGE ROUTE
-      changeRoute({ lang, track, changeRoute })
+      changeRoute({ href })
       this.deauthorizeUser()
       return
     }

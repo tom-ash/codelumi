@@ -1,4 +1,3 @@
-export const ROOT_TRACK = 'root'
 export const PAGE_TRACK = 'page'
 export const PAGE_CREATE_TRACK = 'page/create'
 export const PAGE_EDIT_TRACK = 'page/edit'
