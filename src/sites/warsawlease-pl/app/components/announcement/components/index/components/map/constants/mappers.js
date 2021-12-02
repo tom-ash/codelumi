@@ -1,7 +1,3 @@
-import {
-  ANNOUNCEMENT_INDEX_CATALOGUE_TRACK
-} from '../../../../../../../../shared/constants/tracks/tracks'
-
 export const mapStateToProps = store => {
   const {
     lang,
@@ -13,7 +9,7 @@ export const mapStateToProps = store => {
     svgs
   } = store.assets
   const {
-    [ANNOUNCEMENT_INDEX_CATALOGUE_TRACK]: renderCatalogue
+    'announcement/index/catalogue': renderCatalogue
   } = store.render
 
   const {
