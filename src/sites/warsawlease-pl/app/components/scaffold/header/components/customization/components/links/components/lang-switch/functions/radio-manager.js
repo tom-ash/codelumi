@@ -1,10 +1,10 @@
 import React from 'react'
+import buildUrl from '../../../../../../../../../../../shared/functions/builders/url'
 
 export function radioManager(props) {
   const { links, changeRoute, lang } = props
-
-  const plHref = links.langs && links.langs.pl || links.currentPl
-  const enHref = links.langs && links.langs.en || links.currentEn
+  const plHref = links['current/pl'] && buildUrl({ path: links['current/pl'].path })
+  const enHref = links['current/en'] && buildUrl({ path: links['current/en'].path })
 
   return {
     name: 'lang-switch',
