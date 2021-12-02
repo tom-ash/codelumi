@@ -7,7 +7,7 @@ import initialStateParserV2 from '../parsers/initial-state.js'
 
 function routeSender({
   res,
-  clientUrl, apiUrl, tracks, routeRenders,
+  clientUrl, apiUrl, tracks,
   url, query, route, device,
   appState, visitorState,
   accessToken,
@@ -39,10 +39,11 @@ function routeSender({
     const meta = metaDataParser({ ...route, ...unparsedMeta, lang })
     const app = { ...appState, routeSynced: true, lang, device }
     const { visitor: { consents: { statisticsConsent, marketingConsent } } } = visitorState
-    const renderPrivacyMonit = { 'visitor/privacy-monit': anyNull({ statisticsConsent, marketingConsent }) }
-    const render = { ...renderPrivacyMonit, [track]: true, ...routeRenders[track] }
+
+    // 'TODO'
+    // const renderPrivacyMonit = { 'visitor/privacy-monit': anyNull({ statisticsConsent, marketingConsent }) }
     const residualState = initialStateParser && initialStateParser(state) || {}
-    const initialState = { app, render, links: state.links, ...visitorState, ...residualState, ...initialStateParserV2(state) }
+    const initialState = { app, links: state.links, ...visitorState, ...residualState, ...initialStateParserV2(state) }
     const appAsHtml = appRenderer(initialState)
     const status = 200
 

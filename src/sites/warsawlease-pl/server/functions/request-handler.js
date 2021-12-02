@@ -1,7 +1,5 @@
 import genericRequestHandler from '../../../shared/server/functions/handlers/generic-request.js'
 import appState from '../../app/constants/app-state.js'
-import routeRenders from '../../shared/constants/routes/renders.js'
-import * as tracks from '../../shared/constants/tracks/tracks.js'
 import appRenderer from './app-renderer.js'
 import ROOT_DOMAIN from '../../shared/constants/domains/root.js'
 import CLIENT_URL from '../../shared/constants/urls/client.js'
@@ -15,7 +13,6 @@ function handleRequest(req, res) {
     res,
     clientUrl: CLIENT_URL,
     apiUrl: API_URL,
-    routeRenders,
     appRenderer
   })
 }
