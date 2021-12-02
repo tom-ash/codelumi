@@ -10,7 +10,7 @@ export const appReducer = (state = appState, action) => {
 
 export const renderReducer = (state = {}, action) => {
   switch (action.type) {
-    case 'render': return { ...state, ...action.value }
+    case 'render': return action.value
     default: return state
   }
 }
