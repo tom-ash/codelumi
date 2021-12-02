@@ -1,7 +1,3 @@
-import {
-  ANNOUNCEMENT_INDEX_MY_TRACK
-} from '../../../../../../shared/constants/tracks/tracks'
-
 export const mapStateToProps = store => {
   const render = store.render
 
@@ -14,7 +10,7 @@ export const mapStateToProps = store => {
   const {
     'announcement/index/map': renderMap,
     'announcement/index/catalogue': renderCatalogue,
-    [ANNOUNCEMENT_INDEX_MY_TRACK]: renderMy
+    'announcement/index/user': renderMy
   } = store.render
 
   const {

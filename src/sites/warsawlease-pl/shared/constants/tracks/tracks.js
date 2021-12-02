@@ -19,7 +19,6 @@ export const VISITOR_CONTACT_TRACK = 'visitor/contact'
 
 export const ANNOUNCEMENT_CREATE_EDIT_TRACK = 'announcement/edit'
 
-export const ANNOUNCEMENT_INDEX_MY_TRACK = 'announcement/index/user'
 export const ANNOUNCEMENT_SHOW_TRACK = 'announcement/show'
 
 export const USER_TRACK = 'user'
