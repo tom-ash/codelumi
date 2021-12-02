@@ -1,5 +1,3 @@
-import * as tracks from '../../../../shared/constants/tracks/tracks.js'
-
 export const categories = [
   {
     name: 'apartments',
@@ -12,7 +10,6 @@ export const categories = [
       svg: 'apartment',
       color: '#1E8449'
     },
-    track: tracks.ANNOUNCEMENT_INDEX_MAP_APARTMENTS_TRACK,
     linkTrack: 'root/apartments'
   },
   {
@@ -26,7 +23,6 @@ export const categories = [
       svg: 'house',
       color: '#0E6655'
     },
-    track: tracks.ANNOUNCEMENT_INDEX_MAP_HOUSES_TRACK,
     linkTrack: 'root/houses'
   },
   {
@@ -39,9 +35,7 @@ export const categories = [
       class: 'room',
       svg: 'room',
       color: '#28B463'
-    }
-    ,
-    track: tracks.ANNOUNCEMENT_INDEX_MAP_ROOMS_TRACK,
+    },
     linkTrack: 'root/rooms'
   },
   {
@@ -55,7 +49,6 @@ export const categories = [
       svg: 'parkingSpace',
       color: '#34495E'
     },
-    track: tracks.ANNOUNCEMENT_INDEX_MAP_PARKING_SPACES_TRACK,
     linkTrack: 'root/parking_spaces'
   },
   {
@@ -69,7 +62,6 @@ export const categories = [
       svg: 'usablePremises',
       color: '#D35400'
     },
-    track: tracks.ANNOUNCEMENT_INDEX_MAP_USABLE_PREMISES_TRACK,
     linkTrack: 'root/usable_premises'
   },
   {
@@ -83,7 +75,6 @@ export const categories = [
       svg: 'office',
       color: '#3498DB'
     },
-    track: tracks.ANNOUNCEMENT_INDEX_MAP_OFFICES_TRACK,
     linkTrack: 'root/offices'
   },
   {
@@ -97,7 +88,6 @@ export const categories = [
       svg: 'virtualOffice',
       color: '#7D3C98'
     },
-    track: tracks.ANNOUNCEMENT_INDEX_MAP_VIRTUAL_OFFICES_TRACK,
     linkTrack: 'root/virtual_offices'
   },
   {
@@ -111,7 +101,6 @@ export const categories = [
       svg: 'coworkingSpace',
       color: '#4A235A'
     },
-    track: tracks.ANNOUNCEMENT_INDEX_MAP_COWORKING_TRACK,
     linkTrack: 'root/coworking_spaces'
   }
 ]

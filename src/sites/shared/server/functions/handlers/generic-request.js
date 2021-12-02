@@ -22,7 +22,7 @@ function genericRequestHandler({
   routeSender({
     res,
     clientUrl, apiUrl,
-    url, query, route, device, tracks,
+    url, query, route, device,
     visitorState,
     accessToken,
     appRenderer

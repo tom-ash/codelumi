@@ -47,7 +47,7 @@ export function signInManager(props) {
 }
 
 export function myAccountManager(props) {
-  const { tracks, links, langs, langHandler } = props
+  const { links, langs, langHandler } = props
   const classNames = { container: 'header-link my-account' }
   const link = links['user/show']
   const href = link && link.path

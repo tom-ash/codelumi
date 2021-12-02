@@ -2,12 +2,11 @@ import fetch from 'node-fetch'
 import indexRenderer from '../renderers/index.js'
 import exceptionSender from './exception.js'
 import metaDataParser from '../../../shared/functions/parsers/meta-data.js'
-import anyNull from '../helpers/any-null.js'
 import initialStateParserV2 from '../parsers/initial-state.js' 
 
 function routeSender({
   res,
-  clientUrl, apiUrl, tracks,
+  clientUrl, apiUrl,
   url, query, route, device,
   appState, visitorState,
   accessToken,
@@ -55,7 +54,6 @@ function routeSender({
     exceptionSender({
       exception,
       res, url, device,
-      tracks,
       appState, visitorState,
       appRenderer
     })
