@@ -1,9 +1,6 @@
 import API_URL from '../../../../../../shared/constants/urls/api.js'
 import getAccessToken from '../../../../user/components/authorize/components/tokens/functions/get-tokens'
 import { CREATE_API_ROUTE_DATA, CREATE_WITH_USER_API_ROUTE_DATA, UPDATE_API_ROUTE_DATA } from '../constants/api-route-data.js'
-import { ANNOUNCEMENT_CREATE_VERIFICATION_TRACK, ANNOUNCEMENT_CREATE_SUCCESS_TRACK } from '../../../../../../shared/constants/tracks/tracks.js'
-import { ANNOUNCEMENT_CREATE_SUCCESS_URLS } from '../../../../../../shared/constants/routes/urls.js'
-import CLIENT_URL from '../../../../../../shared/constants/urls/client.js'
 import setConfirmationTokenCookie from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token.js'
 
 function sendAnnouncementCreatedEvent() {
@@ -35,7 +32,6 @@ function update() {
   .then(response => {
     if (response.ok) {
       const { changeRoute } = this.context
-      const track = ANNOUNCEMENT_CREATE_SUCCESS_TRACK
   
       // TODO CHANGE ROUTE
       changeRoute({ lang, track, changeRoute })
@@ -60,8 +56,8 @@ function create() {
   .then(jsonResponse => {
     const { changeRoute } = this.context
     const { id } = jsonResponse
-    const href = `${CLIENT_URL}/${this.langHandler(ANNOUNCEMENT_CREATE_SUCCESS_URLS)}?id=${id}`
 
+    // TODO CHANGE ROUTE
     changeRoute({ href })
     changeControl({ connecting: false })
 
@@ -84,7 +80,6 @@ function createWithUser() {
   .then(jsonResponse => {
     const { changeRoute } = this.context
     const { confirmationToken } = jsonResponse
-    const track = ANNOUNCEMENT_CREATE_VERIFICATION_TRACK
 
     // TODO CHANGE ROUTE
     const href = 'TODO'

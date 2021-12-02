@@ -18,7 +18,6 @@ import CLIENT_URL from '../shared/constants/urls/client.js'
 import API_URL from '../shared/constants/urls/api.js'
 import customNodeParser from './components/page/show/functions/custom-node-parser.js'
 import * as langs from '../shared/constants/langs/langs.js'
-import * as urls from '../shared/constants/routes/urls.js'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import headerStyles from './components/scaffold/header/styles/styles.scss'
@@ -45,7 +44,7 @@ class App extends React.Component {
   render() {
     const { render, renderPage, renderVisitor, renderAnnouncement, renderUser, lang, links, device, authorized, pageShowData, pageEditData, announcementShowData, announcementEditData } = this.props
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute }
-    const sharedProps = { appName: APP_NAME, urls, langs, links, clientUrl: CLIENT_URL, apiUrl: API_URL, render, device, authorized, changeRoute: this.changeRoute, langHandler: this.langHandler }
+    const sharedProps = { appName: APP_NAME, langs, links, clientUrl: CLIENT_URL, apiUrl: API_URL, render, device, authorized, changeRoute: this.changeRoute, langHandler: this.langHandler }
     const pageProps = { ...sharedProps, customNodeParser }
     const urlComposites = { pageShowData, pageEditData, announcementShowData, announcementEditData }
 
