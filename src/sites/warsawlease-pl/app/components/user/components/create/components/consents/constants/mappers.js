@@ -10,7 +10,6 @@ export const mapStateToProps = store => {
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
-    changeRender: value => dispatch({ type: 'render', value }),
     changeInputs: value => dispatch({ type: 'user/create/inputs', value }),
     changeErrors: value => dispatch({ type: 'user/create/errors', value })
   }

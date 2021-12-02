@@ -35,7 +35,6 @@ export const mapStateToProps = store => {
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
-    changeRender: value => dispatch({ type: 'render', value }),
     changeConsents: value => dispatch({ type: 'visitor/consents', value }),
     dispatch
   }

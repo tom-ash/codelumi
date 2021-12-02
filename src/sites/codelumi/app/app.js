@@ -22,7 +22,6 @@ import customMetaParser from './components/page/show/functions/custom-meta-parse
 import Header from '../../shared/app/components/scaffold/header/header.js'
 import Footer from '../../shared/app/components/scaffold/footer/footer.js'
 import { LANGS } from '../shared/constants/langs/langs.js'
-import routes from '../shared/constants/routes/routes.js'
 import * as urls from '../shared/constants/routes/urls.js'
 import Logo from './components/scaffold/header/components/logo/logo.js'
 import HeaderCustomization from './components/scaffold/header/components/customization/customization.js'
@@ -48,7 +47,7 @@ class App extends React.Component {
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute }
     const { render, renderPage, renderVisitor, renderAnnouncement, device, links, lang, pageShowData, pageEditData, changeApp } = this.props
     const urlComposites = { pageShowData, pageEditData }
-    const sharedProps = { appName: APP_NAME, render, routes, urls, langs: LANGS, links, clientUrl: CLIENT_URL, apiUrl: API_URL, device, lang, changeRoute: this.changeRoute, changeApp, langHandler: this.langHandler }
+    const sharedProps = { appName: APP_NAME, render, urls, langs: LANGS, links, clientUrl: CLIENT_URL, apiUrl: API_URL, device, lang, changeRoute: this.changeRoute, changeApp, langHandler: this.langHandler }
     const headerProps = { ...sharedProps, urlComposites, Logo, HeaderCustomization, styles: headerStyles }
     const pageProps = { ...sharedProps, customNodeParser, customMetaParser }
     

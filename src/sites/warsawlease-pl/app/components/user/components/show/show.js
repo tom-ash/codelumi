@@ -24,12 +24,11 @@ class UserShow extends React.Component {
   render() {
     const {
       lang,
-      links,
-      changeRender
+      links
     } = this.props
 
     return (
-      <div id='user-show' onClick={() => changeRender({ [USER_SHOW_TRACK]: false })}>
+      <div id='user-show' onClick={() => 'TODO'}>
         <div id='user-show-account' onClick={e => e.stopPropagation()}>
           <ManagedLink {...this.addAnnouncementManager({ links, lang })} />
           <ManagedLink {...this.myAnnouncementsManager({ links, lang })} />

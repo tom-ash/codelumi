@@ -40,7 +40,6 @@ export const mapStateToProps = store => {
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
-    changeRender: value => dispatch({ type: 'render', value }),
     changePageShowData: value => dispatch({ type: 'page/show/data', value }),
     changeUserEditData: value => dispatch({ type: 'user/edit/data', value }),
     changeConsents: value => dispatch({ type: 'visitor/consents', value }),

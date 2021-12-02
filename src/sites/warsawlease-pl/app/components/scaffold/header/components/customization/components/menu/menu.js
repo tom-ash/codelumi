@@ -6,7 +6,7 @@ import Button from './components/button/button.js'
 import { VISITOR_MENU_TRACK } from '../../../../../../../../../shared/shared/constants/tracks/tracks.js'
 
 const HeaderMenu = props => {
-  const { render, isMobile, changeRender } = props
+  const { render, isMobile } = props
 
   useStyles(styles)
 
@@ -16,7 +16,7 @@ const HeaderMenu = props => {
     <>
       {isMobile && <Button {...props}/>}
       {renderMenu &&
-      <div className='menu-cover' onClick={() => changeRender({ [VISITOR_MENU_TRACK]: false })}>
+      <div className='menu-cover' onClick={() => 'TODO'}>
         <div className='menu'>
           <Links isMenu {...props}/>
         </div>

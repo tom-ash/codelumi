@@ -47,14 +47,14 @@ export function signInManager(props) {
 }
 
 export function myAccountManager(props) {
-  const { tracks, links, langs, changeRender, langHandler } = props
+  const { tracks, links, langs, langHandler } = props
   const classNames = { container: 'header-link my-account' }
   const link = links['user/show']
   const href = link && link.path
   const hrefLang = langHandler(langs)
   const title = link && link.title
   const label = title
-  const onClick = () => changeRender({ [tracks.USER_TRACK]: true, [tracks.USER_SHOW_TRACK]: true })
+  const onClick = () => 'TODO'
 
   return { classNames, href, hrefLang, title, label, onClick }
 }

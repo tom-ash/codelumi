@@ -10,14 +10,11 @@ import metaSetter from '../../../../../shared/app/functions/routes/setters/meta.
 function matchStateToRouteGeneric({
   clientUrl,
   apiUrl,
-  routes,
-  routeRenders,
-  renderState,
   pathname
 }) {
   if (typeof window === 'undefined') return
 
-  const { changeRender, changeConsents } = this.props
+  const { changeConsents } = this.props
   const url = getPureUrl(pathname || window.location.pathname)
   const query = window.location.search
 
@@ -31,8 +28,6 @@ function matchStateToRouteGeneric({
   const stateSetter = route.stateSetter || genericRouteStateSetter
 
   changeConsents(consents)
-
-  changeRender({ ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] })
 
   syncRouteData.call(this, { apiUrl, url, query, route, requestType: 'ssr' })
   .then(syncedRouteData => {
