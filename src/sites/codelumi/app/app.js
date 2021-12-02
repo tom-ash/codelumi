@@ -13,9 +13,7 @@ import langHandler from '../../shared/app/functions/lang/handlers/lang.js'
 import screenSizeHandler from '../../shared/app/functions/screen/handlers/screen-size.js'
 import popStateHandler from '../../shared/app/functions/routes/handlers/pop-state.js'
 import matchStateToRoute from './functions/routes/matchers/state-to-route.js'
-import getRouteByLang from '../../shared/app/functions/routes/getters/route-by-lang.js'
 import changeRoute from './functions/routes/changers/route.js'
-import changeRouteWithHref from './functions/routes/changers/route-with-href.js'
 import AppContext from './constants/context.js'
 import CLIENT_URL from '../shared/constants/urls/client.js'
 import API_URL from '../shared/constants/urls/api.js'
@@ -44,14 +42,13 @@ class App extends React.Component {
     this.langHandler = langHandler.bind(this)
     this.matchStateToRoute = matchStateToRoute.bind(this)
     this.changeRoute = changeRoute.bind(this)
-    this.getRouteByLang = getRouteByLang.bind(this)
   }
 
   render() {
-    const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
+    const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute }
     const { render, renderPage, renderVisitor, renderAnnouncement, device, links, lang, pageShowData, pageEditData, changeApp } = this.props
     const urlComposites = { pageShowData, pageEditData }
-    const sharedProps = { appName: APP_NAME, render, routes, urls, langs: LANGS, links, clientUrl: CLIENT_URL, apiUrl: API_URL, device, lang, changeRoute: this.changeRoute, changeRouteWithHref, changeApp, langHandler: this.langHandler }
+    const sharedProps = { appName: APP_NAME, render, routes, urls, langs: LANGS, links, clientUrl: CLIENT_URL, apiUrl: API_URL, device, lang, changeRoute: this.changeRoute, changeApp, langHandler: this.langHandler }
     const headerProps = { ...sharedProps, urlComposites, Logo, HeaderCustomization, styles: headerStyles }
     const pageProps = { ...sharedProps, customNodeParser, customMetaParser }
     

@@ -2,7 +2,6 @@ import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
 import { VERIFY_API_ROUTE } from '../constants/api_routes.js'
 import { saveTokens } from '../../../../../../../functions/token-handlers'
 import { ROOT_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
-import changeRouteWithHref from '../../../../../../../../../functions/routes/changers/route-with-href.js'
 import { ANNOUNCEMENT_CREATE_SUCCESS_URLS } from '../../../../../../../../../../shared/constants/routes/urls.js'
 import CLIENT_URL from '../../../../../../../../../../shared/constants/urls/client.js'
 import getCookieValue from '../../../../../../../../../../../shared/app/functions/cookies/getters/get-cookie-value.js'
@@ -42,7 +41,8 @@ export function verify() {
       return
     }
 
-    changeRouteWithHref({ lang, track: ROOT_TRACK, changeRoute })
+    // TODO CHANGE ROUTE
+    changeRoute({ lang, track: ROOT_TRACK, changeRoute })
   })
   .catch(() => changeErrors({ verification: { pl: 'Nieprawidłowy kod weryfikacyjny', en: 'Invalid verification code' } }))
   .finally(() => changeControl({ connecting: false }))

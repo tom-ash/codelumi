@@ -7,7 +7,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import langHandler from '../../../../../../functions/lang-handler'
 import { USER_EDIT_PASSWORD_TRACK } from '../../../../../../../shared/constants/tracks/tracks'
 import AppContext from '../../../../../../constants/context.js'
-import changeRouteWithHref from '../../../../../../functions/routes/changers/route-with-href.js'
 
 class UserAuthorizeEmailPassword extends React.Component {
   constructor(props) {
@@ -42,7 +41,8 @@ class UserAuthorizeEmailPassword extends React.Component {
         </form>
         <div
           className='reset-password'>
-          <span onClick={() => changeRouteWithHref({ track, lang, changeRoute })}>
+          {/* TODO CHANGE ROUTE */}
+          <span onClick={() => changeRoute({ track, lang, changeRoute })}>
             {this.langHandler({ pl: 'Zresetuj hasło', en: 'Reset password' })}
           </span>
         </div>

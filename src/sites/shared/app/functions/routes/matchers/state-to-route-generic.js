@@ -1,6 +1,5 @@
 import { VISITOR_PRIVACY_MONIT_TRACK } from '../../../../shared/constants/tracks/tracks.js'
 import getPureUrl from '../../../../shared/functions/routes/getters/pure-url.js'
-import getRouteByUrl from '../../../../shared/functions/routes/getters/route-by-url.js'
 import syncRouteData from '../synchronizers/route-data.js'
 import genericRouteStateSetter from '../setters/generic-route-state.js'
 import getCookieValue from '../../cookies/getters/get-cookie-value.js'
@@ -21,7 +20,9 @@ function matchStateToRouteGeneric({
   const { changeRender, changeConsents } = this.props
   const url = getPureUrl(pathname || window.location.pathname)
   const query = window.location.search
-  const route = getRouteByUrl({ url, routes })
+
+  // TODO CHANGE ROUTE
+  const route = 'TODO'
   const statisticsConsent = getCookieAsBool(getCookieValue('_pdpaf'))
   const marketingConsent = getCookieAsBool(getCookieValue('_pdpsm'))
   const consents = { statisticsConsent, marketingConsent }

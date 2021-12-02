@@ -17,12 +17,13 @@ export function agreeManager(props) {
 }
 
 export function settingsManager(props) {
-  const { lang, langHandler, changeRoute, changeRouteWithHref } = props
+  const { lang, langHandler, changeRoute } = props
   const track = VISITOR_PRIVACY_SETTINGS_TRACK
 
+  // TODO CHANGE ROUTE
   return {
     classNames: { container: 'form-input button settings' },
     label: langHandler({ pl: 'Ustawienia', en: 'Settings' }),
-    onClick: () => changeRouteWithHref({ lang, track, changeRoute })
+    // onClick: () => changeRoute({ lang, track, changeRoute })
   }
 }

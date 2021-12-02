@@ -1,6 +1,4 @@
 import React from 'react'
-import { VISITOR_TERMS_OF_SERVICE_TRACK, VISITOR_PRIVACY_POLICY_TRACK } from '../../../../../../../../shared/constants/tracks/tracks'
-import getHrefByTrackAndLang from '../../../../../../../functions/routes/getters/href-by-track-and-lang.js'
 
 export function textProvider({ pureText }) {
   if (pureText) {
@@ -13,8 +11,10 @@ export function textProvider({ pureText }) {
   }
 
   const { lang } = this.props
-  const termsAndServiceHref = getHrefByTrackAndLang({ track: VISITOR_TERMS_OF_SERVICE_TRACK, lang })
-  const privacyPolicyHref = getHrefByTrackAndLang({ track: VISITOR_PRIVACY_POLICY_TRACK, lang })
+
+  // TODO CHANGE ROUTE
+  const termsAndServiceHref = 'TODO'
+  const privacyPolicyHref = 'TODO'
 
   return (
     {

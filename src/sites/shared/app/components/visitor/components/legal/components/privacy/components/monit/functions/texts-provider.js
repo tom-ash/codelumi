@@ -2,9 +2,11 @@ import React from 'react'
 import { VISITOR_COOKIES_POLICY_TRACK, VISITOR_PRIVACY_POLICY_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
 
 export function textsProvider(text, props) {
-  const { lang, changeRoute, changeRouteWithHref } = props
-  const changeRouteToCookiesPolicy = () => changeRouteWithHref({ lang, track: VISITOR_COOKIES_POLICY_TRACK, changeRoute })
-  const changeRouteToPrivacyPolicy = () => changeRouteWithHref({ lang, track: VISITOR_PRIVACY_POLICY_TRACK, changeRoute })
+  const { lang, changeRoute } = props
+
+  // TODO CHANGE ROUTE
+  const changeRouteToCookiesPolicy = () => changeRoute({ lang, track: VISITOR_COOKIES_POLICY_TRACK, changeRoute })
+  const changeRouteToPrivacyPolicy = () => changeRoute({ lang, track: VISITOR_PRIVACY_POLICY_TRACK, changeRoute })
 
   switch (text) {
     case 'cookies':

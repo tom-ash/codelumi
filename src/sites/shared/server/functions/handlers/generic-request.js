@@ -1,6 +1,5 @@
 import routeSender from '../senders/route.js'
 import getPureUrl from '../../../shared/functions/routes/getters/pure-url.js'
-import getRouteByUrl from '../../../shared/functions/routes/getters/route-by-url.js'
 import getDevice from '../../../shared/functions/getters/device.js'
 import getVisitorState from '../../../shared/functions/getters/visitor-state.js'
 
@@ -16,7 +15,9 @@ function genericRequestHandler({
   const url = getPureUrl(originalUrl)
   const queryMatch = originalUrl.match(/\?.+$/)
   const query = queryMatch ? queryMatch[0] : ''
-  const route = getRouteByUrl({ url, routes })
+
+  // TODO CHANGE ROUTE
+  const route = 'TODO'
   const device = getDevice(headers['user-agent'])
   const visitorState = getVisitorState(cookies)
 

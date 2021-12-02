@@ -12,13 +12,11 @@ import screenSizeHandler from '../../shared/app/functions/screen/handlers/screen
 import popStateHandler from '../../shared/app/functions/routes/handlers/pop-state.js'
 import langHandler from './functions/lang-handler'
 import matchStateToRoute from './functions/routes/matchers/state-to-route.js'
-import getRouteByLang from '../../shared/app/functions/routes/getters/route-by-lang.js'
 import changeRoute from './functions/routes/changers/route.js'
 import AppContext from './constants/context.js'
 import CLIENT_URL from '../shared/constants/urls/client.js'
 import API_URL from '../shared/constants/urls/api.js'
 import customNodeParser from './components/page/show/functions/custom-node-parser.js'
-import changeRouteWithHref from './functions/routes/changers/route-with-href.js'
 import routes from '../shared/constants/routes/routes.js'
 import * as langs from '../shared/constants/langs/langs.js'
 import * as urls from '../shared/constants/routes/urls.js'
@@ -44,13 +42,12 @@ class App extends React.Component {
     this.langHandler = langHandler.bind(this)
     this.matchStateToRoute = matchStateToRoute.bind(this)
     this.changeRoute = changeRoute.bind(this)
-    this.getRouteByLang = getRouteByLang.bind(this)
   }
 
   render() {
     const { render, renderPage, renderVisitor, renderAnnouncement, renderUser, lang, links, device, authorized, pageShowData, pageEditData, announcementShowData, announcementEditData, changeRender } = this.props
-    const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute, getRouteByLang: this.getRouteByLang }
-    const sharedProps = { appName: APP_NAME, routes, tracks, urls, langs, links, clientUrl: CLIENT_URL, apiUrl: API_URL, render, device, authorized, changeRoute: this.changeRoute, changeRouteWithHref, changeRender, langHandler: this.langHandler }
+    const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute }
+    const sharedProps = { appName: APP_NAME, routes, tracks, urls, langs, links, clientUrl: CLIENT_URL, apiUrl: API_URL, render, device, authorized, changeRoute: this.changeRoute, changeRender, langHandler: this.langHandler }
     const pageProps = { ...sharedProps, customNodeParser }
     const urlComposites = { pageShowData, pageEditData, announcementShowData, announcementEditData }
 
