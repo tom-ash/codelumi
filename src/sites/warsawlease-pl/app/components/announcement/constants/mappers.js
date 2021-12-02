@@ -1,5 +1,3 @@
-import { ANNOUNCEMENT_SHOW_TRACK } from '../../../../shared/constants/tracks/tracks'
-
 export const mapStateToProps = store => {
   const {
     lang
@@ -9,7 +7,7 @@ export const mapStateToProps = store => {
     'announcement/create': renderCreate,
     'announcement/edit': renderEdit,
     'announcement/index': renderIndex,
-    [ANNOUNCEMENT_SHOW_TRACK]: renderShow
+    'announcement/show': renderShow
   } = store.render
   
   return {
