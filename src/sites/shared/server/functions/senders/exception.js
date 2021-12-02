@@ -4,7 +4,7 @@ function exceptionSender({
   exception,
   res, url, device,
   tracks,
-  appState, renderState, visitorState,
+  appState, visitorState,
   appRenderer
 }) {
   const { VISITOR_TRACK, PAGE_TRACK, PAGE_NOT_FOUND_TRACK } = tracks

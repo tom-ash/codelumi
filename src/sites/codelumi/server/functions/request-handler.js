@@ -17,7 +17,6 @@ function handleRequest(req, res) {
     apiUrl: API_URL,
     tracks,
     appState,
-    renderState,
     appRenderer
   })
 }

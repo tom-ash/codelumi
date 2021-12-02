@@ -9,7 +9,7 @@ function routeSender({
   res,
   clientUrl, apiUrl, tracks, routeRenders,
   url, query, route, device,
-  appState, renderState, visitorState,
+  appState, visitorState,
   accessToken,
   appRenderer
 }) {
@@ -40,7 +40,7 @@ function routeSender({
     const app = { ...appState, routeSynced: true, lang, device }
     const { visitor: { consents: { statisticsConsent, marketingConsent } } } = visitorState
     const renderPrivacyMonit = { 'visitor/privacy-monit': anyNull({ statisticsConsent, marketingConsent }) }
-    const render = { ...renderState, ...renderPrivacyMonit, [track]: true, ...routeRenders[track] }
+    const render = { ...renderPrivacyMonit, [track]: true, ...routeRenders[track] }
     const residualState = initialStateParser && initialStateParser(state) || {}
     const initialState = { app, render, links: state.links, ...visitorState, ...residualState, ...initialStateParserV2(state) }
     const appAsHtml = appRenderer(initialState)
@@ -55,7 +55,7 @@ function routeSender({
       exception,
       res, url, device,
       tracks,
-      appState, renderState, visitorState,
+      appState, visitorState,
       appRenderer
     })
   })
