@@ -1,5 +1,4 @@
 import {
-  PAGE_CREATE_TRACK,
   PAGE_EDIT_TRACK,
   PAGE_INDEX_TRACK,
   PAGE_SHOW_TRACK,
@@ -12,7 +11,7 @@ export const mapStateToProps = store => {
   } = store.page.show.data
 
   const {
-    [PAGE_CREATE_TRACK]: renderCreate,
+    'page/create': renderCreate,
     [PAGE_EDIT_TRACK]: renderEdit,
     [PAGE_INDEX_TRACK]: renderIndex,
     [PAGE_SHOW_TRACK]: renderShow,
