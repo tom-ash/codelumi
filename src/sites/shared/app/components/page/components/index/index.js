@@ -10,12 +10,11 @@ class PageIndex extends React.Component {
   }
 
   render() {
-    const { renderManage, renderMap } = this.props
+    const { renderManage } = this.props
 
     return (
       <>
         {renderManage && <Manage {...this.props}/>}
-        {renderMap && "TO-DO"}
       </>
     )
   }

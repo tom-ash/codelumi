@@ -8,7 +8,6 @@ export const mapStateToProps = store => {
     lang,
     routeSynced,
     renderManage,
-    renderMap,
     pages,
     inputtedName
   }
