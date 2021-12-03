@@ -1,11 +1,3 @@
-import {
-  USER_CREATE_TRACK,
-  USER_EDIT_TRACK,
-  USER_AUTHORIZE_TRACK,
-  USER_SHOW_TRACK,
-  USER_EDIT_PASSWORD_TRACK
-} from '../../../../shared/constants/tracks/tracks'
-
 export const mapStateToProps = store => {
   const {
     lang,
@@ -13,11 +5,11 @@ export const mapStateToProps = store => {
   } = store.app
 
   const {
-    [USER_CREATE_TRACK]: renderCreate,
-    [USER_EDIT_TRACK]: renderEdit,
-    [USER_EDIT_PASSWORD_TRACK]: renderEditPassword,
-    [USER_AUTHORIZE_TRACK]: renderAuthorize,
-    [USER_SHOW_TRACK]: renderShow,
+    'user/create': renderCreate,
+    'user/edit': renderEdit,
+    'user/reset-password': renderEditPassword,
+    'user/authorize': renderAuthorize,
+    'user/show': renderShow,
   } = store.render
 
   return {

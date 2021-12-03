@@ -1,11 +1,11 @@
-import { PAGE_TRACK, VISITOR_TRACK, USER_TRACK } from '../../shared/constants/tracks/tracks'
+import { PAGE_TRACK, VISITOR_TRACK } from '../../shared/constants/tracks/tracks'
 
 export const mapStateToProps = store => {
   const render = store.render
   const {
     [PAGE_TRACK]: renderPage,
     [VISITOR_TRACK]: renderVisitor,
-    [USER_TRACK]: renderUser,
+    user: renderUser,
     announcement: renderAnnouncement
   } = render
   const { lang, device, path, scrollY, scripts, routeSynced, loadGa } = store.app

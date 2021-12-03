@@ -6,8 +6,6 @@ export function radioManager(props) {
   const plHref = links['current/pl'] && buildUrl({ path: links['current/pl'].path })
   const enHref = links['current/en'] && buildUrl({ path: links['current/en'].path })
 
-  
-
   return {
     name: 'lang-switch',
     classNames: { container: 'lang-radio-input'},

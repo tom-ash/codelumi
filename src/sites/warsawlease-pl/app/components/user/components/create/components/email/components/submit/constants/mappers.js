@@ -1,7 +1,5 @@
-import { USER_CREATE_FORM_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks.js'
-
 export const mapStateToProps = store => {
-  const { [USER_CREATE_FORM_TRACK]: renderUserCreate } = store.render
+  const { 'user/create/form': renderUserCreate } = store.render
   const { lang } = store.app
   const { accountType, email } = store.user.create.inputs
 

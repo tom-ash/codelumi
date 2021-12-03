@@ -6,7 +6,6 @@ import langHandler from '../../../../functions/lang-handler'
 import * as managers from './functions/managers'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import { USER_SHOW_TRACK } from '../../../../../shared/constants/tracks/tracks'
 import AppContext from '../../../../constants/context.js'
 
 class UserShow extends React.Component {

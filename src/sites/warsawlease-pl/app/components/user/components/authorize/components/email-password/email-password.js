@@ -5,7 +5,6 @@ import * as managers from './functions/managers'
 import { logIn } from './functions/adapters'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import langHandler from '../../../../../../functions/lang-handler'
-import { USER_EDIT_PASSWORD_TRACK } from '../../../../../../../shared/constants/tracks/tracks'
 import AppContext from '../../../../../../constants/context.js'
 
 class UserAuthorizeEmailPassword extends React.Component {
@@ -23,7 +22,9 @@ class UserAuthorizeEmailPassword extends React.Component {
 
   render() {
     const { lang } = this.props
-    const track = USER_EDIT_PASSWORD_TRACK
+
+    // TODO CHANGE ROUTE
+    // const href = TODO
     const { changeRoute } = this.context
 
     return (
@@ -42,7 +43,7 @@ class UserAuthorizeEmailPassword extends React.Component {
         <div
           className='reset-password'>
           {/* TODO CHANGE ROUTE */}
-          <span onClick={() => changeRoute({ track, lang, changeRoute })}>
+          <span onClick={() => changeRoute({ href })}>
             {this.langHandler({ pl: 'Zresetuj hasło', en: 'Reset password' })}
           </span>
         </div>
