@@ -8,7 +8,11 @@ function exceptionSender({
 }) {
   const initialState = {
     app: { ...appState, routeSynced: true, lang: 'pl', device },
-    // render: { [VISITOR_TRACK]: true, [PAGE_TRACK]: true, [PAGE_NOT_FOUND_TRACK]: true },
+    render: {
+      visitor: true,
+      page: true,
+      'page/not-found': true
+    },
     ...visitorState
   }
 

@@ -1,4 +1,3 @@
-import { VISITOR_PRIVACY_MONIT_TRACK } from '../../../../shared/constants/tracks/tracks.js'
 import getPureUrl from '../../../../shared/functions/routes/getters/pure-url.js'
 import syncRouteData from '../synchronizers/route-data.js'
 import genericRouteStateSetter from '../setters/generic-route-state.js'
@@ -23,8 +22,12 @@ function matchStateToRouteGeneric({
   const statisticsConsent = getCookieAsBool(getCookieValue('_pdpaf'))
   const marketingConsent = getCookieAsBool(getCookieValue('_pdpsm'))
   const consents = { statisticsConsent, marketingConsent }
-  const renderPrivacyMonit = { [VISITOR_PRIVACY_MONIT_TRACK]: anyNull({ statisticsConsent, marketingConsent }) }
-  const { track } = route
+
+  // TODO CHANGE ROUTE
+  const renderPrivacyMonit = { 'visitor/privacy-monit': anyNull({ statisticsConsent, marketingConsent }) }
+  // const { track } = route
+
+
   const stateSetter = route.stateSetter || genericRouteStateSetter
 
   changeConsents(consents)

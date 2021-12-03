@@ -3,14 +3,14 @@ import Links from '../links/links.js'
 import useStyles from 'isomorphic-style-loader/useStyles'
 import styles from './styles/styles.scss'
 import Button from './components/button/button.js'
-import { VISITOR_MENU_TRACK } from '../../../../../../../../../shared/shared/constants/tracks/tracks.js'
 
 const HeaderMenu = props => {
-  const { render, isMobile } = props
+  const { isMobile } = props
 
   useStyles(styles)
 
-  const renderMenu = render[VISITOR_MENU_TRACK]
+  // TODO CHANGE ROUTE
+  const renderMenu = false
 
   return (
     <>

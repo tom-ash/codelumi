@@ -1,12 +1,10 @@
 import React from 'react'
-import { VISITOR_PRIVACY_POLICY_TRACK } from '../../../../../../../../../../shared/constants/tracks/tracks'
 
 export function textsProvider(text, props) {
-  const { lang, changeRoute } = props
-  const track = VISITOR_PRIVACY_POLICY_TRACK
+  const { changeRoute } = props
 
   // TODO CHANGE ROUTE
-  const changeRouteToPrivacyPolicy = () => changeRoute({ lang, track, changeRoute })
+  const changeRouteToPrivacyPolicy = () => changeRoute({ href })
 
   switch (text) {
     case 'statistics':
