@@ -1,9 +1,7 @@
-import { PAGE_TRACK } from '../../shared/constants/tracks/tracks'
-
 export const mapStateToProps = store => {
   const render = store.render
   const {
-    [PAGE_TRACK]: renderPage,
+    page: renderPage,
     visitor: renderVisitor,
     user: renderUser,
     announcement: renderAnnouncement

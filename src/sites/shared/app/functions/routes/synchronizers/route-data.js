@@ -14,9 +14,9 @@ function syncRouteData({ apiUrl, url, query, requestType }) {
     }
   })
   .then(response => {
-    if (response.ok) return response.json()
+    if (response.ok || response.status === 404) return response.json()
 
-    throw new Error('Page Not Found')
+    throw new Error('Server Error')
   })
 }
 

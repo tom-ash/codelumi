@@ -1,7 +1,3 @@
-import {
-  PAGE_NOT_FOUND_TRACK
-} from '../../../../shared/constants/tracks/tracks.js'
-
 export const mapStateToProps = store => {
   const {
     name: showName
@@ -12,7 +8,7 @@ export const mapStateToProps = store => {
     'page/edit': renderEdit,
     'page/index': renderIndex,
     'page/show': renderShow,
-    [PAGE_NOT_FOUND_TRACK]: renderNotFound
+    'page/not-found': renderNotFound
   } = store.render
 
   return {
