@@ -83,7 +83,6 @@ class AnnouncementIndexMap extends React.Component {
           <div id='google-map' />
           {tile && Object.keys(tile).length > 1 &&
           <div className='announcement-tile-container'>
-            {console.log(tile)}
             <AnnouncementTile
               venue='map'
               lang={lang}

@@ -1,5 +1,4 @@
 import genericRequestHandler from '../../../shared/server/functions/handlers/generic-request.js'
-import appState from '../../app/constants/app-state.js'
 import appRenderer from './app-renderer.js'
 import ROOT_DOMAIN from '../../shared/constants/domains/root.js'
 import CLIENT_URL from '../../shared/constants/urls/client.js'

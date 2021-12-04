@@ -1,13 +1,14 @@
+import initialAppState from '../../../app/constants/initial-app-state'
 import indexRenderer from '../renderers'
 
 function exceptionSender({
   exception,
   res, url, device,
-  appState, visitorState,
+  visitorState,
   appRenderer
 }) {
   const initialState = {
-    app: { ...appState, routeSynced: true, lang: 'pl', device },
+    app: { ...initialAppState, routeSynced: true, lang: 'pl', device },
     render: {
       visitor: true,
       page: true,

@@ -3,14 +3,15 @@ import indexRenderer from '../renderers/index.js'
 import exceptionSender from './exception.js'
 import metaDataParser from '../../../shared/functions/parsers/meta-data.js'
 import initialStateParser from '../parsers/initial-state.js' 
+import initialAppState from '../../../app/constants/initial-app-state.js'
 
 function routeSender({
   res,
   clientUrl, apiUrl,
   url, query, device,
-  appState, visitorState,
   accessToken,
-  appRenderer
+  appRenderer,
+  visitorState
 }) {
   fetch(`${apiUrl}/sync${query}`, {
     headers: {
@@ -27,15 +28,15 @@ function routeSender({
     throw new Error('Page Not Found')
   })
   .then(jsonResponse => {
-    const { meta: unparsedMeta, state } = jsonResponse
+    const { state, meta: unparsedMeta } = jsonResponse
     const { lang } = unparsedMeta
     const meta = metaDataParser({ ...unparsedMeta, lang })
-    const app = { ...appState, routeSynced: true, lang, device }
+    const app = { ...initialAppState, routeSynced: true, lang, device }
     const { visitor: { consents: { statisticsConsent, marketingConsent } } } = visitorState
 
     // 'TODO'
     // const renderPrivacyMonit = { 'visitor/privacy-monit': anyNull({ statisticsConsent, marketingConsent }) }
-    const initialState = { app, links: state.links, ...visitorState, ...initialStateParser(state) }
+    const initialState = { app, render: state.render, links: state.links, ...visitorState, ...initialStateParser(state) }
     const appAsHtml = appRenderer(initialState)
     const status = 200
 
@@ -47,7 +48,7 @@ function routeSender({
     exceptionSender({
       exception,
       res, url, device,
-      appState, visitorState,
+      visitorState,
       appRenderer
     })
   })

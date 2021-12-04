@@ -1,6 +1,5 @@
 function genericRouteStateSetter(state) {
   const { changeApp, dispatch } = this.props
-  const appState = { routeSynced: true }
 
   if (state) {
     Object.keys(state).map(stateKey => {
@@ -8,7 +7,7 @@ function genericRouteStateSetter(state) {
     })
   }
 
-  changeApp(appState)
+  changeApp({ routeSynced: true })
 }
 
 export default genericRouteStateSetter

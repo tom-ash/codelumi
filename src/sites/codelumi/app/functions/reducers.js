@@ -1,7 +1,7 @@
-import appState from '../constants/app-state'
+import initialAppState from '../../../shared/app/constants/initial-app-state'
 import { combineReducers } from 'redux'
 
-export const appReducer = (state = appState, action) => {
+export const appReducer = (state = initialAppState, action) => {
   switch (action.type) {
     case 'app': return { ...state, ...action.value }
     default: return state
