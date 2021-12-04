@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 const UserCreate = loadable(() => import('./components/create/create'))
 const UserAuthorize = loadable(() => import('./components/authorize/authorize'))
-const UserShow = loadable(() => import('./components/show/show'))
 const UserEditAccountPassword = loadable(() => import('./components/edit/components/account/components/password/password'))
 const UserEditAccount = loadable(() => import('./components/edit/components/account/account'))
 
@@ -18,7 +17,6 @@ class User extends React.Component {
       renderCreate,
       renderAuthorize,
       renderEditPassword,
-      renderShow,
       renderEdit
     } = this.props
 
@@ -28,7 +26,6 @@ class User extends React.Component {
         {renderEdit && <UserEditAccount />}
         {renderAuthorize && <UserAuthorize />}
         {renderEditPassword && <UserEditAccountPassword />}
-        {renderShow && <UserShow />}
       </React.Fragment>
     )
   }

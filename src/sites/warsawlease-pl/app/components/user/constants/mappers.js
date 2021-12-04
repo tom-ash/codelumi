@@ -8,8 +8,7 @@ export const mapStateToProps = store => {
     'user/create': renderCreate,
     'user/edit': renderEdit,
     'user/reset-password': renderEditPassword,
-    'user/authorize': renderAuthorize,
-    'user/show': renderShow,
+    'user/authorize': renderAuthorize
   } = store.render
 
   return {
@@ -17,8 +16,7 @@ export const mapStateToProps = store => {
     renderCreate,
     renderEdit,
     renderEditPassword,
-    renderAuthorize,
-    renderShow
+    renderAuthorize
   }
 }
     

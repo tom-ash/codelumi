@@ -1,5 +1,5 @@
 import React from 'react'
-import { ManagedLink } from 'managed-inputs'
+import { ManagedButton, ManagedLink } from 'managed-inputs'
 import { addAnnouncementManager, signUpManager, signInManager, myAccountManager } from './functions/managers.js'
 import LangSwtich from './components/lang-switch/lang-switch.js'
 
@@ -9,7 +9,7 @@ const HeaderUserLinks = props => {
   return (
     <>  
       {authorized ?
-      <ManagedLink {...myAccountManager(props)}/>
+      <ManagedButton {...myAccountManager(props)}/>
       :
       <>
         <ManagedLink {...signUpManager(props)}/>
@@ -20,16 +20,7 @@ const HeaderUserLinks = props => {
 }
 
 const HeaderLinks = props => {
-  const { isMenu, isMobile } = props
-
-  if (isMenu) {
-    return (
-      <>
-        <ManagedLink {...addAnnouncementManager(props)}/>
-        <HeaderUserLinks {...props}/>
-      </>
-    )
-  }
+  const { isMobile } = props
 
   return (
     <div className='links'>
