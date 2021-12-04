@@ -13,16 +13,13 @@ function genericRequestHandler({
   const url = getPureUrl(originalUrl)
   const queryMatch = originalUrl.match(/\?.+$/)
   const query = queryMatch ? queryMatch[0] : ''
-
-  // TODO CHANGE ROUTE
-  const route = 'TODO'
   const device = getDevice(headers['user-agent'])
   const visitorState = getVisitorState(cookies)
 
   routeSender({
     res,
     clientUrl, apiUrl,
-    url, query, route, device,
+    url, query, device,
     visitorState,
     accessToken,
     appRenderer

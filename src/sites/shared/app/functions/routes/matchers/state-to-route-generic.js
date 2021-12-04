@@ -12,31 +12,24 @@ function matchStateToRouteGeneric({
   pathname
 }) {
   if (typeof window === 'undefined') return
-
-  const { changeConsents } = this.props
   const url = getPureUrl(pathname || window.location.pathname)
   const query = window.location.search
 
-  // TODO CHANGE ROUTE
-  const route = 'TODO'
+  const { changeConsents } = this.props
   const statisticsConsent = getCookieAsBool(getCookieValue('_pdpaf'))
   const marketingConsent = getCookieAsBool(getCookieValue('_pdpsm'))
   const consents = { statisticsConsent, marketingConsent }
 
-  // TODO CHANGE ROUTE
+  // TODO HANDLE CONSENTS
   const renderPrivacyMonit = { 'visitor/privacy-monit': anyNull({ statisticsConsent, marketingConsent }) }
-  // const { track } = route
-
-
-  const stateSetter = route.stateSetter || genericRouteStateSetter
 
   changeConsents(consents)
 
-  syncRouteData.call(this, { apiUrl, url, query, route, requestType: 'ssr' })
+  syncRouteData.call(this, { apiUrl, url, query, requestType: 'ssr' })
   .then(syncedRouteData => {
     const { state, meta } = syncedRouteData
-    stateSetter.call(this, state)
-    metaSetter({ clientUrl, url, ...route, ...meta })
+    genericRouteStateSetter.call(this, state)
+    metaSetter({ clientUrl, url, ...meta })
   })
 }
 
