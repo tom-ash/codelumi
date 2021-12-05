@@ -1,13 +1,11 @@
 export const mapStateToProps = store => {
   const { lang } = store.app
-  const { 'announcement/create/verification': renderAnnouncementCreateVerification } = store.render
   const { connecting } = store.user.create.control
   const { email } = store.user.create.inputs
   const { verification } = store.user.create.errors
   const { id: announcementId } = store.announcement.create.data
 
   return {
-    renderAnnouncementCreateVerification,
     lang,
     email,
     verification,

@@ -1,6 +1,7 @@
 import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
 import { CREATE_API_ROUTE } from '../constants/api-routes.js'
 import setConfirmationTokenCookie from '../../../../../../../../../../../shared/app/functions/cookies/setters/confirmation-token.js'
+import buildUrl from '../../../../../../../../../../shared/functions/builders/url.js'
 
 function createUser(userObject) {
   const { lang, changeControl } = this.props
@@ -18,13 +19,10 @@ function createUser(userObject) {
   networkError => console.dir(networkError.message))
   .then(jsonResponse => {
     const { changeRoute } = this.context
-    const { confirmationToken } = jsonResponse
-
-    // TODO CHANGE ROUTE
-    const href = 'TODO'
+    const { confirmationToken, path } = jsonResponse
 
     setConfirmationTokenCookie(confirmationToken)
-    changeRoute({ href })
+    changeRoute({ href: buildUrl({ path }) })
     return changeControl({ connecting: false })
   })
   .catch(e => console.dir(e))
