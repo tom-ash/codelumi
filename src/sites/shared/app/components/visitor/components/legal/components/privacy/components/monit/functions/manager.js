@@ -1,3 +1,4 @@
+import buildUrl from '../../../../../../../../../../../warsawlease-pl/shared/functions/builders/url'
 import { saveCookie } from '../../../../cookies/functions/save'
 
 export function agreeManager(props) {
@@ -15,12 +16,12 @@ export function agreeManager(props) {
 }
 
 export function settingsManager(props) {
-  const { langHandler } = props
+  const { links, langHandler, changeRoute } = props
+  const classNames = { container: 'form-input button settings' }
+  const label = langHandler({ pl: 'Ustawienia', en: 'Settings' })
+  const linkData = links['visitor/privacy-settings']
+  const href = linkData && buildUrl({ path: linkData.path })
+  const onClick = () => changeRoute({ href })
 
-  // TODO CHANGE ROUTE
-  return {
-    classNames: { container: 'form-input button settings' },
-    label: langHandler({ pl: 'Ustawienia', en: 'Settings' }),
-    // onClick: () => changeRoute({ lang, track, changeRoute })
-  }
+  return { classNames, label, onClick }
 }

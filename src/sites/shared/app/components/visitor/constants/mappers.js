@@ -2,7 +2,6 @@ export const mapStateToProps = store => {
   const { lang } = store.app
 
   const {
-    'visitor/privacy-monit': renderPrivacyMonit,
     'visitor/cookies-policy': renderCookiesPolicy,
     'visitor/privacy-settings': renderPrivacySettings,
     'visitor/terms-of-service': renderTermsOfService,
@@ -13,10 +12,13 @@ export const mapStateToProps = store => {
 
   return {
     lang,
-    renderPrivacyMonit, renderPrivacySettings,
-    renderCookiesPolicy, renderPrivacyPolicy,
-    renderTermsOfService, renderContact,
-    statisticsConsent, marketingConsent
+    renderPrivacySettings,
+    renderCookiesPolicy,
+    renderPrivacyPolicy,
+    renderTermsOfService,
+    renderContact,
+    statisticsConsent,
+    marketingConsent
   }
 }
     

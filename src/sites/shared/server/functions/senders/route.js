@@ -33,9 +33,6 @@ function routeSender({
     const meta = metaDataParser({ ...unparsedMeta, lang })
     const app = { ...initialAppState, routeSynced: true, lang, device }
     const { visitor: { consents: { statisticsConsent, marketingConsent } } } = visitorState
-
-    // 'TODO'
-    // const renderPrivacyMonit = { 'visitor/privacy-monit': anyNull({ statisticsConsent, marketingConsent }) }
     const initialState = { app, render: state.render, links: state.links, ...visitorState, ...initialStateParser(state) }
     const appAsHtml = appRenderer(initialState)
     const status = 200
