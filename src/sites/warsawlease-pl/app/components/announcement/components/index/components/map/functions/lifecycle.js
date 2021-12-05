@@ -56,12 +56,10 @@ export function componentDidUpdate(prevProps) {
 export function componentWillUnmount() {
   const {
     resetControl,
-    resetInputs,
-    resetData
+    resetInputs
   } = this.props
 
   removeOldPins.call(this)
   resetControl()
   resetInputs()
-  resetData()
 }
