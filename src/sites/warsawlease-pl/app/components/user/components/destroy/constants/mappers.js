@@ -16,7 +16,8 @@ export const mapDispatchToProps = dispatch => {
     changeControl: value => dispatch({ type: 'user/destroy/control', value }),
     resetControl: value => dispatch({ type: 'user/destroy/control/reset', value }),
     changeErrors: value => dispatch({ type: 'user/destroy/errors', value }),
-    resetErrors: value => dispatch({ type: 'user/destroy/errors/reset', value })
+    resetErrors: value => dispatch({ type: 'user/destroy/errors/reset', value }),
+    dispatch
   }
 }
     

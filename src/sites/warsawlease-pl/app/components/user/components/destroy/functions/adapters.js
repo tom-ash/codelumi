@@ -1,6 +1,7 @@
 import API_URL from '../../../../../../shared/constants/urls/api.js'
 import getAccessToken from '../../authorize/components/tokens/functions/get-tokens'
 import { VERIFY_API_ROUTE_DATA, DELETE_API_ROUTE_DATA } from '../constants/api_route_data.js'
+import { deauthorizeUser } from '../../authorize/functions/adapters.js'
 
 export function sendEmail() {
   const {
@@ -46,18 +47,15 @@ export function destroy() {
 
   fetch(API_URL + route, {
     method,
-    headers: { 'Content-Type': 'application/json', 'Access-Token': getAccessToken() },
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Token': getAccessToken(),
+      'Lang': lang
+    },
     body: JSON.stringify({ verificationCode })
   })
   .then(response => {
-    if (response.ok) {
-      const { changeRoute } = this.context
-  
-      // TODO CHANGE ROUTE
-      changeRoute({ href })
-      this.deauthorizeUser()
-      return
-    }
+    if (response.ok) return response.json()
 
     this.props.changeErrors({
       verification: {
@@ -65,7 +63,14 @@ export function destroy() {
         en: 'Invalid verification code'
       }
     })
-    throw new Error('SomethingWentWrong')
+    throw new Error('Invalid Verification Code Error')
+  })
+  .then(json => {
+    const { path } = json
+    const { dispatch } = this.props
+    const { changeRoute } = this.context
+
+    deauthorizeUser({ dispatch, changeRoute, path })
   })
   .catch(error => console.dir(error))
   .finally(() => changeControl({ connecting: false }))
