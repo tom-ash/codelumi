@@ -2,12 +2,13 @@ import React from 'react'
 import SVG from '../../../../../../../../../../shared/app/components/support/svg/svg.js'
 import { ANNOUNCEMENT_CREATE_LABELS } from '../../../../../../../../../shared/constants/routes/labels.js'
 import { deauthorizeUser } from '../../../../../../../user/components/authorize/functions/adapters.js'
+import buildUrl from '../../../../../../../../../shared/functions/builders/url.js'
 
 export function myAnnouncementsManager(props) {
   const { langs, links, changeRoute, langHandler } = props
   const classNames = { container: 'add-announcement' }
   const link = links['announcement/index/user']
-  const href = link && link.path
+  const href = link && buildUrl({ path: link.path })
   const hrefLang = langHandler(langs)
   const title = link && link.title
   const label = title
@@ -20,7 +21,7 @@ export function accountManager(props) {
   const { langs, links, changeRoute, langHandler } = props
   const classNames = { container: 'add-announcement' }
   const link = links['user/edit']
-  const href = link && link.path
+  const href = link && buildUrl({ path: link.path })
   const hrefLang = langHandler(langs)
   const title = link && link.title
   const label = title
@@ -38,7 +39,6 @@ export function deAuthorizeManager(props) {
     onClick: () => deauthorizeUser({ dispatch, changeRoute })
   }
 }
-
 
 export function addAnnouncementManager(props) {
   const { isMobile, langs, links, changeRoute, langHandler } = props
@@ -61,11 +61,8 @@ export function addAnnouncementManager(props) {
 export function signUpManager(props) {
   const { langs, links, changeRoute, langHandler } = props
   const classNames = { container: 'header-link sign-up' }
-
-  console.log(props)
-
   const link = links['user/create/form']
-  const href = link && link.path
+  const href = link && buildUrl({ path: link.path })
   const hrefLang = langHandler(langs)
   const title = link && link.title
   const label = title
@@ -78,7 +75,7 @@ export function signInManager(props) {
   const { links, langs, changeRoute, langHandler } = props
   const classNames = { container: 'header-link sign-in' }
   const link = links['user/authorize']
-  const href = link && link.path
+  const href = link && buildUrl({ path: link.path })
   const hrefLang = langHandler(langs)
   const title = link && link.title
   const label = title

@@ -2,6 +2,7 @@ import API_URL from '../../../../../../shared/constants/urls/api.js'
 import getAccessToken from '../../../../user/components/authorize/components/tokens/functions/get-tokens'
 import { CREATE_API_ROUTE_DATA, CREATE_WITH_USER_API_ROUTE_DATA, UPDATE_API_ROUTE_DATA } from '../constants/api-route-data.js'
 import setConfirmationTokenCookie from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token.js'
+import buildUrl from '../../../../../../shared/functions/builders/url.js'
 
 function sendAnnouncementCreatedEvent() {
   window.dataLayer.push({ 'event': 'announcement_created' })
@@ -30,13 +31,13 @@ function update() {
     body: JSON.stringify({ announcement })
   })
   .then(response => {
-    if (response.ok) {
-      const { changeRoute } = this.context
-  
-      // TODO CHANGE ROUTE
-      changeRoute({ lang, track, changeRoute })
-      changeControl({ connecting: false })
-    }
+    if (response.ok) return response.json()
+  })
+  .then(path => {
+    const { changeRoute } = this.context
+
+    changeRoute({ href: buildUrl({ path }) })
+    changeControl({ connecting: false })
   })
 }
 
@@ -53,14 +54,11 @@ function create() {
   .then(response => {
     if (response.ok) return response.json()
   })
-  .then(jsonResponse => {
+  .then(path => {
     const { changeRoute } = this.context
-    const { id } = jsonResponse
 
-    // TODO CHANGE ROUTE
-    changeRoute({ href })
+    changeRoute({ href: buildUrl({ path }) })
     changeControl({ connecting: false })
-
     sendAnnouncementCreatedEvent()
   })
 }
@@ -78,16 +76,11 @@ function createWithUser() {
     if (response.ok) return response.json()
   })
   .then(jsonResponse => {
+    const { confirmationToken, path } = jsonResponse
     const { changeRoute } = this.context
-    const { confirmationToken } = jsonResponse
-
-    // TODO CHANGE ROUTE
-    const href = 'TODO'
-    const { id } = jsonResponse
 
     setConfirmationTokenCookie(confirmationToken)
-    changeData({ id })
-    changeRoute({ href })
+    changeRoute({ href: buildUrl({ path }) })
     changeControl({ connecting: false })
 
     sendAnnouncementCreatedEvent()

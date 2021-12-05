@@ -1,10 +1,11 @@
 import React from 'react'
+import buildUrl from '../../../../../../../../../../../warsawlease-pl/shared/functions/builders/url'
 
 export function textsProvider(text, props) {
-  const { changeRoute } = props
-
-  // TODO CHANGE ROUTE
-  const changeRouteToPrivacyPolicy = () => changeRoute({ href })
+  const { links, changeRoute } = props
+  const privacyPolicyLinkData = links['visitor/privacy-policy']
+  const privacyPolicyPath = privacyPolicyLinkData && privacyPolicyLinkData.path
+  const changeRouteToPrivacyPolicy = () => changeRoute({ href: buildUrl({ path: privacyPolicyPath }) })
 
   switch (text) {
     case 'statistics':
