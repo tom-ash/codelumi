@@ -17,21 +17,21 @@ class Visitor extends React.Component {
   
   render() {
     const {
-      appName, lang, links, changeRoute, langHandler, changeConsents,
+      appName, lang, links, changeRoute, langHandler, changeConsents, buildUrl,
       renderContact, renderPrivacySettings, renderTermsOfService, renderCookiesPolicy, renderPrivacyPolicy,
       statisticsConsent, marketingConsent
     } = this.props
-    const contactProps = { links, appName, changeRoute, langHandler }
-    const termsOfServiceProps = { links, appName, changeRoute, langHandler }
-    const cookiesPolicyProps = { links, appName, changeRoute, langHandler }
-    const privacyPolicyProps = { links, appName, changeRoute, langHandler }
-    const privacySettingsProps = { links, appName, statisticsConsent, marketingConsent, changeRoute, changeConsents, langHandler }
-    const privacyMonitProps = { links, appName, lang, changeRoute, langHandler, changeConsents }
-    const showPrivacyMonit = anyNull({ statisticsConsent, marketingConsent })
+    const contactProps = { links, appName, changeRoute, buildUrl, langHandler }
+    const termsOfServiceProps = { links, appName, changeRoute, buildUrl, langHandler }
+    const cookiesPolicyProps = { links, appName, changeRoute, buildUrl, langHandler }
+    const privacyPolicyProps = { links, appName, changeRoute, buildUrl, langHandler }
+    const privacySettingsProps = { links, appName, statisticsConsent, marketingConsent, changeRoute, buildUrl, changeConsents, langHandler }
+    const privacyMonitProps = { links, appName, lang, changeRoute, buildUrl, langHandler, changeConsents }
+    const showPrivacyMonit = anyNull({ statisticsConsent, marketingConsent }) && !renderContact && !renderTermsOfService && !renderCookiesPolicy && !renderPrivacyPolicy && !renderPrivacySettings
 
     return (
       <div id='visitor'>
-        {showPrivacyMonit && !renderPrivacySettings && <VisitorPrivacyMonit {...privacyMonitProps} />}
+        {showPrivacyMonit && <VisitorPrivacyMonit {...privacyMonitProps} />}
         {renderContact && <VisitorContact {...contactProps} />}
         {renderTermsOfService && <VisitorTermsOfService {...termsOfServiceProps} />}
         {renderCookiesPolicy && <VisitorCookiesPolicy {...cookiesPolicyProps} />}

@@ -1,11 +1,13 @@
 import React from 'react'
 
 export function textsProvider(text, props) {
-  const { changeRoute } = props
-
-  // TODO CHANGE ROUTE
-  const changeRouteToCookiesPolicy = () => changeRoute({ href })
-  const changeRouteToPrivacyPolicy = () => changeRoute({ href })
+  const { links, changeRoute, buildUrl } = props
+  const cookiesPolicyLinkData = links['visitor/cookies-policy']
+  const privacyPolicyLinkData = links['visitor/privacy-policy']
+  const cookiesPolicyHref = buildUrl({ path: cookiesPolicyLinkData && cookiesPolicyLinkData.path })
+  const privacyPolicyHref = buildUrl({ path: privacyPolicyLinkData && privacyPolicyLinkData.path })
+  const changeRouteToCookiesPolicy = () => changeRoute({ href: cookiesPolicyHref })
+  const changeRouteToPrivacyPolicy = () => changeRoute({ href: privacyPolicyHref })
 
   switch (text) {
     case 'cookies':

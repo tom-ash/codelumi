@@ -3,7 +3,8 @@ export const mapStateToProps = store => {
     lang: store.app.lang,
     termsAndPrivacyConsent: store.user.create.inputs.termsAndPrivacyConsent,
     termsError: store.user.create.errors.termsAndPrivacyConsent,
-    privacyError: store.user.create.errors.privacy
+    privacyError: store.user.create.errors.privacy,
+    links: store.links
   }
 }
 

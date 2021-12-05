@@ -1,4 +1,5 @@
 import React from 'react'
+import buildUrl from '../../../../../../../../shared/functions/builders/url'
 
 export function textProvider({ pureText }) {
   if (pureText) {
@@ -10,11 +11,11 @@ export function textProvider({ pureText }) {
     }
   }
 
-  const { lang } = this.props
-
-  // TODO CHANGE ROUTE
-  const termsAndServiceHref = 'TODO'
-  const privacyPolicyHref = 'TODO'
+  const { links } = this.props
+  const termsOfServiceLinkData = links['visitor/terms-of-service']
+  const privacyPolicyLinkData = links['visitor/privacy-policy']
+  const termsAndServiceHref = buildUrl({ path: termsOfServiceLinkData && termsOfServiceLinkData.path })
+  const privacyPolicyHref = buildUrl({ path: privacyPolicyLinkData && privacyPolicyLinkData.path })
 
   return (
     {
