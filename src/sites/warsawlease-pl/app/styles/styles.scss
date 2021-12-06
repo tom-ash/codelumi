@@ -43,21 +43,6 @@ input[type=number] {
   left: 0;
 }
 
-
-
-// textarea,
-// input:matches(
-//   [type="email"],
-//   [type="number"],
-//   [type="password"],
-//   [type="search"],
-//   [type="tel"],
-//   [type="text"],
-//   [type="url"]
-// ) {
-//   -webkit-appearance: none;
-// }
-
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
@@ -71,8 +56,14 @@ input:-webkit-autofill:active  {
 }
 
 body {
-  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap');
+  font-family: 'Nunito Sans', 'Helvetica Neue', 'Arial', sans-serif;
+
   background: $BACKGROUND-APP-COLOR;
+}
+
+button {
+  font-family: 'Nunito Sans';
 }
 
 .float-clear {

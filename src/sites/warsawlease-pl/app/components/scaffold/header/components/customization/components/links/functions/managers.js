@@ -34,7 +34,7 @@ export function deAuthorizeManager(props) {
   const { changeRoute, langHandler, dispatch } = props
 
   return {
-    classNames: { container: 'de-authorize' },
+    classNames: { container: 'header-link de-authorize' },
     label: langHandler({ pl: 'Wyloguj', en: 'Sign Out' }),
     onClick: () => deauthorizeUser({ dispatch, changeRoute })
   }
@@ -47,12 +47,7 @@ export function addAnnouncementManager(props) {
   const hrefLang = langHandler(langs)
   const title = linkData && linkData.title
   const classNames = { container: 'header-link add-announcement' }
-  const label = (
-    <>
-      {!isMobile && <SVG name='plus' />}
-      {langHandler(isMobile ? { pl: 'Dodaj ogłoszenie (bezpłatnie)', en: 'Add Announcement (Free)'} : ANNOUNCEMENT_CREATE_LABELS)}
-    </>
-  )
+  const label = langHandler(isMobile ? { pl: 'Dodaj ogłoszenie (bezpłatnie)', en: 'Add Announcement (Free)'} : ANNOUNCEMENT_CREATE_LABELS)
   const onClick = () => changeRoute({ href })
 
   return { classNames, href, hrefLang, title, label, onClick }

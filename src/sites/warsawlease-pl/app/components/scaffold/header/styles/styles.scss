@@ -16,48 +16,42 @@
     margin: 0 auto;
     .links {
       float: right;
+      font-weight: 600;
       .header-link {
         float: left;
         margin-left: 30px;
         text-align: center;
-        font-size: 14px;
+        font-size: 14.5px;
         cursor: pointer;
         line-height: 60px;
+        margin-bottom: 20px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
         &.hover {
           text-decoration: underline;
           color: #34495E;
         }
-        &.lang {
-          margin-top: 12px;
-          line-height: 14px;
-          color: #424949;
-          svg {
-            display: block;
-            width: 18px;
-            margin: 0 auto 4px;
-            transform: translate(0, -1px);
-            fill: #424949;
+        &.my-account {
+          .input {
+            font-weight: 600;
+            border: none;
+            background: none;
+            font-size: 14.5px;
+            &.hover {
+              text-decoration: underline;
+              color: #34495E;
+            }
           }
         }
       }
       .add-announcement {
+        font-weight: bold;
         position: relative;
         float: left;
         padding-left: 24px;
-        color: #D35400;
-        svg {
-          position: absolute;
-          top: 21px;
-          left: 0;
-          width: 15px;
-          fill: #D35400;
-        }
-        &.hover {
-          color: #E67E22;
-          svg {
-            fill: #E67E22;
-          }
-        }
       }
     }
   }
