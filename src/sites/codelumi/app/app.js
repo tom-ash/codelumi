@@ -25,6 +25,7 @@ import { LANGS } from '../shared/constants/langs/langs.js'
 import Logo from './components/scaffold/header/components/logo/logo.js'
 import HeaderCustomization from './components/scaffold/header/components/customization/customization.js'
 import initSentry from '../../shared/app/functions/analytics/sentry/init.js'
+import buildUrl from '../../shared/shared/functions/routes/builders/url.js'
 
 initSentry()
 
@@ -46,7 +47,7 @@ class App extends React.Component {
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute }
     const { render, renderPage, renderVisitor, renderAnnouncement, device, links, lang, pageShowData, pageEditData, changeApp } = this.props
     const urlComposites = { pageShowData, pageEditData }
-    const sharedProps = { appName: APP_NAME, render, langs: LANGS, links, clientUrl: CLIENT_URL, apiUrl: API_URL, device, lang, changeRoute: this.changeRoute, changeApp, langHandler: this.langHandler }
+    const sharedProps = { appName: APP_NAME, render, langs: LANGS, links, clientUrl: CLIENT_URL, apiUrl: API_URL, device, lang, changeRoute: this.changeRoute, buildUrl, changeApp, langHandler: this.langHandler }
     const headerProps = { ...sharedProps, urlComposites, Logo, HeaderCustomization, styles: headerStyles }
     const pageProps = { ...sharedProps, customNodeParser, customMetaParser }
     
