@@ -42,10 +42,10 @@ export function deAuthorizeManager(props) {
 
 export function addAnnouncementManager(props) {
   const { isMobile, langs, links, changeRoute, langHandler } = props
-  const linkData = links['announcement/create/form']
-  const href = linkData && linkData.path
+  const link = links['announcement/create/form']
+  const href = link && buildUrl({ path: link.path })
   const hrefLang = langHandler(langs)
-  const title = linkData && linkData.title
+  const title = link && link.title
   const classNames = { container: 'header-link add-announcement' }
   const label = langHandler(isMobile ? { pl: 'Dodaj ogłoszenie (bezpłatnie)', en: 'Add Announcement (Free)'} : ANNOUNCEMENT_CREATE_LABELS)
   const onClick = () => changeRoute({ href })

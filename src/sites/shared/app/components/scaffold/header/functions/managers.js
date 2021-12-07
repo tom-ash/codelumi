@@ -7,6 +7,8 @@ export function logoManager({ links, lang, Logo, changeRoute }) {
   const href = link && link.path
   const hrefLang = lang
   const label = <Logo />
+
+  // TODO CHANGE ROUTE
   const onClick = () => changeRoute({ href })
 
   return { classNames, href, hrefLang, title, label, onClick }

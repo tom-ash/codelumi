@@ -4,6 +4,8 @@ export const linkManager = props => {
   const { clientUrl, changeRoute, nodeContent } = props
   const { pathname, hrefLang, title } = nodeContent
   const classNames = { container: 'article-link' }
+
+  // TODO CHANGE ROUTE
   const href = `${clientUrl}/${pathname}`
   const label = (
     <>

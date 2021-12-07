@@ -11,6 +11,7 @@ export function nameManager() {
 }
 
 export function plVerManager({ path, clientUrl, lang, changeRoute }) {
+  // TODO CHANGE ROUTE
   const href = `${clientUrl}/${path}`
   const hrefLang = lang
   const label = path
@@ -20,6 +21,7 @@ export function plVerManager({ path, clientUrl, lang, changeRoute }) {
 }
 
 export function enVerManager({ path, clientUrl, lang, changeRoute }) {
+  // TODO CHANGE ROUTE
   const href = `${clientUrl}/${path}`
   const hrefLang = lang
   const label = path

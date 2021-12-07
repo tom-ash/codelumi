@@ -1,7 +1,9 @@
+import buildUrl from "../../../../../../../../../shared/functions/builders/url"
+
 export function linkManager() {
   const { path, title } = this.props
   const { changeRoute } = this.context
-  const href = path
+  const href = buildUrl({ path })
 
   return {
     classNames: { container: 'link' },

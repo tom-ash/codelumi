@@ -5,6 +5,7 @@ export function save() {
   const { lang, apiUrl, inputtedName: name, changeRoute } = this.props
   const { method, route } = CREATE_API_ROUTE
 
+  // TODO Add buildUrl?
   fetch(`${apiUrl}/${route}`, {
     method,
     headers: {

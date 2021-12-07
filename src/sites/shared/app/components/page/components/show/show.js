@@ -12,6 +12,7 @@ class PageShow extends React.Component {
     const { links, changeRoute } = this.props
     const href = links['page/edit']
 
+    // TODO CHANGE ROUTE buildUrl
     changeRoute({ href })
   }
 

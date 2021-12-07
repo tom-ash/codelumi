@@ -3,6 +3,8 @@ import SVG from '../../../../../../../../support/svg/svg.js'
 
 export function linkManager({ clientUrl, changeRoute, nodeContent }) {
   const { pathname, hrefLang, category, title, description, image } = nodeContent
+
+  // TODO CHANGE ROUTE
   const href = `${clientUrl}/${pathname}`
 
   return {
