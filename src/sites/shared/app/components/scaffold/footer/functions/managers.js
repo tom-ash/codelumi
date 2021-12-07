@@ -11,15 +11,13 @@ const managers = {}
 
 link_tracks.map(({ name, track  }) => {
   managers[name] = props => {
-    const { links, langs, changeRoute, langHandler } = props
+    const { links, langs, changeRoute, langHandler, buildUrl } = props
     const link = links[track]
-    const href = link && link.path
+    const href = link && buildUrl({ path: link.path })
     const hrefLang = langHandler(langs)
     const title = link && link.title
     const label = title
     const classNames = { container: 'link' }
-
-    // TODO CHANGE ROUTE buildUrl
     const onClick = () => changeRoute({ href })
     
     return { classNames, href, hrefLang, title, label, onClick }

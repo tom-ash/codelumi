@@ -1,6 +1,7 @@
 function buildUrlGeneric({ clientUrl, path, query, fragment }) {
-  // query, fragment -> TODO
-  return `${clientUrl}/${path}`
+  const purePath = path ? path.replace(/^\//, '') : ''
+
+  return `${clientUrl}/${purePath}`
 }
 
 export default buildUrlGeneric
