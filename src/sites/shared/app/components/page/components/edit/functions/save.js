@@ -5,13 +5,11 @@ export function save({ withRouteChange = false }) {
   const body = JSON.parse(this.props.body)
   const style = JSON.parse(this.props.style)
   const meta = JSON.parse(this.props.meta)
-  const { clientUrl, apiUrl, changeControl } = this.props
+  const { apiUrl, changeControl, buildUrl } = this.props
   const { method, route } = UPDATE_API_ROUTE
   const requestBody = JSON.stringify({ ...this.props, body, style, meta })
 
   changeControl({ fetching: true })
-
-  // TODO Add buildUrl?
   fetch(`${apiUrl}/${route}`, {
     method,
     headers: {
@@ -21,14 +19,17 @@ export function save({ withRouteChange = false }) {
     body: requestBody
   })
   .then(response => {
-    if (response.status == 200) {
-      if (withRouteChange) {
-        const { url, changeRoute } = this.props
-        const href = `${clientUrl}/${url}`
+    if (response.status === 200) return response.json()
 
-        changeRoute({ href })
-      }
-    }
+    throw new Error('Server error at updating page!')
+  })
+  .then(path => {
+    if (!withRouteChange) return
+
+    const { buildUrl, changeRoute } = this.props
+    const href = buildUrl({ path })
+
+    changeRoute({ href })
   })
   .finally(() => {
     changeControl({ fetching: false })
