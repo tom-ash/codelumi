@@ -10,9 +10,9 @@ export function nameManager() {
   }
 }
 
-export function plVerManager({ path, clientUrl, lang, changeRoute }) {
-  // TODO CHANGE ROUTE
-  const href = `${clientUrl}/${path}`
+export function plVerManager(props) {
+  const { path, lang, changeRoute, buildUrl } = props
+  const href = buildUrl({ path })
   const hrefLang = lang
   const label = path
   const onClick = () => changeRoute({ href })
@@ -20,9 +20,9 @@ export function plVerManager({ path, clientUrl, lang, changeRoute }) {
   return { href, hrefLang, label, onClick }
 }
 
-export function enVerManager({ path, clientUrl, lang, changeRoute }) {
-  // TODO CHANGE ROUTE
-  const href = `${clientUrl}/${path}`
+export function enVerManager(props) {
+  const { path, lang, changeRoute, buildUrl } = props
+  const href = buildUrl({ path })
   const hrefLang = lang
   const label = path
   const onClick = () => changeRoute({ href })

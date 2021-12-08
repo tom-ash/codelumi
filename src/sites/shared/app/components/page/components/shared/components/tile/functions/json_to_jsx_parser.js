@@ -6,7 +6,7 @@ import urlify from '../../../../../../../../../shared/shared/functions/transform
 const commonTags = ['h1', 'h2', 'h3', 'h4', 'div', 'p']
 
 const jsonToJsxParser = props => {
-  const { device, isAdmin, jsonBody, jsonMeta, clientUrl, changeRoute, customNodeParser } = props
+  const { device, isAdmin, jsonBody, jsonMeta, clientUrl, changeRoute, buildUrl, customNodeParser } = props
 
   const jsx = jsonBody.map(function(node, index) {
     const nodeTag = node.t || 'p'
@@ -19,7 +19,7 @@ const jsonToJsxParser = props => {
     if (nodeTag === 'float-clear') return <div key={index} className='float-clear'/>
     if (nodeTag === 'ul') return <List {...nodeContent} />
 
-    return customNodeParser({ device, isAdmin, clientUrl, nodeTag, nodeContent, attrs, changeRoute, index, jsonMeta })
+    return customNodeParser({ device, isAdmin, clientUrl, nodeTag, nodeContent, attrs, changeRoute, buildUrl, index, jsonMeta })
   })
 
   return jsx

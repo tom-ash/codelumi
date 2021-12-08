@@ -1,17 +1,13 @@
 import React from 'react'
 
 export const linkManager = props => {
-  const { clientUrl, changeRoute, nodeContent } = props
+  const { changeRoute, buildUrl, nodeContent } = props
   const { pathname, hrefLang, title } = nodeContent
   const classNames = { container: 'article-link' }
+  const href = buildUrl({ path: pathname })
 
-  // TODO CHANGE ROUTE
-  const href = `${clientUrl}/${pathname}`
   const label = (
     <>
-      {/* <div>
-        PICTURE
-      </div> */}
       <div className='title'>
         {title}
       </div>

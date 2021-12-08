@@ -1,11 +1,10 @@
 import React from 'react'
 import SVG from '../../../../../../../../support/svg/svg.js'
 
-export function linkManager({ clientUrl, changeRoute, nodeContent }) {
-  const { pathname, hrefLang, category, title, description, image } = nodeContent
-
-  // TODO CHANGE ROUTE
-  const href = `${clientUrl}/${pathname}`
+export function linkManager(props) {
+  const { changeRoute, buildUrl, nodeContent } = props
+  const { pathname, hrefLang, category, title, image } = nodeContent
+  const href = buildUrl({ path: pathname })
 
   return {
     classNames: { container: '' },
@@ -21,9 +20,6 @@ export function linkManager({ clientUrl, changeRoute, nodeContent }) {
          <div className='title'>
           {title}
          </div>
-         {/* <div className='description'>
-           {description}
-         </div> */}
       </>
     ),
     onClick: () => changeRoute({ href })

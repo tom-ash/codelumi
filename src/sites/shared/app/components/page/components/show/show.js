@@ -9,16 +9,16 @@ class PageShow extends React.Component {
   }
 
   changePage = () => {
-    const { links, changeRoute } = this.props
-    const href = links['page/edit']
+    const { links, changeRoute, buildUrl } = this.props
+    const link = links['page/edit']
+    const href = link && buildUrl({ path: link.path })
 
-    // TODO CHANGE ROUTE buildUrl
     changeRoute({ href })
   }
 
   render() {
-    const { name, clientUrl, changeRoute } = this.props
-    const tileProps = { ...this.props, renderShow: true, clientUrl, changeRoute, changePage: this.changePage }
+    const { name, clientUrl, changeRoute, buildUrl } = this.props
+    const tileProps = { ...this.props, renderShow: true, clientUrl, changeRoute, changePage: this.changePage, buildUrl }
 
     if (!name) return null
 
