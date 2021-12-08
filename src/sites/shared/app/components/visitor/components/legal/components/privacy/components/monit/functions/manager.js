@@ -1,4 +1,3 @@
-import buildUrl from '../../../../../../../../../../../warsawlease-pl/shared/functions/builders/url'
 import { saveCookie } from '../../../../cookies/functions/save'
 
 export function agreeManager(props) {
@@ -16,7 +15,7 @@ export function agreeManager(props) {
 }
 
 export function settingsManager(props) {
-  const { links, langHandler, changeRoute } = props
+  const { links, langHandler, changeRoute, buildUrl } = props
   const classNames = { container: 'form-input button settings' }
   const label = langHandler({ pl: 'Ustawienia', en: 'Settings' })
   const linkData = links['visitor/privacy-settings']
