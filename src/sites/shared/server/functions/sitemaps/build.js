@@ -38,6 +38,8 @@ function buildLocalizedUrls({ unlocalizedUrlGroup, clientUrl }) {
 }
 
 function buildAltUrls({ unlocalizedUrlGroup, clientUrl }) {
+  if (unlocalizedUrlGroup.length < 2) return ''
+
   let altLocalizedUrls = ''
   
   unlocalizedUrlGroup.map(localizedUrl => {
