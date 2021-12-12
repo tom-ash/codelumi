@@ -7,11 +7,13 @@ function metaDataParser({
   description,
   keywords,
   image,
+  ogLocale,
+  ogLocaleAlts,
   openGraph,
   schemaOrg
 }) {
-  const parsedOpenGraph = openGraphGenericParser({ title, description, keywords, image, ...openGraph })
-  const parsedSchemaOrg = schemaOrgGenericParser({ lang, title, description, keywords, ...schemaOrg })
+  const parsedOpenGraph = openGraphGenericParser({ title, description, keywords, image, locale: ogLocale, localeAlts: ogLocaleAlts, ...openGraph })
+  const parsedSchemaOrg = schemaOrgGenericParser({ lang, title, description, keywords, locale: ogLocale, localeAlts: ogLocaleAlts, ...schemaOrg })
 
   return {
     lang,
