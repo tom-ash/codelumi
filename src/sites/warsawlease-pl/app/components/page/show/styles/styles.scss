@@ -59,16 +59,22 @@
     font-size: 17px;
     line-height: 1.8;
     h1 {
+      padding: 0 20px;
       font-size: 21px;
       color: #212F3C;
     }
     h2 {
+      padding: 0 20px;
       font-size: 19px;
       color: #212F3C;
     }
     p {
+      padding: 0 20px;
       font-size: 17px;
       color: #424949;
+    }
+    ul {
+      padding-left: 38px;
     }
   }
   &.welcome {
