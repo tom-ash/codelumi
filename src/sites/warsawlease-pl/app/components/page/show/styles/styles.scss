@@ -5,8 +5,6 @@
   position: relative;
   max-width: 1400px;
   margin: 20px auto;
-  background: white;
-  border: 1px solid $CONTAINER-BORDER-COLOR;
   border-radius: 4px;
   padding: 1px 0;
   line-height: 1.65;
@@ -29,19 +27,16 @@
   h1 {
     margin-top: 20px;
     margin-bottom: 16px;
-    padding: 0 20px;
     font-size: 17px;
     color: #565656;
   }
   h2 {
     margin-top: 16px;
     margin-bottom: 8px;
-    padding: 0 20px;
     font-size: 16px;
     color: #565656;
   }
   h3 {
-    padding: 0 20px;
     font-size: 15px;
     margin-top: 20px;
     margin-bottom: 5px;
@@ -50,29 +45,35 @@
   .body {
     p {
       margin-bottom: 10px;
-      padding: 0 20px;
       font-size: 15px;
       white-space: pre-wrap;
     }
   }
+
+  ul {
+    padding-left: 18px;
+  }
+
   &.article {
     max-width: 768px;
+    font-size: 17px;
+    line-height: 1.8;
     h1 {
-      font-size: 18px;
+      font-size: 21px;
       color: #212F3C;
     }
     h2 {
-      font-size: 17px;
+      font-size: 19px;
       color: #212F3C;
     }
     p {
-      font-size: 16px;
+      font-size: 17px;
       color: #424949;
     }
   }
   &.welcome {
     a {
-      padding: 20px 0 0 20px;
+      padding: 20px 0 0;
       text-decoration: underline;
     }
   }
