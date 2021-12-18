@@ -2,11 +2,12 @@ import openGraphProvider from '../providers/open-graph'
 import schemaOrgProvider from '../providers/schema-org'
 import pretty from 'pretty'
 import getPureUrl from '../../../shared/functions/routes/getters/pure-url.js'
+import buildAlternateLinks from '../builders/alternate_links.js'
 
 function indexRenderer({
-  clientUrl, url, canonicalUrl, lang, noIndex,
+  clientUrl, url, canonicalUrl, noIndex, links, langs, lang, buildUrl,
   title, description, keywords, openGraph, schemaOrg,
-  css, html, preloadedState, scriptTags
+  html, css, preloadedState, scriptTags
 }) {
   const charsetMeta = `<meta charset="UTF-8">`
   const viewportMeta = `<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">`
@@ -19,6 +20,7 @@ function indexRenderer({
   const schemaOrgMeta = schemaOrgProvider(schemaOrg)
   const style = `<style type="text/css">${[...css].join('')}</style>`
   const preloadedStateScript = `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}</script>`
+  const alternateLinks = buildAlternateLinks({ links, langs, lang, buildUrl })
   const indexAsHtml = (
     `<!doctype html>
     <html lang="${lang}">
@@ -26,6 +28,7 @@ function indexRenderer({
         ${charsetMeta}
         ${viewportMeta}
         ${canonicalMeta}
+        ${alternateLinks}
         ${robotsMeta}
         ${titleMeta}
         ${descriptionMeta}

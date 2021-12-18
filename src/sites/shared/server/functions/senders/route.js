@@ -5,9 +5,11 @@ import metaDataParser from '../../../shared/functions/parsers/meta-data.js'
 import initialStateParser from '../parsers/initial-state.js' 
 import initialAppState from '../../../app/constants/initial-app-state.js'
 
+// 'Lang': TODO Get lang from request,
+
 function routeSender({
   res,
-  clientUrl, apiUrl,
+  clientUrl, apiUrl, buildUrl,
   url, query, device,
   accessToken,
   appRenderer,
@@ -18,7 +20,6 @@ function routeSender({
       'Content-Type': 'application/json',
       'Type': 'ssr',
       'Route-Url': url,
-      // 'Lang': TODO Get lang from request,
       'Access-Token': accessToken
     }
   })
@@ -29,16 +30,16 @@ function routeSender({
   })
   .then(jsonResponse => {
     const { state, meta: unparsedMeta } = jsonResponse
-    const { lang } = unparsedMeta
+    const { langs, lang } = unparsedMeta
     const meta = metaDataParser({ ...unparsedMeta, lang })
     const app = { ...initialAppState, routeSynced: true, lang, device }
-    const { visitor: { consents: { statisticsConsent, marketingConsent } } } = visitorState
-    const initialState = { app, render: state.render, links: state.links, ...visitorState, ...initialStateParser(state) }
+    const links = state.links
+    const initialState = { app, render: state.render, links, ...visitorState, ...initialStateParser(state) }
     const appAsHtml = appRenderer(initialState)
     const status = 200
 
     res.status(status).send(
-      indexRenderer({ clientUrl, url, ...meta, ...appAsHtml }) 
+      indexRenderer({ clientUrl, url, ...meta, ...appAsHtml, links, langs, lang, buildUrl }) 
     )
   })
   .catch(exception => {

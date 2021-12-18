@@ -3,6 +3,7 @@ import appRenderer from './app-renderer.js'
 import ROOT_DOMAIN from '../../shared/domains/root.js'
 import CLIENT_URL from '../../shared/constants/urls/client.js'
 import API_URL from '../../shared/constants/urls/api.js'
+import buildUrl from '../../shared/functions/routes/builders/url.js'
 
 function handleRequest(req, res) {
   if (req.hostname === 'codelumi.com' || req.hostname === 'www.codelumi.com') return res.status(301).redirect(`https://${ROOT_DOMAIN}${req.originalUrl}`)
@@ -13,6 +14,7 @@ function handleRequest(req, res) {
     res,
     clientUrl: CLIENT_URL,
     apiUrl: API_URL,
+    buildUrl,
     appRenderer
   })
 }

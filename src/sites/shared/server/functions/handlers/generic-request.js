@@ -6,7 +6,7 @@ import sitemapSender from '../senders/sitemap.js'
 
 function genericRequestHandler({
   req, res,
-  clientUrl, apiUrl,
+  clientUrl, apiUrl, buildUrl,
   appRenderer
 }) {
   const { cookies, originalUrl, headers } = req
@@ -21,7 +21,7 @@ function genericRequestHandler({
 
   routeSender({
     res,
-    clientUrl, apiUrl,
+    clientUrl, apiUrl, buildUrl,
     url, query, device,
     visitorState,
     accessToken,
