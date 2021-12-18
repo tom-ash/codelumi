@@ -11,16 +11,14 @@ export const linkManager = props => {
   const href = `${clientUrl}/${pathname}`
   const label = (
     <>
-      <div className='picture'>
+      <div className='picture-and-title'>
         <img src={iconHref} />
-      </div>
-      <div className='text'>
         <div className='title'>
           {title}
         </div>
-        <div className='description'>
-          {description}
-        </div>
+      </div>
+      <div className='description'>
+        {description}
       </div>
     </>
   )
