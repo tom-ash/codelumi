@@ -1,0 +1,51 @@
+@import '../../../../../../../../shared/app/styles/media-breakpoints';
+
+.article-link {
+  float: left;
+  width: 30%;
+  padding: 0;
+  &:nth-of-type(2) {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .picture-and-title {
+    position: relative;
+    height: 235px;
+    img { 
+      height: 235px;
+    }
+    .title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      padding: 10px 15px;
+      background: rgba(0,0,0,0.5);
+    }
+    color: white;
+    font-size: 17px;
+  }
+  .description {
+    padding-top: 10px;
+    text-align: justify;
+    font-size: 15px;
+    color: #626567;
+  }
+  @media #{$LARGE-TABLET} {
+    width: 45%;
+    margin-bottom: 50px;
+    &:nth-of-type(2) {
+      margin-left: 10%;
+      margin-right: 0;
+    }
+  }
+  @media #{$LARGE-PHONE} {
+    float: non;
+    width: 100%;
+    padding: 0 20px;
+    &:nth-of-type(2) {
+      margin-left: 0;
+    }
+  }
+}
