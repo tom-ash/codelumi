@@ -33,7 +33,8 @@ function routeSender({
     const { state, meta: unparsedMeta } = jsonResponse
     const { langs, lang } = unparsedMeta
     const { canonicalUrl } = unparsedMeta
-    const meta = metaDataParser({ ...unparsedMeta, lang, siteName })
+    const canonicalPath = typeof canonicalUrl === 'string' ? canonicalUrl : url
+    const meta = metaDataParser({ ...unparsedMeta, lang, siteName, canonicalUrl: buildUrl({ path: canonicalPath }) })
     const app = { ...initialAppState, routeSynced: true, lang, device }
     const links = state.links
     const initialState = { app, render: state.render, links, ...visitorState, ...initialStateParser(state) }
