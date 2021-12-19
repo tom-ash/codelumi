@@ -1,0 +1,25 @@
+@import '../../../../../../../../shared/app/styles/media-breakpoints';
+
+.picture-header {
+  position: relative;
+  margin-bottom: 20px;
+  img {
+    display: block;
+  }
+  h1 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: white!important;
+    font-size: 26px!important;
+    padding: 20px 40px!important;
+    background: rgba(0, 0, 0, 0.6);
+    margin: 0!important;
+    font-weight: normal;
+    @media #{$LARGE-PHONE} {
+      padding: 8px 16px!important;
+      font-size: 21px!important;
+    }
+  }
+}

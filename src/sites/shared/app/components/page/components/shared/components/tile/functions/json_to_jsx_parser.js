@@ -19,7 +19,7 @@ const jsonToJsxParser = props => {
     if (nodeTag === 'float-clear') return <div key={index} className='float-clear'/>
     if (nodeTag === 'ul') return <List {...nodeContent} />
 
-    return customNodeParser({ device, isAdmin, clientUrl, nodeTag, nodeContent, attrs, changeRoute, buildUrl, index, jsonMeta })
+    return customNodeParser({ device, isAdmin, clientUrl, nodeTag, nodeContent, attrs, changeRoute, buildUrl, index, jsonMeta, node })
   })
 
   return jsx

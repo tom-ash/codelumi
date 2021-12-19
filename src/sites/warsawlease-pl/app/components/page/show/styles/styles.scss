@@ -1,5 +1,6 @@
 @import '../../../../styles/box_shadows.scss';
 @import '../../../../styles/colors.scss';
+@import '../../../../../../shared/app/styles/media-breakpoints.scss';
 
 .tile {
   position: relative;
@@ -9,6 +10,9 @@
   padding: 1px 0;
   line-height: 1.65;
   color: #424242;
+  @media #{$LARGE-PHONE} {
+    margin: 0 auto 20px;
+  }
   img {
     width: 100%;
   }
@@ -50,31 +54,36 @@
     }
   }
 
-  ul {
-    padding-left: 18px;
-  }
-
   &.article {
     max-width: 768px;
     font-size: 17px;
     line-height: 1.8;
     h1 {
-      padding: 0 20px;
       font-size: 21px;
       color: #212F3C;
+      @media #{$LARGE-TABLET} {
+        padding: 0 20px;
+      }
     }
     h2 {
-      padding: 0 20px;
       font-size: 19px;
       color: #212F3C;
+      @media #{$LARGE-TABLET} {
+        padding: 0 20px;
+      }
     }
     p {
-      padding: 0 20px;
       font-size: 17px;
       color: #424949;
+      @media #{$LARGE-TABLET} {
+        padding: 0 20px;
+      }
     }
     ul {
-      padding-left: 38px;
+      padding-left: 18px;
+      @media #{$LARGE-TABLET} {
+        padding-left: 38px;
+      }
     }
   }
 }
