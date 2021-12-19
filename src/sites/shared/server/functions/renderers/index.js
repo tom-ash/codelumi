@@ -20,7 +20,7 @@ function indexRenderer({
   const schemaOrgMeta = schemaOrgProvider(schemaOrg)
   const style = `<style type="text/css">${[...css].join('')}</style>`
   const preloadedStateScript = `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}</script>`
-  const alternateLinks = buildAlternateLinks({ links, langs, lang, buildUrl })
+  const alternateLinks = buildAlternateLinks({ links, langs, buildUrl })
   const indexAsHtml = (
     `<!doctype html>
     <html lang="${lang}">

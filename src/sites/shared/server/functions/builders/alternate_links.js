@@ -1,16 +1,15 @@
-function buildAlternateLinks({ links, langs, lang, buildUrl }) {
-  const alternateLangs = langs.filter(language => language !== lang)
-  if (!alternateLangs.length) return ''
+function buildAlternateLinks({ links, langs, buildUrl }) {
+  if (langs.length < 2) return ''
 
   let alternates = ''
 
-  alternateLangs.map(language => {
-    const alternateLink = links[`current/${language}`]
+  langs.map(lang => {
+    const alternateLink = links[`current/${lang}`]
     if (alternateLink) {
       const { path } = alternateLink
       const href = buildUrl({ path })
     
-      alternates += `<link rel="alternate" hreflang="${language}" href="${href}" />`
+      alternates += `<link rel="alternate" hreflang="${lang}" href="${href}" />`
     }
   })
 
