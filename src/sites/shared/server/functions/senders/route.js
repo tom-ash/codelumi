@@ -13,7 +13,8 @@ function routeSender({
   url, query, device,
   accessToken,
   appRenderer,
-  visitorState
+  visitorState,
+  siteName
 }) {
   fetch(`${apiUrl}/sync${query}`, {
     headers: {
@@ -32,7 +33,7 @@ function routeSender({
     const { state, meta: unparsedMeta } = jsonResponse
     const { langs, lang } = unparsedMeta
     const { canonicalUrl } = unparsedMeta
-    const meta = metaDataParser({ ...unparsedMeta, lang })
+    const meta = metaDataParser({ ...unparsedMeta, lang, siteName })
     const app = { ...initialAppState, routeSynced: true, lang, device }
     const links = state.links
     const initialState = { app, render: state.render, links, ...visitorState, ...initialStateParser(state) }

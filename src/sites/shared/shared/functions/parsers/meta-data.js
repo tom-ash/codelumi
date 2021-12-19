@@ -10,9 +10,10 @@ function metaDataParser({
   ogLocale,
   ogLocaleAlts,
   openGraph,
-  schemaOrg
+  schemaOrg,
+  siteName
 }) {
-  const parsedOpenGraph = openGraphGenericParser({ title, description, keywords, image, locale: ogLocale, localeAlts: ogLocaleAlts, ...openGraph })
+  const parsedOpenGraph = openGraphGenericParser({ title, description, keywords, image, locale: ogLocale, localeAlts: ogLocaleAlts, siteName, ...openGraph })
   const parsedSchemaOrg = schemaOrgGenericParser({ lang, title, description, keywords, locale: ogLocale, localeAlts: ogLocaleAlts, ...schemaOrg })
 
   return {
