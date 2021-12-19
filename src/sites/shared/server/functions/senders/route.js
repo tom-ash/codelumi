@@ -31,6 +31,7 @@ function routeSender({
   .then(jsonResponse => {
     const { state, meta: unparsedMeta } = jsonResponse
     const { langs, lang } = unparsedMeta
+    const { canonicalUrl } = unparsedMeta
     const meta = metaDataParser({ ...unparsedMeta, lang })
     const app = { ...initialAppState, routeSynced: true, lang, device }
     const links = state.links
@@ -39,7 +40,7 @@ function routeSender({
     const status = 200
 
     res.status(status).send(
-      indexRenderer({ clientUrl, url, ...meta, ...appAsHtml, links, langs, lang, buildUrl }) 
+      indexRenderer({ clientUrl, url, ...meta, ...appAsHtml, canonicalUrl, links, langs, lang, buildUrl }) 
     )
   })
   .catch(exception => {

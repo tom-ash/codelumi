@@ -11,7 +11,8 @@ function indexRenderer({
 }) {
   const charsetMeta = `<meta charset="UTF-8">`
   const viewportMeta = `<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">`
-  const canonicalMeta = `<link rel="canonical" href="${getPureUrl(`${clientUrl}/${canonicalUrl || url}`)}">`
+  const canonicalPath = typeof canonicalUrl === 'string' ? canonicalUrl : url
+  const canonicalMeta = `<link rel="canonical" href="${getPureUrl(`${clientUrl}/${canonicalPath}`)}">`
   const robotsMeta = `<meta name="robots" content="${noIndex ? 'noindex' : 'index,follow,all'}">`
   const titleMeta = `<title>${title}</title>`
   const descriptionMeta = `<meta name="description" content="${description}">`

@@ -7,11 +7,6 @@ function metaSetter(meta) {
   const { lang, title, description, keywords, openGraph, schemaOrg } = parsedMeta
   const canonical = typeof canonicalUrl === 'string' ? canonicalUrl : url
 
-  console.log(meta)
-  console.log(canonical)
-  console.log(canonicalUrl)
-  console.log(typeof canonicalUrl)
-
   document.documentElement.lang = lang
   document.title = title
   document.querySelector('meta[name="description"]').setAttribute("content", description)
