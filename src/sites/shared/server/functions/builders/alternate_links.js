@@ -1,5 +1,6 @@
 function buildAlternateLinks({ links, langs, buildUrl }) {
-  if (langs.length < 2) return ''
+  if (!links || !langs) return ''
+  if (!langs && langs.length < 2) return ''
 
   let alternates = ''
 
