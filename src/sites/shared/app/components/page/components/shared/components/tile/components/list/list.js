@@ -3,13 +3,16 @@ import nodeParser from '../node-parser/node-parser'
 
 const parseNodeContent = props => {
   const { nodeContent, nodeKey } = props
-  const parsedNode = typeof nodeContent === 'string' ? nodeContent : nodeParser({ ...props, node: nodeContent })
 
-  return (
-    <li key={nodeKey}>
-      {parsedNode}
-    </li>
-  )
+  if (typeof nodeContent === 'string') {
+    return (
+      <li key={nodeKey}>
+        {nodeContent}
+      </li>
+    )
+  }
+
+  return nodeParser({ ...props, node: nodeContent, element: 'li' })
 }
 
 const List = props => {
