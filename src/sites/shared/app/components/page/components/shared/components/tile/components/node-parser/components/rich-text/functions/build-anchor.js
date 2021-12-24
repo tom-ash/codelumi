@@ -1,15 +1,19 @@
 const buildAnchor = matchArray => {
-  const anchorData = {}
-  
+  let properties = ''
+  let text
+
   matchArray.map(dataPair => {
     const [key, value] = dataPair.split(': ')
-    anchorData[key] = value
+
+    if (key !== 'text') {
+      properties += ` ${key}="${value}"`
+    } else {
+      text = value
+    }
   })
 
-  const { href, hreflang, text, title } = anchorData
-
   return (
-    `<a href="${href}" target="_blank" title="${title}" hreflang="${hreflang}">${text}</a>`
+    `<a ${properties}>${text}</a>`
   )
 }
 
