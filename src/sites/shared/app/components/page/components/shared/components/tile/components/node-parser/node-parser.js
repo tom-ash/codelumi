@@ -3,6 +3,7 @@ import Link from '../link/link.js'
 import List from '../list/list.js'
 import urlify from '../../../../../../../../../../shared/shared/functions/transformers/routes/urlify.js'
 import RichText from './components/rich-text/rich-text.js'
+import TableOfContents from '../table-of-contents/table-of-contents.js'
 
 const commonTags = ['h1', 'h2', 'h3', 'h4', 'div', 'p']
 
@@ -18,6 +19,7 @@ const nodeParser = props => {
   if (nodeTag === 'float-clear') return <div key={index} className='float-clear'/>
   if (nodeTag === 'ul') return <List {...{ listNodes: nodeContent, ...props}} />
   if (nodeTag === 'rt') return <RichText  {...props} content={nodeContent} element={element} />
+  if (nodeTag === 'toc') return <TableOfContents  {...props} />
 
   return customNodeParser({ device, isAdmin, clientUrl, nodeTag, nodeContent, attrs, changeRoute, buildUrl, index, jsonMeta, node })
 }

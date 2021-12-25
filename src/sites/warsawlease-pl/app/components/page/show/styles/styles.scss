@@ -13,6 +13,11 @@
   @media #{$LARGE-PHONE} {
     margin: 0 auto 20px;
   }
+  .table-of-contents {
+    a {
+      display: block;
+    }
+  }
   img {
     width: 100%;
   }
