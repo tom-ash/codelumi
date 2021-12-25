@@ -17,15 +17,24 @@
     width: 100%;
   }
   button {
-    position: absolute;
-    background: none;
-    border: none;
-    top: 15px;
-    right: 15px;
-    height: 25px;
-    padding: 3px;
-    &:disabled {
-      cursor: not-allowed;
+    &.edit {
+      position: fixed;
+      right: 20px;
+      top: 77px;
+      width: 24px;
+      height: 24px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      svg {
+        display: block;
+        width: 24px;
+        fill: gray;
+        transition: 0.24s ease-out;
+        &:hover {
+          fill: black;
+        }
+      }
     }
   }
   a {

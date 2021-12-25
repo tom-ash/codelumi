@@ -62,26 +62,24 @@
     line-height: 30px;
 
     button {
-      position: fixed;
-      cursor: pointer;
-      bottom: 0px;
-      right: 20px;
-      height: 30px;
-      width: 60px;
-      background: #E5E7E9;
-      border: 1px solid #D7DBDD;
-      border-bottom: none;
-      border-radius: 0;
-      outline: none;
-      color: #626567;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
-      &.fetching {
-        color: lightgray;
-      }
-      &:hover {
-        background: #F8F9F9;
-        border: 1px solid #E5E7E9;
+      &.edit {
+        position: fixed;
+        right: 20px;
+        top: 77px;
+        width: 24px;
+        height: 24px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        svg {
+          display: block;
+          width: 24px;
+          fill: gray;
+          transition: 0.24s ease-out;
+          &:hover {
+            fill: black;
+          }
+        }
       }
     }
 

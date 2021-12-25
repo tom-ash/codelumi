@@ -1,6 +1,7 @@
 import React from 'react'
 import jsonToJsxParser from './functions/json_to_jsx_parser'
 import useStyles from 'isomorphic-style-loader/useStyles'
+import SVG from '../../../../../support/svg/svg.js'
 
 const PageTile = props => {
   const { device, appName, customNodeParser, customMetaParser, renderShow, renderEdit, fetching, name, body, meta, isAdmin, clientUrl, changeRoute, buildUrl, changePage, updatePage } = props
@@ -8,7 +9,7 @@ const PageTile = props => {
 
   useStyles(styles)
 
-  const buttonClasses = []
+  const buttonClasses = ['edit']
   if (fetching) buttonClasses.push('fetching')
   const buttonClassName = buttonClasses.join(' ')
 
@@ -42,8 +43,8 @@ const PageTile = props => {
       <div className={tileClassNames.join(' ')}>
         {isAdmin &&
         <>
-          {renderShow && <button className={buttonClassName} onClick={changePage}>Edit</button>}
-          {renderEdit && <button className={buttonClassName} onClick={updatePage.bind({ withRouteChange: false })}>Save</button>}
+          {renderShow && <button className={buttonClassName} onClick={changePage}><SVG name='edit' /></button>}
+          {/* {renderEdit && <button className={buttonClassName} onClick={updatePage.bind({ withRouteChange: false })}>Save</button>} */}
         </>}
         
         <div className='body'>
