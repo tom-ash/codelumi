@@ -1,0 +1,19 @@
+#logo {
+  float: left;
+  height: 32px;
+  margin-top: 14px;
+  border-left: 3px solid #4B4E53;
+  padding-top: 1px;
+  padding-left: 5px;
+  font-size: 16px;
+  font-family: 'Rajdhani', sans-serif;
+  color: #4B4E53;
+}
+
+#logo .warsaw {
+  letter-spacing: 0.5px;
+}
+
+#logo .lease-pl {
+  letter-spacing: 0.6px;
+}
