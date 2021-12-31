@@ -33,6 +33,11 @@ const nodes = [
     en: <span><strong>Service</strong> - a web service located at the address <u>www.warsawlease.pl</u>.</span>
   },
   {
+    item: '', tier: 'subpoint', version: versions['1.0'],
+    pl: <span><i><strong>Od dnia 1 lutego 2022 r. niniejszy Punkt 1.1 a) otrzymuje brzmienie: <br/>"<strong>Serwis</strong> - serwis internetowy znajdujący się pod adresem <u>https://mapawynajmu.pl</u>."</strong></i></span>,
+    en: <span><i><strong>From February 1st, 2022 this Point 1.1 a) shall read as follows: <br/>"<strong>Service</strong> - a web service located at the address <u>https://mapawynajmu.pl</u>."</strong></i></span>
+  },
+  {
     item: 'b)', tier: 'subpoint', version: versions['1.0'],
     pl: <span><strong>Administrator</strong> - Warsaw Digital Sp. z o.o., z siedzibą w Warszawie przy ul.&nbsp;Twardej&nbsp;18, 00-105 Warszawa, zarejestrowana w rejestrze przedsiębiorców prowadzonym przez Sąd Rejonowy dla m. st. Warszawy, XII Wydział Gospodarczy Krajowego Rejestru Sądowego, pod numerem KRS 0000735294, o kapitale zakładowym 20.000,00 PLN, w pełni wpłaconym, posiadająca numer REGON 380529016 oraz numer NIP 5252753799.</span>,
     en: <span><strong>Administrator</strong>  - Warsaw Digital Sp. z o.o., with its registered office in Warsaw at&nbsp;Twarda 18 St., 00-105 Warsaw, registered in the register of entrepreneurs held by the District Court for the capital city of Warsaw, XII Commercial Division of the National Court Register, under the KRS number 0000735294, with the share capital of 20,000.00 PLN, fully paid, with REGON number 380529016, and NIP number 5252753799.</span>
@@ -211,6 +216,11 @@ const nodes = [
     item: '7.4.', tier: 'point', version: versions['1.0'],
     pl: <span>Administrator ma prawo do zmiany Regulaminu, Polityki Prywatności, Polityki Cookies oraz Cennika poprzez zamieszczenie zmian tych dokumentów w Serwisie pod adresem <i>www.warsawlease.pl</i>. Zmiany te wchodzą w&nbsp;życie po upływie okresu 14 dni od ich ogłoszenia.</span>,
     en: <span>The Administrator is authorized to amend these Terms of Service, the Privacy Policy, the Cookies Policy and the Pricing through publication of the amendments to those documents within the Service under the address <i>www.warsawlease.pl</i>. The amendments are applicable after the lapse of the period of 14 days from their publication.</span>
+  },
+  {
+    item: '', tier: 'point', version: versions['1.0'],
+    pl: <span><i><strong>Od dnia 1 lutego 2022 r. niniejszy Punkt 7.4 otrzymuje brzmienie: <br/>"Administrator ma prawo do zmiany Regulaminu, Polityki Prywatności, Polityki Cookies oraz Cennika poprzez zamieszczenie zmian tych dokumentów w Serwisie pod adresem <u>https://mapawynajmu.pl</u>. Zmiany te wchodzą w&nbsp;życie po upływie okresu 14 dni od ich ogłoszenia."</strong></i></span>,
+    en: <span><i><strong>From February 1st, 2022 this Point 7.4 shall read as follows: <br/>"The Administrator is authorized to amend these Terms of Service, the Privacy Policy, the Cookies Policy and the Pricing through publication of the amendments to those documents within the Service under the address <u>https://mapawynajmu.pl</u>. The amendments are applicable after the lapse of the period of 14 days from their publication."</strong></i></span>
   },
 ]
 

@@ -2,7 +2,7 @@ var webpack = require("webpack");
 var CopyPlugin = require('copy-webpack-plugin');
 var path = require('path')
 var SRC_DIR = path.join(__dirname, './')
-var DIST_DIR = path.join(__dirname, "../../../../dist/sites/warsawlease-pl/client")
+var DIST_DIR = path.join(__dirname, "../../../../dist/sites/mapawynajmu-pl/client")
 
 const LoadablePlugin = require('@loadable/webpack-plugin')
 
@@ -58,10 +58,10 @@ var config = {
     }),
     new webpack.DefinePlugin({ 'APP_ENV': JSON.stringify(process.env.APP_ENV) }),
     new CopyPlugin([
-      { from: './src/sites/warsawlease-pl/client/robots.txt', to: 'robots.txt' },
-      { from: './src/sites/warsawlease-pl/client/sitemap.xml', to: 'sitemap.xml' },
-      { from: './src/sites/warsawlease-pl/client/favicon.png', to: 'favicon.png' },
-      { from: './src/sites/warsawlease-pl/client/favicon.ico', to: 'favicon.ico' },
+      { from: './src/sites/mapawynajmu-pl/client/robots.txt', to: 'robots.txt' },
+      { from: './src/sites/mapawynajmu-pl/client/sitemap.xml', to: 'sitemap.xml' },
+      { from: './src/sites/mapawynajmu-pl/client/favicon.png', to: 'favicon.png' },
+      { from: './src/sites/mapawynajmu-pl/client/favicon.ico', to: 'favicon.ico' },
     ])
   ]
 };

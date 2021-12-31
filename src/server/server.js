@@ -4,7 +4,7 @@ import { redirectToHTTPS } from 'express-http-to-https'
 import compression from 'compression'
 import cookieParser from 'cookie-parser'
 import vhost from 'vhost'
-import warsawleasePlRequestHandler from '../sites/warsawlease-pl/server/functions/request-handler.js'
+import mapawynajmuPlRequestHandler from '../sites/mapawynajmu-pl/server/functions/request-handler.js'
 import soundofItHandleRequest from '../sites/soundof-it/server/functions/request-handler.js'
 import * as Sentry from '@sentry/node'
 import * as Tracing from '@sentry/tracing'
@@ -31,7 +31,7 @@ if (['production', 'staging'].indexOf(APP_ENV) !== -1) {
 app.use(vhost(/^.*(soundof).*$/, Express.static('dist/sites/soundof-it/client')))
 app.use(vhost(/^.*(soundof).*$/, soundofItHandleRequest))
 
-app.use(vhost(/^.*(warsawlease).*$/, Express.static('dist/sites/warsawlease-pl/client')))
-app.use(vhost(/^.*(warsawlease).*$/, warsawleasePlRequestHandler))
+app.use(vhost(/^.*(warsawlease).*$/, Express.static('dist/sites/mapawynajmu-pl/client')))
+app.use(vhost(/^.*(warsawlease).*$/, mapawynajmuPlRequestHandler))
 
 app.listen(process.env.PORT || 8080)

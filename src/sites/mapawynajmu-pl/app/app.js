@@ -28,7 +28,7 @@ import buildUrl from '../shared/functions/builders/url.js'
 
 initSentry()
 
-const APP_NAME = 'warsawlease-pl'
+const APP_NAME = 'mapawynajmu-pl'
 
 class App extends React.Component {
   constructor(props) {

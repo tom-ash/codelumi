@@ -59,8 +59,8 @@ var config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/sites/warsawlease-pl/dev/index.html',
-      favicon: './src/sites/warsawlease-pl/dev/favicon.png'
+      template: './src/sites/mapawynajmu-pl/dev/index.html',
+      favicon: './src/sites/mapawynajmu-pl/dev/favicon.png'
     }),
     new webpack.DefinePlugin({ 'APP_ENV': JSON.stringify(process.env.APP_ENV) })
   ]
