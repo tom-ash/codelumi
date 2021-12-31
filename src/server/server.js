@@ -28,9 +28,6 @@ if (['production', 'staging'].indexOf(APP_ENV) !== -1) {
   app.use(redirectToHTTPS([], [], 301))
 }
 
-app.use(vhost(/^.*(codelumi).*$/, Express.static('dist/sites/codelumi/client')))
-app.use(vhost(/^.*(codelumi).*$/, codeLumiHandleRequest))
-
 app.use(vhost(/^.*(soundof).*$/, Express.static('dist/sites/codelumi/client')))
 app.use(vhost(/^.*(soundof).*$/, codeLumiHandleRequest))
 

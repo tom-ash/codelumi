@@ -7,7 +7,6 @@ import buildUrl from '../../shared/functions/routes/builders/url.js'
 import siteName from '../../shared/constants/names/site.js'
 
 function handleRequest(req, res) {
-  if (req.hostname === 'codelumi.com' || req.hostname === 'www.codelumi.com') return res.status(301).redirect(`https://${ROOT_DOMAIN}${req.originalUrl}`)
   if (req.hostname === `www.${ROOT_DOMAIN}`) return res.status(301).redirect(`https://${ROOT_DOMAIN}${req.originalUrl}`)
 
   genericRequestHandler({
