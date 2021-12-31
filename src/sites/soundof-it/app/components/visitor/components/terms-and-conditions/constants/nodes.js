@@ -27,8 +27,8 @@ const nodes = [
   },
   {
     item: 'a)', tier: 'subpoint', version: versions['1.0'],
-    pl: <span><strong>Serwis</strong> - serwis internetowy znajdujący się pod adresem <u>www.codelumi.com</u>.</span>,
-    en: <span><strong>Service</strong> - a web service located at the address <u>www.codelumi.com</u>.</span>
+    pl: <span><strong>Serwis</strong> - serwis internetowy znajdujący się pod adresem <u>soundof.it</u>.</span>,
+    en: <span><strong>Service</strong> - a web service located at the address <u>soundof.it</u>.</span>
   },
   {
     item: 'b)', tier: 'subpoint', version: versions['1.0'],
@@ -132,8 +132,8 @@ const nodes = [
   },
   {
     item: '7.4.', tier: 'point', version: versions['1.0'],
-    pl: <span>Administrator ma prawo do zmiany Regulaminu, Polityki Prywatności, Polityki Cookies oraz Cennika poprzez zamieszczenie zmian tych dokumentów w Serwisie pod adresem <i>www.codelumi.com</i>. Zmiany te wchodzą w&nbsp;życie po upływie okresu 14 dni od ich ogłoszenia.</span>,
-    en: <span>The Administrator is authorized to amend these Terms of Service, the Privacy Policy, the Cookies Policy and the Pricing through publication of the amendments to those documents within the Service under the address <i>www.codelumi.com</i>. The amendments are applicable after the lapse of the period of 14 days from their publication.</span>
+    pl: <span>Administrator ma prawo do zmiany Regulaminu, Polityki Prywatności, Polityki Cookies oraz Cennika poprzez zamieszczenie zmian tych dokumentów w Serwisie pod adresem <i>soundof.it</i>. Zmiany te wchodzą w&nbsp;życie po upływie okresu 14 dni od ich ogłoszenia.</span>,
+    en: <span>The Administrator is authorized to amend these Terms of Service, the Privacy Policy, the Cookies Policy and the Pricing through publication of the amendments to those documents within the Service under the address <i>soundof.it</i>. The amendments are applicable after the lapse of the period of 14 days from their publication.</span>
   },
 ]
 

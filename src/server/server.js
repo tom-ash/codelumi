@@ -5,7 +5,7 @@ import compression from 'compression'
 import cookieParser from 'cookie-parser'
 import vhost from 'vhost'
 import warsawleasePlRequestHandler from '../sites/warsawlease-pl/server/functions/request-handler.js'
-import codeLumiHandleRequest from '../sites/codelumi/server/functions/request-handler.js'
+import soundofItHandleRequest from '../sites/soundof-it/server/functions/request-handler.js'
 import * as Sentry from '@sentry/node'
 import * as Tracing from '@sentry/tracing'
 
@@ -28,8 +28,8 @@ if (['production', 'staging'].indexOf(APP_ENV) !== -1) {
   app.use(redirectToHTTPS([], [], 301))
 }
 
-app.use(vhost(/^.*(soundof).*$/, Express.static('dist/sites/codelumi/client')))
-app.use(vhost(/^.*(soundof).*$/, codeLumiHandleRequest))
+app.use(vhost(/^.*(soundof).*$/, Express.static('dist/sites/soundof-it/client')))
+app.use(vhost(/^.*(soundof).*$/, soundofItHandleRequest))
 
 app.use(vhost(/^.*(warsawlease).*$/, Express.static('dist/sites/warsawlease-pl/client')))
 app.use(vhost(/^.*(warsawlease).*$/, warsawleasePlRequestHandler))

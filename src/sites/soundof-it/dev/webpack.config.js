@@ -1,25 +1,32 @@
 var webpack = require("webpack");
-var CopyPlugin = require('copy-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path')
-var SRC_DIR = path.join(__dirname, '../client')
-var DIST_DIR = path.join(__dirname, "../../../../dist/sites/codelumi/client")
-
-const LoadablePlugin = require('@loadable/webpack-plugin')
+var SRC_DIR = path.join(__dirname, '../dev')
+var DIST_DIR = path.join(__dirname, '../client')
 
 var config = {
+  mode: 'development',
+  devtool: 'cheap-module-source-map',
   entry: {
-    index: SRC_DIR + '/index.js'
+    app: SRC_DIR + '/index.js'
   },
   output: {
     path: DIST_DIR,
     filename: 'bundle.js',
     publicPath: '/'
   },
+  devServer: {
+    port: 8080,
+    disableHostCheck: true,
+    historyApiFallback: {
+      index: '/index.html'
+    }
+  },
   module: {
     rules: [
       {
         test: /\.m?js$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -51,19 +58,12 @@ var config = {
     ]
   },
   plugins: [
-    new LoadablePlugin({
-      path: DIST_DIR,
-      filename: 'loadable-stats.json',
-      writeToDisk: true
+    new HtmlWebpackPlugin({
+      template: './src/sites/soundof-it/dev/index.html',
+      favicon: './src/sites/soundof-it/dev/favicon.png'
     }),
-    new CopyPlugin([
-      { from: './src/sites/codelumi/client/robots.txt', to: 'robots.txt' },
-      { from: './src/sites/codelumi/client/sitemap.xml', to: 'sitemap.xml' },
-      { from: './src/sites/codelumi/client/favicon.png', to: 'favicon.png' },
-      { from: './src/sites/codelumi/client/favicon.ico', to: 'favicon.ico' },
-    ]),
     new webpack.DefinePlugin({ 'APP_ENV': JSON.stringify(process.env.APP_ENV) })
   ]
-};
+}
 
 module.exports = config

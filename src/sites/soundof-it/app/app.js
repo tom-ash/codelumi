@@ -29,7 +29,7 @@ import buildUrl from '../shared/functions/routes/builders/url.js'
 
 initSentry()
 
-const APP_NAME = 'codelumi'
+const APP_NAME = 'soundof-it'
 
 class App extends React.Component {
   constructor(props) {
