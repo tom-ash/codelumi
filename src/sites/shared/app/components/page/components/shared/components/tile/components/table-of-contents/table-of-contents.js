@@ -9,43 +9,47 @@ const TableOfContents = (props) => {
   })
 
   return (
-    <div className='table-of-contents'>
+    <nav className='table-of-contents'>
       <h2>
         {nodeContent}
       </h2>
-      {headers.map((header, index) => {
-        const headerContent = header.c
+      <ul>
+        {headers.map((header, index) => {
+          const headerContent = header.c
 
-        return (
-          <a
-            key={index}
-            className={header.t}
-            href={`#${urlify(headerContent)}`}
-            onClick={e => {
-              e.preventDefault()
+          return (
+            <li>
+              <a
+                key={index}
+                className={header.t}
+                href={`#${urlify(headerContent)}`}
+                onClick={e => {
+                  e.preventDefault()
 
-              history.pushState(null, null, `${window.location.pathname}#${urlify(headerContent)}`)
+                  history.pushState(null, null, `${window.location.pathname}#${urlify(headerContent)}`)
 
-              const targetHeader = headers.find(headerNode => urlify(headerContent) === urlify(headerNode.c))
-              const domHeaders = document.getElementsByTagName('h2')
-              let element
+                  const targetHeader = headers.find(headerNode => urlify(headerContent) === urlify(headerNode.c))
+                  const domHeaders = document.getElementsByTagName('h2')
+                  let element
 
-              for (var i = 0; i < domHeaders.length; i++) {
-                if (domHeaders[i].textContent == targetHeader.c) {
-                  element = domHeaders[i]
-                  break
-                }
-              }
+                  for (var i = 0; i < domHeaders.length; i++) {
+                    if (domHeaders[i].textContent == targetHeader.c) {
+                      element = domHeaders[i]
+                      break
+                    }
+                  }
 
-              const translation = -80
-              setScreenOffsetAtElement({ element, translation })
-            }}
-          >
-            {headerContent}
-          </a>
-        )
-      })}
-    </div>
+                  const translation = -80
+                  setScreenOffsetAtElement({ element, translation })
+                }}
+              >
+                {headerContent}
+              </a>
+            </li>
+          )
+        })}
+      </ul>
+    </nav>
   )
 }
 

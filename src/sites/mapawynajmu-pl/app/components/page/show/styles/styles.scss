@@ -14,8 +14,24 @@
     margin: 0 auto 20px;
   }
   .table-of-contents {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #F2F3F4;
+    border-radius: 4px;
+    font-size: 16px;
+    ul {
+      list-style-type: none;
+      padding-left: 0!important;
+    }
+    h2 {
+      margin: 0;
+      font-size: 16px!important;
+    }
     a {
       display: block;
+      &:hover {
+        color: #5D6D7E;
+      }
     }
   }
   img {
