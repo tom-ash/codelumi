@@ -126,7 +126,7 @@
       position: relative;
       max-width: 1440px;
       margin: 0 auto;
-      padding-top: 40px;
+      padding-top: 20px;
 
       .body {
         display: flex;
@@ -148,16 +148,19 @@
 
       .code-link {
         float: left;
-        width: 22.5%;
-        margin-bottom: 50px;
+        width: 32.6666%;
+        margin-bottom: 1%;
         padding: 0;
+        border-radius: 5px;
         .picture-and-title {
           position: relative;
-          aspect-ratio: 3/2; // TODO: MOVE TO JS
+          aspect-ratio: 16/10; // TODO: MOVE TO JS
+          border-radius: 5px;
           img {
             display: block;
             width: 100%;
             aspect-ratio: 3/2;
+            border-radius: 5px;
           }
           .title {
             position: absolute;
@@ -165,11 +168,15 @@
             right: 0;
             bottom: 0;
             z-index: 2;
-            padding: 10px 15px;
-            background: rgba(0,0,0,0.5);
+            padding: 30px 15px;
             text-align: center;
             color: #F0F3F4;
-            font-size: 17px;
+            font-size: 26px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            font-family: 'Cairo', sans-serif;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px rgba(42,42,42,0.5);
           }
         }
         .description {

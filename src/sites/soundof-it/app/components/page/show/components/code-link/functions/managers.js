@@ -10,17 +10,12 @@ export const linkManager = props => {
   
   const href = `${clientUrl}/${pathname}`
   const label = (
-    <>
-      <div className='picture-and-title'>
-        <img src={iconHref} />
-        <div className='title'>
-          {title}
-        </div>
+    <div className='picture-and-title'>
+      <img src={iconHref} />
+      <div className='title'>
+        {title}
       </div>
-      <div className='description'>
-        {description}
-      </div>
-    </>
+    </div>
   )
   const onClick = () => changeRoute({ href })
 
