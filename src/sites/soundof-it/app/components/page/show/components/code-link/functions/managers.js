@@ -11,7 +11,7 @@ export const linkManager = props => {
   const href = `${clientUrl}/${pathname}`
   const label = (
     <div className='picture-and-title'>
-      <img src={iconHref} />
+      {iconHref && <img src={iconHref} />}
       <div className='title'>
         {title}
       </div>
