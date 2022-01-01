@@ -10,17 +10,12 @@ export const linkManager = props => {
   const hrefLang = lang
 
   const label = (
-    <>
-      <div className='picture-and-title'>
-        <img src={picture} />
-        <span className='title'>
-          {title}
-        </span>
-      </div>
-      <div className='description'>
-        {description}
-      </div>
-    </>
+    <div className='picture-and-title'>
+      <img src={picture} />
+      <span className='title'>
+        {title}
+      </span>
+    </div>
   )
   const onClick = () => changeRoute({ href })
 
