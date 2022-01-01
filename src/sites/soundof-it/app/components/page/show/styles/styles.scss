@@ -55,6 +55,7 @@
 
     button {
       &.edit {
+        z-index: 999;
         position: fixed;
         right: 20px;
         top: 77px;
@@ -152,6 +153,7 @@
         margin-bottom: 1%;
         padding: 0;
         border-radius: 5px;
+        background: lightgray;
         .picture-and-title {
           position: relative;
           aspect-ratio: 16/10; // TODO: MOVE TO JS
@@ -163,44 +165,46 @@
             border-radius: 5px;
           }
           .title {
+            height: 33%;
             position: absolute;
             left: 0;
             right: 0;
             bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             z-index: 2;
-            padding: 30px 15px;
-            text-align: center;
             color: #F0F3F4;
-            font-size: 26px;
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
+            font-size: 28px;
             font-family: 'Cairo', sans-serif;
             font-weight: bold;
             text-shadow: 1px 1px 1px rgba(42,42,42,0.5);
           }
         }
-        .description {
-          padding-top: 10px;
-          font-size: 14px;
-          text-align: justify;
-          line-height: 1.6;
-          color: #626567;
-        }
-        &:hover {
+        @media #{$SMALL-PC} {
+          width: 49.5%;
           .picture-and-title {
             .title {
-              color: #FBFCFC;
+              font-size: 2.4vw;
             }
-          }
-          .description {
-            color: black;
           }
         }
         @media #{$LARGE-TABLET} {
-          width: 48%;
+          width: 49.5%;
+          .picture-and-title {
+            .title {
+              font-size: 3vw;
+            }
+          }
         }
         @media #{$LARGE-PHONE} {
           width: 100%;
+          margin-bottom: 20px;
+          .picture-and-title {
+            .title {
+              font-size: 5.5vw;
+            }
+          }
         }
       }
 

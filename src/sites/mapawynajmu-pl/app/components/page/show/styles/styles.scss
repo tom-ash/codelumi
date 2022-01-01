@@ -43,6 +43,7 @@
   }
   button {
     &.edit {
+      z-index: 999;
       position: fixed;
       right: 20px;
       top: 77px;
