@@ -34,4 +34,7 @@ app.use(vhost(/^.*(soundof).*$/, soundofItHandleRequest))
 app.use(vhost(/^.*(warsawlease).*$/, Express.static('dist/sites/mapawynajmu-pl/client')))
 app.use(vhost(/^.*(warsawlease).*$/, mapawynajmuPlRequestHandler))
 
+app.use(vhost(/^.*(mapawynajmu).*$/, Express.static('dist/sites/mapawynajmu-pl/client')))
+app.use(vhost(/^.*(mapawynajmu).*$/, mapawynajmuPlRequestHandler))
+
 app.listen(process.env.PORT || 8080)
