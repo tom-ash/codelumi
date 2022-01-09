@@ -6,6 +6,7 @@ export function setUpGoogleMaps(options) {
   const { changeControl } = this.props
 
   window.googleMap = new google.maps.Map(document.getElementById('google-map'), setOptions.call(this, options))
+
   changeControl({ mapLoaded: true })
 }
 
@@ -75,6 +76,9 @@ export function googleMapHandler(callback, options) {
   if (!div) return
   const initializeMap = () => window.googleMap = new google.maps.Map(div, setOptions.call(this, options))
   initializeMap()
+
+  window.sessionToken = new google.maps.places.AutocompleteSessionToken()
+
   if (callback) callback()
 }
 
