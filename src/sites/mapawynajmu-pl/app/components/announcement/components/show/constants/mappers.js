@@ -1,11 +1,16 @@
 export const mapStateToProps = store => {
   const {
+    app,
+    links
+  } = store
+
+  const {
     announcementId,
     device,
     isMobile,
     lang,
     scripts
-  } = store.app
+  } = app
 
   const { 
     loadMap,
@@ -80,7 +85,8 @@ export const mapStateToProps = store => {
     longitude,
     markerLoaded,
     mapLoading,
-    fetch
+    fetch,
+    links
   }
 }
     

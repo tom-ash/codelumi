@@ -61,13 +61,16 @@ class AnnouncementShow extends React.Component {
       changeData,
       resetData,
       changeApp,
-      name
+      name,
+      links
     } = this.props
 
     const { phone } = this.state
     const deviceClasss = device === 'largePc' ? ' large-pc' : ''
     const showcaseProps = { announcerName: name, announcerPhone: phone, announcementId: id, togglePhone: this.togglePhone, langHandler: this.langHandler, venue }
     const isMobile = ['largeTablet', 'smallTablet', 'largePhone', 'smallPhone'].indexOf(device) !== -1
+    const link = links[`current/${lang}`]
+    const path = link && link.path
 
     return (
       <div id='announcement-show' className={deviceClasss}>
@@ -114,6 +117,7 @@ class AnnouncementShow extends React.Component {
           changeData={changeData}
           resetData={resetData}
           changeApp={changeApp}
+          path={path}
         />
       </div>
     )
