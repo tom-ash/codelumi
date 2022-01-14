@@ -1,4 +1,5 @@
 import React from "react"
+import addMarker from '../../functions/add-marker.js'
 
 const AddressInput = props => {
   const { autocompleteInput, autocompletes, showAutocompletes, setState, langHandler, changeInputs, changeErrors } = props
@@ -21,25 +22,8 @@ const AddressInput = props => {
             if (autocompletes.length < 1) return
 
             const autocomplete = autocompletes[0]
-            const placeId = autocomplete.place_id
 
-            const geocoder = new google.maps.Geocoder();
-            geocoder.geocode({ placeId }).then(result => {
-              if (window.marker) window.marker.setMap(null)
-              const map = window.googleMap
-              const position = result.results[0].geometry.location
-
-              window.marker = new google.maps.Marker({ position , map })
-
-              const options = { center: position, zoom: 17 }
-              map.setOptions(options)
-
-              changeInputs({ latitude: position.lat(), longitude: position.lng() } )
-              changeErrors({ map: { pl: '', en: '' }})
-            })
-
-            setState({ showAutocompletes: false, autocompleteInput: autocomplete.description })
-
+            addMarker({ autocomplete, setState, changeInputs, changeErrors })
             e.target.blur()
           } else if (key === 'Tab') {
             setState({ showAutocompletes: false })

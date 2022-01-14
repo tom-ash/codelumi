@@ -6,6 +6,7 @@ import { validateMap } from './functions/validate-map'
 import * as lifecycle from './functions/lifecycle'
 import { googleMapHandler } from '../../../../functions/google-map-handler'
 import AddressInput from './components/address-input/address-input'
+import addMarker from './functions/add-marker'
 
 class AnnouncementCreatMap extends React.Component {
   constructor(props) {
@@ -51,26 +52,8 @@ class AnnouncementCreatMap extends React.Component {
           <div className='autocompletes'>
             {this.state.autocompletes.map(autocomplete => (
               <div
-                onClick={() => {
-                  const placeId = autocomplete.place_id
-
-                  const geocoder = new google.maps.Geocoder();
-                  geocoder.geocode({ placeId }).then(result => {
-                    if (window.marker) window.marker.setMap(null)
-
-                    const map = window.googleMap
-                    const position = result.results[0].geometry.location
-                    const options = { center: position, zoom: 17 }
-
-                    window.marker = new google.maps.Marker({ position , map })
-                    map.setOptions(options)
-
-                    changeInputs({ latitude: position.lat(), longitude: position.lng() } )
-                    changeErrors({ map: { pl: '', en: '' }})
-                  })
-                  
-                  this.setState({ showAutocompletes: false, autocompleteInput: autocomplete.description })
-                }}
+                onClick={() => addMarker({ autocomplete, setState: this.changeState, changeInputs, changeErrors })}
+                key={autocomplete.place_id}
               >
                 {autocomplete.description}
               </div>
