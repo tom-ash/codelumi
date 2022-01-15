@@ -21,8 +21,9 @@ export function addGoogleMapListeners() {
     geocoder
     .geocode({ location: latlng })
     .then(({ results: addresses }) => {
-      const address = addresses[0].formatted_address
-      this.setState({ autocompleteInput: address })
+      const address = addresses[0]
+
+      this.setState({ autocompleteInput: address.formatted_address })
     })
   }.bind(this))
   google.maps.event.addListener(map, 'rightclick', function() {  
