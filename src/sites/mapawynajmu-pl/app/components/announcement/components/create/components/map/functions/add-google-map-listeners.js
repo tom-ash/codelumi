@@ -14,6 +14,16 @@ export function addGoogleMapListeners() {
     this.props.changeInputs({ latitude: event.latLng.lat(), longitude: event.latLng.lng()} )
     this.props.changeErrors({ map: { pl: '', en: '' }})
     sendGaEvent(MAP_PIN_ADDED_EVENT)
+
+    const geocoder = new google.maps.Geocoder()
+    const latlng = { lat: event.latLng.lat(), lng: event.latLng.lng() }
+  
+    geocoder
+    .geocode({ location: latlng })
+    .then(({ results: addresses }) => {
+      const address = addresses[0].formatted_address
+      this.setState({ autocompleteInput: address })
+    })
   }.bind(this))
   google.maps.event.addListener(map, 'rightclick', function() {  
     this.props.changeInputs({ latitude: null, longitude: null })
