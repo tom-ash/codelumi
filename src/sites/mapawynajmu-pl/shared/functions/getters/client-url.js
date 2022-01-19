@@ -1,7 +1,10 @@
+import APEX_DOMAIN from "../../constants/domains/apex"
+import ROOT_DOMAIN from '../../constants/domains/root'
+
 function getClientUrl() {
   switch (APP_ENV) {
-    case 'production': return 'https://www.warsawlease.pl'
-    case 'development': return 'http://local.warsawlease.pl:8080'
+    case 'production': return `https://${ROOT_DOMAIN}`
+    case 'development': return `http://local.${APEX_DOMAIN}:8080`
     default: return ''
   }
 }
