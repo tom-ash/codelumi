@@ -1,3 +1,6 @@
-const siteName = 'warsawlease.pl'
+const SITE_NAME = 'warsawlease.pl'
 
-export default siteName
+// TODO: rebranding
+// const SITE_NAME = 'mapawynajmu.pl'
+
+export default SITE_NAME
