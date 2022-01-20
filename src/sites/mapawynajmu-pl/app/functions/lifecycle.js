@@ -1,9 +1,9 @@
 import { initializeGoogleMaps } from './load-google-maps'
 import { isMobile } from './is-mobile'
-import { loadGoogleAnalytics } from '../../../shared/app/functions/analytics/google/load.js'
 import { loadFonts } from './load-fonts'
 import API_URL from '../../shared/constants/urls/api.js'
-import getGoogleAnalyticsMeasurementId from './analytics/google/getters/measurement-id.js'
+// import { loadGoogleAnalytics } from '../../../shared/app/functions/analytics/google/load.js'
+// import getGoogleAnalyticsMeasurementId from './analytics/google/getters/measurement-id.js'
 
 export function componentDidMount() {
   if (typeof window === 'undefined') return
@@ -35,7 +35,7 @@ export function componentDidUpdate(prevProps) {
   const { statisticsConsent, loadGa, changeApp } = this.props
 
   if (statisticsConsent && !loadGa) changeApp({ loadGa: true })
-  if (!prevLoadGa && loadGa) {
-    loadGoogleAnalytics.call(this, getGoogleAnalyticsMeasurementId())
-  }
+  // if (!prevLoadGa && loadGa) {
+  //   loadGoogleAnalytics.call(this, getGoogleAnalyticsMeasurementId())
+  // }
 }
