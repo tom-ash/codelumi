@@ -1,3 +1,7 @@
+import getLocality from "./get-locality"
+import getSublocality from './get-sublocality'
+import getRoute from "./get-route"
+
 function addMarker(props) {
   const { autocomplete, setState, changeInputs, changeErrors } = props
   const placeId = autocomplete.place_id
@@ -7,12 +11,19 @@ function addMarker(props) {
     if (window.marker) window.marker.setMap(null)
 
     const map = window.googleMap
-    const position = result.results[0].geometry.location
+    const primaryResult = result.results[0]
+    const position = primaryResult.geometry.location
+    const addressComponents = primaryResult.address_components
     const options = { center: position, zoom: 17 }
+
+    const locality = getLocality(addressComponents)
+    const sublocality = getSublocality(addressComponents)
+    const route = getRoute(addressComponents)
+    const location = autocomplete.description
 
     window.marker = new google.maps.Marker({ position , map })
     map.setOptions(options)
-    changeInputs({ latitude: position.lat(), longitude: position.lng() } )
+    changeInputs({ latitude: position.lat(), longitude: position.lng(), locality, sublocality, route, location })
     changeErrors({ map: { pl: '', en: '' }})
   })
 

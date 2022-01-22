@@ -53,7 +53,11 @@ export const inputs = {
   englishDescription: '',
   latitude: null,
   longitude: null,
-  verificationCode: ''
+  verificationCode: '',
+  locality: null,
+  sublocality: null,
+  route: null,
+  location: null
 }
 
 export const data = {
