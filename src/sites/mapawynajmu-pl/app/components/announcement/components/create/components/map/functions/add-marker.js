@@ -18,7 +18,6 @@ function addMarker(props) {
     const locality = getLocality(addressComponents)
     const sublocality = getSublocality(addressComponents)
 
-    window.marker = new google.maps.Marker({ position , map })
     map.setOptions(options)
     changeInputs({ latitude: position.lat(), longitude: position.lng(), locality, sublocality })
     changeErrors({ map: { pl: '', en: '' }})
