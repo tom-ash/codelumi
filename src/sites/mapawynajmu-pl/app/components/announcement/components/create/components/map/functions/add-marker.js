@@ -1,6 +1,5 @@
 import getLocality from "./get-locality"
 import getSublocality from './get-sublocality'
-import getRoute from "./get-route"
 
 function addMarker(props) {
   const { autocomplete, setState, changeInputs, changeErrors } = props
@@ -18,12 +17,10 @@ function addMarker(props) {
 
     const locality = getLocality(addressComponents)
     const sublocality = getSublocality(addressComponents)
-    const route = getRoute(addressComponents)
-    const location = autocomplete.description
 
     window.marker = new google.maps.Marker({ position , map })
     map.setOptions(options)
-    changeInputs({ latitude: position.lat(), longitude: position.lng(), locality, sublocality, route, location })
+    changeInputs({ latitude: position.lat(), longitude: position.lng(), locality, sublocality })
     changeErrors({ map: { pl: '', en: '' }})
   })
 
