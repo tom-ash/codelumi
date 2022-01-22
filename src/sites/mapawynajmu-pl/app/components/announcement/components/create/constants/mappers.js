@@ -31,7 +31,9 @@ export const mapStateToProps = store => {
     furnishings,
     polishDescription,
     englishDescription,
-    addAvailabilityDate
+    addAvailabilityDate,
+    locality,
+    sublocality
   } = inputs
 
   return {
@@ -68,7 +70,9 @@ export const mapStateToProps = store => {
     admin,
     addAvailabilityDate,
     announcement,
-    user
+    user,
+    locality,
+    sublocality
   }
 }
     

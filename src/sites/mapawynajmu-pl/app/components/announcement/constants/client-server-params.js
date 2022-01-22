@@ -46,6 +46,14 @@ export const clientServerParams = [
   {
     client: 'englishDescription',
     server: 'englishDescription'
+  },
+  {
+    client: 'locality',
+    server: 'locality'
+  },
+  {
+    client: 'sublocality',
+    server: 'sublocality'
   }
 ]
 

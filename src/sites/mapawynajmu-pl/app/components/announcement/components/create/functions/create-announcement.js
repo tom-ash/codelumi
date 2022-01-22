@@ -4,9 +4,9 @@ import { CREATE_API_ROUTE_DATA, CREATE_WITH_USER_API_ROUTE_DATA, UPDATE_API_ROUT
 import setConfirmationTokenCookie from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token.js'
 import buildUrl from '../../../../../../shared/functions/builders/url.js'
 
-function sendAnnouncementCreatedEvent() {
-  window.dataLayer.push({ 'event': 'announcement_created' })
-}
+// function sendAnnouncementCreatedEvent() {
+//   window.dataLayer.push({ 'event': 'announcement_created' })
+// }
 
 function createAnnouncement() {
   const { authorized, renderEdit, changeControl } = this.props
@@ -59,7 +59,7 @@ function create() {
 
     changeRoute({ href: buildUrl({ path }) })
     changeControl({ connecting: false })
-    sendAnnouncementCreatedEvent()
+    // sendAnnouncementCreatedEvent()
   })
 }
 
@@ -83,7 +83,7 @@ function createWithUser() {
     changeRoute({ href: buildUrl({ path }) })
     changeControl({ connecting: false })
 
-    sendAnnouncementCreatedEvent()
+    // sendAnnouncementCreatedEvent()
   })
 }
 
