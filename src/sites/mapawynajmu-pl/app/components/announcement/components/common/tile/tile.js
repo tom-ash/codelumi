@@ -11,6 +11,7 @@ import { phoneSwitchProvider } from '../../../functions/phone-switch-provider'
 import { togglePhone } from '../../../functions/toggle-phone'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
+import localitiesPresenter from '../../../functions/localities-presenter'
 
 function getPositionFromTop() {
   if (!this.container.current) return
@@ -114,7 +115,7 @@ class AnnouncementTile extends React.Component {
               <span className='for-lease'>{this.langHandler({ pl: 'na wynajem', en: 'for lease' })}</span>
             </div>
             <div className='header-row locality-sublocality'>
-              TODO Locality
+              {localitiesPresenter({ locality, sublocality })}
             </div>
             <div className='area'>
               <div className='area-amount'>

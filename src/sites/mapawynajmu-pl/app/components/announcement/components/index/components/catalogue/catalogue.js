@@ -62,6 +62,8 @@ class AnnouncementIndexCatalogue extends React.Component {
                 changeApp={changeApp}
                 path={announcement.path}
                 title={announcement.title}
+                locality={announcement.locality}
+                sublocality={announcement.sublocality}
               />
             )
           })}

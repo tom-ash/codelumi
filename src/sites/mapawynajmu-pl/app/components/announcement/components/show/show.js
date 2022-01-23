@@ -61,7 +61,9 @@ class AnnouncementShow extends React.Component {
       resetData,
       changeApp,
       name,
-      links
+      links,
+      locality,
+      sublocality
     } = this.props
 
     const { phone } = this.state
@@ -116,6 +118,8 @@ class AnnouncementShow extends React.Component {
           resetData={resetData}
           changeApp={changeApp}
           path={path}
+          locality={locality}
+          sublocality={sublocality}
         />
       </div>
     )

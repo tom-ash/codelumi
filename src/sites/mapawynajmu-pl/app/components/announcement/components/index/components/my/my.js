@@ -90,6 +90,8 @@ class AnnouncementIndexMy extends React.Component {
             lang={lang}
             path={announcement.path}
             title={announcement.title}
+            locality={announcement.locality}
+            sublocality={announcement.sublocality}
           />))}
           <div className='float-clear' />
         </div>

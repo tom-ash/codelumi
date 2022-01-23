@@ -44,7 +44,9 @@ export const mapStateToProps = store => {
     furnishings,
     polishDescription,
     englishDescription,
-    name
+    name,
+    locality,
+    sublocality
   } = store.announcement.show.data
 
   return {
@@ -84,7 +86,9 @@ export const mapStateToProps = store => {
     markerLoaded,
     mapLoading,
     fetch,
-    links
+    links,
+    locality,
+    sublocality
   }
 }
     

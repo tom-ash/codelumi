@@ -6,6 +6,7 @@ import { RentPresenter } from '../../../../../show/functions/rent-presenter'
 import { viewAnnouncement } from '../../../../../../functions/view-announcement'
 import scrollToElement from '../../../../../../../../../../shared/app/functions/screen/scrollers/to-element.js'
 import { sendAnalyticsEvent } from '../../../../../../../../functions/google-analytics/send-analytics-event'
+import localitiesPresenter from '../../../../../../functions/localities-presenter.js'
 
 const AnnouncementShowMiniTile = ({
   id,
@@ -24,10 +25,14 @@ const AnnouncementShowMiniTile = ({
   index,
   miniListFarthestScrollLeft,
   path,
-  title
+  title,
+  locality,
+  sublocality
 }) => {
   const DESKTOP_TILE_HEIGHT = 227
   const MOBILE_TILE_WIDTH = 240
+
+  const localities = localitiesPresenter({ locality, sublocality })
   
   if (
     !isMobile && miniListFarthestScrollTop + 4 * DESKTOP_TILE_HEIGHT < index * DESKTOP_TILE_HEIGHT ||
@@ -95,7 +100,8 @@ const AnnouncementShowMiniTile = ({
         disableSLides
       />
       <div className='category-and-location'>
-        TODO Locality
+        {parseCategory({ categoryNumber: category, lang })}
+        {localities && `, ${localities}`}
       </div>
       <div className='data'>
         <AreaPresenter

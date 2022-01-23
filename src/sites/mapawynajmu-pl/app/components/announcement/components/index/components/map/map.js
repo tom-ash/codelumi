@@ -74,6 +74,8 @@ class AnnouncementIndexMap extends React.Component {
                 title={announcement.title}
                 miniListFarthestScrollTop={miniListFarthestScrollTop}
                 miniListFarthestScrollLeft={miniListFarthestScrollLeft}
+                locality={announcement.locality}
+                sublocality={announcement.sublocality}
               />
             ))}
             <div className='float-clear' />
@@ -103,6 +105,8 @@ class AnnouncementIndexMap extends React.Component {
               changeApp={changeApp}
               path={tile.path}
               title={tile.title}
+              locality={tile.locality}
+              sublocality={tile.sublocality}
             />
           </div>}
         </div>
