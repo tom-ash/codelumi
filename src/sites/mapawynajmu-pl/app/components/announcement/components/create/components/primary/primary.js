@@ -12,7 +12,6 @@ class AnnouncementCreatePrimary extends React.Component {
     super(props)
     this.langHandler = langHandler.bind(this)
     this.categoryManager = managers.categoryManager.bind(this)
-    this.districtManager = managers.districtManager.bind(this)
     this.areaManager = managers.areaManager.bind(this)
     this.handleErrorOnSelect = handleErrorOnSelect.bind(this)
     this.handleErrorOnValidate = handleErrorOnValidate.bind(this)
@@ -23,7 +22,6 @@ class AnnouncementCreatePrimary extends React.Component {
     return (
       <div id='announcement-create-primary' className='section'>
         <ManagedSelect {...this.categoryManager()}/>
-        <ManagedSelect {...this.districtManager()}/>
         <ManagedText {...this.areaManager()}/>
       </div>
     )

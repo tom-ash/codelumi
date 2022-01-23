@@ -31,7 +31,6 @@ export const control = {
 export const inputs = {
   id: '',
   category: '',
-  district: '',
   rentCurrency: 0,
   netRentAmount: '',
   grossRentAmount: '',
@@ -67,7 +66,6 @@ export const data = {
 
 export const errors = {
   category: noError,
-  district: noError,
   rentCurrency: noError,
   netRentAmount: noError,
   area: noError,

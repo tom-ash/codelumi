@@ -33,7 +33,6 @@ export const data = {
 
 export const inputs = {
   category: '',
-  district: '',
   rentCurrency: '',
   rentMin: '',
   rentMax: '',

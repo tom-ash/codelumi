@@ -6,7 +6,6 @@ import AnnouncementShowDescription from './components/description/description'
 import AnnouncementShowMap from './components/map/map'
 import langHandler from '../../../../../functions/lang-handler.js'
 import { parseCategory } from '../../../../../../shared/functions/parsers/parse-category'
-import { parseDistrict } from '../../../functions/district-parsers'
 import { CloseButton } from '../../../../support/components/close-button/close-button'
 import { phoneSwitchProvider } from '../../../functions/phone-switch-provider'
 import { togglePhone } from '../../../functions/toggle-phone'
@@ -38,7 +37,8 @@ class AnnouncementTile extends React.Component {
       showPhoneSwitch,
       id,
       category,
-      district,
+      locality,
+      sublocality,
       area,
       pictures,
       rentCurrency,
@@ -113,8 +113,8 @@ class AnnouncementTile extends React.Component {
               &nbsp;
               <span className='for-lease'>{this.langHandler({ pl: 'na wynajem', en: 'for lease' })}</span>
             </div>
-            <div className='header-row district'>
-              {parseDistrict(district)}{this.langHandler({ pl: ', Warszawa', en: ', Warsaw' })}
+            <div className='header-row locality-sublocality'>
+              TODO Locality
             </div>
             <div className='area'>
               <div className='area-amount'>
@@ -150,7 +150,6 @@ class AnnouncementTile extends React.Component {
           id={id}
           pictures={pictures}
           category={category}
-          district={district}
           area={area}
           isMobile={isMobile}
           changeApp={changeApp}

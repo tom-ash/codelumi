@@ -4,7 +4,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import langHandler from '../../../../../../functions/lang-handler'
 import Tile from '../../../common/tile/tile.js'
 import { parseCategoryForUrl } from '../../../../functions/category-parsers'
-import { parseDistrictForUrl } from '../../../../functions/district-parsers'
 import { parseCurrency } from '../../../../functions/currency-parsers'
 import * as lifecycle from './functions/lifecycle'
 import withStyles from 'isomorphic-style-loader/withStyles'
@@ -17,7 +16,6 @@ class AnnouncementIndexCatalogue extends React.Component {
     this.componentDidMount = lifecycle.componentDidMount
     this.langHandler = langHandler.bind(this)
     this.parseCategoryForUrl = parseCategoryForUrl.bind(this)
-    this.parseDistrictForUrl = parseDistrictForUrl.bind(this)
     this.parseCurrency = parseCurrency.bind(this)
   }
 
@@ -49,7 +47,6 @@ class AnnouncementIndexCatalogue extends React.Component {
                 lang={lang}
                 id={announcement.id}
                 category={announcement.category}
-                district={announcement.district}
                 pictures={announcement.pictures}
                 area={announcement.area}
                 netRentAmount={announcement.netRentAmount}

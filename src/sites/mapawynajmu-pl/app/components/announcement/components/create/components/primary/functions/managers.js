@@ -2,14 +2,12 @@ import React from 'react'
 import { inputs } from '../../../../../constants/inputs'
 import { requiredInputs } from '../../../constants/required-inputs'
 import { categories } from '../../../../../constants/categories'
-import { districts } from '../../../../../constants/districts'
 import SVG from '../../../../../../support/components/svg/svg'
 import sendGaEvent from '../../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from '../constants/analytics/events'
 
 const {
   CATEGORY_SELECTED_EVENT,
-  DISTRICT_SELECTED_EVENT,
   AREA_INPUTTED_EVENT
 } = analyticEvents
 
@@ -52,32 +50,6 @@ export function categoryManager() {
     onBlur: () => this.categoryManager().validate(),
     validate: () => this.handleErrorOnValidate('category', value),
     error: this.langHandler(categoryError)
-  }
-}
-
-export function districtManager() {
-  const {
-    all: text
-  } = inputs.district
-
-  return {
-    id: requiredInputs.district.id,
-    classNames: { container: 'form-input with-icon select' },
-    value: this.props.district,
-    label: this.langHandler(text),
-    options: [{ value: '', text: '' }].concat(districts),
-    children: <>
-      <SVG name='city' />
-      <SVG name='chevron' />
-    </>,
-    onFocus: () => this.props.changeErrors({ district: noError }),
-    onSelect: option => {
-      this.onSelectHandler('district', option.value)
-      sendGaEvent(DISTRICT_SELECTED_EVENT)
-    },
-    onBlur: () => this.districtManager().validate(),
-    validate: () => this.handleErrorOnValidate('district', this.props.district),
-    error: this.langHandler(this.props.errors.district)
   }
 }
 

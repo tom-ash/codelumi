@@ -5,12 +5,6 @@ export const inputs = {
       en: 'Category'
     }
   },
-  district: {
-    all: {
-      pl: 'Dzielnica',
-      en: 'District'
-    }
-  },
   rent: {
   },
   rentCurrency: {

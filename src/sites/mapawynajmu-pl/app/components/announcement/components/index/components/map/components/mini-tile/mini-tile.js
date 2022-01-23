@@ -1,7 +1,6 @@
 import React from 'react'
 import AnnouncementShowPictures from '../../../../../common/tile/components/pictures/pictures.js'
 import { parseCategory } from '../../../../../../../../../shared/functions/parsers/parse-category'
-import { parseDistrict } from '../../../../../../../../../shared/functions/parsers/parse-district'
 import { AreaPresenter } from '../../../../../show/functions/area-presenter'
 import { RentPresenter } from '../../../../../show/functions/rent-presenter'
 import { viewAnnouncement } from '../../../../../../functions/view-announcement'
@@ -14,7 +13,6 @@ const AnnouncementShowMiniTile = ({
   lng,
   pictures,
   category,
-  district,
   area,
   grossRentAmount,
   rentCurrency: currency,
@@ -93,12 +91,11 @@ const AnnouncementShowMiniTile = ({
         id={id}
         pictures={pictures}
         category={category}
-        district={district}
         area={area}
         disableSLides
       />
       <div className='category-and-location'>
-        {parseCategory({ categoryNumber: category, lang })}, {parseDistrict(district)}
+        TODO Locality
       </div>
       <div className='data'>
         <AreaPresenter

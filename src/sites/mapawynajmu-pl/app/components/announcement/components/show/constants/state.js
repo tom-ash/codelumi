@@ -11,7 +11,6 @@ export const data = {
   phone: null,
   id: null,
   category: null,
-  district: null,
   rentCurrency: null,
   netRentAmount: null,
   area: null,

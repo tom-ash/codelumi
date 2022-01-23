@@ -8,7 +8,6 @@ export function publish() {
 
   const announcementObject = {
     category: this.categoryManager().validate(),
-    district: this.districtManager().validate(),
     area: this.areaManager().validate(),
     pictures: this.validatePictures(),
     map: this.validateMap()

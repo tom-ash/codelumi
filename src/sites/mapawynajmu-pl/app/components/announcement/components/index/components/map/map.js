@@ -63,7 +63,6 @@ class AnnouncementIndexMap extends React.Component {
                 lng={announcement.longitude}
                 pictures={announcement.pictures}
                 category={announcement.category}
-                district={announcement.district}
                 area={announcement.area}
                 grossRentAmount={announcement.grossRentAmount}
                 rentCurrency={announcement.rentCurrency}
@@ -88,7 +87,6 @@ class AnnouncementIndexMap extends React.Component {
               showPhoneSwitch
               id={tile.id}
               category={tile.category}
-              district={tile.district}
               pictures={tile.pictures}
               area={tile.area}
               netRentAmount={tile.netRentAmount}

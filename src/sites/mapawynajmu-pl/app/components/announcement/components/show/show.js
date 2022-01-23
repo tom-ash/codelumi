@@ -30,7 +30,6 @@ class AnnouncementShow extends React.Component {
       venue,
       id,
       category,
-      district,
       area,
       pictures,
       pictureIndex,
@@ -83,7 +82,6 @@ class AnnouncementShow extends React.Component {
           lang={lang}
           id={id}
           category={category}
-          district={district}
           area={area}
           pictures={pictures}
           pictureIndex={pictureIndex}

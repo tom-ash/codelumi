@@ -27,7 +27,7 @@ import UserCreate from '../../../user/components/create/create.js'
 import UserCreateEmailVerify from '../../../user/components/create/components/email/components/verify/verify.js'
 import Hint from '../../../support/components/hint/hint.js'
 import AppContext from '../../../../constants/context.js'
-import { categoryManager, districtManager, areaManager } from './components/primary/functions/managers'
+import { categoryManager, areaManager } from './components/primary/functions/managers'
 import { handleErrorOnValidate } from './components/primary/functions/errors-handler'
 
 class AnnouncementCreate extends React.Component {
@@ -40,7 +40,6 @@ class AnnouncementCreate extends React.Component {
     this.langHandler = langHandler.bind(this)
     this.addAnnouncementManager = managers.addAnnouncementManager.bind(this)
     this.categoryManager = categoryManager.bind(this)
-    this.districtManager = districtManager.bind(this)
     this.areaManager = areaManager.bind(this)
     this.validatePictures = validatePictures.bind(this)
     this.validateMap = validateMap.bind(this)

@@ -10,7 +10,7 @@ import SVG from '../../../../../../../../support/components/svg/svg.js'
 
 export function centralManager(element) {
   switch (element) {
-    case 'title': return announcementTitleProvider.call(this)
+    case 'title': return titleProvider.call(this)
     case 'icon': return iconProvider.call(this)
     case 'currentValue': return currentValueProvider.call(this)
     case 'triggerClass': return triggerClassProvider.call(this)
@@ -24,7 +24,7 @@ export function centralManager(element) {
   }
 }
 
-function announcementTitleProvider() {
+function titleProvider() {
   const { item } = this.state
 
   switch (item) {

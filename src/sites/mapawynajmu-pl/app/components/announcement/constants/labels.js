@@ -2,9 +2,6 @@ export const labels = {
   category: {
     text: { pl: 'Rodzaj nieruchomości', en: 'Real Estate Type' }
   },
-  district: {
-    text: { pl: 'Dzielnica', en: 'District' }
-  },
   rent: {
     text: { pl: 'Miesięczna cena', en: 'Monthly Price' }
   },

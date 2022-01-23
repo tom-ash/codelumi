@@ -4,7 +4,6 @@ export const mapStateToProps = store => {
     availabilityDateFocus: store.announcement.create.control.availabilityDateFocus,
     calendarMouseOver: store.announcement.create.control.calendarMouseOver,
     category: store.announcement.create.inputs.category,
-    district: store.announcement.create.inputs.district,
     rentCurrency: store.announcement.create.inputs.rentCurrency,
     netRentAmount: store.announcement.create.inputs.netRentAmount,
     grossRentAmount: store.announcement.create.inputs.grossRentAmount,

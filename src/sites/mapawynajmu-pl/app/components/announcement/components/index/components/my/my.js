@@ -74,7 +74,6 @@ class AnnouncementIndexMy extends React.Component {
             last={index == this.props.announcements.length - 1}
             id={announcement.id}
             category={announcement.category}
-            district={announcement.district}
             pictures={announcement.pictures}
             area={announcement.area}
             netRentAmount={announcement.netRentAmount}

@@ -24,7 +24,6 @@ export const mapStateToProps = store => {
 
   const {
     category,
-    district,
     areaMin,
     areaMinInput,
     areaMax,
@@ -61,7 +60,6 @@ export const mapStateToProps = store => {
     renderMy,
     type,
     category,
-    district,
     areaMin,
     areaMinInput,
     areaMax,

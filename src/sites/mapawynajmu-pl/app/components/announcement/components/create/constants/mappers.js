@@ -14,7 +14,6 @@ export const mapStateToProps = store => {
 
   const {
     category,
-    district,
     area,
     blobs,
     picUploads,
@@ -46,7 +45,6 @@ export const mapStateToProps = store => {
     connecting,
     savingAnnouncement,
     category,
-    district,
     area,
     rooms,
     blobs,

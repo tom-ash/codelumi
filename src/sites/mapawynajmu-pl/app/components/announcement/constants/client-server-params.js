@@ -8,10 +8,6 @@ export const clientServerParams = [
     server: 'category'
   },
   {
-    client: 'district',
-    server: 'district'
-  },
-  {
     client: 'rentCurrency',
     server: 'rentCurrency'
   },

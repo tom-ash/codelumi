@@ -7,13 +7,6 @@ export const requiredInputs = {
       en: 'Select category.'
     }
   },
-  district: {
-    id: 'announcement-create-district',
-    error: {
-      pl: 'Wybierz dzielnicę.',
-      en: 'Select district.'
-    }
-  },
   area: {
     id: 'announcement-create-area',
     error: {
@@ -39,7 +32,6 @@ export const requiredInputs = {
 
 export const requiredInputsArray = [
   'category',
-  'district',
   'area',
   'pictures',
   'map'

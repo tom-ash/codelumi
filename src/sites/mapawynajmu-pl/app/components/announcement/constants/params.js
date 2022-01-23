@@ -7,14 +7,6 @@ export const params = {
     },
     parser: 'parseCategoryForUrl'
   },
-  district: {
-    minMax: false,
-    url: {
-      pl: 'dzielnica',
-      en: 'district'
-    },
-    parser: 'parseDistrictForUrl'
-  },
   area: {
     minMax: true,
     url: {

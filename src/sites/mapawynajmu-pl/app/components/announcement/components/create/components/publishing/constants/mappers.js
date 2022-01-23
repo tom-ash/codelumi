@@ -16,7 +16,6 @@ export const mapStateToProps = store => {
   const {
     id,
     category,
-    district,
     rentCurrency,
     netRentAmount,
     grossRentAmount,
@@ -53,7 +52,6 @@ export const mapStateToProps = store => {
     publishing,
     id,
     category,
-    district,
     rentCurrency,
     netRentAmount,
     grossRentAmount,
