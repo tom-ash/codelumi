@@ -6,15 +6,12 @@ function OnlineInput(props) {
   const classNames = { container: 'online-switch' }
   const label = (
     <>
-      <div className='text'>
+      <div className={`text ${checked ? 'online' : 'offline'}`}>
         Online
       </div>
       <div className={`body ${checked ? 'online' : 'offline'}`}>
         <div className='dot' />
       </div>
-      <div className='text'>
-        Offline
-      </div>    
     </>
   )
   const onClick = online => {
