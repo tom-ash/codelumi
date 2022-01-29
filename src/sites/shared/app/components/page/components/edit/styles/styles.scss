@@ -1,5 +1,52 @@
 .page-edit {
   margin-bottom: 300px;
+
+  .online-switch {
+    display: inline-block;
+    .label {
+      display: flex;
+      cursor: pointer;
+      margin-bottom: 20px;
+      .body {
+        width: 50px;
+        height: 20px;
+        border: 1px solid #5D6D7E;
+        border-radius: 10px;
+        background: white;
+        position: relative;
+        margin: 0 6px 0 8px;
+        transition: all .4s;
+        .dot {
+          position: absolute;
+          top: 2px;
+          width: 14px;
+          height: 14px;
+          background: black;
+          border-radius: 7px;
+          transition: all .4s;
+        }
+        &.online {
+          background: lightgreen;
+          .dot {
+            left: 2px;
+            background: green;
+          }
+        }
+        &.offline {
+          background: #FADBD8;
+          .dot {
+            left: 32px;
+            background: red;
+          }
+        }
+      }
+      .text {
+        line-height: 20px;
+        font-size: 15px;
+      }
+    }
+  }
+
   form {
     z-index: 3;
     position: fixed;

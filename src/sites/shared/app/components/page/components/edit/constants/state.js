@@ -13,7 +13,8 @@ export const inputs = {
   canonical_url: null,
   picture: null,
   meta: null,
-  lang_ver_urls: null
+  lang_ver_urls: null,
+  online: null
 }
 
 export const data = {

@@ -2,10 +2,18 @@ export const mapStateToProps = store => {
   const { lang, routeSynced } = store.app
   const { fetching } = store.page.edit.control
   const {
-    name, url,
-    body, style, meta,
-    canonicalUrl, title, description, keywords, picture,
-    lang_ver_urls
+    name,
+    url,
+    body,
+    style,
+    meta,
+    canonicalUrl,
+    title,
+    description,
+    keywords,
+    picture,
+    lang_ver_urls,
+    online
   } = store.page.edit.inputs
   const { role } = store.user.authorize.data
 
@@ -24,7 +32,8 @@ export const mapStateToProps = store => {
     picture,
     meta,
     lang_ver_urls,
-    isAdmin: role == 'admin'
+    isAdmin: role == 'admin',
+    online
   }
 }
   
