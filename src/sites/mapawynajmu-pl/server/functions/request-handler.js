@@ -9,7 +9,7 @@ import SITE_NAME from '../../shared/constants/names/site.js'
 
 function handleRequest(req, res) {
   if (req.hostname === 'warsawlease.pl' || req.hostname === 'www.warsawlease.pl') return res.status(301).redirect(`https://${ROOT_DOMAIN}${req.originalUrl}`)
-  if (req.hostname === APEX_DOMAIN) return res.redirect(`https://${ROOT_DOMAIN}${req.originalUrl}`)
+  if (req.hostname === ROOT_DOMAIN) return res.redirect(`https://${APEX_DOMAIN}${req.originalUrl}`)
 
   genericRequestHandler({
     req,
