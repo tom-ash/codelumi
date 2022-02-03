@@ -20,23 +20,21 @@ var config = {
   module: {
     rules: [
       {
-        test: /\.m?js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
-      },
-      {
-        test: /\.tsx?$/,
-        use: {
-          loader: 'ts-loader',
-          options: {
+        test: /(\.jsx?|.tsx?)$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react']
+            }
+          },
+          {
+            loader: 'ts-loader',
+            options: {
               configFile: SRC_DIR + 'tsconfig.json'
+            }
           }
-        },
+        ],
         exclude: /node_modules/
       },
       {
