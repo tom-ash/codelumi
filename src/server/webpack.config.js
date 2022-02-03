@@ -9,7 +9,7 @@ var config = {
     minimize: false
   },
   entry: {
-    server: SRC_DIR + '/server.js'
+    server: SRC_DIR + '/server.ts'
   },
   output: {
     path: DIST_DIR,
@@ -28,6 +28,16 @@ var config = {
             presets: ['@babel/preset-env', '@babel/preset-react']
           }
         }
+      },
+      {
+        test: /\.tsx?$/,
+        use: {
+          loader: 'ts-loader',
+          options: {
+              configFile: SRC_DIR + 'tsconfig.json'
+          }
+        },
+        exclude: /node_modules/
       },
       {
         test: /\.s?css$/,

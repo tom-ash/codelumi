@@ -28,6 +28,16 @@ var config = {
         }
       },
       {
+        test: /\.tsx?$/,
+        use: {
+          loader: 'ts-loader',
+          options: {
+              configFile: SRC_DIR + 'tsconfig.json'
+          },
+        },
+        exclude: /node_modules/
+      },
+      {
         test: /\.s?css$/,
         use: [
           'isomorphic-style-loader',
