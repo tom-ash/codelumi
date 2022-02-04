@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
+    "outDir": "../../dist/",
     "noImplicitAny": true,
     "module": "es6",
+    "target": "es6",
     "allowJs": true,
     "moduleResolution": "node",
-    "jsx": "react", // <--- this is important
-    "target": "esnext" //or "esnext" // <-- this might be important for arrow functions
+    "jsx": "react"
   }
 }

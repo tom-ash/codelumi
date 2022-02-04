@@ -1,6 +1,7 @@
 var webpack = require("webpack");
 var CopyPlugin = require('copy-webpack-plugin');
 var path = require('path')
+var ROOT_DIR = path.join(__dirname, '../../../../')
 var SRC_DIR = path.join(__dirname, './')
 var DIST_DIR = path.join(__dirname, "../../../../dist/sites/mapawynajmu-pl/client")
 
@@ -29,7 +30,7 @@ var config = {
           {
             loader: 'ts-loader',
             options: {
-              configFile: SRC_DIR + 'tsconfig.json'
+              configFile: ROOT_DIR + 'tsconfig.json'
             }
           }
         ],

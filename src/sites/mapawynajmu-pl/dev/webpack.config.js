@@ -3,6 +3,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path')
 var SRC_DIR = path.join(__dirname, './')
 var DIST_DIR = path.join(__dirname, '../client')
+var ROOT_DIR = path.join(__dirname, '../../../../')
 
 var config = {
   mode: 'development',
@@ -30,7 +31,13 @@ var config = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env', '@babel/preset-react', "@babel/preset-typescript"]
+              presets: ['@babel/preset-env', '@babel/preset-react']
+            }
+          },
+          {
+            loader: 'ts-loader',
+            options: {
+              configFile: ROOT_DIR + 'tsconfig.json'
             }
           }
         ],
