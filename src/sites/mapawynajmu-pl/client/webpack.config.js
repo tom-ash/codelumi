@@ -23,7 +23,13 @@ var config = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env', '@babel/preset-react', "@babel/preset-typescript"]
+              presets: ['@babel/preset-env', '@babel/preset-react']
+            }
+          },
+          {
+            loader: 'ts-loader',
+            options: {
+              configFile: SRC_DIR + 'tsconfig.json'
             }
           }
         ],

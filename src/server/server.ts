@@ -6,6 +6,7 @@ import { redirectToHTTPS } from 'express-http-to-https'
 import compression from 'compression'
 // @ts-ignore
 import cookieParser from 'cookie-parser'
+// @ts-ignore
 import vhost from 'vhost'
 import mapawynajmuPlRequestHandler from '../sites/mapawynajmu-pl/server/functions/request-handler.js'
 import soundofItHandleRequest from '../sites/soundof-it/server/functions/request-handler.js'
@@ -20,6 +21,7 @@ function logAbc(logee: Abc) {
   console.log(logee)  
 }
 
+// @ts-ignore
 logAbc(42)
 
 Sentry.init({
