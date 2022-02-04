@@ -1,12 +1,19 @@
+// @ts-ignore
 import React from 'react'
+// @ts-ignore
 import loadable from '@loadable/component'
+// @ts-ignore
 import { connect } from 'react-redux'
+// @ts-ignore
 import withStyles from 'isomorphic-style-loader/withStyles'
 import Page from '../../shared/app/components/page/page.js'
 import Visitor from '../../shared/app/components/visitor/visitor.js'
+// @ts-ignore
 const Announcement = loadable(() => import('./components/announcement/announcement.js'))
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
+// @ts-ignore
 import styles from './styles/styles.scss'
+// @ts-ignore
 import headerStyles from './components/scaffold/header/styles/styles.scss'
 import * as lifecycle from './functions/lifecycle'
 import langHandler from '../../shared/app/functions/lang/handlers/lang.js'
@@ -32,23 +39,37 @@ initSentry()
 const APP_NAME = 'soundof-it'
 
 class App extends React.Component {
+  // @ts-ignore
   constructor(props) {
     super(props)
+    // @ts-ignore
     this.componentDidMount = lifecycle.componentDidMount
+    // @ts-ignore
     this.componentDidUpdate = lifecycle.componentDidUpdate
+    // @ts-ignore
     this.screenSizeHandler = screenSizeHandler.bind(this)
+    // @ts-ignore
     this.popStateHandler = popStateHandler.bind(this)
+    // @ts-ignore
     this.langHandler = langHandler.bind(this)
+    // @ts-ignore
     this.matchStateToRoute = matchStateToRoute.bind(this)
+    // @ts-ignore
     this.changeRoute = changeRoute.bind(this)
   }
 
   render() {
+    // @ts-ignore
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute }
+    // @ts-ignore
     const { render, renderPage, renderVisitor, renderAnnouncement, device, links, lang, pageShowData, pageEditData, changeApp } = this.props
+    // @ts-ignore
     const urlComposites = { pageShowData, pageEditData }
+    // @ts-ignore
     const sharedProps = { appName: APP_NAME, render, langs: LANGS, links, clientUrl: CLIENT_URL, apiUrl: API_URL, device, lang, changeRoute: this.changeRoute, buildUrl, changeApp, langHandler: this.langHandler }
+    // @ts-ignore
     const headerProps = { ...sharedProps, urlComposites, Logo, HeaderCustomization, styles: headerStyles }
+    // @ts-ignore
     const pageProps = { ...sharedProps, customNodeParser, customMetaParser }
     
     return (

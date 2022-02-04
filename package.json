@@ -55,6 +55,7 @@
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-typescript": "^7.16.7",
     "@svgr/webpack": "^5.4.0",
+    "@types/react": "^17.0.39",
     "babel-loader": "^8.1.0",
     "compression-webpack-plugin": "^6.0.3",
     "copy-webpack-plugin": "^5.1.2",

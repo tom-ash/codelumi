@@ -1,6 +1,7 @@
 var webpack = require("webpack");
 var CopyPlugin = require('copy-webpack-plugin');
 var path = require('path')
+var ROOT_DIR = path.join(__dirname, '../../../../')
 var SRC_DIR = path.join(__dirname, '../client')
 var DIST_DIR = path.join(__dirname, "../../../../dist/sites/soundof-it/client")
 
@@ -23,7 +24,13 @@ var config = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env', '@babel/preset-react', "@babel/preset-typescript"]
+              presets: ['@babel/preset-env', '@babel/preset-react']
+            }
+          },
+          {
+            loader: 'ts-loader',
+            options: {
+              configFile: ROOT_DIR + 'tsconfig.json'
             }
           }
         ],

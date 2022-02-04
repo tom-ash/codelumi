@@ -5,7 +5,7 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import rootReducer from '../app/functions/root-reducer'
 import StyleContext from 'isomorphic-style-loader/StyleContext'
-import App from '../app/app'
+import App from '../app/app.tsx'
 
 const insertCss = (...styles) => {
   const removeCss = styles.map(style => style._insertCss())
