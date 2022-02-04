@@ -25,14 +25,16 @@ var config = {
   module: {
     rules: [
       {
-        test: /\.m?js$/,
-        exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
+        test: /(\.jsx?|.tsx?)$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react', "@babel/preset-typescript"]
+            }
           }
-        }
+        ],
+        exclude: /node_modules/
       },
       {
         test: /\.s?css$/,
