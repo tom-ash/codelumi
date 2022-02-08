@@ -1,9 +1,11 @@
 import React from 'react'
-import Link from '../link/link.js'
-import List from '../list/list.js'
+import loadable from '@loadable/component'
 import urlify from '../../../../../../../../../../shared/shared/functions/transformers/routes/urlify.js'
-import RichText from './components/rich-text/rich-text.js'
-import TableOfContents from '../table-of-contents/table-of-contents.js'
+
+const Link = loadable(() => import('../link/link.js'))
+const List = loadable(() => import('../list/list.js'))
+const RichText = loadable(() => import('./components/rich-text/rich-text.js'))
+const TableOfContents = loadable(() => import('../table-of-contents/table-of-contents.js'))
 
 const commonTags = ['h1', 'h2', 'h3', 'h4', 'div', 'p']
 
