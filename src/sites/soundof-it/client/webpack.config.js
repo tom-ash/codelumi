@@ -67,7 +67,6 @@ var config = {
     }),
     new CopyPlugin([
       { from: './src/sites/soundof-it/client/robots.txt', to: 'robots.txt' },
-      { from: './src/sites/soundof-it/client/sitemap.xml', to: 'sitemap.xml' },
       { from: './src/sites/soundof-it/client/favicon.png', to: 'favicon.png' },
       { from: './src/sites/soundof-it/client/favicon.ico', to: 'favicon.ico' },
     ]),

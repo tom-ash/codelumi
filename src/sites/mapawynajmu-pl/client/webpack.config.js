@@ -68,7 +68,6 @@ var config = {
     new webpack.DefinePlugin({ 'APP_ENV': JSON.stringify(process.env.APP_ENV) }),
     new CopyPlugin([
       { from: './src/sites/mapawynajmu-pl/client/robots.txt', to: 'robots.txt' },
-      { from: './src/sites/mapawynajmu-pl/client/sitemap.xml', to: 'sitemap.xml' },
       { from: './src/sites/mapawynajmu-pl/client/favicon.png', to: 'favicon.png' },
       { from: './src/sites/mapawynajmu-pl/client/favicon.ico', to: 'favicon.ico' },
     ])
