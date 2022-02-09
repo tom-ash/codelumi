@@ -17,6 +17,16 @@
     @media #{$LARGE-TABLET} {
       padding: 20px;
     }
+    // @media #{$LARGE-PHONE} {
+    //   padding: 0;
+    //   .table-of-contents {
+    //     margin-top: 0;
+    //     border-radius: 0;
+    //   }
+    //   h1, h2, h3, p, ul {
+    //     padding: 0 20px!important;
+    //   }
+    // }
   }
 
   .table-of-contents {

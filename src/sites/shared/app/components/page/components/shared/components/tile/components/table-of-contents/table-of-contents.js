@@ -18,7 +18,7 @@ const TableOfContents = (props) => {
           const headerContent = header.c
 
           return (
-            <li>
+            <li key={index}>
               <a
                 key={index}
                 className={header.t}

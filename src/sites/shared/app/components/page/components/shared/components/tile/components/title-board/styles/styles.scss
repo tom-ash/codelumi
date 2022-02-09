@@ -1,0 +1,58 @@
+@import '../../../../../../../../../../../shared/app/styles/media-breakpoints.scss';
+
+#title-board {
+  position: relative;
+  background: lightgray;
+  width: 100%;
+  aspect-ratio: 2.38;
+  border-radius: 4px;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(42,42,42,0.5);
+  background-size: 100% auto;
+  svg {
+    position: relative;
+    top: 2px;
+    margin-right: 3px;
+    height: 12px;
+    fill: white;
+  }
+  img {
+    height: 50px;
+    position: absolute;
+    display: block;
+    bottom: 110px;
+    left: 20px;
+  }
+  h1 {
+    position: absolute;
+    font-size: 30px!important;
+    bottom: 60px;
+    left: 20px;
+    color: white!important;
+  }
+  a {
+    font-size: 12px;
+    position: absolute;
+    display: block;
+    bottom: 20px;
+    left: 20px;
+  }
+  .updated-on {
+    position: absolute;
+    display: block;
+    bottom: 20px;
+    left: 140px;
+    font-size: 14px;
+    svg {
+      top: 1px;
+    }
+  }
+  @media #{$LARGE-PHONE} {
+    aspect-ratio: 16/10;
+    border-radius: 0;
+    // position: relative;
+    // top: 60px;
+    // right: 0;
+    // left: 0;
+  }
+}
