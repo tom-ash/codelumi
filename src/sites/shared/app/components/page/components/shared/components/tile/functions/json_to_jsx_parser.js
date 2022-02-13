@@ -8,11 +8,10 @@ const TableOfContents = loadable(() => import('../components/table-of-contents/t
 const jsonToJsxParser = props => {
   const { jsonBody } = props
 
-  const titleBoard = null
-  const tableOfContents = null
-  const main = []
-  
-  main = jsonBody.map((node, index) => {
+  let titleBoard = null
+  let tableOfContents = null
+
+  const main = jsonBody.map((node, index) => {
     if (index === 0 && node.t === 'tb') {
       titleBoard = <TitleBoard key={index} node={node} />
 
