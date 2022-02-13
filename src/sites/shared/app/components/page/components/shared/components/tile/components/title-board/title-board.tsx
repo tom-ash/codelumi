@@ -36,7 +36,7 @@ const TitleBoard = (props: TitleBoardProps) => {
   console.log(title)
 
   return (
-    <div
+    <header
       id='title-board'
       style={{ backgroundImage: `url('${image}')` }}
     >
@@ -54,7 +54,7 @@ const TitleBoard = (props: TitleBoardProps) => {
       <div className='updated-on'>
         <SVG name='calendar' /> {lastUpdatedOn}
       </div>
-    </div>
+    </header>
   )
 }
 

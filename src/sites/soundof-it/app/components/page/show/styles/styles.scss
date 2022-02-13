@@ -11,25 +11,23 @@
   }
 
   &.article {
-    padding: 20px 0;
     @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
     font-family: 'Titillium Web', sans-serif;
-    @media #{$LARGE-TABLET} {
-      padding: 20px;
+    header {
+      border-radius: 0;
     }
-    // @media #{$LARGE-PHONE} {
-    //   padding: 0;
-    //   .table-of-contents {
-    //     margin-top: 0;
-    //     border-radius: 0;
-    //   }
-    //   h1, h2, h3, p, ul {
-    //     padding: 0 20px!important;
-    //   }
-    // }
+    nav {
+      font-size: 13px;
+      margin-top: 0;
+      border-radius: 0;
+      width: 100%;
+    }
+    main {
+      padding: 0 20px;
+    }
   }
 
-  .table-of-contents {
+  nav {
     display: inline-block;
     padding: 10px 20px;
     background: #EAEDED;

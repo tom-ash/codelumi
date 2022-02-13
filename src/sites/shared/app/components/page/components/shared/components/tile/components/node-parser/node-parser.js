@@ -5,9 +5,6 @@ import urlify from '../../../../../../../../../../shared/shared/functions/transf
 const Link = loadable(() => import('../link/link.js'))
 const List = loadable(() => import('../list/list.js'))
 const RichText = loadable(() => import('./components/rich-text/rich-text.js'))
-const TableOfContents = loadable(() => import('../table-of-contents/table-of-contents.js'))
-const TitleBoard = loadable(() => import('../title-board/title-board.tsx'))
-// TitleBoard
 
 const commonTags = ['h1', 'h2', 'h3', 'h4', 'div', 'p']
 
@@ -23,8 +20,6 @@ const nodeParser = props => {
   if (nodeTag === 'float-clear') return <div key={index} className='float-clear'/>
   if (nodeTag === 'ul') return <List key={index} {...{ listNodes: nodeContent, ...props}} />
   if (nodeTag === 'rt') return <RichText key={index} {...props} content={nodeContent} element={element} />
-  if (nodeTag === 'toc') return <TableOfContents key={index} {...props} />
-  if (nodeTag === 'tb') return <TitleBoard key={index} {...props} />
 
   return customNodeParser({ device, isAdmin, clientUrl, nodeTag, nodeContent, attrs, changeRoute, buildUrl, index, jsonMeta, node })
 }
