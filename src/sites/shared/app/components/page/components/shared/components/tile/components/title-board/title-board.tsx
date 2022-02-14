@@ -1,19 +1,20 @@
 // @ts-ignore
 import React from 'react'
-
 // @ts-ignore
 import useStyles from 'isomorphic-style-loader/useStyles'
 // @ts-ignore
 import styles from './styles/styles.scss'
 
 interface TitleBoardProps {
+  device: string,
   node: {
     title: string,
     image: string,
     author: string,
     authorLink: string,
     logo: string,
-    lastUpdatedOn: string
+    lastUpdatedOn: string,
+    desktopTop: number
   }
 }
 
@@ -23,27 +24,39 @@ const TitleBoard = (props: TitleBoardProps) => {
   useStyles(styles)
 
   const {
+    device,
     node: {
       title,
       image,
       author,
       authorLink,
       logo,
-      lastUpdatedOn
+      lastUpdatedOn,
+      desktopTop
     }
   } = props
 
-  console.log(title)
+  const logoImg = logo && <img className='logo' src={logo} />
+  
+  let coverTop = 0
+
+  if (device === 'largePc') {
+    coverTop = desktopTop
+  }
 
   return (
-    <header
-      id='title-board'
-      style={{ backgroundImage: `url('${image}')` }}
-    >
+    <header id='title-board'>
+      <img
+        src={image}
+        className='cover'
+        style={{
+          top: coverTop
+        }}
+      />
       <h1>
         {title}
       </h1>
-      <img src={logo} />
+      {logoImg}
       <a
         className='author'
         href={authorLink}

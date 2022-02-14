@@ -5,7 +5,7 @@ import styles from './styles/styles.scss'
 const Editorial = props => {
   useStyles(styles)
 
-  const { nodeContent } = props
+  const { node: { c: nodeContent } } = props
 
   return (
     <p className='editorial'>

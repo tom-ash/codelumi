@@ -25,7 +25,6 @@ export function logIn() {
     throw new Error('InvalidCredentials')
   })
   .then(jsonResponse => {
-    console.log(jsonResponse)
     const { accountType, name, accessToken, path } = jsonResponse
     const { changeRoute } = this.context
 

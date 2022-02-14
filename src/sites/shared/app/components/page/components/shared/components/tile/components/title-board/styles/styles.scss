@@ -9,40 +9,57 @@
   color: white;
   text-shadow: 1px 1px 1px rgba(42,42,42,0.5);
   background-size: 100% auto;
+  overflow-y: hidden;
+  margin-bottom: 20px;
   svg {
     position: relative;
     top: 2px;
     margin-right: 3px;
     height: 12px;
     fill: white;
+    z-index: 2;
   }
-  img {
+  .cover {
+    position: relative;
+    display: block;
+    width: 100%;
+    z-index: 1;
+  }
+  .logo {
     height: 50px;
     position: absolute;
     display: block;
     bottom: 110px;
     left: 20px;
+    z-index: 2;
   }
   h1 {
+    height: 30px;
     position: absolute;
     font-size: 30px!important;
-    bottom: 60px;
+    bottom: 54px;
     left: 20px;
     color: white!important;
+    z-index: 2;
   }
   a {
-    font-size: 12px;
+    height: 14px;
+    font-size: 14px;
     position: absolute;
     display: block;
-    bottom: 20px;
+    bottom: 30px;
     left: 20px;
+    z-index: 2;
+    text-decoration: none;
   }
   .updated-on {
+    height: 14px;
     position: absolute;
     display: block;
-    bottom: 20px;
-    left: 140px;
+    bottom: 30px;
+    left: 160px;
     font-size: 14px;
+    z-index: 2;
     svg {
       top: 1px;
     }
@@ -50,5 +67,14 @@
   @media #{$LARGE-PHONE} {
     aspect-ratio: 16/10;
     border-radius: 0;
+    h1 {
+      font-size: 16px!important;
+      margin-left: 0!important;
+      padding-left: 0!important;
+      line-height: 1.5;
+    }
+    a, .updated-on {
+      font-size: 12px;
+    }
   }
 }

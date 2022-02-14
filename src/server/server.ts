@@ -13,17 +13,6 @@ import soundofItHandleRequest from '../sites/soundof-it/server/functions/request
 import * as Sentry from '@sentry/node'
 // import * as Tracing from '@sentry/tracing'
 
-type Abc = {
-  super: string
-}
-
-function logAbc(logee: Abc) {
-  console.log(logee)  
-}
-
-// @ts-ignore
-logAbc(42)
-
 Sentry.init({
   dsn: "https://ac81f10d287d4659865d2571d7be7b45@o876363.ingest.sentry.io/5825795",
   tracesSampleRate: 1.0
@@ -55,24 +44,3 @@ app.use(vhost(/^.*(mapawynajmu).*$/, Express.static('dist/sites/mapawynajmu-pl/c
 app.use(vhost(/^.*(mapawynajmu).*$/, mapawynajmuPlRequestHandler))
 
 app.listen(process.env.PORT || 8080)
-
-// {
-//   test: /(\.jsx?|.tsx?)$/,
-//   use: [
-//     {
-//       loader: 'babel-loader',
-//       options: {
-//         presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript']
-//       }
-//     }
-//     // // ,
-//     // // {
-//     // //   loader: 'ts-loader',
-//     // //   options: {
-//     // //     configFile: SRC_DIR + 'tsconfig.json',
-//     // //     presets: ['@babel/preset-env', '@babel/preset-react']
-//     // //   }
-//     // }
-//   ],
-//   exclude: /node_modules/
-// },
