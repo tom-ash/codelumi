@@ -24,13 +24,13 @@ class Page extends React.Component {
     const notFoundProps = { clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
 
     return (
-      <div id='post'>
+      <>
         {renderCreate && <PageCreate {...createProps} />}
         {renderShow && <PageShow {...showProps}/>}
         {renderEdit && <PageEdit {...editProps} />}
         {renderIndex && <PageIndex {...indexProps} />}
         {renderNotFound && <PageNotFound {...notFoundProps} />}
-      </div>
+      </>
     )
   }
 }

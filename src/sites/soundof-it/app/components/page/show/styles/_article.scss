@@ -1,0 +1,121 @@
+%article {
+  position: relative;
+  max-width: 1440px;
+  margin: 0px auto 60px;
+
+  @media #{$LARGE-PHONE} {
+    margin: 0;
+    padding: 0;
+  }
+
+  &.article {
+    @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
+    font-family: 'Titillium Web', sans-serif;
+    header {
+      border-radius: 0;
+    }
+    nav {
+      font-size: 13px;
+      margin-top: 0;
+      border-radius: 0;
+      width: 100%;
+    }
+    main {
+      padding: 0 20px;
+    }
+  }
+
+  nav {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #EAEDED;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 10px;
+    ul {
+      list-style-type: none;
+      padding-left: 0!important;
+      line-height: 25px;
+    }
+    h2 {
+      margin: 0!important;
+      font-size: 16px!important;
+    }
+    a {
+      display: block;
+      &:hover {
+        color: #5D6D7E;
+      }
+    }
+  }
+
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    background: none;
+    color: rgb(30, 30, 30);
+    font-size: 17px;
+    line-height: 30px;
+
+    button {
+      &.edit {
+        z-index: 999;
+        position: fixed;
+        right: 20px;
+        top: 77px;
+        width: 24px;
+        height: 24px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        svg {
+          display: block;
+          width: 24px;
+          fill: gray;
+          transition: 0.24s ease-out;
+          &:hover {
+            fill: black;
+          }
+        }
+      }
+    }
+
+    h2, h3 {
+      color: rgb(60, 60, 60);
+    }
+  
+    h2 {
+      margin: 0;
+      padding: 0;
+      font-size: 21px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+  
+    h3 {
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    h2 + h3 {
+      margin-top: 0px;
+    }
+  
+    p {
+      margin: 5px 0;
+      padding: 0;
+      white-space: pre-wrap;
+    }
+
+    ul {
+      padding-left: 28px;
+    }
+  
+
+}

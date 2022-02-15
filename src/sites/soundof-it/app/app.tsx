@@ -74,15 +74,11 @@ class App extends React.Component {
     
     return (
       <AppContext.Provider value={AppContextValue}>
-        <div id='app-container'>
-          <Header {...headerProps}/>
-          <div id='app-inner-container'>  
-            {renderPage && <Page {...pageProps} />}
-            {renderVisitor && <Visitor {...sharedProps} />}
-            {renderAnnouncement && <Announcement />}
-          </div>
-          <Footer {...sharedProps}/>
-        </div>
+        <Header {...headerProps}/>
+        {renderPage && <Page {...pageProps} />}
+        {renderVisitor && <Visitor {...sharedProps} />}
+        {renderAnnouncement && <Announcement />}
+        <Footer {...sharedProps}/>
       </AppContext.Provider>
     )
   }

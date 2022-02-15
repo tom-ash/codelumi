@@ -3,11 +3,12 @@
 #header {
   z-index: 2048;
   position: fixed;
-  left: 0;
+  top: 0;
   right: 0;
+  left: 0;
   height: 60px;
   background: white;
-  border-bottom: 1px solid #E5E7E9;
+  border-bottom: 1px solid gray;
   .inner {
     height: 60px;
     padding: 0 20px;
