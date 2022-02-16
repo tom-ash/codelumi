@@ -2,8 +2,8 @@
 import React from 'react'
 // @ts-ignore
 import useStyles from 'isomorphic-style-loader/useStyles'
-// @ts-ignore
-import styles from './styles/styles.scss'
+// // @ts-ignore
+// import styles from './styles/styles.scss'
 
 interface TitleBoardProps {
   device: string,
@@ -13,15 +13,17 @@ interface TitleBoardProps {
     author: string,
     authorLink: string,
     logo: string,
+    publishedOn: string,
     lastUpdatedOn: string,
-    desktopTop: number
+    desktopTop: number,
+    hashtags: string
   }
 }
 
-import SVG from '../../../../../../../../../../shared/app/components/support/svg/svg.js'
+// import SVG from '../../../../../../../../../../shared/app/components/support/svg/svg.js'
 
 const TitleBoard = (props: TitleBoardProps) => {
-  useStyles(styles)
+  // useStyles(styles)
 
   const {
     device,
@@ -31,8 +33,10 @@ const TitleBoard = (props: TitleBoardProps) => {
       author,
       authorLink,
       logo,
+      publishedOn,
       lastUpdatedOn,
-      desktopTop
+      desktopTop,
+      hashtags
     }
   } = props
 
@@ -44,29 +48,54 @@ const TitleBoard = (props: TitleBoardProps) => {
     coverTop = desktopTop
   }
 
+  console.log(hashtags)
+
+  const parsedHashtags = (hashtags || '').split(', ')
+
+  // console.log(parsedHashtags)
+
   return (
-    <header id='title-board'>
-      <img
-        src={image}
-        className='cover'
-        style={{
-          top: coverTop
-        }}
-      />
+    <header>
+      <div className='cover'>
+        <img
+          className='cover'
+          src={image}
+          style={{
+            top: coverTop
+          }}
+        />
+        <div className='logos'>
+          {logoImg}
+        </div>
+        <div className='hashtags'>
+          {parsedHashtags.map(hashtag => <span key={hashtag}>#{hashtag}</span>)}
+        </div>
+      </div>
+      <div className='author'>
+        <div className='picture'>
+          {/* <SVG name='userNinja' /> */}
+        </div>
+        <div className='name'>
+          <a
+          className='author'
+          href={authorLink}
+          target='_blank'
+          >
+            {author}
+          </a>
+        </div>
+      </div>
+      <div className='dates'>
+        <span>
+          Published on {publishedOn}
+        </span>
+        <span>
+          Last updated on {lastUpdatedOn}
+        </span>
+      </div>
       <h1>
         {title}
       </h1>
-      {logoImg}
-      <a
-        className='author'
-        href={authorLink}
-        target='_blank'
-      >
-        <SVG name='penClip' /> {author}
-      </a>
-      <div className='updated-on'>
-        <SVG name='calendar' /> {lastUpdatedOn}
-      </div>
     </header>
   )
 }

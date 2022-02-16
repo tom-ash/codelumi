@@ -4,6 +4,7 @@
 @import './colors.scss';
 @import '../components/support/components/spinner/components/windmill/styles/styles.scss';
 @import './headers/headers';
+@import '../components/page/styles/styles.scss.scss';
 
 * {
   margin: 0;
@@ -13,6 +14,7 @@
 
 #app {
   padding-top: 60px;
+  @extend %page;
 }
 
 input::-webkit-outer-spin-button,

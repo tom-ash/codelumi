@@ -8,7 +8,6 @@ const PageShow = loadable(() => import('./components/show/show'))
 const PageIndex = loadable(() => import('./components/index/index'))
 const PageNotFound = loadable(() => import('./components/not-found/not-found'))
 import withStyles from 'isomorphic-style-loader/withStyles'
-import styles from './styles/styles.scss'
 
 class Page extends React.Component {
   constructor(props) {
@@ -35,4 +34,4 @@ class Page extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Page))
+export default connect(mapStateToProps, mapDispatchToProps)(Page)
