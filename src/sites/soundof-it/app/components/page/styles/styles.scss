@@ -1,12 +1,8 @@
 @import '../../../../../shared/app/styles/media-breakpoints.scss';
-@import './article.scss';
 @import './root.scss';
 
 #page {
   padding-top: 80px;
-  article {
-    @extend %article;
-  }
   .root {
     @extend %root;
   }

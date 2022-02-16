@@ -6,6 +6,7 @@ import useStyles from 'isomorphic-style-loader/useStyles'
 // import styles from './styles/styles.scss'
 
 interface TitleBoardProps {
+  appName: string,
   device: string,
   node: {
     title: string,
@@ -20,12 +21,11 @@ interface TitleBoardProps {
   }
 }
 
-// import SVG from '../../../../../../../../../../shared/app/components/support/svg/svg.js'
-
 const TitleBoard = (props: TitleBoardProps) => {
-  // useStyles(styles)
+
 
   const {
+    appName,
     device,
     node: {
       title,
@@ -40,6 +40,8 @@ const TitleBoard = (props: TitleBoardProps) => {
     }
   } = props
 
+  useStyles(require(`../../../../../../../../../../${appName}/app/components/page/styles/article/header.scss`))
+
   const logoImg = logo && <img className='logo' src={logo} />
   
   let coverTop = 0
@@ -48,17 +50,12 @@ const TitleBoard = (props: TitleBoardProps) => {
     coverTop = desktopTop
   }
 
-  console.log(hashtags)
-
   const parsedHashtags = (hashtags || '').split(', ')
-
-  // console.log(parsedHashtags)
 
   return (
     <header>
       <div className='cover'>
         <img
-          className='cover'
           src={image}
           style={{
             top: coverTop
