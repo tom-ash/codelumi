@@ -64,9 +64,6 @@ const TitleBoard = (props: TitleBoardProps) => {
         <div className='logos'>
           {logoImg}
         </div>
-        <div className='hashtags'>
-          {parsedHashtags.map(hashtag => <span key={hashtag}>#{hashtag}</span>)}
-        </div>
       </div>
       <div className='author'>
         <div className='picture'>
@@ -93,6 +90,9 @@ const TitleBoard = (props: TitleBoardProps) => {
       <h1>
         {title}
       </h1>
+      <div className='hashtags'>
+        {parsedHashtags.map(hashtag => <span key={hashtag}>#{hashtag}</span>)}
+      </div>
     </header>
   )
 }
