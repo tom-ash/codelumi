@@ -7,9 +7,7 @@ const Editorial = loadable(() => import('../components/editorial/editorial.js'))
 const TableOfContents = loadable(() => import('../components/table-of-contents/table-of-contents.js'))
 
 const jsonToJsxParser = props => {
-  const { jsonBody, appName, device } = props
-
-  console.log(props)
+  const { jsonBody, appName, device, langHandler } = props
 
   let titleBoard = null
   let editorial = null
@@ -17,7 +15,7 @@ const jsonToJsxParser = props => {
 
   const main = jsonBody.map((node, index) => {
     if (index === 0 && node.t === 'tb') {
-      titleBoard = <TitleBoard key={index} node={node} appName={appName} device={device} />
+      titleBoard = <TitleBoard key={index} node={node} appName={appName} device={device} langHandler={langHandler}/>
 
       return null
     }

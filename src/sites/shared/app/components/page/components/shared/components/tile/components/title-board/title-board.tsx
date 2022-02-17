@@ -3,11 +3,11 @@ import React from 'react'
 // @ts-ignore
 import useStyles from 'isomorphic-style-loader/useStyles'
 // // @ts-ignore
-// import styles from './styles/styles.scss'
 
 interface TitleBoardProps {
   appName: string,
   device: string,
+  langHandler(langs: { pl: string, en: string }): string,
   node: {
     title: string,
     image: string,
@@ -22,11 +22,10 @@ interface TitleBoardProps {
 }
 
 const TitleBoard = (props: TitleBoardProps) => {
-
-
   const {
     appName,
     device,
+    langHandler,
     node: {
       title,
       image,
@@ -81,10 +80,10 @@ const TitleBoard = (props: TitleBoardProps) => {
       </div>
       <div className='dates'>
         <span>
-          Published on {publishedOn}
+          {langHandler({ pl: 'Opublikowano w dniu', en: 'Published on'})} {publishedOn}
         </span>
         <span>
-          Last updated on {lastUpdatedOn}
+        {langHandler({ pl: 'Ostatnio zmodyfikowano w dniu', en: 'Last updated on'})} {lastUpdatedOn}
         </span>
       </div>
       <h1>
