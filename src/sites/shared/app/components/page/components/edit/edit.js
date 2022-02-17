@@ -34,7 +34,7 @@ class PageCreate extends React.Component {
     const tileProps = { ...this.props, renderEdit: true, updatePage: this.save }
 
     return (
-      <div className='page-edit'>
+      <>
         <PageTile { ...tileProps } />
         <form>
           <OnlineInput checked={online} changeInputs={changeInputs} />
@@ -50,7 +50,7 @@ class PageCreate extends React.Component {
           <ManagedButton {...this.saveManager()} />
           <ManagedButton {...this.saveAndShowManager()} />
         </form>
-      </div>
+      </>
     )
   }
 }

@@ -23,9 +23,7 @@ class PageShow extends React.Component {
     if (!name) return null
 
     return (
-      <section id='page'>
-        <PageTile { ...tileProps } />
-      </section>
+      <PageTile { ...tileProps } />
     )
   }
 }
