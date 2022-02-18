@@ -37,11 +37,8 @@ header {
     }
   }
   .author {
-    padding: 20px 0 20px $padding-desktop;
+    padding: 24px 0 0 $padding-desktop;
     position: relative;
-    @media #{$LARGE-PHONE} {
-      padding: 20px 0 20px $padding-mobile;
-    }
     .picture {
       width: 50px;
       height: 50px;
@@ -54,17 +51,30 @@ header {
       }
     }
     .name {
-      position: absolute;
-      top: 19px;
-      left: 60px;
-      font-size: 12px;
-      color: #626567;
+      svg {
+        display: inline-block;
+        margin-right: 8px;
+        height: 12px;
+        fill: #2C3E50;
+      }
+      a {
+        display: inline-block;
+        color: #2C3E50;
+      }
+      // &.with-picture {
+      //   position: absolute;
+      //   top: 19px;
+      //   left: 60px;
+      //   font-size: 12px;
+      //   color: #626567;
+      // }
     }
   }
   .dates {
     padding-bottom: 20px;
     padding-left: $padding-desktop;
-    font-size: 11px;
+    font-size: 13px;
+    color: #34495E;
     @media #{$LARGE-PHONE} {
       padding-left: $padding-mobile;
     }

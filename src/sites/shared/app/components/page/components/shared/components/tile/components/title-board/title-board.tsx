@@ -3,6 +3,7 @@ import React from 'react'
 // @ts-ignore
 import useStyles from 'isomorphic-style-loader/useStyles'
 // // @ts-ignore
+import SVG from '../../../../../../../support/svg/svg.js'
 
 interface TitleBoardProps {
   appName: string,
@@ -13,6 +14,7 @@ interface TitleBoardProps {
     image: string,
     author: string,
     authorLink: string,
+    authorPicture: string,
     logo: string,
     publishedOn: string,
     lastUpdatedOn: string,
@@ -31,6 +33,7 @@ const TitleBoard = (props: TitleBoardProps) => {
       image,
       author,
       authorLink,
+      authorPicture,
       logo,
       publishedOn,
       lastUpdatedOn,
@@ -65,14 +68,15 @@ const TitleBoard = (props: TitleBoardProps) => {
         </div>
       </div>
       <div className='author'>
+        {authorPicture &&
         <div className='picture'>
           {/* <SVG name='userNinja' /> */}
-        </div>
+        </div>}
         <div className='name'>
+          <SVG name='penClip' />
           <a
-          className='author'
-          href={authorLink}
-          target='_blank'
+            href={authorLink}
+            target='_blank'
           >
             {author}
           </a>
