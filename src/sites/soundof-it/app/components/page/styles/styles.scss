@@ -1,18 +1,123 @@
 @import '../../../../../shared/app/styles/media-breakpoints.scss';
 @import './root.scss';
 
-#page {
-  padding-top: 80px;
-  .root {
-    @extend %root;
+$padding-desktop: 36px;
+$padding-mobile: 18px;
+
+%page {
+  #page {
+    // padding-top: 1020px;
+    .root {
+      @extend %root;
+    }
+    max-width: 800px;
+    margin: 0 auto;
+    button {
+      &.edit {
+        position: fixed;
+        top: 80px;
+        right: 20px;
+      }
+    }
   }
-  max-width: 800px;
-  margin: 0 auto;
-  button {
-    &.edit {
+  #page {
+    padding-top: 80px;
+    @media #{$LARGE-PHONE} {
+      padding-top: 60px;
+    }
+    button.edit {
       position: fixed;
       top: 80px;
       right: 20px;
+    }
+    .article {
+      @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
+      font-family: 'Titillium Web', sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      line-height: 1.8;
+      color: #212F3C;
+      .editorial {
+        padding: 10px $padding-desktop;
+        font-size: 18px;
+        line-height: 1.5;
+        border-left: 1px solid #F2F3F4;
+        border-right: 1px solid #F2F3F4;
+        background: white;
+        @media #{$LARGE-PHONE} {
+          padding: 10px $padding-mobile;
+        }
+      }
+      .table-of-contents {
+        padding: 30px $padding-desktop;
+        border-left: 1px solid #F2F3F4;
+        border-right: 1px solid #F2F3F4;
+        background: white;
+        line-height: 1.5;
+        color: #797D7F;
+        @media #{$LARGE-PHONE} {
+          padding: 30px $padding-mobile;
+        }
+        a {
+          text-decoration: underline;
+        }
+        h2 {
+          font-size: 14px;
+        }
+        ul {
+          list-style-type: none;
+          font-size: 14px;
+        }
+      }
+      main {
+        border-right: 1px solid #F2F3F4;
+        border-bottom: 1px solid #F2F3F4;
+        border-left: 1px solid #F2F3F4;
+        background: white;
+        padding: 0 $padding-desktop 26px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        font-size: 18px;
+        @media #{$LARGE-PHONE} {
+          padding: 0 $padding-mobile 26px;
+        }
+        h2, h3 {
+          line-height: 1;
+          color: #2E4053;
+        }
+        h2 {
+          padding: 60px 0 12px;
+          font-size: 24px;
+        }
+        h3 {
+          padding: 36px 0 12px;
+          font-size: 20px;
+        }
+        h2:first-of-type {
+          padding: 30px 0 10px;
+        }
+        h2 + h3 {
+          padding-top: 12px;
+        }
+        ul {
+          margin: 20px 0 0 0;
+          padding-left: 20px;
+        }
+        p {
+          margin: 18px 0 0 0;
+        }
+        pre {
+          margin: 18px 0 0;
+          padding: 12px;
+        }
+        h3 + p {
+          margin-top: 6px;
+        }
+        p + ul {
+          margin-top: 0;
+        }
+      }
     }
   }
 }

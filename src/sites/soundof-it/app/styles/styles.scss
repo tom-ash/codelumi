@@ -1,4 +1,9 @@
 @import '../components/page/styles/styles.scss';
+@import '../components/page/styles/styles.scss';
+
+#app {
+  @extend %page;
+}
 
 * {
   margin: 0;
