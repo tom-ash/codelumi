@@ -29,8 +29,17 @@
   }
   .page-header {
     h1 {
-      font-size: 17px;
       padding: 0;
+      font-size: 18px;
+      line-height: 1.6;
+      span {
+        display: block;
+      }
+      span:nth-child(2) {
+        font-size: 13px;
+        font-weight: normal;
+        color: #797D7F;
+      }
     }
   }
   h2 {

@@ -1,3 +1,22 @@
+import React from 'react'
+
+export const H1 = {
+  pl: <>
+    <span>Dodaj ogłoszenie na mapawynajmu.pl</span>
+    <span>
+      - bezpłatnie
+      {/* albo wyróżnij! */}
+    </span>
+  </>,
+  en: <>
+    <span>Add Listing on mapawynajmu.pl</span>
+    <span>
+      - gratuitously
+      {/* or single out! */}
+    </span>
+  </>
+}
+
 export const PRIMARY_DATA_HEADER = {
   pl: 'Dane podstawowe',
   en: 'Primary Data'
