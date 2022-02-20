@@ -59,6 +59,7 @@ const TitleBoard = (props: TitleBoardProps) => {
       <div className='cover'>
         <img
           src={image}
+          className='cover-image'
           style={{
             top: coverTop
           }}

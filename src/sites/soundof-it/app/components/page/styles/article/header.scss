@@ -12,18 +12,18 @@ header {
     z-index: 2;
     position: relative;
     width: 100%;
-    aspect-ratio: 20/9;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     overflow: hidden;
-    img {
+    .cover-image {
       width: 100%;
+      aspect-ratio: 20/9;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
     }
     @media #{$LARGE-TABLET} {
       border-radius: 0;
-      img {
+      .cover-image {
         border-radius: 0;
       }
     }
@@ -32,10 +32,8 @@ header {
     position: absolute;
     bottom: 36px;
     left: 36px;
-    aspect-ratio: 1;
     img {
       height: 100px;
-      aspect-ratio: 1;
     }
   }
   .author {
