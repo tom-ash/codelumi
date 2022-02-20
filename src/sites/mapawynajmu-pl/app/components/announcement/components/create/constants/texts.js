@@ -9,7 +9,7 @@ export const H1 = {
     </span>
   </>,
   en: <>
-    <span>Add Listing on mapawynajmu.pl</span>
+    <span>Add a Listing on mapawynajmu.pl</span>
     <span>
       - gratuitously
       {/* or single out! */}

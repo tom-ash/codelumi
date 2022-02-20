@@ -56,57 +56,53 @@ class AnnouncementCreate extends React.Component {
       changeControl, changeInputs
     } = this.props
 
-    // const 
-
     const availabilityDateProps = { lang, availabilityDate, addAvailabilityDate, changeControl, changeInputs }
     const headerText = this.langHandler(H1)
 
     return (
-      <>
-        <div id='announcement-create' className={step}>
-          {(renderForm || renderEdit) &&
-          <>
-            <Header tier={1} text={headerText} />
-            {!connecting ?
-            <>  
-              <Header tier={2} text={this.langHandler(PRIMARY_DATA_HEADER)} />
-              <Hint text={this.langHandler(PRIMARY_DATA_HINT)} />
-              <Primary />
+      <section id='announcement-create' className={step}>
+        {(renderForm || renderEdit) &&
+        <>
+          <Header tier={1} text={headerText} />
+          {!connecting ?
+          <>  
+            <Header tier={2} text={this.langHandler(PRIMARY_DATA_HEADER)} />
+            <Hint text={this.langHandler(PRIMARY_DATA_HINT)} />
+            <Primary />
+            <Line />
+            <Header tier={2} text={this.langHandler(PICTURES_HEADER)} />
+            <Hint text={this.langHandler(PICTURES_HINT)} />
+            <Pictures />
+            <Line />
+            <Header tier={2} text={this.langHandler(LOCATION_HEADER)} />
+            <Hint text={this.langHandler(LOCATION_HINT)} />
+            <Map />
+            <Line />
+            <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
+            <Hint text={this.langHandler(ADDITIONAL_DATA_HINT)} />
+            <Additional />
+            <AvailabilityDate { ...availabilityDateProps } />
+            <Features />
+            <Furnishings />
+            <Description />
+            <Line />
+            {!authorized &&
+            <>
+              <UserCreate />
               <Line />
-              <Header tier={2} text={this.langHandler(PICTURES_HEADER)} />
-              <Hint text={this.langHandler(PICTURES_HINT)} />
-              <Pictures />
-              <Line />
-              <Header tier={2} text={this.langHandler(LOCATION_HEADER)} />
-              <Hint text={this.langHandler(LOCATION_HINT)} />
-              <Map />
-              <Line />
-              <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
-              <Hint text={this.langHandler(ADDITIONAL_DATA_HINT)} />
-              <Additional />
-              <AvailabilityDate { ...availabilityDateProps } />
-              <Features />
-              <Furnishings />
-              <Description />
-              <Line />
-              {!authorized &&
-              <>
-                <UserCreate />
-                <Line />
-              </>}
-              <ManagedButton {...this.addAnnouncementManager()} />
-            </>
-            :
-            <div className='requesting'>
-              <div className='inner'>
-                <WindmillSpinner spinnerClass='windmill-medium-spinner'/>
-              </div>
-            </div>}
-          </>}
-          {renderVerification && <UserCreateEmailVerify />}
-          {renderSuccess && <Success {...this.props} />}
-        </div>
-      </>
+            </>}
+            <ManagedButton {...this.addAnnouncementManager()} />
+          </>
+          :
+          <div className='requesting'>
+            <div className='inner'>
+              <WindmillSpinner spinnerClass='windmill-medium-spinner'/>
+            </div>
+          </div>}
+        </>}
+        {renderVerification && <UserCreateEmailVerify />}
+        {renderSuccess && <Success {...this.props} />}
+      </section>
     )
   }
 }

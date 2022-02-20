@@ -20,17 +20,17 @@
   position: relative;
   max-width: 768px;
   margin: 50px auto 150px;
-  border-radius: 4px;
+  border-radius: 5px;
   padding: $FORM-PADDING-PC;
   background: white;
-  border: 1px solid #F5F6F7;
+  border: 1px solid #D0D3D4;
   @media #{$LARGE-PHONE} {
     border: none;
   }
   .page-header {
     h1 {
       padding: 0;
-      font-size: 18px;
+      font-size: 20px;
       line-height: 1.6;
       span {
         display: block;
