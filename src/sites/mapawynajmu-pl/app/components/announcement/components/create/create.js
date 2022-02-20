@@ -57,7 +57,7 @@ class AnnouncementCreate extends React.Component {
     } = this.props
 
     const availabilityDateProps = { lang, availabilityDate, addAvailabilityDate, changeControl, changeInputs }
-    const headerText = this.langHandler({ pl: 'Dodaj bezpłatne ogłoszenie wynajmu nieruchomości w Warszawie', en: 'Add Free Announcement of Real Estate Lease in Warsaw' })
+    const headerText = this.langHandler({ pl: 'Dodaj ogłoszenie na mapawynajmu.pl', en: 'Add Listing on mapawynajmu.pl' })
 
     return (
       <>
