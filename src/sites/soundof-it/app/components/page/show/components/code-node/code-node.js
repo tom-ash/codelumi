@@ -7,8 +7,9 @@ hljs.registerLanguage('ruby', require('highlight.js/lib/languages/ruby'))
 hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'))
 hljs.registerLanguage('sql', require('highlight.js/lib/languages/sql'))
 hljs.registerLanguage('pgsql', require('highlight.js/lib/languages/pgsql'))
+hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'))
 
-const AVAILABLE_LANGUAGES = ['javascript', 'ruby', 'sql', 'pgsql']
+const AVAILABLE_LANGUAGES = ['javascript', 'ruby', 'sql', 'pgsql', 'xml']
 
 class CodeNode extends React.Component {
   constructor(props) {

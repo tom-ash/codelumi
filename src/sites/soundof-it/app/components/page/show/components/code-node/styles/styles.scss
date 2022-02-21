@@ -11,6 +11,28 @@ pre {
     white-space: pre-wrap;
     color: #E5E7E9;
 
+    &.xml {
+      .hljs-meta {
+        color: #B3B6B7;
+      }
+  
+      .hljs-tag {
+        color: rgb(120, 120, 120);
+      }
+  
+      .hljs-name {
+        color: rgb(90, 150, 215);
+      }
+  
+      .hljs-attr {
+        color: rgb(150, 220, 250);
+      }
+  
+      .hljs-string {
+        color: rgb(200, 140, 120);
+      }
+    }
+
     &.javascript {
       .hljs-comment {
         color: rgb(142, 142, 142);
