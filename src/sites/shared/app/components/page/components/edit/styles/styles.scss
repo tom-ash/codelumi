@@ -69,18 +69,13 @@
   form {
     z-index: 3;
     position: fixed;
-    width: 100%;
+    right: 0;
     bottom: 0;
+    left: 0;
     height: 300px;
-    background: #D7DBDD;
-    margin: 0 auto;
-    margin-top: 40px;
     padding: 20px 140px 20px 40px;
     overflow-y: scroll;
-    border-top: 1px solid #CACFD2;
-    .separation-line {
-      margin: 20px 0;
-    }
+    background: #D7DBDD;
     .form-input {
       width: 300px;
       &.text {
