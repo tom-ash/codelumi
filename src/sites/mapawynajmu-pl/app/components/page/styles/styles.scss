@@ -78,6 +78,14 @@ $padding-mobile: 18px;
         }
         p {
           padding: 10px 0;
+          a {
+            display: inline;
+            text-decoration: underline;
+            color: #D35400;
+            &:hover {
+              color: #A04000;
+            }
+          }
         }
       }
     }
