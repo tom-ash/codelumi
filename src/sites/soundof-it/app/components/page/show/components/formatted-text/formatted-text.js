@@ -12,7 +12,7 @@ const FormattedText = props => {
     <p
       className='formatted-text'
       dangerouslySetInnerHTML={{__html: nodeContent.replace(/`([^`]+)`/g, (fullMatch, innerMatch) => (
-        `<span class='inner-code'>${innerMatch}</span>`
+        `<code>${innerMatch}</code>`
       ))}}
     />
   )
