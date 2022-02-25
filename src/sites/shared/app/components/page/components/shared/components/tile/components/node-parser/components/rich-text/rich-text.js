@@ -7,7 +7,7 @@ const RichText = props => {
 
   enrichedContent = enrichedContent.replace(/`([^`]+)`/g, (fullMatch, innerMatch) => `<code>${innerMatch}</code>`)
 
-  const enrichedContent = enrichedContent.replace(/\[([^\[]+)\]/g, (fullMatch, innerMatch) => {
+  enrichedContent = enrichedContent.replace(/\[([^\[]+)\]/g, (fullMatch, innerMatch) => {
     const matchArray = innerMatch.split(', ')
     const matchTag = matchArray.shift()
 
