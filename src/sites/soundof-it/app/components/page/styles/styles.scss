@@ -106,6 +106,20 @@ $padding-mobile: 18px;
         }
         p {
           margin: 18px 0 0 0;
+          > code {
+            border-radius: 3px;
+            padding: 2px 5px;
+            background: #F8F9F9;
+            color: #922B21;
+          }
+          > a {
+            display: inline;
+            text-decoration: underline;
+            color: #D35400;
+            &:hover {
+              color: #A04000;
+            }
+          }
         }
         pre {
           margin: 18px 0 0;

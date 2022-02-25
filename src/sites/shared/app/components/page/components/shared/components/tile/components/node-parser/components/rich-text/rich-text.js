@@ -3,7 +3,11 @@ import buildAnchor from './functions/build-anchor'
 
 const RichText = props => {
   const { content, element } = props
-  const enrichedContent = content.replace(/\[([^\[]+)\]/g, (fullMatch, innerMatch) => {
+  let enrichedContent = content
+
+  enrichedContent = enrichedContent.replace(/`([^`]+)`/g, (fullMatch, innerMatch) => `<code>${innerMatch}</code>`)
+
+  const enrichedContent = enrichedContent.replace(/\[([^\[]+)\]/g, (fullMatch, innerMatch) => {
     const matchArray = innerMatch.split(', ')
     const matchTag = matchArray.shift()
 
