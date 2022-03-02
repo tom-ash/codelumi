@@ -1,7 +1,7 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader/useStyles'
 import styles from './styles/styles.scss'
-import Skill from '../../../shared/components/skill/skill.js'
+import Skill from '../../../../../shared/components/skill/skill.js'
 
 function SkillSelector(props) {
   useStyles(styles)

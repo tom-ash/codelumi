@@ -1,11 +1,12 @@
 export const mapStateToProps = store => {
   const render = store.render
   const {
-    'announcement/create': renderCreate
+    'announcement/create/form': renderForm,
+    'announcement/create/summary': renderSummary
   } = render
   
   return {
-    renderCreate
+    renderCreate: renderForm || renderSummary
   }
 }
   
