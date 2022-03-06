@@ -5,7 +5,6 @@ import SVG from '../../../../../support/svg/svg.js'
 const PageTile = props => {
   const { device, appName, customNodeParser, customMetaParser, renderShow, renderEdit, fetching, name, body, meta, isAdmin, clientUrl, changeRoute, buildUrl, changePage, updatePage, lang, langHandler } = props
 
-  console.log(props)
   const buttonClasses = ['edit']
   if (fetching) buttonClasses.push('fetching')
   const buttonClassName = buttonClasses.join(' ')

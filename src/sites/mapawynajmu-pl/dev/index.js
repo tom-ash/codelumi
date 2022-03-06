@@ -13,7 +13,7 @@ const insertCss = (...styles) => {
 }
 
 let store = createStore(rootReducer)
-store.subscribe(() => console.log(store.getState()))
+store.subscribe(() => console.info(store.getState()))
 
 render(
   <StyleContext.Provider value={{ insertCss }}>
