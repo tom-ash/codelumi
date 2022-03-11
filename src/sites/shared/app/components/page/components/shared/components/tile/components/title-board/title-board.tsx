@@ -18,7 +18,13 @@ interface TitleBoardProps {
     logo: string,
     publishedOn: string,
     lastUpdatedOn: string,
-    desktopTop: number,
+    imageTop: number,
+    imageLargePcTop: number,
+    imageSmallPcTop: number,
+    imageLargeTabletTop: number,
+    imageSmallTabletTop: number,
+    imageLargePhoneTop: number,
+    imageSmallPhoneTop: number,
     hashtags: string
   }
 }
@@ -37,7 +43,13 @@ const TitleBoard = (props: TitleBoardProps) => {
       logo,
       publishedOn,
       lastUpdatedOn,
-      desktopTop,
+      imageTop,
+      imageLargePcTop,
+      imageSmallPcTop,
+      imageLargeTabletTop,
+      imageSmallTabletTop,
+      imageLargePhoneTop,
+      imageSmallPhoneTop,
       hashtags
     }
   } = props
@@ -45,11 +57,11 @@ const TitleBoard = (props: TitleBoardProps) => {
   useStyles(require(`../../../../../../../../../../${appName}/app/components/page/styles/article/header.scss`))
 
   const logoImg = logo && <img className='logo' src={logo} />
-  
-  let coverTop = 0
+
+  let mediaQueryImageTop = imageTop || 0
 
   if (device === 'largePc') {
-    coverTop = desktopTop
+    mediaQueryImageTop = imageLargePcTop || 0
   }
 
   const parsedHashtags = (hashtags || '').split(', ')
@@ -61,7 +73,7 @@ const TitleBoard = (props: TitleBoardProps) => {
           src={image}
           className='cover-image'
           style={{
-            top: coverTop
+            top: mediaQueryImageTop
           }}
         />
         <div className='logos'>
