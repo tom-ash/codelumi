@@ -79,16 +79,7 @@ $padding-mobile: 18px;
         ul {
           padding-left: 20px;
         }
-        p, ul {
-          a {
-            display: inline;
-            text-decoration: underline;
-            color: #D35400;
-            &:hover {
-              color: #A04000;
-            }
-          }
-        }
+
       }
     }
     .summary {
@@ -96,19 +87,32 @@ $padding-mobile: 18px;
       margin: 0 auto 36px;
       font-size: 13px;
       line-height: 1.5;
+      // background: white;
       @media #{$SMALL-PC} {
         padding: 0 20px;
       }
       h1 {
-        font-size: 17px;
+        font-size: 18px;
         padding: 24px 0 6px;
       }
       h2 {
-        font-size: 15px;
+        font-size: 16px;
         padding: 12px 0 6px;
       }
       p {
         padding-bottom: 8px;
+      }
+    }
+    .article, .summary {
+      p, ul {
+        a {
+          display: inline;
+          text-decoration: underline;
+          color: #D35400;
+          &:hover {
+            color: #A04000;
+          }
+        }
       }
     }
   }
