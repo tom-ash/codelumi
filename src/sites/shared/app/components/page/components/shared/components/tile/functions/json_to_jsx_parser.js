@@ -5,6 +5,7 @@ import loadable from '@loadable/component'
 const TitleBoard = loadable(() => import('../components/title-board/title-board.tsx'))
 const Editorial = loadable(() => import('../components/editorial/editorial.js'))
 const TableOfContents = loadable(() => import('../components/table-of-contents/table-of-contents.js'))
+const Section = loadable(() => import('../components/section/section.js'))
 
 const jsonToJsxParser = props => {
   const { jsonBody, appName, device, langHandler } = props
@@ -28,6 +29,10 @@ const jsonToJsxParser = props => {
       tableOfContents = <TableOfContents key={index} jsonBody={jsonBody} node={node} />
 
       return null
+    }
+
+    if (node.t === 'section') {
+      return <Section key={index} {...{ ...props, className: node.cn, jsonBody: node.c }} />
     }
     
     return nodeParser({ ...props, node, index })

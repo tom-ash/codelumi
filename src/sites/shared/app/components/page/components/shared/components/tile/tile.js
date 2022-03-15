@@ -30,7 +30,7 @@ const PageTile = props => {
   const mainElement = React.createElement(
     mainElementType,
     { className },
-    jsonToJsxParser.call(this, { appName, jsonBody, jsonMeta, clientUrl, changeRoute, buildUrl, device, isAdmin, customNodeParser, lang, langHandler })
+    jsonToJsxParser({ appName, jsonBody, jsonMeta, clientUrl, changeRoute, buildUrl, device, isAdmin, customNodeParser, lang, langHandler })
   )
 
   return (
