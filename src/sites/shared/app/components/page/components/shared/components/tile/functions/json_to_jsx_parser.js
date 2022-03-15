@@ -8,7 +8,7 @@ const TableOfContents = loadable(() => import('../components/table-of-contents/t
 const Section = loadable(() => import('../components/section/section.js'))
 
 const jsonToJsxParser = props => {
-  const { jsonBody, appName, device, langHandler } = props
+  const { jsonBody, appName, device, langHandler, iSection } = props
 
   let titleBoard = null
   let editorial = null
@@ -38,14 +38,14 @@ const jsonToJsxParser = props => {
     return nodeParser({ ...props, node, index })
   })
 
+  const mainNode = iSection ? main : <main>{main}</main>
+
   return (
     <>
       {titleBoard}
       {editorial}
       {tableOfContents}
-      <main>
-        {main}
-      </main>
+      {mainNode}
     </>
   )
 }
