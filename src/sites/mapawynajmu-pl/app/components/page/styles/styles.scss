@@ -79,15 +79,25 @@ $padding-mobile: 18px;
         ul {
           padding-left: 20px;
         }
-
+      }
+    }
+    .article, .summary {
+      p, ul {
+        a {
+          display: inline;
+          text-decoration: underline;
+          color: #D35400;
+          &:hover {
+            color: #A04000;
+          }
+        }
       }
     }
     .summary {
       max-width: 1400px;
-      margin: 0 auto 36px;
+      margin: 72px auto 36px;
       font-size: 14px;
       line-height: 1.5;
-      // background: white;
       @media #{$SMALL-PC} {
         padding: 0 20px;
       }
@@ -102,16 +112,14 @@ $padding-mobile: 18px;
       p {
         padding-bottom: 8px;
       }
-    }
-    .article, .summary {
-      p, ul {
-        a {
-          display: inline;
-          text-decoration: underline;
-          color: #D35400;
-          &:hover {
-            color: #A04000;
-          }
+      section {
+        margin: 72px 0;
+        padding: 20px;
+        border-radius: 5px;
+        background: white;
+        border: 1px solid #E5E7E9;
+        h1 {
+          padding: 0 0 6px;
         }
       }
     }
