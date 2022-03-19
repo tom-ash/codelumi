@@ -2,6 +2,7 @@ import React from 'react'
 import useStyles from 'isomorphic-style-loader/useStyles'
 import styles from './styles/styles.scss'
 import SkillSelector from './components/skill-selector/skill-selector.js'
+import SubmitButton from './components/submit-button.tsx'
 
 const AnnouncementCreateForm = props => {
   useStyles(styles)
@@ -15,6 +16,7 @@ const AnnouncementCreateForm = props => {
         Post a Job
       </h1>
       <SkillSelector {...skillSelectorProps} />
+      <SubmitButton />
     </div>
   )
 }
