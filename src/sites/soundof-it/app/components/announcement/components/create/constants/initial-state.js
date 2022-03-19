@@ -1,25 +1,5 @@
-const selectableSkills = [
-  {
-    tag: 'javascript',
-    name: 'JavaScript'
-  },
-  {
-    tag: 'ruby',
-    name: 'Ruby'
-  }
-]
-
-const selectedSkills = [
-  {
-    tag: 'javascript',
-    name: 'JavaScript',
-    selected: 3
-  }
-]
 const initialState = {
-  selectableSkills,
-  // selectableSkills: [],
-  // selectedSkills,
+  selectableSkills: [],
   selectedSkills: [],
   companyName: '',
   companyIndustry: '',

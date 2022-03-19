@@ -5,7 +5,7 @@ import styles from './styles/styles.scss'
 function Skill(props) {
   useStyles(styles)
 
-  const { tag, name, selected, selectSkill, unselectSkill } = props
+  const { name, selected, selectSkill, unselectSkill } = props
   const levels = ['Novice', 'Junior', 'Mid', 'Senior', 'Expert']
   const [hovered, setHovered] = useState(0)  
 
@@ -21,7 +21,7 @@ function Skill(props) {
           const sharedLevelProps = { className: classNames.join(' '), key: level }
           const extendedLevelProps = selected ?
             {} :
-            { onMouseOver: () => setHovered(index + 1), onMouseLeave: () => setHovered(0), onClick: () => selectSkill({ tag, name, selected: hovered }) }
+            { onMouseOver: () => setHovered(index + 1), onMouseLeave: () => setHovered(0), onClick: () => selectSkill({ name, selected: hovered }) }
 
           return <div
             {...sharedLevelProps}
@@ -35,7 +35,7 @@ function Skill(props) {
         {selected && (
           <div
             className='delete'
-            onClick={() => unselectSkill({ tag, name, selected: undefined })}
+            onClick={() => unselectSkill({ name, selected: undefined })}
           />
         )}
       </div>

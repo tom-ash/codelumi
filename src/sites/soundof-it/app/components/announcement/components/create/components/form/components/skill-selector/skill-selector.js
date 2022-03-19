@@ -10,13 +10,13 @@ function SkillSelector(props) {
 
   function selectSkill(selectedSkill) {
     const newSelectedSkills = [ ...selectedSkills ].concat([selectedSkill])
-    const newSelectableSkills = [ ...selectableSkills ].filter(skill => skill.tag !== selectedSkill.tag)
+    const newSelectableSkills = [ ...selectableSkills ].filter(skill => skill.name !== selectedSkill.name)
     
     changeState({ selectableSkills: newSelectableSkills, selectedSkills: newSelectedSkills })
   }
 
   function unselectSkill(unselectedSkill) {
-    const newSelectedSkills = [ ...selectedSkills ].filter(skill => skill.tag !== unselectedSkill.tag)
+    const newSelectedSkills = [ ...selectedSkills ].filter(skill => skill.name !== unselectedSkill.name)
     const newSelectableSkills = [ ...selectableSkills ].concat([unselectedSkill])
     
     changeState({ selectableSkills: newSelectableSkills, selectedSkills: newSelectedSkills })
@@ -30,12 +30,12 @@ function SkillSelector(props) {
       <div id='skill-selector'>
         <div id='selectable-skills'>
           {selectableSkills.map(skill => (
-            <Skill {...{ ...skill, selectSkill }} key={skill.tag}/>
+            <Skill {...{ ...skill, selectSkill }} key={skill.name}/>
           ))}
         </div>
         <div id='selected-skills'>
           {selectedSkills.map(skill => (
-            <Skill {...{ ...skill, unselectSkill }} key={skill.tag}/>
+            <Skill {...{ ...skill, unselectSkill }} key={skill.name}/>
           ))}
         </div>
         <div className='float-clear' />
