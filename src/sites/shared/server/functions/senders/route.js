@@ -34,7 +34,7 @@ function routeSender({
     const { redirectedUrl, status: redirectStatus } = unparsedMeta
 
     if (redirectedUrl) {
-      res.status(redirectStatus).redirect(redirectedUrl)
+      res.redirect(redirectStatus, redirectedUrl)
     } else {
       const { langs, lang } = unparsedMeta
       const { canonicalUrl } = unparsedMeta
