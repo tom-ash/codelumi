@@ -25,25 +25,31 @@ function routeSender({
     }
   })
   .then(response => {
-    if (response.ok) return response.json()
+    if (response.ok || response.status === 301 || response.status === 302) return response.json()
 
     throw new Error('Page Not Found')
   })
   .then(jsonResponse => {
     const { state, meta: unparsedMeta } = jsonResponse
-    const { langs, lang } = unparsedMeta
-    const { canonicalUrl } = unparsedMeta
-    const canonicalPath = typeof canonicalUrl === 'string' ? canonicalUrl : url
-    const meta = metaDataParser({ ...unparsedMeta, lang, siteName, canonicalUrl: buildUrl({ path: canonicalPath }) })
-    const app = { ...initialAppState, routeSynced: true, lang, device }
-    const links = state.links
-    const initialState = { app, render: state.render, links, ...visitorState, ...initialStateParser(state) }
-    const appAsHtml = appRenderer(initialState)
-    const status = 200
+    const { redirectedUrl, status: redirectStatus } = unparsedMeta
 
-    res.status(status).send(
-      indexRenderer({ clientUrl, url, ...meta, ...appAsHtml, canonicalUrl, links, langs, lang, buildUrl }) 
-    )
+    if (redirectedUrl) {
+      res.status(redirectStatus).redirect(redirectedUrl)
+    } else {
+      const { langs, lang } = unparsedMeta
+      const { canonicalUrl } = unparsedMeta
+      const canonicalPath = typeof canonicalUrl === 'string' ? canonicalUrl : url
+      const meta = metaDataParser({ ...unparsedMeta, lang, siteName, canonicalUrl: buildUrl({ path: canonicalPath }) })
+      const app = { ...initialAppState, routeSynced: true, lang, device }
+      const links = state.links
+      const initialState = { app, render: state.render, links, ...visitorState, ...initialStateParser(state) }
+      const appAsHtml = appRenderer(initialState)
+      const status = 200
+  
+      res.status(status).send(
+        indexRenderer({ clientUrl, url, ...meta, ...appAsHtml, canonicalUrl, links, langs, lang, buildUrl }) 
+      )
+    }
   })
   .catch(exception => {
     exceptionSender({

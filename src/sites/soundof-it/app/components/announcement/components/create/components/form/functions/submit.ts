@@ -14,8 +14,6 @@ const submit = (props: submitProps) => {
   const { selectedSkills } = props
   const body = { selectedSkills }
 
-  console.log(getAccessToken())
-
   fetch(apiUrl + '/job/create/as-user', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Access-Token': getAccessToken() },

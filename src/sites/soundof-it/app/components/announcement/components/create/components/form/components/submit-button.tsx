@@ -12,8 +12,6 @@ type submitButtonProps = {
 const SubmitButton = (props: submitButtonProps) => {
   const { selectedSkills } = props
 
-  console.log(selectedSkills)
-
   const buttonProps = {
     classNames: { container: 'submit-button' },
     label: 'Add Job',
