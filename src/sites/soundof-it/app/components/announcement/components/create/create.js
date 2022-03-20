@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import AnnouncementCreateForm from './components/form/form.js'
+import AnnouncementCreateForm from './components/form/form.tsx'
 
 class AnnouncementCreate extends React.Component {
   constructor(props) {

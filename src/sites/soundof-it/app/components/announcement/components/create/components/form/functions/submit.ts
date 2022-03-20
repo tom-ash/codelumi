@@ -1,10 +1,17 @@
 import apiUrl from '../../../../../../../../shared/constants/urls/api.js'
 
-const submit = () => {
+type submitProps = {
+  selectedSkills: Array<any>
+}
+
+const submit = (props: submitProps) => {
+  const { selectedSkills } = props
+  const body = { selectedSkills }
+
   fetch(apiUrl + '/job/create/as-user', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ test: 'test' })
+    body: JSON.stringify(body)
   })
   .then(response => {
     if (response.ok) return response.json()

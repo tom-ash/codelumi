@@ -5,8 +5,8 @@ import styles from './styles/styles.scss'
 function Skill(props) {
   useStyles(styles)
 
-  const { name, selected, selectSkill, unselectSkill } = props
-  const levels = ['Novice', 'Junior', 'Mid', 'Senior', 'Expert']
+  const { name, level, selectSkill, unselectSkill } = props
+  const availableLevels = ['Novice', 'Junior', 'Mid', 'Senior', 'Expert']
   const [hovered, setHovered] = useState(0)  
 
   return (
@@ -14,14 +14,14 @@ function Skill(props) {
       <div className='name'>
         {name}
       </div>
-      <div className='levels'>
-        {levels.map((level, index) => {
-          const fillClass = selected > index || hovered > index ? 'filled' : ''
-          const classNames = ['level', level.toLowerCase(), fillClass]
-          const sharedLevelProps = { className: classNames.join(' '), key: level }
-          const extendedLevelProps = selected ?
+      <div className='availableLevels'>
+        {availableLevels.map((availableLevel, index) => {
+          const fillClass = level > index || hovered > index ? 'filled' : ''
+          const classNames = ['level', availableLevel.toLowerCase(), fillClass]
+          const sharedLevelProps = { className: classNames.join(' '), key: availableLevel }
+          const extendedLevelProps = level ?
             {} :
-            { onMouseOver: () => setHovered(index + 1), onMouseLeave: () => setHovered(0), onClick: () => selectSkill({ name, selected: hovered }) }
+            { onMouseOver: () => setHovered(index + 1), onMouseLeave: () => setHovered(0), onClick: () => selectSkill({ name, level: hovered }) }
 
           return <div
             {...sharedLevelProps}
@@ -30,12 +30,12 @@ function Skill(props) {
         })}
         <div className='float-clear' />
         <div className='level-name'>
-          {selected ? levels[selected - 1] : levels[hovered - 1]}  
+          {level ? availableLevels[level - 1] : availableLevels[hovered - 1]}  
         </div>
-        {selected && (
+        {level && (
           <div
             className='delete'
-            onClick={() => unselectSkill({ name, selected: undefined })}
+            onClick={() => unselectSkill({ name, level: undefined })}
           />
         )}
       </div>

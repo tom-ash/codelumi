@@ -6,15 +6,20 @@ import { ManagedButton } from 'managed-inputs'
 import submit from '../functions/submit.ts'
 
 type submitButtonProps = {
-  addJob(): void
+  selectedSkills: Array<any>
 }
 
 const SubmitButton = (props: submitButtonProps) => {
-  const { addJob } = props
+  const { selectedSkills } = props
+
+  console.log(selectedSkills)
+
   const buttonProps = {
     classNames: { container: 'submit-button' },
     label: 'Add Job',
-    onClick: () => submit()
+    onClick: () => submit({
+      selectedSkills
+    })
   }
 
   return <ManagedButton {...buttonProps} />
