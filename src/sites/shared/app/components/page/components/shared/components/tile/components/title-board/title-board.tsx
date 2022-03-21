@@ -106,9 +106,10 @@ const TitleBoard = (props: TitleBoardProps) => {
       <h1>
         {title}
       </h1>
+      {parsedHashtags.length > 1 &&
       <div className='hashtags'>
         {parsedHashtags.map(hashtag => <span key={hashtag}>#{hashtag}</span>)}
-      </div>
+      </div>}
     </header>
   )
 }
