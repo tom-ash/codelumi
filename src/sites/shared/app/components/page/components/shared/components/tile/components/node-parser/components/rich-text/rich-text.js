@@ -5,9 +5,11 @@ const RichText = props => {
   const { content, element } = props
   let enrichedContent = content
 
-  enrichedContent = enrichedContent.replace(/`([^`]+)`/g, (fullMatch, innerMatch) => `<code>${innerMatch}</code>`)
+  enrichedContent = enrichedContent.replace(/\`(.+?)\`/g, (_fullMatch, innerMatch) => `<code>${innerMatch}</code>`)
+  enrichedContent = enrichedContent.replace(/\*\*(.+?)\*\*/g, (_fullMatch, innerMatch) => `<strong>${innerMatch}</strong>`)
+  enrichedContent = enrichedContent.replace(/\*(.+?)\*/g, (_fullMatch, innerMatch) => `<em>${innerMatch}</em>`)
 
-  enrichedContent = enrichedContent.replace(/\[([^\[]+)\]/g, (fullMatch, innerMatch) => {
+  enrichedContent = enrichedContent.replace(/\[([^\[]+)\]/g, (_fullMatch, innerMatch) => {
     const matchArray = innerMatch.split(', ')
     const matchTag = matchArray.shift()
 
