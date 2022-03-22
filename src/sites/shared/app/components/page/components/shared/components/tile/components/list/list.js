@@ -1,5 +1,6 @@
 import React from 'react'
 import nodeParser from '../node-parser/node-parser'
+import RichText from '../node-parser/components/rich-text/rich-text'
 
 const parseNodeContent = props => {
   const { nodeContent, nodeKey } = props
@@ -7,7 +8,7 @@ const parseNodeContent = props => {
   if (typeof nodeContent === 'string') {
     return (
       <li key={nodeKey}>
-        {nodeContent}
+        <RichText {...props} content={nodeContent} />
       </li>
     )
   }

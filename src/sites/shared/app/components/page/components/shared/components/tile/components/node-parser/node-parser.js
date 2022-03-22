@@ -14,6 +14,7 @@ const nodeParser = props => {
   const nodeContent = node.c
   const attrs = nodeTag === 'h2' ? { id: urlify(nodeContent) } : (node.a || {})
 
+  if (typeof node === 'string') return <RichText key={index} {...props} content={node} />
   if (commonTags.indexOf(nodeTag) !== -1) return React.createElement(nodeTag, { ...attrs, ...{ key: index } }, nodeContent)
   if (nodeTag === 'picture') return <img src={node.url} loading='lazy' key={index} />
   if (nodeTag === 'link') return <Link key={index} {...{ clientUrl, changeRoute, nodeContent }}/>
