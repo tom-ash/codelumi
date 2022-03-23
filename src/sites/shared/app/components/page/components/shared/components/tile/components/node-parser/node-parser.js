@@ -1,12 +1,14 @@
 import React from 'react'
 import loadable from '@loadable/component'
 import urlify from '../../../../../../../../../../shared/shared/functions/transformers/routes/urlify.js'
+import Header from './components/header/header.tsx'
 
 const Link = loadable(() => import('../link/link.js'))
 const List = loadable(() => import('../list/list.js'))
 const RichText = loadable(() => import('./components/rich-text/rich-text.js'))
 
-const commonTags = ['h1', 'h2', 'h3', 'h4', 'div', 'p']
+const commonTags = ['div', 'p']
+const headerTags = ['h1', 'h2', 'h3', 'h4']
 
 const nodeParser = props => {
   const { node, index, device, isAdmin, jsonMeta, clientUrl, changeRoute, buildUrl, customNodeParser, element } = props
@@ -16,6 +18,7 @@ const nodeParser = props => {
 
   if (typeof node === 'string') return <RichText key={index} {...props} content={node} />
   if (commonTags.indexOf(nodeTag) !== -1) return React.createElement(nodeTag, { ...attrs, ...{ key: index } }, nodeContent)
+  if (headerTags.indexOf(nodeTag) !== -1) return <Header {...{...node, ...props}} />
   if (nodeTag === 'picture') return <img src={node.url} loading='lazy' key={index} />
   if (nodeTag === 'link') return <Link key={index} {...{ clientUrl, changeRoute, nodeContent }}/>
   if (nodeTag === 'float-clear') return <div key={index} className='float-clear'/>

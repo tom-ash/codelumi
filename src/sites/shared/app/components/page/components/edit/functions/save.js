@@ -7,6 +7,23 @@ export function save({ withRouteChange = false }) {
   const meta = JSON.parse(this.props.meta)
   const { apiUrl, changeControl, buildUrl } = this.props
   const { method, route } = UPDATE_API_ROUTE
+
+  let currentH2 = 0
+  let currentH3 = 0
+
+  body.map(node => {
+    if (node.t === 'h2') {
+      currentH2++
+      currentH3 = 0
+      node.n = `${currentH2}.`
+    }
+
+    if (node.t === 'h3') {
+      currentH3++
+      node.n = `${currentH2}.${currentH3}.`
+    }
+  })
+
   const requestBody = JSON.stringify({ ...this.props, body, style, meta })
 
   changeControl({ fetching: true })
