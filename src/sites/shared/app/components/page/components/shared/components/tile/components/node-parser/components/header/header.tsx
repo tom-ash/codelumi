@@ -14,14 +14,16 @@ const Header = (props: HeaderProps) => {
 
   return (
     <>
-      <div className={`header-number ${tag}`}>
-        {number}
+      <div className={`header-container ${tag}`}>
+        <span className='number'>
+          {number}
+        </span>
+        {React.createElement(
+          tag,
+          { key: content },
+          content
+        )}
       </div>
-      {React.createElement(
-        tag,
-        { key: content },
-        content
-      )}
     </>
   )
 }

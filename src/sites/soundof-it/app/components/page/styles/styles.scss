@@ -82,44 +82,29 @@ $padding-mobile: 18px;
         @media #{$LARGE-PHONE} {
           padding: 0 $padding-mobile 26px;
         }
-        .header-number {
-          display: inline-block;
-          width: 6%;
-          font-weight: bold;
+        .header-container {
+          .number, h2, h3, h4 {
+            display: inline;
+          }
+          .number {
+            font-weight: bold;
+            margin-right: 12px;
+          }
           &.h2 {
-            font-size: 24px;
+            padding: 60px 0 12px;
+            .number, h2 {
+              font-size: 24px;
+            }
           }
           &.h3 {
-            font-size: 20px;
+            padding: 36px 0 12px;
+            .number, h3 {
+              font-size: 20px;
+            }
           }
         }
-        .header-number + h2, h3, h4 {
-          display: inline-block;
-          width: 94%;
-        }
-        h2, h3 {
-          line-height: 1;
-          color: #2E4053;
-        }
-        h2 {
-          padding: 60px 0 12px;
-          font-size: 24px;
-        }
-        h3 {
-          padding: 36px 0 12px;
-          font-size: 20px;
-        }
-        h2:first-of-type {
-          padding: 30px 0 10px;
-        }
-        h2 + h3 {
-          padding-top: 12px;
-        }
-        h4 {
-          padding: 36px 0 0;
-        }
-        h3 + h4 {
-          padding-top: 12px;
+        .header-container.h2 + .header-container.h3 {
+          padding: 12px 0 12px;
         }
         ul {
           margin: 20px 0 0 0;
@@ -146,7 +131,7 @@ $padding-mobile: 18px;
           margin: 18px 0 0;
           padding: 12px;
         }
-        h3 + p {
+        .header-container + p {
           margin-top: 6px;
         }
         p + ul {
