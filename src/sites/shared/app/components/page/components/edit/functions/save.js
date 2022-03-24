@@ -10,17 +10,25 @@ export function save({ withRouteChange = false }) {
 
   let currentH2 = 0
   let currentH3 = 0
+  let currentH4 = 0
 
   body.map(node => {
     if (node.t === 'h2') {
       currentH2++
       currentH3 = 0
+      currentH4 = 0
       node.n = `${currentH2}.`
     }
 
     if (node.t === 'h3') {
       currentH3++
+      currentH4 = 0
       node.n = `${currentH2}.${currentH3}.`
+    }
+
+    if (node.t === 'h4') {
+      currentH4++
+      node.n = `${currentH2}.${currentH3}.${currentH4}.`
     }
   })
 

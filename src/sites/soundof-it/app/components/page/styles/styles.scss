@@ -102,9 +102,12 @@ $padding-mobile: 18px;
               font-size: 20px;
             }
           }
-        }
-        .header-container.h2 + .header-container.h3 {
-          padding: 12px 0 12px;
+          &.h4 {
+            padding: 36px 0 12px;
+          }
+          &.h2 + .h3 {
+            padding: 12px 0 12px;
+          }
         }
         ul {
           margin: 20px 0 0 0;
