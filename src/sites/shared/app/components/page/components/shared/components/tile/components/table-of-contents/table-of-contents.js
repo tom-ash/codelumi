@@ -16,6 +16,7 @@ const TableOfContents = (props) => {
       <ul>
         {headers.map((header, index) => {
           const headerContent = header.c
+          const headerNumber = header.n
 
           return (
             <li key={index}>
@@ -43,7 +44,7 @@ const TableOfContents = (props) => {
                   setScreenOffsetAtElement({ element, translation })
                 }}
               >
-                {headerContent}
+                <span>{headerNumber}</span><span>{headerContent}</span>
               </a>
             </li>
           )

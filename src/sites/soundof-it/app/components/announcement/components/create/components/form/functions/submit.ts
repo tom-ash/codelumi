@@ -23,7 +23,7 @@ const submit = (props: submitProps) => {
     if (response.ok) return response.json()
   })
   .then(jsonResponse => {
-    console.log(jsonResponse)
+    // TODO
   })
 }
 

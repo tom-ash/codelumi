@@ -10,8 +10,6 @@ interface HeaderProps {
 const Header = (props: HeaderProps) => {
   const { t: tag, c: content, n: number } = props
 
-  console.log(tag)
-
   return (
     <>
       <div className={`header-container ${tag}`}>

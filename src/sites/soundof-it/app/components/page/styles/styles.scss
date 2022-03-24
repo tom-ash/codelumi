@@ -68,6 +68,13 @@ $padding-mobile: 18px;
         ul {
           list-style-type: none;
           font-size: 14px;
+          li {
+            position: relative;
+            span:first-of-type {
+              display: inline-block;
+              width: 30px;
+            }
+          }
         }
       }
       main {
