@@ -5,7 +5,7 @@ export function save({ withRouteChange = false }) {
   const body = JSON.parse(this.props.body)
   const style = JSON.parse(this.props.style)
   const meta = JSON.parse(this.props.meta)
-  const { apiUrl, changeControl, buildUrl } = this.props
+  const { apiUrl, changeControl, headerAutonumbering } = this.props
   const { method, route } = UPDATE_API_ROUTE
 
   let currentH2 = 0
@@ -13,22 +13,28 @@ export function save({ withRouteChange = false }) {
   let currentH4 = 0
 
   body.map(node => {
-    if (node.t === 'h2') {
-      currentH2++
-      currentH3 = 0
-      currentH4 = 0
-      node.n = `${currentH2}.`
-    }
-
-    if (node.t === 'h3') {
-      currentH3++
-      currentH4 = 0
-      node.n = `${currentH2}.${currentH3}.`
-    }
-
-    if (node.t === 'h4') {
-      currentH4++
-      node.n = `${currentH2}.${currentH3}.${currentH4}.`
+    if (headerAutonumbering) {
+      if (node.t === 'h2') {
+        currentH2++
+        currentH3 = 0
+        currentH4 = 0
+        node.n = `${currentH2}.`
+      }
+  
+      if (node.t === 'h3') {
+        currentH3++
+        currentH4 = 0
+        node.n = `${currentH2}.${currentH3}.`
+      }
+  
+      if (node.t === 'h4') {
+        currentH4++
+        node.n = `${currentH2}.${currentH3}.${currentH4}.`
+      }
+    } else {
+      if (['h2', 'h3', 'h4'].indexOf(node.t) !== -1) {
+        delete node.n
+      }
     }
   })
 

@@ -44,7 +44,9 @@ const TableOfContents = (props) => {
                   setScreenOffsetAtElement({ element, translation })
                 }}
               >
-                <span>{headerNumber}</span><span>{headerContent}</span>
+                {headerNumber ?
+                <><span>{headerNumber}</span><span>{headerContent}</span></>
+                : headerContent}
               </a>
             </li>
           )
