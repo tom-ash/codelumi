@@ -1,7 +1,8 @@
 #page {
   margin-bottom: 300px;
-  .online-switch {
+  .switch {
     display: inline-block;
+    margin-right: 24px;
     .label {
       display: flex;
       margin-bottom: 20px;
@@ -39,13 +40,13 @@
             background-image: linear-gradient(to bottom, #eeeeee, white);
           }
         }
-        &.online {
+        &.checked {
           background-color: #4fb845;
           .dot {
             left: 1px;
           }
         }
-        &.offline {
+        &.unchecked {
           background-color: #F2F3F4;
           .dot {
             left: 30px;
@@ -56,10 +57,10 @@
         line-height: 22px;
         font-size: 15px;
         transition: color 0.15s ease-out;
-        &.online {
+        &.checked {
           color: #424949;
         }
-        &.offline {
+        &.unchecked {
           color: #A6ACAF;
         }
       }

@@ -8,6 +8,7 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import PageTile from '../shared/components/tile/tile'
 import OnlineInput from './inputs/online.js'
+import HeaderAutonumberingInput from './inputs/header-auto-numbering'
 
 class PageCreate extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class PageCreate extends React.Component {
   }
 
   render() {
-    const { routeSynced, online, changeInputs } = this.props
+    const { routeSynced, online, headerAutonumbering, changeInputs } = this.props
 
     if (!routeSynced) return null
 
@@ -38,6 +39,7 @@ class PageCreate extends React.Component {
         <PageTile { ...tileProps } />
         <form>
           <OnlineInput checked={online} changeInputs={changeInputs} />
+          <HeaderAutonumberingInput checked={headerAutonumbering} changeInputs={changeInputs} />
           <ManagedTextarea {...this.bodyManager()} />
           <ManagedText {...this.titleManager()} />
           <ManagedTextarea {...this.descriptionManager()} />

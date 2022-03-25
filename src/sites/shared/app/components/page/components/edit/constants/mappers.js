@@ -13,7 +13,8 @@ export const mapStateToProps = store => {
     keywords,
     picture,
     lang_ver_urls,
-    online
+    online,
+    headerAutonumbering
   } = store.page.edit.inputs
   const { role } = store.user.authorize.data
 
@@ -33,7 +34,8 @@ export const mapStateToProps = store => {
     meta,
     lang_ver_urls,
     isAdmin: role == 'admin',
-    online
+    online,
+    headerAutonumbering
   }
 }
   

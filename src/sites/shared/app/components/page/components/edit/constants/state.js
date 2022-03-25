@@ -14,7 +14,8 @@ export const inputs = {
   picture: null,
   meta: null,
   lang_ver_urls: null,
-  online: null
+  online: null,
+  headerAutonumbering: null
 }
 
 export const data = {
