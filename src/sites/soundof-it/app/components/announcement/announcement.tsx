@@ -1,7 +1,6 @@
 import React from 'react'
 import loadable from '@loadable/component'
 import { connect } from 'react-redux'
-//@ts-ignore
 import withStyles from 'isomorphic-style-loader/withStyles'
 const AnnouncementCreate = loadable(() => import('./components/create/create'))
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
