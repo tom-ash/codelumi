@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "soundof-it-dev": "webpack-dev-server --config ./src/sites/soundof-it/dev/webpack.config.js",
-    "mapawynajmu-pl-dev": "webpack-dev-server --config ./src/sites/mapawynajmu-pl/dev/webpack.config.js",
+    "soundof-it-dev": "webpack serve --config ./src/sites/soundof-it/dev/webpack.config.js",
+    "mapawynajmu-pl-dev": "webpack serve --config ./src/sites/mapawynajmu-pl/dev/webpack.config.js",
     "build": "rm -rf ./dist & webpack --mode production --config ./src/server/webpack.config & webpack --mode production --config ./src/sites/soundof-it/client/webpack.config & webpack --mode production --config ./src/sites/mapawynajmu-pl/client/webpack.config.js",
     "prod": "node ./dist/server/server.js",
     "test": "jest"
@@ -13,11 +13,11 @@
   "author": "tom-ash",
   "license": "None",
   "engines": {
-    "npm": "^6.14.15",
-    "node": "^14.18.1"
+    "npm": "^8.5.5",
+    "node": "^17.8.0"
   },
   "dependencies": {
-    "@babel/core": "^7.12.3",
+    "@babel/core": "^7.17.8",
     "@babel/preset-react": "^7.12.1",
     "@loadable/babel-plugin": "^5.13.2",
     "@loadable/component": "^5.13.2",
@@ -52,9 +52,9 @@
     "xml": "^1.0.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.1",
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/preset-env": "^7.12.1",
+    "@babel/cli": "^7.17.6",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@svgr/webpack": "^5.4.0",
     "@types/jest": "^27.4.1",
@@ -62,20 +62,19 @@
     "babel-loader": "^8.1.0",
     "compression-webpack-plugin": "^6.0.3",
     "copy-webpack-plugin": "^5.1.2",
-    "css-loader": "^2.1.1",
+    "css-loader": "^6.7.1",
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.21.4",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "jest": "^27.5.1",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.1",
     "raw-loader": "^4.0.2",
-    "sass-loader": "^7.3.1",
-    "ts-loader": "^8.2.0",
-    "typescript": "^4.5.5",
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
+    "sass-loader": "^12.6.0",
+    "ts-loader": "^9.2.8",
+    "typescript": "^4.6.3",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^3.11.0",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^3.0.0"
   }
 }
