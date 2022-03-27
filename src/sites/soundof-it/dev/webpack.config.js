@@ -24,6 +24,9 @@ var config = {
       index: '/index.html'
     }
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  },
   module: {
     rules: [
       {
@@ -53,7 +56,7 @@ var config = {
             options: {
               importLoaders: 1,
               esModule: false,
-            }
+            },
           },
           'sass-loader'
         ]

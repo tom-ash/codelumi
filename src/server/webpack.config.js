@@ -17,6 +17,9 @@ var config = {
   },
   target: 'node',
   externals: [nodeExternals()],
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  },
   module: {
     rules: [
       {

@@ -16,6 +16,9 @@ var config = {
     filename: 'bundle.js',
     publicPath: '/'
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  },
   module: {
     rules: [
       {

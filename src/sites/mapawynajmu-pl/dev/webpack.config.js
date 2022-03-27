@@ -24,6 +24,9 @@ var config = {
       index: '/index.html'
     }
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  },
   module: {
     rules: [
       {
