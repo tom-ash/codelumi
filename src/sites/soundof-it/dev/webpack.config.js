@@ -17,8 +17,9 @@ var config = {
     publicPath: '/'
   },
   devServer: {
+    host: '127.0.0.1',
     port: 8080,
-    disableHostCheck: true,
+    allowedHosts: "all",
     historyApiFallback: {
       index: '/index.html'
     }
@@ -50,7 +51,8 @@ var config = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1
+              importLoaders: 1,
+              esModule: false,
             }
           },
           'sass-loader'

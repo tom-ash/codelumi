@@ -1,3 +1,4 @@
+//@ts-ignore
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
@@ -16,6 +17,7 @@ class AnnouncementCreate extends React.Component<Create> {
   }
 
   render() {
+    //@ts-ignore
     const { selectableSkills, selectedSkills, changeState } = this.props
     const skillSelectorProps = { selectableSkills, selectedSkills, changeState }
 

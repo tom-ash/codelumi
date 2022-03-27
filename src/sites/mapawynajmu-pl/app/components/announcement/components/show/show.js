@@ -108,8 +108,6 @@ class AnnouncementShow extends React.Component {
           loadMap={loadMap}
           mapLoaded={mapLoaded}
           loadMarker={loadMarker}
-          latitude={latitude}
-          longitude={longitude}
           markerLoaded={markerLoaded}
           mapLoading={mapLoading}
           changeControl={changeControl}

@@ -43,7 +43,8 @@ var config = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1
+              importLoaders: 1,
+              esModule: false,
             }
           },
           'sass-loader'
@@ -65,11 +66,6 @@ var config = {
       filename: 'loadable-stats.json',
       writeToDisk: true
     }),
-    new CopyPlugin([
-      { from: './src/sites/soundof-it/client/robots.txt', to: 'robots.txt' },
-      { from: './src/sites/soundof-it/client/favicon.png', to: 'favicon.png' },
-      { from: './src/sites/soundof-it/client/favicon.ico', to: 'favicon.ico' },
-    ]),
     new webpack.DefinePlugin({ 'APP_ENV': JSON.stringify(process.env.APP_ENV) })
   ]
 };

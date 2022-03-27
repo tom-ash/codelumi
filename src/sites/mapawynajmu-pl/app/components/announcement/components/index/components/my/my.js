@@ -85,8 +85,6 @@ class AnnouncementIndexMy extends React.Component {
             floor={announcement.floor}
             totalFloors={announcement.totalFloors}
             availabilityDate={announcement.availabilityDate}
-            control={this.controlProvider(announcement, index)}
-            control={this.controlProvider(announcement, index)}
             lang={lang}
             path={announcement.path}
             title={announcement.title}

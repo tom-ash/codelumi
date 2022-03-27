@@ -44,7 +44,8 @@ var config = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1
+              importLoaders: 1,
+              esModule: false,
             }
           },
           'sass-loader'
