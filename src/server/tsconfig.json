@@ -2,11 +2,11 @@
   "compilerOptions": {
     "outDir": "../../dist/",
     "noImplicitAny": true,
-    "module": "es6",
-    "target": "es6",
+    "module": "esnext",
+    "target": "esnext",
+    "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
-    "jsx": "react",
     "types": [
       "@types/jest",
       "@types/react"
