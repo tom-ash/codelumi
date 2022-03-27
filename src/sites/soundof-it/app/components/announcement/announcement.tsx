@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import withStyles from 'isomorphic-style-loader/withStyles'
 const AnnouncementCreate = loadable(() => import('./components/create/create'))
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-//@ts-ignore
 import styles from './styles/styles.scss'
 import { announcementProps } from './constants/types'
 

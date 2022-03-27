@@ -11,6 +11,12 @@
     "types": [
       "@types/jest",
       "@types/react"
-    ]
-  }
+    ],
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+  },
+  "include": [
+    "declarations.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+  ]
 }
