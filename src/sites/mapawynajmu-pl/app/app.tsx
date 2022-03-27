@@ -71,8 +71,11 @@ class App extends React.Component {
       <AppContext.Provider value={AppContextValue}>
         <Header { ...{ ...sharedProps, urlComposites, lang, Logo, HeaderCustomization, styles: headerStyles }}/>
         {renderAnnouncement && <Announcement/>}
+        {/* @ts-ignore */}
         {renderPage && <Page {...pageProps}/>}
+        {/* @ts-ignore */}
         {renderVisitor && <Visitor {...sharedProps}/>}
+        {/* @ts-ignore */}
         {renderUser && <User />}
         <Footer {...sharedProps}/>
       </AppContext.Provider>

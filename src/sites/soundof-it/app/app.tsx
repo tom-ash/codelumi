@@ -9,7 +9,7 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import Page from '../../shared/app/components/page/page.js'
 import Visitor from '../../shared/app/components/visitor/visitor.js'
 // @ts-ignore
-const Announcement = loadable(() => import('./components/announcement/announcement.js'))
+const Announcement = loadable(() => import('./components/announcement/announcement.tsx'))
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 // @ts-ignore
 import styles from './styles/styles.scss'
@@ -74,9 +74,11 @@ class App extends React.Component {
     return (
       <AppContext.Provider value={AppContextValue}>
         <Header {...headerProps}/>
+        {/* @ts-ignore */}
         {renderPage && <Page {...pageProps} />}
+        {/* @ts-ignore */}
         {renderVisitor && <Visitor {...sharedProps} />}
-        {renderAnnouncement && <Announcement />}
+        {renderAnnouncement && <Announcement {...sharedProps} />}
         <Footer {...sharedProps}/>
       </AppContext.Provider>
     )

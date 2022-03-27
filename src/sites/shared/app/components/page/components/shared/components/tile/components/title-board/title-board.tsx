@@ -86,6 +86,7 @@ const TitleBoard = (props: TitleBoardProps) => {
           {/* <SVG name='userNinja' /> */}
         </div>}
         <div className='name'>
+          {/* @ts-ignore */}
           <SVG name='penClip' />
           <a
             href={authorLink}
