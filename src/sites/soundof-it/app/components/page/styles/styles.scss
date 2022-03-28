@@ -50,14 +50,14 @@ $padding-mobile: 18px;
         }
       }
       .table-of-contents {
-        padding: 30px $padding-desktop;
+        padding: 24px $padding-desktop 12px;
         border-left: 1px solid #F2F3F4;
         border-right: 1px solid #F2F3F4;
         background: white;
         line-height: 1.5;
         color: #797D7F;
         @media #{$LARGE-PHONE} {
-          padding: 30px $padding-mobile;
+          padding: 24px $padding-mobile 12px;
         }
         a {
           text-decoration: underline;

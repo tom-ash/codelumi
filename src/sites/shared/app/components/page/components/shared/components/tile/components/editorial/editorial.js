@@ -9,7 +9,7 @@ const Editorial = props => {
 
   return (
     <p className='editorial'>
-      {nodeContent}
+      <strong>{nodeContent}</strong>
     </p>
   )
 }
