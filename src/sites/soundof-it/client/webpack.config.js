@@ -1,5 +1,4 @@
 var webpack = require("webpack");
-var CopyPlugin = require('copy-webpack-plugin');
 var path = require('path')
 var ROOT_DIR = path.join(__dirname, '../../../../')
 var SRC_DIR = path.join(__dirname, '../client')
