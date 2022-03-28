@@ -150,6 +150,13 @@ $padding-mobile: 18px;
         p + ul {
           margin-top: 0;
         }
+        ul {
+          li {
+            p {
+              margin: 6px 0 0 0;
+            }
+          }
+        }
       }
     }
   }

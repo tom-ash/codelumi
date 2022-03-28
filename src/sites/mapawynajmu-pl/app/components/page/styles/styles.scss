@@ -43,14 +43,14 @@ $padding-mobile: 18px;
         }
       }
       .table-of-contents {
-        padding: 30px $padding-desktop;
+        padding: 24px $padding-desktop 12px;
         border-left: 1px solid #F2F3F4;
         border-right: 1px solid #F2F3F4;
         background: white;
         line-height: 1.5;
         color: #797D7F;
         @media #{$LARGE-PHONE} {
-          padding: 30px $padding-mobile;
+          padding: 24px $padding-mobile 12px;
         }
         a {
           text-decoration: underline;
@@ -60,11 +60,11 @@ $padding-mobile: 18px;
           }
         }
         h2 {
-          font-size: 14px;
+          font-size: 15px;
         }
         ul {
           list-style-type: none;
-          font-size: 14px;
+          font-size: 15px;
         }
       }
       h1, h2, h3 {
@@ -90,10 +90,15 @@ $padding-mobile: 18px;
           padding: 30px 0 10px;
         }
         p {
-          padding: 10px 0;
+          margin: 12px 0 0 0;
         }
         ul {
           padding-left: 20px;
+          li {
+            p {
+              margin: 6px 0 0 0;
+            }
+          }
         }
       }
     }
