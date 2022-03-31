@@ -5,7 +5,8 @@ export const mapStateToProps = store => {
   const {
     visitor: renderVisitor,
     page: renderPage,
-    announcement: renderAnnouncement
+    announcement: renderAnnouncement,
+    image: renderImage
   } = render
   const { statisticsConsent, marketingConsent } = store.visitor.consents
   const { data: pageShowData } = store.page.show
@@ -21,6 +22,7 @@ export const mapStateToProps = store => {
     renderVisitor,
     renderAnnouncement,
     renderPage,
+    renderImage,
     scrollY,
     pageShowData,
     pageEditData,

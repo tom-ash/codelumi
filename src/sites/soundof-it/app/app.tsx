@@ -1,15 +1,11 @@
-// @ts-ignore
 import React from 'react'
-// @ts-ignore
 import loadable from '@loadable/component'
-// @ts-ignore
 import { connect } from 'react-redux'
-// @ts-ignore
 import withStyles from 'isomorphic-style-loader/withStyles'
-import Page from '../../shared/app/components/page/page.js'
-import Visitor from '../../shared/app/components/visitor/visitor.js'
-// @ts-ignore
-const Announcement = loadable(() => import('./components/announcement/announcement.tsx'))
+import Page from '../../shared/app/components/page/page'
+import Visitor from '../../shared/app/components/visitor/visitor'
+const Announcement = loadable(() => import('./components/announcement/announcement'))
+const Image = loadable(() => import('../../shared/app/components/image/image'))
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 // @ts-ignore
 import styles from './styles/styles.scss'
@@ -41,9 +37,7 @@ class App extends React.Component {
   // @ts-ignore
   constructor(props) {
     super(props)
-    // @ts-ignore
     this.componentDidMount = lifecycle.componentDidMount
-    // @ts-ignore
     this.componentDidUpdate = lifecycle.componentDidUpdate
     // @ts-ignore
     this.screenSizeHandler = screenSizeHandler.bind(this)
@@ -61,15 +55,15 @@ class App extends React.Component {
     // @ts-ignore
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute }
     // @ts-ignore
-    const { render, renderPage, renderVisitor, renderAnnouncement, device, links, lang, pageShowData, pageEditData, changeApp } = this.props
+    const { render, renderPage, renderImage, renderVisitor, renderAnnouncement, device, links, lang, pageShowData, pageEditData, changeApp } = this.props
     // @ts-ignore
     const urlComposites = { pageShowData, pageEditData }
     // @ts-ignore
     const sharedProps = { appName: APP_NAME, render, langs: LANGS, links, clientUrl: CLIENT_URL, apiUrl: API_URL, device, lang, changeRoute: this.changeRoute, buildUrl, changeApp, langHandler: this.langHandler }
-    // @ts-ignore
     const headerProps = { ...sharedProps, urlComposites, Logo, HeaderCustomization, styles: headerStyles }
     // @ts-ignore
     const pageProps = { ...sharedProps, customNodeParser }
+    const imageProps = sharedProps
     
     return (
       <AppContext.Provider value={AppContextValue}>
@@ -79,6 +73,7 @@ class App extends React.Component {
         {/* @ts-ignore */}
         {renderVisitor && <Visitor {...sharedProps} />}
         {renderAnnouncement && <Announcement {...sharedProps} />}
+        {renderImage && <Image {...imageProps} />}
         <Footer {...sharedProps}/>
       </AppContext.Provider>
     )
