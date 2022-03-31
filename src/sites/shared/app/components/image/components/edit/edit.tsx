@@ -1,6 +1,7 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader/useStyles'
 import styles from './styles/styles.scss'
+import Body from './functions/inputs'
 
 type ImageEditProps = {
 //   node: {
@@ -14,9 +15,15 @@ type ImageEditProps = {
 const ImageEdit = (props: ImageEditProps) => {
   useStyles(styles)
 
+  console.log("HERE")
+
   return (
-    <div>
-      IMAGE EDIT
+    <div className='edit'>
+      <div className='output' />
+
+      <div className='input'>
+        <Body />
+      </div>
     </div>
   )
 

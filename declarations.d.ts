@@ -5,3 +5,4 @@ declare module '*.scss' {
 
 declare module 'isomorphic-style-loader/withStyles'
 declare module 'isomorphic-style-loader/useStyles'
+declare module 'managed-inputs'
