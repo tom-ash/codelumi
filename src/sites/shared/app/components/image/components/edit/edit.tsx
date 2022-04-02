@@ -1,7 +1,7 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader/useStyles'
 import styles from './styles/styles.scss'
-import { BodyTextarea, SaveButton } from './functions/form-elements'
+import { BodyTextarea, SaveButton, DownloadButton } from './functions/form-elements'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 
@@ -34,14 +34,14 @@ const ImageEdit = (props: ImageEditProps) => {
     <div className='edit'>
       <div id='image-output' className='output'>
         {/* @ts-ignore */}
-        {bodyElements.map(bodyElement => {
+        {bodyElements.map((bodyElement, index) => {
           if (!bodyElement.t) return null
 
           return (
             React.createElement(
               bodyElement.t,
               //@ts-ignore
-              bodyElement.attrs || {},
+              { ...bodyElement.attrs, key: index },
               //@ts-ignore
               bodyElement.c
             )
@@ -49,13 +49,16 @@ const ImageEdit = (props: ImageEditProps) => {
         })}
       </div>
       <BodyTextarea
-          body={body}
-          changeData={changeData}
-        />
+        body={body}
+        changeData={changeData}
+      />
       <SaveButton
         imageId={imageId}
         body={body}
         apiUrl={apiUrl}
+      />
+      <DownloadButton
+
       />
     </div>
   )
