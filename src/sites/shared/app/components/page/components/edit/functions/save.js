@@ -13,9 +13,13 @@ export function save({ withRouteChange = false }) {
   let currentH4 = 0
 
   body.map((node, index) => {
-    // if (node.t === 'rt') {
-    //   body[index] = node.c
-    // }
+    if (node.t === 'rt') {
+      body[index] = node.c
+    }
+
+    if (node.t === 'p') {
+      body[index] = node.c
+    }
 
     if (headerAutonumbering) {
       if (node.t === 'h2') {
