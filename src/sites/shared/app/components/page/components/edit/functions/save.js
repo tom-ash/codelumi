@@ -12,7 +12,11 @@ export function save({ withRouteChange = false }) {
   let currentH3 = 0
   let currentH4 = 0
 
-  body.map(node => {
+  body.map((node, index) => {
+    // if (node.t === 'rt') {
+    //   body[index] = node.c
+    // }
+
     if (headerAutonumbering) {
       if (node.t === 'h2') {
         currentH2++

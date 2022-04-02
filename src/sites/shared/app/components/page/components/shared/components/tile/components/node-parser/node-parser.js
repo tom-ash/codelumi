@@ -1,29 +1,25 @@
 import React from 'react'
 import loadable from '@loadable/component'
 import urlify from '../../../../../../../../../../shared/shared/functions/transformers/routes/urlify.js'
-import Header from './components/header/header.tsx'
-
+const Header = loadable(() => import('./components/header/header'))
 const Link = loadable(() => import('../link/link.js'))
 const List = loadable(() => import('../list/list.js'))
-const RichText = loadable(() => import('./components/rich-text/rich-text.js'))
-
-const commonTags = ['div', 'p']
-const headerTags = ['h1', 'h2', 'h3', 'h4']
+const Paragraph = loadable(() => import('./components/paragraph/paragraph'))
 
 const nodeParser = props => {
   const { node, index, device, isAdmin, jsonMeta, clientUrl, changeRoute, buildUrl, customNodeParser, element } = props
-  const nodeTag = node.t || 'p'
+
+  const headerTags = ['h1', 'h2', 'h3', 'h4']
+  const nodeTag = node.t
   const nodeContent = node.c
   const attrs = nodeTag === 'h2' ? { id: urlify(nodeContent) } : (node.a || {})
 
-  if (typeof node === 'string') return <RichText key={index} {...props} content={node} />
-  if (commonTags.indexOf(nodeTag) !== -1) return React.createElement(nodeTag, { ...attrs, ...{ key: index } }, nodeContent)
-  if (headerTags.indexOf(nodeTag) !== -1) return <Header {...{...node, ...props}} />
-  if (nodeTag === 'picture') return <img src={node.url} loading='lazy' key={index} />
+  if (typeof node === 'string') return <Paragraph key={index} {...props} content={node} />
+  if (headerTags.indexOf(nodeTag) !== -1) return <Header key={index} {...{...node, ...props}} />
+  if (nodeTag === 'picture') return <img key={index} src={node.url} loading='lazy' />
   if (nodeTag === 'link') return <Link key={index} {...{ clientUrl, changeRoute, nodeContent }}/>
   if (nodeTag === 'float-clear') return <div key={index} className='float-clear'/>
   if (nodeTag === 'ul') return <List key={index} {...{ listNodes: nodeContent, ...props}} />
-  if (nodeTag === 'rt') return <RichText key={index} {...props} content={nodeContent} element={element} />
 
   return customNodeParser({ device, isAdmin, clientUrl, nodeTag, nodeContent, attrs, changeRoute, buildUrl, index, jsonMeta, node })
 }

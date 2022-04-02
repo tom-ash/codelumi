@@ -1,7 +1,7 @@
 import React from 'react'
 import buildAnchor from './functions/build-anchor'
 
-const RichText = props => {
+const Paragraph = props => {
   const { content, element } = props
   let enrichedContent = content
 
@@ -23,4 +23,4 @@ const RichText = props => {
   return <DomTag dangerouslySetInnerHTML={{ __html: enrichedContent }} />
 }
 
-export default RichText
+export default Paragraph
