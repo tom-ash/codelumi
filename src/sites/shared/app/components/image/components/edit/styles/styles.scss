@@ -13,11 +13,24 @@
       margin-bottom: 32px;
       overflow: hidden;
     }
-    .input {
-      width: 1000px;
+
+    textarea {
+      display: block;
+      width: 1200px;
       margin: 0 auto;
-      border-radius: 5px;
-      border: 1px solid lightgray;
+      height: 300px;
+    }
+
+    .counter {
+      display: none;
+    }
+    
+    button {
+      display: block;
+      margin: 0 auto;
+      margin-top: 30px;
+      width: 1200px;
+      height: 50px;
     }
   }
 }

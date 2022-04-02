@@ -9,11 +9,12 @@ class Image extends React.Component {
 
   render() {
     //@ts-ignore
-    const { render: { 'image/edit': renderEdit } } = this.props
+    const { render: { 'image/edit': renderEdit }, apiUrl } = this.props
+    const editProps = { apiUrl }
 
     return (
       <section id='image'>
-        {renderEdit && <Edit />}
+        {renderEdit && <Edit {...editProps} />}
       </section>
     )
   }
