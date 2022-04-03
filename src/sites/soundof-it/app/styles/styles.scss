@@ -33,3 +33,46 @@ a {
 .float-clear {
   clear: both;
 }
+
+.form-input {
+  &.checkbox {
+    position: relative;
+    margin-bottom: 12px;
+    .input {
+      width: 16px;
+      height: 16px;
+      border: 1px solid black;
+      border-radius: 2px;
+      outline: none;
+      transition: 0.18s;
+      cursor: pointer;
+      &.hover, &.focus {
+        box-shadow: 0 0 0 1px black;
+      }
+      .tick {
+        width: 5px;
+        height: 10px;
+        margin-left: 5px;
+        margin-top: 1px;
+        transform: rotate(45deg);
+        border-right: 2px solid black;
+        border-bottom: 2px solid black;
+      }
+    }
+    .label {
+      position: absolute;
+      top: 0;
+      left: 15px;
+      color: black;
+      margin-left: 15px;
+      cursor: pointer;
+      font-size: 15px;
+      &.focus, &.hover, &.value {
+        color: black;
+      }
+      &.checked {
+        font-weight: bold;
+      }
+    }
+  }
+}

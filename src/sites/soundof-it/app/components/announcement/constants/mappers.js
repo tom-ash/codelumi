@@ -12,6 +12,6 @@ export const mapStateToProps = store => {
   
 export const mapDispatchToProps = dispatch => {
   return {
-    // changeState: value => dispatch({ type: 'announcement/create', value }),
+    // setStore: value => dispatch({ type: 'announcement/create', value }),
   }
 }

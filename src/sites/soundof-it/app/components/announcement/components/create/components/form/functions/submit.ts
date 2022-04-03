@@ -1,18 +1,27 @@
 import apiUrl from '../../../../../../../../shared/constants/urls/api.js'
-// import getCookieValue from
 import getAccessToken from '../../../../../../../../../mapawynajmu-pl/app/components/user/components/authorize/components/tokens/functions/get-tokens.js'
 
-// import getCookieValue
-
-// import getAccessToken from '../../../../user/components/authorize/components/tokens/functions/get-tokens'
-
 type submitProps = {
-  selectedSkills: Array<any>
+  selectedSkills: Array<any>,
+  remote: boolean,
+  hybrid: boolean,
+  office: boolean
 }
 
 const submit = (props: submitProps) => {
-  const { selectedSkills } = props
-  const body = { selectedSkills }
+  const {
+    selectedSkills,
+    remote,
+    hybrid,
+    office
+  } = props
+
+  const body = {
+    selectedSkills,
+    remote,
+    hybrid,
+    office
+  }
 
   fetch(apiUrl + '/job/create/as-user', {
     method: 'POST',

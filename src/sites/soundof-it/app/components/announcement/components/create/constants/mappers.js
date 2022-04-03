@@ -1,15 +1,24 @@
 export const mapStateToProps = store => {
   const { announcement: { create } } = store
-  const { selectableSkills, selectedSkills } = create
+  const { 
+    selectableSkills,
+    selectedSkills,
+    remote,
+    hybrid,
+    office
+  } = create
   
   return {
     selectableSkills,
-    selectedSkills
+    selectedSkills,
+    remote,
+    hybrid,
+    office
   }
 }
   
 export const mapDispatchToProps = dispatch => {
   return {
-    changeState: value => dispatch({ type: 'announcement/create', value }),
+    setStore: value => dispatch({ type: 'announcement/create', value }),
   }
 }

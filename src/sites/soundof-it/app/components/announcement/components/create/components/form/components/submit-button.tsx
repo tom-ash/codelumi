@@ -1,22 +1,30 @@
-//@ts-ignore
 import React from 'react'
-//@ts-ignore
 import { ManagedButton } from 'managed-inputs'
-//@ts-ignore
-import submit from '../functions/submit.ts'
+import submit from '../functions/submit'
 
 type submitButtonProps = {
-  selectedSkills: Array<any>
+  selectedSkills: Array<any>,
+  remote: boolean,
+  hybrid: boolean,
+  office: boolean
 }
 
 const SubmitButton = (props: submitButtonProps) => {
-  const { selectedSkills } = props
+  const {
+    selectedSkills,
+    remote,
+    hybrid,
+    office
+  } = props
 
   const buttonProps = {
     classNames: { container: 'submit-button' },
     label: 'Add Job',
     onClick: () => submit({
-      selectedSkills
+      selectedSkills,
+      remote,
+      hybrid,
+      office
     })
   }
 

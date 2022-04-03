@@ -6,20 +6,20 @@ import Skill from '../../../../../shared/components/skill/skill.js'
 function SkillSelector(props) {
   useStyles(styles)
 
-  const { selectableSkills, selectedSkills, changeState } = props
+  const { selectableSkills, selectedSkills, setStore } = props
 
   function selectSkill(selectedSkill) {
     const newSelectedSkills = [ ...selectedSkills ].concat([selectedSkill])
     const newSelectableSkills = [ ...selectableSkills ].filter(skill => skill.name !== selectedSkill.name)
     
-    changeState({ selectableSkills: newSelectableSkills, selectedSkills: newSelectedSkills })
+    setStore({ selectableSkills: newSelectableSkills, selectedSkills: newSelectedSkills })
   }
 
   function unselectSkill(unselectedSkill) {
     const newSelectedSkills = [ ...selectedSkills ].filter(skill => skill.name !== unselectedSkill.name)
     const newSelectableSkills = [ ...selectableSkills ].concat([unselectedSkill])
     
-    changeState({ selectableSkills: newSelectableSkills, selectedSkills: newSelectedSkills })
+    setStore({ selectableSkills: newSelectableSkills, selectedSkills: newSelectedSkills })
   }
 
   return (

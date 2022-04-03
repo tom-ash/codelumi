@@ -54,16 +54,12 @@ export const SaveButton = (props: SaveButtonProps) => {
 }
 
 interface DownloadButtonProps {
-  // apiUrl: string,
-  // imageId: number,
-  // body: string
+  // TODO
 }
 
 export const DownloadButton = (props: DownloadButtonProps) => {
   const {
-    // apiUrl,
-    // imageId,
-    // body
+    // TODO
   } = props
 
   const classNames = { container: 'form-input textarea' }

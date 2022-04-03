@@ -1,14 +1,18 @@
 #announcement-create {
-  max-width: 800px;
+  @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
+  font-family: 'Titillium Web', sans-serif;
+  max-width: 768px;
   min-height: 1200px;
-  margin: 0 auto;
-  padding-top: 50px;
+  margin: 100px auto;
+  padding: 32px;
+  background: white;
+  border-radius: 5px;
   h1 {
-    font-size: 18px;
+    font-size: 26px;
     margin-bottom: 18px;
   }
   h2 {
-    font-size: 16px;
+    font-size: 22px;
     margin-bottom: 9px;
   }
 }

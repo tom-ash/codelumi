@@ -17,7 +17,10 @@ const initialState = {
   description: '',
   applicationEmail: '',
   applicationLink: '',
-  cooperationMode: ''
+  cooperationMode: '',
+  remote: false,
+  hybrid: false,
+  office: false
 }
 
 export default initialState

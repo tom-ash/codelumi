@@ -24,7 +24,7 @@ class AnnouncementCreatMap extends React.Component {
     }
   }
 
-  changeState = changedState => this.setState(changedState)
+  setStore = changedState => this.setState(changedState)
 
   render() {
     const showAutocompletes = this.state.autocompletes.length > 0 && this.state.showAutocompletes
@@ -42,7 +42,7 @@ class AnnouncementCreatMap extends React.Component {
           <AddressInput
             autocompleteInput={this.state.autocompleteInput}
             autocompletes={this.state.autocompletes}
-            setState={this.changeState}
+            setState={this.setStore}
             langHandler={this.langHandler}
             showAutocompletes={showAutocompletes}
             changeInputs={changeInputs}
@@ -52,7 +52,7 @@ class AnnouncementCreatMap extends React.Component {
           <div className='autocompletes'>
             {this.state.autocompletes.map(autocomplete => (
               <div
-                onClick={() => addMarker({ autocomplete, setState: this.changeState, changeInputs, changeErrors })}
+                onClick={() => addMarker({ autocomplete, setState: this.setStore, changeInputs, changeErrors })}
                 key={autocomplete.place_id}
               >
                 {autocomplete.description}
