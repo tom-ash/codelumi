@@ -5,7 +5,16 @@ export const mapStateToProps = store => {
     selectedSkills,
     remote,
     hybrid,
-    office
+    office,
+    b2b,
+    b2bMax,
+    b2bMin,
+    employment,
+    employmentMax,
+    employmentMin,
+    civilContract,
+    civilContractMax,
+    civilContractMin
   } = create
   
   return {
@@ -13,7 +22,16 @@ export const mapStateToProps = store => {
     selectedSkills,
     remote,
     hybrid,
-    office
+    office,
+    b2b,
+    b2bMax,
+    b2bMin,
+    employment,
+    employmentMax,
+    employmentMin,
+    civilContract,
+    civilContractMax,
+    civilContractMin
   }
 }
   

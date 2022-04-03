@@ -19,7 +19,16 @@ class AnnouncementCreate extends React.Component<Create> {
       setStore,
       remote,
       hybrid,
-      office
+      office,
+      b2b,
+      b2bMax,
+      b2bMin,
+      employment,
+      employmentMax,
+      employmentMin,
+      civilContract,
+      civilContractMax,
+      civilContractMin
     } = this.props
 
     const skillSelectorProps = {
@@ -28,7 +37,16 @@ class AnnouncementCreate extends React.Component<Create> {
       setStore,
       remote,
       hybrid,
-      office
+      office,
+      b2b,
+      b2bMax,
+      b2bMin,
+      employment,
+      employmentMax,
+      employmentMin,
+      civilContract,
+      civilContractMax,
+      civilContractMin
     }
 
     return (

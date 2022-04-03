@@ -5,7 +5,16 @@ type submitProps = {
   selectedSkills: Array<any>,
   remote: boolean,
   hybrid: boolean,
-  office: boolean
+  office: boolean,
+  b2b: boolean,
+  b2bMax: number,
+  b2bMin: number,
+  employment: boolean,
+  employmentMax: number,
+  employmentMin: number,
+  civilContract: boolean,
+  civilContractMax: number,
+  civilContractMin: number
 }
 
 const submit = (props: submitProps) => {
@@ -13,14 +22,32 @@ const submit = (props: submitProps) => {
     selectedSkills,
     remote,
     hybrid,
-    office
+    office,
+    b2b,
+    b2bMax,
+    b2bMin,
+    employment,
+    employmentMax,
+    employmentMin,
+    civilContract,
+    civilContractMax,
+    civilContractMin
   } = props
 
   const body = {
     selectedSkills,
     remote,
     hybrid,
-    office
+    office,
+    b2b,
+    b2bMax,
+    b2bMin,
+    employment,
+    employmentMax,
+    employmentMin,
+    civilContract,
+    civilContractMax,
+    civilContractMin
   }
 
   fetch(apiUrl + '/job/create/as-user', {
