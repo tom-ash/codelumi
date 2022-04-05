@@ -22,38 +22,46 @@ const Contract = (props: ContractInterface) => {
   const {
     setStore,
     b2b,
-    b2bMax,
     b2bMin,
+    b2bMax,
     employment,
-    employmentMax,
     employmentMin,
+    employmentMax,
     civilContract,
-    civilContractMax,
-    civilContractMin
+    civilContractMin,
+    civilContractMax
   } = props
 
   const contracts = [
     {
       contractKey: 'b2b', 
       contractValue: b2b,
-      label: 'B2B'
+      label: 'B2B',
+      contractMin: b2bMin,
+      contractMax: b2bMax
     },
     {
       contractKey: 'employment', 
       contractValue: employment,
-      label: 'Permanent Employment'
+      label: 'Permanent Employment',
+      contractMin: employmentMin,
+      contractMax: employmentMax
     },
     {
       contractKey: 'civilContract', 
       contractValue: civilContract,
-      label: 'Mandate'
+      label: 'Mandate',
+      contractMin: civilContractMin,
+      contractMax: civilContractMax
     }
   ]
 
   type Contract = {
     contractKey: 'b2b' | 'employment' | 'civilContract', 
     contractValue: boolean,
-    label: string
+    label: string,
+    contractMin: number,
+    contractMax: number
   }
 
   const locationCheckboxesProps = {
