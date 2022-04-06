@@ -104,10 +104,10 @@ function setOptions(options) {
 
   return {
     center: {
-      lat: 52.227,
-      lng: isMobile ? 21.009 : 21.105
+      lat: 52,
+      lng: 19
     },
-    zoom: 11,
+    zoom: 6.4,
     fullscreenControl: false,
     clickableIcons: false,
     zoomControl: false,

@@ -3,9 +3,10 @@ import { removeGoogleMapListeners } from './remove-google-map-listeners'
 
 const options = {
   center: {
-    lat: 52.227,
-    lng: 21.015,
-  }
+    lat: 52,
+    lng: 19
+  },
+  zoom: 5.8
 }
 
 export function componentDidMount() {
