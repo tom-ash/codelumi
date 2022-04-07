@@ -17,6 +17,8 @@ const jsonToJsxParser = props => {
   let tableOfContents = null
 
   const main = jsonBody.map((node, index) => {
+    if (!node) return null
+
     if (node.t === 'i') {
 
       imageEditor = <ImageEditor key={index} node={node} />

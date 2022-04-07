@@ -13,6 +13,10 @@ export function save({ withRouteChange = false }) {
   let currentH4 = 0
 
   body.map((node, index) => {
+    if (typeof node === 'object' && !node.t) {
+      body[index] = node.c
+    }
+
     if (node.t === 'rt') {
       body[index] = node.c
     }
