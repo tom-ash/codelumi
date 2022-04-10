@@ -13,6 +13,18 @@ $padding-mobile: 18px;
       position: fixed;
       top: 80px;
       right: 20px;
+      width: 20px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      svg {
+        fill: #626567;
+      }
+      &:hover {
+        svg {
+          fill: black;
+        }
+      }
     }
     .article, .summary {
       p, ul {

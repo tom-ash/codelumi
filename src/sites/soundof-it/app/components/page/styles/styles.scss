@@ -29,6 +29,18 @@ $padding-mobile: 18px;
       position: fixed;
       top: 80px;
       right: 20px;
+      width: 20px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      svg {
+        fill: #626567;
+      }
+      &:hover {
+        svg {
+          fill: black;
+        }
+      }
     }
     .article {
       @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
