@@ -159,5 +159,25 @@
         }
       }
     }
+    .update-status {
+      position: fixed;
+      right: 20px;
+      bottom: 150px;
+      width: 24px;
+      height: 24px;
+      border-radius: 12px;
+      box-shadow: #F1C40F 0px 0px 4px;
+      background: linear-gradient(to right, #F9E79F, #F1C40F 70%);
+      text-align: center;
+      font-size: 15px;
+      &.ok {
+        box-shadow: #28B463 0px 0px 4px;
+        background: linear-gradient(to right, #2ECC71, #28B463 70%);
+      }
+      &.error {
+        box-shadow: #B03A2E 0px 0px 4px;
+        background: linear-gradient(to right, #E74C3C, #B03A2E 70%);
+      }
+    }
   }
 }

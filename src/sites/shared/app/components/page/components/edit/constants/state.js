@@ -20,5 +20,6 @@ export const inputs = {
 
 export const data = {
   name: null,
-  langVerUrls: null
+  langVerUrls: null,
+  updated: true
 }

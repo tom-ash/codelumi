@@ -5,7 +5,7 @@ export function save({ withRouteChange = false }) {
   const body = JSON.parse(this.props.body)
   const style = JSON.parse(this.props.style)
   const meta = JSON.parse(this.props.meta)
-  const { apiUrl, changeControl, headerAutonumbering } = this.props
+  const { apiUrl, changeControl, changeData, headerAutonumbering } = this.props
   const { method, route } = UPDATE_API_ROUTE
 
   let currentH2 = 0
@@ -67,12 +67,18 @@ export function save({ withRouteChange = false }) {
     throw new Error('Server error at updating page!')
   })
   .then(path => {
+    changeData({ updated: true })
+
     if (!withRouteChange) return
 
     const { buildUrl, changeRoute } = this.props
     const href = buildUrl({ path })
 
-    changeRoute({ href })
+    changeRoute({ href })    
+  })
+  .catch(error => {
+    changeData({ updated: false })
+    console.error(error)
   })
   .finally(() => {
     changeControl({ fetching: false })

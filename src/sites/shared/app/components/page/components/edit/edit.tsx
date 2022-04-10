@@ -9,9 +9,32 @@ import styles from './styles/styles.scss'
 import PageTile from '../shared/components/tile/tile'
 import OnlineInput from './inputs/online.js'
 import HeaderAutonumberingInput from './inputs/header-auto-numbering'
+import UpdateStatus from './components/update-status'
 
-class PageCreate extends React.Component {
-  constructor(props) {
+interface PageCreateProps {
+  routeSynced: boolean,
+  online: boolean,
+  headerAutonumbering: boolean,
+  changeInputs(): void,
+  changeData(): void,
+  updated: boolean
+}
+
+class PageCreate extends React.Component<PageCreateProps> {
+  nameManager: () => void
+  urlManager: () => void
+  bodyManager: () => void
+  titleManager: () => void
+  descriptionManager: () => void
+  keywordsManager: () => void
+  canonicalUrlManager: () => void
+  pictureManager: () => void
+  metaManager: () => void
+  saveManager: () => void
+  saveAndShowManager: () => void
+  save: () => void
+
+  constructor(props: PageCreateProps) {
     super(props)
     this.nameManager = managers.nameManager.bind(this)
     this.urlManager = managers.urlManager.bind(this)
@@ -28,11 +51,18 @@ class PageCreate extends React.Component {
   }
 
   render() {
-    const { routeSynced, online, headerAutonumbering, changeInputs } = this.props
+    const {
+      routeSynced,
+      online,
+      headerAutonumbering,
+      changeInputs,
+      updated
+    } = this.props
 
     if (!routeSynced) return null
 
     const tileProps = { ...this.props, renderEdit: true, updatePage: this.save }
+    const updateStatusProps = { updated }
 
     return (
       <>
@@ -51,6 +81,7 @@ class PageCreate extends React.Component {
           <ManagedText {...this.nameManager()} />
           <ManagedButton {...this.saveManager()} />
           <ManagedButton {...this.saveAndShowManager()} />
+          <UpdateStatus {...updateStatusProps} />
         </form>
       </>
     )
