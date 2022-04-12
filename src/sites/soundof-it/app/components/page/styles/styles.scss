@@ -6,7 +6,6 @@ $padding-mobile: 18px;
 
 %page {
   #page {
-    // padding-top: 1020px;
     .root {
       @extend %root;
     }
@@ -50,8 +49,12 @@ $padding-mobile: 18px;
       margin-bottom: 20px;
       line-height: 1.8;
       color: #212F3C;
+      h1 {
+        font-size: 42px;
+        padding-bottom: 16px;
+      }
       .editorial {
-        padding: 10px $padding-desktop;
+        padding: 0 $padding-desktop;
         font-size: 18px;
         line-height: 1.5;
         border-left: 1px solid #F2F3F4;
@@ -62,20 +65,31 @@ $padding-mobile: 18px;
         }
       }
       .table-of-contents {
-        padding: 24px $padding-desktop 12px;
-        border-left: 1px solid #F2F3F4;
-        border-right: 1px solid #F2F3F4;
-        background: white;
-        line-height: 1.5;
-        color: #797D7F;
+        padding: $padding-desktop;
         @media #{$LARGE-PHONE} {
-          padding: 24px $padding-mobile 12px;
+          padding: $padding-mobile;
+        }
+        background: white;
+        .inner-container {
+          display: inline-block;
+          width: auto;
+          border: 1px solid #34495E;
+          border-radius: 5px;
+          padding: 18px 18px 8px;
+          line-height: 1;
+          color: #34495E;
         }
         a {
-          text-decoration: underline;
+          font-size: 14px;
+          margin-bottom: 9px;
+          &:hover {
+            color: #873600;
+          }
         }
         h2 {
           font-size: 14px;
+          text-align: center;
+          margin-bottom: 18px;
         }
         ul {
           list-style-type: none;
@@ -85,6 +99,8 @@ $padding-mobile: 18px;
             span:first-of-type {
               display: inline-block;
               width: 30px;
+              text-align: center;
+              margin-right: 8px;
             }
           }
         }
@@ -129,6 +145,9 @@ $padding-mobile: 18px;
           }
           &.h3 + .h4 {
             padding: 12px 0 12px;
+          }
+          &:first-of-type {
+            padding: 0 0 12px;
           }
         }
         ul {
