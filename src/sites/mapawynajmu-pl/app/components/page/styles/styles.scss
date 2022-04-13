@@ -43,8 +43,12 @@ $padding-mobile: 18px;
       margin: 0 auto;
       margin-bottom: 20px;
       line-height: 1.8;
+      h1 {
+        font-size: 32px;
+        padding-bottom: 16px;
+      }
       .editorial {
-        padding: 10px $padding-desktop;
+        padding: 0 $padding-desktop;
         font-size: 18px;
         line-height: 1.5;
         border-left: 1px solid #F2F3F4;
@@ -52,30 +56,6 @@ $padding-mobile: 18px;
         background: white;
         @media #{$LARGE-PHONE} {
           padding: 10px $padding-mobile;
-        }
-      }
-      .table-of-contents {
-        padding: 24px $padding-desktop 12px;
-        border-left: 1px solid #F2F3F4;
-        border-right: 1px solid #F2F3F4;
-        background: white;
-        line-height: 1.5;
-        color: #797D7F;
-        @media #{$LARGE-PHONE} {
-          padding: 24px $padding-mobile 12px;
-        }
-        a {
-          color: inherit;
-          &:hover {
-            color: #2C3E50;
-          }
-        }
-        h2 {
-          font-size: 15px;
-        }
-        ul {
-          list-style-type: none;
-          font-size: 15px;
         }
       }
       h1, h2, h3 {
@@ -93,12 +73,12 @@ $padding-mobile: 18px;
         @media #{$LARGE-PHONE} {
           padding: 0 20px;
         }
-        h2 {
-          padding: 50px 0 10px;
-          font-size: 24px;
+        .header-container {
+          padding: 50px 0 12px;
+          font-size: 18px;
         }
-        h2:first-of-type {
-          padding: 30px 0 10px;
+        .header-container:first-of-type {
+          padding-top: 0;
         }
         p {
           margin: 12px 0 0 0;
@@ -108,6 +88,50 @@ $padding-mobile: 18px;
           li {
             p {
               margin: 6px 0 0 0;
+            }
+          }
+        }
+      }
+      .table-of-contents {
+        padding: $padding-desktop;
+        @media #{$LARGE-PHONE} {
+          padding: $padding-mobile;
+        }
+        background: white;
+        .inner-container {
+          display: inline-block;
+          width: auto;
+          border: 1px solid #D0D3D4;
+          border-radius: 5px;
+          padding: 24px 24px 12px;
+          line-height: 1;
+          h2 {
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 18px;
+            color: #34495E;
+          }
+          ul {
+            list-style-type: none;
+            font-size: 14px;
+            li {
+              position: relative;
+              margin-bottom: 12px;
+              span:first-of-type {
+                display: inline-block;
+                width: 30px;
+                text-align: center;
+                margin-right: 8px;
+              }
+              a {
+                font-size: 15px;
+                text-decoration: none;
+                color: #34495E;
+                font-size: 14px;
+                &:hover {
+                  color: #873600;
+                }
+              }
             }
           }
         }
