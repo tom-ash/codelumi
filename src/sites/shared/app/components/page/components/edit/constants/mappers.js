@@ -1,6 +1,6 @@
 export const mapStateToProps = store => {
   const { lang, routeSynced } = store.app
-  const { fetching } = store.page.edit.control
+  const { fetching, nav } = store.page.edit.control
   const {
     name,
     url,
@@ -37,7 +37,8 @@ export const mapStateToProps = store => {
     isAdmin: role == 'admin',
     online,
     headerAutonumbering,
-    updated
+    updated,
+    nav
   }
 }
   

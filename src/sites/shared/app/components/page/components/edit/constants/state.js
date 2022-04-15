@@ -1,5 +1,6 @@
 export const control = {
-  fetching: false
+  fetching: false,
+  nav: 'body'
 }
 
 export const inputs = {

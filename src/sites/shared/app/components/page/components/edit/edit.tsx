@@ -15,9 +15,11 @@ interface PageCreateProps {
   routeSynced: boolean,
   online: boolean,
   headerAutonumbering: boolean,
+  changeControl(args: object): void,
   changeInputs(): void,
   changeData(): void,
-  updated: boolean
+  updated: boolean,
+  nav: string
 }
 
 class PageCreate extends React.Component<PageCreateProps> {
@@ -55,8 +57,10 @@ class PageCreate extends React.Component<PageCreateProps> {
       routeSynced,
       online,
       headerAutonumbering,
+      changeControl,
       changeInputs,
-      updated
+      updated,
+      nav
     } = this.props
 
     if (!routeSynced) return null
@@ -67,22 +71,59 @@ class PageCreate extends React.Component<PageCreateProps> {
     return (
       <>
         <PageTile { ...tileProps } />
-        <form>
-          <OnlineInput checked={online} changeInputs={changeInputs} />
-          <HeaderAutonumberingInput checked={headerAutonumbering} changeInputs={changeInputs} />
-          <ManagedTextarea {...this.bodyManager()} />
-          <ManagedText {...this.titleManager()} />
-          <ManagedTextarea {...this.descriptionManager()} />
-          <ManagedTextarea {...this.keywordsManager()} />
-          <ManagedText {...this.pictureManager()} />
-          <ManagedTextarea {...this.metaManager()} />
-          <ManagedText {...this.urlManager()} />
-          <ManagedText {...this.canonicalUrlManager()} />
-          <ManagedText {...this.nameManager()} />
-          <ManagedButton {...this.saveManager()} />
-          <ManagedButton {...this.saveAndShowManager()} />
-          <UpdateStatus {...updateStatusProps} />
-        </form>
+        <div id='edit-panel'>
+          <nav>
+            <div onClick={() => changeControl({ nav: 'body' })}>
+              Body
+            </div>
+            <div onClick={() => changeControl({ nav: 'controls' })}>
+              Controls
+            </div>
+            <div onClick={() => changeControl({ nav: 'meta' })}>
+              Meta
+            </div>
+            <div onClick={() => changeControl({ nav: 'urls' })}>
+              URLs
+            </div>
+            <div onClick={() => changeControl({ nav: 'name' })}>
+              Name
+            </div>
+            <div onClick={() => changeControl({ nav: 'schema' })}>
+              Schema
+            </div>
+          </nav>
+          <form>
+            {nav === 'body' && <>
+              <ManagedTextarea {...this.bodyManager()} />
+            </>}
+
+            {nav === 'controls' && <>
+              <OnlineInput checked={online} changeInputs={changeInputs} />
+              <HeaderAutonumberingInput checked={headerAutonumbering} changeInputs={changeInputs} />
+            </>}
+
+            {nav === 'meta' && <>
+              <ManagedText {...this.titleManager()} />
+              <ManagedTextarea {...this.descriptionManager()} />
+              <ManagedTextarea {...this.keywordsManager()} />
+              <ManagedText {...this.pictureManager()} />
+              <ManagedTextarea {...this.metaManager()} />
+            </>}
+
+            {nav === 'urls' &&  <>
+              <ManagedText {...this.urlManager()} />
+              <ManagedText {...this.canonicalUrlManager()} />
+            </>}
+
+            {nav === 'name' &&  <>
+              <ManagedText {...this.nameManager()} />
+            </>}
+
+            <ManagedButton {...this.saveManager()} />
+            <ManagedButton {...this.saveAndShowManager()} />
+            <UpdateStatus {...updateStatusProps} />
+          </form>
+        </div>
       </>
     )
   }
