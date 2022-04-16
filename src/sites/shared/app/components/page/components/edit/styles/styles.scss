@@ -75,6 +75,7 @@
     background: rgba(0, 0, 0, 0.9);
     border-radius: 5px;
     color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     nav {
       position: absolute;
       top: 0;
@@ -148,7 +149,12 @@
       bottom: 0;
       left: 120px;
       overflow-y: scroll;
-      padding: 12px 0;
+      padding: 12px;
+      border-left: 1px solid gray;
+      border-right: 1px solid gray;
+      &.body {
+        padding: 0;
+      }
       .form-input {
         &.text, &.textarea {
           margin-bottom: 24px;
@@ -197,12 +203,15 @@
             font-size: 12px;
           }
           &.body {
+            height: 100%;
             .label {
               display: none;
             }
             .input {
               position: absolute;
-              height: 276px;
+              height: 100%;
+              border: none;
+              border-radius: 0;
             }
             .counter {
               top: 8px;

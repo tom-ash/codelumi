@@ -92,7 +92,7 @@ class PageCreate extends React.Component<PageCreateProps> {
               Schema
             </div>
           </nav>
-          <form>
+          <form className={nav}>
             {nav === 'body' && <>
               <ManagedTextarea {...this.bodyManager()} />
             </>}
