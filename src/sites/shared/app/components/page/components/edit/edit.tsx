@@ -19,7 +19,10 @@ interface PageCreateProps {
   changeInputs(): void,
   changeData(): void,
   updated: boolean,
-  nav: string
+  nav: string,
+  schemaMode: string,
+  autoSchema: object,
+  manualSchema: object
 }
 
 class PageCreate extends React.Component<PageCreateProps> {
@@ -60,7 +63,10 @@ class PageCreate extends React.Component<PageCreateProps> {
       changeControl,
       changeInputs,
       updated,
-      nav
+      nav,
+      schemaMode,
+      autoSchema,
+      manualSchema
     } = this.props
 
     if (!routeSynced) return null
@@ -117,6 +123,10 @@ class PageCreate extends React.Component<PageCreateProps> {
 
             {nav === 'name' &&  <>
               <ManagedText {...this.nameManager()} />
+            </>}
+
+            {nav === 'schema' &&  <>
+              TODO
             </>}
           </form>
           <ManagedButton {...this.saveManager()} />

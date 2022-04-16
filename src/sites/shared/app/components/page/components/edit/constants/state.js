@@ -16,7 +16,10 @@ export const inputs = {
   meta: null,
   lang_ver_urls: null,
   online: null,
-  headerAutonumbering: null
+  headerAutonumbering: null,
+  schemaMode: null,
+  autoSchema: null,
+  manualSchema: null
 }
 
 export const data = {

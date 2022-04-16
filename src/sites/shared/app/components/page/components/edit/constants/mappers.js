@@ -14,7 +14,10 @@ export const mapStateToProps = store => {
     picture,
     lang_ver_urls,
     online,
-    headerAutonumbering
+    headerAutonumbering,
+    schemaMode,
+    autoSchema,
+    manualSchema
   } = store.page.edit.inputs
   const { role } = store.user.authorize.data
   const { updated } = store.page.edit.data
@@ -38,7 +41,10 @@ export const mapStateToProps = store => {
     online,
     headerAutonumbering,
     updated,
-    nav
+    nav,
+    schemaMode,
+    autoSchema,
+    manualSchema
   }
 }
   
