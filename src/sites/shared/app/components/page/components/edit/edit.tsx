@@ -118,11 +118,10 @@ class PageCreate extends React.Component<PageCreateProps> {
             {nav === 'name' &&  <>
               <ManagedText {...this.nameManager()} />
             </>}
-
-            <ManagedButton {...this.saveManager()} />
-            <ManagedButton {...this.saveAndShowManager()} />
-            <UpdateStatus {...updateStatusProps} />
           </form>
+          <ManagedButton {...this.saveManager()} />
+          <ManagedButton {...this.saveAndShowManager()} />
+          <UpdateStatus {...updateStatusProps} />
         </div>
       </>
     )
