@@ -14,9 +14,6 @@ export function save({ withRouteChange = false }) {
     changeData({ updated: false })
   }
   
-  console.log(autoSchema)
-  console.log(manualSchema)
-  
   const { method, route } = UPDATE_API_ROUTE
 
   let currentH2 = 0

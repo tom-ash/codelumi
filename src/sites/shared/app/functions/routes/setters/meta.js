@@ -2,10 +2,10 @@ import metaDataParser from '../../../../shared/functions/parsers/meta-data.js'
 import getPureUrl from '../../../../shared/functions/routes/getters/pure-url.js'
 
 function metaSetter(meta) {
-  const { clientUrl, url, canonicalUrl } = meta
+  const { clientUrl, url, canonicalUrl, schema } = meta
   const canonicalPath = typeof canonicalUrl === 'string' ? canonicalUrl : url
   const parsedMeta = metaDataParser({ ...meta, canonicalUrl: getPureUrl(`${clientUrl}/${canonicalPath}`) })
-  const { lang, title, description, keywords, openGraph, schemaOrg } = parsedMeta
+  const { lang, title, description, keywords, openGraph } = parsedMeta
   
   document.documentElement.lang = lang
   document.title = title
@@ -17,7 +17,7 @@ function metaSetter(meta) {
     document.querySelector(`meta[property="${name}"]`).setAttribute("content", value)
   })
 
-  document.querySelector(`script[type="application/ld+json"]`).innerHTML = schemaOrg
+  document.querySelector(`script[type="application/ld+json"]`).innerHTML = schema
 }
 
 export default metaSetter

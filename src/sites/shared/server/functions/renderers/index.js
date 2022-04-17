@@ -6,7 +6,7 @@ import buildAlternateLinks from '../builders/alternate_links.js'
 
 function indexRenderer({
   clientUrl, url, canonicalUrl, noIndex, links, langs, lang, buildUrl,
-  title, description, keywords, openGraph, schemaOrg,
+  title, description, keywords, openGraph, schema,
   html, css, preloadedState, scriptTags
 }) {
   const charsetMeta = `<meta charset="UTF-8">`
@@ -18,7 +18,7 @@ function indexRenderer({
   const descriptionMeta = `<meta name="description" content="${description}">`
   const keywordsMeta = `<meta name="keywords" content="${keywords}">`
   const openGraphMeta = openGraphProvider(openGraph)
-  const schemaOrgMeta = schemaOrgProvider(schemaOrg)
+  const schemaOrgMeta = `<script type="application/ld+json">${schema}</script>`
   const style = `<style type="text/css">${[...css].join('')}</style>`
   const preloadedStateScript = `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}</script>`
   const alternateLinks = buildAlternateLinks({ links, langs, buildUrl })

@@ -24,7 +24,7 @@ function matchStateToRouteGeneric({
   syncRouteData.call(this, { apiUrl, url, query, requestType: 'ssr' })
   .then(syncedRouteData => {
     const { state, meta } = syncedRouteData
-    
+
     genericRouteStateSetter.call(this, state)
     metaSetter({ clientUrl, url, ...meta })
   })
