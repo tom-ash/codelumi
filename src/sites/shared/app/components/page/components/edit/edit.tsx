@@ -10,6 +10,7 @@ import PageTile from '../shared/components/tile/tile'
 import OnlineInput from './inputs/online.js'
 import HeaderAutonumberingInput from './inputs/header-auto-numbering'
 import UpdateStatus from './components/update-status'
+import Schema from './components/schema/schema'
 
 interface PageCreateProps {
   routeSynced: boolean,
@@ -21,8 +22,8 @@ interface PageCreateProps {
   updated: boolean,
   nav: string,
   schemaMode: string,
-  autoSchema: object,
-  manualSchema: object
+  autoSchema: string,
+  manualSchema: string
 }
 
 class PageCreate extends React.Component<PageCreateProps> {
@@ -73,6 +74,7 @@ class PageCreate extends React.Component<PageCreateProps> {
 
     const tileProps = { ...this.props, renderEdit: true, updatePage: this.save }
     const updateStatusProps = { updated }
+    const schemaProps = { schemaMode, autoSchema, manualSchema, changeInputs }
 
     return (
       <>
@@ -125,9 +127,7 @@ class PageCreate extends React.Component<PageCreateProps> {
               <ManagedText {...this.nameManager()} />
             </>}
 
-            {nav === 'schema' &&  <>
-              TODO
-            </>}
+            {nav === 'schema' &&  <Schema {...schemaProps} />}
           </form>
           <ManagedButton {...this.saveManager()} />
           <ManagedButton {...this.saveAndShowManager()} />
