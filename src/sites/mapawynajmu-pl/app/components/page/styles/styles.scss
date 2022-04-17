@@ -66,7 +66,7 @@ $padding-mobile: 18px;
         border-bottom: 1px solid #F2F3F4;
         border-left: 1px solid #F2F3F4;
         background: white;
-        padding: 0 $padding-desktop 26px;
+        padding: 12px $padding-desktop 26px;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         font-size: 18px;
@@ -74,14 +74,17 @@ $padding-mobile: 18px;
           padding: 0 20px;
         }
         .header-container {
-          padding: 50px 0 12px;
+          padding: 0 0 12px;
           font-size: 18px;
         }
-        .header-container:first-of-type {
-          padding-top: 0;
+        p + .header-container {
+          padding-top: 50px;
+        }
+        ul + .header-container {
+          padding-top: 50px;
         }
         p {
-          margin: 12px 0 0 0;
+          margin: 0 0 12px 0;
         }
         ul {
           padding-left: 20px;
@@ -93,9 +96,9 @@ $padding-mobile: 18px;
         }
       }
       .table-of-contents {
-        padding: $padding-desktop;
+        padding: $padding-desktop $padding-desktop 24px;
         @media #{$LARGE-PHONE} {
-          padding: $padding-mobile;
+          padding: $padding-mobile $padding-mobile 12px;
         }
         background: white;
         .inner-container {
@@ -103,7 +106,7 @@ $padding-mobile: 18px;
           width: auto;
           border: 1px solid #D0D3D4;
           border-radius: 5px;
-          padding: 24px 24px 12px;
+          padding: 24px 24px 0;
           line-height: 1;
           h2 {
             font-size: 14px;

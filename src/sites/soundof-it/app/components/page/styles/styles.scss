@@ -65,9 +65,9 @@ $padding-mobile: 18px;
         }
       }
       .table-of-contents {
-        padding: $padding-desktop;
+        padding: 24px $padding-desktop;
         @media #{$LARGE-PHONE} {
-          padding: $padding-mobile;
+          padding: 24px $padding-mobile;
         }
         background: white;
         .inner-container {
@@ -126,13 +126,13 @@ $padding-mobile: 18px;
             margin-right: 12px;
           }
           &.h2 {
-            padding: 60px 0 12px;
+            padding: 72px 0 18px;
             .number, h2 {
               font-size: 24px;
             }
           }
           &.h3 {
-            padding: 36px 0 12px;
+            padding: 18px 0 18px;
             .number, h3 {
               font-size: 20px;
             }
@@ -141,21 +141,23 @@ $padding-mobile: 18px;
             padding: 36px 0 12px;
           }
           &.h2 + .h3 {
-            padding: 12px 0 12px;
+            padding: 0 0 18px;
           }
           &.h3 + .h4 {
             padding: 12px 0 12px;
           }
-          &:first-of-type {
+        }
+        .header-container:first-child {
+          &.h2 {
             padding: 0 0 12px;
-          }
+          }  
         }
         ul {
           margin: 20px 0 0 0;
           padding-left: 20px;
         }
         p {
-          margin: 18px 0 0 0;
+          margin: 0 0 18px;
           > code {
             border-radius: 3px;
             padding: 2px 5px;
@@ -172,11 +174,8 @@ $padding-mobile: 18px;
           }
         }
         pre {
-          margin: 18px 0 0;
+          margin: 0 0 18px;
           padding: 12px;
-        }
-        .header-container + p {
-          margin-top: 6px;
         }
         p + ul {
           margin-top: 0;
