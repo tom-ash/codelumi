@@ -17,7 +17,9 @@ export const mapStateToProps = store => {
     headerAutonumbering,
     schemaMode,
     autoSchema,
-    manualSchema
+    manualSchema,
+    publishedOn,
+    modifiedOn
   } = store.page.edit.inputs
   const { role } = store.user.authorize.data
   const { updated } = store.page.edit.data
@@ -44,7 +46,9 @@ export const mapStateToProps = store => {
     nav,
     schemaMode,
     autoSchema,
-    manualSchema
+    manualSchema,
+    publishedOn,
+    modifiedOn
   }
 }
   

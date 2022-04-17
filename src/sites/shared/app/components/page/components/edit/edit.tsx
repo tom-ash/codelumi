@@ -11,6 +11,7 @@ import OnlineInput from './inputs/online.js'
 import HeaderAutonumberingInput from './inputs/header-auto-numbering'
 import UpdateStatus from './components/update-status'
 import Schema from './components/schema/schema'
+import Meta from './components/meta/meta'
 
 interface PageCreateProps {
   routeSynced: boolean,
@@ -23,7 +24,9 @@ interface PageCreateProps {
   nav: string,
   schemaMode: string,
   autoSchema: string,
-  manualSchema: string
+  manualSchema: string,
+  publishedOn: string,
+  modifiedOn: string
 }
 
 class PageCreate extends React.Component<PageCreateProps> {
@@ -67,7 +70,9 @@ class PageCreate extends React.Component<PageCreateProps> {
       nav,
       schemaMode,
       autoSchema,
-      manualSchema
+      manualSchema,
+      publishedOn,
+      modifiedOn
     } = this.props
 
     if (!routeSynced) return null
@@ -75,6 +80,7 @@ class PageCreate extends React.Component<PageCreateProps> {
     const tileProps = { ...this.props, renderEdit: true, updatePage: this.save }
     const updateStatusProps = { updated }
     const schemaProps = { schemaMode, autoSchema, manualSchema, changeInputs }
+    const metaProps = { publishedOn, modifiedOn, changeInputs }
 
     return (
       <>
@@ -111,6 +117,7 @@ class PageCreate extends React.Component<PageCreateProps> {
             </>}
 
             {nav === 'meta' && <>
+              <Meta {...metaProps} />
               <ManagedText {...this.titleManager()} />
               <ManagedTextarea {...this.descriptionManager()} />
               <ManagedTextarea {...this.keywordsManager()} />

@@ -1,6 +1,6 @@
 export const control = {
   fetching: false,
-  nav: 'schema'
+  nav: 'meta'
   // nav: 'body'
 }
 
@@ -20,7 +20,9 @@ export const inputs = {
   headerAutonumbering: null,
   schemaMode: null,
   autoSchema: null,
-  manualSchema: null
+  manualSchema: null,
+  publishedOn: null,
+  modifiedOn: null
 }
 
 export const data = {
