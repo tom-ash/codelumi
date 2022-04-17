@@ -1,5 +1,4 @@
 import openGraphProvider from '../providers/open-graph'
-import schemaOrgProvider from '../providers/schema-org'
 import pretty from 'pretty'
 import getPureUrl from '../../../shared/functions/routes/getters/pure-url.js'
 import buildAlternateLinks from '../builders/alternate_links.js'
