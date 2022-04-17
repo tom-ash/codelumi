@@ -2,18 +2,10 @@ import getAccessToken from '../../../../../../app/functions/tokens/getters/get-t
 import { UPDATE_API_ROUTE } from '../constants/api_route_data.js'
 
 export function save({ withRouteChange = false }) {
-  const { apiUrl, changeControl, changeData, headerAutonumbering } = this.props
+  const { apiUrl, changeControl, changeData, headerAutonumbering, autoSchema, manualSchema } = this.props
   const body = JSON.parse(this.props.body)
   const style = JSON.parse(this.props.style)
   const meta = JSON.parse(this.props.meta)
-
-  try {
-    const autoSchema = JSON.parse(this.props.autoSchema)
-    const manualSchema = JSON.parse(this.props.manualSchema)
-  } catch {
-    changeData({ updated: false })
-  }
-  
   const { method, route } = UPDATE_API_ROUTE
 
   let currentH2 = 0

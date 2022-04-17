@@ -8,7 +8,7 @@ interface AutoSchemaTextareaProps {
 
 const AutoSchemaTextarea = (props: AutoSchemaTextareaProps) => {
   const { autoSchema, changeInputs } = props
-  const classNames = { container: 'form-input textarea' }
+  const classNames = { container: 'form-input textarea schema' }
   const label = 'Auto Schema'
   const value = autoSchema
   const counterLimit = 10000

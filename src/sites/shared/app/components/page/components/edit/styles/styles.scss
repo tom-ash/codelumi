@@ -218,6 +218,11 @@
               right: 10px;
             }
           }
+          &.schema {
+            .input {
+              height: 200px;
+            }
+          }
         }
       }
     }

@@ -8,7 +8,7 @@ interface ManualSchemaTextareaProps {
 
 const ManualSchemaTextarea = (props: ManualSchemaTextareaProps) => {
   const { manualSchema, changeInputs } = props
-  const classNames = { container: 'form-input textarea' }
+  const classNames = { container: 'form-input textarea schema' }
   const label = 'Manual Schema'
   const value = manualSchema
   const counterLimit = 10000
