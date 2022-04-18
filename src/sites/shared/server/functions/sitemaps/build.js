@@ -24,11 +24,14 @@ function buildLocalizedUrls({ unlocalizedUrlGroup, clientUrl }) {
   let localizedUrls = ''
 
   unlocalizedUrlGroup.map(localizedUrl => {
+    const { path, modifiedon, changefreq, priority } = localizedUrl
+
     localizedUrls += (
       `<url>
-        <loc>${clientUrl}/${localizedUrl.path}</loc>
-        <changefreq>${localizedUrl.changefreq}</changefreq>
-        <priority>${localizedUrl.priority}</priority>
+        <loc>${clientUrl}/${path}</loc>
+        ${modifiedon ? `<lastmod>${modifiedon}</lastmod>` : ''}
+        <changefreq>${changefreq}</changefreq>
+        <priority>${priority}</priority>
         ${buildAltUrls({ unlocalizedUrlGroup, clientUrl })}
       </url>`
     )
