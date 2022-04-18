@@ -26,14 +26,15 @@ export const BodyTextarea = (props: BodyTextareaProps) => {
 interface SaveButtonProps {
   apiUrl: string,
   imageId: number,
-  body: string
+  body: string,
+  width: string,
+  height: string
 }
 
 export const SaveButton = (props: SaveButtonProps) => {
-  const { apiUrl, imageId, body } = props
-
+  const { apiUrl, imageId, body, width, height } = props
   const classNames = { container: 'form-input textarea' }
-  const onClick = () => save({ apiUrl, imageId, body, withRouteChange: false })
+  const onClick = () => save({ apiUrl, imageId, body, width, height })
   const label = 'Save'
 
   const buttonProps = {

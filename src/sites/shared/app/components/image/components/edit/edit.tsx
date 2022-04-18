@@ -4,12 +4,16 @@ import styles from './styles/styles.scss'
 import { BodyTextarea, SaveButton, DownloadButton } from './functions/form-elements'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
+import WidthInput from './components/width-input'
+import HeightInput from './components/height-input'
 
 type ImageEditProps = {
   apiUrl: string,
   imageId: number,
   body: string,
-  changeData(): void
+  changeData(): void,
+  width: string,
+  height: string
 }
 
 const ImageEdit = (props: ImageEditProps) => {
@@ -19,7 +23,9 @@ const ImageEdit = (props: ImageEditProps) => {
     apiUrl,
     imageId,
     body,
-    changeData
+    changeData,
+    width,
+    height
   } = props
 
   const bodyElements = (() => {
@@ -30,9 +36,24 @@ const ImageEdit = (props: ImageEditProps) => {
     }
   })()
 
+  const widthInputProps = { width, changeData }
+  const heightInputProps = { height, changeData }
+  const bodyTextareaProps = { body, changeData }
+  const saveButtonProps = { imageId, body, apiUrl, width, height }
+
+  console.log(width)
+  // console.log(height)
+
   return (
     <div className='edit'>
-      <div id='image-output' className='output'>
+      <div
+        id='image-output'
+        className='output'
+        style={{
+          width: +width,
+          height: +height
+        }}
+      >
         {/* @ts-ignore */}
         {bodyElements.map((bodyElement, index) => {
 
@@ -57,26 +78,18 @@ const ImageEdit = (props: ImageEditProps) => {
           return (
             React.createElement(
               bodyElement.t,
-              //@ts-ignore
               { ...bodyElement.attrs, key: index },
-              //@ts-ignore
               bodyElement.c
             )
           )
         })}
       </div>
-      <BodyTextarea
-        body={body}
-        changeData={changeData}
-      />
-      <SaveButton
-        imageId={imageId}
-        body={body}
-        apiUrl={apiUrl}
-      />
-      <DownloadButton
 
-      />
+      <WidthInput {...widthInputProps} />
+      <HeightInput {...heightInputProps} />
+      <BodyTextarea {...bodyTextareaProps} />
+      <SaveButton {...saveButtonProps} />
+      <DownloadButton />
     </div>
   )
 }

@@ -69,3 +69,31 @@
   background: white;
   transform: skew(-10deg, 0deg);
 }
+
+
+
+
+#logo-image {
+  padding: 100px;
+}
+
+#logo-image div:nth-child(1) {
+  border-radius: 50% 50% 50% 0;
+  border: 30px solid #21618C;
+  width: 200px;
+  height: 200px;
+  transform: rotate(-45deg);
+}
+
+#logo-image div:nth-child(1)::after {
+  position: absolute;
+  content: '';
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  background-color: #3498DB;
+}

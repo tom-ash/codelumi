@@ -1,20 +1,19 @@
-// import getAccessToken from '../../../../../../app/functions/tokens/getters/get-tokens.js'
-// import { UPDATE_API_ROUTE } from '../constants/api_route_data.js'
-
 interface saveProps {
   apiUrl: string,
-  withRouteChange: boolean,
   imageId: number,
-  body: string
+  body: string,
+  width: string,
+  height: string
 }
 
 export function save(props: saveProps) {
 
   const {
     apiUrl,
-    withRouteChange = false,
     imageId,
-    body
+    body,
+    width,
+    height
   } = props
 
   const parsedBody = JSON.parse(body)
@@ -27,7 +26,9 @@ export function save(props: saveProps) {
     },
     body: JSON.stringify({
       imageId,
-      body: parsedBody
+      body: parsedBody,
+      width,
+      height
     })
   })
   // TODO:

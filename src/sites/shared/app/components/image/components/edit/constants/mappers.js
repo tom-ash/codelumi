@@ -5,7 +5,9 @@ export const mapStateToProps = store => {
       edit: {
         data: {
           id: imageId,
-          body
+          body,
+          width,
+          height
         }
       }
     }
@@ -13,7 +15,9 @@ export const mapStateToProps = store => {
 
   return {
     imageId,
-    body
+    body,
+    width,
+    height
   }
 }
   
