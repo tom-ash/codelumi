@@ -4,8 +4,7 @@ import styles from './styles/styles.scss'
 import { BodyTextarea, SaveButton, DownloadButton } from './functions/form-elements'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import WidthInput from './components/width-input'
-import HeightInput from './components/height-input'
+import Dimensions from './components/dimensions/dimensions'
 
 type ImageEditProps = {
   apiUrl: string,
@@ -36,16 +35,15 @@ const ImageEdit = (props: ImageEditProps) => {
     }
   })()
 
-  const widthInputProps = { width, changeData }
-  const heightInputProps = { height, changeData }
   const bodyTextareaProps = { body, changeData }
   const saveButtonProps = { imageId, body, apiUrl, width, height }
-
-  console.log(width)
-  // console.log(height)
+  const dimensionsProps = { width, height, changeData }
 
   return (
     <div className='edit'>
+      <Dimensions {...dimensionsProps} />
+
+
       <div
         id='image-output'
         className='output'
@@ -85,8 +83,7 @@ const ImageEdit = (props: ImageEditProps) => {
         })}
       </div>
 
-      <WidthInput {...widthInputProps} />
-      <HeightInput {...heightInputProps} />
+      
       <BodyTextarea {...bodyTextareaProps} />
       <SaveButton {...saveButtonProps} />
       <DownloadButton />
