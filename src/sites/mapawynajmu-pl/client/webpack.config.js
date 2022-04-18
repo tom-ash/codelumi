@@ -3,6 +3,7 @@ var path = require('path')
 var ROOT_DIR = path.join(__dirname, '../../../../')
 var SRC_DIR = path.join(__dirname, './')
 var DIST_DIR = path.join(__dirname, "../../../../dist/sites/mapawynajmu-pl/client")
+var CopyPlugin = require('copy-webpack-plugin')
 
 const LoadablePlugin = require('@loadable/webpack-plugin')
 
@@ -68,7 +69,13 @@ var config = {
       filename: 'loadable-stats.json',
       writeToDisk: true
     }),
-    new webpack.DefinePlugin({ 'APP_ENV': JSON.stringify(process.env.APP_ENV) })
+    new webpack.DefinePlugin({ 'APP_ENV': JSON.stringify(process.env.APP_ENV) }),
+    new CopyPlugin({
+      patterns: [
+        { from: './src/sites/mapawynajmu-pl/client/robots.txt', to: 'robots.txt' },
+        { from: './src/sites/mapawynajmu-pl/client/favicon.ico', to: 'favicon.ico' }
+      ]
+    })
   ]
 };
 
