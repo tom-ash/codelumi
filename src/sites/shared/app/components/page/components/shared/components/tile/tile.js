@@ -3,7 +3,10 @@ import jsonToJsxParser from './functions/json_to_jsx_parser'
 import SVG from '../../../../../support/svg/svg.js'
 
 const PageTile = props => {
-  const { device, appName, customNodeParser, customMetaParser, renderShow, renderEdit, fetching, name, body, meta, isAdmin, clientUrl, changeRoute, buildUrl, changePage, updatePage, lang, langHandler } = props
+  const {
+    device, appName, customNodeParser, customMetaParser, renderShow, renderEdit, fetching, name, body, meta, isAdmin,
+    clientUrl, changeRoute, buildUrl, changePage, updatePage, lang, langHandler, publishedOn, modifiedOn
+  } = props
 
   const buttonClasses = ['edit']
   if (fetching) buttonClasses.push('fetching')
@@ -30,7 +33,10 @@ const PageTile = props => {
   const mainElement = React.createElement(
     mainElementType,
     { className },
-    jsonToJsxParser({ appName, jsonBody, jsonMeta, clientUrl, changeRoute, buildUrl, device, isAdmin, customNodeParser, lang, langHandler })
+    jsonToJsxParser({
+      appName, jsonBody, jsonMeta, clientUrl, changeRoute, buildUrl, device, isAdmin, customNodeParser, lang,
+      langHandler, publishedOn, modifiedOn
+    })
   )
 
   return (

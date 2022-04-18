@@ -1,8 +1,5 @@
-// @ts-ignore
 import React from 'react'
-// @ts-ignore
 import useStyles from 'isomorphic-style-loader/useStyles'
-// // @ts-ignore
 import SVG from '../../../../../../../support/svg/svg.js'
 
 interface TitleBoardProps {
@@ -16,17 +13,16 @@ interface TitleBoardProps {
     authorLink: string,
     authorPicture: string,
     logo: string,
-    publishedOn: string,
-    lastUpdatedOn: string,
     imageTop: number,
     imageLargePcTop: number,
     imageSmallPcTop: number,
     imageLargeTabletTop: number,
     imageSmallTabletTop: number,
     imageLargePhoneTop: number,
-    imageSmallPhoneTop: number,
-    hashtags: string
-  }
+    imageSmallPhoneTop: number
+  },
+  publishedOn: string,
+  modifiedOn: string
 }
 
 const TitleBoard = (props: TitleBoardProps) => {
@@ -41,8 +37,6 @@ const TitleBoard = (props: TitleBoardProps) => {
       authorLink,
       authorPicture,
       logo,
-      publishedOn,
-      lastUpdatedOn,
       imageTop,
       imageLargePcTop,
       imageSmallPcTop,
@@ -50,8 +44,9 @@ const TitleBoard = (props: TitleBoardProps) => {
       imageSmallTabletTop,
       imageLargePhoneTop,
       imageSmallPhoneTop,
-      hashtags
-    }
+    },
+    publishedOn,
+    modifiedOn
   } = props
 
   useStyles(require(`../../../../../../../../../../${appName}/app/components/page/styles/article/header.scss`))
@@ -63,8 +58,6 @@ const TitleBoard = (props: TitleBoardProps) => {
   if (device === 'largePc') {
     mediaQueryImageTop = imageLargePcTop || 0
   }
-
-  const parsedHashtags = (hashtags || '').split(', ')
 
   return (
     <header>
@@ -101,16 +94,12 @@ const TitleBoard = (props: TitleBoardProps) => {
           {langHandler({ pl: 'Opublikowano w dniu', en: 'Published on'})} {publishedOn}
         </span>
         <span>
-        {langHandler({ pl: 'Ostatnio zmodyfikowano w dniu', en: 'Last updated on'})} {lastUpdatedOn}
+        {langHandler({ pl: 'Ostatnio zmodyfikowano w dniu', en: 'Last updated on'})} {modifiedOn}
         </span>
       </div>
       <h1>
         {title}
       </h1>
-      {parsedHashtags.length > 1 &&
-      <div className='hashtags'>
-        {parsedHashtags.map(hashtag => <span key={hashtag}>#{hashtag}</span>)}
-      </div>}
     </header>
   )
 }

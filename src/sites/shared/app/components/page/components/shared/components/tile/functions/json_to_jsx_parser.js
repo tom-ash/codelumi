@@ -9,7 +9,7 @@ const TableOfContents = loadable(() => import('../components/table-of-contents/t
 const Section = loadable(() => import('../components/section/section'))
 
 const jsonToJsxParser = props => {
-  const { jsonBody, appName, device, langHandler, iSection, isAdmin } = props
+  const { jsonBody, appName, device, langHandler, iSection, isAdmin, publishedOn, modifiedOn } = props
 
   let imageEditor = null
   let titleBoard = null
@@ -24,7 +24,9 @@ const jsonToJsxParser = props => {
       imageEditor = <ImageEditor key={index} node={node} />
     }
     if (node.t === 'tb') {
-      titleBoard = <TitleBoard key={index} node={node} appName={appName} device={device} langHandler={langHandler}/>
+      const titleBoardProps = { key: index, node, appName, device, langHandler, publishedOn, modifiedOn }
+
+      titleBoard = <TitleBoard {...titleBoardProps} />
 
       return null
     }
