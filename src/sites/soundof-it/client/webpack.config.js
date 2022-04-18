@@ -72,8 +72,8 @@ var config = {
     new webpack.DefinePlugin({ 'APP_ENV': JSON.stringify(process.env.APP_ENV) }),
     new CopyPlugin({
       patterns: [
-        { from: './src/sites/mapawynajmu-pl/client/robots.txt', to: 'robots.txt' },
-        { from: './src/sites/mapawynajmu-pl/client/favicon.ico', to: 'favicon.ico' }
+        { from: './src/sites/soundof-it/client/robots.txt', to: 'robots.txt' },
+        { from: './src/sites/soundof-it/client/favicon.ico', to: 'favicon.ico' }
       ]
     })
   ]

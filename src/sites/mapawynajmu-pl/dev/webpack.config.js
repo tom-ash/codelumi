@@ -74,7 +74,7 @@ var config = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/sites/mapawynajmu-pl/dev/index.html',
-      favicon: './src/sites/mapawynajmu-pl/dev/favicon.png'
+      favicon: './src/sites/mapawynajmu-pl/dev/favicon.ico'
     }),
     new webpack.DefinePlugin({ 'APP_ENV': JSON.stringify(process.env.APP_ENV) })
   ]

@@ -74,7 +74,7 @@ var config = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/sites/soundof-it/dev/index.html',
-      favicon: './src/sites/soundof-it/dev/favicon.png'
+      favicon: './src/sites/soundof-it/dev/favicon.ico'
     }),
     new webpack.DefinePlugin({ 'APP_ENV': JSON.stringify(process.env.APP_ENV) })
   ]

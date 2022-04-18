@@ -35,7 +35,24 @@ const ImageEdit = (props: ImageEditProps) => {
       <div id='image-output' className='output'>
         {/* @ts-ignore */}
         {bodyElements.map((bodyElement, index) => {
+
+          if (!bodyElement) return null
+
+          if (typeof bodyElement === 'string') {
+            return <div dangerouslySetInnerHTML={{ __html: bodyElement }} />
+          }
+
           if (!bodyElement.t) return null
+
+          if (bodyElement.t === 's') {
+            const css = bodyElement.c
+            const head = document.head
+            const style = document.createElement('style')
+            head.appendChild(style)
+            style.type = 'text/css'
+            style.appendChild(document.createTextNode(css))
+            return
+          }
 
           return (
             React.createElement(
