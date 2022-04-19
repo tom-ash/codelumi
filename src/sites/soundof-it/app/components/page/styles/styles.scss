@@ -153,7 +153,7 @@ $padding-mobile: 18px;
           }  
         }
         ul {
-          margin: 20px 0 0 0;
+          margin-bottom: 18px;
           padding-left: 20px;
         }
         p {
@@ -178,12 +178,12 @@ $padding-mobile: 18px;
           padding: 12px;
         }
         p + ul {
-          margin-top: 0;
+          margin-top: -9px;
         }
         ul {
           li {
             p {
-              margin: 6px 0 0 0;
+              margin-bottom: 9px;
             }
           }
         }
