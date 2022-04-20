@@ -7,7 +7,6 @@ const PageEdit = loadable(() => import('./components/edit/edit'))
 const PageShow = loadable(() => import('./components/show/show'))
 const PageIndex = loadable(() => import('./components/index/index'))
 const PageNotFound = loadable(() => import('./components/not-found/not-found'))
-import withStyles from 'isomorphic-style-loader/withStyles'
 
 class Page extends React.Component {
   constructor(props) {
@@ -21,9 +20,8 @@ class Page extends React.Component {
     const editProps = { appName, customNodeParser, customMetaParser, links, clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
     const indexProps = { clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
     const notFoundProps = { clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
-
-
     const classNames = []
+
     if (renderCreate) classNames.push('create')
     if (renderShow) classNames.push('show')
     if (renderEdit) classNames.push('edit')

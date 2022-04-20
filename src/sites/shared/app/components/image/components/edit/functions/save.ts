@@ -16,7 +16,7 @@ export function save(props: saveProps) {
     height
   } = props
 
-  const parsedBody = JSON.parse(body)
+  JSON.parse(body)
 
   fetch(`${apiUrl}/image/update`, {
     method: 'PUT',
@@ -26,7 +26,7 @@ export function save(props: saveProps) {
     },
     body: JSON.stringify({
       imageId,
-      body: parsedBody,
+      body,
       width,
       height
     })
