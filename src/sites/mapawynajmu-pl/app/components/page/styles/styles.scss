@@ -5,6 +5,9 @@ $padding-mobile: 18px;
 
 %page {
   #page {
+    &.edit {
+      padding-bottom: 320px;
+    }
     padding-top: 20px;
     @media #{$LARGE-PHONE} {
       padding-top: 0;

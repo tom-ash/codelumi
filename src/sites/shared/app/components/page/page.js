@@ -22,8 +22,16 @@ class Page extends React.Component {
     const indexProps = { clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
     const notFoundProps = { clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
 
+
+    const classNames = []
+    if (renderCreate) classNames.push('create')
+    if (renderShow) classNames.push('show')
+    if (renderEdit) classNames.push('edit')
+    if (renderIndex) classNames.push('index')
+    if (renderNotFound) classNames.push('not-found')
+
     return (
-      <section id='page'>
+      <section id='page' className={classNames.join(' ')}>
         {renderCreate && <PageCreate {...createProps} />}
         {renderShow && <PageShow {...showProps}/>}
         {renderEdit && <PageEdit {...editProps} />}
