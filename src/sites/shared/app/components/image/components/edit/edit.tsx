@@ -73,11 +73,19 @@ const ImageEdit = (props: ImageEditProps) => {
             return
           }
 
+          const tag = bodyElement.t
+          const content = bodyElement.c
+          const attrs = { ...bodyElement.attrs, key: index }
+
+          if (tag === 'img') {
+            attrs['crossorigin'] = 'anonymous'
+          }
+
           return (
             React.createElement(
-              bodyElement.t,
-              { ...bodyElement.attrs, key: index },
-              bodyElement.c
+              tag,
+              attrs,
+              content
             )
           )
         })}
