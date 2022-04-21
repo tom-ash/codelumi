@@ -5,6 +5,7 @@ import { BodyTextarea, SaveButton, DownloadButton } from './functions/form-eleme
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import Dimensions from './components/dimensions/dimensions'
+import OutputProps from './components/output/output'
 
 type ImageEditProps = {
   apiUrl: string,
@@ -18,18 +19,11 @@ type ImageEditProps = {
 const ImageEdit = (props: ImageEditProps) => {
   useStyles(styles)
 
-  const {
-    apiUrl,
-    imageId,
-    body,
-    changeData,
-    width,
-    height
-  } = props
+  const { apiUrl, imageId, body, changeData, width, height } = props
 
   const bodyElements = (() => {
     try {
-      return typeof body === 'object' ? body : JSON.parse(body)
+      return JSON.parse(body)
     } catch {
       return []
     }
@@ -38,60 +32,12 @@ const ImageEdit = (props: ImageEditProps) => {
   const bodyTextareaProps = { body, changeData }
   const saveButtonProps = { imageId, body, apiUrl, width, height }
   const dimensionsProps = { width, height, changeData }
+  const outputProps = { width, height, bodyElements }
 
   return (
     <div className='edit'>
       <Dimensions {...dimensionsProps} />
-
-
-      <div
-        id='image-output'
-        className='output'
-        style={{
-          width: +width,
-          height: +height
-        }}
-      >
-        {/* @ts-ignore */}
-        {bodyElements.map((bodyElement, index) => {
-
-          if (!bodyElement) return null
-
-          if (typeof bodyElement === 'string') {
-            return <div dangerouslySetInnerHTML={{ __html: bodyElement }} />
-          }
-
-          if (!bodyElement.t) return null
-
-          if (bodyElement.t === 's') {
-            const css = bodyElement.c
-            const head = document.head
-            const style = document.createElement('style')
-            head.appendChild(style)
-            style.type = 'text/css'
-            style.appendChild(document.createTextNode(css))
-            return
-          }
-
-          const tag = bodyElement.t
-          const content = bodyElement.c
-          const attrs = { ...bodyElement.attrs, key: index }
-
-          if (tag === 'img') {
-            attrs['crossorigin'] = 'anonymous'
-          }
-
-          return (
-            React.createElement(
-              tag,
-              attrs,
-              content
-            )
-          )
-        })}
-      </div>
-
-      
+      <OutputProps {...outputProps} />      
       <BodyTextarea {...bodyTextareaProps} />
       <SaveButton {...saveButtonProps} />
       <DownloadButton />
