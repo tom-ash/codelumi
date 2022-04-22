@@ -1,8 +1,10 @@
 import React from "react"
 import { ManagedTextarea, ManagedButton } from "managed-inputs"
 import save from './save'
-import html2canvas from 'html2canvas'
-import compressAndDownload from './compress-and-download'
+import drawOnCanvas from './draw-on-canvas'
+import transformCanvasToBlob from './transform-canvas-to-blob'
+import appendCanvasToBody from './append-canvas-to-body'
+import compress from './compress'
 
 interface BodyTextareaProps {
   body: string,
@@ -57,15 +59,13 @@ export const DownloadButton = (props: DownloadButtonProps) => {
 
   const classNames = { container: 'form-input textarea' }
   const onClick = () => {
-    html2canvas(
-      document.getElementById('image-output'),
-      {
-        allowTaint: true,
-        useCORS: true
-      }
-    ).then(canvas => compressAndDownload(canvas))
+    drawOnCanvas()
+    .then(canvas => {
+      appendCanvasToBody(canvas)
+      return transformCanvasToBlob(canvas)
+    })
+    .then(compress)
   }
-
   const label = 'Download'
 
   const buttonProps = {
