@@ -59,7 +59,7 @@ interface DownloadButtonProps {
 export const DownloadButton = (props: DownloadButtonProps) => {
   const {
     apiUrl,
-    storageKey: key,
+    storageKey,
     changeData
   } = props
 
@@ -69,10 +69,17 @@ export const DownloadButton = (props: DownloadButtonProps) => {
     .then(transformCanvasToBlob)
     .then(compress)
     .then(compressedBlob => {
+
+
+      const keyExtension = '.jpeg' // TODO: Derive from compressedBlob.type.
+      console.log(storageKey + keyExtension)
+
       const body = JSON.stringify({
-        key,
+        key: storageKey + keyExtension,
         content_type: compressedBlob.type
       })
+
+      console.log(compressedBlob)
       
       fetch(apiUrl + '/storage/s3-presigned-post', {
         method: 'post',
@@ -99,7 +106,7 @@ export const DownloadButton = (props: DownloadButtonProps) => {
         })
         .then(response => {
           changeData({
-            storageUrl: response.url + key,
+            storageUrl: response.url + storageKey + keyExtension,
             storageUrlRandomizedQuaryParameter: Math.random()
           })
         })
