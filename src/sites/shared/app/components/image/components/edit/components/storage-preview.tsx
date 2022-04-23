@@ -7,7 +7,6 @@ interface StoragePreviewProps {
 
 export function StoragePreview(props: StoragePreviewProps) {
   const { storageUrl, storageUrlRandomizedQuaryParameter } = props
-  const storageUrlAnchorProps = { storageUrl }
 
   return (
     <div className='storage-preview'>

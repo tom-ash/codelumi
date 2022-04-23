@@ -65,9 +65,27 @@
       height: 50px;
     }
     .dimensions {
-      width: 300px;
-      border: 1px solid gray;
+      width: 212px;
       margin: 0 auto;
+      margin-top: 12px;
+      margin-bottom: 24px;
+      .form-input {
+        float: left;
+        width: 100px;
+        &:first-of-type {
+          margin-right: 12px;
+        }
+        .label {
+          font-size: 12px;
+          margin-bottom: 6px;
+        }
+        .input {
+          width: 100px;
+          padding: 8px;
+          border-radius: 5px;
+          border: 1px solid lightgray;
+        }
+      }
     }
 
     .storage-preview {

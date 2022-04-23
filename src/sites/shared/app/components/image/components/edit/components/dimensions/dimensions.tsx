@@ -17,8 +17,8 @@ const Dimensions = (props: DimensionsProps) => {
     <div className='dimensions'>
       <WidthInput {...widthInputProps} />
       <HeightInput {...heightInputProps} />
+      <div className='float-clear' />
     </div>
-   
   )
 }
 
