@@ -7,7 +7,10 @@ export const mapStateToProps = store => {
           id: imageId,
           body,
           width,
-          height
+          height,
+          storageKey,
+          storageUrl,
+          storageUrlRandomizedQuaryParameter
         }
       }
     }
@@ -17,7 +20,10 @@ export const mapStateToProps = store => {
     imageId,
     body,
     width,
-    height
+    height,
+    storageKey,
+    storageUrl,
+    storageUrlRandomizedQuaryParameter
   }
 }
   

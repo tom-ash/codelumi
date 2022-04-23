@@ -7,5 +7,5 @@ export const inputs = {
 }
 
 export const data = {
-  // TODO
+  storageUrlRandomizedQuaryParameter: Math.random()
 }

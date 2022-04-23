@@ -30,13 +30,15 @@ interface SaveButtonProps {
   imageId: number,
   body: string,
   width: string,
-  height: string
+  height: string,
+  storageKey: string,
+  storageUrl: string
 }
 
 export const SaveButton = (props: SaveButtonProps) => {
-  const { apiUrl, imageId, body, width, height } = props
+  const { apiUrl, imageId, body, width, height, storageKey, storageUrl } = props
   const classNames = { container: 'form-input textarea' }
-  const onClick = () => save({ apiUrl, imageId, body, width, height })
+  const onClick = () => save({ apiUrl, imageId, body, width, height, storageKey, storageUrl })
   const label = 'Save'
 
   const buttonProps = {
@@ -50,24 +52,25 @@ export const SaveButton = (props: SaveButtonProps) => {
 
 interface DownloadButtonProps {
   apiUrl: string,
+  storageKey: string,
+  changeData(props: object): void
 }
 
 export const DownloadButton = (props: DownloadButtonProps) => {
   const {
-    apiUrl
+    apiUrl,
+    storageKey: key,
+    changeData
   } = props
 
   const classNames = { container: 'form-input textarea' }
   const onClick = () => {
     drawOnCanvas()
-    .then(canvas => {
-      // appendCanvasToBody(canvas)
-      return transformCanvasToBlob(canvas)
-    })
+    .then(transformCanvasToBlob)
     .then(compress)
     .then(compressedBlob => {
       const body = JSON.stringify({
-        key: 'tests/test3.jpeg',
+        key,
         content_type: compressedBlob.type
       })
       
@@ -95,7 +98,10 @@ export const DownloadButton = (props: DownloadButtonProps) => {
           }
         })
         .then(response => {
-          console.log(response)
+          changeData({
+            storageUrl: response.url + key,
+            storageUrlRandomizedQuaryParameter: Math.random()
+          })
         })
       })
     })

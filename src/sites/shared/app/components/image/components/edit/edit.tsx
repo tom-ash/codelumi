@@ -6,6 +6,8 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import Dimensions from './components/dimensions/dimensions'
 import OutputProps from './components/output/output'
+import StorageKeyInput from './components/storage-key-input'
+import storageUrl, { StoragePreview } from './components/storage-preview/storage-preview'
 
 type ImageEditProps = {
   apiUrl: string,
@@ -13,13 +15,16 @@ type ImageEditProps = {
   body: string,
   changeData(): void,
   width: string,
-  height: string
+  height: string,
+  storageKey: string,
+  storageUrl: string,
+  storageUrlRandomizedQuaryParameter: string
 }
 
 const ImageEdit = (props: ImageEditProps) => {
   useStyles(styles)
 
-  const { apiUrl, imageId, body, changeData, width, height } = props
+  const { apiUrl, imageId, body, changeData, width, height, storageKey, storageUrl, storageUrlRandomizedQuaryParameter } = props
 
   const bodyElements = (() => {
     try {
@@ -30,18 +35,22 @@ const ImageEdit = (props: ImageEditProps) => {
   })()
 
   const bodyTextareaProps = { body, changeData }
-  const saveButtonProps = { imageId, body, apiUrl, width, height }
+  const saveButtonProps = { imageId, body, apiUrl, width, height, storageKey, storageUrl }
   const dimensionsProps = { width, height, changeData }
   const outputProps = { width, height, bodyElements }
-  const downloadButtonProps = { apiUrl }
+  const storageKeyProps = { storageKey, changeData }
+  const downloadButtonProps = { apiUrl, storageKey, changeData }
+  const storagePreviewProps = { storageUrl, storageUrlRandomizedQuaryParameter }
 
   return (
     <div className='edit'>
+      <StorageKeyInput {...storageKeyProps} />
       <Dimensions {...dimensionsProps} />
       <OutputProps {...outputProps} />      
       <BodyTextarea {...bodyTextareaProps} />
       <SaveButton {...saveButtonProps} />
       <DownloadButton {...downloadButtonProps} />
+      <StoragePreview {...storagePreviewProps} />
     </div>
   )
 }

@@ -3,7 +3,9 @@ interface saveProps {
   imageId: number,
   body: string,
   width: string,
-  height: string
+  height: string,
+  storageKey: string,
+  storageUrl: string
 }
 
 export function save(props: saveProps) {
@@ -13,7 +15,9 @@ export function save(props: saveProps) {
     imageId,
     body,
     width,
-    height
+    height,
+    storageKey,
+    storageUrl
   } = props
 
   JSON.parse(body)
@@ -28,7 +32,9 @@ export function save(props: saveProps) {
       imageId,
       body,
       width,
-      height
+      height,
+      storageKey,
+      storageUrl
     })
   })
   // TODO:
