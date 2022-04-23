@@ -49,24 +49,58 @@ export const SaveButton = (props: SaveButtonProps) => {
 }
 
 interface DownloadButtonProps {
-  // TODO
+  apiUrl: string,
 }
 
 export const DownloadButton = (props: DownloadButtonProps) => {
   const {
-    // TODO
+    apiUrl
   } = props
 
   const classNames = { container: 'form-input textarea' }
   const onClick = () => {
     drawOnCanvas()
     .then(canvas => {
-      appendCanvasToBody(canvas)
+      // appendCanvasToBody(canvas)
       return transformCanvasToBlob(canvas)
     })
     .then(compress)
+    .then(compressedBlob => {
+      const body = JSON.stringify({
+        key: 'tests/test3.jpeg',
+        content_type: compressedBlob.type
+      })
+      
+      fetch(apiUrl + '/storage/s3-presigned-post', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body
+      })
+      .then(response => {
+        if (response.ok) return response.json()
+      })
+      .then(json => {
+        let formData = new FormData()
+
+        Object.keys(json.fields).forEach(key => { formData.append(key, json.fields[key]) })
+        formData.append('file', compressedBlob)
+        fetch(json.url, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json',
+            'acl': 'public-read'
+          }
+        })
+        .then(response => {
+          console.log(response)
+        })
+      })
+    })
   }
-  const label = 'Download'
+  const label = 'Upload'
 
   const buttonProps = {
     classNames,

@@ -33,6 +33,7 @@ const ImageEdit = (props: ImageEditProps) => {
   const saveButtonProps = { imageId, body, apiUrl, width, height }
   const dimensionsProps = { width, height, changeData }
   const outputProps = { width, height, bodyElements }
+  const downloadButtonProps = { apiUrl }
 
   return (
     <div className='edit'>
@@ -40,7 +41,7 @@ const ImageEdit = (props: ImageEditProps) => {
       <OutputProps {...outputProps} />      
       <BodyTextarea {...bodyTextareaProps} />
       <SaveButton {...saveButtonProps} />
-      <DownloadButton />
+      <DownloadButton {...downloadButtonProps} />
     </div>
   )
 }
