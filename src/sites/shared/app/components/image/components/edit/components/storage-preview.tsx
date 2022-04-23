@@ -1,6 +1,4 @@
 import React from 'react'
-import StorageUrlAnchor from './components/storage-url-anchor'
-// import { ManagedLink } from 'managed-inputs'
 
 interface StoragePreviewProps {
   storageUrl: string,
@@ -14,7 +12,6 @@ export function StoragePreview(props: StoragePreviewProps) {
   return (
     <div className='storage-preview'>
       <img src={storageUrl + `?a=${storageUrlRandomizedQuaryParameter}`} />
-      <StorageUrlAnchor {...storageUrlAnchorProps} />
     </div>
   )
 }
