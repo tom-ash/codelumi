@@ -1,4 +1,5 @@
 import React from 'react'
+import Create from './components/create/create'
 import Edit from './components/edit/edit'
 
 class Image extends React.Component {
@@ -9,11 +10,16 @@ class Image extends React.Component {
 
   render() {
     //@ts-ignore
-    const { render: { 'image/edit': renderEdit }, apiUrl } = this.props
+    const { render: { 'image/create': renderCreate, 'image/edit': renderEdit }, apiUrl } = this.props
     const editProps = { apiUrl }
+    const classNames = []
+
+    if (renderCreate) classNames.push('create')
+    if (renderEdit) classNames.push('edit')
 
     return (
-      <section id='image'>
+      <section id='image' className={classNames.join(' ')}>
+        {renderCreate && <Create />}
         {renderEdit && <Edit {...editProps} />}
       </section>
     )
