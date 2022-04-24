@@ -9,11 +9,12 @@ interface CreateFactoryProps {
 
 const createFactory = (props: CreateFactoryProps) => {
   const { apiUrl, changeRoute, imageKey, buildUrl } = props
-  const accessToken = getAccessToken()
-  const href = buildUrl({ path: `edit-image/${imageKey}` })
 
   return (
     () => {
+      const href = buildUrl({ path: `edit-image/${imageKey}` })
+      const accessToken = getAccessToken()
+
       fetch(`${apiUrl}/image/create`, {
         method: 'POST',
         headers: {
