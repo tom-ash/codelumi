@@ -4,7 +4,8 @@ export const mapStateToProps = store => {
     page: renderPage,
     visitor: renderVisitor,
     user: renderUser,
-    announcement: renderAnnouncement
+    announcement: renderAnnouncement,
+    image: renderImage
   } = render
   const { lang, device, path, scrollY, scripts, routeSynced, loadGa } = store.app
   const { statisticsConsent, marketingConsent } = store.visitor.consents
@@ -36,7 +37,8 @@ export const mapStateToProps = store => {
     pageEditData,
     authorized,
     admin,
-    links
+    links,
+    renderImage
   }
 }
   

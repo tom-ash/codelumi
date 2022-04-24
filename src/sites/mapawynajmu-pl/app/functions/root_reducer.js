@@ -4,6 +4,7 @@ import { announcementReducer } from '../components/announcement/functions/reduce
 import { userReducer } from '../components/user/functions/reducers.js'
 import visitorReducer from '../../../shared/app/components/visitor/functions/reducers.js'
 import { pageReducer } from '../../../shared/app/components/page/functions/reducer.js'
+import { imageReducer } from '../../../shared/app/components/image/functions/reducer'
 
 const rootReducer = combineReducers({
   app: appReducer,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
   user: userReducer,
   visitor: visitorReducer,
   page: pageReducer,
-  links: linksReducer
+  links: linksReducer,
+  image: imageReducer
 })
 
 export default rootReducer

@@ -7,9 +7,7 @@ import Visitor from '../../shared/app/components/visitor/visitor'
 const Announcement = loadable(() => import('./components/announcement/announcement'))
 const Image = loadable(() => import('../../shared/app/components/image/image'))
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-// @ts-ignore
 import styles from './styles/styles.scss'
-// @ts-ignore
 import headerStyles from './components/scaffold/header/styles/styles.scss'
 import * as lifecycle from './functions/lifecycle'
 import langHandler from '../../shared/app/functions/lang/handlers/lang.js'
