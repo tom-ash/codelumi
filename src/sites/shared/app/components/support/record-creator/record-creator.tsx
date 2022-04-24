@@ -1,48 +1,44 @@
-// import React from 'react'
-// import { connect } from 'react-redux'
-// import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-// import { ManagedText, ManagedButton } from 'managed-inputs'
-// import * as managers from './functions/managers'
-// import { save } from './functions/save'
-// import withStyles from 'isomorphic-style-loader/withStyles'
-// import styles from './styles/styles.scss'
+import React from 'react'
+import NameInput from './components/name-input'
+import CreateButton from './components/create-button'
+import useStyles from 'isomorphic-style-loader/useStyles'
+import styles from './styles/styles.scss'
 
-// class PageCreate extends React.Component {
-//   constructor(props) {
-//     super(props)
-//     this.nameManager = managers.nameManager.bind(this)
-//     this.saveManager = managers.saveManager.bind(this)
-//     this.save = save.bind(this)
-//   }
+interface RecordCreatorProps {
+  recordKeys: string[],
+  recordKey: string,
+  changeKey(key: string): void,
+  create(): void
+}
 
-//   render() {
-//     const { names, inputtedName } = this.props
-    
-//     if (!names) return null
+const RecordCreator = (props: RecordCreatorProps) => {
+  useStyles(styles)
 
-//     return (
-//       <div id='page-create'>
-//         <form>
-//           <ManagedText {...this.nameManager()} />
-//           <div className='names'>
-//             {names.map(name => {
-//               const newNameRegex = `^${inputtedName || ''}`
-//               if (name.match(newNameRegex)) {
-//                 return (
-//                   <div key={name}>
-//                     {name}
-//                   </div>
-//                 )
-//               }
+  const { recordKeys, recordKey, changeKey, create } = props 
+  const nameInputProps = { recordKey, changeKey }
+  const createbuttonProps = { create }
 
-//               return null
-//             })}
-//           </div>
-//           <ManagedButton {...this.saveManager()} />
-//         </form>
-//       </div>
-//     )
-//   }
-// }
+  return (
+    <div className='record-creator'>
+      <NameInput {...nameInputProps} />
+      <ul className='record-keys'>
+        {recordKeys.map(key => {
+          const newNameRegex = recordKey
 
-// export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(PageCreate))
+          if (key.match(newNameRegex)) {
+            return (
+              <li key={key}>
+                {key}
+              </li>
+            )
+          }
+
+          return null
+        })}
+      </ul>
+      <CreateButton {...createbuttonProps} />
+    </div>
+  )
+}
+
+export default RecordCreator

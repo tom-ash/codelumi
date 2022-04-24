@@ -2,19 +2,20 @@ export const mapStateToProps = store => {
   const {
     image: {
       create: {
-        // TODO
+        imageKeys,
+        imageKey
       }
     }
   } = store
 
   return {
-    // TODO
+    imageKeys,
+    imageKey
   }
 }
   
 export const mapDispatchToProps = dispatch => {
   return {
-    changeState: value => dispatch({ type: 'image/create', value }),
-    // TODO
+    changeState: value => dispatch({ type: 'image/create', value })
   }
 }

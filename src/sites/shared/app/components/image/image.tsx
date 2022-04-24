@@ -10,8 +10,9 @@ class Image extends React.Component {
 
   render() {
     //@ts-ignore
-    const { render: { 'image/create': renderCreate, 'image/edit': renderEdit }, apiUrl } = this.props
-    const editProps = { apiUrl }
+    const { render: { 'image/create': renderCreate, 'image/edit': renderEdit }, apiUrl, changeRoute, buildUrl } = this.props
+    const editProps = { apiUrl, changeRoute }
+    const createProps = { apiUrl, changeRoute, buildUrl }
     const classNames = []
 
     if (renderCreate) classNames.push('create')
@@ -19,7 +20,7 @@ class Image extends React.Component {
 
     return (
       <section id='image' className={classNames.join(' ')}>
-        {renderCreate && <Create />}
+        {renderCreate && <Create {...createProps} />}
         {renderEdit && <Edit {...editProps} />}
       </section>
     )
