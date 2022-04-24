@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import RecordCreator from '../../../support/record-creator/record-creator'
 import createFactory from './functions/create-factory'
+import editFactory from './functions/edit-factory'
 
 type ImageCreateProps = {
   imageKeys: string[],
@@ -21,7 +22,8 @@ const ImageCreate = (props: ImageCreateProps) => {
   const { imageKey, imageKeys, changeState, apiUrl, changeRoute, buildUrl } = props
   const changeKey = (imageKey: string) => changeState({ imageKey })
   const createFactoryProps = { apiUrl, changeRoute, imageKey, buildUrl }
-  const recordCreatorProps = { recordKey: imageKey, recordKeys: imageKeys, changeKey, create: createFactory(createFactoryProps) }
+  const editFactoryProps = { changeRoute, buildUrl }
+  const recordCreatorProps = { recordKey: imageKey, recordKeys: imageKeys, changeKey, create: createFactory(createFactoryProps), edit: editFactory(editFactoryProps) }
 
   return (
     <>

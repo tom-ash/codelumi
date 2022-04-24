@@ -1,5 +1,5 @@
 .record-creator {
-  width: 640px;
+  width: 768px;
   margin: 180px auto;
   background: #17202A;
   padding: 24px;
@@ -28,8 +28,13 @@
     padding: 12px;
     font-size: 15px;
     height: 188px;
+    overflow-y: scroll;
     li {
       margin-bottom: 8px;
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
   }
   .button {

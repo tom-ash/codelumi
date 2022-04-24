@@ -8,13 +8,14 @@ interface RecordCreatorProps {
   recordKeys: string[],
   recordKey: string,
   changeKey(key: string): void,
-  create(): void
+  create(): void,
+  edit(imageKey: string): void,
 }
 
 const RecordCreator = (props: RecordCreatorProps) => {
   useStyles(styles)
 
-  const { recordKeys, recordKey, changeKey, create } = props 
+  const { recordKeys, recordKey, changeKey, create, edit } = props 
   const nameInputProps = { recordKey, changeKey }
   const createbuttonProps = { create }
 
@@ -27,7 +28,7 @@ const RecordCreator = (props: RecordCreatorProps) => {
 
           if (key.match(newNameRegex)) {
             return (
-              <li key={key}>
+              <li key={key} onClick={() => edit(key)}>
                 {key}
               </li>
             )
