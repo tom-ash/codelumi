@@ -12,7 +12,7 @@ const createFactory = (props: CreateFactoryProps) => {
 
   return (
     () => {
-      const href = buildUrl({ path: `edit-image/${imageKey}` })
+      const href = buildUrl({ path: `images/${imageKey}` })
       const accessToken = getAccessToken()
 
       fetch(`${apiUrl}/image/create`, {

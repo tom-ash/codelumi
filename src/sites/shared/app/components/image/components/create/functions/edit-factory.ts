@@ -8,7 +8,7 @@ const editFactory = (props: EditFactoryProps) => {
 
   return (
     (imageKey: string) => {
-      const href = buildUrl({ path: `edit-image/${imageKey}` })
+      const href = buildUrl({ path: `images/${imageKey}` })
       changeRoute({ href })
     }
   )

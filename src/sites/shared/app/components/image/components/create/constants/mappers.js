@@ -16,6 +16,6 @@ export const mapStateToProps = store => {
   
 export const mapDispatchToProps = dispatch => {
   return {
-    changeState: value => dispatch({ type: 'image/create', value })
+    changeState: value => dispatch({ type: 'image/index', value })
   }
 }

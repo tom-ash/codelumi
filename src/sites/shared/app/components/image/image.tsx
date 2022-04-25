@@ -10,7 +10,7 @@ class Image extends React.Component {
 
   render() {
     //@ts-ignore
-    const { render: { 'image/create': renderCreate, 'image/edit': renderEdit }, apiUrl, changeRoute, buildUrl } = this.props
+    const { render: { 'image/index': renderCreate, 'image/edit': renderEdit }, apiUrl, changeRoute, buildUrl } = this.props
     const editProps = { apiUrl, changeRoute }
     const createProps = { apiUrl, changeRoute, buildUrl }
     const classNames = []
