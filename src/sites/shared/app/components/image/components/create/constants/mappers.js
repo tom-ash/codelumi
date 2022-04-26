@@ -1,7 +1,7 @@
 export const mapStateToProps = store => {
   const {
     image: {
-      create: {
+      index: {
         imageKeys,
         imageKey
       }
