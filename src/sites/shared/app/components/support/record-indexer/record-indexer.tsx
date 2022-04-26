@@ -4,7 +4,7 @@ import CreateButton from './components/create-button'
 import useStyles from 'isomorphic-style-loader/useStyles'
 import styles from './styles/styles.scss'
 
-interface RecordCreatorProps {
+interface RecordIndexerProps {
   recordKeys: string[],
   recordKey: string,
   changeKey(key: string): void,
@@ -12,7 +12,7 @@ interface RecordCreatorProps {
   edit(imageKey: string): void,
 }
 
-const RecordCreator = (props: RecordCreatorProps) => {
+const RecordIndexer = (props: RecordIndexerProps) => {
   useStyles(styles)
 
   const { recordKeys, recordKey, changeKey, create, edit } = props 
@@ -42,4 +42,4 @@ const RecordCreator = (props: RecordCreatorProps) => {
   )
 }
 
-export default RecordCreator
+export default RecordIndexer
