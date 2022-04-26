@@ -1,5 +1,5 @@
 import React from 'react'
-import Create from './components/create/create'
+import Index from './components/index'
 import Edit from './components/edit/edit'
 
 class Image extends React.Component {
@@ -10,17 +10,17 @@ class Image extends React.Component {
 
   render() {
     //@ts-ignore
-    const { render: { 'image/index': renderCreate, 'image/edit': renderEdit }, apiUrl, changeRoute, buildUrl } = this.props
+    const { render: { 'image/index': renderIndex, 'image/edit': renderEdit }, apiUrl, changeRoute, buildUrl } = this.props
     const editProps = { apiUrl, changeRoute }
-    const createProps = { apiUrl, changeRoute, buildUrl }
+    const indexProps = { apiUrl, changeRoute, buildUrl }
     const classNames = []
 
-    if (renderCreate) classNames.push('create')
+    if (renderIndex) classNames.push('index')
     if (renderEdit) classNames.push('edit')
 
     return (
       <section id='image' className={classNames.join(' ')}>
-        {renderCreate && <Create {...createProps} />}
+        {renderIndex && <Index {...indexProps} />}
         {renderEdit && <Edit {...editProps} />}
       </section>
     )

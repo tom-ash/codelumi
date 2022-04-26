@@ -7,7 +7,7 @@ import RecordCreator from '../../../support/record-creator/record-creator'
 import createFactory from './functions/create-factory'
 import editFactory from './functions/edit-factory'
 
-type ImageCreateProps = {
+type ImageIndexProps = {
   imageKeys: string[],
   imageKey: string,
   changeState(attrs: object): void,
@@ -16,7 +16,7 @@ type ImageCreateProps = {
   buildUrl(props: { path: string}): string
 }
 
-const ImageCreate = (props: ImageCreateProps) => {
+const ImageIndex = (props: ImageIndexProps) => {
   useStyles(styles)
 
   const { imageKey, imageKeys, changeState, apiUrl, changeRoute, buildUrl } = props
@@ -32,4 +32,4 @@ const ImageCreate = (props: ImageCreateProps) => {
   )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ImageCreate)
+export default connect(mapStateToProps, mapDispatchToProps)(ImageIndex)
