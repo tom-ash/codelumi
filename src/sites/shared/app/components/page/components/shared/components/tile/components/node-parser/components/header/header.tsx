@@ -13,15 +13,7 @@ const Header = (props: HeaderProps) => {
   return (
     <>
       <div className={`header-container ${tag}`}>
-        {number &&
-        <span className='number'>
-          {number}
-        </span>}
-        {React.createElement(
-          tag,
-          { key: content },
-          content
-        )}
+        {number && <span className='number'>{number}</span>} {React.createElement(tag, { key: content }, content)}
       </div>
     </>
   )
