@@ -2,9 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import loadable from '@loadable/component'
-const PageCreate = loadable(() => import('./components/create/create'))
-const PageEdit = loadable(() => import('./components/edit/edit'))
 const PageShow = loadable(() => import('./components/show/show'))
+const PageEdit = loadable(() => import('./components/edit/edit'))
 const PageIndex = loadable(() => import('./components/index/index'))
 const PageNotFound = loadable(() => import('./components/not-found/not-found'))
 
@@ -14,15 +13,13 @@ class Page extends React.Component {
   }
 
   render() {
-    const { appName, customNodeParser, customMetaParser, links, clientUrl, apiUrl, renderCreate, renderEdit, renderShow, renderIndex, renderNotFound, device, changeRoute, buildUrl, langHandler } = this.props
-    const createProps = { clientUrl, apiUrl, changeRoute, buildUrl, langHandler }
+    const { appName, customNodeParser, customMetaParser, links, clientUrl, apiUrl, renderEdit, renderShow, renderIndex, renderNotFound, device, changeRoute, buildUrl, langHandler } = this.props
     const showProps = { appName, customNodeParser, customMetaParser, links, clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
     const editProps = { appName, customNodeParser, customMetaParser, links, clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
     const indexProps = { clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
-    const notFoundProps = { clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
-    const classNames = []
+    const pageNotFoundProps = { clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
 
-    if (renderCreate) classNames.push('create')
+    const classNames = []
     if (renderShow) classNames.push('show')
     if (renderEdit) classNames.push('edit')
     if (renderIndex) classNames.push('index')
@@ -30,11 +27,10 @@ class Page extends React.Component {
 
     return (
       <section id='page' className={classNames.join(' ')}>
-        {renderCreate && <PageCreate {...createProps} />}
         {renderShow && <PageShow {...showProps}/>}
         {renderEdit && <PageEdit {...editProps} />}
         {renderIndex && <PageIndex {...indexProps} />}
-        {renderNotFound && <PageNotFound {...notFoundProps} />}
+        {renderNotFound && <PageNotFound {...pageNotFoundProps} />}
       </section>
     )
   }

@@ -15,6 +15,8 @@ const createFactory = (props: CreateFactoryProps) => {
     changeRoute
   } = props
 
+  console.log(props)
+
   return (
     () => {
       const href = buildUrl({ path: `pages/${pageKey}` })
@@ -24,11 +26,17 @@ const createFactory = (props: CreateFactoryProps) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Access-Token': accessToken
+          'Access-Token': accessToken,
+          'Lang': 'en' // TODO: Get lang from props.
         },
-        body: JSON.stringify({ pageKey })
+        body: JSON.stringify({ name: pageKey })
       })
-      .then(() => {
+      .then(response => {
+        if (response.ok) return response.json()
+      })
+      .then(path => {
+        const href = buildUrl({ path })
+        
         changeRoute({ href })
       })
     }

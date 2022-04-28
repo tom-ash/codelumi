@@ -4,7 +4,6 @@ export const mapStateToProps = store => {
   } = store.page.show.data
 
   const {
-    'page/create': renderCreate,
     'page/edit': renderEdit,
     'page/index': renderIndex,
     'page/show': renderShow,
@@ -12,7 +11,6 @@ export const mapStateToProps = store => {
   } = store.render
 
   return {
-    renderCreate,
     renderEdit,
     renderIndex,
     renderShow,
