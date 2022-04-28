@@ -1,13 +1,12 @@
 export const mapStateToProps = store => {
   const {
-    lang,
-    routeSynced
+    lang
   } = store.app
 
-  const {'page/index/manage': renderManage } = store.render
-  const { pageKeys, pageKey } = store.page.index
-
-  console.log(store.page.index)
+  const {
+    pageKeys,
+    pageKey
+  } = store.page.index
 
   return {
     pageKeys,

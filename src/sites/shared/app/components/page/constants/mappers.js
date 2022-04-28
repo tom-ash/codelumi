@@ -4,9 +4,9 @@ export const mapStateToProps = store => {
   } = store.page.show.data
 
   const {
+    'page/show': renderShow,
     'page/edit': renderEdit,
     'page/index': renderIndex,
-    'page/show': renderShow,
     'page/not-found': renderNotFound
   } = store.render
 
