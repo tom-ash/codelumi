@@ -23,11 +23,11 @@ const ImageIndex = (props: ImageIndexProps) => {
   const changeKey = (imageKey: string) => changeState({ imageKey })
   const createFactoryProps = { apiUrl, changeRoute, imageKey, buildUrl }
   const editFactoryProps = { changeRoute, buildUrl }
-  const RecordIndexerProps = { recordKey: imageKey, recordKeys: imageKeys, changeKey, create: createFactory(createFactoryProps), edit: editFactory(editFactoryProps) }
+  const recordIndexerProps = { recordKey: imageKey, recordKeys: imageKeys, changeKey, create: createFactory(createFactoryProps), edit: editFactory(editFactoryProps) }
 
   return (
     <>
-      <RecordIndexer {...RecordIndexerProps} />
+      <RecordIndexer {...recordIndexerProps} />
     </>
   )
 }

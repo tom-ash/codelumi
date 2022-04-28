@@ -1,14 +1,14 @@
 interface EditFactoryProps {
-  changeRoute(props: { href: string }): void,
-  buildUrl(props: { path: string}): string
+  buildUrl(props: { path: string}): string,
+  changeRoute(props: { href: string }): void
 }
 
 const editFactory = (props: EditFactoryProps) => {
   const { changeRoute, buildUrl } = props
 
   return (
-    (imageKey: string) => {
-      const href = buildUrl({ path: `images/${imageKey}` })
+    (pageKey: string) => {
+      const href = buildUrl({ path: `pages/${pageKey}` })
 
       changeRoute({ href })
     }

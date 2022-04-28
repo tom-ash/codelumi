@@ -1,21 +1,23 @@
 export const mapStateToProps = store => {
-  const { lang, routeSynced } = store.app
-  const { 'page/index/manage': renderManage } = store.render
-  const { pages } = store.page.index.data
-  const { inputtedName } = store.page.index.inputs
+  const {
+    lang,
+    routeSynced
+  } = store.app
+
+  const {'page/index/manage': renderManage } = store.render
+  const { pageKeys, pageKey } = store.page.index
+
+  console.log(store.page.index)
 
   return {
-    lang,
-    routeSynced,
-    renderManage,
-    pages,
-    inputtedName
+    pageKeys,
+    pageKey,
+    lang
   }
 }
   
 export const mapDispatchToProps = dispatch => {
   return {
-    changeInputs: value => dispatch({ type: 'page/index/inputs', value }),
-    dispatch
+    changeState: value => dispatch({ type: 'page/index', value })
   }
 }
