@@ -6,10 +6,12 @@ $padding-mobile: 18px;
 
 %page {
   #page {
+    min-height: 640px;
     .root {
       @extend %root;
     }
-    max-width: 800px;
+    max-width: 1440px;
+    padding: 0 20px;
     margin: 0 auto;
     button {
       &.edit {
