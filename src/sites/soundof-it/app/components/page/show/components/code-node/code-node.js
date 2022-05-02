@@ -18,17 +18,21 @@ class CodeNode extends React.Component {
   }
 
   render() {
-    const { nodeContent, jsonMeta } = this.props
+    const { node, nodeContent, jsonMeta } = this.props
     if (!jsonMeta) return null
-    
-    const { codeLang: language } = jsonMeta
-    if (AVAILABLE_LANGUAGES.indexOf(language) === -1) return null
 
-    const highlightedCode = hljs.highlight(nodeContent, { language }).value
+    const { codeLang: nodeCodeLang } = node
+    const { codeLang: metaCodeLang } = jsonMeta
+
+    const codeLang = nodeCodeLang || metaCodeLang
+
+    if (AVAILABLE_LANGUAGES.indexOf(codeLang) === -1) return null
+
+    const highlightedCode = hljs.highlight(nodeContent, { language: codeLang }).value
 
     return (
       <pre>
-        <code className={language} dangerouslySetInnerHTML={{__html: highlightedCode}} />
+        <code className={codeLang} dangerouslySetInnerHTML={{__html: highlightedCode}} />
       </pre>
     )
   }

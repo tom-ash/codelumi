@@ -15,8 +15,6 @@ const createFactory = (props: CreateFactoryProps) => {
     changeRoute
   } = props
 
-  console.log(props)
-
   return (
     () => {
       const href = buildUrl({ path: `pages/${pageKey}` })
