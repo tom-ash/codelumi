@@ -1,3 +1,5 @@
+@import './css';
+
 pre {
   padding: 10px 15px;
   background: #283747;
@@ -10,6 +12,10 @@ pre {
     padding: 0;
     white-space: pre-wrap;
     color: #E5E7E9;
+
+    &.css {
+      @extend %css;
+    }
 
     &.xml {
       .hljs-meta {
