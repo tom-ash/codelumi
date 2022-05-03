@@ -5,16 +5,14 @@ export const linkManager = props => {
   const {
     clientUrl,
     changeRoute,
-    nodeContent
-  } = props
-  const {
     pathname,
     hrefLang,
     category,
     title,
     image,
     logo
-  } = nodeContent
+  } = props
+
   const classNames = { container: `code-link ${category}` }
   const categoryName = categoryNames[category]
   if (!categoryName) return null
