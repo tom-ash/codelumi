@@ -13,6 +13,24 @@ pre {
     white-space: pre-wrap;
     color: #E5E7E9;
 
+    &.pgsql {
+      .hljs-keyword {
+        color: rgb(80, 150, 210);
+      }
+
+      .hljs-type {
+        color: #AF7AC5;
+      }
+
+      .hljs-number {
+        color: rgb(180, 200, 160);
+      }
+      
+      .hljs-built_in {
+        color: rgb(200, 140, 120);
+      }
+    }
+
     &.css {
       @extend %css;
     }
@@ -72,7 +90,7 @@ pre {
       }
 
       .hljs-number {
-        color: 180, 200, 160;
+        color: rgb(180, 200, 160);
       }
 
       .hljs-title {
@@ -123,7 +141,7 @@ pre {
       }
 
       .hljs-number {
-        color: 180, 200, 160;
+        color: rgb(180, 200, 160);
       }
 
       .hljs-class {
