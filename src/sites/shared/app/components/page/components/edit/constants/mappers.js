@@ -19,7 +19,10 @@ export const mapStateToProps = store => {
     autoSchema,
     manualSchema,
     publishedOn,
-    modifiedOn
+    modifiedOn,
+    category,
+    subcategory,
+    linkData
   } = store.page.edit.inputs
   const { role } = store.user.authorize.data
   const { updated } = store.page.edit.data
@@ -48,7 +51,10 @@ export const mapStateToProps = store => {
     autoSchema,
     manualSchema,
     publishedOn,
-    modifiedOn
+    modifiedOn,
+    category,
+    subcategory,
+    linkData
   }
 }
   

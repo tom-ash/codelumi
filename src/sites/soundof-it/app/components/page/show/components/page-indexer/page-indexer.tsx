@@ -24,7 +24,6 @@ const PageIndexer = (props: PageIndexerProps) => {
   return (
     <div className='page-indexer'>
       {links.map((link, index) => {
-        console.log(link)
         const { logo, image, title, category, pathname, hrefLang } = link
         const linkProps = { ...props, logo, image, title, category, pathname, hrefLang }
 
