@@ -8,6 +8,13 @@ export function save({ withRouteChange = false }) {
   const meta = JSON.parse(this.props.meta)
   const { method, route } = UPDATE_API_ROUTE
 
+  try {
+    const linkData = JSON.parse(this.props.linkData)
+    linkData.modifiedOn = this.props.modifiedOn
+  } catch {
+    return changeData({ updated: false })
+  }
+
   let currentH2 = 0
   let currentH3 = 0
   let currentH4 = 0
@@ -50,7 +57,17 @@ export function save({ withRouteChange = false }) {
     }
   })
 
-  const requestBody = JSON.stringify({ ...this.props, body, style, meta, autoSchema, manualSchema })
+  const requestBody = JSON.stringify(
+    {
+      ...this.props,
+      body,
+      style,
+      meta,
+      autoSchema,
+      manualSchema,
+      linkData: JSON.stringify(linkData)
+    }
+  )
 
   changeControl({ fetching: true })
   fetch(`${apiUrl}/${route}`, {
