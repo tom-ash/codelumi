@@ -8,11 +8,11 @@ export const linkManager = props => {
     hrefLang,
     title,
     image,
-    logo
+    logo,
+    modifiedOn
   } = props
 
-  const classNames = { container: `code-link` }
-  
+  const classNames = { container: `code-link` }  
   const href = `${clientUrl}/${pathname}`
   const label = (
     <>
@@ -24,7 +24,7 @@ export const linkManager = props => {
           {title}
         </div>
         <div className='last-updated-at'>
-          January 24<sup>th</sup>, 2022
+          {modifiedOn}
         </div>
       </div>
     </>
