@@ -1,5 +1,4 @@
 import React from 'react'
-import categoryNames from '../constants/category-names.js'
 
 export const linkManager = props => {
   const {
@@ -7,15 +6,12 @@ export const linkManager = props => {
     changeRoute,
     pathname,
     hrefLang,
-    category,
     title,
     image,
     logo
   } = props
 
-  const classNames = { container: `code-link ${category}` }
-  const categoryName = categoryNames[category]
-  if (!categoryName) return null
+  const classNames = { container: `code-link` }
   
   const href = `${clientUrl}/${pathname}`
   const label = (
