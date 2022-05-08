@@ -3,11 +3,16 @@
 $padding-desktop: 36px;
 $padding-mobile: 18px;
 
-header {
+header.title-board {
   img {
     display: block;
   }
-  background: white;
+  background: none;
+  border-left: 1px solid #F2F3F4;
+  border-right: 1px solid #F2F3F4;
+  border-top: 1px solid #F2F3F4;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   .cover {
     z-index: 2;
     position: relative;
@@ -15,6 +20,8 @@ header {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     overflow: hidden;
+    min-height: 180px;
+    background: rgb(251, 251, 252);
     .cover-image {
       width: 100%;
       aspect-ratio: 20/9;
@@ -22,7 +29,7 @@ header {
       border-top-right-radius: 5px;
     }
     @media #{$LARGE-TABLET} {
-      border-radius: 0;
+      // border-radius: 0;
       .cover-image {
         border-radius: 0;
       }
@@ -37,6 +44,7 @@ header {
     }
   }
   .author {
+    background: white;
     padding: 24px 0 0 $padding-desktop;
     position: relative;
     .picture {
@@ -74,6 +82,7 @@ header {
     }
   }
   .dates {
+    background: white;
     padding-bottom: 20px;
     padding-left: $padding-desktop;
     font-size: 12px;
@@ -86,6 +95,7 @@ header {
     }
   }
   h1 {
+    background: white;
     padding: 10px $padding-desktop 0 $padding-desktop;
     font-size: 30px;
     line-height: 1.2;

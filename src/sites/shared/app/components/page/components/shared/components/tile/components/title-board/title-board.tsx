@@ -61,15 +61,18 @@ const TitleBoard = (props: TitleBoardProps) => {
   }
 
   return (
-    <header>
+    <header className='title-board'>
       <div className='cover'>
-        <img
-          src={image}
-          className='cover-image'
-          style={{
-            top: mediaQueryImageTop
-          }}
-        />
+        {image && (
+          <img
+            src={image}
+            className='cover-image'
+            style={{
+              top: mediaQueryImageTop
+            }}
+          />
+        )}
+
         <div className='logos'>
           {logoImg}
         </div>
