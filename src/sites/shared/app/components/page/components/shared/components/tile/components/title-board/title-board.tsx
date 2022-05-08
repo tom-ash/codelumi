@@ -1,6 +1,7 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader/useStyles'
 import SVG from '../../../../../../../support/svg/svg.js'
+import prettifyDate from '../../../../../../../../../../shared/app/functions/time/prettify-date'
 
 interface TitleBoardProps {
   appName: string,
@@ -91,10 +92,10 @@ const TitleBoard = (props: TitleBoardProps) => {
       </div>
       <div className='dates'>
         <span>
-          {langHandler({ pl: 'Opublikowano w dniu', en: 'Published on'})} {publishedOn}
+          {langHandler({ pl: 'Opublikowano w dniu', en: 'Published on'})} {publishedOn && prettifyDate({ date: publishedOn })}.
         </span>
         <span>
-        {langHandler({ pl: 'Ostatnio zmodyfikowano w dniu', en: 'Last updated on'})} {modifiedOn}
+        {langHandler({ pl: 'Ostatnio zmodyfikowano w dniu', en: 'Last updated on'})} {modifiedOn && prettifyDate({ date: modifiedOn })}.
         </span>
       </div>
       <h1>
