@@ -25,7 +25,7 @@ export const linkManager = props => {
           {title}
         </div>
         <div className='last-updated-at'>
-          {modifiedOn && prettifyDate({ date: '2022-04-20' })}
+          {modifiedOn && prettifyDate({ date: modifiedOn })}
         </div>
       </div>
     </>
