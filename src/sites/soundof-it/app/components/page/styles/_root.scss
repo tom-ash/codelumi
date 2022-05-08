@@ -25,7 +25,9 @@
       text-align: center;
       padding-top: 26px;
       img {
-        height: 36px;
+        max-width: 32px;
+        max-height: 32px;
+        
       }
     }
     .title-and-meta {

@@ -1,4 +1,5 @@
 import React from 'react'
+import prettifyDate from '../../../../../../../../shared/app/functions/time/prettify-date'
 
 export const linkManager = props => {
   const {
@@ -24,7 +25,7 @@ export const linkManager = props => {
           {title}
         </div>
         <div className='last-updated-at'>
-          {modifiedOn}
+          {modifiedOn && prettifyDate({ date: '2022-04-20' })}
         </div>
       </div>
     </>
