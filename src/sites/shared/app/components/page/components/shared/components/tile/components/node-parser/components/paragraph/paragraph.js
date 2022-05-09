@@ -5,18 +5,33 @@ const Paragraph = props => {
   const { content, element } = props
   let enrichedContent = content
 
-  enrichedContent = enrichedContent.replace(/\`(.+?)\`/g, (_fullMatch, innerMatch) => `<code>${innerMatch}</code>`)
-  enrichedContent = enrichedContent.replace(/\*\*(.+?)\*\*/g, (_fullMatch, innerMatch) => `<strong>${innerMatch}</strong>`)
-  enrichedContent = enrichedContent.replace(/\*(.+?)\*/g, (_fullMatch, innerMatch) => `<em>${innerMatch}</em>`)
+  enrichedContent = enrichedContent.replace(
+    /\`(.+?)\`/g,
+    (_fullMatch, innerMatch) => `<code>${innerMatch}</code>`
+  )
 
-  enrichedContent = enrichedContent.replace(/\[([^\[]+)\]/g, (_fullMatch, innerMatch) => {
-    const matchArray = innerMatch.split(', ')
-    const matchTag = matchArray.shift()
+  enrichedContent = enrichedContent.replace(
+    /\*\*(.+?)\*\*/g,
+    (_fullMatch, innerMatch) => `<strong>${innerMatch}</strong>`
+  )
 
-    switch (matchTag) {
-      case 'a': return buildAnchor(matchArray)
+  enrichedContent = enrichedContent.replace(
+    /\*(.+?)\*/g,
+    (_fullMatch, innerMatch) => `<em>${innerMatch}</em>`
+  )
+
+  enrichedContent = enrichedContent.replace(
+    /(a)\[(.+)\]/g,
+    (_fullMatch, tag, attributes) => {
+      if (attributes.indexOf('text') === -1) return _fullMatch
+
+      const attrs = attributes.split(/,\s(?=[^,]+:)/)
+
+      switch (tag) {
+        case 'a': return buildAnchor(attrs)
+      }
     }
-  })
+  )
 
   const DomTag = element || 'p'
 
