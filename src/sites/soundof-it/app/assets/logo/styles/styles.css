@@ -1,99 +1,29 @@
 #logo {
   position: relative;
-  height: 60px;
+  height: 50px;
+  color: rgb(210, 210, 210);
+  padding-left: 50px;
+}
+
+#logo .img-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  padding-top: 15px;
+  text-align: center;
+  background-color: rgb(64, 64, 64);
 }
 
 #logo img {
-  position: relative;
-  display: inline-block;
-  transform: translate(4px, 4px);
-  height: 24px;
+  height: 20px;
 }
 
 #logo .text {
+  padding-left: 12px;
+  line-height: 50px;
   display: inline-block;
-  font-size: 24px;
-  line-height: 60px;
-  font-family: 'Cairo', sans-serif;
-}
-
-#logo .icon {
-  position: absolute;
-  top: -7px;
-  right: -28px;
-  bottom: 0;
-  margin: auto;
-  width: 20px;
-  height: 30px;
-}
-
-#logo .icon .horizontal {
-  width: 23px;
-  height: 8px;
-  margin-top: 12px;
-  border-top: .09em solid white;
-  border-bottom: .09em solid white;
-  transform: skew(-15deg, 0deg);
-}
-
-#logo .icon .vertical {
-  position: absolute;
-  top: 0;
-  width: 11px;
-  height: 25px;
-  margin-top: 6px;
-  margin-left: 5px;
-  border-right: .09em solid white;
-  border-left: .09em solid white;
-  transform: skew(-15deg, 0deg);
-}
-
-#logo .icon .vertical .one {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  bottom: -2px;
-  left: .01em;
-  border-radius: 5px;
-  background: white;
-  transform: skew(-10deg, 0deg) translate(-100%, 0);
-}
-
-#logo .icon .vertical .two {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  right: -.1em;
-  bottom: -2px;
-  border-radius: 5px;
-  background: white;
-  transform: skew(-10deg, 0deg);
-}
-
-
-
-
-#logo-image {
-  padding: 100px;
-}
-
-#logo-image div:nth-child(1) {
-  border-radius: 50% 50% 50% 0;
-  border: 30px solid #21618C;
-  width: 200px;
-  height: 200px;
-  transform: rotate(-45deg);
-}
-
-#logo-image div:nth-child(1)::after {
-  position: absolute;
-  content: '';
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  margin-left: -40px;
-  margin-top: -40px;
-  background-color: #3498DB;
+  font-size: 15px;
 }
