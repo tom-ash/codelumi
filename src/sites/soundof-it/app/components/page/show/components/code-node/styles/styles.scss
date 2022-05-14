@@ -1,16 +1,14 @@
 @import './css';
 
 pre {
-  padding: 10px 15px;
+  margin-bottom: 18px;
+  padding: 18px;
   background: #283747;
-  font-size: 15px;
-  line-height: 1.58;
-  border-radius: 4px;
-
+  font-size: 17px;
+  line-height: 1.5;
+  overflow: scroll;
   code {
-    font-family: monospace;
     padding: 0;
-    white-space: pre-wrap;
     color: #E5E7E9;
 
     &.pgsql {

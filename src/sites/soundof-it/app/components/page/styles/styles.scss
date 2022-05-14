@@ -47,8 +47,6 @@ $padding-mobile: 18px;
       }
     }
     .article {
-      @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
-      font-family: 'Titillium Web', sans-serif;
       max-width: 800px;
       margin: 0 auto;
       margin-bottom: 20px;
@@ -118,7 +116,7 @@ $padding-mobile: 18px;
         padding: 0 $padding-desktop 26px;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
-        font-size: 18px;
+        font-size: 19px;
         @media #{$LARGE-PHONE} {
           padding: 0 $padding-mobile 26px;
         }
@@ -131,13 +129,13 @@ $padding-mobile: 18px;
             margin-right: 12px;
           }
           &.h2 {
-            padding: 72px 0 18px;
+            padding: 72px 0 14px;
             .number, h2 {
               font-size: 24px;
             }
           }
           &.h3 {
-            padding: 18px 0 18px;
+            padding: 24px 0 14px;
             .number, h3 {
               font-size: 20px;
             }
@@ -146,7 +144,7 @@ $padding-mobile: 18px;
             padding: 36px 0 12px;
           }
           &.h2 + .h3 {
-            padding: 0 0 18px;
+            padding: 0 0 14px;
           }
           &.h3 + .h4 {
             padding: 12px 0 12px;
@@ -164,10 +162,11 @@ $padding-mobile: 18px;
         p {
           margin: 0 0 18px;
           code {
-            border-radius: 3px;
-            padding: 2px 5px;
+            display: inline-block;
+            padding: 0px 6px;
             background: #F8F9F9;
             color: #922B21;
+            font-size: 17px;
           }
           a {
             display: inline;
@@ -177,10 +176,6 @@ $padding-mobile: 18px;
               color: #A04000;
             }
           }
-        }
-        pre {
-          margin: 0 0 18px;
-          padding: 12px;
         }
         p + ul {
           margin-top: -9px;
