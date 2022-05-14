@@ -11,14 +11,10 @@ header.title-board {
   border-left: 1px solid #F2F3F4;
   border-right: 1px solid #F2F3F4;
   border-top: 1px solid #F2F3F4;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
   .cover {
     z-index: 2;
     position: relative;
     width: 100%;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
     overflow: hidden;
     min-height: 180px;
     background: rgb(251, 251, 252);

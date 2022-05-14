@@ -3,6 +3,7 @@
 %root {
   position: relative;
   width: 100%;
+  padding-top: 20px;
   @media #{$LARGE-TABLET} {
     padding: 0 10px;
   }
@@ -22,8 +23,6 @@
     float: left;
     background: white;
     height: 88px;
-    border: 1px solid #F2F3F4;
-    border-radius: 5px;
     .logo {
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
