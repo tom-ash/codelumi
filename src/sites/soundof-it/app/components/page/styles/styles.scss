@@ -74,29 +74,27 @@ $padding-mobile: 18px;
         }
         background: white;
         .inner-container {
+          background: rgb(245, 245, 245);
           display: inline-block;
           width: auto;
-          border: 1px solid #34495E;
-          border-radius: 5px;
-          padding: 18px 18px 8px;
+          padding: 18px 24px 8px 18px;
           line-height: 1;
           color: #34495E;
         }
         a {
-          font-size: 14px;
-          margin-bottom: 9px;
+          font-size: 16px;
+          margin-bottom: 8px;
           &:hover {
-            color: #873600;
+            text-decoration: underline;
           }
         }
         h2 {
-          font-size: 14px;
+          font-size: 16px;
           text-align: center;
           margin-bottom: 18px;
         }
         ul {
           list-style-type: none;
-          font-size: 14px;
           li {
             position: relative;
             span:first-of-type {
