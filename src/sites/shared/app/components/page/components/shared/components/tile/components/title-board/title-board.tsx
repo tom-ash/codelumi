@@ -6,6 +6,7 @@ import prettifyDate from '../../../../../../../../../../shared/app/functions/tim
 interface TitleBoardProps {
   appName: string,
   device: string,
+  lang: string,
   langHandler(langs: { pl: string, en: string }): string,
   node: {
     title: string,
@@ -27,9 +28,11 @@ interface TitleBoardProps {
 }
 
 const TitleBoard = (props: TitleBoardProps) => {
+  console.log(props)
   const {
     appName,
     device,
+    lang,
     langHandler,
     node: {
       title,
@@ -95,10 +98,10 @@ const TitleBoard = (props: TitleBoardProps) => {
       </div>
       <div className='dates'>
         <span>
-          {langHandler({ pl: 'Opublikowano w dniu', en: 'Published on'})} {publishedOn && prettifyDate({ date: publishedOn })}.
+          {langHandler({ pl: 'Opublikowano w dniu', en: 'Published on'})} {publishedOn && prettifyDate({ date: publishedOn, lang })}.
         </span>
         <span>
-        {langHandler({ pl: 'Ostatnio zmodyfikowano w dniu', en: 'Last updated on'})} {modifiedOn && prettifyDate({ date: modifiedOn })}.
+        {langHandler({ pl: 'Ostatnio zmodyfikowano w dniu', en: 'Last updated on'})} {modifiedOn && prettifyDate({ date: modifiedOn, lang })}.
         </span>
       </div>
       <h1>

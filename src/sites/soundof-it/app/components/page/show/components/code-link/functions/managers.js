@@ -13,6 +13,8 @@ export const linkManager = props => {
     modifiedOn
   } = props
 
+  console.log(props)
+
   const classNames = { container: `code-link` }  
   const href = `${clientUrl}/${pathname}`
   const label = (

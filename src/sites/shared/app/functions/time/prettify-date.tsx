@@ -1,6 +1,6 @@
 import React from 'react'
 
-const months = [
+const englishMonths = [
   'January',
   'February',
   'March',
@@ -15,11 +15,28 @@ const months = [
   'December'
 ]
 
+const polishMonths = [
+  'stycznia',
+  'lutego',
+  'marca',
+  'kwietnia',
+  'maja',
+  'czerwca',
+  'lipca',
+  'sierpnia',
+  'września',
+  'października',
+  'listopada',
+  'grudnia'
+]
+
 interface PrettifyDateProps {
-  date: string
+  date: string,
+  lang?: string
 }
 
-const getMonth = (month: number): string => months[month - 1]
+const getEnglishMonth = (month: number): string => englishMonths[month - 1]
+const getPolishMonth = (month: number): string => polishMonths[month - 1]
 
 const getDaySuffix = (day: number) => {
   if ([1, 21, 31].indexOf(day) !== -1) return 'st'
@@ -30,16 +47,29 @@ const getDaySuffix = (day: number) => {
 }
 
 const prettifyDate = (props: PrettifyDateProps) => {
-  const { date } = props
+  const { date, lang } = props
   const matches = date.match(/^(\d{4})-(\d{2})-(\d{2})$/)
 
   if (!matches) return null
 
   const [_fullMatch, year, month, day] = matches
-  const prettifiedMonth = getMonth(+month)
-  const prettifiedDay = day
 
-  return <>{prettifiedMonth} {+prettifiedDay}<sup>{getDaySuffix(+day)}</sup>, {year}</>
+  let prettifiedMonth
+  let prettifiedDay
+
+  if (lang === 'pl') {
+    prettifiedMonth = getPolishMonth(+month)
+    prettifiedDay = day
+
+    return <>{prettifiedDay} {prettifiedMonth} {year}</>
+  }
+
+  if (lang === 'en') {
+    prettifiedMonth = getEnglishMonth(+month)
+    prettifiedDay = <>{+day}<sup>{getDaySuffix(+day)}</sup></>
+
+    return <>{prettifiedMonth} {prettifiedDay}, {year}</>
+  }
 }
 
 export default prettifyDate
