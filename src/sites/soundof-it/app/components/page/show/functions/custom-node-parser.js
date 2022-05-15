@@ -1,6 +1,5 @@
 import React from 'react'
 import CodeNode from '../components/code-node/code-node.js'
-import CodeLink from '../components/code-link/code-link.js'
 import PageIndexer from '../components/page-indexer/page-indexer'
 
 function customNodeParser(props) {

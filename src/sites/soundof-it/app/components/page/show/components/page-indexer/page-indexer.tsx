@@ -6,6 +6,9 @@ import { connect } from 'react-redux'
 import { mapStateToProps } from './constants/mappers'
 
 interface PageIndexerProps {
+  node: {
+    collection: string
+  },
   tutorials: {
     logo: string,
     image: string,
@@ -21,21 +24,23 @@ interface PageIndexerProps {
 const PageIndexer = (props: PageIndexerProps) => {
   useStyles(styles)
 
-  const links = props.tutorials
+  const { tutorials: learningCollection, node: { collection: collectionName } } = props
 
-  return (
-    <div className='page-indexer'>
-      {links.map((link, index) => {
-        const { logo, image, title, description, category, pathname, hrefLang, modifiedOn } = link
+  if (collectionName === 'learning') {
+    return (
+      <div className='page-indexer'>
+        {learningCollection.map((link, index) => {
+          const { logo, image, title, description, category, pathname, hrefLang, modifiedOn } = link
 
-        console.log(link)
+          const linkProps = { ...props, logo, image, title, description, category, pathname, hrefLang, modifiedOn, collectionName }
 
-        const linkProps = { ...props, logo, image, title, description, category, pathname, hrefLang, modifiedOn }
+          return <CodeLink {...{ ...linkProps, key: index }} />
+        })}
+      </div>
+    )
+  }
 
-        return <CodeLink {...{ ...linkProps, key: index }} />
-      })}
-    </div>
-  )
+  return null
 }
 
 export default connect(mapStateToProps)(PageIndexer)
