@@ -8,26 +8,27 @@ export const linkManager = props => {
     pathname,
     hrefLang,
     title,
-    image,
-    logo,
-    modifiedOn
+    modifiedOn,
+    description,
+    category
   } = props
 
   const classNames = { container: `code-link` }  
   const href = `${clientUrl}/${pathname}`
   const label = (
     <>
-      <div className='logo'>
-        <img src={logo} />
+      <div className={`category ${category}`}>
+        {category}
       </div>
-      <div className='title-and-meta'>
         <div className='title'>
           {title}
         </div>
         <div className='last-updated-at'>
-          {modifiedOn && prettifyDate({ date: modifiedOn })}
+          {modifiedOn && prettifyDate({ date: modifiedOn, lang: 'en' })}
         </div>
-      </div>
+        <div className='description'>
+          {description}
+        </div>
     </>
   )
   const onClick = () => changeRoute({ href })

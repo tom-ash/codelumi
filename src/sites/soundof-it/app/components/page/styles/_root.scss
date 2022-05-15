@@ -22,44 +22,41 @@
     position: relative;
     float: left;
     background: white;
-    height: 88px;
-    .logo {
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-      background: #FBFCFC;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 64px;
-      text-align: center;
-      padding-top: 26px;
-      img {
-        max-width: 32px;
-        max-height: 32px;
-        
-      }
-    }
-    .title-and-meta {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 64px;
-      font-size: 15px;
+    height: 160px;
+    a {
       padding: 12px;
-      .title {
-        color: rgb(50, 50, 50);
+      height: 100%;
+      .category {
         font-weight: bold;
+        font-size: 11px;
+        
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        &.tutorials {
+          color: #D35400;
+        }
+        &.insights {
+          color: #8E44AD;
+        }
+      }
+      .title {
+        font-weight: bold;
+        margin-bottom: 3px;
       }
       .last-updated-at {
+        font-size: 9px;
+        color: #7B7D7D;
+      }
+      .description {
         position: absolute;
+        right: 12px;
         bottom: 12px;
-        font-size: 10px;
-        color: #626567;
-        height: 14px;
+        left: 12px;
+        font-size: 11px;
+        color: #979A9A;
       }
     }
+
     width: 19%;
     margin-right: 1%;
     margin-bottom: 1%;

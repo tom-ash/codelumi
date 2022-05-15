@@ -10,6 +10,7 @@ interface PageIndexerProps {
     logo: string,
     image: string,
     title: string,
+    description: string,
     category: string,
     pathname: string,
     hrefLang: string,
@@ -25,8 +26,11 @@ const PageIndexer = (props: PageIndexerProps) => {
   return (
     <div className='page-indexer'>
       {links.map((link, index) => {
-        const { logo, image, title, category, pathname, hrefLang, modifiedOn } = link
-        const linkProps = { ...props, logo, image, title, category, pathname, hrefLang, modifiedOn }
+        const { logo, image, title, description, category, pathname, hrefLang, modifiedOn } = link
+
+        console.log(link)
+
+        const linkProps = { ...props, logo, image, title, description, category, pathname, hrefLang, modifiedOn }
 
         return <CodeLink {...{ ...linkProps, key: index }} />
       })}
