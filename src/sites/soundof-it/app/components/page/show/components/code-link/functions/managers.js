@@ -10,24 +10,26 @@ export const linkManager = props => {
     title,
     modifiedOn,
     description,
-    category
+    category,
+    subcategory
   } = props
 
-  const classNames = { container: `code-link` }  
+  const classNames = { container: `code-link ${subcategory}` }  
   const href = `${clientUrl}/${pathname}`
   const label = (
     <>
-      <div className={`category ${category}`}>
-        {category}
+      <div className='category-and-subcategory'>
+        <span className={category}>{category}</span><span className={subcategory}>{subcategory}</span>
       </div>
         <div className='title'>
           {title}
         </div>
-        <div className='last-updated-at'>
-          {modifiedOn && prettifyDate({ date: modifiedOn, lang: 'en' })}
-        </div>
+
         <div className='description'>
           {description}
+        </div>
+        <div className='last-updated-at'>
+          {modifiedOn}
         </div>
     </>
   )

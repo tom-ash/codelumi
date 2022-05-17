@@ -23,37 +23,77 @@
     float: left;
     background: white;
     height: 160px;
+    &.javascript {
+      border-left: 2px solid #D4AC0D;
+    }
+    &.ruby {
+      border-left: 2px solid #CB4335;
+    }
+    &.html {
+      border-left: 2px solid #D35400;
+    }
+    &.postgres {
+      border-left: 2px solid rgb(64, 102, 143);
+    }
+    &.css {
+      border-left: 2px solid rgb(48, 81, 223);
+    }
+    &:hover {
+      background: #FBFCFC;
+    }
+    
     a {
       padding: 12px;
       height: 100%;
-      .category {
+
+      .category-and-subcategory {
         font-weight: bold;
-        font-size: 11px;
-        
-        margin-bottom: 8px;
+        font-size: 10px;
+        margin-bottom: 9px;
         text-transform: uppercase;
-        &.tutorials {
+        span {
+          display: inline-block;
+          margin-right: 6px;
+        }
+        .tutorials {
+          color: #935116;
+        }
+        .insights {
+          color: #6C3483;
+        }
+        .javascript {
+          color: #D4AC0D;
+        }
+        .ruby {
+          color: #CB4335;
+        }
+        .html {
           color: #D35400;
         }
-        &.insights {
-          color: #8E44AD;
+        .postgres {
+          color: rgb(64, 102, 143);
+        }
+        .css {
+          color: rgb(48, 81, 223);
         }
       }
       .title {
-        margin-bottom: 3px;
+        margin-bottom: 2px;
         font-size: 17px;
       }
       .last-updated-at {
-        font-size: 9px;
-        color: #7B7D7D;
+        font-size: 8px;
+        color: #979A9A;
+        position: absolute;
+        bottom: 12px;
       }
       .description {
         position: absolute;
         right: 12px;
-        bottom: 12px;
+        bottom: 32px;
         left: 12px;
         font-size: 11px;
-        color: #979A9A;
+        color: #797D7F;
       }
     }
 

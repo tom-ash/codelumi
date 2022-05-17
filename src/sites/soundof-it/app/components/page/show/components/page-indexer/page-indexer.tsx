@@ -15,6 +15,7 @@ interface PageIndexerProps {
     title: string,
     description: string,
     category: string,
+    subcategory: string,
     pathname: string,
     hrefLang: string,
     modifiedOn: string
@@ -30,9 +31,8 @@ const PageIndexer = (props: PageIndexerProps) => {
     return (
       <div className='page-indexer'>
         {learningCollection.map((link, index) => {
-          const { logo, image, title, description, category, pathname, hrefLang, modifiedOn } = link
-
-          const linkProps = { ...props, logo, image, title, description, category, pathname, hrefLang, modifiedOn, collectionName }
+          const { logo, image, title, description, category, subcategory, pathname, hrefLang, modifiedOn } = link
+          const linkProps = { ...props, logo, image, title, description, category, subcategory, pathname, hrefLang, modifiedOn, collectionName }
 
           return <CodeLink {...{ ...linkProps, key: index }} />
         })}
