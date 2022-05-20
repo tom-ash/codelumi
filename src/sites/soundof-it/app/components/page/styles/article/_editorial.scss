@@ -1,14 +1,14 @@
 $padding-desktop: 36px;
 $padding-mobile: 18px;
 
-    %editorial {
-        padding: 0 $padding-desktop;
-        font-size: 17px;
-        line-height: 1.5;
-        border-left: 1px solid #F2F3F4;
-        border-right: 1px solid #F2F3F4;
-        background: white;
-        @media #{$LARGE-PHONE} {
-          padding: 10px $padding-mobile;
-        }
-      }
+%editorial {
+  padding: 0 $padding-desktop;
+  font-size: 17px;
+  line-height: 1.5;
+  border-left: 1px solid #F2F3F4;
+  border-right: 1px solid #F2F3F4;
+  background: white;
+  @media #{$LARGE-PHONE} {
+    padding: 10px $padding-mobile;
+  }
+}
