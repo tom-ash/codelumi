@@ -1,11 +1,13 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader/useStyles'
 import styles from './styles/styles.scss'
-import CodeLink from '../code-link/code-link'
 import { connect } from 'react-redux'
 import { mapStateToProps } from './constants/mappers'
+import IndexLink from '../../../../../../../shared/app/components/page/components/shared/components/tile/components/index-link/index-link'
 
 interface PageIndexerProps {
+  clientUrl: string,
+  changeRoute(props: object): void,
   node: {
     collection: string
   },
@@ -25,16 +27,16 @@ interface PageIndexerProps {
 const PageIndexer = (props: PageIndexerProps) => {
   useStyles(styles)
 
-  const { tutorials: learningCollection, node: { collection: collectionName } } = props
+  const { tutorials: learningCollection, node: { collection: collectionName }, clientUrl, changeRoute } = props
 
   if (collectionName === 'learning') {
     return (
       <div className='page-indexer'>
         {learningCollection.map((link, index) => {
           const { logo, image, title, description, category, subcategory, pathname, hrefLang, modifiedOn } = link
-          const linkProps = { ...props, logo, image, title, description, category, subcategory, pathname, hrefLang, modifiedOn, collectionName }
+          const linkProps = { clientUrl, changeRoute, logo, image, title, description, category, subcategory, pathname, hrefLang, modifiedOn, collectionName }
 
-          return <CodeLink {...{ ...linkProps, key: index }} />
+          return <IndexLink {...{ ...linkProps, key: index }} />
         })}
       </div>
     )

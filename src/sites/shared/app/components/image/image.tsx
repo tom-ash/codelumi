@@ -2,17 +2,43 @@ import React from 'react'
 import Index from './components/index'
 import Edit from './components/edit/edit'
 
-class Image extends React.Component {
-  //@ts-ignore
-  constructor(props) {
+interface ImageProps {
+  render: {
+    'image/index': boolean,
+    'image/edit': boolean
+  },
+  apiUrl: string,
+  changeRoute(props: object): void,
+  buildUrl(props: { path: string}): string
+}
+
+class Image extends React.Component<ImageProps> {
+  constructor(props: ImageProps) {
     super(props)
   }
 
   render() {
-    //@ts-ignore
-    const { render: { 'image/index': renderIndex, 'image/edit': renderEdit }, apiUrl, changeRoute, buildUrl } = this.props
-    const editProps = { apiUrl, changeRoute }
-    const indexProps = { apiUrl, changeRoute, buildUrl }
+    const {
+      render: {
+        'image/index': renderIndex,
+        'image/edit': renderEdit
+      },
+      apiUrl,
+      changeRoute,
+      buildUrl
+    } = this.props
+
+    const editProps = {
+      apiUrl,
+      changeRoute
+    }
+
+    const indexProps = {
+      apiUrl,
+      changeRoute,
+      buildUrl
+    }
+
     const classNames = []
 
     if (renderIndex) classNames.push('index')

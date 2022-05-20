@@ -1,7 +1,19 @@
 import React from 'react'
-import prettifyDate from '../../../../../../../../shared/app/functions/time/prettify-date'
+import { ManagedLink } from 'managed-inputs'
 
-export const linkManager = props => {
+interface IndexLinkProps {
+  clientUrl: string,
+  changeRoute(props: object): void,
+  pathname: string,
+  hrefLang: string,
+  title: string,
+  modifiedOn: string,
+  description: string,
+  category: string,
+  subcategory: string
+}
+
+const IndexLink = (props: IndexLinkProps) => {
   const {
     clientUrl,
     changeRoute,
@@ -14,7 +26,7 @@ export const linkManager = props => {
     subcategory
   } = props
 
-  const classNames = { container: `code-link ${subcategory}` }  
+  const classNames = { container: `index-link ${subcategory}` }  
   const href = `${clientUrl}/${pathname}`
   const label = (
     <>
@@ -34,5 +46,9 @@ export const linkManager = props => {
   )
   const onClick = () => changeRoute({ href })
 
-  return { classNames, href, hrefLang, title, label, onClick }
+  const linkProps = { classNames, href, hrefLang, title, label, onClick }
+
+  return <ManagedLink {...linkProps} />
 }
+
+export default IndexLink
