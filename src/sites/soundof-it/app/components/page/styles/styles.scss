@@ -1,200 +1,39 @@
 @import '../../../../../shared/app/styles/media-breakpoints.scss';
 @import './root.scss';
-
-$padding-desktop: 36px;
-$padding-mobile: 18px;
+@import './article/article';
 
 %page {
   #page {
-    min-height: 640px;
-    .root {
-      @extend %root;
-    }
     max-width: 1440px;
-    padding: 0 20px;
+    min-height: 640px;
     margin: 0 auto;
-    @media #{$LARGE-PHONE} {
-      padding: 0;
-    }
-    button {
-      &.edit {
-        position: fixed;
-        top: 80px;
-        right: 20px;
-      }
-    }
+    padding: 50px 20px 0;
     &.edit {
       padding-bottom: 320px;
     }
-  }
-  #page {
-    padding-top: 50px;
-    button.edit {
-      position: fixed;
-      top: 80px;
-      right: 20px;
-      width: 20px;
-      border: none;
-      background: none;
-      cursor: pointer;
-      svg {
-        fill: #626567;
-      }
-      &:hover {
-        svg {
-          fill: black;
-        }
-      }
+    .root {
+      @extend %root;
     }
     .article {
-      max-width: 800px;
-      margin: 0 auto;
-      margin-bottom: 20px;
-      line-height: 1.8;
-      color: #212F3C;
-      h1 {
-        font-size: 36px;
-        padding-bottom: 16px;
+      @extend %article;
+    }
+    button.edit {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 20px;
+      height: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #7B7D7D;
+      svg {
+        display: none;
+        fill: #626567;
       }
-      .editorial {
-        padding: 0 $padding-desktop;
-        font-size: 17px;
-        line-height: 1.5;
-        border-left: 1px solid #F2F3F4;
-        border-right: 1px solid #F2F3F4;
-        background: white;
-        @media #{$LARGE-PHONE} {
-          padding: 10px $padding-mobile;
-        }
-      }
-      .table-of-contents {
-        padding: 24px $padding-desktop;
-        @media #{$LARGE-PHONE} {
-          padding: 24px $padding-mobile;
-        }
-        background: white;
-        .inner-container {
-          background: rgb(245, 245, 245);
-          display: inline-block;
-          width: auto;
-          padding: 18px 24px 8px 18px;
-          line-height: 1;
-          color: #34495E;
-        }
-        a {
-          font-size: 16px;
-          margin-bottom: 8px;
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-        h2 {
-          font-size: 16px;
-          text-align: center;
-          margin-bottom: 18px;
-        }
-        ul {
-          list-style-type: none;
-          li {
-            position: relative;
-            span:first-of-type {
-              display: inline-block;
-              width: 30px;
-              text-align: center;
-              margin-right: 8px;
-            }
-          }
-        }
-      }
-      main {
-        border-right: 1px solid #F2F3F4;
-        border-bottom: 1px solid #F2F3F4;
-        border-left: 1px solid #F2F3F4;
-        background: white;
-        padding: 0 $padding-desktop 26px;
-        font-size: 17px;
-        @media #{$LARGE-PHONE} {
-          padding: 0 $padding-mobile 26px;
-        }
-        .header-container {
-          .number, h2, h3, h4 {
-            display: inline;
-          }
-          .number {
-            font-weight: bold;
-            margin-right: 12px;
-          }
-          &.h2 {
-            padding: 72px 0 12px;
-            .number, h2 {
-              font-size: 20px;
-            }
-          }
-          &.h3 {
-            padding: 36px 0 12px;
-            .number, h3 {
-              font-size: 19px;
-            }
-          }
-          &.h4 {
-            padding: 24px 0 12px;
-            .number, h4 {
-              font-size: 18px;
-            }
-          }
-          &.h2 + .h3 {
-            padding: 0 0 12px;
-          }
-          &.h3 + .h4 {
-            padding: 0 0 12px;
-          }
-        }
-        .header-container:first-child {
-          &.h2 {
-            padding: 0 0 12px;
-          }  
-        }
-        ul {
-          margin-bottom: 18px;
-          padding-left: 20px;
-        }
-        p {
-          margin: 0 0 12px;
-          code {
-            font-family: monospace;
-            display: inline-block;
-            padding: 0px 6px;
-            background: #F8F9F9;
-            color: #922B21;
-            font-size: 15px;
-            line-height: 1.4;
-          }
-          a {
-            display: inline;
-            text-decoration: underline;
-            color: #D35400;
-            &:hover {
-              color: #A04000;
-            }
-          }
-        }
-        p + ul {
-          margin-top: -9px;
-        }
-        p + pre {
-          margin-top: 18px;
-        }
-        pre + pre {
-          margin-top: 21px;
-        }
-        ul {
-          li {
-            p {
-              margin-bottom: 3px;
-            }
-          }
-        }
-      }
+    }
+    @media #{$LARGE-PHONE} {
+      padding: 0;
     }
   }
 }

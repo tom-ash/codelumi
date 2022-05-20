@@ -1,0 +1,42 @@
+$padding-desktop: 36px;
+$padding-mobile: 18px;
+
+%table-of-contents {
+    padding: 24px $padding-desktop;
+    @media #{$LARGE-PHONE} {
+      padding: 24px $padding-mobile;
+    }
+    background: white;
+    .inner-container {
+      background: rgb(245, 245, 245);
+      display: inline-block;
+      width: auto;
+      padding: 18px 24px 8px 18px;
+      line-height: 1;
+      color: #34495E;
+    }
+    a {
+      font-size: 16px;
+      margin-bottom: 8px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    h2 {
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    ul {
+      list-style-type: none;
+      li {
+        position: relative;
+        span:first-of-type {
+          display: inline-block;
+          width: 30px;
+          text-align: center;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
