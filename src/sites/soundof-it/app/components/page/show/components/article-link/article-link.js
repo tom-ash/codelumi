@@ -40,7 +40,7 @@
 //         <div className='title'>
 //           {title}
 //         </div>
-//         <div className='last-updated-at'>
+//         <div className='modified-on'>
 //           {modifiedOn && prettifyDate({ date: modifiedOn, lang: 'en' })}
 //         </div>
 //         <div className='description'>

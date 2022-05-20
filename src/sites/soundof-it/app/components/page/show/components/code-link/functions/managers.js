@@ -21,16 +21,15 @@ export const linkManager = props => {
       <div className='category-and-subcategory'>
         <span className={category}>{category}</span><span className={subcategory}>{subcategory}</span>
       </div>
-        <div className='title'>
-          {title}
-        </div>
-
-        <div className='description'>
-          {description}
-        </div>
-        <div className='last-updated-at'>
-          {modifiedOn}
-        </div>
+      <div className='title'>
+        {title}
+      </div>
+      <div className='description'>
+        {description}
+      </div>
+      <div className='modified-on'>
+        {modifiedOn}
+      </div>
     </>
   )
   const onClick = () => changeRoute({ href })
