@@ -10,7 +10,9 @@ interface IndexLinkProps {
   modifiedOn: string,
   description: string,
   category: string,
-  subcategory: string
+  subcategory: string,
+  image?: string,
+  collectionName: string
 }
 
 const IndexLink = (props: IndexLinkProps) => {
@@ -23,24 +25,29 @@ const IndexLink = (props: IndexLinkProps) => {
     modifiedOn,
     description,
     category,
-    subcategory
+    subcategory,
+    image,
+    collectionName
   } = props
 
-  const classNames = { container: `index-link ${subcategory}` }  
+  const classNames = { container: `index-link ${subcategory} ${collectionName}` }  
   const href = `${clientUrl}/${pathname}`
   const label = (
     <>
-      <div className='category-and-subcategory'>
-        <span className={category}>{category}</span><span className={subcategory}>{subcategory}</span>
-      </div>
-      <div className='title'>
-        {title}
-      </div>
-      <div className='description'>
-        {description}
-      </div>
-      <div className='modified-on'>
-        {modifiedOn}
+      {image && <img src={image} />}
+      <div className='link-data'>
+        <div className='category-and-subcategory'>
+          <span className={category}>{category}</span><span className={subcategory}>{subcategory}</span>
+        </div>
+        <div className='title'>
+          {title}
+        </div>
+        <div className='description'>
+          {description}
+        </div>
+        <div className='modified-on'>
+          {modifiedOn}
+        </div>
       </div>
     </>
   )

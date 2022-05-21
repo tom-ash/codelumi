@@ -21,24 +21,54 @@ interface PageIndexerProps {
     pathname: string,
     hrefLang: string,
     modifiedOn: string
+  }[],
+  articles: {
+    logo: string,
+    image: string,
+    title: string,
+    description: string,
+    category: string,
+    subcategory: string,
+    pathname: string,
+    hrefLang: string,
+    modifiedOn: string
   }[]
 }
 
 const PageIndexer = (props: PageIndexerProps) => {
   useStyles(styles)
 
-  const { tutorials: learningCollection, node: { collection: collectionName }, clientUrl, changeRoute } = props
+  const { tutorials: learningCollection, articles, node: { collection: collectionName }, clientUrl, changeRoute } = props
 
   if (collectionName === 'learning') {
     return (
-      <div className='page-indexer'>
-        {learningCollection.map((link, index) => {
-          const { logo, image, title, description, category, subcategory, pathname, hrefLang, modifiedOn } = link
-          const linkProps = { clientUrl, changeRoute, logo, image, title, description, category, subcategory, pathname, hrefLang, modifiedOn, collectionName }
+      <>
+        <div className='page-indexer'>
+          {learningCollection.map((link, index) => {
+            const { logo, title, description, category, subcategory, pathname, hrefLang, modifiedOn } = link
+            const linkProps = { collectionName, clientUrl, changeRoute, logo, title, description, category, subcategory, pathname, hrefLang, modifiedOn }
 
-          return <IndexLink {...{ ...linkProps, key: index }} />
-        })}
-      </div>
+            return <IndexLink {...{ ...linkProps, key: index }} />
+          })}
+          <div className='float-clear' />
+        </div>
+      </>
+    )
+  }
+
+  if (collectionName === 'articles') {
+    return (
+      <>
+        <div className='page-indexer'>
+          {articles.map((link, index) => {
+            const { logo, image, title, description, category, subcategory, pathname, hrefLang, modifiedOn } = link
+            const linkProps = { collectionName, clientUrl, changeRoute, logo, image, title, description, category, subcategory, pathname, hrefLang, modifiedOn }
+
+            return <IndexLink {...{ ...linkProps, key: index }} />
+          })}
+          <div className='float-clear' />
+        </div>
+      </>
     )
   }
 

@@ -1,9 +1,11 @@
 export const mapStateToProps = store => {
   const {
-    tutorials
+    tutorials,
+    articles
   } = store.page.index
 
   return {
-    tutorials
+    tutorials,
+    articles
   }
 }

@@ -1,5 +1,6 @@
 const initialState = {
-  tutorials: []
+  tutorials: [],
+  articles: []
 }
 
 const indexReducer = (state = initialState, action) => {
