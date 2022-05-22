@@ -75,11 +75,15 @@ header.title-board {
     padding-left: $padding-desktop;
     font-size: 12px;
     color: #909497;
-    @media #{$LARGE-PHONE} {
-      padding-left: $padding-mobile;
-    }
     span {
       margin-right: 12px;
+    }
+    @media #{$LARGE-PHONE} {
+      padding-left: $padding-mobile;
+      span {
+        display: block;
+        margin: 0;
+      }
     }
   }
   h1 {
