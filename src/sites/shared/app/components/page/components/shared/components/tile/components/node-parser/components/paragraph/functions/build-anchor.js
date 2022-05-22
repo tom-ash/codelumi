@@ -12,6 +12,10 @@ const buildAnchor = matchArray => {
     }
   })
 
+  if (properties.indexOf('target') === -1) {
+    properties += ' target="_blank"'
+  }
+
   return (
     `<a ${properties}>${text}</a>`
   )
