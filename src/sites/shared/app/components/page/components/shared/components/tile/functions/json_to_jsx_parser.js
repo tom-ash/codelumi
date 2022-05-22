@@ -6,6 +6,7 @@ const TitleBoard = loadable(() => import('../components/title-board/title-board'
 const Editorial = loadable(() => import('../components/editorial/editorial'))
 const TableOfContents = loadable(() => import('../components/table-of-contents/table-of-contents'))
 const Section = loadable(() => import('../components/section/section'))
+const YouTubeEmbed = loadable(() => import('../components/youtube-embed/youtube-embed'))
 
 const jsonToJsxParser = props => {
   const { jsonBody, appName, device, langHandler, iSection, isAdmin, publishedOn, modifiedOn, lang } = props
@@ -16,6 +17,12 @@ const jsonToJsxParser = props => {
 
   const main = jsonBody.map((node, index) => {
     if (!node) return null
+
+    if (node.t === 'yte') {
+      const youTubeEmbedProps = { key: index, ...node }
+
+      return <YouTubeEmbed {...youTubeEmbedProps}/>
+    }
 
     if (node.t === 'tb') {
       const titleBoardProps = { key: index, node, appName, device, langHandler, publishedOn, modifiedOn, lang }
