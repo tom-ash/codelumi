@@ -37,6 +37,9 @@ $padding-mobile: 18px;
       position: relative;
       a {
         display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
       }
       span {
         display: block;
