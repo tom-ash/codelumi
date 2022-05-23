@@ -12,9 +12,7 @@ $padding-mobile: 18px;
     padding: 0 $padding-mobile 26px;
   }
   .header-container {
-    .number, h2, h3, h4 {
-      display: inline;
-    }
+    display: flex;
     .number {
       font-weight: bold;
       margin-right: 12px;
