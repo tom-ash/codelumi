@@ -101,7 +101,7 @@ const TitleBoard = (props: TitleBoardProps) => {
           {langHandler({ pl: 'Opublikowano w dniu', en: 'Published on'})} {publishedOn && prettifyDate({ date: publishedOn, lang })}.
         </span>
         <span>
-        {langHandler({ pl: 'Ostatnio zmodyfikowano w dniu', en: 'Last updated on'})} {modifiedOn && prettifyDate({ date: modifiedOn, lang })}.
+        {langHandler({ pl: 'Ostatnio zmodyfikowano w dniu', en: 'Modified on'})} {modifiedOn && prettifyDate({ date: modifiedOn, lang })}.
         </span>
       </div>
       <h1>
