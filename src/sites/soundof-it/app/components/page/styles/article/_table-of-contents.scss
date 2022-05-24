@@ -37,17 +37,15 @@ $padding-mobile: 18px;
       position: relative;
       a {
         display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
       }
       span {
         display: block;
-      }
-      span:first-of-type {
-        width: 36px;
-        margin-right: 12px;
-        text-align: center;
+        &:first-of-type {
+          flex: none;
+          width: 36px;
+          margin-right: 12px;
+          text-align: center;
+        }
       }
     }
   }

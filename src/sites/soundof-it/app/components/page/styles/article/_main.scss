@@ -14,6 +14,7 @@ $padding-mobile: 18px;
   .header-container {
     display: flex;
     .number {
+      flex: none;
       font-weight: bold;
       margin-right: 12px;
     }
