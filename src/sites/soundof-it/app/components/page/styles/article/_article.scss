@@ -10,7 +10,8 @@ $padding-mobile: 18px;
   margin: 36px auto;
   line-height: 1.8;
   color: #212F3C;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  $BORDER-COLOR: #E5E7E9;
+  border: 1px solid $BORDER-COLOR;
   h1 {
     font-size: 36px;
     padding-bottom: 16px;
