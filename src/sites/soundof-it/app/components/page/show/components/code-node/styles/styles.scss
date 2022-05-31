@@ -63,7 +63,7 @@ pre {
       }
     }
 
-    &.javascript {
+    &.javascript, &.typescript {
       .hljs-comment {
         color: rgb(142, 142, 142);
       }
@@ -75,6 +75,11 @@ pre {
       // Keywords: var, let, const, class, etc.
       .hljs-keyword {
         color: rgb(80, 150, 210);
+      }
+
+      // TypeScript type
+      .hljs-built_in {
+        color: rgb(76, 200, 176);
       }
 
       // Object attribute declaration.
