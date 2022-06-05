@@ -30,16 +30,12 @@ function routeSender({
     throw new Error('Page Not Found')
   })
   .then(jsonResponse => {
-    const { state, meta: unparsedMeta } = jsonResponse
-    const { redirectedUrl, status: redirectStatus } = unparsedMeta
+    const { state, meta } = jsonResponse
+    const { redirectedUrl, status: redirectStatus, lang, langs } = meta
 
     if (redirectedUrl) {
       res.redirect(redirectStatus, redirectedUrl)
     } else {
-      const { langs, lang } = unparsedMeta
-      const { canonicalUrl } = unparsedMeta
-      const canonicalPath = typeof canonicalUrl === 'string' ? canonicalUrl : url
-      const meta = metaDataParser({ ...unparsedMeta, lang, siteName, canonicalUrl: buildUrl({ path: canonicalPath }) })
       const app = { ...initialAppState, routeSynced: true, lang, device }
       const links = state.links
       const initialState = { app, render: state.render, links, ...visitorState, ...initialStateParser(state) }
@@ -47,7 +43,7 @@ function routeSender({
       const status = 200
   
       res.status(status).send(
-        indexRenderer({ clientUrl, url, ...meta, ...appAsHtml, canonicalUrl, links, langs, lang, buildUrl }) 
+        indexRenderer({ clientUrl, url, ...meta, ...appAsHtml, links, langs, lang, buildUrl }) 
       )
     }
   })
