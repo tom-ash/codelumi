@@ -1,4 +1,3 @@
-import openGraphProvider from '../providers/open-graph'
 import pretty from 'pretty'
 import getPureUrl from '../../../shared/functions/routes/getters/pure-url.js'
 import buildAlternateLinks from '../builders/alternate_links.js'
@@ -16,7 +15,6 @@ function indexRenderer({
   const titleMeta = `<title>${title}</title>`
   const descriptionMeta = `<meta name="description" content="${description}">`
   const keywordsMeta = `<meta name="keywords" content="${keywords}">`
-  // const openGraphMeta = openGraphProvider(openGraph)
   const schemaOrgMeta = `<script type="application/ld+json">${schema}</script>`
   const style = `<style type="text/css">${[...css].join('')}</style>`
   const preloadedStateScript = `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}</script>`

@@ -1,7 +1,6 @@
 import fetch from 'node-fetch'
 import indexRenderer from '../renderers/index.js'
 import exceptionSender from './exception.js'
-import metaDataParser from '../../../shared/functions/parsers/meta-data.js'
 import initialStateParser from '../parsers/initial-state.js' 
 import initialAppState from '../../../app/constants/initial-app-state.js'
 

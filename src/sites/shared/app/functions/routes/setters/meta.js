@@ -1,4 +1,3 @@
-import metaDataParser from '../../../../shared/functions/parsers/meta-data.js'
 import getPureUrl from '../../../../shared/functions/routes/getters/pure-url.js'
 
 const replaceOpenGraph = (openGraph) => {
@@ -10,10 +9,8 @@ const replaceOpenGraph = (openGraph) => {
 }
 
 function metaSetter(meta) {
-  const { clientUrl, url, canonicalUrl, schema, openGraph } = meta
+  const { clientUrl, url, canonicalUrl, schema, openGraph, lang, title, description, keywords } = meta
   const canonicalPath = typeof canonicalUrl === 'string' ? canonicalUrl : url
-  const parsedMeta = metaDataParser({ ...meta, canonicalUrl: getPureUrl(`${clientUrl}/${canonicalPath}`) })
-  const { lang, title, description, keywords } = parsedMeta
   
   document.documentElement.lang = lang
   document.title = title
