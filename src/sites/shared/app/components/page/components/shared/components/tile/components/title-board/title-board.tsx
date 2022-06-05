@@ -28,7 +28,6 @@ interface TitleBoardProps {
 }
 
 const TitleBoard = (props: TitleBoardProps) => {
-  console.log(props)
   const {
     appName,
     device,

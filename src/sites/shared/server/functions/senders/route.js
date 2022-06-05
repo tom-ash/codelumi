@@ -8,12 +8,11 @@ import initialAppState from '../../../app/constants/initial-app-state.js'
 
 function routeSender({
   res,
-  clientUrl, apiUrl, buildUrl,
+  apiUrl,
   url, query, device,
   accessToken,
   appRenderer,
-  visitorState,
-  siteName
+  visitorState
 }) {
   fetch(`${apiUrl}/sync${query}`, {
     headers: {
@@ -30,7 +29,7 @@ function routeSender({
   })
   .then(jsonResponse => {
     const { state, meta } = jsonResponse
-    const { redirectedUrl, status: redirectStatus, lang, langs } = meta
+    const { redirectedUrl, status: redirectStatus, lang } = meta
 
     if (redirectedUrl) {
       res.redirect(redirectStatus, redirectedUrl)
@@ -42,7 +41,7 @@ function routeSender({
       const status = 200
   
       res.status(status).send(
-        indexRenderer({ clientUrl, url, ...meta, ...appAsHtml, links, langs, lang, buildUrl }) 
+        indexRenderer({ ...meta, ...appAsHtml, links, lang }) 
       )
     }
   })
