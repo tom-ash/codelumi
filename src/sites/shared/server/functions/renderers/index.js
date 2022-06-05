@@ -1,6 +1,4 @@
 import pretty from 'pretty'
-import getPureUrl from '../../../shared/functions/routes/getters/pure-url.js'
-import buildAlternateLinks from '../builders/alternate_links.js'
 
 function indexRenderer({
   lang, canonicalUrl, alternateLinks,
@@ -8,8 +6,6 @@ function indexRenderer({
   openGraph, schema,
   html, css, preloadedState, scriptTags
 }) {
-  // const alternateLinks = buildAlternateLinks({ links, langs, buildUrl })
-  
   const indexAsHtml = (
     `<!doctype html>
     <html lang="${lang}">
