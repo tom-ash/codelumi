@@ -24,7 +24,8 @@ export const mapStateToProps = store => {
     modifiedOn,
     category,
     subcategory,
-    linkData
+    linkData,
+    langAltsGroup
   } = store.page.edit.inputs
   const { role } = store.user.authorize.data
   const { updated } = store.page.edit.data
@@ -58,7 +59,8 @@ export const mapStateToProps = store => {
     modifiedOn,
     category,
     subcategory,
-    linkData
+    linkData,
+    langAltsGroup
   }
 }
   

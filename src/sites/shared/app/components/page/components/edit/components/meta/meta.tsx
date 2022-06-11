@@ -5,6 +5,7 @@ import CategoryOnInput from './components/category-input'
 import SubcategoryInput from './components/subcategory-input'
 import LinkDataTextarea from './components/link-data-textarea'
 import PageLangInput from './components/page-lang-input'
+import LangAltsGroupInput from './components/lang-alts-group'
 
 interface MetaProps {
   publishedOn: string,
@@ -13,14 +14,21 @@ interface MetaProps {
   category: string,
   subcategory: string,
   linkData: string,
-  pageLang: string
+  pageLang: string,
+  langAltsGroup: string
 }
 
 const Meta = (props: MetaProps) => {
-  
-  const { publishedOn, modifiedOn, changeInputs, category, subcategory, linkData, pageLang } = props
-
-  console.log(pageLang)
+  const {
+    publishedOn,
+    modifiedOn,
+    changeInputs,
+    category,
+    subcategory,
+    linkData,
+    pageLang,
+    langAltsGroup
+  } = props
 
   const publishedOnProps = { publishedOn, changeInputs }
   const modifiedOnProps = { modifiedOn, changeInputs }
@@ -28,6 +36,7 @@ const Meta = (props: MetaProps) => {
   const subcategoryProps = { subcategory, changeInputs }
   const linkDataProps = { linkData, changeInputs }
   const pageLangProps = { pageLang, changeInputs }
+  const langAltsGroupProps = { langAltsGroup, changeInputs }
 
   return (
     <div className='meta'>
@@ -37,6 +46,7 @@ const Meta = (props: MetaProps) => {
       <SubcategoryInput {...subcategoryProps} />
       <LinkDataTextarea {...linkDataProps} />
       <PageLangInput {...pageLangProps} />
+      <LangAltsGroupInput {...langAltsGroupProps} />
     </div>
   )
 }
