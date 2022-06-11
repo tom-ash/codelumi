@@ -17,10 +17,10 @@ class PageShow extends React.Component {
   }
 
   render() {
-    const { name, clientUrl, changeRoute, buildUrl } = this.props
+    const { url, clientUrl, changeRoute, buildUrl } = this.props
     const tileProps = { ...this.props, renderShow: true, clientUrl, changeRoute, changePage: this.changePage, buildUrl }
 
-    if (!name) return null
+    if (!url) return null
 
     return (
       <PageTile { ...tileProps } />
