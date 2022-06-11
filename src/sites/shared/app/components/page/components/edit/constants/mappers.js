@@ -2,6 +2,7 @@ export const mapStateToProps = store => {
   const { lang, routeSynced } = store.app
   const { fetching, nav } = store.page.edit.control
   const {
+    id,
     name,
     url,
     body,
@@ -31,6 +32,7 @@ export const mapStateToProps = store => {
     fetching,
     lang,
     routeSynced,
+    id,
     name,
     url,
     body,
