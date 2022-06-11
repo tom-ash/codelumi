@@ -27,7 +27,6 @@ const PageIndex = (props: PageIndexProps) => {
   const changeKey = (pageKey: string) => changeState({ pageKey })
 
   const createFactoryProps = {
-    pageKey,
     apiUrl,
     buildUrl,
     changeRoute
