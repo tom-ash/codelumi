@@ -13,6 +13,7 @@ export const mapStateToProps = store => {
     description,
     keywords,
     picture,
+    lang: pageLang,
     lang_ver_urls,
     online,
     headerAutonumbering,
@@ -31,6 +32,7 @@ export const mapStateToProps = store => {
   return {
     fetching,
     lang,
+    pageLang,
     routeSynced,
     id,
     name,

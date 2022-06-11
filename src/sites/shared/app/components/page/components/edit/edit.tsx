@@ -29,7 +29,8 @@ interface PageCreateProps {
   modifiedOn: string,
   category: string,
   subcategory: string,
-  linkData: string
+  linkData: string,
+  pageLang: string
 }
 
 class PageCreate extends React.Component<PageCreateProps> {
@@ -78,7 +79,8 @@ class PageCreate extends React.Component<PageCreateProps> {
       modifiedOn,
       category,
       subcategory,
-      linkData
+      linkData,
+      pageLang
     } = this.props
 
     if (!routeSynced) return null
@@ -86,7 +88,7 @@ class PageCreate extends React.Component<PageCreateProps> {
     const tileProps = { ...this.props, renderEdit: true, updatePage: this.save }
     const updateStatusProps = { updated }
     const schemaProps = { schemaMode, autoSchema, manualSchema, changeInputs }
-    const metaProps = { publishedOn, modifiedOn, changeInputs, category, subcategory, linkData }
+    const metaProps = { publishedOn, modifiedOn, changeInputs, category, subcategory, linkData, pageLang }
 
     return (
       <>
