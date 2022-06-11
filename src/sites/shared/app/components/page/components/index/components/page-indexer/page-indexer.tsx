@@ -3,7 +3,7 @@ import useStyles from 'isomorphic-style-loader/useStyles'
 import styles from './styles/styles.scss'
 import { connect } from 'react-redux'
 import { mapStateToProps } from './constants/mappers'
-import IndexLink from '../../../../../../../shared/app/components/page/components/shared/components/tile/components/index-link/index-link'
+import IndexLink from '../../../shared/components/tile/components/index-link/index-link'
 
 interface PageIndexerProps {
   clientUrl: string,
@@ -38,8 +38,6 @@ interface PageIndexerProps {
 const PageIndexer = (props: PageIndexerProps) => {
   useStyles(styles)
 
-  console.log("QWEQWE")
-
   const { tutorials: learningCollection, articles, node: { collection: collectionName }, clientUrl, changeRoute } = props
 
   if (collectionName === 'learning') {
@@ -57,8 +55,6 @@ const PageIndexer = (props: PageIndexerProps) => {
       </>
     )
   }
-
-  console.log("HERE")
 
   if (collectionName === 'articles') {
     return (

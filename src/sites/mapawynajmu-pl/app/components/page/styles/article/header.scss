@@ -3,41 +3,38 @@
 $padding-desktop: 36px;
 $padding-mobile: 18px;
 
-header {
+header.title-board {
   img {
     display: block;
   }
-  background: white;
+  background: none;
   .cover {
     z-index: 2;
     position: relative;
     width: 100%;
-    aspect-ratio: 16/9;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
     overflow: hidden;
-    img {
-      position: relative;
+    min-height: 180px;
+    background: rgb(251, 251, 252);
+    .cover-image {
       width: 100%;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
+      aspect-ratio: 1.7777;
     }
     @media #{$LARGE-TABLET} {
-      border-radius: 0;
-      img {
+      .cover-image {
         border-radius: 0;
       }
     }
   }
   .logos {
     position: absolute;
-    bottom: 58px;
-    left: 20px;
+    bottom: 36px;
+    left: 36px;
     img {
       height: 100px;
     }
   }
   .author {
+    background: white;
     padding: 24px 0 0 $padding-desktop;
     position: relative;
     .picture {
@@ -62,39 +59,42 @@ header {
         display: inline-block;
         color: #2C3E50;
       }
-      // &.with-picture {
-      //   position: absolute;
-      //   top: 19px;
-      //   left: 60px;
-      //   font-size: 12px;
-      //   color: #626567;
-      // }
+    }
+    @media #{$LARGE-PHONE} {
+      padding: 24px 0 0 $padding-mobile;
     }
   }
   .dates {
+    background: white;
     padding-bottom: 20px;
     padding-left: $padding-desktop;
-    font-size: 13px;
-    color: #34495E;
-    @media #{$LARGE-PHONE} {
-      padding-left: $padding-mobile;
-    }
+    font-size: 12px;
+    color: #909497;
     span {
       margin-right: 12px;
     }
+    @media #{$LARGE-PHONE} {
+      padding-left: $padding-mobile;
+      span {
+        display: block;
+        margin: 0;
+      }
+    }
   }
   h1 {
-    padding: 10px 0 0 $padding-desktop;
-    font-size: 28px;
+    background: white;
+    padding: 10px $padding-desktop 0 $padding-desktop;
+    font-size: 30px;
+    line-height: 1.2;
     @media #{$LARGE-PHONE} {
-      padding: 10px 0 0 $padding-mobile;
+      padding: 10px $padding-mobile 0 $padding-mobile;
     }
   }
   .hashtags {
     min-height: 35px;
     padding: 0 0 10px $padding-desktop;
-    font-size: 14px;
-    color: #7B7D7D;
+    font-size: 13px;
+    color: #85929E;
     @media #{$LARGE-PHONE} {
       padding: 0 0 10px $padding-mobile;
     }

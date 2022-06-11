@@ -69,14 +69,12 @@ input:-webkit-autofill:active  {
 }
 
 body {
+  // @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500&display=swap');
+  // font-family: 'Roboto Flex', sans-serif;
   @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap');
-  font-family: 'Nunito Sans', 'Helvetica Neue', 'Arial', sans-serif;
+  font-family: 'Nunito Sans', 'Arial', sans-serif;
 
   background: $BACKGROUND-APP-COLOR;
-}
-
-button {
-  font-family: 'Nunito Sans';
 }
 
 .float-clear {

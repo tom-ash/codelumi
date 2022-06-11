@@ -29,7 +29,6 @@ const IndexLink = (props: IndexLinkProps) => {
     image,
     collectionName
   } = props
-
   const classNames = { container: `index-link ${subcategory} ${collectionName}` }  
   const href = `${clientUrl}/${pathname}`
   const label = (
@@ -52,7 +51,6 @@ const IndexLink = (props: IndexLinkProps) => {
     </>
   )
   const onClick = () => changeRoute({ href })
-
   const linkProps = { classNames, href, hrefLang, title, label, onClick }
 
   return <ManagedLink {...linkProps} />

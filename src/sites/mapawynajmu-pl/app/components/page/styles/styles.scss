@@ -1,177 +1,39 @@
 @import '../../../../../shared/app/styles/media-breakpoints.scss';
-
-$padding-desktop: 36px;
-$padding-mobile: 18px;
+@import './root.scss';
+@import './article/article';
 
 %page {
   #page {
+    max-width: 1440px;
+    min-height: 640px;
+    margin: 0 auto;
+    padding: 50px 20px 0;
     &.edit {
       padding-bottom: 320px;
     }
-    padding-top: 20px;
-    @media #{$LARGE-PHONE} {
-      padding-top: 0;
+    .root {
+      @extend %root;
+    }
+    .article {
+      @extend %article;
     }
     button.edit {
       position: fixed;
-      top: 80px;
-      right: 20px;
+      bottom: 10px;
+      right: 10px;
       width: 20px;
+      height: 20px;
       border: none;
-      background: none;
+      border-radius: 10px;
       cursor: pointer;
+      background: #7B7D7D;
       svg {
+        display: none;
         fill: #626567;
       }
-      &:hover {
-        svg {
-          fill: black;
-        }
-      }
     }
-    .article, .summary {
-      p, ul {
-        a {
-          display: inline;
-          text-decoration: underline;
-          color: #D35400;
-          &:hover {
-            color: #A04000;
-          }
-        }
-      }
-    }
-    .article {
-      max-width: 800px;
-      margin: 0 auto;
-      margin-bottom: 20px;
-      line-height: 1.8;
-      h1 {
-        padding: 18px 36px 12px;
-        font-size: 32px;
-      }
-      .editorial {
-        padding: 0 $padding-desktop;
-        font-size: 18px;
-        line-height: 1.5;
-        border-left: 1px solid #F2F3F4;
-        border-right: 1px solid #F2F3F4;
-        background: white;
-        @media #{$LARGE-PHONE} {
-          padding: 10px $padding-mobile;
-        }
-      }
-      h1, h2, h3 {
-        line-height: 1.35;
-      }
-      main {
-        border-right: 1px solid #F2F3F4;
-        border-bottom: 1px solid #F2F3F4;
-        border-left: 1px solid #F2F3F4;
-        background: white;
-        padding: 12px $padding-desktop 26px;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        font-size: 18px;
-        @media #{$LARGE-PHONE} {
-          padding: 0 20px;
-        }
-        .header-container {
-          padding: 0 0 12px;
-          font-size: 18px;
-        }
-        p + .header-container {
-          padding-top: 50px;
-        }
-        ul + .header-container {
-          padding-top: 50px;
-        }
-        p {
-          margin: 0 0 12px 0;
-        }
-        ul {
-          padding-left: 20px;
-          li {
-            p {
-              margin: 6px 0 0 0;
-            }
-          }
-        }
-      }
-      .table-of-contents {
-        padding: $padding-desktop $padding-desktop 24px;
-        @media #{$LARGE-PHONE} {
-          padding: $padding-mobile $padding-mobile 12px;
-        }
-        background: white;
-        .inner-container {
-          display: inline-block;
-          width: auto;
-          border: 1px solid #D0D3D4;
-          border-radius: 5px;
-          padding: 24px 24px 0;
-          line-height: 1;
-          h2 {
-            font-size: 14px;
-            text-align: center;
-            margin-bottom: 18px;
-            color: #34495E;
-          }
-          ul {
-            list-style-type: none;
-            font-size: 14px;
-            li {
-              position: relative;
-              margin-bottom: 12px;
-              span:first-of-type {
-                display: inline-block;
-                width: 30px;
-                text-align: center;
-                margin-right: 8px;
-              }
-              a {
-                font-size: 15px;
-                text-decoration: none;
-                color: #34495E;
-                font-size: 14px;
-                &:hover {
-                  color: #873600;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    .summary {
-      max-width: 1400px;
-      margin: 72px auto 36px;
-      font-size: 14px;
-      line-height: 1.5;
-      @media #{$SMALL-PC} {
-        padding: 0 20px;
-      }
-      h1 {
-        font-size: 18px;
-        padding: 24px 0 6px;
-      }
-      h2 {
-        font-size: 16px;
-        padding: 12px 0 6px;
-      }
-      p {
-        padding-bottom: 8px;
-      }
-      section {
-        margin: 72px 0;
-        padding: 20px;
-        border-radius: 5px;
-        background: white;
-        border: 1px solid #E5E7E9;
-        h1 {
-          padding: 0 0 6px;
-        }
-      }
+    @media #{$LARGE-PHONE} {
+      padding: 50px 0 0;
     }
   }
 }

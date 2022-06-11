@@ -1,0 +1,32 @@
+@import './editorial';
+@import './table-of-contents';
+@import './main';
+
+$padding-desktop: 36px;
+$padding-mobile: 18px;
+
+%article {
+  max-width: 800px;
+  margin: 36px auto;
+  line-height: 1.8;
+  color: #212F3C;
+  $BORDER-COLOR: #E5E7E9;
+  border: 1px solid $BORDER-COLOR;
+  h1 {
+    font-size: 36px;
+    padding-bottom: 16px;
+  }
+  .editorial {
+    @extend %editorial;
+  }
+  .table-of-contents {
+    @extend %table-of-contents;
+  }
+  main {
+    @extend %main;
+  }
+  @media #{$LARGE-PHONE} {
+    margin: 0 auto 36px;
+    box-shadow: none;
+  }
+}

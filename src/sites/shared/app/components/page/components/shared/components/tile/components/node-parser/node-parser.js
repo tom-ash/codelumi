@@ -5,6 +5,7 @@ const Header = loadable(() => import('./components/header/header'))
 const Link = loadable(() => import('../link/link.js'))
 const List = loadable(() => import('../list/list.js'))
 const Paragraph = loadable(() => import('./components/paragraph/paragraph'))
+const PageIndexer = loadable(() => import('../../../../../index/components/page-indexer/page-indexer'))
 
 const nodeParser = props => {
   const { node, index, device, isAdmin, jsonMeta, clientUrl, changeRoute, buildUrl, customNodeParser, element } = props
@@ -20,6 +21,7 @@ const nodeParser = props => {
   if (nodeTag === 'link') return <Link key={index} {...{ clientUrl, changeRoute, nodeContent }}/>
   if (nodeTag === 'float-clear') return <div key={index} className='float-clear'/>
   if (nodeTag === 'ul') return <List key={index} {...{ listNodes: nodeContent, ...props}} />
+  if (nodeTag === 'PageIndexer') return <PageIndexer {...{ ...props, key: index }} />
 
   return customNodeParser({ device, isAdmin, clientUrl, nodeTag, nodeContent, attrs, changeRoute, buildUrl, index, jsonMeta, node })
 }

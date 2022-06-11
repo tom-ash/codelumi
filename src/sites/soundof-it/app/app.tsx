@@ -59,7 +59,6 @@ class App extends React.Component {
     // @ts-ignore
     const sharedProps = { appName: APP_NAME, render, langs: LANGS, links, clientUrl: CLIENT_URL, apiUrl: API_URL, device, lang, changeRoute: this.changeRoute, buildUrl, changeApp, langHandler: this.langHandler }
     const headerProps = { ...sharedProps, urlComposites, Logo, HeaderCustomization, styles: headerStyles }
-    // @ts-ignore
     const pageProps = { ...sharedProps, customNodeParser }
     const imageProps = sharedProps
     
@@ -68,7 +67,6 @@ class App extends React.Component {
         <Header {...headerProps}/>
         {/* @ts-ignore */}
         {renderPage && <Page {...pageProps} />}
-        {/* @ts-ignore */}
         {renderVisitor && <Visitor {...sharedProps} />}
         {renderAnnouncement && <Announcement {...sharedProps} />}
         {renderImage && <Image {...imageProps} />}
