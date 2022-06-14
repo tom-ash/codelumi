@@ -53,8 +53,9 @@
       background: #FBFCFC;
     }
     .link-data {
+      position: relative;
       padding: 15px;
-      height: 192px;
+      height: 167px;
       .category-and-subcategory {
         font-weight: bold;
         font-size: 10px;
@@ -102,8 +103,8 @@
 
       }
       .modified-on {
-        bottom: 15px;
-        left: 15px;
+        top: 15px;
+        right: 15px;
         position: absolute;
         font-size: 10px;
         color: #979A9A;
