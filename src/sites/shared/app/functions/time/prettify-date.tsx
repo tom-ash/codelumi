@@ -1,18 +1,33 @@
 import React from 'react'
 
+// const englishMonths = [
+//   'January',
+//   'February',
+//   'March',
+//   'April',
+//   'May',
+//   'June',
+//   'July',
+//   'August',
+//   'September',
+//   'October',
+//   'November',
+//   'December'
+// ]
+
 const englishMonths = [
-  'January',
-  'February',
-  'March',
-  'April',
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
   'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec'
 ]
 
 const polishMonths = [
@@ -61,14 +76,16 @@ const prettifyDate = (props: PrettifyDateProps) => {
     prettifiedMonth = getPolishMonth(+month)
     prettifiedDay = day
 
-    return <>{prettifiedDay} {prettifiedMonth} {year}</>
+    return <>{prettifiedMonth} {year}</>
+    // return <>{prettifiedDay} {prettifiedMonth} {year}</>
   }
 
   if (lang === 'en') {
     prettifiedMonth = getEnglishMonth(+month)
     prettifiedDay = <>{+day}<sup>{getDaySuffix(+day)}</sup></>
 
-    return <>{prettifiedMonth} {prettifiedDay}, {year}</>
+    return <>{prettifiedMonth} {year}</>
+    // return <>{prettifiedMonth} {prettifiedDay}, {year}</>
   }
 }
 

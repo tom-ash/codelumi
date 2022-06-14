@@ -1,5 +1,6 @@
 import React from 'react'
 import { ManagedLink } from 'managed-inputs'
+import prettifyDate from '../../../../../../../../../../shared/app/functions/time/prettify-date'
 
 interface IndexLinkProps {
   clientUrl: string,
@@ -45,7 +46,7 @@ const IndexLink = (props: IndexLinkProps) => {
           {description}
         </div>
         <div className='modified-on'>
-          {modifiedOn}
+          {modifiedOn && prettifyDate({ date: modifiedOn, lang: hrefLang })}
         </div>
       </div>
     </>
