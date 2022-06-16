@@ -55,11 +55,10 @@
     .link-data {
       position: relative;
       padding: 15px;
-      height: 167px;
       .category-and-subcategory {
         font-weight: bold;
         font-size: 10px;
-        margin-bottom:8px;
+        margin-bottom: 8px;
         text-transform: uppercase;
         span {
           display: inline-block;
@@ -87,20 +86,23 @@
           color: rgb(48, 81, 223);
         }
       }
+      .title-and-description {
+        max-height: 93px;
+        overflow: hidden;
+      }
       .title {
         margin-bottom: 2px;
+        line-height: 1.5;
         font-size: 18px;
-        margin-bottom: 10px;
         color: #363636;
-        line-height: 1.3;
-        height: 45px;
+        
       }
       .description {
         height: 64px;
         font-size: 14px;
-        color: #7B7D7D;
-        line-height: 1.25;
-
+        // color: #7B7D7D;
+        line-height: 1.4;
+        color: #979A9A;
       }
       .modified-on {
         top: 15px;
@@ -109,6 +111,7 @@
         font-size: 10px;
         color: #979A9A;
         text-transform: uppercase;
+        // colo
       }
     }
     width: 32.5%;

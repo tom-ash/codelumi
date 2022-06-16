@@ -39,15 +39,18 @@ const IndexLink = (props: IndexLinkProps) => {
         <div className='category-and-subcategory'>
           <span className={category}>{category}</span><span className={subcategory}>{subcategory}</span>
         </div>
-        <div className='title'>
-          {title}
-        </div>
-        <div className='description'>
-          {description}
-        </div>
         <div className='modified-on'>
           {modifiedOn && prettifyDate({ date: modifiedOn, lang: hrefLang })}
         </div>
+        <div className='title-and-description'>
+          <div className='title'>
+            {title}
+          </div>
+          <div className='description'>
+            {description}
+          </div>
+        </div>
+
       </div>
     </>
   )
