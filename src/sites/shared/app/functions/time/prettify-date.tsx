@@ -30,19 +30,34 @@ const englishMonths = [
   'Dec'
 ]
 
+// const polishMonths = [
+//   'stycznia',
+//   'lutego',
+//   'marca',
+//   'kwietnia',
+//   'maja',
+//   'czerwca',
+//   'lipca',
+//   'sierpnia',
+//   'września',
+//   'października',
+//   'listopada',
+//   'grudnia'
+// ]
+
 const polishMonths = [
-  'stycznia',
-  'lutego',
-  'marca',
-  'kwietnia',
-  'maja',
-  'czerwca',
-  'lipca',
-  'sierpnia',
-  'września',
-  'października',
-  'listopada',
-  'grudnia'
+  'sty',
+  'lut',
+  'mar',
+  'kwi',
+  'maj',
+  'cze',
+  'lip',
+  'sie',
+  'wrz',
+  'paź',
+  'lis',
+  'gru'
 ]
 
 interface PrettifyDateProps {
