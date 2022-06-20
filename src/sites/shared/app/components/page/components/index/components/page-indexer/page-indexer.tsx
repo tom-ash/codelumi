@@ -45,8 +45,8 @@ const PageIndexer = (props: PageIndexerProps) => {
       <>
         <div className='page-indexer'>
           {learningCollection.map((link, index) => {
-            const { logo, title, description, category, subcategory, pathname, hrefLang, modifiedOn } = link
-            const linkProps = { collectionName, clientUrl, changeRoute, logo, title, description, category, subcategory, pathname, hrefLang, modifiedOn }
+            const { logo, image, title, description, category, subcategory, pathname, hrefLang, modifiedOn } = link
+            const linkProps = { collectionName, clientUrl, changeRoute, logo, image, title, description, category, subcategory, pathname, hrefLang, modifiedOn }
 
             return <IndexLink {...{ ...linkProps, key: index }} />
           })}

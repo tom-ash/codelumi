@@ -35,7 +35,6 @@ const IndexLink = (props: IndexLinkProps) => {
     hrefLang,
     title,
     modifiedOn,
-    description,
     category,
     subcategory,
     image,
