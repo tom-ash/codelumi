@@ -33,30 +33,9 @@
     }
     border: 1px solid $BORDER-COLOR;
     &.learning {
-      // border-radius: 8px;
       img {
         display: none;
-        // aspect-ratio: 48;
       }
-      // &.javascript {
-      //   border-top: 2px solid #D4AC0D;
-      // }
-      // &.ruby {
-      //   border-top: 2px solid #CB4335;
-      // }
-      // &.html {
-      //   border-top: 2px solid rgb(212, 86, 50);
-      //   // 212, 86, 50
-      // }
-      // &.postgres {
-      //   border-top: 2px solid rgb(64, 102, 143);
-      // }
-      // &.css {
-      //   border-top: 2px solid rgb(48, 81, 223);
-      // }
-      // &.typescript {
-      //   border-top: 2px solid rgb(48, 81, 223);
-      // }
     }
     &:hover {
       background: #FBFCFC;
@@ -96,7 +75,6 @@
         }
       }
       .title {
-        // height: 54px;
         font-size: 18px;
         line-height: 1.5;
         color: #363636;
