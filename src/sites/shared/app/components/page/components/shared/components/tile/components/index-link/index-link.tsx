@@ -2,17 +2,6 @@ import React from 'react'
 import { ManagedLink } from 'managed-inputs'
 import prettifyDate from '../../../../../../../../../../shared/app/functions/time/prettify-date'
 
-
-
-const Abc = 213
-
-
-function qwe(props: Object) {
-  console.log("QWEWEQW")
-}
-
-qwe(Abc)
-
 interface IndexLinkProps {
   clientUrl: string,
   changeRoute(props: object): void,
