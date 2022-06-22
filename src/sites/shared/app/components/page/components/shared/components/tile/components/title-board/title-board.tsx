@@ -11,6 +11,7 @@ interface TitleBoardProps {
   node: {
     title: string,
     image: string,
+    imageAlt: string,
     author: string,
     authorLink: string,
     authorPicture: string,
@@ -36,6 +37,7 @@ const TitleBoard = (props: TitleBoardProps) => {
     node: {
       title,
       image,
+      imageAlt,
       author,
       authorLink,
       authorPicture,
@@ -62,12 +64,15 @@ const TitleBoard = (props: TitleBoardProps) => {
     mediaQueryImageTop = imageLargePcTop || 0
   }
 
+  console.log(imageAlt)
+
   return (
     <header className='title-board'>
       <div className='cover'>
         {image && (
           <img
             src={image}
+            alt={imageAlt}
             className='cover-image'
             style={{
               top: mediaQueryImageTop
