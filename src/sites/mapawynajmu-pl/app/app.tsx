@@ -16,7 +16,6 @@ import changeRoute from './functions/routes/changers/route.js'
 import AppContext from './constants/context.js'
 import CLIENT_URL from '../shared/constants/urls/client.js'
 import API_URL from '../shared/constants/urls/api.js'
-import customNodeParser from './components/page/show/functions/custom-node-parser.js'
 import * as langs from '../shared/constants/langs/langs.js'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
@@ -60,7 +59,7 @@ class App extends React.Component {
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute }
     // @ts-ignore
     const sharedProps = { appName: APP_NAME, langs, links, clientUrl: CLIENT_URL, apiUrl: API_URL, render, device, authorized, changeRoute: this.changeRoute, buildUrl, langHandler: this.langHandler, dispatch }
-    const pageProps = { ...sharedProps, customNodeParser }
+    const pageProps = { ...sharedProps }
     const urlComposites = { pageShowData, pageEditData, announcementShowData, announcementEditData }
     const imageProps = sharedProps
 

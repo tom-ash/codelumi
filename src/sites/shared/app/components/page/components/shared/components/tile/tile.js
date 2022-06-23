@@ -4,7 +4,7 @@ import SVG from '../../../../../support/svg/svg.js'
 
 const PageTile = props => {
   const {
-    device, appName, customNodeParser, customMetaParser, renderShow, renderEdit, fetching, name, body, meta, isAdmin,
+    device, appName, customMetaParser, renderShow, renderEdit, fetching, name, body, meta, isAdmin,
     clientUrl, changeRoute, buildUrl, changePage, updatePage, lang, langHandler, publishedOn, modifiedOn
   } = props
 
@@ -34,7 +34,7 @@ const PageTile = props => {
     mainElementType,
     { className },
     jsonToJsxParser({
-      appName, jsonBody, jsonMeta, clientUrl, changeRoute, buildUrl, device, isAdmin, customNodeParser, lang,
+      appName, jsonBody, jsonMeta, clientUrl, changeRoute, buildUrl, device, isAdmin, lang,
       langHandler, publishedOn, modifiedOn
     })
   )

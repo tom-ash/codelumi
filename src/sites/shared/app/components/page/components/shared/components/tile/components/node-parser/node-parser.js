@@ -11,7 +11,7 @@ const Image = loadable(() => import('./components/image/image'))
 const PageIndexer = loadable(() => import('../../../../../index/components/page-indexer/page-indexer'))
 
 const nodeParser = props => {
-  const { node, index, device, isAdmin, jsonMeta, clientUrl, changeRoute, buildUrl, customNodeParser } = props
+  const { node, index, device, isAdmin, jsonMeta, clientUrl, changeRoute, buildUrl } = props
 
   const headerTags = ['h1', 'h2', 'h3', 'h4']
   const nodeTag = node.t
@@ -27,7 +27,7 @@ const nodeParser = props => {
   if (nodeTag === 'ul') return <List key={index} {...{ listNodes: nodeContent, ...props}} />
   if (nodeTag === 'PageIndexer') return <PageIndexer {...{ ...props, key: index }} />
 
-  return customNodeParser({ device, isAdmin, clientUrl, nodeTag, nodeContent, attrs, changeRoute, buildUrl, index, jsonMeta, node })
+  return null
 }
 
 export default nodeParser

@@ -18,7 +18,6 @@ import changeRoute from './functions/routes/changers/route.js'
 import AppContext from './constants/context.js'
 import CLIENT_URL from '../shared/constants/urls/client.js'
 import API_URL from '../shared/constants/urls/api.js'
-import customNodeParser from './components/page/show/functions/custom-node-parser.js'
 import Header from '../../shared/app/components/scaffold/header/header.js'
 import Footer from '../../shared/app/components/scaffold/footer/footer.js'
 import { LANGS } from '../shared/constants/langs/langs.js'
@@ -59,7 +58,7 @@ class App extends React.Component {
     // @ts-ignore
     const sharedProps = { appName: APP_NAME, render, langs: LANGS, links, clientUrl: CLIENT_URL, apiUrl: API_URL, device, lang, changeRoute: this.changeRoute, buildUrl, changeApp, langHandler: this.langHandler }
     const headerProps = { ...sharedProps, urlComposites, Logo, HeaderCustomization, styles: headerStyles }
-    const pageProps = { ...sharedProps, customNodeParser }
+    const pageProps = { ...sharedProps }
     const imageProps = sharedProps
     
     return (

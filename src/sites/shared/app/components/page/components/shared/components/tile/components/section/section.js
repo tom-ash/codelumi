@@ -11,7 +11,6 @@ const Section = props => {
     buildUrl,
     device,
     isAdmin,
-    customNodeParser,
     lang,
     langHandler,
     className
@@ -20,7 +19,7 @@ const Section = props => {
   const section = React.createElement(
     'section',
     { className },
-    jsonToJsxParser({ iSection: true, appName, jsonBody, jsonMeta, clientUrl, changeRoute, buildUrl, device, isAdmin, customNodeParser, lang, langHandler })
+    jsonToJsxParser({ iSection: true, appName, jsonBody, jsonMeta, clientUrl, changeRoute, buildUrl, device, isAdmin, lang, langHandler })
   )
 
   return section
