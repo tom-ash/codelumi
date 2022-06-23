@@ -4,7 +4,7 @@ import SVG from '../../../../../support/svg/svg.js'
 
 const PageTile = props => {
   const {
-    device, appName, customMetaParser, renderShow, renderEdit, fetching, name, body, meta, isAdmin,
+    device, appName, renderShow, renderEdit, fetching, name, body, meta, isAdmin,
     clientUrl, changeRoute, buildUrl, changePage, updatePage, lang, langHandler, publishedOn, modifiedOn
   } = props
 
@@ -41,7 +41,6 @@ const PageTile = props => {
 
   return (
     <>
-      {jsonBody && jsonMeta && customMetaParser && customMetaParser({ jsonBody, jsonMeta, device })}
       {isAdmin && (
       <>
         {renderShow && <button className={buttonClassName} onClick={changePage}><SVG name='edit' /></button>}

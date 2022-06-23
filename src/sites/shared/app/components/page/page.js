@@ -13,9 +13,9 @@ class Page extends React.Component {
   }
 
   render() {
-    const { appName, customMetaParser, links, clientUrl, apiUrl, renderEdit, renderShow, renderIndex, renderNotFound, device, changeRoute, buildUrl, langHandler } = this.props
-    const showProps = { appName, customMetaParser, links, clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
-    const editProps = { appName, customMetaParser, links, clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
+    const { appName, links, clientUrl, apiUrl, renderEdit, renderShow, renderIndex, renderNotFound, device, changeRoute, buildUrl, langHandler } = this.props
+    const showProps = { appName, links, clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
+    const editProps = { appName, links, clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
     const indexProps = { clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
     const pageNotFoundProps = { clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
 
