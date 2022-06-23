@@ -3,35 +3,41 @@
 .lang-switch {
   float: left;
   position: relative;
-  margin-top: 8px;
   margin-left: 25px;
+  height: 60px;
+  line-height: 60px;
+  width: 50px;
+  text-align: center;
+  font-size: 16px;
+  svg {
+    display: inline-block;
+    margin-left: 2px;
+    height: 12px;
+  }
 
-  .lang-radio-input {
-    .label {
-      cursor: pointer;
-      .pl-flag, .en-flag {
-        width: 20px;
-        height: 20px;
-        border: 1px solid #A6ACAF;
-        border-radius: 10px;
-        background-position: center;
-        background-size: cover;
-        opacity: 0.6;
-        transition: 0.16s ease-in;
+  .current {
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .all {
+    position: absolute;
+    top: 66px;
+    background: white;
+    line-height: 32px;
+    text-align: center;
+    box-shadow: 1px 1px 5px rgba(black, .2);
+    height: 0;
+    width: 50px;
+    overflow: hidden;
+    transition: all .2s;
+    a {
+      &:hover {
+        background-color: #F8F9F9;
       }
-      &.checked {
-        .pl-flag, .en-flag {
-          opacity: 1;
-          border: 1px solid #5F6A6A;
-        }
-      }
-      .pl-flag {
-        margin-bottom: 4px;
-        background-image: url("https://warsawlease.s3.eu-central-1.amazonaws.com/assets/images/pl-flag.png");
-      }
-      .en-flag {
-        background-image: url("https://warsawlease.s3.eu-central-1.amazonaws.com/assets/images/en-flag.png");
-      }
+    }
+    &.show {
+      height: 64px;
     }
   }
 }
