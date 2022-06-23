@@ -46,7 +46,12 @@ const LangSwich = (props: LangSwichProps) => {
         {/* @ts-ignore */}
         {lang} <SVG name='caretDown' />
       </div>
-      
+      {showLangs && (
+        <div
+          className='cover'
+          onClick={() => setShowLangs(false)}
+        />
+      )}
       <div className={allClassNames.join(' ')}>
         <a href={plHref} onClick={(e) => changeLang({ e, href: plHref })}>PL</a>
         <a href={enHref} onClick={(e) => changeLang({ e, href: enHref })}>EN</a>
