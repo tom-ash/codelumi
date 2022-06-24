@@ -13,16 +13,23 @@ hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescri
 
 const AVAILABLE_LANGUAGES = ['javascript', 'ruby', 'sql', 'pgsql', 'xml', 'css', 'typescript']
 
-const Code = (props) => {
+interface CodeProps {
+  node: {
+    c: object,
+    codeLang: string
+  },
+  jsonMeta: {
+    codeLang: string
+  }
+}
+
+const Code = (props: CodeProps) => {
   const { node, jsonMeta } = props
 
   if (!jsonMeta) return null
 
   const { c: nodeContent, codeLang: nodeCodeLang } = node
   const { codeLang: metaCodeLang } = jsonMeta
-
-  console.log(nodeContent)
-
   const codeLang = nodeCodeLang || metaCodeLang
 
   if (AVAILABLE_LANGUAGES.indexOf(codeLang) === -1) return null

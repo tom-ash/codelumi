@@ -64,8 +64,6 @@ const TitleBoard = (props: TitleBoardProps) => {
     mediaQueryImageTop = imageLargePcTop || 0
   }
 
-  console.log(imageAlt)
-
   return (
     <header className='title-board'>
       <div className='cover'>
