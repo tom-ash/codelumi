@@ -17,14 +17,18 @@ const nodeParser = props => {
   const nodeTag = node.t
   const nodeContent = node.c
   const attrs = nodeTag === 'h2' ? { id: urlify(nodeContent) } : (node.a || {})
+
+  if (!node) return null
   
   if (typeof node === 'string') return <Paragraph key={index} {...props} content={node} />
   if (headerTags.indexOf(nodeTag) !== -1) return <Header key={index} {...{...node, ...props}} />
   if (node.i) return <Image key={index} {...{...node.i, ...props}} />
+  if (node.ul) return <List key={index} {...{ listNodes: node.ul, ...props}} />
+  if (nodeTag === 'ul') return <List key={index} {...{ listNodes: nodeContent, ...props}} /> // TODO: Remove.
   if (nodeTag === 'link') return <Link key={index} {...{ clientUrl, changeRoute, nodeContent }}/>
   if (nodeTag === 'c') return <Code key={index} {...{...node, ...props}}/>
   if (nodeTag === 'float-clear') return <div key={index} className='float-clear'/>
-  if (nodeTag === 'ul') return <List key={index} {...{ listNodes: nodeContent, ...props}} />
+  
   if (nodeTag === 'PageIndexer') return <PageIndexer {...{ ...props, key: index }} />
 
   return null
