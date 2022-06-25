@@ -1,6 +1,5 @@
 import React from 'react'
 import loadable from '@loadable/component'
-import urlify from '../../../../../../../../../../shared/shared/functions/transformers/routes/urlify.js'
 
 const Header = loadable(() => import('./components/header/header'))
 const Link = loadable(() => import('../link/link.js'))
@@ -11,12 +10,11 @@ const Image = loadable(() => import('./components/image/image'))
 const PageIndexer = loadable(() => import('../../../../../index/components/page-indexer/page-indexer'))
 
 const nodeParser = props => {
-  const { node, index, device, isAdmin, jsonMeta, clientUrl, changeRoute, buildUrl } = props
+  const { node, index, clientUrl, changeRoute } = props
 
   const headerTags = ['h1', 'h2', 'h3', 'h4']
   const nodeTag = node.t
   const nodeContent = node.c
-  const attrs = nodeTag === 'h2' ? { id: urlify(nodeContent) } : (node.a || {})
 
   if (!node) return null
   
