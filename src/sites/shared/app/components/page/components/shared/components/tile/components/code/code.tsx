@@ -15,7 +15,7 @@ const AVAILABLE_LANGUAGES = ['javascript', 'ruby', 'sql', 'pgsql', 'xml', 'css',
 
 interface CodeProps {
   node: {
-    c: object,
+    code: object,
     codeLang: string
   },
   jsonMeta: {
@@ -28,13 +28,13 @@ const Code = (props: CodeProps) => {
 
   if (!jsonMeta) return null
 
-  const { c: nodeContent, codeLang: nodeCodeLang } = node
+  const { code, codeLang: nodeCodeLang } = node
   const { codeLang: metaCodeLang } = jsonMeta
   const codeLang = nodeCodeLang || metaCodeLang
 
   if (AVAILABLE_LANGUAGES.indexOf(codeLang) === -1) return null
 
-  const highlightedCode = hljs.highlight(nodeContent, { language: codeLang }).value
+  const highlightedCode = hljs.highlight(code, { language: codeLang }).value
 
   return (
     <pre>
