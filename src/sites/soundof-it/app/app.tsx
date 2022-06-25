@@ -30,6 +30,20 @@ initSentry()
 
 const APP_NAME = 'soundof-it'
 
+// const foo = 'forty two'
+// // @ts-ignore
+// foo = 'forty three'
+
+// var foo: string
+// foo = 42
+
+// let bar: number[] = [42]
+// bar = [43] // OK.
+// bar.push('forty three')
+
+// const foo = 'foo'
+// foo = 'bar'
+
 class App extends React.Component {
   // @ts-ignore
   constructor(props) {
@@ -47,6 +61,7 @@ class App extends React.Component {
     // @ts-ignore
     this.changeRoute = changeRoute.bind(this)
   }
+  
 
   render() {
     // @ts-ignore

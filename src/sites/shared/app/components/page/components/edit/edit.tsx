@@ -13,6 +13,14 @@ import UpdateStatus from './components/update-status'
 import Schema from './components/schema/schema'
 import Meta from './components/meta/meta'
 
+// let bar: number[] = [42]
+// bar = [43] // OK.
+// bar = ['forty two'] // Type 'string' is not assignable to type 'number'.
+
+const foo = 'forty two'
+// @ts-ignore
+foo = 'forty three'
+
 interface PageCreateProps {
   routeSynced: boolean,
   online: boolean,
