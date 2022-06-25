@@ -24,7 +24,6 @@ const nodeParser = props => {
   if (headerTags.indexOf(nodeTag) !== -1) return <Header key={index} {...{...node, ...props}} />
   if (node.i) return <Image key={index} {...{...node.i, ...props}} />
   if (node.ul) return <List key={index} {...{ listNodes: node.ul, ...props}} />
-  if (nodeTag === 'ul') return <List key={index} {...{ listNodes: nodeContent, ...props}} /> // TODO: Remove.
   if (nodeTag === 'link') return <Link key={index} {...{ clientUrl, changeRoute, nodeContent }}/>
   if (nodeTag === 'c') return <Code key={index} {...{...node, ...props}}/>
   if (nodeTag === 'float-clear') return <div key={index} className='float-clear'/>
