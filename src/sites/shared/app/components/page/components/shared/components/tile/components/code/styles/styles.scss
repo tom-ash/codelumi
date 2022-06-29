@@ -6,7 +6,9 @@ pre {
   background: #283747;
   font-size: 15px;
   line-height: 1.4;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 5px;
   code {
     padding: 0;
     color: #E5E7E9;
