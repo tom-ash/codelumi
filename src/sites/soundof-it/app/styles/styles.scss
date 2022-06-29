@@ -1,22 +1,16 @@
 @import '../components/page/styles/styles.scss';
 @import '../components/page/styles/styles.scss';
 
-#app {
-  @extend %page;
-  min-height: 640px;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   box-sizing: border-box;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-* {
-  margin: 0;
-  padding: 0;
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+  font-family: 'Open Sans', sans-serif;
 }
 
 html, body {
@@ -24,13 +18,13 @@ html, body {
   overflow-wrap: break-word;
 }
 
-html {
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
-  font-family: 'Open Sans', sans-serif;
+body {
+  background: rgb(251, 251, 251);
 }
 
-body {
-  background: rgb(245, 245, 245);
+#app {
+  @extend %page;
+  min-height: 640px;
 }
 
 a {

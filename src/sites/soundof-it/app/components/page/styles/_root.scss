@@ -22,23 +22,26 @@
     margin-bottom: 36px;
   }
   .index-link {
-    $BORDER-COLOR: #E5E7E9;
+    $BORDER-COLOR: #B3B6B7;
     position: relative;
     float: left;
     background: white;
+    border-radius: 5px;
+    overflow: hidden;
     img {
       display: block;
       max-width: 100%;
       aspect-ratio: 1.7777;
     }
-    border: 1px solid $BORDER-COLOR;
+    box-shadow: rgba(0, 0, 0, 0.01) 0px 1px 4px;
     &.learning {
       img {
         display: none;
       }
     }
+    transition: .2s ease-in;
     &:hover {
-      background: #FBFCFC;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
     }
     .link-data {
       position: relative;
