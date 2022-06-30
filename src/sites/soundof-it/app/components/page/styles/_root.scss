@@ -33,7 +33,7 @@
       max-width: 100%;
       aspect-ratio: 1.7777;
     }
-    box-shadow: rgba(0, 0, 0, 0.01) 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
     &.learning {
       img {
         display: none;
@@ -41,7 +41,7 @@
     }
     transition: .2s ease-in;
     &:hover {
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
     }
     .link-data {
       position: relative;
