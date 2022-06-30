@@ -1,18 +1,24 @@
 import React from 'react'
 
 interface HeaderProps {
-  t: string,
-  c: string | undefined,
-  n: string | undefined
+  rank: number,
+  header: { c: string, n: number } | string
 }
 
 const Header = (props: HeaderProps) => {
-  const { t: tag, c: content, n: number } = props
+  const {
+    rank,
+    header
+  } = props
+
+  const objectHeader = typeof header === 'object'
+  const tag = `h${rank}`
+  const headerText = objectHeader ? header.c : header
 
   return (
     <>
       <div className={`header-container ${tag}`}>
-        {number && <span className='number'>{number}</span>} {React.createElement(tag, { key: content }, content)}
+        {objectHeader && <span className='number'>{header.n}</span>} {React.createElement(tag, {}, headerText)}
       </div>
     </>
   )

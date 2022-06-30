@@ -12,7 +12,8 @@
       "@types/jest",
       "@types/react"
     ],
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "allowUnreachableCode": false
   },
   "include": [
     "../../declarations.d.ts",

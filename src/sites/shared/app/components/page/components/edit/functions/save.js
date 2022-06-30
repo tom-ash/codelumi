@@ -19,36 +19,51 @@ export function save({ withRouteChange = false }) {
   let currentH3 = 0
   let currentH4 = 0
 
-  body.map((node, index) => {
-    if (node.t === 'rt') {
-      body[index] = node.c
-    }
-
-    if (node.t === 'p') {
-      body[index] = node.c
-    }
-
+  body.map(node => {
     if (headerAutonumbering) {
-      if (node.t === 'h2') {
+      if (node.h2) {
         currentH2++
         currentH3 = 0
         currentH4 = 0
-        node.n = `${currentH2}.`
+
+        if (typeof node.h2 === 'object') {
+          node.h2.n = `${currentH2}.`
+        } else {
+          node.h2 = { c: node.h2, n: `${currentH2}.` }
+        }
       }
   
-      if (node.t === 'h3') {
+      if (node.h3) {
         currentH3++
         currentH4 = 0
-        node.n = `${currentH2}.${currentH3}.`
+
+        if (typeof node.h3 === 'object') {
+          node.h3.n = `${currentH2}.${currentH3}.`
+        } else {
+          node.h3 = { c: node.h3, n: `${currentH2}.${currentH3}.` }
+        }
       }
   
-      if (node.t === 'h4') {
+      if (node.h4) {
         currentH4++
-        node.n = `${currentH2}.${currentH3}.${currentH4}.`
+
+        if (typeof node.h4 === 'object') {
+          node.h4.n = `${currentH2}.${currentH3}.${currentH4}.`
+        } else {
+          node.h4 = { c: node.h4, n: `${currentH2}.${currentH3}.${currentH4}.` }
+        }
       }
     } else {
-      if (['h2', 'h3', 'h4'].indexOf(node.t) !== -1) {
-        delete node.n
+      if (node.h2 && typeof node.h2 === 'object') {
+        node.h2 = node.h2.c
+      }
+
+      if (node.h3 && typeof node.h3 === 'object') {
+        node.h3 = node.h3.c
+      }
+
+      if (node.h4 && typeof node.h4 === 'object') {
+        node.h4 = node.h4.c
       }
     }
   })
