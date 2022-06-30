@@ -30,7 +30,14 @@ const TableOfContents = (props) => {
 
                     history.pushState(null, null, `${window.location.pathname}#${urlify(headerContent)}`)
 
-                    const targetHeader = headers.find(headerNode => urlify(headerContent) === urlify(headerNode.c))
+                    const targetHeader = (headers.find(headerNode => {
+                      if (typeof headerNode.h2 === 'string') {
+                        return urlify(headerContent) === urlify(headerNode.h2)
+                      }
+
+                      return urlify(headerContent) === urlify(headerNode.h2.c)
+                    }))['h2']
+
                     const domHeaders = document.getElementsByTagName('h2')
                     let element
 
