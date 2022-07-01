@@ -51,8 +51,19 @@ const nodeParser = props => {
     return <Header key={index} {...headerProps} />
   }
 
+  if (node.ul) {
+    const ulProps = { listNodes: node.ul }
+
+    return <List key={index} {...ulProps} />
+  }
+
+  if (Array.isArray(node)) {
+    const ulProps = { listNodes: node }
+
+    return <List key={index} {...ulProps} />
+  }
+
   if (node.i) return <Image key={index} {...{...node.i, ...props}} />
-  if (node.ul) return <List key={index} {...{ listNodes: node.ul, ...props}} />
   if (node.code) return <Code key={index} {...{...node, ...props}}/>
   
   if (nodeTag === 'float-clear') return <div key={index} className='float-clear'/>
