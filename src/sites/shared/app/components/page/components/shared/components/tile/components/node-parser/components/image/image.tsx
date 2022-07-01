@@ -1,15 +1,15 @@
 import React from 'react'
 
 interface ImageProps {
-  s: string,
-  a: string
+  src: string,
+  alt: string
 }
 
 const Image = (props: ImageProps) => {
-  const { s: src, a: alt } = props
-  const imageProps = { src, alt }
+  const { src, alt } = props
+  const imgProps = { src, alt }
 
-  return <img {...imageProps} loading='lazy' />
+  return <img {...imgProps} loading='lazy' />
 }
 
 export default Image

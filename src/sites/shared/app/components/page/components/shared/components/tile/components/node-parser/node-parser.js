@@ -63,10 +63,14 @@ const nodeParser = props => {
     return <List key={index} {...ulProps} />
   }
 
-  if (node.i) return <Image key={index} {...{...node.i, ...props}} />
+  if (node.img) {
+    const { s: src, a: alt } = node.img
+    const imgProps = { src, alt }
+
+    return <Image key={index} {...imgProps} />
+  }
+
   if (node.code) return <Code key={index} {...{...node, ...props}}/>
-  
-  if (nodeTag === 'float-clear') return <div key={index} className='float-clear'/>
   
   if (nodeTag === 'PageIndexer') return <PageIndexer {...{ ...props, key: index }} />
 
