@@ -14,27 +14,22 @@ hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescri
 const AVAILABLE_LANGUAGES = ['javascript', 'ruby', 'sql', 'pgsql', 'xml', 'css', 'typescript']
 
 interface CodeProps {
-  node: {
-    code: object,
-    codeLang: string
-  },
-  jsonMeta: {
-    codeLang: string
-  }
+  code: {
+    c: string,
+    l: string
+  } | string,
+  pageCodeLang: string
 }
 
 const Code = (props: CodeProps) => {
-  const { node, jsonMeta } = props
-
-  if (!jsonMeta) return null
-
-  const { code, codeLang: nodeCodeLang } = node
-  const { codeLang: metaCodeLang } = jsonMeta
-  const codeLang = nodeCodeLang || metaCodeLang
+  const { code, pageCodeLang } = props
+  const isCodeObject = typeof code === 'object'
+  const codeContent = isCodeObject ? code.c : code
+  const codeLang = isCodeObject ? code.l : pageCodeLang
 
   if (AVAILABLE_LANGUAGES.indexOf(codeLang) === -1) return null
 
-  const highlightedCode = hljs.highlight(code, { language: codeLang }).value
+  const highlightedCode = hljs.highlight(codeContent, { language: codeLang }).value
 
   return (
     <pre>

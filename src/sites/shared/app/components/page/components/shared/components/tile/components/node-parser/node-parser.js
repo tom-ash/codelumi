@@ -70,7 +70,13 @@ const nodeParser = props => {
     return <Image key={index} {...imgProps} />
   }
 
-  if (node.code) return <Code key={index} {...{...node, ...props}}/>
+  if (node.code) {
+    const { code } = node
+    const { jsonMeta: { codeLang: pageCodeLang } } = props
+    const codeProps = { code, pageCodeLang }
+
+    return <Code key={index} {...codeProps}/>
+  }
   
   if (nodeTag === 'PageIndexer') return <PageIndexer {...{ ...props, key: index }} />
 
