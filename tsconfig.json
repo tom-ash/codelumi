@@ -13,7 +13,8 @@
       "@types/react"
     ],
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
-    "allowUnreachableCode": false
+    "allowUnreachableCode": false,
+    "experimentalDecorators": true
   },
   "include": [
     "declarations.d.ts",

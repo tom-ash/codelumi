@@ -66,6 +66,10 @@ pre {
     }
 
     &.javascript, &.typescript {
+      .hljs-meta {
+        color: rgb(180, 200, 240);
+      }
+
       .hljs-comment {
         color: rgb(142, 142, 142);
       }
