@@ -7,6 +7,7 @@ const Code = loadable(() => import('../code/code'))
 const Paragraph = loadable(() => import('./components/paragraph/paragraph'))
 const Image = loadable(() => import('./components/image/image'))
 const PageIndexer = loadable(() => import('../../../../../index/components/page-indexer/page-indexer'))
+const YouTubeEmbed = loadable(() => import('./components/youtube-embed/youtube-embed'))
 
 const nodeParser = props => {
   const { node, index } = props
@@ -76,6 +77,13 @@ const nodeParser = props => {
     const codeProps = { code, pageCodeLang }
 
     return <Code key={index} {...codeProps}/>
+  }
+
+  if (node.yte) {
+    const { s: src, w: width } = node.yte
+    const youTubeEmbedProps = { key: index, src, width }
+
+    return <YouTubeEmbed {...youTubeEmbedProps}/>
   }
   
   if (nodeTag === 'PageIndexer') return <PageIndexer {...{ ...props, key: index }} />
