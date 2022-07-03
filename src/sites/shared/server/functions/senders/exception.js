@@ -19,7 +19,7 @@ function exceptionSender({
 
   const appAsHtml = appRenderer(initialState)
 
-  res.status(404).send(
+  res.status(410).send(
     indexRenderer({
       url, lang: 'pl', title: 'Not Found', description: 'Not Found', ...appAsHtml
     })
