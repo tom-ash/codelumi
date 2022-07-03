@@ -3,9 +3,12 @@ import indexRenderer from '../renderers'
 
 function exceptionSender({
   exception,
-  res, url, device,
+  res,
+  url,
+  device,
   visitorState,
-  appRenderer
+  appRenderer,
+  robots
 }) {
   const initialState = {
     app: { ...initialAppState, routeSynced: true, lang: 'pl', device },
@@ -21,7 +24,12 @@ function exceptionSender({
 
   res.status(410).send(
     indexRenderer({
-      url, lang: 'pl', title: 'Not Found', description: 'Not Found', ...appAsHtml
+      url,
+      lang: 'pl',
+      title: 'Not Found',
+      description: 'Not Found',
+      ...appAsHtml,
+      robots
     })
   )
 }

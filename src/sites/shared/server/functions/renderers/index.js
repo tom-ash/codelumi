@@ -1,11 +1,22 @@
 import pretty from 'pretty'
 
-function indexRenderer({
-  lang, canonicalUrl, alternateLinks,
-  title, robots, description, keywords,
-  openGraph, schema,
-  html, css, preloadedState, scriptTags
-}) {
+function indexRenderer(props) {
+  const {
+    lang,
+    canonicalUrl,
+    alternateLinks,
+    title,
+    robots,
+    description,
+    keywords,
+    openGraph,
+    schema,
+    html,
+    css,
+    preloadedState,
+    scriptTags
+  } = props
+
   const indexAsHtml = (
     `<!doctype html>
     <html lang="${lang}">

@@ -46,11 +46,16 @@ function routeSender({
     }
   })
   .catch(exception => {
+    const robots = 'noindex,nofollow'
+
     exceptionSender({
       exception,
-      res, url, device,
+      res,
+      url,
+      device,
       visitorState,
-      appRenderer
+      appRenderer,
+      robots
     })
   })
 }
