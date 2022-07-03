@@ -1,6 +1,6 @@
 import React from 'react'
 import SVG from '../../../../../../../../support/components/svg/svg'
-import buildUrl from '../../../../../../../../../../shared/functions/builders/url.js'
+import buildUrl from '../../../../../../../../../../shared/functions/builders/url'
 
 function categoryManger(props) {
   const { category, lang, currentCategory, changeRoute, langHandler, amount, links } = props

@@ -1,7 +1,7 @@
 import React from 'react'
 import SVG from '../../../../../../support/components/svg/svg'
 import { shareOnFacebook } from '../../../../../functions/share-on-facebook.js'
-import buildUrl from '../../../../../../../../shared/functions/builders/url.js'
+import buildUrl from '../../../../../../../../shared/functions/builders/url'
 
 export function shareOnFacebookManager() {
   const { isMobile, announcement } = this.props

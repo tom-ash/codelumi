@@ -23,7 +23,7 @@ import headerStyles from './components/scaffold/header/styles/styles.scss'
 import Logo from './components/scaffold/header/components/logo/logo.js'
 import HeaderCustomization from './components/scaffold/header/components/customization/customization.js'
 import initSentry from '../../shared/app/functions/analytics/sentry/init.js'
-import buildUrl from '../shared/functions/builders/url.js'
+import buildUrl from '../shared/functions/builders/url'
 
 import loadable from '@loadable/component'
 const Image = loadable(() => import('../../shared/app/components/image/image'))

@@ -4,7 +4,7 @@ import APEX_DOMAIN from '../../shared/constants/domains/apex.js'
 import ROOT_DOMAIN from '../../shared/constants/domains/root.js'
 import CLIENT_URL from '../../shared/constants/urls/client.js'
 import API_URL from '../../shared/constants/urls/api.js'
-import buildUrl from '../../shared/functions/builders/url.js'
+import buildUrl from '../../shared/functions/builders/url'
 import SITE_NAME from '../../shared/constants/names/site.js'
 
 function handleRequest(req, res) {

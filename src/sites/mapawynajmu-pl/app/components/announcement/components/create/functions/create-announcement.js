@@ -2,7 +2,7 @@ import API_URL from '../../../../../../shared/constants/urls/api.js'
 import getAccessToken from '../../../../user/components/authorize/components/tokens/functions/get-tokens'
 import { CREATE_API_ROUTE_DATA, CREATE_WITH_USER_API_ROUTE_DATA, UPDATE_API_ROUTE_DATA } from '../constants/api-route-data.js'
 import setConfirmationTokenCookie from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token.js'
-import buildUrl from '../../../../../../shared/functions/builders/url.js'
+import buildUrl from '../../../../../../shared/functions/builders/url'
 
 // function sendAnnouncementCreatedEvent() {
 //   window.dataLayer.push({ 'event': 'announcement_created' })

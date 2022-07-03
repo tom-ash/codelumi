@@ -27,19 +27,15 @@ const LangSwich = (props: LangSwichProps) => {
 
   if (currentPl) {
     const currentPlPath = currentPl.path
-    console.log(currentPlPath)
     if (currentPlPath === null) return null
 
-    // @ts-ignore
     plHref = buildUrl({ path: currentPlPath })
   }
 
   if (currentEn) {
     const currentEnPath = currentEn.path
-    console.log(currentEnPath)
     if (currentEnPath === null) return null
 
-    // @ts-ignore
     enHref = buildUrl({ path: links['current/en'].path })
   }
 

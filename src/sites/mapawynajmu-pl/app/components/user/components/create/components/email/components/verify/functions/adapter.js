@@ -2,7 +2,7 @@ import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
 import { VERIFY_API_ROUTE } from '../constants/api_routes.js'
 import { saveTokens } from '../../../../../../../functions/token-handlers'
 import getCookieValue from '../../../../../../../../../../../shared/app/functions/cookies/getters/get-cookie-value.js'
-import buildUrl from '../../../../../../../../../../shared/functions/builders/url.js'
+import buildUrl from '../../../../../../../../../../shared/functions/builders/url'
 
 export function verify() {
   if (!this.verificationManager('validate')) return
