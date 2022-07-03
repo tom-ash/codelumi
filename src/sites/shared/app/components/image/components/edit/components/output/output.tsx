@@ -1,23 +1,24 @@
-import React from "react"
+import React from 'react'
+import Node from './components/node/node'
 
-type imageAttrs = {
-  crossorigin: 'anonymous'
-}
-
-type imageNode = string | {
-  t?: string,
+type NodeProps = string | {
+  t: string,
   c?: string,
-  attrs?: imageAttrs
+  attrs?: object
 }
 
 interface OutputProps {
   width: string,
   height: string,
-  bodyElements: imageNode[]
+  bodyElements: NodeProps[]
 }
 
 const Output = (props: OutputProps) => {
-  const { width, height, bodyElements } = props
+  const {
+    width,
+    height,
+    bodyElements
+  } = props
 
   return (
     <div
@@ -28,30 +29,17 @@ const Output = (props: OutputProps) => {
         height: +height
       }}
     >
-      {bodyElements.map((bodyElement, index) => {
-        if (!bodyElement) return null
-        if (typeof bodyElement === 'string') return <div dangerouslySetInnerHTML={{ __html: bodyElement }} />
-        if (!bodyElement.t) return null
+      {bodyElements.map((node, index) => {
+        if (typeof node === 'string') {
+          const nodeProps = { tag: 'p', content: node, attrs: {} }
 
-        if (bodyElement.t === 's') {
-          const css = bodyElement.c
-          const head = document.head
-          const style = document.createElement('style')
-          head.appendChild(style)
-          style.type = 'text/css'
-          style.appendChild(document.createTextNode(css))
-          return
+          return <Node {...nodeProps} />
         }
 
-        const tag = bodyElement.t
-        const content = bodyElement.c
-        const attrs = { ...bodyElement.attrs, key: index }
+        const { t: tag, c: content, attrs = {} } = node
+        const nodeProps = { tag, content, attrs, key: index }
 
-        if (tag === 'img') {
-          attrs['crossorigin'] = 'anonymous'
-        }
-
-        return React.createElement(tag, attrs, content)
+        return <Node {...nodeProps} />
       })}
     </div>
   )
