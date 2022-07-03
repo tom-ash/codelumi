@@ -5,7 +5,10 @@ import SVG from '../../../../../../../../support/components/svg/svg'
 import buildUrl from '../../../../../../../../../../shared/functions/builders/url'
 
 interface LangSwichProps {
-  links: object,
+  links: {
+    'current/pl': { path: string, title: string },
+    'current/en': { path: string, title: string }
+  },
   lang: string,
   buildUrl: (props: object) => void,
   changeRoute: (props: object) => void
@@ -14,19 +17,34 @@ interface LangSwichProps {
 const LangSwich = (props: LangSwichProps) => {
   useStyles(styles)
 
+  let plHref: string
+  let enHref: string
   const { lang } = props
   const [showLangs, setShowLangs] = useState(false)
-
   const { links, changeRoute } = props
-  // @ts-ignore
-  const plHref = links['current/pl'] && buildUrl({ path: links['current/pl'].path })
-  // @ts-ignore
-  const enHref = links['current/en'] && buildUrl({ path: links['current/en'].path })
+  const currentPl = links['current/pl']
+  const currentEn = links['current/en']
+
+  if (currentPl) {
+    const currentPlPath = currentPl.path
+    console.log(currentPlPath)
+    if (currentPlPath === null) return null
+
+    // @ts-ignore
+    plHref = buildUrl({ path: currentPlPath })
+  }
+
+  if (currentEn) {
+    const currentEnPath = currentEn.path
+    console.log(currentEnPath)
+    if (currentEnPath === null) return null
+
+    // @ts-ignore
+    enHref = buildUrl({ path: links['current/en'].path })
+  }
 
   const allClassNames = ['all']
   showLangs && allClassNames.push('show')
-
-  if (!plHref || !enHref) return null
 
   const changeLang = (props: any) => {
     const { e, href } = props
