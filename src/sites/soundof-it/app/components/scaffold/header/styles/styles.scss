@@ -7,8 +7,9 @@
   left: 0;
   right: 0;
   height: 50px;
-  background: rgb(50, 50, 50);
-  color: #FDFEFE;
+  color: rgb(50, 50, 50);
+  border-bottom: 1px solid lightgray;
+  background: white;
   .inner {
     max-width: 1440px;
     margin: 0 auto;
