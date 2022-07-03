@@ -3,7 +3,8 @@ export type AttrsProps = {
 }
 
 export type NodeProps = {
-  tag: string,
-  content?: string,
-  attrs?: AttrsProps
+  t: string,
+  c?: string,
+  attrs?: AttrsProps,
+  children?: NodeProps[]
 }

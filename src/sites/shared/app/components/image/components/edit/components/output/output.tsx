@@ -1,11 +1,6 @@
 import React from 'react'
 import Node from './components/node/node'
-
-type NodeProps = string | {
-  t: string,
-  c?: string,
-  attrs?: object
-}
+import { NodeProps } from './components/node/node.d'
 
 interface OutputProps {
   width: string,
@@ -31,13 +26,13 @@ const Output = (props: OutputProps) => {
     >
       {bodyElements.map((node, index) => {
         if (typeof node === 'string') {
-          const nodeProps = { tag: 'p', content: node, attrs: {} }
+          const nodeProps = { t: 'p', c: node }
 
           return <Node {...nodeProps} />
         }
 
-        const { t: tag, c: content, attrs = {} } = node
-        const nodeProps = { tag, content, attrs, key: index }
+        const { t, c, attrs, children } = node
+        const nodeProps = { t, c, attrs, children, key: index }
 
         return <Node {...nodeProps} />
       })}
