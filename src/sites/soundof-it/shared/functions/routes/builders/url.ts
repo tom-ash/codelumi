@@ -1,5 +1,5 @@
 import clientUrl from '../../../constants/urls/client.js'
-import buildUrlGeneric from '../../../../../shared/shared/functions/routes/builders/url.js'
+import buildUrlGeneric from '../../../../../shared/shared/functions/routes/builders/url'
 
 type buildUrlProps = {
   path: string,

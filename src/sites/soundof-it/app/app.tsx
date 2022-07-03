@@ -24,7 +24,7 @@ import { LANGS } from '../shared/constants/langs/langs.js'
 import Logo from './components/scaffold/header/components/logo/logo.js'
 import HeaderCustomization from './components/scaffold/header/components/customization/customization.js'
 import initSentry from '../../shared/app/functions/analytics/sentry/init.js'
-import buildUrl from '../shared/functions/routes/builders/url.js'
+import buildUrl from '../shared/functions/routes/builders/url'
 
 initSentry()
 
