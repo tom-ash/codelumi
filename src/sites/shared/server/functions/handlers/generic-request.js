@@ -5,7 +5,9 @@ import getVisitorState from '../../../shared/functions/getters/visitor-state.js'
 import sitemapSender from '../senders/sitemap.js'
 
 function genericRequestHandler({
-  req, res,
+  req,
+  res,
+  clientUrl,
   apiUrl,
   appRenderer,
   siteName
