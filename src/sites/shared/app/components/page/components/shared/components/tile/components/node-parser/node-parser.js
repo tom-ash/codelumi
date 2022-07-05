@@ -8,6 +8,7 @@ const Paragraph = loadable(() => import('./components/paragraph/paragraph'))
 const Image = loadable(() => import('./components/image/image'))
 const PageIndexer = loadable(() => import('../../../../../index/components/page-indexer/page-indexer'))
 const YouTubeEmbed = loadable(() => import('./components/youtube-embed/youtube-embed'))
+const Section = loadable(() => import('../section/section'))
 
 const nodeParser = props => {
   const { node, index } = props
@@ -84,6 +85,10 @@ const nodeParser = props => {
     const youTubeEmbedProps = { key: index, src, width }
 
     return <YouTubeEmbed {...youTubeEmbedProps}/>
+  }
+
+  if (node.main) {
+    return <Section key={index} {...{ ...props, element: 'main', jsonBody: node.main }} />
   }
   
   if (nodeTag === 'PageIndexer') return <PageIndexer {...{ ...props, key: index }} />

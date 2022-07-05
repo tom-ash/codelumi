@@ -42,14 +42,12 @@ const jsonToJsxParser = props => {
     return nodeParser({ ...props, node, index })
   })
 
-  const mainNode = iSection ? main : <main>{main}</main>
-
   return (
     <>
       {titleBoard}
       {editorial}
       {tableOfContents}
-      {mainNode}
+      {main}
     </>
   )
 }

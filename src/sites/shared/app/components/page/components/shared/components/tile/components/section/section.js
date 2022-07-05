@@ -13,11 +13,12 @@ const Section = props => {
     isAdmin,
     lang,
     langHandler,
-    className
+    className,
+    element
   } = props
 
   const section = React.createElement(
-    'section',
+    element || 'section',
     { className },
     jsonToJsxParser({ iSection: true, appName, jsonBody, jsonMeta, clientUrl, changeRoute, buildUrl, device, isAdmin, lang, langHandler })
   )
