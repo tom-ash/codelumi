@@ -10,6 +10,7 @@ const PageIndexer = loadable(() => import('../../../../../index/components/page-
 const YouTubeEmbed = loadable(() => import('./components/youtube-embed/youtube-embed'))
 const Section = loadable(() => import('../section/section'))
 const TableOfContents = loadable(() => import('../table-of-contents/table-of-contents'))
+const Editorial = loadable(() => import('../editorial/editorial'))
 
 const nodeParser = props => {
   const { node, index, jsonBody } = props
@@ -98,6 +99,13 @@ const nodeParser = props => {
     const tableOfContentsProps = { key: index, jsonBody, title: node.toc }
 
     return <TableOfContents {...tableOfContentsProps} />
+  }
+
+  if (node.editorial) {
+    const { editorial } = node
+    const editorialProps = { key: index, editorial}
+
+    return <Editorial {...editorialProps} />
   }
 
   return null

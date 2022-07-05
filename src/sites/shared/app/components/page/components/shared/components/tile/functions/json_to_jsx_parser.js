@@ -3,8 +3,6 @@ import nodeParser from "../components/node-parser/node-parser"
 import loadable from '@loadable/component'
 
 const TitleBoard = loadable(() => import('../components/title-board/title-board'))
-const Editorial = loadable(() => import('../components/editorial/editorial'))
-const TableOfContents = loadable(() => import('../components/table-of-contents/table-of-contents'))
 const Section = loadable(() => import('../components/section/section'))
 
 const jsonToJsxParser = props => {
@@ -21,12 +19,6 @@ const jsonToJsxParser = props => {
       const titleBoardProps = { key: index, node, appName, device, langHandler, publishedOn, modifiedOn, lang }
 
       titleBoard = <TitleBoard {...titleBoardProps} />
-
-      return null
-    }
-
-    if (node.t === 'e') {
-      editorial = <Editorial node={node} key={index}/>
 
       return null
     }

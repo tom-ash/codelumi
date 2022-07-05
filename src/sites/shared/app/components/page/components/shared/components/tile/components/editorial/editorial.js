@@ -5,11 +5,11 @@ import styles from './styles/styles.scss'
 const Editorial = props => {
   useStyles(styles)
 
-  const { node: { c: nodeContent } } = props
+  const { editorial } = props
 
   return (
     <p className='editorial'>
-      <strong>{nodeContent}</strong>
+      <strong>{editorial}</strong>
     </p>
   )
 }
