@@ -3,7 +3,7 @@ import urlify from '../../../../../../../../../shared/functions/transformers/rou
 import setScreenOffsetAtElement from '../../../../../../../../../app/functions/screen/setters/offset-at-element.js'
 
 const TableOfContents = (props) => {
-  const { jsonBody, node: { c: nodeContent } } = props
+  const { jsonBody, title } = props
   const mainNode = jsonBody.find(node => typeof node === 'object' && node.main)
   const main = mainNode ? mainNode.main : null
 
@@ -15,7 +15,7 @@ const TableOfContents = (props) => {
     <nav className='table-of-contents'>
       <div className='inner-container'>
         <h2>
-          {nodeContent}
+          {title}
         </h2>
         <ul>
           {headers.map((header, index) => {

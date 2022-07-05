@@ -9,9 +9,10 @@ const Image = loadable(() => import('./components/image/image'))
 const PageIndexer = loadable(() => import('../../../../../index/components/page-indexer/page-indexer'))
 const YouTubeEmbed = loadable(() => import('./components/youtube-embed/youtube-embed'))
 const Section = loadable(() => import('../section/section'))
+const TableOfContents = loadable(() => import('../table-of-contents/table-of-contents'))
 
 const nodeParser = props => {
-  const { node, index } = props
+  const { node, index, jsonBody } = props
 
   const nodeTag = node.t
 
@@ -92,6 +93,12 @@ const nodeParser = props => {
   }
   
   if (nodeTag === 'PageIndexer') return <PageIndexer {...{ ...props, key: index }} />
+
+  if (node.toc) {
+    const tableOfContentsProps = { key: index, jsonBody, title: node.toc }
+
+    return <TableOfContents {...tableOfContentsProps} />
+  }
 
   return null
 }

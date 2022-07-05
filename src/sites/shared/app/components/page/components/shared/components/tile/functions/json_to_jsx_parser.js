@@ -24,13 +24,9 @@ const jsonToJsxParser = props => {
 
       return null
     }
+
     if (node.t === 'e') {
       editorial = <Editorial node={node} key={index}/>
-
-      return null
-    }
-    if (node.t === 'toc') {
-      tableOfContents = <TableOfContents key={index} jsonBody={jsonBody} node={node} />
 
       return null
     }
