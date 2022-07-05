@@ -4,7 +4,10 @@ import setScreenOffsetAtElement from '../../../../../../../../../app/functions/s
 
 const TableOfContents = (props) => {
   const { jsonBody, node: { c: nodeContent } } = props
-  const headers = jsonBody.filter(node => {
+  const mainNode = jsonBody.find(node => typeof node === 'object' && node.main)
+  const main = mainNode ? mainNode.main : null
+
+  const headers = (main || jsonBody).filter(node => {
     if (node && node.h2) return node
   })
 
