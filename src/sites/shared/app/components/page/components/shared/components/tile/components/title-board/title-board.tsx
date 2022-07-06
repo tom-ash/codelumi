@@ -78,8 +78,6 @@ const TitleBoard = (props: TitleBoardProps) => {
     langHandler
   } = props
 
-  console.log(props)
-
   useStyles(require(`../../../../../../../../../../${appName}/app/components/page/styles/article/header.scss`))
 
   return (
