@@ -4,106 +4,97 @@ import SVG from '../../../../../../../support/svg/svg.js'
 import prettifyDate from '../../../../../../../../../../shared/app/functions/time/prettify-date'
 
 interface TitleBoardProps {
-  appName: string,
-  device: string,
-  lang: string,
-  langHandler(langs: { pl: string, en: string }): string,
-  node: {
-    title: string,
-    image: string,
-    imageAlt: string,
-    author: string,
-    authorLink: string,
-    authorPicture: string,
-    logo: string,
-    imageTop: number,
-    imageLargePcTop: number,
-    imageSmallPcTop: number,
-    imageLargeTabletTop: number,
-    imageSmallTabletTop: number,
-    imageLargePhoneTop: number,
-    imageSmallPhoneTop: number
-  },
-  publishedOn: string,
-  modifiedOn: string
+  title: string
+  author?: { n: string, l: string }
+  image?: { s: string, a: string }
+  logo?: { s: string, a: string }
+  publishedOn?: string
+  modifiedOn?: string
+  appName: string
+  lang: string
+  langHandler(langs: { pl: string, en: string }): string
+}
+
+const Image = (image: { s: string, a: string }) => {
+  const {
+    s: src,
+    a: alt
+  } = image
+  const imageProps = {
+    src,
+    alt,
+    className: 'cover-image'
+  }
+
+  return <img {...imageProps} />
+}
+
+const Logo = (logo: { s: string, a: string }) => {
+  const {
+    s: src,
+    a: alt
+  } = logo
+  const logoProps = {
+    src,
+    alt,
+    className: 'logo'
+  }
+  
+  return <img {...logoProps} />
+}
+
+const Author = (author: { n: string, l: string }) => {
+  const {
+    n: name,
+    l: link
+  } = author
+
+  return (
+    <div className='author'>
+      <div className='name'>
+        {/* @ts-ignore */}
+        <SVG name='penClip' />
+        <a
+          href={link}
+          target='_blank'
+        >
+          {name}
+        </a>
+      </div>
+    </div>
+  )
 }
 
 const TitleBoard = (props: TitleBoardProps) => {
   const {
-    appName,
-    device,
-    lang,
-    langHandler,
-    node: {
-      title,
-      image,
-      imageAlt,
-      author,
-      authorLink,
-      authorPicture,
-      logo,
-      imageTop,
-      imageLargePcTop,
-      imageSmallPcTop,
-      imageLargeTabletTop,
-      imageSmallTabletTop,
-      imageLargePhoneTop,
-      imageSmallPhoneTop,
-    },
+    title,
+    author,
+    image,
+    logo,
     publishedOn,
-    modifiedOn
+    modifiedOn,
+    appName,
+    lang,
+    langHandler
   } = props
 
+  console.log(props)
+
   useStyles(require(`../../../../../../../../../../${appName}/app/components/page/styles/article/header.scss`))
-
-  const logoImg = logo && <img className='logo' src={logo} />
-
-  let mediaQueryImageTop = imageTop || 0
-
-  if (device === 'largePc') {
-    mediaQueryImageTop = imageLargePcTop || 0
-  }
 
   return (
     <header className='title-board'>
       <div className='cover'>
-        {image && (
-          <img
-            src={image}
-            alt={imageAlt}
-            className='cover-image'
-            style={{
-              top: mediaQueryImageTop
-            }}
-          />
-        )}
-
-        <div className='logos'>
-          {logoImg}
-        </div>
+        {image && <Image {...image} />}
+        {logo && <Logo {...logo} />}
       </div>
-      <div className='author'>
-        {authorPicture &&
-        <div className='picture'>
-          {/* <SVG name='userNinja' /> */}
-        </div>}
-        <div className='name'>
-          {/* @ts-ignore */}
-          <SVG name='penClip' />
-          <a
-            href={authorLink}
-            target='_blank'
-          >
-            {author}
-          </a>
-        </div>
-      </div>
+      {author && <Author {...author} />}
       <div className='dates'>
         <span>
           {langHandler({ pl: 'Opublikowano w dniu', en: 'Published on'})} {publishedOn && prettifyDate({ date: publishedOn, lang })}.
         </span>
         <span>
-        {langHandler({ pl: 'Ostatnio zmodyfikowano w dniu', en: 'Modified on'})} {modifiedOn && prettifyDate({ date: modifiedOn, lang })}.
+          {langHandler({ pl: 'Ostatnio zmodyfikowano w dniu', en: 'Modified on'})} {modifiedOn && prettifyDate({ date: modifiedOn, lang })}.
         </span>
       </div>
       <h1>

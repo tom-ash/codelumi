@@ -1,7 +1,9 @@
 import React from 'react'
 import loadable from '@loadable/component'
 
+// TODO: Change to heading.
 const Header = loadable(() => import('./components/header/header'))
+
 const List = loadable(() => import('../list/list.js'))
 const Code = loadable(() => import('../code/code'))
 const Paragraph = loadable(() => import('./components/paragraph/paragraph'))
@@ -11,6 +13,7 @@ const YouTubeEmbed = loadable(() => import('./components/youtube-embed/youtube-e
 const Section = loadable(() => import('../section/section'))
 const TableOfContents = loadable(() => import('../table-of-contents/table-of-contents'))
 const Editorial = loadable(() => import('../editorial/editorial'))
+const TitleBoard = loadable(() => import('../title-board/title-board'))
 
 const nodeParser = props => {
   const { node, index, jsonBody } = props
@@ -106,6 +109,40 @@ const nodeParser = props => {
     const editorialProps = { key: index, editorial}
 
     return <Editorial {...editorialProps} />
+  }
+
+  if (node.header) {
+    const {
+      t: title,
+      a: author,
+      i: image,
+      l: logo
+    } = node.header
+
+    const {
+      publishedOn,
+      modifiedOn,
+      appName,
+      device,
+      lang,
+      langHandler
+    } = props
+
+    const titleBoardProps = {
+      key: index,
+      title,
+      author,
+      image,
+      logo,
+      publishedOn,
+      modifiedOn,
+      appName,
+      device,
+      lang,
+      langHandler
+    }
+
+    return <TitleBoard {...titleBoardProps} />
   }
 
   return null
