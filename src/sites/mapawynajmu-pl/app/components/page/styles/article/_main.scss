@@ -14,7 +14,7 @@ $padding-mobile: 18px;
   > img {
     width: 100%;
   }
-  .header-container {
+  .heading-container {
     display: flex;
     .number {
       flex: none;
@@ -46,7 +46,7 @@ $padding-mobile: 18px;
       padding: 0 0 12px;
     }
   }
-  .header-container:first-child {
+  .heading-container:first-child {
     &.h2 {
       padding: 0 0 12px;
     }  

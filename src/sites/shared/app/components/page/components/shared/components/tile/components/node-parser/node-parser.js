@@ -1,19 +1,17 @@
 import React from 'react'
 import loadable from '@loadable/component'
 
-// TODO: Change to heading.
-const Header = loadable(() => import('./components/header/header'))
-
+const Paragraph = loadable(() => import('./components/paragraph/paragraph'))
+const Heading = loadable(() => import('./components/heading/heading'))
 const List = loadable(() => import('../list/list.js'))
 const Code = loadable(() => import('../code/code'))
-const Paragraph = loadable(() => import('./components/paragraph/paragraph'))
 const Image = loadable(() => import('./components/image/image'))
-const PageIndexer = loadable(() => import('../../../../../index/components/page-indexer/page-indexer'))
 const YouTubeEmbed = loadable(() => import('./components/youtube-embed/youtube-embed'))
+const PageIndexer = loadable(() => import('../../../../../index/components/page-indexer/page-indexer'))
 const Section = loadable(() => import('../section/section'))
-const TableOfContents = loadable(() => import('../table-of-contents/table-of-contents'))
-const Editorial = loadable(() => import('../editorial/editorial'))
 const TitleBoard = loadable(() => import('../title-board/title-board'))
+const Editorial = loadable(() => import('../editorial/editorial'))
+const TableOfContents = loadable(() => import('../table-of-contents/table-of-contents'))
 
 const nodeParser = props => {
   const { node, index, jsonBody } = props
@@ -32,30 +30,30 @@ const nodeParser = props => {
   }
 
   if (node.h2) {
-    const headerProps = {
+    const headingProps = {
       rank: 2,
-      header: node.h2
+      heading: node.h2
     }
 
-    return <Header key={index} {...headerProps} />
+    return <Heading key={index} {...headingProps} />
   }
 
   if (node.h3) {
-    const headerProps = {
+    const headingProps = {
       rank: 3,
-      header: node.h3
+      heading: node.h3
     }
 
-    return <Header key={index} {...headerProps} />
+    return <Heading key={index} {...headingProps} />
   }
 
   if (node.h4) {
-    const headerProps = {
+    const headingProps = {
       rank: 4,
-      header: node.h4
+      heading: node.h4
     }
 
-    return <Header key={index} {...headerProps} />
+    return <Heading key={index} {...headingProps} />
   }
 
   if (node.ul) {
