@@ -1,0 +1,3 @@
+interface ParagraphProps {
+  content: string
+}

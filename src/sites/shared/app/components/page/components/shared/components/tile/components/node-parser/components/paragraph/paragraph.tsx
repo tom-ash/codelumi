@@ -1,8 +1,8 @@
 import React from 'react'
 import buildAnchor from './functions/build-anchor'
 
-const Paragraph = props => {
-  const { content, element } = props
+const Paragraph = (props: ParagraphProps) => {
+  const { content } = props
   let enrichedContent = content
 
   enrichedContent = enrichedContent.replace(
@@ -33,9 +33,7 @@ const Paragraph = props => {
     }
   )
 
-  const DomTag = element || 'p'
-
-  return <DomTag dangerouslySetInnerHTML={{ __html: enrichedContent }} />
+  return <p dangerouslySetInnerHTML={{ __html: enrichedContent }} />
 }
 
 export default Paragraph

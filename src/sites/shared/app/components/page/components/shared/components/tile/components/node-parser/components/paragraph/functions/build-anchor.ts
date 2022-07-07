@@ -1,4 +1,4 @@
-const buildAnchor = matchArray => {
+const buildAnchor = (matchArray: string[]) => {
   let properties = ''
   let text
 
