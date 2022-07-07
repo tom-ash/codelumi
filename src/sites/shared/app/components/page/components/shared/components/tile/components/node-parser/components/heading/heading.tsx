@@ -1,10 +1,5 @@
 import React from 'react'
 
-interface HeadingProps {
-  rank: number,
-  heading: { c: string, n: number } | string
-}
-
 const Heading = (props: HeadingProps) => {
   const {
     rank,
