@@ -7,11 +7,11 @@ const List = loadable(() => import('./components/list/list'))
 const Code = loadable(() => import('./components/code/code'))
 const Image = loadable(() => import('./components/image/image'))
 const YouTubeEmbed = loadable(() => import('./components/youtube-embed/youtube-embed'))
-const PageIndexer = loadable(() => import('../../../../../index/components/page-indexer/page-indexer'))
-const Section = loadable(() => import('../section/section'))
-const TitleBoard = loadable(() => import('../title-board/title-board'))
-const Editorial = loadable(() => import('../editorial/editorial'))
-const TableOfContents = loadable(() => import('../table-of-contents/table-of-contents'))
+const PageIndexer = loadable(() => import('./components/page-indexer/page-indexer'))
+const Section = loadable(() => import('./components/section/section'))
+const TitleBoard = loadable(() => import('./components/title-board/title-board'))
+const Editorial = loadable(() => import('./components/editorial/editorial'))
+const TableOfContents = loadable(() => import('./components/table-of-contents/table-of-contents'))
 
 const nodeParser = props => {
   const { node, index, jsonBody } = props

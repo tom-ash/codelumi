@@ -1,5 +1,5 @@
 import React from 'react'
-import jsonToJsxParser from '../../functions/json_to_jsx_parser'
+import jsonToJsxParser from '../../../../functions/json_to_jsx_parser'
 
 const Section = props => {
   const {

@@ -3,7 +3,7 @@ import useStyles from 'isomorphic-style-loader/useStyles'
 import styles from './styles/styles.scss'
 import { connect } from 'react-redux'
 import { mapStateToProps } from './constants/mappers'
-import IndexLink from '../../../shared/components/tile/components/index-link/index-link'
+import IndexLink from '../index-link/index-link'
 
 interface PageIndexerProps {
   clientUrl: string,

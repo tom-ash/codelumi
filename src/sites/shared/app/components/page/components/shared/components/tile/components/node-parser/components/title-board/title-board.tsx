@@ -1,7 +1,7 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader/useStyles'
-import SVG from '../../../../../../../support/svg/svg.js'
-import prettifyDate from '../../../../../../../../../../shared/app/functions/time/prettify-date'
+import SVG from '../../../../../../../../../support/svg/svg.js'
+import prettifyDate from '../../../../../../../../../../functions/time/prettify-date'
 
 interface TitleBoardProps {
   title: string
@@ -78,7 +78,7 @@ const TitleBoard = (props: TitleBoardProps) => {
     langHandler
   } = props
 
-  useStyles(require(`../../../../../../../../../../${appName}/app/components/page/styles/article/header.scss`))
+  useStyles(require(`../../../../../../../../../../../../${appName}/app/components/page/styles/article/header.scss`))
 
   return (
     <header className='title-board'>
