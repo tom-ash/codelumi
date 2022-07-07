@@ -1,5 +1,5 @@
 import React from 'react'
-import jsonToJsxParser from '../../../../functions/json_to_jsx_parser'
+import nodeParser from '../../node-parser'
 
 const Section = props => {
   const {
@@ -17,10 +17,14 @@ const Section = props => {
     element
   } = props
 
+  const body = jsonBody.map((node, index) => nodeParser({ ...props, node, index, sectionBody: jsonBody }))
+
+  if (!element) return body
+
   const section = React.createElement(
-    element || 'section',
+    element,
     { className },
-    jsonToJsxParser({ iSection: true, appName, jsonBody, jsonMeta, clientUrl, changeRoute, buildUrl, device, isAdmin, lang, langHandler })
+    body
   )
 
   return section

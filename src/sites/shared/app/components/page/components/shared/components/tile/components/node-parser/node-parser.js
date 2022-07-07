@@ -91,13 +91,21 @@ const nodeParser = props => {
   }
 
   if (node.main) {
-    return <Section key={index} {...{ ...props, element: 'main', jsonBody: node.main }} />
+    return <Section key={index} {...{ ...props, element: 'main', className: 'main', jsonBody: node.main }} />
+  }
+
+  if (node.article) {
+    const className = node.className
+
+    return <Section key={index} {...{ ...props, element: 'article', className, jsonBody: node.article }} />
   }
   
   if (nodeTag === 'PageIndexer') return <PageIndexer {...{ ...props, key: index }} />
 
   if (node.toc) {
-    const tableOfContentsProps = { key: index, jsonBody, title: node.toc }
+    const { sectionBody } = props
+
+    const tableOfContentsProps = { key: index, jsonBody: sectionBody, title: node.toc }
 
     return <TableOfContents {...tableOfContentsProps} />
   }

@@ -1,6 +1,8 @@
 import React from 'react'
 import jsonToJsxParser from './functions/json_to_jsx_parser'
 import SVG from '../../../../../support/svg/svg.js'
+// import nodeParser from './components/node-parser/node-parser'
+import Section from './components/node-parser/components/section/section'
 
 const PageTile = props => {
   const {
@@ -28,16 +30,10 @@ const PageTile = props => {
     }
   })()
 
-  const mainElementType = jsonMeta.type || 'article'
-  const className = jsonMeta.className
-  const mainElement = React.createElement(
-    mainElementType,
-    { className },
-    jsonToJsxParser({
-      appName, jsonBody, jsonMeta, clientUrl, changeRoute, buildUrl, device, isAdmin, lang,
-      langHandler, publishedOn, modifiedOn
-    })
-  )
+  const nodeProps = {
+    appName, jsonBody, jsonMeta, clientUrl, changeRoute, buildUrl, device, isAdmin, lang,
+    langHandler, publishedOn, modifiedOn
+  }
 
   return (
     <>
@@ -46,7 +42,7 @@ const PageTile = props => {
         {renderShow && <button className={buttonClassName} onClick={changePage}><SVG name='edit' /></button>}
       </>
       )}
-      {mainElement}
+      {<Section {...nodeProps} />}
     </>
   )
 }
