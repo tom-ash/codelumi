@@ -1,7 +1,5 @@
 import React from 'react'
-import jsonToJsxParser from './functions/json_to_jsx_parser'
 import SVG from '../../../../../support/svg/svg.js'
-// import nodeParser from './components/node-parser/node-parser'
 import Section from './components/node-parser/components/section/section'
 
 const PageTile = props => {

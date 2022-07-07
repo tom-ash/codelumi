@@ -1,5 +1,5 @@
 import React from 'react'
-import nodeParser from '../../node-parser'
+import Node from '../../node-parser'
 
 const Section = props => {
   const {
@@ -17,7 +17,11 @@ const Section = props => {
     element
   } = props
 
-  const body = jsonBody.map((node, index) => nodeParser({ ...props, node, index, sectionBody: jsonBody }))
+  const body = jsonBody.map((node, index) => {
+    const nodeProps = { ...props, node, index, sectionBody: jsonBody }
+    
+    return <Node {...nodeProps} />
+  })
 
   if (!element) return body
 

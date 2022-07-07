@@ -13,7 +13,7 @@ const TitleBoard = loadable(() => import('./components/title-board/title-board')
 const Editorial = loadable(() => import('./components/editorial/editorial'))
 const TableOfContents = loadable(() => import('./components/table-of-contents/table-of-contents'))
 
-const nodeParser = props => {
+const Node = props => {
   const { node, index, jsonBody } = props
 
   const nodeTag = node.t
@@ -154,4 +154,4 @@ const nodeParser = props => {
   return null
 }
 
-export default nodeParser
+export default Node
