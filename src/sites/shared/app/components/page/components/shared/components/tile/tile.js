@@ -1,6 +1,6 @@
 import React from 'react'
 import SVG from '../../../../../support/svg/svg.js'
-import Section from './components/node/components/section/section'
+import Section from './components/section/section'
 
 const PageTile = props => {
   const {
