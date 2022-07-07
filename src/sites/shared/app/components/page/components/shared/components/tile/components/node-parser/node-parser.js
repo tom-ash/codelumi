@@ -4,7 +4,7 @@ import loadable from '@loadable/component'
 const Paragraph = loadable(() => import('./components/paragraph/paragraph'))
 const Heading = loadable(() => import('./components/heading/heading'))
 const List = loadable(() => import('./components/list/list'))
-const Code = loadable(() => import('../code/code'))
+const Code = loadable(() => import('./components/code/code'))
 const Image = loadable(() => import('./components/image/image'))
 const YouTubeEmbed = loadable(() => import('./components/youtube-embed/youtube-embed'))
 const PageIndexer = loadable(() => import('../../../../../index/components/page-indexer/page-indexer'))

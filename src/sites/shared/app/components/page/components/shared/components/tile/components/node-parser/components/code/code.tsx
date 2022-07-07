@@ -13,14 +13,6 @@ hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescri
 
 const AVAILABLE_LANGUAGES = ['javascript', 'ruby', 'sql', 'pgsql', 'xml', 'css', 'typescript']
 
-interface CodeProps {
-  code: {
-    c: string,
-    l: string
-  } | string,
-  pageCodeLang: string
-}
-
 const Code = (props: CodeProps) => {
   const { code, pageCodeLang } = props
   const isCodeObject = typeof code === 'object'
