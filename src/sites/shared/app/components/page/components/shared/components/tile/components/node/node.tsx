@@ -60,47 +60,35 @@ const Node = (props: NodeProps) => {
     return <Heading key={index} {...headingProps} />
   }
 
-  // @ts-ignore
   if (node.img) {
-    // @ts-ignore
     const { s: src, a: alt } = node.img
     const imgProps = { src, alt }
 
     return <Image key={index} {...imgProps} />
   }
 
-  // @ts-ignore
   if (node.code) {
-    // @ts-ignore
     const { code } = node
-    // @ts-ignore
     const { jsonMeta: { codeLang: pageCodeLang } } = props
     const codeProps = { code, pageCodeLang }
 
     return <Code key={index} {...codeProps}/>
   }
 
-  // @ts-ignore
   if (node.yte) {
-    // @ts-ignore
     const { s: src, w: width } = node.yte
     const youTubeEmbedProps = { key: index, src, width }
 
     return <YouTubeEmbed {...youTubeEmbedProps}/>
   }
 
-  // @ts-ignore
   if (node.main) {
-    // @ts-ignore
     return <Section key={index} {...{ ...props, element: 'main', className: 'main', jsonBody: node.main }} />
   }
 
-  // @ts-ignore
   if (node.article) {
-    // @ts-ignore
     const className = node.className
 
-    // @ts-ignore
     return <Section key={index} {...{ ...props, element: 'article', className, jsonBody: node.article }} />
   }
   
