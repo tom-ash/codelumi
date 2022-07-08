@@ -18,12 +18,11 @@ type YouTubeEmbedData = {
   w: string
 }
 
-// type ArticleData = {
+type PageIndexerData = {
+  collection: string
+}
 
-// }
-
-type NodeData = {
-  t?: string
+type NodeData = string | string[] | {
   h2?: HeadingData
   h3?: HeadingData
   h4?: HeadingData
@@ -32,13 +31,17 @@ type NodeData = {
   yte?: YouTubeEmbedData
   main?: NodeData[]
   article?: NodeData[]
-  className: string
-  
-} | string | string[]
+  className?: string
+  pageIndexer?: PageIndexerData
+}
 
 interface NodeProps {
   node: NodeData
   index: number
   jsonBody: NodeData[]
   jsonMeta: { codeLang: string }
+  changeRoute(): void
+  clientUrl: string
+  tutorials?: Array<any>
+  articles?: Array<any>
 }

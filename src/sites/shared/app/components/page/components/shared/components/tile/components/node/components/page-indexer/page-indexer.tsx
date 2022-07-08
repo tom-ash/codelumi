@@ -6,11 +6,7 @@ import { mapStateToProps } from './constants/mappers'
 import IndexLink from '../index-link/index-link'
 
 interface PageIndexerProps {
-  clientUrl: string,
-  changeRoute(props: object): void,
-  node: {
-    collection: string
-  },
+  collection: string
   tutorials: {
     logo: string,
     image: string,
@@ -21,7 +17,7 @@ interface PageIndexerProps {
     pathname: string,
     hrefLang: string,
     modifiedOn: string
-  }[],
+  }[]
   articles: {
     logo: string,
     image: string,
@@ -33,12 +29,14 @@ interface PageIndexerProps {
     hrefLang: string,
     modifiedOn: string
   }[]
+  clientUrl: string
+  changeRoute(props: object): void
 }
 
 const PageIndexer = (props: PageIndexerProps) => {
   useStyles(styles)
 
-  const { tutorials: learningCollection, articles, node: { collection: collectionName }, clientUrl, changeRoute } = props
+  const { tutorials: learningCollection, articles, collection: collectionName, clientUrl, changeRoute } = props
 
   if (collectionName === 'learning') {
     return (

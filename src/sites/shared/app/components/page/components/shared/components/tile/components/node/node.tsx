@@ -91,9 +91,27 @@ const Node = (props: NodeProps) => {
 
     return <Section key={index} {...{ ...props, element: 'article', className, jsonBody: node.article }} />
   }
-  
-  // @ts-ignore
-  if (node.t === 'PageIndexer') return <PageIndexer {...{ ...props, key: index }} />
+
+  if (node.pageIndexer) {
+    const { collection } = node.pageIndexer
+    const {
+      articles,
+      tutorials,
+      clientUrl,
+      changeRoute
+    } = props
+
+    const pageIndexerProps = {
+      collection,
+      tutorials,
+      articles,
+      clientUrl,
+      changeRoute,
+      key: index
+    }
+
+    return <PageIndexer {...pageIndexerProps} />
+  }
 
   // @ts-ignore
   if (node.toc) {
