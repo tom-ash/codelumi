@@ -20,52 +20,60 @@ export function save({ withRouteChange = false }) {
   let currentH4 = 0
 
   body.map(node => {
-    if (headerAutonumbering) {
-      if (node.h2) {
-        currentH2++
-        currentH3 = 0
-        currentH4 = 0
+    // FIXME: Temporary hack.
+    const articleNodes = typeof node === 'object' && Array.isArray(node.article) ? node.article : null
+    const mainNode = articleNodes.find(obj => obj.main)
+    mainNode && mainNode.main.map(articleNode => {
+      if (headerAutonumbering) {
 
-        if (typeof node.h2 === 'object') {
-          node.h2.n = `${currentH2}.`
-        } else {
-          node.h2 = { c: node.h2, n: `${currentH2}.` }
-        }
-      }
+        console.log("HERE")
+
+        if (articleNode.h2) {
+          currentH2++
+          currentH3 = 0
+          currentH4 = 0
   
-      if (node.h3) {
-        currentH3++
-        currentH4 = 0
-
-        if (typeof node.h3 === 'object') {
-          node.h3.n = `${currentH2}.${currentH3}.`
-        } else {
-          node.h3 = { c: node.h3, n: `${currentH2}.${currentH3}.` }
+          if (typeof articleNode.h2 === 'object') {
+            articleNode.h2.n = `${currentH2}.`
+          } else {
+            articleNode.h2 = { c: articleNode.h2, n: `${currentH2}.` }
+          }
         }
-      }
+    
+        if (articleNode.h3) {
+          currentH3++
+          currentH4 = 0
   
-      if (node.h4) {
-        currentH4++
-
-        if (typeof node.h4 === 'object') {
-          node.h4.n = `${currentH2}.${currentH3}.${currentH4}.`
-        } else {
-          node.h4 = { c: node.h4, n: `${currentH2}.${currentH3}.${currentH4}.` }
+          if (typeof articleNode.h3 === 'object') {
+            articleNode.h3.n = `${currentH2}.${currentH3}.`
+          } else {
+            articleNode.h3 = { c: articleNode.h3, n: `${currentH2}.${currentH3}.` }
+          }
+        }
+    
+        if (articleNode.h4) {
+          currentH4++
+  
+          if (typeof articleNode.h4 === 'object') {
+            articleNode.h4.n = `${currentH2}.${currentH3}.${currentH4}.`
+          } else {
+            articleNode.h4 = { c: articleNode.h4, n: `${currentH2}.${currentH3}.${currentH4}.` }
+          }
+        }
+      } else {
+        if (articleNode.h2 && typeof articleNode.h2 === 'object') {
+          articleNode.h2 = articleNode.h2.c
+        }
+  
+        if (articleNode.h3 && typeof articleNode.h3 === 'object') {
+          articleNode.h3 = articleNode.h3.c
+        }
+  
+        if (articleNode.h4 && typeof articleNode.h4 === 'object') {
+          articleNode.h4 = articleNode.h4.c
         }
       }
-    } else {
-      if (node.h2 && typeof node.h2 === 'object') {
-        node.h2 = node.h2.c
-      }
-
-      if (node.h3 && typeof node.h3 === 'object') {
-        node.h3 = node.h3.c
-      }
-
-      if (node.h4 && typeof node.h4 === 'object') {
-        node.h4 = node.h4.c
-      }
-    }
+    })
   })
 
   const requestBody = JSON.stringify(
