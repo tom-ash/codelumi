@@ -2,6 +2,6 @@ interface HeadingProps {
   rank: number,
   heading: {
     c: string,
-    n: number
+    n: string
   } | string
 }
