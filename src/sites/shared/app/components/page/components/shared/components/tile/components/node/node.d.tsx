@@ -1,47 +1,70 @@
-type HeadingData = string | {
-  c: string
-  n: string
-}
-
-type ImgData = {
-  s: string
-  a: string
-}
-
-type CodeData = string | {
-  c: string
-  l: string
-}
-
-type YouTubeEmbedData = {
-  s: string
-  w: string
-}
-
-type PageIndexerData = {
-  collection: string
-}
-
 type NodeData = string | string[] | {
-  h2?: HeadingData
-  h3?: HeadingData
-  h4?: HeadingData
-  img?: ImgData
-  code?: CodeData
-  yte?: YouTubeEmbedData
-  main?: NodeData[]
+  pageIndexer?: {
+    collection: string
+  }
   article?: NodeData[]
+  header?: {
+    t: string
+    a?: {
+      n: string
+      l: string
+    }
+    i?: {
+      s: string
+      a: string
+    }
+    l?: {
+      s: string
+      a: string
+    }
+  }
+  editorial?: string
+  toc?: string
+  main?: NodeData[]
+  h2?: string | {
+    c: string
+    n: string
+  }
+  h3?: string | {
+    c: string
+    n: string
+  }
+  h4?: string | {
+    c: string
+    n: string
+  }
+  img?: {
+    s: string
+    a: string
+  }
+  code?: string | {
+    c: string
+    l: string
+  }
+  yte?: {
+    s: string
+    w: string
+  }
   className?: string
-  pageIndexer?: PageIndexerData
 }
+
+// TODO: Move!
+type LangHandler = (langs: { pl: string, en: string }) => string
 
 interface NodeProps {
   node: NodeData
   index: number
   jsonBody: NodeData[]
   jsonMeta: { codeLang: string }
-  changeRoute(): void
   clientUrl: string
   tutorials?: Array<any>
   articles?: Array<any>
+  sectionBody?: NodeData[]
+  publishedOn: string
+  modifiedOn: string
+  appName: string
+  device: string
+  lang: string
+  changeRoute(): void
+  langHandler: LangHandler
 }

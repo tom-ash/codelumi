@@ -19,10 +19,7 @@ const Node = (props: NodeProps) => {
   if (!node) return null
 
   if (typeof node === 'string') {
-    const paragraphProps = {
-      ...props,
-      content: node
-    }
+    const paragraphProps = { content: node }
 
     return <Paragraph key={index} {...paragraphProps} />
   }
@@ -113,48 +110,34 @@ const Node = (props: NodeProps) => {
     return <PageIndexer {...pageIndexerProps} />
   }
 
-  // @ts-ignore
   if (node.toc) {
-    // @ts-ignore
     const { sectionBody } = props
-
-    // @ts-ignore
     const tableOfContentsProps = { key: index, jsonBody: sectionBody, title: node.toc }
 
     return <TableOfContents {...tableOfContentsProps} />
   }
 
-  // @ts-ignore
   if (node.editorial) {
-    // @ts-ignore
     const { editorial } = node
     const editorialProps = { key: index, editorial}
 
     return <Editorial {...editorialProps} />
   }
 
-  // @ts-ignore
   if (node.header) {
     const {
       t: title,
       a: author,
       i: image,
       l: logo
-      // @ts-ignore
     } = node.header
 
     const {
-      // @ts-ignore
       publishedOn,
-      // @ts-ignore
       modifiedOn,
-      // @ts-ignore
       appName,
-      // @ts-ignore
       device,
-      // @ts-ignore
       lang,
-      // @ts-ignore
       langHandler
     } = props
 

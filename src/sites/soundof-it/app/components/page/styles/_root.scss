@@ -33,7 +33,8 @@
       max-width: 100%;
       aspect-ratio: 1.7777;
     }
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px;
+    box-shadow: lightgray 0px 0px 1px;
+    // border: 1px solid lightgray;
     &.learning {
       img {
         display: none;
@@ -41,11 +42,13 @@
     }
     transition: .2s ease-in;
     &:hover {
-      box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
+      box-shadow: lightgray 0px 1px 4px;
+      transform: scale(1.02);
     }
     .link-data {
       position: relative;
-      padding: 15px;
+      padding: 10px;
+      height: 60px;
       .category-and-subcategory {
         font-weight: bold;
         font-size: 10px;
@@ -78,19 +81,16 @@
         }
       }
       .title {
-        font-size: 18px;
-        line-height: 1.5;
-        color: #363636;
-      }
-      .description {
-        height: 64px;
         font-size: 14px;
-        line-height: 1.4;
-        color: #979A9A;
+        line-height: 18px;
+        color: #363636;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
       }
       .modified-on {
-        top: 15px;
-        right: 15px;
+        top: 10px;
+        right: 10px;
         position: absolute;
         font-size: 10px;
         color: #979A9A;
