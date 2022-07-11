@@ -20,7 +20,7 @@ export function componentDidUpdate(prevProps) {
   const { statisticsConsent, loadGa, changeApp } = this.props
 
   if (statisticsConsent && !loadGa) changeApp({ loadGa: true })
-  // if (!prevLoadGa && loadGa) {
-  //   loadGoogleAnalytics.call(this, getGoogleAnalyticsMeasurementId())
-  // }
+  if (!prevLoadGa && loadGa) {
+    loadGoogleAnalytics.call(this, getGoogleAnalyticsMeasurementId())
+  }
 }

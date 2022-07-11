@@ -30,6 +30,19 @@ initSentry()
 
 const APP_NAME = 'soundof-it'
 
+
+
+
+const horses = ["Roach", "Kelpie", "Bucephalus"]
+// horses['unicorn'] = "Ihuarraquax"
+
+for (const horse of horses) {
+  // break
+  console.log(horse)
+  break
+} // Roach Kelpie Bucephalus
+
+
 class App extends React.Component {
   screenSizeHandler: () => void
   // @ts-ignore
