@@ -6,7 +6,7 @@ import prettifyDate from '../../../../../../../../../../functions/time/prettify-
 interface TitleBoardProps {
   title: string
   author?: { n: string, l: string }
-  image?: { s: string, a: string }
+  image?: { s: string, a: string, ar?: string }
   logo?: { s: string, a: string }
   publishedOn?: string
   modifiedOn?: string
@@ -15,15 +15,17 @@ interface TitleBoardProps {
   langHandler(langs: { pl: string, en: string }): string
 }
 
-const Image = (image: { s: string, a: string }) => {
+const Image = (image: { s: string, a: string, ar?: string }) => {
   const {
     s: src,
-    a: alt
+    a: alt,
+    ar: aspectRatio
   } = image
   const imageProps = {
     src,
     alt,
-    className: 'cover-image'
+    className: 'cover-image',
+    style: { aspectRatio }
   }
 
   return <img {...imageProps} />

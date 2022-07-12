@@ -12,6 +12,7 @@ type NodeData = string | string[] | {
     i?: {
       s: string
       a: string
+      ar: string
     }
     l?: {
       s: string
