@@ -47,7 +47,8 @@ const Output = (props: OutputProps) => {
           device,
           lang,
           changeRoute,
-          langHandler
+          langHandler,
+          key: index
         }
 
         // @ts-ignore

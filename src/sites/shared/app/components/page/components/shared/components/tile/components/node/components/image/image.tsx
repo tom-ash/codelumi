@@ -5,8 +5,9 @@ const Image = (props: ImageProps) => {
   const imgProps = {
     src,
     alt,
-    crossorigin: 'anonymous'
-  }
+    crossOrigin: 'anonymous',
+    key: src
+  } as const
 
   return <img {...imgProps} loading='lazy' />
 }
