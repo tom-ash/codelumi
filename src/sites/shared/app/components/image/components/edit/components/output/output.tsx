@@ -1,5 +1,6 @@
 import React from 'react'
 import Node from '../../../../../page/components/shared/components/tile/components/node/node'
+import { NodeData } from '../../../../../page/components/shared/components/tile/components/node/node.d'
 
 interface OutputProps {
   width: string,

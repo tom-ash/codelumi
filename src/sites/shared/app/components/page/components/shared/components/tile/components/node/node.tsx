@@ -1,5 +1,6 @@
 import React from 'react'
 import loadable from '@loadable/component'
+import { NodeProps } from './node.d'
 
 const Paragraph = loadable(() => import('./components/paragraph/paragraph'))
 const Heading = loadable(() => import('./components/heading/heading'))
