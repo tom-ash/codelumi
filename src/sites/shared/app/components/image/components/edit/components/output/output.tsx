@@ -1,18 +1,30 @@
 import React from 'react'
-import Node from './components/node/node'
-import { NodeProps } from './components/node/node.d'
+import Node from '../../../../../page/components/shared/components/tile/components/node/node'
 
 interface OutputProps {
   width: string,
   height: string,
-  bodyElements: NodeProps[]
+  bodyElements: NodeData[],
+  clientUrl: string
+  appName: string
+  device: string
+  lang: string
+  changeRoute(props: object): void
+  langHandler(): void
 }
 
 const Output = (props: OutputProps) => {
   const {
     width,
     height,
-    bodyElements
+    bodyElements,
+    // jsonMeta,
+    clientUrl,
+    appName,
+    device,
+    lang,
+    changeRoute,
+    langHandler
   } = props
 
   return (
@@ -25,15 +37,20 @@ const Output = (props: OutputProps) => {
       }}
     >
       {bodyElements.map((node, index) => {
-        if (typeof node === 'string') {
-          const nodeProps = { t: 'p', c: node }
-
-          return <Node {...nodeProps} />
+        const nodeProps = {
+          node,
+          index,
+          jsonBody: bodyElements,
+          // jsonMeta,
+          clientUrl,
+          appName,
+          device,
+          lang,
+          changeRoute,
+          langHandler
         }
 
-        const { t, c, attrs, children } = node
-        const nodeProps = { t, c, attrs, children, key: index }
-
+        // @ts-ignore
         return <Node {...nodeProps} />
       })}
     </div>

@@ -26,8 +26,6 @@ export function save({ withRouteChange = false }) {
     mainNode && mainNode.main.map(articleNode => {
       if (headerAutonumbering) {
 
-        console.log("HERE")
-
         if (articleNode.h2) {
           currentH2++
           currentH3 = 0

@@ -11,21 +11,36 @@ import { StoragePreview } from './components/storage-preview'
 import StorageUrl from './components/storage-url'
 
 type ImageEditProps = {
-  apiUrl: string,
-  imageId: number,
-  body: string,
-  changeData(): void,
-  width: string,
-  height: string,
-  storageKey: string,
-  storageUrl: string,
+  apiUrl: string
+  imageId: number
+  body: string
+  changeData(): void
+  width: string
+  height: string
+  storageKey: string
+  storageUrl: string
   storageUrlRandomizedQuaryParameter: string
+  clientUrl: string
+  appName: string
+  device: string
+  lang: string
+  changeRoute(props: object): void
+  langHandler(): void
 }
 
 const ImageEdit = (props: ImageEditProps) => {
   useStyles(styles)
 
-  const { apiUrl, imageId, body, changeData, width, height, storageKey, storageUrl, storageUrlRandomizedQuaryParameter } = props
+  const {
+    apiUrl, imageId, body, changeData, width, height, storageKey, storageUrl,
+    storageUrlRandomizedQuaryParameter,
+    clientUrl,
+    appName,
+    device,
+    lang,
+    changeRoute,
+    langHandler
+  } = props
 
   const bodyElements = (() => {
     try {
@@ -38,7 +53,17 @@ const ImageEdit = (props: ImageEditProps) => {
   const bodyTextareaProps = { body, changeData }
   const saveButtonProps = { imageId, body, apiUrl, width, height, storageKey, storageUrl, changeData }
   const dimensionsProps = { width, height, changeData }
-  const outputProps = { width, height, bodyElements }
+  const outputProps = {
+    width,
+    height,
+    bodyElements,
+    clientUrl,
+    appName,
+    device,
+    lang,
+    changeRoute,
+    langHandler
+  }
   const storageKeyProps = { storageKey, changeData }
   const storagePreviewProps = { storageUrl, storageUrlRandomizedQuaryParameter }
   const storageUrlAnchorProps = { storageUrl }

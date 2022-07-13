@@ -58,7 +58,7 @@ class App extends React.Component {
     // @ts-ignore
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute }
     // @ts-ignore
-    const sharedProps = { appName: APP_NAME, langs, links, clientUrl: CLIENT_URL, apiUrl: API_URL, render, device, authorized, changeRoute: this.changeRoute, buildUrl, langHandler: this.langHandler, dispatch }
+    const sharedProps = { appName: APP_NAME, langs, links, clientUrl: CLIENT_URL, apiUrl: API_URL, render, device, authorized, changeRoute: this.changeRoute, buildUrl, langHandler: this.langHandler, dispatch, lang }
     const pageProps = { ...sharedProps }
     const urlComposites = { pageShowData, pageEditData, announcementShowData, announcementEditData }
     const imageProps = sharedProps

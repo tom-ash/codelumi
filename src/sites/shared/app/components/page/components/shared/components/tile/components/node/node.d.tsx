@@ -61,8 +61,8 @@ interface NodeProps {
   tutorials?: Array<any>
   articles?: Array<any>
   sectionBody?: NodeData[]
-  publishedOn: string
-  modifiedOn: string
+  publishedOn?: string
+  modifiedOn?: string
   appName: string
   device: string
   lang: string

@@ -9,7 +9,12 @@ interface ImageProps {
   },
   apiUrl: string,
   changeRoute(props: object): void,
-  buildUrl(props: { path: string}): string
+  buildUrl(props: { path: string}): string,
+  langHandler(): void,
+  clientUrl: string,
+  device: string,
+  lang: string,
+  appName: string
 }
 
 class Image extends React.Component<ImageProps> {
@@ -25,12 +30,22 @@ class Image extends React.Component<ImageProps> {
       },
       apiUrl,
       changeRoute,
-      buildUrl
+      buildUrl,
+      langHandler,
+      clientUrl,
+      device,
+      lang,
+      appName
     } = this.props
 
     const editProps = {
       apiUrl,
-      changeRoute
+      changeRoute,
+      langHandler,
+      clientUrl,
+      device,
+      lang,
+      appName
     }
 
     const indexProps = {
