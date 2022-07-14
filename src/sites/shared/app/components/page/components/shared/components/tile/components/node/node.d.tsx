@@ -63,6 +63,6 @@ type NodeProps = {
   appName: string
   device: string
   lang: string
-  changeRoute(): void
+  changeRoute: ChangeRoute
   langHandler: LangHandler
 }

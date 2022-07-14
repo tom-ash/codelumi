@@ -12,7 +12,7 @@ import screenSizeHandler from '../../shared/app/functions/screen/handlers/screen
 import popStateHandler from '../../shared/app/functions/routes/handlers/pop-state.js'
 import langHandler from './functions/lang-handler'
 import matchStateToRoute from './functions/routes/matchers/state-to-route.js'
-import changeRoute from './functions/routes/changers/route.js'
+import changeRoute from './functions/routes/changers/route'
 import AppContext from './constants/context.js'
 import CLIENT_URL from '../shared/constants/urls/client.js'
 import API_URL from '../shared/constants/urls/api.js'

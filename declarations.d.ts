@@ -16,3 +16,12 @@ type LangObject = {
   pl: string,
   en: string
 }
+
+declare type ChangeRoute = (
+  this: React.ClassicComponent,
+  props: {
+    href: string
+    withoutScroll?: boolean
+    retainQueryParams?: boolean
+  }
+) => void
