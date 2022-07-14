@@ -2,6 +2,7 @@ var webpack = require("webpack")
 const nodeExternals = require('webpack-node-externals')
 var path = require('path')
 var SRC_DIR = path.join(__dirname, './')
+var ROOT_DIR = path.join(__dirname, '../../')
 var DIST_DIR = path.join(__dirname, "../../dist/server")
 
 var config = {
@@ -34,7 +35,7 @@ var config = {
           {
             loader: 'ts-loader',
             options: {
-              configFile: SRC_DIR + 'tsconfig.json'
+              configFile: ROOT_DIR + 'tsconfig.json'
             }
           }
         ],
