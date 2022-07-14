@@ -1,5 +1,3 @@
-import LangHandler from './lang.d'
-
 const langHandler: LangHandler = function(langObject) {
   const { lang } = this.props
 

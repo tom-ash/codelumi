@@ -10,7 +10,7 @@ interface ImageProps {
   apiUrl: string,
   changeRoute(props: object): void,
   buildUrl(props: { path: string}): string,
-  langHandler(): void,
+  langHandler: LangHandler,
   clientUrl: string,
   device: string,
   lang: string,

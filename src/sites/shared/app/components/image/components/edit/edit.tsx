@@ -25,7 +25,7 @@ type ImageEditProps = {
   device: string
   lang: string
   changeRoute(props: object): void
-  langHandler(): void
+  langHandler: LangHandler
 }
 
 const ImageEdit = (props: ImageEditProps) => {

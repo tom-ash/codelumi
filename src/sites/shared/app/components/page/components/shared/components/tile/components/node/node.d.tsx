@@ -1,6 +1,4 @@
-import LangHandler from '../../../../../../../../../../shared/app/functions/lang/handlers/lang.d'
-
-export type NodeData = string | string[] | {
+type NodeData = string | string[] | {
   pageIndexer?: {
     collection: string
   }
@@ -51,7 +49,7 @@ export type NodeData = string | string[] | {
   className?: string
 }
 
-export type NodeProps = {
+type NodeProps = {
   node: NodeData
   index: number
   jsonBody: NodeData[]
