@@ -1,13 +1,7 @@
 import clientUrl from '../../../constants/urls/client.js'
 import buildUrlGeneric from '../../../../../shared/shared/functions/routes/builders/url'
 
-type buildUrlProps = {
-  path: string,
-  query?: string,
-  fragment?: string
-}
-
-function buildUrl(props: buildUrlProps) {
+const buildUrl: BuildUrl = function(props) {
   const {
     path,
     query,

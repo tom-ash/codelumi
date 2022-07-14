@@ -10,7 +10,7 @@ interface LangSwichProps {
     'current/en': { path: string, title: string }
   },
   lang: string,
-  buildUrl: (props: object) => void,
+  buildUrl: BuildUrl
   changeRoute: ChangeRoute
 }
 

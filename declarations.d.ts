@@ -25,3 +25,11 @@ type ChangeRoute = (
     retainQueryParams?: boolean
   }
 ) => void
+
+type BuildUrl = (
+  props: {
+    path: string,
+    query?: string,
+    fragment?: string
+  }
+) => string
