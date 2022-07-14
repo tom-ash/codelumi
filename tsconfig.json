@@ -12,7 +12,6 @@
       "@types/jest",
       "@types/react"
     ],
-    "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "allowUnreachableCode": false,
     "experimentalDecorators": true
   },
