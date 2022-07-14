@@ -11,7 +11,7 @@ interface LangSwichProps {
   },
   lang: string,
   buildUrl: (props: object) => void,
-  changeRoute: (props: object) => void
+  changeRoute: ChangeRoute
 }
 
 const LangSwich = (props: LangSwichProps) => {

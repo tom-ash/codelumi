@@ -17,8 +17,8 @@ type LangObject = {
   en: string
 }
 
-declare type ChangeRoute = (
-  this: React.ClassicComponent,
+type ChangeRoute = (
+  // TODO: Signify bound this.
   props: {
     href: string
     withoutScroll?: boolean
