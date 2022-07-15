@@ -1,11 +1,24 @@
 import React from 'react'
 import SVG from '../../../../../support/svg/svg.js'
-import Section from './components/section/section'
+import RenderNode from '../../../../../support/render-node/render-node'
 
 const PageTile = props => {
   const {
-    device, appName, renderShow, renderEdit, fetching, name, body, meta, isAdmin,
-    clientUrl, changeRoute, buildUrl, changePage, updatePage, lang, langHandler, publishedOn, modifiedOn
+    body,
+    meta,
+    publishedOn,
+    modifiedOn,
+    appName,
+    device,
+    lang,
+    renderShow,
+    fetching,
+    isAdmin,
+    clientUrl,
+    changeRoute,
+    buildUrl,
+    changePage,
+    langHandler
   } = props
 
   const buttonClasses = ['edit']
@@ -29,8 +42,21 @@ const PageTile = props => {
   })()
 
   const nodeProps = {
-    appName, jsonBody, jsonMeta, clientUrl, changeRoute, buildUrl, device, isAdmin, lang,
-    langHandler, publishedOn, modifiedOn
+    node: {
+      page: jsonBody
+    },
+    jsonBody,
+    jsonMeta,
+    publishedOn,
+    modifiedOn,
+    lang,
+    appName,
+    device,
+    isAdmin,
+    clientUrl,
+    buildUrl,
+    changeRoute,
+    langHandler
   }
 
   return (
@@ -40,7 +66,7 @@ const PageTile = props => {
         {renderShow && <button className={buttonClassName} onClick={changePage}><SVG name='edit' /></button>}
       </>
       )}
-      {<Section {...nodeProps} />}
+      {<RenderNode {...nodeProps} />}
     </>
   )
 }

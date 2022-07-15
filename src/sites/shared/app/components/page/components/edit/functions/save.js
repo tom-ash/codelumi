@@ -8,8 +8,10 @@ export function save({ withRouteChange = false }) {
   const meta = JSON.parse(this.props.meta)
   const { method, route } = UPDATE_API_ROUTE
 
+  let linkData
+
   try {
-    const linkData = JSON.parse(this.props.linkData)
+    linkData = JSON.parse(this.props.linkData)
     linkData.modifiedOn = this.props.modifiedOn
   } catch {
     return changeData({ updated: false })

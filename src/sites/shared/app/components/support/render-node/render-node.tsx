@@ -158,6 +158,10 @@ const RenderNode = (props: RenderNodeProps) => {
     return <TitleBoard {...titleBoardProps} />
   }
 
+  if (node.page) {
+    return <Section {...props} />
+  }
+
   return null
 }
 
