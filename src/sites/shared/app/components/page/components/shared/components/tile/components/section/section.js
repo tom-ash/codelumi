@@ -1,5 +1,5 @@
 import React from 'react'
-import Node from '../../../../../../../support/node/node'
+import Node from '../../../../../../../support/render-node/render-node'
 
 const Section = props => {
   const {
