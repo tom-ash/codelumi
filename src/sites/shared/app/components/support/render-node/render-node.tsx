@@ -12,6 +12,7 @@ const Section = loadable(() => import('./components/section/section'))
 const TitleBoard = loadable(() => import('./components/title-board/title-board'))
 const Editorial = loadable(() => import('./components/editorial/editorial'))
 const TableOfContents = loadable(() => import('./components/table-of-contents/table-of-contents'))
+const Aside = loadable(() => import('./components/aside/aside'))
 
 const RenderNode = (props: RenderNodeProps) => {
   const {
@@ -215,6 +216,16 @@ const RenderNode = (props: RenderNodeProps) => {
     }
     
     return <Section {...sectionProps} />
+  }
+
+  if (node.aside) {
+    const asideProps = {
+      key: index,
+      node,
+      elements: node.aside
+    }
+
+    return <Aside {...asideProps} />
   }
 
   return null
