@@ -1,5 +1,5 @@
 import React from 'react'
-import Node from '../../../../../page/components/shared/components/tile/components/node/node'
+import Node from '../../../../../support/node/node'
 
 interface OutputProps {
   width: string,

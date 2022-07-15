@@ -1,6 +1,6 @@
 import React from 'react'
 import { ManagedLink } from 'managed-inputs'
-import prettifyDate from '../../../../../../../../../../functions/time/prettify-date'
+import prettifyDate from '../../../../../functions/time/prettify-date'
 
 interface IndexLinkProps {
   clientUrl: string,
