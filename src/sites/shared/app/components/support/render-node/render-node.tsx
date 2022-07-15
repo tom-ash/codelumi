@@ -79,6 +79,10 @@ const RenderNode = (props: RenderNodeProps) => {
     return <YouTubeEmbed {...youTubeEmbedProps}/>
   }
 
+  if (node.div) {
+    return <Section key={index} {...{ ...props, element: 'div', jsonBody: node.div }} />
+  }
+
   if (node.main) {
     return <Section key={index} {...{ ...props, element: 'main', className: 'main', jsonBody: node.main }} />
   }

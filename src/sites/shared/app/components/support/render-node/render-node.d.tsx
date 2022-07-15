@@ -6,6 +6,7 @@ type RenderNodeData = string | string[] | {
   image?: RenderNodeData[]
   article?: RenderNodeData[]
   main?: RenderNodeData[]
+  div?: RenderNodeData[]
   header?: {
     t: string
     a?: {
