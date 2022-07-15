@@ -7,6 +7,7 @@ type RenderNodeData = string | string[] | {
   article?: RenderNodeData[]
   main?: RenderNodeData[]
   div?: RenderNodeData[]
+  sectionBody?: RenderNodeData[]
   header?: {
     t: string
     a?: {
@@ -51,6 +52,7 @@ type RenderNodeData = string | string[] | {
   }
   className?: string
   st?: React.CSSProperties
+  index?: number
 }
 
 type RenderNodeProps = {

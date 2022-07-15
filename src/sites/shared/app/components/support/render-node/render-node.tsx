@@ -14,7 +14,18 @@ const Editorial = loadable(() => import('./components/editorial/editorial'))
 const TableOfContents = loadable(() => import('./components/table-of-contents/table-of-contents'))
 
 const RenderNode = (props: RenderNodeProps) => {
-  const { node, index } = props
+  const {
+    node,
+    index,
+    appName,
+    jsonBody,
+    jsonMeta,
+    clientUrl,
+    changeRoute,
+    device,
+    lang,
+    langHandler
+  } = props
 
   if (!node) return null
 
@@ -81,16 +92,19 @@ const RenderNode = (props: RenderNodeProps) => {
   }
 
   if (node.div) {
+    // @ts-ignore
     return <Section key={index} {...{ ...props, element: 'div', jsonBody: node.div, st: node.st }} />
   }
 
   if (node.main) {
+    // @ts-ignore
     return <Section key={index} {...{ ...props, element: 'main', className: 'main', jsonBody: node.main }} />
   }
 
   if (node.article) {
     const className = node.className
 
+    // @ts-ignore
     return <Section key={index} {...{ ...props, element: 'article', className, jsonBody: node.article }} />
   }
 
@@ -163,8 +177,44 @@ const RenderNode = (props: RenderNodeProps) => {
     return <TitleBoard {...titleBoardProps} />
   }
 
-  if (node.page || node.image) {
-    return <Section {...props} />
+  if (node.page) {
+    const sectionProps = {
+      key: index,
+      node,
+      index,
+      appName,
+      jsonBody,
+      jsonMeta,
+      clientUrl,
+      changeRoute,
+      device,
+      lang,
+      langHandler,
+      className: node.className,
+      st: node.st
+    }
+
+    return <Section {...sectionProps} />
+  }
+
+  if (node.image) {
+    const sectionProps = {
+      key: index,
+      node,
+      index,
+      appName,
+      jsonBody,
+      jsonMeta,
+      clientUrl,
+      changeRoute,
+      device,
+      lang,
+      langHandler,
+      className: node.className,
+      st: node.st
+    }
+    
+    return <Section {...sectionProps} />
   }
 
   return null
