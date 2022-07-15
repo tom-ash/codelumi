@@ -14,11 +14,18 @@ const Section = props => {
     lang,
     langHandler,
     className,
-    element
+    element,
+    st: style
   } = props
 
   const body = jsonBody.map((node, index) => {
-    const nodeProps = { ...props, key: index, node, index, sectionBody: jsonBody }
+    const nodeProps = {
+      ...props,
+      key: index,
+      node,
+      index,
+      sectionBody: jsonBody
+    }
     
     return <RenderNode {...nodeProps} />
   })
@@ -27,7 +34,7 @@ const Section = props => {
 
   const section = React.createElement(
     element,
-    { className },
+    { className, style },
     body
   )
 

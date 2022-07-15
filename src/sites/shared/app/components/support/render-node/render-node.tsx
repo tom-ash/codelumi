@@ -58,8 +58,9 @@ const RenderNode = (props: RenderNodeProps) => {
   }
 
   if (node.img) {
+    const { st } = node
     const { s: src, a: alt } = node.img
-    const imgProps = { src, alt }
+    const imgProps = { src, alt, style: st }
 
     return <Image key={index} {...imgProps} />
   }
@@ -80,7 +81,7 @@ const RenderNode = (props: RenderNodeProps) => {
   }
 
   if (node.div) {
-    return <Section key={index} {...{ ...props, element: 'div', jsonBody: node.div }} />
+    return <Section key={index} {...{ ...props, element: 'div', jsonBody: node.div, st: node.st }} />
   }
 
   if (node.main) {

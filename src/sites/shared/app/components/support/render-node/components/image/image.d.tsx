@@ -1,4 +1,5 @@
 interface ImageProps {
-  src: string,
+  src: string
   alt: string
+  style?: React.CSSProperties
 }

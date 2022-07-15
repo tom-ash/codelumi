@@ -50,6 +50,7 @@ type RenderNodeData = string | string[] | {
     w: string
   }
   className?: string
+  st?: React.CSSProperties
 }
 
 type RenderNodeProps = {
