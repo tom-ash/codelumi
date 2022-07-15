@@ -53,7 +53,7 @@ type RenderNodeProps = {
   node: RenderNodeData
   index: number
   jsonBody: RenderNodeData[]
-  jsonMeta: { codeLang: string }
+  jsonMeta?: { codeLang: string }
   clientUrl: string
   tutorials?: Array<any>
   articles?: Array<any>

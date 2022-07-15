@@ -18,7 +18,6 @@ const Output = (props: OutputProps) => {
     width,
     height,
     bodyElements,
-    // jsonMeta,
     clientUrl,
     appName,
     device,
@@ -41,7 +40,6 @@ const Output = (props: OutputProps) => {
           node,
           index,
           jsonBody: bodyElements,
-          // jsonMeta,
           clientUrl,
           appName,
           device,
@@ -51,7 +49,7 @@ const Output = (props: OutputProps) => {
           key: index
         }
 
-        // @ts-ignore
+        
         return <RenderNode {...nodeProps} />
       })}
     </div>
