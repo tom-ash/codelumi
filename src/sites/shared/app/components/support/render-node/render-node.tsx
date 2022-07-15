@@ -158,7 +158,7 @@ const RenderNode = (props: RenderNodeProps) => {
     return <TitleBoard {...titleBoardProps} />
   }
 
-  if (node.page) {
+  if (node.page || node.image) {
     return <Section {...props} />
   }
 

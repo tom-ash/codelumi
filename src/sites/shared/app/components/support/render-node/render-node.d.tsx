@@ -2,7 +2,8 @@ type RenderNodeData = string | string[] | {
   pageIndexer?: {
     collection: string
   }
-  page: RenderNodeData[]
+  page?: RenderNodeData[]
+  image?: RenderNodeData[]
   article?: RenderNodeData[]
   main?: RenderNodeData[]
   header?: {
@@ -51,8 +52,8 @@ type RenderNodeData = string | string[] | {
 }
 
 type RenderNodeProps = {
-  index: number
   node: RenderNodeData
+  index?: number
   jsonBody: RenderNodeData[]
   jsonMeta?: { codeLang: string }
   sectionBody?: RenderNodeData[]

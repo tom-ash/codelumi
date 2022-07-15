@@ -26,6 +26,19 @@ const Output = (props: OutputProps) => {
     langHandler
   } = props
 
+  const nodeProps = {
+    node: {
+      image: bodyElements
+    },
+    jsonBody: bodyElements,
+    clientUrl,
+    appName,
+    device,
+    lang,
+    changeRoute,
+    langHandler
+  }
+
   return (
     <div
       id='image-output'
@@ -35,23 +48,7 @@ const Output = (props: OutputProps) => {
         height: +height
       }}
     >
-      {bodyElements.map((node, index) => {
-        const nodeProps = {
-          node,
-          index,
-          jsonBody: bodyElements,
-          clientUrl,
-          appName,
-          device,
-          lang,
-          changeRoute,
-          langHandler,
-          key: index
-        }
-
-        
-        return <RenderNode {...nodeProps} />
-      })}
+      <RenderNode {...nodeProps} />
     </div>
   )
 }
