@@ -1,8 +1,8 @@
-type NodeData = string | string[] | {
+type RenderNodeData = string | string[] | {
   pageIndexer?: {
     collection: string
   }
-  article?: NodeData[]
+  article?: RenderNodeData[]
   header?: {
     t: string
     a?: {
@@ -21,7 +21,7 @@ type NodeData = string | string[] | {
   }
   editorial?: string
   toc?: string
-  main?: NodeData[]
+  main?: RenderNodeData[]
   h2?: string | {
     c: string
     n: string
@@ -49,15 +49,15 @@ type NodeData = string | string[] | {
   className?: string
 }
 
-type NodeProps = {
-  node: NodeData
+type RenderNodeProps = {
+  node: RenderNodeData
   index: number
-  jsonBody: NodeData[]
+  jsonBody: RenderNodeData[]
   jsonMeta: { codeLang: string }
   clientUrl: string
   tutorials?: Array<any>
   articles?: Array<any>
-  sectionBody?: NodeData[]
+  sectionBody?: RenderNodeData[]
   publishedOn?: string
   modifiedOn?: string
   appName: string

@@ -1,5 +1,5 @@
 import React from 'react'
-import Node from '../../../../../../../support/render-node/render-node'
+import RenderNode from '../../../../../../../support/render-node/render-node'
 
 const Section = props => {
   const {
@@ -20,7 +20,7 @@ const Section = props => {
   const body = jsonBody.map((node, index) => {
     const nodeProps = { ...props, key: index, node, index, sectionBody: jsonBody }
     
-    return <Node {...nodeProps} />
+    return <RenderNode {...nodeProps} />
   })
 
   if (!element) return body

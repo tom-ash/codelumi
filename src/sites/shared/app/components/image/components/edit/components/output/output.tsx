@@ -1,10 +1,10 @@
 import React from 'react'
-import Node from '../../../../../support/render-node/render-node'
+import RenderNode from '../../../../../support/render-node/render-node'
 
 interface OutputProps {
   width: string,
   height: string,
-  bodyElements: NodeData[],
+  bodyElements: RenderNodeData[],
   clientUrl: string
   appName: string
   device: string
@@ -52,7 +52,7 @@ const Output = (props: OutputProps) => {
         }
 
         // @ts-ignore
-        return <Node {...nodeProps} />
+        return <RenderNode {...nodeProps} />
       })}
     </div>
   )

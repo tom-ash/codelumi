@@ -13,7 +13,7 @@ const TitleBoard = loadable(() => import('./components/title-board/title-board')
 const Editorial = loadable(() => import('./components/editorial/editorial'))
 const TableOfContents = loadable(() => import('./components/table-of-contents/table-of-contents'))
 
-const Node = (props: NodeProps) => {
+const RenderNode = (props: RenderNodeProps) => {
   const { node, index } = props
 
   if (!node) return null
@@ -161,4 +161,4 @@ const Node = (props: NodeProps) => {
   return null
 }
 
-export default Node
+export default RenderNode
