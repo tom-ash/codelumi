@@ -1,10 +1,12 @@
 aside {
-//   position: fixed;
-//   right: 0;
-//   left: 0;
-//   width: 192px;
-//   margin: 0 auto;
-//   border: 1px solid lightgray;
-//   transform: translateX(510px);
-//   z-index: 100;
+  position: fixed;
+  right: 0;
+  left: 0;
+  width: 192px;
+  min-height: 192px;
+  margin: 0 auto;
+  transform: translateX(510px);
+  z-index: 100;
+  background: lightgray;
+  
 }

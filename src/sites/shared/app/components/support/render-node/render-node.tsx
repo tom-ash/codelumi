@@ -222,7 +222,14 @@ const RenderNode = (props: RenderNodeProps) => {
     const asideProps = {
       key: index,
       node,
-      elements: node.aside
+      jsonBody: node.aside,
+      clientUrl,
+      appName,
+      device,
+      lang,
+      changeRoute,
+      langHandler,
+      sectionBody: node.aside
     }
 
     return <Aside {...asideProps} />
