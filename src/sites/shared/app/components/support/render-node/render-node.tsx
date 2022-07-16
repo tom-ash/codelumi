@@ -13,6 +13,7 @@ const TitleBoard = loadable(() => import('./components/title-board/title-board')
 const Editorial = loadable(() => import('./components/editorial/editorial'))
 const TableOfContents = loadable(() => import('./components/table-of-contents/table-of-contents'))
 const Aside = loadable(() => import('./components/aside/aside'))
+const Anchor = loadable(() => import('./components/anchor/anchor'))
 
 const RenderNode = (props: RenderNodeProps) => {
   const {
@@ -90,6 +91,27 @@ const RenderNode = (props: RenderNodeProps) => {
     const youTubeEmbedProps = { key: index, src, width }
 
     return <YouTubeEmbed {...youTubeEmbedProps}/>
+  }
+
+  if (node.anchor) {
+    const {
+      st: style
+    } = node
+    const {
+      h: href,
+      r: rel,
+      t: target,
+      c: content
+    } = node.anchor
+    const anchorProps = {
+      style,
+      href,
+      rel,
+      target,
+      content
+    }
+
+    return <Anchor {...anchorProps} />
   }
 
   if (node.div) {

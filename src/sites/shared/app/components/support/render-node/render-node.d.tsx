@@ -43,6 +43,12 @@ type RenderNodeData = string | string[] | {
     s: string
     a: string
   }
+  anchor?: {
+    h: string
+    r: string
+    t: string
+    c: string
+  }
   code?: string | {
     c: string
     l: string
