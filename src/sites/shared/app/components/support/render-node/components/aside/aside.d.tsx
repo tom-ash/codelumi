@@ -8,4 +8,5 @@ interface AsideProps {
   lang: string
   changeRoute: ChangeRoute
   langHandler: LangHandler
+  placing: 'left' | 'right'
 }

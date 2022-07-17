@@ -8,6 +8,7 @@ type RenderNodeData = string | string[] | {
   main?: RenderNodeData[]
   div?: RenderNodeData[]
   sectionBody?: RenderNodeData[]
+  leftAside?: RenderNodeData[]
   aside?: RenderNodeData[]
   header?: {
     t: string
@@ -56,6 +57,9 @@ type RenderNodeData = string | string[] | {
   yte?: {
     s: string
     w: string
+  }
+  share?: {
+    h: string
   }
   className?: string
   st?: React.CSSProperties

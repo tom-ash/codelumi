@@ -15,8 +15,11 @@ const Aside = (props: AsideProps) => {
     device,
     lang,
     langHandler,
-    sectionBody
+    sectionBody,
+    placing
   } = props
+
+  console.log(placing)
 
   const nodeProps = {
     node,
@@ -31,7 +34,7 @@ const Aside = (props: AsideProps) => {
   }
 
   return (
-    <aside>
+    <aside className={placing}>
       <Section {...nodeProps} />
     </aside>
   )

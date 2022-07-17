@@ -14,6 +14,7 @@ const Editorial = loadable(() => import('./components/editorial/editorial'))
 const TableOfContents = loadable(() => import('./components/table-of-contents/table-of-contents'))
 const Aside = loadable(() => import('./components/aside/aside'))
 const Anchor = loadable(() => import('./components/anchor/anchor'))
+const Share = loadable(() => import('./components/share/share'))
 
 const RenderNode = (props: RenderNodeProps) => {
   const {
@@ -242,6 +243,24 @@ const RenderNode = (props: RenderNodeProps) => {
     return <Section {...sectionProps} />
   }
 
+  if (node.leftAside) {
+    const asideProps = {
+      key: index,
+      node,
+      jsonBody: node.leftAside,
+      clientUrl,
+      appName,
+      device,
+      lang,
+      changeRoute,
+      langHandler,
+      sectionBody: node.leftAside,
+      placing: 'left'
+    } as const
+
+    return <Aside {...asideProps} />
+  }
+
   if (node.aside) {
     const asideProps = {
       key: index,
@@ -253,10 +272,21 @@ const RenderNode = (props: RenderNodeProps) => {
       lang,
       changeRoute,
       langHandler,
-      sectionBody: node.aside
-    }
+      sectionBody: node.aside,
+      placing: 'right'
+    } as const
 
     return <Aside {...asideProps} />
+  }
+
+  if (node.share) {
+    const {
+      h: href
+    } = node.share
+
+    const shareProps = { href }
+
+    return <Share {...shareProps} />
   }
 
   return null

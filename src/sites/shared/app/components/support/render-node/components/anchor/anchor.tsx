@@ -9,8 +9,6 @@ const Anchor = (props: AnchorProps) => {
     content,
     className
   } = props
-
-  console.log(className)
   
   const anchorProps = {
     href,

@@ -4,8 +4,16 @@ aside {
   left: 0;
   width: 192px;
   margin: 0 auto;
-  transform: translateX(510px);
   z-index: 100;
+
+  &.right {
+    transform: translateX(510px);
+  }
+
+  &.left {
+    transform: translateX(-510px);
+    height: 192px;
+  }
 
   .cta {
     color: "#34495E";
