@@ -6,14 +6,18 @@ const Anchor = (props: AnchorProps) => {
     rel,
     target,
     style,
-    content
+    content,
+    className
   } = props
+
+  console.log(className)
   
   const anchorProps = {
     href,
     rel,
     target,
-    style
+    style,
+    className
   }
 
   return (
@@ -21,8 +25,6 @@ const Anchor = (props: AnchorProps) => {
       {content}
     </a>
   )
-
-  
 }
 
 export default Anchor

@@ -10,8 +10,10 @@ $padding-mobile: 18px;
   margin: 36px auto;
   line-height: 1.8;
   color: #212F3C;
-  $BORDER-COLOR: #E5E7E9;
+  $BORDER-COLOR: #D7DBDD;
   border: 1px solid $BORDER-COLOR;
+  border-radius: 10px;
+  overflow: hidden;
   h1 {
     font-size: 36px;
     padding-bottom: 16px;
@@ -30,3 +32,12 @@ $padding-mobile: 18px;
     box-shadow: none;
   }
 }
+
+// {
+//   "anchor": {
+//     "c": "Dodaj\nogłoszenie\nza darmo",
+//     "h": "https://mapawynajmu.pl/dodaj-ogloszenie",
+//     "t": "_blank"
+//   },
+//   "className": "cta"
+// }

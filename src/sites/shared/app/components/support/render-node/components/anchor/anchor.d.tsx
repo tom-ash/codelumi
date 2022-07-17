@@ -4,4 +4,5 @@ interface AnchorProps {
   target: string
   style: React.CSSProperties
   content: string | RenderNodeData[]
+  className?: string
 }

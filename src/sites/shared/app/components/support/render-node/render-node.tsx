@@ -95,7 +95,8 @@ const RenderNode = (props: RenderNodeProps) => {
 
   if (node.anchor) {
     const {
-      st: style
+      st: style,
+      className
     } = node
     const {
       h: href,
@@ -108,7 +109,8 @@ const RenderNode = (props: RenderNodeProps) => {
       href,
       rel,
       target,
-      content
+      content,
+      className
     }
 
     return <Anchor {...anchorProps} />
