@@ -89,14 +89,14 @@ const TitleBoard = (props: TitleBoardProps) => {
         {logo && <Logo {...logo} />}
       </div>
       {author && <Author {...author} />}
-      <div className='dates'>
+      {/* <div className='dates'>
         <span>
           {langHandler({ pl: 'Opublikowano w dniu', en: 'Published on'})} {publishedOn && prettifyDate({ date: publishedOn, lang })}.
         </span>
         <span>
           {langHandler({ pl: 'Ostatnio zmodyfikowano w dniu', en: 'Modified on'})} {modifiedOn && prettifyDate({ date: modifiedOn, lang })}.
         </span>
-      </div>
+      </div> */}
       <h1>
         {title}
       </h1>
