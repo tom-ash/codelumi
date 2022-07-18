@@ -44,6 +44,16 @@ const RenderNode = (props: RenderNodeProps) => {
     return <List key={index} {...ulProps} />
   }
 
+  if (node.ul) {
+    const ulProps = {
+      key: index,
+      listNodes: node.ul,
+      style: node.st
+    }
+
+    return <List {...ulProps} />
+  }
+
   if (node.h2) {
     const headingProps = {
       rank: 2,

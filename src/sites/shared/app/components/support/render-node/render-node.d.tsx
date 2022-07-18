@@ -28,6 +28,7 @@ type RenderNodeData = string | string[] | {
   }
   editorial?: string
   toc?: string
+  ul?: string[]
   h2?: string | {
     c: string
     n: string

@@ -2,10 +2,13 @@ import React from 'react'
 import Paragraph from '../paragraph/paragraph'
 
 const List = (props: ListProps) => {
-  const { listNodes } = props
+  const {
+    listNodes,
+    style
+  } = props
 
   return (
-    <ul>
+    <ul style={style}>
       {listNodes.map(node => {
         return (
           <li key={node}>
