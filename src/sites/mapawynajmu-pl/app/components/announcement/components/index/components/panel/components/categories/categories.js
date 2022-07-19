@@ -1,33 +1,47 @@
 import React from 'react'
 import { categories } from '../../../../../../constants/categories'
-import { ManagedLink } from 'managed-inputs'
-import categoryManger from './functions/category-manager.js'
+import { ManagedSelect } from 'managed-inputs'
+import useStyles from 'isomorphic-style-loader/useStyles'
+import styles from './styles/styles.scss'
+import buildUrl from '../../../../../../../../../shared/functions/builders/url'
 
 const AnnouncementIndexPanelCategories = (props) => {
+  useStyles(styles)
+
   const {
     langHandler,
     currentCategory,
     changeRoute,
-    lang,
-    renderCatalogue,
     links
   } = props
 
-  return (
-    <div className='categories'>
-      {categories.map(category => {
-        const amount = props[`${category.name}Amount`]
+  const options = categories.map(category => ({
+    value: category.value,
+    text: langHandler(category.label),
+    linkTrack: category.linkTrack
+  }))
 
-        return (
-          <ManagedLink
-            key={`${category.name}${amount}${currentCategory}`}
-            {...categoryManger({ links, category, renderCatalogue, lang, currentCategory, changeRoute, langHandler, amount })}
-          />
-        )
-      })}
-      <div className='float-clear' />
-    </div>
-  )
+  options.unshift({
+    value: null,
+    text: 'Dowolna'
+  })
+
+  const categoriesProps = {
+    classNames: { container: 'categories' },
+    label: 'Kategoria',
+    value: currentCategory || '',
+    options,
+    onFocusCoverZIndex: 998,
+    onSelect: selectedCategory => {
+      const { linkTrack } = selectedCategory
+      const link = links[linkTrack]
+      const href = link && buildUrl(link)
+
+      changeRoute({ href: href || '/', retainQueryParams: true })
+    }
+  }
+
+  return <ManagedSelect {...categoriesProps} />
 }
 
 export default AnnouncementIndexPanelCategories

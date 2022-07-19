@@ -4,7 +4,7 @@
 @import './map_catalogue_switch.scss';
 
 #announcement-index-panel {
-  z-index: 2;
+  z-index: 3;
   position: relative;
   padding: 17px 0;
   @media #{$LARGE-TABLET} {
@@ -12,9 +12,6 @@
   }
   @media #{$SMALL-TABLET} {
     padding: 10px;
-  }
-  .categories {
-    @extend %categories;
   }
   .map-catalogue-switch {
     @extend %map-catalogue-switch;
@@ -50,7 +47,7 @@
 
     .area-panel {
       position: absolute;
-      z-index: 2;
+      z-index: 999;
       height: 60px;
       width: 206px;
       background: white;
@@ -90,6 +87,7 @@
     }
 
     .area-panel-cover {
+      z-index: 998;
       position: fixed;
       top: 0;
       right: 0;

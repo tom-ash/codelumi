@@ -32,6 +32,8 @@ const APP_NAME = 'soundof-it'
 
 class App extends React.Component {
   screenSizeHandler: () => void
+  langHandler: LangHandler
+  changeRoute: ChangeRoute
   // @ts-ignore
   constructor(props) {
     super(props)
@@ -40,11 +42,10 @@ class App extends React.Component {
     this.screenSizeHandler = screenSizeHandler.bind(this)
     // @ts-ignore
     this.popStateHandler = popStateHandler.bind(this)
-    // @ts-ignore
     this.langHandler = langHandler.bind(this)
     // @ts-ignore
     this.matchStateToRoute = matchStateToRoute.bind(this)
-    // @ts-ignore
+    
     this.changeRoute = changeRoute.bind(this)
   }
   

@@ -19,8 +19,6 @@ const Aside = (props: AsideProps) => {
     placing
   } = props
 
-  console.log(placing)
-
   const nodeProps = {
     node,
     jsonBody,
