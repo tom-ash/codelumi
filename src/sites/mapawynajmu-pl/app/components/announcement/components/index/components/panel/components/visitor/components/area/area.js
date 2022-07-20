@@ -1,5 +1,4 @@
 import React from 'react'
-import SVG from '../../../../../../../../../../../../shared/app/components/support/svg/svg.js'
 import AreaMin from './inputs/area-min.js'
 import AreaMax from './inputs/area-max.js'
 
@@ -25,7 +24,6 @@ const AreaPanel = ({
 
 function presentArea(areaMin, areaMax) {
   const m2 = <>m<span className='superscript'>2</span></>
-  if (areaMin === '' && areaMax === '') return 'Dowolna'
   if (areaMin !== '' && areaMax !== '') return <>od {areaMin} do {areaMax} {m2}</>
   if (areaMin !== '') return <>od {areaMin} {m2}</>
   if (areaMax !== '') return <>do {areaMax} {m2}</>
@@ -33,15 +31,24 @@ function presentArea(areaMin, areaMax) {
 
 const Area = props => {
   const { showArea, areaMin, areaMinInput, areaMax, areaMaxInput, langHandler, changeControl, changeInputs } = props
-  
+
+  console.log(areaMin, areaMax)
+
   return (
-    <div className='area'>
-      <div className='label'>
-        Powierzchnia
+    <div
+      className='area'
+    >
+      <div
+        className='label'
+        onClick={() => changeControl({ showArea: !showArea })}
+      >
+        {!areaMin && !areaMax && 'Powierzchnia'}
       </div>
-      <div className='presentation' onClick={() => changeControl({ showArea: !showArea })}>
+      <div
+        className='presentation'
+        onClick={() => changeControl({ showArea: !showArea })}
+      >
         {presentArea(areaMin, areaMax)}
-        <SVG name='caretDown' />
       </div>
       {showArea && <AreaPanel langHandler={langHandler} changeControl={changeControl} changeInputs={changeInputs} areaMin={areaMinInput} areaMax={areaMaxInput} />}
     </div>

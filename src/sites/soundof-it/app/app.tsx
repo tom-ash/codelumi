@@ -45,10 +45,8 @@ class App extends React.Component {
     this.langHandler = langHandler.bind(this)
     // @ts-ignore
     this.matchStateToRoute = matchStateToRoute.bind(this)
-    
     this.changeRoute = changeRoute.bind(this)
   }
-  
 
   render() {
     // @ts-ignore

@@ -1,82 +1,78 @@
 @import '../../../../../../../styles/media-breakpoints';
 @import '../../../../../../../styles/colors.scss';
-@import './categories.scss';
-@import './map_catalogue_switch.scss';
 
 #announcement-index-panel {
   z-index: 3;
   position: relative;
-  padding: 17px 0;
-  @media #{$LARGE-TABLET} {
-    padding: 10px 10px 10px 20px;
+
+  @media #{$LARGE-PHONE} {
+    padding: 0 18px;
   }
-  @media #{$SMALL-TABLET} {
-    padding: 10px;
-  }
-  .map-catalogue-switch {
-    @extend %map-catalogue-switch;
-  }
+
   .area {
     position: relative;
     float: left;
-    display: flex;
-    flex-direction: column;
-    height: 82px;
-    justify-content: center;
-
-    @media #{$SMALL-TABLET} {
-      float: none;
+    margin: 20px 20px 20px 0;
+    width: 200px;
+    height: 42px;
+    border: 1px solid #4D5656;
+    border-radius: 21px;
+    padding: 0 21px;
+    background: white;
+    line-height: 42px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    @media #{$LARGE-PHONE} {
+      width: 100%;
+      margin: 18px 0;
     }
-
     .label {
-      font-size: 13px;
-      margin-bottom: 4px;
-      color: #797D7F;
+      display: block;
+      text-align: center;
     }
-    .presentation {
-      font-size: 14px;
-      font-weight: bold;
-      color: #626567;
-      cursor: pointer;
-      svg {
-        height: 15px;
-        transform: scale(1.3) translateY(1.2px);
-        margin-left: 6px;
-      }
-    }
-
     .area-panel {
+      line-height: 1;
       position: absolute;
       z-index: 999;
-      height: 60px;
-      width: 206px;
+      height: 72px;
+      width: 240px;
       background: white;
-      top: 72px;
-      left: -56px;
-      box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-      border-radius: 4px;
+      top: 42px;
+      left: -20px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      border-radius: 5px;
+      @media #{$LARGE-PHONE} {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
       .panel-input {
         float: left;
-        width: 80px;
+        width: 96px;
         height: 100%;
         margin: 0;
-        padding: 8px 5px 25px 10px;
-        text-align: center;
+        padding: 12px 5px 25px 10px;
+        .label {
+          font-size: 14px;
+          margin-bottom: 6px;
+          text-align: left;
+        }
         input {
           width: 100%;
-          height: 100%;
+          height: 30px;
           border-top: none;
           border-right: none;
           border-left: none;
           text-align: center;
           font-size: 16px;
+          line-height: 35px;
         }
       }
       .sqm {
         float: left;
         font-size: 16px;
-        padding-top: 28px;
-        padding-left: 5px;
+        padding-top: 38px;
         .superscript {
           position: relative;
           top: -0.5em; 
