@@ -39,6 +39,9 @@ class AnnouncementIndexPanel extends React.Component {
 
     return (
       <div id='announcement-index-panel'>
+        <h1>
+          {this.langHandler({ pl: 'Nieruchomości na wynajem', en: 'Properties for Rent' })}
+        </h1>
         <PanelCategories
           renderCatalogue={renderCatalogue}
           langHandler={this.langHandler}
