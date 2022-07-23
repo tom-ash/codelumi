@@ -2,6 +2,8 @@
 
 #announcement-index-map {
   position: relative;
+  border-radius: 5px;
+  overflow: hidden;
   .announcement-tile-container {
     position: absolute;
     top: 15px;
