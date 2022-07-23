@@ -8,23 +8,18 @@
   @media #{$LARGE-TABLET} {
     min-height: 1048px;
   }
-  // text-align: center;
   h1 {
     font-size: 14px;
-    margin: 24px 20px 4px;
+    margin: 24px 20px 12px;
     color: #424949;
     line-height: 1.5;
     font-weight: normal;
     line-height: 1;
     color: #7B7D7D;
-    // background: #E5E7E9;
-    // border: 1px solid lightgray;
-    // border-bottom: none;
-    // display: inline-block;
-    // padding: 6px 8px;
-    // border-top-left-radius: 4px;
-    // border-top-right-radius: 4px;
-    // color: #34495E;
+    @media #{$LARGE-PHONE} {
+      margin: 12px;
+      text-align: center;
+    }
   }
   .phone {
     cursor: pointer;
