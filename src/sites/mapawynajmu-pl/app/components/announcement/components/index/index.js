@@ -3,7 +3,6 @@ import loadable from '@loadable/component'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import AnnouncementIndexPanel from './components/panel/panel'
-import AnnouncementIndexCatalogue from './components/catalogue/catalogue'
 import AnnouncementIndexMap from './components/map/map'
 const AnnouncementIndexMy = loadable(() => import('./components/my/my'))
 import langHandler from '../../../../functions/lang-handler'
@@ -27,13 +26,12 @@ class AnnouncementIndexSearch extends React.Component {
   static contextType = AppContext
 
   render() {
-    const { renderMap, renderCatalogue, renderMy } = this.props
+    const { renderMap, renderMy } = this.props
 
     return (
       <div id='announcement-index'>
-        {(renderMap || renderCatalogue) && <AnnouncementIndexPanel />}
+        {renderMap && <AnnouncementIndexPanel />}
         {renderMap && <AnnouncementIndexMap />}
-        {renderCatalogue && <AnnouncementIndexCatalogue />}
         {renderMy && <AnnouncementIndexMy />}
       </div>
     )

@@ -40,15 +40,11 @@ class AnnouncementIndexMap extends React.Component {
       isMobile,
       miniListFarthestScrollTop,
       miniListFarthestScrollLeft,
-      changeApp,
-      renderCatalogue
+      changeApp
     } = this.props
 
     return (
-      <div
-        id='announcement-index-map'
-        className={renderCatalogue ? 'hidden' : ''}
-      >
+      <div id='announcement-index-map'>
         <div id='google-map-container'>
           <div 
             ref={this.miniList}

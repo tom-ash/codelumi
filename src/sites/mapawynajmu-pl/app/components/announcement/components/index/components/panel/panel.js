@@ -20,7 +20,6 @@ class AnnouncementIndexPanel extends React.Component {
     const {
       lang,
       renderMap,
-      renderCatalogue,
       currentCategory,
       changeInputs,
       changeControl,
@@ -43,7 +42,6 @@ class AnnouncementIndexPanel extends React.Component {
           {this.langHandler({ pl: 'Nieruchomości na wynajem', en: 'Properties for Rent' })}
         </h1>
         <PanelCategories
-          renderCatalogue={renderCatalogue}
           langHandler={this.langHandler}
           changeInputs={changeInputs}
           changeControl={changeControl}
@@ -61,8 +59,7 @@ class AnnouncementIndexPanel extends React.Component {
           coworkingAmount={coworkingAmount}
           links={links}
         />
-        {(renderMap || renderCatalogue) &&
-        <PanelVisitor {...{ ...this.props, changeRoute, langHandler: this.langHandler }} />}
+        {renderMap && <PanelVisitor {...{ ...this.props, changeRoute, langHandler: this.langHandler }} />}
         <div className='float-clear' />
       </div>
     )

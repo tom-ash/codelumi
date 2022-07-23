@@ -9,7 +9,6 @@ export const mapStateToProps = store => {
 
   const {
     'announcement/index/map': renderMap,
-    'announcement/index/catalogue': renderCatalogue,
     'announcement/index/user': renderMy
   } = store.render
 
@@ -56,7 +55,6 @@ export const mapStateToProps = store => {
     path,
     device,
     renderMap,
-    renderCatalogue,
     renderMy,
     type,
     category,

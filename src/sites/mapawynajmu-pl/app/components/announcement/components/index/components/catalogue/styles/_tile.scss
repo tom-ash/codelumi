@@ -1,7 +1,0 @@
-@import '../../shared/styles/announcement-tile.scss';
-
-#announcement-index-catalogue {
-  .announcement-tile {
-    @extend %announcement-tile;
-  }
-}

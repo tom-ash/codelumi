@@ -8,9 +8,6 @@ export const mapStateToProps = store => {
   const {
     svgs
   } = store.assets
-  const {
-    'announcement/index/catalogue': renderCatalogue
-  } = store.render
 
   const {
     connecting,
@@ -47,8 +44,7 @@ export const mapStateToProps = store => {
     svgs,
     miniListFarthestScrollTop,
     miniListFarthestScrollLeft,
-    fetch,
-    renderCatalogue
+    fetch
   }
 }
     

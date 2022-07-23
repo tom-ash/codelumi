@@ -9,7 +9,6 @@ export const mapStateToProps = store => {
 
   const {
     'announcement/index/map': renderMap,
-    'announcement/index/catalogue': renderCatalogue,
     'announcement/index/user': renderMy
   } = render
 
@@ -42,7 +41,6 @@ export const mapStateToProps = store => {
     device,
     render,
     renderMap,
-    renderCatalogue,
     renderMy,
     currentCategory,
     apartmentsAmount,
