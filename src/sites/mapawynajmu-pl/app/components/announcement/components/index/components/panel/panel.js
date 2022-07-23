@@ -32,40 +32,35 @@ class AnnouncementIndexPanel extends React.Component {
       officesAmount,
       virtualOfficesAmount,
       coworkingAmount,
-      links,
-      title
+      links
     } = this.props
     const { changeRoute } = this.context
 
-    console.log(title)
-
     return (
-      <div id='announcement-index-panel'>
-        <h1>
-          {title}
-          {/* {this.langHandler({ pl: 'Nieruchomości na wynajem', en: 'Properties for Rent' })} */}
-        </h1>
-        <PanelCategories
-          langHandler={this.langHandler}
-          changeInputs={changeInputs}
-          changeControl={changeControl}
-          currentCategory={currentCategory}
-          changeRoute={changeRoute}
-          lang={lang}
-          categoryAmounts={categoryAmounts}
-          apartmentsAmount={apartmentsAmount}
-          housesAmount={housesAmount}
-          roomsAmount={roomsAmount}
-          parkingSpacesAmount={parkingSpacesAmount}
-          usablePremisesAmount={usablePremisesAmount}
-          officesAmount={officesAmount}
-          virtualOfficesAmount={virtualOfficesAmount}
-          coworkingAmount={coworkingAmount}
-          links={links}
-        />
-        {renderMap && <PanelVisitor {...{ ...this.props, changeRoute, langHandler: this.langHandler }} />}
-        <div className='float-clear' />
-      </div>
+      <>
+        <div id='announcement-index-panel'>
+          <PanelCategories
+            langHandler={this.langHandler}
+            changeInputs={changeInputs}
+            changeControl={changeControl}
+            currentCategory={currentCategory}
+            changeRoute={changeRoute}
+            lang={lang}
+            categoryAmounts={categoryAmounts}
+            apartmentsAmount={apartmentsAmount}
+            housesAmount={housesAmount}
+            roomsAmount={roomsAmount}
+            parkingSpacesAmount={parkingSpacesAmount}
+            usablePremisesAmount={usablePremisesAmount}
+            officesAmount={officesAmount}
+            virtualOfficesAmount={virtualOfficesAmount}
+            coworkingAmount={coworkingAmount}
+            links={links}
+          />
+          {renderMap && <PanelVisitor {...{ ...this.props, changeRoute, langHandler: this.langHandler }} />}
+          <div className='float-clear' />
+        </div>
+      </>
     )
   }
 }

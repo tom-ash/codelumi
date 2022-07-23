@@ -46,10 +46,12 @@ export const mapStateToProps = store => {
 
   const {
     announcements,
-    amount
+    amount,
+    title
   } = store.announcement.index.data
 
   return {
+    title,
     render,
     lang,
     path,

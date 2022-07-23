@@ -8,6 +8,18 @@
   @media #{$LARGE-TABLET} {
     min-height: 1048px;
   }
+  h1 {
+    font-size: 13px;
+    margin: 2px 20px 0;
+    color: #7B7D7D;
+    line-height: 1.5;
+    font-weight: normal;
+    border: 1px solid #B3B6B7;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    padding: 8px 0;
+  }
   .phone {
     cursor: pointer;
     z-index: 3;

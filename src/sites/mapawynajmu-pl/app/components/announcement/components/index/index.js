@@ -26,14 +26,22 @@ class AnnouncementIndexSearch extends React.Component {
   static contextType = AppContext
 
   render() {
-    const { renderMap, renderMy } = this.props
+    const { renderMap, renderMy, title } = this.props
 
     return (
-      <div id='announcement-index'>
-        {renderMap && <AnnouncementIndexPanel />}
-        {renderMap && <AnnouncementIndexMap />}
+      <section id='announcement-index'>
+        {renderMap && (
+          <>
+            <h1>
+              {title}
+            </h1>
+            <AnnouncementIndexPanel />
+            <AnnouncementIndexMap />
+          </>
+        )}
+
         {renderMy && <AnnouncementIndexMy />}
-      </div>
+      </section>
     )
   }
 }
