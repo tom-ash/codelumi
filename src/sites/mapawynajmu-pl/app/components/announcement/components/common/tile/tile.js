@@ -112,7 +112,7 @@ class AnnouncementTile extends React.Component {
             <div className='header-row category'>
               <span>{category !== null && parseCategory({ categoryNumber: category, lang })}</span>
               &nbsp;
-              <span className='for-lease'>{this.langHandler({ pl: 'na wynajem', en: 'for lease' })}</span>
+              <span className='for-lease'>{this.langHandler({ pl: 'na wynajem', en: 'for rent' })}</span>
             </div>
             <div className='header-row locality-sublocality'>
               {localitiesPresenter({ locality, sublocality })}
