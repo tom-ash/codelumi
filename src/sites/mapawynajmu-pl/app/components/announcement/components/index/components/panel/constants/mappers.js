@@ -21,7 +21,8 @@ export const mapStateToProps = store => {
     officesAmount,
     virtualOfficesAmount,
     coworkingAmount,
-    currentCategory
+    currentCategory,
+    title
   } = store.announcement.index.data
 
   const {
@@ -36,6 +37,7 @@ export const mapStateToProps = store => {
   } = store.announcement.index.control
 
   return {
+    title,
     lang,
     isMobile,
     device,

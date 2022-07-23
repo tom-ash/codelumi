@@ -32,14 +32,18 @@ class AnnouncementIndexPanel extends React.Component {
       officesAmount,
       virtualOfficesAmount,
       coworkingAmount,
-      links
+      links,
+      title
     } = this.props
     const { changeRoute } = this.context
+
+    console.log(title)
 
     return (
       <div id='announcement-index-panel'>
         <h1>
-          {this.langHandler({ pl: 'Nieruchomości na wynajem', en: 'Properties for Rent' })}
+          {title}
+          {/* {this.langHandler({ pl: 'Nieruchomości na wynajem', en: 'Properties for Rent' })} */}
         </h1>
         <PanelCategories
           langHandler={this.langHandler}
