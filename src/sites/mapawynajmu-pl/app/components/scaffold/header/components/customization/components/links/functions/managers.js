@@ -1,5 +1,5 @@
-import React from 'react'
-import SVG from '../../../../../../../../../../shared/app/components/support/svg/svg.js'
+// import React from 'react'
+// import SVG from '../../../../../../../../../../shared/app/components/support/svg/svg.js'
 import { ANNOUNCEMENT_CREATE_LABELS } from '../../../../../../../../../shared/constants/routes/labels.js'
 import { deauthorizeUser } from '../../../../../../../user/components/authorize/functions/adapters.js'
 import buildUrl from '../../../../../../../../../shared/functions/builders/url'
@@ -47,7 +47,7 @@ export function addAnnouncementManager(props) {
   const hrefLang = langHandler(langs)
   const title = link && link.title
   const classNames = { container: 'header-link add-announcement' }
-  const label = langHandler(isMobile ? { pl: 'Dodaj ogłoszenie (bezpłatnie)', en: 'Add Announcement (Free)'} : ANNOUNCEMENT_CREATE_LABELS)
+  const label = langHandler(ANNOUNCEMENT_CREATE_LABELS)
   const onClick = () => changeRoute({ href })
 
   return { classNames, href, hrefLang, title, label, onClick }
