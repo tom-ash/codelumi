@@ -1,32 +1,26 @@
 #logo {
+  position: relative;
   float: left;
-  font-family: 'Nova Slim', 'Helvetica Neue';
+  height: 28px;
+  margin-top: 16px;
+  font-family: 'Nova Slim';
   color: #1B2631;
 }
 
 #logo img {
   position: relative;
-  display: inline-block;
-  transform: translate(-1px, 6px);
-  height: 24px;
+  height: 100%;
 }
 
-#logo div {
-  display: inline-block;
-  height: 60px;
-  line-height: 60px;
-  font-size: 20px;
+#logo > div {
+  position: absolute;
+  top: 0;
+  left: 27px;
+  font-size: 14px;
+  transform: translate(0, -1px);
 }
 
-#logo div span {
-  margin: 0;
-  padding: 0;
-}
-
-#logo div span:nth-child(2) {
-  color: #2874A6;
-}
-
-#logo div:nth-child(4) {
-  clear: both;
+#logo span {
+  font-size: 10px;
+  /* color: #D35400; */
 }
