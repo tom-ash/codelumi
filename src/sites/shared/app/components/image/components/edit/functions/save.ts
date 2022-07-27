@@ -25,8 +25,10 @@ export function save(props: saveProps) {
     changeData
   } = props
 
+  // @ts-ignore
   drawOnCanvas()
   .then(transformCanvasToBlob)
+  // @ts-ignore
   .then(compress)
   .then(compressedBlob => {
     const keyExtension = '.jpeg' // TODO: Derive from compressedBlob.type.

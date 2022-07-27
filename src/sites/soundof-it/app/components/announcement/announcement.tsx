@@ -21,6 +21,7 @@ class Announcement extends React.Component<announcementProps, any> {
 
     return (
       <div id='announcement'>
+        {/* @ts-ignore */}
         {renderCreate && <AnnouncementCreate {...announcementCreateProps} />}
       </div>
     )

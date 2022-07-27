@@ -22,6 +22,7 @@ const Paragraph = (props: ParagraphProps) => {
 
   enrichedContent = enrichedContent.replace(
     /(a)\[(.+)\]/g,
+    // @ts-ignore
     (_fullMatch, tag, attributes) => {
       if (attributes.indexOf('text') === -1) return _fullMatch
 

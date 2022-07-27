@@ -17,6 +17,7 @@ const createFactory = (props: CreateFactoryProps) => {
 
       fetch(`${apiUrl}/image/create`, {
         method: 'POST',
+        // @ts-ignore
         headers: {
           'Content-Type': 'application/json',
           'Access-Token': accessToken

@@ -67,7 +67,9 @@ const LangSwich = (props: LangSwichProps) => {
         />
       )}
       <div className={allClassNames.join(' ')}>
+        {/* @ts-ignore */}
         <a href={plHref} onClick={(e) => changeLang({ e, href: plHref })}>PL</a>
+        {/* @ts-ignore */}
         <a href={enHref} onClick={(e) => changeLang({ e, href: enHref })}>EN</a>
       </div>
     </div>

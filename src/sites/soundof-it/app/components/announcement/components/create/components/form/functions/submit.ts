@@ -52,6 +52,7 @@ const submit = (props: submitProps) => {
 
   fetch(apiUrl + '/job/create/as-user', {
     method: 'POST',
+    // @ts-ignore
     headers: { 'Content-Type': 'application/json', 'Access-Token': getAccessToken() },
     body: JSON.stringify(body)
   })

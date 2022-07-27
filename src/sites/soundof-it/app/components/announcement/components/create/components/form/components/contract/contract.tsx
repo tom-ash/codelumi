@@ -54,10 +54,10 @@ const Contract = (props: ContractInterface) => {
       contractMin: civilContractMin,
       contractMax: civilContractMax
     }
-  ]
+  ] as const
 
   type Contract = {
-    contractKey: 'b2b' | 'employment' | 'civilContract', 
+    contractKey: 'b2b' | 'employment' | 'civilContract',
     contractValue: boolean,
     label: string,
     contractMin: number,

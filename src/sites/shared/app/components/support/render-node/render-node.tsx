@@ -91,6 +91,7 @@ const RenderNode = (props: RenderNodeProps) => {
 
   if (node.code) {
     const { code } = node
+    // @ts-ignore
     const { jsonMeta: { codeLang: pageCodeLang } } = props
     const codeProps = { code, pageCodeLang }
 
@@ -124,6 +125,7 @@ const RenderNode = (props: RenderNodeProps) => {
       className
     }
 
+    // @ts-ignore
     return <Anchor {...anchorProps} />
   }
 

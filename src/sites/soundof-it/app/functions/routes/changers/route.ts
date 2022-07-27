@@ -2,6 +2,7 @@ import changeRouteGeneric from '../../../../../shared/app/functions/routes/chang
 import API_URL from '../../../../shared/constants/urls/api.js'
 
 const changeRoute: ChangeRoute = function({ href, withoutScroll, retainQueryParams }) {
+  // @ts-ignore
   changeRouteGeneric.call(this, { apiUrl: API_URL, href, withoutScroll, retainQueryParams })
 }
 

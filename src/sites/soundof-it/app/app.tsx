@@ -42,6 +42,7 @@ class App extends React.Component {
     this.screenSizeHandler = screenSizeHandler.bind(this)
     // @ts-ignore
     this.popStateHandler = popStateHandler.bind(this)
+    // @ts-ignore
     this.langHandler = langHandler.bind(this)
     // @ts-ignore
     this.matchStateToRoute = matchStateToRoute.bind(this)
