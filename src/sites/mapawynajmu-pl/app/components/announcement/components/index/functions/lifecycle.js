@@ -11,10 +11,15 @@ export function componentDidUpdate(prevProps) {
     const queryParamMappings = {
       areaMinInput: { pl: 'powierzchnia_min', en: 'area_min' },
       areaMaxInput: { pl: 'powierzchnia_max', en: 'area_max' },
+      priceMinInput: { pl: 'cena_min', en: 'price_min' },
+      priceMaxInput: { pl: 'cena_maks', en: 'price_max' },
     }
-    const queryAttrs = ['areaMinInput', 'areaMaxInput']
+    const queryAttrs = ['areaMinInput', 'areaMaxInput', 'priceMinInput', 'priceMaxInput']
     const builtQueryParamsArray = queryAttrs.filter(queryParam => {
       const queryParamValue = this.props[queryParam]
+
+      console.log(this.props)
+      console.log(queryParamValue)
       
       updateAttrs[queryParam.replace('Input', '')] = queryParamValue
 

@@ -41,7 +41,11 @@ export const mapStateToProps = store => {
     offset,
     switches,
     sort,
-    page
+    page,
+    priceMin,
+    priceMinInput,
+    priceMax,
+    priceMaxInput
   } = store.announcement.index.inputs
 
   const {
@@ -82,7 +86,11 @@ export const mapStateToProps = store => {
     announcements,
     amount,
     admin,
-    rebuildQueryParams
+    rebuildQueryParams,
+    priceMin,
+    priceMinInput,
+    priceMax,
+    priceMaxInput,
   }
 }
     

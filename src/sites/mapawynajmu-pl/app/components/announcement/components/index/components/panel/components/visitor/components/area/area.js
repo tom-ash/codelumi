@@ -32,8 +32,6 @@ function presentArea(areaMin, areaMax) {
 const Area = props => {
   const { showArea, areaMin, areaMinInput, areaMax, areaMaxInput, langHandler, changeControl, changeInputs } = props
 
-  console.log(areaMin, areaMax)
-
   return (
     <div
       className='area'
