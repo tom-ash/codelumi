@@ -156,8 +156,11 @@ const Price = (props: PriceProps) => {
 
   return (
     <div
+      tabIndex={0}
       className='filter'
       onClick={() => changeControl({ showPricePanel: true })}
+      onBlur={() => changeControl({ showPricePanel: false })}
+      onFocus={() => changeControl({ showPricePanel: true })}
     >
       <PriceContent {...priceContentProps} />
       {/* @ts-ignore */}
