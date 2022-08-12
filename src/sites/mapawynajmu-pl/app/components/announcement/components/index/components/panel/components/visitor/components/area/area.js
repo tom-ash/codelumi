@@ -34,7 +34,7 @@ const Area = props => {
 
   return (
     <div
-      className='area'
+      className='filter'
     >
       <div
         className='label'

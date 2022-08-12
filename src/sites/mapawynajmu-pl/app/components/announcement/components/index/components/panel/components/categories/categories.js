@@ -27,7 +27,7 @@ const AnnouncementIndexPanelCategories = (props) => {
   })
 
   const categoriesProps = {
-    classNames: { container: 'categories' },
+    classNames: { container: 'filter' },
     label: 'Kategoria',
     value: currentCategory || '',
     options,

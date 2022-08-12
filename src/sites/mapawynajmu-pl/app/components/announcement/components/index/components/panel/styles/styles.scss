@@ -5,33 +5,34 @@
   z-index: 3;
   position: relative;
 
-  border-radius: 5px;
-  background: #E5E7E9;
+  border-radius: 3px;
+  background: #1B2631;
   margin: 0px 20px 4px;
+  padding: 10px;
 
   @media #{$LARGE-PHONE} {
     margin: 0px 12px 12px;
-    padding: 0 12px;
+    padding: 10px 10px 0;
   }
 
   .filter {
     position: relative;
     float: left;
-    margin: 10px 12px 10px 0;
+    margin-right: 10px;
     width: 200px;
-    height: 36px;
-    border: 1px solid #BDC3C7;
-    border-radius: 6px;
+    height: 32px;
+    border-radius: 3px;
     padding: 0 12px;
-    background: white;
-    line-height: 36px;
+    line-height: 32px;
     font-size: 14px;
     cursor: pointer;
-    color: #626567;
+    color: #1B2631;
+
+    background: #F8F9F9;
 
     @media #{$LARGE-PHONE} {
       width: 100%;
-      margin: 18px 0;
+      margin-bottom: 10px;
     }
 
     .panel {
@@ -59,34 +60,7 @@
         }
       }
     }
-  }
 
-  .area {
-    position: relative;
-    float: left;
-    margin: 10px 12px 10px 0;
-    width: 200px;
-    height: 36px;
-    border: 1px solid #BDC3C7;
-    border-radius: 21px;
-    padding: 0 21px;
-    background: white;
-    line-height: 36px;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    color: #626567;
-
-    @media #{$LARGE-PHONE} {
-      width: 100%;
-      margin: 18px 0;
-    }
-
-    .label {
-      display: block;
-      text-align: center;
-      font-size: 15px;
-    }
     .area-panel {
       line-height: 1;
       position: absolute;
