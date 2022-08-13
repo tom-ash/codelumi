@@ -1,5 +1,6 @@
 import React from 'react'
 import Filter from './components/filter/filter'
+import areaOptions from './constants/area-options'
 import priceOptions from './constants/price-options'
 
 export default props => {
@@ -23,7 +24,7 @@ export default props => {
   const areaFilterProps = {
     label: 'Powierzchnia',
     unit: 'm2',
-    options: [0, 10, 20, 30],
+    options: areaOptions,
     showPanel: showArea,
     showPanelKey: 'showArea',
     min: areaMin,
