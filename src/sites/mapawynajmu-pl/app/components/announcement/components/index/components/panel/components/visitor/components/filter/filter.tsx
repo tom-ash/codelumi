@@ -2,23 +2,11 @@ import React from 'react'
 import Panel from './components/panel'
 import Content from './components/content'
 
-const options = [
-  1000,
-  2000,
-  3000,
-  4000,
-  5000,
-  6000,
-  7000,
-  8000,
-  9000,
-  10000,
-  15000,
-  20000
-]
-
 const Filter = (props: FilterProps) => {
   const {
+    label,
+    unit,
+    options,
     showPanel,
     showPanelKey,
     min,
@@ -26,7 +14,6 @@ const Filter = (props: FilterProps) => {
     max,
     maxInput,
     changeControl,
-    changeData,
     changeInputs,
     minKey,
     minInputKey,
@@ -35,8 +22,10 @@ const Filter = (props: FilterProps) => {
   } = props
 
   const contentProps = {
+    label,
     min,
-    max
+    max,
+    unit
   }
 
   const panelProps = {
@@ -49,7 +38,6 @@ const Filter = (props: FilterProps) => {
     maxKey,
     maxInputKey,
     changeControl,
-    changeData,
     changeInputs,
   }
 

@@ -2,23 +2,25 @@ import React from 'react'
 
 const Content = (props: ContentProps) => {
   const {
+    label,
     min,
-    max
+    max,
+    unit
   } = props
 
   if (min && max) {
-    return <>{min} - {max} PLN</>
+    return <>{min} - {max} {unit}</>
   }
 
   if (min) {
-    return <>&gt; {min} PLN</>
+    return <>&gt; {min} {unit}</>
   }
 
   if (max) {
-    return <>&lt; {max} PLN</>
+    return <>&lt; {max} {unit}</>
   }
 
-  return <>Cena / MC</>
+  return <>{label}</>
 }
 
 export default Content
