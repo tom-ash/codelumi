@@ -4,7 +4,15 @@ interface PriceProps {
   priceMinInput: number
   priceMax: number
   priceMaxInput: number
-  changeControl(props: { showPricePanel: boolean }): void
+  changeControl: ChangeControl
   changeData(): void
   changeInputs(): void
+}
+
+type ChangeControl = (args: { showPricePanel: boolean, rebuildQueryParams?: boolean }) => void
+
+interface ChangeInputs {
+  (args: {
+    [key: string]: string | number
+  }): void
 }

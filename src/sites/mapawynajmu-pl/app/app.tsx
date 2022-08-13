@@ -66,15 +66,17 @@ class App extends React.Component {
     const imageProps = sharedProps
 
     return (
-      <AppContext.Provider value={AppContextValue}>
-        <Header { ...{ ...sharedProps, urlComposites, lang, Logo, HeaderCustomization, styles: headerStyles }}/>
-        {renderAnnouncement && <Announcement/>}
-        {renderPage && <Page {...pageProps}/>}
-        {renderVisitor && <Visitor {...sharedProps}/>}
-        {renderUser && <User />}
-        {renderImage && <Image {...imageProps} />}
-        <Footer {...sharedProps}/>
-      </AppContext.Provider>
+      <React.StrictMode>
+        <AppContext.Provider value={AppContextValue}>
+          <Header { ...{ ...sharedProps, urlComposites, lang, Logo, HeaderCustomization, styles: headerStyles }}/>
+          {renderAnnouncement && <Announcement/>}
+          {renderPage && <Page {...pageProps}/>}
+          {renderVisitor && <Visitor {...sharedProps}/>}
+          {renderUser && <User />}
+          {renderImage && <Image {...imageProps} />}
+          <Footer {...sharedProps}/>
+        </AppContext.Provider>
+      </React.StrictMode>
     )
   }
 }
