@@ -1,7 +1,8 @@
 interface PanelColumnProps {
   label: string
   options: number[]
-  updateKey: string
+  inputKey: string
   changeInputs: ChangeInputs
   changeControl: ChangeControl
+  showPanelKey: string
 }

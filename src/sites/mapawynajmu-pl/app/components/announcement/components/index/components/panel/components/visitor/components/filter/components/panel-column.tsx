@@ -4,10 +4,13 @@ const PanelColum = (props: PanelColumnProps) => {
   const {
     label,
     options = [],
-    updateKey,
     changeInputs,
-    changeControl
+    changeControl,
+    inputKey,
+    showPanelKey
   } = props
+
+  console.log(showPanelKey)
 
   return (
     <div
@@ -22,9 +25,8 @@ const PanelColum = (props: PanelColumnProps) => {
           className='option'
           onClick={e => {
             e.stopPropagation()
-            changeInputs({ [updateKey]: option, [updateKey.replace('Input', '')]: option })
-            // @ts-ignore
-            changeControl({ rebuildQueryParams: true, showPricePanel: false })
+            changeInputs({ [inputKey]: option, [inputKey.replace('Input', '')]: option })
+            changeControl({ rebuildQueryParams: true, [showPanelKey]: false })
           }}
         >
           {option}

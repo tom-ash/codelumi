@@ -3,11 +3,12 @@ import PanelColumn from './panel-column'
 
 const Panel = (props: PanelProps) => {
   const {
-    // priceMinInput,
-    // priceMaxInput,
     options,
+    minInputKey,
+    maxInputKey,
     changeInputs,
-    changeControl
+    changeControl,
+    showPanelKey
   } = props
 
   return (
@@ -15,16 +16,18 @@ const Panel = (props: PanelProps) => {
       <PanelColumn
         label='Min.'
         options={options}
-        updateKey='priceMinInput'
         changeInputs={changeInputs}
         changeControl={changeControl}
+        inputKey={minInputKey}
+        showPanelKey={showPanelKey}
       />
       <PanelColumn
         label='Maks.'
         options={options}
-        updateKey='priceMaxInput'
         changeInputs={changeInputs}
         changeControl={changeControl}
+        inputKey={maxInputKey}
+        showPanelKey={showPanelKey}
       />
     </div>
   )
