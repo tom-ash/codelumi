@@ -1,4 +1,29 @@
 @import '../../../../../shared/app/styles/media-breakpoints.scss';
+@use "./cde" as *;
+
+@mixin categories {
+  .tutorials {
+    color: #935116;
+  }
+  .insights {
+    color: #6C3483;
+  }
+  .javascript {
+    color: #D4AC0D;
+  }
+  .ruby {
+    color: #CB4335;
+  }
+  .html {
+    color: #D35400;
+  }
+  .postgres {
+    color: rgb(64, 102, 143);
+  }
+  .css {
+    color: rgb(48, 81, 223);
+  }
+}
 
 %root {
   position: relative;
@@ -22,80 +47,56 @@
     margin-bottom: 36px;
   }
   .index-link {
-    $BORDER-COLOR: #B3B6B7;
+    @include categories;
     position: relative;
     float: left;
+    transition: .2s ease-in;
+    .link-data {
+      position: relative;
+      padding-top: 10px;
+      height: 88px;
+    }
+    .category-and-subcategory {
+      margin-bottom: 5px;
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      span {
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+    .title {
+      line-height: 1.5;
+      font-size: 16px;
+      font-weight: 500;
+      color: #363636;
+      transition: .2s ease-in;      
+    }
+    .modified-on {
+      top: 10px;
+      right: 0;
+      position: absolute;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: rgb(64, 64, 64);
+    }
     img {
-      transition: .2s ease-in;
       display: block;
-      max-width: 100%;
+      width: 100%;
       aspect-ratio: 2;
       border-radius: 4px;
       box-shadow: lightgray 0px 0px 1px;
+      transition: .2s ease-in;
     }
-    transition: .2s ease-in;
     &:hover {
       img {
         position: relative;
         box-shadow: lightgray 0px 1px 4px;
         transform: scale(1.02);
       }
-      .link-data {
-          .title {
-            // transition: .2s ease-in;
-            color: #D35400;
-        }
-      }
-    }
-    .link-data {
-      position: relative;
-      padding: 10px 0 0;
-      height: 88px;
-      .category-and-subcategory {
-        font-weight: bold;
-        font-size: 10px;
-        margin-bottom: 5px;
-        text-transform: uppercase;
-        span {
-          display: inline-block;
-          margin-right: 6px;
-        }
-        .tutorials {
-          color: #935116;
-        }
-        .insights {
-          color: #6C3483;
-        }
-        .javascript {
-          color: #D4AC0D;
-        }
-        .ruby {
-          color: #CB4335;
-        }
-        .html {
-          color: #D35400;
-        }
-        .postgres {
-          color: rgb(64, 102, 143);
-        }
-        .css {
-          color: rgb(48, 81, 223);
-        }
-      }
       .title {
-        transition: .2s ease-in;
-        font-size: 16px;
-        line-height: 1.5;
-        color: #363636;
-        font-weight: 500;
-      }
-      .modified-on {
-        top: 10px;
-        right: 0;
-        position: absolute;
-        font-size: 10px;
-        color: #979A9A;
-        text-transform: uppercase;
+        color: #D35400;
       }
     }
     width: 32.5%;
