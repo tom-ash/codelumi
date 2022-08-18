@@ -32,8 +32,6 @@ initSentry()
 
 const APP_NAME = 'mapawynajmu-pl'
 
-// // Compiled JavaScript\n\"use strict\";\nvar Foo;\n(function (Foo) {\n    Foo.bar = 42;\n    Foo.baz = '42';\n    const qux = 'forty two';\n})(Foo || (Foo = {}));\nconst bar = Foo.bar;\nconsole.log(bar);\nvar baz = Foo.baz;\nconsole.log(baz);\nconst qux = Foo.qux;\nconsole.log(qux);
-
 class App extends React.Component {
   // @ts-ignore
   constructor(props) {
