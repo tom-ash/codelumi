@@ -14,7 +14,8 @@ header.title-board {
     overflow: hidden;
     .cover-image {
       width: 100%;
-      aspect-ratio: 1.7777;
+      aspect-ratio: 1.905; // <- 1200 / 630
+      border-radius: 4px;
     }
     @media #{$LARGE-TABLET} {
       .cover-image {
