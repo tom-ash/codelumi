@@ -1,18 +1,14 @@
 @import './editorial';
 @import './table-of-contents';
-@import './main';
 
 $padding-desktop: 36px;
 $padding-mobile: 18px;
 
 %article {
-  max-width: 800px;
+  max-width: 704px;
   margin: 36px auto;
   line-height: 1.8;
-  color: #212F3C;
-  $BORDER-COLOR: #D7DBDD;
-  border: 1px solid $BORDER-COLOR;
-  border-radius: 10px;
+  color: rgb(42, 42, 42);
   overflow: hidden;
   h1 {
     font-size: 36px;
@@ -24,20 +20,86 @@ $padding-mobile: 18px;
   .table-of-contents {
     @extend %table-of-contents;
   }
-  main {
-    @extend %main;
-  }
   @media #{$LARGE-PHONE} {
     margin: 0 auto 36px;
     box-shadow: none;
   }
+  > img {
+    width: 100%;
+  }
+  .heading-container {
+    display: flex;
+    .number {
+      flex: none;
+      font-weight: bold;
+      margin-right: 12px;
+    }
+    &.h2 {
+      padding: 72px 0 12px;
+      .number, h2 {
+        font-size: 19px;
+      }
+    }
+    &.h3 {
+      padding: 36px 0 12px;
+      .number, h3 {
+        font-size: 18px;
+      }
+    }
+    &.h4 {
+      padding: 24px 0 12px;
+      .number, h4 {
+        font-size: 17px;
+      }
+    }
+    &.h2 + .h3 {
+      padding: 0 0 12px;
+    }
+    &.h3 + .h4 {
+      padding: 0 0 12px;
+    }
+  }
+  .heading-container:first-child {
+    &.h2 {
+      padding: 0 0 12px;
+    }  
+  }
+  p {
+    margin: 0 0 12px;
+    code {
+      font-family: monospace;
+      display: inline-block;
+      padding: 0px 6px;
+      background: #F8F9F9;
+      color: #922B21;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    a {
+      display: inline;
+      text-decoration: underline;
+      color: rgb(42, 96, 152);
+      &:hover {
+        color: rgb(186, 42, 24)
+      }
+    }
+  }
+  p + ul {
+    margin-top: -9px;
+  }
+  p + pre {
+    margin-top: 18px;
+  }
+  pre + pre {
+    margin-top: 21px;
+  }
+  ul {
+    margin-bottom: 18px;
+    padding-left: 20px;
+    li {
+      p {
+        margin-bottom: 3px;
+      }
+    }
+  }
 }
-
-// {
-//   "anchor": {
-//     "c": "Dodaj\nogłoszenie\nza darmo",
-//     "h": "https://mapawynajmu.pl/dodaj-ogloszenie",
-//     "t": "_blank"
-//   },
-//   "className": "cta"
-// }

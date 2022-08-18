@@ -1,51 +1,50 @@
-$padding-desktop: 36px;
 $padding-mobile: 18px;
 
 %table-of-contents {
-  padding: 24px $padding-desktop;
+  padding: 24px 0;
   @media #{$LARGE-PHONE} {
     padding: 24px $padding-mobile;
   }
-  background: white;
   .inner-container {
     display: inline-block;
     max-width: 400px;
     width: auto;
-    padding: 18px 24px 10px 18px;
     line-height: 1.25;
-    color: #34495E;
-    border: 1px solid lightgray;
+    color: rgb(64, 64, 64);
+    border-left: 5px solid lightgray;
+    padding-left: 15px;
+  }
+  h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
   }
   a {
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: 15px;
     &:hover {
       text-decoration: underline;
     }
   }
-  h2 {
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 18px;
-  }
   ul {
+    margin: 0;
+    padding: 0;
     list-style-type: none;
     li {
       line-height: 1.5;
       margin-top: -4px;
-    }
-    li {
       position: relative;
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
       a {
         display: flex;
+
       }
       span {
         display: block;
         &:first-of-type {
           flex: none;
           width: 36px;
-          margin-right: 12px;
-          text-align: center;
         }
       }
     }
