@@ -1,13 +1,9 @@
-$padding-desktop: 36px;
+
 $padding-mobile: 18px;
 
 %main {
-  border-right: 1px solid #F2F3F4;
-  border-bottom: 1px solid #F2F3F4;
-  border-left: 1px solid #F2F3F4;
-  background: white;
-  padding: 0 $padding-desktop 26px;
-  font-size: 17px;
+  padding: 0 0 26px;
+  font-size: 16px;
   @media #{$LARGE-PHONE} {
     padding: 0 $padding-mobile 26px;
   }
@@ -24,19 +20,19 @@ $padding-mobile: 18px;
     &.h2 {
       padding: 72px 0 12px;
       .number, h2 {
-        font-size: 20px;
+        font-size: 19px;
       }
     }
     &.h3 {
       padding: 36px 0 12px;
       .number, h3 {
-        font-size: 19px;
+        font-size: 18px;
       }
     }
     &.h4 {
       padding: 24px 0 12px;
       .number, h4 {
-        font-size: 18px;
+        font-size: 17px;
       }
     }
     &.h2 + .h3 {

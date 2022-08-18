@@ -18,10 +18,6 @@ html, body {
   overflow-wrap: break-word;
 }
 
-body {
-  background: rgb(251, 251, 251);
-}
-
 #app {
   @extend %page;
   min-height: 640px;

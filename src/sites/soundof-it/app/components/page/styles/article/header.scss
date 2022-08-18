@@ -1,19 +1,17 @@
 @import '../../../../../../shared/app/styles/media-breakpoints.scss';
 
-$padding-desktop: 36px;
+$padding-desktop: 0;
 $padding-mobile: 18px;
 
 header.title-board {
   img {
     display: block;
   }
-  background: none;
   .cover {
     z-index: 2;
     position: relative;
     width: 100%;
     overflow: hidden;
-    background: rgb(251, 251, 252);
     .cover-image {
       width: 100%;
       aspect-ratio: 1.7777;
@@ -31,7 +29,6 @@ header.title-board {
     height: 100px;
   }
   .author {
-    background: white;
     padding: 24px 0 0 $padding-desktop;
     position: relative;
     .picture {
@@ -54,7 +51,7 @@ header.title-board {
       }
       a {
         display: inline-block;
-        color: #2C3E50;
+        color: rgb(42, 42, 42);
       }
     }
     @media #{$LARGE-PHONE} {
@@ -62,7 +59,6 @@ header.title-board {
     }
   }
   .dates {
-    background: white;
     padding-bottom: 20px;
     padding-left: $padding-desktop;
     font-size: 12px;
@@ -79,7 +75,6 @@ header.title-board {
     }
   }
   h1 {
-    background: white;
     padding: 10px $padding-desktop 0 $padding-desktop;
     font-size: 30px;
     line-height: 1.2;
