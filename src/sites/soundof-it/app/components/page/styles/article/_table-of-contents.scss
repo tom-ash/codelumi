@@ -1,7 +1,7 @@
 $padding-mobile: 18px;
 
 %table-of-contents {
-  padding: 24px 0;
+  padding: 32px 0;
   @media #{$LARGE-PHONE} {
     padding: 24px $padding-mobile;
   }
@@ -47,6 +47,11 @@ $padding-mobile: 18px;
           width: 36px;
         }
       }
+    }
+  }
+  + .heading-container {
+    &.h2 {
+      padding-top: 0;
     }
   }
 }
