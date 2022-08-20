@@ -16,6 +16,8 @@ const Section = (props: SectionProps) => {
     st: style
   } = props
 
+  console.log(className)
+
   const body = jsonBody.map((node, index) => {
     const nodeProps = {
       key: index,

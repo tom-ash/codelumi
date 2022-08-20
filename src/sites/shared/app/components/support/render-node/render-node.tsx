@@ -135,14 +135,12 @@ const RenderNode = (props: RenderNodeProps) => {
   }
 
   if (node.main) {
-    // @ts-ignore
-    return <Section key={index} {...{ ...props, element: 'main', className: 'main', jsonBody: node.main }} />
+    return <Section key={index} {...{ ...props, element: 'main', className: node.className || 'main', jsonBody: node.main }} />
   }
 
   if (node.article) {
     const className = node.className
 
-    // @ts-ignore
     return <Section key={index} {...{ ...props, element: 'article', className, jsonBody: node.article }} />
   }
 

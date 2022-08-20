@@ -21,7 +21,7 @@ const PageTile = props => {
     langHandler
   } = props
 
-  const buttonClasses = ['edit']
+  const buttonClasses = ['page-edit']
   if (fetching) buttonClasses.push('fetching')
   const buttonClassName = buttonClasses.join(' ')
 
@@ -61,12 +61,12 @@ const PageTile = props => {
 
   return (
     <>
+      {<RenderNode {...nodeProps} />}
       {isAdmin && (
       <>
         {renderShow && <button className={buttonClassName} onClick={changePage}><SVG name='edit' /></button>}
       </>
       )}
-      {<RenderNode {...nodeProps} />}
     </>
   )
 }
