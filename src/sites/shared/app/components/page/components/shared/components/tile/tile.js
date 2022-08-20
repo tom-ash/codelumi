@@ -18,7 +18,8 @@ const PageTile = props => {
     changeRoute,
     buildUrl,
     changePage,
-    langHandler
+    langHandler,
+    title: pageTitle
   } = props
 
   const buttonClasses = ['page-edit']
@@ -56,7 +57,8 @@ const PageTile = props => {
     clientUrl,
     buildUrl,
     changeRoute,
-    langHandler
+    langHandler,
+    pageTitle,
   }
 
   return (

@@ -10,8 +10,6 @@ const PanelColum = (props: PanelColumnProps) => {
     showPanelKey
   } = props
 
-  console.log(showPanelKey)
-
   return (
     <div
       className='column'

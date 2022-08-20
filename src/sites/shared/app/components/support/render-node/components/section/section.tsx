@@ -13,10 +13,11 @@ const Section = (props: SectionProps) => {
     langHandler,
     element,
     className,
-    st: style
+    st: style,
+    pageTitle
   } = props
 
-  console.log(className)
+  // console.log(pageTitle)
 
   const body = jsonBody.map((node, index) => {
     const nodeProps = {
@@ -31,7 +32,8 @@ const Section = (props: SectionProps) => {
       lang,
       changeRoute,
       langHandler,
-      sectionBody: jsonBody
+      sectionBody: jsonBody,
+      pageTitle
     }
     
     return <RenderNode {...nodeProps} />

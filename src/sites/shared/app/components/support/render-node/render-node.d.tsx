@@ -84,4 +84,5 @@ type RenderNodeProps = {
   lang: string
   changeRoute: ChangeRoute
   langHandler: LangHandler
+  pageTitle?: string
 }
