@@ -3,21 +3,6 @@
 @import './article/article';
 
 %page {
-  button.page-edit {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    background: #7B7D7D;
-    svg {
-      display: none;
-      fill: #626567;
-    }
-  }
   main.page {
     max-width: 1440px;
     min-height: 640px;
@@ -32,6 +17,21 @@
 
     @media #{$LARGE-PHONE} {
       padding: 50px 0 0;
+    }
+  }
+  button.page-edit {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #7B7D7D;
+    svg {
+      display: none;
+      fill: #626567;
     }
   }
 }

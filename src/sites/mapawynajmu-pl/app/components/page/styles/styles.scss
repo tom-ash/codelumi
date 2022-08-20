@@ -8,32 +8,29 @@
     min-height: 640px;
     margin: 0 auto;
     padding: 0 20px;
-    &.edit {
-      padding-bottom: 320px;
-    }
     .root {
       @extend %root;
     }
     .article {
       @extend %article;
     }
-    button.edit {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      width: 20px;
-      height: 20px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      background: #7B7D7D;
-      svg {
-        display: none;
-        fill: #626567;
-      }
-    }
     @media #{$LARGE-PHONE} {
       padding: 50px 0 0;
+    }
+  }
+  button.page-edit {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #7B7D7D;
+    svg {
+      display: none;
+      fill: #626567;
     }
   }
 }
