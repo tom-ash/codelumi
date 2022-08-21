@@ -31,8 +31,6 @@ const RenderNode = (props: RenderNodeProps) => {
     pageTitle
   } = props
 
-  console.log(pageTitle)
-
   if (!node) return null
 
   if (typeof node === 'string') {
@@ -198,8 +196,6 @@ const RenderNode = (props: RenderNodeProps) => {
       lang,
       langHandler
     } = props
-
-    console.log(pageTitle)
 
     const titleBoardProps = {
       key: index,

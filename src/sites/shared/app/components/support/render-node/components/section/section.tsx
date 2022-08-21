@@ -17,8 +17,6 @@ const Section = (props: SectionProps) => {
     pageTitle
   } = props
 
-  // console.log(pageTitle)
-
   const body = jsonBody.map((node, index) => {
     const nodeProps = {
       key: index,
