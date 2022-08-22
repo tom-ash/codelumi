@@ -14,7 +14,8 @@ const Section = (props: SectionProps) => {
     element,
     className,
     st: style,
-    pageTitle
+    pageTitle,
+    pageImage
   } = props
 
   const body = jsonBody.map((node, index) => {
@@ -31,7 +32,8 @@ const Section = (props: SectionProps) => {
       changeRoute,
       langHandler,
       sectionBody: jsonBody,
-      pageTitle
+      pageTitle,
+      pageImage
     }
     
     return <RenderNode {...nodeProps} />

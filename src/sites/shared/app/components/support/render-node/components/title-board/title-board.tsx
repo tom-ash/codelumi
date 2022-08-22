@@ -4,52 +4,40 @@ import SVG from '../../../svg/svg.js'
 import prettifyDate from '../../../../../functions/time/prettify-date'
 
 interface TitleBoardProps {
-  title: string
-  author?: { n: string, l: string }
-  image?: { s: string, a: string, ar?: string }
-  logo?: { s: string, a: string }
+  imageSrc?: string
+  imageAlt?: string
+  authorName?: string
+  authorLink?: string
   publishedOn?: string
   modifiedOn?: string
+  title?: string
   appName: string
   lang: string
   langHandler(langs: { pl: string, en: string }): string
 }
 
-const Image = (image: { s: string, a: string, ar?: string }) => {
+const Image = (props: { imageSrc: string, imageAlt: string }) => {
   const {
-    s: src,
-    a: alt,
-    ar: aspectRatio
-  } = image
+    imageSrc,
+    imageAlt,
+  } = props
+
+  console.log(imageSrc)
+
   const imageProps = {
-    src,
-    alt,
+    src: imageSrc,
+    alt: imageAlt,
     className: 'cover-image',
-    style: { aspectRatio }
   }
 
   return <img {...imageProps} />
 }
 
-const Logo = (logo: { s: string, a: string }) => {
+const Author = (props: { authorName: string, authorLink: string }) => {
   const {
-    s: src,
-    a: alt
-  } = logo
-  const logoProps = {
-    src,
-    alt,
-    className: 'logo'
-  }
-  
-  return <img {...logoProps} />
-}
-
-const Author = (author: { n: string, l: string }) => {
-  const {
-    n: name,
-    l: link
-  } = author
+    authorName,
+    authorLink
+  } = props
 
   return (
     <div className='author'>
@@ -57,10 +45,10 @@ const Author = (author: { n: string, l: string }) => {
         {/* @ts-ignore */}
         <SVG name='penClip' />
         <a
-          href={link}
+          href={authorLink}
           target='_blank'
         >
-          {name}
+          {authorName}
         </a>
       </div>
     </div>
@@ -69,37 +57,33 @@ const Author = (author: { n: string, l: string }) => {
 
 const TitleBoard = (props: TitleBoardProps) => {
   const {
+    imageSrc,
+    imageAlt,
+    authorName,
+    authorLink,
+    // publishedOn,
+    // modifiedOn,
     title,
-    author,
-    image,
-    logo,
-    publishedOn,
-    modifiedOn,
     appName,
-    lang,
-    langHandler
+    // lang,
+    // langHandler
   } = props
 
   useStyles(require(`../../../../../../../${appName}/app/components/page/styles/article/header.scss`))
 
+  console.log(imageSrc)
+
   return (
     <header className='title-board'>
       <div className='cover'>
-        {image && <Image {...image} />}
-        {logo && <Logo {...logo} />}
+        {imageSrc && imageAlt && <Image {...{ imageSrc, imageAlt }} />}
       </div>
-      {author && <Author {...author} />}
-      {/* <div className='dates'>
-        <span>
-          {langHandler({ pl: 'Opublikowano w dniu', en: 'Published on'})} {publishedOn && prettifyDate({ date: publishedOn, lang })}.
-        </span>
-        <span>
-          {langHandler({ pl: 'Ostatnio zmodyfikowano w dniu', en: 'Modified on'})} {modifiedOn && prettifyDate({ date: modifiedOn, lang })}.
-        </span>
-      </div> */}
-      <h1>
-        {title}
-      </h1>
+      {authorName && authorLink && <Author {...{ authorName, authorLink }} />}
+      {title && (
+        <h1>
+          {title}
+        </h1>
+      )}
     </header>
   )
 }

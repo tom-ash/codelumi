@@ -19,7 +19,8 @@ const PageTile = props => {
     buildUrl,
     changePage,
     langHandler,
-    title: pageTitle
+    title: pageTitle,
+    picture: pageImage
   } = props
 
   const buttonClasses = ['page-edit']
@@ -59,6 +60,7 @@ const PageTile = props => {
     changeRoute,
     langHandler,
     pageTitle,
+    pageImage
   }
 
   return (

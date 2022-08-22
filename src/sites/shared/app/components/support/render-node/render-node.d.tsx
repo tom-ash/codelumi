@@ -11,20 +11,13 @@ type RenderNodeData = string | string[] | {
   leftAside?: RenderNodeData[]
   aside?: RenderNodeData[]
   header?: {
-    t: string
-    a?: {
-      n: string
-      l: string
-    }
-    i?: {
-      s: string
-      a: string
-      ar: string
-    }
-    l?: {
-      s: string
-      a: string
-    }
+    imageSrc?: string,
+    imageAlt?: string,
+    authorName?: string,
+    authorLink?: string,
+    // publishedOn,
+    // modifiedOn,
+    title?: string,
   }
   editorial?: string
   toc?: string
@@ -85,4 +78,5 @@ type RenderNodeProps = {
   changeRoute: ChangeRoute
   langHandler: LangHandler
   pageTitle?: string
+  pageImage?: string
 }

@@ -28,7 +28,8 @@ const RenderNode = (props: RenderNodeProps) => {
     device,
     lang,
     langHandler,
-    pageTitle
+    pageTitle,
+    pageImage
   } = props
 
   if (!node) return null
@@ -182,15 +183,13 @@ const RenderNode = (props: RenderNodeProps) => {
 
   if (node.header) {
     const {
-      t: title,
-      a: author,
-      i: image,
-      l: logo
+      authorName,
+      authorLink,
     } = node.header
 
     const {
-      publishedOn,
-      modifiedOn,
+      // publishedOn,
+      // modifiedOn,
       appName,
       device,
       lang,
@@ -199,20 +198,19 @@ const RenderNode = (props: RenderNodeProps) => {
 
     const titleBoardProps = {
       key: index,
-      title: title || pageTitle,
-      author,
-      image,
-      logo,
-      publishedOn,
-      modifiedOn,
+      imageSrc: pageImage,
+      imageAlt: pageTitle,
+      authorName,
+      authorLink,
+      // publishedOn,
+      // modifiedOn,
+      title: pageTitle,
       appName,
       device,
       lang,
       langHandler,
     }
 
-    // TODO: Fix!
-    // @ts-ignore
     return <TitleBoard {...titleBoardProps} />
   }
 
@@ -231,7 +229,8 @@ const RenderNode = (props: RenderNodeProps) => {
       langHandler,
       className: node.className,
       st: node.st,
-      pageTitle
+      pageTitle,
+      pageImage
     }
 
     return <Section {...sectionProps} />
