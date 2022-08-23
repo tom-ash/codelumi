@@ -3,6 +3,7 @@
 
 $padding-desktop: 36px;
 $padding-mobile: 18px;
+$horizontal-margin-mobile: 18px;
 
 %article {
   max-width: 704px;
@@ -20,13 +21,6 @@ $padding-mobile: 18px;
   .table-of-contents {
     @extend %table-of-contents;
   }
-  @media #{$LARGE-PHONE} {
-    margin: 0 auto 36px;
-    box-shadow: none;
-  }
-  > img {
-    width: 100%;
-  }
   .heading-container {
     display: flex;
     .number {
@@ -35,48 +29,48 @@ $padding-mobile: 18px;
       margin-right: 12px;
     }
     &.h2 {
-      padding: 72px 0 12px;
+      margin: 72px 0 12px;
       .number, h2 {
         font-size: 19px;
       }
       @media #{$LARGE-PHONE} {
-        padding: 72px $padding-mobile 12px;
+        margin: 72px $horizontal-margin-mobile 12px;
       }
     }
     &.h3 {
-      padding: 36px 0 12px;
+      margin: 36px 0 12px;
       .number, h3 {
         font-size: 18px;
       }
       @media #{$LARGE-PHONE} {
-        padding: 36px $padding-mobile 12px;
+        margin: 36px $horizontal-margin-mobile 12px;
       }
     }
     &.h4 {
-      padding: 24px 0 12px;
+      margin: 24px 0 12px;
       .number, h4 {
         font-size: 17px;
       }
       @media #{$LARGE-PHONE} {
-        padding: 24px $padding-mobile 12px;
+        margin: 24px $horizontal-margin-mobile 12px;
       }
     }
     &.h2 + .h3 {
-      padding: 0 0 12px;
+      margin: 0 0 12px;
       @media #{$LARGE-PHONE} {
-        padding: 0 $padding-mobile 12px;
+        margin: 0 $horizontal-margin-mobile 12px;
       }
     }
     &.h3 + .h4 {
-      padding: 0 0 12px;
+      margin: 0 0 12px;
       @media #{$LARGE-PHONE} {
-        padding: 0 $padding-mobile 12px;
+        margin: 0 $horizontal-margin-mobile 12px;
       }
     }
   }
   .heading-container:first-child {
     &.h2 {
-      padding: 0 0 12px;
+      margin: 0 0 12px;
     }  
   }
   p {
@@ -99,7 +93,7 @@ $padding-mobile: 18px;
       }
     }
     @media #{$LARGE-PHONE} {
-      padding: 0 $padding-mobile 12px;
+      margin: 0 $horizontal-margin-mobile 12px;
     }
   }
   p + ul {
@@ -113,7 +107,7 @@ $padding-mobile: 18px;
   }
   ul {
     margin-bottom: 18px;
-    padding-left: 18px;
+    margin-left: 18px;
     li {
       p {
         margin: 0 0 3px;
@@ -121,7 +115,17 @@ $padding-mobile: 18px;
       }
     }
     @media #{$LARGE-PHONE} {
-      margin: 0 $padding-mobile 18px;
+      margin: 0 36px 18px;
     }
+  }
+  > img {
+    width: 100%;
+    @media #{$LARGE-PHONE} {
+      padding: 0 18px;
+    }
+  }
+  @media #{$LARGE-PHONE} {
+    margin: 0 auto 36px;
+    box-shadow: none;
   }
 }
