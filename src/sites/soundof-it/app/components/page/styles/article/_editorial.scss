@@ -4,7 +4,4 @@ $padding-mobile: 18px;
 %editorial {
   font-size: 17px;
   line-height: 1.5;
-  @media #{$LARGE-PHONE} {
-    padding: 10px $padding-mobile;
-  }
 }

@@ -29,12 +29,14 @@ $horizontal-margin-mobile: 18px;
       margin-right: 12px;
     }
     &.h2 {
-      margin: 72px 0 12px;
+      margin: 42px 0 12px;
+      border-top: 2px solid #E5E7E9;
+      padding-top: 36px;
       .number, h2 {
         font-size: 19px;
       }
       @media #{$LARGE-PHONE} {
-        margin: 72px $horizontal-margin-mobile 12px;
+        margin: 42px $horizontal-margin-mobile 12px;
       }
     }
     &.h3 {
@@ -68,8 +70,9 @@ $horizontal-margin-mobile: 18px;
       }
     }
   }
-  .heading-container:first-child {
+  .heading-container:first-of-type {
     &.h2 {
+      border-top: none;
       margin: 0 0 12px;
     }  
   }

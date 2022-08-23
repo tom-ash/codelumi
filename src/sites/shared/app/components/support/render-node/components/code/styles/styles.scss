@@ -1,14 +1,15 @@
 @import './css';
+@import '../../../../../../styles/media-breakpoints.scss';
 
 pre {
   margin-bottom: 15px;
+  border-radius: 4px;
   padding: 18px;
-  background: #283747;
-  font-size: 15px;
-  line-height: 1.4;
   overflow-x: auto;
   overflow-y: hidden;
-  border-radius: 5px;
+  background: #283747;
+  line-height: 1.4;
+  font-size: 15px;
   code {
     padding: 0;
     color: #E5E7E9;
@@ -172,5 +173,9 @@ pre {
         color: rgb(150, 210, 240);
       }
     }
+  }
+  @media #{$LARGE-PHONE} {
+    margin-right: 18px;
+    margin-left: 18px;
   }
 }
