@@ -1,6 +1,7 @@
 import React from 'react'
 import { ManagedLink } from 'managed-inputs'
 import prettifyDate from '../../../../../functions/time/prettify-date'
+import SVG from '../../../../support/svg/svg'
 
 interface IndexLinkProps {
   clientUrl: string,
@@ -39,7 +40,8 @@ const IndexLink = (props: IndexLinkProps) => {
           <span className={category}>{category}</span><span className={subcategory}>{subcategory}</span>
         </div>
         <div className='modified-on'>
-          {modifiedOn && prettifyDate({ date: modifiedOn, lang: hrefLang })}
+          {/* @ts-ignore */}
+          <SVG name='calendar' /> {modifiedOn && prettifyDate({ date: modifiedOn, lang: hrefLang })}
         </div>
         <div className='title'>
           {title}

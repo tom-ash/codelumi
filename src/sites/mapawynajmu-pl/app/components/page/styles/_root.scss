@@ -25,8 +25,12 @@
     position: relative;
     float: left;
     transition: .2s ease-in;
+    .link-data {
+      margin-top: 12px;
+      height: 64px;
+    }
     .category-and-subcategory {
-      margin: 12px 0 5px;
+      margin-bottom: 5px;
       font-size: 10px;
       font-weight: bold;
       text-transform: uppercase;
@@ -43,12 +47,23 @@
       transition: .2s ease-in;      
     }
     .modified-on {
-      top: 10px;
+      bottom: 54px;
       right: 0;
       position: absolute;
       font-size: 10px;
+      line-height: 1;
       text-transform: uppercase;
-      color: rgb(64, 64, 64);
+      border-radius: 2px;
+      padding-left: 19px;
+      color: #626567;
+      svg {
+        position: absolute;
+        left: 5px;
+        fill: #626567;
+        display: inline-block;
+        height: 10px;
+        margin-right: 4px;
+      }
     }
     img {
       display: block;
