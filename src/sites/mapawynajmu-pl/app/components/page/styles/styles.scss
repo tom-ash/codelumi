@@ -15,7 +15,7 @@
       @extend %article;
     }
     @media #{$LARGE-PHONE} {
-      padding: 50px 0 0;
+      padding: 0;
     }
   }
   button.page-edit {
