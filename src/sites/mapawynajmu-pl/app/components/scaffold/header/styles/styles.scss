@@ -41,6 +41,16 @@
             }
           }
         }
+        &.add-announcement {
+          height: 32px;
+          margin-top: 14px;
+          border-radius: 4px;
+          padding-right: 9px;
+          padding-left: 9px;
+          background: #229954;
+          line-height: 32px;
+          color: white;
+        }
       }
     }
   }
