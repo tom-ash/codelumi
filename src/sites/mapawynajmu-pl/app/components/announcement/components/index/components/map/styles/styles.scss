@@ -7,9 +7,6 @@
 
 #announcement-index-map {
   margin: 0 20px;
-  @media #{$SMALL-TABLET} {
-    margin: 0 12px;
-  }
   #google-map-container {
     @extend %google-map;
     .pin {
@@ -20,4 +17,8 @@
     opacity: 0;
   }
   transition: 0.16s ease-in;
+  @media #{$SMALL-TABLET} {
+    margin: 0;
+    border-radius: 0;
+  }
 }

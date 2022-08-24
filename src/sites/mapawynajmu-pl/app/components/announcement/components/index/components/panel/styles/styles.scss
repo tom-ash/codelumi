@@ -10,11 +10,6 @@
   margin: 0px 20px 4px;
   padding: 10px;
 
-  @media #{$LARGE-PHONE} {
-    margin: 0px 12px 12px;
-    padding: 10px 10px 0;
-  }
-
   .filter {
     position: relative;
     float: left;
@@ -127,5 +122,11 @@
     top: -0.5em; 
     font-size: 80%;
     margin-left: 2px;
+  }
+
+  @media #{$LARGE-PHONE} {
+    margin: 0px 0 3px;
+    padding: 10px 10px 0;
+    border-radius: 0;
   }
 }
