@@ -9,14 +9,15 @@
   }
   h1 {
     font-size: 14px;
-    margin: 24px 20px 12px;
+    margin: 24px 20px 6px;
+    padding-bottom: 6px;
     color: #1B2631;
     line-height: 1.5;
     font-weight: normal;
     line-height: 1;
-    // color: #7B7D7D;
+    border-bottom: 1px solid #E5E7E9;
     @media #{$LARGE-PHONE} {
-      margin: 12px;
+      margin: 12px 10px 6px;
       text-align: center;
     }
   }
