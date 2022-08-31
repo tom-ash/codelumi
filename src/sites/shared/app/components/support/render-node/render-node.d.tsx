@@ -78,5 +78,5 @@ type RenderNodeProps = {
   changeRoute: ChangeRoute
   langHandler: LangHandler
   pageTitle?: string
-  pageImage?: string
+  coverImage?: string
 }

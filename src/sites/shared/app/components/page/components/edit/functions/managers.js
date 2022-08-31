@@ -82,13 +82,13 @@ export function canonicalUrlManager() {
 }
 
 export function pictureManager() {
-  const { picture, changeInputs } = this.props
+  const { coverImage, changeInputs } = this.props
 
   return {
     classNames: { container: 'form-input text' },
-    label: 'Picture',
-    value: picture || '',
-    onChange: value => changeInputs({ picture: value })
+    label: 'Cover Image',
+    value: coverImage || '',
+    onChange: value => changeInputs({ coverImage: value })
   }
 }
 

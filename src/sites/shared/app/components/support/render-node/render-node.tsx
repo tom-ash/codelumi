@@ -29,7 +29,7 @@ const RenderNode = (props: RenderNodeProps) => {
     lang,
     langHandler,
     pageTitle,
-    pageImage
+    coverImage
   } = props
 
   if (!node) return null
@@ -198,7 +198,7 @@ const RenderNode = (props: RenderNodeProps) => {
 
     const titleBoardProps = {
       key: index,
-      imageSrc: pageImage,
+      imageSrc: coverImage,
       imageAlt: pageTitle,
       authorName,
       authorLink,
@@ -230,7 +230,7 @@ const RenderNode = (props: RenderNodeProps) => {
       className: node.className,
       st: node.st,
       pageTitle,
-      pageImage
+      coverImage
     }
 
     return <Section {...sectionProps} />

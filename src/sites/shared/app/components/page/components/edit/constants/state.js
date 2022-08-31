@@ -12,7 +12,7 @@ export const inputs = {
   description: null,
   keywords: null,
   canonical_url: null,
-  picture: null,
+  coverImage: null,
   meta: null,
   lang_ver_urls: null,
   online: null,

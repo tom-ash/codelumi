@@ -15,7 +15,7 @@ const Section = (props: SectionProps) => {
     className,
     st: style,
     pageTitle,
-    pageImage
+    coverImage
   } = props
 
   const body = jsonBody.map((node, index) => {
@@ -33,7 +33,7 @@ const Section = (props: SectionProps) => {
       langHandler,
       sectionBody: jsonBody,
       pageTitle,
-      pageImage
+      coverImage
     }
     
     return <RenderNode {...nodeProps} />

@@ -20,7 +20,7 @@ const PageTile = props => {
     changePage,
     langHandler,
     title: pageTitle,
-    picture: pageImage
+    coverImage
   } = props
 
   const buttonClasses = ['page-edit']
@@ -60,7 +60,7 @@ const PageTile = props => {
     changeRoute,
     langHandler,
     pageTitle,
-    pageImage
+    coverImage
   }
 
   return (
