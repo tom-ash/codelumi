@@ -1,20 +1,9 @@
-export function nameManager() {
-  const { name, changeInputs } = this.props
-
-  return {
-    classNames: { container: 'form-input text' },
-    label: 'Name',
-    value: name,
-    onChange: value => changeInputs({ name: value })
-  }
-}
-
 export function urlManager() {
   const { url, changeInputs } = this.props
 
   return {
     classNames: { container: 'form-input text' },
-    label: 'Url',
+    label: 'URL',
     value: url,
     onChange: value => changeInputs({ url: value })
   }
@@ -89,18 +78,6 @@ export function pictureManager() {
     label: 'Cover Image',
     value: coverImage || '',
     onChange: value => changeInputs({ coverImage: value })
-  }
-}
-
-export function metaManager() {
-  const { meta, changeInputs } = this.props
-
-  return {
-    classNames: { container: 'form-input textarea' },
-    label: 'Meta',
-    value: meta || '{}',
-    counterLimit: 10000,
-    onChange: value => changeInputs({ meta: value })
   }
 }
 

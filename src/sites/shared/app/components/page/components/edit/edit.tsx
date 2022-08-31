@@ -34,22 +34,19 @@ interface PageCreateProps {
 }
 
 class PageCreate extends React.Component<PageCreateProps> {
-  nameManager: () => void
-  urlManager: () => void
+  urlManager: () => object
   bodyManager: () => void
   titleManager: () => void
   descriptionManager: () => void
   keywordsManager: () => void
-  canonicalUrlManager: () => void
+  canonicalUrlManager: () => object
   pictureManager: () => void
-  metaManager: () => void
   saveManager: () => void
   saveAndShowManager: () => void
   save: () => void
 
   constructor(props: PageCreateProps) {
     super(props)
-    this.nameManager = managers.nameManager.bind(this)
     this.urlManager = managers.urlManager.bind(this)
     this.bodyManager = managers.bodyManager.bind(this)
     this.titleManager = managers.titleManager.bind(this)
@@ -57,7 +54,6 @@ class PageCreate extends React.Component<PageCreateProps> {
     this.keywordsManager = managers.keywordsManager.bind(this)
     this.canonicalUrlManager = managers.canonicalUrlManager.bind(this)
     this.pictureManager = managers.pictureManager.bind(this)
-    this.metaManager = managers.metaManager.bind(this)
     this.saveManager = managers.saveManager.bind(this)
     this.saveAndShowManager = managers.saveAndShowManager.bind(this)
     this.save = save.bind(this)
@@ -85,38 +81,53 @@ class PageCreate extends React.Component<PageCreateProps> {
 
     if (!routeSynced) return null
 
-    const tileProps = { ...this.props, renderEdit: true, updatePage: this.save }
+    const tileProps = {
+      ...this.props,
+      renderEdit: true,
+      updatePage: this.save
+    }
     const updateStatusProps = { updated }
-    const schemaProps = { schemaMode, autoSchema, manualSchema, changeInputs }
-    const metaProps = { publishedOn, modifiedOn, changeInputs, category, subcategory, pageLang, langAltsGroup }
+    const schemaProps = {
+      schemaMode,
+      autoSchema,
+      manualSchema,
+      changeInputs
+    }
+    const metaProps = {
+      publishedOn,
+      modifiedOn,
+      changeInputs,
+      category,
+      subcategory,
+      pageLang,
+      langAltsGroup
+    }
 
     return (
       <>
         <PageTile { ...tileProps } />
         <div id='edit-panel'>
           <nav>
-            <div onClick={() => changeControl({ nav: 'body' })}>
-              Body
+            <div onClick={() => changeControl({ nav: 'urls' })}>
+              URLs
             </div>
             <div onClick={() => changeControl({ nav: 'controls' })}>
               Controls
             </div>
+            <div onClick={() => changeControl({ nav: 'body' })}>
+              Body
+            </div>
             <div onClick={() => changeControl({ nav: 'meta' })}>
               Meta
-            </div>
-            <div onClick={() => changeControl({ nav: 'urls' })}>
-              URLs
-            </div>
-            <div onClick={() => changeControl({ nav: 'name' })}>
-              Name
             </div>
             <div onClick={() => changeControl({ nav: 'schema' })}>
               Schema
             </div>
           </nav>
           <form className={nav}>
-            {nav === 'body' && <>
-              <ManagedTextarea {...this.bodyManager()} />
+            {nav === 'urls' &&  <>
+              <ManagedText {...this.urlManager()} />
+              <ManagedText {...this.canonicalUrlManager()} />
             </>}
 
             {nav === 'controls' && <>
@@ -124,27 +135,28 @@ class PageCreate extends React.Component<PageCreateProps> {
               <HeaderAutonumberingInput checked={headerAutonumbering} changeInputs={changeInputs} />
             </>}
 
+            {nav === 'body' && <>
+              {/* @ts-ignore */}
+              <ManagedTextarea {...this.bodyManager()} />
+            </>}
+
             {nav === 'meta' && <>
               <Meta {...metaProps} />
+              {/* @ts-ignore */}
               <ManagedText {...this.titleManager()} />
+              {/* @ts-ignore */}
               <ManagedTextarea {...this.descriptionManager()} />
+              {/* @ts-ignore */}
               <ManagedTextarea {...this.keywordsManager()} />
+              {/* @ts-ignore */}
               <ManagedText {...this.pictureManager()} />
-              <ManagedTextarea {...this.metaManager()} />
-            </>}
-
-            {nav === 'urls' &&  <>
-              <ManagedText {...this.urlManager()} />
-              <ManagedText {...this.canonicalUrlManager()} />
-            </>}
-
-            {nav === 'name' &&  <>
-              <ManagedText {...this.nameManager()} />
             </>}
 
             {nav === 'schema' &&  <Schema {...schemaProps} />}
           </form>
+          {/* @ts-ignore */}
           <ManagedButton {...this.saveManager()} />
+          {/* @ts-ignore */}
           <ManagedButton {...this.saveAndShowManager()} />
           <UpdateStatus {...updateStatusProps} />
         </div>
