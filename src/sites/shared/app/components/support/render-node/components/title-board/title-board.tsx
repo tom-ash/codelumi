@@ -22,8 +22,6 @@ const Image = (props: { imageSrc: string, imageAlt: string }) => {
     imageAlt,
   } = props
 
-  console.log(imageSrc)
-
   const imageProps = {
     src: imageSrc,
     alt: imageAlt,
@@ -70,8 +68,6 @@ const TitleBoard = (props: TitleBoardProps) => {
   } = props
 
   useStyles(require(`../../../../../../../${appName}/app/components/page/styles/article/header.scss`))
-
-  console.log(imageSrc)
 
   return (
     <header className='title-board'>

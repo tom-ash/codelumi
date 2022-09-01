@@ -18,8 +18,6 @@ const Section = (props: SectionProps) => {
     codeLang
   } = props
 
-  console.log(codeLang)
-
   const body = jsonBody.map((node, index) => {
     const nodeProps = {
       key: index,

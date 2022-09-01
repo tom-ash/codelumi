@@ -4,8 +4,6 @@ import { UPDATE_API_ROUTE } from '../constants/api_route_data.js'
 export function save({ withRouteChange = false }) {
   const { apiUrl, changeControl, changeData, headerAutonumbering, autoSchema, manualSchema } = this.props
   const body = JSON.parse(this.props.body)
-  const style = JSON.parse(this.props.style)
-  const meta = JSON.parse(this.props.meta)
   const { method, route } = UPDATE_API_ROUTE
 
   let currentH2 = 0
@@ -69,8 +67,6 @@ export function save({ withRouteChange = false }) {
     {
       ...this.props,
       body,
-      style,
-      meta,
       autoSchema,
       manualSchema
     }
