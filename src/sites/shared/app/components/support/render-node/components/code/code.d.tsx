@@ -3,5 +3,5 @@ interface CodeProps {
     c: string,
     l: string
   } | string,
-  pageCodeLang: string
+  sectionCodeLang: string
 }

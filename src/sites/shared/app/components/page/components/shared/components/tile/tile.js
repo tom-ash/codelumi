@@ -35,20 +35,11 @@ const PageTile = props => {
     }
   })()
 
-  const jsonMeta = (() => {
-    try {
-      return typeof meta === 'object' ? meta : JSON.parse(meta)
-    } catch {
-      return {}
-    }
-  })()
-
   const nodeProps = {
     node: {
       page: jsonBody
     },
     jsonBody,
-    jsonMeta,
     publishedOn,
     modifiedOn,
     lang,

@@ -22,7 +22,6 @@ const RenderNode = (props: RenderNodeProps) => {
     index,
     appName,
     jsonBody,
-    jsonMeta,
     clientUrl,
     changeRoute,
     device,
@@ -92,10 +91,9 @@ const RenderNode = (props: RenderNodeProps) => {
   }
 
   if (node.code) {
+    const { codeLang: sectionCodeLang } = props
     const { code } = node
-    // @ts-ignore
-    const { jsonMeta: { codeLang: pageCodeLang } } = props
-    const codeProps = { code, pageCodeLang }
+    const codeProps = { code, sectionCodeLang }
 
     return <Code key={index} {...codeProps}/>
   }
@@ -142,8 +140,9 @@ const RenderNode = (props: RenderNodeProps) => {
 
   if (node.article) {
     const className = node.className
+    const codeLang = node.codeLang
 
-    return <Section key={index} {...{ ...props, element: 'article', className, jsonBody: node.article }} />
+    return <Section key={index} {...{ ...props, element: 'article', className, codeLang, jsonBody: node.article }} />
   }
 
   if (node.pageIndexer) {
@@ -221,7 +220,6 @@ const RenderNode = (props: RenderNodeProps) => {
       index,
       appName,
       jsonBody,
-      jsonMeta,
       clientUrl,
       changeRoute,
       device,
@@ -243,7 +241,6 @@ const RenderNode = (props: RenderNodeProps) => {
       index,
       appName,
       jsonBody,
-      jsonMeta,
       clientUrl,
       changeRoute,
       device,

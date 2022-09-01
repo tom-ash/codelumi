@@ -5,7 +5,6 @@ const Section = (props: SectionProps) => {
   const {
     appName,
     jsonBody,
-    jsonMeta,
     clientUrl,
     changeRoute,
     device,
@@ -15,8 +14,11 @@ const Section = (props: SectionProps) => {
     className,
     st: style,
     pageTitle,
-    coverImage
+    coverImage,
+    codeLang
   } = props
+
+  console.log(codeLang)
 
   const body = jsonBody.map((node, index) => {
     const nodeProps = {
@@ -24,7 +26,6 @@ const Section = (props: SectionProps) => {
       node,
       index,
       jsonBody,
-      jsonMeta,
       clientUrl,
       appName,
       device,
@@ -33,7 +34,8 @@ const Section = (props: SectionProps) => {
       langHandler,
       sectionBody: jsonBody,
       pageTitle,
-      coverImage
+      coverImage,
+      codeLang
     }
     
     return <RenderNode {...nodeProps} />

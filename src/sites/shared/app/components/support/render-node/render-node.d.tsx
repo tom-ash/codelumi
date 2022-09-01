@@ -59,13 +59,13 @@ type RenderNodeData = string | string[] | {
   st?: React.CSSProperties
   opts?: object
   index?: number
+  codeLang?: string
 }
 
 type RenderNodeProps = {
   node: RenderNodeData
   index?: number
   jsonBody: RenderNodeData[]
-  jsonMeta?: { codeLang: string }
   sectionBody?: RenderNodeData[]
   publishedOn?: string
   modifiedOn?: string
@@ -79,4 +79,5 @@ type RenderNodeProps = {
   langHandler: LangHandler
   pageTitle?: string
   coverImage?: string
+  codeLang?: string
 }
