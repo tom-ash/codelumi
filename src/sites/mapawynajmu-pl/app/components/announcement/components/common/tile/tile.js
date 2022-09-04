@@ -75,7 +75,7 @@ class AnnouncementTile extends React.Component {
       resetData,
       changeApp,
       path,
-      title
+      title,
     } = this.props
     const venueShow = venue === 'show'
     const positionFromTop = getPositionFromTop.apply(this)

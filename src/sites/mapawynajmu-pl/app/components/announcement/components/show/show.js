@@ -63,7 +63,8 @@ class AnnouncementShow extends React.Component {
       name,
       links,
       locality,
-      sublocality
+      sublocality,
+      title,
     } = this.props
 
     const { phone } = this.state
@@ -118,6 +119,7 @@ class AnnouncementShow extends React.Component {
           path={path}
           locality={locality}
           sublocality={sublocality}
+          title={title}
         />
       </div>
     )

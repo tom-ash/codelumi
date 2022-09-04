@@ -46,7 +46,8 @@ export const mapStateToProps = store => {
     englishDescription,
     name,
     locality,
-    sublocality
+    sublocality,
+    title,
   } = store.announcement.show.data
 
   return {
@@ -88,7 +89,8 @@ export const mapStateToProps = store => {
     fetch,
     links,
     locality,
-    sublocality
+    sublocality,
+    title,
   }
 }
     
