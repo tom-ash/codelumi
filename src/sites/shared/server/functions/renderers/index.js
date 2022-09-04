@@ -21,9 +21,10 @@ function indexRenderer(props) {
     `<!doctype html>
     <html lang="${lang}">
       <head>
-        <link rel="canonical" href="${canonicalUrl}">
-        ${alternateLinks}
         <title>${title}</title>
+        <link rel="canonical" href="${canonicalUrl}">
+        <link rel="icon" type="image/x-icon" href="https://mapawynajmu.pl/favicon.ico">
+        ${alternateLinks}
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta name="robots" content="${robots}">
