@@ -16,6 +16,11 @@ const buildAnchor = (matchArray: string[]) => {
     properties += ' target="_blank"'
   }
 
+  // TODO: Find a faster approach.
+  if (properties.indexOf('title') === -1) {
+    properties += ` title="${text}"`
+  }
+
   return (
     `<a ${properties}>${text}</a>`
   )
