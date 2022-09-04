@@ -42,7 +42,8 @@ class ManagedSlider extends React.Component {
     const {
       disableSLides,
       chevronLeft,
-      chevronRight
+      chevronRight,
+      title,
     } = this.props
     
     const {
@@ -91,14 +92,15 @@ class ManagedSlider extends React.Component {
               }}
             >
               <img
-                loading='lazy'
                 src={picture.database}
+                alt={title}
                 className='managed-pictures-picture'
                 draggable={false}
                 style={{
                   width: '100%',
                   height: '100%',
                 }}
+                loading='lazy'
                 onTouchStart={this.onTouchStartHandler}
                 onTouchEnd={this.onTouchEndHandler}
                 onMouseDown={this.onMouseDownHandler}

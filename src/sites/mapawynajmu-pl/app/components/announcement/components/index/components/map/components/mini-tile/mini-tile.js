@@ -97,6 +97,7 @@ const AnnouncementShowMiniTile = ({
         pictures={pictures}
         category={category}
         area={area}
+        title={title}
         disableSLides
       />
       <div className='category-and-location'>

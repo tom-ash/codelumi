@@ -28,7 +28,8 @@ class AnnouncementShowPictures extends React.Component {
       heightQuantifier,
       venue,
       isMobile,
-      path
+      path,
+      title,
     } = this.props
 
     const {
@@ -48,6 +49,7 @@ class AnnouncementShowPictures extends React.Component {
           heightQuantifier={heightQuantifier}
           chevronLeft={<Chevron />}
           chevronRight={<Chevron />}
+          title={title}
         />
         {venue !== 'mini-list' &&
         <div
