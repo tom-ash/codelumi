@@ -1,5 +1,5 @@
 @import '../../../../../shared/app/styles/media-breakpoints.scss';
-@use "./cde" as *;
+@import '../../../../../shared/app/styles/lined-heading';
 
 @mixin categories {
   .tutorials {
@@ -26,28 +26,33 @@
 }
 
 %root {
-  position: relative;
-  width: 100%;
-  padding-top: 20px;
-  @media #{$LARGE-TABLET} {
-    padding: 0 10px;
+  section.articles {
+    position: relative;
+    max-width: 1400px;
+    min-height: 640px;
+    margin: 36px auto 12px;
+    padding-top: 20px;
+    @media #{$LARGE-TABLET} {
+      padding: 0 10px;
+    }
+    @media #{$LARGE-TABLET} {
+      padding: 18px;
+    }
+    h1 {
+      @extend %lined-heading;
+      margin-bottom: 24px;
+      &:before {
+        right: 0;
+        left: 0;
+      }
+    }
   }
-  @media #{$LARGE-TABLET} {
-    padding: 20px;
-  }
-  h1 {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #979A9A;
-    padding-bottom: 4px;
-    font-size: 14px;
-    font-weight: normal;
-    color: #7B7D7D;
-  }
+
   .page-indexer {
     margin-bottom: 36px;
   }
+
   .index-link {
-    @include categories;
     position: relative;
     float: left;
     transition: .2s ease-in;
@@ -56,7 +61,7 @@
       height: 64px;
     }
     .category-and-subcategory {
-      margin: 12px 0 5px;
+      margin-bottom: 5px;
       font-size: 10px;
       font-weight: bold;
       text-transform: uppercase;
@@ -95,8 +100,7 @@
       display: block;
       width: 100%;
       aspect-ratio: 1.905;
-      border-radius: 4px;
-      box-shadow: lightgray 0px 0px 1px;
+      box-shadow: lightgray 0px 0px 0px;
       transition: .2s ease-in;
     }
     &:hover {

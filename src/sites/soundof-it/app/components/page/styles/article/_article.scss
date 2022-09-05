@@ -14,6 +14,7 @@ $horizontal-margin-mobile: 18px;
   h1 {
     margin: 24px 0;
     font-size: 36px;
+    letter-spacing: .5px;
   }
   .editorial {
     @extend %editorial;
@@ -30,8 +31,9 @@ $horizontal-margin-mobile: 18px;
     }
     &.h2 {
       margin: 42px 0 12px;
-      border-top: 2px solid #E5E7E9;
+      border-top: 1px solid rgb(216, 216, 216);
       padding-top: 36px;
+      letter-spacing: .2px;
       .number, h2 {
         font-size: 19px;
       }
