@@ -8,17 +8,30 @@
     margin: 0 auto 0;
   }
   h1 {
-    font-size: 14px;
-    margin: 24px 20px 6px;
-    padding-bottom: 6px;
-    color: #1B2631;
-    line-height: 1.5;
-    font-weight: normal;
-    line-height: 1;
-    border-bottom: 1px solid #E5E7E9;
-    @media #{$LARGE-PHONE} {
-      margin: 12px 10px 6px;
-      text-align: center;
+    position: relative;
+    margin: 24px 0 12px;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 12px;
+    &:before {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      left: 20px;
+      height: 1px;
+      background: rgb(192, 192, 192);
+      content: '';
+    }
+    span {
+      position: relative;
+      display: inline-block;
+      margin: 0 auto;
+      padding: 0 12px;
+      background: white;
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: .5px;
+      color: rgb(42, 42, 42);
     }
   }
   .phone {

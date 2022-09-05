@@ -33,7 +33,7 @@ class AnnouncementIndexSearch extends React.Component {
         {renderMap && (
           <>
             <h1>
-              {title}
+              <span>{title}</span>
             </h1>
             <AnnouncementIndexPanel />
             <AnnouncementIndexMap />
