@@ -7,13 +7,6 @@ export const requiredInputs = {
       en: 'Select category.'
     }
   },
-  area: {
-    id: 'announcement-create-area',
-    error: {
-      pl: 'Podaj powierzchnię.',
-      en: 'Provide area.'
-    }
-  },
   pictures: {
     id: 'announcement-create-pictures-input',
     error: {
@@ -32,7 +25,6 @@ export const requiredInputs = {
 
 export const requiredInputsArray = [
   'category',
-  'area',
   'pictures',
   'map'
 ]

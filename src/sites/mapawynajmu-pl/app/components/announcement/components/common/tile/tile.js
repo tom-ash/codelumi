@@ -117,29 +117,31 @@ class AnnouncementTile extends React.Component {
             <div className='header-row locality-sublocality'>
               {localitiesPresenter({ locality, sublocality })}
             </div>
-            <div className='area'>
-              <div className='area-amount'>
-              {area}
-              </div>
-              {this.langHandler({
-                pl: (
-                  <React.Fragment>
+            {area && (
+              <div className='area'>
+                <div className='area-amount'>
+                {area}
+                </div>
+                {this.langHandler({
+                  pl: (
+                    <React.Fragment>
+                      <div className='m'>
+                        m
+                      </div>
+                      <div className='sq'>
+                        2
+                      </div>
+                    </React.Fragment>
+                  ),
+                  en: (
                     <div className='m'>
-                      m
+                      sqm
                     </div>
-                    <div className='sq'>
-                      2
-                    </div>
-                  </React.Fragment>
-                ),
-                en: (
-                  <div className='m'>
-                    sqm
-                  </div>
-                )
-              })}
-              <div className='float-clear' />
-            </div>
+                  )
+                })}
+                <div className='float-clear' />
+              </div>
+            )}
           </h1>
         </div>
         <div className='float-clear' />

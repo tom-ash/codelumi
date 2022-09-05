@@ -59,7 +59,6 @@ export function areaManager() {
   } = inputs.area
 
   return {
-    id: requiredInputs.area.id,
     classNames: { container: 'form-input with-icon text' },
     value: this.props.area,
     label: this.langHandler(text),
@@ -77,10 +76,6 @@ export function areaManager() {
     ),
     onFocus: () => this.props.changeErrors({ area: noError }),
     onChange: value => this.props.changeInputs({ area: value }),
-    onBlur: () => {
-      this.areaManager().validate()
-      sendGaEvent(AREA_INPUTTED_EVENT)
-    },
     validate: () => this.handleErrorOnValidate('area', this.props.area),
     error: this.langHandler(this.props.errors.area)
   }

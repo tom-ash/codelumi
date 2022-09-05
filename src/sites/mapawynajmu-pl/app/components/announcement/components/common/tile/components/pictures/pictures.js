@@ -4,10 +4,8 @@ import { ManagedLink } from 'managed-inputs'
 import { getDerivedStateFromProps } from './functions/get-derived-state-from-props'
 import langHandler from '../../../../../../../functions/lang-handler'
 import { linkManager } from './functions/managers'
-import { shareOnFacebook } from '../../../../../functions/share-on-facebook'
 import SVG from '../../../../../../support/components/svg/svg'
 import AppContext from '../../../../../../../constants/context.js'
-import buildUrl from '../../../../../../../../shared/functions/builders/url'
 
 class AnnouncementShowPictures extends React.Component {
   constructor(props) {
@@ -51,13 +49,6 @@ class AnnouncementShowPictures extends React.Component {
           chevronRight={<Chevron />}
           title={title}
         />
-        {venue !== 'mini-list' &&
-        <div
-          className='share-on-facebook-button show'
-          onClick={() => shareOnFacebook(buildUrl({ path }), isMobile)}
-        >
-          <SVG name='facebook' />
-        </div>}
         {venue !== 'show' && venue !== 'mini-list' && <ManagedLink {...this.linkManager()} />}
       </div>
     )
