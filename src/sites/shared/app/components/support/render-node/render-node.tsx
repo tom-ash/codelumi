@@ -155,6 +155,13 @@ const RenderNode = (props: RenderNodeProps) => {
     return <Section key={index} {...{ ...props, element: 'article', className, codeLang, jsonBody: node.article }} />
   }
 
+  if (node.section) {
+    const className = node.className
+    const codeLang = node.codeLang
+
+    return <Section key={index} {...{ ...props, element: 'section', className, codeLang, jsonBody: node.section }} />
+  }
+
   if (node.pageIndexer) {
     const { collection } = node.pageIndexer
     const {

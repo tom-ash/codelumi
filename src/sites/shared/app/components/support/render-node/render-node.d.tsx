@@ -4,6 +4,7 @@ type RenderNodeData = string | string[] | {
   }
   page?: RenderNodeData[]
   image?: RenderNodeData[]
+  section?: RenderNodeData[]
   article?: RenderNodeData[]
   main?: RenderNodeData[]
   div?: RenderNodeData[]
