@@ -3,14 +3,14 @@
 @import './article/article';
 
 %page {
+  .articles {
+    @extend %root;
+  }
   main.page {
     max-width: 1440px;
     min-height: 640px;
     margin: 0 auto;
     padding: 0 20px;
-    .root {
-      @extend %root;
-    }
     .article {
       @extend %article;
     }

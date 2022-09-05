@@ -15,13 +15,12 @@ type RenderNodeData = string | string[] | {
     imageAlt?: string,
     authorName?: string,
     authorLink?: string,
-    // publishedOn,
-    // modifiedOn,
     title?: string,
   }
   editorial?: string
   toc?: string
   ul?: string[]
+  h1?: string
   h2?: string | {
     c: string
     n: string

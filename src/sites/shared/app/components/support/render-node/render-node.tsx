@@ -55,6 +55,16 @@ const RenderNode = (props: RenderNodeProps) => {
     return <List {...ulProps} />
   }
 
+  if (node.h1) {
+    // TODO: Move to Heading.
+
+    return (
+      <h1>
+        <span>{node.h1}</span>
+      </h1>
+    )
+  }
+
   if (node.h2) {
     const headingProps = {
       rank: 2,

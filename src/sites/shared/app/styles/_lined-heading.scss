@@ -1,0 +1,26 @@
+%lined-heading {
+  position: relative;
+  margin: 24px 0 12px;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 12px;
+  &:before {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    left: 20px;
+    border-bottom: 1px solid rgb(192, 192, 192);
+    content: '';
+  }
+  span {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0 12px;
+    background: white;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: .5px;
+    color: rgb(42, 42, 42);
+  }
+}
