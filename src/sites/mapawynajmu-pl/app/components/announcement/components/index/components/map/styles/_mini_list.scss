@@ -16,8 +16,14 @@
   left: 0;
   z-index: 2;
   overflow-y: scroll;
-  padding-right: 4px;
-  background: #F8F9F9;
+  // padding-left: 8px;
+  // padding-right: 8px;
+
+  padding: 0 12px;
+
+  background: white;
+
+  // background: #F8F9F9;
   @media #{$LARGE-TABLET} {
     position: relative;
     width: 100%;
@@ -26,15 +32,25 @@
     white-space: nowrap;
     top: 0;
   }
-  .announcement-show-container {
+
+
+
+
+
+  .announcement-list-tile {
     position: relative;
-    color: #F2F3F4;
-    margin-bottom: 4px;
+    margin-bottom: 12px;
     min-height: 200px;
+    background: white;
+    overflow: hidden;
+
+    background: #FBFCFC;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 12px;
+
     @media #{$LARGE-TABLET} {
       min-height: 204.8px;
       position: relative;
-      margin-right: 4px;
+      margin-right: 12px;
       display: inline-block;
       width: 320px;
       @media #{$LARGE-PHONE} {
@@ -43,29 +59,25 @@
       }
     }
     .category-and-location {
+      min-height: 29px;
       z-index: 2;
-      position: absolute;
       top: 0;
-      padding: 4px;
       border-radius: 3px;
-      background: rgba(44, 62, 80, 0.75);
-      border-radius: 3px;
-      font-size: 14px;
+      font-size: 13px;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 8px;
     }
     .data {
+      min-height: 25px;
+      padding: 0 8px 8px;
       z-index: 2;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      padding: 5px;
-      font-size: 17px;
+      font-size: 16px;
       font-family: 'Oswald', sans-serif;
-      background: rgba(44, 62, 80, 0.75);
-      border-top-left-radius: 3px;
-      text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+      display: flex;
+      font-weight: 500;
       .area {
-        float: left;
-        color: #D5F5E3;
+        color: #21618C;
         .amount, .m, .sq {
           float: left;
         }
@@ -79,9 +91,8 @@
         }
       }
       .rent-container {
-        float: left;
         margin-left: 12px;
-        color: #FDEBD0;
+        color: #BA4A00;
         .amount {
           float: left;
           .basis {
@@ -107,4 +118,7 @@
       }
     }
   }
+
+
+
 }

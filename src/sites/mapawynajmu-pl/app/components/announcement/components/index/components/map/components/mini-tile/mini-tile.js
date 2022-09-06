@@ -40,7 +40,7 @@ const AnnouncementShowMiniTile = ({
   ) {
     return (
       <a
-        className='announcement-show-container'
+        className='announcement-list-tile'
         href={path}
         title={title}
       />
@@ -49,7 +49,7 @@ const AnnouncementShowMiniTile = ({
 
   return (
     <a
-      className='announcement-show-container'
+      className='announcement-list-tile'
       key={id}
       href={path}
       title={title}
@@ -104,17 +104,17 @@ const AnnouncementShowMiniTile = ({
         {parseCategory({ categoryNumber: category, lang })}
         {localities && `, ${localities}`}
       </div>
-      <div className='data'>
-        <AreaPresenter
+      {(area || grossRentAmount) && <div className='data'>
+        {area && <AreaPresenter
           area={area}
           langHandler={langHandler}
-        />
-        <RentPresenter
+        />}
+        {grossRentAmount && <RentPresenter
           amount={grossRentAmount}
           currency={currency}
           langHandler={langHandler}
-        />
-      </div>
+        />}
+      </div>}
       <div className='float-clear' />
     </a>
   )
