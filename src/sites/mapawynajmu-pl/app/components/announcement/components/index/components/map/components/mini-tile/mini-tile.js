@@ -108,6 +108,7 @@ const AnnouncementShowMiniTile = ({
             href={link}
             onClick={e => e.stopPropagation()}
             target='_blank'
+            title={name}
           >
             {name}
           </a>
