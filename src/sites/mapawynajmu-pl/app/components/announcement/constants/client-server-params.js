@@ -55,10 +55,10 @@ export const clientServerParams = [
     client: 'name',
     server: 'name'
   },
-  // {
-  //   client: 'sublocality',
-  //   server: 'sublocality'
-  // },
+  {
+    client: 'link',
+    server: 'link'
+  },
 ]
 
 export const createClientServerParams = [

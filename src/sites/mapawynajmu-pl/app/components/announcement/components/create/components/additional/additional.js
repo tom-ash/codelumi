@@ -7,6 +7,23 @@ import langHandler from '../../../../../../functions/lang-handler'
 import { onSelectHandler } from './functions/on-select-handler'
 import { floorsProvider } from './functions/floors-provider'
 import NameInput from './components/name'
+import LinkInput from './components/link'
+
+
+// 0 => 'office'
+// 1 => 'usable_premises'
+// 2 => 'apartment'
+// 3 => 'house'
+// 4 => 'room'
+// 5 => 'parking_space'
+// 6 => 'virtual_office'
+// 7 => 'coworking_spaces'
+
+
+const showRent = category => [0, 1, 2, 3, 4, 5].includes(category)
+const showRooms = category => [0, 1, 2, 3, 4, 5].includes(category)
+const showName = category => [7].includes(category)
+const showLink = category => [7].includes(category)
 
 class AnnouncementCreateAdditional extends React.Component {
   constructor(props) {
@@ -21,11 +38,11 @@ class AnnouncementCreateAdditional extends React.Component {
     this.rentAmountManager = managers.rentAmountManager.bind(this)
   }
 
-  
-  
   render() {
     const {
+      category,
       name,
+      link,
       changeInputs
     } = this.props
 
@@ -34,15 +51,22 @@ class AnnouncementCreateAdditional extends React.Component {
       changeInputs
     }
 
+
+    const linkInputProps = {
+      link,
+      changeInputs
+    }
+
     return (
       <div id='announcement-create-additional' className='section'>
-        <NameInput {...nameInputProps} />
-        <div className='rent-inputs-container'>
+        {showRent(category) && <div className='rent-inputs-container'>
           <ManagedText {...this.rentAmountManager()}/>
           <ManagedSelect {...this.rentCurrencyManager()}/>
           <div className='float-clear'/>
-        </div>
-        <ManagedSelect {...this.roomsManager()}/>
+        </div>}
+        {showRooms(category) && <ManagedSelect {...this.roomsManager()}/>}
+        {showName(category) && <NameInput {...nameInputProps} />}
+        {showLink(category) && <LinkInput {...linkInputProps} />}
         <ManagedSelect {...this.floorManager()}/>
         <ManagedSelect {...this.totalFloorsManager()}/>
       </div>

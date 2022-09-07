@@ -57,7 +57,7 @@ export const inputs = {
   sublocality: null,
   name: null,
   link: null,
-  controlledByAdmin: null
+  adminControlled: null
 }
 
 export const data = {
