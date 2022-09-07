@@ -102,15 +102,22 @@ const AnnouncementShowMiniTile = ({
         disableSLides
       />
       <div className='category-and-location'>
+        {name && link && (
+          <a
+            className='name'
+            href={link}
+            onClick={e => e.stopPropagation()}
+            target='_blank'
+          >
+            {name}
+          </a>
+        )}
         <div className='category'>
-          {name ? `${name}, ` : ''}{parseCategory({ categoryNumber: category, lang })}
+          {parseCategory({ categoryNumber: category, lang })}
         </div>
         <div className='location'>
           {localities && `${localities}`}
         </div>
-        {link && <a href={link} onClick={e => e.stopPropagation()} target='_blank'>
-          {link.replace('https://', '')}
-        </a>}
       </div>
       {(area || grossRentAmount) && <div className='data'>
         {area && <AreaPresenter
