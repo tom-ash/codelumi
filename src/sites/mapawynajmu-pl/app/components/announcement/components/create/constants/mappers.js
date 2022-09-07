@@ -32,7 +32,9 @@ export const mapStateToProps = store => {
     englishDescription,
     addAvailabilityDate,
     locality,
-    sublocality
+    sublocality,
+    name,
+    link,
   } = inputs
 
   return {
@@ -70,7 +72,9 @@ export const mapStateToProps = store => {
     announcement,
     user,
     locality,
-    sublocality
+    sublocality,
+    name,
+    link,
   }
 }
     

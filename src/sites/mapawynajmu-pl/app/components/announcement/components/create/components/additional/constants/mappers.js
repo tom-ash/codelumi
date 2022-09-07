@@ -1,18 +1,44 @@
 export const mapStateToProps = store => {
   const {
+    app,
+    announcement: {
+      create: {
+        inputs
+      }
+    }
+  } = store
+
+  const {
     lang
-  } = store.app
+  } = app
+
+  const {
+    category,
+    rentCurrency,
+    netRentAmount,
+    grossRentAmount,
+    area,
+    rooms,
+    floor,
+    totalFloors,
+    name,
+    link,
+  } = inputs
+
+
 
   return {
     lang,
-    category: store.announcement.create.inputs.category,
-    rentCurrency: store.announcement.create.inputs.rentCurrency,
-    netRentAmount: store.announcement.create.inputs.netRentAmount,
-    grossRentAmount: store.announcement.create.inputs.grossRentAmount,
-    area: store.announcement.create.inputs.area,
-    rooms: store.announcement.create.inputs.rooms,
-    floor: store.announcement.create.inputs.floor,
-    totalFloors: store.announcement.create.inputs.totalFloors
+    category,
+    rentCurrency,
+    netRentAmount,
+    grossRentAmount,
+    area,
+    rooms,
+    floor,
+    totalFloors,
+    name,
+    link,
   }
 }
   

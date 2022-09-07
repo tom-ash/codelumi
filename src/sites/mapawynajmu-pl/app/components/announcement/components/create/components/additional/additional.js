@@ -6,6 +6,7 @@ import * as managers from './functions/managers'
 import langHandler from '../../../../../../functions/lang-handler'
 import { onSelectHandler } from './functions/on-select-handler'
 import { floorsProvider } from './functions/floors-provider'
+import NameInput from './components/name'
 
 class AnnouncementCreateAdditional extends React.Component {
   constructor(props) {
@@ -19,10 +20,23 @@ class AnnouncementCreateAdditional extends React.Component {
     this.rentCurrencyManager = managers.rentCurrencyManager.bind(this)
     this.rentAmountManager = managers.rentAmountManager.bind(this)
   }
+
+  
   
   render() {
+    const {
+      name,
+      changeInputs
+    } = this.props
+
+    const nameInputProps = {
+      name,
+      changeInputs
+    }
+
     return (
       <div id='announcement-create-additional' className='section'>
+        <NameInput {...nameInputProps} />
         <div className='rent-inputs-container'>
           <ManagedText {...this.rentAmountManager()}/>
           <ManagedSelect {...this.rentCurrencyManager()}/>

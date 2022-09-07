@@ -9,7 +9,11 @@ import buildUrl from '../../../../../../shared/functions/builders/url'
 // }
 
 function createAnnouncement() {
-  const { authorized, renderEdit, changeControl } = this.props
+  const {
+    authorized,
+    renderEdit,
+    changeControl
+  } = this.props
 
   changeControl({ connecting: true })
 
@@ -20,14 +24,25 @@ function createAnnouncement() {
 }
 
 function update() {
-  const { lang, announcement, changeControl } = this.props
-  const { method, route } = UPDATE_API_ROUTE_DATA
+  const {
+    lang,
+    announcement,
+    changeControl
+  } = this.props
+  const {
+    method,
+    route
+  } = UPDATE_API_ROUTE_DATA
   const accessToken = getAccessToken()
   const id = window.location.pathname.match(/(edytuj-ogloszenie|edit-announcement)\/(\d+)/)[2]
 
   fetch(API_URL + route + `/${id}`, {
     method,
-    headers: { 'Content-Type': 'application/json', 'Lang': lang, 'Access-Token': accessToken },
+    headers: {
+      'Content-Type': 'application/json',
+      'Lang': lang,
+      'Access-Token': accessToken
+    },
     body: JSON.stringify({ announcement })
   })
   .then(response => {
