@@ -50,8 +50,18 @@ class AnnouncementIndexMap extends React.Component {
             ref={this.miniList}
             id='mini-list'
           >
-            {announcements !== null && announcements.map((announcement, index) => (
-              <AnnouncementShowMiniTile
+            {announcements !== null && announcements.map((announcement, index) => {
+              const {
+                name,
+                link
+              } = announcement
+
+              const tileProps = {
+                name,
+                link
+              }
+
+              return <AnnouncementShowMiniTile
                 key={index}
                 index={index}
                 id={announcement.id}
@@ -72,8 +82,9 @@ class AnnouncementIndexMap extends React.Component {
                 miniListFarthestScrollLeft={miniListFarthestScrollLeft}
                 locality={announcement.locality}
                 sublocality={announcement.sublocality}
+                {...tileProps}
               />
-            ))}
+            })}
             <div className='float-clear' />
           </div>
           <div id='google-map' />

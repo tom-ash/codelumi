@@ -27,11 +27,12 @@ const AnnouncementShowMiniTile = ({
   path,
   title,
   locality,
-  sublocality
+  sublocality,
+  name,
+  link
 }) => {
   const DESKTOP_TILE_HEIGHT = 227
   const MOBILE_TILE_WIDTH = 240
-
   const localities = localitiesPresenter({ locality, sublocality })
   
   if (
@@ -101,8 +102,15 @@ const AnnouncementShowMiniTile = ({
         disableSLides
       />
       <div className='category-and-location'>
-        {parseCategory({ categoryNumber: category, lang })}
-        {localities && `, ${localities}`}
+        <div className='category'>
+          {name ? `${name}, ` : ''}{parseCategory({ categoryNumber: category, lang })}
+        </div>
+        <div className='location'>
+          {localities && `${localities}`}
+        </div>
+        {link && <a href={link} onClick={e => e.stopPropagation()} target='_blank'>
+          {link.replace('https://', '')}
+        </a>}
       </div>
       {(area || grossRentAmount) && <div className='data'>
         {area && <AreaPresenter

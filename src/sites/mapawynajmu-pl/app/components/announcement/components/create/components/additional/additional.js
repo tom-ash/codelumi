@@ -9,7 +9,6 @@ import { floorsProvider } from './functions/floors-provider'
 import NameInput from './components/name'
 import LinkInput from './components/link'
 
-
 // 0 => 'office'
 // 1 => 'usable_premises'
 // 2 => 'apartment'
@@ -19,11 +18,10 @@ import LinkInput from './components/link'
 // 6 => 'virtual_office'
 // 7 => 'coworking_spaces'
 
-
 const showRent = category => [0, 1, 2, 3, 4, 5].includes(category)
 const showRooms = category => [0, 1, 2, 3, 4, 5].includes(category)
-const showName = category => [7].includes(category)
-const showLink = category => [7].includes(category)
+const showName = category => [6, 7].includes(category)
+const showLink = category => [6, 7].includes(category)
 
 class AnnouncementCreateAdditional extends React.Component {
   constructor(props) {
