@@ -14,32 +14,32 @@ export const control = {
   rebuildQueryParams: false
 }
 
-const tile = {
-  area: 58.2,
-  availabilityDate: null,
-  category: 7,
-  floor: null,
-  grossRentAmount: 2300,
-  grossRentAmountPerSqm: 39.51,
-  id: 29,
-  locality: "Warszawa",
-  netRentAmount: null,
-  netRentAmountPerSqm: null,
-  path: "39-przestrzen-coworkingowa-na-wynajem-warszawa-ochota",
-  pictures: [{ database: '20220320142047725oWSkWcommOF8-tB6FavuOQ.jpeg', description: '' }],
-  rentCurrency: 0,
-  rooms: null,
-  show: true,
-  sublocality: "Ochota",
-  title: "Przestrzeń coworkingowa do wynajęcia, Warszawa, Ochota",
-  totalFloors: null
-}
+// const tile = {
+//   area: 58.2,
+//   availabilityDate: null,
+//   category: 7,
+//   floor: null,
+//   grossRentAmount: 2300,
+//   grossRentAmountPerSqm: 39.51,
+//   id: 29,
+//   locality: "Warszawa",
+//   netRentAmount: null,
+//   netRentAmountPerSqm: null,
+//   path: "39-przestrzen-coworkingowa-na-wynajem-warszawa-ochota",
+//   pictures: [{ database: '20220320142047725oWSkWcommOF8-tB6FavuOQ.jpeg', description: '' }],
+//   rentCurrency: 0,
+//   rooms: null,
+//   show: true,
+//   sublocality: "Ochota",
+//   title: "Przestrzeń coworkingowa do wynajęcia, Warszawa, Ochota",
+//   totalFloors: null
+// }
 
 export const data = {
   amount: null,
   announcements: null,
   tileId: null,
-  tile: tile,
+  tile: null,
   pins: null,
   apartmentsAmount: 0,
   housesAmount: 0,
