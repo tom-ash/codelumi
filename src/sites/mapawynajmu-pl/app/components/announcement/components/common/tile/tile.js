@@ -6,7 +6,6 @@ import AnnouncementShowDescription from './components/description/description'
 import AnnouncementShowMap from './components/map/map'
 import langHandler from '../../../../../functions/lang-handler.js'
 import { parseCategory } from '../../../../../../shared/functions/parsers/parse-category'
-import { CloseButton } from '../../../../support/components/close-button/close-button'
 import { phoneSwitchProvider } from '../../../functions/phone-switch-provider'
 import { togglePhone } from '../../../functions/toggle-phone'
 import withStyles from 'isomorphic-style-loader/withStyles'
@@ -104,21 +103,22 @@ class AnnouncementTile extends React.Component {
         className={`announcement-tile ${venue}${deviceClasss}`}
       >
         {venue === 'map' &&
-        <button onClick={closeButtonOnClick}>
-          {this.langHandler({ pl: 'Wróć do listy', en: 'Go back to the list' })}
+        <button
+          onClick={closeButtonOnClick}
+          className='go-back-to-list'
+        >
+          &#10145;
         </button>}
-        <div className='header-container'>
-          <h1>
-            <div className='header-row category'>
-              <span>{category !== null && parseCategory({ categoryNumber: category, lang })}</span>
-              &nbsp;
-              <span className='for-lease'>{this.langHandler({ pl: 'na wynajem', en: 'for rent' })}</span>
-            </div>
-            <div className='header-row locality-sublocality'>
-              {localitiesPresenter({ locality, sublocality })}
-            </div>
-          </h1>
-        </div>
+        <h1>
+          <div className='category'>
+            <span>{category !== null && parseCategory({ categoryNumber: category, lang })}</span>
+            &nbsp;
+            <span className='for-lease'>{this.langHandler({ pl: 'na wynajem', en: 'for rent' })}</span>
+          </div>
+          <div className='locality-sublocality'>
+            {localitiesPresenter({ locality, sublocality })}
+          </div>
+        </h1>
         <div className='float-clear' />
         {showPhoneSwitch &&
         this.phoneSwitchProvider()}
