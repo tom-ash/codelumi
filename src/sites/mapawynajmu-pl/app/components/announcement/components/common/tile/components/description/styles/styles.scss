@@ -1,14 +1,9 @@
 @import '../../../../../../../../styles/themes.scss';
 
 .announcement-tile-description {
-  background: white;
   font-size: 16px;
   position: relative;
-  border-radius: 4px;
-  padding: 30px 30px 0;
-  @media #{$LARGE-PHONE} {
-    padding: 0 12px 12px;
-  }
+  margin-top: 12px;
   .description {
     line-height: 24px;
     white-space: pre-wrap;

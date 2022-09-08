@@ -79,7 +79,7 @@ class AnnouncementTile extends React.Component {
     const venueShow = venue === 'show'
     const positionFromTop = getPositionFromTop.apply(this)
     const deviceClasss = device === 'largePc' ? ' large-pc' : ''
-    const description = this.langHandler({ pl: polishDescription, en: englishDescription })
+    const description = this.props.description || this.langHandler({ pl: polishDescription, en: englishDescription })
 
     if (
       index !== 0 && index !== 1 && index !== 2 &&
@@ -120,7 +120,7 @@ class AnnouncementTile extends React.Component {
           </div>
         </h1>
         <div className='float-clear' />
-        {showPhoneSwitch &&
+        {showPhoneSwitch && [0, 1, 2, 3, 4, 5].includes(category) &&
         this.phoneSwitchProvider()}
         <AnnouncementShowPictures
           lang={lang}
@@ -149,7 +149,6 @@ class AnnouncementTile extends React.Component {
           totalFloors={totalFloors}
           availabilityDate={availabilityDate}
         />
-        {venueShow &&
         <>
           {features && features.length > 0 &&
           <AnnouncementShowFeaturesFurnishings lang={lang} itemsName='features' items={features}/>}
@@ -157,7 +156,7 @@ class AnnouncementTile extends React.Component {
           <AnnouncementShowFeaturesFurnishings lang={lang} itemsName='furnishings' items={furnishings}/>}
           {description && <AnnouncementShowDescription lang={lang} description={description}/>}
           <div className='float-clear' />
-          <AnnouncementShowMap
+          {venueShow && <AnnouncementShowMap
             scripts={scripts}
             loadMap={loadMap}
             mapLoaded={mapLoaded}
@@ -172,8 +171,8 @@ class AnnouncementTile extends React.Component {
             resetData={resetData}
             langHandler={this.langHandler}
             isMobile={isMobile}
-          />
-        </>}
+          />}
+        </>
         {control}
       </div>
     )

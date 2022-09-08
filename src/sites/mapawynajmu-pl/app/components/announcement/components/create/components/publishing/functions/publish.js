@@ -25,8 +25,6 @@ export function publish() {
 
   if (!authorized && !user) return scrollToElement(document.getElementById('user-create-email-first-name'), 12, -160)
 
-  console.log(announcement)
-
   changeData({ announcement, user })
   changeControl({ step: 'publishing' })
 }

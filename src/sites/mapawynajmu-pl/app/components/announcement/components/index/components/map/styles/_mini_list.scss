@@ -1,9 +1,6 @@
 #mini-list {
-  /* Firefox */
   scrollbar-width: none;
-  /* Internet Explorer 10+ */
   -ms-overflow-style: none;
-  /* WebKit */
   &::-webkit-scrollbar { 
     width: 0;
     height: 0;
