@@ -104,9 +104,9 @@ class AnnouncementTile extends React.Component {
         className={`announcement-tile ${venue}${deviceClasss}`}
       >
         {venue === 'map' &&
-        <CloseButton
-          onClick={closeButtonOnClick}
-        />}
+        <button onClick={closeButtonOnClick}>
+          {this.langHandler({ pl: 'Wróć do listy', en: 'Go back to the list' })}
+        </button>}
         <div className='header-container'>
           <h1>
             <div className='header-row category'>
@@ -117,31 +117,6 @@ class AnnouncementTile extends React.Component {
             <div className='header-row locality-sublocality'>
               {localitiesPresenter({ locality, sublocality })}
             </div>
-            {area && (
-              <div className='area'>
-                <div className='area-amount'>
-                {area}
-                </div>
-                {this.langHandler({
-                  pl: (
-                    <React.Fragment>
-                      <div className='m'>
-                        m
-                      </div>
-                      <div className='sq'>
-                        2
-                      </div>
-                    </React.Fragment>
-                  ),
-                  en: (
-                    <div className='m'>
-                      sqm
-                    </div>
-                  )
-                })}
-                <div className='float-clear' />
-              </div>
-            )}
           </h1>
         </div>
         <div className='float-clear' />
@@ -163,6 +138,7 @@ class AnnouncementTile extends React.Component {
         <AnnouncementShowPrimary
           lang={lang}
           category={category}
+          area={area}
           netRentAmount={netRentAmount}
           netRentAmountPerSqm={netRentAmountPerSqm}
           grossRentAmount={grossRentAmount}

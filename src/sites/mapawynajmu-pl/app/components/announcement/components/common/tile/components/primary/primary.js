@@ -23,6 +23,7 @@ class AnnouncementCreatePrimary extends React.Component {
   render() {
     const {
       category,
+      area,
       netRentAmount,
       netRentAmountPerSqm,
       grossRentAmount,
@@ -36,11 +37,23 @@ class AnnouncementCreatePrimary extends React.Component {
 
     const currency = parseCurrency(rentCurrency)
 
-    if (!grossRentAmount && !rooms && !floor && !totalFloors && !availabilityDate) return null
+    if (!area && !grossRentAmount && !rooms && !floor && !totalFloors && !availabilityDate) return null
 
     return (
       <div className='announcement-tile-primary'>
-        <div className='rent-column left'>
+        <div className='column'>
+          {area && (
+            <div className='area'>
+              {area}&nbsp;
+              {this.langHandler({
+                pl: <>m<sup>2</sup></>,
+                en: 'sqm'
+              })}
+              <div className='float-clear' />
+            </div>
+            )}
+        </div>
+        <div className='column'>
           <PresentRent
             amount={grossRentAmount}
             currency={currency}
@@ -57,7 +70,7 @@ class AnnouncementCreatePrimary extends React.Component {
           />
         </div>
         {netRentAmount && netRentAmountPerSqm &&
-        <div className='rent-column right'>
+        <div className='column'>
           <PresentRent
             amount={netRentAmount}
             currency={currency}

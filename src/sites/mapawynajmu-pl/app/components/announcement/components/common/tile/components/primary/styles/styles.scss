@@ -1,14 +1,20 @@
 .announcement-tile-primary {
-  padding: 30px 30px 0;
   z-index: 1000;
   @media #{$LARGE-PHONE} {
     padding: 12px;
   }
-  .rent-column {
+  .column {
     float: left;
     &.left {
       margin-right: 24px;
     }
+  }
+  .area {
+    color: #21618C;
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    margin-right: 24px;
+    transform: translate(0, -4px);
   }
   .rent-container {
     font-family: 'Oswald', sans-serif;
