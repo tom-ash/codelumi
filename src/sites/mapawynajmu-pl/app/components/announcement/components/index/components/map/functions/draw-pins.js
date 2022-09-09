@@ -121,6 +121,17 @@ function addNewPins() {
           const pin = document.getElementById(`googl-map-pin-${id}`)
           if (pin) pin.classList.add('focused')
 
+          const map = window.googleMap
+          const options = {
+            center: {
+              lat: announcement.latitude, 
+              lng: announcement.longitude,
+            },
+            zoom: 12.4
+          }
+
+          map.setOptions(options)
+
           viewAnnouncement(id)
           changeData({ tileId: id })
         }
