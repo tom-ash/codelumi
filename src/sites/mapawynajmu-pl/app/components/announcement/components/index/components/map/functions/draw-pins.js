@@ -23,7 +23,7 @@ function setUpPinCreator() {
     let div = this.div
     if (!div) {
       div = this.div = document.createElement('div')
-      div.className = this.args.className || 'pin'
+      div.className = this.args.className || 'pin icon'
       div.style.position = 'absolute'
       div.innerHTML = this.args.htmlContent
       if (typeof(self.args.pinId) !== 'undefined') {
@@ -71,27 +71,25 @@ function addNewPins() {
   announcements.map(announcement => {
     const {
       category: categoryNumber,
-      url,
+      path,
       title
     } = announcement
     const category = categories.find(category => category.number === categoryNumber)
     const pin = category.pin
     const svg = svgs[pin.svg]
 
+    console.log(announcement)
+
     const htmlContent = (
-      `<a href="${url}" title="${title}">
-        <div class='icon ${pin.class}'>
-          <SVG
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="${svg && svg.viewBox}"
-          >
-            <path
-              style="fill:#4D5656;"
-              d="${svg && svg.pathData}"
-            />
-          </svg>
-        </div>
-      </a>`
+      `<svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="${svg && svg.viewBox}"
+        >
+          <path
+            style="fill:#4D5656;"
+            d="${svg && svg.pathData}"
+          />
+        </svg>`
     )
 
     pins.push(new window.pinCreator(

@@ -17,13 +17,11 @@
     animation: pulse 1s infinite;
   }
 
-  border-radius: 5px!important;
+  border-radius: 5px;
 
-  .icon {
-    padding-top: 3px;
-    svg {
-      height: 19px;
-    }
+  padding-top: 3px;
+  svg {
+    max-height: 18px;
   }
 }
 
