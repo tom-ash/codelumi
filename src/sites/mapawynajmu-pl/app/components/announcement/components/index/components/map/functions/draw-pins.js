@@ -115,6 +115,14 @@ function addNewPins() {
             eventLabel: id
           })
 
+          const focusedPin = document.getElementsByClassName('pin focused')[0]
+          if (focusedPin) {
+            focusedPin.classList.remove('focused')
+          }
+
+          const pin = document.getElementById(`googl-map-pin-${id}`)
+          if (pin) pin.classList.add('focused')
+
           viewAnnouncement(id)
           changeData({ tileId: id })
         }
