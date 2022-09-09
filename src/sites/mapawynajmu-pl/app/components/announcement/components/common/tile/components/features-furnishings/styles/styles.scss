@@ -1,16 +1,15 @@
 @import '../../../../../../../../styles/themes.scss';
 
 .announcement-tile-features {
-  background: white;
-  padding: 30px 30px 0;
+  margin: 24px 0;
   font-size: 16px;
-  position: relative;
-  @media #{$LARGE-PHONE} {
-    padding: 0 12px 12px;
-  }
+  // @media #{$LARGE-PHONE} {
+  //   padding: 0 12px 12px;
+  // }
   .item {
     float: left;
     margin-right: 12px;
+    margin-bottom: 4px;
     color: #626567;
     @media #{$LARGE-PHONE} {
       float: none;

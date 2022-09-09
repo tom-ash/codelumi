@@ -32,6 +32,9 @@ export function featuresManager() {
     classNames: { container: 'form-input checkbox'},
     checkboxes: this.pickElementsForCategory(features, 'features'),
     onClick: (value, ref) => {
+
+      console.log(ref)
+
       this.props.changeInputs({ features: { ...this.props.features, [ref]: value}})
       sendGaEvent(FEATURES_SELECTED_EVENT)
     }

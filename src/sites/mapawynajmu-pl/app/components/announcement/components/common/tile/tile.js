@@ -165,7 +165,6 @@ class AnnouncementTile extends React.Component {
           {furnishings && furnishings.length > 0 &&
           <AnnouncementShowFeaturesFurnishings lang={lang} itemsName='furnishings' items={furnishings}/>}
           {description && <AnnouncementShowDescription lang={lang} description={description}/>}
-          <div className='float-clear' />
           {venueShow && <AnnouncementShowMap
             scripts={scripts}
             loadMap={loadMap}
