@@ -69,17 +69,23 @@ class AnnouncementShow extends React.Component {
 
     const { phone } = this.state
     const deviceClasss = device === 'largePc' ? ' large-pc' : ''
-    const showcaseProps = { announcerName: name, announcerPhone: phone, announcementId: id, togglePhone: this.togglePhone, langHandler: this.langHandler, venue }
+    const showcaseProps = {
+      announcerName: name,
+      announcerPhone: phone,
+      announcementId: id,
+      togglePhone: this.togglePhone, 
+      langHandler: this.langHandler, venue
+    }
     const isMobile = ['largeTablet', 'smallTablet', 'largePhone', 'smallPhone'].indexOf(device) !== -1
     const link = links[`current/${lang}`]
     const path = link && link.path
 
     return (
       <div id='announcement-show' className={deviceClasss}>
-        {!isMobile && <Showcase { ...showcaseProps } />}
-        <div className='contact'>
+        {!isMobile && [1,2,3,4,5].includes(category) && <Showcase { ...showcaseProps } />}
+        {isMobile && <div className='contact'>
           {this.phoneSwitchProvider()}
-        </div>
+        </div>}
         <Tile
           venue='show'
           lang={lang}

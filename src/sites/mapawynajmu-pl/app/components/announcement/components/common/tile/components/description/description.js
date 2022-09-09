@@ -1,7 +1,5 @@
 import React from 'react'
 import langHandler from '../../../../../../../functions/lang-handler'
-// import Header from '../../../../../../support/components/header/header.js'
-// import { HEADER } from './constants/texts.js'
 
 class AnnouncementShowDescription extends React.Component {
   constructor(props) {

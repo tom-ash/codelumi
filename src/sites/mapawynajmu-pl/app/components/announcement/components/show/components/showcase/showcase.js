@@ -5,7 +5,7 @@ import { sendAnalyticsEvent } from '../../../../../../functions/google-analytics
 import styles from './styles/styles.scss'
 
 const AnnouncementShowShowcase = ({
-  announcerName,
+  // announcerName,
   announcerPhone,
   togglePhone,
   langHandler,
@@ -14,9 +14,9 @@ const AnnouncementShowShowcase = ({
 }) => {
   return (
     <div id='showcase'>
-      <div className='name'>
+      {/* <div className='name'>
         {announcerName}
-      </div>
+      </div> */}
       <div className='phone-showcase'>
         <div className='icon'>
           <SVG name='phone' />

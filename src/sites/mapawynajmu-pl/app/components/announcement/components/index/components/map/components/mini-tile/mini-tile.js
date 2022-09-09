@@ -8,32 +8,36 @@ import scrollToElement from '../../../../../../../../../../shared/app/functions/
 import { sendAnalyticsEvent } from '../../../../../../../../functions/google-analytics/send-analytics-event'
 import localitiesPresenter from '../../../../../../functions/localities-presenter.js'
 
-const AnnouncementShowMiniTile = ({
-  id,
-  lat,
-  lng,
-  pictures,
-  category,
-  area,
-  grossRentAmount,
-  rentCurrency: currency,
-  lang,
-  langHandler,
-  changeData,
-  isMobile,
-  miniListFarthestScrollTop,
-  index,
-  miniListFarthestScrollLeft,
-  path,
-  title,
-  locality,
-  sublocality,
-  name,
-  link
-}) => {
+const AnnouncementShowMiniTile = (props) => {
+  const {
+    id,
+    lat,
+    lng,
+    pictures,
+    category,
+    area,
+    grossRentAmount,
+    rentCurrency: currency,
+    lang,
+    langHandler,
+    changeData,
+    isMobile,
+    miniListFarthestScrollTop,
+    index,
+    miniListFarthestScrollLeft,
+    path,
+    title,
+    locality,
+    sublocality,
+    name,
+    link,
+    currentTileId
+  } = props
+
   const DESKTOP_TILE_HEIGHT = 227
   const MOBILE_TILE_WIDTH = 240
   const localities = localitiesPresenter({ locality, sublocality })
+  let pinUnfocusTimeout = null
   
   if (
     !isMobile && miniListFarthestScrollTop + 4 * DESKTOP_TILE_HEIGHT < index * DESKTOP_TILE_HEIGHT ||
@@ -60,13 +64,21 @@ const AnnouncementShowMiniTile = ({
         if (pin) pin.classList.add('focused')
       }}
       onMouseLeave={() => {
-        const pin = document.getElementById(`googl-map-pin-${id}`)
-        if (pin) pin.classList.remove('focused')
+        if (currentTileId) return
+
+        // TODO: Underpin on state instead!
+        pinUnfocusTimeout = setTimeout(() => {
+          const pin = document.getElementById(`googl-map-pin-${id}`)
+          if (pin) pin.classList.remove('focused')
+        }, 0)
       }}
       onClick={e => {
         e.preventDefault()
         const map = window.googleMap
-        const alteredLng = lng + (isMobile ? 0 : .037)
+
+        if (pinUnfocusTimeout) {
+          clearTimeout(pinUnfocusTimeout)
+        }
 
         sendAnalyticsEvent({
           eventCategory: 'Announcement MiniList',
@@ -77,7 +89,7 @@ const AnnouncementShowMiniTile = ({
         const options = {
           center: {
             lat,
-            lng: alteredLng
+            lng
           },
           zoom: 12.4
         }
