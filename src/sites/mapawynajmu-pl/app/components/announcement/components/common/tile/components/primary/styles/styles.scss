@@ -1,8 +1,5 @@
 .announcement-tile-primary {
-  z-index: 1000;
-  @media #{$LARGE-PHONE} {
-    padding: 12px;
-  }
+  margin: 24px 0;
   .column {
     float: left;
     &.left {

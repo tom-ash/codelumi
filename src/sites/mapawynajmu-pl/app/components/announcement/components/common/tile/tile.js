@@ -75,7 +75,10 @@ class AnnouncementTile extends React.Component {
       changeApp,
       path,
       title,
+      name,
+      link
     } = this.props
+
     const venueShow = venue === 'show'
     const positionFromTop = getPositionFromTop.apply(this)
     const deviceClasss = device === 'largePc' ? ' large-pc' : ''
@@ -110,6 +113,13 @@ class AnnouncementTile extends React.Component {
           &#10145;
         </button>}
         <h1>
+          <a
+            href={link}
+            target='_blank'
+            className='name'
+          >
+            {name}
+          </a>
           <div className='category'>
             <span>{category !== null && parseCategory({ categoryNumber: category, lang })}</span>
             &nbsp;

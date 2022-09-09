@@ -2,36 +2,35 @@
   .announcement-tile {
     max-width: 768px;
     width: 100%;
-    border: 1px solid $CONTAINER-BORDER-COLOR;
-    border-radius: 4px;
     margin-top: 50px;
+    h1 {
+      margin-bottom: 24px;
+      font-size: 22px;
+      text-transform: uppercase;
+      color: rgb(42, 42, 42);
+      .name {
+        font-weight: bold;
+        text-decoration: underline;
+        color: rgb(40, 116, 166);
+        margin-bottom: 18px;
+      }
+      .category {
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
+      .for-lease {
+        font-size: 10px;
+        color: rgb(128, 128, 128);
+      }
+      .locality-sublocality {
+        font-size: 14px;
+        color: rgb(104, 104, 104);
+      }
+    }
     h2 {
       font-size: 16px;
       color: $TEXT-HEADER-TIER-ONE-COLOR;
       margin-bottom: 5px;
-    }
-    .header-container {
-      padding: $PADDING-PC;
-      .header-row {
-        font-size: 18px;
-        &.category {
-          margin-bottom: 10px;
-          color: $TEXT-HEADER-TIER-ONE-COLOR;
-        }
-        &.locality-sublocality {
-          font-weight: normal;
-          color: #566573;
-        }
-      }
-      .area {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        height: 30px;
-        margin: auto;
-        font-size: 30px;
-      }
     }
     @media #{$LARGE-TABLET} {
       max-width: 768px;

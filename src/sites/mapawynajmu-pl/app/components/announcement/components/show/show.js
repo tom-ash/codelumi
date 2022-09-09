@@ -61,6 +61,7 @@ class AnnouncementShow extends React.Component {
       resetData,
       changeApp,
       name,
+      link: annLink,
       links,
       locality,
       sublocality,
@@ -126,6 +127,8 @@ class AnnouncementShow extends React.Component {
           locality={locality}
           sublocality={sublocality}
           title={title}
+          name={name}
+          link={annLink}
         />
       </div>
     )

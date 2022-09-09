@@ -45,6 +45,7 @@ export const mapStateToProps = store => {
     polishDescription,
     englishDescription,
     name,
+    link,
     locality,
     sublocality,
     title,
@@ -91,6 +92,7 @@ export const mapStateToProps = store => {
     locality,
     sublocality,
     title,
+    link,
   }
 }
     

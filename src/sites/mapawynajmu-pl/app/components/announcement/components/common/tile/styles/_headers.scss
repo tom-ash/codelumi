@@ -3,15 +3,7 @@
   .header-container {
     h1 {
       position: relative;
-      .header-row {
-        &.category {
-          color: $TEXT-HEADER-TIER-ONE-COLOR;
-        }
-        &.locality-sublocality {
-          font-weight: normal;
-          color: #566573;
-        }
-      }
+      text-transform: uppercase;      
     }
   }
 }
