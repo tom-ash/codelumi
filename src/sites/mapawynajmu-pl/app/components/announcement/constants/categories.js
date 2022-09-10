@@ -110,7 +110,7 @@ export const categories = [
     value: 7,
     label: {
       pl: 'Coworking - Przestrzeń coworkingowa',
-      en: 'Coworking'
+      en: 'Coworking Space'
     },
     pin: {
       class: 'coworking-space',

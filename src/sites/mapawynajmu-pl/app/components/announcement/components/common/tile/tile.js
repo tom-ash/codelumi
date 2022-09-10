@@ -12,6 +12,7 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import localitiesPresenter from '../../../functions/localities-presenter'
 import Showcase from '../../show/components/showcase/showcase'
+import GoToLink from './components/go-to-link'
 
 function getPositionFromTop() {
   if (!this.container.current) return
@@ -32,6 +33,7 @@ class AnnouncementTile extends React.Component {
   }
 
   render() {
+    const langHandler = this.langHandler
     const {
       lang,
       venue,
@@ -87,6 +89,12 @@ class AnnouncementTile extends React.Component {
       announcementId: id,
       venue,
       togglePhone: togglePhone, 
+      langHandler
+    }
+
+    const goToLinkProps = {
+      name,
+      link,
       langHandler: this.langHandler
     }
 
@@ -124,13 +132,9 @@ class AnnouncementTile extends React.Component {
           &#10145;
         </button>}
         <h1>
-          <a
-            href={link}
-            target='_blank'
-            className='name'
-          >
+          <div className='name'>
             {name}
-          </a>
+          </div>
           <div className='category'>
             <span>{category !== null && parseCategory({ categoryNumber: category, lang })}</span>
             &nbsp;
@@ -142,6 +146,8 @@ class AnnouncementTile extends React.Component {
         </h1>
 
         {venue === 'show' && !isMobile && [1,2,3,4,5].includes(category) && <Showcase { ...showcaseProps } />}
+
+        <GoToLink {...goToLinkProps} />
 
         {showPhoneSwitch && [0, 1, 2, 3, 4, 5].includes(category) &&
         this.phoneSwitchProvider()}
