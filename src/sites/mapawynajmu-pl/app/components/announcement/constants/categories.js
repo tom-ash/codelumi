@@ -3,7 +3,10 @@ export const categories = [
     name: 'apartments',
     number: 2,
     value: 2,
-    label: { pl: 'Mieszkanie', en: 'Apartment' },
+    label: {
+      pl: 'Mieszkanie',
+      en: 'Apartment'
+    },
     pin: {
       class: 'apartment',
       svg: 'apartment',
@@ -15,7 +18,10 @@ export const categories = [
     name: 'houses',
     number: 3,
     value: 3,
-    label: { pl: 'Dom', en: 'House' },
+    label: {
+      pl: 'Dom',
+      en: 'House'
+    },
     pin: {
       class: 'house',
       svg: 'house',
@@ -27,7 +33,10 @@ export const categories = [
     name: 'rooms',
     number: 4,
     value: 4,
-    label: { pl: 'Pokój', en: 'Room' },
+    label: {
+      pl: 'Pokój',
+      en: 'Room'
+    },
     pin: {
       class: 'room',
       svg: 'room',
@@ -39,7 +48,10 @@ export const categories = [
     name: 'parkingSpaces',
     number: 5,
     value: 5,
-    label: { pl: 'Miejsce parkingowe', en: 'Parking Space' },
+    label: {
+      pl: 'Miejsce parkingowe',
+      en: 'Parking Space'
+    },
     pin: {
       class: 'parking-space',
       svg: 'parkingSpace',
@@ -51,7 +63,10 @@ export const categories = [
     name: 'usablePremises',
     number: 1,
     value: 1,
-    label: { pl: 'Lokal użytkowy', en: 'Usable Premises' },
+    label: {
+      pl: 'Lokal użytkowy',
+      en: 'Usable Premises'
+    },
     pin: {
       class: 'usable-premises',
       svg: 'usablePremises',
@@ -63,7 +78,10 @@ export const categories = [
     name: 'offices',
     number: 0,
     value: 0,
-    label: { pl: 'Biuro', en: 'Office' },
+    label: {
+      pl: 'Biuro',
+      en: 'Office'
+    },
     pin: {
       class: 'office',
       svg: 'office',
@@ -75,7 +93,10 @@ export const categories = [
     name: 'virtualOffices',
     number: 6,
     value: 6,
-    label: { pl: 'Biuro wirtualne', en: 'Virtual Office' },
+    label: {
+      pl: 'Biuro wirtualne',
+      en: 'Virtual Office'
+    },
     pin: {
       class: 'virtual-office',
       svg: 'virtualOffice',
