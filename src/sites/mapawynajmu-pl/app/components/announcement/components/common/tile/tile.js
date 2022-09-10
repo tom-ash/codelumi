@@ -145,9 +145,10 @@ class AnnouncementTile extends React.Component {
           </div>
         </h1>
 
-        {venue === 'show' && !isMobile && [1,2,3,4,5].includes(category) && <Showcase { ...showcaseProps } />}
-
-        <GoToLink {...goToLinkProps} />
+        {venue === 'show' && !isMobile && [1,2,3,4,5].includes(category) &&
+        <Showcase { ...showcaseProps } />}
+        {[6, 7].includes(category) &&
+        <GoToLink {...goToLinkProps} />}
 
         {showPhoneSwitch && [0, 1, 2, 3, 4, 5].includes(category) &&
         this.phoneSwitchProvider()}
