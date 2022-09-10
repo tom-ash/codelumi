@@ -4,7 +4,6 @@ export const categories = [
     number: 2,
     value: 2,
     label: { pl: 'Mieszkanie', en: 'Apartment' },
-    url: { pl: 'mieszkanie', en: 'apartment' },
     pin: {
       class: 'apartment',
       svg: 'apartment',
@@ -17,7 +16,6 @@ export const categories = [
     number: 3,
     value: 3,
     label: { pl: 'Dom', en: 'House' },
-    url: { pl: 'dom', en: 'house' },
     pin: {
       class: 'house',
       svg: 'house',
@@ -30,7 +28,6 @@ export const categories = [
     number: 4,
     value: 4,
     label: { pl: 'Pokój', en: 'Room' },
-    url: { pl: 'pokoj', en: 'room' },
     pin: {
       class: 'room',
       svg: 'room',
@@ -43,7 +40,6 @@ export const categories = [
     number: 5,
     value: 5,
     label: { pl: 'Miejsce parkingowe', en: 'Parking Space' },
-    url: { pl: 'miejsce-parkingowe', en: 'parking-space' },
     pin: {
       class: 'parking-space',
       svg: 'parkingSpace',
@@ -56,7 +52,6 @@ export const categories = [
     number: 1,
     value: 1,
     label: { pl: 'Lokal użytkowy', en: 'Usable Premises' },
-    url: { pl: 'lokal-uzytkowy', en: 'usable-premises' },
     pin: {
       class: 'usable-premises',
       svg: 'usablePremises',
@@ -69,7 +64,6 @@ export const categories = [
     number: 0,
     value: 0,
     label: { pl: 'Biuro', en: 'Office' },
-    url: { pl: 'biuro', en: 'office' },
     pin: {
       class: 'office',
       svg: 'office',
@@ -82,7 +76,6 @@ export const categories = [
     number: 6,
     value: 6,
     label: { pl: 'Biuro wirtualne', en: 'Virtual Office' },
-    url: { pl: 'biuro-wirtualne', en: 'virtual-office' },
     pin: {
       class: 'virtual-office',
       svg: 'virtualOffice',
@@ -94,8 +87,10 @@ export const categories = [
     name: 'coworking',
     number: 7,
     value: 7,
-    label: { pl: 'Coworking', en: 'Coworking' },
-    url: { pl: 'Coworking', en: 'Coworking' },
+    label: {
+      pl: 'Coworking - Przestrzeń coworkingowa',
+      en: 'Coworking'
+    },
     pin: {
       class: 'coworking-space',
       svg: 'coworkingSpace',
