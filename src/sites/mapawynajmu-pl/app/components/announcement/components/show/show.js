@@ -69,21 +69,19 @@ class AnnouncementShow extends React.Component {
     } = this.props
 
     const { phone } = this.state
-    const deviceClasss = device === 'largePc' ? ' large-pc' : ''
+    const deviceClass = device === 'largePc' ? ' large-pc' : ''
     const showcaseProps = {
-      announcerName: name,
       announcerPhone: phone,
       announcementId: id,
-      togglePhone: this.togglePhone, 
-      langHandler: this.langHandler, venue
+      venue,
+      togglePhone: this.togglePhone
     }
     const isMobile = ['largeTablet', 'smallTablet', 'largePhone', 'smallPhone'].indexOf(device) !== -1
     const link = links[`current/${lang}`]
     const path = link && link.path
 
     return (
-      <div id='announcement-show' className={deviceClasss}>
-        {!isMobile && [1,2,3,4,5].includes(category) && <Showcase { ...showcaseProps } />}
+      <div id='announcement-show' className={deviceClass}>
         {isMobile && <div className='contact'>
           {this.phoneSwitchProvider()}
         </div>}
@@ -129,6 +127,7 @@ class AnnouncementShow extends React.Component {
           title={title}
           name={name}
           link={annLink}
+          {...showcaseProps}
         />
       </div>
     )

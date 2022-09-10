@@ -11,6 +11,7 @@ import { togglePhone } from '../../../functions/toggle-phone'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import localitiesPresenter from '../../../functions/localities-presenter'
+import Showcase from '../../show/components/showcase/showcase'
 
 function getPositionFromTop() {
   if (!this.container.current) return
@@ -76,12 +77,22 @@ class AnnouncementTile extends React.Component {
       path,
       title,
       name,
-      link
+      link,
+      announcerPhone,
+      togglePhone,
     } = this.props
+
+    const showcaseProps = {
+      announcerPhone,
+      announcementId: id,
+      venue,
+      togglePhone: togglePhone, 
+      langHandler: this.langHandler
+    }
 
     const venueShow = venue === 'show'
     const positionFromTop = getPositionFromTop.apply(this)
-    const deviceClasss = device === 'largePc' ? ' large-pc' : ''
+    const deviceClass = device === 'largePc' ? ' large-pc' : ''
     const description = this.props.description || this.langHandler({ pl: polishDescription, en: englishDescription })
 
     if (
@@ -103,7 +114,7 @@ class AnnouncementTile extends React.Component {
     return (
       <div
         ref={this.container}
-        className={`announcement-tile ${venue}${deviceClasss}`}
+        className={`announcement-tile ${venue}${deviceClass}`}
       >
         {venue === 'map' &&
         <button
@@ -129,7 +140,9 @@ class AnnouncementTile extends React.Component {
             {localitiesPresenter({ locality, sublocality })}
           </div>
         </h1>
-        <div className='float-clear' />
+
+        {venue === 'show' && !isMobile && [1,2,3,4,5].includes(category) && <Showcase { ...showcaseProps } />}
+
         {showPhoneSwitch && [0, 1, 2, 3, 4, 5].includes(category) &&
         this.phoneSwitchProvider()}
         <AnnouncementShowPictures

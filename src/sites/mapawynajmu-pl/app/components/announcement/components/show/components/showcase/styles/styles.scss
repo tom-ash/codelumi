@@ -3,42 +3,34 @@
 
 #announcement-show {
   #showcase {
-    top: 0;
-    left: 780px;
-    width: 180px;
-    padding: 15px;
-    border: 1px solid $CONTAINER-BORDER-COLOR;
-    position: absolute;
-    background: white;
-    border-radius: 4px;
     .phone-showcase {
-      min-width: 50px;
-      margin-top: 12px;
+      margin-bottom: 24px;
       line-height: 24px;
-      height: 24px;
       .icon {
         position: relative;
-        top: 6px;
         float: left;
-        width: 14px;
+        top: -3px;
+        width: 30px;
+        height: 30px;
         margin-right: 8px;
-        line-height: 12px;
+        border-radius: 5px;
+        background: rgb(87, 176, 104);
+        text-align: center;
+        line-height: 28px;
         svg {
-          fill: $TEXT-DEFAULT-COLOR;
+          width: 15px;
+          fill: white;
+          transform: translate(1px, 3px);
         }
       }
       .text {
         float: left;
+        font-size: 16px;
         u {
           cursor: pointer;
           margin-left: 4px;
         }
       }
-    }
-    @media #{$LARGE-TABLET} {
-      position: relative;
-      top: 0;
-      left: 0;
     }
   }
 }
