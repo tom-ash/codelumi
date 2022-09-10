@@ -124,6 +124,8 @@ class AnnouncementIndexMap extends React.Component {
               locality={tile.locality}
               sublocality={tile.sublocality}
               description={tile.description}
+              name={tile.name}
+              link={tile.link}
             />
           </div>}
         </div>

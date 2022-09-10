@@ -19,6 +19,8 @@ export const control = {
 //   availabilityDate: '2023-01-01',
 //   category: 7,
 //   floor: 3,
+//   name: 'Super',
+//   link: 'asdadsa',
 //   grossRentAmount: 2300,
 //   grossRentAmountPerSqm: 39.51,
 //   id: 29,
