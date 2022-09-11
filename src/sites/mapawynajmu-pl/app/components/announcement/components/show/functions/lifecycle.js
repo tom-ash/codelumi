@@ -14,8 +14,6 @@ export function componentDidMount() {
     changeControl({ fetched: true })
   }
 
-  // addEventListener('scroll', this.fixedPhoneHandler)
-
   if (phone) this.setState({ phone })
 }
 
@@ -24,8 +22,4 @@ export function componentDidUpdate(prevProps) {
   const { phone } = this.props
 
   if (!prevPhone && phone) this.setState({ phone })
-}
-
-export function componentWillUnmount() {
-  removeEventListener('scroll', this.fixedPhoneHandler)
 }

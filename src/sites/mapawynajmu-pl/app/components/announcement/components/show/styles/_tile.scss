@@ -2,12 +2,12 @@
 @import '../../common/tile/styles/go-to-link';
 
 #announcement-show {
+  padding-top: 18px;
   .announcement-tile {
     @extend %h1;
     @extend %go-to-link;
     max-width: 768px;
     width: 100%;
-    margin-top: 50px;
     h2 {
       font-size: 16px;
       color: $TEXT-HEADER-TIER-ONE-COLOR;
@@ -30,32 +30,23 @@
           font-size: 22px;
         }
       }
-    }
-    .announcement-tile-primary {
-      .rent-container {
-        &.total {
-          font-size: 28px;
-          margin-bottom: 15px;
-          .decimal {
-            font-size: 15px;
-            top: 1px;
-            right: -1px;
-          }
-          .per-month {
-            margin-top: 15px;
-            font-size: 12px;
-          }
-        }
-        &.per-sqm {
-          font-size: 18px;
-          .sq {
-            font-size: 12px;
-          }
-          .per-month {
-            margin-top: 8px;
-            font-size: 10px;
-          }
-        }
+      h1 {
+        padding: 0 18px;
+      }
+      #showcase {
+        padding: 0 18px;
+      }
+      .go-to-link {
+        padding: 0 18px;
+      }
+      .announcement-tile-primary {
+        padding: 0 18px;
+      }
+      .announcement-tile-features {
+        padding: 0 18px;
+      }
+      .announcement-tile-description {
+        padding: 0 18px;
       }
     }
   }

@@ -84,7 +84,6 @@ class AnnouncementTile extends React.Component {
       announcerPhone,
       togglePhone,
     } = this.props
-
     const showcaseProps = {
       announcerPhone,
       announcementId: id,
@@ -92,33 +91,31 @@ class AnnouncementTile extends React.Component {
       togglePhone: togglePhone, 
       langHandler
     }
-
     const goToLinkProps = {
       name,
       link,
       langHandler: this.langHandler
     }
-
     const venueShow = venue === 'show'
     const positionFromTop = getPositionFromTop.apply(this)
     const deviceClass = device === 'largePc' ? ' large-pc' : ''
     const description = this.props.description || this.langHandler({ pl: polishDescription, en: englishDescription })
 
-    if (
-      index !== 0 && index !== 1 && index !== 2 &&
-      (positionFromTop === undefined || positionFromTop  > indexFullFarthestScrollTop + 1000) &&
-      venue !== 'map' &&
-      venue !== 'show'
-    ) {
-      return (
-        <a
-          ref={this.container}
-          className='announcement-tile-anchor'
-          href={path}
-          title={title}
-        />
-      )
-    }
+    // if (
+    //   index !== 0 && index !== 1 && index !== 2 &&
+    //   (positionFromTop === undefined || positionFromTop  > indexFullFarthestScrollTop + 1000) &&
+    //   venue !== 'map' &&
+    //   venue !== 'show'
+    // ) {
+    //   return (
+    //     <a
+    //       ref={this.container}
+    //       className='announcement-tile-anchor'
+    //       href={path}
+    //       title={title}
+    //     />
+    //   )
+    // }
 
     return (
       <div
@@ -133,9 +130,12 @@ class AnnouncementTile extends React.Component {
           <SVG name='arrowRight' />
         </button>}
         <h1>
+          {name
+          && (
           <div className='name'>
             {name}
           </div>
+          )}
           <div className='category'>
             <span>{category !== null && parseCategory({ categoryNumber: category, lang })}</span>
             &nbsp;
@@ -145,14 +145,14 @@ class AnnouncementTile extends React.Component {
             {localitiesPresenter({ locality, sublocality })}
           </div>
         </h1>
-
-        {venue === 'show' && !isMobile && [1,2,3,4,5].includes(category) &&
-        <Showcase { ...showcaseProps } />}
-        {[6, 7].includes(category) &&
-        <GoToLink {...goToLinkProps} />}
-
-        {showPhoneSwitch && [0, 1, 2, 3, 4, 5].includes(category) &&
-        this.phoneSwitchProvider()}
+        {venue === 'show'
+        && [1,2,3,4,5].includes(category)
+        && <Showcase { ...showcaseProps } />}
+        {[6, 7].includes(category)
+        && <GoToLink {...goToLinkProps} />}
+        {showPhoneSwitch
+        && [0, 1, 2, 3, 4, 5].includes(category)
+        && this.phoneSwitchProvider()}
         <AnnouncementShowPictures
           lang={lang}
           venue={venue}
@@ -180,29 +180,39 @@ class AnnouncementTile extends React.Component {
           totalFloors={totalFloors}
           availabilityDate={availabilityDate}
         />
-        <>
-          {features && features.length > 0 &&
-          <AnnouncementShowFeaturesFurnishings lang={lang} itemsName='features' items={features}/>}
-          {furnishings && furnishings.length > 0 &&
-          <AnnouncementShowFeaturesFurnishings lang={lang} itemsName='furnishings' items={furnishings}/>}
-          {description && <AnnouncementShowDescription lang={lang} description={description}/>}
-          {venueShow && <AnnouncementShowMap
-            scripts={scripts}
-            loadMap={loadMap}
-            mapLoaded={mapLoaded}
-            loadMarker={loadMarker}
-            latitude={latitude}
-            longitude={longitude}
-            markerLoaded={markerLoaded}
-            mapLoading={mapLoading}
-            changeControl={changeControl}
-            resetControl={resetControl}
-            changeData={changeData}
-            resetData={resetData}
-            langHandler={this.langHandler}
-            isMobile={isMobile}
-          />}
-        </>
+        {features && features.length > 0 &&
+        <AnnouncementShowFeaturesFurnishings
+          lang={lang}
+          itemsName='features'
+          items={features}
+        />}
+        {furnishings && furnishings.length > 0 &&
+        <AnnouncementShowFeaturesFurnishings
+          lang={lang}
+          itemsName='furnishings'
+          items={furnishings}
+        />}
+        {description &&
+        <AnnouncementShowDescription
+          lang={lang}
+          description={description}
+        />}
+        {venueShow && <AnnouncementShowMap
+          scripts={scripts}
+          loadMap={loadMap}
+          mapLoaded={mapLoaded}
+          loadMarker={loadMarker}
+          latitude={latitude}
+          longitude={longitude}
+          markerLoaded={markerLoaded}
+          mapLoading={mapLoading}
+          changeControl={changeControl}
+          resetControl={resetControl}
+          changeData={changeData}
+          resetData={resetData}
+          langHandler={this.langHandler}
+          isMobile={isMobile}
+        />}
         {control}
       </div>
     )

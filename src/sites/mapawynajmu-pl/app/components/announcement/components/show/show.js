@@ -3,10 +3,7 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
 import langHandler from '../../../../functions/lang-handler'
-import { phoneSwitchProvider } from '../../functions/phone-switch-provider'
 import { togglePhone } from '../../functions/toggle-phone'
-import { fixedPhoneHandler } from './functions/fixed-phone-handler'
-import Showcase from './components/showcase/showcase.js'
 import Tile from '../common/tile/tile.js'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
@@ -16,11 +13,8 @@ class AnnouncementShow extends React.Component {
     super(props)
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
-    this.componentWillUnmount = lifecycle.componentWillUnmount
     this.langHandler = langHandler.bind(this)
-    this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
     this.togglePhone = togglePhone.bind(this)
-    this.fixedPhoneHandler = fixedPhoneHandler.bind(this)
     this.state = { phone: null }
   }
 
@@ -82,9 +76,6 @@ class AnnouncementShow extends React.Component {
 
     return (
       <div id='announcement-show' className={deviceClass}>
-        {isMobile && <div className='contact'>
-          {this.phoneSwitchProvider()}
-        </div>}
         <Tile
           venue='show'
           lang={lang}
