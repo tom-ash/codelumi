@@ -1,10 +1,8 @@
 import React from 'react'
+import Tile from '../common/tile/tile.js'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
-import langHandler from '../../../../functions/lang-handler'
-import { togglePhone } from '../../functions/toggle-phone'
-import Tile from '../common/tile/tile.js'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
@@ -12,9 +10,6 @@ class AnnouncementShow extends React.Component {
   constructor(props) {
     super(props)
     this.componentDidMount = lifecycle.componentDidMount
-    this.componentDidUpdate = lifecycle.componentDidUpdate
-    this.langHandler = langHandler.bind(this)
-    this.togglePhone = togglePhone.bind(this)
   }
 
   render() {
