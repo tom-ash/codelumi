@@ -13,6 +13,7 @@ import styles from './styles/styles.scss'
 import localitiesPresenter from '../../../functions/localities-presenter'
 import Showcase from '../../show/components/showcase/showcase'
 import GoToLink from './components/go-to-link'
+import SVG from '../../../../../../../shared/app/components/support/svg/svg'
 
 function getPositionFromTop() {
   if (!this.container.current) return
@@ -129,7 +130,7 @@ class AnnouncementTile extends React.Component {
           onClick={closeButtonOnClick}
           className='go-back-to-list'
         >
-          &#10145;
+          <SVG name='arrowRight' />
         </button>}
         <h1>
           <div className='name'>

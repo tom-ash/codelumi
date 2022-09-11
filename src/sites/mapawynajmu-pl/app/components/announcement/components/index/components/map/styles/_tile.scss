@@ -66,20 +66,27 @@
           }
         }
       }
-
-
       .go-back-to-list {
         transform: rotate(180deg);
-        font-size: 18px;
+        display: block;
         width: 36px;
-        margin-bottom: 12px;
+        height: 36px;
+        margin: 0 0 12px auto;
+        border-radius: 50%;
         background: none;
-        border: 1px solid gray;
-        border-radius: 3px;
-        color: gray;
+        border: 1px solid #979A9A;
+        transition: border-color .15s ease-in;
+        svg {
+          width: 18px;
+          fill: #979A9A;
+          transform: translate(0, 1px);
+          transition: fill .15s ease-in;
+        }
         &:hover {
-          color: black;
-          border: 1px solid black;
+          border-color: #626567;
+          svg {
+            fill: #626567;
+          }
         }
       }
     }
