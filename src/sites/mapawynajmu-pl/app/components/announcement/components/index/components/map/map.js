@@ -96,7 +96,6 @@ class AnnouncementIndexMap extends React.Component {
             <AnnouncementTile
               venue='map'
               lang={lang}
-              showPhoneSwitch
               id={tile.id}
               category={tile.category}
               pictures={tile.pictures}

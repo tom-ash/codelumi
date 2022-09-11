@@ -6,7 +6,6 @@ import AnnouncementShowDescription from './components/description/description'
 import AnnouncementShowMap from './components/map/map'
 import langHandler from '../../../../../functions/lang-handler.js'
 import { parseCategory } from '../../../../../../shared/functions/parsers/parse-category'
-import { phoneSwitchProvider } from '../../../functions/phone-switch-provider'
 import { togglePhone } from '../../../functions/toggle-phone'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
@@ -20,7 +19,6 @@ class AnnouncementTile extends React.Component {
     super(props)
     this.container = React.createRef()
     this.langHandler = langHandler.bind(this)
-    this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
     this.togglePhone = togglePhone.bind(this)
     this.state = {
       fullPhone: null
@@ -32,7 +30,6 @@ class AnnouncementTile extends React.Component {
     const {
       lang,
       venue,
-      showPhoneSwitch,
       id,
       category,
       locality,
@@ -123,9 +120,6 @@ class AnnouncementTile extends React.Component {
         && <Showcase { ...showcaseProps } />}
         {[6, 7].includes(category)
         && <GoToLink {...goToLinkProps} />}
-        {/* {showPhoneSwitch
-        && [0, 1, 2, 3, 4, 5].includes(category)
-        && this.phoneSwitchProvider()} */}
         <AnnouncementShowPictures
           lang={lang}
           venue={venue}
