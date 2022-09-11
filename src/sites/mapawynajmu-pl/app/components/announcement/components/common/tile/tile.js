@@ -88,6 +88,8 @@ class AnnouncementTile extends React.Component {
     const deviceClass = device === 'largePc' ? ' large-pc' : ''
     const description = this.props.description || this.langHandler({ pl: polishDescription, en: englishDescription })
 
+    // console.log(venue)
+
     return (
       <div
         ref={this.container}
@@ -117,8 +119,10 @@ class AnnouncementTile extends React.Component {
           </div>
         </h1>
         {[1,2,3,4,5].includes(category)
+        && venue !== 'list'
         && <Showcase { ...showcaseProps } />}
         {[6, 7].includes(category)
+        && venue !== 'list'
         && <GoToLink {...goToLinkProps} />}
         <AnnouncementShowPictures
           lang={lang}
