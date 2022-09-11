@@ -25,7 +25,6 @@ export const mapStateToProps = store => {
   const { 
     latitude: latitude,
     longitude: longitude,
-    phone,
     id,
     category,
     rentCurrency,
@@ -49,12 +48,12 @@ export const mapStateToProps = store => {
     locality,
     sublocality,
     title,
+    phone,
   } = store.announcement.show.data
 
   return {
     announcementId,
     lang,
-    phone,
     id,
     category,
     rentCurrency,
@@ -93,6 +92,7 @@ export const mapStateToProps = store => {
     sublocality,
     title,
     link,
+    phone,
   }
 }
     

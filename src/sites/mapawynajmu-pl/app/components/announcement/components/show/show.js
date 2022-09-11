@@ -15,7 +15,6 @@ class AnnouncementShow extends React.Component {
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.langHandler = langHandler.bind(this)
     this.togglePhone = togglePhone.bind(this)
-    this.state = { phone: null }
   }
 
   render() {
@@ -60,16 +59,10 @@ class AnnouncementShow extends React.Component {
       locality,
       sublocality,
       title,
+      phone,
     } = this.props
 
-    const { phone } = this.state
     const deviceClass = device === 'largePc' ? ' large-pc' : ''
-    const showcaseProps = {
-      announcerPhone: phone,
-      announcementId: id,
-      venue,
-      togglePhone: this.togglePhone
-    }
     const isMobile = ['largeTablet', 'smallTablet', 'largePhone', 'smallPhone'].indexOf(device) !== -1
     const link = links[`current/${lang}`]
     const path = link && link.path
@@ -118,7 +111,7 @@ class AnnouncementShow extends React.Component {
           title={title}
           name={name}
           link={annLink}
-          {...showcaseProps}
+          phone={phone}
         />
       </div>
     )

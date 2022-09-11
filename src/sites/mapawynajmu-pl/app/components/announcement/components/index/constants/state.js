@@ -17,8 +17,9 @@ export const control = {
 const tile = null
 // const tile = {
 //   area: 58.2,
+//   phone: '518',
 //   availabilityDate: '2023-01-01',
-//   category: 7,
+//   category: 3,
 //   floor: 3,
 //   name: 'Super',
 //   link: 'asdadsa',

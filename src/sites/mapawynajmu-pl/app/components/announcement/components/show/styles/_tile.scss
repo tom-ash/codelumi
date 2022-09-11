@@ -1,11 +1,13 @@
 @import '../../common/tile/styles/h1';
 @import '../../common/tile/styles/go-to-link';
+@import '../components/showcase/styles/styles.scss';
 
 #announcement-show {
   padding-top: 18px;
   .announcement-tile {
     @extend %h1;
     @extend %go-to-link;
+    @extend %phone-showcase;
     max-width: 768px;
     width: 100%;
     h2 {

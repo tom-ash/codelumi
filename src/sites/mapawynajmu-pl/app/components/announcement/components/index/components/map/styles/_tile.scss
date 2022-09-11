@@ -2,6 +2,7 @@
 @import '../../../../common/tile/styles/h1';
 @import '../../../../common/tile/styles/go-to-link';
 @import '../../../../../../../../../shared/app/styles/hidden-scrollbar';
+@import '../../../../show/components/showcase/styles/styles.scss';
 
 #announcement-index-map {
   position: relative;
@@ -23,6 +24,7 @@
       @extend %h1;
       @extend %go-to-link;
       @extend %hidden-scrollbar;
+      @extend %phone-showcase;
       position: relative;
       height: 100%;
       padding-bottom: 120px;

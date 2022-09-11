@@ -22,7 +22,6 @@ export function togglePhone() {
     if (response.ok) return response.json()
   })
   .then((phone) => {
-    if (isMobile) window.location.href=(`tel:${phone}`)
-    this.setState({ phone: phone.replace('+48 ', '').replace(/(.{3})/g, '$1 ') })
+    this.setState({ fullPhone: phone.replace('+48 ', '').replace(/(.{3})/g, '$1 ') })
   })
 }

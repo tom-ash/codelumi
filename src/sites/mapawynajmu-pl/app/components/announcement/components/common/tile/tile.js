@@ -23,7 +23,7 @@ class AnnouncementTile extends React.Component {
     this.phoneSwitchProvider = phoneSwitchProvider.bind(this)
     this.togglePhone = togglePhone.bind(this)
     this.state = {
-      phone: null
+      fullPhone: null
     }
   }
 
@@ -73,14 +73,13 @@ class AnnouncementTile extends React.Component {
       title,
       name,
       link,
-      announcerPhone,
-      togglePhone,
+      phone
     } = this.props
     const showcaseProps = {
-      announcerPhone,
+      announcerPhone: this.state.fullPhone || phone,
       announcementId: id,
       venue,
-      togglePhone: togglePhone, 
+      togglePhone: this.togglePhone, 
       langHandler
     }
     const goToLinkProps = {
@@ -120,14 +119,13 @@ class AnnouncementTile extends React.Component {
             {localitiesPresenter({ locality, sublocality })}
           </div>
         </h1>
-        {venue === 'show'
-        && [1,2,3,4,5].includes(category)
+        {[1,2,3,4,5].includes(category)
         && <Showcase { ...showcaseProps } />}
         {[6, 7].includes(category)
         && <GoToLink {...goToLinkProps} />}
-        {showPhoneSwitch
+        {/* {showPhoneSwitch
         && [0, 1, 2, 3, 4, 5].includes(category)
-        && this.phoneSwitchProvider()}
+        && this.phoneSwitchProvider()} */}
         <AnnouncementShowPictures
           lang={lang}
           venue={venue}
