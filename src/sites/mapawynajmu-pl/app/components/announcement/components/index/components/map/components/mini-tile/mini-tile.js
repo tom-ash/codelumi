@@ -22,9 +22,6 @@ const AnnouncementShowMiniTile = (props) => {
     langHandler,
     changeData,
     isMobile,
-    miniListFarthestScrollTop,
-    index,
-    miniListFarthestScrollLeft,
     path,
     title,
     locality,
@@ -34,23 +31,8 @@ const AnnouncementShowMiniTile = (props) => {
     currentTileId
   } = props
 
-  const DESKTOP_TILE_HEIGHT = 227
-  const MOBILE_TILE_WIDTH = 240
   const localities = localitiesPresenter({ locality, sublocality })
   let pinUnfocusTimeout = null
-  
-  if (
-    !isMobile && miniListFarthestScrollTop + 4 * DESKTOP_TILE_HEIGHT < index * DESKTOP_TILE_HEIGHT ||
-    isMobile && miniListFarthestScrollLeft + 3 * MOBILE_TILE_WIDTH < index * MOBILE_TILE_WIDTH
-  ) {
-    return (
-      <a
-        className='announcement-list-tile'
-        href={path}
-        title={title}
-      />
-    )
-  }
 
   return (
     <a

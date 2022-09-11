@@ -15,12 +15,6 @@ import Showcase from '../../show/components/showcase/showcase'
 import GoToLink from './components/go-to-link'
 import SVG from '../../../../../../../shared/app/components/support/svg/svg'
 
-function getPositionFromTop() {
-  if (!this.container.current) return
-
-  return this.container.current.getBoundingClientRect().top + window.scrollY
-}
-
 class AnnouncementTile extends React.Component {
   constructor(props) {
     super(props)
@@ -61,8 +55,6 @@ class AnnouncementTile extends React.Component {
       control,
       closeButtonOnClick,
       isMobile,
-      indexFullFarthestScrollTop,
-      index,
       device,
       scripts,
       loadMap,
@@ -97,25 +89,8 @@ class AnnouncementTile extends React.Component {
       langHandler: this.langHandler
     }
     const venueShow = venue === 'show'
-    const positionFromTop = getPositionFromTop.apply(this)
     const deviceClass = device === 'largePc' ? ' large-pc' : ''
     const description = this.props.description || this.langHandler({ pl: polishDescription, en: englishDescription })
-
-    // if (
-    //   index !== 0 && index !== 1 && index !== 2 &&
-    //   (positionFromTop === undefined || positionFromTop  > indexFullFarthestScrollTop + 1000) &&
-    //   venue !== 'map' &&
-    //   venue !== 'show'
-    // ) {
-    //   return (
-    //     <a
-    //       ref={this.container}
-    //       className='announcement-tile-anchor'
-    //       href={path}
-    //       title={title}
-    //     />
-    //   )
-    // }
 
     return (
       <div

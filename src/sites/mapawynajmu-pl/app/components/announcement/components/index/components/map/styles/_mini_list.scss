@@ -1,23 +1,15 @@
-#mini-list {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  &::-webkit-scrollbar { 
-    width: 0;
-    height: 0;
-  }
+@import '../../../../../../../../../shared/app/styles/hidden-scrollbar';
 
+#mini-list {
+  @extend %hidden-scrollbar;
   position: absolute;
-  width: 360px;
   top: 0;
   bottom: 0;
   left: 0;
   z-index: 2;
-  overflow-y: scroll;
-
+  width: 360px;
   padding-right: 12px;
-
   background: white;
-
   @media #{$LARGE-TABLET} {
     position: relative;
     width: 100%;
@@ -26,14 +18,12 @@
     white-space: nowrap;
     top: 0;
   }
-
   .announcement-list-tile {
     position: relative;
     margin-bottom: 24px;
     min-height: 200px;
     background: white;
     overflow: hidden;
-
     @media #{$LARGE-TABLET} {
       min-height: 204.8px;
       position: relative;
