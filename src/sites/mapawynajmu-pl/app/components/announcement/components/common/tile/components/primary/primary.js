@@ -38,7 +38,9 @@ class AnnouncementCreatePrimary extends React.Component {
 
     const currency = parseCurrency(rentCurrency)
 
-    if (!area && !grossRentAmount && !rooms && !floor && !totalFloors && !availabilityDate) return null
+    if (!area && !grossRentAmount && !rooms && !floor && !totalFloors && !availabilityDate) (
+      <div className='primary-data' />
+    )
 
     return (
       <div className='primary-data'>
