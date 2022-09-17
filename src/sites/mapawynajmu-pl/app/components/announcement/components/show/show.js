@@ -15,7 +15,6 @@ class AnnouncementShow extends React.Component {
   render() {
     const {
       lang,
-      venue,
       id,
       category,
       area,
@@ -61,6 +60,13 @@ class AnnouncementShow extends React.Component {
     const isMobile = ['largeTablet', 'smallTablet', 'largePhone', 'smallPhone'].indexOf(device) !== -1
     const link = links[`current/${lang}`]
     const path = link && link.path
+    const tileComponents = {
+      showPrimary: true,
+      showFeatures: true,
+      showFurnishings: true,
+      showDescription: true,
+      showMap: true
+    }
 
     return (
       <div id='announcement-show' className={deviceClass}>
@@ -107,6 +113,7 @@ class AnnouncementShow extends React.Component {
           name={name}
           link={annLink}
           phone={phone}
+          {...tileComponents}
         />
       </div>
     )

@@ -68,7 +68,12 @@ class AnnouncementTile extends React.Component {
       title,
       name,
       link,
-      phone
+      phone,
+      showPrimary,
+      showFeatures,
+      showFurnishings,
+      showDescription,
+      showMap
     } = this.props
     const showcaseProps = {
       announcerPhone: this.state.fullPhone || phone,
@@ -146,25 +151,26 @@ class AnnouncementTile extends React.Component {
           floor={floor}
           totalFloors={totalFloors}
           availabilityDate={availabilityDate}
+          showPrimary={showPrimary}
         />
-        {features && features.length > 0 &&
+        {showFeatures && features && features.length > 0 &&
         <AnnouncementShowFeaturesFurnishings
           lang={lang}
           itemsName='features'
           items={features}
         />}
-        {furnishings && furnishings.length > 0 &&
+        {showFurnishings && furnishings && furnishings.length > 0 &&
         <AnnouncementShowFeaturesFurnishings
           lang={lang}
           itemsName='furnishings'
           items={furnishings}
         />}
-        {description &&
+        {showDescription && description &&
         <ListingTileDescription
           lang={lang}
           description={description}
         />}
-        {venueShow && <AnnouncementShowMap
+        {showMap && <AnnouncementShowMap
           scripts={scripts}
           loadMap={loadMap}
           mapLoaded={mapLoaded}

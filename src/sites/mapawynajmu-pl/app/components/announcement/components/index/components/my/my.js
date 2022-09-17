@@ -45,6 +45,14 @@ class AnnouncementIndexMy extends React.Component {
 
     if (!routeSynced) return null
 
+    const tileComponents = {
+      showPrimary: false,
+      showFeatures: false,
+      showFurnishings: false,
+      showDescription: false,
+      showMap: false
+    }
+
     return (
       <div id='announcement-index-list'>
         {
@@ -90,6 +98,7 @@ class AnnouncementIndexMy extends React.Component {
             title={announcement.title}
             locality={announcement.locality}
             sublocality={announcement.sublocality}
+            {...tileComponents}
           />))}
           <div className='float-clear' />
         </div>

@@ -32,7 +32,8 @@ class AnnouncementCreatePrimary extends React.Component {
       rooms,
       floor,
       totalFloors,
-      availabilityDate
+      availabilityDate,
+      showPrimary
     } = this.props
 
     const currency = parseCurrency(rentCurrency)
@@ -61,13 +62,13 @@ class AnnouncementCreatePrimary extends React.Component {
             perSqm={false}
             langHandler={this.langHandler}
           />
-          <PresentRent
+          {showPrimary &&<PresentRent
             amount={grossRentAmountPerSqm}
             currency={currency}
             type='gross per-sqm'
             perSqm={true}
             langHandler={this.langHandler}
-          />
+          />}
         </div>
         {netRentAmount && netRentAmountPerSqm &&
         <div className='column'>
@@ -79,34 +80,37 @@ class AnnouncementCreatePrimary extends React.Component {
             langHandler={this.langHandler}
             net={true}
           />
-          <PresentRent
+          {showPrimary && <PresentRent
             amount={netRentAmountPerSqm}
             currency={currency}
             type='net per-sqm'
             perSqm={true}
             langHandler={this.langHandler}
             net={true}
-          />
+          />}
         </div>
         }
         <div className='float-clear' />
-        {rooms !== null &&
-        <div className='rooms'>
-          {rooms} {this.langHandler(presentRooms({ rooms, category }))}
-        </div>}
-        {floor !== null &&
-        <div className='floor'>
-          {this.langHandler(presentFloor({ floor }))}
-        </div>}
-        {totalFloors !== null &&
-        <div className='total-floors'>
-          {this.langHandler(presentTotalFloors({ totalFloors }))}
-        </div>}
-        {availabilityDate !== null &&
-        <div className='available-from'>
-          {this.langHandler(presentAvailabilityDate({ availabilityDate, category }))}
-        </div>}
-        <div className='float-clear' />
+        {showPrimary &&
+        <>
+          {rooms !== null &&
+          <div className='rooms'>
+            {rooms} {this.langHandler(presentRooms({ rooms, category }))}
+          </div>}
+          {floor !== null &&
+          <div className='floor'>
+            {this.langHandler(presentFloor({ floor }))}
+          </div>}
+          {totalFloors !== null &&
+          <div className='total-floors'>
+            {this.langHandler(presentTotalFloors({ totalFloors }))}
+          </div>}
+          {availabilityDate !== null &&
+          <div className='available-from'>
+            {this.langHandler(presentAvailabilityDate({ availabilityDate, category }))}
+          </div>}
+          <div className='float-clear' />
+        </>}
       </div>
     )
   }

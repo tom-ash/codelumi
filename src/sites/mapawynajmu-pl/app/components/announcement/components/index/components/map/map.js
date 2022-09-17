@@ -44,6 +44,13 @@ class AnnouncementIndexMap extends React.Component {
     } = this.props
 
     const currentTileId = tile && tile.id || null
+    const tileComponents = {
+      showPrimary: true,
+      showFeatures: true,
+      showFurnishings: true,
+      showDescription: true,
+      showMap: false
+    }
 
     return (
       <div id='announcement-index-map'>
@@ -126,6 +133,7 @@ class AnnouncementIndexMap extends React.Component {
               name={tile.name}
               link={tile.link}
               phone={tile.phone}
+              {...tileComponents}
             />
           </div>}
         </div>
