@@ -40,7 +40,7 @@ class AnnouncementCreatePrimary extends React.Component {
     if (!area && !grossRentAmount && !rooms && !floor && !totalFloors && !availabilityDate) return null
 
     return (
-      <div className='announcement-tile-primary'>
+      <div className='primary-data'>
         <div className='column'>
           {area && (
             <div className='area'>

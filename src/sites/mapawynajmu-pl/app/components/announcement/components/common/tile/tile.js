@@ -2,13 +2,11 @@ import React from 'react'
 import AnnouncementShowPictures from './components/pictures/pictures'
 import AnnouncementShowPrimary from './components/primary/primary'
 import AnnouncementShowFeaturesFurnishings from './components/features-furnishings/features-furnishings'
-import AnnouncementShowDescription from './components/description/description'
+import ListingTileDescription from './components/description/description'
 import AnnouncementShowMap from './components/map/map'
 import langHandler from '../../../../../functions/lang-handler.js'
 import { parseCategory } from '../../../../../../shared/functions/parsers/parse-category'
 import { togglePhone } from '../../../functions/toggle-phone'
-import withStyles from 'isomorphic-style-loader/withStyles'
-import styles from './styles/styles.scss'
 import localitiesPresenter from '../../../functions/localities-presenter'
 import Showcase from '../../show/components/showcase/showcase'
 import GoToLink from './components/go-to-link'
@@ -88,8 +86,6 @@ class AnnouncementTile extends React.Component {
     const deviceClass = device === 'largePc' ? ' large-pc' : ''
     const description = this.props.description || this.langHandler({ pl: polishDescription, en: englishDescription })
 
-    // console.log(venue)
-
     return (
       <div
         ref={this.container}
@@ -164,7 +160,7 @@ class AnnouncementTile extends React.Component {
           items={furnishings}
         />}
         {description &&
-        <AnnouncementShowDescription
+        <ListingTileDescription
           lang={lang}
           description={description}
         />}
@@ -190,4 +186,4 @@ class AnnouncementTile extends React.Component {
   }
 }
 
-export default withStyles(styles)(AnnouncementTile)
+export default AnnouncementTile

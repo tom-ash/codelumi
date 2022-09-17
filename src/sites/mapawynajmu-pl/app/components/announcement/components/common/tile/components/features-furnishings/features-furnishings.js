@@ -23,7 +23,7 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
     const headerText = isFeatures ? FEATURES_HEADER : FURNISHINGS_HEADER
 
     return (
-      <div className='announcement-tile-features'>
+      <div className='features'>
         <Header tier={2} text={this.langHandler(headerText)} />
         {
         items && items.map(item => (

@@ -1,8 +1,4 @@
-@import '../../../../../../../styles/shadows.scss';
-@import '../../../../common/tile/styles/h1';
-@import '../../../../common/tile/styles/go-to-link';
-@import '../../../../../../../../../shared/app/styles/hidden-scrollbar';
-@import '../../../../show/components/showcase/styles/styles.scss';
+@import '../../../../common/tile/styles/tile';
 
 #announcement-index-map {
   position: relative;
@@ -21,66 +17,7 @@
     background: rgb(253, 254, 254);
     padding-right: 15px;
     .announcement-tile {
-      @extend %h1;
-      @extend %go-to-link;
-      @extend %hidden-scrollbar;
-      @extend %phone-showcase;
-      position: relative;
-      height: 100%;
-      padding-bottom: 120px;
-      .go-back-to-list {
-        transform: rotate(180deg);
-        display: block;
-        width: 36px;
-        height: 36px;
-        margin: 0 0 12px auto;
-        border-radius: 50%;
-        background: none;
-        border: 1px solid #979A9A;
-        transition: border-color .15s ease-in;
-        svg {
-          width: 18px;
-          fill: #979A9A;
-          transform: translate(0, 1px);
-          transition: fill .15s ease-in;
-        }
-        &:hover {
-          border-color: #626567;
-          svg {
-            fill: #626567;
-          }
-        }
-      }
-      h1 {
-        margin-bottom: 18px;
-        .name {
-          margin-bottom: 18px;
-          font-size: 17px;
-        }
-        .category {
-          margin-bottom: 8px;
-          font-size: 15px;
-        }
-        .for-lease {
-          font-size: 9px;
-        }
-        .locality-sublocality {
-          font-size: 12px;
-        }
-      }
-      .go-to-link {
-        margin-bottom: 18px;
-        line-height: 28px;
-        font-size: 14px;
-        .icon {
-          width: 28px;
-          height: 28px;
-          svg {
-            height: 18px;
-            margin-top: 5px;
-          }
-        }
-      }
+      @extend %tile;
     }
     @media #{$LARGE-TABLET} {
       position: fixed;

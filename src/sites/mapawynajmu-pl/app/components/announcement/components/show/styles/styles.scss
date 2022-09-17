@@ -1,7 +1,8 @@
 @import '../../../../../styles/colors.scss';
 @import '../../../../../styles/media-breakpoints.scss';
-@import './dimensions.scss';
-@import './tile.scss';
+// @import './dimensions.scss';
+// @import './tile.scss';
+@import '../../common/tile/styles/tile';
 
 #announcement-show {
   position: relative;
@@ -10,5 +11,8 @@
   @media #{$LARGE-TABLET} {
     background: white;
     width: 100%;
+  }
+  .announcement-tile {
+    @extend %tile;
   }
 }

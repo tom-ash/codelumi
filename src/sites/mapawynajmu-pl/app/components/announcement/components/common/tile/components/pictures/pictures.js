@@ -2,9 +2,9 @@ import React from 'react'
 import ManagedSlider from '../../../../../../support/components/managed-slider/managed-slider'
 import { ManagedLink } from 'managed-inputs'
 import { getDerivedStateFromProps } from './functions/get-derived-state-from-props'
-import langHandler from '../../../../../../../functions/lang-handler'
 import { linkManager } from './functions/managers'
 import SVG from '../../../../../../support/components/svg/svg'
+import langHandler from '../../../../../../../functions/lang-handler'
 import AppContext from '../../../../../../../constants/context.js'
 
 class AnnouncementShowPictures extends React.Component {
@@ -25,8 +25,8 @@ class AnnouncementShowPictures extends React.Component {
       disableSLides,
       heightQuantifier,
       venue,
-      isMobile,
-      path,
+      // isMobile,
+      // path,
       title,
     } = this.props
 
@@ -40,7 +40,7 @@ class AnnouncementShowPictures extends React.Component {
     const Chevron = () => <SVG name='chevron' />
 
     return (
-      <div className='announcement-show-pictures'>
+      <div className='pictures'>
         <ManagedSlider
           pictures={pictures}
           disableSLides={disableSLides}

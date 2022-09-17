@@ -3,8 +3,6 @@ import * as lifecycle from './functions/lifecycle'
 import { googleMapHandler } from '../../../../../functions/google-map-handler.js'
 import { shouldSetUpGoogleMaps } from '../../../../../functions/google-map-handler'
 import { shouldSetUpMarker } from '../../../../../functions/google-map-handler'
-import Header from '../../../../../../support/components/header/header.js'
-import { HEADER } from './constants/texts.js'
 
 class AnnouncementShowMap extends React.Component {
   constructor(props) {
@@ -26,7 +24,7 @@ class AnnouncementShowMap extends React.Component {
     if (!(latitude && longitude)) return null
 
     return (
-      <div className='announcement-tile-map'>
+      <div className='map'>
         <div id='google-map-container'>
           <div id='google-map' />
         </div>
