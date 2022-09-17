@@ -7,6 +7,8 @@
     margin-bottom: 18px;
     font-weight: bold;
     color: #1A5276;
+    white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
   }
   .category {
