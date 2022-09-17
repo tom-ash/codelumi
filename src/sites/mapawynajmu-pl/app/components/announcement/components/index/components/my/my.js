@@ -53,6 +53,8 @@ class AnnouncementIndexMy extends React.Component {
       showMap: false
     }
 
+    console.log(this.props)
+
     return (
       <div id='announcement-index-list'>
         {
@@ -98,6 +100,8 @@ class AnnouncementIndexMy extends React.Component {
             title={announcement.title}
             locality={announcement.locality}
             sublocality={announcement.sublocality}
+            name={`${announcement.id}. ${announcement.name ? ` ${announcement.name}`: ''}`}
+            link={announcement.link}
             {...tileComponents}
           />))}
           <div className='float-clear' />
