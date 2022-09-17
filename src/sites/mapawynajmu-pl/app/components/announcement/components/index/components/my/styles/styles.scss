@@ -1,6 +1,7 @@
 @import '../../../../../../../styles/themes.scss';
 @import './destroy_modal.scss';
 @import '../../../../common/tile/styles/tile';
+@import '../../../../../../../../../shared/app/styles/lined-heading';
 
 #announcement-index-list {
   position: relative;
@@ -9,6 +10,14 @@
   padding-top: 28px;
   @media #{$LARGE-PHONE} {
     width: 100%;
+  }
+  > h1 {
+    @extend %lined-heading;
+    margin-bottom: 48px;
+    &:before {
+      right: 0;
+      left: 0;
+    }
   }
   .announcements {
     .listing-tile {

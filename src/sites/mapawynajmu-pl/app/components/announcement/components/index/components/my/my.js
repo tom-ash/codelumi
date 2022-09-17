@@ -55,6 +55,9 @@ class AnnouncementIndexMy extends React.Component {
 
     return (
       <div id='announcement-index-list'>
+        <h1>
+          <span>{this.langHandler({ pl: 'Moje ogłoszenia', en: 'My announcements' })}</span>
+        </h1>
         {
         this.props.beingDeleted &&
         <div className='destroy'>
