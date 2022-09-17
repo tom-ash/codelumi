@@ -7,7 +7,6 @@ interface GoToLinkProps {
   langHandler: LangHandler
 }
 
-
 const GoToLink = (props: GoToLinkProps) => {
   const {
     name,

@@ -13,7 +13,7 @@ const AnnouncementShowShowcase = ({
 }) => {
   return (
     <div id='showcase'>
-      <div className='phone-showcase'>
+      <div className='lister-phone'>
         <div className='icon'>
           <SVG name='phone' />
         </div>
