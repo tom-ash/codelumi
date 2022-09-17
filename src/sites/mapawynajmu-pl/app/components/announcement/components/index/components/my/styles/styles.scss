@@ -27,4 +27,31 @@
     height: 22px;
     line-height: 22px;
   }
+  .control {
+    .info {
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .edit-delete {
+      margin-top: 24px;
+      text-align: center;
+    }
+    .edit {
+      margin-right: 24px;
+      color: #2471A3;
+    }
+    .delete {
+      color: #C0392B;
+    }
+    button {
+      display: inline-block;
+      background: none;
+      border-radius: 5px;
+      border: none;
+      text-decoration: underline;
+      font-size: inherit;
+      font-family: 'Courier New', Courier, monospace;
+    }
+  }
 }

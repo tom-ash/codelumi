@@ -53,8 +53,6 @@ class AnnouncementIndexMy extends React.Component {
       showMap: false
     }
 
-    console.log(this.props)
-
     return (
       <div id='announcement-index-list'>
         {
