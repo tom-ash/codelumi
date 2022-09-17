@@ -89,7 +89,7 @@ class AnnouncementTile extends React.Component {
     return (
       <div
         ref={this.container}
-        className={`announcement-tile ${venue}${deviceClass}`}
+        className={`listing-tile ${venue}${deviceClass}`}
       >
         {venue === 'map' &&
         <button

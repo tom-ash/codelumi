@@ -16,7 +16,7 @@
     height: 700px;
     background: rgb(253, 254, 254);
     padding-right: 15px;
-    .announcement-tile {
+    .listing-tile {
       @extend %tile;
     }
     @media #{$LARGE-TABLET} {
@@ -28,7 +28,7 @@
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, .5);
-      .announcement-tile {
+      .listing-tile {
         position: absolute;
         top: 12px;
         right: 12px;
@@ -52,13 +52,6 @@
         }
         .go-back-to-list {
           margin: 18px 18px 18px auto;
-        }
-        .announcement-tile-primary {
-          padding: 0 18px;
-        }
-        .announcement-tile-description {
-          margin: 18px 0;
-          padding: 0 18px;
         }
       }
     }

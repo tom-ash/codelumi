@@ -1,18 +1,25 @@
 @import '../../../../../../../styles/themes.scss';
-@import './list-tile';
 @import './destroy_modal.scss';
+@import '../../../../common/tile/styles/tile';
 
 #announcement-index-list {
   position: relative;
-  width: 800px;
+  width: 880px;
   margin: 0 auto;
   padding-top: 28px;
   @media #{$LARGE-PHONE} {
     width: 100%;
   }
   .announcements {
-    .announcement-tile {
-      @extend %list-tile;
+    .listing-tile {
+      @extend %tile;
+      margin: 0 auto 32px;
+      width: 45%;
+      float: left;
+      margin-right: 10%;
+      &:nth-of-type(2n) {
+        margin-right: 0;
+      }
     }
   }
 }
