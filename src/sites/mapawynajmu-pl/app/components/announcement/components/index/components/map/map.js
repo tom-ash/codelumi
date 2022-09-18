@@ -92,7 +92,6 @@ class AnnouncementIndexMap extends React.Component {
                 {...tileProps}
               />
             })}
-            <div className='float-clear' />
           </div>
           <div id='google-map' />
           {tile && Object.keys(tile).length > 1 &&
