@@ -1,9 +1,9 @@
 import React from 'react'
-import AnnouncementShowPictures from './components/pictures/pictures'
-import AnnouncementShowPrimary from './components/primary/primary'
-import AnnouncementShowFeaturesFurnishings from './components/features-furnishings/features-furnishings'
-import ListingTileDescription from './components/description/description'
-import AnnouncementShowMap from './components/map/map'
+import Pictures from './components/pictures/pictures'
+import PrimaryData from './components/primary/primary'
+import Items from './components/features-furnishings/features-furnishings'
+import Description from './components/description/description'
+import Map from './components/map/map'
 import langHandler from '../../../../../functions/lang-handler.js'
 import { parseCategory } from '../../../../../../shared/functions/parsers/parse-category'
 import { togglePhone } from '../../../functions/toggle-phone'
@@ -50,7 +50,6 @@ class AnnouncementTile extends React.Component {
       control,
       closeButtonOnClick,
       isMobile,
-      device,
       scripts,
       loadMap,
       mapLoaded,
@@ -87,15 +86,12 @@ class AnnouncementTile extends React.Component {
       link,
       langHandler: this.langHandler
     }
-    const venueShow = venue === 'show'
-    const deviceClass = device === 'largePc' ? ' large-pc' : ''
     const description = this.props.description || this.langHandler({ pl: polishDescription, en: englishDescription })
 
-    return (
-      <div
-        ref={this.container}
-        className={`listing-tile ${venue}${deviceClass}`}
-      >
+    const element = venue === 'show' ? 'main' : 'div'
+
+    const tileComponents = (
+      <>
         {venue === 'map' &&
         <button
           onClick={closeButtonOnClick}
@@ -125,7 +121,7 @@ class AnnouncementTile extends React.Component {
         {[6, 7].includes(category)
         && venue !== 'list'
         && <GoToLink {...goToLinkProps} />}
-        <AnnouncementShowPictures
+        <Pictures
           lang={lang}
           venue={venue}
           id={id}
@@ -138,7 +134,7 @@ class AnnouncementTile extends React.Component {
           path={path}
           title={title}
         />
-        <AnnouncementShowPrimary
+        <PrimaryData
           lang={lang}
           category={category}
           area={area}
@@ -154,23 +150,23 @@ class AnnouncementTile extends React.Component {
           showPrimary={showPrimary}
         />
         {showFeatures && features && features.length > 0 &&
-        <AnnouncementShowFeaturesFurnishings
+        <Items
           lang={lang}
           itemsName='features'
           items={features}
         />}
         {showFurnishings && furnishings && furnishings.length > 0 &&
-        <AnnouncementShowFeaturesFurnishings
+        <Items
           lang={lang}
           itemsName='furnishings'
           items={furnishings}
         />}
         {showDescription && description &&
-        <ListingTileDescription
+        <Description
           lang={lang}
           description={description}
         />}
-        {showMap && <AnnouncementShowMap
+        {showMap && <Map
           scripts={scripts}
           loadMap={loadMap}
           mapLoaded={mapLoaded}
@@ -187,7 +183,13 @@ class AnnouncementTile extends React.Component {
           isMobile={isMobile}
         />}
         {control}
-      </div>
+      </>
+    )
+
+    return React.createElement(
+      element,
+      { className: 'listing-tile' },
+      tileComponents
     )
   }
 }
