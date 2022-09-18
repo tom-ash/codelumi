@@ -47,10 +47,6 @@ class AnnouncementIndexMy extends React.Component {
 
     const tileComponents = {
       showPrimary: false,
-      showFeatures: false,
-      showFurnishings: false,
-      showDescription: false,
-      showMap: false
     }
 
     return (

@@ -1,15 +1,19 @@
 import React from 'react'
+
+import GoBack from './components/go-back'
+import Showcase from '../../show/components/showcase/showcase'
+import GoToLink from './components/go-to-link'
+
 import Heading from './components/heading'
 import Pictures from './components/pictures/pictures'
 import PrimaryData from './components/primary/primary'
+
 import Items from './components/features-furnishings/features-furnishings'
 import Description from './components/description/description'
 import Map from './components/map/map'
+
 import langHandler from '../../../../../functions/lang-handler.js'
 import { togglePhone } from '../../../functions/toggle-phone'
-import Showcase from '../../show/components/showcase/showcase'
-import GoBack from './components/go-back'
-import GoToLink from './components/go-to-link'
 
 class AnnouncementTile extends React.Component {
   constructor(props) {
@@ -68,10 +72,6 @@ class AnnouncementTile extends React.Component {
       link,
       phone,
       showPrimary,
-      showFeatures,
-      showFurnishings,
-      showDescription,
-      showMap
     } = this.props
     const showcaseProps = {
       announcerPhone: this.state.fullPhone || phone,
@@ -89,7 +89,6 @@ class AnnouncementTile extends React.Component {
       langHandler: this.langHandler
     }
     const description = this.props.description || this.langHandler({ pl: polishDescription, en: englishDescription })
-    const element = venue === 'show' ? 'main' : 'div'
     const headingProps = {
       name,
       category,
@@ -157,35 +156,45 @@ class AnnouncementTile extends React.Component {
       isMobile,
     }
 
-    const tileComponents = (
-      <>
-        {venue === 'map' &&
-        <GoBack {...goBackProps} />}
-        <Heading {...headingProps} />
-        {[1,2,3,4,5].includes(category)
-        && venue !== 'list'
-        && <Showcase { ...showcaseProps } />}
-        {[6, 7].includes(category)
-        && venue !== 'list'
-        && <GoToLink {...goToLinkProps} />}
-        <Pictures {...picturesProps} />
-        <PrimaryData {...primaryDataProps} />
-        {showFeatures && features && features.length > 0 &&
-        <Items {...featuresProps} />}
-        {showFurnishings && furnishings && furnishings.length > 0 &&
-        <Items {...furnishingsProps} />}
-        {showDescription && description &&
-        <Description {...descriptionProps} />}
-        {showMap && <Map {...mapProps} />}
-        {control}
-      </>
-    )
+    const isPhoneable = [1,2,3,4,5].includes(category)
 
-    return React.createElement(
-      element,
-      { className: 'listing-tile' },
-      tileComponents
-    )
+    switch (venue) {
+      case 'map':
+        return (
+          <div className='listing-tile'>
+            <GoBack {...goBackProps} />
+            <Heading {...headingProps} />
+            {isPhoneable ? <Showcase { ...showcaseProps } /> : <GoToLink {...goToLinkProps} />}
+            <Pictures {...picturesProps} />
+            <PrimaryData {...primaryDataProps} />
+            {description && <Description {...descriptionProps} />}
+          </div>
+        )
+        case 'show':
+          return (
+            <main className='listing-tile'>
+              <Heading {...headingProps} />
+              {isPhoneable ? <Showcase { ...showcaseProps } /> : <GoToLink {...goToLinkProps} />}
+              <Pictures {...picturesProps} />
+              <PrimaryData {...primaryDataProps} />
+              {features && features.length > 0 && <Items {...featuresProps} />}
+              {furnishings && furnishings.length > 0 && <Items {...furnishingsProps} />}
+              {description && <Description {...descriptionProps} />}
+              {<Map {...mapProps} />}
+            </main>
+          )
+        case 'list':
+          return (
+            <main className='listing-tile'>
+              <Heading {...headingProps} />
+              <Pictures {...picturesProps} />
+              <PrimaryData {...primaryDataProps} />
+              {control}
+            </main>
+          )
+      default:
+        return null
+    }
   }
 }
 

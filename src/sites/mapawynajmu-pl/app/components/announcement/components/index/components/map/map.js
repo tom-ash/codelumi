@@ -46,10 +46,6 @@ class AnnouncementIndexMap extends React.Component {
     const currentTileId = tile && tile.id || null
     const tileComponents = {
       showPrimary: true,
-      showFeatures: true,
-      showFurnishings: true,
-      showDescription: true,
-      showMap: false
     }
 
     return (

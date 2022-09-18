@@ -62,10 +62,6 @@ class AnnouncementShow extends React.Component {
     const path = link && link.path
     const tileComponents = {
       showPrimary: true,
-      showFeatures: true,
-      showFurnishings: true,
-      showDescription: true,
-      showMap: true
     }
 
     return (
