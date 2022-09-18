@@ -1,13 +1,12 @@
 import React from 'react'
+import Heading from './components/heading'
 import Pictures from './components/pictures/pictures'
 import PrimaryData from './components/primary/primary'
 import Items from './components/features-furnishings/features-furnishings'
 import Description from './components/description/description'
 import Map from './components/map/map'
 import langHandler from '../../../../../functions/lang-handler.js'
-import { parseCategory } from '../../../../../../shared/functions/parsers/parse-category'
 import { togglePhone } from '../../../functions/toggle-phone'
-import localitiesPresenter from '../../../functions/localities-presenter'
 import Showcase from '../../show/components/showcase/showcase'
 import GoToLink from './components/go-to-link'
 import SVG from '../../../../../../../shared/app/components/support/svg/svg'
@@ -90,6 +89,15 @@ class AnnouncementTile extends React.Component {
 
     const element = venue === 'show' ? 'main' : 'div'
 
+    const headingProps = {
+      name,
+      category,
+      locality,
+      sublocality,
+      lang,
+      langHandler: this.langHandler
+    }
+
     const tileComponents = (
       <>
         {venue === 'map' &&
@@ -99,22 +107,7 @@ class AnnouncementTile extends React.Component {
         >
           <SVG name='arrowRight' />
         </button>}
-        <h1>
-          {name
-          && (
-          <div className='name'>
-            {name}
-          </div>
-          )}
-          <div className='category'>
-            <span>{category !== null && parseCategory({ categoryNumber: category, lang })}</span>
-            &nbsp;
-            <span className='for-lease'>{this.langHandler({ pl: 'na wynajem', en: 'for rent' })}</span>
-          </div>
-          <div className='locality-sublocality'>
-            {localitiesPresenter({ locality, sublocality })}
-          </div>
-        </h1>
+        <Heading {...headingProps} />
         {[1,2,3,4,5].includes(category)
         && venue !== 'list'
         && <Showcase { ...showcaseProps } />}
