@@ -1,17 +1,14 @@
 import React from 'react'
-
-import GoBack from './components/go-back'
-import Showcase from '../../show/components/showcase/showcase'
-import GoToLink from './components/go-to-link'
-
-import Heading from './components/heading'
-import Pictures from './components/pictures/pictures'
-import PrimaryData from './components/primary/primary'
-
-import Items from './components/features-furnishings/features-furnishings'
-import Description from './components/description/description'
-import Map from './components/map/map'
-
+import loadable from '@loadable/component'
+const GoBack = loadable(() => import('./components/go-back'))
+const Showcase = loadable(() => import('../../show/components/showcase/showcase'))
+const GoToLink = loadable(() => import('./components/go-to-link'))
+const Heading = loadable(() => import('./components/heading'))
+const Pictures = loadable(() => import('./components/pictures/pictures'))
+const PrimaryData = loadable(() => import('./components/primary/primary'))
+const Items = loadable(() => import('./components/features-furnishings/features-furnishings'))
+const Description = loadable(() => import('./components/description/description'))
+const Map = loadable(() => import('./components/map/map'))
 import langHandler from '../../../../../functions/lang-handler.js'
 import { togglePhone } from '../../../functions/toggle-phone'
 
@@ -155,7 +152,6 @@ class AnnouncementTile extends React.Component {
       langHandler,
       isMobile,
     }
-
     const isPhoneable = [1,2,3,4,5].includes(category)
 
     switch (venue) {
