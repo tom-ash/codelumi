@@ -11,6 +11,7 @@ const Description = loadable(() => import('./components/description/description'
 const Map = loadable(() => import('./components/map/map'))
 import langHandler from '../../../../../functions/lang-handler.js'
 import { togglePhone } from '../../../functions/toggle-phone'
+import { viewAnnouncement } from '../../../../announcement/functions/view-announcement'
 
 class AnnouncementTile extends React.Component {
   constructor(props) {
@@ -155,6 +156,40 @@ class AnnouncementTile extends React.Component {
     const isPhoneable = [1,2,3,4,5].includes(category)
 
     switch (venue) {
+      case 'rootList':
+        return (
+          <div className='announcement-list-tile'>
+            <a
+              href={path}
+              title={title}
+              target='_blank'
+              onMouseOver={() => {
+                const pin = document.getElementById(`googl-map-pin-${id}`)
+        
+                if (pin) pin.classList.add('focused')
+              }}
+              onMouseLeave={() => {
+                const pin = document.getElementById(`googl-map-pin-${id}`)
+                if (pin) pin.classList.remove('focused')
+              }}
+              onClick={e => {
+                e.preventDefault()
+                const map = window.googleMap
+                const options = { center: { lat: latitude, lng: longitude }, zoom: 12.4 }
+                map.setOptions(options)
+                viewAnnouncement(id)
+        
+                if (!isMobile) return changeData({ tileId: id })
+        
+                scrollToElement(document.getElementById('google-map'), 5, -64)
+              }}
+            >
+              <Pictures {...picturesProps} />
+            </a>
+            <Heading {...headingProps} />
+            <PrimaryData {...primaryDataProps} />
+          </div>
+        )
       case 'map':
         return (
           <div className='listing-tile'>

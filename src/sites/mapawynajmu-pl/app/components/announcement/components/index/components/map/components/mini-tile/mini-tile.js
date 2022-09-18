@@ -40,20 +40,7 @@ const AnnouncementShowMiniTile = (props) => {
       key={id}
       href={path}
       title={title}
-      onMouseOver={() => {
-        const pin = document.getElementById(`googl-map-pin-${id}`)
 
-        if (pin) pin.classList.add('focused')
-      }}
-      onMouseLeave={() => {
-        if (currentTileId) return
-
-        // TODO: Underpin on state instead!
-        pinUnfocusTimeout = setTimeout(() => {
-          const pin = document.getElementById(`googl-map-pin-${id}`)
-          if (pin) pin.classList.remove('focused')
-        }, 0)
-      }}
       onClick={e => {
         e.preventDefault()
         const map = window.googleMap
