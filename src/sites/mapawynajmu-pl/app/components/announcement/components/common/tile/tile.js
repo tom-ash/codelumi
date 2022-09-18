@@ -4,6 +4,7 @@ const GoBack = loadable(() => import('./components/go-back'))
 const Showcase = loadable(() => import('../../show/components/showcase/showcase'))
 const GoToLink = loadable(() => import('./components/go-to-link'))
 const Heading = loadable(() => import('./components/heading'))
+const Link = loadable(() => import('./components/link'))
 const Pictures = loadable(() => import('./components/pictures/pictures'))
 const PrimaryData = loadable(() => import('./components/primary/primary'))
 const Items = loadable(() => import('./components/features-furnishings/features-furnishings'))
@@ -11,7 +12,6 @@ const Description = loadable(() => import('./components/description/description'
 const Map = loadable(() => import('./components/map/map'))
 import langHandler from '../../../../../functions/lang-handler.js'
 import { togglePhone } from '../../../functions/toggle-phone'
-import { viewAnnouncement } from '../../../../announcement/functions/view-announcement'
 
 class AnnouncementTile extends React.Component {
   constructor(props) {
@@ -95,6 +95,16 @@ class AnnouncementTile extends React.Component {
       lang,
       langHandler: this.langHandler
     }
+    const linkProps = {
+      id,
+      path,
+      title,
+      lat: latitude,
+      lng: longitude,
+      isMobile,
+      changeData,
+      pictures,
+    }
     const picturesProps = {
       lang,
       venue,
@@ -159,33 +169,7 @@ class AnnouncementTile extends React.Component {
       case 'rootList':
         return (
           <div className='announcement-list-tile'>
-            <a
-              href={path}
-              title={title}
-              target='_blank'
-              onMouseOver={() => {
-                const pin = document.getElementById(`googl-map-pin-${id}`)
-        
-                if (pin) pin.classList.add('focused')
-              }}
-              onMouseLeave={() => {
-                const pin = document.getElementById(`googl-map-pin-${id}`)
-                if (pin) pin.classList.remove('focused')
-              }}
-              onClick={e => {
-                e.preventDefault()
-                const map = window.googleMap
-                const options = { center: { lat: latitude, lng: longitude }, zoom: 12.4 }
-                map.setOptions(options)
-                viewAnnouncement(id)
-        
-                if (!isMobile) return changeData({ tileId: id })
-        
-                scrollToElement(document.getElementById('google-map'), 5, -64)
-              }}
-            >
-              <Pictures {...picturesProps} />
-            </a>
+            <Link {...linkProps} />
             <Heading {...headingProps} />
             <PrimaryData {...primaryDataProps} />
           </div>

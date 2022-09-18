@@ -130,51 +130,14 @@ function PresentRent({
 }) {
   if (!amount) return null
 
-  return (
-    <div className={`rent-container ${type}`}>
-      <div className='amount'>
-        {presentAmount(amount)}
-      </div>
-      <div className='currency'>
-        {currency} 
-      </div>
-      {perSqm &&
-      <div className='per-sqm'>
-        {langHandler({
-          pl: (
-            <React.Fragment>
-              <div className='m'>
-                /m
-              </div>
-              <div className='sq'>
-                2
-              </div>
-            </React.Fragment>
-          ),
-          en: `/sqm` })}
-      </div>}
-      <div className='per-month'>
-        {langHandler({ pl: `${net ? 'NETTO' : ''}/MC`, en: `${net ? 'NET' : ''}/MO` })}
-      </div>
-      <div className='float-clear' />
-    </div>
-  )
-}
-
-
-function presentAmount(amount) {
-  if (!amount) return
-
   const multipliedAmount = `${Math.ceil(amount * 100)}`
 
   return (
-    <React.Fragment>
-      <div className='basis'>
-        {multipliedAmount.slice(0, -2)}
-      </div>
-      <div className='decimal'>
-        {multipliedAmount.slice(-2)}
-      </div>
-    </React.Fragment>
+    <div className={`rent-container ${type}`}>
+      {multipliedAmount.slice(0, -2)} <sup className='decimal'>{multipliedAmount.slice(-2)}</sup> {currency} 
+      {perSqm && langHandler({ pl: <> /m<sup>2</sup></>, en: ` /sqm` })}
+      <sub>{langHandler({ pl: `${net ? 'NETTO' : ''} /MC`, en: `${net ? 'NET' : ''}/MO` })}</sub>
+      <div className='float-clear' />
+    </div>
   )
 }

@@ -39,6 +39,8 @@ class AnnouncementShowPictures extends React.Component {
 
     const Chevron = () => <SVG name='chevron' />
 
+    console.log(pictures)
+
     return (
       <div className='pictures'>
         <ManagedSlider
