@@ -8,8 +8,8 @@ import Map from './components/map/map'
 import langHandler from '../../../../../functions/lang-handler.js'
 import { togglePhone } from '../../../functions/toggle-phone'
 import Showcase from '../../show/components/showcase/showcase'
+import GoBack from './components/go-back'
 import GoToLink from './components/go-to-link'
-import SVG from '../../../../../../../shared/app/components/support/svg/svg'
 
 class AnnouncementTile extends React.Component {
   constructor(props) {
@@ -80,15 +80,16 @@ class AnnouncementTile extends React.Component {
       togglePhone: this.togglePhone, 
       langHandler
     }
+    const goBackProps = {
+      closeButtonOnClick
+    }
     const goToLinkProps = {
       name,
       link,
       langHandler: this.langHandler
     }
     const description = this.props.description || this.langHandler({ pl: polishDescription, en: englishDescription })
-
     const element = venue === 'show' ? 'main' : 'div'
-
     const headingProps = {
       name,
       category,
@@ -97,16 +98,69 @@ class AnnouncementTile extends React.Component {
       lang,
       langHandler: this.langHandler
     }
+    const picturesProps = {
+      lang,
+      venue,
+      id,
+      pictures,
+      category,
+      area,
+      isMobile,
+      changeApp,
+      changeData,
+      path,
+      title,
+    }
+    const primaryDataProps = {
+      lang,
+      category,
+      area,
+      netRentAmount,
+      netRentAmountPerSqm,
+      grossRentAmount,
+      grossRentAmountPerSqm,
+      rentCurrency,
+      rooms,
+      floor,
+      totalFloors,
+      availabilityDate,
+      showPrimary,
+    }
+    const featuresProps = {
+      lang,
+      itemsName: 'features',
+      items: features
+    }
+    const furnishingsProps = {
+      lang,
+      itemsName: 'furnishings',
+      items: furnishings
+    }
+    const descriptionProps = {
+      lang,
+      description,
+    }
+    const mapProps = {
+      scripts,
+      loadMap,
+      mapLoaded,
+      loadMarker,
+      latitude,
+      longitude,
+      markerLoaded,
+      mapLoading,
+      changeControl,
+      resetControl,
+      changeData,
+      resetData,
+      langHandler,
+      isMobile,
+    }
 
     const tileComponents = (
       <>
         {venue === 'map' &&
-        <button
-          onClick={closeButtonOnClick}
-          className='go-back-to-list'
-        >
-          <SVG name='arrowRight' />
-        </button>}
+        <GoBack {...goBackProps} />}
         <Heading {...headingProps} />
         {[1,2,3,4,5].includes(category)
         && venue !== 'list'
@@ -114,67 +168,15 @@ class AnnouncementTile extends React.Component {
         {[6, 7].includes(category)
         && venue !== 'list'
         && <GoToLink {...goToLinkProps} />}
-        <Pictures
-          lang={lang}
-          venue={venue}
-          id={id}
-          pictures={pictures}
-          category={category}
-          area={area}
-          isMobile={isMobile}
-          changeApp={changeApp}
-          changeData={changeData}
-          path={path}
-          title={title}
-        />
-        <PrimaryData
-          lang={lang}
-          category={category}
-          area={area}
-          netRentAmount={netRentAmount}
-          netRentAmountPerSqm={netRentAmountPerSqm}
-          grossRentAmount={grossRentAmount}
-          grossRentAmountPerSqm={grossRentAmountPerSqm}
-          rentCurrency={rentCurrency}
-          rooms={rooms}
-          floor={floor}
-          totalFloors={totalFloors}
-          availabilityDate={availabilityDate}
-          showPrimary={showPrimary}
-        />
+        <Pictures {...picturesProps} />
+        <PrimaryData {...primaryDataProps} />
         {showFeatures && features && features.length > 0 &&
-        <Items
-          lang={lang}
-          itemsName='features'
-          items={features}
-        />}
+        <Items {...featuresProps} />}
         {showFurnishings && furnishings && furnishings.length > 0 &&
-        <Items
-          lang={lang}
-          itemsName='furnishings'
-          items={furnishings}
-        />}
+        <Items {...furnishingsProps} />}
         {showDescription && description &&
-        <Description
-          lang={lang}
-          description={description}
-        />}
-        {showMap && <Map
-          scripts={scripts}
-          loadMap={loadMap}
-          mapLoaded={mapLoaded}
-          loadMarker={loadMarker}
-          latitude={latitude}
-          longitude={longitude}
-          markerLoaded={markerLoaded}
-          mapLoading={mapLoading}
-          changeControl={changeControl}
-          resetControl={resetControl}
-          changeData={changeData}
-          resetData={resetData}
-          langHandler={this.langHandler}
-          isMobile={isMobile}
-        />}
+        <Description {...descriptionProps} />}
+        {showMap && <Map {...mapProps} />}
         {control}
       </>
     )
