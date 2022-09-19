@@ -1,10 +1,8 @@
 import React from 'react'
-import loadable from '@loadable/component'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
-// const AnnouncementShowMiniTile = loadable(() => import('./components/mini-tile/mini-tile.js'))
-const AnnouncementTile = loadable(() => import('../../../common/tile/tile.js'), { ssr: false })
+import ListingTile from '../../../common/tile/tile'
 import { googleMapHandler } from '../../../../functions/google-map-handler'
 import { fetchTile } from './functions/fetch-tile'
 import { drawPins } from './functions/draw-pins'
@@ -66,8 +64,8 @@ class AnnouncementIndexMap extends React.Component {
                 link
               }
 
-              return <AnnouncementTile
-              venue='rootList'
+              return <ListingTile
+                venue='rootList'
                 key={index}
                 index={index}
                 id={announcement.id}
@@ -96,7 +94,7 @@ class AnnouncementIndexMap extends React.Component {
           <div id='google-map' />
           {tile && Object.keys(tile).length > 1 &&
           <div className='listing-tile-container'>
-            <AnnouncementTile
+            <ListingTile
               venue='map'
               lang={lang}
               id={tile.id}
