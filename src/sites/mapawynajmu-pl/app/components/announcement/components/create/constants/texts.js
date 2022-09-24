@@ -6,13 +6,13 @@ export const H1 = {
 }
 
 export const PRIMARY_DATA_HEADER = {
-  pl: 'Dane podstawowe',
-  en: 'Primary Data'
+  pl: 'Kategoria',
+  en: 'Category'
 }
 
 export const PRIMARY_DATA_HINT = {
-  pl: 'Podanie danych podstawowych jest wymagane.',
-  en: 'Providing the primary data is required.'
+  pl: 'Wybranie kategorii jest wymagane.',
+  en: 'Selecting category is required.'
 }
 
 export const PICTURES_HEADER = {

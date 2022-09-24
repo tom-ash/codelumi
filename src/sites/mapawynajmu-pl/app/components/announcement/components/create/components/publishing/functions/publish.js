@@ -7,7 +7,7 @@ export function publish() {
   const { authorized, changeControl, changeData } = this.props
 
   const announcementObject = {
-    category: this.categoryManager().validate(),
+    // category: this.categoryManager().validate(),
     pictures: this.validatePictures(),
     map: this.validateMap()
   }

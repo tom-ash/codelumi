@@ -42,6 +42,27 @@
       &:nth-child(5) {
         margin-right: 0;
       }
+      cursor: pointer;
+      &:hover {
+        .label {
+          color: rgb(128, 128, 128);
+        }
+        svg {
+          fill: rgb(128, 128, 128);
+        }
+      }
+      &.selected {
+        .icon {
+          transition: box-shadow .2s ease-in;
+          box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 10px;
+        }
+        .label {
+          color: rgb(96, 96, 96);
+        }
+        svg {
+          fill: rgb(96, 96, 96);
+        }
+      }
     }
     .icon {
       border-radius: 4px;
@@ -60,17 +81,19 @@
       text-align: center;
       line-height: 1.3;
       color: #D0D3D4;
+      transition: color .2s ease-in;
     }
     svg {
       height: 24px;
       fill: #D0D3D4;
+      transition: fill .2s ease-in;
     }
   }
   .hint {
     position: relative;
-    color: $TEXT-HINT-COLOR;
-    margin: 5px 0 30px;
-    font-size: 15px;
+    color: #979A9A;
+    margin: 4px 0 24px;
+    font-size: 11px;
   }
   &.creating-user {
     border-bottom: none;

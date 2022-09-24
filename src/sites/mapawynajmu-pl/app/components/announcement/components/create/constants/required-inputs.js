@@ -24,7 +24,7 @@ export const requiredInputs = {
 }
 
 export const requiredInputsArray = [
-  'category',
+  // 'category',
   'pictures',
   'map'
 ]

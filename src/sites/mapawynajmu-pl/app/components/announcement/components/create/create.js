@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import Primary from './components/primary/primary'
 import Pictures from './components/pictures/pictures'
 import Map from './components/map/map'
 import Additional from './components/additional/additional'
@@ -27,9 +26,10 @@ import UserCreate from '../../../user/components/create/create.js'
 import UserCreateEmailVerify from '../../../user/components/create/components/email/components/verify/verify.js'
 import Hint from '../../../support/components/hint/hint.js'
 import AppContext from '../../../../constants/context.js'
-import { categoryManager, areaManager } from './components/primary/functions/managers'
+// import { categoryManager, areaManager } from './components/primary/functions/managers'
 import { handleErrorOnValidate } from './components/primary/functions/errors-handler'
 import Categories from './components/categories'
+import AreaInput from './components/area-input'
 
 class AnnouncementCreate extends React.Component {
   constructor(props) {
@@ -40,8 +40,8 @@ class AnnouncementCreate extends React.Component {
     this.componentWillUnmount = lifecycle.componentWillUnmount
     this.langHandler = langHandler.bind(this)
     this.addAnnouncementManager = managers.addAnnouncementManager.bind(this)
-    this.categoryManager = categoryManager.bind(this)
-    this.areaManager = areaManager.bind(this)
+    // this.categoryManager = categoryManager.bind(this)
+    // this.areaManager = areaManager.bind(this)
     this.validatePictures = validatePictures.bind(this)
     this.validateMap = validateMap.bind(this)
     this.publish = publish.bind(this)
@@ -52,6 +52,7 @@ class AnnouncementCreate extends React.Component {
 
   render() {
     const {
+      category,
       renderForm,
       renderEdit,
       renderVerification,
@@ -76,6 +77,8 @@ class AnnouncementCreate extends React.Component {
     const headerText = this.langHandler(H1)
 
     const categoriesProps = {
+      currentCategory: category,
+      changeInputs,
       langHandler: this.langHandler
     }
 
@@ -91,24 +94,23 @@ class AnnouncementCreate extends React.Component {
             <Header tier={2} text={this.langHandler(PRIMARY_DATA_HEADER)} />
             <Hint text={this.langHandler(PRIMARY_DATA_HINT)} />
             <Categories {...categoriesProps} />
-            <Primary />
-            <Line />
             <Header tier={2} text={this.langHandler(PICTURES_HEADER)} />
             <Hint text={this.langHandler(PICTURES_HINT)} />
             <Pictures />
-            <Line />
+            {/* <Line /> */}
             <Header tier={2} text={this.langHandler(LOCATION_HEADER)} />
             <Hint text={this.langHandler(LOCATION_HINT)} />
             <Map />
-            <Line />
+            {/* <Line /> */}
             <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
             <Hint text={this.langHandler(ADDITIONAL_DATA_HINT)} />
+            <AreaInput />
             <Additional />
             <AvailabilityDate { ...availabilityDateProps } />
             <Features />
             <Furnishings />
             <Description />
-            <Line />
+            {/* <Line /> */}
             {!authorized &&
             <>
               <UserCreate />
