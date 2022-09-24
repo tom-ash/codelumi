@@ -78,8 +78,6 @@ function addNewPins() {
     const pin = category.pin
     const svg = svgs[pin.svg]
 
-    console.log(announcement)
-
     const htmlContent = (
       `<svg
           xmlns="http://www.w3.org/2000/svg"

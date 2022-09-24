@@ -29,6 +29,7 @@ import Hint from '../../../support/components/hint/hint.js'
 import AppContext from '../../../../constants/context.js'
 import { categoryManager, areaManager } from './components/primary/functions/managers'
 import { handleErrorOnValidate } from './components/primary/functions/errors-handler'
+import Categories from './components/categories'
 
 class AnnouncementCreate extends React.Component {
   constructor(props) {
@@ -51,23 +52,45 @@ class AnnouncementCreate extends React.Component {
 
   render() {
     const {
-      renderForm, renderEdit, renderVerification, renderSuccess,
-      connecting, lang, authorized, step, addAvailabilityDate, availabilityDate,
-      changeControl, changeInputs
+      renderForm,
+      renderEdit,
+      renderVerification,
+      renderSuccess,
+      connecting,
+      lang,
+      authorized,
+      step,
+      addAvailabilityDate,
+      availabilityDate,
+      changeControl,
+      changeInputs
     } = this.props
 
-    const availabilityDateProps = { lang, availabilityDate, addAvailabilityDate, changeControl, changeInputs }
+    const availabilityDateProps = {
+      lang,
+      availabilityDate,
+      addAvailabilityDate,
+      changeControl,
+      changeInputs
+    }
     const headerText = this.langHandler(H1)
+
+    const categoriesProps = {
+      langHandler: this.langHandler
+    }
 
     return (
       <section id='announcement-create' className={step}>
         {(renderForm || renderEdit) &&
         <>
-          <Header tier={1} text={headerText} />
+          <h1>
+            {headerText}
+          </h1>
           {!connecting ?
-          <>  
+          <>
             <Header tier={2} text={this.langHandler(PRIMARY_DATA_HEADER)} />
             <Hint text={this.langHandler(PRIMARY_DATA_HINT)} />
+            <Categories {...categoriesProps} />
             <Primary />
             <Line />
             <Header tier={2} text={this.langHandler(PICTURES_HEADER)} />

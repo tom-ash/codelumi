@@ -15,36 +15,56 @@
 @import '../components/map/styles/styles.scss';
 @import '../components/publishing/styles/styles.scss';
 @import '../../../../../styles/box_shadows.scss';
+@import '../../../../../../../shared/app/styles/lined-heading.scss';
 
 #announcement-create {
   position: relative;
-  max-width: 768px;
-  margin: 50px auto 150px;
-  border-radius: 5px;
-  padding: $FORM-PADDING-PC;
-  background: white;
-  border: 1px solid #D0D3D4;
-  @media #{$LARGE-PHONE} {
-    border: none;
-  }
-  .page-header {
-    h1 {
-      padding: 0;
-      font-size: 20px;
-      line-height: 1.6;
-      span {
-        display: block;
-      }
-      span:nth-child(2) {
-        font-size: 13px;
-        font-weight: normal;
-        color: #797D7F;
-      }
-    }
+  max-width: 640px;
+  margin: 64px auto 128px;
+  h1 {
+    @extend %lined-heading;
+    font-size: 16px;
+    margin-bottom: 36px;
   }
   h2 {
-    font-size: 16px;
+    font-size: 13px;
+    margin-top: 24px;
+    text-transform: uppercase;
     color: $TEXT-HEADER-TIER-TWO-COLOR;
+  }
+  .categories {
+    .category {
+      display: inline-block;
+      margin-right: 40px;
+      margin-bottom: 24px;
+      vertical-align:top;
+      width: 96px;
+      &:nth-child(5) {
+        margin-right: 0;
+      }
+    }
+    .icon {
+      border-radius: 4px;
+      width: 96px;
+      height: 96px;
+      margin-bottom: 8px;
+      box-shadow: rgba(0, 0, 0, 0.04) 0px 2px 5px;
+      background: white;
+      text-align: center;
+      line-height: 112px;
+    }
+    .label {
+      width: 60px;
+      width: 96px;
+      font-size: 11px;
+      text-align: center;
+      line-height: 1.3;
+      color: #D0D3D4;
+    }
+    svg {
+      height: 24px;
+      fill: #D0D3D4;
+    }
   }
   .hint {
     position: relative;

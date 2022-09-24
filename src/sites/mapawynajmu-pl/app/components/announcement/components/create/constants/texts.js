@@ -1,20 +1,8 @@
 import React from 'react'
 
 export const H1 = {
-  pl: <>
-    <span>Dodaj ogłoszenie na mapawynajmu.pl</span>
-    <span>
-      - bezpłatnie
-      {/* albo wyróżnij! */}
-    </span>
-  </>,
-  en: <>
-    <span>Add a Listing on mapawynajmu.pl</span>
-    <span>
-      - gratuitously
-      {/* or single out! */}
-    </span>
-  </>
+  pl: <span>Dodaj ogłoszenie wynajmu nieruchomości za darmo</span>,
+  en: <span>Add a property rent listing for free</span>
 }
 
 export const PRIMARY_DATA_HEADER = {

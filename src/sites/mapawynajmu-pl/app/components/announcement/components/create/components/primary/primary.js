@@ -21,7 +21,7 @@ class AnnouncementCreatePrimary extends React.Component {
   render() {
     return (
       <div id='announcement-create-primary' className='section'>
-        <ManagedSelect {...this.categoryManager()}/>
+        {/* <ManagedSelect {...this.categoryManager()}/> */}
         <ManagedText {...this.areaManager()}/>
       </div>
     )
