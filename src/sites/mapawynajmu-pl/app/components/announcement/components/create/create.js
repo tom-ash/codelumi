@@ -20,7 +20,7 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import Line from '../../../support/components/separation-line/separation-line'
 import AvailabilityDate from './components/availability_date/availability_date'
-import { H1, PRIMARY_DATA_HEADER, PRIMARY_DATA_HINT, PICTURES_HEADER, PICTURES_HINT, LOCATION_HEADER, LOCATION_HINT, ADDITIONAL_DATA_HEADER, ADDITIONAL_DATA_HINT } from './constants/texts'
+import { H1, PRIMARY_DATA_HEADER, PICTURES_HEADER, LOCATION_HEADER, ADDITIONAL_DATA_HEADER, ADDITIONAL_DATA_HINT } from './constants/texts'
 import Header from '../../../support/components/header/header'
 import UserCreate from '../../../user/components/create/create.js'
 import UserCreateEmailVerify from '../../../user/components/create/components/email/components/verify/verify.js'
@@ -92,16 +92,11 @@ class AnnouncementCreate extends React.Component {
           {!connecting ?
           <>
             <Header tier={2} text={this.langHandler(PRIMARY_DATA_HEADER)} />
-            <Hint text={this.langHandler(PRIMARY_DATA_HINT)} />
             <Categories {...categoriesProps} />
             <Header tier={2} text={this.langHandler(PICTURES_HEADER)} />
-            <Hint text={this.langHandler(PICTURES_HINT)} />
             <Pictures />
-            {/* <Line /> */}
             <Header tier={2} text={this.langHandler(LOCATION_HEADER)} />
-            <Hint text={this.langHandler(LOCATION_HINT)} />
             <Map />
-            {/* <Line /> */}
             <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
             <Hint text={this.langHandler(ADDITIONAL_DATA_HINT)} />
             <AreaInput />

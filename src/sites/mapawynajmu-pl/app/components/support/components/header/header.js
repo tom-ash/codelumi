@@ -10,14 +10,9 @@ const Header = ({
 }) => {
   const icon = svg ? <div className='icon'><SVG name={svg} /></div> : null
   const tag = `h${tier}`
-  const header = React.createElement(tag, {}, text)
+  const header = React.createElement(tag, {}, <span>{text}</span>)
     
-  return (
-    <div className='page-header'>
-      {icon}
-      {header}
-    </div>
-  )
+  return header
 }
 
 export default withStyles(styles)(Header)

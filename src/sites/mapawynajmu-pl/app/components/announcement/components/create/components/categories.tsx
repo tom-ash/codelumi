@@ -15,8 +15,6 @@ export function Categories(props: CategoriesProps) {
     langHandler
   } = props
 
-  console.log(changeInputs)
-
   return (
     <div className='categories'>
       {categories.map(category => {

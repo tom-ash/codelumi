@@ -6,28 +6,18 @@ export const H1 = {
 }
 
 export const PRIMARY_DATA_HEADER = {
-  pl: 'Kategoria',
-  en: 'Category'
-}
-
-export const PRIMARY_DATA_HINT = {
-  pl: 'Wybranie kategorii jest wymagane.',
-  en: 'Selecting category is required.'
+  pl: 'Kategoria (wymagana)',
+  en: 'Category (required)'
 }
 
 export const PICTURES_HEADER = {
-  pl: 'Zdjęcia',
-  en: 'Pictures'
-}
-
-export const PICTURES_HINT = {
-  pl: 'Dodanie przynajmniej jednego zdjęcia jest wymagane.',
-  en: 'Adding at least one picture is required.'
+  pl: 'Zdjęcia (wymagane)',
+  en: 'Pictures (required)'
 }
 
 export const LOCATION_HEADER = {
-  pl: 'Lokalizacja',
-  en: 'Location'
+  pl: 'Lokalizacja (wymagana)',
+  en: 'Location (required)'
 }
 
 export const LOCATION_HINT = {
