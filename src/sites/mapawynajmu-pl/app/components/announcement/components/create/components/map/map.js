@@ -7,6 +7,18 @@ import * as lifecycle from './functions/lifecycle'
 import { googleMapHandler } from '../../../../functions/google-map-handler'
 import AddressInput from './components/address-input/address-input'
 import addMarker from './functions/add-marker'
+import Heading from '../../../../../support/components/heading'
+import Info from '../../../../../../../../shared/app/components/support/info'
+
+const HEADING = {
+  pl: 'Lokalizacja (wymagana)',
+  en: 'Location (required)'
+}
+
+const INFO = {
+  pl: 'Podaj adres lub kliknij na mapie, aby wybrać lokalizację.',
+  en: 'Provide address or click on the map to select location.'
+}
 
 class AnnouncementCreatMap extends React.Component {
   constructor(props) {
@@ -29,15 +41,18 @@ class AnnouncementCreatMap extends React.Component {
   render() {
     const showAutocompletes = this.state.autocompletes.length > 0 && this.state.showAutocompletes
     const { changeInputs, changeErrors } = this.props
+    const headingProps = {
+      tier: 2,
+      text: this.langHandler(HEADING)
+    }
+    const infoProps = {
+      message: this.langHandler(INFO)
+    }
 
     return (
       <div id='announcement-create-map' className='section'>
-        <div className='hint'>
-          {this.langHandler({
-            pl: 'Podaj ulicę, numer i miasto, a lokalizacja wynajmowanej nieruchomości zostanie zaznaczona automatycznie. Alternatywnie, zaznacz lokalizację na mapie.',
-            en: 'Provide the street, number and city and the location of the property being lease shall be marked automatically, Alternative, mark the location on the map.'
-          })}
-        </div>
+        <Heading {...headingProps} />
+        <Info {...infoProps} />
         <div className='address-input'>
           <AddressInput
             autocompleteInput={this.state.autocompleteInput}

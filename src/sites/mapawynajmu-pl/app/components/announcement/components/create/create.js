@@ -20,7 +20,7 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import Line from '../../../support/components/separation-line/separation-line'
 import AvailabilityDate from './components/availability_date/availability_date'
-import { H1, LOCATION_HEADER, ADDITIONAL_DATA_HEADER } from './constants/texts'
+import { H1, ADDITIONAL_DATA_HEADER } from './constants/texts'
 import Header from '../../../support/components/heading'
 import UserCreate from '../../../user/components/create/create.js'
 import UserCreateEmailVerify from '../../../user/components/create/components/email/components/verify/verify.js'
@@ -94,7 +94,6 @@ class AnnouncementCreate extends React.Component {
           <>
             <Category {...categoryProps} />
             <Pictures />
-            <Header tier={2} text={this.langHandler(LOCATION_HEADER)} />
             <Map />
             <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
             <AreaInput {...areaInputProps} />

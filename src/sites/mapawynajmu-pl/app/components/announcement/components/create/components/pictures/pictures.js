@@ -36,13 +36,10 @@ class AnnouncementCreatePictures extends React.Component {
     this.rotatePicture = rotatePicture.bind(this)
   }
   render() {
-    const { renderEdit } = this.props
-
     const headingProps = {
       tier: 2,
       text: this.langHandler(HEADING)
     }
-
     const infoProps = {
       message: this.langHandler(INFO)
     }
