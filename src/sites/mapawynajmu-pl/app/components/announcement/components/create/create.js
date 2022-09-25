@@ -25,7 +25,7 @@ import Header from '../../../support/components/header/header'
 import UserCreate from '../../../user/components/create/create.js'
 import UserCreateEmailVerify from '../../../user/components/create/components/email/components/verify/verify.js'
 import AppContext from '../../../../constants/context.js'
-import Categories from './components/categories'
+import Category from './components/category'
 import AreaInput from './components/area-input'
 
 class AnnouncementCreate extends React.Component {
@@ -71,7 +71,7 @@ class AnnouncementCreate extends React.Component {
     }
     const headerText = this.langHandler(H1)
 
-    const categoriesProps = {
+    const categoryProps = {
       currentCategory: category,
       changeInputs,
       langHandler: this.langHandler
@@ -93,7 +93,7 @@ class AnnouncementCreate extends React.Component {
           {!connecting ?
           <>
             <Header tier={2} text={this.langHandler(PRIMARY_DATA_HEADER)} />
-            <Categories {...categoriesProps} />
+            <Category {...categoryProps} />
             <Header tier={2} text={this.langHandler(PICTURES_HEADER)} />
             <Pictures />
             <Header tier={2} text={this.langHandler(LOCATION_HEADER)} />

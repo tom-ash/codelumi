@@ -1,5 +1,5 @@
 %category {
-  .tooltip {
+  .info {
     display: inline-block;
     margin-bottom: 32px;
     font-size: 12px;
@@ -12,7 +12,7 @@
       transform: translate(0, 2.5px);
     }
   }
-  .category {
+  .tile {
     display: inline-block;
     margin-right: 40px;
     margin-bottom: 24px;
@@ -72,7 +72,7 @@
       white-space: nowrap;
       overflow-x: scroll;
     }
-    .category {
+    .tile {
       &:nth-of-type(5) {
         margin-right: 40px;
       }

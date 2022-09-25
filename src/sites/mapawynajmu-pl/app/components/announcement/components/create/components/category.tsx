@@ -1,32 +1,38 @@
 import React from "react"
 import { categories } from '../../../constants/categories'
 import SVG from '../../../../../../../shared/app/components/support/svg/svg'
+import Info from '../../../../../../../shared/app/components/support/info'
 
-type CategoriesProps = {
+type CategoryProps = {
   currentCategory: number
   changeInputs(params: { category: number }): void
   langHandler: LangHandler
 }
 
-export function Categories(props: CategoriesProps) {
+export function Category(props: CategoryProps) {
   const {
     currentCategory,
     changeInputs,
     langHandler
   } = props
 
+  const infoProps = {
+    // @ts-ignore
+    message: langHandler({
+      pl: 'Kliknij w odpowiednią ikonę, aby wybrać kategorię.',
+      en: 'Click the respective icon to select the category.'
+    })
+  }
+
   return (
     <div className='category'>
-      <div className='tooltip'>
-        {/* @ts-ignore */}
-        <SVG name='info' /> {langHandler({ pl: 'Kliknij w odpowiednią ikonę, aby wybrać kategorię.', en: 'Click the respective icon to select the category.' })}
-      </div>
+      <Info {...infoProps} />
       <div className='categories'>
         {categories.map(category => {
           const { label: labelLangObj, pin: { svg: name }, value } = category
           // @ts-ignore
           const label = langHandler(labelLangObj)
-          const classNames = ['category']
+          const classNames = ['tile']
           if (currentCategory === value) { 
             classNames.push('selected')
           }
@@ -54,4 +60,4 @@ export function Categories(props: CategoriesProps) {
   )
 }
 
-export default Categories
+export default Category
