@@ -12,10 +12,16 @@ import { pictureClassProvider } from './functions/picture-class-provider'
 import { rotatePicture } from './functions/rotate-picture'
 import SVG from '../../../../../support/components/svg/svg'
 import Heading from '../../../../../support/components/heading'
+import Info from '../../../../../../../../shared/app/components/support/info'
 
 const HEADING = {
   pl: 'Zdjęcia (wymagane)',
   en: 'Pictures (required)'
+}
+
+const INFO = {
+  pl: 'Kliknij w ikonę aparatu fotograficznego, aby dodać zdjęcia.',
+  en: 'Click the photo camera to add pictures.'
 }
 
 class AnnouncementCreatePictures extends React.Component {
@@ -37,9 +43,14 @@ class AnnouncementCreatePictures extends React.Component {
       text: this.langHandler(HEADING)
     }
 
+    const infoProps = {
+      message: this.langHandler(INFO)
+    }
+
     return (
       <div id='announcement-create-pictures' className='section'>
         <Heading {...headingProps} />
+        <Info {...infoProps} />
         <div className='drag-and-drop-container'>
           <div className={`drag-and-drop${this.props.error.pl ? ' error-drag-and-drop' : ''}`}>
             <SVG name='camera' />

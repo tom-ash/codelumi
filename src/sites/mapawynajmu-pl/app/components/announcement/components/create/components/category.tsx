@@ -9,6 +9,11 @@ const HEADING = {
   en: 'Category (required)'
 }
 
+const INFO = {
+  pl: 'Kliknij w odpowiednią ikonę, aby wybrać kategorię.',
+  en: 'Click the respective icon to select the category.'
+}
+
 type CategoryProps = {
   currentCategory: number
   changeInputs(params: { category: number }): void
@@ -24,10 +29,7 @@ export function Category(props: CategoryProps) {
 
   const infoProps = {
     // @ts-ignore
-    message: langHandler({
-      pl: 'Kliknij w odpowiednią ikonę, aby wybrać kategorię.',
-      en: 'Click the respective icon to select the category.'
-    })
+    message: langHandler(INFO)
   }
 
   return (
