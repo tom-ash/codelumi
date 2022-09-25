@@ -198,9 +198,20 @@
     cursor: pointer;
   }
   .form-input {
+    max-width: 360px;
     &.button {
       width: 200px;
       margin: 40px auto 0;
+    }
+  }
+  .area-input {
+    .input {
+      padding-right: 44px;
+    }
+    .sqm {
+      position: absolute;
+      bottom: 36px;
+      right: 12px;
     }
   }
 }
