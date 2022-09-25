@@ -20,17 +20,7 @@ export const LOCATION_HEADER = {
   en: 'Location (required)'
 }
 
-export const LOCATION_HINT = {
-  pl: 'Podanie lokalizacji jest wymagane.',
-  en: 'Providing a location is required.'
-}
-
 export const ADDITIONAL_DATA_HEADER = {
-  pl: 'Dane dodatkowe',
-  en: 'Additional Data'
-}
-
-export const ADDITIONAL_DATA_HINT = {
-  pl: 'Podanie danych dodatkowych jest opcjonalne.',
-  en: 'Providing the additional data is optional.'
+  pl: 'Dane dodatkowe (opcjonalne)',
+  en: 'Additional Data (optional)'
 }
