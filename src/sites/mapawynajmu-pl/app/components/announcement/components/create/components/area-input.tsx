@@ -15,8 +15,6 @@ export function AreaInput(props: AreaInputProps) {
     langHandler
   } = props
 
-  console.log(langHandler)
-
   const classNames = { container: 'form-input text area-input' }
   const value = area
   const type = 'number'

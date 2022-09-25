@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { ManagedText, ManagedSelect } from 'managed-inputs'
-import Header from '../../../../../../../support/components/header/header.js'
+import Header from '../../../../../../../support/components/heading'
 import Hint from '../../../../../../../support/components/hint/hint.js'
 import SeparationLine from '../../../../../../../support/components/separation-line/separation-line.js'
 import * as managers from './functions/managers'

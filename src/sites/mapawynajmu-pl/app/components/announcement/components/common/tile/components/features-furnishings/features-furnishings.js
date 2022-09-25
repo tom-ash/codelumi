@@ -3,7 +3,7 @@ import langHandler from '../../../../../../../functions/lang-handler'
 import { features } from '../../../../../constants/features'
 import { furnishings } from '../../../../../constants/furnishings'
 import SVG from '../../../../../../support/components/svg/svg'
-import Header from '../../../../../../support/components/header/header.js'
+import Header from '../../../../../../support/components/heading'
 import { FEATURES_HEADER, FURNISHINGS_HEADER } from './constants/texts.js'
 
 class AnnouncementShowFeaturesFurnishings extends React.Component {

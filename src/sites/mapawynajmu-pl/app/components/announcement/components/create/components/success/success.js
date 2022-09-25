@@ -5,7 +5,7 @@ import AppContext from '../../../../../../constants/context.js'
 import langHandler from '../../../../../../functions/lang-handler.js'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import Header from '../../../../../support/components/header/header.js'
+import Header from '../../../../../support/components/heading'
 import { PAGE_HEADER, CONGRATULATIONS_TEXT, SHARE_ON_FACEBOOK_TEXT } from './constants/copies.js'
 
 class AnnouncementCreateSuccess extends React.Component {

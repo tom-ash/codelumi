@@ -2,6 +2,12 @@ import React from "react"
 import { categories } from '../../../constants/categories'
 import SVG from '../../../../../../../shared/app/components/support/svg/svg'
 import Info from '../../../../../../../shared/app/components/support/info'
+import Heading from '../../../../support/components/heading'
+
+const HEADING = {
+  pl: 'Kategoria (wymagana)',
+  en: 'Category (required)'
+}
 
 type CategoryProps = {
   currentCategory: number
@@ -26,6 +32,8 @@ export function Category(props: CategoryProps) {
 
   return (
     <div className='category'>
+      {/* @ts-ignore */}
+      <Heading tier={2} text={langHandler(HEADING)} />
       <Info {...infoProps} />
       <div className='categories'>
         {categories.map(category => {

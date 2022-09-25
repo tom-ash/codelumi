@@ -9,7 +9,7 @@ import { monitProvider } from './functions/monit-provider'
 import langHandler from '../../../../../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import Header from '../../../../../../../support/components/header/header.js'
+import Header from '../../../../../../../support/components/heading'
 
 class UserEditAccountPassword extends React.Component {
   constructor(props) {

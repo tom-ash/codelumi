@@ -6,7 +6,7 @@ import Submit from './components/submit/submit.js'
 import Verification from './components/verify/verify.js'
 import * as mappers from './constants/mappers.js'
 import langHandler from '../../../../../../functions/lang-handler.js'
-import Header from '../../../../../support/components/header/header'
+import Header from '../../../../../support/components/heading'
 
 class UserCreateEmail extends React.Component {
   constructor(props) {

@@ -5,7 +5,7 @@ import langHandler from '../../../../functions/lang-handler'
 import UserAuthorizeEmailTrack from './components/email-password/email-password'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import Header from '../../../support/components/header/header'
+import Header from '../../../support/components/heading'
 
 class UserAuthorize extends React.Component {
   constructor(props) {

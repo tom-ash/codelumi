@@ -11,6 +11,12 @@ import { requiredInputs } from '../../constants/required-inputs'
 import { pictureClassProvider } from './functions/picture-class-provider'
 import { rotatePicture } from './functions/rotate-picture'
 import SVG from '../../../../../support/components/svg/svg'
+import Heading from '../../../../../support/components/heading'
+
+const HEADING = {
+  pl: 'Zdjęcia (wymagane)',
+  en: 'Pictures (required)'
+}
 
 class AnnouncementCreatePictures extends React.Component {
   constructor(props) {
@@ -26,8 +32,14 @@ class AnnouncementCreatePictures extends React.Component {
   render() {
     const { renderEdit } = this.props
 
+    const headingProps = {
+      tier: 2,
+      text: this.langHandler(HEADING)
+    }
+
     return (
       <div id='announcement-create-pictures' className='section'>
+        <Heading {...headingProps} />
         <div className='drag-and-drop-container'>
           <div className={`drag-and-drop${this.props.error.pl ? ' error-drag-and-drop' : ''}`}>
             <SVG name='camera' />

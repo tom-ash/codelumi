@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../../../../../../support/components/header/header.js'
+import Header from '../../../../../../support/components/heading'
 import { MAP_HEADER } from './constants/texts.js'
 
 const PageHeader = props => {

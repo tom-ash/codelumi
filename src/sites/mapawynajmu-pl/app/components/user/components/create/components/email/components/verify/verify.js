@@ -7,7 +7,7 @@ import { verificationManager, buttonManager } from './functions/manager'
 import { verify } from './functions/adapter'
 import { monit } from './constants/monit'
 import AppContext from '../../../../../../../../constants/context.js'
-import Header from '../../../../../../../support/components/header/header'
+import Header from '../../../../../../../support/components/heading'
 import { PAGE_HEADER } from './constants/texts.js'
 
 class UserCreateEmailVerify extends React.Component {

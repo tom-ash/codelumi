@@ -5,16 +5,6 @@ export const H1 = {
   en: <span>Add a property rent listing for free</span>
 }
 
-export const PRIMARY_DATA_HEADER = {
-  pl: 'Kategoria (wymagana)',
-  en: 'Category (required)'
-}
-
-export const PICTURES_HEADER = {
-  pl: 'Zdjęcia (wymagane)',
-  en: 'Pictures (required)'
-}
-
 export const LOCATION_HEADER = {
   pl: 'Lokalizacja (wymagana)',
   en: 'Location (required)'
