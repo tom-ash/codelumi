@@ -1,42 +1,45 @@
 import React from "react"
-import { ManageText } from 'managed-inputs'
+import SVG from '../../../../../../../shared/app/components/support/svg/svg'
+import { ManagedText } from 'managed-inputs'
 
 type AreaInputProps = {
+  area: number,
+  changeInputs(attrs: { area: number }): void
   langHandler: LangHandler
 }
 
 export function AreaInput(props: AreaInputProps) {
   const {
+    area,
+    changeInputs,
     langHandler
   } = props
 
-    // const {
-    //   create: text
-    // } = inputs.area
-  
-    // return {
-    //   classNames: { container: 'form-input with-icon text' },
-    //   value: this.props.area,
-    //   label: this.langHandler(text),
-    //   type: 'number',
-    //   children: (
-    //     <>
-    //       <div className='sqm'>
-    //         {this.langHandler({
-    //           pl: <span>m<span className='sq'>2</span></span>,
-    //           en: 'sqm'
-    //         })}
-    //       </div>
-    //       <SVG name='area' />
-    //     </>
-    //   ),
-    //   onFocus: () => this.props.changeErrors({ area: noError }),
-    //   onChange: value => this.props.changeInputs({ area: value }),
-    //   validate: () => this.handleErrorOnValidate('area', this.props.area),
-    //   error: this.langHandler(this.props.errors.area)
-    // }
+  console.log(langHandler)
 
-  return 'AREA INPUT'
+  const classNames = { container: 'form-input with-icon text' }
+  const value = area
+  const type = 'number'
+  const children = (
+    <>
+      <div className='sqm'>
+        {/* @ts-ignore */}
+        {langHandler({ pl: <span>m<span className='sq'>2</span></span>, en: 'sqm' })}
+      </div>
+      {/* @ts-ignore */}
+      <SVG name='area' />
+    </>
+  )
+  const onChange = (area: number) => changeInputs({ area })
+  const areaProps = {
+    classNames,
+    value,
+    type,
+    children,
+    onChange
+  }
+
+  return <ManagedText {...areaProps} />
 }
 
 export default AreaInput

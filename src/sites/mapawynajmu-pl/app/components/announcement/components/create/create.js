@@ -24,10 +24,7 @@ import { H1, PRIMARY_DATA_HEADER, PICTURES_HEADER, LOCATION_HEADER, ADDITIONAL_D
 import Header from '../../../support/components/header/header'
 import UserCreate from '../../../user/components/create/create.js'
 import UserCreateEmailVerify from '../../../user/components/create/components/email/components/verify/verify.js'
-import Hint from '../../../support/components/hint/hint.js'
 import AppContext from '../../../../constants/context.js'
-// import { categoryManager, areaManager } from './components/primary/functions/managers'
-import { handleErrorOnValidate } from './components/primary/functions/errors-handler'
 import Categories from './components/categories'
 import AreaInput from './components/area-input'
 
@@ -40,18 +37,16 @@ class AnnouncementCreate extends React.Component {
     this.componentWillUnmount = lifecycle.componentWillUnmount
     this.langHandler = langHandler.bind(this)
     this.addAnnouncementManager = managers.addAnnouncementManager.bind(this)
-    // this.categoryManager = categoryManager.bind(this)
-    // this.areaManager = areaManager.bind(this)
     this.validatePictures = validatePictures.bind(this)
     this.validateMap = validateMap.bind(this)
     this.publish = publish.bind(this)
-    this.handleErrorOnValidate = handleErrorOnValidate.bind(this)
   }
 
   static contextType = AppContext
 
   render() {
     const {
+      area,
       category,
       renderForm,
       renderEdit,
@@ -82,6 +77,12 @@ class AnnouncementCreate extends React.Component {
       langHandler: this.langHandler
     }
 
+    const areaInputProps = {
+      area,
+      changeInputs,
+      langHandler: this.langHandler
+    }
+
     return (
       <section id='announcement-create' className={step}>
         {(renderForm || renderEdit) &&
@@ -98,13 +99,12 @@ class AnnouncementCreate extends React.Component {
             <Header tier={2} text={this.langHandler(LOCATION_HEADER)} />
             <Map />
             <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
-            <AreaInput />
+            <AreaInput {...areaInputProps} />
             <Additional />
             <AvailabilityDate { ...availabilityDateProps } />
             <Features />
             <Furnishings />
             <Description />
-            {/* <Line /> */}
             {!authorized &&
             <>
               <UserCreate />
