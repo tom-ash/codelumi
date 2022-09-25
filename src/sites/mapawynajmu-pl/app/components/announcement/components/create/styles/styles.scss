@@ -15,7 +15,7 @@
 @import '../components/publishing/styles/styles.scss';
 @import '../../../../../styles/box_shadows.scss';
 @import '../../../../../../../shared/app/styles/lined-heading.scss';
-@import './categories.scss';
+@import './category.scss';
 
 #announcement-create {
   position: relative;
@@ -37,8 +37,8 @@
       padding: 0 12px 0 0;
     }
   }
-  .categories {
-    @extend %categories;
+  .category {
+    @extend %category;
   }
   .hint {
     position: relative;

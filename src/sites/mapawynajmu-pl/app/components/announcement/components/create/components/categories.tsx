@@ -16,35 +16,40 @@ export function Categories(props: CategoriesProps) {
   } = props
 
   return (
-    <div className='categories'>
-      {categories.map(category => {
-        const { label: labelLangObj, pin: { svg: name }, value } = category
-        // @ts-ignore
-        const label = langHandler(labelLangObj)
-        const classNames = ['category']
-        if (currentCategory === value) { 
-          classNames.push('selected')
-        }
+    <div className='category'>
+      <div className='tooltip'>
+        {/* @ts-ignore */}
+        <SVG name='info' /> {langHandler({ pl: 'Kliknij w odpowiednią ikonę, aby wybrać kategorię.', en: 'Click the respective icon to select the category.' })}
+      </div>
+      <div className='categories'>
+        {categories.map(category => {
+          const { label: labelLangObj, pin: { svg: name }, value } = category
+          // @ts-ignore
+          const label = langHandler(labelLangObj)
+          const classNames = ['category']
+          if (currentCategory === value) { 
+            classNames.push('selected')
+          }
 
-        return (
-          <div
-            key={label}
-            className={classNames.join(' ')}
-            onClick={() => {
+          return (
+            <div
+              key={label}
+              className={classNames.join(' ')}
+              onClick={() => {
                 changeInputs({ category: value })
-            }}
-          >
-            <div className='icon'>
-              {/* @ts-ignore */}
-              <SVG name={name} />
+              }}
+            >
+              <div className='icon'>
+                {/* @ts-ignore */}
+                <SVG name={name} />
+              </div>
+              <div className='label'>
+                {label}
+              </div>
             </div>
-            <div className='label'>
-              {label}
-            </div>
-          </div>
-        )
-      })}
-      <div className='float-clear' />
+          )
+        })}
+      </div>
     </div>
   )
 }
