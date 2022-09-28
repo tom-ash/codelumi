@@ -30,12 +30,11 @@ $horizontal-margin-mobile: 18px;
       margin-right: 12px;
     }
     &.h2 {
-      margin: 42px 0 12px;
-      border-top: 1px solid rgb(216, 216, 216);
+      margin: 36px 0 12px;
       padding-top: 36px;
       letter-spacing: .2px;
       .number, h2 {
-        font-size: 19px;
+        font-size: 24px;
       }
       @media #{$LARGE-PHONE} {
         margin: 42px $horizontal-margin-mobile 12px;
