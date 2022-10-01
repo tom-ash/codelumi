@@ -6,17 +6,17 @@
 @import './mini_list.scss';
 
 #announcement-index-map {
-  margin: 0 20px;
+  position: absolute;
+  top: 106px;
+  right: 0;
+  bottom: 0;
+  left: 0;
   #google-map-container {
     @extend %google-map;
     .pin {
       @extend %map-pin;
     }
   }
-  &.hidden {
-    opacity: 0;
-  }
-  transition: 0.16s ease-in;
   @media #{$SMALL-TABLET} {
     margin: 0;
     border-radius: 0;
