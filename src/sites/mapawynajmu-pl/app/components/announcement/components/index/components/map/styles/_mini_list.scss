@@ -9,7 +9,7 @@
   left: 0;
   z-index: 2;
   width: 360px;
-  padding-right: 12px;
+  padding: 12px;
   background: white;
   @media #{$LARGE-TABLET} {
     position: relative;
@@ -20,19 +20,41 @@
     top: 0;
     padding-right: 0;
   }
+  background: #EAEDED;
   .announcement-list-tile {
     @extend %tile;
     padding-bottom: 0;
-    height: 368px;
+    height: 318px;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    @media #{$LARGE-TABLET} {
+      margin-bottom: 0;
+    }
     .root-list-link {
       width: 100%;
     }
     .root-list-img {
       width: 100%;
     }
+    a {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+    img {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
     h1 {
-      margin-top: 8px;
       margin-bottom: 14px;
+      padding: 12px;
+      padding-bottom: 0;
+      .name {
+        font-size: 15px;
+      }
       .category {
         font-size: 15px;
       }
@@ -44,6 +66,8 @@
       }
     }
     .primary-data {
+      padding: 12px;
+      padding-top: 0;
       margin: 0;
       .area, .rent-container {
         font-size: 18px!important;
@@ -54,10 +78,7 @@
       width: 320px;
       height: 302px;
       margin-right: 18px;
-      margin-bottom: 18px;
-      &:nth-of-type(1) {
-        margin-left: 12px;
-      }
+      margin-bottom: 0;
       &:last-of-type {
         margin-right: 12px;
       }
