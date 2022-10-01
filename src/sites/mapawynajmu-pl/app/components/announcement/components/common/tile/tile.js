@@ -176,14 +176,16 @@ class AnnouncementTile extends React.Component {
         )
       case 'map':
         return (
-          <div className='listing-tile'>
+          <>
             <GoBack {...goBackProps} />
-            <Heading {...headingProps} />
-            {isPhoneable ? <Showcase { ...showcaseProps } /> : <GoToLink {...goToLinkProps} />}
-            <Pictures {...picturesProps} />
-            <PrimaryData {...primaryDataProps} />
-            {description && <Description {...descriptionProps} />}
-          </div>
+            <div className='listing-tile'>
+              <Heading {...headingProps} />
+              {isPhoneable ? <Showcase { ...showcaseProps } /> : <GoToLink {...goToLinkProps} />}
+              <Pictures {...picturesProps} />
+              <PrimaryData {...primaryDataProps} />
+              {description && <Description {...descriptionProps} />}
+            </div>
+          </>
         )
         case 'show':
           return (

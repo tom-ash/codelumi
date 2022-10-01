@@ -17,8 +17,8 @@
       @extend %map-pin;
     }
   }
-  @media #{$SMALL-TABLET} {
-    margin: 0;
-    border-radius: 0;
+  @media #{$LARGE-TABLET} {
+    position: relative;
+    top: 0;
   }
 }

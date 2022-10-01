@@ -3,11 +3,15 @@
   display: block;
   width: 36px;
   height: 36px;
-  margin: 0 0 12px auto;
   border-radius: 50%;
   background: none;
   border: 1px solid #979A9A;
   transition: border-color .15s ease-in;
+  background: white;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 99999;
   svg {
     width: 18px;
     fill: #979A9A;

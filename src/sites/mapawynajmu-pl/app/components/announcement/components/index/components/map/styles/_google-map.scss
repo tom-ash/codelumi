@@ -1,19 +1,16 @@
 @import '../../../../../../../styles/themes.scss';
 
 %google-map {
-  position: relative;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  padding-left: 360px;
   @media #{$LARGE-TABLET} {
     .gm-bundled-control {
       display: none;
     }
-  }
-  padding-left: 360px;
-  @media #{$LARGE-TABLET} {
     padding-left: 0;
     height: 768px;
   }
@@ -21,4 +18,3 @@
     height: 100%;
   }
 }
-  

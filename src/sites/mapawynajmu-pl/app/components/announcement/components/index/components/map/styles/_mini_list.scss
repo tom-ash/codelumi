@@ -10,14 +10,11 @@
   z-index: 2;
   width: 360px;
   padding: 12px;
-  background: white;
   @media #{$LARGE-TABLET} {
+    overflow-x: scroll;
     position: relative;
     width: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden;
     white-space: nowrap;
-    top: 0;
     padding-right: 0;
   }
   background: #EAEDED;

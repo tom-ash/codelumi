@@ -1,23 +1,45 @@
 @import '../../../../common/tile/styles/tile';
+@import '../../../../../../../../../shared/app/styles/hidden-scrollbar';
 
 #announcement-index-map {
   position: relative;
   border-radius: 3px;
-  overflow: hidden;
   .listing-tile-container {
+    @extend %hidden-scrollbar;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    width: 420px;
+    width: 640px;
     text-align: left;
     margin: 0;
-    z-index: 99999;
-    height: 700px;
-    background: rgb(253, 254, 254);
-    padding-right: 15px;
+    z-index: 9999999999999999999;
+    background: #EAEDED;
+    padding: 12px;
     .listing-tile {
       @extend %tile;
+      background: white;
+      border-radius: 6px;
+      height: auto!important;
+      padding: 0!important;
+      margin: 0!important;
+      padding-top: 12px!important;
+      .go-back-to-list {
+        margin: 0 12px 12px auto!important;
+      }
+      h1 {
+        padding: 0 12px;
+      }
+      #showcase {
+        padding: 0 12px;
+      }
+      .primary-data {
+        padding: 0 12px;
+      }
+      .description {
+        padding: 0 12px 12px;
+        margin-bottom: 0!important;
+      }
     }
     @media #{$LARGE-TABLET} {
       position: fixed;
