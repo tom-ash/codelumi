@@ -18,7 +18,10 @@ export function ArticlesLink(props: ArticlesLinkProps) {
 
   const classNames = { container: 'header-link' }
   // @ts-ignore
-  const href = buildUrl({ path: langHandler({ pl: 'artykuly', en: 'articles' })})
+  const href = buildUrl({ path: langHandler({
+    pl: 'artykuly-o-wynajmie-nieruchomosci',
+    en: 'articles-on-real-estate-leasing'
+  })})
   // @ts-ignore
   const hrefLang = langHandler(langs)
   // @ts-ignore

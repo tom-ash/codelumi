@@ -2,7 +2,7 @@ import React from 'react'
 import { ManagedButton, ManagedLink } from 'managed-inputs'
 import { addAnnouncementManager, signUpManager, signInManager, myAccountManager } from './functions/managers.js'
 import LangSwtich from './components/lang-switch/lang-switch'
-// import ArticlesLink from './components/articles-link'
+import ArticlesLink from './components/articles-link'
 
 const HeaderUserLinks = props => {
   const { authorized } = props
@@ -43,7 +43,7 @@ const HeaderLinks = props => {
       <>
         <ManagedLink {...addAnnouncementManager(props)}/>
         <HeaderUserLinks {...props} />
-        {/* <ArticlesLink {...articlesLinkProps} /> */}
+        <ArticlesLink {...articlesLinkProps} />
         <LangSwtich {...props} />
       </>}
     </div>
