@@ -94,6 +94,7 @@ class AnnouncementIndexMap extends React.Component {
           <div id='google-map' />
           {tile && Object.keys(tile).length > 1 &&
           <div className='listing-tile-container'>
+            {console.log(tile)}
             <ListingTile
               venue='map'
               lang={lang}
@@ -116,7 +117,7 @@ class AnnouncementIndexMap extends React.Component {
               title={tile.title}
               locality={tile.locality}
               sublocality={tile.sublocality}
-              description={tile.description}
+              description={this.langHandler({ pl: tile.polishDescription, en: tile.englishDescription })}
               name={tile.name}
               link={tile.link}
               phone={tile.phone}

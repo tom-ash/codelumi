@@ -135,6 +135,8 @@ class AnnouncementTile extends React.Component {
     }
     const isPhoneable = [1,2,3,4,5].includes(category)
 
+    // console.log(description)
+
     switch (venue) {
       case 'rootList':
         return (
@@ -145,6 +147,8 @@ class AnnouncementTile extends React.Component {
           </div>
         )
       case 'map':
+        console.log(description)
+        
         return (
           <>
             <GoBack />
