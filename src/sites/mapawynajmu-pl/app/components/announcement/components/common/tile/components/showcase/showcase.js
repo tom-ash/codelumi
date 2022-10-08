@@ -1,7 +1,7 @@
 import React from 'react'
 import withStyles from 'isomorphic-style-loader/withStyles'
-import SVG from '../../../../../support/components/svg/svg'
-import { sendAnalyticsEvent } from '../../../../../../functions/google-analytics/send-analytics-event'
+import SVG from '../../../../../../support/components/svg/svg'
+import { sendAnalyticsEvent } from '../../../../../../../functions/google-analytics/send-analytics-event'
 import styles from './styles/styles.scss'
 
 const AnnouncementShowShowcase = ({

@@ -1,7 +1,7 @@
 import React from 'react'
 import loadable from '@loadable/component'
 const GoBack = loadable(() => import('./components/go-back'))
-const Showcase = loadable(() => import('../../show/components/showcase/showcase'))
+const Showcase = loadable(() => import('./components/showcase/showcase'))
 const GoToLink = loadable(() => import('./components/go-to-link'))
 const Heading = loadable(() => import('./components/heading'))
 const Link = loadable(() => import('./components/link'))
@@ -148,7 +148,7 @@ class AnnouncementTile extends React.Component {
         )
       case 'map':
         console.log(description)
-        
+
         return (
           <>
             <GoBack />
