@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import SVG from '../../../../../../../../shared/app/components/support/svg/svg'
+import AppContext from '../../../../../../constants/context'
 
 interface GoBackProps {
   closeButtonOnClick(): void
@@ -10,10 +11,11 @@ const GoBack = (props: GoBackProps) => {
     closeButtonOnClick
   } = props
 
+  const { changeRoute } = useContext(AppContext)
 
   return (
     <button
-      onClick={closeButtonOnClick}
+      onClick={() => changeRoute({ href: '/' })}
       className='go-back-to-list'
     >
       {/* @ts-ignore */}

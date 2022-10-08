@@ -64,55 +64,57 @@ class AnnouncementShow extends React.Component {
       showPrimary: true,
     }
 
-    return (
-      <div id='announcement-show' className={deviceClass}>
-        <Tile
-          venue='show'
-          lang={lang}
-          id={id}
-          category={category}
-          area={area}
-          pictures={pictures}
-          pictureIndex={pictureIndex}
-          rentCurrency={rentCurrency}
-          netRentAmount={netRentAmount}
-          netRentAmountPerSqm={netRentAmountPerSqm}
-          grossRentAmount={grossRentAmount}
-          grossRentAmountPerSqm={grossRentAmountPerSqm}
-          rooms={rooms}
-          floor={floor}
-          totalFloors={totalFloors}
-          availabilityDate={availabilityDate}
-          features={features}
-          furnishings={furnishings}
-          latitude={latitude}
-          longitude={longitude}
-          polishDescription={polishDescription}
-          englishDescription={englishDescription}
-          isMobile={isMobile}
-          device={device}
-          scripts={scripts}
-          loadMap={loadMap}
-          mapLoaded={mapLoaded}
-          loadMarker={loadMarker}
-          markerLoaded={markerLoaded}
-          mapLoading={mapLoading}
-          changeControl={changeControl}
-          resetControl={resetControl}
-          changeData={changeData}
-          resetData={resetData}
-          changeApp={changeApp}
-          path={path}
-          locality={locality}
-          sublocality={sublocality}
-          title={title}
-          name={name}
-          link={annLink}
-          phone={phone}
-          {...tileComponents}
-        />
-      </div>
-    )
+    return null
+
+    // return (
+    //   <div id='announcement-show' className={deviceClass}>
+    //     <Tile
+    //       venue='show'
+    //       lang={lang}
+    //       id={id}
+    //       category={category}
+    //       area={area}
+    //       pictures={pictures}
+    //       pictureIndex={pictureIndex}
+    //       rentCurrency={rentCurrency}
+    //       netRentAmount={netRentAmount}
+    //       netRentAmountPerSqm={netRentAmountPerSqm}
+    //       grossRentAmount={grossRentAmount}
+    //       grossRentAmountPerSqm={grossRentAmountPerSqm}
+    //       rooms={rooms}
+    //       floor={floor}
+    //       totalFloors={totalFloors}
+    //       availabilityDate={availabilityDate}
+    //       features={features}
+    //       furnishings={furnishings}
+    //       latitude={latitude}
+    //       longitude={longitude}
+    //       polishDescription={polishDescription}
+    //       englishDescription={englishDescription}
+    //       isMobile={isMobile}
+    //       device={device}
+    //       scripts={scripts}
+    //       loadMap={loadMap}
+    //       mapLoaded={mapLoaded}
+    //       loadMarker={loadMarker}
+    //       markerLoaded={markerLoaded}
+    //       mapLoading={mapLoading}
+    //       changeControl={changeControl}
+    //       resetControl={resetControl}
+    //       changeData={changeData}
+    //       resetData={resetData}
+    //       changeApp={changeApp}
+    //       path={path}
+    //       locality={locality}
+    //       sublocality={sublocality}
+    //       title={title}
+    //       name={name}
+    //       link={annLink}
+    //       phone={phone}
+    //       {...tileComponents}
+    //     />
+    //   </div>
+    // )
   }
 }
 

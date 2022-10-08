@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext} from 'react'
 import { viewAnnouncement } from '../../../../../announcement/functions/view-announcement'
-import scrollToElement from '../../../../../../../../shared/app/functions/screen/scrollers/to-element'
+// import scrollToElement from '../../../../../../../../shared/app/functions/screen/scrollers/to-element'
 import AWS_S3_URL from '../../../../../../../shared/constants/urls/aws-s3'
+import buildUrl from '../../../../../../../shared/functions/builders/url'
+import AppContext from '../../../../../../constants/context'
 
 interface LinkProps {
   id: number
@@ -31,6 +33,8 @@ const Link = (props: LinkProps) => {
   const src = `${AWS_S3_URL}/announcements/${id}/${pictures[0].database}`
   const imgProps = { src, alt: title, className: 'root-list-img' }
 
+  const { changeRoute } = useContext(AppContext)
+
   return (
     <a
       href={path}
@@ -48,15 +52,14 @@ const Link = (props: LinkProps) => {
       }}
       onClick={e => {
         e.preventDefault()
+        const href = buildUrl({ path })
+        changeRoute({ href })
+
         // @ts-ignore
         const map = window.googleMap
         const options = { center: { lat, lng }, zoom: 12.4 }
         map.setOptions(options)
         viewAnnouncement(id)
-
-        if (!isMobile) return changeData({ tileId: id })
-
-        scrollToElement(document.getElementById('google-map'), 5, -64)
       }}
     >
       <img {...imgProps} />
