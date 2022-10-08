@@ -13,19 +13,16 @@
     width: 640px;
     text-align: left;
     margin: 0;
-    z-index: 9999999999999999999;
+    z-index: 9999;
     background: #EAEDED;
     padding: 12px;
     .listing-tile {
       @extend %tile;
       background: white;
       border-radius: 6px;
-      height: auto!important;
-      padding: 0!important;
-      margin: 0!important;
-      padding-top: 12px!important;
+      padding-top: 12px;
       .go-back-to-list {
-        margin: 0 12px 12px auto!important;
+        margin: 0 12px 12px auto;
       }
       h1 {
         padding: 0 12px;
@@ -35,6 +32,9 @@
       }
       .primary-data {
         padding: 0 12px;
+      }
+      .features {
+        padding: 0 12px 12px;
       }
       .description {
         padding: 0 12px 12px;
@@ -49,20 +49,15 @@
       left: 0;
       width: 100%;
       height: 100%;
+      padding: 12px;
       background: rgba(0, 0, 0, .5);
       .listing-tile {
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        bottom: 12px;
-        left: 12px;
-        height: auto;
-        border-radius: 5px;
         box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
                     0px 3px 8px 3px rgba(0, 0, 0, 0.14),
                     0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-        padding-bottom: 0;
-        background-color: white;
+        .go-back-to-list {
+          margin: 18px 18px 18px auto;
+        }
         h1 {
           padding: 0 18px;
         }
@@ -72,8 +67,14 @@
         .go-to-link {
           padding: 0 18px;
         }
-        .go-back-to-list {
-          margin: 18px 18px 18px auto;
+        .primary-data {
+          padding: 0 18px;
+        }
+        .features {
+          padding: 0 18px 12px;
+        }
+        .description {
+          padding: 0 18px 12px;
         }
       }
     }
