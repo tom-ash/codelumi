@@ -110,13 +110,6 @@ class AnnouncementIndexMap extends React.Component {
               floor={tile.floor}
               totalFloors={tile.totalFloors}
               availabilityDate={tile.availabilityDate}
-              closeButtonOnClick={() => {
-                this.props.changeData({ tileId: null, tile: null })
-
-                // TODO: Underpin with state instead!
-                const pin = document.getElementById(`googl-map-pin-${tile.id}`)
-                if (pin) pin.classList.remove('focused')
-              }}
               isMobile={isMobile}
               changeApp={changeApp}
               path={tile.path}
@@ -127,6 +120,8 @@ class AnnouncementIndexMap extends React.Component {
               name={tile.name}
               link={tile.link}
               phone={tile.phone}
+              features={tile.features}
+              furnishings={tile.furnishings}
               {...tileComponents}
             />
           </div>}

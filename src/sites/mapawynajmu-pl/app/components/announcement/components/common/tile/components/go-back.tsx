@@ -2,15 +2,7 @@ import React, { useContext } from 'react'
 import SVG from '../../../../../../../../shared/app/components/support/svg/svg'
 import AppContext from '../../../../../../constants/context'
 
-interface GoBackProps {
-  closeButtonOnClick(): void
-}
-
-const GoBack = (props: GoBackProps) => {
-  const {
-    closeButtonOnClick
-  } = props
-
+const GoBack = () => {
   const { changeRoute } = useContext(AppContext)
 
   return (

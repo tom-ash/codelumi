@@ -9,7 +9,6 @@ const Pictures = loadable(() => import('./components/pictures/pictures'))
 const PrimaryData = loadable(() => import('./components/primary/primary'))
 const Items = loadable(() => import('./components/features-furnishings/features-furnishings'))
 const Description = loadable(() => import('./components/description/description'))
-const Map = loadable(() => import('./components/map/map'))
 import langHandler from '../../../../../functions/lang-handler.js'
 import { togglePhone } from '../../../functions/toggle-phone'
 
@@ -49,20 +48,10 @@ class AnnouncementTile extends React.Component {
       polishDescription,
       englishDescription,
       control,
-      closeButtonOnClick,
       isMobile,
-      scripts,
-      loadMap,
-      mapLoaded,
-      loadMarker,
       latitude,
       longitude,
-      markerLoaded,
-      mapLoading,
-      changeControl,
-      resetControl,
       changeData,
-      resetData,
       changeApp,
       path,
       title,
@@ -77,9 +66,6 @@ class AnnouncementTile extends React.Component {
       venue,
       togglePhone: this.togglePhone, 
       langHandler
-    }
-    const goBackProps = {
-      closeButtonOnClick
     }
     const goToLinkProps = {
       name,
@@ -147,22 +133,6 @@ class AnnouncementTile extends React.Component {
       lang,
       description,
     }
-    const mapProps = {
-      scripts,
-      loadMap,
-      mapLoaded,
-      loadMarker,
-      latitude,
-      longitude,
-      markerLoaded,
-      mapLoading,
-      changeControl,
-      resetControl,
-      changeData,
-      resetData,
-      langHandler,
-      isMobile,
-    }
     const isPhoneable = [1,2,3,4,5].includes(category)
 
     switch (venue) {
@@ -177,19 +147,8 @@ class AnnouncementTile extends React.Component {
       case 'map':
         return (
           <>
-            <GoBack {...goBackProps} />
+            <GoBack />
             <div className='listing-tile'>
-              <Heading {...headingProps} />
-              {isPhoneable ? <Showcase { ...showcaseProps } /> : <GoToLink {...goToLinkProps} />}
-              <Pictures {...picturesProps} />
-              <PrimaryData {...primaryDataProps} />
-              {description && <Description {...descriptionProps} />}
-            </div>
-          </>
-        )
-        case 'show':
-          return (
-            <main className='listing-tile'>
               <Heading {...headingProps} />
               {isPhoneable ? <Showcase { ...showcaseProps } /> : <GoToLink {...goToLinkProps} />}
               <Pictures {...picturesProps} />
@@ -197,9 +156,9 @@ class AnnouncementTile extends React.Component {
               {features && features.length > 0 && <Items {...featuresProps} />}
               {furnishings && furnishings.length > 0 && <Items {...furnishingsProps} />}
               {description && <Description {...descriptionProps} />}
-              {<Map {...mapProps} />}
-            </main>
-          )
+            </div>
+          </>
+        )
         case 'list':
           return (
             <main className='listing-tile'>
