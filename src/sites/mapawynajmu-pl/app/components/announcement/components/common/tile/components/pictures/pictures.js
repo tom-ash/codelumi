@@ -2,7 +2,6 @@ import React from 'react'
 import ManagedSlider from '../../../../../../support/components/managed-slider/managed-slider'
 import { ManagedLink } from 'managed-inputs'
 import { getDerivedStateFromProps } from './functions/get-derived-state-from-props'
-import { linkManager } from './functions/managers'
 import SVG from '../../../../../../support/components/svg/svg'
 import langHandler from '../../../../../../../functions/lang-handler'
 import AppContext from '../../../../../../../constants/context.js'
@@ -11,7 +10,6 @@ class AnnouncementShowPictures extends React.Component {
   constructor(props) {
     super(props)
     this.langHandler = langHandler.bind(this)
-    this.linkManager = linkManager.bind(this)
     this.state = {
       pictures: []
     }
@@ -25,8 +23,6 @@ class AnnouncementShowPictures extends React.Component {
       disableSLides,
       heightQuantifier,
       venue,
-      // isMobile,
-      // path,
       title,
     } = this.props
 
@@ -49,7 +45,6 @@ class AnnouncementShowPictures extends React.Component {
           chevronRight={<Chevron />}
           title={title}
         />
-        {venue !== 'show' && venue !== 'mini-list' && <ManagedLink {...this.linkManager()} />}
       </div>
     )
   }
