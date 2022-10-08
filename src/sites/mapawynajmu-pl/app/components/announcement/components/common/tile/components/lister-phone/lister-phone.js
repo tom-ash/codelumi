@@ -4,7 +4,7 @@ import SVG from '../../../../../../support/components/svg/svg'
 import { sendAnalyticsEvent } from '../../../../../../../functions/google-analytics/send-analytics-event'
 import styles from './styles/styles.scss'
 
-const AnnouncementShowShowcase = ({
+const ListerPhone = ({
   announcerPhone,
   togglePhone,
   langHandler,
@@ -39,4 +39,4 @@ const AnnouncementShowShowcase = ({
   )
 }
 
-export default withStyles(styles)(AnnouncementShowShowcase)
+export default withStyles(styles)(ListerPhone)

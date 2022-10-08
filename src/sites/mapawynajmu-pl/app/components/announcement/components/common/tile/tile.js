@@ -1,7 +1,7 @@
 import React from 'react'
 import loadable from '@loadable/component'
 const GoBack = loadable(() => import('./components/go-back'))
-const Showcase = loadable(() => import('./components/showcase/showcase'))
+const ListerPhone = loadable(() => import('./components/lister-phone/lister-phone'))
 const GoToLink = loadable(() => import('./components/go-to-link'))
 const Heading = loadable(() => import('./components/heading'))
 const Link = loadable(() => import('./components/link'))
@@ -60,7 +60,7 @@ class AnnouncementTile extends React.Component {
       phone,
       showPrimary,
     } = this.props
-    const showcaseProps = {
+    const listerPhoneProps = {
       announcerPhone: this.state.fullPhone || phone,
       announcementId: id,
       venue,
@@ -154,7 +154,7 @@ class AnnouncementTile extends React.Component {
             <GoBack />
             <div className='listing-tile'>
               <Heading {...headingProps} />
-              {isPhoneable ? <Showcase { ...showcaseProps } /> : <GoToLink {...goToLinkProps} />}
+              {isPhoneable ? <ListerPhone { ...listerPhoneProps } /> : <GoToLink {...goToLinkProps} />}
               <Pictures {...picturesProps} />
               <PrimaryData {...primaryDataProps} />
               {features && features.length > 0 && <Items {...featuresProps} />}

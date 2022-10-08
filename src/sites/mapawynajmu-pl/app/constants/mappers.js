@@ -11,7 +11,6 @@ export const mapStateToProps = store => {
   const { statisticsConsent, marketingConsent } = store.visitor.consents
   const { data: pageShowData } = store.page.show
   const { data: pageEditData } = store.page.edit
-  const { data: announcementShowData } = store.announcement.show
   const { data: announcementEditData } = store.announcement.create
   const { authorized, admin } = store.user.authorize.data
   const { links } = store
@@ -31,7 +30,6 @@ export const mapStateToProps = store => {
     renderAnnouncement,
     renderUser,
     announcementEditData,
-    announcementShowData,
     pageShowData,
     routeSynced,
     pageEditData,

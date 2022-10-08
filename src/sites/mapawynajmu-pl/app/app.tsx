@@ -54,7 +54,7 @@ class App extends React.Component {
 
   render() {
     // @ts-ignore
-    const { render, renderPage, renderImage, renderVisitor, renderAnnouncement, renderUser, lang, links, device, authorized, pageShowData, pageEditData, announcementShowData, announcementEditData, dispatch } = this.props
+    const { render, renderPage, renderImage, renderVisitor, renderAnnouncement, renderUser, lang, links, device, authorized, pageShowData, pageEditData, announcementEditData, dispatch } = this.props
     // @ts-ignore
     const AppContextValue = {
       // @ts-ignore
@@ -65,7 +65,7 @@ class App extends React.Component {
     // @ts-ignore
     const sharedProps = { appName: APP_NAME, langs, links, clientUrl: CLIENT_URL, apiUrl: API_URL, render, device, authorized, changeRoute: this.changeRoute, buildUrl, langHandler: this.langHandler, dispatch, lang }
     const pageProps = { ...sharedProps }
-    const urlComposites = { pageShowData, pageEditData, announcementShowData, announcementEditData }
+    const urlComposites = { pageShowData, pageEditData, announcementEditData }
     const imageProps = sharedProps
 
     return (

@@ -5,7 +5,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 const AnnouncementCreate = loadable(() => import('./components/create/create'))
-const AnnouncementShow = loadable(() => import('./components/show/show'))
 const AnnouncementIndex = loadable(() => import('./components/index/index'))
 
 class Announcement extends React.Component {
@@ -18,14 +17,12 @@ class Announcement extends React.Component {
       renderCreate,
       renderEdit,
       renderIndex,
-      renderShow
     } = this.props
 
     return (
       <React.Fragment>
         {(renderCreate || renderEdit) && <AnnouncementCreate />}
         {renderIndex && <AnnouncementIndex />}
-        {renderShow && <AnnouncementShow />}
       </React.Fragment>
     )
   }
