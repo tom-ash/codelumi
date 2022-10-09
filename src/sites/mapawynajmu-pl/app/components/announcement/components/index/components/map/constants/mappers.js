@@ -17,7 +17,10 @@ export const mapStateToProps = store => {
     loadPins,
     miniListFarthestScrollTop,
     miniListFarthestScrollLeft,
-    fetch
+    fetch,
+    hoveredTileId,
+    currentTileId,
+    reloadPins,
   } = store.announcement.index.control
   
   const {
@@ -44,7 +47,10 @@ export const mapStateToProps = store => {
     svgs,
     miniListFarthestScrollTop,
     miniListFarthestScrollLeft,
-    fetch
+    fetch,
+    hoveredTileId,
+    currentTileId,
+    reloadPins,
   }
 }
     

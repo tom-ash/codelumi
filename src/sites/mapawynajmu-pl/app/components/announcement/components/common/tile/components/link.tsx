@@ -1,6 +1,5 @@
 import React, { useContext} from 'react'
 import { viewAnnouncement } from '../../../../../announcement/functions/view-announcement'
-// import scrollToElement from '../../../../../../../../shared/app/functions/screen/scrollers/to-element'
 import AWS_S3_URL from '../../../../../../../shared/constants/urls/aws-s3'
 import buildUrl from '../../../../../../../shared/functions/builders/url'
 import AppContext from '../../../../../../constants/context'
@@ -16,6 +15,7 @@ interface LinkProps {
   pictures: {
     database: string
   }[]
+  changeCurrentTileId(id: number): void
 }
 
 const Link = (props: LinkProps) => {
@@ -25,9 +25,8 @@ const Link = (props: LinkProps) => {
     title,
     lat,
     lng,
-    isMobile,
-    changeData,
-    pictures
+    pictures,
+    changeCurrentTileId,
   } = props
 
   const src = `${AWS_S3_URL}/announcements/${id}/${pictures[0].database}`
@@ -41,16 +40,8 @@ const Link = (props: LinkProps) => {
       title={title}
       target='_blank'
       className='root-list-link'
-      onMouseOver={() => {
-        const pin = document.getElementById(`googl-map-pin-${id}`)
-
-        if (pin) pin.classList.add('focused')
-      }}
-      onMouseLeave={() => {
-        const pin = document.getElementById(`googl-map-pin-${id}`)
-        if (pin) pin.classList.remove('focused')
-      }}
       onClick={e => {
+        changeCurrentTileId(id)
         e.preventDefault()
         const href = buildUrl({ path })
         changeRoute({ href })

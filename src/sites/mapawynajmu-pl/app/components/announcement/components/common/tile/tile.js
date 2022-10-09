@@ -59,6 +59,8 @@ class AnnouncementTile extends React.Component {
       link,
       phone,
       showPrimary,
+      changeHoveredTileId,
+      changeCurrentTileId,
     } = this.props
     const listerPhoneProps = {
       announcerPhone: this.state.fullPhone || phone,
@@ -90,6 +92,7 @@ class AnnouncementTile extends React.Component {
       isMobile,
       changeData,
       pictures,
+      changeCurrentTileId,
     }
     const picturesProps = {
       lang,
@@ -135,23 +138,23 @@ class AnnouncementTile extends React.Component {
     }
     const isPhoneable = [1,2,3,4,5].includes(category)
 
-    // console.log(description)
-
     switch (venue) {
       case 'rootList':
         return (
-          <div className='announcement-list-tile'>
+          <div
+            className='announcement-list-tile'
+            onMouseOver={() => changeHoveredTileId(id)}
+            onMouseLeave={() => changeHoveredTileId(null)}
+          >
             <Link {...linkProps} />
             <Heading {...headingProps} />
             <PrimaryData {...primaryDataProps} />
           </div>
         )
       case 'map':
-        console.log(description)
-
         return (
           <>
-            <GoBack />
+            <GoBack changeCurrentTileId={changeCurrentTileId} />
             <div className='listing-tile'>
               <Heading {...headingProps} />
               {isPhoneable ? <ListerPhone { ...listerPhoneProps } /> : <GoToLink {...goToLinkProps} />}

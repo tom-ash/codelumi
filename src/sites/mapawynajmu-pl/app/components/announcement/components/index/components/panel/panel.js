@@ -32,7 +32,7 @@ class AnnouncementIndexPanel extends React.Component {
       officesAmount,
       virtualOfficesAmount,
       coworkingAmount,
-      links
+      links,
     } = this.props
     const { changeRoute } = this.context
 

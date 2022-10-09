@@ -12,7 +12,8 @@ const AnnouncementIndexPanelCategories = (props) => {
     langHandler,
     currentCategory,
     changeRoute,
-    links
+    links,
+    changeControl,
   } = props
 
   const options = categories.map(category => ({
@@ -38,6 +39,9 @@ const AnnouncementIndexPanelCategories = (props) => {
       const href = link && buildUrl(link)
 
       changeRoute({ href: href || '/', retainQueryParams: true })
+      changeControl({ reloadPins: true })
+
+      // 
     }
   }
 

@@ -4,7 +4,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
 import ListingTile from '../../../common/tile/tile'
 import { googleMapHandler } from '../../../../functions/google-map-handler'
-import { fetchTile } from './functions/fetch-tile'
 import { drawPins } from './functions/draw-pins'
 import langHandler from '../../../../../../functions/lang-handler'
 import { shouldSetUpGoogleMaps, shouldSetUpPins } from '../../../../functions/google-map-handler'
@@ -21,7 +20,6 @@ class AnnouncementIndexMap extends React.Component {
     this.componentWillUnmount = lifecycle.componentWillUnmount
     this.googleMapHandler = googleMapHandler.bind(this)
     this.drawPins = drawPins.bind(this)
-    this.fetchTile = fetchTile.bind(this)
     this.langHandler = langHandler.bind(this)
     this.shouldSetUpGoogleMaps = shouldSetUpGoogleMaps.bind(this)
     this.shouldSetUpPins = shouldSetUpPins.bind(this)
@@ -38,9 +36,12 @@ class AnnouncementIndexMap extends React.Component {
       isMobile,
       miniListFarthestScrollTop,
       miniListFarthestScrollLeft,
-      changeApp
+      changeApp,
+      changeControl,
     } = this.props
 
+    const changeHoveredTileId = hoveredTileId => changeControl({ hoveredTileId })
+    const changeCurrentTileId = currentTileId => changeControl({ currentTileId })
     const currentTileId = tile && tile.id || null
     const tileComponents = {
       showPrimary: true,
@@ -87,6 +88,8 @@ class AnnouncementIndexMap extends React.Component {
                 locality={announcement.locality}
                 sublocality={announcement.sublocality}
                 currentTileId={currentTileId}
+                changeHoveredTileId={changeHoveredTileId}
+                changeCurrentTileId={changeCurrentTileId}
                 {...tileProps}
               />
             })}
@@ -94,7 +97,6 @@ class AnnouncementIndexMap extends React.Component {
           <div id='google-map' />
           {tile && Object.keys(tile).length > 1 &&
           <div className='listing-tile-container'>
-            {console.log(tile)}
             <ListingTile
               venue='map'
               lang={lang}
@@ -123,6 +125,7 @@ class AnnouncementIndexMap extends React.Component {
               phone={tile.phone}
               features={tile.features}
               furnishings={tile.furnishings}
+              changeCurrentTileId={changeCurrentTileId}
               {...tileComponents}
             />
           </div>}

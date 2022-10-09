@@ -1,13 +1,23 @@
 import React, { useContext } from 'react'
 import SVG from '../../../../../../../../shared/app/components/support/svg/svg'
 import AppContext from '../../../../../../constants/context'
+import centerMap from '../../../index/components/map/functions/center-map'
 
-const GoBack = () => {
+interface GoBackProps {
+  changeCurrentTileId(id: number | null): void
+}
+
+const GoBack = (props: GoBackProps) => {
   const { changeRoute } = useContext(AppContext)
+  const { changeCurrentTileId } = props
 
   return (
     <button
-      onClick={() => changeRoute({ href: '/' })}
+      onClick={() => {
+        centerMap()
+        changeCurrentTileId(null)
+        changeRoute({ href: '/' })
+      }}
       className='go-back-to-list'
     >
       {/* @ts-ignore */}
