@@ -11,8 +11,13 @@ const Items = loadable(() => import('./components/features-furnishings/features-
 const Description = loadable(() => import('./components/description/description'))
 import langHandler from '../../../../../functions/lang-handler.js'
 import { togglePhone } from '../../../functions/toggle-phone'
+import buildUrl from '../../../../../../shared/functions/builders/url'
+import { viewAnnouncement } from '../../../../announcement/functions/view-announcement'
+import AppContext from '../../../../../constants/context'
 
 class AnnouncementTile extends React.Component {
+  static contextType = AppContext
+
   constructor(props) {
     super(props)
     this.container = React.createRef()
@@ -139,17 +144,31 @@ class AnnouncementTile extends React.Component {
     switch (venue) {
       case 'rootList':
         return (
-          <div
+          <a
+            href={path}
+            title={title}
             className='announcement-list-tile'
             onMouseOver={() => changeHoveredTileId(id)}
             onMouseLeave={() => changeHoveredTileId(null)}
+            onClick={e => {
+              e.preventDefault()
+              const href = buildUrl({ path })
+              const { changeRoute } = this.context
+              changeRoute({ href })
+
+              // @ts-ignore
+              const map = window.googleMap
+              const options = { center: { lat: latitude, lng: longitude }, zoom: 12.4 }
+              map.setOptions(options)
+              viewAnnouncement(id)
+            }}
           >
             <Link {...linkProps} />
             <div className='data'>
               <Heading {...headingProps} />
               <PrimaryData {...primaryDataProps} />
             </div>
-          </div>
+          </a>
         )
       case 'map':
         return (

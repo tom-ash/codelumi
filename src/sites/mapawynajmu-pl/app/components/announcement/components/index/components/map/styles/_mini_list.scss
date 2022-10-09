@@ -32,7 +32,9 @@
     @media #{$LARGE-TABLET} {
       margin-bottom: 0;
     }
-    .root-list-link {
+    cursor: pointer;
+    .root-list-img {
+      display: block;
       position: absolute;
       top: 0;
       left: 0;
@@ -45,9 +47,6 @@
       right: 0;
       bottom: 0;
       left: 320px;
-    }
-    .root-list-img {
-      width: 100%;
     }
     a {
       display: block;

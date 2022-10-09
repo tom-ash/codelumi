@@ -107,7 +107,7 @@ function setOptions(options) {
       lat: 52,
       lng: 19
     },
-    zoom: 6.4,
+    zoom: 6.7,
     fullscreenControl: false,
     clickableIcons: false,
     zoomControl: false,
