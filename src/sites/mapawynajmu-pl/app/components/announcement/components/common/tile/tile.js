@@ -60,7 +60,6 @@ class AnnouncementTile extends React.Component {
       phone,
       showPrimary,
       changeHoveredTileId,
-      changeCurrentTileId,
     } = this.props
     const listerPhoneProps = {
       announcerPhone: this.state.fullPhone || phone,
@@ -92,7 +91,6 @@ class AnnouncementTile extends React.Component {
       isMobile,
       changeData,
       pictures,
-      changeCurrentTileId,
     }
     const picturesProps = {
       lang,
@@ -154,7 +152,7 @@ class AnnouncementTile extends React.Component {
       case 'map':
         return (
           <>
-            <GoBack changeCurrentTileId={changeCurrentTileId} />
+            <GoBack />
             <div className='listing-tile'>
               <Heading {...headingProps} />
               {isPhoneable ? <ListerPhone { ...listerPhoneProps } /> : <GoToLink {...goToLinkProps} />}

@@ -15,7 +15,6 @@ interface LinkProps {
   pictures: {
     database: string
   }[]
-  changeCurrentTileId(id: number): void
 }
 
 const Link = (props: LinkProps) => {
@@ -26,7 +25,6 @@ const Link = (props: LinkProps) => {
     lat,
     lng,
     pictures,
-    changeCurrentTileId,
   } = props
 
   const src = `${AWS_S3_URL}/announcements/${id}/${pictures[0].database}`
@@ -41,7 +39,6 @@ const Link = (props: LinkProps) => {
       target='_blank'
       className='root-list-link'
       onClick={e => {
-        changeCurrentTileId(id)
         e.preventDefault()
         const href = buildUrl({ path })
         changeRoute({ href })

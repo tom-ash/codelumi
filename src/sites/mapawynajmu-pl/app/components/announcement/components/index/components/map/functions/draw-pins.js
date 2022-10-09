@@ -2,10 +2,13 @@ import { categories } from '../../../../../constants/categories'
 import { viewAnnouncement } from '../../../../../functions/view-announcement'
 import { sendAnalyticsEvent } from '../../../../../../../functions/google-analytics/send-analytics-event'
 
-export function drawPins() {
+export function drawPins(changeIsPinsDrawn) {
   setUpPinCreator()
   removeOldPins.call(this)
   addNewPins.call(this)
+  setTimeout(() => {
+    changeIsPinsDrawn(true)
+  }, 2000) // TODO: Remove the hack!
 }
 
 function setUpPinCreator() {

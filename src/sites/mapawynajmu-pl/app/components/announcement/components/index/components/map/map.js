@@ -41,8 +41,6 @@ class AnnouncementIndexMap extends React.Component {
     } = this.props
 
     const changeHoveredTileId = hoveredTileId => changeControl({ hoveredTileId })
-    const changeCurrentTileId = currentTileId => changeControl({ currentTileId })
-    const currentTileId = tile && tile.id || null
     const tileComponents = {
       showPrimary: true,
     }
@@ -87,9 +85,7 @@ class AnnouncementIndexMap extends React.Component {
                 miniListFarthestScrollLeft={miniListFarthestScrollLeft}
                 locality={announcement.locality}
                 sublocality={announcement.sublocality}
-                currentTileId={currentTileId}
                 changeHoveredTileId={changeHoveredTileId}
-                changeCurrentTileId={changeCurrentTileId}
                 {...tileProps}
               />
             })}
@@ -125,7 +121,6 @@ class AnnouncementIndexMap extends React.Component {
               phone={tile.phone}
               features={tile.features}
               furnishings={tile.furnishings}
-              changeCurrentTileId={changeCurrentTileId}
               {...tileComponents}
             />
           </div>}

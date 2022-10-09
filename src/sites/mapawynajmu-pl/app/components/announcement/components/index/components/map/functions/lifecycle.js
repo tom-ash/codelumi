@@ -47,6 +47,7 @@ export function componentDidUpdate(prevProps) {
     hoveredTileId,
     currentTileId,
     reloadPins,
+    isPinsDrawn
   } = this.props
 
   if (hoveredTileId && !prevHoveredTileId) {
@@ -59,8 +60,10 @@ export function componentDidUpdate(prevProps) {
     if (pin) pin.classList.remove('focused')
   }
 
+  console.log(currentTileId)
   if (currentTileId) {
     const pin = document.getElementById(`googl-map-pin-${currentTileId}`)
+    console.log(pin)
     if (pin) pin.classList.add('focused')
   }
 
@@ -69,13 +72,15 @@ export function componentDidUpdate(prevProps) {
     if (pin) pin.classList.remove('focused')
   }
 
+  const changeIsPinsDrawn = isPinsDrawn => changeControl({ isPinsDrawn })
+
   if (this.shouldSetUpGoogleMaps()) changeControl({ loadMap: true })
   if (!prevLoadMap && loadMap) setUpGoogleMaps.call(this)
   if (this.shouldSetUpPins()) changeControl({ loadPins: true })
-  if (!prevLoadPins && loadPins) this.drawPins()
+  if (!prevLoadPins && loadPins) this.drawPins(changeIsPinsDrawn)
   if (reloadPins && prevAnnouncements && announcements && prevAnnouncements !== announcements) {
     this.setState({ reloadPins: false })
-    this.drawPins()
+    this.drawPins(changeIsPinsDrawn)
   }
 }
 
