@@ -60,10 +60,8 @@ export function componentDidUpdate(prevProps) {
     if (pin) pin.classList.remove('focused')
   }
 
-  console.log(currentTileId)
   if (currentTileId) {
     const pin = document.getElementById(`googl-map-pin-${currentTileId}`)
-    console.log(pin)
     if (pin) pin.classList.add('focused')
   }
 

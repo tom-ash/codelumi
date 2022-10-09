@@ -145,8 +145,10 @@ class AnnouncementTile extends React.Component {
             onMouseLeave={() => changeHoveredTileId(null)}
           >
             <Link {...linkProps} />
-            <Heading {...headingProps} />
-            <PrimaryData {...primaryDataProps} />
+            <div className='data'>
+              <Heading {...headingProps} />
+              <PrimaryData {...primaryDataProps} />
+            </div>
           </div>
         )
       case 'map':

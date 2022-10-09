@@ -8,7 +8,7 @@
   bottom: 0;
   left: 0;
   z-index: 2;
-  width: 360px;
+  width: 640px;
   padding: 12px;
   @media #{$LARGE-TABLET} {
     overflow-x: scroll;
@@ -18,19 +18,33 @@
     padding-right: 0;
   }
   background: #EAEDED;
+
   .announcement-list-tile {
     @extend %tile;
+    position: relative;
     padding-bottom: 0;
-    height: 318px;
     background: white;
     border-radius: 6px;
     overflow: hidden;
     margin-bottom: 18px;
+    vertical-align: top;
+    height: 204.8px;
     @media #{$LARGE-TABLET} {
       margin-bottom: 0;
     }
     .root-list-link {
-      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 320px;
+    }
+    .data {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 320px;
     }
     .root-list-img {
       width: 100%;
