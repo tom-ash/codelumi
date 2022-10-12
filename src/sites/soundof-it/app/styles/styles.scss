@@ -9,8 +9,23 @@
 
 html {
   box-sizing: border-box;
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
-  font-family: 'Open Sans', sans-serif;
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+  font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+}
+
+strong {
+  font-weight: 600;
+}
+
+code {
+  @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+  font-family: 'Inconsolata', monospace;
 }
 
 html, body {
