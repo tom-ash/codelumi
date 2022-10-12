@@ -17,7 +17,7 @@
     white-space: nowrap;
     padding-right: 0;
   }
-  background: #EAEDED;
+  background: #D7DBDD;
 
   .announcement-list-tile {
     @extend %tile;
@@ -28,7 +28,7 @@
     overflow: hidden;
     margin-bottom: 18px;
     vertical-align: top;
-    height: 204.8px;
+    height: 230.4px;
     @media #{$LARGE-TABLET} {
       margin-bottom: 0;
     }
@@ -39,14 +39,14 @@
       top: 0;
       left: 0;
       bottom: 0;
-      width: 320px;
+      width: 360px;
     }
     .data {
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
-      left: 320px;
+      left: 360px;
     }
     a {
       display: block;
@@ -59,7 +59,7 @@
       padding: 0;
     }
     h1 {
-      margin-bottom: 14px;
+      margin-bottom: 24px;
       padding: 12px;
       padding-bottom: 0;
       .name {
@@ -76,11 +76,19 @@
       }
     }
     .primary-data {
-      padding: 12px;
-      padding-top: 0;
+      padding: 0 12px;
+      // padding-top: 18px;
       margin: 0;
+      .column {
+        display: block;
+        float: none;
+      }
       .area, .rent-container {
-        font-size: 18px!important;
+        font-size: 24px;
+      }
+      .area {
+        font-size: 24px;
+        margin-bottom: 24px;
       }
     }
     @media #{$LARGE-TABLET} {
