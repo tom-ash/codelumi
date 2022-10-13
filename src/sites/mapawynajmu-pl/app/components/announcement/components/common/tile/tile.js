@@ -154,7 +154,7 @@ class AnnouncementTile extends React.Component {
               e.preventDefault()
               const href = buildUrl({ path })
               const { changeRoute } = this.context
-              changeRoute({ href })
+              changeRoute({ href, retainQueryParams: true })
 
               const pin = document.getElementById(`googl-map-pin-${id}`)
               if (pin) pin.classList.add('current')

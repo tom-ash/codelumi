@@ -42,7 +42,7 @@ export function componentDidUpdate(prevProps) {
   const {
     changeControl,
     loadMap,
-    // announcements,
+    announcements,
     loadPins,
     hoveredTileId,
     currentTileId,
@@ -59,17 +59,14 @@ export function componentDidUpdate(prevProps) {
     if (pin) pin.classList.remove('hovered')
   }
 
-  // const changeIsPinsDrawn = isPinsDrawn => changeControl({ isPinsDrawn })
-
   if (this.shouldSetUpGoogleMaps()) changeControl({ loadMap: true })
   if (!prevLoadMap && loadMap) setUpGoogleMaps.call(this)
   if (this.shouldSetUpPins()) changeControl({ loadPins: true })
   if (!prevLoadPins && loadPins) this.drawPins(currentTileId)
 
-  // TODO!
-  // if (announcements !== prevAnnouncements) {
-  //   this.drawPins(currentTileId)
-  // }
+  if (announcements !== prevAnnouncements) {
+    this.drawPins(currentTileId)
+  }
 }
 
 export function componentWillUnmount() {

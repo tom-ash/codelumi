@@ -8,15 +8,18 @@ function matchStateToRoute(props) {
     isSSR
   } = props
 
-  console.log(props)
+  const customHeaders = {
+    'Is-Listings-Obsolete': `${!!window.areListingsObsolete}`
+  }
 
-  console.log("HERE")
+  window.areListingsObsolete = false
 
   matchStateToRouteGeneric.call(this, {
     clientUrl,
     apiUrl,
     pathname,
-    isSSR
+    isSSR,
+    customHeaders,
   })
 }
 

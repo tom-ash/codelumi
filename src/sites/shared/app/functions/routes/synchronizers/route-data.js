@@ -1,16 +1,20 @@
 import getAccessToken from '../../tokens/getters/get-tokens.js'
 
-function syncRouteData({ apiUrl, url, query, isSSR }) {
+function syncRouteData({ apiUrl, url, query, isSSR, customHeaders }) {
   const { changeApp } = this.props
 
   changeApp({ routeSynced: false })
+
+  console.log("syncRouteData")
+  console.log(customHeaders)
 
   return fetch(`${apiUrl}/sync${query}`, {
     headers: {
       'Content-Type': 'application/json',
       'Type': isSSR ? 'ssr' : 'csr',
       'Access-Token': getAccessToken(),
-      'Route-Url': url
+      'Route-Url': url,
+      ...customHeaders,
     }
   })
   .then(response => {

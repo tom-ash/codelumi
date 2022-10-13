@@ -8,7 +8,10 @@ export function logoManager(props) {
   const href = link && buildUrl({ path: link.path })
   const hrefLang = lang
   const label = <Logo />
-  const onClick = () => changeRoute({ href })
+  const onClick = () => {
+    window.areListingsObsolete = true
+    changeRoute({ href })
+  }
 
   return { classNames, href, hrefLang, title, label, onClick }
 }

@@ -5,6 +5,9 @@ export function componentDidUpdate(prevProps) {
   const { rebuildQueryParams, changeControl, changeInputs } = this.props
 
   if (!prevRebuildQueryParams && rebuildQueryParams) {
+
+    window.areListingsObsolete = true
+
     changeControl({ rebuildQueryParams: false })
 
     const updateAttrs = {}

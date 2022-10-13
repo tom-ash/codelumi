@@ -9,7 +9,8 @@ function matchStateToRouteGeneric({
   clientUrl,
   apiUrl,
   pathname,
-  isSSR
+  isSSR,
+  customHeaders
 }) {
   if (typeof window === 'undefined') return
 
@@ -22,7 +23,7 @@ function matchStateToRouteGeneric({
 
   changeConsents(consents)
 
-  syncRouteData.call(this, { apiUrl, url, query, isSSR })
+  syncRouteData.call(this, { apiUrl, url, query, isSSR, customHeaders })
   .then(syncedRouteData => {
     const { state, meta } = syncedRouteData
 

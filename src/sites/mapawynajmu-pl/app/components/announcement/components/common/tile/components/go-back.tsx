@@ -17,7 +17,7 @@ const GoBack = (props: GoBackProps) => {
         const pin = document.getElementById(`googl-map-pin-${id}`)
         if (pin) pin.classList.remove('current')
         centerMap()
-        changeRoute({ href: '/' })
+        changeRoute({ href: '/', retainQueryParams: true })
       }}
       className='go-back-to-list'
     >
