@@ -59,7 +59,7 @@
       padding: 0;
     }
     h1 {
-      margin-bottom: 24px;
+      margin-bottom: 14px;
       padding: 12px;
       padding-bottom: 0;
       .name {
@@ -77,18 +77,17 @@
     }
     .primary-data {
       padding: 0 12px;
-      // padding-top: 18px;
       margin: 0;
       .column {
         display: block;
         float: none;
       }
       .area, .rent-container {
-        font-size: 24px;
+        font-size: 22px;
       }
       .area {
-        font-size: 24px;
-        margin-bottom: 24px;
+        font-size: 22px;
+        margin-bottom: 14px;
       }
     }
     @media #{$LARGE-TABLET} {

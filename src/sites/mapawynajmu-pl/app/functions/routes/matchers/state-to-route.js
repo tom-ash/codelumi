@@ -2,11 +2,21 @@ import matchStateToRouteGeneric from '../../../../../shared/app/functions/routes
 import clientUrl from '../../../../shared/constants/urls/client.js'
 import apiUrl from '../../../../shared/constants/urls/api.js'
 
-function matchStateToRoute({ pathname }) {
+function matchStateToRoute(props) {
+  const {
+    pathname,
+    isSSR
+  } = props
+
+  console.log(props)
+
+  console.log("HERE")
+
   matchStateToRouteGeneric.call(this, {
     clientUrl,
     apiUrl,
-    pathname
+    pathname,
+    isSSR
   })
 }
 

@@ -12,7 +12,7 @@
     transition: all .24s ease-in;
   }
 
-  &.focused {
+  &.hovered, &.current {
     z-index: 2;
     animation: pulse 1s infinite;
   }

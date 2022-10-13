@@ -2,13 +2,10 @@ import { categories } from '../../../../../constants/categories'
 import { viewAnnouncement } from '../../../../../functions/view-announcement'
 import { sendAnalyticsEvent } from '../../../../../../../functions/google-analytics/send-analytics-event'
 
-export function drawPins(changeIsPinsDrawn) {
+export function drawPins(currentListingId) {
   setUpPinCreator()
   removeOldPins.call(this)
-  addNewPins.call(this)
-  setTimeout(() => {
-    changeIsPinsDrawn(true)
-  }, 2000) // TODO: Remove the hack!
+  addNewPins.call(this, currentListingId)
 }
 
 function setUpPinCreator() {
@@ -61,7 +58,7 @@ export function removeOldPins() {
   pins.length && pins.map(pin => pin.setMap(null))
 }
 
-function addNewPins() {
+function addNewPins(currentListingId) {
   if (typeof window === 'undefined') return
   
   const {
@@ -80,6 +77,9 @@ function addNewPins() {
     const category = categories.find(category => category.number === categoryNumber)
     const pin = category.pin
     const svg = svgs[pin.svg]
+
+    const classNames = ['pin', 'icon']
+    if (+currentListingId === +announcement.id) classNames.push('current')
 
     const htmlContent = (
       `<svg
@@ -101,6 +101,7 @@ function addNewPins() {
       {
         pinId: `${announcement.id}`,
         htmlContent,
+        className: classNames.join(' '),
         onClick: e => {
           e.preventDefault()
           const { id } = announcement
@@ -114,27 +115,29 @@ function addNewPins() {
             eventLabel: id
           })
 
-          const focusedPin = document.getElementsByClassName('pin focused')[0]
-          if (focusedPin) {
-            focusedPin.classList.remove('focused')
-          }
 
-          const pin = document.getElementById(`googl-map-pin-${id}`)
-          if (pin) pin.classList.add('focused')
+          // TODO
+          // const focusedPin = document.getElementsByClassName('pin hovered')[0]
+          // if (focusedPin) {
+          //   focusedPin.classList.remove('hovered')
+          // }
 
-          const map = window.googleMap
-          const options = {
-            center: {
-              lat: announcement.latitude, 
-              lng: announcement.longitude,
-            },
-            zoom: 12.4
-          }
+          // const pin = document.getElementById(`googl-map-pin-${id}`)
+          // if (pin) pin.classList.add('hovered')
 
-          map.setOptions(options)
+          // const map = window.googleMap
+          // const options = {
+          //   center: {
+          //     lat: announcement.latitude, 
+          //     lng: announcement.longitude,
+          //   },
+          //   zoom: 12.4
+          // }
 
-          viewAnnouncement(id)
-          changeData({ tileId: id })
+          // map.setOptions(options)
+
+          // viewAnnouncement(id)
+          // changeData({ tileId: id })
         }
       }
     )

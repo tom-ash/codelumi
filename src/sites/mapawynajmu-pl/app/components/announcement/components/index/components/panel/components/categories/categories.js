@@ -39,7 +39,7 @@ const AnnouncementIndexPanelCategories = (props) => {
       const href = link && buildUrl(link)
 
       changeRoute({ href: href || '/', retainQueryParams: true })
-      changeControl({ reloadPins: true })
+      // changeControl({ reloadPins: true })
 
       // 
     }

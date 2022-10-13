@@ -25,7 +25,7 @@ export function componentDidMount() {
     }
   })
 
-  if (!routeSynced) this.matchStateToRoute({ apiUrl: API_URL })
+  if (!routeSynced) this.matchStateToRoute({ apiUrl: API_URL, isSSR: true })
 
   window.onpopstate = () => this.popStateHandler({ apiUrl: API_URL })
 }

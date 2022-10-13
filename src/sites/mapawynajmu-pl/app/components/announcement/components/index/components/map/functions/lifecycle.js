@@ -42,44 +42,34 @@ export function componentDidUpdate(prevProps) {
   const {
     changeControl,
     loadMap,
-    announcements,
+    // announcements,
     loadPins,
     hoveredTileId,
     currentTileId,
-    reloadPins,
-    isPinsDrawn
+    // reloadPins,
   } = this.props
 
   if (hoveredTileId && !prevHoveredTileId) {
     const pin = document.getElementById(`googl-map-pin-${hoveredTileId}`)
-    if (pin) pin.classList.add('focused')
+    if (pin) pin.classList.add('hovered')
   }
 
   if (!hoveredTileId && prevHoveredTileId) {
     const pin = document.getElementById(`googl-map-pin-${prevHoveredTileId}`)
-    if (pin) pin.classList.remove('focused')
+    if (pin) pin.classList.remove('hovered')
   }
 
-  if (currentTileId) {
-    const pin = document.getElementById(`googl-map-pin-${currentTileId}`)
-    if (pin) pin.classList.add('focused')
-  }
-
-  if (!currentTileId && prevCurrentTileId) {
-    const pin = document.getElementById(`googl-map-pin-${prevCurrentTileId}`)
-    if (pin) pin.classList.remove('focused')
-  }
-
-  const changeIsPinsDrawn = isPinsDrawn => changeControl({ isPinsDrawn })
+  // const changeIsPinsDrawn = isPinsDrawn => changeControl({ isPinsDrawn })
 
   if (this.shouldSetUpGoogleMaps()) changeControl({ loadMap: true })
   if (!prevLoadMap && loadMap) setUpGoogleMaps.call(this)
   if (this.shouldSetUpPins()) changeControl({ loadPins: true })
-  if (!prevLoadPins && loadPins) this.drawPins(changeIsPinsDrawn)
-  if (reloadPins && prevAnnouncements && announcements && prevAnnouncements !== announcements) {
-    this.setState({ reloadPins: false })
-    this.drawPins(changeIsPinsDrawn)
-  }
+  if (!prevLoadPins && loadPins) this.drawPins(currentTileId)
+
+  // TODO!
+  // if (announcements !== prevAnnouncements) {
+  //   this.drawPins(currentTileId)
+  // }
 }
 
 export function componentWillUnmount() {

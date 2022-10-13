@@ -8,7 +8,8 @@ import metaSetter from '../../../../../shared/app/functions/routes/setters/meta.
 function matchStateToRouteGeneric({
   clientUrl,
   apiUrl,
-  pathname
+  pathname,
+  isSSR
 }) {
   if (typeof window === 'undefined') return
 
@@ -21,7 +22,7 @@ function matchStateToRouteGeneric({
 
   changeConsents(consents)
 
-  syncRouteData.call(this, { apiUrl, url, query, requestType: 'ssr' })
+  syncRouteData.call(this, { apiUrl, url, query, isSSR })
   .then(syncedRouteData => {
     const { state, meta } = syncedRouteData
 
