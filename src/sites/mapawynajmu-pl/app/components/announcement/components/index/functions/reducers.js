@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux'
-import { changeAnnouncement, changeAnnouncements } from './change-announcements'
 import { control, inputs, data } from '../constants/state'
 
 const controlReducer = (state = control, action) => {
@@ -21,8 +20,6 @@ const inputsReducer = (state = inputs, action) => {
 const dataReducer = (state = data, action) => {
   switch (action.type) {
     case 'announcement/index/data': return { ...state, ...action.value }
-    case 'announcement/index/data/announcements':  return changeAnnouncements(state, action.value)
-    case 'announcement/index/data/announcement':  return changeAnnouncement(state, action.value)
     case 'announcement/index/data/reset': return { ...data }
     default: return { ...state }
   }
