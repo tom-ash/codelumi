@@ -18,7 +18,6 @@
     padding-right: 0;
   }
   background: #D7DBDD;
-
   .announcement-list-tile {
     @extend %tile;
     position: relative;
@@ -98,6 +97,14 @@
       margin-bottom: 0;
       &:last-of-type {
         margin-right: 12px;
+      }
+      .root-list-img {
+        position: relative;
+        width: 100%;
+      }
+      .data {
+        position: relative;
+        left: 0;
       }
     }
   }
