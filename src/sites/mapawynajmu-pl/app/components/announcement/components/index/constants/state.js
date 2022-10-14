@@ -14,7 +14,6 @@ export const control = {
   rebuildQueryParams: false,
   hoveredTileId: null,
   currentTileId: null,
-  reloadPins: false,
 }
 
 export const data = {

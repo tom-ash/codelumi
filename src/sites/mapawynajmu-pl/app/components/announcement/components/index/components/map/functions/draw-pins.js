@@ -69,6 +69,7 @@ function addNewPins(currentListingId) {
 
   let pins = []
   announcements.map(announcement => {
+    const { changeRoute } = this.context
     const {
       category: categoryNumber,
       path,
@@ -115,29 +116,8 @@ function addNewPins(currentListingId) {
             eventLabel: id
           })
 
-
-          // TODO
-          // const focusedPin = document.getElementsByClassName('pin hovered')[0]
-          // if (focusedPin) {
-          //   focusedPin.classList.remove('hovered')
-          // }
-
-          // const pin = document.getElementById(`googl-map-pin-${id}`)
-          // if (pin) pin.classList.add('hovered')
-
-          // const map = window.googleMap
-          // const options = {
-          //   center: {
-          //     lat: announcement.latitude, 
-          //     lng: announcement.longitude,
-          //   },
-          //   zoom: 12.4
-          // }
-
-          // map.setOptions(options)
-
-          // viewAnnouncement(id)
-          // changeData({ tileId: id })
+          changeData({ tile: null, tileId: null })
+          changeRoute({ href: path })
         }
       }
     )

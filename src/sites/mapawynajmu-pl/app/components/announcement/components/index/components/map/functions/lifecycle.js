@@ -35,8 +35,7 @@ export function componentDidUpdate(prevProps) {
     loadPins: prevLoadPins,
     announcements: prevAnnouncements,
     hoveredTileId: prevHoveredTileId,
-    currentTileId: prevCurrentTileId,
-    reloadPins: prevReloadPins,
+    tile: prevTile
   } = prevProps
 
   const {
@@ -46,7 +45,7 @@ export function componentDidUpdate(prevProps) {
     loadPins,
     hoveredTileId,
     currentTileId,
-    // reloadPins,
+    tile,
   } = this.props
 
   if (hoveredTileId && !prevHoveredTileId) {
@@ -58,6 +57,23 @@ export function componentDidUpdate(prevProps) {
     const pin = document.getElementById(`googl-map-pin-${prevHoveredTileId}`)
     if (pin) pin.classList.remove('hovered')
   }
+
+  if (!tile && prevTile) {
+    const pin = document.getElementById(`googl-map-pin-${prevTile.id}`)
+    if (pin) pin.classList.remove('current')
+    console.log("QWEQWEQWEQWE")
+  }
+
+  if (tile && !prevTile) {
+    const pin = document.getElementById(`googl-map-pin-${tile.id}`)
+    if (pin) pin.classList.add('current')
+  }
+
+  // pin.classList.add('current')
+
+
+
+
 
   if (this.shouldSetUpGoogleMaps()) changeControl({ loadMap: true })
   if (!prevLoadMap && loadMap) setUpGoogleMaps.call(this)
