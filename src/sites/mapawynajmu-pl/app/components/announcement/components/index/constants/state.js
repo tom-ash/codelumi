@@ -14,6 +14,13 @@ export const control = {
   rebuildQueryParams: false,
   hoveredTileId: null,
   currentTileId: null,
+  mapOptions: {
+    center: {
+      lat: 52,
+      lng: 19
+    },
+    zoom: 6.7
+  }
 }
 
 export const data = {
@@ -51,10 +58,4 @@ export const inputs = {
   availabilityDate: '',
   offset: 0,
   sort: 'updatedesc',
-}
-
-function parseSwitches() {
-  let switchChecbkoxes = {}
-  switches.map(switchChecbkox => { switchChecbkoxes[switchChecbkox.ref] = true })
-  return switchChecbkoxes
 }

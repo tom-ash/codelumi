@@ -21,6 +21,7 @@ export const mapStateToProps = store => {
     hoveredTileId,
     currentTileId,
     isPinsDrawn,
+    mapOptions,
   } = store.announcement.index.control
   
   const {
@@ -51,6 +52,7 @@ export const mapStateToProps = store => {
     hoveredTileId,
     currentTileId,
     isPinsDrawn,
+    mapOptions,
   }
 }
     

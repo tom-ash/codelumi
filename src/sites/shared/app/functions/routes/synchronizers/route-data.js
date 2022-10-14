@@ -5,9 +5,6 @@ function syncRouteData({ apiUrl, url, query, isSSR, customHeaders }) {
 
   changeApp({ routeSynced: false })
 
-  console.log("syncRouteData")
-  console.log(customHeaders)
-
   return fetch(`${apiUrl}/sync${query}`, {
     headers: {
       'Content-Type': 'application/json',

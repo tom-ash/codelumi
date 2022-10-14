@@ -64,7 +64,8 @@ function addNewPins(currentListingId) {
   const {
     changeData,
     announcements,
-    svgs
+    svgs,
+    changeControl,
   } = this.props
 
   let pins = []
@@ -73,7 +74,9 @@ function addNewPins(currentListingId) {
     const {
       category: categoryNumber,
       path,
-      title
+      title,
+      latitude,
+      longitude,
     } = announcement
     const category = categories.find(category => category.number === categoryNumber)
     const pin = category.pin
@@ -114,6 +117,16 @@ function addNewPins(currentListingId) {
             eventCategory: 'Announcement Map',
             eventAction: 'Pin Click',
             eventLabel: id
+          })
+
+          changeControl({
+            mapOptions: {
+              center: {
+                lat: latitude,
+                lng: longitude
+              },
+              zoom: 12.4
+            }
           })
 
           changeData({ tile: null, tileId: null })

@@ -156,9 +156,6 @@ class AnnouncementTile extends React.Component {
               const { changeRoute } = this.context
               changeRoute({ href, retainQueryParams: true })
 
-              // const pin = document.getElementById(`googl-map-pin-${id}`)
-              // if (pin) pin.classList.add('current')
-
               // @ts-ignore
               const map = window.googleMap
               const options = { center: { lat: latitude, lng: longitude }, zoom: 12.4 }
