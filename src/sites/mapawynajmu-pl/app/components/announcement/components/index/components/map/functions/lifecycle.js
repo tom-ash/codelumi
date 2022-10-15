@@ -28,25 +28,35 @@ export function componentDidMount() {
 
 export function componentDidUpdate(prevProps) {
   const {
-    loadMap: prevLoadMap,
+    // loadMap: prevLoadMap,
     loadPins: prevLoadPins,
     announcements: prevAnnouncements,
     hoveredTileId: prevHoveredTileId,
     tile: prevTile,
     mapOptions: prevMapOptions,
+    scripts: {
+      googleMaps: prevGoogleMapScriptLoaded
+    },
   } = prevProps
 
   const {
     changeControl,
-    loadMap,
+    // loadMap,
     announcements,
     loadPins,
     hoveredTileId,
     currentTileId,
     tile,
     mapOptions,
-    mapLoaded,
+    // mapLoaded,
+    scripts: {
+      googleMaps: googleMapScriptLoaded
+    },
   } = this.props
+
+  if (googleMapScriptLoaded && !prevGoogleMapScriptLoaded) {
+    this.googleMapHandler(() => changeControl({ mapLoaded: true }), mapOptions)
+  }
 
   if (hoveredTileId && !prevHoveredTileId) {
     const pin = document.getElementById(`googl-map-pin-${hoveredTileId}`)

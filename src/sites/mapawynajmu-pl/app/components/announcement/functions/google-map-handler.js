@@ -2,23 +2,18 @@ import { styles } from '../constants/google-map-styles'
 
 export function googleMapHandler(callback, options) {
   if (typeof window === 'undefined') return
-
-  // console.log(options)
-
   if (this.props.mapLoaded) return
   if (this.props.scripts.googleMaps && window.googleMap) return replaceGoogleMap.call(this, callback, options)
   if (!this.props.scripts.googleMaps || window.googleMap) return
+
   const div = document.getElementById('google-map')
   if (!div) return
-
-  // console.log("QEQWEQWE")
+  if (callback) callback()
 
   const initializeMap = () => window.googleMap = new google.maps.Map(div, setOptions.call(this, options))
   initializeMap()
 
   window.sessionToken = new google.maps.places.AutocompleteSessionToken()
-
-  if (callback) callback()
 }
 
 export function shouldSetUpPins() {
@@ -66,8 +61,6 @@ export function replaceGoogleMap(callback, options) {
 }
 
 function setOptions(options) {
-
-  // console.log(options)
 
   options = options || {
     center: {
