@@ -1,5 +1,4 @@
 import { removeOldPins } from './draw-pins'
-import { setUpGoogleMaps } from '../../../../../functions/google-map-handler'
 
 function handleScroll() {
   const {
@@ -22,11 +21,9 @@ function handleScroll() {
 }
 
 export function componentDidMount() {
-  const { changeControl } = this.props
+  const { changeControl, mapOptions } = this.props
 
-  this.googleMapHandler(() => changeControl({ mapLoaded: true }))
-
-  this.miniList.current.addEventListener('scroll', () => handleScroll.apply(this))
+  this.googleMapHandler(() => changeControl({ mapLoaded: true }), mapOptions)
 }
 
 export function componentDidUpdate(prevProps) {
@@ -48,6 +45,7 @@ export function componentDidUpdate(prevProps) {
     currentTileId,
     tile,
     mapOptions,
+    mapLoaded,
   } = this.props
 
   if (hoveredTileId && !prevHoveredTileId) {
@@ -75,8 +73,6 @@ export function componentDidUpdate(prevProps) {
     map.setOptions(mapOptions)
   }
 
-  if (this.shouldSetUpGoogleMaps()) changeControl({ loadMap: true })
-  if (!prevLoadMap && loadMap) setUpGoogleMaps.call(this)
   if (this.shouldSetUpPins()) changeControl({ loadPins: true })
   if (!prevLoadPins && loadPins) this.drawPins(currentTileId)
 

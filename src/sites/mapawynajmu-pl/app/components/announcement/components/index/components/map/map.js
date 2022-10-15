@@ -6,7 +6,7 @@ import ListingTile from '../../../common/tile/tile'
 import { googleMapHandler } from '../../../../functions/google-map-handler'
 import { drawPins } from './functions/draw-pins'
 import langHandler from '../../../../../../functions/lang-handler'
-import { shouldSetUpGoogleMaps, shouldSetUpPins } from '../../../../functions/google-map-handler'
+import { shouldSetUpPins } from '../../../../functions/google-map-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import AppContext from '../../../../../../constants/context.js'
@@ -21,7 +21,6 @@ class AnnouncementIndexMap extends React.Component {
     this.googleMapHandler = googleMapHandler.bind(this)
     this.drawPins = drawPins.bind(this)
     this.langHandler = langHandler.bind(this)
-    this.shouldSetUpGoogleMaps = shouldSetUpGoogleMaps.bind(this)
     this.shouldSetUpPins = shouldSetUpPins.bind(this)
   }
 

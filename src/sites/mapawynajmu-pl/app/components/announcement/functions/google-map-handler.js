@@ -1,27 +1,24 @@
 import { styles } from '../constants/google-map-styles'
 
-export function setUpGoogleMaps(options) {
-  if (window.googleMap) return replaceGoogleMap.call(this, undefined, options)
+export function googleMapHandler(callback, options) {
+  if (typeof window === 'undefined') return
 
-  const { changeControl } = this.props
+  // console.log(options)
 
-  window.googleMap = new google.maps.Map(document.getElementById('google-map'), setOptions.call(this, options))
+  if (this.props.mapLoaded) return
+  if (this.props.scripts.googleMaps && window.googleMap) return replaceGoogleMap.call(this, callback, options)
+  if (!this.props.scripts.googleMaps || window.googleMap) return
+  const div = document.getElementById('google-map')
+  if (!div) return
 
-  changeControl({ mapLoaded: true })
-}
+  // console.log("QEQWEQWE")
 
-export function shouldSetUpGoogleMaps() {
-  const { loadMap } = this.props
+  const initializeMap = () => window.googleMap = new google.maps.Map(div, setOptions.call(this, options))
+  initializeMap()
 
-  if (loadMap) return false
-  if (typeof window === 'undefined') return false
+  window.sessionToken = new google.maps.places.AutocompleteSessionToken()
 
-  const { googleMaps: googleMapScript } = this.props.scripts
-
-  if (!googleMapScript) return false
-  if (!document.getElementById('google-map')) return false
-
-  return true
+  if (callback) callback()
 }
 
 export function shouldSetUpPins() {
@@ -57,33 +54,6 @@ export function loadGoogleMarker(position) {
   window.marker = new google.maps.Marker({ position,  map: window.googleMap })
 }
 
-
-
-
-
-
-
-
-// !!! LEGACY !!! START
-
-export function googleMapHandler(callback, options) {
-  if (typeof window === 'undefined') return
-
-  if (this.props.mapLoaded) return
-  if (this.props.scripts.googleMaps && window.googleMap) return replaceGoogleMap.call(this, callback, options)
-  if (!this.props.scripts.googleMaps || window.googleMap) return
-  const div = document.getElementById('google-map')
-  if (!div) return
-  const initializeMap = () => window.googleMap = new google.maps.Map(div, setOptions.call(this, options))
-  initializeMap()
-
-  window.sessionToken = new google.maps.places.AutocompleteSessionToken()
-
-  if (callback) callback()
-}
-
-// !!! LEGACY !!! END
-
 export function replaceGoogleMap(callback, options) {
   if (typeof window === 'undefined') return
   
@@ -96,18 +66,25 @@ export function replaceGoogleMap(callback, options) {
 }
 
 function setOptions(options) {
-  options = options || {}
+
+  // console.log(options)
+
+  options = options || {
+    center: {
+      lat: 52,
+      lng: 19,
+    },
+    zoom: 6.7,
+  }
+
+  console.log(options)
 
   const {
     isMobile
   } = this.props
 
   return {
-    center: {
-      lat: 52,
-      lng: 19
-    },
-    zoom: 6.7,
+
     fullscreenControl: false,
     clickableIcons: false,
     zoomControl: false,
