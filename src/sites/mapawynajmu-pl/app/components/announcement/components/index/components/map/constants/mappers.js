@@ -22,9 +22,10 @@ export const mapStateToProps = store => {
     fetch,
     hoveredTileId,
     currentTileId,
-    isPinsDrawn,
     mapOptions,
     shouldInitializeMap,
+    isPinsDrawn,
+    shouldDrawPins,
   } = store.announcement.index.control
   
   const {
@@ -57,6 +58,8 @@ export const mapStateToProps = store => {
     isPinsDrawn,
     mapOptions,
     shouldInitializeMap,
+    isPinsDrawn,
+    shouldDrawPins,
   }
 }
     

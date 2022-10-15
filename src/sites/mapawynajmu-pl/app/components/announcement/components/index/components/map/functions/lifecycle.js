@@ -1,6 +1,7 @@
 import { removeOldPins } from './draw-pins'
 import setShouldInitializeMap from '../../../../../functions/map/set-should-initialize'
 import initializeMap from '../../../../../functions/map/initialize'
+import setShouldDrawPins from '../../../../../functions/map/should-draw-pins'
 
 export function componentDidMount() {
   const {
@@ -25,7 +26,8 @@ export function componentDidUpdate(prevProps) {
     hoveredTileId: prevHoveredTileId,
     tile: prevTile,
     mapOptions: prevMapOptions,
-    shouldInitializeMap: prevShouldInitializeMap
+    shouldInitializeMap: prevShouldInitializeMap,
+    shouldDrawPins: prevShouldDrawPins,
   } = prevProps
 
   const {
@@ -40,10 +42,9 @@ export function componentDidUpdate(prevProps) {
     tile,
     mapOptions,
     isMobile,
+    isPinsDrawn,
+    shouldDrawPins,
   } = this.props
-
-  console.log("HERE")
-  console.log(isMobile)
 
   setShouldInitializeMap({
     isMapInitialized,
@@ -60,37 +61,41 @@ export function componentDidUpdate(prevProps) {
     })
   }
 
-  // if (hoveredTileId && !prevHoveredTileId) {
-  //   const pin = document.getElementById(`googl-map-pin-${hoveredTileId}`)
-  //   if (pin) pin.classList.add('hovered')
-  // }
+  setShouldDrawPins({
+    isPinsDrawn,
+    isMapInitialized,
+    listingsChanged: announcements !== prevAnnouncements,
+    changeControl,
+  })
 
-  // if (!hoveredTileId && prevHoveredTileId) {
-  //   const pin = document.getElementById(`googl-map-pin-${prevHoveredTileId}`)
-  //   if (pin) pin.classList.remove('hovered')
-  // }
+  if (shouldDrawPins && !prevShouldDrawPins) {
+    this.drawPins(currentTileId)
+  }
 
-  // if (!tile && prevTile) {
-  //   const pin = document.getElementById(`googl-map-pin-${prevTile.id}`)
-  //   if (pin) pin.classList.remove('current')
-  // }
+  if (hoveredTileId && !prevHoveredTileId) {
+    const pin = document.getElementById(`googl-map-pin-${hoveredTileId}`)
+    if (pin) pin.classList.add('hovered')
+  }
 
-  // if (tile && !prevTile) {
-  //   const pin = document.getElementById(`googl-map-pin-${tile.id}`)
-  //   if (pin) pin.classList.add('current')
-  // }
+  if (!hoveredTileId && prevHoveredTileId) {
+    const pin = document.getElementById(`googl-map-pin-${prevHoveredTileId}`)
+    if (pin) pin.classList.remove('hovered')
+  }
 
-  // if (mapOptions !== prevMapOptions) {
-  //   const map = window.googleMap
-  //   map.setOptions(mapOptions)
-  // }
+  if (!tile && prevTile) {
+    const pin = document.getElementById(`googl-map-pin-${prevTile.id}`)
+    if (pin) pin.classList.remove('current')
+  }
 
-  // if (this.shouldSetUpPins()) changeControl({ loadPins: true })
-  // if (!prevLoadPins && loadPins) this.drawPins(currentTileId)
+  if (tile && !prevTile) {
+    const pin = document.getElementById(`googl-map-pin-${tile.id}`)
+    if (pin) pin.classList.add('current')
+  }
 
-  // if (announcements !== prevAnnouncements) {
-  //   this.drawPins(currentTileId)
-  // }
+  if (mapOptions !== prevMapOptions) {
+    const map = window.googleMap
+    map.setOptions(mapOptions)
+  }
 }
 
 export function componentWillUnmount() {

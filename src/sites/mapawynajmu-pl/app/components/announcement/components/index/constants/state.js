@@ -22,6 +22,8 @@ export const control = {
     zoom: 6.7
   },
   shouldInitializeMap: false,
+  isPinsDrawn: false,
+  shouldDrawPins: false,
 }
 
 export const data = {

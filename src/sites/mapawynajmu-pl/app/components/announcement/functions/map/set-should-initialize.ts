@@ -2,7 +2,7 @@ interface SetShouldInitializeMapProps {
   isMapInitialized: boolean
   shouldInitializeMap: boolean
   googleMapsScriptLoaded: boolean
-  changeControl(props: object): void,
+  changeControl(props: object): void
 }
 
 function setShouldInitializeMap(props: SetShouldInitializeMapProps) {
