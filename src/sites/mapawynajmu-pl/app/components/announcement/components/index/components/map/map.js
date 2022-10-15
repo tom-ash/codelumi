@@ -78,6 +78,7 @@ class AnnouncementIndexMap extends React.Component {
                 lang={lang}
                 langHandler={this.langHandler}
                 changeData={changeData}
+                changeControl={changeControl}
                 isMobile={isMobile}
                 path={announcement.path}
                 title={announcement.title}

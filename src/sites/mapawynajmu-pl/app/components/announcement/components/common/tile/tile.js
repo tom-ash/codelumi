@@ -14,6 +14,7 @@ import { togglePhone } from '../../../functions/toggle-phone'
 import buildUrl from '../../../../../../shared/functions/builders/url'
 import { viewAnnouncement } from '../../../../announcement/functions/view-announcement'
 import AppContext from '../../../../../constants/context'
+import scrollToElement from '../../../../../../../shared/app/functions/screen/scrollers/to-element'
 
 class AnnouncementTile extends React.Component {
   static contextType = AppContext
@@ -58,6 +59,7 @@ class AnnouncementTile extends React.Component {
       longitude,
       changeData,
       changeApp,
+      changeControl,
       path,
       title,
       name,
@@ -152,15 +154,32 @@ class AnnouncementTile extends React.Component {
             onMouseLeave={() => changeHoveredTileId(null)}
             onClick={e => {
               e.preventDefault()
-              const href = buildUrl({ path })
-              const { changeRoute } = this.context
-              changeRoute({ href, retainQueryParams: true })
 
-              // @ts-ignore
-              const map = window.googleMap
-              const options = { center: { lat: latitude, lng: longitude }, zoom: 12.4 }
-              map.setOptions(options)
               viewAnnouncement(id)
+
+              if (!isMobile) {
+                const { changeRoute } = this.context
+                const href = buildUrl({ path })
+                changeRoute({ href, retainQueryParams: true })
+                return
+              }
+
+              var fromTop = document.body.getBoundingClientRect().top
+
+              window.scrollBy({
+                top: 454 + fromTop,
+                behavior: 'smooth'
+              });
+
+              changeControl({
+                mapOptions: {
+                  center: {
+                    lat: latitude,
+                    lng: longitude
+                  },
+                  zoom: 12.4
+                }
+              })
             }}
           >
             <Link {...linkProps} />
@@ -185,15 +204,15 @@ class AnnouncementTile extends React.Component {
             </div>
           </>
         )
-        case 'list':
-          return (
-            <main className='listing-tile'>
-              <Heading {...headingProps} />
-              <Pictures {...picturesProps} />
-              <PrimaryData {...primaryDataProps} />
-              {control}
-            </main>
-          )
+      case 'list':
+        return (
+          <main className='listing-tile'>
+            <Heading {...headingProps} />
+            <Pictures {...picturesProps} />
+            <PrimaryData {...primaryDataProps} />
+            {control}
+          </main>
+        )
       default:
         return null
     }

@@ -130,7 +130,7 @@ function addNewPins(currentListingId) {
           })
 
           changeData({ tile: null, tileId: null })
-          changeRoute({ href: path })
+          changeRoute({ href: path, withoutScroll: true })
         }
       }
     )
