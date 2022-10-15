@@ -1,21 +1,3 @@
-import { styles } from '../constants/google-map-styles'
-
-export function googleMapHandler(callback, options) {
-  if (typeof window === 'undefined') return
-  if (this.props.mapLoaded) return
-  if (this.props.scripts.googleMaps && window.googleMap) return replaceGoogleMap.call(this, callback, options)
-  if (!this.props.scripts.googleMaps || window.googleMap) return
-
-  const div = document.getElementById('google-map')
-  if (!div) return
-  if (callback) callback()
-
-  const initializeMap = () => window.googleMap = new google.maps.Map(div, setOptions.call(this, options))
-  initializeMap()
-
-  window.sessionToken = new google.maps.places.AutocompleteSessionToken()
-}
-
 export function shouldSetUpPins() {
   const {
     loadPins,
@@ -47,44 +29,4 @@ export function shouldSetUpMarker() {
 
 export function loadGoogleMarker(position) {
   window.marker = new google.maps.Marker({ position,  map: window.googleMap })
-}
-
-export function replaceGoogleMap(callback, options) {
-  if (typeof window === 'undefined') return
-  
-  const googleMapContainer = document.getElementById('google-map-container')
-  if (!googleMapContainer) return
-  const map = window.googleMap
-  googleMapContainer.replaceChild(map.getDiv(), document.getElementById('google-map'))
-  map.setOptions(setOptions.call(this, options))
-  if (callback) callback()
-}
-
-function setOptions(options) {
-
-  options = options || {
-    center: {
-      lat: 52,
-      lng: 19,
-    },
-    zoom: 6.7,
-  }
-
-  console.log(options)
-
-  const {
-    isMobile
-  } = this.props
-
-  return {
-
-    fullscreenControl: false,
-    clickableIcons: false,
-    zoomControl: false,
-    ...!isMobile && { gestureHandling: 'greedy' },
-    styles,
-    mapTypeControl: false,
-    streetViewControl: false,
-    ...options
-  }
 }

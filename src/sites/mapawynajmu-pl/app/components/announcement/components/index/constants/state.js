@@ -2,7 +2,7 @@ export const control = {
   connecting: false,
   readParams: true,
   type: 'map',
-  mapLoaded: false,
+  isMapInitialized: false,
   deletedAnnouncement: null,
   loadMap: false,
   loadPins: false,
@@ -20,7 +20,8 @@ export const control = {
       lng: 19
     },
     zoom: 6.7
-  }
+  },
+  shouldInitializeMap: false,
 }
 
 export const data = {

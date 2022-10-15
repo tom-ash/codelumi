@@ -4,7 +4,7 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import langHandler from '../../../../../../functions/lang-handler'
 import { validateMap } from './functions/validate-map'
 import * as lifecycle from './functions/lifecycle'
-import { googleMapHandler } from '../../../../functions/google-map-handler'
+// import { initializeMap } from '../../../../functions/google-map-handler'
 import AddressInput from './components/address-input/address-input'
 import addMarker from './functions/add-marker'
 import Heading from '../../../../../support/components/heading'
@@ -28,7 +28,7 @@ class AnnouncementCreatMap extends React.Component {
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
     this.validateMap = validateMap.bind(this)
-    this.googleMapHandler = googleMapHandler.bind(this)
+    // this.initializeMap = initializeMap.bind(this)
     this.state = {
       autocompleteInput: '',
       autocompletes: [],

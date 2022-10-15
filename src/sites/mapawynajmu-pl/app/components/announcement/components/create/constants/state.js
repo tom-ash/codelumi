@@ -16,7 +16,7 @@ function parseFurnishingsForState() {
 }
 
 export const control = {
-  mapLoaded: false,
+  isMapInitialized: false,
   connecting: false,
   publishing: false,
   success: false,

@@ -2,7 +2,9 @@ export const mapStateToProps = store => {
   const {
     lang,
     isMobile,
-    scripts,
+    scripts: {
+      googleMaps: googleMapsScriptLoaded,
+    },
     device
   } = store.app
   const {
@@ -11,7 +13,7 @@ export const mapStateToProps = store => {
 
   const {
     connecting,
-    mapLoaded,
+    isMapInitialized,
     type,
     loadMap,
     loadPins,
@@ -22,6 +24,7 @@ export const mapStateToProps = store => {
     currentTileId,
     isPinsDrawn,
     mapOptions,
+    shouldInitializeMap,
   } = store.announcement.index.control
   
   const {
@@ -37,10 +40,10 @@ export const mapStateToProps = store => {
     device,
     lang,
     isMobile,
-    scripts,
+    googleMapsScriptLoaded,
     connecting,
     type,
-    mapLoaded,
+    isMapInitialized,
     announcements,
     pins,
     tileId,
@@ -53,6 +56,7 @@ export const mapStateToProps = store => {
     currentTileId,
     isPinsDrawn,
     mapOptions,
+    shouldInitializeMap,
   }
 }
     

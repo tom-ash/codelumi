@@ -10,18 +10,13 @@ const options = {
 }
 
 export function componentDidMount() {
-  this.googleMapHandler(
-    () => this.props.changeControl({ mapLoaded: true }),
-    options
-  )
+  // this.initializeMap()
 }
 
 export function componentDidUpdate(prevProps) {
-  this.googleMapHandler(
-    () => this.props.changeControl({ mapLoaded: true }),
-    options
-  )
-  if (this.props.mapLoaded && !prevProps.mapLoaded) addGoogleMapListeners.call(this)
+  // this.initializeMap()
+
+  if (this.props.isMapInitialized && !prevProps.isMapInitialized) addGoogleMapListeners.call(this)
   if (this.props.latitude != prevProps.latitude && this.props.longitude != prevProps.longitude) {
     placeMarker.call(this)
   }
@@ -30,7 +25,7 @@ export function componentDidUpdate(prevProps) {
 export function componentWillUnmount() {
   if (typeof window === 'undefined') return
 
-  this.props.changeControl({ mapLoaded: false })
+  this.props.changeControl({ isMapInitialized: false })
   removeGoogleMapListeners.call(this)
   if (window.marker) window.marker.setMap(null)
 }

@@ -1,4 +1,4 @@
-export const styles = (
+const googleMapStyles = (
     [
 
         {
@@ -69,4 +69,5 @@ export const styles = (
        
        ]
   )
-  
+
+export default googleMapStyles

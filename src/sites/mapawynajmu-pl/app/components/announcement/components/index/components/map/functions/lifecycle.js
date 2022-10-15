@@ -1,94 +1,87 @@
 import { removeOldPins } from './draw-pins'
+import SetShouldInitializeMapProps from '../../../../../functions/map/set-should-initialize'
 
-function handleScroll() {
+export function componentDidMount() {
   const {
-    miniListFarthestScrollTop,
-    miniListFarthestScrollLeft,
+    isMapInitialized,
+    shouldInitializeMap,
+    googleMapsScriptLoaded,
     changeControl
   } = this.props
 
-  const scrollTop = this.miniList.current.scrollTop
-
-  if (scrollTop > miniListFarthestScrollTop + 100) {
-    changeControl({ miniListFarthestScrollTop: scrollTop })
-  }
-
-  const scrollLeft = this.miniList.current.scrollLeft
-
-  if (scrollLeft > miniListFarthestScrollLeft + 100) {
-    changeControl({ miniListFarthestScrollLeft: scrollLeft })
-  }
-}
-
-export function componentDidMount() {
-  const { changeControl, mapOptions } = this.props
-
-  this.googleMapHandler(() => changeControl({ mapLoaded: true }), mapOptions)
+  SetShouldInitializeMapProps({
+    isMapInitialized,
+    shouldInitializeMap,
+    googleMapsScriptLoaded,
+    changeControl,
+  })
 }
 
 export function componentDidUpdate(prevProps) {
   const {
-    // loadMap: prevLoadMap,
     loadPins: prevLoadPins,
     announcements: prevAnnouncements,
     hoveredTileId: prevHoveredTileId,
     tile: prevTile,
     mapOptions: prevMapOptions,
-    scripts: {
-      googleMaps: prevGoogleMapScriptLoaded
-    },
+    shouldInitializeMap: prevShouldInitializeMap
   } = prevProps
 
   const {
+    isMapInitialized,
+    shouldInitializeMap,
+    googleMapsScriptLoaded,
     changeControl,
-    // loadMap,
     announcements,
     loadPins,
     hoveredTileId,
     currentTileId,
     tile,
     mapOptions,
-    // mapLoaded,
-    scripts: {
-      googleMaps: googleMapScriptLoaded
-    },
   } = this.props
 
-  if (googleMapScriptLoaded && !prevGoogleMapScriptLoaded) {
-    this.googleMapHandler(() => changeControl({ mapLoaded: true }), mapOptions)
-  }
+  SetShouldInitializeMapProps({
+    isMapInitialized,
+    shouldInitializeMap,
+    googleMapsScriptLoaded,
+    changeControl,
+  })
 
-  if (hoveredTileId && !prevHoveredTileId) {
-    const pin = document.getElementById(`googl-map-pin-${hoveredTileId}`)
-    if (pin) pin.classList.add('hovered')
-  }
+  // if (shouldInitializeMap && !prevShouldInitializeMap) {
+  //   this.initializeMap()
+  // }
 
-  if (!hoveredTileId && prevHoveredTileId) {
-    const pin = document.getElementById(`googl-map-pin-${prevHoveredTileId}`)
-    if (pin) pin.classList.remove('hovered')
-  }
+  // if (hoveredTileId && !prevHoveredTileId) {
+  //   const pin = document.getElementById(`googl-map-pin-${hoveredTileId}`)
+  //   if (pin) pin.classList.add('hovered')
+  // }
 
-  if (!tile && prevTile) {
-    const pin = document.getElementById(`googl-map-pin-${prevTile.id}`)
-    if (pin) pin.classList.remove('current')
-  }
+  // if (!hoveredTileId && prevHoveredTileId) {
+  //   const pin = document.getElementById(`googl-map-pin-${prevHoveredTileId}`)
+  //   if (pin) pin.classList.remove('hovered')
+  // }
 
-  if (tile && !prevTile) {
-    const pin = document.getElementById(`googl-map-pin-${tile.id}`)
-    if (pin) pin.classList.add('current')
-  }
+  // if (!tile && prevTile) {
+  //   const pin = document.getElementById(`googl-map-pin-${prevTile.id}`)
+  //   if (pin) pin.classList.remove('current')
+  // }
 
-  if (mapOptions !== prevMapOptions) {
-    const map = window.googleMap
-    map.setOptions(mapOptions)
-  }
+  // if (tile && !prevTile) {
+  //   const pin = document.getElementById(`googl-map-pin-${tile.id}`)
+  //   if (pin) pin.classList.add('current')
+  // }
 
-  if (this.shouldSetUpPins()) changeControl({ loadPins: true })
-  if (!prevLoadPins && loadPins) this.drawPins(currentTileId)
+  // if (mapOptions !== prevMapOptions) {
+  //   const map = window.googleMap
+  //   map.setOptions(mapOptions)
+  // }
 
-  if (announcements !== prevAnnouncements) {
-    this.drawPins(currentTileId)
-  }
+  // if (this.shouldSetUpPins()) changeControl({ loadPins: true })
+  // if (!prevLoadPins && loadPins) this.drawPins(currentTileId)
+
+  // if (announcements !== prevAnnouncements) {
+  //   this.drawPins(currentTileId)
+  // }
 }
 
 export function componentWillUnmount() {
