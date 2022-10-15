@@ -1,5 +1,6 @@
 import { removeOldPins } from './draw-pins'
-import SetShouldInitializeMapProps from '../../../../../functions/map/set-should-initialize'
+import setShouldInitializeMap from '../../../../../functions/map/set-should-initialize'
+import initializeMap from '../../../../../functions/map/initialize'
 
 export function componentDidMount() {
   const {
@@ -9,7 +10,7 @@ export function componentDidMount() {
     changeControl
   } = this.props
 
-  SetShouldInitializeMapProps({
+  setShouldInitializeMap({
     isMapInitialized,
     shouldInitializeMap,
     googleMapsScriptLoaded,
@@ -38,18 +39,26 @@ export function componentDidUpdate(prevProps) {
     currentTileId,
     tile,
     mapOptions,
+    isMobile,
   } = this.props
 
-  SetShouldInitializeMapProps({
+  console.log("HERE")
+  console.log(isMobile)
+
+  setShouldInitializeMap({
     isMapInitialized,
     shouldInitializeMap,
     googleMapsScriptLoaded,
     changeControl,
   })
 
-  // if (shouldInitializeMap && !prevShouldInitializeMap) {
-  //   this.initializeMap()
-  // }
+  if (shouldInitializeMap && !prevShouldInitializeMap) {
+    initializeMap({
+      mapOptions,
+      isMobile,
+      changeControl,
+    })
+  }
 
   // if (hoveredTileId && !prevHoveredTileId) {
   //   const pin = document.getElementById(`googl-map-pin-${hoveredTileId}`)

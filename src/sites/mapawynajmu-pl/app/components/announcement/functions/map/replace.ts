@@ -3,9 +3,10 @@ import mapOptionsProvider, { MapOptions } from './options-provider'
 interface ReplaceMapProps {
   mapOptions: MapOptions
   isMobile: boolean
+  changeControl(props: object): void
 }
 
-export function replaceMap(props: ReplaceMapProps) {
+function replaceMap(props: ReplaceMapProps) {
   const {
     mapOptions,
     isMobile,
@@ -25,3 +26,5 @@ export function replaceMap(props: ReplaceMapProps) {
     isMobile,
   }))
 }
+
+export default replaceMap
