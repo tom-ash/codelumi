@@ -1,17 +1,35 @@
 export const mapStateToProps = store => {
   const {
     lang,
-    isMobile
+    isMobile,
+    scripts: {
+      googleMaps: googleMapsScriptLoaded,
+    }
   } = store.app
 
+  const {
+    shouldInitializeMap,
+    isMapInitialized,
+  } = store.announcement.create.control
+
+  const {
+    latitude,
+    longitude,
+  } = store.announcement.create.inputs
+
+  const {
+    map: error
+  } = store.announcement.create.errors
+
   return {
+    shouldInitializeMap,
+    isMapInitialized,
+    googleMapsScriptLoaded,
+    latitude,
+    longitude,
+    error,
     isMobile,
     lang,
-    scripts: store.app.scripts,
-    latitude: store.announcement.create.inputs.latitude,
-    longitude: store.announcement.create.inputs.longitude,
-    isMapInitialized: store.announcement.create.control.isMapInitialized,
-    error: store.announcement.create.errors.map
   }
 }
     
@@ -22,3 +40,8 @@ export const mapDispatchToProps = dispatch => {
     changeErrors: value => dispatch({ type: 'announcement/create/errors', value })
   }
 }
+
+// isMapInitialized,
+// shouldInitializeMap,
+// googleMapsScriptLoaded,
+// changeControl

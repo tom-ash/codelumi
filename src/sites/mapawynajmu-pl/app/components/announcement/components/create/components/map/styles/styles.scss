@@ -1,4 +1,5 @@
 @import '../../../../../../../styles/themes.scss';
+@import '../../../../../styles/pin';
 
 #announcement-create-map {
   position: relative;
@@ -19,6 +20,9 @@
       &.map-error {
         border: 1px solid $TEXT-ERROR-COLOR;
       }
+    }
+    .pin {
+      @extend %pin;
     }
   }
   .error {

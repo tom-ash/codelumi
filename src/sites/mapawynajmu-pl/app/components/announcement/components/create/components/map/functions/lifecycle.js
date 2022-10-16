@@ -1,5 +1,8 @@
 import { addGoogleMapListeners } from './add-google-map-listeners'
 import { removeGoogleMapListeners } from './remove-google-map-listeners'
+import setShouldInitializeMap from '../../../../../functions/map/set-should-initialize'
+import initializeMap from '../../../../../functions/map/initialize'
+import drawPin from './draw-pin'
 
 const options = {
   center: {
@@ -10,36 +13,74 @@ const options = {
 }
 
 export function componentDidMount() {
-  // this.initializeMap()
+  const {
+    shouldInitializeMap,
+    isMapInitialized,
+    googleMapsScriptLoaded,
+    changeControl,
+  } = this.props
+
+  setShouldInitializeMap({
+    isMapInitialized,
+    shouldInitializeMap,
+    googleMapsScriptLoaded,
+    changeControl,
+  })
 }
 
-export function componentDidUpdate(prevProps) {
+export function componentDidUpdate(prevProps) {  const {
+  shouldInitializeMap: prevShouldInitializeMap,
+  latitude: prevLatitude,
+  longitude: prevLongitude
+  // shouldDrawPins: prevShouldDrawPins,
+} = prevProps
+
+const {
+  shouldInitializeMap,
+  isMapInitialized,
+  googleMapsScriptLoaded,
+  changeControl,
+  mapOptions,
+  isMobile,
+  latitude,
+  longitude,
+} = this.props
+  setShouldInitializeMap({
+    isMapInitialized,
+    shouldInitializeMap,
+    googleMapsScriptLoaded,
+    changeControl,
+  })
+
+  if (shouldInitializeMap && !prevShouldInitializeMap) {
+    initializeMap({
+      mapOptions,
+      isMobile,
+      changeControl,
+    })
+    addGoogleMapListeners.call(this)
+  }
+
+  if (latitude !== prevLatitude || longitude !== prevLongitude) {
+    drawPin({
+      latitude,
+      longitude,
+    })
+  }
+
+  // console.log(  latitude, longitude,)
+
+  // drawPin
+
   // this.initializeMap()
 
-  if (this.props.isMapInitialized && !prevProps.isMapInitialized) addGoogleMapListeners.call(this)
-  if (this.props.latitude != prevProps.latitude && this.props.longitude != prevProps.longitude) {
-    placeMarker.call(this)
-  }
+  // if (this.props.isMapInitialized && !prevProps.isMapInitialized) addGoogleMapListeners.call(this)
+  // if (this.props.latitude != prevProps.latitude && this.props.longitude != prevProps.longitude) {
+  //   placeMarker.call(this)
+  // }
 }
 
 export function componentWillUnmount() {
-  if (typeof window === 'undefined') return
-
-  this.props.changeControl({ isMapInitialized: false })
   removeGoogleMapListeners.call(this)
-  if (window.marker) window.marker.setMap(null)
-}
-
-function placeMarker() {
-  if (typeof window === 'undefined') return
-  
-  const map = window.googleMap
-  if (!map) return
-
-  if (window.marker) window.marker.setMap(null)
-  if (!this.props.latitude || !this.props.longitude) return
-  
-  window.marker = new google.maps.Marker({
-    position: { lat: this.props.latitude, lng: this.props.longitude },  map: map
-  })
+  // TODO REMOVE PIN  
 }

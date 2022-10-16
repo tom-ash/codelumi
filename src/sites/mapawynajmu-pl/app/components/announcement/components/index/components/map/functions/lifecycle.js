@@ -36,7 +36,7 @@ export function componentDidUpdate(prevProps) {
     googleMapsScriptLoaded,
     changeControl,
     announcements,
-    loadPins,
+    // loadPins,
     hoveredTileId,
     currentTileId,
     tile,
@@ -64,7 +64,6 @@ export function componentDidUpdate(prevProps) {
   setShouldDrawPins({
     isPinsDrawn,
     isMapInitialized,
-    // listingsChanged: announcements !== prevAnnouncements,
     changeControl,
   })
 
