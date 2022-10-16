@@ -1,9 +1,8 @@
 import { categories } from '../../../constants/categories'
-import { viewAnnouncement } from '../../view-announcement'
+// import { viewAnnouncement } from '../../view-announcement'
 import { sendAnalyticsEvent } from '../../../../../functions/google-analytics/send-analytics-event'
 
-export function drawPins(currentListingId) {
-  // setUpPinCreator()
+export function setUpPins(currentListingId) {
   removeOldPins.call(this)
   addNewPins.call(this, currentListingId)
 }

@@ -1,6 +1,6 @@
 import replaceMap from './replace'
 import mapOptionsProvider, { MapOptions } from './options-provider'
-import setUpPinCreator from './pins/set-up-pin-creator'
+import setUpPinCreator from './pins/set-up-creator'
 
 interface InitializeMapProps {
   mapOptions: MapOptions

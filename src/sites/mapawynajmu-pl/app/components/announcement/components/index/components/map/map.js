@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
 import ListingTile from '../../../common/tile/tile'
-import { drawPins } from '../../../../functions/map/pins/draw-pins'
+import { setUpPins } from '../../../../functions/map/pins/set-up'
 import langHandler from '../../../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
@@ -16,7 +16,7 @@ class AnnouncementIndexMap extends React.Component {
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
-    this.drawPins = drawPins.bind(this)
+    this.setUpPins = setUpPins.bind(this)
     this.langHandler = langHandler.bind(this)
   }
 
