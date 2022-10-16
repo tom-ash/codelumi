@@ -1,4 +1,4 @@
-import { removeOldPins } from '../../../../../functions/map/pins/set-up'
+import removePins from '../../../../../functions/map/pins/remove-pins'
 import setShouldInitializeMap from '../../../../../functions/map/set-should-initialize'
 import initializeMap from '../../../../../functions/map/initialize'
 import setShouldDrawPins from '../../../../../functions/map/pins/set-should-draw'
@@ -64,12 +64,12 @@ export function componentDidUpdate(prevProps) {
   setShouldDrawPins({
     isPinsDrawn,
     isMapInitialized,
-    listingsChanged: announcements !== prevAnnouncements,
+    // listingsChanged: announcements !== prevAnnouncements,
     changeControl,
   })
 
   if (shouldDrawPins && !prevShouldDrawPins) {
-    this.setUpPins(currentTileId)
+    this.drawPins(currentTileId)
   }
 
   if (hoveredTileId && !prevHoveredTileId) {
@@ -96,15 +96,23 @@ export function componentDidUpdate(prevProps) {
     const map = window.googleMap
     map.setOptions(mapOptions)
   }
+
+  if (announcements !== prevAnnouncements) {
+
+    console.log("HERE")
+
+    this.redrawPins(currentTileId)
+  }
 }
 
 export function componentWillUnmount() {
   const {
+    pins,
     resetControl,
     resetInputs
   } = this.props
 
-  removeOldPins.call(this)
+  removePins(pins)
   resetControl()
   resetInputs()
 }

@@ -26,7 +26,7 @@ function drawPin(props: DrawPinProps) {
   } = props
 
   // @ts-ignore
-  new window.pinCreator(
+  return new window.pinCreator(
     {
       latitude, 
       longitude
