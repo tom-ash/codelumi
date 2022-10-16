@@ -3,6 +3,7 @@ import { removeGoogleMapListeners } from './remove-google-map-listeners'
 import setShouldInitializeMap from '../../../../../functions/map/set-should-initialize'
 import initializeMap from '../../../../../functions/map/initialize'
 import drawPin from './draw-pin'
+import removePin from '../../../../../functions/map/pins/remove-pin'
 
 const options = {
   center: {
@@ -31,8 +32,8 @@ export function componentDidMount() {
 export function componentDidUpdate(prevProps) {  const {
   shouldInitializeMap: prevShouldInitializeMap,
   latitude: prevLatitude,
-  longitude: prevLongitude
-  // shouldDrawPins: prevShouldDrawPins,
+  longitude: prevLongitude,
+  category: prevCategory,
 } = prevProps
 
 const {
@@ -40,10 +41,14 @@ const {
   isMapInitialized,
   googleMapsScriptLoaded,
   changeControl,
+  changeData,
   mapOptions,
   isMobile,
   latitude,
   longitude,
+  pin,
+  svgs,
+  category,
 } = this.props
   setShouldInitializeMap({
     isMapInitialized,
@@ -61,26 +66,25 @@ const {
     addGoogleMapListeners.call(this)
   }
 
-  if (latitude !== prevLatitude || longitude !== prevLongitude) {
-    drawPin({
-      latitude,
-      longitude,
+  if (latitude !== prevLatitude || longitude !== prevLongitude || category !== prevCategory) {
+    if (pin) removePin(pin)
+
+    changeData({
+      pin: drawPin({
+        latitude,
+        longitude,
+        svgs,
+        category,
+      })
     })
   }
-
-  // console.log(  latitude, longitude,)
-
-  // drawPin
-
-  // this.initializeMap()
-
-  // if (this.props.isMapInitialized && !prevProps.isMapInitialized) addGoogleMapListeners.call(this)
-  // if (this.props.latitude != prevProps.latitude && this.props.longitude != prevProps.longitude) {
-  //   placeMarker.call(this)
-  // }
 }
 
 export function componentWillUnmount() {
+  const {
+    pin,
+  } = this.props
+
+  if (pin) removePin(pin)
   removeGoogleMapListeners.call(this)
-  // TODO REMOVE PIN  
 }
