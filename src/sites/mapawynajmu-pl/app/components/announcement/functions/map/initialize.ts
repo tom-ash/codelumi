@@ -1,5 +1,6 @@
 import replaceMap from './replace'
 import mapOptionsProvider, { MapOptions } from './options-provider'
+import setUpPinCreator from './pins/set-up-pin-creator'
 
 interface InitializeMapProps {
   mapOptions: MapOptions
@@ -24,12 +25,17 @@ function initializeMap(props: InitializeMapProps) {
   } else {
     // @ts-ignore
     window.googleMap = new google.maps.Map(
+      // @ts-ignore
       document.getElementById('google-map'),
       mapOptionsProvider({
         mapOptions,
         isMobile,
       })
     )
+
+    setUpPinCreator({
+      // TODO
+    })
 
     // @ts-ignore
     window.sessionToken = new google.maps.places.AutocompleteSessionToken()

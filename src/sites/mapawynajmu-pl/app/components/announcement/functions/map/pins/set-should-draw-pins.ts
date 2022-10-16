@@ -13,8 +13,7 @@ function setShouldDrawPins(props: SetShouldDrawPinsProps) {
     changeControl,
   } = props
 
-  if (listingsChanged) changeControl({ shouldDrawPins: true })
-
+  if (listingsChanged) return changeControl({ shouldDrawPins: true })
   if (isPinsDrawn) return
   if (!isMapInitialized) return
 

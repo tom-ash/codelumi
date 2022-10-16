@@ -21,6 +21,7 @@ function replaceMap(props: ReplaceMapProps) {
   // @ts-ignore
   googleMapContainer.replaceChild(map.getDiv(), document.getElementById('google-map'))
 
+  // @ts-ignore
   map.setOptions(mapOptionsProvider({
     mapOptions,
     isMobile,

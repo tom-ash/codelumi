@@ -1,7 +1,7 @@
-import { removeOldPins } from './draw-pins'
+import { removeOldPins } from '../../../../../functions/map/pins/draw-pins'
 import setShouldInitializeMap from '../../../../../functions/map/set-should-initialize'
 import initializeMap from '../../../../../functions/map/initialize'
-import setShouldDrawPins from '../../../../../functions/map/should-draw-pins'
+import setShouldDrawPins from '../../../../../functions/map/pins/set-should-draw-pins'
 
 export function componentDidMount() {
   const {
