@@ -4,23 +4,19 @@
   @extend %pin;
   width: 36px;
   height: 36px;
+  border-radius: 5px;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
-  transform: translate(-16px, -16px);
-  &:hover {
-    z-index: 2;
-    transform: scale(1.5) translate(-12px, -12px);
-    transition: all 0.24s ease-in;
-  }
-
+  padding-top: 3px;
   &.hovered,
   &.current {
     z-index: 2;
     animation: pulse 1s infinite;
   }
-
-  border-radius: 5px;
-
-  padding-top: 3px;
+  &:hover {
+    z-index: 2;
+    transform: scale(2) translate(-9px, -9px);
+    transition: transform 0.24s ease-in;
+  }
   svg {
     max-height: 18px;
   }
@@ -28,12 +24,12 @@
 
 @keyframes pulse {
   0% {
-    transform: scale(1) translate(-16px, -16px);
+    transform: scale(1) translate(-18px, -18px);
   }
   50% {
-    transform: scale(2) translate(-8px, -8px);
+    transform: scale(2) translate(-9px, -9px);
   }
   100% {
-    transform: scale(1) translate(-16px, -16px);
+    transform: scale(1) translate(-18px, -18px);
   }
 }
