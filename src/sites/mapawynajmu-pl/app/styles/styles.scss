@@ -6,8 +6,16 @@
 @import './headers/headers';
 @import '../components/page/styles/styles.scss';
 
-html {
+body {
   box-sizing: border-box;
+  background: $BACKGROUND-APP-COLOR;
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  line-height: 1;
 }
 
 *,
@@ -69,28 +77,12 @@ input:-webkit-autofill:active {
   background: #eaeded;
 }
 
-body {
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
-  font-family: 'Open Sans', sans-serif;
-  background: $BACKGROUND-APP-COLOR;
-}
-
 .input {
   font-family: 'Open Sans', sans-serif;
 }
 
 .float-clear {
   clear: both;
-}
-
-.small-shadow {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-body {
-  overflow-x: hidden;
-  overflow-y: scroll;
-  line-height: 1;
 }
 
 a {
