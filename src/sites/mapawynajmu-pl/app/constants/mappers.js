@@ -6,6 +6,7 @@ export const mapStateToProps = store => {
     user: renderUser,
     announcement: renderAnnouncement,
     image: renderImage,
+    'announcement/index/map': renderListingIndexMap
   } = render
   const { lang, device, path, scrollY, scripts, routeSynced, loadGa } = store.app
   const { statisticsConsent, marketingConsent } = store.visitor.consents
@@ -37,6 +38,7 @@ export const mapStateToProps = store => {
     admin,
     links,
     renderImage,
+    renderListingIndexMap,
   }
 }
 

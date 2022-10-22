@@ -32,7 +32,11 @@ initSentry()
 
 const APP_NAME = 'mapawynajmu-pl'
 
-class App extends React.Component {
+interface AppProps {
+  renderListingIndexMap: boolean
+}
+
+class App extends React.Component<AppProps> {
   // @ts-ignore
   constructor(props) {
     super(props)
@@ -83,6 +87,7 @@ class App extends React.Component {
       announcementEditData,
       // @ts-ignore
       dispatch,
+      renderListingIndexMap
     } = this.props
     // @ts-ignore
     const AppContextValue = {
@@ -122,7 +127,7 @@ class App extends React.Component {
           {renderVisitor && <Visitor {...sharedProps} />}
           {renderUser && <User />}
           {renderImage && <Image {...imageProps} />}
-          <Footer {...sharedProps} />
+          {!renderListingIndexMap && <Footer {...sharedProps} />}
         </AppContext.Provider>
       </React.StrictMode>
     )
