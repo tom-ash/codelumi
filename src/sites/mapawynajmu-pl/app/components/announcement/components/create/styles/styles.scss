@@ -18,19 +18,19 @@
 
 #listing-create {
   position: relative;
-  padding-top: 20px;
+  padding-top: 38px;
   padding-bottom: 120px;
   background: #d7dbdd;
   #form-container {
     background: white;
     max-width: 768px;
     margin: 0 auto 128px;
-    padding: 32px;
+    padding: 38px;
     border-radius: 12px;
   }
 
   h1 {
-    margin: 8px auto 40px;
+    margin: 8px auto 38px;
     background: white;
     text-align: center;
     font-size: 17px;
@@ -40,7 +40,7 @@
     text-transform: uppercase;
   }
   h2 {
-    margin: 40px auto 18px;
+    margin: 38px auto 18px;
     background: white;
     font-size: 15px;
     letter-spacing: 0.5px;
@@ -176,15 +176,15 @@
   }
   .info {
     display: inline-block;
-    margin-bottom: 32px;
-    font-size: 12px;
+    margin-bottom: 24px;
+    font-size: 13px;
     color: #1f618d;
-    svg {
-      display: inline-block;
-      height: 14px;
-      margin-right: 4px;
-      fill: #1f618d;
-      transform: translate(0, 2.5px);
-    }
+    // svg {
+    //   display: inline-block;
+    //   height: 14px;
+    //   margin-right: 4px;
+    //   fill: #1f618d;
+    //   transform: translate(0, 2.5px);
+    // }
   }
 }

@@ -11,7 +11,8 @@ export function Info(props: InfoProps) {
   return (
     <div className='info'>
       {/* @ts-ignore */}
-      <SVG name='info' /> {message}
+      {/* <SVG name='info' />  */}
+      {message}
     </div>
   )
 }
