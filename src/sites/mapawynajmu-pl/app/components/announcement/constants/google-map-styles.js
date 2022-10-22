@@ -16,30 +16,25 @@ const googleMapStyles = [
       },
     ],
   },
-
   {
     featureType: 'transit.line',
     elementType: 'geometry',
     stylers: [{ color: '#AEB6BF' }],
   },
-
   {
     featureType: 'road.arterial',
     elementType: 'geometry',
     stylers: [{ color: '#FCF3CF' }],
   },
-
   {
     featureType: 'road.highway',
     elementType: 'geometry',
     stylers: [{ color: '#F8C471' }],
   },
-
   {
     featureType: 'water',
     stylers: [{ color: '#5DADE2' }],
   },
-
   {
     featureType: 'poi.park',
     elementType: 'geometry',

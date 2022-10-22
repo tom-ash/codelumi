@@ -9,16 +9,9 @@
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "types": [
-      "@types/jest",
-      "@types/react"
-    ],
+    "types": ["@types/jest", "@types/react"],
     "allowUnreachableCode": false,
     "experimentalDecorators": true
   },
-  "include": [
-    "declarations.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-  ]
+  "include": ["declarations.d.ts", "**/*.ts", "**/*.tsx"]
 }

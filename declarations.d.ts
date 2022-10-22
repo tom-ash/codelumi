@@ -1,19 +1,16 @@
 declare module '*.scss' {
-  const classes: { [key: string]: string };
-  export default classes;
+  const classes: { [key: string]: string }
+  export default classes
 }
 
 declare module 'isomorphic-style-loader/withStyles'
 declare module 'isomorphic-style-loader/useStyles'
 declare module 'managed-inputs'
 
-type LangHandler = (
-  this: React.ClassicComponent<{ lang: 'pl' | 'en' }>,
-  langObject: LangObject
-) => string
+type LangHandler = (this: React.ClassicComponent<{ lang: 'pl' | 'en' }>, langObject: LangObject) => string
 
 type LangObject = {
-  pl: string,
+  pl: string
   en: string
 }
 
@@ -26,10 +23,4 @@ type ChangeRoute = (
   }
 ) => void
 
-type BuildUrl = (
-  props: {
-    path: string,
-    query?: string,
-    fragment?: string
-  }
-) => string
+type BuildUrl = (props: { path: string; query?: string; fragment?: string }) => string
