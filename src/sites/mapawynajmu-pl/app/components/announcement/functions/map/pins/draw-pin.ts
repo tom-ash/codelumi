@@ -10,8 +10,6 @@ interface DrawPinProps {
   changeRoute(props: object): void
 }
 
-// TODO: Add viewAnnouncement.
-
 function drawPin(props: DrawPinProps) {
   const { latitude, longitude, id, htmlContent, className, path, changeControl, changeData, changeRoute } = props
 

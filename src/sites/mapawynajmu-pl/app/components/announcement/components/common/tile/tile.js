@@ -12,7 +12,7 @@ const Description = loadable(() => import('./components/description/description'
 import langHandler from '../../../../../functions/lang-handler.js'
 import { togglePhone } from '../../../functions/toggle-phone'
 import buildUrl from '../../../../../../shared/functions/builders/url'
-import { viewAnnouncement } from '../../../../announcement/functions/view-announcement'
+import { markListingAsViewed } from '../../../../announcement/functions/view-announcement'
 import AppContext from '../../../../../constants/context'
 import scrollToElement from '../../../../../../../shared/app/functions/screen/scrollers/to-element'
 
@@ -26,6 +26,15 @@ class AnnouncementTile extends React.Component {
     this.togglePhone = togglePhone.bind(this)
     this.state = {
       fullPhone: null,
+    }
+  }
+
+  componentDidMount() {
+    const { venue, id } = this.props
+
+    if (venue === 'map') {
+      console.log("HERE")
+      markListingAsViewed(id)
     }
   }
 
@@ -154,8 +163,6 @@ class AnnouncementTile extends React.Component {
             onMouseLeave={() => changeHoveredTileId(null)}
             onClick={e => {
               e.preventDefault()
-
-              viewAnnouncement(id)
 
               if (!isMobile) {
                 const { changeRoute } = this.context

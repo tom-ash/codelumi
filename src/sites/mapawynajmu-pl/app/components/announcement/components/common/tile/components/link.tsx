@@ -1,8 +1,5 @@
 import React, { useContext } from 'react'
-// import { viewAnnouncement } from '../../../../../announcement/functions/view-announcement'
 import AWS_S3_URL from '../../../../../../../shared/constants/urls/aws-s3'
-// import buildUrl from '../../../../../../../shared/functions/builders/url'
-import AppContext from '../../../../../../constants/context'
 
 interface LinkProps {
   id: number
@@ -22,8 +19,6 @@ const Link = (props: LinkProps) => {
 
   const src = `${AWS_S3_URL}/announcements/${id}/${pictures[0].database}`
   const imgProps = { src, alt: title, className: 'root-list-img' }
-
-  const { changeRoute } = useContext(AppContext)
 
   return <img {...imgProps} />
 }
