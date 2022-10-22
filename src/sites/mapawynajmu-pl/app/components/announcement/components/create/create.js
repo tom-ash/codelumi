@@ -86,13 +86,13 @@ class AnnouncementCreate extends React.Component {
     return (
       <section id='listing-create' className={step}>
         {(renderForm || renderEdit) && (
-          <>
+          <div id='form-container'>
             <h1>{headerText}</h1>
             {!connecting ? (
-              <>
+              <form>
                 <Category {...categoryProps} />
-                <Pictures />
                 <Map />
+                <Pictures />
                 <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
                 <AreaInput {...areaInputProps} />
                 <Additional />
@@ -107,7 +107,7 @@ class AnnouncementCreate extends React.Component {
                   </>
                 )}
                 <ManagedButton {...this.addAnnouncementManager()} />
-              </>
+              </form>
             ) : (
               <div className='requesting'>
                 <div className='inner'>
@@ -115,7 +115,7 @@ class AnnouncementCreate extends React.Component {
                 </div>
               </div>
             )}
-          </>
+          </div>
         )}
         {renderVerification && <UserCreateEmailVerify />}
         {renderSuccess && <Success {...this.props} />}
