@@ -23,7 +23,7 @@ class AnnouncementCreateDescription extends React.Component {
     const { addPolishDescription, addEnglishDescription } = this.props
 
     return (
-      <div id='announcement-create-description' className='section'>
+      <div id='listing-create-description' className='section'>
         <ManagedCheckbox {...this.addPolishDescriptionManager()} />
         {addPolishDescription && <ManagedTextarea {...this.polishManager()} />}
         <ManagedCheckbox {...this.addEnglishDescriptionManager()} />

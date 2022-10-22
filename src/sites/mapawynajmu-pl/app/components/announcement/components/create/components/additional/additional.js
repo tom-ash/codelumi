@@ -50,7 +50,7 @@ class AnnouncementCreateAdditional extends React.Component {
     }
 
     return (
-      <div id='announcement-create-additional' className='section'>
+      <div id='listing-create-additional' className='section'>
         {showRent(category) && (
           <div className='rent-inputs-container'>
             <ManagedText {...this.rentAmountManager()} />

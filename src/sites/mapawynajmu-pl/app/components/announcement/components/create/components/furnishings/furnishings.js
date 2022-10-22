@@ -21,7 +21,7 @@ class AnnouncementCreateFurnishings extends React.Component {
     if ([0, 1, 2].indexOf(category) === -1) return null
 
     return (
-      <div id='announcement-create-furnishings'>
+      <div id='listing-create-furnishings'>
         <ManagedCheckbox {...this.addFurnishingsManager()} />
         {addFurnishings && (
           <>

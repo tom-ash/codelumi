@@ -48,7 +48,7 @@ class AnnouncementCreatMap extends React.Component {
     }
 
     return (
-      <div id='announcement-create-map' className='section'>
+      <div id='listing-create-map' className='section'>
         <Heading {...headingProps} />
         <Info {...infoProps} />
         <div className='address-input'>

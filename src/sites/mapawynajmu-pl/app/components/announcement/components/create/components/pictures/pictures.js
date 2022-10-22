@@ -45,7 +45,7 @@ class AnnouncementCreatePictures extends React.Component {
     }
 
     return (
-      <div id='announcement-create-pictures' className='section'>
+      <div id='listing-create-pictures' className='section'>
         <Heading {...headingProps} />
         <Info {...infoProps} />
         <div className='drag-and-drop-container'>

@@ -84,7 +84,7 @@ class AnnouncementCreate extends React.Component {
     }
 
     return (
-      <section id='announcement-create' className={step}>
+      <section id='listing-create' className={step}>
         {(renderForm || renderEdit) && (
           <>
             <h1>{headerText}</h1>

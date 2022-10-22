@@ -16,10 +16,13 @@
 @import '../../../../../../../shared/app/styles/lined-heading.scss';
 @import './category.scss';
 
-#announcement-create {
+#listing-create {
   position: relative;
   max-width: 640px;
   margin: 64px auto 128px;
+
+  background: gray;
+
   h1 {
     @extend %lined-heading;
     font-size: 16px;

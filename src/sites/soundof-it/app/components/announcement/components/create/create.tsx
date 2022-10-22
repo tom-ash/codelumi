@@ -50,7 +50,7 @@ class AnnouncementCreate extends React.Component<Create> {
     }
 
     return (
-      <div id='announcement-create'>
+      <div id='listing-create'>
         <AnnouncementCreateForm {...skillSelectorProps} />
       </div>
     )

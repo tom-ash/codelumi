@@ -18,7 +18,7 @@ class AnnouncementCreateFeatures extends React.Component {
     const { addFeatures } = this.props
 
     return (
-      <div id='announcement-create-features'>
+      <div id='listing-create-features'>
         <ManagedCheckbox {...this.addFeaturesManager()} />
         {addFeatures && (
           <>

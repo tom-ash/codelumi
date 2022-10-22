@@ -1,6 +1,6 @@
 export const requiredInputs = {
   category: {
-    id: 'announcement-create-category',
+    id: 'listing-create-category',
     label: {},
     error: {
       pl: 'Wybierz kategorię.',
@@ -8,7 +8,7 @@ export const requiredInputs = {
     },
   },
   pictures: {
-    id: 'announcement-create-pictures-input',
+    id: 'listing-create-pictures-input',
     error: {
       pl: 'Dodaj przynajmniej jedno zdjęcie.',
       en: 'Add at least one picture.',
