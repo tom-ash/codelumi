@@ -33,6 +33,7 @@ initSentry()
 const APP_NAME = 'mapawynajmu-pl'
 
 interface AppProps {
+  renderPage: boolean
   renderListingIndexMap: boolean
 }
 
@@ -57,11 +58,9 @@ class App extends React.Component<AppProps> {
   }
 
   render() {
-    // @ts-ignore
     const {
       // @ts-ignore
       render,
-      // @ts-ignore
       renderPage,
       // @ts-ignore
       renderImage,
