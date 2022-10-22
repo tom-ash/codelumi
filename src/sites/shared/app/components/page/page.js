@@ -13,7 +13,20 @@ class Page extends React.Component {
   }
 
   render() {
-    const { appName, links, clientUrl, apiUrl, renderEdit, renderShow, renderIndex, renderNotFound, device, changeRoute, buildUrl, langHandler } = this.props
+    const {
+      appName,
+      links,
+      clientUrl,
+      apiUrl,
+      renderEdit,
+      renderShow,
+      renderIndex,
+      renderNotFound,
+      device,
+      changeRoute,
+      buildUrl,
+      langHandler,
+    } = this.props
     const showProps = { appName, links, clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
     const editProps = { appName, links, clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
     const indexProps = { clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
@@ -21,7 +34,7 @@ class Page extends React.Component {
 
     return (
       <>
-        {renderShow && <PageShow {...showProps}/>}
+        {renderShow && <PageShow {...showProps} />}
         {renderEdit && <PageEdit {...editProps} />}
         {renderIndex && <PageIndex {...indexProps} />}
         {renderNotFound && <PageNotFound {...pageNotFoundProps} />}

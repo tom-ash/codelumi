@@ -23,7 +23,7 @@ export const mapStateToProps = store => {
     businessNameCurrentValue: store.user.edit.data.businessName,
     firstNameError: store.user.edit.errors.firstName,
     lastNameError: store.user.edit.errors.lastName,
-    businessNameError: store.user.edit.errors.businessName
+    businessNameError: store.user.edit.errors.businessName,
   }
 }
 
@@ -35,7 +35,6 @@ export const mapDispatchToProps = dispatch => {
     changeErrors: value => dispatch({ type: 'user/edit/errors', value }),
     resetControl: value => dispatch({ type: 'user/edit/control/reset', value }),
     resetInputs: value => dispatch({ type: 'user/edit/control/reset', value }),
-    resetErrors: value => dispatch({ type: 'user/edit/errors/reset', value })
+    resetErrors: value => dispatch({ type: 'user/edit/errors/reset', value }),
   }
 }
-    

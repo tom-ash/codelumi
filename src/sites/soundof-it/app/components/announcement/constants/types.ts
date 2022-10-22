@@ -1,4 +1,4 @@
 export type announcementProps = {
-  renderCreate(): void,
+  renderCreate(): void
   changeRoute: ChangeRoute
 }

@@ -15,25 +15,16 @@ class SiteMap extends React.Component {
   }
 
   render() {
-    const {
-      siteMapLinks
-    } = this.props
+    const { siteMapLinks } = this.props
 
     if (siteMapLinks === null) {
-      return (
-        <div>
-          Loading Links ...
-        </div>
-      )
+      return <div>Loading Links ...</div>
     }
 
-    return(
+    return (
       <div id='site-map' className='container'>
         {siteMapLinks.map((link, index) => (
-          <a
-            href={`${CLIENT_URL}/${link}`}
-            key={index}
-          >
+          <a href={`${CLIENT_URL}/${link}`} key={index}>
             {`${CLIENT_URL}/${link}`}
           </a>
         ))}

@@ -14,12 +14,15 @@ class AnnouncementCreatePrimary extends React.Component {
 
   classProvider(itemName) {
     switch (itemName) {
-      case 'rent': return ' net'
-      case 'netRentAmountPerSqm': return ' net'
-      default: return ''
+      case 'rent':
+        return ' net'
+      case 'netRentAmountPerSqm':
+        return ' net'
+      default:
+        return ''
     }
   }
-  
+
   render() {
     const {
       category,
@@ -33,14 +36,13 @@ class AnnouncementCreatePrimary extends React.Component {
       floor,
       totalFloors,
       availabilityDate,
-      showPrimary
+      showPrimary,
     } = this.props
 
     const currency = parseCurrency(rentCurrency)
 
-    if (!area && !grossRentAmount && !rooms && !floor && !totalFloors && !availabilityDate) (
+    if (!area && !grossRentAmount && !rooms && !floor && !totalFloors && !availabilityDate)
       <div className='primary-data' />
-    )
 
     return (
       <div className='primary-data'>
@@ -49,12 +51,16 @@ class AnnouncementCreatePrimary extends React.Component {
             <div className='area'>
               {area}&nbsp;
               {this.langHandler({
-                pl: <>m<sup>2</sup></>,
-                en: 'sqm'
+                pl: (
+                  <>
+                    m<sup>2</sup>
+                  </>
+                ),
+                en: 'sqm',
               })}
               <div className='float-clear' />
             </div>
-            )}
+          )}
         </div>
         <div className='column'>
           <PresentRent
@@ -64,55 +70,58 @@ class AnnouncementCreatePrimary extends React.Component {
             perSqm={false}
             langHandler={this.langHandler}
           />
-          {showPrimary &&<PresentRent
-            amount={grossRentAmountPerSqm}
-            currency={currency}
-            type='gross per-sqm'
-            perSqm={true}
-            langHandler={this.langHandler}
-          />}
+          {showPrimary && (
+            <PresentRent
+              amount={grossRentAmountPerSqm}
+              currency={currency}
+              type='gross per-sqm'
+              perSqm={true}
+              langHandler={this.langHandler}
+            />
+          )}
         </div>
-        {netRentAmount && netRentAmountPerSqm &&
-        <div className='column'>
-          <PresentRent
-            amount={netRentAmount}
-            currency={currency}
-            type='net total'
-            perSqm={false}
-            langHandler={this.langHandler}
-            net={true}
-          />
-          {showPrimary && <PresentRent
-            amount={netRentAmountPerSqm}
-            currency={currency}
-            type='net per-sqm'
-            perSqm={true}
-            langHandler={this.langHandler}
-            net={true}
-          />}
-        </div>
-        }
+        {netRentAmount && netRentAmountPerSqm && (
+          <div className='column'>
+            <PresentRent
+              amount={netRentAmount}
+              currency={currency}
+              type='net total'
+              perSqm={false}
+              langHandler={this.langHandler}
+              net={true}
+            />
+            {showPrimary && (
+              <PresentRent
+                amount={netRentAmountPerSqm}
+                currency={currency}
+                type='net per-sqm'
+                perSqm={true}
+                langHandler={this.langHandler}
+                net={true}
+              />
+            )}
+          </div>
+        )}
         <div className='float-clear' />
-        {showPrimary &&
-        <>
-          {rooms !== null &&
-          <div className='rooms'>
-            {rooms} {this.langHandler(presentRooms({ rooms, category }))}
-          </div>}
-          {floor !== null &&
-          <div className='floor'>
-            {this.langHandler(presentFloor({ floor }))}
-          </div>}
-          {totalFloors !== null &&
-          <div className='total-floors'>
-            {this.langHandler(presentTotalFloors({ totalFloors }))}
-          </div>}
-          {availabilityDate !== null &&
-          <div className='available-from'>
-            {this.langHandler(presentAvailabilityDate({ availabilityDate, category }))}
-          </div>}
-          <div className='float-clear' />
-        </>}
+        {showPrimary && (
+          <>
+            {rooms !== null && (
+              <div className='rooms'>
+                {rooms} {this.langHandler(presentRooms({ rooms, category }))}
+              </div>
+            )}
+            {floor !== null && <div className='floor'>{this.langHandler(presentFloor({ floor }))}</div>}
+            {totalFloors !== null && (
+              <div className='total-floors'>{this.langHandler(presentTotalFloors({ totalFloors }))}</div>
+            )}
+            {availabilityDate !== null && (
+              <div className='available-from'>
+                {this.langHandler(presentAvailabilityDate({ availabilityDate, category }))}
+              </div>
+            )}
+            <div className='float-clear' />
+          </>
+        )}
       </div>
     )
   }
@@ -120,22 +129,24 @@ class AnnouncementCreatePrimary extends React.Component {
 
 export default AnnouncementCreatePrimary
 
-function PresentRent({
-  amount,
-  currency,
-  type,
-  perSqm,
-  langHandler,
-  net
-}) {
+function PresentRent({ amount, currency, type, perSqm, langHandler, net }) {
   if (!amount) return null
 
   const multipliedAmount = `${Math.ceil(amount * 100)}`
 
   return (
     <div className={`rent-container ${type}`}>
-      {multipliedAmount.slice(0, -2)} <sup className='decimal'>{multipliedAmount.slice(-2)}</sup> {currency} 
-      {perSqm && langHandler({ pl: <> /m<sup>2</sup></>, en: ` /sqm` })}
+      {multipliedAmount.slice(0, -2)} <sup className='decimal'>{multipliedAmount.slice(-2)}</sup> {currency}
+      {perSqm &&
+        langHandler({
+          pl: (
+            <>
+              {' '}
+              /m<sup>2</sup>
+            </>
+          ),
+          en: ` /sqm`,
+        })}
       <sub>{langHandler({ pl: `${net ? 'NETTO' : ''} /MC`, en: `${net ? 'NET' : ''}/MO` })}</sub>
       <div className='float-clear' />
     </div>

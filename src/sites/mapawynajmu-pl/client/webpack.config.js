@@ -1,20 +1,20 @@
-var webpack = require("webpack");
+var webpack = require('webpack')
 var path = require('path')
 var ROOT_DIR = path.join(__dirname, '../../../../')
 var SRC_DIR = path.join(__dirname, './')
-var DIST_DIR = path.join(__dirname, "../../../../dist/sites/mapawynajmu-pl/client")
+var DIST_DIR = path.join(__dirname, '../../../../dist/sites/mapawynajmu-pl/client')
 var CopyPlugin = require('copy-webpack-plugin')
 
 const LoadablePlugin = require('@loadable/webpack-plugin')
 
 var config = {
   entry: {
-    index: SRC_DIR + '/index.js'
+    index: SRC_DIR + '/index.js',
   },
   output: {
     path: DIST_DIR,
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -27,17 +27,17 @@ var config = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env', '@babel/preset-react']
-            }
+              presets: ['@babel/preset-env', '@babel/preset-react'],
+            },
           },
           {
             loader: 'ts-loader',
             options: {
-              configFile: ROOT_DIR + 'tsconfig.json'
-            }
-          }
+              configFile: ROOT_DIR + 'tsconfig.json',
+            },
+          },
         ],
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.s?css$/,
@@ -48,10 +48,10 @@ var config = {
             options: {
               importLoaders: 1,
               esModule: false,
-            }
+            },
           },
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: /\.svg$/,
@@ -60,23 +60,23 @@ var config = {
       {
         test: /\.html$/i,
         use: 'raw-loader',
-      }
-    ]
+      },
+    ],
   },
   plugins: [
     new LoadablePlugin({
       path: DIST_DIR,
       filename: 'loadable-stats.json',
-      writeToDisk: true
+      writeToDisk: true,
     }),
-    new webpack.DefinePlugin({ 'APP_ENV': JSON.stringify(process.env.APP_ENV) }),
+    new webpack.DefinePlugin({ APP_ENV: JSON.stringify(process.env.APP_ENV) }),
     new CopyPlugin({
       patterns: [
         { from: './src/sites/mapawynajmu-pl/client/robots.txt', to: 'robots.txt' },
-        { from: './src/sites/mapawynajmu-pl/client/favicon.ico', to: 'favicon.ico' }
-      ]
-    })
-  ]
-};
+        { from: './src/sites/mapawynajmu-pl/client/favicon.ico', to: 'favicon.ico' },
+      ],
+    }),
+  ],
+}
 
 module.exports = config

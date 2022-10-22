@@ -12,11 +12,7 @@ class About extends React.Component {
   render() {
     const { langHandler } = this.props
 
-    return(
-      <div id='visitor-about'>
-        VISITOR ABOUT
-      </div>
-    )
+    return <div id='visitor-about'>VISITOR ABOUT</div>
   }
 }
 

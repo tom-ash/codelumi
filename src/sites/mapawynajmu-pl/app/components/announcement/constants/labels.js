@@ -1,26 +1,26 @@
 export const labels = {
   category: {
-    text: { pl: 'Rodzaj nieruchomości', en: 'Real Estate Type' }
+    text: { pl: 'Rodzaj nieruchomości', en: 'Real Estate Type' },
   },
   rent: {
-    text: { pl: 'Miesięczna cena', en: 'Monthly Price' }
+    text: { pl: 'Miesięczna cena', en: 'Monthly Price' },
   },
   rentCurrency: {
-    text: { pl: 'Waluta czynszu', en: 'Rent Currency' }
+    text: { pl: 'Waluta czynszu', en: 'Rent Currency' },
   },
   area: {
-    text: { pl: 'Powierzchnia', en: 'Area' }
+    text: { pl: 'Powierzchnia', en: 'Area' },
   },
   rooms: {
-    text: { pl: 'Liczba pomieszczeń', en: 'Rooms Amount' }
+    text: { pl: 'Liczba pomieszczeń', en: 'Rooms Amount' },
   },
   floor: {
-    text: { pl: 'Piętro', en: 'Floor' }
+    text: { pl: 'Piętro', en: 'Floor' },
   },
   totalFloors: {
-    text: { pl: 'Liczba pięter budynku', en: 'Building Floors Amount' }
+    text: { pl: 'Liczba pięter budynku', en: 'Building Floors Amount' },
   },
   availabilityDate: {
-    text: { pl: 'Dostępność od', en: 'Available from' }
-  }
+    text: { pl: 'Dostępność od', en: 'Available from' },
+  },
 }

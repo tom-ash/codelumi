@@ -5,10 +5,10 @@ export const mapStateToProps = store => {
     stage: store.user.edit.control.phoneStage,
     countryCode: store.user.edit.inputs.countryCode,
     body: store.user.edit.data.phoneNumber,
-    error: store.user.edit.errors.phone
+    error: store.user.edit.errors.phone,
   }
 }
-    
+
 export const mapDispatchToProps = dispatch => {
   return {
     changeControl: value => dispatch({ type: 'user/edit/control', value }),
@@ -17,4 +17,3 @@ export const mapDispatchToProps = dispatch => {
     changeData: value => dispatch({ type: 'user/edit/data', value }),
   }
 }
-    

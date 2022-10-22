@@ -6,7 +6,7 @@ export const mapStateToProps = store => {
     'visitor/privacy-settings': renderPrivacySettings,
     'visitor/terms-of-service': renderTermsOfService,
     'visitor/privacy-policy': renderPrivacyPolicy,
-    'visitor/contact': renderContact
+    'visitor/contact': renderContact,
   } = store.render
   const { statisticsConsent, marketingConsent } = store.visitor.consents
 
@@ -18,14 +18,13 @@ export const mapStateToProps = store => {
     renderTermsOfService,
     renderContact,
     statisticsConsent,
-    marketingConsent
+    marketingConsent,
   }
 }
-    
+
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
-    changeConsents: value => dispatch({ type: 'visitor/consents', value })
+    changeConsents: value => dispatch({ type: 'visitor/consents', value }),
   }
 }
-    

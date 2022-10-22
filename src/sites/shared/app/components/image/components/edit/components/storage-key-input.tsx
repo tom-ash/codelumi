@@ -1,8 +1,8 @@
-import React from "react"
-import { ManagedText } from "managed-inputs"
+import React from 'react'
+import { ManagedText } from 'managed-inputs'
 
 interface StorageKeyInputProps {
-  storageKey: string,
+  storageKey: string
   changeData(props: object): void
 }
 

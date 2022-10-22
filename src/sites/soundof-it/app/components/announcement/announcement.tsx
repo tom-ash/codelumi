@@ -16,7 +16,7 @@ class Announcement extends React.Component<announcementProps, any> {
     const { renderCreate, changeRoute } = this.props
 
     const announcementCreateProps = {
-      changeRoute
+      changeRoute,
     }
 
     return (

@@ -11,7 +11,7 @@ class AnnouncementShowPictures extends React.Component {
     super(props)
     this.langHandler = langHandler.bind(this)
     this.state = {
-      pictures: []
+      pictures: [],
     }
   }
 
@@ -19,16 +19,9 @@ class AnnouncementShowPictures extends React.Component {
   static getDerivedStateFromProps = getDerivedStateFromProps
 
   render() {
-    const {
-      disableSLides,
-      heightQuantifier,
-      venue,
-      title,
-    } = this.props
+    const { disableSLides, heightQuantifier, venue, title } = this.props
 
-    const {
-      pictures
-    } = this.state
+    const { pictures } = this.state
 
     if (pictures.length === 0 && venue === 'show') return null
     if (pictures.length === 0) return <ManagedLink {...this.linkManager()} />

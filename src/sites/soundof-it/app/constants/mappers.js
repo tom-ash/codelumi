@@ -2,17 +2,12 @@ export const mapStateToProps = store => {
   const { device, lang, routeSynced, loadGa } = store.app
   const { scrollY } = store.visitor
   const render = store.render
-  const {
-    visitor: renderVisitor,
-    page: renderPage,
-    announcement: renderAnnouncement,
-    image: renderImage
-  } = render
+  const { visitor: renderVisitor, page: renderPage, announcement: renderAnnouncement, image: renderImage } = render
   const { statisticsConsent, marketingConsent } = store.visitor.consents
   const { data: pageShowData } = store.page.show
   const { data: pageEditData } = store.page.edit
   const { links } = store
-  
+
   return {
     device,
     loadGa,
@@ -28,14 +23,14 @@ export const mapStateToProps = store => {
     pageEditData,
     statisticsConsent,
     marketingConsent,
-    links
+    links,
   }
 }
-  
+
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
     changeConsents: value => dispatch({ type: 'visitor/consents', value }),
-    dispatch
+    dispatch,
   }
 }

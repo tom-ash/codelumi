@@ -6,7 +6,7 @@ import styles from '../../../../../assets/logo/styles/styles.css'
 const Logo = () => {
   useStyles(styles)
 
-  return <div dangerouslySetInnerHTML={{__html: LogoHtml}} />
+  return <div dangerouslySetInnerHTML={{ __html: LogoHtml }} />
 }
 
 export default Logo

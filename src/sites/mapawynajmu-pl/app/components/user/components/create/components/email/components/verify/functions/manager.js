@@ -4,10 +4,7 @@ import ButtonSpinner from '../../../../../../../../support/components/button-spi
 import sendGaEvent from '../../../../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from '../constants/analytics/events'
 
-const {
-  VERIFICATION_CODE_INPUTTED_EVENT,
-  VERIFY_CLICKED_EVENT
-} = analyticEvents
+const { VERIFICATION_CODE_INPUTTED_EVENT, VERIFY_CLICKED_EVENT } = analyticEvents
 
 export function verificationManager() {
   const { icon } = inputs.verification
@@ -18,7 +15,7 @@ export function verificationManager() {
     controlled: false,
     classNames: { container: 'form-input text' },
     label: this.langHandler({ pl: 'Kod weryfikacyjny', en: 'Verification Code' }),
-    onChange: () => changeErrors({ verification: { pl: '', en: '' }}),
+    onChange: () => changeErrors({ verification: { pl: '', en: '' } }),
     onBlur: value => {
       this.verificationManager().validate(value)
       sendGaEvent(VERIFICATION_CODE_INPUTTED_EVENT)
@@ -29,14 +26,14 @@ export function verificationManager() {
         changeErrors({
           verification: {
             pl: 'Nieprawidłowy kod weryfikacyjny.',
-            en: 'Invalid verification code.'
-          }
+            en: 'Invalid verification code.',
+          },
         })
         return false
       }
       return true
     },
-    error: this.langHandler(verification)
+    error: this.langHandler(verification),
   }
 }
 
@@ -55,6 +52,6 @@ export function buttonManager() {
     onClick: () => {
       this.verify()
       sendGaEvent(VERIFY_CLICKED_EVENT)
-    }
+    },
   }
 }

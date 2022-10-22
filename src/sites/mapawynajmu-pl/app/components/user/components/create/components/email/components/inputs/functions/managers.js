@@ -13,33 +13,25 @@ const {
   FIRST_NAME_INPUTTED_EVENT,
   BUSINESS_NAME_INPUTTED_EVENT,
   AREA_CODE_SELECTED_EVENT,
-  PHONE_NUMBER_INPUTTED_EVENT
+  PHONE_NUMBER_INPUTTED_EVENT,
 } = analyticEvents
 
 export function accountTypeManager() {
   const { changeInputs } = this.props
 
-  const privateAccount = (
-    <div className='account-type'>
-      {this.langHandler({ pl: 'Prywatne', en: 'Private' })}
-    </div>
-  )
+  const privateAccount = <div className='account-type'>{this.langHandler({ pl: 'Prywatne', en: 'Private' })}</div>
 
-  const professionalAccount = (
-    <div className='account-type'>
-      {this.langHandler({ pl: 'Firmowe', en: 'Business' })}
-    </div>
-  )
+  const professionalAccount = <div className='account-type'>{this.langHandler({ pl: 'Firmowe', en: 'Business' })}</div>
 
   const { accountType } = this.props
 
   return {
     name: 'announcement-category',
-    classNames: { container: 'form-input radio'},
+    classNames: { container: 'form-input radio' },
     checked: accountType,
     radios: [
       { value: 'private', label: privateAccount },
-      { value: 'professional', label: professionalAccount }
+      { value: 'professional', label: professionalAccount },
     ],
     onClick: value => {
       errorResetter.call(this, 'firstName')
@@ -47,14 +39,14 @@ export function accountTypeManager() {
       errorResetter.call(this, 'accountType')
       changeInputs({ accountType: value })
       sendGaEvent(ACCOUNT_TYPE_SELECTED_EVENT)
-    }
+    },
   }
 }
 
 export function emailAddressManager() {
   const { label } = inputs.email
   const { email: value, changeInputs } = this.props
-  
+
   return {
     classNames: { container: 'form-input with-icon text' },
     type: 'email',
@@ -69,13 +61,13 @@ export function emailAddressManager() {
     },
     onChange: value => changeInputs({ email: value }),
     validate: value => emailValidator.call(this, value),
-    error: this.langHandler(this.props.emailError)
+    error: this.langHandler(this.props.emailError),
   }
 }
 
 export function passwordManager() {
   const { label } = inputs.password
-  
+
   return {
     id: 'user-create-email-password',
     classNames: { container: 'form-input with-icon text' },
@@ -90,14 +82,12 @@ export function passwordManager() {
       sendGaEvent(PASSWORD_INPUTTED_EVENT)
     },
     validate: value => passwordValidator.call(this, value),
-    error: this.langHandler(this.props.passwordError)
+    error: this.langHandler(this.props.passwordError),
   }
 }
 
 export function firstNameManager() {
-  const {
-    accountType
-  } = this.props
+  const { accountType } = this.props
   const { icon, label } = inputs.firstName
 
   return {
@@ -114,14 +104,12 @@ export function firstNameManager() {
       sendGaEvent(FIRST_NAME_INPUTTED_EVENT)
     },
     validate: value => nameValidator.call(this, 'firstName', value),
-    error: this.langHandler(this.props.firstNameError)
+    error: this.langHandler(this.props.firstNameError),
   }
 }
 
 export function businessNameManager() {
-  const {
-    accountType
-  } = this.props
+  const { accountType } = this.props
   const { icon, label } = inputs.businessName
 
   return {
@@ -129,7 +117,7 @@ export function businessNameManager() {
     id: 'user-create-email-business-name',
     autoComplete: 'off',
     controlled: false,
-    classNames: { container: 'form-input text'},
+    classNames: { container: 'form-input text' },
     label: this.langHandler(label),
     onFocus: () => errorResetter.call(this, 'businessName'),
     onBlur: value => {
@@ -137,7 +125,7 @@ export function businessNameManager() {
       sendGaEvent(BUSINESS_NAME_INPUTTED_EVENT)
     },
     validate: value => nameValidator.call(this, 'businessName', value),
-    error: this.langHandler(this.props.businessNameError)
+    error: this.langHandler(this.props.businessNameError),
   }
 }
 
@@ -148,11 +136,15 @@ export function areaCodeManager() {
     classNames: { container: 'form-input select phone-country-code' },
     children: <SVG name='chevron' />,
     value: this.props.countryCode,
-    options: [ { value: '+48', text: '+48' }, { value: '+1', text: '+1' }, { value: '+44', text: '+44' } ],
-    onSelect: (option) => {
+    options: [
+      { value: '+48', text: '+48' },
+      { value: '+1', text: '+1' },
+      { value: '+44', text: '+44' },
+    ],
+    onSelect: option => {
       this.props.changeInputs({ countryCode: option.value })
       sendGaEvent(AREA_CODE_SELECTED_EVENT)
-    }
+    },
   }
 }
 
@@ -165,7 +157,7 @@ export function phoneNumberManager() {
     match: /^(\d){0,9}$/,
     type: 'tel',
     controlled: false,
-    classNames: { container: 'form-input text with-icon phone-body'},
+    classNames: { container: 'form-input text with-icon phone-body' },
     label: this.langHandler(label),
     children: <SVG name='phone' />,
     onFocus: () => errorResetter.call(this, 'phone'),
@@ -174,8 +166,6 @@ export function phoneNumberManager() {
       sendGaEvent(PHONE_NUMBER_INPUTTED_EVENT)
     },
     validate: value => phoneValidator.call(this, value),
-    error: this.langHandler(this.props.phoneError)
+    error: this.langHandler(this.props.phoneError),
   }
 }
-
-

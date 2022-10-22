@@ -18,9 +18,7 @@ class UserEditAccountTaxNumber extends React.Component {
   render() {
     return (
       <div id='user-edit-account-tax-number'>
-        <div className='monit'>
-          {monit.pl}
-        </div>
+        <div className='monit'>{monit.pl}</div>
         <ManagedText {...this.textManager()} />
         <ManagedButton {...this.buttonManager()} />
       </div>

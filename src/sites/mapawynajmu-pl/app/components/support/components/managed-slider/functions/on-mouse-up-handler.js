@@ -1,6 +1,6 @@
 export function onMouseUpHandler(e) {
   const { disableSLides } = this.props
-  
+
   if (disableSLides) return
 
   e.stopPropagation()

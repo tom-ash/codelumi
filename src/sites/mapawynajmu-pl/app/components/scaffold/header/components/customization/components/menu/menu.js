@@ -4,7 +4,14 @@ import styles from './styles/styles.scss'
 import Button from './components/button/button.js'
 
 import { ManagedButton, ManagedLink } from 'managed-inputs'
-import { addAnnouncementManager, signUpManager, signInManager, myAnnouncementsManager, accountManager, deAuthorizeManager } from '../links/functions/managers.js'
+import {
+  addAnnouncementManager,
+  signUpManager,
+  signInManager,
+  myAnnouncementsManager,
+  accountManager,
+  deAuthorizeManager,
+} from '../links/functions/managers.js'
 
 const HeaderMenu = props => {
   const { authorized, showMenu, changeShowMenu, isMobile } = props
@@ -13,37 +20,36 @@ const HeaderMenu = props => {
 
   return (
     <>
-      {isMobile && <Button {...props}/>}
-      {showMenu &&
-      <div className='menu-cover' onClick={() => changeShowMenu(false)}>
-        <div className='menu'>
-          {isMobile ?
-          (
-            <>
-              <ManagedLink {...addAnnouncementManager(props)}/>
-              {authorized ?
+      {isMobile && <Button {...props} />}
+      {showMenu && (
+        <div className='menu-cover' onClick={() => changeShowMenu(false)}>
+          <div className='menu'>
+            {isMobile ? (
               <>
-                <ManagedLink {...myAnnouncementsManager(props)}/>
-                <ManagedLink {...accountManager(props)}/>
-                <ManagedButton {...deAuthorizeManager(props)}/>
-              </> :
+                <ManagedLink {...addAnnouncementManager(props)} />
+                {authorized ? (
+                  <>
+                    <ManagedLink {...myAnnouncementsManager(props)} />
+                    <ManagedLink {...accountManager(props)} />
+                    <ManagedButton {...deAuthorizeManager(props)} />
+                  </>
+                ) : (
+                  <>
+                    <ManagedLink {...signUpManager(props)} />
+                    <ManagedLink {...signInManager(props)} />
+                  </>
+                )}
+              </>
+            ) : (
               <>
-                <ManagedLink {...signUpManager(props)}/>
-                <ManagedLink {...signInManager(props)}/>
-              </>}
-            </>
-          )
-          :
-          (
-            <>
-              <ManagedLink {...myAnnouncementsManager(props)}/>
-              <ManagedLink {...accountManager(props)}/>
-              <ManagedButton {...deAuthorizeManager(props)}/>
-            </>
-          )
-          }
+                <ManagedLink {...myAnnouncementsManager(props)} />
+                <ManagedLink {...accountManager(props)} />
+                <ManagedButton {...deAuthorizeManager(props)} />
+              </>
+            )}
+          </div>
         </div>
-      </div>}
+      )}
     </>
   )
 }

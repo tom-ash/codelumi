@@ -14,12 +14,12 @@ import * as Sentry from '@sentry/node'
 // import * as Tracing from '@sentry/tracing'
 
 Sentry.init({
-  dsn: "https://ac81f10d287d4659865d2571d7be7b45@o876363.ingest.sentry.io/5825795",
-  tracesSampleRate: 1.0
+  dsn: 'https://ac81f10d287d4659865d2571d7be7b45@o876363.ingest.sentry.io/5825795',
+  tracesSampleRate: 1.0,
 })
 
 // @ts-ignore
-function allowCompression (req, res) {
+function allowCompression(req, res) {
   if (req.headers['x-no-compression']) return false
 
   return compression.filter(req, res)

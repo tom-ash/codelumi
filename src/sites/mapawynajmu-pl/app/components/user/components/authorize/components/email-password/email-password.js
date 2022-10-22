@@ -31,8 +31,8 @@ class UserAuthorizeEmailPassword extends React.Component {
       <div id='user-authorize-email'>
         <form>
           <div className='inputs'>
-            <ManagedText {...this.emailAddressManager()}/>
-            <ManagedText {...this.passwordManager()}/>
+            <ManagedText {...this.emailAddressManager()} />
+            <ManagedText {...this.passwordManager()} />
           </div>
           <div className='submit'>
             <ManagedCheckbox {...this.rememberMeManager()} />
@@ -40,8 +40,7 @@ class UserAuthorizeEmailPassword extends React.Component {
             <ManagedButton {...this.buttonManager()} />
           </div>
         </form>
-        <div
-          className='reset-password'>
+        <div className='reset-password'>
           <span onClick={() => changeRoute({ href: resetPasswordHref })}>
             {this.langHandler({ pl: 'Zresetuj hasło', en: 'Reset password' })}
           </span>
@@ -51,4 +50,4 @@ class UserAuthorizeEmailPassword extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserAuthorizeEmailPassword);
+export default connect(mapStateToProps, mapDispatchToProps)(UserAuthorizeEmailPassword)

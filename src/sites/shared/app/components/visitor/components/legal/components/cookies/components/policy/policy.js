@@ -3,16 +3,15 @@ import Provision from '../../../provision/provision'
 import useStyles from 'isomorphic-style-loader/useStyles'
 
 const VisitorCookiesPolicy = ({ appName, langHandler }) => {
-  const nodes = require(`../../../../../../../../../../${appName}/app/components/visitor/components/cookies-policy/constants/nodes.js`).default
+  const nodes =
+    require(`../../../../../../../../../../${appName}/app/components/visitor/components/cookies-policy/constants/nodes.js`).default
   const styles = require(`../../../../../../../../../../${appName}/app/components/visitor/styles/styles.scss`)
 
   useStyles(styles)
 
   return (
     <div className='legal-document' onClick={e => e.stopPropagation()}>
-      <h1 className='page-header'>
-        {langHandler({ pl: 'Polityka Cookies', en: 'Cookies Policy' })}
-      </h1>
+      <h1 className='page-header'>{langHandler({ pl: 'Polityka Cookies', en: 'Cookies Policy' })}</h1>
       <div className='cookies-policy'>
         {nodes.map((provision, index) => (
           <Provision

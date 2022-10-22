@@ -24,7 +24,7 @@ export const mapStateToProps = store => {
     modifiedOn,
     category,
     subcategory,
-    langAltsGroup
+    langAltsGroup,
   } = store.page.edit.inputs
   const { role } = store.user.authorize.data
   const { updated } = store.page.edit.data
@@ -58,15 +58,15 @@ export const mapStateToProps = store => {
     modifiedOn,
     category,
     subcategory,
-    langAltsGroup
+    langAltsGroup,
   }
 }
-  
+
 export const mapDispatchToProps = dispatch => {
   return {
     changeControl: value => dispatch({ type: 'page/edit/control', value }),
     changeInputs: value => dispatch({ type: 'page/edit/inputs', value }),
     changeData: value => dispatch({ type: 'page/edit/data', value }),
-    resetInputs: value => dispatch({ type: 'page/edit/inputs/reset', value })
+    resetInputs: value => dispatch({ type: 'page/edit/inputs/reset', value }),
   }
 }

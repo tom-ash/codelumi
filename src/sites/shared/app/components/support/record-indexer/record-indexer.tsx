@@ -5,17 +5,17 @@ import useStyles from 'isomorphic-style-loader/useStyles'
 import styles from './styles/styles.scss'
 
 interface RecordIndexerProps {
-  recordKeys: string[],
-  recordKey: string,
-  changeKey(key: string): void,
-  create(): void,
-  edit(imageKey: string): void,
+  recordKeys: string[]
+  recordKey: string
+  changeKey(key: string): void
+  create(): void
+  edit(imageKey: string): void
 }
 
 const RecordIndexer = (props: RecordIndexerProps) => {
   useStyles(styles)
 
-  const { recordKeys, recordKey, changeKey, create, edit } = props 
+  const { recordKeys, recordKey, changeKey, create, edit } = props
   const nameInputProps = { recordKey, changeKey }
   const createbuttonProps = { create }
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import urlify from '../../../../../../shared/functions/transformers/routes/urlify'
 import setScreenOffsetAtElement from '../../../../../functions/screen/setters/offset-at-element.js'
 
-const TableOfContents = (props) => {
+const TableOfContents = props => {
   const { jsonBody, title } = props
   const mainNode = jsonBody.find(node => typeof node === 'object' && node.main)
   const main = mainNode ? mainNode.main : null
@@ -14,9 +14,7 @@ const TableOfContents = (props) => {
   return (
     <nav className='table-of-contents'>
       <div className='inner-container'>
-        <h2>
-          {title}
-        </h2>
+        <h2>{title}</h2>
         <ul>
           {headers.map((header, index) => {
             const headerContent = typeof header.h2 === 'string' ? header.h2 : header.h2.c
@@ -33,13 +31,13 @@ const TableOfContents = (props) => {
 
                     history.pushState(null, null, `${window.location.pathname}#${urlify(headerContent)}`)
 
-                    const targetHeader = (headers.find(headerNode => {
+                    const targetHeader = headers.find(headerNode => {
                       if (typeof headerNode.h2 === 'string') {
                         return urlify(headerContent) === urlify(headerNode.h2)
                       }
 
                       return urlify(headerContent) === urlify(headerNode.h2.c)
-                    }))['h2']
+                    })['h2']
 
                     const domHeaders = document.getElementsByTagName('h2')
                     let element
@@ -55,9 +53,14 @@ const TableOfContents = (props) => {
                     setScreenOffsetAtElement({ element, translation })
                   }}
                 >
-                  {headerNumber ?
-                  <><span>{headerNumber}</span><span>{headerContent}</span></>
-                  : headerContent}
+                  {headerNumber ? (
+                    <>
+                      <span>{headerNumber}</span>
+                      <span>{headerContent}</span>
+                    </>
+                  ) : (
+                    headerContent
+                  )}
                 </a>
               </li>
             )

@@ -2,12 +2,12 @@ import elementResizeEvent, { unbind } from 'element-resize-event'
 
 export function getDerivedStateFromProps(props, state) {
   const { pictures } = props
-  
+
   if (pictures === null || pictures.length === 0) return {}
 
   if (state.statePictures.length === 0) {
     return {
-      statePictures: [pictures[0]].concat(Array.apply(null, Array(pictures.length - 1)).map(() => ({})))
+      statePictures: [pictures[0]].concat(Array.apply(null, Array(pictures.length - 1)).map(() => ({}))),
     }
   }
 

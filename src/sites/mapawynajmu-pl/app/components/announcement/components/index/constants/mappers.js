@@ -1,25 +1,13 @@
 export const mapStateToProps = store => {
   const render = store.render
 
-  const {
-    lang,
-    path,
-    device
-  } = store.app
+  const { lang, path, device } = store.app
 
-  const {
-    'announcement/index/map': renderMap,
-    'announcement/index/user': renderMy
-  } = store.render
+  const { 'announcement/index/map': renderMap, 'announcement/index/user': renderMy } = store.render
 
-  const {
-    type,
-    rebuildQueryParams
-  } = store.announcement.index.control
+  const { type, rebuildQueryParams } = store.announcement.index.control
 
-  const {
-    admin
-  } = store.user.authorize.data
+  const { admin } = store.user.authorize.data
 
   const {
     category,
@@ -45,14 +33,10 @@ export const mapStateToProps = store => {
     priceMin,
     priceMinInput,
     priceMax,
-    priceMaxInput
+    priceMaxInput,
   } = store.announcement.index.inputs
 
-  const {
-    announcements,
-    amount,
-    title
-  } = store.announcement.index.data
+  const { announcements, amount, title } = store.announcement.index.data
 
   return {
     title,
@@ -93,7 +77,7 @@ export const mapStateToProps = store => {
     priceMaxInput,
   }
 }
-    
+
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
@@ -102,7 +86,6 @@ export const mapDispatchToProps = dispatch => {
     changeData: value => dispatch({ type: 'announcement/index/data', value }),
     resetControl: value => dispatch({ type: 'announcement/index/control/reset', value }),
     resetInputs: value => dispatch({ type: 'announcement/index/inputs/reset', value }),
-    resetData: value => dispatch({ type: 'announcement/index/data/reset', value })
+    resetData: value => dispatch({ type: 'announcement/index/data/reset', value }),
   }
 }
-    

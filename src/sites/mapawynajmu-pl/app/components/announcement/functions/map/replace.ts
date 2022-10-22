@@ -7,11 +7,8 @@ interface ReplaceMapProps {
 }
 
 function replaceMap(props: ReplaceMapProps) {
-  const {
-    mapOptions,
-    isMobile,
-  } = props
-  
+  const { mapOptions, isMobile } = props
+
   const googleMapContainer = document.getElementById('google-map-container')
   if (!googleMapContainer) return
 
@@ -22,10 +19,13 @@ function replaceMap(props: ReplaceMapProps) {
   googleMapContainer.replaceChild(map.getDiv(), document.getElementById('google-map'))
 
   // @ts-ignore
-  map.setOptions(mapOptionsProvider({
-    mapOptions,
-    isMobile,
-  }))
+  map.setOptions(
+    // @ts-ignore
+    mapOptionsProvider({
+      mapOptions,
+      isMobile,
+    })
+  )
 }
 
 export default replaceMap

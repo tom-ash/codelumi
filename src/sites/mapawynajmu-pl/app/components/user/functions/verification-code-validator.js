@@ -9,6 +9,6 @@ export function verificationCodeValidator(inputValue) {
 
   return {
     isValid,
-    error
+    error,
   }
 }

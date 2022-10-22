@@ -8,7 +8,7 @@ export const mapStateToProps = store => {
     lang,
     connecting: store.user.create.control.connecting,
     accountType,
-    email
+    email,
   }
 }
 
@@ -18,6 +18,6 @@ export const mapDispatchToProps = dispatch => {
     changeControl: value => dispatch({ type: 'user/create/control', value }),
     changeData: value => dispatch({ type: 'user/create/data', value }),
     changeErrors: value => dispatch({ type: 'user/create/errors', value }),
-    dispatch
+    dispatch,
   }
 }

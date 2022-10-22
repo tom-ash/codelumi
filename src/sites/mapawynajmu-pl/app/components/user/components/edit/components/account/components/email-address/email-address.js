@@ -30,9 +30,7 @@ class UserEditAccountEmail extends React.Component {
   render() {
     return (
       <div id='user-edit-email-button'>
-        <div className='monit'>
-          {this.monitProvider()}
-        </div>
+        <div className='monit'>{this.monitProvider()}</div>
         <ManagedText {...this.currentEmailVerificationManager()} />
         <ManagedText {...this.newEmailManager()} />
         <ManagedText {...this.newEmailVerificationManager()} />

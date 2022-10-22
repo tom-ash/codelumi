@@ -3,108 +3,113 @@ export const furnishings = [
   { ref: 'airconditioning', onlyShow: true, pl: 'Klimatyzacja', en: 'Air conditioning' },
   { ref: 'alarm system', onlyShow: true, pl: 'System alarmowy', en: 'Alarm system' },
   { ref: 'illumination', onlyShow: true, pl: 'Oświetlenie', en: 'Illumination' },
-  { ref: 'telecommunicationinstallations', onlyShow: true, pl: 'Instalacja teletechniczna', en: 'Telecommunication installations' },
+  {
+    ref: 'telecommunicationinstallations',
+    onlyShow: true,
+    pl: 'Instalacja teletechniczna',
+    en: 'Telecommunication installations',
+  },
   { ref: 'antiburglarblinds', onlyShow: true, pl: 'Rolety antywłamaniowe', en: 'Anti-burglar blinds' },
   {
     ref: 'bed',
     cat: [2],
     pl: 'Łóżko',
-    en: 'Bed'
+    en: 'Bed',
   },
   {
     ref: 'beds',
     cat: [2],
     pl: 'Łóżka',
-    en: 'Beds'
+    en: 'Beds',
   },
   {
     ref: 'couch',
     cat: [2],
     pl: 'Kanapa',
-    en: 'Couch'
+    en: 'Couch',
   },
   {
     ref: 'sofa',
     cat: [2],
     pl: 'Sofa',
-    en: 'Sofa'
+    en: 'Sofa',
   },
   {
     ref: 'fridge',
     cat: [2],
     pl: 'Lodówka',
-    en: 'Fridge'
+    en: 'Fridge',
   },
   {
     ref: 'tv',
     cat: [2],
     pl: 'Telewizor',
-    en: 'TV'
+    en: 'TV',
   },
   {
     ref: 'Internet',
     cat: [2],
     pl: 'Internet',
-    en: 'Internet'
+    en: 'Internet',
   },
   {
     ref: 'desk',
     cat: [2],
     pl: 'Biurko',
-    en: 'Desk'
+    en: 'Desk',
   },
   {
     ref: 'desks',
     cat: [0, 1],
     pl: 'Biurka',
-    en: 'Desks'
+    en: 'Desks',
   },
   {
     ref: 'bathtub',
     cat: [2],
     pl: 'Wanna',
-    en: 'Bathtub'
+    en: 'Bathtub',
   },
   {
     ref: 'shower',
     cat: [2],
     pl: 'Prysznic',
-    en: 'Shower'
+    en: 'Shower',
   },
   {
     ref: 'chairs',
     cat: [0, 1, 2],
     pl: 'Krzesła',
-    en: 'Chairs'
+    en: 'Chairs',
   },
   {
     ref: 'receptiondesk',
     cat: [0, 1],
     pl: 'Biurko recepcyjne',
-    en: 'Reception desk'
+    en: 'Reception desk',
   },
   {
     ref: 'documentcabinets',
     cat: [0, 1],
     pl: 'Szafy na dokumenty',
-    en: 'Document cabinets'
+    en: 'Document cabinets',
   },
   {
     ref: 'conferenceroomequipment',
     cat: [0, 1],
     pl: 'Wyposażenie sal konferencyjnych',
-    en: 'Conference room equipment'
+    en: 'Conference room equipment',
   },
   {
     ref: 'kitchenutensils',
     cat: [0, 1, 2],
     pl: 'Wyposażenie kuchni',
-    en: 'Kitchen utensils'
+    en: 'Kitchen utensils',
   },
   {
     ref: 'serverroomequipment',
     cat: [0, 1],
     pl: 'Wyposażenie serwerowni',
-    en: 'Server room equipment'
-  }
+    en: 'Server room equipment',
+  },
 ]

@@ -6,18 +6,7 @@ import Section from '../section/section'
 const Aside = (props: AsideProps) => {
   useStyles(styles)
 
-  const {
-    node,
-    appName,
-    jsonBody,
-    clientUrl,
-    changeRoute,
-    device,
-    lang,
-    langHandler,
-    sectionBody,
-    placing
-  } = props
+  const { node, appName, jsonBody, clientUrl, changeRoute, device, lang, langHandler, sectionBody, placing } = props
 
   const nodeProps = {
     node,
@@ -28,7 +17,7 @@ const Aside = (props: AsideProps) => {
     lang,
     changeRoute,
     langHandler,
-    sectionBody
+    sectionBody,
   }
 
   return (

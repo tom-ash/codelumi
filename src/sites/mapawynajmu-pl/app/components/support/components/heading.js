@@ -1,11 +1,6 @@
 import React from 'react'
 
-const Heading = ({
-  tier,
-  text,
-  preChildren,
-  postChildren,
-}) => {
+const Heading = ({ tier, text, preChildren, postChildren }) => {
   const tag = `h${tier}`
   const content = (
     <>
@@ -15,7 +10,7 @@ const Heading = ({
     </>
   )
   const heading = React.createElement(tag, {}, content)
-    
+
   return heading
 }
 

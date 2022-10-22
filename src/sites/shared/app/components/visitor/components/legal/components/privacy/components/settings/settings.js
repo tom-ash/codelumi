@@ -12,9 +12,7 @@ const VisitorPrivacySettings = props => {
 
   return (
     <div className='legal-document'>
-      <h1 className='page-header'>
-        {langHandler({ pl: 'Ustawienia prywatności', en: 'Privacy Settings' })}
-      </h1>
+      <h1 className='page-header'>{langHandler({ pl: 'Ustawienia prywatności', en: 'Privacy Settings' })}</h1>
       <div className='consent'>
         {langHandler(textsProvider('statistics', props))}
         <ManagedRadio {...statisticsConsentManager(props)} />

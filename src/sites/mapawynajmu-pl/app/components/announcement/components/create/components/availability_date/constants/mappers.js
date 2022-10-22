@@ -13,10 +13,10 @@ export const mapStateToProps = store => {
     totalFloors: store.announcement.create.inputs.totalFloors,
     addAvailabilityDate: store.announcement.create.control.addAvailabilityDate,
     availabilityDate: store.announcement.create.inputs.availabilityDate,
-    errors: store.announcement.create.errors
+    errors: store.announcement.create.errors,
   }
 }
-  
+
 export const mapDispatchToProps = dispatch => {
   return {
     changeControl: value => dispatch({ type: 'announcement/create/control', value }),
@@ -25,4 +25,3 @@ export const mapDispatchToProps = dispatch => {
     changeErrors: value => dispatch({ type: 'announcement/create/errors', value }),
   }
 }
-  

@@ -5,20 +5,14 @@ const Paragraph = (props: ParagraphProps) => {
   const { content } = props
   let enrichedContent = content
 
-  enrichedContent = enrichedContent.replace(
-    /\`(.+?)\`/g,
-    (_fullMatch, innerMatch) => `<code>${innerMatch}</code>`
-  )
+  enrichedContent = enrichedContent.replace(/\`(.+?)\`/g, (_fullMatch, innerMatch) => `<code>${innerMatch}</code>`)
 
   enrichedContent = enrichedContent.replace(
     /\*\*(.+?)\*\*/g,
     (_fullMatch, innerMatch) => `<strong>${innerMatch}</strong>`
   )
 
-  enrichedContent = enrichedContent.replace(
-    /\*(.+?)\*/g,
-    (_fullMatch, innerMatch) => `<em>${innerMatch}</em>`
-  )
+  enrichedContent = enrichedContent.replace(/\*(.+?)\*/g, (_fullMatch, innerMatch) => `<em>${innerMatch}</em>`)
 
   enrichedContent = enrichedContent.replace(
     /(a)\[(.+)\]/g,
@@ -29,7 +23,8 @@ const Paragraph = (props: ParagraphProps) => {
       const attrs = attributes.split(/,\s(?=[^,]+:)/)
 
       switch (tag) {
-        case 'a': return buildAnchor(attrs)
+        case 'a':
+          return buildAnchor(attrs)
       }
     }
   )

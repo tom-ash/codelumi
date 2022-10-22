@@ -4,11 +4,7 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 
 const Calendar = props => {
-  return (
-    <ReactCalendar
-      {...props}
-    />
-  )
+  return <ReactCalendar {...props} />
 }
 
 export default withStyles(styles)(Calendar)

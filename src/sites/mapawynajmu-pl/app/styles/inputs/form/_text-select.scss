@@ -1,7 +1,8 @@
 @import '../../colors';
 
 .form-input {
-  &.text, &.select {
+  &.text,
+  &.select {
     position: relative;
     margin-bottom: 15px;
     .input {
@@ -23,15 +24,16 @@
         color: $TEXT-ERROR-COLOR;
         background: $BACKGROUND-ERROR-COLOR;
       }
-      &.hover, &.focus {
-        background: #F8F9F9;
+      &.hover,
+      &.focus {
+        background: #f8f9f9;
       }
     }
     .label {
       height: 15px;
       font-size: 15px;
       margin-bottom: 6px;
-      color: #1B2631;
+      color: #1b2631;
     }
     .error-container {
       height: 14px;

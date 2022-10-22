@@ -25,7 +25,7 @@ const Filter = (props: FilterProps) => {
     label,
     min,
     max,
-    unit
+    unit,
   }
 
   const panelProps = {
@@ -50,7 +50,7 @@ const Filter = (props: FilterProps) => {
       onFocus={() => changeControl({ [showPanelKey]: true })}
     >
       <Content {...contentProps} />
-      {showPanel && <Panel {...panelProps}/>}
+      {showPanel && <Panel {...panelProps} />}
     </div>
   )
 }

@@ -1,9 +1,7 @@
 import React from 'react'
 import SVG from '../../../../../support/components/svg/svg'
 
-export function UserCreateSteps({
-  step
-}) {
+export function UserCreateSteps({ step }) {
   return (
     <div className='create-points user'>
       <div className={`line${step === 'success' ? ' success' : ''}`} />

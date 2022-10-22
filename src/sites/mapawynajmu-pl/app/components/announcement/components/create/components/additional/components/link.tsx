@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import { ManagedText } from 'managed-inputs'
 
 type LinkInputProps = {
@@ -8,10 +8,7 @@ type LinkInputProps = {
 }
 
 export function LinkInput(props: LinkInputProps) {
-  const {
-    link,
-    changeInputs
-  } = props
+  const { link, changeInputs } = props
 
   const classNames = { container: 'form-input text with-icon rent-amount' }
   const label = 'Link'
@@ -23,7 +20,7 @@ export function LinkInput(props: LinkInputProps) {
     classNames,
   }
 
-  return <ManagedText { ...linkProps } />
+  return <ManagedText {...linkProps} />
 }
 
 export default LinkInput

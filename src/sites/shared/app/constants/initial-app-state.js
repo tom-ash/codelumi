@@ -10,8 +10,8 @@ const initialAppState = {
   loadGa: false,
   scripts: {
     googleMaps: false,
-    googleAnalytics: false
-  }
+    googleAnalytics: false,
+  },
 }
 
 export default initialAppState

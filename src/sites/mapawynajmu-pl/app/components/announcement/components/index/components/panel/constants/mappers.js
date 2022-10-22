@@ -1,16 +1,9 @@
 export const mapStateToProps = store => {
-  const {
-    lang,
-    isMobile,
-    device
-  } = store.app
+  const { lang, isMobile, device } = store.app
 
   const { render, links } = store
 
-  const {
-    'announcement/index/map': renderMap,
-    'announcement/index/user': renderMy
-  } = render
+  const { 'announcement/index/map': renderMap, 'announcement/index/user': renderMy } = render
 
   const {
     apartmentsAmount,
@@ -21,24 +14,13 @@ export const mapStateToProps = store => {
     officesAmount,
     virtualOfficesAmount,
     coworkingAmount,
-    currentCategory
+    currentCategory,
   } = store.announcement.index.data
 
-  const {
-    areaMin,
-    areaMinInput,
-    areaMax,
-    areaMaxInput,
-    priceMin,
-    priceMinInput,
-    priceMax,
-    priceMaxInput
-  } = store.announcement.index.inputs
+  const { areaMin, areaMinInput, areaMax, areaMaxInput, priceMin, priceMinInput, priceMax, priceMaxInput } =
+    store.announcement.index.inputs
 
-  const {
-    showArea,
-    showPricePanel
-  } = store.announcement.index.control
+  const { showArea, showPricePanel } = store.announcement.index.control
 
   return {
     lang,
@@ -66,14 +48,14 @@ export const mapStateToProps = store => {
     priceMin,
     priceMinInput,
     priceMax,
-    priceMaxInput
+    priceMaxInput,
   }
 }
-    
+
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
     changeInputs: value => dispatch({ type: 'announcement/index/inputs', value }),
-    changeControl: value => dispatch({ type: 'announcement/index/control', value })
+    changeControl: value => dispatch({ type: 'announcement/index/control', value }),
   }
 }

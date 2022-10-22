@@ -6,12 +6,7 @@ interface SetShouldInitializeMapProps {
 }
 
 function setShouldInitializeMap(props: SetShouldInitializeMapProps) {
-  const {
-    isMapInitialized,
-    shouldInitializeMap,
-    googleMapsScriptLoaded,
-    changeControl,
-  } = props
+  const { isMapInitialized, shouldInitializeMap, googleMapsScriptLoaded, changeControl } = props
 
   if (isMapInitialized) return
   if (shouldInitializeMap) return

@@ -8,6 +8,6 @@ export function emailValidator(email) {
 
   return {
     isValid,
-    error
+    error,
   }
 }

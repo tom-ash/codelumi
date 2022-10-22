@@ -24,7 +24,7 @@ export function save({ withRouteChange = false }) {
             node.h2 = { c: node.h2, n: `${currentH2}.` }
           }
         }
-    
+
         if (node.h3) {
           currentH3++
           currentH4 = 0
@@ -35,7 +35,7 @@ export function save({ withRouteChange = false }) {
             node.h3 = { c: node.h3, n: `${currentH2}.${currentH3}.` }
           }
         }
-    
+
         if (node.h4) {
           currentH4++
 
@@ -63,44 +63,42 @@ export function save({ withRouteChange = false }) {
     console.warn('Autonumbering needs article nested in main!')
   }
 
-  const requestBody = JSON.stringify(
-    {
-      ...this.props,
-      body,
-      autoSchema,
-      manualSchema
-    }
-  )
+  const requestBody = JSON.stringify({
+    ...this.props,
+    body,
+    autoSchema,
+    manualSchema,
+  })
 
   changeControl({ fetching: true })
   fetch(`${apiUrl}/${route}`, {
     method,
     headers: {
       'Content-Type': 'application/json',
-      'Access-Token': getAccessToken()
+      'Access-Token': getAccessToken(),
     },
-    body: requestBody
+    body: requestBody,
   })
-  .then(response => {
-    if (response.status === 200) return response.json()
+    .then(response => {
+      if (response.status === 200) return response.json()
 
-    throw new Error('Server error at updating page!')
-  })
-  .then(path => {
-    changeData({ updated: true })
+      throw new Error('Server error at updating page!')
+    })
+    .then(path => {
+      changeData({ updated: true })
 
-    if (!withRouteChange) return
+      if (!withRouteChange) return
 
-    const { buildUrl, changeRoute } = this.props
-    const href = buildUrl({ path })
+      const { buildUrl, changeRoute } = this.props
+      const href = buildUrl({ path })
 
-    changeRoute({ href })    
-  })
-  .catch(error => {
-    changeData({ updated: false })
-    console.error(error)
-  })
-  .finally(() => {
-    changeControl({ fetching: false })
-  })
+      changeRoute({ href })
+    })
+    .catch(error => {
+      changeData({ updated: false })
+      console.error(error)
+    })
+    .finally(() => {
+      changeControl({ fetching: false })
+    })
 }

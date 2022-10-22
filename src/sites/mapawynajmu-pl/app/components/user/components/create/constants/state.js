@@ -4,7 +4,7 @@ export const control = {
   connecting: false,
   verifying: false,
   success: null,
-  step: 'form'
+  step: 'form',
 }
 
 export const inputs = {
@@ -13,7 +13,7 @@ export const inputs = {
   firstName: null,
   countryCode: '+48',
   phoneNumber: null,
-  termsAndPrivacyConsent: false
+  termsAndPrivacyConsent: false,
 }
 
 export const errors = {
@@ -27,5 +27,5 @@ export const errors = {
   password: noError,
   termsAndPrivacyConsent: false,
   privacy: false,
-  verification: noError
+  verification: noError,
 }

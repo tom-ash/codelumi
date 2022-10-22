@@ -59,7 +59,7 @@ class AnnouncementCreate extends React.Component {
       addAvailabilityDate,
       availabilityDate,
       changeControl,
-      changeInputs
+      changeInputs,
     } = this.props
 
     const availabilityDateProps = {
@@ -67,55 +67,56 @@ class AnnouncementCreate extends React.Component {
       availabilityDate,
       addAvailabilityDate,
       changeControl,
-      changeInputs
+      changeInputs,
     }
     const headerText = this.langHandler(H1)
 
     const categoryProps = {
       currentCategory: category,
       changeInputs,
-      langHandler: this.langHandler
+      langHandler: this.langHandler,
     }
 
     const areaInputProps = {
       area,
       changeInputs,
-      langHandler: this.langHandler
+      langHandler: this.langHandler,
     }
 
     return (
       <section id='announcement-create' className={step}>
-        {(renderForm || renderEdit) &&
-        <>
-          <h1>
-            {headerText}
-          </h1>
-          {!connecting ?
+        {(renderForm || renderEdit) && (
           <>
-            <Category {...categoryProps} />
-            <Pictures />
-            <Map />
-            <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
-            <AreaInput {...areaInputProps} />
-            <Additional />
-            <AvailabilityDate { ...availabilityDateProps } />
-            <Features />
-            <Furnishings />
-            <Description />
-            {!authorized &&
-            <>
-              <UserCreate />
-              <Line />
-            </>}
-            <ManagedButton {...this.addAnnouncementManager()} />
+            <h1>{headerText}</h1>
+            {!connecting ? (
+              <>
+                <Category {...categoryProps} />
+                <Pictures />
+                <Map />
+                <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
+                <AreaInput {...areaInputProps} />
+                <Additional />
+                <AvailabilityDate {...availabilityDateProps} />
+                <Features />
+                <Furnishings />
+                <Description />
+                {!authorized && (
+                  <>
+                    <UserCreate />
+                    <Line />
+                  </>
+                )}
+                <ManagedButton {...this.addAnnouncementManager()} />
+              </>
+            ) : (
+              <div className='requesting'>
+                <div className='inner'>
+                  <WindmillSpinner spinnerClass='windmill-medium-spinner' />
+                </div>
+              </div>
+            )}
           </>
-          :
-          <div className='requesting'>
-            <div className='inner'>
-              <WindmillSpinner spinnerClass='windmill-medium-spinner'/>
-            </div>
-          </div>}
-        </>}
+        )}
         {renderVerification && <UserCreateEmailVerify />}
         {renderSuccess && <Success {...this.props} />}
       </section>

@@ -6,8 +6,8 @@ export function textProvider({ pureText }) {
     return {
       termsAndPrivacyConsent: this.langHandler({
         pl: 'Akceptuję Regulamin i Politykę Prywatności.',
-        en: 'I accept the Terms and Conditions and the Privacy Policy.'
-      })
+        en: 'I accept the Terms and Conditions and the Privacy Policy.',
+      }),
     }
   }
 
@@ -17,31 +17,19 @@ export function textProvider({ pureText }) {
   const termsAndServiceHref = buildUrl({ path: termsOfServiceLinkData && termsOfServiceLinkData.path })
   const privacyPolicyHref = buildUrl({ path: privacyPolicyLinkData && privacyPolicyLinkData.path })
 
-  return (
-    {
-      termsAndPrivacyConsent: (
-        <span>
-          {this.langHandler({ pl: 'Akceptuję', en: 'I accept' })}&nbsp;
-          <a
-            className='link'
-            href={termsAndServiceHref}
-            target='_blank'
-            onClick={e => e.stopPropagation()}
-          >
+  return {
+    termsAndPrivacyConsent: (
+      <span>
+        {this.langHandler({ pl: 'Akceptuję', en: 'I accept' })}&nbsp;
+        <a className='link' href={termsAndServiceHref} target='_blank' onClick={e => e.stopPropagation()}>
           {this.langHandler({ pl: 'Regulamin', en: 'the Terms of Service' })}
         </a>
         &nbsp;{this.langHandler({ pl: 'i', en: 'and' })}&nbsp;
-        <a
-          className='link'
-          href={privacyPolicyHref}
-          target='_blank'
-          onClick={e => e.stopPropagation()}
-        >
+        <a className='link' href={privacyPolicyHref} target='_blank' onClick={e => e.stopPropagation()}>
           {this.langHandler({ pl: 'Politykę Prywatności', en: 'the Privacy Policy' })}
         </a>
         .
       </span>
-      )
-    }
-  )
+    ),
+  }
 }

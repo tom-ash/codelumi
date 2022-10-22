@@ -32,14 +32,21 @@ const ImageEdit = (props: ImageEditProps) => {
   useStyles(styles)
 
   const {
-    apiUrl, imageId, body, changeData, width, height, storageKey, storageUrl,
+    apiUrl,
+    imageId,
+    body,
+    changeData,
+    width,
+    height,
+    storageKey,
+    storageUrl,
     storageUrlRandomizedQuaryParameter,
     clientUrl,
     appName,
     device,
     lang,
     changeRoute,
-    langHandler
+    langHandler,
   } = props
 
   const bodyElements = (() => {
@@ -62,7 +69,7 @@ const ImageEdit = (props: ImageEditProps) => {
     device,
     lang,
     changeRoute,
-    langHandler
+    langHandler,
   }
   const storageKeyProps = { storageKey, changeData }
   const storagePreviewProps = { storageUrl, storageUrlRandomizedQuaryParameter }
@@ -73,7 +80,7 @@ const ImageEdit = (props: ImageEditProps) => {
       <StorageKeyInput {...storageKeyProps} />
       <StorageUrl {...storageUrlAnchorProps} />
       <Dimensions {...dimensionsProps} />
-      <OutputProps {...outputProps} />      
+      <OutputProps {...outputProps} />
       <BodyTextarea {...bodyTextareaProps} />
       <SaveButton {...saveButtonProps} />
       <StoragePreview {...storagePreviewProps} />

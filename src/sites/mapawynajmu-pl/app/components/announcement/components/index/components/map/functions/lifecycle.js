@@ -4,12 +4,7 @@ import initializeMap from '../../../../../functions/map/initialize'
 import setShouldDrawPins from '../../../../../functions/map/pins/set-should-draw'
 
 export function componentDidMount() {
-  const {
-    isMapInitialized,
-    shouldInitializeMap,
-    googleMapsScriptLoaded,
-    changeControl
-  } = this.props
+  const { isMapInitialized, shouldInitializeMap, googleMapsScriptLoaded, changeControl } = this.props
 
   setShouldInitializeMap({
     isMapInitialized,
@@ -97,19 +92,14 @@ export function componentDidUpdate(prevProps) {
   }
 
   if (announcements !== prevAnnouncements) {
-
-    console.log("HERE")
+    console.log('HERE')
 
     this.redrawPins(currentTileId)
   }
 }
 
 export function componentWillUnmount() {
-  const {
-    pins,
-    resetControl,
-    resetInputs
-  } = this.props
+  const { pins, resetControl, resetInputs } = this.props
 
   removePins(pins)
   resetControl()

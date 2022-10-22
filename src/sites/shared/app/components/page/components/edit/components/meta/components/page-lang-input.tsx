@@ -1,8 +1,8 @@
-import React from "react"
-import { ManagedText } from "managed-inputs"
+import React from 'react'
+import { ManagedText } from 'managed-inputs'
 
 interface PageLangProps {
-  pageLang: string,
+  pageLang: string
   changeInputs(props: object): void
 }
 

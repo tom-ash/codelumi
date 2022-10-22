@@ -12,10 +12,9 @@ export function destroy(id) {
 
   fetch(`${API_URL}/${route}/${id}`, {
     method,
-    headers: { 'Content-Type': 'application/json', 'Access-Token': access_token }
-  })
-  .then(() => {
-    const newAnnouncements = announcements.filter(announcement => { 
+    headers: { 'Content-Type': 'application/json', 'Access-Token': access_token },
+  }).then(() => {
+    const newAnnouncements = announcements.filter(announcement => {
       return announcement.id !== id
     })
     changeData({ announcements: newAnnouncements, amount: newAnnouncements.length })

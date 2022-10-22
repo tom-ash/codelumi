@@ -11,21 +11,23 @@ if (typeof document !== 'undefined') octx = oc.getContext('2d')
 
 export function addPicture(files) {
   if (typeof window === 'undefined') return
-  
+
   this.props.changeControl({ addingPicture: true })
   const file = files.pop()
-  createBlob(window.URL.createObjectURL(file), (blob) => {
+  createBlob(window.URL.createObjectURL(file), blob => {
     if (typeof window === 'undefined') return
-    
+
     this.props.changeInputs({
-      picFiles: files,  
-      blobs: [...this.props.blobs].concat([{
-        blob: window.URL.createObjectURL(blob),
-        database: '',
-        description: '',
-        file,
-        rotate: 0
-      }])
+      picFiles: files,
+      blobs: [...this.props.blobs].concat([
+        {
+          blob: window.URL.createObjectURL(blob),
+          database: '',
+          description: '',
+          file,
+          rotate: 0,
+        },
+      ]),
     })
     this.props.changeControl({ addingPicture: false })
     this.props.changeErrors({ pictures: { pl: '', en: '' } })
@@ -35,9 +37,9 @@ export function addPicture(files) {
 }
 
 function createBlob(picture, callback) {
-  const img = document.createElement('img');
+  const img = document.createElement('img')
   img.src = picture
-  const ratio = .64
+  const ratio = 0.64
 
   img.onload = () => {
     let sourceWidth = img.width
@@ -46,7 +48,7 @@ function createBlob(picture, callback) {
     let widthIndent = 0
     let targetHeight = 0
     let heightIndent = 0
-    
+
     if (sourceHeight / sourceWidth > ratio) {
       targetHeight = Math.round(sourceWidth * ratio)
       heightIndent = Math.round((sourceHeight - targetHeight) / 2)
@@ -65,14 +67,14 @@ function createBlob(picture, callback) {
       img,
       widthIndent,
       heightIndent,
-      sourceWidth - (2 * widthIndent),
-      sourceHeight - (2 * heightIndent),
+      sourceWidth - 2 * widthIndent,
+      sourceHeight - 2 * heightIndent,
       0,
       0,
       1200,
       768
     )
 
-    oc.toBlob((blob) => callback(blob))
+    oc.toBlob(blob => callback(blob))
   }
 }

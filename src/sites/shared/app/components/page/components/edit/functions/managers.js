@@ -5,7 +5,7 @@ export function urlManager() {
     classNames: { container: 'form-input text' },
     label: 'URL',
     value: url,
-    onChange: value => changeInputs({ url: value })
+    onChange: value => changeInputs({ url: value }),
   }
 }
 
@@ -20,7 +20,7 @@ export function bodyManager() {
     onChange: value => {
       changeInputs({ body: value })
       changeData({ updated: null })
-    }
+    },
   }
 }
 
@@ -31,7 +31,7 @@ export function titleManager() {
     classNames: { container: 'form-input text' },
     label: 'Title',
     value: title,
-    onChange: value => changeInputs({ title: value })
+    onChange: value => changeInputs({ title: value }),
   }
 }
 
@@ -43,7 +43,7 @@ export function descriptionManager() {
     label: 'Description',
     value: description,
     counterLimit: 10000,
-    onChange: value => changeInputs({ description: value })
+    onChange: value => changeInputs({ description: value }),
   }
 }
 
@@ -55,7 +55,7 @@ export function keywordsManager() {
     label: 'Keywords',
     value: keywords,
     counterLimit: 10000,
-    onChange: value => changeInputs({ keywords: value })
+    onChange: value => changeInputs({ keywords: value }),
   }
 }
 
@@ -66,7 +66,7 @@ export function canonicalUrlManager() {
     classNames: { container: 'form-input text' },
     label: 'Canonical URL',
     value: canonicalUrl,
-    onChange: value => changeInputs({ canonicalUrl: value })
+    onChange: value => changeInputs({ canonicalUrl: value }),
   }
 }
 
@@ -77,7 +77,7 @@ export function pictureManager() {
     classNames: { container: 'form-input text' },
     label: 'Cover Image',
     value: coverImage || '',
-    onChange: value => changeInputs({ coverImage: value })
+    onChange: value => changeInputs({ coverImage: value }),
   }
 }
 
@@ -88,7 +88,7 @@ export function saveManager() {
     classNames: { container: 'form-input button save' },
     label: 'Save',
     disabled: fetching,
-    onClick: () => this.save({ withRouteChange: false })
+    onClick: () => this.save({ withRouteChange: false }),
   }
 }
 
@@ -99,6 +99,6 @@ export function saveAndShowManager() {
     classNames: { container: 'form-input button save-and-show' },
     label: 'Save & Exit',
     disabled: fetching,
-    onClick: () => this.save({ withRouteChange: true })
+    onClick: () => this.save({ withRouteChange: true }),
   }
 }

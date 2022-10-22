@@ -10,11 +10,11 @@ function prepareAnnouncement() {
     ...announcement,
     features: parseFeatures(features),
     furnishings: parseFurnishings(furnishings),
-    ...availabilityDate && { addAvailabilityDate: true },
-    ...features && features.length && { addFeatures: true },
-    ...furnishings && furnishings.length && { addFurnishings: true },
-    ...polishDescription && { addPolishDescription: true },
-    ...englishDescription && { addEnglishDescription: true },
+    ...(availabilityDate && { addAvailabilityDate: true }),
+    ...(features && features.length && { addFeatures: true }),
+    ...(furnishings && furnishings.length && { addFurnishings: true }),
+    ...(polishDescription && { addPolishDescription: true }),
+    ...(englishDescription && { addEnglishDescription: true }),
   }
 
   changeInputs(inputs)
@@ -28,30 +28,30 @@ function setBlobs(id, pictures) {
     const key = `announcements/${id}/${picture.database}`
 
     fetch(`${API_URL}/remote-asset/presigned-get?key=${key}`, {
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
     })
-    .then(response => {
-      if (response.ok) return response.json()
-    })
-    .then(json => {
-      fetch(json.url, {
-        headers: { 'Content-Type': 'application/json' }
-      })
       .then(response => {
-        if (response.ok) return response.blob()
+        if (response.ok) return response.json()
       })
-      .then(blobResponse => {
-        const { changeInputs } = this.props
-        const blobs = [ ...this.props.blobs ]
-        blobs[index] = {
-          blob: window.URL.createObjectURL(blobResponse),
-          database: picture.database,
-          description: ''
-        }
+      .then(json => {
+        fetch(json.url, {
+          headers: { 'Content-Type': 'application/json' },
+        })
+          .then(response => {
+            if (response.ok) return response.blob()
+          })
+          .then(blobResponse => {
+            const { changeInputs } = this.props
+            const blobs = [...this.props.blobs]
+            blobs[index] = {
+              blob: window.URL.createObjectURL(blobResponse),
+              database: picture.database,
+              description: '',
+            }
 
-        changeInputs({ blobs })
+            changeInputs({ blobs })
+          })
       })
-    })
   })
 }
 

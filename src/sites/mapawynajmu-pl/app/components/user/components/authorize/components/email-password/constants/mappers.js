@@ -5,10 +5,10 @@ export const mapStateToProps = store => {
     emailError: store.user.authorize.errors.email,
     emailOrPasswordError: store.user.authorize.errors.emailOrPassword,
     rememberMe: store.user.authorize.inputs.rememberMe,
-    links: store.links
+    links: store.links,
   }
 }
-  
+
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
@@ -16,7 +16,6 @@ export const mapDispatchToProps = dispatch => {
     changeControl: value => dispatch({ type: 'user/authorize/control', value }),
     changeInputs: value => dispatch({ type: 'user/authorize/inputs', value }),
     changeErrors: value => dispatch({ type: 'user/authorize/errors', value }),
-    changeData: value => dispatch({ type: 'user/authorize/data', value })
+    changeData: value => dispatch({ type: 'user/authorize/data', value }),
   }
 }
-  

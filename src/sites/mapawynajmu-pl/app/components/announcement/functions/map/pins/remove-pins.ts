@@ -1,4 +1,4 @@
-import removePin from "./remove-pin"
+import removePin from './remove-pin'
 
 export function removePins(pins: object[]) {
   pins.map(removePin)

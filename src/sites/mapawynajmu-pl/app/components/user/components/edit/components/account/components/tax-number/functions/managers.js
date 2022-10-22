@@ -20,13 +20,13 @@ export function textManager() {
     validate: value => {
       if (value.length < 10) {
         changeErrors({
-          taxNumber: { pl: 'Nieprawidłowy numer identyfikacji podatkowej', en: 'Invalid tax identification number' }
+          taxNumber: { pl: 'Nieprawidłowy numer identyfikacji podatkowej', en: 'Invalid tax identification number' },
         })
         return false
       }
       return true
     },
-    error: this.langHandler({ pl, en })
+    error: this.langHandler({ pl, en }),
   }
 }
 
@@ -36,17 +36,13 @@ export function buttonManager() {
   return {
     classNames: { container: 'form-input button' },
     label: (
-      <ButtonSpinner
-        connecting={connecting}
-        label={{ pl: 'Zmień', en: 'Change' }}
-        langHandler={this.langHandler}
-      />
+      <ButtonSpinner connecting={connecting} label={{ pl: 'Zmień', en: 'Change' }} langHandler={this.langHandler} />
     ),
     onClick: () => {
       const taxNumber = document.getElementById('user-edit-account-tax-identification-text').value
       if (!this.textManager().validate(taxNumber)) return
 
       changetaxNumber.call(this, taxNumber)
-    }
+    },
   }
 }

@@ -8,7 +8,7 @@ export const mapStateToProps = store => {
     renderAnnouncementCreate,
     authorized: store.user.authorize.data.authorized,
     success,
-    step
+    step,
   }
 }
 
@@ -20,6 +20,6 @@ export const mapDispatchToProps = dispatch => {
     resetControl: value => dispatch({ type: 'user/create/control/reset', value }),
     resetInputs: value => dispatch({ type: 'user/create/inputs/reset', value }),
     resetData: value => dispatch({ type: 'user/create/data/reset', value }),
-    resetErrors: value => dispatch({ type: 'user/create/errors/reset', value })
+    resetErrors: value => dispatch({ type: 'user/create/errors/reset', value }),
   }
 }

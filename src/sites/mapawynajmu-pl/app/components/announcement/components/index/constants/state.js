@@ -17,9 +17,9 @@ export const control = {
   mapOptions: {
     center: {
       lat: 52,
-      lng: 19
+      lng: 19,
     },
-    zoom: 6.7
+    zoom: 6.7,
   },
   shouldInitializeMap: false,
   isPinsDrawn: false,
@@ -40,7 +40,7 @@ export const data = {
   officesAmount: 0,
   virtualOfficesAmount: 0,
   coworkingAmount: 0,
-  currentCategory: null
+  currentCategory: null,
 }
 
 export const inputs = {

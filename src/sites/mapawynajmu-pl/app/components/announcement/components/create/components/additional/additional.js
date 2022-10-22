@@ -37,36 +37,32 @@ class AnnouncementCreateAdditional extends React.Component {
   }
 
   render() {
-    const {
-      category,
-      name,
-      link,
-      changeInputs
-    } = this.props
+    const { category, name, link, changeInputs } = this.props
 
     const nameInputProps = {
       name,
-      changeInputs
+      changeInputs,
     }
-
 
     const linkInputProps = {
       link,
-      changeInputs
+      changeInputs,
     }
 
     return (
       <div id='announcement-create-additional' className='section'>
-        {showRent(category) && <div className='rent-inputs-container'>
-          <ManagedText {...this.rentAmountManager()}/>
-          <ManagedSelect {...this.rentCurrencyManager()}/>
-          <div className='float-clear'/>
-        </div>}
-        {showRooms(category) && <ManagedSelect {...this.roomsManager()}/>}
+        {showRent(category) && (
+          <div className='rent-inputs-container'>
+            <ManagedText {...this.rentAmountManager()} />
+            <ManagedSelect {...this.rentCurrencyManager()} />
+            <div className='float-clear' />
+          </div>
+        )}
+        {showRooms(category) && <ManagedSelect {...this.roomsManager()} />}
         {showName(category) && <NameInput {...nameInputProps} />}
         {showLink(category) && <LinkInput {...linkInputProps} />}
-        <ManagedSelect {...this.floorManager()}/>
-        <ManagedSelect {...this.totalFloorsManager()}/>
+        <ManagedSelect {...this.floorManager()} />
+        <ManagedSelect {...this.totalFloorsManager()} />
       </div>
     )
   }

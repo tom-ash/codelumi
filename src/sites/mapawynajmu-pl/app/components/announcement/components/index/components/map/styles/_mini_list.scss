@@ -17,7 +17,7 @@
     white-space: nowrap;
     padding-right: 0;
   }
-  background: #D7DBDD;
+  background: #d7dbdd;
   .announcement-list-tile {
     @extend %tile;
     position: relative;
@@ -81,7 +81,8 @@
         display: block;
         float: none;
       }
-      .area, .rent-container {
+      .area,
+      .rent-container {
         font-size: 22px;
       }
       .area {

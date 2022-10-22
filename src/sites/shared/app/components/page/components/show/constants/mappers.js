@@ -4,12 +4,12 @@ export const mapStateToProps = store => {
 
   return {
     ...pageShowData,
-    isAdmin: role == 'admin'
+    isAdmin: role == 'admin',
   }
 }
-  
+
 export const mapDispatchToProps = dispatch => {
   return {
-    changeData: value => dispatch({ type: 'page/show/data', value })
+    changeData: value => dispatch({ type: 'page/show/data', value }),
   }
 }

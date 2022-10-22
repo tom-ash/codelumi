@@ -4,27 +4,27 @@ export const requiredInputs = {
     label: {},
     error: {
       pl: 'Wybierz kategorię.',
-      en: 'Select category.'
-    }
+      en: 'Select category.',
+    },
   },
   pictures: {
     id: 'announcement-create-pictures-input',
     error: {
       pl: 'Dodaj przynajmniej jedno zdjęcie.',
-      en: 'Add at least one picture.'
-    }
+      en: 'Add at least one picture.',
+    },
   },
   map: {
     id: 'google-map-container',
     error: {
       pl: 'Wskaż lokalizację.',
-      en: 'Pinpoint location.'
-    }
-  }
+      en: 'Pinpoint location.',
+    },
+  },
 }
 
 export const requiredInputsArray = [
   // 'category',
   'pictures',
-  'map'
+  'map',
 ]

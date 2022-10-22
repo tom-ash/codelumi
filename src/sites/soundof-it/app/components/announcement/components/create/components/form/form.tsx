@@ -7,20 +7,20 @@ import Location from './components/location/location'
 import Contract from './components/contract/contract'
 
 interface AnnouncementCreateFormProps {
-  selectableSkills: object[],
-  selectedSkills: object[],
-  setStore(newStore: object): void,
-  remote: boolean,
-  hybrid: boolean,
-  office: boolean,
-  b2b: boolean,
-  b2bMax: number,
-  b2bMin: number,
-  employment: boolean,
-  employmentMax: number,
-  employmentMin: number,
-  civilContract: boolean,
-  civilContractMax: number,
+  selectableSkills: object[]
+  selectedSkills: object[]
+  setStore(newStore: object): void
+  remote: boolean
+  hybrid: boolean
+  office: boolean
+  b2b: boolean
+  b2bMax: number
+  b2bMin: number
+  employment: boolean
+  employmentMax: number
+  employmentMin: number
+  civilContract: boolean
+  civilContractMax: number
   civilContractMin: number
 }
 
@@ -42,20 +42,20 @@ const AnnouncementCreateForm = (props: AnnouncementCreateFormProps) => {
     employmentMin,
     civilContract,
     civilContractMax,
-    civilContractMin
+    civilContractMin,
   } = props
 
   const locationProps = {
     remote,
     hybrid,
     office,
-    setStore
+    setStore,
   }
 
   const skillSelectorProps = {
     selectableSkills,
     selectedSkills,
-    setStore
+    setStore,
   }
 
   const contractProps = {
@@ -68,7 +68,7 @@ const AnnouncementCreateForm = (props: AnnouncementCreateFormProps) => {
     employmentMin,
     civilContract,
     civilContractMax,
-    civilContractMin
+    civilContractMin,
   }
 
   const submitButtonProps = {
@@ -84,14 +84,12 @@ const AnnouncementCreateForm = (props: AnnouncementCreateFormProps) => {
     employmentMin,
     civilContract,
     civilContractMax,
-    civilContractMin
+    civilContractMin,
   }
-  
+
   return (
     <div id='announcement-create-form' className='form'>
-      <h1>
-        Post a Job
-      </h1>
+      <h1>Post a Job</h1>
       <SkillSelector {...skillSelectorProps} />
       <Location {...locationProps} />
       <Contract {...contractProps} />

@@ -1,21 +1,18 @@
 import React from 'react'
 
 interface YouTubeEmbedProps {
-  width?: string,
+  width?: string
   src: string
 }
 
 const YouTubeEmbed = (props: YouTubeEmbedProps) => {
-  const {
-    width,
-    src
-  } = props
+  const { width, src } = props
 
   return (
     <iframe
       width={width || '100%'}
       style={{
-        aspectRatio: '16/9'
+        aspectRatio: '16/9',
       }}
       src={src}
       title='YouTube video player'

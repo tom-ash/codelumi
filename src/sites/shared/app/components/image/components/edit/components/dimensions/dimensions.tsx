@@ -1,10 +1,10 @@
-import React from "react"
+import React from 'react'
 import WidthInput from './components/width-input'
 import HeightInput from './components/height-input'
 
 interface DimensionsProps {
-  width: string,
-  height: string,
+  width: string
+  height: string
   changeData(props: object): void
 }
 

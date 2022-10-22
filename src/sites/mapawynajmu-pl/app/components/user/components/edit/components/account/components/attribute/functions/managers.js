@@ -5,15 +5,7 @@ import ButtonSpinner from '../../../../../../../../support/components/button-spi
 const noError = { pl: '', en: '' }
 
 export function textManager() {
-  const {
-    changeErrors,
-    inputName,
-    id,
-    label,
-    icon,
-    error,
-    errorText
-  } = this.props
+  const { changeErrors, inputName, id, label, icon, error, errorText } = this.props
 
   return {
     id,
@@ -30,7 +22,7 @@ export function textManager() {
       }
       return true
     },
-    error: this.langHandler(error)
+    error: this.langHandler(error),
   }
 }
 
@@ -40,15 +32,11 @@ export function buttonManager() {
   return {
     classNames: { container: 'form-input button' },
     label: (
-      <ButtonSpinner
-        connecting={connecting}
-        label={{ pl: 'Zmień', en: 'Change' }}
-        langHandler={this.langHandler}
-      />
+      <ButtonSpinner connecting={connecting} label={{ pl: 'Zmień', en: 'Change' }} langHandler={this.langHandler} />
     ),
     onClick: () => {
       const value = document.getElementById(id).value
       if (this.textManager().validate(value)) sendNewValue.call(this, value)
-    }
+    },
   }
 }

@@ -1,6 +1,10 @@
 import API_URL from '../../../../../../shared/constants/urls/api.js'
 import getAccessToken from '../../../../user/components/authorize/components/tokens/functions/get-tokens'
-import { CREATE_API_ROUTE_DATA, CREATE_WITH_USER_API_ROUTE_DATA, UPDATE_API_ROUTE_DATA } from '../constants/api-route-data.js'
+import {
+  CREATE_API_ROUTE_DATA,
+  CREATE_WITH_USER_API_ROUTE_DATA,
+  UPDATE_API_ROUTE_DATA,
+} from '../constants/api-route-data.js'
 import setConfirmationTokenCookie from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token.js'
 import buildUrl from '../../../../../../shared/functions/builders/url'
 
@@ -9,11 +13,7 @@ import buildUrl from '../../../../../../shared/functions/builders/url'
 // }
 
 function createAnnouncement() {
-  const {
-    authorized,
-    renderEdit,
-    changeControl
-  } = this.props
+  const { authorized, renderEdit, changeControl } = this.props
 
   changeControl({ connecting: true })
 
@@ -24,15 +24,8 @@ function createAnnouncement() {
 }
 
 function update() {
-  const {
-    lang,
-    announcement,
-    changeControl
-  } = this.props
-  const {
-    method,
-    route
-  } = UPDATE_API_ROUTE_DATA
+  const { lang, announcement, changeControl } = this.props
+  const { method, route } = UPDATE_API_ROUTE_DATA
   const accessToken = getAccessToken()
   const id = window.location.pathname.match(/(edytuj-ogloszenie|edit-announcement)\/(\d+)/)[2]
 
@@ -40,20 +33,20 @@ function update() {
     method,
     headers: {
       'Content-Type': 'application/json',
-      'Lang': lang,
-      'Access-Token': accessToken
+      Lang: lang,
+      'Access-Token': accessToken,
     },
-    body: JSON.stringify({ announcement })
+    body: JSON.stringify({ announcement }),
   })
-  .then(response => {
-    if (response.ok) return response.json()
-  })
-  .then(path => {
-    const { changeRoute } = this.context
+    .then(response => {
+      if (response.ok) return response.json()
+    })
+    .then(path => {
+      const { changeRoute } = this.context
 
-    changeRoute({ href: buildUrl({ path }) })
-    changeControl({ connecting: false })
-  })
+      changeRoute({ href: buildUrl({ path }) })
+      changeControl({ connecting: false })
+    })
 }
 
 function create() {
@@ -63,19 +56,19 @@ function create() {
 
   fetch(API_URL + route, {
     method,
-    headers: { 'Content-Type': 'application/json', 'Lang': lang, 'Access-Token': accessToken },
-    body: JSON.stringify({ announcement })
+    headers: { 'Content-Type': 'application/json', Lang: lang, 'Access-Token': accessToken },
+    body: JSON.stringify({ announcement }),
   })
-  .then(response => {
-    if (response.ok) return response.json()
-  })
-  .then(path => {
-    const { changeRoute } = this.context
+    .then(response => {
+      if (response.ok) return response.json()
+    })
+    .then(path => {
+      const { changeRoute } = this.context
 
-    changeRoute({ href: buildUrl({ path }) })
-    changeControl({ connecting: false })
-    // sendAnnouncementCreatedEvent()
-  })
+      changeRoute({ href: buildUrl({ path }) })
+      changeControl({ connecting: false })
+      // sendAnnouncementCreatedEvent()
+    })
 }
 
 function createWithUser() {
@@ -84,22 +77,22 @@ function createWithUser() {
 
   fetch(API_URL + route, {
     method,
-    headers: { 'Content-Type': 'application/json', 'Lang': lang },
-    body: JSON.stringify({ announcement, user })
+    headers: { 'Content-Type': 'application/json', Lang: lang },
+    body: JSON.stringify({ announcement, user }),
   })
-  .then(response => {
-    if (response.ok) return response.json()
-  })
-  .then(jsonResponse => {
-    const { confirmationToken, path } = jsonResponse
-    const { changeRoute } = this.context
+    .then(response => {
+      if (response.ok) return response.json()
+    })
+    .then(jsonResponse => {
+      const { confirmationToken, path } = jsonResponse
+      const { changeRoute } = this.context
 
-    setConfirmationTokenCookie(confirmationToken)
-    changeRoute({ href: buildUrl({ path }) })
-    changeControl({ connecting: false })
+      setConfirmationTokenCookie(confirmationToken)
+      changeRoute({ href: buildUrl({ path }) })
+      changeControl({ connecting: false })
 
-    // sendAnnouncementCreatedEvent()
-  })
+      // sendAnnouncementCreatedEvent()
+    })
 }
 
 export default createAnnouncement

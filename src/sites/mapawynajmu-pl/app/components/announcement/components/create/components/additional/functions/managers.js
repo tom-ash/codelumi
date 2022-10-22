@@ -10,25 +10,20 @@ const {
   RENT_CURRENCY_SELECTED_EVENT,
   ROOMS_INPUTTED_EVENT,
   FLOOR_INPUTTED_EVENT,
-  TOTAL_FLOORS_INPUTTED_EVENT
+  TOTAL_FLOORS_INPUTTED_EVENT,
 } = analyticEvents
 
 export function rentAmountManager() {
-  const {
-    create: text
-  } = inputs.rentHeight
+  const { create: text } = inputs.rentHeight
 
-  const {
-    category,
-    changeInputs
-  } = this.props
+  const { category, changeInputs } = this.props
 
   let label = this.langHandler(text)
 
   const rentAmountType = [0, 1, 6, 7].indexOf(category) !== -1 ? 'netRentAmount' : 'grossRentAmount'
 
-  if(rentAmountType === 'netRentAmount') {
-    label = this.langHandler({ pl: 'Miesięczna cena netto', en: 'Monthly Net Price'})
+  if (rentAmountType === 'netRentAmount') {
+    label = this.langHandler({ pl: 'Miesięczna cena netto', en: 'Monthly Net Price' })
   }
 
   return {
@@ -40,7 +35,7 @@ export function rentAmountManager() {
     onChange: value => changeInputs({ [rentAmountType]: value }),
     onBlur: () => {
       sendGaEvent(RENT_INPUTTED_EVENT)
-    }
+    },
   }
 }
 
@@ -49,7 +44,7 @@ export function rentCurrencyManager() {
   const currencies = [
     { value: 0, text: 'zł' },
     { value: 1, text: '€' },
-    { value: 2, text: '$' }
+    { value: 2, text: '$' },
   ]
 
   return {
@@ -60,15 +55,12 @@ export function rentCurrencyManager() {
     onSelect: ({ value: optionValue }) => {
       this.onSelectHandler('rentCurrency', optionValue)
       sendGaEvent(RENT_CURRENCY_SELECTED_EVENT)
-    }
+    },
   }
 }
 
 export function roomsManager() {
-  const {
-    icon,
-    create: text
-  } = inputs.rooms
+  const { icon, create: text } = inputs.rooms
 
   const { category } = this.props
 
@@ -78,60 +70,60 @@ export function roomsManager() {
 
   return {
     classNames: { container: 'form-input with-icon select' },
-    children: <>
-      <SVG name='doorOpen' />
-      <SVG name='chevron' />
-    </>,
+    children: (
+      <>
+        <SVG name='doorOpen' />
+        <SVG name='chevron' />
+      </>
+    ),
     value: this.props.rooms,
     label,
     options: numberOptionsProvider(99),
-    onSelect: (option) => {
+    onSelect: option => {
       this.onSelectHandler('rooms', option.value)
       sendGaEvent(ROOMS_INPUTTED_EVENT)
-    }
+    },
   }
 }
 
 export function floorManager() {
-  const {
-    icon,
-    create: text
-  } = inputs.floor
+  const { icon, create: text } = inputs.floor
 
   return {
     classNames: { container: 'form-input with-icon select' },
-    children: <>
-      <SVG name='layers' />
-      <SVG name='chevron' />
-    </>,
+    children: (
+      <>
+        <SVG name='layers' />
+        <SVG name='chevron' />
+      </>
+    ),
     value: this.props.floor,
     label: this.langHandler(text),
     options: this.floorsProvider(),
-    onSelect: (option) => {
+    onSelect: option => {
       this.onSelectHandler('floor', option.value)
       sendGaEvent(FLOOR_INPUTTED_EVENT)
-    }
+    },
   }
 }
 
 export function totalFloorsManager() {
-  const {
-    icon,
-    create: text
-  } = inputs.totalFloors
+  const { icon, create: text } = inputs.totalFloors
 
   return {
     classNames: { container: 'form-input with-icon select' },
-    children: <>
-      <SVG name='building' />
-      <SVG name='chevron' />
-    </>,
+    children: (
+      <>
+        <SVG name='building' />
+        <SVG name='chevron' />
+      </>
+    ),
     value: this.props.totalFloors,
     label: this.langHandler(text),
     options: numberOptionsProvider(99),
-    onSelect: (option) => {
+    onSelect: option => {
       this.onSelectHandler('totalFloors', option.value)
       sendGaEvent(TOTAL_FLOORS_INPUTTED_EVENT)
-    }
+    },
   }
 }

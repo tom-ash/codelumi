@@ -4,16 +4,16 @@ import Edit from './components/edit/edit'
 
 interface ImageProps {
   render: {
-    'image/index': boolean,
+    'image/index': boolean
     'image/edit': boolean
-  },
-  apiUrl: string,
-  changeRoute(props: object): void,
-  buildUrl(props: { path: string}): string,
-  langHandler: LangHandler,
-  clientUrl: string,
-  device: string,
-  lang: string,
+  }
+  apiUrl: string
+  changeRoute(props: object): void
+  buildUrl(props: { path: string }): string
+  langHandler: LangHandler
+  clientUrl: string
+  device: string
+  lang: string
   appName: string
 }
 
@@ -24,10 +24,7 @@ class Image extends React.Component<ImageProps> {
 
   render() {
     const {
-      render: {
-        'image/index': renderIndex,
-        'image/edit': renderEdit
-      },
+      render: { 'image/index': renderIndex, 'image/edit': renderEdit },
       apiUrl,
       changeRoute,
       buildUrl,
@@ -35,7 +32,7 @@ class Image extends React.Component<ImageProps> {
       clientUrl,
       device,
       lang,
-      appName
+      appName,
     } = this.props
 
     const editProps = {
@@ -45,13 +42,13 @@ class Image extends React.Component<ImageProps> {
       clientUrl,
       device,
       lang,
-      appName
+      appName,
     }
 
     const indexProps = {
       apiUrl,
       changeRoute,
-      buildUrl
+      buildUrl,
     }
 
     const classNames = []

@@ -32,30 +32,21 @@ class ManagedSlider extends React.Component {
       currentLeft: 0,
       transition: 'all .32s ease-out',
       afterDrag: false,
-      clientX: null
+      clientX: null,
     }
   }
 
   static getDerivedStateFromProps = lifecycle.getDerivedStateFromProps
 
   render() {
-    const {
-      disableSLides,
-      chevronLeft,
-      chevronRight,
-      title,
-    } = this.props
-    
-    const {
-      statePictures,
-      width,
-      transition
-    } = this.state
+    const { disableSLides, chevronLeft, chevronRight, title } = this.props
+
+    const { statePictures, width, transition } = this.state
 
     if (statePictures.length === 0) return null
 
     if (this.container.current) {
-      this.container.current.style.height = `${width * .64}px`
+      this.container.current.style.height = `${width * 0.64}px`
     }
 
     return (
@@ -64,7 +55,7 @@ class ManagedSlider extends React.Component {
         className='managed-slider'
         style={{
           overflow: 'hidden',
-          position: 'relative'
+          position: 'relative',
         }}
         onMouseLeave={() => {
           if (disableSLides) return
@@ -79,7 +70,7 @@ class ManagedSlider extends React.Component {
             height: '100%',
             transform: `translate3d(${this.state.currentLeft}px, 0px, 0px)`,
             width: statePictures.length * width,
-            transition
+            transition,
           }}
         >
           {statePictures.map((picture, index) => (
@@ -88,7 +79,7 @@ class ManagedSlider extends React.Component {
               style={{
                 width,
                 height: '100%',
-                display: 'inline-block'
+                display: 'inline-block',
               }}
             >
               <img
@@ -109,19 +100,16 @@ class ManagedSlider extends React.Component {
             </div>
           ))}
         </div>
-        {!disableSLides && this.state.currentPicture !== statePictures.length - 1 &&
-        <div
-          className='arrow right'
-          onClick={e => this.onArrowClickHandler(e, '>')}
-        >
-          {chevronRight}
-        </div>}
-        {!disableSLides && this.state.currentPicture !== 0 && <div
-          className='arrow left'
-          onClick={e => this.onArrowClickHandler(e, '<')}
-        >
-          {chevronLeft}
-        </div>}
+        {!disableSLides && this.state.currentPicture !== statePictures.length - 1 && (
+          <div className='arrow right' onClick={e => this.onArrowClickHandler(e, '>')}>
+            {chevronRight}
+          </div>
+        )}
+        {!disableSLides && this.state.currentPicture !== 0 && (
+          <div className='arrow left' onClick={e => this.onArrowClickHandler(e, '<')}>
+            {chevronLeft}
+          </div>
+        )}
       </div>
     )
   }

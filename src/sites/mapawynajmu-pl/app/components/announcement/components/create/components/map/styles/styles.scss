@@ -5,7 +5,7 @@
   position: relative;
   padding-bottom: 20px;
   .hint {
-    color: #424949!important;
+    color: #424949 !important;
   }
   #google-map-container {
     height: 400px;
@@ -16,7 +16,7 @@
     #google-map {
       width: 100%;
       height: 100%;
-      border: 1px solid #ABB2B9;
+      border: 1px solid #abb2b9;
       &.map-error {
         border: 1px solid $TEXT-ERROR-COLOR;
       }
@@ -32,7 +32,7 @@
   }
 
   .hint {
-    line-height: 24px!important;
+    line-height: 24px !important;
   }
 
   .address-input {
@@ -65,9 +65,8 @@
       background: white;
       padding: 12px 12px 0;
       z-index: 3;
-      box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
-      0px 3px 8px 3px rgba(0, 0, 0, 0.14),
-      0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+      box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 3px 8px 3px rgba(0, 0, 0, 0.14),
+        0px 3px 14px 2px rgba(0, 0, 0, 0.12);
       border-radius: 4px;
       div {
         margin-bottom: 12px;

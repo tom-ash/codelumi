@@ -6,10 +6,10 @@ import buildUrl from '../../../../../../../../../../shared/functions/builders/ur
 
 interface LangSwichProps {
   links: {
-    'current/pl': { path: string, title: string },
-    'current/en': { path: string, title: string }
-  },
-  lang: string,
+    'current/pl': { path: string; title: string }
+    'current/en': { path: string; title: string }
+  }
+  lang: string
   buildUrl: BuildUrl
   changeRoute: ChangeRoute
 }
@@ -50,27 +50,23 @@ const LangSwich = (props: LangSwichProps) => {
     changeRoute({ href, withoutScroll: true })
     setShowLangs(false)
   }
-  
+
   return (
     <div className='lang-switch'>
-      <div
-        className='current'
-        onClick={() => setShowLangs(!showLangs)}
-      >
+      <div className='current' onClick={() => setShowLangs(!showLangs)}>
         {/* @ts-ignore */}
         {lang} <SVG name='caretDown' />
       </div>
-      {showLangs && (
-        <div
-          className='cover'
-          onClick={() => setShowLangs(false)}
-        />
-      )}
+      {showLangs && <div className='cover' onClick={() => setShowLangs(false)} />}
       <div className={allClassNames.join(' ')}>
         {/* @ts-ignore */}
-        <a href={plHref} onClick={(e) => changeLang({ e, href: plHref })}>PL</a>
+        <a href={plHref} onClick={e => changeLang({ e, href: plHref })}>
+          PL
+        </a>
         {/* @ts-ignore */}
-        <a href={enHref} onClick={(e) => changeLang({ e, href: enHref })}>EN</a>
+        <a href={enHref} onClick={e => changeLang({ e, href: enHref })}>
+          EN
+        </a>
       </div>
     </div>
   )

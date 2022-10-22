@@ -10,21 +10,19 @@ export function extend(announcement, index) {
 
   fetch(`${API_URL}/${route}/${announcement.id}`, {
     method,
-    headers: { 'Content-Type': 'application/json',
-    access_token
-  }
+    headers: { 'Content-Type': 'application/json', access_token },
   })
-  .then(response => {
-    if (response.ok) return response.json()
-  })
-  .then(json => {
-    this.props.changeData({ announcements: deepCloneAnnouncement.call(this, json, announcement, index) })
-    this.props.changeControl({ connecting: false })
-  })
+    .then(response => {
+      if (response.ok) return response.json()
+    })
+    .then(json => {
+      this.props.changeData({ announcements: deepCloneAnnouncement.call(this, json, announcement, index) })
+      this.props.changeControl({ connecting: false })
+    })
 }
 
 function deepCloneAnnouncement(json, announcement, index) {
-  const announcements = [ ...this.props.announcements ]
+  const announcements = [...this.props.announcements]
   const clonedAnnouncement = { ...announcement }
   clonedAnnouncement.activeUntil = json.activeUntil
   announcements[index] = clonedAnnouncement

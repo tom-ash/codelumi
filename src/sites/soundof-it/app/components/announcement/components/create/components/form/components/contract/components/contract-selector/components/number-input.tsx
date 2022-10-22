@@ -2,19 +2,14 @@ import React from 'react'
 import { ManagedText } from 'managed-inputs'
 
 interface NumberInputInterface {
-  setStore(newStore: object): void,
-  valueKey: string,
-  label: string,
+  setStore(newStore: object): void
+  valueKey: string
+  label: string
   value: number
 }
 
 const NumberInput = (props: NumberInputInterface) => {
-  const {
-    setStore,
-    valueKey,
-    value,
-    label
-  } = props
+  const { setStore, valueKey, value, label } = props
 
   const inputProps = {
     classNames: { container: 'form-input text' },

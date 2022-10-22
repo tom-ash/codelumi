@@ -3,4 +3,3 @@ function popStateHandler({ apiUrl }) {
 }
 
 export default popStateHandler
-

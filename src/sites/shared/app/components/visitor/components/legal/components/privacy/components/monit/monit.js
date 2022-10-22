@@ -12,18 +12,18 @@ const VisitorPrivacyMonit = props => {
   useStyles(styles)
 
   return (
-      <div id='privacy-monit-cover' className='cover'>
-        <div id='privacy-monit'>
-          {langHandler(textsProvider('cookies', props))}
-          {langHandler(textsProvider('dataProcessing', props))}
-          <div className='buttons'>
-            <ManagedButton {...settingsManager(props)} />
-            <ManagedButton {...agreeManager(props)} />
-            <div className='float-clear' />
-          </div>
+    <div id='privacy-monit-cover' className='cover'>
+      <div id='privacy-monit'>
+        {langHandler(textsProvider('cookies', props))}
+        {langHandler(textsProvider('dataProcessing', props))}
+        <div className='buttons'>
+          <ManagedButton {...settingsManager(props)} />
+          <ManagedButton {...agreeManager(props)} />
+          <div className='float-clear' />
         </div>
       </div>
-    )
+    </div>
+  )
 }
 
 export default VisitorPrivacyMonit

@@ -16,28 +16,28 @@ export function logIn() {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      'Lang': lang
+      Lang: lang,
     },
-    body: JSON.stringify({ email, password })
+    body: JSON.stringify({ email, password }),
   })
-  .then(response => {
-    if (response.status == 200) return response.json()
-    throw new Error('InvalidCredentials')
-  })
-  .then(jsonResponse => {
-    const { accountType, name, accessToken, path } = jsonResponse
-    const { changeRoute } = this.context
-
-    changeData({ accountType, name, authorized: true })
-    saveTokens.call(this, accessToken)
-    changeRoute({ href: buildUrl({ path }) })
-  })
-  .catch(() => {
-    changeErrors({
-      emailOrPassword: { pl: 'Nieprawidłowy adres email lub hasło.', en: 'Invalid email address and/or password.' }
+    .then(response => {
+      if (response.status == 200) return response.json()
+      throw new Error('InvalidCredentials')
     })
-  })
-  .finally(() => {
-    changeControl({ connecting: false })
-  })
+    .then(jsonResponse => {
+      const { accountType, name, accessToken, path } = jsonResponse
+      const { changeRoute } = this.context
+
+      changeData({ accountType, name, authorized: true })
+      saveTokens.call(this, accessToken)
+      changeRoute({ href: buildUrl({ path }) })
+    })
+    .catch(() => {
+      changeErrors({
+        emailOrPassword: { pl: 'Nieprawidłowy adres email lub hasło.', en: 'Invalid email address and/or password.' },
+      })
+    })
+    .finally(() => {
+      changeControl({ connecting: false })
+    })
 }

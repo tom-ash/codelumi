@@ -1,11 +1,11 @@
 export const control = {
-  connecting: false
+  connecting: false,
 }
 
 export const inputs = {
-  name: null
+  name: null,
 }
 
 export const data = {
-  names: null
+  names: null,
 }

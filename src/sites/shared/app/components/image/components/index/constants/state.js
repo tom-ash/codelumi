@@ -1,6 +1,6 @@
 const state = {
   imageKeys: [],
-  imageKey: ''
+  imageKey: '',
 }
 
 export default state

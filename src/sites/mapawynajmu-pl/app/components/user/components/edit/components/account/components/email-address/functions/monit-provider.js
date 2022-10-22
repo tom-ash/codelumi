@@ -9,10 +9,10 @@ export function monitProvider() {
     case 'newEmailVerification':
       return this.props.lang === 'pl' ? monits.newEmailVerification.pl : monits.newEmailVerification.en
     case 'password':
-      return this.props.lang === 'pl' ? monits.password.pl : monits.password.en   
+      return this.props.lang === 'pl' ? monits.password.pl : monits.password.en
     case 'success':
       return this.props.lang === 'pl' ? monits.success.pl : monits.success.en
     default:
-      break;
+      break
   }
 }

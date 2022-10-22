@@ -1,4 +1,4 @@
 export const analyticEvent = {
   eventCategory: 'Announcement Create',
-  eventAction: 'Publish Clicked'
+  eventAction: 'Publish Clicked',
 }

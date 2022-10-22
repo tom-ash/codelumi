@@ -5,7 +5,6 @@ export function componentDidUpdate(prevProps) {
   const { rebuildQueryParams, changeControl, changeInputs } = this.props
 
   if (!prevRebuildQueryParams && rebuildQueryParams) {
-
     window.areListingsObsolete = true
 
     changeControl({ rebuildQueryParams: false })
@@ -18,18 +17,20 @@ export function componentDidUpdate(prevProps) {
       priceMaxInput: { pl: 'cena_maks', en: 'price_max' },
     }
     const queryAttrs = ['areaMinInput', 'areaMaxInput', 'priceMinInput', 'priceMaxInput']
-    const builtQueryParamsArray = queryAttrs.filter(queryParam => {
-      const queryParamValue = this.props[queryParam]
-      
-      updateAttrs[queryParam.replace('Input', '')] = queryParamValue
+    const builtQueryParamsArray = queryAttrs
+      .filter(queryParam => {
+        const queryParamValue = this.props[queryParam]
 
-      return queryParamValue !== ''
-    }).map(filteredQueryAttr => {
-      const queryParam = this.langHandler(queryParamMappings[filteredQueryAttr])
-      const queryParamValue = this.props[filteredQueryAttr]
+        updateAttrs[queryParam.replace('Input', '')] = queryParamValue
 
-      return `${queryParam}=${queryParamValue}`
-    })
+        return queryParamValue !== ''
+      })
+      .map(filteredQueryAttr => {
+        const queryParam = this.langHandler(queryParamMappings[filteredQueryAttr])
+        const queryParamValue = this.props[filteredQueryAttr]
+
+        return `${queryParam}=${queryParamValue}`
+      })
 
     const { changeRoute } = this.context
     const path = window.location.pathname.replace(/^\//, '') + '?' + builtQueryParamsArray.join('&')

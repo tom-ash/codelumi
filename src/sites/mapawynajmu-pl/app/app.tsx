@@ -54,16 +54,61 @@ class App extends React.Component {
 
   render() {
     // @ts-ignore
-    const { render, renderPage, renderImage, renderVisitor, renderAnnouncement, renderUser, lang, links, device, authorized, pageShowData, pageEditData, announcementEditData, dispatch } = this.props
+    const {
+      // @ts-ignore
+      render,
+      // @ts-ignore
+      renderPage,
+      // @ts-ignore
+      renderImage,
+      // @ts-ignore
+      renderVisitor,
+      // @ts-ignore
+      renderAnnouncement,
+      // @ts-ignore
+      renderUser,
+      // @ts-ignore
+      lang,
+      // @ts-ignore
+      links,
+      // @ts-ignore
+      device,
+      // @ts-ignore
+      authorized,
+      // @ts-ignore
+      pageShowData,
+      // @ts-ignore
+      pageEditData,
+      // @ts-ignore
+      announcementEditData,
+      // @ts-ignore
+      dispatch,
+    } = this.props
     // @ts-ignore
     const AppContextValue = {
       // @ts-ignore
       changeRoute: this.changeRoute,
       // @ts-ignore
-      matchStateToRoute: this.matchStateToRoute
+      matchStateToRoute: this.matchStateToRoute,
     }
     // @ts-ignore
-    const sharedProps = { appName: APP_NAME, langs, links, clientUrl: CLIENT_URL, apiUrl: API_URL, render, device, authorized, changeRoute: this.changeRoute, buildUrl, langHandler: this.langHandler, dispatch, lang }
+    const sharedProps = {
+      appName: APP_NAME,
+      langs,
+      links,
+      clientUrl: CLIENT_URL,
+      apiUrl: API_URL,
+      render,
+      device,
+      authorized,
+      // @ts-ignore
+      changeRoute: this.changeRoute,
+      buildUrl,
+      // @ts-ignore
+      langHandler: this.langHandler,
+      dispatch,
+      lang,
+    }
     const pageProps = { ...sharedProps }
     const urlComposites = { pageShowData, pageEditData, announcementEditData }
     const imageProps = sharedProps
@@ -71,13 +116,13 @@ class App extends React.Component {
     return (
       <React.StrictMode>
         <AppContext.Provider value={AppContextValue}>
-          <Header { ...{ ...sharedProps, urlComposites, lang, Logo, HeaderCustomization, styles: headerStyles }}/>
-          {renderAnnouncement && <Announcement/>}
-          {renderPage && <Page {...pageProps}/>}
-          {renderVisitor && <Visitor {...sharedProps}/>}
+          <Header {...{ ...sharedProps, urlComposites, lang, Logo, HeaderCustomization, styles: headerStyles }} />
+          {renderAnnouncement && <Announcement />}
+          {renderPage && <Page {...pageProps} />}
+          {renderVisitor && <Visitor {...sharedProps} />}
           {renderUser && <User />}
           {renderImage && <Image {...imageProps} />}
-          <Footer {...sharedProps}/>
+          <Footer {...sharedProps} />
         </AppContext.Provider>
       </React.StrictMode>
     )

@@ -8,15 +8,14 @@ export const mapStateToProps = store => {
     currentEmailVerificationError: store.user.edit.errors.currentEmailVerification,
     newEmailError: store.user.edit.errors.newEmail,
     newEmailVerificationError: store.user.edit.errors.newEmailVerification,
-    newEmailPasswordError: store.user.edit.errors.newEmailPassword
+    newEmailPasswordError: store.user.edit.errors.newEmailPassword,
   }
 }
-    
+
 export const mapDispatchToProps = dispatch => {
   return {
     changeControl: value => dispatch({ type: 'user/edit/control', value }),
     changeData: value => dispatch({ type: 'user/edit/data', value }),
-    changeErrors: value => dispatch({ type: 'user/edit/errors', value })
+    changeErrors: value => dispatch({ type: 'user/edit/errors', value }),
   }
 }
-    

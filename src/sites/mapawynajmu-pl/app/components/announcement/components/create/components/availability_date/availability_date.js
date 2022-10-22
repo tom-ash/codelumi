@@ -18,18 +18,18 @@ class AnnouncementCreateAvailabilityDate extends React.Component {
     this.langHandler = langHandler.bind(this)
     this.addAvailabilityDateManager = managers.addAvailabilityDateManager.bind(this)
   }
-  
+
   render() {
     const { lang, availabilityDate, addAvailabilityDate, changeInputs } = this.props
 
     return (
       <div id='announcement-create-availability-date' className='section'>
-        <ManagedCheckbox {...this.addAvailabilityDateManager({ addAvailabilityDate, changeInputs })}/>
-        {addAvailabilityDate &&
+        <ManagedCheckbox {...this.addAvailabilityDateManager({ addAvailabilityDate, changeInputs })} />
+        {addAvailabilityDate && (
           <div className='calendar'>
             <div>
-              <Calendar 
-                onChange = {date => {
+              <Calendar
+                onChange={date => {
                   changeInputs({ availabilityDate: parseDate(date) })
                   sendGaEvent(AVAILABILITY_DATE_SELECTED_EVENT)
                 }}
@@ -38,7 +38,7 @@ class AnnouncementCreateAvailabilityDate extends React.Component {
               />
             </div>
           </div>
-        }
+        )}
       </div>
     )
   }

@@ -5,23 +5,21 @@ interface ArticlesLinkProps {
   buildUrl: BuildUrl
   changeRoute: ChangeRoute
   langHandler: LangHandler
-  langs: { pl: 'pl', en: 'en' }
+  langs: { pl: 'pl'; en: 'en' }
 }
 
 export function ArticlesLink(props: ArticlesLinkProps) {
-  const {
-    langs,
-    buildUrl,
-    changeRoute,
-    langHandler,
-  } = props
+  const { langs, buildUrl, changeRoute, langHandler } = props
 
   const classNames = { container: 'header-link' }
   // @ts-ignore
-  const href = buildUrl({ path: langHandler({
-    pl: 'artykuly-o-wynajmie-nieruchomosci',
-    en: 'articles-on-real-estate-leasing'
-  })})
+  const href = buildUrl({
+    // @ts-ignore
+    path: langHandler({
+      pl: 'artykuly-o-wynajmie-nieruchomosci',
+      en: 'articles-on-real-estate-leasing',
+    }),
+  })
   // @ts-ignore
   const hrefLang = langHandler(langs)
   // @ts-ignore
@@ -35,7 +33,7 @@ export function ArticlesLink(props: ArticlesLinkProps) {
     hrefLang,
     title,
     label,
-    onClick
+    onClick,
   }
 
   return <ManagedLink {...linkProps} />

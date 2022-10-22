@@ -9,11 +9,7 @@ interface InitializeMapProps {
 }
 
 function initializeMap(props: InitializeMapProps) {
-  const {
-    mapOptions,
-    isMobile,
-    changeControl,
-  } = props
+  const { mapOptions, isMobile, changeControl } = props
 
   // @ts-ignore
   if (window.googleMap) {

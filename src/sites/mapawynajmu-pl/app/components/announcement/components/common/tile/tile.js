@@ -25,7 +25,7 @@ class AnnouncementTile extends React.Component {
     this.langHandler = langHandler.bind(this)
     this.togglePhone = togglePhone.bind(this)
     this.state = {
-      fullPhone: null
+      fullPhone: null,
     }
   }
 
@@ -72,13 +72,13 @@ class AnnouncementTile extends React.Component {
       announcerPhone: this.state.fullPhone || phone,
       announcementId: id,
       venue,
-      togglePhone: this.togglePhone, 
-      langHandler
+      togglePhone: this.togglePhone,
+      langHandler,
     }
     const goToLinkProps = {
       name,
       link,
-      langHandler: this.langHandler
+      langHandler: this.langHandler,
     }
     const description = this.props.description || this.langHandler({ pl: polishDescription, en: englishDescription })
     const headingProps = {
@@ -87,7 +87,7 @@ class AnnouncementTile extends React.Component {
       locality,
       sublocality,
       lang,
-      langHandler: this.langHandler
+      langHandler: this.langHandler,
     }
     const linkProps = {
       id,
@@ -130,18 +130,18 @@ class AnnouncementTile extends React.Component {
     const featuresProps = {
       lang,
       itemsName: 'features',
-      items: features
+      items: features,
     }
     const furnishingsProps = {
       lang,
       itemsName: 'furnishings',
-      items: furnishings
+      items: furnishings,
     }
     const descriptionProps = {
       lang,
       description,
     }
-    const isPhoneable = [1,2,3,4,5].includes(category)
+    const isPhoneable = [1, 2, 3, 4, 5].includes(category)
 
     switch (venue) {
       case 'rootList':
@@ -168,17 +168,17 @@ class AnnouncementTile extends React.Component {
 
               window.scrollBy({
                 top: 454 + fromTop,
-                behavior: 'smooth'
-              });
+                behavior: 'smooth',
+              })
 
               changeControl({
                 mapOptions: {
                   center: {
                     lat: latitude,
-                    lng: longitude
+                    lng: longitude,
                   },
-                  zoom: 12.4
-                }
+                  zoom: 12.4,
+                },
               })
             }}
           >
@@ -195,7 +195,7 @@ class AnnouncementTile extends React.Component {
             <GoBack id={id} />
             <div className='listing-tile'>
               <Heading {...headingProps} />
-              {isPhoneable ? <ListerPhone { ...listerPhoneProps } /> : <GoToLink {...goToLinkProps} />}
+              {isPhoneable ? <ListerPhone {...listerPhoneProps} /> : <GoToLink {...goToLinkProps} />}
               <Pictures {...picturesProps} />
               <PrimaryData {...primaryDataProps} />
               {features && features.length > 0 && <Items {...featuresProps} />}

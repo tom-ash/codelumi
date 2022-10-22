@@ -30,7 +30,7 @@ function genericAppRenderer({ App, statsFile, rootReducer, initialState }) {
     html,
     css,
     preloadedState,
-    scriptTags
+    scriptTags,
   }
 }
 

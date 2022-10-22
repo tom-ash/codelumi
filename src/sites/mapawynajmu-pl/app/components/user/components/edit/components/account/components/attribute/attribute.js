@@ -16,9 +16,7 @@ class UserEditAttribute extends React.Component {
   render() {
     return (
       <div id='user-edit-account-business-name'>
-        <div className='monit'>
-          {this.langHandler(monit)}
-        </div>
+        <div className='monit'>{this.langHandler(monit)}</div>
         <ManagedText {...this.textManager()} />
         <ManagedButton {...this.buttonManager()} />
       </div>

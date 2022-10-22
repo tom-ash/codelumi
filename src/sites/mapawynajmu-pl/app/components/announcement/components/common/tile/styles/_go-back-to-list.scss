@@ -5,8 +5,8 @@
   height: 36px;
   border-radius: 50%;
   background: none;
-  border: 1px solid #979A9A;
-  transition: border-color .15s ease-in;
+  border: 1px solid #979a9a;
+  transition: border-color 0.15s ease-in;
   background: white;
   position: absolute;
   top: 24px;
@@ -14,9 +14,9 @@
   z-index: 99999;
   svg {
     width: 18px;
-    fill: #979A9A;
+    fill: #979a9a;
     transform: translate(0, 1px);
-    transition: fill .15s ease-in;
+    transition: fill 0.15s ease-in;
   }
   &:hover {
     border-color: #626567;

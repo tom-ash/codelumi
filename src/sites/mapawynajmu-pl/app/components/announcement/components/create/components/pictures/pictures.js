@@ -16,12 +16,12 @@ import Info from '../../../../../../../../shared/app/components/support/info'
 
 const HEADING = {
   pl: 'Zdjęcia (wymagane)',
-  en: 'Pictures (required)'
+  en: 'Pictures (required)',
 }
 
 const INFO = {
   pl: 'Kliknij w ikonę aparatu fotograficznego, aby dodać zdjęcia.',
-  en: 'Click the photo camera to add pictures.'
+  en: 'Click the photo camera to add pictures.',
 }
 
 class AnnouncementCreatePictures extends React.Component {
@@ -38,10 +38,10 @@ class AnnouncementCreatePictures extends React.Component {
   render() {
     const headingProps = {
       tier: 2,
-      text: this.langHandler(HEADING)
+      text: this.langHandler(HEADING),
     }
     const infoProps = {
-      message: this.langHandler(INFO)
+      message: this.langHandler(INFO),
     }
 
     return (
@@ -56,72 +56,51 @@ class AnnouncementCreatePictures extends React.Component {
               className='input'
               type='file'
               multiple
-              onChange={this.addFiles}>
-            </input>
+              onChange={this.addFiles}
+            ></input>
           </div>
           <p>
             {this.langHandler({
               pl: 'Kliknij w ikonę aparatu, aby wybrać zdjęcia.',
-              en: 'Click the camera to select pictures.'
+              en: 'Click the camera to select pictures.',
             })}
           </p>
         </div>
-        <div className='error'>
-          {this.langHandler(this.props.error)}
-        </div>
+        <div className='error'>{this.langHandler(this.props.error)}</div>
 
+        <div></div>
         <div>
-
-        </div>
-        <div>
-          {
-          this.props.blobs.map((picture, index) => {
+          {this.props.blobs.map((picture, index) => {
             if (!picture) return undefined
             return (
               <div
                 key={`${picture.blob}`}
-                style = {{ backgroundImage: `url('${picture.blob}')` }}
+                style={{ backgroundImage: `url('${picture.blob}')` }}
                 className={pictureClassProvider(index)}
               >
                 <div className='buttons'>
-                  <div
-                    onClick={() => this.deletePicture(index)}
-                    className='button delete'
-                  >
+                  <div onClick={() => this.deletePicture(index)} className='button delete'>
                     <SVG name='close' />
                   </div>
-                  {
-                  this.props.blobs && (index !== 0) &&
-                  <div
-                    onClick={() => this.movePicture('up', index)}
-                    className='button up'
-                  >
-                    <SVG name='chevron' />
-                  </div>
-                  }
-                  {
-                  this.props.blobs && (this.props.blobs.length !== index + 1) &&
-                  <div
-                    onClick={() => this.movePicture('down', index)}
-                    className='button down'
-                  >
-                    <SVG name='chevron' />
-                  </div>
-                  }
-                  {
-                  !picture.database &&
-                  <div
-                    onClick={() => this.rotatePicture(index)}
-                    className='button rotate'
-                  >
-                    <SVG name='rotate' />
-                  </div>
-                  }
+                  {this.props.blobs && index !== 0 && (
+                    <div onClick={() => this.movePicture('up', index)} className='button up'>
+                      <SVG name='chevron' />
+                    </div>
+                  )}
+                  {this.props.blobs && this.props.blobs.length !== index + 1 && (
+                    <div onClick={() => this.movePicture('down', index)} className='button down'>
+                      <SVG name='chevron' />
+                    </div>
+                  )}
+                  {!picture.database && (
+                    <div onClick={() => this.rotatePicture(index)} className='button rotate'>
+                      <SVG name='rotate' />
+                    </div>
+                  )}
                 </div>
               </div>
             )
-          })
-          }
+          })}
           <div className='float-clear' />
         </div>
       </div>

@@ -2,10 +2,7 @@ import React from 'react'
 import Paragraph from '../paragraph/paragraph'
 
 const List = (props: ListProps) => {
-  const {
-    listNodes,
-    style
-  } = props
+  const { listNodes, style } = props
 
   return (
     <ul style={style}>

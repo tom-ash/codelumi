@@ -8,17 +8,18 @@ export function changePhone(countryCode, body) {
 
   changeControl({ phoneConnecting: true })
   fetch(API_URL + '/user/update/phone', {
-    method: 'PUT', headers: { 'Content-Type': 'application/json', access_token: getAccessToken() },
-    body: JSON.stringify({ country_code: countryCode, phone_number: body })
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json', access_token: getAccessToken() },
+    body: JSON.stringify({ country_code: countryCode, phone_number: body }),
   })
-  .then(response => {
-    if (response.status == 200) {
-      changeData({ countryCode: countryCode, phoneNumber: body })
-      changeInputs({ countryCode: countryCode })
-      return changeControl({ phoneStage: 'success' })
-    }
-    throw new Error('SomethingWentWrong')
-  })
-  .catch((error) => console.dir(error))
-  .finally(() => changeControl({ phoneConnecting: false }))
+    .then(response => {
+      if (response.status == 200) {
+        changeData({ countryCode: countryCode, phoneNumber: body })
+        changeInputs({ countryCode: countryCode })
+        return changeControl({ phoneStage: 'success' })
+      }
+      throw new Error('SomethingWentWrong')
+    })
+    .catch(error => console.dir(error))
+    .finally(() => changeControl({ phoneConnecting: false }))
 }

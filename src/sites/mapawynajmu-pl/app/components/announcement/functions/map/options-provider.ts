@@ -28,15 +28,12 @@ const DEFAULT_OPTIONS = {
 }
 
 function mapOptionsProvider(props: MapOptionsProviderProps) {
-  const {
-    mapOptions,
-    isMobile
-  } = props
+  const { mapOptions, isMobile } = props
 
   return {
     ...DEFAULT_OPTIONS,
-    ...!isMobile && { gestureHandling: 'greedy' },
-    ...mapOptions
+    ...(!isMobile && { gestureHandling: 'greedy' }),
+    ...mapOptions,
   }
 }
 

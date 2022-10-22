@@ -1,8 +1,8 @@
-import React from "react"
-import { ManagedText } from "managed-inputs"
+import React from 'react'
+import { ManagedText } from 'managed-inputs'
 
 interface WidthInputProps {
-  width: string,
+  width: string
   changeData(props: object): void
 }
 
@@ -13,7 +13,6 @@ const WidthInput = (props: WidthInputProps) => {
   const value = width
   const onChange = (width: string) => changeData({ width })
   const inputProps = { classNames, label, value, onChange }
-  
 
   return <ManagedText {...inputProps} />
 }

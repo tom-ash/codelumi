@@ -25,9 +25,7 @@ class UserCreateEmailVerify extends React.Component {
     return (
       <div id='user-create-email-verify'>
         <Header tier={1} text={this.langHandler(PAGE_HEADER)} svg='userPlus' />
-        <div className='monit'>
-          {this.langHandler(monit)}
-        </div>
+        <div className='monit'>{this.langHandler(monit)}</div>
         <ManagedText {...this.verificationManager()} />
         <ManagedButton {...this.buttonManager()} />
       </div>

@@ -6,22 +6,22 @@ export function togglePhone() {
 
   const { id } = this.props
   const { phone, isMobile } = this.state
-  
+
   if (phone && phone.length > 8) return
 
   sendAnalyticsEvent({
     eventCategory: 'Announcement Tile',
     eventAction: 'Phone Toggle Click',
-    eventLabel: id
+    eventLabel: id,
   })
 
   fetch(`${API_URL}/announcement/get-phone-number/${id}`, {
-    headers: { 'Content-Type': 'application/json' }
+    headers: { 'Content-Type': 'application/json' },
   })
-  .then(response => {
-    if (response.ok) return response.json()
-  })
-  .then((phone) => {
-    this.setState({ fullPhone: phone.replace('+48 ', '').replace(/(.{3})/g, '$1 ') })
-  })
+    .then(response => {
+      if (response.ok) return response.json()
+    })
+    .then(phone => {
+      this.setState({ fullPhone: phone.replace('+48 ', '').replace(/(.{3})/g, '$1 ') })
+    })
 }

@@ -19,7 +19,7 @@
     height: 110px;
     border-radius: 55px;
     position: relative;
-    border: 1px solid #AEB6BF;
+    border: 1px solid #aeb6bf;
     svg {
       position: absolute;
       top: 0;
@@ -27,14 +27,14 @@
       bottom: 0;
       left: 0;
       margin: auto;
-      fill: #A6ACAF;
-      cursor: pointer!important;
+      fill: #a6acaf;
+      cursor: pointer !important;
       z-index: 1;
       width: 55px;
     }
     text-align: center;
-    cursor: pointer!important;
-    color: #515A5A;
+    cursor: pointer !important;
+    color: #515a5a;
     &.error-drag-and-drop {
       border: 1px solid $TEXT-ERROR-COLOR;
       background: $BACKGROUND-ERROR-COLOR;
@@ -43,7 +43,7 @@
       }
     }
     &:hover {
-      background: #F2F3F4;
+      background: #f2f3f4;
     }
     input {
       z-index: 2;
@@ -89,7 +89,7 @@
         }
         &.delete {
           svg {
-            fill: #E74C3C;
+            fill: #e74c3c;
             width: 14px;
           }
         }

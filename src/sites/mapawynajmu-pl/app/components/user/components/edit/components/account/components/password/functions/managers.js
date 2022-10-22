@@ -8,7 +8,7 @@ import SVG from '../../../../../../../../support/components/svg/svg'
 export function emailManager() {
   const { label, icon } = inputs.email
   const { step, changeErrors, error } = this.props
-  
+
   return {
     id: 'user-edit-password-email',
     display: step === null ? 'block' : 'none',
@@ -24,15 +24,12 @@ export function emailManager() {
 
       changeErrors({ password: error })
     },
-    error: this.langHandler(error)
+    error: this.langHandler(error),
   }
 }
 
 export function verificationManager() {
-  const {
-    step,
-    changeErrors
-  } = this.props
+  const { step, changeErrors } = this.props
 
   const { label } = inputs.verification
 
@@ -48,11 +45,11 @@ export function verificationManager() {
     validate: value => {
       if (value.length === 4) return true
       changeErrors({
-        password: { pl: 'Nieprawidłowy kod weryfikacyjny.', en: 'Invalid verification code.' }
+        password: { pl: 'Nieprawidłowy kod weryfikacyjny.', en: 'Invalid verification code.' },
       })
       return false
     },
-    error: this.langHandler(this.props.error)
+    error: this.langHandler(this.props.error),
   }
 }
 
@@ -77,12 +74,12 @@ export function passwordManager() {
       changeErrors({
         password: {
           pl: 'hasło musi mieć przynajmniej sześć znaków',
-          en: 'the password has to be at least six characters long'
-        }
+          en: 'the password has to be at least six characters long',
+        },
       })
       return false
     },
-    error: this.langHandler(this.props.error)
+    error: this.langHandler(this.props.error),
   }
 }
 
@@ -93,13 +90,9 @@ export function buttonManager() {
     display: step === 'success' ? 'none' : 'block',
     classNames: { container: 'form-input button' },
     label: (
-      <ButtonSpinner
-        connecting={connecting}
-        label={buttonTextProvider.call(this)}
-        langHandler={this.langHandler}
-      />
+      <ButtonSpinner connecting={connecting} label={buttonTextProvider.call(this)} langHandler={this.langHandler} />
     ),
-    onClick: buttonOnClickProvider.call(this)
+    onClick: buttonOnClickProvider.call(this),
   }
 }
 
@@ -107,16 +100,19 @@ function buttonOnClickProvider() {
   const { connecting, step, changeErrors } = this.props
 
   if (connecting) return
-  
+
   switch (step) {
-    case null: return () => {
-      const value = document.getElementById('user-edit-password-email').value
-      const { isValid, error } = emailValidator(value)
-      if (isValid) return this.sendEmail()
-      changeErrors({ password: error })
-    }
-    case 'verificationCode': return this.sendVerification
-    case 'password': return this.sendPassword
+    case null:
+      return () => {
+        const value = document.getElementById('user-edit-password-email').value
+        const { isValid, error } = emailValidator(value)
+        if (isValid) return this.sendEmail()
+        changeErrors({ password: error })
+      }
+    case 'verificationCode':
+      return this.sendVerification
+    case 'password':
+      return this.sendPassword
   }
 }
 

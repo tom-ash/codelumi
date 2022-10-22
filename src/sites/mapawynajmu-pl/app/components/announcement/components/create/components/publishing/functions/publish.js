@@ -9,14 +9,14 @@ export function publish() {
   const announcementObject = {
     // category: this.categoryManager().validate(),
     pictures: this.validatePictures(),
-    map: this.validateMap()
+    map: this.validateMap(),
   }
 
   const announcement = buildAnouncement.call(this)
   const user = authorized ? {} : buildUserObject.call(this)
 
-  if (!Object.values(announcementObject).every((element => element))) {
-    for(let i = 0; i < requiredInputsArray.length; i++) {
+  if (!Object.values(announcementObject).every(element => element)) {
+    for (let i = 0; i < requiredInputsArray.length; i++) {
       if (!announcementObject[requiredInputsArray[i]]) {
         return scrollToElement(document.getElementById(requiredInputs[requiredInputsArray[i]].id), 12, -120)
       }

@@ -1,63 +1,54 @@
 import fetch from 'node-fetch'
 import indexRenderer from '../renderers/index.js'
 import exceptionSender from './exception.js'
-import initialStateParser from '../parsers/initial-state.js' 
+import initialStateParser from '../parsers/initial-state.js'
 import initialAppState from '../../../app/constants/initial-app-state.js'
 
 // 'Lang': TODO Get lang from request,
 
-function routeSender({
-  res,
-  apiUrl,
-  url, query, device,
-  accessToken,
-  appRenderer,
-  visitorState
-}) {
+function routeSender({ res, apiUrl, url, query, device, accessToken, appRenderer, visitorState }) {
   fetch(`${apiUrl}/sync${query}`, {
     headers: {
       'Content-Type': 'application/json',
-      'Type': 'ssr',
+      Type: 'ssr',
       'Route-Url': url,
-      'Access-Token': accessToken
-    }
+      'Access-Token': accessToken,
+    },
   })
-  .then(response => {
-    if (response.ok || response.status === 301 || response.status === 302) return response.json()
+    .then(response => {
+      if (response.ok || response.status === 301 || response.status === 302) return response.json()
 
-    throw new Error('Page Not Found')
-  })
-  .then(jsonResponse => {
-    const { state, meta } = jsonResponse
-    const { redirectedUrl, status: redirectStatus, lang } = meta
-
-    if (redirectedUrl) {
-      res.redirect(redirectStatus, redirectedUrl)
-    } else {
-      const app = { ...initialAppState, routeSynced: true, lang, device }
-      const links = state.links
-      const initialState = { app, render: state.render, links, ...visitorState, ...initialStateParser(state) }
-      const appAsHtml = appRenderer(initialState)
-      const status = 200
-  
-      res.status(status).send(
-        indexRenderer({ ...meta, ...appAsHtml, links, lang }) 
-      )
-    }
-  })
-  .catch(exception => {
-    const robots = 'noindex,nofollow'
-
-    exceptionSender({
-      exception,
-      res,
-      url,
-      device,
-      visitorState,
-      appRenderer,
-      robots
+      throw new Error('Page Not Found')
     })
-  })
+    .then(jsonResponse => {
+      const { state, meta } = jsonResponse
+      const { redirectedUrl, status: redirectStatus, lang } = meta
+
+      if (redirectedUrl) {
+        res.redirect(redirectStatus, redirectedUrl)
+      } else {
+        const app = { ...initialAppState, routeSynced: true, lang, device }
+        const links = state.links
+        const initialState = { app, render: state.render, links, ...visitorState, ...initialStateParser(state) }
+        const appAsHtml = appRenderer(initialState)
+        const status = 200
+
+        res.status(status).send(indexRenderer({ ...meta, ...appAsHtml, links, lang }))
+      }
+    })
+    .catch(exception => {
+      const robots = 'noindex,nofollow'
+
+      exceptionSender({
+        exception,
+        res,
+        url,
+        device,
+        visitorState,
+        appRenderer,
+        robots,
+      })
+    })
 }
 
 export default routeSender

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import { createReducer } from '../components/create/functions/reducer'
 import { authorizeReducer } from '../components/authorize/functions/reducers'
-import { editReducer } from '../components/edit/functions/reducer';
-import { destroyReducer } from '../components/destroy/functions/reducer';
+import { editReducer } from '../components/edit/functions/reducer'
+import { destroyReducer } from '../components/destroy/functions/reducer'
 
 const connectingReducer = (state = false, action) => {
   switch (action.type) {
@@ -18,6 +18,5 @@ export const userReducer = combineReducers({
   create: createReducer,
   authorize: authorizeReducer,
   edit: editReducer,
-  destroy: destroyReducer
+  destroy: destroyReducer,
 })
-  

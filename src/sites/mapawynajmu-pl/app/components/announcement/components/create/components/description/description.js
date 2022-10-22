@@ -6,7 +6,7 @@ import {
   addPolishDescriptionManager,
   addEnglishDescriptionManager,
   polishManager,
-  englishManager
+  englishManager,
 } from './functions/managers'
 import langHandler from '../../../../../../functions/lang-handler'
 
@@ -20,10 +20,7 @@ class AnnouncementCreateDescription extends React.Component {
     this.englishManager = englishManager.bind(this)
   }
   render() {
-    const {
-      addPolishDescription,
-      addEnglishDescription
-    } = this.props
+    const { addPolishDescription, addEnglishDescription } = this.props
 
     return (
       <div id='announcement-create-description' className='section'>

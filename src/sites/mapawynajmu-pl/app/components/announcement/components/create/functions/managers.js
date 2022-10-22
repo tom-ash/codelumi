@@ -8,6 +8,6 @@ export function addAnnouncementManager() {
     onClick: () => {
       this.publish()
       sendGaEvent(analyticEvent)
-    }
+    },
   }
 }

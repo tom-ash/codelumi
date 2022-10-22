@@ -2,7 +2,7 @@ import { saveCookie } from '../../../../cookies/functions/save'
 
 export function agreeManager(props) {
   const { changeConsents } = props
-  
+
   return {
     classNames: { container: 'form-input button agree' },
     label: 'OK',
@@ -10,7 +10,7 @@ export function agreeManager(props) {
       changeConsents({ statisticsConsent: true, marketingConsent: true })
       saveCookie('_pdpaf', 'true', 'oneYear')
       saveCookie('_pdpsm', 'true', 'oneYear')
-    }
+    },
   }
 }
 

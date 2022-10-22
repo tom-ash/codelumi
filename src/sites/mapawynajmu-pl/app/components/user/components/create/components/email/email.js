@@ -20,19 +20,20 @@ class UserCreateEmail extends React.Component {
 
     return (
       <div id='user-create-email'>
-        {(renderForm || renderAnnouncementCreate) &&
-        <>
-        {!renderAnnouncementCreate && <Header tier={1} text={headerText} />}
-        <form>
-          <Inputs renderAnnouncementCreate={renderAnnouncementCreate}/>
-          <Consents />
-          {!renderAnnouncementCreate && <Submit />}
-        </form>
-        </>}
+        {(renderForm || renderAnnouncementCreate) && (
+          <>
+            {!renderAnnouncementCreate && <Header tier={1} text={headerText} />}
+            <form>
+              <Inputs renderAnnouncementCreate={renderAnnouncementCreate} />
+              <Consents />
+              {!renderAnnouncementCreate && <Submit />}
+            </form>
+          </>
+        )}
         {renderVerification && <Verification />}
       </div>
     )
   }
 }
 
-export default connect(mappers.mapStateToProps, mappers.mapDispatchToProps)(UserCreateEmail);
+export default connect(mappers.mapStateToProps, mappers.mapDispatchToProps)(UserCreateEmail)

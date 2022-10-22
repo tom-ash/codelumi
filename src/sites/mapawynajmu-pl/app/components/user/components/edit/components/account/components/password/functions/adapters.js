@@ -6,22 +6,23 @@ import { VERIFICATION_API_ROUTE, VERIFY_API_AOUTE, UPDATE_API_ROUTE } from '../c
 export function sendEmail() {
   const { lang, connecting, changeControl, changeErrors } = this.props
   const email = document.getElementById('user-edit-password-email').value
-  
+
   if (connecting || !this.emailManager('validate', email)) return
 
   changeControl({ passwordConnecting: true })
   fetch(API_URL + VERIFICATION_API_ROUTE, {
-    method: 'PUT', headers: { 'Content-Type': 'application/json', 'Lang': lang },
-    body: JSON.stringify({ email })
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json', Lang: lang },
+    body: JSON.stringify({ email }),
   })
-  .then(response => {
-    if (response.status == 200) {
-      changeControl({ passwordStep: 'verificationCode' })
-      changeErrors({ password: noError })
-    }
-    throw new Error('ServerError')
-  })
-  .finally(() => changeControl({ passwordConnecting: false }))
+    .then(response => {
+      if (response.status == 200) {
+        changeControl({ passwordStep: 'verificationCode' })
+        changeErrors({ password: noError })
+      }
+      throw new Error('ServerError')
+    })
+    .finally(() => changeControl({ passwordConnecting: false }))
 }
 
 export function sendVerification() {
@@ -33,22 +34,23 @@ export function sendVerification() {
 
   changeControl({ passwordConnecting: true })
   fetch(API_URL + VERIFY_API_AOUTE, {
-    method: 'PUT', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, verificationCode })
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, verificationCode }),
   })
-  .then(response => {
-    if (response.status == 200) {
-      changeControl({ passwordStep: 'password' })
-      return changeErrors({ password: noError })
-    }
-    throw new Error('ServerError')
-  })
-  .catch(() => {
-    changeErrors({
-      password: { pl: 'Nieprawidłowy kod weryfikacyjny', en: 'Invalid verification code' }
+    .then(response => {
+      if (response.status == 200) {
+        changeControl({ passwordStep: 'password' })
+        return changeErrors({ password: noError })
+      }
+      throw new Error('ServerError')
     })
-  })
-  .finally(() => changeControl({ passwordConnecting: false }))
+    .catch(() => {
+      changeErrors({
+        password: { pl: 'Nieprawidłowy kod weryfikacyjny', en: 'Invalid verification code' },
+      })
+    })
+    .finally(() => changeControl({ passwordConnecting: false }))
 }
 
 export function sendPassword() {
@@ -62,18 +64,21 @@ export function sendPassword() {
 
   changeControl({ passwordConnecting: true })
   fetch(API_URL + UPDATE_API_ROUTE, {
-    method: 'PUT', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, password: hashedPassword, verificationCode })
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password: hashedPassword, verificationCode }),
   })
-  .then(response => {
-    if (response.status == 200) {
-      changeControl({ passwordStep: 'success' })
-      changeErrors({ password: noError })
-      setTimeout(() => { changeControl({ passwordStage: 'success' }) }, 1000)
-      return
-    }
-    throw new Error('ServerError')
-  })
-  .catch((e) => console.dir(e))
-  .finally(() => changeControl({ passwordConnecting: false }))
+    .then(response => {
+      if (response.status == 200) {
+        changeControl({ passwordStep: 'success' })
+        changeErrors({ password: noError })
+        setTimeout(() => {
+          changeControl({ passwordStage: 'success' })
+        }, 1000)
+        return
+      }
+      throw new Error('ServerError')
+    })
+    .catch(e => console.dir(e))
+    .finally(() => changeControl({ passwordConnecting: false }))
 }

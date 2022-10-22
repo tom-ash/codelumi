@@ -1,4 +1,4 @@
-import '@types/googlemaps';
+import '@types/googlemaps'
 
 declare global {
   interface Window {

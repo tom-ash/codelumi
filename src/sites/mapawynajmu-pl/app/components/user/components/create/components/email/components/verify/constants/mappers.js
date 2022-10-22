@@ -10,10 +10,10 @@ export const mapStateToProps = store => {
     email,
     verification,
     connecting,
-    announcementId
+    announcementId,
   }
 }
-  
+
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
@@ -23,4 +23,3 @@ export const mapDispatchToProps = dispatch => {
     changeErrors: value => dispatch({ type: 'user/create/errors', value }),
   }
 }
-  

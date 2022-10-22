@@ -13,14 +13,11 @@ interface TitleBoardProps {
   title?: string
   appName: string
   lang: string
-  langHandler(langs: { pl: string, en: string }): string
+  langHandler(langs: { pl: string; en: string }): string
 }
 
-const Image = (props: { imageSrc: string, imageAlt: string }) => {
-  const {
-    imageSrc,
-    imageAlt,
-  } = props
+const Image = (props: { imageSrc: string; imageAlt: string }) => {
+  const { imageSrc, imageAlt } = props
 
   const imageProps = {
     src: imageSrc,
@@ -31,21 +28,15 @@ const Image = (props: { imageSrc: string, imageAlt: string }) => {
   return <img {...imageProps} />
 }
 
-const Author = (props: { authorName: string, authorLink: string }) => {
-  const {
-    authorName,
-    authorLink
-  } = props
+const Author = (props: { authorName: string; authorLink: string }) => {
+  const { authorName, authorLink } = props
 
   return (
     <div className='author'>
       <div className='name'>
         {/* @ts-ignore */}
         <SVG name='penClip' />
-        <a
-          href={authorLink}
-          target='_blank'
-        >
+        <a href={authorLink} target='_blank'>
           {authorName}
         </a>
       </div>
@@ -71,15 +62,9 @@ const TitleBoard = (props: TitleBoardProps) => {
 
   return (
     <header className='title-board'>
-      <div className='cover'>
-        {imageSrc && imageAlt && <Image {...{ imageSrc, imageAlt }} />}
-      </div>
+      <div className='cover'>{imageSrc && imageAlt && <Image {...{ imageSrc, imageAlt }} />}</div>
       {authorName && authorLink && <Author {...{ authorName, authorLink }} />}
-      {title && (
-        <h1>
-          {title}
-        </h1>
-      )}
+      {title && <h1>{title}</h1>}
     </header>
   )
 }

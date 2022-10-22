@@ -45,83 +45,81 @@ class AnnouncementIndexMap extends React.Component {
     return (
       <div id='announcement-index-map'>
         <div id='google-map-container'>
-          <div 
-            ref={this.miniList}
-            id='mini-list'
-          >
-            {announcements !== null && announcements.map((announcement, index) => {
-              const {
-                name,
-                link
-              } = announcement
+          <div ref={this.miniList} id='mini-list'>
+            {announcements !== null &&
+              announcements.map((announcement, index) => {
+                const { name, link } = announcement
 
-              const tileProps = {
-                name,
-                link
-              }
+                const tileProps = {
+                  name,
+                  link,
+                }
 
-              return <ListingTile
-                venue='rootList'
-                key={index}
-                index={index}
-                id={announcement.id}
-                latitude={announcement.latitude}
-                longitude={announcement.longitude}
-                pictures={announcement.pictures}
-                category={announcement.category}
-                area={announcement.area}
-                grossRentAmount={announcement.grossRentAmount}
-                rentCurrency={announcement.rentCurrency}
-                lang={lang}
-                langHandler={this.langHandler}
-                changeData={changeData}
-                changeControl={changeControl}
-                isMobile={isMobile}
-                path={announcement.path}
-                title={announcement.title}
-                miniListFarthestScrollTop={miniListFarthestScrollTop}
-                miniListFarthestScrollLeft={miniListFarthestScrollLeft}
-                locality={announcement.locality}
-                sublocality={announcement.sublocality}
-                changeHoveredTileId={changeHoveredTileId}
-                {...tileProps}
-              />
-            })}
+                return (
+                  <ListingTile
+                    venue='rootList'
+                    key={index}
+                    index={index}
+                    id={announcement.id}
+                    latitude={announcement.latitude}
+                    longitude={announcement.longitude}
+                    pictures={announcement.pictures}
+                    category={announcement.category}
+                    area={announcement.area}
+                    grossRentAmount={announcement.grossRentAmount}
+                    rentCurrency={announcement.rentCurrency}
+                    lang={lang}
+                    langHandler={this.langHandler}
+                    changeData={changeData}
+                    changeControl={changeControl}
+                    isMobile={isMobile}
+                    path={announcement.path}
+                    title={announcement.title}
+                    miniListFarthestScrollTop={miniListFarthestScrollTop}
+                    miniListFarthestScrollLeft={miniListFarthestScrollLeft}
+                    locality={announcement.locality}
+                    sublocality={announcement.sublocality}
+                    changeHoveredTileId={changeHoveredTileId}
+                    {...tileProps}
+                  />
+                )
+              })}
           </div>
           <div id='google-map' />
-          {tile && Object.keys(tile).length > 1 &&
-          <div className='listing-tile-container'>
-            <ListingTile
-              venue='map'
-              lang={lang}
-              id={tile.id}
-              category={tile.category}
-              pictures={tile.pictures}
-              area={tile.area}
-              netRentAmount={tile.netRentAmount}
-              netRentAmountPerSqm={tile.netRentAmountPerSqm}
-              grossRentAmount={tile.grossRentAmount}
-              grossRentAmountPerSqm={tile.grossRentAmountPerSqm}
-              rooms={tile.rooms}
-              rentCurrency={tile.rentCurrency}
-              floor={tile.floor}
-              totalFloors={tile.totalFloors}
-              availabilityDate={tile.availabilityDate}
-              isMobile={isMobile}
-              changeApp={changeApp}
-              path={tile.path}
-              title={tile.title}
-              locality={tile.locality}
-              sublocality={tile.sublocality}
-              description={this.langHandler({ pl: tile.polishDescription, en: tile.englishDescription })}
-              name={tile.name}
-              link={tile.link}
-              phone={tile.phone}
-              features={tile.features}
-              furnishings={tile.furnishings}
-              {...tileComponents}
-            />
-          </div>}
+          {tile && Object.keys(tile).length > 1 && (
+            <div className='listing-tile-container'>
+              <ListingTile
+                venue='map'
+                lang={lang}
+                id={tile.id}
+                category={tile.category}
+                pictures={tile.pictures}
+                area={tile.area}
+                netRentAmount={tile.netRentAmount}
+                netRentAmountPerSqm={tile.netRentAmountPerSqm}
+                grossRentAmount={tile.grossRentAmount}
+                grossRentAmountPerSqm={tile.grossRentAmountPerSqm}
+                rooms={tile.rooms}
+                rentCurrency={tile.rentCurrency}
+                floor={tile.floor}
+                totalFloors={tile.totalFloors}
+                availabilityDate={tile.availabilityDate}
+                isMobile={isMobile}
+                changeApp={changeApp}
+                path={tile.path}
+                title={tile.title}
+                locality={tile.locality}
+                sublocality={tile.sublocality}
+                description={this.langHandler({ pl: tile.polishDescription, en: tile.englishDescription })}
+                name={tile.name}
+                link={tile.link}
+                phone={tile.phone}
+                features={tile.features}
+                furnishings={tile.furnishings}
+                {...tileComponents}
+              />
+            </div>
+          )}
         </div>
       </div>
     )

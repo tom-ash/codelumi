@@ -31,7 +31,7 @@
   .index-link {
     position: relative;
     float: left;
-    transition: .2s ease-in;
+    transition: 0.2s ease-in;
     .link-data {
       margin-top: 12px;
       height: 64px;
@@ -51,7 +51,7 @@
       font-size: 16px;
       font-weight: 500;
       color: #363636;
-      transition: .2s ease-in;      
+      transition: 0.2s ease-in;
     }
     .modified-on {
       bottom: 54px;
@@ -77,7 +77,7 @@
       width: 100%;
       aspect-ratio: 1.905;
       box-shadow: lightgray 0px 0px 0px;
-      transition: .2s ease-in;
+      transition: 0.2s ease-in;
     }
     &:hover {
       img {
@@ -86,7 +86,7 @@
         transform: scale(1.02);
       }
       .title {
-        color: #D35400;
+        color: #d35400;
       }
     }
     width: 32.5%;

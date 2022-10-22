@@ -25,7 +25,7 @@
     border-radius: 18px;
     background: rgba(236, 240, 241, 0.96);
     white-space: nowrap;
-    overflow:hidden;
+    overflow: hidden;
     &.open {
       width: 190px;
       transition: 0.72s ease-out;
@@ -35,7 +35,7 @@
       left: 0;
       width: 36px;
       height: 36px;
-      background: #28B463;
+      background: #28b463;
       border-radius: 18px;
       padding: 9px;
       svg {

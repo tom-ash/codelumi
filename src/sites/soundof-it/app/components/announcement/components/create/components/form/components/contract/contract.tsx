@@ -4,15 +4,15 @@ import styles from './styles/styles.scss'
 import ContractSelector from './components/contract-selector/contract-selector'
 
 interface ContractInterface {
-  setStore(newStore: object): void,
-  b2b: boolean,
-  b2bMax: number,
-  b2bMin: number,
-  employment: boolean,
-  employmentMax: number,
-  employmentMin: number,
-  civilContract: boolean,
-  civilContractMax: number,
+  setStore(newStore: object): void
+  b2b: boolean
+  b2bMax: number
+  b2bMin: number
+  employment: boolean
+  employmentMax: number
+  employmentMin: number
+  civilContract: boolean
+  civilContractMax: number
   civilContractMin: number
 }
 
@@ -29,38 +29,38 @@ const Contract = (props: ContractInterface) => {
     employmentMax,
     civilContract,
     civilContractMin,
-    civilContractMax
+    civilContractMax,
   } = props
 
   const contracts = [
     {
-      contractKey: 'b2b', 
+      contractKey: 'b2b',
       contractValue: b2b,
       label: 'B2B',
       contractMin: b2bMin,
-      contractMax: b2bMax
+      contractMax: b2bMax,
     },
     {
-      contractKey: 'employment', 
+      contractKey: 'employment',
       contractValue: employment,
       label: 'Permanent Employment',
       contractMin: employmentMin,
-      contractMax: employmentMax
+      contractMax: employmentMax,
     },
     {
-      contractKey: 'civilContract', 
+      contractKey: 'civilContract',
       contractValue: civilContract,
       label: 'Mandate',
       contractMin: civilContractMin,
-      contractMax: civilContractMax
-    }
+      contractMax: civilContractMax,
+    },
   ] as const
 
   type Contract = {
-    contractKey: 'b2b' | 'employment' | 'civilContract',
-    contractValue: boolean,
-    label: string,
-    contractMin: number,
+    contractKey: 'b2b' | 'employment' | 'civilContract'
+    contractValue: boolean
+    label: string
+    contractMin: number
     contractMax: number
   }
 
@@ -73,12 +73,10 @@ const Contract = (props: ContractInterface) => {
 
   return (
     <div>
-      <h2>
-        Contract
-      </h2>
+      <h2>Contract</h2>
       {contracts.map((contract: Contract, index) => (
-        <ContractSelector {...{...contract, setStore }} key={index} />)
-      )}
+        <ContractSelector {...{ ...contract, setStore }} key={index} />
+      ))}
     </div>
   )
 }

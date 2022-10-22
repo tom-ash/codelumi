@@ -11,7 +11,7 @@ export function CreateButton(props: CreateButtonProps) {
   const label = 'Create'
   const onClick = create
   const buttonProps = { classNames, label, onClick }
-  
+
   return <ManagedButton {...buttonProps} />
 }
 

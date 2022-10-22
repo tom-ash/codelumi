@@ -1,8 +1,8 @@
-import React from "react"
-import { ManagedCheckbox } from "managed-inputs"
+import React from 'react'
+import { ManagedCheckbox } from 'managed-inputs'
 
 interface SchemaModeSwtichProps {
-  schemaMode: string,
+  schemaMode: string
   changeInputs(props: object): void
 }
 
@@ -12,9 +12,7 @@ const SchemaModeSwtich = (props: SchemaModeSwtichProps) => {
   const checked = schemaMode === 'auto'
   const label = (
     <>
-      <div className={`text ${checked ? 'checked' : 'unchecked'}`}>
-        Auto Schema
-      </div>
+      <div className={`text ${checked ? 'checked' : 'unchecked'}`}>Auto Schema</div>
       <div className={`body ${checked ? 'checked' : 'unchecked'}`}>
         <div className='dot' />
       </div>

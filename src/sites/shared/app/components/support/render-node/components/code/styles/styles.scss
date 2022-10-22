@@ -12,7 +12,7 @@ pre {
   font-size: 15px;
   code {
     padding: 0;
-    color: #E5E7E9;
+    color: #e5e7e9;
 
     &.pgsql {
       .hljs-keyword {
@@ -20,7 +20,7 @@ pre {
       }
 
       .hljs-type {
-        color: #AF7AC5;
+        color: #af7ac5;
       }
 
       .hljs-number {
@@ -28,11 +28,11 @@ pre {
       }
 
       .hljs-string {
-        color: rgb(200, 140, 120); 
+        color: rgb(200, 140, 120);
       }
-      
+
       .hljs-built_in {
-        color: #45B39D;
+        color: #45b39d;
       }
     }
 
@@ -42,21 +42,21 @@ pre {
 
     &.xml {
       .hljs-meta {
-        color: #B3B6B7;
+        color: #b3b6b7;
       }
-  
+
       .hljs-tag {
         color: rgb(120, 120, 120);
       }
-  
+
       .hljs-name {
         color: rgb(90, 150, 215);
       }
-  
+
       .hljs-attr {
         color: rgb(150, 220, 250);
       }
-  
+
       .hljs-string {
         color: rgb(200, 140, 120);
       }
@@ -66,7 +66,8 @@ pre {
       }
     }
 
-    &.javascript, &.typescript {
+    &.javascript,
+    &.typescript {
       .hljs-meta {
         color: rgb(180, 200, 240);
       }
@@ -114,7 +115,7 @@ pre {
 
         // Class name.
         &.class_ {
-          color: rgb(80, 200, 180)
+          color: rgb(80, 200, 180);
         }
       }
 
@@ -160,7 +161,7 @@ pre {
 
       .hljs-class {
         .hljs-title {
-          color: rgb(80, 200, 180)
+          color: rgb(80, 200, 180);
         }
       }
 

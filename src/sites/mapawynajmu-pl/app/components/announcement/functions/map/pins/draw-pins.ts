@@ -19,13 +19,7 @@ function drawPins(currentListingId: number) {
   announcements.map(announcement => {
     // @ts-ignore
     const { changeRoute } = this.context
-    const {
-      id,
-      category: categoryNumber,
-      latitude,
-      longitude,
-      path,
-    } = announcement
+    const { id, category: categoryNumber, latitude, longitude, path } = announcement
     const category = categories.find(category => category.number === categoryNumber)
     // @ts-ignore
     const pin = category.pin
@@ -34,7 +28,7 @@ function drawPins(currentListingId: number) {
 
     if (+currentListingId === +announcement.id) classNames.push('current')
 
-    const htmlContent = (`
+    const htmlContent = `
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="${svg && svg.viewBox}"
@@ -44,23 +38,24 @@ function drawPins(currentListingId: number) {
           d="${svg && svg.pathData}"
         />
       </svg>`
-    )
 
-    pins.push(drawPin({
-      id,
-      htmlContent,
-      className: classNames.join(' '),
-      latitude,
-      longitude,
-      path,
-      changeControl,
-      changeData,
-      changeRoute, 
-    })
-  )})
+    pins.push(
+      drawPin({
+        id,
+        htmlContent,
+        className: classNames.join(' '),
+        latitude,
+        longitude,
+        path,
+        changeControl,
+        changeData,
+        changeRoute,
+      })
+    )
+  })
 
   // @ts-ignore
   changeData({ pins })
 }
-  
+
 export default drawPins

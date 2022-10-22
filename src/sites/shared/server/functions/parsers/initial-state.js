@@ -16,28 +16,29 @@ function initialStateParserV2(state) {
 
       const mainObject = parsedState[mainKey]
       if (!mainObject) {
-        return parsedState = { ...parsedState, [mainKey]: { [middleKey]: { [detailKey]: state[stateKey] }}}
+        return (parsedState = { ...parsedState, [mainKey]: { [middleKey]: { [detailKey]: state[stateKey] } } })
       }
-  
+
       const middleObj = parsedState[mainKey][middleKey]
       if (!middleObj) {
-        return parsedState = {
+        return (parsedState = {
           ...parsedState,
-          [mainKey]: { ...mainObject, [middleKey]: { [detailKey]: state[stateKey] }}
-        }
+          [mainKey]: { ...mainObject, [middleKey]: { [detailKey]: state[stateKey] } },
+        })
       }
-  
+
       const detailObj = parsedState[mainKey][middleKey][detailKey]
       if (!detailObj) {
-        return parsedState = {
+        return (parsedState = {
           ...parsedState,
           [mainKey]: {
-            ...mainObject, [middleKey]: {
+            ...mainObject,
+            [middleKey]: {
               ...middleObj,
-              [detailKey]: state[stateKey]
-            }
-          }
-        }
+              [detailKey]: state[stateKey],
+            },
+          },
+        })
       }
     } else if (nestedKeys.length === 2) {
       mainKey = nestedKeys[nestedKeys.length - 2]
@@ -45,15 +46,15 @@ function initialStateParserV2(state) {
 
       const mainObject = parsedState[mainKey]
       if (!mainObject) {
-        return parsedState = { ...parsedState, [mainKey]: { [middleKey]: state[stateKey]}}
+        return (parsedState = { ...parsedState, [mainKey]: { [middleKey]: state[stateKey] } })
       }
-  
+
       const middleObj = parsedState[mainKey][middleKey]
       if (!middleObj) {
-        return parsedState = {
+        return (parsedState = {
           ...parsedState,
-          [mainKey]: { ...mainObject, [middleKey]: state[stateKey]}
-        }
+          [mainKey]: { ...mainObject, [middleKey]: state[stateKey] },
+        })
       }
     }
   })

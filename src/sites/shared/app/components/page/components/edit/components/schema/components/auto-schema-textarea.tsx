@@ -1,8 +1,8 @@
-import React from "react"
-import { ManagedTextarea } from "managed-inputs"
+import React from 'react'
+import { ManagedTextarea } from 'managed-inputs'
 
 interface AutoSchemaTextareaProps {
-  autoSchema: string,
+  autoSchema: string
   changeInputs(props: object): void
 }
 

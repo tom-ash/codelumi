@@ -6,7 +6,7 @@ function matchStateToRoute({ pathname }) {
   matchStateToRouteGeneric.call(this, {
     clientUrl,
     apiUrl,
-    pathname
+    pathname,
   })
 }
 

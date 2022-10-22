@@ -4,12 +4,9 @@ interface GetPinContentProps {
 }
 
 function getPinContent(props: GetPinContentProps) {
-  const {
-    viewBox,
-    pathData,
-  } = props
-  
-  return (`
+  const { viewBox, pathData } = props
+
+  return `
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="${viewBox}"
@@ -19,7 +16,6 @@ function getPinContent(props: GetPinContentProps) {
         d="${pathData}"
       />
     </svg>`
-  )
 }
 
 export default getPinContent

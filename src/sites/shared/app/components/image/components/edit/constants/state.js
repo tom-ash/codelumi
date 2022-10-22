@@ -3,9 +3,9 @@ export const control = {
 }
 
 export const inputs = {
-// TODO
+  // TODO
 }
 
 export const data = {
-  storageUrlRandomizedQuaryParameter: Math.random()
+  storageUrlRandomizedQuaryParameter: Math.random(),
 }

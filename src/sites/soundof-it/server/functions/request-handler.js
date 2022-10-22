@@ -16,7 +16,7 @@ function handleRequest(req, res) {
     apiUrl: API_URL,
     buildUrl,
     appRenderer,
-    siteName: SITE_NAME
+    siteName: SITE_NAME,
   })
 }
 

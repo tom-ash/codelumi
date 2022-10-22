@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import SVG from './svg/svg'
 
 type InfoProps = {
@@ -6,9 +6,7 @@ type InfoProps = {
 }
 
 export function Info(props: InfoProps) {
-  const {
-    message
-  } = props
+  const { message } = props
 
   return (
     <div className='info'>

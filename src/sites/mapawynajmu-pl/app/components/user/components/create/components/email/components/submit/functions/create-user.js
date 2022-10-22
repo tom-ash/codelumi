@@ -8,24 +8,26 @@ function createUser(userObject) {
 
   fetch(API_URL + CREATE_API_ROUTE, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Lang': lang },
-    body: JSON.stringify(userObject)
+    headers: { 'Content-Type': 'application/json', Lang: lang },
+    body: JSON.stringify(userObject),
   })
-  .then(response => {
-    if (response.status == 201) return response.json()
-    
-    throw new Error('Something went wrong.')
-  },
-  networkError => console.dir(networkError.message))
-  .then(jsonResponse => {
-    const { changeRoute } = this.context
-    const { confirmationToken, path } = jsonResponse
+    .then(
+      response => {
+        if (response.status == 201) return response.json()
 
-    setConfirmationTokenCookie(confirmationToken)
-    changeRoute({ href: buildUrl({ path }) })
-    return changeControl({ connecting: false })
-  })
-  .catch(e => console.dir(e))
+        throw new Error('Something went wrong.')
+      },
+      networkError => console.dir(networkError.message)
+    )
+    .then(jsonResponse => {
+      const { changeRoute } = this.context
+      const { confirmationToken, path } = jsonResponse
+
+      setConfirmationTokenCookie(confirmationToken)
+      changeRoute({ href: buildUrl({ path }) })
+      return changeControl({ connecting: false })
+    })
+    .catch(e => console.dir(e))
 }
 
 export default createUser

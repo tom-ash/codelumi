@@ -6,7 +6,7 @@ export function nameManager() {
     classNames: { container: 'form-input text' },
     label: langHandler({ pl: 'Nazwa strony', en: 'Page Name' }),
     value,
-    onChange: value => changeInputs({ inputtedName: value })
+    onChange: value => changeInputs({ inputtedName: value }),
   }
 }
 

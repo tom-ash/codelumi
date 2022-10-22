@@ -3,7 +3,7 @@ import { createClientServerParams } from '../../../constants/client-server-param
 function buildAnouncement() {
   const serverParams = {}
   if (this.props.id) serverParams.id = this.props.id
-  createClientServerParams.map(param => serverParams[param.server] = this.props[param.client])
+  createClientServerParams.map(param => (serverParams[param.server] = this.props[param.client]))
   serverParams.availabilityDate = this.props.availabilityDate
   serverParams.features = buildElements.call(this, 'features')
   serverParams.furnishings = buildElements.call(this, 'furnishings')
@@ -15,7 +15,7 @@ function buildAnouncement() {
 function buildElements(type) {
   const elements = []
   for (let key in this.props[type]) {
-    if ((this.props[type])[key] === true) elements.push(key)
+    if (this.props[type][key] === true) elements.push(key)
   }
   return elements
 }

@@ -12,7 +12,7 @@ class UserEditAccountCell extends React.Component {
     super(props)
     this.state = {
       ...initialReducerState,
-      inputClass: 'inputs-container hidden'
+      inputClass: 'inputs-container hidden',
     }
     this.centralManager = centralManager.bind(this)
     this.componentDidUpdate = lifecycle.componentDidUpdate.bind(this)
@@ -32,31 +32,20 @@ class UserEditAccountCell extends React.Component {
           </div>
           <div className='text'>
             <div>
-              <div className='title'>
-                {this.centralManager('title')}
-              </div>
-              <div className='value'>
-                {this.centralManager('currentValue')}
-              </div>
+              <div className='title'>{this.centralManager('title')}</div>
+              <div className='value'>{this.centralManager('currentValue')}</div>
             </div>
           </div>
           <div className='float-clear' />
         </div>
-        <div
-        className={this.centralManager('triggerClass')}
-        onClick={this.centralManager('triggerOnClick')}>
+        <div className={this.centralManager('triggerClass')} onClick={this.centralManager('triggerOnClick')}>
           <div>
-            {this.centralManager('triggerIcon')}          
+            {this.centralManager('triggerIcon')}
             <span>{this.centralManager('triggerText')}</span>
           </div>
         </div>
         <div className={this.centralManager('editClass')}>
-          <div className={this.state.inputClass}>
-            {
-            this.state.stage !== null &&
-            this.centralManager('editInput')
-            }
-          </div>
+          <div className={this.state.inputClass}>{this.state.stage !== null && this.centralManager('editInput')}</div>
         </div>
       </div>
     )

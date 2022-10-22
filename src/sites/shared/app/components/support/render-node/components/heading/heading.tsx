@@ -1,10 +1,7 @@
 import React from 'react'
 
 const Heading = (props: HeadingProps) => {
-  const {
-    rank,
-    heading
-  } = props
+  const { rank, heading } = props
 
   const objectHeading = typeof heading === 'object'
   const tag = `h${rank}`

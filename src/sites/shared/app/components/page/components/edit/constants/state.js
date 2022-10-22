@@ -1,6 +1,6 @@
 export const control = {
   fetching: false,
-  nav: 'body'
+  nav: 'body',
 }
 
 export const inputs = {
@@ -21,11 +21,11 @@ export const inputs = {
   autoSchema: null,
   manualSchema: null,
   publishedOn: null,
-  modifiedOn: null
+  modifiedOn: null,
 }
 
 export const data = {
   name: null,
   langVerUrls: null,
-  updated: true
+  updated: true,
 }

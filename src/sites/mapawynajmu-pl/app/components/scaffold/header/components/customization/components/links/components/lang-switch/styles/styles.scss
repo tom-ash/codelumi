@@ -6,8 +6,8 @@
   line-height: 60px;
   width: 60px;
   text-align: center;
-  border-left: 1px solid #E5E7E9;
-  border-right: 1px solid #E5E7E9;
+  border-left: 1px solid #e5e7e9;
+  border-right: 1px solid #e5e7e9;
 
   .cover {
     position: fixed;
@@ -24,10 +24,10 @@
     left: 10px;
     text-transform: uppercase;
     cursor: pointer;
-    color: #17202A;
+    color: #17202a;
     svg {
       display: inline-block;
-      fill: #17202A;
+      fill: #17202a;
       height: 12px;
     }
   }
@@ -38,16 +38,16 @@
     background: white;
     line-height: 36px;
     text-align: center;
-    box-shadow: 1px 1px 5px rgba(black, .2);
+    box-shadow: 1px 1px 5px rgba(black, 0.2);
     height: 0;
     width: 58px;
     overflow: hidden;
-    transition: all .2s;
+    transition: all 0.2s;
     z-index: 2;
     font-size: 14px;
     a {
       &:hover {
-        background-color: #F8F9F9;
+        background-color: #f8f9f9;
       }
     }
     &.show {

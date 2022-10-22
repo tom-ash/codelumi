@@ -25,14 +25,12 @@ class UserCreateConsents extends React.Component {
     return (
       <div id='user-create-consents-container'>
         <div className={this.containerClassHandler()}>
-          <ManagedCheckbox {...this.termsAndPrivacyConsentManager()}/>
+          <ManagedCheckbox {...this.termsAndPrivacyConsentManager()} />
         </div>
-        <div className='error'>
-          {this.errorTextProvider()}
-        </div>
+        <div className='error'>{this.errorTextProvider()}</div>
       </div>
     )
   }
 }
 
-export default connect(mappers.mapStateToProps, mappers.mapDispatchToProps)(UserCreateConsents);
+export default connect(mappers.mapStateToProps, mappers.mapDispatchToProps)(UserCreateConsents)

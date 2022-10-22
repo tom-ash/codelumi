@@ -3,13 +3,10 @@ import clientUrl from '../../../../shared/constants/urls/client.js'
 import apiUrl from '../../../../shared/constants/urls/api.js'
 
 function matchStateToRoute(props) {
-  const {
-    pathname,
-    isSSR
-  } = props
+  const { pathname, isSSR } = props
 
   const customHeaders = {
-    'Is-Listings-Obsolete': `${!!window.areListingsObsolete}`
+    'Is-Listings-Obsolete': `${!!window.areListingsObsolete}`,
   }
 
   window.areListingsObsolete = false

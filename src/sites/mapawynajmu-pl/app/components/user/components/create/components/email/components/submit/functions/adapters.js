@@ -1,6 +1,12 @@
 import { hashPassword } from '../../../../../../../functions/shared.js'
 import { parser as consentsParser } from '../../../../consents/functions/parser'
-import { accountTypeValidator, nameValidator, phoneValidator, emailValidator, passwordValidator } from '../../inputs/functions/validators.js'
+import {
+  accountTypeValidator,
+  nameValidator,
+  phoneValidator,
+  emailValidator,
+  passwordValidator,
+} from '../../inputs/functions/validators.js'
 import termsAndPrivacyConsentValidator from '../../../../consents/functions/validators.js'
 
 export function buildUserObject() {
@@ -25,11 +31,13 @@ function prepareUserObject() {
     email: (email || '').toLowerCase(),
     password: document.getElementById('user-create-email-password').value,
     termsAndPrivacyConsent,
-    ...accountType === 'private' ? {
-      firstName: document.getElementById('user-create-email-first-name').value
-    } : {
-      businessName: document.getElementById('user-create-email-business-name').value,
-    }
+    ...(accountType === 'private'
+      ? {
+          firstName: document.getElementById('user-create-email-first-name').value,
+        }
+      : {
+          businessName: document.getElementById('user-create-email-business-name').value,
+        }),
   }
 
   return userObject
@@ -44,12 +52,10 @@ function validateUserObject(userObject) {
     emailValidator.call(this, userObject.email),
     passwordValidator.call(this, userObject.password),
     termsAndPrivacyConsentValidator.call(this, userObject.termsAndPrivacyConsent),
-    ...accountType === 'private' ? [
-      nameValidator.call(this, 'firstName', userObject.firstName)
-    ] : [nameValidator.call(this, 'businessName', userObject.businessName)]
+    ...(accountType === 'private'
+      ? [nameValidator.call(this, 'firstName', userObject.firstName)]
+      : [nameValidator.call(this, 'businessName', userObject.businessName)]),
   ]
 
-  return validationArray.every((element => element))
+  return validationArray.every(element => element)
 }
-
-

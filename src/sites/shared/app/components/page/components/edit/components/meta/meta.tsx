@@ -7,25 +7,17 @@ import PageLangInput from './components/page-lang-input'
 import LangAltsGroupInput from './components/lang-alts-group'
 
 interface MetaProps {
-  publishedOn: string,
-  modifiedOn: string,
-  changeInputs(props: object): void,
-  category: string,
-  subcategory: string,
-  pageLang: string,
+  publishedOn: string
+  modifiedOn: string
+  changeInputs(props: object): void
+  category: string
+  subcategory: string
+  pageLang: string
   langAltsGroup: string
 }
 
 const Meta = (props: MetaProps) => {
-  const {
-    publishedOn,
-    modifiedOn,
-    changeInputs,
-    category,
-    subcategory,
-    pageLang,
-    langAltsGroup
-  } = props
+  const { publishedOn, modifiedOn, changeInputs, category, subcategory, pageLang, langAltsGroup } = props
 
   const publishedOnProps = { publishedOn, changeInputs }
   const modifiedOnProps = { modifiedOn, changeInputs }

@@ -2,9 +2,7 @@ export function onArrowClickHandler(e, direction) {
   e.stopPropagation()
   e.preventDefault()
 
-  const {
-    pictures
-  } = this.props
+  const { pictures } = this.props
 
   let statePictures = [...this.state.statePictures]
   let currentPicture
@@ -17,11 +15,11 @@ export function onArrowClickHandler(e, direction) {
     statePictures[currentPicture] = pictures[currentPicture]
   }
 
-  const currentLeft = - currentPicture * this.state.width
+  const currentLeft = -currentPicture * this.state.width
 
   this.setState({
     currentPicture,
     statePictures,
-    currentLeft
+    currentLeft,
   })
 }

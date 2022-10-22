@@ -53,24 +53,60 @@ class App extends React.Component {
     // @ts-ignore
     const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute }
     // @ts-ignore
-    const { render, renderPage, renderImage, renderVisitor, renderAnnouncement, device, links, lang, pageShowData, pageEditData, changeApp } = this.props
+    const {
+      // @ts-ignore
+      render,
+      // @ts-ignore
+      renderPage,
+      // @ts-ignore
+      renderImage,
+      // @ts-ignore
+      renderVisitor,
+      // @ts-ignore
+      renderAnnouncement,
+      // @ts-ignore
+      device,
+      // @ts-ignore
+      links,
+      // @ts-ignore
+      lang,
+      // @ts-ignore
+      pageShowData,
+      // @ts-ignore
+      pageEditData,
+      // @ts-ignore
+      changeApp,
+    } = this.props
     // @ts-ignore
     const urlComposites = { pageShowData, pageEditData }
     // @ts-ignore
-    const sharedProps = { appName: APP_NAME, render, langs: LANGS, links, clientUrl: CLIENT_URL, apiUrl: API_URL, device, lang, changeRoute: this.changeRoute, buildUrl, changeApp, langHandler: this.langHandler }
+    const sharedProps = {
+      appName: APP_NAME,
+      render,
+      langs: LANGS,
+      links,
+      clientUrl: CLIENT_URL,
+      apiUrl: API_URL,
+      device,
+      lang,
+      changeRoute: this.changeRoute,
+      buildUrl,
+      changeApp,
+      langHandler: this.langHandler,
+    }
     const headerProps = { ...sharedProps, urlComposites, Logo, HeaderCustomization, styles: headerStyles }
     const pageProps = { ...sharedProps }
     const imageProps = sharedProps
-    
+
     return (
       <AppContext.Provider value={AppContextValue}>
-        <Header {...headerProps}/>
+        <Header {...headerProps} />
         {/* @ts-ignore */}
         {renderPage && <Page {...pageProps} />}
         {renderVisitor && <Visitor {...sharedProps} />}
         {renderAnnouncement && <Announcement {...sharedProps} />}
         {renderImage && <Image {...imageProps} />}
-        <Footer {...sharedProps}/>
+        <Footer {...sharedProps} />
       </AppContext.Provider>
     )
   }

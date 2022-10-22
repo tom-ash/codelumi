@@ -4,14 +4,7 @@ import getDevice from '../../../shared/functions/getters/device.js'
 import getVisitorState from '../../../shared/functions/getters/visitor-state.js'
 import sitemapSender from '../senders/sitemap.js'
 
-function genericRequestHandler({
-  req,
-  res,
-  clientUrl,
-  apiUrl,
-  appRenderer,
-  siteName
-}) {
+function genericRequestHandler({ req, res, clientUrl, apiUrl, appRenderer, siteName }) {
   const { cookies, originalUrl, headers } = req
   const { access_token: accessToken } = cookies
   const url = getPureUrl(originalUrl)
@@ -25,11 +18,13 @@ function genericRequestHandler({
   routeSender({
     res,
     apiUrl,
-    url, query, device,
+    url,
+    query,
+    device,
     visitorState,
     accessToken,
     appRenderer,
-    siteName
+    siteName,
   })
 }
 

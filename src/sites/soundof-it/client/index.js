@@ -1,4 +1,4 @@
-import 'react-app-polyfill/ie9';
+import 'react-app-polyfill/ie9'
 import React from 'react'
 import { hydrate } from 'react-dom'
 import { loadableReady } from '@loadable/component'

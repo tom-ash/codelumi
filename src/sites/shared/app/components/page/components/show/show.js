@@ -22,9 +22,7 @@ class PageShow extends React.Component {
 
     if (!url) return null
 
-    return (
-      <PageTile { ...tileProps } />
-    )
+    return <PageTile {...tileProps} />
   }
 }
 

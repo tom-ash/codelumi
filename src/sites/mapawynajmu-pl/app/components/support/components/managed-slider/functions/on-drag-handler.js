@@ -1,7 +1,5 @@
 export function onDragHandler(prevState) {
-  const {
-    afterDrag
-  } = this.state
+  const { afterDrag } = this.state
 
   if (afterDrag && !prevState.afterDrag) {
     let currentPicture = Math.abs(Math.round(this.state.currentLeft / this.state.width))
@@ -16,7 +14,7 @@ export function onDragHandler(prevState) {
       afterDrag: false,
       transition: 'all .32s ease-out',
       currentPicture,
-      currentLeft: - currentPicture * this.state.width
+      currentLeft: -currentPicture * this.state.width,
     })
   }
 }

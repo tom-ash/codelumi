@@ -3,53 +3,53 @@ export const params = {
     minMax: false,
     url: {
       pl: 'kategoria',
-      en: 'category'
+      en: 'category',
     },
   },
   area: {
     minMax: true,
     url: {
       pl: 'powierzchnia',
-      en: 'area'
+      en: 'area',
     },
     unit: {
       pl: 'm2',
-      en: 'sqm'
-    }
+      en: 'sqm',
+    },
   },
   rent: {
     minMax: true,
     url: {
       pl: 'miesieczny_czynsz',
-      en: 'monthly_rent'
-    }
+      en: 'monthly_rent',
+    },
   },
   rooms: {
     minMax: true,
     url: {
       pl: 'liczba_pomieszczen',
-      en: 'rooms_amount'
-    }
+      en: 'rooms_amount',
+    },
   },
   floor: {
     minMax: true,
     url: {
       pl: 'pietro',
-      en: 'floor'
-    }
+      en: 'floor',
+    },
   },
   totalFloors: {
     minMax: true,
     url: {
       pl: 'liczba_pieter_budynku',
-      en: 'building_floors_amount'
-    }
+      en: 'building_floors_amount',
+    },
   },
   availabilityDate: {
     minMax: false,
     url: {
       pl: 'dostepnosc_od',
-      en: 'availability_from'
-    }
-  }
+      en: 'availability_from',
+    },
+  },
 }

@@ -8,13 +8,12 @@ function syncRouteData({ apiUrl, url, query, isSSR, customHeaders }) {
   return fetch(`${apiUrl}/sync${query}`, {
     headers: {
       'Content-Type': 'application/json',
-      'Type': isSSR ? 'ssr' : 'csr',
+      Type: isSSR ? 'ssr' : 'csr',
       'Access-Token': getAccessToken(),
       'Route-Url': url,
       ...customHeaders,
-    }
-  })
-  .then(response => {
+    },
+  }).then(response => {
     if (response.ok || response.status === 404) return response.json()
 
     throw new Error('Server Error')

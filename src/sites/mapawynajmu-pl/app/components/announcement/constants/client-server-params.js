@@ -1,63 +1,63 @@
 export const clientServerParams = [
   {
     client: 'id',
-    server: 'id'
+    server: 'id',
   },
   {
     client: 'category',
-    server: 'category'
+    server: 'category',
   },
   {
     client: 'rentCurrency',
-    server: 'rentCurrency'
+    server: 'rentCurrency',
   },
   {
     client: 'netRentAmount',
-    server: 'netRentAmount'
+    server: 'netRentAmount',
   },
   {
     client: 'grossRentAmount',
-    server: 'grossRentAmount'
+    server: 'grossRentAmount',
   },
   {
     client: 'area',
-    server: 'area'
+    server: 'area',
   },
   {
     client: 'rooms',
-    server: 'rooms'
+    server: 'rooms',
   },
   {
     client: 'floor',
-    server: 'floor'
+    server: 'floor',
   },
   {
     client: 'totalFloors',
-    server: 'totalFloors'
+    server: 'totalFloors',
   },
   {
     client: 'polishDescription',
-    server: 'polishDescription'
+    server: 'polishDescription',
   },
   {
     client: 'englishDescription',
-    server: 'englishDescription'
+    server: 'englishDescription',
   },
   {
     client: 'locality',
-    server: 'locality'
+    server: 'locality',
   },
   {
     client: 'sublocality',
-    server: 'sublocality'
+    server: 'sublocality',
   },
   {
     client: 'name',
-    server: 'name'
+    server: 'name',
   },
   {
     client: 'link',
-    server: 'link'
+    server: 'link',
   },
 ]
 
@@ -65,58 +65,58 @@ export const createClientServerParams = [
   ...clientServerParams,
   {
     client: 'picUploads',
-    server: 'pictures'
-  }
+    server: 'pictures',
+  },
 ]
 
 export const showClientServerParams = [
   ...clientServerParams,
   {
     client: 'id',
-    server: 'id'
+    server: 'id',
   },
   {
     client: 'name',
-    server: 'name'
+    server: 'name',
   },
   {
     client: 'phone',
-    server: 'phone'
+    server: 'phone',
   },
   {
     client: 'netRentAmountPerSqm',
-    server: 'netRentAmountPerSqm'
+    server: 'netRentAmountPerSqm',
   },
   {
     client: 'grossRentAmount',
-    server: 'grossRentAmount'
+    server: 'grossRentAmount',
   },
   {
     client: 'grossRentAmountPerSqm',
-    server: 'grossRentAmountPerSqm'
+    server: 'grossRentAmountPerSqm',
   },
   {
     client: 'pictures',
-    server: 'pictures'
+    server: 'pictures',
   },
   {
     client: 'latitude',
-    server: 'latitude'
+    server: 'latitude',
   },
   {
     client: 'longitude',
-    server: 'longitude'
+    server: 'longitude',
   },
   {
     client: 'availabilityDate',
-    server: 'availabilityDate'
+    server: 'availabilityDate',
   },
   {
     client: 'features',
-    server: 'features'
+    server: 'features',
   },
   {
     client: 'furnishings',
-    server: 'furnishings'
+    server: 'furnishings',
   },
 ]

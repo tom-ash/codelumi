@@ -10,7 +10,8 @@
       outline: none;
       transition: 0.18s;
       cursor: pointer;
-      &.hover, &.focus {
+      &.hover,
+      &.focus {
         box-shadow: 0 0 0 1px $touched-border-color;
       }
       .tick {
@@ -31,7 +32,9 @@
       margin-left: 15px;
       cursor: pointer;
       font-size: 15px;
-      &.focus, &.hover, &.value {
+      &.focus,
+      &.hover,
+      &.value {
         color: $touched-color;
       }
       &.checked {

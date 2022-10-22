@@ -1,4 +1,4 @@
-import React, { useContext} from 'react'
+import React, { useContext } from 'react'
 // import { viewAnnouncement } from '../../../../../announcement/functions/view-announcement'
 import AWS_S3_URL from '../../../../../../../shared/constants/urls/aws-s3'
 // import buildUrl from '../../../../../../../shared/functions/builders/url'
@@ -18,14 +18,7 @@ interface LinkProps {
 }
 
 const Link = (props: LinkProps) => {
-  const {
-    id,
-    path,
-    title,
-    lat,
-    lng,
-    pictures,
-  } = props
+  const { id, path, title, lat, lng, pictures } = props
 
   const src = `${AWS_S3_URL}/announcements/${id}/${pictures[0].database}`
   const imgProps = { src, alt: title, className: 'root-list-img' }

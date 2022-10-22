@@ -9,13 +9,9 @@ class Announcement extends React.Component {
   constructor(props) {
     super(props)
   }
-  
+
   render() {
-    const {
-      renderCreate,
-      renderEdit,
-      renderIndex,
-    } = this.props
+    const { renderCreate, renderEdit, renderIndex } = this.props
 
     return (
       <React.Fragment>

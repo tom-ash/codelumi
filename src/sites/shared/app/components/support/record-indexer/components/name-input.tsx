@@ -2,7 +2,7 @@ import React from 'react'
 import { ManagedText } from 'managed-inputs'
 
 interface NameInputProps {
-  recordKey: string,
+  recordKey: string
   changeKey(key: string): void
 }
 
@@ -13,7 +13,7 @@ export function NameInput(props: NameInputProps) {
   const label = 'Key'
   const onChange = (key: string) => changeKey(key)
   const nameInputProps = { value, classNames, label, onChange }
-  
+
   return <ManagedText {...nameInputProps} />
 }
 

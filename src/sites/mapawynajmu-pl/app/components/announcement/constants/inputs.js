@@ -2,61 +2,60 @@ export const inputs = {
   category: {
     all: {
       pl: 'Kategoria',
-      en: 'Category'
-    }
+      en: 'Category',
+    },
   },
-  rent: {
-  },
+  rent: {},
   rentCurrency: {
     all: {
       pl: 'Waluta ceny (czynszu)',
-      en: 'Rent Rurrency'
-    }
+      en: 'Rent Rurrency',
+    },
   },
   rentHeight: {
     create: {
       pl: 'Miesięczna cena',
-      en: 'Monthly Price'
+      en: 'Monthly Price',
     },
     indexMin: {},
-    indexMax: {}
+    indexMax: {},
   },
   area: {
     create: {
       pl: 'Powierzchnia',
-      en: 'Area'
+      en: 'Area',
     },
     indexMin: {},
-    indexMax: {}
+    indexMax: {},
   },
   rooms: {
     create: {
       pl: 'Liczba pomieszczeń',
-      en: 'Rooms amount'
+      en: 'Rooms amount',
     },
     indexMin: {},
-    indexMax: {}
+    indexMax: {},
   },
   floor: {
     create: {
       pl: 'Piętro',
-      en: 'Floor'
+      en: 'Floor',
     },
     indexMin: {},
-    indexMax: {}
+    indexMax: {},
   },
   totalFloors: {
     create: {
       pl: 'Liczba pięter budynku',
-      en: 'Building floors amount'
+      en: 'Building floors amount',
     },
     indexMin: {},
-    indexMax: {}
+    indexMax: {},
   },
   availabilityDate: {
     all: {
       pl: 'Data dostępności',
-      en: 'Availability date'
+      en: 'Availability date',
     },
-  }
+  },
 }

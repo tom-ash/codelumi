@@ -20,7 +20,7 @@ const initialState = {
   cooperationMode: null,
   remote: false,
   hybrid: false,
-  office: false
+  office: false,
 }
 
 export default initialState

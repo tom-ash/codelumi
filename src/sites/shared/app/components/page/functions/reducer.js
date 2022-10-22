@@ -6,5 +6,5 @@ import showReducer from '../components/show/functions/reducer'
 export const pageReducer = combineReducers({
   show: showReducer,
   index: indexReducer,
-  edit: editReducer
+  edit: editReducer,
 })

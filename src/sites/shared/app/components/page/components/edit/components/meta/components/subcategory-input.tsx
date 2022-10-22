@@ -1,8 +1,8 @@
-import React from "react"
-import { ManagedText } from "managed-inputs"
+import React from 'react'
+import { ManagedText } from 'managed-inputs'
 
 interface SubcategoryInputProps {
-  subcategory: string,
+  subcategory: string
   changeInputs(props: object): void
 }
 

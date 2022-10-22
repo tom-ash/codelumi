@@ -1,16 +1,15 @@
-import React from "react"
+import React from 'react'
 import addMarker from '../../functions/add-marker.js'
 
 const AddressInput = props => {
-  const { autocompleteInput, autocompletes, showAutocompletes, setState, langHandler, changeInputs, changeErrors } = props
+  const { autocompleteInput, autocompletes, showAutocompletes, setState, langHandler, changeInputs, changeErrors } =
+    props
 
   return (
     <>
-      {showAutocompletes &&
-      <div
-        className='autocomplete-input-cover'
-        onClick={() => setState({ showAutocompletes: false })}
-      />}
+      {showAutocompletes && (
+        <div className='autocomplete-input-cover' onClick={() => setState({ showAutocompletes: false })} />
+      )}
       <input
         className='autocomplete-input'
         onFocus={() => setState({ showAutocompletes: true })}
@@ -38,12 +37,14 @@ const AddressInput = props => {
           const sessionToken = window.sessionToken
           const autocompleteService = new google.maps.places.AutocompleteService()
 
-          autocompleteService.getPlacePredictions({ input, componentRestrictions: { country: 'pl' }, sessionToken },
-          autocompletes => {
-            if (!autocompletes) return setState({ autocompletes: [] })
+          autocompleteService.getPlacePredictions(
+            { input, componentRestrictions: { country: 'pl' }, sessionToken },
+            autocompletes => {
+              if (!autocompletes) return setState({ autocompletes: [] })
 
-            setState({ autocompletes })
-          })
+              setState({ autocompletes })
+            }
+          )
         }}
       />
     </>

@@ -16,10 +16,10 @@ export const mapStateToProps = store => {
     amount,
     announcements,
     renderMy,
-    routeSynced
+    routeSynced,
   }
 }
-    
+
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
@@ -29,6 +29,6 @@ export const mapDispatchToProps = dispatch => {
     changeCreateData: value => dispatch({ type: 'announcement/create/data', value }),
     resetControl: value => dispatch({ type: 'announcement/index/control/reset', value }),
     resetInputs: value => dispatch({ type: 'announcement/index/inputs/reset', value }),
-    resetData: value => dispatch({ type: 'announcement/index/data/reset', value })
+    resetData: value => dispatch({ type: 'announcement/index/data/reset', value }),
   }
 }

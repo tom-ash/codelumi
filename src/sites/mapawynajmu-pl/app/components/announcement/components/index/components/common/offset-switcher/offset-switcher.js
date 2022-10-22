@@ -2,17 +2,14 @@ import React from 'react'
 import WindmillSpinner from '../../../../../../support/components/spinner/components/windmill/windmill'
 import scrollToTop from '../../../../../../../functions/scrollers/instant-scroll'
 
-export function OffsetSwitcher({
-  langHandler, changeInputs, changeControl, offset, amount, classNames, scrollTop
-}) {
-
+export function OffsetSwitcher({ langHandler, changeInputs, changeControl, offset, amount, classNames, scrollTop }) {
   let className = 'offset-switcher'
   if (classNames) className += ` ${classNames}`
 
   if (amount === null) {
     return (
       <div className={className}>
-        <WindmillSpinner spinnerClass='very-small-windmill-spinner'/>
+        <WindmillSpinner spinnerClass='very-small-windmill-spinner' />
       </div>
     )
   }
@@ -20,38 +17,34 @@ export function OffsetSwitcher({
   if (amount <= 50) {
     className += ' only-amount'
 
-    return (
-      <div className={className}>
-        {amount}
-      </div>
-    )
+    return <div className={className}>{amount}</div>
   }
 
   return (
     <div className={className}>
-      {offset !== 0 &&
-      <div
-        className='switch min'
-        onClick = {() => {
-          if (scrollTop) scrollToTop()
-          changeInputs({ offset: offset - 50 })
-          changeControl({ fetch: true })
-        }}
-      >
-      </div>}
+      {offset !== 0 && (
+        <div
+          className='switch min'
+          onClick={() => {
+            if (scrollTop) scrollToTop()
+            changeInputs({ offset: offset - 50 })
+            changeControl({ fetch: true })
+          }}
+        ></div>
+      )}
       <div className='text'>
         {offsetCounter(offset, amount)} {langHandler({ pl: 'z', en: 'of' })} {amount}
       </div>
-      {offset + 50 < amount &&
-      <div
-        className='switch max'
-        onClick = {() => {
-          if (scrollTop) scrollToTop()
-          changeInputs({ offset: offset + 50 })
-          changeControl({ fetch: true })
-        }}
-      >
-      </div>}
+      {offset + 50 < amount && (
+        <div
+          className='switch max'
+          onClick={() => {
+            if (scrollTop) scrollToTop()
+            changeInputs({ offset: offset + 50 })
+            changeControl({ fetch: true })
+          }}
+        ></div>
+      )}
       <div className='float-clear' />
     </div>
   )

@@ -20,10 +20,8 @@ class UserEditAccountPhoneNumber extends React.Component {
   render() {
     return (
       <div>
-        <div className='monit'>
-          {monit.pl}
-        </div>
-        <ManagedSelect {...this.phoneCodeManager()}/>
+        <div className='monit'>{monit.pl}</div>
+        <ManagedSelect {...this.phoneCodeManager()} />
         <ManagedText {...this.bodyManager()} />
         <ManagedButton {...this.buttonManager()} />
       </div>

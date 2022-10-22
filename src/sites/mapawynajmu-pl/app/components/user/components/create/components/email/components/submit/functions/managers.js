@@ -7,7 +7,7 @@ import { buildUserObject } from './adapters.js'
 
 export function buttonManager() {
   const { connecting } = this.props
-  
+
   return {
     classNames: { container: 'form-input button' },
     label: (
@@ -23,6 +23,6 @@ export function buttonManager() {
 
       createUser.call(this, userObject)
       sendGaEvent(analyticEvent)
-    }
+    },
   }
 }

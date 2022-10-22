@@ -66,13 +66,13 @@
     .consent {
       margin: 35px 0 0 0;
       line-height: 24px;
-      color: #212F3D;
+      color: #212f3d;
       .form-input {
         &.radio {
           float: left;
           margin: 15px 30px 15px 0;
           line-height: 16px;
-          color: #5D6D7E;
+          color: #5d6d7e;
           cursor: pointer;
           .input {
             float: left;
@@ -81,16 +81,16 @@
             border-radius: 8px;
             margin-right: 12px;
             cursor: pointer;
-            border: 2px solid #5D6D7E;
+            border: 2px solid #5d6d7e;
             &.checked {
-              border: 2px solid #212F3D;
+              border: 2px solid #212f3d;
             }
             .tick {
               width: 8px;
               height: 8px;
               border-radius: 4px;
               margin: 2px;
-              background: #212F3D;
+              background: #212f3d;
             }
           }
           .label {
@@ -98,7 +98,7 @@
             font-size: 16px;
             line-height: 16px;
             &.checked {
-              color: #212F3D;
+              color: #212f3d;
             }
           }
         }

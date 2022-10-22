@@ -8,18 +8,13 @@ import removePin from '../../../../../functions/map/pins/remove-pin'
 const options = {
   center: {
     lat: 52,
-    lng: 19
+    lng: 19,
   },
-  zoom: 5.8
+  zoom: 5.8,
 }
 
 export function componentDidMount() {
-  const {
-    shouldInitializeMap,
-    isMapInitialized,
-    googleMapsScriptLoaded,
-    changeControl,
-  } = this.props
+  const { shouldInitializeMap, isMapInitialized, googleMapsScriptLoaded, changeControl } = this.props
 
   setShouldInitializeMap({
     isMapInitialized,
@@ -29,27 +24,28 @@ export function componentDidMount() {
   })
 }
 
-export function componentDidUpdate(prevProps) {  const {
-  shouldInitializeMap: prevShouldInitializeMap,
-  latitude: prevLatitude,
-  longitude: prevLongitude,
-  category: prevCategory,
-} = prevProps
+export function componentDidUpdate(prevProps) {
+  const {
+    shouldInitializeMap: prevShouldInitializeMap,
+    latitude: prevLatitude,
+    longitude: prevLongitude,
+    category: prevCategory,
+  } = prevProps
 
-const {
-  shouldInitializeMap,
-  isMapInitialized,
-  googleMapsScriptLoaded,
-  changeControl,
-  changeData,
-  mapOptions,
-  isMobile,
-  latitude,
-  longitude,
-  pin,
-  svgs,
-  category,
-} = this.props
+  const {
+    shouldInitializeMap,
+    isMapInitialized,
+    googleMapsScriptLoaded,
+    changeControl,
+    changeData,
+    mapOptions,
+    isMobile,
+    latitude,
+    longitude,
+    pin,
+    svgs,
+    category,
+  } = this.props
   setShouldInitializeMap({
     isMapInitialized,
     shouldInitializeMap,
@@ -75,15 +71,13 @@ const {
         longitude,
         svgs,
         category,
-      })
+      }),
     })
   }
 }
 
 export function componentWillUnmount() {
-  const {
-    pin,
-  } = this.props
+  const { pin } = this.props
 
   if (pin) removePin(pin)
   removeGoogleMapListeners.call(this)

@@ -5,10 +5,10 @@ export const mapStateToProps = store => {
     connecting: store.user.destroy.control.connecting,
     stage: store.user.destroy.control.stage,
     step: store.user.destroy.control.step,
-    error: store.user.destroy.errors.verification
+    error: store.user.destroy.errors.verification,
   }
 }
-    
+
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
@@ -17,7 +17,6 @@ export const mapDispatchToProps = dispatch => {
     resetControl: value => dispatch({ type: 'user/destroy/control/reset', value }),
     changeErrors: value => dispatch({ type: 'user/destroy/errors', value }),
     resetErrors: value => dispatch({ type: 'user/destroy/errors/reset', value }),
-    dispatch
+    dispatch,
   }
 }
-    

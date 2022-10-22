@@ -1,12 +1,14 @@
 const initialState = {
   tutorials: [],
-  articles: []
+  articles: [],
 }
 
 const indexReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'page/index': return { ...state, ...action.value }
-    default: return state
+    case 'page/index':
+      return { ...state, ...action.value }
+    default:
+      return state
   }
 }
 

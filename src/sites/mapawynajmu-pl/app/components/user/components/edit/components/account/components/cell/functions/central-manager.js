@@ -10,17 +10,28 @@ import SVG from '../../../../../../../../support/components/svg/svg.js'
 
 export function centralManager(element) {
   switch (element) {
-    case 'title': return titleProvider.call(this)
-    case 'icon': return iconProvider.call(this)
-    case 'currentValue': return currentValueProvider.call(this)
-    case 'triggerClass': return triggerClassProvider.call(this)
-    case 'triggerOnClick': return triggerOnClickHandler.bind(this)
-    case 'triggerIcon': return triggerIconProvider.call(this)
-    case 'triggerText': return triggerTextProvider.call(this)
-    case 'editClass': return editClassProvider.call(this)
-    case 'inputClass': return inputClassProvider.call(this)
-    case 'editInput': return editInputProvider.call(this)
-    default: break;
+    case 'title':
+      return titleProvider.call(this)
+    case 'icon':
+      return iconProvider.call(this)
+    case 'currentValue':
+      return currentValueProvider.call(this)
+    case 'triggerClass':
+      return triggerClassProvider.call(this)
+    case 'triggerOnClick':
+      return triggerOnClickHandler.bind(this)
+    case 'triggerIcon':
+      return triggerIconProvider.call(this)
+    case 'triggerText':
+      return triggerTextProvider.call(this)
+    case 'editClass':
+      return editClassProvider.call(this)
+    case 'inputClass':
+      return inputClassProvider.call(this)
+    case 'editInput':
+      return editInputProvider.call(this)
+    default:
+      break
   }
 }
 
@@ -28,15 +39,24 @@ function titleProvider() {
   const { item } = this.state
 
   switch (item) {
-    case 'firstName': return this.langHandler({ pl: 'Imię', en: 'First Name' })
-    case 'lastName': return this.langHandler({ pl: 'Nazwisko', en: 'Last Name' })
-    case 'businessName': return this.langHandler({ pl: 'Nazwa przedsiębiorcy', en: 'Business name' })
-    case 'taxNumber': return this.langHandler({ pl: 'Numer identyfikacji podatkowej', en: 'Tax ID' })
-    case 'phone': return this.langHandler({ pl: 'Numer telefonu', en: 'Phone Number' })
-    case 'email': return this.langHandler({ pl: 'Adres email', en: 'Email Address' })
-    case 'password': return this.langHandler({ pl: 'Hasło', en: 'Password' })
-    case 'destroy': return this.langHandler({ pl: 'Usuwanie konta', en: 'Account Deletion' })
-    default: break;
+    case 'firstName':
+      return this.langHandler({ pl: 'Imię', en: 'First Name' })
+    case 'lastName':
+      return this.langHandler({ pl: 'Nazwisko', en: 'Last Name' })
+    case 'businessName':
+      return this.langHandler({ pl: 'Nazwa przedsiębiorcy', en: 'Business name' })
+    case 'taxNumber':
+      return this.langHandler({ pl: 'Numer identyfikacji podatkowej', en: 'Tax ID' })
+    case 'phone':
+      return this.langHandler({ pl: 'Numer telefonu', en: 'Phone Number' })
+    case 'email':
+      return this.langHandler({ pl: 'Adres email', en: 'Email Address' })
+    case 'password':
+      return this.langHandler({ pl: 'Hasło', en: 'Password' })
+    case 'destroy':
+      return this.langHandler({ pl: 'Usuwanie konta', en: 'Account Deletion' })
+    default:
+      break
   }
 }
 
@@ -44,12 +64,18 @@ function iconProvider() {
   const { item } = this.state
 
   switch (item) {
-    case 'firstName': return 'user'
-    case 'phone': return 'phone'
-    case 'email': return 'envelope'
-    case 'password': return 'lock'
-    case 'destroy': return 'userTimes'
-    default: break;
+    case 'firstName':
+      return 'user'
+    case 'phone':
+      return 'phone'
+    case 'email':
+      return 'envelope'
+    case 'password':
+      return 'lock'
+    case 'destroy':
+      return 'userTimes'
+    default:
+      break
   }
 
   return null
@@ -68,15 +94,21 @@ function triggerClassProvider() {
 
   if (item === 'destroy') {
     switch (stage) {
-      case null: return 'trigger destroy closed'
-      case 'closed-after-open': return 'trigger destroy closed-after-open'
-      default: return 'trigger destroy opened'
+      case null:
+        return 'trigger destroy closed'
+      case 'closed-after-open':
+        return 'trigger destroy closed-after-open'
+      default:
+        return 'trigger destroy opened'
     }
   }
   switch (stage) {
-    case null: return 'trigger closed'
-    case 'closed-after-open': return 'trigger closed-after-open'
-    default: return 'trigger opened'
+    case null:
+      return 'trigger closed'
+    case 'closed-after-open':
+      return 'trigger closed-after-open'
+    default:
+      return 'trigger opened'
   }
 }
 
@@ -89,12 +121,12 @@ function triggerOnClickHandler() {
   }
   if (this.state.stage !== 'opened') {
     controlChanger({ [stateKey]: 'opened' })
-    setTimeout(() => this.setState({ inputClass: 'inputs-container shown' }), 480);
+    setTimeout(() => this.setState({ inputClass: 'inputs-container shown' }), 480)
   } else {
     controlChanger({ [stateKey]: 'closed-after-open' })
     this.setState({ inputClass: 'inputs-container hiding' })
-    setTimeout(() => this.setState({ inputClass: 'inputs-container hidden' }), 960);
-    setTimeout(() => controlChanger({ [stateKey]: null }), 960);
+    setTimeout(() => this.setState({ inputClass: 'inputs-container hidden' }), 960)
+    setTimeout(() => controlChanger({ [stateKey]: null }), 960)
   }
 }
 
@@ -129,7 +161,7 @@ function inputClassProvider() {
   let inputClass = 'inputs-container'
   if (this.state.stage === null) {
     inputClass += ' ' + 'closed'
-  } else if (this.state.stage === 'closed-after-open'){
+  } else if (this.state.stage === 'closed-after-open') {
     inputClass += ' ' + 'closed-after-open'
   } else {
     inputClass += ' ' + 'opened'
@@ -153,84 +185,88 @@ function editInputProvider() {
     businessNameCurrentValue,
     firstNameError,
     lastNameError,
-    businessNameError
+    businessNameError,
   } = this.props
 
   switch (this.state.item) {
     case 'firstName':
-      component = <UserEditAttribute
-        lang={lang}
-        inputName='firstName'
-        id='user-edit-account-first-name-text'
-        api_suffix={'first_name'}
-        label={this.langHandler({ pl: 'Imię', en: 'First Name' })}
-        icon={inputs.firstName.icon}
-        currentValue={firstNameCurrentValue}
-        connecting={firstNameConnecting}
-        errorText={{ pl: 'Imię nie może być puste.', en: 'First Name can\'t be blank.' }}
-        error={firstNameError}
-        changeErrors={changeErrors}
-        changeControl={changeControl}
-        changeData={changeData}
-      />
+      component = (
+        <UserEditAttribute
+          lang={lang}
+          inputName='firstName'
+          id='user-edit-account-first-name-text'
+          api_suffix={'first_name'}
+          label={this.langHandler({ pl: 'Imię', en: 'First Name' })}
+          icon={inputs.firstName.icon}
+          currentValue={firstNameCurrentValue}
+          connecting={firstNameConnecting}
+          errorText={{ pl: 'Imię nie może być puste.', en: "First Name can't be blank." }}
+          error={firstNameError}
+          changeErrors={changeErrors}
+          changeControl={changeControl}
+          changeData={changeData}
+        />
+      )
       break
     case 'lastName':
-      component = <UserEditAttribute
-        lang={lang}
-        inputName='lastName'
-        id='user-edit-account-last-name-text'
-        api_suffix={'last_name'}
-        label={this.langHandler({ pl: 'Nazwisko', en: 'Last Name' })}
-        icon={inputs.lastName.icon}
-        currentValue={lastNameCurrentValue}
-        connecting={lastNameConnecting}
-        errorText={{ pl: 'Nazwisko nie może być puste.', en: 'Last Name can\'t be blank.' }}
-        error={lastNameError}
-        changeErrors={changeErrors}
-        changeControl={changeControl}
-        changeData={changeData}
-      />
+      component = (
+        <UserEditAttribute
+          lang={lang}
+          inputName='lastName'
+          id='user-edit-account-last-name-text'
+          api_suffix={'last_name'}
+          label={this.langHandler({ pl: 'Nazwisko', en: 'Last Name' })}
+          icon={inputs.lastName.icon}
+          currentValue={lastNameCurrentValue}
+          connecting={lastNameConnecting}
+          errorText={{ pl: 'Nazwisko nie może być puste.', en: "Last Name can't be blank." }}
+          error={lastNameError}
+          changeErrors={changeErrors}
+          changeControl={changeControl}
+          changeData={changeData}
+        />
+      )
       break
     case 'businessName':
-      component = <UserEditAttribute
-        lang={lang}
-        inputName='businessName'
-        id='user-edit-account-business-name-text'
-        api_suffix={'business_name'}
-        label={this.langHandler({ pl: 'Nazwa przedsiębiorcy', en: 'Business Name' })}
-        icon={inputs.businessName.icon}
-        currentValue={businessNameCurrentValue}
-        connecting={businessNameConnecting}
-        errorText={{ pl: 'Nazwa przedsiębiorcy nie może być puste.', en: 'Business Name can\'t be blank.' }}
-        error={businessNameError}
-        changeErrors={changeErrors}
-        changeControl={changeControl}
-        changeData={changeData}
-      />
+      component = (
+        <UserEditAttribute
+          lang={lang}
+          inputName='businessName'
+          id='user-edit-account-business-name-text'
+          api_suffix={'business_name'}
+          label={this.langHandler({ pl: 'Nazwa przedsiębiorcy', en: 'Business Name' })}
+          icon={inputs.businessName.icon}
+          currentValue={businessNameCurrentValue}
+          connecting={businessNameConnecting}
+          errorText={{ pl: 'Nazwa przedsiębiorcy nie może być puste.', en: "Business Name can't be blank." }}
+          error={businessNameError}
+          changeErrors={changeErrors}
+          changeControl={changeControl}
+          changeData={changeData}
+        />
+      )
       break
     case 'taxNumber':
-      component =  <UserEditAccountTaxNumber />  
+      component = <UserEditAccountTaxNumber />
       break
     case 'phone':
-      component =  <UserEditAccountPhoneNumber />
+      component = <UserEditAccountPhoneNumber />
       break
     case 'email':
-      component =  <UserEditAccountEmail />
+      component = <UserEditAccountEmail />
       break
     case 'password':
-      component =  <UserEditAccountPassword editAccount={true}/>
+      component = <UserEditAccountPassword editAccount={true} />
       break
     case 'destroy':
-      component =  <UserDestroy />
+      component = <UserDestroy />
       break
     default:
-      break;
+      break
   }
   return (
     <div>
-      <div>
-        {component}
-      </div>
+      <div>{component}</div>
     </div>
   )
 }

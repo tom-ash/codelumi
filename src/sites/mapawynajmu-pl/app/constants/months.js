@@ -10,5 +10,5 @@ export const months = [
   { pl: 'wrzesień', polishGenitive: 'września', en: 'September' },
   { pl: 'październik', polishGenitive: 'października', en: 'October' },
   { pl: 'listopad', polishGenitive: 'listopada', en: 'November' },
-  { pl: 'grudzień', polishGenitive: 'grudnia', en: 'December' }
+  { pl: 'grudzień', polishGenitive: 'grudnia', en: 'December' },
 ]

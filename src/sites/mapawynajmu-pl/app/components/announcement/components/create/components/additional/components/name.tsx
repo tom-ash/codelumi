@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import { ManagedText } from 'managed-inputs'
 
 type NameInputProps = {
@@ -8,10 +8,7 @@ type NameInputProps = {
 }
 
 export function NameInput(props: NameInputProps) {
-  const {
-    name,
-    changeInputs
-  } = props
+  const { name, changeInputs } = props
 
   const classNames = { container: 'form-input text with-icon rent-amount' }
   const label = 'Nazwa'
@@ -23,7 +20,7 @@ export function NameInput(props: NameInputProps) {
     classNames,
   }
 
-  return <ManagedText { ...nameProps } />
+  return <ManagedText {...nameProps} />
 }
 
 export default NameInput

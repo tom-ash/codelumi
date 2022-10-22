@@ -1,4 +1,4 @@
-import getLocality from "./get-locality"
+import getLocality from './get-locality'
 import getSublocality from './get-sublocality'
 
 function addMarker(props) {
@@ -20,7 +20,7 @@ function addMarker(props) {
 
     map.setOptions(options)
     changeInputs({ latitude: position.lat(), longitude: position.lng(), locality, sublocality })
-    changeErrors({ map: { pl: '', en: '' }})
+    changeErrors({ map: { pl: '', en: '' } })
   })
 
   setState({ showAutocompletes: false, autocompleteInput: autocomplete.description })

@@ -7,16 +7,11 @@ import { shareOnFacebook } from '../../../../../../../mapawynajmu-pl/app/compone
 const Share = (props: ShareProps) => {
   useStyles(styles)
 
-  const {
-    href
-  } = props
+  const { href } = props
 
   return (
     <div className='share'>
-      <div
-        className='facebook'
-        onClick={() => shareOnFacebook(href, false)}
-      >
+      <div className='facebook' onClick={() => shareOnFacebook(href, false)}>
         {/* @ts-ignore */}
         <SVG name='facebook' />
       </div>

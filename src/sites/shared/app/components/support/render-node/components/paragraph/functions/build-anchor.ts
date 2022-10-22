@@ -21,9 +21,7 @@ const buildAnchor = (matchArray: string[]) => {
     properties += ` title="${text}"`
   }
 
-  return (
-    `<a ${properties}>${text}</a>`
-  )
+  return `<a ${properties}>${text}</a>`
 }
 
 export default buildAnchor

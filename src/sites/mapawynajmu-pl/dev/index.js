@@ -1,4 +1,4 @@
-import 'react-app-polyfill/ie9';
+import 'react-app-polyfill/ie9'
 import React from 'react'
 import { render } from 'react-dom'
 import { createStore } from 'redux'
@@ -21,5 +21,5 @@ render(
       <App />
     </Provider>
   </StyleContext.Provider>,
-  window.document.getElementById("app")
+  window.document.getElementById('app')
 )

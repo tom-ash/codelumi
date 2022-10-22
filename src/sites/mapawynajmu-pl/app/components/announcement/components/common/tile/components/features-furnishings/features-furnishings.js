@@ -11,12 +11,9 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
     super(props)
     this.langHandler = langHandler.bind(this)
   }
-  
+
   render() {
-    const {
-      itemsName,
-      items
-    } = this.props
+    const { itemsName, items } = this.props
 
     const isFeatures = itemsName === 'features'
     const nodes = isFeatures ? features : furnishings
@@ -25,22 +22,16 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
     return (
       <div className='features'>
         <Header tier={2} text={this.langHandler(headerText)} />
-        {
-        items && items.map(item => (
-        <div
-          className='item'
-          key={item}
-        >
-          <div className='icon'>
-            <SVG name='check' />
-          </div>
-          <div className='text'>
-            {this.langHandler(nodes.find(node => node.ref === item))}
-          </div>
-          <div className='float-clear' />
-        </div>
-        ))
-        }
+        {items &&
+          items.map(item => (
+            <div className='item' key={item}>
+              <div className='icon'>
+                <SVG name='check' />
+              </div>
+              <div className='text'>{this.langHandler(nodes.find(node => node.ref === item))}</div>
+              <div className='float-clear' />
+            </div>
+          ))}
         <div className='float-clear' />
       </div>
     )

@@ -5,11 +5,7 @@ interface SetShouldDrawPinsProps {
 }
 
 function setShouldDrawPins(props: SetShouldDrawPinsProps) {
-  const {
-    isPinsDrawn,
-    isMapInitialized,
-    changeControl,
-  } = props
+  const { isPinsDrawn, isMapInitialized, changeControl } = props
 
   if (isPinsDrawn) return
   if (!isMapInitialized) return

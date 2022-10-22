@@ -1,6 +1,11 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader/useStyles'
-import { CONTACT_COMPANY, CONTACT_ADDRESS_STREET, CONTACT_ADDRESS_POSTAL_CODE_AND_CITY, CONTACT_EMAIL } from './constants/texts.js'
+import {
+  CONTACT_COMPANY,
+  CONTACT_ADDRESS_STREET,
+  CONTACT_ADDRESS_POSTAL_CODE_AND_CITY,
+  CONTACT_EMAIL,
+} from './constants/texts.js'
 
 const VisitorContact = props => {
   const { appName, langHandler } = props
@@ -8,22 +13,14 @@ const VisitorContact = props => {
 
   useStyles(styles)
 
-  return(
+  return (
     <div className='legal-document'>
-      <div className='company'>
-        {CONTACT_COMPANY}
-      </div>
+      <div className='company'>{CONTACT_COMPANY}</div>
       <div className='address'>
-        <div className='street'>
-          {langHandler(CONTACT_ADDRESS_STREET)}
-        </div>
-        <div className='postalc-code-and-city'>
-          {langHandler(CONTACT_ADDRESS_POSTAL_CODE_AND_CITY)}
-        </div>
+        <div className='street'>{langHandler(CONTACT_ADDRESS_STREET)}</div>
+        <div className='postalc-code-and-city'>{langHandler(CONTACT_ADDRESS_POSTAL_CODE_AND_CITY)}</div>
       </div>
-      <div className='email'>
-        Email: {langHandler(CONTACT_EMAIL)}
-      </div>
+      <div className='email'>Email: {langHandler(CONTACT_EMAIL)}</div>
     </div>
   )
 }

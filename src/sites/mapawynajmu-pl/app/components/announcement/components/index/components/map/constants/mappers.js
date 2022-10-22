@@ -2,14 +2,10 @@ export const mapStateToProps = store => {
   const {
     lang,
     isMobile,
-    scripts: {
-      googleMaps: googleMapsScriptLoaded,
-    },
-    device
+    scripts: { googleMaps: googleMapsScriptLoaded },
+    device,
   } = store.app
-  const {
-    svgs
-  } = store.assets
+  const { svgs } = store.assets
 
   const {
     connecting,
@@ -27,13 +23,8 @@ export const mapStateToProps = store => {
     isPinsDrawn,
     shouldDrawPins,
   } = store.announcement.index.control
-  
-  const {
-    announcements,
-    pins,
-    tileId,
-    tile
-  } = store.announcement.index.data
+
+  const { announcements, pins, tileId, tile } = store.announcement.index.data
 
   return {
     loadMap,
@@ -62,7 +53,7 @@ export const mapStateToProps = store => {
     shouldDrawPins,
   }
 }
-    
+
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),

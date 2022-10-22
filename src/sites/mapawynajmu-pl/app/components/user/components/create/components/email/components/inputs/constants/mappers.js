@@ -10,9 +10,9 @@ export const mapStateToProps = store => {
     taxNumber: taxNumberError,
     phone: phoneError,
     email: emailError,
-    password: passwordError
+    password: passwordError,
   } = store.user.create.errors
-  
+
   return {
     lang: store.app.lang,
     accountType,
@@ -25,15 +25,14 @@ export const mapStateToProps = store => {
     taxNumberError,
     phoneError,
     emailError,
-    passwordError
+    passwordError,
   }
 }
-  
+
 export const mapDispatchToProps = dispatch => {
   return {
     changeControl: value => dispatch({ type: 'user/create/control', value }),
     changeInputs: value => dispatch({ type: 'user/create/inputs', value }),
-    dispatch
+    dispatch,
   }
 }
-  

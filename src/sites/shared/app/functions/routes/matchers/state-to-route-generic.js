@@ -5,13 +5,7 @@ import getCookieValue from '../../cookies/getters/get-cookie-value.js'
 import getCookieAsBool from '../../cookies/getters/get-cookie-as-bool.js'
 import metaSetter from '../../../../../shared/app/functions/routes/setters/meta.js'
 
-function matchStateToRouteGeneric({
-  clientUrl,
-  apiUrl,
-  pathname,
-  isSSR,
-  customHeaders
-}) {
+function matchStateToRouteGeneric({ clientUrl, apiUrl, pathname, isSSR, customHeaders }) {
   if (typeof window === 'undefined') return
 
   const { changeConsents } = this.props
@@ -23,8 +17,7 @@ function matchStateToRouteGeneric({
 
   changeConsents(consents)
 
-  syncRouteData.call(this, { apiUrl, url, query, isSSR, customHeaders })
-  .then(syncedRouteData => {
+  syncRouteData.call(this, { apiUrl, url, query, isSSR, customHeaders }).then(syncedRouteData => {
     const { state, meta } = syncedRouteData
 
     genericRouteStateSetter.call(this, state)

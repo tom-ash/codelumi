@@ -13,7 +13,7 @@ function scrollToElement(element, speed, translation = 0, callback) {
 
 function setScrollingInterval(scrollingElement, direction, destination, speed, callback) {
   let callbackFired = false
-  const scrollInterval = setInterval(function(){
+  const scrollInterval = setInterval(function () {
     if (direction == 'down') {
       scrollingElement.scrollTop += speed
       if (scrollingElement.scrollTop > destination) {

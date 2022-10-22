@@ -27,9 +27,7 @@ const StorageUrl = (props: StorageUrlProps) => {
 
   return (
     <div className='storage-url'>
-      <label>
-        Storage Url
-      </label>
+      <label>Storage Url</label>
       <StorageUrlAnchor {...storageUrlAnchorProps} />
     </div>
   )

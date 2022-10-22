@@ -2,30 +2,13 @@ export const mapStateToProps = store => {
   const {
     app,
     announcement: {
-      create: {
-        inputs
-      }
-    }
+      create: { inputs },
+    },
   } = store
 
-  const {
-    lang
-  } = app
+  const { lang } = app
 
-  const {
-    category,
-    rentCurrency,
-    netRentAmount,
-    grossRentAmount,
-    area,
-    rooms,
-    floor,
-    totalFloors,
-    name,
-    link,
-  } = inputs
-
-
+  const { category, rentCurrency, netRentAmount, grossRentAmount, area, rooms, floor, totalFloors, name, link } = inputs
 
   return {
     lang,
@@ -41,7 +24,7 @@ export const mapStateToProps = store => {
     link,
   }
 }
-  
+
 export const mapDispatchToProps = dispatch => {
   return {
     changeControl: value => dispatch({ type: 'announcement/create/control', value }),
@@ -50,4 +33,3 @@ export const mapDispatchToProps = dispatch => {
     changeErrors: value => dispatch({ type: 'announcement/create/errors', value }),
   }
 }
-  

@@ -3,14 +3,10 @@ import config from '../../../constants/config'
 
 export function hashPassword(plaintext, salt) {
   const { keySize, iterations } = config.passwordHashing
-  return PBKDF2(
-    plaintext,
-    salt,
-    {
-      keySize,
-      iterations
-    }
-  ).toString()
+  return PBKDF2(plaintext, salt, {
+    keySize,
+    iterations,
+  }).toString()
 }
 
 export function emailAddressValidator(emailAddress, callback, errors) {

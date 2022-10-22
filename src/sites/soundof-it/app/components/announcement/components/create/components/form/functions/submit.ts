@@ -2,18 +2,18 @@ import apiUrl from '../../../../../../../../shared/constants/urls/api.js'
 import getAccessToken from '../../../../../../../../../mapawynajmu-pl/app/components/user/components/authorize/components/tokens/functions/get-tokens.js'
 
 type submitProps = {
-  selectedSkills: Array<any>,
-  remote: boolean,
-  hybrid: boolean,
-  office: boolean,
-  b2b: boolean,
-  b2bMax: number,
-  b2bMin: number,
-  employment: boolean,
-  employmentMax: number,
-  employmentMin: number,
-  civilContract: boolean,
-  civilContractMax: number,
+  selectedSkills: Array<any>
+  remote: boolean
+  hybrid: boolean
+  office: boolean
+  b2b: boolean
+  b2bMax: number
+  b2bMin: number
+  employment: boolean
+  employmentMax: number
+  employmentMin: number
+  civilContract: boolean
+  civilContractMax: number
   civilContractMin: number
 }
 
@@ -31,7 +31,7 @@ const submit = (props: submitProps) => {
     employmentMin,
     civilContract,
     civilContractMax,
-    civilContractMin
+    civilContractMin,
   } = props
 
   const body = {
@@ -47,21 +47,21 @@ const submit = (props: submitProps) => {
     employmentMin,
     civilContract,
     civilContractMax,
-    civilContractMin
+    civilContractMin,
   }
 
   fetch(apiUrl + '/job/create/as-user', {
     method: 'POST',
     // @ts-ignore
     headers: { 'Content-Type': 'application/json', 'Access-Token': getAccessToken() },
-    body: JSON.stringify(body)
+    body: JSON.stringify(body),
   })
-  .then(response => {
-    if (response.ok) return response.json()
-  })
-  .then(jsonResponse => {
-    // TODO
-  })
+    .then(response => {
+      if (response.ok) return response.json()
+    })
+    .then(jsonResponse => {
+      // TODO
+    })
 }
 
-  export default submit
+export default submit

@@ -9,17 +9,12 @@ interface DrawPinProps {
 }
 
 function drawPin(props: DrawPinProps) {
-  const {
-    latitude,
-    longitude,
-    svgs,
-    category,
-  } = props
+  const { latitude, longitude, svgs, category } = props
 
   let svg
   let pinContent = '?'
   if (category !== '') {
-    const svgCategory = categories.find(categoryOn => categoryOn.number ===  +category)
+    const svgCategory = categories.find(categoryOn => categoryOn.number === +category)
     // @ts-ignore
     svg = svgs[svgCategory.pin.svg]
   }
@@ -31,8 +26,8 @@ function drawPin(props: DrawPinProps) {
   // @ts-ignore
   return new window.pinCreator(
     {
-      latitude, 
-      longitude
+      latitude,
+      longitude,
     },
     {
       htmlContent: pinContent,

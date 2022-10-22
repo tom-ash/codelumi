@@ -1,13 +1,11 @@
 export const mapStateToProps = store => {
-  const {
-    name: showName
-  } = store.page.show.data
+  const { name: showName } = store.page.show.data
 
   const {
     'page/show': renderShow,
     'page/edit': renderEdit,
     'page/index': renderIndex,
-    'page/not-found': renderNotFound
+    'page/not-found': renderNotFound,
   } = store.render
 
   return {
@@ -15,12 +13,12 @@ export const mapStateToProps = store => {
     renderIndex,
     renderShow,
     renderNotFound,
-    showName
+    showName,
   }
 }
-  
+
 export const mapDispatchToProps = dispatch => {
   return {
-    changeShowData: value => dispatch({ type: 'page/show/data', value })
+    changeShowData: value => dispatch({ type: 'page/show/data', value }),
   }
 }

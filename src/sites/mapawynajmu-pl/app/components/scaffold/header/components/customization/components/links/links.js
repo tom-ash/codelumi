@@ -8,44 +8,40 @@ const HeaderUserLinks = props => {
   const { authorized } = props
 
   return (
-    <>  
-      {authorized ?
-      <ManagedButton {...myAccountManager(props)}/>
-      :
-      <>
-        <ManagedLink {...signUpManager(props)}/>
-        <ManagedLink {...signInManager(props)}/>
-      </>}
+    <>
+      {authorized ? (
+        <ManagedButton {...myAccountManager(props)} />
+      ) : (
+        <>
+          <ManagedLink {...signUpManager(props)} />
+          <ManagedLink {...signInManager(props)} />
+        </>
+      )}
     </>
   )
 }
 
 const HeaderLinks = props => {
-  const {
-    isMobile,
-    buildUrl,
-    changeRoute,
-    langHandler,
-    langs
-  } = props
+  const { isMobile, buildUrl, changeRoute, langHandler, langs } = props
   const articlesLinkProps = {
     buildUrl,
     changeRoute,
     langHandler,
-    langs
+    langs,
   }
 
   return (
     <div className='links'>
-      {isMobile ?
-      <LangSwtich {...props} />
-      :
-      <>
-        <ManagedLink {...addAnnouncementManager(props)}/>
-        <HeaderUserLinks {...props} />
-        <ArticlesLink {...articlesLinkProps} />
+      {isMobile ? (
         <LangSwtich {...props} />
-      </>}
+      ) : (
+        <>
+          <ManagedLink {...addAnnouncementManager(props)} />
+          <HeaderUserLinks {...props} />
+          <ArticlesLink {...articlesLinkProps} />
+          <LangSwtich {...props} />
+        </>
+      )}
     </div>
   )
 }

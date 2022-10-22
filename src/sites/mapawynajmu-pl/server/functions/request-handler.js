@@ -8,7 +8,8 @@ import buildUrl from '../../shared/functions/builders/url'
 import SITE_NAME from '../../shared/constants/names/site.js'
 
 function handleRequest(req, res) {
-  if (req.hostname === 'warsawlease.pl' || req.hostname === 'www.warsawlease.pl') return res.redirect(301, `https://${ROOT_DOMAIN}${req.originalUrl}`)
+  if (req.hostname === 'warsawlease.pl' || req.hostname === 'www.warsawlease.pl')
+    return res.redirect(301, `https://${ROOT_DOMAIN}${req.originalUrl}`)
   if (req.hostname === `www.${APEX_DOMAIN}`) return res.redirect(301, `https://${APEX_DOMAIN}${req.originalUrl}`)
 
   genericRequestHandler({
@@ -18,7 +19,7 @@ function handleRequest(req, res) {
     apiUrl: API_URL,
     buildUrl,
     appRenderer,
-    siteName: SITE_NAME
+    siteName: SITE_NAME,
   })
 }
 

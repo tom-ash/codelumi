@@ -30,18 +30,13 @@ class UserEditAccountPassword extends React.Component {
     const { editAccount } = this.props
 
     const headerText = this.langHandler({ pl: 'Zresetuj hasło', en: 'Reset password' })
-    
+
     return (
-      <div
-        id='user-edit-account-password'
-        className={`${editAccount ? '' : 'container full'}`}
-      >
+      <div id='user-edit-account-password' className={`${editAccount ? '' : 'container full'}`}>
         {!editAccount && <Header tier={1} text={headerText} />}
         <div className='inputs'>
           <div className='monit-and-text-inputs'>
-            <div className='monit'>
-              {this.monitProvider()}
-            </div>
+            <div className='monit'>{this.monitProvider()}</div>
             <ManagedText key='emailAddress' {...this.emailManager()} />
             <ManagedText key='verificationCode' {...this.verificationManager()} />
             <ManagedText key='password' {...this.passwordManager()} />

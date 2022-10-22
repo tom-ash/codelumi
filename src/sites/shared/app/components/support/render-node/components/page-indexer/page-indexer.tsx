@@ -8,25 +8,25 @@ import IndexLink from '../index-link/index-link'
 interface PageIndexerProps {
   collection: string
   tutorials: {
-    logo: string,
-    image: string,
-    title: string,
-    description: string,
-    category: string,
-    subcategory: string,
-    pathname: string,
-    hrefLang: string,
+    logo: string
+    image: string
+    title: string
+    description: string
+    category: string
+    subcategory: string
+    pathname: string
+    hrefLang: string
     modifiedOn: string
   }[]
   articles: {
-    logo: string,
-    image: string,
-    title: string,
-    description: string,
-    category: string,
-    subcategory: string,
-    pathname: string,
-    hrefLang: string,
+    logo: string
+    image: string
+    title: string
+    description: string
+    category: string
+    subcategory: string
+    pathname: string
+    hrefLang: string
     modifiedOn: string
   }[]
   clientUrl: string
@@ -44,7 +44,20 @@ const PageIndexer = (props: PageIndexerProps) => {
         <div className='page-indexer'>
           {learningCollection.map((link, index) => {
             const { logo, image, title, description, category, subcategory, pathname, hrefLang, modifiedOn } = link
-            const linkProps = { collectionName, clientUrl, changeRoute, logo, image, title, description, category, subcategory, pathname, hrefLang, modifiedOn }
+            const linkProps = {
+              collectionName,
+              clientUrl,
+              changeRoute,
+              logo,
+              image,
+              title,
+              description,
+              category,
+              subcategory,
+              pathname,
+              hrefLang,
+              modifiedOn,
+            }
 
             return <IndexLink {...{ ...linkProps, key: index }} />
           })}
@@ -60,7 +73,20 @@ const PageIndexer = (props: PageIndexerProps) => {
         <div className='page-indexer'>
           {articles.map((link, index) => {
             const { logo, image, title, description, category, subcategory, pathname, hrefLang, modifiedOn } = link
-            const linkProps = { collectionName, clientUrl, changeRoute, logo, image, title, description, category, subcategory, pathname, hrefLang, modifiedOn }
+            const linkProps = {
+              collectionName,
+              clientUrl,
+              changeRoute,
+              logo,
+              image,
+              title,
+              description,
+              category,
+              subcategory,
+              pathname,
+              hrefLang,
+              modifiedOn,
+            }
 
             return <IndexLink {...{ ...linkProps, key: index }} />
           })}

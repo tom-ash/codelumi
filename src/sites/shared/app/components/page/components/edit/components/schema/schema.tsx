@@ -4,9 +4,9 @@ import AutoSchemaTextarea from './components/auto-schema-textarea'
 import ManualSchemaTextarea from './components/manual-schema-textarea'
 
 interface SchemaProps {
-  schemaMode: string,
-  autoSchema: string,
-  manualSchema: string,
+  schemaMode: string
+  autoSchema: string
+  manualSchema: string
   changeInputs(props: object): void
 }
 

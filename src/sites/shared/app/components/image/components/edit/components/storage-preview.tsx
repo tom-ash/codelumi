@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface StoragePreviewProps {
-  storageUrl: string,
+  storageUrl: string
   storageUrlRandomizedQuaryParameter: string
 }
 

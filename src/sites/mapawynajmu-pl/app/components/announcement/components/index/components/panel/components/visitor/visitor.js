@@ -18,7 +18,6 @@ export default props => {
     areaMinInput,
     areaMax,
     areaMaxInput,
-
   } = props
 
   const areaFilterProps = {
@@ -36,7 +35,7 @@ export default props => {
     maxKey: 'areaMax',
     maxInputKey: 'areaMaxInput',
     changeControl,
-    changeInputs
+    changeInputs,
   }
 
   const priceFilterProps = {
@@ -54,7 +53,7 @@ export default props => {
     maxKey: 'priceMax',
     maxInputKey: 'priceMaxInput',
     changeControl,
-    changeInputs
+    changeInputs,
   }
 
   return (

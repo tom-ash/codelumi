@@ -1,5 +1,5 @@
 %pin {
-  background: linear-gradient(90deg, #ECF0F1 0%, #F8F9F9 100%);
+  background: linear-gradient(90deg, #ecf0f1 0%, #f8f9f9 100%);
   border-radius: 4px;
   text-align: center;
   line-height: 36px;
@@ -12,10 +12,11 @@
   &:hover {
     z-index: 2;
     transform: scale(1.5) translate(-12px, -12px);
-    transition: all .24s ease-in;
+    transition: all 0.24s ease-in;
   }
 
-  &.hovered, &.current {
+  &.hovered,
+  &.current {
     z-index: 2;
     animation: pulse 1s infinite;
   }

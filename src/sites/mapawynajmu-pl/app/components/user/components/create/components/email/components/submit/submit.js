@@ -25,4 +25,4 @@ class UserCreateSubmit extends React.Component {
   }
 }
 
-export default connect(mappers.mapStateToProps, mappers.mapDispatchToProps)(UserCreateSubmit);
+export default connect(mappers.mapStateToProps, mappers.mapDispatchToProps)(UserCreateSubmit)

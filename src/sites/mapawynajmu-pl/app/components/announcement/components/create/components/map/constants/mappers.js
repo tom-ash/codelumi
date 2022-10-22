@@ -2,33 +2,18 @@ export const mapStateToProps = store => {
   const {
     lang,
     isMobile,
-    scripts: {
-      googleMaps: googleMapsScriptLoaded,
-    },
+    scripts: { googleMaps: googleMapsScriptLoaded },
   } = store.app
 
-  const {
-    svgs,
-  } = store.assets
+  const { svgs } = store.assets
 
-  const {
-    shouldInitializeMap,
-    isMapInitialized,
-  } = store.announcement.create.control
+  const { shouldInitializeMap, isMapInitialized } = store.announcement.create.control
 
-  const {
-    latitude,
-    longitude,
-    category,
-  } = store.announcement.create.inputs
+  const { latitude, longitude, category } = store.announcement.create.inputs
 
-  const {
-    pin,
-  } = store.announcement.create.data
+  const { pin } = store.announcement.create.data
 
-  const {
-    map: error
-  } = store.announcement.create.errors
+  const { map: error } = store.announcement.create.errors
 
   return {
     shouldInitializeMap,
@@ -44,13 +29,13 @@ export const mapStateToProps = store => {
     category,
   }
 }
-    
+
 export const mapDispatchToProps = dispatch => {
   return {
     changeControl: value => dispatch({ type: 'announcement/create/control', value }),
     changeInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
     changeData: value => dispatch({ type: 'announcement/create/data', value }),
-    changeErrors: value => dispatch({ type: 'announcement/create/errors', value })
+    changeErrors: value => dispatch({ type: 'announcement/create/errors', value }),
   }
 }
 

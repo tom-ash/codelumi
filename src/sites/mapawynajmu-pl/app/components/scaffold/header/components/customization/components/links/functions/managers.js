@@ -36,7 +36,7 @@ export function deAuthorizeManager(props) {
   return {
     classNames: { container: 'header-link de-authorize' },
     label: langHandler({ pl: 'Wyloguj', en: 'Sign Out' }),
-    onClick: () => deauthorizeUser({ dispatch, changeRoute })
+    onClick: () => deauthorizeUser({ dispatch, changeRoute }),
   }
 }
 

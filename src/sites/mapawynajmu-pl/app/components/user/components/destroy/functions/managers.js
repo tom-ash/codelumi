@@ -19,13 +19,13 @@ export function verificationManager() {
     validate: value => {
       if (value.length < 4) {
         changeErrors({
-          verification: { pl: 'Nieprawidłowy kod weryfikacyjny.', en: 'Invalid verification code.' }
+          verification: { pl: 'Nieprawidłowy kod weryfikacyjny.', en: 'Invalid verification code.' },
         })
         return false
       }
       return true
     },
-    error: this.langHandler(this.props.error)
+    error: this.langHandler(this.props.error),
   }
 }
 
@@ -42,6 +42,6 @@ export function buttonManager() {
         langHandler={this.langHandler}
       />
     ),
-    onClick: () => destroy.call(this)
+    onClick: () => destroy.call(this),
   }
 }

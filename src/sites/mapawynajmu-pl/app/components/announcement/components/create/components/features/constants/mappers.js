@@ -6,9 +6,9 @@ export const mapStateToProps = store => {
     addFeatures: store.announcement.create.inputs.addFeatures,
   }
 }
-    
+
 export const mapDispatchToProps = dispatch => {
   return {
-    changeInputs: value => dispatch({ type: 'announcement/create/inputs', value })
+    changeInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
   }
 }

@@ -25,16 +25,12 @@ class AnnouncementCreateSuccess extends React.Component {
     return (
       <div id='success'>
         <Header tier={1} text={this.langHandler(PAGE_HEADER)} svg='checkSquare' />
-        <div className='congratulations'>
-          {this.langHandler(CONGRATULATIONS_TEXT)}
-        </div>
-        <div className='share-on-facebook-text'>
-          {this.langHandler(SHARE_ON_FACEBOOK_TEXT)}
-        </div>
+        <div className='congratulations'>{this.langHandler(CONGRATULATIONS_TEXT)}</div>
+        <div className='share-on-facebook-text'>{this.langHandler(SHARE_ON_FACEBOOK_TEXT)}</div>
         <ManagedLink {...this.shareOnFacebookManager()} />
       </div>
     )
   }
 }
 
-export default (withStyles(styles)(AnnouncementCreateSuccess))
+export default withStyles(styles)(AnnouncementCreateSuccess)

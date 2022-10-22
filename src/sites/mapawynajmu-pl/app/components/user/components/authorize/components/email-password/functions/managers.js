@@ -11,7 +11,7 @@ export function emailAddressManager() {
 
   return {
     id: 'user-logon-email-address',
-    classNames: { container: 'form-input text with-icon email'},
+    classNames: { container: 'form-input text with-icon email' },
     autoComplete: 'email',
     controlled: false,
     label: this.langHandler(label),
@@ -22,12 +22,13 @@ export function emailAddressManager() {
       if (!emailValidator(value).isValid) {
         this.props.changeErrors({
           emailOrPassword: {
-            pl: 'Nieprawidłowy adres email lub hasło.', en: 'Invalid email address and/or password.'
-          }
+            pl: 'Nieprawidłowy adres email lub hasło.',
+            en: 'Invalid email address and/or password.',
+          },
         })
       }
     },
-    error: this.langHandler({ pl: this.props.emailOrPasswordError.pl, en: this.props.emailOrPasswordError.en })
+    error: this.langHandler({ pl: this.props.emailOrPasswordError.pl, en: this.props.emailOrPasswordError.en }),
   }
 }
 
@@ -39,23 +40,24 @@ export function passwordManager() {
     autoComplete: 'current-password',
     type: 'password',
     controlled: false,
-    classNames: { container: 'form-input text with-icon password'},
+    classNames: { container: 'form-input text with-icon password' },
     label: this.langHandler(label),
     children: <SVG name='lock' />,
     onChange: () => this.props.changeErrors({ emailOrPassword: noError, email: noError }),
     onBlur: value => this.passwordManager().validate(value),
-    validate: (value => {
+    validate: value => {
       if (value.length < 1) {
         this.props.changeErrors({
           emailOrPassword: {
-            pl: 'Nieprawidłowy adres email lub hasło.', en: 'Invalid email address and/or password.'
-          }
+            pl: 'Nieprawidłowy adres email lub hasło.',
+            en: 'Invalid email address and/or password.',
+          },
         })
         return false
       }
       return true
-    }),
-    error: this.langHandler({ pl: this.props.emailOrPasswordError.pl, en: this.props.emailOrPasswordError.en })
+    },
+    error: this.langHandler({ pl: this.props.emailOrPasswordError.pl, en: this.props.emailOrPasswordError.en }),
   }
 }
 
@@ -63,10 +65,10 @@ export function rememberMeManager() {
   const { rememberMe } = this.props
 
   return {
-    classNames: { container: 'form-input checkbox'},
+    classNames: { container: 'form-input checkbox' },
     checked: this.props.rememberMe,
     label: this.langHandler({ pl: 'Zapamiętaj mnie', en: 'Remember me' }),
-    onClick: () => this.props.changeInputs({ rememberMe: !rememberMe })
+    onClick: () => this.props.changeInputs({ rememberMe: !rememberMe }),
   }
 }
 
@@ -76,12 +78,8 @@ export function buttonManager() {
   return {
     classNames: { container: 'form-input button' },
     label: (
-      <ButtonSpinner
-        connecting={connecting}
-        label={{ pl: 'Zaloguj', en: 'Sign In' }}
-        langHandler={this.langHandler}
-      />
+      <ButtonSpinner connecting={connecting} label={{ pl: 'Zaloguj', en: 'Sign In' }} langHandler={this.langHandler} />
     ),
-    onClick: this.logIn
+    onClick: this.logIn,
   }
 }

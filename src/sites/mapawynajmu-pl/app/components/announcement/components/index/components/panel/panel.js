@@ -15,7 +15,7 @@ class AnnouncementIndexPanel extends React.Component {
   }
 
   static contextType = AppContext
-  
+
   render() {
     const {
       lang,

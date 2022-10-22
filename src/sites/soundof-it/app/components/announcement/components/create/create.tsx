@@ -28,7 +28,7 @@ class AnnouncementCreate extends React.Component<Create> {
       employmentMin,
       civilContract,
       civilContractMax,
-      civilContractMin
+      civilContractMin,
     } = this.props
 
     const skillSelectorProps = {
@@ -46,7 +46,7 @@ class AnnouncementCreate extends React.Component<Create> {
       employmentMin,
       civilContract,
       civilContractMax,
-      civilContractMin
+      civilContractMin,
     }
 
     return (

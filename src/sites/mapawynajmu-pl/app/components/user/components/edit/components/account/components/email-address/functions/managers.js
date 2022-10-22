@@ -27,7 +27,7 @@ export function currentEmailVerificationManager() {
       if (isValid) return
       changeErrors({ currentEmailVerification: error })
     },
-    error: langHandler(error)
+    error: langHandler(error),
   }
 }
 
@@ -50,7 +50,7 @@ export function newEmailManager() {
       if (isValid) return
       changeErrors({ newEmail: error })
     },
-    error: langHandler(error)
+    error: langHandler(error),
   }
 }
 
@@ -73,7 +73,7 @@ export function newEmailVerificationManager() {
       if (isValid) return
       changeErrors({ newEmailVerification: error })
     },
-    error: langHandler(error)
+    error: langHandler(error),
   }
 }
 
@@ -98,7 +98,7 @@ export function passwordManager() {
       if (isValid) return
       changeErrors({ newEmailPassword: error })
     },
-    error: langHandler(error)
+    error: langHandler(error),
   }
 }
 
@@ -109,14 +109,8 @@ export function buttonManager() {
     id: 'user-edit-email-button',
     display: step === 'success' ? 'none' : 'block',
     classNames: { container: 'form-input button' },
-    label: (
-      <ButtonSpinner
-        connecting={connecting}
-        label={{ pl: 'Dalej', en: 'Next' }}
-        langHandler={this.langHandler}
-      />
-    ),
-    onClick: buttonOnClickProvider.call(this)
+    label: <ButtonSpinner connecting={connecting} label={{ pl: 'Dalej', en: 'Next' }} langHandler={this.langHandler} />,
+    onClick: buttonOnClickProvider.call(this),
   }
 }
 
@@ -126,29 +120,33 @@ function buttonOnClickProvider() {
   if (connecting) return
 
   switch (step) {
-    case 'currentEmailVerification': return () => {
-      const verificationCode = document.getElementById('user-edit-email-current-verification').value
-      const { isValid, error } = verificationCodeValidator(verificationCode)
-      if (isValid) return this.sendCurrentEmailVerification(verificationCode)
-      changeErrors({ currentEmailVerification: error })
-    }
-    case 'newEmail': return () => {
-      const email = document.getElementById('user-edit-email-new').value
-      const { isValid, error } = emailValidator(email)
-      if (isValid) return this.sendNewEmail(email)
-      changeErrors({ newEmail: error })
-    }
-    case 'newEmailVerification': return () => {
-      const verificationCode = document.getElementById('user-edit-email-new-verification').value
-      const { isValid, error } = verificationCodeValidator(verificationCode)
-      if (isValid) return this.sendNewEmailVerification(verificationCode)
-      changeErrors({ newEmailVerification: error }) 
-    }
-    case 'password': return () => {
-      const password = document.getElementById('user-edit-email-password').value
-      const { isValid, error } = passwordValidator(password)
-      if (isValid) return this.sendPassword(password)
-      changeErrors({ newEmailPassword: error })
-    }
+    case 'currentEmailVerification':
+      return () => {
+        const verificationCode = document.getElementById('user-edit-email-current-verification').value
+        const { isValid, error } = verificationCodeValidator(verificationCode)
+        if (isValid) return this.sendCurrentEmailVerification(verificationCode)
+        changeErrors({ currentEmailVerification: error })
+      }
+    case 'newEmail':
+      return () => {
+        const email = document.getElementById('user-edit-email-new').value
+        const { isValid, error } = emailValidator(email)
+        if (isValid) return this.sendNewEmail(email)
+        changeErrors({ newEmail: error })
+      }
+    case 'newEmailVerification':
+      return () => {
+        const verificationCode = document.getElementById('user-edit-email-new-verification').value
+        const { isValid, error } = verificationCodeValidator(verificationCode)
+        if (isValid) return this.sendNewEmailVerification(verificationCode)
+        changeErrors({ newEmailVerification: error })
+      }
+    case 'password':
+      return () => {
+        const password = document.getElementById('user-edit-email-password').value
+        const { isValid, error } = passwordValidator(password)
+        if (isValid) return this.sendPassword(password)
+        changeErrors({ newEmailPassword: error })
+      }
   }
 }

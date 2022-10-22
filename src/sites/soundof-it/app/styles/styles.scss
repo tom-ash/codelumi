@@ -1,7 +1,9 @@
 @import '../components/page/styles/styles.scss';
 @import '../components/page/styles/styles.scss';
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -15,7 +17,11 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-weight: 600;
 }
 
@@ -28,8 +34,9 @@ code {
   font-family: 'Inconsolata', monospace;
 }
 
-html, body {
-  overflow-x: hidden; 
+html,
+body {
+  overflow-x: hidden;
   overflow-wrap: break-word;
 }
 
@@ -60,7 +67,8 @@ a {
       outline: none;
       transition: 0.18s;
       cursor: pointer;
-      &.hover, &.focus {
+      &.hover,
+      &.focus {
         box-shadow: 0 0 0 1px black;
       }
       .tick {
@@ -81,7 +89,9 @@ a {
       margin-left: 15px;
       cursor: pointer;
       font-size: 15px;
-      &.focus, &.hover, &.value {
+      &.focus,
+      &.hover,
+      &.value {
         color: black;
       }
       &.checked {

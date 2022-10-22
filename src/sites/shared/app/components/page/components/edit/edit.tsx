@@ -14,22 +14,22 @@ import Schema from './components/schema/schema'
 import Meta from './components/meta/meta'
 
 interface PageCreateProps {
-  routeSynced: boolean,
-  online: boolean,
-  headerAutonumbering: boolean,
-  changeControl(args: object): void,
-  changeInputs(): void,
-  changeData(): void,
-  updated: boolean,
-  nav: string,
-  schemaMode: string,
-  autoSchema: string,
-  manualSchema: string,
-  publishedOn: string,
-  modifiedOn: string,
-  category: string,
-  subcategory: string,
-  pageLang: string,
+  routeSynced: boolean
+  online: boolean
+  headerAutonumbering: boolean
+  changeControl(args: object): void
+  changeInputs(): void
+  changeData(): void
+  updated: boolean
+  nav: string
+  schemaMode: string
+  autoSchema: string
+  manualSchema: string
+  publishedOn: string
+  modifiedOn: string
+  category: string
+  subcategory: string
+  pageLang: string
   langAltsGroup: string
 }
 
@@ -76,7 +76,7 @@ class PageCreate extends React.Component<PageCreateProps> {
       category,
       subcategory,
       pageLang,
-      langAltsGroup
+      langAltsGroup,
     } = this.props
 
     if (!routeSynced) return null
@@ -84,14 +84,14 @@ class PageCreate extends React.Component<PageCreateProps> {
     const tileProps = {
       ...this.props,
       renderEdit: true,
-      updatePage: this.save
+      updatePage: this.save,
     }
     const updateStatusProps = { updated }
     const schemaProps = {
       schemaMode,
       autoSchema,
       manualSchema,
-      changeInputs
+      changeInputs,
     }
     const metaProps = {
       publishedOn,
@@ -100,59 +100,57 @@ class PageCreate extends React.Component<PageCreateProps> {
       category,
       subcategory,
       pageLang,
-      langAltsGroup
+      langAltsGroup,
     }
 
     return (
       <>
-        <PageTile { ...tileProps } />
+        <PageTile {...tileProps} />
         <div id='edit-panel'>
           <nav>
-            <div onClick={() => changeControl({ nav: 'urls' })}>
-              URLs
-            </div>
-            <div onClick={() => changeControl({ nav: 'controls' })}>
-              Controls
-            </div>
-            <div onClick={() => changeControl({ nav: 'body' })}>
-              Body
-            </div>
-            <div onClick={() => changeControl({ nav: 'meta' })}>
-              Meta
-            </div>
-            <div onClick={() => changeControl({ nav: 'schema' })}>
-              Schema
-            </div>
+            <div onClick={() => changeControl({ nav: 'urls' })}>URLs</div>
+            <div onClick={() => changeControl({ nav: 'controls' })}>Controls</div>
+            <div onClick={() => changeControl({ nav: 'body' })}>Body</div>
+            <div onClick={() => changeControl({ nav: 'meta' })}>Meta</div>
+            <div onClick={() => changeControl({ nav: 'schema' })}>Schema</div>
           </nav>
           <form className={nav}>
-            {nav === 'urls' &&  <>
-              <ManagedText {...this.urlManager()} />
-              <ManagedText {...this.canonicalUrlManager()} />
-            </>}
+            {nav === 'urls' && (
+              <>
+                <ManagedText {...this.urlManager()} />
+                <ManagedText {...this.canonicalUrlManager()} />
+              </>
+            )}
 
-            {nav === 'controls' && <>
-              <OnlineInput checked={online} changeInputs={changeInputs} />
-              <HeaderAutonumberingInput checked={headerAutonumbering} changeInputs={changeInputs} />
-            </>}
+            {nav === 'controls' && (
+              <>
+                <OnlineInput checked={online} changeInputs={changeInputs} />
+                <HeaderAutonumberingInput checked={headerAutonumbering} changeInputs={changeInputs} />
+              </>
+            )}
 
-            {nav === 'body' && <>
-              {/* @ts-ignore */}
-              <ManagedTextarea {...this.bodyManager()} />
-            </>}
+            {nav === 'body' && (
+              <>
+                {/* @ts-ignore */}
+                <ManagedTextarea {...this.bodyManager()} />
+              </>
+            )}
 
-            {nav === 'meta' && <>
-              <Meta {...metaProps} />
-              {/* @ts-ignore */}
-              <ManagedText {...this.titleManager()} />
-              {/* @ts-ignore */}
-              <ManagedTextarea {...this.descriptionManager()} />
-              {/* @ts-ignore */}
-              <ManagedTextarea {...this.keywordsManager()} />
-              {/* @ts-ignore */}
-              <ManagedText {...this.pictureManager()} />
-            </>}
+            {nav === 'meta' && (
+              <>
+                <Meta {...metaProps} />
+                {/* @ts-ignore */}
+                <ManagedText {...this.titleManager()} />
+                {/* @ts-ignore */}
+                <ManagedTextarea {...this.descriptionManager()} />
+                {/* @ts-ignore */}
+                <ManagedTextarea {...this.keywordsManager()} />
+                {/* @ts-ignore */}
+                <ManagedText {...this.pictureManager()} />
+              </>
+            )}
 
-            {nav === 'schema' &&  <Schema {...schemaProps} />}
+            {nav === 'schema' && <Schema {...schemaProps} />}
           </form>
           {/* @ts-ignore */}
           <ManagedButton {...this.saveManager()} />

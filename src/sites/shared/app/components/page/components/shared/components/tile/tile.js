@@ -20,7 +20,7 @@ const PageTile = props => {
     changePage,
     langHandler,
     title: pageTitle,
-    coverImage
+    coverImage,
   } = props
 
   const buttonClasses = ['page-edit']
@@ -37,7 +37,7 @@ const PageTile = props => {
 
   const nodeProps = {
     node: {
-      page: jsonBody
+      page: jsonBody,
     },
     jsonBody,
     publishedOn,
@@ -51,16 +51,20 @@ const PageTile = props => {
     changeRoute,
     langHandler,
     pageTitle,
-    coverImage
+    coverImage,
   }
 
   return (
     <>
       {<RenderNode {...nodeProps} />}
       {isAdmin && (
-      <>
-        {renderShow && <button className={buttonClassName} onClick={changePage}><SVG name='edit' /></button>}
-      </>
+        <>
+          {renderShow && (
+            <button className={buttonClassName} onClick={changePage}>
+              <SVG name='edit' />
+            </button>
+          )}
+        </>
       )}
     </>
   )

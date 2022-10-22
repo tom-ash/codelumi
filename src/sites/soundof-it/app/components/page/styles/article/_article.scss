@@ -14,7 +14,7 @@ $horizontal-margin-mobile: 18px;
   h1 {
     margin: 24px 0;
     font-size: 36px;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
   }
   .editorial {
     @extend %editorial;
@@ -32,8 +32,9 @@ $horizontal-margin-mobile: 18px;
     &.h2 {
       margin: 36px 0 12px;
       padding-top: 36px;
-      letter-spacing: .2px;
-      .number, h2 {
+      letter-spacing: 0.2px;
+      .number,
+      h2 {
         font-size: 24px;
       }
       @media #{$LARGE-PHONE} {
@@ -42,7 +43,8 @@ $horizontal-margin-mobile: 18px;
     }
     &.h3 {
       margin: 36px 0 12px;
-      .number, h3 {
+      .number,
+      h3 {
         font-size: 18px;
       }
       @media #{$LARGE-PHONE} {
@@ -51,7 +53,8 @@ $horizontal-margin-mobile: 18px;
     }
     &.h4 {
       margin: 24px 0 12px;
-      .number, h4 {
+      .number,
+      h4 {
         font-size: 17px;
       }
       @media #{$LARGE-PHONE} {
@@ -86,14 +89,14 @@ $horizontal-margin-mobile: 18px;
       display: inline-block;
       padding-left: 2px;
       font-size: 17px;
-      color: #B03A2E;
+      color: #b03a2e;
     }
     a {
       display: inline;
       text-decoration: underline;
       color: rgb(42, 96, 152);
       &:hover {
-        color: rgb(186, 42, 24)
+        color: rgb(186, 42, 24);
       }
     }
     @media #{$LARGE-PHONE} {

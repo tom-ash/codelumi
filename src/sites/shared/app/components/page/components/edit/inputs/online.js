@@ -1,14 +1,12 @@
-import React from "react"
-import { ManagedCheckbox } from "managed-inputs"
+import React from 'react'
+import { ManagedCheckbox } from 'managed-inputs'
 
 function OnlineInput(props) {
   const { checked, changeInputs } = props
   const classNames = { container: 'switch' }
   const label = (
     <>
-      <div className={`text ${checked ? 'checked' : 'unchecked'}`}>
-        Online
-      </div>
+      <div className={`text ${checked ? 'checked' : 'unchecked'}`}>Online</div>
       <div className={`body ${checked ? 'checked' : 'unchecked'}`}>
         <div className='dot' />
       </div>

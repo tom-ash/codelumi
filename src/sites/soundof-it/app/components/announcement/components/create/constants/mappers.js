@@ -1,6 +1,8 @@
 export const mapStateToProps = store => {
-  const { announcement: { create } } = store
-  const { 
+  const {
+    announcement: { create },
+  } = store
+  const {
     selectableSkills,
     selectedSkills,
     remote,
@@ -14,9 +16,9 @@ export const mapStateToProps = store => {
     employmentMin,
     civilContract,
     civilContractMax,
-    civilContractMin
+    civilContractMin,
   } = create
-  
+
   return {
     selectableSkills,
     selectedSkills,
@@ -31,10 +33,10 @@ export const mapStateToProps = store => {
     employmentMin,
     civilContract,
     civilContractMax,
-    civilContractMin
+    civilContractMin,
   }
 }
-  
+
 export const mapDispatchToProps = dispatch => {
   return {
     setStore: value => dispatch({ type: 'announcement/create', value }),

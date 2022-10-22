@@ -12,11 +12,10 @@ export function triggerVisible(announcement, index) {
     method,
     headers: {
       'Content-Type': 'application/json',
-      access_token
+      access_token,
     },
-    body: JSON.stringify({ visible: !announcement.visible })
-  })
-  .then(response => {
+    body: JSON.stringify({ visible: !announcement.visible }),
+  }).then(response => {
     if (response.ok) {
       this.props.changeData({ announcements: deepCloneAnnouncement.call(this, announcement, index) })
     }
@@ -25,7 +24,7 @@ export function triggerVisible(announcement, index) {
 }
 
 function deepCloneAnnouncement(announcement, index) {
-  const announcements = [ ...this.props.announcements ]
+  const announcements = [...this.props.announcements]
   const copiedAnnouncement = { ...announcement }
   copiedAnnouncement.visible = !announcement.visible
 

@@ -5,13 +5,17 @@ const noError = { pl: '', en: '' }
 
 function parseFeaturesForState() {
   let initialState = {}
-  features.map(feature => { initialState[feature.ref] = false })
+  features.map(feature => {
+    initialState[feature.ref] = false
+  })
   return initialState
 }
 
 function parseFurnishingsForState() {
   let initialState = {}
-  furnishings.map(furnishing => { initialState[furnishing.ref] = false })
+  furnishings.map(furnishing => {
+    initialState[furnishing.ref] = false
+  })
   return initialState
 }
 
@@ -26,7 +30,7 @@ export const control = {
   addingPicture: false,
   addAvailabilityDate: false,
   showDescription: false,
-  step: 'form'
+  step: 'form',
 }
 
 export const inputs = {
@@ -58,14 +62,14 @@ export const inputs = {
   sublocality: null,
   name: null,
   link: null,
-  adminControlled: null
+  adminControlled: null,
 }
 
 export const data = {
   netRentAmountPerSqm: null,
   grossRentAmount: null,
   grossRentAmountPerSqm: null,
-  user: null
+  user: null,
 }
 
 export const errors = {
@@ -79,5 +83,5 @@ export const errors = {
   availabilityDateSelect: noError,
   availabilityDate: noError,
   pictures: noError,
-  map: noError
+  map: noError,
 }

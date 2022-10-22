@@ -4,10 +4,9 @@ import Links from './components/links/links.js'
 const HeaderCustomization = props => {
   return (
     <>
-      <Links {...props}/>
+      <Links {...props} />
     </>
   )
 }
 
 export default HeaderCustomization
-

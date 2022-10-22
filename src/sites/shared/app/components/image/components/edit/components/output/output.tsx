@@ -2,9 +2,9 @@ import React from 'react'
 import RenderNode from '../../../../../support/render-node/render-node'
 
 interface OutputProps {
-  width: string,
-  height: string,
-  bodyElements: RenderNodeData[],
+  width: string
+  height: string
+  bodyElements: RenderNodeData[]
   clientUrl: string
   appName: string
   device: string
@@ -14,21 +14,11 @@ interface OutputProps {
 }
 
 const Output = (props: OutputProps) => {
-  const {
-    width,
-    height,
-    bodyElements,
-    clientUrl,
-    appName,
-    device,
-    lang,
-    changeRoute,
-    langHandler
-  } = props
+  const { width, height, bodyElements, clientUrl, appName, device, lang, changeRoute, langHandler } = props
 
   const nodeProps = {
     node: {
-      image: bodyElements
+      image: bodyElements,
     },
     jsonBody: bodyElements,
     clientUrl,
@@ -36,7 +26,7 @@ const Output = (props: OutputProps) => {
     device,
     lang,
     changeRoute,
-    langHandler
+    langHandler,
   }
 
   return (
@@ -45,7 +35,7 @@ const Output = (props: OutputProps) => {
       className='output'
       style={{
         width: +width,
-        height: +height
+        height: +height,
       }}
     >
       <RenderNode {...nodeProps} />

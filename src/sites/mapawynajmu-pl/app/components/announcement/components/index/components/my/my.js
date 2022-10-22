@@ -32,12 +32,7 @@ class AnnouncementIndexMy extends React.Component {
   static contextType = AppContext
 
   render() {
-    const {
-      amount,
-      offset,
-      lang,
-      routeSynced
-    } = this.props
+    const { amount, offset, lang, routeSynced } = this.props
 
     const toValue = offset + 10 < amount ? offset + 10 : amount
     let whichAnnouncements = `${offset + 1} - ${toValue} ${this.langHandler({ pl: 'z', en: 'of' })}`
@@ -54,53 +49,55 @@ class AnnouncementIndexMy extends React.Component {
         <h1>
           <span>{this.langHandler({ pl: 'Moje ogłoszenia', en: 'My announcements' })}</span>
         </h1>
-        {
-        this.props.beingDeleted &&
-        <div className='destroy'>
-          <div className='cover' />
-          <div className='monit'>
-            <div className='text'>
-              {
-              this.langHandler({ pl: `Usunięte ogłoszenie nie może być przywrócone. Czy na pewno chcesz usunąć ogłoszenie Nr ${this.props.beingDeleted}. `, en: `The deleted announcement cannot be restored. Are you sure you want to delete the announcement No. ${this.props.beingDeleted}` })
-              }
+        {this.props.beingDeleted && (
+          <div className='destroy'>
+            <div className='cover' />
+            <div className='monit'>
+              <div className='text'>
+                {this.langHandler({
+                  pl: `Usunięte ogłoszenie nie może być przywrócone. Czy na pewno chcesz usunąć ogłoszenie Nr ${this.props.beingDeleted}. `,
+                  en: `The deleted announcement cannot be restored. Are you sure you want to delete the announcement No. ${this.props.beingDeleted}`,
+                })}
+              </div>
+              <ManagedButton {...this.cancelDestroyManager()} />
+              <ManagedButton {...this.destroyManager()} />
+              <div className='float-clear' />
             </div>
-            <ManagedButton {...this.cancelDestroyManager()} />
-            <ManagedButton {...this.destroyManager()} />
-            <div className='float-clear' />
           </div>
-        </div>
-        }
+        )}
         <div className='announcements'>
-          {this.props.announcements && this.props.announcements.map((announcement, index) => (
-          <Tile
-            venue='list'
-            key={`${announcement.id}`}
-            index={index}
-            control={this.controlProvider(announcement, index)}
-            first={index == 0}
-            last={index == this.props.announcements.length - 1}
-            id={announcement.id}
-            category={announcement.category}
-            pictures={announcement.pictures}
-            area={announcement.area}
-            netRentAmount={announcement.netRentAmount}
-            netRentAmountPerSqm={announcement.netRentAmountPerSqm}
-            grossRentAmount={announcement.grossRentAmount}
-            grossRentAmountPerSqm={announcement.grossRentAmountPerSqm}
-            rooms={announcement.rooms}
-            rentCurrency={announcement.rentCurrency}
-            floor={announcement.floor}
-            totalFloors={announcement.totalFloors}
-            availabilityDate={announcement.availabilityDate}
-            lang={lang}
-            path={announcement.path}
-            title={announcement.title}
-            locality={announcement.locality}
-            sublocality={announcement.sublocality}
-            name={`${announcement.id}. ${announcement.name ? ` ${announcement.name}`: ''}`}
-            link={announcement.link}
-            {...tileComponents}
-          />))}
+          {this.props.announcements &&
+            this.props.announcements.map((announcement, index) => (
+              <Tile
+                venue='list'
+                key={`${announcement.id}`}
+                index={index}
+                control={this.controlProvider(announcement, index)}
+                first={index == 0}
+                last={index == this.props.announcements.length - 1}
+                id={announcement.id}
+                category={announcement.category}
+                pictures={announcement.pictures}
+                area={announcement.area}
+                netRentAmount={announcement.netRentAmount}
+                netRentAmountPerSqm={announcement.netRentAmountPerSqm}
+                grossRentAmount={announcement.grossRentAmount}
+                grossRentAmountPerSqm={announcement.grossRentAmountPerSqm}
+                rooms={announcement.rooms}
+                rentCurrency={announcement.rentCurrency}
+                floor={announcement.floor}
+                totalFloors={announcement.totalFloors}
+                availabilityDate={announcement.availabilityDate}
+                lang={lang}
+                path={announcement.path}
+                title={announcement.title}
+                locality={announcement.locality}
+                sublocality={announcement.sublocality}
+                name={`${announcement.id}. ${announcement.name ? ` ${announcement.name}` : ''}`}
+                link={announcement.link}
+                {...tileComponents}
+              />
+            ))}
           <div className='float-clear' />
         </div>
       </div>

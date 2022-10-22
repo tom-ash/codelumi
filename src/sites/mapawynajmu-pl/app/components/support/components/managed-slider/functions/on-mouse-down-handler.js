@@ -1,8 +1,5 @@
 export function onMouseDownHandler(e) {
-  const {
-    pictures,
-    disableSLides
-  } = this.props
+  const { pictures, disableSLides } = this.props
 
   if (disableSLides) return
 
@@ -18,8 +15,11 @@ export function onMouseDownHandler(e) {
     newStatePictures[nextPicture] = pictures[nextPicture]
   }
 
-  this.setState({
-    statePictures: newStatePictures,
-    transition: null
-  }, () => this.slider.current.addEventListener('mousemove', this.onMouseMoveHandler))
+  this.setState(
+    {
+      statePictures: newStatePictures,
+      transition: null,
+    },
+    () => this.slider.current.addEventListener('mousemove', this.onMouseMoveHandler)
+  )
 }

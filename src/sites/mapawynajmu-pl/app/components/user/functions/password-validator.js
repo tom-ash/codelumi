@@ -8,6 +8,6 @@ export function passwordValidator(password) {
 
   return {
     isValid,
-    error
+    error,
   }
 }

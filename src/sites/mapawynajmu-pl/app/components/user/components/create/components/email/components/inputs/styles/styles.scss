@@ -20,17 +20,17 @@
       max-width: 280px;
       &.text {
         margin-left: 80px;
-        padding-left: 0;  
+        padding-left: 0;
         .input {
           padding-left: 12px;
         }
         .label {
           position: relative;
-          left: -80px!important;
+          left: -80px !important;
         }
         .error-container {
           position: relative;
-          left: -80px!important;
+          left: -80px !important;
         }
       }
     }

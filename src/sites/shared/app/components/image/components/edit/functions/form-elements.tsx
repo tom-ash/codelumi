@@ -1,12 +1,12 @@
-import React from "react"
-import { ManagedTextarea, ManagedButton } from "managed-inputs"
+import React from 'react'
+import { ManagedTextarea, ManagedButton } from 'managed-inputs'
 import save from './save'
 import drawOnCanvas from './draw-on-canvas'
 import transformCanvasToBlob from './transform-canvas-to-blob'
 import compress from './compress'
 
 interface BodyTextareaProps {
-  body: string,
+  body: string
   changeData(props: object): void
 }
 
@@ -18,20 +18,20 @@ export const BodyTextarea = (props: BodyTextareaProps) => {
     classNames,
     value: body,
     counterLimit: 10000,
-    onChange: (body: object) => changeData({ body })
+    onChange: (body: object) => changeData({ body }),
   }
 
   return <ManagedTextarea {...textareaProps} />
 }
 
 interface SaveButtonProps {
-  apiUrl: string,
-  imageId: number,
-  body: string,
-  width: string,
-  height: string,
-  storageKey: string,
-  storageUrl: string,
+  apiUrl: string
+  imageId: number
+  body: string
+  width: string
+  height: string
+  storageKey: string
+  storageUrl: string
   changeData(props: object): void
 }
 
@@ -44,7 +44,7 @@ export const SaveButton = (props: SaveButtonProps) => {
   const buttonProps = {
     classNames,
     onClick,
-    label
+    label,
   }
 
   return <ManagedButton {...buttonProps} />

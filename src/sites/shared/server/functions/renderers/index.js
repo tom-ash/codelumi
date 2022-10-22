@@ -14,11 +14,10 @@ function indexRenderer(props) {
     html,
     css,
     preloadedState,
-    scriptTags
+    scriptTags,
   } = props
 
-  const indexAsHtml = (
-    `<!doctype html>
+  const indexAsHtml = `<!doctype html>
     <html lang="${lang}">
       <head>
         <title>${title}</title>
@@ -40,7 +39,6 @@ function indexRenderer(props) {
         <script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}</script>
       </body>
     </html>`
-  )
 
   return pretty(indexAsHtml)
 }

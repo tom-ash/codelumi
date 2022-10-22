@@ -4,35 +4,30 @@ import { VERIFY_API_ROUTE_DATA, DELETE_API_ROUTE_DATA } from '../constants/api_r
 import { deauthorizeUser } from '../../authorize/functions/adapters.js'
 
 export function sendEmail() {
-  const {
-    changeControl,
-    connecting,
-    email,
-    lang
-  } = this.props
+  const { changeControl, connecting, email, lang } = this.props
 
   if (connecting) return
 
   const { method, route } = VERIFY_API_ROUTE_DATA
 
   changeControl({ connecting: true })
-  
+
   fetch(API_URL + route, {
     method,
     headers: {
       'Content-Type': 'application/json',
       'Access-Token': getAccessToken(),
-      lang
+      lang,
     },
-    body: JSON.stringify({ email })
+    body: JSON.stringify({ email }),
   })
-  .then(response => {
-    if (response.ok) return changeControl({ step: 'verification' })
-    
-    throw new Error('Server Error')
-  })
-  .catch(error => console.dir(error))
-  .finally(() => changeControl({ connecting: false }))
+    .then(response => {
+      if (response.ok) return changeControl({ step: 'verification' })
+
+      throw new Error('Server Error')
+    })
+    .catch(error => console.dir(error))
+    .finally(() => changeControl({ connecting: false }))
 }
 
 export function destroy() {
@@ -50,28 +45,28 @@ export function destroy() {
     headers: {
       'Content-Type': 'application/json',
       'Access-Token': getAccessToken(),
-      'Lang': lang
+      Lang: lang,
     },
-    body: JSON.stringify({ verificationCode })
+    body: JSON.stringify({ verificationCode }),
   })
-  .then(response => {
-    if (response.ok) return response.json()
+    .then(response => {
+      if (response.ok) return response.json()
 
-    this.props.changeErrors({
-      verification: {
-        pl: 'Nieprawidłowy kod weryfikacyjny',
-        en: 'Invalid verification code'
-      }
+      this.props.changeErrors({
+        verification: {
+          pl: 'Nieprawidłowy kod weryfikacyjny',
+          en: 'Invalid verification code',
+        },
+      })
+      throw new Error('Invalid Verification Code Error')
     })
-    throw new Error('Invalid Verification Code Error')
-  })
-  .then(json => {
-    const { path } = json
-    const { dispatch } = this.props
-    const { changeRoute } = this.context
+    .then(json => {
+      const { path } = json
+      const { dispatch } = this.props
+      const { changeRoute } = this.context
 
-    deauthorizeUser({ dispatch, changeRoute, path })
-  })
-  .catch(error => console.dir(error))
-  .finally(() => changeControl({ connecting: false }))
+      deauthorizeUser({ dispatch, changeRoute, path })
+    })
+    .catch(error => console.dir(error))
+    .finally(() => changeControl({ connecting: false }))
 }

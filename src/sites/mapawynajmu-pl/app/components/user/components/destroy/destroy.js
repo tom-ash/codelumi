@@ -31,9 +31,7 @@ class UserDestroy extends React.Component {
   render() {
     return (
       <div id='user-destroy'>
-        <div className='monit'>
-          {this.langHandler(monit)}
-        </div>
+        <div className='monit'>{this.langHandler(monit)}</div>
         <ManagedText {...this.verificationManager()} />
         <ManagedButton {...this.buttonManager()} />
       </div>

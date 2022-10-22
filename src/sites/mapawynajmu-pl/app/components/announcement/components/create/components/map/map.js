@@ -11,12 +11,12 @@ import Info from '../../../../../../../../shared/app/components/support/info'
 
 const HEADING = {
   pl: 'Lokalizacja (wymagana)',
-  en: 'Location (required)'
+  en: 'Location (required)',
 }
 
 const INFO = {
   pl: 'Podaj adres lub kliknij na mapie, aby wybrać lokalizację.',
-  en: 'Provide address or click on the map to select location.'
+  en: 'Provide address or click on the map to select location.',
 }
 
 class AnnouncementCreatMap extends React.Component {
@@ -30,7 +30,7 @@ class AnnouncementCreatMap extends React.Component {
     this.state = {
       autocompleteInput: '',
       autocompletes: [],
-      showAutocompletes: false
+      showAutocompletes: false,
     }
   }
 
@@ -41,10 +41,10 @@ class AnnouncementCreatMap extends React.Component {
     const { changeInputs, changeErrors } = this.props
     const headingProps = {
       tier: 2,
-      text: this.langHandler(HEADING)
+      text: this.langHandler(HEADING),
     }
     const infoProps = {
-      message: this.langHandler(INFO)
+      message: this.langHandler(INFO),
     }
 
     return (
@@ -61,24 +61,23 @@ class AnnouncementCreatMap extends React.Component {
             changeInputs={changeInputs}
             changeErrors={changeErrors}
           />
-          {showAutocompletes &&
-          <div className='autocompletes'>
-            {this.state.autocompletes.map(autocomplete => (
-              <div
-                onClick={() => addMarker({ autocomplete, setState: this.setStore, changeInputs, changeErrors })}
-                key={autocomplete.place_id}
-              >
-                {autocomplete.description}
-              </div>
-            ))}
-          </div>}
+          {showAutocompletes && (
+            <div className='autocompletes'>
+              {this.state.autocompletes.map(autocomplete => (
+                <div
+                  onClick={() => addMarker({ autocomplete, setState: this.setStore, changeInputs, changeErrors })}
+                  key={autocomplete.place_id}
+                >
+                  {autocomplete.description}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
         <div id='google-map-container' className='map'>
-          <div id='google-map' className={this.props.error.pl ? 'map-error' : ''}/>
+          <div id='google-map' className={this.props.error.pl ? 'map-error' : ''} />
         </div>
-        <div className='error'>
-          {this.langHandler(this.props.error)}
-        </div>
+        <div className='error'>{this.langHandler(this.props.error)}</div>
       </div>
     )
   }

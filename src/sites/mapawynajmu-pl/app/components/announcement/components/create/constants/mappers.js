@@ -4,7 +4,7 @@ export const mapStateToProps = store => {
     'announcement/create/form': renderForm,
     'announcement/edit': renderEdit,
     'announcement/create/verification': renderVerification,
-    'announcement/create/summary': renderSuccess
+    'announcement/create/summary': renderSuccess,
   } = store.render
   const { authorized, admin } = store.user.authorize.data
   const { control, inputs, errors, data } = store.announcement.create
@@ -39,7 +39,10 @@ export const mapStateToProps = store => {
 
   return {
     routeSynced,
-    renderForm, renderVerification, renderSuccess, renderEdit,
+    renderForm,
+    renderVerification,
+    renderSuccess,
+    renderEdit,
     accountType,
     email,
     lang,
@@ -77,7 +80,7 @@ export const mapStateToProps = store => {
     link,
   }
 }
-    
+
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
@@ -89,7 +92,6 @@ export const mapDispatchToProps = dispatch => {
     resetInputs: value => dispatch({ type: 'announcement/create/inputs/reset', value }),
     resetErrors: value => dispatch({ type: 'announcement/create/errors/reset', value }),
     resetData: value => dispatch({ type: 'announcement/create/data/reset', value }),
-    dispatch
+    dispatch,
   }
 }
-    

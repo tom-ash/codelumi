@@ -5,14 +5,14 @@ export const categories = [
     value: 2,
     label: {
       pl: 'Mieszkanie',
-      en: 'Apartment'
+      en: 'Apartment',
     },
     pin: {
       class: 'apartment',
       svg: 'apartment',
-      color: '#1E8449'
+      color: '#1E8449',
     },
-    linkTrack: 'root/apartments'
+    linkTrack: 'root/apartments',
   },
   {
     name: 'houses',
@@ -20,14 +20,14 @@ export const categories = [
     value: 3,
     label: {
       pl: 'Dom',
-      en: 'House'
+      en: 'House',
     },
     pin: {
       class: 'house',
       svg: 'house',
-      color: '#0E6655'
+      color: '#0E6655',
     },
-    linkTrack: 'root/houses'
+    linkTrack: 'root/houses',
   },
   {
     name: 'rooms',
@@ -35,14 +35,14 @@ export const categories = [
     value: 4,
     label: {
       pl: 'Pokój',
-      en: 'Room'
+      en: 'Room',
     },
     pin: {
       class: 'room',
       svg: 'room',
-      color: '#28B463'
+      color: '#28B463',
     },
-    linkTrack: 'root/rooms'
+    linkTrack: 'root/rooms',
   },
   {
     name: 'parkingSpaces',
@@ -50,14 +50,14 @@ export const categories = [
     value: 5,
     label: {
       pl: 'Miejsce parkingowe',
-      en: 'Parking Space'
+      en: 'Parking Space',
     },
     pin: {
       class: 'parking-space',
       svg: 'parkingSpace',
-      color: '#34495E'
+      color: '#34495E',
     },
-    linkTrack: 'root/parking_spaces'
+    linkTrack: 'root/parking_spaces',
   },
   {
     name: 'usablePremises',
@@ -65,14 +65,14 @@ export const categories = [
     value: 1,
     label: {
       pl: 'Lokal użytkowy',
-      en: 'Usable Premises'
+      en: 'Usable Premises',
     },
     pin: {
       class: 'usable-premises',
       svg: 'usablePremises',
-      color: '#D35400'
+      color: '#D35400',
     },
-    linkTrack: 'root/usable_premises'
+    linkTrack: 'root/usable_premises',
   },
   {
     name: 'offices',
@@ -80,14 +80,14 @@ export const categories = [
     value: 0,
     label: {
       pl: 'Biuro',
-      en: 'Office'
+      en: 'Office',
     },
     pin: {
       class: 'office',
       svg: 'office',
-      color: '#3498DB'
+      color: '#3498DB',
     },
-    linkTrack: 'root/offices'
+    linkTrack: 'root/offices',
   },
   {
     name: 'virtualOffices',
@@ -95,14 +95,14 @@ export const categories = [
     value: 6,
     label: {
       pl: 'Biuro wirtualne',
-      en: 'Virtual Office'
+      en: 'Virtual Office',
     },
     pin: {
       class: 'virtual-office',
       svg: 'virtualOffice',
-      color: '#7D3C98'
+      color: '#7D3C98',
     },
-    linkTrack: 'root/virtual_offices'
+    linkTrack: 'root/virtual_offices',
   },
   {
     name: 'coworking',
@@ -110,13 +110,13 @@ export const categories = [
     value: 7,
     label: {
       pl: 'Coworking - Przestrzeń coworkingowa',
-      en: 'Coworking Space'
+      en: 'Coworking Space',
     },
     pin: {
       class: 'coworking-space',
       svg: 'coworkingSpace',
-      color: '#4A235A'
+      color: '#4A235A',
     },
-    linkTrack: 'root/coworking_spaces'
-  }
+    linkTrack: 'root/coworking_spaces',
+  },
 ]

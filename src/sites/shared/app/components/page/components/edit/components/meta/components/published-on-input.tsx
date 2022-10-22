@@ -1,8 +1,8 @@
-import React from "react"
-import { ManagedText } from "managed-inputs"
+import React from 'react'
+import { ManagedText } from 'managed-inputs'
 
 interface PublishedOnInputProps {
-  publishedOn: string,
+  publishedOn: string
   changeInputs(props: object): void
 }
 
@@ -13,7 +13,6 @@ const PublishedOnInput = (props: PublishedOnInputProps) => {
   const value = publishedOn
   const onChange = (publishedOn: string) => changeInputs({ publishedOn })
   const inputProps = { classNames, label, value, onChange }
-  
 
   return <ManagedText {...inputProps} />
 }

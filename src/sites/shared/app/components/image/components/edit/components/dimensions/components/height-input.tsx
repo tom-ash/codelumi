@@ -1,8 +1,8 @@
-import React from "react"
-import { ManagedText } from "managed-inputs"
+import React from 'react'
+import { ManagedText } from 'managed-inputs'
 
 interface HeightInputProps {
-  height: string,
+  height: string
   changeData(props: object): void
 }
 

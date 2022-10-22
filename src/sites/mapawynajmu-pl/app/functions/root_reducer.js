@@ -15,7 +15,7 @@ const rootReducer = combineReducers({
   visitor: visitorReducer,
   page: pageReducer,
   links: linksReducer,
-  image: imageReducer
+  image: imageReducer,
 })
 
 export default rootReducer

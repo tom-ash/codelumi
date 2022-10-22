@@ -1,7 +1,4 @@
-function sendGaEvent(
-  event,
-  eventLabel
-) {
+function sendGaEvent(event, eventLabel) {
   return
 
   if (!window || !window.ga || !event) return
@@ -10,7 +7,7 @@ function sendGaEvent(
     window.ga('send', {
       hitType: 'event',
       ...event,
-      ...eventLabel && eventLabel
+      ...(eventLabel && eventLabel),
     })
   } catch {}
 }

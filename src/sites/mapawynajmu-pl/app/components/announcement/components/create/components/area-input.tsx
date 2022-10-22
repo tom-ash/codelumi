@@ -1,19 +1,15 @@
-import React from "react"
+import React from 'react'
 import SVG from '../../../../../../../shared/app/components/support/svg/svg'
 import { ManagedText } from 'managed-inputs'
 
 type AreaInputProps = {
-  area: number,
+  area: number
   changeInputs(attrs: { area: number }): void
   langHandler: LangHandler
 }
 
 export function AreaInput(props: AreaInputProps) {
-  const {
-    area,
-    changeInputs,
-    langHandler
-  } = props
+  const { area, changeInputs, langHandler } = props
 
   const classNames = { container: 'form-input text area-input' }
   const value = area
@@ -21,7 +17,14 @@ export function AreaInput(props: AreaInputProps) {
   const children = (
     <div className='sqm'>
       {/* @ts-ignore */}
-      {langHandler({ pl: <>m<sup>2</sup></>, en: 'sqm' })}
+      {langHandler({
+        pl: (
+          <>
+            m<sup>2</sup>
+          </>
+        ),
+        en: 'sqm',
+      })}
     </div>
   )
   const onChange = (area: number) => changeInputs({ area })
@@ -30,7 +33,7 @@ export function AreaInput(props: AreaInputProps) {
     value,
     type,
     children,
-    onChange
+    onChange,
   }
 
   return <ManagedText {...areaProps} />
