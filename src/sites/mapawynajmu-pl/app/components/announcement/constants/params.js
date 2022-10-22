@@ -5,7 +5,6 @@ export const params = {
       pl: 'kategoria',
       en: 'category'
     },
-    parser: 'parseCategoryForUrl'
   },
   area: {
     minMax: true,

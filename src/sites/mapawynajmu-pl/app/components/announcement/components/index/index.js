@@ -7,7 +7,6 @@ import AnnouncementIndexMap from './components/map/map'
 const AnnouncementIndexMy = loadable(() => import('./components/my/my'))
 import langHandler from '../../../../functions/lang-handler'
 import { parseCurrency } from '../../functions/currency-parsers'
-import { parseCategoryForUrl } from '../../functions/category-parsers'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { componentDidUpdate } from './functions/lifecycle.js'
@@ -19,7 +18,6 @@ class AnnouncementIndexSearch extends React.Component {
     super(props)
     this.langHandler = langHandler.bind(this)
     this.parseCurrency = parseCurrency.bind(this)
-    this.parseCategoryForUrl = parseCategoryForUrl.bind(this)
     this.componentDidUpdate = componentDidUpdate
   }
 
