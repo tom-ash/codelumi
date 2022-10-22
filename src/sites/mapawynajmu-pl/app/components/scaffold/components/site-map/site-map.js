@@ -22,7 +22,7 @@ class SiteMap extends React.Component {
     }
 
     return (
-      <div id='site-map' className='container'>
+      <div id='site-map'>
         {siteMapLinks.map((link, index) => (
           <a href={`${CLIENT_URL}/${link}`} key={index}>
             {`${CLIENT_URL}/${link}`}

@@ -12,7 +12,7 @@ const Description = loadable(() => import('./components/description/description'
 import langHandler from '../../../../../functions/lang-handler.js'
 import { togglePhone } from '../../../functions/toggle-phone'
 import buildUrl from '../../../../../../shared/functions/builders/url'
-import { markListingAsViewed } from '../../../../announcement/functions/view-announcement'
+import { markListingAsViewed } from '../../../functions/mark-as-viewed'
 import AppContext from '../../../../../constants/context'
 import scrollToElement from '../../../../../../../shared/app/functions/screen/scrollers/to-element'
 
