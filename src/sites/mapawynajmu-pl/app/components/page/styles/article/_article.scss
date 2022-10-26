@@ -8,95 +8,31 @@ $horizontal-margin-mobile: 18px;
 %article {
   max-width: 704px;
   margin: 36px auto;
-  line-height: 1.8;
-  color: rgb(42, 42, 42);
+  line-height: 1.75;
+  color: rgb(32, 32, 32);
   overflow: hidden;
   h1 {
-    margin: 24px 0;
+    margin-bottom: 18px;
     font-size: 36px;
-    letter-spacing: 0.5px;
   }
   .editorial {
     @extend %editorial;
   }
   .table-of-contents {
     @extend %table-of-contents;
+    h2 {
+      margin-top: 0;
+    }
+    // background: rgb(242, 242, 242);
+    // border-radius: 3px;
   }
-  .heading-container {
-    display: flex;
-    .number {
-      flex: none;
-      font-weight: bold;
-      margin-right: 12px;
-    }
-    &.h2 {
-      margin: 42px 0 12px;
-      border-top: 1px solid rgb(216, 216, 216);
-      padding-top: 36px;
-      letter-spacing: 0.2px;
-      .number,
-      h2 {
-        font-size: 19px;
-      }
-      @media #{$LARGE-PHONE} {
-        margin: 42px $horizontal-margin-mobile 12px;
-      }
-    }
-    &.h3 {
-      margin: 36px 0 12px;
-      .number,
-      h3 {
-        font-size: 18px;
-      }
-      @media #{$LARGE-PHONE} {
-        margin: 36px $horizontal-margin-mobile 12px;
-      }
-    }
-    &.h4 {
-      margin: 24px 0 12px;
-      .number,
-      h4 {
-        font-size: 17px;
-      }
-      @media #{$LARGE-PHONE} {
-        margin: 24px $horizontal-margin-mobile 12px;
-      }
-    }
-    &.h2 + .h3 {
-      margin: 0 0 12px;
-      @media #{$LARGE-PHONE} {
-        margin: 0 $horizontal-margin-mobile 12px;
-      }
-    }
-    &.h3 + .h4 {
-      margin: 0 0 12px;
-      @media #{$LARGE-PHONE} {
-        margin: 0 $horizontal-margin-mobile 12px;
-      }
-    }
-  }
-  .heading-container:first-of-type {
-    &.h2 {
-      border-top: none;
-      margin: 0 0 12px;
-      @media #{$LARGE-PHONE} {
-        margin: 0 $horizontal-margin-mobile 12px;
-      }
-    }
+  h2 {
+    margin-top: 36px;
   }
   p {
     margin: 0 0 12px;
-    code {
-      display: inline-block;
-      padding: 0px 6px;
-      background: #f8f9f9;
-      color: #922b21;
-      font-size: 15px;
-      line-height: 1.4;
-    }
     a {
       display: inline;
-      text-decoration: underline;
       color: rgb(42, 96, 152);
       &:hover {
         color: rgb(186, 42, 24);
@@ -109,18 +45,12 @@ $horizontal-margin-mobile: 18px;
   p + ul {
     margin-top: -9px;
   }
-  p + pre {
-    margin-top: 18px;
-  }
-  pre + pre {
-    margin-top: 21px;
-  }
   ul {
-    margin-bottom: 18px;
+    margin-bottom: 12px;
     margin-left: 18px;
     li {
       p {
-        margin: 0 0 3px;
+        margin: 0;
         padding: 0;
       }
     }
@@ -132,6 +62,11 @@ $horizontal-margin-mobile: 18px;
     width: 100%;
     @media #{$LARGE-PHONE} {
       padding: 0 18px;
+    }
+  }
+  header {
+    img {
+      margin-bottom: 18px;
     }
   }
   @media #{$LARGE-PHONE} {
