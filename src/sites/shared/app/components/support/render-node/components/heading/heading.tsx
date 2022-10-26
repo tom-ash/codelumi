@@ -7,13 +7,7 @@ const Heading = (props: HeadingProps) => {
   const tag = `h${rank}`
   const headingText = objectHeading ? heading.c : heading
 
-  return (
-    <>
-      <div className={`heading-container ${tag}`}>
-        {objectHeading && <span className='number'>{heading.n}</span>} {React.createElement(tag, {}, headingText)}
-      </div>
-    </>
-  )
+  return React.createElement(tag, {}, headingText)
 }
 
 export default Heading
