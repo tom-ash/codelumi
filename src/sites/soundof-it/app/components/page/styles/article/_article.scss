@@ -19,13 +19,18 @@ $horizontal-margin-mobile: 18px;
     @extend %table-of-contents;
   }
   h1 {
-    font-size: 32px;
+    line-height: 41.25px;
+    font-size: 30px;
     margin-bottom: 36px;
+  }
+  .cover + h1 {
+    margin-top: 36px;
   }
   h2 {
     margin-top: 36px;
+    line-height: 33px;
     font-size: 22px;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
     &:first-of-type {
       margin-top: 0;
     }
@@ -33,10 +38,17 @@ $horizontal-margin-mobile: 18px;
       padding: 0 $horizontal-margin-mobile;
     }
   }
+  .table-of-contents + h2 {
+    margin-top: 36px;
+  }
   h3 {
+    margin-top: 36px;
+    margin-bottom: 16px;
+    line-height: 29.25px;
     font-size: 18px;
-    margin-bottom: 18px;
-    // TODO
+  }
+  h2 + h3 {
+    margin-top: 0;
   }
   p {
     margin-bottom: 18px;
