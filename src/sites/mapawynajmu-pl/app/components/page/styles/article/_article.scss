@@ -12,9 +12,9 @@ $horizontal-margin-mobile: 18px;
   line-height: 26px;
   font-size: 16px;
   color: rgb(42, 42, 42);
-  .editorial {
-    @extend %editorial;
-  }
+  // .editorial {
+  //   @extend %editorial;
+  // }
   .table-of-contents {
     @extend %table-of-contents;
   }
@@ -27,18 +27,14 @@ $horizontal-margin-mobile: 18px;
     margin-top: 36px;
   }
   h2 {
-    margin-top: 36px;
     line-height: 33px;
     font-size: 22px;
     margin-bottom: 15px;
-    &:first-of-type {
-      margin-top: 0;
-    }
     @media #{$LARGE-PHONE} {
       padding: 0 $horizontal-margin-mobile;
     }
   }
-  .table-of-contents + h2 {
+  p + h2, ul + h2, pre + h2, .editorial + h2, .table-of-contents + h2 {
     margin-top: 36px;
   }
   h3 {

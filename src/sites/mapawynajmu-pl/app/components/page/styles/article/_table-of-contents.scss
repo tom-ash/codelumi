@@ -1,9 +1,10 @@
 $padding-mobile: 18px;
 
 %table-of-contents {
-  padding: 32px 0;
+  margin-top: 24px;
+  margin-bottom: 24px;
   @media #{$LARGE-PHONE} {
-    padding: 24px $padding-mobile;
+    padding: 0 $padding-mobile;
   }
   .inner-container {
     display: inline-block;
@@ -15,8 +16,9 @@ $padding-mobile: 18px;
     padding-left: 15px;
   }
   h2 {
+    line-height: 16px;
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
   a {
     font-size: 15px;
