@@ -12,9 +12,9 @@ const buildAnchor = (matchArray: string[]) => {
     }
   })
 
-  if (properties.indexOf('target') === -1) {
-    properties += ' target="_blank"'
-  }
+  // if (properties.indexOf('target') === -1) {
+  //   properties += ' target="_blank"'
+  // }
 
   // TODO: Find a faster approach.
   if (properties.indexOf('title') === -1) {
