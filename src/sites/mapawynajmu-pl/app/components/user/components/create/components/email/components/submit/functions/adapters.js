@@ -1,8 +1,6 @@
 import { hashPassword } from '../../../../../../../functions/shared.js'
 import { parser as consentsParser } from '../../../../consents/functions/parser'
 import {
-  accountTypeValidator,
-  nameValidator,
   phoneValidator,
   emailValidator,
   passwordValidator,
@@ -31,13 +29,6 @@ function prepareUserObject() {
     email: (email || '').toLowerCase(),
     password: document.getElementById('user-create-email-password').value,
     termsAndPrivacyConsent,
-    ...(accountType === 'private'
-      ? {
-          firstName: document.getElementById('user-create-email-first-name').value,
-        }
-      : {
-          businessName: document.getElementById('user-create-email-business-name').value,
-        }),
   }
 
   return userObject
@@ -47,14 +38,10 @@ function validateUserObject(userObject) {
   const { accountType } = this.props
 
   const validationArray = [
-    accountTypeValidator.call(this, userObject.accountType),
     phoneValidator.call(this, userObject.phoneNumber),
     emailValidator.call(this, userObject.email),
     passwordValidator.call(this, userObject.password),
     termsAndPrivacyConsentValidator.call(this, userObject.termsAndPrivacyConsent),
-    ...(accountType === 'private'
-      ? [nameValidator.call(this, 'firstName', userObject.firstName)]
-      : [nameValidator.call(this, 'businessName', userObject.businessName)]),
   ]
 
   return validationArray.every(element => element)

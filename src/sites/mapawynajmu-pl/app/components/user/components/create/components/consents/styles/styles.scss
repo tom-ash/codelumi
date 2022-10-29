@@ -1,8 +1,10 @@
 #user-create-consents-container {
   margin: 0 32px;
-  padding-bottom: 12px;
+  padding-bottom: 18px;
   .checkbox-container {
+    margin-bottom: 0;
     .checkbox.form-input {
+      margin-bottom: 0;
       .input {
         transform: scale(0.8)
       }
@@ -15,9 +17,9 @@
   }
   .error {
     margin: 6px 0 0 0;
-    color: $TEXT-ERROR-COLOR;
+    color: red;
     line-height: 16px;
-    font-size: 12px;
+    font-size: 10px;
   }
   a {
     display: inline-block;

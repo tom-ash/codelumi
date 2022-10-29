@@ -18,7 +18,6 @@ class UserCreateSubmit extends React.Component {
   render() {
     return (
       <div id='user-create-email-submit'>
-        {/* <div className='separation-line' /> */}
         <ManagedButton {...this.buttonManager()} />
       </div>
     )
