@@ -1,16 +1,19 @@
 @import '../../../../../../../../../styles/themes.scss';
 
 #user-create-email-submit {
-  .form-input {
-    &.button {
+  border-top: 2px solid #d7dbdd;
+  padding: 18px 0;
+  .submit-button {
+    .input {
+      display: block;
       margin: 0 auto;
-      .very-small-windmill-spinner {
-        top: -54px;
-        left: -49px;
-        div:after {
-          background: gray;
-        }
-      }
+      width: 120px;
+      height: 30px;
+      border: 1px solid #B3B6B7;
+      border-radius: 15px;
+      background: white;
+      font-size: 12px;
+      color: rgb(64, 64, 64);
     }
   }
 }

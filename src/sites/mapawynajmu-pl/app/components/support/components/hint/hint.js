@@ -1,6 +1,4 @@
 import React from 'react'
-import withStyles from 'isomorphic-style-loader/withStyles'
-import styles from './styles/styles.scss'
 import SVG from '../../../support/components/svg/svg.js'
 
 const Hint = ({ svg, text, classNames }) => {
@@ -19,4 +17,4 @@ const Hint = ({ svg, text, classNames }) => {
   )
 }
 
-export default withStyles(styles)(Hint)
+export default Hint

@@ -5,14 +5,14 @@
   background: white;
   overflow: hidden;
   h1 {
-    margin: 24px auto 24px;
     background: white;
     text-align: center;
-    font-size: 18px;
-    letter-spacing: 0.5px;
+    font-size: 14px;
     font-weight: 400;
-    color: rgb(42, 42, 42);
+    color: rgb(80, 80, 80);
     text-transform: uppercase;
+    border-bottom: 2px solid #d7dbdd;
+    padding: 18px 0;
   }
   .separation-line {
     margin: 20px 0;

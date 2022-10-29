@@ -1,11 +1,19 @@
 @import '../../../../../../../../../styles/inputs/form/svgs.scss';
+@import '../../../../../../../../../styles/colors';
 
 #user-create {
   .inputs {
     padding: 0 32px;
+    padding-top: 24px;
     h2 {
       font-size: 15px;
       color: $TEXT-HEADER-TIER-TWO-COLOR;
+    }
+    .hint {
+      color: #1f618d;
+      line-height: 16px;
+      font-size: 12px;
+      margin-bottom: 12px;
     }
     .text-input {
       margin-bottom: 18px;
@@ -32,23 +40,34 @@
       position: relative;
       .country-code {
         position: absolute;
-        width: 60px;
+        width: 72px;
         margin-top: 19px;
         line-height: 36px;
         font-size: 16px;
         padding-left: 6px;
+        text-align: center;
+        letter-spacing: 0.5px;
+        .input {
+          width: 100%;
+          padding-right: 24px;
+        }
         svg {
           position: absolute;
           display: block;
-          // display: inline-block;
           height: 10px;
           top: 14px;
-          left: 40px;
+          right: 18px;
           transform: rotate(-90deg);
+          transition: all 0.2s;
+        }
+        &.focus {
+          svg {
+            transform: rotate(90deg);
+          }
         }
       }
       .phone-number {
-        margin-left: 60px;
+        margin-left: 72px;
       }
     }
   }

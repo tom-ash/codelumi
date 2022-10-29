@@ -5,6 +5,7 @@ import sendGaEvent from '../../../../../../../../../functions/google-analytics/s
 import analyticEvents from '../constants/analytics/events'
 import { accountTypeValidator, nameValidator, phoneValidator, emailValidator, passwordValidator } from './validators.js'
 import errorResetter from './error-resetter.js'
+import { countryCodes } from '../constants/country-codes'
 
 const {
   ACCOUNT_TYPE_SELECTED_EVENT,
@@ -53,7 +54,6 @@ export function emailAddressManager() {
     autoComplete: 'email',
     label: this.langHandler(label),
     value: value || '',
-    children: <SVG name='envelope' />,
     onFocus: () => errorResetter.call(this, 'email'),
     onBlur: value => {
       this.emailAddressManager().validate(value)
@@ -75,7 +75,7 @@ export function passwordManager() {
     autoComplete: 'new-password',
     controlled: false,
     label: this.langHandler(label),
-    children: <SVG name='lock' />,
+    // children: <SVG name='lock' />,
     onFocus: () => errorResetter.call(this, 'password'),
     onBlur: value => {
       this.passwordManager().validate(value)
@@ -97,7 +97,7 @@ export function firstNameManager() {
     autoComplete: 'given-name',
     controlled: false,
     label: this.langHandler(label),
-    children: <SVG name='user' />,
+    // children: <SVG name='user' />,
     onFocus: () => errorResetter.call(this, 'firstName'),
     onBlur: value => {
       this.firstNameManager().validate(value)
@@ -130,17 +130,18 @@ export function businessNameManager() {
 }
 
 export function areaCodeManager() {
+
+  const options = countryCodes.map(countryCode => ({
+    value: countryCode, text: countryCode
+  }))
+
   return {
     onFocusCoverZIndex: 3001,
     id: 'user-create-email-area-code',
     classNames: { container: 'select-element country-code' },
     children: <SVG name='chevron' />,
     value: this.props.countryCode,
-    options: [
-      { value: '+48', text: '+48' },
-      { value: '+1', text: '+1' },
-      { value: '+44', text: '+44' },
-    ],
+    options,
     onSelect: option => {
       this.props.changeInputs({ countryCode: option.value })
       sendGaEvent(AREA_CODE_SELECTED_EVENT)
@@ -159,7 +160,6 @@ export function phoneNumberManager() {
     controlled: false,
     classNames: { container: 'text-input phone-number' },
     label: this.langHandler(label),
-    children: <SVG name='phone' />,
     onFocus: () => errorResetter.call(this, 'phone'),
     onBlur: value => {
       this.phoneNumberManager().validate(value)

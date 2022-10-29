@@ -1,25 +1,28 @@
 #user-create-consents-container {
-  margin: 10px 0 20px;
+  margin: 0 32px;
+  padding-bottom: 12px;
   .checkbox-container {
     .checkbox.form-input {
       .input {
-        top: 8px;
-        left: 0;
+        transform: scale(0.8)
       }
       .label {
-        font-size: 14px;
+        top: 2px;
+        left: 8px;
+        font-size: 12px;
       }
     }
   }
   .error {
     margin: 6px 0 0 0;
     color: $TEXT-ERROR-COLOR;
-    font-size: 14px;
+    line-height: 16px;
+    font-size: 12px;
   }
   a {
     display: inline-block;
-    text-decoration: underline;
-    color: #34495e;
+    text-decoration: none;
+    color: #2a6098;
     &:hover {
       color: #5d6d7e;
     }
