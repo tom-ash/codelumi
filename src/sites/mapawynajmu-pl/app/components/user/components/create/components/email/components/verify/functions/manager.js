@@ -41,7 +41,7 @@ export function buttonManager() {
   const { connecting } = this.props
 
   return {
-    classNames: { container: 'form-input button' },
+    classNames: { container: 'button' },
     label: (
       <ButtonSpinner
         connecting={connecting}

@@ -3,13 +3,13 @@ import React from 'react'
 export const monit = {
   pl: (
     <span>
-      Kod weryfikacyjny został wysłany na podany adres email. Wklej go poniżej i&nbsp;kliknij 'Dalej',
+      Kod weryfikacyjny został wysłany na podany adres email. Wklej go poniżej i potwierdź,
       aby&nbsp;zakończyć proces rejestracji.
     </span>
   ),
   en: (
     <span>
-      The verification code has been sent to&nbsp;the&nbsp;provided email address. Paste it below and&nbsp;click 'Next'
+      The verification code has been sent to the provided email address. Paste it below and confirm
       to finalize the registration.
     </span>
   ),
