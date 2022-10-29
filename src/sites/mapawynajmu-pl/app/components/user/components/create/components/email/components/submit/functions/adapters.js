@@ -1,10 +1,6 @@
 import { hashPassword } from '../../../../../../../functions/shared.js'
 import { parser as consentsParser } from '../../../../consents/functions/parser'
-import {
-  phoneValidator,
-  emailValidator,
-  passwordValidator,
-} from '../../inputs/functions/validators.js'
+import { phoneValidator, emailValidator, passwordValidator } from '../../inputs/functions/validators.js'
 import termsAndPrivacyConsentValidator from '../../../../consents/functions/validators.js'
 
 export function buildUserObject() {

@@ -34,7 +34,11 @@ $horizontal-margin-mobile: 18px;
       padding: 0 $horizontal-margin-mobile;
     }
   }
-  p + h2, ul + h2, pre + h2, .editorial + h2, .table-of-contents + h2 {
+  p + h2,
+  ul + h2,
+  pre + h2,
+  .editorial + h2,
+  .table-of-contents + h2 {
     margin-top: 36px;
   }
   h3 {
@@ -50,7 +54,7 @@ $horizontal-margin-mobile: 18px;
     margin-bottom: 18px;
     code {
       display: inline-block;
-      color: #CB4335;
+      color: #cb4335;
     }
     a {
       display: inline;

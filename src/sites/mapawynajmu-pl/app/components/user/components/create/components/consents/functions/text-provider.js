@@ -21,11 +21,23 @@ export function textProvider({ pureText }) {
     termsAndPrivacyConsent: (
       <span>
         {this.langHandler({ pl: 'Akceptuję', en: 'I accept' })}&nbsp;
-        <a className='link' href={termsAndServiceHref} target='_blank' onMouseOver={e => e.stopPropagation()} onClick={e => e.stopPropagation()}>
+        <a
+          className='link'
+          href={termsAndServiceHref}
+          target='_blank'
+          onMouseOver={e => e.stopPropagation()}
+          onClick={e => e.stopPropagation()}
+        >
           {this.langHandler({ pl: 'Regulamin', en: 'the Terms of Service' })}
         </a>
         &nbsp;{this.langHandler({ pl: 'i', en: 'and' })}&nbsp;
-        <a className='link' href={privacyPolicyHref} target='_blank' onMouseOver={e => e.stopPropagation()} onClick={e => e.stopPropagation()}>
+        <a
+          className='link'
+          href={privacyPolicyHref}
+          target='_blank'
+          onMouseOver={e => e.stopPropagation()}
+          onClick={e => e.stopPropagation()}
+        >
           {this.langHandler({ pl: 'Politykę Prywatności', en: 'the Privacy Policy' })}
         </a>
         .

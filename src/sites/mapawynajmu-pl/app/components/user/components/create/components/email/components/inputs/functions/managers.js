@@ -130,9 +130,9 @@ export function businessNameManager() {
 }
 
 export function areaCodeManager() {
-
   const options = countryCodes.map(countryCode => ({
-    value: countryCode, text: countryCode
+    value: countryCode,
+    text: countryCode,
   }))
 
   return {

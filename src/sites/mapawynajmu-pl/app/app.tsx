@@ -86,7 +86,7 @@ class App extends React.Component<AppProps> {
       announcementEditData,
       // @ts-ignore
       dispatch,
-      renderListingIndexMap
+      renderListingIndexMap,
     } = this.props
     // @ts-ignore
     const AppContextValue = {
