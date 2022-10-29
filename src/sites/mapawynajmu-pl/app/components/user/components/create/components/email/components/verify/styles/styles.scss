@@ -1,4 +1,5 @@
 @import '../../../../../../../../../styles/themes.scss';
+@import '../../../../../../../../../styles/inputs/text.scss';
 @import '../../../../../../../../../styles/inputs/button.scss';
 
 #user-create-email-verify {
@@ -10,18 +11,23 @@
     text-align: justify;
     margin-bottom: 25px;
   }
-  .form-input {
-    &.text {
-      width: 240px;
-      margin: 30px auto;
-      .input {
-        height: 60px;
-        text-align: center;
-        font-size: 30px;
-        letter-spacing: 15px;
-        color: #424949;
-      }
+  .text-input {
+    @extend %text-input;
+    width: 160px;
+    margin: 0 auto;
+    margin-bottom: 32px;
+    text-align: center;
+    .label {
+      margin-bottom: 10px;
     }
+    .input {
+      height: 48px;
+      text-align: center;
+      font-size: 32px;
+      letter-spacing: 12px;
+      color: rgb(64, 64, 64);
+    }
+
   }
   .monit {
     padding: 15px 32px 0;

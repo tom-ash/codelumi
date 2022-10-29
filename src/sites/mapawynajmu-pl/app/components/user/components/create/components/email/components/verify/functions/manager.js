@@ -12,8 +12,9 @@ export function verificationManager() {
 
   return {
     id: 'user-create-email-verification',
+    match: /^\d{0,4}$/,
     controlled: false,
-    classNames: { container: 'form-input text' },
+    classNames: { container: 'text-input' },
     label: this.langHandler({ pl: 'Kod weryfikacyjny', en: 'Verification Code' }),
     onChange: () => changeErrors({ verification: { pl: '', en: '' } }),
     onBlur: value => {
