@@ -27,7 +27,7 @@ export function accountTypeManager() {
 
   return {
     name: 'announcement-category',
-    classNames: { container: 'form-input radio' },
+    classNames: { container: 'form-element radio' },
     checked: accountType,
     radios: [
       { value: 'private', label: privateAccount },
@@ -48,7 +48,7 @@ export function emailAddressManager() {
   const { email: value, changeInputs } = this.props
 
   return {
-    classNames: { container: 'form-input with-icon text' },
+    classNames: { container: 'text-input with-icon' },
     type: 'email',
     autoComplete: 'email',
     label: this.langHandler(label),
@@ -70,7 +70,7 @@ export function passwordManager() {
 
   return {
     id: 'user-create-email-password',
-    classNames: { container: 'form-input with-icon text' },
+    classNames: { container: 'text-input with-icon' },
     type: 'password',
     autoComplete: 'new-password',
     controlled: false,
@@ -92,7 +92,7 @@ export function firstNameManager() {
 
   return {
     display: accountType === 'private' ? undefined : 'none',
-    classNames: { container: 'form-input with-icon text' },
+    classNames: { container: 'text-input with-icon' },
     id: 'user-create-email-first-name',
     autoComplete: 'given-name',
     controlled: false,
@@ -117,7 +117,7 @@ export function businessNameManager() {
     id: 'user-create-email-business-name',
     autoComplete: 'off',
     controlled: false,
-    classNames: { container: 'form-input text' },
+    classNames: { container: 'form-element text' },
     label: this.langHandler(label),
     onFocus: () => errorResetter.call(this, 'businessName'),
     onBlur: value => {
@@ -133,7 +133,7 @@ export function areaCodeManager() {
   return {
     onFocusCoverZIndex: 3001,
     id: 'user-create-email-area-code',
-    classNames: { container: 'form-input select phone-country-code' },
+    classNames: { container: 'select-element country-code' },
     children: <SVG name='chevron' />,
     value: this.props.countryCode,
     options: [
@@ -157,7 +157,7 @@ export function phoneNumberManager() {
     match: /^(\d){0,9}$/,
     type: 'tel',
     controlled: false,
-    classNames: { container: 'form-input text with-icon phone-body' },
+    classNames: { container: 'text-input phone-number' },
     label: this.langHandler(label),
     children: <SVG name='phone' />,
     onFocus: () => errorResetter.call(this, 'phone'),

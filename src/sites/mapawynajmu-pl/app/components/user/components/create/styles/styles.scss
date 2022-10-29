@@ -14,25 +14,9 @@
 @import '../../../../../../../shared/app/styles/media-breakpoints';
 
 #user-create {
-  margin: 50px auto 150px;
-  max-width: 600px;
-  border: 1px solid $CONTAINER-BORDER-COLOR;
-  padding: $FORM-PADDING-PC;
-  border-radius: 4px;
-  background: white;
-  @media #{$LARGE-PHONE} {
-    border: none;
-    padding: $FORM-PADDING-PHONE;
-  }
-  .page-header {
-    h1 {
-      padding: 0;
-      font-size: 18px;
-    }
-  }
-  @media #{$SMALL-TABLET} {
-    margin: 0 auto;
-  }
+  background: #d7dbdd;
+  padding-top: 32px;
+  padding-bottom: 64px;
   &.creating-announcement {
     max-width: 768px;
     margin-top: 0;

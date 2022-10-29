@@ -6,7 +6,7 @@ import Submit from './components/submit/submit.js'
 import Verification from './components/verify/verify.js'
 import * as mappers from './constants/mappers.js'
 import langHandler from '../../../../../../functions/lang-handler.js'
-import Header from '../../../../../support/components/heading'
+import Heading from '../../../../../../../../shared/app/components/support/heading/heading'
 
 class UserCreateEmail extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class UserCreateEmail extends React.Component {
       <div id='user-create-email'>
         {(renderForm || renderAnnouncementCreate) && (
           <>
-            {!renderAnnouncementCreate && <Header tier={1} text={headerText} />}
+            {!renderAnnouncementCreate && <Heading rank={1} heading={headerText} />}
             <form>
               <Inputs renderAnnouncementCreate={renderAnnouncementCreate} />
               <Consents />

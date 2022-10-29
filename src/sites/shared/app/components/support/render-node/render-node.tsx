@@ -2,7 +2,7 @@ import React from 'react'
 import loadable from '@loadable/component'
 
 const Paragraph = loadable(() => import('./components/paragraph/paragraph'))
-const Heading = loadable(() => import('./components/heading/heading'))
+const Heading = loadable(() => import('../heading/heading'))
 const List = loadable(() => import('./components/list/list'))
 const Code = loadable(() => import('./components/code/code'))
 const Image = loadable(() => import('./components/image/image'))

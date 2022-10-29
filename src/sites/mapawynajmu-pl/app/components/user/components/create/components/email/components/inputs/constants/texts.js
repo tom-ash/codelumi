@@ -1,6 +1,6 @@
 export const NAME_AREA_CODE_AND_PHONE_NUMBER_HINT = {
-  pl: 'Imię oraz numer telefonu będą służyły jako dane kontaktowe przy Twoich ogłoszeniach.',
-  en: 'The name and phone number shall be used as a contact data with your announcements.',
+  pl: 'Numer telefonu będzie widoczny przy Twoich ogłoszeniach jako dana kontaktowa.',
+  en: 'The phone number shall be appear at your listings as a contact data.',
 }
 
 export const EMAIL_AND_PASSWORD_HINT = {

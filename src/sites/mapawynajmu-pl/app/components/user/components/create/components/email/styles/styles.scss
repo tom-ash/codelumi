@@ -1,16 +1,18 @@
 #user-create-email {
-  position: relative;
-  overflow-y: hidden;
-  .form-input {
-    &.radio {
-      margin-bottom: 12px;
-    }
-  }
-  .radio-container {
-    .title {
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 8px;
+  background: white;
+  overflow: hidden;
+  h1 {
+    margin: 24px auto 24px;
+    background: white;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    color: rgb(42, 42, 42);
+    text-transform: uppercase;
   }
   .separation-line {
     margin: 20px 0;
