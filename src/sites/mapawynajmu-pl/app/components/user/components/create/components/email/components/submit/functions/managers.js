@@ -9,7 +9,7 @@ export function buttonManager() {
   const { connecting } = this.props
 
   return {
-    classNames: { container: 'submit-button' },
+    classNames: { container: 'button' },
     label: (
       <ButtonSpinner
         connecting={connecting}
