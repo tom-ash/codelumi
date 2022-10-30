@@ -1,6 +1,7 @@
 @import '../../../../../../../../../styles/inputs/form/svgs.scss';
 @import '../../../../../../../../../styles/colors';
 @import '../../../../../../../../../styles/inputs/text.scss';
+@import './country-code-phone-number-container.scss';
 
 #user-create {
   .inputs {
@@ -20,38 +21,7 @@
       @extend %text-input;
     }
     .country-code-phone-number-container {
-      position: relative;
-      .country-code {
-        position: absolute;
-        width: 72px;
-        margin-top: 19px;
-        line-height: 36px;
-        font-size: 16px;
-        padding-left: 6px;
-        text-align: center;
-        letter-spacing: 0.5px;
-        .input {
-          width: 100%;
-          padding-right: 24px;
-        }
-        svg {
-          position: absolute;
-          display: block;
-          height: 10px;
-          top: 14px;
-          right: 18px;
-          transform: rotate(-90deg);
-          transition: all 0.2s;
-        }
-        &.focus {
-          svg {
-            transform: rotate(90deg);
-          }
-        }
-      }
-      .phone-number {
-        margin-left: 72px;
-      }
+      @extend %country-code-phone-number-container;
     }
   }
 }

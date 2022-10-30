@@ -11,7 +11,9 @@ type AreaInputProps = {
 export function AreaInput(props: AreaInputProps) {
   const { area, changeInputs, langHandler } = props
 
-  const classNames = { container: 'form-input text area-input' }
+  const classNames = { container: 'text-input area' }
+  // @ts-ignore
+  const label = langHandler({ pl: 'Powierzchnia', en: 'Area' })
   const value = area
   const type = 'number'
   const children = (
@@ -30,6 +32,7 @@ export function AreaInput(props: AreaInputProps) {
   const onChange = (area: number) => changeInputs({ area })
   const areaProps = {
     classNames,
+    label,
     value,
     type,
     children,

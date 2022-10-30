@@ -1,0 +1,26 @@
+@import './text.scss';
+
+%select-input {
+  @extend %text-input;
+  position: relative;
+  .input {
+    position: relative;
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+  }
+  svg {
+    position: absolute;
+    display: block;
+    height: 10px;
+    top: 32px;
+    right: 16px;
+    transform: rotate(-90deg);
+    transition: all 0.2s;
+  }
+  &.focus {
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+}

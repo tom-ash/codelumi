@@ -1,0 +1,31 @@
+@import '../../../../../../../../../styles/inputs/select.scss';
+
+%country-code-phone-number-container {
+  @extend %select-input;
+  position: relative;
+  .country-code {
+    .label {
+      display: none;
+    }
+    position: absolute;
+    width: 72px;
+    margin-top: 19px;
+    padding-left: 6px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    .input {
+      width: 100%;
+      padding-right: 24px;
+      border: none;
+    }
+    svg {
+      top: 14px;
+      right: 14px;
+    }
+  }
+  .phone-number {
+    margin-left: 72px;
+  }
+}

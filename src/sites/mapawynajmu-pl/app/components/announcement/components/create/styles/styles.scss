@@ -15,34 +15,62 @@
 @import '../components/publishing/styles/styles.scss';
 @import '../../../../../../../shared/app/styles/lined-heading.scss';
 @import './category.scss';
+@import '../../../../../styles/inputs/text.scss';
+@import '../../../../../styles/inputs/select.scss';
+@import '../../../../user/components/create/components/email/components/inputs/styles/country-code-phone-number-container.scss';
 
 #listing-create {
   position: relative;
   padding-top: 38px;
   padding-bottom: 120px;
   background: #d7dbdd;
+
+  .text-input {
+    @extend %text-input;
+    &.area {
+      .sqm {
+        position: absolute;
+        top: 26px;
+        right: 12px;
+        font-size: 16px;
+      }
+    }
+  }
+  .select-element {
+    @extend %select-input;
+  }
+  .text-input,
+  .select-element {
+    max-width: 280px;
+  }
+  .country-code-phone-number-container {
+    @extend %country-code-phone-number-container;
+  }
+
   #form-container {
     background: white;
-    max-width: 768px;
+    max-width: 640px;
     margin: 0 auto 128px;
-    padding: 38px;
     border-radius: 12px;
+    overflow: hidden;
   }
 
   h1 {
-    margin: 8px auto 38px;
+    height: 34px;
     background: white;
     text-align: center;
-    font-size: 17px;
-    letter-spacing: 0.5px;
+    line-height: 34px;
+    font-size: 12px;
     font-weight: 400;
-    color: rgb(42, 42, 42);
+    color: rgb(80, 80, 80);
     text-transform: uppercase;
+    color: #7b7d7d;
+    letter-spacing: 0.5px;
   }
   h2 {
-    margin: 38px auto 18px;
+    margin: 24px 0 18px;
     background: white;
-    font-size: 15px;
+    font-size: 12px;
     letter-spacing: 0.5px;
     font-weight: 400;
     color: rgb(88, 88, 88);
@@ -50,12 +78,6 @@
   }
   .category {
     @extend %category;
-  }
-  .hint {
-    position: relative;
-    color: #979a9a;
-    margin: 4px 0 24px;
-    font-size: 11px;
   }
   &.creating-user {
     border-bottom: none;
@@ -75,25 +97,9 @@
   .requesting {
     background: white;
     margin: 0;
-    .input-explanation {
-      font-size: 14px;
-      margin-bottom: 24px;
-      color: #2e4053;
-      line-height: 20px;
-    }
     .inner {
       padding: 200px 0;
     }
-  }
-  .success-container {
-    .input-explanation {
-      text-align: center;
-    }
-  }
-  .input-explanation {
-    position: relative;
-    margin-bottom: 8px;
-    font-size: 13px;
   }
   .description-question {
     font-size: 14px;
@@ -110,7 +116,9 @@
     }
   }
   .separation-line {
-    margin: 0 0 20px !important;
+    height: 1px;
+    background: #d7dbdd;
+    margin: 0;
   }
   .description {
     text-align: justify;
@@ -157,34 +165,12 @@
     color: #707b7c;
     cursor: pointer;
   }
-  .form-input {
-    max-width: 360px;
-    &.button {
-      width: 200px;
-      margin: 40px auto 0;
-    }
-  }
-  .area-input {
-    .input {
-      padding-right: 44px;
-    }
-    .sqm {
-      position: absolute;
-      bottom: 36px;
-      right: 12px;
-    }
-  }
+
   .info {
     display: inline-block;
     margin-bottom: 24px;
-    font-size: 13px;
+    // padding: 0 24px;
+    font-size: 12px;
     color: #1f618d;
-    // svg {
-    //   display: inline-block;
-    //   height: 14px;
-    //   margin-right: 4px;
-    //   fill: #1f618d;
-    //   transform: translate(0, 2.5px);
-    // }
   }
 }

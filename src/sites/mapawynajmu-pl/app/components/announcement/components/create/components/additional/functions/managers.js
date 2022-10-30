@@ -27,7 +27,7 @@ export function rentAmountManager() {
   }
 
   return {
-    classNames: { container: 'form-input text with-icon rent-amount' },
+    classNames: { container: 'text-input rent-amount' },
     value: this.props[rentAmountType],
     children: <SVG name='coins' />,
     type: 'number',
@@ -48,7 +48,7 @@ export function rentCurrencyManager() {
   ]
 
   return {
-    classNames: { container: 'form-input select rent-currency' },
+    classNames: { container: 'text-input rent-currency' },
     children: <SVG name='chevron' />,
     value,
     options: currencies,
@@ -69,7 +69,7 @@ export function roomsManager() {
   if (category === 2) label = this.langHandler({ pl: 'Liczba pokoi', en: 'Rooms Amount' })
 
   return {
-    classNames: { container: 'form-input with-icon select' },
+    classNames: { container: 'select-element' },
     children: (
       <>
         <SVG name='doorOpen' />
@@ -90,7 +90,7 @@ export function floorManager() {
   const { icon, create: text } = inputs.floor
 
   return {
-    classNames: { container: 'form-input with-icon select' },
+    classNames: { container: 'select-element' },
     children: (
       <>
         <SVG name='layers' />
@@ -111,7 +111,7 @@ export function totalFloorsManager() {
   const { icon, create: text } = inputs.totalFloors
 
   return {
-    classNames: { container: 'form-input with-icon select' },
+    classNames: { container: 'select-element' },
     children: (
       <>
         <SVG name='building' />

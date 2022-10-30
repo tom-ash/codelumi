@@ -27,6 +27,7 @@ import UserCreateEmailVerify from '../../../user/components/create/components/em
 import AppContext from '../../../../constants/context.js'
 import Category from './components/category'
 import AreaInput from './components/area-input'
+import SeparationLine from '../../../support/components/separation-line/separation-line'
 
 class AnnouncementCreate extends React.Component {
   constructor(props) {
@@ -88,11 +89,15 @@ class AnnouncementCreate extends React.Component {
         {(renderForm || renderEdit) && (
           <div id='form-container'>
             <h1>{headerText}</h1>
+            <SeparationLine />
             {!connecting ? (
               <form>
                 <Category {...categoryProps} />
+                <SeparationLine />
                 <Map />
+                <SeparationLine />
                 <Pictures />
+                <SeparationLine />
                 <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
                 <AreaInput {...areaInputProps} />
                 <Additional />
@@ -100,6 +105,7 @@ class AnnouncementCreate extends React.Component {
                 <Features />
                 <Furnishings />
                 <Description />
+                <SeparationLine />
                 {!authorized && (
                   <>
                     <UserCreate />

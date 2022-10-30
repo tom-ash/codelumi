@@ -1,5 +1,6 @@
 %text-input {
-  margin-bottom: 18px;
+  position: relative;
+  margin-bottom: 24px;
   .label {
     margin-bottom: 6px;
     font-size: 13px;
@@ -11,7 +12,7 @@
     height: 36px;
     border: 1px solid #b3b6b7;
     border-radius: 4px;
-    padding: 0 8px;
+    padding: 0 12px;
   }
   .error-container {
     margin-top: 6px;

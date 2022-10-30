@@ -34,12 +34,6 @@
     font-size: 15px;
     margin-bottom: 20px;
   }
-  .separation-line {
-    margin: 40px 0;
-    @media #{$LARGE-PHONE} {
-      margin: 25px 0;
-    }
-  }
   .form-input {
     &.button {
       margin: 0 auto;
