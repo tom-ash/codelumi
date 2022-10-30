@@ -1,14 +1,32 @@
 import getLocality from './get-locality'
 import getSublocality from './get-sublocality'
 
-function addPin(props) {
-  const { autocomplete, setState, changeInputs, changeErrors } = props
+interface AddPinProps {
+  autocomplete: {
+    place_id: string
+    description: string
+  }
+  setState(args: object): void
+  changeInputs(args: object): void
+  changeErrors(args: object): void
+}
+
+function addPin(props: AddPinProps) {
+  const {
+    autocomplete,
+    setState,
+    changeInputs,
+    changeErrors
+  } = props
   const placeId = autocomplete.place_id
   const geocoder = new google.maps.Geocoder()
 
-  geocoder.geocode({ placeId }).then(result => {
-    if (window.marker) window.marker.setMap(null)
-
+  
+  geocoder
+  // @ts-ignore
+  .geocode({ placeId })
+  // @ts-ignore
+  .then(result => {
     const map = window.googleMap
     const primaryResult = result.results[0]
     const position = primaryResult.geometry.location
