@@ -26,7 +26,7 @@ import UserCreateEmailVerify from '../../../user/components/create/components/em
 import AppContext from '../../../../constants/context.js'
 import Category from './components/category'
 import AreaInput from './components/area-input'
-import SeparationLine from '../../../support/components/separation-line/separation-line'
+import { Line } from '../../../support/components/line/line'
 
 class AnnouncementCreate extends React.Component {
   constructor(props) {
@@ -95,14 +95,14 @@ class AnnouncementCreate extends React.Component {
         {(renderForm || renderEdit) && (
           <div id='form-container'>
             <h1>{headerText}</h1>
-            <SeparationLine />
+            <Line />
             <form>
               <Category {...categoryProps} />
-              <SeparationLine />
+              <Line />
               <Map />
-              <SeparationLine />
+              <Line />
               <Pictures />
-              <SeparationLine />
+              <Line />
               <div id='listing-create-additional'>
                 <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
                 <AreaInput {...areaInputProps} />
@@ -112,7 +112,7 @@ class AnnouncementCreate extends React.Component {
                 <Furnishings />
                 <Description />
               </div>
-              <SeparationLine />
+              <Line />
               {!authorized && (
                 <div id='listing-create-user'>
                   <Header
@@ -125,7 +125,7 @@ class AnnouncementCreate extends React.Component {
                   <UserCreate />
                 </div>
               )}
-              <SeparationLine />
+              <Line />
               <ManagedButton {...this.addAnnouncementManager()} />
             </form>
           </div>

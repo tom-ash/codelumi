@@ -7,7 +7,7 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import Header from '../../../../../support/components/heading'
 import { HEADER_TEXT } from './constants/texts.js'
-import SeparationLine from '../../../../../support/components/separation-line/separation-line.js'
+import { Line } from '../../../../../support/components/line/line'
 
 class UserEditAccount extends React.Component {
   constructor(props) {
@@ -27,17 +27,17 @@ class UserEditAccount extends React.Component {
         ) : (
           <>
             <UserEditAccountCell key='businessName' item='businessName' />
-            <SeparationLine />
+            <Line />
             <UserEditAccountCell key='taxNumber' item='taxNumber' />
           </>
         )}
-        <SeparationLine />
+        <Line />
         <UserEditAccountCell item='phone' />
-        <SeparationLine />
+        <Line />
         <UserEditAccountCell item='email' />
-        <SeparationLine />
+        <Line />
         <UserEditAccountCell item='password' />
-        <SeparationLine />
+        <Line />
         <UserEditAccountCell item='destroy' />
       </div>
     )
