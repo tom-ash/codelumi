@@ -1,5 +1,5 @@
 import React from 'react'
-import addMarker from '../../functions/add-marker.js'
+import addPin from '../../functions/add-pin'
 
 const AddressInput = props => {
   const { autocompleteInput, autocompletes, showAutocompletes, setState, langHandler, changeInputs, changeErrors } =
@@ -22,7 +22,7 @@ const AddressInput = props => {
 
             const autocomplete = autocompletes[0]
 
-            addMarker({ autocomplete, setState, changeInputs, changeErrors })
+            addPin({ autocomplete, setState, changeInputs, changeErrors })
             e.target.blur()
           } else if (key === 'Tab') {
             setState({ showAutocompletes: false })

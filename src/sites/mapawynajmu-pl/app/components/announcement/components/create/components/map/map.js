@@ -5,7 +5,7 @@ import langHandler from '../../../../../../functions/lang-handler'
 import { validateMap } from './functions/validate-map'
 import * as lifecycle from './functions/lifecycle'
 import AddressInput from './components/address-input/address-input'
-import addMarker from './functions/add-marker'
+import addPin from './functions/add-pin'
 import Heading from '../../../../../support/components/heading'
 import Info from '../../../../../../../../shared/app/components/support/info'
 
@@ -65,7 +65,7 @@ class AnnouncementCreatMap extends React.Component {
             <div className='autocompletes'>
               {this.state.autocompletes.map(autocomplete => (
                 <div
-                  onClick={() => addMarker({ autocomplete, setState: this.setStore, changeInputs, changeErrors })}
+                  onClick={() => addPin({ autocomplete, setState: this.setStore, changeInputs, changeErrors })}
                   key={autocomplete.place_id}
                 >
                   {autocomplete.description}

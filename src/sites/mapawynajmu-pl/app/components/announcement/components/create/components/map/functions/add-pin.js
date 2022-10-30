@@ -1,7 +1,7 @@
 import getLocality from './get-locality'
 import getSublocality from './get-sublocality'
 
-function addMarker(props) {
+function addPin(props) {
   const { autocomplete, setState, changeInputs, changeErrors } = props
   const placeId = autocomplete.place_id
   const geocoder = new google.maps.Geocoder()
@@ -26,4 +26,4 @@ function addMarker(props) {
   setState({ showAutocompletes: false, autocompleteInput: autocomplete.description })
 }
 
-export default addMarker
+export default addPin
