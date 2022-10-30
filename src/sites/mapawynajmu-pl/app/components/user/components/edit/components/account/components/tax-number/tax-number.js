@@ -4,7 +4,7 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { monit } from './constants/monit'
 import { ManagedText } from 'managed-inputs'
 import { ManagedButton } from 'managed-inputs'
-import langHandler from '../../../../../../../../functions/lang-handler'
+import { langHandler } from '../../../../../../../../functions/lang-handler'
 import * as managers from './functions/managers'
 
 class UserEditAccountTaxNumber extends React.Component {

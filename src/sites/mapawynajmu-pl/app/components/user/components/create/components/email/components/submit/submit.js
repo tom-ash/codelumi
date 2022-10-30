@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import * as mappers from './constants/mappers'
-import langHandler from '../../../../../../../../functions/lang-handler'
+import { langHandler } from '../../../../../../../../functions/lang-handler'
 import { buttonManager } from './functions/managers'
 import { ManagedButton } from 'managed-inputs'
 import AppContext from '../../../../../../../../constants/context.js'

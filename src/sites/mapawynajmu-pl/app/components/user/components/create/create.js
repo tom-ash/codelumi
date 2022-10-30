@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import * as mappers from './constants/mappers'
 import UserCreateEmail from './components/email/email'
 import * as lifecycle from './functions/lifecycle'
-import langHandler from '../../../../functions/lang-handler'
+import { langHandler } from '../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 

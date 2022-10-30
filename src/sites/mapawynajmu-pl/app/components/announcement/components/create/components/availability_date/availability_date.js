@@ -3,7 +3,7 @@ import loadable from '@loadable/component'
 import { ManagedCheckbox } from 'managed-inputs'
 const Calendar = loadable(() => import('../../../../../support/components/calendar/calendar'), { ssr: false })
 import * as managers from './functions/managers'
-import langHandler from '../../../../../../functions/lang-handler'
+import { langHandler } from '../../../../../../functions/lang-handler'
 import { parseDate } from '../../../../../../functions/date-parsers'
 import sendGaEvent from '../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from './constants/analytics/events'

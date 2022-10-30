@@ -4,7 +4,7 @@ import { ManagedText, ManagedCheckbox, ManagedButton } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { logIn } from './functions/adapters'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import langHandler from '../../../../../../functions/lang-handler'
+import { langHandler } from '../../../../../../functions/lang-handler'
 import AppContext from '../../../../../../constants/context.js'
 import buildUrl from '../../../../../../../shared/functions/builders/url'
 

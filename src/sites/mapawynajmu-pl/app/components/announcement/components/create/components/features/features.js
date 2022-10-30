@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import langHandler from '../../../../../../functions/lang-handler'
+import { langHandler } from '../../../../../../functions/lang-handler'
 import { ManagedCheckbox, ManagedMultipleCheckbox } from 'managed-inputs'
 import { addFeaturesManager, featuresManager } from './functions/managers'
 import { pickElementsForCategory } from '../../functions/pick-elements'

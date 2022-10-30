@@ -9,7 +9,7 @@ const Pictures = loadable(() => import('./components/pictures/pictures'))
 const PrimaryData = loadable(() => import('./components/primary/primary'))
 const Items = loadable(() => import('./components/features-furnishings/features-furnishings'))
 const Description = loadable(() => import('./components/description/description'))
-import langHandler from '../../../../../functions/lang-handler.js'
+import { langHandler } from '../../../../../functions/lang-handler.js'
 import { togglePhone } from '../../../functions/toggle-phone'
 import buildUrl from '../../../../../../shared/functions/builders/url'
 import { markListingAsViewed } from '../../../functions/mark-as-viewed'

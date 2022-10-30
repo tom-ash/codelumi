@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import langHandler from '../../../../../../functions/lang-handler'
+import { langHandler } from '../../../../../../functions/lang-handler'
 import { validateMap } from './functions/validate-map'
 import * as lifecycle from './functions/lifecycle'
 import AddressInput from './components/address-input/address-input'

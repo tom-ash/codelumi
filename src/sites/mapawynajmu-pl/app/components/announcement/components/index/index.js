@@ -5,7 +5,7 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import AnnouncementIndexPanel from './components/panel/panel'
 import AnnouncementIndexMap from './components/map/map'
 const AnnouncementIndexMy = loadable(() => import('./components/my/my'))
-import langHandler from '../../../../functions/lang-handler'
+import { langHandler } from '../../../../functions/lang-handler'
 import { parseCurrency } from '../../functions/currency-parsers'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'

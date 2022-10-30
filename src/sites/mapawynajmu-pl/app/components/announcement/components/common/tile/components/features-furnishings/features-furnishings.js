@@ -1,5 +1,5 @@
 import React from 'react'
-import langHandler from '../../../../../../../functions/lang-handler'
+import { langHandler } from '../../../../../../../functions/lang-handler'
 import { features } from '../../../../../constants/features'
 import { furnishings } from '../../../../../constants/furnishings'
 import SVG from '../../../../../../support/components/svg/svg'
