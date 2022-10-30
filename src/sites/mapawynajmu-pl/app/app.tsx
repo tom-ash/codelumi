@@ -21,7 +21,7 @@ import API_URL from '../shared/constants/urls/api.js'
 import * as langs from '../shared/constants/langs/langs.js'
 import headerStyles from './components/scaffold/header/styles/styles.scss'
 import Logo from './components/scaffold/header/components/logo/logo.js'
-import HeaderCustomization from './components/scaffold/header/components/customization/customization.js'
+import { HeaderCustomization } from './components/scaffold/header/components/customization/customization.js'
 import { initSentry } from '../../shared/app/functions/analytics/sentry/init'
 import { buildUrl } from '../shared/functions/builders/url'
 

@@ -22,7 +22,7 @@ import Header from '../../shared/app/components/scaffold/header/header'
 import Footer from '../../shared/app/components/scaffold/footer/footer'
 import { LANGS } from '../shared/constants/langs/langs'
 import Logo from './components/scaffold/header/components/logo/logo'
-import HeaderCustomization from './components/scaffold/header/components/customization/customization'
+import { HeaderCustomization } from './components/scaffold/header/components/customization/customization'
 import { initSentry } from '../../shared/app/functions/analytics/sentry/init'
 import { buildUrl } from '../shared/functions/routes/builders/url'
 
