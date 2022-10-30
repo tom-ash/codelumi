@@ -2,10 +2,10 @@
   padding: 0 24px;
   .tile {
     display: inline-block;
-    margin-right: 42.4px;
+    margin-right: 32px;
     margin-bottom: 12px;
     vertical-align: top;
-    width: 80px;
+    width: 72px;
     &:nth-of-type(6) {
       margin-right: 0;
     }
@@ -32,16 +32,17 @@
     }
   }
   .icon {
+    display: block;
+    width: 72px;
     border-radius: 4px;
-    width: 100%;
-    height: 100%;
     margin-bottom: 8px;
     background: white;
     text-align: center;
-    line-height: 68px;
+    line-height: 72px;
     transition: background-color 0.2s ease-in;
-    padding-top: 12px;
+    padding-top: 6px;
     background: #f8f9f9;
+    height: 72px;
   }
   .label {
     width: 100%;
@@ -53,7 +54,7 @@
     white-space: normal;
   }
   svg {
-    height: 24px;
+    height: 22px;
     fill: rgb(176, 176, 176);
     transition: fill 0.2s ease-in;
   }

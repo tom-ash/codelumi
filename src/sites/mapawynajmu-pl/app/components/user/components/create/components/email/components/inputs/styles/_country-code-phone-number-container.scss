@@ -1,7 +1,7 @@
 @import '../../../../../../../../../styles/inputs/select.scss';
 
 %country-code-phone-number-container {
-  @extend %select-input;
+  @extend %select-element;
   position: relative;
   .country-code {
     .label {

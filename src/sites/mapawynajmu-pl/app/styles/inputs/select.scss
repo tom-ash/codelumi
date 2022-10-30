@@ -1,6 +1,6 @@
 @import './text.scss';
 
-%select-input {
+%select-element {
   @extend %text-input;
   position: relative;
   .input {

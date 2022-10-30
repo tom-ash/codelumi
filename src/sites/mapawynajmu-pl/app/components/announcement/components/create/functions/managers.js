@@ -3,7 +3,7 @@ import { analyticEvent } from '../constants/analytic-event'
 
 export function addAnnouncementManager() {
   return {
-    classNames: { container: 'form-input button' },
+    classNames: { container: 'submit-button' },
     label: this.langHandler({ pl: 'Dodaj ogłoszenie', en: 'Add Announcement' }),
     onClick: () => {
       this.publish()

@@ -83,44 +83,51 @@ class AnnouncementCreate extends React.Component {
       langHandler: this.langHandler,
     }
 
+    if (connecting)
+      return (
+        <section id='listing-create' className={step}>
+          <WindmillSpinner spinnerClass='windmill-medium-spinner' />
+        </section>
+      )
+
     return (
       <section id='listing-create' className={step}>
         {(renderForm || renderEdit) && (
           <div id='form-container'>
             <h1>{headerText}</h1>
             <SeparationLine />
-            {!connecting ? (
-              <form>
-                <Category {...categoryProps} />
-                <SeparationLine />
-                <Map />
-                <SeparationLine />
-                <Pictures />
-                <SeparationLine />
-                <div id='listing-create-additional'>
-                  <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
-                  <AreaInput {...areaInputProps} />
-                  <Additional />
-                  <AvailabilityDate {...availabilityDateProps} />
-                  <Features />
-                  <Furnishings />
-                  <Description />
-                </div>
-                <SeparationLine />
-                <div id='listing-create-user'>
-                  <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
-                  {!authorized && <UserCreate />}
-                </div>
-                <SeparationLine />
-                <ManagedButton {...this.addAnnouncementManager()} />
-              </form>
-            ) : (
-              <div className='requesting'>
-                <div className='inner'>
-                  <WindmillSpinner spinnerClass='windmill-medium-spinner' />
-                </div>
+            <form>
+              <Category {...categoryProps} />
+              <SeparationLine />
+              <Map />
+              <SeparationLine />
+              <Pictures />
+              <SeparationLine />
+              <div id='listing-create-additional'>
+                <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
+                <AreaInput {...areaInputProps} />
+                <Additional />
+                <AvailabilityDate {...availabilityDateProps} />
+                <Features />
+                <Furnishings />
+                <Description />
               </div>
-            )}
+              <SeparationLine />
+              {!authorized && (
+                <div id='listing-create-user'>
+                  <Header
+                    tier={2}
+                    text={this.langHandler({
+                      pl: 'Dane konta (wymagane)',
+                      en: 'Account Data (required)',
+                    })}
+                  />
+                  <UserCreate />
+                </div>
+              )}
+              <SeparationLine />
+              <ManagedButton {...this.addAnnouncementManager()} />
+            </form>
           </div>
         )}
         {renderVerification && <UserCreateEmailVerify />}

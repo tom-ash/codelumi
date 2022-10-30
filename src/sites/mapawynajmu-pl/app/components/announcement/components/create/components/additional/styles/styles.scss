@@ -4,19 +4,24 @@
   padding: 0 24px 24px;
   .rent-inputs-container {
     position: relative;
-    // .form-input {
-    //   &.rent-amount {
-    //     margin-right: 90px;
-    //   }
-    //   &.rent-currency {
-    //     position: absolute;
-    //     top: 0;
-    //     right: 0;
-    //     width: 80px;
-    //     .input {
-    //       padding-left: 25px;
-    //     }
-    //   }
-    // }
+  }
+  .text-input {
+    &.rent-amount {
+      width: 190px;
+    }
+  }
+  .select-element {
+    &.rent-currency {
+      position: absolute;
+      top: 13.5px;
+      left: 200px;
+      width: 80px;
+      .input {
+        padding-left: 25px;
+      }
+      svg {
+        top: 20px;
+      }
+    }
   }
 }

@@ -48,7 +48,7 @@ export function rentCurrencyManager() {
   ]
 
   return {
-    classNames: { container: 'text-input rent-currency' },
+    classNames: { container: 'select-element rent-currency' },
     children: <SVG name='chevron' />,
     value,
     options: currencies,

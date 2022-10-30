@@ -1,5 +1,4 @@
 import React from 'react'
-import SVG from '../../../../../../../shared/app/components/support/svg/svg'
 import { ManagedText } from 'managed-inputs'
 
 type AreaInputProps = {
