@@ -6,7 +6,7 @@ import {
   UPDATE_API_ROUTE_DATA,
 } from '../constants/api-route-data.js'
 import setConfirmationTokenCookie from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token.js'
-import buildUrl from '../../../../../../shared/functions/builders/url'
+import { buildUrl } from '../../../../../../shared/functions/builders/url'
 
 // function sendAnnouncementCreatedEvent() {
 //   window.dataLayer.push({ 'event': 'announcement_created' })

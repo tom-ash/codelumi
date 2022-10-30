@@ -1,4 +1,4 @@
-import buildUrl from '../../../../../../../../shared/functions/builders/url'
+import { buildUrl } from '../../../../../../../../shared/functions/builders/url'
 
 export function edit(props) {
   const { editPath } = props

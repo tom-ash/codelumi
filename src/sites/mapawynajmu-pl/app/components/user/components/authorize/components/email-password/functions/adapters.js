@@ -2,7 +2,7 @@ import { hashPassword } from '../../../../../functions/shared.js'
 import API_URL from '../../../../../../../../shared/constants/urls/api.js'
 import { saveTokens } from '../../../../../functions/token-handlers'
 import { SIGN_IN_API_ROUTE } from '../constants/api_routes.js'
-import buildUrl from '../../../../../../../../shared/functions/builders/url'
+import { buildUrl } from '../../../../../../../../shared/functions/builders/url'
 
 export function logIn() {
   const email = document.getElementById('user-logon-email-address').value.toLowerCase()

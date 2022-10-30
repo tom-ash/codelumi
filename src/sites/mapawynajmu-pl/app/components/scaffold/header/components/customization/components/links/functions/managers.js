@@ -2,7 +2,7 @@
 // import SVG from '../../../../../../../../../../shared/app/components/support/svg/svg.js'
 import { ANNOUNCEMENT_CREATE_LABELS } from '../../../../../../../../../shared/constants/routes/labels.js'
 import { deauthorizeUser } from '../../../../../../../user/components/authorize/functions/adapters.js'
-import buildUrl from '../../../../../../../../../shared/functions/builders/url'
+import { buildUrl } from '../../../../../../../../../shared/functions/builders/url'
 
 export function myAnnouncementsManager(props) {
   const { langs, links, changeRoute, langHandler } = props

@@ -1,7 +1,7 @@
 import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
 import { CREATE_API_ROUTE } from '../constants/api-routes.js'
 import setConfirmationTokenCookie from '../../../../../../../../../../../shared/app/functions/cookies/setters/confirmation-token.js'
-import buildUrl from '../../../../../../../../../../shared/functions/builders/url'
+import { buildUrl } from '../../../../../../../../../../shared/functions/builders/url'
 
 function createUser(userObject) {
   const { lang, changeControl } = this.props

@@ -1,5 +1,5 @@
 import React from 'react'
-import buildUrl from '../../../../../../../../shared/functions/builders/url'
+import { buildUrl } from '../../../../../../../../shared/functions/builders/url'
 
 export function textProvider({ pureText }) {
   if (pureText) {

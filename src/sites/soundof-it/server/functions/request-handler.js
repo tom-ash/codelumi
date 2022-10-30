@@ -3,7 +3,7 @@ import appRenderer from './app-renderer.js'
 import ROOT_DOMAIN from '../../shared/domains/root.js'
 import CLIENT_URL from '../../shared/constants/urls/client.js'
 import API_URL from '../../shared/constants/urls/api.js'
-import buildUrl from '../../shared/functions/routes/builders/url'
+import { buildUrl } from '../../shared/functions/routes/builders/url'
 import SITE_NAME from '../../shared/constants/names/site.js'
 
 function handleRequest(req, res) {

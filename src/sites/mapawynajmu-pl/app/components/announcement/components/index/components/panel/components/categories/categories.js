@@ -3,7 +3,7 @@ import { categories } from '../../../../../../constants/categories'
 import { ManagedSelect } from 'managed-inputs'
 import useStyles from 'isomorphic-style-loader/useStyles'
 import styles from './styles/styles.scss'
-import buildUrl from '../../../../../../../../../shared/functions/builders/url'
+import { buildUrl } from '../../../../../../../../../shared/functions/builders/url'
 
 const AnnouncementIndexPanelCategories = props => {
   useStyles(styles)

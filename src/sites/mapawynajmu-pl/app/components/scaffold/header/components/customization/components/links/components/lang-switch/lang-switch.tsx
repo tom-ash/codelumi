@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import useStyles from 'isomorphic-style-loader/useStyles'
 import styles from './styles/styles.scss'
 import SVG from '../../../../../../../../support/components/svg/svg'
-import buildUrl from '../../../../../../../../../../shared/functions/builders/url'
+import { buildUrl } from '../../../../../../../../../../shared/functions/builders/url'
 
 interface LangSwichProps {
   links: {
