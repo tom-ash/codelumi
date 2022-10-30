@@ -50,7 +50,7 @@ class AnnouncementCreateAdditional extends React.Component {
     }
 
     return (
-      <div id='listing-create-additional' className='section'>
+      <>
         {showRent(category) && (
           <div className='rent-inputs-container'>
             <ManagedText {...this.rentAmountManager()} />
@@ -63,7 +63,7 @@ class AnnouncementCreateAdditional extends React.Component {
         {showLink(category) && <LinkInput {...linkInputProps} />}
         <ManagedSelect {...this.floorManager()} />
         <ManagedSelect {...this.totalFloorsManager()} />
-      </div>
+      </>
     )
   }
 }

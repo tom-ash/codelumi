@@ -25,6 +25,22 @@
   padding-bottom: 120px;
   background: #d7dbdd;
 
+  #listing-create-user {
+    padding: 0 24px 24px;
+    #user-create-email {
+      margin: 0;
+    }
+    .hint {
+      max-width: 280px;
+      line-height: 17px;
+    }
+  }
+
+  #user-create-consents-container {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
   .text-input {
     @extend %text-input;
     &.area {
@@ -45,6 +61,9 @@
   }
   .country-code-phone-number-container {
     @extend %country-code-phone-number-container;
+    .phone-number {
+      max-width: 208px;
+    }
   }
 
   #form-container {
@@ -166,10 +185,10 @@
     cursor: pointer;
   }
 
-  .info {
+  .info,
+  .hint {
     display: inline-block;
     margin-bottom: 24px;
-    // padding: 0 24px;
     font-size: 12px;
     color: #1f618d;
   }

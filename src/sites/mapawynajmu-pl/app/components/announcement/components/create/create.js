@@ -18,7 +18,6 @@ import { validatePictures } from './components/pictures/functions/validate-pictu
 import { validateMap } from './components/map/functions/validate-map'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import Line from '../../../support/components/separation-line/separation-line'
 import AvailabilityDate from './components/availability_date/availability_date'
 import { H1, ADDITIONAL_DATA_HEADER } from './constants/texts'
 import Header from '../../../support/components/heading'
@@ -98,20 +97,21 @@ class AnnouncementCreate extends React.Component {
                 <SeparationLine />
                 <Pictures />
                 <SeparationLine />
-                <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
-                <AreaInput {...areaInputProps} />
-                <Additional />
-                <AvailabilityDate {...availabilityDateProps} />
-                <Features />
-                <Furnishings />
-                <Description />
+                <div id='listing-create-additional'>
+                  <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
+                  <AreaInput {...areaInputProps} />
+                  <Additional />
+                  <AvailabilityDate {...availabilityDateProps} />
+                  <Features />
+                  <Furnishings />
+                  <Description />
+                </div>
                 <SeparationLine />
-                {!authorized && (
-                  <>
-                    <UserCreate />
-                    <Line />
-                  </>
-                )}
+                <div id='listing-create-user'>
+                  <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
+                  {!authorized && <UserCreate />}
+                </div>
+                <SeparationLine />
                 <ManagedButton {...this.addAnnouncementManager()} />
               </form>
             ) : (

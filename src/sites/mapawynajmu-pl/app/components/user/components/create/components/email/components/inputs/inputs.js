@@ -32,7 +32,6 @@ class UserCreateEmailInputs extends React.Component {
       <div className='inputs'>
         <ManagedText {...this.emailAddressManager()} />
         <ManagedText {...this.passwordManager()} />
-        {/* <Header tier={2} text={this.langHandler(CONTACT_DATA_HEADER)} /> */}
         <Hint text={this.langHandler(NAME_AREA_CODE_AND_PHONE_NUMBER_HINT)} />
         <div className='country-code-phone-number-container'>
           <ManagedSelect {...this.areaCodeManager()} />
