@@ -7,6 +7,7 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import Header from '../../../../../support/components/heading'
 import { PAGE_HEADER, CONGRATULATIONS_TEXT, SHARE_ON_FACEBOOK_TEXT } from './constants/copies.js'
+import Line from '../../../../../support/components/separation-line/separation-line'
 
 class AnnouncementCreateSuccess extends React.Component {
   constructor(props) {
@@ -23,11 +24,14 @@ class AnnouncementCreateSuccess extends React.Component {
     if (!routeSynced) return null
 
     return (
-      <div id='success'>
+      <div id='success-container'>
         <Header tier={1} text={this.langHandler(PAGE_HEADER)} svg='checkSquare' />
-        <div className='congratulations'>{this.langHandler(CONGRATULATIONS_TEXT)}</div>
-        <div className='share-on-facebook-text'>{this.langHandler(SHARE_ON_FACEBOOK_TEXT)}</div>
-        <ManagedLink {...this.shareOnFacebookManager()} />
+        <Line />
+        <div className='further-steps'>
+          <div className='congratulations'>{this.langHandler(CONGRATULATIONS_TEXT)}</div>
+          <div className='share-on-facebook-text'>{this.langHandler(SHARE_ON_FACEBOOK_TEXT)}</div>
+          <ManagedLink {...this.shareOnFacebookManager()} />
+        </div>
       </div>
     )
   }

@@ -18,6 +18,7 @@
 @import '../../../../../styles/inputs/text.scss';
 @import '../../../../../styles/inputs/select.scss';
 @import '../../../../../styles/inputs/button.scss';
+@import '../../../../../styles/headings/h1.scss';
 @import '../../../../user/components/create/components/email/components/inputs/styles/country-code-phone-number-container.scss';
 
 #listing-create {
@@ -76,18 +77,8 @@
     border-radius: 12px;
     overflow: hidden;
   }
-
   h1 {
-    height: 34px;
-    background: white;
-    text-align: center;
-    line-height: 34px;
-    font-size: 12px;
-    font-weight: 400;
-    color: rgb(80, 80, 80);
-    text-transform: uppercase;
-    color: #7b7d7d;
-    letter-spacing: 0.5px;
+    @extend %h1;
   }
   h2 {
     margin: 24px 0 18px;

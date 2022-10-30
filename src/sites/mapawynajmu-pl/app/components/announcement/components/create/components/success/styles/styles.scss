@@ -1,12 +1,27 @@
+@import '../../../../../../../styles/headings/h1.scss';
+
 #listing-create {
-  #success {
+  #success-container {
+    background: white;
+    max-width: 640px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 120px auto 60px;
+    padding-bottom: 24px;
+    font-size: 16px;
+    color: (64, 64, 64);
+    .further-steps {
+      padding: 0 24px;
+    }
     .share-on-facebook {
       position: relative;
       width: 300px;
-      margin-top: 24px;
+      margin: 0 auto;
       background: rgba(46, 134, 193, 1);
       cursor: pointer;
       color: white;
+      border-radius: 4px;
+      transform: scale(.8);
       .button {
         width: 60px;
         height: 60px;
@@ -35,10 +50,6 @@
     svg {
       fill: #34495e;
       transform: translate(0, -1px);
-    }
-    h1 {
-      font-size: 20px;
-      color: #34495e;
     }
     .congratulations {
       margin: 30px 0;

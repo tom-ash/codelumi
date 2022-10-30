@@ -3,14 +3,11 @@
 @import './themes.scss';
 @import './colors.scss';
 @import '../components/support/components/spinner/components/windmill/styles/styles.scss';
-@import './headers/headers';
 @import '../components/page/styles/styles.scss';
 
 body {
   box-sizing: border-box;
   background: $BACKGROUND-APP-COLOR;
-  // @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
-  // font-family: 'Open Sans', sans-serif;
   @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap');
   font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
