@@ -20,7 +20,7 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import AvailabilityDate from './components/availability_date/availability_date'
 import { H1, ADDITIONAL_DATA_HEADER } from './constants/texts'
-import Header from '../../../support/components/heading'
+import { Heading } from '../../../support/components/heading'
 import UserCreate from '../../../user/components/create/create.js'
 import UserCreateEmailVerify from '../../../user/components/create/components/email/components/verify/verify.js'
 import AppContext from '../../../../constants/context.js'
@@ -104,7 +104,7 @@ class AnnouncementCreate extends React.Component {
               <Pictures />
               <Line />
               <div id='listing-create-additional'>
-                <Header tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
+                <Heading tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
                 <AreaInput {...areaInputProps} />
                 <Additional />
                 <AvailabilityDate {...availabilityDateProps} />
@@ -115,7 +115,7 @@ class AnnouncementCreate extends React.Component {
               <Line />
               {!authorized && (
                 <div id='listing-create-user'>
-                  <Header
+                  <Heading
                     tier={2}
                     text={this.langHandler({
                       pl: 'Dane konta (wymagane)',

@@ -11,7 +11,7 @@ import { requiredInputs } from '../../constants/required-inputs'
 import { pictureClassProvider } from './functions/picture-class-provider'
 import { rotatePicture } from './functions/rotate-picture'
 import SVG from '../../../../../support/components/svg/svg'
-import Heading from '../../../../../support/components/heading'
+import { Heading } from '../../../../../support/components/heading'
 import Info from '../../../../../../../../shared/app/components/support/info'
 
 const HEADING = {

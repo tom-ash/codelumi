@@ -6,7 +6,7 @@ import { validateMap } from './functions/validate-map'
 import * as lifecycle from './functions/lifecycle'
 import AddressInput from './components/address-input/address-input'
 import addPin from './functions/add-pin'
-import Heading from '../../../../../support/components/heading'
+import { Heading } from '../../../../../support/components/heading'
 import Info from '../../../../../../../../shared/app/components/support/info'
 
 const HEADING = {

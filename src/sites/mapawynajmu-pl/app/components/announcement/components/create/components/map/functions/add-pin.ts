@@ -12,34 +12,28 @@ interface AddPinProps {
 }
 
 function addPin(props: AddPinProps) {
-  const {
-    autocomplete,
-    setState,
-    changeInputs,
-    changeErrors
-  } = props
+  const { autocomplete, setState, changeInputs, changeErrors } = props
   const placeId = autocomplete.place_id
   const geocoder = new google.maps.Geocoder()
 
-  
   geocoder
-  // @ts-ignore
-  .geocode({ placeId })
-  // @ts-ignore
-  .then(result => {
-    const map = window.googleMap
-    const primaryResult = result.results[0]
-    const position = primaryResult.geometry.location
-    const addressComponents = primaryResult.address_components
-    const options = { center: position, zoom: 17 }
+    // @ts-ignore
+    .geocode({ placeId })
+    // @ts-ignore
+    .then(result => {
+      const map = window.googleMap
+      const primaryResult = result.results[0]
+      const position = primaryResult.geometry.location
+      const addressComponents = primaryResult.address_components
+      const options = { center: position, zoom: 17 }
 
-    const locality = getLocality(addressComponents)
-    const sublocality = getSublocality(addressComponents)
+      const locality = getLocality(addressComponents)
+      const sublocality = getSublocality(addressComponents)
 
-    map.setOptions(options)
-    changeInputs({ latitude: position.lat(), longitude: position.lng(), locality, sublocality })
-    changeErrors({ map: { pl: '', en: '' } })
-  })
+      map.setOptions(options)
+      changeInputs({ latitude: position.lat(), longitude: position.lng(), locality, sublocality })
+      changeErrors({ map: { pl: '', en: '' } })
+    })
 
   setState({ showAutocompletes: false, autocompleteInput: autocomplete.description })
 }

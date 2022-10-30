@@ -5,7 +5,7 @@ import langHandler from '../../../../functions/lang-handler'
 import UserAuthorizeEmailTrack from './components/email-password/email-password'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import Header from '../../../support/components/heading'
+import { Heading } from '../../../support/components/heading'
 
 class UserAuthorize extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class UserAuthorize extends React.Component {
 
     return (
       <div id='user-authorize'>
-        <Header tier={1} text={headerText} />
+        <Heading tier={1} text={headerText} />
         <UserAuthorizeEmailTrack />
       </div>
     )

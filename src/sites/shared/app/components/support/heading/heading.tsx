@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Heading = (props: HeadingProps) => {
+export const Heading = (props: HeadingProps) => {
   const { rank, heading } = props
 
   const objectHeading = typeof heading === 'object'

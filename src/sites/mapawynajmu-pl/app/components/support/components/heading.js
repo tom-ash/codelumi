@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Heading = ({ tier, text, preChildren, postChildren }) => {
+export const Heading = ({ tier, text, preChildren, postChildren }) => {
   const tag = `h${tier}`
   const content = (
     <>
@@ -13,5 +13,3 @@ const Heading = ({ tier, text, preChildren, postChildren }) => {
 
   return heading
 }
-
-export default Heading

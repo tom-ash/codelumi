@@ -9,7 +9,7 @@ import { monitProvider } from './functions/monit-provider'
 import langHandler from '../../../../../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import Header from '../../../../../../../support/components/heading'
+import { Heading } from '../../../../../../../support/components/heading'
 
 class UserEditAccountPassword extends React.Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class UserEditAccountPassword extends React.Component {
 
     return (
       <div id='user-edit-account-password' className={`${editAccount ? '' : 'container full'}`}>
-        {!editAccount && <Header tier={1} text={headerText} />}
+        {!editAccount && <Heading tier={1} text={headerText} />}
         <div className='inputs'>
           <div className='monit-and-text-inputs'>
             <div className='monit'>{this.monitProvider()}</div>
