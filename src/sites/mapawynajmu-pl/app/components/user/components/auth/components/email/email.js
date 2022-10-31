@@ -7,6 +7,7 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { langHandler } from '../../../../../../functions/lang-handler'
 import AppContext from '../../../../../../constants/context.js'
 import { buildUrl } from '../../../../../../../shared/functions/builders/url'
+import { Line } from '../../../../../support/components/line/line'
 
 class UserAuthEmail extends React.Component {
   constructor(props) {
@@ -37,6 +38,7 @@ class UserAuthEmail extends React.Component {
             <ManagedButton {...this.buttonManager()} />
           </div>
         </form>
+        <Line />
         <div className='reset-password'>
           <span onClick={() => changeRoute({ href: resetPasswordHref })}>
             {this.langHandler({ pl: 'Zresetuj hasło', en: 'Reset password' })}

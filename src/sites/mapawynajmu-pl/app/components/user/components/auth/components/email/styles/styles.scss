@@ -11,38 +11,30 @@
     @extend %text-input;
   }
   .inputs {
-    padding: 24px 32px 0;
+    padding: 24px 32px 24px;
   }
   .checkbox {
-    @media #{$LARGE-PHONE} {
-      position: relative;
-      height: 14px;
-      width: 100%;
-      margin-bottom: 24px;
-    }
+    display: flex;
+    justify-content: center;
+    padding-right: 20px;
     .input {
-      left: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto 0;
+      transform: scale(0.7);
     }
     .label {
-      font-size: 14px;
-      margin-left: 25px;
-      @media #{$LARGE-PHONE} {
-        line-height: 14px;
-      }
+      position: relative;
+      top: 2px;
+      font-size: 12px;
+      margin-left: -10px;
     }
   }
   .button {
     @extend %button;
     margin-top: 24px;
   }
-  // }
   .reset-password {
     display: block;
     text-align: center;
-    font-size: 14px;
+    font-size: 13px;
     color: #566573;
     margin-top: 15px;
     padding-top: 15px;
