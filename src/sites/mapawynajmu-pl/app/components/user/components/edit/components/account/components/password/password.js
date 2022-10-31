@@ -41,7 +41,7 @@ class UserEditAccountPassword extends React.Component {
             <ManagedText key='verificationCode' {...this.verificationManager()} />
             <ManagedText key='password' {...this.passwordManager()} />
           </div>
-          <div className='separation-line' />
+          <div className='line' />
           <ManagedButton key='button' {...this.buttonManager()} />
         </div>
       </div>

@@ -11,7 +11,7 @@ export function emailAddressManager() {
 
   return {
     id: 'user-logon-email-address',
-    classNames: { container: 'form-input text with-icon email' },
+    classNames: { container: 'text-input email' },
     autoComplete: 'email',
     controlled: false,
     label: this.langHandler(label),
@@ -40,7 +40,7 @@ export function passwordManager() {
     autoComplete: 'current-password',
     type: 'password',
     controlled: false,
-    classNames: { container: 'form-input text with-icon password' },
+    classNames: { container: 'text-input password' },
     label: this.langHandler(label),
     children: <SVG name='lock' />,
     onChange: () => this.props.changeErrors({ emailOrPassword: noError, email: noError }),
@@ -76,7 +76,7 @@ export function buttonManager() {
   const { connecting } = this.props
 
   return {
-    classNames: { container: 'form-input button' },
+    classNames: { container: 'button' },
     label: (
       <ButtonSpinner connecting={connecting} label={{ pl: 'Zaloguj', en: 'Sign In' }} langHandler={this.langHandler} />
     ),

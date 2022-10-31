@@ -8,7 +8,7 @@ import { langHandler } from '../../../../../../functions/lang-handler'
 import AppContext from '../../../../../../constants/context.js'
 import { buildUrl } from '../../../../../../../shared/functions/builders/url'
 
-class UserAuthorizeEmailPassword extends React.Component {
+class UserAuthEmail extends React.Component {
   constructor(props) {
     super(props)
     this.emailAddressManager = managers.emailAddressManager.bind(this)
@@ -33,10 +33,7 @@ class UserAuthorizeEmailPassword extends React.Component {
           <div className='inputs'>
             <ManagedText {...this.emailAddressManager()} />
             <ManagedText {...this.passwordManager()} />
-          </div>
-          <div className='submit'>
             <ManagedCheckbox {...this.rememberMeManager()} />
-            <div className='separation-line' />
             <ManagedButton {...this.buttonManager()} />
           </div>
         </form>
@@ -50,4 +47,4 @@ class UserAuthorizeEmailPassword extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserAuthorizeEmailPassword)
+export default connect(mapStateToProps, mapDispatchToProps)(UserAuthEmail)

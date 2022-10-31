@@ -1,5 +1,5 @@
 import React from 'react'
-// import { Line } from '../../../../../../support/components/separation-line/separation-line.js'
+// import { Line } from '../../../../../../support/components/line/line.js'
 
 export function controlProvider(announcement, index) {
   if (!announcement) return null

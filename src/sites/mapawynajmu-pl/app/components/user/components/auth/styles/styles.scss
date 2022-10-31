@@ -1,24 +1,26 @@
 @import '../../../../../styles/dimensions.scss';
 @import '../../../../../styles/inputs/form/text.scss';
 @import '../../../../../styles/inputs/form/checkbox.scss';
-@import '../components/email-password/styles/styles.scss';
+@import '../components/email/styles/styles.scss';
+@import '../../../../../styles/headings/h1';
 
 #user-authorize {
-  margin: 100px auto 150px;
-  max-width: 600px;
-  border: 1px solid $CONTAINER-BORDER-COLOR;
-  padding: $FORM-PADDING-PC;
-  border-radius: 4px;
-  background: white;
-  @media #{$LARGE-PHONE} {
-    margin: 0 auto;
-    border: none;
-    padding: $FORM-PADDING-PHONE;
+  margin-bottom: 24px;
+  padding-top: 96px;
+  padding-bottom: 96px;
+  background: #d7dbdd;
+  h1 {
+    @extend %h1;
   }
-  .page-header {
-    h1 {
-      padding: 0;
-      font-size: 18px;
-    }
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: white;
+    border-radius: 5px;
+  }
+  .line {
+    height: 1px;
+    background: #d7dbdd;
   }
 }

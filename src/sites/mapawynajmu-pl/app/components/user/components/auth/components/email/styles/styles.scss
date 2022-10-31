@@ -1,0 +1,53 @@
+@import '../../../../../../../styles/themes.scss';
+@import '../../../../../../../styles/inputs/form/button.scss';
+@import '../../../../../../../styles//inputs/form/svgs.scss';
+@import '../../../../../../../../../shared/app/styles/media-breakpoints';
+@import '../../../../../../../styles/inputs/text';
+@import '../../../../../../../styles/inputs/button';
+
+#user-authorize-email {
+  padding-bottom: 24px;
+  .text-input {
+    @extend %text-input;
+  }
+  .inputs {
+    padding: 24px 32px 0;
+  }
+  .checkbox {
+    @media #{$LARGE-PHONE} {
+      position: relative;
+      height: 14px;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+    .input {
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+    }
+    .label {
+      font-size: 14px;
+      margin-left: 25px;
+      @media #{$LARGE-PHONE} {
+        line-height: 14px;
+      }
+    }
+  }
+  .button {
+    @extend %button;
+    margin-top: 24px;
+  }
+  // }
+  .reset-password {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #566573;
+    margin-top: 15px;
+    padding-top: 15px;
+    span {
+      cursor: pointer;
+    }
+  }
+}

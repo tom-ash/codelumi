@@ -2,10 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { langHandler } from '../../../../functions/lang-handler'
-import UserAuthorizeEmailTrack from './components/email-password/email-password'
+import UserAuthorizeEmailTrack from './components/email/email'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { Heading } from '../../../support/components/heading'
+import { Line } from '../../../support/components/line/line'
 
 class UserAuth extends React.Component {
   constructor(props) {
@@ -18,8 +19,11 @@ class UserAuth extends React.Component {
 
     return (
       <div id='user-authorize'>
-        <Heading tier={1} text={headerText} />
-        <UserAuthorizeEmailTrack />
+        <div className='container'>
+          <Heading tier={1} text={headerText} />
+          <Line />
+          <UserAuthorizeEmailTrack />
+        </div>
       </div>
     )
   }

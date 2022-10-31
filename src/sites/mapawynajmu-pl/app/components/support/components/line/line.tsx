@@ -1,5 +1,5 @@
 import React from 'react'
 
 export const Line = () => {
-  return <div className='separation-line' />
+  return <div className='line' />
 }
