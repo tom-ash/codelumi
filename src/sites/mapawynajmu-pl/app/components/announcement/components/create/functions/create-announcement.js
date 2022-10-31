@@ -1,5 +1,5 @@
 import API_URL from '../../../../../../shared/constants/urls/api.js'
-import getAccessToken from '../../../../user/components/authorize/components/tokens/functions/get-tokens'
+import getAccessToken from '../../../../user/components/auth/components/tokens/functions/get-tokens'
 import {
   CREATE_API_ROUTE_DATA,
   CREATE_WITH_USER_API_ROUTE_DATA,

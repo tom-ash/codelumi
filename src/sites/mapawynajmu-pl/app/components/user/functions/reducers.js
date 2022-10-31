@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import { createReducer } from '../components/create/functions/reducer'
-import { authorizeReducer } from '../components/authorize/functions/reducers'
+import { authorizeReducer } from '../components/auth/functions/reducers'
 import { editReducer } from '../components/edit/functions/reducer'
 import { destroyReducer } from '../components/destroy/functions/reducer'
 

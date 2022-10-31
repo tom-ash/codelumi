@@ -1,5 +1,5 @@
 import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
-import getAccessToken from '../../../../../../authorize/components/tokens/functions/get-tokens'
+import getAccessToken from '../../../../../../auth/components/tokens/functions/get-tokens'
 
 export function changePhone(countryCode, body) {
   const { changeControl, changeData, changeInputs, connecting } = this.props

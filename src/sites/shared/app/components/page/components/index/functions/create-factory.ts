@@ -1,4 +1,4 @@
-import getAccessToken from '../../../../../../../mapawynajmu-pl/app/components/user/components/authorize/components/tokens/functions/get-tokens'
+import getAccessToken from '../../../../../../../mapawynajmu-pl/app/components/user/components/auth/components/tokens/functions/get-tokens'
 
 interface CreateFactoryProps {
   apiUrl: string

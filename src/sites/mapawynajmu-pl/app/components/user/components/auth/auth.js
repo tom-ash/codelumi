@@ -7,7 +7,7 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { Heading } from '../../../support/components/heading'
 
-class UserAuthorize extends React.Component {
+class UserAuth extends React.Component {
   constructor(props) {
     super(props)
     this.langHandler = langHandler.bind(this)
@@ -25,4 +25,4 @@ class UserAuthorize extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(UserAuthorize))
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(UserAuth))
