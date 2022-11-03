@@ -24,11 +24,11 @@ class UserCreateEmail extends React.Component {
         {(renderForm || renderAnnouncementCreate) && (
           <>
             {!renderAnnouncementCreate && <Heading rank={1} heading={headerText} />}
-            <Line />
+            {!renderAnnouncementCreate && <Line />}
             <form>
               <Inputs renderAnnouncementCreate={renderAnnouncementCreate} />
               <Consents />
-              <Line />
+              {!renderAnnouncementCreate && <Line />}
               {!renderAnnouncementCreate && <Submit />}
             </form>
           </>
