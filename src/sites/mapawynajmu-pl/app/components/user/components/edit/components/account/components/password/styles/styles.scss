@@ -1,49 +1,44 @@
-@import '../../../../../../../../../styles/themes.scss';
-@import '../../../../../../../../../styles/dimensions.scss';
-@import '../../../../../../../../../styles/inputs/form/text.scss';
-@import '../../../../../../../../../styles/inputs/form/svgs.scss';
-@import '../../../../../../../../../styles/inputs//form//button.scss';
 @import '../../../../../../../../../../../shared/app/styles/media-breakpoints';
+@import '../../../../../../../../../styles/dimensions';
+@import '../../../../../../../../../styles/themes';
+@import '../../../../../../../../../styles/headings/h1';
+@import '../../../../../../../../../styles/inputs/text';
+@import '../../../../../../../../../styles/inputs/button';
 
-#user-edit-account-password {
-  &.full {
-    margin: 120px auto;
-    max-width: 600px;
-    border: 1px solid $CONTAINER-BORDER-COLOR;
-    padding: $FORM-PADDING-PC;
-    background: white;
-    border-radius: 4px;
-    @media #{$LARGE-PHONE} {
+#user-update-password {
+  margin-bottom: 24px;
+  padding-top: 192px;
+  padding-bottom: 192px;
+  background: $BACKGROUND-COLOR-LIGHT-GRAYISH;
+  &.container {
+    .inputs {
+      max-width: 400px;
       margin: 0 auto;
-      border: none;
-      padding: $FORM-PADDING-PHONE;
+      border-radius: 5px;
+      overflow: hidden;
+      background: white;
     }
-    .page-header {
-      h1 {
-        padding: 0;
-        font-size: 18px;
-      }
+    h1 {
+      @extend %h1;
+    }
+    .text-input {
+      @extend %text-input;
+    }
+    .submit-button {
+      @extend %button;
+      padding: 18px 0;
     }
   }
   .monit-and-text-inputs {
-    max-width: 360px;
+    padding: 24px 32px;
   }
   .monit {
-    text-align: justify;
-    line-height: 20px;
-    font-size: 15px;
     margin-bottom: 20px;
+    line-height: 20px;
+    font-size: 14px;
   }
-  .form-input {
-    &.button {
-      margin: 0 auto;
-      .very-small-windmill-spinner {
-        top: -54px;
-        left: -49px;
-        div:after {
-          background: gray;
-        }
-      }
-    }
+  .line {
+    height: 1px;
+    background: $BACKGROUND-COLOR-LIGHT-GRAYISH;
   }
 }

@@ -13,7 +13,7 @@ export function emailManager() {
     id: 'user-edit-password-email',
     display: step === null ? 'block' : 'none',
     controlled: false,
-    classNames: { container: 'form-input with-icon text' },
+    classNames: { container: 'text-input' },
     label: this.langHandler(label),
     children: <SVG name='envelope' />,
     onChange: () => changeErrors({ password: noError }),
@@ -37,7 +37,7 @@ export function verificationManager() {
     id: 'user-edit-password-verification',
     display: step === 'verificationCode' ? 'block' : 'none',
     controlled: false,
-    classNames: { container: 'form-input with-icon text' },
+    classNames: { container: 'text-input' },
     label: this.langHandler(label),
     children: <SVG name='lock' />,
     onChange: () => changeErrors({ password: noError }),
@@ -63,7 +63,7 @@ export function passwordManager() {
     controlled: false,
     type: 'password',
     autoComplete: 'new-password',
-    classNames: { container: 'form-input with-icon text' },
+    classNames: { container: 'text-input' },
     label: this.langHandler(label),
     children: <SVG name='lock' />,
     onChange: () => changeErrors({ password: noError }),
@@ -88,7 +88,7 @@ export function buttonManager() {
 
   return {
     display: step === 'success' ? 'none' : 'block',
-    classNames: { container: 'form-input button' },
+    classNames: { container: 'submit-button' },
     label: (
       <ButtonSpinner connecting={connecting} label={buttonTextProvider.call(this)} langHandler={this.langHandler} />
     ),
