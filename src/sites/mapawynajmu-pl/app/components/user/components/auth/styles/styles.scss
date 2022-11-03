@@ -1,14 +1,12 @@
-@import '../../../../../styles/dimensions.scss';
-@import '../../../../../styles/inputs/form/text.scss';
-@import '../../../../../styles/inputs/form/checkbox.scss';
-@import '../components/email/styles/styles.scss';
+@import '../../../../../styles/colors';
 @import '../../../../../styles/headings/h1';
+@import '../components/email/styles/styles';
 
 #user-authorize {
   margin-bottom: 24px;
   padding-top: 96px;
   padding-bottom: 96px;
-  background: #d7dbdd;
+  background: $BACKGROUND-COLOR-LIGHT-GRAYISH;
   h1 {
     @extend %h1;
   }
@@ -21,6 +19,6 @@
   }
   .line {
     height: 1px;
-    background: #d7dbdd;
+    background: $BACKGROUND-COLOR-LIGHT-GRAYISH;
   }
 }

@@ -1,12 +1,12 @@
 @import '../../../../../styles/themes';
 @import '../../../../../styles/colors';
 @import '../../../../../styles//dimensions.scss';
-@import '../../../../../styles/inputs/form/text.scss';
-@import '../../../../../styles/inputs/form/select.scss';
+
 @import '../../../../../styles/inputs/form/svgs.scss';
 @import '../../../../../styles/inputs/form/checkbox.scss';
 @import '../../../../../styles/inputs/form/textarea.scss';
 @import '../../../../../styles/inputs/form/button.scss';
+
 @import '../components/pictures/styles/styles.scss';
 @import '../components/additional/styles/styles.scss';
 @import '../components/features/styles/styles.scss';
@@ -26,7 +26,7 @@
   position: relative;
   padding-top: 38px;
   padding-bottom: 120px;
-  background: #d7dbdd;
+  background: $BACKGROUND-COLOR-LIGHT-GRAYISH;
   #listing-create-user {
     padding: 0 24px 24px;
     #user-create-email {
@@ -128,8 +128,8 @@
   }
   .line {
     height: 1px;
-    background: #d7dbdd;
     margin: 0;
+    background: $BACKGROUND-COLOR-LIGHT-GRAYISH;
   }
   .description {
     text-align: justify;

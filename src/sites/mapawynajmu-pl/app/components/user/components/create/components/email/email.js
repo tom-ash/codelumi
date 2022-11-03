@@ -7,6 +7,7 @@ import Verification from './components/verify/verify.js'
 import * as mappers from './constants/mappers.js'
 import { langHandler } from '../../../../../../functions/lang-handler.js'
 import { Heading } from '../../../../../../../../shared/app/components/support/heading/heading'
+import { Line } from '../../../../../support/components/line/line'
 
 class UserCreateEmail extends React.Component {
   constructor(props) {
@@ -23,9 +24,11 @@ class UserCreateEmail extends React.Component {
         {(renderForm || renderAnnouncementCreate) && (
           <>
             {!renderAnnouncementCreate && <Heading rank={1} heading={headerText} />}
+            <Line />
             <form>
               <Inputs renderAnnouncementCreate={renderAnnouncementCreate} />
               <Consents />
+              <Line />
               {!renderAnnouncementCreate && <Submit />}
             </form>
           </>

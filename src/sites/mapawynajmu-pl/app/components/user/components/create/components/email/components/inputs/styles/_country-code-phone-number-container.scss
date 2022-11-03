@@ -4,25 +4,23 @@
   @extend %select-element;
   position: relative;
   .country-code {
-    .label {
-      display: none;
-    }
     position: absolute;
     width: 72px;
     margin-top: 19px;
     padding-left: 6px;
     text-align: center;
-    line-height: 36px;
-    font-size: 16px;
     letter-spacing: 0.5px;
+    .label {
+      display: none;
+    }
     .input {
       width: 100%;
-      padding-right: 24px;
+      padding-right: 25px;
       border: none;
     }
     svg {
       top: 14px;
-      right: 14px;
+      right: 13px;
     }
   }
   .phone-number {
