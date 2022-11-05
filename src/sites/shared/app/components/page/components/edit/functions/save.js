@@ -1,5 +1,5 @@
-import getAccessToken from '../../../../../../app/functions/tokens/getters/get-tokens.js'
-import { UPDATE_API_ROUTE } from '../constants/api_route_data.js'
+import getAccessToken from '../../../../../../app/functions/tokens/getters/get-tokens'
+import { UPDATE_API_ROUTE } from '../constants/api_route_data'
 
 export function save({ withRouteChange = false }) {
   const { apiUrl, changeControl, changeData, autoSchema, manualSchema } = this.props

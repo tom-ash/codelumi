@@ -1,11 +1,11 @@
-import API_URL from '../../../../../../shared/constants/urls/api.js'
+import API_URL from '../../../../../../shared/constants/urls/api'
 import getAccessToken from '../../../../user/components/auth/components/tokens/functions/get-tokens'
 import {
   CREATE_API_ROUTE_DATA,
   CREATE_WITH_USER_API_ROUTE_DATA,
   UPDATE_API_ROUTE_DATA,
-} from '../constants/api-route-data.js'
-import setConfirmationTokenCookie from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token.js'
+} from '../constants/api-route-data'
+import setConfirmationTokenCookie from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
 import { buildUrl } from '../../../../../../shared/functions/builders/url'
 
 // function sendAnnouncementCreatedEvent() {

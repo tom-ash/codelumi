@@ -6,7 +6,7 @@ import UserEditAccountEmail from '../../email-address/email-address'
 import UserEditAccountPassword from '../../password/password'
 import UserDestroy from '../../../../../../destroy/destroy'
 import { inputs } from '../../../../../../../constants/inputs'
-import SVG from '../../../../../../../../support/components/svg/svg.js'
+import SVG from '../../../../../../../../support/components/svg/svg'
 
 export function centralManager(element) {
   switch (element) {

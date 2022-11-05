@@ -1,6 +1,6 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader/useStyles'
-import SVG from '../../../svg/svg.js'
+import SVG from '../../../svg/svg'
 import prettifyDate from '../../../../../functions/time/prettify-date'
 
 interface TitleBoardProps {

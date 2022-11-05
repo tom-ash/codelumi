@@ -1,6 +1,6 @@
 import sendGaEvent from '../../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from '../constants/analytics/events'
-import termsAndPrivacyConsentValidator from './validators.js'
+import termsAndPrivacyConsentValidator from './validators'
 
 const { CONSENTS_CHECKED_EVENT, CONSENTS_UNCHECKED_EVENT } = analyticEvents
 

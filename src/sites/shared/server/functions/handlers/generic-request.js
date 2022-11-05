@@ -1,8 +1,8 @@
-import routeSender from '../senders/route.js'
-import getPureUrl from '../../../shared/functions/routes/getters/pure-url.js'
-import getDevice from '../../../shared/functions/getters/device.js'
-import getVisitorState from '../../../shared/functions/getters/visitor-state.js'
-import sitemapSender from '../senders/sitemap.js'
+import routeSender from '../senders/route'
+import getPureUrl from '../../../shared/functions/routes/getters/pure-url'
+import getDevice from '../../../shared/functions/getters/device'
+import getVisitorState from '../../../shared/functions/getters/visitor-state'
+import sitemapSender from '../senders/sitemap'
 
 function genericRequestHandler({ req, res, clientUrl, apiUrl, appRenderer, siteName }) {
   const { cookies, originalUrl, headers } = req

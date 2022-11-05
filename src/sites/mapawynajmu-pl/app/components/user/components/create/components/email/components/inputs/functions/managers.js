@@ -3,8 +3,8 @@ import { inputs } from '../../../../../../../constants/inputs'
 import SVG from '../../../../../../../../support/components/svg/svg'
 import sendGaEvent from '../../../../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from '../constants/analytics/events'
-import { accountTypeValidator, nameValidator, phoneValidator, emailValidator, passwordValidator } from './validators.js'
-import errorResetter from './error-resetter.js'
+import { accountTypeValidator, nameValidator, phoneValidator, emailValidator, passwordValidator } from './validators'
+import errorResetter from './error-resetter'
 import { countryCodes } from '../constants/country-codes'
 
 const {

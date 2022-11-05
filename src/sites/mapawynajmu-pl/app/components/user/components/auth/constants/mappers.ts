@@ -1,3 +1,4 @@
+// @ts-ignore
 export const mapStateToProps = store => {
   return {
     lang: store.app.lang,
@@ -5,9 +6,12 @@ export const mapStateToProps = store => {
   }
 }
 
+// @ts-ignore
 export const mapDispatchToProps = dispatch => {
   return {
+    // @ts-ignore
     changeApp: value => dispatch({ type: 'app', value }),
+    // @ts-ignore
     changeAnnouncementControl: value => dispatch({ type: 'announcement/create/control', value }),
   }
 }

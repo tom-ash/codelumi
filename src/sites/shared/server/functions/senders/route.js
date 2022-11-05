@@ -1,8 +1,8 @@
 import fetch from 'node-fetch'
-import indexRenderer from '../renderers/index.js'
-import exceptionSender from './exception.js'
-import initialStateParser from '../parsers/initial-state.js'
-import initialAppState from '../../../app/constants/initial-app-state.js'
+import indexRenderer from '../renderers/index'
+import exceptionSender from './exception'
+import initialStateParser from '../parsers/initial-state'
+import initialAppState from '../../../app/constants/initial-app-state'
 
 // 'Lang': TODO Get lang from request,
 

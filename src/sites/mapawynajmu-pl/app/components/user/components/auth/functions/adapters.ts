@@ -1,6 +1,7 @@
 import { deleteCookie } from '../../../../../functions/cookie-handlers'
 import { buildUrl } from '../../../../../../shared/functions/builders/url'
 
+// @ts-ignore
 export function deauthorizeUser(props) {
   const { dispatch, changeRoute } = props
 

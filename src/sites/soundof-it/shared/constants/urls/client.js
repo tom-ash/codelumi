@@ -1,3 +1,3 @@
-import getClientUrl from '../../functions/getters/client-url.js'
+import getClientUrl from '../../functions/getters/client-url'
 
 export default getClientUrl()

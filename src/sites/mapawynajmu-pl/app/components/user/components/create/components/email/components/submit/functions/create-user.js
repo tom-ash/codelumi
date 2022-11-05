@@ -1,6 +1,6 @@
-import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
-import { CREATE_API_ROUTE } from '../constants/api-routes.js'
-import setConfirmationTokenCookie from '../../../../../../../../../../../shared/app/functions/cookies/setters/confirmation-token.js'
+import API_URL from '../../../../../../../../../../shared/constants/urls/api'
+import { CREATE_API_ROUTE } from '../constants/api-routes'
+import setConfirmationTokenCookie from '../../../../../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
 import { buildUrl } from '../../../../../../../../../../shared/functions/builders/url'
 
 function createUser(userObject) {

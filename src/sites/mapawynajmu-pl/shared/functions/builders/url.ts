@@ -1,4 +1,4 @@
-import clientUrl from '../../constants/urls/client.js'
+import clientUrl from '../../constants/urls/client'
 import buildUrlGeneric from '../../../../shared/shared/functions/routes/builders/url'
 
 export const buildUrl: BuildUrl = function (props) {

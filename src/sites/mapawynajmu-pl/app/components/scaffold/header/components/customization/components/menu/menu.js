@@ -1,7 +1,7 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader/useStyles'
 import styles from './styles/styles.scss'
-import Button from './components/button/button.js'
+import Button from './components/button/button'
 
 import { ManagedButton, ManagedLink } from 'managed-inputs'
 import {
@@ -11,7 +11,7 @@ import {
   myAnnouncementsManager,
   accountManager,
   deAuthorizeManager,
-} from '../links/functions/managers.js'
+} from '../links/functions/managers'
 
 const HeaderMenu = props => {
   const { authorized, showMenu, changeShowMenu, isMobile } = props

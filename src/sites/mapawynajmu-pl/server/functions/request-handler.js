@@ -1,11 +1,11 @@
-import genericRequestHandler from '../../../shared/server/functions/handlers/generic-request.js'
-import appRenderer from './app-renderer.js'
-import APEX_DOMAIN from '../../shared/constants/domains/apex.js'
-import ROOT_DOMAIN from '../../shared/constants/domains/root.js'
-import CLIENT_URL from '../../shared/constants/urls/client.js'
-import API_URL from '../../shared/constants/urls/api.js'
+import genericRequestHandler from '../../../shared/server/functions/handlers/generic-request'
+import appRenderer from './app-renderer'
+import APEX_DOMAIN from '../../shared/constants/domains/apex'
+import ROOT_DOMAIN from '../../shared/constants/domains/root'
+import CLIENT_URL from '../../shared/constants/urls/client'
+import API_URL from '../../shared/constants/urls/api'
 import { buildUrl } from '../../shared/functions/builders/url'
-import SITE_NAME from '../../shared/constants/names/site.js'
+import SITE_NAME from '../../shared/constants/names/site'
 
 function handleRequest(req, res) {
   if (req.hostname === 'warsawlease.pl' || req.hostname === 'www.warsawlease.pl')

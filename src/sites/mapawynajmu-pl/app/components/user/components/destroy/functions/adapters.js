@@ -1,7 +1,7 @@
-import API_URL from '../../../../../../shared/constants/urls/api.js'
+import API_URL from '../../../../../../shared/constants/urls/api'
 import getAccessToken from '../../auth/components/tokens/functions/get-tokens'
-import { VERIFY_API_ROUTE_DATA, DELETE_API_ROUTE_DATA } from '../constants/api_route_data.js'
-import { deauthorizeUser } from '../../auth/functions/adapters.js'
+import { VERIFY_API_ROUTE_DATA, DELETE_API_ROUTE_DATA } from '../constants/api_route_data'
+import { deauthorizeUser } from '../../auth/functions/adapters'
 
 export function sendEmail() {
   const { changeControl, connecting, email, lang } = this.props

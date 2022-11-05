@@ -1,6 +1,6 @@
-import API_URL from '../../../../../../../../shared/constants/urls/api.js'
+import API_URL from '../../../../../../../../shared/constants/urls/api'
 import getAccessToken from '../../../../../../user/components/auth/components/tokens/functions/get-tokens'
-import { DELETE_ROUTE_DATA } from '../constants/api_route_data.js'
+import { DELETE_ROUTE_DATA } from '../constants/api_route_data'
 
 export function destroy(id) {
   const { connecting, announcements, changeControl, changeData } = this.props

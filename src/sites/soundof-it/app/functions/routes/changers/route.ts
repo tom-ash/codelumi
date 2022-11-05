@@ -1,5 +1,5 @@
-import changeRouteGeneric from '../../../../../shared/app/functions/routes/changers/route-generic.js'
-import API_URL from '../../../../shared/constants/urls/api.js'
+import changeRouteGeneric from '../../../../../shared/app/functions/routes/changers/route-generic'
+import API_URL from '../../../../shared/constants/urls/api'
 
 const changeRoute: ChangeRoute = function ({ href, withoutScroll, retainQueryParams }) {
   // @ts-ignore

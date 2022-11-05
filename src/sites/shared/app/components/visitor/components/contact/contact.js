@@ -5,7 +5,7 @@ import {
   CONTACT_ADDRESS_STREET,
   CONTACT_ADDRESS_POSTAL_CODE_AND_CITY,
   CONTACT_EMAIL,
-} from './constants/texts.js'
+} from './constants/texts'
 
 const VisitorContact = props => {
   const { appName, langHandler } = props

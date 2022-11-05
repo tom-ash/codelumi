@@ -6,9 +6,9 @@ import { langHandler } from '../../../../../../../../functions/lang-handler'
 import { verificationManager, buttonManager } from './functions/manager'
 import { verify } from './functions/adapter'
 import { monit } from './constants/monit'
-import AppContext from '../../../../../../../../constants/context.js'
+import AppContext from '../../../../../../../../constants/context'
 import { Heading } from '../../../../../../../support/components/heading'
-import { PAGE_HEADER } from './constants/texts.js'
+import { PAGE_HEADER } from './constants/texts'
 
 class UserCreateEmailVerify extends React.Component {
   constructor(props) {

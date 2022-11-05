@@ -1,5 +1,5 @@
-import apiUrl from '../../../../../../../../shared/constants/urls/api.js'
-import getAccessToken from '../../../../../../../../../mapawynajmu-pl/app/components/user/components/auth/components/tokens/functions/get-tokens.js'
+import apiUrl from '../../../../../../../../shared/constants/urls/api'
+import getAccessToken from '../../../../../../../../../mapawynajmu-pl/app/components/user/components/auth/components/tokens/functions/get-tokens'
 
 type submitProps = {
   selectedSkills: Array<any>

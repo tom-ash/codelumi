@@ -10,7 +10,7 @@ const VisitorPrivacySettings = loadable(() =>
   import('./components/legal/components/privacy/components/settings/settings')
 )
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import anyNull from '../../../../shared/app/functions/helpers/any-null.js'
+import anyNull from '../../../../shared/app/functions/helpers/any-null'
 
 class Visitor extends React.Component {
   constructor(props) {

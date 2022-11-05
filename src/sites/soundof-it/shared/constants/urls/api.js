@@ -1,3 +1,3 @@
-import getApiUrl from '../../functions/getters/api-url.js'
+import getApiUrl from '../../functions/getters/api-url'
 
 export default getApiUrl()

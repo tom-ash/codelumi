@@ -1,7 +1,7 @@
-import { hashPassword } from '../../../../../../../functions/shared.js'
+import { hashPassword } from '../../../../../../../functions/shared'
 import { parser as consentsParser } from '../../../../consents/functions/parser'
-import { phoneValidator, emailValidator, passwordValidator } from '../../inputs/functions/validators.js'
-import termsAndPrivacyConsentValidator from '../../../../consents/functions/validators.js'
+import { phoneValidator, emailValidator, passwordValidator } from '../../inputs/functions/validators'
+import termsAndPrivacyConsentValidator from '../../../../consents/functions/validators'
 
 export function buildUserObject() {
   const { dispatch } = this.props

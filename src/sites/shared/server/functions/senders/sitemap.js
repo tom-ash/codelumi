@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import buildSitemap from '../sitemaps/build.js'
+import buildSitemap from '../sitemaps/build'
 
 function sitemapSender({ res, clientUrl, apiUrl }) {
   fetch(`${apiUrl}/sitemap`, {

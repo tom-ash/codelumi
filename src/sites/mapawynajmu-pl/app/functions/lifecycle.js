@@ -1,9 +1,9 @@
 import { initializeGoogleMaps } from './load-google-maps'
 import { isMobile } from './is-mobile'
 import { loadFonts } from './load-fonts'
-import API_URL from '../../shared/constants/urls/api.js'
-import { loadGoogleAnalytics } from '../../../shared/app/functions/analytics/google/load.js'
-import getGoogleAnalyticsMeasurementId from './analytics/google/getters/measurement-id.js'
+import API_URL from '../../shared/constants/urls/api'
+import { loadGoogleAnalytics } from '../../../shared/app/functions/analytics/google/load'
+import getGoogleAnalyticsMeasurementId from './analytics/google/getters/measurement-id'
 
 export function componentDidMount() {
   if (typeof window === 'undefined') return

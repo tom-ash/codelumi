@@ -5,7 +5,7 @@ import { centralManager } from './functions/central-manager'
 import { initialReducerState } from '../../constants/initial-reducer-state'
 import * as lifecycle from './functions/lifecycle'
 import { langHandler } from '../../../../../../../../functions/lang-handler'
-import SVG from '../../../../../../../support/components/svg/svg.js'
+import SVG from '../../../../../../../support/components/svg/svg'
 
 class UserEditAccountCell extends React.Component {
   constructor(props) {

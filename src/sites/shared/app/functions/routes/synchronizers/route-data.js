@@ -1,4 +1,4 @@
-import getAccessToken from '../../tokens/getters/get-tokens.js'
+import getAccessToken from '../../tokens/getters/get-tokens'
 
 function syncRouteData({ apiUrl, url, query, isSSR, customHeaders }) {
   const { changeApp } = this.props

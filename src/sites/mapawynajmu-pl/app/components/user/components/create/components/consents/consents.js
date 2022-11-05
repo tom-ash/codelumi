@@ -7,7 +7,7 @@ import { langHandler } from '../../../../../../functions/lang-handler'
 import * as mappers from './constants/mappers'
 import * as managers from './functions/managers'
 import { textProvider } from './functions/text-provider'
-import AppContext from '../../../../../../constants/context.js'
+import AppContext from '../../../../../../constants/context'
 
 class UserCreateConsents extends React.Component {
   constructor(props) {

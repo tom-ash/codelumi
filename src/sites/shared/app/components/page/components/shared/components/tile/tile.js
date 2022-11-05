@@ -1,5 +1,5 @@
 import React from 'react'
-import SVG from '../../../../../support/svg/svg.js'
+import SVG from '../../../../../support/svg/svg'
 import RenderNode from '../../../../../support/render-node/render-node'
 
 const PageTile = props => {

@@ -1,5 +1,5 @@
-import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
-import { hashPassword } from '../../../../../../../functions/shared.js'
+import API_URL from '../../../../../../../../../../shared/constants/urls/api'
+import { hashPassword } from '../../../../../../../functions/shared'
 import getAccessToken from '../../../../../../auth/components/tokens/functions/get-tokens'
 import {
   CURRENT_EMAIL_VERIFICATION_API_ROUTE_DATA,

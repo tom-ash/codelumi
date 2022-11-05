@@ -9,9 +9,9 @@ import { langHandler } from '../../../../functions/lang-handler'
 import { parseCurrency } from '../../functions/currency-parsers'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import { componentDidUpdate } from './functions/lifecycle.js'
+import { componentDidUpdate } from './functions/lifecycle'
 
-import AppContext from '../../../../constants/context.js'
+import AppContext from '../../../../constants/context'
 
 class AnnouncementIndexSearch extends React.Component {
   constructor(props) {

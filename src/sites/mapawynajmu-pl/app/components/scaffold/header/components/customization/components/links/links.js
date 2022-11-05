@@ -1,6 +1,6 @@
 import React from 'react'
 import { ManagedButton, ManagedLink } from 'managed-inputs'
-import { addAnnouncementManager, signUpManager, signInManager, myAccountManager } from './functions/managers.js'
+import { addAnnouncementManager, signUpManager, signInManager, myAccountManager } from './functions/managers'
 import LangSwtich from './components/lang-switch/lang-switch'
 import ArticlesLink from './components/articles-link'
 

@@ -11,7 +11,7 @@ import * as managers from './functions/managers'
 import * as adapters from './functions/adapters'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import AppContext from '../../../../constants/context.js'
+import AppContext from '../../../../constants/context'
 
 class UserDestroy extends React.Component {
   constructor(props) {

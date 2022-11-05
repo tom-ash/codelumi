@@ -1,7 +1,7 @@
-import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
-import { VERIFY_API_ROUTE } from '../constants/api_routes.js'
+import API_URL from '../../../../../../../../../../shared/constants/urls/api'
+import { VERIFY_API_ROUTE } from '../constants/api_routes'
 import { saveTokens } from '../../../../../../../functions/token-handlers'
-import getCookieValue from '../../../../../../../../../../../shared/app/functions/cookies/getters/get-cookie-value.js'
+import getCookieValue from '../../../../../../../../../../../shared/app/functions/cookies/getters/get-cookie-value'
 import { buildUrl } from '../../../../../../../../../../shared/functions/builders/url'
 
 export function verify() {

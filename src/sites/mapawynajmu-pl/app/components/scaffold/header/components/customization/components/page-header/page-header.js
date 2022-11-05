@@ -1,6 +1,6 @@
 import React from 'react'
 import { Heading } from '../../../../../../support/components/heading'
-import { MAP_HEADER } from './constants/texts.js'
+import { MAP_HEADER } from './constants/texts'
 
 const PageHeader = props => {
   const { renderMap, langHandler } = props

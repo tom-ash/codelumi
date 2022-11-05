@@ -1,4 +1,4 @@
-import scrollToTop from '../../screen/scrollers/to-top.js'
+import scrollToTop from '../../screen/scrollers/to-top'
 
 function changeRouteGeneric({ apiUrl, href, withoutScroll, retainQueryParams }) {
   let decoratedHref = href.replace(/\/\/$/, '/')

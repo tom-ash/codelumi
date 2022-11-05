@@ -6,7 +6,7 @@ import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import PanelCategories from './components/categories/categories'
 import PanelVisitor from './components/visitor/visitor'
-import AppContext from '../../../../../../constants/context.js'
+import AppContext from '../../../../../../constants/context'
 
 class AnnouncementIndexPanel extends React.Component {
   constructor(props) {

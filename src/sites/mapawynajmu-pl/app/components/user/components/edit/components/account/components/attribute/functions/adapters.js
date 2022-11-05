@@ -1,4 +1,4 @@
-import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
+import API_URL from '../../../../../../../../../../shared/constants/urls/api'
 import getAccessToken from '../../../../../../auth/components/tokens/functions/get-tokens'
 
 export function sendNewValue(value) {

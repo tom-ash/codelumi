@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { langHandler } from '../../../../../../functions/lang-handler'
 import * as managers from './functions/managers'
-import Tile from '../../../common/tile/tile.js'
+import Tile from '../../../common/tile/tile'
 import { controlProvider } from './functions/control-provider'
 import { buttonProvider } from './functions/button-provider'
 import { triggerVisible } from './functions/trigger-visible'
@@ -13,7 +13,7 @@ import { edit } from './functions/edit'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { ManagedButton } from 'managed-inputs'
-import AppContext from '../../../../../../constants/context.js'
+import AppContext from '../../../../../../constants/context'
 
 class AnnouncementIndexMy extends React.Component {
   constructor(props) {

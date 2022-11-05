@@ -1,4 +1,4 @@
-import API_URL from '../../../../../../shared/constants/urls/api.js'
+import API_URL from '../../../../../../shared/constants/urls/api'
 import { features } from '../../../constants/features'
 import { furnishings } from '../../../constants/furnishings'
 

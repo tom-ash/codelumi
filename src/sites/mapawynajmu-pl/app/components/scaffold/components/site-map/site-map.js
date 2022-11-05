@@ -5,7 +5,7 @@ import { langHandler } from '../../../../functions/lang-handler'
 import { componentDidMount } from './functions/lifecycle'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import CLIENT_URL from '../../../../../shared/constants/urls/client.js'
+import CLIENT_URL from '../../../../../shared/constants/urls/client'
 
 class SiteMap extends React.Component {
   constructor(props) {

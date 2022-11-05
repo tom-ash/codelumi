@@ -1,5 +1,5 @@
 import * as verifiers from '../../../../../../../functions/verifiers'
-import errorSetter from '../../../../../../../functions/error-setter.js'
+import errorSetter from '../../../../../../../functions/error-setter'
 
 export function accountTypeValidator(value) {
   if (verifiers.accountTypeVerifier(value)) return true

@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { ManagedText, ManagedSelect } from 'managed-inputs'
-import Hint from '../../../../../../../support/components/hint/hint.js'
+import Hint from '../../../../../../../support/components/hint/hint'
 import * as managers from './functions/managers'
 import { langHandler } from '../../../../../../../../functions/lang-handler'
 import * as mappers from './constants/mappers'
-import { NAME_AREA_CODE_AND_PHONE_NUMBER_HINT } from './constants/texts.js'
+import { NAME_AREA_CODE_AND_PHONE_NUMBER_HINT } from './constants/texts'
 
 class UserCreateEmailInputs extends React.Component {
   constructor(props) {

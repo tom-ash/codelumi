@@ -1,4 +1,4 @@
-import loadScript from '../../scripts/load.js'
+import loadScript from '../../scripts/load'
 
 export function loadGoogleAnalytics(measurementId) {
   if (typeof window === 'undefined') return

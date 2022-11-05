@@ -1,5 +1,5 @@
 import { sendAnalyticsEvent } from '../../../functions/google-analytics/send-analytics-event'
-import API_URL from '../../../../shared/constants/urls/api.js'
+import API_URL from '../../../../shared/constants/urls/api'
 
 export function togglePhone() {
   if (typeof window === 'undefined') return

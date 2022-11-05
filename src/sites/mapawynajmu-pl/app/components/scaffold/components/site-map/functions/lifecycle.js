@@ -1,4 +1,4 @@
-import API_URL from '../../../../../../shared/constants/urls/api.js'
+import API_URL from '../../../../../../shared/constants/urls/api'
 
 export function componentDidMount() {
   const { lang, changeApp, siteMapLinks } = this.props

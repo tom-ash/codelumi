@@ -6,7 +6,7 @@ import styles from './styles/styles.scss'
 import UserEditAccountCell from './components/cell/cell'
 import { langHandler } from '../../../../../../functions/lang-handler'
 import { Heading } from '../../../../../support/components/heading'
-import { HEADER_TEXT } from './constants/texts.js'
+import { HEADER_TEXT } from './constants/texts'
 import { Line } from '../../../../../support/components/line/line'
 
 class UserEditAccount extends React.Component {

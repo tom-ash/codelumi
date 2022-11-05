@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Links from './components/links/links.js'
-import Menu from './components/menu/menu.js'
+import Links from './components/links/links'
+import Menu from './components/menu/menu'
 
 // @ts-ignore
 export const HeaderCustomization = props => {

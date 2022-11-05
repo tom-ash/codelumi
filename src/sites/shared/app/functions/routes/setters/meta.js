@@ -1,4 +1,4 @@
-import getPureUrl from '../../../../shared/functions/routes/getters/pure-url.js'
+import getPureUrl from '../../../../shared/functions/routes/getters/pure-url'
 
 const replaceOpenGraph = openGraph => {
   const elements = document.querySelectorAll(`meta[property^="og"]`)

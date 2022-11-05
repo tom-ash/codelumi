@@ -8,8 +8,8 @@ import compression from 'compression'
 import cookieParser from 'cookie-parser'
 // @ts-ignore
 import vhost from 'vhost'
-import mapawynajmuPlRequestHandler from '../sites/mapawynajmu-pl/server/functions/request-handler.js'
-import soundofItHandleRequest from '../sites/soundof-it/server/functions/request-handler.js'
+import mapawynajmuPlRequestHandler from '../sites/mapawynajmu-pl/server/functions/request-handler'
+import soundofItHandleRequest from '../sites/soundof-it/server/functions/request-handler'
 import * as Sentry from '@sentry/node'
 // import * as Tracing from '@sentry/tracing'
 

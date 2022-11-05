@@ -1,12 +1,12 @@
 import React from 'react'
 import { ManagedLink } from 'managed-inputs'
 import { shareOnFacebookManager } from './functions/managers'
-import AppContext from '../../../../../../constants/context.js'
-import { langHandler } from '../../../../../../functions/lang-handler.js'
+import AppContext from '../../../../../../constants/context'
+import { langHandler } from '../../../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
 import { Heading } from '../../../../../support/components/heading'
-import { PAGE_HEADER, CONGRATULATIONS_TEXT, SHARE_ON_FACEBOOK_TEXT } from './constants/copies.js'
+import { PAGE_HEADER, CONGRATULATIONS_TEXT, SHARE_ON_FACEBOOK_TEXT } from './constants/copies'
 import { Line } from '../../../../../support/components/line/line'
 
 class AnnouncementCreateSuccess extends React.Component {

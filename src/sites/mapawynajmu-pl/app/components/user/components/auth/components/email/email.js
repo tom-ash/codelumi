@@ -5,7 +5,7 @@ import * as managers from './functions/managers'
 import { logIn } from './functions/adapters'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { langHandler } from '../../../../../../functions/lang-handler'
-import AppContext from '../../../../../../constants/context.js'
+import AppContext from '../../../../../../constants/context'
 import { buildUrl } from '../../../../../../../shared/functions/builders/url'
 import { Line } from '../../../../../support/components/line/line'
 

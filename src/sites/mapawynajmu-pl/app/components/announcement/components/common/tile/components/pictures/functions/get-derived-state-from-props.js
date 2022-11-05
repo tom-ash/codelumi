@@ -1,4 +1,4 @@
-import AWS_S3_URL from '../../../../../../../../../shared/constants/urls/aws-s3.js'
+import AWS_S3_URL from '../../../../../../../../../shared/constants/urls/aws-s3'
 
 export function getDerivedStateFromProps(props, state) {
   const { pictures, id } = props

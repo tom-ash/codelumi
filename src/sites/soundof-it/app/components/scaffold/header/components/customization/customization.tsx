@@ -1,5 +1,5 @@
 import React from 'react'
-import Links from './components/links/links.js'
+import Links from './components/links/links'
 
 // @ts-ignore
 export const HeaderCustomization = props => {

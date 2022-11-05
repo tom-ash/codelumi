@@ -1,6 +1,6 @@
-import genericAppRenderer from '../../../shared/server/functions/renderers/generic-app.js'
+import genericAppRenderer from '../../../shared/server/functions/renderers/generic-app'
 import App from '../../app/app.tsx'
-import rootReducer from '../../app/functions/root-reducer.js'
+import rootReducer from '../../app/functions/root-reducer'
 import path from 'path'
 
 function appRenderer(initialState) {

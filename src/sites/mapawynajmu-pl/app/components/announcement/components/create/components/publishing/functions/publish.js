@@ -1,7 +1,7 @@
-import scrollToElement from '../../../../../../../../../shared/app/functions/screen/scrollers/to-element.js'
+import scrollToElement from '../../../../../../../../../shared/app/functions/screen/scrollers/to-element'
 import { requiredInputs, requiredInputsArray } from '../../../constants/required-inputs'
-import { buildUserObject } from '../../../../../../user/components/create/components/email/components/submit/functions/adapters.js'
-import buildAnouncement from '../../../functions/build-announcement.js'
+import { buildUserObject } from '../../../../../../user/components/create/components/email/components/submit/functions/adapters'
+import buildAnouncement from '../../../functions/build-announcement'
 
 export function publish() {
   const { authorized, changeControl, changeData } = this.props

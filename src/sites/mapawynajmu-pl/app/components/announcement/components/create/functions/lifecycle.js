@@ -1,6 +1,6 @@
-import createAnnouncement from './create-announcement.js'
-import savePicture from './save-picture.js'
-import prepareAnnouncement from './prepare-announcement.js'
+import createAnnouncement from './create-announcement'
+import savePicture from './save-picture'
+import prepareAnnouncement from './prepare-announcement'
 
 export function componentDidMount() {
   const { announcement, renderEdit } = this.props

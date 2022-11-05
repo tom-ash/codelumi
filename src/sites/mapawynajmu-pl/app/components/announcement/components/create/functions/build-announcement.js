@@ -1,4 +1,4 @@
-import { createClientServerParams } from '../../../constants/client-server-params.js'
+import { createClientServerParams } from '../../../constants/client-server-params'
 
 function buildAnouncement() {
   const serverParams = {}

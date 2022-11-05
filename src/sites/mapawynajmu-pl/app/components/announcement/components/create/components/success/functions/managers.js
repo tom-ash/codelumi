@@ -1,6 +1,6 @@
 import React from 'react'
 import SVG from '../../../../../../support/components/svg/svg'
-import { shareOnFacebook } from '../../../../../functions/share-on-facebook.js'
+import { shareOnFacebook } from '../../../../../functions/share-on-facebook'
 import { buildUrl } from '../../../../../../../../shared/functions/builders/url'
 
 export function shareOnFacebookManager() {

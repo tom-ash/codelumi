@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import { control, inputs, errors, data } from '../constants/state'
 
+// @ts-ignore
 export const controlReducer = (state = control, action) => {
   switch (action.type) {
     case 'user/authorize/control':
@@ -12,6 +13,7 @@ export const controlReducer = (state = control, action) => {
   }
 }
 
+// @ts-ignore
 export const inputsReducer = (state = inputs, action) => {
   switch (action.type) {
     case 'user/authorize/inputs':
@@ -23,6 +25,7 @@ export const inputsReducer = (state = inputs, action) => {
   }
 }
 
+// @ts-ignore
 export const errorsReducer = (state = errors, action) => {
   switch (action.type) {
     case 'user/authorize/errors':
@@ -34,6 +37,7 @@ export const errorsReducer = (state = errors, action) => {
   }
 }
 
+// @ts-ignore
 export const dataReducer = (state = data, action) => {
   switch (action.type) {
     case 'user/authorize/data':

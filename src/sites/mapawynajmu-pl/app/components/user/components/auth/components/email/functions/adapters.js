@@ -1,7 +1,7 @@
-import { hashPassword } from '../../../../../functions/shared.js'
-import API_URL from '../../../../../../../../shared/constants/urls/api.js'
+import { hashPassword } from '../../../../../functions/shared'
+import API_URL from '../../../../../../../../shared/constants/urls/api'
 import { saveTokens } from '../../../../../functions/token-handlers'
-import { SIGN_IN_API_ROUTE } from '../constants/api_routes.js'
+import { SIGN_IN_API_ROUTE } from '../constants/api_routes'
 import { buildUrl } from '../../../../../../../../shared/functions/builders/url'
 
 export function logIn() {

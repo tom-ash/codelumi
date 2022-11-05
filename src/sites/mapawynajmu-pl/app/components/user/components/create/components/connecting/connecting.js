@@ -1,5 +1,5 @@
 import React from 'react'
-import WindmillSpinner from '../../../../../support/components/spinner/components/windmill/windmill.js'
+import WindmillSpinner from '../../../../../support/components/spinner/components/windmill/windmill'
 
 const UserCreateConnecting = () => {
   return (

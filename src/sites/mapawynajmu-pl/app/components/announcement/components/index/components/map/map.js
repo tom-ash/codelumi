@@ -8,7 +8,7 @@ import redrawPins from '../../../../functions/map/pins/redraw-pins'
 import { langHandler } from '../../../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import AppContext from '../../../../../../constants/context.js'
+import AppContext from '../../../../../../constants/context'
 
 class AnnouncementIndexMap extends React.Component {
   constructor(props) {

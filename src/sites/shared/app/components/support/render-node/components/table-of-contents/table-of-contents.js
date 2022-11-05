@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import urlify from '../../../../../../shared/functions/transformers/routes/urlify'
-import setScreenOffsetAtElement from '../../../../../functions/screen/setters/offset-at-element.js'
+import setScreenOffsetAtElement from '../../../../../functions/screen/setters/offset-at-element'
 
 const TableOfContents = props => {
   const { jsonBody, title } = props

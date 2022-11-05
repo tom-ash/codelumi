@@ -4,7 +4,7 @@ import * as mappers from './constants/mappers'
 import { langHandler } from '../../../../../../../../functions/lang-handler'
 import { buttonManager } from './functions/managers'
 import { ManagedButton } from 'managed-inputs'
-import AppContext from '../../../../../../../../constants/context.js'
+import AppContext from '../../../../../../../../constants/context'
 
 class UserCreateSubmit extends React.Component {
   constructor(props) {

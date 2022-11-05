@@ -1,7 +1,7 @@
 // import React from 'react'
-// import SVG from '../../../../../../../../../../shared/app/components/support/svg/svg.js'
-import { ANNOUNCEMENT_CREATE_LABELS } from '../../../../../../../../../shared/constants/routes/labels.js'
-import { deauthorizeUser } from '../../../../../../../user/components/auth/functions/adapters.js'
+// import SVG from '../../../../../../../../../../shared/app/components/support/svg/svg'
+import { ANNOUNCEMENT_CREATE_LABELS } from '../../../../../../../../../shared/constants/routes/labels'
+import { deauthorizeUser } from '../../../../../../../user/components/auth/functions/adapters'
 import { buildUrl } from '../../../../../../../../../shared/functions/builders/url'
 
 export function myAnnouncementsManager(props) {

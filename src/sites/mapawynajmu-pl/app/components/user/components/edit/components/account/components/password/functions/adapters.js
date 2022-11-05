@@ -1,7 +1,7 @@
-import API_URL from '../../../../../../../../../../shared/constants/urls/api.js'
-import { hashPassword } from '../../../../../../../functions/shared.js'
+import API_URL from '../../../../../../../../../../shared/constants/urls/api'
+import { hashPassword } from '../../../../../../../functions/shared'
 import { noError } from '../constants/no-error'
-import { VERIFICATION_API_ROUTE, VERIFY_API_AOUTE, UPDATE_API_ROUTE } from '../constants/api_routes.js'
+import { VERIFICATION_API_ROUTE, VERIFY_API_AOUTE, UPDATE_API_ROUTE } from '../constants/api_routes'
 
 export function sendEmail() {
   const { lang, connecting, changeControl, changeErrors } = this.props
