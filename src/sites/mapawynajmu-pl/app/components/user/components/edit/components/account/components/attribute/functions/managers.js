@@ -10,7 +10,7 @@ export function textManager() {
   return {
     id,
     controlled: false,
-    classNames: { container: 'form-input text' },
+    classNames: { container: 'text-input' },
     label,
     children: <i className={icon} />,
     onChange: () => changeErrors({ [`${inputName}`]: noError }),
@@ -30,7 +30,7 @@ export function buttonManager() {
   const { id, connecting } = this.props
 
   return {
-    classNames: { container: 'form-input button' },
+    classNames: { container: 'submit-button' },
     label: (
       <ButtonSpinner connecting={connecting} label={{ pl: 'Zmień', en: 'Change' }} langHandler={this.langHandler} />
     ),

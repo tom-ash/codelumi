@@ -1,27 +1,15 @@
 %current {
   position: relative;
   border-radius: 2px;
-  .icon {
-    position: absolute;
-    width: 35px;
-    svg {
-      width: 15px;
-      fill: $primary-text-transparentized-color;
-      transform: translate(0, -1px);
-    }
-  }
   .text {
-    position: relative;
-    margin-left: 35px;
     .title {
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       font-size: 14px;
-      color: $primary-text-transparentized-color;
+      font-weight: bold;
     }
     .value {
-      font-size: 15px;
+      font-size: 16px;
       overflow-x: auto;
-      color: $primary-text-color;
       svg {
         width: 20px;
       }

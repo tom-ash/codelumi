@@ -27,9 +27,6 @@ class UserEditAccountCell extends React.Component {
     return (
       <div className='user-edit-account-cell'>
         <div className='current'>
-          <div className='icon'>
-            <SVG name={this.centralManager('icon')} />
-          </div>
           <div className='text'>
             <div>
               <div className='title'>{this.centralManager('title')}</div>

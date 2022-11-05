@@ -85,7 +85,7 @@ function currentValueProvider() {
   const { item, currentValue, countryCode, body } = this.state
 
   if (item === 'phone') return countryCode + ' ' + body
-  if (item === 'password') return <SVG name='eyeSlash' />
+  if (item === 'password') return <SVG name='lock' />
   return currentValue
 }
 

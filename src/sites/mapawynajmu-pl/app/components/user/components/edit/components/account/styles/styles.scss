@@ -1,20 +1,27 @@
 @import '../components/cell/styles/styles.scss';
 @import '../components/password/styles/styles.scss';
+@import '../../../../../../../styles/container';
+@import '../../../../../../../styles/headings/h1';
+@import '../../../../../../../styles/line';
+@import '../../../../create/components/email/components/inputs/styles/country-code-phone-number-container';
 
 #user-edit-account {
-  margin: 50px auto;
-  max-width: 768px;
-  border: 1px solid $CONTAINER-BORDER-COLOR;
-  padding: $FORM-PADDING-PC;
-  background: white;
-  @media #{$LARGE-PHONE} {
-    border: none;
-    padding: $FORM-PADDING-PHONE;
+  margin-bottom: 24px;
+  padding-top: 96px;
+  padding-bottom: 96px;
+  background: $BACKGROUND-COLOR-LIGHT-GRAYISH;
+
+  .container {
+    @extend %container;
+    max-width: 480px;
   }
-  .page-header {
-    .icon {
-      padding-top: 3px;
-      width: 24px;
-    }
+  h1 {
+    @extend %h1;
+  }
+  .line {
+    @extend %line;
+  }
+  .country-code-phone-number-container {
+    @extend %country-code-phone-number-container;
   }
 }

@@ -5,7 +5,7 @@ import sendGaEvent from '../../../../../../../../../functions/google-analytics/s
 import analyticEvents from '../constants/analytics/events'
 import { accountTypeValidator, nameValidator, phoneValidator, emailValidator, passwordValidator } from './validators'
 import errorResetter from './error-resetter'
-import { countryCodes } from '../constants/country-codes'
+import { countryCodes } from '../../../../../../../../../../../shared/shared/constants/country-codes'
 
 const {
   ACCOUNT_TYPE_SELECTED_EVENT,

@@ -1,17 +1,26 @@
+@import '../../../../../../../../../styles/inputs/text';
+@import '../../../../../../../../../styles/inputs/button';
+
 %edit {
-  height: 240px;
+  height: 180px;
   margin: 0 auto;
   transition: 0.72s ease-out;
+  .text-input {
+    max-width: none;
+    @extend %text-input;
+  }
+  .submit-button {
+    @extend %button;
+  }
   &.closed {
-    visibility: hidden;
     height: 0px;
   }
   &.closed-after-open {
     height: 0px;
   }
   .inputs-container {
-    max-width: 360px;
-    padding: 35px 0 0 35px;
+    // max-width: 360px;
+    margin-top: 12px;
     &.hidden {
       visibility: hidden;
     }
@@ -34,19 +43,6 @@
     }
     .phone-body {
       margin-left: 108px;
-    }
-    .form-input {
-      &.button {
-        width: 100px;
-        height: 40px;
-        .very-small-windmill-spinner {
-          top: -54px;
-          left: -49px;
-          div:after {
-            background: gray;
-          }
-        }
-      }
     }
   }
 }

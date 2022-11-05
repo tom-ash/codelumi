@@ -21,24 +21,19 @@ class UserEditAccount extends React.Component {
 
     return (
       <div id='user-edit-account'>
-        <Heading tier={1} text={headerText} svg='userCog' />
-        {accountType == 'private' ? (
-          <UserEditAccountCell key='firstName' item='firstName' />
-        ) : (
-          <>
-            <UserEditAccountCell key='businessName' item='businessName' />
-            <Line />
-            <UserEditAccountCell key='taxNumber' item='taxNumber' />
-          </>
-        )}
-        <Line />
-        <UserEditAccountCell item='phone' />
-        <Line />
-        <UserEditAccountCell item='email' />
-        <Line />
-        <UserEditAccountCell item='password' />
-        <Line />
-        <UserEditAccountCell item='destroy' />
+        <div className='container'>
+          <Heading tier={1} text={headerText} />
+          <Line />
+          <div className='country-code-phone-number-container'>
+            <UserEditAccountCell item='phone' />
+          </div>
+          <Line />
+          <UserEditAccountCell item='email' />
+          <Line />
+          <UserEditAccountCell item='password' />
+          <Line />
+          <UserEditAccountCell item='destroy' />
+        </div>
       </div>
     )
   }
