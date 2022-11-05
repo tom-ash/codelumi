@@ -31,15 +31,13 @@ class UserAuthEmail extends React.Component {
     return (
       <div id='user-authorize-email'>
         <form>
-          <div className='inputs'>
-            <ManagedText {...this.emailAddressManager()} />
-            <ManagedText {...this.passwordManager()} />
-            <ManagedCheckbox {...this.rememberMeManager()} />
-            <ManagedButton {...this.buttonManager()} />
-          </div>
+          <ManagedText {...this.emailAddressManager()} />
+          <ManagedText {...this.passwordManager()} />
+          <ManagedCheckbox {...this.rememberMeManager()} />
+          <ManagedButton {...this.buttonManager()} />
         </form>
         <Line />
-        <div className='reset-password'>
+        <div className='links'>
           <span onClick={() => changeRoute({ href: resetPasswordHref })}>
             {this.langHandler({ pl: 'Zresetuj hasło', en: 'Reset password' })}
           </span>

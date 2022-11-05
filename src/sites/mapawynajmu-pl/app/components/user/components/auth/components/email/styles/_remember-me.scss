@@ -1,0 +1,16 @@
+%remember-me {
+  .checkbox {
+    display: flex;
+    justify-content: center;
+    padding-right: 20px;
+    .input {
+      transform: scale(0.8);
+    }
+    .label {
+      position: relative;
+      top: 2px;
+      font-size: 12px;
+      margin-left: -10px;
+    }
+  }
+}

@@ -1,46 +1,19 @@
-@import '../../../../../../../styles/themes';
+@import '../../../../../../../styles/colors';
 @import '../../../../../../../styles/inputs/form/checkbox';
-@import '../../../../../../../styles/inputs/form/button';
-@import '../../../../../../../styles//inputs/form/svgs';
-@import '../../../../../../../../../shared/app/styles/media-breakpoints';
-@import '../../../../../../../styles/inputs/text';
-@import '../../../../../../../styles/inputs/button';
+@import './text-inputs';
+@import './remember-me';
+@import './submit';
+@import './links';
 
 #user-authorize-email {
+  @extend %text-inputs;
+  @extend %remember-me;
+  @extend %submit;
   padding-bottom: 24px;
-  .text-input {
-    @extend %text-input;
-  }
-  .inputs {
+  form {
     padding: 24px 32px 24px;
   }
-  .checkbox {
-    display: flex;
-    justify-content: center;
-    padding-right: 20px;
-    .input {
-      transform: scale(0.8);
-    }
-    .label {
-      position: relative;
-      top: 2px;
-      font-size: 12px;
-      margin-left: -10px;
-    }
-  }
-  .button {
-    @extend %button;
-    margin-top: 24px;
-  }
-  .reset-password {
-    display: block;
-    text-align: center;
-    font-size: 13px;
-    color: #566573;
-    margin-top: 15px;
-    padding-top: 15px;
-    span {
-      cursor: pointer;
-    }
+  .links {
+    @extend %links;
   }
 }

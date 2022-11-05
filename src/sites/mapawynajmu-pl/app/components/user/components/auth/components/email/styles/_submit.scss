@@ -1,0 +1,8 @@
+@import '../../../../../../../styles/inputs/button';
+
+%submit {
+  .button {
+    @extend %button;
+    margin-top: 24px;
+  }
+}
