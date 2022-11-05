@@ -1,19 +1,9 @@
+@import '../../../../../../../styles/container';
+@import '../../../../../../../styles/headings/h1';
+
 #user-create-email {
-  max-width: 400px;
-  margin: 0 auto;
-  border-radius: 8px;
-  background: white;
-  overflow: hidden;
+  @extend %container;
   h1 {
-    height: 34px;
-    background: white;
-    text-align: center;
-    line-height: 34px;
-    font-size: 12px;
-    font-weight: 400;
-    color: rgb(80, 80, 80);
-    text-transform: uppercase;
-    color: #7b7d7d;
-    letter-spacing: 0.5px;
+    @extend %h1;
   }
 }

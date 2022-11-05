@@ -9,6 +9,7 @@
 @import '../components/email/styles/styles.scss';
 @import '../../../../../styles/inputs/form/checkbox.scss';
 @import '../../../../../styles/inputs/form/radio.scss';
+@import '../../../../../styles/line';
 
 #user-create {
   margin-bottom: 24px;
@@ -16,7 +17,6 @@
   padding-bottom: 96px;
   background: $BACKGROUND-COLOR-LIGHT-GRAYISH;
   .line {
-    height: 1px;
-    background: $BACKGROUND-COLOR-LIGHT-GRAYISH;
+    @extend %line;
   }
 }

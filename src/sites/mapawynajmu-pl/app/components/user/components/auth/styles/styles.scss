@@ -1,5 +1,7 @@
 @import '../../../../../styles/colors';
+@import '../../../../../styles/container';
 @import '../../../../../styles/headings/h1';
+@import '../../../../../styles/line';
 @import '../components/email/styles/styles';
 
 #user-authorize {
@@ -11,14 +13,9 @@
     @extend %h1;
   }
   .container {
-    max-width: 400px;
-    margin: 0 auto;
-    overflow: hidden;
-    background: white;
-    border-radius: 5px;
+    @extend %container;
   }
   .line {
-    height: 1px;
-    background: $BACKGROUND-COLOR-LIGHT-GRAYISH;
+    @extend %line;
   }
 }

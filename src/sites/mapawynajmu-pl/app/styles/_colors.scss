@@ -1,4 +1,9 @@
 $BACKGROUND-COLOR-LIGHT-GRAYISH: rgb(236, 236, 236);
+$ERROR-COLOR: #E74C3C;
+
+
+
+
 
 
 
@@ -17,13 +22,10 @@ $FORM-INPUT-ICON-COLOR: #b3b6b7;
 $FORM-INPUT-CHEVRON-COLOR: #979a9a;
 $LINKS-HEADER-COLOR: #34495e;
 $primary-text-color: #2e4053;
-
 // ACCOUNT
 $primary-text-transparentized-color: transparentize($primary-text-color, 0.3);
-
 // FORM RADIO
 $button-index-color: #fbfcfc;
-
 // FORM CHECKBOX
 $untached-color: #2e4053;
 $touched-color: #212f3d;
