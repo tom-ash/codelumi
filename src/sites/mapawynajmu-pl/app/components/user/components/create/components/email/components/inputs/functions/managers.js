@@ -75,7 +75,6 @@ export function passwordManager() {
     autoComplete: 'new-password',
     controlled: false,
     label: this.langHandler(label),
-    // children: <SVG name='lock' />,
     onFocus: () => errorResetter.call(this, 'password'),
     onBlur: value => {
       this.passwordManager().validate(value)
