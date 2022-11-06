@@ -23,7 +23,7 @@ function prepareUserObject() {
     countryCode: document.getElementById('user-create-email-area-code').value,
     phoneNumber: document.getElementById('user-create-email-phone-number').value,
     email: (email || '').toLowerCase(),
-    password: document.getElementById('user-create-email').value,
+    password: document.getElementById('user-create-email-password').value,
     termsAndPrivacyConsent,
   }
 

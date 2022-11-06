@@ -69,7 +69,7 @@ export function passwordManager() {
   const { label } = inputs.password
 
   return {
-    id: 'user-create-email',
+    id: 'user-create-email-password',
     classNames: { container: 'text-input with-icon' },
     type: 'password',
     autoComplete: 'new-password',

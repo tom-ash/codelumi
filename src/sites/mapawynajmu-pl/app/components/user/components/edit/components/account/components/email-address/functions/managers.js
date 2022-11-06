@@ -83,7 +83,7 @@ export function passwordManager() {
   const { icon, label } = inputs.password
 
   return {
-    id: 'user-edit-email',
+    id: 'user-edit-email-password',
     display: step == 'password' ? 'block' : 'none',
     controlled: false,
     classNames: { container: 'form-input text' },
@@ -143,7 +143,7 @@ function buttonOnClickProvider() {
       }
     case 'password':
       return () => {
-        const password = document.getElementById('user-edit-email').value
+        const password = document.getElementById('user-edit-email-password').value
         const { isValid, error } = passwordValidator(password)
         if (isValid) return this.sendPassword(password)
         changeErrors({ newEmailPassword: error })
