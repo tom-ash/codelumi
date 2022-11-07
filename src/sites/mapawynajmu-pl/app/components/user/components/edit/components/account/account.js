@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import UserEditAccountCell from './components/cell/cell'
+import UserEditAccountCellDeprecated from './components/cell-deprecated/cell-deprecated'
 import { langHandler } from '../../../../../../functions/lang-handler'
 import { Heading } from '../../../../../support/components/heading'
 import { HEADER_TEXT } from './constants/texts'
@@ -25,14 +25,14 @@ class UserEditAccount extends React.Component {
           <Heading tier={1} text={headerText} />
           <Line />
           <div className='country-code-phone-number-container'>
-            <UserEditAccountCell item='phone' />
+            <UserEditAccountCellDeprecated item='phone' />
           </div>
           <Line />
-          <UserEditAccountCell item='email' />
+          <UserEditAccountCellDeprecated item='email' />
           <Line />
-          <UserEditAccountCell item='password' />
+          <UserEditAccountCellDeprecated item='password' />
           <Line />
-          <UserEditAccountCell item='destroy' />
+          <UserEditAccountCellDeprecated item='destroy' />
         </div>
       </div>
     )

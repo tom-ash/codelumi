@@ -7,7 +7,7 @@ import * as lifecycle from './functions/lifecycle'
 import { langHandler } from '../../../../../../../../functions/lang-handler'
 import SVG from '../../../../../../../support/components/svg/svg'
 
-class UserEditAccountCell extends React.Component {
+class UserEditAccountCellDeprecated extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -49,4 +49,4 @@ class UserEditAccountCell extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserEditAccountCell)
+export default connect(mapStateToProps, mapDispatchToProps)(UserEditAccountCellDeprecated)
