@@ -1,0 +1,20 @@
+@import '../../../../../../../../../styles/themes.scss';
+// @import './current';
+// @import './trigger';
+// @import './edit';
+
+.user-edit-account-cell {
+  position: relative;
+  margin-top: 18px;
+  margin-bottom: 24px;
+  padding: 0 32px;
+  // .current {
+  //   @extend %current;
+  // }
+  // .trigger {
+  //   @extend %trigger;
+  // }
+  // .edit {
+  //   @extend %edit;
+  // }
+}

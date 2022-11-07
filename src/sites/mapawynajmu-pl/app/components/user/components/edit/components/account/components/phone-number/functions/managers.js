@@ -9,16 +9,12 @@ const noError = { pl: '', en: '' }
 
 export function phoneCodeManager() {
 
-  console.log(this.props)
-
   return {
     controlled: false,
     classNames: { container: 'select-input country-code' },
     children: <SVG name='chevron' />,
     value: this.props.countryCode,
-    options: countryCodes.map(countryCode => (
-      { value: countryCode, text: countryCode }
-    )),
+    options: countryCodes.map(countryCode => ({ value: countryCode, text: countryCode })),
     onSelect: option => this.props.changeInputs({ countryCode: option.value }),
   }
 }

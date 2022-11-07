@@ -1,0 +1,40 @@
+// @import '../../../../../../../../../styles/inputs/text';
+// @import '../../../../../../../../../styles/inputs/button';
+
+// %edit {
+//   height: 180px;
+//   margin: 0 auto;
+//   transition: 0.72s ease-out;
+//   .text-input {
+//     max-width: none;
+//     @extend %text-input;
+//   }
+//   .submit-button {
+//     @extend %button;
+//   }
+//   &.closed {
+//     height: 0px;
+//   }
+//   &.closed-after-open {
+//     height: 0px;
+//   }
+//   .inputs-container {
+//     margin-top: 12px;
+//     &.hidden {
+//       visibility: hidden;
+//     }
+//     &.hiding {
+//       visibility: hidden;
+//     }
+//     &.shown {
+//       visibility: visible;
+//     }
+//     .monit {
+//       width: 100%;
+//       text-align: justify;
+//       line-height: 1.2;
+//       margin-bottom: 20px;
+//       font-size: 15px;
+//     }
+//   }
+// }
