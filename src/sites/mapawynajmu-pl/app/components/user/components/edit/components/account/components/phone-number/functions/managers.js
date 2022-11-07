@@ -31,7 +31,7 @@ export function bodyManager() {
     id: 'user-edit-account-phone-number-body',
     type: 'tel',
     controlled: false,
-    classNames: { container: 'text-input phone-body' },
+    classNames: { container: 'text-input phone-number' },
     label: this.langHandler(label),
     onChange: value => {
       if (/^\d*$/.test(value)) {

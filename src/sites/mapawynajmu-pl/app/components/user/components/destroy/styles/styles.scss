@@ -1,2 +1,11 @@
+@import '../../../../../styles/inputs/text';
+@import '../../../../../styles/inputs/button';
+
 #user-destroy {
+  .text-input {
+    @extend %text-input;
+  }
+  .submit-button {
+    @extend %button;
+  }
 }

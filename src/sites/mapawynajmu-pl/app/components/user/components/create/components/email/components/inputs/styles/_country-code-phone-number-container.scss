@@ -1,9 +1,9 @@
 @import '../../../../../../../../../styles/inputs/select.scss';
 
 %country-code-phone-number-container {
-  @extend %select-element;
   position: relative;
   .country-code {
+    @extend %select-element;
     position: absolute;
     width: 72px;
     margin-top: 19px;

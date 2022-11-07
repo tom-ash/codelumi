@@ -11,7 +11,7 @@ export function verificationManager() {
   return {
     id: 'user-destroy-verification',
     controlled: false,
-    classNames: { container: 'form-input text' },
+    classNames: { container: 'text-input' },
     label: this.langHandler(label),
     children: <i className={icon} />,
     onChange: () => changeErrors({ verification: noError }),
@@ -34,7 +34,7 @@ export function buttonManager() {
 
   return {
     id: 'user-destroy-button',
-    classNames: { container: 'form-input button destroy' },
+    classNames: { container: 'submit-button' },
     label: (
       <ButtonSpinner
         connecting={connecting}
