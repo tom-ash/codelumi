@@ -5,7 +5,7 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 const UserCreate = loadable(() => import('./components/create/create'))
 const UserAuth = loadable(() => import('./components/auth/auth'))
 const UserEditAccountPassword = loadable(() =>
-  import('./components/edit/components/account/components/password/password')
+  import('./components/edit/components/account/components/password-reset/password-reset')
 )
 const UserEditAccount = loadable(() => import('./components/edit/components/account/account'))
 
