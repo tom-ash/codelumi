@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import useStyles from 'isomorphic-style-loader/useStyles'
 import styles from './styles/styles.scss'
-// import { langHandler } from '../../../../../../../../functions/lang-handler'
+import AppContext from '../../../../../../../../constants/context'
+
+type Trigger = 'closed' | 'open'
 
 interface UserEditCellProps {
   title: string
@@ -9,15 +11,57 @@ interface UserEditCellProps {
   edit: React.ReactElement
 }
 
+interface TriggerProps {
+  trigger: string
+  langHandler: LangHandler
+  changeTrigger(newTrigger: Trigger): void
+}
+
+const TriggerSwitch = (props: TriggerProps) => {
+  const {
+    trigger,
+    langHandler,
+    changeTrigger
+  } = props
+  let text
+  let newTrigger: Trigger
+
+  if (trigger === 'closed') {
+    // @ts-ignore
+    text = langHandler({ pl: 'Zmień', en: 'Change' })
+    newTrigger = 'open'
+  } else {
+    // @ts-ignore
+    text = langHandler({ pl: 'Anuluj', en: 'Cancel' })
+    newTrigger = 'closed'
+  }
+
+  return (
+    <span
+      onClick={() => changeTrigger(newTrigger)}
+    >
+      {text}
+    </span>
+  )
+}
+
 export const UserEditCell = (props: UserEditCellProps) => {
   useStyles(styles)
-  // TODO: Use useState for trigger state.
+
+  const { langHandler } = useContext(AppContext)
+  const [trigger, changeTrigger] = useState('closed')
 
   const {
     title,
     value,
     edit
   } = props
+
+  const triggerProps = {
+    trigger,
+    langHandler,
+    changeTrigger,
+  }
 
   return (
     <div className='cell'>
@@ -30,9 +74,9 @@ export const UserEditCell = (props: UserEditCellProps) => {
         </div>
         <div className='float-clear' />
       </div>
-      <div className='trigger'>TODO</div>
-      <div className='edit'>
-        {edit}
+      <div className='trigger'><TriggerSwitch {...triggerProps} /></div>
+      <div className={`edit ${trigger}`}>
+        {trigger === 'open' && edit}
       </div>
     </div>
   )
