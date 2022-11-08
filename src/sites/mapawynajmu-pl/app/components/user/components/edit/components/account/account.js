@@ -8,6 +8,7 @@ import { langHandler } from '../../../../../../functions/lang-handler'
 import { Heading } from '../../../../../support/components/heading'
 import { HEADER_TEXT } from './constants/texts'
 import { Line } from '../../../../../support/components/line/line'
+import { UserEditPassword as Password } from './components/password/password'
 
 class UserEditAccount extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class UserEditAccount extends React.Component {
   }
 
   render() {
-    const { accountType } = this.props
+    // const { accountType } = this.props
     const headerText = this.langHandler(HEADER_TEXT)
 
     return (
@@ -30,7 +31,7 @@ class UserEditAccount extends React.Component {
           <Line />
           <UserEditAccountCellDeprecated item='email' />
           <Line />
-          <UserEditAccountCellDeprecated item='password' />
+          <Password />
           <Line />
           <UserEditAccountCellDeprecated item='destroy' />
         </div>

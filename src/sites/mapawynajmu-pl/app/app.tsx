@@ -94,6 +94,8 @@ class App extends React.Component<AppProps> {
       changeRoute: this.changeRoute,
       // @ts-ignore
       matchStateToRoute: this.matchStateToRoute,
+      // @ts-ignore
+      langHandler: this.langHandler
     }
     // @ts-ignore
     const sharedProps = {

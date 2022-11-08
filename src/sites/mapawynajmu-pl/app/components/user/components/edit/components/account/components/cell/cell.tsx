@@ -1,18 +1,21 @@
 import React from 'react'
+import useStyles from 'isomorphic-style-loader/useStyles'
+import styles from './styles/styles.scss'
 // import { langHandler } from '../../../../../../../../functions/lang-handler'
 
 interface UserEditCellProps {
   title: string
-  value: string | React.FunctionComponent
-  edit: React.FunctionComponent
+  value: string | React.ReactElement
+  edit: React.ReactElement
 }
 
-const UserEditCell = (props: UserEditCellProps) => {
+export const UserEditCell = (props: UserEditCellProps) => {
+  useStyles(styles)
   // TODO: Use useState for trigger state.
 
   const {
-    // title,
-    // value,
+    title,
+    value,
     edit
   } = props
 
@@ -21,8 +24,8 @@ const UserEditCell = (props: UserEditCellProps) => {
       <div className='current' id='current'>
         <div className='text'>
           <div>
-            <div className='title'>TODO</div>
-            <div className='value'>TODO</div>
+            <div className='title'>{title}</div>
+            <div className='value'>{value}</div>
           </div>
         </div>
         <div className='float-clear' />

@@ -1,17 +1,17 @@
-// %trigger {
-//   position: absolute;
-//   top: 0px;
-//   right: 32px;
-//   font-size: 14px;
-//   border: none;
-//   background: none;
-//   color: blue;
-//   &.destroy {
-//     color: red;
-//   }
-//   cursor: pointer;
-//   span {
-//     font-size: 12px;
-//     padding-left: 4px;
-//   }
-// }
+%trigger {
+  position: absolute;
+  top: 0px;
+  right: 32px;
+  font-size: 14px;
+  border: none;
+  background: none;
+  color: blue;
+  &.destroy {
+    color: red;
+  }
+  cursor: pointer;
+  span {
+    font-size: 12px;
+    padding-left: 4px;
+  }
+}
