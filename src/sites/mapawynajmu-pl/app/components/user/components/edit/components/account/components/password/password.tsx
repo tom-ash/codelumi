@@ -2,14 +2,7 @@ import React, { useContext } from 'react'
 import { UserEditCell as Cell } from '../cell/cell'
 import SVG from '../../../../../../../support/components/svg/svg'
 import AppContext from '../../../../../../../../constants/context'
-
-const Edit = () => {
-  return (
-    <>
-      EDIT
-    </>
-  )
-}
+import { Inputs } from './components/inputs/inputs'
 
 const titleLangObject = { pl: 'Hasło', en: 'Password' }
 
@@ -21,7 +14,7 @@ export const UserEditPassword = () => {
       title={langHandler(titleLangObject)}
       // @ts-ignore
       value={<SVG name='eyeSlash' />}
-      edit={<Edit />}
+      edit={<Inputs />}
     />
   )
 }

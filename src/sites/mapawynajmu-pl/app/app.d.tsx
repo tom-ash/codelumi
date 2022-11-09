@@ -5,3 +5,8 @@ declare global {
     googleMap: google.maps.Map
   }
 }
+
+declare interface LangObject {
+  pl: string
+  en: string
+}
