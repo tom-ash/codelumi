@@ -1,4 +1,4 @@
-import '@types/googlemaps'
+import 'googlemaps'
 
 declare global {
   interface Window {
@@ -9,4 +9,11 @@ declare global {
 declare interface LangObject {
   pl: string
   en: string
+}
+
+export interface ValidateVerificationCode {
+  (props: {
+    value: string
+    changeError(props: LangObject): void
+  }): void
 }

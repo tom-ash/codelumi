@@ -1,39 +1,39 @@
-import React, { useContext, useCallback, useState } from 'react'
+import React, { useContext } from 'react'
 import AppContext from '../../../../../../../../../../../constants/context'
 import { ManagedText } from 'managed-inputs'
+import { EMPTY_LANG_OBJECT } from '../../../../../../../../../../../constants/lang-objects/empty'
 
-const LABEL = { pl: 'Kod weryfikacyjny', en: 'Verification Code' }
-const ERROR_LANG_OBJECT = { pl: 'Nieprawidłowy kod weryfikacyjny.', en: 'Invalid verification code.' }
-const EMPTY_LANG_OBJECT = { pl: '', en: '' }
+const LABEL_LANG_OBJECT = { pl: 'Kod weryfikacyjny', en: 'Verification Code' }
 
 interface VerificationCodeProps {
   value: string
+  error: LangObject
   changeValue(newValue: string): void
+  validateValue(value: string): void
+  changeError(props: typeof EMPTY_LANG_OBJECT): void
 }
 
-export const VerificationCode = (props: VerificationCodeProps) => {
+export const VerificationCodeInput = (props: VerificationCodeProps) => {
   const { langHandler } = useContext(AppContext)
   const {
     value,
+    error,
     changeValue,
+    validateValue,
+    changeError,
   } = props
-
-  const [error, changeError] = useState({ pl: '', en: '' })
-
-  const validate = useCallback(() => {
-    if (value.length === 4) return changeError(EMPTY_LANG_OBJECT)
-
-    changeError(ERROR_LANG_OBJECT)
-  }, [value])
 
   const inputProps = {
     classNames: { container: 'text-input' },
-    label: langHandler(LABEL),
+    label: langHandler(LABEL_LANG_OBJECT),
     value,
-    onChange: (newValue: string) => changeValue(newValue),
-    onBlur: validate,
-    validate,
+    match: /^\d{0,4}$/,
     error: langHandler(error),
+    onChange: (newValue: string) => {
+      changeValue(newValue)
+      changeError(EMPTY_LANG_OBJECT)
+    },
+    onBlur: validateValue,
   }
 
   return <ManagedText {...inputProps} />
