@@ -1,6 +1,6 @@
 import React from 'react'
 import { inputs } from '../../../../../../../constants/inputs'
-import ButtonSpinner from '../../../../../../../../support/components/button-spinner/button-spinner'
+import ButtonSpinnerDeprecated from '../../../../../../../../support/components/button-spinner/button-spinner'
 import sendGaEvent from '../../../../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from '../constants/analytics/events'
 
@@ -44,7 +44,7 @@ export function buttonManager() {
   return {
     classNames: { container: 'button' },
     label: (
-      <ButtonSpinner
+      <ButtonSpinnerDeprecated
         connecting={connecting}
         label={{ pl: 'Potwierdź', en: 'Confirm' }}
         langHandler={this.langHandler}

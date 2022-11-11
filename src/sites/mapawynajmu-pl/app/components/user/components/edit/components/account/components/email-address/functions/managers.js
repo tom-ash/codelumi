@@ -1,6 +1,6 @@
 import React from 'react'
 import { inputs } from '../../../../../../../constants/inputs'
-import ButtonSpinner from '../../../../../../../../support/components/button-spinner/button-spinner'
+import ButtonSpinnerDeprecated from '../../../../../../../../support/components/button-spinner/button-spinner'
 
 import { verificationCodeValidator } from '../../../../../../../functions/verification-code-validator'
 import { emailValidator } from '../../../../../../../../../functions/email-validator'
@@ -109,7 +109,7 @@ export function buttonManager() {
     id: 'user-edit-email-button',
     display: step === 'success' ? 'none' : 'block',
     classNames: { container: 'submit-button' },
-    label: <ButtonSpinner connecting={connecting} label={{ pl: 'Dalej', en: 'Next' }} langHandler={this.langHandler} />,
+    label: <ButtonSpinnerDeprecated connecting={connecting} label={{ pl: 'Dalej', en: 'Next' }} langHandler={this.langHandler} />,
     onClick: buttonOnClickProvider.call(this),
   }
 }

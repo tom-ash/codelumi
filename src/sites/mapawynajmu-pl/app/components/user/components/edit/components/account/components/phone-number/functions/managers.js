@@ -2,7 +2,7 @@ import React from 'react'
 import { changePhone } from './adapters'
 import SVG from '../../../../../../../../support/components/svg/svg'
 import { inputs } from '../../../../../../../constants/inputs'
-import ButtonSpinner from '../../../../../../../../support/components/button-spinner/button-spinner'
+import ButtonSpinnerDeprecated from '../../../../../../../../support/components/button-spinner/button-spinner'
 import { countryCodes } from '../../../../../../../../../../../shared/shared/constants/country-codes'
 
 const noError = { pl: '', en: '' }
@@ -54,7 +54,7 @@ export function buttonManager() {
   return {
     classNames: { container: 'submit-button' },
     label: (
-      <ButtonSpinner connecting={connecting} label={{ pl: 'Zmień', en: 'Change' }} langHandler={this.langHandler} />
+      <ButtonSpinnerDeprecated connecting={connecting} label={{ pl: 'Zmień', en: 'Change' }} langHandler={this.langHandler} />
     ),
     onClick: () => {
       const countryCode = this.props.countryCode

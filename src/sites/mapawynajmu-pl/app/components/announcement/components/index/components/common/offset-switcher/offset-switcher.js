@@ -1,5 +1,5 @@
 import React from 'react'
-import WindmillSpinner from '../../../../../../support/components/spinner/components/windmill/windmill'
+import Spinner from '../../../../../../support/components/spinner/components/windmill/windmill'
 import scrollToTop from '../../../../../../../functions/scrollers/instant-scroll'
 
 export function OffsetSwitcher({ langHandler, changeInputs, changeControl, offset, amount, classNames, scrollTop }) {
@@ -9,7 +9,7 @@ export function OffsetSwitcher({ langHandler, changeInputs, changeControl, offse
   if (amount === null) {
     return (
       <div className={className}>
-        <WindmillSpinner spinnerClass='very-small-windmill-spinner' />
+        <Spinner spinnerClass='button-spinner' />
       </div>
     )
   }

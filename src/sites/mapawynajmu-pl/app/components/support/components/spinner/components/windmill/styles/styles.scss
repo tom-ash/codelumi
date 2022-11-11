@@ -91,13 +91,13 @@
   left: 29px;
 }
 
-.very-small-windmill-spinner {
+.button-spinner {
   @extend .windmill-spinner;
   width: 12px;
   height: 12px;
 }
 
-.very-small-windmill-spinner div:after {
+.button-spinner div:after {
   width: 2px;
   height: 6px;
   border-radius: 32%;

@@ -1,10 +1,10 @@
 import React from 'react'
-import WindmillSpinner from '../../../../../support/components/spinner/components/windmill/windmill'
+import Spinner from '../../../../../support/components/spinner/components/windmill/windmill'
 
 const UserCreateConnecting = () => {
   return (
     <div id='user-create-creating-container'>
-      <WindmillSpinner spinnerClass='windmill-medium-spinner' />
+      <Spinner spinnerClass='windmill-medium-spinner' />
     </div>
   )
 }

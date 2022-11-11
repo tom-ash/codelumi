@@ -8,7 +8,7 @@ import Features from './components/features/features'
 import Furnishings from './components/furnishings/furnishings'
 import Description from './components/description/description'
 import Success from './components/success/success'
-import WindmillSpinner from '../../../support/components/spinner/components/windmill/windmill'
+import Spinner from '../../../support/components/spinner/components/windmill/windmill'
 import * as lifecycle from './functions/lifecycle'
 import * as managers from './functions/managers'
 import { langHandler } from '../../../../functions/lang-handler'
@@ -86,7 +86,7 @@ class AnnouncementCreate extends React.Component {
     if (connecting)
       return (
         <section id='listing-create' className={step}>
-          <WindmillSpinner spinnerClass='windmill-medium-spinner' />
+          <Spinner spinnerClass='windmill-medium-spinner' />
         </section>
       )
 

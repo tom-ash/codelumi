@@ -1,7 +1,7 @@
 import React from 'react'
 import { noError } from '../constants/no-error'
 import { inputs } from '../../../../../../../constants/inputs'
-import ButtonSpinner from '../../../../../../../../support/components/button-spinner/button-spinner'
+import ButtonSpinnerDeprecated from '../../../../../../../../support/components/button-spinner/button-spinner'
 import { emailValidator } from '../../../../../../../../../functions/email-validator'
 import SVG from '../../../../../../../../support/components/svg/svg'
 
@@ -90,7 +90,7 @@ export function buttonManager() {
     display: step === 'success' ? 'none' : 'block',
     classNames: { container: 'submit-button' },
     label: (
-      <ButtonSpinner connecting={connecting} label={buttonTextProvider.call(this)} langHandler={this.langHandler} />
+      <ButtonSpinnerDeprecated connecting={connecting} label={buttonTextProvider.call(this)} langHandler={this.langHandler} />
     ),
     onClick: buttonOnClickProvider.call(this),
   }

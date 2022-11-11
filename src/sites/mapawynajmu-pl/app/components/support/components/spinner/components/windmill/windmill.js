@@ -1,6 +1,6 @@
 import React from 'react'
 
-const WindmillSpinner = props => {
+const Spinner = props => {
   return (
     <div className={props.spinnerClass}>
       <div></div>
@@ -19,4 +19,4 @@ const WindmillSpinner = props => {
   )
 }
 
-export default WindmillSpinner
+export default Spinner

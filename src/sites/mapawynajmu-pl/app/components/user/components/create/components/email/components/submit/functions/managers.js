@@ -1,5 +1,5 @@
 import React from 'react'
-import ButtonSpinner from '../../../../../../../../support/components/button-spinner/button-spinner'
+import ButtonSpinnerDeprecated from '../../../../../../../../support/components/button-spinner/button-spinner'
 import sendGaEvent from '../../../../../../../../../functions/google-analytics/send-ga-event'
 import { analyticEvent } from '../constants/analytic-event'
 import createUser from './create-user'
@@ -11,7 +11,7 @@ export function buttonManager() {
   return {
     classNames: { container: 'button' },
     label: (
-      <ButtonSpinner
+      <ButtonSpinnerDeprecated
         connecting={connecting}
         label={{ pl: 'Zarejestruj', en: 'Register' }}
         langHandler={this.langHandler}

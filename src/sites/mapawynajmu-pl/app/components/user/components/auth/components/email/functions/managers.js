@@ -1,6 +1,6 @@
 import React from 'react'
 import { inputs } from '../../../../../constants/inputs'
-import ButtonSpinner from '../../../../../../support/components/button-spinner/button-spinner'
+import ButtonSpinnerDeprecated from '../../../../../../support/components/button-spinner/button-spinner'
 import { emailValidator } from '../../../../../../../functions/email-validator'
 import SVG from '../../../../../../support/components/svg/svg'
 
@@ -78,7 +78,7 @@ export function buttonManager() {
   return {
     classNames: { container: 'button' },
     label: (
-      <ButtonSpinner connecting={connecting} label={{ pl: 'Zaloguj', en: 'Sign In' }} langHandler={this.langHandler} />
+      <ButtonSpinnerDeprecated connecting={connecting} label={{ pl: 'Zaloguj', en: 'Sign In' }} langHandler={this.langHandler} />
     ),
     onClick: this.logIn,
   }

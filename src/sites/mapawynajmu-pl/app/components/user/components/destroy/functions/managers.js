@@ -1,5 +1,5 @@
 import React from 'react'
-import ButtonSpinner from '../../../../support/components/button-spinner/button-spinner'
+import ButtonSpinnerDeprecated from '../../../../support/components/button-spinner/button-spinner'
 import { destroy } from './adapters'
 import { inputs } from '../../../constants/inputs'
 const noError = { pl: '', en: '' }
@@ -36,7 +36,7 @@ export function buttonManager() {
     id: 'user-destroy-button',
     classNames: { container: 'submit-button' },
     label: (
-      <ButtonSpinner
+      <ButtonSpinnerDeprecated
         connecting={connecting}
         label={{ pl: 'Usuń konto', en: 'Delete Account' }}
         langHandler={this.langHandler}

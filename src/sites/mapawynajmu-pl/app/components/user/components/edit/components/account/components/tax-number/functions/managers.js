@@ -1,5 +1,5 @@
 import React from 'react'
-import ButtonSpinner from '../../../../../../../../support/components/button-spinner/button-spinner'
+import ButtonSpinnerDeprecated from '../../../../../../../../support/components/button-spinner/button-spinner'
 import { changetaxNumber } from './adapters'
 import { inputs } from '../../../../../../../constants/inputs'
 const noError = { pl: '', en: '' }
@@ -36,7 +36,7 @@ export function buttonManager() {
   return {
     classNames: { container: 'form-input button' },
     label: (
-      <ButtonSpinner connecting={connecting} label={{ pl: 'Zmień', en: 'Change' }} langHandler={this.langHandler} />
+      <ButtonSpinnerDeprecated connecting={connecting} label={{ pl: 'Zmień', en: 'Change' }} langHandler={this.langHandler} />
     ),
     onClick: () => {
       const taxNumber = document.getElementById('user-edit-account-tax-identification-text').value

@@ -5,7 +5,7 @@ import { EMPTY_LANG_OBJECT } from '../../../../../../../../../../../constants/la
 
 const LABEL_LANG_OBJECT = { pl: 'Kod weryfikacyjny', en: 'Verification Code' }
 
-interface VerificationCodeProps {
+interface VerificationCodeInputProps {
   value: string
   error: LangObject
   changeValue(newValue: string): void
@@ -13,7 +13,7 @@ interface VerificationCodeProps {
   changeError(props: typeof EMPTY_LANG_OBJECT): void
 }
 
-export const VerificationCodeInput = (props: VerificationCodeProps) => {
+export const VerificationCodeInput = (props: VerificationCodeInputProps) => {
   const { langHandler } = useContext(AppContext)
   const {
     value,
