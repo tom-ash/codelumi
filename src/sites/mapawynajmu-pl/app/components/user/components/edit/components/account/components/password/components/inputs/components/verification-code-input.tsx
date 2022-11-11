@@ -15,13 +15,7 @@ interface VerificationCodeInputProps {
 
 export const VerificationCodeInput = (props: VerificationCodeInputProps) => {
   const { langHandler } = useContext(AppContext)
-  const {
-    value,
-    error,
-    changeValue,
-    validateValue,
-    changeError,
-  } = props
+  const { value, error, changeValue, validateValue, changeError } = props
 
   const inputProps = {
     classNames: { container: 'text-input' },

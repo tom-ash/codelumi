@@ -18,11 +18,7 @@ interface TriggerProps {
 }
 
 const TriggerSwitch = (props: TriggerProps) => {
-  const {
-    trigger,
-    langHandler,
-    changeTrigger
-  } = props
+  const { trigger, langHandler, changeTrigger } = props
   let text
   let newTrigger: Trigger
 
@@ -36,13 +32,7 @@ const TriggerSwitch = (props: TriggerProps) => {
     newTrigger = 'closed'
   }
 
-  return (
-    <span
-      onClick={() => changeTrigger(newTrigger)}
-    >
-      {text}
-    </span>
-  )
+  return <span onClick={() => changeTrigger(newTrigger)}>{text}</span>
 }
 
 export const UserEditCell = (props: UserEditCellProps) => {
@@ -51,11 +41,7 @@ export const UserEditCell = (props: UserEditCellProps) => {
   const { langHandler } = useContext(AppContext)
   const [trigger, changeTrigger] = useState('closed')
 
-  const {
-    title,
-    value,
-    edit
-  } = props
+  const { title, value, edit } = props
 
   const triggerProps = {
     trigger,
@@ -74,10 +60,10 @@ export const UserEditCell = (props: UserEditCellProps) => {
         </div>
         <div className='float-clear' />
       </div>
-      <div className='trigger'><TriggerSwitch {...triggerProps} /></div>
-      <div className={`edit ${trigger}`}>
-        {trigger === 'open' && edit}
+      <div className='trigger'>
+        <TriggerSwitch {...triggerProps} />
       </div>
+      <div className={`edit ${trigger}`}>{trigger === 'open' && edit}</div>
     </div>
   )
 }

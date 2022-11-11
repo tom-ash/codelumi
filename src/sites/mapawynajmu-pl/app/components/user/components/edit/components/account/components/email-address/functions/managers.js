@@ -109,7 +109,13 @@ export function buttonManager() {
     id: 'user-edit-email-button',
     display: step === 'success' ? 'none' : 'block',
     classNames: { container: 'submit-button' },
-    label: <ButtonSpinnerDeprecated connecting={connecting} label={{ pl: 'Dalej', en: 'Next' }} langHandler={this.langHandler} />,
+    label: (
+      <ButtonSpinnerDeprecated
+        connecting={connecting}
+        label={{ pl: 'Dalej', en: 'Next' }}
+        langHandler={this.langHandler}
+      />
+    ),
     onClick: buttonOnClickProvider.call(this),
   }
 }

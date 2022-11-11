@@ -90,7 +90,11 @@ export function buttonManager() {
     display: step === 'success' ? 'none' : 'block',
     classNames: { container: 'submit-button' },
     label: (
-      <ButtonSpinnerDeprecated connecting={connecting} label={buttonTextProvider.call(this)} langHandler={this.langHandler} />
+      <ButtonSpinnerDeprecated
+        connecting={connecting}
+        label={buttonTextProvider.call(this)}
+        langHandler={this.langHandler}
+      />
     ),
     onClick: buttonOnClickProvider.call(this),
   }

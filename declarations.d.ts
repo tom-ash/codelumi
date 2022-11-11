@@ -24,3 +24,5 @@ type ChangeRoute = (
 ) => void
 
 type BuildUrl = (props: { path: string; query?: string; fragment?: string }) => string
+
+type Lang = 'pl' | 'en'

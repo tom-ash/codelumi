@@ -9,21 +9,17 @@ interface SubmitButtonProps {
 }
 
 export const SubmitButton = (props: SubmitButtonProps) => {
-  const {
-    connecting,
-    label,
-    onClick
-  } = props
+  const { connecting, label, onClick } = props
 
   const buttonSpinnerProps = {
     connecting,
-    label
+    label,
   }
 
   const buttonProps = {
     classNames: { container: 'submit-button' },
     label: <ButtonSpinner {...buttonSpinnerProps} />,
-    onClick
+    onClick,
   }
 
   return <ManagedButton {...buttonProps} />

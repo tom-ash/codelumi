@@ -36,7 +36,11 @@ export function buttonManager() {
   return {
     classNames: { container: 'form-input button' },
     label: (
-      <ButtonSpinnerDeprecated connecting={connecting} label={{ pl: 'Zmień', en: 'Change' }} langHandler={this.langHandler} />
+      <ButtonSpinnerDeprecated
+        connecting={connecting}
+        label={{ pl: 'Zmień', en: 'Change' }}
+        langHandler={this.langHandler}
+      />
     ),
     onClick: () => {
       const taxNumber = document.getElementById('user-edit-account-tax-identification-text').value

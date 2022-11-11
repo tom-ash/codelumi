@@ -32,7 +32,11 @@ export function buttonManager() {
   return {
     classNames: { container: 'submit-button' },
     label: (
-      <ButtonSpinnerDeprecated connecting={connecting} label={{ pl: 'Zmień', en: 'Change' }} langHandler={this.langHandler} />
+      <ButtonSpinnerDeprecated
+        connecting={connecting}
+        label={{ pl: 'Zmień', en: 'Change' }}
+        langHandler={this.langHandler}
+      />
     ),
     onClick: () => {
       const value = document.getElementById(id).value

@@ -78,7 +78,11 @@ export function buttonManager() {
   return {
     classNames: { container: 'button' },
     label: (
-      <ButtonSpinnerDeprecated connecting={connecting} label={{ pl: 'Zaloguj', en: 'Sign In' }} langHandler={this.langHandler} />
+      <ButtonSpinnerDeprecated
+        connecting={connecting}
+        label={{ pl: 'Zaloguj', en: 'Sign In' }}
+        langHandler={this.langHandler}
+      />
     ),
     onClick: this.logIn,
   }

@@ -8,7 +8,6 @@ import { countryCodes } from '../../../../../../../../../../../shared/shared/con
 const noError = { pl: '', en: '' }
 
 export function phoneCodeManager() {
-
   return {
     controlled: false,
     classNames: { container: 'select-input country-code' },
@@ -54,7 +53,11 @@ export function buttonManager() {
   return {
     classNames: { container: 'submit-button' },
     label: (
-      <ButtonSpinnerDeprecated connecting={connecting} label={{ pl: 'Zmień', en: 'Change' }} langHandler={this.langHandler} />
+      <ButtonSpinnerDeprecated
+        connecting={connecting}
+        label={{ pl: 'Zmień', en: 'Change' }}
+        langHandler={this.langHandler}
+      />
     ),
     onClick: () => {
       const countryCode = this.props.countryCode
