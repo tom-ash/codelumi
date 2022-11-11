@@ -14,18 +14,20 @@ interface RequestVerification {
 export const requestVerification: RequestVerification = props => {
   const { email, lang, changeConnecting, changeStep } = props
 
-  changeConnecting(true)
+  return changeStep('verification-code-input')
+  // changeConnecting(true)
 
-  fetch(REQUEST_VERIFICATION_URL, {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json', Lang: lang },
-    body: JSON.stringify({ email }),
-  }).then(response => {
-    if (response.ok) {
-      changeConnecting(false)
-      changeStep('verification-code-input')
-    } else {
-      throw new Error('ServerError')
-    }
-  })
+  // TODO: Reinstate.
+  // fetch(REQUEST_VERIFICATION_URL, {
+  //   method: 'PUT',
+  //   headers: { 'Content-Type': 'application/json', Lang: lang },
+  //   body: JSON.stringify({ email }),
+  // }).then(response => {
+  //   if (response.ok) {
+  //     changeConnecting(false)
+  //     changeStep('verification-code-input')
+  //   } else {
+  //     throw new Error('ServerError')
+  //   }
+  // })
 }
