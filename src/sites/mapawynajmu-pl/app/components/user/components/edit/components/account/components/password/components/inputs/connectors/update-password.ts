@@ -12,7 +12,7 @@ interface UpdatePasswordProps {
     verificationCode: string
     setConnecting(newConnecting: boolean): void
     setPasswordError(props: LangObject): void
-    closeCell?(): void
+    closeCell(): void
   }): void
 }
 
@@ -37,7 +37,7 @@ export const updatePassword: UpdatePasswordProps = props => {
   }).then(response => {
     if (response.ok) {
       setConnecting(false)
-      closeCell && closeCell()
+      closeCell()
     } else {
       throw new Error('ServerError')
     }

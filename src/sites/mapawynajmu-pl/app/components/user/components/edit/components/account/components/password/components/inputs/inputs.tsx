@@ -14,6 +14,7 @@ import { PasswordInput } from './components/password-input'
 import { validatePassword } from '../../../../../../../../common/validators/validate-password'
 import { EMPTY_STRING } from '../../../../../../../../../../common/empty_string'
 import { updatePassword } from './connectors/update-password'
+import { CellContext } from '../../../cell/cell'
 
 export enum InputsSteps {
   VERIFICATION_CODE_REQUEST = 'verification-code-request',
@@ -21,12 +22,7 @@ export enum InputsSteps {
   PASSWORD_INPUT = 'password-input',
 }
 
-interface InputsProps {
-  closeCell?(): void
-}
-
-export const Inputs = (props: InputsProps) => {
-  const { closeCell } = props
+export const Inputs = () => {
   const { langHandler } = useContext(AppContext)
   const [step, setStep] = useState(InputsSteps.VERIFICATION_CODE_REQUEST)
   const [connecting, setConnecting] = useState(false)
@@ -42,6 +38,7 @@ export const Inputs = (props: InputsProps) => {
       },
     },
   } = useStore().getState()
+  const { closeCell } = useContext(CellContext)
 
   const verificationCodeInputProps = {
     value: verificationCode,
