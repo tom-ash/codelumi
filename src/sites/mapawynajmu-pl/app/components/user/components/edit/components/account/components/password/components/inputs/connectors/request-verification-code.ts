@@ -7,20 +7,15 @@ interface RequestVerificationCode {
   (props: {
     email: string
     lang: Lang
-    changeConnecting(newConnecting: boolean): void
-    changeStep(newStep: InputsSteps): void
+    setConnecting(newConnecting: boolean): void
+    setStep(newStep: InputsSteps): void
   }): void
 }
 
 export const requestVerificationCode: RequestVerificationCode = props => {
-  const {
-    email,
-    lang,
-    changeConnecting,
-    changeStep
-  } = props
+  const { email, lang, setConnecting, setStep } = props
 
-  changeConnecting(true)
+  setConnecting(true)
 
   fetch(REQUEST_VERIFICATION_URL, {
     method: 'PUT',
@@ -28,8 +23,8 @@ export const requestVerificationCode: RequestVerificationCode = props => {
     body: JSON.stringify({ email }),
   }).then(response => {
     if (response.ok) {
-      changeConnecting(false)
-      changeStep(InputsSteps.VERIFICATION_CODE_INPUT)
+      setConnecting(false)
+      setStep(InputsSteps.VERIFICATION_CODE_INPUT)
     } else {
       throw new Error('ServerError')
     }

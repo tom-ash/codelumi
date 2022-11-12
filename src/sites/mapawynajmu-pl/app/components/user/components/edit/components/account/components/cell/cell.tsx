@@ -4,8 +4,8 @@ import styles from './styles/styles.scss'
 import AppContext from '../../../../../../../../constants/context'
 
 export enum TriggerStates {
-  CLOSED='closed',
-  OPEN='open',
+  CLOSED = 'closed',
+  OPEN = 'open',
 }
 
 interface UserEditCellProps {
@@ -68,7 +68,7 @@ export const UserEditCell = (props: UserEditCellProps) => {
       </div>
       <div className={`edit ${trigger}`}>
         {trigger === TriggerStates.OPEN &&
-        React.cloneElement(children, { closeCell: () => changeTrigger(TriggerStates.CLOSED) })}
+          React.cloneElement(children, { closeCell: () => changeTrigger(TriggerStates.CLOSED) })}
       </div>
     </div>
   )

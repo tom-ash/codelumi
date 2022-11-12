@@ -1,5 +1,6 @@
 import API_URL from '../../../../../../../../../../../../shared/constants/urls/api'
 import { hashPassword } from '../../../../../../../../../functions/shared'
+import { validatePassword } from '../../../../../../../../../common/validators/validate-password'
 
 const UPDATE_PASSWORD_URL = `${API_URL}/user/update/password`
 
@@ -9,29 +10,24 @@ interface UpdatePasswordProps {
     email: string
     password: string
     verificationCode: string
-    changeConnecting(newConnecting: boolean): void
+    setConnecting(newConnecting: boolean): void
+    setPasswordError(props: LangObject): void
     closeCell?(): void
   }): void
 }
 
 export const updatePassword: UpdatePasswordProps = props => {
-  const {
-    connecting,
-    email,
-    password,
-    verificationCode,
-    changeConnecting,
-    closeCell,
-  } = props
+  const { connecting, email, password, verificationCode, setConnecting, setPasswordError, closeCell } = props
 
   if (connecting) return
+  if (!validatePassword({ password, setPasswordError })) return
 
-  changeConnecting(true)
+  setConnecting(true)
 
   const body = JSON.stringify({
     email,
     password: hashPassword(password, email),
-    verificationCode
+    verificationCode,
   })
 
   fetch(UPDATE_PASSWORD_URL, {
@@ -40,7 +36,7 @@ export const updatePassword: UpdatePasswordProps = props => {
     body,
   }).then(response => {
     if (response.ok) {
-      changeConnecting(false)
+      setConnecting(false)
       closeCell && closeCell()
     } else {
       throw new Error('ServerError')
