@@ -14,7 +14,8 @@ export const UserEditPassword = () => {
       title={langHandler(titleLangObject)}
       // @ts-ignore
       value={<SVG name='eyeSlash' />}
-      edit={<Inputs />}
-    />
+    >
+      <Inputs />
+    </Cell>
   )
 }

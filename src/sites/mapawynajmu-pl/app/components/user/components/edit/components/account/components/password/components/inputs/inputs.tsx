@@ -9,7 +9,6 @@ import Spinner from '../../../../../../../../../support/components/spinner/compo
 import { useStore } from 'react-redux'
 import { PROVIDE_VERIFICATION_CODE_TEXT } from './texts/provide-verification-code-text'
 import { PROVIDE_PASSWORD_TEXT } from './texts/provide-password-text'
-
 import { confirmVerificationCode } from './connectors/confirm-verification-code'
 
 export enum InputsSteps {
@@ -18,7 +17,12 @@ export enum InputsSteps {
   PASSWORD_INPUT='password-input',
 }
 
-export const Inputs = () => {
+interface InputsProps {
+  closeCell(): void
+}
+
+export const Inputs = (props: any) => {
+  const { closeCell } = props
   const { langHandler } = useContext(AppContext)
   const [step, changeStep] = useState(InputsSteps.VERIFICATION_CODE_REQUEST)
   const [connecting, changeConnecting] = useState(false)
