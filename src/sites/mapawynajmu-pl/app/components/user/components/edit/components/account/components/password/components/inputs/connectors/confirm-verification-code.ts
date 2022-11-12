@@ -10,7 +10,7 @@ interface ConfirmVerificationCode {
     connecting: boolean
     verificationCode: string
     changeConnecting(newConnecting: boolean): void
-    changeStep(newStep: string): void
+    changeStep(newStep: InputsSteps): void
     changeError: ChangeError
   }): void
 }
@@ -29,17 +29,25 @@ export const confirmVerificationCode: ConfirmVerificationCode = props => {
 
   changeConnecting(true)
 
+  const body = JSON.stringify({
+    email,
+    verificationCode
+  })
+
   fetch(CONFIRM_VERIFICATION_CODE_URL, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, verificationCode }),
+    body,
   })
     .then(response => {
+
+      console.log(response)
+
       if (response.ok) {
-        changeConnecting(false)
         changeStep(InputsSteps.PASSWORD_INPUT)
       } else {
         changeError({ pl: 'Nieprawidłowy kod weryfikacyjny', en: 'Invalid verification code' })
       }
     })
+    .finally(() => changeConnecting(false))
 }
