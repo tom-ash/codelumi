@@ -18,10 +18,10 @@ export enum InputsSteps {
 }
 
 interface InputsProps {
-  closeCell(): void
+  closeCell?(): void
 }
 
-export const Inputs = (props: any) => {
+export const Inputs = (props: InputsProps) => {
   const { closeCell } = props
   const { langHandler } = useContext(AppContext)
   const [step, changeStep] = useState(InputsSteps.VERIFICATION_CODE_REQUEST)
