@@ -3,9 +3,11 @@ import useStyles from 'isomorphic-style-loader/useStyles'
 import styles from './styles/styles.scss'
 import AppContext from '../../../../../../../../constants/context'
 
-export const CellContext = React.createContext({} as {
-  closeCell(): void
-})
+export const CellContext = React.createContext(
+  {} as {
+    closeCell(): void
+  }
+)
 
 export enum TriggerStates {
   CLOSED = 'closed',
@@ -57,7 +59,7 @@ export const UserEditCell = (props: UserEditCellProps) => {
   }
 
   const cellContext = {
-    closeCell: () => changeTrigger(TriggerStates.CLOSED)
+    closeCell: () => changeTrigger(TriggerStates.CLOSED),
   }
 
   return (
@@ -75,10 +77,7 @@ export const UserEditCell = (props: UserEditCellProps) => {
         <TriggerSwitch {...triggerProps} />
       </div>
       <div className={`edit ${trigger}`}>
-        {trigger === TriggerStates.OPEN &&
-          <CellContext.Provider value={cellContext}>
-            {children}
-          </CellContext.Provider>}
+        {trigger === TriggerStates.OPEN && <CellContext.Provider value={cellContext}>{children}</CellContext.Provider>}
       </div>
     </div>
   )

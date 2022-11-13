@@ -3,6 +3,7 @@ import { parseCategory } from '../../../../../../../shared/functions/parsers/par
 import localitiesPresenter from '../../../../functions/localities-presenter'
 
 interface HeadingProps {
+  tier: number
   name: string
   category: number
   lang: string
@@ -12,10 +13,12 @@ interface HeadingProps {
 }
 
 const Heading = (props: HeadingProps) => {
-  const { name, category, locality, sublocality, lang, langHandler } = props
+  const { tier, name, category, locality, sublocality, lang, langHandler } = props
 
-  return (
-    <h1>
+  return React.createElement(
+    `h${tier}`,
+    {},
+    <>
       {name && <div className='name'>{name}</div>}
       <div className='category'>
         <span>{category !== null && parseCategory({ categoryNumber: category, lang })}</span>
@@ -24,7 +27,7 @@ const Heading = (props: HeadingProps) => {
         <span className='for-lease'>{langHandler({ pl: 'na wynajem', en: 'for rent' })}</span>
       </div>
       <div className='locality-sublocality'>{localitiesPresenter({ locality, sublocality })}</div>
-    </h1>
+    </>
   )
 }
 

@@ -191,7 +191,7 @@ class AnnouncementTile extends React.Component {
           >
             <Link {...linkProps} />
             <div className='data'>
-              <Heading {...headingProps} />
+              <Heading {...{ ...headingProps, tier: 2 }} />
               <PrimaryData {...primaryDataProps} />
             </div>
           </a>
@@ -201,7 +201,7 @@ class AnnouncementTile extends React.Component {
           <>
             <GoBack id={id} />
             <div className='listing-tile'>
-              <Heading {...headingProps} />
+              <Heading {...{ ...headingProps, tier: 1 }} />
               {isPhoneable ? <ListerPhone {...listerPhoneProps} /> : <GoToLink {...goToLinkProps} />}
               <Pictures {...picturesProps} />
               <PrimaryData {...primaryDataProps} />
@@ -214,7 +214,7 @@ class AnnouncementTile extends React.Component {
       case 'list':
         return (
           <main className='listing-tile'>
-            <Heading {...headingProps} />
+            <Heading {...{ ...headingProps, tier: 2 }} />
             <Pictures {...picturesProps} />
             <PrimaryData {...primaryDataProps} />
             {control}

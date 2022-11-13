@@ -1,5 +1,13 @@
 %h2 {
-  font-size: 16px;
-  color: $TEXT-HEADER-TIER-ONE-COLOR;
-  margin-bottom: 5px;
+  margin: 12px;
+  font-size: 18px;
+  .category {
+    font-size: 16px;
+  }
+  .for-lease {
+    font-size: 10px;
+  }
+  .locality-sublocality {
+    font-size: 13px;
+  }
 }
