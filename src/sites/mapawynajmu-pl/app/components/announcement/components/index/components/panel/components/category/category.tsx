@@ -5,10 +5,17 @@ import { ManagedSelect } from 'managed-inputs'
 // import styles from './styles/styles.scss'
 import { buildUrl } from '../../../../../../../../../shared/functions/builders/url'
 
-const AnnouncementIndexPanelCategories = props => {
+// @ts-ignore
+export const Category = props => {
   // useStyles(styles)
 
-  const { langHandler, currentCategory, changeRoute, links, changeControl } = props
+  const {
+    langHandler,
+    currentCategory,
+    changeRoute,
+    links,
+    changeControl
+  } = props
 
   const options = categories.map(category => ({
     value: category.value,
@@ -17,26 +24,32 @@ const AnnouncementIndexPanelCategories = props => {
   }))
 
   options.unshift({
+    // @ts-ignore
     value: null,
     text: 'Dowolna',
   })
 
+  console.log(currentCategory)
+
   const categoriesProps = {
     classNames: { container: 'filter' },
-    label: 'Kategoria',
-    value: currentCategory || '',
+    label: currentCategory === null ? langHandler({ pl: 'Kategoria', en: 'Category' }) : '',
+    value: currentCategory === null ? '' : currentCategory,
     options,
     onFocusCoverZIndex: 998,
+    // @ts-ignore
     onSelect: selectedCategory => {
       const { linkTrack } = selectedCategory
       const link = links[linkTrack]
       const href = link && buildUrl(link)
 
+      // @ts-ignore
+      window.areListingsObsolete = true
+
       changeRoute({ href: href || '/', retainQueryParams: true })
     },
   }
 
+  // @ts-ignore
   return <ManagedSelect {...categoriesProps} />
 }
-
-export default AnnouncementIndexPanelCategories

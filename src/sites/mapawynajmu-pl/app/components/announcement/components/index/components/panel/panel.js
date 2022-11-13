@@ -4,7 +4,7 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { langHandler } from '../../../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader/withStyles'
 import styles from './styles/styles.scss'
-import PanelCategories from './components/categories/categories'
+import { Category } from './components/category/category'
 import PanelVisitor from './components/visitor/visitor'
 import AppContext from '../../../../../../constants/context'
 
@@ -39,7 +39,7 @@ class AnnouncementIndexPanel extends React.Component {
     return (
       <>
         <div id='announcement-index-panel'>
-          <PanelCategories
+          <Category
             langHandler={this.langHandler}
             changeInputs={changeInputs}
             changeControl={changeControl}
