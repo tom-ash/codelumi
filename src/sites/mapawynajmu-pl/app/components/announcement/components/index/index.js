@@ -30,9 +30,6 @@ class AnnouncementIndexSearch extends React.Component {
       <section id='announcement-index'>
         {renderMap && (
           <>
-            <h1>
-              <span>{title}</span>
-            </h1>
             <AnnouncementIndexPanel />
             <AnnouncementIndexMap />
           </>

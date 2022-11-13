@@ -7,7 +7,7 @@
 
 #announcement-index-map {
   position: absolute;
-  top: 106px;
+  top: 60px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -20,5 +20,14 @@
   @media #{$LARGE-TABLET} {
     position: relative;
     top: 0;
+  }
+  h1 {
+    margin: 6px 0 18px 0;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 13px;
+    color: #4D5656;
+    font-weight: normal;
+    text-transform: uppercase;
   }
 }

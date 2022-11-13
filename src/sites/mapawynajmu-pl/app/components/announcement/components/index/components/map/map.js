@@ -35,6 +35,7 @@ class AnnouncementIndexMap extends React.Component {
       miniListFarthestScrollLeft,
       changeApp,
       changeControl,
+      title,
     } = this.props
 
     const changeHoveredTileId = hoveredTileId => changeControl({ hoveredTileId })
@@ -46,6 +47,9 @@ class AnnouncementIndexMap extends React.Component {
       <div id='announcement-index-map'>
         <div id='google-map-container'>
           <div ref={this.miniList} id='mini-list'>
+            <h1>
+              {title}
+            </h1>
             {announcements !== null &&
               announcements.map((announcement, index) => {
                 const { name, link } = announcement
