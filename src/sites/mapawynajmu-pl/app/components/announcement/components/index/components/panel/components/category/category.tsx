@@ -9,13 +9,7 @@ import { buildUrl } from '../../../../../../../../../shared/functions/builders/u
 export const Category = props => {
   // useStyles(styles)
 
-  const {
-    langHandler,
-    currentCategory,
-    changeRoute,
-    links,
-    changeControl
-  } = props
+  const { langHandler, currentCategory, changeRoute, links, changeControl } = props
 
   const options = categories.map(category => ({
     value: category.value,

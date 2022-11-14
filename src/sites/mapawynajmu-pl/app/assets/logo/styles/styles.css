@@ -3,6 +3,7 @@
   float: left;
   height: 28px;
   margin-top: 22px;
+  margin-left: 18px;
   color: #1b2631;
 }
 
@@ -11,5 +12,5 @@
   top: 0;
   font-size: 16px;
   font-family: 'Nova Slim';
-  color: #212F3C;
+  color: #212f3c;
 }
