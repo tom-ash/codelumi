@@ -33,7 +33,6 @@ class AnnouncementTile extends React.Component {
     const { venue, id } = this.props
 
     if (venue === 'map') {
-      console.log('HERE')
       markListingAsViewed(id)
     }
   }

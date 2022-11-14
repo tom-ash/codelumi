@@ -6,8 +6,6 @@
   line-height: 60px;
   width: 60px;
   text-align: center;
-  border-left: 1px solid #e5e7e9;
-  // border-right: 1px solid #e5e7e9;
 
   .cover {
     position: fixed;
@@ -20,15 +18,22 @@
   }
 
   .current {
-    font-size: 14px;
-    left: 10px;
-    text-transform: uppercase;
     cursor: pointer;
+    font-size: 14px;
     color: #17202a;
+    text-transform: uppercase;
     svg {
       display: inline-block;
       fill: #17202a;
-      height: 12px;
+      height: 10px;
+      transform: rotate(-90deg);
+      margin-left: 3px;
+      transition: ease-in .2s;
+    }
+    &.open {
+      svg {
+        transform: rotate(90deg);
+      }
     }
   }
 

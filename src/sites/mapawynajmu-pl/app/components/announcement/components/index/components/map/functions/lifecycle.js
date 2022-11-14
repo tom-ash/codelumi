@@ -92,8 +92,6 @@ export function componentDidUpdate(prevProps) {
   }
 
   if (announcements !== prevAnnouncements) {
-    console.log('HERE')
-
     this.redrawPins(currentTileId)
   }
 }

@@ -18,7 +18,6 @@ function setUpPinCreator(props: SetUpPinCreatorProps) {
   pinCreator.prototype = new google.maps.OverlayView()
 
   pinCreator.prototype.draw = function () {
-    // console.log(this)
     const self = this
     let div = this.div
 

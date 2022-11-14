@@ -23,8 +23,6 @@ export const Category = props => {
     text: 'Dowolna',
   })
 
-  console.log(currentCategory)
-
   const categoriesProps = {
     classNames: { container: 'filter' },
     label: currentCategory === null ? langHandler({ pl: 'Kategoria', en: 'Category' }) : '',

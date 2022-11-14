@@ -9,8 +9,8 @@ export const HeaderCustomization = props => {
 
   return (
     <>
-      <Menu {...enhancedProps} />
       <Links {...enhancedProps} />
+      <Menu {...enhancedProps} />
     </>
   )
 }

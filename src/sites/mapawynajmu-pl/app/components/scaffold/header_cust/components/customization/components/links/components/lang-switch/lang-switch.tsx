@@ -51,11 +51,14 @@ const LangSwich = (props: LangSwichProps) => {
     setShowLangs(false)
   }
 
+  const currentClasses = ['current']
+  if (showLangs) currentClasses.push('open')
+
   return (
     <div className='lang-switch'>
-      <div className='current' onClick={() => setShowLangs(!showLangs)}>
+      <div className={currentClasses.join(' ')} onClick={() => setShowLangs(!showLangs)}>
         {/* @ts-ignore */}
-        {lang} <SVG name='caretDown' />
+        {lang} <SVG name='chevron' />
       </div>
       {showLangs && <div className='cover' onClick={() => setShowLangs(false)} />}
       <div className={allClassNames.join(' ')}>
