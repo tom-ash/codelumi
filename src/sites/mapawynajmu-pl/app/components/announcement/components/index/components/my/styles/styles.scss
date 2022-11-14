@@ -1,45 +1,54 @@
-@import '../../../../../../../styles/themes.scss';
+@import '../../../../../../../styles/colors';
 @import './destroy_modal.scss';
 @import '../../../../common/tile/styles/tile';
 @import '../../../../../../../../../shared/app/styles/lined-heading';
 
-#announcement-index-list {
+#listing-index {
+  &.user {
+    background: $BACKGROUND-LIGHT-GRAYISH-COLOR;
+    margin-bottom: 32px;
+  }
+}
+
+#listing-index-user {
   position: relative;
   width: 880px;
   margin: 0 auto;
-  padding-top: 28px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background: $BACKGROUND-LIGHT-GRAYISH-COLOR;
   @media #{$LARGE-PHONE} {
     width: 100%;
   }
-  > h1 {
-    @extend %lined-heading;
-    margin-bottom: 48px;
-    &:before {
-      right: 0;
-      left: 0;
-    }
+  h1 {
+    margin: 0px 0 32px 0;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 13px;
+    color: #4d5656;
+    font-weight: normal;
+    text-transform: uppercase;
   }
-  .announcements {
-    .listing-tile {
-      @extend %tile;
-      margin: 0 auto 32px;
-      width: 45%;
-      float: left;
-      margin-right: 10%;
-      &:nth-of-type(2n) {
-        margin-right: 0;
-      }
-      .primary-data {
-        margin: 18px 0 12px;
-      }
+  .listing-tile {
+    @extend %tile;
+    background: white;
+    border-radius: 8px;
+    margin: 0 auto 32px;
+    width: 45%;
+    float: left;
+    margin-right: 10%;
+    &:nth-of-type(2n) {
+      margin-right: 0;
     }
-  }
-  .tile-dot {
-    font-size: 22px;
-    height: 22px;
-    line-height: 22px;
+    h2 {
+      margin: 18px;
+    }
+    .primary-data {
+      margin: 18px;
+    }
   }
   .control {
+    margin: 18px;
     .info {
       margin-bottom: 12px;
       display: flex;

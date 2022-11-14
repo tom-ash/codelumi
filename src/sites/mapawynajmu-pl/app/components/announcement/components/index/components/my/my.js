@@ -45,7 +45,7 @@ class AnnouncementIndexMy extends React.Component {
     }
 
     return (
-      <div id='announcement-index-list'>
+      <div id='listing-index-user'>
         <h1>
           <span>{this.langHandler({ pl: 'Moje ogłoszenia', en: 'My announcements' })}</span>
         </h1>

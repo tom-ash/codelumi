@@ -44,7 +44,7 @@ class AnnouncementIndexMap extends React.Component {
     }
 
     return (
-      <div id='announcement-index-map'>
+      <div id='listing-index-map'>
         <div id='google-map-container'>
           <div ref={this.miniList} id='mini-list'>
             <h1>{title}</h1>
