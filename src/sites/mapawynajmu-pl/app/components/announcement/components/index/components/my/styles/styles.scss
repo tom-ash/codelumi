@@ -29,26 +29,38 @@
     font-weight: normal;
     text-transform: uppercase;
   }
+  .announcements {
+    @media #{$LARGE-PHONE} {
+      padding: 0 18px 18px;
+    }
+  }
   .listing-tile {
     @extend %tile;
-    background: white;
-    border-radius: 8px;
-    margin: 0 auto 32px;
-    width: 45%;
     float: left;
-    margin-right: 10%;
-    &:nth-of-type(2n) {
-      margin-right: 0;
-    }
+    width: 48%;
+    border-radius: 8px;
+    margin-right: 4%;
+    margin-bottom: 4%;
+    padding: 18px 0;
+    background: white;
     h2 {
-      margin: 18px;
+      margin: 0 18px 18px;
     }
     .primary-data {
       margin: 18px;
     }
+    &:nth-of-type(2n) {
+      margin-right: 0;
+    }
+    @media #{$LARGE-PHONE} {
+      float: none;
+      width: auto;
+      margin-right: 0;
+      margin-bottom: 24px;
+    }
   }
   .control {
-    margin: 18px;
+    margin: 18px 18px 0;
     .info {
       margin-bottom: 12px;
       display: flex;
