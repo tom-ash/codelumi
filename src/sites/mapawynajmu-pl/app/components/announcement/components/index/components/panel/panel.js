@@ -18,20 +18,8 @@ class AnnouncementIndexPanel extends React.Component {
 
   render() {
     const {
-      lang,
       renderMap,
       currentCategory,
-      changeInputs,
-      changeControl,
-      categoryAmounts,
-      apartmentsAmount,
-      housesAmount,
-      roomsAmount,
-      parkingSpacesAmount,
-      usablePremisesAmount,
-      officesAmount,
-      virtualOfficesAmount,
-      coworkingAmount,
       links,
     } = this.props
     const { changeRoute } = this.context
@@ -41,20 +29,8 @@ class AnnouncementIndexPanel extends React.Component {
         <div id='listing-index-panel'>
           <Category
             langHandler={this.langHandler}
-            changeInputs={changeInputs}
-            changeControl={changeControl}
             currentCategory={currentCategory}
             changeRoute={changeRoute}
-            lang={lang}
-            categoryAmounts={categoryAmounts}
-            apartmentsAmount={apartmentsAmount}
-            housesAmount={housesAmount}
-            roomsAmount={roomsAmount}
-            parkingSpacesAmount={parkingSpacesAmount}
-            usablePremisesAmount={usablePremisesAmount}
-            officesAmount={officesAmount}
-            virtualOfficesAmount={virtualOfficesAmount}
-            coworkingAmount={coworkingAmount}
             links={links}
           />
           {renderMap && <PanelVisitor {...{ ...this.props, changeRoute, langHandler: this.langHandler }} />}

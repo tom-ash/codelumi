@@ -1,15 +1,16 @@
 import React from 'react'
 import { categories } from '../../../../../../constants/categories'
 import { ManagedSelect } from 'managed-inputs'
-// import useStyles from 'isomorphic-style-loader/useStyles'
-// import styles from './styles/styles.scss'
 import { buildUrl } from '../../../../../../../../../shared/functions/builders/url'
 
 // @ts-ignore
 export const Category = props => {
-  // useStyles(styles)
-
-  const { langHandler, currentCategory, changeRoute, links, changeControl } = props
+  const {
+    langHandler,
+    currentCategory,
+    changeRoute,
+    links,
+  } = props
 
   const options = categories.map(category => ({
     value: category.value,
