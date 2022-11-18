@@ -3,20 +3,10 @@ export const mapStateToProps = store => {
   const { lang, isMobile, device } = store.app
   const { 'announcement/index/map': renderMap, 'announcement/index/user': renderMy } = render
 
-  const {
-    currentCategory,
-  } = store.announcement.index.data
+  const { currentCategory } = store.announcement.index.data
 
-  const {
-    areaMin,
-    areaMinInput,
-    areaMax,
-    areaMaxInput,
-    priceMin,
-    priceMinInput,
-    priceMax,
-    priceMaxInput
-  } = store.announcement.index.inputs
+  const { areaMin, areaMinInput, areaMax, areaMaxInput, priceMin, priceMinInput, priceMax, priceMaxInput } =
+    store.announcement.index.inputs
 
   const { showArea, showPricePanel } = store.announcement.index.control
 

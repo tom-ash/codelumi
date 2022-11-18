@@ -5,12 +5,7 @@ import { buildUrl } from '../../../../../../../../../shared/functions/builders/u
 
 // @ts-ignore
 export const Category = props => {
-  const {
-    langHandler,
-    currentCategory,
-    changeRoute,
-    links,
-  } = props
+  const { langHandler, currentCategory, changeRoute, links } = props
 
   const options = categories.map(category => ({
     value: category.value,

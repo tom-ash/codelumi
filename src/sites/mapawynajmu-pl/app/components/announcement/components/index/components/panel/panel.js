@@ -17,11 +17,7 @@ class AnnouncementIndexPanel extends React.Component {
   static contextType = AppContext
 
   render() {
-    const {
-      renderMap,
-      currentCategory,
-      links,
-    } = this.props
+    const { renderMap, currentCategory, links } = this.props
     const { changeRoute } = this.context
 
     return (
