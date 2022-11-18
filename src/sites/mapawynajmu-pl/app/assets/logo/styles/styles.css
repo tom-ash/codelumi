@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap');
+
 #logo {
   position: relative;
   float: left;
@@ -11,6 +13,6 @@
   position: absolute;
   top: 0;
   font-size: 16px;
-  font-family: 'Nova Slim';
+  font-family: 'Nova Flat';
   color: #212f3c;
 }
