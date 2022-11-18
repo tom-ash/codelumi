@@ -6,13 +6,32 @@
   height: 28px;
   margin-top: 22px;
   margin-left: 18px;
-  color: #1b2631;
 }
 
-#logo > div {
+#logo > .pin {
+  width: 14px;
+  height: 14px;
+  border-radius: 100% 100% 0 100%;
+  border: 2px solid #171611;
+  transform: rotate(45deg);
+}
+
+#logo > .pin::before {
+  content: '';
   position: absolute;
-  top: 0;
+  top: 2.5px;
+  left: 2.5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #171611;
+}
+
+#logo > .name {
+  position: absolute;
+  top: -.5px;
+  left: 18.5px;
   font-size: 16px;
   font-family: 'Nova Flat';
-  color: #212f3c;
+  color: #171611;
 }
