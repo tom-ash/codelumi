@@ -90,7 +90,7 @@ class AnnouncementCreate extends React.Component {
     const descriptionProps = {
       showPolish: showPolishDescription,
       showEnglish: showEnglishDescription,
-      english: polishDescription,
+      polish: polishDescription,
       english: englishDescription,
       changeInputs,
     }
