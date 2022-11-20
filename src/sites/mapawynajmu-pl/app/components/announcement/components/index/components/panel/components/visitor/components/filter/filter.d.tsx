@@ -15,9 +15,3 @@ interface FilterProps {
   changeControl: ChangeControl
   changeInputs(): void
 }
-
-// TODO: Add changeData
-
-type ChangeControl = (args: { [key: string]: boolean }) => void
-
-type ChangeInputs = (args: { [key: string]: string | number }) => void

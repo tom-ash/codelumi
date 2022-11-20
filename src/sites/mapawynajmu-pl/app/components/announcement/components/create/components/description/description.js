@@ -1,33 +1,52 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { ManagedCheckbox, ManagedTextarea } from 'managed-inputs'
-import {
-  addPolishDescriptionManager,
-  addEnglishDescriptionManager,
-  polishManager,
-  englishManager,
-} from './functions/managers'
-import { langHandler } from '../../../../../../functions/lang-handler'
+import { Checkbox } from './components/checkbox'
+import { Textarea } from './components/textarea'
+import { SHOW_POLISH_DESCRIPTION_LANG_OBJECT, SHOW_ENGLISH_DESCRIPTION_LANG_OBJECT } from './texts/texts'
 
 class AnnouncementCreateDescription extends React.Component {
-  constructor(props) {
-    super(props)
-    this.langHandler = langHandler.bind(this)
-    this.addPolishDescriptionManager = addPolishDescriptionManager.bind(this)
-    this.polishManager = polishManager.bind(this)
-    this.addEnglishDescriptionManager = addEnglishDescriptionManager.bind(this)
-    this.englishManager = englishManager.bind(this)
-  }
   render() {
-    const { addPolishDescription, addEnglishDescription } = this.props
+    const {
+      showPolish,
+      showEnglish,
+      polish,
+      english,
+      changeInputs,
+    } = this.props
+
+    const showPolishProps = {
+      checked: showPolish,
+      checkedKey: 'showPolish',
+      label: 'ABC',
+      changeInputs
+    }
+
+    const polishDescriptionProps = {
+      value: polish,
+      valueKey: 'polishDescription',
+      changeInputs
+    }
+
+    const showEnglishProps = {
+      checked: showEnglish,
+      checkedKey: 'showEnglish',
+      label: 'bbbb',
+      changeInputs
+    }
+
+    const englishDescriptionProps = {
+      value: english,
+      valueKey: 'englishDescription',
+      changeInputs
+    }
 
     return (
       <div id='listing-create-description' className='section'>
-        <ManagedCheckbox {...this.addPolishDescriptionManager()} />
-        {addPolishDescription && <ManagedTextarea {...this.polishManager()} />}
-        <ManagedCheckbox {...this.addEnglishDescriptionManager()} />
-        {addEnglishDescription && <ManagedTextarea {...this.englishManager()} />}
+        <Checkbox {...showPolishProps} />
+        {showPolish && <Textarea {...polishDescriptionProps} />}
+        <Checkbox {...showEnglishProps} />
+        {showEnglish && <Textarea {...englishDescriptionProps} />}
       </div>
     )
   }

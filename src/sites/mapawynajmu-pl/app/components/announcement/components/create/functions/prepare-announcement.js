@@ -13,8 +13,8 @@ function prepareAnnouncement() {
     ...(availabilityDate && { addAvailabilityDate: true }),
     ...(features && features.length && { addFeatures: true }),
     ...(furnishings && furnishings.length && { addFurnishings: true }),
-    ...(polishDescription && { addPolishDescription: true }),
-    ...(englishDescription && { addEnglishDescription: true }),
+    ...(polishDescription && { showPolish: true }),
+    ...(englishDescription && { showEnglish: true }),
   }
 
   changeInputs(inputs)
