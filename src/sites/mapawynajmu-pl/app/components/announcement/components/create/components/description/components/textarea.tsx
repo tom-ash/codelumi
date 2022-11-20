@@ -3,19 +3,13 @@ import { ManagedTextarea } from 'managed-inputs'
 
 interface TextareaProps {
   value: string
-  valueKey: 'polish' | 'english'
+  valueKey: 'polishDescription' | 'englishDescription'
   changeInputs: ChangeInputs
 }
 
 export const Textarea = (props: TextareaProps) => {
-  const {
-    value,
-    valueKey,
-    changeInputs
-  } = props
+  const { value, valueKey, changeInputs } = props
   const classNames = { container: 'form-input textarea' }
-
-  // console.log(key)/|\\\\\\\\\\\\\\
 
   const textareaProps = {
     value,

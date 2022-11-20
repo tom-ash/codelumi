@@ -8,7 +8,13 @@ export const mapStateToProps = store => {
   } = store.render
   const { authorized, admin } = store.user.authorize.data
   const { control, inputs, errors, data } = store.announcement.create
-  const { step, connecting, savingAnnouncement, showDescription } = control
+  const {
+    step,
+    connecting,
+    savingAnnouncement,
+    // showPolishDescription,
+    // showEnglishDescription,
+  } = control
   const { announcement, user } = data
   const { accountType, email } = store.user.create.inputs
 
@@ -35,6 +41,8 @@ export const mapStateToProps = store => {
     sublocality,
     name,
     link,
+    showPolishDescription,
+    showEnglishDescription,
   } = inputs
 
   return {
@@ -61,7 +69,6 @@ export const mapStateToProps = store => {
     grossRentAmount,
     features,
     furnishings,
-    showDescription,
     polishDescription,
     englishDescription,
     availabilityDate,
@@ -78,6 +85,8 @@ export const mapStateToProps = store => {
     sublocality,
     name,
     link,
+    showPolishDescription,
+    showEnglishDescription,
   }
 }
 

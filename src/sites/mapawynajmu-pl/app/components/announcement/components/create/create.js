@@ -6,7 +6,7 @@ import Map from './components/map/map'
 import Additional from './components/additional/additional'
 import Features from './components/features/features'
 import Furnishings from './components/furnishings/furnishings'
-import Description from './components/description/description'
+import Description from './components/description/description.tsx'
 import Success from './components/success/success'
 import Spinner from '../../../support/components/spinner/components/windmill/windmill'
 import * as lifecycle from './functions/lifecycle'
@@ -60,6 +60,10 @@ class AnnouncementCreate extends React.Component {
       availabilityDate,
       changeControl,
       changeInputs,
+      showPolishDescription,
+      showEnglishDescription,
+      polishDescription,
+      englishDescription,
     } = this.props
 
     const availabilityDateProps = {
@@ -81,6 +85,14 @@ class AnnouncementCreate extends React.Component {
       area,
       changeInputs,
       langHandler: this.langHandler,
+    }
+
+    const descriptionProps = {
+      showPolish: showPolishDescription,
+      showEnglish: showEnglishDescription,
+      english: polishDescription,
+      english: englishDescription,
+      changeInputs,
     }
 
     if (connecting)
@@ -110,7 +122,7 @@ class AnnouncementCreate extends React.Component {
                 <AvailabilityDate {...availabilityDateProps} />
                 <Features />
                 <Furnishings />
-                <Description />
+                <Description {...descriptionProps} />
               </div>
               <Line />
               {!authorized && (
