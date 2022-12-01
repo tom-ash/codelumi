@@ -23,27 +23,3 @@
     }
   }
 }
-
-.options {
-  max-height: 208px;
-  margin-top: 2px;
-  border-radius: 5px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background: white;
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-  }
-  .option {
-    height: 28px;
-    // padding-left: 24px;
-    line-height: 28px;
-    font-size: 14px;
-    text-align: center;
-    &.preselected {
-      background: #d1f2eb;
-    }
-  }
-}

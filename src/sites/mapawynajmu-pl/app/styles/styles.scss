@@ -137,12 +137,15 @@ input {
   overflow-x: hidden;
   overflow-y: auto;
   background: white;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
   .option {
     height: 28px;
-    padding-left: 15px;
     line-height: 28px;
     font-size: 14px;
-    cursor: default;
+    text-align: center;
     &.preselected {
       background: #d1f2eb;
     }
