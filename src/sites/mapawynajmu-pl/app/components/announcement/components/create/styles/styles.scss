@@ -64,9 +64,7 @@
   }
   .country-code-phone-number-container {
     @extend %country-code-phone-number-container;
-    .phone-number {
-      max-width: 208px;
-    }
+    max-width: 280px;
   }
 
   #form-container {

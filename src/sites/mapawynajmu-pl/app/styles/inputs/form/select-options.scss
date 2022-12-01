@@ -6,6 +6,10 @@
   overflow-x: hidden;
   overflow-y: auto;
   background: white;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
   .option {
     height: 28px;
     padding-left: 15px;

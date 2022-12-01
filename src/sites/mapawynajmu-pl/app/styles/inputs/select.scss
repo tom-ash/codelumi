@@ -2,7 +2,6 @@
 
 %select-element {
   @extend %text-input;
-  position: relative;
   .input {
     position: relative;
     height: 36px;
@@ -33,11 +32,16 @@
   overflow-x: hidden;
   overflow-y: auto;
   background: white;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
   .option {
     height: 28px;
-    padding-left: 15px;
+    // padding-left: 24px;
     line-height: 28px;
     font-size: 14px;
+    text-align: center;
     &.preselected {
       background: #d1f2eb;
     }

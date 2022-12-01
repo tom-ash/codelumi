@@ -137,7 +137,7 @@ export function areaCodeManager() {
   return {
     onFocusCoverZIndex: 3001,
     id: 'user-create-email-area-code',
-    classNames: { container: 'select-element country-code' },
+    classNames: { container: 'country-code' },
     children: <SVG name='chevron' />,
     value: this.props.countryCode,
     options,

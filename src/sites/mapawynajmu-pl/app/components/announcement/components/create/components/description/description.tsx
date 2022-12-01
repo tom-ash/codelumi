@@ -16,8 +16,6 @@ const Description = (props: DescriptionProps) => {
   const { langHandler } = useContext(AppContext)
   const { showPolish, showEnglish, polish, english, changeInputs } = props
 
-  console.log(props)
-
   const showPolishProps = {
     checked: showPolish,
     checkedKey: 'showPolishDescription' as const,

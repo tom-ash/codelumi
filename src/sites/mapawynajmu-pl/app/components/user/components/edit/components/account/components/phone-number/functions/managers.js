@@ -10,7 +10,7 @@ const noError = { pl: '', en: '' }
 export function phoneCodeManager() {
   return {
     controlled: false,
-    classNames: { container: 'select-input country-code' },
+    classNames: { container: 'country-code' },
     children: <SVG name='chevron' />,
     value: this.props.countryCode,
     options: countryCodes.map(countryCode => ({ value: countryCode, text: countryCode })),
