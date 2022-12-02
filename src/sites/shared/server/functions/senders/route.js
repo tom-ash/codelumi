@@ -33,7 +33,7 @@ function routeSender({ res, apiUrl, url, query, device, accessToken, appRenderer
         const appAsHtml = appRenderer(initialState)
         const status = 200
 
-        res.status(status).send(indexRenderer({ ...meta, ...appAsHtml, links, lang }))
+        res.status(status).send(indexRenderer({ ...meta, ...appAsHtml, lang }))
       }
     })
     .catch(exception => {
