@@ -20,7 +20,6 @@ import CLIENT_URL from '../shared/constants/urls/client'
 import API_URL from '../shared/constants/urls/api'
 import * as langs from '../shared/constants/langs/langs'
 import headerStyles from './components/scaffold/header_cust/styles/styles.scss'
-import Logo from './components/scaffold/header_cust/components/logo/logo'
 import { HeaderCustomization } from './components/scaffold/header_cust/components/customization/customization'
 import { initSentry } from '../../shared/app/functions/analytics/sentry/init'
 import { buildUrl } from '../shared/functions/builders/url'
@@ -122,7 +121,7 @@ class App extends React.Component<AppProps> {
     return (
       <React.StrictMode>
         <AppContext.Provider value={AppContextValue}>
-          <Header {...{ ...sharedProps, urlComposites, lang, Logo, HeaderCustomization, styles: headerStyles }} />
+          <Header {...{ ...sharedProps, urlComposites, lang, HeaderCustomization, styles: headerStyles }} />
           {renderAnnouncement && <Announcement />}
           {renderPage && <Page {...pageProps} />}
           {renderVisitor && <Visitor {...sharedProps} />}
