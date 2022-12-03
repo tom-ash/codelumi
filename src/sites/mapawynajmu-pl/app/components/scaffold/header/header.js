@@ -1,22 +1,27 @@
 import React from 'react'
-import { ManagedLink } from 'managed-inputs'
-import { logoManager } from './functions/managers'
+import { Logo } from './components/logo'
 import useStyles from 'isomorphic-style-loader/useStyles'
 
 const Header = props => {
-  const { HeaderCustomization, device, styles } = props
+  const { HeaderCustomization, device, styles, links, lang, Logo: HtmlLogo, changeRoute, buildUrl } = props
 
   useStyles(styles)
 
   const isMobile = ['largeTablet', 'smallTablet', 'largePhone', 'smallPhone'].indexOf(device) !== -1
 
+  const logoProps = {
+    links,
+    lang,
+    HtmlLogo,
+    changeRoute,
+    buildUrl,
+  }
+
   return (
     <header id='header'>
-      {/* <div className='inner'> */}
-      <ManagedLink {...logoManager(props)} />
+      <Logo {...logoProps} />
       <HeaderCustomization {...{ ...props, isMobile }} />
       <div className='float-clear' />
-      {/* </div> */}
     </header>
   )
 }

@@ -8,21 +8,21 @@ function exceptionSender({
   device,
   visitorState,
   appRenderer,
-  robots
+  robots,
 }) {
   const initialState = {
     app: {
       ...initialAppState,
       routeSynced: true,
       lang: 'pl',
-      device
+      device,
     },
     links: {
-      'root': { path: '/' },
+      root: { path: '/' },
     },
     render: {
-      'visitor': true,
-      'page': true,
+      visitor: true,
+      page: true,
       'page/not-found': true,
     },
     ...visitorState,
