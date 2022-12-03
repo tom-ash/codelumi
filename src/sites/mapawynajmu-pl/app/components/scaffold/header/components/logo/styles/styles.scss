@@ -6,32 +6,29 @@
   height: 28px;
   margin-top: 22px;
   margin-left: 18px;
-}
-
-#logo > .pin {
-  width: 14px;
-  height: 14px;
-  border-radius: 100% 100% 0 100%;
-  border: 2px solid #171611;
-  transform: rotate(45deg);
-}
-
-#logo > .pin::before {
-  content: '';
-  position: absolute;
-  top: 2.5px;
-  left: 2.5px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #171611;
-}
-
-#logo > .name {
-  position: absolute;
-  top: -0.5px;
-  left: 18.5px;
-  font-size: 16px;
-  font-family: 'Nova Flat';
-  color: #171611;
+  .pin {
+    width: 14px;
+    height: 14px;
+    border-radius: 100% 100% 0 100%;
+    border: 2px solid #21618C;
+    transform: scale(0.9, 1) rotate(45deg);
+    &::before {
+      content: '';
+      position: absolute;
+      top: 2.25px;
+      left: 2.25px;
+      width: 5.5px;
+      height: 5.5px;
+      border-radius: 50%;
+      background: #CB4335;
+    }
+  }
+  .name {
+    position: absolute;
+    top: -2px;
+    left: 17px;
+    font-size: 18px;
+    font-family: 'Nova Flat';
+    color: #21618C;
+  }  
 }

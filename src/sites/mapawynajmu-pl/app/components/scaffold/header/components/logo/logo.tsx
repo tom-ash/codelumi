@@ -6,7 +6,9 @@ export const Logo = () => {
   useStyles(styles)
 
   return (
-    <div id='logo'>
+    <div id='logo'
+      // style={{ transform: 'scale(3)' }}
+    >
       <div className='pin'></div>
       <div className='name'>mapawynajmu.pl</div>
     </div>
