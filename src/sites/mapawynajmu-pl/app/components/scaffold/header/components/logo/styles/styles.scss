@@ -9,9 +9,9 @@
   .pin {
     width: 14px;
     height: 14px;
-    border-radius: 100% 100% 0 100%;
     border: 2px solid #21618C;
-    transform: scale(0.9, 1) rotate(45deg);
+    border-radius: 100% 100% 0 100%;
+    transform: rotate(45deg);
     &::before {
       content: '';
       position: absolute;
@@ -20,15 +20,19 @@
       width: 5.5px;
       height: 5.5px;
       border-radius: 50%;
-      background: #CB4335;
+      background: #BA4A00;
     }
   }
   .name {
     position: absolute;
-    top: -2px;
-    left: 17px;
-    font-size: 18px;
+    top: -3px;
+    left: 18px;
+    font-size: 19px;
     font-family: 'Nova Flat';
     color: #21618C;
+    .lease {
+      margin-left: 1px;
+      color: #BA4A00;
+    }
   }  
 }

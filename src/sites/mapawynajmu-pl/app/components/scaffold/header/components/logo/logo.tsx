@@ -10,7 +10,10 @@ export const Logo = () => {
       // style={{ transform: 'scale(3)' }}
     >
       <div className='pin'></div>
-      <div className='name'>mapawynajmu.pl</div>
+      <div className='name'>
+        <span>mapa</span>
+        <span className='lease'>wynajmu</span>
+      </div>
     </div>
   )
 }

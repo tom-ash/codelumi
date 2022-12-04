@@ -14,13 +14,13 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   line-height: 1;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
 }
 
 *,
 *::before,
 *::after {
-  font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 * {
