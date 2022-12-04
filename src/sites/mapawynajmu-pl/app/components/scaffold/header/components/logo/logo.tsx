@@ -2,12 +2,20 @@ import React from 'react'
 import useStyles from 'isomorphic-style-loader/useStyles'
 import styles from './styles/styles.scss'
 
-export const Logo = () => {
+interface LogoProps {
+  style?: object
+}
+
+export const Logo = (props: LogoProps) => {
   useStyles(styles)
+
+  const {
+    style,
+  } = props
 
   return (
     <div id='logo'
-      // style={{ transform: 'scale(3)' }}
+      style={style}
     >
       <div className='pin'></div>
       <div className='name'>

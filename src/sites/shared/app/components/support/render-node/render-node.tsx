@@ -1,5 +1,6 @@
 import React from 'react'
 import loadable from '@loadable/component'
+import { Logo } from '../../../../../mapawynajmu-pl/app/components/scaffold/header/components/logo/logo'
 
 const Paragraph = loadable(() => import('./components/paragraph/paragraph'))
 const Heading = loadable(() => import('../heading/heading'))
@@ -290,6 +291,22 @@ const RenderNode = (props: RenderNodeProps) => {
     const shareProps = { href }
 
     return <Share {...shareProps} />
+  }
+
+  // @ts-ignore
+  if (node.logo) {
+    const {
+      // @ts-ignore
+      style
+    // @ts-ignore
+    } = node.logo
+
+    const logoProps = {
+      style
+    }
+
+    // @ts-ignore
+    return <Logo {...logoProps} />
   }
 
   return null
