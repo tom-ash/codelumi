@@ -95,4 +95,13 @@ $horizontal-margin-mobile: 18px;
     }
     // TODO: Add semantic class.
   }
+  .definition {
+    background: #EBF5FB;
+    padding: 18px;
+    border-radius: 3px;
+    border-left: 3px solid #3498DB;
+    dfn {
+      font-weight: bold;
+    }
+  }
 }

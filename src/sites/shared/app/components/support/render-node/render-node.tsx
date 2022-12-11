@@ -16,6 +16,7 @@ const TableOfContents = loadable(() => import('./components/table-of-contents/ta
 const Aside = loadable(() => import('./components/aside/aside'))
 const Anchor = loadable(() => import('./components/anchor/anchor'))
 const Share = loadable(() => import('./components/share/share'))
+const Definition = loadable(() => import('./components/definition/definition'))
 
 const RenderNode = (props: RenderNodeProps) => {
   const { node, index, appName, jsonBody, clientUrl, changeRoute, device, lang, langHandler, pageTitle, coverImage } =
@@ -307,6 +308,24 @@ const RenderNode = (props: RenderNodeProps) => {
 
     // @ts-ignore
     return <Logo {...logoProps} />
+  }
+
+  // @ts-ignore
+  if (node.def) {
+    const {
+      term,
+      definition,
+    // @ts-ignore
+    } = node.def
+
+    const definitionProps = {
+      term,
+      definition
+    }
+
+    console.log(term, definition)
+
+    return <Definition {...definitionProps} />
   }
 
   return null
