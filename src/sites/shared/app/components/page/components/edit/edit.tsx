@@ -104,7 +104,7 @@ class PageCreate extends React.Component<PageCreateProps> {
     }
 
     return (
-      <>
+      <div id='page-edit'>
         <PageTile {...tileProps} />
         <div id='edit-panel'>
           <nav>
@@ -158,7 +158,7 @@ class PageCreate extends React.Component<PageCreateProps> {
           <ManagedButton {...this.saveAndShowManager()} />
           <UpdateStatus {...updateStatusProps} />
         </div>
-      </>
+      </div>
     )
   }
 }
