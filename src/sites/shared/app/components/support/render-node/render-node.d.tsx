@@ -71,6 +71,7 @@ type RenderNodeData =
       opts?: object
       index?: number
       codeLang?: string
+      id?: string
     }
 
 type RenderNodeProps = {

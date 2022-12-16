@@ -16,6 +16,7 @@ const Section = (props: SectionProps) => {
     pageTitle,
     coverImage,
     codeLang,
+    id,
   } = props
 
   const body = jsonBody.map((node, index) => {
@@ -39,9 +40,11 @@ const Section = (props: SectionProps) => {
     return <RenderNode {...nodeProps} />
   })
 
+  console.log(props)
+
   if (!element) return <>{body}</>
 
-  const section = React.createElement(element, { className, style }, body)
+  const section = React.createElement(element, { className, style, id }, body)
 
   return section
 }
