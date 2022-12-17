@@ -31,7 +31,7 @@ function prepareUserObject() {
 }
 
 function validateUserObject(userObject) {
-  const { accountType } = this.props
+  console.log(userObject)
 
   const validationArray = [
     phoneValidator.call(this, userObject.phoneNumber),
