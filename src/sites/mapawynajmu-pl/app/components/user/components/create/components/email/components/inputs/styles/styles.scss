@@ -1,6 +1,7 @@
 @import '../../../../../../../../../styles/inputs/form/svgs.scss';
 @import '../../../../../../../../../styles/colors';
 @import '../../../../../../../../../styles/inputs/text.scss';
+@import '../../../../../../../../../styles/inputs/radio.scss';
 @import './country-code-phone-number-container.scss';
 
 #user-create {
@@ -22,6 +23,10 @@
     }
     .country-code-phone-number-container {
       @extend %country-code-phone-number-container;
+    }
+    .radio {
+      @extend %radio;
+      margin-bottom: 24px;
     }
   }
 }

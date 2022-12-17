@@ -147,7 +147,12 @@ const RenderNode = (props: RenderNodeProps) => {
     const className = node.className
     const codeLang = node.codeLang
 
-    return <Section key={index} {...{ ...props, element: 'section', className, codeLang, jsonBody: node.section, id: node.id }} />
+    return (
+      <Section
+        key={index}
+        {...{ ...props, element: 'section', className, codeLang, jsonBody: node.section, id: node.id }}
+      />
+    )
   }
 
   if (node.pageIndexer) {
@@ -298,12 +303,12 @@ const RenderNode = (props: RenderNodeProps) => {
   if (node.logo) {
     const {
       // @ts-ignore
-      style
-    // @ts-ignore
+      style,
+      // @ts-ignore
     } = node.logo
 
     const logoProps = {
-      style
+      style,
     }
 
     // @ts-ignore
@@ -315,12 +320,12 @@ const RenderNode = (props: RenderNodeProps) => {
     const {
       term,
       definition,
-    // @ts-ignore
+      // @ts-ignore
     } = node.def
 
     const definitionProps = {
       term,
-      definition
+      definition,
     }
 
     console.log(term, definition)

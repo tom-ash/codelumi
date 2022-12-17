@@ -36,7 +36,7 @@ const Output = (props: OutputProps) => {
       style={{
         width: +width,
         height: +height,
-        outline: '1px solid #E5E7E9'
+        outline: '1px solid #E5E7E9',
       }}
     >
       <RenderNode {...nodeProps} />

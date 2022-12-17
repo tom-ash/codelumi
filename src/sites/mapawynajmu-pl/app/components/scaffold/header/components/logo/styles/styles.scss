@@ -10,7 +10,7 @@
     position: relative;
     width: 14px;
     height: 14px;
-    border: 2px solid #21618C;
+    border: 2px solid #21618c;
     border-radius: 100% 100% 0 100%;
     transform: rotate(45deg);
     &::before {
@@ -21,7 +21,7 @@
       width: 5.5px;
       height: 5.5px;
       border-radius: 50%;
-      background: #BA4A00;
+      background: #ba4a00;
     }
   }
   .name {
@@ -30,10 +30,10 @@
     left: 18px;
     font-size: 19px;
     font-family: 'Nova Flat';
-    color: #21618C;
+    color: #21618c;
     .lease {
       margin-left: 1px;
-      color: #BA4A00;
+      color: #ba4a00;
     }
-  }  
+  }
 }

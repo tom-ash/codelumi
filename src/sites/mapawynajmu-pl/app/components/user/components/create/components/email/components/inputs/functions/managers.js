@@ -3,12 +3,11 @@ import { inputs } from '../../../../../../../constants/inputs'
 import SVG from '../../../../../../../../support/components/svg/svg'
 import sendGaEvent from '../../../../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from '../constants/analytics/events'
-import { accountTypeValidator, nameValidator, phoneValidator, emailValidator, passwordValidator } from './validators'
+import { nameValidator, phoneValidator, emailValidator, passwordValidator } from './validators'
 import errorResetter from './error-resetter'
 import { countryCodes } from '../../../../../../../../../../../shared/shared/constants/country-codes'
 
 const {
-  ACCOUNT_TYPE_SELECTED_EVENT,
   EMAIL_ADDRESS_INPUTTED_EVENT,
   PASSWORD_INPUTTED_EVENT,
   FIRST_NAME_INPUTTED_EVENT,
@@ -16,33 +15,6 @@ const {
   AREA_CODE_SELECTED_EVENT,
   PHONE_NUMBER_INPUTTED_EVENT,
 } = analyticEvents
-
-export function accountTypeManager() {
-  const { changeInputs } = this.props
-
-  const privateAccount = <div className='account-type'>{this.langHandler({ pl: 'Prywatne', en: 'Private' })}</div>
-
-  const professionalAccount = <div className='account-type'>{this.langHandler({ pl: 'Firmowe', en: 'Business' })}</div>
-
-  const { accountType } = this.props
-
-  return {
-    name: 'announcement-category',
-    classNames: { container: 'form-element radio' },
-    checked: accountType,
-    radios: [
-      { value: 'private', label: privateAccount },
-      { value: 'professional', label: professionalAccount },
-    ],
-    onClick: value => {
-      errorResetter.call(this, 'firstName')
-      errorResetter.call(this, 'businessName')
-      errorResetter.call(this, 'accountType')
-      changeInputs({ accountType: value })
-      sendGaEvent(ACCOUNT_TYPE_SELECTED_EVENT)
-    },
-  }
-}
 
 export function emailAddressManager() {
   const { label } = inputs.email
@@ -82,49 +54,6 @@ export function passwordManager() {
     },
     validate: value => passwordValidator.call(this, value),
     error: this.langHandler(this.props.passwordError),
-  }
-}
-
-export function firstNameManager() {
-  const { accountType } = this.props
-  const { icon, label } = inputs.firstName
-
-  return {
-    display: accountType === 'private' ? undefined : 'none',
-    classNames: { container: 'text-input with-icon' },
-    id: 'user-create-email-first-name',
-    autoComplete: 'given-name',
-    controlled: false,
-    label: this.langHandler(label),
-    // children: <SVG name='user' />,
-    onFocus: () => errorResetter.call(this, 'firstName'),
-    onBlur: value => {
-      this.firstNameManager().validate(value)
-      sendGaEvent(FIRST_NAME_INPUTTED_EVENT)
-    },
-    validate: value => nameValidator.call(this, 'firstName', value),
-    error: this.langHandler(this.props.firstNameError),
-  }
-}
-
-export function businessNameManager() {
-  const { accountType } = this.props
-  const { icon, label } = inputs.businessName
-
-  return {
-    display: accountType === 'professional' ? undefined : 'none',
-    id: 'user-create-email-business-name',
-    autoComplete: 'off',
-    controlled: false,
-    classNames: { container: 'form-element text' },
-    label: this.langHandler(label),
-    onFocus: () => errorResetter.call(this, 'businessName'),
-    onBlur: value => {
-      this.businessNameManager().validate(value)
-      sendGaEvent(BUSINESS_NAME_INPUTTED_EVENT)
-    },
-    validate: value => nameValidator.call(this, 'businessName', value),
-    error: this.langHandler(this.props.businessNameError),
   }
 }
 

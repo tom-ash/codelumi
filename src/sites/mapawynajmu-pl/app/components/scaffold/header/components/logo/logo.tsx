@@ -9,14 +9,10 @@ interface LogoProps {
 export const Logo = (props: LogoProps) => {
   useStyles(styles)
 
-  const {
-    style,
-  } = props
+  const { style } = props
 
   return (
-    <div id='logo'
-      style={style}
-    >
+    <div id='logo' style={style}>
       <div className='pin'></div>
       <div className='name'>
         <span>mapa</span>

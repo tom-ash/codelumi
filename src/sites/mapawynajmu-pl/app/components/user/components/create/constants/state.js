@@ -8,7 +8,7 @@ export const control = {
 }
 
 export const inputs = {
-  accountType: 'private',
+  accountType: 'personal',
   email: null,
   firstName: null,
   countryCode: '+48',
