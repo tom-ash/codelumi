@@ -1,7 +1,7 @@
 import React from 'react'
 import { ManagedText, ManagedLink } from 'managed-inputs'
 import { nameManager, plVerManager, enVerManager } from './functions/managers'
-import withStyles from 'isomorphic-style-loader/withStyles'
+import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 
 class PageIndexManage extends React.Component {

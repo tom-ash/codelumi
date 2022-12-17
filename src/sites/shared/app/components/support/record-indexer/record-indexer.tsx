@@ -1,7 +1,7 @@
 import React from 'react'
 import NameInput from './components/name-input'
 import CreateButton from './components/create-button'
-import useStyles from 'isomorphic-style-loader/useStyles'
+import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 
 interface RecordIndexerProps {

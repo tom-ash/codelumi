@@ -6,7 +6,7 @@ import ListingTile from '../../../common/tile/tile'
 import drawPins from '../../../../functions/map/pins/draw-pins'
 import redrawPins from '../../../../functions/map/pins/redraw-pins'
 import { langHandler } from '../../../../../../functions/lang-handler'
-import withStyles from 'isomorphic-style-loader/withStyles'
+import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import AppContext from '../../../../../../constants/context'
 

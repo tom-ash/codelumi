@@ -7,7 +7,7 @@ import { langHandler } from '../../../../../../functions/lang-handler'
 import { parseDate } from '../../../../../../functions/date-parsers'
 import sendGaEvent from '../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from './constants/analytics/events'
-import withStyles from 'isomorphic-style-loader/withStyles'
+import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 
 const { AVAILABILITY_DATE_SELECTED_EVENT } = analyticEvents

@@ -1,7 +1,7 @@
 import React from 'react'
 import managers from './functions/managers'
 import { ManagedLink } from 'managed-inputs'
-import useStyles from 'isomorphic-style-loader/useStyles'
+import useStyles from 'isomorphic-style-loader-react18/useStyles'
 
 const Footer = props => {
   const { appName, isAdmin, langHandler } = props

@@ -5,7 +5,7 @@ import { loadableReady } from '@loadable/component'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import rootReducer from '../app/functions/root-reducer'
-import StyleContext from 'isomorphic-style-loader/StyleContext'
+import StyleContext from 'isomorphic-style-loader-react18/StyleContext'
 import App from '../app/app.tsx'
 
 const insertCss = (...styles) => {

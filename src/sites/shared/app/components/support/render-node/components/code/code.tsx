@@ -1,5 +1,5 @@
 import React from 'react'
-import withStyles from 'isomorphic-style-loader/withStyles'
+import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 
 const hljs = require('highlight.js/lib/core')

@@ -1,7 +1,7 @@
 import React from 'react'
 import loadable from '@loadable/component'
 import { connect } from 'react-redux'
-import withStyles from 'isomorphic-style-loader/withStyles'
+import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import Page from '../../shared/app/components/page/page'
 import Visitor from '../../shared/app/components/visitor/visitor'
 const Announcement = loadable(() => import('./components/announcement/announcement'))

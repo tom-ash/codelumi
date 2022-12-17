@@ -1,7 +1,7 @@
 import React from 'react'
 import { ManagedLink } from 'managed-inputs'
 import { logoManager } from './functions/managers'
-import useStyles from 'isomorphic-style-loader/useStyles'
+import useStyles from 'isomorphic-style-loader-react18/useStyles'
 
 const Header = props => {
   const { HeaderCustomization, device, styles } = props

@@ -1,5 +1,5 @@
 import React from 'react'
-import useStyles from 'isomorphic-style-loader/useStyles'
+import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import { LogoLink } from './components/logo-link'
 
 const Header = props => {

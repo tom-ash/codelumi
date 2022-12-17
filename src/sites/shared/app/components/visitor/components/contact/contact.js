@@ -1,5 +1,5 @@
 import React from 'react'
-import useStyles from 'isomorphic-style-loader/useStyles'
+import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import {
   CONTACT_COMPANY,
   CONTACT_ADDRESS_STREET,

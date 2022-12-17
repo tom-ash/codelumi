@@ -2,7 +2,7 @@ import React from 'react'
 import { ManagedButton } from 'managed-inputs'
 import { agreeManager, settingsManager } from './functions/manager'
 import { textsProvider } from './functions/texts-provider'
-import useStyles from 'isomorphic-style-loader/useStyles'
+import useStyles from 'isomorphic-style-loader-react18/useStyles'
 
 const VisitorPrivacyMonit = props => {
   const { appName, langHandler } = props

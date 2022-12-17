@@ -4,7 +4,7 @@ import * as mappers from './constants/mappers'
 import UserCreateEmail from './components/email/email'
 import * as lifecycle from './functions/lifecycle'
 import { langHandler } from '../../../../functions/lang-handler'
-import withStyles from 'isomorphic-style-loader/withStyles'
+import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 
 class UserCreate extends React.Component {

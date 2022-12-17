@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import useStyles from 'isomorphic-style-loader/useStyles'
+import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import AppContext from '../../../../../../../../constants/context'
 

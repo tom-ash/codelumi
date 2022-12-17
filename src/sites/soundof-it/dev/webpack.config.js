@@ -50,7 +50,7 @@ var config = {
       {
         test: /\.s?css$/,
         use: [
-          'isomorphic-style-loader',
+          'isomorphic-style-loader-react18',
           {
             loader: 'css-loader',
             options: {

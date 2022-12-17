@@ -2,7 +2,7 @@ import React from 'react'
 import { ManagedRadio } from 'managed-inputs'
 import { statisticsConsentManager, marketingConsentManager } from './functions/managers'
 import { textsProvider } from './functions/texts-provider'
-import useStyles from 'isomorphic-style-loader/useStyles'
+import useStyles from 'isomorphic-style-loader-react18/useStyles'
 
 const VisitorPrivacySettings = props => {
   const { appName, langHandler } = props

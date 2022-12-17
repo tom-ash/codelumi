@@ -2,7 +2,7 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import StyleContext from 'isomorphic-style-loader/StyleContext'
+import StyleContext from 'isomorphic-style-loader-react18/StyleContext'
 import { ChunkExtractor, ChunkExtractorManager } from '@loadable/server'
 
 function genericAppRenderer({ App, statsFile, rootReducer, initialState }) {

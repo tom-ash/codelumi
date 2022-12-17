@@ -1,5 +1,5 @@
 import React from 'react'
-import useStyles from 'isomorphic-style-loader/useStyles'
+import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import LogoHtml from '../../../../../assets/logo/logo.html'
 import styles from '../../../../../assets/logo/styles/styles.css'
 

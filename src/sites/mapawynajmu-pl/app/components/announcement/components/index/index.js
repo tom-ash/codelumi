@@ -7,7 +7,7 @@ import AnnouncementIndexMap from './components/map/map'
 const AnnouncementIndexMy = loadable(() => import('./components/my/my'))
 import { langHandler } from '../../../../functions/lang-handler'
 import { parseCurrency } from '../../functions/currency-parsers'
-import withStyles from 'isomorphic-style-loader/withStyles'
+import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import { componentDidUpdate } from './functions/lifecycle'
 

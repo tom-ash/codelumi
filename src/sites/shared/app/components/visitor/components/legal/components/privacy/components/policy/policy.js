@@ -1,6 +1,6 @@
 import React from 'react'
 import Provision from '../../../provision/provision'
-import useStyles from 'isomorphic-style-loader/useStyles'
+import useStyles from 'isomorphic-style-loader-react18/useStyles'
 
 const VisitorPrivacyPolicy = ({ appName, langHandler }) => {
   const nodes =

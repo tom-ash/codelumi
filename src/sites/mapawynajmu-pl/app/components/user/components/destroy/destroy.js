@@ -9,7 +9,7 @@ import { langHandler } from '../../../../functions/lang-handler'
 import { deauthorizeUser } from '../auth/functions/adapters'
 import * as managers from './functions/managers'
 import * as adapters from './functions/adapters'
-import withStyles from 'isomorphic-style-loader/withStyles'
+import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import AppContext from '../../../../constants/context'
 

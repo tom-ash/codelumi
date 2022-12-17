@@ -1,5 +1,5 @@
 import React from 'react'
-import useStyles from 'isomorphic-style-loader/useStyles'
+import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import SVG from '../../../svg/svg'
 import prettifyDate from '../../../../../functions/time/prettify-date'
 
