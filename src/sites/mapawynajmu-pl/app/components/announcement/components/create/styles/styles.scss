@@ -19,6 +19,7 @@
 @import '../../../../../styles/inputs/text.scss';
 @import '../../../../../styles/inputs/select.scss';
 @import '../../../../../styles/inputs/button.scss';
+@import '../../../../../styles/inputs/radio';
 @import '../../../../../styles/headings/h1.scss';
 @import '../../../../user/components/create/components/email/components/inputs/styles/country-code-phone-number-container.scss';
 
@@ -58,13 +59,28 @@
   .select-element {
     @extend %select-element;
   }
+
   .text-input,
   .select-element {
     max-width: 280px;
   }
+
   .country-code-phone-number-container {
     @extend %country-code-phone-number-container;
     max-width: 280px;
+  }
+
+  .account-type {
+    @extend %radio;
+    margin-bottom: 24px;
+    width: 140px;
+    .input {
+      margin-right: 6px;
+    }
+    .label {
+      line-height: 15px;
+      font-size: 15px;
+    }
   }
 
   #form-container {
@@ -74,9 +90,11 @@
     border-radius: 12px;
     overflow: hidden;
   }
+
   h1 {
     @extend %h1;
   }
+
   h2 {
     margin: 24px 0 18px;
     background: white;

@@ -15,7 +15,7 @@ export const AccountTypeRadio = (props: AccountTypeRadioProps) => {
   const { accountType, changeInputs } = props
 
   const name = 'account-type'
-  const classNames = { container: 'radio' }
+  const classNames = { container: 'account-type' }
   const checked = accountType
   const radios = [
     { value: 'personal', label: 'Konto Osobiste' },

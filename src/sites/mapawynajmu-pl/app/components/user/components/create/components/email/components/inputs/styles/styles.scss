@@ -24,9 +24,13 @@
     .country-code-phone-number-container {
       @extend %country-code-phone-number-container;
     }
-    .radio {
+    .account-type {
       @extend %radio;
       margin-bottom: 24px;
+      .label {
+        line-height: 15px;
+        font-size: 15px;
+      }
     }
   }
 }
