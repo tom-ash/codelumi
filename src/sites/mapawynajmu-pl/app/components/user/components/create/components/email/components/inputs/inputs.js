@@ -6,7 +6,7 @@ import * as managers from './functions/managers'
 import { langHandler } from '../../../../../../../../functions/lang-handler'
 import * as mappers from './constants/mappers'
 import { NAME_AREA_CODE_AND_PHONE_NUMBER_HINT } from './constants/texts'
-import { AccountTypeRadio } from './components/account-type-radio/account-type-radio'
+// import { AccountTypeRadio } from './components/account-type-radio/account-type-radio'
 
 class UserCreateEmailInputs extends React.Component {
   constructor(props) {
@@ -24,14 +24,14 @@ class UserCreateEmailInputs extends React.Component {
       changeInputs
     } = this.props
 
-    const accountTypeProps = {
-      accountType,
-      changeInputs
-    }
+    // const accountTypeProps = {
+    //   accountType,
+    //   changeInputs
+    // }
 
     return (
       <div className='inputs'>
-        <AccountTypeRadio {...accountTypeProps} />
+        {/* <AccountTypeRadio {...accountTypeProps} /> */}
         <ManagedText {...this.emailAddressManager()} />
         <ManagedText {...this.passwordManager()} />
         <Hint text={this.langHandler(NAME_AREA_CODE_AND_PHONE_NUMBER_HINT)} />
