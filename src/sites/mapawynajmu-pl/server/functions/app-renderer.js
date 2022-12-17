@@ -1,5 +1,5 @@
 import genericAppRenderer from '../../../shared/server/functions/renderers/generic-app'
-import App from '../../app/app.tsx'
+import App from '../../app/app'
 import rootReducer from '../../app/functions/root_reducer'
 import path from 'path'
 
