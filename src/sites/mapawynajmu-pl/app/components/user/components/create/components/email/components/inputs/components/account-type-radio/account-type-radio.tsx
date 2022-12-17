@@ -31,5 +31,5 @@ export const AccountTypeRadio = (props: AccountTypeRadioProps) => {
     onClick,
   }
 
-  return <ManagedRadio {...radioProps} onFocus={() => console.log("QWEQWEQ123123")} />
+  return <ManagedRadio {...radioProps} onFocus={() => console.log('QWEQWEQ123123')} />
 }

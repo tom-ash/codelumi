@@ -19,14 +19,11 @@ class UserCreateEmailInputs extends React.Component {
   }
 
   render() {
-    const {
-      accountType,
-      changeInputs
-    } = this.props
+    const { accountType, changeInputs } = this.props
 
     const accountTypeProps = {
       accountType,
-      changeInputs
+      changeInputs,
     }
 
     return (

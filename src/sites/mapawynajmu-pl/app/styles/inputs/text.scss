@@ -17,13 +17,13 @@
     padding: 0 10px;
     font-size: 16px;
     &.focus {
-      border: 1px solid #7B7D7D;
-      outline: 1px solid #7B7D7D;
+      border: 1px solid #7b7d7d;
+      outline: 1px solid #7b7d7d;
     }
     &.error {
-      background: #F9EBEA;
-      border: 1px solid #C0392B;
-      outline: 1px solid #C0392B;
+      background: #f9ebea;
+      border: 1px solid #c0392b;
+      outline: 1px solid #c0392b;
     }
   }
   .error-container {

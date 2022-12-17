@@ -1,5 +1,6 @@
 @import '../../../../../../../styles/themes';
 @import '../../../../../styles/pin';
+@import '../../../../../../../styles/inputs/text';
 
 #listing-create-map {
   position: relative;
@@ -32,31 +33,11 @@
   }
 
   .address-input {
-    position: relative;
-    .autocomplete-input-cover {
-      z-index: 1;
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
-    input {
-      position: relative;
-      z-index: 21;
-      width: 100%;
-      border-radius: 4px;
-      border: 1px solid #b3b6b7;
-      height: 36px;
-      line-height: 36px;
-      font-size: 16px;
-      padding: 0 10px;
-      color: rgb(64, 64, 64);
-    }
+    @extend %text-input;
     .autocompletes {
       z-index: 21;
       position: absolute;
-      top: 42px;
+      top: 62px;
       right: 0;
       left: 0;
       background: white;
