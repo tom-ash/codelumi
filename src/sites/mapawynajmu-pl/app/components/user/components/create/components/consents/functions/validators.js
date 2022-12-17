@@ -1,5 +1,8 @@
 function termsAndPrivacyConsentValidator(value) {
-  this.props.changeErrors({ termsAndPrivacyConsent: !value })
+  const { dispatch } = this.props
+
+  dispatch({ type: 'user/create/errors', value: { termsAndPrivacyConsent: !value } })
+
   return value
 }
 
