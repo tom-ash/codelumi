@@ -9,6 +9,7 @@ export const AddressInput = (props: any) => {
   const label = 'Adres nieruchomości'
   const onFocus = () => setState({ showAutocompletes: true })
   const value = autocompleteInput
+  const placeholder = 'Miasto, ulica i numer budynku'
   const onKeyDown = (e: any) => {
     const key = e.key
     if (key === 'Enter') {
@@ -48,6 +49,7 @@ export const AddressInput = (props: any) => {
     onKeyDown,
     onChange,
     label,
+    placeholder,
     // onBlur,
   }
 
