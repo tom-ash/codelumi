@@ -1,9 +1,9 @@
-@import '../../../../../../../styles/themes.scss';
+@import '../../../../../../../styles/themes';
 @import '../../../../../../../styles/media-breakpoints';
 @import './google-map';
 @import './pin';
-@import './tile.scss';
-@import './mini_list.scss';
+@import './tile';
+@import './mini_list';
 
 #listing-index-map {
   position: absolute;

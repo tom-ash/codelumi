@@ -1,13 +1,13 @@
 @import '../../../../../../../shared/app/styles/media-breakpoints';
-@import '../../../../../styles/themes.scss';
-@import '../../../../../styles/dimensions.scss';
-@import '../components/connecting/styles/styles.scss';
-@import '../components/consents/styles/styles.scss';
-@import '../components/email/components/inputs/styles/styles.scss';
-@import '../components/email/components/submit/styles/styles.scss';
-@import '../components/email/components/verify/styles/styles.scss';
-@import '../components/email/styles/styles.scss';
-@import '../../../../../styles/inputs/form/checkbox.scss';
+@import '../../../../../styles/themes';
+@import '../../../../../styles/dimensions';
+@import '../components/connecting/styles/styles';
+@import '../components/consents/styles/styles';
+@import '../components/email/components/inputs/styles/styles';
+@import '../components/email/components/submit/styles/styles';
+@import '../components/email/components/verify/styles/styles';
+@import '../components/email/styles/styles';
+@import '../../../../../styles/inputs/form/checkbox';
 @import '../../../../../styles/line';
 
 #user-create {
