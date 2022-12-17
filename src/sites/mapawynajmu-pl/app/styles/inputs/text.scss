@@ -16,6 +16,15 @@
     border-radius: 3px;
     padding: 0 10px;
     font-size: 16px;
+    &.focus {
+      border: 1px solid #7B7D7D;
+      outline: 1px solid #7B7D7D;
+    }
+    &.error {
+      background: #F9EBEA;
+      border: 1px solid #C0392B;
+      outline: 1px solid #C0392B;
+    }
   }
   .error-container {
     margin-top: 6px;

@@ -13,5 +13,6 @@ export const mapDispatchToProps = dispatch => {
     changeApp: value => dispatch({ type: 'app', value }),
     changeInputs: value => dispatch({ type: 'user/create/inputs', value }),
     changeErrors: value => dispatch({ type: 'user/create/errors', value }),
+    dispatch,
   }
 }

@@ -11,7 +11,9 @@ export function termsAndPrivacyConsentManager() {
     checked: this.props.termsAndPrivacyConsent,
     label: this.textProvider({}).termsAndPrivacyConsent,
     onClick: value => {
-      this.props.changeInputs({ termsAndPrivacyConsent: value })
+      const { dispatch } = this.props
+
+      dispatch({ type: 'user/create/inputs', value: { termsAndPrivacyConsent: value } })
       this.termsAndPrivacyConsentManager().validate(value)
 
       const analyticEvent = value ? CONSENTS_CHECKED_EVENT : CONSENTS_UNCHECKED_EVENT
