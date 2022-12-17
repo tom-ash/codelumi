@@ -118,18 +118,19 @@ class App extends React.Component<AppProps> {
     const urlComposites = { pageShowData, pageEditData, announcementEditData }
     const imageProps = sharedProps
 
+    // TODO: Consider adding <React.StrictMode>.
+    // https://github.com/facebook/react/blob/main/CHANGELOG.md: If this breaks your app, consider removing Strict Mode until you can fix the components to be resilient to remounting with existing state.
+
     return (
-      <React.StrictMode>
-        <AppContext.Provider value={AppContextValue}>
-          <Header {...{ ...sharedProps, urlComposites, lang, HeaderCustomization, styles: headerStyles }} />
-          {renderAnnouncement && <Announcement />}
-          {renderPage && <Page {...pageProps} />}
-          {renderVisitor && <Visitor {...sharedProps} />}
-          {renderUser && <User />}
-          {renderImage && <Image {...imageProps} />}
-          {!renderListingIndexMap && <Footer {...sharedProps} />}
-        </AppContext.Provider>
-      </React.StrictMode>
+      <AppContext.Provider value={AppContextValue}>
+        <Header {...{ ...sharedProps, urlComposites, lang, HeaderCustomization, styles: headerStyles }} />
+        {renderAnnouncement && <Announcement />}
+        {renderPage && <Page {...pageProps} />}
+        {renderVisitor && <Visitor {...sharedProps} />}
+        {renderUser && <User />}
+        {renderImage && <Image {...imageProps} />}
+        {!renderListingIndexMap && <Footer {...sharedProps} />}
+      </AppContext.Provider>
     )
   }
 }
