@@ -15,11 +15,12 @@ export function buildUserObject() {
 }
 
 function prepareUserObject() {
-  const { accountType, email } = this.props
+  const { accountType, businessName, email } = this.props
   const termsAndPrivacyConsent = document.getElementById('user-create-consents-terms-and-privacy').checked
 
   let userObject = {
     accountType,
+    businessName,
     countryCode: document.getElementById('user-create-email-area-code').value,
     phoneNumber: document.getElementById('user-create-email-phone-number').value,
     email: (email || '').toLowerCase(),
