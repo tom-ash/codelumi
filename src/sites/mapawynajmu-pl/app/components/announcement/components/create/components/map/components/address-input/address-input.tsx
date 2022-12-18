@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { SyntheticEvent }  from 'react'
 import addPin from '../../functions/add-pin'
 import { ManagedText } from 'managed-inputs'
 
@@ -10,15 +10,16 @@ export const AddressInput = (props: any) => {
   const onFocus = () => setState({ showAutocompletes: true })
   const value = autocompleteInput
   const placeholder = 'Miasto, ulica i numer budynku'
-  const onKeyDown = (e: any) => {
+  const onKeyDown = (_keyValue: string, e: KeyboardEvent) => {
     const key = e.key
     if (key === 'Enter') {
-      if (autocompletes.length < 1) return
+      e.preventDefault()
+
+      if (autocompletes.length === 0) return
 
       const autocomplete = autocompletes[0]
 
       addPin({ autocomplete, setState, changeInputs, changeErrors })
-      e.target.blur()
     } else if (key === 'Tab') {
       setState({ showAutocompletes: false })
     }
@@ -42,15 +43,20 @@ export const AddressInput = (props: any) => {
     )
   }
 
+  // const onEnter = (e: SyntheticEvent) => {
+  //   e.preventDefault()
+  //   console.log("HERE HERE HERE")
+  //   console.log('asdasdasdasdasdasdasdas')
+  // }
+
   const inputProps = {
     classNames,
-    onFocus,
+    label,
     value,
+    placeholder,
+    onFocus,
     onKeyDown,
     onChange,
-    label,
-    placeholder,
-    // onBlur,
   }
 
   return <ManagedText {...inputProps} />

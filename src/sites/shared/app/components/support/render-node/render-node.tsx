@@ -328,8 +328,6 @@ const RenderNode = (props: RenderNodeProps) => {
       definition,
     }
 
-    console.log(term, definition)
-
     return <Definition {...definitionProps} />
   }
 

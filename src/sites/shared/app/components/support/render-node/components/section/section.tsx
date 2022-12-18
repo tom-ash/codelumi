@@ -40,8 +40,6 @@ const Section = (props: SectionProps) => {
     return <RenderNode {...nodeProps} />
   })
 
-  console.log(props)
-
   if (!element) return <>{body}</>
 
   const section = React.createElement(element, { className, style, id }, body)

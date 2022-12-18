@@ -30,8 +30,6 @@ class UserCreateEmailInputs extends React.Component {
     // @ts-ignore
     const { accountType, businessName, businessNameError, changeInputs, langHandler } = this.props
 
-    console.log(this.props)
-
     const accountTypeProps = {
       accountType,
       changeInputs,

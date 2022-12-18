@@ -32,8 +32,6 @@ function prepareUserObject() {
 }
 
 function validateUserObject(userObject) {
-  console.log(userObject)
-
   const validationArray = [
     phoneValidator.call(this, userObject.phoneNumber),
     emailValidator.call(this, userObject.email),
