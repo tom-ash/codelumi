@@ -1,4 +1,4 @@
-import React, { SyntheticEvent }  from 'react'
+import React, { KeyboardEvent }  from 'react'
 import addPin from '../../functions/add-pin'
 import { ManagedText } from 'managed-inputs'
 
@@ -7,22 +7,24 @@ export const AddressInput = (props: any) => {
 
   const classNames = 'address-input'
   const label = 'Adres nieruchomości'
-  const onFocus = () => setState({ showAutocompletes: true })
   const value = autocompleteInput
   const placeholder = 'Miasto, ulica i numer budynku'
-  const onKeyDown = (_keyValue: string, e: KeyboardEvent) => {
-    const key = e.key
-    if (key === 'Enter') {
-      e.preventDefault()
+  const onFocus = () => setState({ showAutocompletes: true })
+  const onEnter = (e: KeyboardEvent) => {
+    e.preventDefault()
 
-      if (autocompletes.length === 0) return
+    if (autocompletes.length === 0) return
 
-      const autocomplete = autocompletes[0]
+    const autocomplete = autocompletes[0]
 
-      addPin({ autocomplete, setState, changeInputs, changeErrors })
-    } else if (key === 'Tab') {
-      setState({ showAutocompletes: false })
-    }
+    addPin({ autocomplete, setState, changeInputs, changeErrors })
+
+    // @ts-ignore
+    // https://stackoverflow.com/questions/60504810/react-synteticevent-provides-no-blur-method-for-keyboardeventhtmlinputelement
+    e.target.blur()
+  }
+  const onTab = () => {
+    setState({ showAutocompletes: false })
   }
   const onChange = (input: any) => {
     setState({ autocompleteInput: input })
@@ -43,19 +45,14 @@ export const AddressInput = (props: any) => {
     )
   }
 
-  // const onEnter = (e: SyntheticEvent) => {
-  //   e.preventDefault()
-  //   console.log("HERE HERE HERE")
-  //   console.log('asdasdasdasdasdasdasdas')
-  // }
-
   const inputProps = {
     classNames,
     label,
     value,
     placeholder,
     onFocus,
-    onKeyDown,
+    onEnter,
+    onTab,
     onChange,
   }
 
