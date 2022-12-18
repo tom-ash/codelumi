@@ -3,15 +3,13 @@ import { inputs } from '../../../../../../../constants/inputs'
 import SVG from '../../../../../../../../support/components/svg/svg'
 import sendGaEvent from '../../../../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from '../constants/analytics/events'
-import { nameValidator, phoneValidator, emailValidator, passwordValidator } from './validators'
+import { phoneValidator, emailValidator, passwordValidator } from './validators'
 import errorResetter from './error-resetter'
 import { countryCodes } from '../../../../../../../../../../../shared/shared/constants/country-codes'
 
 const {
   EMAIL_ADDRESS_INPUTTED_EVENT,
   PASSWORD_INPUTTED_EVENT,
-  FIRST_NAME_INPUTTED_EVENT,
-  BUSINESS_NAME_INPUTTED_EVENT,
   AREA_CODE_SELECTED_EVENT,
   PHONE_NUMBER_INPUTTED_EVENT,
 } = analyticEvents
@@ -25,6 +23,7 @@ export function emailAddressManager() {
     type: 'email',
     autoComplete: 'email',
     label: this.langHandler(label),
+    placeholder: this.langHandler({ pl: 'Podaj adres email', en: 'Provide email address' }),
     value: value || '',
     onFocus: () => errorResetter.call(this, 'email'),
     onBlur: value => {
@@ -47,6 +46,7 @@ export function passwordManager() {
     autoComplete: 'new-password',
     controlled: false,
     label: this.langHandler(label),
+    placeholder: this.langHandler({ pl: 'Podaj hasło', en: 'Provide password' }),
     onFocus: () => errorResetter.call(this, 'password'),
     onBlur: value => {
       this.passwordManager().validate(value)
@@ -88,6 +88,7 @@ export function phoneNumberManager() {
     controlled: false,
     classNames: { container: 'text-input phone-number' },
     label: this.langHandler(label),
+    placeholder: this.langHandler({ pl: 'Podaj numer telefonu', en: 'Provide phone number' }),
     onFocus: () => errorResetter.call(this, 'phone'),
     onBlur: value => {
       this.phoneNumberManager().validate(value)

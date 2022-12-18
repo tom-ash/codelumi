@@ -10,11 +10,12 @@ interface BusinessNameInputProps {
 
 export const BusinessNameInput = (props: BusinessNameInputProps) => {
   const { businessName, businessNameError, changeInputs, langHandler } = props
-
   const classNames = { container: 'text-input' }
-  const label = 'Nazwa firmy'
+  // @ts-ignore
+  const label = langHandler({ pl: 'Nazwa firmy', en: 'Business Name' })
   const value = businessName
-  const placeholder = 'Podaj nazwę firmy'
+  // @ts-ignore
+  const placeholder = langHandler({ pl: 'Podaj nazwę firmy', en: 'Provide business name' })
   const onChange = (changedBusinessName: string) => changeInputs({ businessName: changedBusinessName })
   // @ts-ignore
   const error = langHandler(businessNameError)
