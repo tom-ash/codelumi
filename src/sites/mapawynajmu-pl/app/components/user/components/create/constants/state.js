@@ -9,23 +9,18 @@ export const control = {
 
 export const inputs = {
   accountType: 'personal',
+  businessName: null,
   email: null,
-  firstName: null,
   countryCode: '+48',
   phoneNumber: null,
   termsAndPrivacyConsent: false,
 }
 
 export const errors = {
-  accountType: noError,
-  firstName: noError,
-  lastName: noError,
   businessName: noError,
-  taxNumber: noError,
   phone: noError,
   email: noError,
   password: noError,
   termsAndPrivacyConsent: false,
-  privacy: false,
   verification: noError,
 }

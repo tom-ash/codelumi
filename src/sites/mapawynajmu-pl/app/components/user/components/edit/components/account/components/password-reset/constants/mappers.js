@@ -12,7 +12,6 @@ export const mapStateToProps = store => {
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
-    changeAnnouncementControl: value => dispatch({ type: 'announcement/create/control', value }),
     changeControl: value => dispatch({ type: 'user/edit/control', value }),
     changeData: value => dispatch({ type: 'user/edit/data', value }),
     changeErrors: value => dispatch({ type: 'user/edit/errors', value }),

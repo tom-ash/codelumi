@@ -1,17 +1,13 @@
 import React from 'react'
 import { ManagedRadio } from 'managed-inputs'
+import { UserTypes } from '../../../../../../../types/user.types'
 
-enum AccountTypes {
-  PERSONAL = 'personal',
-  BUSINESS = 'business',
-}
-
-interface AccountTypeRadioProps {
-  accountType: AccountTypes
+interface UserTypeRadioProps {
+  accountType: UserTypes
   changeInputs: ChangeInputs
 }
 
-export const AccountTypeRadio = (props: AccountTypeRadioProps) => {
+export const UserTypeRadio = (props: UserTypeRadioProps) => {
   const { accountType, changeInputs } = props
 
   const name = 'account-type'
@@ -21,7 +17,7 @@ export const AccountTypeRadio = (props: AccountTypeRadioProps) => {
     { value: 'personal', label: 'Konto Osobiste' },
     { value: 'business', label: 'Konto Firmowe' },
   ]
-  const onClick = (value: AccountTypes) => changeInputs({ accountType: value })
+  const onClick = (value: UserTypes) => changeInputs({ accountType: value })
 
   const radioProps = {
     name,
@@ -31,5 +27,5 @@ export const AccountTypeRadio = (props: AccountTypeRadioProps) => {
     onClick,
   }
 
-  return <ManagedRadio {...radioProps} onFocus={() => console.log('QWEQWEQ123123')} />
+  return <ManagedRadio {...radioProps} />
 }

@@ -26,7 +26,7 @@ class UserCreateEmail extends React.Component {
             {!renderAnnouncementCreate && <Heading rank={1} heading={headerText} />}
             {!renderAnnouncementCreate && <Line />}
             <form>
-              <Inputs renderAnnouncementCreate={renderAnnouncementCreate} />
+              <Inputs renderAnnouncementCreate={renderAnnouncementCreate} langHandler={this.langHandler} />
               <Consents />
               {!renderAnnouncementCreate && <Line />}
               {!renderAnnouncementCreate && <Submit />}
