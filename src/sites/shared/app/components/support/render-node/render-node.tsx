@@ -92,9 +92,9 @@ const RenderNode = (props: RenderNodeProps) => {
   }
 
   if (node.code) {
-    const { codeLang: sectionCodeLang } = props
     const { code } = node
-    const codeProps = { code, sectionCodeLang }
+    const codeLang = node.codeLang || props.codeLang
+    const codeProps = { code, codeLang }
 
     return <Code key={index} {...codeProps} />
   }
@@ -128,24 +128,26 @@ const RenderNode = (props: RenderNodeProps) => {
   }
 
   if (node.main) {
+    const codeLang = node.codeLang
+
     return (
       <Section
         key={index}
-        {...{ ...props, element: 'main', className: node.className || 'main', jsonBody: node.main }}
+        {...{ ...props, element: 'main', className: node.className || 'main', jsonBody: node.main, codeLang }}
       />
     )
   }
 
   if (node.article) {
     const className = node.className
-    const codeLang = node.codeLang
+    const codeLang = node.codeLang || props.codeLang
 
     return <Section key={index} {...{ ...props, element: 'article', className, codeLang, jsonBody: node.article }} />
   }
 
   if (node.section) {
     const className = node.className
-    const codeLang = node.codeLang
+    const codeLang = node.codeLang || props.codeLang
 
     return (
       <Section

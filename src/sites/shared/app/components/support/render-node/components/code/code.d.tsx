@@ -5,5 +5,5 @@ interface CodeProps {
         l: string
       }
     | string
-  sectionCodeLang: string
+  codeLang: string
 }
