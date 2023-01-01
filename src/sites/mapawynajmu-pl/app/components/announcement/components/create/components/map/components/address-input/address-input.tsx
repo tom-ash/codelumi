@@ -1,4 +1,4 @@
-import React, { KeyboardEvent }  from 'react'
+import React, { KeyboardEvent } from 'react'
 import addPin from '../../functions/add-pin'
 import { ManagedText } from 'managed-inputs'
 

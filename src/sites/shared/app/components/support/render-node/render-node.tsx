@@ -17,6 +17,7 @@ const Aside = loadable(() => import('./components/aside/aside'))
 const Anchor = loadable(() => import('./components/anchor/anchor'))
 const Share = loadable(() => import('./components/share/share'))
 const Definition = loadable(() => import('./components/definition/definition'))
+const Figure = loadable(() => import('./components/figure/figure'))
 
 const RenderNode = (props: RenderNodeProps) => {
   const { node, index, appName, jsonBody, clientUrl, changeRoute, device, lang, langHandler, pageTitle, coverImage } =
@@ -331,6 +332,22 @@ const RenderNode = (props: RenderNodeProps) => {
     }
 
     return <Definition {...definitionProps} />
+  }
+
+  // @ts-ignore
+  if (node.figure) {
+    const {
+      content,
+      caption,
+      // @ts-ignore
+    } = node.figure
+
+    const figureProps = {
+      content,
+      caption,
+    }
+
+    return <Figure {...figureProps} />
   }
 
   return null

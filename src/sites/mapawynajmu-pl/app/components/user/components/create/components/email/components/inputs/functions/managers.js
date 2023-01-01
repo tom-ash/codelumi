@@ -7,12 +7,8 @@ import { phoneValidator, emailValidator, passwordValidator } from './validators'
 import errorResetter from './error-resetter'
 import { countryCodes } from '../../../../../../../../../../../shared/shared/constants/country-codes'
 
-const {
-  EMAIL_ADDRESS_INPUTTED_EVENT,
-  PASSWORD_INPUTTED_EVENT,
-  AREA_CODE_SELECTED_EVENT,
-  PHONE_NUMBER_INPUTTED_EVENT,
-} = analyticEvents
+const { EMAIL_ADDRESS_INPUTTED_EVENT, PASSWORD_INPUTTED_EVENT, AREA_CODE_SELECTED_EVENT, PHONE_NUMBER_INPUTTED_EVENT } =
+  analyticEvents
 
 export function emailAddressManager() {
   const { label } = inputs.email

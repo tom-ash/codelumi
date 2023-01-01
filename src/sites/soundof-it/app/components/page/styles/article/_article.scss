@@ -101,4 +101,20 @@ $horizontal-margin-mobile: 18px;
       font-weight: bold;
     }
   }
+
+  figure {
+    margin-bottom: 18px;
+    span {
+      display: block;
+      background: #fef9e7;
+      padding: 6px 12px;
+      border-radius: 3px;
+      border-left: 3px solid #edbb99;
+    }
+    figcaption {
+      color: #5f6a6a;
+      font-size: 13px;
+      font-style: italic;
+    }
+  }
 }
