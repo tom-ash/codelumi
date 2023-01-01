@@ -107,13 +107,14 @@ $horizontal-margin-mobile: 18px;
     span {
       display: block;
       background: #fef9e7;
-      padding: 6px 12px;
+      padding: 18px;
       border-radius: 3px;
       border-left: 3px solid #edbb99;
+      color: rgb(64, 64, 64);
     }
     figcaption {
-      color: #5f6a6a;
-      font-size: 13px;
+      color: rgb(88, 88, 88);
+      font-size: 14px;
       font-style: italic;
     }
   }
