@@ -1,7 +1,7 @@
 import React from 'react'
 import { ManagedButton, ManagedLink } from 'managed-inputs'
 import { addAnnouncementManager, signUpManager, signInManager, myAccountManager } from './functions/managers'
-import LangSwtich from './components/lang-switch/lang-switch'
+import { LangSwitch } from '../../../../../../../../../shared/app/components/support/lang-switch/lang-switch'
 import ArticlesLink from './components/articles-link'
 
 const HeaderUserLinks = props => {
@@ -33,13 +33,13 @@ const HeaderLinks = props => {
   return (
     <div className='links'>
       {isMobile ? (
-        <LangSwtich {...props} />
+        <LangSwitch {...props} />
       ) : (
         <>
           <ManagedLink {...addAnnouncementManager(props)} />
           <HeaderUserLinks {...props} />
           <ArticlesLink {...articlesLinkProps} />
-          <LangSwtich {...props} />
+          <LangSwitch {...props} />
         </>
       )}
     </div>

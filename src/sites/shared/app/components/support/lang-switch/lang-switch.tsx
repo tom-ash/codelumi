@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
+import SVG from '../../../../../mapawynajmu-pl/app/components/support/components/svg/svg'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
-import SVG from '../../../../../../../../support/components/svg/svg'
-import { buildUrl } from '../../../../../../../../../../shared/functions/builders/url'
 
-interface LangSwichProps {
+interface LangSwitchProps {
   links: {
     'current/pl': { path: string; title: string }
     'current/en': { path: string; title: string }
@@ -14,14 +13,13 @@ interface LangSwichProps {
   changeRoute: ChangeRoute
 }
 
-const LangSwich = (props: LangSwichProps) => {
+export const LangSwitch = (props: LangSwitchProps) => {
   useStyles(styles)
 
   let plHref: string
   let enHref: string
-  const { lang } = props
   const [showLangs, setShowLangs] = useState(false)
-  const { links, changeRoute } = props
+  const { lang, links, buildUrl, changeRoute } = props
   const currentPl = links['current/pl']
   const currentEn = links['current/en']
 
@@ -74,5 +72,3 @@ const LangSwich = (props: LangSwichProps) => {
     </div>
   )
 }
-
-export default LangSwich
