@@ -4,8 +4,6 @@ import { LangSwitch } from '../../../../../../../shared/app/components/support/l
 
 // @ts-ignore
 export const HeaderCustomization = props => {
-  console.log(props)
-
   const {
     links,
     lang,
@@ -19,8 +17,6 @@ export const HeaderCustomization = props => {
     buildUrl,
     changeRoute
   }
-
-  console.log(langSwitchProps)
 
   return (
     <>
