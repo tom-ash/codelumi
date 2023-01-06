@@ -1,8 +1,9 @@
 import { hashPassword } from '../../../../../../../functions/shared'
 import { parser as consentsParser } from '../../../../consents/functions/parser'
 import { businessNameValidator } from '../../inputs/components/business-name/business-name.validator'
-import { phoneValidator, emailValidator, passwordValidator } from '../../inputs/functions/validators'
+import { emailValidator, passwordValidator } from '../../inputs/functions/validators'
 import termsAndPrivacyConsentValidator from '../../../../consents/functions/validators'
+import { phoneNumberValidator } from '../../inputs/components/phone-number/phone-number.validator'
 
 export function buildUserObject() {
   const { dispatch } = this.props
@@ -40,15 +41,22 @@ function prepareUserObject() {
 }
 
 function validateUserObject(userObject) {
+  const {
+    dispatch
+  } = this.props
+  const {
+    phoneNumber
+  } = userObject
+
   const validationArray = [
-    phoneValidator.call(this, userObject.phoneNumber),
+    phoneNumberValidator({ phoneNumber, dispatch}),
     emailValidator.call(this, userObject.email),
     passwordValidator.call(this, userObject.password),
     termsAndPrivacyConsentValidator.call(this, userObject.termsAndPrivacyConsent),
   ]
 
   if (userObject.accountType === 'business') {
-    validationArray.concat([businessNameValidator({ dispatch: this.props.dispatch, value: userObject.businessName})])
+    validationArray.concat([businessNameValidator({ dispatch, value: userObject.businessName})])
   }
 
   return validationArray.every(element => element)

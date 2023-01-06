@@ -3,9 +3,11 @@ import { inputs } from '../../../../../../../constants/inputs'
 import SVG from '../../../../../../../../support/components/svg/svg'
 import sendGaEvent from '../../../../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from '../constants/analytics/events'
-import { phoneValidator, emailValidator, passwordValidator } from './validators'
+import { emailValidator, passwordValidator } from './validators'
 import errorResetter from './error-resetter'
 import { countryCodes } from '../../../../../../../../../../../shared/shared/constants/country-codes'
+import { EMPTY_LANG_OBJECT } from '../../../../../../../../../constants/lang-objects/empty'
+import { phoneNumberValidator } from '../components/phone-number/phone-number.validator'
 
 const { EMAIL_ADDRESS_INPUTTED_EVENT, PASSWORD_INPUTTED_EVENT, AREA_CODE_SELECTED_EVENT, PHONE_NUMBER_INPUTTED_EVENT } =
   analyticEvents
@@ -76,6 +78,9 @@ export function areaCodeManager() {
 
 export function phoneNumberManager() {
   const { label } = inputs.phone
+  const {
+    dispatch
+  } = this.props
 
   return {
     id: 'user-create-email-phone-number',
@@ -86,12 +91,11 @@ export function phoneNumberManager() {
     classNames: { container: 'text-input phone-number' },
     label: this.langHandler(label),
     placeholder: this.langHandler({ pl: 'Podaj numer telefonu', en: 'Provide phone number' }),
-    onFocus: () => errorResetter.call(this, 'phone'),
-    onBlur: value => {
-      this.phoneNumberManager().validate(value)
-      sendGaEvent(PHONE_NUMBER_INPUTTED_EVENT)
-    },
-    validate: value => phoneValidator.call(this, value),
+    onFocus: () => dispatch({
+      type: 'user/create/errors',
+      value: { phone: EMPTY_LANG_OBJECT }
+    }),
+    onBlur: (phoneNumber) => phoneNumberValidator({ phoneNumber, dispatch}),
     error: this.langHandler(this.props.phoneError),
   }
 }

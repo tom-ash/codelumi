@@ -15,5 +15,3 @@ declare interface LangObject {
 export interface ValidateVerificationCode {
   (props: { value: string; changeError(props: LangObject): void }): boolean
 }
-
-// export type Lang = 'pl' | 'en'
