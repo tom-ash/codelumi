@@ -12,7 +12,6 @@ interface BusinessNameValidator {
   }): boolean
 }
 
-
 export const businessNameValidator: BusinessNameValidator = (props) => {
   const {
     value,

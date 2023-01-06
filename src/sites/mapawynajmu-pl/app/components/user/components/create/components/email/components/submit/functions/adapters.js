@@ -1,6 +1,6 @@
 import { hashPassword } from '../../../../../../../functions/shared'
 import { parser as consentsParser } from '../../../../consents/functions/parser'
-import { businessNameValidator } from '../../inputs/validators/business-name-validator'
+import { businessNameValidator } from '../../inputs/components/business-name/business-name.validator'
 import { phoneValidator, emailValidator, passwordValidator } from '../../inputs/functions/validators'
 import termsAndPrivacyConsentValidator from '../../../../consents/functions/validators'
 

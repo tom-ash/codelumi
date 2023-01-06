@@ -6,8 +6,8 @@ import * as managers from './functions/managers'
 import { langHandler } from '../../../../../../../../functions/lang-handler'
 import * as mappers from './constants/mappers'
 import { NAME_AREA_CODE_AND_PHONE_NUMBER_HINT } from './constants/texts'
-import { UserTypeRadio } from './components/user-type-radio'
-import { BusinessNameInput } from './components/business-name-input'
+import { UserTypeRadio } from './components/account-type/account-type.input'
+import { BusinessNameInput } from './components/business-name/business-name.input'
 import { UserTypes } from '../../../../../../types/user.types'
 
 class UserCreateEmailInputs extends React.Component {

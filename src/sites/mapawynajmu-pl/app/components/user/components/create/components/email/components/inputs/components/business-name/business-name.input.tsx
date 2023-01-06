@@ -1,8 +1,8 @@
 import React from 'react'
 import { Dispatch } from 'redux'
 import { ManagedText } from 'managed-inputs'
-import { businessNameValidator } from '../validators/business-name-validator'
-import { EMPTY_LANG_OBJECT } from '../../../../../../../../../constants/lang-objects/empty'
+import { businessNameValidator } from './business-name.validator'
+import { EMPTY_LANG_OBJECT } from '../../../../../../../../../../constants/lang-objects/empty'
 
 interface BusinessNameInputProps {
   dispatch: Dispatch

@@ -1,6 +1,6 @@
 import React from 'react'
 import { ManagedRadio } from 'managed-inputs'
-import { UserTypes } from '../../../../../../../types/user.types'
+import { UserTypes } from '../../../../../../../../types/user.types'
 
 interface UserTypeRadioProps {
   accountType: UserTypes
