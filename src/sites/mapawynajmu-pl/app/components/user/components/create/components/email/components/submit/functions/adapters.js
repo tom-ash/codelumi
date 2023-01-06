@@ -1,5 +1,6 @@
 import { hashPassword } from '../../../../../../../functions/shared'
 import { parser as consentsParser } from '../../../../consents/functions/parser'
+import { businessNameValidator } from '../../inputs/validators/business-name-validator'
 import { phoneValidator, emailValidator, passwordValidator } from '../../inputs/functions/validators'
 import termsAndPrivacyConsentValidator from '../../../../consents/functions/validators'
 
@@ -15,17 +16,24 @@ export function buildUserObject() {
 }
 
 function prepareUserObject() {
-  const { accountType, businessName, email } = this.props
+  const {
+    accountType,
+    businessName,
+    email
+  } = this.props
   const termsAndPrivacyConsent = document.getElementById('user-create-consents-terms-and-privacy').checked
 
   let userObject = {
     accountType,
-    businessName,
     countryCode: document.getElementById('user-create-email-area-code').value,
     phoneNumber: document.getElementById('user-create-email-phone-number').value,
     email: (email || '').toLowerCase(),
     password: document.getElementById('user-create-email-password').value,
     termsAndPrivacyConsent,
+  }
+
+  if (accountType === 'business') {
+    userObject.businessName = businessName
   }
 
   return userObject
@@ -38,6 +46,10 @@ function validateUserObject(userObject) {
     passwordValidator.call(this, userObject.password),
     termsAndPrivacyConsentValidator.call(this, userObject.termsAndPrivacyConsent),
   ]
+
+  if (userObject.accountType === 'business') {
+    validationArray.concat([businessNameValidator({ dispatch: this.props.dispatch, value: userObject.businessName})])
+  }
 
   return validationArray.every(element => element)
 }

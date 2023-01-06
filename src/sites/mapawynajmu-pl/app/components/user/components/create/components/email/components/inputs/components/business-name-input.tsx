@@ -1,7 +1,11 @@
 import React from 'react'
+import { Dispatch } from 'redux'
 import { ManagedText } from 'managed-inputs'
+import { businessNameValidator } from '../validators/business-name-validator'
+import { EMPTY_LANG_OBJECT } from '../../../../../../../../../constants/lang-objects/empty'
 
 interface BusinessNameInputProps {
+  dispatch: Dispatch
   businessName: string
   businessNameError: LangObject
   changeInputs: ChangeInputs
@@ -9,23 +13,23 @@ interface BusinessNameInputProps {
 }
 
 export const BusinessNameInput = (props: BusinessNameInputProps) => {
-  const { businessName, businessNameError, changeInputs, langHandler } = props
+  const { businessName, businessNameError, changeInputs, langHandler, dispatch } = props
   const classNames = { container: 'text-input' }
   // @ts-ignore
   const label = langHandler({ pl: 'Nazwa firmy', en: 'Business Name' })
-  const value = businessName
+  const value = businessName || ''
   // @ts-ignore
   const placeholder = langHandler({ pl: 'Podaj nazwę firmy', en: 'Provide business name' })
   const onChange = (changedBusinessName: string) => changeInputs({ businessName: changedBusinessName })
   // @ts-ignore
   const error = langHandler(businessNameError)
 
-  // onFocus: () => errorResetter.call(this, 'phone'),
-  // onBlur: value => {
-  //   this.phoneNumberManager().validate(value)
-  //   sendGaEvent(PHONE_NUMBER_INPUTTED_EVENT)
-  // },
-  // validate: value => phoneValidator.call(this, value),
+  const onFocus = () => {
+    dispatch({ type: 'user/create/errors', value: { businessName: EMPTY_LANG_OBJECT } })
+  }
+  const onBlur = (value: string) => {
+    businessNameValidator({ value, dispatch })
+  }
 
   const inputProps = {
     classNames,
@@ -33,6 +37,8 @@ export const BusinessNameInput = (props: BusinessNameInputProps) => {
     value,
     placeholder,
     error,
+    onFocus,
+    onBlur,
     onChange,
   }
 

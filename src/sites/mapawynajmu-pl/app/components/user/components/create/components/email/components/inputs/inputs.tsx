@@ -28,7 +28,7 @@ class UserCreateEmailInputs extends React.Component {
 
   render() {
     // @ts-ignore
-    const { accountType, businessName, businessNameError, changeInputs, langHandler } = this.props
+    const { accountType, businessName, businessNameError, changeInputs, langHandler, dispatch } = this.props
 
     const accountTypeProps = {
       accountType,
@@ -38,9 +38,10 @@ class UserCreateEmailInputs extends React.Component {
 
     const businessNameProps = {
       businessName,
-      changeInputs,
       businessNameError,
+      changeInputs,
       langHandler,
+      dispatch,
     }
 
     return (

@@ -57,6 +57,7 @@ export function areaCodeManager() {
   const options = countryCodes.map(countryCode => ({
     value: countryCode,
     text: countryCode,
+    // key: countryCode
   }))
 
   return {
