@@ -9,10 +9,10 @@ export const control = {
 
 export const inputs = {
   accountType: 'personal',
+  emailAddress: '',
   businessName: '',
-  email: null,
   countryCode: '+48',
-  phoneNumber: null,
+  phoneNumber: '',
   termsAndPrivacyConsent: false,
 }
 

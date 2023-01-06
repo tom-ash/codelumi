@@ -3,36 +3,14 @@ import { inputs } from '../../../../../../../constants/inputs'
 import SVG from '../../../../../../../../support/components/svg/svg'
 import sendGaEvent from '../../../../../../../../../functions/google-analytics/send-ga-event'
 import analyticEvents from '../constants/analytics/events'
-import { emailValidator, passwordValidator } from './validators'
+import { passwordValidator } from './validators'
 import errorResetter from './error-resetter'
 import { countryCodes } from '../../../../../../../../../../../shared/shared/constants/country-codes'
 import { EMPTY_LANG_OBJECT } from '../../../../../../../../../constants/lang-objects/empty'
 import { phoneNumberValidator } from '../components/phone-number/phone-number.validator'
 
-const { EMAIL_ADDRESS_INPUTTED_EVENT, PASSWORD_INPUTTED_EVENT, AREA_CODE_SELECTED_EVENT, PHONE_NUMBER_INPUTTED_EVENT } =
+const { PASSWORD_INPUTTED_EVENT, AREA_CODE_SELECTED_EVENT, PHONE_NUMBER_INPUTTED_EVENT } =
   analyticEvents
-
-export function emailAddressManager() {
-  const { label } = inputs.email
-  const { email: value, changeInputs } = this.props
-
-  return {
-    classNames: { container: 'text-input with-icon' },
-    type: 'email',
-    autoComplete: 'email',
-    label: this.langHandler(label),
-    placeholder: this.langHandler({ pl: 'Podaj adres email', en: 'Provide email address' }),
-    value: value || '',
-    onFocus: () => errorResetter.call(this, 'email'),
-    onBlur: value => {
-      this.emailAddressManager().validate(value)
-      sendGaEvent(EMAIL_ADDRESS_INPUTTED_EVENT)
-    },
-    onChange: value => changeInputs({ email: value }),
-    validate: value => emailValidator.call(this, value),
-    error: this.langHandler(this.props.emailError),
-  }
-}
 
 export function passwordManager() {
   const { label } = inputs.password

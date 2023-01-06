@@ -5,11 +5,11 @@ import { businessNameValidator } from './business-name.validator'
 import { EMPTY_LANG_OBJECT } from '../../../../../../../../../../constants/lang-objects/empty'
 
 interface BusinessNameInputProps {
-  dispatch: Dispatch
   businessName: string
   businessNameError: LangObject
-  changeInputs: ChangeInputs
   langHandler: LangHandler
+  changeInputs: ChangeInputs
+  dispatch: Dispatch
 }
 
 export const BusinessNameInput = (props: BusinessNameInputProps) => {
