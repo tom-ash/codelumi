@@ -78,7 +78,7 @@ function createWithUser() {
   fetch(API_URL + route, {
     method,
     headers: { 'Content-Type': 'application/json', Lang: lang },
-    body: JSON.stringify({ announcement, user }),
+    body: JSON.stringify({ announcement, user: { ...user, email: user.emailAddress }}),
   })
     .then(response => {
       if (response.ok) return response.json()

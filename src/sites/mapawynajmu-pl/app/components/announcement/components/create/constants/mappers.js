@@ -16,7 +16,7 @@ export const mapStateToProps = store => {
     // showEnglishDescription,
   } = control
   const { announcement, user } = data
-  const { accountType, email } = store.user.create.inputs
+  const { accountType, emailAddress, password } = store.user.create.inputs
 
   const {
     category,
@@ -52,7 +52,8 @@ export const mapStateToProps = store => {
     renderSuccess,
     renderEdit,
     accountType,
-    email,
+    emailAddress,
+    password,
     lang,
     step,
     connecting,
