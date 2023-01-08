@@ -1,10 +1,10 @@
 import { hashPassword } from '../../../../../../../functions/shared'
 import { parser as consentsParser } from '../../../../consents/functions/parser'
 import { businessNameValidator } from '../../inputs/components/business-name/business-name.validator'
-import { passwordValidator } from '../../inputs/functions/validators'
 import termsAndPrivacyConsentValidator from '../../../../consents/functions/validators'
-import { phoneNumberValidator } from '../../inputs/components/phone-number/phone-number.validator'
 import { emailAddressValidator } from '../../inputs/components/email-address/email-address.validator'
+import { passwordValidator } from '../../inputs/components/password/password.validator'
+import { phoneNumberValidator } from '../../inputs/components/phone-number/phone-number.validator'
 
 export function buildUserObject() {
   const { dispatch } = this.props
@@ -21,13 +21,14 @@ function prepareUserObject() {
   const {
     accountType,
     businessName,
-    emailAddress
+    emailAddress,
+    password,
   } = this.props
   const termsAndPrivacyConsent = document.getElementById('user-create-consents-terms-and-privacy').checked
   let userObject = {
     accountType,
     emailAddress,
-    password: document.getElementById('user-create-email-password').value,
+    password,
     countryCode: document.getElementById('user-create-email-area-code').value,
     phoneNumber: document.getElementById('user-create-email-phone-number').value,
     termsAndPrivacyConsent,
@@ -46,13 +47,14 @@ function validateUserObject(userObject) {
   } = this.props
   const {
     emailAddress,
-    phoneNumber
+    password,
+    phoneNumber,
   } = userObject
 
   const validationArray = [
-    phoneNumberValidator({ phoneNumber, dispatch}),
     emailAddressValidator({ emailAddress, dispatch }),
-    passwordValidator.call(this, userObject.password),
+    passwordValidator({ password, dispatch }),
+    phoneNumberValidator({ phoneNumber, dispatch}),
     termsAndPrivacyConsentValidator.call(this, userObject.termsAndPrivacyConsent),
   ]
 

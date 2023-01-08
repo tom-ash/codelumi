@@ -1,6 +1,6 @@
 export const mapStateToProps = store => {
   const { lang } = store.app
-  const { accountType, businessName, emailAddress, countryCode } = store.user.create.inputs
+  const { accountType, businessName, emailAddress, password, countryCode } = store.user.create.inputs
 
   const {
     accountType: accountTypeError,
@@ -13,8 +13,9 @@ export const mapStateToProps = store => {
   return {
     lang,
     accountType,
-    emailAddress,
     businessName,
+    emailAddress,
+    password,
     countryCode,
     accountTypeError,
     businessNameError,
