@@ -11,7 +11,7 @@ export function buildUserObject() {
   const userObject = prepareUserObject.call(this)
   if (validateUserObject.call(this, userObject)) {
     dispatch({ type: 'user/create/control', value: { connecting: true } })
-    userObject.password = hashPassword(userObject.password, userObject.email)
+    userObject.password = hashPassword(userObject.password, userObject.emailAddress)
     consentsParser.call(this, userObject)
     return userObject
   }
@@ -24,6 +24,7 @@ function prepareUserObject() {
     emailAddress,
     password,
   } = this.props
+
   const termsAndPrivacyConsent = document.getElementById('user-create-consents-terms-and-privacy').checked
   let userObject = {
     accountType,

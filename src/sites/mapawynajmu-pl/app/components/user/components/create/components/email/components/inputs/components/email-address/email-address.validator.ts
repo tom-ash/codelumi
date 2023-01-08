@@ -19,12 +19,7 @@ export const emailAddressValidator: EmailAddressValidator = (props) => {
     dispatch
   } = props
 
-  console.log(props)
-
   if (!EMAIL_ADDRESS_REGEX.test(emailAddress)) {
-
-    console.log("HERE")
-
     dispatch({ type: 'user/create/errors', value: { emailAddress: EMAIL_ADDRESS_INPUT_ERROR } })
     return false
   }
