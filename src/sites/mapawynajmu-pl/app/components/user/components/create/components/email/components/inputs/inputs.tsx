@@ -11,22 +11,22 @@ import { UserTypes } from '../../../../../../types/user.types'
 import { BusinessNameInput } from './components/business-name/business-name.input'
 import { EmailAddressInput } from './components/email-address/email-address.input'
 import { PasswordInput } from './components/password/password.input'
+import { CountryCodeSelect } from './components/country-code/country-code.select'
 
 class UserCreateEmailInputs extends React.Component {
+  langHandler: LangHandler
+
   // @ts-ignore
   constructor(props) {
     super(props)
-    // @ts-ignore
     this.langHandler = langHandler.bind(this)
-    // @ts-ignore
-    this.areaCodeManager = managers.areaCodeManager.bind(this)
     // @ts-ignore
     this.phoneNumberManager = managers.phoneNumberManager.bind(this)
   }
 
   render() {
     // @ts-ignore
-    const { accountType, businessName, businessNameError, emailAddress, emailAddressError, password, passwordError, changeInputs, langHandler, dispatch } = this.props
+    const { accountType, businessName, businessNameError, emailAddress, emailAddressError, password, passwordError, countryCode, changeInputs, langHandler, dispatch } = this.props
 
     const accountTypeProps = {
       accountType,
@@ -58,6 +58,11 @@ class UserCreateEmailInputs extends React.Component {
       dispatch,
     }
 
+    const countryCodeProps = {
+      countryCode,
+      dispatch,
+    }
+
     return (
       <div className='inputs'>
         <UserTypeRadio {...accountTypeProps} />
@@ -67,8 +72,7 @@ class UserCreateEmailInputs extends React.Component {
         {/* @ts-ignore */}
         <Hint text={this.langHandler(NAME_AREA_CODE_AND_PHONE_NUMBER_HINT)} />
         <div className='country-code-phone-number-container'>
-          {/* @ts-ignore */}
-          <ManagedSelect {...this.areaCodeManager()} />
+          <CountryCodeSelect {...countryCodeProps} />
           {/* @ts-ignore */}
           <ManagedText {...this.phoneNumberManager()} />
         </div>

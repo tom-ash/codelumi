@@ -23,6 +23,7 @@ function prepareUserObject() {
     businessName,
     emailAddress,
     password,
+    countryCode,
   } = this.props
 
   const termsAndPrivacyConsent = document.getElementById('user-create-consents-terms-and-privacy').checked
@@ -30,7 +31,7 @@ function prepareUserObject() {
     accountType,
     emailAddress,
     password,
-    countryCode: document.getElementById('user-create-email-area-code').value,
+    countryCode,
     phoneNumber: document.getElementById('user-create-email-phone-number').value,
     termsAndPrivacyConsent,
   }
