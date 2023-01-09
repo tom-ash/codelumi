@@ -9,7 +9,7 @@ function createUser(userObject) {
   fetch(API_URL + CREATE_API_ROUTE, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Lang: lang },
-    body: JSON.stringify({ ...userObject, email: userObject.emailAddress }),
+    body: JSON.stringify({ ...userObject }),
   })
     .then(
       response => {
