@@ -1,7 +1,7 @@
 export const mapStateToProps = store => {
   const { 'user/create/form': renderUserCreate } = store.render
   const { lang } = store.app
-  const { accountType, businessName, emailAddress, password, countryCode } = store.user.create.inputs
+  const { accountType, businessName, emailAddress, password, countryCode, phoneNumber } = store.user.create.inputs
   const { connecting } = store.user.create.control
 
   return {
@@ -11,6 +11,7 @@ export const mapStateToProps = store => {
     emailAddress,
     password,
     countryCode,
+    phoneNumber,
     lang,
     connecting,
   }

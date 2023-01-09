@@ -5,10 +5,7 @@ export const enrichText = (plainText: string) => {
 
   enrichedText = enrichedText.replace(/\`(.+?)\`/g, (_fullMatch, innerMatch) => `<code>${innerMatch}</code>`)
 
-  enrichedText = enrichedText.replace(
-    /\*\*(.+?)\*\*/g,
-    (_fullMatch, innerMatch) => `<strong>${innerMatch}</strong>`
-  )
+  enrichedText = enrichedText.replace(/\*\*(.+?)\*\*/g, (_fullMatch, innerMatch) => `<strong>${innerMatch}</strong>`)
 
   enrichedText = enrichedText.replace(/\*(.+?)\*/g, (_fullMatch, innerMatch) => `<em>${innerMatch}</em>`)
 

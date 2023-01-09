@@ -24,10 +24,11 @@ export const BusinessNameInput = (props: BusinessNameInputProps) => {
   // @ts-ignore
   const error = langHandler(businessNameError)
 
-  const onFocus = () => dispatch({
-    type: 'user/create/errors',
-    value: { businessName: EMPTY_LANG_OBJECT }
-  })
+  const onFocus = () =>
+    dispatch({
+      type: 'user/create/errors',
+      value: { businessName: EMPTY_LANG_OBJECT },
+    })
   const onBlur = (value: string) => {
     businessNameValidator({ value, dispatch })
   }

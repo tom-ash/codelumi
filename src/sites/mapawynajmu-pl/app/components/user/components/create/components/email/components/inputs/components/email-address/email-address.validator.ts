@@ -7,17 +7,11 @@ const EMAIL_ADDRESS_INPUT_ERROR = {
 }
 
 interface EmailAddressValidator {
-  (props: {
-    emailAddress: string
-    dispatch: Dispatch
-  }): boolean
+  (props: { emailAddress: string; dispatch: Dispatch }): boolean
 }
 
-export const emailAddressValidator: EmailAddressValidator = (props) => {
-  const {
-    emailAddress,
-    dispatch
-  } = props
+export const emailAddressValidator: EmailAddressValidator = props => {
+  const { emailAddress, dispatch } = props
 
   if (!EMAIL_ADDRESS_REGEX.test(emailAddress)) {
     dispatch({ type: 'user/create/errors', value: { emailAddress: EMAIL_ADDRESS_INPUT_ERROR } })

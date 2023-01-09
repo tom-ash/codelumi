@@ -1,8 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { ManagedText, ManagedSelect } from 'managed-inputs'
 import Hint from '../../../../../../../support/components/hint/hint'
-import * as managers from './functions/managers'
 import { langHandler } from '../../../../../../../../functions/lang-handler'
 import * as mappers from './constants/mappers'
 import { NAME_AREA_CODE_AND_PHONE_NUMBER_HINT } from './constants/texts'
@@ -12,6 +10,7 @@ import { BusinessNameInput } from './components/business-name/business-name.inpu
 import { EmailAddressInput } from './components/email-address/email-address.input'
 import { PasswordInput } from './components/password/password.input'
 import { CountryCodeSelect } from './components/country-code/country-code.select'
+import { PhoneNumberInput } from './components/phone-number/phone-number.input'
 
 class UserCreateEmailInputs extends React.Component {
   langHandler: LangHandler
@@ -20,13 +19,40 @@ class UserCreateEmailInputs extends React.Component {
   constructor(props) {
     super(props)
     this.langHandler = langHandler.bind(this)
-    // @ts-ignore
-    this.phoneNumberManager = managers.phoneNumberManager.bind(this)
   }
 
   render() {
     // @ts-ignore
-    const { accountType, businessName, businessNameError, emailAddress, emailAddressError, password, passwordError, countryCode, changeInputs, langHandler, dispatch } = this.props
+    const {
+      // @ts-ignore
+      accountType,
+      // @ts-ignore
+      businessName,
+      // @ts-ignore
+      businessNameError,
+      // @ts-ignore
+      emailAddress,
+      // @ts-ignore
+      emailAddressError,
+      // @ts-ignore
+      password,
+      // @ts-ignore
+      passwordError,
+      // @ts-ignore
+      countryCode,
+      // @ts-ignore
+      phoneNumber,
+      // @ts-ignore
+      phoneNumberError,
+      // @ts-ignore
+      changeInputs,
+      // @ts-ignore
+      langHandler,
+      // @ts-ignore
+      dispatch,
+    } = this.props
+
+    const isBusinessAccount = accountType === UserTypes.BUSINESS
 
     const accountTypeProps = {
       accountType,
@@ -63,18 +89,24 @@ class UserCreateEmailInputs extends React.Component {
       dispatch,
     }
 
+    const phoneNumberProps = {
+      phoneNumber,
+      phoneNumberError,
+      langHandler,
+      dispatch,
+    }
+
     return (
       <div className='inputs'>
         <UserTypeRadio {...accountTypeProps} />
-        {accountType === UserTypes.BUSINESS && <BusinessNameInput {...businessNameProps} />}
+        {isBusinessAccount && <BusinessNameInput {...businessNameProps} />}
         <EmailAddressInput {...emailAddressProps} />
         <PasswordInput {...passwordProps} />
         {/* @ts-ignore */}
         <Hint text={this.langHandler(NAME_AREA_CODE_AND_PHONE_NUMBER_HINT)} />
         <div className='country-code-phone-number-container'>
           <CountryCodeSelect {...countryCodeProps} />
-          {/* @ts-ignore */}
-          <ManagedText {...this.phoneNumberManager()} />
+          <PhoneNumberInput {...phoneNumberProps} />
         </div>
       </div>
     )

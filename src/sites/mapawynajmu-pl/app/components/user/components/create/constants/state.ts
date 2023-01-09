@@ -1,3 +1,5 @@
+// import { EmptyTextInput } from "../../../../../../../shared/shared/types/empty-text-input"
+
 const noError = { pl: '', en: '' }
 
 export const control = {
@@ -19,9 +21,9 @@ export const inputs = {
 
 export const errors = {
   businessName: noError,
-  phone: noError,
-  email: noError,
+  emailAddress: noError,
   password: noError,
+  phoneNumber: noError,
   termsAndPrivacyConsent: false,
   verification: noError,
 }

@@ -6,17 +6,11 @@ const BUSINESS_NAME_INPUT_ERROR = {
 }
 
 interface BusinessNameValidator {
-  (props: {
-    value: string
-    dispatch: Dispatch
-  }): boolean
+  (props: { value: string; dispatch: Dispatch }): boolean
 }
 
-export const businessNameValidator: BusinessNameValidator = (props) => {
-  const {
-    value,
-    dispatch
-  } = props
+export const businessNameValidator: BusinessNameValidator = props => {
+  const { value, dispatch } = props
 
   console.log(props)
 

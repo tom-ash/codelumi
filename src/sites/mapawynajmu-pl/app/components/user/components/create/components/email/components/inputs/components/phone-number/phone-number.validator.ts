@@ -6,20 +6,14 @@ const PHONE_NUMBER_INPUT_ERROR = {
 }
 
 interface PhoneNumberValidator {
-  (props: {
-    phoneNumber: string
-    dispatch: Dispatch
-  }): boolean
+  (props: { phoneNumber: string; dispatch: Dispatch }): boolean
 }
 
-export const phoneNumberValidator: PhoneNumberValidator = (props) => {
-  const {
-    phoneNumber,
-    dispatch
-  } = props
+export const phoneNumberValidator: PhoneNumberValidator = props => {
+  const { phoneNumber, dispatch } = props
 
   if (phoneNumber.length !== 9) {
-    dispatch({ type: 'user/create/errors', value: { phone: PHONE_NUMBER_INPUT_ERROR } })
+    dispatch({ type: 'user/create/errors', value: { phoneNumber: PHONE_NUMBER_INPUT_ERROR } })
     return false
   }
 

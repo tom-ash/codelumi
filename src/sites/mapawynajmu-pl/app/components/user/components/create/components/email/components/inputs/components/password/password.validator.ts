@@ -7,17 +7,11 @@ const PASSWORD_INPUT_ERROR = {
 }
 
 interface PasswordValidator {
-  (props: {
-    password: string
-    dispatch: Dispatch
-  }): boolean
+  (props: { password: string; dispatch: Dispatch }): boolean
 }
 
-export const passwordValidator: PasswordValidator = (props) => {
-  const {
-    password,
-    dispatch
-  } = props
+export const passwordValidator: PasswordValidator = props => {
+  const { password, dispatch } = props
 
   if (!PASSWORD_REGEX.test(password)) {
     dispatch({ type: 'user/create/errors', value: { password: PASSWORD_INPUT_ERROR } })

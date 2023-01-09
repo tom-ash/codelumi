@@ -24,10 +24,11 @@ export const PasswordInput = (props: PasswordInputProps) => {
   const placeholder = langHandler({ pl: 'Podaj hasło', en: 'Provide password' })
   // @ts-ignore
   const error = langHandler(passwordError)
-  const onFocus = () => dispatch({
-    type: 'user/create/errors',
-    value: { password: EMPTY_LANG_OBJECT }
-  })
+  const onFocus = () =>
+    dispatch({
+      type: 'user/create/errors',
+      value: { password: EMPTY_LANG_OBJECT },
+    })
   const onBlur = (password: string) => {
     passwordValidator({ password, dispatch })
   }

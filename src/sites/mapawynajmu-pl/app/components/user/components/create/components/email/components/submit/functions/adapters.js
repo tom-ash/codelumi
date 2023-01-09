@@ -18,13 +18,7 @@ export function buildUserObject() {
 }
 
 function prepareUserObject() {
-  const {
-    accountType,
-    businessName,
-    emailAddress,
-    password,
-    countryCode,
-  } = this.props
+  const { accountType, businessName, emailAddress, password, countryCode, phoneNumber } = this.props
 
   const termsAndPrivacyConsent = document.getElementById('user-create-consents-terms-and-privacy').checked
   let userObject = {
@@ -32,7 +26,7 @@ function prepareUserObject() {
     emailAddress,
     password,
     countryCode,
-    phoneNumber: document.getElementById('user-create-email-phone-number').value,
+    phoneNumber,
     termsAndPrivacyConsent,
   }
 
@@ -44,24 +38,18 @@ function prepareUserObject() {
 }
 
 function validateUserObject(userObject) {
-  const {
-    dispatch
-  } = this.props
-  const {
-    emailAddress,
-    password,
-    phoneNumber,
-  } = userObject
+  const { dispatch } = this.props
+  const { emailAddress, password, phoneNumber } = userObject
 
   const validationArray = [
     emailAddressValidator({ emailAddress, dispatch }),
     passwordValidator({ password, dispatch }),
-    phoneNumberValidator({ phoneNumber, dispatch}),
+    phoneNumberValidator({ phoneNumber, dispatch }),
     termsAndPrivacyConsentValidator.call(this, userObject.termsAndPrivacyConsent),
   ]
 
   if (userObject.accountType === 'business') {
-    validationArray.concat([businessNameValidator({ dispatch, value: userObject.businessName})])
+    validationArray.concat([businessNameValidator({ dispatch, value: userObject.businessName })])
   }
 
   return validationArray.every(element => element)

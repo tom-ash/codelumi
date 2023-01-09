@@ -24,10 +24,11 @@ export const EmailAddressInput = (props: EmailAddressInputProps) => {
   const placeholder = langHandler({ pl: 'Podaj adres email', en: 'Provide email address' })
   // @ts-ignore
   const error = langHandler(emailAddressError)
-  const onFocus = () => dispatch({
-    type: 'user/create/errors',
-    value: { emailAddress: EMPTY_LANG_OBJECT }
-  })
+  const onFocus = () =>
+    dispatch({
+      type: 'user/create/errors',
+      value: { emailAddress: EMPTY_LANG_OBJECT },
+    })
   const onBlur = (emailAddress: string) => {
     emailAddressValidator({ emailAddress, dispatch })
   }

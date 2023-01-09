@@ -10,12 +10,7 @@ const Definition = (props: DefinitionProps) => {
   const { term, definition } = props
   const __html = `<dfn>${term}</dfn> ${enrichText(definition)}`
 
-  return (
-    <p
-      className='definition'
-      dangerouslySetInnerHTML={{ __html }}
-    />
-  )
+  return <p className='definition' dangerouslySetInnerHTML={{ __html }} />
 }
 
 export default Definition
