@@ -1,7 +1,7 @@
 import { hashPassword } from '../../../../../../../functions/shared'
-import { parser as consentsParser } from '../../../../consents/functions/parser'
+// import { parser as consentsParser } from '../../../../consents/functions/parser'
 import { businessNameValidator } from '../../inputs/components/business-name/business-name.validator'
-import termsAndPrivacyConsentValidator from '../../../../consents/functions/validators'
+// import termsAndPrivacyConsentValidator from '../../../../consents/functions/validators'
 import { emailAddressValidator } from '../../inputs/components/email-address/email-address.validator'
 import { passwordValidator } from '../../inputs/components/password/password.validator'
 import { phoneNumberValidator } from '../../inputs/components/phone-number/phone-number.validator'
@@ -12,7 +12,7 @@ export function buildUserObject() {
   if (validateUserObject.call(this, userObject)) {
     dispatch({ type: 'user/create/control', value: { connecting: true } })
     userObject.password = hashPassword(userObject.password, userObject.emailAddress)
-    consentsParser.call(this, userObject)
+    // consentsParser.call(this, userObject)
     return userObject
   }
 }
@@ -45,7 +45,7 @@ function validateUserObject(userObject) {
     emailAddressValidator({ emailAddress, dispatch }),
     passwordValidator({ password, dispatch }),
     phoneNumberValidator({ phoneNumber, dispatch }),
-    termsAndPrivacyConsentValidator.call(this, userObject.termsAndPrivacyConsent),
+    // termsAndPrivacyConsentValidator.call(this, userObject.termsAndPrivacyConsent),
   ]
 
   if (userObject.accountType === 'business') {

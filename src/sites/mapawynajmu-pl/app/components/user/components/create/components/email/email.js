@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Inputs from './components/inputs/inputs'
-import Consents from '../consents/consents'
 import Submit from './components/submit/submit'
 import Verification from './components/verify/verify'
 import * as mappers from './constants/mappers'
@@ -27,7 +26,6 @@ class UserCreateEmail extends React.Component {
             {!renderAnnouncementCreate && <Line />}
             <form>
               <Inputs renderAnnouncementCreate={renderAnnouncementCreate} langHandler={this.langHandler} />
-              <Consents />
               {!renderAnnouncementCreate && <Line />}
               {!renderAnnouncementCreate && <Submit />}
             </form>

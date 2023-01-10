@@ -17,6 +17,8 @@ class UserCreate extends React.Component {
   render() {
     const { step, renderAnnouncementCreate } = this.props
 
+    console.log(this.props)
+
     if (renderAnnouncementCreate) return <UserCreateEmail />
 
     return (
