@@ -1,7 +1,4 @@
 import React from 'react'
-import { ManagedCheckbox } from 'managed-inputs'
-import { Dispatch } from 'redux'
-import { termsAndServiceConsentValidator } from './terms-and-privacy-consent.validator'
 
 interface TermsAndPrivacyConsentLabelProps {
   langHandler: LangHandler

@@ -15,8 +15,6 @@ export function publish() {
   const announcement = buildAnouncement.call(this)
   const user = authorized ? {} : buildUserObject.call(this)
 
-  console.log(user)
-
   if (!Object.values(announcementObject).every(element => element)) {
     for (let i = 0; i < requiredInputsArray.length; i++) {
       if (!announcementObject[requiredInputsArray[i]]) {

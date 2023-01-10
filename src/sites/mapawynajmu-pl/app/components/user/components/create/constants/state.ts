@@ -24,6 +24,6 @@ export const errors = {
   emailAddress: noError,
   password: noError,
   phoneNumber: noError,
-  termsAndPrivacyConsent: false,
+  termsAndPrivacyConsent: noError,
   verification: noError,
 }

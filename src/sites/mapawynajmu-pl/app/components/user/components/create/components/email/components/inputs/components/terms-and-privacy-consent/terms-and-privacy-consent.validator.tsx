@@ -1,4 +1,5 @@
 import { Dispatch } from 'redux'
+import { EMPTY_LANG_OBJECT } from '../../../../../../../../../../constants/lang-objects/empty';
 
 const TERMS_AND_SERVICE_CONSENT_ERROR = {
   pl: 'Akceptacja Regulaminu i Polityki Prywatności jest wymagana.',
@@ -17,5 +18,6 @@ export const termsAndServiceConsentValidator: TermsAndServiceConsentValidator = 
     return false
   }
 
+  dispatch({ type: 'user/create/errors', value: { termsAndPrivacyConsent: EMPTY_LANG_OBJECT } })
   return true
 }
