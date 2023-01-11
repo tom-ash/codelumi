@@ -19,6 +19,7 @@ export function buttonManager() {
     ),
     onClick: () => {
       const userObject = buildUserObject.call(this)
+
       if (!userObject) return
 
       createUser.call(this, userObject)

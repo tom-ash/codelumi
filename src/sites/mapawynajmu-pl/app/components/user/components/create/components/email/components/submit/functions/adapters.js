@@ -1,26 +1,30 @@
 import { hashPassword } from '../../../../../../../functions/shared'
-// import { parser as consentsParser } from '../../../../consents/functions/parser'
+import { termsAndPrivacyConsentParser } from '../../inputs/components/terms-and-privacy-consent/terms-and-privacy-consent.parser'
+import { TERMS_AND_SERVICE_CONSENT_TEXT } from '../../inputs/components/terms-and-privacy-consent/terms-and-privacy-consent.text'
 import { businessNameValidator } from '../../inputs/components/business-name/business-name.validator'
-// import termsAndPrivacyConsentValidator from '../../../../consents/functions/validators'
 import { emailAddressValidator } from '../../inputs/components/email-address/email-address.validator'
 import { passwordValidator } from '../../inputs/components/password/password.validator'
 import { phoneNumberValidator } from '../../inputs/components/phone-number/phone-number.validator'
+import { termsAndServiceConsentValidator } from '../../inputs/components/terms-and-privacy-consent/terms-and-privacy-consent.validator'
 
 export function buildUserObject() {
   const { dispatch } = this.props
   const userObject = prepareUserObject.call(this)
+
   if (validateUserObject.call(this, userObject)) {
     dispatch({ type: 'user/create/control', value: { connecting: true } })
     userObject.password = hashPassword(userObject.password, userObject.emailAddress)
-    // consentsParser.call(this, userObject)
+    const termsAndPrivacyConsentText = this.langHandler(TERMS_AND_SERVICE_CONSENT_TEXT)
+    userObject.consents = [
+      termsAndPrivacyConsentParser(termsAndPrivacyConsentText)
+    ]
     return userObject
   }
 }
 
 function prepareUserObject() {
-  const { accountType, businessName, emailAddress, password, countryCode, phoneNumber } = this.props
+  const { accountType, businessName, emailAddress, password, countryCode, phoneNumber, termsAndPrivacyConsent } = this.props
 
-  const termsAndPrivacyConsent = document.getElementById('user-create-consents-terms-and-privacy').checked
   let userObject = {
     accountType,
     emailAddress,
@@ -39,13 +43,13 @@ function prepareUserObject() {
 
 function validateUserObject(userObject) {
   const { dispatch } = this.props
-  const { emailAddress, password, phoneNumber } = userObject
+  const { emailAddress, password, phoneNumber, termsAndPrivacyConsent } = userObject
 
   const validationArray = [
     emailAddressValidator({ emailAddress, dispatch }),
     passwordValidator({ password, dispatch }),
     phoneNumberValidator({ phoneNumber, dispatch }),
-    // termsAndPrivacyConsentValidator.call(this, userObject.termsAndPrivacyConsent),
+    termsAndServiceConsentValidator({ termsAndPrivacyConsent, dispatch }),
   ]
 
   if (userObject.accountType === 'business') {
