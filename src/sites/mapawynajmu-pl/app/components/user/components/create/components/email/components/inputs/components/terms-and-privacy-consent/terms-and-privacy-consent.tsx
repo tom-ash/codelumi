@@ -30,7 +30,7 @@ export const TermsAndPrivacyConsent = (props: TermsAndPrivacyConsentProps) => {
   const termsAndPrivacyConsentLocalizedError = langHandler(termsAndPrivacyConsentError)
 
   return (
-    <div id='user-create-consents-container'>
+    <div className='terms-and-privacy-consent'>
       <TermsAndPrivacyConsentCheckbox {...termsAndPrivacyConsentCheckboxProps}/>
       {termsAndPrivacyConsentLocalizedError && (
         <div className='error'>{termsAndPrivacyConsentLocalizedError}</div>

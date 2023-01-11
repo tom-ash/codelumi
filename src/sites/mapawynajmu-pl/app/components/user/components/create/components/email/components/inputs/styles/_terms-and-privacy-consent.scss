@@ -1,0 +1,29 @@
+%terms-and-privacy-consent {
+  width: 100%;
+  padding-bottom: 18px;
+  .checkbox.form-input {
+    margin-bottom: 0;
+    .input {
+      transform: scale(0.8);
+    }
+    .label {
+      top: 0.5px;
+      left: 8px;
+      font-size: 14px;
+    }
+  }
+  .error {
+    margin: 6px 0 0 0;
+    color: red;
+    line-height: 16px;
+    font-size: 10px;
+  }
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: #2a6098;
+    &:hover {
+      color: #5d6d7e;
+    }
+  }
+}

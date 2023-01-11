@@ -22,6 +22,7 @@
 @import '../../../../../styles/inputs/radio';
 @import '../../../../../styles/headings/h1';
 @import '../../../../user/components/create/components/email/components/inputs/styles/country-code-phone-number-container';
+@import '../../../../user/components/create/components/email/components/inputs/styles/terms-and-privacy-consent';
 
 #listing-create {
   margin-bottom: 32px;
@@ -40,7 +41,8 @@
     }
   }
 
-  #user-create-consents-container {
+  .terms-and-privacy-consent {
+    @extend %terms-and-privacy-consent;
     margin-left: 0;
     padding-left: 0;
   }
