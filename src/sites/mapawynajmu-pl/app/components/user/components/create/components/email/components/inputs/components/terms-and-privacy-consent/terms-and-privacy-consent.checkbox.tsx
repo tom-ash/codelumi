@@ -13,12 +13,7 @@ interface TermsAndPrivacyConsentCheckboxProps {
 }
 
 export const TermsAndPrivacyConsentCheckbox = (props: TermsAndPrivacyConsentCheckboxProps) => {
-  const {
-    termsAndPrivacyConsent,
-    links,
-    langHandler,
-    dispatch
-  } = props
+  const { termsAndPrivacyConsent, links, langHandler, dispatch } = props
 
   const termsAndPrivacyConsentLabelProps = {
     links,
@@ -38,7 +33,7 @@ export const TermsAndPrivacyConsentCheckbox = (props: TermsAndPrivacyConsentChec
     classNames,
     checked,
     label,
-    onClick
+    onClick,
   }
 
   return <ManagedCheckbox {...termsAndPrivacyConsentCheckboxProps} />

@@ -6,7 +6,7 @@ import getAccessToken from '../../../../../../auth/components/tokens/functions/g
 
 export const CellContext = React.createContext(
   {} as {
-    closeCell(): void,
+    closeCell(): void
     getAccessToken(): string | null
   }
 )

@@ -1,7 +1,8 @@
 import API_URL from '../../../../../../../../../../shared/constants/urls/api'
 import { Dispatch } from 'redux'
-import { CellContext } from '../../common/cell/cell'
-import { useContext } from 'react'
+import { genericAttributeValidator } from './generic-attribute.validator'
+// import { CellContext } from '../../common/cell/cell'
+// import { useContext } from 'react'
 
 const UPDATE_GENERIC_ATTRIBUTE_URL = `${API_URL}/user/update/generic-attr`
 
@@ -10,6 +11,8 @@ export interface GenericAttributeUpdater {
     connecting: boolean
     attrName: string
     value: string
+    match?: RegExp
+    errorToSet: LangObject | string
     getAccessToken(): string | null
     setConnecting(newConnecting: boolean): void
     dispatch: Dispatch
@@ -18,7 +21,19 @@ export interface GenericAttributeUpdater {
 }
 
 export const genericAttributeUpdater: GenericAttributeUpdater = props => {
-  const { connecting, attrName, value, setConnecting, dispatch, closeCell, getAccessToken } = props
+  const { connecting, attrName, value, match, errorToSet, setConnecting, dispatch, closeCell, getAccessToken } = props
+
+  if (
+    match &&
+    !genericAttributeValidator({
+      value,
+      match,
+      errorToSet,
+      dispatch,
+    })
+  ) {
+    return
+  }
 
   if (connecting) return
 
@@ -42,7 +57,7 @@ export const genericAttributeUpdater: GenericAttributeUpdater = props => {
     if (response.ok) {
       dispatch({ type: 'user/edit/data', value: { [attrName]: value } })
       setConnecting(false)
-        closeCell()
+      closeCell()
     } else {
       throw new Error('ServerError')
     }

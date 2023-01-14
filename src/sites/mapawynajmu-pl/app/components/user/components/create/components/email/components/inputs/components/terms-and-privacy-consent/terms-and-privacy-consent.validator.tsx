@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux'
-import { EMPTY_LANG_OBJECT } from '../../../../../../../../../../constants/lang-objects/empty';
+import { EMPTY_LANG_OBJECT } from '../../../../../../../../../../constants/lang-objects/empty'
 
 const TERMS_AND_SERVICE_CONSENT_ERROR = {
   pl: 'Akceptacja Regulaminu i Polityki Prywatności jest wymagana.',

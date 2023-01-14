@@ -16,7 +16,8 @@ export const mapStateToProps = store => {
     // showEnglishDescription,
   } = control
   const { announcement, user } = data
-  const { accountType, emailAddress, password, countryCode, phoneNumber, termsAndPrivacyConsent } = store.user.create.inputs
+  const { accountType, emailAddress, password, countryCode, phoneNumber, termsAndPrivacyConsent } =
+    store.user.create.inputs
 
   const {
     category,

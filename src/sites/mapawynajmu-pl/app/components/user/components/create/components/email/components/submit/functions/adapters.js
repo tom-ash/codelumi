@@ -15,15 +15,14 @@ export function buildUserObject() {
     dispatch({ type: 'user/create/control', value: { connecting: true } })
     userObject.password = hashPassword(userObject.password, userObject.emailAddress)
     const termsAndPrivacyConsentText = this.langHandler(TERMS_AND_SERVICE_CONSENT_TEXT)
-    userObject.consents = [
-      termsAndPrivacyConsentParser(termsAndPrivacyConsentText)
-    ]
+    userObject.consents = [termsAndPrivacyConsentParser(termsAndPrivacyConsentText)]
     return userObject
   }
 }
 
 function prepareUserObject() {
-  const { accountType, businessName, emailAddress, password, countryCode, phoneNumber, termsAndPrivacyConsent } = this.props
+  const { accountType, businessName, emailAddress, password, countryCode, phoneNumber, termsAndPrivacyConsent } =
+    this.props
 
   let userObject = {
     accountType,

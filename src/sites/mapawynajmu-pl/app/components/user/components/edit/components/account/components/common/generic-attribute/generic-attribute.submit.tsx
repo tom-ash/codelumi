@@ -11,12 +11,15 @@ interface GenericAttributeSubmitProps {
   connecting: boolean
   attrName: string
   value: string
-  setConnecting(newConnecting: boolean): void
+  match?: RegExp
+  error: string
+  errorToSet: LangObject | string
+  setConnecting(connecting: boolean): void
   dispatch: Dispatch
 }
 
 export const GenericAttributeSubmit = (props: GenericAttributeSubmitProps) => {
-  const { label, connecting, attrName, value, setConnecting, dispatch,  } = props
+  const { label, connecting, attrName, value, match, errorToSet, setConnecting, dispatch } = props
 
   const { closeCell, getAccessToken } = useContext(CellContext)
 
@@ -28,15 +31,18 @@ export const GenericAttributeSubmit = (props: GenericAttributeSubmitProps) => {
   const buttonProps = {
     classNames: { container: 'submit-button' },
     label: <ButtonSpinner {...buttonSpinnerProps} />,
-    onClick: () => genericAttributeUpdater({
-      connecting,
-      attrName,
-      value,
-      setConnecting,
-      dispatch,
-      closeCell,
-      getAccessToken,
-    })
+    onClick: () =>
+      genericAttributeUpdater({
+        connecting,
+        attrName,
+        value,
+        match,
+        errorToSet,
+        setConnecting,
+        dispatch,
+        closeCell,
+        getAccessToken,
+      }),
   }
 
   return <ManagedButton {...buttonProps} />

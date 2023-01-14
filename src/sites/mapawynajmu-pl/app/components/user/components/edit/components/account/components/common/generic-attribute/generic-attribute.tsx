@@ -10,12 +10,14 @@ interface GenericAttributeProps {
   label: string
   currentValue: string
   error: string
+  errorToSet: string | LangObject
   submitLabel: string
+  match?: RegExp
   dispatch: Dispatch
 }
 
 export const GenericAttribute = (props: GenericAttributeProps) => {
-  const { attrName, currentValue, title, label, error, submitLabel, dispatch } = props
+  const { attrName, currentValue, title, label, error, errorToSet, submitLabel, match, dispatch } = props
   const [value, setValue] = useState('')
   const [connecting, setConnecting] = useState(false)
 
@@ -33,15 +35,15 @@ export const GenericAttribute = (props: GenericAttributeProps) => {
     connecting,
     attrName,
     value,
+    match,
+    error,
+    errorToSet,
     setConnecting,
     dispatch,
   }
 
   return (
-    <Cell
-      title={title}
-      value={currentValue}
-    >
+    <Cell title={title} value={currentValue}>
       <GenericAttributeInput {...genericAttributeInputProps} />
       <GenericAttributeSubmit {...genericAttributeSubmitProps} />
     </Cell>

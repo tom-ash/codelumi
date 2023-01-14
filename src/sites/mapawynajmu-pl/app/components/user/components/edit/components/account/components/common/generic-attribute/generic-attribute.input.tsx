@@ -19,6 +19,9 @@ export const GenericAttributeInput = (props: GenericAttributeInputProps) => {
     onChange: (changedValue: string) => {
       setValue(changedValue)
     },
+    onEnter: () => {
+      console.log('TODO')
+    },
     // onBlur: () => validatePassword({ password, setPasswordError }),
   }
 

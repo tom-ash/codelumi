@@ -22,18 +22,15 @@ class UserEditAccount extends React.Component {
 
   render() {
     // @ts-ignore
-    const { businessName, dispatch, accountType } = this.props
+    const { businessName, dispatch, accountType, businessNameError } = this.props
     // @ts-ignore
     const headerText = this.langHandler(HEADER_TEXT)
-
-    // const BusinessName = GenericAttribute
-
-    // const isPersonalUser = accountType === UserTypes.PRIVATE
     const isBusinessUser = accountType === UserTypes.BUSINESS
 
     const businessNameProps = {
       currentValue: businessName,
       dispatch,
+      error: businessNameError,
     }
 
     return (

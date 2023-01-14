@@ -11,13 +11,7 @@ interface TermsAndPrivacyConsentProps {
 }
 
 export const TermsAndPrivacyConsent = (props: TermsAndPrivacyConsentProps) => {
-  const {
-    termsAndPrivacyConsent,
-    termsAndPrivacyConsentError,
-    links,
-    langHandler,
-    dispatch,
-  } = props
+  const { termsAndPrivacyConsent, termsAndPrivacyConsentError, links, langHandler, dispatch } = props
 
   const termsAndPrivacyConsentCheckboxProps = {
     termsAndPrivacyConsent,
@@ -31,10 +25,8 @@ export const TermsAndPrivacyConsent = (props: TermsAndPrivacyConsentProps) => {
 
   return (
     <div className='terms-and-privacy-consent'>
-      <TermsAndPrivacyConsentCheckbox {...termsAndPrivacyConsentCheckboxProps}/>
-      {termsAndPrivacyConsentLocalizedError && (
-        <div className='error'>{termsAndPrivacyConsentLocalizedError}</div>
-      )}
+      <TermsAndPrivacyConsentCheckbox {...termsAndPrivacyConsentCheckboxProps} />
+      {termsAndPrivacyConsentLocalizedError && <div className='error'>{termsAndPrivacyConsentLocalizedError}</div>}
     </div>
   )
 }

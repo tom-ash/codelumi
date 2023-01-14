@@ -2,12 +2,14 @@ export const mapStateToProps = store => {
   const { lang } = store.app
   const { name, accountType } = store.user.authorize.data
   const { businessName } = store.user.edit.data
+  const { businessName: businessNameError } = store.user.edit.errors
 
   return {
     lang,
     name,
     accountType,
     businessName,
+    businessNameError,
   }
 }
 
