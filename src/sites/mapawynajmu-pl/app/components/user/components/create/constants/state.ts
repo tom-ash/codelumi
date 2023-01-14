@@ -10,7 +10,7 @@ export const control = {
 }
 
 export const inputs = {
-  accountType: 'personal',
+  accountType: 'private',
   businessName: '',
   emailAddress: '',
   password: '',

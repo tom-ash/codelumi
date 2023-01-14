@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Dispatch } from 'redux'
 import { UserEditCell as Cell } from '../cell/cell'
 import { GenericAttributeInput } from './generic-attribute.input'
@@ -26,14 +26,6 @@ export const GenericAttribute = (props: GenericAttributeProps) => {
     setValue,
     label,
     error,
-  }
-
-  const genericAttributeUpdaterProps = {
-    connecting,
-    attrName,
-    value,
-    setConnecting,
-    dispatch,
   }
 
   const genericAttributeSubmitProps = {

@@ -10,6 +10,7 @@ import { HEADER_TEXT } from './constants/texts'
 import { Line } from '../../../../../support/components/line/line'
 import { UserEditPassword as Password } from './components/password/password'
 import { GenericAttribute } from './components/common/generic-attribute/generic-attribute'
+import { UserTypes } from '../../../../types/user.types'
 
 class UserEditAccount extends React.Component {
   // @ts-ignore
@@ -21,11 +22,16 @@ class UserEditAccount extends React.Component {
 
   render() {
     // @ts-ignore
-    const { businessName, dispatch } = this.props
+    const { businessName, dispatch, accountType } = this.props
     // @ts-ignore
     const headerText = this.langHandler(HEADER_TEXT)
 
     const BusinessName = GenericAttribute
+
+    console.log(accountType)
+
+    // const isPersonalUser = accountType === UserTypes.PRIVATE
+    const isBusinessUser = accountType === UserTypes.BUSINESS
 
     const businessNameProps = {
       attrName: 'businessName',
@@ -43,8 +49,12 @@ class UserEditAccount extends React.Component {
           {/*  @ts-ignore */}
           <Heading tier={1} text={headerText} />
           <Line />
-          <BusinessName {...businessNameProps} />
-          <Line />
+          {isBusinessUser && (
+            <>
+              <BusinessName {...businessNameProps} />
+              <Line />
+            </>
+          )}
           <div className='country-code-phone-number-container'>
             <UserEditAccountCellDeprecated item='phone' />
           </div>

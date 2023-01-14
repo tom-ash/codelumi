@@ -16,7 +16,7 @@ export const UserTypeRadio = (props: UserTypeRadioProps) => {
   const checked = accountType
   const radios = [
     // @ts-ignore
-    { value: 'personal', label: langHandler({ pl: 'Konto Osobiste', en: 'Personal Account' }) },
+    { value: 'private', label: langHandler({ pl: 'Konto Osobiste', en: 'Personal Account' }) },
     // @ts-ignore
     { value: 'business', label: langHandler({ pl: 'Konto Firmowe', en: 'Business Account' }) },
   ]
