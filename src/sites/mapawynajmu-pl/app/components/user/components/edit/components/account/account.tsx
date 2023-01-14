@@ -9,8 +9,8 @@ import { Heading } from '../../../../../support/components/heading'
 import { HEADER_TEXT } from './constants/texts'
 import { Line } from '../../../../../support/components/line/line'
 import { UserEditPassword as Password } from './components/password/password'
-import { GenericAttribute } from './components/common/generic-attribute/generic-attribute'
 import { UserTypes } from '../../../../types/user.types'
+import { BusinessName } from './business-name/business-name'
 
 class UserEditAccount extends React.Component {
   // @ts-ignore
@@ -26,20 +26,13 @@ class UserEditAccount extends React.Component {
     // @ts-ignore
     const headerText = this.langHandler(HEADER_TEXT)
 
-    const BusinessName = GenericAttribute
-
-    console.log(accountType)
+    // const BusinessName = GenericAttribute
 
     // const isPersonalUser = accountType === UserTypes.PRIVATE
     const isBusinessUser = accountType === UserTypes.BUSINESS
 
     const businessNameProps = {
-      attrName: 'businessName',
-      title: 'Nazwa firmy',
-      label: 'Nowa nazwa firmy',
       currentValue: businessName,
-      error: '',
-      submitLabel: 'Zmień',
       dispatch,
     }
 
