@@ -25,6 +25,7 @@ export const GenericAttribute = (props: GenericAttributeProps) => {
   useEffect(() => setValue(currentValue), [])
 
   const genericAttributeInputProps = {
+    connecting,
     attrName,
     value,
     label,
@@ -34,6 +35,7 @@ export const GenericAttribute = (props: GenericAttributeProps) => {
     emptyErrorToSet,
     setValue,
     dispatch,
+    setConnecting,
   }
 
   const genericAttributeSubmitProps = {
