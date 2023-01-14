@@ -1,26 +1,43 @@
-// import React, { useContext } from 'react'
-// import { ManagedButton } from 'managed-inputs'
-// import { ButtonSpinner } from '../../../../../../../../../../support/components/button-spinner/button-spinner'
+import React from 'react'
+import { ManagedButton } from 'managed-inputs'
+import { ButtonSpinner } from '../../../../../../../../support/components/button-spinner/button-spinner'
+import { CellContext } from '../../common/cell/cell'
+import { useContext } from 'react'
+import { genericAttributeUpdater } from './generic-attribute.updater'
+import { Dispatch } from 'redux'
 
-// interface SubmitButtonProps {
-//   connecting: boolean
-//   label: string
-//   onClick(): void
-// }
+interface GenericAttributeSubmitProps {
+  label: string
+  connecting: boolean
+  attrName: string
+  value: string
+  setConnecting(newConnecting: boolean): void
+  dispatch: Dispatch
+}
 
-// export const SubmitButton = (props: SubmitButtonProps) => {
-//   const { connecting, label, onClick } = props
+export const GenericAttributeSubmit = (props: GenericAttributeSubmitProps) => {
+  const { label, connecting, attrName, value, setConnecting, dispatch,  } = props
 
-//   const buttonSpinnerProps = {
-//     connecting,
-//     label,
-//   }
+  const { closeCell, getAccessToken } = useContext(CellContext)
 
-//   const buttonProps = {
-//     classNames: { container: 'submit-button' },
-//     label: <ButtonSpinner {...buttonSpinnerProps} />,
-//     onClick,
-//   }
+  const buttonSpinnerProps = {
+    label,
+    connecting,
+  }
 
-//   return <ManagedButton {...buttonProps} />
-// }
+  const buttonProps = {
+    classNames: { container: 'submit-button' },
+    label: <ButtonSpinner {...buttonSpinnerProps} />,
+    onClick: () => genericAttributeUpdater({
+      connecting,
+      attrName,
+      value,
+      setConnecting,
+      dispatch,
+      closeCell,
+      getAccessToken,
+    })
+  }
+
+  return <ManagedButton {...buttonProps} />
+}

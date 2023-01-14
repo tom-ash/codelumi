@@ -1,15 +1,15 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { ManagedText } from 'managed-inputs'
 
 interface GenericAttributeInputProps {
-  value: string
-  setValue: React.Dispatch<React.SetStateAction<string>>
   label: string
+  value: string
   error: string
+  setValue: React.Dispatch<React.SetStateAction<string>>
 }
 
 export const GenericAttributeInput = (props: GenericAttributeInputProps) => {
-  const { value, setValue, label, error } = props
+  const { label, value, error, setValue } = props
 
   const inputProps = {
     classNames: { container: 'text-input' },
@@ -18,7 +18,6 @@ export const GenericAttributeInput = (props: GenericAttributeInputProps) => {
     error,
     onChange: (changedValue: string) => {
       setValue(changedValue)
-      // setPasswordError(EMPTY_LANG_OBJECT)
     },
     // onBlur: () => validatePassword({ password, setPasswordError }),
   }

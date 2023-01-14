@@ -2,10 +2,12 @@ import React, { useState, useContext } from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import AppContext from '../../../../../../../../../constants/context'
+import getAccessToken from '../../../../../../auth/components/tokens/functions/get-tokens'
 
 export const CellContext = React.createContext(
   {} as {
-    closeCell(): void
+    closeCell(): void,
+    getAccessToken(): string | null
   }
 )
 
@@ -17,7 +19,7 @@ export enum TriggerStates {
 interface UserEditCellProps {
   title: string
   value: string | React.ReactElement
-  children: React.ReactElement
+  children: React.ReactElement | React.ReactElement[]
 }
 
 interface TriggerProps {
@@ -60,7 +62,10 @@ export const UserEditCell = (props: UserEditCellProps) => {
 
   const cellContext = {
     closeCell: () => changeTrigger(TriggerStates.CLOSED),
+    getAccessToken,
   }
+
+  // console.log(cellContext)
 
   return (
     <div className='cell'>

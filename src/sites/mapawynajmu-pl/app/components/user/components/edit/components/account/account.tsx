@@ -21,19 +21,20 @@ class UserEditAccount extends React.Component {
 
   render() {
     // @ts-ignore
-    const { businessName } = this.props
+    const { businessName, dispatch } = this.props
     // @ts-ignore
     const headerText = this.langHandler(HEADER_TEXT)
 
     const BusinessName = GenericAttribute
 
-    console.log(businessName)
-
     const businessNameProps = {
+      attrName: 'businessName',
       title: 'Nazwa firmy',
       label: 'Nowa nazwa firmy',
       currentValue: businessName,
       error: '',
+      submitLabel: 'Zmień',
+      dispatch,
     }
 
     return (
