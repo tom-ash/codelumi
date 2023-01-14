@@ -1,11 +1,8 @@
 import React from 'react'
-import UserEditAttribute from '../../attribute/attribute'
-import UserEditAccountTaxNumber from '../../tax-number/tax-number'
 import UserEditAccountPhoneNumber from '../../phone-number/phone-number'
 import UserEditAccountEmail from '../../email-address/email-address'
 import UserEditAccountPassword from '../../password-reset/password-reset'
 import UserDestroy from '../../../../../../destroy/destroy'
-import { inputs } from '../../../../../../../constants/inputs'
 import SVG from '../../../../../../../../support/components/svg/svg'
 
 export function centralManager(element) {
@@ -172,83 +169,7 @@ function inputClassProvider() {
 function editInputProvider() {
   let component
 
-  const {
-    changeData,
-    changeErrors,
-    changeControl,
-    lang,
-    firstNameConnecting,
-    lastNameConnecting,
-    businessNameConnecting,
-    firstNameCurrentValue,
-    lastNameCurrentValue,
-    businessNameCurrentValue,
-    firstNameError,
-    lastNameError,
-    businessNameError,
-  } = this.props
-
   switch (this.state.item) {
-    case 'firstName':
-      component = (
-        <UserEditAttribute
-          lang={lang}
-          inputName='firstName'
-          id='user-edit-account-first-name-text'
-          api_suffix={'first_name'}
-          label={this.langHandler({ pl: 'Imię', en: 'First Name' })}
-          icon={inputs.firstName.icon}
-          currentValue={firstNameCurrentValue}
-          connecting={firstNameConnecting}
-          errorText={{ pl: 'Imię nie może być puste.', en: "First Name can't be blank." }}
-          error={firstNameError}
-          changeErrors={changeErrors}
-          changeControl={changeControl}
-          changeData={changeData}
-        />
-      )
-      break
-    case 'lastName':
-      component = (
-        <UserEditAttribute
-          lang={lang}
-          inputName='lastName'
-          id='user-edit-account-last-name-text'
-          api_suffix={'last_name'}
-          label={this.langHandler({ pl: 'Nazwisko', en: 'Last Name' })}
-          icon={inputs.lastName.icon}
-          currentValue={lastNameCurrentValue}
-          connecting={lastNameConnecting}
-          errorText={{ pl: 'Nazwisko nie może być puste.', en: "Last Name can't be blank." }}
-          error={lastNameError}
-          changeErrors={changeErrors}
-          changeControl={changeControl}
-          changeData={changeData}
-        />
-      )
-      break
-    case 'businessName':
-      component = (
-        <UserEditAttribute
-          lang={lang}
-          inputName='businessName'
-          id='user-edit-account-business-name-text'
-          api_suffix={'business_name'}
-          label={this.langHandler({ pl: 'Nazwa przedsiębiorcy', en: 'Business Name' })}
-          icon={inputs.businessName.icon}
-          currentValue={businessNameCurrentValue}
-          connecting={businessNameConnecting}
-          errorText={{ pl: 'Nazwa przedsiębiorcy nie może być puste.', en: "Business Name can't be blank." }}
-          error={businessNameError}
-          changeErrors={changeErrors}
-          changeControl={changeControl}
-          changeData={changeData}
-        />
-      )
-      break
-    case 'taxNumber':
-      component = <UserEditAccountTaxNumber />
-      break
     case 'phone':
       component = <UserEditAccountPhoneNumber />
       break
