@@ -10,24 +10,30 @@ interface GenericAttributeProps {
   label: string
   currentValue: string
   error: string
-  errorToSet: string | LangObject
+  errorToSet: LangObject
+  emptyErrorToSet: LangObject
   submitLabel: string
   match?: RegExp
   dispatch: Dispatch
 }
 
 export const GenericAttribute = (props: GenericAttributeProps) => {
-  const { attrName, currentValue, title, label, error, errorToSet, submitLabel, match, dispatch } = props
+  const { attrName, currentValue, title, label, error, errorToSet, emptyErrorToSet, submitLabel, match, dispatch } = props
   const [value, setValue] = useState('')
   const [connecting, setConnecting] = useState(false)
 
   useEffect(() => setValue(currentValue), [])
 
   const genericAttributeInputProps = {
+    attrName,
     value,
-    setValue,
     label,
+    match,
     error,
+    errorToSet,
+    emptyErrorToSet,
+    setValue,
+    dispatch,
   }
 
   const genericAttributeSubmitProps = {

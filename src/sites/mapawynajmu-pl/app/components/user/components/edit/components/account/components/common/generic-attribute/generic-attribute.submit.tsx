@@ -13,7 +13,7 @@ interface GenericAttributeSubmitProps {
   value: string
   match?: RegExp
   error: string
-  errorToSet: LangObject | string
+  errorToSet: LangObject
   setConnecting(connecting: boolean): void
   dispatch: Dispatch
 }

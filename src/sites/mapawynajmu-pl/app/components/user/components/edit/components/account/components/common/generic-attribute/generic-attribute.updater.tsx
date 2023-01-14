@@ -12,11 +12,11 @@ export interface GenericAttributeUpdater {
     attrName: string
     value: string
     match?: RegExp
-    errorToSet: LangObject | string
+    errorToSet: LangObject
     getAccessToken(): string | null
     setConnecting(newConnecting: boolean): void
     dispatch: Dispatch
-    closeCell(): void // TODO
+    closeCell(): void
   }): void
 }
 

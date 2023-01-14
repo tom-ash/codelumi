@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Dispatch } from 'redux'
 import { GenericAttribute } from '../components/common/generic-attribute/generic-attribute'
 import AppContext from '../../../../../../../constants/context'
+import { EMPTY_LANG_OBJECT } from '../../../../../../../constants/lang-objects/empty'
 
 const TITLE_LANG_OBJECT = {
   pl: 'Nazwa firmy',
@@ -40,6 +41,7 @@ export const BusinessName = (props: GenericAttributeProps) => {
     currentValue,
     error: langHandler(error),
     errorToSet: BUSINESS_NAME_ERROR_LANG_OBJECT,
+    emptyErrorToSet: EMPTY_LANG_OBJECT,
     match: /^.+$/,
     submitLabel: langHandler(SUBMIT_LABEL_LANG_OBJECT),
     dispatch,
