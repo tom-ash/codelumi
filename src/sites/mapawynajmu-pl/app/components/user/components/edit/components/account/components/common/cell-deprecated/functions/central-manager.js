@@ -1,9 +1,9 @@
 import React from 'react'
-import UserEditAccountPhoneNumber from '../../phone-number/phone-number'
-import UserEditAccountEmail from '../../email-address/email-address'
-import UserEditAccountPassword from '../../password-reset/password-reset'
-import UserDestroy from '../../../../../../destroy/destroy'
-import SVG from '../../../../../../../../support/components/svg/svg'
+import UserEditAccountPhoneNumber from '../../../phone-number/phone-number'
+import UserEditAccountEmail from '../../../email-address/email-address'
+import UserEditAccountPassword from '../../../password-reset/password-reset'
+import UserDestroy from '../../../../../../../destroy/destroy'
+import SVG from '../../../../../../../../../support/components/svg/svg'
 
 export function centralManager(element) {
   switch (element) {

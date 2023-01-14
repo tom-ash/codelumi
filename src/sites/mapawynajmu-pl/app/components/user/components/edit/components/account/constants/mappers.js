@@ -1,11 +1,13 @@
 export const mapStateToProps = store => {
   const { lang } = store.app
   const { name, accountType } = store.user.authorize.data
+  const { businessName } = store.user.edit.data
 
   return {
     lang,
     name,
     accountType,
+    businessName,
   }
 }
 

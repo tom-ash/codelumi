@@ -2,10 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { centralManager } from './functions/central-manager'
-import { initialReducerState } from '../../constants/initial-reducer-state'
+import { initialReducerState } from '../../../constants/initial-reducer-state'
 import * as lifecycle from './functions/lifecycle'
-import { langHandler } from '../../../../../../../../functions/lang-handler'
-import SVG from '../../../../../../../support/components/svg/svg'
+import { langHandler } from '../../../../../../../../../functions/lang-handler'
 
 class UserEditAccountCellDeprecated extends React.Component {
   constructor(props) {
