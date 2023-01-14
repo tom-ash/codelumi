@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { UserEditCell as Cell } from '../cell/cell'
+import { UserEditCell as Cell } from '../common/cell/cell'
 import SVG from '../../../../../../../support/components/svg/svg'
 import AppContext from '../../../../../../../../constants/context'
 import { Inputs } from './components/inputs/inputs'

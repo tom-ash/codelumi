@@ -14,7 +14,7 @@ import { PasswordInput } from './components/password-input'
 import { validatePassword } from '../../../../../../../../common/validators/validate-password'
 import { EMPTY_STRING } from '../../../../../../../../../../common/empty_string'
 import { updatePassword } from './connectors/update-password'
-import { CellContext } from '../../../cell/cell'
+import { CellContext } from '../../../common/cell/cell'
 
 export enum InputsSteps {
   VERIFICATION_CODE_REQUEST = 'verification-code-request',
