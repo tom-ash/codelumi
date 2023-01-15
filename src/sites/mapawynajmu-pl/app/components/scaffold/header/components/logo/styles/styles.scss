@@ -1,39 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap');
 
+$HOUSE_COLOR: #d6ebf5;
+$PIN_COLOR: white;
+
 #logo {
   position: relative;
   float: left;
-  height: 28px;
-  margin-top: 22px;
+  margin-top: 12px;
   margin-left: 18px;
-  .pin {
+  .tile {
     position: relative;
-    width: 14px;
-    height: 14px;
-    border: 2px solid #21618c;
-    border-radius: 100% 100% 0 100%;
-    transform: rotate(45deg);
-    &::before {
+    width: 36px;
+    height: 36px;
+    border-radius: 10%;
+    background: #2874A6;
+    .house {
+      position: absolute;
+      top: 6px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 18px;
+      height: 14px;
+      border: 2px solid $HOUSE_COLOR;
+      border-top: 0;
+      border-radius: 2px;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      .chimney {
+        position: absolute;
+        left: 0px;
+        top: -5px;
+        width: 3px;
+        height: 4px;
+        border-top-left-radius: 12%;
+        border-top-right-radius: 12%;
+        background: $HOUSE_COLOR;
+      }
+      .pin {
+        position: absolute;
+        top: 2px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        width: 6px;
+        .head {
+          position: absolute;
+          border-radius: 50%;
+          width: 6px;
+          height: 6px;
+          background: $PIN_COLOR;
+        }
+        .leg {
+          position: absolute;
+          right: 0;
+          left: 0;
+          margin: auto;
+          width: 2px;
+          height: 15px;
+          border-bottom-left-radius: 1px;
+          border-bottom-right-radius: 1px;
+          background: $PIN_COLOR;
+        }
+      }
+    }
+    .house::before {
       content: '';
       position: absolute;
-      top: 2.25px;
-      left: 2.25px;
-      width: 5.5px;
-      height: 5.5px;
-      border-radius: 50%;
-      background: #ba4a00;
+      top: -5px;
+      left: 0;
+      border-top: 2px solid $HOUSE_COLOR;
+      border-left: 2px solid $HOUSE_COLOR;
+      border-radius: 3px;
+      width: 14px;
+      height: 14px;
+      transform: rotate(45deg);
     }
   }
   .name {
     position: absolute;
-    top: -3px;
-    left: 18px;
-    font-size: 19px;
+    line-height: 36px;
+    top: 0;
+    left: 42px;
+    font-size: 22px;
     font-family: 'Nova Flat';
-    color: #21618c;
-    .lease {
-      margin-left: 1px;
-      color: #ba4a00;
-    }
+    color: #2874A6;
   }
 }

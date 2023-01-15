@@ -13,7 +13,15 @@ export const Logo = (props: LogoProps) => {
 
   return (
     <div id='logo' style={style}>
-      <div className='pin'></div>
+      <div className='tile'>
+        <div className='house'>
+          <div className='chimney' />
+          <div className='pin'>
+            <div className='head' />
+            <div className='leg' />
+          </div>
+        </div>
+      </div>
       <div className='name'>
         <span>mapa</span>
         <span className='lease'>wynajmu</span>
@@ -21,3 +29,5 @@ export const Logo = (props: LogoProps) => {
     </div>
   )
 }
+
+{/* <div className='gg-pin' /> */}
