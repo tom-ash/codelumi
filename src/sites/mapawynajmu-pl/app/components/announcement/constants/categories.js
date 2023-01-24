@@ -119,4 +119,19 @@ export const categories = [
     },
     linkTrack: 'root/coworking_spaces',
   },
+  {
+    name: 'advertisingSpaces',
+    number: 8,
+    value: 8,
+    label: {
+      pl: 'Przestrzeń reklamowa',
+      en: 'Advertising Space',
+    },
+    pin: {
+      class: 'advertising-space',
+      svg: 'advertisingSpaces',
+      color: '#4A235A',
+    },
+    linkTrack: 'root/advertising_spaces',
+  },
 ]
