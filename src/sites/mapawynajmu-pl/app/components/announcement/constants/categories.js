@@ -14,6 +14,21 @@ export const categories = [
     },
     linkTrack: 'root/apartments',
   },
+    {
+    name: 'rooms',
+    number: 4,
+    value: 4,
+    label: {
+      pl: 'Pokój',
+      en: 'Room',
+    },
+    pin: {
+      class: 'room',
+      svg: 'room',
+      color: '#28B463',
+    },
+    linkTrack: 'root/rooms',
+  },
   {
     name: 'houses',
     number: 3,
@@ -30,21 +45,6 @@ export const categories = [
     linkTrack: 'root/houses',
   },
   {
-    name: 'rooms',
-    number: 4,
-    value: 4,
-    label: {
-      pl: 'Pokój',
-      en: 'Room',
-    },
-    pin: {
-      class: 'room',
-      svg: 'room',
-      color: '#28B463',
-    },
-    linkTrack: 'root/rooms',
-  },
-  {
     name: 'parkingSpaces',
     number: 5,
     value: 5,
@@ -58,6 +58,21 @@ export const categories = [
       color: '#34495E',
     },
     linkTrack: 'root/parking_spaces',
+  },
+  {
+    name: 'garage',
+    number: 9,
+    value: 9,
+    label: {
+      pl: 'Garaż',
+      en: 'Garage',
+    },
+    pin: {
+      class: 'garage',
+      svg: 'garage',
+      color: '#4A235A',
+    },
+    linkTrack: 'root/garages',
   },
   {
     name: 'usablePremises',
