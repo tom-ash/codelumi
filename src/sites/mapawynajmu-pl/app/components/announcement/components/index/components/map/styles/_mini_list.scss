@@ -18,6 +18,14 @@
     padding-right: 0;
   }
   background: #d7dbdd;
+
+  > h2 {
+    font-size: 18px;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #424949;
+  }
+
   .announcement-list-tile {
     @extend %tile;
     position: relative;

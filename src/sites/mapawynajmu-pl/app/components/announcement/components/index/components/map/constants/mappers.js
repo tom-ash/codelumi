@@ -24,7 +24,14 @@ export const mapStateToProps = store => {
     shouldDrawPins,
   } = store.announcement.index.control
 
-  const { announcements, pins, tileId, tile, title } = store.announcement.index.data
+  const {
+    announcements,
+    pins,
+    tileId,
+    tile,
+    title,
+    partnerName,
+  } = store.announcement.index.data
 
   return {
     loadMap,
@@ -52,6 +59,7 @@ export const mapStateToProps = store => {
     isPinsDrawn,
     shouldDrawPins,
     title,
+    partnerName,
   }
 }
 
