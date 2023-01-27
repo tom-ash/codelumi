@@ -37,6 +37,7 @@ class AnnouncementIndexMap extends React.Component {
       changeControl,
       title,
       partnerName,
+      goBackLink,
     } = this.props
 
     const changeHoveredTileId = hoveredTileId => changeControl({ hoveredTileId })
@@ -124,6 +125,7 @@ class AnnouncementIndexMap extends React.Component {
                 phone={tile.phone}
                 features={tile.features}
                 furnishings={tile.furnishings}
+                goBackLink={goBackLink}
                 {...tileComponents}
               />
             </div>

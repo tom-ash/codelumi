@@ -65,8 +65,6 @@ export const UserEditCell = (props: UserEditCellProps) => {
     getAccessToken,
   }
 
-  // console.log(cellContext)
-
   return (
     <div className='cell'>
       <div className='current' id='current'>

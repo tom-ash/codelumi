@@ -8,6 +8,10 @@ export const mapStateToProps = store => {
   const { svgs } = store.assets
 
   const {
+    'listing/index/go-back': goBackLink
+  } = store.links
+
+  const {
     connecting,
     isMapInitialized,
     type,
@@ -60,6 +64,7 @@ export const mapStateToProps = store => {
     shouldDrawPins,
     title,
     partnerName,
+    goBackLink,
   }
 }
 
