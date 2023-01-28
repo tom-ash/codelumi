@@ -11,9 +11,7 @@ interface GoBackProps {
 
 const GoBack = (props: GoBackProps) => {
   const { changeRoute } = useContext(AppContext)
-  const { id, goBackLink } = props
-
-  console.log(goBackLink)
+  const { goBackLink } = props
 
   return (
     <button
