@@ -34,7 +34,7 @@ export const mapStateToProps = store => {
     tileId,
     tile,
     title,
-    partnerName,
+    currentPartnerName,
   } = store.announcement.index.data
 
   return {
@@ -63,7 +63,7 @@ export const mapStateToProps = store => {
     isPinsDrawn,
     shouldDrawPins,
     title,
-    partnerName,
+    currentPartnerName,
     goBackLink,
   }
 }

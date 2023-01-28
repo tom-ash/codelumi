@@ -36,7 +36,7 @@ class AnnouncementIndexMap extends React.Component {
       changeApp,
       changeControl,
       title,
-      partnerName,
+      currentPartnerName,
       goBackLink,
     } = this.props
 
@@ -50,9 +50,9 @@ class AnnouncementIndexMap extends React.Component {
         <div id='google-map-container'>
           <div ref={this.miniList} id='mini-list'>
             <h1>{title}</h1>
-            {partnerName && (
+            {currentPartnerName && (
               <h2>
-                {partnerName}
+                {currentPartnerName}
               </h2>
             )}
             {announcements !== null &&
