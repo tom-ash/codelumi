@@ -28,7 +28,7 @@ export const Category = props => {
     // @ts-ignore
     onSelect: selectedCategory => {
       const { linkTrack } = selectedCategory
-      const link = links[linkTrack]
+      const link = links[linkTrack || 'listing/index/all-categories']
       const href = link && buildUrl(link)
 
       // @ts-ignore
