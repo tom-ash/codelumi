@@ -378,53 +378,15 @@ const nodes = [
     version: versions['1.0'],
     pl: (
       <span>
-        Wykonanie powyższych praw następuje poprzez wysłanie pisma na adres korespondencyjny Administratora lub emaila
-        na adres <i>kontakt@warsawlease.pl</i> wskazujących wykonywane prawa.
+        Wykonanie powyższych praw następuje poprzez wysłanie pisma na adres korespondencyjny Administratora lub emaila na adres <i>kontakt@mapawynajmu.pl</i> wskazujących wykonywane prawa.
       </span>
     ),
     en: (
       <span>
-        The execution of the abovementioned rights is made through sending a letter to the Administrator's
-        correspondence address or an email to <i>contact@warsawlease.pl</i> with indication of the rights being
-        executed.
+        The abovementioned rights are exercised through sending a letter to the Administrator's correspondence address or an email to <i>contact@mapawynajmu.pl</i> with indication of the rights being executed.
       </span>
     ),
   },
-
-  {
-    item: '',
-    tier: 'point',
-    version: versions['1.0'],
-    pl: (
-      <span>
-        <i>
-          <strong>
-            Od dnia 15 lutego 2022 r. ostatnie zdanie niniejszego Punktu 9 otrzymuje brzmienie: <br />"
-            <span>
-              Wykonanie powyższych praw następuje poprzez wysłanie pisma na adres korespondencyjny Administratora lub
-              emaila na adres <i>kontakt@mapawynajmu.pl</i> wskazujących wykonywane prawa.
-            </span>
-            "
-          </strong>
-        </i>
-      </span>
-    ),
-    en: (
-      <span>
-        <i>
-          <strong>
-            From February 15th, 2022 this Point 1.1 a) shall read as follows: <br />"
-            <span>
-              The abovementioned rights are exercised through sending a letter to the Administrator's correspondence
-              address or an email to <i>contact@mapawynajmu.pl</i> with indication of the rights being executed.
-            </span>
-            "
-          </strong>
-        </i>
-      </span>
-    ),
-  },
-
   {
     item: '10.',
     tier: 'header',

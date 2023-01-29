@@ -41,37 +41,12 @@ const nodes = [
     version: versions['1.0'],
     pl: (
       <span>
-        <strong>Serwis</strong> - serwis internetowy znajdujący się pod adresem <u>www.warsawlease.pl</u>.
+        <strong>Serwis</strong> - serwis internetowy znajdujący się pod adresem <u>https://mapawynajmu.pl</u>.
       </span>
     ),
     en: (
       <span>
-        <strong>Service</strong> - a web service located at the address <u>www.warsawlease.pl</u>.
-      </span>
-    ),
-  },
-  {
-    item: '',
-    tier: 'subpoint',
-    version: versions['1.0'],
-    pl: (
-      <span>
-        <i>
-          <strong>
-            Od dnia 1 lutego 2022 r. niniejszy Punkt 1.1 a) otrzymuje brzmienie: <br />"<strong>Serwis</strong> - serwis
-            internetowy znajdujący się pod adresem <u>https://mapawynajmu.pl</u>."
-          </strong>
-        </i>
-      </span>
-    ),
-    en: (
-      <span>
-        <i>
-          <strong>
-            From February 1st, 2022 this Point 1.1 a) shall read as follows: <br />"<strong>Service</strong> - a web
-            service located at the address <u>https://mapawynajmu.pl</u>."
-          </strong>
-        </i>
+        <strong>Service</strong> - a web service located at the address <u>https://mapawynajmu.pl</u>.
       </span>
     ),
   },
@@ -580,47 +555,12 @@ const nodes = [
     version: versions['1.0'],
     pl: (
       <span>
-        Administrator ma prawo do zmiany Regulaminu, Polityki Prywatności, Polityki Cookies oraz Cennika poprzez
-        zamieszczenie zmian tych dokumentów w Serwisie pod adresem <i>www.warsawlease.pl</i>. Zmiany te wchodzą
-        w&nbsp;życie po upływie okresu 14 dni od ich ogłoszenia.
+        Administrator ma prawo do zmiany Regulaminu, Polityki Prywatności, Polityki Cookies oraz Cennika poprzez zamieszczenie zmian tych dokumentów w Serwisie pod adresem <u>https://mapawynajmu.pl</u>. Zmiany te wchodzą w&nbsp;życie po upływie okresu 14 dni od ich ogłoszenia.
       </span>
     ),
     en: (
       <span>
-        The Administrator is authorized to amend these Terms of Service, the Privacy Policy, the Cookies Policy and the
-        Pricing through publication of the amendments to those documents within the Service under the address{' '}
-        <i>www.warsawlease.pl</i>. The amendments are applicable after the lapse of the period of 14 days from their
-        publication.
-      </span>
-    ),
-  },
-  {
-    item: '',
-    tier: 'point',
-    version: versions['1.0'],
-    pl: (
-      <span>
-        <i>
-          <strong>
-            Od dnia 1 lutego 2022 r. niniejszy Punkt 7.4 otrzymuje brzmienie: <br />
-            "Administrator ma prawo do zmiany Regulaminu, Polityki Prywatności, Polityki Cookies oraz Cennika poprzez
-            zamieszczenie zmian tych dokumentów w Serwisie pod adresem <u>https://mapawynajmu.pl</u>. Zmiany te wchodzą
-            w&nbsp;życie po upływie okresu 14 dni od ich ogłoszenia."
-          </strong>
-        </i>
-      </span>
-    ),
-    en: (
-      <span>
-        <i>
-          <strong>
-            From February 1st, 2022 this Point 7.4 shall read as follows: <br />
-            "The Administrator is authorized to amend these Terms of Service, the Privacy Policy, the Cookies Policy and
-            the Pricing through publication of the amendments to those documents within the Service under the address{' '}
-            <u>https://mapawynajmu.pl</u>. The amendments are applicable after the lapse of the period of 14 days from
-            their publication."
-          </strong>
-        </i>
+        The Administrator is authorized to amend these Terms of Service, the Privacy Policy, the Cookies Policy and the Pricing through publication of the amendments to those documents within the Service under the address{' '} <u>https://mapawynajmu.pl</u>. The amendments are applicable after the lapse of the period of 14 days from their publication.
       </span>
     ),
   },
