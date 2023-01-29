@@ -12,7 +12,7 @@ export const categories = [
       svg: 'apartment',
       color: '#1E8449',
     },
-    linkTrack: 'root/apartments',
+    linkTrack: 'listing/index/apartments',
   },
     {
     name: 'rooms',
@@ -27,7 +27,7 @@ export const categories = [
       svg: 'room',
       color: '#28B463',
     },
-    linkTrack: 'root/rooms',
+    linkTrack: 'listing/index/rooms',
   },
   {
     name: 'houses',
@@ -42,7 +42,7 @@ export const categories = [
       svg: 'house',
       color: '#0E6655',
     },
-    linkTrack: 'root/houses',
+    linkTrack: 'listing/index/houses',
   },
   {
     name: 'parkingSpaces',
@@ -57,7 +57,7 @@ export const categories = [
       svg: 'parkingSpace',
       color: '#34495E',
     },
-    linkTrack: 'root/parking_spaces',
+    linkTrack: 'listing/index/parking_spaces',
   },
   {
     name: 'garage',
@@ -72,7 +72,7 @@ export const categories = [
       svg: 'garage',
       color: '#4A235A',
     },
-    linkTrack: 'root/garages',
+    linkTrack: 'listing/index/garages',
   },
   {
     name: 'usablePremises',
@@ -87,7 +87,7 @@ export const categories = [
       svg: 'usablePremises',
       color: '#D35400',
     },
-    linkTrack: 'root/usable_premises',
+    linkTrack: 'listing/index/usable_premises',
   },
   {
     name: 'offices',
@@ -102,7 +102,7 @@ export const categories = [
       svg: 'office',
       color: '#3498DB',
     },
-    linkTrack: 'root/offices',
+    linkTrack: 'listing/index/offices',
   },
   {
     name: 'virtualOffices',
@@ -117,7 +117,7 @@ export const categories = [
       svg: 'virtualOffice',
       color: '#7D3C98',
     },
-    linkTrack: 'root/virtual_offices',
+    linkTrack: 'listing/index/virtual_offices',
   },
   {
     name: 'coworking',
@@ -132,7 +132,7 @@ export const categories = [
       svg: 'coworkingSpace',
       color: '#4A235A',
     },
-    linkTrack: 'root/coworking_spaces',
+    linkTrack: 'listing/index/coworking_spaces',
   },
   {
     name: 'advertisingSpaces',
@@ -147,6 +147,6 @@ export const categories = [
       svg: 'advertisingSpaces',
       color: '#4A235A',
     },
-    linkTrack: 'root/advertising_spaces',
+    linkTrack: 'listing/index/advertising_spaces',
   },
 ]
