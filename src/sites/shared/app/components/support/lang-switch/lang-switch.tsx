@@ -45,6 +45,9 @@ export const LangSwitch = (props: LangSwitchProps) => {
 
     e.preventDefault()
 
+    // @ts-ignore
+    window.areListingsObsolete = true
+
     changeRoute({ href, withoutScroll: true })
     setShowLangs(false)
   }
