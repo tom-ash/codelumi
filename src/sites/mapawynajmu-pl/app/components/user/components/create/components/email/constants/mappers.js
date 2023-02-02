@@ -5,12 +5,14 @@ export const mapStateToProps = store => {
   const {
     'user/create/form': renderForm,
     'user/create/verification': renderVerification,
+    'user/create/confirmation': renderConfirmation,
     'announcement/create/form': renderAnnouncementCreate,
   } = store.render
 
   return {
     renderForm,
     renderVerification,
+    renderConfirmation,
     renderAnnouncementCreate,
     lang,
     authorized,

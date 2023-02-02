@@ -7,6 +7,7 @@ import * as mappers from './constants/mappers'
 import { langHandler } from '../../../../../../functions/lang-handler'
 import { Heading } from '../../../../../../../../shared/app/components/support/heading/heading'
 import { Line } from '../../../../../support/components/line/line'
+import { Confirmation } from './components/confirmation/confirmation'
 
 class UserCreateEmail extends React.Component {
   constructor(props) {
@@ -15,8 +16,11 @@ class UserCreateEmail extends React.Component {
   }
 
   render() {
-    const { renderAnnouncementCreate, renderForm, renderVerification } = this.props
+    const { renderAnnouncementCreate, renderForm, renderVerification, renderConfirmation } = this.props
     const headerText = this.langHandler({ pl: 'Zarejestruj', en: 'Register' })
+
+    console.log("EMAIL")
+    console.log(renderConfirmation)
 
     return (
       <div id='user-create-email'>
@@ -32,6 +36,7 @@ class UserCreateEmail extends React.Component {
           </>
         )}
         {renderVerification && <Verification />}
+        {renderConfirmation && <Confirmation />}
       </div>
     )
   }
