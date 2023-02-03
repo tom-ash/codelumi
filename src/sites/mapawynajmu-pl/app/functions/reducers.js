@@ -40,3 +40,12 @@ export const linksReducer = (state = {}, action) => {
       return state
   }
 }
+
+export const textsReducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'texts':
+      return action.value
+    default:
+      return state
+  }
+}

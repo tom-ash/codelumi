@@ -5,6 +5,7 @@ import { userReducer } from '../components/user/functions/reducers'
 import visitorReducer from '../../../shared/app/components/visitor/functions/reducers'
 import { pageReducer } from '../../../shared/app/components/page/functions/reducer'
 import { imageReducer } from '../../../shared/app/components/image/functions/reducer'
+import { textsReducer } from './reducers'
 
 const rootReducer = combineReducers({
   app: appReducer,
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   page: pageReducer,
   links: linksReducer,
   image: imageReducer,
+  texts: textsReducer,
 })
 
 export default rootReducer
