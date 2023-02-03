@@ -1,4 +1,5 @@
 export const mapStateToProps = store => {
+  const { links } = store
   const { lang } = store.app
   const { authorized } = store.user.authorize.data
   const { connecting, step } = store.user.create.control
@@ -18,6 +19,7 @@ export const mapStateToProps = store => {
     authorized,
     connecting,
     step,
+    links,
   }
 }
 

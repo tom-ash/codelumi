@@ -49,12 +49,12 @@ export const GenericAttributeInput = (props: GenericAttributeInputProps) => {
     },
     onBlur: () => {
       match &&
-      genericAttributeValidator({
-        value,
-        match,
-        errorToSet,
-        dispatch,
-      })
+        genericAttributeValidator({
+          value,
+          match,
+          errorToSet,
+          dispatch,
+        })
     },
   }
 

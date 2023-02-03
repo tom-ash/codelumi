@@ -18,7 +18,8 @@ interface GenericAttributeProps {
 }
 
 export const GenericAttribute = (props: GenericAttributeProps) => {
-  const { attrName, currentValue, title, label, error, errorToSet, emptyErrorToSet, submitLabel, match, dispatch } = props
+  const { attrName, currentValue, title, label, error, errorToSet, emptyErrorToSet, submitLabel, match, dispatch } =
+    props
   const [value, setValue] = useState('')
   const [connecting, setConnecting] = useState(false)
 

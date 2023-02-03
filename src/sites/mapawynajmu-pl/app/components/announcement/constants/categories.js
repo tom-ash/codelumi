@@ -14,7 +14,7 @@ export const categories = [
     },
     linkTrack: 'listing/index/apartments',
   },
-    {
+  {
     name: 'rooms',
     number: 4,
     value: 4,

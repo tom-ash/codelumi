@@ -29,5 +29,3 @@ export const Logo = (props: LogoProps) => {
     </div>
   )
 }
-
-{/* <div className='gg-pin' /> */}

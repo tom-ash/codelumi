@@ -7,9 +7,7 @@ export const mapStateToProps = store => {
   } = store.app
   const { svgs } = store.assets
 
-  const {
-    'listing/index/go-back': goBackLink
-  } = store.links
+  const { 'listing/index/go-back': goBackLink } = store.links
 
   const {
     connecting,
@@ -28,14 +26,7 @@ export const mapStateToProps = store => {
     shouldDrawPins,
   } = store.announcement.index.control
 
-  const {
-    announcements,
-    pins,
-    tileId,
-    tile,
-    title,
-    currentPartnerName,
-  } = store.announcement.index.data
+  const { announcements, pins, tileId, tile, title, currentPartnerName } = store.announcement.index.data
 
   return {
     loadMap,

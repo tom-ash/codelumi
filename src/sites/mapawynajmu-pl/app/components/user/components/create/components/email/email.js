@@ -16,11 +16,12 @@ class UserCreateEmail extends React.Component {
   }
 
   render() {
-    const { renderAnnouncementCreate, renderForm, renderVerification, renderConfirmation } = this.props
+    const { renderAnnouncementCreate, renderForm, renderVerification, renderConfirmation, links } = this.props
     const headerText = this.langHandler({ pl: 'Zarejestruj', en: 'Register' })
 
-    console.log("EMAIL")
-    console.log(renderConfirmation)
+    const confirmationLinks = {
+      links,
+    }
 
     return (
       <div id='user-create-email'>
@@ -36,7 +37,7 @@ class UserCreateEmail extends React.Component {
           </>
         )}
         {renderVerification && <Verification />}
-        {renderConfirmation && <Confirmation />}
+        {renderConfirmation && <Confirmation {...confirmationLinks} />}
       </div>
     )
   }
