@@ -2,7 +2,6 @@ import API_URL from '../../../../../../../../../../shared/constants/urls/api'
 import { VERIFY_API_ROUTE } from '../constants/api_routes'
 import { saveTokens } from '../../../../../../../functions/token-handlers'
 import getCookieValue from '../../../../../../../../../../../shared/app/functions/cookies/getters/get-cookie-value'
-import { buildUrl } from '../../../../../../../../../../shared/functions/builders/url'
 
 export function verify() {
   if (!this.verificationManager('validate')) return
@@ -27,9 +26,10 @@ export function verify() {
       throw new Error('SomethingWentWrong')
     })
     .then(json => {
-      const { accessToken, name, announcement_path, path } = json
+      const { accessToken, name, href } = json
       const { changeRoute } = this.context
-      const href = buildUrl({ path: announcement_path || path })
+
+      console.log(json)
 
       saveTokens.call(this, accessToken)
       changeAuthorizeData({ authorized: true, name })

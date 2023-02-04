@@ -3,7 +3,6 @@
 #user-create-confirmation {
   h1 {
     margin: 12px 0;
-    // padding: 0!important;
   }
   .line {
     margin-bottom: 24px!important;
@@ -15,7 +14,6 @@
     font-size: 15px;
   }
   .checkmark-circle {
-    // min-width: none;
     width: 64px;
     height: 64px;
     padding: 0;
@@ -26,8 +24,10 @@
   .link {
     margin-bottom: 12px;
     font-size: 14px;
-    color: #21618C;
-    text-decoration: underline;
+    color: $LINK-COLOR;
+    &:hover {
+      color: $LINK-COLOR-HOVER;
+    }
   }
   svg {
     fill: white;
