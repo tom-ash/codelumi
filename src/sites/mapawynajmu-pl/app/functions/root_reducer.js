@@ -6,6 +6,7 @@ import visitorReducer from '../../../shared/app/components/visitor/functions/red
 import { pageReducer } from '../../../shared/app/components/page/functions/reducer'
 import { imageReducer } from '../../../shared/app/components/image/functions/reducer'
 import { textsReducer } from './reducers'
+import { dataReducer } from './reducers'
 
 const rootReducer = combineReducers({
   app: appReducer,
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   links: linksReducer,
   image: imageReducer,
   texts: textsReducer,
+  data: dataReducer,
 })
 
 export default rootReducer

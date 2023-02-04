@@ -9,10 +9,22 @@ import SVG from '../../../../../../../support/components/svg/svg'
 export const Confirmation = () => {
   useStyles(styles)
 
-  const { texts } = useStore().getState()
-  const h1 = texts.h1
-  const congratulations = texts.congratulations
-  const accountCreated = texts.accountCreated
+  const {
+    texts,
+    data: {
+      accountType,
+      businessName,
+    }
+  } = useStore().getState()
+  const {
+    h1,
+    congratulations,
+    accountCreated,
+    partnerPage,
+  } = texts
+  const partnerPageLinkProps = {
+    track: 'user/index/partner',
+  }
   const listingCreateFormLinkProps = {
     track: 'announcement/create/form',
   }
@@ -37,6 +49,20 @@ export const Confirmation = () => {
       <div>
         {accountCreated}
       </div>
+      {accountType === 'business' && (
+        <>
+          <Line />
+          <div>
+            <div className='partner-page'>
+              {partnerPage} <strong>{businessName}</strong>
+            </div>
+            <div className='partner-page-link'>
+              <Link {...partnerPageLinkProps} />
+            </div>
+          </div>
+        </>
+      )}
+      <Line />
       <div className='links'>
         <Link {...listingCreateFormLinkProps} />
         <Link {...listingIndexUserLinkProps} />

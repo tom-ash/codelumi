@@ -49,3 +49,12 @@ export const textsReducer = (state = {}, action) => {
       return state
   }
 }
+
+export const dataReducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'data':
+      return action.value
+    default:
+      return state
+  }
+}
