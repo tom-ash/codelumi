@@ -29,8 +29,6 @@ export function verify() {
       const { accessToken, name, href } = json
       const { changeRoute } = this.context
 
-      console.log(json)
-
       saveTokens.call(this, accessToken)
       changeAuthorizeData({ authorized: true, name })
       changeRoute({ href })
