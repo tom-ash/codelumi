@@ -1,5 +1,36 @@
 @import '../../../../../../../../../styles/themes';
 
 #user-create-confirmation {
-  padding: 24px;
+  h1 {
+    margin: 12px 0;
+    // padding: 0!important;
+  }
+  .line {
+    margin-bottom: 24px!important;
+  }
+  > div {
+    padding: 0 24px;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 15px;
+  }
+  .checkmark-circle {
+    // min-width: none;
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    background: #239B56;
+    margin: 24px auto;
+    border-radius: 50%;
+  }
+  .link {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #21618C;
+    text-decoration: underline;
+  }
+  svg {
+    fill: white;
+    margin: 12px;
+  }
 }

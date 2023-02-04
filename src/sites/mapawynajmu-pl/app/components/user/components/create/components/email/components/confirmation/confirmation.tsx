@@ -4,6 +4,7 @@ import styles from './styles/styles.scss'
 import { useStore } from 'react-redux'
 import { Line } from '../../../../../../../support/components/line/line'
 import { Link } from '../../../../../../../announcement/components/common/link/link'
+import SVG from '../../../../../../../support/components/svg/svg'
 
 export const Confirmation = () => {
   useStyles(styles)
@@ -26,11 +27,21 @@ export const Confirmation = () => {
     <div id='user-create-confirmation'>
       <h1>{h1}</h1>
       <Line />
-      <div>{congratulations}</div>
-      <div>{accountCreated}</div>
-      <Link {...listingCreateFormLinkProps} />
-      <Link {...listingIndexUserLinkProps} />
-      <Link {...rootLinkProps} />
+      <div>
+        {congratulations}
+      </div>
+      <div className='checkmark-circle'>
+        {/* @ts-ignore */}
+        <SVG name='check' />
+      </div>
+      <div>
+        {accountCreated}
+      </div>
+      <div className='links'>
+        <Link {...listingCreateFormLinkProps} />
+        <Link {...listingIndexUserLinkProps} />
+        <Link {...rootLinkProps} />
+      </div>
     </div>
   )
 }
