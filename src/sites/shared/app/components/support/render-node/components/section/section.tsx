@@ -42,8 +42,6 @@ const Section = (props: SectionProps) => {
 
   if (!element) return <>{body}</>
 
-  console.log(style)
-
   const section = React.createElement(element, { className, style, id }, body)
 
   return section

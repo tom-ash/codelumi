@@ -57,23 +57,28 @@ const RenderNode = (props: RenderNodeProps) => {
     return <List {...ulProps} />
   }
 
-  if (node.h1) {
+  // @ts-ignore
+  if (node.h1 || node.headingOne) {
     // TODO: Move to Heading.
 
     return (
       <h1>
-        <span>{node.h1}</span>
+        {/* @ts-ignore */}
+        <span>{node.h1 || node.headingOne}</span>
       </h1>
     )
   }
 
-  if (node.h2) {
+  // @ts-ignore
+  if (node.h2 || node.headingTwo) {
     const headingProps = {
       rank: 2,
-      heading: node.h2,
+      // @ts-ignore
+      heading: node.h2 || node.headingTwo,
     }
 
     return (
+      // @ts-ignore
       <Heading
         key={index}
         {...headingProps}
@@ -109,10 +114,17 @@ const RenderNode = (props: RenderNodeProps) => {
     )
   }
 
-  if (node.img) {
-    const { st } = node
-    const { s: src, a: alt } = node.img
-    const imgProps = { src, alt, style: st }
+  if (node.img || node.image) {
+    const { st, style } = node
+    const {
+      // @ts-ignore
+      s, source, a, alternative,
+    } = node.img || node.image
+    const imgProps = {
+      src: s || source,
+      alt: a || alternative,
+      style: st || style
+    }
 
     return (
       <Image
@@ -158,16 +170,17 @@ const RenderNode = (props: RenderNodeProps) => {
     return <Anchor {...anchorProps} />
   }
 
-  if (node.div) {
-    // @ts-ignore
+  // @ts-ignore
+  if (node.div || node.division) {
     return (
       <Section
         key={index}
         {...{
           ...props,
           element: 'div',
-          jsonBody: node.div,
-          st: node.st,
+          // @ts-ignore
+          jsonBody: node.div || node.division,
+          st: node.st || node.style,
         }}
       />
     )
@@ -180,7 +193,15 @@ const RenderNode = (props: RenderNodeProps) => {
     return (
       <Section
         key={index}
-        {...{ ...props, element: 'section', className, codeLang, jsonBody: node.section, id: node.id, st: node.st }}
+        {...{
+          ...props,
+          element: 'section',
+          className,
+          codeLang,
+          jsonBody: node.section,
+          id: node.id,
+          st: node.st || node.style,
+        }}
       />
     )
   }
@@ -197,7 +218,7 @@ const RenderNode = (props: RenderNodeProps) => {
           className: node.className || 'main',
           jsonBody: node.main,
           codeLang,
-          st: node.st,
+          st: node.st || node.style,
         }}
       />
     )
@@ -210,7 +231,14 @@ const RenderNode = (props: RenderNodeProps) => {
     return (
       <Section
         key={index}
-        {...{ ...props, element: 'article', className, codeLang, jsonBody: node.article, st: node.st }}
+        {...{
+          ...props,
+          element: 'article',
+          className,
+          codeLang,
+          jsonBody: node.article,
+          st: node.st || node.style,
+        }}
       />
     )
   }
@@ -296,24 +324,24 @@ const RenderNode = (props: RenderNodeProps) => {
     return <Section {...sectionProps} />
   }
 
-  if (node.image) {
-    const sectionProps = {
-      key: index,
-      node,
-      index,
-      appName,
-      jsonBody,
-      clientUrl,
-      changeRoute,
-      device,
-      lang,
-      langHandler,
-      className: node.className,
-      st: node.st,
-    }
+  // if (node.image) {
+  //   const sectionProps = {
+  //     key: index,
+  //     node,
+  //     index,
+  //     appName,
+  //     jsonBody,
+  //     clientUrl,
+  //     changeRoute,
+  //     device,
+  //     lang,
+  //     langHandler,
+  //     className: node.className,
+  //     st: node.st || node.style,
+  //   }
 
-    return <Section {...sectionProps} />
-  }
+  //   return <Section {...sectionProps} />
+  // }
 
   if (node.leftAside) {
     const asideProps = {
@@ -390,6 +418,22 @@ const RenderNode = (props: RenderNodeProps) => {
 
     return <Definition {...definitionProps} />
   }
+
+    // @ts-ignore
+    if (node.definition) {
+      const {
+        term,
+        body,
+        // @ts-ignore
+      } = node.definition
+  
+      const definitionProps = {
+        term,
+        definition: body,
+      }
+  
+      return <Definition {...definitionProps} />
+    }
 
   // @ts-ignore
   if (node.figure) {

@@ -68,6 +68,7 @@ type RenderNodeData =
       }
       className?: string
       st?: React.CSSProperties
+      style?: React.CSSProperties
       opts?: object
       index?: number
       codeLang?: string
