@@ -34,7 +34,12 @@ const IndexLink = (props: IndexLinkProps) => {
   const href = `${clientUrl}/${pathname}`
   const label = (
     <>
-      {image && <img src={image} alt={title} />}
+      {image && (
+        <img
+          src={image}
+          alt={title}
+        />
+      )}
       <div className='link-data'>
         <div className='category-and-subcategory'>
           <span className={category}>{category}</span>

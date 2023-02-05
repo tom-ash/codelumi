@@ -34,7 +34,10 @@ class UserEditAccountCellDeprecated extends React.Component {
           </div>
           <div className='float-clear' />
         </div>
-        <div className={this.centralManager('triggerClass')} onClick={this.centralManager('triggerOnClick')}>
+        <div
+          className={this.centralManager('triggerClass')}
+          onClick={this.centralManager('triggerOnClick')}
+        >
           <div>
             {this.centralManager('triggerIcon')}
             <span>{this.centralManager('triggerText')}</span>

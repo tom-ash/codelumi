@@ -45,7 +45,10 @@ class AnnouncementCreatePictures extends React.Component {
     }
 
     return (
-      <div id='listing-create-pictures' className='section'>
+      <div
+        id='listing-create-pictures'
+        className='section'
+      >
         <Heading {...headingProps} />
         <Info {...infoProps} />
         <div className='drag-and-drop-container'>
@@ -79,21 +82,33 @@ class AnnouncementCreatePictures extends React.Component {
                 className={pictureClassProvider(index)}
               >
                 <div className='buttons'>
-                  <div onClick={() => this.deletePicture(index)} className='button delete'>
+                  <div
+                    onClick={() => this.deletePicture(index)}
+                    className='button delete'
+                  >
                     <SVG name='close' />
                   </div>
                   {this.props.blobs && index !== 0 && (
-                    <div onClick={() => this.movePicture('up', index)} className='button up'>
+                    <div
+                      onClick={() => this.movePicture('up', index)}
+                      className='button up'
+                    >
                       <SVG name='chevron' />
                     </div>
                   )}
                   {this.props.blobs && this.props.blobs.length !== index + 1 && (
-                    <div onClick={() => this.movePicture('down', index)} className='button down'>
+                    <div
+                      onClick={() => this.movePicture('down', index)}
+                      className='button down'
+                    >
                       <SVG name='chevron' />
                     </div>
                   )}
                   {!picture.database && (
-                    <div onClick={() => this.rotatePicture(index)} className='button rotate'>
+                    <div
+                      onClick={() => this.rotatePicture(index)}
+                      className='button rotate'
+                    >
                       <SVG name='rotate' />
                     </div>
                   )}

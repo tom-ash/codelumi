@@ -48,7 +48,10 @@ class AnnouncementCreatMap extends React.Component {
     }
 
     return (
-      <div id='listing-create-map' className='section'>
+      <div
+        id='listing-create-map'
+        className='section'
+      >
         <Heading {...headingProps} />
         <Info {...infoProps} />
         <div className='address-input'>
@@ -74,8 +77,14 @@ class AnnouncementCreatMap extends React.Component {
             </div>
           )}
         </div>
-        <div id='google-map-container' className='map'>
-          <div id='google-map' className={this.props.error.pl ? 'map-error' : ''} />
+        <div
+          id='google-map-container'
+          className='map'
+        >
+          <div
+            id='google-map'
+            className={this.props.error.pl ? 'map-error' : ''}
+          />
         </div>
         <div className='error'>{this.langHandler(this.props.error)}</div>
       </div>

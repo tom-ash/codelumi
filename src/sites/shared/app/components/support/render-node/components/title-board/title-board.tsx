@@ -36,7 +36,10 @@ const Author = (props: { authorName: string; authorLink: string }) => {
       <div className='name'>
         {/* @ts-ignore */}
         <SVG name='penClip' />
-        <a href={authorLink} target='_blank'>
+        <a
+          href={authorLink}
+          target='_blank'
+        >
           {authorName}
         </a>
       </div>

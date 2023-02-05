@@ -12,7 +12,10 @@ export const Logo = (props: LogoProps) => {
   const { style } = props
 
   return (
-    <div id='logo' style={style}>
+    <div
+      id='logo'
+      style={style}
+    >
       <div className='tile'>
         <div className='house'>
           <div className='chimney' />

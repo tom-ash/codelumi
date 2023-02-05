@@ -29,13 +29,19 @@ class AnnouncementIndexSearch extends React.Component {
     return (
       <section id='listing-index'>
         {renderMap && (
-          <section id='listing-index' className='visitor'>
+          <section
+            id='listing-index'
+            className='visitor'
+          >
             <AnnouncementIndexPanel />
             <AnnouncementIndexMap />
           </section>
         )}
 
-        <section id='listing-index' className='user'>
+        <section
+          id='listing-index'
+          className='user'
+        >
           {renderMy && <AnnouncementIndexMy />}
         </section>
       </section>

@@ -22,7 +22,10 @@ const Code = (props: CodeProps) => {
 
   return (
     <pre>
-      <code className={codeLang} dangerouslySetInnerHTML={{ __html: highlightedCode }} />
+      <code
+        className={codeLang}
+        dangerouslySetInnerHTML={{ __html: highlightedCode }}
+      />
     </pre>
   )
 }

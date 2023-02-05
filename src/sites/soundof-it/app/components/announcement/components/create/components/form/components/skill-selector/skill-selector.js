@@ -28,12 +28,18 @@ function SkillSelector(props) {
       <div id='skill-selector'>
         <div id='selectable-skills'>
           {selectableSkills.map(skill => (
-            <Skill {...{ ...skill, selectSkill }} key={skill.name} />
+            <Skill
+              {...{ ...skill, selectSkill }}
+              key={skill.name}
+            />
           ))}
         </div>
         <div id='selected-skills'>
           {selectedSkills.map(skill => (
-            <Skill {...{ ...skill, unselectSkill }} key={skill.name} />
+            <Skill
+              {...{ ...skill, unselectSkill }}
+              key={skill.name}
+            />
           ))}
         </div>
         <div className='float-clear' />

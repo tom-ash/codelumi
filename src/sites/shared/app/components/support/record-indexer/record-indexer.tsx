@@ -28,7 +28,10 @@ const RecordIndexer = (props: RecordIndexerProps) => {
 
           if (key.match(newNameRegex)) {
             return (
-              <li key={key} onClick={() => edit(key)}>
+              <li
+                key={key}
+                onClick={() => edit(key)}
+              >
                 {key}
               </li>
             )

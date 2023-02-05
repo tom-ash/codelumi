@@ -10,7 +10,10 @@ const VisitorCookiesPolicy = ({ appName, langHandler }) => {
   useStyles(styles)
 
   return (
-    <div className='legal-document' onClick={e => e.stopPropagation()}>
+    <div
+      className='legal-document'
+      onClick={e => e.stopPropagation()}
+    >
       <h1 className='page-header'>{langHandler({ pl: 'Polityka Cookies', en: 'Cookies Policy' })}</h1>
       <div className='cookies-policy'>
         {nodes.map((provision, index) => (

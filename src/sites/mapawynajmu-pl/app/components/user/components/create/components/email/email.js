@@ -27,10 +27,18 @@ class UserCreateEmail extends React.Component {
       <div id='user-create-email'>
         {(renderForm || renderAnnouncementCreate) && (
           <>
-            {!renderAnnouncementCreate && <Heading rank={1} heading={headerText} />}
+            {!renderAnnouncementCreate && (
+              <Heading
+                rank={1}
+                heading={headerText}
+              />
+            )}
             {!renderAnnouncementCreate && <Line />}
             <form>
-              <Inputs renderAnnouncementCreate={renderAnnouncementCreate} langHandler={this.langHandler} />
+              <Inputs
+                renderAnnouncementCreate={renderAnnouncementCreate}
+                langHandler={this.langHandler}
+              />
               {!renderAnnouncementCreate && <Line />}
               {!renderAnnouncementCreate && <Submit />}
             </form>

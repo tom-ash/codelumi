@@ -43,7 +43,10 @@ const Description = (props: DescriptionProps) => {
   }
 
   return (
-    <div id='listing-create-description' className='section'>
+    <div
+      id='listing-create-description'
+      className='section'
+    >
       <Checkbox {...showPolishProps} />
       {showPolish && <Textarea {...polishDescriptionProps} />}
       <Checkbox {...showEnglishProps} />

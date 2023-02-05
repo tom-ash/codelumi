@@ -57,18 +57,34 @@ export const LangSwitch = (props: LangSwitchProps) => {
 
   return (
     <div className='lang-switch'>
-      <div className={currentClasses.join(' ')} onClick={() => setShowLangs(!showLangs)}>
+      <div
+        className={currentClasses.join(' ')}
+        onClick={() => setShowLangs(!showLangs)}
+      >
         {/* @ts-ignore */}
         {lang} <SVG name='chevron' />
       </div>
-      {showLangs && <div className='cover' onClick={() => setShowLangs(false)} />}
+      {showLangs && (
+        <div
+          className='cover'
+          onClick={() => setShowLangs(false)}
+        />
+      )}
       <div className={allClassNames.join(' ')}>
         {/* @ts-ignore */}
-        <a href={plHref} onClick={e => changeLang({ e, href: plHref })}>
+        <a
+          // @ts-ignore
+          href={plHref}
+          onClick={e => changeLang({ e, href: plHref })}
+        >
           PL
         </a>
         {/* @ts-ignore */}
-        <a href={enHref} onClick={e => changeLang({ e, href: enHref })}>
+        <a
+          // @ts-ignore
+          href={enHref}
+          onClick={e => changeLang({ e, href: enHref })}
+        >
           EN
         </a>
       </div>

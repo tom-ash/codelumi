@@ -22,7 +22,10 @@ const HeaderMenu = props => {
     <>
       {isMobile && <Button {...props} />}
       {showMenu && (
-        <div className='menu-cover' onClick={() => changeShowMenu(false)}>
+        <div
+          className='menu-cover'
+          onClick={() => changeShowMenu(false)}
+        >
           <div className='menu'>
             {isMobile ? (
               <>

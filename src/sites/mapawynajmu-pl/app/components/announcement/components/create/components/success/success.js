@@ -25,7 +25,11 @@ class AnnouncementCreateSuccess extends React.Component {
 
     return (
       <div id='success-container'>
-        <Heading tier={1} text={this.langHandler(PAGE_HEADER)} svg='checkSquare' />
+        <Heading
+          tier={1}
+          text={this.langHandler(PAGE_HEADER)}
+          svg='checkSquare'
+        />
         <Line />
         <div className='further-steps'>
           <div className='congratulations'>{this.langHandler(CONGRATULATIONS_TEXT)}</div>

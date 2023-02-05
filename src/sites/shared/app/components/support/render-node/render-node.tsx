@@ -28,13 +28,23 @@ const RenderNode = (props: RenderNodeProps) => {
   if (typeof node === 'string') {
     const paragraphProps = { content: node }
 
-    return <Paragraph key={index} {...paragraphProps} />
+    return (
+      <Paragraph
+        key={index}
+        {...paragraphProps}
+      />
+    )
   }
 
   if (Array.isArray(node)) {
     const ulProps = { listNodes: node }
 
-    return <List key={index} {...ulProps} />
+    return (
+      <List
+        key={index}
+        {...ulProps}
+      />
+    )
   }
 
   if (node.ul) {
@@ -63,7 +73,12 @@ const RenderNode = (props: RenderNodeProps) => {
       heading: node.h2,
     }
 
-    return <Heading key={index} {...headingProps} />
+    return (
+      <Heading
+        key={index}
+        {...headingProps}
+      />
+    )
   }
 
   if (node.h3) {
@@ -72,7 +87,12 @@ const RenderNode = (props: RenderNodeProps) => {
       heading: node.h3,
     }
 
-    return <Heading key={index} {...headingProps} />
+    return (
+      <Heading
+        key={index}
+        {...headingProps}
+      />
+    )
   }
 
   if (node.h4) {
@@ -81,7 +101,12 @@ const RenderNode = (props: RenderNodeProps) => {
       heading: node.h4,
     }
 
-    return <Heading key={index} {...headingProps} />
+    return (
+      <Heading
+        key={index}
+        {...headingProps}
+      />
+    )
   }
 
   if (node.img) {
@@ -89,7 +114,12 @@ const RenderNode = (props: RenderNodeProps) => {
     const { s: src, a: alt } = node.img
     const imgProps = { src, alt, style: st }
 
-    return <Image key={index} {...imgProps} />
+    return (
+      <Image
+        key={index}
+        {...imgProps}
+      />
+    )
   }
 
   if (node.code) {
@@ -97,7 +127,12 @@ const RenderNode = (props: RenderNodeProps) => {
     const codeLang = node.codeLang || props.codeLang
     const codeProps = { code, codeLang }
 
-    return <Code key={index} {...codeProps} />
+    return (
+      <Code
+        key={index}
+        {...codeProps}
+      />
+    )
   }
 
   if (node.yte) {
@@ -128,14 +163,12 @@ const RenderNode = (props: RenderNodeProps) => {
     return (
       <Section
         key={index}
-        {
-          ...{
-            ...props,
-            element: 'div',
-            jsonBody: node.div,
-            st: node.st
-          }
-        }
+        {...{
+          ...props,
+          element: 'div',
+          jsonBody: node.div,
+          st: node.st,
+        }}
       />
     )
   }
@@ -158,15 +191,14 @@ const RenderNode = (props: RenderNodeProps) => {
     return (
       <Section
         key={index}
-        {
-          ...{
-            ...props,
-            element: 'main',
-            className: node.className || 'main',
-            jsonBody: node.main,
-            codeLang,
-            st: node.st
-          }}
+        {...{
+          ...props,
+          element: 'main',
+          className: node.className || 'main',
+          jsonBody: node.main,
+          codeLang,
+          st: node.st,
+        }}
       />
     )
   }
@@ -175,10 +207,13 @@ const RenderNode = (props: RenderNodeProps) => {
     const className = node.className
     const codeLang = node.codeLang || props.codeLang
 
-    return <Section key={index} {...{ ...props, element: 'article', className, codeLang, jsonBody: node.article, st: node.st }} />
+    return (
+      <Section
+        key={index}
+        {...{ ...props, element: 'article', className, codeLang, jsonBody: node.article, st: node.st }}
+      />
+    )
   }
-
-
 
   if (node.pageIndexer) {
     const { collection } = node.pageIndexer

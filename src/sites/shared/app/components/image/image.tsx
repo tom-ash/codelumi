@@ -57,7 +57,10 @@ class Image extends React.Component<ImageProps> {
     if (renderEdit) classNames.push('edit')
 
     return (
-      <section id='image' className={classNames.join(' ')}>
+      <section
+        id='image'
+        className={classNames.join(' ')}
+      >
         {renderIndex && <Index {...indexProps} />}
         {renderEdit && <Edit {...editProps} />}
       </section>

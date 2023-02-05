@@ -10,11 +10,18 @@ const VisitorPrivacyPolicy = ({ appName, langHandler }) => {
   useStyles(styles)
 
   return (
-    <div className='legal-document' onClick={e => e.stopPropagation()}>
+    <div
+      className='legal-document'
+      onClick={e => e.stopPropagation()}
+    >
       <h1 className='page-header'>{langHandler({ pl: 'Polityka Prywatności', en: 'Privacy Policy' })}</h1>
       <div className='privacy-policy'>
         {nodes.map((provision, index) => (
-          <Provision key={index} data={provision} langHandler={langHandler} />
+          <Provision
+            key={index}
+            data={provision}
+            langHandler={langHandler}
+          />
         ))}
       </div>
     </div>

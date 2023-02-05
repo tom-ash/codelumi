@@ -14,7 +14,11 @@ const VisitorTermsOfService = ({ appName, langHandler }) => {
       <h1 className='page-header'>{langHandler({ pl: 'Regulamin', en: 'Terms & Conditions' })}</h1>
       <div className='privacy-policy'>
         {nodes.map((provision, index) => (
-          <Provision key={index} data={provision} langHandler={langHandler} />
+          <Provision
+            key={index}
+            data={provision}
+            langHandler={langHandler}
+          />
         ))}
       </div>
     </div>

@@ -31,7 +31,11 @@ export function Category(props: CategoryProps) {
   return (
     <div className='category'>
       {/* @ts-ignore */}
-      <Heading tier={2} text={langHandler(HEADING)} />
+      <Heading
+        tier={2}
+        // @ts-ignore
+        text={langHandler(HEADING)}
+      />
       <Info {...infoProps} />
       <div className='categories'>
         {categories.map(category => {

@@ -21,10 +21,16 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
 
     return (
       <div className='features'>
-        <Heading tier={2} text={this.langHandler(headerText)} />
+        <Heading
+          tier={2}
+          text={this.langHandler(headerText)}
+        />
         {items &&
           items.map(item => (
-            <div className='item' key={item}>
+            <div
+              className='item'
+              key={item}
+            >
               <div className='icon'>
                 <SVG name='check' />
               </div>

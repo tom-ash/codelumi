@@ -23,7 +23,10 @@ class AnnouncementCreateAvailabilityDate extends React.Component {
     const { lang, availabilityDate, addAvailabilityDate, changeInputs } = this.props
 
     return (
-      <div id='listing-create-availability-date' className='section'>
+      <div
+        id='listing-create-availability-date'
+        className='section'
+      >
         <ManagedCheckbox {...this.addAvailabilityDateManager({ addAvailabilityDate, changeInputs })} />
         {addAvailabilityDate && (
           <div className='calendar'>

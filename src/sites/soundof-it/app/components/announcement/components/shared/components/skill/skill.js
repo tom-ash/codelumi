@@ -25,11 +25,21 @@ function Skill(props) {
                 onClick: () => selectSkill({ name, level: hovered }),
               }
 
-          return <div {...sharedLevelProps} {...extendedLevelProps} />
+          return (
+            <div
+              {...sharedLevelProps}
+              {...extendedLevelProps}
+            />
+          )
         })}
         <div className='float-clear' />
         <div className='level-name'>{level ? availableLevels[level - 1] : availableLevels[hovered - 1]}</div>
-        {level && <div className='delete' onClick={() => unselectSkill({ name, level: undefined })} />}
+        {level && (
+          <div
+            className='delete'
+            onClick={() => unselectSkill({ name, level: undefined })}
+          />
+        )}
       </div>
     </div>
   )

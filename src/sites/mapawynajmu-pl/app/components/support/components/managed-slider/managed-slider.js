@@ -101,12 +101,18 @@ class ManagedSlider extends React.Component {
           ))}
         </div>
         {!disableSLides && this.state.currentPicture !== statePictures.length - 1 && (
-          <div className='arrow right' onClick={e => this.onArrowClickHandler(e, '>')}>
+          <div
+            className='arrow right'
+            onClick={e => this.onArrowClickHandler(e, '>')}
+          >
             {chevronRight}
           </div>
         )}
         {!disableSLides && this.state.currentPicture !== 0 && (
-          <div className='arrow left' onClick={e => this.onArrowClickHandler(e, '<')}>
+          <div
+            className='arrow left'
+            onClick={e => this.onArrowClickHandler(e, '<')}
+          >
             {chevronLeft}
           </div>
         )}

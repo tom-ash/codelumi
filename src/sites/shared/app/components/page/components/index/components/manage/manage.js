@@ -23,7 +23,10 @@ class PageIndexManage extends React.Component {
             if (!pageName.match(inputtedName)) return null
 
             return (
-              <div key={pageName} className='name'>
+              <div
+                key={pageName}
+                className='name'
+              >
                 {pageName}
                 <div className='url'>
                   PL: <ManagedLink {...plVerManager({ path: pages[pageName].pl, lang: 'PL', ...this.props })} />

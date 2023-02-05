@@ -24,7 +24,10 @@ class UserAuth extends React.Component {
       <div id='user-authorize'>
         <div className='container'>
           {/* @ts-ignore */}
-          <Heading tier={1} text={headerText} />
+          <Heading
+            tier={1}
+            text={headerText}
+          />
           <Line />
           <Email />
         </div>

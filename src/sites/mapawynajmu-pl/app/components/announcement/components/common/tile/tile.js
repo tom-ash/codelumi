@@ -199,7 +199,10 @@ class AnnouncementTile extends React.Component {
       case 'map':
         return (
           <>
-            <GoBack id={id} goBackLink={goBackLink} />
+            <GoBack
+              id={id}
+              goBackLink={goBackLink}
+            />
             <div className='listing-tile'>
               <Heading {...{ ...headingProps, tier: 1 }} />
               {isPhoneable ? <ListerPhone {...listerPhoneProps} /> : <GoToLink {...goToLinkProps} />}

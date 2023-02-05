@@ -8,7 +8,10 @@ const HeaderMenuButton = props => {
   useStyles(styles)
 
   return (
-    <div className='menu-button' onClick={() => changeShowMenu(true)}>
+    <div
+      className='menu-button'
+      onClick={() => changeShowMenu(true)}
+    >
       <div />
       <div />
       <div />

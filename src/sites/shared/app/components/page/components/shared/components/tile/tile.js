@@ -60,7 +60,10 @@ const PageTile = props => {
       {isAdmin && (
         <>
           {renderShow && (
-            <button className={buttonClassName} onClick={changePage}>
+            <button
+              className={buttonClassName}
+              onClick={changePage}
+            >
               <SVG name='edit' />
             </button>
           )}

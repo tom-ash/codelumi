@@ -12,7 +12,11 @@ class SVG extends React.Component {
     const { viewBox, pathData } = svgData
 
     return (
-      <svg xmlns='http://www.w3.org/2000/svg' fill={fill} viewBox={viewBox}>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        fill={fill}
+        viewBox={viewBox}
+      >
         <path d={pathData} />
       </svg>
     )

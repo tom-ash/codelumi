@@ -12,7 +12,10 @@ const VisitorPrivacyMonit = props => {
   useStyles(styles)
 
   return (
-    <div id='privacy-monit-cover' className='cover'>
+    <div
+      id='privacy-monit-cover'
+      className='cover'
+    >
       <div id='privacy-monit'>
         {langHandler(textsProvider('cookies', props))}
         {langHandler(textsProvider('dataProcessing', props))}

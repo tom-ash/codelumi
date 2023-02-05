@@ -88,7 +88,10 @@ const AnnouncementCreateForm = (props: AnnouncementCreateFormProps) => {
   }
 
   return (
-    <div id='listing-create-form' className='form'>
+    <div
+      id='listing-create-form'
+      className='form'
+    >
       <h1>Post a Job</h1>
       <SkillSelector {...skillSelectorProps} />
       <Location {...locationProps} />

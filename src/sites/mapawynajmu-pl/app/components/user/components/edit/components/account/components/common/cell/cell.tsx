@@ -67,7 +67,10 @@ export const UserEditCell = (props: UserEditCellProps) => {
 
   return (
     <div className='cell'>
-      <div className='current' id='current'>
+      <div
+        className='current'
+        id='current'
+      >
         <div className='text'>
           <div>
             <div className='title'>{title}</div>

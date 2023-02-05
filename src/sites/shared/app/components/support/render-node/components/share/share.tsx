@@ -11,7 +11,10 @@ const Share = (props: ShareProps) => {
 
   return (
     <div className='share'>
-      <div className='facebook' onClick={() => shareOnFacebook(href, false)}>
+      <div
+        className='facebook'
+        onClick={() => shareOnFacebook(href, false)}
+      >
         {/* @ts-ignore */}
         <SVG name='facebook' />
       </div>

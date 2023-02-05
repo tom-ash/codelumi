@@ -97,13 +97,19 @@ class AnnouncementCreate extends React.Component {
 
     if (connecting)
       return (
-        <section id='listing-create' className={step}>
+        <section
+          id='listing-create'
+          className={step}
+        >
           <Spinner spinnerClass='windmill-medium-spinner' />
         </section>
       )
 
     return (
-      <section id='listing-create' className={step}>
+      <section
+        id='listing-create'
+        className={step}
+      >
         {(renderForm || renderEdit) && (
           <div id='form-container'>
             <h1>{headerText}</h1>
@@ -116,7 +122,10 @@ class AnnouncementCreate extends React.Component {
               <Pictures />
               <Line />
               <div id='listing-create-additional'>
-                <Heading tier={2} text={this.langHandler(ADDITIONAL_DATA_HEADER)} />
+                <Heading
+                  tier={2}
+                  text={this.langHandler(ADDITIONAL_DATA_HEADER)}
+                />
                 <AreaInput {...areaInputProps} />
                 <Additional />
                 <AvailabilityDate {...availabilityDateProps} />

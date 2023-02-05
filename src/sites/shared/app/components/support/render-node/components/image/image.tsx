@@ -10,7 +10,12 @@ const Image = (props: ImageProps) => {
     style,
   } as const
 
-  return <img {...imgProps} loading='lazy' />
+  return (
+    <img
+      {...imgProps}
+      loading='lazy'
+    />
+  )
 }
 
 export default Image

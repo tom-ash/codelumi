@@ -124,8 +124,14 @@ class PageCreate extends React.Component<PageCreateProps> {
 
             {nav === 'controls' && (
               <>
-                <OnlineInput checked={online} changeInputs={changeInputs} />
-                <HeaderAutonumberingInput checked={headerAutonumbering} changeInputs={changeInputs} />
+                <OnlineInput
+                  checked={online}
+                  changeInputs={changeInputs}
+                />
+                <HeaderAutonumberingInput
+                  checked={headerAutonumbering}
+                  changeInputs={changeInputs}
+                />
               </>
             )}
 

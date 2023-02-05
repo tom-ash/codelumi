@@ -52,7 +52,10 @@ export const GenericAttribute = (props: GenericAttributeProps) => {
   }
 
   return (
-    <Cell title={title} value={currentValue}>
+    <Cell
+      title={title}
+      value={currentValue}
+    >
       <GenericAttributeInput {...genericAttributeInputProps} />
       <GenericAttributeSubmit {...genericAttributeSubmitProps} />
     </Cell>

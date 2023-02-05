@@ -37,7 +37,10 @@ class UserEditAccount extends React.Component {
       <div id='user-edit-account'>
         <div className='container'>
           {/*  @ts-ignore */}
-          <Heading tier={1} text={headerText} />
+          <Heading
+            tier={1}
+            text={headerText}
+          />
           <Line />
           {isBusinessUser && (
             <>

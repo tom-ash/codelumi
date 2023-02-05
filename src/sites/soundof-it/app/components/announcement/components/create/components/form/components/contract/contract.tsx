@@ -75,7 +75,10 @@ const Contract = (props: ContractInterface) => {
     <div>
       <h2>Contract</h2>
       {contracts.map((contract: Contract, index) => (
-        <ContractSelector {...{ ...contract, setStore }} key={index} />
+        <ContractSelector
+          {...{ ...contract, setStore }}
+          key={index}
+        />
       ))}
     </div>
   )

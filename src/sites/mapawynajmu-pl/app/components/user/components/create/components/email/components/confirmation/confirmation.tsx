@@ -11,17 +11,9 @@ export const Confirmation = () => {
 
   const {
     texts,
-    data: {
-      accountType,
-      businessName,
-    }
+    data: { accountType, businessName },
   } = useStore().getState()
-  const {
-    h1,
-    congratulations,
-    accountCreated,
-    partnerPage,
-  } = texts
+  const { h1, congratulations, accountCreated, partnerPage } = texts
   const partnerPageLinkProps = {
     track: 'user/index/partner',
   }
@@ -39,16 +31,12 @@ export const Confirmation = () => {
     <div id='user-create-confirmation'>
       <h1>{h1}</h1>
       <Line />
-      <div>
-        {congratulations}
-      </div>
+      <div>{congratulations}</div>
       <div className='checkmark-circle'>
         {/* @ts-ignore */}
         <SVG name='check' />
       </div>
-      <div>
-        {accountCreated}
-      </div>
+      <div>{accountCreated}</div>
       {accountType === 'business' && (
         <>
           <Line />

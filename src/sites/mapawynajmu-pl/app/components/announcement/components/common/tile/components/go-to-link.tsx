@@ -16,7 +16,10 @@ const GoToLink = (props: GoToLinkProps) => {
         {/* @ts-ignore */}
         <SVG name='globe' />
       </div>
-      <a href={link} target='_blank'>
+      <a
+        href={link}
+        target='_blank'
+      >
         {/* @ts-ignore */}
         {langHandler({ pl: 'Idź do', en: 'Go to' })} {name}
       </a>
