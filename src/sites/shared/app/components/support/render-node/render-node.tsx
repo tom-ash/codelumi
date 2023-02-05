@@ -125,25 +125,19 @@ const RenderNode = (props: RenderNodeProps) => {
 
   if (node.div) {
     // @ts-ignore
-    return <Section key={index} {...{ ...props, element: 'div', jsonBody: node.div, st: node.st }} />
-  }
-
-  if (node.main) {
-    const codeLang = node.codeLang
-
     return (
       <Section
         key={index}
-        {...{ ...props, element: 'main', className: node.className || 'main', jsonBody: node.main, codeLang }}
+        {
+          ...{
+            ...props,
+            element: 'div',
+            jsonBody: node.div,
+            st: node.st
+          }
+        }
       />
     )
-  }
-
-  if (node.article) {
-    const className = node.className
-    const codeLang = node.codeLang || props.codeLang
-
-    return <Section key={index} {...{ ...props, element: 'article', className, codeLang, jsonBody: node.article }} />
   }
 
   if (node.section) {
@@ -153,10 +147,38 @@ const RenderNode = (props: RenderNodeProps) => {
     return (
       <Section
         key={index}
-        {...{ ...props, element: 'section', className, codeLang, jsonBody: node.section, id: node.id }}
+        {...{ ...props, element: 'section', className, codeLang, jsonBody: node.section, id: node.id, st: node.st }}
       />
     )
   }
+
+  if (node.main) {
+    const codeLang = node.codeLang
+
+    return (
+      <Section
+        key={index}
+        {
+          ...{
+            ...props,
+            element: 'main',
+            className: node.className || 'main',
+            jsonBody: node.main,
+            codeLang,
+            st: node.st
+          }}
+      />
+    )
+  }
+
+  if (node.article) {
+    const className = node.className
+    const codeLang = node.codeLang || props.codeLang
+
+    return <Section key={index} {...{ ...props, element: 'article', className, codeLang, jsonBody: node.article, st: node.st }} />
+  }
+
+
 
   if (node.pageIndexer) {
     const { collection } = node.pageIndexer
