@@ -303,7 +303,7 @@ const RenderNode = (props: RenderNodeProps) => {
     return <TitleBoard {...titleBoardProps} />
   }
 
-  if (node.page) {
+  if (node.root) {
     const sectionProps = {
       key: index,
       node,
@@ -323,25 +323,6 @@ const RenderNode = (props: RenderNodeProps) => {
 
     return <Section {...sectionProps} />
   }
-
-  // if (node.image) {
-  //   const sectionProps = {
-  //     key: index,
-  //     node,
-  //     index,
-  //     appName,
-  //     jsonBody,
-  //     clientUrl,
-  //     changeRoute,
-  //     device,
-  //     lang,
-  //     langHandler,
-  //     className: node.className,
-  //     st: node.st || node.style,
-  //   }
-
-  //   return <Section {...sectionProps} />
-  // }
 
   if (node.leftAside) {
     const asideProps = {
@@ -419,6 +400,7 @@ const RenderNode = (props: RenderNodeProps) => {
     return <Definition {...definitionProps} />
   }
 
+    // TODO: Change term to appelation.
     // @ts-ignore
     if (node.definition) {
       const {

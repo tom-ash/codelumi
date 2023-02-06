@@ -37,7 +37,7 @@ const PageTile = props => {
 
   const nodeProps = {
     node: {
-      page: jsonBody,
+      root: jsonBody,
     },
     jsonBody,
     publishedOn,

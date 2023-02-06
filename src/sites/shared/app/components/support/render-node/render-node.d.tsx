@@ -5,7 +5,7 @@ type RenderNodeData =
       pageIndexer?: {
         collection: string
       }
-      page?: RenderNodeData[]
+      root?: RenderNodeData[]
       image?: RenderNodeData[]
       section?: RenderNodeData[]
       article?: RenderNodeData[]
