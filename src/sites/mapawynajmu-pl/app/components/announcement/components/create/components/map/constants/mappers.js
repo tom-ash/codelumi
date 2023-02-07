@@ -11,7 +11,7 @@ export const mapStateToProps = store => {
 
   const { latitude, longitude, category } = store.announcement.create.inputs
 
-  const { pin } = store.announcement.create.data
+  const { pin } = store.data
 
   const { map: error } = store.announcement.create.errors
 
@@ -34,12 +34,7 @@ export const mapDispatchToProps = dispatch => {
   return {
     changeControl: value => dispatch({ type: 'announcement/create/control', value }),
     changeInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
-    changeData: value => dispatch({ type: 'announcement/create/data', value }),
+    changeData: value => dispatch({ type: 'data', value }),
     changeErrors: value => dispatch({ type: 'announcement/create/errors', value }),
   }
 }
-
-// isMapInitialized,
-// shouldInitializeMap,
-// googleMapsScriptLoaded,
-// changeControl

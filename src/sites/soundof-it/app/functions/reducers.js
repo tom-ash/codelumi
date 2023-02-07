@@ -32,10 +32,12 @@ export const assetsReducer = combineReducers({
   svgs: svgsReducer,
 })
 
-const dataReducer = (state = {}, action) => {
+export const dataReducer = (state = {}, action) => {
   switch (action.type) {
-    case 'user/authorize/data':
+    case 'data':
       return { ...state, ...action.value }
+    case 'data/reset':
+      return { ...data }
     default:
       return state
   }

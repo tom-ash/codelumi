@@ -20,17 +20,14 @@ function parseFurnishingsForState() {
 }
 
 export const control = {
+  step: 'form',
   shouldInitializeMap: false,
   isMapInitialized: false,
+  addAvailabilityDate: false,
   connecting: false,
   publishing: false,
   success: false,
-  availabilityDateFocus: false,
-  calendarMouseOver: false,
   addingPicture: false,
-  addAvailabilityDate: false,
-  showDescription: false,
-  step: 'form',
 }
 
 export const inputs = {
@@ -65,23 +62,8 @@ export const inputs = {
   adminControlled: null,
 }
 
-export const data = {
-  netRentAmountPerSqm: null,
-  grossRentAmount: null,
-  grossRentAmountPerSqm: null,
-  user: null,
-}
-
 export const errors = {
   category: noError,
-  rentCurrency: noError,
-  netRentAmount: noError,
-  area: noError,
-  rooms: noError,
-  floor: noError,
-  totalFloors: noError,
-  availabilityDateSelect: noError,
-  availabilityDate: noError,
-  pictures: noError,
   map: noError,
+  pictures: noError,
 }

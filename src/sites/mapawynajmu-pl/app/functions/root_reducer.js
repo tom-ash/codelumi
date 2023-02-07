@@ -19,6 +19,8 @@ const rootReducer = combineReducers({
   links: linksReducer,
   image: imageReducer,
   texts: textsReducer,
+
+  // New approach.
   data: dataReducer,
 })
 

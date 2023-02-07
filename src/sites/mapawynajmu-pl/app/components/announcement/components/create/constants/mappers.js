@@ -1,4 +1,5 @@
 export const mapStateToProps = store => {
+  const { data } = store
   const { routeSynced, lang, isMobile } = store.app
   const {
     'announcement/create/form': renderForm,
@@ -7,7 +8,7 @@ export const mapStateToProps = store => {
     'announcement/create/summary': renderSuccess,
   } = store.render
   const { authorized, admin } = store.user.authorize.data
-  const { control, inputs, errors, data } = store.announcement.create
+  const { control, inputs, errors } = store.announcement.create
   const {
     step,
     connecting,
@@ -102,11 +103,11 @@ export const mapDispatchToProps = dispatch => {
     changeControl: value => dispatch({ type: 'announcement/create/control', value }),
     changeInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
     changeErrors: value => dispatch({ type: 'announcement/create/errors', value }),
-    changeData: value => dispatch({ type: 'announcement/create/data', value }),
+    changeData: value => dispatch({ type: 'data', value }),
     resetControl: value => dispatch({ type: 'announcement/create/control/reset', value }),
     resetInputs: value => dispatch({ type: 'announcement/create/inputs/reset', value }),
     resetErrors: value => dispatch({ type: 'announcement/create/errors/reset', value }),
-    resetData: value => dispatch({ type: 'announcement/create/data/reset', value }),
+    resetData: value => dispatch({ type: 'data/reset', value }),
     dispatch,
   }
 }
