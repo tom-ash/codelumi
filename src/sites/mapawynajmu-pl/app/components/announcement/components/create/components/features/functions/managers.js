@@ -21,13 +21,30 @@ export function addFeaturesManager() {
   }
 }
 
+function transformFeatures(features) {
+  return features.map(feature => {
+    return {
+      ref: feature.ref,
+      checked: this.props.features.indexOf(feature.ref) !== -1,
+      label: feature.pl // TODO!
+    }
+  })
+}
+
 export function featuresManager() {
   return {
     classNames: { container: 'form-input checkbox' },
-    checkboxes: this.pickElementsForCategory(features, 'features'),
+    checkboxes: transformFeatures.call(this, features),
     onClick: (value, ref) => {
-      this.props.setInputs({ features: { ...this.props.features, [ref]: value } })
-      sendGaEvent(FEATURES_SELECTED_EVENT)
+      let newFeatures = this.props.features
+
+      if (value) {
+        newFeatures = newFeatures.concat([ref])
+      } else {
+        newFeatures = newFeatures.filter(feature => feature !== ref)  
+      }
+
+      this.props.setInputs({ features: newFeatures })
     },
   }
 }

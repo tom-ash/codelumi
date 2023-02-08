@@ -21,13 +21,30 @@ export function addFurnishingsManager() {
   }
 }
 
+function transformFurnishings(furnishings) {
+  return furnishings.map(furnishing => {
+    return {
+      ref: furnishing.ref,
+      checked: this.props.furnishings.indexOf(furnishing.ref) !== -1,
+      label: furnishing.pl
+    }
+  })
+}
+
 export function furnishingsManager() {
   return {
     classNames: { container: 'form-input checkbox' },
-    checkboxes: this.pickElementsForCategory(furnishings, 'furnishings'),
+    checkboxes: transformFurnishings.call(this, furnishings),
     onClick: (value, ref) => {
-      this.props.setInputs({ furnishings: { ...this.props.furnishings, [ref]: value } })
-      sendGaEvent(FURNISHINGS_SELECTED_EVENT)
+      let newFurnishings = this.props.furnishings
+
+      if (value) {
+        newFurnishings = newFurnishings.concat([ref])
+      } else {
+        newFurnishings = newFurnishings.filter(feature => feature !== ref)  
+      }
+
+      this.props.setInputs({ furnishings: newFurnishings })
     },
   }
 }
