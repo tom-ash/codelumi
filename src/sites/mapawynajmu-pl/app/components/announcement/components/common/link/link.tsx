@@ -14,9 +14,11 @@ export const Link = (props: LinkProps) => {
 
   if (!link) return <></>
 
-  // TODO: Investigate better solution.
-  // @ts-ignore
-  window.areListingsObsolete = true
+  if (typeof window !== 'undefined') {
+    // TODO: Investigate better solution.
+    // @ts-ignore
+    window.areListingsObsolete = true
+  }
 
   const classNames = { container: 'link' }
   const { href, hrefLang, title, label } = link

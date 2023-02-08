@@ -28,8 +28,29 @@ function routeSender({ res, apiUrl, url, query, device, accessToken, appRenderer
         res.redirect(redirectStatus, redirectedUrl)
       } else {
         const app = { ...initialAppState, routeSynced: true, lang, device }
-        const links = state.links
-        const initialState = { app, render: state.render, links, ...visitorState, ...initialStateParser(state) }
+        const {
+          assets,
+          render,
+          links,
+          texts,
+          control,
+          data,
+          inputs,
+          errors,
+        } = state
+        const initialState = {
+          app,
+          assets,
+          render,
+          links,
+          texts,
+          control,
+          data,
+          inputs,
+          errors,
+          ...visitorState,
+          ...initialStateParser(state)
+        }
         const appAsHtml = appRenderer(initialState)
         const status = 200
 

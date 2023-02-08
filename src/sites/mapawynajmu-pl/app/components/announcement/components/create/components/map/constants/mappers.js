@@ -6,13 +6,9 @@ export const mapStateToProps = store => {
   } = store.app
 
   const { svgs } = store.assets
-
   const { shouldInitializeMap, isMapInitialized } = store.control
-
   const { latitude, longitude, category } = store.announcement.create.inputs
-
   const { pin } = store.data
-
   const { map: error } = store.errors
 
   return {
