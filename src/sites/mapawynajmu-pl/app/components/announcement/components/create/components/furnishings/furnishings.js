@@ -4,7 +4,6 @@ import { ManagedCheckbox, ManagedMultipleCheckbox } from 'managed-inputs'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { langHandler } from '../../../../../../functions/lang-handler'
 import { addFurnishingsManager, furnishingsManager } from './functions/managers'
-import { pickElementsForCategory } from '../../functions/pick-elements'
 
 class AnnouncementCreateFurnishings extends React.Component {
   constructor(props) {
@@ -12,7 +11,6 @@ class AnnouncementCreateFurnishings extends React.Component {
     this.addFurnishingsManager = addFurnishingsManager.bind(this)
     this.furnishingsManager = furnishingsManager.bind(this)
     this.langHandler = langHandler.bind(this)
-    this.pickElementsForCategory = pickElementsForCategory.bind(this)
   }
 
   render() {

@@ -2,9 +2,8 @@ import createAnnouncement from './create-announcement'
 import savePicture from './save-picture'
 
 export function componentDidMount() {
-  // const { announcement, renderEdit } = this.props
 
-  // // if (renderEdit) announcement && prepareAnnouncement.call(this)
+  // TODO: Set blobs.
 }
 
 export function componentDidUpdate(prevProps) {

@@ -4,7 +4,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { langHandler } from '../../../../../../functions/lang-handler'
 import { ManagedCheckbox, ManagedMultipleCheckbox } from 'managed-inputs'
 import { addFeaturesManager, featuresManager } from './functions/managers'
-import { pickElementsForCategory } from '../../functions/pick-elements'
 
 class AnnouncementCreateFeatures extends React.Component {
   constructor(props) {
@@ -12,7 +11,6 @@ class AnnouncementCreateFeatures extends React.Component {
     this.langHandler = langHandler.bind(this)
     this.addFeaturesManager = addFeaturesManager.bind(this)
     this.featuresManager = featuresManager.bind(this)
-    this.pickElementsForCategory = pickElementsForCategory.bind(this)
   }
   render() {
     const { addFeatures } = this.props

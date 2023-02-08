@@ -74,6 +74,17 @@ export function componentDidUpdate(prevProps) {
       }),
     })
   }
+
+  if (longitude && latitude && !pin) {
+    setData({
+      pin: drawPin({
+        latitude,
+        longitude,
+        svgs,
+        category,
+      }),
+    })
+  }
 }
 
 export function componentWillUnmount() {
