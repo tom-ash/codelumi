@@ -14,13 +14,13 @@ const options = {
 }
 
 export function componentDidMount() {
-  const { shouldInitializeMap, isMapInitialized, googleMapsScriptLoaded, changeControl } = this.props
+  const { shouldInitializeMap, isMapInitialized, googleMapsScriptLoaded, setControl } = this.props
 
   setShouldInitializeMap({
     isMapInitialized,
     shouldInitializeMap,
     googleMapsScriptLoaded,
-    changeControl,
+    setControl,
   })
 }
 
@@ -36,8 +36,8 @@ export function componentDidUpdate(prevProps) {
     shouldInitializeMap,
     isMapInitialized,
     googleMapsScriptLoaded,
-    changeControl,
-    changeData,
+    setControl,
+    setData,
     mapOptions,
     isMobile,
     latitude,
@@ -50,14 +50,14 @@ export function componentDidUpdate(prevProps) {
     isMapInitialized,
     shouldInitializeMap,
     googleMapsScriptLoaded,
-    changeControl,
+    setControl,
   })
 
   if (shouldInitializeMap && !prevShouldInitializeMap) {
     initializeMap({
       mapOptions,
       isMobile,
-      changeControl,
+      setControl,
     })
     addGoogleMapListeners.call(this)
   }
@@ -65,7 +65,7 @@ export function componentDidUpdate(prevProps) {
   if (latitude !== prevLatitude || longitude !== prevLongitude || category !== prevCategory) {
     if (pin) removePin(pin)
 
-    changeData({
+    setData({
       pin: drawPin({
         latitude,
         longitude,

@@ -4,7 +4,7 @@ import setConfirmationTokenCookie from '../../../../../../../../../../../shared/
 import { buildUrl } from '../../../../../../../../../../shared/functions/builders/url'
 
 function createUser(userObject) {
-  const { lang, changeControl } = this.props
+  const { lang, setControl } = this.props
 
   fetch(API_URL + CREATE_API_ROUTE, {
     method: 'POST',
@@ -25,7 +25,7 @@ function createUser(userObject) {
 
       setConfirmationTokenCookie(confirmationToken)
       changeRoute({ href: buildUrl({ path }) })
-      return changeControl({ connecting: false })
+      return setControl({ connecting: false })
     })
     .catch(e => console.dir(e))
 }

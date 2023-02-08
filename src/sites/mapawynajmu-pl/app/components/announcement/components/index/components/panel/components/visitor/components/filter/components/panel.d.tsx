@@ -4,7 +4,7 @@ interface PanelProps {
   options: number[]
   minInputKey: string
   maxInputKey: string
-  changeControl: ChangeControl
+  setControl: setControl
   changeInputs: ChangeInputs
   showPanelKey: string
 }

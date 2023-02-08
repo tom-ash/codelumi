@@ -13,9 +13,9 @@ import { buildUrl } from '../../../../../../shared/functions/builders/url'
 // }
 
 function createAnnouncement() {
-  const { authorized, renderEdit, changeControl } = this.props
+  const { authorized, renderEdit, setControl } = this.props
 
-  changeControl({ connecting: true })
+  setControl({ connecting: true })
 
   if (renderEdit) return update.call(this)
   if (authorized) return create.call(this)
@@ -24,7 +24,7 @@ function createAnnouncement() {
 }
 
 function update() {
-  const { lang, announcement, changeControl } = this.props
+  const { lang, announcement, setControl } = this.props
   const { method, route } = UPDATE_API_ROUTE_DATA
   const accessToken = getAccessToken()
   const id = window.location.pathname.match(/(edytuj-ogloszenie|edit-announcement)\/(\d+)/)[2]
@@ -45,12 +45,12 @@ function update() {
       const { changeRoute } = this.context
 
       changeRoute({ href: buildUrl({ path }) })
-      changeControl({ connecting: false })
+      setControl({ connecting: false })
     })
 }
 
 function create() {
-  const { lang, announcement, changeControl } = this.props
+  const { lang, announcement, setControl } = this.props
   const { method, route } = CREATE_API_ROUTE_DATA
   const accessToken = getAccessToken()
 
@@ -66,13 +66,13 @@ function create() {
       const { changeRoute } = this.context
 
       changeRoute({ href: buildUrl({ path }) })
-      changeControl({ connecting: false })
+      setControl({ connecting: false })
       // sendAnnouncementCreatedEvent()
     })
 }
 
 function createWithUser() {
-  const { lang, announcement, user, changeControl, changeData } = this.props
+  const { lang, announcement, user, setControl, setData } = this.props
   const { method, route } = CREATE_WITH_USER_API_ROUTE_DATA
 
   fetch(API_URL + route, {
@@ -89,7 +89,7 @@ function createWithUser() {
 
       setConfirmationTokenCookie(confirmationToken)
       changeRoute({ href: buildUrl({ path }) })
-      changeControl({ connecting: false })
+      setControl({ connecting: false })
 
       // sendAnnouncementCreatedEvent()
     })

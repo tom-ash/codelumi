@@ -4,13 +4,13 @@ import initializeMap from '../../../../../functions/map/initialize'
 import setShouldDrawPins from '../../../../../functions/map/pins/set-should-draw'
 
 export function componentDidMount() {
-  const { isMapInitialized, shouldInitializeMap, googleMapsScriptLoaded, changeControl } = this.props
+  const { isMapInitialized, shouldInitializeMap, googleMapsScriptLoaded, setControl } = this.props
 
   setShouldInitializeMap({
     isMapInitialized,
     shouldInitializeMap,
     googleMapsScriptLoaded,
-    changeControl,
+    setControl,
   })
 }
 
@@ -29,7 +29,7 @@ export function componentDidUpdate(prevProps) {
     isMapInitialized,
     shouldInitializeMap,
     googleMapsScriptLoaded,
-    changeControl,
+    setControl,
     announcements,
     // loadPins,
     hoveredTileId,
@@ -45,21 +45,21 @@ export function componentDidUpdate(prevProps) {
     isMapInitialized,
     shouldInitializeMap,
     googleMapsScriptLoaded,
-    changeControl,
+    setControl,
   })
 
   if (shouldInitializeMap && !prevShouldInitializeMap) {
     initializeMap({
       mapOptions,
       isMobile,
-      changeControl,
+      setControl,
     })
   }
 
   setShouldDrawPins({
     isPinsDrawn,
     isMapInitialized,
-    changeControl,
+    setControl,
   })
 
   if (shouldDrawPins && !prevShouldDrawPins) {

@@ -3,6 +3,6 @@ interface PanelColumnProps {
   label: string
   options: number[]
   inputKey: string
-  changeControl: ChangeControl
+  setControl: setControl
   changeInputs: ChangeInputs
 }

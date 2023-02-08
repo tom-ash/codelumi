@@ -19,17 +19,6 @@ function parseFurnishingsForState() {
   return initialState
 }
 
-export const control = {
-  step: 'form',
-  shouldInitializeMap: false,
-  isMapInitialized: false,
-  addAvailabilityDate: false,
-  connecting: false,
-  publishing: false,
-  success: false,
-  addingPicture: false,
-}
-
 export const inputs = {
   id: '',
   category: '',

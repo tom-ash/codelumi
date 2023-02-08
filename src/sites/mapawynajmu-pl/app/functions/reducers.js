@@ -50,12 +50,23 @@ export const textsReducer = (state = {}, action) => {
   }
 }
 
+export const controlReducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'control':
+      return { ...state, ...action.value }
+    case 'control/reset':
+      return {}
+    default:
+      return state
+  }
+}
+
 export const dataReducer = (state = {}, action) => {
   switch (action.type) {
     case 'data':
       return { ...state, ...action.value }
     case 'data/reset':
-      return { ...data }
+      return {}
     default:
       return state
   }

@@ -10,92 +10,92 @@ import {
 } from '../constants/api_route_data'
 
 export function sendCurrentEmailAddress() {
-  const { changeControl, connecting, lang, currentValue } = this.props
+  const { setControl, connecting, lang, currentValue } = this.props
 
   if (connecting) return
 
   const { method, route } = CURRENT_EMAIL_VERIFICATION_API_ROUTE_DATA
 
-  changeControl({ emailConnecting: true })
+  setControl({ emailConnecting: true })
   fetch(API_URL + route, {
     method,
     headers: { 'Content-Type': 'application/json', 'Access-Token': getAccessToken(), Lang: lang },
     body: JSON.stringify({ email: currentValue }),
   })
     .then(response => {
-      if (response.ok) return changeControl({ emailStep: 'currentEmailVerification' })
+      if (response.ok) return setControl({ emailStep: 'currentEmailVerification' })
       throw new Error('SomethingWentWrong')
     })
     .catch(error => console.dir(error))
-    .finally(() => changeControl({ emailConnecting: false }))
+    .finally(() => setControl({ emailConnecting: false }))
 }
 
 export function sendCurrentEmailVerification(verificationCode) {
-  const { changeControl, connecting } = this.props
+  const { setControl, connecting } = this.props
 
   if (connecting) return
 
   const { method, route } = CURRENT_EMAIL_VERIFY_API_ROUTE_DATA
 
-  changeControl({ emailConnecting: true })
+  setControl({ emailConnecting: true })
   fetch(API_URL + route, {
     method,
     headers: { 'Content-Type': 'application/json', 'Access-Token': getAccessToken() },
     body: JSON.stringify({ verificationCode }),
   })
     .then(response => {
-      if (response.ok) return changeControl({ emailStep: 'newEmail' })
+      if (response.ok) return setControl({ emailStep: 'newEmail' })
       throw new Error('SomethingWentWrong')
     })
     .catch(error => console.dir(error))
-    .finally(() => changeControl({ emailConnecting: false }))
+    .finally(() => setControl({ emailConnecting: false }))
 }
 
 export function sendNewEmail(email) {
-  const { changeControl, connecting, lang } = this.props
+  const { setControl, connecting, lang } = this.props
 
   if (connecting) return
 
   const { method, route } = NEW_EMAIL_VERIFICATION_API_ROUTE_DATA
 
-  changeControl({ emailConnecting: true })
+  setControl({ emailConnecting: true })
   fetch(API_URL + route, {
     method,
     headers: { 'Content-Type': 'application/json', 'Access-Token': getAccessToken(), Lang: lang },
     body: JSON.stringify({ email }),
   })
     .then(response => {
-      if (response.ok) return changeControl({ emailStep: 'newEmailVerification' })
+      if (response.ok) return setControl({ emailStep: 'newEmailVerification' })
       throw new Error('SomethingWentWrong')
     })
     .catch(error => console.dir(error))
-    .finally(() => changeControl({ emailConnecting: false }))
+    .finally(() => setControl({ emailConnecting: false }))
 }
 
 export function sendNewEmailVerification(verificationCode) {
-  const { changeControl, connecting } = this.props
+  const { setControl, connecting } = this.props
 
   if (connecting) return
 
   const email = document.getElementById('user-edit-email-new').value
   const { method, route } = NEW_EMAIL_VERIFY_API_ROUTE_DATA
 
-  changeControl({ emailConnecting: true })
+  setControl({ emailConnecting: true })
   fetch(API_URL + route, {
     method,
     headers: { 'Content-Type': 'application/json', 'Access-Token': getAccessToken() },
     body: JSON.stringify({ verificationCode }),
   })
     .then(response => {
-      if (response.ok) return changeControl({ emailStep: 'password' })
+      if (response.ok) return setControl({ emailStep: 'password' })
       throw new Error('SomethingWentWrong')
     })
     .catch(error => console.dir(error))
-    .finally(() => changeControl({ emailConnecting: false }))
+    .finally(() => setControl({ emailConnecting: false }))
 }
 
 export function sendPassword(password) {
-  const { currentValue: currentEmail, changeControl, connecting } = this.props
+  const { currentValue: currentEmail, setControl, connecting } = this.props
   const currentEmailVerificationCode = document.getElementById('user-edit-email-current-verification').value
   const newEmail = document.getElementById('user-edit-email-new').value
   const newEmailVerificationCode = document.getElementById('user-edit-email-new-verification').value
@@ -104,7 +104,7 @@ export function sendPassword(password) {
 
   if (connecting) return
 
-  changeControl({ emailConnecting: true })
+  setControl({ emailConnecting: true })
 
   const { method, route } = UPDATE_API_ROUTE_DATA
 
@@ -123,10 +123,10 @@ export function sendPassword(password) {
     .then(response => {
       if (response.ok) {
         this.props.changeData({ email: newEmail })
-        return this.props.changeControl({ emailStep: 'success', emailStage: 'success' })
+        return this.props.setControl({ emailStep: 'success', emailStage: 'success' })
       }
       throw new Error('SomethingWentWrong')
     })
     .catch(error => console.dir(error))
-    .finally(() => changeControl({ emailConnecting: false }))
+    .finally(() => setControl({ emailConnecting: false }))
 }

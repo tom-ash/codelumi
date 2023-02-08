@@ -4,13 +4,13 @@ import { VERIFY_API_ROUTE_DATA, DELETE_API_ROUTE_DATA } from '../constants/api_r
 import { deauthorizeUser } from '../../auth/functions/adapters'
 
 export function sendEmail() {
-  const { changeControl, connecting, email, lang } = this.props
+  const { setControl, connecting, email, lang } = this.props
 
   if (connecting) return
 
   const { method, route } = VERIFY_API_ROUTE_DATA
 
-  changeControl({ connecting: true })
+  setControl({ connecting: true })
 
   fetch(API_URL + route, {
     method,
@@ -22,21 +22,21 @@ export function sendEmail() {
     body: JSON.stringify({ email }),
   })
     .then(response => {
-      if (response.ok) return changeControl({ step: 'verification' })
+      if (response.ok) return setControl({ step: 'verification' })
 
       throw new Error('Server Error')
     })
     .catch(error => console.dir(error))
-    .finally(() => changeControl({ connecting: false }))
+    .finally(() => setControl({ connecting: false }))
 }
 
 export function destroy() {
-  const { lang, connecting, changeControl } = this.props
+  const { lang, connecting, setControl } = this.props
   const verificationCode = document.getElementById('user-destroy-verification').value
 
   if (connecting || !this.verificationManager('validate', verificationCode)) return
 
-  changeControl({ connecting: true })
+  setControl({ connecting: true })
 
   const { method, route } = DELETE_API_ROUTE_DATA
 
@@ -68,5 +68,5 @@ export function destroy() {
       deauthorizeUser({ dispatch, changeRoute, path })
     })
     .catch(error => console.dir(error))
-    .finally(() => changeControl({ connecting: false }))
+    .finally(() => setControl({ connecting: false }))
 }

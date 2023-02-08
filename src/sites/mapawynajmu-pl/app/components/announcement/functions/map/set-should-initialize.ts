@@ -2,11 +2,11 @@ interface SetShouldInitializeMapProps {
   isMapInitialized: boolean
   shouldInitializeMap: boolean
   googleMapsScriptLoaded: boolean
-  changeControl(props: object): void
+  setControl(props: object): void
 }
 
 function setShouldInitializeMap(props: SetShouldInitializeMapProps) {
-  const { isMapInitialized, shouldInitializeMap, googleMapsScriptLoaded, changeControl } = props
+  const { isMapInitialized, shouldInitializeMap, googleMapsScriptLoaded, setControl } = props
 
   if (isMapInitialized) return
   if (shouldInitializeMap) return
@@ -14,7 +14,7 @@ function setShouldInitializeMap(props: SetShouldInitializeMapProps) {
   if (typeof window === 'undefined') return
   if (!document.getElementById('google-map')) return
 
-  changeControl({ shouldInitializeMap: true })
+  setControl({ shouldInitializeMap: true })
 }
 
 export default setShouldInitializeMap

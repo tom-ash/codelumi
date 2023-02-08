@@ -10,6 +10,6 @@ export function cancelDestroyManager() {
   return {
     classNames: { container: 'form-input button cancel' },
     label: this.langHandler({ pl: 'Anuluj', en: 'Cancel' }),
-    onClick: () => this.props.changeControl({ beingDeleted: null }),
+    onClick: () => this.props.setControl({ beingDeleted: null }),
   }
 }

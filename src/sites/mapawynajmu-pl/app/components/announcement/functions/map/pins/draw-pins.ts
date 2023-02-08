@@ -8,7 +8,7 @@ function drawPins(currentListingId: number) {
     changeData,
     announcements,
     svgs,
-    changeControl,
+    setControl,
     // @ts-ignore
   } = this.props
 
@@ -47,7 +47,7 @@ function drawPins(currentListingId: number) {
         latitude,
         longitude,
         path,
-        changeControl,
+        setControl,
         changeData,
         changeRoute,
       })

@@ -7,7 +7,7 @@ export const mapStateToProps = store => {
 
   const { svgs } = store.assets
 
-  const { shouldInitializeMap, isMapInitialized } = store.announcement.create.control
+  const { shouldInitializeMap, isMapInitialized } = store.control
 
   const { latitude, longitude, category } = store.announcement.create.inputs
 
@@ -32,9 +32,9 @@ export const mapStateToProps = store => {
 
 export const mapDispatchToProps = dispatch => {
   return {
-    changeControl: value => dispatch({ type: 'announcement/create/control', value }),
+    setControl: value => dispatch({ type: 'control', value }),
     changeInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
-    changeData: value => dispatch({ type: 'data', value }),
+    setData: value => dispatch({ type: 'data', value }),
     changeErrors: value => dispatch({ type: 'announcement/create/errors', value }),
   }
 }

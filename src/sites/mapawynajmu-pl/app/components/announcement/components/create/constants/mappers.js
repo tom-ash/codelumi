@@ -1,5 +1,5 @@
 export const mapStateToProps = store => {
-  const { data } = store
+  const { control, data } = store
   const { routeSynced, lang, isMobile } = store.app
   const {
     'announcement/create/form': renderForm,
@@ -8,13 +8,11 @@ export const mapStateToProps = store => {
     'announcement/create/summary': renderSuccess,
   } = store.render
   const { authorized, admin } = store.user.authorize.data
-  const { control, inputs, errors } = store.announcement.create
+  const { inputs, errors } = store.announcement.create
   const {
     step,
     connecting,
     savingAnnouncement,
-    // showPolishDescription,
-    // showEnglishDescription,
   } = control
   const { announcement, user } = data
   const { accountType, emailAddress, password, countryCode, phoneNumber, termsAndPrivacyConsent, businessName } =
@@ -100,11 +98,12 @@ export const mapStateToProps = store => {
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
-    changeControl: value => dispatch({ type: 'announcement/create/control', value }),
+    setControl: value => dispatch({ type: 'control', value }),
+    setData: value => dispatch({ type: 'data', value }),
+
+    // TODO: Depracete.
     changeInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
     changeErrors: value => dispatch({ type: 'announcement/create/errors', value }),
-    changeData: value => dispatch({ type: 'data', value }),
-    resetControl: value => dispatch({ type: 'announcement/create/control/reset', value }),
     resetInputs: value => dispatch({ type: 'announcement/create/inputs/reset', value }),
     resetErrors: value => dispatch({ type: 'announcement/create/errors/reset', value }),
     resetData: value => dispatch({ type: 'data/reset', value }),

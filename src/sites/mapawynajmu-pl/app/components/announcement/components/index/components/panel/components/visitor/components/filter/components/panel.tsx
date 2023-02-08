@@ -2,7 +2,7 @@ import React from 'react'
 import PanelColumn from './panel-column'
 
 const Panel = (props: PanelProps) => {
-  const { options, minInputKey, maxInputKey, changeInputs, changeControl, showPanelKey } = props
+  const { options, minInputKey, maxInputKey, changeInputs, setControl, showPanelKey } = props
 
   return (
     <div className='panel'>
@@ -10,7 +10,7 @@ const Panel = (props: PanelProps) => {
         label='Min.'
         options={options}
         changeInputs={changeInputs}
-        changeControl={changeControl}
+        setControl={setControl}
         inputKey={minInputKey}
         showPanelKey={showPanelKey}
       />
@@ -18,7 +18,7 @@ const Panel = (props: PanelProps) => {
         label='Maks.'
         options={options}
         changeInputs={changeInputs}
-        changeControl={changeControl}
+        setControl={setControl}
         inputKey={maxInputKey}
         showPanelKey={showPanelKey}
       />

@@ -31,5 +31,5 @@ interface ChangeError {
   (props: LangObject): void
 }
 
-type ChangeControl = (args: { [key: string]: boolean }) => void
+type setControl = (args: { [key: string]: boolean }) => void
 type ChangeInputs = (args: { [key: string]: string | number | boolean }) => void

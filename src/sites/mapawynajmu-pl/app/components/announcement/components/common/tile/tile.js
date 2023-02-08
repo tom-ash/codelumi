@@ -67,7 +67,7 @@ class AnnouncementTile extends React.Component {
       longitude,
       changeData,
       changeApp,
-      changeControl,
+      setControl,
       path,
       title,
       name,
@@ -178,7 +178,7 @@ class AnnouncementTile extends React.Component {
                 behavior: 'smooth',
               })
 
-              changeControl({
+              setControl({
                 mapOptions: {
                   center: {
                     lat: latitude,

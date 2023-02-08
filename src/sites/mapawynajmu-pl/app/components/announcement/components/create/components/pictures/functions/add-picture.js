@@ -12,7 +12,7 @@ if (typeof document !== 'undefined') octx = oc.getContext('2d')
 export function addPicture(files) {
   if (typeof window === 'undefined') return
 
-  this.props.changeControl({ addingPicture: true })
+  this.props.setControl({ addingPicture: true })
   const file = files.pop()
   createBlob(window.URL.createObjectURL(file), blob => {
     if (typeof window === 'undefined') return
@@ -29,7 +29,7 @@ export function addPicture(files) {
         },
       ]),
     })
-    this.props.changeControl({ addingPicture: false })
+    this.props.setControl({ addingPicture: false })
     this.props.changeErrors({ pictures: { pl: '', en: '' } })
   })
 

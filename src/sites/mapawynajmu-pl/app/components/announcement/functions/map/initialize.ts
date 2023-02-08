@@ -5,20 +5,22 @@ import setUpPinCreator from './pins/set-up-creator'
 interface InitializeMapProps {
   mapOptions: MapOptions
   isMobile: boolean
-  changeControl(props: object): void
+  setControl(props: object): void
 }
 
 function initializeMap(props: InitializeMapProps) {
-  const { mapOptions, isMobile, changeControl } = props
+  const { mapOptions, isMobile, setControl } = props
 
   // @ts-ignore
   if (window.googleMap) {
     replaceMap({
       mapOptions,
       isMobile,
-      changeControl,
+      setControl,
     })
   } else {
+    // TODO: Fix "Loading the Google Maps JavaScript API without a callback is not supported: https://developers.google.com/maps/documentation/javascript/url-params#required_parameters."
+
     // @ts-ignore
     window.googleMap = new google.maps.Map(
       // @ts-ignore
@@ -26,7 +28,7 @@ function initializeMap(props: InitializeMapProps) {
       mapOptionsProvider({
         mapOptions,
         isMobile,
-      })
+      }),
     )
 
     setUpPinCreator({
@@ -37,7 +39,7 @@ function initializeMap(props: InitializeMapProps) {
     window.sessionToken = new google.maps.places.AutocompleteSessionToken()
   }
 
-  changeControl({
+  setControl({
     isMapInitialized: true,
     shouldInitializeMap: false,
   })

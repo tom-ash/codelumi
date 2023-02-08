@@ -8,9 +8,9 @@ export function verify() {
 
   const confirmationToken = getCookieValue('confirmation_token')
   const verificationCode = document.getElementById('user-create-email-verification').value
-  const { lang, changeAuthorizeData, changeControl, changeErrors } = this.props
+  const { lang, changeAuthorizeData, setControl, changeErrors } = this.props
 
-  changeControl({ connecting: true })
+  setControl({ connecting: true })
 
   fetch(API_URL + VERIFY_API_ROUTE, {
     method: 'PUT',
@@ -32,10 +32,10 @@ export function verify() {
       saveTokens.call(this, accessToken)
       changeAuthorizeData({ authorized: true, name })
       changeRoute({ href })
-      changeControl({ connecting: false })
+      setControl({ connecting: false })
     })
     .catch(() =>
       changeErrors({ verification: { pl: 'Nieprawidłowy kod weryfikacyjny', en: 'Invalid verification code' } })
     )
-    .finally(() => changeControl({ connecting: false }))
+    .finally(() => setControl({ connecting: false }))
 }

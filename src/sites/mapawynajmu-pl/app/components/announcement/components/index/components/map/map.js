@@ -34,13 +34,13 @@ class AnnouncementIndexMap extends React.Component {
       miniListFarthestScrollTop,
       miniListFarthestScrollLeft,
       changeApp,
-      changeControl,
+      setControl,
       title,
       currentPartnerName,
       goBackLink,
     } = this.props
 
-    const changeHoveredTileId = hoveredTileId => changeControl({ hoveredTileId })
+    const changeHoveredTileId = hoveredTileId => setControl({ hoveredTileId })
     const tileComponents = {
       showPrimary: true,
     }
@@ -79,7 +79,7 @@ class AnnouncementIndexMap extends React.Component {
                     lang={lang}
                     langHandler={this.langHandler}
                     changeData={changeData}
-                    changeControl={changeControl}
+                    setControl={setControl}
                     isMobile={isMobile}
                     path={announcement.path}
                     title={announcement.title}

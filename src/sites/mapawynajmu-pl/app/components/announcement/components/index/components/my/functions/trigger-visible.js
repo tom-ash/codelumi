@@ -4,7 +4,7 @@ import { UPDATE_VISIBLE_ROUTE_DATA } from '../constants/api_route_data'
 
 export function triggerVisible(announcement, index) {
   if (this.props.connecting) return
-  this.props.changeControl({ connecting: true })
+  this.props.setControl({ connecting: true })
   const access_token = getAccessToken()
   const { method, route } = UPDATE_VISIBLE_ROUTE_DATA
 
@@ -19,7 +19,7 @@ export function triggerVisible(announcement, index) {
     if (response.ok) {
       this.props.changeData({ announcements: deepCloneAnnouncement.call(this, announcement, index) })
     }
-    this.props.changeControl({ connecting: false })
+    this.props.setControl({ connecting: false })
   })
 }
 

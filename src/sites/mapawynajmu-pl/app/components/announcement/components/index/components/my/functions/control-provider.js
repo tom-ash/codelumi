@@ -44,7 +44,7 @@ export function controlProvider(announcement, index) {
           announcement,
           index,
           () => {
-            this.props.changeControl({ beingDeleted: announcement.id })
+            this.props.setControl({ beingDeleted: announcement.id })
           },
           ' delete'
         )}

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const PanelColum = (props: PanelColumnProps) => {
-  const { label, options = [], changeInputs, changeControl, inputKey, showPanelKey } = props
+  const { label, options = [], changeInputs, setControl, inputKey, showPanelKey } = props
 
   return (
     <div className='column'>
@@ -13,7 +13,7 @@ const PanelColum = (props: PanelColumnProps) => {
           onClick={e => {
             e.stopPropagation()
             changeInputs({ [inputKey]: option, [inputKey.replace('Input', '')]: option })
-            changeControl({ rebuildQueryParams: true, [showPanelKey]: false })
+            setControl({ rebuildQueryParams: true, [showPanelKey]: false })
           }}
         >
           {option}

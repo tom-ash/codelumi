@@ -110,7 +110,7 @@ function triggerClassProvider() {
 }
 
 function triggerOnClickHandler() {
-  let controlChanger = this.props.changeControl
+  let controlChanger = this.props.setControl
   let stateKey = `${this.props.item}Stage`
   if (this.state.item == 'destroy') {
     controlChanger = this.props.changeDestroyControl

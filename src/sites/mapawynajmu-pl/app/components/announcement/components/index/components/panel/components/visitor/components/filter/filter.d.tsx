@@ -12,6 +12,6 @@ interface FilterProps {
   maxInput: number
   maxKey: string
   maxInputKey: string
-  changeControl: ChangeControl
+  setControl: setControl
   changeInputs(): void
 }

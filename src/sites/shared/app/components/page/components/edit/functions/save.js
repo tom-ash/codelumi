@@ -2,7 +2,7 @@ import getAccessToken from '../../../../../../app/functions/tokens/getters/get-t
 import { UPDATE_API_ROUTE } from '../constants/api_route_data'
 
 export function save({ withRouteChange = false }) {
-  const { apiUrl, changeControl, changeData, autoSchema, manualSchema } = this.props
+  const { apiUrl, setControl, changeData, autoSchema, manualSchema } = this.props
   const body = JSON.parse(this.props.body)
   const { method, route } = UPDATE_API_ROUTE
 
@@ -13,7 +13,7 @@ export function save({ withRouteChange = false }) {
     manualSchema,
   })
 
-  changeControl({ fetching: true })
+  setControl({ fetching: true })
   fetch(`${apiUrl}/${route}`, {
     method,
     headers: {
@@ -42,6 +42,6 @@ export function save({ withRouteChange = false }) {
       console.error(error)
     })
     .finally(() => {
-      changeControl({ fetching: false })
+      setControl({ fetching: false })
     })
 }

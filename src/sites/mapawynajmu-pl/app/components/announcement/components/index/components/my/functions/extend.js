@@ -4,7 +4,7 @@ import { UPDATE_ACTIVE_UNTIL_ROUTE_DATA } from '../constants/api_route_data'
 
 export function extend(announcement, index) {
   if (this.props.connecting) return
-  this.props.changeControl({ connecting: true })
+  this.props.setControl({ connecting: true })
   const access_token = getAccessToken()
   const { method, route } = UPDATE_ACTIVE_UNTIL_ROUTE_DATA
 
@@ -17,7 +17,7 @@ export function extend(announcement, index) {
     })
     .then(json => {
       this.props.changeData({ announcements: deepCloneAnnouncement.call(this, json, announcement, index) })
-      this.props.changeControl({ connecting: false })
+      this.props.setControl({ connecting: false })
     })
 }
 

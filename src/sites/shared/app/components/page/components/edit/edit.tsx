@@ -17,7 +17,7 @@ interface PageCreateProps {
   routeSynced: boolean
   online: boolean
   headerAutonumbering: boolean
-  changeControl(args: object): void
+  setControl(args: object): void
   changeInputs(): void
   changeData(): void
   updated: boolean
@@ -64,7 +64,7 @@ class PageCreate extends React.Component<PageCreateProps> {
       routeSynced,
       online,
       headerAutonumbering,
-      changeControl,
+      setControl,
       changeInputs,
       updated,
       nav,
@@ -108,11 +108,11 @@ class PageCreate extends React.Component<PageCreateProps> {
         <PageTile {...tileProps} />
         <div id='edit-panel'>
           <nav>
-            <div onClick={() => changeControl({ nav: 'urls' })}>URLs</div>
-            <div onClick={() => changeControl({ nav: 'controls' })}>Controls</div>
-            <div onClick={() => changeControl({ nav: 'body' })}>Body</div>
-            <div onClick={() => changeControl({ nav: 'meta' })}>Meta</div>
-            <div onClick={() => changeControl({ nav: 'schema' })}>Schema</div>
+            <div onClick={() => setControl({ nav: 'urls' })}>URLs</div>
+            <div onClick={() => setControl({ nav: 'controls' })}>Controls</div>
+            <div onClick={() => setControl({ nav: 'body' })}>Body</div>
+            <div onClick={() => setControl({ nav: 'meta' })}>Meta</div>
+            <div onClick={() => setControl({ nav: 'schema' })}>Schema</div>
           </nav>
           <form className={nav}>
             {nav === 'urls' && (

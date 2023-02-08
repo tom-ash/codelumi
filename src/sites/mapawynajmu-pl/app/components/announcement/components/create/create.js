@@ -58,7 +58,7 @@ class AnnouncementCreate extends React.Component {
       step,
       addAvailabilityDate,
       availabilityDate,
-      changeControl,
+      setControl,
       changeInputs,
       showPolishDescription,
       showEnglishDescription,
@@ -70,7 +70,7 @@ class AnnouncementCreate extends React.Component {
       lang,
       availabilityDate,
       addAvailabilityDate,
-      changeControl,
+      setControl,
       changeInputs,
     }
     const headerText = this.langHandler(H1)

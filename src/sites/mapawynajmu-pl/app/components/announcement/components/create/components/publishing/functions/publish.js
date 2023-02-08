@@ -4,7 +4,7 @@ import { buildUserObject } from '../../../../../../user/components/create/compon
 import buildAnouncement from '../../../functions/build-announcement'
 
 export function publish() {
-  const { authorized, changeControl, changeData } = this.props
+  const { authorized, setControl, setData } = this.props
 
   const announcementObject = {
     // category: this.categoryManager().validate(),
@@ -25,6 +25,6 @@ export function publish() {
 
   if (!authorized && !user) return scrollToElement(document.getElementById('user-create-email-first-name'), 12, -160)
 
-  changeData({ announcement, user })
-  changeControl({ step: 'publishing' })
+  setData({ announcement, user })
+  setControl({ step: 'publishing' })
 }

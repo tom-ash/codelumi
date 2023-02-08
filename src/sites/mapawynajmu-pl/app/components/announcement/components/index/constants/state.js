@@ -1,8 +1,11 @@
 export const control = {
+
+  isMapInitialized: false,
+  shouldInitializeMap: false,
+
   connecting: false,
   readParams: true,
   type: 'map',
-  isMapInitialized: false,
   deletedAnnouncement: null,
   loadMap: false,
   loadPins: false,
@@ -21,7 +24,6 @@ export const control = {
     },
     zoom: 6.7,
   },
-  shouldInitializeMap: false,
   isPinsDrawn: false,
   shouldDrawPins: false,
 }

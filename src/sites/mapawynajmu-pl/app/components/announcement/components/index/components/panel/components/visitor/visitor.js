@@ -5,7 +5,7 @@ import priceOptions from './constants/price-options'
 
 export default props => {
   const {
-    changeControl,
+    setControl,
     changeInputs,
     priceMin,
     priceMinInput,
@@ -34,7 +34,7 @@ export default props => {
     minInputKey: 'areaMinInput',
     maxKey: 'areaMax',
     maxInputKey: 'areaMaxInput',
-    changeControl,
+    setControl,
     changeInputs,
   }
 
@@ -52,7 +52,7 @@ export default props => {
     minInputKey: 'priceMinInput',
     maxKey: 'priceMax',
     maxInputKey: 'priceMaxInput',
-    changeControl,
+    setControl,
     changeInputs,
   }
 

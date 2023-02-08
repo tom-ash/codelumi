@@ -7,9 +7,9 @@ import { buildUrl } from '../../../../../../../../shared/functions/builders/url'
 export function logIn() {
   const email = document.getElementById('user-logon-email-address').value.toLowerCase()
   let password = document.getElementById('user-logon-password').value
-  const { changeControl, changeData, changeErrors, lang } = this.props
+  const { setControl, changeData, changeErrors, lang } = this.props
 
-  changeControl({ connecting: true })
+  setControl({ connecting: true })
   password = hashPassword(password, email)
 
   fetch(API_URL + SIGN_IN_API_ROUTE, {
@@ -38,6 +38,6 @@ export function logIn() {
       })
     })
     .finally(() => {
-      changeControl({ connecting: false })
+      setControl({ connecting: false })
     })
 }

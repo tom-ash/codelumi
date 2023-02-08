@@ -13,7 +13,7 @@ const Filter = (props: FilterProps) => {
     minInput,
     max,
     maxInput,
-    changeControl,
+    setControl,
     changeInputs,
     minKey,
     minInputKey,
@@ -37,7 +37,7 @@ const Filter = (props: FilterProps) => {
     maxInput,
     maxKey,
     maxInputKey,
-    changeControl,
+    setControl,
     changeInputs,
   }
 
@@ -45,9 +45,9 @@ const Filter = (props: FilterProps) => {
     <div
       tabIndex={0}
       className='filter'
-      onClick={() => changeControl({ [showPanelKey]: true })}
-      onBlur={() => changeControl({ [showPanelKey]: false })}
-      onFocus={() => changeControl({ [showPanelKey]: true })}
+      onClick={() => setControl({ [showPanelKey]: true })}
+      onBlur={() => setControl({ [showPanelKey]: false })}
+      onFocus={() => setControl({ [showPanelKey]: true })}
     >
       <Content {...contentProps} />
       {showPanel && <Panel {...panelProps} />}

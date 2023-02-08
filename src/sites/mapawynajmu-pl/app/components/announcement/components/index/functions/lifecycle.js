@@ -2,12 +2,12 @@ import { buildUrl } from '../../../../../../shared/functions/builders/url'
 
 export function componentDidUpdate(prevProps) {
   const { rebuildQueryParams: prevRebuildQueryParams } = prevProps
-  const { rebuildQueryParams, changeControl, changeInputs } = this.props
+  const { rebuildQueryParams, setControl, changeInputs } = this.props
 
   if (!prevRebuildQueryParams && rebuildQueryParams) {
     window.areListingsObsolete = true
 
-    changeControl({ rebuildQueryParams: false })
+    setControl({ rebuildQueryParams: false })
 
     const updateAttrs = {}
     const queryParamMappings = {
