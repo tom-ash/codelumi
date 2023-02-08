@@ -23,9 +23,3 @@ export function componentDidUpdate(prevProps) {
 
   if (!prevSavingAnnouncement && savingAnnouncement) createAnnouncement.call(this)
 }
-
-export function componentWillUnmount() {
-  const { resetInputs } = this.props
-
-  resetInputs()
-}

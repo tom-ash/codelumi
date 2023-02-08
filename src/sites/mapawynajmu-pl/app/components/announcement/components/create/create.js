@@ -34,7 +34,6 @@ class AnnouncementCreate extends React.Component {
     this.userCreateNode = React.createRef()
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
-    this.componentWillUnmount = lifecycle.componentWillUnmount
     this.langHandler = langHandler.bind(this)
     this.addAnnouncementManager = managers.addAnnouncementManager.bind(this)
     this.validatePictures = validatePictures.bind(this)

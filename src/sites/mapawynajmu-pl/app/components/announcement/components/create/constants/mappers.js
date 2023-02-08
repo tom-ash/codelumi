@@ -8,7 +8,7 @@ export const mapStateToProps = store => {
     'announcement/create/summary': renderSuccess,
   } = store.render
   const { authorized, admin } = store.user.authorize.data
-  const { inputs, errors } = store.announcement.create
+  const { inputs, errors } = store
   const {
     step,
     connecting,
@@ -99,11 +99,8 @@ export const mapDispatchToProps = dispatch => {
   return {
     setControl: value => dispatch({ type: 'control', value }),
     setData: value => dispatch({ type: 'data', value }),
+    setInputs: value => dispatch({ type: 'inputs', value }),
     setErrors: value => dispatch({ type: 'errors', value }),
-
-    // TODO: Depracete.
-    setInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
-    resetInputs: value => dispatch({ type: 'announcement/create/inputs/reset', value }),
     dispatch,
   }
 }

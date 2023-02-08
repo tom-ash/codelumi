@@ -1,9 +1,7 @@
 export const mapStateToProps = store => {
   const {
     app,
-    announcement: {
-      create: { inputs },
-    },
+    inputs,
   } = store
 
   const { lang } = app
@@ -27,6 +25,6 @@ export const mapStateToProps = store => {
 
 export const mapDispatchToProps = dispatch => {
   return {
-    setInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
+    setInputs: value => dispatch({ type: 'inputs', value }),
   }
 }

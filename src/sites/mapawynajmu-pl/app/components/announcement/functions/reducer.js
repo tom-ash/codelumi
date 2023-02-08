@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux'
-import { createReducer } from '../components/create/functions/reducer'
 import { indexReducer } from '../components/index/functions/reducers'
 
 export const announcementReducer = combineReducers({
   index: indexReducer,
-  create: createReducer,
 })

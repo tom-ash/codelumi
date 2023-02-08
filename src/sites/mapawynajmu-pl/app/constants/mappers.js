@@ -12,7 +12,7 @@ export const mapStateToProps = store => {
   const { statisticsConsent, marketingConsent } = store.visitor.consents
   const { data: pageShowData } = store.page.show
   const { data: pageEditData } = store.page.edit
-  const { data: announcementEditData } = store.announcement.create
+  const { data: announcementEditData } = store
   const { authorized, admin } = store.user.authorize.data
   const { links } = store
 

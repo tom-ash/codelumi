@@ -18,13 +18,13 @@ const rootReducer = combineReducers({
   // New approach.
   app: appReducer,
   render: renderReducer,
+  texts: textsReducer,
+  links: linksReducer,
   assets: assetsReducer,
   control: controlReducer,
   data: dataReducer,
   inputs: inputsReducer,
   errors: errorsReducer,
-  links: linksReducer,
-  texts: textsReducer,
 })
 
 export default rootReducer

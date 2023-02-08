@@ -1,19 +1,36 @@
 export const mapStateToProps = store => {
-  const { 'announcement/edit': renderEdit } = store.render
+  const {
+    app: {
+      lang
+    },
+    render: {
+      'announcement/edit': renderEdit
+    },
+    control: {
+      addingPicture,
+    },
+    inputs: {
+      picFiles: files,
+      blobs,
+    },
+    errors: {
+      pictures: error
+    },
+  } = store
 
   return {
+    lang,
     renderEdit,
-    lang: store.app.lang,
-    files: store.announcement.create.inputs.picFiles,
-    blobs: store.announcement.create.inputs.blobs,
-    error: store.errors.pictures,
-    addingPicture: store.control.addingPicture,
+    files,
+    blobs,
+    error,
+    addingPicture,
   }
 }
 
 export const mapDispatchToProps = dispatch => {
   return {
-    setInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
+    setInputs: value => dispatch({ type: 'inputs', value }),
     setErrors: value => dispatch({ type: 'errors', value }),
     setControl: value => dispatch({ type: 'control', value }),
   }

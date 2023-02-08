@@ -1,14 +1,23 @@
 export const mapStateToProps = store => {
+  const {
+    inputs,
+  } = store
+  const {
+    category,
+    furnishings,
+    addFurnishings,
+  } = inputs
+
   return {
     lang: store.app.lang,
-    furnishings: store.announcement.create.inputs.furnishings,
-    category: store.announcement.create.inputs.category,
-    addFurnishings: store.announcement.create.inputs.addFurnishings,
+    category,
+    furnishings,
+    addFurnishings,
   }
 }
 
 export const mapDispatchToProps = dispatch => {
   return {
-    setInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
+    setInputs: value => dispatch({ type: 'inputs', value }),
   }
 }
