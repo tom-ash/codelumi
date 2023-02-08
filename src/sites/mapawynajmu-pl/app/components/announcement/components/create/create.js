@@ -59,7 +59,7 @@ class AnnouncementCreate extends React.Component {
       addAvailabilityDate,
       availabilityDate,
       setControl,
-      changeInputs,
+      setInputs,
       showPolishDescription,
       showEnglishDescription,
       polishDescription,
@@ -71,19 +71,19 @@ class AnnouncementCreate extends React.Component {
       availabilityDate,
       addAvailabilityDate,
       setControl,
-      changeInputs,
+      setInputs,
     }
     const headerText = this.langHandler(H1)
 
     const categoryProps = {
       currentCategory: category,
-      changeInputs,
+      setInputs,
       langHandler: this.langHandler,
     }
 
     const areaInputProps = {
       area,
-      changeInputs,
+      setInputs,
       langHandler: this.langHandler,
     }
 
@@ -92,7 +92,7 @@ class AnnouncementCreate extends React.Component {
       showEnglish: showEnglishDescription,
       polish: polishDescription,
       english: englishDescription,
-      changeInputs,
+      setInputs,
     }
 
     if (connecting)

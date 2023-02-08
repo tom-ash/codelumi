@@ -16,12 +16,12 @@ const INFO = {
 
 type CategoryProps = {
   currentCategory: number
-  changeInputs(params: { category: number }): void
+  setInputs(params: { category: number }): void
   langHandler: LangHandler
 }
 
 export function Category(props: CategoryProps) {
-  const { currentCategory, changeInputs, langHandler } = props
+  const { currentCategory, setInputs, langHandler } = props
 
   const infoProps = {
     // @ts-ignore
@@ -56,7 +56,7 @@ export function Category(props: CategoryProps) {
               key={label}
               className={classNames.join(' ')}
               onClick={() => {
-                changeInputs({ category: value })
+                setInputs({ category: value })
               }}
             >
               <div className='icon'>

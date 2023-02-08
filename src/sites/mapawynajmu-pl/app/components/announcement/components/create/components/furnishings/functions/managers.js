@@ -5,7 +5,7 @@ import analyticEvents from '../constants/analytics/events'
 const { FURNISHINGS_SHOWN_EVENT, FURNISHINGS_SELECTED_EVENT } = analyticEvents
 
 export function addFurnishingsManager() {
-  const { addFurnishings, changeInputs } = this.props
+  const { addFurnishings, setInputs } = this.props
 
   return {
     classNames: { container: 'form-input checkbox add-switcher' },
@@ -15,7 +15,7 @@ export function addFurnishingsManager() {
       en: 'Add Furnishings',
     }),
     onClick: value => {
-      changeInputs({ addFurnishings: value })
+      setInputs({ addFurnishings: value })
       sendGaEvent(FURNISHINGS_SHOWN_EVENT)
     },
   }
@@ -26,7 +26,7 @@ export function furnishingsManager() {
     classNames: { container: 'form-input checkbox' },
     checkboxes: this.pickElementsForCategory(furnishings, 'furnishings'),
     onClick: (value, ref) => {
-      this.props.changeInputs({ furnishings: { ...this.props.furnishings, [ref]: value } })
+      this.props.setInputs({ furnishings: { ...this.props.furnishings, [ref]: value } })
       sendGaEvent(FURNISHINGS_SELECTED_EVENT)
     },
   }

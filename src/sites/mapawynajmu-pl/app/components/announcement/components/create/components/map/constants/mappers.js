@@ -13,7 +13,7 @@ export const mapStateToProps = store => {
 
   const { pin } = store.data
 
-  const { map: error } = store.announcement.create.errors
+  const { map: error } = store.errors
 
   return {
     shouldInitializeMap,
@@ -33,8 +33,8 @@ export const mapStateToProps = store => {
 export const mapDispatchToProps = dispatch => {
   return {
     setControl: value => dispatch({ type: 'control', value }),
-    changeInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
+    setInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
     setData: value => dispatch({ type: 'data', value }),
-    changeErrors: value => dispatch({ type: 'announcement/create/errors', value }),
+    setErrors: value => dispatch({ type: 'errors', value }),
   }
 }

@@ -1,12 +1,12 @@
 export function pickElementsForCategory(elements, elementsName) {
-  const { category, changeInputs } = this.props
+  const { category, setInputs } = this.props
 
   let pickedElements = elements.map(element => {
     if (element.onlyShow) return null
 
     if (category !== '' && element.cat.indexOf(category) === -1 && !element.onlyShow) {
       if (this.props[elementsName][element.ref])
-        changeInputs({ [elementsName]: { ...this.props[elements], [element.ref]: false } })
+        setInputs({ [elementsName]: { ...this.props[elements], [element.ref]: false } })
       return null
     }
 

@@ -3,7 +3,7 @@ import addPin from '../../functions/add-pin'
 import { ManagedText } from 'managed-inputs'
 
 export const AddressInput = (props: any) => {
-  const { autocompleteInput, autocompletes, setState, changeInputs, changeErrors } = props
+  const { autocompleteInput, autocompletes, setState, setInputs, setErrors } = props
 
   const classNames = 'address-input'
   const label = 'Adres nieruchomości'
@@ -17,7 +17,7 @@ export const AddressInput = (props: any) => {
 
     const autocomplete = autocompletes[0]
 
-    addPin({ autocomplete, setState, changeInputs, changeErrors })
+    addPin({ autocomplete, setState, setInputs, setErrors })
 
     // @ts-ignore
     // https://stackoverflow.com/questions/60504810/react-synteticevent-provides-no-blur-method-for-keyboardeventhtmlinputelement

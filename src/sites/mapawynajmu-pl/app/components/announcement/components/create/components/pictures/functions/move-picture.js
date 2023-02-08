@@ -4,5 +4,5 @@ export function movePicture(direction, index) {
   if (destination < 0 || destination === blobs.length) return
   const blob = blobs.splice(index, 1)[0]
   blobs.splice(destination, 0, blob)
-  this.props.changeInputs({ blobs: blobs })
+  this.props.setInputs({ blobs: blobs })
 }

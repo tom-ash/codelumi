@@ -3,7 +3,7 @@ import analyticEvents from '../constants/analytics/events'
 
 const { SHOW_AVAILABILITY_DATE_EVENT } = analyticEvents
 
-export function addAvailabilityDateManager({ addAvailabilityDate, changeInputs }) {
+export function addAvailabilityDateManager({ addAvailabilityDate, setInputs }) {
   return {
     classNames: { container: 'form-input checkbox availability-date' },
     checked: addAvailabilityDate,
@@ -12,7 +12,7 @@ export function addAvailabilityDateManager({ addAvailabilityDate, changeInputs }
       en: 'Add Availability Date',
     }),
     onClick: value => {
-      changeInputs({ addAvailabilityDate: value })
+      setInputs({ addAvailabilityDate: value })
       sendGaEvent(SHOW_AVAILABILITY_DATE_EVENT)
     },
   }

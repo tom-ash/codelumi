@@ -6,7 +6,7 @@ const { PICTURE_REMOVED_EVENT } = analyticEvents
 export function deletePicture(index) {
   const blobs = [...this.props.blobs]
   blobs.splice(index, 1)
-  this.props.changeInputs({ blobs: blobs })
+  this.props.setInputs({ blobs: blobs })
 
   sendGaEvent(PICTURE_REMOVED_EVENT)
 }

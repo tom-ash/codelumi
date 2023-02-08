@@ -9,6 +9,6 @@ export const mapStateToProps = store => {
 export const mapDispatchToProps = dispatch => {
   return {
     setControl: value => dispatch({ type: 'control', value }),
-    changeInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
+    setInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
   }
 }

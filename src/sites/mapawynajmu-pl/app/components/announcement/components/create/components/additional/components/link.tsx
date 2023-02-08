@@ -3,12 +3,12 @@ import { ManagedText } from 'managed-inputs'
 
 type LinkInputProps = {
   link: string
-  changeInputs(attrs: { link: string }): void
+  setInputs(attrs: { link: string }): void
   langHandler: LangHandler
 }
 
 export function LinkInput(props: LinkInputProps) {
-  const { link, changeInputs } = props
+  const { link, setInputs } = props
 
   const classNames = { container: 'form-input text with-icon rent-amount' }
   const label = 'Link'
@@ -16,7 +16,7 @@ export function LinkInput(props: LinkInputProps) {
   const linkProps = {
     label,
     value: link || '',
-    onChange: (value: string) => changeInputs({ link: value }),
+    onChange: (value: string) => setInputs({ link: value }),
     classNames,
   }
 

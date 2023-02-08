@@ -3,7 +3,7 @@ import { features } from '../../../constants/features'
 import { furnishings } from '../../../constants/furnishings'
 
 function prepareAnnouncement() {
-  const { announcement, changeInputs } = this.props
+  const { announcement, setInputs } = this.props
   const { id, pictures, features, furnishings, availabilityDate, polishDescription, englishDescription } = announcement
 
   const inputs = {
@@ -17,7 +17,7 @@ function prepareAnnouncement() {
     ...(englishDescription && { showEnglishDescription: true }),
   }
 
-  changeInputs(inputs)
+  setInputs(inputs)
   setBlobs.call(this, id, pictures)
 }
 
@@ -41,7 +41,7 @@ function setBlobs(id, pictures) {
             if (response.ok) return response.blob()
           })
           .then(blobResponse => {
-            const { changeInputs } = this.props
+            const { setInputs } = this.props
             const blobs = [...this.props.blobs]
             blobs[index] = {
               blob: window.URL.createObjectURL(blobResponse),
@@ -49,7 +49,7 @@ function setBlobs(id, pictures) {
               description: '',
             }
 
-            changeInputs({ blobs })
+            setInputs({ blobs })
           })
       })
   })

@@ -20,20 +20,20 @@ class AnnouncementCreateAvailabilityDate extends React.Component {
   }
 
   render() {
-    const { lang, availabilityDate, addAvailabilityDate, changeInputs } = this.props
+    const { lang, availabilityDate, addAvailabilityDate, setInputs } = this.props
 
     return (
       <div
         id='listing-create-availability-date'
         className='section'
       >
-        <ManagedCheckbox {...this.addAvailabilityDateManager({ addAvailabilityDate, changeInputs })} />
+        <ManagedCheckbox {...this.addAvailabilityDateManager({ addAvailabilityDate, setInputs })} />
         {addAvailabilityDate && (
           <div className='calendar'>
             <div>
               <Calendar
                 onChange={date => {
-                  changeInputs({ availabilityDate: parseDate(date) })
+                  setInputs({ availabilityDate: parseDate(date) })
                   sendGaEvent(AVAILABILITY_DATE_SELECTED_EVENT)
                 }}
                 value={availabilityDate ? new Date(availabilityDate) : null}

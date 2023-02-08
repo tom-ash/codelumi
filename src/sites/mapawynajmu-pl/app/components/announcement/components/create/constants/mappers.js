@@ -97,16 +97,13 @@ export const mapStateToProps = store => {
 
 export const mapDispatchToProps = dispatch => {
   return {
-    changeApp: value => dispatch({ type: 'app', value }),
     setControl: value => dispatch({ type: 'control', value }),
     setData: value => dispatch({ type: 'data', value }),
+    setErrors: value => dispatch({ type: 'errors', value }),
 
     // TODO: Depracete.
-    changeInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
-    changeErrors: value => dispatch({ type: 'announcement/create/errors', value }),
+    setInputs: value => dispatch({ type: 'announcement/create/inputs', value }),
     resetInputs: value => dispatch({ type: 'announcement/create/inputs/reset', value }),
-    resetErrors: value => dispatch({ type: 'announcement/create/errors/reset', value }),
-    resetData: value => dispatch({ type: 'data/reset', value }),
     dispatch,
   }
 }

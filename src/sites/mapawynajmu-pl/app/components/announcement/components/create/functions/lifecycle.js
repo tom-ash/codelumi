@@ -25,9 +25,7 @@ export function componentDidUpdate(prevProps) {
 }
 
 export function componentWillUnmount() {
-  const { resetData, resetInputs, resetErrors } = this.props
+  const { resetInputs } = this.props
 
-  resetData()
-  resetErrors()
   resetInputs()
 }

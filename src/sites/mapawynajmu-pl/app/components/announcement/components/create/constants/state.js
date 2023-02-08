@@ -1,8 +1,6 @@
 import { features } from '../../../constants/features'
 import { furnishings } from '../../../constants/furnishings'
 
-const noError = { pl: '', en: '' }
-
 function parseFeaturesForState() {
   let initialState = {}
   features.map(feature => {
@@ -49,10 +47,4 @@ export const inputs = {
   name: null,
   link: null,
   adminControlled: null,
-}
-
-export const errors = {
-  category: noError,
-  map: noError,
-  pictures: noError,
 }

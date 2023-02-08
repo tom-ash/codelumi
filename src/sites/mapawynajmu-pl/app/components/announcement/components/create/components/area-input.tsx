@@ -3,12 +3,12 @@ import { ManagedText } from 'managed-inputs'
 
 type AreaInputProps = {
   area: number
-  changeInputs(attrs: { area: number }): void
+  setInputs(attrs: { area: number }): void
   langHandler: LangHandler
 }
 
 export function AreaInput(props: AreaInputProps) {
-  const { area, changeInputs, langHandler } = props
+  const { area, setInputs, langHandler } = props
 
   const classNames = { container: 'text-input area' }
   // @ts-ignore
@@ -28,7 +28,7 @@ export function AreaInput(props: AreaInputProps) {
       })}
     </div>
   )
-  const onChange = (area: number) => changeInputs({ area })
+  const onChange = (area: number) => setInputs({ area })
   const areaProps = {
     classNames,
     label,

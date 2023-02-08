@@ -7,12 +7,12 @@ interface AddPinProps {
     description: string
   }
   setState(args: object): void
-  changeInputs(args: object): void
-  changeErrors(args: object): void
+  setInputs(args: object): void
+  setErrors(args: object): void
 }
 
 function addPin(props: AddPinProps) {
-  const { autocomplete, setState, changeInputs, changeErrors } = props
+  const { autocomplete, setState, setInputs, setErrors } = props
   const placeId = autocomplete.place_id
   const geocoder = new google.maps.Geocoder()
 
@@ -31,8 +31,8 @@ function addPin(props: AddPinProps) {
       const sublocality = getSublocality(addressComponents)
 
       map.setOptions(options)
-      changeInputs({ latitude: position.lat(), longitude: position.lng(), locality, sublocality })
-      changeErrors({ map: { pl: '', en: '' } })
+      setInputs({ latitude: position.lat(), longitude: position.lng(), locality, sublocality })
+      setErrors({ map: { pl: '', en: '' } })
     })
 
   setState({ showAutocompletes: false, autocompleteInput: autocomplete.description })

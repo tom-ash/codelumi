@@ -16,7 +16,7 @@ const {
 export function rentAmountManager() {
   const { create: text } = inputs.rentHeight
 
-  const { category, changeInputs } = this.props
+  const { category, setInputs } = this.props
 
   let label = this.langHandler(text)
 
@@ -32,7 +32,7 @@ export function rentAmountManager() {
     children: <SVG name='coins' />,
     type: 'number',
     label,
-    onChange: value => changeInputs({ [rentAmountType]: value }),
+    onChange: value => setInputs({ [rentAmountType]: value }),
     onBlur: () => {
       sendGaEvent(RENT_INPUTTED_EVENT)
     },

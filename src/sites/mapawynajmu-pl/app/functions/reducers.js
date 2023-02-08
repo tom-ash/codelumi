@@ -54,8 +54,6 @@ export const controlReducer = (state = {}, action) => {
   switch (action.type) {
     case 'control':
       return { ...state, ...action.value }
-    case 'control/reset':
-      return {}
     default:
       return state
   }
@@ -65,8 +63,24 @@ export const dataReducer = (state = {}, action) => {
   switch (action.type) {
     case 'data':
       return { ...state, ...action.value }
-    case 'data/reset':
-      return {}
+    default:
+      return state
+  }
+}
+
+export const inputsReducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'inputs':
+      return { ...state, ...action.value }
+    default:
+      return state
+  }
+}
+
+export const errorsReducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'errors':
+      return { ...state, ...action.value }
     default:
       return state
   }

@@ -5,7 +5,7 @@ import analyticEvents from '../constants/analytics/events'
 const { FEATURES_SHOWN_EVENT, FEATURES_SELECTED_EVENT } = analyticEvents
 
 export function addFeaturesManager() {
-  const { addFeatures, changeInputs } = this.props
+  const { addFeatures, setInputs } = this.props
 
   return {
     classNames: { container: 'form-input checkbox add-switcher' },
@@ -15,7 +15,7 @@ export function addFeaturesManager() {
       en: 'Add Features',
     }),
     onClick: value => {
-      changeInputs({ addFeatures: value })
+      setInputs({ addFeatures: value })
       sendGaEvent(FEATURES_SHOWN_EVENT)
     },
   }
@@ -26,7 +26,7 @@ export function featuresManager() {
     classNames: { container: 'form-input checkbox' },
     checkboxes: this.pickElementsForCategory(features, 'features'),
     onClick: (value, ref) => {
-      this.props.changeInputs({ features: { ...this.props.features, [ref]: value } })
+      this.props.setInputs({ features: { ...this.props.features, [ref]: value } })
       sendGaEvent(FEATURES_SELECTED_EVENT)
     },
   }

@@ -37,16 +37,16 @@ class AnnouncementCreateAdditional extends React.Component {
   }
 
   render() {
-    const { category, name, link, changeInputs } = this.props
+    const { category, name, link, setInputs } = this.props
 
     const nameInputProps = {
       name,
-      changeInputs,
+      setInputs,
     }
 
     const linkInputProps = {
       link,
-      changeInputs,
+      setInputs,
     }
 
     return (

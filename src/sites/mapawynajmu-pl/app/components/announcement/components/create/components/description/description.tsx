@@ -9,37 +9,37 @@ interface DescriptionProps {
   showEnglish: boolean
   polish: string
   english: string
-  changeInputs: ChangeInputs
+  setInputs: ChangeInputs
 }
 
 const Description = (props: DescriptionProps) => {
   const { langHandler } = useContext(AppContext)
-  const { showPolish, showEnglish, polish, english, changeInputs } = props
+  const { showPolish, showEnglish, polish, english, setInputs } = props
 
   const showPolishProps = {
     checked: showPolish,
     checkedKey: 'showPolishDescription' as const,
     label: langHandler(SHOW_POLISH_DESCRIPTION_LANG_OBJECT),
-    changeInputs,
+    setInputs,
   }
 
   const polishDescriptionProps = {
     value: polish,
     valueKey: 'polishDescription' as const,
-    changeInputs,
+    setInputs,
   }
 
   const showEnglishProps = {
     checked: showEnglish,
     checkedKey: 'showEnglishDescription' as const,
     label: langHandler(SHOW_ENGLISH_DESCRIPTION_LANG_OBJECT),
-    changeInputs,
+    setInputs,
   }
 
   const englishDescriptionProps = {
     value: english,
     valueKey: 'englishDescription' as const,
-    changeInputs,
+    setInputs,
   }
 
   return (

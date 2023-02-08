@@ -17,7 +17,7 @@ export function addGoogleMapListeners() {
     map,
     'click',
     function (event) {
-      const { changeInputs, changeErrors } = this.props
+      const { setInputs, setErrors } = this.props
       const latitude = event.latLng.lat()
       const longitude = event.latLng.lng()
       const latlng = { lat: latitude, lng: longitude }
@@ -30,8 +30,8 @@ export function addGoogleMapListeners() {
         const sublocality = getSublocality(addressComponents)
 
         this.setState({ autocompleteInput: address.formatted_address })
-        changeInputs({ latitude, longitude, locality, sublocality })
-        changeErrors({ map: { pl: '', en: '' } })
+        setInputs({ latitude, longitude, locality, sublocality })
+        setErrors({ map: { pl: '', en: '' } })
       })
     }.bind(this)
   )
@@ -39,7 +39,7 @@ export function addGoogleMapListeners() {
     map,
     'rightclick',
     function () {
-      this.props.changeInputs({ latitude: null, longitude: null })
+      this.props.setInputs({ latitude: null, longitude: null })
       // sendGaEvent(MAP_PIN_REMOVED_EVENT)
     }.bind(this)
   )

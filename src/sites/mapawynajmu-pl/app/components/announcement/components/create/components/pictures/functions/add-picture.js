@@ -17,7 +17,7 @@ export function addPicture(files) {
   createBlob(window.URL.createObjectURL(file), blob => {
     if (typeof window === 'undefined') return
 
-    this.props.changeInputs({
+    this.props.setInputs({
       picFiles: files,
       blobs: [...this.props.blobs].concat([
         {
@@ -30,7 +30,7 @@ export function addPicture(files) {
       ]),
     })
     this.props.setControl({ addingPicture: false })
-    this.props.changeErrors({ pictures: { pl: '', en: '' } })
+    this.props.setErrors({ pictures: { pl: '', en: '' } })
   })
 
   sendGaEvent(PICTURE_ADDED_EVENT)

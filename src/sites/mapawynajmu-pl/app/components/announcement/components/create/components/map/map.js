@@ -38,7 +38,7 @@ class AnnouncementCreatMap extends React.Component {
 
   render() {
     const showAutocompletes = this.state.autocompletes.length > 0 && this.state.showAutocompletes
-    const { changeInputs, changeErrors } = this.props
+    const { setInputs, setErrors } = this.props
     const headingProps = {
       tier: 2,
       text: this.langHandler(HEADING),
@@ -61,14 +61,14 @@ class AnnouncementCreatMap extends React.Component {
             setState={this.setStore}
             langHandler={this.langHandler}
             showAutocompletes={showAutocompletes}
-            changeInputs={changeInputs}
-            changeErrors={changeErrors}
+            setInputs={setInputs}
+            setErrors={setErrors}
           />
           {showAutocompletes && (
             <div className='autocompletes'>
               {this.state.autocompletes.map(autocomplete => (
                 <div
-                  onClick={() => addPin({ autocomplete, setState: this.setStore, changeInputs, changeErrors })}
+                  onClick={() => addPin({ autocomplete, setState: this.setStore, setInputs, setErrors })}
                   key={autocomplete.place_id}
                 >
                   {autocomplete.description}

@@ -1,7 +1,7 @@
 import { compressAndSaveBlobPicture } from '../../../../../functions/picture-handlers'
 
 function savePicture() {
-  const { renderEdit, announcement, setData, changeInputs, setControl } = this.props
+  const { renderEdit, announcement, setData, setInputs, setControl } = this.props
 
   setControl({ connecting: true })
   const blobs = [...this.props.blobs]
@@ -27,7 +27,7 @@ function savePicture() {
         })),
       }
       setData({ announcement: announcementWithPictures })
-      changeInputs({ blobs: blobs, picUploads: picUploads })
+      setInputs({ blobs: blobs, picUploads: picUploads })
       setControl({ connecting: false })
     })
   } else {
@@ -41,7 +41,7 @@ function savePicture() {
       })),
     }
     setData({ announcement: announcementWithPictures })
-    changeInputs({ blobs: blobs, picUploads: picUploads })
+    setInputs({ blobs: blobs, picUploads: picUploads })
     setControl({ connecting: false })
   }
 }

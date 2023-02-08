@@ -4,5 +4,5 @@ export function addFiles(e) {
   if (filesToUploadAmount < 0) {
     filesToUploadAmount = 0
   }
-  this.props.changeInputs({ picFiles: files.slice(0, filesToUploadAmount) })
+  this.props.setInputs({ picFiles: files.slice(0, filesToUploadAmount) })
 }
