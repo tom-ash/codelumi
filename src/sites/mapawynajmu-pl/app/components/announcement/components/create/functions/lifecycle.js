@@ -1,18 +1,15 @@
 import createAnnouncement from './create-announcement'
 import savePicture from './save-picture'
-import prepareAnnouncement from './prepare-announcement'
 
 export function componentDidMount() {
-  const { announcement, renderEdit } = this.props
+  // const { announcement, renderEdit } = this.props
 
-  if (renderEdit) announcement && prepareAnnouncement.call(this)
+  // // if (renderEdit) announcement && prepareAnnouncement.call(this)
 }
 
 export function componentDidUpdate(prevProps) {
-  const { savingAnnouncement: prevSavingAnnouncement, announcement: prevAnnouncement } = prevProps
-  const { connecting, savingAnnouncement, step, blobs, announcement, setControl } = this.props
-
-  if (!prevAnnouncement && announcement) return prepareAnnouncement.call(this)
+  const { savingAnnouncement: prevSavingAnnouncement } = prevProps
+  const { connecting, savingAnnouncement, step, blobs, setControl } = this.props
 
   if (step !== 'publishing') return
 
