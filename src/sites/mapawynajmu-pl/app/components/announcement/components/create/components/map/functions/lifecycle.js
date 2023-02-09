@@ -3,7 +3,7 @@ import { removeGoogleMapListeners } from './remove-google-map-listeners'
 import setShouldInitializeMap from '../../../../../functions/map/set-should-initialize'
 import initializeMap from '../../../../../functions/map/initialize'
 import drawPin from './draw-pin'
-import removePin from '../../../../../functions/map/pins/remove-pin'
+import { removePins } from '../../../../../functions/map/pins/remove-pins'
 
 const options = {
   center: {
@@ -46,6 +46,7 @@ export function componentDidUpdate(prevProps) {
     svgs,
     category,
   } = this.props
+
   setShouldInitializeMap({
     isMapInitialized,
     shouldInitializeMap,
@@ -63,7 +64,7 @@ export function componentDidUpdate(prevProps) {
   }
 
   if (latitude !== prevLatitude || longitude !== prevLongitude || category !== prevCategory) {
-    if (pin) removePin(pin)
+    if (pin) removePins([pin])
 
     setData({
       pin: drawPin({
@@ -73,9 +74,7 @@ export function componentDidUpdate(prevProps) {
         category,
       }),
     })
-  }
-
-  if (longitude && latitude && !pin) {
+  } else if (isMapInitialized && longitude && latitude && !pin) {
     setData({
       pin: drawPin({
         latitude,
@@ -88,8 +87,11 @@ export function componentDidUpdate(prevProps) {
 }
 
 export function componentWillUnmount() {
-  const { pin } = this.props
+  const { pin, setData } = this.props
 
-  if (pin) removePin(pin)
+  if (pin) {
+    removePins([pin])
+  }
+
   removeGoogleMapListeners.call(this)
 }

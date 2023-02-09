@@ -14,7 +14,7 @@ export const passwordValidator: PasswordValidator = props => {
   const { password, dispatch } = props
 
   if (!PASSWORD_REGEX.test(password)) {
-    dispatch({ type: 'user/create/errors', value: { password: PASSWORD_INPUT_ERROR } })
+    dispatch({ type: 'errors', value: { password: PASSWORD_INPUT_ERROR } })
     return false
   }
 

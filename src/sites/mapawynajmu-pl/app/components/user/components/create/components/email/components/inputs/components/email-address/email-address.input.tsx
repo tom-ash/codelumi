@@ -8,12 +8,12 @@ interface EmailAddressInputProps {
   emailAddress: string
   emailAddressError: LangObject
   langHandler: LangHandler
-  changeInputs: ChangeInputs
+  setInputs: ChangeInputs
   dispatch: Dispatch
 }
 
 export const EmailAddressInput = (props: EmailAddressInputProps) => {
-  const { emailAddress, emailAddressError, changeInputs, langHandler, dispatch } = props
+  const { emailAddress, emailAddressError, setInputs, langHandler, dispatch } = props
   const classNames = { container: 'text-input' }
   // @ts-ignore
   const label = langHandler({ pl: 'Adres email', en: 'Email Address' })
@@ -26,13 +26,13 @@ export const EmailAddressInput = (props: EmailAddressInputProps) => {
   const error = langHandler(emailAddressError)
   const onFocus = () =>
     dispatch({
-      type: 'user/create/errors',
+      type: 'errors',
       value: { emailAddress: EMPTY_LANG_OBJECT },
     })
   const onBlur = (emailAddress: string) => {
     emailAddressValidator({ emailAddress, dispatch })
   }
-  const onChange = (emailAddress: string) => changeInputs({ emailAddress })
+  const onChange = (emailAddress: string) => setInputs({ emailAddress })
 
   const emailAddressInputProps = {
     classNames,

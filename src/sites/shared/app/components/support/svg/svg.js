@@ -5,6 +5,9 @@ import { mapStateToProps } from './constants/mappers'
 class SVG extends React.Component {
   render() {
     const { svgs, name, fill } = this.props
+
+    if (!svgs) return
+
     const svgData = svgs[name]
 
     if (!svgData) return null

@@ -5,7 +5,7 @@ import { inputs } from '../../../constants/inputs'
 const noError = { pl: '', en: '' }
 
 export function verificationManager() {
-  const { changeErrors } = this.props
+  const { setErrors } = this.props
   const { icon, label } = inputs.verification
 
   return {
@@ -14,11 +14,11 @@ export function verificationManager() {
     classNames: { container: 'text-input' },
     label: this.langHandler(label),
     children: <i className={icon} />,
-    onChange: () => changeErrors({ verification: noError }),
+    onChange: () => setErrors({ verification: noError }),
     onBlur: value => this.verificationManager().validate(value),
     validate: value => {
       if (value.length < 4) {
-        changeErrors({
+        setErrors({
           verification: { pl: 'Nieprawidłowy kod weryfikacyjny.', en: 'Invalid verification code.' },
         })
         return false

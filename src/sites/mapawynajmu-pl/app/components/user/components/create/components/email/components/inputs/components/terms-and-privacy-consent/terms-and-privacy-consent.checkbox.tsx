@@ -25,7 +25,7 @@ export const TermsAndPrivacyConsentCheckbox = (props: TermsAndPrivacyConsentChec
   const checked = termsAndPrivacyConsent
   const label = <TermsAndPrivacyConsentLabel {...termsAndPrivacyConsentLabelProps} />
   const onClick = (termsAndPrivacyConsent: boolean) => {
-    dispatch({ type: 'user/create/inputs', value: { termsAndPrivacyConsent } })
+    dispatch({ type: 'inputs', value: { termsAndPrivacyConsent } })
     termsAndServiceConsentValidator({ termsAndPrivacyConsent, dispatch })
   }
 

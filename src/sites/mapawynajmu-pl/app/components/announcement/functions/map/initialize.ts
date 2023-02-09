@@ -28,7 +28,7 @@ function initializeMap(props: InitializeMapProps) {
       mapOptionsProvider({
         mapOptions,
         isMobile,
-      }),
+      })
     )
 
     setUpPinCreator({

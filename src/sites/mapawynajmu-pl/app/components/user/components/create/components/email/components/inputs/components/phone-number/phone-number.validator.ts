@@ -11,9 +11,8 @@ interface PhoneNumberValidator {
 
 export const phoneNumberValidator: PhoneNumberValidator = props => {
   const { phoneNumber, dispatch } = props
-
   if (phoneNumber.length !== 9) {
-    dispatch({ type: 'user/create/errors', value: { phoneNumber: PHONE_NUMBER_INPUT_ERROR } })
+    dispatch({ type: 'errors', value: { phoneNumber: PHONE_NUMBER_INPUT_ERROR } })
     return false
   }
 

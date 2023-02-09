@@ -14,10 +14,10 @@ export const termsAndServiceConsentValidator: TermsAndServiceConsentValidator = 
   const { termsAndPrivacyConsent, dispatch } = props
 
   if (!termsAndPrivacyConsent) {
-    dispatch({ type: 'user/create/errors', value: { termsAndPrivacyConsent: TERMS_AND_SERVICE_CONSENT_ERROR } })
+    dispatch({ type: 'errors', value: { termsAndPrivacyConsent: TERMS_AND_SERVICE_CONSENT_ERROR } })
     return false
   }
 
-  dispatch({ type: 'user/create/errors', value: { termsAndPrivacyConsent: EMPTY_LANG_OBJECT } })
+  dispatch({ type: 'errors', value: { termsAndPrivacyConsent: EMPTY_LANG_OBJECT } })
   return true
 }

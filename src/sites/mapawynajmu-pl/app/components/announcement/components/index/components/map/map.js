@@ -29,7 +29,7 @@ class AnnouncementIndexMap extends React.Component {
       tile,
       lang,
       announcements,
-      changeData,
+      setData,
       isMobile,
       miniListFarthestScrollTop,
       miniListFarthestScrollLeft,
@@ -78,7 +78,7 @@ class AnnouncementIndexMap extends React.Component {
                     rentCurrency={announcement.rentCurrency}
                     lang={lang}
                     langHandler={this.langHandler}
-                    changeData={changeData}
+                    setData={setData}
                     setControl={setControl}
                     isMobile={isMobile}
                     path={announcement.path}

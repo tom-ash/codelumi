@@ -1,5 +1,6 @@
 export const mapStateToProps = store => {
-  const { lang, path } = store.app
+  const { app } = store
+  const { lang, path } = app
 
   return {
     lang,

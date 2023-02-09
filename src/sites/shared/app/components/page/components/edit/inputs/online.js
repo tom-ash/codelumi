@@ -2,7 +2,7 @@ import React from 'react'
 import { ManagedCheckbox } from 'managed-inputs'
 
 function OnlineInput(props) {
-  const { checked, changeInputs } = props
+  const { checked, setInputs } = props
   const classNames = { container: 'switch' }
   const label = (
     <>
@@ -13,7 +13,7 @@ function OnlineInput(props) {
     </>
   )
   const onClick = online => {
-    changeInputs({ online })
+    setInputs({ online })
   }
   const inputProps = { checked: !!checked, classNames, label, onClick }
 

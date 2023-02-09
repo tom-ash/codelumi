@@ -5,7 +5,7 @@ function drawPins(currentListingId: number) {
   if (typeof window === 'undefined') return
 
   const {
-    changeData,
+    setData,
     announcements,
     svgs,
     setControl,
@@ -48,14 +48,14 @@ function drawPins(currentListingId: number) {
         longitude,
         path,
         setControl,
-        changeData,
+        setData,
         changeRoute,
       })
     )
   })
 
   // @ts-ignore
-  changeData({ pins })
+  setData({ pins })
 }
 
 export default drawPins

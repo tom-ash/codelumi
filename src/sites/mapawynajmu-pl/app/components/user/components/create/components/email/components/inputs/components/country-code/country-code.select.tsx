@@ -22,7 +22,7 @@ export const CountryCodeSelect = (props: CountryCodeSelectProps) => {
   const value = countryCode
   const onSelect = (option: { value: string }) => {
     dispatch({
-      type: 'user/create/inputs',
+      type: 'inputs',
       value: { countryCode: option.value },
     })
   }

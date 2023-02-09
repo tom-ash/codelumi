@@ -1,17 +1,21 @@
 export const mapStateToProps = store => {
-  const { lang } = store.app
+  const {
+    app,
+    data,
+  } = store
+  const { lang } = app
 
-  const { pageKeys, pageKey } = store.page.index
+  const { pageKeys, pageKey } = data
 
   return {
+    lang,
     pageKeys,
     pageKey,
-    lang,
   }
 }
 
 export const mapDispatchToProps = dispatch => {
   return {
-    changeState: value => dispatch({ type: 'page/index', value }),
+    setData: value => dispatch({ type: 'data', value }),
   }
 }

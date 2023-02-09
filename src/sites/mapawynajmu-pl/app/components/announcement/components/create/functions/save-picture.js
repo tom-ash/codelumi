@@ -3,10 +3,12 @@ import { compressAndSaveBlobPicture } from '../../../../../functions/picture-han
 function savePicture() {
   const { renderEdit, announcement, setData, setInputs, setControl } = this.props
 
-  setControl({ connecting: true })
+  setControl({ savingPicture: true })
+
   const blobs = [...this.props.blobs]
   const blob = blobs.shift()
   const picUploads = [...this.props.picUploads]
+
   if (blob.database === '') {
     const params = {
       prefix: renderEdit
@@ -26,9 +28,10 @@ function savePicture() {
           description: picUpload.description,
         })),
       }
+
       setData({ announcement: announcementWithPictures })
       setInputs({ blobs: blobs, picUploads: picUploads })
-      setControl({ connecting: false })
+      setControl({ savingPicture: false })
     })
   } else {
     delete blob.blob
@@ -42,7 +45,8 @@ function savePicture() {
     }
     setData({ announcement: announcementWithPictures })
     setInputs({ blobs: blobs, picUploads: picUploads })
-    setControl({ connecting: false })
+
+    setControl({ savingPicture: false })
   }
 }
 

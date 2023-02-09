@@ -1,12 +1,12 @@
 export const mapStateToProps = store => {
-  const { lang, path } = store.app
-
+  const { app, render } = store
+  const { lang } = app
   const {
     'user/create': renderCreate,
     'user/edit': renderEdit,
     'user/reset-password': renderEditPassword,
     'user/authorize': renderAuthorize,
-  } = store.render
+  } = render
 
   return {
     lang,
@@ -20,6 +20,6 @@ export const mapStateToProps = store => {
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
-    setControl: value => dispatch({ type: 'user/create/control', value }),
+    setControl: value => dispatch({ type: 'control', value }),
   }
 }

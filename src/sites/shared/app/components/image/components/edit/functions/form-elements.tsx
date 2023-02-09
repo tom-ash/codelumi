@@ -7,18 +7,18 @@ import compress from './compress'
 
 interface BodyTextareaProps {
   body: string
-  changeData(props: object): void
+  setData(props: object): void
 }
 
 export const BodyTextarea = (props: BodyTextareaProps) => {
-  const { body, changeData } = props
+  const { body, setData } = props
   const classNames = { container: 'form-input textarea' }
 
   const textareaProps = {
     classNames,
     value: body,
     counterLimit: 10000,
-    onChange: (body: object) => changeData({ body }),
+    onChange: (body: object) => setData({ body }),
   }
 
   return <ManagedTextarea {...textareaProps} />
@@ -32,13 +32,13 @@ interface SaveButtonProps {
   height: string
   storageKey: string
   storageUrl: string
-  changeData(props: object): void
+  setData(props: object): void
 }
 
 export const SaveButton = (props: SaveButtonProps) => {
-  const { apiUrl, imageId, body, width, height, storageKey, storageUrl, changeData } = props
+  const { apiUrl, imageId, body, width, height, storageKey, storageUrl, setData } = props
   const classNames = { container: 'form-input textarea' }
-  const onClick = () => save({ apiUrl, imageId, body, width, height, storageKey, storageUrl, changeData })
+  const onClick = () => save({ apiUrl, imageId, body, width, height, storageKey, storageUrl, setData })
   const label = 'Save'
 
   const buttonProps = {

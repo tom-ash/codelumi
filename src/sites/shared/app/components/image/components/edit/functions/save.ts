@@ -10,11 +10,11 @@ interface saveProps {
   height: string
   storageKey: string
   storageUrl: string
-  changeData(props: object): void
+  setData(props: object): void
 }
 
 export function save(props: saveProps) {
-  const { apiUrl, imageId, body: imageBody, width, height, storageKey, changeData } = props
+  const { apiUrl, imageId, body: imageBody, width, height, storageKey, setData } = props
 
   // @ts-ignore
   drawOnCanvas()
@@ -56,7 +56,7 @@ export function save(props: saveProps) {
           }).then(response => {
             const storageUrl = response.url + storageKey + keyExtension
 
-            changeData({
+            setData({
               storageUrl: response.url + storageKey + keyExtension,
               storageUrlRandomizedQuaryParameter: Math.random(),
             })

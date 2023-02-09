@@ -16,7 +16,7 @@ export function extend(announcement, index) {
       if (response.ok) return response.json()
     })
     .then(json => {
-      this.props.changeData({ announcements: deepCloneAnnouncement.call(this, json, announcement, index) })
+      this.props.setData({ announcements: deepCloneAnnouncement.call(this, json, announcement, index) })
       this.props.setControl({ connecting: false })
     })
 }

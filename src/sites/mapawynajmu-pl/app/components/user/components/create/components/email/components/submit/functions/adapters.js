@@ -12,7 +12,7 @@ export function buildUserObject() {
   const userObject = prepareUserObject.call(this)
 
   if (validateUserObject.call(this, userObject)) {
-    dispatch({ type: 'user/create/control', value: { connecting: true } })
+    dispatch({ type: 'control', value: { connecting: true } })
     userObject.password = hashPassword(userObject.password, userObject.emailAddress)
     const termsAndPrivacyConsentText = this.langHandler(TERMS_AND_SERVICE_CONSENT_TEXT)
     userObject.consents = [termsAndPrivacyConsentParser(termsAndPrivacyConsentText)]

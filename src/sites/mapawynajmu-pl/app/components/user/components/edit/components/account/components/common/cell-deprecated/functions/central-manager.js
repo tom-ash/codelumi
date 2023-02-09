@@ -36,14 +36,6 @@ function titleProvider() {
   const { item } = this.state
 
   switch (item) {
-    case 'firstName':
-      return this.langHandler({ pl: 'Imię', en: 'First Name' })
-    case 'lastName':
-      return this.langHandler({ pl: 'Nazwisko', en: 'Last Name' })
-    case 'businessName':
-      return this.langHandler({ pl: 'Nazwa przedsiębiorcy', en: 'Business name' })
-    case 'taxNumber':
-      return this.langHandler({ pl: 'Numer identyfikacji podatkowej', en: 'Tax ID' })
     case 'phone':
       return this.langHandler({ pl: 'Numer telefonu', en: 'Phone Number' })
     case 'email':
@@ -61,8 +53,6 @@ function iconProvider() {
   const { item } = this.state
 
   switch (item) {
-    case 'firstName':
-      return 'user'
     case 'phone':
       return 'phone'
     case 'email':
@@ -112,10 +102,7 @@ function triggerClassProvider() {
 function triggerOnClickHandler() {
   let controlChanger = this.props.setControl
   let stateKey = `${this.props.item}Stage`
-  if (this.state.item == 'destroy') {
-    controlChanger = this.props.changeDestroyControl
-    stateKey = 'stage'
-  }
+
   if (this.state.stage !== 'opened') {
     controlChanger({ [stateKey]: 'opened' })
     setTimeout(() => this.setState({ inputClass: 'inputs-container shown' }), 480)

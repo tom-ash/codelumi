@@ -4,13 +4,12 @@ import { UserTypes } from '../../../../../../../../types/user.types'
 
 interface UserTypeRadioProps {
   accountType: UserTypes
-  changeInputs: ChangeInputs
+  setInputs: ChangeInputs
   langHandler: LangHandler
 }
 
 export const UserTypeRadio = (props: UserTypeRadioProps) => {
-  const { accountType, changeInputs, langHandler } = props
-
+  const { accountType, setInputs, langHandler } = props
   const name = 'account-type'
   const classNames = { container: 'account-type' }
   const checked = accountType
@@ -20,7 +19,7 @@ export const UserTypeRadio = (props: UserTypeRadioProps) => {
     // @ts-ignore
     { value: 'business', label: langHandler({ pl: 'Konto Firmowe', en: 'Business Account' }) },
   ]
-  const onClick = (value: UserTypes) => changeInputs({ accountType: value })
+  const onClick = (value: UserTypes) => setInputs({ accountType: value })
 
   const radioProps = {
     name,

@@ -46,7 +46,7 @@ class UserCreateEmailInputs extends React.Component {
       // @ts-ignore
       phoneNumberError,
       // @ts-ignore
-      changeInputs,
+      setInputs,
       // @ts-ignore
       langHandler,
       // @ts-ignore
@@ -63,14 +63,14 @@ class UserCreateEmailInputs extends React.Component {
 
     const accountTypeProps = {
       accountType,
-      changeInputs,
+      setInputs,
       langHandler,
     }
 
     const businessNameProps = {
       businessName,
       businessNameError,
-      changeInputs,
+      setInputs,
       langHandler,
       dispatch,
     }
@@ -78,7 +78,7 @@ class UserCreateEmailInputs extends React.Component {
     const emailAddressProps = {
       emailAddress,
       emailAddressError,
-      changeInputs,
+      setInputs,
       langHandler,
       dispatch,
     }
@@ -86,7 +86,7 @@ class UserCreateEmailInputs extends React.Component {
     const passwordProps = {
       password,
       passwordError,
-      changeInputs,
+      setInputs,
       langHandler,
       dispatch,
     }

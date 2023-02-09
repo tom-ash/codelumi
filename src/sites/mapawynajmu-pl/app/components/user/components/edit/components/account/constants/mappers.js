@@ -1,8 +1,9 @@
 export const mapStateToProps = store => {
-  const { lang } = store.app
-  const { name, accountType } = store.user.authorize.data
-  const { businessName } = store.user.edit.data
-  const { businessName: businessNameError } = store.user.edit.errors
+  const { app, data, user, errors } = store
+  const { lang } = app
+  const { name, accountType } = user
+  const { businessName } = data
+  const { businessName: businessNameError } = errors
 
   return {
     lang,
@@ -15,10 +16,10 @@ export const mapStateToProps = store => {
 
 export const mapDispatchToProps = dispatch => {
   return {
+    setControl: value => dispatch({ type: 'control', value }),
+    setData: value => dispatch({ type: 'data', value }),
+    setInputs: value => dispatch({ type: 'inputs', value }),
+    setErrors: value => dispatch({ type: 'errors', value }),
     dispatch,
-    setControl: value => dispatch({ type: 'user/edit/control', value }),
-    changeInputs: value => dispatch({ type: 'user/edit/inputs', value }),
-    changeErrors: value => dispatch({ type: 'user/edit/errors', value }),
-    changeData: value => dispatch({ type: 'user/edit/data', value }),
   }
 }

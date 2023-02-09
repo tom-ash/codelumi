@@ -3,15 +3,15 @@ import { ManagedText } from 'managed-inputs'
 
 interface ModifiedOnInputProps {
   modifiedOn: string
-  changeInputs(props: object): void
+  setInputs(props: object): void
 }
 
 const ModifiedOnInput = (props: ModifiedOnInputProps) => {
-  const { modifiedOn, changeInputs } = props
+  const { modifiedOn, setInputs } = props
   const classNames = { container: 'form-input text' }
   const label = 'Modified On'
   const value = modifiedOn
-  const onChange = (modifiedOn: string) => changeInputs({ modifiedOn })
+  const onChange = (modifiedOn: string) => setInputs({ modifiedOn })
   const inputProps = { classNames, label, value, onChange }
 
   return <ManagedText {...inputProps} />

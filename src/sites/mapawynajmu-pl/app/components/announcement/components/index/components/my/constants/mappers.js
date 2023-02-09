@@ -1,9 +1,11 @@
 export const mapStateToProps = store => {
-  const { lang, routeSynced } = store.app
-  const { 'announcement/index/user': renderMy } = store.render
-  const { connecting, fetch, beingDeleted } = store.announcement.index.control
-  const { switches, sort, offset } = store.announcement.index.inputs
-  const { announcements, amount } = store.announcement.index.data
+  const { app, render, control, data, inputs } = store
+
+  const { lang, routeSynced } = app
+  const { 'announcement/index/user': renderMy } = render
+  const { connecting, fetch, beingDeleted } = control
+  const { announcements, amount } = data
+  const { switches, sort, offset } = inputs
 
   return {
     lang,
@@ -23,12 +25,8 @@ export const mapStateToProps = store => {
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
-    setControl: value => dispatch({ type: 'announcement/index/control', value }),
-    changeData: value => dispatch({ type: 'announcement/index/data', value }),
-    changeInputs: value => dispatch({ type: 'announcement/index/inputs', value }),
-    changeCreateData: value => dispatch({ type: 'announcement/create/data', value }),
-    resetControl: value => dispatch({ type: 'announcement/index/control/reset', value }),
-    resetInputs: value => dispatch({ type: 'announcement/index/inputs/reset', value }),
-    resetData: value => dispatch({ type: 'announcement/index/data/reset', value }),
+    setControl: value => dispatch({ type: 'control', value }),
+    setData: value => dispatch({ type: 'data', value }),
+    setInputs: value => dispatch({ type: 'inputs', value }),
   }
 }

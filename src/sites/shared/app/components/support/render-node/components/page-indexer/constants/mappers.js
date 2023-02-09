@@ -1,5 +1,8 @@
 export const mapStateToProps = store => {
-  const { tutorials, articles } = store.page.index
+  const {
+    data
+  } = store
+  const { tutorials, articles } = data
 
   return {
     tutorials,

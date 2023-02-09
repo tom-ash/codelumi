@@ -118,12 +118,18 @@ const RenderNode = (props: RenderNodeProps) => {
     const { st, style } = node
     const {
       // @ts-ignore
-      s, source, a, alternative,
+      s,
+      // @ts-ignore
+      source,
+      // @ts-ignore
+      a,
+      // @ts-ignore
+      alternative,
     } = node.img || node.image
     const imgProps = {
       src: s || source,
       alt: a || alternative,
-      style: st || style
+      style: st || style,
     }
 
     return (
@@ -400,22 +406,22 @@ const RenderNode = (props: RenderNodeProps) => {
     return <Definition {...definitionProps} />
   }
 
-    // TODO: Change term to appelation.
-    // @ts-ignore
-    if (node.definition) {
-      const {
-        term,
-        body,
-        // @ts-ignore
-      } = node.definition
-  
-      const definitionProps = {
-        term,
-        definition: body,
-      }
-  
-      return <Definition {...definitionProps} />
+  // TODO: Change term to appelation.
+  // @ts-ignore
+  if (node.definition) {
+    const {
+      term,
+      body,
+      // @ts-ignore
+    } = node.definition
+
+    const definitionProps = {
+      term,
+      definition: body,
     }
+
+    return <Definition {...definitionProps} />
+  }
 
   // @ts-ignore
   if (node.figure) {

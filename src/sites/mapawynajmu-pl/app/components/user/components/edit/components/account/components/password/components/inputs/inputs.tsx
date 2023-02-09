@@ -32,11 +32,7 @@ export const Inputs = () => {
   const [passwordError, setPasswordError] = useState(EMPTY_LANG_OBJECT)
   const {
     app: { lang },
-    user: {
-      edit: {
-        data: { email },
-      },
-    },
+    data: { email },
   } = useStore().getState()
   const { closeCell } = useContext(CellContext)
 

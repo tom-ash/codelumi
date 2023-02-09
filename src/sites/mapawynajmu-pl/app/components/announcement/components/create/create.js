@@ -51,7 +51,6 @@ class AnnouncementCreate extends React.Component {
       renderEdit,
       renderVerification,
       renderSuccess,
-      connecting,
       lang,
       authorized,
       step,
@@ -94,7 +93,7 @@ class AnnouncementCreate extends React.Component {
       setInputs,
     }
 
-    if (connecting)
+    if (step === 'publishing')
       return (
         <section
           id='listing-create'

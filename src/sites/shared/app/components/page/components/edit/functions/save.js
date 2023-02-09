@@ -2,7 +2,7 @@ import getAccessToken from '../../../../../../app/functions/tokens/getters/get-t
 import { UPDATE_API_ROUTE } from '../constants/api_route_data'
 
 export function save({ withRouteChange = false }) {
-  const { apiUrl, setControl, changeData, autoSchema, manualSchema } = this.props
+  const { apiUrl, setControl, setData, autoSchema, manualSchema } = this.props
   const body = JSON.parse(this.props.body)
   const { method, route } = UPDATE_API_ROUTE
 
@@ -28,7 +28,7 @@ export function save({ withRouteChange = false }) {
       throw new Error('Server error at updating page!')
     })
     .then(path => {
-      changeData({ updated: true })
+      setData({ updated: true })
 
       if (!withRouteChange) return
 
@@ -38,7 +38,7 @@ export function save({ withRouteChange = false }) {
       changeRoute({ href })
     })
     .catch(error => {
-      changeData({ updated: false })
+      setData({ updated: false })
       console.error(error)
     })
     .finally(() => {

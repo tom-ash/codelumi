@@ -1,11 +1,8 @@
 export const mapStateToProps = store => {
-  const {
-    image: {
-      edit: {
-        data: { id: imageId, body, width, height, storageKey, storageUrl, storageUrlRandomizedQuaryParameter },
-      },
-    },
-  } = store
+  const { data } = store
+  const { id: imageId, body, width, height, storageKey, storageUrl, storageUrlRandomizedQuaryParameter } = data
+
+  // TODO: Use inputs.
 
   return {
     imageId,
@@ -20,7 +17,6 @@ export const mapStateToProps = store => {
 
 export const mapDispatchToProps = dispatch => {
   return {
-    changeData: value => dispatch({ type: 'image/edit/data', value }),
-    // TODO
+    setData: value => dispatch({ type: 'data', value }),
   }
 }

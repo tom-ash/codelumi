@@ -55,7 +55,7 @@ export const genericAttributeUpdater: GenericAttributeUpdater = props => {
     body,
   }).then(response => {
     if (response.ok) {
-      dispatch({ type: 'user/edit/data', value: { [attrName]: value } })
+      dispatch({ type: 'data', value: { [attrName]: value } })
       setConnecting(false)
       closeCell()
     } else {

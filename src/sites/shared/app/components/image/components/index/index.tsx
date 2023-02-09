@@ -10,7 +10,7 @@ import editFactory from './functions/edit-factory'
 type ImageIndexProps = {
   imageKeys: string[]
   imageKey: string
-  changeState(attrs: object): void
+  setData(attrs: object): void
   apiUrl: string
   changeRoute(props: { href: string }): void
   buildUrl(props: { path: string }): string
@@ -19,8 +19,8 @@ type ImageIndexProps = {
 const ImageIndex = (props: ImageIndexProps) => {
   useStyles(styles)
 
-  const { imageKey, imageKeys, changeState, apiUrl, changeRoute, buildUrl } = props
-  const changeKey = (imageKey: string) => changeState({ imageKey })
+  const { imageKey, imageKeys, setData, apiUrl, changeRoute, buildUrl } = props
+  const changeKey = (imageKey: string) => setData({ imageKey })
   const createFactoryProps = { apiUrl, changeRoute, imageKey, buildUrl }
   const editFactoryProps = { changeRoute, buildUrl }
   const recordIndexerProps = {

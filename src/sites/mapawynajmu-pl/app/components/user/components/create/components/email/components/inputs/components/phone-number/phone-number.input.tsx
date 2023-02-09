@@ -26,7 +26,7 @@ export const PhoneNumberInput = (props: PhoneNumberInputProps) => {
   const error = langHandler(phoneNumberError)
   const onFocus = () =>
     dispatch({
-      type: 'user/create/errors',
+      type: 'errors',
       value: { phoneNumber: EMPTY_LANG_OBJECT },
     })
   const onBlur = (phoneNumber: string) => {
@@ -34,7 +34,7 @@ export const PhoneNumberInput = (props: PhoneNumberInputProps) => {
   }
   const onChange = (phoneNumber: string) => {
     dispatch({
-      type: 'user/create/inputs',
+      type: 'inputs',
       value: { phoneNumber },
     })
   }

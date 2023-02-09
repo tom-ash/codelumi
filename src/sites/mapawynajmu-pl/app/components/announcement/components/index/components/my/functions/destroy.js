@@ -3,7 +3,7 @@ import getAccessToken from '../../../../../../user/components/auth/components/to
 import { DELETE_ROUTE_DATA } from '../constants/api_route_data'
 
 export function destroy(id) {
-  const { connecting, announcements, setControl, changeData } = this.props
+  const { connecting, announcements, setControl, setData } = this.props
   if (connecting) return
 
   setControl({ connecting: true })
@@ -17,7 +17,7 @@ export function destroy(id) {
     const newAnnouncements = announcements.filter(announcement => {
       return announcement.id !== id
     })
-    changeData({ announcements: newAnnouncements, amount: newAnnouncements.length })
+    setData({ announcements: newAnnouncements, amount: newAnnouncements.length })
     setControl({ connecting: false, beingDeleted: null })
   })
 }

@@ -4,7 +4,7 @@ import { noError } from '../constants/no-error'
 import { VERIFICATION_API_ROUTE, VERIFY_API_AOUTE, UPDATE_API_ROUTE } from '../constants/api_routes'
 
 export function sendEmail() {
-  const { lang, connecting, setControl, changeErrors } = this.props
+  const { lang, connecting, setControl, setErrors } = this.props
   const email = document.getElementById('user-edit-password-email').value
 
   if (connecting || !this.emailManager('validate', email)) return
@@ -18,7 +18,7 @@ export function sendEmail() {
     .then(response => {
       if (response.status == 200) {
         setControl({ passwordStep: 'verificationCode' })
-        changeErrors({ password: noError })
+        setErrors({ password: noError })
       }
       throw new Error('ServerError')
     })
@@ -26,7 +26,7 @@ export function sendEmail() {
 }
 
 export function sendVerification() {
-  const { connecting, setControl, changeErrors } = this.props
+  const { connecting, setControl, setErrors } = this.props
   const verificationCode = document.getElementById('user-edit-password-verification').value
   const email = document.getElementById('user-edit-password-email').value
 
@@ -41,12 +41,12 @@ export function sendVerification() {
     .then(response => {
       if (response.status == 200) {
         setControl({ passwordStep: 'password' })
-        return changeErrors({ password: noError })
+        return setErrors({ password: noError })
       }
       throw new Error('ServerError')
     })
     .catch(() => {
-      changeErrors({
+      setErrors({
         password: { pl: 'Nieprawidłowy kod weryfikacyjny', en: 'Invalid verification code' },
       })
     })
@@ -71,7 +71,7 @@ export function sendPassword() {
     .then(response => {
       if (response.status == 200) {
         setControl({ passwordStep: 'success' })
-        changeErrors({ password: noError })
+        setErrors({ password: noError })
         setTimeout(() => {
           setControl({ passwordStage: 'success' })
         }, 1000)

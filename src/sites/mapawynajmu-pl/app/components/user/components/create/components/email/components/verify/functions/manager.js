@@ -8,7 +8,7 @@ const { VERIFICATION_CODE_INPUTTED_EVENT, VERIFY_CLICKED_EVENT } = analyticEvent
 
 export function verificationManager() {
   const { icon } = inputs.verification
-  const { changeErrors, verification } = this.props
+  const { setErrors, verification } = this.props
 
   return {
     id: 'user-create-email-verification',
@@ -16,7 +16,7 @@ export function verificationManager() {
     controlled: false,
     classNames: { container: 'text-input' },
     label: this.langHandler({ pl: 'Kod weryfikacyjny', en: 'Verification Code' }),
-    onChange: () => changeErrors({ verification: { pl: '', en: '' } }),
+    onChange: () => setErrors({ verification: { pl: '', en: '' } }),
     onBlur: value => {
       this.verificationManager().validate(value)
       sendGaEvent(VERIFICATION_CODE_INPUTTED_EVENT)
@@ -24,7 +24,7 @@ export function verificationManager() {
     validate: () => {
       const verificationCode = document.getElementById('user-create-email-verification').value
       if (verificationCode.length !== 4) {
-        changeErrors({
+        setErrors({
           verification: {
             pl: 'Nieprawidłowy kod weryfikacyjny.',
             en: 'Invalid verification code.',

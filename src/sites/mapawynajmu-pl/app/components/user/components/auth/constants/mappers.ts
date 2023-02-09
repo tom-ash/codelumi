@@ -1,8 +1,12 @@
 // @ts-ignore
 export const mapStateToProps = store => {
+  const { app, data } = store
+  const { lang } = app
+  const { authorized } = data
+
   return {
-    lang: store.app.lang,
-    authorized: store.user.authorize.data.authorized,
+    lang,
+    authorized,
   }
 }
 
@@ -11,5 +15,7 @@ export const mapDispatchToProps = dispatch => {
   return {
     // @ts-ignore
     changeApp: value => dispatch({ type: 'app', value }),
+    // @ts-ignore
+    set_User: value => dispatch({ type: 'user', value }),
   }
 }

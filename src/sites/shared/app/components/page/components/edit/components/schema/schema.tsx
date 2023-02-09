@@ -7,14 +7,14 @@ interface SchemaProps {
   schemaMode: string
   autoSchema: string
   manualSchema: string
-  changeInputs(props: object): void
+  setInputs(props: object): void
 }
 
 const Schema = (props: SchemaProps) => {
-  const { schemaMode, autoSchema, manualSchema, changeInputs } = props
-  const schemaModeSwitchProps = { schemaMode, changeInputs }
-  const autoSchemaTextareaProps = { autoSchema, changeInputs }
-  const manualSchemaTextareaProps = { manualSchema, changeInputs }
+  const { schemaMode, autoSchema, manualSchema, setInputs } = props
+  const schemaModeSwitchProps = { schemaMode, setInputs }
+  const autoSchemaTextareaProps = { autoSchema, setInputs }
+  const manualSchemaTextareaProps = { manualSchema, setInputs }
 
   return (
     <div className='schema'>

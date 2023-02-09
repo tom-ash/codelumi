@@ -5,13 +5,13 @@ import HeightInput from './components/height-input'
 interface DimensionsProps {
   width: string
   height: string
-  changeData(props: object): void
+  setData(props: object): void
 }
 
 const Dimensions = (props: DimensionsProps) => {
-  const { width, height, changeData } = props
-  const widthInputProps = { width, changeData }
-  const heightInputProps = { height, changeData }
+  const { width, height, setData } = props
+  const widthInputProps = { width, setData }
+  const heightInputProps = { height, setData }
 
   return (
     <div className='dimensions'>

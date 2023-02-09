@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
+import { mapStateToProps } from './constants/mappers'
 import PageTile from '../shared/components/tile/tile'
 
 class PageShow extends React.Component {
@@ -26,4 +26,4 @@ class PageShow extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PageShow)
+export default connect(mapStateToProps)(PageShow)

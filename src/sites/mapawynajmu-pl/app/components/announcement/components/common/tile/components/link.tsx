@@ -8,7 +8,7 @@ interface LinkProps {
   lat: number
   lng: number
   isMobile: boolean
-  changeData(attrs: object): void
+  setData(attrs: object): void
   pictures: {
     database: string
   }[]

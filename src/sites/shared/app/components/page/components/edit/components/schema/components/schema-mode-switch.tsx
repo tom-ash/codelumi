@@ -3,11 +3,11 @@ import { ManagedCheckbox } from 'managed-inputs'
 
 interface SchemaModeSwtichProps {
   schemaMode: string
-  changeInputs(props: object): void
+  setInputs(props: object): void
 }
 
 const SchemaModeSwtich = (props: SchemaModeSwtichProps) => {
-  const { schemaMode, changeInputs } = props
+  const { schemaMode, setInputs } = props
   const classNames = { container: 'switch' }
   const checked = schemaMode === 'auto'
   const label = (
@@ -18,7 +18,7 @@ const SchemaModeSwtich = (props: SchemaModeSwtichProps) => {
       </div>
     </>
   )
-  const onClick = (checked: boolean) => changeInputs({ schemaMode: checked ? 'auto' : 'manual' })
+  const onClick = (checked: boolean) => setInputs({ schemaMode: checked ? 'auto' : 'manual' })
   const inputProps = { checked, classNames, label, onClick }
 
   return <ManagedCheckbox {...inputProps} />

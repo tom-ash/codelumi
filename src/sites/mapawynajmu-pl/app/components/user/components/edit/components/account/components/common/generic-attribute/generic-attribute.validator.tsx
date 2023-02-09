@@ -8,7 +8,7 @@ export const genericAttributeValidator: GenericAttributeValidator = props => {
   const { value, match, errorToSet, dispatch } = props
 
   if (!value.match(match)) {
-    dispatch({ type: 'user/edit/errors', value: { businessName: errorToSet } })
+    dispatch({ type: 'errors', value: { businessName: errorToSet } })
     return false
   }
 

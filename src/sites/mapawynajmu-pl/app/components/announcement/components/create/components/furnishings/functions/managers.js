@@ -26,7 +26,7 @@ function transformFurnishings(furnishings) {
     return {
       ref: furnishing.ref,
       checked: this.props.furnishings.indexOf(furnishing.ref) !== -1,
-      label: furnishing.pl
+      label: furnishing.pl,
     }
   })
 }
@@ -41,7 +41,7 @@ export function furnishingsManager() {
       if (value) {
         newFurnishings = newFurnishings.concat([ref])
       } else {
-        newFurnishings = newFurnishings.filter(feature => feature !== ref)  
+        newFurnishings = newFurnishings.filter(feature => feature !== ref)
       }
 
       this.props.setInputs({ furnishings: newFurnishings })

@@ -7,7 +7,7 @@ import SVG from '../../../../../../../../support/components/svg/svg'
 
 export function emailManager() {
   const { label, icon } = inputs.email
-  const { step, changeErrors, error } = this.props
+  const { step, setErrors, error } = this.props
 
   return {
     id: 'user-edit-password-email',
@@ -16,20 +16,20 @@ export function emailManager() {
     classNames: { container: 'text-input' },
     label: this.langHandler(label),
     children: <SVG name='envelope' />,
-    onChange: () => changeErrors({ password: noError }),
+    onChange: () => setErrors({ password: noError }),
     onBlur: value => this.emailManager().validate(value),
     validate: value => {
       const { isValid, error } = emailValidator(value)
       if (isValid) return
 
-      changeErrors({ password: error })
+      setErrors({ password: error })
     },
     error: this.langHandler(error),
   }
 }
 
 export function verificationManager() {
-  const { step, changeErrors } = this.props
+  const { step, setErrors } = this.props
 
   const { label } = inputs.verification
 
@@ -40,11 +40,11 @@ export function verificationManager() {
     classNames: { container: 'text-input' },
     label: this.langHandler(label),
     children: <SVG name='lock' />,
-    onChange: () => changeErrors({ password: noError }),
+    onChange: () => setErrors({ password: noError }),
     onBlur: value => this.verificationManager().validate(value),
     validate: value => {
       if (value.length === 4) return true
-      changeErrors({
+      setErrors({
         password: { pl: 'Nieprawidłowy kod weryfikacyjny.', en: 'Invalid verification code.' },
       })
       return false
@@ -54,7 +54,7 @@ export function verificationManager() {
 }
 
 export function passwordManager() {
-  const { step, changeErrors } = this.props
+  const { step, setErrors } = this.props
   const { label, icon } = inputs.password
 
   return {
@@ -66,12 +66,12 @@ export function passwordManager() {
     classNames: { container: 'text-input' },
     label: this.langHandler(label),
     children: <SVG name='lock' />,
-    onChange: () => changeErrors({ password: noError }),
+    onChange: () => setErrors({ password: noError }),
     onBlur: value => this.passwordManager().validate(value),
     validate: value => {
       if (value.length > 5) return true
 
-      changeErrors({
+      setErrors({
         password: {
           pl: 'hasło musi mieć przynajmniej sześć znaków',
           en: 'the password has to be at least six characters long',
@@ -101,7 +101,7 @@ export function buttonManager() {
 }
 
 function buttonOnClickProvider() {
-  const { connecting, step, changeErrors } = this.props
+  const { connecting, step, setErrors } = this.props
 
   if (connecting) return
 
@@ -111,7 +111,7 @@ function buttonOnClickProvider() {
         const value = document.getElementById('user-edit-password-email').value
         const { isValid, error } = emailValidator(value)
         if (isValid) return this.sendEmail()
-        changeErrors({ password: error })
+        setErrors({ password: error })
       }
     case 'verificationCode':
       return this.sendVerification

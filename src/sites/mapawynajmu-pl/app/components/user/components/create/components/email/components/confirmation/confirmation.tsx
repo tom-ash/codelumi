@@ -11,7 +11,7 @@ export const Confirmation = () => {
 
   const {
     texts,
-    data: { accountType, businessName },
+    user: { accountType, businessName },
   } = useStore().getState()
   const { h1, congratulations, accountCreated, partnerPage } = texts
   const partnerPageLinkProps = {

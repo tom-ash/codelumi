@@ -7,7 +7,7 @@ import { buildUrl } from '../../../../../../../../shared/functions/builders/url'
 export function logIn() {
   const email = document.getElementById('user-logon-email-address').value.toLowerCase()
   let password = document.getElementById('user-logon-password').value
-  const { setControl, changeData, changeErrors, lang } = this.props
+  const { setControl, set_User, setErrors, lang } = this.props
 
   setControl({ connecting: true })
   password = hashPassword(password, email)
@@ -28,12 +28,19 @@ export function logIn() {
       const { accountType, name, accessToken, path } = jsonResponse
       const { changeRoute } = this.context
 
-      changeData({ accountType, name, authorized: true })
+      set_User({ accountType, name, authorized: true })
       saveTokens.call(this, accessToken)
+
+      if (typeof window !== 'undefined') {
+        // TODO: Investigate better solution.
+        // @ts-ignore
+        window.areListingsObsolete = true
+      }
+
       changeRoute({ href: buildUrl({ path }) })
     })
     .catch(() => {
-      changeErrors({
+      setErrors({
         emailOrPassword: { pl: 'Nieprawidłowy adres email lub hasło.', en: 'Invalid email address and/or password.' },
       })
     })

@@ -26,7 +26,7 @@ function transformFeatures(features) {
     return {
       ref: feature.ref,
       checked: this.props.features.indexOf(feature.ref) !== -1,
-      label: feature.pl // TODO!
+      label: feature.pl, // TODO!
     }
   })
 }
@@ -41,7 +41,7 @@ export function featuresManager() {
       if (value) {
         newFeatures = newFeatures.concat([ref])
       } else {
-        newFeatures = newFeatures.filter(feature => feature !== ref)  
+        newFeatures = newFeatures.filter(feature => feature !== ref)
       }
 
       this.props.setInputs({ features: newFeatures })

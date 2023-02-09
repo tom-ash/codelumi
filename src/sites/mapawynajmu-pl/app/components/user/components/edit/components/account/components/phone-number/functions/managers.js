@@ -14,12 +14,12 @@ export function phoneCodeManager() {
     children: <SVG name='chevron' />,
     value: this.props.countryCode,
     options: countryCodes.map(countryCode => ({ value: countryCode, text: countryCode })),
-    onSelect: option => this.props.changeInputs({ countryCode: option.value }),
+    onSelect: option => this.props.setInputs({ countryCode: option.value }),
   }
 }
 
 export function bodyManager() {
-  const { changeErrors } = this.props
+  const { setErrors } = this.props
   const { label } = inputs.phone
 
   return {
@@ -30,7 +30,7 @@ export function bodyManager() {
     label: this.langHandler(label),
     onChange: value => {
       if (/^\d*$/.test(value)) {
-        changeErrors({ phone: noError })
+        setErrors({ phone: noError })
       } else {
         document.getElementById('user-edit-account-phone-number-body').value = value.slice(0, -1)
       }
@@ -38,7 +38,7 @@ export function bodyManager() {
     onBlur: value => this.bodyManager().validate(value),
     validate: value => {
       if (value.length < 9) {
-        changeErrors({ phone: { pl: 'Nieprawidłowy numer telefonu.', en: 'Invalid phone number.' } })
+        setErrors({ phone: { pl: 'Nieprawidłowy numer telefonu.', en: 'Invalid phone number.' } })
         return false
       }
       return true

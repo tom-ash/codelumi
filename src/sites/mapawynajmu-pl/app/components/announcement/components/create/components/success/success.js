@@ -19,10 +19,6 @@ class AnnouncementCreateSuccess extends React.Component {
   static contextType = AppContext
 
   render() {
-    const { routeSynced } = this.props
-
-    if (!routeSynced) return null
-
     return (
       <div id='success-container'>
         <Heading

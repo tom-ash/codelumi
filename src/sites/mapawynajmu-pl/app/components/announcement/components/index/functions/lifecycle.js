@@ -2,7 +2,7 @@ import { buildUrl } from '../../../../../../shared/functions/builders/url'
 
 export function componentDidUpdate(prevProps) {
   const { rebuildQueryParams: prevRebuildQueryParams } = prevProps
-  const { rebuildQueryParams, setControl, changeInputs } = this.props
+  const { rebuildQueryParams, setControl, setInputs } = this.props
 
   if (!prevRebuildQueryParams && rebuildQueryParams) {
     window.areListingsObsolete = true
@@ -36,7 +36,7 @@ export function componentDidUpdate(prevProps) {
     const path = window.location.pathname.replace(/^\//, '') + '?' + builtQueryParamsArray.join('&')
     const href = buildUrl({ path })
 
-    changeInputs(updateAttrs)
+    setInputs(updateAttrs)
     changeRoute({ href })
   }
 }

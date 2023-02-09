@@ -1,97 +1,98 @@
 export const mapStateToProps = store => {
-  const { control, data } = store
-  const { routeSynced, lang, isMobile } = store.app
+  const { app, render, control, data, inputs } = store
+  const { lang, isMobile } = app
   const {
     'announcement/create/form': renderForm,
     'announcement/edit': renderEdit,
     'announcement/create/verification': renderVerification,
     'announcement/create/summary': renderSuccess,
-  } = store.render
-  const { authorized, admin } = store.user.authorize.data
-  const { inputs, errors } = store
-  const {
-    step,
-    connecting,
-    savingAnnouncement,
-  } = control
-  const { announcement, user } = data
-  const { accountType, emailAddress, password, countryCode, phoneNumber, termsAndPrivacyConsent, businessName } =
-    store.user.create.inputs
-
+  } = render
+  const { authorized, admin } = store.user
+  const { step, savingAnnouncement, savingPicture } = control
+  const { id, pin, announcement, user } = data
   const {
     category,
-    area,
     blobs,
     picUploads,
+    dbPictures,
     latitude,
     longitude,
-    rentCurrency,
+    locality,
+    sublocality,
+    area,
     netRentAmount,
     grossRentAmount,
+    rentCurrency,
     rooms,
     floor,
     totalFloors,
+    addAvailabilityDate,
     availabilityDate,
     features,
     furnishings,
+    showPolishDescription,
     polishDescription,
+    showEnglishDescription,
     englishDescription,
-    addAvailabilityDate,
-    locality,
-    sublocality,
     name,
     link,
-    showPolishDescription,
-    showEnglishDescription,
-  } = inputs
-
-  return {
-    routeSynced,
-    renderForm,
-    renderVerification,
-    renderSuccess,
-    renderEdit,
     accountType,
-    businessName,
     emailAddress,
     password,
     countryCode,
     phoneNumber,
     termsAndPrivacyConsent,
+    businessName,
+  } = inputs
+
+  return {
     lang,
-    step,
-    connecting,
-    savingAnnouncement,
-    category,
-    area,
-    rooms,
-    blobs,
-    picUploads,
-    latitude,
-    longitude,
-    rentCurrency,
-    netRentAmount,
-    grossRentAmount,
-    features,
-    furnishings,
-    polishDescription,
-    englishDescription,
-    availabilityDate,
-    floor,
-    totalFloors,
-    errors,
     isMobile,
+    renderForm,
+    renderEdit,
+    renderVerification,
+    renderSuccess,
     authorized,
     admin,
-    addAvailabilityDate,
+    step,
+    savingAnnouncement,
+    savingPicture,
+    id,
+    pin,
     announcement,
     user,
+    category,
+    blobs,
+    picUploads,
+    dbPictures,
+    latitude,
+    longitude,
     locality,
     sublocality,
+    area,
+    netRentAmount,
+    grossRentAmount,
+    rentCurrency,
+    rooms,
+    floor,
+    totalFloors,
+    addAvailabilityDate,
+    availabilityDate,
+    features,
+    furnishings,
+    showPolishDescription,
+    polishDescription,
+    showEnglishDescription,
+    englishDescription,
     name,
     link,
-    showPolishDescription,
-    showEnglishDescription,
+    accountType,
+    emailAddress,
+    password,
+    countryCode,
+    phoneNumber,
+    termsAndPrivacyConsent,
+    businessName,
   }
 }
 

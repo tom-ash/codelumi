@@ -14,7 +14,7 @@ const Filter = (props: FilterProps) => {
     max,
     maxInput,
     setControl,
-    changeInputs,
+    setInputs,
     minKey,
     minInputKey,
     maxKey,
@@ -38,7 +38,7 @@ const Filter = (props: FilterProps) => {
     maxKey,
     maxInputKey,
     setControl,
-    changeInputs,
+    setInputs,
   }
 
   return (

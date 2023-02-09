@@ -1,12 +1,14 @@
 export const mapStateToProps = store => {
-  const { lang } = store.app
-  const { step, success } = store.user.create.control
-  const { 'announcement/create/form': renderAnnouncementCreate } = store.render
+  const { app, render, control } = store
+
+  const { lang } = app
+  const { 'announcement/create/form': renderAnnouncementCreate } = render
+  const { step, success } = control
 
   return {
     lang,
     renderAnnouncementCreate,
-    authorized: store.user.authorize.data.authorized,
+    authorized: store.user.authorized,
     success,
     step,
   }
@@ -15,10 +17,6 @@ export const mapStateToProps = store => {
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
-    setControl: value => dispatch({ type: 'user/create/control', value }),
-    resetControl: value => dispatch({ type: 'user/create/control/reset', value }),
-    resetInputs: value => dispatch({ type: 'user/create/inputs/reset', value }),
-    resetData: value => dispatch({ type: 'user/create/data/reset', value }),
-    resetErrors: value => dispatch({ type: 'user/create/errors/reset', value }),
+    setControl: value => dispatch({ type: 'control', value }),
   }
 }

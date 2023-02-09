@@ -52,7 +52,7 @@ export function destroy() {
     .then(response => {
       if (response.ok) return response.json()
 
-      this.props.changeErrors({
+      this.props.setErrors({
         verification: {
           pl: 'Nieprawidłowy kod weryfikacyjny',
           en: 'Invalid verification code',

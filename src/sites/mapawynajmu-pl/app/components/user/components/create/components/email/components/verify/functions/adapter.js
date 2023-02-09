@@ -8,7 +8,7 @@ export function verify() {
 
   const confirmationToken = getCookieValue('confirmation_token')
   const verificationCode = document.getElementById('user-create-email-verification').value
-  const { lang, changeAuthorizeData, setControl, changeErrors } = this.props
+  const { lang, set_User, setControl, setErrors } = this.props
 
   setControl({ connecting: true })
 
@@ -30,12 +30,12 @@ export function verify() {
       const { changeRoute } = this.context
 
       saveTokens.call(this, accessToken)
-      changeAuthorizeData({ authorized: true, name })
+      set_User({ authorized: true, name })
       changeRoute({ href })
       setControl({ connecting: false })
     })
     .catch(() =>
-      changeErrors({ verification: { pl: 'Nieprawidłowy kod weryfikacyjny', en: 'Invalid verification code' } })
+      setErrors({ verification: { pl: 'Nieprawidłowy kod weryfikacyjny', en: 'Invalid verification code' } })
     )
     .finally(() => setControl({ connecting: false }))
 }

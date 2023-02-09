@@ -1,5 +1,7 @@
 export const mapStateToProps = store => {
-  const render = store.render
+  const {
+    render
+  } = store
   const { 'announcement/create/form': renderForm, 'announcement/create/summary': renderSummary } = render
 
   return {
@@ -8,7 +10,5 @@ export const mapStateToProps = store => {
 }
 
 export const mapDispatchToProps = dispatch => {
-  return {
-    // setStore: value => dispatch({ type: 'announcement/create', value }),
-  }
+  return {}
 }

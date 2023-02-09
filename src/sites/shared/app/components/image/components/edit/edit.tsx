@@ -14,7 +14,7 @@ type ImageEditProps = {
   apiUrl: string
   imageId: number
   body: string
-  changeData(): void
+  setData(): void
   width: string
   height: string
   storageKey: string
@@ -35,7 +35,7 @@ const ImageEdit = (props: ImageEditProps) => {
     apiUrl,
     imageId,
     body,
-    changeData,
+    setData,
     width,
     height,
     storageKey,
@@ -57,9 +57,9 @@ const ImageEdit = (props: ImageEditProps) => {
     }
   })()
 
-  const bodyTextareaProps = { body, changeData }
-  const saveButtonProps = { imageId, body, apiUrl, width, height, storageKey, storageUrl, changeData }
-  const dimensionsProps = { width, height, changeData }
+  const bodyTextareaProps = { body, setData }
+  const saveButtonProps = { imageId, body, apiUrl, width, height, storageKey, storageUrl, setData }
+  const dimensionsProps = { width, height, setData }
   const outputProps = {
     width,
     height,
@@ -71,7 +71,7 @@ const ImageEdit = (props: ImageEditProps) => {
     changeRoute,
     langHandler,
   }
-  const storageKeyProps = { storageKey, changeData }
+  const storageKeyProps = { storageKey, setData }
   const storagePreviewProps = { storageUrl, storageUrlRandomizedQuaryParameter }
   const storageUrlAnchorProps = { storageUrl }
 

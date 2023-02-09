@@ -1,9 +1,7 @@
 export const mapStateToProps = store => {
-  const { links } = store
-  const { lang } = store.app
-  const { accountType, businessName, emailAddress, password, countryCode, phoneNumber, termsAndPrivacyConsent } =
-    store.user.create.inputs
-
+  const { app, links, inputs, errors } = store
+  const { lang } = app
+  const { accountType, businessName, emailAddress, password, countryCode, phoneNumber, termsAndPrivacyConsent } = inputs
   const {
     accountType: accountTypeError,
     businessName: businessNameError,
@@ -11,7 +9,7 @@ export const mapStateToProps = store => {
     password: passwordError,
     phoneNumber: phoneNumberError,
     termsAndPrivacyConsent: termsAndPrivacyConsentError,
-  } = store.user.create.errors
+  } = errors
 
   return {
     accountType,
@@ -34,7 +32,7 @@ export const mapStateToProps = store => {
 
 export const mapDispatchToProps = dispatch => {
   return {
-    changeInputs: value => dispatch({ type: 'user/create/inputs', value }),
+    setInputs: value => dispatch({ type: 'inputs', value }),
     dispatch,
   }
 }

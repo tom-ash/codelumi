@@ -1,9 +1,11 @@
 export const mapStateToProps = store => {
   const {
-    image: {
-      index: { imageKeys, imageKey },
-    },
+    data
   } = store
+  const {
+    imageKeys,
+    imageKey, // TODO: Move to inputs.
+  } = data
 
   return {
     imageKeys,
@@ -13,6 +15,6 @@ export const mapStateToProps = store => {
 
 export const mapDispatchToProps = dispatch => {
   return {
-    changeState: value => dispatch({ type: 'image/index', value }),
+    setData: value => dispatch({ type: 'data', value }),
   }
 }

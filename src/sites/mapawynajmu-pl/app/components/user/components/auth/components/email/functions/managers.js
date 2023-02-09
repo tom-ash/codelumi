@@ -16,11 +16,11 @@ export function emailAddressManager() {
     controlled: false,
     label: this.langHandler(label),
     children: <SVG name='envelope' />,
-    onChange: () => this.props.changeErrors({ emailOrPassword: noError }),
+    onChange: () => this.props.setErrors({ emailOrPassword: noError }),
     onBlur: value => this.emailAddressManager().validate(value),
     validate: value => {
       if (!emailValidator(value).isValid) {
-        this.props.changeErrors({
+        this.props.setErrors({
           emailOrPassword: {
             pl: 'Nieprawidłowy adres email lub hasło.',
             en: 'Invalid email address and/or password.',
@@ -43,11 +43,11 @@ export function passwordManager() {
     classNames: { container: 'text-input password' },
     label: this.langHandler(label),
     children: <SVG name='lock' />,
-    onChange: () => this.props.changeErrors({ emailOrPassword: noError, email: noError }),
+    onChange: () => this.props.setErrors({ emailOrPassword: noError, email: noError }),
     onBlur: value => this.passwordManager().validate(value),
     validate: value => {
       if (value.length < 1) {
-        this.props.changeErrors({
+        this.props.setErrors({
           emailOrPassword: {
             pl: 'Nieprawidłowy adres email lub hasło.',
             en: 'Invalid email address and/or password.',
@@ -68,7 +68,7 @@ export function rememberMeManager() {
     classNames: { container: 'form-input checkbox' },
     checked: this.props.rememberMe,
     label: this.langHandler({ pl: 'Zapamiętaj mnie', en: 'Remember me' }),
-    onClick: () => this.props.changeInputs({ rememberMe: !rememberMe }),
+    onClick: () => this.props.setInputs({ rememberMe: !rememberMe }),
   }
 }
 

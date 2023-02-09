@@ -18,8 +18,8 @@ interface PageCreateProps {
   online: boolean
   headerAutonumbering: boolean
   setControl(args: object): void
-  changeInputs(): void
-  changeData(): void
+  setInputs(): void
+  setData(): void
   updated: boolean
   nav: string
   schemaMode: string
@@ -65,7 +65,7 @@ class PageCreate extends React.Component<PageCreateProps> {
       online,
       headerAutonumbering,
       setControl,
-      changeInputs,
+      setInputs,
       updated,
       nav,
       schemaMode,
@@ -91,12 +91,12 @@ class PageCreate extends React.Component<PageCreateProps> {
       schemaMode,
       autoSchema,
       manualSchema,
-      changeInputs,
+      setInputs,
     }
     const metaProps = {
       publishedOn,
       modifiedOn,
-      changeInputs,
+      setInputs,
       category,
       subcategory,
       pageLang,
@@ -126,11 +126,11 @@ class PageCreate extends React.Component<PageCreateProps> {
               <>
                 <OnlineInput
                   checked={online}
-                  changeInputs={changeInputs}
+                  setInputs={setInputs}
                 />
                 <HeaderAutonumberingInput
                   checked={headerAutonumbering}
-                  changeInputs={changeInputs}
+                  setInputs={setInputs}
                 />
               </>
             )}

@@ -2,7 +2,7 @@ import React from 'react'
 import { ManagedCheckbox } from 'managed-inputs'
 
 function HeaderAutonumberingInput(props) {
-  const { checked, changeInputs } = props
+  const { checked, setInputs } = props
   const classNames = { container: 'switch' }
   const label = (
     <>
@@ -13,7 +13,7 @@ function HeaderAutonumberingInput(props) {
     </>
   )
   const onClick = headerAutonumbering => {
-    changeInputs({ headerAutonumbering })
+    setInputs({ headerAutonumbering })
   }
   const inputProps = { checked: !!checked, classNames, label, onClick }
 

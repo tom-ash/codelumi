@@ -2,7 +2,7 @@ import API_URL from '../../../../../../../../../../shared/constants/urls/api'
 import getAccessToken from '../../../../../../auth/components/tokens/functions/get-tokens'
 
 export function changePhone(countryCode, body) {
-  const { setControl, changeData, changeInputs, connecting } = this.props
+  const { setControl, setData, setInputs, connecting } = this.props
 
   if (connecting) return
 
@@ -14,8 +14,8 @@ export function changePhone(countryCode, body) {
   })
     .then(response => {
       if (response.status == 200) {
-        changeData({ countryCode: countryCode, phoneNumber: body })
-        changeInputs({ countryCode: countryCode })
+        setData({ countryCode: countryCode, phoneNumber: body })
+        setInputs({ countryCode: countryCode })
         return setControl({ phoneStage: 'success' })
       }
       throw new Error('SomethingWentWrong')

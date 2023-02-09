@@ -2,7 +2,7 @@ import React from 'react'
 import Spinner from '../../../../../../support/components/spinner/components/windmill/windmill'
 import scrollToTop from '../../../../../../../functions/scrollers/instant-scroll'
 
-export function OffsetSwitcher({ langHandler, changeInputs, setControl, offset, amount, classNames, scrollTop }) {
+export function OffsetSwitcher({ langHandler, setInputs, setControl, offset, amount, classNames, scrollTop }) {
   let className = 'offset-switcher'
   if (classNames) className += ` ${classNames}`
 
@@ -27,7 +27,7 @@ export function OffsetSwitcher({ langHandler, changeInputs, setControl, offset, 
           className='switch min'
           onClick={() => {
             if (scrollTop) scrollToTop()
-            changeInputs({ offset: offset - 50 })
+            setInputs({ offset: offset - 50 })
             setControl({ fetch: true })
           }}
         ></div>
@@ -40,7 +40,7 @@ export function OffsetSwitcher({ langHandler, changeInputs, setControl, offset, 
           className='switch max'
           onClick={() => {
             if (scrollTop) scrollToTop()
-            changeInputs({ offset: offset + 50 })
+            setInputs({ offset: offset + 50 })
             setControl({ fetch: true })
           }}
         ></div>

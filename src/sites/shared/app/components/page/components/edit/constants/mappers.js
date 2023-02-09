@@ -1,6 +1,18 @@
 export const mapStateToProps = store => {
-  const { lang, routeSynced } = store.app
-  const { fetching, nav } = store.page.edit.control
+  const {
+    app,
+    user,
+    control,
+    data,
+    inputs,
+  } = store
+  const {
+    lang,
+    routeSynced,
+  } = app
+  const { role } = user
+  const { fetching, nav } = control
+  const { updated } = data
   const {
     id,
     name,
@@ -25,9 +37,7 @@ export const mapStateToProps = store => {
     category,
     subcategory,
     langAltsGroup,
-  } = store.page.edit.inputs
-  const { role } = store.user.authorize.data
-  const { updated } = store.page.edit.data
+  } = inputs
 
   return {
     fetching,
@@ -46,7 +56,7 @@ export const mapStateToProps = store => {
     coverImage,
     meta,
     lang_ver_urls,
-    isAdmin: role == 'admin',
+    isAdmin: role === 'admin',
     online,
     headerAutonumbering,
     updated,
@@ -64,9 +74,8 @@ export const mapStateToProps = store => {
 
 export const mapDispatchToProps = dispatch => {
   return {
-    setControl: value => dispatch({ type: 'page/edit/control', value }),
-    changeInputs: value => dispatch({ type: 'page/edit/inputs', value }),
-    changeData: value => dispatch({ type: 'page/edit/data', value }),
-    resetInputs: value => dispatch({ type: 'page/edit/inputs/reset', value }),
+    setControl: value => dispatch({ type: 'control', value }),
+    setData: value => dispatch({ type: 'data', value }),
+    setInputs: value => dispatch({ type: 'inputs', value }),
   }
 }

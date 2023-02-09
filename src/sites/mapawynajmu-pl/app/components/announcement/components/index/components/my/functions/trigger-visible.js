@@ -17,7 +17,7 @@ export function triggerVisible(announcement, index) {
     body: JSON.stringify({ visible: !announcement.visible }),
   }).then(response => {
     if (response.ok) {
-      this.props.changeData({ announcements: deepCloneAnnouncement.call(this, announcement, index) })
+      this.props.setData({ announcements: deepCloneAnnouncement.call(this, announcement, index) })
     }
     this.props.setControl({ connecting: false })
   })

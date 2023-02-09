@@ -15,7 +15,7 @@ import { buildUrl } from '../../../../../../shared/functions/builders/url'
 function createAnnouncement() {
   const { authorized, renderEdit, setControl } = this.props
 
-  setControl({ connecting: true })
+  // setControl({ connecting: true })
 
   if (renderEdit) return update.call(this)
   if (authorized) return create.call(this)
@@ -44,8 +44,13 @@ function update() {
     .then(path => {
       const { changeRoute } = this.context
 
+      if (typeof window !== 'undefined') {
+        // TODO: Investigate better solution.
+        // @ts-ignore
+        window.areListingsObsolete = true
+      }
+
       changeRoute({ href: buildUrl({ path }) })
-      setControl({ connecting: false })
     })
 }
 
@@ -66,7 +71,7 @@ function create() {
       const { changeRoute } = this.context
 
       changeRoute({ href: buildUrl({ path }) })
-      setControl({ connecting: false })
+      // setControl({ connecting: false })
       // sendAnnouncementCreatedEvent()
     })
 }
@@ -89,7 +94,7 @@ function createWithUser() {
 
       setConfirmationTokenCookie(confirmationToken)
       changeRoute({ href: buildUrl({ path }) })
-      setControl({ connecting: false })
+      // setControl({ connecting: false })
 
       // sendAnnouncementCreatedEvent()
     })

@@ -10,10 +10,7 @@ export const mapStateToProps = store => {
   } = render
   const { lang, device, path, scrollY, scripts, routeSynced, loadGa } = store.app
   const { statisticsConsent, marketingConsent } = store.visitor.consents
-  const { data: pageShowData } = store.page.show
-  const { data: pageEditData } = store.page.edit
-  const { data: announcementEditData } = store
-  const { authorized, admin } = store.user.authorize.data
+  const { authorized, admin } = store.user
   const { links } = store
 
   return {
@@ -30,10 +27,7 @@ export const mapStateToProps = store => {
     renderVisitor,
     renderAnnouncement,
     renderUser,
-    announcementEditData,
-    pageShowData,
     routeSynced,
-    pageEditData,
     authorized,
     admin,
     links,
@@ -45,8 +39,8 @@ export const mapStateToProps = store => {
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
+    setControl: value => dispatch({ type: 'control', value }),
     changePageShowData: value => dispatch({ type: 'page/show/data', value }),
-    changeUserEditData: value => dispatch({ type: 'user/edit/data', value }),
     changeConsents: value => dispatch({ type: 'visitor/consents', value }),
     dispatch,
   }

@@ -2,5 +2,5 @@ import { noError } from '../constants/no-error'
 
 export function componentWillUnmount() {
   this.props.setControl({ passwordStep: null })
-  this.props.changeErrors({ password: noError })
+  this.props.setErrors({ password: noError })
 }

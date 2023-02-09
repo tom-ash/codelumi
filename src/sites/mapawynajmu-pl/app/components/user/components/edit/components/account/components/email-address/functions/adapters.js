@@ -122,7 +122,7 @@ export function sendPassword(password) {
   })
     .then(response => {
       if (response.ok) {
-        this.props.changeData({ email: newEmail })
+        this.props.setData({ email: newEmail })
         return this.props.setControl({ emailStep: 'success', emailStage: 'success' })
       }
       throw new Error('SomethingWentWrong')

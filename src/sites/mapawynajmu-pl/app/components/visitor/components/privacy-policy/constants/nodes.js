@@ -378,12 +378,14 @@ const nodes = [
     version: versions['1.0'],
     pl: (
       <span>
-        Wykonanie powyższych praw następuje poprzez wysłanie pisma na adres korespondencyjny Administratora lub emaila na adres <i>kontakt@mapawynajmu.pl</i> wskazujących wykonywane prawa.
+        Wykonanie powyższych praw następuje poprzez wysłanie pisma na adres korespondencyjny Administratora lub emaila
+        na adres <i>kontakt@mapawynajmu.pl</i> wskazujących wykonywane prawa.
       </span>
     ),
     en: (
       <span>
-        The abovementioned rights are exercised through sending a letter to the Administrator's correspondence address or an email to <i>contact@mapawynajmu.pl</i> with indication of the rights being executed.
+        The abovementioned rights are exercised through sending a letter to the Administrator's correspondence address
+        or an email to <i>contact@mapawynajmu.pl</i> with indication of the rights being executed.
       </span>
     ),
   },

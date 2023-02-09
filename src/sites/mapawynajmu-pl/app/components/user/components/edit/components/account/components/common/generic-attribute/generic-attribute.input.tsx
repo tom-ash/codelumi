@@ -45,7 +45,7 @@ export const GenericAttributeInput = (props: GenericAttributeInputProps) => {
       })
     },
     onFocus: () => {
-      dispatch({ type: 'user/edit/errors', value: { [attrName]: value } })
+      dispatch({ type: 'errors', value: { [attrName]: value } })
     },
     onBlur: () => {
       match &&

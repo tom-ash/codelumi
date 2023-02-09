@@ -1,21 +1,10 @@
 export const mapStateToProps = store => {
   const {
-    app: {
-      lang
-    },
-    render: {
-      'announcement/edit': renderEdit
-    },
-    control: {
-      addingPicture,
-    },
-    inputs: {
-      picFiles: files,
-      blobs,
-    },
-    errors: {
-      pictures: error
-    },
+    app: { lang },
+    render: { 'announcement/edit': renderEdit },
+    control: { addingPicture },
+    inputs: { picFiles: files, blobs },
+    errors: { pictures: error },
   } = store
 
   return {

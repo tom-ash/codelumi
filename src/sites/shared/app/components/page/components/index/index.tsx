@@ -8,16 +8,16 @@ import RecordIndexer from '../../../support/record-indexer/record-indexer'
 type PageIndexProps = {
   pageKeys: string[]
   pageKey: string
-  changeState(attrs: object): void
+  setData(attrs: object): void
   apiUrl: string
   changeRoute(props: { href: string }): void
   buildUrl(props: { path: string }): string
 }
 
 const PageIndex = (props: PageIndexProps) => {
-  const { pageKey, pageKeys, apiUrl, changeState, buildUrl, changeRoute } = props
+  const { pageKey, pageKeys, apiUrl, setData, buildUrl, changeRoute } = props
 
-  const changeKey = (pageKey: string) => changeState({ pageKey })
+  const changeKey = (pageKey: string) => setData({ pageKey })
 
   const createFactoryProps = {
     apiUrl,

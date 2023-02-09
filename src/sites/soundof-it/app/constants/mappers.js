@@ -1,12 +1,16 @@
 export const mapStateToProps = store => {
-  const { device, lang, routeSynced, loadGa } = store.app
-  const { scrollY } = store.visitor
-  const render = store.render
+  const {
+    app,
+    render,
+    visitor,
+    data,
+    links,
+  } = store
+  const { device, lang, routeSynced, loadGa } = app
   const { visitor: renderVisitor, page: renderPage, announcement: renderAnnouncement, image: renderImage } = render
-  const { statisticsConsent, marketingConsent } = store.visitor.consents
-  const { data: pageShowData } = store.page.show
-  const { data: pageEditData } = store.page.edit
-  const { links } = store
+  const { scrollY } = visitor
+  const { consents } = visitor
+  const { statisticsConsent, marketingConsent } = consents
 
   return {
     device,
@@ -19,11 +23,10 @@ export const mapStateToProps = store => {
     renderPage,
     renderImage,
     scrollY,
-    pageShowData,
-    pageEditData,
     statisticsConsent,
     marketingConsent,
     links,
+    ...data,
   }
 }
 

@@ -1,6 +1,6 @@
 import API_URL from '../../../../../../shared/constants/urls/api'
 
-function setBlobs(id, pictures) {
+export function setBlobs(id, pictures) {
   if (typeof window === 'undefined') return
 
   pictures.map((picture, index) => {

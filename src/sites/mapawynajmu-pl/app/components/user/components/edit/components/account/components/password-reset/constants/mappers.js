@@ -1,19 +1,28 @@
 export const mapStateToProps = store => {
+  const {
+    lang,
+    path,
+    control,
+    errors
+  } = store
+  const { passwordConnecting: connecting, passwordStage: stage, passwordStep: step } = control
+  const { password: error } = errors
+
   return {
-    lang: store.app.lang,
-    path: store.app.path,
-    connecting: store.user.edit.control.passwordConnecting,
-    stage: store.user.edit.control.passwordStage,
-    step: store.user.edit.control.passwordStep,
-    error: store.user.edit.errors.password,
+    lang,
+    path,
+    connecting,
+    stage,
+    step,
+    error,
   }
 }
 
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
-    setControl: value => dispatch({ type: 'user/edit/control', value }),
-    changeData: value => dispatch({ type: 'user/edit/data', value }),
-    changeErrors: value => dispatch({ type: 'user/edit/errors', value }),
+    setControl: value => dispatch({ type: 'control', value }),
+    setData: value => dispatch({ type: 'data', value }),
+    setErrors: value => dispatch({ type: 'errors', value }),
   }
 }

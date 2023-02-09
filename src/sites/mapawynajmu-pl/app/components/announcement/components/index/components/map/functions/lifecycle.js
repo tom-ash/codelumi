@@ -97,9 +97,7 @@ export function componentDidUpdate(prevProps) {
 }
 
 export function componentWillUnmount() {
-  const { pins, resetControl, resetInputs } = this.props
+  const { pins } = this.props
 
   removePins(pins)
-  resetControl()
-  resetInputs()
 }

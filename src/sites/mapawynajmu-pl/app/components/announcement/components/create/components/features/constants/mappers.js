@@ -1,13 +1,7 @@
 export const mapStateToProps = store => {
-  const {
-    inputs
-  } = store
-  const {
-    category,
-    features,
-    addFeatures,
-  } = inputs
-  
+  const { inputs } = store
+  const { category, features, addFeatures } = inputs
+
   return {
     lang: store.app.lang,
     category,

@@ -8,12 +8,12 @@ interface PasswordInputProps {
   password: string
   passwordError: LangObject
   langHandler: LangHandler
-  changeInputs: ChangeInputs
+  setInputs: ChangeInputs
   dispatch: Dispatch
 }
 
 export const PasswordInput = (props: PasswordInputProps) => {
-  const { password, passwordError, changeInputs, langHandler, dispatch } = props
+  const { password, passwordError, setInputs, langHandler, dispatch } = props
   const classNames = { container: 'text-input' }
   // @ts-ignore
   const label = langHandler({ pl: 'Hasło', en: 'Password' })
@@ -26,13 +26,13 @@ export const PasswordInput = (props: PasswordInputProps) => {
   const error = langHandler(passwordError)
   const onFocus = () =>
     dispatch({
-      type: 'user/create/errors',
+      type: 'errors',
       value: { password: EMPTY_LANG_OBJECT },
     })
   const onBlur = (password: string) => {
     passwordValidator({ password, dispatch })
   }
-  const onChange = (password: string) => changeInputs({ password })
+  const onChange = (password: string) => setInputs({ password })
 
   const passwordInputProps = {
     classNames,

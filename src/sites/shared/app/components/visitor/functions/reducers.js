@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux'
-// import { control, inputs, data } from '../constants/state'
 
 const deviceReducer = (state = {}, action) => {
   switch (action.type) {
@@ -28,10 +27,8 @@ const cookiesReducer = (state = {}, action) => {
   }
 }
 
-const visitorReducer = combineReducers({
+export const visitorReducer = combineReducers({
   device: deviceReducer,
   cookies: cookiesReducer,
   consents: consentsReducer,
 })
-
-export default visitorReducer

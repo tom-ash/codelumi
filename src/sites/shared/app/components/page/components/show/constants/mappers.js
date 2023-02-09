@@ -1,15 +1,12 @@
 export const mapStateToProps = store => {
-  const { data: pageShowData } = store.page.show
-  const { role } = store.user.authorize.data
+  const {
+    user,
+    data,
+  } = store
+  const { role } = user
 
   return {
-    ...pageShowData,
+    ...data,
     isAdmin: role == 'admin',
-  }
-}
-
-export const mapDispatchToProps = dispatch => {
-  return {
-    changeData: value => dispatch({ type: 'page/show/data', value }),
   }
 }

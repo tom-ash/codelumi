@@ -1,8 +1,8 @@
 export const mapStateToProps = store => {
-  const { links } = store
-  const { lang } = store.app
-  const { authorized } = store.user.authorize.data
-  const { connecting, step } = store.user.create.control
+  const { app, links, user, control } = store
+  const { lang } = app
+  const { authorized } = user
+  const { connecting, step } = control
   const {
     'user/create/form': renderForm,
     'user/create/verification': renderVerification,

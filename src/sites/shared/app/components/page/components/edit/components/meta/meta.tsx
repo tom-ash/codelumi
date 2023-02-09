@@ -9,7 +9,7 @@ import LangAltsGroupInput from './components/lang-alts-group'
 interface MetaProps {
   publishedOn: string
   modifiedOn: string
-  changeInputs(props: object): void
+  setInputs(props: object): void
   category: string
   subcategory: string
   pageLang: string
@@ -17,14 +17,14 @@ interface MetaProps {
 }
 
 const Meta = (props: MetaProps) => {
-  const { publishedOn, modifiedOn, changeInputs, category, subcategory, pageLang, langAltsGroup } = props
+  const { publishedOn, modifiedOn, setInputs, category, subcategory, pageLang, langAltsGroup } = props
 
-  const publishedOnProps = { publishedOn, changeInputs }
-  const modifiedOnProps = { modifiedOn, changeInputs }
-  const categoryProps = { category, changeInputs }
-  const subcategoryProps = { subcategory, changeInputs }
-  const pageLangProps = { pageLang, changeInputs }
-  const langAltsGroupProps = { langAltsGroup, changeInputs }
+  const publishedOnProps = { publishedOn, setInputs }
+  const modifiedOnProps = { modifiedOn, setInputs }
+  const categoryProps = { category, setInputs }
+  const subcategoryProps = { subcategory, setInputs }
+  const pageLangProps = { pageLang, setInputs }
+  const langAltsGroupProps = { langAltsGroup, setInputs }
 
   return (
     <div className='meta'>

@@ -2,8 +2,8 @@ import React from 'react'
 
 const versions = {
   '1.0': '2020.01.01',
-  '1.1': '2020.02.15',
-  '1.2': '2020.03.12',
+  1.1: '2020.02.15',
+  1.2: '2020.03.12',
 }
 
 const nodes = [
@@ -13,12 +13,16 @@ const nodes = [
     version: versions['1.0'],
     pl: (
       <i>
-        Z dniem 15 lutego 2023 r. nastąpi zmiana numeracji punktów 2 (Definicje), 2 (Serwis), 3 (Konta), 4 (Ogłoszenia), 5 (Prawa i odpowiedzialność Administratora.), 6 (Ochrona danych osobowych), oraz 7 (Postanowienia końcowe) Regulaminu o charakterze redakcyjnym.
+        Z dniem 15 lutego 2023 r. nastąpi zmiana numeracji punktów 2 (Definicje), 2 (Serwis), 3 (Konta), 4 (Ogłoszenia),
+        5 (Prawa i odpowiedzialność Administratora.), 6 (Ochrona danych osobowych), oraz 7 (Postanowienia końcowe)
+        Regulaminu o charakterze redakcyjnym.
       </i>
     ),
     en: (
       <i>
-        As of February 15th, 2023 the change of numbering with regard to points 2 (Definitions), 2 (The Service), 3 (Accounts), 4 (Annoucements), 5 (The rights and liability of the Administrator), 6 (Personal Data Protection), and 7 (Final Provisions) of editorial nature shall be effected.
+        As of February 15th, 2023 the change of numbering with regard to points 2 (Definitions), 2 (The Service), 3
+        (Accounts), 4 (Annoucements), 5 (The rights and liability of the Administrator), 6 (Personal Data Protection),
+        and 7 (Final Provisions) of editorial nature shall be effected.
       </i>
     ),
   },
@@ -570,15 +574,20 @@ const nodes = [
     version: versions['1.0'],
     pl: (
       <span>
-        Administrator ma prawo do zmiany Regulaminu, Polityki Prywatności, Polityki Cookies oraz Cennika poprzez zamieszczenie zmian tych dokumentów w Serwisie pod adresem <u>https://mapawynajmu.pl</u>. Zmiany te wchodzą w&nbsp;życie po upływie okresu 14 dni od ich ogłoszenia.
+        Administrator ma prawo do zmiany Regulaminu, Polityki Prywatności, Polityki Cookies oraz Cennika poprzez
+        zamieszczenie zmian tych dokumentów w Serwisie pod adresem <u>https://mapawynajmu.pl</u>. Zmiany te wchodzą
+        w&nbsp;życie po upływie okresu 14 dni od ich ogłoszenia.
       </span>
     ),
     en: (
       <span>
-        The Administrator is authorized to amend these Terms of Service, the Privacy Policy, the Cookies Policy and the Pricing through publication of the amendments to those documents within the Service under the address{' '} <u>https://mapawynajmu.pl</u>. The amendments are applicable after the lapse of the period of 14 days from their publication.
+        The Administrator is authorized to amend these Terms of Service, the Privacy Policy, the Cookies Policy and the
+        Pricing through publication of the amendments to those documents within the Service under the address{' '}
+        <u>https://mapawynajmu.pl</u>. The amendments are applicable after the lapse of the period of 14 days from their
+        publication.
       </span>
     ),
-  }
+  },
 ]
 
 export default nodes

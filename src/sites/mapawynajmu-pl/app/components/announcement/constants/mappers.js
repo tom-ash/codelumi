@@ -1,11 +1,11 @@
 export const mapStateToProps = store => {
-  const { lang } = store.app
-
+  const { app, render } = store
+  const { lang } = app
   const {
     'announcement/create': renderCreate,
     'announcement/edit': renderEdit,
     'announcement/index': renderIndex,
-  } = store.render
+  } = render
 
   return {
     lang,
@@ -13,8 +13,4 @@ export const mapStateToProps = store => {
     renderEdit,
     renderIndex,
   }
-}
-
-export const mapDispatchToProps = dispatch => {
-  return {}
 }

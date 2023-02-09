@@ -65,7 +65,7 @@ class AnnouncementTile extends React.Component {
       isMobile,
       latitude,
       longitude,
-      changeData,
+      setData,
       changeApp,
       setControl,
       path,
@@ -105,7 +105,7 @@ class AnnouncementTile extends React.Component {
       lat: latitude,
       lng: longitude,
       isMobile,
-      changeData,
+      setData,
       pictures,
     }
     const picturesProps = {
@@ -117,7 +117,7 @@ class AnnouncementTile extends React.Component {
       area,
       isMobile,
       changeApp,
-      changeData,
+      setData,
       path,
       title,
     }

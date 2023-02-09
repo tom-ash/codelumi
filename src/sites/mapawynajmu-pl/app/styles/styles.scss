@@ -30,6 +30,7 @@ body {
 #app {
   padding-top: 60px;
   @extend %page;
+  min-height: 500px;
 }
 
 input::-webkit-outer-spin-button,

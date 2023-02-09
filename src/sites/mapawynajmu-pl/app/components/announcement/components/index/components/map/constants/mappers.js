@@ -1,14 +1,13 @@
 export const mapStateToProps = store => {
+  const { app, assets, links, control, data } = store
   const {
     lang,
     isMobile,
     scripts: { googleMaps: googleMapsScriptLoaded },
     device,
-  } = store.app
-  const { svgs } = store.assets
-
-  const { 'listing/index/go-back': goBackLink } = store.links
-
+  } = app
+  const { svgs } = assets
+  const { 'listing/index/go-back': goBackLink } = links
   const {
     connecting,
     isMapInitialized,
@@ -24,9 +23,8 @@ export const mapStateToProps = store => {
     shouldInitializeMap,
     isPinsDrawn,
     shouldDrawPins,
-  } = store.announcement.index.control
-
-  const { announcements, pins, tileId, tile, title, currentPartnerName } = store.announcement.index.data
+  } = control
+  const { announcements, pins, tileId, tile, title, currentPartnerName } = data
 
   return {
     loadMap,
@@ -62,12 +60,8 @@ export const mapStateToProps = store => {
 export const mapDispatchToProps = dispatch => {
   return {
     changeApp: value => dispatch({ type: 'app', value }),
-    setControl: value => dispatch({ type: 'announcement/index/control', value }),
-    changeInputs: value => dispatch({ type: 'announcement/index/inputs', value }),
-    changeData: value => dispatch({ type: 'announcement/index/data', value }),
-    changeTile: value => dispatch({ type: 'announcement/index/data/map/tile', value }),
-    resetControl: value => dispatch({ type: 'announcement/index/control/reset', value }),
-    resetInputs: value => dispatch({ type: 'announcement/index/inputs/reset', value }),
-    resetData: value => dispatch({ type: 'announcement/index/data/reset', value }),
+    setControl: value => dispatch({ type: 'control', value }),
+    setInputs: value => dispatch({ type: 'inputs', value }),
+    setData: value => dispatch({ type: 'data', value }),
   }
 }

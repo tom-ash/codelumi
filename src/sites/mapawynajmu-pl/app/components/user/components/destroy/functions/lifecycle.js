@@ -3,6 +3,7 @@ export function componentDidMount() {
 }
 
 export function componentWillUnmount() {
-  this.props.resetControl()
-  this.props.resetErrors()
+  // TODO!
+  // this.props.resetControl()
+  // this.props.resetErrors()
 }

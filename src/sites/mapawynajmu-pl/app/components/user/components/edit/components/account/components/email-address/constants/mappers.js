@@ -1,21 +1,32 @@
 export const mapStateToProps = store => {
+  const { app, control, data, errors } = store
+  const { lang } = app
+  const { emailConnecting: connecting, emailStage: stage, emailStep: step } = control
+  const { email: currentValue } = data
+  const {
+    currentEmailVerification: currentEmailVerificationError,
+    newEmail: newEmailError,
+    newEmailVerification: newEmailVerificationError,
+    newEmailPassword: newEmailPasswordError,
+  } = errors
+
   return {
-    lang: store.app.lang,
-    connecting: store.user.edit.control.emailConnecting,
-    currentValue: store.user.edit.data.email,
-    stage: store.user.edit.control.emailStage,
-    step: store.user.edit.control.emailStep,
-    currentEmailVerificationError: store.user.edit.errors.currentEmailVerification,
-    newEmailError: store.user.edit.errors.newEmail,
-    newEmailVerificationError: store.user.edit.errors.newEmailVerification,
-    newEmailPasswordError: store.user.edit.errors.newEmailPassword,
+    lang,
+    connecting,
+    stage,
+    step,
+    currentValue,
+    currentEmailVerificationError,
+    newEmailError,
+    newEmailVerificationError,
+    newEmailPasswordError,
   }
 }
 
 export const mapDispatchToProps = dispatch => {
   return {
-    setControl: value => dispatch({ type: 'user/edit/control', value }),
-    changeData: value => dispatch({ type: 'user/edit/data', value }),
-    changeErrors: value => dispatch({ type: 'user/edit/errors', value }),
+    setControl: value => dispatch({ type: 'control', value }),
+    setData: value => dispatch({ type: 'data', value }),
+    setErrors: value => dispatch({ type: 'errors', value }),
   }
 }

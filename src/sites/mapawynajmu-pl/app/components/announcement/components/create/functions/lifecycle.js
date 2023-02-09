@@ -1,18 +1,22 @@
 import createAnnouncement from './create-announcement'
 import savePicture from './save-picture'
+import { setBlobs } from './set-blobs'
 
 export function componentDidMount() {
+  const { id, dbPictures, renderEdit } = this.props
 
-  // TODO: Set blobs.
+  if (renderEdit) {
+    setBlobs.call(this, id, dbPictures)
+  }
 }
 
 export function componentDidUpdate(prevProps) {
   const { savingAnnouncement: prevSavingAnnouncement } = prevProps
-  const { connecting, savingAnnouncement, step, blobs, setControl } = this.props
+  const { savingPicture, savingAnnouncement, step, blobs, setControl } = this.props
 
   if (step !== 'publishing') return
 
-  if (!connecting) {
+  if (!savingPicture) {
     if (blobs.length > 0) return savePicture.call(this)
     if (!savingAnnouncement) setControl({ savingAnnouncement: true })
   }

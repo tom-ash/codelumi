@@ -2,12 +2,23 @@ function genericRouteStateSetter(state) {
   const { changeApp, dispatch } = this.props
 
   if (state) {
-    Object.keys(state).map(stateKey => {
-      dispatch({ type: stateKey, value: state[stateKey] })
-    })
-  }
+    dispatch({ type: 'render', value: {} })
 
-  changeApp({ routeSynced: true })
+    setTimeout(() => {
+      Object.keys(state).map(stateKey => {
+        if (stateKey !== 'render') {
+          if (stateKey === 'control') {
+            dispatch({ type: 'control/reset', value: state[stateKey] })
+          } else {
+            dispatch({ type: stateKey, value: state[stateKey] })
+          }
+        }
+      })
+  
+      dispatch({ type: 'render', value: state['render'] })
+      changeApp({ routeSynced: true })
+    }, 0)
+  }
 }
 
 export default genericRouteStateSetter

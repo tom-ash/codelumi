@@ -4,5 +4,5 @@ interface PanelColumnProps {
   options: number[]
   inputKey: string
   setControl: setControl
-  changeInputs: ChangeInputs
+  setInputs: ChangeInputs
 }
