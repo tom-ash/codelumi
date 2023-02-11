@@ -14,9 +14,9 @@ const appReducer = (state = initialAppState, action) => {
 const renderReducer = (state = {}, action) => {
   switch (action.type) {
     case 'render':
-      return action.value
+      return { ...state, ...action.value }
     case 'render/reset':
-      return {}
+      return { ...action.value }
     default:
       return state
   }
@@ -25,7 +25,9 @@ const renderReducer = (state = {}, action) => {
 const textsReducer = (state = {}, action) => {
   switch (action.type) {
     case 'texts':
-      return action.value
+      return { ...state, ...action.value }
+    case 'texts/reset':
+      return { ...action.value }
     default:
       return state
   }
@@ -35,6 +37,8 @@ const assetsReducer = (state = {}, action) => {
   switch (action.type) {
     case 'assets':
       return { ...state, ...action.value }
+    case 'assets/reset':
+      return { ...action.value }
     default:
       return state
   }
@@ -43,7 +47,9 @@ const assetsReducer = (state = {}, action) => {
 const linksReducer = (state = {}, action) => {
   switch (action.type) {
     case 'links':
-      return action.value
+      return { ...state, ...action.value }
+    case 'links/reset':
+      return { ...action.value }
     default:
       return state
   }
@@ -64,6 +70,8 @@ const dataReducer = (state = {}, action) => {
   switch (action.type) {
     case 'data':
       return { ...state, ...action.value }
+    case 'data/reset':
+      return { ...action.value }
     default:
       return state
   }
@@ -73,6 +81,8 @@ const inputsReducer = (state = {}, action) => {
   switch (action.type) {
     case 'inputs':
       return { ...state, ...action.value }
+    case 'inputs/reset':
+      return { ...action.value }
     default:
       return state
   }
@@ -82,6 +92,8 @@ const errorsReducer = (state = {}, action) => {
   switch (action.type) {
     case 'errors':
       return { ...state, ...action.value }
+    case 'errors/reset':
+      return { ...action.value }
     default:
       return state
   }

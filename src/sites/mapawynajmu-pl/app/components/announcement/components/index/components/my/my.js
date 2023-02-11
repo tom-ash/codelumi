@@ -32,13 +32,11 @@ class AnnouncementIndexMy extends React.Component {
   static contextType = AppContext
 
   render() {
-    const { amount, offset, lang, routeSynced } = this.props
+    const { amount, offset, lang } = this.props
 
     const toValue = offset + 10 < amount ? offset + 10 : amount
     let whichAnnouncements = `${offset + 1} - ${toValue} ${this.langHandler({ pl: 'z', en: 'of' })}`
     if (offset + 1 === amount) whichAnnouncements = `${offset + 1} ${this.langHandler({ pl: 'z', en: 'of' })}`
-
-    if (!routeSynced) return null
 
     const tileComponents = {
       showPrimary: false,

@@ -1,6 +1,7 @@
 export const mapStateToProps = store => {
   const render = store.render
   const {
+    renderBlank,
     page: renderPage,
     visitor: renderVisitor,
     user: renderUser,
@@ -33,6 +34,7 @@ export const mapStateToProps = store => {
     links,
     renderImage,
     renderListingIndexMap,
+    renderBlank,
   }
 }
 
