@@ -1,7 +1,6 @@
 import fetch from 'node-fetch'
 import indexRenderer from '../renderers/index'
 import exceptionSender from './exception'
-import initialStateParser from '../parsers/initial-state'
 import initialAppState from '../../../app/constants/initial-app-state'
 
 // 'Lang': TODO Get lang from request,
@@ -28,20 +27,10 @@ function routeSender({ res, apiUrl, url, query, device, accessToken, appRenderer
         res.redirect(redirectStatus, redirectedUrl)
       } else {
         const app = { ...initialAppState, routeSynced: true, lang, device }
-        const { render, texts, assets, links, user, control, data, inputs, errors } = state
         const initialState = {
-          app,
-          render,
-          texts,
-          assets,
-          links,
-          user,
-          control,
-          data,
-          inputs,
-          errors,
+          ...state,
           ...visitorState,
-          ...initialStateParser(state),
+          app,
         }
         const appAsHtml = appRenderer(initialState)
         const status = 200
