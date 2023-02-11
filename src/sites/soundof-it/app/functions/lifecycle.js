@@ -5,7 +5,7 @@ import getGoogleAnalyticsMeasurementId from './analytics/google/getters/measurem
 export function componentDidMount() {
   if (typeof window === 'undefined') return
 
-  const { routeSynced, changeApp } = this.props
+  const { routeSynced, setApp } = this.props
 
   this.screenSizeHandler()
   window.addEventListener('resize', this.screenSizeHandler, false)
@@ -17,9 +17,9 @@ export function componentDidMount() {
 
 export function componentDidUpdate(prevProps) {
   const { loadGa: prevLoadGa } = prevProps
-  const { statisticsConsent, loadGa, changeApp } = this.props
+  const { statisticsConsent, loadGa, setApp } = this.props
 
-  if (statisticsConsent && !loadGa) changeApp({ loadGa: true })
+  if (statisticsConsent && !loadGa) setApp({ loadGa: true })
   if (!prevLoadGa && loadGa) {
     loadGoogleAnalytics.call(this, getGoogleAnalyticsMeasurementId())
   }

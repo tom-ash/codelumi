@@ -1,7 +1,10 @@
 function genericRouteStateSetter(state) {
-  const { changeApp, dispatch } = this.props
+  const { setApp, dispatch } = this.props
 
   if (state) {
+
+    console.log(this)
+
     dispatch({ type: 'render', value: {} })
 
     setTimeout(() => {
@@ -16,7 +19,7 @@ function genericRouteStateSetter(state) {
       })
   
       dispatch({ type: 'render', value: state['render'] })
-      changeApp({ routeSynced: true })
+      setApp({ routeSynced: true })
     }, 0)
   }
 }

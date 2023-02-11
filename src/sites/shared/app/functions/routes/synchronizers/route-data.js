@@ -1,9 +1,9 @@
 import getAccessToken from '../../tokens/getters/get-tokens'
 
 function syncRouteData({ apiUrl, url, query, isSSR, customHeaders }) {
-  const { changeApp } = this.props
+  const { setApp } = this.props
 
-  changeApp({ routeSynced: false })
+  setApp({ routeSynced: false })
 
   return fetch(`${apiUrl}/sync${query}`, {
     headers: {

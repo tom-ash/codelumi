@@ -75,7 +75,7 @@ class App extends React.Component {
       // @ts-ignore
       pageEditData,
       // @ts-ignore
-      changeApp,
+      setApp,
     } = this.props
     // @ts-ignore
     const urlComposites = { pageShowData, pageEditData }
@@ -91,7 +91,7 @@ class App extends React.Component {
       lang,
       changeRoute: this.changeRoute,
       buildUrl,
-      changeApp,
+      setApp,
       langHandler: this.langHandler,
     }
     const headerProps = { ...sharedProps, urlComposites, Logo, HeaderCustomization, styles: headerStyles }

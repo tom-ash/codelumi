@@ -10,18 +10,18 @@ export function componentDidMount() {
 
   loadFonts()
 
-  const { routeSynced, changeApp } = this.props
+  const { routeSynced, setApp } = this.props
 
   initializeGoogleMaps.apply(this)
 
-  if (isMobile()) changeApp({ isMobile: true })
+  if (isMobile()) setApp({ isMobile: true })
 
   this.screenSizeHandler()
   window.addEventListener('resize', this.screenSizeHandler, false)
   window.addEventListener('scroll', () => {
     const scrollY = window.pageYOffset || document.scrollTop || 0
     if (this.props.scrollY + 100 > scrollY || this.props.scrollY - 100 < scrollY) {
-      changeApp({ scrollY: 100 * Math.ceil(scrollY / 100) })
+      setApp({ scrollY: 100 * Math.ceil(scrollY / 100) })
     }
   })
 
@@ -32,9 +32,9 @@ export function componentDidMount() {
 
 export function componentDidUpdate(prevProps) {
   const { loadGa: prevLoadGa } = prevProps
-  const { statisticsConsent, loadGa, changeApp } = this.props
+  const { statisticsConsent, loadGa, setApp } = this.props
 
-  if (statisticsConsent && !loadGa) changeApp({ loadGa: true })
+  if (statisticsConsent && !loadGa) setApp({ loadGa: true })
   if (!prevLoadGa && loadGa) {
     loadGoogleAnalytics.call(this, getGoogleAnalyticsMeasurementId())
   }

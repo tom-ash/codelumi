@@ -33,7 +33,7 @@ class AnnouncementIndexMap extends React.Component {
       isMobile,
       miniListFarthestScrollTop,
       miniListFarthestScrollLeft,
-      changeApp,
+      setApp,
       setControl,
       title,
       currentPartnerName,
@@ -113,7 +113,7 @@ class AnnouncementIndexMap extends React.Component {
                 totalFloors={tile.totalFloors}
                 availabilityDate={tile.availabilityDate}
                 isMobile={isMobile}
-                changeApp={changeApp}
+                setApp={setApp}
                 path={tile.path}
                 title={tile.title}
                 locality={tile.locality}
