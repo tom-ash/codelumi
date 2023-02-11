@@ -6,7 +6,7 @@ export const mapStateToProps = store => {
     data,
     links,
   } = store
-  const { device, lang, routeSynced, loadGa } = app
+  const { device, lang, loadGa } = app
   const { visitor: renderVisitor, page: renderPage, announcement: renderAnnouncement, image: renderImage } = render
   const { scrollY } = visitor
   const { consents } = visitor
@@ -17,7 +17,6 @@ export const mapStateToProps = store => {
     loadGa,
     lang,
     render,
-    routeSynced,
     renderVisitor,
     renderAnnouncement,
     renderPage,

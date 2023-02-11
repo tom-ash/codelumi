@@ -1,7 +1,7 @@
 export const mapStateToProps = store => {
   const { app, render, control, data, inputs } = store
 
-  const { lang, routeSynced } = app
+  const { lang } = app
   const { 'announcement/index/user': renderMy } = render
   const { connecting, fetch, beingDeleted } = control
   const { announcements, amount } = data
@@ -18,7 +18,6 @@ export const mapStateToProps = store => {
     amount,
     announcements,
     renderMy,
-    routeSynced,
   }
 }
 

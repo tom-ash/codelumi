@@ -5,12 +5,12 @@ import getGoogleAnalyticsMeasurementId from './analytics/google/getters/measurem
 export function componentDidMount() {
   if (typeof window === 'undefined') return
 
-  const { routeSynced, setApp } = this.props
-
   this.screenSizeHandler()
   window.addEventListener('resize', this.screenSizeHandler, false)
 
-  if (!routeSynced) this.matchStateToRoute({ apiUrl: API_URL })
+  if (process.env.NODE_ENV === 'development') {
+    this.matchStateToRoute({ apiUrl: API_URL, isSSR: true })
+  }
 
   window.onpopstate = () => this.popStateHandler({ apiUrl: API_URL })
 }

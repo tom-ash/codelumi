@@ -14,7 +14,6 @@ import Schema from './components/schema/schema'
 import Meta from './components/meta/meta'
 
 interface PageCreateProps {
-  routeSynced: boolean
   online: boolean
   headerAutonumbering: boolean
   setControl(args: object): void
@@ -61,7 +60,6 @@ class PageCreate extends React.Component<PageCreateProps> {
 
   render() {
     const {
-      routeSynced,
       online,
       headerAutonumbering,
       setControl,
@@ -78,8 +76,6 @@ class PageCreate extends React.Component<PageCreateProps> {
       pageLang,
       langAltsGroup,
     } = this.props
-
-    if (!routeSynced) return null
 
     const tileProps = {
       ...this.props,

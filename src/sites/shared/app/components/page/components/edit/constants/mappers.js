@@ -8,7 +8,6 @@ export const mapStateToProps = store => {
   } = store
   const {
     lang,
-    routeSynced,
   } = app
   const { role } = user
   const { fetching, nav } = control
@@ -43,7 +42,6 @@ export const mapStateToProps = store => {
     fetching,
     lang,
     pageLang,
-    routeSynced,
     id,
     name,
     url,

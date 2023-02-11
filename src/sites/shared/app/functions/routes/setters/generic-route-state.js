@@ -2,7 +2,7 @@ function genericRouteStateSetter(state) {
   const { setApp, dispatch } = this.props
 
   if (state) {
-    dispatch({ type: 'render/reset', value: { renderBlank: true } })
+    dispatch({ type: 'render/reset', value: {} })
 
     setTimeout(() => {
       dispatch({ type: 'app', value: state.app })
@@ -15,8 +15,7 @@ function genericRouteStateSetter(state) {
       dispatch({ type: 'data/reset', value: state.data })
       dispatch({ type: 'control/reset', value: state.control })
 
-      dispatch({ type: 'render/reset', value: state['render'] })
-      setApp({ routeSynced: true })
+      dispatch({ type: 'render', value: state['render'] })
     }, 0)
   }
 }

@@ -26,7 +26,7 @@ function routeSender({ res, apiUrl, url, query, device, accessToken, appRenderer
       if (redirectedUrl) {
         res.redirect(redirectStatus, redirectedUrl)
       } else {
-        const app = { ...initialAppState, routeSynced: true, lang, device }
+        const app = { ...initialAppState, lang, device }
         const initialState = {
           ...state,
           ...visitorState,

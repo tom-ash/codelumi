@@ -6,7 +6,6 @@ const initialAppState = {
   connecting: false,
   isMobile: null,
   siteMapLinks: null,
-  routeSynced: false,
   loadGa: false,
   scripts: {
     googleMaps: false,

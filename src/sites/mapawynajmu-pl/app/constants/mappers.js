@@ -1,7 +1,6 @@
 export const mapStateToProps = store => {
   const render = store.render
   const {
-    renderBlank,
     page: renderPage,
     visitor: renderVisitor,
     user: renderUser,
@@ -9,7 +8,7 @@ export const mapStateToProps = store => {
     image: renderImage,
     'announcement/index/map': renderListingIndexMap,
   } = render
-  const { lang, device, path, scrollY, scripts, routeSynced, loadGa } = store.app
+  const { lang, device, path, scrollY, scripts, loadGa } = store.app
   const { statisticsConsent, marketingConsent } = store.visitor.consents
   const { authorized, admin } = store.user
   const { links } = store
@@ -28,13 +27,11 @@ export const mapStateToProps = store => {
     renderVisitor,
     renderAnnouncement,
     renderUser,
-    routeSynced,
     authorized,
     admin,
     links,
     renderImage,
     renderListingIndexMap,
-    renderBlank,
   }
 }
 

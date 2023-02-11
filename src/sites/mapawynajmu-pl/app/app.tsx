@@ -86,8 +86,6 @@ class App extends React.Component<AppProps> {
       // @ts-ignore
       dispatch,
       renderListingIndexMap,
-      // @ts-ignore
-      renderBlank,
     } = this.props
     // @ts-ignore
     const AppContextValue = {
@@ -126,9 +124,6 @@ class App extends React.Component<AppProps> {
     return (
       <AppContext.Provider value={AppContextValue}>
         <Header {...{ ...sharedProps, urlComposites, lang, HeaderCustomization, styles: headerStyles }} />
-        {/* {renderBlank && (
-          <div className='blank-page' />
-        )} */}
         <div className='blank-page'>
           {renderAnnouncement && <Announcement />}
           {renderPage && <Page {...pageProps} />}

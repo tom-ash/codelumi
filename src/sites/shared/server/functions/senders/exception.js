@@ -13,7 +13,6 @@ function exceptionSender({
   const initialState = {
     app: {
       ...initialAppState,
-      routeSynced: true,
       lang: 'pl',
       device,
     },
