@@ -6,9 +6,11 @@ const List = (props: ListProps) => {
 
   return (
     <ul style={style}>
-      {listNodes.map(node => {
+      {listNodes.map((node, index) => {
         return (
-          <li key={node}>
+          <li
+            key={`${index}-${node}`}
+          >
             <Paragraph content={node} />
           </li>
         )
