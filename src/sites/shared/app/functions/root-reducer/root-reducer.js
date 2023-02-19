@@ -99,10 +99,19 @@ const errorsReducer = (state = {}, action) => {
   }
 }
 
-const _userReducer = (state = {}, action) => {
+const userReducer = (state = {}, action) => {
   switch (action.type) {
     case 'user':
       return { ...state, ...action.value }
+    default:
+      return state
+  }
+}
+
+const metaReducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'meta':
+      return action.value
     default:
       return state
   }
@@ -112,7 +121,8 @@ export const rootReducer = combineReducers({
   app: appReducer,
   render: renderReducer,
   visitor: visitorReducer,
-  user: _userReducer,
+  user: userReducer,
+  meta: metaReducer,
   texts: textsReducer,
   assets: assetsReducer,
   links: linksReducer,

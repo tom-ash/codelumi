@@ -7,6 +7,7 @@ function genericRouteStateSetter(state) {
     setTimeout(() => {
       dispatch({ type: 'app', value: state.app })
       dispatch({ type: 'user', value: state.user })
+      dispatch({ type: 'meta', value: state.meta })
       dispatch({ type: 'links/reset', value: state.links })
       dispatch({ type: 'assets/reset', value: state.assets })
       dispatch({ type: 'texts/reset', value: state.texts })
