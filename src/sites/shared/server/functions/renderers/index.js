@@ -1,4 +1,5 @@
 import pretty from 'pretty'
+import { openGraphBuilder } from '../../../shared/functions/builders/open-graph-builder'
 
 function indexRenderer(props) {
   const {
@@ -29,7 +30,7 @@ function indexRenderer(props) {
         <meta name="robots" content="${robots}">
         <meta name="description" content="${description}">
         <meta name="keywords" content="${keywords}">
-        ${openGraph}
+        ${openGraphBuilder(openGraph)}
         <script type="application/ld+json">${schema}</script>
         <style type="text/css">${[...css].join('')}</style>
       </head>

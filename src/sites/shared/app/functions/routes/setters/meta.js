@@ -1,10 +1,11 @@
 import getPureUrl from '../../../../shared/functions/routes/getters/pure-url'
+import { openGraphBuilder } from '../../../../shared/functions/builders/open-graph-builder'
 
-const replaceOpenGraph = openGraph => {
+const replaceOpenGraph = openGraphProps => {
   const elements = document.querySelectorAll(`meta[property^="og"]`)
-
   elements.forEach(element => element.remove())
 
+  const openGraph = openGraphBuilder(openGraphProps)
   document.head.innerHTML = document.head.innerHTML + openGraph
 }
 
