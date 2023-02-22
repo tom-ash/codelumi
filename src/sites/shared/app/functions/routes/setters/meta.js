@@ -10,7 +10,7 @@ const replaceOpenGraph = openGraphProps => {
 }
 
 function metaSetter(meta) {
-  const { clientUrl, url, canonicalUrl, schema, openGraph, lang, title, description, keywords } = meta
+  const { clientUrl, url, canonicalUrl, schemaOrg, openGraph, lang, title, description, keywords } = meta
   const canonicalPath = typeof canonicalUrl === 'string' ? canonicalUrl : url
 
   document.documentElement.lang = lang
@@ -21,7 +21,7 @@ function metaSetter(meta) {
 
   replaceOpenGraph(openGraph)
 
-  document.querySelector(`script[type="application/ld+json"]`).innerHTML = schema
+  document.querySelector(`script[type="application/ld+json"]`).innerHTML = JSON.stringify(schemaOrg)
 }
 
 export default metaSetter
