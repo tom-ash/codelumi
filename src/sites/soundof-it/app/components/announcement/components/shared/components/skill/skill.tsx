@@ -2,12 +2,20 @@ import React, { useState } from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 
+// @ts-ignore
 function Skill(props) {
   useStyles(styles)
 
-  const { name, level, selectSkill, unselectSkill } = props
+  const {
+    name,
+    level,
+    selectSkill,
+    unselectSkill
+  } = props
   const availableLevels = ['Novice', 'Junior', 'Mid', 'Senior', 'Expert']
   const [hovered, setHovered] = useState(0)
+
+  console.log(level)
 
   return (
     <div className='skill'>
