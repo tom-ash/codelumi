@@ -9,7 +9,7 @@ import cookieParser from 'cookie-parser'
 // @ts-ignore
 import vhost from 'vhost'
 import mapawynajmuPlRequestHandler from '../sites/mapawynajmu-pl/server/functions/request-handler'
-import soundofItHandleRequest from '../sites/soundof-it/server/functions/request-handler'
+import skillfindTechHandleRequest from '../sites/skillfind-tech/server/functions/request-handler'
 import * as Sentry from '@sentry/node'
 // import * as Tracing from '@sentry/tracing'
 
@@ -34,8 +34,8 @@ if (['production', 'staging'].indexOf(APP_ENV) !== -1) {
   app.use(redirectToHTTPS([], [], 301))
 }
 
-app.use(vhost(/^.*(soundof).*$/, Express.static('dist/sites/soundof-it/client')))
-app.use(vhost(/^.*(soundof).*$/, soundofItHandleRequest))
+app.use(vhost(/^.*(skillfind).*$/, Express.static('dist/sites/skillfind-tech/client')))
+app.use(vhost(/^.*(skillfind).*$/, skillfindTechHandleRequest))
 
 app.use(vhost(/^.*(warsawlease).*$/, Express.static('dist/sites/mapawynajmu-pl/client')))
 app.use(vhost(/^.*(warsawlease).*$/, mapawynajmuPlRequestHandler))

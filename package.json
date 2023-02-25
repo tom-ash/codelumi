@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "soundof-it-dev": "webpack serve --config ./src/sites/soundof-it/dev/webpack.config.js",
+    "skillfind-tech-dev": "webpack serve --config ./src/sites/skillfind-tech/dev/webpack.config.js",
     "mapawynajmu-pl-dev": "webpack serve --config ./src/sites/mapawynajmu-pl/dev/webpack.config.js",
-    "build": "rm -rf ./dist & webpack --mode production --config ./src/server/webpack.config & webpack --mode production --config ./src/sites/soundof-it/client/webpack.config & webpack --mode production --config ./src/sites/mapawynajmu-pl/client/webpack.config.js",
+    "build": "rm -rf ./dist & webpack --mode production --config ./src/server/webpack.config & webpack --mode production --config ./src/sites/skillfind-tech/client/webpack.config & webpack --mode production --config ./src/sites/mapawynajmu-pl/client/webpack.config.js",
     "prod": "node ./dist/server/server.js",
     "format": "prettier ./src -w",
     "test": "jest"
