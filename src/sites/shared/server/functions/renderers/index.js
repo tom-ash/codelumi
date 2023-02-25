@@ -31,7 +31,7 @@ function indexRenderer(props) {
         <meta name="description" content="${description}">
         <meta name="keywords" content="${keywords}">
         ${openGraphBuilder(openGraph)}
-        <script type="application/ld+json">${schemaOrg}</script>
+        <script type="application/ld+json">${JSON.stringify(schemaOrg)}</script>
         <style type="text/css">${[...css].join('')}</style>
       </head>
       <body>

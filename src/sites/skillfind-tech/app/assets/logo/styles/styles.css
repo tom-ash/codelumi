@@ -13,18 +13,14 @@
 }
 
 #logo .text {
-  /* padding-left: 36px; */
   margin-top: 0;
   height: 50px;
   line-height: 50px;
   font-size: 16px;
   color: rgb(50, 50, 50);
-  /* font-family: 'Times New Roman', Times, serif; */
-  /* font-family: 'Roboto Mono', monospace; */
   font-family: 'IBM Plex Mono', monospace;
 }
 
 #logo .tech {
   color: rgb(50, 160, 150);
-  /* color: #008F11; */
 }
