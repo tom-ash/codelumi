@@ -2,7 +2,8 @@ import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import SkillSelector from './components/skill-selector/skill-selector'
-// import SubmitButton from './components/submit-button'
+import SubmitButton from './components/submit-button'
+// import { useStore } from 'react-redux'
 // import Location from './components/location/location'
 // import Contract from './components/contract/contract'
 
@@ -94,9 +95,10 @@ const AnnouncementCreateForm = (props: AnnouncementCreateFormProps) => {
       <h1>Post a Job</h1>
       {/* @ts-ignore */}
       <SkillSelector {...skillSelectorProps} />
-      {/* <Location {...locationProps} />
-      <Contract {...contractProps} />
-      <SubmitButton {...submitButtonProps} /> */}
+      {/* <Location {...locationProps} /> */}
+      {/* <Contract {...contractProps} /> */}
+      {/* @ts-ignore */}
+      <SubmitButton {...submitButtonProps} />
     </div>
   )
 }

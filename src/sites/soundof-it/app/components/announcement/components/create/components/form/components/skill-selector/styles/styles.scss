@@ -19,4 +19,25 @@
     padding: 20px;
     background: white;
   }
+  // .submit-button {
+  //   display: block;
+  //   width: 100px;
+  //   margin: 0 auto;
+  // }
+}
+
+.submit-button {
+  margin-top: 24px;
+  .input {
+    display: block;
+    // width: 120px;
+    margin: 0 auto;
+    padding: 12px;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    // font-weight: bold;
+  }
 }

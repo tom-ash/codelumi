@@ -13,25 +13,26 @@ function Skill(props) {
     unselectSkill
   } = props
   const availableLevels = ['Novice', 'Junior', 'Mid', 'Senior', 'Expert']
+  const [skillHovered, setSkillHovered] = useState(false)
   const [hovered, setHovered] = useState(0)
-
-  console.log(level)
 
   return (
     <div className='skill'>
       <div className='name'>{name}</div>
-      <div className='availableLevels'>
+      <div
+        className='availableLevels'
+        onMouseOver = {() => setSkillHovered(true)}
+        onMouseLeave = {() => setSkillHovered(false)}
+      >
         {availableLevels.map((availableLevel, index) => {
-          const fillClass = level > index || hovered > index ? 'filled' : ''
+          const fillClass = skillHovered ? hovered > index ? 'filled' : '' : level > index || hovered > index ? 'filled' : ''
           const classNames = ['level', availableLevel.toLowerCase(), fillClass]
           const sharedLevelProps = { className: classNames.join(' '), key: availableLevel }
-          const extendedLevelProps = level
-            ? {}
-            : {
-                onMouseOver: () => setHovered(index + 1),
-                onMouseLeave: () => setHovered(0),
-                onClick: () => selectSkill({ name, level: hovered }),
-              }
+          const extendedLevelProps = {
+            onMouseOver: () => setHovered(index + 1),
+            onMouseLeave: () => setHovered(0),
+            onClick: () => selectSkill({ name, level: hovered }),
+          }
 
           return (
             <div
@@ -41,14 +42,14 @@ function Skill(props) {
           )
         })}
         <div className='float-clear' />
-        <div className='level-name'>{level ? availableLevels[level - 1] : availableLevels[hovered - 1]}</div>
-        {level && (
-          <div
-            className='delete'
-            onClick={() => unselectSkill({ name, level: undefined })}
-          />
-        )}
       </div>
+      <div className='level-name'>{hovered ? availableLevels[hovered - 1] : availableLevels[level - 1]}</div>
+      {level && (
+        <div
+          className='delete'
+          onClick={() => unselectSkill({ name, level: undefined })}
+        />
+      )}
     </div>
   )
 }
