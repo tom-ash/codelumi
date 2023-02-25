@@ -2,6 +2,7 @@ import fetch from 'node-fetch'
 import indexRenderer from '../renderers/index'
 import exceptionSender from './exception'
 import initialAppState from '../../../app/constants/initial-app-state'
+import * as Sentry from '@sentry/node'
 
 // 'Lang': TODO Get lang from request,
 
@@ -17,7 +18,7 @@ function routeSender({ res, apiUrl, url, query, device, accessToken, appRenderer
     .then(response => {
       if (response.ok || response.status === 301 || response.status === 302) return response.json()
 
-      throw new Error('Page Not Found')
+      throw new Error(`Url "${url}" not found or gone.`)
     })
     .then(jsonResponse => {
       const { state, meta } = jsonResponse
@@ -40,6 +41,8 @@ function routeSender({ res, apiUrl, url, query, device, accessToken, appRenderer
     })
     .catch(exception => {
       const robots = 'noindex,nofollow'
+
+      Sentry.captureException(exception)
 
       exceptionSender({
         exception,

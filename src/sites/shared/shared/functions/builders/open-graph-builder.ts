@@ -4,6 +4,8 @@ interface OpenGraphProps {
 }
 
 export const openGraphBuilder = (props: OpenGraphProps) => {
+  if (!props) return
+
   let openGraph = ''
 
   for (const propKey in props) {
