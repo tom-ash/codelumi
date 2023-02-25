@@ -3,102 +3,32 @@ import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import SkillSelector from './components/skill-selector/skill-selector'
 import SubmitButton from './components/submit-button'
-// import { useStore } from 'react-redux'
+import { useStore } from 'react-redux'
 // import Location from './components/location/location'
 // import Contract from './components/contract/contract'
 
-interface AnnouncementCreateFormProps {
-  selectableSkills: object[]
-  selectedSkills: object[]
-  // setStore(newStore: object): void
-  // remote: boolean
-  // hybrid: boolean
-  // office: boolean
-  // b2b: boolean
-  // b2bMax: number
-  // b2bMin: number
-  // employment: boolean
-  // employmentMax: number
-  // employmentMin: number
-  // civilContract: boolean
-  // civilContractMax: number
-  // civilContractMin: number
-}
-
-const AnnouncementCreateForm = (props: AnnouncementCreateFormProps) => {
+const AnnouncementCreateForm = () => {
   useStyles(styles)
 
+  const state = useStore().getState()
+  const { texts } = state
+
   const {
-    selectableSkills,
-    selectedSkills,
-    // setStore,
-    // remote,
-    // hybrid,
-    // office,
-    // b2b,
-    // b2bMax,
-    // b2bMin,
-    // employment,
-    // employmentMax,
-    // employmentMin,
-    // civilContract,
-    // civilContractMax,
-    // civilContractMin,
-  } = props
+    title,
+  } = texts
 
-  // const locationProps = {
-  //   remote,
-  //   hybrid,
-  //   office,
-  //   setStore,
-  // }
-
-  const skillSelectorProps = {
-    selectableSkills,
-    selectedSkills,
-  }
-
-  const contractProps = {
-    // setStore,
-    // b2b,
-    // b2bMax,
-    // b2bMin,
-    // employment,
-    // employmentMax,
-    // employmentMin,
-    // civilContract,
-    // civilContractMax,
-    // civilContractMin,
-  }
-
-  const submitButtonProps = {
-    // selectedSkills,
-    // remote,
-    // hybrid,
-    // office,
-    // b2b,
-    // b2bMax,
-    // b2bMin,
-    // employment,
-    // employmentMax,
-    // employmentMin,
-    // civilContract,
-    // civilContractMax,
-    // civilContractMin,
-  }
+  console.log(texts)
 
   return (
     <div
       id='listing-create-form'
       className='form'
     >
-      <h1>Post a Job</h1>
-      {/* @ts-ignore */}
-      <SkillSelector {...skillSelectorProps} />
+      <h1>{title}</h1>
+      <SkillSelector />
       {/* <Location {...locationProps} /> */}
       {/* <Contract {...contractProps} /> */}
-      {/* @ts-ignore */}
-      <SubmitButton {...submitButtonProps} />
+      <SubmitButton />
     </div>
   )
 }

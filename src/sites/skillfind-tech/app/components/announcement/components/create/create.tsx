@@ -13,45 +13,9 @@ class AnnouncementCreate extends React.Component<Create> {
   }
 
   render() {
-    const {
-      selectableSkills,
-      selectedSkills,
-      setStore,
-      remote,
-      hybrid,
-      office,
-      b2b,
-      b2bMax,
-      b2bMin,
-      employment,
-      employmentMax,
-      employmentMin,
-      civilContract,
-      civilContractMax,
-      civilContractMin,
-    } = this.props
-
-    const skillSelectorProps = {
-      selectableSkills,
-      selectedSkills,
-      setStore,
-      remote,
-      hybrid,
-      office,
-      b2b,
-      b2bMax,
-      b2bMin,
-      employment,
-      employmentMax,
-      employmentMin,
-      civilContract,
-      civilContractMax,
-      civilContractMin,
-    }
-
     return (
       <div id='listing-create'>
-        <AnnouncementCreateForm {...skillSelectorProps} />
+        <AnnouncementCreateForm />
       </div>
     )
   }
