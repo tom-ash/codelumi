@@ -37,9 +37,6 @@ if (['production', 'staging'].indexOf(APP_ENV) !== -1) {
 app.use(vhost(/^.*(skillfind).*$/, Express.static('dist/sites/skillfind-tech/client')))
 app.use(vhost(/^.*(skillfind).*$/, skillfindTechHandleRequest))
 
-app.use(vhost(/^.*(warsawlease).*$/, Express.static('dist/sites/mapawynajmu-pl/client')))
-app.use(vhost(/^.*(warsawlease).*$/, mapawynajmuPlRequestHandler))
-
 app.use(vhost(/^.*(mapawynajmu).*$/, Express.static('dist/sites/mapawynajmu-pl/client')))
 app.use(vhost(/^.*(mapawynajmu).*$/, mapawynajmuPlRequestHandler))
 

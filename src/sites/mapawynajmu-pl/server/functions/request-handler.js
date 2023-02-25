@@ -8,8 +8,6 @@ import { buildUrl } from '../../shared/functions/builders/url'
 import SITE_NAME from '../../shared/constants/names/site'
 
 function handleRequest(req, res) {
-  if (req.hostname === 'warsawlease.pl' || req.hostname === 'www.warsawlease.pl')
-    return res.redirect(301, `https://${ROOT_DOMAIN}${req.originalUrl}`)
   if (req.hostname === `www.${APEX_DOMAIN}`) return res.redirect(301, `https://${APEX_DOMAIN}${req.originalUrl}`)
 
   genericRequestHandler({
