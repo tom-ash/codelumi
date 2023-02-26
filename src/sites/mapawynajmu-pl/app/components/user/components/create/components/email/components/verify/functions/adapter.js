@@ -8,7 +8,7 @@ export function verify() {
 
   const confirmationToken = getCookieValue('confirmation_token')
   const verificationCode = document.getElementById('user-create-email-verification').value
-  const { lang, set_User, setControl, setErrors } = this.props
+  const { lang, setControl, setErrors } = this.props
 
   setControl({ connecting: true })
 
@@ -26,11 +26,10 @@ export function verify() {
       throw new Error('SomethingWentWrong')
     })
     .then(json => {
-      const { accessToken, name, href } = json
+      const { accessToken, href } = json
       const { changeRoute } = this.context
 
       saveTokens.call(this, accessToken)
-      set_User({ authorized: true, name })
       changeRoute({ href })
       setControl({ connecting: false })
     })

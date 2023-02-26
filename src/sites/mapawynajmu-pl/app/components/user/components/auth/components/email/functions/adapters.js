@@ -7,7 +7,7 @@ import { buildUrl } from '../../../../../../../../shared/functions/builders/url'
 export function logIn() {
   const email = document.getElementById('user-logon-email-address').value.toLowerCase()
   let password = document.getElementById('user-logon-password').value
-  const { setControl, set_User, setErrors, lang } = this.props
+  const { setControl, setErrors, lang } = this.props
 
   setControl({ connecting: true })
   password = hashPassword(password, email)

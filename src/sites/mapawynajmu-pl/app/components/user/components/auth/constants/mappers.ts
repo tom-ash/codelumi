@@ -15,7 +15,5 @@ export const mapDispatchToProps = dispatch => {
   return {
     // @ts-ignore
     setApp: value => dispatch({ type: 'app', value }),
-    // @ts-ignore
-    set_User: value => dispatch({ type: 'user', value }),
   }
 }

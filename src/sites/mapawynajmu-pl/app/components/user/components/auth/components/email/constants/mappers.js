@@ -20,6 +20,5 @@ export const mapDispatchToProps = dispatch => {
     setControl: value => dispatch({ type: 'control', value }),
     setInputs: value => dispatch({ type: 'inputs', value }),
     setErrors: value => dispatch({ type: 'errors', value }),
-    set_User: value => dispatch({ type: 'user', value }),
   }
 }
