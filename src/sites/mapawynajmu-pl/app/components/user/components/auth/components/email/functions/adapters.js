@@ -24,11 +24,9 @@ export function logIn() {
       if (response.status == 200) return response.json()
       throw new Error('InvalidCredentials')
     })
-    .then(jsonResponse => {
-      const { accountType, name, accessToken, path } = jsonResponse
+    .then(accessToken => {
       const { changeRoute } = this.context
 
-      set_User({ accountType, name, authorized: true })
       saveTokens.call(this, accessToken)
 
       if (typeof window !== 'undefined') {
@@ -37,7 +35,8 @@ export function logIn() {
         window.areListingsObsolete = true
       }
 
-      changeRoute({ href: buildUrl({ path }) })
+      // TODO: Use server path!
+      changeRoute({ href: buildUrl({ path: '/' }) })
     })
     .catch(() => {
       setErrors({
