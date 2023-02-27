@@ -1,6 +1,7 @@
 import API_URL from '../../../../../../../../../../../../shared/constants/urls/api'
 import { validateVerificationCode } from '../../../../../../../../../common/validators/validate-verification-code'
 import { InputsSteps } from '../inputs'
+import getCookieValue from '../../../../../../../../../../../../../shared/app/functions/cookies/getters/get-cookie-value'
 
 const CONFIRM_VERIFICATION_CODE_URL = `${API_URL}/user/update/password/verify`
 
@@ -22,9 +23,12 @@ export const confirmVerificationCode: ConfirmVerificationCode = props => {
 
   setConnecting(true)
 
+  const verificationToken = getCookieValue('verificationToken')
+
   const body = JSON.stringify({
     email,
     verificationCode,
+    verificationToken,
   })
 
   fetch(CONFIRM_VERIFICATION_CODE_URL, {

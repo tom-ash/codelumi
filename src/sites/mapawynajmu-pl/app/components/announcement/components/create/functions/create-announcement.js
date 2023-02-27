@@ -5,7 +5,7 @@ import {
   CREATE_WITH_USER_API_ROUTE_DATA,
   UPDATE_API_ROUTE_DATA,
 } from '../constants/api-route-data'
-import setConfirmationTokenCookie from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
+import setVerificationToken from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
 import { buildUrl } from '../../../../../../shared/functions/builders/url'
 
 // function sendAnnouncementCreatedEvent() {
@@ -71,13 +71,11 @@ function create() {
       const { changeRoute } = this.context
 
       changeRoute({ href: buildUrl({ path }) })
-      // setControl({ connecting: false })
-      // sendAnnouncementCreatedEvent()
     })
 }
 
 function createWithUser() {
-  const { lang, announcement, user, setControl, setData } = this.props
+  const { lang, announcement, user } = this.props
   const { method, route } = CREATE_WITH_USER_API_ROUTE_DATA
 
   fetch(API_URL + route, {
@@ -89,14 +87,11 @@ function createWithUser() {
       if (response.ok) return response.json()
     })
     .then(jsonResponse => {
-      const { confirmationToken, path } = jsonResponse
+      const { verificationToken, path } = jsonResponse
       const { changeRoute } = this.context
 
-      setConfirmationTokenCookie(confirmationToken)
+      setVerificationToken(verificationToken)
       changeRoute({ href: buildUrl({ path }) })
-      // setControl({ connecting: false })
-
-      // sendAnnouncementCreatedEvent()
     })
 }
 

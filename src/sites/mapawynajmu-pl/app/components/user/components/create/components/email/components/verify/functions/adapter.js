@@ -6,7 +6,7 @@ import getCookieValue from '../../../../../../../../../../../shared/app/function
 export function verify() {
   if (!this.verificationManager('validate')) return
 
-  const confirmationToken = getCookieValue('confirmation_token')
+  const verificationToken = getCookieValue('verificationToken')
   const verificationCode = document.getElementById('user-create-email-verification').value
   const { lang, setControl, setErrors } = this.props
 
@@ -18,23 +18,22 @@ export function verify() {
       'Content-Type': 'application/json',
       Lang: lang,
     },
-    body: JSON.stringify({ confirmationToken, verificationCode }),
+    body: JSON.stringify({ verificationToken, verificationCode }),
   })
-    .then(response => {
-      if (response.status == 200) return response.json()
+  .then(response => {
+    if (response.status == 200) return response.json()
 
-      throw new Error('SomethingWentWrong')
-    })
-    .then(json => {
-      const { accessToken, href } = json
-      const { changeRoute } = this.context
+    throw new Error('SomethingWentWrong')
+  })
+  .then(json => {
+    const { accessToken, href } = json
+    const { changeRoute } = this.context
 
-      saveTokens.call(this, accessToken)
-      changeRoute({ href })
-      setControl({ connecting: false })
-    })
-    .catch(() =>
-      setErrors({ verification: { pl: 'Nieprawidłowy kod weryfikacyjny', en: 'Invalid verification code' } })
-    )
-    .finally(() => setControl({ connecting: false }))
+    saveTokens.call(this, accessToken)
+    changeRoute({ href })
+  })
+  .catch(() =>
+    setErrors({ verification: { pl: 'Nieprawidłowy kod weryfikacyjny', en: 'Invalid verification code' } })
+  )
+    // .finally(() => setControl({ connecting: false }))
 }

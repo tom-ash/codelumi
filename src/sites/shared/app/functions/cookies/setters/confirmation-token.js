@@ -1,7 +1,7 @@
 import setCookie from './cookie'
 
-function setConfirmationTokenCookie(confirmation_token) {
-  setCookie('confirmation_token', confirmation_token, 'oneDay')
+function setVerificationToken(verificationToken) {
+  setCookie('verificationToken', verificationToken, 'oneDay')
 }
 
-export default setConfirmationTokenCookie
+export default setVerificationToken

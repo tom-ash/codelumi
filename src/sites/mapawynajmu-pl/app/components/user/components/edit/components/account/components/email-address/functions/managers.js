@@ -6,6 +6,8 @@ import { verificationCodeValidator } from '../../../../../../../functions/verifi
 import { emailValidator } from '../../../../../../../../../functions/email-validator'
 import { passwordValidator } from '../../../../../../../functions/password-validator'
 
+import getCookieValue from '../../../../../../../../../../../shared/app/functions/cookies/getters/get-cookie-value'
+
 const noError = { pl: '', en: '' }
 
 export function currentEmailVerificationManager() {
@@ -136,15 +138,18 @@ function buttonOnClickProvider() {
     case 'newEmail':
       return () => {
         const email = document.getElementById('user-edit-email-new').value
+        const verificationToken = getCookieValue('verificationToken')
+        const verificationCode = document.getElementById('user-edit-email-current-verification').value
         const { isValid, error } = emailValidator(email)
-        if (isValid) return this.sendNewEmail(email)
+        if (isValid) return this.sendNewEmail({ email, verificationToken, verificationCode })
         setErrors({ newEmail: error })
       }
     case 'newEmailVerification':
       return () => {
         const verificationCode = document.getElementById('user-edit-email-new-verification').value
+        const verificationToken = getCookieValue('verificationToken')
         const { isValid, error } = verificationCodeValidator(verificationCode)
-        if (isValid) return this.sendNewEmailVerification(verificationCode)
+        if (isValid) return this.sendNewEmailVerification({ verificationCode, verificationToken })
         setErrors({ newEmailVerification: error })
       }
     case 'password':

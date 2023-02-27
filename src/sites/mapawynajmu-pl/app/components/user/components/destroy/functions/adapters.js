@@ -2,6 +2,8 @@ import API_URL from '../../../../../../shared/constants/urls/api'
 import getAccessToken from '../../auth/components/tokens/functions/get-tokens'
 import { VERIFY_API_ROUTE_DATA, DELETE_API_ROUTE_DATA } from '../constants/api_route_data'
 import { deauthorizeUser } from '../../auth/functions/adapters'
+import getCookieValue from '../../../../../../../shared/app/functions/cookies/getters/get-cookie-value'
+import setVerificationToken from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
 
 export function sendEmail() {
   const { setControl, connecting, email, lang } = this.props
@@ -21,17 +23,24 @@ export function sendEmail() {
     },
     body: JSON.stringify({ email }),
   })
-    .then(response => {
-      if (response.ok) return setControl({ step: 'verification' })
+  .then(
+    response => {
+      if (response.ok) return response.json()
 
-      throw new Error('Server Error')
-    })
-    .catch(error => console.dir(error))
-    .finally(() => setControl({ connecting: false }))
+      throw new Error('Unknown server error.')
+    },
+    networkError => console.dir(networkError.message)
+  )
+  .then(verificationToken => {
+    setVerificationToken(verificationToken)
+    setControl({ step: 'verification', connecting: false })
+  })
+  .catch(e => console.dir(e))
 }
 
 export function destroy() {
   const { lang, connecting, setControl } = this.props
+  const verificationToken = getCookieValue('verificationToken')
   const verificationCode = document.getElementById('user-destroy-verification').value
 
   if (connecting || !this.verificationManager('validate', verificationCode)) return
@@ -47,7 +56,7 @@ export function destroy() {
       'Access-Token': getAccessToken(),
       Lang: lang,
     },
-    body: JSON.stringify({ verificationCode }),
+    body: JSON.stringify({ verificationToken, verificationCode }),
   })
     .then(response => {
       if (response.ok) return response.json()
@@ -68,5 +77,4 @@ export function destroy() {
       deauthorizeUser({ dispatch, changeRoute, path })
     })
     .catch(error => console.dir(error))
-    .finally(() => setControl({ connecting: false }))
 }

@@ -3,8 +3,11 @@ import { hashPassword } from '../../../../../../../functions/shared'
 import { noError } from '../constants/no-error'
 import { VERIFICATION_API_ROUTE, VERIFY_API_AOUTE, UPDATE_API_ROUTE } from '../constants/api_routes'
 
+import getCookieValue from '../../../../../../../../../../../shared/app/functions/cookies/getters/get-cookie-value'
+import setVerificationToken from '../../../../../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
+
 export function sendEmail() {
-  const { lang, connecting, setControl, setErrors } = this.props
+  const { lang, connecting, setControl } = this.props
   const email = document.getElementById('user-edit-password-email').value
 
   if (connecting || !this.emailManager('validate', email)) return
@@ -15,20 +18,27 @@ export function sendEmail() {
     headers: { 'Content-Type': 'application/json', Lang: lang },
     body: JSON.stringify({ email }),
   })
-    .then(response => {
-      if (response.status == 200) {
-        setControl({ passwordStep: 'verificationCode' })
-        setErrors({ password: noError })
-      }
-      throw new Error('ServerError')
+    .then(
+      response => {
+        if (response.ok) {
+          return response.json()
+        }
+
+        throw new Error('Unknown server error.')
+      },
+      networkError => console.dir(networkError.message)
+    )
+    .then(verificationToken => {
+      setVerificationToken(verificationToken)
+      setControl({ passwordStep: 'verificationCode', passwordConnecting: false })
     })
-    .finally(() => setControl({ passwordConnecting: false }))
+    .catch(e => console.dir(e))
 }
 
 export function sendVerification() {
   const { connecting, setControl, setErrors } = this.props
+  const verificationToken = getCookieValue('verificationToken')
   const verificationCode = document.getElementById('user-edit-password-verification').value
-  const email = document.getElementById('user-edit-password-email').value
 
   if (connecting || !this.verificationManager('validate', verificationCode)) return
 
@@ -36,7 +46,7 @@ export function sendVerification() {
   fetch(API_URL + VERIFY_API_AOUTE, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, verificationCode }),
+    body: JSON.stringify({ verificationToken, verificationCode }),
   })
     .then(response => {
       if (response.status == 200) {
@@ -55,9 +65,10 @@ export function sendVerification() {
 
 export function sendPassword() {
   const { connecting, setControl } = this.props
+  const verificationToken = getCookieValue('verificationToken')
+  const verificationCode = document.getElementById('user-edit-password-verification').value
   const password = document.getElementById('user-edit-password').value
   const email = document.getElementById('user-edit-password-email').value
-  const verificationCode = document.getElementById('user-edit-password-verification').value
   const hashedPassword = hashPassword(password, email)
 
   if (connecting || !this.passwordManager('validate', password)) return
@@ -66,7 +77,7 @@ export function sendPassword() {
   fetch(API_URL + UPDATE_API_ROUTE, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, password: hashedPassword, verificationCode }),
+    body: JSON.stringify({ verificationToken, verificationCode, password: hashedPassword }),
   })
     .then(response => {
       if (response.status == 200) {

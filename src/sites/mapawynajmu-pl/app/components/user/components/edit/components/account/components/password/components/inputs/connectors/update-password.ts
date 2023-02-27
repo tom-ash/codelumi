@@ -1,6 +1,7 @@
 import API_URL from '../../../../../../../../../../../../shared/constants/urls/api'
 import { hashPassword } from '../../../../../../../../../functions/shared'
 import { validatePassword } from '../../../../../../../../../common/validators/validate-password'
+import getCookieValue from '../../../../../../../../../../../../../shared/app/functions/cookies/getters/get-cookie-value'
 
 const UPDATE_PASSWORD_URL = `${API_URL}/user/update/password`
 
@@ -24,10 +25,13 @@ export const updatePassword: UpdatePasswordProps = props => {
 
   setConnecting(true)
 
+  const verificationToken = getCookieValue('verificationToken')
+
   const body = JSON.stringify({
     email,
     password: hashPassword(password, email),
     verificationCode,
+    verificationToken,
   })
 
   fetch(UPDATE_PASSWORD_URL, {

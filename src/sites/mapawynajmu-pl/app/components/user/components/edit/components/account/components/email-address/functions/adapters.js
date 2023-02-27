@@ -9,6 +9,9 @@ import {
   UPDATE_API_ROUTE_DATA,
 } from '../constants/api_route_data'
 
+import getCookieValue from '../../../../../../../../../../../shared/app/functions/cookies/getters/get-cookie-value'
+import setVerificationToken from '../../../../../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
+
 export function sendCurrentEmailAddress() {
   const { setControl, connecting, lang, currentValue } = this.props
 
@@ -22,12 +25,20 @@ export function sendCurrentEmailAddress() {
     headers: { 'Content-Type': 'application/json', 'Access-Token': getAccessToken(), Lang: lang },
     body: JSON.stringify({ email: currentValue }),
   })
-    .then(response => {
-      if (response.ok) return setControl({ emailStep: 'currentEmailVerification' })
-      throw new Error('SomethingWentWrong')
-    })
-    .catch(error => console.dir(error))
-    .finally(() => setControl({ emailConnecting: false }))
+  .then(
+    response => {
+      if (response.ok) {
+        return response.json()
+      }
+
+      throw new Error('Unknown server error.')
+    },
+    networkError => console.dir(networkError.message)
+  )
+  .then(verificationToken => {
+    setVerificationToken(verificationToken)
+    setControl({ emailStep: 'currentEmailVerification', emailConnecting: false })
+  })
 }
 
 export function sendCurrentEmailVerification(verificationCode) {
@@ -35,23 +46,26 @@ export function sendCurrentEmailVerification(verificationCode) {
 
   if (connecting) return
 
+  const verificationToken = getCookieValue('verificationToken')
   const { method, route } = CURRENT_EMAIL_VERIFY_API_ROUTE_DATA
 
   setControl({ emailConnecting: true })
   fetch(API_URL + route, {
     method,
     headers: { 'Content-Type': 'application/json', 'Access-Token': getAccessToken() },
-    body: JSON.stringify({ verificationCode }),
+    body: JSON.stringify({ verificationToken, verificationCode }),
   })
     .then(response => {
-      if (response.ok) return setControl({ emailStep: 'newEmail' })
-      throw new Error('SomethingWentWrong')
+      if (response.ok) {
+        return setControl({ emailStep: 'newEmail', emailConnecting: false })
+      }
+
+      throw new Error('SomethingWentWrong'),
+      networkError => console.dir(networkError.message)
     })
-    .catch(error => console.dir(error))
-    .finally(() => setControl({ emailConnecting: false }))
 }
 
-export function sendNewEmail(email) {
+export function sendNewEmail({ email, verificationToken, verificationCode }) {
   const { setControl, connecting, lang } = this.props
 
   if (connecting) return
@@ -59,32 +73,40 @@ export function sendNewEmail(email) {
   const { method, route } = NEW_EMAIL_VERIFICATION_API_ROUTE_DATA
 
   setControl({ emailConnecting: true })
+
   fetch(API_URL + route, {
     method,
     headers: { 'Content-Type': 'application/json', 'Access-Token': getAccessToken(), Lang: lang },
-    body: JSON.stringify({ email }),
+    body: JSON.stringify({ email, verificationToken, verificationCode }),
   })
-    .then(response => {
-      if (response.ok) return setControl({ emailStep: 'newEmailVerification' })
-      throw new Error('SomethingWentWrong')
+    .then(
+      response => {
+        if (response.ok) {
+          return response.json()
+        }
+
+        throw new Error('Unknown server error.')
+      },
+      networkError => console.dir(networkError.message)
+    )
+    .then(verificationToken => {
+      setVerificationToken(verificationToken)
+      setControl({ emailStep: 'newEmailVerification', emailConnecting: false })
     })
-    .catch(error => console.dir(error))
-    .finally(() => setControl({ emailConnecting: false }))
 }
 
-export function sendNewEmailVerification(verificationCode) {
+export function sendNewEmailVerification({ verificationCode, verificationToken}) {
   const { setControl, connecting } = this.props
 
   if (connecting) return
 
-  const email = document.getElementById('user-edit-email-new').value
   const { method, route } = NEW_EMAIL_VERIFY_API_ROUTE_DATA
 
   setControl({ emailConnecting: true })
   fetch(API_URL + route, {
     method,
     headers: { 'Content-Type': 'application/json', 'Access-Token': getAccessToken() },
-    body: JSON.stringify({ verificationCode }),
+    body: JSON.stringify({ verificationCode, verificationToken }),
   })
     .then(response => {
       if (response.ok) return setControl({ emailStep: 'password' })
@@ -99,8 +121,9 @@ export function sendPassword(password) {
   const currentEmailVerificationCode = document.getElementById('user-edit-email-current-verification').value
   const newEmail = document.getElementById('user-edit-email-new').value
   const newEmailVerificationCode = document.getElementById('user-edit-email-new-verification').value
-  const clientHashedPassword = hashPassword(password, currentEmail)
-  const clientRehashedPassword = hashPassword(password, newEmail)
+  const currentClientHashedPassword = hashPassword(password, currentEmail)
+  const newClientHashedPassword = hashPassword(password, newEmail)
+  const verificationToken = getCookieValue('verificationToken')
 
   if (connecting) return
 
@@ -112,12 +135,12 @@ export function sendPassword(password) {
     method,
     headers: { 'Content-Type': 'application/json', 'Access-Token': getAccessToken() },
     body: JSON.stringify({
-      currentEmail,
       currentEmailVerificationCode,
       newEmail,
       newEmailVerificationCode,
-      clientHashedPassword,
-      clientRehashedPassword,
+      currentClientHashedPassword,
+      newClientHashedPassword,
+      verificationToken,
     }),
   })
     .then(response => {
