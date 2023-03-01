@@ -13,8 +13,20 @@ import skillfindTechHandleRequest from '../sites/skillfind-tech/server/functions
 import * as Sentry from '@sentry/node'
 // import * as Tracing from '@sentry/tracing'
 
+function getSentryUrl() {
+  // @ts-ignore
+  switch (APP_ENV) {
+    case 'development':
+      return 'https://ac81f10d287d4659865d2571d7be7b45@o876363.ingest.sentry.io/5825795'
+    case 'production':
+      return "https://7424511ddfb441c7b6abf0fef724dc69@o876363.ingest.sentry.io/4504761753010176"
+    default:
+      return ''
+  }
+}
+
 Sentry.init({
-  dsn: 'https://ac81f10d287d4659865d2571d7be7b45@o876363.ingest.sentry.io/5825795',
+  dsn: getSentryUrl(),
   tracesSampleRate: 1.0,
 })
 
