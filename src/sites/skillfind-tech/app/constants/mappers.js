@@ -7,7 +7,7 @@ export const mapStateToProps = store => {
     links,
   } = store
   const { device, lang, loadGa } = app
-  const { visitor: renderVisitor, page: renderPage, announcement: renderAnnouncement, image: renderImage } = render
+  const { visitor: renderVisitor, page: renderPage, announcement: renderAnnouncement, image: renderImage, renderPostingIndex } = render
   const { scrollY } = visitor
   const { consents } = visitor
   const { statisticsConsent, marketingConsent } = consents
@@ -19,6 +19,7 @@ export const mapStateToProps = store => {
     render,
     renderVisitor,
     renderAnnouncement,
+    renderPostingIndex,
     renderPage,
     renderImage,
     scrollY,

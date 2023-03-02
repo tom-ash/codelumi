@@ -1,9 +1,9 @@
-import { SkillInterface } from "../../../../../../shared/components/skill/skill.types"
+import { SkillProps } from "../../../../../../shared/components/skill/skill.types"
 
 type SelectSkillFactory = (props: {
-  selectedSkill: SkillInterface
-  selectedSkills: SkillInterface[]
-  selectableSkills: SkillInterface[]
+  selectedSkill: SkillProps
+  selectedSkills: SkillProps[]
+  selectableSkills: SkillProps[]
   setInputs(props: object): void
 }) => void
 

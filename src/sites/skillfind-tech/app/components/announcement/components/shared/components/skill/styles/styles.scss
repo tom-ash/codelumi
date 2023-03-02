@@ -13,8 +13,20 @@
     border-radius: 2px;
     background: lightgray;
     cursor: pointer;
-    &.filled {
-      background: red;
+    &.novice {
+      background: #F9E79F;
+    }
+    &.junior {
+      background: #27AE60;
+    }
+    &.mid {
+      background: #2874A6;
+    }
+    &.senior {
+      background: #E74C3C;
+    }
+    &.expert {
+      background: #6C3483;
     }
   }
   .level-name {

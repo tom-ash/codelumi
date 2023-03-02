@@ -1,0 +1,19 @@
+#posting-index {
+  margin-top: 100px;
+  max-width: 768px;
+  margin: 100px auto;
+  .company-name {
+    margin-bottom: 18px;
+  }
+  .tile {
+    margin-bottom: 24px;
+    border-radius: 4px;
+    padding: 18px 18px 6px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  .skill {
+    float: left;
+    margin-right: 24px;
+  }
+}
+  

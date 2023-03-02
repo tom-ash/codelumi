@@ -8,7 +8,6 @@ const SubmitButton = () => {
   const { changeRoute } = useContext(AppContext)
   const state = useStore().getState()
   const { app: { lang }, texts, inputs } = state
-  const { submit } = texts
   const {
     selectedSkills,
     // remote,
@@ -27,7 +26,7 @@ const SubmitButton = () => {
 
   const buttonProps = {
     classNames: { container: 'submit-button' },
-    label: submit,
+    label: texts.submit,
     onClick: () => submit({
       lang,
       selectedSkills,

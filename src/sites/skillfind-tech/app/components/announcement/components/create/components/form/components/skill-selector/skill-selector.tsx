@@ -5,7 +5,7 @@ import Skill from '../../../../../shared/components/skill/skill'
 import { useDispatch, useStore } from 'react-redux'
 import { selectSkillFactory } from './functions/select-skill-factory'
 import { unselectSkillFactory } from './functions/unselect-skill-factory'
-import { SkillInterface } from '../../../../../shared/components/skill/skill.types'
+import { SkillProps } from '../../../../../shared/components/skill/skill.types'
 
 function SkillSelector() {
   useStyles(styles)
@@ -21,13 +21,13 @@ function SkillSelector() {
   } = inputs
   const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
-  const selectSkill = (selectedSkill: SkillInterface) => selectSkillFactory({
+  const selectSkill = (selectedSkill: SkillProps) => selectSkillFactory({
     selectedSkill,
     selectedSkills,
     selectableSkills,
     setInputs,
   })
-  const unselectSkill = (unselectedSkill: SkillInterface) => unselectSkillFactory({
+  const unselectSkill = (unselectedSkill: SkillProps) => unselectSkillFactory({
     unselectedSkill,
     selectedSkills,
     selectableSkills,
@@ -39,7 +39,7 @@ function SkillSelector() {
       <h2>{skills}</h2>
       <div id='skill-selector'>
         <div id='selectable-skills'>
-          {selectableSkills.map((skill: SkillInterface) => (
+          {selectableSkills.map((skill: SkillProps) => (
             <Skill
               {
                 ...{
@@ -52,7 +52,7 @@ function SkillSelector() {
           ))}
         </div>
         <div id='selected-skills'>
-          {selectedSkills.map((skill: SkillInterface) => (
+          {selectedSkills.map((skill: SkillProps) => (
             <Skill
               {
                 ...{
