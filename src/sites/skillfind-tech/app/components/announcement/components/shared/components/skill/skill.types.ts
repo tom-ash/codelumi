@@ -1,10 +1,10 @@
-export enum SkillViews {
+export enum SkillView {
   formSelectable = 'formSelectable',
   formSelected = 'formSelected',
   indexVisitor = 'indexVisitor',
 }
 
-export enum SkillLevelsEnum {
+export enum SkillLevel {
   NOVICE = 'Novice',
   JUNIOR = 'Junior',
   MID = 'Mid',
@@ -13,9 +13,9 @@ export enum SkillLevelsEnum {
 }
 
 export interface SkillProps {
+  view: SkillView
   name: string
   level: number
   selectSkill?: any // TODO!
   unselectSkill?: any // TODO!
-  view: SkillViews
 }

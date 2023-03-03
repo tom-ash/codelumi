@@ -6,7 +6,7 @@ import { useDispatch, useStore } from 'react-redux'
 import { selectSkillFactory } from './functions/select-skill-factory'
 import { unselectSkillFactory } from './functions/unselect-skill-factory'
 import { SkillProps } from '../../../../../shared/components/skill/skill.types'
-import { SkillViews } from '../../../../../shared/components/skill/skill.types'
+import { SkillView } from '../../../../../shared/components/skill/skill.types'
 
 function SkillSelector() {
   useStyles(styles)
@@ -46,7 +46,7 @@ function SkillSelector() {
                 ...{
                   ...skill,
                   selectSkill,
-                  view: SkillViews.formSelectable,
+                  view: SkillView.formSelectable,
                 }
               }
               key={skill.name}
@@ -61,7 +61,7 @@ function SkillSelector() {
                   ...skill,
                   selectSkill,
                   unselectSkill,
-                  view: SkillViews.formSelected
+                  view: SkillView.formSelected
                 }
               }
               key={skill.name}

@@ -7,7 +7,7 @@ import { useStore } from 'react-redux'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import Skill from '../shared/components/skill/skill'
-import { SkillViews } from '../shared/components/skill/skill.types'
+import { SkillView } from '../shared/components/skill/skill.types'
 
 const PostingIndex = () => {
   useStyles(styles)
@@ -27,7 +27,7 @@ const PostingIndex = () => {
               {posting.id}
             </div>
             {posting.skills.map((skill: any) => {
-              return <Skill key={skill.name} name={skill.name} level={skill.level} view={SkillViews.indexVisitor}/>
+              return <Skill key={skill.name} name={skill.name} level={skill.level} view={SkillView.indexVisitor}/>
             })}
             <div className='float-clear' />
           </div>

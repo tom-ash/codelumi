@@ -1,16 +1,16 @@
 import React from 'react'
-import { SkillViews } from '../skill.types'
-import { SkillLevelsEnum } from '../skill.types'
+import { SkillView } from '../skill.types'
+import { SkillLevel } from '../skill.types'
 
 interface SkillLevelsProps {
-  view: SkillViews
+  view: SkillView
   name: string
   level: number
-  skillLevels: string[]
-  levelName: SkillLevelsEnum
+  levelNames: string[]
+  levelName: SkillLevel
   levelHovered: number
-  setLevelHovered(levelHovered: number): void
   selectSkill(props: object): void
+  setLevelHovered(levelHovered: number): void
 }
 
 export const SkillLevels = (props: SkillLevelsProps) => {
@@ -18,17 +18,17 @@ export const SkillLevels = (props: SkillLevelsProps) => {
     view,
     name,
     level,
-    skillLevels,
+    levelNames,
     levelName,
     levelHovered,
-    setLevelHovered,
     selectSkill,
+    setLevelHovered,
   } = props
 
   return (
-    <div className='skillLevels'>
-      {skillLevels.map((availableLevel, index) => {
-        const fillClass = levelHovered ? (levelHovered > index ? skillLevels[levelHovered - 1].toLowerCase() : '') : (level > index || levelHovered > index ? levelName.toLowerCase() : '')
+    <div className='levelNames'>
+      {levelNames.map((availableLevel, index) => {
+        const fillClass = levelHovered ? (levelHovered > index ? levelNames[levelHovered - 1].toLowerCase() : '') : (level > index || levelHovered > index ? levelName.toLowerCase() : '')
         const classNames = ['level', fillClass]
         const sharedLevelProps = { className: classNames.join(' '), key: availableLevel }
         const formProps = {
@@ -40,7 +40,7 @@ export const SkillLevels = (props: SkillLevelsProps) => {
         return (
           <div
             {...sharedLevelProps}
-            {...(view === SkillViews.formSelectable || view === SkillViews.formSelected) && formProps}
+            {...(view === SkillView.formSelectable || view === SkillView.formSelected) && formProps}
           />
         )
       })}
