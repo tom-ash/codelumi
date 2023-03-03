@@ -1,58 +1,42 @@
 import React, { useState } from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
-import { SkillView, SkillProps } from './skill.types'
+import { SkillViews, SkillProps } from './skill.types'
+import { SkillLevels } from './components/levels'
+import { SkillLevelsEnum } from './skill.types'
+
+const skillLevels = Object.values(SkillLevelsEnum)
 
 function Skill(props: SkillProps) {
   useStyles(styles)
 
   const {
+    view,
     name,
     level,
     selectSkill,
     unselectSkill,
-    view,
   } = props
-  const levels = ['Novice', 'Junior', 'Mid', 'Senior', 'Expert']
-  const [skillHovered, setSkillHovered] = useState(false)
-  const [hovered, setHovered] = useState(0)
-  const levelName = hovered ? levels[hovered - 1] : levels[level - 1]
-  const formProps = {
-    onMouseOver: () => setSkillHovered(true),
-    onMouseLeave: () => setSkillHovered(false)
+  const [levelHovered, setLevelHovered] = useState(0)
+  const levelName = levelHovered ? skillLevels[levelHovered - 1] : skillLevels[level - 1]
+
+  const levelsProps = {
+    view,
+    level,
+    levelHovered,
+    selectSkill,
+    skillLevels,
+    levelName,
+    name,
+    setLevelHovered,
   }
 
   return (
     <div className='skill'>
       <div className='name'>{name}</div>
-      <div
-        className='levels'
-        {...(view === SkillView.formSelectable || view === SkillView.formSelected) && formProps}
-      >
-        {levels.map((availableLevel, index) => {
-          const fillClass =  skillHovered ? (hovered > index ? levelName.toLowerCase() : '') : (level > index || hovered > index ? levelName.toLowerCase() : '')
-          const classNames = ['level', fillClass]
-          const sharedLevelProps = { className: classNames.join(' '), key: availableLevel }
-          const formProps = {
-            onMouseOver: () => setHovered(index + 1),
-            onMouseLeave: () => setHovered(0),
-          }
-          const formSelectableProps = {
-            onClick: () => selectSkill({ name, level: hovered }),
-          }
-
-          return (
-            <div
-              {...sharedLevelProps}
-              {...(view === SkillView.formSelectable || view === SkillView.formSelected) && formProps}
-              {...(view === SkillView.formSelectable) && formSelectableProps}
-            />
-          )
-        })}
-        <div className='float-clear' />
-      </div>
+      <SkillLevels {...levelsProps} />
       <div className='level-name'>{levelName}</div>
-      {view === SkillView.formSelected && (
+      {view === SkillViews.formSelected && (
         <div
           className='delete'
           onClick={() => unselectSkill({ name, level: undefined })}
