@@ -1,27 +1,22 @@
 import { hashPassword } from '../../../../../../../functions/shared'
-// import { termsOfServiceConsentParser } from '../../inputs/components/terms-of-service-consent/terms-of-service-consent.parser'
 import { phoneNumberValidator } from '../../inputs/components/phone-number/phone-number.validator'
 
-
-
-
-import { emailAddressValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/email-address/email-address.validator'
 import { businessNameValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/business-name/business-name.validator'
+import { emailAddressValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/email-address/email-address.validator'
 import { passwordValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/password/password.validator'
 import { termsOfServiceConsentValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/terms-of-service-consent/terms-of-service-consent.validator'
+import { termsOfServiceConsentParser } from '../../../../../../../../../../../shared/app/components/user/components/new/components/terms-of-service-consent/terms-of-service-consent.parser'
 
 export function buildUserObject() {
-  const { dispatch } = this.props
+  const { dispatch, termsOfServiceConsentLabel } = this.props
   const userObject = prepareUserObject.call(this)
 
   if (validateUserObject.call(this, userObject)) {
     dispatch({ type: 'control', value: { connecting: true } })
+
     userObject.password = hashPassword(userObject.password, userObject.emailAddress)
+    userObject.consents = [termsOfServiceConsentParser(termsOfServiceConsentLabel)]
 
-    const termsOfServiceConsentText = 'TODO' // this.langHandler(TERMS_AND_SERVICE_CONSENT_TEXT)
-
-
-    userObject.consents = [] // TODO: [termsOfServiceConsentParser(termsOfServiceConsentText)]
     return userObject
   }
 }

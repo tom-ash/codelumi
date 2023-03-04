@@ -1,5 +1,5 @@
 export const mapStateToProps = store => {
-  const { app, render, control, data, inputs } = store
+  const { app, render, texts, control, data, inputs } = store
   const { lang, isMobile } = app
   const {
     'announcement/create/form': renderForm,
@@ -10,6 +10,7 @@ export const mapStateToProps = store => {
   const { authorized, admin } = store.user
   const { step, savingAnnouncement, savingPicture } = control
   const { id, pin, announcement, user } = data
+  const { termsOfServiceConsentLabel } = texts
   const {
     category,
     blobs,
@@ -93,6 +94,7 @@ export const mapStateToProps = store => {
     phoneNumber,
     termsOfServiceConsent,
     businessName,
+    termsOfServiceConsentLabel,
   }
 }
 

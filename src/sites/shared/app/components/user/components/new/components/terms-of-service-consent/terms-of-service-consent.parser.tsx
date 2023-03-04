@@ -1,6 +1,6 @@
 export const termsOfServiceConsentParser = (termsOfServiceConsentText: string) => {
   return {
-    type: 'terms_and_conditions_and_privacy_policy',
+    type: 'terms_of_service',
     granted: true,
     displayed_text: termsOfServiceConsentText,
   }

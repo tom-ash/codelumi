@@ -1,11 +1,10 @@
 export const mapStateToProps = store => {
-  const { app, render, control, inputs } = store
-
+  const { app, render, texts, control, inputs } = store
   const { lang } = app
   const { 'user/create/form': renderUserCreate } = render
   const { connecting } = control
   const { accountType, businessName, emailAddress, password, countryCode, phoneNumber, termsOfServiceConsent } = inputs
-  
+  const { termsOfServiceConsentLabel } = texts
 
   return {
     renderUserCreate,
@@ -18,6 +17,7 @@ export const mapStateToProps = store => {
     countryCode,
     phoneNumber,
     termsOfServiceConsent,
+    termsOfServiceConsentLabel,
   }
 }
 
