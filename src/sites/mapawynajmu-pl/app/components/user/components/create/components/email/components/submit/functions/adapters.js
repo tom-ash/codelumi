@@ -1,13 +1,13 @@
 import { hashPassword } from '../../../../../../../functions/shared'
 import { termsAndPrivacyConsentParser } from '../../inputs/components/terms-and-privacy-consent/terms-and-privacy-consent.parser'
 import { TERMS_AND_SERVICE_CONSENT_TEXT } from '../../inputs/components/terms-and-privacy-consent/terms-and-privacy-consent.text'
-import { businessNameValidator } from '../../inputs/components/business-name/business-name.validator'
 import { passwordValidator } from '../../inputs/components/password/password.validator'
 import { phoneNumberValidator } from '../../inputs/components/phone-number/phone-number.validator'
 import { termsAndServiceConsentValidator } from '../../inputs/components/terms-and-privacy-consent/terms-and-privacy-consent.validator'
 
 // NEW APPROACH
 import { emailAddressValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/email-address/email-address.validator'
+import { businessNameValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/business-name/business-name.validator'
 
 export function buildUserObject() {
   const { dispatch } = this.props
