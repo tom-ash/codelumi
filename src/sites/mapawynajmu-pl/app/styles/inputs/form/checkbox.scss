@@ -3,6 +3,8 @@
     position: relative;
     margin-bottom: 12px;
     > .input {
+      position: absolute;
+      // top: 1px;
       width: 16px;
       height: 16px;
       border: 1px solid $border-color;
@@ -25,13 +27,14 @@
       }
     }
     > .label {
-      position: absolute;
+      position: relative;
       top: 0;
-      left: 15px;
+      left: 16px;
       color: $untached-color;
       margin-left: 15px;
       cursor: pointer;
       font-size: 15px;
+      line-height: 18px;
       &.focus,
       &.hover,
       &.value {

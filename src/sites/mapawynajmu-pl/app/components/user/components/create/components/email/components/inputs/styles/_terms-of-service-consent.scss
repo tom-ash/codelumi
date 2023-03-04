@@ -1,3 +1,5 @@
+@import '../../../../../../../../../styles/colors';
+
 %terms-of-service-consent {
   width: 100%;
   padding-bottom: 18px;
@@ -5,18 +7,19 @@
     margin-bottom: 0;
     > .input {
       transform: scale(0.8);
+      top: .5px;
     }
     > .label {
-      top: 0.5px;
-      left: 8px;
+      left: 10px;
       font-size: 14px;
     }
   }
   .error {
+    height: 16px;
     margin: 6px 0 0 0;
-    color: red;
+    color: $ERROR-COLOR;
     line-height: 16px;
-    font-size: 10px;
+    font-size: 13px;
   }
   a {
     display: inline-block;

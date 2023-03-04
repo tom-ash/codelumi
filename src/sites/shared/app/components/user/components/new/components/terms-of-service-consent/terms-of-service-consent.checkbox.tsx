@@ -11,7 +11,7 @@ export const TermsOfServiceConsentCheckbox = () => {
   const { texts, links, inputs } = useStore().getState()
   const { termsOfServiceConsent } = inputs
   const {
-    termsOfServiceConsentCheckboxSyntheticLabel,
+    termsOfServiceConsentSyntheticLabel,
     termsOfService,
   } = texts
   const classNames = { container: 'form-input checkbox' }
@@ -21,7 +21,7 @@ export const TermsOfServiceConsentCheckbox = () => {
     termsOfServiceConsentValidator({ termsOfServiceConsent, setErrors })
   }
   const labelProps = {
-    syntheticLabel: termsOfServiceConsentCheckboxSyntheticLabel,
+    syntheticLabel: termsOfServiceConsentSyntheticLabel,
     termsOfServiceLink: links['visitor/terms-of-service'],
     termsOfService: termsOfService,
   }
