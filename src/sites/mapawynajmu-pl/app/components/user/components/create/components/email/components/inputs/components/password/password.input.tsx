@@ -1,37 +1,26 @@
 import React from 'react'
-import { type Dispatch } from 'redux'
+import { useStore, useDispatch } from 'react-redux'
 import { ManagedText } from 'managed-inputs'
 import { passwordValidator } from './password.validator'
-import { EMPTY_LANG_OBJECT } from '../../../../../../../../../../constants/lang-objects/empty'
 
-interface PasswordInputProps {
-  password: string
-  passwordError: LangObject
-  langHandler: LangHandler
-  setInputs: ChangeInputs
-  dispatch: Dispatch
-}
-
-export const PasswordInput = (props: PasswordInputProps) => {
-  const { password, passwordError, setInputs, langHandler, dispatch } = props
+export const PasswordInput = () => {
+  const dispatch = useDispatch()
+  const setInputs = (value: any) => dispatch({ type: 'inputs', value })
+  const setErrors = (value: any) => dispatch({ type: 'errors', value })
+  const { texts, inputs, errors } = useStore().getState()
+  const { password: value } = inputs
+  const {
+    passwordInputLabel: label,
+    passwordInputPlaceholder: placeholder,
+    passwordInvalidError,
+  } = texts
+  const { password: passwordInvalidErrorTriggered } = errors
   const classNames = { container: 'text-input' }
-  // @ts-ignore
-  const label = langHandler({ pl: 'Hasło', en: 'Password' })
   const type = 'password'
   const autoComplete = 'new-password'
-  const value = password
-  // @ts-ignore
-  const placeholder = langHandler({ pl: 'Podaj hasło', en: 'Provide password' })
-  // @ts-ignore
-  const error = langHandler(passwordError)
-  const onFocus = () =>
-    dispatch({
-      type: 'errors',
-      value: { password: EMPTY_LANG_OBJECT },
-    })
-  const onBlur = (password: string) => {
-    passwordValidator({ password, dispatch })
-  }
+  const error = passwordInvalidErrorTriggered && passwordInvalidError
+  const onFocus = () => setErrors({ password: false })
+  const onBlur = (password: string) => passwordValidator({ password, setErrors })
   const onChange = (password: string) => setInputs({ password })
 
   const passwordInputProps = {

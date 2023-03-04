@@ -49,9 +49,9 @@ function validateUserObject(userObject) {
   const setErrors = (value) => dispatch({ type: 'errors', value })
 
   const validationArray = [
-    emailAddressValidator({ emailAddress, setErrors }), // NEW APPROACH
-    
-    passwordValidator({ password, dispatch }),
+    emailAddressValidator({ emailAddress, setErrors }),
+    passwordValidator({ password, setErrors }),
+
     phoneNumberValidator({ phoneNumber, dispatch }),
     termsAndServiceConsentValidator({ termsAndPrivacyConsent, dispatch }),
   ]

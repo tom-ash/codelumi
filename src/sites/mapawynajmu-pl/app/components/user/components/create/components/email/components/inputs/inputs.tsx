@@ -29,14 +29,6 @@ class UserCreateEmailInputs extends React.Component {
       // @ts-ignore
       accountType,
       // @ts-ignore
-      businessName,
-      // @ts-ignore
-      businessNameError,
-      // @ts-ignore
-      password,
-      // @ts-ignore
-      passwordError,
-      // @ts-ignore
       countryCode,
       // @ts-ignore
       phoneNumber,
@@ -64,14 +56,6 @@ class UserCreateEmailInputs extends React.Component {
       langHandler,
     }
 
-    const passwordProps = {
-      password,
-      passwordError,
-      setInputs,
-      langHandler,
-      dispatch,
-    }
-
     const countryCodeProps = {
       countryCode,
       dispatch,
@@ -97,7 +81,7 @@ class UserCreateEmailInputs extends React.Component {
         <UserTypeRadio {...accountTypeProps} />
         {isBusinessAccount && <BusinessNameInput />}
         <EmailAddressInput />
-        <PasswordInput {...passwordProps} />
+        <PasswordInput />
         {/* @ts-ignore */}
         <Hint text={this.langHandler(NAME_AREA_CODE_AND_PHONE_NUMBER_HINT)} />
         <div className='country-code-phone-number-container'>
