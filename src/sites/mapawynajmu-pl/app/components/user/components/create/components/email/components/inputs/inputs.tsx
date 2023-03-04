@@ -7,11 +7,11 @@ import { NAME_AREA_CODE_AND_PHONE_NUMBER_HINT } from './constants/texts'
 import { UserTypeRadio } from './components/account-type/account-type.input'
 import { UserTypes } from '../../../../../../types/user.types'
 import { BusinessNameInput } from './components/business-name/business-name.input'
-import { EmailAddressInput } from './components/email-address/email-address.input'
 import { PasswordInput } from './components/password/password.input'
 import { CountryCodeSelect } from './components/country-code/country-code.select'
 import { PhoneNumberInput } from './components/phone-number/phone-number.input'
 import { TermsAndPrivacyConsent } from './components/terms-and-privacy-consent/terms-and-privacy-consent'
+import { EmailAddressInput } from '../../../../../../../../../../shared/app/components/user/components/new/components/email-address/email-address.input'
 
 class UserCreateEmailInputs extends React.Component {
   langHandler: LangHandler
@@ -31,10 +31,6 @@ class UserCreateEmailInputs extends React.Component {
       businessName,
       // @ts-ignore
       businessNameError,
-      // @ts-ignore
-      emailAddress,
-      // @ts-ignore
-      emailAddressError,
       // @ts-ignore
       password,
       // @ts-ignore
@@ -75,14 +71,6 @@ class UserCreateEmailInputs extends React.Component {
       dispatch,
     }
 
-    const emailAddressProps = {
-      emailAddress,
-      emailAddressError,
-      setInputs,
-      langHandler,
-      dispatch,
-    }
-
     const passwordProps = {
       password,
       passwordError,
@@ -115,7 +103,7 @@ class UserCreateEmailInputs extends React.Component {
       <div className='inputs'>
         <UserTypeRadio {...accountTypeProps} />
         {isBusinessAccount && <BusinessNameInput {...businessNameProps} />}
-        <EmailAddressInput {...emailAddressProps} />
+        <EmailAddressInput />
         <PasswordInput {...passwordProps} />
         {/* @ts-ignore */}
         <Hint text={this.langHandler(NAME_AREA_CODE_AND_PHONE_NUMBER_HINT)} />

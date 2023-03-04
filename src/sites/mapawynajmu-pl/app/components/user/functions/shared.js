@@ -8,10 +8,3 @@ export function hashPassword(plaintext, salt) {
     iterations,
   }).toString()
 }
-
-export function emailAddressValidator(emailAddress, callback, errors) {
-  const { emailRegex } = config
-  if (emailRegex.test(emailAddress)) return true
-  this.props[callback](errors)
-  return false
-}

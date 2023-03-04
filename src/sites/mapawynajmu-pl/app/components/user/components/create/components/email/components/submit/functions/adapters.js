@@ -2,10 +2,12 @@ import { hashPassword } from '../../../../../../../functions/shared'
 import { termsAndPrivacyConsentParser } from '../../inputs/components/terms-and-privacy-consent/terms-and-privacy-consent.parser'
 import { TERMS_AND_SERVICE_CONSENT_TEXT } from '../../inputs/components/terms-and-privacy-consent/terms-and-privacy-consent.text'
 import { businessNameValidator } from '../../inputs/components/business-name/business-name.validator'
-import { emailAddressValidator } from '../../inputs/components/email-address/email-address.validator'
 import { passwordValidator } from '../../inputs/components/password/password.validator'
 import { phoneNumberValidator } from '../../inputs/components/phone-number/phone-number.validator'
 import { termsAndServiceConsentValidator } from '../../inputs/components/terms-and-privacy-consent/terms-and-privacy-consent.validator'
+
+// NEW APPROACH
+import { emailAddressValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/email-address/email-address.validator'
 
 export function buildUserObject() {
   const { dispatch } = this.props
@@ -44,8 +46,11 @@ function validateUserObject(userObject) {
   const { dispatch } = this.props
   const { emailAddress, password, phoneNumber, termsAndPrivacyConsent } = userObject
 
+  const setErrors = (value) => dispatch({ type: 'errors', value })
+
   const validationArray = [
-    emailAddressValidator({ emailAddress, dispatch }),
+    emailAddressValidator({ emailAddress, setErrors }), // NEW APPROACH
+    
     passwordValidator({ password, dispatch }),
     phoneNumberValidator({ phoneNumber, dispatch }),
     termsAndServiceConsentValidator({ termsAndPrivacyConsent, dispatch }),
