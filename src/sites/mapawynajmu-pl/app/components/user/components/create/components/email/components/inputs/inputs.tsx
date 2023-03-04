@@ -63,14 +63,6 @@ class UserCreateEmailInputs extends React.Component {
       langHandler,
     }
 
-    const businessNameProps = {
-      businessName,
-      businessNameError,
-      setInputs,
-      langHandler,
-      dispatch,
-    }
-
     const passwordProps = {
       password,
       passwordError,
@@ -102,7 +94,7 @@ class UserCreateEmailInputs extends React.Component {
     return (
       <div className='inputs'>
         <UserTypeRadio {...accountTypeProps} />
-        {isBusinessAccount && <BusinessNameInput {...businessNameProps} />}
+        {isBusinessAccount && <BusinessNameInput />}
         <EmailAddressInput />
         <PasswordInput {...passwordProps} />
         {/* @ts-ignore */}

@@ -44,7 +44,7 @@ function prepareUserObject() {
 
 function validateUserObject(userObject) {
   const { dispatch } = this.props
-  const { emailAddress, password, phoneNumber, termsAndPrivacyConsent } = userObject
+  const { businessName, emailAddress, password, phoneNumber, termsAndPrivacyConsent } = userObject
 
   const setErrors = (value) => dispatch({ type: 'errors', value })
 
@@ -57,7 +57,7 @@ function validateUserObject(userObject) {
   ]
 
   if (userObject.accountType === 'business') {
-    validationArray.concat([businessNameValidator({ dispatch, value: userObject.businessName })])
+    validationArray.concat([businessNameValidator({ businessName, setErrors })])
   }
 
   return validationArray.every(element => element)
