@@ -6,13 +6,14 @@ import * as mappers from './constants/mappers'
 import { NAME_AREA_CODE_AND_PHONE_NUMBER_HINT } from './constants/texts'
 import { UserTypeRadio } from './components/account-type/account-type.input'
 import { UserTypes } from '../../../../../../types/user.types'
-import { PasswordInput } from './components/password/password.input'
+
 import { CountryCodeSelect } from './components/country-code/country-code.select'
 import { PhoneNumberInput } from './components/phone-number/phone-number.input'
 import { TermsAndPrivacyConsent } from './components/terms-and-privacy-consent/terms-and-privacy-consent'
 
-import { EmailAddressInput } from '../../../../../../../../../../shared/app/components/user/components/new/components/email-address/email-address.input'
 import { BusinessNameInput } from '../../../../../../../../../../shared/app/components/user/components/new/components/business-name/business-name.input'
+import { EmailAddressInput } from '../../../../../../../../../../shared/app/components/user/components/new/components/email-address/email-address.input'
+import { PasswordInput } from '../../../../../../../../../../shared/app/components/user/components/new/components/password/password.input'
 
 class UserCreateEmailInputs extends React.Component {
   langHandler: LangHandler

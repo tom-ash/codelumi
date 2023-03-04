@@ -1,4 +1,4 @@
-import { PASSWORD_REGEX } from '../../../../../../../../../../constants/password.regex'
+import { PASSWORD_REGEX } from "../../../../constants/password-regex"
 
 interface PasswordValidator {
   (props: {
