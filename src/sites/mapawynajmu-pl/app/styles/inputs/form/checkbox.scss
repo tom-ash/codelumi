@@ -2,7 +2,7 @@
   &.checkbox {
     position: relative;
     margin-bottom: 12px;
-    .input {
+    > .input {
       width: 16px;
       height: 16px;
       border: 1px solid $border-color;
@@ -24,7 +24,7 @@
         border-bottom: 2px solid black;
       }
     }
-    .label {
+    > .label {
       position: absolute;
       top: 0;
       left: 15px;

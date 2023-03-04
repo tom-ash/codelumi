@@ -1,14 +1,14 @@
 export const mapStateToProps = store => {
   const { app, links, inputs, errors } = store
   const { lang } = app
-  const { accountType, businessName, emailAddress, password, countryCode, phoneNumber, termsAndPrivacyConsent } = inputs
+  const { accountType, businessName, emailAddress, password, countryCode, phoneNumber, termsOfServiceConsent } = inputs
   const {
     accountType: accountTypeError,
     businessName: businessNameError,
     emailAddress: emailAddressError,
     password: passwordError,
     phoneNumber: phoneNumberError,
-    termsAndPrivacyConsent: termsAndPrivacyConsentError,
+    termsOfServiceConsent: termsOfServiceConsentError,
   } = errors
 
   return {
@@ -23,8 +23,8 @@ export const mapStateToProps = store => {
     emailAddressError,
     passwordError,
     phoneNumberError,
-    termsAndPrivacyConsent,
-    termsAndPrivacyConsentError,
+    termsOfServiceConsent,
+    termsOfServiceConsentError,
     lang,
     links,
   }

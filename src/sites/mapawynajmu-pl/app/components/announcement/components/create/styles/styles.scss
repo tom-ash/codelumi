@@ -22,7 +22,8 @@
 @import '../../../../../styles/inputs/radio';
 @import '../../../../../styles/headings/h1';
 @import '../../../../user/components/create/components/email/components/inputs/styles/country-code-phone-number-container';
-@import '../../../../user/components/create/components/email/components/inputs/styles/terms-and-privacy-consent';
+// @import '../../../../user/components/create/components/email/components/inputs/styles/terms-of-service-consent';
+// TODO
 
 #listing-create {
   margin-bottom: 32px;
@@ -41,8 +42,8 @@
     }
   }
 
-  .terms-and-privacy-consent {
-    @extend %terms-and-privacy-consent;
+  .terms-of-service-consent {
+    // @extend %terms-of-service-consent;
     margin-left: 0;
     padding-left: 0;
   }

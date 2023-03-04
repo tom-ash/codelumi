@@ -41,7 +41,7 @@ export const mapStateToProps = store => {
     password,
     countryCode,
     phoneNumber,
-    termsAndPrivacyConsent,
+    termsOfServiceConsent,
     businessName,
   } = inputs
 
@@ -91,7 +91,7 @@ export const mapStateToProps = store => {
     password,
     countryCode,
     phoneNumber,
-    termsAndPrivacyConsent,
+    termsOfServiceConsent,
     businessName,
   }
 }

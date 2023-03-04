@@ -1,14 +1,14 @@
 import { hashPassword } from '../../../../../../../functions/shared'
-import { termsAndPrivacyConsentParser } from '../../inputs/components/terms-and-privacy-consent/terms-and-privacy-consent.parser'
-import { TERMS_AND_SERVICE_CONSENT_TEXT } from '../../inputs/components/terms-and-privacy-consent/terms-and-privacy-consent.text'
+// import { termsOfServiceConsentParser } from '../../inputs/components/terms-of-service-consent/terms-of-service-consent.parser'
 import { phoneNumberValidator } from '../../inputs/components/phone-number/phone-number.validator'
-import { termsAndServiceConsentValidator } from '../../inputs/components/terms-and-privacy-consent/terms-and-privacy-consent.validator'
+
 
 
 
 import { emailAddressValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/email-address/email-address.validator'
 import { businessNameValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/business-name/business-name.validator'
 import { passwordValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/password/password.validator'
+import { termsOfServiceConsentValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/terms-of-service-consent/terms-of-service-consent.validator'
 
 export function buildUserObject() {
   const { dispatch } = this.props
@@ -17,14 +17,17 @@ export function buildUserObject() {
   if (validateUserObject.call(this, userObject)) {
     dispatch({ type: 'control', value: { connecting: true } })
     userObject.password = hashPassword(userObject.password, userObject.emailAddress)
-    const termsAndPrivacyConsentText = this.langHandler(TERMS_AND_SERVICE_CONSENT_TEXT)
-    userObject.consents = [termsAndPrivacyConsentParser(termsAndPrivacyConsentText)]
+
+    const termsOfServiceConsentText = 'TODO' // this.langHandler(TERMS_AND_SERVICE_CONSENT_TEXT)
+
+
+    userObject.consents = [] // TODO: [termsOfServiceConsentParser(termsOfServiceConsentText)]
     return userObject
   }
 }
 
 function prepareUserObject() {
-  const { accountType, businessName, emailAddress, password, countryCode, phoneNumber, termsAndPrivacyConsent } =
+  const { accountType, businessName, emailAddress, password, countryCode, phoneNumber, termsOfServiceConsent } =
     this.props
 
   let userObject = {
@@ -33,7 +36,7 @@ function prepareUserObject() {
     password,
     countryCode,
     phoneNumber,
-    termsAndPrivacyConsent,
+    termsOfServiceConsent,
   }
 
   if (accountType === 'business') {
@@ -45,16 +48,17 @@ function prepareUserObject() {
 
 function validateUserObject(userObject) {
   const { dispatch } = this.props
-  const { businessName, emailAddress, password, phoneNumber, termsAndPrivacyConsent } = userObject
+  const { businessName, emailAddress, password, phoneNumber, termsOfServiceConsent } = userObject
 
   const setErrors = (value) => dispatch({ type: 'errors', value })
 
   const validationArray = [
     emailAddressValidator({ emailAddress, setErrors }),
     passwordValidator({ password, setErrors }),
+    termsOfServiceConsentValidator({ termsOfServiceConsent, setErrors }),
 
+    // DEPRECATED
     phoneNumberValidator({ phoneNumber, dispatch }),
-    termsAndServiceConsentValidator({ termsAndPrivacyConsent, dispatch }),
   ]
 
   if (userObject.accountType === 'business') {

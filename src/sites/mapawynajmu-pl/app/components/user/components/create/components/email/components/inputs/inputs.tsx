@@ -9,11 +9,12 @@ import { UserTypes } from '../../../../../../types/user.types'
 
 import { CountryCodeSelect } from './components/country-code/country-code.select'
 import { PhoneNumberInput } from './components/phone-number/phone-number.input'
-import { TermsAndPrivacyConsent } from './components/terms-and-privacy-consent/terms-and-privacy-consent'
+
 
 import { BusinessNameInput } from '../../../../../../../../../../shared/app/components/user/components/new/components/business-name/business-name.input'
 import { EmailAddressInput } from '../../../../../../../../../../shared/app/components/user/components/new/components/email-address/email-address.input'
 import { PasswordInput } from '../../../../../../../../../../shared/app/components/user/components/new/components/password/password.input'
+import { TermsOfServiceConsent } from '../../../../../../../../../../shared/app/components/user/components/new/components/terms-of-service-consent/terms-of-service-consent'
 
 class UserCreateEmailInputs extends React.Component {
   langHandler: LangHandler
@@ -41,12 +42,6 @@ class UserCreateEmailInputs extends React.Component {
       langHandler,
       // @ts-ignore
       dispatch,
-      // @ts-ignore
-      links,
-      // @ts-ignore
-      termsAndPrivacyConsent,
-      // @ts-ignore
-      termsAndPrivacyConsentError,
     } = this.props
 
     const isBusinessAccount = accountType === UserTypes.BUSINESS
@@ -69,14 +64,6 @@ class UserCreateEmailInputs extends React.Component {
       dispatch,
     }
 
-    const termsAndPrivacyConsentProps = {
-      termsAndPrivacyConsent,
-      termsAndPrivacyConsentError,
-      langHandler,
-      dispatch,
-      links,
-    }
-
     return (
       <div className='inputs'>
         <UserTypeRadio {...accountTypeProps} />
@@ -89,7 +76,7 @@ class UserCreateEmailInputs extends React.Component {
           <CountryCodeSelect {...countryCodeProps} />
           <PhoneNumberInput {...phoneNumberProps} />
         </div>
-        <TermsAndPrivacyConsent {...termsAndPrivacyConsentProps} />
+        <TermsOfServiceConsent />
       </div>
     )
   }

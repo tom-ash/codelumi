@@ -12,6 +12,11 @@ declare interface LangObject {
   en: string
 }
 
+export interface LinkObject {
+  href: string
+  hrefLang: string
+}
+
 export interface ValidateVerificationCode {
   (props: { value: string; changeError(props: LangObject): void }): boolean
 }

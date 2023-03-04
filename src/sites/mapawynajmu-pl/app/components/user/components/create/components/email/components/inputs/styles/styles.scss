@@ -3,7 +3,7 @@
 @import '../../../../../../../../../styles/inputs/text';
 @import '../../../../../../../../../styles/inputs/radio';
 @import './country-code-phone-number-container';
-@import './terms-and-privacy-consent';
+// @import './terms-of-service-consent';
 
 #user-create {
   .inputs {
@@ -34,7 +34,10 @@
       }
     }
   }
-  .terms-and-privacy-consent {
-    @extend %terms-and-privacy-consent;
+  .terms-of-service-consent {
+    // @extend %terms-of-service-consent;
+  }
+  .link {
+    display: inline;
   }
 }
