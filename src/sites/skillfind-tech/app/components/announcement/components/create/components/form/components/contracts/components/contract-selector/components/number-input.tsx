@@ -1,22 +1,25 @@
 import React from 'react'
 import { ManagedText } from 'managed-inputs'
+import { useDispatch } from 'react-redux'
 
 interface NumberInputInterface {
-  setStore(newStore: object): void
   valueKey: string
   label: string
   value: number
 }
 
 const NumberInput = (props: NumberInputInterface) => {
-  const { setStore, valueKey, value, label } = props
+  const dispatch = useDispatch()
+  const setInputs = (value: any) => dispatch({ type: 'inputs', value })
+
+  const { valueKey, value, label } = props
 
   const inputProps = {
     classNames: { container: 'form-input text' },
     value: value || '',
     type: 'number',
     label,
-    onChange: (value: string) => setStore({ [valueKey]: +value }),
+    onChange: (value: string) => setInputs({ [valueKey]: +value }),
   }
 
   return <ManagedText {...inputProps} />

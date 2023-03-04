@@ -1,38 +1,37 @@
 import React from 'react'
 import Checkbox from './components/checkbox'
 import NumberInput from './components/number-input'
+import { ContractName } from '../../contracts.types'
 
 interface ContractSelectorInterface {
-  setStore(newStore: object): void
-  contractKey: 'b2b' | 'employment' | 'civilContract'
+  contractKey: ContractName
   contractValue: boolean
   label: string
-  key: number
   contractMin: number
   contractMax: number
 }
 
 const ContractSelectorInterface = (props: ContractSelectorInterface) => {
-  const { contractKey, contractValue, label, setStore, contractMin, contractMax } = props
+  const { contractKey, contractValue, label, contractMin, contractMax } = props
 
   const checkboxProps = {
     contractKey,
     contractValue,
     label,
-    setStore,
+    // setStore,
   }
 
   const minInputProps = {
     valueKey: `${contractKey}Min`,
     value: contractMin,
-    setStore,
+    // setStore,
     label: 'Min.',
   }
 
   const maxInputProps = {
     valueKey: `${contractKey}Max`,
     value: contractMax,
-    setStore,
+    // setStore,
     label: 'Max.',
   }
 

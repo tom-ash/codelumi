@@ -8,9 +8,9 @@ type submitProps = {
   // remote: boolean
   // hybrid: boolean
   // office: boolean
-  // b2b: boolean
-  // b2bMax: number
-  // b2bMin: number
+  b2b: boolean
+  b2bMax: number
+  b2bMin: number
   // employment: boolean
   // employmentMax: number
   // employmentMin: number
@@ -27,9 +27,9 @@ export const submit = (props: submitProps) => {
     // remote,
     // hybrid,
     // office,
-    // b2b,
-    // b2bMax,
-    // b2bMin,
+    b2b,
+    b2bMax,
+    b2bMin,
     // employment,
     // employmentMax,
     // employmentMin,
@@ -43,9 +43,9 @@ export const submit = (props: submitProps) => {
     // remote,
     // hybrid,
     // office,
-    // b2b,
-    // b2bMax,
-    // b2bMin,
+    b2b,
+    b2bMax,
+    b2bMin,
     // employment,
     // employmentMax,
     // employmentMin,

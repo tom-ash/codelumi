@@ -21,15 +21,30 @@ const PostingIndex = () => {
   return (
     <div id='posting-index'>
       {postings.map((posting: any) => {
+
+        const {
+          b2b,
+          b2bMin,
+          b2bMax,
+        } = posting
+
+        console.log(b2b, b2bMin, b2bMax)
+
+
         return (
           <div className='tile' key={posting.id}>
             <div className='company-name'>
               {posting.id}
             </div>
-            {posting.skills.map((skill: any) => {
-              return <Skill key={skill.name} name={skill.name} level={skill.level} view={SkillView.indexVisitor}/>
-            })}
-            <div className='float-clear' />
+            <div className='remuneration'>
+              <strong>{b2bMin} - {b2bMax} PLN</strong>
+            </div>
+            <div className='skills'>
+              {posting.skills.map((skill: any) => {
+                return <Skill key={skill.name} name={skill.name} level={skill.level} view={SkillView.indexVisitor}/>
+              })}
+              <div className='float-clear' />
+            </div>
           </div>
         )
       })}

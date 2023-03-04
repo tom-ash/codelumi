@@ -8,7 +8,7 @@ import { unselectSkillFactory } from './functions/unselect-skill-factory'
 import { SkillProps } from '../../../../../shared/components/skill/skill.types'
 import { SkillView } from '../../../../../shared/components/skill/skill.types'
 
-function SkillSelector() {
+function Skills() {
   useStyles(styles)
 
   const state = useStore().getState()
@@ -40,18 +40,21 @@ function SkillSelector() {
       <h2>{skills}</h2>
       <div id='skill-selector'>
         <div id='selectable-skills'>
-          {selectableSkills.map((skill: SkillProps) => (
-            <Skill
-              {
-                ...{
-                  ...skill,
-                  selectSkill,
-                  view: SkillView.formSelectable,
+          <div className='selectable-skill-input' />
+          <div className='skill-list'>
+            {selectableSkills.map((skill: SkillProps) => (
+              <Skill
+                {
+                  ...{
+                    ...skill,
+                    selectSkill,
+                    view: SkillView.formSelectable,
+                  }
                 }
-              }
-              key={skill.name}
-            />
-          ))}
+                key={skill.name}
+              />
+            ))}
+          </div>
         </div>
         <div id='selected-skills'>
           {selectedSkills.map((skill: SkillProps) => (
@@ -74,4 +77,4 @@ function SkillSelector() {
   )
 }
 
-export default SkillSelector
+export default Skills

@@ -1,11 +1,11 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
-import SkillSelector from './components/skill-selector/skill-selector'
+import Skills from './components/skill-selector/skills'
 import SubmitButton from './components/submit-button'
 import { useStore } from 'react-redux'
 // import Location from './components/location/location'
-// import Contract from './components/contract/contract'
+import { Contracts } from './components/contracts/contracts'
 
 const AnnouncementCreateForm = () => {
   useStyles(styles)
@@ -17,17 +17,15 @@ const AnnouncementCreateForm = () => {
     title,
   } = texts
 
-  console.log(texts)
-
   return (
     <div
       id='listing-create-form'
       className='form'
     >
       <h1>{title}</h1>
-      <SkillSelector />
+      <Skills />
+      <Contracts />
       {/* <Location {...locationProps} /> */}
-      {/* <Contract {...contractProps} /> */}
       <SubmitButton />
     </div>
   )
