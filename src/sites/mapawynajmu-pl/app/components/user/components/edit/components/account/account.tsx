@@ -9,7 +9,7 @@ import { Heading } from '../../../../../support/components/heading'
 import { HEADER_TEXT } from './constants/texts'
 import { Line } from '../../../../../support/components/line/line'
 import { UserEditPassword as Password } from './components/password/password'
-import { UserTypes } from '../../../../types/user.types'
+import { AccountType } from '../../../../types/user.types'
 import { BusinessName } from './business-name/business-name'
 
 class UserEditAccount extends React.Component {
@@ -25,7 +25,7 @@ class UserEditAccount extends React.Component {
     const { businessName, dispatch, accountType, businessNameError } = this.props
     // @ts-ignore
     const headerText = this.langHandler(HEADER_TEXT)
-    const isBusinessUser = accountType === UserTypes.BUSINESS
+    const isBusinessUser = accountType === AccountType.BUSINESS
 
     const businessNameProps = {
       currentValue: businessName,

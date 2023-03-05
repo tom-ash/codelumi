@@ -4,8 +4,8 @@ import Hint from '../../../../../../../support/components/hint/hint'
 import { langHandler } from '../../../../../../../../functions/lang-handler'
 import * as mappers from './constants/mappers'
 import { NAME_AREA_CODE_AND_PHONE_NUMBER_HINT } from './constants/texts'
-import { UserTypeRadio } from './components/account-type/account-type.input'
-import { UserTypes } from '../../../../../../types/user.types'
+import { AccountTypeRadio } from '../../../../../../../../../../shared/app/components/user/components/new/components/account-type/account-type.radio'
+import { AccountType } from '../../../../../../types/user.types'
 
 import { CountryCodeSelect } from './components/country-code/country-code.select'
 import { PhoneNumberInput } from './components/phone-number/phone-number.input'
@@ -44,13 +44,7 @@ class UserCreateEmailInputs extends React.Component {
       dispatch,
     } = this.props
 
-    const isBusinessAccount = accountType === UserTypes.BUSINESS
-
-    const accountTypeProps = {
-      accountType,
-      setInputs,
-      langHandler,
-    }
+    const isBusinessAccount = accountType === AccountType.BUSINESS
 
     const countryCodeProps = {
       countryCode,
@@ -66,7 +60,7 @@ class UserCreateEmailInputs extends React.Component {
 
     return (
       <div className='inputs'>
-        <UserTypeRadio {...accountTypeProps} />
+        <AccountTypeRadio />
         {isBusinessAccount && <BusinessNameInput />}
         <EmailAddressInput />
         <PasswordInput />
