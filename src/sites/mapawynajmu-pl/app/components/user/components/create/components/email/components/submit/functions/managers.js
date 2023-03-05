@@ -3,7 +3,7 @@ import ButtonSpinnerDeprecated from '../../../../../../../../support/components/
 import sendGaEvent from '../../../../../../../../../functions/google-analytics/send-ga-event'
 import { analyticEvent } from '../constants/analytic-event'
 import createUser from './create-user'
-import { buildUserObject } from './adapters'
+import { buildUserObject } from './build-user-object'
 
 export function buttonManager() {
   const { connecting } = this.props
