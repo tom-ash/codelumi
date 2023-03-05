@@ -7,13 +7,12 @@ import { NAME_AREA_CODE_AND_PHONE_NUMBER_HINT } from './constants/texts'
 import { AccountTypeRadio } from '../../../../../../../../../../shared/app/components/user/components/new/components/account-type/account-type.radio'
 import { AccountType } from '../../../../../../types/user.types'
 
-import { CountryCodeSelect } from './components/country-code/country-code.select'
 import { PhoneNumberInput } from './components/phone-number/phone-number.input'
-
 
 import { BusinessNameInput } from '../../../../../../../../../../shared/app/components/user/components/new/components/business-name/business-name.input'
 import { EmailAddressInput } from '../../../../../../../../../../shared/app/components/user/components/new/components/email-address/email-address.input'
 import { PasswordInput } from '../../../../../../../../../../shared/app/components/user/components/new/components/password/password.input'
+import { CountryCodeSelect } from '../../../../../../../../../../shared/app/components/user/components/new/components/country-code/country-code.select'
 import { TermsOfServiceConsent } from '../../../../../../../../../../shared/app/components/user/components/new/components/terms-of-service-consent/terms-of-service-consent'
 
 class UserCreateEmailInputs extends React.Component {
@@ -31,13 +30,9 @@ class UserCreateEmailInputs extends React.Component {
       // @ts-ignore
       accountType,
       // @ts-ignore
-      countryCode,
-      // @ts-ignore
       phoneNumber,
       // @ts-ignore
       phoneNumberError,
-      // @ts-ignore
-      setInputs,
       // @ts-ignore
       langHandler,
       // @ts-ignore
@@ -45,11 +40,6 @@ class UserCreateEmailInputs extends React.Component {
     } = this.props
 
     const isBusinessAccount = accountType === AccountType.BUSINESS
-
-    const countryCodeProps = {
-      countryCode,
-      dispatch,
-    }
 
     const phoneNumberProps = {
       phoneNumber,
@@ -67,7 +57,7 @@ class UserCreateEmailInputs extends React.Component {
         {/* @ts-ignore */}
         <Hint text={this.langHandler(NAME_AREA_CODE_AND_PHONE_NUMBER_HINT)} />
         <div className='country-code-phone-number-container'>
-          <CountryCodeSelect {...countryCodeProps} />
+          <CountryCodeSelect />
           <PhoneNumberInput {...phoneNumberProps} />
         </div>
         <TermsOfServiceConsent />
