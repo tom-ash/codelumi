@@ -4,7 +4,20 @@ import { buildUserObject } from '../../../../../../user/components/create/compon
 import buildAnouncement from '../../../functions/build-announcement'
 
 export function publish() {
-  const { authorized, setControl, setData } = this.props
+  const {
+    authorized,
+    setControl,
+    setData,
+    setErrors,
+    accountType,
+    businessName,
+    emailAddress,
+    password,
+    countryCode,
+    phoneNumber,
+    termsOfServiceConsent,
+    termsOfServiceConsentLabel,
+  } = this.props
 
   const announcementObject = {
     // category: this.categoryManager().validate(),
@@ -13,7 +26,17 @@ export function publish() {
   }
 
   const announcement = buildAnouncement.call(this)
-  const user = authorized ? {} : buildUserObject.call(this)
+  const user = authorized ? {} : buildUserObject({
+    accountType,
+    businessName,
+    emailAddress,
+    password,
+    countryCode,
+    phoneNumber,
+    termsOfServiceConsent,
+    termsOfServiceConsentLabel,
+    setErrors,
+  })
 
   if (!Object.values(announcementObject).every(element => element)) {
     for (let i = 0; i < requiredInputsArray.length; i++) {

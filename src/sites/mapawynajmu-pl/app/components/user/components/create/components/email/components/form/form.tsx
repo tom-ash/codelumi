@@ -11,9 +11,6 @@ import { TermsOfServiceConsent } from '../../../../../../../../../../shared/app/
 import { SubmitButton } from './components/submit-button'
 import { useStore } from '../../../../../../../../../../shared/app/functions/store/useStore'
 
-{/* {!renderAnnouncementCreate && <Line />}
-{!renderAnnouncementCreate && <Submit />} */}
-
 export const UserNewEmailForm = () => {
   const { state } = useStore()
   const { render, texts, inputs } = state
