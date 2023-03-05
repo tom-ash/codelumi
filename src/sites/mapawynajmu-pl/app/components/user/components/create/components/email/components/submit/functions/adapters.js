@@ -1,10 +1,9 @@
-import { hashPassword } from '../../../../../../../functions/shared'
-import { phoneNumberValidator } from '../../inputs/components/phone-number/phone-number.validator'
-
 import { businessNameValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/business-name/business-name.validator'
 import { emailAddressValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/email-address/email-address.validator'
 import { passwordValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/password/password.validator'
+import { phoneNumberValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/phone-number/phone-number.validator'
 import { termsOfServiceConsentValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/terms-of-service-consent/terms-of-service-consent.validator'
+import { hashPassword } from '../../../../../../../functions/shared'
 import { termsOfServiceConsentParser } from '../../../../../../../../../../../shared/app/components/user/components/new/components/terms-of-service-consent/terms-of-service-consent.parser'
 
 export function buildUserObject() {
@@ -50,10 +49,8 @@ function validateUserObject(userObject) {
   const validationArray = [
     emailAddressValidator({ emailAddress, setErrors }),
     passwordValidator({ password, setErrors }),
+    phoneNumberValidator({ phoneNumber, setErrors }),
     termsOfServiceConsentValidator({ termsOfServiceConsent, setErrors }),
-
-    // DEPRECATED
-    phoneNumberValidator({ phoneNumber, dispatch }),
   ]
 
   if (userObject.accountType === 'business') {
