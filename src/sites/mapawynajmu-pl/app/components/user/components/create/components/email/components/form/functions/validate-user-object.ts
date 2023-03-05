@@ -3,15 +3,20 @@ import { emailAddressValidator } from '../../../../../../../../../../../shared/a
 import { passwordValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/password/password.validator'
 import { phoneNumberValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/phone-number/phone-number.validator'
 import { termsOfServiceConsentValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/terms-of-service-consent/terms-of-service-consent.validator'
+import { AccountType } from '../../../../../../../types/user.types'
+import { UserObject } from '../form.types'
 
-// @ts-ignore
-export function validateUserObject(userObject) {
-  // @ts-ignore
-  const { dispatch } = this.props
-  const { businessName, emailAddress, password, phoneNumber, termsOfServiceConsent } = userObject
+interface ValidateUserObject {
+  (args: {
+    userObject: UserObject
+    setErrors(args: object): void
+  }): boolean
+}
 
-  // @ts-ignore
-  const setErrors = (value) => dispatch({ type: 'errors', value })
+export const validateUserObject: ValidateUserObject = (args) => {
+  const { userObject, setErrors } = args
+  const { accountType, businessName, emailAddress, password, phoneNumber, termsOfServiceConsent } = userObject
+
 
   const validationArray = [
     emailAddressValidator({ emailAddress, setErrors }),
@@ -20,7 +25,8 @@ export function validateUserObject(userObject) {
     termsOfServiceConsentValidator({ termsOfServiceConsent, setErrors }),
   ]
 
-  if (userObject.accountType === 'business') {
+  if (accountType === AccountType.BUSINESS) {
+    // @ts-ignore
     validationArray.concat([businessNameValidator({ businessName, setErrors })])
   }
 

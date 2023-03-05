@@ -1,13 +1,11 @@
 import React from 'react'
-import { useStore, useDispatch } from 'react-redux'
 import { ManagedText } from 'managed-inputs'
 import { businessNameValidator } from './business-name.validator'
+import { useStore } from '../../../../../../functions/store/useStore'
 
 export const BusinessNameInput = () => {
-  const dispatch = useDispatch()
-  const setInputs = (value: any) => dispatch({ type: 'inputs', value })
-  const setErrors = (value: any) => dispatch({ type: 'errors', value })
-  const { texts, inputs, errors } = useStore().getState()
+  const { state, dispatch } = useStore()
+  const { texts, inputs, errors } = state
   const {
     businessNameInputLabel: label,
     businessNameInputPlaceholder: placeholder,
@@ -18,6 +16,8 @@ export const BusinessNameInput = () => {
   const classNames = { container: 'text-input' }
   const value = businessName
   const error = businessNameInvalidErrorTriggered && businessNameInvalidError
+  const setInputs = (value: any) => dispatch({ type: 'inputs', value })
+  const setErrors = (value: any) => dispatch({ type: 'errors', value })
   const onChange = (businessName: string) => setInputs({ businessName })
   const onFocus = () => dispatch({ type: 'errors', value: { businessName: false } })
   const onBlur = (businessName: string) => businessNameValidator({ businessName, setErrors })

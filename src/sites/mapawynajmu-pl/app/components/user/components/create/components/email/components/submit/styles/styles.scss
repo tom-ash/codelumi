@@ -1,9 +1,0 @@
-@import '../../../../../../../../../styles/themes';
-@import '../../../../../../../../../styles/inputs/button';
-
-#user-create-email-submit {
-  padding: 18px 0;
-  .button {
-    @extend %button;
-  }
-}

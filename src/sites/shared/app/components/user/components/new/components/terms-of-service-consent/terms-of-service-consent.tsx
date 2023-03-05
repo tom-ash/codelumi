@@ -1,9 +1,10 @@
 import React from 'react'
-import { useStore } from 'react-redux'
 import { TermsOfServiceConsentCheckbox } from './terms-of-service-consent.checkbox'
+import { useStore } from '../../../../../../functions/store/useStore'
 
 export const TermsOfServiceConsent = () => {
-  const { texts, errors } = useStore().getState()
+  const { state } = useStore()
+  const { texts, errors } = state
   const { termsOfServiceConsentNotGrantedError } = texts
   const { termsOfServiceConsent: termsOfServiceConsentErrorTriggered } = errors
 

@@ -1,13 +1,13 @@
 import React from 'react'
-import { useStore, useDispatch } from 'react-redux'
 import { ManagedText } from 'managed-inputs'
 import { emailAddressValidator } from './email-address.validator'
+import { useStore } from '../../../../../../functions/store/useStore'
 
 export const EmailAddressInput = () => {
-  const dispatch = useDispatch()
+  const { state, dispatch } = useStore()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
-  const { texts, inputs, errors } = useStore().getState()
+  const { texts, inputs, errors } = state
   const { emailAddress } = inputs
   const {
     emailInputLabel: label,

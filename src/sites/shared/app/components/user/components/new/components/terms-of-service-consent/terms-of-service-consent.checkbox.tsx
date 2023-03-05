@@ -1,14 +1,12 @@
 import React from 'react'
-import { useStore, useDispatch } from 'react-redux'
 import { ManagedCheckbox } from 'managed-inputs'
 import { termsOfServiceConsentValidator } from './terms-of-service-consent.validator'
 import { TermsOfServiceConsentLabel } from './terms-of-service-consent.label'
+import { useStore } from '../../../../../../functions/store/useStore'
 
 export const TermsOfServiceConsentCheckbox = () => {
-  const dispatch = useDispatch()
-  const setInputs = (value: any) => dispatch({ type: 'inputs', value })
-  const setErrors = (value: any) => dispatch({ type: 'errors', value })
-  const { texts, links, inputs } = useStore().getState()
+  const { state, dispatch } = useStore()
+  const { texts, links, inputs } = state
   const { termsOfServiceConsent } = inputs
   const {
     termsOfServiceConsentSyntheticLabel,
@@ -16,6 +14,8 @@ export const TermsOfServiceConsentCheckbox = () => {
   } = texts
   const classNames = { container: 'form-input checkbox' }
   const checked = termsOfServiceConsent
+  const setInputs = (value: any) => dispatch({ type: 'inputs', value })
+  const setErrors = (value: any) => dispatch({ type: 'errors', value })
   const onClick = (termsOfServiceConsent: boolean) => {
     setInputs({ termsOfServiceConsent })
     termsOfServiceConsentValidator({ termsOfServiceConsent, setErrors })

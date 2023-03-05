@@ -1,14 +1,11 @@
 import React from 'react'
-import { useStore, useDispatch } from 'react-redux'
 import { ManagedText } from 'managed-inputs'
 import { phoneNumberValidator } from './phone-number.validator'
-import { EMPTY_LANG_OBJECT } from '../../../../../../../../mapawynajmu-pl/app/constants/lang-objects/empty'
+import { useStore } from '../../../../../../functions/store/useStore'
 
 export const PhoneNumberInput = () => {
-  const dispatch = useDispatch()
-  const setInputs = (value: any) => dispatch({ type: 'inputs', value })
-  const setErrors = (value: any) => dispatch({ type: 'errors', value })
-  const { texts, inputs, errors } = useStore().getState()
+  const { state, dispatch } = useStore()
+  const { texts, inputs, errors } = state
   const { phoneNumber } = inputs
   const {
     phoneNumberInputLabel: label,
@@ -22,6 +19,8 @@ export const PhoneNumberInput = () => {
   const autoComplete = 'tel-local'
   const value = phoneNumber
   const error = phoneNumberInvalidErrorTriggered && phoneNumberInvalidError
+  const setInputs = (value: any) => dispatch({ type: 'inputs', value })
+  const setErrors = (value: any) => dispatch({ type: 'errors', value })
   const onFocus = () => setErrors({ phoneNumber: false })
   const onBlur = (phoneNumber: string) => phoneNumberValidator({ phoneNumber, setErrors })
   const onChange = (phoneNumber: string) => setInputs({ phoneNumber })

@@ -28,9 +28,6 @@ const PostingIndex = () => {
           b2bMax,
         } = posting
 
-        console.log(b2b, b2bMin, b2bMax)
-
-
         return (
           <div className='tile' key={posting.id}>
             <div className='company-name'>
