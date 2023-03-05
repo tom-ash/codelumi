@@ -17,7 +17,6 @@ export const validateUserObject: ValidateUserObject = (args) => {
   const { userObject, setErrors } = args
   const { accountType, businessName, emailAddress, password, phoneNumber, termsOfServiceConsent } = userObject
 
-
   const validationArray = [
     emailAddressValidator({ emailAddress, setErrors }),
     passwordValidator({ password, setErrors }),

@@ -1,16 +1,23 @@
 import API_URL from '../../../../../../../../../../shared/constants/urls/api'
 import setVerificationToken from '../../../../../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
 import { buildUrl } from '../../../../../../../../../../shared/functions/builders/url'
+import { UserObject } from '../form.types'
 
-// @ts-ignore
-export function postUserObject(userObject) {
-  // @ts-ignore
-  const { lang, setControl } = this.props
+interface PostUserObject {
+  (args: {
+    userObject: UserObject
+    lang: Lang
+    changeRoute: ChangeRoute
+  }): void
+}
+
+export const postUserObject: PostUserObject = (args) => {
+  const { userObject, lang, changeRoute } = args
 
   fetch(API_URL + '/user/create/email-and-password', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Lang: lang },
-    body: JSON.stringify({ ...userObject }),
+    body: JSON.stringify(userObject),
   })
   .then(
     response => {
@@ -21,8 +28,6 @@ export function postUserObject(userObject) {
     networkError => console.dir(networkError.message)
   )
   .then(jsonResponse => {
-    // @ts-ignore
-    const { changeRoute } = this.context
     const { verificationToken, path } = jsonResponse
 
     setVerificationToken(verificationToken)

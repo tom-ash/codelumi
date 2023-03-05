@@ -5,8 +5,6 @@ import { useStore } from '../../../../../../functions/store/useStore'
 
 export const EmailAddressInput = () => {
   const { state, dispatch } = useStore()
-  const setInputs = (value: any) => dispatch({ type: 'inputs', value })
-  const setErrors = (value: any) => dispatch({ type: 'errors', value })
   const { texts, inputs, errors } = state
   const { emailAddress } = inputs
   const {
@@ -20,6 +18,8 @@ export const EmailAddressInput = () => {
   const autoComplete = 'email'
   const value = emailAddress
   const error = emailInvalidErrorTriggered && emailInvalidError
+  const setInputs = (value: any) => dispatch({ type: 'inputs', value })
+  const setErrors = (value: any) => dispatch({ type: 'errors', value })
   const onFocus = () => setErrors({ emailAddress: false })
   const onBlur = (emailAddress: string) => emailAddressValidator({ emailAddress, setErrors })
   const onChange = (emailAddress: string) => setInputs({ emailAddress })

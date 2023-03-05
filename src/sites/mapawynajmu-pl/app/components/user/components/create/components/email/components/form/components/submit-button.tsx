@@ -1,20 +1,19 @@
-import React from 'react'
-import { useStore, useDispatch } from 'react-redux'
-import ButtonSpinnerDeprecated from '../../../../../../../../support/components/button-spinner/button-spinner'
+import React, { useContext } from 'react'
 import { postUserObject } from '../functions/post-user-object'
 import { buildUserObject } from '../functions/build-user-object'
 import { ManagedButton } from 'managed-inputs'
-
-
+import { useStore } from '../../../../../../../../../../../shared/app/functions/store/useStore'
+import { ButtonSpinner } from '../../../../../../../../support/components/button-spinner/button-spinner'
+import AppContext from '../../../../../../../../../constants/context'
 
 export const SubmitButton = () => {
-
-  const dispatch = useDispatch()
-  // const setControl = (value: any) => dispatch({ type: 'control', value })
-  const setErrors = (value: any) => dispatch({ type: 'errors', value })
-  const { texts, inputs } = useStore().getState()
+  const { changeRoute } = useContext(AppContext)
+  const { state, dispatch } = useStore()
+  const { app, texts, control, inputs } = state
+  const { lang } = app
+  const { termsOfServiceConsentLabel, signUp } = texts
+  const { connecting } = control
   const {
-    termsOfServiceConsentLabel,
     accountType,
     businessName,
     emailAddress,
@@ -24,18 +23,16 @@ export const SubmitButton = () => {
     termsOfServiceConsent,
   } = inputs
   const classNames = { container: 'button' }
-
-  const label = 'REGISTER'
-  // const label = (
-  //   // @ts-ignore
-  //   // <ButtonSpinnerDeprecated
-  //   //   // connecting={connecting}
-  //   //   label={{ pl: 'Zarejestruj', en: 'Register' }}
-  //   //   // @ts-ignore
-  //   //   // langHandler={this.langHandler}
-  //   // />
-  // )
+  const buttonSpinnerProps = {
+    connecting,
+    label: signUp
+  }
+  const label = <ButtonSpinner {...buttonSpinnerProps} />
+  const setControl = (value: any) => dispatch({ type: 'control', value })
+  const setErrors = (value: any) => dispatch({ type: 'errors', value })
   const onClick = () => {
+    setControl({ connecting: true })
+
     const userObject = buildUserObject({
       termsOfServiceConsentLabel,
       accountType,
@@ -48,12 +45,13 @@ export const SubmitButton = () => {
       setErrors,
     })
 
-    if (!userObject) return
+    if (!userObject) return setControl({ connecting: false })
 
-    // postUserObject.call(this, userObject)
+    postUserObject({ userObject, lang, changeRoute })
   }
 
   const buttonProps = {
+    disabled: connecting,
     classNames,
     label,
     onClick,

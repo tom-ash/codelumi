@@ -16,9 +16,10 @@ import { useStore } from '../../../../../../../../../../shared/app/functions/sto
 
 export const UserNewEmailForm = () => {
   const { state } = useStore()
-  const { texts, inputs } = state
+  const { render, texts, inputs } = state
   const { phoneNumberExplanation } = texts
   const { accountType } = inputs
+  const userNewForm = render['user/create/form']
 
   const isBusinessAccount = accountType === AccountType.BUSINESS
 
@@ -35,7 +36,7 @@ export const UserNewEmailForm = () => {
         <PhoneNumberInput />
       </div>
       <TermsOfServiceConsent />
-      <SubmitButton />
+      {userNewForm && <SubmitButton />}
     </form>
   )
 }
