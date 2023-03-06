@@ -1,8 +1,9 @@
 import React from 'react'
 import { useStore } from '../../../../../../../../shared/app/functions/store/useStore'
-import { UserNewEmailForm as Form } from './components/form/form'
-import Verification from './components/verify/verify'
-import { Confirmation } from './components/confirmation/confirmation'
+import loadable from '@loadable/component'
+const Form = loadable(() => import('./components/form/form'))
+const Verification = loadable(() => import('./components/verification/verification'))
+const Confirmation = loadable(() => import('./components/confirmation/confirmation'))
 
 export const UserNewEmail = () => {
   const { state } = useStore()

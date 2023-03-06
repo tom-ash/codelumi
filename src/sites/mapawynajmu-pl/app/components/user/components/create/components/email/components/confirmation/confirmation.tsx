@@ -6,7 +6,7 @@ import { Line } from '../../../../../../../support/components/line/line'
 import { Link } from '../../../../../../../announcement/components/common/link/link'
 import SVG from '../../../../../../../support/components/svg/svg'
 
-export const Confirmation = () => {
+const Confirmation = () => {
   useStyles(styles)
 
   const {
@@ -59,3 +59,5 @@ export const Confirmation = () => {
     </div>
   )
 }
+
+export default Confirmation

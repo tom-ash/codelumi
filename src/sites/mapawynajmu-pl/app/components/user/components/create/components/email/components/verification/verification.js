@@ -10,7 +10,7 @@ import AppContext from '../../../../../../../../constants/context'
 import { Heading } from '../../../../../../../support/components/heading'
 import { PAGE_HEADER } from './constants/texts'
 
-class UserCreateEmailVerify extends React.Component {
+class UserNewEmailVerification extends React.Component {
   constructor(props) {
     super(props)
     this.verify = verify.bind(this)
@@ -37,4 +37,4 @@ class UserCreateEmailVerify extends React.Component {
   }
 }
 
-export default connect(mappers.mapStateToProps, mappers.mapDispatchToProps)(UserCreateEmailVerify)
+export default connect(mappers.mapStateToProps, mappers.mapDispatchToProps)(UserNewEmailVerification)

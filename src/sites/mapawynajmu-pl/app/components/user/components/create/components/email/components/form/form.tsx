@@ -13,7 +13,7 @@ import { useStore } from '../../../../../../../../../../shared/app/functions/sto
 import { Heading } from '../../../../../../../support/components/heading'
 import { Line } from '../../../../../../../support/components/line/line'
 
-export const UserNewEmailForm = () => {
+const UserNewEmailForm = () => {
   const { state } = useStore()
   const { render, texts, inputs } = state
   const { phoneNumberExplanation, headingOne } = texts
@@ -45,3 +45,5 @@ export const UserNewEmailForm = () => {
     </form>
   )
 }
+
+export default UserNewEmailForm
