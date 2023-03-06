@@ -1,6 +1,5 @@
 @import '../../../../../../../../../styles/inputs/form/svgs';
 @import '../../../../../../../../../styles/colors';
-@import '../../../../../../../../../styles/inputs/text';
 @import '../../../../../../../../../styles/inputs/radio';
 @import './country-code-phone-number-container';
 @import './terms-of-service-consent';
@@ -21,9 +20,9 @@
       font-size: 14px;
       margin-bottom: 12px;
     }
-    .text-input {
-      @extend %text-input;
-    }
+    // .text-input {
+    //   @extend %text-input;
+    // }
     .country-code-phone-number-container {
       @extend %country-code-phone-number-container;
     }
