@@ -10,15 +10,15 @@
 #user-create {
   .inputs {
     padding: 0 32px;
-    padding-top: 24px;
+    padding-top: 18px;
     h2 {
       font-size: 15px;
       color: $TEXT-HEADER-TIER-TWO-COLOR;
     }
     .hint {
       color: #1f618d;
-      line-height: 16px;
-      font-size: 12px;
+      line-height: 18px;
+      font-size: 14px;
       margin-bottom: 12px;
     }
     .text-input {
@@ -41,6 +41,13 @@
   }
   .link {
     display: inline;
+  }
+  h1 {
+    margin: 0 0 12px;
+  }
+  .line {
+    @extend %line;
+    margin-bottom: 24px
   }
   .button {
     @extend %button;

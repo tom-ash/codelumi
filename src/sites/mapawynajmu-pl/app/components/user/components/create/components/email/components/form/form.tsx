@@ -10,18 +10,26 @@ import { PhoneNumberInput } from '../../../../../../../../../../shared/app/compo
 import { TermsOfServiceConsent } from '../../../../../../../../../../shared/app/components/user/components/new/components/terms-of-service-consent/terms-of-service-consent'
 import { SubmitButton } from './components/submit-button'
 import { useStore } from '../../../../../../../../../../shared/app/functions/store/useStore'
+import { Heading } from '../../../../../../../support/components/heading'
+import { Line } from '../../../../../../../support/components/line/line'
 
 export const UserNewEmailForm = () => {
   const { state } = useStore()
   const { render, texts, inputs } = state
-  const { phoneNumberExplanation } = texts
+  const { phoneNumberExplanation, headingOne } = texts
   const { accountType } = inputs
   const userNewForm = render['user/create/form']
-
   const isBusinessAccount = accountType === AccountType.BUSINESS
+  const headingOneProps = { tier: 1, text: headingOne }
 
   return (
     <form className='inputs'>
+      {userNewForm && (
+      <>
+        {/* @ts-ignore */}
+        <Heading {...headingOneProps} />
+        <Line />
+      </>)}
       <AccountTypeRadio />
       {isBusinessAccount && <BusinessNameInput />}
       <EmailAddressInput />

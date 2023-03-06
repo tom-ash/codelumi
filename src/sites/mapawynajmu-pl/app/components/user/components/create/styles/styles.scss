@@ -12,8 +12,4 @@
   padding-top: 96px;
   padding-bottom: 96px;
   background: $BACKGROUND-LIGHT-GRAYISH-COLOR;
-  .line {
-    @extend %line;
-    margin: 0 32px;
-  }
 }
