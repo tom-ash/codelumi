@@ -46,7 +46,7 @@ export function publish() {
     }
   }
 
-  if (!authorized && !user) return scrollToElement(document.getElementById('user-create-email-first-name'), 12, -160)
+  if (!authorized && !user) return scrollToElement(document.getElementById('user-new-email-first-name'), 12, -160)
 
   setData({ announcement, user })
   setControl({ step: 'publishing' })

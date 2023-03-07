@@ -28,15 +28,17 @@ const Confirmation = () => {
   }
 
   return (
-    <div id='user-create-confirmation'>
+    <div id='user-new-confirmation'>
       <h1>{h1}</h1>
       <Line />
       <div>{congratulations}</div>
-      <div className='checkmark-circle'>
-        {/* @ts-ignore */}
-        <SVG name='check' />
+      <div className='checkmark-circle-container'>
+        <div className='checkmark-circle'>
+          {/* @ts-ignore */}
+          <SVG name='check' />
+        </div>
+        <div>{accountCreated}</div>
       </div>
-      <div>{accountCreated}</div>
       {accountType === 'business' && (
         <>
           <Line />

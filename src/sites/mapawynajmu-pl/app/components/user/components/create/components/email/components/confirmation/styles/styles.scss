@@ -1,17 +1,13 @@
 @import '../../../../../../../../../styles/themes';
 
-#user-create-confirmation {
-  h1 {
-    margin: 12px 0;
-  }
-  .line {
-    margin-bottom: 24px !important;
-  }
+#user-new-confirmation {
+  padding: 32px;
   > div {
-    padding: 0 24px;
-    margin-bottom: 24px;
     text-align: center;
     font-size: 15px;
+  }
+  .checkmark-circle-container {
+    margin-bottom: 24px;
   }
   .checkmark-circle {
     width: 64px;

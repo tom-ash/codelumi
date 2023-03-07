@@ -1,46 +1,32 @@
 @import '../../../../../../../styles/container';
 @import '../../../../../../../styles/headings/h1';
 @import '../../../../../../../styles/inputs/text';
+@import '../../../../../../../styles/inputs/button';
 
-#user-create-email {
+#user-new-email {
   @extend %container;
   h1 {
     @extend %h1;
+    margin-bottom: 28px
+  }
+  .line {
+    @extend %line;
+    margin-bottom: 24px
   }
   .text-input {
     @extend %text-input;
+  }
+  .button {
+    @extend %button;
   }
 }
 
 #user-new-email-verification {
   padding: 32px;
-  h1 {
-    height: 12px;
-    line-height: 12px;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 32px;
-    color: #2471A3;
-  }
-  .line {
-    margin-bottom: 32px;
-  }
   .explanation {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     line-height: 20px;
     font-size: 15px;
     color: #34495E;
-  }
-  .text-input {
-    margin-bottom: 32px;
-  }
-  .button {
-    margin: 0;
-    .input {
-      border: none;
-      background: #2471A3;
-      color: white;
-      font-size: 14px;
-    }
   }
 }

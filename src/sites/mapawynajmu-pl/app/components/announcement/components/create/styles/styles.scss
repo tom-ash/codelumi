@@ -1,13 +1,11 @@
 @import '../../../../../styles/themes';
 @import '../../../../../styles/colors';
 @import '../../../../../styles//dimensions';
-
 @import '../../../../../styles/inputs/form/svgs';
 @import '../../../../../styles/inputs/form/checkbox';
 @import '../../../../../styles/inputs/form/textarea';
 @import '../../../../../styles/inputs/form/button';
 @import '../../../../../styles/line';
-
 @import '../components/pictures/styles/styles';
 @import '../components/additional/styles/styles';
 @import '../components/features/styles/styles';
@@ -16,37 +14,31 @@
 @import '../components/publishing/styles/styles';
 @import '../../../../../../../shared/app/styles/lined-heading';
 @import './category';
+@import '../../../../../styles/container';
 @import '../../../../../styles/inputs/text';
 @import '../../../../../styles/inputs/select';
 @import '../../../../../styles/inputs/button';
 @import '../../../../../styles/inputs/radio';
 @import '../../../../../styles/headings/h1';
-@import '../../../../user/components/create/components/email/components/form/styles/country-code-phone-number-container';
-@import '../../../../user/components/create/components/email/components/form/styles/terms-of-service-consent';
 
 #listing-create {
-  margin-bottom: 32px;
-  position: relative;
-  padding-top: 38px;
-  padding-bottom: 120px;
-  background: $BACKGROUND-LIGHT-GRAYISH-COLOR;
-  #listing-create-user {
-    padding: 0 24px 24px;
-    #user-create-email {
-      margin: 0;
-    }
-    .hint {
-      max-width: 280px;
-      line-height: 17px;
+  #listing-new-form {
+    @extend %container;
+    margin: 64px auto;
+    max-width: 640px;
+    padding: 32px;
+  }
+  #listing-new-user {
+    max-width: 280px;
+    padding: 0;
+  }
+  #user-new-email {
+    margin: 0;
+    box-shadow: none;
+    #user-new-form {
+      padding: 0;
     }
   }
-
-  .terms-of-service-consent {
-    @extend %terms-of-service-consent;
-    margin-left: 0;
-    padding-left: 0;
-  }
-
   .text-input {
     @extend %text-input;
     &.area {
@@ -61,42 +53,14 @@
   .select-element {
     @extend %select-element;
   }
-
   .text-input,
   .select-element {
     max-width: 280px;
   }
-
-  .country-code-phone-number-container {
-    @extend %country-code-phone-number-container;
-    max-width: 280px;
-  }
-
-  .account-type {
-    @extend %radio;
-    margin-bottom: 24px;
-    width: 140px;
-    .input {
-      margin-right: 6px;
-    }
-    .label {
-      line-height: 15px;
-      font-size: 15px;
-    }
-  }
-
-  #form-container {
-    background: white;
-    max-width: 640px;
-    margin: 0 auto 128px;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-
   h1 {
     @extend %h1;
+    margin-bottom: 28px
   }
-
   h2 {
     margin: 24px 0 18px;
     background: white;
@@ -178,13 +142,6 @@
     color: #566573;
     font-size: 14px;
   }
-
-  .reach-more {
-    text-align: center;
-    margin-top: 24px;
-    color: #154360;
-  }
-
   .go-to-announcement {
     text-align: center;
     margin-top: 48px;
@@ -193,7 +150,6 @@
     color: #707b7c;
     cursor: pointer;
   }
-
   .info,
   .hint {
     display: inline-block;
@@ -201,10 +157,9 @@
     font-size: 12px;
     color: #1f618d;
   }
-
   .submit-button {
     @extend %button;
-    padding: 18px 0;
+    margin-top: 24px;
     .input {
       width: 136px;
     }

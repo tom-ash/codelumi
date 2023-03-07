@@ -109,7 +109,7 @@ class AnnouncementCreate extends React.Component {
         className={step}
       >
         {(renderForm || renderEdit) && (
-          <div id='form-container'>
+          <div id='listing-new-form'>
             <h1>{headerText}</h1>
             <Line />
             <form>
@@ -133,7 +133,7 @@ class AnnouncementCreate extends React.Component {
               </div>
               <Line />
               {!authorized && (
-                <div id='listing-create-user'>
+                <div id='listing-new-user'>
                   <Heading
                     tier={2}
                     text={this.langHandler({

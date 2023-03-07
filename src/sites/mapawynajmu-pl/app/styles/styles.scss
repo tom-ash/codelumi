@@ -151,8 +151,9 @@ input {
     line-height: 28px;
     font-size: 14px;
     text-align: center;
+    cursor: default;
     &.preselected {
-      background: #d1f2eb;
+      background: #D6EAF8;
     }
   }
 }

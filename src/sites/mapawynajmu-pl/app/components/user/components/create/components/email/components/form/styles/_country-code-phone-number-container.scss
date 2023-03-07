@@ -21,5 +21,8 @@
   }
   .phone-number {
     margin-left: 88px;
+    .label {
+      margin-left: -88px;
+    }
   }
 }

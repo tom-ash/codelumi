@@ -23,7 +23,7 @@ const UserNewEmailForm = () => {
   const headingOneProps = { tier: 1, text: headingOne }
 
   return (
-    <form className='inputs'>
+    <form id='user-new-form'>
       {userNewForm && (
       <>
         {/* @ts-ignore */}

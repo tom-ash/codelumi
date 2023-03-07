@@ -2,16 +2,17 @@
 
 %terms-of-service-consent {
   width: 100%;
-  padding-bottom: 18px;
+  margin-bottom: 24px;
   .checkbox.form-input {
     margin-bottom: 0;
     > .input {
       transform: scale(0.8);
-      top: .5px;
+      top: 1px;
     }
     > .label {
-      left: 10px;
-      font-size: 14px;
+      // TODO: Change to 14px.
+      left: 12px;
+      font-size: 13.25px;
     }
   }
   .error {
