@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { ManagedButton } from 'managed-inputs'
-import { useStore } from '../../../../../../../../../../../../shared/app/functions/store/useStore'
-import { ButtonSpinner } from '../../../../../../../../../support/components/button-spinner/button-spinner'
-import AppContext from '../../../../../../../../../../constants/context'
+import { useStore } from '../../../../../../../../functions/store/useStore'
+import { ButtonSpinner } from '../../../../../../../../../../mapawynajmu-pl/app/components/support/components/button-spinner/button-spinner'
+import AppContext from '../../../../../../../../../../mapawynajmu-pl/app/constants/context'
 import { verificationCodeValidator } from '../verification-code/verification-code.validator'
 import { putVerificationCode } from '../../functions/put-verification-code'
 

@@ -1,7 +1,7 @@
-import API_URL from '../../../../../../../../../../shared/constants/urls/api'
+import API_URL from '../../../../../../../../../mapawynajmu-pl/shared/constants/urls/api'
 // import { saveTokens } from '../../../../../../../functions/token-handlers'
-import getCookieValue from '../../../../../../../../../../../shared/app/functions/cookies/getters/get-cookie-value'
-import { saveCookie } from '../../../../../../../../../functions/cookie-handlers'
+import getCookieValue from '../../../../../../../functions/cookies/getters/get-cookie-value'
+import { saveCookie } from '../../../../../../../../../mapawynajmu-pl/app/functions/cookie-handlers'
 
 interface PutVerificationCode {
   (args: {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { ManagedText } from 'managed-inputs'
-import { useStore } from '../../../../../../../../../../../../shared/app/functions/store/useStore'
+import { useStore } from '../../../../../../../../functions/store/useStore'
 import { verificationCodeValidator } from './verification-code.validator'
 
 export const VerificationCodeInput = () => {
