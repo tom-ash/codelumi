@@ -21,7 +21,7 @@ import styles from './styles/styles.scss'
 import AvailabilityDate from './components/availability_date/availability_date'
 import { H1, ADDITIONAL_DATA_HEADER } from './constants/texts'
 import { Heading } from '../../../support/components/heading'
-import UserCreate from '../../../user/components/create/create'
+import UserNew from '../../../user/components/new/new'
 import UserCreateEmailVerify from '../../../../../../shared/app/components/user/components/new/components/verification/verification.tsx'
 import AppContext from '../../../../constants/context'
 import Category from './components/category'
@@ -141,7 +141,7 @@ class AnnouncementCreate extends React.Component {
                       en: 'Account Data (required)',
                     })}
                   />
-                  <UserCreate />
+                  <UserNew />
                 </div>
               )}
               <Line />

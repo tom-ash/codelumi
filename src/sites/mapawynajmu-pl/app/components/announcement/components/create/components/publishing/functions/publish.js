@@ -1,6 +1,6 @@
 import scrollToElement from '../../../../../../../../../shared/app/functions/screen/scrollers/to-element'
 import { requiredInputs, requiredInputsArray } from '../../../constants/required-inputs'
-import { buildUserObject } from '../../../../../../user/components/create/components/email/components/form/functions/build-user-object'
+import { buildUserObject } from '../../../../../../user/components/new/components/email/components/form/functions/build-user-object'
 import buildAnouncement from '../../../functions/build-announcement'
 
 export function publish() {
