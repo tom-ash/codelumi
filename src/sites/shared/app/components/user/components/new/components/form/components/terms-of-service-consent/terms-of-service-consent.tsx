@@ -1,6 +1,6 @@
 import React from 'react'
 import { TermsOfServiceConsentCheckbox } from './terms-of-service-consent.checkbox'
-import { useStore } from '../../../../../../functions/store/useStore'
+import { useStore } from '../../../../../../../../functions/store/useStore'
 
 export const TermsOfServiceConsent = () => {
   const { state } = useStore()

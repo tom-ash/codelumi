@@ -1,7 +1,7 @@
 import React from 'react'
 import { ManagedSelect } from 'managed-inputs'
-import SVG from '../../../../../../../../mapawynajmu-pl/app/components/support/components/svg/svg'
-import { useStore } from '../../../../../../functions/store/useStore'
+import SVG from '../../../../../../../../../../mapawynajmu-pl/app/components/support/components/svg/svg'
+import { useStore } from '../../../../../../../../functions/store/useStore'
 
 export const CountryCodeSelect = () => {
   const { state, dispatch } = useStore()

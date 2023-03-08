@@ -1,7 +1,7 @@
 import React from 'react'
 import { ManagedText } from 'managed-inputs'
 import { businessNameValidator } from './business-name.validator'
-import { useStore } from '../../../../../../functions/store/useStore'
+import { useStore } from '../../../../../../../../functions/store/useStore'
 
 export const BusinessNameInput = () => {
   const { state, dispatch } = useStore()

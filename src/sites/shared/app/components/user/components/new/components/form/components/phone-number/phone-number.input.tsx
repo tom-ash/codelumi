@@ -1,7 +1,7 @@
 import React from 'react'
 import { ManagedText } from 'managed-inputs'
 import { phoneNumberValidator } from './phone-number.validator'
-import { useStore } from '../../../../../../functions/store/useStore'
+import { useStore } from '../../../../../../../../functions/store/useStore'
 
 export const PhoneNumberInput = () => {
   const { state, dispatch } = useStore()

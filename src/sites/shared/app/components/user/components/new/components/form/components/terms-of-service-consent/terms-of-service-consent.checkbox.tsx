@@ -2,7 +2,7 @@ import React from 'react'
 import { ManagedCheckbox } from 'managed-inputs'
 import { termsOfServiceConsentValidator } from './terms-of-service-consent.validator'
 import { TermsOfServiceConsentLabel } from './terms-of-service-consent.label'
-import { useStore } from '../../../../../../functions/store/useStore'
+import { useStore } from '../../../../../../../../functions/store/useStore'
 
 export const TermsOfServiceConsentCheckbox = () => {
   const { state, dispatch } = useStore()

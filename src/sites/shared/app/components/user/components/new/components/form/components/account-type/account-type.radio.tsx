@@ -1,7 +1,7 @@
 import React from 'react'
 import { ManagedRadio } from 'managed-inputs'
-import { AccountType } from '../../../../../../../../mapawynajmu-pl/app/components/user/types/user.types'
-import { useStore } from '../../../../../../functions/store/useStore'
+import { AccountType } from '../../../../../../../../../../mapawynajmu-pl/app/components/user/types/user.types'
+import { useStore } from '../../../../../../../../functions/store/useStore'
 
 export const AccountTypeRadio = () => {
   const { state, dispatch } = useStore()

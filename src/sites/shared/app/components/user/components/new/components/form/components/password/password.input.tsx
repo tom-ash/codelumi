@@ -1,7 +1,7 @@
 import React from 'react'
 import { ManagedText } from 'managed-inputs'
 import { passwordValidator } from './password.validator'
-import { useStore } from '../../../../../../functions/store/useStore'
+import { useStore } from '../../../../../../../../functions/store/useStore'
 
 export const PasswordInput = () => {
   const { state, dispatch } = useStore()

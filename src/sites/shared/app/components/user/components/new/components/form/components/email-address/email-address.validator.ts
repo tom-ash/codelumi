@@ -1,4 +1,4 @@
-import { EMAIL_ADDRESS_REGEX } from "../../../../constants/email-address-regex";
+import { EMAIL_ADDRESS_REGEX } from "../../constants/email-address-regex";
 
 interface EmailAddressValidator {
   (props: {

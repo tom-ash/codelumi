@@ -1,5 +1,5 @@
 import React from 'react'
-import { LinkObject } from '../../../../../../../../mapawynajmu-pl/app/app.d'
+import { LinkObject } from '../../../../../../../../../../mapawynajmu-pl/app/app.d'
 
 interface TermsOfServiceConsentLabelProps {
   syntheticLabel: string
