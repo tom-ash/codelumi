@@ -8,8 +8,12 @@ import { PasswordAutoComplete } from '../../../../../../../../shared/app/compone
 import { passwordValidator } from '../../../../../../../../shared/app/components/user/components/auth/components/password/password.validator'
 import { SubmitButton } from './components/submit-button'
 import { Heading } from '../../../../../support/components/heading'
+import useStyles from 'isomorphic-style-loader-react18/useStyles'
+import styles from './styles/styles.scss'
 
 const UserAuthEmail = () => {
+  useStyles(styles)
+
   const { changeRoute } = useContext(AppContext)
   const { state } = useStore()
   const { texts, links } = state
