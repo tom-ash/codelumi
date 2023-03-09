@@ -1,4 +1,4 @@
-import getAccessToken from '../../../../../../app/functions/tokens/getters/get-tokens'
+import { getAccessToken } from "../../../../../../../mapawynajmu-pl/app/components/user/components/auth/functions/get-access-token"
 import { UPDATE_API_ROUTE } from '../constants/api_route_data'
 
 export function save({ withRouteChange = false }) {

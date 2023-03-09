@@ -1,5 +1,5 @@
 import API_URL from '../../shared/constants/urls/api'
-import getAccessToken from '../../../shared/app/functions/tokens/getters/get-tokens'
+import { getAccessToken } from '../components/user/components/auth/functions/get-access-token'
 let ImageCompressor
 if (typeof window !== 'undefined') ImageCompressor = require('image-compressor.js').default
 
