@@ -1,5 +1,5 @@
 import API_URL from '../../../../../../shared/constants/urls/api'
-import { getAccessToken } from '../../auth/functions/get-access-token'
+import { getAccessToken } from '../../../../../../../shared/app/components/user/components/auth/functions/get-access-token'
 import { VERIFY_API_ROUTE_DATA, DELETE_API_ROUTE_DATA } from '../constants/api_route_data'
 import { signOut } from '../../auth/components/sign-out/functions/sign-out'
 import getCookieValue from '../../../../../../../shared/app/functions/cookies/getters/get-cookie-value'

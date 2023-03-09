@@ -1,5 +1,5 @@
 import apiUrl from '../../../../../../../../shared/constants/urls/api'
-import { getAccessToken } from '../../../../../../../../../mapawynajmu-pl/app/components/user/components/auth/functions/get-access-token'
+import { getAccessToken } from '../../../../../../../../../shared/app/components/user/components/auth/functions/get-access-token'
 
 type submitProps = {
   lang: Lang

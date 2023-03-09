@@ -1,6 +1,6 @@
 import API_URL from '../../../../../../../../../../shared/constants/urls/api'
 import { hashPassword } from '../../../../../../../functions/shared'
-import { getAccessToken } from '../../../../../../auth/functions/get-access-token'
+import { getAccessToken } from '../../../../../../../../../../../shared/app/components/user/components/auth/functions/get-access-token'
 import {
   CURRENT_EMAIL_VERIFICATION_API_ROUTE_DATA,
   CURRENT_EMAIL_VERIFY_API_ROUTE_DATA,

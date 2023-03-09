@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import AppContext from '../../../../../../../../../constants/context'
-import { getAccessToken } from '../../../../../../auth/functions/get-access-token'
+import { getAccessToken } from '../../../../../../../../../../../shared/app/components/user/components/auth/functions/get-access-token'
 
 export const CellContext = React.createContext(
   {} as {

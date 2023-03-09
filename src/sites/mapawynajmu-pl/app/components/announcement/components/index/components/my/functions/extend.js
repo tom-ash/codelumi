@@ -1,5 +1,5 @@
 import API_URL from '../../../../../../../../shared/constants/urls/api'
-import { getAccessToken } from '../../../../../../user/components/auth/functions/get-access-token'
+import { getAccessToken } from '../../../../../../../../../shared/app/components/user/components/auth/functions/get-access-token'
 import { UPDATE_ACTIVE_UNTIL_ROUTE_DATA } from '../constants/api_route_data'
 
 export function extend(announcement, index) {

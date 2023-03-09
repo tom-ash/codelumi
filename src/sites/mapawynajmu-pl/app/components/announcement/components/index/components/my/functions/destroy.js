@@ -1,5 +1,5 @@
 import API_URL from '../../../../../../../../shared/constants/urls/api'
-import { getAccessToken } from '../../../../../../user/components/auth/functions/get-access-token'
+import { getAccessToken } from '../../../../../../../../../shared/app/components/user/components/auth/functions/get-access-token'
 import { DELETE_ROUTE_DATA } from '../constants/api_route_data'
 
 export function destroy(id) {
