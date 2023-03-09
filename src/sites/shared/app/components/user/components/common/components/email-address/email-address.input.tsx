@@ -1,7 +1,7 @@
 import React from 'react'
 import { ManagedText } from 'managed-inputs'
 import { emailAddressValidator } from './email-address.validator'
-import { useStore } from '../../../../../../../../functions/store/useStore'
+import { useStore } from '../../../../../../functions/store/useStore'
 
 export const EmailAddressInput = () => {
   const { state, dispatch } = useStore()

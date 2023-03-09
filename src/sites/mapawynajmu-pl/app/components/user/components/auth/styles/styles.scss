@@ -5,17 +5,6 @@
 @import '../components/email/styles/styles';
 
 #user-authorize {
-  margin-bottom: 24px;
   padding-top: 96px;
   padding-bottom: 96px;
-  background: $BACKGROUND-LIGHT-GRAYISH-COLOR;
-  h1 {
-    @extend %h1;
-  }
-  .container {
-    @extend %container;
-  }
-  .line {
-    @extend %line;
-  }
 }

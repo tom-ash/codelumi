@@ -1,5 +1,5 @@
 import { businessNameValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/form/components/business-name/business-name.validator'
-import { emailAddressValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/form/components/email-address/email-address.validator'
+import { emailAddressValidator } from '../../../../../../../../../../../shared/app/components/user/components/common/components/email-address/email-address.validator'
 import { passwordValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/form/components/password/password.validator'
 import { phoneNumberValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/form/components/phone-number/phone-number.validator'
 import { termsOfServiceConsentValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/form/components/terms-of-service-consent/terms-of-service-consent.validator'

@@ -1,63 +1,49 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { ManagedText, ManagedCheckbox, ManagedButton } from 'managed-inputs'
-import * as managers from './functions/managers'
-import { logIn } from './functions/adapters'
-import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { langHandler } from '../../../../../../functions/lang-handler'
+import React, { useContext } from 'react'
 import AppContext from '../../../../../../constants/context'
-import { buildUrl } from '../../../../../../../shared/functions/builders/url'
+import { useStore } from '../../../../../../../../shared/app/functions/store/useStore'
 import { Line } from '../../../../../support/components/line/line'
+import { EmailAddressInput } from '../../../../../../../../shared/app/components/user/components/common/components/email-address/email-address.input'
+import { PasswordInput } from '../../../../../../../../shared/app/components/user/components/common/components/password/password.input'
+import { PasswordAutoComplete } from '../../../../../../../../shared/app/components/user/components/common/components/password/password.input'
+import { passwordValidator } from '../../../../../../../../shared/app/components/user/components/auth/components/password/password.validator'
+import { SubmitButton } from './components/submit-button'
+import { Heading } from '../../../../../support/components/heading'
 
-class UserAuthEmail extends React.Component {
-  // @ts-ignore
-  constructor(props) {
-    super(props)
-    // @ts-ignore
-    this.emailAddressManager = managers.emailAddressManager.bind(this)
-    // @ts-ignore
-    this.passwordManager = managers.passwordManager.bind(this)
-    // @ts-ignore
-    this.rememberMeManager = managers.rememberMeManager.bind(this)
-    // @ts-ignore
-    this.buttonManager = managers.buttonManager.bind(this)
-    // @ts-ignore
-    this.logIn = logIn.bind(this)
-    // @ts-ignore
-    this.langHandler = langHandler.bind(this)
+const UserAuthEmail = () => {
+  const { changeRoute } = useContext(AppContext)
+  const { state } = useStore()
+  const { texts, links } = state
+  const { headingOne, resetPassword } = texts
+  const { href: resetPasswordHref } = links['user/reset-password']
+
+  const passwordInputProps = {
+    autoComplete: PasswordAutoComplete.CURRENT_PASSWORD,
+    validator: passwordValidator,
   }
 
-  static contextType = AppContext
+  const headingProps = {
+    tier: 1,
+    text: headingOne,
+  }
 
-  render() {
-    // @ts-ignore
-    const { links } = this.props
-    const resetPasswordLinkData = links['user/reset-password']
-    const resetPasswordHref = resetPasswordLinkData && buildUrl({ path: resetPasswordLinkData.path })
-    const { changeRoute } = this.context
-
-    return (
-      <div id='user-authorize-email'>
-        <form>
-          {/* @ts-ignore */}
-          <ManagedText {...this.emailAddressManager()} />
-          {/* @ts-ignore */}
-          <ManagedText {...this.passwordManager()} />
-          {/* @ts-ignore */}
-          <ManagedCheckbox {...this.rememberMeManager()} />
-          {/* @ts-ignore */}
-          <ManagedButton {...this.buttonManager()} />
-        </form>
-        <Line />
-        <div className='links'>
-          <span onClick={() => changeRoute({ href: resetPasswordHref })}>
-            {/* @ts-ignore */}
-            {this.langHandler({ pl: 'Zresetuj hasło', en: 'Reset password' })}
-          </span>
-        </div>
+  return (
+    <div id='user-authorize-email'>
+      <Heading {...headingProps} />
+      <Line />
+      <form>
+        <EmailAddressInput />
+        <PasswordInput {...passwordInputProps} />
+        {/* TODO: REMEMBER ME */}
+        <SubmitButton />
+      </form>
+      <Line />
+      <div className='links'>
+        <span onClick={() => changeRoute({ href: resetPasswordHref })}>
+          {resetPassword}
+        </span>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserAuthEmail)
+export default UserAuthEmail

@@ -1,3 +1,6 @@
+@import '../../../../../../../styles/container';
+@import '../../../../../../../styles/headings/h1';
+@import '../../../../../../../styles/line';
 @import '../../../../../../../styles/colors';
 @import '../../../../../../../styles/inputs/form/checkbox';
 @import './text-inputs';
@@ -6,12 +9,18 @@
 @import './links';
 
 #user-authorize-email {
+  @extend %container;
   @extend %text-inputs;
   @extend %remember-me;
   @extend %submit;
-  padding-bottom: 24px;
-  form {
-    padding: 24px 32px 24px;
+  padding: 32px;
+  h1 {
+    @extend %h1;
+    margin-bottom: 24px;
+  }
+  .line {
+    @extend %line;
+    margin-bottom: 24px;
   }
   .links {
     @extend %links;
