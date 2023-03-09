@@ -1,5 +1,5 @@
 import { ANNOUNCEMENT_CREATE_LABELS } from '../../../../../../../../../shared/constants/routes/labels'
-import { deauthorizeUser } from '../../../../../../../user/components/auth/functions/adapters'
+import { signOut } from '../../../../../../../user/components/auth/components/sign-out/functions/sign-out'
 import { buildUrl } from '../../../../../../../../../shared/functions/builders/url'
 
 export function myAnnouncementsManager(props) {
@@ -34,7 +34,7 @@ export function deAuthorizeManager(props) {
   return {
     classNames: { container: 'header-link de-authorize' },
     label: langHandler({ pl: 'Wyloguj', en: 'Sign Out' }),
-    onClick: () => deauthorizeUser({ dispatch, changeRoute }),
+    onClick: () => signOut({ dispatch, changeRoute }),
   }
 }
 

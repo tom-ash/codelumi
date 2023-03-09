@@ -1,8 +1,8 @@
-import { deleteCookie } from '../../../../../functions/cookie-handlers'
-import { buildUrl } from '../../../../../../shared/functions/builders/url'
+import { deleteCookie } from '../../../../../../../functions/cookie-handlers'
+import { buildUrl } from '../../../../../../../../shared/functions/builders/url'
 
 // @ts-ignore
-export function deauthorizeUser(props) {
+export function signOut(props) {
   const { dispatch, changeRoute } = props
 
   if (typeof window !== 'undefined') {

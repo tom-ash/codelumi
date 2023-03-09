@@ -1,7 +1,7 @@
 import API_URL from '../../../../../../shared/constants/urls/api'
 import getAccessToken from '../../auth/components/tokens/functions/get-tokens'
 import { VERIFY_API_ROUTE_DATA, DELETE_API_ROUTE_DATA } from '../constants/api_route_data'
-import { deauthorizeUser } from '../../auth/functions/adapters'
+import { signOut } from '../../auth/components/sign-out/functions/sign-out'
 import getCookieValue from '../../../../../../../shared/app/functions/cookies/getters/get-cookie-value'
 import setVerificationToken from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
 
@@ -74,7 +74,7 @@ export function destroy() {
       const { dispatch } = this.props
       const { changeRoute } = this.context
 
-      deauthorizeUser({ dispatch, changeRoute, path })
+      signOut({ dispatch, changeRoute, path })
     })
     .catch(error => console.dir(error))
 }

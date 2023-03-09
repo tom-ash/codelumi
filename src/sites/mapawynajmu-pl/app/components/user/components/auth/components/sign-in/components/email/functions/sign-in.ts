@@ -1,6 +1,6 @@
-import { hashPassword } from '../../../../../functions/shared'
-import API_URL from '../../../../../../../../shared/constants/urls/api'
-import { saveCookie } from '../../../../../../../functions/cookie-handlers'
+import { hashPassword } from '../../../../../../../functions/shared'
+import API_URL from '../../../../../../../../../../shared/constants/urls/api'
+import { saveCookie } from '../../../../../../../../../functions/cookie-handlers'
 
 interface SignIn {
   (args: {

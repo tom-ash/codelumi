@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import { useStore } from '../../../../../../../../../shared/app/functions/store/useStore'
-import { ButtonSpinner } from '../../../../../../support/components/button-spinner/button-spinner'
-import AppContext from '../../../../../../../constants/context'
+import { useStore } from '../../../../../../../../../../../shared/app/functions/store/useStore'
+import { ButtonSpinner } from '../../../../../../../../support/components/button-spinner/button-spinner'
+import AppContext from '../../../../../../../../../constants/context'
 import { ManagedButton } from 'managed-inputs'
 import { signIn } from '../functions/sign-in'
 

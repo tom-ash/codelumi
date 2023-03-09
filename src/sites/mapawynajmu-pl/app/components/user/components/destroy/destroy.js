@@ -6,7 +6,7 @@ import { ManagedButton } from 'managed-inputs'
 import { componentDidMount, componentWillUnmount } from './functions/lifecycle'
 import { monit } from './constants/monit'
 import { langHandler } from '../../../../functions/lang-handler'
-import { deauthorizeUser } from '../auth/functions/adapters'
+import { signOut } from '../auth/components/sign-out/functions/sign-out'
 import * as managers from './functions/managers'
 import * as adapters from './functions/adapters'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
@@ -23,7 +23,7 @@ class UserDestroy extends React.Component {
     this.verificationManager = managers.verificationManager.bind(this)
     this.buttonManager = managers.buttonManager.bind(this)
     this.langHandler = langHandler.bind(this)
-    this.deauthorizeUser = deauthorizeUser.bind(this)
+    this.signOut = signOut.bind(this)
   }
 
   static contextType = AppContext
