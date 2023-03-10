@@ -1,5 +1,6 @@
 export enum PasswordResetStep {
   EMAIL = 'email',
   VERIFICATION = 'verification',
-  PASSWORD = 'password'
+  PASSWORD = 'password',
+  SUCCESS = 'success',
 }

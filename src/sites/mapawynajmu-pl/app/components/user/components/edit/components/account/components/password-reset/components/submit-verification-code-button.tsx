@@ -1,20 +1,18 @@
 import React from 'react'
 import { useStore } from '../../../../../../../../../../../shared/app/functions/store/useStore'
-import { submitPassword } from '../functions/submit-password'
+import { submitVerificationCode } from '../functions/submit-verification-code'
 import { SubmitButton } from './submit-button'
 
-export const SubmitPasswordButton = () => {
+export const SubmitVerificationCodeButton = () => {
   const { state } = useStore()
   const { texts, inputs } = state
-  const { submitPassword: label } = texts
-  const { emailAddress: email, verificationCode, password } = inputs
+  const { submitVerificationCode: label } = texts
+  const { verificationCode } = inputs
 
   const submitButtonProps = {
     label,
-    submit: submitPassword,
-    email,
+    submit: submitVerificationCode,
     verificationCode,
-    password,
   }
 
   return <SubmitButton {...submitButtonProps} />
