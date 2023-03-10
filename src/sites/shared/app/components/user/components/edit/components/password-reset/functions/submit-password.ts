@@ -1,6 +1,6 @@
-import API_URL from '../../../../../../../../../../shared/constants/urls/api'
-import { getCookieValue } from '../../../../../../../../../../../shared/app/components/visitor/components/legal/components/cookies/functions/save'
-import { hashPassword } from '../../../../../../../functions/shared'
+import API_URL from '../../../../../../../../../mapawynajmu-pl/shared/constants/urls/api'
+import { getCookieValue } from '../../../../../../visitor/components/legal/components/cookies/functions/save'
+import { hashPassword } from '../../../../../../../../../mapawynajmu-pl/app/components/user/functions/shared'
 import { PasswordResetStep } from '../password-reset.types'
 
 interface SubmitPassword {
@@ -19,10 +19,6 @@ export const submitPassword:SubmitPassword = (args) => {
       password,
       setControl,
     } = args
-
-    console.log("HERE")
-    console.log(password)
-    console.log(email)
 
     const verificationToken = getCookieValue('verificationToken')
     const hashedPassword = hashPassword(password, email)

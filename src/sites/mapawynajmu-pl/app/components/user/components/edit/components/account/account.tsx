@@ -8,7 +8,7 @@ import { langHandler } from '../../../../../../functions/lang-handler'
 import { Heading } from '../../../../../support/components/heading'
 import { HEADER_TEXT } from './constants/texts'
 import { Line } from '../../../../../support/components/line/line'
-import { UserEditPassword as Password } from './components/password/password'
+import { PasswordReset as Password } from './components/password/password'
 import { AccountType } from '../../../../types/user.types'
 import { BusinessName } from './business-name/business-name'
 
@@ -36,7 +36,6 @@ class UserEditAccount extends React.Component {
     return (
       <div id='user-edit-account'>
         <div className='container'>
-          {/*  @ts-ignore */}
           <Heading
             tier={1}
             text={headerText}

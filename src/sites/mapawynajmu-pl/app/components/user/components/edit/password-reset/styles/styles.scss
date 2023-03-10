@@ -1,0 +1,41 @@
+@import '../../../../../../../../shared/app/styles/media-breakpoints';
+@import '../../../../../../styles/dimensions';
+@import '../../../../../../styles/themes';
+@import '../../../../../../styles/headings/h1';
+@import '../../../../../../styles/inputs/text';
+@import '../../../../../../styles/inputs/button';
+@import '../../../../../../styles/container';
+@import '../../../../../../styles/line';
+
+#user-edit-password {
+  @extend %container;
+  margin-top: 192px;
+  padding: 32px;
+  h1 {
+    @extend %h1;
+    margin-bottom: 24px
+  }
+  .text-input {
+    @extend %text-input;
+  }
+  .submit-button {
+    @extend %button;
+  }
+  .monit-and-text-inputs {
+    padding: 24px 32px;
+  }
+  .monit {
+    margin-bottom: 20px;
+    line-height: 20px;
+    font-size: 14px;
+  }
+  .line {
+    @extend %line;
+    margin-bottom: 24px;
+  }
+  .explanation {
+    margin-bottom: 24px;
+    color: #4D5656;
+    line-height: 24px;
+  }
+}

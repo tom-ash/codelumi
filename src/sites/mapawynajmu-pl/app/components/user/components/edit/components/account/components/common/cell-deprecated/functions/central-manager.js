@@ -1,7 +1,7 @@
 import React from 'react'
 import UserEditAccountPhoneNumber from '../../../phone-number/phone-number'
 import UserEditAccountEmail from '../../../email-address/email-address'
-import UserEditPassword from '../../../password-reset/password-reset'
+import PasswordReset from '../../../../../../../../../../../../shared/app/components/user/components/edit/components/password-reset/password-reset'
 import UserDestroy from '../../../../../../../destroy/destroy'
 import SVG from '../../../../../../../../../support/components/svg/svg'
 
@@ -164,7 +164,7 @@ function editInputProvider() {
       component = <UserEditAccountEmail />
       break
     case 'password':
-      component = <UserEditPassword editAccount={true} />
+      component = <PasswordReset editAccount={true} />
       break
     case 'destroy':
       component = <UserDestroy />

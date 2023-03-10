@@ -1,7 +1,7 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../../../../shared/app/functions/store/useStore'
+import { useStore } from '../../../../../../../functions/store/useStore'
 import { submitEmail } from '../functions/submit-email'
-import { SubmitButton } from './submit-button'
+import { SubmitButton } from '../../../../../../support/submit-button/submit-button'
 
 export const SubmitEmailButton = () => {
   const { state } = useStore()

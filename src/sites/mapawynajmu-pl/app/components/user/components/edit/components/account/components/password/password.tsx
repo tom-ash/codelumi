@@ -6,7 +6,7 @@ import { Inputs } from './components/inputs/inputs'
 
 const titleLangObject = { pl: 'Hasło', en: 'Password' }
 
-export const UserEditPassword = () => {
+export const PasswordReset = () => {
   const { langHandler } = useContext(AppContext)
 
   return (
