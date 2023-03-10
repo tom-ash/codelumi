@@ -1,11 +1,11 @@
-@import '../../../../../../../../shared/app/styles/media-breakpoints';
-@import '../../../../../../styles/dimensions';
-@import '../../../../../../styles/themes';
-@import '../../../../../../styles/headings/h1';
-@import '../../../../../../styles/inputs/text';
-@import '../../../../../../styles/inputs/button';
-@import '../../../../../../styles/container';
-@import '../../../../../../styles/line';
+@import '../../../../../../../shared/app/styles/media-breakpoints';
+@import '../../../../../styles/dimensions';
+@import '../../../../../styles/themes';
+@import '../../../../../styles/headings/h1';
+@import '../../../../../styles/inputs/text';
+@import '../../../../../styles/inputs/button';
+@import '../../../../../styles/container';
+@import '../../../../../styles/line';
 
 #user-edit-password {
   @extend %container;
