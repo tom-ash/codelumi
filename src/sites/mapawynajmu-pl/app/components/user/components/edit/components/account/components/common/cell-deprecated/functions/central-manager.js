@@ -1,7 +1,7 @@
 import React from 'react'
 import UserEditAccountPhoneNumber from '../../../phone-number/phone-number'
 import UserEditAccountEmail from '../../../email-address/email-address'
-import PasswordReset from '../../../../../../../../../../../../shared/app/components/user/components/edit/components/password-reset/password-reset'
+import PasswordReset from '../../../../../../../../../../../../shared/app/components/user/components/password-reset/password-reset'
 import UserDestroy from '../../../../../../../destroy/destroy'
 import SVG from '../../../../../../../../../support/components/svg/svg'
 

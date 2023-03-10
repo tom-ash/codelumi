@@ -1,5 +1,5 @@
-import API_URL from '../../../../../../../../../mapawynajmu-pl/shared/constants/urls/api'
-import { getCookieValue } from '../../../../../../visitor/components/legal/components/cookies/functions/save'
+import API_URL from '../../../../../../../mapawynajmu-pl/shared/constants/urls/api'
+import { getCookieValue } from '../../../../visitor/components/legal/components/cookies/functions/save'
 import { PasswordResetStep } from '../password-reset.types'
 
 interface SubmitVerificationCode {

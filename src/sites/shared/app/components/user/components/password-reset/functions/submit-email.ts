@@ -1,5 +1,5 @@
-import API_URL from '../../../../../../../../../mapawynajmu-pl/shared/constants/urls/api'
-import setVerificationToken from '../../../../../../../functions/cookies/setters/confirmation-token'
+import API_URL from '../../../../../../../mapawynajmu-pl/shared/constants/urls/api'
+import setVerificationToken from '../../../../../functions/cookies/setters/confirmation-token'
 import { PasswordResetStep } from '../password-reset.types'
 
 interface SubmitEmail {
