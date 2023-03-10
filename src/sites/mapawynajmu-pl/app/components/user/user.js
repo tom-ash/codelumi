@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 const UserNew = loadable(() => import('./components/new/new'))
 const UserAuth = loadable(() => import('./components/auth/auth'))
-const UserEditAccountPassword = loadable(() =>
+const UserEditPassword = loadable(() =>
   import('./components/edit/components/account/components/password-reset/password-reset')
 )
 const UserEditAccount = loadable(() => import('./components/edit/components/account/account'))
@@ -22,7 +22,7 @@ class User extends React.Component {
         {renderCreate && <UserNew />}
         {renderEdit && <UserEditAccount />}
         {renderAuthorize && <UserAuth />}
-        {renderEditPassword && <UserEditAccountPassword />}
+        {renderEditPassword && <UserEditPassword />}
       </React.Fragment>
     )
   }

@@ -29,12 +29,25 @@ export function accountManager(props) {
 }
 
 export function deAuthorizeManager(props) {
-  const { changeRoute, langHandler, dispatch } = props
+  const { changeRoute, langHandler } = props
+
+  const {
+    links: {
+      root: {
+        href
+      }
+    }
+  } = props
+
+  console.log(props)
 
   return {
     classNames: { container: 'header-link de-authorize' },
     label: langHandler({ pl: 'Wyloguj', en: 'Sign Out' }),
-    onClick: () => signOut({ dispatch, changeRoute }),
+    onClick: () => signOut({
+      href,
+      changeRoute,
+    }),
   }
 }
 

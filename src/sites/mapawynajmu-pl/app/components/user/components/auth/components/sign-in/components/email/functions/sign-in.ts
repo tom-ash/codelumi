@@ -52,7 +52,7 @@ export const signIn:SignIn = (args) => {
       changeRoute({ href })
     })
     .catch(() => {
-      setErrors({ emailOrPassword: true })
+      setErrors({ credentials: true })
       setControl({ connecting: false })
     })
 }

@@ -7,25 +7,19 @@
 @import '../../../../../../../../../styles/container';
 @import '../../../../../../../../../styles/line';
 
-#user-update-password {
-  margin-bottom: 24px;
-  padding-top: 192px;
-  padding-bottom: 192px;
-  background: $BACKGROUND-LIGHT-GRAYISH-COLOR;
-  &.container {
-    .inputs {
-      @extend %container;
-    }
-    h1 {
-      @extend %h1;
-    }
-    .text-input {
-      @extend %text-input;
-    }
-    .submit-button {
-      @extend %button;
-      padding: 18px 0;
-    }
+#user-edit-password {
+  @extend %container;
+  margin-top: 192px;
+  padding: 32px;
+  h1 {
+    @extend %h1;
+    margin-bottom: 24px
+  }
+  .text-input {
+    @extend %text-input;
+  }
+  .submit-button {
+    @extend %button;
   }
   .monit-and-text-inputs {
     padding: 24px 32px;
@@ -37,5 +31,6 @@
   }
   .line {
     @extend %line;
+    margin-bottom: 24px;
   }
 }

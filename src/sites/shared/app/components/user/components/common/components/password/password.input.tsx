@@ -34,7 +34,7 @@ export const PasswordInput:PasswordInput = (props) => {
   const error = passwordInvalidErrorTriggered && passwordInvalidError
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
-  const onFocus = () => setErrors({ password: false })
+  const onFocus = () => setErrors({ password: false, credentials: false })
   const onBlur = (password: string) => validator({ password, setErrors })
   const onChange = (password: string) => setInputs({ password })
 

@@ -69,12 +69,11 @@ export function destroy() {
       })
       throw new Error('Invalid Verification Code Error')
     })
-    .then(json => {
-      const { path } = json
-      const { dispatch } = this.props
+    .then(jsonResponse => {
+      const { href } = jsonResponse
       const { changeRoute } = this.context
 
-      signOut({ dispatch, changeRoute, path })
+      signOut({ href, changeRoute })
     })
     .catch(error => console.dir(error))
 }

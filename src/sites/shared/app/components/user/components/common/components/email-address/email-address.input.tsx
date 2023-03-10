@@ -20,7 +20,7 @@ export const EmailAddressInput = () => {
   const error = emailInvalidErrorTriggered && emailInvalidError
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
-  const onFocus = () => setErrors({ emailAddress: false })
+  const onFocus = () => setErrors({ emailAddress: false, credentials: false })
   const onBlur = (emailAddress: string) => emailAddressValidator({ emailAddress, setErrors })
   const onChange = (emailAddress: string) => setInputs({ emailAddress })
 
