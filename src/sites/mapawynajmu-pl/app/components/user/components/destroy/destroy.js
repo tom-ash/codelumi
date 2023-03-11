@@ -13,7 +13,7 @@ import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import AppContext from '../../../../constants/context'
 
-class UserDestroy extends React.Component {
+class UserDelete extends React.Component {
   constructor(props) {
     super(props)
     this.sendEmail = adapters.sendEmail.bind(this)
@@ -39,4 +39,4 @@ class UserDestroy extends React.Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(UserDestroy))
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(UserDelete))

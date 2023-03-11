@@ -5,7 +5,7 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 const UserNew = loadable(() => import('./components/new/new'))
 const UserAuth = loadable(() => import('./components/auth/auth'))
 const PasswordReset = loadable(() => import('./components/password-reset/password-reset'))
-const UserEditAccount = loadable(() => import('./components/edit/components/account/account'))
+const UserEdit = loadable(() => import('./components/edit/edit'))
 
 class User extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class User extends React.Component {
     return (
       <React.Fragment>
         {renderCreate && <UserNew />}
-        {renderEdit && <UserEditAccount />}
+        {renderEdit && <UserEdit />}
         {renderAuthorize && <UserAuth />}
         {renderEditPassword && <PasswordReset />}
       </React.Fragment>
