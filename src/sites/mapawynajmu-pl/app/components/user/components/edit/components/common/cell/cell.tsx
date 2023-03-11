@@ -1,14 +1,8 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
-import { CellState } from './components/cell-state/cell-state'
+import { CellOpener } from './components/cell-opener/cell-opener'
 import { useStore } from '../../../../../../../../../shared/app/functions/store/useStore'
-
-// interface UserEditCellProps {
-//   title: string
-//   value: string | React.ReactElement
-//   children: React.ReactElement | React.ReactElement[]
-// }
 
 interface UserEditCellInterface {
   (props: {
@@ -21,18 +15,17 @@ interface UserEditCellInterface {
 export const UserEditCell:UserEditCellInterface = (props) => {
   useStyles(styles)
 
-  const { attrName } = props
-
-  const { state, dispatch } = useStore()
-  const { texts } = state
+  const { attrName, children } = props
+  const { state } = useStore()
+  const { texts, inputs } = state
   const {
-    headingOne,
+    [`${attrName}Title`]: title,
+    [`${attrName}Value`]: value,
   } = texts
-
-
-  // const triggerProps = {
-  //   attrName: 'delete'
-  // }
+  const cellOpenerProps = { attrName }
+  const cellOpenedKey = `${attrName}CellOpened`
+  const { [cellOpenedKey]: cellOpened } = inputs
+  const cellContentClass = cellOpened ? 'opened' : 'closed'
 
   return (
     <div className='cell'>
@@ -42,18 +35,18 @@ export const UserEditCell:UserEditCellInterface = (props) => {
       >
         <div className='text'>
           <div>
-            {/* <div className='title'>{title}</div>
-            <div className='value'>{value}</div> */}
+            <div className='title'>{title}</div>
+            <div className='value'>{value}</div>
           </div>
         </div>
         <div className='float-clear' />
       </div>
       <div className='trigger'>
-        {/* <CellState {...triggerProps} /> */}
+        <CellOpener {...cellOpenerProps} />
       </div>
-      {/* <div className={`edit ${trigger}`}>
-        {trigger === TriggerStates.OPEN && <CellContext.Provider value={cellContext}>{children}</CellContext.Provider>}
-      </div> */}
+      <div className={`content ${cellContentClass}`}>
+        {cellOpened && <>{children}</>}
+      </div>
     </div>
   )
 }
