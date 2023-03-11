@@ -9,8 +9,9 @@ interface UserEditCellInterface {
     attrName: string
     children: React.ReactElement
   }): React.ReactElement
-
 }
+
+const toKebabCase = (text: string) => (text.replace(/[A-Z]/g, capitalLetter => '-' + capitalLetter.toLowerCase()))
 
 export const UserEditCell:UserEditCellInterface = (props) => {
   useStyles(styles)
@@ -28,7 +29,7 @@ export const UserEditCell:UserEditCellInterface = (props) => {
   const cellContentClass = cellOpened ? 'opened' : 'closed'
 
   return (
-    <div className='cell'>
+    <div className={`cell ${toKebabCase(attrName)}`}>
       <div
         className='current'
         id='current'

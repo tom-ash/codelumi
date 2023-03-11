@@ -1,16 +1,11 @@
-// @import '../components/common/cell-deprecated/styles/styles.scss';
 @import '../../../../../styles/container';
-// @import '../../../../../../../styles/container';
 @import '../../../../../styles/headings/h1';
 @import '../../../../../styles/line';
-// @import '../../../../new/components/email/components/form/styles/country-code-phone-number-container';
 
 #user-edit {
   margin-bottom: 24px;
   padding-top: 96px;
   padding-bottom: 96px;
-  // background: $BACKGROUND-LIGHT-GRAYISH-COLOR;
-
   .container {
     @extend %container;
     padding: 32px;
@@ -23,10 +18,9 @@
     @extend %line;
     margin-bottom: 24px;
   }
-  // .country-code-phone-number-container {
-  //   @extend %country-code-phone-number-container;
-  // }
-  // .windmill-medium-spinner {
-  //   top: 32px;
-  // }
+  .user-deletion {
+    .trigger {
+      color: red;
+    }
+  }
 }
