@@ -1,5 +1,7 @@
 @import '../../../../../styles/container';
 @import '../../../../../styles/headings/h1';
+@import '../../../../../styles/inputs/text';
+@import '../../../../../styles/inputs/button.scss';
 @import '../../../../../styles/line';
 
 #user-edit {
@@ -18,9 +20,21 @@
     @extend %line;
     margin-bottom: 24px;
   }
-  .user-deletion {
+  .text-input {
+    @extend %text-input;
+  }
+  .explanation {
+    margin-bottom: 24px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #4D5656;
+  }
+  .user-delete {
     .trigger {
       color: red;
     }
+  }
+  .submit-button {
+    @extend %button;
   }
 }

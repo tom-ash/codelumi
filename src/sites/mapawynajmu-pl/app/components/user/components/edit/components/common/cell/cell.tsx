@@ -18,14 +18,14 @@ export const UserEditCell:UserEditCellInterface = (props) => {
 
   const { attrName, children } = props
   const { state } = useStore()
-  const { texts, inputs } = state
+  const { texts, control } = state
   const {
     [`${attrName}Title`]: title,
     [`${attrName}Value`]: value,
   } = texts
   const cellOpenerProps = { attrName }
   const cellOpenedKey = `${attrName}CellOpened`
-  const { [cellOpenedKey]: cellOpened } = inputs
+  const { [cellOpenedKey]: cellOpened } = control
   const cellContentClass = cellOpened ? 'opened' : 'closed'
 
   return (

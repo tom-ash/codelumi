@@ -14,7 +14,7 @@ export const CellOpener: CellOpenerInterface = (props) => {
 
   const cellOpenedKey = `${attrName}CellOpened`
   const { state, dispatch } = useStore()
-  const { texts, inputs } = state
+  const { texts, control } = state
   const {
     [`${attrName}CellOpen`]: attrCellOpen,
     cellOpen,
@@ -22,10 +22,10 @@ export const CellOpener: CellOpenerInterface = (props) => {
   } = texts
   const {
     [cellOpenedKey]: cellOpened
-  } = inputs
+  } = control
   const newCellOpened = !cellOpened
   const trigger = cellOpened ? cellClose : (attrCellOpen || cellOpen)
-  const setCellOpener = (cellOpened: boolean) => dispatch({ type: 'inputs', value: { [cellOpenedKey]: cellOpened } })
+  const setCellOpener = (cellOpened: boolean) => dispatch({ type: 'control', value: { [cellOpenedKey]: cellOpened } })
 
   return <span onClick={() => setCellOpener(newCellOpened)}>{trigger}</span>
 }

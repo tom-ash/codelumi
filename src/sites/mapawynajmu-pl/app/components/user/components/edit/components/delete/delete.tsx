@@ -1,10 +1,10 @@
 import React from 'react'
 import { UserEditCell as Cell } from '../common/cell/cell'
-import UserDelete from '../../../destroy/destroy'
+import { UserDelete } from '../../../delete/delete'
 
 export const UserEditDelete = () => {
   const cellProps = {
-    attrName: 'userDeletion'
+    attrName: 'userDelete'
   }
 
   return (
