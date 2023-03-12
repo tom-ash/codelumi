@@ -10,7 +10,6 @@
 #user-auth-email {
   @extend %container;
   @extend %text-inputs;
-  @extend %remember-me;
   @extend %submit;
   padding: 32px;
   h1 {
