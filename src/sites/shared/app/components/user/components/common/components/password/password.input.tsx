@@ -26,12 +26,12 @@ export const PasswordInput:PasswordInput = (props) => {
   const {
     passwordInputLabel: label,
     passwordInputPlaceholder: placeholder,
-    passwordInvalidError,
+    passwordInputInvalidError,
   } = texts
   const { password: passwordInvalidErrorTriggered } = errors
   const classNames = { container: 'text-input' }
   const type = 'password'
-  const error = passwordInvalidErrorTriggered && passwordInvalidError
+  const error = passwordInvalidErrorTriggered && passwordInputInvalidError
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
   const onFocus = () => setErrors({ password: false, credentials: false })

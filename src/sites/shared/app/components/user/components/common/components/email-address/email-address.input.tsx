@@ -10,14 +10,14 @@ export const EmailAddressInput = () => {
   const {
     emailInputLabel: label,
     emailInputPlaceholder: placeholder,
-    emailInvalidError,
+    emailInputInvalidError,
   } = texts
   const { emailAddress: emailInvalidErrorTriggered } = errors
   const classNames = { container: 'text-input' }
   const type = 'email'
   const autoComplete = 'email'
   const value = emailAddress
-  const error = emailInvalidErrorTriggered && emailInvalidError
+  const error = emailInvalidErrorTriggered && emailInputInvalidError
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
   const onFocus = () => setErrors({ emailAddress: false, credentials: false })

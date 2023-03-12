@@ -17,8 +17,6 @@ export const initializeDeletion:InitializeDeletion = (args) => {
     setControl,
   } = args
 
-  console.log(args)
-
   setControl({ connecting: true })
 
   fetch(API_URL + '/user/delete/verification', {

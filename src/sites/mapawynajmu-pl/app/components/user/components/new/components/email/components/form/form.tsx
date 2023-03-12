@@ -20,7 +20,7 @@ const UserNewEmailForm = () => {
   const { render, texts, inputs } = state
   const { phoneNumberExplanation, headingOne } = texts
   const { accountType } = inputs
-  const userNewForm = render['user/create/form']
+  const userNewForm = render['user/new/form']
   const isBusinessAccount = accountType === AccountType.BUSINESS
   const headingOneProps = { tier: 1, text: headingOne }
 

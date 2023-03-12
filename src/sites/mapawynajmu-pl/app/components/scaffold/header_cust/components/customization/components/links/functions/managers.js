@@ -39,8 +39,6 @@ export function deAuthorizeManager(props) {
     }
   } = props
 
-  console.log(props)
-
   return {
     classNames: { container: 'header-link de-authorize' },
     label: langHandler({ pl: 'Wyloguj', en: 'Sign Out' }),
@@ -67,7 +65,7 @@ export function addAnnouncementManager(props) {
 export function signUpManager(props) {
   const { langs, links, changeRoute, langHandler } = props
   const classNames = { container: 'header-link sign-up' }
-  const link = links['user/create/form']
+  const link = links['user/new/form']
   const href = link && buildUrl({ path: link.path })
   const hrefLang = langHandler(langs)
   const title = link && link.title

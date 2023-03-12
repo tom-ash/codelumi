@@ -1,5 +1,5 @@
 function genericRouteStateSetter(state) {
-  const { setApp, dispatch } = this.props
+  const { dispatch } = this.props
 
   if (state) {
     dispatch({ type: 'render/reset', value: {} })
@@ -15,7 +15,6 @@ function genericRouteStateSetter(state) {
       dispatch({ type: 'inputs/reset', value: state.inputs })
       dispatch({ type: 'data/reset', value: state.data })
       dispatch({ type: 'control/reset', value: state.control })
-
       dispatch({ type: 'render', value: state['render'] })
     }, 0)
   }

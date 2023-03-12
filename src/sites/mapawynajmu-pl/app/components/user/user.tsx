@@ -10,7 +10,7 @@ const User = () => {
   const { state } = useStore()
   const { render } = state
   const {
-    'user/create': renderCreate,
+    'user/new': renderCreate,
     'user/authorize': renderAuthorize,
     'user/edit': renderEdit,
     'user/password-reset': renderPasswordReset,
