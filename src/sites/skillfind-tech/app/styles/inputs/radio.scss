@@ -1,0 +1,33 @@
+%radio {
+  float: left;
+  width: 50%;
+  color: #5d6d7e;
+  cursor: pointer;
+  .input {
+    float: left;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    margin-right: 12px;
+    cursor: pointer;
+    border: 2px solid #5d6d7e;
+    &.checked {
+      border: 2px solid #212f3d;
+    }
+    .tick {
+      width: 8px;
+      height: 8px;
+      border-radius: 4px;
+      margin: 2px;
+      background: #212f3d;
+    }
+  }
+  .label {
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 16px;
+    &.checked {
+      color: #212f3d;
+    }
+  }
+}

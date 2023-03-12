@@ -1,0 +1,28 @@
+%button {
+  position: relative;
+  height: 30px;
+  .input {
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    background: #2471A3;
+    font-size: 13px;
+    color: white;
+    &:hover {
+      background: #2980B9;
+    }
+    &:disabled {
+      background: #A9CCE3;
+      color: #F2F3F4;
+      cursor: not-allowed;
+    }
+  }
+  .button-spinner {
+    position: absolute;
+    left: -52px;
+    top: -52px;
+  }
+}

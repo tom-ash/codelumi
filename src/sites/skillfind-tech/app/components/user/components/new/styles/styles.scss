@@ -1,0 +1,20 @@
+@import '../../../../../../../shared/app/styles/media-breakpoints';
+@import '../../../../../styles/container';
+@import '../../../../../styles/headings/h1';
+@import '../../../../../styles/inputs/text';
+@import '../../../../../styles/inputs/button';
+
+#user-new {
+  @extend %container;
+  padding: 32px;
+  h1 {
+    @extend %h1;
+    margin-bottom: 24px
+  }
+  .text-input {
+    @extend %text-input;
+  }
+  .button {
+    @extend %button;
+  }
+}

@@ -5,6 +5,7 @@ import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import Page from '../../shared/app/components/page/page'
 import Visitor from '../../shared/app/components/visitor/visitor'
 const Announcement = loadable(() => import('./components/announcement/announcement'))
+const User = loadable(() => import('./components/user/user'))
 const Image = loadable(() => import('../../shared/app/components/image/image'))
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import styles from './styles/styles.scss'
@@ -68,6 +69,8 @@ class App extends React.Component {
       // @ts-ignore
       renderAnnouncement,
       // @ts-ignore
+      renderUser,
+      // @ts-ignore
       renderPostingIndex,
       // @ts-ignore
       device,
@@ -111,6 +114,7 @@ class App extends React.Component {
           {renderPage && <Page {...pageProps} />}
           {renderVisitor && <Visitor {...sharedProps} />}
           {renderAnnouncement && <Announcement {...sharedProps} />}
+          {renderUser && <User />}
           {renderImage && <Image {...imageProps} />}
         <Footer {...sharedProps} />
       </AppContext.Provider>
