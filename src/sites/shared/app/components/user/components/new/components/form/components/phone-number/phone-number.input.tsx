@@ -10,7 +10,7 @@ export const PhoneNumberInput = () => {
   const {
     phoneNumberInputLabel: label,
     phoneNumberInputPlaceholder: placeholder,
-    phoneNumberInvalidError,
+    phoneNumberInputInvalidError,
   } = texts
   const { phoneNumber: phoneNumberInvalidErrorTriggered } = errors
   const classNames = { container: 'text-input phone-number' }
@@ -18,7 +18,7 @@ export const PhoneNumberInput = () => {
   const type = 'tel'
   const autoComplete = 'tel-local'
   const value = phoneNumber
-  const error = phoneNumberInvalidErrorTriggered && phoneNumberInvalidError
+  const error = phoneNumberInvalidErrorTriggered && phoneNumberInputInvalidError
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
   const onFocus = () => setErrors({ phoneNumber: false })

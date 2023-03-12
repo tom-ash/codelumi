@@ -37,7 +37,7 @@ export const submitCountryCodeAndPhoneNumber:SubmitCountryCodeAndPhoneNumber = (
   })
     .then(response => {
       if (response.status == 200) {
-        setData({ countryCodeAndPhoneNumberValue: `${countryCode} ${phoneNumber}` })
+        setData({ countryCodeAndPhoneNumberCellValue: `${countryCode} ${phoneNumber}` })
         setInputs({ countryCode, phoneNumber })
         setControl({ connecting: false, countryCodeAndPhoneNumberCellOpened: false })
 

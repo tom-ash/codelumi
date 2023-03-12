@@ -7,7 +7,7 @@ import { useStore } from '../../../../../../../../../shared/app/functions/store/
 interface UserEditCellInterface {
   (props: {
     attrName: string
-    children: React.ReactElement
+    children: React.ReactElement | React.ReactElement[]
   }): React.ReactElement
 }
 
@@ -20,11 +20,12 @@ export const UserEditCell:UserEditCellInterface = (props) => {
   const { state } = useStore()
   const { texts, control, data } = state
   const {
-    [`${attrName}Title`]: title,
+    [`${attrName}CellTitle`]: title,
   } = texts
   const {
-    [`${attrName}Value`]: value,
+    [`${attrName}CellValue`]: value,
   } = data
+  
   const cellOpenerProps = { attrName }
   const cellOpenedKey = `${attrName}CellOpened`
   const { [cellOpenedKey]: cellOpened } = control

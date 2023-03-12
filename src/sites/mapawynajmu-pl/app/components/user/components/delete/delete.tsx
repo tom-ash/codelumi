@@ -9,7 +9,7 @@ export const UserDelete = () => {
   const { app, texts, data } = state
   const { lang } = app
   const {
-    userDeleteExplanation,
+    userDeleteInputExplanation,
   } = texts
   const {
     email,
@@ -27,7 +27,7 @@ export const UserDelete = () => {
   return (
     <div id='user-delete'>
       <div className='explanation'>
-        {userDeleteExplanation}
+        {userDeleteInputExplanation}
       </div>
       <VerificationCodeInput />
       <SubmitVerificationCodeButton />

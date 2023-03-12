@@ -9,13 +9,13 @@ export const BusinessNameInput = () => {
   const {
     businessNameInputLabel: label,
     businessNameInputPlaceholder: placeholder,
-    businessNameInvalidError,
+    businessNameInputInvalidError,
   } = texts
   const { businessName } = inputs
   const { businessName: businessNameInvalidErrorTriggered } = errors
   const classNames = { container: 'text-input' }
   const value = businessName
-  const error = businessNameInvalidErrorTriggered && businessNameInvalidError
+  const error = businessNameInvalidErrorTriggered && businessNameInputInvalidError
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
   const onChange = (businessName: string) => setInputs({ businessName })

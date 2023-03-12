@@ -7,7 +7,7 @@ import AppContext from '../../../../../constants/context'
 export const SubmitVerificationCodeButton = () => {
   const { state, dispatch } = useStore()
   const { app, texts, inputs } = state
-  const { userDeleteButtonLabel: label } = texts
+  const { userDeleteSubmitButtonLabel: label } = texts
   const {
     lang
   } = app

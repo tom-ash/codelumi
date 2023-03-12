@@ -14,13 +14,13 @@ export const UserEditCountryCodeAndPhoneNumber = () => {
   const { state } = useStore()
   const { texts } = state
   const {
-    countryCodeAndPhoneNumberExplanation,
+    countryCodeAndPhoneNumberInputsExplanation,
   } = texts
 
   return (
     <Cell {...cellProps}>
       <>
-        <Explanation explanation={countryCodeAndPhoneNumberExplanation} />
+        <Explanation explanation={countryCodeAndPhoneNumberInputsExplanation} />
         <div className='country-code-and-phone-number-container'>
           <CountryCodeSelect />
           <PhoneNumberInput />
