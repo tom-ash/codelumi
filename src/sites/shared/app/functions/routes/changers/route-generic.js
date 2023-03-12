@@ -1,12 +1,12 @@
 import scrollToTop from '../../screen/scrollers/to-top'
 
-function changeRouteGeneric({ apiUrl, href, withoutScroll, retainQueryParams }) {
+function changeRouteGeneric({ href, withoutScroll, retainQueryParams }) {
   let decoratedHref = href.replace(/\/\/$/, '/')
   decoratedHref = retainQueryParams ? decoratedHref + window.location.search : decoratedHref
 
+  // TODO: FIX!
   window.history.pushState({}, '', decoratedHref)
-
-  this.matchStateToRoute({ apiUrl })
+  window.dispatchEvent(new Event('popstate'));
 
   if (withoutScroll !== true) scrollToTop()
 }
