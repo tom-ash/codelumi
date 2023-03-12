@@ -19,7 +19,7 @@ const UserAuthEmail = () => {
   const { state } = useStore()
   const { texts, links } = state
   const { headingOne, resetPassword } = texts
-  const { href: resetPasswordHref } = links['user/reset-password']
+  const { href: resetPasswordHref } = links['user/password-reset']
 
   const passwordInputProps = {
     autoComplete: PasswordAutoComplete.CURRENT_PASSWORD,

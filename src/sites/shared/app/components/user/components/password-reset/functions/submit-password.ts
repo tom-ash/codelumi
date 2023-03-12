@@ -1,6 +1,6 @@
 import API_URL from '../../../../../../../mapawynajmu-pl/shared/constants/urls/api'
 import { getCookieValue } from '../../../../visitor/components/legal/components/cookies/functions/save'
-import { hashPassword } from '../../../../../../../mapawynajmu-pl/app/components/user/functions/shared'
+import { hashPassword } from '../../../../../../../mapawynajmu-pl/app/components/user/functions/hash-password'
 import { PasswordResetStep } from '../password-reset.types'
 
 interface SubmitPassword {

@@ -1,7 +1,7 @@
 import { AccountType } from '../../../../../../../types/user.types'
 import { UserObject } from '../form.types'
 import { validateUserObject } from './validate-user-object'
-import { hashPassword } from '../../../../../../../functions/shared'
+import { hashPassword } from '../../../../../../../functions/hash-password'
 import { termsOfServiceConsentParser } from '../../../../../../../../../../../shared/app/components/user/components/new/components/form/components/terms-of-service-consent/terms-of-service-consent.parser'
 
 interface BuildUserObject {
