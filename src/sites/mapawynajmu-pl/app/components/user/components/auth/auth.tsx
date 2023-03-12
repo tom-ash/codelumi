@@ -7,7 +7,7 @@ const UserAuth = () => {
   useStyles(styles)
 
   return (
-    <div id='user-authorize'>
+    <div id='user-auth'>
       <Email />
     </div>
   )

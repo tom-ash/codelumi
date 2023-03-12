@@ -1,4 +1,4 @@
-import { hashPassword } from '../../../../../../../functions/hash-password'
+import { hashPassword } from '../../../../../../../../../../../shared/app/components/user/functions/hash-password'
 import API_URL from '../../../../../../../../../../shared/constants/urls/api'
 import { saveCookie } from '../../../../../../../../../functions/cookie-handlers'
 

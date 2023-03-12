@@ -3,7 +3,7 @@ import { useStore } from '../../../../../../../../shared/app/functions/store/use
 import { UserEditCell as Cell } from '../common/cell/cell'
 import { Explanation } from '../../../../../../../../shared/app/components/support/explanation/explanationt'
 import { BusinessNameInput } from '../../../../../../../../shared/app/components/user/components/new/components/form/components/business-name/business-name.input'
-import { SubmitBusinessNameButton } from './components/submit-business-name'
+import { SubmitBusinessNameButton } from './components/submit-business-name-button'
 
 export const UserEditBusinessName = () => {
   const cellProps = {

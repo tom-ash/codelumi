@@ -32,7 +32,7 @@ const UserAuthEmail = () => {
   }
 
   return (
-    <div id='user-authorize-email'>
+    <div id='user-auth-email'>
       <Heading {...headingProps} />
       <Line />
       <form>

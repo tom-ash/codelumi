@@ -4,11 +4,10 @@
 @import '../../../../../../../../../styles/colors';
 @import '../../../../../../../../../styles/inputs/form/checkbox';
 @import './text-inputs';
-@import './remember-me';
 @import './submit';
 @import './links';
 
-#user-authorize-email {
+#user-auth-email {
   @extend %container;
   @extend %text-inputs;
   @extend %remember-me;
