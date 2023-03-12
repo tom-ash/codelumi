@@ -15,7 +15,6 @@ import { langHandler } from '../../shared/app/functions/lang/handlers/lang'
 import screenSizeHandler from '../../shared/app/functions/screen/handlers/screen-size'
 import popStateHandler from '../../shared/app/functions/routes/handlers/pop-state'
 import matchStateToRoute from './functions/routes/matchers/state-to-route'
-import changeRoute from './functions/routes/changers/route'
 import AppContext from './constants/context'
 import CLIENT_URL from '../shared/constants/urls/client'
 import API_URL from '../shared/constants/urls/api'
@@ -37,7 +36,6 @@ const APP_NAME = 'skillfind-tech'
 class App extends React.Component {
   screenSizeHandler: () => void
   langHandler: LangHandler
-  changeRoute: ChangeRoute
   // @ts-ignore
   constructor(props) {
     super(props)
@@ -50,12 +48,11 @@ class App extends React.Component {
     this.langHandler = langHandler.bind(this)
     // @ts-ignore
     this.matchStateToRoute = matchStateToRoute.bind(this)
-    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {
     // @ts-ignore
-    const AppContextValue = { changeRoute: this.changeRoute, matchStateToRoute: this.matchStateToRoute }
+    const AppContextValue = { matchStateToRoute: this.matchStateToRoute }
     // @ts-ignore
     const {
       // @ts-ignore
@@ -97,7 +94,6 @@ class App extends React.Component {
       apiUrl: API_URL,
       device,
       lang,
-      changeRoute: this.changeRoute,
       buildUrl,
       setApp,
       langHandler: this.langHandler,

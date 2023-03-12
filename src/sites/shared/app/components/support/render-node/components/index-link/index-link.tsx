@@ -2,10 +2,10 @@ import React from 'react'
 import { ManagedLink } from 'managed-inputs'
 import prettifyDate from '../../../../../functions/time/prettify-date'
 import SVG from '../../../../support/svg/svg'
+import { changeUrl } from '../../../../../functions/routes/changers/route-generic'
 
 interface IndexLinkProps {
   clientUrl: string
-  changeRoute(props: object): void
   pathname: string
   hrefLang: string
   title: string
@@ -20,7 +20,6 @@ interface IndexLinkProps {
 const IndexLink = (props: IndexLinkProps) => {
   const {
     clientUrl,
-    changeRoute,
     pathname,
     hrefLang,
     title,
@@ -53,7 +52,7 @@ const IndexLink = (props: IndexLinkProps) => {
       </div>
     </>
   )
-  const onClick = () => changeRoute({ href })
+  const onClick = () => changeUrl({ href })
   const linkProps = { classNames, href, hrefLang, title, label, onClick }
 
   return <ManagedLink {...linkProps} />

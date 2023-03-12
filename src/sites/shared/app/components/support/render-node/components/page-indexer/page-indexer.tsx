@@ -30,13 +30,12 @@ interface PageIndexerProps {
     modifiedOn: string
   }[]
   clientUrl: string
-  changeRoute(props: object): void
 }
 
 const PageIndexer = (props: PageIndexerProps) => {
   useStyles(styles)
 
-  const { tutorials: learningCollection, articles, collection: collectionName, clientUrl, changeRoute } = props
+  const { tutorials: learningCollection, articles, collection: collectionName, clientUrl } = props
 
   if (collectionName === 'learning') {
     return (
@@ -47,7 +46,6 @@ const PageIndexer = (props: PageIndexerProps) => {
             const linkProps = {
               collectionName,
               clientUrl,
-              changeRoute,
               logo,
               image,
               title,
@@ -76,7 +74,6 @@ const PageIndexer = (props: PageIndexerProps) => {
             const linkProps = {
               collectionName,
               clientUrl,
-              changeRoute,
               logo,
               image,
               title,

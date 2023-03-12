@@ -1,16 +1,15 @@
 import { deleteCookie } from '../../../../../../../functions/cookie-handlers'
+import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/route-generic'
 
 interface SignOut {
   (args: {
     href: string
-    changeRoute: ChangeRoute
   }): void
 }
 
 export const signOut: SignOut = (args) => {
   const {
     href,
-    changeRoute,
   } = args
 
   if (typeof window !== 'undefined') {
@@ -21,5 +20,5 @@ export const signOut: SignOut = (args) => {
 
   deleteCookie('access_token')
 
-  changeRoute({ href })
+  changeUrl({ href })
 }

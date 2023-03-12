@@ -10,21 +10,19 @@ type PageIndexProps = {
   pageKey: string
   setData(attrs: object): void
   apiUrl: string
-  changeRoute(props: { href: string }): void
   buildUrl(props: { path: string }): string
 }
 
 const PageIndex = (props: PageIndexProps) => {
-  const { pageKey, pageKeys, apiUrl, setData, buildUrl, changeRoute } = props
+  const { pageKey, pageKeys, apiUrl, setData, buildUrl } = props
 
   const changeKey = (pageKey: string) => setData({ pageKey })
 
   const createFactoryProps = {
     apiUrl,
     buildUrl,
-    changeRoute,
   }
-  const editFactoryProps = { changeRoute, buildUrl }
+  const editFactoryProps = { buildUrl }
 
   const recordIndexerProps = {
     recordKey: pageKey,

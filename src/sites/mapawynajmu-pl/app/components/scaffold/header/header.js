@@ -3,7 +3,7 @@ import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import { LogoLink } from './components/logo-link'
 
 const Header = props => {
-  const { HeaderCustomization, device, styles, links, lang, changeRoute, buildUrl } = props
+  const { HeaderCustomization, device, styles, links, lang, buildUrl } = props
 
   useStyles(styles)
 
@@ -12,7 +12,6 @@ const Header = props => {
   const logoLinProps = {
     links,
     lang,
-    changeRoute,
     buildUrl,
   }
 

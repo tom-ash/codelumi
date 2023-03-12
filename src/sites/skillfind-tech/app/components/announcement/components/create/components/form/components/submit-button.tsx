@@ -1,11 +1,9 @@
-import React, { useContext} from 'react'
+import React from 'react'
 import { ManagedButton } from 'managed-inputs'
 import { submit } from '../functions/submit'
 import { useStore } from 'react-redux'
-import AppContext from '../../../../../../../constants/context'
 
 const SubmitButton = () => {
-  const { changeRoute } = useContext(AppContext)
   const state = useStore().getState()
   const { app: { lang }, texts, inputs } = state
   const {
@@ -30,7 +28,6 @@ const SubmitButton = () => {
     onClick: () => submit({
       lang,
       selectedSkills,
-      changeRoute,
       // remote,
       // hybrid,
       // office,

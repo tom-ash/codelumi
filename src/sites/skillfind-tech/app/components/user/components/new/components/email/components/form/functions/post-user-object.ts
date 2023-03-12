@@ -2,17 +2,17 @@ import API_URL from '../../../../../../../../../../shared/constants/urls/api'
 import setVerificationToken from '../../../../../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
 import { buildUrl } from '../../../../../../../../../../shared/functions/routes/builders/url'
 import { UserObject } from '../form.types'
+import { changeUrl } from '../../../../../../../../../../../shared/app/functions/routes/changers/route-generic'
 
 interface PostUserObject {
   (args: {
     userObject: UserObject
     lang: Lang
-    changeRoute: ChangeRoute
   }): void
 }
 
 export const postUserObject: PostUserObject = (args) => {
-  const { userObject, lang, changeRoute } = args
+  const { userObject, lang } = args
 
   fetch(API_URL + '/user/create/email-and-password', {
     method: 'POST',
@@ -31,7 +31,7 @@ export const postUserObject: PostUserObject = (args) => {
     const { verificationToken, path } = jsonResponse
 
     setVerificationToken(verificationToken)
-    changeRoute({ href: buildUrl({ path }) })
+    changeUrl({ href: buildUrl({ path }) })
   })
   .catch(e => console.dir(e))
 }

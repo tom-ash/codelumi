@@ -22,10 +22,9 @@ const HeaderUserLinks = props => {
 }
 
 const HeaderLinks = props => {
-  const { isMobile, buildUrl, changeRoute, langHandler, langs } = props
+  const { isMobile, buildUrl, langHandler, langs } = props
   const articlesLinkProps = {
     buildUrl,
-    changeRoute,
     langHandler,
     langs,
   }

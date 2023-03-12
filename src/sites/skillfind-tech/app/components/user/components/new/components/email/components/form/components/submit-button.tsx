@@ -1,13 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { postUserObject } from '../functions/post-user-object'
 import { buildUserObject } from '../functions/build-user-object'
 import { ManagedButton } from 'managed-inputs'
 import { useStore } from '../../../../../../../../../../../shared/app/functions/store/useStore'
-// import { ButtonSpinner } from '..'
-import AppContext from '../../../../../../../../../constants/context'
 
 export const SubmitButton = () => {
-  const { changeRoute } = useContext(AppContext)
   const { state, dispatch } = useStore()
   const { app, texts, control, inputs } = state
   const { lang } = app
@@ -39,7 +36,7 @@ export const SubmitButton = () => {
 
     if (!userObject) return setControl({ connecting: false })
 
-    postUserObject({ userObject, lang, changeRoute })
+    postUserObject({ userObject, lang })
   }
 
   const buttonProps = {

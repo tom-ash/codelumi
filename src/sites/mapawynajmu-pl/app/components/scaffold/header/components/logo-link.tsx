@@ -1,16 +1,16 @@
 import React from 'react'
 import { ManagedLink } from 'managed-inputs'
 import { Logo } from './logo/logo'
+import { changeUrl } from '../../../../../../shared/app/functions/routes/changers/route-generic'
 
 interface LogoProps {
   links: object[]
   lang: string
-  changeRoute: ChangeRoute
   buildUrl: BuildUrl
 }
 
 export const LogoLink = (props: LogoProps) => {
-  const { links, lang, changeRoute, buildUrl } = props
+  const { links, lang, buildUrl } = props
   const classNames = { container: 'header-link logo' }
   // @ts-ignore
   const link = links['root']
@@ -20,7 +20,7 @@ export const LogoLink = (props: LogoProps) => {
   const label = <Logo />
   const onClick = () => {
     window.areListingsObsolete = true
-    changeRoute({ href })
+    changeUrl({ href })
   }
 
   const linkProps = { classNames, href, hrefLang, title, label, onClick }

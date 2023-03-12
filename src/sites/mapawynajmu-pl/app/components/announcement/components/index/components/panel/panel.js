@@ -6,7 +6,6 @@ import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import { Category } from './components/category/category'
 import PanelVisitor from './components/visitor/visitor'
-import AppContext from '../../../../../../constants/context'
 
 class AnnouncementIndexPanel extends React.Component {
   constructor(props) {
@@ -14,11 +13,8 @@ class AnnouncementIndexPanel extends React.Component {
     this.langHandler = langHandler.bind(this)
   }
 
-  static contextType = AppContext
-
   render() {
     const { renderMap, currentCategory, links } = this.props
-    const { changeRoute } = this.context
 
     return (
       <>
@@ -26,10 +22,9 @@ class AnnouncementIndexPanel extends React.Component {
           <Category
             langHandler={this.langHandler}
             currentCategory={currentCategory}
-            changeRoute={changeRoute}
             links={links}
           />
-          {renderMap && <PanelVisitor {...{ ...this.props, changeRoute, langHandler: this.langHandler }} />}
+          {renderMap && <PanelVisitor {...{ ...this.props, langHandler: this.langHandler }} />}
           <div className='float-clear' />
         </div>
       </>

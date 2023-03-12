@@ -1,7 +1,8 @@
 import React from 'react'
+import { changeUrl } from '../../../../functions/routes/changers/route-generic'
 
 export function logoManager(props) {
-  const { links, lang, Logo, changeRoute, buildUrl } = props
+  const { links, lang, Logo, buildUrl } = props
   const classNames = { container: 'header-link logo' }
   const link = links['root']
   const title = link && link.title
@@ -10,7 +11,7 @@ export function logoManager(props) {
   const label = <Logo />
   const onClick = () => {
     window.areListingsObsolete = true
-    changeRoute({ href })
+    changeUrl({ href })
   }
 
   return { classNames, href, hrefLang, title, label, onClick }

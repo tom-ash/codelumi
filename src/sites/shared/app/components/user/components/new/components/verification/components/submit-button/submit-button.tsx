@@ -1,13 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { ManagedButton } from 'managed-inputs'
 import { useStore } from '../../../../../../../../functions/store/useStore'
 import { ButtonSpinner } from '../../../../../../../../../../mapawynajmu-pl/app/components/support/components/button-spinner/button-spinner'
-import AppContext from '../../../../../../../../../../mapawynajmu-pl/app/constants/context'
 import { verificationCodeValidator } from '../verification-code/verification-code.validator'
 import { putVerificationCode } from '../../functions/put-verification-code'
 
 export const SubmitButton = () => {
-  const { changeRoute } = useContext(AppContext)
   const { state, dispatch } = useStore()
   const { app, texts, control, inputs } = state
   const { lang } = app
@@ -32,7 +30,6 @@ export const SubmitButton = () => {
       verificationCode,
       setControl,
       setErrors,
-      changeRoute,
     })
   }
 

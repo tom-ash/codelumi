@@ -12,17 +12,16 @@ type ImageIndexProps = {
   imageKey: string
   setData(attrs: object): void
   apiUrl: string
-  changeRoute(props: { href: string }): void
   buildUrl(props: { path: string }): string
 }
 
 const ImageIndex = (props: ImageIndexProps) => {
   useStyles(styles)
 
-  const { imageKey, imageKeys, setData, apiUrl, changeRoute, buildUrl } = props
+  const { imageKey, imageKeys, setData, apiUrl, buildUrl } = props
   const changeKey = (imageKey: string) => setData({ imageKey })
-  const createFactoryProps = { apiUrl, changeRoute, imageKey, buildUrl }
-  const editFactoryProps = { changeRoute, buildUrl }
+  const createFactoryProps = { apiUrl, imageKey, buildUrl }
+  const editFactoryProps = { buildUrl }
   const recordIndexerProps = {
     recordKey: imageKey,
     recordKeys: imageKeys,

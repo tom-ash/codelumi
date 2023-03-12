@@ -18,7 +18,7 @@ type ChangeRoute = (
   // TODO: Signify bound this.
   props: {
     href: string
-    withoutScroll?: boolean
+    withScroll?: boolean
     retainQueryParams?: boolean
   }
 ) => void

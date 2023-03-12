@@ -1,5 +1,6 @@
 import { getAccessToken } from "../../../../user/components/auth/functions/get-access-token"
 import { UPDATE_API_ROUTE } from '../constants/api_route_data'
+import { changeUrl } from "../../../../../functions/routes/changers/route-generic"
 
 export function save({ withRouteChange = false }) {
   const { apiUrl, setControl, setData, autoSchema, manualSchema } = this.props
@@ -32,10 +33,10 @@ export function save({ withRouteChange = false }) {
 
       if (!withRouteChange) return
 
-      const { buildUrl, changeRoute } = this.props
+      const { buildUrl } = this.props
       const href = buildUrl({ path })
 
-      changeRoute({ href })
+      changeUrl({ href })
     })
     .catch(error => {
       setData({ updated: false })

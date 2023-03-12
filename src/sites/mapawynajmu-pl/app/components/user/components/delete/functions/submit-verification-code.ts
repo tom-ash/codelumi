@@ -9,7 +9,6 @@ interface SubmitVerificationCode {
     verificationCode: string
     setControl: any // TODO: TS!
     setErrors: any // TODO: TS!
-    changeRoute: ChangeRoute
   }): void
 }
 
@@ -19,7 +18,6 @@ export const submitVerificationCode:SubmitVerificationCode = (args) => {
     verificationCode,
     setControl,
     setErrors,
-    changeRoute,
   } = args
 
   const verificationToken = getCookieValue('verificationToken')
@@ -42,7 +40,7 @@ export const submitVerificationCode:SubmitVerificationCode = (args) => {
     .then(jsonResponse => {
       const { href } = jsonResponse
 
-      signOut({ href, changeRoute })
+      signOut({ href })
     })
     .catch(() => {
       // TODO: SENTRY!

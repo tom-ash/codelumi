@@ -23,14 +23,13 @@ class Page extends React.Component {
       renderIndex,
       renderNotFound,
       device,
-      changeRoute,
       buildUrl,
       langHandler,
     } = this.props
-    const showProps = { appName, links, clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
-    const editProps = { appName, links, clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
-    const indexProps = { clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
-    const pageNotFoundProps = { clientUrl, apiUrl, device, changeRoute, buildUrl, langHandler }
+    const showProps = { appName, links, clientUrl, apiUrl, device, buildUrl, langHandler }
+    const editProps = { appName, links, clientUrl, apiUrl, device, buildUrl, langHandler }
+    const indexProps = { clientUrl, apiUrl, device, buildUrl, langHandler }
+    const pageNotFoundProps = { clientUrl, apiUrl, device, buildUrl, langHandler }
 
     return (
       <>

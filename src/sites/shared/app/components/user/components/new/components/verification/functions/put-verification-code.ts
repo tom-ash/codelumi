@@ -2,6 +2,7 @@ import API_URL from '../../../../../../../../../mapawynajmu-pl/shared/constants/
 // import { saveTokens } from '../../../../../../../functions/token-handlers'
 import getCookieValue from '../../../../../../../functions/cookies/getters/get-cookie-value'
 import { saveCookie } from '../../../../../../../../../mapawynajmu-pl/app/functions/cookie-handlers'
+import { changeUrl } from '../../../../../../../functions/routes/changers/route-generic'
 
 interface PutVerificationCode {
   (args: {
@@ -9,7 +10,6 @@ interface PutVerificationCode {
     verificationCode: string
     setControl(args: object): void
     setErrors(args: object): void
-    changeRoute: ChangeRoute
   }): void
 }
 
@@ -19,7 +19,6 @@ export const putVerificationCode: PutVerificationCode = (args) => {
     verificationCode,
     setControl,
     setErrors,
-    changeRoute,
   } = args
 
   const verificationToken = getCookieValue('verificationToken')
@@ -41,7 +40,7 @@ export const putVerificationCode: PutVerificationCode = (args) => {
     const { accessToken, href } = json
 
     saveCookie('access_token', accessToken, 'ninetyDays')
-    changeRoute({ href })
+    changeUrl({ href })
   })
   .catch(() =>
     setErrors({ verificationCode: true })

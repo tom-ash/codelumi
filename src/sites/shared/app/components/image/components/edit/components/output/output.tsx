@@ -1,5 +1,6 @@
 import React from 'react'
 import RenderNode from '../../../../../support/render-node/render-node'
+import { changeUrl } from '../../../../../../functions/routes/changers/route-generic'
 
 interface OutputProps {
   width: string
@@ -9,12 +10,11 @@ interface OutputProps {
   appName: string
   device: string
   lang: string
-  changeRoute(props: object): void
   langHandler: LangHandler
 }
 
 const Output = (props: OutputProps) => {
-  const { width, height, bodyElements, clientUrl, appName, device, lang, changeRoute, langHandler } = props
+  const { width, height, bodyElements, clientUrl, appName, device, lang, langHandler } = props
 
   const nodeProps = {
     node: {
@@ -25,7 +25,7 @@ const Output = (props: OutputProps) => {
     appName,
     device,
     lang,
-    changeRoute,
+    changeUrl,
     langHandler,
   }
 

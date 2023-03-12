@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps } from './constants/mappers'
 import PageTile from '../shared/components/tile/tile'
+import { changeUrl } from '../../../../functions/routes/changers/route-generic'
 
 class PageShow extends React.Component {
   constructor(props) {
@@ -9,16 +10,16 @@ class PageShow extends React.Component {
   }
 
   changePage = () => {
-    const { links, changeRoute, buildUrl } = this.props
+    const { links, buildUrl } = this.props
     const link = links['page/edit']
     const href = link && buildUrl({ path: link.path })
 
-    changeRoute({ href })
+    changeUrl({ href })
   }
 
   render() {
-    const { url, clientUrl, changeRoute, buildUrl } = this.props
-    const tileProps = { ...this.props, renderShow: true, clientUrl, changeRoute, changePage: this.changePage, buildUrl }
+    const { url, clientUrl, buildUrl } = this.props
+    const tileProps = { ...this.props, renderShow: true, clientUrl, changePage: this.changePage, buildUrl }
 
     if (!url) return null
 

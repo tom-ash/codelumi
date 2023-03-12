@@ -22,7 +22,6 @@ class Visitor extends React.Component {
       appName,
       lang,
       links,
-      changeRoute,
       langHandler,
       changeConsents,
       buildUrl,
@@ -34,21 +33,20 @@ class Visitor extends React.Component {
       statisticsConsent,
       marketingConsent,
     } = this.props
-    const contactProps = { links, appName, changeRoute, buildUrl, langHandler }
-    const termsOfServiceProps = { links, appName, changeRoute, buildUrl, langHandler }
-    const cookiesPolicyProps = { links, appName, changeRoute, buildUrl, langHandler }
-    const privacyPolicyProps = { links, appName, changeRoute, buildUrl, langHandler }
+    const contactProps = { links, appName, buildUrl, langHandler }
+    const termsOfServiceProps = { links, appName, buildUrl, langHandler }
+    const cookiesPolicyProps = { links, appName, buildUrl, langHandler }
+    const privacyPolicyProps = { links, appName, buildUrl, langHandler }
     const privacySettingsProps = {
       links,
       appName,
       statisticsConsent,
       marketingConsent,
-      changeRoute,
       buildUrl,
       changeConsents,
       langHandler,
     }
-    const privacyMonitProps = { links, appName, lang, changeRoute, buildUrl, langHandler, changeConsents }
+    const privacyMonitProps = { links, appName, lang, buildUrl, langHandler, changeConsents }
     const showPrivacyMonit =
       anyNull({ statisticsConsent, marketingConsent }) &&
       !renderContact &&

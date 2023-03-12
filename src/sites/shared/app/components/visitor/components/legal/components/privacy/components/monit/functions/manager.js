@@ -1,4 +1,5 @@
 import { saveCookie } from '../../../../cookies/functions/save'
+import { changeUrl } from '../../../../../../../../../functions/routes/changers/route-generic'
 
 export function agreeManager(props) {
   const { changeConsents } = props
@@ -15,12 +16,12 @@ export function agreeManager(props) {
 }
 
 export function settingsManager(props) {
-  const { links, langHandler, changeRoute, buildUrl } = props
+  const { links, langHandler, buildUrl } = props
   const classNames = { container: 'form-input button settings' }
   const label = langHandler({ pl: 'Ustawienia', en: 'Settings' })
   const linkData = links['visitor/privacy-settings']
   const href = linkData && buildUrl({ path: linkData.path })
-  const onClick = () => changeRoute({ href })
+  const onClick = () => changeUrl({ href })
 
   return { classNames, label, onClick }
 }

@@ -13,12 +13,9 @@ import { langHandler } from '../../../../../functions/lang-handler'
 import { togglePhone } from '../../../functions/toggle-phone'
 import { buildUrl } from '../../../../../../shared/functions/builders/url'
 import { markListingAsViewed } from '../../../functions/mark-as-viewed'
-import AppContext from '../../../../../constants/context'
-import scrollToElement from '../../../../../../../shared/app/functions/screen/scrollers/to-element'
+import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/route-generic'
 
 class AnnouncementTile extends React.Component {
-  static contextType = AppContext
-
   constructor(props) {
     super(props)
     this.container = React.createRef()
@@ -165,9 +162,8 @@ class AnnouncementTile extends React.Component {
               e.preventDefault()
 
               if (!isMobile) {
-                const { changeRoute } = this.context
                 const href = buildUrl({ path })
-                changeRoute({ href, retainQueryParams: true })
+                changeUrl({ href, retainQueryParams: true })
                 return
               }
 

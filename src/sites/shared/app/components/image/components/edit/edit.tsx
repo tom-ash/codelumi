@@ -9,6 +9,7 @@ import OutputProps from './components/output/output'
 import StorageKeyInput from './components/storage-key-input'
 import { StoragePreview } from './components/storage-preview'
 import StorageUrl from './components/storage-url'
+import { changeUrl } from '../../../../functions/routes/changers/route-generic'
 
 type ImageEditProps = {
   apiUrl: string
@@ -24,7 +25,6 @@ type ImageEditProps = {
   appName: string
   device: string
   lang: string
-  changeRoute(props: object): void
   langHandler: LangHandler
 }
 
@@ -45,7 +45,6 @@ const ImageEdit = (props: ImageEditProps) => {
     appName,
     device,
     lang,
-    changeRoute,
     langHandler,
   } = props
 
@@ -68,7 +67,7 @@ const ImageEdit = (props: ImageEditProps) => {
     appName,
     device,
     lang,
-    changeRoute,
+    changeUrl,
     langHandler,
   }
   const storageKeyProps = { storageKey, setData }

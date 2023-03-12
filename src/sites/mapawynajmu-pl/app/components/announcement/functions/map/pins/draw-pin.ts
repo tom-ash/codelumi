@@ -1,3 +1,5 @@
+import { changeUrl } from "../../../../../../../shared/app/functions/routes/changers/route-generic"
+
 interface DrawPinProps {
   latitude: number
   longitude: number
@@ -7,11 +9,10 @@ interface DrawPinProps {
   path: string
   setControl(props: object): void
   setData(props: object): void
-  changeRoute(props: object): void
 }
 
 function drawPin(props: DrawPinProps) {
-  const { latitude, longitude, id, htmlContent, className, path, setControl, setData, changeRoute } = props
+  const { latitude, longitude, id, htmlContent, className, path, setControl, setData } = props
 
   // @ts-ignore
   return new window.pinCreator(
@@ -37,7 +38,7 @@ function drawPin(props: DrawPinProps) {
         })
 
         setData({ tile: null, tileId: null })
-        changeRoute({ href: path, withoutScroll: true })
+        changeUrl({ href: path, withScroll: false })
       },
     }
   )

@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import SVG from '../../../../../../../../shared/app/components/support/svg/svg'
-import AppContext from '../../../../../../constants/context'
 import centerMap from '../../../index/components/map/functions/center-map'
 import { buildUrl } from '../../../../../../../shared/functions/builders/url'
+import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/route-generic'
 
 interface GoBackProps {
   id: number
@@ -10,14 +10,13 @@ interface GoBackProps {
 }
 
 const GoBack = (props: GoBackProps) => {
-  const { changeRoute } = useContext(AppContext)
   const { goBackLink } = props
 
   return (
     <button
       onClick={() => {
         centerMap()
-        changeRoute({ href: buildUrl(goBackLink), retainQueryParams: true })
+        changeUrl({ href: buildUrl(goBackLink), retainQueryParams: true })
       }}
       className='go-back-to-list'
     >

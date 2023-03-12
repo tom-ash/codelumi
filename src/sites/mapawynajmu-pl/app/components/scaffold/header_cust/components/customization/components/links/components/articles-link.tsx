@@ -1,15 +1,15 @@
 import React from 'react'
 import { ManagedLink } from 'managed-inputs'
+import { changeUrl } from '../../../../../../../../../../shared/app/functions/routes/changers/route-generic'
 
 interface ArticlesLinkProps {
   buildUrl: BuildUrl
-  changeRoute: ChangeRoute
   langHandler: LangHandler
   langs: { pl: 'pl'; en: 'en' }
 }
 
 export function ArticlesLink(props: ArticlesLinkProps) {
-  const { langs, buildUrl, changeRoute, langHandler } = props
+  const { langs, buildUrl, langHandler } = props
 
   const classNames = { container: 'header-link' }
   // @ts-ignore
@@ -25,7 +25,7 @@ export function ArticlesLink(props: ArticlesLinkProps) {
   // @ts-ignore
   const title = langHandler({ pl: 'Artykuły', en: 'Articles' })
   const label = title
-  const onClick = () => changeRoute({ href })
+  const onClick = () => changeUrl({ href })
 
   const linkProps = {
     classNames,

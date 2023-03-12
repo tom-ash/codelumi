@@ -1,4 +1,5 @@
 import { buildUrl } from '../../../../../../shared/functions/builders/url'
+import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/route-generic'
 
 export function componentDidUpdate(prevProps) {
   const { rebuildQueryParams: prevRebuildQueryParams } = prevProps
@@ -32,11 +33,10 @@ export function componentDidUpdate(prevProps) {
         return `${queryParam}=${queryParamValue}`
       })
 
-    const { changeRoute } = this.context
     const path = window.location.pathname.replace(/^\//, '') + '?' + builtQueryParamsArray.join('&')
     const href = buildUrl({ path })
 
     setInputs(updateAttrs)
-    changeRoute({ href })
+    changeUrl({ href })
   }
 }

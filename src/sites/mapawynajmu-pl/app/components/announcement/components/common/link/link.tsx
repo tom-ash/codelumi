@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
-import AppContext from '../../../../../constants/context'
+import React from 'react'
 import { ManagedLink } from 'managed-inputs'
 import { useStore } from 'react-redux'
+import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/route-generic'
 
 interface LinkProps {
   track: string
@@ -22,8 +22,7 @@ export const Link = (props: LinkProps) => {
 
   const classNames = { container: 'link' }
   const { href, hrefLang, title, label } = link
-  const { changeRoute } = useContext(AppContext)
-  const onClick = () => changeRoute({ href })
+  const onClick = () => changeUrl({ href })
   const linkProps = { classNames, href, hrefLang, title, label, onClick }
 
   return <ManagedLink {...linkProps} />

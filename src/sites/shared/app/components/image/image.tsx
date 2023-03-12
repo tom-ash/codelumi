@@ -1,6 +1,7 @@
 import React from 'react'
 import Index from './components/index'
 import Edit from './components/edit/edit'
+import { changeUrl } from '../../functions/routes/changers/route-generic'
 
 interface ImageProps {
   render: {
@@ -8,7 +9,6 @@ interface ImageProps {
     'image/edit': boolean
   }
   apiUrl: string
-  changeRoute(props: object): void
   buildUrl(props: { path: string }): string
   langHandler: LangHandler
   clientUrl: string
@@ -26,7 +26,6 @@ class Image extends React.Component<ImageProps> {
     const {
       render: { 'image/index': renderIndex, 'image/edit': renderEdit },
       apiUrl,
-      changeRoute,
       buildUrl,
       langHandler,
       clientUrl,
@@ -37,7 +36,7 @@ class Image extends React.Component<ImageProps> {
 
     const editProps = {
       apiUrl,
-      changeRoute,
+      changeUrl,
       langHandler,
       clientUrl,
       device,
@@ -47,7 +46,7 @@ class Image extends React.Component<ImageProps> {
 
     const indexProps = {
       apiUrl,
-      changeRoute,
+      changeUrl,
       buildUrl,
     }
 

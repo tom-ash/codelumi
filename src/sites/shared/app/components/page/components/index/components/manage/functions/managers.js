@@ -1,3 +1,5 @@
+import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/route-generic'
+
 export function nameManager() {
   const { inputtedName, setInputs, langHandler } = this.props
   const value = inputtedName || ''
@@ -11,21 +13,21 @@ export function nameManager() {
 }
 
 export function plVerManager(props) {
-  const { path, lang, changeRoute, buildUrl } = props
+  const { path, lang, buildUrl } = props
   const href = buildUrl({ path })
   const hrefLang = lang
   const label = path
-  const onClick = () => changeRoute({ href })
+  const onClick = () => changeUrl({ href })
 
   return { href, hrefLang, label, onClick }
 }
 
 export function enVerManager(props) {
-  const { path, lang, changeRoute, buildUrl } = props
+  const { path, lang, buildUrl } = props
   const href = buildUrl({ path })
   const hrefLang = lang
   const label = path
-  const onClick = () => changeRoute({ href })
+  const onClick = () => changeUrl({ href })
 
   return { href, hrefLang, label, onClick }
 }

@@ -1,10 +1,11 @@
 import React from 'react'
+import { changeUrl } from '../../../../../../../../../functions/routes/changers/route-generic'
 
 export function textsProvider(text, props) {
-  const { links, changeRoute, buildUrl } = props
+  const { links, buildUrl } = props
   const privacyPolicyLinkData = links['visitor/privacy-policy']
   const privacyPolicyPath = privacyPolicyLinkData && privacyPolicyLinkData.path
-  const changeRouteToPrivacyPolicy = () => changeRoute({ href: buildUrl({ path: privacyPolicyPath }) })
+  const changeRouteToPrivacyPolicy = () => changeUrl({ href: buildUrl({ path: privacyPolicyPath }) })
 
   switch (text) {
     case 'statistics':

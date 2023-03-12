@@ -1,15 +1,16 @@
+import { changeUrl } from "../../../../../functions/routes/changers/route-generic"
+
 interface EditFactoryProps {
   buildUrl(props: { path: string }): string
-  changeRoute(props: { href: string }): void
 }
 
 const editFactory = (props: EditFactoryProps) => {
-  const { changeRoute, buildUrl } = props
+  const { buildUrl } = props
 
   return (pageKey: string) => {
     const href = buildUrl({ path: `pages/${pageKey}` })
 
-    changeRoute({ href })
+    changeUrl({ href })
   }
 }
 

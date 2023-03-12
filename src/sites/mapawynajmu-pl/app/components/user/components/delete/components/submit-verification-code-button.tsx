@@ -1,8 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useStore } from '../../../../../../../shared/app/functions/store/useStore'
 import { SubmitButton } from '../../../../../../../shared/app/components/support/submit-button/submit-button'
 import { submitVerificationCode as submit } from '../functions/submit-verification-code'
-import AppContext from '../../../../../constants/context'
 
 export const SubmitVerificationCodeButton = () => {
   const { state, dispatch } = useStore()
@@ -16,7 +15,6 @@ export const SubmitVerificationCodeButton = () => {
   } = inputs
   const setControl = (value: any) => dispatch({ type: 'control', value })
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
-  const { changeRoute } = useContext(AppContext)
 
   const submitButtonProps = {
     label,
@@ -25,7 +23,6 @@ export const SubmitVerificationCodeButton = () => {
     submit,
     setErrors,
     setControl,
-    changeRoute,
   }
 
   return <SubmitButton {...submitButtonProps} />

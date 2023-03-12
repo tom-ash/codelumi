@@ -2,7 +2,6 @@ export interface Create {
   selectableSkills: Array<any>
   selectedSkills: Array<any>
   setStore(newStore: object): void
-  changeRoute: ChangeRoute
   remote: boolean
   hybrid: boolean
   office: boolean

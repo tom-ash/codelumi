@@ -2,10 +2,11 @@ import React from 'react'
 import { categories } from '../../../../../../constants/categories'
 import { ManagedSelect } from 'managed-inputs'
 import { buildUrl } from '../../../../../../../../../shared/functions/builders/url'
+import { changeUrl } from '../../../../../../../../../../shared/app/functions/routes/changers/route-generic'
 
 // @ts-ignore
 export const Category = props => {
-  const { langHandler, currentCategory, changeRoute, links } = props
+  const { langHandler, currentCategory, links } = props
 
   const options = categories.map(category => ({
     value: category.value,
@@ -34,7 +35,7 @@ export const Category = props => {
       // @ts-ignore
       window.areListingsObsolete = true
 
-      changeRoute({ href: href || '/', retainQueryParams: true })
+      changeUrl({ href: href || '/', retainQueryParams: true })
     },
   }
 

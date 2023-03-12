@@ -1,6 +1,7 @@
 import { hashPassword } from '../../../../../../../../../../../shared/app/components/user/functions/hash-password'
 import API_URL from '../../../../../../../../../../shared/constants/urls/api'
 import { saveCookie } from '../../../../../../../../../functions/cookie-handlers'
+import { changeUrl } from '../../../../../../../../../../../shared/app/functions/routes/changers/route-generic'
 
 interface SignIn {
   (args: {
@@ -10,7 +11,6 @@ interface SignIn {
     href: string
     setControl: any // TODO
     setErrors: any // TODO
-    changeRoute: ChangeRoute
   }): void
 }
 
@@ -22,7 +22,6 @@ export const signIn:SignIn = (args) => {
     href,
     setControl,
     setErrors,
-    changeRoute,
   } = args
 
   const hashedPassword = hashPassword(password, email)
@@ -49,7 +48,7 @@ export const signIn:SignIn = (args) => {
         window.areListingsObsolete = true
       }
 
-      changeRoute({ href })
+      changeUrl({ href })
     })
     .catch(() => {
       setErrors({ credentials: true })

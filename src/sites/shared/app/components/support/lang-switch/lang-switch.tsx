@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import SVG from '../../../../../mapawynajmu-pl/app/components/support/components/svg/svg'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import { changeUrl } from '../../../functions/routes/changers/route-generic'
 
 interface LangSwitchProps {
   links: {
@@ -10,7 +11,6 @@ interface LangSwitchProps {
   }
   lang: string
   buildUrl: BuildUrl
-  changeRoute: ChangeRoute
 }
 
 export const LangSwitch = (props: LangSwitchProps) => {
@@ -19,7 +19,7 @@ export const LangSwitch = (props: LangSwitchProps) => {
   let plHref: string
   let enHref: string
   const [showLangs, setShowLangs] = useState(false)
-  const { lang, links, buildUrl, changeRoute } = props
+  const { lang, links, buildUrl } = props
   const currentPl = links['current/pl']
   const currentEn = links['current/en']
 
@@ -48,7 +48,7 @@ export const LangSwitch = (props: LangSwitchProps) => {
     // @ts-ignore
     window.areListingsObsolete = true
 
-    changeRoute({ href, withoutScroll: true })
+    changeUrl({ href, withScroll: true })
     setShowLangs(false)
   }
 

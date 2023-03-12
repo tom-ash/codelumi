@@ -6,7 +6,6 @@ interface AsideProps {
   appName: string
   device: string
   lang: string
-  changeRoute: ChangeRoute
   langHandler: LangHandler
   placing: 'left' | 'right'
 }

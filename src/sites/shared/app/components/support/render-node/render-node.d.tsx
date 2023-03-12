@@ -88,7 +88,6 @@ type RenderNodeProps = {
   appName: string
   device: string
   lang: string
-  changeRoute: ChangeRoute
   langHandler: LangHandler
   pageTitle?: string
   coverImage?: string

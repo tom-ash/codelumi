@@ -1,13 +1,14 @@
 import React from 'react'
+import { changeUrl } from '../../../../../../../../../functions/routes/changers/route-generic'
 
 export function textsProvider(text, props) {
-  const { links, changeRoute, buildUrl } = props
+  const { links, buildUrl } = props
   const cookiesPolicyLinkData = links['visitor/cookies-policy']
   const privacyPolicyLinkData = links['visitor/privacy-policy']
   const cookiesPolicyHref = buildUrl({ path: cookiesPolicyLinkData && cookiesPolicyLinkData.path })
   const privacyPolicyHref = buildUrl({ path: privacyPolicyLinkData && privacyPolicyLinkData.path })
-  const changeRouteToCookiesPolicy = () => changeRoute({ href: cookiesPolicyHref })
-  const changeRouteToPrivacyPolicy = () => changeRoute({ href: privacyPolicyHref })
+  const changeRouteToCookiesPolicy = () => changeUrl({ href: cookiesPolicyHref })
+  const changeRouteToPrivacyPolicy = () => changeUrl({ href: privacyPolicyHref })
 
   switch (text) {
     case 'cookies':

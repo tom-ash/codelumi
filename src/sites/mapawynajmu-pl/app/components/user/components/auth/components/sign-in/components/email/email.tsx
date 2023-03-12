@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import AppContext from '../../../../../../../../constants/context'
+import React from 'react'
 import { useStore } from '../../../../../../../../../../shared/app/functions/store/useStore'
 import { Line } from '../../../../../../../support/components/line/line'
 import { EmailAddressInput } from '../../../../../../../../../../shared/app/components/user/components/common/components/email-address/email-address.input'
@@ -11,11 +10,11 @@ import { Heading } from '../../../../../../../support/components/heading'
 import { CredentialsError } from '../../../../../../../../../../shared/app/components/user/components/auth/components/sign-in/components/credentials-error'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import { changeUrl } from '../../../../../../../../../../shared/app/functions/routes/changers/route-generic'
 
 const UserAuthEmail = () => {
   useStyles(styles)
 
-  const { changeRoute } = useContext(AppContext)
   const { state } = useStore()
   const { texts, links } = state
   const { headingOne, resetPassword } = texts
@@ -43,7 +42,7 @@ const UserAuthEmail = () => {
       </form>
       <Line />
       <div className='links'>
-        <span onClick={() => changeRoute({ href: resetPasswordHref })}>
+        <span onClick={() => changeUrl({ href: resetPasswordHref })}>
           {resetPassword}
         </span>
       </div>

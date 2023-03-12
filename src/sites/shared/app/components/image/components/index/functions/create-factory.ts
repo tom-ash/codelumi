@@ -1,14 +1,14 @@
 import { getAccessToken } from '../../../../user/components/auth/functions/get-access-token'
+import { changeUrl } from '../../../../../functions/routes/changers/route-generic'
 
 interface CreateFactoryProps {
   apiUrl: string
-  changeRoute(props: { href: string }): void
   imageKey: string
   buildUrl(props: { path: string }): string
 }
 
 const createFactory = (props: CreateFactoryProps) => {
-  const { apiUrl, changeRoute, imageKey, buildUrl } = props
+  const { apiUrl, imageKey, buildUrl } = props
 
   return () => {
     const href = buildUrl({ path: `images/${imageKey}` })
@@ -25,7 +25,7 @@ const createFactory = (props: CreateFactoryProps) => {
         imageKey,
       }),
     }).then(() => {
-      changeRoute({ href })
+      changeUrl({ href })
     })
   }
 }

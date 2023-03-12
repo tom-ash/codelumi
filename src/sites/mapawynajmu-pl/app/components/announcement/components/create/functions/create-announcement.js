@@ -7,10 +7,7 @@ import {
 } from '../constants/api-route-data'
 import setVerificationToken from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
 import { buildUrl } from '../../../../../../shared/functions/builders/url'
-
-// function sendAnnouncementCreatedEvent() {
-//   window.dataLayer.push({ 'event': 'announcement_created' })
-// }
+import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/route-generic'
 
 function createAnnouncement() {
   const { authorized, renderEdit, setControl } = this.props
@@ -42,15 +39,13 @@ function update() {
       if (response.ok) return response.json()
     })
     .then(path => {
-      const { changeRoute } = this.context
-
       if (typeof window !== 'undefined') {
         // TODO: Investigate better solution.
         // @ts-ignore
         window.areListingsObsolete = true
       }
 
-      changeRoute({ href: buildUrl({ path }) })
+      changeUrl({ href: buildUrl({ path }) })
     })
 }
 
@@ -68,9 +63,7 @@ function create() {
       if (response.ok) return response.json()
     })
     .then(path => {
-      const { changeRoute } = this.context
-
-      changeRoute({ href: buildUrl({ path }) })
+      changeUrl({ href: buildUrl({ path }) })
     })
 }
 
@@ -88,10 +81,9 @@ function createWithUser() {
     })
     .then(jsonResponse => {
       const { verificationToken, path } = jsonResponse
-      const { changeRoute } = this.context
 
       setVerificationToken(verificationToken)
-      changeRoute({ href: buildUrl({ path }) })
+      changeUrl({ href: buildUrl({ path }) })
     })
 }
 

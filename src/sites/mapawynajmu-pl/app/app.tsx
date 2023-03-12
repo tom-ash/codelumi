@@ -14,7 +14,6 @@ import screenSizeHandler from '../../shared/app/functions/screen/handlers/screen
 import popStateHandler from '../../shared/app/functions/routes/handlers/pop-state'
 import { langHandler } from './functions/lang-handler'
 import matchStateToRoute from './functions/routes/matchers/state-to-route'
-import changeRoute from './functions/routes/changers/route'
 import AppContext from './constants/context'
 import CLIENT_URL from '../shared/constants/urls/client'
 import API_URL from '../shared/constants/urls/api'
@@ -52,8 +51,6 @@ class App extends React.Component<AppProps> {
     this.langHandler = langHandler.bind(this)
     // @ts-ignore
     this.matchStateToRoute = matchStateToRoute.bind(this)
-    // @ts-ignore
-    this.changeRoute = changeRoute.bind(this)
   }
 
   render() {
@@ -90,8 +87,6 @@ class App extends React.Component<AppProps> {
     // @ts-ignore
     const AppContextValue = {
       // @ts-ignore
-      changeRoute: this.changeRoute,
-      // @ts-ignore
       matchStateToRoute: this.matchStateToRoute,
       // @ts-ignore
       langHandler: this.langHandler,
@@ -106,8 +101,6 @@ class App extends React.Component<AppProps> {
       render,
       device,
       authorized,
-      // @ts-ignore
-      changeRoute: this.changeRoute,
       buildUrl,
       // @ts-ignore
       langHandler: this.langHandler,

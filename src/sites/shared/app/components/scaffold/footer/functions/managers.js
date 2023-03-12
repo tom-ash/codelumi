@@ -1,3 +1,5 @@
+import { changeUrl } from "../../../../functions/routes/changers/route-generic"
+
 const link_tracks = [
   { name: 'contactManager', track: 'visitor/contact' },
   { name: 'termsOfServiceManager', track: 'visitor/terms-of-service' },
@@ -11,14 +13,14 @@ const managers = {}
 
 link_tracks.map(({ name, track }) => {
   managers[name] = props => {
-    const { links, langs, changeRoute, langHandler, buildUrl } = props
+    const { links, langs, langHandler, buildUrl } = props
     const link = links[track]
     const href = link && buildUrl({ path: link.path })
     const hrefLang = langHandler(langs)
     const title = link && link.title
     const label = title
     const classNames = { container: 'link' }
-    const onClick = () => changeRoute({ href })
+    const onClick = () => changeUrl({ href })
 
     return { classNames, href, hrefLang, title, label, onClick }
   }

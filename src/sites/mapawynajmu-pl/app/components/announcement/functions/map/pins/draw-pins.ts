@@ -17,8 +17,6 @@ function drawPins(currentListingId: number) {
 
   // @ts-ignore
   announcements.map(announcement => {
-    // @ts-ignore
-    const { changeRoute } = this.context
     const { id, category: categoryNumber, latitude, longitude, path } = announcement
     const category = categories.find(category => category.number === categoryNumber)
     // @ts-ignore
@@ -49,7 +47,6 @@ function drawPins(currentListingId: number) {
         path,
         setControl,
         setData,
-        changeRoute,
       })
     )
   })

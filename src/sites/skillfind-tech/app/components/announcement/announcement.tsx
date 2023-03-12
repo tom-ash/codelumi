@@ -13,16 +13,12 @@ class Announcement extends React.Component<announcementProps, any> {
   }
 
   render() {
-    const { renderCreate, changeRoute } = this.props
-
-    const announcementCreateProps = {
-      changeRoute,
-    }
+    const { renderCreate } = this.props
 
     return (
       <div id='announcement'>
         {/* @ts-ignore */}
-        {renderCreate && <AnnouncementCreate {...announcementCreateProps} />}
+        {renderCreate && <AnnouncementCreate />}
       </div>
     )
   }

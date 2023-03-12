@@ -1,10 +1,10 @@
 import apiUrl from '../../../../../../../../shared/constants/urls/api'
 import { getAccessToken } from '../../../../../../../../../shared/app/components/user/components/auth/functions/get-access-token'
+import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/route-generic'
 
 type submitProps = {
   lang: Lang
   selectedSkills: Array<any>
-  changeRoute: ChangeRoute
   // remote: boolean
   // hybrid: boolean
   // office: boolean
@@ -23,7 +23,6 @@ export const submit = (props: submitProps) => {
   const {
     lang,
     selectedSkills,
-    changeRoute,
     // remote,
     // hybrid,
     // office,
@@ -68,6 +67,6 @@ export const submit = (props: submitProps) => {
       if (response.ok) return response.json()
     })
     .then(href => {
-      changeRoute({ href })
+      changeUrl({ href })
     })
 }

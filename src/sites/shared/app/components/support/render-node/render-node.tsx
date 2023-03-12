@@ -20,7 +20,7 @@ const Definition = loadable(() => import('./components/definition/definition'))
 const Figure = loadable(() => import('./components/figure/figure'))
 
 const RenderNode = (props: RenderNodeProps) => {
-  const { node, index, appName, jsonBody, clientUrl, changeRoute, device, lang, langHandler, pageTitle, coverImage } =
+  const { node, index, appName, jsonBody, clientUrl, device, lang, langHandler, pageTitle, coverImage } =
     props
 
   if (!node) return null
@@ -251,14 +251,13 @@ const RenderNode = (props: RenderNodeProps) => {
 
   if (node.pageIndexer) {
     const { collection } = node.pageIndexer
-    const { articles, tutorials, clientUrl, changeRoute } = props
+    const { articles, tutorials, clientUrl } = props
 
     const pageIndexerProps = {
       collection,
       tutorials,
       articles,
       clientUrl,
-      changeRoute,
       key: index,
     }
 
@@ -317,7 +316,6 @@ const RenderNode = (props: RenderNodeProps) => {
       appName,
       jsonBody,
       clientUrl,
-      changeRoute,
       device,
       lang,
       langHandler,
@@ -339,7 +337,6 @@ const RenderNode = (props: RenderNodeProps) => {
       appName,
       device,
       lang,
-      changeRoute,
       langHandler,
       sectionBody: node.leftAside,
       placing: 'left',
@@ -357,7 +354,6 @@ const RenderNode = (props: RenderNodeProps) => {
       appName,
       device,
       lang,
-      changeRoute,
       langHandler,
       sectionBody: node.aside,
       placing: 'right',
