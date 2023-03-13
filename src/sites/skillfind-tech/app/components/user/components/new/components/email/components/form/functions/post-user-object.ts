@@ -11,7 +11,7 @@ interface PostUserObject {
 export const postUserObject: PostUserObject = args => {
   const { userObject, lang } = args
 
-  fetch(API_URL + '/user/create/email-and-password', {
+  fetch(API_URL + '/users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Lang: lang },
     body: JSON.stringify(userObject),
