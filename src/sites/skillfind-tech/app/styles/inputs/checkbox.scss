@@ -1,19 +1,17 @@
-%.checkbox {
+%checkbox {
   position: relative;
-  margin-bottom: 12px;
   > .input {
     position: absolute;
-    // top: 1px;
     width: 16px;
     height: 16px;
-    border: 1px solid $border-color;
+    border: 1px solid gray;
     border-radius: 2px;
     outline: none;
     transition: 0.18s;
     cursor: pointer;
     &.hover,
     &.focus {
-      box-shadow: 0 0 0 1px $touched-border-color;
+      box-shadow: 0 0 0 1px gray;
     }
     .tick {
       width: 5px;
@@ -27,20 +25,23 @@
   }
   > .label {
     position: relative;
-    top: 0;
+    top: -3px;
     left: 16px;
-    color: $untached-color;
+    color: gray;
     margin-left: 15px;
     cursor: pointer;
     font-size: 15px;
-    line-height: 18px;
+    line-height: 22px;
     &.focus,
     &.hover,
     &.value {
-      color: $touched-color;
+      color: gray;
     }
     &.checked {
       font-weight: bold;
+    }
+    a {
+      display: inline;
     }
   }
 }

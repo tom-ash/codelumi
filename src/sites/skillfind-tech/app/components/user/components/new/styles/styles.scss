@@ -3,6 +3,7 @@
 @import '../../../../../styles/headings/h1';
 @import '../../../../../styles/inputs/text';
 @import '../../../../../styles/inputs/button';
+@import '../../../../../styles/inputs/checkbox.scss';
 
 #user-new {
   @extend %container;
@@ -14,7 +15,18 @@
   .text-input {
     @extend %text-input;
   }
-  .button {
+  .submit-button {
     @extend %button;
+    margin-top: 24px;
+  }
+  .checkbox {
+    @extend %checkbox;
+  }
+  .terms-of-service-consent {
+    .error {
+      margin-bottom: 24px;
+      font-size: 13px;
+      color: $ERROR-COLOR;
+    }
   }
 }

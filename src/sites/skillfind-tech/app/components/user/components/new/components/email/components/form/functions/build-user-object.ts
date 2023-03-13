@@ -1,4 +1,3 @@
-// import { AccountType } from '../../../../../../../types/user.types'
 import { UserObject } from '../form.types'
 import { validateUserObject } from './validate-user-object'
 import { hashPassword } from '../../../../../../../../../../../shared/app/components/user/functions/hash-password'

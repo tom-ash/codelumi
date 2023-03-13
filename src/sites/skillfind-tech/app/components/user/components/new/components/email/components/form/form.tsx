@@ -2,7 +2,7 @@ import React from 'react'
 import { EmailAddressInput } from '../../../../../../../../../../shared/app/components/user/components/common/components/email-address/email-address.input'
 import { PasswordInput } from '../../../../../../../../../../shared/app/components/user/components/common/components/password/password.input'
 import { TermsOfServiceConsent } from '../../../../../../../../../../shared/app/components/user/components/new/components/form/components/terms-of-service-consent/terms-of-service-consent'
-import { SubmitButton } from './components/submit-button'
+import { SubmitFormButton } from './components/submit-form-button'
 import { useStore } from '../../../../../../../../../../shared/app/functions/store/useStore'
 import { Heading } from '../../../../../../../../../../mapawynajmu-pl/app/components/support/components/heading'
 import { Line } from '../../../../../../../../../../mapawynajmu-pl/app/components/support/components/line/line'
@@ -32,7 +32,7 @@ const UserNewEmailForm = () => {
       <EmailAddressInput />
       <PasswordInput {...passwordInputProps} />
       <TermsOfServiceConsent />
-      {userNewForm && <SubmitButton />}
+      {userNewForm && <SubmitFormButton />}
     </form>
   )
 }
