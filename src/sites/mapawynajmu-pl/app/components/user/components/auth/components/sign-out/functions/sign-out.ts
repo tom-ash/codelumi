@@ -1,5 +1,5 @@
 import { deleteCookie } from '../../../../../../../functions/cookie-handlers'
-import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/route-generic'
+import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/change-url'
 
 interface SignOut {
   (args: {

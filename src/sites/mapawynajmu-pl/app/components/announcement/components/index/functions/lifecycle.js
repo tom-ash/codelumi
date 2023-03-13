@@ -1,5 +1,5 @@
 import { buildUrl } from '../../../../../../shared/functions/builders/url'
-import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/route-generic'
+import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/change-url'
 
 export function componentDidUpdate(prevProps) {
   const { rebuildQueryParams: prevRebuildQueryParams } = prevProps

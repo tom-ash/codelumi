@@ -2,7 +2,7 @@ import API_URL from '../../../../../../../../../mapawynajmu-pl/shared/constants/
 // import { saveTokens } from '../../../../../../../functions/token-handlers'
 import getCookieValue from '../../../../../../../functions/cookies/getters/get-cookie-value'
 import { saveCookie } from '../../../../../../../../../mapawynajmu-pl/app/functions/cookie-handlers'
-import { changeUrl } from '../../../../../../../functions/routes/changers/route-generic'
+import { changeUrl } from '../../../../../../../functions/routes/changers/change-url'
 
 interface PutVerificationCode {
   (args: {

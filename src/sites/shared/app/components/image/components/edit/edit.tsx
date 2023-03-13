@@ -9,7 +9,7 @@ import OutputProps from './components/output/output'
 import StorageKeyInput from './components/storage-key-input'
 import { StoragePreview } from './components/storage-preview'
 import StorageUrl from './components/storage-url'
-import { changeUrl } from '../../../../functions/routes/changers/route-generic'
+import { changeUrl } from '../../../../functions/routes/changers/change-url'
 
 type ImageEditProps = {
   apiUrl: string

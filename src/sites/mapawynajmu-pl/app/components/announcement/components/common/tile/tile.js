@@ -13,7 +13,7 @@ import { langHandler } from '../../../../../functions/lang-handler'
 import { togglePhone } from '../../../functions/toggle-phone'
 import { buildUrl } from '../../../../../../shared/functions/builders/url'
 import { markListingAsViewed } from '../../../functions/mark-as-viewed'
-import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/route-generic'
+import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/change-url'
 
 class AnnouncementTile extends React.Component {
   constructor(props) {

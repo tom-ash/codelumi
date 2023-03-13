@@ -1,5 +1,5 @@
 import React from 'react'
-import { changeUrl } from '../../../../functions/routes/changers/route-generic'
+import { changeUrl } from '../../../../functions/routes/changers/change-url'
 
 export function logoManager(props) {
   const { links, lang, Logo, buildUrl } = props

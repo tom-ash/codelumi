@@ -1,7 +1,7 @@
 import { ANNOUNCEMENT_CREATE_LABELS } from '../../../../../../../../../shared/constants/routes/labels'
 import { signOut } from '../../../../../../../user/components/auth/components/sign-out/functions/sign-out'
 import { buildUrl } from '../../../../../../../../../shared/functions/builders/url'
-import { changeUrl } from '../../../../../../../../../../shared/app/functions/routes/changers/route-generic'
+import { changeUrl } from '../../../../../../../../../../shared/app/functions/routes/changers/change-url'
 
 export function myAnnouncementsManager(props) {
   const { langs, links, langHandler } = props

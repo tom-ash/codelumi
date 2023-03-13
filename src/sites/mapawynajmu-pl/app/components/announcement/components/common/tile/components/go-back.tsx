@@ -2,7 +2,7 @@ import React from 'react'
 import SVG from '../../../../../../../../shared/app/components/support/svg/svg'
 import centerMap from '../../../index/components/map/functions/center-map'
 import { buildUrl } from '../../../../../../../shared/functions/builders/url'
-import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/route-generic'
+import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
 
 interface GoBackProps {
   id: number

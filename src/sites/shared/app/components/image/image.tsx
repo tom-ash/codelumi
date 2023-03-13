@@ -1,7 +1,7 @@
 import React from 'react'
 import Index from './components/index'
 import Edit from './components/edit/edit'
-import { changeUrl } from '../../functions/routes/changers/route-generic'
+import { changeUrl } from '../../functions/routes/changers/change-url'
 
 interface ImageProps {
   render: {

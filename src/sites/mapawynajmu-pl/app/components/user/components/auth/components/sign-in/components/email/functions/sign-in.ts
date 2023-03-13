@@ -1,7 +1,7 @@
 import { hashPassword } from '../../../../../../../../../../../shared/app/components/user/functions/hash-password'
 import API_URL from '../../../../../../../../../../shared/constants/urls/api'
 import { saveCookie } from '../../../../../../../../../functions/cookie-handlers'
-import { changeUrl } from '../../../../../../../../../../../shared/app/functions/routes/changers/route-generic'
+import { changeUrl } from '../../../../../../../../../../../shared/app/functions/routes/changers/change-url'
 
 interface SignIn {
   (args: {

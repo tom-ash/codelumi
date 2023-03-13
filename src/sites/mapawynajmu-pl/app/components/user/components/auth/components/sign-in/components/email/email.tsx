@@ -10,7 +10,7 @@ import { Heading } from '../../../../../../../support/components/heading'
 import { CredentialsError } from '../../../../../../../../../../shared/app/components/user/components/auth/components/sign-in/components/credentials-error'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
-import { changeUrl } from '../../../../../../../../../../shared/app/functions/routes/changers/route-generic'
+import { changeUrl } from '../../../../../../../../../../shared/app/functions/routes/changers/change-url'
 
 const UserAuthEmail = () => {
   useStyles(styles)

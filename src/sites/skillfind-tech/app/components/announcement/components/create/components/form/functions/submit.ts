@@ -1,6 +1,6 @@
 import apiUrl from '../../../../../../../../shared/constants/urls/api'
 import { getAccessToken } from '../../../../../../../../../shared/app/components/user/components/auth/functions/get-access-token'
-import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/route-generic'
+import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/change-url'
 
 type submitProps = {
   lang: Lang

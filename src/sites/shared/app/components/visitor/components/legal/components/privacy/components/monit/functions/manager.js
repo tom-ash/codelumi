@@ -1,5 +1,5 @@
 import { saveCookie } from '../../../../cookies/functions/save'
-import { changeUrl } from '../../../../../../../../../functions/routes/changers/route-generic'
+import { changeUrl } from '../../../../../../../../../functions/routes/changers/change-url'
 
 export function agreeManager(props) {
   const { changeConsents } = props

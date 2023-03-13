@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import SVG from '../../../../../mapawynajmu-pl/app/components/support/components/svg/svg'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
-import { changeUrl } from '../../../functions/routes/changers/route-generic'
+import { changeUrl } from '../../../functions/routes/changers/change-url'
 
 interface LangSwitchProps {
   links: {

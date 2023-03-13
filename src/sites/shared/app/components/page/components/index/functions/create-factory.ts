@@ -1,5 +1,5 @@
 import { getAccessToken } from '../../../../user/components/auth/functions/get-access-token'
-import { changeUrl } from '../../../../../functions/routes/changers/route-generic'
+import { changeUrl } from '../../../../../functions/routes/changers/change-url'
 
 interface CreateFactoryProps {
   apiUrl: string

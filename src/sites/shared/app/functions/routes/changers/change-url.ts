@@ -1,5 +1,6 @@
 import scrollToTop from '../../screen/scrollers/to-top'
 
+// @ts-ignore
 export const changeUrl = ({ href, withScroll = true, retainQueryParams = false }) => {
   let decoratedHref = href.replace(/\/\/$/, '/')
   decoratedHref = retainQueryParams ? decoratedHref + window.location.search : decoratedHref

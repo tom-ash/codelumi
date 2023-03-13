@@ -7,7 +7,7 @@ import {
 } from '../constants/api-route-data'
 import setVerificationToken from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
 import { buildUrl } from '../../../../../../shared/functions/builders/url'
-import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/route-generic'
+import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/change-url'
 
 function createAnnouncement() {
   const { authorized, renderEdit, setControl } = this.props

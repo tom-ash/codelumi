@@ -1,6 +1,6 @@
 import React from 'react'
 import { ManagedLink } from 'managed-inputs'
-import { changeUrl } from '../../../../../../../../../../shared/app/functions/routes/changers/route-generic'
+import { changeUrl } from '../../../../../../../../../../shared/app/functions/routes/changers/change-url'
 
 interface ArticlesLinkProps {
   buildUrl: BuildUrl

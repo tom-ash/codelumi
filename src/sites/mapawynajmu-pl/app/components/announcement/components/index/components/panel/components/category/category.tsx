@@ -2,7 +2,7 @@ import React from 'react'
 import { categories } from '../../../../../../constants/categories'
 import { ManagedSelect } from 'managed-inputs'
 import { buildUrl } from '../../../../../../../../../shared/functions/builders/url'
-import { changeUrl } from '../../../../../../../../../../shared/app/functions/routes/changers/route-generic'
+import { changeUrl } from '../../../../../../../../../../shared/app/functions/routes/changers/change-url'
 
 // @ts-ignore
 export const Category = props => {

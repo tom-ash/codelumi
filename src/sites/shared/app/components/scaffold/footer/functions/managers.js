@@ -1,4 +1,4 @@
-import { changeUrl } from "../../../../functions/routes/changers/route-generic"
+import { changeUrl } from "../../../../functions/routes/changers/change-url"
 
 const link_tracks = [
   { name: 'contactManager', track: 'visitor/contact' },

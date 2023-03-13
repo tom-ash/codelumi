@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps } from './constants/mappers'
 import PageTile from '../shared/components/tile/tile'
-import { changeUrl } from '../../../../functions/routes/changers/route-generic'
+import { changeUrl } from '../../../../functions/routes/changers/change-url'
 
 class PageShow extends React.Component {
   constructor(props) {
