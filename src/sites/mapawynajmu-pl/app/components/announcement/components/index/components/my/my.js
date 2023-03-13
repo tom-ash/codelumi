@@ -13,7 +13,6 @@ import { edit } from './functions/edit'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import { ManagedButton } from 'managed-inputs'
-import AppContext from '../../../../../../constants/context'
 
 class AnnouncementIndexMy extends React.Component {
   constructor(props) {
@@ -28,8 +27,6 @@ class AnnouncementIndexMy extends React.Component {
     this.cancelDestroyManager = managers.cancelDestroyManager.bind(this)
     this.extend = extend.bind(this)
   }
-
-  static contextType = AppContext
 
   render() {
     const { amount, offset, lang } = this.props

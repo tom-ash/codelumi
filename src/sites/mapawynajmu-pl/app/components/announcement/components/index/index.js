@@ -11,8 +11,6 @@ import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import { componentDidUpdate } from './functions/lifecycle'
 
-import AppContext from '../../../../constants/context'
-
 class AnnouncementIndexSearch extends React.Component {
   constructor(props) {
     super(props)
@@ -20,8 +18,6 @@ class AnnouncementIndexSearch extends React.Component {
     this.parseCurrency = parseCurrency.bind(this)
     this.componentDidUpdate = componentDidUpdate
   }
-
-  static contextType = AppContext
 
   render() {
     const { renderMap, renderMy, title } = this.props

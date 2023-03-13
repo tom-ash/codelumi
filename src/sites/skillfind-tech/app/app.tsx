@@ -15,7 +15,6 @@ import { langHandler } from '../../shared/app/functions/lang/handlers/lang'
 import screenSizeHandler from '../../shared/app/functions/screen/handlers/screen-size'
 import popStateHandler from '../../shared/app/functions/routes/handlers/pop-state'
 import matchStateToRoute from './functions/routes/matchers/state-to-route'
-import AppContext from './constants/context'
 import CLIENT_URL from '../shared/constants/urls/client'
 import API_URL from '../shared/constants/urls/api'
 import Header from '../../shared/app/components/scaffold/header/header'
@@ -103,7 +102,7 @@ class App extends React.Component {
     const imageProps = sharedProps
 
     return (
-      <AppContext.Provider value={AppContextValue}>
+      <>
         <Header {...headerProps} />
         {renderPostingIndex && <PostingIndex />}
         {/* @ts-ignore */}
@@ -113,7 +112,7 @@ class App extends React.Component {
         {renderUser && <User />}
         {renderImage && <Image {...imageProps} />}
         <Footer {...sharedProps} />
-      </AppContext.Provider>
+      </>
     )
   }
 }

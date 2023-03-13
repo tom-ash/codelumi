@@ -1,7 +1,6 @@
 import React from 'react'
 import { ManagedLink } from 'managed-inputs'
 import { shareOnFacebookManager } from './functions/managers'
-import AppContext from '../../../../../../constants/context'
 import { langHandler } from '../../../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
@@ -15,8 +14,6 @@ class AnnouncementCreateSuccess extends React.Component {
     this.langHandler = langHandler.bind(this)
     this.shareOnFacebookManager = shareOnFacebookManager.bind(this)
   }
-
-  static contextType = AppContext
 
   render() {
     return (

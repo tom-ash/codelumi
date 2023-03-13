@@ -1,9 +1,5 @@
-import React, { useContext } from 'react'
-// import { ManagedButton } from 'managed-inputs'
-// import { submit } from '../functions/submit'
+import React from 'react'
 import { useStore } from 'react-redux'
-// import AppContext from '../../../../../../../constants/context'
-
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import Skill from '../shared/components/skill/skill'

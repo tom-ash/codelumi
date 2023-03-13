@@ -14,7 +14,6 @@ import screenSizeHandler from '../../shared/app/functions/screen/handlers/screen
 import popStateHandler from '../../shared/app/functions/routes/handlers/pop-state'
 import { langHandler } from './functions/lang-handler'
 import matchStateToRoute from './functions/routes/matchers/state-to-route'
-import AppContext from './constants/context'
 import CLIENT_URL from '../shared/constants/urls/client'
 import API_URL from '../shared/constants/urls/api'
 import * as langs from '../shared/constants/langs/langs'
@@ -115,7 +114,7 @@ class App extends React.Component<AppProps> {
     // https://github.com/facebook/react/blob/main/CHANGELOG.md: If this breaks your app, consider removing Strict Mode until you can fix the components to be resilient to remounting with existing state.
 
     return (
-      <AppContext.Provider value={AppContextValue}>
+      <>
         <Header {...{ ...sharedProps, urlComposites, lang, HeaderCustomization, styles: headerStyles }} />
         <div className='blank-page'>
           {renderAnnouncement && <Announcement />}
@@ -125,7 +124,7 @@ class App extends React.Component<AppProps> {
           {renderImage && <Image {...imageProps} />}
         </div>
         {!renderListingIndexMap && <Footer {...sharedProps} />}
-      </AppContext.Provider>
+      </>
     )
   }
 }

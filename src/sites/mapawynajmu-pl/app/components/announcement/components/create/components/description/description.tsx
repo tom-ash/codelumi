@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import { Checkbox } from './components/checkbox'
 import { Textarea } from './components/textarea'
-import { SHOW_POLISH_DESCRIPTION_LANG_OBJECT, SHOW_ENGLISH_DESCRIPTION_LANG_OBJECT } from './texts/texts'
-import AppContext from '../../../../../../constants/context'
 
 interface DescriptionProps {
   showPolish: boolean
@@ -13,13 +11,12 @@ interface DescriptionProps {
 }
 
 const Description = (props: DescriptionProps) => {
-  const { langHandler } = useContext(AppContext)
   const { showPolish, showEnglish, polish, english, setInputs } = props
 
   const showPolishProps = {
     checked: showPolish,
     checkedKey: 'showPolishDescription' as const,
-    label: langHandler(SHOW_POLISH_DESCRIPTION_LANG_OBJECT),
+    label: 'Dodaj Opis w języku polskim',
     setInputs,
   }
 
@@ -32,7 +29,7 @@ const Description = (props: DescriptionProps) => {
   const showEnglishProps = {
     checked: showEnglish,
     checkedKey: 'showEnglishDescription' as const,
-    label: langHandler(SHOW_ENGLISH_DESCRIPTION_LANG_OBJECT),
+    label: 'Dodaj Opis w języku angielskim',
     setInputs,
   }
 

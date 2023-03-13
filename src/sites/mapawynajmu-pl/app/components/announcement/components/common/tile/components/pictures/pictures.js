@@ -4,7 +4,6 @@ import { ManagedLink } from 'managed-inputs'
 import { getDerivedStateFromProps } from './functions/get-derived-state-from-props'
 import SVG from '../../../../../../support/components/svg/svg'
 import { langHandler } from '../../../../../../../functions/lang-handler'
-import AppContext from '../../../../../../../constants/context'
 
 class AnnouncementShowPictures extends React.Component {
   constructor(props) {
@@ -15,7 +14,6 @@ class AnnouncementShowPictures extends React.Component {
     }
   }
 
-  static contextType = AppContext
   static getDerivedStateFromProps = getDerivedStateFromProps
 
   render() {
