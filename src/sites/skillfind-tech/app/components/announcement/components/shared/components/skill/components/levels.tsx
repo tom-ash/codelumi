@@ -14,21 +14,18 @@ interface SkillLevelsProps {
 }
 
 export const SkillLevels = (props: SkillLevelsProps) => {
-  const {
-    view,
-    name,
-    level,
-    levelNames,
-    levelName,
-    levelHovered,
-    selectSkill,
-    setLevelHovered,
-  } = props
+  const { view, name, level, levelNames, levelName, levelHovered, selectSkill, setLevelHovered } = props
 
   return (
     <div className='levelNames'>
       {levelNames.map((availableLevel, index) => {
-        const fillClass = levelHovered ? (levelHovered > index ? levelNames[levelHovered - 1].toLowerCase() : '') : (level > index || levelHovered > index ? levelName.toLowerCase() : '')
+        const fillClass = levelHovered
+          ? levelHovered > index
+            ? levelNames[levelHovered - 1].toLowerCase()
+            : ''
+          : level > index || levelHovered > index
+          ? levelName.toLowerCase()
+          : ''
         const classNames = ['level', fillClass]
         const sharedLevelProps = { className: classNames.join(' '), key: availableLevel }
         const formProps = {
@@ -40,7 +37,7 @@ export const SkillLevels = (props: SkillLevelsProps) => {
         return (
           <div
             {...sharedLevelProps}
-            {...(view === SkillView.formSelectable || view === SkillView.formSelected) && formProps}
+            {...((view === SkillView.formSelectable || view === SkillView.formSelected) && formProps)}
           />
         )
       })}

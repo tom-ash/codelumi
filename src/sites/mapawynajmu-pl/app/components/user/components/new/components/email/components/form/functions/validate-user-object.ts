@@ -7,13 +7,10 @@ import { AccountType } from '../../../../../../../types/user.types'
 import { UserObject } from '../form.types'
 
 interface ValidateUserObject {
-  (args: {
-    userObject: UserObject
-    setErrors(args: object): void
-  }): boolean
+  (args: { userObject: UserObject; setErrors(args: object): void }): boolean
 }
 
-export const validateUserObject: ValidateUserObject = (args) => {
+export const validateUserObject: ValidateUserObject = args => {
   const { userObject, setErrors } = args
   const { accountType, businessName, emailAddress, password, phoneNumber, termsOfServiceConsent } = userObject
 

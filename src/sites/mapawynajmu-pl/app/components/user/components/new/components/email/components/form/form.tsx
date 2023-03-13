@@ -32,11 +32,12 @@ const UserNewEmailForm = () => {
   return (
     <form id='user-new-form'>
       {userNewForm && (
-      <>
-        {/* @ts-ignore */}
-        <Heading {...headingOneProps} />
-        <Line />
-      </>)}
+        <>
+          {/* @ts-ignore */}
+          <Heading {...headingOneProps} />
+          <Line />
+        </>
+      )}
       <AccountTypeRadio />
       {isBusinessAccount && <BusinessNameInput />}
       <EmailAddressInput />

@@ -25,7 +25,7 @@ import Logo from './components/scaffold/header/components/logo/logo'
 import { HeaderCustomization } from './components/scaffold/header/components/customization/customization'
 import { initSentry } from '../../shared/app/functions/analytics/sentry/init'
 import { buildUrl } from '../shared/functions/routes/builders/url'
-// import PostingIndex from 
+// import PostingIndex from
 
 const PostingIndex = loadable(() => import('./components/announcement/components/index/index'))
 
@@ -105,13 +105,13 @@ class App extends React.Component {
     return (
       <AppContext.Provider value={AppContextValue}>
         <Header {...headerProps} />
-          {renderPostingIndex && <PostingIndex />}
-          {/* @ts-ignore */}
-          {renderPage && <Page {...pageProps} />}
-          {renderVisitor && <Visitor {...sharedProps} />}
-          {renderAnnouncement && <Announcement {...sharedProps} />}
-          {renderUser && <User />}
-          {renderImage && <Image {...imageProps} />}
+        {renderPostingIndex && <PostingIndex />}
+        {/* @ts-ignore */}
+        {renderPage && <Page {...pageProps} />}
+        {renderVisitor && <Visitor {...sharedProps} />}
+        {renderAnnouncement && <Announcement {...sharedProps} />}
+        {renderUser && <User />}
+        {renderImage && <Image {...imageProps} />}
         <Footer {...sharedProps} />
       </AppContext.Provider>
     )

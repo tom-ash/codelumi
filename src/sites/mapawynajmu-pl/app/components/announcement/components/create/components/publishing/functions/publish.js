@@ -26,17 +26,19 @@ export function publish() {
   }
 
   const announcement = buildAnouncement.call(this)
-  const user = authorized ? {} : buildUserObject({
-    accountType,
-    businessName,
-    emailAddress,
-    password,
-    countryCode,
-    phoneNumber,
-    termsOfServiceConsent,
-    termsOfServiceConsentLabel,
-    setErrors,
-  })
+  const user = authorized
+    ? {}
+    : buildUserObject({
+        accountType,
+        businessName,
+        emailAddress,
+        password,
+        countryCode,
+        phoneNumber,
+        termsOfServiceConsent,
+        termsOfServiceConsentLabel,
+        setErrors,
+      })
 
   if (!Object.values(announcementObject).every(element => element)) {
     for (let i = 0; i < requiredInputsArray.length; i++) {

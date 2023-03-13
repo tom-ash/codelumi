@@ -1,8 +1,5 @@
 interface BusinessNameValidator {
-  (props: {
-    businessName: string;
-    setErrors(args: { businessName: boolean }): void
-  }): boolean
+  (props: { businessName: string; setErrors(args: { businessName: boolean }): void }): boolean
 }
 
 export const businessNameValidator: BusinessNameValidator = props => {

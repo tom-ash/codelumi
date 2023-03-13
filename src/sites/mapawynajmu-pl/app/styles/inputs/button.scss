@@ -8,15 +8,15 @@
     height: 30px;
     border: none;
     border-radius: 15px;
-    background: #2471A3;
+    background: #2471a3;
     font-size: 13px;
     color: white;
     &:hover {
-      background: #2980B9;
+      background: #2980b9;
     }
     &:disabled {
-      background: #A9CCE3;
-      color: #F2F3F4;
+      background: #a9cce3;
+      color: #f2f3f4;
       cursor: not-allowed;
     }
   }

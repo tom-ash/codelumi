@@ -24,10 +24,11 @@ const UserNewEmailForm = () => {
   return (
     <form id='user-new-form'>
       {userNewForm && (
-      <>
-        <Heading {...headingOneProps} />
-        <Line />
-      </>)}
+        <>
+          <Heading {...headingOneProps} />
+          <Line />
+        </>
+      )}
       <EmailAddressInput />
       <PasswordInput {...passwordInputProps} />
       <TermsOfServiceConsent />

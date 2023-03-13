@@ -10,14 +10,11 @@ export const SubmitButton = () => {
   const { lang } = app
   const { signIn: signInLabel } = texts
   const { connecting } = control
-  const {
-    emailAddress: email,
-    password,
-  } = inputs
+  const { emailAddress: email, password } = inputs
   const classNames = { container: 'button' }
   const buttonSpinnerProps = {
     connecting,
-    label: signInLabel
+    label: signInLabel,
   }
   const { href } = links['root']
   const label = <ButtonSpinner {...buttonSpinnerProps} />

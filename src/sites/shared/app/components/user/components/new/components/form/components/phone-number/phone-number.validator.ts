@@ -1,8 +1,5 @@
 interface PhoneNumberValidator {
-  (props: {
-    phoneNumber: string;
-    setErrors(props: { phoneNumber: boolean }): void
-  }): boolean
+  (props: { phoneNumber: string; setErrors(props: { phoneNumber: boolean }): void }): boolean
 }
 
 export const phoneNumberValidator: PhoneNumberValidator = props => {

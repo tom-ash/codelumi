@@ -10,15 +10,11 @@ export const SubmitButton = () => {
   const { lang } = app
   const { termsOfServiceConsentLabel, signUp } = texts
   const { connecting } = control
-  const {
-    emailAddress,
-    password,
-    termsOfServiceConsent,
-  } = inputs
+  const { emailAddress, password, termsOfServiceConsent } = inputs
   const classNames = { container: 'button' }
   const buttonSpinnerProps = {
     connecting,
-    label: signUp
+    label: signUp,
   }
   // const label = <ButtonSpinner {...buttonSpinnerProps} />
   const setControl = (value: any) => dispatch({ type: 'control', value })

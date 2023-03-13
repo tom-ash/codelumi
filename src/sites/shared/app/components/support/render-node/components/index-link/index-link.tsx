@@ -18,17 +18,7 @@ interface IndexLinkProps {
 }
 
 const IndexLink = (props: IndexLinkProps) => {
-  const {
-    clientUrl,
-    pathname,
-    hrefLang,
-    title,
-    modifiedOn,
-    category,
-    subcategory,
-    image,
-    collectionName,
-  } = props
+  const { clientUrl, pathname, hrefLang, title, modifiedOn, category, subcategory, image, collectionName } = props
   const classNames = { container: `index-link ${subcategory} ${collectionName}` }
   const href = `${clientUrl}/${pathname}`
   const label = (

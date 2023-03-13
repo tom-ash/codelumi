@@ -6,15 +6,12 @@ import { termsOfServiceConsentValidator } from '../../../../../../../../../../..
 import { UserObject } from '../form.types'
 
 interface ValidateUserObject {
-  (args: {
-    userObject: UserObject
-    setErrors(args: object): void
-  }): boolean
+  (args: { userObject: UserObject; setErrors(args: object): void }): boolean
 }
 
-export const validateUserObject: ValidateUserObject = (args) => {
+export const validateUserObject: ValidateUserObject = args => {
   const { userObject, setErrors } = args
-  const { emailAddress, password,termsOfServiceConsent } = userObject
+  const { emailAddress, password, termsOfServiceConsent } = userObject
 
   const validationArray = [
     emailAddressValidator({ emailAddress, setErrors }),

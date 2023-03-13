@@ -14,20 +14,13 @@ interface PasswordInput {
   }): JSX.Element
 }
 
-export const PasswordInput:PasswordInput = (props) => {
-  const {
-    autoComplete,
-    validator,
-  } = props
+export const PasswordInput: PasswordInput = props => {
+  const { autoComplete, validator } = props
 
   const { state, dispatch } = useStore()
   const { texts, inputs, errors } = state
   const { password: value } = inputs
-  const {
-    passwordInputLabel: label,
-    passwordInputPlaceholder: placeholder,
-    passwordInputInvalidError,
-  } = texts
+  const { passwordInputLabel: label, passwordInputPlaceholder: placeholder, passwordInputInvalidError } = texts
   const { password: passwordInvalidErrorTriggered } = errors
   const classNames = { container: 'text-input' }
   const type = 'password'

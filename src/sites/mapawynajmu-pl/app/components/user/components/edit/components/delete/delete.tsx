@@ -4,7 +4,7 @@ import { UserDelete } from '../../../delete/delete'
 
 export const UserEditDelete = () => {
   const cellProps = {
-    attrName: 'userDelete'
+    attrName: 'userDelete',
   }
 
   return (

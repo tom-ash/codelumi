@@ -14,15 +14,11 @@ const UserEdit = () => {
 
   const { state } = useStore()
   const { texts, user } = state
-  const {
-    headingOne,
-  } = texts
-  const {
-    accountType
-  } = user
+  const { headingOne } = texts
+  const { accountType } = user
   const headingProps = {
     tier: 1,
-    text: headingOne
+    text: headingOne,
   }
 
   return (

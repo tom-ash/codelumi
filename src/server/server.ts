@@ -19,7 +19,7 @@ function getSentryUrl() {
     case 'development':
       return 'https://ac81f10d287d4659865d2571d7be7b45@o876363.ingest.sentry.io/5825795'
     case 'production':
-      return "https://7424511ddfb441c7b6abf0fef724dc69@o876363.ingest.sentry.io/4504761753010176"
+      return 'https://7424511ddfb441c7b6abf0fef724dc69@o876363.ingest.sentry.io/4504761753010176'
     default:
       return ''
   }

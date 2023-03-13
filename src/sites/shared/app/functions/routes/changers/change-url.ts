@@ -6,7 +6,7 @@ export const changeUrl = ({ href, withScroll = true, retainQueryParams = false }
   decoratedHref = retainQueryParams ? decoratedHref + window.location.search : decoratedHref
 
   window.history.pushState({}, '', decoratedHref)
-  window.dispatchEvent(new Event('popstate'));
+  window.dispatchEvent(new Event('popstate'))
 
   if (withScroll) scrollToTop()
 }

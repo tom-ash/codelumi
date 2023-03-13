@@ -13,9 +13,7 @@ const AnnouncementCreateForm = () => {
   const state = useStore().getState()
   const { texts } = state
 
-  const {
-    title,
-  } = texts
+  const { title } = texts
 
   return (
     <div

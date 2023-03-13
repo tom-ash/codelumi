@@ -14,15 +14,8 @@ interface SignIn {
   }): void
 }
 
-export const signIn:SignIn = (args) => {
-  const {
-    lang,
-    email,
-    password,
-    href,
-    setControl,
-    setErrors,
-  } = args
+export const signIn: SignIn = args => {
+  const { lang, email, password, href, setControl, setErrors } = args
 
   const hashedPassword = hashPassword(password, email)
 

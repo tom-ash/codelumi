@@ -4,18 +4,14 @@ import setVerificationToken from '../../../../../../../shared/app/functions/cook
 
 interface InitializeDeletion {
   (args: {
-    lang: Lang,
-    email: string,
+    lang: Lang
+    email: string
     setControl: any // TODO: TS!
   }): void
 }
 
-export const initializeDeletion:InitializeDeletion = (args) => {
-  const {
-    lang,
-    email,
-    setControl,
-  } = args
+export const initializeDeletion: InitializeDeletion = args => {
+  const { lang, email, setControl } = args
 
   setControl({ connecting: true })
 
@@ -25,21 +21,21 @@ export const initializeDeletion:InitializeDeletion = (args) => {
     headers: {
       'Content-Type': 'application/json',
       'Access-Token': getAccessToken(),
-      'Lang': lang,
+      Lang: lang,
     },
     body: JSON.stringify({ email }),
   })
-  .then(
-    response => {
-      if (response.ok) return response.json()
+    .then(
+      response => {
+        if (response.ok) return response.json()
 
-      throw new Error('Unknown server error.')
-    },
-    networkError => console.dir(networkError.message)
-  )
-  .then(verificationToken => {
-    setVerificationToken(verificationToken)
-    setControl({ connecting: false })
-  })
-  .catch(e => console.dir(e))
+        throw new Error('Unknown server error.')
+      },
+      networkError => console.dir(networkError.message)
+    )
+    .then(verificationToken => {
+      setVerificationToken(verificationToken)
+      setControl({ connecting: false })
+    })
+    .catch(e => console.dir(e))
 }

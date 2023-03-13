@@ -2,15 +2,11 @@ import { deleteCookie } from '../../../../../../../functions/cookie-handlers'
 import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/change-url'
 
 interface SignOut {
-  (args: {
-    href: string
-  }): void
+  (args: { href: string }): void
 }
 
-export const signOut: SignOut = (args) => {
-  const {
-    href,
-  } = args
+export const signOut: SignOut = args => {
+  const { href } = args
 
   if (typeof window !== 'undefined') {
     // TODO: Investigate better solution.

@@ -5,21 +5,11 @@ import { saveCookie } from '../../../../../../../../../mapawynajmu-pl/app/functi
 import { changeUrl } from '../../../../../../../functions/routes/changers/change-url'
 
 interface PutVerificationCode {
-  (args: {
-    lang: Lang
-    verificationCode: string
-    setControl(args: object): void
-    setErrors(args: object): void
-  }): void
+  (args: { lang: Lang; verificationCode: string; setControl(args: object): void; setErrors(args: object): void }): void
 }
 
-export const putVerificationCode: PutVerificationCode = (args) => {
-  const {
-    lang,
-    verificationCode,
-    setControl,
-    setErrors,
-  } = args
+export const putVerificationCode: PutVerificationCode = args => {
+  const { lang, verificationCode, setControl, setErrors } = args
 
   const verificationToken = getCookieValue('verificationToken')
 
@@ -31,19 +21,17 @@ export const putVerificationCode: PutVerificationCode = (args) => {
     },
     body: JSON.stringify({ verificationToken, verificationCode }),
   })
-  .then(response => {
-    if (response.status == 200) return response.json()
+    .then(response => {
+      if (response.status == 200) return response.json()
 
-    throw new Error('SomethingWentWrong')
-  })
-  .then(json => {
-    const { accessToken, href } = json
+      throw new Error('SomethingWentWrong')
+    })
+    .then(json => {
+      const { accessToken, href } = json
 
-    saveCookie('access_token', accessToken, 'ninetyDays')
-    changeUrl({ href })
-  })
-  .catch(() =>
-    setErrors({ verificationCode: true })
-  )
-  .finally(() => setControl({ connecting: false }))
+      saveCookie('access_token', accessToken, 'ninetyDays')
+      changeUrl({ href })
+    })
+    .catch(() => setErrors({ verificationCode: true }))
+    .finally(() => setControl({ connecting: false }))
 }

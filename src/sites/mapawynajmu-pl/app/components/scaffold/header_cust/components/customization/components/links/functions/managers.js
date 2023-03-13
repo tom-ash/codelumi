@@ -34,19 +34,18 @@ export function deAuthorizeManager(props) {
 
   const {
     links: {
-      root: {
-        href
-      }
-    }
+      root: { href },
+    },
   } = props
 
   return {
     classNames: { container: 'header-link de-authorize' },
     label: langHandler({ pl: 'Wyloguj', en: 'Sign Out' }),
-    onClick: () => signOut({
-      href,
-      changeUrl,
-    }),
+    onClick: () =>
+      signOut({
+        href,
+        changeUrl,
+      }),
   }
 }
 

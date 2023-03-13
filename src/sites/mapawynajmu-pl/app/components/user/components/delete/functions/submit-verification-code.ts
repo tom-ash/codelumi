@@ -12,13 +12,8 @@ interface SubmitVerificationCode {
   }): void
 }
 
-export const submitVerificationCode:SubmitVerificationCode = (args) => {
-  const {
-    lang,
-    verificationCode,
-    setControl,
-    setErrors,
-  } = args
+export const submitVerificationCode: SubmitVerificationCode = args => {
+  const { lang, verificationCode, setControl, setErrors } = args
 
   const verificationToken = getCookieValue('verificationToken')
 
@@ -28,7 +23,7 @@ export const submitVerificationCode:SubmitVerificationCode = (args) => {
     headers: {
       'Content-Type': 'application/json',
       'Access-Token': getAccessToken(),
-      'Lang': lang,
+      Lang: lang,
     },
     body: JSON.stringify({ verificationToken, verificationCode }),
   })

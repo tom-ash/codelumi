@@ -1,4 +1,4 @@
-import { SkillProps } from "../../../../../../shared/components/skill/skill.types"
+import { SkillProps } from '../../../../../../shared/components/skill/skill.types'
 
 type SelectSkillFactory = (props: {
   selectedSkill: SkillProps
@@ -7,13 +7,8 @@ type SelectSkillFactory = (props: {
   setInputs(props: object): void
 }) => void
 
-export const selectSkillFactory: SelectSkillFactory = (props) => {
-  const {
-    selectedSkill,
-    selectableSkills,
-    selectedSkills,
-    setInputs,
-  } = props
+export const selectSkillFactory: SelectSkillFactory = props => {
+  const { selectedSkill, selectableSkills, selectedSkills, setInputs } = props
 
   const newSelectedSkills = [...selectedSkills]
     .filter(skill => skill.name !== selectedSkill.name)
@@ -22,6 +17,6 @@ export const selectSkillFactory: SelectSkillFactory = (props) => {
 
   setInputs({
     selectableSkills: newSelectableSkills,
-    selectedSkills: newSelectedSkills
+    selectedSkills: newSelectedSkills,
   })
 }

@@ -8,10 +8,7 @@ import { SubmitButton } from './components/submit-button/submit-button'
 const UserNewEmailVerification = () => {
   const { state } = useStore()
   const { texts } = state
-  const {
-    headingOne,
-    verificationCodeExplanation,
-  } = texts
+  const { headingOne, verificationCodeExplanation } = texts
 
   return (
     <div id='user-new-email-verification'>

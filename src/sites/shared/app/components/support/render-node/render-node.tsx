@@ -20,8 +20,7 @@ const Definition = loadable(() => import('./components/definition/definition'))
 const Figure = loadable(() => import('./components/figure/figure'))
 
 const RenderNode = (props: RenderNodeProps) => {
-  const { node, index, appName, jsonBody, clientUrl, device, lang, langHandler, pageTitle, coverImage } =
-    props
+  const { node, index, appName, jsonBody, clientUrl, device, lang, langHandler, pageTitle, coverImage } = props
 
   if (!node) return null
 

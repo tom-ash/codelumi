@@ -291,8 +291,8 @@ const nodes = [
     pl: (
       <span>
         Administrator ma prawo do zmiany Regulaminu, Polityki Prywatności, Polityki Cookies oraz Cennika poprzez
-        zamieszczenie zmian tych dokumentów w Serwisie pod adresem <i>skillfind.tech</i>. Zmiany te wchodzą w&nbsp;życie po
-        upływie okresu 14 dni od ich ogłoszenia.
+        zamieszczenie zmian tych dokumentów w Serwisie pod adresem <i>skillfind.tech</i>. Zmiany te wchodzą w&nbsp;życie
+        po upływie okresu 14 dni od ich ogłoszenia.
       </span>
     ),
     en: (

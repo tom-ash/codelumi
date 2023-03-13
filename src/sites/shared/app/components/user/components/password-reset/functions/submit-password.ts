@@ -12,29 +12,23 @@ interface SubmitPassword {
   }): void
 }
 
-export const submitPassword:SubmitPassword = (args) => {
-    const {
-      email,
-      verificationCode,
-      password,
-      setControl,
-    } = args
+export const submitPassword: SubmitPassword = args => {
+  const { email, verificationCode, password, setControl } = args
 
-    const verificationToken = getCookieValue('verificationToken')
-    const hashedPassword = hashPassword(password, email)
+  const verificationToken = getCookieValue('verificationToken')
+  const hashedPassword = hashPassword(password, email)
 
-    fetch(API_URL + '/user/update/password', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ verificationToken, verificationCode, password: hashedPassword }),
+  fetch(API_URL + '/user/update/password', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ verificationToken, verificationCode, password: hashedPassword }),
+  })
+    .then(response => {
+      if (response.status == 200) {
+        return setControl({ step: PasswordResetStep.SUCCESS })
+      }
+
+      throw new Error('ServerError')
     })
-      .then(response => {
-        if (response.status == 200) {
-          return setControl({ step: PasswordResetStep.SUCCESS })
-        }
-
-        throw new Error('ServerError')
-      })
-      .catch(() => setControl({ connecting: false })) // TODO: Add Sentry!
-  }
-  
+    .catch(() => setControl({ connecting: false })) // TODO: Add Sentry!
+}

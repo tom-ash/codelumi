@@ -7,9 +7,9 @@ import { ContractName, Contract } from './contracts.types'
 
 interface Store {
   inputs: {
-    b2b: boolean,
-    b2bMin: number,
-    b2bMax: number,
+    b2b: boolean
+    b2bMin: number
+    b2bMax: number
   }
 }
 

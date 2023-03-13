@@ -1,14 +1,6 @@
 export const mapStateToProps = store => {
-  const {
-    app,
-    user,
-    control,
-    data,
-    inputs,
-  } = store
-  const {
-    lang,
-  } = app
+  const { app, user, control, data, inputs } = store
+  const { lang } = app
   const { role } = user
   const { fetching, nav } = control
   const { updated } = data

@@ -1,10 +1,7 @@
 const VERIFICATION_CODE_REGEX = /^\d{4}$/
 
 interface VerificationCodeValidator {
-  (props: {
-    verificationCode: string;
-    setErrors(props: { verificationCode: boolean }): void
-  }): boolean
+  (props: { verificationCode: string; setErrors(props: { verificationCode: boolean }): void }): boolean
 }
 
 export const verificationCodeValidator: VerificationCodeValidator = props => {

@@ -13,27 +13,24 @@ function Skills() {
 
   const state = useStore().getState()
   const { texts, inputs } = state
-  const {
-    skills
-  } = texts
-  const {
-    selectableSkills,
-    selectedSkills,
-  } = inputs
+  const { skills } = texts
+  const { selectableSkills, selectedSkills } = inputs
   const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
-  const selectSkill = (selectedSkill: SkillProps) => selectSkillFactory({
-    selectedSkill,
-    selectedSkills,
-    selectableSkills,
-    setInputs,
-  })
-  const unselectSkill = (unselectedSkill: SkillProps) => unselectSkillFactory({
-    unselectedSkill,
-    selectedSkills,
-    selectableSkills,
-    setInputs,
-  })
+  const selectSkill = (selectedSkill: SkillProps) =>
+    selectSkillFactory({
+      selectedSkill,
+      selectedSkills,
+      selectableSkills,
+      setInputs,
+    })
+  const unselectSkill = (unselectedSkill: SkillProps) =>
+    unselectSkillFactory({
+      unselectedSkill,
+      selectedSkills,
+      selectableSkills,
+      setInputs,
+    })
 
   return (
     <>
@@ -44,13 +41,11 @@ function Skills() {
           <div className='skill-list'>
             {selectableSkills.map((skill: SkillProps) => (
               <Skill
-                {
-                  ...{
-                    ...skill,
-                    selectSkill,
-                    view: SkillView.formSelectable,
-                  }
-                }
+                {...{
+                  ...skill,
+                  selectSkill,
+                  view: SkillView.formSelectable,
+                }}
                 key={skill.name}
               />
             ))}
@@ -59,14 +54,12 @@ function Skills() {
         <div id='selected-skills'>
           {selectedSkills.map((skill: SkillProps) => (
             <Skill
-              {
-                ...{
-                  ...skill,
-                  selectSkill,
-                  unselectSkill,
-                  view: SkillView.formSelected
-                }
-              }
+              {...{
+                ...skill,
+                selectSkill,
+                unselectSkill,
+                view: SkillView.formSelected,
+              }}
               key={skill.name}
             />
           ))}

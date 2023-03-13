@@ -14,20 +14,14 @@ interface BuildUserObject {
   }): UserObject | undefined
 }
 
-export const buildUserObject: BuildUserObject = (args) => {
-  const {
-    emailAddress,
-    password,
-    termsOfServiceConsent,
-    termsOfServiceConsentLabel,
-    setErrors,
-  } = args
-  
+export const buildUserObject: BuildUserObject = args => {
+  const { emailAddress, password, termsOfServiceConsent, termsOfServiceConsentLabel, setErrors } = args
+
   let userObject: UserObject = {
     emailAddress,
     password,
     termsOfServiceConsent,
-    consents: []
+    consents: [],
   }
 
   const userObjectInvalid = !validateUserObject({ userObject, setErrors })

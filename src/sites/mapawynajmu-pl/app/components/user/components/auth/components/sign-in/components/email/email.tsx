@@ -42,9 +42,7 @@ const UserAuthEmail = () => {
       </form>
       <Line />
       <div className='links'>
-        <span onClick={() => changeUrl({ href: resetPasswordHref })}>
-          {resetPassword}
-        </span>
+        <span onClick={() => changeUrl({ href: resetPasswordHref })}>{resetPassword}</span>
       </div>
     </div>
   )

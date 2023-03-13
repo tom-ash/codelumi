@@ -5,27 +5,20 @@ import { CellOpener } from './components/cell-opener/cell-opener'
 import { useStore } from '../../../../../../../../../shared/app/functions/store/useStore'
 
 interface UserEditCellInterface {
-  (props: {
-    attrName: string
-    children: React.ReactElement | React.ReactElement[]
-  }): React.ReactElement
+  (props: { attrName: string; children: React.ReactElement | React.ReactElement[] }): React.ReactElement
 }
 
-const toKebabCase = (text: string) => (text.replace(/[A-Z]/g, capitalLetter => '-' + capitalLetter.toLowerCase()))
+const toKebabCase = (text: string) => text.replace(/[A-Z]/g, capitalLetter => '-' + capitalLetter.toLowerCase())
 
-export const UserEditCell:UserEditCellInterface = (props) => {
+export const UserEditCell: UserEditCellInterface = props => {
   useStyles(styles)
 
   const { attrName, children } = props
   const { state } = useStore()
   const { texts, control, data } = state
-  const {
-    [`${attrName}CellTitle`]: title,
-  } = texts
-  const {
-    [`${attrName}CellValue`]: value,
-  } = data
-  
+  const { [`${attrName}CellTitle`]: title } = texts
+  const { [`${attrName}CellValue`]: value } = data
+
   const cellOpenerProps = { attrName }
   const cellOpenedKey = `${attrName}CellOpened`
   const { [cellOpenedKey]: cellOpened } = control
@@ -48,9 +41,7 @@ export const UserEditCell:UserEditCellInterface = (props) => {
       <div className='trigger'>
         <CellOpener {...cellOpenerProps} />
       </div>
-      <div className={`content ${cellContentClass}`}>
-        {cellOpened && <>{children}</>}
-      </div>
+      <div className={`content ${cellContentClass}`}>{cellOpened && <>{children}</>}</div>
     </div>
   )
 }

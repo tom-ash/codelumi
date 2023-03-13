@@ -10,28 +10,24 @@ interface SubmitVerificationCode {
   }): void
 }
 
-export const submitVerificationCode: SubmitVerificationCode = (args) => {
-    const {
-      verificationCode,
-      setControl,
-      setErrors,
-    } = args
-    const verificationToken = getCookieValue('verificationToken')
+export const submitVerificationCode: SubmitVerificationCode = args => {
+  const { verificationCode, setControl, setErrors } = args
+  const verificationToken = getCookieValue('verificationToken')
 
-    fetch(API_URL + '/user/update/password/verify', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ verificationToken, verificationCode }),
+  fetch(API_URL + '/user/update/password/verify', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ verificationToken, verificationCode }),
+  })
+    .then(response => {
+      if (response.status == 200) {
+        return setControl({ step: PasswordResetStep.PASSWORD, connecting: false })
+      }
+
+      throw new Error('ServerError')
     })
-      .then(response => {
-        if (response.status == 200) {
-          return setControl({ step: PasswordResetStep.PASSWORD, connecting: false })
-        }
-
-        throw new Error('ServerError')
-      })
-      .catch(() => {
-        setErrors({ verificationCode: true })
-        setControl({ connecting: false })
-      })
-  }
+    .catch(() => {
+      setErrors({ verificationCode: true })
+      setControl({ connecting: false })
+    })
+}

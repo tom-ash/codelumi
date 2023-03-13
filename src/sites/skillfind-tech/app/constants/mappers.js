@@ -1,13 +1,14 @@
 export const mapStateToProps = store => {
-  const {
-    app,
-    render,
-    visitor,
-    data,
-    links,
-  } = store
+  const { app, render, visitor, data, links } = store
   const { device, lang, loadGa } = app
-  const { visitor: renderVisitor, user: renderUser, page: renderPage, announcement: renderAnnouncement, image: renderImage, renderPostingIndex } = render
+  const {
+    visitor: renderVisitor,
+    user: renderUser,
+    page: renderPage,
+    announcement: renderAnnouncement,
+    image: renderImage,
+    renderPostingIndex,
+  } = render
   const { scrollY } = visitor
   const { consents } = visitor
   const { statisticsConsent, marketingConsent } = consents

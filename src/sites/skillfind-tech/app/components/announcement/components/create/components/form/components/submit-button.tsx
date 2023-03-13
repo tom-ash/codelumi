@@ -5,7 +5,11 @@ import { useStore } from 'react-redux'
 
 const SubmitButton = () => {
   const state = useStore().getState()
-  const { app: { lang }, texts, inputs } = state
+  const {
+    app: { lang },
+    texts,
+    inputs,
+  } = state
   const {
     selectedSkills,
     // remote,
@@ -25,23 +29,23 @@ const SubmitButton = () => {
   const buttonProps = {
     classNames: { container: 'submit-button' },
     label: texts.submit,
-    onClick: () => submit({
-      lang,
-      selectedSkills,
-      // remote,
-      // hybrid,
-      // office,
-      b2b,
-      b2bMax,
-      b2bMin,
-      // employment,
-      // employmentMax,
-      // employmentMin,
-      // civilContract,
-      // civilContractMax,
-      // civilContractMin,
-    }),
-
+    onClick: () =>
+      submit({
+        lang,
+        selectedSkills,
+        // remote,
+        // hybrid,
+        // office,
+        b2b,
+        b2bMax,
+        b2bMin,
+        // employment,
+        // employmentMax,
+        // employmentMin,
+        // civilContract,
+        // civilContractMax,
+        // civilContractMin,
+      }),
   }
 
   return <ManagedButton {...buttonProps} />

@@ -1,4 +1,4 @@
-import { getAccessToken } from "../../../components/user/components/auth/functions/get-access-token"
+import { getAccessToken } from '../../../components/user/components/auth/functions/get-access-token'
 
 function syncRouteData({ apiUrl, url, query, isSSR, customHeaders }) {
   const { setApp } = this.props

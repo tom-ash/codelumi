@@ -7,6 +7,6 @@ export const useStore = () => {
   const [state, setState] = useState(getState())
 
   useEffect(() => subscribe(() => setState(getState())))
-  
+
   return { state, dispatch }
 }

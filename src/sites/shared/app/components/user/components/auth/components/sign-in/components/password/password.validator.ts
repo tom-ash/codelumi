@@ -1,8 +1,5 @@
 interface PasswordValidator {
-  (props: {
-    password: string;
-    setErrors(args: { password: boolean }): void
-  }): boolean
+  (props: { password: string; setErrors(args: { password: boolean }): void }): boolean
 }
 
 export const passwordValidator: PasswordValidator = props => {

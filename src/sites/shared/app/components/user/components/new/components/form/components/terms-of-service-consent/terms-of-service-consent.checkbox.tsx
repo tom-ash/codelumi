@@ -8,10 +8,7 @@ export const TermsOfServiceConsentCheckbox = () => {
   const { state, dispatch } = useStore()
   const { texts, links, inputs } = state
   const { termsOfServiceConsent } = inputs
-  const {
-    termsOfServiceConsentSyntheticLabel,
-    termsOfService,
-  } = texts
+  const { termsOfServiceConsentSyntheticLabel, termsOfService } = texts
   const classNames = { container: 'form-input checkbox' }
   const checked = termsOfServiceConsent
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })

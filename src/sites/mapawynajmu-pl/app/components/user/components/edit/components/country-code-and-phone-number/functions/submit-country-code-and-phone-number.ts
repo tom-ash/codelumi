@@ -11,14 +11,8 @@ interface SubmitCountryCodeAndPhoneNumber {
   }): void
 }
 
-export const submitCountryCodeAndPhoneNumber:SubmitCountryCodeAndPhoneNumber = (args) => {
-  const {
-    countryCode,
-    phoneNumber,
-    setControl,
-    setInputs,
-    setData,
-  } = args
+export const submitCountryCodeAndPhoneNumber: SubmitCountryCodeAndPhoneNumber = args => {
+  const { countryCode, phoneNumber, setControl, setInputs, setData } = args
   const accessToken = getAccessToken()
   const body = JSON.stringify({
     countryCode,
@@ -31,19 +25,18 @@ export const submitCountryCodeAndPhoneNumber:SubmitCountryCodeAndPhoneNumber = (
     // @ts-ignore
     headers: {
       'Content-Type': 'application/json',
-      'Access-Token': accessToken
+      'Access-Token': accessToken,
     },
     body,
+  }).then(response => {
+    if (response.status == 200) {
+      setData({ countryCodeAndPhoneNumberCellValue: `${countryCode} ${phoneNumber}` })
+      setInputs({ countryCode, phoneNumber })
+      setControl({ connecting: false, countryCodeAndPhoneNumberCellOpened: false })
+
+      return
+    }
+
+    throw new Error('Server Error')
   })
-    .then(response => {
-      if (response.status == 200) {
-        setData({ countryCodeAndPhoneNumberCellValue: `${countryCode} ${phoneNumber}` })
-        setInputs({ countryCode, phoneNumber })
-        setControl({ connecting: false, countryCodeAndPhoneNumberCellOpened: false })
-
-        return
-      }
-
-      throw new Error('Server Error')
-    })
 }

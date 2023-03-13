@@ -15,7 +15,7 @@ export const SubmitButton = () => {
   const classNames = { container: 'button' }
   const buttonSpinnerProps = {
     connecting,
-    label: verify
+    label: verify,
   }
   const label = <ButtonSpinner {...buttonSpinnerProps} />
   const setControl = (value: any) => dispatch({ type: 'control', value })

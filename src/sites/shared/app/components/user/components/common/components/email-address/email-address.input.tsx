@@ -7,11 +7,7 @@ export const EmailAddressInput = () => {
   const { state, dispatch } = useStore()
   const { texts, inputs, errors } = state
   const { emailAddress } = inputs
-  const {
-    emailInputLabel: label,
-    emailInputPlaceholder: placeholder,
-    emailInputInvalidError,
-  } = texts
+  const { emailInputLabel: label, emailInputPlaceholder: placeholder, emailInputInvalidError } = texts
   const { emailAddress: emailInvalidErrorTriggered } = errors
   const classNames = { container: 'text-input' }
   const type = 'email'

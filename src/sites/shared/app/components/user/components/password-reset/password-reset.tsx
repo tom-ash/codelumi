@@ -18,17 +18,12 @@ const PasswordReset = () => {
   const { texts, control } = state
   const { step } = control
 
-  const {
-    headingOne,
-    emailAddressExplanation,
-    verificationExplanation,
-    passwordExplanation,
-    successExplanation,
-  } = texts
+  const { headingOne, emailAddressExplanation, verificationExplanation, passwordExplanation, successExplanation } =
+    texts
 
   const headingProps = {
     tier: 1,
-    text: headingOne
+    text: headingOne,
   }
 
   const passwordProps = {
@@ -62,9 +57,7 @@ const PasswordReset = () => {
             <SubmitPasswordButton />
           </>
         )}
-        {step === PasswordResetStep.SUCCESS && (
-          <Explanation explanation={successExplanation} />
-        )}
+        {step === PasswordResetStep.SUCCESS && <Explanation explanation={successExplanation} />}
       </form>
     </div>
   )

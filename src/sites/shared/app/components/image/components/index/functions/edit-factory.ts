@@ -1,4 +1,4 @@
-import { changeUrl } from "../../../../../functions/routes/changers/change-url"
+import { changeUrl } from '../../../../../functions/routes/changers/change-url'
 
 interface EditFactoryProps {
   buildUrl(props: { path: string }): string

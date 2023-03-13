@@ -8,14 +8,12 @@ import { SubmitCountryCodeAndPhoneNumberButton as SubmitButton } from './compone
 
 export const UserEditCountryCodeAndPhoneNumber = () => {
   const cellProps = {
-    attrName: 'countryCodeAndPhoneNumber'
+    attrName: 'countryCodeAndPhoneNumber',
   }
 
   const { state } = useStore()
   const { texts } = state
-  const {
-    countryCodeAndPhoneNumberInputsExplanation,
-  } = texts
+  const { countryCodeAndPhoneNumberInputsExplanation } = texts
 
   return (
     <Cell {...cellProps}>

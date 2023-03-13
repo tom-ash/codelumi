@@ -1,7 +1,5 @@
 export const mapStateToProps = store => {
-  const {
-    inputs
-  } = store
+  const { inputs } = store
   const {
     selectableSkills,
     selectedSkills,

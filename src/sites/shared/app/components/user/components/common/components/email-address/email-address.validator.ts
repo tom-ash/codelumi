@@ -1,10 +1,7 @@
-import { EMAIL_ADDRESS_REGEX } from "../../../new/components/form/constants/email-address-regex";
+import { EMAIL_ADDRESS_REGEX } from '../../../new/components/form/constants/email-address-regex'
 
 interface EmailAddressValidator {
-  (props: {
-    emailAddress: string;
-    setErrors(props: { emailAddress: boolean }): void
-  }): boolean
+  (props: { emailAddress: string; setErrors(props: { emailAddress: boolean }): void }): boolean
 }
 
 export const emailAddressValidator: EmailAddressValidator = props => {

@@ -17,19 +17,19 @@
     background: lightgray;
     cursor: pointer;
     &.novice {
-      background: #F9E79F;
+      background: #f9e79f;
     }
     &.junior {
-      background: #27AE60;
+      background: #27ae60;
     }
     &.mid {
-      background: #2874A6;
+      background: #2874a6;
     }
     &.senior {
-      background: #E74C3C;
+      background: #e74c3c;
     }
     &.expert {
-      background: #6C3483;
+      background: #6c3483;
     }
   }
   .level-name {

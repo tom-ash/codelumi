@@ -7,13 +7,8 @@ export const SubmitCountryCodeAndPhoneNumberButton = () => {
   const { state, dispatch } = useStore()
   const { app, texts, inputs } = state
   const { countryCodeAndPhoneNumberSubmitButtonLabel: label } = texts
-  const {
-    lang
-  } = app
-  const {
-    countryCode,
-    phoneNumber,
-  } = inputs
+  const { lang } = app
+  const { countryCode, phoneNumber } = inputs
   const setControl = (value: any) => dispatch({ type: 'control', value })
   const setData = (value: any) => dispatch({ type: 'data', value })
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })

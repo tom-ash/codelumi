@@ -1,8 +1,5 @@
 interface TermsAndServiceConsentValidator {
-  (props: {
-    termsOfServiceConsent: boolean;
-    setErrors(props: { termsOfServiceConsent: boolean }): void
-  }): boolean
+  (props: { termsOfServiceConsent: boolean; setErrors(props: { termsOfServiceConsent: boolean }): void }): boolean
 }
 
 export const termsOfServiceConsentValidator: TermsAndServiceConsentValidator = props => {

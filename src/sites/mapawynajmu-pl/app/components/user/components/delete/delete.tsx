@@ -8,12 +8,8 @@ export const UserDelete = () => {
   const { state, dispatch } = useStore()
   const { app, texts, data } = state
   const { lang } = app
-  const {
-    userDeleteInputExplanation,
-  } = texts
-  const {
-    email,
-  } = data
+  const { userDeleteInputExplanation } = texts
+  const { email } = data
   const setControl = (value: any) => dispatch({ type: 'control', value })
 
   useEffect(() => {
@@ -26,9 +22,7 @@ export const UserDelete = () => {
 
   return (
     <div id='user-delete'>
-      <div className='explanation'>
-        {userDeleteInputExplanation}
-      </div>
+      <div className='explanation'>{userDeleteInputExplanation}</div>
       <VerificationCodeInput />
       <SubmitVerificationCodeButton />
     </div>

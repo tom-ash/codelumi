@@ -18,7 +18,7 @@ interface BuildUserObject {
   }): UserObject | undefined
 }
 
-export const buildUserObject: BuildUserObject = (args) => {
+export const buildUserObject: BuildUserObject = args => {
   const {
     accountType,
     businessName,
@@ -30,7 +30,7 @@ export const buildUserObject: BuildUserObject = (args) => {
     termsOfServiceConsentLabel,
     setErrors,
   } = args
-  
+
   let userObject: UserObject = {
     accountType,
     emailAddress,
@@ -38,7 +38,7 @@ export const buildUserObject: BuildUserObject = (args) => {
     countryCode,
     phoneNumber,
     termsOfServiceConsent,
-    consents: []
+    consents: [],
   }
 
   if (accountType === AccountType.BUSINESS) {

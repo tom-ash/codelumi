@@ -1,4 +1,4 @@
-import { changeUrl } from "../../../../../../../shared/app/functions/routes/changers/change-url"
+import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/change-url'
 
 interface DrawPinProps {
   latitude: number

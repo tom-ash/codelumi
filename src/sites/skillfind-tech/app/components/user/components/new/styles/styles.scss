@@ -9,7 +9,7 @@
   padding: 32px;
   h1 {
     @extend %h1;
-    margin-bottom: 24px
+    margin-bottom: 24px;
   }
   .text-input {
     @extend %text-input;

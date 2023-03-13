@@ -1,10 +1,7 @@
-import { PASSWORD_REGEX } from "../../constants/password-regex"
+import { PASSWORD_REGEX } from '../../constants/password-regex'
 
 interface PasswordValidator {
-  (props: {
-    password: string;
-    setErrors(args: { password: boolean }): void
-  }): boolean
+  (props: { password: string; setErrors(args: { password: boolean }): void }): boolean
 }
 
 export const passwordValidator: PasswordValidator = props => {

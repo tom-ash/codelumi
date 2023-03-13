@@ -1,4 +1,4 @@
-import { AccountType } from "../../../../../../types/user.types"
+import { AccountType } from '../../../../../../types/user.types'
 
 export interface UserObject {
   accountType: AccountType

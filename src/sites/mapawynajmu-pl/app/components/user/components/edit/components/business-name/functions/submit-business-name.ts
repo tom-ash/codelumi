@@ -4,26 +4,14 @@ import { getAccessToken } from '../../../../../../../../../shared/app/components
 interface SubmitBusinessName {
   (args: {
     businessName: string
-    setControl(args: {
-      connecting: false
-      businessNameCellOpened: false
-    }): void
-    setInputs(args: {
-      businessName: string
-    }): void
-    setData(args: {
-      businessNameCellValue: string
-    }): void
+    setControl(args: { connecting: false; businessNameCellOpened: false }): void
+    setInputs(args: { businessName: string }): void
+    setData(args: { businessNameCellValue: string }): void
   }): void
 }
 
-export const submitBusinessName:SubmitBusinessName = (args) => {
-  const {
-    businessName,
-    setControl,
-    setInputs,
-    setData,
-  } = args
+export const submitBusinessName: SubmitBusinessName = args => {
+  const { businessName, setControl, setInputs, setData } = args
   const accessToken = getAccessToken()
   const body = JSON.stringify({
     value: businessName,
@@ -34,19 +22,18 @@ export const submitBusinessName:SubmitBusinessName = (args) => {
     // @ts-ignore
     headers: {
       'Content-Type': 'application/json',
-      'Access-Token': accessToken
+      'Access-Token': accessToken,
     },
     body,
+  }).then(response => {
+    if (response.status == 200) {
+      setData({ businessNameCellValue: businessName })
+      setInputs({ businessName })
+      setControl({ connecting: false, businessNameCellOpened: false })
+
+      return
+    }
+
+    throw new Error('Server Error')
   })
-    .then(response => {
-      if (response.status == 200) {
-        setData({ businessNameCellValue: businessName })
-        setInputs({ businessName })
-        setControl({ connecting: false, businessNameCellOpened: false })
-
-        return
-      }
-
-      throw new Error('Server Error')
-    })
 }

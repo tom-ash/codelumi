@@ -1,4 +1,4 @@
-import React, { useContext} from 'react'
+import React, { useContext } from 'react'
 // import { ManagedButton } from 'managed-inputs'
 // import { submit } from '../functions/submit'
 import { useStore } from 'react-redux'
@@ -14,31 +14,34 @@ const PostingIndex = () => {
 
   const state = useStore().getState()
   const { data } = state
-  const {
-    postings,
-  } = data
+  const { postings } = data
 
   return (
     <div id='posting-index'>
       {postings.map((posting: any) => {
-
-        const {
-          b2b,
-          b2bMin,
-          b2bMax,
-        } = posting
+        const { b2b, b2bMin, b2bMax } = posting
 
         return (
-          <div className='tile' key={posting.id}>
-            <div className='company-name'>
-              {posting.id}
-            </div>
+          <div
+            className='tile'
+            key={posting.id}
+          >
+            <div className='company-name'>{posting.id}</div>
             <div className='remuneration'>
-              <strong>{b2bMin} - {b2bMax} PLN</strong>
+              <strong>
+                {b2bMin} - {b2bMax} PLN
+              </strong>
             </div>
             <div className='skills'>
               {posting.skills.map((skill: any) => {
-                return <Skill key={skill.name} name={skill.name} level={skill.level} view={SkillView.indexVisitor}/>
+                return (
+                  <Skill
+                    key={skill.name}
+                    name={skill.name}
+                    level={skill.level}
+                    view={SkillView.indexVisitor}
+                  />
+                )
               })}
               <div className='float-clear' />
             </div>

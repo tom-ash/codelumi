@@ -5,21 +5,13 @@ export const CredentialsError = () => {
   const { state } = useStore()
   const { texts, errors } = state
 
-  const {
-    credentialsInvalidError
-  } = texts
+  const { credentialsInvalidError } = texts
 
-  const {
-    credentials: credentialsInvalidErrorTriggered
-  } = errors
+  const { credentials: credentialsInvalidErrorTriggered } = errors
 
   const error = credentialsInvalidErrorTriggered && credentialsInvalidError
 
   if (!error) return null
 
-  return (
-    <div className='credentials-error'>
-      {error}
-    </div>
-  )
+  return <div className='credentials-error'>{error}</div>
 }

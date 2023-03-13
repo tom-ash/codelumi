@@ -8,18 +8,11 @@ interface TermsOfServiceConsentLabelProps {
 }
 
 export const TermsOfServiceConsentLabel = (props: TermsOfServiceConsentLabelProps) => {
-  const {
-    syntheticLabel,
-    termsOfServiceLink,
-    termsOfService,
-  } = props
-  
+  const { syntheticLabel, termsOfServiceLink, termsOfService } = props
+
   const label = syntheticLabel.split(/({.+?})/).map((element: string) => {
     if (element === '{termsOfService}') {
-      const {
-        href,
-        hrefLang,
-      } = termsOfServiceLink
+      const { href, hrefLang } = termsOfServiceLink
 
       return (
         <a

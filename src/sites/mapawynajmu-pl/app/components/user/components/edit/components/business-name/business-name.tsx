@@ -7,14 +7,12 @@ import { SubmitBusinessNameButton } from './components/submit-business-name-butt
 
 export const UserEditBusinessName = () => {
   const cellProps = {
-    attrName: 'businessName'
+    attrName: 'businessName',
   }
 
   const { state } = useStore()
   const { texts } = state
-  const {
-    businessNameInputExplanation,
-  } = texts
+  const { businessNameInputExplanation } = texts
 
   return (
     <Cell {...cellProps}>

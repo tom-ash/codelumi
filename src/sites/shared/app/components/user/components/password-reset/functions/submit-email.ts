@@ -10,12 +10,8 @@ interface SubmitEmail {
   }): void
 }
 
-export const submitEmail: SubmitEmail = (args) => {
-  const {
-    lang,
-    email,
-    setControl,
-  } = args
+export const submitEmail: SubmitEmail = args => {
+  const { lang, email, setControl } = args
 
   fetch(API_URL + '/user/update/password/verification', {
     method: 'PUT',

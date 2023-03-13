@@ -59,7 +59,7 @@ export const submit = (props: submitProps) => {
     headers: {
       'Content-Type': 'application/json',
       'Access-Token': getAccessToken(),
-      'Lang': lang,
+      Lang: lang,
     },
     body: JSON.stringify(body),
   })

@@ -13,7 +13,7 @@
   padding: 32px;
   h1 {
     @extend %h1;
-    margin-bottom: 24px
+    margin-bottom: 24px;
   }
   .text-input {
     @extend %text-input;
@@ -35,7 +35,7 @@
   }
   .explanation {
     margin-bottom: 24px;
-    color: #4D5656;
+    color: #4d5656;
     line-height: 24px;
   }
 }
