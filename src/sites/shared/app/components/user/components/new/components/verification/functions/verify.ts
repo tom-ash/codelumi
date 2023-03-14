@@ -1,15 +1,19 @@
 import API_URL from '../../../../../../../../../mapawynajmu-pl/shared/constants/urls/api'
-// import { saveTokens } from '../../../../../../../functions/token-handlers'
 import getCookieValue from '../../../../../../../functions/cookies/getters/get-cookie-value'
 import { saveCookie } from '../../../../../../../../../mapawynajmu-pl/app/functions/cookie-handlers'
 import { changeUrl } from '../../../../../../../functions/routes/changers/change-url'
+import { verificationCodeValidator } from '../components/verification-code/verification-code.validator'
 
-interface PutVerificationCode {
+interface Verify {
   (args: { lang: Lang; verificationCode: string; setControl(args: object): void; setErrors(args: object): void }): void
 }
 
-export const putVerificationCode: PutVerificationCode = args => {
+export const verify: Verify = args => {
   const { lang, verificationCode, setControl, setErrors } = args
+
+  setControl({ connecting: true })
+
+  if (!verificationCodeValidator({ verificationCode, setErrors })) return setControl({ connecting: false })
 
   const verificationToken = getCookieValue('verificationToken')
 

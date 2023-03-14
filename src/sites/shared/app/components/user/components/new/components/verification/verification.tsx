@@ -3,7 +3,7 @@ import { VerificationCodeInput } from './components/verification-code/verificati
 import { useStore } from '../../../../../../functions/store/useStore'
 import { Heading } from '../../../../../../../../mapawynajmu-pl/app/components/support/components/heading'
 import { Line } from '../../../../../../../../mapawynajmu-pl/app/components/support/components/line/line'
-import { SubmitButton } from './components/submit-button/submit-button'
+import { VerifyButton } from './components/submit-button/verify-button'
 
 const UserNewEmailVerification = () => {
   const { state } = useStore()
@@ -19,7 +19,7 @@ const UserNewEmailVerification = () => {
       <Line />
       <div className='explanation'>{verificationCodeExplanation}</div>
       <VerificationCodeInput />
-      <SubmitButton />
+      <VerifyButton />
     </div>
   )
 }
