@@ -8,7 +8,7 @@ import { PasswordInput } from '../../../../../../../../../../shared/app/componen
 import { CountryCodeSelect } from '../../../../../../../../../../shared/app/components/user/components/new/components/form/components/country-code/country-code.select'
 import { PhoneNumberInput } from '../../../../../../../../../../shared/app/components/user/components/new/components/form/components/phone-number/phone-number.input'
 import { TermsOfServiceConsent } from '../../../../../../../../../../shared/app/components/user/components/new/components/form/components/terms-of-service-consent/terms-of-service-consent'
-import { SubmitButton } from './components/submit-button'
+import { SignUpButton } from './components/sign-up-button'
 import { useStore } from '../../../../../../../../../../shared/app/functions/store/useStore'
 import { Heading } from '../../../../../../../support/components/heading'
 import { Line } from '../../../../../../../support/components/line/line'
@@ -49,7 +49,7 @@ const UserNewEmailForm = () => {
         <PhoneNumberInput />
       </div>
       <TermsOfServiceConsent />
-      {userNewForm && <SubmitButton />}
+      {userNewForm && <SignUpButton />}
     </form>
   )
 }

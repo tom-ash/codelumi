@@ -12,7 +12,7 @@ export const SubmitButton = () => {
   const { verify } = texts
   const { connecting } = control
   const { verificationCode } = inputs
-  const classNames = { container: 'button' }
+  const classNames = { container: 'submit-button' }
   const buttonSpinnerProps = {
     connecting,
     label: verify,

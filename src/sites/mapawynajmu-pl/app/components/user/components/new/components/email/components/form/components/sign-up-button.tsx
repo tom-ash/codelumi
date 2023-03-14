@@ -1,20 +1,26 @@
 import React from 'react'
 import { useStore } from '../../../../../../../../../../../shared/app/functions/store/useStore'
-import { signIn as submit } from '../functions/sign-in'
 import { SubmitButton } from '../../../../../../../../../../../shared/app/components/support/submit-button/submit-button'
+import { signUp as submit } from '../functions/sign-up'
 
-export const SignInButton = () => {
+export const SignUpButton = () => {
   const { state } = useStore()
   const { app, texts, inputs } = state
   const { lang } = app
-  const { signInButtonLabel: label } = texts
-  const { emailAddress, password } = inputs
+  const { signUpButtonLabel: label, termsOfServiceConsentLabel } = texts
+  const { accountType, businessName, emailAddress, password, countryCode, phoneNumber, termsOfServiceConsent } = inputs
 
   const submitButtonProps = {
     label,
     lang,
-    email: emailAddress,
+    accountType,
+    businessName,
+    emailAddress,
     password,
+    countryCode,
+    phoneNumber,
+    termsOfServiceConsent,
+    termsOfServiceConsentLabel,
     submit,
   }
 
