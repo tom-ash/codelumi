@@ -1,12 +1,12 @@
 import React from 'react'
 import { useStore } from '../../../../../../../../../../shared/app/functions/store/useStore'
-import { Line } from '../../../../../../../support/components/line/line'
+import { Line } from '../../../../../../../../../../mapawynajmu-pl/app/components/support/components/line/line'
 import { EmailAddressInput } from '../../../../../../../../../../shared/app/components/user/components/common/components/email-address/email-address.input'
 import { PasswordInput } from '../../../../../../../../../../shared/app/components/user/components/common/components/password/password.input'
 import { PasswordAutoComplete } from '../../../../../../../../../../shared/app/components/user/components/common/components/password/password.input'
 import { passwordValidator } from '../../../../../../../../../../shared/app/components/user/components/auth/components/sign-in/components/password/password.validator'
-import { SignInButton } from './components/submit-button'
-import { Heading } from '../../../../../../../support/components/heading'
+import { SignInButton } from './components/sign-in-button'
+import { Heading } from '../../../../../../../../../../mapawynajmu-pl/app/components/support/components/heading'
 import { CredentialsError } from '../../../../../../../../../../shared/app/components/user/components/auth/components/sign-in/components/credentials-error'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
@@ -18,7 +18,7 @@ const UserAuthEmail = () => {
   const { state } = useStore()
   const { texts, links } = state
   const { headingOne, resetPassword } = texts
-  const { href: resetPasswordHref } = links['user/password-reset']
+  // const { href: resetPasswordHref } = links['user/password-reset']
 
   const passwordInputProps = {
     autoComplete: PasswordAutoComplete.CURRENT_PASSWORD,
@@ -40,10 +40,10 @@ const UserAuthEmail = () => {
         <CredentialsError />
         <SignInButton />
       </form>
-      <Line />
+      {/* <Line />
       <div className='links'>
         <span onClick={() => changeUrl({ href: resetPasswordHref })}>{resetPassword}</span>
-      </div>
+      </div> */}
     </div>
   )
 }

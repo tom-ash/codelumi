@@ -1,7 +1,7 @@
 @import '../../../../../../../../../styles/inputs/button';
 
 %submit {
-  .button {
+  .submit-button {
     @extend %button;
     margin: 24px 0;
   }

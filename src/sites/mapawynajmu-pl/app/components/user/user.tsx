@@ -11,7 +11,7 @@ const User = () => {
   const { render } = state
   const {
     'user/new': renderCreate,
-    'user/authorize': renderAuthorize,
+    'user/auth': renderAuthorize,
     'user/edit': renderEdit,
     'user/password-reset': renderPasswordReset,
   } = render

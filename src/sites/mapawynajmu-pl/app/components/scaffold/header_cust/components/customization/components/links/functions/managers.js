@@ -78,7 +78,7 @@ export function signUpManager(props) {
 export function signInManager(props) {
   const { links, langs, langHandler } = props
   const classNames = { container: 'header-link sign-in' }
-  const link = links['user/authorize']
+  const link = links['user/auth']
   const href = link && buildUrl({ path: link.path })
   const hrefLang = langHandler(langs)
   const title = link && link.title

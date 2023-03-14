@@ -2,7 +2,7 @@ import React from 'react'
 import { useStore } from '../../../../shared/app/functions/store/useStore'
 import loadable from '@loadable/component'
 const UserNew = loadable(() => import('./components/new/new'))
-// const UserAuth = loadable(() => import('./components/auth/auth'))
+const UserAuth = loadable(() => import('./components/auth/auth'))
 // const PasswordReset = loadable(() => import('./components/password-reset/password-reset'))
 // const UserEdit = loadable(() => import('./components/edit/edit'))
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
@@ -15,7 +15,7 @@ const User = () => {
   const { render } = state
   const {
     'user/new': renderNew,
-    // 'user/authorize': renderAuthorize,
+    'user/auth': renderAuth,
     // 'user/edit': renderEdit,
     // 'user/password-reset': renderPasswordReset,
   } = render
@@ -24,7 +24,7 @@ const User = () => {
     <div id='user'>
       {renderNew && <UserNew />}
       {/* {renderEdit && <UserEdit />} */}
-      {/* {renderAuthorize && <UserAuth />} */}
+      {renderAuth && <UserAuth />}
       {/* {renderPasswordReset && <PasswordReset />} */}
     </div>
   )

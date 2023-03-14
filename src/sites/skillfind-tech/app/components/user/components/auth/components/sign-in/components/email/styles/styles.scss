@@ -1,0 +1,33 @@
+@import '../../../../../../../../../styles/container';
+@import '../../../../../../../../../styles/headings/h1';
+@import '../../../../../../../../../styles/inputs/text';
+@import '../../../../../../../../../styles/inputs/button.scss';
+
+#user-auth-email {
+  @extend %container;
+  padding: 32px;
+  h1 {
+    @extend %h1;
+    margin-bottom: 24px;
+  }
+  .text-input {
+    @extend %text-input;
+  }
+  .submit-button {
+    @extend %button;
+    margin-top: 24px;
+  }
+//   .line {
+//     @extend %line;
+//     margin-bottom: 24px;
+//   }
+//   .links {
+//     @extend %links;
+//   }
+  .credentials-error {
+    // margin-bottom: 24px;
+    font-size: 14px;
+    text-align: center;
+    color: $ERROR-COLOR;
+  }
+}

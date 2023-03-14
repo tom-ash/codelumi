@@ -1,6 +1,6 @@
 import { hashPassword } from '../../../../../../../../../../../shared/app/components/user/functions/hash-password'
 import API_URL from '../../../../../../../../../../shared/constants/urls/api'
-import { saveCookie } from '../../../../../../../../../functions/cookie-handlers'
+import { saveCookie } from '../../../../../../../../../../../shared/app/components/visitor/components/legal/components/cookies/functions/save'
 import { changeUrl } from '../../../../../../../../../../../shared/app/functions/routes/changers/change-url'
 
 interface SignIn {
@@ -17,10 +17,12 @@ interface SignIn {
 export const signIn: SignIn = args => {
   const { lang, email, password, href, setControl, setErrors } = args
 
+  console.log(args)
+
   const hashedPassword = hashPassword(password, email)
 
-  fetch(API_URL + '/user/auth/email-and-password', {
-    method: 'PUT',
+  fetch(API_URL + '/users/auth', {
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Lang: lang,
@@ -28,7 +30,7 @@ export const signIn: SignIn = args => {
     body: JSON.stringify({ email, password: hashedPassword }),
   })
     .then(response => {
-      if (response.status == 200) return response.json()
+      if (response.ok) return response.json()
 
       throw new Error('InvalidCredentials')
     })
@@ -38,13 +40,7 @@ export const signIn: SignIn = args => {
         href,
       } = jsonResponse
 
-      saveCookie('access_token', accessToken, 'ninetyDays')
-
-      if (typeof window !== 'undefined') {
-        // TODO: Investigate better solution.
-        // @ts-ignore
-        window.areListingsObsolete = true
-      }
+      saveCookie('access_token', accessToken, 'oneYear')
 
       changeUrl({ href })
     })
