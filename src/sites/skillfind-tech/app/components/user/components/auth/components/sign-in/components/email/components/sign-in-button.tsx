@@ -5,14 +5,12 @@ import { signIn as submit } from '../functions/sign-in'
 
 export const SignInButton = () => {
   const { state } = useStore()
-  const { app, texts, inputs } = state
-  const { lang } = app
+  const { texts, inputs } = state
   const { signInButtonLabel: label } = texts
   const { emailAddress, password } = inputs
 
   const submitButtonProps = {
     label,
-    lang,
     email: emailAddress,
     password,
     submit,

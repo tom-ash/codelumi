@@ -5,14 +5,12 @@ import { signUp as submit } from '../functions/sign-up'
 
 export const SignUpButton = () => {
   const { state } = useStore()
-  const { app, texts, inputs } = state
-  const { lang } = app
+  const { texts, inputs } = state
   const { signUpButtonLabel: label, termsOfServiceConsentLabel } = texts
   const { accountType, businessName, emailAddress, password, countryCode, phoneNumber, termsOfServiceConsent } = inputs
 
   const submitButtonProps = {
     label,
-    lang,
     accountType,
     businessName,
     emailAddress,
