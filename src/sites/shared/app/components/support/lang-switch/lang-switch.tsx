@@ -3,38 +3,28 @@ import SVG from '../../../../../mapawynajmu-pl/app/components/support/components
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { changeUrl } from '../../../functions/routes/changers/change-url'
+import { useStore } from '../../../functions/store/useStore'
 
-interface LangSwitchProps {
-  links: {
-    'current/pl': { path: string; title: string }
-    'current/en': { path: string; title: string }
-  }
-  lang: string
-  buildUrl: BuildUrl
-}
-
-export const LangSwitch = (props: LangSwitchProps) => {
+export const LangSwitch = () => {
   useStyles(styles)
+
+  const { state, dispatch } = useStore()
+  const { app, links } = state
+  const { lang } = app
 
   let plHref: string
   let enHref: string
   const [showLangs, setShowLangs] = useState(false)
-  const { lang, links, buildUrl } = props
+  
   const currentPl = links['current/pl']
   const currentEn = links['current/en']
 
   if (currentPl) {
-    const currentPlPath = currentPl.path
-    if (currentPlPath === null) return null
-
-    plHref = buildUrl({ path: currentPlPath })
+    plHref = currentPl.href
   }
 
   if (currentEn) {
-    const currentEnPath = currentEn.path
-    if (currentEnPath === null) return null
-
-    enHref = buildUrl({ path: links['current/en'].path })
+    enHref = currentEn.href
   }
 
   const allClassNames = ['all']
@@ -48,7 +38,7 @@ export const LangSwitch = (props: LangSwitchProps) => {
     // @ts-ignore
     window.areListingsObsolete = true
 
-    changeUrl({ href, withScroll: true })
+    changeUrl({ href, withScroll: false })
     setShowLangs(false)
   }
 

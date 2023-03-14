@@ -7,9 +7,17 @@
   left: 0;
   right: 0;
   height: 50px;
-  color: rgb(50, 50, 50);
   border-bottom: 1px solid lightgray;
-  background: white;
+  padding: 0 16px;
+  // .logo {
+  //   float: left;
+  //   a {
+  //     height: 40px;
+  //     width: 100px;
+  //   }
+  //   // height: 40px;
+  //   // width: 100px;
+  // }
   .lang-switch {
     float: right;
     .current {
@@ -18,35 +26,6 @@
     .all {
       top: 52px;
       border-radius: 3px;
-    }
-  }
-  .inner {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 20px;
-    .logo {
-      display: block;
-      float: left;
-    }
-    .links {
-      float: right;
-      .header-link {
-        float: left;
-        margin-left: 25px;
-        text-align: center;
-        font-size: 14px;
-        line-height: 14px;
-        cursor: pointer;
-        &.hover {
-          text-decoration: underline;
-        }
-        :hover {
-          svg {
-            fill: #eaf2f8;
-          }
-          color: #eaf2f8;
-        }
-      }
     }
   }
 }

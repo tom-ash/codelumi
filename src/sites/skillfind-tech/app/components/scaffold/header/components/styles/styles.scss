@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+.logo {
+  position: relative;
+  float: left;
+  margin-top: 0;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  color: rgb(50, 50, 50);
+  font-family: 'IBM Plex Mono', monospace;
+  .tech {
+    color: rgb(50, 160, 150);
+  }
+}

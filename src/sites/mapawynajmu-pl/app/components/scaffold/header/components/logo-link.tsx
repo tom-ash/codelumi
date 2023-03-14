@@ -18,10 +18,7 @@ export const LogoLink = (props: LogoProps) => {
   const href = link && buildUrl({ path: link.path })
   const hrefLang = lang
   const label = <Logo />
-  const onClick = () => {
-    window.areListingsObsolete = true
-    changeUrl({ href })
-  }
+  const onClick = () => changeUrl({ href })
 
   const linkProps = { classNames, href, hrefLang, title, label, onClick }
 
