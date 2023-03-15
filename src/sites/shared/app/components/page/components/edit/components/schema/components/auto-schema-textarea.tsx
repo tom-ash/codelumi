@@ -1,21 +1,11 @@
 import React from 'react'
-import { ManagedTextarea } from 'managed-inputs'
+import { Textarea } from '../../../../../../support/textarea/textarea'
 
-interface AutoSchemaTextareaProps {
-  autoSchema: string
-  setInputs(props: object): void
+export const AutoSchemaTextarea = () => {
+  const textareaProps = {
+    textareaKey: 'autoSchema',
+    containerClassNames: 'form-input schema',
+  }
+
+  return <Textarea {...textareaProps} />
 }
-
-const AutoSchemaTextarea = (props: AutoSchemaTextareaProps) => {
-  const { autoSchema, setInputs } = props
-  const classNames = { container: 'form-input textarea schema' }
-  const label = 'Auto Schema'
-  const value = autoSchema
-  const counterLimit = 10000
-  const onChange = (autoSchema: string) => setInputs({ autoSchema })
-  const textareaProps = { classNames, label, value, counterLimit, onChange, disabled: true }
-
-  return <ManagedTextarea {...textareaProps} />
-}
-
-export default AutoSchemaTextarea

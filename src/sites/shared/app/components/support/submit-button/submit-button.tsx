@@ -18,6 +18,7 @@ export const SubmitButton: SubmitButtonInterface = props => {
   const buttonSpinnerProps = { connecting, label: textLabel }
   const label = <ButtonSpinner {...buttonSpinnerProps} />
   const setControl = (value: any) => dispatch({ type: 'control', value })
+  const setData = (value: any) => dispatch({ type: 'data', value })
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
 
   const onClick = () => {
@@ -26,6 +27,7 @@ export const SubmitButton: SubmitButtonInterface = props => {
     submit({
       lang,
       setControl,
+      setData,
       setErrors,
       ...props,
     })

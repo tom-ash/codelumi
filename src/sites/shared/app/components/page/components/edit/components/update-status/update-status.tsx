@@ -1,11 +1,10 @@
 import React from 'react'
+import { useStore } from '../../../../../../functions/store/useStore'
 
-interface UpdateStatus {
-  updated: boolean
-}
-
-const UpdateStatus = (props: UpdateStatus) => {
-  const { updated } = props
+export const UpdateStatus = () => {
+  const { state } = useStore()
+  const { data } = state
+  const { updated } = data
 
   const classNames = ['update-status']
   if (updated === true) classNames.push('ok')
@@ -13,5 +12,3 @@ const UpdateStatus = (props: UpdateStatus) => {
 
   return <div className={classNames.join(' ')} />
 }
-
-export default UpdateStatus
