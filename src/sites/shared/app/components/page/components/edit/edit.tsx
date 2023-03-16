@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStore } from '../../../../functions/store/useStore'
-// import PageTile from '../shared/components/tile/tile'
+// import { PageTile } from '../shared/components/tile/tile'
 import { UrlInput } from './components/url/url.input'
 import { CanonicalUrlInput } from './components/canonical-url/canonical-url.input'
 import { OnlineSwitch } from './components/online/online-switch'

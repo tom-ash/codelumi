@@ -2,7 +2,7 @@ import React from 'react'
 import { useStore } from '../../../../../../functions/store/useStore'
 import { RenderNode } from '../../../../../support/render-node/render-node'
 
-const PageTile = () => {
+export const PageTile = () => {
   const { state: {
     data: {
       body
@@ -26,5 +26,3 @@ const PageTile = () => {
 
   return <RenderNode {...nodeProps} />
 }
-
-export default PageTile
