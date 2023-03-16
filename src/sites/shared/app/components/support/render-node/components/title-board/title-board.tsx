@@ -1,19 +1,12 @@
 import React from 'react'
-import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import SVG from '../../../svg/svg'
-import prettifyDate from '../../../../../functions/time/prettify-date'
 
 interface TitleBoardProps {
   imageSrc?: string
   imageAlt?: string
   authorName?: string
   authorLink?: string
-  publishedOn?: string
-  modifiedOn?: string
   title?: string
-  appName: string
-  lang: string
-  langHandler(langs: { pl: string; en: string }): string
 }
 
 const Image = (props: { imageSrc: string; imageAlt: string }) => {
@@ -53,15 +46,8 @@ const TitleBoard = (props: TitleBoardProps) => {
     imageAlt,
     authorName,
     authorLink,
-    // publishedOn,
-    // modifiedOn,
     title,
-    appName,
-    // lang,
-    // langHandler
   } = props
-
-  useStyles(require(`../../../../../../../${appName}/app/components/page/styles/article/header.scss`))
 
   return (
     <header className='title-board'>

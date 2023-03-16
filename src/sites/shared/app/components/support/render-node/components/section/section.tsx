@@ -1,46 +1,34 @@
 import React from 'react'
-import RenderNode from '../../render-node'
+import { RenderNode } from '../../render-node'
 
 const Section = (props: SectionProps) => {
   const {
-    appName,
-    jsonBody,
-    clientUrl,
-    device,
-    lang,
-    langHandler,
+    //@ts-ignore
+    body,
     element,
     className,
-    st: style,
-    pageTitle,
-    coverImage,
+    style,
     codeLang,
     id,
   } = props
 
-  const body = jsonBody.map((node, index) => {
+  //@ts-ignore
+  const parsedBody = body.map((node, index) => {
     const nodeProps = {
       key: index,
       node,
       index,
-      jsonBody,
-      clientUrl,
-      appName,
-      device,
-      lang,
-      langHandler,
-      sectionBody: jsonBody,
-      pageTitle,
-      coverImage,
+      body,
+      sectionBody: body,
       codeLang,
     }
 
     return <RenderNode {...nodeProps} />
   })
 
-  if (!element) return <>{body}</>
+  if (!element) return <>{parsedBody}</>
 
-  const section = React.createElement(element, { className, style, id }, body)
+  const section = React.createElement(element, { className, style, id }, parsedBody)
 
   return section
 }

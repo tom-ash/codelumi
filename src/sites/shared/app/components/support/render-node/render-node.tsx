@@ -10,17 +10,16 @@ const Image = loadable(() => import('./components/image/image'))
 const YouTubeEmbed = loadable(() => import('./components/youtube-embed/youtube-embed'))
 const PageIndexer = loadable(() => import('./components/page-indexer/page-indexer'))
 const Section = loadable(() => import('./components/section/section'))
-const TitleBoard = loadable(() => import('./components/title-board/title-board'))
 const Editorial = loadable(() => import('./components/editorial/editorial'))
 const TableOfContents = loadable(() => import('./components/table-of-contents/table-of-contents'))
-const Aside = loadable(() => import('./components/aside/aside'))
+// const Aside = loadable(() => import('./components/aside/aside'))
 const Anchor = loadable(() => import('./components/anchor/anchor'))
 const Share = loadable(() => import('./components/share/share'))
 const Definition = loadable(() => import('./components/definition/definition'))
 const Figure = loadable(() => import('./components/figure/figure'))
 
-const RenderNode = (props: RenderNodeProps) => {
-  const { node, index, appName, jsonBody, clientUrl, device, lang, langHandler, pageTitle, coverImage } = props
+export const RenderNode = (props: RenderNodeProps) => {
+  const { node, index } = props
 
   if (!node) return null
 
@@ -50,7 +49,7 @@ const RenderNode = (props: RenderNodeProps) => {
     const ulProps = {
       key: index,
       listNodes: node.ul,
-      style: node.st,
+      style: node.style,
     }
 
     return <List {...ulProps} />
@@ -113,22 +112,16 @@ const RenderNode = (props: RenderNodeProps) => {
     )
   }
 
-  if (node.img || node.image) {
-    const { st, style } = node
+  if (node.image) {
+    const { style } = node
     const {
-      // @ts-ignore
-      s,
-      // @ts-ignore
       source,
-      // @ts-ignore
-      a,
-      // @ts-ignore
       alternative,
-    } = node.img || node.image
+    } = node.image
     const imgProps = {
-      src: s || source,
-      alt: a || alternative,
-      style: st || style,
+      src: source,
+      alt: alternative,
+      style,
     }
 
     return (
@@ -160,7 +153,7 @@ const RenderNode = (props: RenderNodeProps) => {
   }
 
   if (node.anchor) {
-    const { st: style, className } = node
+    const { style, className } = node
     const { h: href, r: rel, t: target, c: content } = node.anchor
     const anchorProps = {
       style,
@@ -176,16 +169,15 @@ const RenderNode = (props: RenderNodeProps) => {
   }
 
   // @ts-ignore
-  if (node.div || node.division) {
+  if (node.division) {
     return (
       <Section
         key={index}
         {...{
           ...props,
+          body: node.division,
           element: 'div',
-          // @ts-ignore
-          jsonBody: node.div || node.division,
-          st: node.st || node.style,
+          style: node.style,
         }}
       />
     )
@@ -201,11 +193,11 @@ const RenderNode = (props: RenderNodeProps) => {
         {...{
           ...props,
           element: 'section',
+          body: node.section,
           className,
           codeLang,
-          jsonBody: node.section,
           id: node.id,
-          st: node.st || node.style,
+          style: node.style,
         }}
       />
     )
@@ -220,10 +212,10 @@ const RenderNode = (props: RenderNodeProps) => {
         {...{
           ...props,
           element: 'main',
+          body: node.main,
           className: node.className || 'main',
-          jsonBody: node.main,
           codeLang,
-          st: node.st || node.style,
+          style: node.style,
         }}
       />
     )
@@ -239,10 +231,10 @@ const RenderNode = (props: RenderNodeProps) => {
         {...{
           ...props,
           element: 'article',
+          body: node.article,
           className,
           codeLang,
-          jsonBody: node.article,
-          st: node.st || node.style,
+          style: node.style,
         }}
       />
     )
@@ -250,22 +242,20 @@ const RenderNode = (props: RenderNodeProps) => {
 
   if (node.pageIndexer) {
     const { collection } = node.pageIndexer
-    const { articles, tutorials, clientUrl } = props
+    const { articles, tutorials } = props
 
     const pageIndexerProps = {
       collection,
       tutorials,
       articles,
-      clientUrl,
       key: index,
     }
 
     return <PageIndexer {...pageIndexerProps} />
   }
 
-  if (node.toc) {
-    const { sectionBody } = props
-    const tableOfContentsProps = { key: index, jsonBody: sectionBody, title: node.toc }
+  if (node.tableOfContents) {
+    const tableOfContentsProps = { key: index, title: node.tableOfContents }
 
     return <TableOfContents {...tableOfContentsProps} />
   }
@@ -277,89 +267,38 @@ const RenderNode = (props: RenderNodeProps) => {
     return <Editorial {...editorialProps} />
   }
 
-  if (node.header) {
-    const { authorName, authorLink } = node.header
-
-    const {
-      // publishedOn,
-      // modifiedOn,
-      appName,
-      device,
-      lang,
-      langHandler,
-    } = props
-
-    const titleBoardProps = {
-      key: index,
-      imageSrc: coverImage,
-      imageAlt: pageTitle,
-      authorName,
-      authorLink,
-      // publishedOn,
-      // modifiedOn,
-      title: pageTitle,
-      appName,
-      device,
-      lang,
-      langHandler,
-    }
-
-    return <TitleBoard {...titleBoardProps} />
-  }
-
   if (node.root) {
     const sectionProps = {
       key: index,
       node,
       index,
-      appName,
-      jsonBody,
-      clientUrl,
-      device,
-      lang,
-      langHandler,
       className: node.className,
-      st: node.st,
-      pageTitle,
-      coverImage,
+      style: node.style,
+      body: node.root,
     }
 
     return <Section {...sectionProps} />
   }
 
-  if (node.leftAside) {
-    const asideProps = {
-      key: index,
-      node,
-      jsonBody: node.leftAside,
-      clientUrl,
-      appName,
-      device,
-      lang,
-      langHandler,
-      sectionBody: node.leftAside,
-      placing: 'left',
-    } as const
+  // if (node.leftAside) {
+  //   const asideProps = {
+  //     key: index,
+  //     node,
+  //     placing: 'left',
+  //   } as const
 
-    return <Aside {...asideProps} />
-  }
+  //   return <Aside {...asideProps} />
+  // }
 
-  if (node.aside) {
-    const asideProps = {
-      key: index,
-      node,
-      jsonBody: node.aside,
-      clientUrl,
-      appName,
-      device,
-      lang,
-      langHandler,
-      sectionBody: node.aside,
-      placing: 'right',
-    } as const
+  // if (node.aside) {
+  //   const asideProps = {
+  //     key: index,
+  //     node,
+  //     placing: 'right',
+  //   } as const
 
-    return <Aside {...asideProps} />
-  }
+  //   return <Aside {...asideProps} />
+  // }
 
   if (node.share) {
     const { h: href } = node.share
@@ -436,5 +375,3 @@ const RenderNode = (props: RenderNodeProps) => {
 
   return null
 }
-
-export default RenderNode

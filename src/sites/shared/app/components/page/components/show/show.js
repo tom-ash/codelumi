@@ -17,6 +17,23 @@ class PageShow extends React.Component {
     changeUrl({ href })
   }
 
+  // renderShow,
+  // isAdmin,
+  // changePage,
+
+  // {isAdmin && (
+  //   <>
+  //     {renderShow && (
+  //       <button
+  //         className={'page-edit'}
+  //         onClick={changePage}
+  //       >
+  //         <SVG name='edit' />
+  //       </button>
+  //     )}
+  //   </>
+  // )}
+
   render() {
     const { url, clientUrl, buildUrl } = this.props
     const tileProps = { ...this.props, renderShow: true, clientUrl, changePage: this.changePage, buildUrl }

@@ -6,46 +6,22 @@ type RenderNodeData =
         collection: string
       }
       root?: RenderNodeData[]
-      image?: RenderNodeData[]
-      section?: RenderNodeData[]
-      article?: RenderNodeData[]
       main?: RenderNodeData[]
-      div?: RenderNodeData[]
-      sectionBody?: RenderNodeData[]
-      leftAside?: RenderNodeData[]
-      aside?: RenderNodeData[]
-      header?: {
-        imageSrc?: string
-        imageAlt?: string
-        authorName?: string
-        authorLink?: string
-        title?: string
-      }
+      article?: RenderNodeData[]
+      section?: RenderNodeData[]
+      division?: RenderNodeData[]
+      // leftAside?: RenderNodeData[]
+      // aside?: RenderNodeData[]
       editorial?: string
-      toc?: string
+      tableOfContents?: string
       ul?: string[]
       h1?: string
-      h2?:
-        | string
-        | {
-            c: string
-            n: string
-          }
-      h3?:
-        | string
-        | {
-            c: string
-            n: string
-          }
-      h4?:
-        | string
-        | {
-            c: string
-            n: string
-          }
-      img?: {
-        s: string
-        a: string
+      h2?: string
+      h3?: string
+      h4?: string
+      image?: {
+        source: string
+        alternative: string
       }
       anchor?: {
         h: string
@@ -67,10 +43,7 @@ type RenderNodeData =
         h: string
       }
       className?: string
-      st?: React.CSSProperties
       style?: React.CSSProperties
-      opts?: object
-      index?: number
       codeLang?: string
       id?: string
     }
@@ -78,18 +51,7 @@ type RenderNodeData =
 type RenderNodeProps = {
   node: RenderNodeData
   index?: number
-  jsonBody: RenderNodeData[]
-  sectionBody?: RenderNodeData[]
-  publishedOn?: string
-  modifiedOn?: string
   tutorials?: Array<any>
   articles?: Array<any>
-  clientUrl: string
-  appName: string
-  device: string
-  lang: string
-  langHandler: LangHandler
-  pageTitle?: string
-  coverImage?: string
   codeLang?: string
 }

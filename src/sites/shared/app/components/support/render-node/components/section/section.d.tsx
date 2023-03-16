@@ -1,7 +1,7 @@
 type SectionProps = RenderNodeProps & {
   element?: string
   className?: string
-  st?: React.CSSProperties
+  style?: React.CSSProperties
   codeLang?: string
   id?: string
 }

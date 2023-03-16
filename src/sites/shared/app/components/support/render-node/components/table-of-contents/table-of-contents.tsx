@@ -1,13 +1,29 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useStore } from '../../../../../functions/store/useStore'
 import urlify from '../../../../../../shared/functions/transformers/routes/urlify'
 import setScreenOffsetAtElement from '../../../../../functions/screen/setters/offset-at-element'
 
-const TableOfContents = props => {
-  const { jsonBody, title } = props
-  const mainNode = jsonBody.find(node => typeof node === 'object' && node.main)
-  const main = mainNode ? mainNode.main : null
+// TODO: INTERFACE
 
-  const headers = (main || jsonBody).filter(node => {
+//@ts-ignore
+const TableOfContents = props => {
+  const { title } = props
+  const { state: {
+    data: {
+      body,
+    }
+  } } = useStore()
+
+  const article = (() => {
+    try {
+      return body[0].main[0].article
+    } catch {
+      return []
+    }
+  })()
+
+  //@ts-ignore
+  const headers = (article).filter(node => {
     if (node && node.h2) return node
   })
 
@@ -16,6 +32,7 @@ const TableOfContents = props => {
       <div className='inner-container'>
         <h2>{title}</h2>
         <ul>
+          {/* @ts-ignore */}
           {headers.map((header, index) => {
             const headerContent = typeof header.h2 === 'string' ? header.h2 : header.h2.c
             const headerNumber = typeof header.h2 === 'string' ? null : header.h2.n
@@ -29,8 +46,10 @@ const TableOfContents = props => {
                   onClick={e => {
                     e.preventDefault()
 
+                    // @ts-ignore
                     history.pushState(null, null, `${window.location.pathname}#${urlify(headerContent)}`)
 
+                    // @ts-ignore
                     const targetHeader = headers.find(headerNode => {
                       if (typeof headerNode.h2 === 'string') {
                         return urlify(headerContent) === urlify(headerNode.h2)

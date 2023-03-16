@@ -6,16 +6,10 @@ import Section from '../section/section'
 const Aside = (props: AsideProps) => {
   useStyles(styles)
 
-  const { node, appName, jsonBody, clientUrl, device, lang, langHandler, sectionBody, placing } = props
+  const { node, sectionBody, placing } = props
 
   const nodeProps = {
     node,
-    jsonBody,
-    clientUrl,
-    appName,
-    device,
-    lang,
-    langHandler,
     sectionBody,
   }
 
