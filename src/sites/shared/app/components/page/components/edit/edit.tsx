@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useStore } from '../../../../functions/store/useStore'
-// import { PageTile } from '../shared/components/tile/tile'
+import { PageTile } from '../shared/components/tile/tile'
 import { UrlInput } from './components/url/url.input'
 import { CanonicalUrlInput } from './components/canonical-url/canonical-url.input'
 import { OnlineSwitch } from './components/online/online-switch'
@@ -16,14 +16,27 @@ const PageCreate = () => {
   useStyles(styles)
 
   const { state, dispatch } = useStore()
-  const { control } = state
+  const { control, inputs } = state
   const { nav } = control
-
+  const { body } = inputs
   const setControl = (value: any) => dispatch({ type: 'control', value })
+  const setData = (value: any) => dispatch({ type: 'data', value })
+
+  useEffect(() => {
+    const parsedBody = (() => {
+      try {
+        return JSON.parse(body)
+      } catch {
+        return []
+      }
+    })()
+
+    setData({ body: parsedBody })
+  }, [body])
 
   return (
     <div id='page-edit'>
-      {/* <PageTile /> */}
+      <PageTile />
       <div id='edit-panel'>
         <nav>
           <div onClick={() => setControl({ nav: 'urls' })}>URLs</div>
@@ -49,6 +62,7 @@ const PageCreate = () => {
           {nav === 'schema' && <Schema />}
         </form>
         <UpdatePageButton />
+        <UpdatePageButton exitOnSave={true} />
         <UpdateStatus />
       </div>
     </div>

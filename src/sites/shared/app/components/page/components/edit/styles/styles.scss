@@ -30,12 +30,6 @@
   .submit-button {
     display: block;
     width: 96px;
-
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    height: 32px;
-
     .input {
       display: block;
       width: 100%;
@@ -61,7 +55,7 @@
       right: 12px;
       height: 32px;
     }
-    &.save-and-show {
+    &.save-and-exit {
       position: absolute;
       top: 56px;
       right: 12px;

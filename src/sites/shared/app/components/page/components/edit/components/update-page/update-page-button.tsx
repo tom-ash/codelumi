@@ -3,10 +3,17 @@ import { useStore } from '../../../../../../functions/store/useStore'
 import { updatePage as submit } from '../../functions/update-page'
 import { SubmitButton } from '../../../../../support/submit-button/submit-button'
 
-export const UpdatePageButton = () => {
+interface UpdatePageButtonInterface {
+  (props: {
+    exitOnSave?: boolean
+  }): React.ReactElement
+}
+
+export const UpdatePageButton:UpdatePageButtonInterface = (props) => {
+  const { exitOnSave } = props
   const { state } = useStore()
   const { texts, data, inputs } = state
-  const { updatePageButton: label } = texts
+  const { updatePageAndExitButtonLabel, updatePageButtonLabel } = texts
   const { updatePageApiUrl } = data
   const {
     id,
@@ -30,9 +37,10 @@ export const UpdatePageButton = () => {
   } = inputs
 
   const submitButtonProps = {
-    label,
+    label: exitOnSave ? updatePageAndExitButtonLabel : updatePageButtonLabel,
+    customContainerClassNames: exitOnSave ? 'save-and-exit' : 'save',
     updatePageApiUrl,
-    exitOnSave: false,
+    exitOnSave,
     id,
     url,
     canonicalUrl,

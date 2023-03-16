@@ -5,23 +5,14 @@ import { RenderNode } from '../../../../../support/render-node/render-node'
 export const PageTile = () => {
   const { state: {
     data: {
-      body
-    }
+      body,
+    },
   } } = useStore()
-
-  const jsonBody = (() => {
-    try {
-      return typeof body === 'object' ? body : JSON.parse(body)
-    } catch {
-      return null
-    }
-  })()
 
   const nodeProps = {
     node: {
-      root: jsonBody,
+      root: body,
     },
-    jsonBody,
   }
 
   return <RenderNode {...nodeProps} />

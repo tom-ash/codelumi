@@ -4,17 +4,18 @@ import { ButtonSpinner } from '../../../../../mapawynajmu-pl/app/components/supp
 import { ManagedButton } from 'managed-inputs'
 
 interface SubmitButtonInterface {
-  (props: { label: string; submit(args: any): void; [key: string]: any }): JSX.Element
+  (props: { label: string; submit(args: any): void; [key: string]: any, customContainerClassNames?: string }): JSX.Element
 }
 
 export const SubmitButton: SubmitButtonInterface = props => {
-  const { label: textLabel, submit } = props
+  const { label: textLabel, customContainerClassNames, submit } = props
   const { state, dispatch } = useStore()
   const { app, control } = state
   const { lang } = app
   const { connecting } = control
   const disabled = connecting
-  const classNames = { container: 'submit-button' }
+  const containerClassNames = customContainerClassNames ? `submit-button ${customContainerClassNames}` : 'submit-button'
+  const classNames = { container: containerClassNames }
   const buttonSpinnerProps = { connecting, label: textLabel }
   const label = <ButtonSpinner {...buttonSpinnerProps} />
   const setControl = (value: any) => dispatch({ type: 'control', value })
