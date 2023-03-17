@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 import { useStore } from '../../../../functions/store/useStore'
 import { PageTile } from '../shared/components/tile/tile'
-import { UrlInput } from './components/url/url.input'
-import { CanonicalUrlInput } from './components/canonical-url/canonical-url.input'
 import { OnlineSwitch } from './components/online/online-switch'
 import { BodyTextarea } from './components/body/body.textarea'
 import { Meta } from './components/meta/meta'
@@ -40,18 +38,10 @@ const PageCreate = () => {
       <div id='edit-panel'>
         <nav>
           <div onClick={() => setControl({ nav: 'body' })}>Body</div>
-          <div onClick={() => setControl({ nav: 'urls' })}>URLs</div>
           <div onClick={() => setControl({ nav: 'meta' })}>Meta</div>
           <div onClick={() => setControl({ nav: 'schema' })}>Schema</div>
-          <OnlineSwitch />
         </nav>
         <form className={nav}>
-          {nav === 'urls' && (
-            <>
-              <UrlInput />
-              <CanonicalUrlInput />
-            </>
-          )}
           {nav === 'body' && <BodyTextarea />}
           {nav === 'meta' &&  <Meta />}
           {nav === 'schema' && <Schema />}
@@ -59,6 +49,7 @@ const PageCreate = () => {
         <UpdatePageButton />
         <UpdatePageButton exitOnSave={true} />
         <UpdateStatus />
+        <OnlineSwitch />
       </div>
     </div>
   )

@@ -1,9 +1,9 @@
 import React from 'react'
-import { TextInput } from '../../../../../support/text-input/text-input'
+import { TextInput } from '../../../../../../../support/text-input/text-input'
 
-export const CanonicalUrlInput = () => {
+export const UrlInput = () => {
   const textInputProps = {
-    inputKey: 'canonicalUrl',
+    inputKey: 'url',
     containerClassNames: 'form-input text',
   }
 

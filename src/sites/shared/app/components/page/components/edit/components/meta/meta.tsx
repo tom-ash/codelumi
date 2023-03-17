@@ -9,9 +9,13 @@ import { TitleInput } from './components/title/title.input'
 import { CoverImageInput } from './components/cover-image/cover-image.input'
 import { DescriptionTextarea } from './components/description/description.textarea'
 import { KeywordsTextarea } from './components/keywords/keywords.textarea'
+import { UrlInput } from './components/url/url.input'
+import { CanonicalUrlInput } from './components/canonical-url/canonical-url.input'
 
 export const Meta = () => (
   <div className='meta'>
+    <UrlInput />
+    <CanonicalUrlInput />
     <PublishedOnInput />
     <ModifiedOnInput />
     <CategoryInput />

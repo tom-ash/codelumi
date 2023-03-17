@@ -237,4 +237,9 @@
       }
     }
   }
+  &.online {
+    position: absolute;
+    right: 4px;
+    bottom: -12px;
+  }
 }

@@ -6,6 +6,7 @@ interface SwitchInterface {
   (props: {
     switchKey: string
     customSwitchValues?: any[]
+    containerClassNames?: string,
   }): React.ReactElement
 }
 
@@ -13,13 +14,14 @@ export const Switch: SwitchInterface = (props) => {
   const {
     switchKey,
     customSwitchValues,
+    containerClassNames,
   } = props
   const swtichValues = customSwitchValues || [true, false]
   const { state, dispatch } = useStore()
   const { texts, inputs } = state
   const { [`${switchKey}SwitchLabel`]: labelText } = texts
   const { [switchKey]: switchValue } = inputs
-  const classNames = { container: 'switch' }
+  const classNames = { container: containerClassNames ? `${containerClassNames} switch` : 'switch' }
   const checked = switchValue === swtichValues[0]
   const label = (
     <>
