@@ -2,21 +2,20 @@ import React from 'react'
 import loadable from '@loadable/component'
 import { Logo } from '../../../../../mapawynajmu-pl/app/components/scaffold/header/components/logo/logo'
 
-const Paragraph = loadable(() => import('./components/paragraph/paragraph'))
-const Heading = loadable(() => import('../heading/heading'))
-const List = loadable(() => import('./components/list/list'))
-const Code = loadable(() => import('./components/code/code'))
-const Image = loadable(() => import('./components/image/image'))
-const YouTubeEmbed = loadable(() => import('./components/youtube-embed/youtube-embed'))
-const PageIndexer = loadable(() => import('./components/page-indexer/page-indexer'))
 const Section = loadable(() => import('./components/section/section'))
-const Editorial = loadable(() => import('./components/editorial/editorial'))
+const Heading = loadable(() => import('../heading/heading'))
 const TableOfContents = loadable(() => import('./components/table-of-contents/table-of-contents'))
-// const Aside = loadable(() => import('./components/aside/aside'))
+const Editorial = loadable(() => import('./components/editorial/editorial'))
+const Paragraph = loadable(() => import('./components/paragraph/paragraph'))
+const List = loadable(() => import('./components/list/list'))
+const Image = loadable(() => import('./components/image/image'))
 const Anchor = loadable(() => import('./components/anchor/anchor'))
+const Code = loadable(() => import('./components/code/code'))
+const YouTubeEmbed = loadable(() => import('./components/youtube-embed/youtube-embed'))
 const Share = loadable(() => import('./components/share/share'))
 const Definition = loadable(() => import('./components/definition/definition'))
 const Figure = loadable(() => import('./components/figure/figure'))
+const PageIndexer = loadable(() => import('./components/page-indexer/page-indexer'))
 
 export const RenderNode = (props: RenderNodeProps) => {
   const { node, index } = props
@@ -24,137 +23,81 @@ export const RenderNode = (props: RenderNodeProps) => {
   if (!node) return null
 
   if (typeof node === 'string') {
-    const paragraphProps = { content: node }
+    const paragraphProps = { key: index, content: node }
 
-    return (
-      <Paragraph
-        key={index}
-        {...paragraphProps}
-      />
-    )
+    return <Paragraph {...paragraphProps} />
   }
 
   if (Array.isArray(node)) {
-    const ulProps = { listNodes: node }
-
-    return (
-      <List
-        key={index}
-        {...ulProps}
-      />
-    )
-  }
-
-  if (node.ul) {
-    const ulProps = {
-      key: index,
-      listNodes: node.ul,
-      style: node.style,
-    }
+    const ulProps = { key: index, listNodes: node }
 
     return <List {...ulProps} />
   }
 
-  // @ts-ignore
-  if (node.h1 || node.headingOne) {
-    // TODO: Move to Heading.
+  if (node.UnorderedList) {
+    const ulProps = { key: index, listNodes: node.UnorderedList, style: node.style }
 
-    return (
-      <h1>
-        {/* @ts-ignore */}
-        <span>{node.h1 || node.headingOne}</span>
-      </h1>
-    )
+    return <List {...ulProps} />
   }
 
-  // @ts-ignore
-  if (node.h2 || node.headingTwo) {
-    const headingProps = {
-      rank: 2,
-      // @ts-ignore
-      heading: node.h2 || node.headingTwo,
-    }
+  if (node.HeadingOne) {
+    const headingProps = { key: index, rank: 1, heading: node.HeadingOne }
 
-    return (
-      // @ts-ignore
-      <Heading
-        key={index}
-        {...headingProps}
-      />
-    )
+    return <Heading {...headingProps} />
   }
 
-  if (node.h3) {
-    const headingProps = {
-      rank: 3,
-      heading: node.h3,
-    }
+  if (node.HeadingTwo) {
+    const headingProps = { key: index, rank: 2, heading: node.HeadingTwo }
 
-    return (
-      <Heading
-        key={index}
-        {...headingProps}
-      />
-    )
+    return <Heading {...headingProps} />
   }
 
-  if (node.h4) {
-    const headingProps = {
-      rank: 4,
-      heading: node.h4,
-    }
+  if (node.HeadingThree) {
+    const headingProps = { key: index, rank: 2, heading: node.HeadingThree }
 
-    return (
-      <Heading
-        key={index}
-        {...headingProps}
-      />
-    )
+    return <Heading {...headingProps} />
   }
 
-  if (node.image) {
+  if (node.HeadingFour) {
+    const headingProps = { key: index, rank: 4, heading: node.HeadingFour }
+
+    return <Heading {...headingProps} />
+  }
+
+  if (node.Image) {
     const { style } = node
     const {
       source,
       alternative,
-    } = node.image
+    } = node.Image
     const imgProps = {
+      key: index,
       src: source,
       alt: alternative,
       style,
     }
 
-    return (
-      <Image
-        key={index}
-        {...imgProps}
-      />
-    )
+    return <Image {...imgProps} />
   }
 
-  if (node.code) {
-    const { code } = node
+  if (node.Code) {
+    const { Code: code } = node
     const codeLang = node.codeLang || props.codeLang
-    const codeProps = { code, codeLang }
+    const codeProps = { key: index, code, codeLang }
 
-    return (
-      <Code
-        key={index}
-        {...codeProps}
-      />
-    )
+    return <Code {...codeProps} />
   }
 
-  if (node.yte) {
-    const { s: src, w: width } = node.yte
+  if (node.YouTubeEmbed) {
+    const { s: src, w: width } = node.YouTubeEmbed
     const youTubeEmbedProps = { key: index, src, width }
 
     return <YouTubeEmbed {...youTubeEmbedProps} />
   }
 
-  if (node.anchor) {
+  if (node.Anchor) {
     const { style, className } = node
-    const { h: href, r: rel, t: target, c: content } = node.anchor
+    const { h: href, r: rel, t: target, c: content } = node.Anchor
     const anchorProps = {
       style,
       href,
@@ -169,21 +112,21 @@ export const RenderNode = (props: RenderNodeProps) => {
   }
 
   // @ts-ignore
-  if (node.division) {
+  if (node.Division) {
     return (
       <Section
         key={index}
         {...{
           ...props,
-          body: node.division,
           element: 'div',
+          body: node.Division,
           style: node.style,
         }}
       />
     )
   }
 
-  if (node.section) {
+  if (node.Section) {
     const className = node.className
     const codeLang = node.codeLang || props.codeLang
 
@@ -193,17 +136,17 @@ export const RenderNode = (props: RenderNodeProps) => {
         {...{
           ...props,
           element: 'section',
-          body: node.section,
+          body: node.Section,
           className,
           codeLang,
-          id: node.id,
+          identifier: node.identifier,
           style: node.style,
         }}
       />
     )
   }
 
-  if (node.main) {
+  if (node.Main) {
     const codeLang = node.codeLang
 
     return (
@@ -212,7 +155,7 @@ export const RenderNode = (props: RenderNodeProps) => {
         {...{
           ...props,
           element: 'main',
-          body: node.main,
+          body: node.Main,
           className: node.className || 'main',
           codeLang,
           style: node.style,
@@ -221,7 +164,7 @@ export const RenderNode = (props: RenderNodeProps) => {
     )
   }
 
-  if (node.article) {
+  if (node.Article) {
     const className = node.className
     const codeLang = node.codeLang || props.codeLang
 
@@ -231,7 +174,7 @@ export const RenderNode = (props: RenderNodeProps) => {
         {...{
           ...props,
           element: 'article',
-          body: node.article,
+          body: node.Article,
           className,
           codeLang,
           style: node.style,
@@ -240,8 +183,8 @@ export const RenderNode = (props: RenderNodeProps) => {
     )
   }
 
-  if (node.pageIndexer) {
-    const { collection } = node.pageIndexer
+  if (node.PageIndexer) {
+    const { collection } = node.PageIndexer
     const { articles, tutorials } = props
 
     const pageIndexerProps = {
@@ -254,67 +197,46 @@ export const RenderNode = (props: RenderNodeProps) => {
     return <PageIndexer {...pageIndexerProps} />
   }
 
-  if (node.tableOfContents) {
-    const tableOfContentsProps = { key: index, title: node.tableOfContents }
+  if (node.TableOfContents) {
+    const tableOfContentsProps = { key: index, title: node.TableOfContents }
 
     return <TableOfContents {...tableOfContentsProps} />
   }
 
-  if (node.editorial) {
-    const { editorial } = node
+  if (node.Editorial) {
+    const { Editorial: editorial } = node
     const editorialProps = { key: index, editorial }
 
     return <Editorial {...editorialProps} />
   }
 
-  if (node.root) {
+  if (node.Root) {
     const sectionProps = {
       key: index,
+      body: node.Root,
       node,
       index,
       className: node.className,
       style: node.style,
-      body: node.root,
     }
 
     return <Section {...sectionProps} />
   }
 
-  // if (node.leftAside) {
-  //   const asideProps = {
-  //     key: index,
-  //     node,
-  //     placing: 'left',
-  //   } as const
-
-  //   return <Aside {...asideProps} />
-  // }
-
-  // if (node.aside) {
-  //   const asideProps = {
-  //     key: index,
-  //     node,
-  //     placing: 'right',
-  //   } as const
-
-  //   return <Aside {...asideProps} />
-  // }
-
-  if (node.share) {
-    const { h: href } = node.share
-
+  if (node.Share) {
+    const { href } = node.Share
     const shareProps = { href }
 
     return <Share {...shareProps} />
   }
 
   // @ts-ignore
-  if (node.logo) {
+  if (node.Logo) {
     const {
       // @ts-ignore
       style,
       // @ts-ignore
-    } = node.logo
+    } = node.Logo
 
     const logoProps = {
       style,
@@ -324,30 +246,14 @@ export const RenderNode = (props: RenderNodeProps) => {
     return <Logo {...logoProps} />
   }
 
-  // @ts-ignore
-  if (node.def) {
-    const {
-      term,
-      definition,
-      // @ts-ignore
-    } = node.def
-
-    const definitionProps = {
-      term,
-      definition,
-    }
-
-    return <Definition {...definitionProps} />
-  }
-
   // TODO: Change term to appelation.
   // @ts-ignore
-  if (node.definition) {
+  if (node.Definition) {
     const {
       term,
       body,
       // @ts-ignore
-    } = node.definition
+    } = node.Definition
 
     const definitionProps = {
       term,
@@ -358,12 +264,12 @@ export const RenderNode = (props: RenderNodeProps) => {
   }
 
   // @ts-ignore
-  if (node.figure) {
+  if (node.Figure) {
     const {
       content,
       caption,
       // @ts-ignore
-    } = node.figure
+    } = node.Figure
 
     const figureProps = {
       content,

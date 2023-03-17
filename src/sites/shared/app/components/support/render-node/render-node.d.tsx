@@ -2,50 +2,29 @@ type RenderNodeData =
   | string
   | string[]
   | {
-      pageIndexer?: {
-        collection: string
-      }
-      root?: RenderNodeData[]
-      main?: RenderNodeData[]
-      article?: RenderNodeData[]
-      section?: RenderNodeData[]
-      division?: RenderNodeData[]
-      // leftAside?: RenderNodeData[]
-      // aside?: RenderNodeData[]
-      editorial?: string
-      tableOfContents?: string
-      ul?: string[]
-      h1?: string
-      h2?: string
-      h3?: string
-      h4?: string
-      image?: {
-        source: string
-        alternative: string
-      }
-      anchor?: {
-        h: string
-        r: string
-        t: string
-        c: string
-      }
-      code?:
-        | string
-        | {
-            c: string
-            l: string
-          }
-      yte?: {
-        s: string
-        w: string
-      }
-      share?: {
-        h: string
-      }
+      identifier?: string
       className?: string
       style?: React.CSSProperties
       codeLang?: string
-      id?: string
+      // TODO: Add Definition, Logo, Figure.
+      Root?: RenderNodeData[]
+      Main?: RenderNodeData[]
+      Article?: RenderNodeData[]
+      Section?: RenderNodeData[]
+      Division?: RenderNodeData[]
+      HeadingOne?: string
+      HeadingTwo?: string
+      HeadingThree?: string
+      HeadingFour?: string
+      Editorial?: string
+      TableOfContents?: string
+      UnorderedList?: string[]
+      Image?: { source: string, alternative: string }
+      Anchor?: { h: string, r: string, t: string, c: string }
+      Code?: string | { c: string, l: string }
+      YouTubeEmbed?: { s: string, w: string }
+      Share?: { href: string }
+      PageIndexer?: { collection: string }
     }
 
 type RenderNodeProps = {

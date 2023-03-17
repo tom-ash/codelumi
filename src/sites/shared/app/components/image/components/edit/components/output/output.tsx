@@ -18,7 +18,7 @@ const Output = (props: OutputProps) => {
 
   const nodeProps = {
     node: {
-      root: bodyElements,
+      Root: bodyElements,
     },
     jsonBody: bodyElements,
     clientUrl,

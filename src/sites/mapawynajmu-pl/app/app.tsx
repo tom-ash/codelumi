@@ -118,7 +118,7 @@ class App extends React.Component<AppProps> {
         <Header {...{ ...sharedProps, urlComposites, lang, HeaderCustomization, styles: headerStyles }} />
         <div className='blank-page'>
           {renderAnnouncement && <Announcement />}
-          {renderPage && <Page {...pageProps} />}
+          {renderPage && <Page />}
           {renderVisitor && <Visitor {...sharedProps} />}
           {renderUser && <User />}
           {renderImage && <Image {...imageProps} />}

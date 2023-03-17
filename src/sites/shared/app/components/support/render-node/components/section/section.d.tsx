@@ -3,5 +3,5 @@ type SectionProps = RenderNodeProps & {
   className?: string
   style?: React.CSSProperties
   codeLang?: string
-  id?: string
+  identifier?: string
 }

@@ -1,36 +1,30 @@
 import React from 'react'
-import NameInput from './components/name-input'
-import CreateButton from './components/create-button'
+import { useStore } from '../../../functions/store/useStore'
+import { KeyInput } from './components/key/key.input'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import { changeUrl } from '../../../functions/routes/changers/change-url'
 
-interface RecordIndexerProps {
-  recordKeys: string[]
-  recordKey: string
-  changeKey(key: string): void
-  create(): void
-  edit(imageKey: string): void
-}
-
-const RecordIndexer = (props: RecordIndexerProps) => {
+export const RecordIndexer = () => {
   useStyles(styles)
 
-  const { recordKeys, recordKey, changeKey, create, edit } = props
-  const nameInputProps = { recordKey, changeKey }
-  const createbuttonProps = { create }
+  const { state } = useStore()
+  const { data, inputs } = state
+  const { recordKeys } = data
+  const { recordKey } = inputs
 
   return (
     <div className='record-creator'>
-      <NameInput {...nameInputProps} />
+      <KeyInput />
       <ul className='record-keys'>
-        {recordKeys.map(key => {
+        {recordKeys.map((key: string) => {
           const newNameRegex = recordKey
 
           if (key.match(newNameRegex)) {
             return (
               <li
                 key={key}
-                onClick={() => edit(key)}
+                onClick={() => changeUrl({ href: key })}
               >
                 {key}
               </li>
@@ -40,9 +34,7 @@ const RecordIndexer = (props: RecordIndexerProps) => {
           return null
         })}
       </ul>
-      <CreateButton {...createbuttonProps} />
+      {/* <CreateButton {...createbuttonProps} /> */}
     </div>
   )
 }
-
-export default RecordIndexer

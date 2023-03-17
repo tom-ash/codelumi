@@ -11,7 +11,7 @@ export const PageTile = () => {
 
   const nodeProps = {
     node: {
-      root: body,
+      Root: body,
     },
   }
 

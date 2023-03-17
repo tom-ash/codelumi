@@ -3,7 +3,7 @@ import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import RecordIndexer from '../../../support/record-indexer/record-indexer'
+import { RecordIndexer } from '../../../support/record-indexer/record-indexer'
 import createFactory from './functions/create-factory'
 import editFactory from './functions/edit-factory'
 
@@ -32,7 +32,7 @@ const ImageIndex = (props: ImageIndexProps) => {
 
   return (
     <>
-      <RecordIndexer {...recordIndexerProps} />
+      {/* <RecordIndexer {...recordIndexerProps} /> */}
     </>
   )
 }

@@ -99,8 +99,7 @@ class App extends React.Component {
       <>
         <Header />
         {renderPostingIndex && <PostingIndex />}
-        {/* @ts-ignore */}
-        {renderPage && <Page {...pageProps} />}
+        {renderPage && <Page />}
         {renderVisitor && <Visitor {...sharedProps} />}
         {renderAnnouncement && <Announcement {...sharedProps} />}
         {renderUser && <User />}
