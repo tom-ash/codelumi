@@ -39,22 +39,17 @@ const PageCreate = () => {
       <PageTile />
       <div id='edit-panel'>
         <nav>
-          <div onClick={() => setControl({ nav: 'urls' })}>URLs</div>
-          <div onClick={() => setControl({ nav: 'controls' })}>Controls</div>
           <div onClick={() => setControl({ nav: 'body' })}>Body</div>
+          <div onClick={() => setControl({ nav: 'urls' })}>URLs</div>
           <div onClick={() => setControl({ nav: 'meta' })}>Meta</div>
           <div onClick={() => setControl({ nav: 'schema' })}>Schema</div>
+          <OnlineSwitch />
         </nav>
         <form className={nav}>
           {nav === 'urls' && (
             <>
               <UrlInput />
               <CanonicalUrlInput />
-            </>
-          )}
-          {nav === 'controls' && (
-            <>
-              <OnlineSwitch />
             </>
           )}
           {nav === 'body' && <BodyTextarea />}
