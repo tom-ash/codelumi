@@ -8,6 +8,7 @@ type RenderNodeData =
       codeLang?: string
       // TODO: Add Definition, Logo, Figure.
       Root?: RenderNodeData[]
+      Header?: {}
       Main?: RenderNodeData[]
       Article?: RenderNodeData[]
       Section?: RenderNodeData[]

@@ -3,12 +3,16 @@ import { enrichText } from '../../helpers/enrich-text/enrich-text'
 
 interface DefinitionProps {
   term: string
-  definition: string
+  body: string
 }
 
 const Definition = (props: DefinitionProps) => {
-  const { term, definition } = props
-  const __html = `<dfn>${term}</dfn> ${enrichText(definition)}`
+  const { term, body } = props
+
+  if (!term || !body) return null
+
+  // TODO: Use Array appraoch!
+  const __html = `<dfn>${term}</dfn> ${enrichText(body)}`
 
   return (
     <p

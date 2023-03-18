@@ -2,6 +2,7 @@ import React from 'react'
 import loadable from '@loadable/component'
 import { Logo } from '../../../../../mapawynajmu-pl/app/components/scaffold/header/components/logo/logo'
 
+const Header = loadable(() => import('./components/header/header'))
 const Section = loadable(() => import('./components/section/section'))
 const Heading = loadable(() => import('../heading/heading'))
 const TableOfContents = loadable(() => import('./components/table-of-contents/table-of-contents'))
@@ -34,6 +35,12 @@ export const RenderNode = (props: RenderNodeProps) => {
     return <List {...ulProps} />
   }
 
+  if (node.Header) {
+    // const ulProps = { key: index, listNodes: node.UnorderedList, style: node.style }
+
+    return <Header />
+  }
+
   if (node.UnorderedList) {
     const ulProps = { key: index, listNodes: node.UnorderedList, style: node.style }
 
@@ -53,7 +60,7 @@ export const RenderNode = (props: RenderNodeProps) => {
   }
 
   if (node.HeadingThree) {
-    const headingProps = { key: index, rank: 2, heading: node.HeadingThree }
+    const headingProps = { key: index, rank: 3, heading: node.HeadingThree }
 
     return <Heading {...headingProps} />
   }
@@ -257,7 +264,7 @@ export const RenderNode = (props: RenderNodeProps) => {
 
     const definitionProps = {
       term,
-      definition: body,
+      body,
     }
 
     return <Definition {...definitionProps} />

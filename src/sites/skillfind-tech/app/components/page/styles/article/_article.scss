@@ -85,13 +85,16 @@ $horizontal-margin-mobile: 18px;
       margin-left: 36px;
     }
   }
-  > img {
-    width: 100%;
-    @media #{$LARGE-PHONE} {
-      padding: 0 18px;
+  header {
+    > img {
+      width: 100%;
+      @media #{$LARGE-PHONE} {
+        padding: 0 18px;
+      }
+      margin-bottom: 24px;
     }
-    // TODO: Add semantic class.
   }
+
   .definition {
     background: #ebf5fb;
     padding: 18px;

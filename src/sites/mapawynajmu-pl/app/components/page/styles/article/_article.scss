@@ -12,9 +12,6 @@ $horizontal-margin-mobile: 18px;
   line-height: 26px;
   font-size: 16px;
   color: rgb(42, 42, 42);
-  // .editorial {
-  //   @extend %editorial;
-  // }
   .table-of-contents {
     @extend %table-of-contents;
   }
@@ -88,11 +85,14 @@ $horizontal-margin-mobile: 18px;
       margin-left: 36px;
     }
   }
-  > img {
-    width: 100%;
-    @media #{$LARGE-PHONE} {
-      padding: 0 18px;
+  header {
+    > img {
+      width: 100%;
+      @media #{$LARGE-PHONE} {
+        padding: 0 18px;
+      }
+      margin-bottom: 32px;
+      border-radius: 3px;
     }
-    // TODO: Add semantic class.
   }
 }
