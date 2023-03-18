@@ -7,6 +7,7 @@ export const mapStateToProps = store => {
     announcement: renderAnnouncement,
     image: renderImage,
     'announcement/index/map': renderListingIndexMap,
+    visitorPageIndex,
   } = render
   const { lang, device, path, scrollY, scripts, loadGa } = store.app
   const { statisticsConsent, marketingConsent } = store.visitor.consents
@@ -32,6 +33,7 @@ export const mapStateToProps = store => {
     links,
     renderImage,
     renderListingIndexMap,
+    visitorPageIndex,
   }
 }
 

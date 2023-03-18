@@ -95,8 +95,6 @@ export const updatePage: UpdatePage = (props) => {
 
       setData({ updated: true })
 
-      console.log(href)
-
       if (!exitOnSave) return
 
       changeUrl({ href })

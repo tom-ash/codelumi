@@ -25,7 +25,6 @@ type RenderNodeData =
       Code?: string | { c: string, l: string }
       YouTubeEmbed?: { s: string, w: string }
       Share?: { href: string }
-      PageIndexer?: { collection: string }
     }
 
 type RenderNodeProps = {

@@ -21,6 +21,7 @@ import headerStyles from './components/scaffold/header_cust/styles/styles.scss'
 import { HeaderCustomization } from './components/scaffold/header_cust/components/customization/customization'
 import { initSentry } from '../../shared/app/functions/analytics/sentry/init'
 import { buildUrl } from '../shared/functions/builders/url'
+import VisitorPageIndex from './components/visitor/components/page/components/index/index'
 
 import loadable from '@loadable/component'
 const Image = loadable(() => import('../../shared/app/components/image/image'))
@@ -82,6 +83,8 @@ class App extends React.Component<AppProps> {
       // @ts-ignore
       dispatch,
       renderListingIndexMap,
+      // @ts-ignore
+      visitorPageIndex,
     } = this.props
     // @ts-ignore
     const AppContextValue = {
@@ -106,7 +109,7 @@ class App extends React.Component<AppProps> {
       dispatch,
       lang,
     }
-    const pageProps = { ...sharedProps }
+
     const urlComposites = { pageShowData, pageEditData, announcementEditData }
     const imageProps = sharedProps
 
@@ -122,6 +125,7 @@ class App extends React.Component<AppProps> {
           {renderVisitor && <Visitor {...sharedProps} />}
           {renderUser && <User />}
           {renderImage && <Image {...imageProps} />}
+          {visitorPageIndex && <VisitorPageIndex />}
         </div>
         {!renderListingIndexMap && <Footer {...sharedProps} />}
       </>

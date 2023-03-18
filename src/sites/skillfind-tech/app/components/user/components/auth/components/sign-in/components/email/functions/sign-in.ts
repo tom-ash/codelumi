@@ -15,9 +15,7 @@ interface SignIn {
 }
 
 export const signIn: SignIn = args => {
-  const { lang, email, password, href, setControl, setErrors } = args
-
-  console.log(args)
+  const { lang, email, password, setControl, setErrors } = args
 
   const hashedPassword = hashPassword(password, email)
 

@@ -16,7 +16,6 @@ const YouTubeEmbed = loadable(() => import('./components/youtube-embed/youtube-e
 const Share = loadable(() => import('./components/share/share'))
 const Definition = loadable(() => import('./components/definition/definition'))
 const Figure = loadable(() => import('./components/figure/figure'))
-const PageIndexer = loadable(() => import('./components/page-indexer/page-indexer'))
 
 export const RenderNode = (props: RenderNodeProps) => {
   const { node, index } = props
@@ -188,20 +187,6 @@ export const RenderNode = (props: RenderNodeProps) => {
         }}
       />
     )
-  }
-
-  if (node.PageIndexer) {
-    const { collection } = node.PageIndexer
-    const { articles, tutorials } = props
-
-    const pageIndexerProps = {
-      collection,
-      tutorials,
-      articles,
-      key: index,
-    }
-
-    return <PageIndexer {...pageIndexerProps} />
   }
 
   if (node.TableOfContents) {
