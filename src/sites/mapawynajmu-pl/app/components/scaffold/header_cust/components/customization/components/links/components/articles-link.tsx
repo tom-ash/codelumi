@@ -17,7 +17,7 @@ export function ArticlesLink(props: ArticlesLinkProps) {
     // @ts-ignore
     path: langHandler({
       pl: 'artykuly-o-wynajmie-nieruchomosci',
-      en: 'articles-on-real-estate-leasing',
+      en: 'articles-on-real-estate-lease-and-rent-in-Poland',
     }),
   })
   // @ts-ignore

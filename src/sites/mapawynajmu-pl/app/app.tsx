@@ -3,12 +3,17 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
-import Visitor from '../../shared/app/components/visitor/visitor'
-import Announcement from './components/announcement/announcement'
-import Page from '../../shared/app/components/page/page'
-import User from './components/user/user'
-import Footer from '../../shared/app/components/scaffold/footer/footer'
-import Header from './components/scaffold/header/header'
+
+import loadable from '@loadable/component'
+const Header = loadable(() => import('./components/scaffold/header/header'))
+const Visitor = loadable(() => import('../../shared/app/components/visitor/visitor'))
+const User = loadable(() => import('./components/user/user'))
+const Announcement = loadable(() => import('./components/announcement/announcement'))
+const Page = loadable(() => import('../../shared/app/components/page/page'))
+const Image = loadable(() => import('../../shared/app/components/image/image'))
+const VisitorPageIndex = loadable(() => import('./components/visitor/components/page/components/index/index'))
+const Footer = loadable(() => import('../../shared/app/components/scaffold/footer/footer'))
+
 import * as lifecycle from './functions/lifecycle'
 import screenSizeHandler from '../../shared/app/functions/screen/handlers/screen-size'
 import popStateHandler from '../../shared/app/functions/routes/handlers/pop-state'
@@ -21,10 +26,6 @@ import headerStyles from './components/scaffold/header_cust/styles/styles.scss'
 import { HeaderCustomization } from './components/scaffold/header_cust/components/customization/customization'
 import { initSentry } from '../../shared/app/functions/analytics/sentry/init'
 import { buildUrl } from '../shared/functions/builders/url'
-import VisitorPageIndex from './components/visitor/components/page/components/index/index'
-
-import loadable from '@loadable/component'
-const Image = loadable(() => import('../../shared/app/components/image/image'))
 
 initSentry()
 
@@ -86,13 +87,7 @@ class App extends React.Component<AppProps> {
       // @ts-ignore
       visitorPageIndex,
     } = this.props
-    // @ts-ignore
-    const AppContextValue = {
-      // @ts-ignore
-      matchStateToRoute: this.matchStateToRoute,
-      // @ts-ignore
-      langHandler: this.langHandler,
-    }
+
     // @ts-ignore
     const sharedProps = {
       appName: APP_NAME,
@@ -112,9 +107,6 @@ class App extends React.Component<AppProps> {
 
     const urlComposites = { pageShowData, pageEditData, announcementEditData }
     const imageProps = sharedProps
-
-    // TODO: Consider adding <React.StrictMode>.
-    // https://github.com/facebook/react/blob/main/CHANGELOG.md: If this breaks your app, consider removing Strict Mode until you can fix the components to be resilient to remounting with existing state.
 
     return (
       <>

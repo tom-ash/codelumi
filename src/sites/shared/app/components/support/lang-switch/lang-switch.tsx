@@ -27,6 +27,9 @@ export const LangSwitch = () => {
     enHref = currentEn.href
   }
 
+  //@ts-ignore
+  if (!plHref || !enHref) return null
+
   const allClassNames = ['all']
   showLangs && allClassNames.push('show')
 

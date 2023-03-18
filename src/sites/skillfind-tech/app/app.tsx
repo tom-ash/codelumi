@@ -1,16 +1,16 @@
 import React from 'react'
 import loadable from '@loadable/component'
 import { connect } from 'react-redux'
+import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 const Header = loadable(() => import('./components/scaffold/header/header'))
-import Visitor from '../../shared/app/components/visitor/visitor'
+const Visitor = loadable(() => import('../../shared/app/components/visitor/visitor'))
 const User = loadable(() => import('./components/user/user'))
 const Announcement = loadable(() => import('./components/announcement/announcement'))
-import Page from '../../shared/app/components/page/page'
+const Page = loadable(() => import('../../shared/app/components/page/page'))
 const Image = loadable(() => import('../../shared/app/components/image/image'))
-import Footer from '../../shared/app/components/scaffold/footer/footer'
+const Footer = loadable(() => import('../../shared/app/components/scaffold/footer/footer'))
 
-import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import styles from './styles/styles.scss'
 import * as lifecycle from './functions/lifecycle'
 import { langHandler } from '../../shared/app/functions/lang/handlers/lang'
@@ -70,14 +70,9 @@ class App extends React.Component {
       // @ts-ignore
       lang,
       // @ts-ignore
-      pageShowData,
-      // @ts-ignore
-      pageEditData,
-      // @ts-ignore
       setApp,
     } = this.props
-    // @ts-ignore
-    const urlComposites = { pageShowData, pageEditData }
+
     // @ts-ignore
     const sharedProps = {
       appName: APP_NAME,
@@ -92,7 +87,6 @@ class App extends React.Component {
       setApp,
       langHandler: this.langHandler,
     }
-    const pageProps = { ...sharedProps }
     const imageProps = sharedProps
 
     return (
@@ -101,7 +95,7 @@ class App extends React.Component {
         {renderPostingIndex && <PostingIndex />}
         {renderPage && <Page />}
         {renderVisitor && <Visitor {...sharedProps} />}
-        {renderAnnouncement && <Announcement {...sharedProps} />}
+        {renderAnnouncement && <Announcement />}
         {renderUser && <User />}
         {renderImage && <Image {...imageProps} />}
         <Footer {...sharedProps} />
