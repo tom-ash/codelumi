@@ -18,7 +18,7 @@ export const RecordIndexer: RecordIndexerInterface = (props) => {
   const { create } = props
   const { state } = useStore()
   const { data, inputs } = state
-  const { recordKeys } = data
+  const { recordKeys, recordPath } = data
   const { recordKey } = inputs
 
   return (
@@ -32,7 +32,7 @@ export const RecordIndexer: RecordIndexerInterface = (props) => {
             return (
               <li
                 key={key}
-                onClick={() => changeUrl({ href: key })}
+                onClick={() => changeUrl({ href: `${recordPath}/${key}` })}
               >
                 {key}
               </li>

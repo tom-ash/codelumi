@@ -1,40 +1,41 @@
 import { getAccessToken } from '../../../../user/components/auth/functions/get-access-token'
 import { changeUrl } from '../../../../../functions/routes/changers/change-url'
 
-interface CreatePage {
+interface CreateImage {
   (args: {
     lang: Lang
     apiUrl: string
-    // imageKey: string
+    recordKey: string
   }): void
 }
 
-export const createPage: CreatePage = (props) => {
-  const { lang, apiUrl } = props
+export const createImage: CreateImage = (props) => {
+  const { lang, apiUrl, recordKey } = props
   const accessToken = <string>getAccessToken()
-  // const body = {
-  //   imageKey
-  // }
+  const body = {
+    imageKey: recordKey,
+  }
 
-  // console.log(props)
+  console.log(body)
 
-  // console.log(imageKey)
-
-  fetch(`${apiUrl}/page/create`, {
+  fetch(`${apiUrl}/image/create`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'Access-Token': accessToken,
       'Lang': lang,
     },
-    // body: JSON.stringify(body)
+    body: JSON.stringify(body),
   })
     .then(response => {
       if (response.ok) return response.json()
     })
     .then(jsonResponse => {
-      const { href } = jsonResponse
 
-      changeUrl({ href })
+      console.log(jsonResponse)
+
+      // const { href } = jsonResponse
+
+      // changeUrl({ href })
     })
 }

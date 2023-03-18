@@ -1,7 +1,6 @@
 import React from 'react'
 import Index from './components/index'
 import Edit from './components/edit/edit'
-import { changeUrl } from '../../functions/routes/changers/change-url'
 
 interface ImageProps {
   render: {
@@ -25,30 +24,7 @@ class Image extends React.Component<ImageProps> {
   render() {
     const {
       render: { 'image/index': renderIndex, 'image/edit': renderEdit },
-      apiUrl,
-      buildUrl,
-      langHandler,
-      clientUrl,
-      device,
-      lang,
-      appName,
     } = this.props
-
-    const editProps = {
-      apiUrl,
-      changeUrl,
-      langHandler,
-      clientUrl,
-      device,
-      lang,
-      appName,
-    }
-
-    const indexProps = {
-      apiUrl,
-      changeUrl,
-      buildUrl,
-    }
 
     const classNames = []
 
@@ -60,8 +36,8 @@ class Image extends React.Component<ImageProps> {
         id='image'
         className={classNames.join(' ')}
       >
-        {renderIndex && <Index {...indexProps} />}
-        {renderEdit && <Edit {...editProps} />}
+        {renderIndex && <Index />}
+        {/* {renderEdit && <Edit />} */}
       </section>
     )
   }

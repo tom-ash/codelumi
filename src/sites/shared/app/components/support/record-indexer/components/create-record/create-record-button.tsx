@@ -11,15 +11,17 @@ interface CreateRecordButtonInterface {
 export const CreateRecordButton: CreateRecordButtonInterface = (props) => {
   const { create: submit } = props
   const { state } = useStore()
-  const { app, texts, data } = state
+  const { app, texts, data, inputs } = state
   const { createRecordButtonLabel: label } = texts
   const { lang } = app
   const { apiUrl } = data
+  const { recordKey } = inputs
 
   const submitButtonProps = {
     label,
     lang,
     apiUrl,
+    recordKey,
     submit,
   }
 
