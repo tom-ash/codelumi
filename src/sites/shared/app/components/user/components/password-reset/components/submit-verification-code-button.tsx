@@ -5,11 +5,13 @@ import { SubmitButton } from '../../../../support/submit-button/submit-button'
 
 export const SubmitVerificationCodeButton = () => {
   const { state } = useStore()
-  const { texts, inputs } = state
+  const { texts, data, inputs } = state
   const { submitVerificationCode: label } = texts
+  const { apiUrl } = data
   const { verificationCode } = inputs
 
   const submitButtonProps = {
+    apiUrl,
     label,
     submit: submitVerificationCode,
     verificationCode,

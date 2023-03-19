@@ -1,10 +1,10 @@
-import API_URL from '../../../../../../../mapawynajmu-pl/shared/constants/urls/api'
 import { getCookieValue } from '../../../../visitor/components/legal/components/cookies/functions/save'
 import { hashPassword } from '../../../functions/hash-password'
 import { PasswordResetStep } from '../password-reset.types'
 
 interface SubmitPassword {
   (args: {
+    apiUrl: string
     email: string
     verificationCode: string
     password: string
@@ -13,12 +13,12 @@ interface SubmitPassword {
 }
 
 export const submitPassword: SubmitPassword = args => {
-  const { email, verificationCode, password, setControl } = args
+  const { apiUrl, email, verificationCode, password, setControl } = args
 
   const verificationToken = getCookieValue('verificationToken')
   const hashedPassword = hashPassword(password, email)
 
-  fetch(API_URL + '/user/update/password', {
+  fetch(apiUrl + '/user/update/password', {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ verificationToken, verificationCode, password: hashedPassword }),

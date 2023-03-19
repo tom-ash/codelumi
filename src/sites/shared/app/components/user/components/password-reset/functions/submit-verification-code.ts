@@ -1,9 +1,9 @@
-import API_URL from '../../../../../../../mapawynajmu-pl/shared/constants/urls/api'
 import { getCookieValue } from '../../../../visitor/components/legal/components/cookies/functions/save'
 import { PasswordResetStep } from '../password-reset.types'
 
 interface SubmitVerificationCode {
   (args: {
+    apiUrl: string
     verificationCode: string
     setControl: any // TODO: TS!
     setErrors: any // TODO: TS!
@@ -11,10 +11,10 @@ interface SubmitVerificationCode {
 }
 
 export const submitVerificationCode: SubmitVerificationCode = args => {
-  const { verificationCode, setControl, setErrors } = args
+  const { apiUrl, verificationCode, setControl, setErrors } = args
   const verificationToken = getCookieValue('verificationToken')
 
-  fetch(API_URL + '/user/update/password/verify', {
+  fetch(apiUrl + '/user/update/password/verify', {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ verificationToken, verificationCode }),

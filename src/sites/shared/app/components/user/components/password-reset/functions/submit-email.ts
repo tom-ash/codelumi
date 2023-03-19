@@ -1,9 +1,9 @@
-import API_URL from '../../../../../../../mapawynajmu-pl/shared/constants/urls/api'
 import setVerificationToken from '../../../../../functions/cookies/setters/confirmation-token'
 import { PasswordResetStep } from '../password-reset.types'
 
 interface SubmitEmail {
   (args: {
+    apiUrl: string
     lang: Lang
     email: string
     setControl: any // TODO: TS!
@@ -11,9 +11,9 @@ interface SubmitEmail {
 }
 
 export const submitEmail: SubmitEmail = args => {
-  const { lang, email, setControl } = args
+  const { apiUrl, lang, email, setControl } = args
 
-  fetch(API_URL + '/user/update/password/verification', {
+  fetch(apiUrl + '/user/update/password/verification', {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json', Lang: lang },
     body: JSON.stringify({ email }),
