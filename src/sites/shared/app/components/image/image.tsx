@@ -1,38 +1,24 @@
 import React from 'react'
-import Index from './components/index'
-import Edit from './components/edit/edit'
+import { useStore } from '../../functions/store/useStore'
+import loadable from '@loadable/component'
+const Index = loadable(() => import('./components/index'))
+const Edit = loadable(() => import('./components/edit/edit'))
 
-interface ImageProps {
-  render: {
-    'image/index': boolean
-    'image/edit': boolean
-  }
-  apiUrl: string
-  buildUrl(props: { path: string }): string
-  langHandler: LangHandler
-  clientUrl: string
-  device: string
-  lang: string
-  appName: string
-}
+const Image = () => {
+  const { state } = useStore()
+  const { render } = state
 
-class Image extends React.Component<ImageProps> {
-  constructor(props: ImageProps) {
-    super(props)
-  }
+  const {
+    'image/index': renderIndex,
+    'image/edit': renderEdit,
+  } = render
 
-  render() {
-    const {
-      render: { 'image/index': renderIndex, 'image/edit': renderEdit },
-    } = this.props
-
-    return (
-      <section id='image'>
-        {renderIndex && <Index />}
-        {renderEdit && <Edit />}
-      </section>
-    )
-  }
+  return (
+    <section id='image'>
+      {renderIndex && <Index />}
+      {renderEdit && <Edit />}
+    </section>
+  )
 }
 
 export default Image

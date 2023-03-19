@@ -1,9 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import withStyles from 'isomorphic-style-loader-react18/withStyles'
-import styles from './styles/styles.scss'
-
 import loadable from '@loadable/component'
 const Header = loadable(() => import('./components/scaffold/header/header'))
 const Visitor = loadable(() => import('../../shared/app/components/visitor/visitor'))
@@ -15,17 +12,24 @@ const VisitorPageIndex = loadable(() => import('./components/visitor/components/
 const Footer = loadable(() => import('../../shared/app/components/scaffold/footer/footer'))
 
 import * as lifecycle from './functions/lifecycle'
+
 import screenSizeHandler from '../../shared/app/functions/screen/handlers/screen-size'
 import popStateHandler from '../../shared/app/functions/routes/handlers/pop-state'
-import { langHandler } from './functions/lang-handler'
 import matchStateToRoute from './functions/routes/matchers/state-to-route'
+import { initSentry } from '../../shared/app/functions/analytics/sentry/init'
+
+// TODO: Remove!
+import { langHandler } from './functions/lang-handler'
 import CLIENT_URL from '../shared/constants/urls/client'
 import API_URL from '../shared/constants/urls/api'
 import * as langs from '../shared/constants/langs/langs'
 import headerStyles from './components/scaffold/header_cust/styles/styles.scss'
 import { HeaderCustomization } from './components/scaffold/header_cust/components/customization/customization'
-import { initSentry } from '../../shared/app/functions/analytics/sentry/init'
 import { buildUrl } from '../shared/functions/builders/url'
+// TODO: Remove!
+
+import withStyles from 'isomorphic-style-loader-react18/withStyles'
+import styles from './styles/styles.scss'
 
 initSentry()
 
@@ -116,7 +120,7 @@ class App extends React.Component<AppProps> {
           {renderPage && <Page />}
           {renderVisitor && <Visitor {...sharedProps} />}
           {renderUser && <User />}
-          {renderImage && <Image {...imageProps} />}
+          {renderImage && <Image />}
           {visitorPageIndex && <VisitorPageIndex />}
         </div>
         {!renderListingIndexMap && <Footer {...sharedProps} />}

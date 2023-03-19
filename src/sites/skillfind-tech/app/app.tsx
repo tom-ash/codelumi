@@ -87,7 +87,6 @@ class App extends React.Component {
       setApp,
       langHandler: this.langHandler,
     }
-    const imageProps = sharedProps
 
     return (
       <>
@@ -97,7 +96,7 @@ class App extends React.Component {
         {renderVisitor && <Visitor {...sharedProps} />}
         {renderAnnouncement && <Announcement />}
         {renderUser && <User />}
-        {renderImage && <Image {...imageProps} />}
+        {renderImage && <Image />}
         <Footer {...sharedProps} />
       </>
     )
