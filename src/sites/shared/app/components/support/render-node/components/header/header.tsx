@@ -5,11 +5,11 @@ import { Heading } from '../../../../../../../mapawynajmu-pl/app/components/supp
 
 const Header = () => {
   const { state } = useStore()
-  const { meta } = state
-  const { image, title } = meta
+  const { data } = state
+  const { coverImage, title } = data
 
   const imageProps = {
-    src: image,
+    src: coverImage,
     alt: title,
   }
 
