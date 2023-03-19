@@ -1,23 +1,14 @@
 import React from 'react'
-import WidthInput from './components/width-input'
-import HeightInput from './components/height-input'
+import { WidthInput } from './components/width/width.input'
+import { HeightInput } from './components/height/height.input'
+import { FloatClear } from '../../../../../support/float-clear/float-clear'
 
-interface DimensionsProps {
-  width: string
-  height: string
-  setData(props: object): void
-}
-
-const Dimensions = (props: DimensionsProps) => {
-  const { width, height, setData } = props
-  const widthInputProps = { width, setData }
-  const heightInputProps = { height, setData }
-
+export const Dimensions = () => {
   return (
     <div className='dimensions'>
-      <WidthInput {...widthInputProps} />
-      <HeightInput {...heightInputProps} />
-      <div className='float-clear' />
+      <WidthInput />
+      <HeightInput />
+      <FloatClear />
     </div>
   )
 }

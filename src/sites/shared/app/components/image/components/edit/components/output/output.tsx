@@ -1,32 +1,17 @@
 import React from 'react'
+import { useStore } from '../../../../../../functions/store/useStore'
 import { RenderNode } from '../../../../../support/render-node/render-node'
-import { changeUrl } from '../../../../../../functions/routes/changers/change-url'
 
-interface OutputProps {
-  width: string
-  height: string
-  bodyElements: RenderNodeData[]
-  clientUrl: string
-  appName: string
-  device: string
-  lang: string
-  langHandler: LangHandler
-}
-
-const Output = (props: OutputProps) => {
-  const { width, height, bodyElements, clientUrl, appName, device, lang, langHandler } = props
+export const Output = () => {
+  const { state } = useStore()
+  const { data, inputs } = state
+  const { body } = data
+  const { width, height } = inputs
 
   const nodeProps = {
     node: {
-      Root: bodyElements,
+      Root: body,
     },
-    jsonBody: bodyElements,
-    clientUrl,
-    appName,
-    device,
-    lang,
-    changeUrl,
-    langHandler,
   }
 
   return (
@@ -43,5 +28,3 @@ const Output = (props: OutputProps) => {
     </div>
   )
 }
-
-export default Output

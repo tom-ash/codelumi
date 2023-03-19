@@ -16,8 +16,6 @@ export const createImage: CreateImage = (props) => {
     imageKey: recordKey,
   }
 
-  console.log(body)
-
   fetch(`${apiUrl}/image/create`, {
     method: 'POST',
     headers: {
@@ -31,11 +29,8 @@ export const createImage: CreateImage = (props) => {
       if (response.ok) return response.json()
     })
     .then(jsonResponse => {
+      const { href } = jsonResponse
 
-      console.log(jsonResponse)
-
-      // const { href } = jsonResponse
-
-      // changeUrl({ href })
+      changeUrl({ href })
     })
 }

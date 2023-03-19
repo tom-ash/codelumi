@@ -26,18 +26,10 @@ class Image extends React.Component<ImageProps> {
       render: { 'image/index': renderIndex, 'image/edit': renderEdit },
     } = this.props
 
-    const classNames = []
-
-    if (renderIndex) classNames.push('index')
-    if (renderEdit) classNames.push('edit')
-
     return (
-      <section
-        id='image'
-        className={classNames.join(' ')}
-      >
+      <section id='image'>
         {renderIndex && <Index />}
-        {/* {renderEdit && <Edit />} */}
+        {renderEdit && <Edit />}
       </section>
     )
   }

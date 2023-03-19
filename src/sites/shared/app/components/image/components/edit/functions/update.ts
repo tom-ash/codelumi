@@ -10,11 +10,14 @@ interface saveProps {
   height: string
   storageKey: string
   storageUrl: string
+  setControl(props: object): void
   setData(props: object): void
 }
 
-export function save(props: saveProps) {
-  const { apiUrl, imageId, body: imageBody, width, height, storageKey, setData } = props
+export const update = (props: saveProps) => {
+  const { apiUrl, imageId, body: imageBody, width, height, storageKey, setControl, setData } = props
+
+  console.log(props)
 
   // @ts-ignore
   drawOnCanvas()
@@ -58,7 +61,6 @@ export function save(props: saveProps) {
 
             setData({
               storageUrl: response.url + storageKey + keyExtension,
-              storageUrlRandomizedQuaryParameter: Math.random(),
             })
 
             fetch(`${apiUrl}/image/update`, {
@@ -75,9 +77,10 @@ export function save(props: saveProps) {
                 storageUrl,
               }),
             })
+            .then(() => {
+              setControl({ connecting: false })
+            })
           })
         })
     })
 }
-
-export default save
