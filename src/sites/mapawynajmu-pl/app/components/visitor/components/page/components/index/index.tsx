@@ -21,7 +21,7 @@ const VisitorPageIndex = () => {
       {/* @ts-ignore */}
       {pages.map(page => {
         const {
-          cover_image: image,
+          coverImage: image,
           title,
           url,
           lang,

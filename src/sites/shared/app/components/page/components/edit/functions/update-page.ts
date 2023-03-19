@@ -36,7 +36,7 @@ export const updatePage: UpdatePage = (props) => {
     url,
     canonicalUrl,
     online,
-    body: unparsedBody,
+    body,
     publishedOn,
     modifiedOn,
     category,
@@ -54,7 +54,6 @@ export const updatePage: UpdatePage = (props) => {
     setData,
   } = props
 
-  const body = JSON.parse(unparsedBody)
   const requestBody = JSON.stringify({
     id,
     url,
