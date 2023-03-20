@@ -145,7 +145,7 @@ export const RenderNode = (props: RenderNodeProps) => {
           body: node.Section,
           className,
           codeLang,
-          identifier: node.identifier,
+          id: node.identifier,
           style: node.style,
         }}
       />

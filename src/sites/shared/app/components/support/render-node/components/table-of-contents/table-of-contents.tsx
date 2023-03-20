@@ -1,9 +1,8 @@
 import React from 'react'
 import { useStore } from '../../../../../functions/store/useStore'
-import urlify from '../../../../../../shared/functions/transformers/routes/urlify'
 import setScreenOffsetAtElement from '../../../../../functions/screen/setters/offset-at-element'
-
-// TODO: INTERFACE
+// @ts-ignore
+import parameterize from 'parameterize'
 
 //@ts-ignore
 const TableOfContents = props => {
@@ -16,16 +15,17 @@ const TableOfContents = props => {
 
   const article = (() => {
     try {
-      return body[0].main[0].article
+      return body[0].Main[0].Article
     } catch {
       return []
     }
   })()
 
   //@ts-ignore
-  const headers = (article).filter(node => {
-    if (node && node.h2) return node
-  })
+  const headings = (article).filter(node => {
+    if (node.Section && node.Section[0] && node.Section[0].HeadingTwo) return true
+    //@ts-ignore
+  }).map(node => node.Section[0].HeadingTwo)
 
   return (
     <nav className='table-of-contents'>
@@ -33,37 +33,27 @@ const TableOfContents = props => {
         <h2>{title}</h2>
         <ul>
           {/* @ts-ignore */}
-          {headers.map((header, index) => {
-            const headerContent = typeof header.h2 === 'string' ? header.h2 : header.h2.c
-            const headerNumber = typeof header.h2 === 'string' ? null : header.h2.n
+          {headings.map((heading, index) => {
+            const urlifiedHeading = parameterize(heading)
 
             return (
               <li key={index}>
                 <a
                   key={index}
-                  className={header.t}
-                  href={`#${urlify(headerContent)}`}
+                  // className={heading.t}
+                  href={`#${urlifiedHeading}`}
                   onClick={e => {
                     e.preventDefault()
 
                     // @ts-ignore
-                    history.pushState(null, null, `${window.location.pathname}#${urlify(headerContent)}`)
+                    history.pushState(null, null, `${window.location.pathname}#${urlifiedHeading}`)
 
-                    // @ts-ignore
-                    const targetHeader = headers.find(headerNode => {
-                      if (typeof headerNode.h2 === 'string') {
-                        return urlify(headerContent) === urlify(headerNode.h2)
-                      }
-
-                      return urlify(headerContent) === urlify(headerNode.h2.c)
-                    })['h2']
-
-                    const domHeaders = document.getElementsByTagName('h2')
+                    const sections = document.getElementsByTagName('section')
                     let element
 
-                    for (var i = 0; i < domHeaders.length; i++) {
-                      if (domHeaders[i].textContent == targetHeader.c) {
-                        element = domHeaders[i]
+                    for (var i = 0; i < sections.length; i++) {
+                      if (sections[i].id == urlifiedHeading) {
+                        element = sections[i]
                         break
                       }
                     }
@@ -72,14 +62,7 @@ const TableOfContents = props => {
                     setScreenOffsetAtElement({ element, translation })
                   }}
                 >
-                  {headerNumber ? (
-                    <>
-                      <span>{headerNumber}</span>
-                      <span>{headerContent}</span>
-                    </>
-                  ) : (
-                    headerContent
-                  )}
+                  {heading}
                 </a>
               </li>
             )

@@ -9,7 +9,7 @@ const Section = (props: SectionProps) => {
     className,
     style,
     codeLang,
-    identifier,
+    id,
   } = props
 
   //@ts-ignore
@@ -28,7 +28,7 @@ const Section = (props: SectionProps) => {
 
   if (!element) return <>{parsedBody}</>
 
-  const section = React.createElement(element, { className, style, identifier }, parsedBody)
+  const section = React.createElement(element, { className, style, id }, parsedBody)
 
   return section
 }

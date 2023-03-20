@@ -43,6 +43,7 @@
     "isomorphic-style-loader-react18": "^5.9.2",
     "managed-inputs": "^0.5.2",
     "node-fetch": "^2.6.1",
+    "parameterize": "^1.0.0",
     "pretty": "^2.0.0",
     "react": "^18.2.0",
     "react-app-polyfill": "^3.0.0",
