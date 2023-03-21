@@ -2,13 +2,12 @@ import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import Button from './components/button/button'
+import { ListingNewLink } from '../links/components/listing-new-link'
+import { UserListingIndexLink } from '../links/components/user-listing-index'
+import { UserEditLink } from '../links/components/user-edit.link'
 
 import { ManagedButton, ManagedLink } from 'managed-inputs'
 import {
-  addAnnouncementManager,
-  signUpManager,
-  signInManager,
-  myAnnouncementsManager,
   accountManager,
   deAuthorizeManager,
 } from '../links/functions/managers'
@@ -29,24 +28,28 @@ const HeaderMenu = props => {
           <div className='menu'>
             {isMobile ? (
               <>
-                <ManagedLink {...addAnnouncementManager(props)} />
+                <ListingNewLink />
                 {authorized ? (
                   <>
-                    <ManagedLink {...myAnnouncementsManager(props)} />
-                    <ManagedLink {...accountManager(props)} />
+                    <UserListingIndexLink />
+                    <UserEditLink />
+
+
                     <ManagedButton {...deAuthorizeManager(props)} />
                   </>
                 ) : (
                   <>
-                    <ManagedLink {...signUpManager(props)} />
-                    <ManagedLink {...signInManager(props)} />
+                    {/* <ManagedLink {...signUpManager(props)} /> */}
+                    {/* TODO: SIGN IN */}
                   </>
                 )}
               </>
             ) : (
               <>
-                <ManagedLink {...myAnnouncementsManager(props)} />
-                <ManagedLink {...accountManager(props)} />
+                <UserListingIndexLink />
+                <UserEditLink />
+
+
                 <ManagedButton {...deAuthorizeManager(props)} />
               </>
             )}

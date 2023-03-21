@@ -1,8 +1,12 @@
 import React from 'react'
 import { ManagedButton, ManagedLink } from 'managed-inputs'
-import { addAnnouncementManager, signUpManager, signInManager, myAccountManager } from './functions/managers'
+import { myAccountManager } from './functions/managers'
 import { LangSwitch } from '../../../../../../../../../shared/app/components/support/lang-switch/lang-switch'
-import ArticlesLink from './components/articles-link'
+import { VisitorPageIndexLink } from './components/visitor-page-index.link'
+import { SignInLink } from './components/sign-in'
+import { ListingNewLink } from './components/listing-new-link'
+import { UserNewLink } from './components/user-new-link'
+import { UserEditLink } from './components/user-edit.link'
 
 const HeaderUserLinks = props => {
   const { authorized } = props
@@ -13,8 +17,8 @@ const HeaderUserLinks = props => {
         <ManagedButton {...myAccountManager(props)} />
       ) : (
         <>
-          <ManagedLink {...signUpManager(props)} />
-          <ManagedLink {...signInManager(props)} />
+          <UserNewLink />
+          <SignInLink />
         </>
       )}
     </>
@@ -22,23 +26,18 @@ const HeaderUserLinks = props => {
 }
 
 const HeaderLinks = props => {
-  const { isMobile, buildUrl, langHandler, langs } = props
-  const articlesLinkProps = {
-    buildUrl,
-    langHandler,
-    langs,
-  }
+  const { isMobile } = props
 
   return (
     <div className='links'>
       {isMobile ? (
-        <LangSwitch {...props} />
+        <LangSwitch />
       ) : (
         <>
-          <ManagedLink {...addAnnouncementManager(props)} />
+          <ListingNewLink />
           <HeaderUserLinks {...props} />
-          <ArticlesLink {...articlesLinkProps} />
-          <LangSwitch {...props} />
+          <VisitorPageIndexLink />
+          <LangSwitch />
         </>
       )}
     </div>
