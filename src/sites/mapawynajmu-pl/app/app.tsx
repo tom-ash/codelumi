@@ -9,7 +9,7 @@ const Announcement = loadable(() => import('./components/announcement/announceme
 const Page = loadable(() => import('../../shared/app/components/page/page'))
 const Image = loadable(() => import('../../shared/app/components/image/image'))
 const VisitorPageIndex = loadable(() => import('./components/visitor/components/page/components/index/index'))
-const Footer = loadable(() => import('../../shared/app/components/scaffold/footer/footer'))
+const Footer = loadable(() => import('./components/scaffold/footer/footer'))
 
 import * as lifecycle from './functions/lifecycle'
 
@@ -78,12 +78,6 @@ class App extends React.Component<AppProps> {
       // @ts-ignore
       authorized,
       // @ts-ignore
-      pageShowData,
-      // @ts-ignore
-      pageEditData,
-      // @ts-ignore
-      announcementEditData,
-      // @ts-ignore
       dispatch,
       renderListingIndexMap,
       // @ts-ignore
@@ -107,9 +101,6 @@ class App extends React.Component<AppProps> {
       lang,
     }
 
-    const urlComposites = { pageShowData, pageEditData, announcementEditData }
-    const imageProps = sharedProps
-
     return (
       <>
         <Header />
@@ -121,7 +112,7 @@ class App extends React.Component<AppProps> {
           {renderImage && <Image />}
           {visitorPageIndex && <VisitorPageIndex />}
         </div>
-        {!renderListingIndexMap && <Footer {...sharedProps} />}
+        {!renderListingIndexMap && <Footer />}
       </>
     )
   }
