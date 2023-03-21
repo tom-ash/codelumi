@@ -2,19 +2,12 @@ import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 
-interface LogoProps {
-  style?: object
-}
-
-export const Logo = (props: LogoProps) => {
+export const Logo = () => {
   useStyles(styles)
-
-  const { style } = props
 
   return (
     <div
       id='logo'
-      style={style}
     >
       <div className='tile'>
         <div className='house'>

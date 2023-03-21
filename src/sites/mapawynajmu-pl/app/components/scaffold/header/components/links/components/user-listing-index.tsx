@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from '../../../../../../../../../../shared/app/components/support/link/link'
+import { Link } from '../../../../../../../../shared/app/components/support/link/link'
 
 export const UserListingIndexLink = () => {
   const linkProps = {

@@ -1,6 +1,6 @@
 import React from 'react'
 import loadable from '@loadable/component'
-import { Logo } from '../../../../../mapawynajmu-pl/app/components/scaffold/header/components/logo/logo'
+import { Logo } from '../../../../../mapawynajmu-pl/app/components/scaffold/header/components/logo-link/logo/logo'
 
 const Header = loadable(() => import('./components/header/header'))
 const Section = loadable(() => import('./components/section/section'))

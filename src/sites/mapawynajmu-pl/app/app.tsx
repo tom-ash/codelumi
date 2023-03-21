@@ -23,8 +23,6 @@ import { langHandler } from './functions/lang-handler'
 import CLIENT_URL from '../shared/constants/urls/client'
 import API_URL from '../shared/constants/urls/api'
 import * as langs from '../shared/constants/langs/langs'
-import headerStyles from './components/scaffold/header_cust/styles/styles.scss'
-import { HeaderCustomization } from './components/scaffold/header_cust/components/customization/customization'
 import { buildUrl } from '../shared/functions/builders/url'
 // TODO: Remove!
 
@@ -114,7 +112,7 @@ class App extends React.Component<AppProps> {
 
     return (
       <>
-        <Header {...{ ...sharedProps, urlComposites, lang, HeaderCustomization, styles: headerStyles }} />
+        <Header />
         <div className='blank-page'>
           {renderAnnouncement && <Announcement />}
           {renderPage && <Page />}
