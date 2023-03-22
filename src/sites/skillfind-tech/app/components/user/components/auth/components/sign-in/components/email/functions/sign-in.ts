@@ -1,6 +1,8 @@
 import { hashPassword } from '../../../../../../../../../../../shared/app/components/user/functions/hash-password'
 import API_URL from '../../../../../../../../../../shared/constants/urls/api'
-import { saveCookie } from '../../../../../../../../../../../shared/app/components/visitor/components/legal/components/cookies/functions/save'
+
+// TODO!
+import { saveCookie } from '../../../../../../../../../../../mapawynajmu-pl/app/functions/cookie-handlers'
 import { changeUrl } from '../../../../../../../../../../../shared/app/functions/routes/changers/change-url'
 
 interface SignIn {

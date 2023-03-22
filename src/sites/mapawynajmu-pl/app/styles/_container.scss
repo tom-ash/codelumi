@@ -1,3 +1,5 @@
+@import '../../../shared/app/styles/media-breakpoints';
+
 %container {
   max-width: 400px;
   margin: 0 auto;
@@ -5,4 +7,10 @@
   background: white;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  @media #{$LARGE-PHONE} {
+    max-width: none;
+    width: 100%;
+    box-shadow: none;
+    margin: none;
+  }
 }

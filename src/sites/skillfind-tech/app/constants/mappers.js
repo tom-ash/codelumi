@@ -10,8 +10,7 @@ export const mapStateToProps = store => {
     renderPostingIndex,
   } = render
   const { scrollY } = visitor
-  const { consents } = visitor
-  const { statisticsConsent, marketingConsent } = consents
+  const { statisticsConsent, marketingConsent } = visitor
 
   return {
     device,
@@ -35,7 +34,7 @@ export const mapStateToProps = store => {
 export const mapDispatchToProps = dispatch => {
   return {
     setApp: value => dispatch({ type: 'app', value }),
-    changeConsents: value => dispatch({ type: 'visitor/consents', value }),
+    changeConsents: value => dispatch({ type: 'visitor', value }),
     dispatch,
   }
 }

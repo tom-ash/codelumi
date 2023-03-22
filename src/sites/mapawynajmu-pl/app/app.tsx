@@ -2,8 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import loadable from '@loadable/component'
+
 const Header = loadable(() => import('./components/scaffold/header/header'))
-const Visitor = loadable(() => import('../../shared/app/components/visitor/visitor'))
+const Visitor = loadable(() => import('./components/visitor/visitor'))
 const User = loadable(() => import('./components/user/user'))
 const Announcement = loadable(() => import('./components/announcement/announcement'))
 const Page = loadable(() => import('../../shared/app/components/page/page'))
@@ -20,11 +21,6 @@ import { initSentry } from '../../shared/app/functions/analytics/sentry/init'
 
 // TODO: Remove!
 import { langHandler } from './functions/lang-handler'
-import CLIENT_URL from '../shared/constants/urls/client'
-import API_URL from '../shared/constants/urls/api'
-import * as langs from '../shared/constants/langs/langs'
-import { buildUrl } from '../shared/functions/builders/url'
-// TODO: Remove!
 
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
@@ -58,8 +54,6 @@ class App extends React.Component<AppProps> {
 
   render() {
     const {
-      // @ts-ignore
-      render,
       renderPage,
       // @ts-ignore
       renderImage,
@@ -70,36 +64,10 @@ class App extends React.Component<AppProps> {
       // @ts-ignore
       renderUser,
       // @ts-ignore
-      lang,
-      // @ts-ignore
-      links,
-      // @ts-ignore
-      device,
-      // @ts-ignore
-      authorized,
-      // @ts-ignore
-      dispatch,
       renderListingIndexMap,
       // @ts-ignore
       visitorPageIndex,
     } = this.props
-
-    // @ts-ignore
-    const sharedProps = {
-      appName: APP_NAME,
-      langs,
-      links,
-      clientUrl: CLIENT_URL,
-      apiUrl: API_URL,
-      render,
-      device,
-      authorized,
-      buildUrl,
-      // @ts-ignore
-      langHandler: this.langHandler,
-      dispatch,
-      lang,
-    }
 
     return (
       <>
@@ -107,7 +75,7 @@ class App extends React.Component<AppProps> {
         <div className='blank-page'>
           {renderAnnouncement && <Announcement />}
           {renderPage && <Page />}
-          {renderVisitor && <Visitor {...sharedProps} />}
+          {renderVisitor && <Visitor />}
           {renderUser && <User />}
           {renderImage && <Image />}
           {visitorPageIndex && <VisitorPageIndex />}

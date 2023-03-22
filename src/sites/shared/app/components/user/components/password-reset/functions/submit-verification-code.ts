@@ -1,4 +1,5 @@
-import { getCookieValue } from '../../../../visitor/components/legal/components/cookies/functions/save'
+// TODO!
+import getCookieValue from '../../../../../../../shared/app/functions/cookies/getters/get-cookie-value'
 import { PasswordResetStep } from '../password-reset.types'
 
 interface SubmitVerificationCode {

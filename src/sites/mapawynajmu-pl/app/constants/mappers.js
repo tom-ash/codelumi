@@ -10,7 +10,7 @@ export const mapStateToProps = store => {
     visitorPageIndex,
   } = render
   const { lang, device, path, scrollY, scripts, loadGa } = store.app
-  const { statisticsConsent, marketingConsent } = store.visitor.consents
+  const { statisticsConsent, marketingConsent } = store.visitor
   const { authorized, admin } = store.user
   const { links } = store
 
@@ -21,7 +21,7 @@ export const mapStateToProps = store => {
     path,
     scrollY,
     statisticsConsent,
-    marketingConsent,
+    // marketingConsent,
     scripts,
     render,
     renderPage,
@@ -42,7 +42,7 @@ export const mapDispatchToProps = dispatch => {
     setApp: value => dispatch({ type: 'app', value }),
     setControl: value => dispatch({ type: 'control', value }),
     changePageShowData: value => dispatch({ type: 'page/show/data', value }),
-    changeConsents: value => dispatch({ type: 'visitor/consents', value }),
+    changeConsents: value => dispatch({ type: 'visitor', value }),
     dispatch,
   }
 }

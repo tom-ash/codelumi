@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 const Header = loadable(() => import('./components/scaffold/header/header'))
-const Visitor = loadable(() => import('../../shared/app/components/visitor/visitor'))
+
 const User = loadable(() => import('./components/user/user'))
 const Announcement = loadable(() => import('./components/announcement/announcement'))
 const Page = loadable(() => import('../../shared/app/components/page/page'))
@@ -17,11 +17,7 @@ import { langHandler } from '../../shared/app/functions/lang/handlers/lang'
 import screenSizeHandler from '../../shared/app/functions/screen/handlers/screen-size'
 import popStateHandler from '../../shared/app/functions/routes/handlers/pop-state'
 import matchStateToRoute from './functions/routes/matchers/state-to-route'
-import CLIENT_URL from '../shared/constants/urls/client'
-import API_URL from '../shared/constants/urls/api'
-import { LANGS } from '../shared/constants/langs/langs'
 import { initSentry } from '../../shared/app/functions/analytics/sentry/init'
-import { buildUrl } from '../shared/functions/routes/builders/url'
 
 const PostingIndex = loadable(() => import('./components/announcement/components/index/index'))
 
@@ -47,10 +43,7 @@ class App extends React.Component {
   }
 
   render() {
-    // @ts-ignore
     const {
-      // @ts-ignore
-      render,
       // @ts-ignore
       renderPage,
       // @ts-ignore
@@ -63,41 +56,18 @@ class App extends React.Component {
       renderUser,
       // @ts-ignore
       renderPostingIndex,
-      // @ts-ignore
-      device,
-      // @ts-ignore
-      links,
-      // @ts-ignore
-      lang,
-      // @ts-ignore
-      setApp,
     } = this.props
-
-    // @ts-ignore
-    const sharedProps = {
-      appName: APP_NAME,
-      render,
-      langs: LANGS,
-      links,
-      clientUrl: CLIENT_URL,
-      apiUrl: API_URL,
-      device,
-      lang,
-      buildUrl,
-      setApp,
-      langHandler: this.langHandler,
-    }
 
     return (
       <>
         <Header />
         {renderPostingIndex && <PostingIndex />}
         {renderPage && <Page />}
-        {renderVisitor && <Visitor {...sharedProps} />}
+        {/* {renderVisitor && <Visitor {...sharedProps} />} */}
         {renderAnnouncement && <Announcement />}
         {renderUser && <User />}
         {renderImage && <Image />}
-        <Footer {...sharedProps} />
+        {/* <Footer {...sharedProps} /> */}
       </>
     )
   }

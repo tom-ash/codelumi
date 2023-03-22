@@ -1,0 +1,19 @@
+@import '../../../../styles/administrative-document';
+@import '../../../../../../styles/inputs/radio.scss';
+
+#privacy-settings {
+  @extend %administrative-document;
+  // min-width: 640px;
+  .consent-container {
+    &:first-of-type {
+      margin-bottom: 32px;
+    }
+  }
+  .consent-text {
+    margin-bottom: 16px;
+    line-height: 22px;
+  }
+  .radio {
+    @extend %radio;
+  }
+}

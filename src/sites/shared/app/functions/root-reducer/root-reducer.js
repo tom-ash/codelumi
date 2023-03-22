@@ -1,6 +1,5 @@
 import initialAppState from '../../constants/initial-app-state'
 import { combineReducers } from 'redux'
-import { visitorReducer } from '../../components/visitor/functions/reducers'
 
 const appReducer = (state = initialAppState, action) => {
   switch (action.type) {
@@ -94,6 +93,15 @@ const errorsReducer = (state = {}, action) => {
       return { ...state, ...action.value }
     case 'errors/reset':
       return { ...action.value }
+    default:
+      return state
+  }
+}
+
+const visitorReducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'visitor':
+      return { ...state, ...action.value }
     default:
       return state
   }
