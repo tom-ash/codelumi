@@ -9,7 +9,6 @@ export const mapStateToProps = store => {
     image: renderImage,
     renderPostingIndex,
   } = render
-  const { scrollY } = visitor
   const { statisticsConsent, marketingConsent } = visitor
 
   return {
@@ -23,7 +22,6 @@ export const mapStateToProps = store => {
     renderPostingIndex,
     renderPage,
     renderImage,
-    scrollY,
     statisticsConsent,
     marketingConsent,
     links,

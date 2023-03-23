@@ -9,7 +9,7 @@ export const mapStateToProps = store => {
     'announcement/index/map': renderListingIndexMap,
     visitorPageIndex,
   } = render
-  const { lang, device, path, scrollY, scripts, loadGa } = store.app
+  const { lang, device, path, scripts, loadGa } = store.app
   const { statisticsConsent, marketingConsent } = store.visitor
   const { authorized, admin } = store.user
   const { links } = store
@@ -19,7 +19,6 @@ export const mapStateToProps = store => {
     lang,
     device,
     path,
-    scrollY,
     statisticsConsent,
     // marketingConsent,
     scripts,

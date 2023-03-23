@@ -1,6 +1,5 @@
 const initialAppState = {
   device: null,
-  scrollY: 0,
   path: null,
   lang: null,
   connecting: false,

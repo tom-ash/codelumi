@@ -15,12 +15,7 @@ const Footer = loadable(() => import('./components/scaffold/footer/footer'))
 import * as lifecycle from './functions/lifecycle'
 
 import screenSizeHandler from '../../shared/app/functions/screen/handlers/screen-size'
-import popStateHandler from '../../shared/app/functions/routes/handlers/pop-state'
-import matchStateToRoute from './functions/routes/matchers/state-to-route'
 import { initSentry } from '../../shared/app/functions/analytics/sentry/init'
-
-// TODO: Remove!
-import { langHandler } from './functions/lang-handler'
 
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
@@ -44,12 +39,6 @@ class App extends React.Component<AppProps> {
     this.componentDidUpdate = lifecycle.componentDidUpdate
     // @ts-ignore
     this.screenSizeHandler = screenSizeHandler.bind(this)
-    // @ts-ignore
-    this.popStateHandler = popStateHandler.bind(this)
-    // @ts-ignore
-    this.langHandler = langHandler.bind(this)
-    // @ts-ignore
-    this.matchStateToRoute = matchStateToRoute.bind(this)
   }
 
   render() {

@@ -13,10 +13,9 @@ const Footer = loadable(() => import('../../shared/app/components/scaffold/foote
 
 import styles from './styles/styles.scss'
 import * as lifecycle from './functions/lifecycle'
-import { langHandler } from '../../shared/app/functions/lang/handlers/lang'
+
 import screenSizeHandler from '../../shared/app/functions/screen/handlers/screen-size'
-import popStateHandler from '../../shared/app/functions/routes/handlers/pop-state'
-import matchStateToRoute from './functions/routes/matchers/state-to-route'
+
 import { initSentry } from '../../shared/app/functions/analytics/sentry/init'
 
 const PostingIndex = loadable(() => import('./components/announcement/components/index/index'))
@@ -27,19 +26,13 @@ const APP_NAME = 'skillfind-tech'
 
 class App extends React.Component {
   screenSizeHandler: () => void
-  langHandler: LangHandler
+
   // @ts-ignore
   constructor(props) {
     super(props)
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.screenSizeHandler = screenSizeHandler.bind(this)
-    // @ts-ignore
-    this.popStateHandler = popStateHandler.bind(this)
-    // @ts-ignore
-    this.langHandler = langHandler.bind(this)
-    // @ts-ignore
-    this.matchStateToRoute = matchStateToRoute.bind(this)
   }
 
   render() {

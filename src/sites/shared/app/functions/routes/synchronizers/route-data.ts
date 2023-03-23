@@ -1,7 +1,18 @@
+import { Dispatch } from 'redux'
 import { getAccessToken } from '../../../components/user/components/auth/functions/get-access-token'
 
-function syncRouteData({ apiUrl, url, query, isSSR, customHeaders }) {
-  const { setApp } = this.props
+interface SyncRouteData {
+  (args: {
+    apiUrl: string
+    url: string
+    query: string
+    isSSR: boolean
+    customHeaders?: any // TODO
+  }): Promise<any>
+}
+
+export const syncRouteData: SyncRouteData = (args) => {
+  const { apiUrl, url, query, isSSR, customHeaders } = args
 
   return fetch(`${apiUrl}/sync${query}`, {
     headers: {
@@ -17,5 +28,3 @@ function syncRouteData({ apiUrl, url, query, isSSR, customHeaders }) {
     throw new Error('Server Error')
   })
 }
-
-export default syncRouteData
