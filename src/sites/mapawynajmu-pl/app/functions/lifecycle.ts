@@ -4,10 +4,9 @@ import { loadFonts } from './load-fonts'
 import { loadGoogleAnalytics } from '../../../shared/app/functions/analytics/google/load'
 import getGoogleAnalyticsMeasurementId from './analytics/google/getters/measurement-id'
 import { matchStateToRoute } from './routes/matchers/state-to-route'
+import { screenSizeHandler } from '../../../shared/app/functions/screen/handlers/screen-size'
 
 export function componentDidMount() {
-  if (typeof window === 'undefined') return
-
   loadFonts()
 
   // @ts-ignore
@@ -18,10 +17,8 @@ export function componentDidMount() {
 
   if (isMobile()) setApp({ isMobile: true })
 
-  // @ts-ignore
-  this.screenSizeHandler()
-  // @ts-ignore
-  window.addEventListener('resize', this.screenSizeHandler, false)
+  screenSizeHandler({ dispatch })
+  window.addEventListener('resize', () => screenSizeHandler({ dispatch }), false)
 
   if (process.env.NODE_ENV === 'development') {
     matchStateToRoute({

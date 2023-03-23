@@ -1,8 +1,15 @@
-function screenSizeHandler() {
-  if (typeof window === 'undefined') return
+import { Dispatch } from "redux"
 
-  const { setApp } = this.props
+interface ScreenSizeHandler {
+  (args:{ 
+    dispatch: Dispatch
+  }): void
+}
+
+export const screenSizeHandler: ScreenSizeHandler = (args) => {
+  const { dispatch } = args
   const width = window.innerWidth
+  const setApp = (value: any) => dispatch({ type: 'app', value })
 
   if (width > 1200) return setApp({ device: 'largePc' })
   if (width > 960 && width <= 1200) return setApp({ device: 'smallPc' })
@@ -12,5 +19,3 @@ function screenSizeHandler() {
 
   setApp({ device: 'smallPhone' })
 }
-
-export default screenSizeHandler

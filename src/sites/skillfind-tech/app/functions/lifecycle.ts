@@ -1,15 +1,14 @@
 import { loadGoogleAnalytics } from '../../../shared/app/functions/analytics/google/load'
 import getGoogleAnalyticsMeasurementId from './analytics/google/getters/measurement-id'
 import { matchStateToRoute } from './routes/matchers/state-to-route'
+import { screenSizeHandler } from '../../../shared/app/functions/screen/handlers/screen-size'
 
 export function componentDidMount() {
   // @ts-ignore
   const { dispatch } = this.props
 
-  // @ts-ignore
-  this.screenSizeHandler()
-  // @ts-ignore
-  window.addEventListener('resize', this.screenSizeHandler, false)
+  screenSizeHandler({ dispatch })
+  window.addEventListener('resize', () => screenSizeHandler({ dispatch }), false)
 
   if (process.env.NODE_ENV === 'development') {
     matchStateToRoute({

@@ -14,7 +14,6 @@ const Footer = loadable(() => import('./components/scaffold/footer/footer'))
 
 import * as lifecycle from './functions/lifecycle'
 
-import screenSizeHandler from '../../shared/app/functions/screen/handlers/screen-size'
 import { initSentry } from '../../shared/app/functions/analytics/sentry/init'
 
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
@@ -37,8 +36,6 @@ class App extends React.Component<AppProps> {
     this.componentDidMount = lifecycle.componentDidMount
     // @ts-ignore
     this.componentDidUpdate = lifecycle.componentDidUpdate
-    // @ts-ignore
-    this.screenSizeHandler = screenSizeHandler.bind(this)
   }
 
   render() {

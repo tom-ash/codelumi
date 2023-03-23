@@ -32,7 +32,7 @@ export const matchStateToRouteGeneric: MatchStateToRouteGeneric = (args) => {
   const marketingConsent = getCookieAsBool(getCookieValue('_pdpsm'))
   const consents = { statisticsConsent, marketingConsent }
 
-  dispatch({ type: 'visitor', value: { consents } })
+  dispatch({ type: 'visitor', value: consents })
 
   syncRouteData.call(this, { apiUrl, url, query, isSSR, customHeaders })
   .then((syncedRouteData: any) => { // TODO: TS!
