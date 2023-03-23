@@ -4,7 +4,7 @@ const versions = {
   '1.0': '2020.06.01',
 }
 
-const nodes = [
+export const provisions = [
   {
     item: '1.',
     tier: 'header',
@@ -134,7 +134,7 @@ const nodes = [
   {
     item: '2.2.',
     tier: 'point',
-    version: versions['1.1'],
+    version: versions['1.0'],
     pl: <span>Serwis przeznaczony jest do prezentowania artykułów dotyczących programowania komputerowego.</span>,
     en: <span>The Service is intended to present articles regarding computer programming.</span>,
   },
@@ -148,7 +148,7 @@ const nodes = [
   {
     item: '3.1.',
     tier: 'point',
-    version: versions['1.1'],
+    version: versions['1.0'],
     pl: (
       <span>
         Konto w Serwisie może założyć a) osoba fizyczna niedziałająca jako przedsiębiorca (Konto Prywatne) lub b)
@@ -280,7 +280,7 @@ const nodes = [
   {
     item: '7.3.',
     tier: 'point',
-    version: versions['1.1'],
+    version: versions['1.0'],
     pl: <span>Niniejszy Regulamin obowiązuje od dnia 1 czerwca 2021 r.</span>,
     en: <span>These Terms of Service are applicable as of 1st June 2020.</span>,
   },
@@ -305,5 +305,3 @@ const nodes = [
     ),
   },
 ]
-
-export default nodes

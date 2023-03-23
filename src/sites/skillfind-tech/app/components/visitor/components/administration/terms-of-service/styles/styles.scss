@@ -1,0 +1,5 @@
+@import '../../../../styles/administrative-document';
+
+#terms-of-service {
+  @extend %administrative-document;
+}

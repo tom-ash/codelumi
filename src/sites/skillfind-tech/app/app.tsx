@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
 const Header = loadable(() => import('./components/scaffold/header/header'))
+const Visitor = loadable(() => import('./components/visitor/visitor'))
 const User = loadable(() => import('./components/user/user'))
 const Announcement = loadable(() => import('./components/announcement/announcement'))
 const PostingIndex = loadable(() => import('./components/announcement/components/index/index'))
@@ -45,7 +46,7 @@ class App extends React.Component {
         <Header />
         {renderPostingIndex && <PostingIndex />}
         {renderPage && <Page />}
-        {/* {renderVisitor && <Visitor {...sharedProps} />} */}
+        {renderVisitor && <Visitor />}
         {renderAnnouncement && <Announcement />}
         {renderUser && <User />}
         {renderImage && <Image />}

@@ -1,0 +1,52 @@
+@import '../../../../../../styles/inputs/button';
+@import '../../../../../../../../shared/app/styles/media-breakpoints';
+
+#privacy-monit-cover {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  #privacy-monit {
+    position: relative;
+    max-width: 400px;
+    margin: auto;
+    // box-shadow: $CONTAINER_BOX_SHADOW_TYPE_THIN;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    padding: 32px;
+    font-size: 16px;
+    @media #{$LARGE-PHONE} {
+      margin-right: 32px;
+      margin-left: 32px;
+    }
+    p {
+      margin-bottom: 20px;
+      line-height: 22px;
+    }
+    .link, .button {
+      float: left;
+      width: 50%;
+    }
+    .link {
+      text-align: center;
+      line-height: 40px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .button {
+      @extend %button;
+      height: 40px;
+      .input {
+        height: 40px;
+        border-radius: 20px;
+        width: 80%;
+        font-size: 15px;
+      }
+    }
+  }
+}

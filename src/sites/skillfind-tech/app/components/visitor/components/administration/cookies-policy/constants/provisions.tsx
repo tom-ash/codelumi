@@ -4,7 +4,7 @@ const versions = {
   '1.0': '2021.06.01',
 }
 
-const nodes = [
+export const provisions = [
   {
     item: '1.',
     tier: 'header',
@@ -169,5 +169,3 @@ const nodes = [
     ),
   },
 ]
-
-export default nodes
