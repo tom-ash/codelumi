@@ -1,8 +1,6 @@
-export function loadFonts() {
-  if (typeof window === 'undefined') return
+const WebFont = require('webfontloader')
 
-  const WebFont = require('webfontloader')
-
+export const loadFonts = () => {
   WebFont.load({
     google: {
       families: ['Oswald:300'],

@@ -7,6 +7,9 @@ import { Provider } from 'react-redux'
 import { rootReducer } from '../../shared/app/functions/root-reducer/root-reducer'
 import StyleContext from 'isomorphic-style-loader-react18/StyleContext'
 import App from '../app/app'
+import { initSentry } from '../../shared/app/functions/analytics/sentry/init'
+
+initSentry()
 
 const insertCss = (...styles) => {
   const removeCss = styles.map(style => style._insertCss())

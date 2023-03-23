@@ -1,4 +1,4 @@
-function getGoogleAnalyticsMeasurementId() {
+export const getGoogleAnalyticsMeasurementId = () => {
   switch (APP_ENV) {
     case 'development':
       return 'G-V92XR2FJ9Z'
@@ -8,5 +8,3 @@ function getGoogleAnalyticsMeasurementId() {
       return ''
   }
 }
-
-export default getGoogleAnalyticsMeasurementId
