@@ -1,8 +1,10 @@
-import { useEffect } from "react"
-import { loadFonts } from "./load-fonts"
+import { useFontsFactory } from '../../../shared/app/functions/use-fonts-factory'
 
-export const useFonts = () => {
-  useEffect(() => {
-    loadFonts()
-  }, [])
+const fonts = {
+  google: {
+    families: ['Oswald:300'],
+    text: '0123456789mqszł',
+  },
 }
+
+export const useFonts = useFontsFactory(fonts)
