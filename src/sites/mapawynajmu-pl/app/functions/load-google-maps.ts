@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux'
-import { loadScript } from './load-script'
+import { loadScript } from '../../../shared/app/functions/scripts/load-script'
 
 const apiKey = 'AIzaSyAUEJ1HRdOeh_QKQTUU-sCAgnerzNJY-8k'
 

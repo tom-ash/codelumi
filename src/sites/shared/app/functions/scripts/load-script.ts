@@ -1,4 +1,4 @@
-function loadScript(url) {
+export function loadScript(url: string) {
   return new Promise((resolve, reject) => {
     let script = document.createElement('script')
     script.type = 'text/javascript'
@@ -8,5 +8,3 @@ function loadScript(url) {
     document.body.appendChild(script)
   })
 }
-
-export default loadScript

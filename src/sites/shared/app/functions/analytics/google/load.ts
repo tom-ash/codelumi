@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux'
-import loadScript from '../../scripts/load'
+import { loadScript } from '../../scripts/load-script'
 
 interface LoadGoogleAnalytics {
   (args: {
