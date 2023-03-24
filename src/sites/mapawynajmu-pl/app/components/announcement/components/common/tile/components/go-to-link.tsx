@@ -4,11 +4,10 @@ import SVG from '../../../../../../../../shared/app/components/support/svg/svg'
 interface GoToLinkProps {
   name: string
   link: string
-  langHandler: LangHandler
 }
 
 const GoToLink = (props: GoToLinkProps) => {
-  const { name, link, langHandler } = props
+  const { name, link } = props
 
   return (
     <div className='go-to-link'>
@@ -20,8 +19,8 @@ const GoToLink = (props: GoToLinkProps) => {
         href={link}
         target='_blank'
       >
-        {/* @ts-ignore */}
-        {langHandler({ pl: 'Idź do', en: 'Go to' })} {name}
+        {/* TODO: LANG! */}
+        Idź do
       </a>
     </div>
   )

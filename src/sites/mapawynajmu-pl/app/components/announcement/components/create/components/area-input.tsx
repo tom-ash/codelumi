@@ -4,28 +4,23 @@ import { ManagedText } from 'managed-inputs'
 type AreaInputProps = {
   area: number
   setInputs(attrs: { area: number }): void
-  langHandler: LangHandler
 }
 
 export function AreaInput(props: AreaInputProps) {
-  const { area, setInputs, langHandler } = props
+  const { area, setInputs } = props
 
   const classNames = { container: 'text-input area' }
-  // @ts-ignore
-  const label = langHandler({ pl: 'Powierzchnia', en: 'Area' })
+  
+  // TODO: LANG!
+  const label = 'Powierzchnia'
   const value = area
   const type = 'number'
   const children = (
     <div className='sqm'>
       {/* @ts-ignore */}
-      {langHandler({
-        pl: (
-          <>
-            m<sup>2</sup>
-          </>
-        ),
-        en: 'sqm',
-      })}
+      {<>
+        m<sup>2</sup>
+      </>}
     </div>
   )
   const onChange = (area: number) => setInputs({ area })

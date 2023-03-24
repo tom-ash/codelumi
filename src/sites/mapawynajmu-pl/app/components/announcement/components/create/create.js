@@ -11,7 +11,6 @@ import Success from './components/success/success'
 import Spinner from '../../../support/components/spinner/components/windmill/windmill'
 import * as lifecycle from './functions/lifecycle'
 import * as managers from './functions/managers'
-import { langHandler } from '../../../../functions/lang-handler'
 import { ManagedButton } from 'managed-inputs'
 import { publish } from './components/publishing/functions/publish'
 import { validatePictures } from './components/pictures/functions/validate-pictures'
@@ -33,7 +32,6 @@ class AnnouncementCreate extends React.Component {
     this.userCreateNode = React.createRef()
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
-    this.langHandler = langHandler.bind(this)
     this.addAnnouncementManager = managers.addAnnouncementManager.bind(this)
     this.validatePictures = validatePictures.bind(this)
     this.validateMap = validateMap.bind(this)
@@ -68,18 +66,15 @@ class AnnouncementCreate extends React.Component {
       setControl,
       setInputs,
     }
-    const headerText = this.langHandler(H1)
 
     const categoryProps = {
       currentCategory: category,
       setInputs,
-      langHandler: this.langHandler,
     }
 
     const areaInputProps = {
       area,
       setInputs,
-      langHandler: this.langHandler,
     }
 
     const descriptionProps = {
@@ -107,7 +102,8 @@ class AnnouncementCreate extends React.Component {
       >
         {(renderForm || renderEdit) && (
           <div id='listing-new-form'>
-            <h1>{headerText}</h1>
+            {/* TODO: LANG! */}
+            <h1>{H1['pl']}</h1>
             <Line />
             <form>
               <Category {...categoryProps} />
@@ -119,7 +115,7 @@ class AnnouncementCreate extends React.Component {
               <div id='listing-create-additional'>
                 <Heading
                   tier={2}
-                  text={this.langHandler(ADDITIONAL_DATA_HEADER)}
+                  text={ADDITIONAL_DATA_HEADER['pl']}
                 />
                 <AreaInput {...areaInputProps} />
                 <Additional />
@@ -133,10 +129,7 @@ class AnnouncementCreate extends React.Component {
                 <div id='listing-new-user'>
                   <Heading
                     tier={2}
-                    text={this.langHandler({
-                      pl: 'Dane konta (wymagane)',
-                      en: 'Account Data (required)',
-                    })}
+                    text={'Dane konta (wymagane)'} // TODO: LANG!
                   />
                   <UserNew />
                 </div>

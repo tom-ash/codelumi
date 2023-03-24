@@ -18,12 +18,12 @@ export function rentAmountManager() {
 
   const { category, setInputs } = this.props
 
-  let label = this.langHandler(text)
+  let label = text['pl']
 
   const rentAmountType = [0, 1, 6, 7].indexOf(category) !== -1 ? 'netRentAmount' : 'grossRentAmount'
 
   if (rentAmountType === 'netRentAmount') {
-    label = this.langHandler({ pl: 'Miesięczna cena netto', en: 'Monthly Net Price' })
+    label = { pl: 'Miesięczna cena netto', en: 'Monthly Net Price' }['pl']
   }
 
   return {
@@ -64,9 +64,9 @@ export function roomsManager() {
 
   const { category } = this.props
 
-  let label = this.langHandler(text)
+  let label = text['pl']
 
-  if (category === 2) label = this.langHandler({ pl: 'Liczba pokoi', en: 'Rooms Amount' })
+  if (category === 2) label = { pl: 'Liczba pokoi', en: 'Rooms Amount' }['pl']
 
   return {
     classNames: { container: 'select-element' },
@@ -98,7 +98,7 @@ export function floorManager() {
       </>
     ),
     value: this.props.floor,
-    label: this.langHandler(text),
+    label: text['pl'],
     options: this.floorsProvider(),
     onSelect: option => {
       this.onSelectHandler('floor', option.value)
@@ -119,7 +119,7 @@ export function totalFloorsManager() {
       </>
     ),
     value: this.props.totalFloors,
-    label: this.langHandler(text),
+    label: text['pl'],
     options: numberOptionsProvider(99),
     onSelect: option => {
       this.onSelectHandler('totalFloors', option.value)

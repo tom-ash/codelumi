@@ -2,7 +2,7 @@ import React from 'react'
 import Spinner from '../../../../../../support/components/spinner/components/windmill/windmill'
 import scrollToTop from '../../../../../../../functions/scrollers/instant-scroll'
 
-export function OffsetSwitcher({ langHandler, setInputs, setControl, offset, amount, classNames, scrollTop }) {
+export function OffsetSwitcher({ setInputs, setControl, offset, amount, classNames, scrollTop }) {
   let className = 'offset-switcher'
   if (classNames) className += ` ${classNames}`
 
@@ -33,7 +33,7 @@ export function OffsetSwitcher({ langHandler, setInputs, setControl, offset, amo
         ></div>
       )}
       <div className='text'>
-        {offsetCounter(offset, amount)} {langHandler({ pl: 'z', en: 'of' })} {amount}
+        {offsetCounter(offset, amount)} {{ pl: 'z', en: 'of' }['pl']} {amount}
       </div>
       {offset + 50 < amount && (
         <div

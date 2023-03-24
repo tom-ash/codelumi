@@ -17,15 +17,14 @@ const INFO = {
 type CategoryProps = {
   currentCategory: number
   setInputs(params: { category: number }): void
-  langHandler: LangHandler
 }
 
 export function Category(props: CategoryProps) {
-  const { currentCategory, setInputs, langHandler } = props
+  const { currentCategory, setInputs } = props
 
   const infoProps = {
     // @ts-ignore
-    message: langHandler(INFO),
+    message: INFO['pl'],
   }
 
   return (
@@ -34,7 +33,7 @@ export function Category(props: CategoryProps) {
       <Heading
         tier={2}
         // @ts-ignore
-        text={langHandler(HEADING)}
+        text={HEADING['pl']}
       />
       <Info {...infoProps} />
       <div className='categories'>
@@ -45,7 +44,7 @@ export function Category(props: CategoryProps) {
             value,
           } = category
           // @ts-ignore
-          const label = langHandler(labelLangObj)
+          const label = labelLangObj['pl']
           const classNames = ['tile']
           if (currentCategory === value) {
             classNames.push('selected')

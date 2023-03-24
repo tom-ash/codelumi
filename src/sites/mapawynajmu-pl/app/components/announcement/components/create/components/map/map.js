@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { langHandler } from '../../../../../../functions/lang-handler'
 import { validateMap } from './functions/validate-map'
 import * as lifecycle from './functions/lifecycle'
 import { AddressInput } from './components/address-input/address-input'
@@ -22,7 +21,6 @@ const INFO = {
 class AnnouncementCreatMap extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langHandler.bind(this)
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
@@ -41,10 +39,10 @@ class AnnouncementCreatMap extends React.Component {
     const { setInputs, setErrors } = this.props
     const headingProps = {
       tier: 2,
-      text: this.langHandler(HEADING),
+      text: HEADING['pl'],
     }
     const infoProps = {
-      message: this.langHandler(INFO),
+      message: INFO['pl'],
     }
 
     return (
@@ -59,7 +57,6 @@ class AnnouncementCreatMap extends React.Component {
             autocompleteInput={this.state.autocompleteInput}
             autocompletes={this.state.autocompletes}
             setState={this.setStore}
-            langHandler={this.langHandler}
             showAutocompletes={showAutocompletes}
             setInputs={setInputs}
             setErrors={setErrors}
@@ -86,7 +83,7 @@ class AnnouncementCreatMap extends React.Component {
             className={this.props.error.pl ? 'map-error' : ''}
           />
         </div>
-        <div className='error'>{this.langHandler(this.props.error)}</div>
+        <div className='error'>{this.props.error && this.props.error['pl']}</div>
       </div>
     )
   }

@@ -3,12 +3,10 @@ import ManagedSlider from '../../../../../../support/components/managed-slider/m
 import { ManagedLink } from 'managed-inputs'
 import { getDerivedStateFromProps } from './functions/get-derived-state-from-props'
 import SVG from '../../../../../../support/components/svg/svg'
-import { langHandler } from '../../../../../../../functions/lang-handler'
 
 class AnnouncementShowPictures extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langHandler.bind(this)
     this.state = {
       pictures: [],
     }

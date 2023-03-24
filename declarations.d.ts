@@ -7,8 +7,6 @@ declare module 'isomorphic-style-loader-react18/withStyles'
 declare module 'isomorphic-style-loader-react18/useStyles'
 declare module 'managed-inputs'
 
-type LangHandler = (this: React.ClassicComponent<{ lang: 'pl' | 'en' }>, langObject: LangObject) => string
-
 type LangObject = {
   pl: string
   en: string

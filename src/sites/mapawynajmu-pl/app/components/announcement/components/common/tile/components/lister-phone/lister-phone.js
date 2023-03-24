@@ -4,7 +4,7 @@ import SVG from '../../../../../../support/components/svg/svg'
 import { sendAnalyticsEvent } from '../../../../../../../functions/google-analytics/send-analytics-event'
 import styles from './styles/styles.scss'
 
-const ListerPhone = ({ announcerPhone, togglePhone, langHandler, announcementId, venue }) => {
+const ListerPhone = ({ announcerPhone, togglePhone, announcementId, venue }) => {
   return (
     <div id='showcase'>
       <div className='lister-phone'>
@@ -24,7 +24,8 @@ const ListerPhone = ({ announcerPhone, togglePhone, langHandler, announcementId,
                 togglePhone(e, venue)
               }}
             >
-              {langHandler({ pl: 'Pokaż', en: 'Show' })}
+              {/* TODO: LANG! */}
+              Pokaż
             </u>
           )}
         </div>

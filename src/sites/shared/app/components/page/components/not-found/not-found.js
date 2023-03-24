@@ -6,8 +6,6 @@ class PageNotFound extends React.Component {
   }
 
   render() {
-    const { langHandler } = this.props
-
     return (
       <div id='not-found'>
         <div className='inner'>

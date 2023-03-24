@@ -13,10 +13,10 @@ export const ButtonSpinner = (props: ButtonSpinnerProps) => {
 }
 
 // @ts-ignore
-function ButtonSpinnerDeprecated({ connecting, label, langHandler }) {
+function ButtonSpinnerDeprecated({ connecting, label }) {
   if (connecting) return <Spinner spinnerClass='button-spinner' />
 
-  return langHandler(label)
+  return label['pl']
 }
 
 export default ButtonSpinnerDeprecated

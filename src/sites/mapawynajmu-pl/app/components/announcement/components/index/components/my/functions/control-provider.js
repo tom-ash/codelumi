@@ -10,27 +10,27 @@ export function controlProvider(announcement, index) {
     <div className='control'>
       <div className='info'>
         <div>
-          {this.langHandler({ pl: 'Data utworzenia', en: 'Crated at' })}{' '}
+          {{ pl: 'Data utworzenia', en: 'Crated at' }['pl']}{' '}
           <strong>{announcement.createdAt.slice(0, 10)}</strong>
         </div>
       </div>
       <div className='info'>
         <div>
-          {this.langHandler({ pl: 'Liczba odwiedzin', en: 'Visitors' })} <strong>{announcement.views}</strong>
+          {{ pl: 'Liczba odwiedzin', en: 'Visitors' }['pl']} <strong>{announcement.views}</strong>
         </div>
       </div>
       <div className='info'>
         <div>
-          {this.langHandler({ pl: 'Aktywne do ', en: 'Active until ' })}{' '}
+          {{ pl: 'Aktywne do ', en: 'Active until ' }['pl']}{' '}
           <strong>{announcement.activeUntil.slice(0, 10)}</strong>
         </div>
         {this.buttonProvider('Przedłuż', 'Extend', announcement, index, this.extend, ' extend')}
       </div>
       <div className='info'>
         {announcement.visible ? (
-          <span>{this.langHandler({ pl: 'Widoczne', en: 'Visible' })}</span>
+          <span>{{ pl: 'Widoczne', en: 'Visible' }['pl']}</span>
         ) : (
-          <span>{this.langHandler({ pl: 'Ukryte', en: 'Hidden' })}</span>
+          <span>{{ pl: 'Ukryte', en: 'Hidden' }['pl']}</span>
         )}
         {announcement.visible
           ? this.buttonProvider('Ukryj', 'Hide', announcement, index, this.triggerVisible, ' hide-show')

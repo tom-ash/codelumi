@@ -5,7 +5,6 @@ import * as lifecycle from './functions/lifecycle'
 import ListingTile from '../../../common/tile/tile'
 import drawPins from '../../../../functions/map/pins/draw-pins'
 import redrawPins from '../../../../functions/map/pins/redraw-pins'
-import { langHandler } from '../../../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 
@@ -18,7 +17,6 @@ class AnnouncementIndexMap extends React.Component {
     this.componentWillUnmount = lifecycle.componentWillUnmount
     this.drawPins = drawPins.bind(this)
     this.redrawPins = redrawPins.bind(this)
-    this.langHandler = langHandler.bind(this)
   }
 
   render() {
@@ -74,7 +72,6 @@ class AnnouncementIndexMap extends React.Component {
                     grossRentAmount={announcement.grossRentAmount}
                     rentCurrency={announcement.rentCurrency}
                     lang={lang}
-                    langHandler={this.langHandler}
                     setData={setData}
                     setControl={setControl}
                     isMobile={isMobile}
@@ -115,7 +112,7 @@ class AnnouncementIndexMap extends React.Component {
                 title={tile.title}
                 locality={tile.locality}
                 sublocality={tile.sublocality}
-                description={this.langHandler({ pl: tile.polishDescription, en: tile.englishDescription })}
+                description={{ pl: tile.polishDescription, en: tile.englishDescription }[lang]}
                 name={tile.name}
                 link={tile.link}
                 phone={tile.phone}

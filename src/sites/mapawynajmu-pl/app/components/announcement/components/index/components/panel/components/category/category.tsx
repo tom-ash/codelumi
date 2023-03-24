@@ -6,11 +6,11 @@ import { changeUrl } from '../../../../../../../../../../shared/app/functions/ro
 
 // @ts-ignore
 export const Category = props => {
-  const { langHandler, currentCategory, links } = props
+  const { currentCategory, links } = props
 
   const options = categories.map(category => ({
     value: category.value,
-    text: langHandler(category.label),
+    text: category.label['pl'],
     linkTrack: category.linkTrack,
   }))
 
@@ -22,7 +22,7 @@ export const Category = props => {
 
   const categoriesProps = {
     classNames: { container: 'filter' },
-    label: currentCategory === null ? langHandler({ pl: 'Kategoria', en: 'Category' }) : '',
+    label: currentCategory === null ? { pl: 'Kategoria', en: 'Category' }['pl'] : '',
     value: currentCategory === null ? '' : currentCategory,
     options,
     onFocusCoverZIndex: 998,

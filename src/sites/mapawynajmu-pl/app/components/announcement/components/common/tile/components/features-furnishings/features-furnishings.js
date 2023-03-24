@@ -1,5 +1,4 @@
 import React from 'react'
-import { langHandler } from '../../../../../../../functions/lang-handler'
 import { features } from '../../../../../constants/features'
 import { furnishings } from '../../../../../constants/furnishings'
 import SVG from '../../../../../../support/components/svg/svg'
@@ -9,7 +8,6 @@ import { FEATURES_HEADER, FURNISHINGS_HEADER } from './constants/texts'
 class AnnouncementShowFeaturesFurnishings extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langHandler.bind(this)
   }
 
   render() {
@@ -23,7 +21,7 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
       <div className='features'>
         <Heading
           tier={2}
-          text={this.langHandler(headerText)}
+          text={headerText['pl']} // TODO: LANG!
         />
         {items &&
           items.map(item => (
@@ -34,7 +32,8 @@ class AnnouncementShowFeaturesFurnishings extends React.Component {
               <div className='icon'>
                 <SVG name='check' />
               </div>
-              <div className='text'>{this.langHandler(nodes.find(node => node.ref === item))}</div>
+              {/* TODO: LANG! */}
+              <div className='text'>{nodes.find(node => node.ref === item)['pl']}</div>
               <div className='float-clear' />
             </div>
           ))}

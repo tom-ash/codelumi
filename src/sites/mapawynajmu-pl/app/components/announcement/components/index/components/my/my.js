@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { langHandler } from '../../../../../../functions/lang-handler'
 import * as managers from './functions/managers'
 import Tile from '../../../common/tile/tile'
 import { controlProvider } from './functions/control-provider'
@@ -17,7 +16,6 @@ import { ManagedButton } from 'managed-inputs'
 class AnnouncementIndexMy extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langHandler.bind(this)
     this.controlProvider = controlProvider.bind(this)
     this.buttonProvider = buttonProvider.bind(this)
     this.edit = edit.bind(this)
@@ -32,8 +30,8 @@ class AnnouncementIndexMy extends React.Component {
     const { amount, offset, lang } = this.props
 
     const toValue = offset + 10 < amount ? offset + 10 : amount
-    let whichAnnouncements = `${offset + 1} - ${toValue} ${this.langHandler({ pl: 'z', en: 'of' })}`
-    if (offset + 1 === amount) whichAnnouncements = `${offset + 1} ${this.langHandler({ pl: 'z', en: 'of' })}`
+    let whichAnnouncements = `${offset + 1} - ${toValue} ${{ pl: 'z', en: 'of' }['pl']}`
+    if (offset + 1 === amount) whichAnnouncements = `${offset + 1} ${{ pl: 'z', en: 'of' }['pl']}`
 
     const tileComponents = {
       showPrimary: false,
@@ -42,17 +40,17 @@ class AnnouncementIndexMy extends React.Component {
     return (
       <div id='listing-index-user'>
         <h1>
-          <span>{this.langHandler({ pl: 'Moje ogłoszenia', en: 'My announcements' })}</span>
+          <span>{{ pl: 'Moje ogłoszenia', en: 'My announcements' }['pl']}</span>
         </h1>
         {this.props.beingDeleted && (
           <div className='destroy'>
             <div className='cover' />
             <div className='monit'>
               <div className='text'>
-                {this.langHandler({
+                {{
                   pl: `Usunięte ogłoszenie nie może być przywrócone. Czy na pewno chcesz usunąć ogłoszenie Nr ${this.props.beingDeleted}. `,
                   en: `The deleted announcement cannot be restored. Are you sure you want to delete the announcement No. ${this.props.beingDeleted}`,
-                })}
+                }['pl']}
               </div>
               <ManagedButton {...this.cancelDestroyManager()} />
               <ManagedButton {...this.destroyManager()} />

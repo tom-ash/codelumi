@@ -27,7 +27,7 @@ export function componentDidUpdate(prevProps) {
         return queryParamValue !== ''
       })
       .map(filteredQueryAttr => {
-        const queryParam = this.langHandler(queryParamMappings[filteredQueryAttr])
+        const queryParam = queryParamMappings[filteredQueryAttr]['pl']
         const queryParamValue = this.props[filteredQueryAttr]
 
         return `${queryParam}=${queryParamValue}`

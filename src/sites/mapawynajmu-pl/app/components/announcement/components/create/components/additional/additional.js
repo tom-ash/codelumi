@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import { ManagedText, ManagedSelect } from 'managed-inputs'
 import * as managers from './functions/managers'
-import { langHandler } from '../../../../../../functions/lang-handler'
 import { onSelectHandler } from './functions/on-select-handler'
 import { floorsProvider } from './functions/floors-provider'
 import NameInput from './components/name'
@@ -26,7 +25,6 @@ const showLink = category => [6, 7].includes(category)
 class AnnouncementCreateAdditional extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langHandler.bind(this)
     this.roomsManager = managers.roomsManager.bind(this)
     this.floorManager = managers.floorManager.bind(this)
     this.totalFloorsManager = managers.totalFloorsManager.bind(this)

@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { ManagedCheckbox, ManagedMultipleCheckbox } from 'managed-inputs'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { langHandler } from '../../../../../../functions/lang-handler'
 import { addFurnishingsManager, furnishingsManager } from './functions/managers'
 
 class AnnouncementCreateFurnishings extends React.Component {
@@ -10,7 +9,6 @@ class AnnouncementCreateFurnishings extends React.Component {
     super(props)
     this.addFurnishingsManager = addFurnishingsManager.bind(this)
     this.furnishingsManager = furnishingsManager.bind(this)
-    this.langHandler = langHandler.bind(this)
   }
 
   render() {
@@ -24,10 +22,10 @@ class AnnouncementCreateFurnishings extends React.Component {
         {addFurnishings && (
           <>
             <div className='hint'>
-              {this.langHandler({
+              {{
                 pl: 'Elementy wybrane z listy dodawane są automatycznie w językach polskim oraz angielskim.',
                 en: 'Elements selected from the list are automatically added in Polish and English languages.',
-              })}
+              }['pl']}
             </div>
             <div className='box-with-scroll'>
               <div className='box'>

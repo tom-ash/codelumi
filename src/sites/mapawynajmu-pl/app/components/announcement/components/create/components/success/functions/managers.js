@@ -18,7 +18,7 @@ export function shareOnFacebookManager() {
         <div className='button'>
           <SVG name='facebook' />
         </div>
-        <div className='text'>{this.langHandler({ pl: "Udostępnij na Facebook'u", en: 'Share on Facebook' })}</div>
+        <div className='text'>{{ pl: "Udostępnij na Facebook'u", en: 'Share on Facebook' }['pl']}</div>
       </>
     ),
     onClick: () => shareOnFacebook(href, isMobile),

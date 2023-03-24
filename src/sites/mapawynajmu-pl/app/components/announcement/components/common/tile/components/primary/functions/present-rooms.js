@@ -1,4 +1,7 @@
-export function presentRooms({ rooms, category }) {
+export function presentRooms(props) {
+  console.log(props)
+  const { rooms, category } = props
+
   if (category === 2) {
     if (rooms === 1) return { pl: 'pokój', en: 'room' }
     if ([2, 3, 4].indexOf(rooms % 10) !== -1) return { pl: 'pokoje', en: 'rooms' }
@@ -10,4 +13,6 @@ export function presentRooms({ rooms, category }) {
 
     return { pl: 'pomieszczeń', en: 'rooms' }
   }
+
+  console.log("HERE")
 }

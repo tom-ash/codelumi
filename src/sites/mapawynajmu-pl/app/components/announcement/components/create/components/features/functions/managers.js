@@ -10,10 +10,10 @@ export function addFeaturesManager() {
   return {
     classNames: { container: 'form-input checkbox add-switcher' },
     checked: addFeatures,
-    label: this.langHandler({
+    label: {
       pl: 'Dodaj Zalety',
       en: 'Add Features',
-    }),
+    }['pl'],
     onClick: value => {
       setInputs({ addFeatures: value })
       sendGaEvent(FEATURES_SHOWN_EVENT)

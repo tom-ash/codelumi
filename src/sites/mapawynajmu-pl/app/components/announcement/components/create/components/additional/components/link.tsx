@@ -4,7 +4,6 @@ import { ManagedText } from 'managed-inputs'
 type LinkInputProps = {
   link: string
   setInputs(attrs: { link: string }): void
-  langHandler: LangHandler
 }
 
 export function LinkInput(props: LinkInputProps) {

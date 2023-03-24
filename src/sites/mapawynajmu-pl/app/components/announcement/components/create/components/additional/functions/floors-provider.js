@@ -1,8 +1,8 @@
 export function floorsProvider() {
   const floors = [
     { value: '', text: '' },
-    { value: -1, text: this.langHandler({ pl: 'Podziemie', en: 'Underground' }) },
-    { value: 0, text: this.langHandler({ pl: 'Parter', en: 'Groundfloor' }) },
+    { value: -1, text: 'Podziemie' }, // TODO: LANG! 'Underground'
+    { value: 0, text: 'Parter' }, // TODO: LANG! 'Groundfloor'
   ]
 
   return floors.concat(

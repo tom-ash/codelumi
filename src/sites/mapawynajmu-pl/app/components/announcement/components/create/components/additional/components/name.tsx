@@ -4,7 +4,6 @@ import { ManagedText } from 'managed-inputs'
 type NameInputProps = {
   name: string
   setInputs(attrs: { name: string }): void
-  langHandler: LangHandler
 }
 
 export function NameInput(props: NameInputProps) {

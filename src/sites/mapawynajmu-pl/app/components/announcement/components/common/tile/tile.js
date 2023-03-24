@@ -9,7 +9,6 @@ const Pictures = loadable(() => import('./components/pictures/pictures'))
 const PrimaryData = loadable(() => import('./components/primary/primary'))
 const Items = loadable(() => import('./components/features-furnishings/features-furnishings'))
 const Description = loadable(() => import('./components/description/description'))
-import { langHandler } from '../../../../../functions/lang-handler'
 import { togglePhone } from '../../../functions/toggle-phone'
 import { buildUrl } from '../../../../../../shared/functions/builders/url'
 import { markListingAsViewed } from '../../../functions/mark-as-viewed'
@@ -19,7 +18,6 @@ class AnnouncementTile extends React.Component {
   constructor(props) {
     super(props)
     this.container = React.createRef()
-    this.langHandler = langHandler.bind(this)
     this.togglePhone = togglePhone.bind(this)
     this.state = {
       fullPhone: null,
@@ -35,7 +33,6 @@ class AnnouncementTile extends React.Component {
   }
 
   render() {
-    const langHandler = this.langHandler
     const {
       lang,
       venue,
@@ -79,21 +76,18 @@ class AnnouncementTile extends React.Component {
       announcementId: id,
       venue,
       togglePhone: this.togglePhone,
-      langHandler,
     }
     const goToLinkProps = {
       name,
       link,
-      langHandler: this.langHandler,
     }
-    const description = this.props.description || this.langHandler({ pl: polishDescription, en: englishDescription })
+    const description = this.props.description || polishDescription // TODO: LANG!
     const headingProps = {
       name,
       category,
       locality,
       sublocality,
       lang,
-      langHandler: this.langHandler,
     }
     const linkProps = {
       id,

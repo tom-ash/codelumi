@@ -10,10 +10,10 @@ export function addFurnishingsManager() {
   return {
     classNames: { container: 'form-input checkbox add-switcher' },
     checked: addFurnishings,
-    label: this.langHandler({
+    label: {
       pl: 'Dodaj Wyposażenie',
       en: 'Add Furnishings',
-    }),
+    }['pl'],
     onClick: value => {
       setInputs({ addFurnishings: value })
       sendGaEvent(FURNISHINGS_SHOWN_EVENT)

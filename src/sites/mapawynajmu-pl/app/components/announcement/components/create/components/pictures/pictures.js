@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { langHandler } from '../../../../../../functions/lang-handler'
 import * as lifecycle from './functions/lifecycle'
 import { addFiles } from './functions/add-files'
 import { addPicture } from './functions/add-picture'
@@ -27,7 +26,6 @@ const INFO = {
 class AnnouncementCreatePictures extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langHandler.bind(this)
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.addFiles = addFiles.bind(this)
     this.addPicture = addPicture.bind(this)
@@ -38,10 +36,10 @@ class AnnouncementCreatePictures extends React.Component {
   render() {
     const headingProps = {
       tier: 2,
-      text: this.langHandler(HEADING),
+      text: HEADING['pl'],
     }
     const infoProps = {
-      message: this.langHandler(INFO),
+      message: INFO['pl'],
     }
 
     return (
@@ -63,13 +61,13 @@ class AnnouncementCreatePictures extends React.Component {
             ></input>
           </div>
           <p>
-            {this.langHandler({
+            {{
               pl: 'Kliknij w ikonę aparatu, aby wybrać zdjęcia.',
               en: 'Click the camera to select pictures.',
-            })}
+            }['pl']}
           </p>
         </div>
-        <div className='error'>{this.langHandler(this.props.error)}</div>
+        <div className='error'>{this.props.error && this.props.error['pl']}</div>
 
         <div></div>
         <div>

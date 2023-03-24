@@ -1,14 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { langHandler } from '../../../../../../functions/lang-handler'
 import { ManagedCheckbox, ManagedMultipleCheckbox } from 'managed-inputs'
 import { addFeaturesManager, featuresManager } from './functions/managers'
 
 class AnnouncementCreateFeatures extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langHandler.bind(this)
     this.addFeaturesManager = addFeaturesManager.bind(this)
     this.featuresManager = featuresManager.bind(this)
   }
@@ -21,10 +19,10 @@ class AnnouncementCreateFeatures extends React.Component {
         {addFeatures && (
           <>
             <div className='hint'>
-              {this.langHandler({
+              {{
                 pl: 'Elementy wybrane z listy dodawane są automatycznie w języku polskim oraz angielskim.',
                 en: 'Elements selected from the list are automatically added in Polish and English languages.',
-              })}
+              }['pl']}
             </div>
             <div className='box-with-scroll'>
               <div className='box'>

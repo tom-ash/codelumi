@@ -5,7 +5,6 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import AnnouncementIndexPanel from './components/panel/panel'
 import AnnouncementIndexMap from './components/map/map'
 const AnnouncementIndexMy = loadable(() => import('./components/my/my'))
-import { langHandler } from '../../../../functions/lang-handler'
 import { parseCurrency } from '../../functions/currency-parsers'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
@@ -14,7 +13,6 @@ import { componentDidUpdate } from './functions/lifecycle'
 class AnnouncementIndexSearch extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langHandler.bind(this)
     this.parseCurrency = parseCurrency.bind(this)
     this.componentDidUpdate = componentDidUpdate
   }

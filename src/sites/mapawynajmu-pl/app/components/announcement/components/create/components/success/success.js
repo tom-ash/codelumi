@@ -1,7 +1,6 @@
 import React from 'react'
 import { ManagedLink } from 'managed-inputs'
 import { shareOnFacebookManager } from './functions/managers'
-import { langHandler } from '../../../../../../functions/lang-handler'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import { Heading } from '../../../../../support/components/heading'
@@ -11,7 +10,6 @@ import { Line } from '../../../../../support/components/line/line'
 class AnnouncementCreateSuccess extends React.Component {
   constructor(props) {
     super(props)
-    this.langHandler = langHandler.bind(this)
     this.shareOnFacebookManager = shareOnFacebookManager.bind(this)
   }
 
@@ -20,13 +18,13 @@ class AnnouncementCreateSuccess extends React.Component {
       <div id='success-container'>
         <Heading
           tier={1}
-          text={this.langHandler(PAGE_HEADER)}
+          text={PAGE_HEADER['pl']}
           svg='checkSquare'
         />
         <Line />
         <div className='further-steps'>
-          <div className='congratulations'>{this.langHandler(CONGRATULATIONS_TEXT)}</div>
-          <div className='share-on-facebook-text'>{this.langHandler(SHARE_ON_FACEBOOK_TEXT)}</div>
+          <div className='congratulations'>{CONGRATULATIONS_TEXT['pl']}</div>
+          <div className='share-on-facebook-text'>{SHARE_ON_FACEBOOK_TEXT['pl']}</div>
           <ManagedLink {...this.shareOnFacebookManager()} />
         </div>
       </div>

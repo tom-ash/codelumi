@@ -4,7 +4,7 @@ import { analyticEvent } from '../constants/analytic-event'
 export function addAnnouncementManager() {
   return {
     classNames: { container: 'submit-button' },
-    label: this.langHandler({ pl: 'Dodaj ogłoszenie', en: 'Add Announcement' }),
+    label: { pl: 'Dodaj ogłoszenie', en: 'Add Announcement' }['pl'],
     onClick: () => {
       this.publish()
       sendGaEvent(analyticEvent)
