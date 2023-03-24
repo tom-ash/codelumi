@@ -1,5 +1,5 @@
 import React from 'react'
-import SVG from '../../../svg/svg'
+import { SVG } from '../../../svg/svg'
 
 interface TitleBoardProps {
   imageSrc?: string
@@ -27,7 +27,6 @@ const Author = (props: { authorName: string; authorLink: string }) => {
   return (
     <div className='author'>
       <div className='name'>
-        {/* @ts-ignore */}
         <SVG name='penClip' />
         <a
           href={authorLink}

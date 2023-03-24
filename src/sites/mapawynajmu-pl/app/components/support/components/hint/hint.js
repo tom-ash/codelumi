@@ -1,5 +1,5 @@
 import React from 'react'
-import SVG from '../../../support/components/svg/svg'
+import { SVG } from '../../../../../../shared/app/components/support/svg/svg'
 
 const Hint = ({ svg, text, classNames }) => {
   const icon = svg ? (

@@ -1,7 +1,5 @@
 import React from 'react'
 import { ManagedLink } from 'managed-inputs'
-import prettifyDate from '../../../../../functions/time/prettify-date'
-import SVG from '../../../../support/svg/svg'
 import { changeUrl } from '../../../../../functions/routes/changers/change-url'
 
 interface IndexLinkProps {

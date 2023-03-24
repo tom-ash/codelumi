@@ -1,5 +1,5 @@
 import React from 'react'
-import SVG from '../../../../../../../../shared/app/components/support/svg/svg'
+import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
 
 interface GoToLinkProps {
   name: string
@@ -12,7 +12,6 @@ const GoToLink = (props: GoToLinkProps) => {
   return (
     <div className='go-to-link'>
       <div className='icon'>
-        {/* @ts-ignore */}
         <SVG name='globe' />
       </div>
       <a

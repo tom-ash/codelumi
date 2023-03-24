@@ -1,5 +1,5 @@
 import React from 'react'
-import SVG from '../../../../../../support/components/svg/svg'
+import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
 import { shareOnFacebook } from '../../../../../functions/share-on-facebook'
 import { buildUrl } from '../../../../../../../../shared/functions/builders/url'
 

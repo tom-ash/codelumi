@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import SVG from '../../../../../mapawynajmu-pl/app/components/support/components/svg/svg'
+import { SVG } from '../../../../../shared/app/components/support/svg/svg'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { changeUrl } from '../../../functions/routes/changers/change-url'
@@ -54,7 +54,6 @@ export const LangSwitch = () => {
         className={currentClasses.join(' ')}
         onClick={() => setShowLangs(!showLangs)}
       >
-        {/* @ts-ignore */}
         {lang} <SVG name='chevron' />
       </div>
       {showLangs && (

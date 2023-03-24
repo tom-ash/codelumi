@@ -1,7 +1,7 @@
 import React from 'react'
 import { features } from '../../../../../constants/features'
 import { furnishings } from '../../../../../constants/furnishings'
-import SVG from '../../../../../../support/components/svg/svg'
+import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
 import { Heading } from '../../../../../../support/components/heading'
 import { FEATURES_HEADER, FURNISHINGS_HEADER } from './constants/texts'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import SVG from '../../../../../../../../shared/app/components/support/svg/svg'
+import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
 import centerMap from '../../../index/components/map/functions/center-map'
 import { buildUrl } from '../../../../../../../shared/functions/builders/url'
 import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
@@ -20,7 +20,6 @@ const GoBack = (props: GoBackProps) => {
       }}
       className='go-back-to-list'
     >
-      {/* @ts-ignore */}
       <SVG name='arrowRight' />
     </button>
   )

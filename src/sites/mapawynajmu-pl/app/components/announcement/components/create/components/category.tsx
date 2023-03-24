@@ -1,6 +1,6 @@
 import React from 'react'
 import { categories } from '../../../constants/categories'
-import SVG from '../../../../../../../shared/app/components/support/svg/svg'
+import { SVG } from '../../../../../../../shared/app/components/support/svg/svg'
 import Info from '../../../../../../../shared/app/components/support/info'
 import { Heading } from '../../../../support/components/heading'
 
@@ -59,7 +59,6 @@ export function Category(props: CategoryProps) {
               }}
             >
               <div className='icon'>
-                {/* @ts-ignore */}
                 <SVG name={name} />
               </div>
               <div className='label'>{label}</div>

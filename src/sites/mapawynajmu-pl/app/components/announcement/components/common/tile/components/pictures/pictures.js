@@ -2,7 +2,7 @@ import React from 'react'
 import ManagedSlider from '../../../../../../support/components/managed-slider/managed-slider'
 import { ManagedLink } from 'managed-inputs'
 import { getDerivedStateFromProps } from './functions/get-derived-state-from-props'
-import SVG from '../../../../../../support/components/svg/svg'
+import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
 
 class AnnouncementShowPictures extends React.Component {
   constructor(props) {
