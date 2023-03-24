@@ -1,14 +1,5 @@
-import { useContext, useEffect } from "react"
-import { ReactReduxContext } from "react-redux"
-import { loadGoogleMaps } from "./load-google-maps"
+import { useGoogleMapsFactory } from "../../../shared/app/functions/use-google-maps-factory"
 
-export const useGoogleMaps = () => {
-  const { store } = useContext(ReactReduxContext)
-  const { getState, dispatch } = store
-  const { app } = getState()
-  const { scripts } = app
+const apiKey = 'AIzaSyAUEJ1HRdOeh_QKQTUU-sCAgnerzNJY-8k'
 
-  useEffect(() => {
-    loadGoogleMaps({ scripts, dispatch })
-  }, [])
-}
+export const useGoogleMaps = useGoogleMapsFactory(apiKey)
