@@ -2,10 +2,23 @@ import React from 'react'
 import { useStore } from '../../../functions/store/useStore'
 import { ManagedText } from 'managed-inputs'
 
+export enum TextInputType {
+  NUMBER = 'number',
+  EMAIL = 'email',
+  PASSWORD = 'password',
+  TEL = 'tel',
+  TEXT = 'text',
+  URL = 'url',
+  SEARCH = 'search',
+}
+
 interface TextInputInterface {
   (props: {
-    inputKey: string,
-    containerClassNames?: string,
+    inputKey: string
+    containerClassNames?: string
+    children?: React.ReactElement
+    type?: TextInputType
+    match?: RegExp
     onChangeCallback?(): void
   }): JSX.Element
 }
@@ -13,7 +26,7 @@ interface TextInputInterface {
 // TODO: Add error handling!
 
 export const TextInput: TextInputInterface = props => {
-  const { inputKey, containerClassNames, onChangeCallback } = props
+  const { inputKey, containerClassNames, children, type, match, onChangeCallback } = props
   const { state, dispatch } = useStore()
   const { texts, inputs } = state
   const value = inputs[inputKey]
@@ -32,6 +45,9 @@ export const TextInput: TextInputInterface = props => {
     label,
     placeholder,
     value,
+    children,
+    type,
+    match,
     onChange,
   }
 

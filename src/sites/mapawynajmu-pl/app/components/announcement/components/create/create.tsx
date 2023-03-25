@@ -21,41 +21,66 @@ import AvailabilityDate from './components/availability_date/availability_date'
 import { H1, ADDITIONAL_DATA_HEADER } from './constants/texts'
 import { Heading } from '../../../support/components/heading'
 import UserNew from '../../../user/components/new/new'
-import UserCreateEmailVerify from '../../../../../../shared/app/components/user/components/new/components/verification/verification.tsx'
-import Category from './components/category'
-import AreaInput from './components/area-input'
+import UserCreateEmailVerify from '../../../../../../shared/app/components/user/components/new/components/verification/verification'
+
+import { AreaInput } from './components/additional/components/area/area.input'
 import { Line } from '../../../support/components/line/line'
 
+import { Category } from './components/category/category.tiles'
+
 class AnnouncementCreate extends React.Component {
+  // @ts-ignore
   constructor(props) {
     super(props)
+    // @ts-ignore
     this.userCreateNode = React.createRef()
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
+    // @ts-ignore
     this.addAnnouncementManager = managers.addAnnouncementManager.bind(this)
+    // @ts-ignore
     this.validatePictures = validatePictures.bind(this)
+    // @ts-ignore
     this.validateMap = validateMap.bind(this)
+    // @ts-ignore
     this.publish = publish.bind(this)
   }
 
   render() {
     const {
+      // @ts-ignore
       area,
+      // @ts-ignore
       category,
+      // @ts-ignore
       renderForm,
+      // @ts-ignore
       renderEdit,
+      // @ts-ignore
       renderVerification,
+      // @ts-ignore
       renderSuccess,
+      // @ts-ignore
       lang,
+      // @ts-ignore
       authorized,
+      // @ts-ignore
       step,
+      // @ts-ignore
       addAvailabilityDate,
+      // @ts-ignore
       availabilityDate,
+      // @ts-ignore
       setControl,
+      // @ts-ignore
       setInputs,
+      // @ts-ignore
       showPolishDescription,
+      // @ts-ignore
       showEnglishDescription,
+      // @ts-ignore
       polishDescription,
+      // @ts-ignore
       englishDescription,
     } = this.props
 
@@ -64,16 +89,6 @@ class AnnouncementCreate extends React.Component {
       availabilityDate,
       addAvailabilityDate,
       setControl,
-      setInputs,
-    }
-
-    const categoryProps = {
-      currentCategory: category,
-      setInputs,
-    }
-
-    const areaInputProps = {
-      area,
       setInputs,
     }
 
@@ -106,7 +121,8 @@ class AnnouncementCreate extends React.Component {
             <h1>{H1['pl']}</h1>
             <Line />
             <form>
-              <Category {...categoryProps} />
+            
+              <Category />
               <Line />
               <Map />
               <Line />
@@ -117,7 +133,7 @@ class AnnouncementCreate extends React.Component {
                   tier={2}
                   text={ADDITIONAL_DATA_HEADER['pl']}
                 />
-                <AreaInput {...areaInputProps} />
+                <AreaInput />
                 <Additional />
                 <AvailabilityDate {...availabilityDateProps} />
                 <Features />
@@ -135,6 +151,7 @@ class AnnouncementCreate extends React.Component {
                 </div>
               )}
               <Line />
+              {/* @ts-ignore */}
               <ManagedButton {...this.addAnnouncementManager()} />
             </form>
           </div>
