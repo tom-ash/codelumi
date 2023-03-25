@@ -1,7 +1,7 @@
 @import './editorial';
 @import './table-of-contents';
 
-$horizontal-margin-mobile: 18px;
+$MOBILE-MARGIN: 32px;
 
 %article {
   max-width: 640px;
@@ -12,23 +12,26 @@ $horizontal-margin-mobile: 18px;
   line-height: 26px;
   font-size: 16px;
   color: rgb(42, 42, 42);
-  .table-of-contents {
-    @extend %table-of-contents;
+  @media #{$LARGE-PHONE} {
+    padding-top: 0;
   }
   h1 {
     line-height: 41.25px;
     font-size: 30px;
     margin-bottom: 36px;
+    @media #{$LARGE-PHONE} {
+      padding: 0 $MOBILE-MARGIN;
+    }
   }
-  .cover + h1 {
-    margin-top: 36px;
+  .table-of-contents {
+    @extend %table-of-contents;
   }
   h2 {
     line-height: 33px;
     font-size: 22px;
     margin-bottom: 15px;
     @media #{$LARGE-PHONE} {
-      padding: 0 $horizontal-margin-mobile;
+      padding: 0 $MOBILE-MARGIN;
     }
   }
   p + h2,
@@ -61,8 +64,8 @@ $horizontal-margin-mobile: 18px;
       }
     }
     @media #{$LARGE-PHONE} {
-      margin-right: $horizontal-margin-mobile;
-      margin-left: $horizontal-margin-mobile;
+      margin-right: $MOBILE-MARGIN;
+      margin-left: $MOBILE-MARGIN;
     }
   }
   p + ul {
@@ -82,14 +85,14 @@ $horizontal-margin-mobile: 18px;
     }
     @media #{$LARGE-PHONE} {
       margin-right: 18px;
-      margin-left: 36px;
+      margin-left: 52px;
     }
   }
   header {
     > img {
       width: 100%;
       @media #{$LARGE-PHONE} {
-        padding: 0 18px;
+        padding: 0;
       }
       margin-bottom: 32px;
       border-radius: 3px;

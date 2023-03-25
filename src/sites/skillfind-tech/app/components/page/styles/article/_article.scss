@@ -1,7 +1,7 @@
 @import './editorial';
 @import './table-of-contents';
 
-$horizontal-margin-mobile: 18px;
+$MOBILE-MARGIN: 18px;
 
 %article {
   max-width: 640px;
@@ -30,12 +30,11 @@ $horizontal-margin-mobile: 18px;
     margin-bottom: 48px;
   }
   h2 {
-    // margin-top: 48px;
     line-height: 33px;
     font-size: 22px;
     margin-bottom: 12px;
     @media #{$LARGE-PHONE} {
-      padding: 0 $horizontal-margin-mobile;
+      padding: 0 $MOBILE-MARGIN;
     }
   }
   h3 {
@@ -61,8 +60,8 @@ $horizontal-margin-mobile: 18px;
       }
     }
     @media #{$LARGE-PHONE} {
-      margin-right: $horizontal-margin-mobile;
-      margin-left: $horizontal-margin-mobile;
+      margin-right: $MOBILE-MARGIN;
+      margin-left: $MOBILE-MARGIN;
     }
   }
   p + ul {
