@@ -14,13 +14,15 @@ $padding-mobile: 18px;
     line-height: 1.25;
     color: rgb(64, 64, 64);
     border: 2px solid $PRIMARY-GREEN-COLOR;
-    padding: 15px;
+    padding: 15px 15px 9px;
     border-radius: 8px;
   }
   h2 {
-    margin: 0;
     font-size: 16px;
-    margin-bottom: 12px;
+    line-height: 16px;
+    margin-bottom: 16px;
+    color: $PRIMARY-GREEN-COLOR;
+    text-align: center;
   }
   a {
     font-size: 15px;
@@ -33,22 +35,13 @@ $padding-mobile: 18px;
     padding: 0;
     list-style-type: none;
     li {
+      display: block;
       position: relative;
       margin-top: -4px;
       margin-bottom: 5px;
-      line-height: 1.5;
+      line-height: 22px;
       &:last-child {
         margin-bottom: 0px;
-      }
-      a {
-        display: flex;
-      }
-      span {
-        display: block;
-        &:first-of-type {
-          flex: none;
-          width: 36px;
-        }
       }
     }
   }
