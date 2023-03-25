@@ -5,7 +5,7 @@ function getVisitorState(cookies) {
   const statisticsConsent = getCookieAsBool(_pdpaf)
   const marketingConsent = getCookieAsBool(_pdpsm)
 
-  return { consents: { statisticsConsent, marketingConsent } }
+  return { visitor: { statisticsConsent, marketingConsent } }
 }
 
 export default getVisitorState
