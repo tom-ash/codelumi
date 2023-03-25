@@ -8,7 +8,6 @@ import { Link } from '../../../../../../../../shared/app/components/support/link
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 
-
 const VisitorPageIndex = () => {
   useStyles(styles)
 

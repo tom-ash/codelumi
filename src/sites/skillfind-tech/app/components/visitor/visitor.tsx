@@ -7,6 +7,7 @@ const TermsOfService = loadable(() => import('./components/administration/terms-
 const CookiesPolicy = loadable(() => import('./components/administration/cookies-policy/cookies-policy'))
 const PrivacyPolicy = loadable(() => import('./components/administration/privacy-policy/privacy-policy'))
 const PrivacySettings = loadable(() => import('./components/administration/privacy-settings/privacy-settings'))
+const PageIndex = loadable(() => import('./components/page/components/index/index'))
 
 export const Visitor = () => {
   const { state } = useStore()
@@ -17,6 +18,9 @@ export const Visitor = () => {
   const renderPrivacyPolicy = render['visitor/privacy-policy']
   const renderTermsOfService = render['visitor/terms-of-service']
   const renderPrivacySettings = render['visitor/privacy-settings']
+  const {
+    renderVisitorPageIndex
+  } = render
   const showPrivacyMonit =
     (statisticsConsent === null || marketingConsent === null) &&
     !renderContact &&
@@ -33,6 +37,7 @@ export const Visitor = () => {
       {renderCookiesPolicy && <CookiesPolicy />}
       {renderPrivacyPolicy && <PrivacyPolicy />}
       {renderPrivacySettings && <PrivacySettings />}
+      {renderVisitorPageIndex && <PageIndex />}
     </div>
   )
 }
