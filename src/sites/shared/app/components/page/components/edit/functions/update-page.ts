@@ -1,5 +1,6 @@
 import { getAccessToken } from '../../../../user/components/auth/functions/get-access-token'
 import { changeUrl } from '../../../../../functions/routes/changers/change-url'
+import { transformPageBody } from './transform-page-body'
 
 interface UpdatePage {
   (props: {
@@ -54,12 +55,15 @@ export const updatePage: UpdatePage = (props) => {
     setData,
   } = props
 
+  const parsedBody = JSON.parse(body)
+  transformPageBody(parsedBody)
+
   const requestBody = JSON.stringify({
     id,
     url,
     canonicalUrl,
     online,
-    body,
+    body: JSON.stringify(parsedBody),
     publishedOn,
     modifiedOn,
     category,

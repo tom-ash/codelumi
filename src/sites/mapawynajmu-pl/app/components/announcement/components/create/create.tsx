@@ -23,7 +23,7 @@ import { Heading } from '../../../support/components/heading'
 import UserNew from '../../../user/components/new/new'
 import UserCreateEmailVerify from '../../../../../../shared/app/components/user/components/new/components/verification/verification'
 
-import { AreaInput } from './components/additional/components/area/area.input'
+import { AreaInput } from './components/additional/area/area.input'
 import { Line } from '../../../support/components/line/line'
 
 import { Category } from './components/category/category.tiles'
