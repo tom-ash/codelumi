@@ -7,7 +7,7 @@ export const transformPageBody = (node: any) => {
     node.map(node => transformPageBody(node))
   } else if (typeof node === 'object') {
     if (node.Section) {
-      const headingTwo = node.Section.find((subnode: any) => subnode.HeadingTwo)!.HeadingTwo
+      const headingTwo = node.Section.find((subnode: any) => subnode.HeadingTwo).HeadingTwo
 
       node.identifier = parameterize(headingTwo)
     }
