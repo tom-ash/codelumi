@@ -4,12 +4,12 @@
 
 %page {
   @extend %root;
-  main.page {
+  main {
     background: white;
     min-height: 640px;
     margin: 0 auto;
     padding: 0 20px;
-    .article {
+    article {
       @extend %article;
     }
     @media #{$LARGE-PHONE} {

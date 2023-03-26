@@ -17,8 +17,8 @@ $MOBILE-MARGIN: 32px;
   }
   h1 {
     line-height: 41.25px;
-    font-size: 30px;
-    margin-bottom: 36px;
+    font-size: 32px;
+    margin-bottom: 24px;
     @media #{$LARGE-PHONE} {
       padding: 0 $MOBILE-MARGIN;
     }
@@ -26,10 +26,12 @@ $MOBILE-MARGIN: 32px;
   .table-of-contents {
     @extend %table-of-contents;
   }
+  section {
+    margin-bottom: 48px;
+  }
   h2 {
-    line-height: 33px;
     font-size: 22px;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     @media #{$LARGE-PHONE} {
       padding: 0 $MOBILE-MARGIN;
     }
@@ -37,10 +39,6 @@ $MOBILE-MARGIN: 32px;
   p + h2,
   ul + h2,
   pre + h2,
-  .editorial + h2,
-  .table-of-contents + h2 {
-    margin-top: 36px;
-  }
   h3 {
     margin-top: 36px;
     margin-bottom: 16px;
@@ -87,6 +85,9 @@ $MOBILE-MARGIN: 32px;
       margin-right: 18px;
       margin-left: 52px;
     }
+  }
+  img {
+    margin-bottom: 18px;
   }
   header {
     > img {
