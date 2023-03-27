@@ -6,7 +6,6 @@ import Map from './components/map/map'
 import Additional from './components/additional/additional'
 import Features from './components/features/features'
 import Furnishings from './components/furnishings/furnishings'
-import Description from './components/description/description'
 import Success from './components/success/success'
 import Spinner from '../../../support/components/spinner/components/windmill/windmill'
 import * as lifecycle from './functions/lifecycle'
@@ -74,14 +73,6 @@ class AnnouncementCreate extends React.Component {
       setControl,
       // @ts-ignore
       setInputs,
-      // @ts-ignore
-      showPolishDescription,
-      // @ts-ignore
-      showEnglishDescription,
-      // @ts-ignore
-      polishDescription,
-      // @ts-ignore
-      englishDescription,
     } = this.props
 
     const availabilityDateProps = {
@@ -89,14 +80,6 @@ class AnnouncementCreate extends React.Component {
       availabilityDate,
       addAvailabilityDate,
       setControl,
-      setInputs,
-    }
-
-    const descriptionProps = {
-      showPolish: showPolishDescription,
-      showEnglish: showEnglishDescription,
-      polish: polishDescription,
-      english: englishDescription,
       setInputs,
     }
 
@@ -138,7 +121,6 @@ class AnnouncementCreate extends React.Component {
                 <AvailabilityDate {...availabilityDateProps} />
                 <Features />
                 <Furnishings />
-                <Description {...descriptionProps} />
               </div>
               <Line />
               {!authorized && (

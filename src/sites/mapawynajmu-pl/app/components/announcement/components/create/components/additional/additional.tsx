@@ -7,6 +7,7 @@ import { onSelectHandler } from './functions/on-select-handler'
 import { floorsProvider } from './functions/floors-provider'
 import NameInput from './components/name'
 import LinkInput from './components/link'
+import { Description } from './components/description/description'
 
 // 0 => 'office'
 // 1 => 'usable_premises'
@@ -79,6 +80,7 @@ class AnnouncementCreateAdditional extends React.Component {
         <ManagedSelect {...this.floorManager()} />
         {/* @ts-ignore */}
         <ManagedSelect {...this.totalFloorsManager()} />
+        <Description />
       </>
     )
   }
