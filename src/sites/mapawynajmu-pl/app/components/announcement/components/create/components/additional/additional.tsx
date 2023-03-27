@@ -7,6 +7,7 @@ import { onSelectHandler } from './functions/on-select-handler'
 import { floorsProvider } from './functions/floors-provider'
 import NameInput from './components/name'
 import LinkInput from './components/link'
+import { AreaInput } from './components/area/area.input'
 import { Description } from './components/description/description'
 
 // 0 => 'office'
@@ -63,6 +64,7 @@ class AnnouncementCreateAdditional extends React.Component {
 
     return (
       <>
+        <AreaInput />
         {showRent(category) && (
           <div className='rent-inputs-container'>
             {/* @ts-ignore */}

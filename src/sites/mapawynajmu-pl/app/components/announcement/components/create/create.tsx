@@ -22,7 +22,6 @@ import { Heading } from '../../../support/components/heading'
 import UserNew from '../../../user/components/new/new'
 import UserCreateEmailVerify from '../../../../../../shared/app/components/user/components/new/components/verification/verification'
 
-import { AreaInput } from './components/additional/area/area.input'
 import { Line } from '../../../support/components/line/line'
 
 import { Category } from './components/category/category.tiles'
@@ -47,10 +46,6 @@ class AnnouncementCreate extends React.Component {
 
   render() {
     const {
-      // @ts-ignore
-      area,
-      // @ts-ignore
-      category,
       // @ts-ignore
       renderForm,
       // @ts-ignore
@@ -116,7 +111,6 @@ class AnnouncementCreate extends React.Component {
                   tier={2}
                   text={ADDITIONAL_DATA_HEADER['pl']}
                 />
-                <AreaInput />
                 <Additional />
                 <AvailabilityDate {...availabilityDateProps} />
                 <Features />
