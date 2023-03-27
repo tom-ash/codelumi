@@ -5,11 +5,12 @@ import { ManagedText, ManagedSelect } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { onSelectHandler } from './functions/on-select-handler'
 import { floorsProvider } from './functions/floors-provider'
-import NameInput from './components/name'
+
 // import LinkInput from './components/link'
 import { AreaInput } from './components/area/area.input'
 import { Description } from './components/description/description'
 import { LinkInput } from './components/link/link.input'
+import { NameInput } from './components/name/name.input'
 
 // 0 => 'office'
 // 1 => 'usable_premises'
@@ -51,12 +52,7 @@ class AnnouncementCreateAdditional extends React.Component {
 
   render() {
     // @ts-ignore
-    const { category, name, link, setInputs } = this.props
-
-    const nameInputProps = {
-      name,
-      setInputs,
-    }
+    const { category } = this.props
 
     return (
       <>
@@ -72,7 +68,7 @@ class AnnouncementCreateAdditional extends React.Component {
         )}
         {/* @ts-ignore */}
         {showRooms(category) && <ManagedSelect {...this.roomsManager()} />}
-        {showName(category) && <NameInput {...nameInputProps} />}
+        {showName(category) && <NameInput />}
         {showLink(category) && <LinkInput />}
         {/* @ts-ignore */}
         <ManagedSelect {...this.floorManager()} />

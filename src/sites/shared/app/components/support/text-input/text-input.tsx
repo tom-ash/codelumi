@@ -26,14 +26,14 @@ interface TextInputInterface {
 // TODO: Add error handling!
 
 export const TextInput: TextInputInterface = props => {
-  const { inputKey, containerClassNames, children, type, match, onChangeCallback } = props
+  const { inputKey, containerClassNames, children, type: customType, match, onChangeCallback } = props
   const { state, dispatch } = useStore()
   const { texts, inputs } = state
   const value = inputs[inputKey]
   const label = texts[`${inputKey}InputLabel`]
   const placeholder = texts[`${inputKey}InputPlaceholder`]
   const classNames = { container: containerClassNames ? `${containerClassNames} text-input` : 'text-input' }
-  
+  const type = customType || TextInputType.TEXT
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const onChange = (value: string) => {
     setInputs({ [inputKey]: value })
