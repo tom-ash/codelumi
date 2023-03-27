@@ -36,8 +36,8 @@ function indexRenderer(props) {
       </head>
       <body>
         ${html}
-        ${scriptTags}
         <script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}</script>
+        ${scriptTags}
       </body>
     </html>`
 
