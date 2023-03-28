@@ -16,7 +16,6 @@ import { validatePictures } from './components/pictures/functions/validate-pictu
 import { validateMap } from './components/map/functions/validate-map'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
-import AvailabilityDate from './components/availability_date/availability_date'
 import { H1, ADDITIONAL_DATA_HEADER } from './constants/texts'
 import { Heading } from '../../../support/components/heading'
 import UserNew from '../../../user/components/new/new'
@@ -61,22 +60,10 @@ class AnnouncementCreate extends React.Component {
       // @ts-ignore
       step,
       // @ts-ignore
-      addAvailabilityDate,
-      // @ts-ignore
-      availabilityDate,
-      // @ts-ignore
       setControl,
       // @ts-ignore
       setInputs,
     } = this.props
-
-    const availabilityDateProps = {
-      lang,
-      availabilityDate,
-      addAvailabilityDate,
-      setControl,
-      setInputs,
-    }
 
     if (step === 'publishing')
       return (
@@ -112,7 +99,6 @@ class AnnouncementCreate extends React.Component {
                   text={ADDITIONAL_DATA_HEADER['pl']}
                 />
                 <Additional />
-                <AvailabilityDate {...availabilityDateProps} />
                 <Features />
                 <Furnishings />
               </div>

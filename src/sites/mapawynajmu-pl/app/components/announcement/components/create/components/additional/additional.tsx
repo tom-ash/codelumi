@@ -5,12 +5,11 @@ import { ManagedText, ManagedSelect } from 'managed-inputs'
 import * as managers from './functions/managers'
 import { onSelectHandler } from './functions/on-select-handler'
 import { floorsProvider } from './functions/floors-provider'
-
-// import LinkInput from './components/link'
 import { AreaInput } from './components/area/area.input'
 import { Description } from './components/description/description'
 import { LinkInput } from './components/link/link.input'
 import { NameInput } from './components/name/name.input'
+import { AvailabilityDate } from './components/availability-date/availability_date'
 
 // 0 => 'office'
 // 1 => 'usable_premises'
@@ -74,6 +73,7 @@ class AnnouncementCreateAdditional extends React.Component {
         <ManagedSelect {...this.floorManager()} />
         {/* @ts-ignore */}
         <ManagedSelect {...this.totalFloorsManager()} />
+        <AvailabilityDate />
         <Description />
       </>
     )
