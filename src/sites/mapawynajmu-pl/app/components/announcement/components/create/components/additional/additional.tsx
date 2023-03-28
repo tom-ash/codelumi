@@ -1,15 +1,14 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
-import { ManagedText, ManagedSelect } from 'managed-inputs'
-import * as managers from './functions/managers'
-import { onSelectHandler } from './functions/on-select-handler'
-import { floorsProvider } from './functions/floors-provider'
+import { useStore } from '../../../../../../../../shared/app/functions/store/useStore'
 import { AreaInput } from './components/area/area.input'
 import { Description } from './components/description/description'
 import { LinkInput } from './components/link/link.input'
 import { NameInput } from './components/name/name.input'
 import { AvailabilityDate } from './components/availability-date/availability_date'
+import { TotalFloorsSelect } from './components/total-floors/total-floors.select'
+import { FloorSelect } from './components/floor/floor.select'
+import { RoomsSelect } from './components/rooms/rooms.select'
+import { Rent } from './components/rent/rent'
 
 // 0 => 'office'
 // 1 => 'usable_premises'
@@ -29,55 +28,22 @@ const showName = category => [6, 7].includes(category)
 // @ts-ignore
 const showLink = category => [6, 7].includes(category)
 
-class AnnouncementCreateAdditional extends React.Component {
-  // @ts-ignore
-  constructor(props) {
-    super(props)
-    // @ts-ignore
-    this.roomsManager = managers.roomsManager.bind(this)
-    // @ts-ignore
-    this.floorManager = managers.floorManager.bind(this)
-    // @ts-ignore
-    this.totalFloorsManager = managers.totalFloorsManager.bind(this)
-    // @ts-ignore
-    this.onSelectHandler = onSelectHandler.bind(this)
-    // @ts-ignore
-    this.floorsProvider = floorsProvider.bind(this)
-    // @ts-ignore
-    this.rentCurrencyManager = managers.rentCurrencyManager.bind(this)
-    // @ts-ignore
-    this.rentAmountManager = managers.rentAmountManager.bind(this)
-  }
+export const Additional = () => {
+  const { state } = useStore()
+  const { inputs } = state
+  const { category } = inputs
 
-  render() {
-    // @ts-ignore
-    const { category } = this.props
-
-    return (
-      <>
-        <AreaInput />
-        {showRent(category) && (
-          <div className='rent-inputs-container'>
-            {/* @ts-ignore */}
-            <ManagedText {...this.rentAmountManager()} />
-            {/* @ts-ignore */}
-            <ManagedSelect {...this.rentCurrencyManager()} />
-            <div className='float-clear' />
-          </div>
-        )}
-        {/* @ts-ignore */}
-        {showRooms(category) && <ManagedSelect {...this.roomsManager()} />}
-        {showName(category) && <NameInput />}
-        {showLink(category) && <LinkInput />}
-        {/* @ts-ignore */}
-        <ManagedSelect {...this.floorManager()} />
-        {/* @ts-ignore */}
-        <ManagedSelect {...this.totalFloorsManager()} />
-        <AvailabilityDate />
-        <Description />
-      </>
-    )
-  }
+  return (
+    <section>
+      <AreaInput />
+      <Rent />
+      {showRooms(category) && <RoomsSelect />}
+      {showName(category) && <NameInput />}
+      {showLink(category) && <LinkInput />}
+      <FloorSelect />
+      <TotalFloorsSelect />
+      <AvailabilityDate />
+      <Description />
+    </section>
+  )
 }
-
-export default connect(mapStateToProps, mapDispatchToProps)(AnnouncementCreateAdditional)
