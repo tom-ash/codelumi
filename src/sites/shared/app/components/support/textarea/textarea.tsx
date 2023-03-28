@@ -25,7 +25,7 @@ export const Textarea: TextareaInterface = props => {
     label,
     value,
     onChange,
-    counterLimit: 10000,
+    counterLimit: 100000,
   }
 
   return <ManagedTextarea {...areaProps} />
