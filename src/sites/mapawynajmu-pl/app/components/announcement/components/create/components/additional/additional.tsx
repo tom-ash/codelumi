@@ -20,8 +20,6 @@ import { Rent } from './components/rent/rent'
 // 7 => 'coworking_spaces'
 
 // @ts-ignore
-const showRent = category => [0, 1, 2, 3, 4, 5].includes(category)
-// @ts-ignore
 const showRooms = category => [0, 1, 2, 3, 4, 5].includes(category)
 // @ts-ignore
 const showName = category => [6, 7].includes(category)
