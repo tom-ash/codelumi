@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useStore } from '../../shared/app/functions/store/useStore'
 import { useStateToRouteMatcher } from './functions/use-state-to-route-matcher'
 import loadable from '@loadable/component'
@@ -11,8 +11,11 @@ const Page = loadable(() => import('../../shared/app/components/page/page'))
 const Image = loadable(() => import('../../shared/app/components/image/image'))
 const Footer = loadable(() => import('./components/scaffold/footer/footer'))
 
+import Index from './components/asset/components/index'
+
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import apiUrl from '../shared/constants/urls/api'
 
 const App = () => {
   useStyles(styles)
@@ -20,7 +23,15 @@ const App = () => {
   useStateToRouteMatcher()
 
   const { state } = useStore()
-  const { render } = state
+  const { app, render } = state
+  const { lang } = app
+
+  useEffect(() => {
+    // @ts-ignore
+    window.apiUrl = apiUrl
+    // @ts-ignore
+    window.lang = lang
+  }, [lang])
 
   const {
     page: renderPage,
@@ -29,6 +40,7 @@ const App = () => {
     announcement: renderAnnouncement,
     user: renderUser,
     renderPostingIndex,
+    assetsIndex,
   } = render
 
   return (
@@ -40,6 +52,7 @@ const App = () => {
       {renderAnnouncement && <Announcement />}
       {renderUser && <User />}
       {renderImage && <Image />}
+      {assetsIndex && <Index />}
       <Footer />
     </>
   )

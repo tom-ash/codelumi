@@ -16,14 +16,23 @@ const VisitorPageIndex = loadable(() => import('./components/visitor/components/
 const Footer = loadable(() => import('./components/scaffold/footer/footer'))
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
-
 import { setIsMobile } from './functions/set-is-mobile'
+
+import apiUrl from '../shared/constants/urls/api'
 
 const App = () => {
   useStyles(styles)
 
   const { state, dispatch } = useStore()
-  const { render } = state
+  const { app, render } = state
+  const { lang } = app
+
+  useEffect(() => {
+    // @ts-ignore
+    window.apiUrl = apiUrl
+    // @ts-ignore
+    window.lang = lang
+  }, [lang])
 
   const {
     page: renderPage,
