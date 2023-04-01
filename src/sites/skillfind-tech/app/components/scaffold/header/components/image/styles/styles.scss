@@ -1,0 +1,33 @@
+#logo-image {
+  position: relative;
+  .magnifying-glass {
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    height: 200px;
+    width: 200px;
+    border: 16px solid #1C2833;
+    border-radius: 100px;
+    background: #F7F9F9;
+    text-align: center;
+    line-height: 168px;
+    .zero-one {
+      font-size: 104px;
+      font-family: monospace;
+      color: rgb(50, 160, 150);
+    }
+  }
+
+  .handle {
+    position: absolute;
+    top: 96px;
+    right: 146px;
+    height: 24px;
+    width: 192px;
+    background: #1C2833;
+    border-radius: 12px;
+    transform: rotate(-135deg);
+    transform-origin: right;
+  }
+}

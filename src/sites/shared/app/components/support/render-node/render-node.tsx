@@ -16,260 +16,270 @@ const YouTubeEmbed = loadable(() => import('./components/youtube-embed/youtube-e
 const Share = loadable(() => import('./components/share/share'))
 const Definition = loadable(() => import('./components/definition/definition'))
 const Figure = loadable(() => import('./components/figure/figure'))
+const SkillFindLogoImage = loadable(() => import('../../../../../skillfind-tech/app/components/scaffold/header/components/image/image'))
 
 export const RenderNode = (props: RenderNodeProps) => {
-  const { node, index } = props
+  try {
+    const { node, index } = props
 
-  if (!node) return null
+    if (!node) return null
 
-  if (typeof node === 'string') {
-    const paragraphProps = { key: index, content: node }
+    if (typeof node === 'string') {
+      const paragraphProps = { key: index, content: node }
 
-    return <Paragraph {...paragraphProps} />
-  }
-
-  if (Array.isArray(node)) {
-    const ulProps = { key: index, listNodes: node }
-
-    return <List {...ulProps} />
-  }
-
-  if (node.Header) {
-    // const ulProps = { key: index, listNodes: node.UnorderedList, style: node.style }
-
-    return <Header />
-  }
-
-  if (node.UnorderedList) {
-    const ulProps = { key: index, listNodes: node.UnorderedList, style: node.style }
-
-    return <List {...ulProps} />
-  }
-
-  if (node.HeadingOne) {
-    const headingProps = { key: index, rank: 1, heading: node.HeadingOne }
-
-    return <Heading {...headingProps} />
-  }
-
-  if (node.HeadingTwo) {
-    const headingProps = { key: index, rank: 2, heading: node.HeadingTwo }
-
-    return <Heading {...headingProps} />
-  }
-
-  if (node.HeadingThree) {
-    const headingProps = { key: index, rank: 3, heading: node.HeadingThree }
-
-    return <Heading {...headingProps} />
-  }
-
-  if (node.HeadingFour) {
-    const headingProps = { key: index, rank: 4, heading: node.HeadingFour }
-
-    return <Heading {...headingProps} />
-  }
-
-  if (node.Image) {
-    const { style } = node
-    const {
-      source,
-      alternative,
-    } = node.Image
-    const imgProps = {
-      key: index,
-      src: source,
-      alt: alternative,
-      style,
+      return <Paragraph {...paragraphProps} />
     }
 
-    return <Image {...imgProps} />
-  }
+    if (Array.isArray(node)) {
+      const ulProps = { key: index, listNodes: node }
 
-  if (node.Code) {
-    const { Code: code } = node
-    const codeLang = node.codeLang || props.codeLang
-    const codeProps = { key: index, code, codeLang }
+      return <List {...ulProps} />
+    }
 
-    return <Code {...codeProps} />
-  }
+    if (node.Header) {
+      // const ulProps = { key: index, listNodes: node.UnorderedList, style: node.style }
 
-  if (node.YouTubeEmbed) {
-    const { s: src, w: width } = node.YouTubeEmbed
-    const youTubeEmbedProps = { key: index, src, width }
+      return <Header />
+    }
 
-    return <YouTubeEmbed {...youTubeEmbedProps} />
-  }
+    if (node.UnorderedList) {
+      const ulProps = { key: index, listNodes: node.UnorderedList, style: node.style }
 
-  if (node.Anchor) {
-    const { style, className } = node
-    const { h: href, r: rel, t: target, c: content } = node.Anchor
-    const anchorProps = {
-      style,
-      href,
-      rel,
-      target,
-      content,
-      className,
+      return <List {...ulProps} />
+    }
+
+    if (node.HeadingOne) {
+      const headingProps = { key: index, rank: 1, heading: node.HeadingOne }
+
+      return <Heading {...headingProps} />
+    }
+
+    if (node.HeadingTwo) {
+      const headingProps = { key: index, rank: 2, heading: node.HeadingTwo }
+
+      return <Heading {...headingProps} />
+    }
+
+    if (node.HeadingThree) {
+      const headingProps = { key: index, rank: 3, heading: node.HeadingThree }
+
+      return <Heading {...headingProps} />
+    }
+
+    if (node.HeadingFour) {
+      const headingProps = { key: index, rank: 4, heading: node.HeadingFour }
+
+      return <Heading {...headingProps} />
+    }
+
+    if (node.Image) {
+      const { style } = node
+      const {
+        source,
+        alternative,
+      } = node.Image
+      const imgProps = {
+        key: index,
+        src: source,
+        alt: alternative,
+        style,
+      }
+
+      return <Image {...imgProps} />
+    }
+
+    if (node.Code) {
+      const { Code: code } = node
+      const codeLang = node.codeLang || props.codeLang
+      const codeProps = { key: index, code, codeLang }
+
+      return <Code {...codeProps} />
+    }
+
+    if (node.YouTubeEmbed) {
+      const { s: src, w: width } = node.YouTubeEmbed
+      const youTubeEmbedProps = { key: index, src, width }
+
+      return <YouTubeEmbed {...youTubeEmbedProps} />
+    }
+
+    if (node.Anchor) {
+      const { style, className } = node
+      const { h: href, r: rel, t: target, c: content } = node.Anchor
+      const anchorProps = {
+        style,
+        href,
+        rel,
+        target,
+        content,
+        className,
+      }
+
+      // @ts-ignore
+      return <Anchor {...anchorProps} />
     }
 
     // @ts-ignore
-    return <Anchor {...anchorProps} />
-  }
-
-  // @ts-ignore
-  if (node.Division) {
-    return (
-      <Section
-        key={index}
-        {...{
-          ...props,
-          element: 'div',
-          body: node.Division,
-          style: node.style,
-        }}
-      />
-    )
-  }
-
-  if (node.Section) {
-    const className = node.className
-    const codeLang = node.codeLang || props.codeLang
-
-    return (
-      <Section
-        key={index}
-        {...{
-          ...props,
-          element: 'section',
-          body: node.Section,
-          className,
-          codeLang,
-          id: node.identifier,
-          style: node.style,
-        }}
-      />
-    )
-  }
-
-  if (node.Main) {
-    const codeLang = node.codeLang
-
-    return (
-      <Section
-        key={index}
-        {...{
-          ...props,
-          element: 'main',
-          body: node.Main,
-          className: node.className || 'main',
-          codeLang,
-          style: node.style,
-        }}
-      />
-    )
-  }
-
-  if (node.Article) {
-    const className = node.className
-    const codeLang = node.codeLang || props.codeLang
-
-    return (
-      <Section
-        key={index}
-        {...{
-          ...props,
-          element: 'article',
-          body: node.Article,
-          className,
-          codeLang,
-          style: node.style,
-        }}
-      />
-    )
-  }
-
-  if (node.TableOfContents) {
-    const tableOfContentsProps = { key: index, title: node.TableOfContents }
-
-    return <TableOfContents {...tableOfContentsProps} />
-  }
-
-  if (node.Editorial) {
-    const { Editorial: editorial } = node
-    const editorialProps = { key: index, editorial }
-
-    return <Editorial {...editorialProps} />
-  }
-
-  if (node.Root) {
-    const sectionProps = {
-      key: index,
-      body: node.Root,
-      node,
-      index,
-      className: node.className,
-      style: node.style,
+    if (node.Division) {
+      return (
+        <Section
+          key={index}
+          {...{
+            ...props,
+            element: 'div',
+            body: node.Division,
+            style: node.style,
+          }}
+        />
+      )
     }
 
-    return <Section {...sectionProps} />
-  }
+    if (node.Section) {
+      const className = node.className
+      const codeLang = node.codeLang || props.codeLang
 
-  if (node.Share) {
-    const { href } = node.Share
-    const shareProps = { href }
+      return (
+        <Section
+          key={index}
+          {...{
+            ...props,
+            element: 'section',
+            body: node.Section,
+            className,
+            codeLang,
+            id: node.identifier,
+            style: node.style,
+          }}
+        />
+      )
+    }
 
-    return <Share {...shareProps} />
-  }
+    if (node.Main) {
+      const codeLang = node.codeLang
 
-  // @ts-ignore
-  if (node.Logo) {
-    const {
-      // @ts-ignore
-      style,
-      // @ts-ignore
-    } = node.Logo
+      return (
+        <Section
+          key={index}
+          {...{
+            ...props,
+            element: 'main',
+            body: node.Main,
+            className: node.className || 'main',
+            codeLang,
+            style: node.style,
+          }}
+        />
+      )
+    }
 
-    const logoProps = {
-      style,
+    if (node.Article) {
+      const className = node.className
+      const codeLang = node.codeLang || props.codeLang
+
+      return (
+        <Section
+          key={index}
+          {...{
+            ...props,
+            element: 'article',
+            body: node.Article,
+            className,
+            codeLang,
+            style: node.style,
+          }}
+        />
+      )
+    }
+
+    if (node.TableOfContents) {
+      const tableOfContentsProps = { key: index, title: node.TableOfContents }
+
+      return <TableOfContents {...tableOfContentsProps} />
+    }
+
+    if (node.Editorial) {
+      const { Editorial: editorial } = node
+      const editorialProps = { key: index, editorial }
+
+      return <Editorial {...editorialProps} />
+    }
+
+    if (node.Root) {
+      const sectionProps = {
+        key: index,
+        body: node.Root,
+        node,
+        index,
+        className: node.className,
+        style: node.style,
+      }
+
+      return <Section {...sectionProps} />
+    }
+
+    if (node.Share) {
+      const { href } = node.Share
+      const shareProps = { href }
+
+      return <Share {...shareProps} />
     }
 
     // @ts-ignore
-    return <Logo {...logoProps} />
-  }
+    if (node.Logo) {
+      const {
+        // @ts-ignore
+        style,
+        // @ts-ignore
+      } = node.Logo
 
-  // TODO: Change term to appelation.
-  // @ts-ignore
-  if (node.Definition) {
-    const {
-      term,
-      body,
+      const logoProps = {
+        style,
+      }
+
       // @ts-ignore
-    } = node.Definition
-
-    const definitionProps = {
-      term,
-      body,
+      return <Logo {...logoProps} />
     }
 
-    return <Definition {...definitionProps} />
-  }
+    // TODO: Change term to appelation.
+    // @ts-ignore
+    if (node.Definition) {
+      const {
+        term,
+        body,
+        // @ts-ignore
+      } = node.Definition
 
-  // @ts-ignore
-  if (node.Figure) {
-    const {
-      content,
-      caption,
-      // @ts-ignore
-    } = node.Figure
+      const definitionProps = {
+        term,
+        body,
+      }
 
-    const figureProps = {
-      content,
-      caption,
+      return <Definition {...definitionProps} />
     }
 
-    return <Figure {...figureProps} />
-  }
+    // @ts-ignore
+    if (node.Figure) {
+      const {
+        content,
+        caption,
+        // @ts-ignore
+      } = node.Figure
 
-  return null
+      const figureProps = {
+        content,
+        caption,
+      }
+
+      return <Figure {...figureProps} />
+    }
+
+    // @ts-ignore
+    if (node.SkillFindLogo) {
+      return <SkillFindLogoImage />
+    }
+
+    return null
+  } catch {
+    return <div>ERROR</div>
+  }
 }
