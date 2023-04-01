@@ -20,6 +20,8 @@ import { setIsMobile } from './functions/set-is-mobile'
 
 import apiUrl from '../shared/constants/urls/api'
 
+const RedirectsIndex = loadable(() => import('../../shared/app/components/redirect/components/index'))
+
 const App = () => {
   useStyles(styles)
 
@@ -42,6 +44,7 @@ const App = () => {
     user: renderUser,
     'announcement/index/map': renderListingIndexMap,
     visitorPageIndex,
+    redirectsIndex,
   } = render
 
   useFonts()
@@ -62,6 +65,7 @@ const App = () => {
         {renderUser && <User />}
         {renderImage && <Image />}
         {visitorPageIndex && <VisitorPageIndex />}
+        {redirectsIndex && <RedirectsIndex />}
       </div>
       {!renderListingIndexMap && <Footer />}
     </>
