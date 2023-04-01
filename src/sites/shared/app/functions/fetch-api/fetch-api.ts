@@ -1,3 +1,5 @@
+import { getAccessToken } from "../../components/user/components/auth/functions/get-access-token"
+
 export enum FetchMethod {
   GET = 'GET',
   POST = 'POST',
@@ -24,7 +26,9 @@ export const fetchApi: FetchApi = (args) => {
   return (
     fetch(`${apiUrl}/${path}`, {
       method,
+      // @ts-ignore
       headers: {
+        'Access-Token': getAccessToken(),
         'Content-Type': 'application/json',
         'Lang': lang,
       },

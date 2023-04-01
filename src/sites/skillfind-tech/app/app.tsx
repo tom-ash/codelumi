@@ -11,11 +11,14 @@ const Page = loadable(() => import('../../shared/app/components/page/page'))
 const Image = loadable(() => import('../../shared/app/components/image/image'))
 const Footer = loadable(() => import('./components/scaffold/footer/footer'))
 
-import Index from './components/asset/components/index'
+const AssetsIndex = loadable(() => import('./components/asset/components/index'))
+const RedirectsIndex = loadable(() => import('../../shared/app/components/redirect/components/index'))
 
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import apiUrl from '../shared/constants/urls/api'
+
+// redirectsIndex
 
 const App = () => {
   useStyles(styles)
@@ -41,6 +44,7 @@ const App = () => {
     user: renderUser,
     renderPostingIndex,
     assetsIndex,
+    redirectsIndex,
   } = render
 
   return (
@@ -52,7 +56,8 @@ const App = () => {
       {renderAnnouncement && <Announcement />}
       {renderUser && <User />}
       {renderImage && <Image />}
-      {assetsIndex && <Index />}
+      {assetsIndex && <AssetsIndex />}
+      {redirectsIndex && <RedirectsIndex />}
       <Footer />
     </>
   )

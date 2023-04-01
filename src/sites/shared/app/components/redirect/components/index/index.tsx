@@ -1,9 +1,9 @@
 import React from 'react'
-import { useStore } from '../../../../../../shared/app/functions/store/useStore'
+import { useStore } from '../../../../functions/store/useStore'
 import { TextInput } from './components/text-input/text-input'
 import { DeleteButton } from './components/delete/delete.button'
 import { deleteAsset } from './functions/delete/delete'
-import { AddButton } from './components/create/create.button'
+import { CreateButton } from './components/create/create.button'
 import { UpdateButton } from './components/update/update.button'
 import { updateAsset } from './functions/update/update'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
@@ -14,17 +14,16 @@ const Index = () => {
 
   const { state } = useStore()
   const { data } = state
-  const { assets } = data
+  const { redirects } = data
 
   return (
-    <div id='asset-index'>
-      <AddButton />
-      {assets.map((asset: any, index: number) => {
+    <div id='redirects-index'>
+      <CreateButton />
+      {redirects.map((asset: any, index: number) => {
         const {
           id,
-          name,
-          pathData,
-          viewBox,
+          originalUrl,
+          redirectedUrl,
         } = asset
 
         return (
@@ -32,16 +31,8 @@ const Index = () => {
             <span className='id'>
               {id}
             </span>
-            <TextInput id={id} fieldName='name' value={name} index={index} />
-            <TextInput id={id} fieldName='pathData' value={pathData} index={index} />
-            <TextInput id={id} fieldName='viewBox' value={viewBox} index={index} />
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              fill={'white'}
-              viewBox={viewBox}
-            >
-              <path d={pathData} />
-            </svg>
+            <TextInput id={id} fieldName='originalUrl' value={originalUrl} index={index} />
+            <TextInput id={id} fieldName='redirectedUrl' value={redirectedUrl} index={index} />
             <DeleteButton label='delete' connecting={false} onClick={() => deleteAsset(id)} />
             <UpdateButton label='save' connecting={false} onClick={() => updateAsset(asset)}  />
           </div>
