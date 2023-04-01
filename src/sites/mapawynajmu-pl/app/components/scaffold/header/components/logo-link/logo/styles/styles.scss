@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap');
 
 $HOUSE_COLOR: #add2eb;
 $PIN_COLOR: white;
@@ -8,83 +8,21 @@ $PIN_COLOR: white;
   float: left;
   margin-top: 12px;
   margin-left: 18px;
-  .tile {
+  img {
+    height: 22px;
     position: relative;
-    width: 36px;
-    height: 36px;
-    border-radius: 10%;
-    background: #2874a6;
-    .house {
-      position: absolute;
-      top: 6px;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      margin: auto;
-      width: 18px;
-      height: 14px;
-      border: 2px solid $HOUSE_COLOR;
-      border-top: 0;
-      border-radius: 2px;
-      border-bottom-left-radius: 3px;
-      border-bottom-right-radius: 3px;
-      .chimney {
-        position: absolute;
-        left: 0px;
-        top: -5px;
-        width: 3px;
-        height: 4px;
-        border-top-left-radius: 12%;
-        border-top-right-radius: 12%;
-        background: $HOUSE_COLOR;
-      }
-      .pin {
-        position: absolute;
-        top: 2px;
-        right: 0;
-        left: 0;
-        margin: auto;
-        width: 6px;
-        .head {
-          position: absolute;
-          border-radius: 50%;
-          width: 6px;
-          height: 6px;
-          background: $PIN_COLOR;
-        }
-        .leg {
-          position: absolute;
-          right: 0;
-          left: 0;
-          margin: auto;
-          width: 2px;
-          height: 15px;
-          border-bottom-left-radius: 1px;
-          border-bottom-right-radius: 1px;
-          background: $PIN_COLOR;
-        }
-      }
-    }
-    .house::before {
-      content: '';
-      position: absolute;
-      top: -5px;
-      left: 0;
-      border-top: 2px solid $HOUSE_COLOR;
-      border-left: 2px solid $HOUSE_COLOR;
-      border-radius: 3px;
-      width: 14px;
-      height: 14px;
-      transform: rotate(45deg);
-    }
+    top: 8px;
   }
   .name {
     position: absolute;
     line-height: 36px;
     top: 0;
-    left: 42px;
+    left: 22px;
     font-size: 22px;
-    font-family: 'Nova Flat';
-    color: #2874a6;
+    font-family: 'Nova Slim';
+    color: #2E86C1;
+    &:hover {
+      color: #3498DB;
+    }
   }
 }

@@ -17,6 +17,7 @@ const Share = loadable(() => import('./components/share/share'))
 const Definition = loadable(() => import('./components/definition/definition'))
 const Figure = loadable(() => import('./components/figure/figure'))
 const SkillFindLogoImage = loadable(() => import('../../../../../skillfind-tech/app/components/scaffold/header/components/image/image'))
+const MapawynajmuPlLogoImage = loadable(() => import('../../../../../mapawynajmu-pl/app/components/scaffold/header/components/logo-link/logo/components/image/image'))
 
 export const RenderNode = (props: RenderNodeProps) => {
   try {
@@ -276,6 +277,11 @@ export const RenderNode = (props: RenderNodeProps) => {
     // @ts-ignore
     if (node.SkillFindLogo) {
       return <SkillFindLogoImage />
+    }
+
+    // @ts-ignore
+    if (node.MapawynajmuPlLogoImage) {
+      return <MapawynajmuPlLogoImage />
     }
 
     return null

@@ -9,15 +9,7 @@ export const Logo = () => {
     <div
       id='logo'
     >
-      <div className='tile'>
-        <div className='house'>
-          <div className='chimney' />
-          <div className='pin'>
-            <div className='head' />
-            <div className='leg' />
-          </div>
-        </div>
-      </div>
+      <img src='https://mapawynajmupl.s3.eu-central-1.amazonaws.com/assets/mapawynajmupl-logo.jpg' />
       <div className='name'>
         <span>mapa</span>
         <span className='lease'>wynajmu</span>
