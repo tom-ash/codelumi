@@ -3,6 +3,7 @@ import { categories } from '../../../../../../constants/categories'
 import { ManagedSelect } from 'managed-inputs'
 import { buildUrl } from '../../../../../../../../../shared/functions/builders/url'
 import { changeUrl } from '../../../../../../../../../../shared/app/functions/routes/changers/change-url'
+import { SVG } from '../../../../../../../../../../shared/app/components/support/svg/svg'
 
 // @ts-ignore
 export const Category = props => {
@@ -20,7 +21,10 @@ export const Category = props => {
     text: 'Dowolna',
   })
 
+  const children = <SVG name='list' />
+
   const categoriesProps = {
+    children,
     classNames: { container: 'filter' },
     label: currentCategory === null ? { pl: 'Kategoria', en: 'Category' }['pl'] : '',
     value: currentCategory === null ? '' : currentCategory,

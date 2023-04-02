@@ -1,22 +1,40 @@
 @import '../../../../../../../styles/media-breakpoints';
 @import '../../../../../../../styles/colors';
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 #listing-index-panel {
   z-index: 3;
   position: relative;
   margin: 12px;
   .filter {
+
+    color: #4D5656;
+    svg {
+      height: 10px;
+      position: absolute;
+      top: 13px;
+      left: 12px;
+      fill: #A6ACAF;
+    }
+
+    padding-left: 36px;
+
+    // font-family: 'Roboto Mono';
+
+    // padding-left: 12px;
+
     background: white;
     position: relative;
     float: left;
     margin-right: 10px;
     width: 200px;
     height: 36px;
-    padding: 0 18px;
+    // padding: 0 18px;
     line-height: 36px;
     font-size: 14px;
     cursor: pointer;
-    color: rgb(42, 42, 42);
+    // color: rgb(42, 42, 42);
     border-radius: 18px;
     @media #{$LARGE-PHONE} {
       width: 100%;
