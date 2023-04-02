@@ -1,12 +1,14 @@
+@import '../../../../styles/colors';
+
 #header {
   z-index: 2048;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  height: 60px;
+  height: 50px;
   background: white;
-  border-bottom: 1px solid #d7dbdd;
+  border-bottom: 1px solid $BACKGROUND-LIGHT-GRAYISH-COLOR;
   height: 60px;
   .links {
     float: right;

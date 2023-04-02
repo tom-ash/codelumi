@@ -7,11 +7,13 @@ import { Category } from './components/category/category'
 import PanelVisitor from './components/visitor/visitor'
 
 class AnnouncementIndexPanel extends React.Component {
+  // @ts-ignore
   constructor(props) {
     super(props)
   }
 
   render() {
+    // @ts-ignore
     const { renderMap, currentCategory, links } = this.props
 
     return (

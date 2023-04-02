@@ -9,7 +9,7 @@
   left: 0;
   z-index: 2;
   width: 640px;
-  padding: 12px;
+  padding: 16px;
   @media #{$LARGE-TABLET} {
     overflow-x: scroll;
     position: relative;
@@ -17,7 +17,7 @@
     white-space: nowrap;
     padding-right: 0;
   }
-  background: #d7dbdd;
+  background: #E5E7E9;
 
   > h2 {
     font-size: 18px;
@@ -33,9 +33,12 @@
     background: white;
     border-radius: 6px;
     overflow: hidden;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     vertical-align: top;
     height: 230.4px;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
     @media #{$LARGE-TABLET} {
       margin-bottom: 0;
     }
