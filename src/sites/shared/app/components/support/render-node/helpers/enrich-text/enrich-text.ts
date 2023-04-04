@@ -10,7 +10,7 @@ export const enrichText = (plainText: string) => {
   enrichedText = enrichedText.replace(/\*(.+?)\*/g, (_fullMatch, innerMatch) => `<em>${innerMatch}</em>`)
 
   enrichedText = enrichedText.replace(
-    /(a)\[(.+)\]/g,
+    /(a)\[(.+?)]/g,
     // @ts-ignore
     (_fullMatch, tag, attributes) => {
       if (attributes.indexOf('text') === -1) return _fullMatch
