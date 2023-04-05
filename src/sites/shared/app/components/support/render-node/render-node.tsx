@@ -19,6 +19,8 @@ const Figure = loadable(() => import('./components/figure/figure'))
 const SkillFindLogoImage = loadable(() => import('../../../../../skillfind-tech/app/components/scaffold/header/components/image/image'))
 const MapawynajmuPlLogoImage = loadable(() => import('../../../../../mapawynajmu-pl/app/components/scaffold/header/components/logo-link/logo/components/image/image'))
 
+import { Logo as SkillfindTechFullLogo } from '../../../../../skillfind-tech/app/components/scaffold/header/components/logo'
+
 export const RenderNode = (props: RenderNodeProps) => {
   try {
     const { node, index } = props
@@ -28,6 +30,15 @@ export const RenderNode = (props: RenderNodeProps) => {
     if (typeof node === 'string') {
       const paragraphProps = { key: index, content: node }
 
+      return <Paragraph {...paragraphProps} />
+    }
+
+    // @ts-ignore
+    if (node.Paragraph) {
+      // @ts-ignore
+      const paragraphProps = { key: index, content: node.Paragraph, style: node.style }
+
+      // @ts-ignore
       return <Paragraph {...paragraphProps} />
     }
 
@@ -282,6 +293,11 @@ export const RenderNode = (props: RenderNodeProps) => {
     // @ts-ignore
     if (node.MapawynajmuPlLogoImage) {
       return <MapawynajmuPlLogoImage />
+    }
+
+    // @ts-ignore
+    if (node.SkillfindTechFullLogo) {
+      return <SkillfindTechFullLogo />
     }
 
     return null
