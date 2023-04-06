@@ -17,6 +17,7 @@ const RedirectsIndex = loadable(() => import('../../shared/app/components/redire
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import apiUrl from '../shared/constants/urls/api'
+import { useGoogleAnalytics } from './functions/use-google-analytics'
 
 // redirectsIndex
 
@@ -35,6 +36,8 @@ const App = () => {
     // @ts-ignore
     window.lang = lang
   }, [lang])
+
+  useGoogleAnalytics()
 
   const {
     page: renderPage,
