@@ -19,14 +19,16 @@ interface TextInputInterface {
     children?: React.ReactElement
     type?: TextInputType
     match?: RegExp
+    disabled?: boolean
     onChangeCallback?(): void
+    onClickCallback?(): void
   }): JSX.Element
 }
 
 // TODO: Add error handling!
 
 export const TextInput: TextInputInterface = props => {
-  const { inputKey, containerClassNames, children, type: customType, match, onChangeCallback } = props
+  const { inputKey, containerClassNames, children, type: customType, match, onChangeCallback, onClickCallback, disabled } = props
   const { state, dispatch } = useStore()
   const { texts, inputs } = state
   const value = inputs[inputKey]
@@ -35,6 +37,9 @@ export const TextInput: TextInputInterface = props => {
   const classNames = { container: containerClassNames ? `${containerClassNames} text-input` : 'text-input' }
   const type = customType || TextInputType.TEXT
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
+  const onClick = () => {
+    onClickCallback && onClickCallback()
+  }
   const onChange = (value: string) => {
     setInputs({ [inputKey]: value })
     onChangeCallback && onChangeCallback()
@@ -49,6 +54,8 @@ export const TextInput: TextInputInterface = props => {
     type,
     match,
     onChange,
+    onClick,
+    disabled,
   }
 
   return <ManagedText {...areaProps} />

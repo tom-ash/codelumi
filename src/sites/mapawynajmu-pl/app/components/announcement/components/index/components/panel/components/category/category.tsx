@@ -1,48 +1,30 @@
 import React from 'react'
-import { categories } from '../../../../../../constants/categories'
-import { ManagedSelect } from 'managed-inputs'
-import { buildUrl } from '../../../../../../../../../shared/functions/builders/url'
-import { changeUrl } from '../../../../../../../../../../shared/app/functions/routes/changers/change-url'
 import { SVG } from '../../../../../../../../../../shared/app/components/support/svg/svg'
+import { TextInput } from '../../../../../../../../../../shared/app/components/support/text-input/text-input'
+import { Tiles } from './components/tiles/tiles'
+import { useStore } from '../../../../../../../../../../shared/app/functions/store/useStore'
 
-// @ts-ignore
-export const Category = props => {
-  const { currentCategory, links } = props
-
-  const options = categories.map(category => ({
-    value: category.value,
-    text: category.label['pl'],
-    linkTrack: category.linkTrack,
-  }))
-
-  options.unshift({
-    // @ts-ignore
-    value: null,
-    text: 'Dowolna',
-  })
+export const Category = () => {
+  const { state, dispatch } = useStore()
+  const { control } = state
+  const { showCategoryTiles } = control
+  const setControl = (value: any) => dispatch({ type: 'control', value })
+  const onClickCallback = () => setControl({ showCategoryTiles: true })
 
   const children = <SVG name='list' />
 
-  const categoriesProps = {
+  const textInputProps = {
+    inputKey: 'category',
+    containerClassNames: 'text-input filter',
     children,
-    classNames: { container: 'filter' },
-    label: currentCategory === null ? { pl: 'Kategoria', en: 'Category' }['pl'] : '',
-    value: currentCategory === null ? '' : currentCategory,
-    options,
-    onFocusCoverZIndex: 998,
-    // @ts-ignore
-    onSelect: selectedCategory => {
-      const { linkTrack } = selectedCategory
-      const link = links[linkTrack || 'listing/index/all-categories']
-      const href = link && buildUrl(link)
-
-      // @ts-ignore
-      window.areListingsObsolete = true
-
-      changeUrl({ href: href || '/', retainQueryParams: true })
-    },
+    disabled: true,
+    onClickCallback,
   }
 
-  // @ts-ignore
-  return <ManagedSelect {...categoriesProps} />
+  return (
+    <div className='category-filter'>
+      <TextInput {...textInputProps} />
+      {showCategoryTiles && <Tiles />}
+    </div>
+  )
 }

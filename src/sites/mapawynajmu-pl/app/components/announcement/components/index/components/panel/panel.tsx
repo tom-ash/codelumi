@@ -14,15 +14,12 @@ class AnnouncementIndexPanel extends React.Component {
 
   render() {
     // @ts-ignore
-    const { renderMap, currentCategory, links } = this.props
+    const { renderMap } = this.props
 
     return (
       <>
         <div id='listing-index-panel'>
-          <Category
-            currentCategory={currentCategory}
-            links={links}
-          />
+          <Category />
           {renderMap && <PanelVisitor {...{ ...this.props }} />}
           <div className='float-clear' />
         </div>
