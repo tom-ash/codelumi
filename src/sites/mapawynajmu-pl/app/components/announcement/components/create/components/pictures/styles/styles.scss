@@ -28,7 +28,6 @@
       margin: auto;
       fill: #a6acaf;
       cursor: pointer !important;
-      z-index: 1;
       width: 55px;
     }
     text-align: center;
@@ -45,7 +44,6 @@
       background: #f2f3f4;
     }
     input {
-      z-index: 2;
       position: absolute;
       top: 0;
       right: 0;

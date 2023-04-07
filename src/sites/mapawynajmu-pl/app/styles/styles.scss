@@ -46,7 +46,6 @@ input::-webkit-inner-spin-button {
 
 .transparent-cover {
   position: fixed;
-  z-index: 1000;
   top: 0;
   right: 0;
   bottom: 0;
@@ -61,7 +60,6 @@ input[type='number'] {
 }
 
 .cover {
-  z-index: 200000000;
   position: fixed;
   top: 0;
   right: 0;

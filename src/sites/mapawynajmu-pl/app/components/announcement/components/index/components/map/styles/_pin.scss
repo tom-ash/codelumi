@@ -4,11 +4,9 @@
   @extend %pin;
   &.hovered,
   &.current {
-    z-index: 2;
     animation: pulse 1s infinite;
   }
   &:hover {
-    z-index: 2;
     transform: scale(2) translate(-9px, -9px);
     transition: transform 0.24s ease-in;
   }

@@ -11,24 +11,19 @@
 
 .category-filter {
   position: relative;
-  z-index: 3;
   .category-tiles-container {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 3;
-    // padding: 32px;
   }
   .tiles {
-    z-index: 4;
     position: absolute;
     @extend %container;
     top: 42px;
     width: 524px;
     max-width: none;
-    // height: 300px;
     padding: 12px;
   }
   .tile {
@@ -64,7 +59,6 @@
 }
 
 #listing-index-panel {
-  z-index: 3;
   position: relative;
   margin: 12px;
   .filter {
@@ -139,7 +133,6 @@
     .area-panel {
       line-height: 1;
       position: absolute;
-      z-index: 999;
       height: 72px;
       width: 240px;
       background: white;
@@ -188,7 +181,6 @@
     }
 
     .area-panel-cover {
-      z-index: 998;
       position: fixed;
       top: 0;
       right: 0;
