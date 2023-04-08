@@ -4,12 +4,10 @@ import { updatePage as submit } from '../../functions/update-page'
 import { SubmitButton } from '../../../../../support/submit-button/submit-button'
 
 interface UpdatePageButtonInterface {
-  (props: {
-    exitOnSave?: boolean
-  }): React.ReactElement
+  (props: { exitOnSave?: boolean }): React.ReactElement
 }
 
-export const UpdatePageButton:UpdatePageButtonInterface = (props) => {
+export const UpdatePageButton: UpdatePageButtonInterface = props => {
   const { exitOnSave } = props
   const { state } = useStore()
   const { texts, data, inputs } = state

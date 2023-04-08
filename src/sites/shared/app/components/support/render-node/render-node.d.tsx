@@ -20,10 +20,10 @@ type RenderNodeData =
       Editorial?: string
       TableOfContents?: string
       UnorderedList?: string[]
-      Image?: { source: string, alternative: string }
-      Anchor?: { h: string, r: string, t: string, c: string }
-      Code?: string | { c: string, l: string }
-      YouTubeEmbed?: { s: string, w: string }
+      Image?: { source: string; alternative: string }
+      Anchor?: { h: string; r: string; t: string; c: string }
+      Code?: string | { c: string; l: string }
+      YouTubeEmbed?: { s: string; w: string }
       Share?: { href: string }
     }
 

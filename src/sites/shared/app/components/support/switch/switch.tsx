@@ -3,19 +3,11 @@ import { useStore } from '../../../functions/store/useStore'
 import { ManagedCheckbox } from 'managed-inputs'
 
 interface SwitchInterface {
-  (props: {
-    switchKey: string
-    customSwitchValues?: any[]
-    containerClassNames?: string,
-  }): React.ReactElement
+  (props: { switchKey: string; customSwitchValues?: any[]; containerClassNames?: string }): React.ReactElement
 }
 
-export const Switch: SwitchInterface = (props) => {
-  const {
-    switchKey,
-    customSwitchValues,
-    containerClassNames,
-  } = props
+export const Switch: SwitchInterface = props => {
+  const { switchKey, customSwitchValues, containerClassNames } = props
   const swtichValues = customSwitchValues || [true, false]
   const { state, dispatch } = useStore()
   const { texts, inputs } = state

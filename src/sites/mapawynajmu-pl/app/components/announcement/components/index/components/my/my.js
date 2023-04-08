@@ -47,10 +47,12 @@ class AnnouncementIndexMy extends React.Component {
             <div className='cover' />
             <div className='monit'>
               <div className='text'>
-                {{
-                  pl: `Usunięte ogłoszenie nie może być przywrócone. Czy na pewno chcesz usunąć ogłoszenie Nr ${this.props.beingDeleted}. `,
-                  en: `The deleted announcement cannot be restored. Are you sure you want to delete the announcement No. ${this.props.beingDeleted}`,
-                }['pl']}
+                {
+                  {
+                    pl: `Usunięte ogłoszenie nie może być przywrócone. Czy na pewno chcesz usunąć ogłoszenie Nr ${this.props.beingDeleted}. `,
+                    en: `The deleted announcement cannot be restored. Are you sure you want to delete the announcement No. ${this.props.beingDeleted}`,
+                  }['pl']
+                }
               </div>
               <ManagedButton {...this.cancelDestroyManager()} />
               <ManagedButton {...this.destroyManager()} />

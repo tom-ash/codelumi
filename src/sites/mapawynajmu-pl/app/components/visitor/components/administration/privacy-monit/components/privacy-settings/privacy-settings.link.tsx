@@ -9,7 +9,7 @@ export const PrivacySettingsLink = () => {
   const linkProps = {
     linkKey: 'visitor/privacy-settings',
     customClassNames: 'link',
-    label: { pl: 'Ustawienia', en: 'Settings' }[lang]
+    label: { pl: 'Ustawienia', en: 'Settings' }[lang],
   }
 
   return <Link {...linkProps} />

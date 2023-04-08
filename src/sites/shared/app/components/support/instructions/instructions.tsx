@@ -7,9 +7,5 @@ type InfoProps = {
 export const Instructions = (props: InfoProps) => {
   const { text } = props
 
-  return (
-    <div className='instructions'>
-      {text}
-    </div>
-  )
+  return <div className='instructions'>{text}</div>
 }

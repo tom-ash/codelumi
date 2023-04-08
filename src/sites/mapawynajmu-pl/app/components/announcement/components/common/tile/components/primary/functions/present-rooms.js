@@ -14,5 +14,5 @@ export function presentRooms(props) {
     return { pl: 'pomieszczeń', en: 'rooms' }
   }
 
-  console.log("HERE")
+  console.log('HERE')
 }

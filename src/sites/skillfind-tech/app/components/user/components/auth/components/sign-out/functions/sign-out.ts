@@ -1,4 +1,4 @@
-import { deleteCookie } from "../../../../../../../../../mapawynajmu-pl/app/functions/cookie-handlers"
+import { deleteCookie } from '../../../../../../../../../mapawynajmu-pl/app/functions/cookie-handlers'
 import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/change-url'
 
 interface SignOut {

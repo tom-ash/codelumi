@@ -3,11 +3,11 @@ import { useStore } from '../../../../../../functions/store/useStore'
 import { RenderNode } from '../../../../../support/render-node/render-node'
 
 export const PageTile = () => {
-  const { state: {
-    data: {
-      body,
+  const {
+    state: {
+      data: { body },
     },
-  } } = useStore()
+  } = useStore()
 
   const nodeProps = {
     node: {

@@ -1,6 +1,6 @@
-import { AccountType } from "../../../../../../../types/user.types"
-import { buildUserObject } from "./build-user-object"
-import { postUserObject } from "./post-user-object"
+import { AccountType } from '../../../../../../../types/user.types'
+import { buildUserObject } from './build-user-object'
+import { postUserObject } from './post-user-object'
 
 interface SignUp {
   (args: {

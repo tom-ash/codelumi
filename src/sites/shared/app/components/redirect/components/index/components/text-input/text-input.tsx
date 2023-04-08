@@ -3,12 +3,7 @@ import { useStore } from '../../../../../../functions/store/useStore'
 import { ManagedText } from 'managed-inputs'
 
 interface TextInputInterface {
-  (props: {
-    id: number
-    fieldName: string
-    value: string
-    index: number
-  }): JSX.Element
+  (props: { id: number; fieldName: string; value: string; index: number }): JSX.Element
 }
 
 export const TextInput: TextInputInterface = props => {

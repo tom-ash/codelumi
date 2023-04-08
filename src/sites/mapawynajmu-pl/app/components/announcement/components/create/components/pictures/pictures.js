@@ -61,10 +61,12 @@ class AnnouncementCreatePictures extends React.Component {
             ></input>
           </div>
           <p>
-            {{
-              pl: 'Kliknij w ikonę aparatu, aby wybrać zdjęcia.',
-              en: 'Click the camera to select pictures.',
-            }['pl']}
+            {
+              {
+                pl: 'Kliknij w ikonę aparatu, aby wybrać zdjęcia.',
+                en: 'Click the camera to select pictures.',
+              }['pl']
+            }
           </p>
         </div>
         <div className='error'>{this.props.error && this.props.error['pl']}</div>

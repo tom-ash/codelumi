@@ -4,7 +4,8 @@
   @extend %container;
   padding: 32px;
   margin-top: 192px;
-  .company, .address {
+  .company,
+  .address {
     margin-bottom: 24px;
   }
   .street {

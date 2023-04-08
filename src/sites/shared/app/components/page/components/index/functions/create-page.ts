@@ -2,13 +2,10 @@ import { getAccessToken } from '../../../../user/components/auth/functions/get-a
 import { changeUrl } from '../../../../../functions/routes/changers/change-url'
 
 interface CreatePage {
-  (args: {
-    lang: Lang
-    apiUrl: string
-  }): void
+  (args: { lang: Lang; apiUrl: string }): void
 }
 
-export const createPage: CreatePage = (props) => {
+export const createPage: CreatePage = props => {
   const { lang, apiUrl } = props
   const accessToken = <string>getAccessToken()
 
@@ -17,7 +14,7 @@ export const createPage: CreatePage = (props) => {
     headers: {
       'Content-Type': 'application/json',
       'Access-Token': accessToken,
-      'Lang': lang,
+      Lang: lang,
     },
   })
     .then(response => {

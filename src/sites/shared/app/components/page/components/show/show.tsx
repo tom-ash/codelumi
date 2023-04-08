@@ -4,12 +4,12 @@ import { PageTile } from '../shared/components/tile/tile'
 import { changeUrl } from '../../../../functions/routes/changers/change-url'
 
 const PageShow = () => {
-  const { state: {
-    links,
-    user: {
-      role
-    }
-  } } = useStore()
+  const {
+    state: {
+      links,
+      user: { role },
+    },
+  } = useStore()
 
   const isAdmin = role === 'admin'
 

@@ -16,8 +16,15 @@ const YouTubeEmbed = loadable(() => import('./components/youtube-embed/youtube-e
 const Share = loadable(() => import('./components/share/share'))
 const Definition = loadable(() => import('./components/definition/definition'))
 const Figure = loadable(() => import('./components/figure/figure'))
-const SkillFindLogoImage = loadable(() => import('../../../../../skillfind-tech/app/components/scaffold/header/components/image/image'))
-const MapawynajmuPlLogoImage = loadable(() => import('../../../../../mapawynajmu-pl/app/components/scaffold/header/components/logo-link/logo/components/image/image'))
+const SkillFindLogoImage = loadable(
+  () => import('../../../../../skillfind-tech/app/components/scaffold/header/components/image/image')
+)
+const MapawynajmuPlLogoImage = loadable(
+  () =>
+    import(
+      '../../../../../mapawynajmu-pl/app/components/scaffold/header/components/logo-link/logo/components/image/image'
+    )
+)
 
 import { Logo as SkillfindTechFullLogo } from '../../../../../skillfind-tech/app/components/scaffold/header/components/logo'
 
@@ -86,10 +93,7 @@ export const RenderNode = (props: RenderNodeProps) => {
 
     if (node.Image) {
       const { style } = node
-      const {
-        source,
-        alternative,
-      } = node.Image
+      const { source, alternative } = node.Image
       const imgProps = {
         key: index,
         src: source,

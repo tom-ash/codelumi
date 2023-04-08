@@ -2,14 +2,10 @@ import { getAccessToken } from '../../../../user/components/auth/functions/get-a
 import { changeUrl } from '../../../../../functions/routes/changers/change-url'
 
 interface CreateImage {
-  (args: {
-    lang: Lang
-    apiUrl: string
-    recordKey: string
-  }): void
+  (args: { lang: Lang; apiUrl: string; recordKey: string }): void
 }
 
-export const createImage: CreateImage = (props) => {
+export const createImage: CreateImage = props => {
   const { lang, apiUrl, recordKey } = props
   const accessToken = <string>getAccessToken()
   const body = {
@@ -21,7 +17,7 @@ export const createImage: CreateImage = (props) => {
     headers: {
       'Content-Type': 'application/json',
       'Access-Token': accessToken,
-      'Lang': lang,
+      Lang: lang,
     },
     body: JSON.stringify(body),
   })

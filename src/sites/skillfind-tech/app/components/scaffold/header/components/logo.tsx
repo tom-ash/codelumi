@@ -19,7 +19,9 @@ export const Logo: LogoInterface = props => {
         loading='lazy'
         src={`https://soundofit-dev.s3.eu-central-1.amazonaws.com/logo-image.jpeg?a=123?a=${storageUrlRandomizedQuaryParameter}`}
       />
-      <strong>skillfind.<span className='tech'>tech</span></strong>
+      <strong>
+        skillfind.<span className='tech'>tech</span>
+      </strong>
     </div>
   )
 

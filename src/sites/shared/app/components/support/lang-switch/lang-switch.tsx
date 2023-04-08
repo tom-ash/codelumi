@@ -15,7 +15,7 @@ export const LangSwitch = () => {
   let plHref: string
   let enHref: string
   const [showLangs, setShowLangs] = useState(false)
-  
+
   const currentPl = links['current/pl']
   const currentEn = links['current/en']
 

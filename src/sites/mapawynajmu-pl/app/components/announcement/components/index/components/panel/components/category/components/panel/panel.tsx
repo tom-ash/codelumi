@@ -15,35 +15,40 @@ export const Panel = () => {
 
   return (
     <>
-      {categoryFilterPanel && <div
-        className='category-tiles-container'
-        onClick={(e) => {
-          setControl({ categoryFilterPanel: false })}
-        }
-        
-      />}
-      {<div
-        className={`tiles ${categoryFilterPanel ? 'opened' : 'closed'}`}
-        onClick={(e) => e.stopPropagation()}
-      >
-        {categories.map((category: any) => {
-          const categoryName = category.name
-          const label = texts[`${categoryName}CategoryLabel`]
-          const href = links[category.linkTrack].href
+      {categoryFilterPanel && (
+        <div
+          className='category-tiles-container'
+          onClick={e => {
+            setControl({ categoryFilterPanel: false })
+          }}
+        />
+      )}
+      {
+        <div
+          className={`tiles ${categoryFilterPanel ? 'opened' : 'closed'}`}
+          onClick={e => e.stopPropagation()}
+        >
+          {categories.map((category: any) => {
+            const categoryName = category.name
+            const label = texts[`${categoryName}CategoryLabel`]
+            const href = links[category.linkTrack].href
 
-          return (
-            <div className='tile' key={label} onClick={() => changeUrl({ href })}>
-              <div className='icon'>
-                <SVG name={category.pin.svg} />
+            return (
+              <div
+                className='tile'
+                key={label}
+                onClick={() => changeUrl({ href })}
+              >
+                <div className='icon'>
+                  <SVG name={category.pin.svg} />
+                </div>
+                <div className='label'>{label}</div>
+                <FloatClear />
               </div>
-              <div className='label'>
-                {label}
-              </div>
-              <FloatClear />
-            </div>
-          )
-        })}
-      </div>}
+            )
+          })}
+        </div>
+      }
     </>
   )
 }

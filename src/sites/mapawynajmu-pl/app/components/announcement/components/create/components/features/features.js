@@ -19,10 +19,12 @@ class AnnouncementCreateFeatures extends React.Component {
         {addFeatures && (
           <>
             <div className='hint'>
-              {{
-                pl: 'Elementy wybrane z listy dodawane są automatycznie w języku polskim oraz angielskim.',
-                en: 'Elements selected from the list are automatically added in Polish and English languages.',
-              }['pl']}
+              {
+                {
+                  pl: 'Elementy wybrane z listy dodawane są automatycznie w języku polskim oraz angielskim.',
+                  en: 'Elements selected from the list are automatically added in Polish and English languages.',
+                }['pl']
+              }
             </div>
             <div className='box-with-scroll'>
               <div className='box'>

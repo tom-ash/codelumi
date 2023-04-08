@@ -33,10 +33,7 @@ export const signIn: SignIn = args => {
       throw new Error('InvalidCredentials')
     })
     .then(jsonResponse => {
-      const {
-        accessToken,
-        href,
-      } = jsonResponse
+      const { accessToken, href } = jsonResponse
 
       saveCookie('access_token', accessToken, 'ninetyDays')
 

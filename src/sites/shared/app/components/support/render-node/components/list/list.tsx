@@ -8,7 +8,6 @@ const List = (props: ListProps) => {
   return (
     <ul style={style}>
       {listNodes.map((node, index) => {
-
         console.log(node)
 
         const nodeProps = {
@@ -17,7 +16,6 @@ const List = (props: ListProps) => {
 
         return (
           <li key={`${index}-${node}`}>
-
             <RenderNode {...nodeProps} />
 
             {/* <Paragraph content={node} /> */}

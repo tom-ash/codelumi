@@ -10,12 +10,7 @@ interface ProvisionInterface {
 }
 
 export const Provision = (props: ProvisionInterface) => {
-  const {
-    tier,
-    item,
-    lang,
-    [lang]: text
-  } = props
+  const { tier, item, lang, [lang]: text } = props
 
   return (
     <div className={`provision ${tier}`}>

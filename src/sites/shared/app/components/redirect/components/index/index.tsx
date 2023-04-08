@@ -20,21 +20,33 @@ const Index = () => {
     <div id='redirects-index'>
       <CreateButton />
       {redirects.map((asset: any, index: number) => {
-        const {
-          id,
-          originalUrl,
-          redirectedUrl,
-        } = asset
+        const { id, originalUrl, redirectedUrl } = asset
 
         return (
           <div key={id}>
-            <span className='id'>
-              {id}
-            </span>
-            <TextInput id={id} fieldName='originalUrl' value={originalUrl} index={index} />
-            <TextInput id={id} fieldName='redirectedUrl' value={redirectedUrl} index={index} />
-            <DeleteButton label='delete' connecting={false} onClick={() => deleteAsset(id)} />
-            <UpdateButton label='save' connecting={false} onClick={() => updateAsset(asset)}  />
+            <span className='id'>{id}</span>
+            <TextInput
+              id={id}
+              fieldName='originalUrl'
+              value={originalUrl}
+              index={index}
+            />
+            <TextInput
+              id={id}
+              fieldName='redirectedUrl'
+              value={redirectedUrl}
+              index={index}
+            />
+            <DeleteButton
+              label='delete'
+              connecting={false}
+              onClick={() => deleteAsset(id)}
+            />
+            <UpdateButton
+              label='save'
+              connecting={false}
+              onClick={() => updateAsset(asset)}
+            />
           </div>
         )
       })}

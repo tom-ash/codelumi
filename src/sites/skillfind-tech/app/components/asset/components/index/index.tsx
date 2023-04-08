@@ -20,21 +20,29 @@ const Index = () => {
     <div id='asset-index'>
       <AddButton />
       {assets.map((asset: any, index: number) => {
-        const {
-          id,
-          name,
-          pathData,
-          viewBox,
-        } = asset
+        const { id, name, pathData, viewBox } = asset
 
         return (
           <div key={id}>
-            <span className='id'>
-              {id}
-            </span>
-            <TextInput id={id} fieldName='name' value={name} index={index} />
-            <TextInput id={id} fieldName='pathData' value={pathData} index={index} />
-            <TextInput id={id} fieldName='viewBox' value={viewBox} index={index} />
+            <span className='id'>{id}</span>
+            <TextInput
+              id={id}
+              fieldName='name'
+              value={name}
+              index={index}
+            />
+            <TextInput
+              id={id}
+              fieldName='pathData'
+              value={pathData}
+              index={index}
+            />
+            <TextInput
+              id={id}
+              fieldName='viewBox'
+              value={viewBox}
+              index={index}
+            />
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill={'white'}
@@ -42,8 +50,16 @@ const Index = () => {
             >
               <path d={pathData} />
             </svg>
-            <DeleteButton label='delete' connecting={false} onClick={() => deleteAsset(id)} />
-            <UpdateButton label='save' connecting={false} onClick={() => updateAsset(asset)}  />
+            <DeleteButton
+              label='delete'
+              connecting={false}
+              onClick={() => deleteAsset(id)}
+            />
+            <UpdateButton
+              label='save'
+              connecting={false}
+              onClick={() => updateAsset(asset)}
+            />
           </div>
         )
       })}

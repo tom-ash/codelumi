@@ -11,11 +11,7 @@ const PrivacySettings = () => {
 
   const { state } = useStore()
   const { texts } = state
-  const {
-    headingOne,
-    statisticsConsent,
-    marketingConsent,
-  } = texts
+  const { headingOne, statisticsConsent, marketingConsent } = texts
   const headingOneProps = {
     tier: 1,
     text: headingOne,
@@ -25,15 +21,11 @@ const PrivacySettings = () => {
     <div id='privacy-settings'>
       <Heading {...headingOneProps} />
       <div className='consent-container'>
-        <div className='consent-text'>
-          {statisticsConsent}
-        </div>
+        <div className='consent-text'>{statisticsConsent}</div>
         <StatisticsConsentRadio />
       </div>
       <div className='consent-container'>
-        <div className='consent-text'>
-          {marketingConsent}
-        </div>
+        <div className='consent-text'>{marketingConsent}</div>
         <MarketingConsentRadio />
       </div>
     </div>

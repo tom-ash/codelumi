@@ -1,12 +1,10 @@
-import { Dispatch } from "redux"
+import { Dispatch } from 'redux'
 
 interface ScreenSizeHandler {
-  (args:{ 
-    dispatch: Dispatch
-  }): void
+  (args: { dispatch: Dispatch }): void
 }
 
-export const screenSizeHandler: ScreenSizeHandler = (args) => {
+export const screenSizeHandler: ScreenSizeHandler = args => {
   const { dispatch } = args
   const width = window.innerWidth
   const setApp = (value: any) => dispatch({ type: 'app', value })

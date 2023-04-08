@@ -5,7 +5,7 @@ import { saveCookie } from '../../../../../../../functions/cookie-handlers'
 
 export const MarketingConsentRadio = () => {
   const { state, dispatch } = useStore()
-  
+
   const { visitor } = state
   const { marketingConsent } = visitor
   const name = 'marketing-consent'

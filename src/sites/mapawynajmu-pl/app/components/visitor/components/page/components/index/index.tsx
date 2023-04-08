@@ -19,12 +19,7 @@ const VisitorPageIndex = () => {
     <div id='visitor-page-index'>
       {/* @ts-ignore */}
       {pages.map(page => {
-        const {
-          coverImage: image,
-          title,
-          url,
-          lang,
-        } = page
+        const { coverImage: image, title, url, lang } = page
 
         const imageProps = {
           src: image,
@@ -34,9 +29,7 @@ const VisitorPageIndex = () => {
         const label = (
           <>
             <Image {...imageProps} />
-            <h2>
-              {title}
-            </h2>
+            <h2>{title}</h2>
           </>
         )
 

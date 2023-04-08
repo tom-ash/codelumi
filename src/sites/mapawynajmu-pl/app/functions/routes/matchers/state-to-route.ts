@@ -4,13 +4,10 @@ import apiUrl from '../../../../shared/constants/urls/api'
 import { Dispatch } from 'redux'
 
 interface MatchStateToRoute {
-  (args: {
-    isSSR: boolean
-    dispatch: Dispatch
-  }): void
+  (args: { isSSR: boolean; dispatch: Dispatch }): void
 }
 
-export const matchStateToRoute: MatchStateToRoute = (args) => {
+export const matchStateToRoute: MatchStateToRoute = args => {
   const { isSSR, dispatch } = args
 
   const customHeaders = {

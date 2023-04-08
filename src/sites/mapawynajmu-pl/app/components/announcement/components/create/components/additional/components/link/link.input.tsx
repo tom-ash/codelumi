@@ -5,7 +5,7 @@ import { TextInputType } from '../../../../../../../../../../shared/app/componen
 export const LinkInput = () => {
   const textInputProps = {
     inputKey: 'link',
-    type: TextInputType.TEXT
+    type: TextInputType.TEXT,
   }
 
   return <TextInput {...textInputProps} />

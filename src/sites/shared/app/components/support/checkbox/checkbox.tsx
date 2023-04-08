@@ -3,17 +3,11 @@ import { useStore } from '../../../functions/store/useStore'
 import { ManagedCheckbox } from 'managed-inputs'
 
 interface CheckboxInterface {
-  (props: {
-    checkboxKey: string
-    containerClassNames?: string,
-  }): React.ReactElement
+  (props: { checkboxKey: string; containerClassNames?: string }): React.ReactElement
 }
 
-export const Checkbox: CheckboxInterface = (props) => {
-  const {
-    checkboxKey,
-    containerClassNames,
-  } = props
+export const Checkbox: CheckboxInterface = props => {
+  const { checkboxKey, containerClassNames } = props
   const { state, dispatch } = useStore()
   const { texts, inputs } = state
   const { [`${checkboxKey}CheckboxLabel`]: label } = texts

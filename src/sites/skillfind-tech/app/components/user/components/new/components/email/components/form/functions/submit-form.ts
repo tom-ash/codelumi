@@ -3,8 +3,8 @@
 // import { buildUrl } from '../../../../../../../../../../shared/functions/routes/builders/url'
 // import { UserObject } from '../form.types'
 // import { changeUrl } from '../../../../../../../../../../../shared/app/functions/routes/changers/change-url'
-import { buildUserObject } from "./build-user-object"
-import { postUserObject } from "./post-user-object"
+import { buildUserObject } from './build-user-object'
+import { postUserObject } from './post-user-object'
 
 interface SubmitForm {
   (args: {
@@ -19,15 +19,8 @@ interface SubmitForm {
 }
 
 export const submitForm: SubmitForm = args => {
-  const {
-    lang,
-    emailAddress,
-    password,
-    termsOfServiceConsent,
-    termsOfServiceConsentLabel,
-    setControl,
-    setErrors,
-  } = args
+  const { lang, emailAddress, password, termsOfServiceConsent, termsOfServiceConsentLabel, setControl, setErrors } =
+    args
 
   const userObject = buildUserObject({
     emailAddress,

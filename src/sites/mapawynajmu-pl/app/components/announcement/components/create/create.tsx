@@ -86,7 +86,6 @@ class AnnouncementCreate extends React.Component {
             <h1>{H1['pl']}</h1>
             <Line />
             <form>
-            
               <Category />
               <Line />
               <Map />

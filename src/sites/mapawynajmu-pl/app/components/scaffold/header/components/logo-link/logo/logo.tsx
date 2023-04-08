@@ -6,9 +6,7 @@ export const Logo = () => {
   useStyles(styles)
 
   return (
-    <div
-      id='logo'
-    >
+    <div id='logo'>
       <img src='https://mapawynajmupl.s3.eu-central-1.amazonaws.com/assets/mapawynajmupl-logo.jpg' />
       <div className='name'>
         <span>mapa</span>

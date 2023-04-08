@@ -29,7 +29,7 @@ interface UpdatePage {
   }): void
 }
 
-export const updatePage: UpdatePage = (props) => {
+export const updatePage: UpdatePage = props => {
   const {
     updatePageApiUrl,
     exitOnSave,

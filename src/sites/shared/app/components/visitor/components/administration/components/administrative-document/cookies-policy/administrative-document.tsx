@@ -7,15 +7,11 @@ interface AdministrativeDocumentInterface {
   (props: {
     identifier: string
     provisions: any[] // TODO!
-
   }): React.ReactElement
 }
 
-export const AdministrativeDocument: AdministrativeDocumentInterface = (props) => {
-  const {
-    identifier,
-    provisions,
-  } = props
+export const AdministrativeDocument: AdministrativeDocumentInterface = props => {
+  const { identifier, provisions } = props
 
   const { state } = useStore()
   const { app, texts } = state
@@ -26,7 +22,9 @@ export const AdministrativeDocument: AdministrativeDocumentInterface = (props) =
   return (
     <div id={identifier}>
       <Heading {...headingOneProps} />
-      {provisions.map((provision, index) => <Provision {...{ ...provision, lang, key: index }} />)}
+      {provisions.map((provision, index) => (
+        <Provision {...{ ...provision, lang, key: index }} />
+      ))}
     </div>
   )
 }

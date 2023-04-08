@@ -2,16 +2,15 @@ import React, { useContext } from 'react'
 import { ReactReduxContext } from 'react-redux'
 
 interface SVGInterface {
-  (props: {
-    name: string
-    fill?: string
-  }): React.ReactElement | null
+  (props: { name: string; fill?: string }): React.ReactElement | null
 }
 
-export const SVG: SVGInterface = (props) => {
+export const SVG: SVGInterface = props => {
   const { store } = useContext(ReactReduxContext)
   const { getState, dispatch } = store
-  const { assets: { svgs } } = getState()
+  const {
+    assets: { svgs },
+  } = getState()
   const { name, fill } = props
 
   if (!svgs) return null

@@ -4,13 +4,10 @@ import { TextInput } from '../../../../../../../../../../shared/app/components/s
 import { SVG } from '../../../../../../../../../../shared/app/components/support/svg/svg'
 
 interface FilterInterface {
-  (props: {
-    name: string
-    panel: React.ReactElement
-  }): React.ReactElement
+  (props: { name: string; panel: React.ReactElement }): React.ReactElement
 }
 
-export const Filter: FilterInterface = (props) => {
+export const Filter: FilterInterface = props => {
   const { name, panel } = props
   const { state, dispatch } = useStore()
   const { data } = state

@@ -1,6 +1,6 @@
-import { useContext, useEffect } from "react"
-import { ReactReduxContext } from "react-redux"
-import { matchStateToRoute } from "./routes/matchers/state-to-route"
+import { useContext, useEffect } from 'react'
+import { ReactReduxContext } from 'react-redux'
+import { matchStateToRoute } from './routes/matchers/state-to-route'
 
 export const useStateToRouteMatcher = () => {
   const { store } = useContext(ReactReduxContext)

@@ -76,8 +76,7 @@ export const update = (props: saveProps) => {
                 storageKey,
                 storageUrl,
               }),
-            })
-            .then(() => {
+            }).then(() => {
               setControl({ connecting: false })
             })
           })

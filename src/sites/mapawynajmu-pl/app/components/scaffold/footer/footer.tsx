@@ -27,12 +27,8 @@ const Footer = () => {
           <div className='float-clear' />
         </div>
         <div className='copyright'>
-          <span className='warsaw-digital'>
-            Warsaw Digital Sp. z o.o. 2020 - 2023
-          </span>
-          <span className='all-rights-reserved'>
-            {allRightsReserved}
-          </span>
+          <span className='warsaw-digital'>Warsaw Digital Sp. z o.o. 2020 - 2023</span>
+          <span className='all-rights-reserved'>{allRightsReserved}</span>
         </div>
       </div>
     </footer>

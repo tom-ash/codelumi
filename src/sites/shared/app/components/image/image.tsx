@@ -8,10 +8,7 @@ const Image = () => {
   const { state } = useStore()
   const { render } = state
 
-  const {
-    'image/index': renderIndex,
-    'image/edit': renderEdit,
-  } = render
+  const { 'image/index': renderIndex, 'image/edit': renderEdit } = render
 
   return (
     <section id='image'>

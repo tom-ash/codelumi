@@ -7,11 +7,11 @@ import parameterize from 'parameterize'
 //@ts-ignore
 const TableOfContents = props => {
   const { title } = props
-  const { state: {
-    data: {
-      body,
-    }
-  } } = useStore()
+  const {
+    state: {
+      data: { body },
+    },
+  } = useStore()
 
   const article = (() => {
     try {
@@ -22,10 +22,14 @@ const TableOfContents = props => {
   })()
 
   //@ts-ignore
-  const headings = (article).filter(node => {
-    if (node.Section && node.Section[0] && node.Section[0].HeadingTwo) return true
+  const headings = article
+  //@ts-ignore
+    .filter(node => {
+      if (node.Section && node.Section[0] && node.Section[0].HeadingTwo) return true
+      //@ts-ignore
+    })
     //@ts-ignore
-  }).map(node => node.Section[0].HeadingTwo)
+    .map(node => node.Section[0].HeadingTwo)
 
   return (
     <nav className='table-of-contents'>

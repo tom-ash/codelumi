@@ -11,7 +11,7 @@ interface SyncRouteData {
   }): Promise<any>
 }
 
-export const syncRouteData: SyncRouteData = (args) => {
+export const syncRouteData: SyncRouteData = args => {
   const { apiUrl, url, query, isSSR, customHeaders } = args
 
   return fetch(`${apiUrl}/sync${query}`, {

@@ -9,10 +9,7 @@ export const Category = () => {
   const { state, dispatch } = useStore()
   const { app, texts, inputs } = state
   const lang = app.lang as Lang
-  const {
-    categoryHeading,
-    categoryInstructions,
-  } = texts
+  const { categoryHeading, categoryInstructions } = texts
   const { category: currentCategory } = inputs
 
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })

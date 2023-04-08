@@ -43,7 +43,7 @@ const PageCreate = () => {
         </nav>
         <form className={nav}>
           {nav === 'body' && <BodyTextarea />}
-          {nav === 'meta' &&  <Meta />}
+          {nav === 'meta' && <Meta />}
           {nav === 'schema' && <Schema />}
         </form>
         <UpdatePageButton />

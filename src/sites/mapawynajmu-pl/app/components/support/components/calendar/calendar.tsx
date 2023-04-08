@@ -11,7 +11,7 @@ const Calendar = () => {
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const onChange = (date: Date) => setInputs({ availabilityDate: parseDate(date) })
   const value = availabilityDate ? new Date(availabilityDate) : null
-  
+
   const calendarProps = {
     locale,
     value,

@@ -4,7 +4,12 @@ import { ButtonSpinner } from '../../../../../mapawynajmu-pl/app/components/supp
 import { ManagedButton } from 'managed-inputs'
 
 interface SubmitButtonInterface {
-  (props: { label: string; submit(args: any): void; [key: string]: any, customContainerClassNames?: string }): JSX.Element
+  (props: {
+    label: string
+    submit(args: any): void
+    [key: string]: any
+    customContainerClassNames?: string
+  }): JSX.Element
 }
 
 export const SubmitButton: SubmitButtonInterface = props => {

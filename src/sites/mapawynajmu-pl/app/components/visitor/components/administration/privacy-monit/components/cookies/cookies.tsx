@@ -26,10 +26,6 @@ export const Cookies = () => {
       </p>
     ),
   }
-  
-  return (
-    <>
-      {cookies[lang]}
-    </>
-  )
+
+  return <>{cookies[lang]}</>
 }

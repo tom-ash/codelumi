@@ -16,15 +16,9 @@ interface MatchStateToRouteGeneric {
   }): void
 }
 
-export const matchStateToRouteGeneric: MatchStateToRouteGeneric = (args) => {
-  const {
-    clientUrl,
-    apiUrl,
-    isSSR,
-    customHeaders,
-    dispatch,
-  } = args
-  
+export const matchStateToRouteGeneric: MatchStateToRouteGeneric = args => {
+  const { clientUrl, apiUrl, isSSR, customHeaders, dispatch } = args
+
   const url = getPureUrl(window.location.pathname) // TODO: This is not URL!
   const query = window.location.search
 
@@ -34,8 +28,8 @@ export const matchStateToRouteGeneric: MatchStateToRouteGeneric = (args) => {
 
   dispatch({ type: 'visitor', value: consents })
 
-  syncRouteData.call(this, { apiUrl, url, query, isSSR, customHeaders })
-  .then((syncedRouteData: any) => { // TODO: TS!
+  syncRouteData.call(this, { apiUrl, url, query, isSSR, customHeaders }).then((syncedRouteData: any) => {
+    // TODO: TS!
     const { state, meta } = syncedRouteData
 
     stateResetter({ state, dispatch })

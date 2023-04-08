@@ -1,6 +1,6 @@
-import { useEffect } from "react"
-import { loadFonts, Fonts } from "./fonts/load-fonts"
+import { useEffect } from 'react'
+import { loadFonts, Fonts } from './fonts/load-fonts'
 
 export const useFontsFactory = (fonts: Fonts) => {
-  return (() => useEffect(() => loadFonts(fonts), []))
+  return () => useEffect(() => loadFonts(fonts), [])
 }

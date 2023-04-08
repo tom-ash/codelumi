@@ -10,8 +10,7 @@ export function controlProvider(announcement, index) {
     <div className='control'>
       <div className='info'>
         <div>
-          {{ pl: 'Data utworzenia', en: 'Crated at' }['pl']}{' '}
-          <strong>{announcement.createdAt.slice(0, 10)}</strong>
+          {{ pl: 'Data utworzenia', en: 'Crated at' }['pl']} <strong>{announcement.createdAt.slice(0, 10)}</strong>
         </div>
       </div>
       <div className='info'>
@@ -21,8 +20,7 @@ export function controlProvider(announcement, index) {
       </div>
       <div className='info'>
         <div>
-          {{ pl: 'Aktywne do ', en: 'Active until ' }['pl']}{' '}
-          <strong>{announcement.activeUntil.slice(0, 10)}</strong>
+          {{ pl: 'Aktywne do ', en: 'Active until ' }['pl']} <strong>{announcement.activeUntil.slice(0, 10)}</strong>
         </div>
         {this.buttonProvider('Przedłuż', 'Extend', announcement, index, this.extend, ' extend')}
       </div>

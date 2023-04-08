@@ -12,7 +12,7 @@ interface RecordIndexerInterface {
   }): React.ReactElement
 }
 
-export const RecordIndexer: RecordIndexerInterface = (props) => {
+export const RecordIndexer: RecordIndexerInterface = props => {
   useStyles(styles)
 
   const { create } = props

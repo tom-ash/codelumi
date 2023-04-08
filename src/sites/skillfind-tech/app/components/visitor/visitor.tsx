@@ -18,9 +18,7 @@ export const Visitor = () => {
   const renderPrivacyPolicy = render['visitor/privacy-policy']
   const renderTermsOfService = render['visitor/terms-of-service']
   const renderPrivacySettings = render['visitor/privacy-settings']
-  const {
-    renderVisitorPageIndex
-  } = render
+  const { renderVisitorPageIndex } = render
   const showPrivacyMonit =
     (statisticsConsent === null || marketingConsent === null) &&
     !renderContact &&

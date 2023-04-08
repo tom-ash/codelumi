@@ -7,11 +7,7 @@ type InfoProps = {
 export function Info(props: InfoProps) {
   const { message } = props
 
-  return (
-    <div className='info'>
-      {message}
-    </div>
-  )
+  return <div className='info'>{message}</div>
 }
 
 export default Info

@@ -22,10 +22,12 @@ class AnnouncementCreateFurnishings extends React.Component {
         {addFurnishings && (
           <>
             <div className='hint'>
-              {{
-                pl: 'Elementy wybrane z listy dodawane są automatycznie w językach polskim oraz angielskim.',
-                en: 'Elements selected from the list are automatically added in Polish and English languages.',
-              }['pl']}
+              {
+                {
+                  pl: 'Elementy wybrane z listy dodawane są automatycznie w językach polskim oraz angielskim.',
+                  en: 'Elements selected from the list are automatically added in Polish and English languages.',
+                }['pl']
+              }
             </div>
             <div className='box-with-scroll'>
               <div className='box'>

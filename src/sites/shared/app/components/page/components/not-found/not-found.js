@@ -10,9 +10,7 @@ class PageNotFound extends React.Component {
       <div id='not-found'>
         <div className='inner'>
           <div className='number'>404</div>
-          <div className='text'>
-            Strona nie została odnaleziona.
-          </div>
+          <div className='text'>Strona nie została odnaleziona.</div>
         </div>
       </div>
     )

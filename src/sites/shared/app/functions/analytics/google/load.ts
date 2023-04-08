@@ -2,17 +2,11 @@ import { Dispatch } from 'redux'
 import { loadScript } from '../../scripts/load-script'
 
 interface LoadGoogleAnalytics {
-  (args: {
-    measurementId: string
-    dispatch: Dispatch
-  }): void
+  (args: { measurementId: string; dispatch: Dispatch }): void
 }
 
-export const loadGoogleAnalytics: LoadGoogleAnalytics = (args) => {
-  const {
-    measurementId,
-    dispatch,
-  } = args
+export const loadGoogleAnalytics: LoadGoogleAnalytics = args => {
+  const { measurementId, dispatch } = args
 
   loadScript(`https://www.googletagmanager.com/gtag/js?id=${measurementId}`).then(() => {
     window.dataLayer = window.dataLayer || []

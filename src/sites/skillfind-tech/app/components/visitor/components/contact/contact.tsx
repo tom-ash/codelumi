@@ -8,16 +8,13 @@ const VisitorContact = () => {
 
   const { state } = useStore()
   const { texts } = state
-  const {
-    companyName,
-    companyStreetAndStreetNumber,
-    companyPostalCodeAndCity,
-    companyEmail,
-  } = texts
+  const { companyName, companyStreetAndStreetNumber, companyPostalCodeAndCity, companyEmail } = texts
 
   return (
     <div id='contact'>
-      <div className='company'><strong>{companyName}</strong></div>
+      <div className='company'>
+        <strong>{companyName}</strong>
+      </div>
       <div className='address'>
         <div className='street'>{companyStreetAndStreetNumber}</div>
         <div className='postalc-code-and-city'>{companyPostalCodeAndCity}</div>

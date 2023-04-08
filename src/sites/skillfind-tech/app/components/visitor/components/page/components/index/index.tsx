@@ -19,12 +19,7 @@ const VisitorPageIndex = () => {
       <HeadingTwo text={honeYourSkillsHeadingTwo} />
       {/* @ts-ignore */}
       {pages.map(page => {
-        const {
-          coverImage: image,
-          title,
-          href,
-          hrefLang,
-        } = page
+        const { coverImage: image, title, href, hrefLang } = page
 
         const imageProps = {
           src: image,

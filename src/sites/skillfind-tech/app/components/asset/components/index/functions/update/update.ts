@@ -1,22 +1,12 @@
-import { changeUrl } from "../../../../../../../../shared/app/functions/routes/changers/change-url"
-import { fetchApi, FetchMethod } from "../../../../../../../../shared/app/functions/fetch-api/fetch-api"
+import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
+import { fetchApi, FetchMethod } from '../../../../../../../../shared/app/functions/fetch-api/fetch-api'
 
 interface UpdateAsset {
-  (args: {
-    id: string,
-    name: string
-    pathData: string
-    viewBox: string
-  }): void
+  (args: { id: string; name: string; pathData: string; viewBox: string }): void
 }
 
-export const updateAsset: UpdateAsset = (args) => {
-  const {
-    id,
-    name,
-    pathData,
-    viewBox,
-  } = args
+export const updateAsset: UpdateAsset = args => {
+  const { id, name, pathData, viewBox } = args
 
   fetchApi({
     path: `assets/${id}`,
@@ -26,9 +16,7 @@ export const updateAsset: UpdateAsset = (args) => {
       pathData,
       viewBox,
     },
-  })
-  .then(() => {
+  }).then(() => {
     changeUrl({ href: window.location.href })
   })
 }
-

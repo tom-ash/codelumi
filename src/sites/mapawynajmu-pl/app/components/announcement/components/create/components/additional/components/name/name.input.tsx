@@ -3,7 +3,7 @@ import { TextInput } from '../../../../../../../../../../shared/app/components/s
 
 export const NameInput = () => {
   const textInputProps = {
-    inputKey: 'name'
+    inputKey: 'name',
   }
 
   return <TextInput {...textInputProps} />

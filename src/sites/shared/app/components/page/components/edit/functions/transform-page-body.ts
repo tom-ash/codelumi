@@ -1,6 +1,6 @@
 // @ts-ignore
 import parameterize from 'parameterize'
-  
+
 // TODO: TS!
 export const transformPageBody = (node: any) => {
   if (Array.isArray(node)) {

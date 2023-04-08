@@ -1,20 +1,12 @@
-import { changeUrl } from "../../../../../../functions/routes/changers/change-url"
-import { fetchApi, FetchMethod } from "../../../../../../functions/fetch-api/fetch-api"
+import { changeUrl } from '../../../../../../functions/routes/changers/change-url'
+import { fetchApi, FetchMethod } from '../../../../../../functions/fetch-api/fetch-api'
 
 interface UpdateAsset {
-  (args: {
-    id: string,
-    originalUrl: string
-    redirectedUrl: string
-  }): void
+  (args: { id: string; originalUrl: string; redirectedUrl: string }): void
 }
 
-export const updateAsset: UpdateAsset = (args) => {
-  const {
-    id,
-    originalUrl,
-    redirectedUrl,
-  } = args
+export const updateAsset: UpdateAsset = args => {
+  const { id, originalUrl, redirectedUrl } = args
 
   fetchApi({
     path: `redirects/${id}`,
@@ -23,9 +15,7 @@ export const updateAsset: UpdateAsset = (args) => {
       originalUrl,
       redirectedUrl,
     },
-  })
-  .then(() => {
+  }).then(() => {
     changeUrl({ href: window.location.href })
   })
 }
-

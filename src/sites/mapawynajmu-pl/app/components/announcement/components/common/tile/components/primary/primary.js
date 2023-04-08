@@ -48,8 +48,7 @@ class AnnouncementCreatePrimary extends React.Component {
           {area && (
             <div className='area'>
               {area}&nbsp;
-              {/* TODO: LANG! */}
-              m<sup>2</sup>
+              {/* TODO: LANG! */}m<sup>2</sup>
               <div className='float-clear' />
             </div>
           )}
@@ -128,13 +127,12 @@ function PresentRent({ amount, currency, type, perSqm, net }) {
   return (
     <div className={`rent-container ${type}`}>
       {multipliedAmount.slice(0, -2)} <sup className='decimal'>{multipliedAmount.slice(-2)}</sup> {currency}
-      {perSqm &&
+      {perSqm && (
         <>
-          {/* TODO: LANG! */}
-          {' '}
-          /m<sup>2</sup>
-        </>}
-        {/* TODO: LANG */}
+          {/* TODO: LANG! */} /m<sup>2</sup>
+        </>
+      )}
+      {/* TODO: LANG */}
       <sub>${net ? 'NETTO' : ''} /MC</sub>
       <div className='float-clear' />
     </div>
