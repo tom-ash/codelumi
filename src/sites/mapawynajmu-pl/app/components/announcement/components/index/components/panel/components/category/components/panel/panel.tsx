@@ -5,17 +5,22 @@ import { SVG } from '../../../../../../../../../../../../shared/app/components/s
 import { FloatClear } from '../../../../../../../../../../../../shared/app/components/support/float-clear/float-clear'
 import { changeUrl } from '../../../../../../../../../../../../shared/app/functions/routes/changers/change-url'
 
-export const Tiles = () => {
+export const Panel = () => {
   const { state, dispatch } = useStore()
   const { texts, control, links } = state
   const { categoryFilterPanel } = control
   const setControl = (value: any) => dispatch({ type: 'control', value })
 
+  // const setInputs = (value: any) => dispatch({ type: 'inputs', value })
+
   return (
     <>
       {categoryFilterPanel && <div
         className='category-tiles-container'
-        onClick={(e) => setControl({ categoryFilterPanel: false })}
+        onClick={(e) => {
+          setControl({ categoryFilterPanel: false })}
+        }
+        
       />}
       {<div
         className={`tiles ${categoryFilterPanel ? 'opened' : 'closed'}`}

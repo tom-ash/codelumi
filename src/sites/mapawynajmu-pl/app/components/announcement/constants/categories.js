@@ -57,10 +57,10 @@ export const categories = [
       svg: 'parkingSpace',
       color: '#34495E',
     },
-    linkTrack: 'listing/index/parking_spaces',
+    linkTrack: 'listing/index/parkingSpaces',
   },
   {
-    name: 'garage',
+    name: 'garages',
     number: 9,
     value: 9,
     label: {
@@ -87,7 +87,7 @@ export const categories = [
       svg: 'usablePremises',
       color: '#D35400',
     },
-    linkTrack: 'listing/index/usable_premises',
+    linkTrack: 'listing/index/usablePremises',
   },
   {
     name: 'offices',
@@ -117,10 +117,10 @@ export const categories = [
       svg: 'virtualOffice',
       color: '#7D3C98',
     },
-    linkTrack: 'listing/index/virtual_offices',
+    linkTrack: 'listing/index/virtualOffices',
   },
   {
-    name: 'coworking',
+    name: 'coworkingSpaces',
     number: 7,
     value: 7,
     label: {
@@ -132,7 +132,7 @@ export const categories = [
       svg: 'coworkingSpace',
       color: '#4A235A',
     },
-    linkTrack: 'listing/index/coworking_spaces',
+    linkTrack: 'listing/index/coworkingSpaces',
   },
   {
     name: 'advertisingSpaces',
@@ -147,6 +147,6 @@ export const categories = [
       svg: 'advertisingSpaces',
       color: '#4A235A',
     },
-    linkTrack: 'listing/index/advertising_spaces',
+    linkTrack: 'listing/index/advertisingSpaces',
   },
 ]

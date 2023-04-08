@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tiles } from './components/tiles/tiles'
+import { Panel } from './components/panel/panel'
 import { Filter } from '../filter/filter'
 
-export const Category = () => <Filter name='category' panel={<Tiles />} />
+export const Category = () => <Filter name='category' panel={<Panel />} />

@@ -1,0 +1,60 @@
+%category {
+      position: relative;
+    .category-tiles-container {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      cursor: default;
+    }
+    .tiles {
+      position: absolute;
+      @extend %container;
+      top: 42px;
+      width: 0;
+      height: 0;
+      max-width: none;
+      z-index: 3;
+      opacity: 0;
+      transition: all 0.2s ease-in;
+      &.opened {
+        opacity: 1;
+        height: 300px;
+        width: 524px;
+        padding: 12px;
+      }
+    }
+    .tile {
+      cursor: pointer;
+      float: left;
+      width: 100px;
+      height: 120px;
+      padding-top: 12px;
+      .icon {
+        background: #F2F3F4;
+        width: 64px;
+        height: 64px;
+        text-align: center;
+        line-height: 36px;
+        margin: 0 auto;
+        margin-bottom: 6px;
+        border-radius: 4px;
+        svg {
+          display: inline-block;
+          height: 22px;
+          fill: #909497;
+          position: relative;
+          top: 20px;
+        }
+      }
+      .label {
+        text-align: center;
+        font-size: 14px;
+        width: 80px;
+        margin: 0 auto;
+      }
+    }
+
+}
