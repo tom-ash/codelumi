@@ -14,6 +14,7 @@
   position: relative;
   margin: 12px;
   .filter {
+    z-index: 2;
     &.text-input {
       overflow: hidden;
       .input {
@@ -72,6 +73,7 @@
       }
     }
     .area-panel {
+      z-index: 3;
       line-height: 1;
       position: absolute;
       height: 72px;

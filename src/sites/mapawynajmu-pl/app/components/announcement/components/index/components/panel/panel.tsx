@@ -4,24 +4,18 @@ import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import { Category } from './components/category/category'
-import PanelVisitor from './components/visitor/visitor'
+import { Area } from './components/area/area'
+import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
 
 class AnnouncementIndexPanel extends React.Component {
-  // @ts-ignore
-  constructor(props) {
-    super(props)
-  }
-
   render() {
-    // @ts-ignore
-    const { renderMap } = this.props
-
     return (
       <>
         <div id='listing-index-panel'>
           <Category />
-          {renderMap && <PanelVisitor {...{ ...this.props }} />}
-          <div className='float-clear' />
+          <Area />
+
+          <FloatClear />
         </div>
       </>
     )

@@ -1,6 +1,8 @@
 @import '../../../../styles/colors';
+@import '../../../../styles/z-index';
 
 #header {
+  z-index: $HEADER_Z_INDEX;
   position: fixed;
   top: 0;
   right: 0;

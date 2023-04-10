@@ -1,3 +1,5 @@
+@import '../../../../../../../../../styles/z-index';
+
 %category {
   position: relative;
   .category-tiles-container {
@@ -6,7 +8,6 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 2;
     cursor: default;
   }
   .tiles {
@@ -16,7 +17,6 @@
     width: 0;
     height: 0;
     max-width: none;
-    z-index: 3;
     opacity: 0;
     transition: all 0.2s ease-in;
     &.opened {
