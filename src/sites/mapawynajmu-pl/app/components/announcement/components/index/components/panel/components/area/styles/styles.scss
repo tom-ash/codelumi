@@ -1,48 +1,89 @@
 @import '../../../../../../../../../styles/z-index';
 @import '../../../../../../../../../styles/container';
+@import '../../../../../../../../../styles/inputs/text.scss';
 
 .filter {
   &.area {
     position: relative;
-    .area-panel-container {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: $LISTING_INDEX_CATEGORY_FILTER_Z_INDEX;
-      cursor: default;
-    }
-    .area-panel {
-      @extend %container;
-      position: absolute;
-      top: 42px;
-      width: 0;
-      height: 0;
-      max-width: none;
-      opacity: 0;
-      transition: all 0.2s ease-in;
-      &.opened {
-        opacity: 1;
-        height: 3100px;
-        width: 1524px;
-        padding: 12px;
+    .panel-container {
+      &.area {
+        z-index: $LISTING-INDEX-AREA-FILTER-Z-INDEX;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        cursor: default;  
       }
     }
-  
-    // @media #{$LARGE-PHONE} {
-    //   position: relative;
-    //   .tiles {
-    //     &.opened {
-    //       opacity: 1;
-    //       height: 524px;
-    //       width: 100%;
-    //       padding: 24px 12px;
-    //     }
-    //     .tile {
-    //       width: 33.33%;
-    //     }
-    //   }
-    // }  
+    .panel {
+      &.area {
+        z-index: $LISTING-INDEX-AREA-FILTER-Z-INDEX;
+        cursor: default;
+        @extend %container;
+        position: absolute;
+        top: 42px;
+        width: 0;
+        height: 0;
+        max-width: none;
+        opacity: 0;
+        transition: all 0.2s ease-in;
+        padding: 24px;
+        &.opened {
+          opacity: 1;
+          height: 379px;
+          width: 240px;
+          @media #{$LARGE-PHONE} {
+            width: 100%;
+          }
+        }
+        .column {
+          .input {
+            margin-bottom: 0;
+          }
+          .select {
+            .option {
+              text-align: center;
+              height: 25px;
+              font-size: 16px;
+              line-height: 25px;
+              cursor: pointer;
+              border-radius: 4px;
+              &:hover {
+                font-weight: bold;
+                background: #D6EAF8;
+              }
+            }
+          }
+          &.min {
+            float: left;
+            width: 36%;
+            margin-right: 8%;
+          }
+          &.max {
+            float: left;
+            width: 36%;
+            margin-right: 8%;
+          }
+        }
+        .sqm-column {
+          float: left;
+          width: 5%;
+          padding-top: 16px;
+          font-size: 15px;
+        }
+        .text-input {
+          @extend %text-input;
+          .label {
+            font-size: 14px;
+            line-height: 14px;
+          }
+          .input {
+            border: 1px solid gray;
+            text-align: center;
+          }
+        }
+      }
+    }
   }
 }

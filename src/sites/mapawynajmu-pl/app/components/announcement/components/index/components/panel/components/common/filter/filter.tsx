@@ -1,7 +1,7 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../../../shared/app/functions/store/useStore'
-import { TextInput } from '../../../../../../../../../../shared/app/components/support/text-input/text-input'
-import { SVG } from '../../../../../../../../../../shared/app/components/support/svg/svg'
+import { useStore } from '../../../../../../../../../../../shared/app/functions/store/useStore'
+import { TextInput } from '../../../../../../../../../../../shared/app/components/support/text-input/text-input'
+import { SVG } from '../../../../../../../../../../../shared/app/components/support/svg/svg'
 
 interface FilterInterface {
   (props: { name: string; panel: React.ReactElement }): React.ReactElement

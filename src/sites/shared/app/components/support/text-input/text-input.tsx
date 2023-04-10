@@ -22,6 +22,7 @@ interface TextInputInterface {
     disabled?: boolean
     onChangeCallback?(): void
     onClickCallback?(): void
+    onEnter?(): void
   }): JSX.Element
 }
 
@@ -36,6 +37,7 @@ export const TextInput: TextInputInterface = props => {
     match,
     onChangeCallback,
     onClickCallback,
+    onEnter: onEnterCallback,
     disabled,
   } = props
   const { state, dispatch } = useStore()
@@ -53,6 +55,9 @@ export const TextInput: TextInputInterface = props => {
     setInputs({ [inputKey]: value })
     onChangeCallback && onChangeCallback()
   }
+  const onEnter = () => {
+    onEnterCallback && onEnterCallback()
+  }
 
   const areaProps = {
     classNames,
@@ -65,6 +70,7 @@ export const TextInput: TextInputInterface = props => {
     onChange,
     onClick,
     disabled,
+    onEnter,
   }
 
   return <ManagedText {...areaProps} />

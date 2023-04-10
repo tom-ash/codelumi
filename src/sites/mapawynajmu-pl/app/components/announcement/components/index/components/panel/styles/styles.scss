@@ -1,20 +1,12 @@
 @import '../../../../../../../styles/media-breakpoints';
 @import '../../../../../../../styles/colors';
 @import '../../../../../../../styles/container';
-@import '../components/category/styles/styles';
-
-.filter {
-  &.category {
-    @extend %category;
-  }
-}
 
 // TODO!
 #listing-index-panel {
   position: relative;
   margin: 12px;
   .filter {
-    z-index: 2;
     &.text-input {
       overflow: hidden;
       .input {
@@ -48,93 +40,30 @@
       width: 100%;
       margin-bottom: 10px;
     }
-    .panel {
-      position: absolute;
-      left: 0;
-      width: 200px;
-      background: white;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-      border-radius: 6px;
-      padding: 20px;
-      display: flex;
-      .heading {
-        font-weight: bold;
-      }
-      .column {
-        width: 80px;
-        text-align: center;
-      }
-      .option {
-        font-size: 14px;
-        line-height: 1.7;
-        &:hover {
-          background: lightgray;
-        }
-      }
-    }
-    .area-panel {
-      z-index: 3;
-      line-height: 1;
-      position: absolute;
-      height: 72px;
-      width: 240px;
-      background: white;
-      top: 42px;
-      left: -20px;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-      border-radius: 5px;
-      @media #{$LARGE-PHONE} {
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-      }
-      .panel-input {
-        float: left;
-        width: 96px;
-        height: 100%;
-        margin: 0;
-        padding: 12px 5px 25px 10px;
-        .label {
-          font-size: 14px;
-          margin-bottom: 6px;
-          text-align: left;
-        }
-        input {
-          width: 100%;
-          height: 30px;
-          border-top: none;
-          border-right: none;
-          border-left: none;
-          text-align: center;
-          font-size: 16px;
-          line-height: 35px;
-        }
-      }
-      .sqm {
-        float: left;
-        font-size: 16px;
-        padding-top: 38px;
-        .superscript {
-          position: relative;
-          top: -0.5em;
-          font-size: 80%;
-          margin-left: 2px;
-        }
-      }
-    }
-    .area-panel-cover {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
-  }
-  .superscript {
-    position: relative;
-    top: -0.5em;
-    font-size: 80%;
-    margin-left: 2px;
+    // .panel {
+    //   position: absolute;
+    //   left: 0;
+    //   width: 200px;
+    //   background: white;
+    //   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    //   border-radius: 6px;
+    //   padding: 20px;
+    //   display: flex;
+    //   .heading {
+    //     font-weight: bold;
+    //   }
+    //   .column {
+    //     width: 80px;
+    //     text-align: center;
+    //   }
+    //   .option {
+    //     font-size: 14px;
+    //     line-height: 1.7;
+    //     &:hover {
+    //       background: lightgray;
+    //     }
+    //   }
+    // }
   }
   @media #{$LARGE-PHONE} {
     margin: 0;

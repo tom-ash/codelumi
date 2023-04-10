@@ -3,28 +3,25 @@ import { changeUrl } from '../../../../../../../shared/app/functions/routes/chan
 
 export function componentDidUpdate(prevProps) {
   const { rebuildQueryParams: prevRebuildQueryParams } = prevProps
-  const { rebuildQueryParams, setControl, setInputs } = this.props
+  const { rebuildQueryParams, setControl } = this.props
 
   if (!prevRebuildQueryParams && rebuildQueryParams) {
     window.areListingsObsolete = true
 
     setControl({ rebuildQueryParams: false })
 
-    const updateAttrs = {}
     const queryParamMappings = {
-      areaMinInput: { pl: 'powierzchnia_min', en: 'area_min' },
-      areaMaxInput: { pl: 'powierzchnia_max', en: 'area_max' },
-      priceMinInput: { pl: 'cena_min', en: 'price_min' },
-      priceMaxInput: { pl: 'cena_maks', en: 'price_max' },
+      areaMin: { pl: 'powierzchnia_min', en: 'area_min' },
+      areaMax: { pl: 'powierzchnia_max', en: 'area_max' },
+      priceMin: { pl: 'cena_min', en: 'price_min' },
+      priceMax: { pl: 'cena_maks', en: 'price_max' },
     }
-    const queryAttrs = ['areaMinInput', 'areaMaxInput', 'priceMinInput', 'priceMaxInput']
+    const queryAttrs = ['areaMin', 'areaMax', 'priceMin', 'priceMax']
     const builtQueryParamsArray = queryAttrs
       .filter(queryParam => {
         const queryParamValue = this.props[queryParam]
 
-        updateAttrs[queryParam.replace('Input', '')] = queryParamValue
-
-        return queryParamValue !== ''
+        return queryParamValue
       })
       .map(filteredQueryAttr => {
         const queryParam = queryParamMappings[filteredQueryAttr]['pl']
@@ -36,7 +33,6 @@ export function componentDidUpdate(prevProps) {
     const path = window.location.pathname.replace(/^\//, '') + '?' + builtQueryParamsArray.join('&')
     const href = buildUrl({ path })
 
-    setInputs(updateAttrs)
     changeUrl({ href })
   }
 }

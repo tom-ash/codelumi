@@ -1,78 +1,84 @@
 @import '../../../../../../../../../styles/z-index';
+@import '../../../../../../../../../styles/media-breakpoints';
+@import '../../../../../../../../../styles/container';
 
-%category {
-  position: relative;
-  .category-tiles-container {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    cursor: default;
-  }
-  .tiles {
-    position: absolute;
-    @extend %container;
-    top: 42px;
-    width: 0;
-    height: 0;
-    max-width: none;
-    opacity: 0;
-    transition: all 0.2s ease-in;
-    &.opened {
-      opacity: 1;
-      height: 300px;
-      width: 524px;
-      padding: 12px;
-    }
-    .tile {
-      cursor: pointer;
-      float: left;
-      width: 100px;
-      height: 120px;
-      padding-top: 12px;
-      .icon {
-        background: #f2f3f4;
-        width: 64px;
-        height: 64px;
-        text-align: center;
-        line-height: 36px;
-        margin: 0 auto;
-        margin-bottom: 6px;
-        border-radius: 4px;
-        transition: all 0.2s ease-in;
-        &:hover {
-          background: #D6EAF8;
-        }
-        svg {
-          display: inline-block;
-          height: 22px;
-          fill: #909497;
-          position: relative;
-          top: 20px;
-        }
-      }
-      .label {
-        line-height: 1;
-        text-align: center;
-        font-size: 14px;
-        width: 80px;
-        margin: 0 auto;
-      }
-    }
-  }
-
-  @media #{$LARGE-PHONE} {
+.filter {
+  &.category {
     position: relative;
+    .category-tiles-container {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      cursor: default;
+      z-index: 9;
+    }
     .tiles {
+      z-index: 9;
+      position: absolute;
+      @extend %container;
+      top: 42px;
+      width: 0;
+      height: 0;
+      max-width: none;
+      opacity: 0;
+      transition: all 0.2s ease-in;
       &.opened {
         opacity: 1;
-        height: 524px;
-        width: 100%;
-        padding: 24px 12px;
+        height: 300px;
+        width: 524px;
+        padding: 12px;
       }
       .tile {
-        width: 33.33%;
+        cursor: pointer;
+        float: left;
+        width: 100px;
+        height: 120px;
+        padding-top: 12px;
+        .icon {
+          background: #f2f3f4;
+          width: 64px;
+          height: 64px;
+          text-align: center;
+          line-height: 36px;
+          margin: 0 auto;
+          margin-bottom: 6px;
+          border-radius: 4px;
+          transition: all 0.2s ease-in;
+          &:hover {
+            background: #D6EAF8;
+          }
+          svg {
+            display: inline-block;
+            height: 22px;
+            fill: #909497;
+            position: relative;
+            top: 20px;
+          }
+        }
+        .label {
+          line-height: 1;
+          text-align: center;
+          font-size: 14px;
+          width: 80px;
+          margin: 0 auto;
+        }
+      }
+    }
+  
+    @media #{$LARGE-PHONE} {
+      position: relative;
+      .tiles {
+        &.opened {
+          opacity: 1;
+          height: 524px;
+          width: 100%;
+          padding: 24px 12px;
+        }
+        .tile {
+          width: 33.33%;
+        }
       }
     }
   }
