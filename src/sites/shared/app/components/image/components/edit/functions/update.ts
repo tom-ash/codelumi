@@ -17,8 +17,6 @@ interface saveProps {
 export const update = (props: saveProps) => {
   const { apiUrl, imageId, body: imageBody, width, height, storageKey, setControl, setData } = props
 
-  console.log(props)
-
   // @ts-ignore
   drawOnCanvas()
     .then(transformCanvasToBlob)

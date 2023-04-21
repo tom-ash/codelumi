@@ -1,6 +1,9 @@
+@import '../../../../../../../styles/z-index';
+
 #listing-index-user {
   .destroy {
     .cover {
+      z-index: $LISTING-INDEX-DESTROY-MODAL-Z-INDEX;
       position: fixed;
       top: 0;
       right: 0;
@@ -9,6 +12,7 @@
       background: rgba(0, 0, 0, 0.24);
     }
     .monit {
+      z-index: $LISTING-INDEX-DESTROY-MODAL-Z-INDEX;
       position: fixed;
       top: 0;
       right: 0;

@@ -1,5 +1,4 @@
 export function presentRooms(props) {
-  console.log(props)
   const { rooms, category } = props
 
   if (category === 2) {
@@ -13,6 +12,4 @@ export function presentRooms(props) {
 
     return { pl: 'pomieszczeń', en: 'rooms' }
   }
-
-  console.log('HERE')
 }

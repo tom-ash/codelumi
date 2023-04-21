@@ -1,6 +1,7 @@
 @import '../../../../../../../styles/themes';
 @import '../../../../../styles/pin';
 @import '../../../../../../../styles/inputs/text';
+@import '../../../../../../../styles/z-index';
 
 #listing-create-map {
   position: relative;
@@ -34,7 +35,9 @@
 
   .address-input {
     @extend %text-input;
+    z-index: $ADDRESS-INPUT-AUTOCOMPLETE-Z-INDEX;
     .autocompletes {
+      z-index: $ADDRESS-INPUT-AUTOCOMPLETE-Z-INDEX;
       position: absolute;
       top: 62px;
       right: 0;

@@ -8,8 +8,6 @@ const List = (props: ListProps) => {
   return (
     <ul style={style}>
       {listNodes.map((node, index) => {
-        console.log(node)
-
         const nodeProps = {
           node,
         }

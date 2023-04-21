@@ -20,8 +20,6 @@ const Header: HeaderInterface = props => {
   const { user } = state
   const { authorized } = user
 
-  // console.log(user)
-
   return (
     <div id='header'>
       <Logo />
