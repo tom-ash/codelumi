@@ -1,0 +1,78 @@
+@import '../../../../../../../../../styles/z-index';
+@import '../../../../../../../../../styles/container';
+@import '../../../../../../../../../styles/inputs/text.scss';
+
+.filter {
+  &.price {
+    position: relative;
+    .panel-container {
+      z-index: $LISTING-INDEX-AREA-FILTER-Z-INDEX;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      cursor: default;  
+    }
+    .panel {
+      z-index: $LISTING-INDEX-AREA-FILTER-Z-INDEX;
+      cursor: default;
+      @extend %container;
+      position: absolute;
+      top: 42px;
+      width: 0;
+      height: 0;
+      max-width: none;
+      opacity: 0;
+      transition: all 0.2s ease-in;
+      padding: 24px;
+      &.opened {
+        opacity: 1;
+        height: 404px;
+        width: 240px;
+        @media #{$LARGE-PHONE} {
+          width: 100%;
+        }
+      }
+      .column {
+        .input {
+          margin-bottom: 0;
+        }
+        .select {
+          .option {
+            text-align: center;
+            height: 25px;
+            font-size: 16px;
+            line-height: 25px;
+            cursor: pointer;
+            border-radius: 4px;
+            &:hover {
+              font-weight: bold;
+              background: #D6EAF8;
+            }
+          }
+        }
+        &.min {
+          float: left;
+          width: 46%;
+          margin-right: 8%;
+        }
+        &.max {
+          float: left;
+          width: 46%;
+        }
+      }
+      .text-input {
+        @extend %text-input;
+        .label {
+          font-size: 14px;
+          line-height: 14px;
+        }
+        .input {
+          border: 1px solid gray;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

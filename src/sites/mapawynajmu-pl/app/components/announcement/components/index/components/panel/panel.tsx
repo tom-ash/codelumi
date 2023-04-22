@@ -5,6 +5,7 @@ import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import { Category } from './components/category/category'
 import { Area } from './components/area/area'
+import { Price } from './components/price/price'
 import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
 
 class AnnouncementIndexPanel extends React.Component {
@@ -14,7 +15,7 @@ class AnnouncementIndexPanel extends React.Component {
         <div id='listing-index-panel'>
           <Category />
           <Area />
-
+          <Price />
           <FloatClear />
         </div>
       </>
