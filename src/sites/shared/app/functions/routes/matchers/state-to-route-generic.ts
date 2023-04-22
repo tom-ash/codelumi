@@ -1,6 +1,7 @@
 import getPureUrl from '../../../../shared/functions/routes/getters/pure-url'
 import { syncRouteData } from '../synchronizers/route-data'
-import { stateResetter } from '../setters/state-resetter'
+import { stateSetter } from '../setters/state-setter'
+import { stateResetter } from '../resetters/state-resetter'
 import getCookieValue from '../../cookies/getters/get-cookie-value'
 import getCookieAsBool from '../../cookies/getters/get-cookie-as-bool'
 import metaSetter from '../setters/meta'
@@ -28,11 +29,20 @@ export const matchStateToRouteGeneric: MatchStateToRouteGeneric = args => {
 
   dispatch({ type: 'visitor', value: consents })
 
-  syncRouteData.call(this, { apiUrl, url, query, isSSR, customHeaders }).then((syncedRouteData: any) => {
+  syncRouteData({ apiUrl, url, query, isSSR, customHeaders }).then((syncedRouteData: any) => {
     // TODO: TS!
     const { state, meta } = syncedRouteData
 
-    stateResetter({ state, dispatch })
+    // @ts-ignore
+    if (window.onlyUpdate) {
+      // @ts-ignore
+      window.onlyUpdate = false
+
+      stateSetter({ state, dispatch })
+    } else {
+      stateResetter({ state, dispatch })
+    }
+
     metaSetter({ clientUrl, url, ...meta })
   })
 }

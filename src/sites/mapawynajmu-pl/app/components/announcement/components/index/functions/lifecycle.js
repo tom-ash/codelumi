@@ -1,5 +1,5 @@
 import { buildUrl } from '../../../../../../shared/functions/builders/url'
-import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/change-url'
+import { updateUrl } from '../../../../../../../shared/app/functions/routes/updaters/update-url'
 
 export function componentDidUpdate(prevProps) {
   const { rebuildQueryParams: prevRebuildQueryParams } = prevProps
@@ -33,6 +33,10 @@ export function componentDidUpdate(prevProps) {
     const path = window.location.pathname.replace(/^\//, '') + '?' + builtQueryParamsArray.join('&')
     const href = buildUrl({ path })
 
-    changeUrl({ href })
+    if (href[href.length - 1] === '?') {
+      updateUrl({ href: '/' })
+    } else {
+      updateUrl({ href })
+    }
   }
 }
