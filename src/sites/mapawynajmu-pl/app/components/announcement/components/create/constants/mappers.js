@@ -8,7 +8,7 @@ export const mapStateToProps = store => {
     'announcement/create/summary': renderSuccess,
   } = render
   const { authorized, admin } = store.user
-  const { step, savingAnnouncement, savingPicture } = control
+  const { step, savingListing, savingPicture } = control
   const { id, pin, announcement, user } = data
   const { termsOfServiceConsentLabel } = texts
   const {
@@ -56,7 +56,7 @@ export const mapStateToProps = store => {
     authorized,
     admin,
     step,
-    savingAnnouncement,
+    savingListing,
     savingPicture,
     id,
     pin,

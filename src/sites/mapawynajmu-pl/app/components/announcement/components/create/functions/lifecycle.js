@@ -11,15 +11,15 @@ export function componentDidMount() {
 }
 
 export function componentDidUpdate(prevProps) {
-  const { savingAnnouncement: prevSavingAnnouncement } = prevProps
-  const { savingPicture, savingAnnouncement, step, blobs, setControl } = this.props
+  const { savingListing: prevSavingListing } = prevProps
+  const { savingPicture, savingListing, step, blobs, setControl } = this.props
 
   if (step !== 'publishing') return
 
   if (!savingPicture) {
     if (blobs.length > 0) return savePicture.call(this)
-    if (!savingAnnouncement) setControl({ savingAnnouncement: true })
+    if (!savingListing) setControl({ savingListing: true })
   }
 
-  if (!prevSavingAnnouncement && savingAnnouncement) createAnnouncement.call(this)
+  if (!prevSavingListing && savingListing) createAnnouncement.call(this)
 }
