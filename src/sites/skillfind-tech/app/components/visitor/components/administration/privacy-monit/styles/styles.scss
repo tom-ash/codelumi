@@ -1,7 +1,9 @@
 @import '../../../../../../styles/inputs/button';
 @import '../../../../../../../../shared/app/styles/media-breakpoints';
+@import '../../../../../../styles/z-index';
 
 #privacy-monit-cover {
+  z-index: $PRIVACY-POLICY-MONIT-Z-INDEX;
   position: fixed;
   top: 0;
   right: 0;
@@ -10,6 +12,7 @@
   background: rgba(0, 0, 0, 0.3);
   display: flex;
   #privacy-monit {
+    z-index: $PRIVACY-POLICY-MONIT-Z-INDEX;
     position: relative;
     max-width: 400px;
     margin: auto;
