@@ -1,13 +1,16 @@
 @import '../../../../../../shared/app/styles/media-breakpoints';
+@import '../../../../styles/z-index';
 
 #header {
+  z-index: $SCAFFOLD-HEADER-Z-INDEX;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 50px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #E5E7E9;
   padding: 0 16px;
+  background: white;
   .lang-switch {
     float: right;
     .current {
