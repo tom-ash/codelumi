@@ -1,67 +1,67 @@
-@import '../../../../../../shared/app/styles/media-breakpoints';
+// @import '../../../../../../shared/app/styles/media-breakpoints';
 
-$padding-desktop: 0;
-$padding-mobile: 18px;
+// $padding-desktop: 0;
+// $padding-mobile: 18px;
 
-header.title-board {
-  img {
-    display: block;
-  }
-  .cover {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    .cover-image {
-      width: 100%;
-      aspect-ratio: 1.905;
-      border-radius: 4px;
-    }
-    @media #{$LARGE-TABLET} {
-      .cover-image {
-        border-radius: 0;
-      }
-    }
-  }
-  .logo {
-    position: absolute;
-    bottom: 36px;
-    left: 36px;
-    height: 100px;
-  }
-  .dates {
-    padding-bottom: 20px;
-    padding-left: $padding-desktop;
-    font-size: 12px;
-    color: #909497;
-    span {
-      margin-right: 12px;
-    }
-    @media #{$LARGE-PHONE} {
-      padding-left: $padding-mobile;
-      span {
-        display: block;
-        margin: 0;
-      }
-    }
-  }
-  h1 {
-    padding: 10px $padding-desktop 0 $padding-desktop;
-    font-size: 30px;
-    line-height: 1.2;
-    @media #{$LARGE-PHONE} {
-      padding: 10px $padding-mobile 0 $padding-mobile;
-    }
-  }
-  .hashtags {
-    min-height: 35px;
-    padding: 0 0 10px $padding-desktop;
-    font-size: 13px;
-    color: #85929e;
-    @media #{$LARGE-PHONE} {
-      padding: 0 0 10px $padding-mobile;
-    }
-    span {
-      margin-right: 10px;
-    }
-  }
-}
+// header.title-board {
+//   img {
+//     display: block;
+//   }
+//   .cover {
+//     position: relative;
+//     width: 100%;
+//     overflow: hidden;
+//     .cover-image {
+//       width: 100%;
+//       aspect-ratio: 1.905;
+//       // border-top-left-radius: 4px;
+//     }
+//     @media #{$LARGE-TABLET} {
+//       .cover-image {
+//         border-radius: 0;
+//       }
+//     }
+//   }
+//   .logo {
+//     position: absolute;
+//     bottom: 36px;
+//     left: 36px;
+//     height: 100px;
+//   }
+//   .dates {
+//     padding-bottom: 20px;
+//     padding-left: $padding-desktop;
+//     font-size: 12px;
+//     color: #909497;
+//     span {
+//       margin-right: 12px;
+//     }
+//     @media #{$LARGE-PHONE} {
+//       padding-left: $padding-mobile;
+//       span {
+//         display: block;
+//         margin: 0;
+//       }
+//     }
+//   }
+//   h1 {
+//     padding: 10px $padding-desktop 0 $padding-desktop;
+//     font-size: 30px;
+//     line-height: 1.2;
+//     @media #{$LARGE-PHONE} {
+//       padding: 10px $padding-mobile 0 $padding-mobile;
+//     }
+//   }
+//   .hashtags {
+//     min-height: 35px;
+//     padding: 0 0 10px $padding-desktop;
+//     font-size: 13px;
+//     color: #85929e;
+//     @media #{$LARGE-PHONE} {
+//       padding: 0 0 10px $padding-mobile;
+//     }
+//     span {
+//       margin-right: 10px;
+//     }
+//   }
+// }

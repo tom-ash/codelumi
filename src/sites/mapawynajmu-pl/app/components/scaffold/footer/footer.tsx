@@ -7,6 +7,7 @@ import { PrivacyPolicyLink } from './components/privacy-policy/privacy-policy.li
 import { PrivacySettingsLink } from './components/privacy-settings/privacy-settings.link'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import { SVG } from '../../../../../shared/app/components/support/svg/svg'
 
 const Footer = () => {
   useStyles(styles)
@@ -17,6 +18,13 @@ const Footer = () => {
 
   return (
     <footer id='footer'>
+
+      <div className='social-accounts'>
+        <SVG name='facebookSquare' />
+        <SVG name='linkedinSquare' />
+        <SVG name='twitterSquare' />
+      </div>
+
       <div className='inner'>
         <div className='links'>
           <ContactLink />

@@ -1,30 +1,30 @@
-@import './editorial';
 @import './table-of-contents';
 
-$MOBILE-MARGIN: 32px;
+$DESKTOP-PADDING: 32px;
 
 %article {
-  max-width: 640px;
-  margin: 0 auto;
-  padding-top: 36px;
-  padding-bottom: 48px;
+  max-width: 768px;
+  margin: 32px auto;
+  border: 1px solid $CONTAINER-BORDER-COLOR;
+  border-radius: 4px;
+  background: white;
   overflow: hidden;
   line-height: 26px;
   font-size: 16px;
   color: rgb(42, 42, 42);
   @media #{$LARGE-PHONE} {
-    padding-top: 0;
+    margin: 0 auto 32px;
+    padding: 0;
   }
   h1 {
     line-height: 41.25px;
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 24px;
-    @media #{$LARGE-PHONE} {
-      padding: 0 $MOBILE-MARGIN;
-    }
+    padding: 0 $DESKTOP-PADDING;
   }
   .table-of-contents {
     @extend %table-of-contents;
+    padding: 0 $DESKTOP-PADDING;
   }
   section {
     margin-bottom: 48px;
@@ -32,9 +32,7 @@ $MOBILE-MARGIN: 32px;
   h2 {
     font-size: 22px;
     margin-bottom: 18px;
-    @media #{$LARGE-PHONE} {
-      padding: 0 $MOBILE-MARGIN;
-    }
+    padding: 0 $DESKTOP-PADDING;
   }
   p + h2,
   ul + h2,
@@ -50,20 +48,13 @@ $MOBILE-MARGIN: 32px;
   }
   p {
     margin-bottom: 18px;
-    code {
-      display: inline-block;
-      color: #cb4335;
-    }
+    padding: 0 $DESKTOP-PADDING;
     a {
       display: inline;
       color: rgb(42, 96, 152);
       &:hover {
         color: rgb(186, 42, 24);
       }
-    }
-    @media #{$LARGE-PHONE} {
-      margin-right: $MOBILE-MARGIN;
-      margin-left: $MOBILE-MARGIN;
     }
   }
   p + ul {
@@ -75,15 +66,12 @@ $MOBILE-MARGIN: 32px;
   ul {
     margin-bottom: 18px;
     margin-left: 18px;
+    padding: 0 $DESKTOP-PADDING;
     li {
       p {
         margin: 0;
         padding: 0;
       }
-    }
-    @media #{$LARGE-PHONE} {
-      margin-right: 18px;
-      margin-left: 52px;
     }
   }
   img {
@@ -96,7 +84,6 @@ $MOBILE-MARGIN: 32px;
         padding: 0;
       }
       margin-bottom: 32px;
-      border-radius: 3px;
     }
   }
 }

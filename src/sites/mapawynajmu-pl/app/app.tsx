@@ -13,6 +13,7 @@ const Announcement = loadable(() => import('./components/announcement/announceme
 const Page = loadable(() => import('../../shared/app/components/page/page'))
 const Image = loadable(() => import('../../shared/app/components/image/image'))
 const VisitorPageIndex = loadable(() => import('./components/visitor/components/page/components/index/index'))
+const AssetsIndex = loadable(() => import('../../skillfind-tech/app/components/asset/components/index/index'))
 const Footer = loadable(() => import('./components/scaffold/footer/footer'))
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
@@ -45,6 +46,7 @@ const App = () => {
     'announcement/index/map': renderListingIndexMap,
     visitorPageIndex,
     redirectsIndex,
+    assetsIndex,
   } = render
 
   useFonts()
@@ -65,6 +67,7 @@ const App = () => {
         {renderUser && <User />}
         {renderImage && <Image />}
         {visitorPageIndex && <VisitorPageIndex />}
+        {assetsIndex && <AssetsIndex />}
         {redirectsIndex && <RedirectsIndex />}
       </div>
       {!renderListingIndexMap && <Footer />}

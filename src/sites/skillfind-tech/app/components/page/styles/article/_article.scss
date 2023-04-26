@@ -4,10 +4,11 @@
 
 $MOBILE-MARGIN: 18px;
 
+$DESKTOP-MARGIN: 32px;
+
 %article {
   max-width: 768px;
   margin: 32px auto;
-  padding: 32px 32px 0;
   border: 1px solid $CONTAINER-BORDER-COLOR;
   border-radius: 4px;
   background: white;
@@ -15,30 +16,32 @@ $MOBILE-MARGIN: 18px;
   line-height: 26px;
   font-size: 16px;
   color: rgb(42, 42, 42);
+  @media #{$LARGE-PHONE} {
+    margin: 0 auto 32px;
+  }
   .editorial {
     @extend %editorial;
   }
   .table-of-contents {
     @extend %table-of-contents;
+    margin: 32px $DESKTOP-MARGIN;
   }
   h1 {
     line-height: 41.25px;
     font-size: 32px;
     margin-bottom: 32px;
+    margin: 32px $DESKTOP-MARGIN;
   }
   .cover + h1 {
     margin-top: 36px;
   }
   section {
-    margin-bottom: 56px;
+    margin-bottom: 64px;
   }
   h2 {
     line-height: 33px;
     font-size: 22px;
-    margin-bottom: 12px;
-    @media #{$LARGE-PHONE} {
-      padding: 0 $MOBILE-MARGIN;
-    }
+    margin: 0 $DESKTOP-MARGIN 18px;
   }
   h3 {
     margin-top: 36px;
@@ -62,39 +65,32 @@ $MOBILE-MARGIN: 18px;
         color: rgb(186, 42, 24);
       }
     }
-    @media #{$LARGE-PHONE} {
-      margin-right: $MOBILE-MARGIN;
-      margin-left: $MOBILE-MARGIN;
-    }
+    margin: 0 $DESKTOP-MARGIN 18px;
   }
   p + ul {
-    margin-top: -18px;
+    margin-top: -12px;
   }
   .editorial + ul {
     margin-top: 0;
   }
   ul {
-    margin-bottom: 18px;
-    margin-left: 18px;
     li {
       p {
         margin: 0;
         padding: 0;
       }
     }
-    @media #{$LARGE-PHONE} {
-      margin-right: 18px;
-      margin-left: 36px;
-    }
+    margin: 0 48px 18px;
   }
   header {
     > img {
       width: 100%;
-      @media #{$LARGE-PHONE} {
-        padding: 0 18px;
-      }
       margin-bottom: 24px;
     }
+  }
+
+  pre {
+    margin: 0 $DESKTOP-MARGIN 18px;
   }
 
   .definition {
@@ -102,6 +98,7 @@ $MOBILE-MARGIN: 18px;
     padding: 18px;
     border-radius: 3px;
     border-left: 3px solid #3498db;
+    margin: 0 $DESKTOP-MARGIN 18px;
     dfn {
       font-weight: bold;
     }
