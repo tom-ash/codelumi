@@ -1,12 +1,15 @@
 @import '../../../../../styles/pin';
+@import '../../../../../../../styles/z-index';
 
 %map-pin {
   @extend %pin;
   &.hovered,
   &.current {
+    z-index: $LISTING-INDEX-PIN-HOVERED;
     animation: pulse 1s infinite;
   }
   &:hover {
+    z-index: $LISTING-INDEX-PIN-HOVERED;
     transform: scale(2) translate(-9px, -9px);
     transition: transform 0.24s ease-in;
   }
