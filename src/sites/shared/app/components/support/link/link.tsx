@@ -28,6 +28,21 @@ export const Link: LinkInterface = props => {
     if (!link) return null
 
     const label = customLabel || link.label
+    const external = link.external
+
+    if (external) {
+      const { href } = link
+
+      return (
+        <a
+          href={href}
+          target='_blank'
+        >
+          {label}
+        </a>
+      )
+    }
+
     const onClick = () => changeUrl({ ...link })
 
     linkProps = { ...link, label, classNames, onClick }
