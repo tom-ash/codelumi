@@ -25,6 +25,7 @@ function genericRequestHandler({ req, res, clientUrl, apiUrl, appRenderer, siteN
     accessToken,
     appRenderer,
     siteName,
+    clientUrl,
   })
 }
 

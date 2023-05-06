@@ -9,6 +9,7 @@ function exceptionSender({
   visitorState,
   appRenderer,
   robots,
+  clientUrl,
 }) {
   const initialState = {
     app: {
@@ -37,6 +38,7 @@ function exceptionSender({
       description: 'Not Found',
       ...appAsHtml,
       robots,
+      clientUrl,
     })
   )
 }

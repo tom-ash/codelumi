@@ -16,6 +16,7 @@ function indexRenderer(props) {
     css,
     preloadedState,
     scriptTags,
+    clientUrl,
   } = props
 
   const indexAsHtml = `<!doctype html>
@@ -24,7 +25,7 @@ function indexRenderer(props) {
         <title>${title}</title>
         <link rel="canonical" href="${canonicalUrl}">
         ${alternateLinks}
-        <link rel="icon" type="image/x-icon" href="https://mapawynajmu.pl/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="${clientUrl}/favicon.ico">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta name="robots" content="${robots}">
