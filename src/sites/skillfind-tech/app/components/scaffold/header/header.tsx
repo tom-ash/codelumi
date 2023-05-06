@@ -17,16 +17,17 @@ const Header: HeaderInterface = props => {
   useStyles(styles)
 
   const { state, dispatch } = useStore()
-  const { user } = state
+  const { app, user } = state
+  const { isMobile } = app
   const { authorized } = user
 
   return (
     <div id='header'>
       <Logo />
       <LangSwitch />
-      {!authorized && <SignUpLink />}
-      {!authorized && <SignInLink />}
-      {authorized && <SignOutButton />}
+      {!authorized && !isMobile && <SignUpLink />}
+      {!authorized && !isMobile && <SignInLink />}
+      {authorized && !isMobile && <SignOutButton />}
       <FloatClear />
     </div>
   )

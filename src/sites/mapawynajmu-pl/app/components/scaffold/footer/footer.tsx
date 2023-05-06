@@ -10,8 +10,6 @@ import styles from './styles/styles.scss'
 import { SVG } from '../../../../../shared/app/components/support/svg/svg'
 import { Link } from '../../../../../shared/app/components/support/link/link'
 
-// const ExternalLink 
-
 const Footer = () => {
   useStyles(styles)
 

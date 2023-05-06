@@ -18,6 +18,7 @@ import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import apiUrl from '../shared/constants/urls/api'
 import { useGoogleAnalytics } from './functions/use-google-analytics'
+import { setIsMobile } from '../../mapawynajmu-pl/app/functions/set-is-mobile'
 
 // redirectsIndex
 
@@ -26,7 +27,7 @@ const App = () => {
 
   useStateToRouteMatcher()
 
-  const { state } = useStore()
+  const { state, dispatch } = useStore()
   const { app, render } = state
   const { lang } = app
 
@@ -38,6 +39,8 @@ const App = () => {
   }, [lang])
 
   useGoogleAnalytics()
+
+  useEffect(() => setIsMobile(dispatch), []) // TODO: Consider moving to server.
 
   const {
     page: renderPage,
