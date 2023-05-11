@@ -75,14 +75,13 @@ $DESKTOP-PADDING: 32px;
     }
   }
   img {
+    padding: 0 $DESKTOP-PADDING;
     margin-bottom: 18px;
   }
   header {
     > img {
       width: 100%;
-      @media #{$LARGE-PHONE} {
-        padding: 0;
-      }
+      padding: 0;
       margin-bottom: 32px;
     }
   }
