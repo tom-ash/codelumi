@@ -2,9 +2,8 @@
 @import './table-of-contents';
 @import '../../../../styles/colors';
 
-$MOBILE-MARGIN: 18px;
-
 $DESKTOP-MARGIN: 32px;
+$MOBILE-MARGIN: 18px;
 
 %article {
   max-width: 768px;
@@ -39,11 +38,12 @@ $DESKTOP-MARGIN: 32px;
     margin-bottom: 64px;
   }
   h2 {
+    margin: 0 $DESKTOP-MARGIN 18px;
     line-height: 33px;
     font-size: 22px;
-    margin: 0 $DESKTOP-MARGIN 18px;
   }
   h3 {
+    margin: 0 $DESKTOP-MARGIN 18px;
     margin-top: 36px;
     margin-bottom: 16px;
     line-height: 29.25px;
@@ -53,7 +53,7 @@ $DESKTOP-MARGIN: 32px;
     margin-top: 0;
   }
   p {
-    margin-bottom: 18px;
+    margin: 0 $DESKTOP-MARGIN 18px;
     code {
       display: inline-block;
       color: #cb4335;
@@ -65,7 +65,10 @@ $DESKTOP-MARGIN: 32px;
         color: rgb(186, 42, 24);
       }
     }
-    margin: 0 $DESKTOP-MARGIN 18px;
+  }
+  img {
+    padding: 0 $DESKTOP-MARGIN;
+    margin-bottom: 18px;
   }
   p + ul {
     margin-top: -12px;
@@ -94,18 +97,18 @@ $DESKTOP-MARGIN: 32px;
   }
 
   .definition {
+    margin: 0 $DESKTOP-MARGIN 18px;
     background: #ebf5fb;
     padding: 18px;
     border-radius: 3px;
     border-left: 3px solid #3498db;
-    margin: 0 $DESKTOP-MARGIN 18px;
     dfn {
       font-weight: bold;
     }
   }
 
   figure {
-    margin-bottom: 18px;
+    margin: 0 $DESKTOP-MARGIN 18px;
     span {
       display: block;
       background: #fef9e7;
