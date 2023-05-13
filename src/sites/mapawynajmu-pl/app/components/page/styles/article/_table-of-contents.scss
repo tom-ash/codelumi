@@ -39,13 +39,17 @@ $padding-mobile: 32px;
     padding: 0;
     list-style-type: none;
     li {
-      display: block;
       position: relative;
-      margin-top: -4px;
-      margin-bottom: 5px;
+      margin-bottom: 2px;
       line-height: 22px;
-      &:last-child {
-        margin-bottom: 0px;
+      ul {
+        margin-top: 4px;
+        margin-bottom: 8px;
+        margin-left: 18px;
+        list-style-type: disc;
+        li {
+          margin-bottom: 0;
+        }
       }
     }
   }

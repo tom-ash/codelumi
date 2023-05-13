@@ -90,7 +90,7 @@ const TableOfContents = props => {
                 >
                   {headingTwo}
                 </a>
-                <ul>
+                {subsections.length > 0 && <ul>
                     {/* @ts-ignore */}
                     {subsections.map(subsection => {
                       const {
@@ -120,7 +120,7 @@ const TableOfContents = props => {
                         </li>
                       )
                     })}
-                  </ul>
+                  </ul>}
               </li>
             )
           })}
