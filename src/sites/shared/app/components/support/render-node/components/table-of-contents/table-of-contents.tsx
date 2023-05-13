@@ -1,8 +1,8 @@
 import React from 'react'
 import { useStore } from '../../../../../functions/store/useStore'
 import setScreenOffsetAtElement from '../../../../../functions/screen/setters/offset-at-element'
-// @ts-ignore
-import parameterize from 'parameterize'
+
+// TODO: Refactor the whole file.
 
 //@ts-ignore
 const TableOfContents = props => {
@@ -21,6 +21,33 @@ const TableOfContents = props => {
     }
   })()
 
+  // @ts-ignore
+  const sections = article.filter((node: RenderNode) => node.Section)
+
+  // @ts-ignore
+  const mappedSections = sections.map(section => {
+    const identifier = section.identifier
+    const sectionNodes = section.Section
+    // @ts-ignore
+    const headingTwo = sectionNodes.find(node => node.HeadingTwo)?.HeadingTwo
+    // @ts-ignore
+    const subsections = sectionNodes.filter(node => node.Section).map(section => {
+      // @ts-ignore
+      return {
+        // @ts-ignore
+        identifier: section.identifier,
+        // @ts-ignore
+        headingThree: section.Section.find(node => node.HeadingThree)?.HeadingThree,
+      }
+    })
+
+    return {
+      identifier,
+      headingTwo,
+      subsections,
+    }
+  })
+
   //@ts-ignore
   const headings = article
   //@ts-ignore
@@ -37,37 +64,63 @@ const TableOfContents = props => {
         <h2>{title}</h2>
         <ul>
           {/* @ts-ignore */}
-          {headings.map((heading, index) => {
-            const urlifiedHeading = parameterize(heading)
+          {mappedSections.map((mappedSection, index) => {
+            const {
+              identifier,
+              headingTwo,
+              subsections,
+            } = mappedSection
 
             return (
               <li key={index}>
                 <a
                   key={index}
-                  // className={heading.t}
-                  href={`#${urlifiedHeading}`}
+                  href={`#${identifier}`}
                   onClick={e => {
                     e.preventDefault()
 
                     // @ts-ignore
-                    history.pushState(null, null, `${window.location.pathname}#${urlifiedHeading}`)
+                    history.pushState(null, null, `${window.location.pathname}#${identifier}`)
 
-                    const sections = document.getElementsByTagName('section')
-                    let element
-
-                    for (var i = 0; i < sections.length; i++) {
-                      if (sections[i].id == urlifiedHeading) {
-                        element = sections[i]
-                        break
-                      }
-                    }
-
+                    const section = document.getElementById(identifier)
                     const translation = -80
-                    setScreenOffsetAtElement({ element, translation })
+                    // @ts-ignore
+                    setScreenOffsetAtElement({ element: section, translation })
                   }}
                 >
-                  {heading}
+                  {headingTwo}
                 </a>
+                <ul>
+                    {/* @ts-ignore */}
+                    {subsections.map(subsection => {
+                      const {
+                        identifier,
+                        headingThree,
+                      } = subsection
+
+                      return (
+                        <li>
+                          <a
+                            key={index}
+                            href={`#${identifier}`}
+                            onClick={e => {
+                              e.preventDefault()
+
+                              // @ts-ignore
+                              history.pushState(null, null, `${window.location.pathname}#${identifier}`)
+
+                              const section = document.getElementById(identifier)
+                              const translation = -80
+                              // @ts-ignore
+                              setScreenOffsetAtElement({ element: section, translation })
+                            }}
+                          >
+                            {headingThree}
+                          </a>
+                        </li>
+                      )
+                    })}
+                  </ul>
               </li>
             )
           })}

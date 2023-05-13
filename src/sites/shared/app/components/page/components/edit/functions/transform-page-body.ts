@@ -1,6 +1,8 @@
 // @ts-ignore
 import parameterize from 'parameterize'
 
+let headingTwoIdentifier: string
+
 // TODO: TS!
 export const transformPageBody = (node: any) => {
   if (Array.isArray(node)) {
@@ -10,7 +12,14 @@ export const transformPageBody = (node: any) => {
       const headingTwoNode = node.Section.find((subnode: any) => subnode.HeadingTwo)
 
       if (headingTwoNode) {
-        node.identifier = parameterize(headingTwoNode.HeadingTwo)
+        headingTwoIdentifier = parameterize(headingTwoNode.HeadingTwo)
+        node.identifier = headingTwoIdentifier
+      }
+
+      const headingThreeNode = node.Section.find((subnode: any) => subnode.HeadingThree)
+
+      if (headingThreeNode) {
+        node.identifier = `${headingTwoIdentifier}-${parameterize(headingThreeNode.HeadingThree)}`
       }
     }
 
