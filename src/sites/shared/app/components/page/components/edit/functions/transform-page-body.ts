@@ -20,6 +20,7 @@ export const transformPageBody = (node: any) => {
 
       if (headingThreeNode) {
         node.identifier = `${headingTwoIdentifier}-${parameterize(headingThreeNode.HeadingThree)}`
+        node.className = 'subsection'
       }
     }
 
