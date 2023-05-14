@@ -1,6 +1,6 @@
 import getScrollingElement from '../getters/scrolling-element'
 
-function setScreenOffsetAtElement({ element, translation }) {
+export function setScreenOffsetAtElement({ element, translation }) {
   if (typeof window === 'undefined') return
 
   const scrollingElement = getScrollingElement()
@@ -8,5 +8,3 @@ function setScreenOffsetAtElement({ element, translation }) {
 
   scrollingElement.scrollTop = destination
 }
-
-export default setScreenOffsetAtElement

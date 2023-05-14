@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStore } from '../../../../../functions/store/useStore'
-import setScreenOffsetAtElement from '../../../../../functions/screen/setters/offset-at-element'
+import { Link } from '../../../link/link'
 
 // TODO: Refactor the whole file.
 
@@ -48,16 +48,6 @@ const TableOfContents = props => {
     }
   })
 
-  //@ts-ignore
-  const headings = article
-  //@ts-ignore
-    .filter(node => {
-      if (node.Section && node.Section[0] && node.Section[0].HeadingTwo) return true
-      //@ts-ignore
-    })
-    //@ts-ignore
-    .map(node => node.Section[0].HeadingTwo)
-
   return (
     <nav className='table-of-contents'>
       <div className='inner-container'>
@@ -73,23 +63,11 @@ const TableOfContents = props => {
 
             return (
               <li key={index}>
-                <a
-                  key={index}
+                <Link
                   href={`#${identifier}`}
-                  onClick={e => {
-                    e.preventDefault()
-
-                    // @ts-ignore
-                    history.pushState(null, null, `${window.location.pathname}#${identifier}`)
-
-                    const section = document.getElementById(identifier)
-                    const translation = -80
-                    // @ts-ignore
-                    setScreenOffsetAtElement({ element: section, translation })
-                  }}
-                >
-                  {headingTwo}
-                </a>
+                  label={headingTwo}
+                  title={headingTwo}
+                />
                 {subsections.length > 0 && <ul>
                     {/* @ts-ignore */}
                     {subsections.map(subsection => {
@@ -100,23 +78,11 @@ const TableOfContents = props => {
 
                       return (
                         <li>
-                          <a
-                            key={index}
+                          <Link
                             href={`#${identifier}`}
-                            onClick={e => {
-                              e.preventDefault()
-
-                              // @ts-ignore
-                              history.pushState(null, null, `${window.location.pathname}#${identifier}`)
-
-                              const section = document.getElementById(identifier)
-                              const translation = -80
-                              // @ts-ignore
-                              setScreenOffsetAtElement({ element: section, translation })
-                            }}
-                          >
-                            {headingThree}
-                          </a>
+                            label={headingThree}
+                            title={headingThree}
+                          />
                         </li>
                       )
                     })}
