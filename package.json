@@ -14,8 +14,8 @@
   "author": "tom-ash",
   "license": "None",
   "engines": {
-    "npm": "^8.5.5",
-    "node": "^17.8.0"
+    "npm": "^9.6.4",
+    "node": "^20.1.0"
   },
   "dependencies": {
     "@babel/core": "^7.21.8",
