@@ -68,7 +68,7 @@ export const Link: LinkInterface = props => {
 
     linkProps = { ...link, label, classNames, onClick }
   } else {
-    const isAnchor = href!.match(/^#.+$/)
+    const isAnchor = href && href.match(/^#.+$/)
     const onClick = () => isAnchor ? scrollToAnchor(href!) : changeUrl({ href })
 
     linkProps = { href, hrefLang, label: customLabel, title, classNames, onClick }
