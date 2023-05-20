@@ -2,7 +2,7 @@ import React from 'react'
 import { useStore } from '../../../functions/store/useStore'
 import { ManagedLink } from 'managed-inputs'
 import { changeUrl } from '../../../functions/routes/changers/change-url'
-import { setScreenOffsetAtElement } from '../../../functions/screen/setters/offset-at-element'
+import { scrollToFragment } from '../../../functions/scrollers/scroll-to-fragment'
 
 type LinkInterfaceProps = {
   linkKey: string
@@ -21,17 +21,6 @@ type LinkInterfaceProps = {
 
 interface LinkInterface {
   (props: LinkInterfaceProps): React.ReactElement | null
-}
-
-const scrollToAnchor = (href: string) => {
-  const identifier = href.substring(1)
-
-  history.pushState(null, '', `${window.location.pathname}${href}`)
-
-  const section = document.getElementById(identifier)
-  const translation = -80
-
-  setScreenOffsetAtElement({ element: section, translation })
 }
 
 export const Link: LinkInterface = props => {
@@ -69,7 +58,7 @@ export const Link: LinkInterface = props => {
     linkProps = { ...link, label, classNames, onClick }
   } else {
     const isAnchor = href && href.match(/^#.+$/)
-    const onClick = () => isAnchor ? scrollToAnchor(href!) : changeUrl({ href })
+    const onClick = () => isAnchor ? scrollToFragment(href!) : changeUrl({ href })
 
     linkProps = { href, hrefLang, label: customLabel, title, classNames, onClick }
   }
