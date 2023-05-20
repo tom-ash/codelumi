@@ -16,8 +16,13 @@ export const StatisticsConsentRadio = () => {
   ]
   const setVisitor = (value: any) => dispatch({ type: 'visitor', value })
   const onClick = (value: boolean) => {
+    const consent = JSON.parse(localStorage.getItem('consent') as string)
+    const updatedConsent = { ...consent, analytics_storage: value ? 'granted' : 'declined' }
+
+    // @ts-ignore
+    window.gtag('consent', 'update', updatedConsent);  
+    localStorage.setItem('consent', JSON.stringify(updatedConsent));
     setVisitor({ statisticsConsent: value })
-    saveCookie('_pdpaf', value, 'oneYear')
   }
 
   const radioProps = {

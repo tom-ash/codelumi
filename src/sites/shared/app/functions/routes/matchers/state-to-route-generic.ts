@@ -23,12 +23,6 @@ export const matchStateToRouteGeneric: MatchStateToRouteGeneric = args => {
   const url = getPureUrl(window.location.pathname) // TODO: This is not URL!
   const query = window.location.search
 
-  const statisticsConsent = getCookieAsBool(getCookieValue('_pdpaf'))
-  const marketingConsent = getCookieAsBool(getCookieValue('_pdpsm'))
-  const consents = { statisticsConsent, marketingConsent }
-
-  dispatch({ type: 'visitor', value: consents })
-
   syncRouteData({ apiUrl, url, query, isSSR, customHeaders }).then((syncedRouteData: any) => {
     // TODO: TS!
     const { state, meta } = syncedRouteData

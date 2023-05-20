@@ -6,7 +6,7 @@ import * as Sentry from '@sentry/node'
 
 // 'Lang': TODO Get lang from request,
 
-function routeSender({ res, apiUrl, url, query, device, accessToken, appRenderer, visitorState, clientUrl }) {
+function routeSender({ res, apiUrl, url, query, device, accessToken, appRenderer, clientUrl }) {
   fetch(`${apiUrl}/sync${query}`, {
     headers: {
       'Content-Type': 'application/json',
@@ -30,7 +30,6 @@ function routeSender({ res, apiUrl, url, query, device, accessToken, appRenderer
         const app = { ...initialAppState, lang, device }
         const initialState = {
           ...state,
-          ...visitorState,
           app,
         }
         const appAsHtml = appRenderer(initialState)
@@ -49,7 +48,6 @@ function routeSender({ res, apiUrl, url, query, device, accessToken, appRenderer
         res,
         url,
         device,
-        visitorState,
         appRenderer,
         robots,
         clientUrl,

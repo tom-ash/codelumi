@@ -6,7 +6,6 @@ function exceptionSender({
   res,
   url,
   device,
-  visitorState,
   appRenderer,
   robots,
   clientUrl,
@@ -25,7 +24,6 @@ function exceptionSender({
       page: true,
       'page/not-found': true,
     },
-    ...visitorState,
   }
 
   const appAsHtml = appRenderer(initialState)

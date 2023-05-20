@@ -17,10 +17,8 @@ const RedirectsIndex = loadable(() => import('../../shared/app/components/redire
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import apiUrl from '../shared/constants/urls/api'
-import { useGoogleAnalytics } from './functions/use-google-analytics'
 import { setIsMobile } from '../../mapawynajmu-pl/app/functions/set-is-mobile'
-
-// redirectsIndex
+import { setConsents } from '../../shared/app/functions/consents/set-consents'
 
 const App = () => {
   useStyles(styles)
@@ -38,9 +36,8 @@ const App = () => {
     window.lang = lang
   }, [lang])
 
-  useGoogleAnalytics()
-
   useEffect(() => setIsMobile(dispatch), []) // TODO: Consider moving to server.
+  useEffect(() => setConsents(dispatch), [])
 
   const {
     page: renderPage,
