@@ -26,6 +26,21 @@
       }
     }
   }
+  div.index-now {
+    position: absolute;
+    bottom: 64px;
+    right: 12px;
+    height: 32px;
+    .pinged-at {
+      margin-bottom: 6px;
+      text-align: center;
+      font-size: 14px;
+      color: #BDC3C7;
+    }
+    .submit-button {
+      height: 32px;
+    }
+  }
   .submit-button {
     display: block;
     width: 96px;
@@ -57,12 +72,6 @@
     &.save-and-exit {
       position: absolute;
       top: 56px;
-      right: 12px;
-      height: 32px;
-    }
-    &.index-now {
-      position: absolute;
-      bottom: 40px;
       right: 12px;
       height: 32px;
     }
