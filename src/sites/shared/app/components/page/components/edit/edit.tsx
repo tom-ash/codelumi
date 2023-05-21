@@ -7,6 +7,7 @@ import { Meta } from './components/meta/meta'
 import { Schema } from './components/schema/schema'
 import { UpdateStatus } from './components/update-status/update-status'
 import { UpdatePageButton } from './components/update-page/update-page-button'
+import { IndexNowButton } from './components/index-now/index-now-button'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 
@@ -48,6 +49,7 @@ const PageCreate = () => {
         </form>
         <UpdatePageButton />
         <UpdatePageButton exitOnSave={true} />
+        <IndexNowButton />
         <UpdateStatus />
         <OnlineSwitch />
       </div>
