@@ -1,6 +1,9 @@
+// @ts-ignore
 import pretty from 'pretty'
 import { openGraphBuilder } from '../../../shared/functions/builders/open-graph-builder'
+import { loadGtm } from '../../../app/functions/tags/load-gtm'
 
+// @ts-ignore
 function indexRenderer(props) {
   const {
     lang,
@@ -17,6 +20,7 @@ function indexRenderer(props) {
     preloadedState,
     scriptTags,
     clientUrl,
+    gtmId,
   } = props
 
   const indexAsHtml = `<!doctype html>
@@ -33,6 +37,7 @@ function indexRenderer(props) {
         <meta name="keywords" content="${keywords}">
         ${openGraphBuilder(openGraph)}
         <script type="application/ld+json">${JSON.stringify(schemaOrg)}</script>
+        <script>${loadGtm(gtmId)}</script>
         <style type="text/css">${[...css].join('')}</style>
       </head>
       <body>

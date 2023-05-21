@@ -9,6 +9,7 @@ function exceptionSender({
   appRenderer,
   robots,
   clientUrl,
+  gtmId,
 }) {
   const initialState = {
     app: {
@@ -37,6 +38,7 @@ function exceptionSender({
       ...appAsHtml,
       robots,
       clientUrl,
+      gtmId,
     })
   )
 }

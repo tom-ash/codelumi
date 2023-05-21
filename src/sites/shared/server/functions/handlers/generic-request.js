@@ -3,7 +3,7 @@ import getPureUrl from '../../../shared/functions/routes/getters/pure-url'
 import getDevice from '../../../shared/functions/getters/device'
 import sitemapSender from '../senders/sitemap'
 
-function genericRequestHandler({ req, res, clientUrl, apiUrl, appRenderer, siteName }) {
+function genericRequestHandler({ req, res, clientUrl, apiUrl, appRenderer, siteName, gtmId }) {
   const { cookies, originalUrl, headers } = req
   const { access_token: accessToken } = cookies
   const url = getPureUrl(originalUrl)
@@ -15,7 +15,6 @@ function genericRequestHandler({ req, res, clientUrl, apiUrl, appRenderer, siteN
 
   routeSender({
     res,
-    apiUrl,
     url,
     query,
     device,
@@ -23,6 +22,8 @@ function genericRequestHandler({ req, res, clientUrl, apiUrl, appRenderer, siteN
     appRenderer,
     siteName,
     clientUrl,
+    apiUrl,
+    gtmId,
   })
 }
 

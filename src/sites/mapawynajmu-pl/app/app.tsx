@@ -20,6 +20,7 @@ import styles from './styles/styles.scss'
 import { setIsMobile } from './functions/set-is-mobile'
 
 import apiUrl from '../shared/constants/urls/api'
+import { setConsents } from '../../shared/app/functions/consents/set-consents'
 
 const RedirectsIndex = loadable(() => import('../../shared/app/components/redirect/components/index'))
 
@@ -56,6 +57,7 @@ const App = () => {
   useStateToRouteMatcher()
 
   useEffect(() => setIsMobile(dispatch), []) // TODO: Consider moving to server.
+  useEffect(() => setConsents(dispatch), [])
 
   return (
     <>
