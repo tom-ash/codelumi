@@ -6,16 +6,17 @@ interface ScreenSizeHandler {
 
 export const screenSizeHandler: ScreenSizeHandler = args => {
   const { dispatch } = args
-  const width = window.innerWidth
+  const screenWidth = window.innerWidth
+  const screenHeight = window.innerHeight
   const setApp = (value: any) => dispatch({ type: 'app', value })
 
-  const screenWidth = width
+  const minInnerHeight = screenHeight - 192
 
-  if (width > 1200) return setApp({ device: 'largePc', screenWidth })
-  if (width > 960 && width <= 1200) return setApp({ device: 'smallPc', screenWidth })
-  if (width > 768 && width <= 960) return setApp({ device: 'largeTablet', screenWidth })
-  if (width > 480 && width <= 768) return setApp({ device: 'smallTablet', screenWidth })
-  if (width > 360 && width <= 480) return setApp({ device: 'largePhone', screenWidth })
+  if (screenWidth > 1200) return setApp({ device: 'largePc', screenWidth, screenHeight, minInnerHeight })
+  if (screenWidth > 960 && screenWidth <= 1200) return setApp({ device: 'smallPc', screenWidth, screenHeight, minInnerHeight })
+  if (screenWidth > 768 && screenWidth <= 960) return setApp({ device: 'largeTablet', screenWidth, screenHeight, minInnerHeight })
+  if (screenWidth > 480 && screenWidth <= 768) return setApp({ device: 'smallTablet', screenWidth, screenHeight, minInnerHeight })
+  if (screenWidth > 360 && screenWidth <= 480) return setApp({ device: 'largePhone', screenWidth, screenHeight, minInnerHeight })
 
-  setApp({ device: 'smallPhone', screenWidth })
+  setApp({ device: 'smallPhone', screenWidth, screenHeight })
 }

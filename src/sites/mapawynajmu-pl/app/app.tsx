@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useStore } from '../../shared/app/functions/store/useStore'
 import { useFonts } from './functions/use-fonts'
 import { useGoogleMaps } from './functions/use-google-maps'
-import { useGoogleAnalytics } from './functions/use-google-analytics'
 import { useScreenSizeHandler } from './functions/use-screen-size-handler'
 import { useStateToRouteMatcher } from './functions/use-state-to-route-matcher'
 import loadable from '@loadable/component'
@@ -52,7 +51,6 @@ const App = () => {
 
   useFonts()
   useGoogleMaps()
-  useGoogleAnalytics()
   useScreenSizeHandler()
   useStateToRouteMatcher()
 
@@ -62,7 +60,12 @@ const App = () => {
   return (
     <>
       <Header />
-      <div className='blank-page'>
+      <div
+        className='blank-page'
+        style={{
+          minHeight: 640
+        }}
+      >
         {renderAnnouncement && <Announcement />}
         {renderPage && <Page />}
         {renderVisitor && <Visitor />}

@@ -1,4 +1,7 @@
 #user-auth {
-  padding-top: 96px;
-  padding-bottom: 96px;
+  display: flex;
+  align-items: center;
+  min-height: 640px;
+  // background: $BACKGROUND-LIGHT-GRAYISH-COLOR;
+  padding: 32px 0;
 }

@@ -12,6 +12,7 @@
   @extend %text-inputs;
   @extend %submit;
   padding: 32px;
+  min-width: 360px;
   h1 {
     @extend %h1;
     margin-bottom: 24px;
