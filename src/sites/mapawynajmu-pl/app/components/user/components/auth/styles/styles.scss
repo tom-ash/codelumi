@@ -1,7 +1,11 @@
+@import '../../../../../../../shared/app/styles/media-breakpoints';
+
 #user-auth {
   display: flex;
   align-items: center;
   min-height: 640px;
-  // background: $BACKGROUND-LIGHT-GRAYISH-COLOR;
   padding: 32px 0;
+  @media #{$LARGE-PHONE} {
+    padding: 12px;
+  }
 }

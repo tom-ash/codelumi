@@ -60,12 +60,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <div
-        className='blank-page'
-        style={{
-          minHeight: 640
-        }}
-      >
+      <div className='blank-page'>
         {renderAnnouncement && <Announcement />}
         {renderPage && <Page />}
         {renderVisitor && <Visitor />}

@@ -1,4 +1,5 @@
 @import '../../../shared/app/styles/media-breakpoints';
+@import './colors';
 
 %container {
   max-width: 400px;
@@ -12,5 +13,6 @@
     width: 100%;
     box-shadow: none;
     margin: none;
+    border: 1px solid $CONTAINER-BORDER-COLOR;
   }
 }
