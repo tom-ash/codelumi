@@ -1,8 +1,8 @@
 import React from 'react'
 
 export const H1 = {
-  pl: <span>Dodaj ogłoszenie wynajmu nieruchomości za darmo</span>,
-  en: <span>Add a real estate lease listing for free</span>,
+  pl: <span>Dodaj ogłoszenie</span>,
+  en: <span>Add a Listing</span>,
 }
 
 export const ADDITIONAL_DATA_HEADER = {

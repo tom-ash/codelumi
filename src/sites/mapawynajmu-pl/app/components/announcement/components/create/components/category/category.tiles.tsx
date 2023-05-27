@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useStore } from '../../../../../../../../shared/app/functions/store/useStore'
 import { HeadingTwo } from '../../../../../../../../shared/app/components/support/headings/heading-two'
 import { Instructions } from '../../../../../../../../shared/app/components/support/instructions/instructions'
@@ -9,10 +9,22 @@ export const Category = () => {
   const { state, dispatch } = useStore()
   const { app, texts, inputs } = state
   const lang = app.lang as Lang
+  const { device, screenWidth } = app
   const { categoryHeading, categoryInstructions } = texts
   const { category: currentCategory } = inputs
 
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
+
+  let iconWidth: number | undefined
+
+  useEffect(() => {
+    if (device !== 'smallPhone') {
+      iconWidth = undefined
+    } else {
+      iconWidth = (screenWidth - 0.16 * (screenWidth - 64) - 64) / 3
+    }
+
+  }, [device, screenWidth])
 
   return (
     <div className='category'>
@@ -37,7 +49,13 @@ export const Category = () => {
               className={classNames.join(' ')}
               onClick={() => setInputs({ category: value })}
             >
-              <div className='icon'>
+              <div
+                className='icon'
+                style={{
+                  width: iconWidth,
+                  height: iconWidth,
+                }}
+              >
                 <SVG name={name} />
               </div>
               <div className='label'>{label}</div>

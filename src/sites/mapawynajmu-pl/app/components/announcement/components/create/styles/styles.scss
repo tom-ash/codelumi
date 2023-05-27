@@ -80,10 +80,6 @@
     position: relative;
     margin: 224px auto 164px;
   }
-  @media #{$SMALL-TABLET} {
-    margin: 0 auto;
-    padding: $FORM-PADDING-PHONE;
-  }
   .confirmation,
   .success-container,
   .requesting {
@@ -119,7 +115,6 @@
       max-height: 0;
     }
   }
-
   .checkbox {
     &.add-switcher {
       margin-bottom: 18px;
@@ -161,6 +156,15 @@
     margin-top: 24px;
     .input {
       width: 136px;
+    }
+  }
+  @media #{$SMALL-TABLET} {
+    margin: 0 auto;
+    padding: 0;
+    #listing-new-form {
+      margin: 0 0 32px;
+      border: none;
+      border-radius: 0;
     }
   }
 }

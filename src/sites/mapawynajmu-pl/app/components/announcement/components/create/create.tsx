@@ -54,15 +54,9 @@ class AnnouncementCreate extends React.Component {
       // @ts-ignore
       renderSuccess,
       // @ts-ignore
-      lang,
-      // @ts-ignore
       authorized,
       // @ts-ignore
       step,
-      // @ts-ignore
-      setControl,
-      // @ts-ignore
-      setInputs,
     } = this.props
 
     if (step === 'publishing')
