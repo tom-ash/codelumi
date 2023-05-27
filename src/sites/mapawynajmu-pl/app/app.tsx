@@ -41,7 +41,7 @@ const App = () => {
     page: renderPage,
     image: renderImage,
     visitor: renderVisitor,
-    announcement: renderAnnouncement,
+    announcement: renderListing,
     user: renderUser,
     'announcement/index/map': renderListingIndexMap,
     visitorPageIndex,
@@ -57,20 +57,22 @@ const App = () => {
   useEffect(() => setIsMobile(dispatch), []) // TODO: Consider moving to server.
   useEffect(() => setConsents(dispatch), [])
 
+  const renderFooter = !renderListingIndexMap && ![renderVisitor, renderUser, renderPage, visitorPageIndex, renderImage, assetsIndex, redirectsIndex, renderListing].every(renderElement => !renderElement)
+
   return (
     <>
       <Header />
       <div className='blank-page'>
-        {renderAnnouncement && <Announcement />}
-        {renderPage && <Page />}
         {renderVisitor && <Visitor />}
         {renderUser && <User />}
-        {renderImage && <Image />}
+        {renderPage && <Page />}
         {visitorPageIndex && <VisitorPageIndex />}
+        {renderImage && <Image />}
         {assetsIndex && <AssetsIndex />}
         {redirectsIndex && <RedirectsIndex />}
+        {renderListing && <Announcement />}
       </div>
-      {!renderListingIndexMap && <Footer />}
+      {renderFooter && <Footer />}
     </>
   )
 }

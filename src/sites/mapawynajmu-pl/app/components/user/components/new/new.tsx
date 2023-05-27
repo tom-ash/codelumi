@@ -14,8 +14,6 @@ const UserNew = () => {
 
   if (renderAnnouncementCreate) return <UserNewEmail />
 
-  console.log(minInnerHeight)
-
   return (
     <>
       <div

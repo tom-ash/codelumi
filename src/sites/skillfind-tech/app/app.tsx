@@ -43,7 +43,7 @@ const App = () => {
     page: renderPage,
     image: renderImage,
     visitor: renderVisitor,
-    announcement: renderAnnouncement,
+    announcement: renderListing,
     user: renderUser,
     renderPostingIndex,
     assetsIndex,
@@ -56,7 +56,7 @@ const App = () => {
       {renderPostingIndex && <PostingIndex />}
       {renderPage && <Page />}
       {renderVisitor && <Visitor />}
-      {renderAnnouncement && <Announcement />}
+      {renderListing && <Announcement />}
       {renderUser && <User />}
       {renderImage && <Image />}
       {assetsIndex && <AssetsIndex />}

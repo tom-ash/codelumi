@@ -8,8 +8,6 @@ export const screenSizeHandler: ScreenSizeHandler = args => {
   const { dispatch } = args
   const screenWidth = window.innerWidth
   const screenHeight = window.innerHeight
-  const setApp = (value: any) => dispatch({ type: 'app', value })
-
   const device = (() => {
     if (screenWidth > 1200) return 'largePc'
     if (screenWidth > 960) return 'smallPc'
@@ -19,8 +17,7 @@ export const screenSizeHandler: ScreenSizeHandler = args => {
 
     return 'smallPhone'
   })()
-
   const minInnerHeight = screenHeight - (screenWidth < 480 ? 208 : 184)
 
-  setApp({ device, screenWidth, screenHeight, minInnerHeight })
+  dispatch({ type: 'app', value: { device, screenWidth, screenHeight, minInnerHeight } })
 }
