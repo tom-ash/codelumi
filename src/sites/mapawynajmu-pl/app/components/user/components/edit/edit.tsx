@@ -13,7 +13,8 @@ const UserEdit = () => {
   useStyles(styles)
 
   const { state } = useStore()
-  const { texts, user } = state
+  const { app, texts, user } = state
+  const { minInnerHeight } = app
   const { headingOne } = texts
   const { accountType } = user
   const headingProps = {
@@ -22,7 +23,12 @@ const UserEdit = () => {
   }
 
   return (
-    <div id='user-edit'>
+    <div
+      id='user-edit'
+      style={{
+        minHeight: minInnerHeight
+      }}
+    >
       <div className='container'>
         <Heading {...headingProps} />
         <Line />

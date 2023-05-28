@@ -6,12 +6,13 @@
 @import '../../../../../styles/line';
 
 #user-edit {
-  margin-bottom: 24px;
-  padding-top: 96px;
-  padding-bottom: 96px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
   @extend %country-code-phone-number-container;
   .container {
     @extend %container;
+    min-width: 400px;
     padding: 32px;
   }
   h1 {
