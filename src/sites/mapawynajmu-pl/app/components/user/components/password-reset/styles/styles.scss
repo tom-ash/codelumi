@@ -7,10 +7,18 @@
 @import '../../../../../styles/container';
 @import '../../../../../styles/line';
 
+#user-password-reset {
+  display: flex;
+  align-items: center;
+  @media #{$LARGE-PHONE} {
+    padding: 12px;
+  }
+}
+
 #user-edit-password {
   @extend %container;
-  margin-top: 192px;
   padding: 32px;
+  min-width: 360px;
   h1 {
     @extend %h1;
     margin-bottom: 24px;
