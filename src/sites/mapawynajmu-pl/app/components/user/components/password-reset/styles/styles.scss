@@ -10,9 +10,7 @@
 #user-password-reset {
   display: flex;
   align-items: center;
-  @media #{$LARGE-PHONE} {
-    padding: 12px;
-  }
+  padding: 12px;
 }
 
 #user-edit-password {

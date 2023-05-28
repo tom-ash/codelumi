@@ -12,7 +12,7 @@
   @extend %country-code-phone-number-container;
   .container {
     @extend %container;
-    min-width: 400px;
+    min-width: 360px;
     padding: 32px;
   }
   h1 {
