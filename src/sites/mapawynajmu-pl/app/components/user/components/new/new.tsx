@@ -8,23 +8,15 @@ const UserNew = () => {
   useStyles(styles)
 
   const { state } = useStore()
-  const { render, app } = state
-  const { minInnerHeight } = app
+  const { render } = state
   const renderAnnouncementCreate = render['announcement/create/form']
 
   if (renderAnnouncementCreate) return <UserNewEmail />
 
   return (
-    <>
-      <div
-        id='user-create'
-        style={{
-          minHeight: minInnerHeight
-        }}
-      >
-        <UserNewEmail />
-      </div>
-    </>
+    <div id='user-create'>
+      <UserNewEmail />
+    </div>
   )
 }
 

@@ -28,7 +28,7 @@ const App = () => {
 
   const { state, dispatch } = useStore()
   const { app, render } = state
-  const { lang } = app
+  const { lang, minInnerHeight } = app
 
   useEffect(() => {
     // @ts-ignore
@@ -62,7 +62,12 @@ const App = () => {
   return (
     <>
       <Header />
-      <div className='blank-page'>
+      <div
+        className='blank-page'
+        style={{
+          minHeight: minInnerHeight
+        }}
+      >
         {renderVisitor && <Visitor />}
         {renderUser && <User />}
         {renderPage && <Page />}
