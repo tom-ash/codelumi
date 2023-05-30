@@ -33,15 +33,19 @@ class AnnouncementIndexMap extends React.Component {
       title,
       currentPartnerName,
       goBackLink,
+      screenHeight,
     } = this.props
-
     const changeHoveredTileId = hoveredTileId => setControl({ hoveredTileId })
-    const tileComponents = {
-      showPrimary: true,
-    }
+    const tileComponents = { showPrimary: true }
+    const height = screenHeight - 60 - 60 - 40
 
     return (
-      <div id='listing-index-map'>
+      <div
+        id='listing-index-map'
+        style={{
+          height
+        }}
+      >
         <div id='google-map-container'>
           <div
             ref={this.miniList}

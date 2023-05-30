@@ -57,7 +57,7 @@ const App = () => {
   useEffect(() => setIsMobile(dispatch), []) // TODO: Consider moving to server.
   useEffect(() => setConsents(dispatch), [])
 
-  const renderFooter = !renderListingIndexMap && ![renderVisitor, renderUser, renderPage, visitorPageIndex, renderImage, assetsIndex, redirectsIndex, renderListing].every(renderElement => !renderElement)
+  // const renderFooter = !renderListingIndexMap && ![renderVisitor, renderUser, renderPage, visitorPageIndex, renderImage, assetsIndex, redirectsIndex, renderListing].every(renderElement => !renderElement)
 
   return (
     <>
@@ -77,7 +77,8 @@ const App = () => {
         {redirectsIndex && <RedirectsIndex />}
         {renderListing && <Announcement />}
       </div>
-      {renderFooter && <Footer />}
+      {/* {renderFooter && <Footer />} */}
+      <Footer />
     </>
   )
 }

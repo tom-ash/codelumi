@@ -17,7 +17,8 @@ export const screenSizeHandler: ScreenSizeHandler = args => {
 
     return 'smallPhone'
   })()
-  const minInnerHeight = screenHeight - (screenWidth < 480 ? 208 : 184)
+
+  const minInnerHeight = screenHeight - 60 - 40
 
   dispatch({ type: 'app', value: { device, screenWidth, screenHeight, minInnerHeight } })
 }
