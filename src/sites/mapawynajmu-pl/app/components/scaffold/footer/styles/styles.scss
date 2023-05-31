@@ -2,7 +2,6 @@
   .social-pages {
     text-align: center;
     a {
-      // height: 14px;
       width: 16px;
       margin-right: 6px;
       margin-left: 6px;
@@ -34,28 +33,26 @@
     }
   }
   &.mini {
-    height: 36px;
+    padding-top: 10px;
+    height: 20px;
     .social-pages, .administrative {
-      height: 36px;
       float: left;
     }
     .social-pages {
-      padding-top: 4px;
       padding-left: 4px;
-      line-height: 36px;
       a {
 
         display: inline-block;
       }
     }
     .administrative {
-      line-height: 36px;
+      padding-top: 3px;
     }
     .copyright {
+      padding-top: 3px;
       float: right;
       border-top: none;
       padding-top: 0;
-      line-height: 36px;
     }
   }
 }
