@@ -1,58 +1,37 @@
 #footer {
+  padding-top: 10px;
+  height: 20px;
+  .social-pages, .administrative {
+    float: left;
+  }
   .social-pages {
-    text-align: center;
+    padding-left: 12px;
     a {
-      width: 16px;
-      margin-right: 6px;
-      margin-left: 6px;
-      fill: #626567;
-      cursor: pointer;
       display: inline-block;
+      width: 16px;
+      margin-right: 12px;
+      fill: #626567;
+      transition: fill 0.3s ease-in;
+      cursor: pointer;
+      &:hover {
+        fill: black;
+      }
     }
   }
   .administrative {
-    padding: 0 20px;
+    padding-top: 3px;
     max-width: 1440px;
     margin: 0 auto;
     font-size: 12px;
     .link {
       float: left;
-      margin: 0 20px 0 0;
+      margin-right: 12px;
     }
   }
   .copyright {
-    border-top: 1px solid gray;
-    padding-top: 10px;
+    float: right;
+    padding-top: 3px;
     padding-right: 12px;
     font-size: 12px;
-  }
-  svg {
-    transition: fill 0.3s ease-in;
-    &:hover {
-      fill: black;
-    }
-  }
-  &.mini {
-    padding-top: 10px;
-    height: 20px;
-    .social-pages, .administrative {
-      float: left;
-    }
-    .social-pages {
-      padding-left: 4px;
-      a {
-
-        display: inline-block;
-      }
-    }
-    .administrative {
-      padding-top: 3px;
-    }
-    .copyright {
-      padding-top: 3px;
-      float: right;
-      border-top: none;
-      padding-top: 0;
-    }
   }
 }
