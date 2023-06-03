@@ -3,6 +3,9 @@
 @import '../../../../../../../../../styles/inputs/text.scss';
 
 .filter {
+  > .text-input {
+    border: 1px solid rgb(224, 224, 224);
+  }
   &.area {
     position: relative;
     .panel-container {

@@ -1,7 +1,9 @@
-@import '../../../../../../../shared/app/styles/media-breakpoints'; 
+@import '../../../../../../../shared/app/styles/media-breakpoints';
+@import '../../../../../styles/colors';
 
 #user-auth {
   display: flex;
   align-items: center;
   padding: 12px;
+  background: $BACKGROUND-LIGHT-GRAYISH-COLOR;
 }

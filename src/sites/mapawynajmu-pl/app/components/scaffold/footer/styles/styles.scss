@@ -1,6 +1,9 @@
+@import '../../../../../../shared/app/styles/media-breakpoints';
+
 #footer {
   padding-top: 10px;
   height: 20px;
+  background: white;
   .social-pages, .administrative {
     float: left;
   }
@@ -33,5 +36,26 @@
     padding-top: 3px;
     padding-right: 12px;
     font-size: 12px;
+  }
+  @media #{$LARGE-TABLET} {
+    .social-pages, .administrative, .copyright {
+      float: none;
+    }
+    .social-pages {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .administrative {
+      margin-bottom: 12px;
+      .link {
+        float: none;
+        text-align: center;
+        margin-bottom: 6px;
+      }
+    }
+    .copyright {
+      text-align: center;
+      padding-bottom: 12px;
+    }
   }
 }

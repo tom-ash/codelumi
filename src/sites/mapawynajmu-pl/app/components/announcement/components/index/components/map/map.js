@@ -37,7 +37,7 @@ class AnnouncementIndexMap extends React.Component {
     } = this.props
     const changeHoveredTileId = hoveredTileId => setControl({ hoveredTileId })
     const tileComponents = { showPrimary: true }
-    const height = screenHeight - 60 - 60 - 36
+    const height = isMobile ? undefined : screenHeight - 60 - 60 - 36
 
     return (
       <div

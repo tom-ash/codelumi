@@ -1,9 +1,11 @@
 @import '../../../../../shared/app/styles/media-breakpoints';
+@import '../../../styles/colors';
 @import './root';
 @import './article/article';
 
 %page {
   @extend %root;
+  background: $BACKGROUND-LIGHT-GRAYISH-COLOR;
   main {
     min-height: 640px;
     margin: 0 auto;

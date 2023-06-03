@@ -57,15 +57,13 @@ const App = () => {
   useEffect(() => setIsMobile(dispatch), []) // TODO: Consider moving to server.
   useEffect(() => setConsents(dispatch), [])
 
-  // const renderFooter = !renderListingIndexMap && ![renderVisitor, renderUser, renderPage, visitorPageIndex, renderImage, assetsIndex, redirectsIndex, renderListing].every(renderElement => !renderElement)
-
   return (
     <>
       <Header />
       <div
         className='blank-page'
         style={{
-          minHeight: minInnerHeight
+          minHeight: minInnerHeight > 768 ? minInnerHeight : 768
         }}
       >
         {renderVisitor && <Visitor />}
@@ -77,7 +75,6 @@ const App = () => {
         {redirectsIndex && <RedirectsIndex />}
         {renderListing && <Announcement />}
       </div>
-      {/* {renderFooter && <Footer />} */}
       <Footer />
     </>
   )

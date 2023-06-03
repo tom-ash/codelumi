@@ -20,9 +20,12 @@
 @import '../../../../../styles/headings/h1';
 
 #listing-create {
+  background: red;
+  padding: 64px 0;
+  background: $BACKGROUND-LIGHT-GRAYISH-COLOR;
   #listing-new-form {
     @extend %container;
-    margin: 64px auto;
+    margin: 0 auto;
     max-width: 640px;
     padding: 32px;
   }

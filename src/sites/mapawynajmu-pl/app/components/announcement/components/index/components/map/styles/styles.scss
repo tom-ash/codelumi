@@ -6,14 +6,12 @@
 @import './mini_list';
 
 #listing-index-map {
-  // position: absolute;
-  // top: 60px;
   right: 0;
   bottom: 0;
   left: 0;
-  height: 200px;
+  // height: 200px;
   #google-map-container {
-    @extend %google-map;
+    @extend %google-map-container;
     .pin {
       @extend %map-pin;
     }
