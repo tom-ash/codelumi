@@ -34,7 +34,13 @@ export const verify: Verify = args => {
       const { accessToken, href } = json
 
       saveCookie('access_token', accessToken, 'ninetyDays')
-      changeUrl({ href })
+
+      if (href.indexOf('mapawynajmu') !== -1) {
+        return changeUrl({ href })
+      }
+
+      // TODO: Find better solution.
+      location.href = href;
     })
     .catch(() => setErrors({ verificationCode: true }))
     .finally(() => setControl({ connecting: false }))
