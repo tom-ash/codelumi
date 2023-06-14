@@ -10,9 +10,7 @@ import { buildUrl } from '../../../../../../shared/functions/builders/url'
 import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/change-url'
 
 function createAnnouncement() {
-  const { authorized, renderEdit, setControl } = this.props
-
-  // setControl({ connecting: true })
+  const { authorized, renderEdit } = this.props
 
   if (renderEdit) return update.call(this)
   if (authorized) return create.call(this)
@@ -50,7 +48,7 @@ function update() {
 }
 
 function create() {
-  const { lang, announcement, setControl } = this.props
+  const { lang, announcement } = this.props
   const { method, route } = CREATE_API_ROUTE_DATA
   const accessToken = getAccessToken()
 
@@ -63,6 +61,11 @@ function create() {
       if (response.ok) return response.json()
     })
     .then(path => {
+      // TODO: Implement better solution.
+      if (path.match(/^http.+/) !== -1) {
+        return location.href = path;
+      }
+
       changeUrl({ href: buildUrl({ path }) })
     })
 }

@@ -12,6 +12,7 @@ export const mapStateToProps = store => {
   const { id, pin, announcement, user } = data
   const { termsOfServiceConsentLabel } = texts
   const {
+    addPromotion,
     category,
     blobs,
     picUploads,
@@ -47,6 +48,7 @@ export const mapStateToProps = store => {
   } = inputs
 
   return {
+    addPromotion,
     lang,
     isMobile,
     renderForm,

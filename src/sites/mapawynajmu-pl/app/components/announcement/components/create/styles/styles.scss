@@ -170,4 +170,21 @@
       border-radius: 0;
     }
   }
+
+  .promotion {
+    margin-top: 18px;
+    .input {
+      border: 1px solid #DC7633;
+      &.hover, &.focus {
+        box-shadow: 0 0 0 1px #DC7633;
+      }
+    }
+    .tick {
+      border-right: 2px solid #DC7633;
+      border-bottom: 2px solid #DC7633;
+    }
+    .label {
+      color: #DC7633;
+    }
+  }
 }

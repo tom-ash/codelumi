@@ -15,11 +15,8 @@ const Footer = () => {
   useStyles(styles)
 
   const { state } = useStore()
-  const { render, texts } = state
+  const { texts } = state
   const { allRightsReserved } = texts
-  const renderListingIndexMap = render['announcement/index/map']
-
-  console.log(renderListingIndexMap)
 
   const footerClassNames = ['footer']
   if(true) {
