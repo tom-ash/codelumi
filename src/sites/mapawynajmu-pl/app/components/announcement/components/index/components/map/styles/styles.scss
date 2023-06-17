@@ -9,11 +9,16 @@
   right: 0;
   bottom: 0;
   left: 0;
-  // height: 200px;
   #google-map-container {
     @extend %google-map-container;
     .pin {
+      position: relative;
       @extend %map-pin;
+      &.promoted {
+        z-index: 1;
+        // background: #FAE5D3;
+        background: #FEF5E7;
+      }
     }
   }
   @media #{$LARGE-TABLET} {

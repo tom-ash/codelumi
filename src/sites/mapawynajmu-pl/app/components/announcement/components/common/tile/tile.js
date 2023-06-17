@@ -70,6 +70,7 @@ class AnnouncementTile extends React.Component {
       showPrimary,
       changeHoveredTileId,
       goBackLink,
+      isPromoted,
     } = this.props
     const listerPhoneProps = {
       announcerPhone: this.state.fullPhone || phone,
@@ -143,13 +144,21 @@ class AnnouncementTile extends React.Component {
     }
     const isPhoneable = [1, 2, 3, 4, 5].includes(category)
 
+    console.log(isPromoted)
+
+    const classNames = ['announcement-list-tile']
+
+    if (isPromoted) {
+      classNames.push('promoted')
+    }
+
     switch (venue) {
       case 'rootList':
         return (
           <a
             href={path}
             title={title}
-            className='announcement-list-tile'
+            className={classNames.join(' ')}
             onMouseOver={() => changeHoveredTileId(id)}
             onMouseLeave={() => changeHoveredTileId(null)}
             onClick={e => {

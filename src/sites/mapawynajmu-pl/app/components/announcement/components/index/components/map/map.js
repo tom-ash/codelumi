@@ -86,6 +86,7 @@ class AnnouncementIndexMap extends React.Component {
                     locality={announcement.locality}
                     sublocality={announcement.sublocality}
                     changeHoveredTileId={changeHoveredTileId}
+                    isPromoted={announcement.isPromoted}
                     {...tileProps}
                   />
                 )

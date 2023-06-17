@@ -17,14 +17,20 @@ function drawPins(currentListingId: number) {
 
   // @ts-ignore
   announcements.map(announcement => {
-    const { id, category: categoryNumber, latitude, longitude, path } = announcement
+    const { id, category: categoryNumber, latitude, longitude, path, isPromoted } = announcement
     const category = categories.find(category => category.number === categoryNumber)
     // @ts-ignore
     const pin = category.pin
     const svg = svgs[pin.svg]
     const classNames = ['pin', 'icon']
 
-    if (+currentListingId === +announcement.id) classNames.push('current')
+    if (+currentListingId === +announcement.id) {
+      classNames.push('current')
+    }
+
+    if (isPromoted) {
+      classNames.push('promoted')
+    }
 
     const htmlContent = `
       <svg

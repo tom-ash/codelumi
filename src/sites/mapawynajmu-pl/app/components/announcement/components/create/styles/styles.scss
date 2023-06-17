@@ -173,6 +173,9 @@
 
   .promotion {
     margin-top: 18px;
+    .checkbox {
+      margin-bottom: 8px;
+    }
     .input {
       border: 1px solid #DC7633;
       &.hover, &.focus {
@@ -185,6 +188,15 @@
     }
     .label {
       color: #DC7633;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 32px;
+      color: #DC7633;
+      font-size: 12px;
+      li {
+        margin-bottom: 6px;
+      }
     }
   }
 }
