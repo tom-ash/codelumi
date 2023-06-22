@@ -9,18 +9,17 @@ $PIN_COLOR: white;
   margin-top: 12px;
   margin-left: 18px;
   img {
-    height: 18px;
+    height: 36px;
     position: relative;
-    top: 10px;
+    top: 0px;
   }
-  .name {
+  .title {
     position: absolute;
-    line-height: 36px;
     top: 0;
-    left: 20px;
-    font-size: 18px;
+    left: 42px;
+    font-size: 16px;
     font-family: 'Nova Slim';
-    color: #2e86c1;
+    color: rgb(55, 129, 190);
     &:hover {
       color: #3498db;
     }

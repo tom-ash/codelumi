@@ -7,10 +7,10 @@ export const Logo = () => {
 
   return (
     <div id='logo'>
-      <img src='https://mapawynajmupl.s3.eu-central-1.amazonaws.com/assets/mapawynajmupl-logo.jpg' />
-      <div className='name'>
-        <span>mapa</span>
-        <span className='lease'>wynajmu</span>
+      <img src='https://mapawynajmupl.s3.eu-central-1.amazonaws.com/logo.jpeg' />
+      <div className='title'>
+        <div>mapa</div>
+        <div className='lease'>wynajmu</div>
       </div>
     </div>
   )
