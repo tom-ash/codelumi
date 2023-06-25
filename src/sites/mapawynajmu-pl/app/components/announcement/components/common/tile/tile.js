@@ -143,9 +143,6 @@ class AnnouncementTile extends React.Component {
       description,
     }
     const isPhoneable = [1, 2, 3, 4, 5].includes(category)
-
-    console.log(isPromoted)
-
     const classNames = ['announcement-list-tile']
 
     if (isPromoted) {
