@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from '../../../../../../../shared/app/components/support/link/link'
-import { Logo } from './logo/logo'
+import { LogoAndTitle } from '../../../../support/logo-and-title/logo-and-title'
 
 export const LogoLink = () => {
-  const label = <Logo />
+  const label = <LogoAndTitle />
 
   const linkProps = {
     linkKey: 'root',

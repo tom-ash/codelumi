@@ -1,6 +1,5 @@
 import React from 'react'
 import loadable from '@loadable/component'
-import { Logo } from '../../../../../mapawynajmu-pl/app/components/scaffold/header/components/logo-link/logo/logo'
 
 const Header = loadable(() => import('./components/header/header'))
 const Section = loadable(() => import('./components/section/section'))
@@ -16,17 +15,12 @@ const YouTubeEmbed = loadable(() => import('./components/youtube-embed/youtube-e
 const Share = loadable(() => import('./components/share/share'))
 const Definition = loadable(() => import('./components/definition/definition'))
 const Figure = loadable(() => import('./components/figure/figure'))
-const SkillFindLogoImage = loadable(
+const SkillFindLogoLogoAndTitle = loadable(
   () => import('../../../../../skillfind-tech/app/components/scaffold/header/components/image/image')
 )
-const MapawynajmuPlLogoImage = loadable(
-  () =>
-    import(
-      '../../../../../mapawynajmu-pl/app/components/scaffold/header/components/logo-link/logo/components/image/image'
-    )
+const MapawynajmuPlLogoAndTitle = loadable(
+  () => import('../../../../../mapawynajmu-pl/app/components/support/logo-and-title/logo-and-title')
 )
-
-import { Logo as SkillfindTechFullLogo } from '../../../../../skillfind-tech/app/components/scaffold/header/components/logo'
 
 export const RenderNode = (props: RenderNodeProps) => {
   try {
@@ -240,21 +234,21 @@ export const RenderNode = (props: RenderNodeProps) => {
       return <Share {...shareProps} />
     }
 
-    // @ts-ignore
-    if (node.Logo) {
-      const {
-        // @ts-ignore
-        style,
-        // @ts-ignore
-      } = node.Logo
+    // // @ts-ignore
+    // if (node.Logo) {
+    //   const {
+    //     // @ts-ignore
+    //     style,
+    //     // @ts-ignore
+    //   } = node.Logo
 
-      const logoProps = {
-        style,
-      }
+    //   const logoProps = {
+    //     style,
+    //   }
 
-      // @ts-ignore
-      return <Logo {...logoProps} />
-    }
+    //   // @ts-ignore
+    //   return <Logo {...logoProps} />
+    // }
 
     // TODO: Change term to appelation.
     // @ts-ignore
@@ -291,18 +285,22 @@ export const RenderNode = (props: RenderNodeProps) => {
 
     // @ts-ignore
     if (node.SkillFindLogo) {
-      return <SkillFindLogoImage />
+      return <SkillFindLogoLogoAndTitle />
     }
 
     // @ts-ignore
-    if (node.MapawynajmuPlLogoImage) {
-      return <MapawynajmuPlLogoImage />
+    if (node.MapawynajmuPlLogoAndTitle) {
+      // @ts-ignore
+      const { scale } = node
+
+      // @ts-ignore
+      return <MapawynajmuPlLogoAndTitle scale={scale} />
     }
 
-    // @ts-ignore
-    if (node.SkillfindTechFullLogo) {
-      return <SkillfindTechFullLogo />
-    }
+    // // @ts-ignore
+    // if (node.SkillfindTechFullLogo) {
+    //   return <SkillfindTechFullLogo />
+    // }
 
     return null
   } catch {
