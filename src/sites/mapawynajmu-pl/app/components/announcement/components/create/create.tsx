@@ -106,6 +106,7 @@ class AnnouncementCreate extends React.Component {
               )}
               <Line />
               <Promotion />
+              <Line />
               {/* @ts-ignore */}
               <ManagedButton {...this.addAnnouncementManager()} />
             </form>

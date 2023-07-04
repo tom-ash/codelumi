@@ -170,29 +170,38 @@
       border-radius: 0;
     }
   }
+  .promotion-checkbox-container {
+    display: flex;
+    img {
+      margin-left: 24px;
+      position: relative;
+      height: 18px;
+    }
+  }
 
   .promotion {
     margin-top: 18px;
+    margin-bottom: 24px;
     .checkbox {
       margin-bottom: 8px;
     }
     .input {
-      border: 1px solid #DC7633;
+      border: 1px solid #21618C;
       &.hover, &.focus {
-        box-shadow: 0 0 0 1px #DC7633;
+        box-shadow: 0 0 0 1px #21618C;
       }
     }
     .tick {
-      border-right: 2px solid #DC7633;
-      border-bottom: 2px solid #DC7633;
+      border-right: 2px solid #21618C;
+      border-bottom: 2px solid #21618C;
     }
     .label {
-      color: #DC7633;
+      color: #21618C;
     }
     ul {
       list-style-type: none;
       padding-left: 32px;
-      color: #DC7633;
+      color: #21618C;
       font-size: 12px;
       li {
         margin-bottom: 6px;
