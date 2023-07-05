@@ -77,13 +77,21 @@ $MOBILE-MARGIN: 18px;
     margin-top: 0;
   }
   ul {
+    margin: 0 48px 18px;
     li {
       p {
         margin: 0;
         padding: 0;
       }
+      ul {
+        margin: 0 18px 6px;
+      }
+      &:last-of-type {
+        ul {
+          margin-bottom: 0;
+        }
+      }
     }
-    margin: 0 48px 18px;
   }
   header {
     > img {

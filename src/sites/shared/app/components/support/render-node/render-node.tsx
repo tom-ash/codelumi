@@ -86,13 +86,15 @@ export const RenderNode = (props: RenderNodeProps) => {
     }
 
     if (node.Image) {
-      const { style } = node
+      // @ts-ignore
+      const { style, largePhoneStyle } = node
       const { source, alternative } = node.Image
       const imgProps = {
         key: index,
         src: source,
         alt: alternative,
         style,
+        largePhoneStyle,
       }
 
       return <Image {...imgProps} />
