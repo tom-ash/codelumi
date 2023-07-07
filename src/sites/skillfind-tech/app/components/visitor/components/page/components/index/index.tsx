@@ -5,6 +5,7 @@ import { Link } from '../../../../../../../../shared/app/components/support/link
 import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import Image from '../../../../../../../../shared/app/components/support/image/image'
 
 const VisitorPageIndex = () => {
   useStyles(styles)
@@ -12,7 +13,7 @@ const VisitorPageIndex = () => {
   const { state } = useStore()
   const { texts, data } = state
   const { honeYourSkillsHeadingTwo } = texts
-  const { pages } = data
+  const { pages, articles } = data
 
   return (
     <div id='visitor-page-index'>
@@ -20,18 +21,35 @@ const VisitorPageIndex = () => {
       {/* @ts-ignore */}
       {pages.map(page => {
         const { coverImage: image, title, href, hrefLang } = page
-
-        const imageProps = {
-          src: image,
-          alt: title,
+        const label = title
+        const linkProps = {
+          label,
+          href,
+          hrefLang,
+          customClassNames: 'skill',
         }
 
-        const label = title
+        return <Link {...linkProps} />
+      })}
+      <FloatClear />
+      {/* @ts-ignore */}
+      {articles.map(article => {
+        const { image, title, href, hrefLang } = article
+
+        const label = (
+          <>
+            <Image src={image} alt='asdasdasd' />
+            <div>
+              {title}
+            </div>
+          </>
+        )
 
         const linkProps = {
           label,
           href,
           hrefLang,
+          customClassNames: 'article',
         }
 
         return <Link {...linkProps} />

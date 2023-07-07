@@ -17,7 +17,7 @@
       margin: 0 18px 18px;
     }
   }
-  .link {
+  .skill {
     border: 1px solid #E5E7E9;
     background: white;
     width: 19%;
@@ -34,10 +34,51 @@
     text-align: center;
     font-weight: normal;
     font-family: 'IBM Plex Mono', monospace;
+    margin-bottom: 48px;
     @media #{$LARGE-PHONE} {
       float: none;
       width: auto;
-      margin: 0 18px 18px;
+      margin-bottom: 18px;
     }
+  }
+
+  .article {
+    float: left;
+    width: 23.75%;
+    margin-right: 1.66%;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    font-weight: normal;
+    font-family: 'IBM Plex Mono', monospace;
+    &:nth-of-type(4n) {
+      margin-right: 0;
+    }
+    img {
+      display: block;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+    @media #{$MEDIUM-PC} {
+      width: 32%;
+      margin-right: 1.33%;
+      &:nth-of-type(3n) {
+        margin-right: 0;
+      }
+    }
+    @media #{$LARGE-TABLET} {
+      width: 48%;
+      margin-right: 4%;
+      &:nth-of-type(2n) {
+        margin-right: 0;
+      }
+    }
+    @media #{$LARGE-PHONE} {
+      width: 100%;
+      float: none;
+    }
+  }
+  @media #{$MEDIUM-PC} {
+    margin: 0 24px;
   }
 }
