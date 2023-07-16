@@ -8,6 +8,7 @@ const TableOfContents = loadable(() => import('./components/table-of-contents/ta
 const Editorial = loadable(() => import('./components/editorial/editorial'))
 const Paragraph = loadable(() => import('./components/paragraph/paragraph'))
 const List = loadable(() => import('./components/list/list'))
+const Link = loadable(() => import('./components/link/link'))
 const Image = loadable(() => import('./components/image/image'))
 const Anchor = loadable(() => import('./components/anchor/anchor'))
 const Code = loadable(() => import('./components/code/code'))
@@ -162,6 +163,21 @@ export const RenderNode = (props: RenderNodeProps) => {
             id: node.identifier,
             style: node.style,
           }}
+        />
+      )
+    }
+
+    // @ts-ignore
+    if (node.Link) {
+      // @ts-ignore
+      const { href, body, style } = node.Link
+
+      return (
+        <Link
+          key={index}
+          href={href}
+          body={body}
+          style={style}
         />
       )
     }
