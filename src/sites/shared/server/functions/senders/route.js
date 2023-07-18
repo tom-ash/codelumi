@@ -45,7 +45,8 @@ function routeSender({ res, apiUrl, url, query, device, accessToken, appRenderer
     .catch(exception => {
       const robots = 'noindex,nofollow'
 
-      Sentry.captureException(exception)
+      console.warn({ exception, url })
+      Sentry.captureException({ exception, url })
 
       exceptionSender({
         exception,
