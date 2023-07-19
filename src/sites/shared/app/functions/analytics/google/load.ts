@@ -21,6 +21,7 @@ export const loadGoogleAnalytics: LoadGoogleAnalytics = args => {
 
     // @ts-ignore
     const debug_mode = APP_ENV === 'development'
+
     // @ts-ignore
     gtag('config', measurementId, { debug_mode })
 

@@ -170,7 +170,7 @@ export const RenderNode = (props: RenderNodeProps) => {
     // @ts-ignore
     if (node.Link) {
       // @ts-ignore
-      const { href, body, style } = node.Link
+      const { href, body, style, event } = node.Link
 
       return (
         <Link
@@ -178,6 +178,7 @@ export const RenderNode = (props: RenderNodeProps) => {
           href={href}
           body={body}
           style={style}
+          event={event}
         />
       )
     }
