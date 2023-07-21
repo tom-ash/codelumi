@@ -3,6 +3,12 @@ import pretty from 'pretty'
 import { openGraphBuilder } from '../../../shared/functions/builders/open-graph-builder'
 import { loadGtm } from '../../../app/functions/tags/load-gtm'
 
+// TODO: Add below after the opening body tag.
+// <!-- Google Tag Manager (noscript) -->
+// <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=[GTM_ID]"
+// height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+// <!-- End Google Tag Manager (noscript) -->
+
 // @ts-ignore
 function indexRenderer(props) {
   const {
