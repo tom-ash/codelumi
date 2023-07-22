@@ -5,7 +5,8 @@ import CLIENT_URL from '../../shared/constants/urls/client'
 import API_URL from '../../shared/constants/urls/api'
 import { buildUrl } from '../../shared/functions/builders/url'
 import SITE_NAME from '../../shared/constants/names/site'
-import { getGoogleAnalyticsMeasurementId } from '../../app/functions/analytics/google/getters/measurement-id'
+
+const GTM_ID = 'GTM-M34CFVTL'
 
 function handleRequest(req, res) {
   if (req.hostname === `www.${APEX_DOMAIN}`) return res.redirect(301, `https://${APEX_DOMAIN}${req.originalUrl}`)
@@ -16,7 +17,7 @@ function handleRequest(req, res) {
     siteName: SITE_NAME,
     clientUrl: CLIENT_URL,
     apiUrl: API_URL,
-    gtmId: getGoogleAnalyticsMeasurementId(),
+    gtmId: GTM_ID,
     buildUrl,
     appRenderer,
   })
