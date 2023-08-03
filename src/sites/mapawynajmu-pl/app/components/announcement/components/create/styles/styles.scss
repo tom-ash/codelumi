@@ -154,7 +154,7 @@
     font-size: 12px;
     color: #1f618d;
   }
-  .submit-button {
+  .submit-button.create {
     @extend %button;
     margin-top: 24px;
     .input {

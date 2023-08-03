@@ -11,14 +11,12 @@ export function shareOnFacebookManager() {
   const href = buildUrl({ path })
 
   return {
-    classNames: { input: 'share-on-facebook' },
+    classNames: { input: 'action-button share-on-facebook' },
     href: `https://www.facebook.com/sharer/sharer.php?u=${href}`,
     label: (
       <>
-        <div className='button'>
-          <SVG name='facebook' />
-        </div>
-        <div className='text'>{{ pl: "Udostępnij na Facebook'u", en: 'Share on Facebook' }['pl']}</div>
+        <SVG name='facebook' />
+        {{ pl: "Udostępnij na Facebook'u", en: 'Share on Facebook' }['pl']}
       </>
     ),
     onClick: () => shareOnFacebook(href, isMobile),
