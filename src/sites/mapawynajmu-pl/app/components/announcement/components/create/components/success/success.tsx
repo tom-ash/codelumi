@@ -3,10 +3,10 @@ import { ManagedLink } from 'managed-inputs'
 import { shareOnFacebookManager } from './functions/managers'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
-import { Heading } from '../../../../../support/components/heading'
-import { PAGE_HEADER, CONGRATULATIONS_TEXT, SHARE_ON_FACEBOOK_TEXT } from './constants/copies'
-import { Line } from '../../../../../support/components/line/line'
+import { CONGRATULATIONS_TEXT, SHARE_ON_FACEBOOK_TEXT } from './constants/copies'
 import { PromoteButton } from './components/promote'
+import { ListingIndexTile } from '../../../index/components/tile/tile'
+import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
 
 class AnnouncementCreateSuccess extends React.Component {
   // @ts-ignore
@@ -17,21 +17,47 @@ class AnnouncementCreateSuccess extends React.Component {
   }
 
   render() {
+    const {
+      // @ts-ignore
+      lang,
+    } = this.props
+    const {
+      id,
+      title,
+      pictures,
+      name,
+      category,
+      locality,
+      sublocality,
+    // @ts-ignore
+    } = this.props.announcement
+
+    console.log(this.props)
+
+    const picturesProps = {
+      id,
+      title,
+      pictures,
+      disableSLides: false,
+      name,
+      category,
+      locality,
+      sublocality,
+      lang,
+    }
+
     return (
       <div id='success-container'>
-        <Heading
-          tier={1}
-          text={PAGE_HEADER['pl']}
-          // @ts-ignore
-          svg='checkSquare'
-        />
-        <Line />
         <div className='further-steps'>
           <div className='congratulations'>{CONGRATULATIONS_TEXT['pl']}</div>
-          <div className='share-on-facebook-text'>{SHARE_ON_FACEBOOK_TEXT['pl']}</div>
-          <PromoteButton />
-          {/* @ts-ignore */}
-          <ManagedLink {...this.shareOnFacebookManager()} />
+          <ListingIndexTile {...picturesProps} />
+          <div className='buttons'>
+            <div className='share-on-facebook-text'>{SHARE_ON_FACEBOOK_TEXT['pl']}</div>
+            <PromoteButton />
+            {/* @ts-ignore */}
+            <ManagedLink {...this.shareOnFacebookManager()} />
+            <FloatClear />
+          </div>
         </div>
       </div>
     )

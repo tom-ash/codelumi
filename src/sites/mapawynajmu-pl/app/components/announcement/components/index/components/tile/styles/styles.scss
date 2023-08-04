@@ -1,0 +1,27 @@
+@import '../../../../common/tile/styles/tile';
+@import '../../../../support/heading/styles/styles.scss';
+
+%listing-index-tile {
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: white;
+
+  padding-left: 360px;
+  height: 230px;
+  .pictures {
+    width: 360px;
+    height: 230px;
+    position: absolute;
+    left: 0;
+  }
+  h2 {
+    @extend %heading;
+    margin-top: 18px;
+    font-size: 16px;
+  }
+  
+      
+
+}

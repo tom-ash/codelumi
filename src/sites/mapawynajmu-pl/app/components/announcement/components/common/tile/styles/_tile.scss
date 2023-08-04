@@ -1,6 +1,6 @@
 @import '../../../../../../../../shared/app/styles/hidden-scrollbar';
 @import './go-back-to-list';
-@import './h1';
+@import '../../../support/heading/styles/styles.scss';
 @import './h2';
 @import './lister_phone';
 @import './go-to-link';
@@ -16,10 +16,10 @@
 
 %tile {
   h1 {
-    @extend %h1;
+    @extend %heading;
   }
   h2 {
-    @extend %h1;
+    @extend %heading;
     @extend %h2;
   }
   .lister-phone {
