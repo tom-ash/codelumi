@@ -4,6 +4,7 @@ import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { Area } from '../../../common/area/area'
 import { Rent } from '../../../common/rent/rent'
+import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
 
 const Heading = loadable(() => import('../../../common/tile/components/heading'))
 const Pictures = loadable(() => import('../../../common/tile/components/pictures/pictures'))
@@ -57,9 +58,12 @@ export const ListingIndexTile: ListingIndexTileInterface = props => {
   return (
     <div className='listing-index-tile'>
       <Pictures {...picturesProps} />
-      <Heading {...{ ...headingProps, tier: 2 }} />
-      <Area {...areaProps} />
-      <Rent {...rentProps} />
+      <div className='primary'>
+        <Heading {...{ ...headingProps, tier: 2 }} />
+        <Area {...areaProps} />
+        <Rent {...rentProps} />
+      </div>
+      <FloatClear />
     </div>
   )
 }

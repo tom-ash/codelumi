@@ -1,22 +1,35 @@
-@import '../../../../common/tile/styles/tile';
+@import '../../../../../../../../../shared/app/styles/media-breakpoints';
 @import '../../../../support/heading/styles/styles.scss';
 @import '../../../../common/area/styles/styles.scss';
 @import '../../../../common/rent/styles/styles.scss';
 
 %listing-index-tile {
+  max-width: 608px;
   position: relative;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  height: 230px;
   border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   overflow: hidden;
   background: white;
-
-  padding-left: 360px;
-  height: 230px;
+  @media #{$LARGE-PHONE} {
+    height: auto;
+    padding: 0;
+  }
   .pictures {
+    float: left;
     width: 360px;
-    height: 230px;
-    position: absolute;
-    left: 0;
+    @media #{$LARGE-PHONE} {
+      width: 100%;
+      float: none;
+    }
+  }
+  .primary {
+    float: left;
+    padding-left: 18px;
+    @media #{$LARGE-PHONE} {
+      float: none;
+      margin-bottom: 18px;
+    }
   }
   h2 {
     @extend %heading;
