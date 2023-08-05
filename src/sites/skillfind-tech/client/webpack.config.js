@@ -74,7 +74,10 @@ var config = {
       patterns: [
         { from: './src/sites/skillfind-tech/client/robots.txt', to: 'robots.txt' },
         { from: './src/sites/skillfind-tech/client/favicon.ico', to: 'favicon.ico' },
-        { from: './src/sites/skillfind-tech/client/02e8773507b043c7ac1157ab259ed69c.txt', to: '02e8773507b043c7ac1157ab259ed69c.txt' },
+        {
+          from: './src/sites/skillfind-tech/client/02e8773507b043c7ac1157ab259ed69c.txt',
+          to: '02e8773507b043c7ac1157ab259ed69c.txt',
+        },
       ],
     }),
   ],

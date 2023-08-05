@@ -40,7 +40,7 @@ export const verify: Verify = args => {
       }
 
       // TODO: Find better solution.
-      location.href = href;
+      location.href = href
     })
     .catch(() => setErrors({ verificationCode: true }))
     .finally(() => setControl({ connecting: false }))

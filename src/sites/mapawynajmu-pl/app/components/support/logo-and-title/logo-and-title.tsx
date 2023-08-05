@@ -3,9 +3,7 @@ import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 
 interface LogoAndTitleInterface {
-  (props?: {
-    scale?: number
-  }): React.ReactElement
+  (props?: { scale?: number }): React.ReactElement
 }
 
 export const LogoAndTitle: LogoAndTitleInterface = (props = { scale: 1 }) => {

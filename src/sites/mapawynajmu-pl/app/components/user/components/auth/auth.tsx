@@ -15,7 +15,7 @@ const UserAuth = () => {
     <div
       id='user-auth'
       style={{
-        minHeight: minInnerHeight
+        minHeight: minInnerHeight,
       }}
     >
       <Email />

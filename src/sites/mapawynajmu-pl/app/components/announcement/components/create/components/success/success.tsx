@@ -32,7 +32,8 @@ class AnnouncementCreateSuccess extends React.Component {
       grossRentAmount,
       netRentAmount,
       rentCurrency,
-    // @ts-ignore
+      area,
+      // @ts-ignore
     } = this.props.announcement
 
     const isCommercial = [0, 1, 6, 7, 8].indexOf(category) !== -1
@@ -50,6 +51,7 @@ class AnnouncementCreateSuccess extends React.Component {
       lang,
       amount: rentAmount,
       currency: rentCurrency,
+      area,
     }
 
     return (

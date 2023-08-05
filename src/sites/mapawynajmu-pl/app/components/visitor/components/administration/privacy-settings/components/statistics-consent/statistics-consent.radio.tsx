@@ -19,8 +19,8 @@ export const StatisticsConsentRadio = () => {
     const updatedConsent = { ...consent, analytics_storage: value ? 'granted' : 'declined' }
 
     // @ts-ignore
-    window.gtag('consent', 'update', updatedConsent);  
-    localStorage.setItem('consent', JSON.stringify(updatedConsent));
+    window.gtag('consent', 'update', updatedConsent)
+    localStorage.setItem('consent', JSON.stringify(updatedConsent))
     setVisitor({ statisticsConsent: value })
   }
 

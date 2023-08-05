@@ -4,7 +4,8 @@
   padding-top: 10px;
   height: 20px;
   background: white;
-  .social-pages, .administrative {
+  .social-pages,
+  .administrative {
     float: left;
   }
   .social-pages {
@@ -38,7 +39,9 @@
     font-size: 12px;
   }
   @media #{$LARGE-TABLET} {
-    .social-pages, .administrative, .copyright {
+    .social-pages,
+    .administrative,
+    .copyright {
       float: none;
     }
     .social-pages {

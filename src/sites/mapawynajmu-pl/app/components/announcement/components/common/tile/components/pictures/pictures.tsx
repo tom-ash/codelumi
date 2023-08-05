@@ -8,21 +8,11 @@ interface Picture {
 }
 
 interface ListingTilePicturesInterface {
-  (props: {
-    pictures: Picture[],
-    disableSLides: boolean,
-    title: string,
-    id: number,
-  }): React.ReactElement
+  (props: { pictures: Picture[]; disableSLides: boolean; title: string; id: number }): React.ReactElement
 }
 
-export const ListingTilePictures:ListingTilePicturesInterface = (props) => {
-  const {
-    id,
-    title,
-    pictures,
-    disableSLides,
-  } = props
+export const ListingTilePictures: ListingTilePicturesInterface = props => {
+  const { id, title, pictures, disableSLides } = props
 
   const pictureUrls = pictures.map(picture => ({
     database: `${AWS_S3_URL}/announcements/${id}/${picture.database}`,

@@ -18,7 +18,7 @@ export const Visitor = () => {
   const renderTermsOfService = render['visitor/terms-of-service']
   const renderPrivacySettings = render['visitor/privacy-settings']
   const renderNotFound = render['page/not-found']
-  
+
   const showPrivacyMonit =
     (statisticsConsent === null || marketingConsent === null) &&
     !renderNotFound &&

@@ -7,7 +7,6 @@ export const mapStateToProps = store => {
     device,
 
     screenHeight,
-
   } = app
   const { svgs } = assets
   const { 'listing/index/go-back': goBackLink } = links

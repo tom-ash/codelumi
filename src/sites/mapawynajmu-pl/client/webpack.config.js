@@ -74,7 +74,10 @@ var config = {
       patterns: [
         { from: './src/sites/mapawynajmu-pl/client/robots.txt', to: 'robots.txt' },
         { from: './src/sites/mapawynajmu-pl/client/favicon.ico', to: 'favicon.ico' },
-        { from: './src/sites/mapawynajmu-pl/client/1ea0f903dd9c43f2b183ba19abbd6cb9.txt', to: '1ea0f903dd9c43f2b183ba19abbd6cb9.txt' },
+        {
+          from: './src/sites/mapawynajmu-pl/client/1ea0f903dd9c43f2b183ba19abbd6cb9.txt',
+          to: '1ea0f903dd9c43f2b183ba19abbd6cb9.txt',
+        },
       ],
     }),
   ],

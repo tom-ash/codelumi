@@ -19,16 +19,28 @@ const Footer = () => {
   const { allRightsReserved } = texts
 
   const footerClassNames = ['footer']
-  if(true) {
+  if (true) {
     footerClassNames.push('mini')
   }
 
   return (
-    <footer className={footerClassNames.join(' ')} id='footer'>
+    <footer
+      className={footerClassNames.join(' ')}
+      id='footer'
+    >
       <div className='social-pages'>
-        <Link linkKey='facebook' label={<SVG name='facebookSquare' />} />
-        <Link linkKey='linkedin' label={<SVG name='linkedinSquare' />} />
-        <Link linkKey='linkedin' label={<SVG name='twitterSquare' />} />
+        <Link
+          linkKey='facebook'
+          label={<SVG name='facebookSquare' />}
+        />
+        <Link
+          linkKey='linkedin'
+          label={<SVG name='linkedinSquare' />}
+        />
+        <Link
+          linkKey='linkedin'
+          label={<SVG name='twitterSquare' />}
+        />
       </div>
       <div className='administrative'>
         <div className='links'>

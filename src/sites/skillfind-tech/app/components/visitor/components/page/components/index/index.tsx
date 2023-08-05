@@ -38,10 +38,11 @@ const VisitorPageIndex = () => {
 
         const label = (
           <>
-            <Image src={image} alt='asdasdasd' />
-            <div>
-              {title}
-            </div>
+            <Image
+              src={image}
+              alt='asdasdasd'
+            />
+            <div>{title}</div>
           </>
         )
 

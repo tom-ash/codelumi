@@ -4,20 +4,22 @@ import { ManagedLink } from 'managed-inputs'
 import { changeUrl } from '../../../functions/routes/changers/change-url'
 import { scrollToFragment } from '../../../functions/scrollers/scroll-to-fragment'
 
-type LinkInterfaceProps = {
-  linkKey: string
-  href?: string
-  hrefLang?: Lang
-  label?: React.ReactElement | string
-  title?: string
-  customClassNames?: string
-} | {
-  href: string
-  hrefLang?: Lang
-  label?: React.ReactElement | string
-  title?: string
-  customClassNames?: string
-}
+type LinkInterfaceProps =
+  | {
+      linkKey: string
+      href?: string
+      hrefLang?: Lang
+      label?: React.ReactElement | string
+      title?: string
+      customClassNames?: string
+    }
+  | {
+      href: string
+      hrefLang?: Lang
+      label?: React.ReactElement | string
+      title?: string
+      customClassNames?: string
+    }
 
 interface LinkInterface {
   (props: LinkInterfaceProps): React.ReactElement | null
@@ -58,7 +60,7 @@ export const Link: LinkInterface = props => {
     linkProps = { ...link, label, classNames, onClick }
   } else {
     const isAnchor = href && href.match(/^#.+$/)
-    const onClick = () => isAnchor ? scrollToFragment(href!) : changeUrl({ href })
+    const onClick = () => (isAnchor ? scrollToFragment(href!) : changeUrl({ href }))
 
     linkProps = { href, hrefLang, label: customLabel, title, classNames, onClick }
   }

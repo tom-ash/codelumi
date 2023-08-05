@@ -12,7 +12,7 @@ function routeSender({ res, apiUrl, url, query, device, accessToken, appRenderer
   fetch(`${apiUrl}/sync${query}`, {
     headers: {
       'Content-Type': 'application/json',
-      'Type': 'ssr',
+      Type: 'ssr',
       'Route-Url': url,
       'Access-Token': accessToken,
     },

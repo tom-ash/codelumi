@@ -12,8 +12,8 @@ export const AcceptButton = () => {
     const updatedConsent = { ...consent, analytics_storage: 'granted', ad_storage: 'granted' }
 
     // @ts-ignore
-    window.gtag('consent', 'update', updatedConsent);  
-    localStorage.setItem('consent', JSON.stringify(updatedConsent));
+    window.gtag('consent', 'update', updatedConsent)
+    localStorage.setItem('consent', JSON.stringify(updatedConsent))
     setVisitor({ statisticsConsent: true, marketingConsent: true })
   }
 

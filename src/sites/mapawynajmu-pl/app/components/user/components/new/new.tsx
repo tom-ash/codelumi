@@ -19,7 +19,7 @@ const UserNew = () => {
       <div
         id='user-create'
         style={{
-          minHeight: minInnerHeight
+          minHeight: minInnerHeight,
         }}
       >
         <UserNewEmail />

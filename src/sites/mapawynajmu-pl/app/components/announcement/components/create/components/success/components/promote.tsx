@@ -9,7 +9,9 @@ export const PromoteButton = () => {
   const { texts, data, inputs } = state
   const { promoteButtonLabel } = texts
   const { emailAddress, password } = inputs
-  const { announcement: { id: listing_id, isPromoted }} = data
+  const {
+    announcement: { id: listing_id, isPromoted },
+  } = data
 
   if (isPromoted) {
     return null
@@ -19,12 +21,11 @@ export const PromoteButton = () => {
     postApi({
       path: 'listings/promote',
       body: { listing_id },
-    })
-    .then(href => {
+    }).then(href => {
       // @ts-ignore
-      window.gtag('event', 'promotion_added');
+      window.gtag('event', 'promotion_added')
 
-      location.href = href;
+      location.href = href
     })
   }
 

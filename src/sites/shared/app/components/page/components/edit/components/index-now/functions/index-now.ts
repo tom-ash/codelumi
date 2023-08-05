@@ -9,11 +9,7 @@ interface IndexNow {
 }
 
 export const indexNow: IndexNow = props => {
-  const {
-    id,
-    indexNowApiUrl,
-    setControl,
-  } = props
+  const { id, indexNowApiUrl, setControl } = props
 
   const body = JSON.stringify({ id })
 

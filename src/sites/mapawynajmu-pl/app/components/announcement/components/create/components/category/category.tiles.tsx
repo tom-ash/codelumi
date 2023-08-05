@@ -23,7 +23,6 @@ export const Category = () => {
     } else {
       iconWidth = (screenWidth - 0.16 * (screenWidth - 64) - 64) / 3
     }
-
   }, [device, screenWidth])
 
   return (

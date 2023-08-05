@@ -26,7 +26,7 @@ const UserEdit = () => {
     <div
       id='user-edit'
       style={{
-        minHeight: minInnerHeight
+        minHeight: minInnerHeight,
       }}
     >
       <div className='container'>

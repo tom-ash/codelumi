@@ -13,9 +13,7 @@ export const IndexNow: IndexNowInterface = () => {
 
   return (
     <div className='index-now'>
-      <div className='pinged-at'>
-        {indexNowPingedAt}
-      </div>
+      <div className='pinged-at'>{indexNowPingedAt}</div>
       <Button />
     </div>
   )

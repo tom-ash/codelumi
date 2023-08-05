@@ -25,10 +25,7 @@ type ObjectNode = {
   Share?: { href: string }
 }
 
-type RenderNodeData =
-  | string
-  | string[]
-  | ObjectNode
+type RenderNodeData = string | string[] | ObjectNode
 
 type RenderNodeProps = {
   node: RenderNodeData

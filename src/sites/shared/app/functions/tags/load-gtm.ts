@@ -2,7 +2,7 @@ interface LoadGtm {
   (gtmId: string): string
 }
 
-export const loadGtm: LoadGtm = (gtmId) => `
+export const loadGtm: LoadGtm = gtmId => `
   window.dataLayer = window.dataLayer || [];
   function gtag(){window.dataLayer.push(arguments);}
 

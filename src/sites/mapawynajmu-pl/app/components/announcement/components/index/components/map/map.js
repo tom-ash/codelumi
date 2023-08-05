@@ -43,7 +43,7 @@ class AnnouncementIndexMap extends React.Component {
       <div
         id='listing-index-map'
         style={{
-          height
+          height,
         }}
       >
         <div id='google-map-container'>

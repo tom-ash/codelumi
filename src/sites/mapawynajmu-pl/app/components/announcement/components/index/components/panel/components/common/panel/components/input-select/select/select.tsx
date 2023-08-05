@@ -2,7 +2,7 @@ import React from 'react'
 import { useStore } from '../../../../../../../../../../../../../../shared/app/functions/store/useStore'
 
 interface SelectInterface {
-  (props: { name: string, kind: string, options: string[] }): React.ReactElement
+  (props: { name: string; kind: string; options: string[] }): React.ReactElement
 }
 
 export const Select: SelectInterface = props => {

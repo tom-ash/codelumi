@@ -15,7 +15,7 @@ const PasswordReset = () => {
     <div
       id='user-password-reset'
       style={{
-        minHeight: minInnerHeight
+        minHeight: minInnerHeight,
       }}
     >
       <CommonPasswordReset />

@@ -4,7 +4,7 @@ import { TextInput } from '../../../../../../../../../../../../../../shared/app/
 import { TextInputType } from '../../../../../../../../../../../../../../shared/app/components/support/text-input/text-input'
 
 interface InputInterface {
-  (props: { name: string, kind: string }): React.ReactElement
+  (props: { name: string; kind: string }): React.ReactElement
 }
 
 export const Input: InputInterface = props => {

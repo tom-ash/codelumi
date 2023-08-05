@@ -63,7 +63,7 @@ const App = () => {
       <div
         className='blank-page'
         style={{
-          minHeight: minInnerHeight > 768 ? minInnerHeight : 768
+          minHeight: minInnerHeight > 768 ? minInnerHeight : 768,
         }}
       >
         {renderVisitor && <Visitor />}

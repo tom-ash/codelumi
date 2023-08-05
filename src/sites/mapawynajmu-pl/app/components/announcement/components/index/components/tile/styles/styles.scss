@@ -1,5 +1,6 @@
 @import '../../../../common/tile/styles/tile';
 @import '../../../../support/heading/styles/styles.scss';
+@import '../../../../common/area/styles/styles.scss';
 @import '../../../../common/rent/styles/styles.scss';
 
 %listing-index-tile {
@@ -20,12 +21,14 @@
   h2 {
     @extend %heading;
     margin-top: 18px;
+    margin-bottom: 18px;
     font-size: 16px;
+  }
+  .area {
+    @extend %area;
+    margin-bottom: 18px;
   }
   .rent {
     @extend %rent;
   }
-  
-      
-
 }

@@ -25,7 +25,7 @@ export const fetchApi: FetchApi = args => {
     headers: {
       'Access-Token': getAccessToken(),
       'Content-Type': 'application/json',
-      'Lang': lang,
+      Lang: lang,
     },
     body: JSON.stringify(body),
   }).then((response: Response) => {
@@ -39,9 +39,9 @@ interface PostApi {
   (args: { path: string; body: any }): Promise<any>
 }
 
-export const postApi: PostApi = (args) => {
+export const postApi: PostApi = args => {
   const { path, body } = args
-  
+
   return fetchApi({
     path,
     method: FetchMethod.POST,

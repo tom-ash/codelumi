@@ -4,10 +4,10 @@ import { FloatClear } from '../../../../../../../../../../../shared/app/componen
 import { InputSelect } from './components/input-select/input-select'
 
 interface PanelInterface {
-  (props: { name: string, supplement: React.ReactElement }): React.ReactElement
+  (props: { name: string; supplement: React.ReactElement }): React.ReactElement
 }
 
-export const Panel: PanelInterface = (props) => {
+export const Panel: PanelInterface = props => {
   const { name, supplement } = props
   const { state, dispatch } = useStore()
   const { control, inputs } = state
@@ -25,7 +25,10 @@ export const Panel: PanelInterface = (props) => {
       )}
       {
         <div className={`panel ${name} ${showPanel ? 'opened' : 'closed'}`}>
-          <InputSelect name={name} options={options} />
+          <InputSelect
+            name={name}
+            options={options}
+          />
           {supplement}
           <FloatClear />
         </div>

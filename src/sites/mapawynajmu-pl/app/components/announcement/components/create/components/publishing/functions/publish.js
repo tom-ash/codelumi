@@ -52,11 +52,11 @@ export function publish() {
   if (!authorized && !user) return scrollToElement(document.getElementById('user-new-email-first-name'), 12, -160)
 
   // @ts-ignore
-  window.gtag('event', 'listing_added');
+  window.gtag('event', 'listing_added')
 
   if (addPromotion) {
     // @ts-ignore
-    window.gtag('event', 'promotion_added');
+    window.gtag('event', 'promotion_added')
   }
 
   setData({ announcement, user })

@@ -63,7 +63,7 @@ function create() {
     .then(path => {
       // TODO: Implement better solution.
       if (path.match(/^http.+/) !== -1) {
-        return location.href = path;
+        return (location.href = path)
       }
 
       changeUrl({ href: buildUrl({ path }) })

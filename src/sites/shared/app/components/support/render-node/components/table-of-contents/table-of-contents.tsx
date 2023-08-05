@@ -31,15 +31,19 @@ const TableOfContents = props => {
     // @ts-ignore
     const headingTwo = sectionNodes.find(node => node.HeadingTwo)?.HeadingTwo
     // @ts-ignore
-    const subsections = sectionNodes.filter(node => node.Section).map(section => {
+    const subsections = sectionNodes
       // @ts-ignore
-      return {
+      .filter(node => node.Section)
+      // @ts-ignore
+      .map(section => {
         // @ts-ignore
-        identifier: section.identifier,
-        // @ts-ignore
-        headingThree: section.Section.find(node => node.HeadingThree)?.HeadingThree,
-      }
-    })
+        return {
+          // @ts-ignore
+          identifier: section.identifier,
+          // @ts-ignore
+          headingThree: section.Section.find(node => node.HeadingThree)?.HeadingThree,
+        }
+      })
 
     return {
       identifier,
@@ -55,11 +59,7 @@ const TableOfContents = props => {
         <ul>
           {/* @ts-ignore */}
           {mappedSections.map((mappedSection, index) => {
-            const {
-              identifier,
-              headingTwo,
-              subsections,
-            } = mappedSection
+            const { identifier, headingTwo, subsections } = mappedSection
 
             return (
               <li key={index}>
@@ -68,13 +68,11 @@ const TableOfContents = props => {
                   label={headingTwo}
                   title={headingTwo}
                 />
-                {subsections.length > 0 && <ul>
+                {subsections.length > 0 && (
+                  <ul>
                     {/* @ts-ignore */}
                     {subsections.map(subsection => {
-                      const {
-                        identifier,
-                        headingThree,
-                      } = subsection
+                      const { identifier, headingThree } = subsection
 
                       return (
                         <li>
@@ -86,7 +84,8 @@ const TableOfContents = props => {
                         </li>
                       )
                     })}
-                  </ul>}
+                  </ul>
+                )}
               </li>
             )
           })}
