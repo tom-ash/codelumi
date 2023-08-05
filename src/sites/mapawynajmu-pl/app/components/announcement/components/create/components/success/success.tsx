@@ -29,12 +29,16 @@ class AnnouncementCreateSuccess extends React.Component {
       category,
       locality,
       sublocality,
+      grossRentAmount,
+      netRentAmount,
+      rentCurrency,
     // @ts-ignore
     } = this.props.announcement
 
-    console.log(this.props)
+    const isCommercial = [0, 1, 6, 7, 8].indexOf(category) !== -1
+    const rentAmount = isCommercial ? netRentAmount : grossRentAmount
 
-    const picturesProps = {
+    const tileProps = {
       id,
       title,
       pictures,
@@ -44,13 +48,15 @@ class AnnouncementCreateSuccess extends React.Component {
       locality,
       sublocality,
       lang,
+      amount: rentAmount,
+      currency: rentCurrency,
     }
 
     return (
       <div id='success-container'>
         <div className='further-steps'>
           <div className='congratulations'>{CONGRATULATIONS_TEXT['pl']}</div>
-          <ListingIndexTile {...picturesProps} />
+          <ListingIndexTile {...tileProps} />
           <div className='buttons'>
             <div className='share-on-facebook-text'>{SHARE_ON_FACEBOOK_TEXT['pl']}</div>
             <PromoteButton />

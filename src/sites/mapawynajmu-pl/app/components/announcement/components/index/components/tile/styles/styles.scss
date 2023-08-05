@@ -1,5 +1,6 @@
 @import '../../../../common/tile/styles/tile';
 @import '../../../../support/heading/styles/styles.scss';
+@import '../../../../common/rent/styles/styles.scss';
 
 %listing-index-tile {
   position: relative;
@@ -20,6 +21,9 @@
     @extend %heading;
     margin-top: 18px;
     font-size: 16px;
+  }
+  .rent {
+    @extend %rent;
   }
   
       
