@@ -4,8 +4,11 @@
   margin-left: 18px;
   font-family: 'Oswald', sans-serif;
   font-size: 22px;
+  .amount {
+    margin-right: 6px;
+  }
   .decimal {
-    margin: 0 6px;
+    margin-right: 6px;
     text-decoration: underline;
   }
   .per-month {
