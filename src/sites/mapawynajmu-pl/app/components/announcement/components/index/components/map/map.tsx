@@ -142,8 +142,6 @@ class AnnouncementIndexMap extends React.Component {
                   onMouseLeave: () => changeHoveredTileId(null),
                 }
 
-                console.log(title)
-
                 return (
                   <ListingIndexTile {...tileProps} />
                 )

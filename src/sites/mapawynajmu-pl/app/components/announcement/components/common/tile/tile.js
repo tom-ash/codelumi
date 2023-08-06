@@ -150,48 +150,6 @@ class AnnouncementTile extends React.Component {
     }
 
     switch (venue) {
-      case 'rootList':
-        return (
-          <a
-            // href={path}
-            // title={title}
-            // className={classNames.join(' ')}
-            // onMouseOver={() => changeHoveredTileId(id)}
-            // onMouseLeave={() => changeHoveredTileId(null)}
-            onClick={e => {
-              e.preventDefault()
-
-              if (!isMobile) {
-                const href = buildUrl({ path })
-                changeUrl({ href, retainQueryParams: true })
-                return
-              }
-
-              var fromTop = document.body.getBoundingClientRect().top
-
-              window.scrollBy({
-                top: 454 + fromTop,
-                behavior: 'smooth',
-              })
-
-              setControl({
-                mapOptions: {
-                  center: {
-                    lat: latitude,
-                    lng: longitude,
-                  },
-                  zoom: 12.4,
-                },
-              })
-            }}
-          >
-            <Link {...linkProps} />
-            <div className='data'>
-              <Heading {...{ ...headingProps, tier: 2 }} />
-              <PrimaryData {...primaryDataProps} />
-            </div>
-          </a>
-        )
       case 'map':
         return (
           <>

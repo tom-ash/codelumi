@@ -37,7 +37,7 @@ interface ListingIndexTileInterface {
 export const ListingIndexTile: ListingIndexTileInterface = props => {
   useStyles(styles)
 
-  const { href, id, title, pictures, disableSLides, name, category, locality, sublocality, lang, rentAmount, rentCurrency, area,
+  const { href, id, title, pictures, name, category, locality, sublocality, lang, rentAmount, rentCurrency, area,
     onClick, onMouseOver, onMouseLeave,
   } = props
   const tileProps = {
@@ -51,7 +51,7 @@ export const ListingIndexTile: ListingIndexTileInterface = props => {
     id,
     title,
     pictures,
-    disableSLides,
+    disableSLides: true,
   }
   const headingProps = {
     name,
@@ -67,6 +67,8 @@ export const ListingIndexTile: ListingIndexTileInterface = props => {
     rentAmount,
     rentCurrency,
   }
+
+  // const firstPicture = `${AWS_S3_URL}/announcements/${id}/${picture.database}`
 
   return (
     <a {...tileProps}>
