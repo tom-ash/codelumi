@@ -11,14 +11,21 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   overflow: hidden;
   background: white;
-  @media #{$LARGE-PHONE} {
+  transition: box-shadow 0.15s ease-in;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 5px 14px;
+  }
+  @media #{$LARGE-TABLET} {
     height: auto;
     padding: 0;
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
   }
   .pictures {
     float: left;
     width: 360px;
-    @media #{$LARGE-PHONE} {
+    @media #{$LARGE-TABLET} {
       width: 100%;
       float: none;
     }
@@ -26,7 +33,7 @@
   .primary {
     float: left;
     padding-left: 18px;
-    @media #{$LARGE-PHONE} {
+    @media #{$LARGE-TABLET} {
       float: none;
       margin-bottom: 18px;
     }
@@ -40,8 +47,16 @@
   .area {
     @extend %area;
     margin-bottom: 18px;
+    @media #{$LARGE-TABLET} {
+      display: inline-block;
+      margin-right: 18px;
+      margin-bottom: 0;
+    }
   }
   .rent {
     @extend %rent;
+    @media #{$LARGE-TABLET} {
+      display: inline-block;
+    }
   }
 }

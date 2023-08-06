@@ -15,25 +15,38 @@ interface Picture {
 
 interface ListingIndexTileInterface {
   (props: {
+    href: string
     id: number
-    title: string
-    pictures: Picture[]
-    disableSLides: boolean
-    name: string
     category: number
+    lang: string
+    title: string
+    name: string
     locality: string
     sublocality: string
-    lang: string
-    amount: number
-    currency: number
+    pictures: Picture[]
+    disableSLides: boolean
     area: number
+    rentAmount: number
+    rentCurrency: number
+    onClick?: (e: React.SyntheticEvent) => void;
+    onMouseOver?: () => void;
+    onMouseLeave?: () => void;
   }): React.ReactElement
 }
 
 export const ListingIndexTile: ListingIndexTileInterface = props => {
   useStyles(styles)
 
-  const { id, title, pictures, disableSLides, name, category, locality, sublocality, lang, amount, currency, area } = props
+  const { href, id, title, pictures, disableSLides, name, category, locality, sublocality, lang, rentAmount, rentCurrency, area,
+    onClick, onMouseOver, onMouseLeave,
+  } = props
+  const tileProps = {
+    href,
+    className: 'listing-index-tile',
+    onClick,
+    onMouseOver,
+    onMouseLeave,
+  }
   const picturesProps = {
     id,
     title,
@@ -51,12 +64,12 @@ export const ListingIndexTile: ListingIndexTileInterface = props => {
     area,
   }
   const rentProps = {
-    amount,
-    currency,
+    rentAmount,
+    rentCurrency,
   }
 
   return (
-    <div className='listing-index-tile'>
+    <a {...tileProps}>
       <Pictures {...picturesProps} />
       <div className='primary'>
         <Heading {...{ ...headingProps, tier: 2 }} />
@@ -64,6 +77,6 @@ export const ListingIndexTile: ListingIndexTileInterface = props => {
         <Rent {...rentProps} />
       </div>
       <FloatClear />
-    </div>
+    </a>
   )
 }

@@ -33,6 +33,7 @@ class AnnouncementCreateSuccess extends React.Component {
       netRentAmount,
       rentCurrency,
       area,
+      path: href,
       // @ts-ignore
     } = this.props.announcement
 
@@ -40,6 +41,7 @@ class AnnouncementCreateSuccess extends React.Component {
     const rentAmount = isCommercial ? netRentAmount : grossRentAmount
 
     const tileProps = {
+      href: `/${href}`,
       id,
       title,
       pictures,
@@ -49,8 +51,8 @@ class AnnouncementCreateSuccess extends React.Component {
       locality,
       sublocality,
       lang,
-      amount: rentAmount,
-      currency: rentCurrency,
+      rentAmount,
+      rentCurrency,
       area,
     }
 

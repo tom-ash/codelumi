@@ -7,34 +7,54 @@ import drawPins from '../../../../functions/map/pins/draw-pins'
 import redrawPins from '../../../../functions/map/pins/redraw-pins'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
+import { ListingIndexTile } from '../tile/tile'
+import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
 
 class AnnouncementIndexMap extends React.Component {
+  // @ts-ignore
   constructor(props) {
     super(props)
+    // @ts-ignore
     this.miniList = React.createRef()
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
+    // @ts-ignore
     this.drawPins = drawPins.bind(this)
+    // @ts-ignore
     this.redrawPins = redrawPins.bind(this)
   }
 
   render() {
     const {
+      // @ts-ignore
       tile,
+      // @ts-ignore
       lang,
+      // @ts-ignore
       announcements,
+      // @ts-ignore
       setData,
+      // @ts-ignore
       isMobile,
+      // @ts-ignore
       miniListFarthestScrollTop,
+      // @ts-ignore
       miniListFarthestScrollLeft,
+      // @ts-ignore
       setApp,
+      // @ts-ignore
       setControl,
+      // @ts-ignore
       title,
+      // @ts-ignore
       currentPartnerName,
+      // @ts-ignore
       goBackLink,
+      // @ts-ignore
       screenHeight,
     } = this.props
+    // @ts-ignore
     const changeHoveredTileId = hoveredTileId => setControl({ hoveredTileId })
     const tileComponents = { showPrimary: true }
     const height = isMobile ? undefined : screenHeight - 60 - 60 - 36
@@ -48,47 +68,84 @@ class AnnouncementIndexMap extends React.Component {
       >
         <div id='google-map-container'>
           <div
+            // @ts-ignore
             ref={this.miniList}
             id='mini-list'
           >
             <h1>{title}</h1>
             {currentPartnerName && <h2>{currentPartnerName}</h2>}
             {announcements !== null &&
+              // @ts-ignore
               announcements.map((announcement, index) => {
-                const { name, link } = announcement
-
-                const tileProps = {
+                const {
+                  id,
+                  title,
+                  pictures,
                   name,
-                  link,
+                  category,
+                  locality,
+                  sublocality,
+                  netRentAmount,
+                  grossRentAmount,
+                  rentCurrency,
+                  area,
+                  path: href,
+                  latitude,
+                  longitude,
+                } = announcement
+
+                const isCommercial = [0, 1, 6, 7, 8].indexOf(category) !== -1
+                const rentAmount = isCommercial ? netRentAmount : grossRentAmount
+
+                const onClick = (e: React.SyntheticEvent) => {
+                  e.preventDefault()
+
+                  if (!isMobile) {
+                    changeUrl({ href, retainQueryParams: true })
+                  } else {
+                    var fromTop = document.body.getBoundingClientRect().top
+      
+                    window.scrollBy({
+                      top: 454 + fromTop,
+                      behavior: 'smooth',
+                    })
+      
+                    setControl({
+                      mapOptions: {
+                        center: {
+                          lat: latitude,
+                          lng: longitude,
+                        },
+                        zoom: 12.4,
+                      },
+                    })
+                  }
                 }
 
+                const tileProps = {
+                  key: index,
+                  href,
+                  id,
+                  title,
+                  pictures,
+                  disableSLides: true,
+                  name,
+                  category,
+                  locality,
+                  sublocality,
+                  lang,
+                  rentAmount,
+                  rentCurrency,
+                  area,
+                  onClick,
+                  onMouseOver: () => changeHoveredTileId(id),
+                  onMouseLeave: () => changeHoveredTileId(null),
+                }
+
+                console.log(title)
+
                 return (
-                  <ListingTile
-                    venue='rootList'
-                    key={index}
-                    index={index}
-                    id={announcement.id}
-                    latitude={announcement.latitude}
-                    longitude={announcement.longitude}
-                    pictures={announcement.pictures}
-                    category={announcement.category}
-                    area={announcement.area}
-                    grossRentAmount={announcement.grossRentAmount}
-                    rentCurrency={announcement.rentCurrency}
-                    lang={lang}
-                    setData={setData}
-                    setControl={setControl}
-                    isMobile={isMobile}
-                    path={announcement.path}
-                    title={announcement.title}
-                    miniListFarthestScrollTop={miniListFarthestScrollTop}
-                    miniListFarthestScrollLeft={miniListFarthestScrollLeft}
-                    locality={announcement.locality}
-                    sublocality={announcement.sublocality}
-                    changeHoveredTileId={changeHoveredTileId}
-                    isPromoted={announcement.isPromoted}
-                    {...tileProps}
-                  />
+                  <ListingIndexTile {...tileProps} />
                 )
               })}
           </div>
@@ -117,6 +174,7 @@ class AnnouncementIndexMap extends React.Component {
                 title={tile.title}
                 locality={tile.locality}
                 sublocality={tile.sublocality}
+                // @ts-ignore
                 description={{ pl: tile.polishDescription, en: tile.englishDescription }[lang]}
                 name={tile.name}
                 link={tile.link}

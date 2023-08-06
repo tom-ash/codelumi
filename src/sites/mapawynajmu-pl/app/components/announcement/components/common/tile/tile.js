@@ -153,11 +153,11 @@ class AnnouncementTile extends React.Component {
       case 'rootList':
         return (
           <a
-            href={path}
-            title={title}
-            className={classNames.join(' ')}
-            onMouseOver={() => changeHoveredTileId(id)}
-            onMouseLeave={() => changeHoveredTileId(null)}
+            // href={path}
+            // title={title}
+            // className={classNames.join(' ')}
+            // onMouseOver={() => changeHoveredTileId(id)}
+            // onMouseLeave={() => changeHoveredTileId(null)}
             onClick={e => {
               e.preventDefault()
 
