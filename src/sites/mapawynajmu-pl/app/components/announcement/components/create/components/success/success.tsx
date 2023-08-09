@@ -63,7 +63,7 @@ class AnnouncementCreateSuccess extends React.Component {
           <ListingIndexTile {...tileProps} />
           <div className='buttons'>
             <div className='share-on-facebook-text'>{SHARE_ON_FACEBOOK_TEXT['pl']}</div>
-            <PromoteButton />
+            <PromoteButton listingId={id} />
             {/* @ts-ignore */}
             <ManagedLink {...this.shareOnFacebookManager()} />
             <FloatClear />

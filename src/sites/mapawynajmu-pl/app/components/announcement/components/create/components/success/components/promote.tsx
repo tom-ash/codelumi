@@ -4,23 +4,22 @@ import { SubmitButton } from '../../../../../../../../../shared/app/components/s
 import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
 import { postApi } from '../../../../../../../../../shared/app/functions/fetch-api/fetch-api'
 
-export const PromoteButton = () => {
-  const { state } = useStore()
-  const { texts, data, inputs } = state
-  const { promoteButtonLabel } = texts
-  const { emailAddress, password } = inputs
-  const {
-    announcement: { id: listing_id, isPromoted },
-  } = data
+interface PromoteButtonInterface {
+  (props: {
+    listingId: number;
+  }): React.ReactElement
+}
 
-  if (isPromoted) {
-    return null
-  }
+export const PromoteButton: PromoteButtonInterface = (props) => {
+  const { listingId } = props
+  const { state } = useStore()
+  const { texts } = state
+  const { promoteButtonLabel } = texts
 
   const submit = () => {
     postApi({
       path: 'listings/promote',
-      body: { listing_id },
+      body: { listing_id: listingId },
     }).then(href => {
       // @ts-ignore
       window.gtag('event', 'promotion_added')
@@ -37,10 +36,8 @@ export const PromoteButton = () => {
   )
 
   const submitButtonProps = {
-    customContainerClassNames: 'action-button promote',
+    customContainerClassNames: 'bump-up-button',
     label,
-    email: emailAddress,
-    password,
     submit,
   }
 

@@ -145,7 +145,8 @@ class AnnouncementIndexMap extends React.Component {
                 return (
                   <ListingIndexTile {...tileProps} />
                 )
-              })}
+              }
+            )}
           </div>
           <div id='google-map' />
           {tile && Object.keys(tile).length > 1 && (

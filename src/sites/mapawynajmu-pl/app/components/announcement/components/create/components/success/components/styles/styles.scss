@@ -1,0 +1,46 @@
+%bump-up-button {
+  position: relative;
+  width: 292px;
+  height: 56px;
+  margin-bottom: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+  padding-left: 72px;
+  line-height: 60px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  @media #{$LARGE-PHONE} {
+    width: 100%;
+  }
+  .input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: none;
+    padding-left: 40px;
+    background: #d35400;
+    font-size: 14px;
+    color: white;
+    transition: background-color 0.16s ease-in;
+    &:hover {
+      background: #DC7633;
+    }
+  }
+  svg {
+    position: absolute;
+    fill: white;
+    top: 16px;
+    left: 16px;
+    height: 24px;
+  }
+  .button-spinner {
+    left: -52px;
+    top: -52px;
+  }
+  .button-spinner div:after {
+    background: white;
+  }
+}

@@ -2,6 +2,8 @@
 @import './destroy_modal';
 @import '../../../../common/tile/styles/tile';
 @import '../../../../../../../../../shared/app/styles/lined-heading';
+@import '../../tile/styles/styles.scss';
+@import '../../../../create/components/success/components/styles/styles.scss';
 
 #listing-index {
   &.user {
@@ -11,7 +13,7 @@
 
 #listing-index-user {
   position: relative;
-  width: 880px;
+  max-width: 608px;
   margin: 0 auto;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -33,33 +35,38 @@
       padding: 0 18px 18px;
     }
   }
-  .listing-tile {
-    @extend %tile;
-    float: left;
-    width: 48%;
-    border-radius: 8px;
-    margin-right: 4%;
-    margin-bottom: 4%;
-    padding: 18px 0;
-    background: white;
-    // h2 {
-    //   margin: 0 18px 18px;
-    // }
-    .primary-data {
-      margin: 18px;
+  .listing-index-tile-container {
+    border-bottom: 1px solid #ABB2B9;
+    padding-bottom: 24px;
+    margin-bottom: 36px;
+    &:last-of-type {
+      border-bottom: none;
     }
-    &:nth-of-type(2n) {
-      margin-right: 0;
-    }
-    @media #{$LARGE-PHONE} {
-      float: none;
-      width: auto;
-      margin-right: 0;
+    .listing-id {
+      border: 2px solid #ABB2B9;
+      // background: #EAECEE;
+      color: #808B96;
+      display: inline-block;
+      padding: 0 12px;
+      border-radius: 22px;
+      min-width: 44px;
+      height: 44px;
+      text-align: center;
+      line-height: 40px;
       margin-bottom: 24px;
+      font-weight: bold;
     }
   }
+  .listing-index-tile {
+    @extend %listing-index-tile;
+    margin-bottom: 24px;
+    
+  }
+  .bump-up-button {
+    @extend %bump-up-button;
+  }
   .control {
-    margin: 18px 18px 0;
+    margin: 18px 0;
     .info {
       margin-bottom: 12px;
       display: flex;
@@ -86,4 +93,5 @@
       font-family: 'Courier New', Courier, monospace;
     }
   }
+
 }
