@@ -76,7 +76,7 @@ class AnnouncementIndexMap extends React.Component {
             {currentPartnerName && <h2>{currentPartnerName}</h2>}
             {announcements !== null &&
               // @ts-ignore
-              announcements.map((announcement, index) => {
+              announcements.map((announcement) => {
                 const {
                   id,
                   title,
@@ -123,7 +123,7 @@ class AnnouncementIndexMap extends React.Component {
                 }
 
                 const tileProps = {
-                  key: index,
+                  key: title,
                   href,
                   id,
                   title,
