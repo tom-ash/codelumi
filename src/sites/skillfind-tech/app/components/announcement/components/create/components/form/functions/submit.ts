@@ -53,7 +53,7 @@ export const submit = (props: submitProps) => {
     // civilContractMin,
   }
 
-  fetch(apiUrl + '/job/create/as-user', {
+  fetch(apiUrl + '/postings', {
     method: 'POST',
     // @ts-ignore
     headers: {
