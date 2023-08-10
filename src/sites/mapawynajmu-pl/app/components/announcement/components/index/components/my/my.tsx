@@ -125,7 +125,6 @@ class AnnouncementIndexMy extends React.Component {
             }
 
             const url = buildUrl({ path: href })
-            console.log(url)
             const facebookSharerButtonProps = {
               url,
               isMobile,

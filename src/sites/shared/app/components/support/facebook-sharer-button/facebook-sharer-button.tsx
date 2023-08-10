@@ -1,6 +1,7 @@
 import React from 'react'
 import { SVG } from '../svg/svg';
-import { SubmitButton } from '../submit-button/submit-button';
+// import { SubmitButton } from '../submit-button/submit-button';
+import { ActionButton } from '../action-button/action-button';
 
 interface FacebookSharerButtonInterface {
   (props: {
@@ -12,11 +13,7 @@ interface FacebookSharerButtonInterface {
 
 export const FacebookSharerButton: FacebookSharerButtonInterface = (props) => {
   const { url, isMobile, facebookSharerButtonLabel } = props
-  // {{ pl: "Udostępnij na Facebook'u", en: 'Share on Facebook' }['pl']}
-
-  console.log(url)
-
-  const submit = () => {
+  const action = () => {
     const winWidth = 520
     const winHeight = 350
     const winTop = screen.height / 2 - winHeight / 2
@@ -39,11 +36,10 @@ export const FacebookSharerButton: FacebookSharerButtonInterface = (props) => {
   )
 
   const submitButtonProps = {
-    customContainerClassNames: 'facebook-sharer-button',
+    className: 'facebook-sharer-button',
     label,
-    submit,
+    action,
   }
 
-  // @ts-ignore TODO!
-  return <SubmitButton {...submitButtonProps} />
+  return <ActionButton {...submitButtonProps} />
 }

@@ -1,25 +1,30 @@
 import React from 'react'
-import { ManagedLink } from 'managed-inputs'
-import { shareOnFacebookManager } from './functions/managers'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
-import { CONGRATULATIONS_TEXT, SHARE_ON_FACEBOOK_TEXT } from './constants/copies'
 import { PromoteButton } from './components/promote'
 import { ListingIndexTile } from '../../../index/components/tile/tile'
 import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
+import { buildUrl } from '../../../../../../../shared/functions/builders/url'
+import { FacebookSharerButton } from '../../../../../../../../shared/app/components/support/facebook-sharer-button/facebook-sharer-button'
 
 class AnnouncementCreateSuccess extends React.Component {
   // @ts-ignore
   constructor(props) {
     super(props)
-    // @ts-ignore
-    this.shareOnFacebookManager = shareOnFacebookManager.bind(this)
   }
 
   render() {
     const {
       // @ts-ignore
       lang,
+      // @ts-ignore
+      isMobile,
+      // @ts-ignore
+      facebookSharerButtonLabel,
+      // @ts-ignore
+      congratulations,
+      // @ts-ignore
+      bumpingUpAndFacebookSharingBenefits,
     } = this.props
     const {
       id,
@@ -56,16 +61,26 @@ class AnnouncementCreateSuccess extends React.Component {
       area,
     }
 
+    const url = buildUrl({ path: href })
+    const facebookSharerButtonProps = {
+      url,
+      isMobile,
+      facebookSharerButtonLabel,
+    }
+
     return (
       <div id='success-container'>
         <div className='further-steps'>
-          <div className='congratulations'>{CONGRATULATIONS_TEXT['pl']}</div>
+          <div className='congratulations'>
+            {congratulations}
+          </div>
           <ListingIndexTile {...tileProps} />
           <div className='buttons'>
-            <div className='share-on-facebook-text'>{SHARE_ON_FACEBOOK_TEXT['pl']}</div>
+            <div className='share-on-facebook-text'>
+              {bumpingUpAndFacebookSharingBenefits}
+            </div>
             <PromoteButton listingId={id} />
-            {/* @ts-ignore */}
-            <ManagedLink {...this.shareOnFacebookManager()} />
+            <FacebookSharerButton {...facebookSharerButtonProps} />
             <FloatClear />
           </div>
         </div>
