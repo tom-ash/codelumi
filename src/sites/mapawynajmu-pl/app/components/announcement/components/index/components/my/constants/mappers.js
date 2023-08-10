@@ -1,7 +1,9 @@
 export const mapStateToProps = store => {
-  const { app, render, control, data, inputs } = store
+  const { app, render, control, data, inputs, texts } = store
 
-  const { lang } = app
+
+  const { lang, isMobile } = app
+  const { facebookSharerButtonLabel } = texts
   const { 'announcement/index/user': renderMy } = render
   const { connecting, fetch, beingDeleted } = control
   const { announcements, amount } = data
@@ -9,6 +11,7 @@ export const mapStateToProps = store => {
 
   return {
     lang,
+    isMobile,
     connecting,
     fetch,
     beingDeleted,
@@ -18,6 +21,7 @@ export const mapStateToProps = store => {
     amount,
     announcements,
     renderMy,
+    facebookSharerButtonLabel,
   }
 }
 

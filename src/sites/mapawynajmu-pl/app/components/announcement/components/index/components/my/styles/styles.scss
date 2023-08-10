@@ -4,6 +4,7 @@
 @import '../../../../../../../../../shared/app/styles/lined-heading';
 @import '../../tile/styles/styles.scss';
 @import '../../../../create/components/success/components/styles/styles.scss';
+@import '../../../../../../../../../shared/app/components/support/facebook-sharer-button/styles/styles.scss';
 
 #listing-index {
   &.user {
@@ -44,7 +45,6 @@
     }
     .listing-id {
       border: 2px solid #ABB2B9;
-      // background: #EAECEE;
       color: #808B96;
       display: inline-block;
       padding: 0 12px;
@@ -64,6 +64,12 @@
   }
   .bump-up-button {
     @extend %bump-up-button;
+    float: left;
+    margin-right: 24px
+  }
+  .facebook-sharer-button {
+    @extend %facebook-sharer-button;
+    float: left;
   }
   .control {
     margin: 18px 0;

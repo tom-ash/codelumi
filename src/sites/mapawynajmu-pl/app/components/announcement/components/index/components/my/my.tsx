@@ -14,6 +14,9 @@ import { ManagedButton } from 'managed-inputs'
 import { ListingIndexTile } from '../tile/tile'
 import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
 import { PromoteButton } from '../../../create/components/success/components/promote'
+import { FacebookSharerButton } from '../../../../../../../../shared/app/components/support/facebook-sharer-button/facebook-sharer-button'
+import { buildUrl } from '../../../../../../../shared/functions/builders/url'
+import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
 
 class AnnouncementIndexMy extends React.Component {
   // @ts-ignore
@@ -39,7 +42,7 @@ class AnnouncementIndexMy extends React.Component {
 
   render() {
     // @ts-ignore
-    const { amount, offset, lang } = this.props
+    const { amount, offset, lang, isMobile, facebookSharerButtonLabel } = this.props
 
     const toValue = offset + 10 < amount ? offset + 10 : amount
     let whichAnnouncements = `${offset + 1} - ${toValue} ${{ pl: 'z', en: 'of' }['pl']}`
@@ -121,6 +124,16 @@ class AnnouncementIndexMy extends React.Component {
               onClick,
             }
 
+            const url = buildUrl({ path: href })
+            console.log(url)
+            const facebookSharerButtonProps = {
+              url,
+              isMobile,
+              facebookSharerButtonLabel,
+            }
+
+            console.log(this.props)
+
             return (
               <div className='listing-index-tile-container'>
                 <div className='listing-id'>
@@ -128,6 +141,8 @@ class AnnouncementIndexMy extends React.Component {
                 </div>
                 <ListingIndexTile {...tileProps} />
                 <PromoteButton listingId={id} />
+                <FacebookSharerButton {...facebookSharerButtonProps} />
+                <FloatClear />
                 {/* @ts-ignore */}
                 {this.controlProvider(announcement, index)}
               </div>
