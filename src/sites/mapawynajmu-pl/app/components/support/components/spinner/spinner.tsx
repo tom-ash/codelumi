@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Spinner = props => {
+// @ts-ignore
+export const Spinner = props => {
   return (
     <div className={props.spinnerClass}>
       <div></div>
@@ -18,5 +19,3 @@ const Spinner = props => {
     </div>
   )
 }
-
-export default Spinner

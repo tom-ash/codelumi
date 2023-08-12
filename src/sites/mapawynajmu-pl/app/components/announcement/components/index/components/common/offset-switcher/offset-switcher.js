@@ -1,5 +1,5 @@
 import React from 'react'
-import Spinner from '../../../../../../support/components/spinner/components/windmill/windmill'
+import { Spinner } from '../../../../../../support/components/spinner/spinner'
 import scrollToTop from '../../../../../../../functions/scrollers/instant-scroll'
 
 export function OffsetSwitcher({ setInputs, setControl, offset, amount, classNames, scrollTop }) {

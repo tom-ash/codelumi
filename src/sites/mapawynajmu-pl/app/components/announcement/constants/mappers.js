@@ -5,6 +5,7 @@ export const mapStateToProps = store => {
     'announcement/create': renderCreate,
     'announcement/edit': renderEdit,
     'announcement/index': renderIndex,
+    listingBoost,
   } = render
 
   return {
@@ -12,5 +13,6 @@ export const mapStateToProps = store => {
     renderCreate,
     renderEdit,
     renderIndex,
+    listingBoost,
   }
 }

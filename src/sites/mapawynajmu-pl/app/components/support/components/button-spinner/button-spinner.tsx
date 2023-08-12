@@ -1,5 +1,5 @@
 import React from 'react'
-import Spinner from '../spinner/components/windmill/windmill'
+import { Spinner } from '../spinner/spinner'
 
 interface ButtonSpinnerProps {
   connecting: boolean
