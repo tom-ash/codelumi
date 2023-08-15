@@ -22,7 +22,8 @@ const PostingIndex = () => {
             className='tile'
             key={posting.id}
           >
-            <div className='company-name'>{posting.id}</div>
+            
+            {/* <div className='company-name'>{posting.id}</div> */}
             <div className='remuneration'>
               <strong>
                 {b2bMin} - {b2bMax} PLN
