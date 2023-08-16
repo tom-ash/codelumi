@@ -1,6 +1,7 @@
 import React from 'react'
 import Skill from '../../../shared/components/skill/skill'
 import { SkillProps, SkillView } from '../../../shared/components/skill/skill.types'
+import { PostingIndexTileIndustry } from '../components/industry/industry';
 
 interface PostingIndexTileInterface {
   (props: {
@@ -24,6 +25,7 @@ export const PostingIndexTile: PostingIndexTileInterface = (props) => {
       className='tile'
       key={id}
     >
+      <PostingIndexTileIndustry />
       <div className='remuneration'>
         <strong>
           {b2bMin} - {b2bMax} PLN

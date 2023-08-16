@@ -10,6 +10,20 @@
     border-radius: 4px;
     padding: 18px 18px 6px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background: white;
+    .icon {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 18px;
+      padding-left: 32px;
+      line-height: 20px;
+    }
+    svg {
+      position: absolute;
+      left: 0;
+      height: 20px;
+      fill: #424949;
+    }
   }
   .skill {
     float: left;
