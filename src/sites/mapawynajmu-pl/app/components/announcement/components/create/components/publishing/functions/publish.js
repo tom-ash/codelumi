@@ -44,12 +44,18 @@ export function publish() {
   if (!Object.values(announcementObject).every(element => element)) {
     for (let i = 0; i < requiredInputsArray.length; i++) {
       if (!announcementObject[requiredInputsArray[i]]) {
+        setControl({ connecting: false })
+
         return scrollToElement(document.getElementById(requiredInputs[requiredInputsArray[i]].id), 12, -120)
       }
     }
   }
 
-  if (!authorized && !user) return scrollToElement(document.getElementById('user-new-email-first-name'), 12, -160)
+  if (!authorized && !user) {
+    setControl({ connecting: false })
+
+    return scrollToElement(document.getElementById('user-new-email-first-name'), 12, -160)
+  }
 
   // @ts-ignore
   window.gtag('event', 'listing_added')
@@ -60,5 +66,5 @@ export function publish() {
   }
 
   setData({ announcement, user })
-  setControl({ step: 'publishing' })
+  setControl({ connecting: false, step: 'publishing' })
 }

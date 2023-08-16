@@ -9,7 +9,6 @@ import Furnishings from './components/furnishings/furnishings'
 import Success from './components/success/success'
 import { Spinner } from '../../../support/components/spinner/spinner'
 import * as lifecycle from './functions/lifecycle'
-import * as managers from './functions/managers'
 import { ManagedButton } from 'managed-inputs'
 import { publish } from './components/publishing/functions/publish'
 import { validatePictures } from './components/pictures/functions/validate-pictures'
@@ -23,6 +22,7 @@ import UserCreateEmailVerify from '../../../../../../shared/app/components/user/
 import { Line } from '../../../support/components/line/line'
 import { Category } from './components/category/category.tiles'
 import { Promotion } from './components/promotion/promotion'
+import { SubmitButton } from './components/submit/submit.button'
 
 class AnnouncementCreate extends React.Component {
   // @ts-ignore
@@ -32,8 +32,6 @@ class AnnouncementCreate extends React.Component {
     this.userCreateNode = React.createRef()
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
-    // @ts-ignore
-    this.addAnnouncementManager = managers.addAnnouncementManager.bind(this)
     // @ts-ignore
     this.validatePictures = validatePictures.bind(this)
     // @ts-ignore
@@ -108,7 +106,7 @@ class AnnouncementCreate extends React.Component {
               <Promotion />
               <Line />
               {/* @ts-ignore */}
-              <ManagedButton {...this.addAnnouncementManager()} />
+              <SubmitButton publish={this.publish}/>
             </form>
           </div>
         )}
