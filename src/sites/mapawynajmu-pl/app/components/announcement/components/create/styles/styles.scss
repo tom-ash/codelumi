@@ -211,6 +211,14 @@
       background: #F8F9F9;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     }
+    .pitch {
+      position: absolute;
+      bottom: -20px;
+      font-size: 9px;
+      left: 0;
+      right: 0;
+      color: rgb(211, 84, 0);
+    }
     &.with-boosting {
       margin-right: 0;
       .input {

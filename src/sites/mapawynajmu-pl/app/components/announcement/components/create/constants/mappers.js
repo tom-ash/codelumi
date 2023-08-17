@@ -17,7 +17,6 @@ export const mapStateToProps = store => {
     bumpingUpAndFacebookSharingBenefits,
   } = texts
   const {
-    addPromotion,
     category,
     blobs,
     picUploads,
@@ -53,7 +52,6 @@ export const mapStateToProps = store => {
   } = inputs
 
   return {
-    addPromotion,
     lang,
     isMobile,
     renderForm,
