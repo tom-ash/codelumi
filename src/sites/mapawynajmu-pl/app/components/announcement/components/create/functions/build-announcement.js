@@ -9,7 +9,6 @@ function buildAnouncement() {
   serverParams.furnishings = this.props.furnishings
   serverParams.latitude = this.props.latitude
   serverParams.longitude = this.props.longitude
-  serverParams.addPromotion = this.props.addPromotion
   return serverParams
 }
 

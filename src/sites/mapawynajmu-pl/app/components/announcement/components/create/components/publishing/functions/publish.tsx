@@ -3,7 +3,7 @@ import { requiredInputs, requiredInputsArray } from '../../../constants/required
 import { buildUserObject } from '../../../../../../user/components/new/components/email/components/form/functions/build-user-object'
 import buildAnouncement from '../../../functions/build-announcement'
 
-export function publish() {
+export function publish(addPromotion: boolean = false) {
   const {
     authorized,
     setControl,
@@ -17,16 +17,19 @@ export function publish() {
     phoneNumber,
     termsOfServiceConsent,
     termsOfServiceConsentLabel,
-    addPromotion,
+  // @ts-ignore
   } = this.props
 
   const announcementObject = {
     // category: this.categoryManager().validate(),
+    // @ts-ignore
     pictures: this.validatePictures(),
+    // @ts-ignore
     map: this.validateMap(),
   }
 
-  const announcement = buildAnouncement.call(this)
+  // @ts-ignore
+  const announcement = { ...buildAnouncement.call(this), addPromotion }
   const user = authorized
     ? {}
     : buildUserObject({
@@ -43,9 +46,11 @@ export function publish() {
 
   if (!Object.values(announcementObject).every(element => element)) {
     for (let i = 0; i < requiredInputsArray.length; i++) {
+      // @ts-ignore
       if (!announcementObject[requiredInputsArray[i]]) {
         setControl({ connecting: false })
 
+        // @ts-ignore
         return scrollToElement(document.getElementById(requiredInputs[requiredInputsArray[i]].id), 12, -120)
       }
     }

@@ -22,7 +22,8 @@ import UserCreateEmailVerify from '../../../../../../shared/app/components/user/
 import { Line } from '../../../support/components/line/line'
 import { Category } from './components/category/category.tiles'
 import { Promotion } from './components/promotion/promotion'
-import { SubmitButton } from './components/submit/submit.button'
+import { SubmitWithoutBoostingButton } from './components/submit/submit-without-boosting.button'
+import { SubmitAndBoostButton } from './components/submit/submit-and-boost.button'
 
 class AnnouncementCreate extends React.Component {
   // @ts-ignore
@@ -103,10 +104,15 @@ class AnnouncementCreate extends React.Component {
                 </div>
               )}
               <Line />
-              <Promotion />
-              <Line />
-              {/* @ts-ignore */}
-              <SubmitButton publish={this.publish}/>
+              <div className='submit'>
+                {/* @ts-ignore */}
+                <SubmitWithoutBoostingButton publish={this.publish} />
+                <div className='or'>
+                  lub
+                </div>
+                {/* @ts-ignore */}
+                <SubmitAndBoostButton publish={this.publish} />
+              </div>
             </form>
           </div>
         )}
