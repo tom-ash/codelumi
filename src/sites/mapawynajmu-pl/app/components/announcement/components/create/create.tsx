@@ -21,7 +21,6 @@ import UserNew from '../../../user/components/new/new'
 import UserCreateEmailVerify from '../../../../../../shared/app/components/user/components/new/components/verification/verification'
 import { Line } from '../../../support/components/line/line'
 import { Category } from './components/category/category.tiles'
-import { Promotion } from './components/promotion/promotion'
 import { SubmitWithoutBoostingButton } from './components/submit/submit-without-boosting.button'
 import { SubmitWithBoostingButton } from './components/submit/submit-with-boosting.button'
 
