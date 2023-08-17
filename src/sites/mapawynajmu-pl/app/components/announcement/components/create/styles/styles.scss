@@ -201,23 +201,15 @@
     .price {
       font-size: 12px;
       position: absolute;
-      top: -10px;
+      top: -12px;
       color: black;
       height: 20px;
       line-height: 20px;
       width: 48px;
-      right: -24px;
+      right: -12px;
       border-radius: 4px;
       background: #F8F9F9;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    }
-    .pitch {
-      position: absolute;
-      bottom: -20px;
-      font-size: 9px;
-      left: 0;
-      right: 0;
-      color: rgb(211, 84, 0);
     }
     &.with-boosting {
       margin-right: 0;

@@ -16,8 +16,11 @@
       @extend %map-pin;
       &.promoted {
         z-index: 1;
-        // background: #FAE5D3;
         background: #fef5e7;
+        &.hovered,
+        &:hover {
+          z-index: $LISTING-INDEX-PIN-HOVERED + 1;
+        }
       }
     }
   }

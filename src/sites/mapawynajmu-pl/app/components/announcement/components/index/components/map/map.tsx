@@ -92,6 +92,7 @@ class AnnouncementIndexMap extends React.Component {
                   path: href,
                   latitude,
                   longitude,
+                  isPromoted,
                 } = announcement
 
                 const isCommercial = [0, 1, 6, 7, 8].indexOf(category) !== -1
@@ -122,6 +123,8 @@ class AnnouncementIndexMap extends React.Component {
                   }
                 }
 
+                console.log(announcement)
+
                 const tileProps = {
                   key: title,
                   href,
@@ -137,6 +140,7 @@ class AnnouncementIndexMap extends React.Component {
                   rentAmount,
                   rentCurrency,
                   area,
+                  isPromoted,
                   onClick,
                   onMouseOver: () => changeHoveredTileId(id),
                   onMouseLeave: () => changeHoveredTileId(null),

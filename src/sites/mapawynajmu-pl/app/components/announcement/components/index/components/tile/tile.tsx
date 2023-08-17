@@ -28,6 +28,7 @@ interface ListingIndexTileInterface {
     area: number
     rentAmount: number
     rentCurrency: number
+    isPromoted?: boolean,
     onClick?: (e: React.SyntheticEvent) => void;
     onMouseOver?: () => void;
     onMouseLeave?: () => void;
@@ -37,12 +38,21 @@ interface ListingIndexTileInterface {
 export const ListingIndexTile: ListingIndexTileInterface = props => {
   useStyles(styles)
 
-  const { href, id, title, pictures, name, category, locality, sublocality, lang, rentAmount, rentCurrency, area,
+  const {
+    href,
+    id,
+    title, pictures, name, category, locality, sublocality, lang, rentAmount, rentCurrency, area, isPromoted,
     onClick, onMouseOver, onMouseLeave,
   } = props
+
+  const classNames = ['listing-index-tile']
+  if (isPromoted) {
+    classNames.push('promoted')
+  }
+
   const tileProps = {
     href,
-    className: 'listing-index-tile',
+    className: classNames.join(' '),
     onClick,
     onMouseOver,
     onMouseLeave,

@@ -19,9 +19,6 @@ export const SubmitWithBoostingButton: SubmitButtonInterface = ({ publish }) => 
       <div className='price'>
         19 PLN
       </div>
-      <div className='pitch'>
-        Wyżej na liście. Większa widoczność.
-      </div>
     </>
   )
 
