@@ -7,15 +7,15 @@ interface SubmitButtonInterface {
   (props: { publish: (addPromotion?: boolean) => Promise<void> }): React.ReactElement
 }
 
-export const SubmitAndBoostButton: SubmitButtonInterface = ({ publish }) => {
+export const SubmitWithBoostingButton: SubmitButtonInterface = ({ publish }) => {
   const { state } = useStore()
   const { texts } = state
-  const { submitAndBoostButton } = texts
+  const { submitWithBoostingButtonLabel } = texts
 
   const label = (
     <>
       <SVG name='rocket' />
-      {submitAndBoostButton}
+      {submitWithBoostingButtonLabel}
       <div className='price'>
         19 PLN
       </div>

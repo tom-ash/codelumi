@@ -23,7 +23,7 @@ import { Line } from '../../../support/components/line/line'
 import { Category } from './components/category/category.tiles'
 import { Promotion } from './components/promotion/promotion'
 import { SubmitWithoutBoostingButton } from './components/submit/submit-without-boosting.button'
-import { SubmitAndBoostButton } from './components/submit/submit-and-boost.button'
+import { SubmitWithBoostingButton } from './components/submit/submit-with-boosting.button'
 
 class AnnouncementCreate extends React.Component {
   // @ts-ignore
@@ -111,7 +111,7 @@ class AnnouncementCreate extends React.Component {
                   lub
                 </div>
                 {/* @ts-ignore */}
-                <SubmitAndBoostButton publish={this.publish} />
+                <SubmitWithBoostingButton publish={this.publish} />
               </div>
             </form>
           </div>

@@ -12,12 +12,12 @@ interface SubmitButtonInterface {
 export const SubmitWithoutBoostingButton: SubmitButtonInterface = ({ publish }) => {
   const { state } = useStore()
   const { texts } = state
-  const { submitWithoutBoostingButton } = texts
+  const { submitWithoutBoostingButtonLabel } = texts
 
   const label = (
     <>
       <SVG name='plus' />
-      {submitWithoutBoostingButton}
+      {submitWithoutBoostingButtonLabel}
       <div className='price'>
         0 PLN
       </div>
