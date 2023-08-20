@@ -1,10 +1,11 @@
 @import '../../../../../styles/themes';
 @import '../../../../../styles/colors';
 @import '../../../../../styles//dimensions';
+
 @import '../../../../../styles/inputs/form/svgs';
 @import '../../../../../styles/inputs/form/checkbox';
 @import '../../../../../styles/inputs/form/textarea';
-@import '../../../../../styles/inputs/form/button';
+
 @import '../../../../../styles/line';
 @import '../components/pictures/styles/styles';
 @import '../components/features/styles/styles';
@@ -18,6 +19,9 @@
 @import '../../../../../styles/inputs/button';
 @import '../../../../../styles/inputs/radio';
 @import '../../../../../styles/headings/h1';
+
+@import '../../common/button-with-plaque/styles.scss';
+@import '../../common/boost-button/styles.scss';
 
 #listing-create {
   background: red;
@@ -156,72 +160,34 @@
   }
   .submit {
     text-align: center;
-    .submit-button {
-      margin: 0;
-      display: inline-block;
-      @media #{$LARGE-PHONE} {
-        display: block;
-      }
-    }
-    .or {
-      display: inline-block;
-      margin-right: 48px;
-      @media #{$LARGE-PHONE} {
-        display: block;
-        margin: 24px auto;
-      }
+    padding: 32px 0 8px;
+  }
+  .without-boosting, .with-boosting {
+    @extend %button-with-plaque;
+    display: inline-block;
+    width: 168px;
+    @media #{$LARGE-PHONE} {
+      display: block;
     }
   }
-  .submit-button.create {
-    @extend %button;
-    margin-top: 24px;
-    width: 168px;
+  .without-boosting {
     margin-right: 48px;
     @media #{$LARGE-PHONE} {
-      margin: 48px auto 24px;
+      margin: 24px auto;
     }
-    .input {
-      width: 100%;
-      background: rgb(46, 134, 193);
-      border-radius: 4px;
-      height: 36px;
-      transition: background-color 0.16s ease-in;
-      &:hover {
-        background: rgba(46, 134, 193, .88);
-      }
-      padding-left: 24px;
-      svg {
-        position: absolute;
-        top: 10px;
-        left: 14px;
-        height: 16px;
-        fill: white;
-      }
+  }
+  .with-boosting {
+    @extend %boost-button;
+    @media #{$LARGE-PHONE} {
+      margin: 24px auto;
     }
-    .price {
-      font-size: 12px;
-      position: absolute;
-      top: -12px;
-      color: black;
-      height: 20px;
-      line-height: 20px;
-      width: 48px;
-      right: -12px;
-      border-radius: 4px;
-      background: #F8F9F9;
-      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    }
-    &.with-boosting {
-      margin-right: 0;
-      .input {
-        background: rgb(211, 84, 0);
-        &:hover {
-          background: rgba(211, 84, 0, .88);
-        }
-      }
-      @media #{$LARGE-PHONE} {
-        margin: 24px auto;
-      }
+  }
+  .or {
+    display: inline-block;
+    margin-right: 48px;
+    @media #{$LARGE-PHONE} {
+      display: block;
+      margin: 24px auto;
     }
   }
   @media #{$SMALL-TABLET} {
