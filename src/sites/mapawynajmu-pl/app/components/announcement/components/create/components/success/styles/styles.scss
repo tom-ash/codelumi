@@ -25,6 +25,21 @@
       line-height: 22px;
     }
     @extend %action-buttons;
+    .boost-button {
+      svg {
+        top: 12px;
+        height: 24px;
+      }
+    }
+    .facebook-sharer-button {
+      @extend %button-with-plaque;
+      @extend %share-on-facebook-button;
+      svg {
+        top: 10px;
+        left: 14px;
+        height: 28px;
+      }
+    }
     @media #{$LARGE-PHONE} {
       padding: 0 18px;
     }

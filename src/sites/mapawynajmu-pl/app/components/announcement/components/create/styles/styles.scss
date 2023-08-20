@@ -170,6 +170,11 @@
     @media #{$LARGE-PHONE} {
       display: block;
     }
+    svg {
+      top: 7px;
+      left: 10px;
+      width: 14px;
+    }
   }
   .without-boosting {
     margin-right: 48px;
