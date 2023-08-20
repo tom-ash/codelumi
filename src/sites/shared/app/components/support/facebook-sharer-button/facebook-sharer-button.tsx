@@ -4,11 +4,11 @@ import { SVG } from '../svg/svg'
 import { ActionButton } from '../action-button/action-button'
 
 interface FacebookSharerButtonInterface {
-  (props: { url: string; isMobile: boolean; facebookSharerButtonLabel: string }): React.ReactElement
+  (props: { url: string; isMobile: boolean; shareOnFacebookButtonLabel: string }): React.ReactElement
 }
 
 export const FacebookSharerButton: FacebookSharerButtonInterface = props => {
-  const { url, isMobile, facebookSharerButtonLabel } = props
+  const { url, isMobile, shareOnFacebookButtonLabel } = props
   const action = () => {
     const winWidth = 520
     const winHeight = 350
@@ -27,7 +27,8 @@ export const FacebookSharerButton: FacebookSharerButtonInterface = props => {
   const label = (
     <>
       <SVG name='facebook' />
-      {facebookSharerButtonLabel}
+      {shareOnFacebookButtonLabel}
+      <div className='price'>0 PLN</div>
     </>
   )
 

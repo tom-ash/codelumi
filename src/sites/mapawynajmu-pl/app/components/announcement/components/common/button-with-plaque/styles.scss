@@ -4,17 +4,17 @@
   @extend %button;
   .input {
     width: 100%;
-    height: 36px;
+    height: 100%;
     border-radius: 4px;
     padding-left: 24px;
     transition: background-color 0.16s ease-in;
-    svg {
-      position: absolute;
-      top: 10px;
-      left: 14px;
-      height: 16px;
-      fill: white;
-    }
+  }
+  svg {
+    position: absolute;
+    top: 10px;
+    left: 14px;
+    height: 16px;
+    fill: white;
   }
   .price {
     font-size: 12px;

@@ -1,7 +1,6 @@
 @import '../../../../../../../styles/headings/h1';
 @import '../../../../index/components/tile/styles/styles.scss';
-@import '../components/styles/styles.scss';
-@import '../../../../../../../../../shared/app/components/support/facebook-sharer-button/styles/styles.scss';
+@import '../../../../common/action-buttons/styles.scss';
 
 #listing-create {
   #success-container {
@@ -21,19 +20,11 @@
       margin: 30px 0;
       text-align: center;
     }
-    .bump-up-button {
-      @extend %bump-up-button;
-      float: left;
-      margin-right: 24px;
-    }
-    .facebook-sharer-button {
-      @extend %facebook-sharer-button;
-      float: left;
-    }
     .share-on-facebook-text {
       margin: 24px 0;
       line-height: 22px;
     }
+    @extend %action-buttons;
     @media #{$LARGE-PHONE} {
       padding: 0 18px;
     }

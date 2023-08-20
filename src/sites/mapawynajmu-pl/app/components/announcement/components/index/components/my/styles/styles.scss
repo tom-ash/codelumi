@@ -3,8 +3,7 @@
 @import '../../../../common/tile/styles/tile';
 @import '../../../../../../../../../shared/app/styles/lined-heading';
 @import '../../tile/styles/styles.scss';
-@import '../../../../create/components/success/components/styles/styles.scss';
-@import '../../../../../../../../../shared/app/components/support/facebook-sharer-button/styles/styles.scss';
+@import '../../../../common/action-buttons/styles.scss';
 
 #listing-index {
   &.user {
@@ -61,15 +60,45 @@
     @extend %listing-index-tile;
     margin-bottom: 24px;
   }
-  .bump-up-button {
-    @extend %bump-up-button;
-    float: left;
-    margin-right: 24px;
-  }
-  .facebook-sharer-button {
-    @extend %facebook-sharer-button;
-    float: left;
-  }
+  @extend %action-buttons;
+
+  // .boost-button, .facebook-sharer-button {
+  //   display: inline-block;
+  //   vertical-align: top;
+  //   width: 284px;
+  //   height: 48px;
+  //   .input {
+  //     font-size: 15px;
+  //   }
+  // }
+  // .boost-button {
+  //   @extend %button-with-plaque;
+  //   @extend %boost-button;
+  //   margin-right: 40px;
+  //   svg {
+  //     top: 12px;
+  //     height: 24px;
+  //   }
+  // }
+  // .facebook-sharer-button {
+  //   @extend %button-with-plaque;
+  //   @extend %share-on-facebook-button;
+  //   svg {
+  //     top: 10px;
+  //     left: 14px;
+  //     height: 28px;
+  //   }
+  // }
+
+  // .boost-button {
+  //   // @extend %boost-button;
+  //   float: left;
+  //   margin-right: 24px;
+  // }
+  // .facebook-sharer-button {
+  //   // @extend %facebook-sharer-button;
+  //   float: left;
+  // }
   .control {
     margin: 18px 0;
     .info {

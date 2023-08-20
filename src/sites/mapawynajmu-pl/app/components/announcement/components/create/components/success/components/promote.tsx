@@ -12,7 +12,7 @@ export const PromoteButton: PromoteButtonInterface = props => {
   const { listingId } = props
   const { state } = useStore()
   const { texts } = state
-  const { promoteButtonLabel } = texts
+  const { boostButtonLabel } = texts
 
   const submit = () => {
     postApi({
@@ -29,12 +29,13 @@ export const PromoteButton: PromoteButtonInterface = props => {
   const label = (
     <>
       <SVG name='rocket' />
-      {promoteButtonLabel}
+      {boostButtonLabel}
+      <div className='price'>19 PLN</div>
     </>
   )
 
   const submitButtonProps = {
-    customContainerClassNames: 'bump-up-button',
+    customContainerClassNames: 'boost-button',
     label,
     submit,
   }

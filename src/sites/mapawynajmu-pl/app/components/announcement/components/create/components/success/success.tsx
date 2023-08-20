@@ -3,7 +3,6 @@ import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import { PromoteButton } from './components/promote'
 import { ListingIndexTile } from '../../../index/components/tile/tile'
-import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
 import { buildUrl } from '../../../../../../../shared/functions/builders/url'
 import { FacebookSharerButton } from '../../../../../../../../shared/app/components/support/facebook-sharer-button/facebook-sharer-button'
 
@@ -20,7 +19,7 @@ class AnnouncementCreateSuccess extends React.Component {
       // @ts-ignore
       isMobile,
       // @ts-ignore
-      facebookSharerButtonLabel,
+      shareOnFacebookButtonLabel,
       // @ts-ignore
       congratulations,
       // @ts-ignore
@@ -65,7 +64,7 @@ class AnnouncementCreateSuccess extends React.Component {
     const facebookSharerButtonProps = {
       url,
       isMobile,
-      facebookSharerButtonLabel,
+      shareOnFacebookButtonLabel,
     }
 
     return (
@@ -73,11 +72,10 @@ class AnnouncementCreateSuccess extends React.Component {
         <div className='further-steps'>
           <div className='congratulations'>{congratulations}</div>
           <ListingIndexTile {...tileProps} />
+          <div className='share-on-facebook-text'>{bumpingUpAndFacebookSharingBenefits}</div>
           <div className='buttons'>
-            <div className='share-on-facebook-text'>{bumpingUpAndFacebookSharingBenefits}</div>
             <PromoteButton listingId={id} />
             <FacebookSharerButton {...facebookSharerButtonProps} />
-            <FloatClear />
           </div>
         </div>
       </div>

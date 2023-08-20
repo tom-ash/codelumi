@@ -42,7 +42,7 @@ class AnnouncementIndexMy extends React.Component {
 
   render() {
     // @ts-ignore
-    const { amount, offset, lang, isMobile, facebookSharerButtonLabel } = this.props
+    const { amount, offset, lang, isMobile, shareOnFacebookButtonLabel } = this.props
 
     const toValue = offset + 10 < amount ? offset + 10 : amount
     let whichAnnouncements = `${offset + 1} - ${toValue} ${{ pl: 'z', en: 'of' }['pl']}`
@@ -128,7 +128,7 @@ class AnnouncementIndexMy extends React.Component {
             const facebookSharerButtonProps = {
               url,
               isMobile,
-              facebookSharerButtonLabel,
+              shareOnFacebookButtonLabel,
             }
 
             console.log(this.props)

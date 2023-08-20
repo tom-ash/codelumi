@@ -12,7 +12,7 @@ export const mapStateToProps = store => {
   const { id, pin, announcement, user } = data
   const {
     termsOfServiceConsentLabel,
-    facebookSharerButtonLabel,
+    shareOnFacebookButtonLabel,
     congratulations,
     bumpingUpAndFacebookSharingBenefits,
   } = texts
@@ -100,7 +100,7 @@ export const mapStateToProps = store => {
     termsOfServiceConsent,
     businessName,
     termsOfServiceConsentLabel,
-    facebookSharerButtonLabel,
+    shareOnFacebookButtonLabel,
     congratulations,
     bumpingUpAndFacebookSharingBenefits,
   }
