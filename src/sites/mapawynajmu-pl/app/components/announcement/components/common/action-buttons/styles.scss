@@ -12,6 +12,9 @@
     .input {
       font-size: 15px;
     }
+    @media #{$LARGE-PHONE} {
+      width: 100%;
+    }
   }
   .boost-button {
     @extend %button-with-plaque;
@@ -22,6 +25,7 @@
       height: 24px;
     }
     @media #{$LARGE-PHONE} {
+      margin-right: 0;
       margin-bottom: 24px;
     }
   }
