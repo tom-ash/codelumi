@@ -1,7 +1,6 @@
 export const mapStateToProps = store => {
   const { app, render, control, data, inputs, texts } = store
 
-
   const { lang, isMobile } = app
   const { facebookSharerButtonLabel } = texts
   const { 'announcement/index/user': renderMy } = render

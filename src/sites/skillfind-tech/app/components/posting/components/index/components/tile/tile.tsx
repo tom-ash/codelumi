@@ -1,24 +1,14 @@
 import React from 'react'
 import Skill from '../../../shared/components/skill/skill'
 import { SkillProps, SkillView } from '../../../shared/components/skill/skill.types'
-import { PostingIndexTileIndustry } from '../components/industry/industry';
+import { PostingIndexTileIndustry } from '../components/industry/industry'
 
 interface PostingIndexTileInterface {
-  (props: {
-    id: number;
-    b2bMin?: number;
-    b2bMax?: number;
-    skills: SkillProps[];
-  }): React.ReactElement
+  (props: { id: number; b2bMin?: number; b2bMax?: number; skills: SkillProps[] }): React.ReactElement
 }
 
-export const PostingIndexTile: PostingIndexTileInterface = (props) => {
-  const {
-    id,
-    b2bMin,
-    b2bMax,
-    skills,
-  } = props
+export const PostingIndexTile: PostingIndexTileInterface = props => {
+  const { id, b2bMin, b2bMax, skills } = props
 
   return (
     <div
@@ -32,7 +22,7 @@ export const PostingIndexTile: PostingIndexTileInterface = (props) => {
         </strong>
       </div>
       <div className='skills'>
-        {skills.map((skill) => {
+        {skills.map(skill => {
           return (
             <Skill
               key={skill.name}

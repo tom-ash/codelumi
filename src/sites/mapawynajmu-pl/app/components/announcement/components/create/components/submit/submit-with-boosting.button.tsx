@@ -16,9 +16,7 @@ export const SubmitWithBoostingButton: SubmitButtonInterface = ({ publish }) => 
     <>
       <SVG name='rocket' />
       {submitWithBoostingButtonLabel}
-      <div className='price'>
-        19 PLN
-      </div>
+      <div className='price'>19 PLN</div>
     </>
   )
 

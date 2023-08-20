@@ -76,7 +76,7 @@ class AnnouncementIndexMap extends React.Component {
             {currentPartnerName && <h2>{currentPartnerName}</h2>}
             {announcements !== null &&
               // @ts-ignore
-              announcements.map((announcement) => {
+              announcements.map(announcement => {
                 const {
                   id,
                   title,
@@ -105,12 +105,12 @@ class AnnouncementIndexMap extends React.Component {
                     changeUrl({ href, retainQueryParams: true })
                   } else {
                     var fromTop = document.body.getBoundingClientRect().top
-      
+
                     window.scrollBy({
                       top: 454 + fromTop,
                       behavior: 'smooth',
                     })
-      
+
                     setControl({
                       mapOptions: {
                         center: {
@@ -146,11 +146,8 @@ class AnnouncementIndexMap extends React.Component {
                   onMouseLeave: () => changeHoveredTileId(null),
                 }
 
-                return (
-                  <ListingIndexTile {...tileProps} />
-                )
-              }
-            )}
+                return <ListingIndexTile {...tileProps} />
+              })}
           </div>
           <div id='google-map' />
           {tile && Object.keys(tile).length > 1 && (

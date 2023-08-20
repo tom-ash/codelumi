@@ -5,12 +5,10 @@ import { SVG } from '../../../../../../../../../shared/app/components/support/sv
 import { postApi } from '../../../../../../../../../shared/app/functions/fetch-api/fetch-api'
 
 interface PromoteButtonInterface {
-  (props: {
-    listingId: number;
-  }): React.ReactElement
+  (props: { listingId: number }): React.ReactElement
 }
 
-export const PromoteButton: PromoteButtonInterface = (props) => {
+export const PromoteButton: PromoteButtonInterface = props => {
   const { listingId } = props
   const { state } = useStore()
   const { texts } = state

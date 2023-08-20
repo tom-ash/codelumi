@@ -162,7 +162,8 @@
     text-align: center;
     padding: 32px 0 8px;
   }
-  .without-boosting, .with-boosting {
+  .without-boosting,
+  .with-boosting {
     @extend %button-with-plaque;
     display: inline-block;
     width: 168px;

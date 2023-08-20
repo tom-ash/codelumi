@@ -17,7 +17,7 @@ export function publish(addPromotion: boolean = false) {
     phoneNumber,
     termsOfServiceConsent,
     termsOfServiceConsentLabel,
-  // @ts-ignore
+    // @ts-ignore
   } = this.props
 
   const announcementObject = {

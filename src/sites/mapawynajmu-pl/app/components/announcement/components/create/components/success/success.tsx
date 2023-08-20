@@ -71,14 +71,10 @@ class AnnouncementCreateSuccess extends React.Component {
     return (
       <div id='success-container'>
         <div className='further-steps'>
-          <div className='congratulations'>
-            {congratulations}
-          </div>
+          <div className='congratulations'>{congratulations}</div>
           <ListingIndexTile {...tileProps} />
           <div className='buttons'>
-            <div className='share-on-facebook-text'>
-              {bumpingUpAndFacebookSharingBenefits}
-            </div>
+            <div className='share-on-facebook-text'>{bumpingUpAndFacebookSharingBenefits}</div>
             <PromoteButton listingId={id} />
             <FacebookSharerButton {...facebookSharerButtonProps} />
             <FloatClear />

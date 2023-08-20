@@ -4,9 +4,7 @@ import { SubmitButton as BaseSubmitButton } from '../../../../../../../../shared
 import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
 
 interface SubmitButtonInterface {
-  (props: {
-    publish: (addPromotion?: boolean) => Promise<void>
-  }): React.ReactElement
+  (props: { publish: (addPromotion?: boolean) => Promise<void> }): React.ReactElement
 }
 
 export const SubmitWithoutBoostingButton: SubmitButtonInterface = ({ publish }) => {
@@ -18,9 +16,7 @@ export const SubmitWithoutBoostingButton: SubmitButtonInterface = ({ publish }) 
     <>
       <SVG name='plus' />
       {submitWithoutBoostingButtonLabel}
-      <div className='price'>
-        0 PLN
-      </div>
+      <div className='price'>0 PLN</div>
     </>
   )
 

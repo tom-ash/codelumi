@@ -101,7 +101,7 @@ class AnnouncementIndexMy extends React.Component {
             const isCommercial = [0, 1, 6, 7, 8].indexOf(category) !== -1
             const rentAmount = isCommercial ? netRentAmount : grossRentAmount
             // @ts-ignore
-            const onClick = (e) => {
+            const onClick = e => {
               e.preventDefault()
 
               changeUrl({ href })
@@ -135,9 +135,7 @@ class AnnouncementIndexMy extends React.Component {
 
             return (
               <div className='listing-index-tile-container'>
-                <div className='listing-id'>
-                  {id}
-                </div>
+                <div className='listing-id'>{id}</div>
                 <ListingIndexTile {...tileProps} />
                 <PromoteButton listingId={id} />
                 <FacebookSharerButton {...facebookSharerButtonProps} />

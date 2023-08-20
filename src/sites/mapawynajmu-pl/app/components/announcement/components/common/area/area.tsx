@@ -5,9 +5,7 @@ interface AreaInterface {
 }
 
 export const Area: AreaInterface = props => {
-  const {
-    area,
-  } = props
+  const { area } = props
 
   if (!area) return null
 

@@ -28,10 +28,10 @@ interface ListingIndexTileInterface {
     area: number
     rentAmount: number
     rentCurrency: number
-    isPromoted?: boolean,
-    onClick?: (e: React.SyntheticEvent) => void;
-    onMouseOver?: () => void;
-    onMouseLeave?: () => void;
+    isPromoted?: boolean
+    onClick?: (e: React.SyntheticEvent) => void
+    onMouseOver?: () => void
+    onMouseLeave?: () => void
   }): React.ReactElement
 }
 
@@ -41,8 +41,20 @@ export const ListingIndexTile: ListingIndexTileInterface = props => {
   const {
     href,
     id,
-    title, pictures, name, category, locality, sublocality, lang, rentAmount, rentCurrency, area, isPromoted,
-    onClick, onMouseOver, onMouseLeave,
+    title,
+    pictures,
+    name,
+    category,
+    locality,
+    sublocality,
+    lang,
+    rentAmount,
+    rentCurrency,
+    area,
+    isPromoted,
+    onClick,
+    onMouseOver,
+    onMouseLeave,
   } = props
 
   const classNames = ['listing-index-tile']

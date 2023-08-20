@@ -106,9 +106,7 @@ class AnnouncementCreate extends React.Component {
               <div className='submit'>
                 {/* @ts-ignore */}
                 <SubmitWithoutBoostingButton publish={this.publish} />
-                <div className='or'>
-                  lub
-                </div>
+                <div className='or'>lub</div>
                 {/* @ts-ignore */}
                 <SubmitWithBoostingButton publish={this.publish} />
               </div>

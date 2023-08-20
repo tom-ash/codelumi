@@ -13,7 +13,9 @@ const PostingIndex = () => {
 
   return (
     <div id='posting-index'>
-      {postings.map((posting: any) => <PostingIndexTile {...posting} />)}
+      {postings.map((posting: any) => (
+        <PostingIndexTile {...posting} />
+      ))}
     </div>
   )
 }

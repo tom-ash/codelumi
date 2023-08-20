@@ -37,15 +37,15 @@
     }
   }
   .listing-index-tile-container {
-    border-bottom: 1px solid #ABB2B9;
+    border-bottom: 1px solid #abb2b9;
     padding-bottom: 24px;
     margin-bottom: 36px;
     &:last-of-type {
       border-bottom: none;
     }
     .listing-id {
-      border: 2px solid #ABB2B9;
-      color: #808B96;
+      border: 2px solid #abb2b9;
+      color: #808b96;
       display: inline-block;
       padding: 0 12px;
       border-radius: 22px;
@@ -60,12 +60,11 @@
   .listing-index-tile {
     @extend %listing-index-tile;
     margin-bottom: 24px;
-    
   }
   .bump-up-button {
     @extend %bump-up-button;
     float: left;
-    margin-right: 24px
+    margin-right: 24px;
   }
   .facebook-sharer-button {
     @extend %facebook-sharer-button;
@@ -99,5 +98,4 @@
       font-family: 'Courier New', Courier, monospace;
     }
   }
-
 }

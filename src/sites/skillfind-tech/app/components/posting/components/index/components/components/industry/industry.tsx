@@ -5,7 +5,7 @@ interface PostingIndexTileIndustryInterface {
   (props: {}): React.ReactElement
 }
 
-export const PostingIndexTileIndustry: PostingIndexTileIndustryInterface = (props) => {
+export const PostingIndexTileIndustry: PostingIndexTileIndustryInterface = props => {
   // @ts-ignore
   const {} = props
 

@@ -11,7 +11,11 @@ interface ListingBoostInterface {
 const ListingBoost: ListingBoostInterface = () => {
   useStyles(styles)
 
-  const { state: { data: { orderHref }} } = useStore()
+  const {
+    state: {
+      data: { orderHref },
+    },
+  } = useStore()
 
   useEffect(() => {
     // @ts-ignore

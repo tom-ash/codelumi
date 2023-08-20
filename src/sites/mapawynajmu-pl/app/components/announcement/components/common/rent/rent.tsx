@@ -22,7 +22,7 @@ export const Rent: RentInterface = props => {
   const amountWithDecimal = (
     <>
       {integerAmount}
-      <sup className='decimal'>{decimalAmount}</sup> 
+      <sup className='decimal'>{decimalAmount}</sup>
     </>
   )
   const parsedAmount = decimalAmount === '00' ? integerAmount : amountWithDecimal

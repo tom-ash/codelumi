@@ -3,11 +3,11 @@ import { ManagedButton } from 'managed-inputs'
 
 interface ActionButtonInterface {
   (props: {
-    label: React.ReactElement | string;
+    label: React.ReactElement | string
     action(args: any): void
-    actionProps?: any;
-    className?: string;
-    disabled?: boolean;
+    actionProps?: any
+    className?: string
+    disabled?: boolean
   }): JSX.Element
 }
 
