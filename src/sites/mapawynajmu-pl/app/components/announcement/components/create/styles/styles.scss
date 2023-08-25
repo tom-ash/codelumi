@@ -162,35 +162,87 @@
     text-align: center;
     padding: 32px 0 8px;
   }
-  .without-boosting,
-  .with-boosting {
-    @extend %button-with-plaque;
+
+  .without-boosting {
     display: inline-block;
-    width: 168px;
-    @media #{$LARGE-PHONE} {
-      display: block;
-    }
-    svg {
-      top: 7px;
-      left: 10px;
-      width: 14px;
+    width: 200px;
+    // .submit-button {
+      vertical-align: top;
+      @extend %button-with-plaque;
+      // @extend %boost-button;
+      height: 36px;
+      svg {
+        top: 7px;
+        left: 10px;
+        width: 14px;
+      }
+    // }
+  }
+
+  .submit-with-boosting {
+    display: inline-block;
+    width: 200px;
+    .submit-button {
+      @extend %button-with-plaque;
+      @extend %boost-button;
+      height: 36px;
+      svg {
+        top: 7px;
+        left: 10px;
+        width: 14px;
+      }
     }
   }
   .without-boosting {
     margin-right: 48px;
     @media #{$LARGE-PHONE} {
-      margin: 24px auto;
+      margin: 24px auto 0;
     }
   }
-  .with-boosting {
-    @extend %boost-button;
-    @media #{$LARGE-PHONE} {
-      margin: 24px auto;
+  .benefits {
+    right: 12px;
+    text-align: left;
+    padding-left: 8px;
+    top: 48px;
+    height: 50px;
+    color: rgb(42, 42, 42);
+    padding-top: 12px;
+    margin-bottom: 32px;
+    ul {
+      list-style-type: none;
+    }
+    li {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .line {
+      margin-bottom: 8px;
+    }
+    
+    svg {
+      // top: 0;
+      height: 12px;
+      // position: absolute;
+      display: inline-block;
+      fill: #F1C40F;
+      margin-right: 5px;
+      position: relative;
+      top: 1px;
+    }
+
+
+    .people {
+      // color: #D35400;
+      svg {
+        fill: #D35400;
+      }
     }
   }
   .or {
     display: inline-block;
     margin-right: 48px;
+    vertical-align: top;
+    line-height: 36px;
     @media #{$LARGE-PHONE} {
       display: block;
       margin: 24px auto;

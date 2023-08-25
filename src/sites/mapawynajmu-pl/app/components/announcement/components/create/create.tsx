@@ -22,7 +22,7 @@ import UserCreateEmailVerify from '../../../../../../shared/app/components/user/
 import { Line } from '../../../support/components/line/line'
 import { Category } from './components/category/category.tiles'
 import { SubmitWithoutBoostingButton } from './components/submit/submit-without-boosting.button'
-import { SubmitWithBoostingButton } from './components/submit/submit-with-boosting.button'
+import { SubmitWithBoosting } from './components/submit/submit-with-boosting/submit-with-boosting'
 
 class AnnouncementCreate extends React.Component {
   // @ts-ignore
@@ -108,7 +108,7 @@ class AnnouncementCreate extends React.Component {
                 <SubmitWithoutBoostingButton publish={this.publish} />
                 <div className='or'>lub</div>
                 {/* @ts-ignore */}
-                <SubmitWithBoostingButton publish={this.publish} />
+                <SubmitWithBoosting publish={this.publish} />
               </div>
             </form>
           </div>

@@ -23,7 +23,7 @@ export const SubmitWithBoostingButton: SubmitButtonInterface = ({ publish }) => 
   const submitButtonProps = {
     label,
     submit: () => publish(true),
-    customContainerClassNames: 'create with-boosting',
+    // customContainerClassNames: 'create with-boosting',
   }
 
   // @ts-ignore
