@@ -23,8 +23,6 @@ class AnnouncementCreateSuccess extends React.Component {
       shareOnFacebookButtonLabel,
       // @ts-ignore
       congratulations,
-      // @ts-ignore
-      bumpingUpAndFacebookSharingBenefits,
     } = this.props
     const {
       id,

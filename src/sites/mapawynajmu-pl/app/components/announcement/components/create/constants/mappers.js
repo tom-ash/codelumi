@@ -14,7 +14,6 @@ export const mapStateToProps = store => {
     termsOfServiceConsentLabel,
     shareOnFacebookButtonLabel,
     congratulations,
-    bumpingUpAndFacebookSharingBenefits,
   } = texts
   const {
     category,
@@ -102,7 +101,6 @@ export const mapStateToProps = store => {
     termsOfServiceConsentLabel,
     shareOnFacebookButtonLabel,
     congratulations,
-    bumpingUpAndFacebookSharingBenefits,
   }
 }
 
