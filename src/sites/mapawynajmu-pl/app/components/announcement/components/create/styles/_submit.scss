@@ -1,0 +1,63 @@
+@import '../../common/button-with-plaque/styles.scss';
+@import '../../common/boost-button/styles.scss';
+@import '../../common/promotion-benefits/styles/styles.scss';
+
+%submit {
+  text-align: center;
+  padding: 32px 0;
+  .without-boosting, .or, .with-boosting {
+    display: inline-block;
+    vertical-align: top;
+    @media #{$SMALL-TABLET} {
+      display: block;
+      margin: 24px auto;
+    }
+  }
+  .without-boosting, .with-boosting {
+    width: 200px;
+  }
+  .without-boosting {
+    @extend %button-with-plaque;
+    height: 36px;
+    margin-right: 48px;
+    svg {
+      top: 0px;
+      bottom: 0;
+      left: 12px;
+      height: 14px;
+      margin: auto;
+    }
+    @media #{$SMALL-TABLET} {
+      margin-right: auto;
+    }
+  }
+  .or {
+    display: inline-block;
+    margin-right: 48px;
+    vertical-align: top;
+    line-height: 36px;
+    @media #{$SMALL-TABLET} {
+      margin-right: auto;
+    }
+  }
+  .with-boosting {
+    .submit-button {
+      @extend %button-with-plaque;
+      @extend %boost-button;
+      height: 36px;
+      svg {
+        top: 0px;
+        bottom: 0;
+        left: 12px;
+        height: 14px;
+        margin: auto;
+      }
+    }
+    @media #{$SMALL-TABLET} {
+      margin-bottom: 40px;
+    }
+  }
+  .promotion-benefits {
+    @extend %promotion-benefits;
+  }
+}

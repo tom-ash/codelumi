@@ -1,11 +1,9 @@
 @import '../../../../../styles/themes';
 @import '../../../../../styles/colors';
 @import '../../../../../styles//dimensions';
-
 @import '../../../../../styles/inputs/form/svgs';
 @import '../../../../../styles/inputs/form/checkbox';
 @import '../../../../../styles/inputs/form/textarea';
-
 @import '../../../../../styles/line';
 @import '../components/pictures/styles/styles';
 @import '../components/features/styles/styles';
@@ -19,9 +17,7 @@
 @import '../../../../../styles/inputs/button';
 @import '../../../../../styles/inputs/radio';
 @import '../../../../../styles/headings/h1';
-
-@import '../../common/button-with-plaque/styles.scss';
-@import '../../common/boost-button/styles.scss';
+@import './submit';
 
 #listing-create {
   background: red;
@@ -158,89 +154,8 @@
     font-size: 12px;
     color: #1f618d;
   }
-
-
   .submit {
-    text-align: center;
-    padding: 32px 0 8px;
-  }
-
-  .without-boosting {
-    display: inline-block;
-    width: 200px;
-    vertical-align: top;
-    @extend %button-with-plaque;
-    height: 36px;
-    svg {
-      top: 7px;
-      left: 10px;
-      width: 14px;
-    }
-    margin-right: 48px;
-    @media #{$LARGE-PHONE} {
-      margin: 24px auto 0;
-    }
-  }
-
-  .with-boosting {
-    display: inline-block;
-    width: 200px;
-    .submit-button {
-      @extend %button-with-plaque;
-      @extend %boost-button;
-      height: 36px;
-      svg {
-        top: 0px;
-        bottom: 0;
-        margin: auto;
-        left: 12px;
-        height: 14px;
-      }
-    }
-  }
-
-  .benefits {
-    right: 12px;
-    text-align: left;
-    padding-left: 8px;
-    top: 48px;
-    height: 50px;
-    color: rgb(42, 42, 42);
-    padding-top: 12px;
-    margin-bottom: 32px;
-    ul {
-      list-style-type: none;
-    }
-    li {
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-    .line {
-      margin-bottom: 8px;
-    }
-    svg {
-      height: 12px;
-      display: inline-block;
-      fill: #F1C40F;
-      margin-right: 5px;
-      position: relative;
-      top: 1px;
-    }
-    .people {
-      svg {
-        fill: #D35400;
-      }
-    }
-  }
-  .or {
-    display: inline-block;
-    margin-right: 48px;
-    vertical-align: top;
-    line-height: 36px;
-    @media #{$LARGE-PHONE} {
-      display: block;
-      margin: 24px auto;
-    }
+    @extend %submit;
   }
   @media #{$SMALL-TABLET} {
     margin: 0 auto;
@@ -249,56 +164,6 @@
       margin: 0 0 32px;
       border: none;
       border-radius: 0;
-    }
-  }
-  .promotion-checkbox-container {
-    display: flex;
-    img {
-      margin-left: 24px;
-      position: relative;
-      height: 18px;
-    }
-  }
-  .promotion {
-    margin-top: 18px;
-    margin-bottom: 24px;
-
-    .checkbox {
-      margin-bottom: 12px;
-    }
-    .input {
-      border: 1px solid #21618c;
-      &.hover,
-      &.focus {
-        box-shadow: 0 0 0 1px #21618c;
-      }
-    }
-    .tick {
-      border-right: 2px solid #21618c;
-      border-bottom: 2px solid #21618c;
-    }
-    .label {
-      color: #21618c;
-    }
-    ul {
-      list-style-type: none;
-      padding-left: 30px;
-      color: #21618c;
-      font-size: 14px;
-      li {
-        position: relative;
-        padding-left: 26px;
-        margin-bottom: 6px;
-        line-height: 18px;
-        svg {
-          position: absolute;
-          left: 0;
-          top: 0;
-          height: 16px;
-          fill: #f4d03f;
-          margin-right: 8px;
-        }
-      }
     }
   }
 }

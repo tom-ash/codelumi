@@ -1,0 +1,34 @@
+%promotion-benefits {
+    right: 12px;
+    text-align: left;
+    padding-left: 8px;
+    top: 48px;
+    height: 50px;
+    color: rgb(42, 42, 42);
+    padding-top: 12px;
+    margin-bottom: 32px;
+    ul {
+      list-style-type: none;
+    }
+    li {
+      font-size: 14px;
+      margin-bottom: 8px;
+      white-space: nowrap;
+    }
+    .line {
+      margin-bottom: 8px;
+    }
+    svg {
+      height: 12px;
+      display: inline-block;
+      fill: #f1c40f;
+      margin-right: 5px;
+      position: relative;
+      top: 1px;
+    }
+    .people {
+      svg {
+        fill: #d35400;
+      }
+    }
+  }
