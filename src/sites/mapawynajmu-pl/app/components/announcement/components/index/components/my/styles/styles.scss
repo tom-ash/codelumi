@@ -61,44 +61,6 @@
     margin-bottom: 24px;
   }
   @extend %action-buttons;
-
-  // .boost-button, .facebook-sharer-button {
-  //   display: inline-block;
-  //   vertical-align: top;
-  //   width: 284px;
-  //   height: 48px;
-  //   .input {
-  //     font-size: 15px;
-  //   }
-  // }
-  // .boost-button {
-  //   @extend %button-with-plaque;
-  //   @extend %boost-button;
-  //   margin-right: 40px;
-  //   svg {
-  //     top: 12px;
-  //     height: 24px;
-  //   }
-  // }
-  // .facebook-sharer-button {
-  //   @extend %button-with-plaque;
-  //   @extend %share-on-facebook-button;
-  //   svg {
-  //     top: 10px;
-  //     left: 14px;
-  //     height: 28px;
-  //   }
-  // }
-
-  // .boost-button {
-  //   // @extend %boost-button;
-  //   float: left;
-  //   margin-right: 24px;
-  // }
-  // .facebook-sharer-button {
-  //   // @extend %facebook-sharer-button;
-  //   float: left;
-  // }
   .control {
     margin: 18px 0;
     .info {

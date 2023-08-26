@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStore } from '../../../../../../../../../shared/app/functions/store/useStore'
-import { SubmitWithBoostingButton } from '../submit-with-boosting.button'
+import { SubmitWithBoostingButton } from './submit-with-boosting.button'
 import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
 import { Line } from '../../../../../../support/components/line/line'
 
@@ -13,7 +13,7 @@ export const SubmitWithBoosting: SubmitWithBoostingInterface = ({ publish }) => 
   const { texts } = state
 
   return (
-    <div className='submit-with-boosting'>
+    <div className='with-boosting'>
       <SubmitWithBoostingButton publish={publish} />
       <div className='benefits'>
         <ul>
@@ -23,7 +23,6 @@ export const SubmitWithBoosting: SubmitWithBoostingInterface = ({ publish }) => 
           <Line />
           <li className='people'><SVG name='people' /> Większa widoczność i zasięgi</li>
         </ul>
-        
       </div>
     </div>
   )

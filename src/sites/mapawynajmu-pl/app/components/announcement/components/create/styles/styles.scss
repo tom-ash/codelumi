@@ -158,6 +158,8 @@
     font-size: 12px;
     color: #1f618d;
   }
+
+
   .submit {
     text-align: center;
     padding: 32px 0 8px;
@@ -166,20 +168,21 @@
   .without-boosting {
     display: inline-block;
     width: 200px;
-    // .submit-button {
-      vertical-align: top;
-      @extend %button-with-plaque;
-      // @extend %boost-button;
-      height: 36px;
-      svg {
-        top: 7px;
-        left: 10px;
-        width: 14px;
-      }
-    // }
+    vertical-align: top;
+    @extend %button-with-plaque;
+    height: 36px;
+    svg {
+      top: 7px;
+      left: 10px;
+      width: 14px;
+    }
+    margin-right: 48px;
+    @media #{$LARGE-PHONE} {
+      margin: 24px auto 0;
+    }
   }
 
-  .submit-with-boosting {
+  .with-boosting {
     display: inline-block;
     width: 200px;
     .submit-button {
@@ -187,18 +190,15 @@
       @extend %boost-button;
       height: 36px;
       svg {
-        top: 7px;
-        left: 10px;
-        width: 14px;
+        top: 0px;
+        bottom: 0;
+        margin: auto;
+        left: 12px;
+        height: 14px;
       }
     }
   }
-  .without-boosting {
-    margin-right: 48px;
-    @media #{$LARGE-PHONE} {
-      margin: 24px auto 0;
-    }
-  }
+
   .benefits {
     right: 12px;
     text-align: left;
@@ -218,21 +218,15 @@
     .line {
       margin-bottom: 8px;
     }
-    
     svg {
-      // top: 0;
       height: 12px;
-      // position: absolute;
       display: inline-block;
       fill: #F1C40F;
       margin-right: 5px;
       position: relative;
       top: 1px;
     }
-
-
     .people {
-      // color: #D35400;
       svg {
         fill: #D35400;
       }

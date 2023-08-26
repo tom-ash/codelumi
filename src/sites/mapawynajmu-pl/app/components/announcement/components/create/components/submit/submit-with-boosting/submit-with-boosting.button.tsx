@@ -1,7 +1,7 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../shared/app/functions/store/useStore'
-import { SubmitButton as BaseSubmitButton } from '../../../../../../../../shared/app/components/support/submit-button/submit-button'
-import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
+import { useStore } from '../../../../../../../../../shared/app/functions/store/useStore'
+import { SubmitButton as BaseSubmitButton } from '../../../../../../../../../shared/app/components/support/submit-button/submit-button'
+import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
 
 interface SubmitButtonInterface {
   (props: { publish: (addPromotion?: boolean) => Promise<void> }): React.ReactElement
@@ -23,7 +23,6 @@ export const SubmitWithBoostingButton: SubmitButtonInterface = ({ publish }) => 
   const submitButtonProps = {
     label,
     submit: () => publish(true),
-    // customContainerClassNames: 'create with-boosting',
   }
 
   // @ts-ignore
