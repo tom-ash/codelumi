@@ -5,6 +5,7 @@ import { PromoteButton } from './components/promote'
 import { ListingIndexTile } from '../../../index/components/tile/tile'
 import { buildUrl } from '../../../../../../../shared/functions/builders/url'
 import { FacebookSharerButton } from '../../../../../../../../shared/app/components/support/facebook-sharer-button/facebook-sharer-button'
+import { PromotionBenefits } from '../../../common/promotion-benefits/promotion-benefits'
 
 class AnnouncementCreateSuccess extends React.Component {
   // @ts-ignore
@@ -72,10 +73,14 @@ class AnnouncementCreateSuccess extends React.Component {
         <div className='further-steps'>
           <div className='congratulations'>{congratulations}</div>
           <ListingIndexTile {...tileProps} />
-          <div className='share-on-facebook-text'>{bumpingUpAndFacebookSharingBenefits}</div>
-          <div className='buttons'>
-            <PromoteButton listingId={id} />
-            <FacebookSharerButton {...facebookSharerButtonProps} />
+          <div className='promotion-actions'>
+            <div className='promote'>
+              <PromoteButton listingId={id} />
+              <PromotionBenefits />
+            </div>
+            <div className='share-on-facebook'>
+              <FacebookSharerButton {...facebookSharerButtonProps} />
+            </div>
           </div>
         </div>
       </div>

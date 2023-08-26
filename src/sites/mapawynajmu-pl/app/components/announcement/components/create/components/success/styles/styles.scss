@@ -1,46 +1,42 @@
 @import '../../../../../../../styles/headings/h1';
 @import '../../../../index/components/tile/styles/styles.scss';
 @import '../../../../common/action-buttons/styles.scss';
+@import '../../../../common/promotion-benefits/styles/styles.scss';
 
 #listing-create {
   #success-container {
     max-width: 608px;
     margin: 0 auto;
-    h1 {
-      @extend %h1;
-      margin: 32px 0;
-      font-size: 15px;
-      border-bottom: none;
-      text-align: center;
-    }
-    .listing-index-tile {
-      @extend %listing-index-tile;
-    }
     .congratulations {
       margin: 30px 0;
       text-align: center;
     }
-    .share-on-facebook-text {
-      margin: 24px 0;
-      line-height: 22px;
+    .listing-index-tile {
+      @extend %listing-index-tile;
+      margin-bottom: 36px;
     }
     @extend %action-buttons;
-    .boost-button {
-      svg {
-        top: 12px;
-        height: 24px;
+    .promotion-actions {
+      .promote, .share-on-facebook {
+        display: inline-block;
+        vertical-align: top;
+        width: 284px;
+        @media #{$LARGE-PHONE} {
+          width: 100%;
+        }
       }
+      .promote {
+        margin-right: 40px;
+      }
+    }
+    .promotion-benefits {
+      @extend %promotion-benefits;
     }
     .facebook-sharer-button {
       @extend %button-with-plaque;
       @extend %share-on-facebook-button;
-      svg {
-        top: 10px;
-        left: 14px;
-        height: 28px;
-      }
     }
-    @media #{$LARGE-PHONE} {
+    @media #{$SMALL-TABLET} {
       padding: 0 18px;
     }
   }
