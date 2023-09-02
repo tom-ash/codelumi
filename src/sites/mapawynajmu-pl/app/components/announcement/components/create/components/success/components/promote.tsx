@@ -12,7 +12,7 @@ export const PromoteButton: PromoteButtonInterface = props => {
   const { listingId } = props
   const { state } = useStore()
   const { texts } = state
-  const { boostButtonLabel } = texts
+  const { promoteButtonLabel } = texts
 
   const submit = () => {
     postApi({
@@ -29,7 +29,7 @@ export const PromoteButton: PromoteButtonInterface = props => {
   const label = (
     <>
       <SVG name='rocket' />
-      {boostButtonLabel}
+      {promoteButtonLabel}
       <div className='price'>19 PLN</div>
     </>
   )
