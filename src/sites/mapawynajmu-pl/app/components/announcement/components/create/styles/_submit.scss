@@ -5,7 +5,7 @@
 %submit {
   text-align: center;
   padding: 32px 0;
-  .without-boosting, .or, .with-boosting {
+  .without-promotion, .or, .with-promotion {
     display: inline-block;
     vertical-align: top;
     @media #{$SMALL-TABLET} {
@@ -13,10 +13,10 @@
       margin: 24px auto;
     }
   }
-  .without-boosting, .with-boosting {
+  .without-promotion, .with-promotion {
     width: 200px;
   }
-  .without-boosting {
+  .without-promotion {
     @extend %button-with-plaque;
     height: 36px;
     margin-right: 48px;
@@ -40,7 +40,7 @@
       margin-right: auto;
     }
   }
-  .with-boosting {
+  .with-promotion {
     .submit-button {
       @extend %button-with-plaque;
       @extend %promotion-button;

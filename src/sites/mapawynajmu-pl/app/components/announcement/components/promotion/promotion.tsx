@@ -4,11 +4,11 @@ import styles from './styles/styles.scss'
 import { Spinner } from '../../../support/components/spinner/spinner'
 import { useStore } from '../../../../../../shared/app/functions/store/useStore'
 
-interface ListingBoostInterface {
+interface ListingPromotionInterface {
   (): React.ReactElement
 }
 
-const ListingPromotion: ListingBoostInterface = () => {
+const ListingPromotion: ListingPromotionInterface = () => {
   useStyles(styles)
 
   const {
@@ -25,7 +25,7 @@ const ListingPromotion: ListingBoostInterface = () => {
   }, [])
 
   return (
-    <div id='listing-boost'>
+    <div id='listing-promotion'>
       <Spinner spinnerClass='windmill-medium-spinner' />
     </div>
   )

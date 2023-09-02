@@ -10,12 +10,12 @@ interface SubmitButtonInterface {
 export const SubmitWithPromotionButton: SubmitButtonInterface = ({ publish }) => {
   const { state } = useStore()
   const { texts } = state
-  const { submitWithBoostingButtonLabel } = texts
+  const { submitWithPromotionButtonLabel } = texts
 
   const label = (
     <>
       <SVG name='rocket' />
-      {submitWithBoostingButtonLabel}
+      {submitWithPromotionButtonLabel}
       <div className='price'>19 PLN</div>
     </>
   )

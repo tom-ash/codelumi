@@ -10,12 +10,12 @@ interface SubmitWithoutPromotionInterface {
 export const SubmitWithoutPromotionButton: SubmitWithoutPromotionInterface = ({ publish }) => {
   const { state } = useStore()
   const { texts } = state
-  const { submitWithoutBoostingButtonLabel } = texts
+  const { submitWithoutPromotionButtonLabel } = texts
 
   const label = (
     <>
       <SVG name='plus' />
-      {submitWithoutBoostingButtonLabel}
+      {submitWithoutPromotionButtonLabel}
       <div className='price'>0 PLN</div>
     </>
   )
@@ -23,7 +23,7 @@ export const SubmitWithoutPromotionButton: SubmitWithoutPromotionInterface = ({ 
   const submitButtonProps = {
     label,
     submit: () => publish(false),
-    customContainerClassNames: 'create without-boosting',
+    customContainerClassNames: 'create without-promotion',
   }
 
   // @ts-ignore

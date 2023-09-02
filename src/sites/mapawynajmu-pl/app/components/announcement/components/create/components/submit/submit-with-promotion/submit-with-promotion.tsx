@@ -12,7 +12,7 @@ export const SubmitWithPromotion: SubmitWithPromotionInterface = ({ publish }) =
   const { texts } = state
 
   return (
-    <div className='with-boosting'>
+    <div className='with-promotion'>
       <SubmitWithPromotionButton publish={publish} />
       <PromotionBenefits />
     </div>
