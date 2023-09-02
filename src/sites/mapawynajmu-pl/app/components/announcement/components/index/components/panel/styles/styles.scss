@@ -15,23 +15,27 @@
     background: white;
     line-height: 36px;
     font-size: 14px;
-    color: #4d5656;
     cursor: pointer;
     > input {
-      cursor: pointer;
-      padding-left: 36px;
-      border: none;
-      background: none;
       width: 100%;
       height: 100%;
+      border: 1px solid #3498DB;
+      border-radius: 18px;
+      padding-left: 36px;
+      background: none;
+      color: #1A5276;
       caret-color: transparent;
+      cursor: pointer;
+      &::placeholder {
+        color: #1A5276;
+      }
     }
     > svg {
       height: 10px;
       position: absolute;
       top: 13px;
       left: 13px;
-      fill: #a6acaf;
+      fill: #2874A6;
     }
     @media #{$LARGE-PHONE} {
       width: 100%;
