@@ -35,7 +35,7 @@ export const PromoteButton: PromoteButtonInterface = props => {
   )
 
   const submitButtonProps = {
-    customContainerClassNames: 'boost-button',
+    customContainerClassNames: 'promotion-button',
     label,
     submit,
   }

@@ -3,11 +3,11 @@ import { SVG } from '../../../../../../../shared/app/components/support/svg/svg'
 import { Line } from '../../../../support/components/line/line'
 import { useStore } from '../../../../../../../shared/app/functions/store/useStore'
 
-interface SubmitWithBoostingInterface {
+interface SubmitWithPromotionInterface {
   (): React.ReactElement
 }
 
-export const PromotionBenefits: SubmitWithBoostingInterface = () => {
+export const PromotionBenefits: SubmitWithPromotionInterface = () => {
   const { state: { texts: { promotionBenefits, promotionBenefitsSummary }} } = useStore()
 
   return (

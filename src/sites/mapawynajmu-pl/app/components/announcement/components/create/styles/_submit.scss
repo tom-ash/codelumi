@@ -1,5 +1,5 @@
 @import '../../common/button-with-plaque/styles.scss';
-@import '../../common/boost-button/styles.scss';
+@import '../../common/promotion-button/styles.scss';
 @import '../../common/promotion-benefits/styles/styles.scss';
 
 %submit {
@@ -43,7 +43,7 @@
   .with-boosting {
     .submit-button {
       @extend %button-with-plaque;
-      @extend %boost-button;
+      @extend %promotion-button;
       height: 36px;
       svg {
         top: 0px;

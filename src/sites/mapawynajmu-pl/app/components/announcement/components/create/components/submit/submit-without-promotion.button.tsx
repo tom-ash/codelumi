@@ -3,11 +3,11 @@ import { useStore } from '../../../../../../../../shared/app/functions/store/use
 import { SubmitButton as BaseSubmitButton } from '../../../../../../../../shared/app/components/support/submit-button/submit-button'
 import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
 
-interface SubmitButtonInterface {
+interface SubmitWithoutPromotionInterface {
   (props: { publish: (addPromotion?: boolean) => Promise<void> }): React.ReactElement
 }
 
-export const SubmitWithoutBoostingButton: SubmitButtonInterface = ({ publish }) => {
+export const SubmitWithoutPromotionButton: SubmitWithoutPromotionInterface = ({ publish }) => {
   const { state } = useStore()
   const { texts } = state
   const { submitWithoutBoostingButtonLabel } = texts

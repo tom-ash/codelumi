@@ -14,13 +14,13 @@ class Announcement extends React.Component {
 
   render() {
     // @ts-ignore
-    const { renderCreate, renderEdit, renderIndex, listingBoost } = this.props
+    const { renderCreate, renderEdit, renderIndex, listingPromotion } = this.props
 
     return (
       <React.Fragment>
         {(renderCreate || renderEdit) && <AnnouncementCreate />}
         {renderIndex && <AnnouncementIndex />}
-        {listingBoost && <ListingPromotion />}
+        {listingPromotion && <ListingPromotion />}
       </React.Fragment>
     )
   }

@@ -7,7 +7,7 @@ interface SubmitButtonInterface {
   (props: { publish: (addPromotion?: boolean) => Promise<void> }): React.ReactElement
 }
 
-export const SubmitWithBoostingButton: SubmitButtonInterface = ({ publish }) => {
+export const SubmitWithPromotionButton: SubmitButtonInterface = ({ publish }) => {
   const { state } = useStore()
   const { texts } = state
   const { submitWithBoostingButtonLabel } = texts

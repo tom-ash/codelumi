@@ -1,9 +1,9 @@
 @import '../button-with-plaque/styles.scss';
-@import '../boost-button/styles.scss';
+@import '../promotion-button/styles.scss';
 @import '../share-on-facebook-button/styles.scss';
 
 %action-buttons {
-  .boost-button,
+  .promotion-button,
   .facebook-sharer-button {
     display: inline-block;
     vertical-align: top;
@@ -13,9 +13,9 @@
       font-size: 15px;
     }
   }
-  .boost-button {
+  .promotion-button {
     @extend %button-with-plaque;
-    @extend %boost-button;
+    @extend %promotion-button;
     svg {
       top: 12px;
       height: 24px;
