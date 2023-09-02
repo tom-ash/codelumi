@@ -1,6 +1,5 @@
 import React from 'react'
 import { useStore } from '../../../../../../../../../../../shared/app/functions/store/useStore'
-import { TextInput } from '../../../../../../../../../../../shared/app/components/support/text-input/text-input'
 import { SVG } from '../../../../../../../../../../../shared/app/components/support/svg/svg'
 
 interface FilterInterface {
@@ -10,24 +9,23 @@ interface FilterInterface {
 export const Filter: FilterInterface = props => {
   const { name, panel } = props
   const { state, dispatch } = useStore()
-  const { data } = state
+  const { texts, data, inputs } = state
+  const value = inputs[name]
   const { [`${name}SvgName`]: svgName } = data
-  const children = <SVG name={svgName} />
-
+  const placeholder = texts[`${name}InputPlaceholder`]
   const setControl = (value: any) => dispatch({ type: 'control', value })
-  const onClickCallback = () => setControl({ [`${name}FilterPanel`]: true })
-
-  const textInputProps = {
-    inputKey: name,
-    containerClassNames: `text-input filter ${name}`,
-    children,
-    disabled: true,
-    onClickCallback,
-  }
+  const onClick = () => setControl({ [`${name}FilterPanel`]: true })
 
   return (
-    <div className={`filter ${name}`}>
-      <TextInput {...textInputProps} />
+    <div
+      className={`filter ${name}`}
+    >
+      <SVG name={svgName} />
+      <input
+        value={value}
+        placeholder={placeholder}
+        onClick={onClick}
+      />
       {panel}
     </div>
   )
