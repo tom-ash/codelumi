@@ -21,11 +21,12 @@ export const Filter: FilterInterface = props => {
       className={`filter ${name}`}
     >
       <SVG name={svgName} />
-      <input
-        value={value}
-        placeholder={placeholder}
+      <div
+        className='input'
         onClick={onClick}
-      />
+      >
+        {value ? value : placeholder}
+      </div>
       {panel}
     </div>
   )
