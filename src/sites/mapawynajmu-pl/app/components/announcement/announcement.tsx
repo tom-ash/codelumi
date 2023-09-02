@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { mapStateToProps } from './constants/mappers'
 const AnnouncementCreate = loadable(() => import('./components/create/create'))
 const AnnouncementIndex = loadable(() => import('./components/index/index'))
-const ListingBoost = loadable(() => import('./components/boost/boost'))
+const ListingPromotion = loadable(() => import('./components/promotion/promotion'))
 
 class Announcement extends React.Component {
   // @ts-ignore
@@ -20,7 +20,7 @@ class Announcement extends React.Component {
       <React.Fragment>
         {(renderCreate || renderEdit) && <AnnouncementCreate />}
         {renderIndex && <AnnouncementIndex />}
-        {listingBoost && <ListingBoost />}
+        {listingBoost && <ListingPromotion />}
       </React.Fragment>
     )
   }

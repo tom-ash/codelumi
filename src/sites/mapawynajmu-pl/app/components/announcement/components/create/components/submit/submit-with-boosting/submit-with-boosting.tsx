@@ -1,8 +1,6 @@
 import React from 'react'
 import { useStore } from '../../../../../../../../../shared/app/functions/store/useStore'
 import { SubmitWithBoostingButton } from './submit-with-boosting.button'
-import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
-import { Line } from '../../../../../../support/components/line/line'
 import { PromotionBenefits } from '../../../../common/promotion-benefits/promotion-benefits'
 
 interface SubmitWithBoostingInterface {

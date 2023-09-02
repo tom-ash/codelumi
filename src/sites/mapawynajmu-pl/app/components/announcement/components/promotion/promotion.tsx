@@ -8,7 +8,7 @@ interface ListingBoostInterface {
   (): React.ReactElement
 }
 
-const ListingBoost: ListingBoostInterface = () => {
+const ListingPromotion: ListingBoostInterface = () => {
   useStyles(styles)
 
   const {
@@ -31,4 +31,4 @@ const ListingBoost: ListingBoostInterface = () => {
   )
 }
 
-export default ListingBoost
+export default ListingPromotion
