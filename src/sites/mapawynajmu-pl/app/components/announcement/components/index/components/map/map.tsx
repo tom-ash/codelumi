@@ -123,8 +123,6 @@ class AnnouncementIndexMap extends React.Component {
                   }
                 }
 
-                console.log(announcement)
-
                 const tileProps = {
                   key: title,
                   href,

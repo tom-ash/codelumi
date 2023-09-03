@@ -5,14 +5,6 @@ import initializeMap from '../../../../../functions/map/initialize'
 import drawPin from './draw-pin'
 import { removePins } from '../../../../../functions/map/pins/remove-pins'
 
-const options = {
-  center: {
-    lat: 52,
-    lng: 19,
-  },
-  zoom: 5.8,
-}
-
 export function componentDidMount() {
   const { shouldInitializeMap, isMapInitialized, googleMapsScriptLoaded, setControl } = this.props
 

@@ -2,6 +2,7 @@ import removePins from '../../../../../functions/map/pins/remove-pins'
 import setShouldInitializeMap from '../../../../../functions/map/set-should-initialize'
 import initializeMap from '../../../../../functions/map/initialize'
 import setShouldDrawPins from '../../../../../functions/map/pins/set-should-draw'
+import { getDefaultMapOptions } from './get-default-map-options'
 
 export function componentDidMount() {
   const { isMapInitialized, shouldInitializeMap, googleMapsScriptLoaded, setControl } = this.props
@@ -23,6 +24,7 @@ export function componentDidUpdate(prevProps) {
     mapOptions: prevMapOptions,
     shouldInitializeMap: prevShouldInitializeMap,
     shouldDrawPins: prevShouldDrawPins,
+    isMobile: prevIsMobile,
   } = prevProps
 
   const {
@@ -41,6 +43,8 @@ export function componentDidUpdate(prevProps) {
     shouldDrawPins,
   } = this.props
 
+  const defaultMapOptions = getDefaultMapOptions(isMobile)
+
   setShouldInitializeMap({
     isMapInitialized,
     shouldInitializeMap,
@@ -50,7 +54,7 @@ export function componentDidUpdate(prevProps) {
 
   if (shouldInitializeMap && !prevShouldInitializeMap) {
     initializeMap({
-      mapOptions,
+      mapOptions: defaultMapOptions,
       isMobile,
       setControl,
     })

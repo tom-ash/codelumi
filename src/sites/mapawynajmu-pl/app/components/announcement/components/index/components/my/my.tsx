@@ -131,8 +131,6 @@ class AnnouncementIndexMy extends React.Component {
               shareOnFacebookButtonLabel,
             }
 
-            console.log(this.props)
-
             return (
               <div className='listing-index-tile-container'>
                 <div className='listing-id'>{id}</div>
