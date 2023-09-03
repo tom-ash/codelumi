@@ -13,11 +13,16 @@ function genericRequestHandler({ req, res, clientUrl, apiUrl, appRenderer, siteN
 
   if (url === 'sitemap.xml') return sitemapSender({ res, clientUrl, apiUrl })
 
+  const deviceFromHeader = headers['user-agent']
+  const langFromHeader = headers['accept-language'].split(',')[0]
+
   routeSender({
     res,
     url,
     query,
     device,
+    deviceFromHeader,
+    langFromHeader,
     accessToken,
     appRenderer,
     siteName,

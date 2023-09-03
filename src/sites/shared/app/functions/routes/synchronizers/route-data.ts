@@ -17,9 +17,11 @@ export const syncRouteData: SyncRouteData = args => {
   return fetch(`${apiUrl}/sync${query}`, {
     headers: {
       'Content-Type': 'application/json',
-      Type: isSSR ? 'ssr' : 'csr',
+      'Type': isSSR ? 'ssr' : 'csr',
       'Access-Token': getAccessToken(),
       'Route-Url': url,
+      'Device': navigator.userAgent,
+      'Device-Lang': navigator.language,
       ...customHeaders,
     },
   }).then(response => {
