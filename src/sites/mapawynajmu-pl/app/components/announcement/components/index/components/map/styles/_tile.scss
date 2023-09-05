@@ -66,32 +66,52 @@
       left: 0;
       width: 100%;
       padding: 12px;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, .2);
+      overflow: scroll;
+      border-radius: 4px;
+      .go-back-to-list {
+        position: fixed;
+        top: 84px;
+        right: 26px;
+        z-index: 1000;
+        width: 44px;
+        height: 44px;
+        margin: 0;
+        border: none;
+        box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
+        background: #F8F9F9;
+      }
       .listing-tile {
-        box-shadow:
-          0px 5px 5px -3px rgba(0, 0, 0, 0.2),
-          0px 3px 8px 3px rgba(0, 0, 0, 0.14),
-          0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-        .go-back-to-list {
-          margin: 18px 18px 18px auto;
-        }
+        border-radius: 4;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+        padding: 24px 0;
         h1 {
-          padding: 0 18px;
+          padding: 0 24px!important;
+          margin: 0 0 24px;
+        }
+        h2 {
+          margin: 0!important;
+          margin-bottom: 12px!important;
         }
         #showcase {
-          padding: 0 18px;
+          padding: 0 24px;
         }
         .go-to-link {
           padding: 0 18px;
         }
         .primary-data {
-          padding: 0 18px;
+          padding: 0 24px;
+          margin-bottom: 32px!important;
+          font-size: 18px!important;
         }
         .features {
-          padding: 0 18px 12px;
+          padding: 0 24px;
+          margin-bottom: 32px!important;
+          font-size: 18px!important;
         }
         .description {
-          padding: 0 18px 12px;
+          padding: 0 24px;
+          font-size: 18px!important;
         }
       }
     }

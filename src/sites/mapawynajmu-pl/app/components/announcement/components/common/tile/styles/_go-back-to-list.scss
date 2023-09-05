@@ -1,5 +1,4 @@
 %go-back-to-list {
-  transform: rotate(180deg);
   display: block;
   width: 36px;
   height: 36px;
@@ -12,9 +11,9 @@
   top: 24px;
   right: 24px;
   svg {
+    transform: rotate(180deg);
     width: 18px;
-    fill: #979a9a;
-    transform: translate(0, 1px);
+    fill: #424949;
     transition: fill 0.15s ease-in;
   }
   &:hover {
