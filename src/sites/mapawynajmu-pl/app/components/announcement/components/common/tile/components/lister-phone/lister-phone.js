@@ -21,7 +21,7 @@ const ListerPhone = ({ announcerPhone, togglePhone, announcementId, venue }) => 
                   eventAction: 'Phone Reveal Click',
                   eventLabel: announcementId,
                 })
-                togglePhone(e, venue)
+                togglePhone()
               }}
             >
               {/* TODO: LANG! */}

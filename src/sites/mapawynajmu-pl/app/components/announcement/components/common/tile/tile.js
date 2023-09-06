@@ -4,15 +4,12 @@ const GoBack = loadable(() => import('./components/go-back'))
 const ListerPhone = loadable(() => import('./components/lister-phone/lister-phone'))
 const GoToLink = loadable(() => import('./components/go-to-link'))
 const Heading = loadable(() => import('./components/heading'))
-const Link = loadable(() => import('./components/link'))
 const Pictures = loadable(() => import('./components/pictures/pictures'))
 const PrimaryData = loadable(() => import('./components/primary/primary'))
 const Items = loadable(() => import('./components/features-furnishings/features-furnishings'))
 const Description = loadable(() => import('./components/description/description'))
 import { togglePhone } from '../../../functions/toggle-phone'
-import { buildUrl } from '../../../../../../shared/functions/builders/url'
 import { markListingAsViewed } from '../../../functions/mark-as-viewed'
-import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/change-url'
 
 class AnnouncementTile extends React.Component {
   constructor(props) {
@@ -25,17 +22,14 @@ class AnnouncementTile extends React.Component {
   }
 
   componentDidMount() {
-    const { venue, id } = this.props
+    const { id } = this.props
 
-    if (venue === 'map') {
-      markListingAsViewed(id)
-    }
+    markListingAsViewed(id)
   }
 
   render() {
     const {
       lang,
-      venue,
       id,
       category,
       locality,
@@ -54,28 +48,23 @@ class AnnouncementTile extends React.Component {
       features,
       furnishings,
       polishDescription,
-      englishDescription,
-      control,
       isMobile,
       latitude,
       longitude,
       setData,
       setApp,
-      setControl,
       path,
       title,
       name,
       link,
       phone,
       showPrimary,
-      changeHoveredTileId,
       goBackLink,
       isPromoted,
     } = this.props
     const listerPhoneProps = {
       announcerPhone: this.state.fullPhone || phone,
       announcementId: id,
-      venue,
       togglePhone: this.togglePhone,
     }
     const goToLinkProps = {
@@ -102,7 +91,6 @@ class AnnouncementTile extends React.Component {
     }
     const picturesProps = {
       lang,
-      venue,
       id,
       pictures,
       category,
@@ -149,37 +137,23 @@ class AnnouncementTile extends React.Component {
       classNames.push('promoted')
     }
 
-    switch (venue) {
-      case 'map':
-        return (
-          <>
-            <GoBack
-              id={id}
-              goBackLink={goBackLink}
-            />
-            <div className='listing-tile'>
-              <Heading {...{ ...headingProps, tier: 1 }} />
-              {isPhoneable ? <ListerPhone {...listerPhoneProps} /> : <GoToLink {...goToLinkProps} />}
-              <Pictures {...picturesProps} />
-              <PrimaryData {...primaryDataProps} />
-              {features && features.length > 0 && <Items {...featuresProps} />}
-              {furnishings && furnishings.length > 0 && <Items {...furnishingsProps} />}
-              {description && <Description {...descriptionProps} />}
-            </div>
-          </>
-        )
-      case 'list':
-        return (
-          <main className='listing-tile'>
-            <Heading {...{ ...headingProps, tier: 2 }} />
-            <Pictures {...picturesProps} />
-            <PrimaryData {...primaryDataProps} />
-            {control}
-          </main>
-        )
-      default:
-        return null
-    }
+    return (
+      <>
+        <GoBack
+          id={id}
+          goBackLink={goBackLink}
+        />
+        <div className='listing-tile'>
+          <Heading {...{ ...headingProps, tier: 1 }} />
+          {isPhoneable ? <ListerPhone {...listerPhoneProps} /> : <GoToLink {...goToLinkProps} />}
+          <Pictures {...picturesProps} />
+          <PrimaryData {...primaryDataProps} />
+          {features && features.length > 0 && <Items {...featuresProps} />}
+          {furnishings && furnishings.length > 0 && <Items {...furnishingsProps} />}
+          {description && <Description {...descriptionProps} />}
+        </div>
+      </>
+    )
   }
 }
 

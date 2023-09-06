@@ -5,7 +5,7 @@ export function togglePhone() {
   if (typeof window === 'undefined') return
 
   const { id } = this.props
-  const { phone, isMobile } = this.state
+  const { phone } = this.state
 
   if (phone && phone.length > 8) return
 

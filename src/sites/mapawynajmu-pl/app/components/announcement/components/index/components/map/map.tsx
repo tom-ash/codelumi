@@ -151,7 +151,6 @@ class AnnouncementIndexMap extends React.Component {
           {tile && Object.keys(tile).length > 1 && (
             <div className='listing-tile-container'>
               <ListingTile
-                venue='map'
                 lang={lang}
                 id={tile.id}
                 category={tile.category}
