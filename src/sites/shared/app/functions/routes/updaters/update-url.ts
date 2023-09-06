@@ -1,9 +1,18 @@
 import { changeUrl } from '../changers/change-url'
 
-// @ts-ignore
-export const updateUrl = ({ href }) => {
+interface UpdateUrl {
+  (attrs: {
+    href: string;
+    withScroll?: boolean;
+    retainQueryParams?: boolean;
+  }): void
+}
+
+
+export const updateUrl: UpdateUrl = (attrs) => {
+  const { href, withScroll, retainQueryParams } = attrs
   // @ts-ignore
   window.onlyUpdate = true
 
-  changeUrl({ href })
+  changeUrl({ href, withScroll, retainQueryParams })
 }

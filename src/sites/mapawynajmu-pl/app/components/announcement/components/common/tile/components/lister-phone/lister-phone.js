@@ -15,7 +15,7 @@ const ListerPhone = ({ announcerPhone, togglePhone, announcementId, venue }) => 
           {` ${announcerPhone && announcerPhone.replace('+48 ', '')}`}
           {announcerPhone && announcerPhone.length < 9 && (
             <u
-              onClick={e => {
+              onClick={() => {
                 sendAnalyticsEvent({
                   eventCategory: 'Announcement Show',
                   eventAction: 'Phone Reveal Click',
