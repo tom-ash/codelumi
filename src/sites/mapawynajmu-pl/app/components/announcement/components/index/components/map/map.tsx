@@ -9,6 +9,7 @@ import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import { ListingIndexTile } from '../tile/tile'
 import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
+import { updateUrl } from '../../../../../../../../shared/app/functions/routes/updaters/update-url'
 
 class AnnouncementIndexMap extends React.Component {
   // @ts-ignore
@@ -102,7 +103,8 @@ class AnnouncementIndexMap extends React.Component {
                   e.preventDefault()
 
                   if (!isMobile) {
-                    changeUrl({ href, retainQueryParams: true })
+                    setControl({ currentTileId: id })
+                    updateUrl({ href, retainQueryParams: true, withScroll: false })
                   } else {
                     var fromTop = document.body.getBoundingClientRect().top
 
