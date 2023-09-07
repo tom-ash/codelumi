@@ -3,6 +3,7 @@ import { SVG } from '../../../../../../../../shared/app/components/support/svg/s
 import centerMap from '../../../index/components/map/functions/center-map'
 import { buildUrl } from '../../../../../../../shared/functions/builders/url'
 import { updateUrl } from '../../../../../../../../shared/app/functions/routes/updaters/update-url'
+import { useStore } from '../../../../../../../../shared/app/functions/store/useStore'
 
 interface GoBackProps {
   id: number
@@ -10,12 +11,15 @@ interface GoBackProps {
 }
 
 const GoBack = (props: GoBackProps) => {
+  const { dispatch } = useStore()
+  const setControl = (value: any) => dispatch({ type: 'control', value })
   const { goBackLink } = props
 
   return (
     <button
       onClick={() => {
         centerMap()
+        setControl({ currentTileId: null })
         updateUrl({ href: buildUrl(goBackLink), retainQueryParams: true, withScroll: false })
       }}
       className='go-back-to-list'
