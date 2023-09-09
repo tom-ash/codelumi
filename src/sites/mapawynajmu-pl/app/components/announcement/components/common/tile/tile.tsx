@@ -12,9 +12,12 @@ import { togglePhone } from '../../../functions/toggle-phone'
 import { markListingAsViewed } from '../../../functions/mark-as-viewed'
 
 class AnnouncementTile extends React.Component {
+  // @ts-ignore
   constructor(props) {
     super(props)
+    // @ts-ignore
     this.container = React.createRef()
+    // @ts-ignore
     this.togglePhone = togglePhone.bind(this)
     this.state = {
       fullPhone: null,
@@ -22,6 +25,7 @@ class AnnouncementTile extends React.Component {
   }
 
   componentDidMount() {
+    // @ts-ignore
     const { id } = this.props
 
     markListingAsViewed(id)
@@ -29,48 +33,81 @@ class AnnouncementTile extends React.Component {
 
   render() {
     const {
+      // @ts-ignore
       lang,
+      // @ts-ignore
       id,
+      // @ts-ignore
       category,
+      // @ts-ignore
       locality,
+      // @ts-ignore
       sublocality,
+      // @ts-ignore
       area,
+      // @ts-ignore
       pictures,
+      // @ts-ignore
       rentCurrency,
+      // @ts-ignore
       netRentAmount,
+      // @ts-ignore
       netRentAmountPerSqm,
+      // @ts-ignore
       grossRentAmount,
+      // @ts-ignore
       grossRentAmountPerSqm,
+      // @ts-ignore
       rooms,
+      // @ts-ignore
       floor,
+      // @ts-ignore
       totalFloors,
+      // @ts-ignore
       availabilityDate,
+      // @ts-ignore
       features,
+      // @ts-ignore
       furnishings,
+      // @ts-ignore
       polishDescription,
+      // @ts-ignore
       isMobile,
+      // @ts-ignore
       latitude,
+      // @ts-ignore
       longitude,
+      // @ts-ignore
       setData,
+      // @ts-ignore
       setApp,
+      // @ts-ignore
       path,
+      // @ts-ignore
       title,
+      // @ts-ignore
       name,
+      // @ts-ignore
       link,
+      // @ts-ignore
       phone,
-      showPrimary,
+      // @ts-ignore
       goBackLink,
+      // @ts-ignore
       isPromoted,
     } = this.props
     const listerPhoneProps = {
+      // @ts-ignore
       announcerPhone: this.state.fullPhone || phone,
       announcementId: id,
+      // @ts-ignore
       togglePhone: this.togglePhone,
     }
     const goToLinkProps = {
       name,
       link,
     }
+    // @ts-ignore
     const description = this.props.description || polishDescription // TODO: LANG!
     const headingProps = {
       name,
@@ -114,7 +151,6 @@ class AnnouncementTile extends React.Component {
       floor,
       totalFloors,
       availabilityDate,
-      showPrimary,
     }
     const featuresProps = {
       lang,
@@ -146,6 +182,7 @@ class AnnouncementTile extends React.Component {
         <div className='listing-tile'>
           <Heading {...{ ...headingProps, tier: 1 }} />
           {isPhoneable ? <ListerPhone {...listerPhoneProps} /> : <GoToLink {...goToLinkProps} />}
+          {/* @ts-ignore */}
           <Pictures {...picturesProps} />
           <PrimaryData {...primaryDataProps} />
           {features && features.length > 0 && <Items {...featuresProps} />}

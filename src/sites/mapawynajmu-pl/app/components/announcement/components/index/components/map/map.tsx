@@ -44,7 +44,6 @@ class AnnouncementIndexMap extends React.Component {
     } = this.props
     // @ts-ignore
     const changeHoveredTileId = hoveredTileId => setControl({ hoveredTileId })
-    const tileComponents = { showPrimary: true }
     const height = isMobile ? undefined : screenHeight - 60 - 60 - 36
 
     return (
@@ -140,6 +139,7 @@ class AnnouncementIndexMap extends React.Component {
           {tile && Object.keys(tile).length > 1 && (
             <div className='listing-tile-container'>
               <ListingTile
+                // @ts-ignore
                 lang={lang}
                 id={tile.id}
                 category={tile.category}
@@ -168,7 +168,6 @@ class AnnouncementIndexMap extends React.Component {
                 features={tile.features}
                 furnishings={tile.furnishings}
                 goBackLink={goBackLink}
-                {...tileComponents}
               />
             </div>
           )}

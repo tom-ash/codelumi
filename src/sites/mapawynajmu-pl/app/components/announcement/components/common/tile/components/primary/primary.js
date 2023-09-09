@@ -34,7 +34,6 @@ class AnnouncementCreatePrimary extends React.Component {
       floor,
       totalFloors,
       availabilityDate,
-      showPrimary,
     } = this.props
 
     const currency = parseCurrency(rentCurrency)
@@ -60,14 +59,12 @@ class AnnouncementCreatePrimary extends React.Component {
             type='gross total'
             perSqm={false}
           />
-          {showPrimary && (
-            <PresentRent
-              amount={grossRentAmountPerSqm}
-              currency={currency}
-              type='gross per-sqm'
-              perSqm={true}
-            />
-          )}
+          <PresentRent
+            amount={grossRentAmountPerSqm}
+            currency={currency}
+            type='gross per-sqm'
+            perSqm={true}
+          />
         </div>
         {netRentAmount && netRentAmountPerSqm && (
           <div className='column'>
@@ -78,40 +75,40 @@ class AnnouncementCreatePrimary extends React.Component {
               perSqm={false}
               net={true}
             />
-            {showPrimary && (
-              <PresentRent
-                amount={netRentAmountPerSqm}
-                currency={currency}
-                type='net per-sqm'
-                perSqm={true}
-                net={true}
-              />
-            )}
+            <PresentRent
+              amount={netRentAmountPerSqm}
+              currency={currency}
+              type='net per-sqm'
+              perSqm={true}
+              net={true}
+            />
           </div>
         )}
         <div className='float-clear' />
-        {showPrimary && (
-          <>
-            {rooms !== null && (
-              <div className='rooms'>
-                {/* TODO: LANG! */}
-                {rooms} {presentRooms({ rooms, category })['pl']}
-              </div>
-            )}
-            {floor !== null && <div className='floor'>{presentFloor({ floor })['pl']}</div>}
-            {totalFloors !== null && (
-              // TODO: LANG!
-              <div className='total-floors'>{presentTotalFloors({ totalFloors })['pl']}</div>
-            )}
-            {availabilityDate !== null && (
-              <div className='available-from'>
-                {/* TODO: LANG! */}
-                {presentAvailabilityDate({ availabilityDate, category })['pl']}
-              </div>
-            )}
-            <div className='float-clear' />
-          </>
+
+
+
+        {rooms !== null && (
+          <div className='rooms'>
+            {/* TODO: LANG! */}
+            {rooms} {presentRooms({ rooms, category })['pl']}
+          </div>
         )}
+        {floor !== null && <div className='floor'>{presentFloor({ floor })['pl']}</div>}
+        {totalFloors !== null && (
+          // TODO: LANG!
+          <div className='total-floors'>{presentTotalFloors({ totalFloors })['pl']}</div>
+        )}
+        {availabilityDate !== null && (
+          <div className='available-from'>
+            {/* TODO: LANG! */}
+            {presentAvailabilityDate({ availabilityDate, category })['pl']}
+          </div>
+        )}
+        <div className='float-clear' />
+
+
+        
       </div>
     )
   }

@@ -1,6 +1,7 @@
 import initialAppState from '../../constants/initial-app-state'
 import { combineReducers } from 'redux'
 
+// @ts-ignore
 const appReducer = (state = initialAppState, action) => {
   switch (action.type) {
     case 'app':
@@ -10,6 +11,7 @@ const appReducer = (state = initialAppState, action) => {
   }
 }
 
+// @ts-ignore
 const renderReducer = (state = {}, action) => {
   switch (action.type) {
     case 'render':
@@ -21,6 +23,7 @@ const renderReducer = (state = {}, action) => {
   }
 }
 
+// @ts-ignore
 const textsReducer = (state = {}, action) => {
   switch (action.type) {
     case 'texts':
@@ -32,6 +35,7 @@ const textsReducer = (state = {}, action) => {
   }
 }
 
+// @ts-ignore
 const assetsReducer = (state = {}, action) => {
   switch (action.type) {
     case 'assets':
@@ -43,6 +47,7 @@ const assetsReducer = (state = {}, action) => {
   }
 }
 
+// @ts-ignore
 const linksReducer = (state = {}, action) => {
   switch (action.type) {
     case 'links':
@@ -54,6 +59,7 @@ const linksReducer = (state = {}, action) => {
   }
 }
 
+// @ts-ignore
 const controlReducer = (state = {}, action) => {
   switch (action.type) {
     case 'control':
@@ -65,6 +71,7 @@ const controlReducer = (state = {}, action) => {
   }
 }
 
+// @ts-ignore
 const dataReducer = (state = {}, action) => {
   switch (action.type) {
     case 'data':
@@ -76,6 +83,7 @@ const dataReducer = (state = {}, action) => {
   }
 }
 
+// @ts-ignore
 const inputsReducer = (state = {}, action) => {
   switch (action.type) {
     case 'inputs':
@@ -87,6 +95,7 @@ const inputsReducer = (state = {}, action) => {
   }
 }
 
+// @ts-ignore
 const errorsReducer = (state = {}, action) => {
   switch (action.type) {
     case 'errors':
@@ -98,6 +107,7 @@ const errorsReducer = (state = {}, action) => {
   }
 }
 
+// @ts-ignore
 const visitorReducer = (state = {}, action) => {
   switch (action.type) {
     case 'visitor':
@@ -107,6 +117,7 @@ const visitorReducer = (state = {}, action) => {
   }
 }
 
+// @ts-ignore
 const userReducer = (state = {}, action) => {
   switch (action.type) {
     case 'user':
@@ -116,6 +127,7 @@ const userReducer = (state = {}, action) => {
   }
 }
 
+// @ts-ignore
 const metaReducer = (state = {}, action) => {
   switch (action.type) {
     case 'meta':
@@ -124,6 +136,7 @@ const metaReducer = (state = {}, action) => {
       return state
   }
 }
+
 
 export const rootReducer = combineReducers({
   app: appReducer,

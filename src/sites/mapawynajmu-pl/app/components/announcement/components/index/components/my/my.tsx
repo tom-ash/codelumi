@@ -48,10 +48,6 @@ class AnnouncementIndexMy extends React.Component {
     let whichAnnouncements = `${offset + 1} - ${toValue} ${{ pl: 'z', en: 'of' }['pl']}`
     if (offset + 1 === amount) whichAnnouncements = `${offset + 1} ${{ pl: 'z', en: 'of' }['pl']}`
 
-    const tileComponents = {
-      showPrimary: false,
-    }
-
     return (
       <div id='listing-index-user'>
         <h1>
