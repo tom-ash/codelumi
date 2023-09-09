@@ -1,4 +1,4 @@
-import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/change-url'
+import { updateUrl } from '../../../../../../../shared/app/functions/routes/updaters/update-url'
 
 interface DrawPinProps {
   latitude: number
@@ -9,10 +9,11 @@ interface DrawPinProps {
   path: string
   setControl(props: object): void
   setData(props: object): void
+  isMobile: boolean
 }
 
 function drawPin(props: DrawPinProps) {
-  const { latitude, longitude, id, htmlContent, className, path, setControl, setData } = props
+  const { latitude, longitude, id, htmlContent, className, path, setControl } = props
 
   // @ts-ignore
   return new window.pinCreator(
@@ -37,8 +38,13 @@ function drawPin(props: DrawPinProps) {
           },
         })
 
-        setData({ tile: null, tileId: null })
-        changeUrl({ href: path, withScroll: false })
+        // @ts-ignore
+        // console.log(this.props)
+
+        // isMobile ? setControl({ currentTileId: id }) : zoomToPin
+
+        // setControl({ currentTileId: id })
+        updateUrl({ href: path, retainQueryParams: true, withScroll: false })
       },
     }
   )

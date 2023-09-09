@@ -3,12 +3,9 @@ import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
 import ListingTile from '../../../common/tile/tile'
-import drawPins from '../../../../functions/map/pins/draw-pins'
-import redrawPins from '../../../../functions/map/pins/redraw-pins'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import { ListingIndexTile } from '../tile/tile'
-import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
 import { updateUrl } from '../../../../../../../../shared/app/functions/routes/updaters/update-url'
 
 class AnnouncementIndexMap extends React.Component {
@@ -20,10 +17,6 @@ class AnnouncementIndexMap extends React.Component {
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
-    // @ts-ignore
-    this.drawPins = drawPins.bind(this)
-    // @ts-ignore
-    this.redrawPins = redrawPins.bind(this)
   }
 
   render() {
@@ -35,13 +28,7 @@ class AnnouncementIndexMap extends React.Component {
       // @ts-ignore
       announcements,
       // @ts-ignore
-      setData,
-      // @ts-ignore
       isMobile,
-      // @ts-ignore
-      miniListFarthestScrollTop,
-      // @ts-ignore
-      miniListFarthestScrollLeft,
       // @ts-ignore
       setApp,
       // @ts-ignore

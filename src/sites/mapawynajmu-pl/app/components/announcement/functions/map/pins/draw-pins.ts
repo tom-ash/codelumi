@@ -1,22 +1,34 @@
 import { categories } from '../../../constants/categories'
 import drawPin from './draw-pin'
 
-function drawPins(currentListingId: number) {
+interface DrawPins {
+  (attrs: {
+    listings: any; // TODO
+    currentListingId: number;
+    isMobile: boolean;
+    svgs: any; // TODO
+    setData: any; // TODO
+    setControl: any; // TODO
+  }): void
+}
+
+const drawPins: DrawPins = (attrs) => {
   if (typeof window === 'undefined') return
 
   const {
-    setData,
-    announcements,
+    isMobile,
     svgs,
+    listings,
+    currentListingId,
+    setData,
     setControl,
-    // @ts-ignore
-  } = this.props
+  } = attrs
 
   // @ts-ignore
   let pins = []
 
   // @ts-ignore
-  announcements.map(announcement => {
+  listings.map(announcement => {
     const { id, category: categoryNumber, latitude, longitude, path, isPromoted } = announcement
     const category = categories.find(category => category.number === categoryNumber)
     // @ts-ignore
@@ -45,6 +57,7 @@ function drawPins(currentListingId: number) {
 
     pins.push(
       drawPin({
+        isMobile,
         id,
         htmlContent,
         className: classNames.join(' '),

@@ -3,8 +3,11 @@ import setShouldInitializeMap from '../../../../../functions/map/set-should-init
 import initializeMap from '../../../../../functions/map/initialize'
 import setShouldDrawPins from '../../../../../functions/map/pins/set-should-draw'
 import { getDefaultMapOptions } from './get-default-map-options'
+import drawPins from '../../../../../functions/map/pins/draw-pins'
+import redrawPins from '../../../../../functions/map/pins/redraw-pins'
 
 export function componentDidMount() {
+  // @ts-ignore
   const { isMapInitialized, shouldInitializeMap, googleMapsScriptLoaded, setControl } = this.props
 
   setShouldInitializeMap({
@@ -15,6 +18,7 @@ export function componentDidMount() {
   })
 }
 
+// @ts-ignore
 export function componentDidUpdate(prevProps) {
   const {
     loadPins: prevLoadPins,
@@ -31,6 +35,8 @@ export function componentDidUpdate(prevProps) {
     isMapInitialized,
     shouldInitializeMap,
     googleMapsScriptLoaded,
+    svgs,
+    setData,
     setControl,
     announcements,
     // loadPins,
@@ -41,6 +47,8 @@ export function componentDidUpdate(prevProps) {
     isMobile,
     isPinsDrawn,
     shouldDrawPins,
+    pins,
+    // @ts-ignore
   } = this.props
 
   const defaultMapOptions = getDefaultMapOptions(isMobile)
@@ -67,7 +75,14 @@ export function componentDidUpdate(prevProps) {
   })
 
   if (shouldDrawPins && !prevShouldDrawPins) {
-    this.drawPins(currentTileId)
+    drawPins({
+      isMobile,
+      listings: announcements,
+      currentListingId: currentTileId,
+      svgs,
+      setData,
+      setControl,
+    })
   }
 
   if (hoveredTileId && !prevHoveredTileId) {
@@ -96,11 +111,20 @@ export function componentDidUpdate(prevProps) {
   }
 
   if (announcements !== prevAnnouncements) {
-    this.redrawPins(currentTileId)
+    redrawPins({
+      isMobile,
+      svgs,
+      pins,
+      listings: announcements,
+      currentListingId: currentTileId,
+      setData,
+      setControl,
+    })
   }
 }
 
 export function componentWillUnmount() {
+  // @ts-ignore
   const { pins } = this.props
 
   removePins(pins)

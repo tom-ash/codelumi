@@ -1,17 +1,39 @@
 import drawPins from './draw-pins'
 import removePins from './remove-pins'
 
-// @ts-ignore
-export function redrawPins(currentListingId) {
+interface RedrawPins {
+  (attrs: {
+    pins: any; // TODO
+    listings: any; // TODO
+    currentListingId: number;
+    isMobile: boolean;
+    svgs: any; // TODO
+    setData: any; // TODO
+    setControl: any; // TODO
+  }): void
+}
+
+export const redrawPins: RedrawPins = (attrs) => {
   const {
     pins,
-    // @ts-ignore
-  } = this.props
+    listings,
+    currentListingId,
+    isMobile,
+    svgs,
+    setData,
+    setControl,
+  } = attrs
 
   removePins(pins)
 
-  // @ts-ignore
-  drawPins.call(this, currentListingId)
+  drawPins({
+    listings,
+    currentListingId,
+    isMobile,
+    svgs,
+    setData,
+    setControl,
+  })
 }
 
 export default redrawPins

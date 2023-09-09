@@ -6,6 +6,7 @@ import drawPin from './draw-pin'
 import { removePins } from '../../../../../functions/map/pins/remove-pins'
 
 export function componentDidMount() {
+  // @ts-ignore
   const { shouldInitializeMap, isMapInitialized, googleMapsScriptLoaded, setControl } = this.props
 
   setShouldInitializeMap({
@@ -16,6 +17,7 @@ export function componentDidMount() {
   })
 }
 
+// @ts-ignore
 export function componentDidUpdate(prevProps) {
   const {
     shouldInitializeMap: prevShouldInitializeMap,
@@ -37,6 +39,7 @@ export function componentDidUpdate(prevProps) {
     pin,
     svgs,
     category,
+    // @ts-ignore
   } = this.props
 
   setShouldInitializeMap({
@@ -52,6 +55,7 @@ export function componentDidUpdate(prevProps) {
       isMobile,
       setControl,
     })
+    // @ts-ignore
     addGoogleMapListeners.call(this)
   }
 
@@ -79,11 +83,13 @@ export function componentDidUpdate(prevProps) {
 }
 
 export function componentWillUnmount() {
+  // @ts-ignore
   const { pin, setData } = this.props
 
   if (pin) {
     removePins([pin])
   }
 
+  // @ts-ignore
   removeGoogleMapListeners.call(this)
 }
