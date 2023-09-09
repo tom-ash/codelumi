@@ -28,22 +28,7 @@ function drawPin(props: DrawPinProps) {
       onClick: (e: React.MouseEvent<HTMLElement>) => {
         e.preventDefault()
 
-        setControl({
-          mapOptions: {
-            center: {
-              lat: latitude,
-              lng: longitude,
-            },
-            zoom: 12.4,
-          },
-        })
-
-        // @ts-ignore
-        // console.log(this.props)
-
-        // isMobile ? setControl({ currentTileId: id }) : zoomToPin
-
-        // setControl({ currentTileId: id })
+        setControl({ currentTileId: id })
         updateUrl({ href: path, retainQueryParams: true, withScroll: false })
       },
     }

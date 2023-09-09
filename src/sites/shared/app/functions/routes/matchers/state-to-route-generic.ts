@@ -2,8 +2,6 @@ import getPureUrl from '../../../../shared/functions/routes/getters/pure-url'
 import { syncRouteData } from '../synchronizers/route-data'
 import { stateSetter } from '../setters/state-setter'
 import { stateResetter } from '../resetters/state-resetter'
-import getCookieValue from '../../cookies/getters/get-cookie-value'
-import getCookieAsBool from '../../cookies/getters/get-cookie-as-bool'
 import metaSetter from '../setters/meta'
 import { Dispatch } from 'redux'
 
