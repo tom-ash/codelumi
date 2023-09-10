@@ -31,6 +31,23 @@
   .pictures {
     @extend %pictures;
   }
+  .secondary {
+    padding: 0 24px;
+    .item {
+      position: relative;
+      margin-bottom: 12px;
+      font-size: 18px!important;
+      color: #424949;
+      padding-left: 32px;
+    }
+    svg {
+      position: absolute;
+      top: 0px;
+      left: 2px;
+      height: 17px;
+      fill: #626567;
+    }
+  }
   .primary-data {
     @extend %primary-data;
   }

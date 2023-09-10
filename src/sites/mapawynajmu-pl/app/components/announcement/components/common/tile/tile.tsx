@@ -6,6 +6,7 @@ const GoToLink = loadable(() => import('./components/go-to-link'))
 const Heading = loadable(() => import('./components/heading'))
 const Pictures = loadable(() => import('./components/pictures/pictures'))
 const PrimaryData = loadable(() => import('./components/primary/primary'))
+const Secondary = loadable(() => import('./components/secondary/secondary'))
 const Items = loadable(() => import('./components/features-furnishings/features-furnishings'))
 const Description = loadable(() => import('./components/description/description'))
 import { togglePhone } from '../../../functions/toggle-phone'
@@ -185,6 +186,13 @@ class AnnouncementTile extends React.Component {
           {/* @ts-ignore */}
           <Pictures {...picturesProps} />
           <PrimaryData {...primaryDataProps} />
+          <Secondary 
+            rooms={rooms}
+            category={category}
+            floor={floor}
+            totalFloors={totalFloors}
+            availabilityDate={availabilityDate}
+          />
           {features && features.length > 0 && <Items {...featuresProps} />}
           {furnishings && furnishings.length > 0 && <Items {...furnishingsProps} />}
           {description && <Description {...descriptionProps} />}
