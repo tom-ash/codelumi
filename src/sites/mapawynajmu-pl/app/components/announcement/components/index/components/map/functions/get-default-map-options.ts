@@ -11,8 +11,6 @@ interface GetDefaultMapOptions {
 }
 
 export const getDefaultMapOptions: GetDefaultMapOptions = (isMobile) => {
-
-    console.log(isMobile)
   if (isMobile) {
     return ({
       center: {

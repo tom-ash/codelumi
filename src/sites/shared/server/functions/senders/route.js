@@ -34,9 +34,11 @@ function routeSender({ res, apiUrl, url, query, device, accessToken, appRenderer
         res.redirect(redirectStatus, redirectedUrl)
       } else {
         const app = { ...initialAppState, lang, device }
+        const visitor = {}
         const initialState = {
           ...state,
           app,
+          visitor,
         }
         const appAsHtml = appRenderer(initialState)
         const html = indexRenderer({ ...meta, ...appAsHtml, lang, clientUrl, gtmId })
