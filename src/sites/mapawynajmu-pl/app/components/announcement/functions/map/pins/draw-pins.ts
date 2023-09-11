@@ -1,5 +1,6 @@
 import { categories } from '../../../constants/categories'
 import drawPin from './draw-pin'
+import removePins from './remove-pins';
 
 interface DrawPins {
   (attrs: {
@@ -71,7 +72,9 @@ const drawPins: DrawPins = (attrs) => {
   })
 
   // @ts-ignore
-  setData({ pins })
+  removePins(window.pins || [])
+  // @ts-ignore
+  window.pins = pins
 }
 
 export default drawPins

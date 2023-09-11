@@ -3,7 +3,6 @@ import mapOptionsProvider, { MapOptions } from './options-provider'
 interface ReplaceMapProps {
   mapOptions: MapOptions
   isMobile: boolean
-  setControl(props: object): void
 }
 
 function replaceMap(props: ReplaceMapProps) {

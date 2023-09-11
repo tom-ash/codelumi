@@ -6,15 +6,25 @@ import drawPin from './draw-pin'
 import { removePins } from '../../../../../functions/map/pins/remove-pins'
 
 export function componentDidMount() {
-  // @ts-ignore
-  const { shouldInitializeMap, isMapInitialized, googleMapsScriptLoaded, setControl } = this.props
-
-  setShouldInitializeMap({
-    isMapInitialized,
-    shouldInitializeMap,
+  const {
     googleMapsScriptLoaded,
+    mapOptions,
+    isMobile,
     setControl,
-  })
+    // @ts-ignore
+  } = this.props
+
+  if (googleMapsScriptLoaded) {
+    setControl({ isMapInitialized: true })
+
+    initializeMap({
+      mapOptions,
+      isMobile,
+    })
+
+    // @ts-ignore
+    addGoogleMapListeners.call(this)
+  }
 }
 
 // @ts-ignore
@@ -42,21 +52,38 @@ export function componentDidUpdate(prevProps) {
     // @ts-ignore
   } = this.props
 
-  setShouldInitializeMap({
-    isMapInitialized,
-    shouldInitializeMap,
-    googleMapsScriptLoaded,
-    setControl,
-  })
+  if (googleMapsScriptLoaded && !isMapInitialized) {
+    setControl({ isMapInitialized: true })
+
+    initializeMap({
+      mapOptions,
+      isMobile,
+    })
+
+    // @ts-ignore
+    addGoogleMapListeners.call(this)
+  }
 
   if (shouldInitializeMap && !prevShouldInitializeMap) {
     initializeMap({
       mapOptions,
       isMobile,
-      setControl,
     })
     // @ts-ignore
     addGoogleMapListeners.call(this)
+  }
+
+  if (isMapInitialized && longitude && latitude && !pin) {
+    setData({
+      pin: drawPin({
+        latitude,
+        longitude,
+        svgs,
+        category,
+      }),
+    })
+
+    return
   }
 
   if (latitude !== prevLatitude || longitude !== prevLongitude || category !== prevCategory) {
@@ -70,21 +97,12 @@ export function componentDidUpdate(prevProps) {
         category,
       }),
     })
-  } else if (isMapInitialized && longitude && latitude && !pin) {
-    setData({
-      pin: drawPin({
-        latitude,
-        longitude,
-        svgs,
-        category,
-      }),
-    })
   }
 }
 
 export function componentWillUnmount() {
   // @ts-ignore
-  const { pin, setData } = this.props
+  const { pin } = this.props
 
   if (pin) {
     removePins([pin])

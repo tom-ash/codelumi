@@ -1,80 +1,65 @@
 import removePins from '../../../../../functions/map/pins/remove-pins'
-import setShouldInitializeMap from '../../../../../functions/map/set-should-initialize'
 import initializeMap from '../../../../../functions/map/initialize'
-import setShouldDrawPins from '../../../../../functions/map/pins/set-should-draw'
 import { getDefaultMapOptions } from './get-default-map-options'
 import drawPins from '../../../../../functions/map/pins/draw-pins'
-import redrawPins from '../../../../../functions/map/pins/redraw-pins'
 
 export function componentDidMount() {
-  // @ts-ignore
-  const { isMapInitialized, shouldInitializeMap, googleMapsScriptLoaded, setControl } = this.props
-
-  setShouldInitializeMap({
-    isMapInitialized,
-    shouldInitializeMap,
+  const {
     googleMapsScriptLoaded,
+    mapOptions,
+    isMobile,
     setControl,
-  })
+    // @ts-ignore
+  } = this.props
+
+  if (googleMapsScriptLoaded) {
+    setControl({ isMapInitialized: true })
+
+    initializeMap({
+      mapOptions,
+      isMobile,
+    })
+  }
 }
 
 // @ts-ignore
 export function componentDidUpdate(prevProps) {
   const {
-    loadPins: prevLoadPins,
-    announcements: prevAnnouncements,
     hoveredTileId: prevHoveredTileId,
     tile: prevTile,
     mapOptions: prevMapOptions,
-    shouldInitializeMap: prevShouldInitializeMap,
-    shouldDrawPins: prevShouldDrawPins,
-    isMobile: prevIsMobile,
   } = prevProps
 
   const {
     isMapInitialized,
-    shouldInitializeMap,
     googleMapsScriptLoaded,
     svgs,
     setData,
     setControl,
     announcements,
-    // loadPins,
     hoveredTileId,
     currentTileId,
     tile,
     mapOptions,
     isMobile,
-    isPinsDrawn,
     shouldDrawPins,
-    pins,
     // @ts-ignore
   } = this.props
 
   const defaultMapOptions = getDefaultMapOptions(isMobile)
 
-  setShouldInitializeMap({
-    isMapInitialized,
-    shouldInitializeMap,
-    googleMapsScriptLoaded,
-    setControl,
-  })
+  if (googleMapsScriptLoaded && !isMapInitialized) {
+    setControl({ isMapInitialized: true })
 
-  if (shouldInitializeMap && !prevShouldInitializeMap) {
     initializeMap({
       mapOptions: defaultMapOptions,
       isMobile,
-      setControl,
     })
   }
+  
+  if (isMapInitialized && shouldDrawPins) {
+    setControl({ shouldDrawPins: false })
 
-  setShouldDrawPins({
-    isPinsDrawn,
-    isMapInitialized,
-    setControl,
-  })
-
-  if (shouldDrawPins && !prevShouldDrawPins) {
     drawPins({
       isMobile,
       listings: announcements,
@@ -109,23 +94,13 @@ export function componentDidUpdate(prevProps) {
     const map = window.googleMap
     map.setOptions(mapOptions)
   }
-
-  if (announcements !== prevAnnouncements) {
-    redrawPins({
-      isMobile,
-      svgs,
-      pins,
-      listings: announcements,
-      currentListingId: currentTileId,
-      setData,
-      setControl,
-    })
-  }
 }
 
 export function componentWillUnmount() {
   // @ts-ignore
-  const { pins } = this.props
+  const pins = window.pins
 
-  removePins(pins)
+  if (pins) {
+    removePins(pins)
+  }
 }
