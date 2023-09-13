@@ -174,13 +174,15 @@ class AnnouncementTile extends React.Component {
       classNames.push('promoted')
     }
 
+    const key = `listing-${id}`
+
     return (
       <>
         <GoBack
           id={id}
           goBackLink={goBackLink}
         />
-        <div className='listing-tile'>
+        <div className='listing-tile' key={key}>
           <Heading {...{ ...headingProps, tier: 1 }} />
           {isPhoneable ? <ListerPhone {...listerPhoneProps} /> : <GoToLink {...goToLinkProps} />}
           {/* @ts-ignore */}
