@@ -24,7 +24,6 @@ export const mapStateToProps = store => {
     mapOptions,
     shouldInitializeMap,
     isPinsDrawn,
-    shouldDrawPins,
   } = control
   const { announcements, pins, tileId, tile, title, currentPartnerName } = data
 
@@ -48,11 +47,9 @@ export const mapStateToProps = store => {
     fetch,
     hoveredTileId,
     currentTileId,
-    isPinsDrawn,
     mapOptions,
     shouldInitializeMap,
     isPinsDrawn,
-    shouldDrawPins,
     title,
     currentPartnerName,
     goBackLink,

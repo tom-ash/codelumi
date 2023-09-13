@@ -42,7 +42,7 @@ export function componentDidUpdate(prevProps) {
     tile,
     mapOptions,
     isMobile,
-    shouldDrawPins,
+    isPinsDrawn,
     // @ts-ignore
   } = this.props
 
@@ -57,8 +57,8 @@ export function componentDidUpdate(prevProps) {
     })
   }
   
-  if (isMapInitialized && shouldDrawPins) {
-    setControl({ shouldDrawPins: false })
+  if (isMapInitialized && !isPinsDrawn) {
+    setControl({ isPinsDrawn: true })
 
     drawPins({
       isMobile,
