@@ -8,5 +8,9 @@ interface StateResetter {
 }
 
 export const stateResetter: StateResetter = ({ state, dispatch }) => {
-  dispatch({ type: 'state/reset', value: state })
+  dispatch({ type: 'render/reset', value: state })
+
+  setTimeout(() => {
+    dispatch({ type: 'state/reset', value: state })
+  }, 0)
 }
