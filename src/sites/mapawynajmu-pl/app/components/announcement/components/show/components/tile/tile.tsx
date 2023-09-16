@@ -170,13 +170,16 @@ class ListingShowTile extends React.Component {
     const key = `listing-${id}`
 
     return (
-      <div className='listing-show-tile' key={key}>
+      <div
+        className='listing-show-tile'
+        key={key}
+      >
         <Heading {...{ ...headingProps, tier: 1 }} />
         {isPhoneable ? <ListerPhone {...listerPhoneProps} /> : <GoToLink {...goToLinkProps} />}
         {/* @ts-ignore */}
         <Pictures {...picturesProps} />
         <PrimaryData {...primaryDataProps} />
-        <Secondary 
+        <Secondary
           rooms={rooms}
           category={category}
           floor={floor}

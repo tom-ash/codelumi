@@ -105,4 +105,3 @@ class AnnouncementCreatePrimary extends React.Component {
 }
 
 export default AnnouncementCreatePrimary
-

@@ -1,21 +1,23 @@
 import initialAppState from '../../constants/initial-app-state'
 
-// @ts-ignore
-export const rootReducer = (state = {
-  app: initialAppState,
-  user: {},
-  meta: {},
-  links: {},
-  assets: {},
-  texts: {},
-  errors: {},
-  inputs: {},
-  data: {},
-  control: {},
-  render: {},
-  visitor: {},
+export const rootReducer = (
+  state = {
+    app: initialAppState,
+    user: {},
+    meta: {},
+    links: {},
+    assets: {},
+    texts: {},
+    errors: {},
+    inputs: {},
+    data: {},
+    control: {},
+    render: {},
+    visitor: {},
+  },
   // @ts-ignore
-}, action) => {
+  action
+) => {
   const stateKeys = [
     'app',
     'user',
@@ -28,7 +30,7 @@ export const rootReducer = (state = {
     'data',
     'control',
     'render',
-    'visitor'
+    'visitor',
   ]
 
   let actionType = action.type
@@ -66,15 +68,15 @@ export const rootReducer = (state = {
     actionType = actionType.replace('/reset', '')
 
     const newTypeValue = action.value
-    const newState = { ...state, [actionType]: newTypeValue}
+    const newState = { ...state, [actionType]: newTypeValue }
 
     return newState
   }
-  
+
   if (stateKeys.indexOf(actionType) !== -1) {
     // @ts-ignore
     const newTypeValue = { ...state[actionType], ...actionValue }
-    const newState = { ...state, [actionType]: newTypeValue}
+    const newState = { ...state, [actionType]: newTypeValue }
 
     return newState
   }

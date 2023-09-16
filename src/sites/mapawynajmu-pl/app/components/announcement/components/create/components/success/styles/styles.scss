@@ -17,7 +17,8 @@
     }
     @extend %action-buttons;
     .promotion-actions {
-      .promote, .share-on-facebook {
+      .promote,
+      .share-on-facebook {
         display: inline-block;
         vertical-align: top;
         width: 284px;

@@ -24,11 +24,7 @@ export function componentDidMount() {
 
 // @ts-ignore
 export function componentDidUpdate(prevProps) {
-  const {
-    hoveredTileId: prevHoveredTileId,
-    tile: prevTile,
-    mapOptions: prevMapOptions,
-  } = prevProps
+  const { hoveredTileId: prevHoveredTileId, tile: prevTile, mapOptions: prevMapOptions } = prevProps
 
   const {
     isMapInitialized,
@@ -56,7 +52,7 @@ export function componentDidUpdate(prevProps) {
       isMobile,
     })
   }
-  
+
   if (isMapInitialized && !isPinsDrawn) {
     setControl({ isPinsDrawn: true })
 

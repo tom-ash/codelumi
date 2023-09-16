@@ -10,11 +10,7 @@ export const mapStateToProps = store => {
   const { authorized, admin } = store.user
   const { step, savingListing, savingPicture } = control
   const { id, pin, announcement, user } = data
-  const {
-    termsOfServiceConsentLabel,
-    shareOnFacebookButtonLabel,
-    congratulations,
-  } = texts
+  const { termsOfServiceConsentLabel, shareOnFacebookButtonLabel, congratulations } = texts
   const {
     category,
     blobs,

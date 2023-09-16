@@ -8,7 +8,11 @@ interface SubmitWithPromotionInterface {
 }
 
 export const PromotionBenefits: SubmitWithPromotionInterface = () => {
-  const { state: { texts: { promotionBenefits, promotionBenefitsSummary }} } = useStore()
+  const {
+    state: {
+      texts: { promotionBenefits, promotionBenefitsSummary },
+    },
+  } = useStore()
 
   return (
     <div className='promotion-benefits'>

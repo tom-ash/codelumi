@@ -5,7 +5,9 @@
 %submit {
   text-align: center;
   padding: 32px 0;
-  .without-promotion, .or, .with-promotion {
+  .without-promotion,
+  .or,
+  .with-promotion {
     display: inline-block;
     vertical-align: top;
     @media #{$SMALL-TABLET} {
@@ -13,7 +15,8 @@
       margin: 24px auto;
     }
   }
-  .without-promotion, .with-promotion {
+  .without-promotion,
+  .with-promotion {
     width: 200px;
   }
   .without-promotion {

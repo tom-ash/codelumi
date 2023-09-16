@@ -60,7 +60,8 @@
     margin-bottom: 24px;
   }
   @extend %action-buttons;
-  .promotion-button, .facebook-sharer-button {
+  .promotion-button,
+  .facebook-sharer-button {
     width: 292px;
     @media #{$LARGE-PHONE} {
       width: 100%;

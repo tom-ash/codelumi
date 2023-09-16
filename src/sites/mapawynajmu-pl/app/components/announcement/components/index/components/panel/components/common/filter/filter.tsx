@@ -17,9 +17,7 @@ export const Filter: FilterInterface = props => {
   const onClick = () => setControl({ [`${name}FilterPanel`]: true })
 
   return (
-    <div
-      className={`filter ${name}`}
-    >
+    <div className={`filter ${name}`}>
       <SVG name={svgName} />
       <div
         className='input'

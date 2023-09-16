@@ -1,29 +1,22 @@
 import { categories } from '../../../constants/categories'
 import drawPin from './draw-pin'
-import removePins from './remove-pins';
+import removePins from './remove-pins'
 
 interface DrawPins {
   (attrs: {
-    listings: any; // TODO
-    currentListingId: number;
-    isMobile: boolean;
-    svgs: any; // TODO
-    setData: any; // TODO
-    setControl: any; // TODO
+    listings: any // TODO
+    currentListingId: number
+    isMobile: boolean
+    svgs: any // TODO
+    setData: any // TODO
+    setControl: any // TODO
   }): void
 }
 
-const drawPins: DrawPins = (attrs) => {
+const drawPins: DrawPins = attrs => {
   if (typeof window === 'undefined') return
 
-  const {
-    isMobile,
-    svgs,
-    listings,
-    currentListingId,
-    setData,
-    setControl,
-  } = attrs
+  const { isMobile, svgs, listings, currentListingId, setData, setControl } = attrs
 
   // @ts-ignore
   let pins = []

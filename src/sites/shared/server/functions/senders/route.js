@@ -6,16 +6,28 @@ import * as Sentry from '@sentry/node'
 
 // 'Lang': TODO Get lang from request,
 
-function routeSender({ res, apiUrl, url, query, device, accessToken, appRenderer, clientUrl, gtmId, deviceFromHeader, langFromHeader }) {
+function routeSender({
+  res,
+  apiUrl,
+  url,
+  query,
+  device,
+  accessToken,
+  appRenderer,
+  clientUrl,
+  gtmId,
+  deviceFromHeader,
+  langFromHeader,
+}) {
   let status
 
   fetch(`${apiUrl}/sync${query}`, {
     headers: {
       'Content-Type': 'application/json',
-      'Type': 'ssr',
+      Type: 'ssr',
       'Route-Url': url,
       'Access-Token': accessToken,
-      'Device': deviceFromHeader,
+      Device: deviceFromHeader,
       'Device-Lang': langFromHeader,
     },
   })
