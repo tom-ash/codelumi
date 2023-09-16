@@ -1,16 +1,78 @@
 # README
 
 ## Page Fragments
-{
-  "TableOfContents": "Table of Contents"
-},
+# README
 
-{
-  "Section": [
-    {
-      "HeadingTwo": "TODO"
-    },
-    "TODO"
-  ],
-  "identifier": "todo"
-},
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+## Page Example
+[
+  {
+    "Main": [
+      {
+        "Article": [
+          {
+            "Header": {
+            }
+          },
+          {
+            "Editorial": "TODO"
+          },
+          {
+            "TableOfContents": "Spis treści"
+          },
+          {
+            "Section": [
+              {
+                "HeadingTwo": "TODO"
+              },
+              "TODO"
+            ],
+            "identifier": "todo"
+          },
+          {
+            "Section": [
+              {
+                "HeadingTwo": "TODO"
+              },
+              "TODO"
+            ],
+            "identifier": "todo"
+          },
+          {
+            "Section": [
+              {
+                "HeadingTwo": "TODO"
+              },
+              "TODO"
+            ],
+            "identifier": "todo"
+          }
+        ],
+        "className": "article"
+      }
+    ],
+    "className": "page"
+  }
+]
