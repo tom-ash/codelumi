@@ -1,0 +1,33 @@
+@import '../components/tile/styles/tile';
+@import '../components/tile/styles/go-back-to-list';
+
+#listing-show {
+    @extend %hidden-scrollbar;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 640px;
+    text-align: left;
+    margin: 0;
+    background: #d7dbdd;
+    padding: 18px;
+    .go-back-to-list {
+      @extend %go-back-to-list;
+    }
+    .listing-show-tile {
+      @extend %tile;
+    }
+    @media #{$LARGE-TABLET} {
+      position: fixed;
+      top: 60px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 12px;
+      background: rgba(0, 0, 0, .2);
+      overflow: scroll;
+      border-radius: 4px;
+    }
+  }

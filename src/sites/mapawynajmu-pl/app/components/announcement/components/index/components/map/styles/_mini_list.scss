@@ -1,7 +1,14 @@
 @import '../../../../../../../../../shared/app/styles/hidden-scrollbar';
 
 #mini-list {
-  @extend %hidden-scrollbar;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
   position: absolute;
   top: 0;
   bottom: 0;
@@ -16,7 +23,6 @@
     padding-right: 0;
   }
   background: #e5e7e9;
-
   > h2 {
     font-size: 18px;
     margin-bottom: 24px;

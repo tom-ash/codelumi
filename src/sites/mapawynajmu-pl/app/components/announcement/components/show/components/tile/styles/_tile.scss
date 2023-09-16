@@ -1,5 +1,4 @@
 @import '../../../../../../../../../shared/app/styles/hidden-scrollbar';
-@import './go-back-to-list';
 @import '../../../../support/heading/styles/styles.scss';
 @import './h2';
 @import './lister_phone';
@@ -10,13 +9,14 @@
 @import './description';
 @import './map';
 
-.go-back-to-list {
-  @extend %go-back-to-list;
-}
-
 %tile {
+  background: white;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding-bottom: 24px;
   h1 {
     @extend %heading;
+    padding: 24px 24px 0;
   }
   h2 {
     @extend %heading;
@@ -24,15 +24,18 @@
   }
   .lister-phone {
     @extend %lister-phone;
+    padding: 24px 24px 0;
   }
   .go-to-link {
     @extend %go-to-link;
   }
   .pictures {
     @extend %pictures;
+    padding: 24px 0 0;
+    margin-bottom: 0;
   }
   .secondary {
-    padding: 0 24px;
+    padding: 24px 24px 0;
     .item {
       position: relative;
       margin-bottom: 12px;
@@ -50,14 +53,17 @@
   }
   .primary-data {
     @extend %primary-data;
+    padding: 24px 24px 0;
+    margin: 0;
   }
   .features {
     @extend %features;
+    padding: 24px 24px 0;
+    margin: 0;
   }
   .description {
     @extend %description;
-  }
-  .map {
-    @extend %map;
+    padding: 24px 24px 0;
+    margin: 0;
   }
 }

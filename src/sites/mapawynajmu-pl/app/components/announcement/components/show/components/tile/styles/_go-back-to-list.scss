@@ -1,18 +1,20 @@
 %go-back-to-list {
   display: block;
+  position: absolute;
+  top: 48px;
+  right: 32px;
+  margin: 0 12px 12px auto;
   width: 36px;
   height: 36px;
+  border: none;
   border-radius: 50%;
-  background: none;
-  border: 1px solid #979a9a;
-  transition: border-color 0.15s ease-in;
-  background: white;
-  position: absolute;
-  top: 24px;
-  right: 24px;
+  box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
+  background: #F8F9F9;
   svg {
+    position: relative;
+    top: 2px;
     transform: rotate(180deg);
-    width: 18px;
+    height: 20px;
     fill: #424949;
     transition: fill 0.15s ease-in;
   }
@@ -21,5 +23,15 @@
     svg {
       fill: #626567;
     }
+  }
+
+  @media #{$LARGE-TABLET} {
+    position: fixed;
+    z-index: 1000;
+    top: 84px;
+    right: 26px;
+    width: 44px;
+    height: 44px;
+    margin: 0;
   }
 }

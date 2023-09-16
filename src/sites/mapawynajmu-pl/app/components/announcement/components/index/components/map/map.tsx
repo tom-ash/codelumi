@@ -2,11 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
-import ListingTile from '../../../show/components/tile/tile'
+import ListingShowTile from '../../../show/components/tile/tile'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import { ListingIndexTile } from '../tile/tile'
 import { updateUrl } from '../../../../../../../../shared/app/functions/routes/updaters/update-url'
+import GoBack from '../../../show/components/tile/components/go-back'
 
 class AnnouncementIndexMap extends React.Component {
   // @ts-ignore
@@ -137,8 +138,12 @@ class AnnouncementIndexMap extends React.Component {
           </div>
           <div id='google-map' />
           {tile && Object.keys(tile).length > 1 && (
-            <div className='listing-tile-container'>
-              <ListingTile
+            <div id='listing-show'>
+              <GoBack
+                id={tile.id}
+                goBackLink={goBackLink}
+              />
+              <ListingShowTile
                 // @ts-ignore
                 lang={lang}
                 id={tile.id}
@@ -167,7 +172,6 @@ class AnnouncementIndexMap extends React.Component {
                 phone={tile.phone}
                 features={tile.features}
                 furnishings={tile.furnishings}
-                goBackLink={goBackLink}
               />
             </div>
           )}

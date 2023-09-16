@@ -93,8 +93,6 @@ class ListingShowTile extends React.Component {
       // @ts-ignore
       phone,
       // @ts-ignore
-      goBackLink,
-      // @ts-ignore
       isPromoted,
     } = this.props
     const listerPhoneProps = {
@@ -172,29 +170,23 @@ class ListingShowTile extends React.Component {
     const key = `listing-${id}`
 
     return (
-      <>
-        <GoBack
-          id={id}
-          goBackLink={goBackLink}
+      <div className='listing-show-tile' key={key}>
+        <Heading {...{ ...headingProps, tier: 1 }} />
+        {isPhoneable ? <ListerPhone {...listerPhoneProps} /> : <GoToLink {...goToLinkProps} />}
+        {/* @ts-ignore */}
+        <Pictures {...picturesProps} />
+        <PrimaryData {...primaryDataProps} />
+        <Secondary 
+          rooms={rooms}
+          category={category}
+          floor={floor}
+          totalFloors={totalFloors}
+          availabilityDate={availabilityDate}
         />
-        <div className='listing-tile' key={key}>
-          <Heading {...{ ...headingProps, tier: 1 }} />
-          {isPhoneable ? <ListerPhone {...listerPhoneProps} /> : <GoToLink {...goToLinkProps} />}
-          {/* @ts-ignore */}
-          <Pictures {...picturesProps} />
-          <PrimaryData {...primaryDataProps} />
-          <Secondary 
-            rooms={rooms}
-            category={category}
-            floor={floor}
-            totalFloors={totalFloors}
-            availabilityDate={availabilityDate}
-          />
-          {features && features.length > 0 && <Items {...featuresProps} />}
-          {furnishings && furnishings.length > 0 && <Items {...furnishingsProps} />}
-          {description && <Description {...descriptionProps} />}
-        </div>
-      </>
+        {features && features.length > 0 && <Items {...featuresProps} />}
+        {furnishings && furnishings.length > 0 && <Items {...furnishingsProps} />}
+        {description && <Description {...descriptionProps} />}
+      </div>
     )
   }
 }
