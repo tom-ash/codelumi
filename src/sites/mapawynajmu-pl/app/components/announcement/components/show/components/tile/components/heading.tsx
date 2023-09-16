@@ -1,6 +1,6 @@
 import React from 'react'
-import { parseCategory } from '../../../../../../../shared/functions/parsers/parse-category'
-import localitiesPresenter from '../../../../functions/localities-presenter'
+import { parseCategory } from '../../../../../../../../shared/functions/parsers/parse-category'
+import localitiesPresenter from '../../../../../functions/localities-presenter'
 
 interface HeadingProps {
   tier: number

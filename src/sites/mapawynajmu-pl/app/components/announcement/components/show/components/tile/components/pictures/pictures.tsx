@@ -1,7 +1,7 @@
 import React from 'react'
-import ManagedSlider from '../../../../../../support/components/managed-slider/managed-slider'
-import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
-import AWS_S3_URL from '../../../../../../../../shared/constants/urls/aws-s3'
+import ManagedSlider from '../../../../../../../support/components/managed-slider/managed-slider'
+import { SVG } from '../../../../../../../../../../shared/app/components/support/svg/svg'
+import AWS_S3_URL from '../../../../../../../../../shared/constants/urls/aws-s3'
 
 interface Picture {
   database: string

@@ -1,7 +1,7 @@
 import React from 'react'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
-import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
-import { sendAnalyticsEvent } from '../../../../../../../functions/google-analytics/send-analytics-event'
+import { SVG } from '../../../../../../../../../../shared/app/components/support/svg/svg'
+import { sendAnalyticsEvent } from '../../../../../../../../functions/google-analytics/send-analytics-event'
 import styles from './styles/styles.scss'
 
 const ListerPhone = ({ announcerPhone, togglePhone, announcementId, venue }) => {

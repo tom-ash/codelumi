@@ -1,9 +1,9 @@
 import React from 'react'
-import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
-import centerMap from '../../../index/components/map/functions/center-map'
-import { buildUrl } from '../../../../../../../shared/functions/builders/url'
-import { updateUrl } from '../../../../../../../../shared/app/functions/routes/updaters/update-url'
-import { useStore } from '../../../../../../../../shared/app/functions/store/useStore'
+import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
+import centerMap from '../../../../index/components/map/functions/center-map'
+import { buildUrl } from '../../../../../../../../shared/functions/builders/url'
+import { updateUrl } from '../../../../../../../../../shared/app/functions/routes/updaters/update-url'
+import { useStore } from '../../../../../../../../../shared/app/functions/store/useStore'
 
 interface GoBackProps {
   id: number

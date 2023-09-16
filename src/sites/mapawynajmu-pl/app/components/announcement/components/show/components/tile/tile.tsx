@@ -9,10 +9,10 @@ const PrimaryData = loadable(() => import('./components/primary/primary'))
 const Secondary = loadable(() => import('./components/secondary/secondary'))
 const Items = loadable(() => import('./components/features-furnishings/features-furnishings'))
 const Description = loadable(() => import('./components/description/description'))
-import { togglePhone } from '../../../functions/toggle-phone'
-import { markListingAsViewed } from '../../../functions/mark-as-viewed'
+import { togglePhone } from '../../../../functions/toggle-phone'
+import { markListingAsViewed } from '../../../../functions/mark-as-viewed'
 
-class AnnouncementTile extends React.Component {
+class ListingShowTile extends React.Component {
   // @ts-ignore
   constructor(props) {
     super(props)
@@ -199,4 +199,4 @@ class AnnouncementTile extends React.Component {
   }
 }
 
-export default AnnouncementTile
+export default ListingShowTile

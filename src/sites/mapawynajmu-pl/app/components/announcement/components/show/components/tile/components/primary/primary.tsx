@@ -1,5 +1,5 @@
 import React from 'react'
-import { parseCurrency } from '../../../../../functions/currency-parsers'
+import { parseCurrency } from '../../../../../../functions/currency-parsers'
 
 // @ts-ignore
 function PresentRent({ amount, currency, type, perSqm, net }) {

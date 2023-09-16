@@ -6,8 +6,8 @@ import { Area } from '../../../common/area/area'
 import { Rent } from '../../../common/rent/rent'
 import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
 
-const Heading = loadable(() => import('../../../common/tile/components/heading'))
-const Pictures = loadable(() => import('../../../common/tile/components/pictures/pictures'))
+const Heading = loadable(() => import('../../../show/components/tile/components/heading'))
+const Pictures = loadable(() => import('../../../show/components/tile/components/pictures/pictures'))
 
 interface Picture {
   database: string

@@ -3,7 +3,7 @@ import { presentRooms } from '../primary/functions/present-rooms';
 import { presentFloor } from '../primary/functions/present-floor';
 import { presentTotalFloors } from '../primary/functions/present-total-floors';
 import { presentAvailabilityDate } from '../primary/functions/present-availability-date';
-import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg';
+import { SVG } from '../../../../../../../../../../shared/app/components/support/svg/svg';
 
 interface ListingTileShowSecondaryInterface {
   (props: {

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import AWS_S3_URL from '../../../../../../../shared/constants/urls/aws-s3'
+import AWS_S3_URL from '../../../../../../../../shared/constants/urls/aws-s3'
 
 interface LinkProps {
   id: number
