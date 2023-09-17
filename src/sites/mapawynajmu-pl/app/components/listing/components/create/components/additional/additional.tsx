@@ -1,5 +1,4 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../shared/app/functions/store/useStore'
 import { AreaInput } from './components/area/area.input'
 import { Description } from './components/description/description'
 import { LinkInput } from './components/link/link.input'

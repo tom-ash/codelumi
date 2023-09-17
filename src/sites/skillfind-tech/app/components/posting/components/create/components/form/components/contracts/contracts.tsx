@@ -2,8 +2,8 @@ import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import ContractSelector from './components/contract-selector/contract-selector'
-import { useStore } from 'react-redux'
 import { ContractName, Contract } from './contracts.types'
+import { useInputs } from '../../../../../../../../../../shared/app/functions/store/use-inputs'
 
 interface Store {
   inputs: {
@@ -16,7 +16,6 @@ interface Store {
 export const Contracts = () => {
   useStyles(styles)
 
-  const { inputs } = useStore<Store>().getState()
   const {
     b2b,
     b2bMin,
@@ -27,7 +26,7 @@ export const Contracts = () => {
     // civilContract,
     // civilContractMin,
     // civilContractMax,
-  } = inputs
+  } = useInputs()
 
   const contracts = [
     {

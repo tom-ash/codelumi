@@ -1,6 +1,4 @@
 import React from 'react'
-// import { useStore } from '../../../functions/store/useStore'
-// import { ButtonSpinner } from '../../../../../mapawynajmu-pl/app/components/support/components/button-spinner/button-spinner'
 import { ManagedButton } from 'managed-inputs'
 
 interface DeleteButtonInterface {
