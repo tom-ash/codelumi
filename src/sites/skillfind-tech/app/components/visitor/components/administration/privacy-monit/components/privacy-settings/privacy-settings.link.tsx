@@ -1,10 +1,9 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../../shared/app/functions/store/useStore'
 import { Link } from '../../../../../../../../../shared/app/components/support/link/link'
+import { useApp } from '../../../../../../../../../shared/app/functions/store/use-app'
 
 export const PrivacySettingsLink = () => {
-  const { state } = useStore()
-  const { app } = state
+  const app = useApp()
   const lang = app.lang as Lang
   const linkProps = {
     linkKey: 'visitor/privacy-settings',

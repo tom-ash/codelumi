@@ -1,13 +1,12 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../../../../shared/app/functions/store/useStore'
 import { SubmitButton } from '../../../../../../../../../../../shared/app/components/support/submit-button/submit-button'
 import { submitForm } from '../functions/submit-form'
+import { useTexts } from '../../../../../../../../../../../shared/app/functions/store/use-texts'
+import { useInputs } from '../../../../../../../../../../../shared/app/functions/store/use-inputs'
 
 export const SubmitFormButton = () => {
-  const { state } = useStore()
-  const { texts, inputs } = state
-  const { submitFormButtonLabel: label, termsOfServiceConsentLabel } = texts
-  const { emailAddress, password, termsOfServiceConsent } = inputs
+  const { submitFormButtonLabel: label, termsOfServiceConsentLabel } = useTexts()
+  const { emailAddress, password, termsOfServiceConsent } = useInputs()
 
   const submitButtonProps = {
     label,

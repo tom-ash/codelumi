@@ -1,5 +1,4 @@
 import React from 'react'
-import { useStore } from '../../../../../../shared/app/functions/store/useStore'
 import { TextInput } from './components/text-input/text-input'
 import { DeleteButton } from './components/delete/delete.button'
 import { deleteAsset } from './functions/delete/delete'
@@ -8,13 +7,12 @@ import { UpdateButton } from './components/update/update.button'
 import { updateAsset } from './functions/update/update'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import { useData } from '../../../../../../shared/app/functions/store/use-data'
 
 const Index = () => {
   useStyles(styles)
 
-  const { state } = useStore()
-  const { data } = state
-  const { assets } = data
+  const { assets } = useData()
 
   return (
     <div id='asset-index'>

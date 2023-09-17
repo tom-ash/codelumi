@@ -1,17 +1,15 @@
 import React from 'react'
-import { useStore } from '../../../../../../../shared/app/functions/store/useStore'
 import { Heading } from '../../../../../../../mapawynajmu-pl/app/components/support/components/heading'
 import { StatisticsConsentRadio } from './components/statistics-consent/statistics-consent.radio'
 import { MarketingConsentRadio } from './components/marketing-consent/marketing-consent.radio'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import { useTexts } from '../../../../../../../shared/app/functions/store/use-texts'
 
 const PrivacySettings = () => {
   useStyles(styles)
 
-  const { state } = useStore()
-  const { texts } = state
-  const { headingOne, statisticsConsent, marketingConsent } = texts
+  const { headingOne, statisticsConsent, marketingConsent } = useTexts()
   const headingOneProps = {
     tier: 1,
     text: headingOne,

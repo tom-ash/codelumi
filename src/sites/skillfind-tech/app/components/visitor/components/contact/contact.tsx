@@ -1,14 +1,12 @@
 import React from 'react'
-import { useStore } from '../../../../../../shared/app/functions/store/useStore'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import { useTexts } from '../../../../../../shared/app/functions/store/use-texts'
 
 const VisitorContact = () => {
   useStyles(styles)
 
-  const { state } = useStore()
-  const { texts } = state
-  const { companyName, companyStreetAndStreetNumber, companyPostalCodeAndCity, companyEmail } = texts
+  const { companyName, companyStreetAndStreetNumber, companyPostalCodeAndCity, companyEmail } = useTexts()
 
   return (
     <div id='contact'>
