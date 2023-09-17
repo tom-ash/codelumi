@@ -3,17 +3,13 @@ import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import Skills from './components/skill-selector/skills'
 import SubmitButton from './components/submit-button'
-import { useStore } from 'react-redux'
-// import Location from './components/location/location'
 import { Contracts } from './components/contracts/contracts'
+import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
 
 const AnnouncementCreateForm = () => {
   useStyles(styles)
 
-  const state = useStore().getState()
-  const { texts } = state
-
-  const { title } = texts
+  const { title } = useTexts()
 
   return (
     <div
@@ -23,7 +19,6 @@ const AnnouncementCreateForm = () => {
       <h1>{title}</h1>
       <Skills />
       <Contracts />
-      {/* <Location {...locationProps} /> */}
       <SubmitButton />
     </div>
   )

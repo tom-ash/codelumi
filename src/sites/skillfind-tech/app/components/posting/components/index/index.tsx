@@ -1,15 +1,13 @@
 import React from 'react'
-import { useStore } from 'react-redux'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { PostingIndexTile } from './components/tile/tile'
+import { useData } from '../../../../../../shared/app/functions/store/use-data'
 
 const PostingIndex = () => {
   useStyles(styles)
 
-  const state = useStore().getState()
-  const { data } = state
-  const { postings } = data
+  const { postings } = useData()
 
   return (
     <div id='posting-index'>

@@ -1,15 +1,15 @@
 import React from 'react'
 import { ManagedButton } from 'managed-inputs'
 import { submit } from '../functions/submit'
-import { useStore } from 'react-redux'
+import { useApp } from '../../../../../../../../../shared/app/functions/store/use-app'
+import { useTexts } from '../../../../../../../../../shared/app/functions/store/use-texts'
+import { useInputs } from '../../../../../../../../../shared/app/functions/store/use-inputs'
 
 const SubmitButton = () => {
-  const state = useStore().getState()
-  const {
-    app: { lang },
-    texts,
-    inputs,
-  } = state
+  const { lang } = useApp()
+  const texts = useTexts()
+  const inputs = useInputs()
+
   const {
     selectedSkills,
     // remote,

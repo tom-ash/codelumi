@@ -1,12 +1,10 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../shared/app/functions/store/useStore'
 import { ManagedButton } from 'managed-inputs'
 import { createAsset } from '../../functions/create/create'
+import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
 
 export const AddButton = () => {
-  const { state, dispatch } = useStore()
-  const { texts, data } = state
-  const { addAssetButtonLabel: label } = texts
+  const { addAssetButtonLabel: label } = useTexts()
   const classNames = { container: 'create-button' }
   const onClick = createAsset
 

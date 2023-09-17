@@ -2,19 +2,19 @@ import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import Skill from '../../../../../shared/components/skill/skill'
-import { useDispatch, useStore } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { selectSkillFactory } from './functions/select-skill-factory'
 import { unselectSkillFactory } from './functions/unselect-skill-factory'
 import { SkillProps } from '../../../../../shared/components/skill/skill.types'
 import { SkillView } from '../../../../../shared/components/skill/skill.types'
+import { useTexts } from '../../../../../../../../../../shared/app/functions/store/use-texts'
+import { useInputs } from '../../../../../../../../../../shared/app/functions/store/use-inputs'
 
 function Skills() {
   useStyles(styles)
 
-  const state = useStore().getState()
-  const { texts, inputs } = state
-  const { skills } = texts
-  const { selectableSkills, selectedSkills } = inputs
+  const { skills } = useTexts()
+  const { selectableSkills, selectedSkills } = useInputs()
   const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const selectSkill = (selectedSkill: SkillProps) =>

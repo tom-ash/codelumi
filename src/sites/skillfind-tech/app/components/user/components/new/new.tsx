@@ -1,14 +1,13 @@
 import React from 'react'
-import { useStore } from '../../../../../../shared/app/functions/store/useStore'
 import { UserNewEmail } from './components/email/email'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import { useRender } from '../../../../../../shared/app/functions/store/use-render'
 
 const UserNew = () => {
   useStyles(styles)
 
-  const { state } = useStore()
-  const { render } = state
+  const render = useRender()
 
   const renderAnnouncementCreate = render['announcement/create/form']
 

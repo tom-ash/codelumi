@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { useStore } from '../../shared/app/functions/store/useStore'
 import { useStateToRouteMatcher } from './functions/use-state-to-route-matcher'
 import loadable from '@loadable/component'
 const Header = loadable(() => import('./components/scaffold/header/header'))
@@ -19,15 +18,18 @@ import styles from './styles/styles.scss'
 import apiUrl from '../shared/constants/urls/api'
 import { setIsMobile } from '../../mapawynajmu-pl/app/functions/set-is-mobile'
 import { setConsents } from '../../shared/app/functions/consents/set-consents'
+import { useApp } from '../../shared/app/functions/store/use-app'
+import { useRender } from '../../shared/app/functions/store/use-render'
+import { useDispatch } from 'react-redux'
 
 const App = () => {
   useStyles(styles)
 
   useStateToRouteMatcher()
 
-  const { state, dispatch } = useStore()
-  const { app, render } = state
-  const { lang } = app
+  const { lang } = useApp()
+  const render = useRender()
+  const dispatch = useDispatch()
 
   useEffect(() => {
     // @ts-ignore

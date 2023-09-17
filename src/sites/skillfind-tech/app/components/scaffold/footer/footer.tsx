@@ -1,5 +1,4 @@
 import React from 'react'
-import { useStore } from '../../../../../shared/app/functions/store/useStore'
 import { ContactLink } from './components/contact/contact.link'
 import { TermsOfServiceLink } from './components/terms-of-service/terms-of-service.link'
 import { CookiesPolicyLink } from './components/cookies-policy/cookies-policy.link'
@@ -7,13 +6,12 @@ import { PrivacyPolicyLink } from './components/privacy-policy/privacy-policy.li
 import { PrivacySettingsLink } from './components/privacy-settings/privacy-settings.link'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import { useTexts } from '../../../../../shared/app/functions/store/use-texts'
 
 const Footer = () => {
   useStyles(styles)
 
-  const { state } = useStore()
-  const { texts } = state
-  const { allRightsReserved } = texts
+  const { allRightsReserved } = useTexts()
 
   return (
     <footer id='footer'>
