@@ -5,7 +5,7 @@ import loadable from '@loadable/component'
 const Header = loadable(() => import('./components/scaffold/header/header'))
 const Visitor = loadable(() => import('./components/visitor/visitor'))
 const User = loadable(() => import('./components/user/user'))
-const Announcement = loadable(() => import('./components/posting/announcement'))
+const Posting = loadable(() => import('./components/posting/announcement'))
 const PostingIndex = loadable(() => import('./components/posting/components/index/index'))
 const Page = loadable(() => import('../../shared/app/components/page/page'))
 const Image = loadable(() => import('../../shared/app/components/image/image'))
@@ -56,7 +56,7 @@ const App = () => {
       {renderPostingIndex && <PostingIndex />}
       {renderPage && <Page />}
       {renderVisitor && <Visitor />}
-      {renderListing && <Announcement />}
+      {renderListing && <Posting />}
       {renderUser && <User />}
       {renderImage && <Image />}
       {assetsIndex && <AssetsIndex />}

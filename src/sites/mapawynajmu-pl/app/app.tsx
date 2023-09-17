@@ -8,7 +8,7 @@ import loadable from '@loadable/component'
 const Header = loadable(() => import('./components/scaffold/header/header'))
 const Visitor = loadable(() => import('./components/visitor/visitor'))
 const User = loadable(() => import('./components/user/user'))
-const Announcement = loadable(() => import('./components/listing/announcement'))
+const Listing = loadable(() => import('./components/listing/listing'))
 const Page = loadable(() => import('../../shared/app/components/page/page'))
 const Image = loadable(() => import('../../shared/app/components/image/image'))
 const VisitorPageIndex = loadable(() => import('./components/visitor/components/page/components/index/index'))
@@ -17,7 +17,6 @@ const Footer = loadable(() => import('./components/scaffold/footer/footer'))
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { setIsMobile } from './functions/set-is-mobile'
-
 import apiUrl from '../shared/constants/urls/api'
 import { setConsents } from '../../shared/app/functions/consents/set-consents'
 
@@ -73,7 +72,7 @@ const App = () => {
         {renderImage && <Image />}
         {assetsIndex && <AssetsIndex />}
         {redirectsIndex && <RedirectsIndex />}
-        {renderListing && <Announcement />}
+        {renderListing && <Listing />}
       </div>
       <Footer />
     </>

@@ -6,7 +6,7 @@ const AnnouncementCreate = loadable(() => import('./components/create/create'))
 const AnnouncementIndex = loadable(() => import('./components/index/index'))
 const ListingPromotion = loadable(() => import('./components/promotion/promotion'))
 
-class Announcement extends React.Component {
+class Listing extends React.Component {
   // @ts-ignore
   constructor(props) {
     super(props)
@@ -26,4 +26,4 @@ class Announcement extends React.Component {
   }
 }
 
-export default connect(mapStateToProps)(Announcement)
+export default connect(mapStateToProps)(Listing)
