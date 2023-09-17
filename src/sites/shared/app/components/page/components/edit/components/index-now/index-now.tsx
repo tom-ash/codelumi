@@ -1,15 +1,13 @@
 import React from 'react'
-import { useStore } from '../../../../../../functions/store/useStore'
 import { Button } from './components/button/button'
+import { useData } from '../../../../../../functions/store/use-data'
 
 interface IndexNowInterface {
   (): React.ReactElement
 }
 
 export const IndexNow: IndexNowInterface = () => {
-  const { state } = useStore()
-  const { data } = state
-  const { indexNowPingedAt } = data
+  const { indexNowPingedAt } = useData()
 
   return (
     <div className='index-now'>

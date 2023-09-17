@@ -1,10 +1,8 @@
 import React from 'react'
-import { useStore } from '../../../../../../functions/store/useStore'
+import { useData } from '../../../../../../functions/store/use-data'
 
 export const UpdateStatus = () => {
-  const { state } = useStore()
-  const { data } = state
-  const { updated } = data
+  const { updated } = useData()
 
   const classNames = ['update-status']
   if (updated === true) classNames.push('ok')

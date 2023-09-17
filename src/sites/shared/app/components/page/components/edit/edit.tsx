@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { useStore } from '../../../../functions/store/useStore'
 import { PageTile } from '../shared/components/tile/tile'
 import { OnlineSwitch } from './components/online/online-switch'
 import { BodyTextarea } from './components/body/body.textarea'
@@ -10,14 +9,16 @@ import { UpdatePageButton } from './components/update-page/update-page-button'
 import { IndexNow } from './components/index-now/index-now'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import { useControl } from '../../../../functions/store/use-control'
+import { useInputs } from '../../../../functions/store/use-inputs'
+import { useDispatch } from 'react-redux'
 
 const PageCreate = () => {
   useStyles(styles)
 
-  const { state, dispatch } = useStore()
-  const { control, inputs } = state
-  const { nav } = control
-  const { body } = inputs
+  const { nav } = useControl()
+  const { body } = useInputs()
+  const dispatch = useDispatch()
   const setControl = (value: any) => dispatch({ type: 'control', value })
   const setData = (value: any) => dispatch({ type: 'data', value })
 

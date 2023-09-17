@@ -1,15 +1,12 @@
 import React from 'react'
-import { useStore } from '../../../../functions/store/useStore'
 import { PageTile } from '../shared/components/tile/tile'
 import { changeUrl } from '../../../../functions/routes/changers/change-url'
+import { useLinks } from '../../../../functions/store/use-links'
+import { useUser } from '../../../../functions/store/use-user'
 
 const PageShow = () => {
-  const {
-    state: {
-      links,
-      user: { role },
-    },
-  } = useStore()
+  const links = useLinks()
+  const { role } = useUser()
 
   const isAdmin = role === 'admin'
 

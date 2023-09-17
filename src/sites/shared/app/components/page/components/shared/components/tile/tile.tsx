@@ -1,13 +1,9 @@
 import React from 'react'
-import { useStore } from '../../../../../../functions/store/useStore'
 import { RenderNode } from '../../../../../support/render-node/render-node'
+import { useData } from '../../../../../../functions/store/use-data'
 
 export const PageTile = () => {
-  const {
-    state: {
-      data: { body },
-    },
-  } = useStore()
+  const { body } = useData()
 
   const nodeProps = {
     node: {

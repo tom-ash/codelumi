@@ -1,13 +1,11 @@
 import React from 'react'
-import { useStore } from '../../../../../../functions/store/useStore'
 import { SchemaModeSwitch } from './components/schema-mode-switch'
 import { AutoSchemaTextarea } from './components/auto-schema-textarea'
 import { ManualSchemaTextarea } from './components/manual-schema-textarea'
+import { useInputs } from '../../../../../../functions/store/use-inputs'
 
 export const Schema = () => {
-  const { state } = useStore()
-  const { inputs } = state
-  const { schemaMode } = inputs
+  const { schemaMode } = useInputs()
 
   return (
     <div className='schema'>
