@@ -1,6 +1,29 @@
 import initialAppState from '../../constants/initial-app-state'
 
-export const rootReducer = (
+interface StoreObject {
+  [key:string]: any
+}
+
+export interface Store {
+  app: StoreObject,
+  user: StoreObject,
+  meta: StoreObject,
+  links: StoreObject,
+  assets: StoreObject,
+  texts: StoreObject,
+  errors: StoreObject,
+  inputs: StoreObject,
+  data: StoreObject,
+  control: StoreObject,
+  render: StoreObject,
+  visitor: StoreObject,
+}
+
+interface RootReducer {
+  (state: Store, action: any): Store
+}
+
+export const rootReducer: RootReducer = (
   state = {
     app: initialAppState,
     user: {},
@@ -15,7 +38,6 @@ export const rootReducer = (
     render: {},
     visitor: {},
   },
-  // @ts-ignore
   action
 ) => {
   const stateKeys = [
@@ -44,7 +66,7 @@ export const rootReducer = (
       newState[stateKey] = { ...state[stateKey], ...actionValue[stateKey] }
     })
 
-    return newState
+    return newState as Store
   }
 
   if (actionType === 'state/reset') {
@@ -61,7 +83,7 @@ export const rootReducer = (
       }
     })
 
-    return newState
+    return newState as Store
   }
 
   if (actionType.indexOf('/reset') !== -1) {
