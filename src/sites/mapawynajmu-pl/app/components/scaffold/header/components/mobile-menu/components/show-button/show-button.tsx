@@ -1,8 +1,8 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../../shared/app/functions/store/useStore'
+import { useDispatch } from 'react-redux'
 
 export const ShowButton = () => {
-  const { dispatch } = useStore()
+  const dispatch = useDispatch()
   const showMobileMenu = () => dispatch({ type: 'control', value: { showMobileMenu: true } })
 
   return (

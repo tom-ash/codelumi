@@ -1,5 +1,4 @@
 import React from 'react'
-import { useStore } from '../../../../../shared/app/functions/store/useStore'
 import { ContactLink } from './components/contact/contact.link'
 import { TermsOfServiceLink } from './components/terms-of-service/terms-of-service.link'
 import { CookiesPolicyLink } from './components/cookies-policy/cookies-policy.link'
@@ -10,15 +9,14 @@ import styles from './styles/styles.scss'
 import { SVG } from '../../../../../shared/app/components/support/svg/svg'
 import { Link } from '../../../../../shared/app/components/support/link/link'
 import { FloatClear } from '../../../../../shared/app/components/support/float-clear/float-clear'
+import { useTexts } from '../../../../../shared/app/functions/store/use-texts'
 
 const Footer = () => {
   useStyles(styles)
 
-  const { state } = useStore()
-  const { texts } = state
-  const { allRightsReserved } = texts
-
+  const { allRightsReserved } = useTexts()
   const footerClassNames = ['footer']
+
   if (true) {
     footerClassNames.push('mini')
   }

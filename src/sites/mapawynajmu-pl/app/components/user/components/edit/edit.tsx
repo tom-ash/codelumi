@@ -1,5 +1,4 @@
 import React from 'react'
-import { useStore } from '../../../../../../shared/app/functions/store/useStore'
 import { Heading } from '../../../support/components/heading'
 import { Line } from '../../../support/components/line/line'
 import { UserEditBusinessName as BusinessName } from './components/business-name/business-name'
@@ -8,15 +7,16 @@ import { UserEditDelete as Delete } from './components/delete/delete'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { AccountType } from '../../types/user.types'
+import { useApp } from '../../../../../../shared/app/functions/store/use-app'
+import { useTexts } from '../../../../../../shared/app/functions/store/use-texts'
+import { useUser } from '../../../../../../shared/app/functions/store/use-user'
 
 const UserEdit = () => {
   useStyles(styles)
 
-  const { state } = useStore()
-  const { app, texts, user } = state
-  const { minInnerHeight } = app
-  const { headingOne } = texts
-  const { accountType } = user
+  const { minInnerHeight } = useApp()
+  const { headingOne } = useTexts()
+  const { accountType } = useUser()
   const headingProps = {
     tier: 1,
     text: headingOne,

@@ -1,5 +1,4 @@
 import React from 'react'
-import { useStore } from '../../../../../../../shared/app/functions/store/useStore'
 import { ShowButton } from './components/show-button/show-button'
 import { ListingNewLink } from '../links/components/listing-new-link'
 import { UserNewLink } from '../links/components/user-new-link'
@@ -9,12 +8,14 @@ import { SignOutButton } from '../links/components/sign-out-button'
 import { UserListingIndexLink } from '../links/components/user-listing-index'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import { useUser } from '../../../../../../../shared/app/functions/store/use-user'
+import { useControl } from '../../../../../../../shared/app/functions/store/use-control'
+import { useDispatch } from 'react-redux'
 
 export const MobileMenu = () => {
-  const { state, dispatch } = useStore()
-  const { user, control } = state
-  const { authorized } = user
-  const { showMobileMenu } = control
+  const { authorized } = useUser()
+  const { showMobileMenu } = useControl()
+  const dispatch = useDispatch()
   const hideMobileMenuMenu = () => dispatch({ type: 'control', value: { showMobileMenu: false } })
 
   useStyles(styles)

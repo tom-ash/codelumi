@@ -1,13 +1,13 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../shared/app/functions/store/useStore'
 import { ManagedButton } from 'managed-inputs'
 import { signOut } from '../../../../../user/components/auth/components/sign-out/functions/sign-out'
+import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
+import { useLinks } from '../../../../../../../../shared/app/functions/store/use-links'
 
 export const SignOutButton = () => {
-  const { state } = useStore()
-  const { texts, links } = state
-  const { signOutButtonLabel: label } = texts
-  const href = links && links.root.href
+  const { signOutButtonLabel: label } = useTexts()
+  const links = useLinks()
+  const href = links.root.href
   const classNames = { container: 'header-link de-authorize' }
   const onClick = () => signOut({ href })
 

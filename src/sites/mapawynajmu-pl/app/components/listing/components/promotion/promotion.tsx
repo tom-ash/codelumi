@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { Spinner } from '../../../support/components/spinner/spinner'
-import { useStore } from '../../../../../../shared/app/functions/store/useStore'
+import { useData } from '../../../../../../shared/app/functions/store/use-data'
 
 interface ListingPromotionInterface {
   (): React.ReactElement
@@ -11,11 +11,7 @@ interface ListingPromotionInterface {
 const ListingPromotion: ListingPromotionInterface = () => {
   useStyles(styles)
 
-  const {
-    state: {
-      data: { orderHref },
-    },
-  } = useStore()
+  const { orderHref } = useData()
 
   useEffect(() => {
     // @ts-ignore

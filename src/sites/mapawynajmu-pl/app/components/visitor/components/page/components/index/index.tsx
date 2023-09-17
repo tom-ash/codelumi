@@ -1,5 +1,4 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../shared/app/functions/store/useStore'
 import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
 
 // TODO: Add Image to support components.
@@ -7,13 +6,12 @@ import Image from '../../../../../../../../shared/app/components/support/render-
 import { Link } from '../../../../../../../../shared/app/components/support/link/link'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import { useData } from '../../../../../../../../shared/app/functions/store/use-data'
 
 const VisitorPageIndex = () => {
   useStyles(styles)
 
-  const { state } = useStore()
-  const { data } = state
-  const { pages } = data
+  const { pages } = useData()
 
   return (
     <div id='visitor-page-index'>

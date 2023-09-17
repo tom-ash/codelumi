@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactCalendar from 'react-calendar/dist/entry.nostyle'
-import { useStore } from '../../../../../../shared/app/functions/store/useStore'
 import { parseDate } from '../../../../functions/date-parsers'
+import { useApp } from '../../../../../../shared/app/functions/store/use-app'
+import { useInputs } from '../../../../../../shared/app/functions/store/use-inputs'
+import { useDispatch } from 'react-redux'
 
 const Calendar = () => {
-  const { state, dispatch } = useStore()
-  const { app, inputs } = state
-  const { lang: locale } = app
-  const { availabilityDate } = inputs
+  const { lang: locale } = useApp()
+  const { availabilityDate } = useInputs()
+  const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const onChange = (date: Date) => setInputs({ availabilityDate: parseDate(date) })
   const value = availabilityDate ? new Date(availabilityDate) : null

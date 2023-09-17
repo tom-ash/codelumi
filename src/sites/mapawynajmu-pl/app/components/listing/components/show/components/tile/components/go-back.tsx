@@ -3,7 +3,7 @@ import { SVG } from '../../../../../../../../../shared/app/components/support/sv
 import centerMap from '../../../../index/components/map/functions/center-map'
 import { buildUrl } from '../../../../../../../../shared/functions/builders/url'
 import { updateUrl } from '../../../../../../../../../shared/app/functions/routes/updaters/update-url'
-import { useStore } from '../../../../../../../../../shared/app/functions/store/useStore'
+import { useDispatch } from 'react-redux'
 
 interface GoBackProps {
   id: number
@@ -11,7 +11,7 @@ interface GoBackProps {
 }
 
 const GoBack = (props: GoBackProps) => {
-  const { dispatch } = useStore()
+  const dispatch = useDispatch()
   const setControl = (value: any) => dispatch({ type: 'control', value })
   const { goBackLink } = props
 

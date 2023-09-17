@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../../../../../../../shared/app/functions/store/useStore'
+import { useDispatch } from 'react-redux';
 
 interface SelectInterface {
   (props: { name: string; kind: string; options: string[] }): React.ReactElement
@@ -7,7 +7,7 @@ interface SelectInterface {
 
 export const Select: SelectInterface = props => {
   const { name, kind, options } = props
-  const { dispatch } = useStore()
+  const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const setControl = (value: any) => dispatch({ type: 'control', value })
 

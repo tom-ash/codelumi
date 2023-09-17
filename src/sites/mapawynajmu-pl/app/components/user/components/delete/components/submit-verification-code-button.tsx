@@ -1,14 +1,16 @@
 import React from 'react'
-import { useStore } from '../../../../../../../shared/app/functions/store/useStore'
 import { SubmitButton } from '../../../../../../../shared/app/components/support/submit-button/submit-button'
 import { submitVerificationCode as submit } from '../functions/submit-verification-code'
+import { useTexts } from '../../../../../../../shared/app/functions/store/use-texts'
+import { useApp } from '../../../../../../../shared/app/functions/store/use-app'
+import { useInputs } from '../../../../../../../shared/app/functions/store/use-inputs'
+import { useDispatch } from 'react-redux'
 
 export const SubmitVerificationCodeButton = () => {
-  const { state, dispatch } = useStore()
-  const { app, texts, inputs } = state
-  const { userDeleteSubmitButtonLabel: label } = texts
-  const { lang } = app
-  const { verificationCode } = inputs
+  const { userDeleteSubmitButtonLabel: label } = useTexts()
+  const { lang } = useApp()
+  const { verificationCode } = useInputs()
+  const dispatch = useDispatch()
   const setControl = (value: any) => dispatch({ type: 'control', value })
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
 

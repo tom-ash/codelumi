@@ -1,5 +1,4 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../../../shared/app/functions/store/useStore'
 import { Line } from '../../../../../../../support/components/line/line'
 import { EmailAddressInput } from '../../../../../../../../../../shared/app/components/user/components/common/components/email-address/email-address.input'
 import { PasswordInput } from '../../../../../../../../../../shared/app/components/user/components/common/components/password/password.input'
@@ -11,14 +10,14 @@ import { CredentialsError } from '../../../../../../../../../../shared/app/compo
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { changeUrl } from '../../../../../../../../../../shared/app/functions/routes/changers/change-url'
+import { useTexts } from '../../../../../../../../../../shared/app/functions/store/use-texts'
+import { useLinks } from '../../../../../../../../../../shared/app/functions/store/use-links'
 
 const UserAuthEmail = () => {
   useStyles(styles)
 
-  const { state } = useStore()
-  const { texts, links } = state
-  const { headingOne, resetPassword } = texts
-  const { href: resetPasswordHref } = links['user/password-reset']
+  const { headingOne, resetPassword } = useTexts()
+  const { href: resetPasswordHref } = useLinks()['user/password-reset']
 
   const passwordInputProps = {
     autoComplete: PasswordAutoComplete.CURRENT_PASSWORD,

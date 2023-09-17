@@ -2,14 +2,12 @@ import React from 'react'
 import CommonPasswordReset from '../../../../../../shared/app/components/user/components/password-reset/password-reset'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
-import { useStore } from '../../../../../../shared/app/functions/store/useStore'
+import { useApp } from '../../../../../../shared/app/functions/store/use-app'
 
 const PasswordReset = () => {
   useStyles(styles)
 
-  const { state } = useStore()
-  const { app } = state
-  const { minInnerHeight } = app
+  const { minInnerHeight } = useApp()
 
   return (
     <div

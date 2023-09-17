@@ -2,11 +2,11 @@ import React from 'react'
 import { ListingNewLink } from '../links/components/listing-new-link'
 import { UserListingIndexLink } from '../links/components/user-listing-index'
 import { UserEditLink } from '../links/components/user-edit.link'
-import { useStore } from '../../../../../../../shared/app/functions/store/useStore'
 import { SignOutButton } from '../links/components/sign-out-button'
+import { useDispatch } from 'react-redux'
 
 export const MyAccountMenu = () => {
-  const { dispatch } = useStore()
+  const dispatch = useDispatch()
   const hideMyAccountMenu = () => dispatch({ type: 'control', value: { showMyAccountMenu: false } })
 
   return (

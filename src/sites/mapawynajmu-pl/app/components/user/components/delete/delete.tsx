@@ -1,15 +1,17 @@
 import React, { useEffect } from 'react'
-import { useStore } from '../../../../../../shared/app/functions/store/useStore'
 import { VerificationCodeInput } from '../../../../../../shared/app/components/user/components/new/components/verification/components/verification-code/verification-code'
 import { initializeDeletion } from './functions/initialize-deletion'
 import { SubmitVerificationCodeButton } from './components/submit-verification-code-button'
+import { useApp } from '../../../../../../shared/app/functions/store/use-app'
+import { useTexts } from '../../../../../../shared/app/functions/store/use-texts'
+import { useData } from '../../../../../../shared/app/functions/store/use-data'
+import { useDispatch } from 'react-redux'
 
 export const UserDelete = () => {
-  const { state, dispatch } = useStore()
-  const { app, texts, data } = state
-  const { lang } = app
-  const { userDeleteInputExplanation } = texts
-  const { email } = data
+  const { lang } = useApp()
+  const { userDeleteInputExplanation } = useTexts()
+  const { email } = useData()
+  const dispatch = useDispatch()
   const setControl = (value: any) => dispatch({ type: 'control', value })
 
   useEffect(() => {

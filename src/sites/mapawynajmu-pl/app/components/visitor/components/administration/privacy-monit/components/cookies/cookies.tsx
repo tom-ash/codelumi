@@ -1,12 +1,12 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../../shared/app/functions/store/useStore'
 import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/change-url'
+import { useApp } from '../../../../../../../../../shared/app/functions/store/use-app'
+import { useLinks } from '../../../../../../../../../shared/app/functions/store/use-links'
 
 export const Cookies = () => {
-  const { state } = useStore()
-  const { app, links } = state
+  const app = useApp()
   const lang = app.lang as Lang
-  const { href } = links['visitor/cookies-policy']
+  const { href } = useLinks()['visitor/cookies-policy']
 
   const changeRouteToCookiesPolicy = () => changeUrl({ href })
 

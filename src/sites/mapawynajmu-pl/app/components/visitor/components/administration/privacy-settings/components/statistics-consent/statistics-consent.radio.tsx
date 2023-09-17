@@ -1,11 +1,11 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../../shared/app/functions/store/useStore'
 import { ManagedRadio } from 'managed-inputs'
+import { useVisitor } from '../../../../../../../../../shared/app/functions/store/use-visitor'
+import { useDispatch } from 'react-redux'
 
 export const StatisticsConsentRadio = () => {
-  const { state, dispatch } = useStore()
-  const { visitor } = state
-  const { statisticsConsent } = visitor
+  const { statisticsConsent } = useVisitor()
+  const dispatch = useDispatch()
   const name = 'statistics-consent'
   const classNames = { container: 'form-input radio' }
   const checked = statisticsConsent

@@ -1,6 +1,7 @@
 import React from 'react'
-import { useStore } from '../../../../shared/app/functions/store/useStore'
 import loadable from '@loadable/component'
+import { useVisitor } from '../../../../shared/app/functions/store/use-visitor'
+import { useRender } from '../../../../shared/app/functions/store/use-render'
 const PrivacyMonit = loadable(() => import('./components/administration/privacy-monit/privacy-monit'))
 const VisitorContact = loadable(() => import('./components/contact/contact'))
 const TermsOfService = loadable(() => import('./components/administration/terms-of-service/terms-of-service'))
@@ -9,9 +10,8 @@ const PrivacyPolicy = loadable(() => import('./components/administration/privacy
 const PrivacySettings = loadable(() => import('./components/administration/privacy-settings/privacy-settings'))
 
 export const Visitor = () => {
-  const { state } = useStore()
-  const { render, visitor } = state
-  const { statisticsConsent, marketingConsent } = visitor
+  const { statisticsConsent, marketingConsent } = useVisitor()
+  const render = useRender()
   const renderContact = render['visitor/contact']
   const renderCookiesPolicy = render['visitor/cookies-policy']
   const renderPrivacyPolicy = render['visitor/privacy-policy']

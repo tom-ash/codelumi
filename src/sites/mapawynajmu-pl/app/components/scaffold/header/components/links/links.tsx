@@ -4,12 +4,10 @@ import { SignInLink } from './components/sign-in'
 import { ListingNewLink } from './components/listing-new-link'
 import { UserNewLink } from './components/user-new-link'
 import { MyAccountControlButton } from './components/my-account.control-button'
-import { useStore } from '../../../../../../../shared/app/functions/store/useStore'
+import { useUser } from '../../../../../../../shared/app/functions/store/use-user'
 
 const UserLinks = () => {
-  const { state } = useStore()
-  const { user } = state
-  const { authorized } = user
+  const { authorized } = useUser()
 
   return (
     <>
