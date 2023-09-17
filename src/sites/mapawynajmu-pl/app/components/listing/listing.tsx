@@ -1,15 +1,12 @@
 import React from 'react'
 import loadable from '@loadable/component'
-import { useSelector } from 'react-redux'
-import { Store } from '../../../../shared/app/functions/root-reducer/root-reducer'
+import { useRender } from '../../../../shared/app/functions/store/use-render'
 const AnnouncementCreate = loadable(() => import('./components/create/create'))
 const AnnouncementIndex = loadable(() => import('./components/index/index'))
 const ListingPromotion = loadable(() => import('./components/promotion/promotion'))
 
 const Listing = () => {
-  const render = useSelector((state: Store) => {
-    return state.render
-  })
+  const render = useRender()
 
   const {
     'announcement/create': renderCreate,

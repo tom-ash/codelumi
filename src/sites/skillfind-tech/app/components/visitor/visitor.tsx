@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStore } from '../../../../shared/app/functions/store/useStore'
 import loadable from '@loadable/component'
+import { useRender } from '../../../../shared/app/functions/store/use-render'
 const PrivacyMonit = loadable(() => import('./components/administration/privacy-monit/privacy-monit'))
 const VisitorContact = loadable(() => import('./components/contact/contact'))
 const TermsOfService = loadable(() => import('./components/administration/terms-of-service/terms-of-service'))
@@ -11,7 +12,11 @@ const PageIndex = loadable(() => import('./components/page/components/index/inde
 
 export const Visitor = () => {
   const { state } = useStore()
-  const { render, visitor } = state
+  const { visitor } = state
+
+  const render = useRender()
+
+
   const { statisticsConsent, marketingConsent } = visitor
   const renderContact = render['visitor/contact']
   const renderCookiesPolicy = render['visitor/cookies-policy']

@@ -18,12 +18,12 @@ export const PromotionBenefits: SubmitWithPromotionInterface = () => {
     <div className='promotion-benefits'>
       <ul>
         {promotionBenefits.map((benefit: { item: string }) => (
-          <li>
+          <li key={benefit.item}>
             <SVG name='star' /> {benefit.item}
           </li>
         ))}
         <Line />
-        <li className='people'>
+        <li className='people' key={promotionBenefitsSummary}>
           <SVG name='people' /> {promotionBenefitsSummary}
         </li>
       </ul>

@@ -1,6 +1,6 @@
 import initialAppState from '../../constants/initial-app-state'
 
-interface StoreObject {
+export interface StoreObject {
   [key:string]: any
 }
 
