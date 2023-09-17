@@ -1,19 +1,17 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
-import { useStore } from 'react-redux'
 import { Line } from '../../../../../../../support/components/line/line'
 import { Link } from '../../../../../../../listing/components/common/link/link'
 import { SVG } from '../../../../../../../../../../shared/app/components/support/svg/svg'
+import { useTexts } from '../../../../../../../../../../shared/app/functions/store/use-texts'
+import { useUser } from '../../../../../../../../../../shared/app/functions/store/use-user'
 
 const Confirmation = () => {
   useStyles(styles)
 
-  const {
-    texts,
-    user: { accountType, businessName },
-  } = useStore().getState()
-  const { h1, congratulations, accountCreated, partnerPage } = texts
+  const { accountType, businessName } = useUser()
+  const { h1, congratulations, accountCreated, partnerPage } = useTexts()
   const partnerPageLinkProps = {
     track: 'user/index/partner',
   }

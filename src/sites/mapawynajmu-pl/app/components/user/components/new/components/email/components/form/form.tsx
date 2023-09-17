@@ -9,18 +9,18 @@ import { CountryCodeSelect } from '../../../../../../../../../../shared/app/comp
 import { PhoneNumberInput } from '../../../../../../../../../../shared/app/components/user/components/new/components/form/components/phone-number/phone-number.input'
 import { TermsOfServiceConsent } from '../../../../../../../../../../shared/app/components/user/components/new/components/form/components/terms-of-service-consent/terms-of-service-consent'
 import { SignUpButton } from './components/sign-up-button'
-import { useStore } from '../../../../../../../../../../shared/app/functions/store/useStore'
 import { Heading } from '../../../../../../../support/components/heading'
 import { Line } from '../../../../../../../support/components/line/line'
 import { PasswordAutoComplete } from '../../../../../../../../../../shared/app/components/user/components/common/components/password/password.input'
 import { passwordValidator } from '../../../../../../../../../../shared/app/components/user/components/new/components/form/components/password/password.validator'
+import { useRender } from '../../../../../../../../../../shared/app/functions/store/use-render'
+import { useTexts } from '../../../../../../../../../../shared/app/functions/store/use-texts'
+import { useInputs } from '../../../../../../../../../../shared/app/functions/store/use-inputs'
 
 const UserNewEmailForm = () => {
-  const { state } = useStore()
-  const { render, texts, inputs } = state
-  const { phoneNumberExplanation, headingOne } = texts
-  const { accountType } = inputs
-  const userNewForm = render['user/new/form']
+  const { phoneNumberExplanation, headingOne } = useTexts()
+  const { accountType } = useInputs()
+  const userNewForm = useRender()['user/new/form']
   const isBusinessAccount = accountType === AccountType.BUSINESS
   const headingOneProps = { tier: 1, text: headingOne }
 

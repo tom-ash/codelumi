@@ -1,8 +1,8 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../../shared/app/functions/store/useStore'
 import { SubmitButton } from '../../../../../../../../../shared/app/components/support/submit-button/submit-button'
 import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
 import { postApi } from '../../../../../../../../../shared/app/functions/fetch-api/fetch-api'
+import { useTexts } from '../../../../../../../../../shared/app/functions/store/use-texts'
 
 interface PromoteButtonInterface {
   (props: { listingId: number }): React.ReactElement
@@ -10,9 +10,7 @@ interface PromoteButtonInterface {
 
 export const PromoteButton: PromoteButtonInterface = props => {
   const { listingId } = props
-  const { state } = useStore()
-  const { texts } = state
-  const { promoteButtonLabel } = texts
+  const { promoteButtonLabel } = useTexts()
 
   const submit = () => {
     postApi({

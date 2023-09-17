@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react'
-import { useStore } from '../../../../../../../../shared/app/functions/store/useStore'
 import { HeadingTwo } from '../../../../../../../../shared/app/components/support/headings/heading-two'
 import { Instructions } from '../../../../../../../../shared/app/components/support/instructions/instructions'
 import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
 import { categories } from '../../../../constants/categories'
+import { useApp } from '../../../../../../../../shared/app/functions/store/use-app'
+import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
+import { useInputs } from '../../../../../../../../shared/app/functions/store/use-inputs'
+import { useDispatch } from 'react-redux'
 
 export const Category = () => {
-  const { state, dispatch } = useStore()
-  const { app, texts, inputs } = state
-  const lang = app.lang as Lang
-  const { device, screenWidth } = app
-  const { categoryHeading, categoryInstructions } = texts
-  const { category: currentCategory } = inputs
+  const { lang, device, screenWidth } = useApp()
+  const { categoryHeading, categoryInstructions } = useTexts()
+  const { category: currentCategory } = useInputs()
+  const dispatch = useDispatch()
 
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
 
@@ -36,6 +37,7 @@ export const Category = () => {
             pin: { svg: name },
             value,
           } = category
+          // @ts-ignore
           const label = labelLangObj[lang]
           const classNames = ['tile']
           if (currentCategory === value) {

@@ -1,5 +1,4 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../../shared/app/functions/store/useStore'
 import { SubmitWithPromotionButton } from './submit-with-promotion.button'
 import { PromotionBenefits } from '../../../../common/promotion-benefits/promotion-benefits'
 
@@ -8,9 +7,6 @@ interface SubmitWithPromotionInterface {
 }
 
 export const SubmitWithPromotion: SubmitWithPromotionInterface = ({ publish }) => {
-  const { state } = useStore()
-  const { texts } = state
-
   return (
     <div className='with-promotion'>
       <SubmitWithPromotionButton publish={publish} />

@@ -1,7 +1,9 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../../../../shared/app/functions/store/useStore'
 import { FloatClear } from '../../../../../../../../../../../shared/app/components/support/float-clear/float-clear'
 import { InputSelect } from './components/input-select/input-select'
+import { useControl } from '../../../../../../../../../../../shared/app/functions/store/use-control'
+import { useInputs } from '../../../../../../../../../../../shared/app/functions/store/use-inputs'
+import { useDispatch } from 'react-redux'
 
 interface PanelInterface {
   (props: { name: string; supplement: React.ReactElement }): React.ReactElement
@@ -9,10 +11,9 @@ interface PanelInterface {
 
 export const Panel: PanelInterface = props => {
   const { name, supplement } = props
-  const { state, dispatch } = useStore()
-  const { control, inputs } = state
-  const { [`${name}FilterPanel`]: showPanel } = control
-  const { [`${name}Options`]: options } = inputs
+  const { [`${name}FilterPanel`]: showPanel } = useControl()
+  const { [`${name}Options`]: options } = useInputs()
+  const dispatch = useDispatch()
   const setControl = (value: any) => dispatch({ type: 'control', value })
 
   return (

@@ -1,14 +1,12 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../../../shared/app/functions/store/useStore'
 import { ShowPolishDescription } from './components/show-polish-description/show-polish-description.checkbox'
 import { PolishDescriptionTextarea } from './components/polish-description/polish-description.textarea'
 import { ShowEnglishDescription } from './components/show-english-description/show-english-description.checkbox'
 import { EnglishDescriptionTextarea } from './components/english-description/english-description.textarea'
+import { useInputs } from '../../../../../../../../../../shared/app/functions/store/use-inputs'
 
 export const Description = () => {
-  const { state } = useStore()
-  const { inputs } = state
-  const { showPolishDescription, showEnglishDescription } = inputs
+  const { showPolishDescription, showEnglishDescription } = useInputs()
 
   return (
     <div

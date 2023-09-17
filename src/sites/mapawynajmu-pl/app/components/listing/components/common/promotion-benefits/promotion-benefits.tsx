@@ -1,18 +1,14 @@
 import React from 'react'
 import { SVG } from '../../../../../../../shared/app/components/support/svg/svg'
 import { Line } from '../../../../support/components/line/line'
-import { useStore } from '../../../../../../../shared/app/functions/store/useStore'
+import { useTexts } from '../../../../../../../shared/app/functions/store/use-texts'
 
 interface SubmitWithPromotionInterface {
   (): React.ReactElement
 }
 
 export const PromotionBenefits: SubmitWithPromotionInterface = () => {
-  const {
-    state: {
-      texts: { promotionBenefits, promotionBenefitsSummary },
-    },
-  } = useStore()
+  const { promotionBenefits, promotionBenefitsSummary } = useTexts()
 
   return (
     <div className='promotion-benefits'>

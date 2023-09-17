@@ -1,17 +1,19 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../../../../../shared/app/functions/store/useStore'
 import { categories } from '../../../../../../../../constants/categories'
 import { SVG } from '../../../../../../../../../../../../shared/app/components/support/svg/svg'
 import { FloatClear } from '../../../../../../../../../../../../shared/app/components/support/float-clear/float-clear'
 import { changeUrl } from '../../../../../../../../../../../../shared/app/functions/routes/changers/change-url'
+import { useTexts } from '../../../../../../../../../../../../shared/app/functions/store/use-texts'
+import { useControl } from '../../../../../../../../../../../../shared/app/functions/store/use-control'
+import { useLinks } from '../../../../../../../../../../../../shared/app/functions/store/use-links'
+import { useDispatch } from 'react-redux'
 
 export const Panel = () => {
-  const { state, dispatch } = useStore()
-  const { texts, control, links } = state
-  const { categoryFilterPanel } = control
+  const texts = useTexts()
+  const links = useLinks()
+  const { categoryFilterPanel } = useControl()
+  const dispatch = useDispatch()
   const setControl = (value: any) => dispatch({ type: 'control', value })
-
-  // const setInputs = (value: any) => dispatch({ type: 'inputs', value })
 
   return (
     <>

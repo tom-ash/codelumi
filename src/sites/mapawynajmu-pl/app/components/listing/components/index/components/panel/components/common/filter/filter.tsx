@@ -1,6 +1,9 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../../../../shared/app/functions/store/useStore'
 import { SVG } from '../../../../../../../../../../../shared/app/components/support/svg/svg'
+import { useData } from '../../../../../../../../../../../shared/app/functions/store/use-data';
+import { useTexts } from '../../../../../../../../../../../shared/app/functions/store/use-texts';
+import { useDispatch } from 'react-redux';
+import { useInputs } from '../../../../../../../../../../../shared/app/functions/store/use-inputs';
 
 interface FilterInterface {
   (props: { name: string; panel: React.ReactElement }): React.ReactElement
@@ -8,10 +11,11 @@ interface FilterInterface {
 
 export const Filter: FilterInterface = props => {
   const { name, panel } = props
-  const { state, dispatch } = useStore()
-  const { texts, data, inputs } = state
+  const texts = useTexts()
+  const inputs = useInputs()
+  const dispatch = useDispatch()
   const value = inputs[name]
-  const { [`${name}SvgName`]: svgName } = data
+  const { [`${name}SvgName`]: svgName } = useData()
   const placeholder = texts[`${name}InputPlaceholder`]
   const setControl = (value: any) => dispatch({ type: 'control', value })
   const onClick = () => setControl({ [`${name}FilterPanel`]: true })

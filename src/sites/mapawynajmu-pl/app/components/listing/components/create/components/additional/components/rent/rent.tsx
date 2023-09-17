@@ -1,10 +1,10 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../../../shared/app/functions/store/useStore'
 import { NetRentAmountInput } from './components/net-rent-amount/net-rent-amount'
 import { GrossRentAmountInput } from './components/gross-rent-amount/gross-rent-amount'
 import { RentCurrencySelect } from './components/rent-currency/rent-currency'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import { useInputs } from '../../../../../../../../../../shared/app/functions/store/use-inputs'
 
 // 0 => 'office'
 // 1 => 'usable_premises'
@@ -21,9 +21,7 @@ const showGrossRentAmount = (category: number) => [2, 3, 4, 5].includes(category
 export const Rent = () => {
   useStyles(styles)
 
-  const { state } = useStore()
-  const { inputs } = state
-  const { category } = inputs
+  const { category } = useInputs()
 
   return (
     <section className='rent'>

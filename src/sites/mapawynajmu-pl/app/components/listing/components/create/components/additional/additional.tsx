@@ -9,6 +9,7 @@ import { TotalFloorsSelect } from './components/total-floors/total-floors.select
 import { FloorSelect } from './components/floor/floor.select'
 import { RoomsSelect } from './components/rooms/rooms.select'
 import { Rent } from './components/rent/rent'
+import { useInputs } from '../../../../../../../../shared/app/functions/store/use-inputs'
 
 // 0 => 'office'
 // 1 => 'usable_premises'
@@ -27,9 +28,7 @@ const showName = category => [6, 7].includes(category)
 const showLink = category => [6, 7].includes(category)
 
 export const Additional = () => {
-  const { state } = useStore()
-  const { inputs } = state
-  const { category } = inputs
+  const { category } = useInputs()
 
   return (
     <section>

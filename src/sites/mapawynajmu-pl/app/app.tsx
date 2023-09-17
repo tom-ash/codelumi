@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { useStore } from '../../shared/app/functions/store/useStore'
 import { useFonts } from './functions/use-fonts'
 import { useGoogleMaps } from './functions/use-google-maps'
 import { useScreenSizeHandler } from './functions/use-screen-size-handler'
@@ -19,15 +18,18 @@ import styles from './styles/styles.scss'
 import { setIsMobile } from './functions/set-is-mobile'
 import apiUrl from '../shared/constants/urls/api'
 import { setConsents } from '../../shared/app/functions/consents/set-consents'
+import { useApp } from '../../shared/app/functions/store/use-app'
+import { useRender } from '../../shared/app/functions/store/use-render'
+import { useDispatch } from 'react-redux'
 
 const RedirectsIndex = loadable(() => import('../../shared/app/components/redirect/components/index'))
 
 const App = () => {
   useStyles(styles)
 
-  const { state, dispatch } = useStore()
-  const { app, render } = state
-  const { lang, minInnerHeight } = app
+  const { lang, minInnerHeight } = useApp()
+  const render = useRender()
+  const dispatch = useDispatch()
 
   useEffect(() => {
     // @ts-ignore
@@ -42,7 +44,6 @@ const App = () => {
     visitor: renderVisitor,
     announcement: renderListing,
     user: renderUser,
-    'announcement/index/map': renderListingIndexMap,
     visitorPageIndex,
     redirectsIndex,
     assetsIndex,

@@ -11,10 +11,8 @@ import { useData } from '../../../../../../../../shared/app/functions/store/use-
 const VisitorPageIndex = () => {
   useStyles(styles)
 
-  const texts = useTexts()
-  const data = useData()
-  const { honeYourSkillsHeadingTwo } = texts
-  const { pages, articles } = data
+  const { honeYourSkillsHeadingTwo } = useTexts()
+  const { pages, articles } = useData()
 
   return (
     <div id='visitor-page-index'>

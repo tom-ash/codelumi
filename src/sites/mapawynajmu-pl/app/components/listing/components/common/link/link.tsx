@@ -1,14 +1,15 @@
 import React from 'react'
 import { ManagedLink } from 'managed-inputs'
-import { useStore } from 'react-redux'
 import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/change-url'
+import { useLinks } from '../../../../../../../shared/app/functions/store/use-links'
 
 interface LinkProps {
   track: string
 }
 
 export const Link = (props: LinkProps) => {
-  const { links } = useStore().getState()
+  const links = useLinks()
+
   const { track } = props
   const link = links[track]
 

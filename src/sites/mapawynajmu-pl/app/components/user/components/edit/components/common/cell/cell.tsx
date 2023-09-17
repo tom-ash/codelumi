@@ -2,7 +2,9 @@ import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { CellOpener } from './components/cell-opener/cell-opener'
-import { useStore } from '../../../../../../../../../shared/app/functions/store/useStore'
+import { useTexts } from '../../../../../../../../../shared/app/functions/store/use-texts'
+import { useData } from '../../../../../../../../../shared/app/functions/store/use-data'
+import { useControl } from '../../../../../../../../../shared/app/functions/store/use-control'
 
 interface UserEditCellInterface {
   (props: { attrName: string; children: React.ReactElement | React.ReactElement[] }): React.ReactElement
@@ -14,14 +16,12 @@ export const UserEditCell: UserEditCellInterface = props => {
   useStyles(styles)
 
   const { attrName, children } = props
-  const { state } = useStore()
-  const { texts, control, data } = state
-  const { [`${attrName}CellTitle`]: title } = texts
-  const { [`${attrName}CellValue`]: value } = data
+  const { [`${attrName}CellTitle`]: title } = useTexts()
+  const { [`${attrName}CellValue`]: value } = useData()
 
   const cellOpenerProps = { attrName }
   const cellOpenedKey = `${attrName}CellOpened`
-  const { [cellOpenedKey]: cellOpened } = control
+  const { [cellOpenedKey]: cellOpened } = useControl()
   const cellContentClass = cellOpened ? 'opened' : 'closed'
 
   return (
