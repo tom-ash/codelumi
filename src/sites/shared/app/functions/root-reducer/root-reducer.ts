@@ -7,7 +7,6 @@ interface StoreObject {
 export interface Store {
   app: StoreObject,
   user: StoreObject,
-  meta: StoreObject,
   links: StoreObject,
   assets: StoreObject,
   texts: StoreObject,
@@ -26,24 +25,22 @@ interface RootReducer {
 export const rootReducer: RootReducer = (
   state = {
     app: initialAppState,
-    user: {},
-    meta: {},
-    links: {},
-    assets: {},
-    texts: {},
-    errors: {},
-    inputs: {},
-    data: {},
-    control: {},
     render: {},
     visitor: {},
+    user: {},
+    links: {},
+    assets: {},
+    control: {},
+    texts: {},
+    data: {},
+    inputs: {},
+    errors: {},
   },
   action
 ) => {
   const stateKeys = [
     'app',
     'user',
-    'meta',
     'links',
     'assets',
     'texts',
