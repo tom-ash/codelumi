@@ -1,17 +1,18 @@
 import React from 'react'
-import { useStore } from '../../../../../../../../shared/app/functions/store/useStore'
 import { HeadingTwo } from '../../../../../../../../shared/app/components/support/headings/heading-two'
 import { Link } from '../../../../../../../../shared/app/components/support/link/link'
 import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import Image from '../../../../../../../../shared/app/components/support/image/image'
+import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
+import { useData } from '../../../../../../../../shared/app/functions/store/use-data'
 
 const VisitorPageIndex = () => {
   useStyles(styles)
 
-  const { state } = useStore()
-  const { texts, data } = state
+  const texts = useTexts()
+  const data = useData()
   const { honeYourSkillsHeadingTwo } = texts
   const { pages, articles } = data
 
