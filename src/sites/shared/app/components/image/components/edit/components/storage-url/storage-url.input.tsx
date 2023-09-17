@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link } from '../../../../../support/link/link'
-import { useStore } from '../../../../../../functions/store/useStore'
+import { useTexts } from '../../../../../../functions/store/use-texts'
+import { useData } from '../../../../../../functions/store/use-data'
 
 export const StorageUrl = () => {
-  const { state } = useStore()
-  const { texts, data } = state
-  const { storageUrlLinkLabel } = texts
-  const { storageUrl } = data
+  const { storageUrlLinkLabel } = useTexts()
+  const { storageUrl } = useData()
 
   const linkProps = {
     label: storageUrl,

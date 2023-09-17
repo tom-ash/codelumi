@@ -1,14 +1,11 @@
 import React from 'react'
-import { useStore } from '../../functions/store/useStore'
 import loadable from '@loadable/component'
+import { useRender } from '../../functions/store/use-render'
 const Index = loadable(() => import('./components/index'))
 const Edit = loadable(() => import('./components/edit/edit'))
 
 const Image = () => {
-  const { state } = useStore()
-  const { render } = state
-
-  const { 'image/index': renderIndex, 'image/edit': renderEdit } = render
+  const { 'image/index': renderIndex, 'image/edit': renderEdit } = useRender()
 
   return (
     <section id='image'>

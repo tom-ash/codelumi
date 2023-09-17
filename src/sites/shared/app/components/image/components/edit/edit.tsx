@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { useStore } from '../../../../functions/store/useStore'
 import { StorageKeyInput } from './components/storage-key/storage-key.input'
 import { StorageUrl } from './components/storage-url/storage-url.input'
 import { Dimensions } from './components/dimensions/dimensions'
@@ -9,13 +8,14 @@ import { UpdateButton } from './components/update-button/update-button'
 import { StoragePreview } from './components/storage-preview/storage-preview'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import { useInputs } from '../../../../functions/store/use-inputs'
+import { useDispatch } from 'react-redux'
 
 const ImageEdit = () => {
   useStyles(styles)
 
-  const { state, dispatch } = useStore()
-  const { inputs } = state
-  const { body } = inputs
+  const { body } = useInputs()
+  const dispatch = useDispatch()
   const setData = (value: any) => dispatch({ type: 'data', value })
 
   useEffect(() => {

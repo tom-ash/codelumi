@@ -1,14 +1,14 @@
 import React from 'react'
-import { useStore } from '../../../../../../functions/store/useStore'
 import { update as submit } from '../../functions/update'
 import { SubmitButton } from '../../../../../support/submit-button/submit-button'
+import { useTexts } from '../../../../../../functions/store/use-texts'
+import { useData } from '../../../../../../functions/store/use-data'
+import { useInputs } from '../../../../../../functions/store/use-inputs'
 
 export const UpdateButton = () => {
-  const { state } = useStore()
-  const { texts, data, inputs } = state
-  const { updateButtonLabel: label } = texts
-  const { apiUrl, id: imageId } = data
-  const { width, height, storageKey, storageUrl, body } = inputs
+  const { updateButtonLabel: label } = useTexts()
+  const { apiUrl, id: imageId } = useData()
+  const { width, height, storageKey, storageUrl, body } = useInputs()
 
   const submitButtonProps = {
     label,

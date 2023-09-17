@@ -1,12 +1,11 @@
 import React from 'react'
-import { useStore } from '../../../../../../functions/store/useStore'
 import { RenderNode } from '../../../../../support/render-node/render-node'
+import { useData } from '../../../../../../functions/store/use-data'
+import { useInputs } from '../../../../../../functions/store/use-inputs'
 
 export const Output = () => {
-  const { state } = useStore()
-  const { data, inputs } = state
-  const { body } = data
-  const { width, height } = inputs
+  const { body } = useData()
+  const { width, height } = useInputs()
 
   const nodeProps = {
     node: {

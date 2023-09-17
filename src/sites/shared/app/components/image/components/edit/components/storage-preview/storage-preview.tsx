@@ -1,10 +1,8 @@
 import React from 'react'
-import { useStore } from '../../../../../../functions/store/useStore'
+import { useData } from '../../../../../../functions/store/use-data'
 
 export const StoragePreview = () => {
-  const { state } = useStore()
-  const { data } = state
-  const { storageUrl } = data
+  const { storageUrl } = useData()
 
   if (!storageUrl) return null
 
