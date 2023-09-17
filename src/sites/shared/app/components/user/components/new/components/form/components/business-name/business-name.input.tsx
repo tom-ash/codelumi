@@ -1,18 +1,20 @@
 import React from 'react'
 import { ManagedText } from 'managed-inputs'
 import { businessNameValidator } from './business-name.validator'
-import { useStore } from '../../../../../../../../functions/store/useStore'
+import { useTexts } from '../../../../../../../../functions/store/use-texts'
+import { useInputs } from '../../../../../../../../functions/store/use-inputs'
+import { useErrors } from '../../../../../../../../functions/store/use-errors'
+import { useDispatch } from 'react-redux'
 
 export const BusinessNameInput = () => {
-  const { state, dispatch } = useStore()
-  const { texts, inputs, errors } = state
   const {
     businessNameInputLabel: label,
     businessNameInputPlaceholder: placeholder,
     businessNameInputInvalidError,
-  } = texts
-  const { businessName } = inputs
-  const { businessName: businessNameInvalidErrorTriggered } = errors
+  } = useTexts()
+  const { businessName } = useInputs()
+  const { businessName: businessNameInvalidErrorTriggered } = useErrors()
+  const dispatch = useDispatch()
   const classNames = { container: 'text-input' }
   const value = businessName
   const error = businessNameInvalidErrorTriggered && businessNameInputInvalidError

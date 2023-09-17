@@ -1,10 +1,11 @@
 import React from 'react'
-import { useStore } from '../../../functions/store/useStore'
 import { KeyInput } from './components/key/key.input'
 import { CreateRecordButton } from './components/create-record/create-record-button'
 import { changeUrl } from '../../../functions/routes/changers/change-url'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import { useData } from '../../../functions/store/use-data'
+import { useInputs } from '../../../functions/store/use-inputs'
 
 interface RecordIndexerInterface {
   (props: {
@@ -16,10 +17,8 @@ export const RecordIndexer: RecordIndexerInterface = props => {
   useStyles(styles)
 
   const { create } = props
-  const { state } = useStore()
-  const { data, inputs } = state
-  const { recordKeys, recordPath } = data
-  const { recordKey } = inputs
+  const { recordKeys, recordPath } = useData()
+  const { recordKey } = useInputs()
 
   return (
     <div className='record-creator'>

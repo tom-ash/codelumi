@@ -1,14 +1,16 @@
 import React from 'react'
 import { ManagedText } from 'managed-inputs'
 import { emailAddressValidator } from './email-address.validator'
-import { useStore } from '../../../../../../functions/store/useStore'
+import { useInputs } from '../../../../../../functions/store/use-inputs'
+import { useTexts } from '../../../../../../functions/store/use-texts'
+import { useErrors } from '../../../../../../functions/store/use-errors'
+import { useDispatch } from 'react-redux'
 
 export const EmailAddressInput = () => {
-  const { state, dispatch } = useStore()
-  const { texts, inputs, errors } = state
-  const { emailAddress } = inputs
-  const { emailInputLabel: label, emailInputPlaceholder: placeholder, emailInputInvalidError } = texts
-  const { emailAddress: emailInvalidErrorTriggered } = errors
+  const { emailAddress } = useInputs()
+  const { emailInputLabel: label, emailInputPlaceholder: placeholder, emailInputInvalidError } = useTexts()
+  const { emailAddress: emailInvalidErrorTriggered } = useErrors()
+  const dispatch = useDispatch()
   const classNames = { container: 'text-input' }
   const type = 'email'
   const autoComplete = 'email'

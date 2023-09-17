@@ -1,13 +1,13 @@
 import React from 'react'
 import { ManagedRadio } from 'managed-inputs'
 import { AccountType } from '../../../../../../../../../../mapawynajmu-pl/app/components/user/types/user.types'
-import { useStore } from '../../../../../../../../functions/store/useStore'
+import { useDispatch } from 'react-redux'
+import { useInputs } from '../../../../../../../../functions/store/use-inputs'
 
 export const AccountTypeRadio = () => {
-  const { state, dispatch } = useStore()
+  const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
-  const { inputs } = state
-  const { accountType, accountTypes } = inputs
+  const { accountType, accountTypes } = useInputs()
   const name = 'account-type'
   const classNames = { container: 'account-type' }
   const checked = accountType

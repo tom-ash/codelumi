@@ -1,14 +1,14 @@
 import React from 'react'
-import { useStore } from '../../../../../functions/store/useStore'
 import { submitPassword } from '../functions/submit-password'
 import { SubmitButton } from '../../../../support/submit-button/submit-button'
+import { useTexts } from '../../../../../functions/store/use-texts'
+import { useData } from '../../../../../functions/store/use-data'
+import { useInputs } from '../../../../../functions/store/use-inputs'
 
 export const SubmitPasswordButton = () => {
-  const { state } = useStore()
-  const { texts, data, inputs } = state
-  const { submitPassword: label } = texts
-  const { apiUrl } = data
-  const { emailAddress: email, verificationCode, password } = inputs
+  const { submitPassword: label } = useTexts()
+  const { apiUrl } = useData()
+  const { emailAddress: email, verificationCode, password } = useInputs()
 
   const submitButtonProps = {
     apiUrl,

@@ -1,6 +1,8 @@
 import React from 'react'
-import { useStore } from '../../../functions/store/useStore'
 import { ManagedTextarea } from 'managed-inputs'
+import { useInputs } from '../../../functions/store/use-inputs';
+import { useTexts } from '../../../functions/store/use-texts';
+import { useDispatch } from 'react-redux';
 
 interface TextareaInterface {
   (props: { textareaKey: string; containerClassNames?: string; onChangeCallback?(): void }): JSX.Element
@@ -8,10 +10,9 @@ interface TextareaInterface {
 
 export const Textarea: TextareaInterface = props => {
   const { textareaKey, containerClassNames, onChangeCallback } = props
-  const { state, dispatch } = useStore()
-  const { texts, inputs } = state
-  const value = inputs[textareaKey]
-  const label = texts[`${textareaKey}TextareaLabel`]
+  const value = useInputs()[textareaKey]
+  const label = useTexts()[`${textareaKey}TextareaLabel`]
+  const dispatch = useDispatch()
   const classNames = { container: containerClassNames ? `${containerClassNames} textarea` : 'textarea' }
 
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })

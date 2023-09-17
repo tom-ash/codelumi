@@ -1,12 +1,12 @@
 import React from 'react'
 import { ManagedSelect } from 'managed-inputs'
 import { SVG } from '../../../../../../../support/svg/svg'
-import { useStore } from '../../../../../../../../functions/store/useStore'
+import { useInputs } from '../../../../../../../../functions/store/use-inputs'
+import { useDispatch } from 'react-redux'
 
 export const CountryCodeSelect = () => {
-  const { state, dispatch } = useStore()
-  const { inputs } = state
-  const { countryCode, countryCodes } = inputs
+  const { countryCode, countryCodes } = useInputs()
+  const dispatch = useDispatch()
   const options = countryCodes.map((countryCode: string) => ({
     value: countryCode,
     text: countryCode,

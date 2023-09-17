@@ -3,14 +3,16 @@ import { SVG } from '../../../../../shared/app/components/support/svg/svg'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { changeUrl } from '../../../functions/routes/changers/change-url'
-import { useStore } from '../../../functions/store/useStore'
+import { useApp } from '../../../functions/store/use-app'
+import { useLinks } from '../../../functions/store/use-links'
+import { useDispatch } from 'react-redux'
 
 export const LangSwitch = () => {
   useStyles(styles)
 
-  const { state, dispatch } = useStore()
-  const { app, links } = state
-  const { lang } = app
+  const { lang } = useApp()
+  const links = useLinks()
+  const dispatch = useDispatch()
 
   let plHref: string
   let enHref: string

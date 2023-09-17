@@ -1,17 +1,13 @@
 import React from 'react'
-import { useStore } from '../../../../../functions/store/useStore'
 import { Link } from '../../../link/link'
+import { useData } from '../../../../../functions/store/use-data'
 
 // TODO: Refactor the whole file.
 
 //@ts-ignore
 const TableOfContents = props => {
   const { title } = props
-  const {
-    state: {
-      data: { body },
-    },
-  } = useStore()
+  const { body } = useData()
 
   const article = (() => {
     try {

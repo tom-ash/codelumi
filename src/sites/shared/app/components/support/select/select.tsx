@@ -1,7 +1,9 @@
 import React from 'react'
-import { useStore } from '../../../functions/store/useStore'
 import { ManagedSelect } from 'managed-inputs'
 import { SVG } from '../svg/svg'
+import { useTexts } from '../../../functions/store/use-texts'
+import { useInputs } from '../../../functions/store/use-inputs'
+import { useDispatch } from 'react-redux'
 
 interface SelectInterface {
   (props: {
@@ -14,11 +16,11 @@ interface SelectInterface {
 
 export const Select: SelectInterface = props => {
   const { selectKey, containerClassNames, children: customChildren, onChangeCallback } = props
-  const { state, dispatch } = useStore()
-  const { texts, inputs } = state
+  const inputs = useInputs()
+  const dispatch = useDispatch()
   const options = inputs[`${selectKey}SelectOptions`]
   const value = inputs[selectKey]
-  const label = texts[`${selectKey}SelectLabel`]
+  const label = useTexts()[`${selectKey}SelectLabel`]
   const classNames = { container: containerClassNames ? `${containerClassNames} select-element` : 'select-element' }
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const onSelect = ({ value }: { value: any }) => {

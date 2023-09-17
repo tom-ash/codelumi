@@ -1,6 +1,8 @@
 import React from 'react'
-import { useStore } from '../../../functions/store/useStore'
 import { ManagedCheckbox } from 'managed-inputs'
+import { useTexts } from '../../../functions/store/use-texts';
+import { useInputs } from '../../../functions/store/use-inputs';
+import { useDispatch } from 'react-redux';
 
 interface SwitchInterface {
   (props: { switchKey: string; customSwitchValues?: any[]; containerClassNames?: string }): React.ReactElement
@@ -9,10 +11,9 @@ interface SwitchInterface {
 export const Switch: SwitchInterface = props => {
   const { switchKey, customSwitchValues, containerClassNames } = props
   const swtichValues = customSwitchValues || [true, false]
-  const { state, dispatch } = useStore()
-  const { texts, inputs } = state
-  const { [`${switchKey}SwitchLabel`]: labelText } = texts
-  const { [switchKey]: switchValue } = inputs
+  const { [`${switchKey}SwitchLabel`]: labelText } = useTexts()
+  const { [switchKey]: switchValue } = useInputs()
+  const dispatch = useDispatch()
   const classNames = { container: containerClassNames ? `${containerClassNames} switch` : 'switch' }
   const checked = switchValue === swtichValues[0]
   const label = (

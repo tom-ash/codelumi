@@ -1,7 +1,9 @@
 import React from 'react'
-import { useStore } from '../../../functions/store/useStore'
 import { ButtonSpinner } from '../../../../../mapawynajmu-pl/app/components/support/components/button-spinner/button-spinner'
 import { ManagedButton } from 'managed-inputs'
+import { useApp } from '../../../functions/store/use-app'
+import { useControl } from '../../../functions/store/use-control'
+import { useDispatch } from 'react-redux'
 
 interface SubmitButtonInterface {
   (props: {
@@ -14,10 +16,9 @@ interface SubmitButtonInterface {
 
 export const SubmitButton: SubmitButtonInterface = props => {
   const { label: textLabel, customContainerClassNames, submit } = props
-  const { state, dispatch } = useStore()
-  const { app, control } = state
-  const { lang } = app
-  const { connecting } = control
+  const { lang } = useApp()
+  const { connecting } = useControl()
+  const dispatch = useDispatch()
   const disabled = connecting
   const containerClassNames = customContainerClassNames ? `submit-button ${customContainerClassNames}` : 'submit-button'
   const classNames = { container: containerClassNames }

@@ -1,8 +1,8 @@
 import React from 'react'
-import { useStore } from '../../../functions/store/useStore'
 import { ManagedLink } from 'managed-inputs'
 import { changeUrl } from '../../../functions/routes/changers/change-url'
 import { scrollToFragment } from '../../../functions/scrollers/scroll-to-fragment'
+import { useLinks } from '../../../functions/store/use-links'
 
 type LinkInterfaceProps =
   | {
@@ -27,8 +27,7 @@ interface LinkInterface {
 
 export const Link: LinkInterface = props => {
   const { label: customLabel, href, hrefLang, title, customClassNames } = props
-  const { state } = useStore()
-  const { links } = state
+  const links = useLinks()
   const containerClassNames = customClassNames ? `${customClassNames} link` : 'link'
   const classNames = { container: containerClassNames }
 

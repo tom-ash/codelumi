@@ -1,6 +1,9 @@
 import React from 'react'
-import { useStore } from '../../../../../functions/store/useStore'
 import { SubmitButton } from '../../../submit-button/submit-button'
+import { useTexts } from '../../../../../functions/store/use-texts'
+import { useApp } from '../../../../../functions/store/use-app'
+import { useData } from '../../../../../functions/store/use-data'
+import { useInputs } from '../../../../../functions/store/use-inputs'
 
 interface CreateRecordButtonInterface {
   (props: { create: any }): React.ReactElement
@@ -8,12 +11,10 @@ interface CreateRecordButtonInterface {
 
 export const CreateRecordButton: CreateRecordButtonInterface = props => {
   const { create: submit } = props
-  const { state } = useStore()
-  const { app, texts, data, inputs } = state
-  const { createRecordButtonLabel: label } = texts
-  const { lang } = app
-  const { apiUrl } = data
-  const { recordKey } = inputs
+  const { createRecordButtonLabel: label } = useTexts()
+  const { lang } = useApp()
+  const { apiUrl } = useData()
+  const { recordKey } = useInputs()
 
   const submitButtonProps = {
     label,

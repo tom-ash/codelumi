@@ -1,6 +1,7 @@
 import React from 'react'
-import { useStore } from '../../../../../../functions/store/useStore'
 import { ManagedText } from 'managed-inputs'
+import { useData } from '../../../../../../functions/store/use-data';
+import { useDispatch } from 'react-redux';
 
 interface TextInputInterface {
   (props: { id: number; fieldName: string; value: string; index: number }): JSX.Element
@@ -8,9 +9,8 @@ interface TextInputInterface {
 
 export const TextInput: TextInputInterface = props => {
   const { id, fieldName, value, index } = props
-  const { state, dispatch } = useStore()
-  const { data } = state
-  const { redirects } = data
+  const { redirects } = useData()
+  const dispatch = useDispatch()
   const classNames = { container: 'text-input' }
   const setData = (value: any) => dispatch({ type: 'data', value })
   const onChange = (value: string) => {

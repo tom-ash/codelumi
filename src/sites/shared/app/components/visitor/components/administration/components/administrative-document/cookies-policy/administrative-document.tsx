@@ -1,7 +1,8 @@
 import React from 'react'
-import { useStore } from '../../../../../../../functions/store/useStore'
 import { Provision } from '../../provision/provision'
 import { Heading } from '../../../../../../../../../mapawynajmu-pl/app/components/support/components/heading'
+import { useApp } from '../../../../../../../functions/store/use-app'
+import { useTexts } from '../../../../../../../functions/store/use-texts'
 
 interface AdministrativeDocumentInterface {
   (props: {
@@ -12,11 +13,8 @@ interface AdministrativeDocumentInterface {
 
 export const AdministrativeDocument: AdministrativeDocumentInterface = props => {
   const { identifier, provisions } = props
-
-  const { state } = useStore()
-  const { app, texts } = state
-  const { lang } = app
-  const { headingOne } = texts
+  const { lang } = useApp()
+  const { headingOne } = useTexts()
   const headingOneProps = { tier: 1, text: headingOne }
 
   return (

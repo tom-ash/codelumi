@@ -1,13 +1,10 @@
 import React from 'react'
-import { useStore } from '../../../../../../../functions/store/useStore'
+import { useTexts } from '../../../../../../../functions/store/use-texts'
+import { useErrors } from '../../../../../../../functions/store/use-errors'
 
 export const CredentialsError = () => {
-  const { state } = useStore()
-  const { texts, errors } = state
-
-  const { credentialsInvalidError } = texts
-
-  const { credentials: credentialsInvalidErrorTriggered } = errors
+  const { credentialsInvalidError } = useTexts()
+  const { credentials: credentialsInvalidErrorTriggered } = useErrors()
 
   const error = credentialsInvalidErrorTriggered && credentialsInvalidError
 

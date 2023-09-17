@@ -1,12 +1,10 @@
 import React from 'react'
-import { useStore } from '../../../../../functions/store/useStore'
 import Image from '../image/image'
 import { Heading } from '../../../../../../../mapawynajmu-pl/app/components/support/components/heading'
+import { useData } from '../../../../../functions/store/use-data'
 
 const Header = () => {
-  const { state } = useStore()
-  const { data } = state
-  const { coverImage, title } = data
+  const { coverImage, title } = useData()
 
   const imageProps = {
     src: coverImage,

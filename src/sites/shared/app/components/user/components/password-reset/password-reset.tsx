@@ -1,5 +1,4 @@
 import React from 'react'
-import { useStore } from '../../../../functions/store/useStore'
 import { PasswordResetStep } from './password-reset.types'
 import { Heading } from '../../../../../../mapawynajmu-pl/app/components/support/components/heading'
 import { Line } from '../../../../../../mapawynajmu-pl/app/components/support/components/line/line'
@@ -12,14 +11,14 @@ import { SubmitPasswordButton } from './components/submit-password-button'
 import { passwordValidator } from '../new/components/form/components/password/password.validator'
 import { PasswordAutoComplete } from '../common/components/password/password.input'
 import { Explanation } from '../../../support/explanation/explanationt'
+import { useControl } from '../../../../functions/store/use-control'
+import { useTexts } from '../../../../functions/store/use-texts'
 
 const PasswordReset = () => {
-  const { state } = useStore()
-  const { texts, control } = state
-  const { step } = control
+  const { step } = useControl()
 
   const { headingOne, emailAddressExplanation, verificationExplanation, passwordExplanation, successExplanation } =
-    texts
+    useTexts()
 
   const headingProps = {
     tier: 1,

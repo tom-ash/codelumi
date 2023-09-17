@@ -1,6 +1,8 @@
 import React from 'react'
-import { useStore } from '../../../functions/store/useStore'
 import { ManagedText } from 'managed-inputs'
+import { useInputs } from '../../../functions/store/use-inputs'
+import { useTexts } from '../../../functions/store/use-texts'
+import { useDispatch } from 'react-redux'
 
 export enum TextInputType {
   NUMBER = 'number',
@@ -40,9 +42,9 @@ export const TextInput: TextInputInterface = props => {
     onEnter: onEnterCallback,
     disabled,
   } = props
-  const { state, dispatch } = useStore()
-  const { texts, inputs } = state
-  const value = inputs[inputKey]
+  const texts = useTexts()
+  const dispatch = useDispatch()
+  const value = useInputs()[inputKey]
   const label = texts[`${inputKey}InputLabel`]
   const placeholder = texts[`${inputKey}InputPlaceholder`]
   const classNames = { container: containerClassNames ? `${containerClassNames} text-input` : 'text-input' }

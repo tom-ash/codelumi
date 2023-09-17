@@ -1,14 +1,16 @@
 import React from 'react'
 import { ManagedText } from 'managed-inputs'
-import { useStore } from '../../../../../../../../functions/store/useStore'
 import { verificationCodeValidator } from './verification-code.validator'
+import { useInputs } from '../../../../../../../../functions/store/use-inputs'
+import { useTexts } from '../../../../../../../../functions/store/use-texts'
+import { useErrors } from '../../../../../../../../functions/store/use-errors'
+import { useDispatch } from 'react-redux'
 
 export const VerificationCodeInput = () => {
-  const { state, dispatch } = useStore()
-  const { texts, inputs, errors } = state
-  const { verificationCode: value } = inputs
-  const { verificationCodeInputLabel: label, verificationCodeInputInvalidError } = texts
-  const { verificationCode: verificationCodeInputInvalidErrorTriggered } = errors
+  const { verificationCode: value } = useInputs()
+  const { verificationCodeInputLabel: label, verificationCodeInputInvalidError } = useTexts()
+  const { verificationCode: verificationCodeInputInvalidErrorTriggered } = useErrors()
+  const dispatch = useDispatch()
   const match = /^\d{0,4}$/
   const classNames = { container: 'text-input' }
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })

@@ -1,12 +1,11 @@
 import React from 'react'
 import { TermsOfServiceConsentCheckbox } from './terms-of-service-consent.checkbox'
-import { useStore } from '../../../../../../../../functions/store/useStore'
+import { useTexts } from '../../../../../../../../functions/store/use-texts'
+import { useErrors } from '../../../../../../../../functions/store/use-errors'
 
 export const TermsOfServiceConsent = () => {
-  const { state } = useStore()
-  const { texts, errors } = state
-  const { termsOfServiceConsentNotGrantedError } = texts
-  const { termsOfServiceConsent: termsOfServiceConsentErrorTriggered } = errors
+  const { termsOfServiceConsentNotGrantedError } = useTexts()
+  const { termsOfServiceConsent: termsOfServiceConsentErrorTriggered } = useErrors()
 
   return (
     <div className='terms-of-service-consent'>
