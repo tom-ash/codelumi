@@ -2,7 +2,7 @@ import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { SVG } from '../../../../../../../shared/app/components/support/svg/svg'
-import { shareOnFacebook } from '../../../../../../../mapawynajmu-pl/app/components/announcement/functions/share-on-facebook'
+import { shareOnFacebook } from '../../../../../../../mapawynajmu-pl/app/components/listing/functions/share-on-facebook'
 
 const Share = (props: ShareProps) => {
   useStyles(styles)

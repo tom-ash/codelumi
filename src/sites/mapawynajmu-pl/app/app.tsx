@@ -8,7 +8,7 @@ import loadable from '@loadable/component'
 const Header = loadable(() => import('./components/scaffold/header/header'))
 const Visitor = loadable(() => import('./components/visitor/visitor'))
 const User = loadable(() => import('./components/user/user'))
-const Announcement = loadable(() => import('./components/announcement/announcement'))
+const Announcement = loadable(() => import('./components/listing/announcement'))
 const Page = loadable(() => import('../../shared/app/components/page/page'))
 const Image = loadable(() => import('../../shared/app/components/image/image'))
 const VisitorPageIndex = loadable(() => import('./components/visitor/components/page/components/index/index'))
