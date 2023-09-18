@@ -1,4 +1,4 @@
-import { updateUrl } from '../../../../../../../shared/app/functions/routes/updaters/update-url'
+import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/change-url'
 
 interface DrawPinProps {
   latitude: number
@@ -29,7 +29,7 @@ function drawPin(props: DrawPinProps) {
         e.preventDefault()
 
         setControl({ currentTileId: id })
-        updateUrl({ href: path, retainQueryParams: true, withScroll: false })
+        changeUrl({ href: path, retainQueryParams: true, withScroll: false })
       },
     }
   )

@@ -25,16 +25,7 @@ export const matchStateToRouteGeneric: MatchStateToRouteGeneric = args => {
     // TODO: TS!
     const { state, meta } = syncedRouteData
 
-    // @ts-ignore
-    if (window.onlyUpdate) {
-      // @ts-ignore
-      window.onlyUpdate = false
-
-      stateSetter({ state, dispatch })
-    } else {
-      stateResetter({ state, dispatch })
-    }
-
     metaSetter({ clientUrl, url, ...meta })
+    stateResetter({ state, dispatch })
   })
 }

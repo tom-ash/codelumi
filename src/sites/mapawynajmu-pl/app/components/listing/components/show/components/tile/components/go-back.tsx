@@ -2,8 +2,8 @@ import React from 'react'
 import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
 import centerMap from '../../../../index/components/map/functions/center-map'
 import { buildUrl } from '../../../../../../../../shared/functions/builders/url'
-import { updateUrl } from '../../../../../../../../../shared/app/functions/routes/updaters/update-url'
 import { useDispatch } from 'react-redux'
+import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/change-url'
 
 interface GoBackProps {
   id: number
@@ -20,7 +20,7 @@ const GoBack = (props: GoBackProps) => {
       onClick={() => {
         centerMap()
         setControl({ currentTileId: null })
-        updateUrl({ href: buildUrl(goBackLink), retainQueryParams: true, withScroll: false })
+        changeUrl({ href: buildUrl(goBackLink), retainQueryParams: true, withScroll: false })
       }}
       className='go-back-to-list'
     >
