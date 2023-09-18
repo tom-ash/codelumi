@@ -1,6 +1,5 @@
 import getPureUrl from '../../../../shared/functions/routes/getters/pure-url'
 import { syncRouteData } from '../synchronizers/route-data'
-import { stateSetter } from '../setters/state-setter'
 import { stateResetter } from '../resetters/state-resetter'
 import metaSetter from '../setters/meta'
 import { Dispatch } from 'redux'
