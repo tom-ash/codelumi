@@ -10,7 +10,7 @@ import { useRender } from '../../../../shared/app/functions/store/use-render'
 const User = () => {
   useStyles(styles)
 
-  const { render } = useRender()
+  const render = useRender()
   const {
     'user/new': renderNew,
     'user/auth': renderAuth,

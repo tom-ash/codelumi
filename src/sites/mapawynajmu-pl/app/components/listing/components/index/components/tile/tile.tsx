@@ -90,8 +90,6 @@ export const ListingIndexTile: ListingIndexTileInterface = props => {
     rentCurrency,
   }
 
-  // const firstPicture = `${AWS_S3_URL}/announcements/${id}/${picture.database}`
-
   return (
     <a {...tileProps}>
       <Pictures {...picturesProps} />

@@ -33,8 +33,7 @@ Things you may want to cover:
       {
         "Article": [
           {
-            "Header": {
-            }
+            "HeadingOne": "TODO"
           },
           {
             "Editorial": "TODO"
