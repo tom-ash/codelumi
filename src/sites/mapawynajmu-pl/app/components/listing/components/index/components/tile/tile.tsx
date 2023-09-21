@@ -4,7 +4,8 @@ import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { Area } from '../../../common/area/area'
 import { Rent } from '../../../common/rent/rent'
-import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
+// import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
+import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
 
 const Heading = loadable(() => import('../../../show/components/tile/components/heading'))
 const Pictures = loadable(() => import('../../../show/components/tile/components/pictures/pictures'))
@@ -29,6 +30,8 @@ interface ListingIndexTileInterface {
     rentAmount: number
     rentCurrency: number
     isPromoted?: boolean
+    isMobile?: boolean;
+    markerOnClick?: (e: React.SyntheticEvent) => void
     onClick?: (e: React.SyntheticEvent) => void
     onMouseOver?: () => void
     onMouseLeave?: () => void
@@ -52,6 +55,8 @@ export const ListingIndexTile: ListingIndexTileInterface = props => {
     rentCurrency,
     area,
     isPromoted,
+    isMobile,
+    markerOnClick,
     onClick,
     onMouseOver,
     onMouseLeave,
@@ -98,7 +103,14 @@ export const ListingIndexTile: ListingIndexTileInterface = props => {
         <Area {...areaProps} />
         <Rent {...rentProps} />
       </div>
-      <FloatClear />
+      {isMobile && (
+        <button
+          className='show-on-map'
+          onClick={markerOnClick}
+        >
+          <SVG name='marker' />
+        </button>
+      )}
     </a>
   )
 }

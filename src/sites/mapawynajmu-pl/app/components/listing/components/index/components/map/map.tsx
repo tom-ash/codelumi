@@ -89,27 +89,29 @@ class AnnouncementIndexMap extends React.Component {
                 const onClick = (e: React.SyntheticEvent) => {
                   e.preventDefault()
 
-                  if (!isMobile) {
-                    setControl({ currentTileId: id })
-                    changeUrl({ href, retainQueryParams: true, withScroll: false })
-                  } else {
-                    var fromTop = document.body.getBoundingClientRect().top
+                  changeUrl({ href, retainQueryParams: true, withScroll: false })
+                }
 
-                    window.scrollBy({
-                      top: 454 + fromTop,
-                      behavior: 'smooth',
-                    })
+                const markerOnClick = (e: React.SyntheticEvent) => {
+                  e.preventDefault()
+                  e.stopPropagation()
 
-                    setControl({
-                      mapOptions: {
-                        center: {
-                          lat: latitude,
-                          lng: longitude,
-                        },
-                        zoom: 12.4,
+                  var fromTop = document.body.getBoundingClientRect().top
+
+                  window.scrollBy({
+                    top: 454 + fromTop,
+                    behavior: 'smooth',
+                  })
+
+                  setControl({
+                    mapOptions: {
+                      center: {
+                        lat: latitude,
+                        lng: longitude,
                       },
-                    })
-                  }
+                      zoom: 12.4,
+                    },
+                  })
                 }
 
                 const tileProps = {
@@ -128,6 +130,8 @@ class AnnouncementIndexMap extends React.Component {
                   rentCurrency,
                   area,
                   isPromoted,
+                  isMobile,
+                  markerOnClick,
                   onClick,
                   onMouseOver: () => changeHoveredTileId(id),
                   onMouseLeave: () => changeHoveredTileId(null),
