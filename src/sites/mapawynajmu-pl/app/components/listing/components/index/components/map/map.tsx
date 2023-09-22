@@ -8,6 +8,8 @@ import styles from './styles/styles.scss'
 import { ListingIndexTile } from '../tile/tile'
 import GoBack from '../../../show/components/tile/components/go-back'
 import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
+import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
+import { ShowOnMapButton } from '../tile/show-on-map/show-on-map.button'
 
 class AnnouncementIndexMap extends React.Component {
   // @ts-ignore
@@ -92,28 +94,6 @@ class AnnouncementIndexMap extends React.Component {
                   changeUrl({ href, retainQueryParams: true, withScroll: false })
                 }
 
-                const markerOnClick = (e: React.SyntheticEvent) => {
-                  e.preventDefault()
-                  e.stopPropagation()
-
-                  var fromTop = document.body.getBoundingClientRect().top
-
-                  window.scrollBy({
-                    top: 454 + fromTop,
-                    behavior: 'smooth',
-                  })
-
-                  setControl({
-                    mapOptions: {
-                      center: {
-                        lat: latitude,
-                        lng: longitude,
-                      },
-                      zoom: 12.4,
-                    },
-                  })
-                }
-
                 const tileProps = {
                   key: href,
                   href,
@@ -130,14 +110,22 @@ class AnnouncementIndexMap extends React.Component {
                   rentCurrency,
                   area,
                   isPromoted,
-                  isMobile,
-                  markerOnClick,
                   onClick,
                   onMouseOver: () => changeHoveredTileId(id),
                   onMouseLeave: () => changeHoveredTileId(null),
                 }
 
-                return <ListingIndexTile {...tileProps} />
+                return (
+                  <ListingIndexTile {...tileProps}>
+                    {isMobile && (
+                      <ShowOnMapButton
+                        latitude={latitude}
+                        longitude={longitude}
+                        setControl={setControl}
+                      />
+                    )}
+                  </ListingIndexTile>
+                )
               })}
           </div>
           <div id='google-map' />
