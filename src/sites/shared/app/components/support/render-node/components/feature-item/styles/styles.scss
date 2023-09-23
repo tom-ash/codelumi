@@ -1,0 +1,14 @@
+.feature-item {
+  position: relative;
+  padding: 0 32px;
+  padding-left: 232px;
+  img {
+    position: absolute;
+    left: 32px;
+    width: 200px;
+    height: 150px;
+    margin: 0!important; // TODO
+    padding: 0!important; // TODO
+    border-radius: 5px;
+  }
+}

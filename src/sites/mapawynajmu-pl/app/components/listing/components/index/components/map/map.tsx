@@ -8,7 +8,6 @@ import styles from './styles/styles.scss'
 import { ListingIndexTile } from '../tile/tile'
 import GoBack from '../../../show/components/tile/components/go-back'
 import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
-import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
 import { ShowOnMapButton } from '../tile/show-on-map/show-on-map.button'
 
 class AnnouncementIndexMap extends React.Component {

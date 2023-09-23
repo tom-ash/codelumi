@@ -1,31 +1,5 @@
 # README
 
-## Page Fragments
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 ## Page Example
 [
   {
@@ -65,6 +39,82 @@ Things you may want to cover:
                 "HeadingTwo": "TODO"
               },
               "TODO"
+            ],
+            "identifier": "todo"
+          }
+        ],
+        "className": "article"
+      }
+    ],
+    "className": "page"
+  }
+]
+
+## New Page Example
+[
+  {
+    "kind": "Main",
+    "nodes": [
+      {
+        "kind": "Article",
+        "nodes": [
+          {
+            "kind": "HeadingOne"
+            "text": "TODO"
+          },
+          {
+            "kind": "Editorial"
+            "text": "TODO"
+          },
+          {
+            "kind": "TableOfContents"
+            "text": "Spis treści"
+          },
+          {
+            "kind": "Section",
+            "nodes": [
+              {
+                "kind": "HeadingTwo"
+                "text": "TODO"
+              },
+              {
+                "kind": "Paragraph"
+                "text": "TODO"
+              },
+              {
+                "kind": "Paragraph"
+                "text": "TODO"
+              },
+              {
+                "kind": "UnorderedList"
+                "nodes": "TODO"
+              }
+            ],
+            "identifier": "todo"
+          },
+          {
+            "kind": "Section",
+            "nodes": [
+              {
+                "HeadingTwo": "TODO"
+              },
+              {
+                "kind": "Paragraph"
+                "text": "TODO"
+              }
+            ],
+            "identifier": "todo"
+          },
+          {
+            "kind": "Section",
+            "nodes": [
+              {
+                "HeadingTwo": "TODO"
+              },
+              {
+                "kind": "Paragraph"
+                "text": "TODO"
+              }
             ],
             "identifier": "todo"
           }

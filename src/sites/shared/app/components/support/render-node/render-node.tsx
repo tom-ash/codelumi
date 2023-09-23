@@ -22,6 +22,11 @@ const SkillFindLogoLogoAndTitle = loadable(
 const MapawynajmuPlLogoAndTitle = loadable(
   () => import('../../../../../mapawynajmu-pl/app/components/support/logo-and-title/logo-and-title')
 )
+const FeatureItem = loadable(() => import('./components/feature-item/feature-item'))
+
+const elements = {
+  FeatureItem,
+}
 
 export const RenderNode = (props: RenderNodeProps) => {
   try {
@@ -253,22 +258,6 @@ export const RenderNode = (props: RenderNodeProps) => {
       return <Share {...shareProps} />
     }
 
-    // // @ts-ignore
-    // if (node.Logo) {
-    //   const {
-    //     // @ts-ignore
-    //     style,
-    //     // @ts-ignore
-    //   } = node.Logo
-
-    //   const logoProps = {
-    //     style,
-    //   }
-
-    //   // @ts-ignore
-    //   return <Logo {...logoProps} />
-    // }
-
     // TODO: Change term to appelation.
     // @ts-ignore
     if (node.Definition) {
@@ -316,10 +305,19 @@ export const RenderNode = (props: RenderNodeProps) => {
       return <MapawynajmuPlLogoAndTitle scale={scale} />
     }
 
-    // // @ts-ignore
-    // if (node.SkillfindTechFullLogo) {
-    //   return <SkillfindTechFullLogo />
-    // }
+    // @ts-ignore
+    if (node.kind) {
+      // @ts-ignore
+      const component = elements[node.kind]
+
+      // @ts-ignore
+      if (component) {
+        return (
+          // @ts-ignore
+          React.createElement(component, node.props, node.text || node.nodes)
+        )
+      }
+    }
 
     return null
   } catch {
