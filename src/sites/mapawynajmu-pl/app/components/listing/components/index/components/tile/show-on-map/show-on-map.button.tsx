@@ -34,7 +34,7 @@ const showOnMap: ShowOnMap = (attrs) => {
         lat: latitude,
         lng: longitude,
       },
-      zoom: 12.4,
+      zoom: 9.5,
     },
   })
 }
