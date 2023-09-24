@@ -1,5 +1,5 @@
 import { buildAnchor } from './builders/build-anchor'
-import * as DOMPurify from 'dompurify';
+import DOMPurify from 'isomorphic-dompurify';
 
 export const enrichText = (plainText: string) => {
   let enrichedText = plainText
