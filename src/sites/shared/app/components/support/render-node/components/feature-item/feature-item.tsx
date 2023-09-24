@@ -16,11 +16,11 @@ const FeatureItem = (props: any) => {
 
   return (
     <section className='feature-item'>
+      <HeadingTwo text={heading} />
       <Image
         src={pictureSource}
         alt={pictureAlternate}
       />
-      <HeadingTwo text={heading} />
       <p>
         {text}
       </p>

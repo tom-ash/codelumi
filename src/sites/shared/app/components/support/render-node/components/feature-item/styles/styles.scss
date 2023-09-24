@@ -1,14 +1,32 @@
+@import '../../../../../../../../shared/app/styles/media-breakpoints';
+
 .feature-item {
   position: relative;
-  padding: 0 32px;
-  padding-left: 232px;
+  padding: 0 32px 0 232px;
   img {
     position: absolute;
+    top: 0;
     left: 32px;
     width: 200px;
-    height: 150px;
-    margin: 0!important; // TODO
-    padding: 0!important; // TODO
+    aspect-ratio: 4/3;
+    margin: 0!important; // TODO: Remove !important.
+    padding: 0!important; // TODO: Remove !important.
     border-radius: 5px;
+  }
+  @media #{$SMALL-TABLET} {
+    padding: 0 32px;
+    h2 {
+      margin: 0!important; // TODO: Remove !important.
+      padding: 0!important; // TODO: Remove !important.
+    }
+    img {
+      position: static;
+      width: 100%;
+      padding: 24px 0 0!important; // TODO: Remove !important.
+    }
+    p {
+      margin: 0!important; // TODO: Remove !important.
+      padding: 24px 0 0!important; // TODO: Remove !important.
+    }
   }
 }
