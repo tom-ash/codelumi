@@ -20,10 +20,12 @@
       margin: 0!important; // TODO: Remove !important.
       padding: 0!important; // TODO: Remove !important.
     }
+    figure {
+      padding: 24px 0 0!important; // TODO: Remove !important.
+    }
     img {
       position: static;
       width: 100%;
-      padding: 24px 0 0!important; // TODO: Remove !important.
     }
     p {
       margin: 0!important; // TODO: Remove !important.

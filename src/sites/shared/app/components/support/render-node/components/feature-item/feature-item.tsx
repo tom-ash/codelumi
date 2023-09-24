@@ -4,6 +4,7 @@ import { HeadingTwo } from '../../../headings/heading-two'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { enrichText } from '../../helpers/enrich-text/enrich-text'
+import { Figure } from '../../../../../../../shared/app/components/support/figure/figure'
 
 const FeatureItem = (props: any) => {
   useStyles(styles)
@@ -20,10 +21,12 @@ const FeatureItem = (props: any) => {
   return (
     <section className='feature-item'>
       <HeadingTwo text={heading} />
-      <Image
-        src={pictureSource}
-        alt={pictureAlternate}
-      />
+      <Figure>
+        <Image
+          src={pictureSource}
+          alt={pictureAlternate}
+        />
+      </Figure>
       <p dangerouslySetInnerHTML={{ __html }} />
     </section>
   )
