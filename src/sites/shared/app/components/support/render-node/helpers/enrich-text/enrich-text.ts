@@ -1,4 +1,5 @@
 import { buildAnchor } from './builders/build-anchor'
+import * as DOMPurify from 'dompurify';
 
 export const enrichText = (plainText: string) => {
   let enrichedText = plainText
@@ -24,5 +25,5 @@ export const enrichText = (plainText: string) => {
     }
   )
 
-  return enrichedText
+  return DOMPurify.sanitize(enrichedText)
 }
