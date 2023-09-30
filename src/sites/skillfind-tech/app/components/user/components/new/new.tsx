@@ -9,7 +9,7 @@ const UserNew = () => {
 
   const render = useRender()
 
-  const renderAnnouncementCreate = render['announcement/create/form']
+  const renderAnnouncementCreate = render['listings>new>form']
 
   if (renderAnnouncementCreate) return <UserNewEmail />
 

@@ -9,9 +9,9 @@ const UserNew = () => {
   useStyles(styles)
 
   const { minInnerHeight } = useApp()
-  const renderAnnouncementCreate = useRender()['announcement/create/form']
+  const renderListingsNewForm = useRender()['listings>new>form']
 
-  if (renderAnnouncementCreate) return <UserNewEmail />
+  if (renderListingsNewForm) return <UserNewEmail />
 
   return (
     <>

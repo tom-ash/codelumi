@@ -13,7 +13,7 @@
             "Editorial": "TODO"
           },
           {
-            "TableOfContents": "Spis treści"
+            "TableOfContents": "Table Of Contents"
           },
           {
             "Section": [

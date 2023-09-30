@@ -2,7 +2,7 @@ export const mapStateToProps = store => {
   const { app, render, texts, control, data, inputs } = store
   const { lang, isMobile } = app
   const {
-    'announcement/create/form': renderForm,
+    'listings>new>form': renderForm,
     'announcement/edit': renderEdit,
     'announcement/create/verification': renderVerification,
     'announcement/create/summary': renderSuccess,

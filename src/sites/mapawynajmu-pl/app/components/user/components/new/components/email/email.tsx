@@ -9,7 +9,7 @@ const Confirmation = loadable(() => import('./components/confirmation/confirmati
 
 export const UserNewEmail = () => {
   const render = useRender()
-  const renderForm = render['user/new/form'] || render['announcement/create/form']
+  const renderForm = render['user/new/form'] || render['listings>new>form']
   const renderVerification = render['user/create/verification']
   const renderConfirmation = render['user/create/confirmation']
 

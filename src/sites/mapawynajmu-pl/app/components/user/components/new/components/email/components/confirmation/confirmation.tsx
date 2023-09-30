@@ -16,7 +16,7 @@ const Confirmation = () => {
     track: 'user/index/partner',
   }
   const listingCreateFormLinkProps = {
-    track: 'announcement/create/form',
+    track: 'listings>new>form',
   }
   const listingIndexUserLinkProps = {
     track: 'announcement/index/user',
