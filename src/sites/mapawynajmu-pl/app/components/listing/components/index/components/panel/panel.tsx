@@ -7,6 +7,7 @@ import { Category } from './components/category/category'
 import { Area } from './components/area/area'
 import { Price } from './components/price/price'
 import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
+import { LocationFilter } from './components/location-filter/location-filter'
 
 class AnnouncementIndexPanel extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class AnnouncementIndexPanel extends React.Component {
       <>
         <div id='listing-index-panel'>
           <Category />
+          <LocationFilter />
           <Area />
           <Price />
           <FloatClear />

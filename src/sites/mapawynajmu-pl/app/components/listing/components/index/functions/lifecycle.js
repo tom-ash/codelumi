@@ -15,8 +15,11 @@ export function componentDidUpdate(prevProps) {
       areaMax: { pl: 'powierzchnia_max', en: 'area_max' },
       priceMin: { pl: 'cena_min', en: 'price_min' },
       priceMax: { pl: 'cena_maks', en: 'price_max' },
+      lat: { pl: 'lat', en: 'lat' },
+      lng: { pl: 'lng', en: 'lng' },
+      location: { pl: 'lokalizacja', en: 'location' },
     }
-    const queryAttrs = ['areaMin', 'areaMax', 'priceMin', 'priceMax']
+    const queryAttrs = ['areaMin', 'areaMax', 'priceMin', 'priceMax', 'lat', 'lng', 'location']
     const builtQueryParamsArray = queryAttrs
       .filter(queryParam => {
         const queryParamValue = this.props[queryParam]

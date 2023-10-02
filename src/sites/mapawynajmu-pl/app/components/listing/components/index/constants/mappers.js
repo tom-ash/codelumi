@@ -7,6 +7,9 @@ export const mapStateToProps = store => {
   const { announcements, amount, title, admin } = data
 
   const {
+    location,
+    lat,
+    lng,
     category,
     areaMin,
     areaMinInput,
@@ -34,6 +37,9 @@ export const mapStateToProps = store => {
   } = inputs
 
   return {
+    location,
+    lat,
+    lng,
     title,
     render,
     lang,
