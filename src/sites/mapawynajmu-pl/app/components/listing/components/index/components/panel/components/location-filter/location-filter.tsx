@@ -5,12 +5,14 @@ import { SVG } from '../../../../../../../../../../shared/app/components/support
 import { AddressInput } from '../../../../../../../../../../shared/app/components/support/address-input/address-input'
 import { useData } from '../../../../../../../../../../shared/app/functions/store/use-data'
 import { useDispatch } from 'react-redux'
+import { getLocationByPlaceId } from '../../../../../../../../../../shared/app/functions/map/google/get-location-by-place-id'
+import { GooglePlacesAutocomplete } from '../../../../../../../../../../shared/app/types/google-places-autocomplete'
 
 export const LocationFilter = () => {
   useStyles(styles)
 
-  const { autocompletes } = useData()
-
+  const data = useData()
+  const autocompletes = data.autocompletes as GooglePlacesAutocomplete[]
   const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const setControl = (value: any) => dispatch({ type: 'control', value })
@@ -20,7 +22,6 @@ export const LocationFilter = () => {
       <SVG name='marker' />
       <AddressInput />
       {autocompletes && autocompletes.length > 0 && <div className='autocompletes'>
-        {/* @ts-ignore */}
         {autocompletes.map(autocomplete => {
           const {
             description,
@@ -29,22 +30,11 @@ export const LocationFilter = () => {
 
           return (
             <div
-              onClick={() => {
-                var geocoder = new google.maps.Geocoder();
-              
-                geocoder.geocode({
-                  'placeId': place_id
-                }, function(results, status) {
-              
-                  if (status == google.maps.GeocoderStatus.OK) {
-                    const location = results[0].geometry.location
-                    const lat = location.lat();
-                    const lng = location.lng();
+              onClick={async () => {
+                const { lat, lng } = await getLocationByPlaceId(place_id)
 
-                    setInputs({ location: description, lat, lng })
-                    setControl({ rebuildQueryParams: true })
-                  }
-                });
+                setInputs({ location: description, lat, lng })
+                setControl({ rebuildQueryParams: true })
               }}
             >
               {description}

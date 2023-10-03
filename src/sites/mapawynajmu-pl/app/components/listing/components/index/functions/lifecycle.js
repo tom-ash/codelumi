@@ -19,6 +19,7 @@ export function componentDidUpdate(prevProps) {
       lng: { pl: 'lng', en: 'lng' },
       location: { pl: 'lokalizacja', en: 'location' },
     }
+
     const queryAttrs = ['areaMin', 'areaMax', 'priceMin', 'priceMax', 'lat', 'lng', 'location']
     const builtQueryParamsArray = queryAttrs
       .filter(queryParam => {
