@@ -3,10 +3,17 @@ import { ManagedText } from 'managed-inputs'
 import { useInputs } from '../../../functions/store/use-inputs'
 import { useData } from '../../../functions/store/use-data'
 import { useDispatch } from 'react-redux'
-import { getLocationByPlaceId } from '../../../functions/map/google/get-location-by-place-id'
-import { GooglePlacesAutocomplete } from '../../../types/google-places-autocomplete'
+// import { getLocationByPlaceId } from '../../../functions/map/google/get-location-by-place-id'
+import { GooglePlacesAutocompleteItem } from '../../../types/google-places-autocomplete'
 
-export const AddressInput = () => {
+interface AddressInputInterface {
+  (props: {
+    onInputEnter?(location: GooglePlacesAutocompleteItem): void
+  }): React.ReactElement
+}
+
+export const AddressInput: AddressInputInterface = (props) => {
+  const { onInputEnter } = props
   const { location } = useInputs()
   const { autocompletes } = useData()
   const dispatch = useDispatch()
@@ -22,15 +29,7 @@ export const AddressInput = () => {
 
     if (autocompletes.length === 0) return
 
-    const location = autocompletes[0]
-    const { place_id, description } = location as GooglePlacesAutocomplete
-
-    const { lat, lng } = await getLocationByPlaceId(place_id)
-
-    console.log(lat, lng)
-
-    setInputs({ location: description, lat, lng })
-    setControl({ rebuildQueryParams: true })
+    onInputEnter && onInputEnter(autocompletes[0])
 
     // @ts-ignore
     // https://stackoverflow.com/questions/60504810/react-synteticevent-provides-no-blur-method-for-keyboardeventhtmlinputelement
