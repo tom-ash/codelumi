@@ -11,9 +11,11 @@
         position: relative;
         background: white;
         z-index: 200;
-        padding: 12px;
         border-radius: 4px;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        > div {
+          padding: 0 12px;
+        }
       }
       > .input,
       input {
