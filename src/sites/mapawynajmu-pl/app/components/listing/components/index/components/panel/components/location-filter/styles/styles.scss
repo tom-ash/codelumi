@@ -20,6 +20,9 @@
           color: rgba(26, 82, 118, .5);
         }
       }
+      .current {
+        background: #d6eaf8;
+      }
       @media #{$LARGE-PHONE} {
         width: 100%;
       }
