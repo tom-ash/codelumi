@@ -16,6 +16,7 @@ export const GooglePlacesAutocomplete: GooglePlacesAutocompleteInterface = props
   const items = data.items as GooglePlacesAutocompleteItem[]
   const { onItemClick, onInputEnter } = props
   const [currentItemIndex, setCurrentItem] = useState(0)
+  const [hideItemsOnBlur, setHideItemsOnBlur] = useState(true)
 
   return (
     <div className='filter location'>
@@ -23,18 +24,27 @@ export const GooglePlacesAutocomplete: GooglePlacesAutocompleteInterface = props
       <AddressInput
         items={items}
         currentItemIndex={currentItemIndex}
+        hideItemsOnBlur={hideItemsOnBlur}
         onInputEnter={onInputEnter}
         setCurrentItem={setCurrentItem}
+        setHideItemsOnBlur={setHideItemsOnBlur}
       />
       {items && items.length > 0 && (
-        <div className='autocompletes'>
+        <div
+          className='autocompletes'
+          onMouseOver={() => setHideItemsOnBlur(false)}
+          onMouseLeave={() => setHideItemsOnBlur(true)}
+        >
           {items.map((item, index) => {
             const { description } = item
             const className = currentItemIndex === index ? 'current' : undefined
 
             return (
               <div
-                onClick={() => onItemClick && onItemClick(item)}
+                onClick={() => {
+                  setHideItemsOnBlur(true)
+                  onItemClick && onItemClick(item)
+                }}
                 className={className}
               >
                 {description}

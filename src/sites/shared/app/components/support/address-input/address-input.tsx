@@ -10,13 +10,15 @@ interface AddressInputInterface {
   (props: {
     items: GooglePlacesAutocompleteItem[]
     currentItemIndex: number
+    hideItemsOnBlur: boolean
     onInputEnter?(location: GooglePlacesAutocompleteItem): void
     setCurrentItem(autocompleteItem: number): void
+    setHideItemsOnBlur(hideItemsOnBlur: boolean): void
   }): React.ReactElement
 }
 
 export const AddressInput: AddressInputInterface = props => {
-  const { currentItemIndex, onInputEnter, setCurrentItem } = props
+  const { currentItemIndex, hideItemsOnBlur, onInputEnter, setCurrentItem, setHideItemsOnBlur } = props
   const { placesAutocompleteInputPlaceholder: placeholder } = useTexts()
   const { location } = useInputs()
   const { items } = useData()
@@ -25,8 +27,6 @@ export const AddressInput: AddressInputInterface = props => {
   const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const setData = (value: any) => dispatch({ type: 'data', value })
-  const setControl = (value: any) => dispatch({ type: 'control', value })
-  const onFocus = () => setControl({ showAutocompletes: true })
   const onKeyDown = (_value: any, e: React.KeyboardEvent) => {
     const key = e.key
 
@@ -43,7 +43,7 @@ export const AddressInput: AddressInputInterface = props => {
   const onEnter = async (e: KeyboardEvent) => {
     e.preventDefault()
 
-    setCurrentItem(0)
+    setHideItemsOnBlur(true)
 
     if (items.length === 0) return
 
@@ -52,9 +52,7 @@ export const AddressInput: AddressInputInterface = props => {
     // @ts-expect-error: https://stackoverflow.com/questions/60504810/react-synteticevent-provides-no-blur-method-for-keyboardeventhtmlinputelement
     e.target.blur()
   }
-  const onTab = () => {
-    setControl({ showAutocompletes: false })
-  }
+  const onTab = () => setHideItemsOnBlur(true)
   const onChange = (input: any) => {
     setInputs({ location: input })
 
@@ -84,11 +82,15 @@ export const AddressInput: AddressInputInterface = props => {
     classNames,
     placeholder,
     value,
-    onFocus,
     onEnter,
     onKeyDown,
     onTab,
     onChange,
+    onBlur: () => {
+      if (hideItemsOnBlur) {
+        setData({ items: [] })
+      }
+    }
   }
 
   return <ManagedText {...inputProps} />
