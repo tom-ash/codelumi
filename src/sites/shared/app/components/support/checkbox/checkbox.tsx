@@ -1,8 +1,8 @@
 import React from 'react'
 import { ManagedCheckbox } from 'managed-inputs'
-import { useTexts } from '../../../functions/store/use-texts';
-import { useInputs } from '../../../functions/store/use-inputs';
-import { useDispatch } from 'react-redux';
+import { useTexts } from '../../../functions/store/use-texts'
+import { useInputs } from '../../../functions/store/use-inputs'
+import { useDispatch } from 'react-redux'
 
 interface CheckboxInterface {
   (props: { checkboxKey: string; containerClassNames?: string }): React.ReactElement

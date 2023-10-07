@@ -7,14 +7,14 @@ import { GooglePlacesAutocompleteItem } from '../../../types/google-places-autoc
 
 interface AddressInputInterface {
   (props: {
-    items: GooglePlacesAutocompleteItem[],
-    currentItemIndex: number,
+    items: GooglePlacesAutocompleteItem[]
+    currentItemIndex: number
     onInputEnter?(location: GooglePlacesAutocompleteItem): void
     setCurrentItem(autocompleteItem: number): void
   }): React.ReactElement
 }
 
-export const AddressInput: AddressInputInterface = (props) => {
+export const AddressInput: AddressInputInterface = props => {
   const { currentItemIndex, onInputEnter, setCurrentItem } = props
   const { location } = useInputs()
   const { items } = useData()
@@ -69,7 +69,7 @@ export const AddressInput: AddressInputInterface = (props) => {
       {
         input,
         componentRestrictions: { country: 'pl' },
-        sessionToken
+        sessionToken,
       },
       items => {
         if (!items) return setData({ items: [] })

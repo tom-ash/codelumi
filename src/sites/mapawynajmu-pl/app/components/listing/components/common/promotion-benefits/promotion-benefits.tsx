@@ -19,7 +19,10 @@ export const PromotionBenefits: SubmitWithPromotionInterface = () => {
           </li>
         ))}
         <Line />
-        <li className='people' key={promotionBenefitsSummary}>
+        <li
+          className='people'
+          key={promotionBenefitsSummary}
+        >
           <SVG name='people' /> {promotionBenefitsSummary}
         </li>
       </ul>

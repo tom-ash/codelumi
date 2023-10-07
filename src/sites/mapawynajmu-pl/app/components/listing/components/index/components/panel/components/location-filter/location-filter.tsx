@@ -21,5 +21,10 @@ export const LocationFilter = () => {
     setControl({ rebuildQueryParams: true })
   }
 
-  return <GooglePlacesAutocomplete onItemClick={filterByLocation} onInputEnter={filterByLocation} />
+  return (
+    <GooglePlacesAutocomplete
+      onItemClick={filterByLocation}
+      onInputEnter={filterByLocation}
+    />
+  )
 }

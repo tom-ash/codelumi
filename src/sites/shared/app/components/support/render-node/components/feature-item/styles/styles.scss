@@ -10,26 +10,26 @@
     left: 32px;
     width: 200px;
     aspect-ratio: 4/3;
-    margin: 0!important; // TODO: Remove !important.
-    padding: 0!important; // TODO: Remove !important.
+    margin: 0 !important; // TODO: Remove !important.
+    padding: 0 !important; // TODO: Remove !important.
     border-radius: 5px;
   }
   @media #{$SMALL-TABLET} {
     padding: 0 32px;
     h2 {
-      margin: 0!important; // TODO: Remove !important.
-      padding: 0!important; // TODO: Remove !important.
+      margin: 0 !important; // TODO: Remove !important.
+      padding: 0 !important; // TODO: Remove !important.
     }
     figure {
-      padding: 24px 0 0!important; // TODO: Remove !important.
+      padding: 24px 0 0 !important; // TODO: Remove !important.
     }
     img {
       position: static;
       width: 100%;
     }
     p {
-      margin: 0!important; // TODO: Remove !important.
-      padding: 24px 0 0!important; // TODO: Remove !important.
+      margin: 0 !important; // TODO: Remove !important.
+      padding: 24px 0 0 !important; // TODO: Remove !important.
     }
   }
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 import { ManagedTextarea } from 'managed-inputs'
-import { useInputs } from '../../../functions/store/use-inputs';
-import { useTexts } from '../../../functions/store/use-texts';
-import { useDispatch } from 'react-redux';
+import { useInputs } from '../../../functions/store/use-inputs'
+import { useTexts } from '../../../functions/store/use-texts'
+import { useDispatch } from 'react-redux'
 
 interface TextareaInterface {
   (props: { textareaKey: string; containerClassNames?: string; onChangeCallback?(): void }): JSX.Element

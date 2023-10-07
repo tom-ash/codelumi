@@ -8,7 +8,11 @@ import { useDispatch } from 'react-redux'
 
 export const PhoneNumberInput = () => {
   const { phoneNumber } = useInputs()
-  const { phoneNumberInputLabel: label, phoneNumberInputPlaceholder: placeholder, phoneNumberInputInvalidError } = useTexts()
+  const {
+    phoneNumberInputLabel: label,
+    phoneNumberInputPlaceholder: placeholder,
+    phoneNumberInputInvalidError,
+  } = useTexts()
   const { phoneNumber: phoneNumberInvalidErrorTriggered } = useErrors()
   const dispatch = useDispatch()
   const classNames = { container: 'text-input phone-number' }

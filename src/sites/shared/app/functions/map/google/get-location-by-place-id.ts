@@ -1,16 +1,14 @@
-import { Location } from "../../../types/location"
+import { Location } from '../../../types/location'
 
 interface GetLocationByPlaceId {
   (placeId: string): Promise<Location>
 }
 
-export const getLocationByPlaceId: GetLocationByPlaceId = async (placeId) => {
+export const getLocationByPlaceId: GetLocationByPlaceId = async placeId => {
   return new Promise((resolve, reject) => {
-    const geocoder = new google.maps.Geocoder();
+    const geocoder = new google.maps.Geocoder()
 
-    geocoder.geocode(
-    { 'placeId': placeId },
-    (results, status) => {
+    geocoder.geocode({ placeId: placeId }, (results, status) => {
       if (status === 'OK') {
         const location = results[0].geometry.location
         const lat = location.lat()
@@ -18,11 +16,11 @@ export const getLocationByPlaceId: GetLocationByPlaceId = async (placeId) => {
 
         resolve({
           lat,
-          lng
+          lng,
         })
       } else {
         reject(status)
-      }    
+      }
     })
   })
 }

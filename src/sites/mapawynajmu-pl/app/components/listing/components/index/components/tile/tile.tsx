@@ -28,7 +28,7 @@ interface ListingIndexTileInterface {
     rentAmount: number
     rentCurrency: number
     isPromoted?: boolean
-    children?: React.ReactNode;
+    children?: React.ReactNode
     onClick?: (e: React.SyntheticEvent) => void
     onMouseOver?: () => void
     onMouseLeave?: () => void

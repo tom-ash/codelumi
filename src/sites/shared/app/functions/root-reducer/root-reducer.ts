@@ -1,21 +1,21 @@
 import initialAppState from '../../constants/initial-app-state'
 
 export interface StoreObject {
-  [key:string]: any
+  [key: string]: any
 }
 
 export interface Store {
-  app: StoreObject,
-  user: StoreObject,
-  links: StoreObject,
-  assets: StoreObject,
-  texts: StoreObject,
-  errors: StoreObject,
-  inputs: StoreObject,
-  data: StoreObject,
-  control: StoreObject,
-  render: StoreObject,
-  visitor: StoreObject,
+  app: StoreObject
+  user: StoreObject
+  links: StoreObject
+  assets: StoreObject
+  texts: StoreObject
+  errors: StoreObject
+  inputs: StoreObject
+  data: StoreObject
+  control: StoreObject
+  render: StoreObject
+  visitor: StoreObject
 }
 
 interface RootReducer {

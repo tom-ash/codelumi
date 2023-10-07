@@ -9,12 +9,7 @@ import { Figure } from '../../../../../../../shared/app/components/support/figur
 const FeatureItem = (props: any) => {
   useStyles(styles)
 
-  const {
-    text,
-    heading,
-    pictureSource,
-    pictureAlternate,
-  } = props
+  const { text, heading, pictureSource, pictureAlternate } = props
 
   const __html = enrichText(text)
 

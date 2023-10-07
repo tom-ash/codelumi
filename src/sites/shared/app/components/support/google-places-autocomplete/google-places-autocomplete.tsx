@@ -6,12 +6,12 @@ import { GooglePlacesAutocompleteItem } from '../../../types/google-places-autoc
 
 interface GooglePlacesAutocompleteInterface {
   (props: {
-    onItemClick?(location: GooglePlacesAutocompleteItem): void;
-    onInputEnter?(location: GooglePlacesAutocompleteItem): void;
+    onItemClick?(location: GooglePlacesAutocompleteItem): void
+    onInputEnter?(location: GooglePlacesAutocompleteItem): void
   }): React.ReactElement
 }
 
-export const GooglePlacesAutocomplete: GooglePlacesAutocompleteInterface = (props) => {
+export const GooglePlacesAutocomplete: GooglePlacesAutocompleteInterface = props => {
   const data = useData()
   const items = data.items as GooglePlacesAutocompleteItem[]
   const { onItemClick, onInputEnter } = props

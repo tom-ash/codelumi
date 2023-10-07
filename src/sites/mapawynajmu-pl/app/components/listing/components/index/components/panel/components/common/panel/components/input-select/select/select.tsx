@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux'
 
 interface SelectInterface {
   (props: { name: string; kind: string; options: string[] }): React.ReactElement

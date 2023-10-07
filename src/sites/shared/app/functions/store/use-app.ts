@@ -1,5 +1,5 @@
-import { useSelector } from "react-redux"
-import { Store, StoreObject } from "../root-reducer/root-reducer"
+import { useSelector } from 'react-redux'
+import { Store, StoreObject } from '../root-reducer/root-reducer'
 
 interface UseApp {
   (): StoreObject

@@ -1,8 +1,8 @@
 import React from 'react'
 import { ManagedButton } from 'managed-inputs'
-import { useTexts } from '../../../functions/store/use-texts';
-import { useControl } from '../../../functions/store/use-control';
-import { useDispatch } from 'react-redux';
+import { useTexts } from '../../../functions/store/use-texts'
+import { useControl } from '../../../functions/store/use-control'
+import { useDispatch } from 'react-redux'
 
 interface SubmitButtonInterface {
   (props: { controlKey: string; containerClassNames?: string }): React.ReactElement

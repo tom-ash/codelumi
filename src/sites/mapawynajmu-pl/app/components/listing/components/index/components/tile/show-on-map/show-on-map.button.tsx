@@ -1,22 +1,17 @@
 import React from 'react'
-import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg';
+import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
 
 interface ShowOnMap {
   (attrs: {
-    e: React.SyntheticEvent;
-    latitude: number;
-    longitude: number;
-    setControl(attrs: any): void; // TODO!
+    e: React.SyntheticEvent
+    latitude: number
+    longitude: number
+    setControl(attrs: any): void // TODO!
   }): void
 }
 
-const showOnMap: ShowOnMap = (attrs) => {
-  const {
-    e,
-    latitude,
-    longitude,
-    setControl,
-  } = attrs
+const showOnMap: ShowOnMap = attrs => {
+  const { e, latitude, longitude, setControl } = attrs
 
   e.preventDefault()
   e.stopPropagation()
@@ -40,29 +35,27 @@ const showOnMap: ShowOnMap = (attrs) => {
 }
 
 interface ShowOnMapButtonInterface {
-    (props: {
-      latitude: number;
-      longitude: number;
-      setControl(attrs: any): void; // TODO!
-    }): React.ReactElement
-  }
+  (props: {
+    latitude: number
+    longitude: number
+    setControl(attrs: any): void // TODO!
+  }): React.ReactElement
+}
 
-export const ShowOnMapButton: ShowOnMapButtonInterface = (props) => {
-  const {
-    latitude,
-    longitude,
-    setControl
-  } = props
+export const ShowOnMapButton: ShowOnMapButtonInterface = props => {
+  const { latitude, longitude, setControl } = props
 
   return (
     <button
       className='show-on-map'
-      onClick={(e: React.SyntheticEvent) => showOnMap({
-        e,
-        latitude,
-        longitude,
-        setControl,
-      })}
+      onClick={(e: React.SyntheticEvent) =>
+        showOnMap({
+          e,
+          latitude,
+          longitude,
+          setControl,
+        })
+      }
     >
       <SVG name='marker' />
     </button>

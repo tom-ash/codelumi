@@ -1,9 +1,9 @@
 import React from 'react'
 import { SVG } from '../../../../../../../../../../../shared/app/components/support/svg/svg'
-import { useData } from '../../../../../../../../../../../shared/app/functions/store/use-data';
-import { useTexts } from '../../../../../../../../../../../shared/app/functions/store/use-texts';
-import { useDispatch } from 'react-redux';
-import { useInputs } from '../../../../../../../../../../../shared/app/functions/store/use-inputs';
+import { useData } from '../../../../../../../../../../../shared/app/functions/store/use-data'
+import { useTexts } from '../../../../../../../../../../../shared/app/functions/store/use-texts'
+import { useDispatch } from 'react-redux'
+import { useInputs } from '../../../../../../../../../../../shared/app/functions/store/use-inputs'
 
 interface FilterInterface {
   (props: { name: string; panel: React.ReactElement }): React.ReactElement

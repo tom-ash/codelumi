@@ -1,7 +1,7 @@
 import React from 'react'
 import { ManagedText } from 'managed-inputs'
-import { useData } from '../../../../../../functions/store/use-data';
-import { useDispatch } from 'react-redux';
+import { useData } from '../../../../../../functions/store/use-data'
+import { useDispatch } from 'react-redux'
 
 interface TextInputInterface {
   (props: { id: number; fieldName: string; value: string; index: number }): JSX.Element

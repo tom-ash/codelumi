@@ -6,7 +6,8 @@ import { useInputs } from '../../../../../../../../../../../shared/app/functions
 
 export const SignUpButton = () => {
   const { signUpButtonLabel: label, termsOfServiceConsentLabel } = useTexts()
-  const { accountType, businessName, emailAddress, password, countryCode, phoneNumber, termsOfServiceConsent } = useInputs()
+  const { accountType, businessName, emailAddress, password, countryCode, phoneNumber, termsOfServiceConsent } =
+    useInputs()
 
   const submitButtonProps = {
     label,
