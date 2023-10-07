@@ -1,8 +1,9 @@
 import React, { KeyboardEvent } from 'react'
-import { ManagedText } from 'managed-inputs'
-import { useInputs } from '../../../functions/store/use-inputs'
-import { useData } from '../../../functions/store/use-data'
 import { useDispatch } from 'react-redux'
+import { useTexts } from '../../../functions/store/use-texts'
+import { useData } from '../../../functions/store/use-data'
+import { useInputs } from '../../../functions/store/use-inputs'
+import { ManagedText } from 'managed-inputs'
 import { GooglePlacesAutocompleteItem } from '../../../types/google-places-autocomplete'
 
 interface AddressInputInterface {
@@ -16,11 +17,11 @@ interface AddressInputInterface {
 
 export const AddressInput: AddressInputInterface = props => {
   const { currentItemIndex, onInputEnter, setCurrentItem } = props
+  const { placesAutocompleteInputPlaceholder: placeholder } = useTexts()
   const { location } = useInputs()
   const { items } = useData()
   const classNames = 'address-input'
   const value = location || ''
-  const placeholder = 'Lokalizacja' // TODO: Use server localization.
   const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const setData = (value: any) => dispatch({ type: 'data', value })
@@ -81,8 +82,8 @@ export const AddressInput: AddressInputInterface = props => {
 
   const inputProps = {
     classNames,
-    value,
     placeholder,
+    value,
     onFocus,
     onEnter,
     onKeyDown,
