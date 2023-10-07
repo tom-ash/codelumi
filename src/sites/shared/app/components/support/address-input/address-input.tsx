@@ -7,17 +7,17 @@ import { GooglePlacesAutocompleteItem } from '../../../types/google-places-autoc
 
 interface AddressInputInterface {
   (props: {
-    autocompletes: GooglePlacesAutocompleteItem[],
-    currentAutocompleteItemIndex: number,
+    items: GooglePlacesAutocompleteItem[],
+    currentItemIndex: number,
     onInputEnter?(location: GooglePlacesAutocompleteItem): void
-    setCurrentAutocompleteItem(autocompleteItem: number): void
+    setCurrentItem(autocompleteItem: number): void
   }): React.ReactElement
 }
 
 export const AddressInput: AddressInputInterface = (props) => {
-  const { currentAutocompleteItemIndex, onInputEnter, setCurrentAutocompleteItem } = props
+  const { currentItemIndex, onInputEnter, setCurrentItem } = props
   const { location } = useInputs()
-  const { autocompletes } = useData()
+  const { items } = useData()
   const classNames = 'address-input'
   const value = location || ''
   const placeholder = 'Lokalizacja' // TODO: Use server localization.
@@ -30,23 +30,23 @@ export const AddressInput: AddressInputInterface = (props) => {
     const key = e.key
 
     if (key === 'ArrowDown') {
-      const newCurrentAutocompleteItem = currentAutocompleteItemIndex === autocompletes.length - 1 ? 0 : currentAutocompleteItemIndex + 1
+      const newCurrentAutocompleteItem = currentItemIndex === items.length - 1 ? 0 : currentItemIndex + 1
 
-      setCurrentAutocompleteItem(newCurrentAutocompleteItem)
+      setCurrentItem(newCurrentAutocompleteItem)
     } else if (key === 'ArrowUp') {
-      const newCurrentAutocompleteItem = currentAutocompleteItemIndex === 0 ? autocompletes.length - 1 : currentAutocompleteItemIndex - 1
+      const newCurrentAutocompleteItem = currentItemIndex === 0 ? items.length - 1 : currentItemIndex - 1
 
-      setCurrentAutocompleteItem(newCurrentAutocompleteItem)
+      setCurrentItem(newCurrentAutocompleteItem)
     }
   }
   const onEnter = async (e: KeyboardEvent) => {
     e.preventDefault()
 
-    setCurrentAutocompleteItem(0)
+    setCurrentItem(0)
 
-    if (autocompletes.length === 0) return
+    if (items.length === 0) return
 
-    onInputEnter && onInputEnter(autocompletes[currentAutocompleteItemIndex])
+    onInputEnter && onInputEnter(items[currentItemIndex])
 
     // @ts-expect-error: https://stackoverflow.com/questions/60504810/react-synteticevent-provides-no-blur-method-for-keyboardeventhtmlinputelement
     e.target.blur()
@@ -57,9 +57,9 @@ export const AddressInput: AddressInputInterface = (props) => {
   const onChange = (input: any) => {
     setInputs({ location: input })
 
-    setCurrentAutocompleteItem(0)
+    setCurrentItem(0)
 
-    if (!input) return setData({ autocompletes: [] })
+    if (!input) return setData({ items: [] })
 
     // @ts-expect-error: TODO
     const sessionToken = window.sessionToken
@@ -71,10 +71,10 @@ export const AddressInput: AddressInputInterface = (props) => {
         componentRestrictions: { country: 'pl' },
         sessionToken
       },
-      autocompletes => {
-        if (!autocompletes) return setData({ autocompletes: [] })
+      items => {
+        if (!items) return setData({ items: [] })
 
-        setData({ autocompletes })
+        setData({ items })
       }
     )
   }

@@ -13,28 +13,28 @@ interface GooglePlacesAutocompleteInterface {
 
 export const GooglePlacesAutocomplete: GooglePlacesAutocompleteInterface = (props) => {
   const data = useData()
-  const autocompletes = data.autocompletes as GooglePlacesAutocompleteItem[]
+  const items = data.items as GooglePlacesAutocompleteItem[]
   const { onItemClick, onInputEnter } = props
-  const [currentAutocompleteItemIndex, setCurrentAutocompleteItem] = useState(0)
+  const [currentItemIndex, setCurrentItem] = useState(0)
 
   return (
     <div className='filter location'>
       <SVG name='marker' />
       <AddressInput
+        items={items}
+        currentItemIndex={currentItemIndex}
         onInputEnter={onInputEnter}
-        autocompletes={autocompletes}
-        currentAutocompleteItemIndex={currentAutocompleteItemIndex}
-        setCurrentAutocompleteItem={setCurrentAutocompleteItem}
+        setCurrentItem={setCurrentItem}
       />
-      {autocompletes && autocompletes.length > 0 && (
+      {items && items.length > 0 && (
         <div className='autocompletes'>
-          {autocompletes.map((autocomplete, index) => {
-            const { description } = autocomplete
-            const className = currentAutocompleteItemIndex === index ? 'current' : undefined
+          {items.map((item, index) => {
+            const { description } = item
+            const className = currentItemIndex === index ? 'current' : undefined
 
             return (
               <div
-                onClick={() => onItemClick && onItemClick(autocomplete)}
+                onClick={() => onItemClick && onItemClick(item)}
                 className={className}
               >
                 {description}
