@@ -4,22 +4,22 @@ $padding-mobile: 18px;
 
 %table-of-contents {
   margin-top: 56px;
-  margin-bottom: 56px;
   .inner-container {
     display: inline-block;
     width: auto;
     line-height: 1.25;
-    color: rgb(64, 64, 64);
-    border: 2px solid $PRIMARY-GREEN-COLOR;
-    padding: 15px 15px 9px;
-    border-radius: 8px;
+    color: #25746e;
   }
   h2 {
     font-size: 16px;
     line-height: 16px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     color: $PRIMARY-GREEN-COLOR;
-    text-align: center;
+    border-bottom: 2px solid $PRIMARY-GREEN-COLOR;
+    padding-bottom: 8px;
+    @media #{$LARGE-PHONE} {
+      margin: 0 0 16px;
+    }
   }
   a {
     font-size: 15px;
@@ -33,7 +33,7 @@ $padding-mobile: 18px;
     list-style-type: none;
     li {
       position: relative;
-      margin-bottom: 2px;
+      margin-top: 2px;
       line-height: 22px;
       ul {
         margin-bottom: 8px;

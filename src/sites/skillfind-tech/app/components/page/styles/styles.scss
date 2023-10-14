@@ -4,11 +4,12 @@
 
 %page {
   @extend %root;
+  background: #FDFEFE;
   main {
     max-width: 1440px;
     min-height: 640px;
     margin: 0 auto;
-    padding: 50px 20px 0;
+    padding-top: 60px;
     article {
       @extend %article;
     }
