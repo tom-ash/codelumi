@@ -1,13 +1,20 @@
 @import './table-of-contents';
 
-$DESKTOP-PADDING: 32px;
+$DESKTOP-MARGIN: 0;
+$MOBILE-MARGIN: 24px;
+$PRE-MARGIN: 16px;
+
+%standard-margins {
+  margin: $PRE-MARGIN $DESKTOP-MARGIN 0;
+  @media #{$LARGE-PHONE} {
+    margin: $PRE-MARGIN $MOBILE-MARGIN 0;
+  }
+}
 
 %article {
   max-width: 768px;
   margin: 32px auto;
-  border: 1px solid $CONTAINER-BORDER-COLOR;
-  border-radius: 4px;
-  background: white;
+  background: none;
   overflow: hidden;
   line-height: 26px;
   font-size: 16px;
@@ -19,28 +26,33 @@ $DESKTOP-PADDING: 32px;
   h1 {
     line-height: 41.25px;
     font-size: 32px;
-    margin-bottom: 24px;
-    padding: 0 $DESKTOP-PADDING;
+    margin: 32px $DESKTOP-MARGIN;
+    @media #{$LARGE-PHONE} {
+      margin: 32px $MOBILE-MARGIN;
+    }
   }
   .table-of-contents {
     @extend %table-of-contents;
-    padding: 0 $DESKTOP-PADDING;
+    margin: 32px $DESKTOP-MARGIN;
+    @media #{$LARGE-PHONE} {
+      margin: 32px $MOBILE-MARGIN;
+    }
   }
-  section {
-    margin-bottom: 48px;
-    &.subsection {
-      margin-bottom: 36px;
+  > section {
+    margin-top: 64px;
+    > section {
+      margin-top: 48px;
     }
   }
   h2 {
     font-size: 24px;
-    margin-bottom: 18px;
-    padding: 0 $DESKTOP-PADDING;
+    @extend %standard-margins;
+    margin-top: 0;
   }
   h3 {
     font-size: 22px;
-    margin-bottom: 18px;
-    padding: 0 $DESKTOP-PADDING;
+    @extend %standard-margins;
+    margin-top: 0;
   }
   p + h2,
   ul + h2,
@@ -55,26 +67,27 @@ $DESKTOP-PADDING: 32px;
     margin-top: -18px;
   }
   p {
-    margin-bottom: 18px;
-    padding: 0 $DESKTOP-PADDING;
+    @extend %standard-margins;
     a {
       display: inline;
-      color: rgb(42, 96, 152);
+      color: #3498DB;
+      text-decoration: underline;
       &:hover {
         color: rgb(186, 42, 24);
       }
     }
   }
   p + ul {
-    margin-top: -18px;
+    margin-top: 0;
   }
   .editorial + ul {
     margin-top: 0;
   }
   ul {
-    margin-bottom: 18px;
-    margin-left: 18px;
-    padding: 0 $DESKTOP-PADDING;
+    margin: 0 16px;
+    @media #{$LARGE-PHONE} {
+      margin: 0 42px 16px;
+    }
     li {
       p {
         margin: 0;
@@ -83,14 +96,13 @@ $DESKTOP-PADDING: 32px;
     }
   }
   img {
-    padding: 0 $DESKTOP-PADDING;
-    margin-bottom: 18px;
+    @extend %standard-margins;
   }
   header {
     > img {
       width: 100%;
       padding: 0;
-      margin-bottom: 32px;
+      margin-bottom: 0;
     }
   }
 }
