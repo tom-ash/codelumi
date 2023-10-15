@@ -21,6 +21,7 @@ export const LogoAndTitle: LogoAndTitleInterface = (props = { scale: 1 }) => {
     >
       <img
         src='https://mapawynajmupl.s3.eu-central-1.amazonaws.com/logo.jpeg?a=123'
+        alt='mapawynajmu.pl logo'
         crossOrigin={'anonymous'}
       />
       <div className='title'>
