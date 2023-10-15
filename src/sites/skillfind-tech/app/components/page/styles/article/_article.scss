@@ -28,9 +28,6 @@ $PRE-MARGIN: 16px;
     }
     > section {
       margin-top: 48px;
-      // &:first-of-type {
-      //   margin-top: 0;
-      // } 
     }
   }
   @media #{$LARGE-PHONE} {
@@ -78,6 +75,13 @@ $PRE-MARGIN: 16px;
     code {
       display: inline-block;
       color: #cb4335;
+      background: #F7F9F9;
+      padding: 0 4px;
+      border-radius: 4px;
+      line-height: 22px;
+      font-size: 15px;
+      position: relative;
+      top: -1px;
     }
     a {
       display: inline;
