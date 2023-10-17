@@ -1,27 +1,18 @@
 @import '../../../../styles/colors';
 
-$padding-mobile: 32px;
-
 %table-of-contents {
   margin-top: 36px;
   margin-bottom: 36px;
-  @media #{$LARGE-PHONE} {
-    padding: 24px $padding-mobile;
-  }
   .inner-container {
     display: inline-block;
     width: auto;
     line-height: 1.25;
     color: $PRIMARY-BLUE-COLOR;
-    // border: 2px solid $PRIMARY-BLUE-COLOR;
-    // padding: 15px 15px 9px;
     border-radius: 8px;
     @media #{$LARGE-PHONE} {
       width: 100%;
-      padding: 18px 18px 12px;
     }
   }
-
   h2 {
     font-size: 16px;
     line-height: 16px;
@@ -39,6 +30,9 @@ $padding-mobile: 32px;
     margin-bottom: 6px;
     &:hover {
       color: rgb(186, 42, 24);
+    }
+    @media #{$LARGE-PHONE} {
+      margin-bottom: 8px;
     }
   }
   ul {

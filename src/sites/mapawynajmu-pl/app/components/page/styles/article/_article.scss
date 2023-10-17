@@ -96,7 +96,7 @@ $PRE-MARGIN: 16px;
     }
   }
   img {
-    @extend %standard-margins;
+    margin: 0;
   }
   header {
     > img {
