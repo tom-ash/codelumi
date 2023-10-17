@@ -7,19 +7,18 @@ interface GoToLinkProps {
 }
 
 const GoToLink = (props: GoToLinkProps) => {
-  const { name, link } = props
+  const { link } = props
+
+  if (!link) return null
 
   return (
     <div className='go-to-link'>
-      <div className='icon'>
-        <SVG name='globe' />
-      </div>
+      <SVG name='link' />
       <a
         href={link}
         target='_blank'
       >
-        {/* TODO: LANG! */}
-        Idź do
+        {link.replace(/https?:\/\//, '')}
       </a>
     </div>
   )

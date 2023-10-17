@@ -1,6 +1,5 @@
 import React from 'react'
 import loadable from '@loadable/component'
-const GoBack = loadable(() => import('./components/go-back'))
 const ListerPhone = loadable(() => import('./components/lister-phone/lister-phone'))
 const GoToLink = loadable(() => import('./components/go-to-link'))
 const Heading = loadable(() => import('./components/heading'))
@@ -106,6 +105,7 @@ class ListingShowTile extends React.Component {
       name,
       link,
     }
+
     // @ts-ignore
     const description = this.props.description || polishDescription // TODO: LANG!
     const headingProps = {
@@ -175,7 +175,9 @@ class ListingShowTile extends React.Component {
         key={key}
       >
         <Heading {...{ ...headingProps, tier: 1 }} />
-        {isPhoneable ? <ListerPhone {...listerPhoneProps} /> : <GoToLink {...goToLinkProps} />}
+        {isPhoneable ?
+        <ListerPhone {...listerPhoneProps} />
+        : <GoToLink {...goToLinkProps} />}
         {/* @ts-ignore */}
         <Pictures {...picturesProps} />
         <PrimaryData {...primaryDataProps} />
