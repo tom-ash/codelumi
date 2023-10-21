@@ -166,12 +166,16 @@ class ListingShowTile extends React.Component {
       description,
     }
     const isPhoneable = [1, 2, 3, 4, 5].includes(category)
-
     const key = `listing-${id}`
+    const classNames = ['listing-show-tile']
+    if (isPromoted) {
+      classNames.push('promoted')
+    }
+    const className = classNames.join(' ')
 
     return (
       <div
-        className='listing-show-tile'
+        className={className}
         key={key}
       >
         <Heading {...{ ...headingProps, tier: 1 }} />

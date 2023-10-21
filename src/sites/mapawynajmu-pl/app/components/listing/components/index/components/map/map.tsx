@@ -163,6 +163,7 @@ class AnnouncementIndexMap extends React.Component {
                 phone={tile.phone}
                 features={tile.features}
                 furnishings={tile.furnishings}
+                isPromoted={tile.isPromoted}
               />
             </div>
           )}

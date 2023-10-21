@@ -8,12 +8,16 @@
 @import './features';
 @import './description';
 @import './map';
+@import '../../../../../styles/themes';
 
 %tile {
   background: white;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding-bottom: 24px;
+  &.promoted {
+    background: $PROMOTED_COLOR;
+  }
   h1 {
     @extend %heading;
     padding: 24px 24px 0;

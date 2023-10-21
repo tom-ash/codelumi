@@ -3,6 +3,7 @@
 @import '../../../../common/area/styles/styles.scss';
 @import '../../../../common/rent/styles/styles.scss';
 @import '../../../../show/components/tile/styles/pictures'; // TODO!
+@import '../../../../../styles/themes';
 
 %listing-index-tile {
   max-width: 608px;
@@ -37,7 +38,7 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 5px 14px;
   }
   &.promoted {
-    background: #fef5e7;
+    background: $PROMOTED_COLOR;
   }
   @media #{$LARGE-TABLET} {
     height: auto;
