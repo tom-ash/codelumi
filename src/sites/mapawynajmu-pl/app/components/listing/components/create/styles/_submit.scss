@@ -22,7 +22,6 @@
   .without-promotion {
     @extend %button-with-plaque;
     height: 36px;
-    margin-right: 48px;
     svg {
       top: 0px;
       bottom: 0;
@@ -37,10 +36,12 @@
   .or {
     display: inline-block;
     margin-right: 48px;
+    margin-left: 48px;
     vertical-align: top;
     line-height: 36px;
     @media #{$SMALL-TABLET} {
       margin-right: auto;
+      margin-left: auto;
     }
   }
   .with-promotion {
