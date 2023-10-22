@@ -28,7 +28,6 @@ export const FacebookSharerButton: FacebookSharerButtonInterface = props => {
     <>
       <SVG name='facebook' />
       {shareOnFacebookButtonLabel}
-      <div className='price'>0 PLN</div>
     </>
   )
 

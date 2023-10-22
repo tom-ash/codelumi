@@ -53,6 +53,8 @@ class AnnouncementCreate extends React.Component {
       authorized,
       // @ts-ignore
       step,
+      // @ts-ignore
+      isPromoted,
     } = this.props
 
     if (step === 'publishing')
@@ -105,9 +107,13 @@ class AnnouncementCreate extends React.Component {
               <div className='submit'>
                 {/* @ts-ignore */}
                 <SubmitWithoutPromotionButton publish={this.publish} />
-                <div className='or'>lub</div>
-                {/* @ts-ignore */}
-                <SubmitWithPromotion publish={this.publish} />
+                {!isPromoted && (
+                  <>
+                    <div className='or'>lub</div>
+                    {/* @ts-ignore */}
+                    <SubmitWithPromotion publish={this.publish} />
+                  </>
+                )}
               </div>
             </form>
           </div>

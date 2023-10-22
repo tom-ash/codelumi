@@ -37,6 +37,7 @@ class AnnouncementCreateSuccess extends React.Component {
       rentCurrency,
       area,
       path: href,
+      isPromoted,
       // @ts-ignore
     } = this.props.announcement
 
@@ -57,6 +58,7 @@ class AnnouncementCreateSuccess extends React.Component {
       rentAmount,
       rentCurrency,
       area,
+      isPromoted,
     }
 
     const url = buildUrl({ path: href })
@@ -65,17 +67,18 @@ class AnnouncementCreateSuccess extends React.Component {
       isMobile,
       shareOnFacebookButtonLabel,
     }
+    const className = isPromoted ? 'promoted' : undefined
 
     return (
-      <div id='success-container'>
+      <div id='success-container' className={className}>
         <div className='further-steps'>
           <div className='congratulations'>{congratulations}</div>
           <ListingIndexTile {...tileProps} />
           <div className='promotion-actions'>
-            <div className='promote'>
+            {!isPromoted && <div className='promote'>
               <PromoteButton listingId={id} />
               <PromotionBenefits />
-            </div>
+            </div>}
             <div className='share-on-facebook'>
               <FacebookSharerButton {...facebookSharerButtonProps} />
             </div>

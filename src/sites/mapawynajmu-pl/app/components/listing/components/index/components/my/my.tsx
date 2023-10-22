@@ -92,6 +92,7 @@ class AnnouncementIndexMy extends React.Component {
               rentCurrency,
               area,
               path: href,
+              isPromoted,
             } = announcement
 
             const isCommercial = [0, 1, 6, 7, 8].indexOf(category) !== -1
@@ -117,6 +118,7 @@ class AnnouncementIndexMy extends React.Component {
               rentAmount,
               rentCurrency,
               area,
+              isPromoted,
               onClick,
             }
 
@@ -131,7 +133,7 @@ class AnnouncementIndexMy extends React.Component {
               <div className='listing-index-tile-container'>
                 <div className='listing-id'>{id}</div>
                 <ListingIndexTile {...tileProps} />
-                <PromoteButton listingId={id} />
+                {!isPromoted && <PromoteButton listingId={id} />}
                 <FacebookSharerButton {...facebookSharerButtonProps} />
                 <FloatClear />
                 {/* @ts-ignore */}
