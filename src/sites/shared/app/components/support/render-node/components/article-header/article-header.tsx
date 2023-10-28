@@ -2,8 +2,9 @@ import React from 'react'
 import Image from '../image/image'
 import { Heading } from '../../../../../../../mapawynajmu-pl/app/components/support/components/heading'
 import { useData } from '../../../../../functions/store/use-data'
+import { Author } from '../../../author/author'
 
-const Header = () => {
+const ArticleHeader = () => {
   const { coverImage, title } = useData()
 
   const imageProps = {
@@ -20,8 +21,9 @@ const Header = () => {
     <header>
       <Image {...imageProps} />
       <Heading {...headingProps} />
+      <Author />
     </header>
   )
 }
 
-export default Header
+export default ArticleHeader

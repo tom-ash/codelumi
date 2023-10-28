@@ -26,15 +26,16 @@ $PRE-MARGIN: 16px;
   h1 {
     line-height: 41.25px;
     font-size: 32px;
-    margin: 32px $DESKTOP-MARGIN;
+    margin: 32px $DESKTOP-MARGIN 0;
     @media #{$LARGE-PHONE} {
       margin: 32px $MOBILE-MARGIN;
     }
   }
   .author {
     position: relative;
-    line-height: 40px;
+    margin-top: 16px;
     padding-left: 48px;
+    line-height: 40px;
     img {
       display: inline;
       position: absolute;

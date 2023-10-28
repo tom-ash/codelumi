@@ -1,7 +1,7 @@
 import React from 'react'
 import loadable from '@loadable/component'
 
-const Header = loadable(() => import('./components/header/header'))
+const ArticleHeader = loadable(() => import('./components/article-header/article-header'))
 const Section = loadable(() => import('./components/section/section'))
 const Heading = loadable(() => import('../heading/heading'))
 const TableOfContents = loadable(() => import('./components/table-of-contents/table-of-contents'))
@@ -64,10 +64,10 @@ export const RenderNode = (props: RenderNodeProps) => {
       return <Component {...data} />
     }
 
-    if (node.Header) {
+    if (node.ArticleHeader) {
       // const ulProps = { key: index, listNodes: node.UnorderedList, style: node.style }
 
-      return <Header />
+      return <ArticleHeader />
     }
 
     if (node.UnorderedList) {
