@@ -4,7 +4,14 @@ import { Heading } from '../../../../../../../mapawynajmu-pl/app/components/supp
 import { useData } from '../../../../../functions/store/use-data'
 import { Author } from '../../../author/author'
 
-const ArticleHeader = () => {
+interface ArticleHeaderInterface {
+  (props: {
+    useCoverImage?: boolean
+  }): React.ReactElement
+}
+
+const ArticleHeader: ArticleHeaderInterface = (props) => {
+  const { useCoverImage = true } = props
   const { coverImage, title } = useData()
 
   const imageProps = {
@@ -19,7 +26,7 @@ const ArticleHeader = () => {
 
   return (
     <header>
-      <Image {...imageProps} />
+      {useCoverImage && <Image {...imageProps} />}
       <Heading {...headingProps} />
       <Author />
     </header>

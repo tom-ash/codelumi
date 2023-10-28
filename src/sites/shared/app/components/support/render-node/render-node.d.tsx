@@ -6,7 +6,9 @@ type ObjectNode = {
   // Section?: string
   // TODO: Add Definition, Logo, Figure.
   Root?: RenderNodeData[]
-  ArticleHeader?: {}
+  ArticleHeader?: {
+    useCoverImage?: boolean
+  }
   Main?: RenderNodeData[]
   Article?: RenderNodeData[]
   Section?: RenderNodeData[]

@@ -65,9 +65,7 @@ export const RenderNode = (props: RenderNodeProps) => {
     }
 
     if (node.ArticleHeader) {
-      // const ulProps = { key: index, listNodes: node.UnorderedList, style: node.style }
-
-      return <ArticleHeader />
+      return <ArticleHeader useCoverImage={node.ArticleHeader.useCoverImage} />
     }
 
     if (node.UnorderedList) {
