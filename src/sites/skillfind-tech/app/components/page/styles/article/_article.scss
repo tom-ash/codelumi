@@ -35,6 +35,7 @@ $PRE-MARGIN: 16px;
   }
   .editorial {
     @extend %editorial;
+    margin-top: 24px;
   }
   .table-of-contents {
     @extend %table-of-contents;
@@ -47,9 +48,23 @@ $PRE-MARGIN: 16px;
     line-height: 41.25px;
     font-size: 32px;
     margin-bottom: 32px;
-    margin: 32px $DESKTOP-MARGIN;
+    margin: 24px $DESKTOP-MARGIN 0;
     @media #{$LARGE-PHONE} {
       margin: 32px $MOBILE-MARGIN;
+    }
+  }
+  .author {
+    position: relative;
+    margin-top: 16px;
+    padding-left: 48px;
+    line-height: 40px;
+    img {
+      display: inline;
+      position: absolute;
+      left: 0;
+      border-radius: 50%;
+      height: 40px;
+      margin: 0;
     }
   }
   .cover + h1 {
@@ -122,8 +137,9 @@ $PRE-MARGIN: 16px;
   }
   header {
     > img {
+      display: block;
       width: 100%;
-      margin-bottom: 24px;
+      margin: 0;
     }
   }
 
