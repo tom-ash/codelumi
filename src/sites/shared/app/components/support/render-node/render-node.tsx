@@ -23,8 +23,10 @@ const MapawynajmuPlLogoAndTitle = loadable(
   () => import('../../../../../mapawynajmu-pl/app/components/support/logo-and-title/logo-and-title')
 )
 const FeatureItem = loadable(() => import('./components/feature-item/feature-item'))
+const Author = loadable(() => import('../author/author'))
 
 const elements = {
+  Author,
   FeatureItem,
 }
 
@@ -53,6 +55,13 @@ export const RenderNode = (props: RenderNodeProps) => {
       const ulProps = { key: index, listNodes: node }
 
       return <List {...ulProps} />
+    }
+
+    if (node.cat) {
+      const Component = elements[node.cat]
+      const data = node.data || {}
+
+      return <Component {...data} />
     }
 
     if (node.Header) {

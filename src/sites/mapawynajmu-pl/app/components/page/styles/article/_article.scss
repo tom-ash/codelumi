@@ -31,6 +31,18 @@ $PRE-MARGIN: 16px;
       margin: 32px $MOBILE-MARGIN;
     }
   }
+  .author {
+    position: relative;
+    line-height: 40px;
+    padding-left: 48px;
+    img {
+      display: inline;
+      position: absolute;
+      left: 0;
+      border-radius: 50%;
+      height: 40px;
+    }
+  }
   .table-of-contents {
     @extend %table-of-contents;
     margin: 32px $DESKTOP-MARGIN;
