@@ -90,7 +90,7 @@ export const AddressInput: AddressInputInterface = props => {
       if (hideItemsOnBlur) {
         setData({ items: [] })
       }
-    }
+    },
   }
 
   return <ManagedText {...inputProps} />

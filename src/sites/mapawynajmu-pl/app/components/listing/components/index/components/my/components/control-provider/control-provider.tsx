@@ -34,10 +34,10 @@ export function controlProvider(announcement, index) {
           <span>{{ pl: 'Ukryte', en: 'Hidden' }['pl']}</span>
         )}
         {announcement.visible
-          // @ts-ignore
-          ? this.buttonProvider('Ukryj', 'Hide', announcement, index, this.triggerVisible, ' hide-show')
-          // @ts-ignore
-          : this.buttonProvider('Pokaż', 'Show', announcement, index, this.triggerVisible, ' hide-show')}
+          ? // @ts-ignore
+            this.buttonProvider('Ukryj', 'Hide', announcement, index, this.triggerVisible, ' hide-show')
+          : // @ts-ignore
+            this.buttonProvider('Pokaż', 'Show', announcement, index, this.triggerVisible, ' hide-show')}
       </div>
       <div className='edit-delete'>
         {/* @ts-ignore */}

@@ -2,30 +2,16 @@ import React from 'react'
 import { useTexts } from '../../../../../../../../../../../shared/app/functions/store/use-texts'
 
 interface VisibleControllerInterface {
-  (props: {
-    activeUntil: string;
-    extend(): void;
-  }): React.ReactElement
+  (props: { activeUntil: string; extend(): void }): React.ReactElement
 }
 
-export const VisibleController: VisibleControllerInterface = (props) => {
-  const {
-    activeUntil,
-    extend,
-  } = props
+export const VisibleController: VisibleControllerInterface = props => {
+  const { activeUntil, extend } = props
 
-  const {
-    activeUntilLabel,
-    activeUntilNotApplicableLabel,
-    activeUntilExtendButtonLabel,
-  } = useTexts()
+  const { activeUntilLabel, activeUntilNotApplicableLabel, activeUntilExtendButtonLabel } = useTexts()
 
   if (!activeUntil) {
-    return (
-      <div>
-        {activeUntilNotApplicableLabel}
-      </div>
-    )
+    return <div>{activeUntilNotApplicableLabel}</div>
   }
 
   return (

@@ -5,7 +5,7 @@ interface AppendAuthor {
   (author: string): void
 }
 
-const appendAuthor: AppendAuthor = (author) => {
+const appendAuthor: AppendAuthor = author => {
   const headElement = document.querySelector('head')
   const authorMetaElement = document.querySelector('meta[name="author"]')
 
@@ -13,9 +13,9 @@ const appendAuthor: AppendAuthor = (author) => {
     if (authorMetaElement) {
       document.querySelector('meta[name="author"]')!.setAttribute('content', author)
     } else {
-      const newAuthorMetaElement = document.createElement('meta');
-      newAuthorMetaElement.setAttribute('name', 'author');
-      newAuthorMetaElement.content = author;
+      const newAuthorMetaElement = document.createElement('meta')
+      newAuthorMetaElement.setAttribute('name', 'author')
+      newAuthorMetaElement.content = author
       headElement!.appendChild(newAuthorMetaElement)
     }
   } else {

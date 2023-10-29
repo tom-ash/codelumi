@@ -179,9 +179,7 @@ class ListingShowTile extends React.Component {
         key={key}
       >
         <Heading {...{ ...headingProps, tier: 1 }} />
-        {isPhoneable ?
-        <ListerPhone {...listerPhoneProps} />
-        : <GoToLink {...goToLinkProps} />}
+        {isPhoneable ? <ListerPhone {...listerPhoneProps} /> : <GoToLink {...goToLinkProps} />}
         {/* @ts-ignore */}
         <Pictures {...picturesProps} />
         <PrimaryData {...primaryDataProps} />

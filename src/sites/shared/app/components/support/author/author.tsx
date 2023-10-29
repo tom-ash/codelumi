@@ -7,18 +7,23 @@ interface AuthorInterface {
 }
 
 export const Author: AuthorInterface = () => {
-  const { author: {
-    firstName,
-    lastName,
-    // url, // TODO!
-    pictureUrl,
-  }} = useData()
+  const {
+    author: {
+      firstName,
+      lastName,
+      // url, // TODO!
+      pictureUrl,
+    },
+  } = useData()
 
   const name = `${firstName} ${lastName}`
 
   return (
     <div className='author'>
-      <Image src={pictureUrl} alt={name} />
+      <Image
+        src={pictureUrl}
+        alt={name}
+      />
       <strong>{name}</strong>
     </div>
   )

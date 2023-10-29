@@ -25,17 +25,17 @@ type ObjectNode = {
   Code?: string | { c: string; l: string }
   YouTubeEmbed?: { s: string; w: string }
   Share?: { href: string }
-  cat?: undefined;
+  cat?: undefined
 }
 
 interface Author {
-  cat: 'Author',
-  data: undefined,
+  cat: 'Author'
+  data: undefined
 }
 
 interface Index {
-  cat: 'Index',
-  data: undefined,
+  cat: 'Index'
+  data: undefined
 }
 
 type RenderNodeData = string | string[] | ObjectNode | Author | Index

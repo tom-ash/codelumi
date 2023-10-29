@@ -70,15 +70,20 @@ class AnnouncementCreateSuccess extends React.Component {
     const className = isPromoted ? 'promoted' : undefined
 
     return (
-      <div id='success-container' className={className}>
+      <div
+        id='success-container'
+        className={className}
+      >
         <div className='further-steps'>
           <div className='congratulations'>{congratulations}</div>
           <ListingIndexTile {...tileProps} />
           <div className='promotion-actions'>
-            {!isPromoted && <div className='promote'>
-              <PromoteButton listingId={id} />
-              <PromotionBenefits />
-            </div>}
+            {!isPromoted && (
+              <div className='promote'>
+                <PromoteButton listingId={id} />
+                <PromotionBenefits />
+              </div>
+            )}
             <div className='share-on-facebook'>
               <FacebookSharerButton {...facebookSharerButtonProps} />
             </div>
