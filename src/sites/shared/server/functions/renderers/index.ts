@@ -27,7 +27,10 @@ function indexRenderer(props) {
     scriptTags,
     clientUrl,
     gtmId,
+    author,
   } = props
+
+  const authorMeta = author ? `<meta name="author" content="${author}">` : undefined
 
   const indexAsHtml = `<!doctype html>
     <html lang="${lang}">
@@ -41,6 +44,7 @@ function indexRenderer(props) {
         <meta name="robots" content="${robots}">
         <meta name="description" content="${description}">
         <meta name="keywords" content="${keywords}">
+        ${authorMeta}
         ${openGraphBuilder(openGraph)}
         <script type="application/ld+json">${JSON.stringify(schemaOrg)}</script>
         <script>${loadGtm(gtmId)}</script>
