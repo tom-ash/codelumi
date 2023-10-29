@@ -24,9 +24,11 @@ const MapawynajmuPlLogoAndTitle = loadable(
 )
 const FeatureItem = loadable(() => import('./components/feature-item/feature-item'))
 const Author = loadable(() => import('../author/author'))
+const Index = loadable(() => import('./components/index/index'))
 
 const elements = {
   Author,
+  Index,
   FeatureItem,
 }
 

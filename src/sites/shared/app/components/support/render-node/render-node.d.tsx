@@ -33,7 +33,12 @@ interface Author {
   data: undefined,
 }
 
-type RenderNodeData = string | string[] | ObjectNode | Author
+interface Index {
+  cat: 'Index',
+  data: undefined,
+}
+
+type RenderNodeData = string | string[] | ObjectNode | Author | Index
 
 type RenderNodeProps = {
   node: RenderNodeData

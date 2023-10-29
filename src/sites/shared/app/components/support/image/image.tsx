@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Image = (props: ImageProps) => {
+export const Image = (props: ImageProps) => {
   const { src, alt, style } = props
   const imgProps = {
     src,
