@@ -10,7 +10,6 @@ const User = loadable(() => import('./components/user/user'))
 const Listing = loadable(() => import('./components/listing/listing'))
 const Page = loadable(() => import('../../shared/app/components/page/page'))
 const Image = loadable(() => import('../../shared/app/components/image/image'))
-const VisitorPageIndex = loadable(() => import('./components/visitor/components/page/components/index/index'))
 const AssetsIndex = loadable(() => import('../../skillfind-tech/app/components/asset/components/index/index'))
 const Footer = loadable(() => import('./components/scaffold/footer/footer'))
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
@@ -69,7 +68,6 @@ const App = () => {
         {renderVisitor && <Visitor />}
         {renderUser && <User />}
         {renderPage && <Page />}
-        {visitorPageIndex && <VisitorPageIndex />}
         {renderImage && <Image />}
         {assetsIndex && <AssetsIndex />}
         {redirectsIndex && <RedirectsIndex />}
