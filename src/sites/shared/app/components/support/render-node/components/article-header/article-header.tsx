@@ -3,6 +3,7 @@ import Image from '../image/image'
 import { Heading } from '../../../../../../../mapawynajmu-pl/app/components/support/components/heading'
 import { useData } from '../../../../../functions/store/use-data'
 import { Author } from '../../../author/author'
+import Breadcrumbs from '../breadcrumbs/breadcrumbs'
 
 interface ArticleHeaderInterface {
   (props: { useCoverImage?: boolean }): React.ReactElement
@@ -24,6 +25,7 @@ const ArticleHeader: ArticleHeaderInterface = props => {
 
   return (
     <header>
+      <Breadcrumbs />
       {useCoverImage && <Image {...imageProps} />}
       <Heading {...headingProps} />
       <Author />
