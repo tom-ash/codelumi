@@ -5,7 +5,7 @@ import { Link } from '../../../link/link'
 
 interface Breadcrumb {
   name: string
-  lang: Lang;
+  lang: Lang
   item: string
 }
 
@@ -14,7 +14,7 @@ export const Breadcrumbs = () => {
 
   return (
     <ul className='breadcrumbs'>
-      {breadcrumbs.map((breadcrumb) => {
+      {breadcrumbs.map(breadcrumb => {
         console.log(breadcrumb.name)
         return (
           <li key={breadcrumb.item}>

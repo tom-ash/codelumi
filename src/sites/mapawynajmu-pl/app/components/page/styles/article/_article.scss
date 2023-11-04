@@ -1,4 +1,5 @@
 @import './table-of-contents';
+@import '../../../../../../shared/app/components/page/styles/breadcrumbs.scss';
 
 $DESKTOP-MARGIN: 0;
 $MOBILE-MARGIN: 24px;
@@ -119,24 +120,6 @@ $PRE-MARGIN: 16px;
     }
   }
   .breadcrumbs {
-    margin-left: 0;
-    margin-bottom: 12px;
-    list-style-type: none;
-    li {
-      display: inline-block;
-      margin-right: 12px;
-    }
-    .link {
-      display: inline-block;
-      margin-right: 12px;
-      text-decoration: underline;
-    }
-    svg {
-      height: 12px;
-      transform: rotate(180deg);
-    }
-    @media #{$LARGE-PHONE} {
-      padding: 12px 12px 0;
-    }
+    @extend %breadcrumbs;
   }
 }

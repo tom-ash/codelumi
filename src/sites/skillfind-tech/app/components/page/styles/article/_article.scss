@@ -1,6 +1,7 @@
 @import './editorial';
 @import './table-of-contents';
 @import '../../../../styles/colors';
+@import '../../../../../../shared/app/components/page/styles/breadcrumbs.scss';
 
 $DESKTOP-MARGIN: 0;
 $MOBILE-MARGIN: 24px;
@@ -173,5 +174,9 @@ $PRE-MARGIN: 16px;
       font-size: 14px;
       font-style: italic;
     }
+  }
+
+  .breadcrumbs {
+    @extend %breadcrumbs;
   }
 }
