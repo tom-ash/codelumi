@@ -2,20 +2,15 @@ import React from 'react'
 import { useData } from '../../../../../functions/store/use-data'
 import { SVG } from '../../../svg/svg'
 import { Link } from '../../../link/link'
-// import { enrichText } from '../../helpers/enrich-text/enrich-text'
 
 interface Breadcrumb {
   name: string
+  lang: Lang;
   item: string
 }
 
 export const Breadcrumbs = () => {
   const breadcrumbs = useData().breadcrumbs as Breadcrumb[]
-
-  // TODO: REMOVE
-  if (!breadcrumbs) {
-    return null
-  }
 
   return (
     <ul className='breadcrumbs'>
@@ -25,7 +20,7 @@ export const Breadcrumbs = () => {
           <li key={breadcrumb.item}>
             <Link
               href={breadcrumb.item}
-              // hrefLang?: Lang // TODO: ADD!
+              hrefLang={breadcrumb.lang}
               label={breadcrumb.name}
               title={breadcrumb.name}
             />
