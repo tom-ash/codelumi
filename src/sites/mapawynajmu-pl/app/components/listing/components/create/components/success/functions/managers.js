@@ -1,14 +1,12 @@
 import React from 'react'
 import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
 import { shareOnFacebook } from '../../../../../functions/share-on-facebook'
-import { buildUrl } from '../../../../../../../../shared/functions/builders/url'
 
 export function shareOnFacebookManager() {
   const { isMobile, announcement } = this.props
   if (!announcement) return null
 
-  const { path } = announcement
-  const href = buildUrl({ path })
+  const { href } = announcement
 
   return {
     classNames: { input: 'action-button share-on-facebook' },

@@ -78,7 +78,7 @@ class AnnouncementIndexMap extends React.Component {
                   grossRentAmount,
                   rentCurrency,
                   area,
-                  path: href,
+                  href,
                   latitude,
                   longitude,
                   isPromoted,
@@ -152,7 +152,7 @@ class AnnouncementIndexMap extends React.Component {
                 availabilityDate={tile.availabilityDate}
                 isMobile={isMobile}
                 setApp={setApp}
-                path={tile.path}
+                href={tile.href}
                 title={tile.title}
                 locality={tile.locality}
                 sublocality={tile.sublocality}

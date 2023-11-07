@@ -15,7 +15,6 @@ import { ListingIndexTile } from '../tile/tile'
 import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
 import { PromoteButton } from '../../../create/components/success/components/promote'
 import { FacebookSharerButton } from '../../../../../../../../shared/app/components/support/facebook-sharer-button/facebook-sharer-button'
-import { buildUrl } from '../../../../../../../shared/functions/builders/url'
 import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
 
 class AnnouncementIndexMy extends React.Component {
@@ -91,7 +90,7 @@ class AnnouncementIndexMy extends React.Component {
               grossRentAmount,
               rentCurrency,
               area,
-              path: href,
+              href,
               isPromoted,
             } = announcement
 
@@ -122,9 +121,8 @@ class AnnouncementIndexMy extends React.Component {
               onClick,
             }
 
-            const url = buildUrl({ path: href })
             const facebookSharerButtonProps = {
-              url,
+              href,
               isMobile,
               shareOnFacebookButtonLabel,
             }

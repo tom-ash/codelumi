@@ -3,6 +3,7 @@ import { SubmitButton } from '../../../../../../../../../shared/app/components/s
 import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
 import { postApi } from '../../../../../../../../../shared/app/functions/fetch-api/fetch-api'
 import { useTexts } from '../../../../../../../../../shared/app/functions/store/use-texts'
+import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/change-url'
 
 interface PromoteButtonInterface {
   (props: { listingId: number }): React.ReactElement
@@ -17,10 +18,12 @@ export const PromoteButton: PromoteButtonInterface = props => {
       path: 'listings/promote',
       body: { listing_id: listingId },
     }).then(href => {
+
       // @ts-ignore
       window.gtag('event', 'promotion_added')
 
-      location.href = href
+      changeUrl({ href })
+
     })
   }
 

@@ -1,4 +1,3 @@
-import { buildUrl } from '../../../../../../shared/functions/builders/url'
 import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/change-url'
 
 export function componentDidUpdate(prevProps) {
@@ -34,13 +33,8 @@ export function componentDidUpdate(prevProps) {
         return `${queryParam}=${queryParamValue}`
       })
 
-    const path = window.location.pathname.replace(/^\//, '') + '?' + builtQueryParamsArray.join('&')
-    const href = buildUrl({ path })
+    const href = window.location.pathname.replace(/^\//, '') + '?' + builtQueryParamsArray.join('&')
 
-    if (href[href.length - 1] === '?') {
-      changeUrl({ href: '/' })
-    } else {
-      changeUrl({ href })
-    }
+    changeUrl({ href })
   }
 }

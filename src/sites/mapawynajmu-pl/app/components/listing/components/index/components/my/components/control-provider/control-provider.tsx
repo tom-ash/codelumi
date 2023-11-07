@@ -6,7 +6,9 @@ import { VisibleController } from './visible-controller/visible-controller'
 export function controlProvider(announcement, index) {
   if (!announcement) return null
 
-  const { editPath, editTitle } = announcement
+  const { editHref, editTitle } = announcement
+
+  console.log(editHref)
 
   return (
     <div className='control'>
@@ -41,7 +43,7 @@ export function controlProvider(announcement, index) {
       </div>
       <div className='edit-delete'>
         {/* @ts-ignore */}
-        {this.buttonProvider('Edytuj', 'Edit', announcement, index, () => this.edit({ editPath, editTitle }), ' edit')}
+        {this.buttonProvider('Edytuj', 'Edit', announcement, index, () => this.edit({ editHref, editTitle }), ' edit')}
         {/* @ts-ignore */}
         {this.buttonProvider(
           'Usuń',

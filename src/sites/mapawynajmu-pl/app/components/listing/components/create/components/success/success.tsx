@@ -3,7 +3,6 @@ import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import { PromoteButton } from './components/promote'
 import { ListingIndexTile } from '../../../index/components/tile/tile'
-import { buildUrl } from '../../../../../../../shared/functions/builders/url'
 import { FacebookSharerButton } from '../../../../../../../../shared/app/components/support/facebook-sharer-button/facebook-sharer-button'
 import { PromotionBenefits } from '../../../common/promotion-benefits/promotion-benefits'
 
@@ -36,7 +35,7 @@ class AnnouncementCreateSuccess extends React.Component {
       netRentAmount,
       rentCurrency,
       area,
-      path: href,
+      href,
       isPromoted,
       // @ts-ignore
     } = this.props.announcement
@@ -45,7 +44,7 @@ class AnnouncementCreateSuccess extends React.Component {
     const rentAmount = isCommercial ? netRentAmount : grossRentAmount
 
     const tileProps = {
-      href: `/${href}`,
+      href,
       id,
       title,
       name,
@@ -61,9 +60,8 @@ class AnnouncementCreateSuccess extends React.Component {
       isPromoted,
     }
 
-    const url = buildUrl({ path: href })
     const facebookSharerButtonProps = {
-      url,
+      href,
       isMobile,
       shareOnFacebookButtonLabel,
     }

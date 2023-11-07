@@ -1,6 +1,4 @@
 export function shareOnFacebook(url, isMobile) {
-  // TODO: User buildUrl()
-
   if (!screen) return
 
   const winWidth = 520

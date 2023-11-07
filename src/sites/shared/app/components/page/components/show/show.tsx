@@ -7,14 +7,8 @@ import { useUser } from '../../../../functions/store/use-user'
 const PageShow = () => {
   const links = useLinks()
   const { role } = useUser()
-
   const isAdmin = role === 'admin'
-
-  const changePage = () => {
-    const href = links['page/edit'].path
-
-    changeUrl({ href })
-  }
+  const href = links['page/edit'].href
 
   return (
     <>
@@ -22,7 +16,7 @@ const PageShow = () => {
       {isAdmin && (
         <button
           className={'page-edit'}
-          onClick={changePage}
+          onClick={() => changeUrl({ href })}
         />
       )}
     </>

@@ -3,7 +3,6 @@ import appRenderer from './app-renderer'
 import ROOT_DOMAIN from '../../shared/domains/root'
 import CLIENT_URL from '../../shared/constants/urls/client'
 import API_URL from '../../shared/constants/urls/api'
-import { buildUrl } from '../../shared/functions/routes/builders/url'
 import SITE_NAME from '../../shared/constants/names/site'
 
 const GTM_ID = 'GTM-NCZP2DX5'
@@ -18,7 +17,6 @@ function handleRequest(req, res) {
     clientUrl: CLIENT_URL,
     apiUrl: API_URL,
     gtmId: GTM_ID,
-    buildUrl,
     appRenderer,
   })
 }

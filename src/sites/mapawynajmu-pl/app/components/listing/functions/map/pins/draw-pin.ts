@@ -6,14 +6,14 @@ interface DrawPinProps {
   id: number
   htmlContent: string
   className: string
-  path: string
+  href: string
   setControl(props: object): void
   setData(props: object): void
   isMobile: boolean
 }
 
 function drawPin(props: DrawPinProps) {
-  const { latitude, longitude, id, htmlContent, className, path, setControl } = props
+  const { latitude, longitude, id, htmlContent, className, href, setControl } = props
 
   // @ts-ignore
   return new window.pinCreator(
@@ -29,7 +29,7 @@ function drawPin(props: DrawPinProps) {
         e.preventDefault()
 
         setControl({ currentTileId: id })
-        changeUrl({ href: path, retainQueryParams: true, withScroll: false })
+        changeUrl({ href, retainQueryParams: true, withScroll: false })
       },
     }
   )

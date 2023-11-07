@@ -4,16 +4,17 @@ import { SVG } from '../svg/svg'
 import { ActionButton } from '../action-button/action-button'
 
 interface FacebookSharerButtonInterface {
-  (props: { url: string; isMobile: boolean; shareOnFacebookButtonLabel: string }): React.ReactElement
+  (props: { href: string; isMobile: boolean; shareOnFacebookButtonLabel: string }): React.ReactElement
 }
 
 export const FacebookSharerButton: FacebookSharerButtonInterface = props => {
-  const { url, isMobile, shareOnFacebookButtonLabel } = props
+  const { href, isMobile, shareOnFacebookButtonLabel } = props
   const action = () => {
     const winWidth = 520
     const winHeight = 350
     const winTop = screen.height / 2 - winHeight / 2
     const winLeft = screen.width / 2 - winWidth / 2
+    const url = `${window.location.origin}${href}`
 
     if (isMobile) return window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`)
 

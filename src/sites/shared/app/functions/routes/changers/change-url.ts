@@ -2,17 +2,15 @@ import scrollToTop from '../../screen/scrollers/to-top'
 
 // @ts-ignore
 export const changeUrl = ({ href, withScroll = true, retainQueryParams = false }) => {
-  let decoratedHref = href.replace(/\/\/$/, '/')
+  if (href.match(/^http/)) {
+    location.href = href
+  } else {
+    const queryParams = retainQueryParams ? location.search : ''
+    const url = window.location.origin + href + queryParams
 
-  if (decoratedHref.indexOf('://') === -1) {
-    decoratedHref = decoratedHref.replace(/^\//, '')
-    decoratedHref = window.location.origin + '/' + decoratedHref
+    history.pushState({}, '', url)
+    dispatchEvent(new Event('popstate'))
+  
+    if (withScroll) scrollToTop()
   }
-
-  decoratedHref = retainQueryParams ? decoratedHref + location.search : decoratedHref
-
-  history.pushState({}, '', decoratedHref)
-  dispatchEvent(new Event('popstate'))
-
-  if (withScroll) scrollToTop()
 }

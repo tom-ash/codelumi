@@ -6,7 +6,6 @@ import {
   UPDATE_API_ROUTE_DATA,
 } from '../constants/api-route-data'
 import setVerificationToken from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
-import { buildUrl } from '../../../../../../shared/functions/builders/url'
 import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/change-url'
 
 function createAnnouncement() {
@@ -36,14 +35,7 @@ function update() {
     .then(response => {
       if (response.ok) return response.json()
     })
-    .then(path => {
-      // TODO: Implement better solution.
-      if (path.match(/^http.+/) !== -1) {
-        return (location.href = path)
-      }
-
-      changeUrl({ href: buildUrl({ path }) })
-    })
+    .then(href => changeUrl({ href }))
 }
 
 function create() {
@@ -59,14 +51,7 @@ function create() {
     .then(response => {
       if (response.ok) return response.json()
     })
-    .then(path => {
-      // TODO: Implement better solution.
-      if (path.match(/^http.+/) !== -1) {
-        return (location.href = path)
-      }
-
-      changeUrl({ href: buildUrl({ path }) })
-    })
+    .then(href => changeUrl({ href }))
 }
 
 function createWithUser() {
@@ -82,10 +67,12 @@ function createWithUser() {
       if (response.ok) return response.json()
     })
     .then(jsonResponse => {
-      const { verificationToken, path } = jsonResponse
+      const { verificationToken, href } = jsonResponse
+
+      console.log(href)
 
       setVerificationToken(verificationToken)
-      changeUrl({ href: buildUrl({ path }) })
+      changeUrl({ href })
     })
 }
 

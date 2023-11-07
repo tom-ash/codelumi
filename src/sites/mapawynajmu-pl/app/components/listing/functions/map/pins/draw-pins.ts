@@ -23,7 +23,7 @@ const drawPins: DrawPins = attrs => {
 
   // @ts-ignore
   listings.map(announcement => {
-    const { id, category: categoryNumber, latitude, longitude, path, isPromoted } = announcement
+    const { id, category: categoryNumber, latitude, longitude, href, isPromoted } = announcement
     const category = categories.find(category => category.number === categoryNumber)
     // @ts-ignore
     const pin = category.pin
@@ -57,7 +57,7 @@ const drawPins: DrawPins = attrs => {
         className: classNames.join(' '),
         latitude,
         longitude,
-        path,
+        href,
         setControl,
         setData,
       })

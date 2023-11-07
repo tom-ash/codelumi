@@ -82,7 +82,7 @@ class ListingShowTile extends React.Component {
       // @ts-ignore
       setApp,
       // @ts-ignore
-      path,
+      href,
       // @ts-ignore
       title,
       // @ts-ignore
@@ -115,16 +115,6 @@ class ListingShowTile extends React.Component {
       sublocality,
       lang,
     }
-    const linkProps = {
-      id,
-      path,
-      title,
-      lat: latitude,
-      lng: longitude,
-      isMobile,
-      setData,
-      pictures,
-    }
     const picturesProps = {
       lang,
       id,
@@ -134,7 +124,7 @@ class ListingShowTile extends React.Component {
       isMobile,
       setApp,
       setData,
-      path,
+      href,
       title,
     }
     const primaryDataProps = {
