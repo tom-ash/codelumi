@@ -33,7 +33,7 @@ export function componentDidUpdate(prevProps) {
         return `${queryParam}=${queryParamValue}`
       })
 
-    const href = window.location.pathname.replace(/^\//, '') + '?' + builtQueryParamsArray.join('&')
+    const href = window.location.pathname + '?' + builtQueryParamsArray.join('&')
 
     changeUrl({ href })
   }
