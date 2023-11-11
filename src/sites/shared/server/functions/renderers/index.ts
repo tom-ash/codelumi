@@ -2,6 +2,7 @@
 import pretty from 'pretty'
 import { openGraphBuilder } from '../../../shared/functions/builders/open-graph-builder'
 import { loadGtm } from '../../../app/functions/tags/load-gtm'
+import { buildAlternateLangLinkElements } from '../builders/build-alternate-lang-links'
 
 // TODO: Add below after the opening body tag.
 // <!-- Google Tag Manager (noscript) -->
@@ -28,16 +29,19 @@ function indexRenderer(props) {
     clientUrl,
     gtmId,
     author,
+    alternateLangLinks,
   } = props
 
-  const authorMeta = author ? `<meta name="author" content="${author}">` : undefined
+  const authorMeta = author ? `<meta name="author" content="${author}">` : ''
+
+  console.log(alternateLangLinks)
 
   const indexAsHtml = `<!doctype html>
     <html lang="${lang}">
       <head>
         <title>${title}</title>
         <link rel="canonical" href="${canonicalUrl}">
-        ${alternateLinks}
+        ${buildAlternateLangLinkElements(alternateLangLinks)}
         <link rel="icon" type="image/x-icon" href="${clientUrl}/favicon.ico">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
