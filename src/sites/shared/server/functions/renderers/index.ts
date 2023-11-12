@@ -34,8 +34,6 @@ function indexRenderer(props) {
 
   const authorMeta = author ? `<meta name="author" content="${author}">` : ''
 
-  console.log(alternateLangLinks)
-
   const indexAsHtml = `<!doctype html>
     <html lang="${lang}">
       <head>

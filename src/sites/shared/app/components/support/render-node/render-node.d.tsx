@@ -35,7 +35,9 @@ interface Author {
 
 interface Index {
   cat: 'Index'
-  data: undefined
+  data: {
+    withImages?: boolean
+  } | undefined
 }
 
 type RenderNodeData = string | string[] | ObjectNode | Author | Index

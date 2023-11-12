@@ -5,47 +5,45 @@ import { Link } from '../../../link/link'
 import { useData } from '../../../../../functions/store/use-data'
 
 interface IndexInterface {
-  (): React.ReactElement
+  (props: { withImages?: boolean }): React.ReactElement
 }
 
 interface PageItem {
   href: string
   hrefLang: Lang
   title: string
-  image: string
+  image?: string
 }
 
-const Index: IndexInterface = () => {
+const Index: IndexInterface = (props) => {
+  const { withImages = true } = props
   const { pages = [] } = useData() as { pages: PageItem[] }
 
   return (
-    <div className='index'>
+    <ul className='index'>
       {pages.map(page => {
         const { href, hrefLang, title, image } = page
 
-        const imageProps = {
-          src: image,
-          alt: title,
-        }
-
         const label = (
           <>
-            <Image {...imageProps} />
+            {withImages && image && <Image src={image} alt={title} />}
             <h2>{title}</h2>
           </>
         )
 
-        const linkProps = {
-          href,
-          hrefLang,
-          label,
-          title,
-        }
-
-        return <Link {...linkProps} />
+        return (
+          <li>
+            <Link
+              href={href}
+              hrefLang={hrefLang}
+              label={label}
+              title={title}
+            />
+          </li>
+        )
       })}
       <FloatClear />
-    </div>
+    </ul>
   )
 }
 
