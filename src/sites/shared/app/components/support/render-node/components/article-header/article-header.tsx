@@ -6,12 +6,15 @@ import { Author } from '../../../author/author'
 import Breadcrumbs from '../breadcrumbs/breadcrumbs'
 
 interface ArticleHeaderInterface {
-  (props: { useCoverImage?: boolean }): React.ReactElement
+  (props: { useCoverImage?: boolean, useAuthor?: boolean }): React.ReactElement
 }
 
 const ArticleHeader: ArticleHeaderInterface = props => {
-  const { useCoverImage = true } = props
+  const { useCoverImage = true, useAuthor = true } = props
   const { coverImage, title } = useData()
+
+  console.log(props)
+  console.log(useAuthor)
 
   const imageProps = {
     src: coverImage,
@@ -28,7 +31,7 @@ const ArticleHeader: ArticleHeaderInterface = props => {
       <Breadcrumbs />
       {useCoverImage && <Image {...imageProps} />}
       <Heading {...headingProps} />
-      <Author />
+      {useAuthor && <Author />}
     </header>
   )
 }
