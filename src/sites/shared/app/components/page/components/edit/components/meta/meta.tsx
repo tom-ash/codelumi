@@ -12,10 +12,12 @@ import { KeywordsTextarea } from './components/keywords/keywords.textarea'
 import { UrlInput } from './components/url/url.input'
 import { CanonicalUrlInput } from './components/canonical-url/canonical-url.input'
 import { ParentIdInput } from './components/parentId/parentId.input'
+import { PriorityInput } from './components/priority/priority.input'
 
 export const Meta = () => (
   <div className='meta'>
     <ParentIdInput />
+    <PriorityInput />
     <UrlInput />
     <CanonicalUrlInput />
     <PublishedOnInput />

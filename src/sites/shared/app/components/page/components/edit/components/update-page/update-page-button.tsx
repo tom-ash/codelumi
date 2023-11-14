@@ -33,6 +33,7 @@ export const UpdatePageButton: UpdatePageButtonInterface = props => {
     autoSchema,
     manualSchema,
     parentId,
+    priority,
   } = useInputs()
 
   const submitButtonProps = {
@@ -59,6 +60,7 @@ export const UpdatePageButton: UpdatePageButtonInterface = props => {
     autoSchema,
     manualSchema,
     parentId,
+    priority,
     submit,
   }
 

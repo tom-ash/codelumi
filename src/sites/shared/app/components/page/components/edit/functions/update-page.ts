@@ -27,6 +27,7 @@ interface UpdatePage {
     setControl: any // TODO
     setData: any // TODO
     parentId: string | null
+    priority?: number
   }): void
 }
 
@@ -55,6 +56,7 @@ export const updatePage: UpdatePage = props => {
     setControl,
     setData,
     parentId,
+    priority,
   } = props
 
   const parsedBody = JSON.parse(body)
@@ -80,6 +82,7 @@ export const updatePage: UpdatePage = props => {
     autoSchema,
     manualSchema,
     parentId,
+    priority,
   })
 
   fetch(updatePageApiUrl, {
