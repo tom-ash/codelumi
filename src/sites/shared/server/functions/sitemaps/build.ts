@@ -5,7 +5,7 @@ import xmlFormat from 'xml-formatter';
 interface Link {
   href: string
   hrefLang: string
-  priority: number
+  priority: string
   modifiedOn?: string
   changeFreq: string // TODO: Use enum!
 }
