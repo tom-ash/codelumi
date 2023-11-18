@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`buildSitemap is delicious 1`] = `
+"<?xml version=\\"1.0\\" encoding=\\"UTF-8\\"?>
+<urlset xmlns=\\"http://www.sitemaps.org/schemas/sitemap/0.9\\" xmlns:xhtml=\\"http://www.w3.org/1999/xhtml\\">
+    <url>
+        <loc>
+            https://mapawynajmu.pl/
+        </loc>
+        <changefreq>
+            daily
+        </changefreq>
+        <priority>
+            1
+        </priority>
+        <xhtml:link rel=\\"alternate\\" href=\\"https://mapawynajmu.pl/\\" hreflang=\\"pl\\"/>
+        <xhtml:link rel=\\"alternate\\" href=\\"https://mapawynajmu.pl/en\\" hreflang=\\"en\\"/>
+    </url>
+    <url>
+        <loc>
+            https://mapawynajmu.pl/en
+        </loc>
+        <changefreq>
+            daily
+        </changefreq>
+        <priority>
+            1
+        </priority>
+        <xhtml:link rel=\\"alternate\\" href=\\"https://mapawynajmu.pl/\\" hreflang=\\"pl\\"/>
+        <xhtml:link rel=\\"alternate\\" href=\\"https://mapawynajmu.pl/en\\" hreflang=\\"en\\"/>
+    </url>
+</urlset>"
+`;

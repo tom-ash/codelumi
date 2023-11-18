@@ -10,8 +10,8 @@ function sitemapSender({ res, clientUrl, apiUrl }) {
 
       throw new Error('Sitemap fetch error!')
     })
-    .then(unlocalizedUrlGroups => {
-      const sitemap = buildSitemap({ unlocalizedUrlGroups, clientUrl })
+    .then(linkGroups => {
+      const sitemap = buildSitemap({ linkGroups, clientUrl })
 
       res.set('Content-Type', 'text/xml')
       res.send(sitemap)
