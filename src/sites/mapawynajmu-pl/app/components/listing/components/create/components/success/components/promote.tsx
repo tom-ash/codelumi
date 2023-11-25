@@ -18,12 +18,10 @@ export const PromoteButton: PromoteButtonInterface = props => {
       path: 'listings/promote',
       body: { listing_id: listingId },
     }).then(href => {
-
       // @ts-ignore
       window.gtag('event', 'promotion_added')
 
       changeUrl({ href })
-
     })
   }
 

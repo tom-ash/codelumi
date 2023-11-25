@@ -10,7 +10,7 @@ export const changeUrl = ({ href, withScroll = true, retainQueryParams = false }
 
     history.pushState({}, '', url)
     dispatchEvent(new Event('popstate'))
-  
+
     if (withScroll) scrollToTop()
   }
 }

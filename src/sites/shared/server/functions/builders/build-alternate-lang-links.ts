@@ -1,11 +1,15 @@
 interface BuildAlternateLangLinkElements {
-  (alternateLangLinks: {
-    href: string
-    hrefLang: Lang
-  }[] | null): string
+  (
+    alternateLangLinks:
+      | {
+          href: string
+          hrefLang: Lang
+        }[]
+      | null
+  ): string
 }
 
-export const buildAlternateLangLinkElements: BuildAlternateLangLinkElements = (alternateLangLinks) => {
+export const buildAlternateLangLinkElements: BuildAlternateLangLinkElements = alternateLangLinks => {
   const elements: string[] = []
 
   if (!alternateLangLinks) {

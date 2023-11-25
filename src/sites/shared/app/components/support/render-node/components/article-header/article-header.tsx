@@ -6,7 +6,7 @@ import { Author } from '../../../author/author'
 import Breadcrumbs from '../breadcrumbs/breadcrumbs'
 
 interface ArticleHeaderInterface {
-  (props: { useCoverImage?: boolean, useAuthor?: boolean }): React.ReactElement
+  (props: { useCoverImage?: boolean; useAuthor?: boolean }): React.ReactElement
 }
 
 const ArticleHeader: ArticleHeaderInterface = props => {

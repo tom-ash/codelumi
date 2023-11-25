@@ -15,7 +15,7 @@ interface PageItem {
   image?: string
 }
 
-const Index: IndexInterface = (props) => {
+const Index: IndexInterface = props => {
   const { withImages = true } = props
   const { pages = [] } = useData() as { pages: PageItem[] }
 
@@ -26,7 +26,12 @@ const Index: IndexInterface = (props) => {
 
         const label = (
           <>
-            {withImages && image && <Image src={image} alt={title} />}
+            {withImages && image && (
+              <Image
+                src={image}
+                alt={title}
+              />
+            )}
             <h2>{title}</h2>
           </>
         )

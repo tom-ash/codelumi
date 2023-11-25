@@ -1,6 +1,6 @@
 // // @ts-ignore TODO!
 // import pretty from 'pretty'
-import xmlFormat from 'xml-formatter';
+import xmlFormat from 'xml-formatter'
 
 interface Link {
   href: string
@@ -13,10 +13,7 @@ interface Link {
 type LinkGroup = Link[]
 
 interface BuildSitemap {
-  (attrs: {
-    linkGroups: LinkGroup[]
-    clientUrl: string
-  }): string
+  (attrs: { linkGroups: LinkGroup[]; clientUrl: string }): string
 }
 
 const buildSitemap: BuildSitemap = ({ linkGroups, clientUrl }) => {
@@ -29,10 +26,7 @@ const buildSitemap: BuildSitemap = ({ linkGroups, clientUrl }) => {
 }
 
 interface BuildXmlLinks {
-  (attrs: {
-    linkGroups: LinkGroup[]
-    clientUrl: string
-  }): string
+  (attrs: { linkGroups: LinkGroup[]; clientUrl: string }): string
 }
 
 const buildXmlLinks: BuildXmlLinks = ({ linkGroups, clientUrl }) => {
@@ -46,10 +40,7 @@ const buildXmlLinks: BuildXmlLinks = ({ linkGroups, clientUrl }) => {
 }
 
 interface BuildXmlLink {
-  (attrs: {
-    linkGroup: Link[]
-    clientUrl: string
-  }): string
+  (attrs: { linkGroup: Link[]; clientUrl: string }): string
 }
 
 const buildXmlLink: BuildXmlLink = ({ linkGroup, clientUrl }) => {
@@ -60,25 +51,20 @@ const buildXmlLink: BuildXmlLink = ({ linkGroup, clientUrl }) => {
   linkGroup.map(link => {
     const { href, modifiedOn, changeFreq, priority } = link
 
-    xmLlink += (
-      `<url>
+    xmLlink += `<url>
         <loc>${clientUrl}${href}</loc>
         ${modifiedOn ? `<lastmod>${modifiedOn}</lastmod>` : ''}
         <changefreq>${changeFreq}</changefreq>
         <priority>${priority}</priority>
         ${linkAlternates}
       </url>`
-    )
   })
 
   return xmLlink
 }
 
 interface BuildLinkAlternates {
-  (attrs: {
-    linkGroup: Link[]
-    clientUrl: string
-  }): string
+  (attrs: { linkGroup: Link[]; clientUrl: string }): string
 }
 
 const buildLinkAlternates: BuildLinkAlternates = ({ linkGroup, clientUrl }) => {
@@ -87,13 +73,11 @@ const buildLinkAlternates: BuildLinkAlternates = ({ linkGroup, clientUrl }) => {
   let altLocalizedUrls = ''
 
   linkGroup.map(link => {
-    altLocalizedUrls += (
-      `<xhtml:link
+    altLocalizedUrls += `<xhtml:link
         rel="alternate"
         href="${clientUrl}${link.href}"
         hreflang="${link.hrefLang}"
       />`
-    )
   })
 
   return altLocalizedUrls

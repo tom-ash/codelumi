@@ -12,7 +12,9 @@ interface GoBackProps {
 const GoBack = (props: GoBackProps) => {
   const dispatch = useDispatch()
   const setControl = (value: any) => dispatch({ type: 'control', value })
-  const { goBackLink: { href }} = props
+  const {
+    goBackLink: { href },
+  } = props
 
   return (
     <button
