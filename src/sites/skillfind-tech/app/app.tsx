@@ -12,6 +12,7 @@ const Footer = loadable(() => import('./components/scaffold/footer/footer'))
 
 const AssetsIndex = loadable(() => import('./components/asset/components/index'))
 const RedirectsIndex = loadable(() => import('../../shared/app/components/redirect/components/index'))
+const QuestionsShow = loadable(() => import('./components/questions/show/show'))
 
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
@@ -50,6 +51,7 @@ const App = () => {
     renderPostingIndex,
     assetsIndex,
     redirectsIndex,
+    renderQuestions,
   } = render
 
   return (
@@ -63,6 +65,7 @@ const App = () => {
       {renderImage && <Image />}
       {assetsIndex && <AssetsIndex />}
       {redirectsIndex && <RedirectsIndex />}
+      {renderQuestions && <QuestionsShow />}
       <Footer />
     </>
   )
