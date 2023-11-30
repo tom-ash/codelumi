@@ -6,6 +6,8 @@ import Markdown from 'markdown-to-jsx'
 import { Dispatch } from 'redux'
 import { useDispatch } from 'react-redux'
 import { submit } from '../../posting/components/create/components/form/functions/submit'
+import { SVG } from '../../../../../shared/app/components/support/svg/svg'
+import { changeUrl } from '../../../../../shared/app/functions/routes/changers/change-url'
 
 enum QuestionType {
   SINGLE_CHOICE = 'singleChoice',
@@ -57,6 +59,13 @@ const selectAnswer: SelectAnswer = (attrs) => {
       }
     }
 
+    if (answer.sequenceLetter !== selectedAnswerSequenceLetter && type === QuestionType.SINGLE_CHOICE) {
+      return {
+        ...answer,
+        isSelected: false,
+      }
+    }
+
     return {
       ...answer
     }
@@ -94,6 +103,8 @@ const QuestionsShow = () => {
     explanation,
     isAnsweredCorrectly,
     isSubmitted,
+    isSingleChoice,
+    isMultipleChoice,
   } = useData()
   const dispatch = useDispatch()
 
@@ -163,9 +174,28 @@ const QuestionsShow = () => {
       </div>
 
       <div className='result'>
-        {!isSubmitted && 'Select at least one answer.'}
-        {isSubmitted && isAnsweredCorrectly && 'Congratulations! You answered correctly!'}
-        {isSubmitted && !isAnsweredCorrectly && 'Alas! You answered incorrectly'}
+        {!isSubmitted && isSingleChoice && 'Select one correct answer.'}  
+        {!isSubmitted && isMultipleChoice && 'Select one or more correct answers.'}
+        {isSubmitted && isAnsweredCorrectly && (
+          <>
+            <div className='icon correct'>
+              <SVG name='check' />
+            </div>
+            <div className='message correct'>
+              Correct!
+            </div>
+          </>
+        )}
+        {isSubmitted && !isAnsweredCorrectly && (
+          <>
+            <div className='icon incorrect'>
+              <SVG name='check' />
+            </div>
+            <div className='message incorrect'>
+              Incorrect!
+            </div>
+          </>
+        )}
       </div>
 
       <div className='buttons'>
@@ -180,17 +210,35 @@ const QuestionsShow = () => {
             className='submit'
             onClick={() => submitAnswer({ answers, dispatch })}
           >
+            <SVG name='paperPlane' />
             Submit
           </button>
         )}
-        {/* <button>
-          Subm
-        </button> */}
+        {isSubmitted && (
+          <>
+            {isSubmitted && !isAnsweredCorrectly && (
+              <button
+                className='retry'
+                onClick={() => changeUrl({ href: window.location.pathname })}
+              >
+                <SVG name='retry' /> Retry
+              </button>              
+            )}
+            <button
+              className='next'
+              // onClick={() => submitAnswer({ answers, dispatch })}
+            >
+              <SVG name='dice' /> Next
+            </button>
+          </>
+        )}
       </div>
 
       {!isAnsweredCorrectly && <div className='hint'>
         <h2>Hint</h2>
-        {hint}
+        <Markdown>
+          {hint}
+        </Markdown>
       </div>}
 
       {isAnsweredCorrectly === true && <div className='explanation'>
