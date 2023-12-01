@@ -71,7 +71,9 @@ const selectAnswer: SelectAnswer = (attrs) => {
     }
   })
 
-  dispatch({ type: 'data', value: { answers: newAnswers } })
+  const isAnyAnswerSelected = !!newAnswers.find(answer => answer.isSelected)
+
+  dispatch({ type: 'data', value: { answers: newAnswers, isAnyAnswerSelected } })
 }
 
 interface SubmitAnswers {
@@ -105,6 +107,7 @@ const QuestionsShow = () => {
     isSubmitted,
     isSingleChoice,
     isMultipleChoice,
+    isAnyAnswerSelected,
   } = useData()
   const dispatch = useDispatch()
 
@@ -207,6 +210,7 @@ const QuestionsShow = () => {
         </button> */}
         {!isSubmitted && (
           <button
+            disabled={!isAnyAnswerSelected}
             className='submit'
             onClick={() => submitAnswer({ answers, dispatch })}
           >

@@ -161,6 +161,12 @@
         }
       }
       &.submit {
+
+        &:disabled {
+          cursor: not-allowed;
+          background: gray;
+        }
+
         svg {
           height: 16px;
         }
