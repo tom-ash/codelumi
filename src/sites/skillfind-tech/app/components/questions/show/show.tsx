@@ -8,6 +8,19 @@ import { useDispatch } from 'react-redux'
 import { submit } from '../../posting/components/create/components/form/functions/submit'
 import { SVG } from '../../../../../shared/app/components/support/svg/svg'
 import { changeUrl } from '../../../../../shared/app/functions/routes/changers/change-url'
+import API_URL from '../../../../shared/constants/urls/api'
+
+const getNewQuestion = () => {
+  fetch(API_URL + '/questions')
+    .then(response => {
+      if (response.ok) return response.json()
+    })
+    .then(href => {
+      console.log(href)
+
+      changeUrl({ href })
+    })
+}
 
 enum QuestionType {
   SINGLE_CHOICE = 'singleChoice',
@@ -230,7 +243,7 @@ const QuestionsShow = () => {
             )}
             <button
               className='next'
-              // onClick={() => submitAnswer({ answers, dispatch })}
+              onClick={() => getNewQuestion()}
             >
               <SVG name='dice' /> Next
             </button>
