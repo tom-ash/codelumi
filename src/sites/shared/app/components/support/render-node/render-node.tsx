@@ -25,11 +25,13 @@ const MapawynajmuPlLogoAndTitle = loadable(
 const FeatureItem = loadable(() => import('./components/feature-item/feature-item'))
 const Author = loadable(() => import('../author/author'))
 const Index = loadable(() => import('./components/index/index'))
+const QuestionIndex = loadable(() => import('./components/question-index/question-index'))
 
 const elements = {
   Author,
   Index,
   FeatureItem,
+  QuestionIndex,
 }
 
 export const RenderNode = (props: RenderNodeProps) => {

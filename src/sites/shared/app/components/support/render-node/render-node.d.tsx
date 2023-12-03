@@ -43,7 +43,12 @@ interface Index {
     | undefined
 }
 
-type RenderNodeData = string | string[] | ObjectNode | Author | Index
+interface QuestionIndex {
+  cat: 'QuestionIndex'
+  data: undefined
+}
+
+type RenderNodeData = string | string[] | ObjectNode | Author | Index | QuestionIndex
 
 type RenderNodeProps = {
   node: RenderNodeData

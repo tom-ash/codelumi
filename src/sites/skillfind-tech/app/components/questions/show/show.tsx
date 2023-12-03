@@ -5,7 +5,6 @@ import { useData } from '../../../../../shared/app/functions/store/use-data'
 import Markdown from 'markdown-to-jsx'
 import { Dispatch } from 'redux'
 import { useDispatch } from 'react-redux'
-import { submit } from '../../posting/components/create/components/form/functions/submit'
 import { SVG } from '../../../../../shared/app/components/support/svg/svg'
 import { changeUrl } from '../../../../../shared/app/functions/routes/changers/change-url'
 import API_URL from '../../../../shared/constants/urls/api'
@@ -215,12 +214,6 @@ const QuestionsShow = () => {
       </div>
 
       <div className='buttons'>
-        {/* <button className='show-answer'>
-          Show answer
-        </button>
-        <button>
-          Forfeit & Roll Another
-        </button> */}
         {!isSubmitted && (
           <button
             disabled={!isAnyAnswerSelected}
@@ -250,14 +243,12 @@ const QuestionsShow = () => {
           </>
         )}
       </div>
-
       {!isAnsweredCorrectly && <div className='hint'>
         <h2>Hint</h2>
         <Markdown>
           {hint}
         </Markdown>
       </div>}
-
       {isAnsweredCorrectly === true && <div className='explanation'>
         <h2>Explanation</h2>
         <div className='explanation-body'>
