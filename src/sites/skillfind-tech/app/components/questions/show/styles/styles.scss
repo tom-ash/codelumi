@@ -1,14 +1,15 @@
 @import '../../../../../../shared/app/components/support/render-node/components/code/styles/styles.scss';
+@import '../../../../../../shared/app/styles/media-breakpoints';
 
 #questions-show {
-  width: 768px;
-  margin: 80px auto;
-  padding-left: 256px;
-  padding-right: 32px;
-  padding-bottom: 32px;
+  width: 480px;
+  margin: 50px auto;
+  padding: 32px 0;
   font-size: 16px;
-  h1 {
-    margin-top: 32px;
+  @media #{$LARGE-PHONE} {
+    width: 100%;
+    margin: 50px 0;
+    padding: 24px;
   }
   .question-body {
     margin-top: 32px;
@@ -24,42 +25,36 @@
       list-style-type: none;
       li {
         margin-top: 24px;
-        padding: 12px;
+        padding: 10px 16px;
         border-radius: 8px;
         cursor: pointer;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-        
+        font-size: 15px;
+        line-height: 1.5;
         &:hover {
           background: lightgray;
         }
-
         &.selected {
           background: #7FB3D5;
         }
-
         &.correct-selected {
           background: green;
         }
-
         &.correctly-omitted {
           background: lightgray;
         }
-
         &.incorrectly-selected {
           background: gray;
         }
-
         &.incorrectly-omitted {
           background: lightgray;
         }
-
         &.answered {
           cursor: not-allowed;
         }
       }
     }
   }
-
 
   .result {
     margin-top: 32px;
@@ -113,8 +108,6 @@
     a {
       text-decoration: underline;
       display: inline-block;
-      // margin-top: 4px;
-      // font-size: 14px;
     }
   }
   .explanation {
