@@ -26,19 +26,8 @@ enum QuestionType {
   MULTIPLE_CHOICE = 'multipleChoice',
 }
 
-enum SequenceLetter {
-  A = 'a',
-  B = 'b',
-  C = 'c',
-  D = 'd',
-  E = 'e',
-  F = 'f',
-  G = 'g',
-  H = 'h',
-}
-
 interface Answer {
-  sequenceLetter: SequenceLetter
+  position: number
   body: string
   isCorrect: boolean
   isSelected: boolean
@@ -48,7 +37,7 @@ interface SelectAnswer {
   (attrs: {
     type: QuestionType,
     answers: Answer[],
-    selectedAnswerSequenceLetter: SequenceLetter,
+    selectedPosition: number,
     dispatch: Dispatch,
   }): void
 }
@@ -57,12 +46,14 @@ const selectAnswer: SelectAnswer = (attrs) => {
   const {
     type,
     answers,
-    selectedAnswerSequenceLetter,
+    selectedPosition,
     dispatch,
   } = attrs
 
+  console.log(attrs)
+
   const newAnswers = answers.map(answer => {
-    if (answer.sequenceLetter === selectedAnswerSequenceLetter) {
+    if (answer.position === selectedPosition) {
       const isSelected =  !answer.isSelected
 
       return {
@@ -71,7 +62,7 @@ const selectAnswer: SelectAnswer = (attrs) => {
       }
     }
 
-    if (answer.sequenceLetter !== selectedAnswerSequenceLetter && type === QuestionType.SINGLE_CHOICE) {
+    if (answer.position !== selectedPosition && type === QuestionType.SINGLE_CHOICE) {
       return {
         ...answer,
         isSelected: false,
@@ -114,7 +105,6 @@ const QuestionsShow = () => {
     body,
     hint,
     answers,
-    explanation,
     isAnsweredCorrectly,
     isSubmitted,
     isSingleChoice,
@@ -174,7 +164,7 @@ const QuestionsShow = () => {
                   onClick: () => selectAnswer({
                     type,
                     answers,
-                    selectedAnswerSequenceLetter: answer.sequenceLetter,
+                    selectedPosition: answer.position,
                     dispatch,
                   })
                 }}
@@ -248,14 +238,6 @@ const QuestionsShow = () => {
         <Markdown>
           {hint}
         </Markdown>
-      </div>}
-      {isAnsweredCorrectly === true && <div className='explanation'>
-        <h2>Explanation</h2>
-        <div className='explanation-body'>
-          <Markdown>
-            {explanation}
-          </Markdown>
-        </div>
       </div>}
     </div>
   )
