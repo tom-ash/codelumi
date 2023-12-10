@@ -17,11 +17,9 @@ export const Logo: LogoInterface = props => {
       <img
         crossOrigin='anonymous'
         loading='lazy'
-        src={`https://soundofit-dev.s3.eu-central-1.amazonaws.com/logo-image.jpeg?a=123?a=${storageUrlRandomizedQuaryParameter}`}
+        src={`https://soundofit-dev.s3.eu-central-1.amazonaws.com/qweqweqw.jpeg?a=123?a=${storageUrlRandomizedQuaryParameter}`}
       />
-      <strong>
         skillfind.<span className='tech'>tech</span>
-      </strong>
     </div>
   )
 

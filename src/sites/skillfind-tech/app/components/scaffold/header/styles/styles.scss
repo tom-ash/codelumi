@@ -8,13 +8,19 @@
   left: 0;
   right: 0;
   height: 50px;
-  border-bottom: 1px solid #979a9a;
   padding: 0 16px;
-  background: white;
+  background: #1B2631;
+  color: #D0D3D4;
+  
   .lang-switch {
     float: right;
+    color: #D0D3D4;
     .current {
       line-height: 50px;
+      color: #D0D3D4;
+      svg {
+        fill: #D0D3D4;;
+      }
     }
     .all {
       top: 52px;
@@ -26,15 +32,18 @@
     margin-right: 32px;
     font-size: 14px;
     line-height: 50px;
+    color: #D0D3D4;
     .input {
       font-size: 14px;
+      color: #D0D3D4;
     }
     &:hover {
       text-decoration: underline;
     }
     &.hover {
       text-decoration: underline;
-      color: #34495e;
+      // color: #34495e;
+      // color: #D0D3D4;
     }
 
     &.add-announcement {

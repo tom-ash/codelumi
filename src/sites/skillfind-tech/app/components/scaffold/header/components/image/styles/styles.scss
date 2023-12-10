@@ -6,27 +6,27 @@
     left: 0px;
     height: 200px;
     width: 200px;
-    border: 16px solid #1c2833;
+    border: 16px solid #FEF9E7;
     border-radius: 100px;
-    background: #f7f9f9;
     text-align: center;
     line-height: 168px;
     .zero-one {
-      font-size: 104px;
+      font-size: 96px;
       font-family: monospace;
-      color: rgb(50, 160, 150);
+      color: #82E0AA;
     }
   }
 
   .handle {
     position: absolute;
-    top: 96px;
-    right: 146px;
+    top: 240px;
+    left: 120px;
     height: 24px;
-    width: 192px;
-    background: #1c2833;
-    border-radius: 12px;
-    transform: rotate(-135deg);
+    width: 120px;
+    background: #FEF9E7;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    transform: rotate(45deg);
     transform-origin: right;
   }
 }
