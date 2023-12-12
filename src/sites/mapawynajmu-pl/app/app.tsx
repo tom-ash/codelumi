@@ -26,7 +26,7 @@ const RedirectsIndex = loadable(() => import('../../shared/app/components/redire
 const App = () => {
   useStyles(styles)
 
-  const { lang, minInnerHeight } = useApp()
+  const { lang } = useApp()
   const render = useRender()
   const dispatch = useDispatch()
 
@@ -59,21 +59,18 @@ const App = () => {
   return (
     <>
       <Header />
-      <div
-        className='blank-page'
-        style={{
-          minHeight: minInnerHeight > 768 ? minInnerHeight : 768,
-        }}
-      >
-        {renderVisitor && <Visitor />}
-        {renderUser && <User />}
-        {renderPage && <Page />}
-        {renderImage && <Image />}
-        {assetsIndex && <AssetsIndex />}
-        {redirectsIndex && <RedirectsIndex />}
-        {renderListing && <Listing />}
-      </div>
-      <Footer />
+      <div className='flexed-content'>
+        <div className='stretched-content'>
+          {renderVisitor && <Visitor />}
+          {renderUser && <User />}
+          {renderPage && <Page />}
+          {renderImage && <Image />}
+          {assetsIndex && <AssetsIndex />}
+          {redirectsIndex && <RedirectsIndex />}
+          {renderListing && <Listing />}
+        </div>
+        <Footer />
+      </div>    
     </>
   )
 }

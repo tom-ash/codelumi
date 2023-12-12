@@ -1,32 +1,35 @@
 @import '../../../../../../shared/app/styles/media-breakpoints';
 
 #footer {
-  padding-top: 10px;
-  height: 20px;
-  background: white;
+  height: 40px;
+  padding: 0 10px;
+  line-height: 40px;
   .social-pages,
   .administrative {
     float: left;
   }
   .social-pages {
-    padding-left: 12px;
+    margin-right: 8px;
     a {
       display: inline-block;
-      width: 16px;
-      margin-right: 12px;
+      margin-right: 8px;
       fill: #626567;
       transition: fill 0.3s ease-in;
       cursor: pointer;
       &:hover {
         fill: black;
       }
+      svg {
+        position: relative;
+        top: 8px;
+        width: 24px;
+        height: 24px;
+      }
     }
   }
   .administrative {
-    padding-top: 3px;
-    max-width: 1440px;
-    margin: 0 auto;
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 40px;
     .link {
       float: left;
       margin-right: 12px;
@@ -34,7 +37,6 @@
   }
   .copyright {
     float: right;
-    padding-top: 3px;
     padding-right: 12px;
     font-size: 12px;
   }
@@ -46,19 +48,15 @@
     }
     .social-pages {
       text-align: center;
-      margin-bottom: 12px;
     }
     .administrative {
-      margin-bottom: 12px;
       .link {
         float: none;
         text-align: center;
-        margin-bottom: 6px;
       }
     }
     .copyright {
       text-align: center;
-      padding-bottom: 12px;
     }
   }
 }

@@ -3,8 +3,12 @@
 @import '../../../../../../../styles/container';
 
 #listing-index-panel {
-  position: relative;
   padding: 12px;
+  position: absolute;
+  @media #{$LARGE-TABLET} {
+    position: relative;
+    padding: 18px 18px 6px;
+  }
   .filter {
     position: relative;
     float: left;
@@ -41,10 +45,5 @@
       width: 100%;
       margin-bottom: 10px;
     }
-  }
-  @media #{$LARGE-PHONE} {
-    margin: 0;
-    padding: 10px 10px 0;
-    border-radius: 0;
   }
 }

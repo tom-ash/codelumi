@@ -7,15 +7,8 @@ import { useApp } from '../../../../../../shared/app/functions/store/use-app'
 const PasswordReset = () => {
   useStyles(styles)
 
-  const { minInnerHeight } = useApp()
-
   return (
-    <div
-      id='user-password-reset'
-      style={{
-        minHeight: minInnerHeight,
-      }}
-    >
+    <div id='user-password-reset'>
       <CommonPasswordReset />
     </div>
   )

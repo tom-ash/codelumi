@@ -4,13 +4,18 @@
 @import './pin';
 @import './tile';
 @import './mini_list';
-
 @import '../../../../show/styles/styles.scss';
 
 #listing-index-map {
+  position: absolute;
+  top: 120px;
   right: 0;
   bottom: 0;
   left: 0;
+  @media #{$LARGE-TABLET} {
+    position: relative;
+    top: 0;
+  }
   #google-map-container {
     @extend %google-map-container;
     .pin {
@@ -26,10 +31,7 @@
       }
     }
   }
-  @media #{$LARGE-TABLET} {
-    position: relative;
-    top: 0;
-  }
+
   h1 {
     margin: 6px 0 18px 0;
     text-align: center;

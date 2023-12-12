@@ -8,19 +8,13 @@ import { useApp } from '../../../../../../shared/app/functions/store/use-app'
 const UserNew = () => {
   useStyles(styles)
 
-  const { minInnerHeight } = useApp()
   const renderListingsNewForm = useRender()['listings>new>form']
 
   if (renderListingsNewForm) return <UserNewEmail />
 
   return (
     <>
-      <div
-        id='user-create'
-        style={{
-          minHeight: minInnerHeight,
-        }}
-      >
+      <div id='user-create'>
         <UserNewEmail />
       </div>
     </>

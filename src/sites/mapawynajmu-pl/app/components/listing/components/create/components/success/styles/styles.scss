@@ -41,7 +41,7 @@
       @extend %share-on-facebook-button;
     }
     @media #{$SMALL-TABLET} {
-      padding: 0 18px;
+      padding: 60px 18px 60px;
     }
     &.promoted {
       .promotion-actions {

@@ -7,15 +7,8 @@ import { useApp } from '../../../../../../shared/app/functions/store/use-app'
 const UserAuth = () => {
   useStyles(styles)
 
-  const { minInnerHeight } = useApp()
-
   return (
-    <div
-      id='user-auth'
-      style={{
-        minHeight: minInnerHeight,
-      }}
-    >
+    <div id='user-auth'>
       <Email />
     </div>
   )

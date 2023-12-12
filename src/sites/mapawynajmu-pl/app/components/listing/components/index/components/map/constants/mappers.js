@@ -5,8 +5,6 @@ export const mapStateToProps = store => {
     isMobile,
     scripts: { googleMaps: googleMapsScriptLoaded },
     device,
-
-    screenHeight,
   } = app
   const { svgs } = assets
   const { 'listing/index/go-back': goBackLink } = links
@@ -53,7 +51,6 @@ export const mapStateToProps = store => {
     title,
     currentPartnerName,
     goBackLink,
-    screenHeight,
   }
 }
 

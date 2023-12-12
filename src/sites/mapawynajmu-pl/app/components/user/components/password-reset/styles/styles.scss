@@ -8,9 +8,16 @@
 @import '../../../../../styles/line';
 
 #user-password-reset {
+  background: $BACKGROUND-LIGHT-GRAYISH-COLOR;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   align-items: center;
-  padding: 12px;
+  justify-content: center;
+  padding: 120px 18px 60px;
 }
 
 #user-edit-password {

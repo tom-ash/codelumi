@@ -41,20 +41,12 @@ class AnnouncementIndexMap extends React.Component {
       currentPartnerName,
       // @ts-ignore
       goBackLink,
-      // @ts-ignore
-      screenHeight,
     } = this.props
     // @ts-ignore
     const changeHoveredTileId = hoveredTileId => setControl({ hoveredTileId })
-    const height = isMobile ? undefined : screenHeight - 60 - 60 - 36
 
     return (
-      <div
-        id='listing-index-map'
-        style={{
-          height,
-        }}
-      >
+      <div id='listing-index-map'>
         <div id='google-map-container'>
           <div
             // @ts-ignore

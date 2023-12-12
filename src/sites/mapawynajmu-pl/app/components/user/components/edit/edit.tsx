@@ -14,7 +14,6 @@ import { useUser } from '../../../../../../shared/app/functions/store/use-user'
 const UserEdit = () => {
   useStyles(styles)
 
-  const { minInnerHeight } = useApp()
   const { headingOne } = useTexts()
   const { accountType } = useUser()
   const headingProps = {
@@ -23,12 +22,7 @@ const UserEdit = () => {
   }
 
   return (
-    <div
-      id='user-edit'
-      style={{
-        minHeight: minInnerHeight,
-      }}
-    >
+    <div id='user-edit'>
       <div className='container'>
         <Heading {...headingProps} />
         <Line />

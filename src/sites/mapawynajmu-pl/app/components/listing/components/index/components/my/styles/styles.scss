@@ -4,12 +4,6 @@
 @import '../../tile/styles/styles.scss';
 @import '../../../../common/action-buttons/styles.scss';
 
-#listing-index {
-  &.user {
-    background: $BACKGROUND-LIGHT-GRAYISH-COLOR;
-  }
-}
-
 #listing-index-user {
   position: relative;
   max-width: 608px;
