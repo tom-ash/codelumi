@@ -10,14 +10,16 @@ const VisitorContact = () => {
 
   return (
     <div id='contact'>
-      <div className='company'>
-        <strong>{companyName}</strong>
+      <div className='container'>
+        <div className='company'>
+          <strong>{companyName}</strong>
+        </div>
+        <div className='address'>
+          <div className='street'>{companyStreetAndStreetNumber}</div>
+          <div className='postalc-code-and-city'>{companyPostalCodeAndCity}</div>
+        </div>
+        <div className='email'>Email: {companyEmail}</div>
       </div>
-      <div className='address'>
-        <div className='street'>{companyStreetAndStreetNumber}</div>
-        <div className='postalc-code-and-city'>{companyPostalCodeAndCity}</div>
-      </div>
-      <div className='email'>Email: {companyEmail}</div>
     </div>
   )
 }

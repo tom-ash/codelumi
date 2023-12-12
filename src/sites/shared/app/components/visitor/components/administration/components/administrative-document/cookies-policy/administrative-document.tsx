@@ -19,10 +19,12 @@ export const AdministrativeDocument: AdministrativeDocumentInterface = props => 
 
   return (
     <div id={identifier}>
-      <Heading {...headingOneProps} />
-      {provisions.map((provision, index) => (
-        <Provision {...{ ...provision, lang, key: index }} />
-      ))}
+      <div className='container'>
+        <Heading {...headingOneProps} />
+        {provisions.map((provision, index) => (
+          <Provision {...{ ...provision, lang, key: index }} />
+        ))}
+      </div>
     </div>
   )
 }

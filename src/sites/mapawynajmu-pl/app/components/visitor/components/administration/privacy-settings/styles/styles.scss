@@ -2,18 +2,39 @@
 @import '../../../../../../styles/inputs/radio.scss';
 
 #privacy-settings {
-  @extend %administrative-document;
-  // min-width: 640px;
-  .consent-container {
-    &:first-of-type {
-      margin-bottom: 32px;
+  background: $BACKGROUND-LIGHT-GRAYISH-COLOR;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 18px 60px;
+  overflow: auto;
+  .container {
+    @extend %container;
+    padding: 32px;
+    max-width: 768px;
+    .consent-container {
+      margin-top: 32px;
+    }
+    .consent-text {
+      margin-bottom: 16px;
+      line-height: 22px;
+    }
+    .radio {
+      @extend %radio;
+    }
+    @media #{$LARGE-PHONE} {
+      border: none;
+      padding: 24px;
     }
   }
-  .consent-text {
-    margin-bottom: 16px;
-    line-height: 22px;
-  }
-  .radio {
-    @extend %radio;
+
+  @media #{$LARGE-PHONE} {
+    padding: 60px 0;
+    background: white;
   }
 }
