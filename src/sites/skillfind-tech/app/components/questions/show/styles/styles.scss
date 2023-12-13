@@ -25,32 +25,60 @@
       list-style-type: none;
       li {
         margin-top: 24px;
-        padding: 10px 16px;
-        border-radius: 8px;
-        cursor: pointer;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-        font-size: 15px;
-        line-height: 1.5;
+        .body {
+          padding: 10px 16px;
+          border-radius: 8px;
+          cursor: pointer;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          font-size: 15px;
+          line-height: 1.5;
+        }
+        .explanation {
+          font-size: 13px;
+          margin-top: 12px;
+          padding: 0 16px;
+          line-height: 1.5;
+        }
         &:hover {
-          background: lightgray;
+          .body {
+            background: lightgray;
+          }
         }
         &.selected {
-          background: #7FB3D5;
+          .body {
+            background: #7FB3D5;
+          }
         }
         &.correct-selected {
-          background: green;
+          .body {
+            background: #A9DFBF;
+          }
+          .explanation {
+            color: #1E8449;
+          }
         }
         &.correctly-omitted {
-          background: lightgray;
-        }
-        &.incorrectly-selected {
-          background: gray;
-        }
-        &.incorrectly-omitted {
-          background: lightgray;
+          .body {
+            background: #EAEDED;
+          }
+          .explanation {
+            color: gray;
+          }
         }
         &.answered {
-          cursor: not-allowed;
+          .body {
+            cursor: not-allowed;
+          }
+          &.incorrectly-selected {
+            .body {
+              background: gray;
+            }
+          }
+          &.incorrectly-omitted {
+            .body {
+              background: lightgray;
+            }
+          }
         }
       }
     }
@@ -110,17 +138,17 @@
       display: inline-block;
     }
   }
-  .explanation {
-    margin-top: 32px;
-    h2 {
-      font-size: 14px;
-    }
-    .explanation-body {
-      margin-top: 8px;
-      line-height: 1.5;
-      font-size: 16px;
-    }
-  }
+  // .explanation {
+  //   margin-top: 32px;
+  //   h2 {
+  //     font-size: 14px;
+  //   }
+  //   .explanation-body {
+  //     margin-top: 8px;
+  //     line-height: 1.5;
+  //     font-size: 16px;
+  //   }
+  // }
 
   .buttons {
     margin-top: 32px;

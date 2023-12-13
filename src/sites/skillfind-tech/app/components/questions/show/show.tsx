@@ -31,6 +31,7 @@ interface Answer {
   body: string
   isCorrect: boolean
   isSelected: boolean
+  explanation: string
 }
 
 interface SelectAnswer {
@@ -128,6 +129,7 @@ const QuestionsShow = () => {
               isSelected,
               isCorrect,
               body,
+              explanation,
             } = answer
 
             const classNames = ['answer']
@@ -158,6 +160,7 @@ const QuestionsShow = () => {
             }
 
             return (
+              <>
               <li
                 className={classNames.join(' ')}
                 {...!isSubmitted && {
@@ -169,10 +172,18 @@ const QuestionsShow = () => {
                   })
                 }}
               >
-                <Markdown>
-                  {body}
-                </Markdown>
+                <div className='body'>
+                  <Markdown>
+                    {body}
+                  </Markdown>
+                </div>
+                {isAnsweredCorrectly && explanation && <div className='explanation'>
+                  <Markdown>
+                    {explanation}
+                  </Markdown>
+                </div>}
               </li>
+              </>
             )
           })}
         </ul>
