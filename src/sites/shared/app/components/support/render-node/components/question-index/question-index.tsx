@@ -8,7 +8,7 @@ interface QuestionIndexInterface {
 }
 
 interface Question {
-  url: string
+  href: string
   lang: Lang
   title: string
 }
@@ -16,17 +16,15 @@ interface Question {
 const QuestionIndex: QuestionIndexInterface = props => {
   const { questions = [] } = useData() as { questions: Question[] }
 
-  console.log(questions)
-
   return (
     <ul className='index'>
       {questions.map(question => {
-        const { url, lang, title } = question
+        const { href, lang, title } = question
 
         return (
           <li>
             <Link
-              href={`/javascript/questions/${url}`}
+              href={href}
               hrefLang={lang}
               label={title}
               title={title}
