@@ -20,6 +20,9 @@ export const RecordIndexer: RecordIndexerInterface = props => {
   const { recordKeys, recordPath } = useData()
   const { recordKey } = useInputs()
 
+  // console.log("ASDASDASDSADASD")
+  // console.log(recordKeys)
+
   return (
     <div className='record-creator'>
       <KeyInput />
@@ -27,11 +30,15 @@ export const RecordIndexer: RecordIndexerInterface = props => {
         {recordKeys.map((key: string) => {
           const newNameRegex = recordKey
 
+          console.log('---')
+          console.log(recordPath)
+          console.log(key)
+
           if (key.match(newNameRegex)) {
             return (
               <li
                 key={key}
-                onClick={() => changeUrl({ href: `${recordPath}/${key}` })}
+                onClick={() => changeUrl({ href: `/${recordPath}/${key}` })}
               >
                 {key}
               </li>
