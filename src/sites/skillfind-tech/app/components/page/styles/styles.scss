@@ -18,6 +18,7 @@
       @extend %article;
       background: white;
       padding: 32px;
+      border-radius: 4px;
     }
 
     @media #{$LARGE-PHONE} {

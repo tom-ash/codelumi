@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux'
 import { SVG } from '../../../../../shared/app/components/support/svg/svg'
 import { changeUrl } from '../../../../../shared/app/functions/routes/changers/change-url'
 import API_URL from '../../../../shared/constants/urls/api'
+import Breadcrumbs from '../../../../../shared/app/components/support/render-node/components/breadcrumbs/breadcrumbs'
 
 const getNewQuestion = () => {
   fetch(API_URL + '/questions')
@@ -116,140 +117,143 @@ const QuestionsShow = () => {
 
   return (
     <div id='questions-show'>
-      <h1>{title}</h1>
-      <div className='question-body'>
-        <Markdown>
-          {body}
-        </Markdown>
-      </div>
-      <div className='answers'>
-        <ul>
-          {answers.map((answer: Answer) => {
-            const {
-              isSelected,
-              isCorrect,
-              body,
-              explanation,
-            } = answer
+      <Breadcrumbs />
+      <div className='container'>
+        <h1>{title}</h1>
+        <div className='question-body'>
+          <Markdown>
+            {body}
+          </Markdown>
+        </div>
+        <div className='answers'>
+          <ul>
+            {answers.map((answer: Answer) => {
+              const {
+                isSelected,
+                isCorrect,
+                body,
+                explanation,
+              } = answer
 
-            const classNames = ['answer']
+              const classNames = ['answer']
 
-            if (isSelected) {
-              classNames.push('selected')
+              if (isSelected) {
+                classNames.push('selected')
 
-              if (isAnsweredCorrectly) {
-                classNames.push('correct-selected')
+                if (isAnsweredCorrectly) {
+                  classNames.push('correct-selected')
+                }
+
+                if (isAnsweredCorrectly === false) {
+                  classNames.push('incorrectly-selected')
+                }
+
+              } else {
+                if (isAnsweredCorrectly) {
+                  classNames.push('correctly-omitted')
+                }
+
+                if (isAnsweredCorrectly === false) {
+                  classNames.push('incorrectly-omitted')
+                }
               }
 
-              if (isAnsweredCorrectly === false) {
-                classNames.push('incorrectly-selected')
+              if (isAnsweredCorrectly || isAnsweredCorrectly === false) {
+                classNames.push('answered')
               }
 
-            } else {
-              if (isAnsweredCorrectly) {
-                classNames.push('correctly-omitted')
-              }
+              return (
+                <>
+                <li
+                  className={classNames.join(' ')}
+                  {...!isSubmitted && {
+                    onClick: () => selectAnswer({
+                      type,
+                      answers,
+                      selectedPosition: answer.position,
+                      dispatch,
+                    })
+                  }}
+                >
+                  <div className='body'>
+                    <Markdown>
+                      {body}
+                    </Markdown>
+                  </div>
+                  {isAnsweredCorrectly && explanation && <div className='explanation'>
+                    <Markdown>
+                      {explanation}
+                    </Markdown>
+                  </div>}
+                </li>
+                </>
+              )
+            })}
+          </ul>
+        </div>
 
-              if (isAnsweredCorrectly === false) {
-                classNames.push('incorrectly-omitted')
-              }
-            }
+        <div className='result'>
+          {!isSubmitted && isSingleChoice && 'Select one correct answer.'}  
+          {!isSubmitted && isMultipleChoice && 'Select one or more correct answers.'}
+          {isSubmitted && isAnsweredCorrectly && (
+            <>
+              <div className='icon correct'>
+                <SVG name='check' />
+              </div>
+              <div className='message correct'>
+                Correct!
+              </div>
+            </>
+          )}
+          {isSubmitted && !isAnsweredCorrectly && (
+            <>
+              <div className='icon incorrect'>
+                <SVG name='check' />
+              </div>
+              <div className='message incorrect'>
+                Incorrect!
+              </div>
+            </>
+          )}
+        </div>
 
-            if (isAnsweredCorrectly || isAnsweredCorrectly === false) {
-              classNames.push('answered')
-            }
-
-            return (
-              <>
-              <li
-                className={classNames.join(' ')}
-                {...!isSubmitted && {
-                  onClick: () => selectAnswer({
-                    type,
-                    answers,
-                    selectedPosition: answer.position,
-                    dispatch,
-                  })
-                }}
-              >
-                <div className='body'>
-                  <Markdown>
-                    {body}
-                  </Markdown>
-                </div>
-                {isAnsweredCorrectly && explanation && <div className='explanation'>
-                  <Markdown>
-                    {explanation}
-                  </Markdown>
-                </div>}
-              </li>
-              </>
-            )
-          })}
-        </ul>
-      </div>
-
-      <div className='result'>
-        {!isSubmitted && isSingleChoice && 'Select one correct answer.'}  
-        {!isSubmitted && isMultipleChoice && 'Select one or more correct answers.'}
-        {isSubmitted && isAnsweredCorrectly && (
-          <>
-            <div className='icon correct'>
-              <SVG name='check' />
-            </div>
-            <div className='message correct'>
-              Correct!
-            </div>
-          </>
-        )}
-        {isSubmitted && !isAnsweredCorrectly && (
-          <>
-            <div className='icon incorrect'>
-              <SVG name='check' />
-            </div>
-            <div className='message incorrect'>
-              Incorrect!
-            </div>
-          </>
-        )}
-      </div>
-
-      <div className='buttons'>
-        {!isSubmitted && (
-          <button
-            disabled={!isAnyAnswerSelected}
-            className='submit'
-            onClick={() => submitAnswer({ answers, dispatch })}
-          >
-            <SVG name='paperPlane' />
-            Submit
-          </button>
-        )}
-        {isSubmitted && (
-          <>
-            {isSubmitted && !isAnsweredCorrectly && (
-              <button
-                className='retry'
-                onClick={() => changeUrl({ href: window.location.pathname })}
-              >
-                <SVG name='retry' /> Retry
-              </button>              
-            )}
+        <div className='buttons'>
+          {!isSubmitted && (
             <button
-              className='next'
-              onClick={() => getNewQuestion()}
+              disabled={!isAnyAnswerSelected}
+              className='submit'
+              onClick={() => submitAnswer({ answers, dispatch })}
             >
-              <SVG name='dice' /> Next
+              <SVG name='paperPlane' />
+              Submit
             </button>
-          </>
-        )}
+          )}
+          {isSubmitted && (
+            <>
+              {isSubmitted && !isAnsweredCorrectly && (
+                <button
+                  className='retry'
+                  onClick={() => changeUrl({ href: window.location.pathname })}
+                >
+                  <SVG name='retry' /> Retry
+                </button>              
+              )}
+              <button
+                className='next'
+                onClick={() => getNewQuestion()}
+              >
+                <SVG name='dice' /> Next
+              </button>
+            </>
+          )}
+        </div>
+        {!isAnsweredCorrectly && <div className='hint'>
+          <h2>Hint</h2>
+          <Markdown>
+            {hint}
+          </Markdown>
+        </div>}
       </div>
-      {!isAnsweredCorrectly && <div className='hint'>
-        <h2>Hint</h2>
-        <Markdown>
-          {hint}
-        </Markdown>
-      </div>}
     </div>
   )
 }

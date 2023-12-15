@@ -1,16 +1,60 @@
 @import '../../../../../../shared/app/components/support/render-node/components/code/styles/styles.scss';
 @import '../../../../../../shared/app/styles/media-breakpoints';
+@import '../../../../../../shared/app/components/page/styles/breadcrumbs.scss';
 
 #questions-show {
-  width: 480px;
-  margin: 50px auto;
-  padding: 32px 0;
-  font-size: 16px;
-  @media #{$LARGE-PHONE} {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 18px 60px;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: auto;
+  .breadcrumbs {
+    @extend %breadcrumbs;
+    max-width: 600px;
+    color: #F2F3F4;
+    font-variant-caps: all-small-caps;
     width: 100%;
-    margin: 50px 0;
-    padding: 24px;
+    text-align: left;
+    font-size: 18px;
+    // font-weight: bold;
+    padding-left: 4px;
+    li {
+      font-weight: bold;
+      .link {
+        text-decoration: none;
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+
+    position: relative;
+
+    svg {
+      position: relative;
+      // display: block;
+      fill: white;
+      top: 1px;
+      height: 11px;
+    }
   }
+  .container {
+    // @extend %container;
+    border-radius: 4px;
+    max-width: 600px;
+    padding: 32px;
+    font-size: 16px;
+    background: white;
+    @media #{$LARGE-PHONE} {
+      width: 100%;
+      margin: 50px 0;
+      padding: 24px;
+    }
+  }
+
   .question-body {
     margin-top: 32px;
     line-height: 1.5;

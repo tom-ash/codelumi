@@ -21,9 +21,9 @@ body {
   display: flex;
   flex-direction: column;
   .stretched-content {
+    position: relative;
     align-self: stretch;
     flex-grow: 1;
-    padding-bottom: 128px;
   }
 }
 

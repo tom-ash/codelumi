@@ -2,14 +2,13 @@
 @import '../../../../styles/z-index';
 
 #header {
-  z-index: $SCAFFOLD-HEADER-Z-INDEX;
+  z-index: 2;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 50px;
   padding: 0 16px;
-  // background: #1B2631;
   color: #D0D3D4;
 
   background: black;
