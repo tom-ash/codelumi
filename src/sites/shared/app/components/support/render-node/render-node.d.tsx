@@ -48,6 +48,11 @@ interface QuestionIndex {
   data: undefined
 }
 
+interface Breadcrumbs {
+  cat: 'Breadcrumbs'
+  data: undefined
+}
+
 type RenderNodeData = string | string[] | ObjectNode | Author | Index | QuestionIndex
 
 type RenderNodeProps = {

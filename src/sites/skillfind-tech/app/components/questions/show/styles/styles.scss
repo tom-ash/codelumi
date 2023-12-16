@@ -1,50 +1,18 @@
 @import '../../../../../../shared/app/components/support/render-node/components/code/styles/styles.scss';
 @import '../../../../../../shared/app/styles/media-breakpoints';
-@import '../../../../../../shared/app/components/page/styles/breadcrumbs.scss';
 
 #questions-show {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 120px 18px 60px;
-  flex-direction: column;
-  overflow: hidden;
-  overflow-y: auto;
-  .breadcrumbs {
-    @extend %breadcrumbs;
-    max-width: 600px;
-    color: #F2F3F4;
-    font-variant-caps: all-small-caps;
-    width: 100%;
-    text-align: left;
-    font-size: 18px;
-    // font-weight: bold;
-    padding-left: 4px;
-    li {
-      font-weight: bold;
-      .link {
-        text-decoration: none;
-        a {
-          text-decoration: none;
-        }
-      }
-    }
-
-    position: relative;
-
-    svg {
-      position: relative;
-      // display: block;
-      fill: white;
-      top: 1px;
-      height: 11px;
-    }
-  }
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-x: auto;
+  padding: 120px 0;
   .container {
-    // @extend %container;
+    margin: 0 auto;
     border-radius: 4px;
-    max-width: 600px;
+    max-width: 640px;
     padding: 32px;
     font-size: 16px;
     background: white;

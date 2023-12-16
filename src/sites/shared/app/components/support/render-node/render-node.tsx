@@ -26,12 +26,14 @@ const FeatureItem = loadable(() => import('./components/feature-item/feature-ite
 const Author = loadable(() => import('../author/author'))
 const Index = loadable(() => import('./components/index/index'))
 const QuestionIndex = loadable(() => import('./components/question-index/question-index'))
+const Breadcrumbs = loadable(() => import('./components/breadcrumbs/breadcrumbs'))
 
 const elements = {
   Author,
   Index,
   FeatureItem,
   QuestionIndex,
+  Breadcrumbs,
 }
 
 export const RenderNode = (props: RenderNodeProps) => {
