@@ -6,6 +6,7 @@
 @import '../components/page/styles/styles';
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 @import './z-index';
+@import '../../../shared/app/components/page/styles/breadcrumbs.scss';
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -19,6 +20,40 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+#pages-show {
+  padding: 120px 0;
+}
+
+.breadcrumbs {
+  @extend %breadcrumbs;
+  max-width: 768px;
+  color: #F2F3F4;
+  color: black;
+  font-variant-caps: all-small-caps;
+  width: 100%;
+  text-align: left;
+  font-size: 18px;
+  margin: 0 auto;
+  li {
+    font-weight: bold;
+    .link {
+      text-decoration: none;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  position: relative;
+
+  svg {
+    position: relative;
+    fill: black;
+    top: 1px;
+    height: 11px;
+  }
 }
 
 .flexed-content {

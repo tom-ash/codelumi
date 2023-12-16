@@ -13,8 +13,9 @@ $PRE-MARGIN: 16px;
 }
 
 %article {
+  // margin-top: 24px;
   max-width: 768px;
-  margin: 32px auto;
+  margin: 0 auto 0;
   background: none;
   overflow: hidden;
   line-height: 26px;
@@ -27,7 +28,7 @@ $PRE-MARGIN: 16px;
   h1 {
     line-height: 41.25px;
     font-size: 32px;
-    margin: 32px $DESKTOP-MARGIN 0;
+    margin: 18px $DESKTOP-MARGIN;
     @media #{$LARGE-PHONE} {
       margin: 32px $MOBILE-MARGIN;
     }
@@ -43,6 +44,7 @@ $PRE-MARGIN: 16px;
       left: 0;
       border-radius: 50%;
       height: 40px;
+      margin-top: 0;
     }
   }
   .table-of-contents {
@@ -111,6 +113,7 @@ $PRE-MARGIN: 16px;
   }
   img {
     margin: 0;
+    margin-top: 18px;
   }
   header {
     > img {
