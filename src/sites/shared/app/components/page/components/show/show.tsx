@@ -4,6 +4,7 @@ import { changeUrl } from '../../../../functions/routes/changers/change-url'
 import { useLinks } from '../../../../functions/store/use-links'
 import { useUser } from '../../../../functions/store/use-user'
 import Breadcrumbs from '../../../support/render-node/components/breadcrumbs/breadcrumbs'
+import { SVG } from '../../../support/svg/svg'
 
 const PageShow = () => {
   const links = useLinks()
@@ -19,7 +20,9 @@ const PageShow = () => {
         <button
           className={'page-edit'}
           onClick={() => changeUrl({ href })}
-        />
+        >
+          <SVG name='edit' />
+        </button>
       )}
     </div>
   )

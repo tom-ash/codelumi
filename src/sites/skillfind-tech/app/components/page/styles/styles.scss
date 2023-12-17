@@ -30,17 +30,20 @@
   }
   button.page-edit {
     position: fixed;
-    bottom: 10px;
-    right: 10px;
+    background: none;
+    top: 62px;
+    right: 12px;
     width: 20px;
     height: 20px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    background: #7b7d7d;
+    // background: #7b7d7d;
     svg {
-      display: none;
-      fill: #626567;
+      position: relative;
+      width: 20px;
+      height: 20px;
+      fill: #F2F3F4;
     }
   }
   .index {
