@@ -9,6 +9,7 @@ import { SVG } from '../../../../../shared/app/components/support/svg/svg'
 import { changeUrl } from '../../../../../shared/app/functions/routes/changers/change-url'
 import API_URL from '../../../../shared/constants/urls/api'
 import Breadcrumbs from '../../../../../shared/app/components/support/render-node/components/breadcrumbs/breadcrumbs'
+import { FloatClear } from '../../../../../shared/app/components/support/float-clear/float-clear'
 
 const getNewQuestion = () => {
   fetch(API_URL + '/questions')
@@ -33,6 +34,7 @@ interface Answer {
   isCorrect: boolean
   isSelected: boolean
   explanation: string
+  hint: string;
 }
 
 interface SelectAnswer {
@@ -133,6 +135,7 @@ const QuestionsShow = () => {
                 isCorrect,
                 body,
                 explanation,
+                hint,
               } = answer
 
               const classNames = ['answer']
@@ -176,9 +179,21 @@ const QuestionsShow = () => {
                   }}
                 >
                   <div className='body'>
-                    <Markdown>
-                      {body}
-                    </Markdown>
+                    <div className='markdown'>
+                      <Markdown>
+                        {body}
+                      </Markdown>
+                    </div>
+                    {hint && <div className='hint-container'>
+                      <div className='question-mark'>
+                        <SVG name='questionMark' />
+                        <div className='hint'>
+                          <Markdown>
+                            {hint}
+                          </Markdown>
+                        </div>
+                      </div>
+                    </div>}
                   </div>
                   {isAnsweredCorrectly && explanation && <div className='explanation'>
                     <Markdown>
@@ -247,7 +262,7 @@ const QuestionsShow = () => {
             </>
           )}
         </div>
-        {!isAnsweredCorrectly && <div className='hint'>
+        {!isAnsweredCorrectly && <div className='general-hint'>
           <h2>Hint</h2>
           <Markdown>
             {hint}

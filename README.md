@@ -7,10 +7,9 @@
       {
         "Article": [
           {
-            "HeadingOne": "TODO"
-          },
-          {
-            "Editorial": "TODO"
+            "ArticleHeader": {
+              "useCoverImage": false
+            }
           },
           {
             "TableOfContents": "Table Of Contents"
@@ -20,108 +19,20 @@
               {
                 "HeadingTwo": "TODO"
               },
-              "TODO"
-            ],
-            "identifier": "todo"
-          },
-          {
-            "Section": [
               {
-                "HeadingTwo": "TODO"
-              },
-              "TODO"
+                "Section": [
+                  {
+                    "HeadingThree": "TODO"
+                  },
+                  "TODO"
+                ]
+              }
             ],
-            "identifier": "todo"
-          },
-          {
-            "Section": [
-              {
-                "HeadingTwo": "TODO"
-              },
-              "TODO"
-            ],
-            "identifier": "todo"
+            "identifier": "what-are-tables-in-postgresql"
           }
         ],
-        "className": "article"
+        "codeLang": "pgsql"
       }
-    ],
-    "className": "page"
-  }
-]
-
-## New Page Example
-[
-  {
-    "kind": "Main",
-    "nodes": [
-      {
-        "kind": "Article",
-        "nodes": [
-          {
-            "kind": "HeadingOne"
-            "text": "TODO"
-          },
-          {
-            "kind": "Editorial"
-            "text": "TODO"
-          },
-          {
-            "kind": "TableOfContents"
-            "text": "Spis treści"
-          },
-          {
-            "kind": "Section",
-            "nodes": [
-              {
-                "kind": "HeadingTwo"
-                "text": "TODO"
-              },
-              {
-                "kind": "Paragraph"
-                "text": "TODO"
-              },
-              {
-                "kind": "Paragraph"
-                "text": "TODO"
-              },
-              {
-                "kind": "UnorderedList"
-                "nodes": "TODO"
-              }
-            ],
-            "identifier": "todo"
-          },
-          {
-            "kind": "Section",
-            "nodes": [
-              {
-                "HeadingTwo": "TODO"
-              },
-              {
-                "kind": "Paragraph"
-                "text": "TODO"
-              }
-            ],
-            "identifier": "todo"
-          },
-          {
-            "kind": "Section",
-            "nodes": [
-              {
-                "HeadingTwo": "TODO"
-              },
-              {
-                "kind": "Paragraph"
-                "text": "TODO"
-              }
-            ],
-            "identifier": "todo"
-          }
-        ],
-        "className": "article"
-      }
-    ],
-    "className": "page"
+    ]
   }
 ]

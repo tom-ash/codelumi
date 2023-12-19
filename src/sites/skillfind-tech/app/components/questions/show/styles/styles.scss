@@ -31,32 +31,86 @@
       list-style-type: none;
       li {
         margin-top: 24px;
+
+
+
         .body {
-          padding: 10px 16px;
-          border-radius: 8px;
-          cursor: pointer;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-          font-size: 15px;
-          line-height: 1.5;
+          // position: relative;/
+          display: flex;
+          // align-items: stretch;
+          position: relative;
+          .markdown {
+            // float: left;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            font-size: 15px;
+            line-height: 1.5;
+            flex-grow: 1;
+          }
+          .hint-container {
+            height: 100%;
+            overflow-y: auto;
+            width: 32px;
+            flex-shrink: 0;
+            display: block;
+            background: red;
+            .question-mark {
+              position: relative;
+              width: 20px;
+              height: 20px;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              margin: auto;
+              .hint {
+                position: absolute;
+                font-size: 14px;
+                right: 24px;
+                bottom: 24px;
+                width: 360px;
+                background: gray;
+                background: white;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                padding: 12px;
+                transform: scale(0);
+                border-radius: 4px;
+                line-height: 1.5;
+              }
+              &:hover {
+                .hint {
+                  transition: all .2s ease-in-out;
+                  transform: scale(1);
+                  transform-origin: right;
+                }
+              }
+            }
+            svg {
+              fill: #5D6D7E;
+            }
+          }
         }
         .explanation {
           font-size: 13px;
           margin-top: 12px;
+          margin-right: 20px;
           padding: 0 16px;
           line-height: 1.5;
         }
         &:hover {
-          .body {
+          .markdown {
             background: lightgray;
           }
         }
         &.selected {
-          .body {
+          .markdown {
             background: #7FB3D5;
           }
         }
         &.correct-selected {
-          .body {
+          .markdown {
             background: #A9DFBF;
           }
           .explanation {
@@ -64,7 +118,7 @@
           }
         }
         &.correctly-omitted {
-          .body {
+          .markdown {
             background: #EAEDED;
           }
           .explanation {
@@ -72,16 +126,16 @@
           }
         }
         &.answered {
-          .body {
+          .markdown {
             cursor: not-allowed;
           }
           &.incorrectly-selected {
-            .body {
+            .markdown {
               background: gray;
             }
           }
           &.incorrectly-omitted {
-            .body {
+            .markdown {
               background: lightgray;
             }
           }
@@ -132,7 +186,7 @@
   }
 
   
-  .hint {
+  .general-hint {
     margin-top: 32px;
     line-height: 1.5;
     h2 {
