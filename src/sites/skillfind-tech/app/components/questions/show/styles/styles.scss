@@ -24,6 +24,15 @@
     pre {
       margin-top: 16px;
     }
+    p {
+      margin-top: 12px;
+    }
+
+    ul {
+      margin-top: 4px;
+      padding-left: 18px;
+    }
+
   }
   .answers {
     margin-top: 32px;
@@ -56,6 +65,9 @@
             flex-shrink: 0;
             display: block;
             background: red;
+            a {
+              display: inline-block;
+            }
             .question-mark {
               position: relative;
               width: 20px;
@@ -68,8 +80,8 @@
               .hint {
                 position: absolute;
                 font-size: 14px;
-                right: 24px;
-                bottom: 24px;
+                right: 0;
+                bottom: 0;
                 width: 360px;
                 background: gray;
                 background: white;
