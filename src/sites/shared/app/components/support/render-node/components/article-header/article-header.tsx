@@ -5,15 +5,12 @@ import { useData } from '../../../../../functions/store/use-data'
 import { Author } from '../../../author/author'
 
 interface ArticleHeaderInterface {
-  (props: { useCoverImage?: boolean; useAuthor?: boolean }): React.ReactElement
+  (props: { useCoverImage?: boolean; useAuthor?: boolean, useDescription?: boolean }): React.ReactElement
 }
 
 const ArticleHeader: ArticleHeaderInterface = props => {
-  const { useCoverImage = true, useAuthor = true } = props
-  const { coverImage, title } = useData()
-
-  console.log(props)
-  console.log(useAuthor)
+  const { useCoverImage = true, useAuthor = true, useDescription = false } = props
+  const { coverImage, title, description } = useData()
 
   const imageProps = {
     src: coverImage,
@@ -30,6 +27,11 @@ const ArticleHeader: ArticleHeaderInterface = props => {
       {useCoverImage && <Image {...imageProps} />}
       <Heading {...headingProps} />
       {useAuthor && <Author />}
+      {useDescription && (
+        <div className='description'>
+          {description}
+        </div>
+      )}
     </header>
   )
 }

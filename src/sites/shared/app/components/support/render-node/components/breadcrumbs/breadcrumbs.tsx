@@ -15,7 +15,6 @@ export const Breadcrumbs = () => {
   return (
     <ul className='breadcrumbs'>
       {breadcrumbs.map(breadcrumb => {
-        console.log(breadcrumb.name)
         return (
           <li key={breadcrumb.item}>
             <Link

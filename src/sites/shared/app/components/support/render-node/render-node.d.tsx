@@ -9,6 +9,7 @@ type ObjectNode = {
   ArticleHeader?: {
     useCoverImage?: boolean
     useAuthor?: boolean
+    useDescription?: boolean
   }
   Main?: RenderNodeData[]
   Article?: RenderNodeData[]

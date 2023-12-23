@@ -8,8 +8,6 @@ export function controlProvider(announcement, index) {
 
   const { editHref, editTitle } = announcement
 
-  console.log(editHref)
-
   return (
     <div className='control'>
       <div className='info'>

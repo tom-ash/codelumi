@@ -17,8 +17,6 @@ const getNewQuestion = () => {
       if (response.ok) return response.json()
     })
     .then(href => {
-      console.log(href)
-
       changeUrl({ href })
     })
 }
@@ -53,8 +51,6 @@ const selectAnswer: SelectAnswer = (attrs) => {
     selectedPosition,
     dispatch,
   } = attrs
-
-  console.log(attrs)
 
   const newAnswers = answers.map(answer => {
     if (answer.position === selectedPosition) {

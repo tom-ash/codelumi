@@ -69,8 +69,6 @@ function createWithUser() {
     .then(jsonResponse => {
       const { verificationToken, href } = jsonResponse
 
-      console.log(href)
-
       setVerificationToken(verificationToken)
       changeUrl({ href })
     })
