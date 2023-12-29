@@ -38,7 +38,9 @@
   }
 
   .skill {
+    position: relative;
     background: white;
+    white-space: wrap!important;
     float: left;
     width: 23.75%;
     margin-right: 1.66%;
@@ -46,13 +48,20 @@
     &:nth-of-type(4n) {
       margin-right: 0;
     }
+    a {
+      white-space: wrap!important;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
     height: 256px;
     line-height: 1.5;
     margin-bottom: 1.66%;
     @media #{$LARGE-TABLET} {
       float: none;
       vertical-align: middle;
-      white-space: wrap;
       display: inline-block;
       width: 200px;
       margin-right: 18px;
@@ -62,6 +71,7 @@
     }
 
     .title {
+      white-space: wrap!important;
       font-size: 18px;
       font-weight: bold;
       text-align: center;
@@ -74,6 +84,7 @@
       align-items: center;
     }
     .description {
+      white-space: wrap!important;
       padding: 0 18px;
       font-size: 14px;
       font-style: italic;
