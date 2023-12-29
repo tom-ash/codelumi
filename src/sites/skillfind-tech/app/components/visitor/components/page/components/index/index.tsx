@@ -16,45 +16,68 @@ const VisitorPageIndex = () => {
 
   return (
     <div id='visitor-page-index'>
-      <HeadingTwo text={honeYourSkillsHeadingTwo} />
-      {/* @ts-ignore */}
-      {pages.map(page => {
-        const { coverImage: image, title, href, hrefLang } = page
-        const label = title
-        const linkProps = {
-          label,
-          href,
-          hrefLang,
-          customClassNames: 'skill',
-        }
 
-        return <Link {...linkProps} />
-      })}
-      <FloatClear />
-      {/* @ts-ignore */}
-      {articles.map(article => {
-        const { image, title, href, hrefLang } = article
+      <div className='skills'>
+        <HeadingTwo text={honeYourSkillsHeadingTwo} />
+        <div className='container'>
+          {/* @ts-ignore */}
+          {pages.map(page => {
+            const { coverImage: image, title, href, hrefLang, description } = page
+            console.log(description)
+            const label = (
+              <div>
+                <div className='title'>
+                  {title}
+                </div>
+                <div className='description'>
+                  {description}
+                </div>
+              </div>
+            )
+            // title
+            const linkProps = {
+              label,
+              href,
+              hrefLang,
+              customClassNames: 'skill',
+            }
 
-        const label = (
-          <>
-            <Image
-              src={image}
-              alt='asdasdasd'
-            />
-            <div>{title}</div>
-          </>
-        )
+            return <Link {...linkProps} />
+          })}
+          <FloatClear />
+        </div>
+      </div>
 
-        const linkProps = {
-          label,
-          href,
-          hrefLang,
-          customClassNames: 'article',
-        }
 
-        return <Link {...linkProps} />
-      })}
-      <FloatClear />
+      <div className='articles'>
+        <HeadingTwo text={honeYourSkillsHeadingTwo} />
+        <div className='container'>
+          {/* @ts-ignore */}
+          {articles.map(article => {
+            const { image, title, href, hrefLang } = article
+
+            const label = (
+              <>
+                <Image
+                  src={image}
+                  alt='asdasdasd'
+                />
+                <div>{title}</div>
+              </>
+            )
+
+            const linkProps = {
+              label,
+              href,
+              hrefLang,
+              customClassNames: 'article',
+            }
+
+            return <Link {...linkProps} />
+          })}
+          <FloatClear />
+        </div>
+      </div>
     </div>
   )
 }

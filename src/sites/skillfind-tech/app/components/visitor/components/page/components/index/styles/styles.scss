@@ -5,42 +5,82 @@
   padding: 32px 0;
   position: relative;
   margin: 0 auto;
-  max-width: 1400px;
-  > h2 {
-    color: $PRIMARY-GREEN-COLOR;
-    font-family: 'IBM Plex Mono', monospace;
-    text-align: center;
-    margin-bottom: 32px;
-    font-size: 22px;
-    line-height: 36px;
-    @media #{$LARGE-PHONE} {
-      margin: 0 18px 18px;
+  max-width: 1024px;
+  a {
+    text-decoration: none;
+  }
+
+  .skills, .articles {
+    > h2 {
+      color: #F2F3F4;
+      font-family: 'IBM Plex Mono', monospace;
+      margin-bottom: 18px;
+      font-size: 22px;
+      line-height: 36px;
+      @media #{$LARGE-PHONE} {
+        margin: 0 18px 18px;
+      }
+    }
+    @media #{$LARGE-TABLET} {
+      padding: 0 18px;
     }
   }
+  .articles {
+    margin-top: 32px;
+  }
+
+  .container {
+    @media #{$LARGE-TABLET} {
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+    }
+  }
+
   .skill {
-    border: 1px solid #e5e7e9;
     background: white;
-    width: 19%;
     float: left;
-    margin-right: 1.25%;
+    width: 23.75%;
+    margin-right: 1.66%;
     border-radius: 4px;
-    &:nth-of-type(5n) {
+    &:nth-of-type(4n) {
       margin-right: 0;
     }
-    line-height: 72px;
-    height: 72px;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    font-weight: normal;
-    font-family: 'IBM Plex Mono', monospace;
-    margin-bottom: 48px;
-    @media #{$LARGE-PHONE} {
+    height: 256px;
+    line-height: 1.5;
+    margin-bottom: 1.66%;
+    @media #{$LARGE-TABLET} {
       float: none;
-      width: auto;
-      margin-bottom: 18px;
+      vertical-align: middle;
+      white-space: wrap;
+      display: inline-block;
+      width: 200px;
+      margin-right: 18px;
+      &:nth-of-type(4n) {
+        margin-right: 18px;
+      }
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      font-family: 'IBM Plex Mono', monospace;
+      text-decoration: none!important;
+      padding: 24px 0;
+      height: 96px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .description {
+      padding: 0 18px;
+      font-size: 14px;
+      font-style: italic;
     }
   }
+
+
 
   .article {
     float: left;
@@ -77,8 +117,5 @@
       width: 100%;
       float: none;
     }
-  }
-  @media #{$MEDIUM-PC} {
-    margin: 0 24px;
   }
 }
