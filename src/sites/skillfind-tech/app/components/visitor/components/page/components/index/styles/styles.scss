@@ -33,7 +33,9 @@
     @media #{$LARGE-TABLET} {
       display: flex;
       flex-wrap: nowrap;
+      overflow-y: hidden;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
   }
 
