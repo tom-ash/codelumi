@@ -11,14 +11,14 @@ import { useData } from '../../../../../../../../shared/app/functions/store/use-
 const VisitorPageIndex = () => {
   useStyles(styles)
 
-  const { honeYourSkillsHeadingTwo } = useTexts()
+  const { skillsHeading, featuredArticlesHeading } = useTexts()
   const { pages, articles } = useData()
 
   return (
     <div id='visitor-page-index'>
 
       <div className='skills'>
-        <HeadingTwo text={honeYourSkillsHeadingTwo} />
+        <HeadingTwo text={skillsHeading} />
         <div className='container'>
           {/* @ts-ignore */}
           {pages.map(page => {
@@ -50,7 +50,7 @@ const VisitorPageIndex = () => {
 
 
       <div className='articles'>
-        <HeadingTwo text={honeYourSkillsHeadingTwo} />
+        <HeadingTwo text={featuredArticlesHeading} />
         <div className='container'>
           {/* @ts-ignore */}
           {articles.map(article => {
