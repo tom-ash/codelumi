@@ -2,7 +2,14 @@
 @import '../../../../../../shared/app/styles/media-breakpoints';
 
 #questions-show {
-  padding: 120px 0;
+  padding: 50px 0 0;
+  .breadcrumbs {
+    margin: 36px auto 0;
+    @media #{$LARGE-TABLET} {
+      margin: 18px 0 0;
+      padding: 0 24px;
+    }
+  }
   .container {
     margin: 0 auto;
     border-radius: 4px;
@@ -10,9 +17,11 @@
     padding: 32px;
     font-size: 16px;
     background: white;
+    margin: 18px auto 72px;
     @media #{$LARGE-PHONE} {
       width: 100%;
-      margin: 50px 0;
+      margin: 18px 0 0;
+      border-radius: 0;
       padding: 24px;
     }
   }
@@ -27,12 +36,10 @@
     p {
       margin-top: 12px;
     }
-
     ul {
       margin-top: 4px;
       padding-left: 18px;
     }
-
   }
   .answers {
     margin-top: 32px;
@@ -149,14 +156,12 @@
       }
     }
   }
-
   .result {
     margin-top: 32px;
     text-align: center;
     > div {
       display: inline-block;
     }
-
     .icon {
       width: 30px;
       height: 30px;
@@ -190,8 +195,6 @@
       }
     }
   }
-
-  
   .general-hint {
     margin-top: 32px;
     line-height: 1.5;
@@ -204,25 +207,12 @@
       display: inline-block;
     }
   }
-  // .explanation {
-  //   margin-top: 32px;
-  //   h2 {
-  //     font-size: 14px;
-  //   }
-  //   .explanation-body {
-  //     margin-top: 8px;
-  //     line-height: 1.5;
-  //     font-size: 16px;
-  //   }
-  // }
-
   .buttons {
     margin-top: 32px;
     text-align: center;
     button {
       border: none;
       cursor: pointer;
-
       svg {
         position: relative;
         top: 3px;
@@ -230,7 +220,6 @@
         fill: white;
         margin-right: 8px;
       }
-
       &.show-answer {
         background: none;
         text-decoration: underline;
@@ -248,18 +237,14 @@
         }
       }
       &.submit {
-
         &:disabled {
           cursor: not-allowed;
           background: gray;
         }
-
         svg {
           height: 16px;
         }
       }
-
-
       &.retry {
         svg {
           top: 3px;

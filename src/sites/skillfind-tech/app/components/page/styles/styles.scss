@@ -6,16 +6,18 @@
     padding: 120px 0;
     @media #{$LARGE-PHONE} {
       width: 100%;
+      padding: 50px 0 0;
     }
   }
   .breadcrumbs {
-    width: 640px;
-    margin: 0 auto;
-    margin-bottom: 12px;
+    margin: 36px auto 0;
+    @media #{$LARGE-TABLET} {
+      margin: 18px 0 0;
+      padding: 0 24px;
+    }
   }
-
   main {
-    margin: 0 auto;
+    margin: 18px auto 0;
     align-self: center;
     max-width: 640px;
     background: rgb(42, 42, 42);
@@ -26,10 +28,13 @@
       border-radius: 4px;
       width: 100%;
     }
-
     @media #{$LARGE-PHONE} {
+      margin: 0;
       width: 100%;
-      padding: 50px 0 0;
+      padding: 18px 0 0;
+      article {
+        border-radius: 0;
+      }
     }
   }
   button.page-edit {
@@ -42,7 +47,6 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    // background: #7b7d7d;
     svg {
       position: relative;
       width: 20px;

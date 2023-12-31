@@ -14,13 +14,19 @@ export const Breadcrumbs = () => {
 
   return (
     <ul className='breadcrumbs'>
-      {breadcrumbs.map(breadcrumb => {
+      {breadcrumbs.map((breadcrumb, index) => {
+
+        const label = index === 0 ? <SVG name='home' /> : breadcrumb.name
+        console.log(index)
+        // breadcrumb.name
+        // of
+
         return (
           <li key={breadcrumb.item}>
             <Link
               href={breadcrumb.item}
               hrefLang={breadcrumb.lang}
-              label={breadcrumb.name}
+              label={label}
               title={breadcrumb.name}
             />
             <SVG name='chevron' />
