@@ -17,18 +17,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.flexed-content {
-  min-height: 100vh;
+#app {
+  background: rgb(42, 42, 42);
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+.stretched-content {
+  position: relative;
+  align-self: stretch;
+  flex-grow: 1;
   width: 100%;
-  .stretched-content {
-    position: relative;
-    align-self: stretch;
-    flex-grow: 1;
-    width: 100%;
-    background: rgb(42, 42, 42)
-  }
 }
 
 .breadcrumbs {
@@ -77,15 +77,17 @@ code {
   font-family: 'Inconsolata', monospace;
 }
 
-html,
-body {
-  overflow-x: hidden;
-  overflow-wrap: break-word;
-}
+// html,
+// body {
+//   // overflow-y: hidden;
+//   // overflow-x: hidden;
+//   overflow: hidden;
+//   // overflow-wrap: break-word;
+// }
 
 #app {
   @extend %page;
-  min-height: 640px;
+  // min-height: 640px;
 }
 
 a {

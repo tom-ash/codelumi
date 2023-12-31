@@ -40,16 +40,10 @@
       list-style-type: none;
       li {
         margin-top: 24px;
-
-
-
         .body {
-          // position: relative;/
           display: flex;
-          // align-items: stretch;
           position: relative;
           .markdown {
-            // float: left;
             padding: 10px 16px;
             border-radius: 8px;
             cursor: pointer;
