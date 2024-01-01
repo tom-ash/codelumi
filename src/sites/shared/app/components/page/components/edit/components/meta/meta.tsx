@@ -1,8 +1,6 @@
 import React from 'react'
 import { PublishedOnInput } from './components/published-on/published-on-input'
 import { ModifiedOnInput } from './components/modified-on/modified-on.input'
-import { CategoryInput } from './components/category/category.input'
-import { SubcategoryInput } from './components/subcategory/subcategory.input'
 import { PageLangInput } from './components/page-lang/page-lang.input'
 import { LangAltsGroupInput } from './components/lang-alts-group/lang-alts-group.input'
 import { TitleInput } from './components/title/title.input'
@@ -22,8 +20,6 @@ export const Meta = () => (
     <CanonicalUrlInput />
     <PublishedOnInput />
     <ModifiedOnInput />
-    <CategoryInput />
-    <SubcategoryInput />
     <PageLangInput />
     <LangAltsGroupInput />
     <TitleInput />
