@@ -7,6 +7,7 @@ import styles from './styles/styles.scss'
 import Image from '../../../../../../../../shared/app/components/support/image/image'
 import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
 import { useData } from '../../../../../../../../shared/app/functions/store/use-data'
+import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
 
 const VisitorPageIndex = () => {
   useStyles(styles)
@@ -22,7 +23,7 @@ const VisitorPageIndex = () => {
         <div className='container'>
           {/* @ts-ignore */}
           {pages.map(page => {
-            const { coverImage: image, title, href, hrefLang, description } = page
+            const { coverImage: image, title, href, hrefLang, description, pageCount, questionCount } = page
             console.log(description)
             const label = (
               <div>
@@ -31,6 +32,14 @@ const VisitorPageIndex = () => {
                 </div>
                 <div className='description'>
                   {description}
+                </div>
+                <div className='counts'>
+                  <div className='page-count'>
+                    <SVG name='collegeCap' /> {pageCount} tutorial pages
+                  </div>
+                  <div className='question-count'>
+                  <SVG name='flaskVial' /> {questionCount} practice problems
+                  </div>
                 </div>
               </div>
             )

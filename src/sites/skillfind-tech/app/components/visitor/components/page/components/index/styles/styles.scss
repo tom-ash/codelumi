@@ -57,7 +57,7 @@
       bottom: 0;
       left: 0;
     }
-    height: 256px;
+    height: 284px;
     line-height: 1.5;
     margin-bottom: 1.66%;
     @media #{$LARGE-TABLET} {
@@ -70,7 +70,6 @@
         margin-right: 18px;
       }
     }
-
     .title {
       font-size: 18px;
       font-weight: bold;
@@ -87,10 +86,23 @@
       padding: 0 18px;
       font-size: 14px;
       font-style: italic;
+      height: 128px;
+    }
+    .counts {
+      padding: 0 18px;
+      font-size: 13px;
+      color: #2C3E50;
+      svg {
+        height: 13px;
+        position: relative;
+        top: 1px;
+        fill: #2C3E50;
+      }
+      .page-count {
+        margin-bottom: 4px;
+      }
     }
   }
-
-
 
   .article {
     float: left;
