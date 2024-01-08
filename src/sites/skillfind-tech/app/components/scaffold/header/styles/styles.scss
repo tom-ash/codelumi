@@ -4,13 +4,22 @@
 #header {
   z-index: 2;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 12px;
+  left: 12px;
+  right: 12px;
   height: 50px;
-  padding: 0 16px;
+  padding: 0 18px;
   color: #D0D3D4;
   background: black;
+  margin: 0 auto;
+
+  max-width: 1024px;
+  opacity: .8;
+  border-radius: 6px;
+
+  // @media #{$LARGE-TABLET} {
+
+  // }
 
   .lang-switch {
     float: right;

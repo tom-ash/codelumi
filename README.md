@@ -16,22 +16,11 @@
           },
           {
             "Section": [
-              {
-                "HeadingTwo": "TODO"
-              },
-              {
-                "Section": [
-                  {
-                    "HeadingThree": "TODO"
-                  },
-                  "TODO"
-                ]
-              }
-            ],
-            "identifier": "what-are-tables-in-postgresql"
+              "TODO"
+            ]
           }
         ],
-        "codeLang": "pgsql"
+        "codeLang": "ruby"
       }
     ]
   }

@@ -1,15 +1,18 @@
+@import '../../../../../../shared/app/styles/media-breakpoints';
+
 #footer {
-  background: rgb(53, 53, 53);
-  color: white;
-  background: #424949;
-  font-size: 13px;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 10px;
   z-index: 2;
+  width: 1024px;
+  color: white;
+  margin: 96px auto 0;
+  padding: 0 18px;
+  line-height: 40px;
+  font-size: 12px;
+  a {
+    text-decoration: none;
+  }
   .social-pages {
     float: left;
-    margin-right: 20px;
     a {
       display: inline-block;
       position: relative;
@@ -18,7 +21,7 @@
       fill: white;
       transition: fill 0.3s ease-in;
       cursor: pointer;
-      margin-right: 10px;
+      margin-right: 12px;
       &:hover {
         fill: lightgray;
       }
@@ -28,16 +31,28 @@
       }
     }
   }
-
   .links {
     float: left;
     .link {
       float: left;
       margin-right: 10px;
     }
-
   }
   .copyright {
     float: right;
+  }
+  @media #{$LARGE-TABLET} {
+    width: auto;
+    margin: 0;
+    padding: 18px;
+    .social-pages {
+      float: none;
+    }
+    .links {
+      float: none;
+    }
+    .copyright {
+      float: none;
+    }
   }
 }

@@ -3,10 +3,10 @@
 
 %page {
   #pages-show {
-    padding: 120px 0;
+    margin-top: 128px;
     @media #{$LARGE-PHONE} {
       width: 100%;
-      padding: 50px 0 0;
+      margin-top: 74px;
     }
   }
   .breadcrumbs {
@@ -24,14 +24,12 @@
     article {
       @extend %article;
       background: white;
-      padding: 32px;
       border-radius: 4px;
       width: 100%;
     }
     @media #{$LARGE-PHONE} {
-      margin: 0;
+      margin: 18px 0 0;
       width: 100%;
-      padding: 18px 0 0;
       article {
         border-radius: 0;
       }

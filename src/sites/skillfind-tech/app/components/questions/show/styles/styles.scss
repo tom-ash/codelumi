@@ -2,7 +2,11 @@
 @import '../../../../../../shared/app/styles/media-breakpoints';
 
 #questions-show {
-  padding: 50px 0 0;
+  // padding: 120px 0 0;
+  margin: 128px 0 0;
+  @media #{$LARGE-TABLET} {
+    margin: 74px 0 0;
+  }
   .breadcrumbs {
     margin: 36px auto 0;
     @media #{$LARGE-TABLET} {

@@ -2,14 +2,16 @@
 @import '../../../../../../../../../shared/app/styles/media-breakpoints';
 
 #visitor-page-index {
-  padding: 32px 0;
   position: relative;
   margin: 0 auto;
   max-width: 1024px;
+  padding: 0 18px;
+  @media #{$LARGE-TABLET} {
+    padding: 0;
+  }
   a {
     text-decoration: none;
   }
-
   .skills, .articles {
     > h2 {
       color: #F2F3F4;
@@ -22,7 +24,7 @@
       }
     }
     @media #{$LARGE-TABLET} {
-      padding: 0 18px;
+      padding: 0;
     }
   }
   .articles {
@@ -36,6 +38,7 @@
       overflow-y: hidden;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
+      padding-left: 18px;
     }
   }
 
