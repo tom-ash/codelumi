@@ -31,6 +31,13 @@ body {
   width: 100%;
 }
 
+a {
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.16s ease-in;
+  color: inherit;
+}
+
 .breadcrumbs {
   @extend %breadcrumbs;
   max-width: 640px;
@@ -42,12 +49,6 @@ body {
   padding-left: 4px;
   li {
     font-weight: bold;
-    .link {
-      text-decoration: none;
-      a {
-        text-decoration: none;
-      }
-    }
   }
 
   position: relative;
@@ -89,11 +90,6 @@ code {
 #app {
   @extend %page;
   // min-height: 640px;
-}
-
-a {
-  display: block;
-  color: inherit;
 }
 
 .float-clear {

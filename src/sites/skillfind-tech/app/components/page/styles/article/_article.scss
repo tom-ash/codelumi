@@ -2,7 +2,7 @@
 @import './table-of-contents';
 @import '../../../../styles/colors';
 
-$DESKTOP-MARGIN: 0;
+$DESKTOP-MARGIN: 36px;
 $MOBILE-MARGIN: 24px;
 $PRE-MARGIN: 16px;
 
@@ -20,6 +20,11 @@ $PRE-MARGIN: 16px;
   line-height: 26px;
   font-size: 16px;
   color: rgb(42, 42, 42);
+  background: white;
+  border-radius: 4px;
+  width: 100%;
+  line-height: 1.5;
+  padding: 0 0 $DESKTOP-MARGIN 0;
   > section {
     margin-top: 64px;
     &:first-of-type {
@@ -32,6 +37,19 @@ $PRE-MARGIN: 16px;
   @media #{$LARGE-PHONE} {
     margin: 0 auto 32px;
   }
+  h1 {
+    font-size: 28px;
+    margin: $DESKTOP-MARGIN $DESKTOP-MARGIN 0;
+    @media #{$LARGE-PHONE} {
+      margin: $MOBILE-MARGIN $MOBILE-MARGIN 0;
+    }
+  }
+  .description {
+    margin: 18px $DESKTOP-MARGIN 0;
+    @media #{$LARGE-PHONE} {
+      margin: 18px $MOBILE-MARGIN 0;
+    }
+  }
   .editorial {
     @extend %editorial;
     margin-top: 24px;
@@ -43,20 +61,12 @@ $PRE-MARGIN: 16px;
       margin: 32px $MOBILE-MARGIN;
     }
   }
-  h1 {
-    line-height: 41.25px;
-    font-size: 32px;
-    margin-bottom: 32px;
-    margin: 24px $DESKTOP-MARGIN 0;
-    @media #{$LARGE-PHONE} {
-      margin: 32px $MOBILE-MARGIN;
-    }
-  }
   .author {
     position: relative;
-    margin-top: 16px;
+    // margin-top: 16px;
     padding-left: 48px;
     line-height: 40px;
+    @extend %standard-margins;
     img {
       display: inline;
       position: absolute;
@@ -84,25 +94,24 @@ $PRE-MARGIN: 16px;
   h2 + h3 {
     margin-top: 0;
   }
+
+  a {
+    color: #2471A3;
+    &:hover {
+      color: #3498DB;
+    }
+  }
+
   p {
     @extend %standard-margins;
     code {
+      font-family: monospace;
       display: inline-block;
-      color: #cb4335;
-      background: #f7f9f9;
-      padding: 0 4px;
+      color: #CB4335;
       border-radius: 4px;
       line-height: 22px;
       font-size: 15px;
       position: relative;
-      top: -1px;
-    }
-    a {
-      display: inline;
-      color: rgb(42, 96, 152);
-      &:hover {
-        color: rgb(186, 42, 24);
-      }
     }
   }
   img {
@@ -115,11 +124,15 @@ $PRE-MARGIN: 16px;
     margin-top: 0;
   }
   ul {
-    margin: 0 16px;
+    margin: 18px $DESKTOP-MARGIN 0 ($DESKTOP-MARGIN + 18px);
     @media #{$LARGE-PHONE} {
-      margin: 0 42px 16px;
+      margin: 18px $MOBILE-MARGIN 0 ($MOBILE-MARGIN + 18px);
     }
     li {
+      margin-bottom: 0!important; // TODO!
+      h2 {
+        margin: 0;
+      }
       p {
         margin: 0;
         padding: 0;
@@ -132,6 +145,9 @@ $PRE-MARGIN: 16px;
           margin-bottom: 0;
         }
       }
+    }
+    &.index {
+      margin-top: 18px; // TODO!
     }
   }
   header {
@@ -179,5 +195,9 @@ $PRE-MARGIN: 16px;
       font-size: 14px;
       font-style: italic;
     }
+  }
+
+  @media #{$LARGE-PHONE} {
+    border-radius: 0;
   }
 }

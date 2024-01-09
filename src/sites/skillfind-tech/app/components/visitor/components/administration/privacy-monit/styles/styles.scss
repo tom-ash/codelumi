@@ -36,9 +36,6 @@
     .link {
       text-align: center;
       line-height: 40px;
-      &:hover {
-        text-decoration: underline;
-      }
     }
     .button {
       @extend %button;
