@@ -23,7 +23,7 @@ interface ListingIndexTileInterface {
     locality: string
     sublocality: string
     pictures: Picture[]
-    disableSLides: boolean
+    disableSlides: boolean
     area: number
     rentAmount: number
     rentCurrency: number
@@ -56,6 +56,7 @@ export const ListingIndexTile: ListingIndexTileInterface = props => {
     onClick,
     onMouseOver,
     onMouseLeave,
+    disableSlides,
   } = props
 
   const classNames = ['listing-index-tile']
@@ -74,7 +75,7 @@ export const ListingIndexTile: ListingIndexTileInterface = props => {
     id,
     title,
     pictures,
-    disableSLides: true,
+    disableSlides,
   }
   const headingProps = {
     name,

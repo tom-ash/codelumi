@@ -33,11 +33,6 @@
   .go-to-link {
     @extend %go-to-link;
   }
-  .pictures {
-    @extend %pictures;
-    padding: 24px 0 0;
-    margin-bottom: 0;
-  }
   .secondary {
     padding: 24px 24px 0;
     .item {

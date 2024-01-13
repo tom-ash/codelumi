@@ -96,9 +96,9 @@ $PRE-MARGIN: 16px;
   }
 
   a {
-    color: #2471A3;
+    color: #2471a3;
     &:hover {
-      color: #3498DB;
+      color: #3498db;
     }
   }
 
@@ -107,7 +107,7 @@ $PRE-MARGIN: 16px;
     code {
       font-family: monospace;
       display: inline-block;
-      color: #CB4335;
+      color: #cb4335;
       border-radius: 4px;
       line-height: 22px;
       font-size: 15px;
@@ -129,7 +129,7 @@ $PRE-MARGIN: 16px;
       margin: 18px $MOBILE-MARGIN 0 ($MOBILE-MARGIN + 18px);
     }
     li {
-      margin-bottom: 0!important; // TODO!
+      margin-bottom: 0 !important; // TODO!
       h2 {
         margin: 0;
       }
@@ -162,7 +162,6 @@ $PRE-MARGIN: 16px;
       font-size: 14px;
       font-style: italic;
     }
-
   }
 
   pre {

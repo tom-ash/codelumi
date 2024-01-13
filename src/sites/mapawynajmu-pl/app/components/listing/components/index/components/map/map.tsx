@@ -91,7 +91,7 @@ class AnnouncementIndexMap extends React.Component {
                   id,
                   title,
                   pictures,
-                  disableSLides: true,
+                  disableSlides: true,
                   name,
                   category,
                   locality,

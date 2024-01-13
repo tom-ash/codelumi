@@ -1,34 +1,63 @@
 import React from 'react'
-import ManagedSlider from '../../../../../../../support/components/managed-slider/managed-slider'
-import { SVG } from '../../../../../../../../../../shared/app/components/support/svg/svg'
 import AWS_S3_URL from '../../../../../../../../../shared/constants/urls/aws-s3'
+import { Splide, SplideSlide } from '@splidejs/react-splide'
+
+import useStyles from 'isomorphic-style-loader-react18/useStyles'
+import styles from './styles/styles.scss'
 
 interface Picture {
   database: string
 }
 
 interface ListingTilePicturesInterface {
-  (props: { pictures: Picture[]; disableSLides: boolean; title: string; id: number }): React.ReactElement
+  (props: { pictures: Picture[]; disableSlides: boolean; title: string; id: number }): React.ReactElement
 }
 
 export const ListingTilePictures: ListingTilePicturesInterface = props => {
-  const { id, title, pictures, disableSLides } = props
+  useStyles(styles)
+
+  const { id, title, pictures, disableSlides } = props
 
   const pictureUrls = pictures.map(picture => ({
     database: `${AWS_S3_URL}/announcements/${id}/${picture.database}`,
   }))
 
-  const Chevron = () => <SVG name='chevron' />
+  if (disableSlides) {
+    return (
+      <div className='picture'>
+        <img src={pictureUrls[0].database} alt={title} loading='lazy' />
+      </div>
+    )
+  }
 
   return (
     <div className='pictures'>
-      <ManagedSlider
-        disableSLides={disableSLides}
-        title={title}
-        pictures={pictureUrls}
-        chevronLeft={<Chevron />}
-        chevronRight={<Chevron />}
-      />
+      <Splide
+        onArrowsMounted={(_, prev, next) => {
+          prev.addEventListener('click', (e) => {
+            e.stopPropagation()
+            e.preventDefault()
+          })
+          next.addEventListener('click', (e) => {
+            e.stopPropagation()
+            e.preventDefault()
+          })
+        }}  
+        onPaginationMounted={(_, listObject) => {
+          listObject.list.addEventListener('click', (e) => {
+            e.stopPropagation()
+            e.preventDefault()
+          })
+        }}
+      >
+        {pictureUrls.map(pictureUrl => {
+          return (
+            <SplideSlide>
+              <img src={pictureUrl.database} alt={title} />
+            </SplideSlide>
+          )
+        })}
+      </Splide>
     </div>
   )
 }

@@ -19,7 +19,7 @@ export const Logo: LogoInterface = props => {
         loading='lazy'
         src={`https://soundofit-dev.s3.eu-central-1.amazonaws.com/qweqweqw.jpeg?a=123?a=${storageUrlRandomizedQuaryParameter}`}
       />
-        skillfind.<span className='tech'>tech</span>
+      skillfind.<span className='tech'>tech</span>
     </div>
   )
 

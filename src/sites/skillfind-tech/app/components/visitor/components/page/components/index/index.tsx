@@ -17,7 +17,6 @@ const VisitorPageIndex = () => {
 
   return (
     <div id='visitor-page-index'>
-
       <div className='skills'>
         <HeadingTwo text={skillsHeading} />
         <div className='container'>
@@ -27,18 +26,14 @@ const VisitorPageIndex = () => {
             console.log(description)
             const label = (
               <div>
-                <div className='title'>
-                  {title}
-                </div>
-                <div className='description'>
-                  {description}
-                </div>
+                <div className='title'>{title}</div>
+                <div className='description'>{description}</div>
                 <div className='counts'>
                   <div className='page-count'>
                     <SVG name='collegeCap' /> {pageCount} tutorial pages
                   </div>
                   <div className='question-count'>
-                  <SVG name='flaskVial' /> {questionCount} practice problems
+                    <SVG name='flaskVial' /> {questionCount} practice problems
                   </div>
                 </div>
               </div>
@@ -56,7 +51,6 @@ const VisitorPageIndex = () => {
           <FloatClear />
         </div>
       </div>
-
 
       <div className='articles'>
         <HeadingTwo text={featuredArticlesHeading} />

@@ -7,15 +7,20 @@
   .listing-index-tile {
     @extend %listing-index-tile;
     margin-bottom: 18px;
+    .pictures {
+      width: 360px;
+      margin-top: 0!important;
+      top: 0;
+    }
     @media #{$LARGE-TABLET} {
       display: inline-block;
       width: 296px;
-      height: 312px;
       margin-right: 18px;
       margin-bottom: 0;
-    }
-    .pictures {
-      @media #{$LARGE-TABLET} {
+      .picture {
+        width: 100%;
+      }
+      .pictures {
         width: 100%;
       }
     }

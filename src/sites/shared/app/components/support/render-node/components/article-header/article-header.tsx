@@ -5,7 +5,7 @@ import { useData } from '../../../../../functions/store/use-data'
 import { Author } from '../../../author/author'
 
 interface ArticleHeaderInterface {
-  (props: { useCoverImage?: boolean; useAuthor?: boolean, useDescription?: boolean }): React.ReactElement
+  (props: { useCoverImage?: boolean; useAuthor?: boolean; useDescription?: boolean }): React.ReactElement
 }
 
 const ArticleHeader: ArticleHeaderInterface = props => {
@@ -27,11 +27,7 @@ const ArticleHeader: ArticleHeaderInterface = props => {
       {useCoverImage && <Image {...imageProps} />}
       <Heading {...headingProps} />
       {useAuthor && <Author />}
-      {useDescription && (
-        <div className='description'>
-          {description}
-        </div>
-      )}
+      {useDescription && <div className='description'>{description}</div>}
     </header>
   )
 }

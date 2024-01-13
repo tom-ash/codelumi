@@ -58,7 +58,9 @@
             padding: 10px 16px;
             border-radius: 8px;
             cursor: pointer;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            box-shadow:
+              rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+              rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
             font-size: 15px;
             line-height: 1.5;
             flex-grow: 1;
@@ -98,14 +100,14 @@
               }
               &:hover {
                 .hint {
-                  transition: all .2s ease-in-out;
+                  transition: all 0.2s ease-in-out;
                   transform: scale(1);
                   transform-origin: right;
                 }
               }
             }
             svg {
-              fill: #5D6D7E;
+              fill: #5d6d7e;
             }
           }
         }
@@ -123,20 +125,20 @@
         }
         &.selected {
           .markdown {
-            background: #7FB3D5;
+            background: #7fb3d5;
           }
         }
         &.correct-selected {
           .markdown {
-            background: #A9DFBF;
+            background: #a9dfbf;
           }
           .explanation {
-            color: #1E8449;
+            color: #1e8449;
           }
         }
         &.correctly-omitted {
           .markdown {
-            background: #EAEDED;
+            background: #eaeded;
           }
           .explanation {
             color: gray;
@@ -178,7 +180,7 @@
       &.correct {
         background: green;
       }
-  
+
       &.incorrect {
         background: red;
       }
@@ -186,7 +188,6 @@
         fill: white;
         height: 16px;
         margin-top: 8px;
-
       }
     }
     .message {
@@ -228,8 +229,10 @@
       }
       height: 42px;
       line-height: 42px;
-      &.submit, &.next, &.retry {
-        background: #2E4053;
+      &.submit,
+      &.next,
+      &.retry {
+        background: #2e4053;
         color: white;
         border-radius: 4px;
         margin-left: 12px;

@@ -108,7 +108,7 @@ class AnnouncementIndexMy extends React.Component {
               id,
               title,
               pictures,
-              disableSLides: true,
+              disableSlides: false,
               name,
               category,
               locality,

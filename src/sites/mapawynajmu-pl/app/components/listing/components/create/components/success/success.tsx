@@ -49,7 +49,7 @@ class AnnouncementCreateSuccess extends React.Component {
       title,
       name,
       pictures,
-      disableSLides: false,
+      disableSlides: false,
       category,
       locality,
       sublocality,
