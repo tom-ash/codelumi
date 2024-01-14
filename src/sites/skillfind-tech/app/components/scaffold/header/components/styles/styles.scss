@@ -8,6 +8,8 @@
   line-height: 50px;
   font-size: 14px;
   font-family: 'IBM Plex Mono', monospace;
+  color: #fef9e7;
+  // color: red;
   img {
     position: relative;
     height: 22px;
@@ -15,6 +17,29 @@
     margin-right: 6px;
   }
   .tech {
-    color: #82e0aa;
+    // color: #82e0aa;
+    // color: #82E0AA;
+    // color: #58D68D;
+    color: #ABEBC6;
+    // 118, 249, 80
+    color: rgb(118, 249, 80);
+  }
+  padding-left: 32px;
+  #logo-image {
+    position: absolute;
+    transform: scale(.1);
+    transform-origin: left bottom;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    top: 12px;
+    transition: all .2s ease-in-out;
+  }
+  &:hover {
+    #logo-image {
+      .zero-one {
+        transform: scale(1.3);
+      }
+    }
   }
 }

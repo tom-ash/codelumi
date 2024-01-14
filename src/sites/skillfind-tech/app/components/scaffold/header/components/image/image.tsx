@@ -2,7 +2,7 @@ import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 
-const LogoImage = () => {
+export const SkillFindTechLogo = () => {
   useStyles(styles)
 
   return (
@@ -18,4 +18,4 @@ const LogoImage = () => {
   )
 }
 
-export default LogoImage
+export default SkillFindTechLogo

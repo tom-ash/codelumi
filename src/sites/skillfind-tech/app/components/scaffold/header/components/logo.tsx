@@ -2,6 +2,7 @@ import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { Link } from '../../../../../../shared/app/components/support/link/link'
+import SkillFindTechLogo from './image/image'
 
 interface LogoInterface {
   (props: {}): JSX.Element
@@ -14,11 +15,7 @@ export const Logo: LogoInterface = props => {
 
   const label = (
     <div className='text'>
-      <img
-        crossOrigin='anonymous'
-        loading='lazy'
-        src={`https://soundofit-dev.s3.eu-central-1.amazonaws.com/qweqweqw.jpeg?a=123?a=${storageUrlRandomizedQuaryParameter}`}
-      />
+      <SkillFindTechLogo />
       skillfind.<span className='tech'>tech</span>
     </div>
   )
