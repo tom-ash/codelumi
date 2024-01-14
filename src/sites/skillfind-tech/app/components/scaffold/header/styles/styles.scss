@@ -12,15 +12,9 @@
   color: #d0d3d4;
   background: black;
   margin: 0 auto;
-
   max-width: 1024px;
   opacity: 0.8;
   border-radius: 6px;
-
-  // @media #{$LARGE-TABLET} {
-
-  // }
-
   .lang-switch {
     float: right;
     color: #d0d3d4;
@@ -32,8 +26,17 @@
       }
     }
     .all {
-      top: 52px;
-      border-radius: 3px;
+      top: 50px;
+      background: black;
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+      a {
+        display: block;
+        &:hover {
+          background: black;
+          color: rgb(129, 185, 146);
+        }
+      }
     }
   }
   .header-link {
