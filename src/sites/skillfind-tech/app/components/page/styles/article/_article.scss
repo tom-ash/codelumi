@@ -2,9 +2,9 @@
 @import './table-of-contents';
 @import '../../../../styles/colors';
 
-$DESKTOP-MARGIN: 36px;
+$DESKTOP-MARGIN: 24px;
 $MOBILE-MARGIN: 24px;
-$PRE-MARGIN: 16px;
+$PRE-MARGIN: 18px;
 
 %standard-margins {
   margin: $PRE-MARGIN $DESKTOP-MARGIN 0;
@@ -38,10 +38,11 @@ $PRE-MARGIN: 16px;
     margin: 0 auto 32px;
   }
   h1 {
-    font-size: 28px;
-    margin: $DESKTOP-MARGIN $DESKTOP-MARGIN 0;
+    @extend %standard-margins;
+    margin-top: 24px;
+    font-size: 36px;
     @media #{$LARGE-PHONE} {
-      margin: $MOBILE-MARGIN $MOBILE-MARGIN 0;
+      font-size: 28px;
     }
   }
   .description {
@@ -52,7 +53,7 @@ $PRE-MARGIN: 16px;
   }
   .editorial {
     @extend %editorial;
-    margin-top: 24px;
+    margin-top: 48px;
   }
   .table-of-contents {
     @extend %table-of-contents;
@@ -62,18 +63,17 @@ $PRE-MARGIN: 16px;
     }
   }
   .author {
-    position: relative;
-    // margin-top: 16px;
-    padding-left: 48px;
-    line-height: 40px;
     @extend %standard-margins;
-    img {
-      display: inline;
+    position: relative;
+    margin-top: 12px;
+    padding-left: 22px;
+    line-height: 16px;
+    font-size: 15px;
+    svg {
       position: absolute;
+      top: 2px;
       left: 0;
-      border-radius: 50%;
-      height: 40px;
-      margin: 0;
+      height: 13px;
     }
   }
   .cover + h1 {
@@ -156,12 +156,14 @@ $PRE-MARGIN: 16px;
       width: 100%;
       margin: 0;
     }
-
     .description {
       margin-top: 16px;
       font-size: 14px;
       font-style: italic;
     }
+  }
+  header + .definition, header + .table-of-contents {
+    margin-top: 48px;
   }
 
   pre {

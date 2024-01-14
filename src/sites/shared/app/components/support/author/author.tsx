@@ -1,6 +1,6 @@
 import React from 'react'
 import { useData } from '../../../functions/store/use-data'
-import Image from '../image/image'
+import { SVG } from '../svg/svg'
 
 interface AuthorInterface {
   (): React.ReactElement
@@ -20,11 +20,8 @@ export const Author: AuthorInterface = () => {
 
   return (
     <div className='author'>
-      <Image
-        src={pictureUrl}
-        alt={name}
-      />
-      <strong>{name}</strong>
+      <SVG name='pen' />
+      {name}
     </div>
   )
 }

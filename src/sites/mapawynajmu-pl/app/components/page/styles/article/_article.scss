@@ -3,7 +3,7 @@
 
 $DESKTOP-MARGIN: 0;
 $MOBILE-MARGIN: 24px;
-$PRE-MARGIN: 16px;
+$PRE-MARGIN: 18px;
 
 %standard-margins {
   margin: $PRE-MARGIN $DESKTOP-MARGIN 0;
@@ -13,7 +13,6 @@ $PRE-MARGIN: 16px;
 }
 
 %article {
-  // margin-top: 24px;
   max-width: 768px;
   margin: 0 auto 0;
   background: none;
@@ -26,25 +25,25 @@ $PRE-MARGIN: 16px;
     padding: 0;
   }
   h1 {
+    @extend %standard-margins;
     line-height: 41.25px;
     font-size: 32px;
-    margin: 18px $DESKTOP-MARGIN;
     @media #{$LARGE-PHONE} {
-      margin: 32px $MOBILE-MARGIN;
+      font-size: 28px;
     }
   }
   .author {
+    @extend %standard-margins;
     position: relative;
-    margin-top: 16px;
-    padding-left: 48px;
-    line-height: 40px;
-    img {
-      display: inline;
+    margin-top: 12px;
+    padding-left: 22px;
+    line-height: 16px;
+    font-size: 15px;
+    svg {
       position: absolute;
+      top: 2px;
       left: 0;
-      border-radius: 50%;
-      height: 40px;
-      margin-top: 0;
+      height: 13px;
     }
   }
   .table-of-contents {
@@ -95,6 +94,9 @@ $PRE-MARGIN: 16px;
   }
   p + ul {
     margin-top: 0;
+  }
+  .editorial {
+    margin-top: 36px;
   }
   .editorial + ul {
     margin-top: 0;
