@@ -6,7 +6,7 @@ export const SkillFindTechLogo = () => {
   useStyles(styles)
 
   return (
-    <div id='logo-image'>
+    <div className='logo-icon'>
       <div className='magnifying-glass'>
         <div className='zero-one'>
           <span className='zero'>0</span>

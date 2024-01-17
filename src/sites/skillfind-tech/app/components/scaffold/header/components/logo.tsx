@@ -5,19 +5,22 @@ import { Link } from '../../../../../../shared/app/components/support/link/link'
 import SkillFindTechLogo from './image/image'
 
 interface LogoInterface {
-  (props: {}): JSX.Element
+  (props: {
+    scale?: number
+  }): JSX.Element
 }
 
 export const Logo: LogoInterface = props => {
   useStyles(styles)
 
-  const storageUrlRandomizedQuaryParameter = Math.random()
-
   const label = (
-    <div className='text'>
+    <>
       <SkillFindTechLogo />
-      skillfind.<span className='tech'>tech</span>
-    </div>
+      <div className='logo-string'>
+        <span>skillfind.</span>
+        <span className='tech'>tech</span>
+      </div>
+    </>
   )
 
   const linkProps = {
@@ -28,3 +31,5 @@ export const Logo: LogoInterface = props => {
 
   return <Link {...linkProps} />
 }
+
+export default Logo

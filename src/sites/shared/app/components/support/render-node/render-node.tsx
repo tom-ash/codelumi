@@ -16,6 +16,11 @@ const YouTubeEmbed = loadable(() => import('./components/youtube-embed/youtube-e
 const Share = loadable(() => import('./components/share/share'))
 const Definition = loadable(() => import('./components/definition/definition'))
 const Figure = loadable(() => import('./components/figure/figure'))
+
+const SkillFindTechLogo = loadable(
+  () => import('../../../../../skillfind-tech/app/components/scaffold/header/components/logo')
+)
+
 const SkillFindLogoLogoAndTitle = loadable(
   () => import('../../../../../skillfind-tech/app/components/scaffold/header/components/image/image')
 )
@@ -34,6 +39,7 @@ const elements = {
   FeatureItem,
   QuestionIndex,
   Breadcrumbs,
+  SkillFindTechLogo,
 }
 
 export const RenderNode = (props: RenderNodeProps) => {
@@ -65,8 +71,11 @@ export const RenderNode = (props: RenderNodeProps) => {
 
     if (node.cat) {
       const Component = elements[node.cat]
-      const data = node.data || {}
 
+      // @ts-ignore
+      const data = node.data// || {}
+
+      // @ts-ignore
       return <Component {...data} />
     }
 

@@ -37,11 +37,9 @@ interface Author {
 
 interface Index {
   cat: 'Index'
-  data:
-    | {
-        withImages?: boolean
-      }
-    | undefined
+  data?: {
+    withImages: boolean
+  }
 }
 
 interface QuestionIndex {
@@ -54,7 +52,12 @@ interface Breadcrumbs {
   data: undefined
 }
 
-type RenderNodeData = string | string[] | ObjectNode | Author | Index | QuestionIndex
+interface SkillFindTechLogo {
+  cat: 'SkillFindTechLogo'
+  data?: { scale: number }
+}
+
+type RenderNodeData = string | string[] | ObjectNode | Author | Index | QuestionIndex | SkillFindTechLogo
 
 type RenderNodeProps = {
   node: RenderNodeData

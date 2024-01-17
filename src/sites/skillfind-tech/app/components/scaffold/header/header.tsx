@@ -21,14 +21,14 @@ const Header: HeaderInterface = props => {
   const { authorized } = useUser()
 
   return (
-    <div id='header'>
+    <header id='header'>
       <Logo />
       <LangSwitch />
       {!authorized && !isMobile && <SignUpLink />}
       {!authorized && !isMobile && <SignInLink />}
       {authorized && !isMobile && <SignOutButton />}
       <FloatClear />
-    </div>
+    </header>
   )
 }
 
