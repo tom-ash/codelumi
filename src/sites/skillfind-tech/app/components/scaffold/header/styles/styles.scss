@@ -15,6 +15,13 @@
   max-width: 1024px;
   opacity: 0.8;
   border-radius: 6px;
+  .logo {
+    position: absolute;
+    transform: scale(.1);
+    transform-origin: top left;
+    top: 12px;
+    left: 17px;
+  }
   .lang-switch {
     float: right;
     color: #d0d3d4;
