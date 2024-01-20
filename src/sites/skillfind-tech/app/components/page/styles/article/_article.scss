@@ -2,7 +2,7 @@
 @import './table-of-contents';
 @import '../../../../styles/colors';
 
-$DESKTOP-MARGIN: 24px;
+$DESKTOP-MARGIN: 32px;
 $MOBILE-MARGIN: 24px;
 $PRE-MARGIN: 18px;
 
@@ -14,7 +14,6 @@ $PRE-MARGIN: 18px;
 }
 
 %article {
-  max-width: 768px;
   background: none;
   overflow: hidden;
   line-height: 26px;
@@ -179,6 +178,25 @@ $PRE-MARGIN: 18px;
     dfn {
       font-weight: bold;
     }
+    position: relative;
+    padding: 40px 16px 12px;
+  }
+
+  .definition::before {
+    content: 'Definition';
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #3498db;
+    color: white;
+    font-size: 8px;
+    font-weight: bold;
+    padding: 8px;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    width: 104px;
+    text-align: center;
   }
 
   figure {

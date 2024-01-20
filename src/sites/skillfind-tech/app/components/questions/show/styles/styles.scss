@@ -2,7 +2,6 @@
 @import '../../../../../../shared/app/styles/media-breakpoints';
 
 #questions-show {
-  // padding: 120px 0 0;
   margin: 128px 0 0;
   @media #{$LARGE-TABLET} {
     margin: 74px 0 0;
@@ -17,7 +16,7 @@
   .container {
     margin: 0 auto;
     border-radius: 4px;
-    max-width: 640px;
+    max-width: 768px;
     padding: 32px;
     font-size: 16px;
     background: white;
