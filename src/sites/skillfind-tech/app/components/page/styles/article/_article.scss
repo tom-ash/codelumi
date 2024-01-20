@@ -174,7 +174,7 @@ $PRE-MARGIN: 18px;
     background: #ebf5fb;
     padding: 16px;
     border-radius: 3px;
-    border-left: 3px solid #3498db;
+    border: 3px solid #3498db;
     dfn {
       font-weight: bold;
     }
@@ -187,14 +187,15 @@ $PRE-MARGIN: 18px;
     text-transform: uppercase;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 16px;
+    margin: 0 auto;
     background: #3498db;
     color: white;
     font-size: 8px;
     font-weight: bold;
     padding: 8px;
     border-bottom-right-radius: 3px;
-    border-top-right-radius: 3px;
+    border-bottom-left-radius: 3px;
     width: 104px;
     text-align: center;
   }
