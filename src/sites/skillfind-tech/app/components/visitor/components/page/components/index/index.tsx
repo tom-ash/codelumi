@@ -7,48 +7,37 @@ import styles from './styles/styles.scss'
 import Image from '../../../../../../../../shared/app/components/support/image/image'
 import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
 import { useData } from '../../../../../../../../shared/app/functions/store/use-data'
-import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
+import { useApp } from '../../../../../../../../shared/app/functions/store/use-app'
+import { Splide, SplideSlide } from '@splidejs/react-splide'
+import { SkillTile } from './components/skill-tile/skill-tile'
 
 const VisitorPageIndex = () => {
   useStyles(styles)
 
   const { skillsHeading, featuredArticlesHeading } = useTexts()
   const { pages, articles } = useData()
+  const { isMobile } = useApp()
 
   return (
     <div id='visitor-page-index'>
       <div className='skills'>
         <HeadingTwo text={skillsHeading} />
-        <div className='container'>
-          {/* @ts-ignore */}
-          {pages.map(page => {
-            const { coverImage: image, title, href, hrefLang, description, pageCount, questionCount } = page
-            console.log(description)
-            const label = (
-              <div>
-                <div className='title'>{title}</div>
-                <div className='description'>{description}</div>
-                <div className='counts'>
-                  <div className='page-count'>
-                    <SVG name='collegeCap' /> {pageCount} tutorial pages
-                  </div>
-                  <div className='question-count'>
-                    <SVG name='flaskVial' /> {questionCount} practice problems
-                  </div>
-                </div>
-              </div>
-            )
-            // title
-            const linkProps = {
-              label,
-              href,
-              hrefLang,
-              customClassNames: 'skill',
-            }
-
-            return <Link {...linkProps} />
-          })}
-          <FloatClear />
+        <div>
+          <Splide
+            options={{
+              drag: 'free',
+              perPage: isMobile ? 2 : 4,
+              autoWidth: false,
+            }}
+          >
+            {pages.map((page: any) => {
+              return (
+                <SplideSlide>
+                  <SkillTile {...page} />
+                </SplideSlide>
+              )
+            })}
+          </Splide>
         </div>
       </div>
 
@@ -61,11 +50,15 @@ const VisitorPageIndex = () => {
 
             const label = (
               <>
-                <Image
-                  src={image}
-                  alt='asdasdasd'
-                />
-                <div>{title}</div>
+                <div className='cover'>
+                  <Image
+                    src={image}
+                    alt={title}
+                  />
+                </div>
+                <div className='title'>
+                  {title}
+                </div>
               </>
             )
 

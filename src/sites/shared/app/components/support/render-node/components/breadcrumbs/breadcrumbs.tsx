@@ -16,9 +16,6 @@ export const Breadcrumbs = () => {
     <ul className='breadcrumbs'>
       {breadcrumbs.map((breadcrumb, index) => {
         const label = index === 0 ? <SVG name='home' /> : breadcrumb.name
-        console.log(index)
-        // breadcrumb.name
-        // of
 
         return (
           <li key={breadcrumb.item}>
