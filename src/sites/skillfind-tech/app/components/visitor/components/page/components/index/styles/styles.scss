@@ -5,10 +5,7 @@
   position: relative;
   margin: 0 auto;
   max-width: 1024px;
-  padding: 0 18px;
-  @media #{$LARGE-TABLET} {
-    padding: 0;
-  }
+  padding: 0 12px;
   .skills,
   .articles {
     > h2 {
@@ -17,27 +14,13 @@
       margin-bottom: 18px;
       font-size: 22px;
       line-height: 36px;
-      @media #{$LARGE-PHONE} {
-        margin: 0 18px 18px;
-      }
-    }
-    @media #{$LARGE-TABLET} {
+      margin: 0;
       padding: 0;
+      padding: 0 8px;
     }
   }
   .articles {
     margin-top: 32px;
-  }
-
-  .container {
-    @media #{$LARGE-TABLET} {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-y: hidden;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      padding-left: 18px;
-    }
   }
 
   .skill {
@@ -47,7 +30,8 @@
     }
     position: relative;
     background: white;
-    margin-right: 24px;
+    margin-right: 8px;
+    margin-left: 8px;
     border-radius: 4px;
     overflow: hidden;
     a {
@@ -57,17 +41,6 @@
       left: 0;
     }
     line-height: 1.5;
-    margin-bottom: 1.66%;
-    @media #{$LARGE-TABLET} {
-      float: none;
-      vertical-align: middle;
-      display: inline-block;
-      width: 200px;
-      margin-right: 18px;
-      &:nth-of-type(4n) {
-        margin-right: 18px;
-      }
-    }
     .title {
       font-size: 18px;
       font-weight: bold;
@@ -85,20 +58,6 @@
       font-style: italic;
       line-height: 1.4;
       height: 112px;
-    }
-    .counts {
-      padding: 0 18px;
-      font-size: 13px;
-      color: #2c3e50;
-      svg {
-        height: 13px;
-        position: relative;
-        top: 1px;
-        fill: #2c3e50;
-      }
-      .page-count {
-        margin-bottom: 4px;
-      }
     }
   }
 
