@@ -43,35 +43,46 @@ const VisitorPageIndex = () => {
 
       <div className='articles'>
         <HeadingTwo text={featuredArticlesHeading} />
-        <div className='container'>
-          {/* @ts-ignore */}
-          {articles.map(article => {
-            const { image, title, href, hrefLang } = article
 
-            const label = (
-              <>
-                <div className='cover'>
-                  <Image
-                    src={image}
-                    alt={title}
-                  />
-                </div>
-                <div className='title'>
-                  {title}
-                </div>
-              </>
-            )
+        <div>
+          <Splide
+            options={{
+              drag: 'free',
+              perPage: isMobile ? 1 : 3,
+              autoWidth: false,
+            }}
+          >
+            {articles.map((article: any) => {
+              const { image, title, href, hrefLang } = article
 
-            const linkProps = {
-              label,
-              href,
-              hrefLang,
-              customClassNames: 'article',
-            }
+              const label = (
+                <>
+                  <div className='cover'>
+                    <Image
+                      src={image}
+                      alt={title}
+                    />
+                  </div>
+                  <div className='title'>
+                    {title}
+                  </div>
+                </>
+              )
 
-            return <Link {...linkProps} />
-          })}
-          <FloatClear />
+              const linkProps = {
+                label,
+                href,
+                hrefLang,
+                customClassNames: 'article',
+              }
+
+              return (
+                <SplideSlide>
+                  <Link {...linkProps} />
+                </SplideSlide>
+              )
+            })}
+          </Splide>
         </div>
       </div>
     </div>
