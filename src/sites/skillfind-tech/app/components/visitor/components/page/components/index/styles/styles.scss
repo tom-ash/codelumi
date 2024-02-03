@@ -19,6 +19,22 @@
       padding: 0;
       margin-bottom: 16px;
     }
+    .splide__arrow {
+      width: 36px;
+      height: 36px;
+      svg {
+        height: 18px;
+        width: 18px;
+      }
+      @media #{$LARGE-PHONE} {
+        width: 48px;
+        height: 48px;
+        svg {
+          height: 24px;
+          width: 24px;
+        }
+      }
+    }
   }
   .skills {
     .splide__list {
@@ -37,6 +53,9 @@
         }
       }
     }
+
+
+
   }
   .articles {
     margin-top: 32px;
