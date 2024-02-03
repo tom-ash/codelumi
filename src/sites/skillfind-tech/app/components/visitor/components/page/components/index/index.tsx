@@ -27,16 +27,14 @@ const VisitorPageIndex = () => {
             options={{
               drag: 'free',
               perPage: isMobile ? 2 : 4,
-              autoWidth: false,
+              // autoWidth: false,
             }}
           >
-            {pages.map((page: any) => {
-              return (
-                <SplideSlide>
-                  <SkillTile {...page} />
-                </SplideSlide>
-              )
-            })}
+            {pages.map((page: any) => (
+              <SplideSlide>
+                <SkillTile {...page} />
+              </SplideSlide>
+            ))}
           </Splide>
         </div>
       </div>
@@ -49,7 +47,7 @@ const VisitorPageIndex = () => {
             options={{
               drag: 'free',
               perPage: isMobile ? 1 : 3,
-              autoWidth: false,
+              // autoWidth: false,
             }}
           >
             {articles.map((article: any) => {
