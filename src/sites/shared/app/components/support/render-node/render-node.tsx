@@ -24,8 +24,8 @@ const SkillFindTechLogo = loadable(
 const SkillFindLogoLogoAndTitle = loadable(
   () => import('../../../../../skillfind-tech/app/components/scaffold/header/components/image/image')
 )
-const MapawynajmuPlLogoAndTitle = loadable(
-  () => import('../../../../../mapawynajmu-pl/app/components/support/logo-and-title/logo-and-title')
+const MapawynajmuPlExtendedLogo = loadable(
+  () => import('../../../../../mapawynajmu-pl/app/components/support/extended-logo/extended-logo')
 )
 const FeatureItem = loadable(() => import('./components/feature-item/feature-item'))
 const Author = loadable(() => import('../author/author'))
@@ -70,12 +70,9 @@ export const RenderNode = (props: RenderNodeProps) => {
     }
 
     if (node.cat) {
-      const Component = elements[node.cat]
-
-      // @ts-ignore
+      const Component = elements[node.cat]      
       const data = node.data// || {}
 
-      // @ts-ignore
       return <Component {...data} />
     }
 
@@ -325,12 +322,13 @@ export const RenderNode = (props: RenderNodeProps) => {
     }
 
     // @ts-ignore
-    if (node.MapawynajmuPlLogoAndTitle) {
+    if (node.MapawynajmuPlExtendedLogo) {
       // @ts-ignore
-      const { scale } = node
+      const { scale } = node.MapawynajmuPlExtendedLogo
 
-      // @ts-ignore
-      return <MapawynajmuPlLogoAndTitle scale={scale} />
+      console.log(node)
+
+      return <MapawynajmuPlExtendedLogo scale={scale} />
     }
 
     // @ts-ignore

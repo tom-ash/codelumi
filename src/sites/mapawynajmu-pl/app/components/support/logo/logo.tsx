@@ -1,22 +1,24 @@
+
 import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 
-interface LogoAndTitleInterface {
-  (props?: { scale?: number }): React.ReactElement
+interface LogoInterface {
+  (props: { scale?: number }): React.ReactElement
 }
 
-export const LogoAndTitle: LogoAndTitleInterface = (props = { scale: 1 }) => {
+export const Logo: LogoInterface = (props) => {
   useStyles(styles)
 
-  const { scale } = props
+  const { scale: customScale } = props
+  const scale = customScale || 1
+  const height = 360 * scale
 
   return (
     <div
       id='logo'
       style={{
-        transform: `scale(${scale})`,
-        transformOrigin: 'top left',
+        height: height
       }}
     >
       <img
@@ -24,12 +26,8 @@ export const LogoAndTitle: LogoAndTitleInterface = (props = { scale: 1 }) => {
         alt='mapawynajmu.pl logo'
         crossOrigin={'anonymous'}
       />
-      <div className='title'>
-        <div>mapa</div>
-        <div className='lease'>wynajmu</div>
-      </div>
     </div>
   )
 }
 
-export default LogoAndTitle
+export default Logo

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap');
+
+$HOUSE_COLOR: #add2eb;
+$PIN_COLOR: white;
+
+#logo {
+  position: relative;
+  top: 0;
+  float: left;
+  img {
+    height: 100%;
+    position: relative;
+    top: 0;
+  }
+}
