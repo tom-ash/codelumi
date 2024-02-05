@@ -82,6 +82,8 @@ export const RenderNode = (props: RenderNodeProps) => {
           useCoverImage={node.ArticleHeader.useCoverImage}
           useAuthor={node.ArticleHeader.useAuthor}
           useDescription={node.ArticleHeader.useDescription}
+          // @ts-ignore
+          useCoverImageSource={node.ArticleHeader.useCoverImageSource}
         />
       )
     }
