@@ -12,6 +12,7 @@ const SubmitButton = () => {
 
   const {
     selectedSkills,
+    businessName,
     // remote,
     // hybrid,
     // office,
@@ -32,6 +33,7 @@ const SubmitButton = () => {
     onClick: () =>
       submit({
         lang,
+        businessName,
         selectedSkills,
         // remote,
         // hybrid,

@@ -1,0 +1,38 @@
+%typed-text-input {
+  $error-color: red;
+  label, input {
+    display: block;
+  }
+  label {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  input {
+    margin-top: 8px;
+    outline: none;
+    width: 320px;
+    height: 36px;
+    padding-left: 10px;
+    border: 1px solid black;
+    font-size: 16px;
+    border-radius: .2rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  .error {
+    font-size: 12px;
+    margin-top: 8px;
+    color: $error-color;
+  }
+  &.error {
+    label {
+      color: $error-color;
+    }
+    input {
+      border: 1px solid $error-color;
+      color: $error-color;
+      background: rgba($error-color, .025);
+    }
+  }
+}

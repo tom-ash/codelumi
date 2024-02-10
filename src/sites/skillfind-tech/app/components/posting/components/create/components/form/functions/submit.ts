@@ -2,8 +2,9 @@ import apiUrl from '../../../../../../../../shared/constants/urls/api'
 import { getAccessToken } from '../../../../../../../../../shared/app/components/user/components/auth/functions/get-access-token'
 import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/change-url'
 
-type submitProps = {
+type SubmitProps = {
   lang: Lang
+  businessName: string
   selectedSkills: Array<any>
   // remote: boolean
   // hybrid: boolean
@@ -19,9 +20,10 @@ type submitProps = {
   // civilContractMin: number
 }
 
-export const submit = (props: submitProps) => {
+export const submit = (props: SubmitProps) => {
   const {
     lang,
+    businessName,
     selectedSkills,
     // remote,
     // hybrid,
@@ -38,6 +40,7 @@ export const submit = (props: submitProps) => {
   } = props
 
   const body = {
+    businessName,
     selectedSkills,
     // remote,
     // hybrid,
