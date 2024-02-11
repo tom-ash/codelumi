@@ -39,39 +39,36 @@
   .skills {
     .splide__list {
       li {
-        box-sizing:content-box;
+        box-sizing: content-box;
         margin-right: 2rem;
-        width: calc(25% - 1.5rem)!important;
+        width: calc(25% - 1.5rem) !important;
       }
     }
     @media #{$LARGE-PHONE} {
       .splide__list {
         li {
-          box-sizing:content-box;
+          box-sizing: content-box;
           margin-right: 1.5rem;
-          width: calc(50% - 0.75rem)!important;
+          width: calc(50% - 0.75rem) !important;
         }
       }
     }
-
-
-
   }
   .articles {
     margin-top: 32px;
     .splide__list {
       li {
-        box-sizing:content-box;
+        box-sizing: content-box;
         margin-right: 2rem;
-        width: calc(33.3333% - 1.3333rem)!important;
+        width: calc(33.3333% - 1.3333rem) !important;
       }
     }
     @media #{$LARGE-PHONE} {
       .splide__list {
         li {
-          box-sizing:content-box;
+          box-sizing: content-box;
           margin-right: 1rem;
-          width: calc(100%)!important;
+          width: calc(100%) !important;
         }
       }
     }
@@ -109,7 +106,7 @@
       font-style: italic;
       line-height: 1.4;
       height: 112px;
-      overflow:hidden;
+      overflow: hidden;
     }
   }
 

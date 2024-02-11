@@ -5,7 +5,12 @@ import { useData } from '../../../../../functions/store/use-data'
 import { Author } from '../../../author/author'
 
 interface ArticleHeaderInterface {
-  (props: { useCoverImage?: boolean; useCoverImageSource?: string; useAuthor?: boolean; useDescription?: boolean }): React.ReactElement
+  (props: {
+    useCoverImage?: boolean
+    useCoverImageSource?: string
+    useAuthor?: boolean
+    useDescription?: boolean
+  }): React.ReactElement
 }
 
 const ArticleHeader: ArticleHeaderInterface = props => {

@@ -25,7 +25,11 @@ export const ListingTilePictures: ListingTilePicturesInterface = props => {
   if (disableSlides) {
     return (
       <div className='picture'>
-        <img src={pictureUrls[0].database} alt={title} loading='lazy' />
+        <img
+          src={pictureUrls[0].database}
+          alt={title}
+          loading='lazy'
+        />
       </div>
     )
   }
@@ -34,17 +38,17 @@ export const ListingTilePictures: ListingTilePicturesInterface = props => {
     <div className='pictures'>
       <Splide
         onArrowsMounted={(_, prev, next) => {
-          prev.addEventListener('click', (e) => {
+          prev.addEventListener('click', e => {
             e.stopPropagation()
             e.preventDefault()
           })
-          next.addEventListener('click', (e) => {
+          next.addEventListener('click', e => {
             e.stopPropagation()
             e.preventDefault()
           })
-        }}  
+        }}
         onPaginationMounted={(_, listObject) => {
-          listObject.list.addEventListener('click', (e) => {
+          listObject.list.addEventListener('click', e => {
             e.stopPropagation()
             e.preventDefault()
           })
@@ -53,7 +57,10 @@ export const ListingTilePictures: ListingTilePicturesInterface = props => {
         {pictureUrls.map(pictureUrl => {
           return (
             <SplideSlide>
-              <img src={pictureUrl.database} alt={title} />
+              <img
+                src={pictureUrl.database}
+                alt={title}
+              />
             </SplideSlide>
           )
         })}

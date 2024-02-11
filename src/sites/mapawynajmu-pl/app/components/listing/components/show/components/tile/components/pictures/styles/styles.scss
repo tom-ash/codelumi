@@ -1,7 +1,7 @@
 .pictures {
   box-sizing: border-box;
   position: relative;
-  margin-top: 18px!important;
+  margin-top: 18px !important;
 }
 .splide__list {
   backface-visibility: hidden;
@@ -59,7 +59,7 @@
 .splide__slide img {
   vertical-align: bottom;
   width: 100%;
-//   aspect-ratio: 1;
+  //   aspect-ratio: 1;
 }
 .splide__spinner {
   animation: splide-loading 1s linear infinite;

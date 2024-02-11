@@ -29,7 +29,6 @@ const AnnouncementCreateForm = () => {
           }}
           error='asdasd'
         /> */}
-        
       </section>
 
       <h2>SKILLS</h2>

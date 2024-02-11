@@ -5,17 +5,13 @@ import * as lifecycle from './functions/lifecycle'
 import ListingShowTile from '../../../show/components/tile/tile'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
-import { ListingIndexTile } from '../tile/tile'
 import GoBack from '../../../show/components/tile/components/go-back'
-import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
-import { ShowOnMapButton } from '../tile/show-on-map/show-on-map.button'
+import { MiniList } from '../mini-list/mini-list'
 
 class AnnouncementIndexMap extends React.Component {
   // @ts-ignore
   constructor(props) {
     super(props)
-    // @ts-ignore
-    this.miniList = React.createRef()
     this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     this.componentWillUnmount = lifecycle.componentWillUnmount
@@ -28,97 +24,17 @@ class AnnouncementIndexMap extends React.Component {
       // @ts-ignore
       lang,
       // @ts-ignore
-      announcements,
-      // @ts-ignore
       isMobile,
       // @ts-ignore
       setApp,
       // @ts-ignore
-      setControl,
-      // @ts-ignore
-      title,
-      // @ts-ignore
-      currentPartnerName,
-      // @ts-ignore
       goBackLink,
     } = this.props
-    // @ts-ignore
-    const changeHoveredTileId = hoveredTileId => setControl({ hoveredTileId })
 
     return (
       <div id='listing-index-map'>
         <div id='google-map-container'>
-          <div
-            // @ts-ignore
-            ref={this.miniList}
-            id='mini-list'
-          >
-            <h1>{title}</h1>
-            {currentPartnerName && <h2>{currentPartnerName}</h2>}
-            {announcements !== null &&
-              // @ts-ignore
-              announcements.map(announcement => {
-                const {
-                  id,
-                  title,
-                  pictures,
-                  name,
-                  category,
-                  locality,
-                  sublocality,
-                  netRentAmount,
-                  grossRentAmount,
-                  rentCurrency,
-                  area,
-                  href,
-                  latitude,
-                  longitude,
-                  isPromoted,
-                } = announcement
-
-                const isCommercial = [0, 1, 6, 7, 8].indexOf(category) !== -1
-                const rentAmount = isCommercial ? netRentAmount : grossRentAmount
-
-                const onClick = (e: React.SyntheticEvent) => {
-                  e.preventDefault()
-
-                  changeUrl({ href, retainQueryParams: true, withScroll: false })
-                }
-
-                const tileProps = {
-                  key: href,
-                  href,
-                  id,
-                  title,
-                  pictures,
-                  disableSlides: true,
-                  name,
-                  category,
-                  locality,
-                  sublocality,
-                  lang,
-                  rentAmount,
-                  rentCurrency,
-                  area,
-                  isPromoted,
-                  onClick,
-                  onMouseOver: () => changeHoveredTileId(id),
-                  onMouseLeave: () => changeHoveredTileId(null),
-                }
-
-                return (
-                  <ListingIndexTile {...tileProps}>
-                    {isMobile && (
-                      <ShowOnMapButton
-                        latitude={latitude}
-                        longitude={longitude}
-                        setControl={setControl}
-                      />
-                    )}
-                  </ListingIndexTile>
-                )
-              })}
-          </div>
+          <MiniList />
           <div id='google-map' />
           {tile && Object.keys(tile).length > 1 && (
             <div id='listing-show'>

@@ -61,9 +61,7 @@ const VisitorPageIndex = () => {
                       alt={title}
                     />
                   </div>
-                  <div className='title'>
-                    {title}
-                  </div>
+                  <div className='title'>{title}</div>
                 </>
               )
 

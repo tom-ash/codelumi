@@ -1,38 +1,32 @@
 import React from 'react'
-import { SVG } from '../../../../../../../../../../shared/app/components/support/svg/svg';
-import { Link } from '../../../../../../../../../../shared/app/components/support/link/link';
+import { SVG } from '../../../../../../../../../../shared/app/components/support/svg/svg'
+import { Link } from '../../../../../../../../../../shared/app/components/support/link/link'
 import Image from '../../../../../../../../../../shared/app/components/support/image/image'
 
 interface SkillTileInterface {
   (props: {
-    title: string;
-    href: string;
-    hrefLang: Lang;
-    description: string;
-    pageCount: number;
-    questionCount: number;
-    image?: string;
+    title: string
+    href: string
+    hrefLang: Lang
+    description: string
+    pageCount: number
+    questionCount: number
+    image?: string
   }): React.ReactElement
 }
 
-export const SkillTile: SkillTileInterface = (props) => {
-  const {
-    title,
-    href,
-    hrefLang,
-    description,
-    pageCount,
-    questionCount,
-    image,
-  } = props
+export const SkillTile: SkillTileInterface = props => {
+  const { title, href, hrefLang, description, pageCount, questionCount, image } = props
 
   const label = (
     <div>
       <div className='image'>
-        {image && <Image
-          src={image}
-          alt={title}
-        />}
+        {image && (
+          <Image
+            src={image}
+            alt={title}
+          />
+        )}
       </div>
       <div className='title'>{title}</div>
       <div className='description'>{description}</div>

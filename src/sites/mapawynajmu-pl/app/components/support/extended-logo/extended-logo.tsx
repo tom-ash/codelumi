@@ -7,7 +7,7 @@ interface ExtendedLogoInterface {
   (props: { scale?: number }): React.ReactElement
 }
 
-export const ExtendedLogo: ExtendedLogoInterface = (props) => {
+export const ExtendedLogo: ExtendedLogoInterface = props => {
   useStyles(styles)
 
   const { scale: customScale } = props

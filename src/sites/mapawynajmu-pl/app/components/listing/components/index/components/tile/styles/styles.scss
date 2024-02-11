@@ -64,7 +64,7 @@
   .pictures {
     @extend %pictures;
     width: 360px;
-    margin-top: 0!important;
+    margin-top: 0 !important;
     @media #{$LARGE-TABLET} {
       width: 100%;
       float: none;

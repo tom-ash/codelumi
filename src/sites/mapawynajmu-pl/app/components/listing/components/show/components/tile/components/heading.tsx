@@ -8,7 +8,7 @@ interface HeadingProps {
   category: number
   lang: string
   locality: string
-  sublocality: string
+  sublocality?: string
 }
 
 const Heading = (props: HeadingProps) => {

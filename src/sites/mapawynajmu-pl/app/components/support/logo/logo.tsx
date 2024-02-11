@@ -1,4 +1,3 @@
-
 import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
@@ -7,7 +6,7 @@ interface LogoInterface {
   (props: { scale?: number }): React.ReactElement
 }
 
-export const Logo: LogoInterface = (props) => {
+export const Logo: LogoInterface = props => {
   useStyles(styles)
 
   const { scale: customScale } = props
@@ -18,7 +17,7 @@ export const Logo: LogoInterface = (props) => {
     <div
       id='logo'
       style={{
-        height: height
+        height: height,
       }}
     >
       <img

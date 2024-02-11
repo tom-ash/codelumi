@@ -19,14 +19,14 @@ interface ListingIndexTileInterface {
     category: number
     lang: string
     title: string
-    name: string
+    name?: string
     locality: string
-    sublocality: string
+    sublocality?: string
     pictures: Picture[]
     disableSlides: boolean
-    area: number
-    rentAmount: number
-    rentCurrency: number
+    area?: number
+    rentAmount?: number
+    rentCurrency?: number
     isPromoted?: boolean
     children?: React.ReactNode
     onClick?: (e: React.SyntheticEvent) => void
@@ -92,12 +92,17 @@ export const ListingIndexTile: ListingIndexTileInterface = props => {
     rentCurrency,
   }
 
+  // TODO: @ts-ignores
+
   return (
     <a {...tileProps}>
       <Pictures {...picturesProps} />
       <div className='primary'>
+        {/* @ts-ignore */}
         <Heading {...{ ...headingProps, tier: 2 }} />
+        {/* @ts-ignore */}
         <Area {...areaProps} />
+        {/* @ts-ignore */}
         <Rent {...rentProps} />
       </div>
       {children}

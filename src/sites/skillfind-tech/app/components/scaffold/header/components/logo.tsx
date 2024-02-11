@@ -5,9 +5,7 @@ import { Link } from '../../../../../../shared/app/components/support/link/link'
 import SkillFindTechLogo from './image/image'
 
 interface LogoInterface {
-  (props: {
-    scale?: number
-  }): JSX.Element
+  (props: { scale?: number }): JSX.Element
 }
 
 export const Logo: LogoInterface = props => {

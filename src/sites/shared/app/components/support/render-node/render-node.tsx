@@ -70,8 +70,8 @@ export const RenderNode = (props: RenderNodeProps) => {
     }
 
     if (node.cat) {
-      const Component = elements[node.cat]      
-      const data = node.data// || {}
+      const Component = elements[node.cat]
+      const data = node.data // || {}
 
       return <Component {...data} />
     }
