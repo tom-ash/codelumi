@@ -58,7 +58,8 @@
     "vhost": "^3.0.2",
     "webfontloader": "^1.6.28",
     "xml": "^1.0.1",
-    "xml-formatter": "^3.6.0"
+    "xml-formatter": "^3.6.0",
+    "semanticize": "^0.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.5",
