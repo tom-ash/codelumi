@@ -1,5 +1,5 @@
 export const mapStateToProps = store => {
-  const { app, assets, links, control, data, render } = store
+  const { app, assets, control, data, render } = store
   const {
     lang,
     isMobile,
@@ -21,8 +21,13 @@ export const mapStateToProps = store => {
     mapOptions,
     shouldInitializeMap,
     isPinsDrawn,
+    isSSR,
   } = control
   const { announcements, pins, tileId, tile, title, currentPartnerName } = data
+
+  const {
+    'listings/show': renderShow,
+  } = render
 
   return {
     loadMap,
@@ -50,6 +55,8 @@ export const mapStateToProps = store => {
     title,
     currentPartnerName,
     render,
+    isSSR,
+    renderShow,
   }
 }
 

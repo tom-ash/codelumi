@@ -21,22 +21,16 @@ class AnnouncementIndexMap extends React.Component {
   render() {
     const {
       // @ts-ignore
-      render,
+      isSSR,
       // @ts-ignore
-      announcements
+      renderShow,
     } = this.props
-
-    const {
-      'listings/show': renderShow
-    } = render
-
-    const showMiniList = announcements.length > 1
 
     return (
       <div id='listing-index-map'>
         <div id='google-map-container'>
           <main>
-            {showMiniList && <MiniList />}
+            {!(renderShow && isSSR) && <MiniList />}
             {renderShow && <ListingsShow />}
           </main>
           <div id='google-map' />
