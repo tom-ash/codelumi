@@ -80,8 +80,6 @@ class ListingShowTile extends React.Component {
       // @ts-ignore
       setData,
       // @ts-ignore
-      setApp,
-      // @ts-ignore
       href,
       // @ts-ignore
       title,
@@ -122,7 +120,6 @@ class ListingShowTile extends React.Component {
       category,
       area,
       isMobile,
-      setApp,
       setData,
       href,
       title,

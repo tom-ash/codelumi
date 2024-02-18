@@ -6,6 +6,7 @@ import SubmitButton from './components/submit-button'
 import { Contracts } from './components/contracts/contracts'
 import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
 import { TypedTextInput } from '../../../../../../../../shared/app/components/support/typed-text-input/typed-text-input'
+// import { Select } from 'semanticize'
 
 const AnnouncementCreateForm = () => {
   useStyles(styles)
@@ -29,6 +30,18 @@ const AnnouncementCreateForm = () => {
           }}
           error='asdasd'
         />
+
+        {/* <Select
+          label={'asdasda'}
+          className='typed-text-input'
+        /> */}
+
+        
+        {/* <div></div> */}
+        {/* <select>
+
+        </select> */}
+
       </section>
 
       <h2>SKILLS</h2>

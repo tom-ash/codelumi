@@ -7,6 +7,9 @@ import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import GoBack from '../../../show/components/tile/components/go-back'
 import { MiniList } from '../mini-list/mini-list'
+import loadable from '@loadable/component'
+
+const ListingsShow = loadable(() => import('../../../show/show'))
 
 class AnnouncementIndexMap extends React.Component {
   // @ts-ignore
@@ -20,61 +23,19 @@ class AnnouncementIndexMap extends React.Component {
   render() {
     const {
       // @ts-ignore
-      tile,
-      // @ts-ignore
-      lang,
-      // @ts-ignore
-      isMobile,
-      // @ts-ignore
-      setApp,
-      // @ts-ignore
-      goBackLink,
+      render,
     } = this.props
+
+    const {
+      'listings/show': renderShow
+    } = render
 
     return (
       <div id='listing-index-map'>
         <div id='google-map-container'>
           <MiniList />
           <div id='google-map' />
-          {tile && Object.keys(tile).length > 1 && (
-            <div id='listing-show'>
-              <GoBack
-                id={tile.id}
-                goBackLink={goBackLink}
-              />
-              <ListingShowTile
-                // @ts-ignore
-                lang={lang}
-                id={tile.id}
-                category={tile.category}
-                pictures={tile.pictures}
-                area={tile.area}
-                netRentAmount={tile.netRentAmount}
-                netRentAmountPerSqm={tile.netRentAmountPerSqm}
-                grossRentAmount={tile.grossRentAmount}
-                grossRentAmountPerSqm={tile.grossRentAmountPerSqm}
-                rooms={tile.rooms}
-                rentCurrency={tile.rentCurrency}
-                floor={tile.floor}
-                totalFloors={tile.totalFloors}
-                availabilityDate={tile.availabilityDate}
-                isMobile={isMobile}
-                setApp={setApp}
-                href={tile.href}
-                title={tile.title}
-                locality={tile.locality}
-                sublocality={tile.sublocality}
-                // @ts-ignore
-                description={{ pl: tile.polishDescription, en: tile.englishDescription }[lang]}
-                name={tile.name}
-                link={tile.link}
-                phone={tile.phone}
-                features={tile.features}
-                furnishings={tile.furnishings}
-                isPromoted={tile.isPromoted}
-              />
-            </div>
-          )}
+          {renderShow && <ListingsShow />}
         </div>
       </div>
     )

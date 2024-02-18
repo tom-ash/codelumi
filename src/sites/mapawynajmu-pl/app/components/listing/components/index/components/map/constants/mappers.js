@@ -1,5 +1,5 @@
 export const mapStateToProps = store => {
-  const { app, assets, links, control, data } = store
+  const { app, assets, links, control, data, render } = store
   const {
     lang,
     isMobile,
@@ -7,7 +7,6 @@ export const mapStateToProps = store => {
     device,
   } = app
   const { svgs } = assets
-  const { 'listing/index/go-back': goBackLink } = links
   const {
     connecting,
     isMapInitialized,
@@ -50,7 +49,7 @@ export const mapStateToProps = store => {
     isPinsDrawn,
     title,
     currentPartnerName,
-    goBackLink,
+    render,
   }
 }
 

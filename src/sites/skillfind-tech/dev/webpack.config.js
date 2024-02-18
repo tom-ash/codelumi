@@ -26,6 +26,9 @@ var config = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    alias: {
+      react: path.resolve('./node_modules/react')
+    },
   },
   module: {
     rules: [
