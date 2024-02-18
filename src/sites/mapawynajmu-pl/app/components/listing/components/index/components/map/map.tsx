@@ -2,10 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import * as lifecycle from './functions/lifecycle'
-import ListingShowTile from '../../../show/components/tile/tile'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
-import GoBack from '../../../show/components/tile/components/go-back'
 import { MiniList } from '../mini-list/mini-list'
 import loadable from '@loadable/component'
 
@@ -24,18 +22,24 @@ class AnnouncementIndexMap extends React.Component {
     const {
       // @ts-ignore
       render,
+      // @ts-ignore
+      announcements
     } = this.props
 
     const {
       'listings/show': renderShow
     } = render
 
+    const showMiniList = announcements.length > 1
+
     return (
       <div id='listing-index-map'>
         <div id='google-map-container'>
-          <MiniList />
+          <main>
+            {showMiniList && <MiniList />}
+            {renderShow && <ListingsShow />}
+          </main>
           <div id='google-map' />
-          {renderShow && <ListingsShow />}
         </div>
       </div>
     )

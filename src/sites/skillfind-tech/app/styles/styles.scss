@@ -78,17 +78,8 @@ code {
   font-family: 'Inconsolata', monospace;
 }
 
-// html,
-// body {
-//   // overflow-y: hidden;
-//   // overflow-x: hidden;
-//   overflow: hidden;
-//   // overflow-wrap: break-word;
-// }
-
 #app {
   @extend %page;
-  // min-height: 640px;
 }
 
 .float-clear {

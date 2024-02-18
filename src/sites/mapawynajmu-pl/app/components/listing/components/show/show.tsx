@@ -6,7 +6,7 @@ import { useApp } from '../../../../../../shared/app/functions/store/use-app'
 import { useLinks } from '../../../../../../shared/app/functions/store/use-links'
 
 const ListingsShow = () => {
-  const { isMobile } = useApp()
+  const { lang, isMobile } = useApp()
   const { tile } = useData()
   const {
     'listing/index/go-back': goBackLink
