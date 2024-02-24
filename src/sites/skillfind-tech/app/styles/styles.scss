@@ -22,6 +22,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  @extend %page;
 }
 
 .stretched-content {
@@ -76,10 +77,6 @@ strong {
 code {
   @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
   font-family: 'Inconsolata', monospace;
-}
-
-#app {
-  @extend %page;
 }
 
 .float-clear {

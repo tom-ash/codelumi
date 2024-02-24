@@ -1,23 +1,72 @@
 @import '../../../../../../../styles/themes';
 @import '../../../../../../../styles/media-breakpoints';
-@import './google-map';
-@import './pin';
-@import './tile';
-@import './mini_list';
+@import '../../../../../../../styles/z-index';
+@import '../../../components/tile/styles/styles.scss';
 @import '../../../../show/styles/styles.scss';
+@import './pin';
 
-#listing-index-map {
+#listings-index-results {
   position: absolute;
-  top: 120px;
+  top: 80px;
   right: 0;
   bottom: 0;
   left: 0;
-  @media #{$LARGE-TABLET} {
-    position: relative;
+  main {
     top: 0;
+    bottom: 0;
+    left: 0;
+    width: 640px;
+    #mini-list {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+      padding: 20px 20px 0;
+      background: #e5e7e9;
+      h1 {
+        margin: 6px 0 18px 0;
+        text-align: center;
+        letter-spacing: 1px;
+        font-size: 13px;
+        color: #4d5656;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+      > h2 {
+        font-size: 18px;
+        margin-bottom: 24px;
+        text-align: center;
+        color: #424949;
+      }
+      .listing-index-tile {
+        @extend %listing-index-tile;
+        margin-bottom: 20px;
+        .pictures {
+          width: 360px;
+          margin-top: 0 !important;
+          top: 0;
+        }
+      }
+    }
   }
   #google-map-container {
-    @extend %google-map-container;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 640px;
+    #google-map {
+      height: 100%;
+    }
     .pin {
       position: relative;
       @extend %map-pin;
@@ -30,14 +79,51 @@
         }
       }
     }
+    @media #{$LARGE-TABLET} {
+      position: relative;
+      .gm-bundled-control {
+        display: none;
+      }
+      #google-map {
+        height: 400px;
+      }
+    }
   }
-  h1 {
-    margin: 6px 0 18px 0;
-    text-align: center;
-    letter-spacing: 1px;
-    font-size: 13px;
-    color: #4d5656;
-    font-weight: normal;
-    text-transform: uppercase;
+  @media #{$LARGE-TABLET} {
+    position: relative;
+    top: 0;
+    main {
+      position: relative;
+      width: 100%;
+      #mini-list {
+        overflow-x: scroll;
+        position: relative;
+        width: 100%;
+        white-space: nowrap;
+        padding-right: 0;
+        padding: 20px 0 20px 20px;
+        height: 480px;
+        .listing-index-tile {
+          display: inline-block;
+          vertical-align:top;
+          width: 296px;
+          margin-right: 20px;
+          margin-bottom: 0;
+          .picture {
+            width: 100%;
+          }
+          .pictures {
+            width: 100%;
+          }
+          .primary {
+            height: 108px;
+          }
+        }
+      }
+    }
+    #google-map-container {
+      position: relative;
+      left: 0;
+    }
   }
 }

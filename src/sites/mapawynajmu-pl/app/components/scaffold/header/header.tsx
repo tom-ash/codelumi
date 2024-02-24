@@ -23,12 +23,14 @@ const Header = () => {
 
   return (
     <header id='header'>
-      <LogoLink />
-      <LangSwitch />
-      {!isMobile && <Links />}
-      {showMyAccountMenu && <MyAccountMenu />}
-      {isMobile && <MobileMenu />}
-      <FloatClear />
+      <div id='inner-header'>
+        <LogoLink />
+        <LangSwitch />
+        {!isMobile && <Links />}
+        {showMyAccountMenu && <MyAccountMenu />}
+        {isMobile && <MobileMenu />}
+        <FloatClear />
+      </div>
     </header>
   )
 }

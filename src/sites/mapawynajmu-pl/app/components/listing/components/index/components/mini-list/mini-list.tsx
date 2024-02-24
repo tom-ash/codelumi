@@ -37,7 +37,7 @@ export const MiniList = () => {
 
   return (
     <div id='mini-list'>
-      <h1>{title}</h1>
+      {/* <h1>{title}</h1> */}
       {currentPartnerName && <h2>{currentPartnerName}</h2>}
       {listings.map((listing: ListingBase) => {
         const {

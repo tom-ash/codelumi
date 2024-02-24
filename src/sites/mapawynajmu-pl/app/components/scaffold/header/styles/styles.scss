@@ -7,14 +7,19 @@
   top: 0;
   right: 0;
   left: 0;
-  height: 50px;
-  background: white;
-  border-bottom: 1px solid #979a9a;
   height: 60px;
+  background: white;
+  border-bottom: 1px solid #D7DBDD;
+
+  #inner-header {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
   #extended-logo {
     float: left;
     margin-top: 12px;
-    margin-left: 18px;
+    margin-left: 20px;
   }
   .links {
     float: right;
