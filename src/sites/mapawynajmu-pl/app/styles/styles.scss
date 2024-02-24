@@ -69,6 +69,13 @@ body {
 
 #app {
   @extend %page;
+  background: lightgray;
+  padding-top: 60px;
+  background: rgb(243, 243, 243);
+}
+
+#content {
+  min-height: 100vh;
 }
 
 input::-webkit-outer-spin-button,

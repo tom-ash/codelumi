@@ -1,34 +1,20 @@
-%google-map-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding-left: 640px;
-  main {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 640px;
-  }
-  #google-map {
-    height: 100%;
-  }
-  @media #{$LARGE-TABLET} {
-    position: relative;
-    padding-left: 0;
-    .gm-bundled-control {
-      display: none;
-    }
-    main {
-      position: relative;
-      width: 100%;
-      min-height: auto;
-      z-index: 2;
-    }
-    #google-map {
-      height: 400px;
-    }
-  }
-}
+// %google-map-container {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 640px;
+//   #google-map {
+//     height: 100%;
+//   }
+//   @media #{$LARGE-TABLET} {
+//     position: relative;
+//     padding-left: 0;
+//     .gm-bundled-control {
+//       display: none;
+//     }
+//     #google-map {
+//       height: 400px;
+//     }
+//   }
+// }

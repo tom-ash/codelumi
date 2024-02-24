@@ -13,7 +13,7 @@ class AnnouncementIndexPanel extends React.Component {
   render() {
     return (
       <>
-        <div id='listing-index-panel'>
+        <div id='listings-index-nav'>
           <Category />
           <LocationFilter />
           <Area />

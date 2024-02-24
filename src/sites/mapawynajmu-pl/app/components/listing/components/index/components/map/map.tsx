@@ -27,12 +27,12 @@ class AnnouncementIndexMap extends React.Component {
     } = this.props
 
     return (
-      <div id='listing-index-map'>
+      <div id='listings-index-results'>
+        <main>
+          {!(renderShow && isSSR) && <MiniList />}
+          {renderShow && <ListingsShow />}
+        </main>
         <div id='google-map-container'>
-          <main>
-            {!(renderShow && isSSR) && <MiniList />}
-            {renderShow && <ListingsShow />}
-          </main>
           <div id='google-map' />
         </div>
       </div>

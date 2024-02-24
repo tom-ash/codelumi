@@ -59,18 +59,16 @@ const App = () => {
   return (
     <>
       <Header />
-      <div className='flexed-content'>
-        <div className='stretched-content'>
-          {renderVisitor && <Visitor />}
-          {renderUser && <User />}
-          {renderPage && <Page />}
-          {renderImage && <Image />}
-          {assetsIndex && <AssetsIndex />}
-          {redirectsIndex && <RedirectsIndex />}
-          {renderListing && <Listing />}
-        </div>
-        <Footer />
+      <div id='content'>
+        {renderVisitor && <Visitor />}
+        {renderUser && <User />}
+        {renderPage && <Page />}
+        {renderImage && <Image />}
+        {assetsIndex && <AssetsIndex />}
+        {redirectsIndex && <RedirectsIndex />}
+        {renderListing && <Listing />}
       </div>
+      <Footer />
     </>
   )
 }
