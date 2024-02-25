@@ -20,18 +20,33 @@ class AnnouncementIndexSearch extends React.Component {
   render() {
     const { renderMap, renderMy } = this.props
 
-    return (
-      <section id='listing-index'>
-        {renderMap && (
-          <>
-            <AnnouncementIndexPanel />
-            <AnnouncementIndexMap />
-          </>
-        )}
+    if (renderMap) {
+      return (
+        <section id='visitor-listings-index'>
+          <AnnouncementIndexPanel />
+          <AnnouncementIndexMap />
+        </section>
+      )
+    }
 
-        {renderMy && <AnnouncementIndexMy />}
-      </section>
-    )
+    if (renderMy) {
+      return <AnnouncementIndexMy />
+    }
+
+    return null
+
+    // return (
+    //   <section id='visitor-listings-index'>
+    //     {renderMap && (
+    //       <>
+    //         <AnnouncementIndexPanel />
+    //         <AnnouncementIndexMap />
+    //       </>
+    //     )}
+
+    //     {renderMy && <AnnouncementIndexMy />}
+    //   </section>
+    // )
   }
 }
 

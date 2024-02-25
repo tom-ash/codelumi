@@ -48,7 +48,7 @@ class AnnouncementIndexMy extends React.Component {
     if (offset + 1 === amount) whichAnnouncements = `${offset + 1} ${{ pl: 'z', en: 'of' }['pl']}`
 
     return (
-      <div id='listing-index-user'>
+      <div id='user-listings-index'>
         <h1>
           <span>{{ pl: 'Moje ogłoszenia', en: 'My announcements' }['pl']}</span>
         </h1>
