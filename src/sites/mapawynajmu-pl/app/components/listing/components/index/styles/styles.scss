@@ -1,4 +1,4 @@
-@import '../../../../../styles/media-breakpoints';
+@import '../../../../../../../shared/app/styles/media-breakpoints';
 @import '../../../../../../../shared/app/styles/lined-heading';
 
 #listing-index {
@@ -13,6 +13,10 @@
   overflow: hidden;
   > h1 {
     @extend %lined-heading;
+  }
+  @media #{$MEDIUM-PC} {
+    margin-left: 24px;
+    margin-right: 24px;
   }
   @media #{$LARGE-TABLET} {
     max-height: none;

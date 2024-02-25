@@ -79,15 +79,6 @@
         }
       }
     }
-    @media #{$LARGE-TABLET} {
-      position: relative;
-      .gm-bundled-control {
-        display: none;
-      }
-      #google-map {
-        height: 400px;
-      }
-    }
   }
   @media #{$LARGE-TABLET} {
     position: relative;
@@ -124,6 +115,12 @@
     #google-map-container {
       position: relative;
       left: 0;
+      .gm-bundled-control {
+        display: none;
+      }
+      #google-map {
+        height: 400px;
+      }
     }
   }
 }
