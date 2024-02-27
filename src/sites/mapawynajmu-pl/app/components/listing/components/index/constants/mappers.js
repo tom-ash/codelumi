@@ -4,7 +4,7 @@ export const mapStateToProps = store => {
   const { lang, path, device } = app
   const { 'announcement/index/map': renderMap, 'announcement/index/user': renderMy } = render
   const { type, rebuildQueryParams } = control
-  const { announcements, amount, title, admin } = data
+  const { announcements, amount, title, admin, articles } = data
 
   const {
     location,
@@ -76,6 +76,7 @@ export const mapStateToProps = store => {
     priceMinInput,
     priceMax,
     priceMaxInput,
+    articles,
   }
 }
 

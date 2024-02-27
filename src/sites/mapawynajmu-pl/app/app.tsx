@@ -43,7 +43,6 @@ const App = () => {
     visitor: renderVisitor,
     announcement: renderListing,
     user: renderUser,
-    visitorPageIndex,
     redirectsIndex,
     assetsIndex,
   } = render
@@ -61,12 +60,12 @@ const App = () => {
       <Header />
       <div id='content'>
         {renderVisitor && <Visitor />}
+        {renderListing && <Listing />}
         {renderUser && <User />}
         {renderPage && <Page />}
         {renderImage && <Image />}
         {assetsIndex && <AssetsIndex />}
         {redirectsIndex && <RedirectsIndex />}
-        {renderListing && <Listing />}
       </div>
       <Footer />
     </>
