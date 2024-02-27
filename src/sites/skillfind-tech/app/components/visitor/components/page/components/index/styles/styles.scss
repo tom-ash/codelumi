@@ -37,6 +37,7 @@
     }
   }
   .skills {
+    @extend %splide;
     .splide__list {
       li {
         box-sizing: content-box;
@@ -55,6 +56,7 @@
     }
   }
   .articles {
+    @extend %splide;
     margin-top: 32px;
     .splide__list {
       li {

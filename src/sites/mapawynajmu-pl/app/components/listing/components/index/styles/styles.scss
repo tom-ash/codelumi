@@ -1,5 +1,6 @@
 @import '../../../../../../../shared/app/styles/media-breakpoints';
 @import '../../../../../../../shared/app/styles/lined-heading';
+@import '../../../../../../../shared/app/components/support/splide/styles/styles.scss';
 
 #visitor-listings-index {
   position: relative;
@@ -24,5 +25,58 @@
     margin: 0;
     border: none;
     border-radius: 0;
+  }
+}
+
+#visitor-articles-index {
+  @extend %splide;
+  max-width: 1440px;
+  margin: 128px auto;
+  .slider {
+    margin: 0 3rem;
+  }
+  .link {
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 0 1rem;
+  }
+  img {
+    aspect-ratio: 16/9;
+  }
+  .splide__arrow {
+    scale: 1.5;
+    &--prev {
+      left: -3rem;
+      transform-origin: left;
+    }
+    &--next {
+      right: -3rem;
+      transform-origin: right;
+    }
+  }
+  .title {
+    padding: 20px;
+    background: white;
+    line-height: 1.5;
+    height: 96px;
+  }
+  .splide__list {
+    li {
+      box-sizing: content-box;
+    }
+  }
+  @media #{$LARGE-TABLET} {
+    .slider {
+      margin: 0 1rem;
+    }
+    .splide__arrow {
+      scale: 1.7;
+      &--prev {
+        left: 0;
+      }
+      &--next {
+        right: 0;
+      }
+    }
   }
 }
