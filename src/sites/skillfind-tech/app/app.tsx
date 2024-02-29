@@ -57,7 +57,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <div className='stretched-content'>
+      <div id='content'>
         {renderPostingIndex && <PostingIndex />}
         {renderPage && <Page />}
         {renderVisitor && <Visitor />}

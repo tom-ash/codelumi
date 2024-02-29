@@ -17,13 +17,16 @@ $PRE-MARGIN: 18px;
   background: none;
   overflow: hidden;
   line-height: 26px;
-  font-size: 16px;
+  font-size: 18px;
   color: rgb(42, 42, 42);
   background: white;
-  border-radius: 4px;
+  border-radius: 12px;
   width: 100%;
   line-height: 1.5;
   padding: 0 0 $DESKTOP-MARGIN 0;
+
+  border: 1px solid $LIGHT_THEME_CONTAINER_BORDER_COLOR;
+
   > section {
     margin-top: 64px;
     &:first-of-type {

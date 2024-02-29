@@ -3,7 +3,7 @@
 
 %page {
   #pages-show {
-    margin-top: 128px;
+    margin-top: 20px;
     @media #{$LARGE-PHONE} {
       width: 100%;
       margin-top: 74px;
@@ -16,9 +16,9 @@
       padding: 0 24px;
     }
   }
-  > main {
+  main {
     margin: 18px auto 0;
-    max-width: 768px;
+    max-width: 840px;
     article {
       @extend %article;
     }
@@ -41,7 +41,7 @@
       position: relative;
       width: 20px;
       height: 20px;
-      fill: #f2f3f4;
+      // fill: #f2f3f4;
     }
   }
   .index {

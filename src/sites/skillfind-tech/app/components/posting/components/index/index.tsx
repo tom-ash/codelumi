@@ -10,7 +10,7 @@ const PostingIndex = () => {
   const { postings } = useData()
 
   return (
-    <div id='posting-index'>
+    <div id='postings-index'>
       {postings.map((posting: any) => (
         <PostingIndexTile {...posting} />
       ))}

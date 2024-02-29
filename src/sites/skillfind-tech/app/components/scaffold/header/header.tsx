@@ -22,12 +22,14 @@ const Header: HeaderInterface = props => {
 
   return (
     <header id='header'>
-      <Logo />
-      <LangSwitch />
-      {!authorized && !isMobile && <SignUpLink />}
-      {!authorized && !isMobile && <SignInLink />}
-      {authorized && !isMobile && <SignOutButton />}
-      <FloatClear />
+      <div className='inner'>
+        <Logo />
+        <LangSwitch />
+        {!authorized && !isMobile && <SignUpLink />}
+        {!authorized && !isMobile && <SignInLink />}
+        {authorized && !isMobile && <SignOutButton />}
+        <FloatClear />
+      </div>
     </header>
   )
 }

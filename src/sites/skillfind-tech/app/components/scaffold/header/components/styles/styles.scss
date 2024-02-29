@@ -1,13 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 
 .logo {
-  position: relative;
-  float: left;
-  margin-top: 0;
   font-size: 14px;
   font-family: 'IBM Plex Mono', monospace;
-  color: #fef9e7;
-  padding-left: 32px;
+  color: black;
   a {
     display: flex;
     justify-content: center;
@@ -18,15 +14,7 @@
     padding-left: 80px;
     font-size: 128px;
     .tech {
-      color: rgb(118, 249, 80);
+      color: black;
     }
   }
-}
-
-#header {
-  // .logo {
-  //   transform: scale(.1);
-  //   transform-origin: top left;
-  //   top: 10px;
-  // }
 }

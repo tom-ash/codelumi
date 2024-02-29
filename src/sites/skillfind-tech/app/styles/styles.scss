@@ -1,6 +1,9 @@
 @import '../components/page/styles/styles';
-@import '../components/page/styles/styles';
 @import '../../../shared/app/components/page/styles/breadcrumbs.scss';
+
+@import './dimensions.scss';
+@import './colors.scss';
+@import '../components/page/styles/styles.scss';
 
 *,
 *::before,
@@ -18,19 +21,18 @@ body {
 }
 
 #app {
-  background: rgb(42, 42, 42);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  @extend %page;
+  background: $LIGHT_THEME_APP_BACKGROUND_COLOR;
+  padding-top: $DESKTOP_HEADER_HEIGHT;
 }
 
-.stretched-content {
-  position: relative;
-  align-self: stretch;
-  flex-grow: 1;
-  width: 100%;
+#content {
+  @extend %page;
+  min-height: 100vh;
+  max-width: 1440px;
+  margin: 0 auto;
 }
+
+// TODO: Move from here.
 
 a {
   display: inline-block;
@@ -41,24 +43,21 @@ a {
 
 .breadcrumbs {
   @extend %breadcrumbs;
-  max-width: 768px;
-  color: #f2f3f4;
+  max-width: 840px;
   font-variant-caps: all-small-caps;
   width: 100%;
   text-align: left;
-  font-size: 18px;
+  font-size: 20px;
   padding-left: 4px;
   li {
     font-weight: bold;
   }
-
   position: relative;
-
   svg {
     position: relative;
-    fill: white;
+    // fill: white;
     top: 1px;
-    height: 11px;
+    height: 13px;
   }
 }
 
