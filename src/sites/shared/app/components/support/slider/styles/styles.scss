@@ -1,0 +1,5 @@
+@import '../../splide/styles/styles.scss';
+
+.slider {
+  @extend %splide;
+}

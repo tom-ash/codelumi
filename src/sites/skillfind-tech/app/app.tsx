@@ -22,11 +22,13 @@ import { setConsents } from '../../shared/app/functions/consents/set-consents'
 import { useApp } from '../../shared/app/functions/store/use-app'
 import { useRender } from '../../shared/app/functions/store/use-render'
 import { useDispatch } from 'react-redux'
+import { useScreenSizeHandler } from '../../mapawynajmu-pl/app/functions/use-screen-size-handler'
 
 const App = () => {
   useStyles(styles)
 
   useStateToRouteMatcher()
+  useScreenSizeHandler()
 
   const { lang } = useApp()
   const render = useRender()

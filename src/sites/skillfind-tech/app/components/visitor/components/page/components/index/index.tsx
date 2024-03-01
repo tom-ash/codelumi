@@ -10,76 +10,52 @@ import { useData } from '../../../../../../../../shared/app/functions/store/use-
 import { useApp } from '../../../../../../../../shared/app/functions/store/use-app'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { SkillTile } from './components/skill-tile/skill-tile'
+import { Slider } from '../../../../../../../../shared/app/components/support/slider/slider'
+import { ArticleTile } from './components/article-tile/article-tile'
 
 const VisitorPageIndex = () => {
   useStyles(styles)
 
   const { skillsHeading, featuredArticlesHeading } = useTexts()
   const { pages, articles } = useData()
-  const { isMobile } = useApp()
+
+  const skillsSliderDeviceConfig = {
+    largePc: { perPage: 4, gap: 40, type: 'loop' },
+    mediumPc: { perPage: 4, gap: 40, type: 'loop', padding: 50 },
+    smallPc: { perPage: 3, gap: 40, type: 'loop', padding: 60 },
+    largeTablet: { perPage: 2, gap: 40, type: 'loop', padding: 60 },
+    smallTablet: { perPage: 2, gap: 40, type: 'loop', padding: 60 },
+    largePhone: { perPage: 1, gap: 30, type: 'loop', padding: 60 },
+    smallPhone: { perPage: 1, gap: 30, type: 'loop', padding: 60 },
+  }
+
+  const articlesSliderDeviceConfig = {
+    largePc: { perPage: 3, gap: 40, type: 'loop' },
+    mediumPc: { perPage: 3, gap: 40, type: 'loop', padding: 50 },
+    smallPc: { perPage: 2, gap: 40, type: 'loop', padding: 60 },
+    largeTablet: { perPage: 2, gap: 40, type: 'loop', padding: 60 },
+    smallTablet: { perPage: 1, gap: 40, type: 'loop', padding: 60 },
+    largePhone: { perPage: 1, gap: 20, type: 'loop', padding: 50 },
+    smallPhone: { perPage: 1, gap: 20, type: 'loop', padding: 50 },
+  }
 
   return (
     <div id='visitor-page-index'>
       <div className='skills'>
         <HeadingTwo text={skillsHeading} />
-        <div>
-          <Splide
-            options={{
-              drag: 'free',
-              perPage: isMobile ? 2 : 4,
-              // autoWidth: false,
-            }}
-          >
-            {pages.map((page: any) => (
-              <SplideSlide>
-                <SkillTile {...page} />
-              </SplideSlide>
-            ))}
-          </Splide>
-        </div>
+        <Slider
+          slides={pages}
+          Slide={SkillTile}
+          deviceConfig={skillsSliderDeviceConfig}
+        />
       </div>
-
       <div className='articles'>
         <HeadingTwo text={featuredArticlesHeading} />
-
-        <div>
-          <Splide
-            options={{
-              drag: 'free',
-              perPage: isMobile ? 1 : 3,
-              // autoWidth: false,
-            }}
-          >
-            {articles.map((article: any) => {
-              const { image, title, href, hrefLang } = article
-
-              const label = (
-                <>
-                  <div className='cover'>
-                    <Image
-                      src={image}
-                      alt={title}
-                    />
-                  </div>
-                  <div className='title'>{title}</div>
-                </>
-              )
-
-              const linkProps = {
-                label,
-                href,
-                hrefLang,
-                customClassNames: 'article',
-              }
-
-              return (
-                <SplideSlide>
-                  <Link {...linkProps} />
-                </SplideSlide>
-              )
-            })}
-          </Splide>
-        </div>
+        <Slider
+          slides={articles}
+          Slide={ArticleTile}
+          deviceConfig={articlesSliderDeviceConfig}
+        />
       </div>
     </div>
   )
