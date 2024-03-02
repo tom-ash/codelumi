@@ -1,5 +1,13 @@
 import scrollToTop from '../../screen/scrollers/to-top'
 
+export interface ChangeUrl {
+  (attrs: {
+    href: string
+    withScroll?: boolean
+    retainQueryParams?: boolean
+  }): void
+}
+
 // @ts-ignore
 export const changeUrl = ({ href, withScroll = true, retainQueryParams = false }) => {
   if (href.match(/^http/)) {

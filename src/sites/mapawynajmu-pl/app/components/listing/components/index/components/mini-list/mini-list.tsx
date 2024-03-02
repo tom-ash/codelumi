@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import { useApp } from '../../../../../../../../shared/app/functions/store/use-app'
 import { useData } from '../../../../../../../../shared/app/functions/store/use-data'
 import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
+import { ListingsIndexTile } from './listings-index-tile/listings-index-tile'
 
 interface Picture {
   database: string
@@ -28,6 +29,16 @@ export interface ListingBase {
   isPromoted: boolean
 }
 
+// const articlesSliderDeviceConfig = {
+//   largePc: { perPage: 3, gap: 40, type: 'loop' },
+//   mediumPc: { perPage: 3, gap: 40, type: 'loop', padding: 50 },
+//   smallPc: { perPage: 2, gap: 40, type: 'loop', padding: 60 },
+//   largeTablet: { perPage: 2, gap: 40, type: 'loop', padding: 60 },
+//   smallTablet: { perPage: 1, gap: 40, type: 'loop', padding: 60 },
+//   largePhone: { perPage: 1, gap: 20, type: 'loop', padding: 50 },
+//   smallPhone: { perPage: 1, gap: 20, type: 'loop', padding: 50 },
+// }
+
 export const MiniList = () => {
   const dispatch = useDispatch()
   const setControl = (value: any) => dispatch({ type: 'control', value })
@@ -40,66 +51,17 @@ export const MiniList = () => {
       {/* <h1>{title}</h1> */}
       {currentPartnerName && <h2>{currentPartnerName}</h2>}
       {listings.map((listing: ListingBase) => {
-        const {
-          id,
-          category,
-          href,
-          title,
-          name,
-          pictures,
-          latitude,
-          longitude,
-          locality,
-          sublocality,
-          area,
-          netRentAmount,
-          grossRentAmount,
-          rentCurrency,
-          isPromoted,
-        } = listing
-
-        const isCommercial = [0, 1, 6, 7, 8].indexOf(category) !== -1
-        const rentAmount = isCommercial ? netRentAmount : grossRentAmount
-
-        const onClick = (e: React.SyntheticEvent) => {
-          e.preventDefault()
-
-          changeUrl({ href, retainQueryParams: true, withScroll: false })
-        }
-
-        const tileProps = {
-          key: href,
-          id,
-          category,
-          href,
-          title,
-          name,
-          pictures,
-          latitude,
-          longitude,
-          locality,
-          sublocality,
-          area,
-          rentAmount,
-          rentCurrency,
-          isPromoted,
-          disableSlides: true,
-          lang,
-          onClick,
-          onMouseOver: () => changeHoveredTileId(id),
-          onMouseLeave: () => changeHoveredTileId(null),
-        }
-
         return (
-          <ListingIndexTile {...tileProps}>
-            {isMobile && (
-              <ShowOnMapButton
-                latitude={latitude}
-                longitude={longitude}
-                setControl={setControl}
-              />
-            )}
-          </ListingIndexTile>
+          <ListingsIndexTile
+            {...{
+              ...listing,
+              lang,
+              changeUrl,
+              changeHoveredTileId,
+              isMobile,
+              setControl,
+            }}
+          />
         )
       })}
     </div>
