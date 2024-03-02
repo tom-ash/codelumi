@@ -1,24 +1,16 @@
 import React from 'react'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { useApp } from '../../../functions/store/use-app'
-// import { ResponsiveOptions } from 'slide'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
-
-enum Device {
-  LARGE_PC = 'largePc',
-  SMALL_PC = 'smallPc',
-  LARGE_TABLET = 'largeTablet',
-  SMALL_TABLET = 'smallTablet',
-  LARGE_PHONE = 'largePhone',
-  SMALL_PHONE = 'smallPhone',
-}
+import { Device } from '../../../../../skillfind-tech/app/types/device.enum'
 
 interface DeviceConfigItem {
   perPage: number,
   gap: number | string,
   type?: string, //'slide' | 'loop' | 'fade',
   padding?: number | string,
+  pagination?: boolean
 }
 
 interface DeviceConfig {
@@ -34,6 +26,7 @@ interface SliderProps {
   slides: any[],
   Slide(props: any): React.ReactElement,
   deviceConfig: DeviceConfig,
+  commonProps?: object
 }
 
 interface SliderInterface {
@@ -43,10 +36,10 @@ interface SliderInterface {
 export const Slider: SliderInterface = props => {
   useStyles(styles)
 
-  const { slides, Slide, deviceConfig } = props
+  const { slides, Slide, deviceConfig, commonProps } = props
   const app = useApp()
   const device = app.device as Device
-  const { perPage, gap, type, padding } = deviceConfig[device]
+  const { perPage, gap, type, padding, pagination } = deviceConfig[device]
   
   return (
     <div className='slider'>
@@ -56,11 +49,12 @@ export const Slider: SliderInterface = props => {
           perPage,
           type,
           padding,
+          pagination,
         }}
       >
         {slides.map((slide: any) => (
           <SplideSlide>
-            <Slide {...slide} />
+            <Slide {...{...commonProps, ...slide}} />
           </SplideSlide>
         ))}
       </Splide>
