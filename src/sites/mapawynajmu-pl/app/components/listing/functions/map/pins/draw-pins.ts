@@ -30,6 +30,8 @@ const drawPins: DrawPins = attrs => {
     const svg = svgs[pin.svg]
     const classNames = ['pin', 'icon']
 
+    console.log('currentListingId', currentListingId)
+
     if (+currentListingId === +announcement.id) {
       classNames.push('current')
     }

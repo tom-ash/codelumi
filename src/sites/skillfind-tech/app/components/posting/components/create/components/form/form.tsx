@@ -25,9 +25,6 @@ const AnnouncementCreateForm = () => {
 
         <TypedTextInput
           inputKey='businessName'
-          onBlur={() => {
-            console.log("1234132131231")
-          }}
           error='asdasd'
         />
 

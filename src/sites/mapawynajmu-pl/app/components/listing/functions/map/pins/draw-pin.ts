@@ -28,7 +28,7 @@ function drawPin(props: DrawPinProps) {
       onClick: (e: React.MouseEvent<HTMLElement>) => {
         e.preventDefault()
 
-        setControl({ currentTileId: id })
+        // setControl({ currentTileId: id })
         changeUrl({ href, retainQueryParams: true, withScroll: false })
       },
     }

@@ -1,8 +1,9 @@
 import React from 'react'
-import Map from './components/map/map'
+// import Map from './components/map/map'
 import { useRender } from '../../../../../functions/store/use-render'
 import { useControl } from '../../../../../functions/store/use-control'
 import { List } from './components/list/list'
+import { Map } from './components/map/map'
 
 interface ResultsInterface {
   (props: {

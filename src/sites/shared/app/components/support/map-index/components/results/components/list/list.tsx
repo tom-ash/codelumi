@@ -60,6 +60,9 @@ export const List: ListInterface = (props) => {
   const { lang, device, isMobile } = useApp()
   const { currentPartnerName, announcements: listings, title, } = useData()
   const changeHoveredTileId = (hoveredTileId: number | null) => setControl({ hoveredTileId })
+
+  const changeUnhoveredTileId = (unhoveredTileId: number | null) => setControl({ unhoveredTileId })
+
   const listType = listingsDeviceConfig[device as Device]
   const { ListItem } = props
 
@@ -67,6 +70,7 @@ export const List: ListInterface = (props) => {
     lang,
     changeUrl,
     changeHoveredTileId,
+    changeUnhoveredTileId,
     isMobile,
     setControl,
   }

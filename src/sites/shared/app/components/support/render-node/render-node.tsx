@@ -328,8 +328,6 @@ export const RenderNode = (props: RenderNodeProps) => {
       // @ts-ignore
       const { scale } = node.MapawynajmuPlExtendedLogo
 
-      console.log(node)
-
       return <MapawynajmuPlExtendedLogo scale={scale} />
     }
 
