@@ -3,7 +3,6 @@ import loadable from '@loadable/component'
 import { connect } from 'react-redux'
 import { mapStateToProps, mapDispatchToProps } from './constants/mappers'
 import AnnouncementIndexPanel from './components/panel/panel'
-import AnnouncementIndexMap from './components/map/map'
 const AnnouncementIndexMy = loadable(() => import('./components/my/my'))
 import { parseCurrency } from '../../functions/currency-parsers'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
@@ -11,6 +10,10 @@ import styles from './styles/styles.scss'
 import { componentDidUpdate } from './functions/lifecycle'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { Link } from '../../../../../../shared/app/components/support/link/link'
+import { MapIndex } from '../../../../../../shared/app/components/support/map-index/map-index'
+import { ListingsIndexTile } from './components/listings-index-tile/listings-index-tile'
+
+const ListingsShow = loadable(() => import('../show/show'))
 
 class AnnouncementIndexSearch extends React.Component {
   constructor(props) {
@@ -50,10 +53,11 @@ class AnnouncementIndexSearch extends React.Component {
     if (renderMap) {
       return (
         <>
-          <section id='visitor-listings-index'>
-            <AnnouncementIndexPanel />
-            <AnnouncementIndexMap />
-          </section>
+          <MapIndex
+            Panel={AnnouncementIndexPanel}
+            ListItem={ListingsIndexTile}
+            ShowItem={ListingsShow}
+          />
 
           <section id='visitor-articles-index'>
             <div className='slider'>

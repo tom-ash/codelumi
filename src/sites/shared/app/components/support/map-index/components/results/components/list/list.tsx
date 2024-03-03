@@ -1,13 +1,10 @@
 import React from 'react'
-import { ListingIndexTile } from '../tile/tile'
-import { ShowOnMapButton } from '../tile/show-on-map/show-on-map.button'
 import { useDispatch } from 'react-redux'
-import { useApp } from '../../../../../../../../shared/app/functions/store/use-app'
-import { useData } from '../../../../../../../../shared/app/functions/store/use-data'
-import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
-import { ListingsIndexTile } from './listings-index-tile/listings-index-tile'
-import { Device } from '../../../../../../../../skillfind-tech/app/types/device.enum'
-import { Slider } from '../../../../../../../../shared/app/components/support/slider/slider'
+import { useApp } from '../../../../../../../functions/store/use-app'
+import { useData } from '../../../../../../../functions/store/use-data'
+import { changeUrl } from '../../../../../../../functions/routes/changers/change-url'
+import { Device } from '../../../../../../../../../skillfind-tech/app/types/device.enum'
+import { Slider } from '../../../../../slider/slider'
 
 interface Picture {
   database: string
@@ -51,13 +48,20 @@ const listingsSliderDeviceConfig = {
   smallPhone: { perPage: 1, gap: 20, padding: 60, pagination: false },
 }
 
-export const MiniList = () => {
+interface ListInterface {
+  (props: {
+    ListItem(props: any): React.ReactElement
+  }): React.ReactElement
+}
+
+export const List: ListInterface = (props) => {
   const dispatch = useDispatch()
   const setControl = (value: any) => dispatch({ type: 'control', value })
   const { lang, device, isMobile } = useApp()
   const { currentPartnerName, announcements: listings, title, } = useData()
   const changeHoveredTileId = (hoveredTileId: number | null) => setControl({ hoveredTileId })
   const listType = listingsDeviceConfig[device as Device]
+  const { ListItem } = props
 
   const commonProps = {
     lang,
@@ -69,13 +73,13 @@ export const MiniList = () => {
 
   return (
     <div id='mini-list' className={listType}>
-      {/* <h1>{title}</h1> */}
       {currentPartnerName && <h2>{currentPartnerName}</h2>}
       {listType === 'scroll' && (
         <>
           {listings.map((listing: ListingBase) => {
+            // TODO: Use ul.
             return (
-              <ListingsIndexTile
+              <ListItem
                 {...{
                   ...commonProps,
                   ...listing,
@@ -89,7 +93,7 @@ export const MiniList = () => {
         <>
           <Slider
             slides={listings}
-            Slide={ListingsIndexTile}
+            Slide={ListItem}
             deviceConfig={listingsSliderDeviceConfig}
             commonProps={commonProps}
           />

@@ -1,7 +1,7 @@
 import React from 'react'
-import { ListingIndexTile } from '../../tile/tile'
-import { ShowOnMapButton } from '../../tile/show-on-map/show-on-map.button'
-import { ChangeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/change-url'
+import { ListingIndexTile } from '../tile/tile'
+import { ShowOnMapButton } from '../tile/show-on-map/show-on-map.button'
+import { ChangeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
 
 interface Picture {
   database: string

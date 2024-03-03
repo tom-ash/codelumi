@@ -1,6 +1,6 @@
 import React from 'react'
 import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
-import centerMap from '../../../../index/components/map/functions/center-map'
+import centerMap from '../../../../../../../../../shared/app/components/support/map-index/components/results/components/map/functions/center-map'
 import { useDispatch } from 'react-redux'
 import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/change-url'
 

@@ -1,7 +1,7 @@
-import removePins from '../../../../../functions/map/pins/remove-pins'
-import initializeMap from '../../../../../functions/map/initialize'
+import removePins from '../../../../../../../../../../mapawynajmu-pl/app/components/listing/functions/map/pins/remove-pins'
+import initializeMap from '../../../../../../../../../../mapawynajmu-pl/app/components/listing/functions/map/initialize'
 import { getDefaultMapOptions } from './get-default-map-options'
-import drawPins from '../../../../../functions/map/pins/draw-pins'
+import drawPins from '../../../../../../../../../../mapawynajmu-pl/app/components/listing/functions/map/pins/draw-pins'
 
 export function componentDidMount() {
   const {
