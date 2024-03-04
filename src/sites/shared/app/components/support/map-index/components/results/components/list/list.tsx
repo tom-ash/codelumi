@@ -50,7 +50,8 @@ const listingsSliderDeviceConfig = {
 
 interface ListInterface {
   (props: {
-    ListItem(props: any): React.ReactElement
+    ListItem(props: any): React.ReactElement;
+    renderShow: boolean;
   }): React.ReactElement
 }
 
@@ -64,7 +65,13 @@ export const List: ListInterface = (props) => {
   const changeUnhoveredTileId = (unhoveredTileId: number | null) => setControl({ unhoveredTileId })
 
   const listType = listingsDeviceConfig[device as Device]
-  const { ListItem } = props
+  const { ListItem, renderShow } = props
+
+  const classNames = [listType]
+
+  if (renderShow) {
+    classNames.push('render-show')
+  }
 
   const commonProps = {
     lang,
@@ -76,7 +83,7 @@ export const List: ListInterface = (props) => {
   }
 
   return (
-    <div id='mini-list' className={listType}>
+    <div id='mini-list' className={classNames.join(' ')}>
       {currentPartnerName && <h2>{currentPartnerName}</h2>}
       {listType === 'scroll' && (
         <>

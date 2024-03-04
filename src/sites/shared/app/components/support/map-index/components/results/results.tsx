@@ -25,7 +25,7 @@ export const Results: ResultsInterface = props => {
     <section className='results'>
       <main>
         {!(renderShow && isSSR) && (
-          <List ListItem={ListItem} />
+          <List ListItem={ListItem} renderShow={renderShow} />
         )}
         {renderShow && <ShowItem />}
       </main>

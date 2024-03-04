@@ -28,10 +28,13 @@
   @media #{$LARGE-TABLET} {
     position: fixed;
     z-index: 1000;
-    top: 84px;
-    right: 26px;
+    top: auto;
+    bottom: 26px;
+    right: 0;
+    left: 0;
     width: 44px;
     height: 44px;
-    margin: 0;
+    margin: 0 auto;
+    scale: 1.5;
   }
 }
