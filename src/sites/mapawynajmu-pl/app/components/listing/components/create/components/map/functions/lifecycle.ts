@@ -1,7 +1,7 @@
 import { addGoogleMapListeners } from './add-google-map-listeners'
 import { removeGoogleMapListeners } from './remove-google-map-listeners'
 import setShouldInitializeMap from '../../../../../functions/map/set-should-initialize'
-import initializeMap from '../../../../../functions/map/initialize'
+import { initializeMap } from '../../../../../functions/map/initialize'
 import drawPin from './draw-pin'
 import { removePins } from '../../../../../functions/map/pins/remove-pins'
 

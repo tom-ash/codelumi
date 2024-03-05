@@ -7,6 +7,7 @@ import { AddressInput } from './components/address-input/address-input'
 import addPin from './functions/add-pin'
 import { Heading } from '../../../../../support/components/heading'
 import Info from '../../../../../../../../shared/app/components/support/info'
+import { GoogleMap } from '../../../../../../../../shared/app/components/support/google-map/google-map'
 
 const HEADING = {
   pl: 'Lokalizacja (wymagana)',
@@ -74,15 +75,7 @@ class AnnouncementCreatMap extends React.Component {
             </div>
           )}
         </div>
-        <div
-          id='google-map-container'
-          className='map'
-        >
-          <div
-            id='google-map'
-            className={this.props.error.pl ? 'map-error' : ''}
-          />
-        </div>
+        <GoogleMap />
         <div className='error'>{this.props.error && this.props.error['pl']}</div>
       </div>
     )

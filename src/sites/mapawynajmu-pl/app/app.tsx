@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { useFonts } from './functions/use-fonts'
-import { useGoogleMaps } from './functions/use-google-maps'
 import { useScreenSizeHandler } from './functions/use-screen-size-handler'
 import { useStateToRouteMatcher } from './functions/use-state-to-route-matcher'
 import loadable from '@loadable/component'
@@ -48,7 +47,6 @@ const App = () => {
   } = render
 
   useFonts()
-  useGoogleMaps()
   useScreenSizeHandler()
   useStateToRouteMatcher()
 

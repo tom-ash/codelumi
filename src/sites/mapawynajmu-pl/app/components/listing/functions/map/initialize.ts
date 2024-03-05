@@ -7,7 +7,7 @@ interface InitializeMapProps {
   isMobile: boolean
 }
 
-function initializeMap(props: InitializeMapProps) {
+export const initializeMap = (props: InitializeMapProps) => {
   const { mapOptions, isMobile } = props
 
   // @ts-ignore
@@ -37,5 +37,3 @@ function initializeMap(props: InitializeMapProps) {
     window.sessionToken = new google.maps.places.AutocompleteSessionToken()
   }
 }
-
-export default initializeMap

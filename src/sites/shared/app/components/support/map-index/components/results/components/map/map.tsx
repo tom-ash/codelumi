@@ -3,9 +3,7 @@ import { useDispatch, useStore } from 'react-redux'
 import { GoogleMap } from '../../../../../google-map/google-map'
 import { useApp } from '../../../../../../../functions/store/use-app'
 import { useControl } from '../../../../../../../functions/store/use-control'
-import initializeMap from '../../../../../../../../../mapawynajmu-pl/app/components/listing/functions/map/initialize'
 import drawPins from '../../../../../../../../../mapawynajmu-pl/app/components/listing/functions/map/pins/draw-pins'
-import removePins from '../../../../../../../../../mapawynajmu-pl/app/components/listing/functions/map/pins/remove-pins'
 import { useData } from '../../../../../../../functions/store/use-data'
 
 interface MapInterface {
@@ -15,7 +13,6 @@ interface MapInterface {
 export const Map: MapInterface = () => {
   const dispatch = useDispatch()
   const {
-    scripts: { googleMaps: googleMapsScriptLoaded },
     isMobile,
     isMapInitialized,
   } = useApp()
@@ -27,7 +24,6 @@ export const Map: MapInterface = () => {
     unhoveredTileId,
   } = useControl()
 
-  const setApp = (value: any) => dispatch({ type: 'app', value })
   const setControl = (value: any) => dispatch({ type: 'control', value })
   const setData = (value: any) => dispatch({ type: 'data', value })
   const {
@@ -38,26 +34,6 @@ export const Map: MapInterface = () => {
     // @ts-ignore
     assets: { svgs }
   } = useStore().getState()
-
-  useEffect(() => {
-    if (googleMapsScriptLoaded) {
-      initializeMap({
-        mapOptions,
-        isMobile,
-      })
-
-      setApp({ isMapInitialized: true })
-    }
-
-    return () => {
-      // @ts-ignore
-      const pins = window.pins
-
-      if (pins) {
-        removePins(pins)
-      }
-    }
-  }, [googleMapsScriptLoaded])
 
   useEffect(() => {
     if (isMapInitialized && !isPinsDrawn) {
