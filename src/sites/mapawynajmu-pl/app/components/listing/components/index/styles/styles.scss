@@ -1,7 +1,6 @@
 @import '../../../../../../../shared/app/styles/media-breakpoints';
 @import '../../../../../../../shared/app/styles/lined-heading';
 @import '../../../../../../../shared/app/components/support/splide/styles/styles.scss';
-
 @import '../../../../../styles/themes.scss';
 @import '../../../../../styles/media-breakpoints';
 @import '../../../../../styles/z-index';
@@ -47,7 +46,7 @@
       bottom: 0;
       left: 0;
       width: 640px;
-      #mini-list {
+      #list {
         background: #e5e7e9;
         .listing-index-tile {
           @extend %listing-index-tile;

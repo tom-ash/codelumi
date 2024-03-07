@@ -12,6 +12,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { Link } from '../../../../../../shared/app/components/support/link/link'
 import { MapIndex } from '../../../../../../shared/app/components/support/map-index/map-index'
 import { ListingsIndexTile } from './components/listings-index-tile/listings-index-tile'
+import { pinBuilder } from './functions/pin-builder'
 
 const ListingsShow = loadable(() => import('../show/show'))
 
@@ -23,7 +24,7 @@ class AnnouncementIndexSearch extends React.Component {
   }
 
   render() {
-    const { renderMap, renderMy, articles, device } = this.props
+    const { renderMap, renderMy, articles, device, announcements } = this.props
 
     // TODO: Find better solution.
     let perPage = 3
@@ -57,6 +58,8 @@ class AnnouncementIndexSearch extends React.Component {
             Panel={AnnouncementIndexPanel}
             ListItem={ListingsIndexTile}
             ShowItem={ListingsShow}
+            items={announcements}
+            pinBuilder={pinBuilder}
           />
 
           <section id='visitor-articles-index'>

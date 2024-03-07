@@ -1,12 +1,19 @@
 import React from 'react'
 import { Results } from './components/results/results';
+import { ItemShowInterface } from './types/item-show.interface';
+import { ItemIndexInterface } from './types/item-index.interface';
+import { PanelInterface } from './types/panel.interface';
+import { Item } from './types/item.interface';
+import { PinBuilder } from './types/pin-builder.interface';
 
 interface MapIndexInterface {
   (props: {
-    Panel(): React.ReactElement;
-    ListItem(): React.ReactElement
-    ShowItem(): React.ReactElement
-  }): React.ReactElement
+    Panel: PanelInterface;
+    ListItem: ItemIndexInterface;
+    ShowItem: ItemShowInterface;
+    pinBuilder: PinBuilder;
+    items: Item[];
+  }): React.ReactElement;
 }
 
 export const MapIndex: MapIndexInterface = props => {
@@ -14,7 +21,9 @@ export const MapIndex: MapIndexInterface = props => {
     Panel,
     ListItem,
     ShowItem,
-  } = props
+    items,
+    pinBuilder,
+  } = props;
 
   return (
     <section id='map-index'>
@@ -22,6 +31,8 @@ export const MapIndex: MapIndexInterface = props => {
       <Results
         ListItem={ListItem}
         ShowItem={ShowItem}
+        items={items}
+        pinBuilder={pinBuilder}
       />
     </section>
   )

@@ -1,19 +1,16 @@
 import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/change-url'
 
 interface DrawPinProps {
+  id: number
   latitude: number
   longitude: number
-  id: number
   htmlContent: string
   className: string
   href: string
-  setControl(props: object): void
-  setData(props: object): void
-  isMobile: boolean
 }
 
 function drawPin(props: DrawPinProps) {
-  const { latitude, longitude, id, htmlContent, className, href, setControl } = props
+  const { id, latitude, longitude, htmlContent, className, href } = props
 
   // @ts-ignore
   return new window.pinCreator(
@@ -28,7 +25,6 @@ function drawPin(props: DrawPinProps) {
       onClick: (e: React.MouseEvent<HTMLElement>) => {
         e.preventDefault()
 
-        // setControl({ currentTileId: id })
         changeUrl({ href, retainQueryParams: true, withScroll: false })
       },
     }

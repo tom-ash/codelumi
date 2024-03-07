@@ -14,11 +14,6 @@ type MapOptionsProviderProps = {
 }
 
 const DEFAULT_OPTIONS = {
-  center: {
-    lat: 52,
-    lng: 19,
-  },
-  zoom: 6.7,
   fullscreenControl: false,
   clickableIcons: false,
   zoomControl: false,

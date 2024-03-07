@@ -3,31 +3,32 @@ import { useDispatch, useStore } from 'react-redux'
 import { GoogleMap } from '../../../../../google-map/google-map'
 import { useApp } from '../../../../../../../functions/store/use-app'
 import { useControl } from '../../../../../../../functions/store/use-control'
-import drawPins from '../../../../../../../../../mapawynajmu-pl/app/components/listing/functions/map/pins/draw-pins'
+import { drawPins } from '../../../../../../../../../mapawynajmu-pl/app/components/listing/functions/map/pins/draw-pins'
 import { useData } from '../../../../../../../functions/store/use-data'
+import { Item } from '../../../../types/item.interface'
+import { PinBuilder } from '../../../../types/pin-builder.interface'
 
 interface MapInterface {
-  (): React.ReactElement
+  (props: {
+    items: Item[];
+    pinBuilder: PinBuilder;
+  }): React.ReactElement
 }
 
-export const Map: MapInterface = () => {
-  const dispatch = useDispatch()
+export const Map: MapInterface = (props) => {
+  const { items, pinBuilder } = props
+
   const {
     isMobile,
     isMapInitialized,
   } = useApp()
-
   const {
     mapOptions,
     isPinsDrawn,
     hoveredTileId,
     unhoveredTileId,
   } = useControl()
-
-  const setControl = (value: any) => dispatch({ type: 'control', value })
-  const setData = (value: any) => dispatch({ type: 'data', value })
   const {
-    announcements,
     currentListingId,
   } = useData()
   const {
@@ -35,15 +36,17 @@ export const Map: MapInterface = () => {
     assets: { svgs }
   } = useStore().getState()
 
+  const dispatch = useDispatch()
+  const setControl = (value: any) => dispatch({ type: 'control', value })
+  const setData = (value: any) => dispatch({ type: 'data', value })
+
   useEffect(() => {
     if (isMapInitialized && !isPinsDrawn) {
       drawPins({
-        isMobile,
-        listings: announcements,
+        items,
         currentListingId,
         svgs,
-        setData,
-        setControl,
+        pinBuilder,
       })
 
       setTimeout(() => {

@@ -54,7 +54,10 @@ export const Slider: SliderInterface = props => {
       >
         {slides.map((slide: any) => (
           <SplideSlide>
-            <Slide {...{...commonProps, ...slide}} />
+            <Slide
+              ley={slide.id}
+              {...{...commonProps, ...slide}}
+            />
           </SplideSlide>
         ))}
       </Splide>
