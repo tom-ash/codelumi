@@ -1,4 +1,7 @@
 .postings-index-tile {
+
+  position: relative;
+
   background: white;
   margin-top: 20px;
 
@@ -8,5 +11,58 @@
 
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 //   width: 50%!important;
+
+
+  .skills {
+    margin-top: 10px;
+    .skill {
+      float: left;
+      margin-right: 32px;
+      margin-top: 20px;
+      // .name {
+      //   // font-weight: bold;
+      // }
+    }
+  }
+
+  .industry {
+    color: #7B7D7D;
+    margin-top: 5px;
+  }
+
+  .business-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #424949;
+  }
+
+  .company {
+    padding-left: 60px;
+  }
+
+  .company-logo {
+    height: 48px;
+    position: absolute;
+    left: 20px;
+    border-radius: 4px;
+    overflow: hidden;
+    img {
+      height: 100%;
+    }
+  }
+
+  .remuneration {
+
+    width: 300px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+    padding: 20px;
+    font-size: 20px;
+    color: #2C3E50;
+    // font-weight: normal;
+
+  }
 
 }

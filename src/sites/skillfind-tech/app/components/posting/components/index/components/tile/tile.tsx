@@ -4,6 +4,7 @@ import { SkillProps, SkillView } from '../../../shared/components/skill/skill.ty
 import { PostingIndexTileIndustry } from '../components/industry/industry'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import { Image } from '../../../../../../../../shared/app/components/support/image/image'
 
 interface PostingIndexTileInterface {
   (props: { id: number; b2bMin?: number; b2bMax?: number; skills: SkillProps[] }): React.ReactElement
@@ -19,10 +20,27 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
       className='postings-index-tile'
       key={id}
     >
-      <PostingIndexTileIndustry />
+
+      <div className='company'>
+        <div className='company-logo'>
+          <Image
+            src='https://s3.eu-central-1.amazonaws.com/skillfind.tech/assets/categories/javascript.png'
+            alt='warsaw-digital'
+          />
+        </div>
+      {/* https://skillfind.tech/programming */}
+
+
+        <div className='business-name'>
+          Warsaw Digital
+        </div>
+        <PostingIndexTileIndustry />
+      </div>
+
       <div className='remuneration'>
         <strong>
-          {b2bMin} - {b2bMax} PLN
+          12000 - 16000 PLN
+          {/* {b2bMin} - {b2bMax} PLN */}
         </strong>
       </div>
       <div className='skills'>
