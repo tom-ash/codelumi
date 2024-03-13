@@ -1,5 +1,6 @@
-import getPinContent from '../../../../../functions/map/pins/get-pin-content'
-import { categories } from '../../../../../constants/categories'
+import { categories } from '../../../../../../mapawynajmu-pl/app/components/listing/constants/categories'
+import { getPinContent } from '../../../../../../mapawynajmu-pl/app/components/listing/functions/map/pins/get-pin-content'
+import removePins from '../../../../../../mapawynajmu-pl/app/components/listing/functions/map/pins/remove-pins'
 
 interface DrawPinProps {
   latitude: number
@@ -8,7 +9,7 @@ interface DrawPinProps {
   category: string
 }
 
-function drawPin(props: DrawPinProps) {
+export const drawPin = (props: DrawPinProps) => {
   const { latitude, longitude, svgs, category } = props
 
   let svg
@@ -24,7 +25,10 @@ function drawPin(props: DrawPinProps) {
   }
 
   // @ts-ignore
-  return new window.pinCreator(
+  removePins(window.pins || [])
+
+  // @ts-ignore
+  window.pins = [new window.pinCreator(
     {
       latitude,
       longitude,
@@ -33,7 +37,5 @@ function drawPin(props: DrawPinProps) {
       htmlContent: pinContent,
       className: 'pin icon',
     }
-  )
+  )]
 }
-
-export default drawPin

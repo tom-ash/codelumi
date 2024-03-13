@@ -1,5 +1,7 @@
+// @ts-ignore
 function getLocality(addressComponents) {
   const localityAddressComponent = addressComponents.find(
+    // @ts-ignore
     addressComponent => addressComponent.types.indexOf('locality') !== -1
   )
 

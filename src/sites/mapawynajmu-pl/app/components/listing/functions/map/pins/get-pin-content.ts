@@ -3,7 +3,7 @@ interface GetPinContentProps {
   pathData: string
 }
 
-function getPinContent(props: GetPinContentProps) {
+export const getPinContent = (props: GetPinContentProps) => {
   const { viewBox, pathData } = props
 
   return `
@@ -17,5 +17,3 @@ function getPinContent(props: GetPinContentProps) {
       />
     </svg>`
 }
-
-export default getPinContent

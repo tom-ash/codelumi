@@ -7,7 +7,6 @@
 @import '../../../../../styles/line';
 @import '../components/pictures/styles/styles';
 @import '../components/features/styles/styles';
-@import '../components/map/styles/styles';
 @import '../components/publishing/styles/styles';
 @import '../../../../../../../shared/app/styles/lined-heading';
 @import './category';
@@ -18,6 +17,7 @@
 @import '../../../../../styles/inputs/radio';
 @import '../../../../../styles/headings/h1';
 @import './submit';
+@import './map-marker';
 
 #listing-create {
   padding: 120px 0 60px;

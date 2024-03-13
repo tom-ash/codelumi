@@ -14,19 +14,21 @@ interface AddressInputInterface {
     onInputEnter?(location: GooglePlacesAutocompleteItem): void
     setCurrentItem(autocompleteItem: number): void
     setHideItemsOnBlur(hideItemsOnBlur: boolean): void
+    isError?: boolean;
   }): React.ReactElement
 }
 
 export const AddressInput: AddressInputInterface = props => {
-  const { currentItemIndex, hideItemsOnBlur, onInputEnter, setCurrentItem, setHideItemsOnBlur } = props
+  const { currentItemIndex, hideItemsOnBlur, onInputEnter, setCurrentItem, setHideItemsOnBlur, isError } = props
   const { placesAutocompleteInputPlaceholder: placeholder } = useTexts()
   const { location } = useInputs()
   const { items } = useData()
-  const classNames = 'address-input'
+  const containerClassNames = 'address-input'
   const value = location || ''
   const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const setData = (value: any) => dispatch({ type: 'data', value })
+  const setErrors = (value: any) => dispatch({ type: 'errors', value })
   const onKeyDown = (_value: any, e: React.KeyboardEvent) => {
     const key = e.key
 
@@ -48,6 +50,8 @@ export const AddressInput: AddressInputInterface = props => {
     if (items.length === 0) return
 
     onInputEnter && onInputEnter(items[currentItemIndex])
+
+    // setErrors({ isMapMarkerError: false })
 
     // @ts-expect-error: https://stackoverflow.com/questions/60504810/react-synteticevent-provides-no-blur-method-for-keyboardeventhtmlinputelement
     e.target.blur()
@@ -76,14 +80,17 @@ export const AddressInput: AddressInputInterface = props => {
         setData({ items })
       }
     )
+
+    setErrors({ isMapMarkerError: false })
   }
 
   const inputProps = {
-    classNames,
+    classNames: { container: containerClassNames },
     placeholder,
     value,
     onEnter,
     onKeyDown,
+    error: isError,
     onTab,
     onChange,
     onBlur: () => {

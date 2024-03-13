@@ -2,6 +2,7 @@ import scrollToElement from '../../../../../../../../../shared/app/functions/scr
 import { requiredInputs, requiredInputsArray } from '../../../constants/required-inputs'
 import { buildUserObject } from '../../../../../../user/components/new/components/email/components/form/functions/build-user-object'
 import buildAnouncement from '../../../functions/build-announcement'
+import { mapValidator } from '../../../functions/validators/map.validator'
 
 export function publish(addPromotion: boolean = false) {
   const {
@@ -17,6 +18,8 @@ export function publish(addPromotion: boolean = false) {
     phoneNumber,
     termsOfServiceConsent,
     termsOfServiceConsentLabel,
+    latitude,
+    longitude,
     // @ts-ignore
   } = this.props
 
@@ -24,8 +27,11 @@ export function publish(addPromotion: boolean = false) {
     // category: this.categoryManager().validate(),
     // @ts-ignore
     pictures: this.validatePictures(),
-    // @ts-ignore
-    map: this.validateMap(),
+    map: mapValidator({
+      lat: latitude,
+      lng: longitude,
+      setErrors,
+    }),
   }
 
   // @ts-ignore
