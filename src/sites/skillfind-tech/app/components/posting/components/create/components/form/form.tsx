@@ -5,13 +5,15 @@ import Skills from './components/skill-selector/skills'
 import SubmitButton from './components/submit-button'
 import { Contracts } from './components/contracts/contracts'
 import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
-import { TypedTextInput } from '../../../../../../../../shared/app/components/support/typed-text-input/typed-text-input'
-// import { Select } from 'semanticize'
+// import { MapMarker } from '../../../../../../../../shared/app/components/support/map-marker/map-marker'
+import { useDispatch } from 'react-redux'
+import { Industry } from './components/industry/industry'
+import { BusinessName } from './components/business-name/business-name'
 
 const AnnouncementCreateForm = () => {
   useStyles(styles)
 
-  const { title } = useTexts()
+  const { title } = useTexts();
 
   return (
     <div
@@ -19,31 +21,18 @@ const AnnouncementCreateForm = () => {
       className='form'
     >
       <h1>{title}</h1>
-
       <section>
         <h2>COMPANY DATA</h2>
-
-        <TypedTextInput
-          inputKey='businessName'
-          error='asdasd'
-        />
-
-        {/* <Select
-          label={'asdasda'}
-          className='typed-text-input'
-        /> */}
-
-        
-        {/* <div></div> */}
-        {/* <select>
-
-        </select> */}
-
+        <BusinessName />
+        <Industry />
       </section>
-
-      <h2>SKILLS</h2>
-      <Skills />
-      <Contracts />
+      <section>
+        <h2>SKILLS</h2>
+        <Skills />
+      </section>
+      <section>
+        <Contracts />
+      </section>
       <SubmitButton />
     </div>
   )

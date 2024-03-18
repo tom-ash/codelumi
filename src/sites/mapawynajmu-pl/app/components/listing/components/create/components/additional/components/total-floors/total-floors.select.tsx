@@ -1,10 +1,10 @@
 import React from 'react'
-import { Select } from '../../../../../../../../../../shared/app/components/support/select/select'
+import { OldSelect } from '../../../../../../../../../../shared/app/components/support/old-select/old-select'
 
 export const TotalFloorsSelect = () => {
   const selectProps = {
     selectKey: 'totalFloors',
   }
 
-  return <Select {...selectProps} />
+  return <OldSelect {...selectProps} />
 }

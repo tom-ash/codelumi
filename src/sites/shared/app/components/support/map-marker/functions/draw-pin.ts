@@ -17,7 +17,7 @@ export const drawPin = (props: DrawPinProps) => {
   if (category !== '') {
     const svgCategory = categories.find(categoryOn => categoryOn.number === +category)
     // @ts-ignore
-    svg = svgs[svgCategory.pin.svg]
+    svg = svgs[svgCategory?.pin?.svg]
   }
 
   if (svg) {

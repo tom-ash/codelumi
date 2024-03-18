@@ -7,13 +7,20 @@ import styles from './styles/styles.scss'
 import { Image } from '../../../../../../../../shared/app/components/support/image/image'
 
 interface PostingIndexTileInterface {
-  (props: { id: number; b2bMin?: number; b2bMax?: number; skills: SkillProps[] }): React.ReactElement
+  (props: {
+    id: number;
+    businessName: string;
+    industry: string;
+    b2bMin?: number; b2bMax?: number; skills: SkillProps[]
+  }): React.ReactElement
 }
 
 export const PostingIndexTile: PostingIndexTileInterface = props => {
   useStyles(styles)
 
-  const { id, b2bMin, b2bMax, skills } = props
+  const { id, businessName, industry, b2bMin, b2bMax, skills } = props
+
+  console.log('props', props)
 
   return (
     <div
@@ -32,9 +39,9 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
 
 
         <div className='business-name'>
-          Warsaw Digital
+          {businessName}
         </div>
-        <PostingIndexTileIndustry />
+        <PostingIndexTileIndustry industry={industry} />
       </div>
 
       <div className='remuneration'>

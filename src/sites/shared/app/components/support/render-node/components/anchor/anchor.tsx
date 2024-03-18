@@ -11,6 +11,7 @@ const Anchor = (props: AnchorProps) => {
     className,
   }
 
+  // @ts-ignore
   return <a {...anchorProps}>{content}</a>
 }
 

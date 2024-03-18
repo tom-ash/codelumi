@@ -12,6 +12,7 @@ type SubmitProps = {
   b2b: boolean
   b2bMax: number
   b2bMin: number
+  industry: string;
   // employment: boolean
   // employmentMax: number
   // employmentMin: number
@@ -31,6 +32,7 @@ export const submit = (props: SubmitProps) => {
     b2b,
     b2bMax,
     b2bMin,
+    industry,
     // employment,
     // employmentMax,
     // employmentMin,
@@ -48,6 +50,7 @@ export const submit = (props: SubmitProps) => {
     b2b,
     b2bMax,
     b2bMin,
+    industry,
     // employment,
     // employmentMax,
     // employmentMin,
