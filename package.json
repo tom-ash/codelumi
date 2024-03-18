@@ -59,7 +59,7 @@
     "webfontloader": "^1.6.28",
     "xml": "^1.0.1",
     "xml-formatter": "^3.6.0",
-    "semanticize": "^0.0.1"
+    "semanticize": "^0.0.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.5",
@@ -70,7 +70,7 @@
     "@types/dompurify": "^3.0.3",
     "@types/googlemaps": "^3.43.3",
     "@types/jest": "^28.1.6",
-    "@types/react": "^17.0.43",
+    "@types/react": "^18.2.66",
     "babel-loader": "^9.1.0",
     "css-loader": "^6.7.1",
     "eslint": "^8.30.0",
