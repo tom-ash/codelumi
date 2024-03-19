@@ -1,3 +1,3 @@
 export interface PanelInterface {
-  (props: any): React.ReactElement;
+  (props: any): React.ReactElement
 }

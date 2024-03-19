@@ -6,26 +6,26 @@ import styles from './styles/styles.scss'
 import { Device } from '../../../../../skillfind-tech/app/types/device.enum'
 
 interface DeviceConfigItem {
-  perPage: number,
-  gap: number | string,
-  type?: string, //'slide' | 'loop' | 'fade',
-  padding?: number | string,
+  perPage: number
+  gap: number | string
+  type?: string //'slide' | 'loop' | 'fade',
+  padding?: number | string
   pagination?: boolean
 }
 
 interface DeviceConfig {
-  largePc: DeviceConfigItem,
-  smallPc: DeviceConfigItem,
-  largeTablet: DeviceConfigItem,
-  smallTablet: DeviceConfigItem,
-  largePhone: DeviceConfigItem,
-  smallPhone: DeviceConfigItem,
+  largePc: DeviceConfigItem
+  smallPc: DeviceConfigItem
+  largeTablet: DeviceConfigItem
+  smallTablet: DeviceConfigItem
+  largePhone: DeviceConfigItem
+  smallPhone: DeviceConfigItem
 }
 
 interface SliderProps {
-  slides: any[],
-  Slide(props: any): React.ReactElement,
-  deviceConfig: DeviceConfig,
+  slides: any[]
+  Slide(props: any): React.ReactElement
+  deviceConfig: DeviceConfig
   commonProps?: object
 }
 
@@ -40,7 +40,7 @@ export const Slider: SliderInterface = props => {
   const app = useApp()
   const device = app.device as Device
   const { perPage, gap, type, padding, pagination } = deviceConfig[device]
-  
+
   return (
     <div className='slider'>
       <Splide
@@ -56,7 +56,7 @@ export const Slider: SliderInterface = props => {
           <SplideSlide>
             <Slide
               ley={slide.id}
-              {...{...commonProps, ...slide}}
+              {...{ ...commonProps, ...slide }}
             />
           </SplideSlide>
         ))}

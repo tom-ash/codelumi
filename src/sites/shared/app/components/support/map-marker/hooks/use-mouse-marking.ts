@@ -1,41 +1,32 @@
-import { useEffect } from "react";
-import { addPin } from "../functions/add-pin";
+import { useEffect } from 'react'
+import { addPin } from '../functions/add-pin'
 
 interface UseMapMarkings {
   (props: {
-    isMapInitialized: boolean;
-    setData(params: object): void;
-    setInputs(params: object): void;
-    setErrors(params: object): void;
-  }): void;
+    isMapInitialized: boolean
+    setData(params: object): void
+    setInputs(params: object): void
+    setErrors(params: object): void
+  }): void
 }
 
-export const useMouseMarking: UseMapMarkings = (props) => {
-  const {
-    isMapInitialized,
-    setData,
-    setInputs,
-    setErrors,
-  } = props
+export const useMouseMarking: UseMapMarkings = props => {
+  const { isMapInitialized, setData, setInputs, setErrors } = props
 
   useEffect(() => {
     if (isMapInitialized) {
       const map = window.googleMap
 
-      google.maps.event.addListener(
-        map,
-        'click',
-        function (event) {
-          const latlng = { lat: event.latLng.lat(), lng: event.latLng.lng() }
-  
-          addPin({
-            geocodeBasis: { location: latlng },
-            setInputs,
-            setErrors,
-            setData
-          })
-        }
-      )
+      google.maps.event.addListener(map, 'click', function (event) {
+        const latlng = { lat: event.latLng.lat(), lng: event.latLng.lng() }
+
+        addPin({
+          geocodeBasis: { location: latlng },
+          setInputs,
+          setErrors,
+          setData,
+        })
+      })
 
       // google.maps.event.addListener(
       //   map,
@@ -46,10 +37,10 @@ export const useMouseMarking: UseMapMarkings = (props) => {
       //   }.bind(this)
       // )
 
-      return (() => {
+      return () => {
         google.maps.event.clearListeners(window.googleMap, 'click')
         google.maps.event.clearListeners(window.googleMap, 'rightclick')
-      })
+      }
     }
   }, [isMapInitialized])
 }

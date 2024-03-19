@@ -38,7 +38,7 @@ interface ListingsIndexTile {
   (props: ListingBase & CommonProps): React.ReactElement
 }
 
-export const ListingsIndexTile: ListingsIndexTile = (props) => {
+export const ListingsIndexTile: ListingsIndexTile = props => {
   const {
     id,
     category,

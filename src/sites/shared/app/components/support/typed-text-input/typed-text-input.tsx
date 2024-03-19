@@ -8,7 +8,7 @@ interface TextInputInterface {
   (props: {
     inputKey: string
     onBlur?(value?: string): void
-    error?: string;
+    error?: string
     // className?: string
     // match?: RegExp
     // disabled?: boolean

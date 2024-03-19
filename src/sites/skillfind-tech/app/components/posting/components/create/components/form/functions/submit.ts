@@ -12,13 +12,20 @@ type SubmitProps = {
   b2b: boolean
   b2bMax: number
   b2bMin: number
-  industry: string;
+  industry: string
   // employment: boolean
   // employmentMax: number
   // employmentMin: number
   // civilContract: boolean
   // civilContractMax: number
   // civilContractMin: number
+  placeId: string
+  placeAutocomplete: string
+  lat: number
+  lng: number
+  country: string | undefined
+  locality: string | undefined
+  sublocality: string | undefined
 }
 
 export const submit = (props: SubmitProps) => {
@@ -39,6 +46,13 @@ export const submit = (props: SubmitProps) => {
     // civilContract,
     // civilContractMax,
     // civilContractMin,
+    placeId,
+    placeAutocomplete,
+    lat,
+    lng,
+    country,
+    locality,
+    sublocality,
   } = props
 
   const body = {
@@ -57,6 +71,13 @@ export const submit = (props: SubmitProps) => {
     // civilContract,
     // civilContractMax,
     // civilContractMin,
+    placeId,
+    placeAutocomplete,
+    lat,
+    lng,
+    country,
+    locality,
+    sublocality,
   }
 
   fetch(apiUrl + '/postings', {

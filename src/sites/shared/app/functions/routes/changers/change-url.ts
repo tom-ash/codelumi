@@ -1,11 +1,7 @@
 import scrollToTop from '../../screen/scrollers/to-top'
 
 export interface ChangeUrl {
-  (attrs: {
-    href: string
-    withScroll?: boolean
-    retainQueryParams?: boolean
-  }): void
+  (attrs: { href: string; withScroll?: boolean; retainQueryParams?: boolean }): void
 }
 
 // @ts-ignore

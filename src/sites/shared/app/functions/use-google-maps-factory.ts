@@ -20,7 +20,7 @@ export const useGoogleMapsFactory = (googleMapsApiKey: any) => {
         loadScript(`https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&libraries=places&language=pl`).then(
           () => {
             const newScripts = { ...scripts, googleMaps: true }
-  
+
             dispatch({ type: 'app', value: { scripts: newScripts } })
           }
         )

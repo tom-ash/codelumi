@@ -28,14 +28,17 @@ export const drawPin = (props: DrawPinProps) => {
   removePins(window.pins || [])
 
   // @ts-ignore
-  window.pins = [new window.pinCreator(
-    {
-      latitude,
-      longitude,
-    },
-    {
-      htmlContent: pinContent,
-      className: 'pin icon',
-    }
-  )]
+  window.pins = [
+    // @ts-ignore
+    new window.pinCreator(
+      {
+        latitude,
+        longitude,
+      },
+      {
+        htmlContent: pinContent,
+        className: 'pin icon',
+      }
+    ),
+  ]
 }

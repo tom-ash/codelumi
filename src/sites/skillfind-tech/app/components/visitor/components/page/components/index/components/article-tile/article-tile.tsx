@@ -4,12 +4,7 @@ import { Link } from '../../../../../../../../../../shared/app/components/suppor
 import Image from '../../../../../../../../../../shared/app/components/support/image/image'
 
 interface ArticleTileInterface {
-  (props: {
-    image: string;
-    title: string;
-    href: string;
-    hrefLang: Lang;
-  }): React.ReactElement
+  (props: { image: string; title: string; href: string; hrefLang: Lang }): React.ReactElement
 }
 
 export const ArticleTile: ArticleTileInterface = props => {

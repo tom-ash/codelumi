@@ -4,6 +4,7 @@ import styles from './styles/styles.scss'
 import { PostingIndexTile } from './components/tile/tile'
 import { useData } from '../../../../../../shared/app/functions/store/use-data'
 import { MapIndex } from '../../../../../../shared/app/components/support/map-index/map-index'
+import { pinBuilder } from './functions/pin-builder'
 
 const Panel = () => {
   return <>PANEL</>
@@ -11,19 +12,6 @@ const Panel = () => {
 
 const ShowItem = () => {
   return <>SHOW_ITEM</>
-}
-
-const pinBuilder = () => {
-
-  return ({
-    id: 42,
-    latitude: 42,
-    longitude: 42,
-    htmlContent: '42',
-    className: '',
-    href: '',
-  })
-
 }
 
 const PostingIndex = () => {

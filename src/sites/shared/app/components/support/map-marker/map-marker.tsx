@@ -16,13 +16,13 @@ export const MapMarker = () => {
   const setData = (value: any) => dispatch({ type: 'data', value })
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
-  const { isMapMarkerError: isError } = useErrors();
+  const { isMapMarkerError: isError } = useErrors()
   const { longitude, latitude, category } = useInputs()
   const { isMapInitialized } = useApp()
   const { mapOptions } = useControl()
   const {
     // @ts-ignore
-    assets: { svgs }
+    assets: { svgs },
   } = useStore().getState()
 
   useEffect(() => {
@@ -54,8 +54,24 @@ export const MapMarker = () => {
       className='section'
     >
       <GooglePlacesAutocomplete
-        onItemClick={(item) => addPin({ geocodeBasis: { placeId: item.place_id }, description: item.description, setInputs, setErrors, setData })}
-        onInputEnter={(item) => addPin({ geocodeBasis: { placeId: item.place_id }, description: item.description, setInputs, setErrors, setData })}
+        onItemClick={item =>
+          addPin({
+            geocodeBasis: { placeId: item.place_id },
+            description: item.description,
+            setInputs,
+            setErrors,
+            setData,
+          })
+        }
+        onInputEnter={item =>
+          addPin({
+            geocodeBasis: { placeId: item.place_id },
+            description: item.description,
+            setInputs,
+            setErrors,
+            setData,
+          })
+        }
         isError={isError}
       />
       <GoogleMap />

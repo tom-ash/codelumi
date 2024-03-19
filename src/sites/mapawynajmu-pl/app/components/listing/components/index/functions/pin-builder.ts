@@ -1,7 +1,7 @@
-import { PinBuilder } from "../../../../../../../shared/app/components/support/map-index/types/pin-builder.interface";
-import { categories } from "../../../constants/categories";
+import { PinBuilder } from '../../../../../../../shared/app/components/support/map-index/types/pin-builder.interface'
+import { categories } from '../../../constants/categories'
 
-export const pinBuilder: PinBuilder = (props) => {
+export const pinBuilder: PinBuilder = props => {
   const { id, category: categoryNumber, latitude, longitude, href, isPromoted, svgs, currentListingId } = props
   const category = categories.find(category => category.number === categoryNumber)
   // @ts-ignore
@@ -29,13 +29,13 @@ export const pinBuilder: PinBuilder = (props) => {
         d="${svg && svg.pathData}"
       />
     </svg>`
-    
-  return ({
+
+  return {
     id,
     latitude,
     longitude,
     htmlContent,
     className,
     href,
-  })
+  }
 }

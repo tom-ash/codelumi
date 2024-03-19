@@ -9,31 +9,18 @@ import { Item } from '../../../../types/item.interface'
 import { PinBuilder } from '../../../../types/pin-builder.interface'
 
 interface MapInterface {
-  (props: {
-    items: Item[];
-    pinBuilder: PinBuilder;
-  }): React.ReactElement
+  (props: { items: Item[]; pinBuilder: PinBuilder }): React.ReactElement
 }
 
-export const Map: MapInterface = (props) => {
+export const Map: MapInterface = props => {
   const { items, pinBuilder } = props
 
-  const {
-    isMobile,
-    isMapInitialized,
-  } = useApp()
-  const {
-    mapOptions,
-    isPinsDrawn,
-    hoveredTileId,
-    unhoveredTileId,
-  } = useControl()
-  const {
-    currentListingId,
-  } = useData()
+  const { isMobile, isMapInitialized } = useApp()
+  const { mapOptions, isPinsDrawn, hoveredTileId, unhoveredTileId } = useControl()
+  const { currentListingId } = useData()
   const {
     // @ts-ignore
-    assets: { svgs }
+    assets: { svgs },
   } = useStore().getState()
 
   const dispatch = useDispatch()
@@ -76,7 +63,5 @@ export const Map: MapInterface = (props) => {
     }
   }, [isMapInitialized, mapOptions])
 
-  return (
-    <GoogleMap />
-  )
+  return <GoogleMap />
 }

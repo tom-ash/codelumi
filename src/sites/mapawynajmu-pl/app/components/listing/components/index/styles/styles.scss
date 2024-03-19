@@ -14,7 +14,7 @@
   max-height: 960px;
   height: calc(100vh - 60px - 48px);
   margin: 24px auto;
-  border: 1px solid #D7DBDD;
+  border: 1px solid #d7dbdd;
   border-radius: 12px;
   background: white;
   overflow: hidden;
@@ -32,8 +32,6 @@
     border: none;
     border-radius: 0;
   }
-
-
 
   .results {
     position: absolute;
@@ -157,19 +155,7 @@
       }
     }
   }
-
-
-
 }
-
-
-
-
-
-
-
-
-
 
 #visitor-articles-index {
   @extend %splide;

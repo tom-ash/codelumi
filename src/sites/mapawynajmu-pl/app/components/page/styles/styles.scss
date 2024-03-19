@@ -6,7 +6,8 @@
 %page {
   @extend %root;
   background: #fdfefe;
-  main { // TODO!
+  main {
+    // TODO!
     article {
       @extend %article;
     }

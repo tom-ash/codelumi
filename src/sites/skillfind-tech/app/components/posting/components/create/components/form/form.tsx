@@ -5,15 +5,14 @@ import Skills from './components/skill-selector/skills'
 import SubmitButton from './components/submit-button'
 import { Contracts } from './components/contracts/contracts'
 import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
-// import { MapMarker } from '../../../../../../../../shared/app/components/support/map-marker/map-marker'
-import { useDispatch } from 'react-redux'
 import { Industry } from './components/industry/industry'
 import { BusinessName } from './components/business-name/business-name'
+import { Location } from './components/location/location'
 
 const AnnouncementCreateForm = () => {
   useStyles(styles)
 
-  const { title } = useTexts();
+  const { title } = useTexts()
 
   return (
     <div
@@ -30,6 +29,7 @@ const AnnouncementCreateForm = () => {
         <h2>SKILLS</h2>
         <Skills />
       </section>
+      <Location />
       <section>
         <Contracts />
       </section>

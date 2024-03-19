@@ -1,14 +1,13 @@
-import getLocality from './get-locality'
-import getSublocality from './get-sublocality'
+import { getAddressComponent } from './get-address-component'
 
-type GeocodeBasis = { placeId: string } | { location: { lat: string, lng: string } }
+type GeocodeBasis = { placeId: string } | { location: { lat: string; lng: string } }
 
 interface AddPinProps {
-  geocodeBasis: GeocodeBasis;
-  description?: string;
-  setData(params: object): void;
-  setInputs(params: object): void;
-  setErrors(params: object): void;
+  geocodeBasis: GeocodeBasis
+  description?: string
+  setData(params: object): void
+  setInputs(params: object): void
+  setErrors(params: object): void
 }
 
 export const addPin = async (props: AddPinProps) => {
@@ -24,14 +23,32 @@ export const addPin = async (props: AddPinProps) => {
   const position = primaryResult.geometry.location
   const addressComponents = primaryResult.address_components
   const options = { center: position, zoom: 11 }
-  const locality = getLocality(addressComponents)
-  const sublocality = getSublocality(addressComponents)
+
+  const placeId = primaryResult.place_id
+  const country = getAddressComponent(addressComponents, 'country')
+  const locality = getAddressComponent(addressComponents, 'locality')
+  const sublocality = getAddressComponent(addressComponents, 'sublocality')
 
   if ('placeId' in geocodeBasis) {
     map.setOptions(options)
   }
 
+  const lat = position.lat()
+  const lng = position.lng()
+
   setData({ items: [] })
-  setInputs({ location: description || primaryResult.formatted_address, latitude: position.lat(), longitude: position.lng(), locality, sublocality })
+  setInputs({
+    placeId,
+    placeAutocomplete: description || primaryResult.formatted_address,
+    lat,
+    lng,
+    country,
+    locality,
+    sublocality,
+    // TODO: REMOVE BELOW (AFTER ADJUSTING)!!!
+    location: description || primaryResult.formatted_address, // TODO: REMOVE!
+    latitude: lat, // TODO: REMOVE!
+    longitude: lng, // TODO: REMOVE!
+  })
   setErrors({ isMapMarkerError: false })
 }

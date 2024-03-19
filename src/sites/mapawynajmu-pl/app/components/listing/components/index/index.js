@@ -31,24 +31,24 @@ class AnnouncementIndexSearch extends React.Component {
     switch (device) {
       case 'largeTablet':
         perPage = 2
-        break;
+        break
       case 'mediumTablet':
         perPage = 2
-        break;
+        break
       case 'smallTablet':
         perPage = 1
-        break;
+        break
       case 'largePhone':
         perPage = 1
-        break;
+        break
       case 'mediumPhone':
         perPage = 1
-        break;
+        break
       case 'smallPhone':
         perPage = 1
-        break;
+        break
       default:
-        break;
+        break
     }
 
     if (renderMap) {
@@ -64,19 +64,19 @@ class AnnouncementIndexSearch extends React.Component {
 
           <section id='visitor-articles-index'>
             <div className='slider'>
-              <Splide options={{
-                perPage,
-              }}>
-                {articles.map((article) => {
+              <Splide
+                options={{
+                  perPage,
+                }}
+              >
+                {articles.map(article => {
                   const label = (
                     <>
                       <img
                         src={article.image}
                         alt={article.title}
                       />
-                      <h3 className='title'>
-                        {article.title}
-                      </h3>
+                      <h3 className='title'>{article.title}</h3>
                     </>
                   )
 

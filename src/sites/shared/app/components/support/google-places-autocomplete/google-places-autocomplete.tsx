@@ -8,7 +8,7 @@ interface GooglePlacesAutocompleteInterface {
   (props: {
     onItemClick?(location: GooglePlacesAutocompleteItem): void
     onInputEnter?(location: GooglePlacesAutocompleteItem): void
-    isError?: boolean;
+    isError?: boolean
   }): React.ReactElement
 }
 

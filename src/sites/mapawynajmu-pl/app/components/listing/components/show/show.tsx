@@ -8,9 +8,7 @@ import { useLinks } from '../../../../../../shared/app/functions/store/use-links
 const ListingsShow = () => {
   const { lang, isMobile } = useApp()
   const { tile } = useData()
-  const {
-    'listing/index/go-back': goBackLink
-  } = useLinks()
+  const { 'listing/index/go-back': goBackLink } = useLinks()
 
   return (
     <div id='listing-show'>

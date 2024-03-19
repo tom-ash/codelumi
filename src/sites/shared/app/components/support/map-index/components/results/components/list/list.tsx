@@ -52,14 +52,10 @@ const sliderDeviceConfig = {
 }
 
 interface ListInterface {
-  (props: {
-    ListItem: ItemIndexInterface;
-    renderShow: boolean;
-    items: Item[];
-  }): React.ReactElement
+  (props: { ListItem: ItemIndexInterface; renderShow: boolean; items: Item[] }): React.ReactElement
 }
 
-export const List: ListInterface = (props) => {
+export const List: ListInterface = props => {
   const { ListItem, renderShow, items } = props
 
   const { lang, device, isMobile } = useApp()
@@ -88,7 +84,10 @@ export const List: ListInterface = (props) => {
   }
 
   return (
-    <div id='list' className={classNames.join(' ')}>
+    <div
+      id='list'
+      className={classNames.join(' ')}
+    >
       {currentPartnerName && <h2>{currentPartnerName}</h2>}
       {listType === 'scroll' && (
         <>

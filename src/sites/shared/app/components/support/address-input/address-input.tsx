@@ -14,7 +14,7 @@ interface AddressInputInterface {
     onInputEnter?(location: GooglePlacesAutocompleteItem): void
     setCurrentItem(autocompleteItem: number): void
     setHideItemsOnBlur(hideItemsOnBlur: boolean): void
-    isError?: boolean;
+    isError?: boolean
   }): React.ReactElement
 }
 

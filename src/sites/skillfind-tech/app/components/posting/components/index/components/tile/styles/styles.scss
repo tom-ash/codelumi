@@ -1,5 +1,4 @@
 .postings-index-tile {
-
   position: relative;
 
   background: white;
@@ -8,10 +7,10 @@
   padding: 20px;
   border-radius: 6px;
 
-
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-//   width: 50%!important;
-
+  box-shadow:
+    rgba(0, 0, 0, 0.12) 0px 1px 3px,
+    rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  //   width: 50%!important;
 
   .skills {
     margin-top: 10px;
@@ -26,7 +25,7 @@
   }
 
   .industry {
-    color: #7B7D7D;
+    color: #7b7d7d;
     margin-top: 5px;
   }
 
@@ -52,7 +51,6 @@
   }
 
   .remuneration {
-
     width: 300px;
     position: absolute;
     top: 0;
@@ -60,9 +58,7 @@
     text-align: right;
     padding: 20px;
     font-size: 20px;
-    color: #2C3E50;
+    color: #2c3e50;
     // font-weight: normal;
-
   }
-
 }

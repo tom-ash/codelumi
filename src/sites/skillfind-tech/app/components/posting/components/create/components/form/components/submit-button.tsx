@@ -26,6 +26,13 @@ const SubmitButton = () => {
     // civilContract,
     // civilContractMax,
     // civilContractMin,
+    placeId,
+    placeAutocomplete,
+    lat,
+    lng,
+    country,
+    locality,
+    sublocality,
   } = inputs
 
   const buttonProps = {
@@ -49,6 +56,13 @@ const SubmitButton = () => {
         // civilContract,
         // civilContractMax,
         // civilContractMin,
+        placeId,
+        placeAutocomplete,
+        lat,
+        lng,
+        country,
+        locality,
+        sublocality,
       }),
   }
 

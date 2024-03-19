@@ -8,10 +8,12 @@ import { Image } from '../../../../../../../../shared/app/components/support/ima
 
 interface PostingIndexTileInterface {
   (props: {
-    id: number;
-    businessName: string;
-    industry: string;
-    b2bMin?: number; b2bMax?: number; skills: SkillProps[]
+    id: number
+    businessName: string
+    industry: string
+    b2bMin?: number
+    b2bMax?: number
+    skills: SkillProps[]
   }): React.ReactElement
 }
 
@@ -20,14 +22,11 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
 
   const { id, businessName, industry, b2bMin, b2bMax, skills } = props
 
-  console.log('props', props)
-
   return (
     <div
       className='postings-index-tile'
       key={id}
     >
-
       <div className='company'>
         <div className='company-logo'>
           <Image
@@ -35,12 +34,9 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
             alt='warsaw-digital'
           />
         </div>
-      {/* https://skillfind.tech/programming */}
+        {/* https://skillfind.tech/programming */}
 
-
-        <div className='business-name'>
-          {businessName}
-        </div>
+        <div className='business-name'>{businessName}</div>
         <PostingIndexTileIndustry industry={industry} />
       </div>
 

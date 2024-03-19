@@ -10,20 +10,15 @@ import { PinBuilder } from '../../types/pin-builder.interface'
 
 interface ResultsInterface {
   (props: {
-    ListItem: ItemIndexInterface;
-    ShowItem: ItemShowInterface;
-    items: Item[];
-    pinBuilder: PinBuilder;
+    ListItem: ItemIndexInterface
+    ShowItem: ItemShowInterface
+    items: Item[]
+    pinBuilder: PinBuilder
   }): React.ReactElement
 }
 
 export const Results: ResultsInterface = props => {
-  const {
-    ListItem,
-    ShowItem,
-    items,
-    pinBuilder,
-  } = props
+  const { ListItem, ShowItem, items, pinBuilder } = props
 
   // TODO: ADDRESS!
   const { 'listings/show': renderShow } = useRender()
