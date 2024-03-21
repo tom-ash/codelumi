@@ -8,6 +8,7 @@ import { useTexts } from '../../../../../../../../shared/app/functions/store/use
 import { Industry } from './components/industry/industry'
 import { BusinessName } from './components/business-name/business-name'
 import { Location } from './components/location/location'
+import { CooperationMode } from './components/cooperation-mode/cooperation-mode'
 
 const AnnouncementCreateForm = () => {
   useStyles(styles)
@@ -29,6 +30,7 @@ const AnnouncementCreateForm = () => {
         <h2>SKILLS</h2>
         <Skills />
       </section>
+      <CooperationMode />
       <Location />
       <section>
         <Contracts />

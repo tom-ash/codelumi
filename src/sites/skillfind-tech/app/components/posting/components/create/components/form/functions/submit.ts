@@ -5,17 +5,15 @@ import { changeUrl } from '../../../../../../../../../shared/app/functions/route
 type SubmitProps = {
   lang: Lang
   businessName: string
+  industry: string;
   selectedSkills: Array<any>
-  // remote: boolean
-  // hybrid: boolean
-  // office: boolean
+  cooperationMode: string;
   b2b: boolean
-  b2bMax: number
   b2bMin: number
-  industry: string
+  b2bMax: number
   // employment: boolean
-  // employmentMax: number
   // employmentMin: number
+  // employmentMax: number
   // civilContract: boolean
   // civilContractMax: number
   // civilContractMin: number
@@ -33,9 +31,7 @@ export const submit = (props: SubmitProps) => {
     lang,
     businessName,
     selectedSkills,
-    // remote,
-    // hybrid,
-    // office,
+    cooperationMode,
     b2b,
     b2bMax,
     b2bMin,
@@ -55,12 +51,12 @@ export const submit = (props: SubmitProps) => {
     sublocality,
   } = props
 
+  console.log('props', props)
+
   const body = {
     businessName,
     selectedSkills,
-    // remote,
-    // hybrid,
-    // office,
+    cooperationMode,
     b2b,
     b2bMax,
     b2bMin,
