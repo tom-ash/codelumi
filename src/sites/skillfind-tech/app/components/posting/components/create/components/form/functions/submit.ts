@@ -11,12 +11,9 @@ type SubmitProps = {
   b2b: boolean
   b2bMin: number
   b2bMax: number
-  // employment: boolean
-  // employmentMin: number
-  // employmentMax: number
-  // civilContract: boolean
-  // civilContractMax: number
-  // civilContractMin: number
+  employment: boolean
+  employmentMin: number
+  employmentMax: number
   placeId: string
   placeAutocomplete: string
   lat: number
@@ -36,12 +33,9 @@ export const submit = (props: SubmitProps) => {
     b2bMax,
     b2bMin,
     industry,
-    // employment,
-    // employmentMax,
-    // employmentMin,
-    // civilContract,
-    // civilContractMax,
-    // civilContractMin,
+    employment,
+    employmentMax,
+    employmentMin,
     placeId,
     placeAutocomplete,
     lat,
@@ -61,12 +55,9 @@ export const submit = (props: SubmitProps) => {
     b2bMax,
     b2bMin,
     industry,
-    // employment,
-    // employmentMax,
-    // employmentMin,
-    // civilContract,
-    // civilContractMax,
-    // civilContractMin,
+    employment,
+    employmentMax,
+    employmentMin,
     placeId,
     placeAutocomplete,
     lat,

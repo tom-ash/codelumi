@@ -1,51 +1,54 @@
 import React from 'react'
-import Checkbox from './components/checkbox'
-import NumberInput from './components/number-input'
-import { ContractName } from '../../contracts.types'
+import { ContractCheckbox } from './components/checkbox'
+import { NumberInput } from './components/number-input'
+import { useDispatch } from 'react-redux';
+import { useInputs } from '../../../../../../../../../../../../shared/app/functions/store/use-inputs';
+import { SVG } from '../../../../../../../../../../../../shared/app/components/support/svg/svg';
 
 interface ContractSelectorInterface {
-  contractKey: ContractName
-  contractValue: boolean
-  label: string
-  contractMin: number
-  contractMax: number
+  name: string;
+  label: string;
+  checked: boolean;
+  instructions: string;
+  minPlaceholder: string;
+  maxPlaceholder: string;
 }
 
-const ContractSelectorInterface = (props: ContractSelectorInterface) => {
-  const { contractKey, contractValue, label, contractMin, contractMax } = props
+export const ContractSelector = (props: ContractSelectorInterface) => {
+  const { name, label, checked, instructions, minPlaceholder, maxPlaceholder } = props
 
-  const checkboxProps = {
-    contractKey,
-    contractValue,
-    label,
-    // setStore,
-  }
-
-  const minInputProps = {
-    valueKey: `${contractKey}Min`,
-    value: contractMin,
-    // setStore,
-    label: 'Min.',
-  }
-
-  const maxInputProps = {
-    valueKey: `${contractKey}Max`,
-    value: contractMax,
-    // setStore,
-    label: 'Max.',
-  }
+  console.log(props)
+  const dispatch = useDispatch()
+  const {
+    [`${name}Min`]: valueMin,
+    [`${name}Max`]: valueMax,
+  } = useInputs()
+  const setInputs = (value: any) => dispatch({ type: 'inputs', value })
+  const setMin = (value: string) => setInputs({ [`${name}Min`]: value })
+  const setMax = (value: string) => setInputs({ [`${name}Max`]: value })
 
   return (
     <div className='contract-selector'>
-      <Checkbox {...checkboxProps} />
-      {contractValue && (
+      <ContractCheckbox
+        name={name}
+        label={label}
+      />
+      {checked && (
         <div>
-          <NumberInput {...minInputProps} />
-          <NumberInput {...maxInputProps} />
+          <div className='instructions'>{instructions}</div>
+          <NumberInput
+            value={valueMin}
+            placeholder={minPlaceholder}
+            onChange={setMin}
+          />
+          <SVG name='minus' />
+          <NumberInput
+            value={valueMax}
+            placeholder={maxPlaceholder}
+            onChange={setMax}
+          />
         </div>
       )}
     </div>
   )
 }
-
-export default ContractSelectorInterface

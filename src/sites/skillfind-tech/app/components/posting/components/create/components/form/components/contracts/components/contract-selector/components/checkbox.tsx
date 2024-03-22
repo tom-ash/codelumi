@@ -1,26 +1,26 @@
 import React from 'react'
-import { ManagedCheckbox } from 'managed-inputs'
 import { useDispatch } from 'react-redux'
-import { ContractName } from '../../../contracts.types'
+import { useInputs } from '../../../../../../../../../../../../../shared/app/functions/store/use-inputs';
+import { ManagedCheckbox } from 'managed-inputs'
 
-interface CheckboxInterface {
-  contractKey: ContractName
-  contractValue: boolean
-  label: string
+interface ContractCheckboxInterface {
+  name: string;
+  label: string;
 }
 
-const B2BCheckbox = (props: CheckboxInterface) => {
+export const ContractCheckbox = (props: ContractCheckboxInterface) => {
   const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
-  const { contractKey, contractValue: checked, label } = props
-  const checkboxProps = {
-    classNames: { container: 'form-input checkbox' },
-    checked,
-    label,
-    onClick: (value: boolean) => setInputs({ [contractKey]: value }),
-  }
+  const { name, label } = props
+  const { [name]: checked } = useInputs()
+  const onClick = (value: boolean) => setInputs({ [name]: value })
 
-  return <ManagedCheckbox {...checkboxProps} />
+  return (
+    <ManagedCheckbox
+      classNames={{ container: 'form-input checkbox' }}
+      checked={checked}
+      label={label}
+      onClick={onClick}
+    />
+  )
 }
-
-export default B2BCheckbox

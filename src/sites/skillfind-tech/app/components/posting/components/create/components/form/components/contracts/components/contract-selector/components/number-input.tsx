@@ -3,26 +3,21 @@ import { ManagedText } from 'managed-inputs'
 import { useDispatch } from 'react-redux'
 
 interface NumberInputInterface {
-  valueKey: string
-  label: string
-  value: number
+  value: string;
+  placeholder: string;
+  onChange(value: string): void;
 }
 
-const NumberInput = (props: NumberInputInterface) => {
-  const dispatch = useDispatch()
-  const setInputs = (value: any) => dispatch({ type: 'inputs', value })
-
-  const { valueKey, value, label } = props
+export const NumberInput = (props: NumberInputInterface) => {
+  const { value, placeholder, onChange } = props
 
   const inputProps = {
-    classNames: { container: 'form-input text' },
-    value: value || '',
+    classNames: { container: 'typed-text-input' },
+    value,
     type: 'number',
-    label,
-    onChange: (value: string) => setInputs({ [valueKey]: +value }),
+    placeholder,
+    onChange,
   }
 
   return <ManagedText {...inputProps} />
 }
-
-export default NumberInput

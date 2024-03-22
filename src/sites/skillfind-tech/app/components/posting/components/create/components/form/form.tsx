@@ -33,6 +33,7 @@ const AnnouncementCreateForm = () => {
       <CooperationMode />
       <Location />
       <section>
+        {/* TODO */}
         <Contracts />
       </section>
       <SubmitButton />

@@ -1,66 +1,47 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
-import ContractSelector from './components/contract-selector/contract-selector'
-import { ContractName, Contract } from './contracts.types'
 import { useInputs } from '../../../../../../../../../../shared/app/functions/store/use-inputs'
+import { ContractSelector } from './components/contract-selector/contract-selector'
+import { useTexts } from '../../../../../../../../../../shared/app/functions/store/use-texts'
 
-interface Store {
-  inputs: {
-    b2b: boolean
-    b2bMin: number
-    b2bMax: number
-  }
+interface Contract {
+  name: string;
+  label: string;
+  instructions: string;
 }
 
 export const Contracts = () => {
   useStyles(styles)
 
-  const {
-    b2b,
-    b2bMin,
-    b2bMax,
-    // employment,
-    // employmentMin,
-    // employmentMax,
-    // civilContract,
-    // civilContractMin,
-    // civilContractMax,
-  } = useInputs()
-
-  const contracts = [
-    {
-      contractKey: ContractName.b2b,
-      contractValue: b2b,
-      label: 'B2B',
-      contractMin: b2bMin,
-      contractMax: b2bMax,
-    },
-    // {
-    //   contractKey: 'employment',
-    //   contractValue: employment,
-    //   label: 'Permanent Employment',
-    //   contractMin: employmentMin,
-    //   contractMax: employmentMax,
-    // },
-    // {
-    //   contractKey: 'civilContract',
-    //   contractValue: civilContract,
-    //   label: 'Mandate',
-    //   contractMin: civilContractMin,
-    //   contractMax: civilContractMax,
-    // },
-  ] as const
+  const { contracts } = useInputs()
+  const inputs = useInputs()
+  const { minPlaceholder, maxPlaceholder } = useTexts();
 
   return (
-    <div>
+    <div className='contracts'>
       <h2>Contract</h2>
-      {contracts.map((contract: Contract) => (
-        <ContractSelector
-          {...contract}
-          key={contract.label}
-        />
-      ))}
+      {contracts.map((contract: Contract) => {
+        const {
+          name,
+          label,
+          instructions,
+        } = contract
+
+        const checked = inputs[name]
+
+        return (
+          <ContractSelector
+            key={label}
+            name={name}
+            label={label}
+            checked={checked}
+            instructions={instructions}
+            minPlaceholder={minPlaceholder}
+            maxPlaceholder={maxPlaceholder}
+          />
+        )
+      })}
     </div>
   )
 }
