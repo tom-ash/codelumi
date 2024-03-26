@@ -63,10 +63,10 @@ export const clientServerParams = [
 
 export const createClientServerParams = [
   ...clientServerParams,
-  {
-    client: 'picUploads',
-    server: 'pictures',
-  },
+  // {
+  //   client: 'picUploads',
+  //   server: 'pictures',
+  // },
 ]
 
 export const showClientServerParams = [

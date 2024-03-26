@@ -1,0 +1,50 @@
+#user-new {
+  .logo {
+    position: relative;
+    .drag-and-drop-container {
+      height: 48px;
+    }
+    .drag-and-drop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      input {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+      }
+      cursor: pointer !important;
+      svg {
+        width: 48px;
+        vertical-align: middle;
+        cursor: pointer !important;
+      }
+      &:hover {
+        svg {
+          fill: gray;
+          cursor: pointer !important;
+        }
+      }
+    }
+    .instructions {
+      height: 48px;
+      padding-left: 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .blobs {
+      margin-top: 24px;
+      margin-bottom: 48px;
+      text-align: center;
+      .picture {
+        img {
+          max-width: 240px;
+        }
+      }
+    }
+  }
+}

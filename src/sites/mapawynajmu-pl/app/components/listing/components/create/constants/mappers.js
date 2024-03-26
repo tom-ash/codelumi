@@ -8,14 +8,12 @@ export const mapStateToProps = store => {
     'announcement/create/summary': renderSuccess,
   } = render
   const { authorized, admin } = store.user
-  const { step, savingListing, savingPicture } = control
+  const { step } = control
   const { id, pin, announcement, user, isPromoted } = data
   const { termsOfServiceConsentLabel, shareOnFacebookButtonLabel, congratulations } = texts
   const {
     category,
     blobs,
-    picUploads,
-    dbPictures,
     latitude,
     longitude,
     locality,
@@ -44,6 +42,8 @@ export const mapStateToProps = store => {
     phoneNumber,
     termsOfServiceConsent,
     businessName,
+    pictures,
+    currentPictures,
   } = inputs
 
   return {
@@ -56,16 +56,12 @@ export const mapStateToProps = store => {
     authorized,
     admin,
     step,
-    savingListing,
-    savingPicture,
     id,
     pin,
     announcement,
     user,
     category,
     blobs,
-    picUploads,
-    dbPictures,
     latitude,
     longitude,
     locality,
@@ -98,6 +94,8 @@ export const mapStateToProps = store => {
     shareOnFacebookButtonLabel,
     congratulations,
     isPromoted,
+    pictures,
+    currentPictures,
   }
 }
 
