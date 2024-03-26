@@ -13,7 +13,6 @@ export const Category = () => {
   const { categoryHeading, categoryInstructions } = useTexts()
   const { category: currentCategory } = useInputs()
   const dispatch = useDispatch()
-
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
 
   let iconWidth: number | undefined

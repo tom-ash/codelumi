@@ -1,3 +1,4 @@
+import { Picture } from '../../../../../../../../../../../shared/app/components/support/picture-input/types/picture.interface'
 import { buildUserObject } from './build-user-object'
 import { postUserObject } from './post-user-object'
 
@@ -10,18 +11,28 @@ interface SubmitForm {
     termsOfServiceConsentLabel: string
     setControl(args: { connecting: boolean }): void
     setErrors(args: any): void // TODO
+    logo: Picture;
   }): void
 }
 
 export const submitForm: SubmitForm = args => {
-  const { lang, emailAddress, password, termsOfServiceConsent, termsOfServiceConsentLabel, setControl, setErrors } =
-    args
+  const {
+    logo,
+    lang,
+    emailAddress,
+    password,
+    termsOfServiceConsent,
+    termsOfServiceConsentLabel,
+    setControl,
+    setErrors,
+  } = args
 
   const userObject = buildUserObject({
     emailAddress,
     password,
     termsOfServiceConsent,
     termsOfServiceConsentLabel,
+    logo,
     setErrors,
   })
 

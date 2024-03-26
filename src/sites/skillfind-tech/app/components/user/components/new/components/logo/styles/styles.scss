@@ -1,19 +1,13 @@
-@import '../../../../../../../../../shared/app/styles/media-breakpoints';
-
-#listing-new-form {
-  .pictures {
+#user-new {
+  .logo {
     position: relative;
     .drag-and-drop-container {
-      height: 100px;
+      height: 48px;
     }
     .drag-and-drop {
       position: absolute;
       top: 0;
       left: 0;
-      width: 100px;
-      height: 100px;
-      text-align: center;
-      padding-top: 26px;
       input {
         position: absolute;
         top: 0;
@@ -24,7 +18,6 @@
       }
       cursor: pointer !important;
       svg {
-        height: 48px;
         width: 48px;
         vertical-align: middle;
         cursor: pointer !important;
@@ -37,9 +30,8 @@
       }
     }
     .instructions {
-      font-size: 16px;
-      height: 100px;
-      padding-left: 100px;
+      height: 48px;
+      padding-left: 64px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -49,11 +41,9 @@
       margin-bottom: 48px;
       text-align: center;
       .picture {
-        float: left;
-        position: relative;
-        width: 50%;
-        padding-right: 60px;
+        padding-right: 40px;
         margin-bottom: 20px;
+        position: relative;
         img {
           width: 100%;
         }
@@ -61,7 +51,7 @@
           position: absolute;
           top: 0;
           bottom: 0;
-          right: 20px;
+          right: 0;
           width: 40px;
           .button {
             height: 40px;
@@ -72,18 +62,6 @@
                 fill: red;
               }
             }
-            &.up {
-              svg {
-                width: 10px;
-                transform: rotate(90deg);
-              }
-            }
-            &.down {
-              svg {
-                width: 10px;
-                transform: rotate(-90deg);
-              }
-            }
             &.rotate {
               margin-top: 4px;
               svg {
@@ -91,11 +69,6 @@
               }
             }
           }
-        }
-        @media #{$LARGE-PHONE} {
-          // margin-right: 0;
-          float: none;
-          width: 100%;
         }
       }
     }
