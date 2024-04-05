@@ -1,8 +1,10 @@
 import scrollToElement from '../../../../../../../../../shared/app/functions/screen/scrollers/to-element'
-import { requiredInputs, requiredInputsArray } from '../../../constants/required-inputs'
 import { buildUserObject } from '../../../../../../user/components/new/components/email/components/form/functions/build-user-object'
 import buildAnouncement from '../../../functions/build-announcement'
 import { mapValidator } from '../../../functions/validators/map.validator'
+import { validateCategory } from '../../category/functions/validate-category'
+import { validateLocation } from '../../location/functions/validate-location'
+import { validatePictures } from '../../pictures/functions/validate-pictures'
 
 export function publish(addPromotion: boolean = false) {
   const {
@@ -20,18 +22,26 @@ export function publish(addPromotion: boolean = false) {
     termsOfServiceConsentLabel,
     latitude,
     longitude,
+    category,
+    pictures,
     // @ts-ignore
   } = this.props
 
-  const announcementObject = {
-    // category: this.categoryManager().validate(),
-    // @ts-ignore
-    // pictures: this.validatePictures(),
-    // map: mapValidator({
-    //   lat: latitude,
-    //   lng: longitude,
-    //   setErrors,
-    // }),
+
+  const validations = [
+    validateCategory({ category, setErrors }),
+    validateLocation({ lat: latitude, lng: longitude, setErrors }),
+    validatePictures({ pictures, setErrors })
+  ]
+
+  for(let i = 0; i < validations.length; i++) {
+    const validation = validations[i]
+    if (validation) {
+      const element = document.getElementById(validation)
+      setControl({ connecting: false })
+      scrollToElement(element, 12, -120)
+      return
+    }
   }
 
   // @ts-ignore
@@ -50,17 +60,17 @@ export function publish(addPromotion: boolean = false) {
         setErrors,
       })
 
-  if (!Object.values(announcementObject).every(element => element)) {
-    for (let i = 0; i < requiredInputsArray.length; i++) {
-      // @ts-ignore
-      if (!announcementObject[requiredInputsArray[i]]) {
-        setControl({ connecting: false })
+  // if (!Object.values(announcementObject).every(element => element)) {
+  //   for (let i = 0; i < requiredInputsArray.length; i++) {
+  //     // @ts-ignore
+  //     if (!announcementObject[requiredInputsArray[i]]) {
+  //       setControl({ connecting: false })
 
-        // @ts-ignore
-        return scrollToElement(document.getElementById(requiredInputs[requiredInputsArray[i]].id), 12, -120)
-      }
-    }
-  }
+  //       // @ts-ignore
+  //       return scrollToElement(document.getElementById(requiredInputs[requiredInputsArray[i]].id), 12, -120)
+  //     }
+  //   }
+  // }
 
   if (!authorized && !user) {
     setControl({ connecting: false })

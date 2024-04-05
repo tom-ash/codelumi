@@ -16,7 +16,7 @@ export const MapMarker = () => {
   const setData = (value: any) => dispatch({ type: 'data', value })
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
-  const { isMapMarkerError: isError } = useErrors()
+  const { isLocationError: isError } = useErrors()
   const { longitude, latitude, category } = useInputs()
   const { isMapInitialized } = useApp()
   const { mapOptions } = useControl()

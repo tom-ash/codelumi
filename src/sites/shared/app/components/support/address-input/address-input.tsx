@@ -51,7 +51,7 @@ export const AddressInput: AddressInputInterface = props => {
 
     onInputEnter && onInputEnter(items[currentItemIndex])
 
-    // setErrors({ isMapMarkerError: false })
+    // setErrors({ isLocationError: false })
 
     // @ts-expect-error: https://stackoverflow.com/questions/60504810/react-synteticevent-provides-no-blur-method-for-keyboardeventhtmlinputelement
     e.target.blur()
@@ -81,7 +81,7 @@ export const AddressInput: AddressInputInterface = props => {
       }
     )
 
-    setErrors({ isMapMarkerError: false })
+    setErrors({ isLocationError: false })
   }
 
   const inputProps = {

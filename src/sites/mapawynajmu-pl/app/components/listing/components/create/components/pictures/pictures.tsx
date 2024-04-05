@@ -6,18 +6,34 @@ import { useTexts } from '../../../../../../../../shared/app/functions/store/use
 import { useDispatch } from 'react-redux'
 import { useData } from '../../../../../../../../shared/app/functions/store/use-data'
 import s3Url from '../../../../../../../shared/constants/urls/aws-s3';
+import { useErrors } from '../../../../../../../../shared/app/functions/store/use-errors'
+
+export const PICTURES_ID = 'pictures'
 
 export const Pictures = () => {
   useStyles(styles)
 
-  const { picturesUploadInstructions } = useTexts()
+  const { picturesHeading, picturesUploadInstructions } = useTexts()
   const { id: listingId } = useData()        
   const { persistedPictures } = useData()
   const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
+  const setErrors = (value: any) => dispatch({ type: 'errors', value })
+  const { isPicturesError: isError } = useErrors()
+
+  const classNames = ['pictures']
+  if (isError) {
+    classNames.push('error')
+  }
 
   return (
-    <div className='pictures'>
+    <div
+      id={PICTURES_ID}
+      className={classNames.join(' ')}
+    >
+      <h2>
+        {picturesHeading}
+      </h2>
       <PictureInput
         multiple={true}
         limit={12}
@@ -33,7 +49,10 @@ export const Pictures = () => {
             database,
           }
         })}
-        onPictureSet={(pictures) => setInputs({ pictures })}
+        onPictureSet={(pictures) => {
+          setInputs({ pictures })
+          setErrors({ isPicturesError: false })
+        }}
       />
     </div>
   )

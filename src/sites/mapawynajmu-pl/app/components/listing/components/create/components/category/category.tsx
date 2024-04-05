@@ -7,6 +7,9 @@ import { useApp } from '../../../../../../../../shared/app/functions/store/use-a
 import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
 import { useInputs } from '../../../../../../../../shared/app/functions/store/use-inputs'
 import { useDispatch } from 'react-redux'
+import { useErrors } from '../../../../../../../../shared/app/functions/store/use-errors'
+
+export const CATEGORY_ID = 'category'
 
 export const Category = () => {
   const { lang, device, screenWidth } = useApp()
@@ -14,6 +17,8 @@ export const Category = () => {
   const { category: currentCategory } = useInputs()
   const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
+  const setErrors = (value: any) => dispatch({ type: 'errors', value })
+  const { isCategoryError: isError } = useErrors()
 
   let iconWidth: number | undefined
 
@@ -25,8 +30,16 @@ export const Category = () => {
     }
   }, [device, screenWidth])
 
+  const classNames = ['category']
+  if (isError) {
+    classNames.push('error')
+  }
+
   return (
-    <div className='category'>
+    <div
+      id={CATEGORY_ID}
+      className={classNames.join(' ')}
+    >
       <HeadingTwo text={categoryHeading} />
       <Instructions text={categoryInstructions} />
       <div className='categories'>
@@ -47,7 +60,10 @@ export const Category = () => {
             <div
               key={label}
               className={classNames.join(' ')}
-              onClick={() => setInputs({ category: value })}
+              onClick={() => {
+                setInputs({ category: value })
+                setErrors({ isCategoryError: false })
+              }}
             >
               <div
                 className='icon'

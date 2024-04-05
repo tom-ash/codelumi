@@ -50,5 +50,5 @@ export const addPin = async (props: AddPinProps) => {
     latitude: lat, // TODO: REMOVE!
     longitude: lng, // TODO: REMOVE!
   })
-  setErrors({ isMapMarkerError: false })
+  setErrors({ isLocationError: false })
 }

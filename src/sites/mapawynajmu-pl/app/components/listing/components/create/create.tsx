@@ -16,7 +16,7 @@ import { Heading } from '../../../support/components/heading'
 import UserNew from '../../../user/components/new/new'
 import UserCreateEmailVerify from '../../../../../../shared/app/components/user/components/new/components/verification/verification'
 import { Line } from '../../../support/components/line/line'
-import { Category } from './components/category/category.tiles'
+import { Category } from './components/category/category'
 import { SubmitWithoutPromotionButton } from './components/submit/submit-without-promotion.button'
 import { SubmitWithPromotion } from './components/submit/submit-with-promotion/submit-with-promotion'
 import { Location } from './components/location/location'
@@ -28,7 +28,6 @@ class AnnouncementCreate extends React.Component {
     super(props)
     // @ts-ignore
     this.userCreateNode = React.createRef()
-    this.componentDidMount = lifecycle.componentDidMount
     this.componentDidUpdate = lifecycle.componentDidUpdate
     // @ts-ignore
     // this.validatePictures = validatePictures.bind(this)

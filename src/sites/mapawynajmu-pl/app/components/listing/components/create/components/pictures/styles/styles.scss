@@ -1,10 +1,25 @@
 @import '../../../../../../../../../shared/app/styles/media-breakpoints';
+@import '../../../../../../../styles/colors';
 
 #listing-new-form {
   .pictures {
     position: relative;
+    &.error {
+      h2 {
+        color: $ERROR-COLOR;
+      }
+      .instructions {
+        color: $ERROR-COLOR;
+      }
+      svg {
+        fill: $ERROR-COLOR;
+      }
+    }
     .drag-and-drop-container {
       height: 100px;
+    }
+    .drag-and-drop-container {
+      position: relative;
     }
     .drag-and-drop {
       position: absolute;
