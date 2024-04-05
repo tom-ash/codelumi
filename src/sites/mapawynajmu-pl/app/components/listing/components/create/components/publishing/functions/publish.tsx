@@ -1,7 +1,6 @@
 import scrollToElement from '../../../../../../../../../shared/app/functions/screen/scrollers/to-element'
 import { buildUserObject } from '../../../../../../user/components/new/components/email/components/form/functions/build-user-object'
 import buildAnouncement from '../../../functions/build-announcement'
-import { mapValidator } from '../../../functions/validators/map.validator'
 import { validateCategory } from '../../category/functions/validate-category'
 import { validateLocation } from '../../location/functions/validate-location'
 import { validatePictures } from '../../pictures/functions/validate-pictures'

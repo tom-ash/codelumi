@@ -5,7 +5,6 @@ const Image = (props: ImageProps) => {
   const imgProps = {
     src,
     alt,
-    crossOrigin: 'anonymous',
     key: src,
     style,
   } as const

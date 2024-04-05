@@ -21,9 +21,8 @@ export const Logo: LogoInterface = props => {
       }}
     >
       <img
-        src='https://mapawynajmupl.s3.eu-central-1.amazonaws.com/logo.jpeg?a=123'
+        src='https://mapawynajmupl.s3.eu-central-1.amazonaws.com/logo.jpeg'
         alt='mapawynajmu.pl logo'
-        crossOrigin={'anonymous'}
       />
     </div>
   )
