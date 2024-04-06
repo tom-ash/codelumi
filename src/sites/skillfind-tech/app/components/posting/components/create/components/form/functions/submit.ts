@@ -4,7 +4,6 @@ import { changeUrl } from '../../../../../../../../../shared/app/functions/route
 
 type SubmitProps = {
   lang: Lang
-  businessName: string
   industry: string
   selectedSkills: Array<any>
   cooperationMode: string
@@ -26,7 +25,6 @@ type SubmitProps = {
 export const submit = (props: SubmitProps) => {
   const {
     lang,
-    businessName,
     selectedSkills,
     cooperationMode,
     b2b,
@@ -46,7 +44,6 @@ export const submit = (props: SubmitProps) => {
   } = props
 
   const body = {
-    businessName,
     selectedSkills,
     cooperationMode,
     b2b,

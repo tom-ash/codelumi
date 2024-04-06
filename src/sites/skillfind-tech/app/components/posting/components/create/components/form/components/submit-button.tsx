@@ -12,7 +12,6 @@ const SubmitButton = () => {
 
   const {
     selectedSkills,
-    businessName,
     cooperationMode,
     b2b,
     b2bMax,
@@ -36,7 +35,6 @@ const SubmitButton = () => {
     onClick: () =>
       submit({
         lang,
-        businessName,
         selectedSkills,
         cooperationMode,
         b2b,

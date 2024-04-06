@@ -6,7 +6,6 @@ import SubmitButton from './components/submit-button'
 import { Contracts } from './components/contracts/contracts'
 import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
 import { Industry } from './components/industry/industry'
-import { BusinessName } from './components/business-name/business-name'
 import { Location } from './components/location/location'
 import { CooperationMode } from './components/cooperation-mode/cooperation-mode'
 
@@ -23,7 +22,7 @@ const AnnouncementCreateForm = () => {
       <h1>{title}</h1>
       <section>
         <h2>COMPANY DATA</h2>
-        <BusinessName />
+        {/* <BusinessName /> */}
         <Industry />
       </section>
       <section>

@@ -1,5 +1,3 @@
-@import '../../../../../../../../../shared/app/components/support/typed-text-input/styles/styles.scss';
-
 #listing-create-form {
   max-width: 768px;
   margin: 0 auto;
@@ -9,9 +7,6 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   h2 {
     margin-top: 32px;
-  }
-  .typed-text-input {
-    @extend %typed-text-input;
   }
 
   .select {

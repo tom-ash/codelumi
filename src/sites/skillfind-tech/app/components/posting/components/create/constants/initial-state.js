@@ -1,7 +1,6 @@
 const initialState = {
   selectableSkills: [],
   selectedSkills: [],
-  companyName: '',
   companyIndustry: '',
   companyDescription: '',
   companyOfficeCity: '',

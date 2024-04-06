@@ -4,10 +4,20 @@
 @import '../../../../../styles/inputs/text';
 @import '../../../../../styles/inputs/button';
 @import '../../../../../styles/inputs/checkbox.scss';
+@import '../../../../../../../shared/app/components/support/typed-text-input/styles/styles.scss';
 
 #user-new {
   @extend %container;
   padding: 32px;
+  .typed-text-input {
+    @extend %typed-text-input;
+  }
+  .logo {
+    margin-top: 24px;
+  }
+  // .business-name {
+
+  // }
   h1 {
     @extend %h1;
     margin-bottom: 24px;
