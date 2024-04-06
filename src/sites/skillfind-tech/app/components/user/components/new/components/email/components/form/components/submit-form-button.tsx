@@ -6,18 +6,18 @@ import { useInputs } from '../../../../../../../../../../../shared/app/functions
 
 export const SubmitFormButton = () => {
   const { submitFormButtonLabel: label, termsOfServiceConsentLabel } = useTexts()
-  const { emailAddress, password, termsOfServiceConsent, pictures, logo, businessName } = useInputs()
+  const { emailAddress, password, termsOfServiceConsent, pictures, logo, businessName, industry } = useInputs()
 
   const submitButtonProps = {
     label,
+    businessName,
+    industry,
+    logo,
     emailAddress,
     password,
     termsOfServiceConsent,
     termsOfServiceConsentLabel,
     submit: submitForm,
-    pictures,
-    logo,
-    businessName,
   }
 
   return <SubmitButton {...submitButtonProps} />

@@ -7,6 +7,7 @@ import { Picture } from '../../../../../../../../../../../shared/app/components/
 interface BuildUserObject {
   (args: {
     businessName: string;
+    industry: string;
     logo: Picture;
     emailAddress: string
     password: string
@@ -17,10 +18,11 @@ interface BuildUserObject {
 }
 
 export const buildUserObject: BuildUserObject = args => {
-  const { businessName, emailAddress, password, termsOfServiceConsent, termsOfServiceConsentLabel, logo, setErrors } = args
+  const { businessName, industry, emailAddress, password, termsOfServiceConsent, termsOfServiceConsentLabel, logo, setErrors } = args
 
   let userObject: UserObject = {
     businessName,
+    industry,
     emailAddress,
     password,
     termsOfServiceConsent,

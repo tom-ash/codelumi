@@ -5,7 +5,6 @@ import Skills from './components/skill-selector/skills'
 import SubmitButton from './components/submit-button'
 import { Contracts } from './components/contracts/contracts'
 import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
-import { Industry } from './components/industry/industry'
 import { Location } from './components/location/location'
 import { CooperationMode } from './components/cooperation-mode/cooperation-mode'
 
@@ -20,11 +19,6 @@ const AnnouncementCreateForm = () => {
       className='form'
     >
       <h1>{title}</h1>
-      <section>
-        <h2>COMPANY DATA</h2>
-        {/* <BusinessName /> */}
-        <Industry />
-      </section>
       <section>
         <h2>SKILLS</h2>
         <Skills />

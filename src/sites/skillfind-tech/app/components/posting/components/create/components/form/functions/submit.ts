@@ -4,7 +4,6 @@ import { changeUrl } from '../../../../../../../../../shared/app/functions/route
 
 type SubmitProps = {
   lang: Lang
-  industry: string
   selectedSkills: Array<any>
   cooperationMode: string
   b2b: boolean
@@ -30,7 +29,6 @@ export const submit = (props: SubmitProps) => {
     b2b,
     b2bMax,
     b2bMin,
-    industry,
     employment,
     employmentMax,
     employmentMin,
@@ -49,7 +47,6 @@ export const submit = (props: SubmitProps) => {
     b2b,
     b2bMax,
     b2bMin,
-    industry,
     employment,
     employmentMax,
     employmentMin,
