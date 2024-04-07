@@ -39,6 +39,8 @@ const App = () => {
     window.apiUrl = apiUrl
     // @ts-ignore
     window.lang = lang
+    // @ts-ignore
+    dispatch({ type: 'app', value: { isDocumentReady: true }})
   }, [lang])
 
   useEffect(() => setIsMobile(dispatch), []) // TODO: Consider moving to server.

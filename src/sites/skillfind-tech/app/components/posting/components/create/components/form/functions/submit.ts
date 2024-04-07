@@ -6,19 +6,20 @@ type SubmitProps = {
   lang: Lang
   selectedSkills: Array<any>
   cooperationMode: string
+  placeAutocomplete: string
+  lat: number
+  lng: number
+  placeId: string
+  country: string | undefined
+  locality: string | undefined
+  sublocality: string | undefined
+  description: string;
   b2b: boolean
   b2bMin: number
   b2bMax: number
   employment: boolean
   employmentMin: number
   employmentMax: number
-  placeId: string
-  placeAutocomplete: string
-  lat: number
-  lng: number
-  country: string | undefined
-  locality: string | undefined
-  sublocality: string | undefined
 }
 
 export const submit = (props: SubmitProps) => {
@@ -26,6 +27,7 @@ export const submit = (props: SubmitProps) => {
     lang,
     selectedSkills,
     cooperationMode,
+    description,
     b2b,
     b2bMax,
     b2bMin,
@@ -44,6 +46,7 @@ export const submit = (props: SubmitProps) => {
   const body = {
     selectedSkills,
     cooperationMode,
+    description,
     b2b,
     b2bMax,
     b2bMin,
@@ -69,10 +72,10 @@ export const submit = (props: SubmitProps) => {
     },
     body: JSON.stringify(body),
   })
-    .then(response => {
-      if (response.ok) return response.json()
-    })
-    .then(href => {
-      changeUrl({ href })
-    })
+  .then(response => {
+    if (response.ok) return response.json()
+  })
+  .then(href => {
+    changeUrl({ href })
+  })
 }

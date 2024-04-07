@@ -7,6 +7,7 @@ import { Contracts } from './components/contracts/contracts'
 import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
 import { Location } from './components/location/location'
 import { CooperationMode } from './components/cooperation-mode/cooperation-mode'
+import { Description } from './components/description/description'
 
 const AnnouncementCreateForm = () => {
   useStyles(styles)
@@ -25,6 +26,7 @@ const AnnouncementCreateForm = () => {
       </section>
       <CooperationMode />
       <Location />
+      <Description />
       <section>
         {/* TODO */}
         <Contracts />
