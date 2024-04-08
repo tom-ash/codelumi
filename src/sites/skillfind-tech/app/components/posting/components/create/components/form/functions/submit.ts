@@ -1,6 +1,11 @@
 import apiUrl from '../../../../../../../../shared/constants/urls/api'
 import { getAccessToken } from '../../../../../../../../../shared/app/components/user/components/auth/functions/get-access-token'
 import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/change-url'
+import { createSocialImage } from '../components/social-image/functions/create-social-image'
+
+// import transformCanvasToBlob from '../../../../../../../../../shared/app/components/image/components/edit/functions/transform-canvas-to-blob';
+// import drawOnCanvas from '../../../../../../../../../shared/app/components/image/components/edit/functions/draw-on-canvas';
+// import compress from '../../../../../../../../../shared/app/components/image/components/edit/functions/compress';
 
 type SubmitProps = {
   lang: Lang
@@ -22,7 +27,7 @@ type SubmitProps = {
   employmentMax: number
 }
 
-export const submit = (props: SubmitProps) => {
+export const submit = async (props: SubmitProps) => {
   const {
     lang,
     selectedSkills,
@@ -61,6 +66,10 @@ export const submit = (props: SubmitProps) => {
     locality,
     sublocality,
   }
+
+  const socialImageKey = await createSocialImage()
+
+  // TODO: Send socialImageKey.
 
   fetch(apiUrl + '/postings', {
     method: 'POST',

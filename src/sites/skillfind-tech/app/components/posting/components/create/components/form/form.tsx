@@ -8,6 +8,7 @@ import { useTexts } from '../../../../../../../../shared/app/functions/store/use
 import { Location } from './components/location/location'
 import { CooperationMode } from './components/cooperation-mode/cooperation-mode'
 import { Description } from './components/description/description'
+import { SocialImage } from './components/social-image/social-image'
 
 const AnnouncementCreateForm = () => {
   useStyles(styles)
@@ -31,6 +32,7 @@ const AnnouncementCreateForm = () => {
         {/* TODO */}
         <Contracts />
       </section>
+      <SocialImage />
       <SubmitButton />
     </div>
   )

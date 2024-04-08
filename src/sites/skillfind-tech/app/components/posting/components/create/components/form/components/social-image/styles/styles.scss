@@ -1,0 +1,38 @@
+#social-image {
+  position: absolute;
+  background: white;
+  left: 10000px;
+
+  width: 1200px;
+  height: 630px;
+
+  border: 1px solid lightgray;
+  padding: 50px;
+
+  .location {
+    margin-top: 40px;
+    font-size: 32px;
+  }
+
+  .remuneration {
+    font-size: 48px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    color: #D35400;
+  }
+
+  .skills {
+    margin-top: 40px;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+  }
+
+  .skill {
+    float: left;
+    transform: scale(1.5);
+    transform-origin: bottom left;
+    width: 200px;
+  }
+}
