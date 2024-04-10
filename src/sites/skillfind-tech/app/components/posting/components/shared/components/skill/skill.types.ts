@@ -2,6 +2,7 @@ export enum SkillView {
   formSelectable = 'formSelectable',
   formSelected = 'formSelected',
   indexVisitor = 'indexVisitor',
+  INDEX_PANEL = 'INDEX_PANEL',
 }
 
 export enum SkillLevel {

@@ -5,10 +5,7 @@ import { PostingIndexTile } from './components/tile/tile'
 import { useData } from '../../../../../../shared/app/functions/store/use-data'
 import { MapIndex } from '../../../../../../shared/app/components/support/map-index/map-index'
 import { pinBuilder } from './functions/pin-builder'
-
-const Panel = () => {
-  return <>PANEL</>
-}
+import { Panel } from './components/panel/panel'
 
 const ShowItem = () => {
   return <>SHOW_ITEM</>

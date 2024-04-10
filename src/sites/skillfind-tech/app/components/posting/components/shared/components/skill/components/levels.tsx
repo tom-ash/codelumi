@@ -28,16 +28,25 @@ export const SkillLevels = (props: SkillLevelsProps) => {
           : ''
         const classNames = ['level', fillClass]
         const sharedLevelProps = { className: classNames.join(' '), key: availableLevel }
-        const formProps = {
-          onMouseOver: () => setLevelHovered(index + 1),
-          onMouseLeave: () => setLevelHovered(0),
-          onClick: () => selectSkill({ name, level: levelHovered }),
-        }
+        // const formProps = {
+        //   onMouseOver: () => setLevelHovered(index + 1),
+        //   onMouseLeave: () => setLevelHovered(0),
+        //   onClick: () => selectSkill({ name, level: levelHovered }),
+        // }
 
         return (
           <div
             {...sharedLevelProps}
-            {...((view === SkillView.formSelectable || view === SkillView.formSelected) && formProps)}
+            {...((view === SkillView.formSelectable || view === SkillView.formSelected) && {
+              onMouseOver: () => setLevelHovered(index + 1),
+              onMouseLeave: () => setLevelHovered(0),
+              onClick: () => selectSkill({ name, level: levelHovered }),
+            })}
+            {...((view === SkillView.INDEX_PANEL) && {
+              onMouseOver: () => setLevelHovered(index + 1),
+              onMouseLeave: () => setLevelHovered(0),
+              onClick: () => selectSkill({ name, level: levelHovered }),
+            })}
           />
         )
       })}
