@@ -5,6 +5,7 @@ import { PostingIndexTileIndustry } from '../components/industry/industry'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { Image } from '../../../../../../../../shared/app/components/support/image/image'
+import { Remuneration } from './components/remuneration/remuneration'
 
 interface PostingIndexTileInterface {
   (props: {
@@ -14,13 +15,29 @@ interface PostingIndexTileInterface {
     b2bMin?: number
     b2bMax?: number
     skills: SkillProps[]
+    logo: string;
   }): React.ReactElement
 }
 
 export const PostingIndexTile: PostingIndexTileInterface = props => {
   useStyles(styles)
 
-  const { id, businessName, industry, b2bMin, b2bMax, skills } = props
+  const {
+    id,
+    businessName,
+    industry,
+    // b2b,
+    b2bMin,
+    b2bMax,
+    // employment,
+    // employmentMin,
+    // employmentMax,
+    skills,
+    logo,
+    // industry,
+  } = props
+
+  console.log(props)
 
   return (
     <div
@@ -30,22 +47,17 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
       <div className='company'>
         <div className='company-logo'>
           <Image
-            src='https://s3.eu-central-1.amazonaws.com/skillfind.tech/assets/categories/javascript.png'
+            src={`https://s3.eu-central-1.amazonaws.com/skillfind-tech-dev/logos/${logo}`}
             alt='warsaw-digital'
           />
         </div>
-        {/* https://skillfind.tech/programming */}
-
         <div className='business-name'>{businessName}</div>
         <PostingIndexTileIndustry industry={industry} />
       </div>
-
-      <div className='remuneration'>
-        <strong>
-          12000 - 16000 PLN
-          {/* {b2bMin} - {b2bMax} PLN */}
-        </strong>
-      </div>
+      <Remuneration
+        b2bMin={b2bMin}
+        b2bMax={b2bMax}
+      />
       <div className='skills'>
         {skills.map(skill => {
           return (

@@ -14,9 +14,9 @@ export enum SkillLevel {
 }
 
 export interface SkillProps {
-  view: SkillView
   name: string
   level: number
+  view: SkillView
   selectSkill?: any // TODO!
   unselectSkill?: any // TODO!
 }

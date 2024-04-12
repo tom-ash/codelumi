@@ -10,7 +10,6 @@
   box-shadow:
     rgba(0, 0, 0, 0.12) 0px 1px 3px,
     rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  //   width: 50%!important;
 
   .skills {
     margin-top: 10px;
@@ -18,9 +17,6 @@
       float: left;
       margin-right: 32px;
       margin-top: 20px;
-      // .name {
-      //   // font-weight: bold;
-      // }
     }
   }
 
@@ -36,7 +32,7 @@
   }
 
   .company {
-    padding-left: 60px;
+    padding-left: 90px;
   }
 
   .company-logo {
@@ -50,15 +46,14 @@
     }
   }
 
-  .remuneration {
+  .b2b-remuneration {
     width: 300px;
     position: absolute;
     top: 0;
     right: 0;
     text-align: right;
     padding: 20px;
-    font-size: 20px;
-    color: #2c3e50;
-    // font-weight: normal;
+    font-size: 17px;
+    color: #2874A6;
   }
 }
