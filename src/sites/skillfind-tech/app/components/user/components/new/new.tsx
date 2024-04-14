@@ -11,7 +11,7 @@ const UserNew = () => {
   useStyles(styles)
 
   const render = useRender()
-  const renderAnnouncementCreate = render['listings>new>form']
+  const renderAnnouncementCreate = render['listings/new/form']
 
   if (renderAnnouncementCreate) return <UserNewEmail />
 

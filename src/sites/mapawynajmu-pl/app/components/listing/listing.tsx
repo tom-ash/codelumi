@@ -12,13 +12,16 @@ const Listing = () => {
     'announcement/create': renderCreate,
     'announcement/edit': renderEdit,
     'announcement/index': renderIndex,
+    'listings/show': renderShow,
     listingPromotion,
   } = render
+
 
   return (
     <>
       {(renderCreate || renderEdit) && <AnnouncementCreate />}
-      {renderIndex && <AnnouncementIndex />}
+      {/* @ts-ignore */}
+      {(renderIndex || renderShow) && <AnnouncementIndex renderShow={renderShow} />}
       {listingPromotion && <ListingPromotion />}
     </>
   )

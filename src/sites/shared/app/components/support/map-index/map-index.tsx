@@ -8,6 +8,7 @@ import { PinBuilder } from './types/pin-builder.interface'
 
 interface MapIndexInterface {
   (props: {
+    renderShow?: boolean;
     Panel: PanelInterface
     ListItem: ItemIndexInterface
     ShowItem: ItemShowInterface
@@ -17,13 +18,21 @@ interface MapIndexInterface {
 }
 
 export const MapIndex: MapIndexInterface = props => {
-  const { Panel, ListItem, ShowItem, items, pinBuilder } = props
+  const {
+    items,
+    renderShow = false,
+    Panel,
+    ListItem,
+    ShowItem,
+    pinBuilder
+  } = props
 
   return (
     <section id='map-index'>
       <Panel />
       <Results
         ListItem={ListItem}
+        renderShow={renderShow}
         ShowItem={ShowItem}
         items={items}
         pinBuilder={pinBuilder}

@@ -10,18 +10,16 @@ import { PinBuilder } from '../../types/pin-builder.interface'
 
 interface ResultsInterface {
   (props: {
+    items: Item[]
+    renderShow: boolean,
     ListItem: ItemIndexInterface
     ShowItem: ItemShowInterface
-    items: Item[]
     pinBuilder: PinBuilder
   }): React.ReactElement
 }
 
 export const Results: ResultsInterface = props => {
-  const { ListItem, ShowItem, items, pinBuilder } = props
-
-  // TODO: ADDRESS!
-  const { 'listings/show': renderShow } = useRender()
+  const { renderShow, ListItem, ShowItem, items, pinBuilder } = props
   const { isSSR } = useControl()
 
   return (

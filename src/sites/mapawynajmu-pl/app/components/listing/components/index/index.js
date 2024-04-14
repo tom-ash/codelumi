@@ -24,7 +24,7 @@ class AnnouncementIndexSearch extends React.Component {
   }
 
   render() {
-    const { renderMap, renderMy, articles, device, announcements } = this.props
+    const { renderMap, renderMy, articles, device, announcements, renderShow } = this.props
 
     // TODO: Find better solution.
     let perPage = 3
@@ -51,10 +51,11 @@ class AnnouncementIndexSearch extends React.Component {
         break
     }
 
-    if (renderMap) {
+    if (renderMap || renderShow) {
       return (
         <>
           <MapIndex
+            renderShow={renderShow}
             Panel={AnnouncementIndexPanel}
             ListItem={ListingsIndexTile}
             ShowItem={ListingsShow}

@@ -6,19 +6,25 @@ import { useData } from '../../../../../../shared/app/functions/store/use-data'
 import { MapIndex } from '../../../../../../shared/app/components/support/map-index/map-index'
 import { pinBuilder } from './functions/pin-builder'
 import { Panel } from './components/panel/panel'
+import { ItemShowInterface } from '../../../../../../shared/app/components/support/map-index/types/item-show.interface'
 
-const ShowItem = () => {
-  return <>SHOW_ITEM</>
+interface PostingIndex {
+  (props: {
+    ShowItem: ItemShowInterface;
+    renderShow: boolean;
+  }): React.ReactElement;
 }
 
-const PostingIndex = () => {
+const PostingIndex: PostingIndex = (props) => {
   useStyles(styles)
 
+  const { ShowItem, renderShow} = props
   const { postings } = useData()
 
   return (
     <div id='postings-index'>
       <MapIndex
+        renderShow={renderShow}
         Panel={Panel}
         ListItem={PostingIndexTile}
         ShowItem={ShowItem}

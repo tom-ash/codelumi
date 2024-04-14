@@ -6,6 +6,7 @@ import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { Image } from '../../../../../../../../shared/app/components/support/image/image'
 import { Remuneration } from './components/remuneration/remuneration'
+import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
 
 interface PostingIndexTileInterface {
   (props: {
@@ -16,6 +17,7 @@ interface PostingIndexTileInterface {
     b2bMax?: number
     skills: SkillProps[]
     logo: string;
+    href: string;
   }): React.ReactElement
 }
 
@@ -35,14 +37,19 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
     skills,
     logo,
     // industry,
+    href,
   } = props
 
-  console.log(props)
-
   return (
-    <div
+    <a
       className='postings-index-tile'
       key={id}
+      href={href}
+      onClick={(e) => {
+        e.preventDefault()
+
+        changeUrl({ href })
+      }}
     >
       <div className='company'>
         <div className='company-logo'>
@@ -71,6 +78,6 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
         })}
         <div className='float-clear' />
       </div>
-    </div>
+    </a>
   )
 }

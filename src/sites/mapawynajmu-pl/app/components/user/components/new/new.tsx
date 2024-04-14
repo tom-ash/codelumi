@@ -8,7 +8,7 @@ import { useApp } from '../../../../../../shared/app/functions/store/use-app'
 const UserNew = () => {
   useStyles(styles)
 
-  const renderListingsNewForm = useRender()['listings>new>form']
+  const renderListingsNewForm = useRender()['listings/new/form']
 
   if (renderListingsNewForm) return <UserNewEmail />
 

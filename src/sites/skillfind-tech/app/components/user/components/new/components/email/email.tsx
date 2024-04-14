@@ -8,7 +8,7 @@ const Verification = loadable(
 
 export const UserNewEmail = () => {
   const render = useRender()
-  const renderForm = render['user/new/form'] || render['listings>new>form']
+  const renderForm = render['user/new/form'] || render['listings/new/form']
   const renderVerification = render['user/create/verification']
 
   return (

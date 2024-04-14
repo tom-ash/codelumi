@@ -64,8 +64,6 @@ export const Panel: PanelInterface = () => {
             level,
           } = selectedSkill
 
-          console.log('selectedSkill', selectedSkill)
-
           return (
             <Skill
               key={value}

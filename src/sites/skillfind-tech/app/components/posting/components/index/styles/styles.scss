@@ -115,10 +115,10 @@
     @media #{$LARGE-TABLET} {
       position: relative;
       top: 0;
-      main {
-        position: relative;
-        width: 100%;
-      }
+      // main {
+      //   position: relative;
+      //   width: 100%;
+      // }
       #google-map-container {
         position: relative;
         left: 0;
