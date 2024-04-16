@@ -5,6 +5,7 @@ import { postUserObject } from './post-user-object'
 interface SubmitForm {
   (args: {
     businessName: string;
+    businessNameError: string;
     industry: string;
     lang: Lang
     emailAddress: string
@@ -20,6 +21,7 @@ interface SubmitForm {
 export const submitForm: SubmitForm = args => {
   const {
     businessName,
+    businessNameError,
     industry,
     logo,
     lang,
@@ -33,6 +35,7 @@ export const submitForm: SubmitForm = args => {
 
   const userObject = buildUserObject({
     businessName,
+    businessNameError,
     industry,
     emailAddress,
     password,

@@ -1,3 +1,5 @@
+@import '../../../../../../../styles/colors.scss';
+
 #user-new {
   .logo {
     position: relative;
@@ -68,6 +70,22 @@
                 width: 14px;
               }
             }
+          }
+        }
+      }
+    }
+    &.error {
+      .instructions {
+        color: $ERROR-COLOR;
+      }
+      .drag-and-drop {
+        svg {
+          fill: $ERROR-COLOR;
+        }
+        &:hover {
+          svg {
+            fill: rgba($ERROR-COLOR, .75);
+            cursor: pointer !important;
           }
         }
       }

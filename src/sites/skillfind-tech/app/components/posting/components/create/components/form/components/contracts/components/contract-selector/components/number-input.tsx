@@ -12,7 +12,7 @@ export const NumberInput = (props: NumberInputInterface) => {
   const { value, placeholder, onChange } = props
 
   const inputProps = {
-    classNames: { container: 'typed-text-input' },
+    classNames: { container: 'text-input' },
     value,
     type: 'number',
     placeholder,

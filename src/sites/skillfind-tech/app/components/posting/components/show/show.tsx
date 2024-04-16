@@ -12,8 +12,6 @@ const PostingsShow: PostingShowInterface = (props) => {
 
   const { posting } = useData()
 
-  console.log('posting', posting)
-
   return (
     <div id='postings-show'>
       {JSON.stringify(posting, null, 2)}

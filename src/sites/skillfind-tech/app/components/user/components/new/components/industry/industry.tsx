@@ -6,7 +6,7 @@ export const Industry = () => {
     <div className='industry'>
       <Select
         selectKey='industry'
-        className='select typed-text-input industry'
+        className='select text-input industry'
       />
     </div>
   )

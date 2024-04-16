@@ -4,13 +4,13 @@
 @import '../../../../../styles/inputs/text';
 @import '../../../../../styles/inputs/button';
 @import '../../../../../styles/inputs/checkbox.scss';
-@import '../../../../../../../shared/app/components/support/typed-text-input/styles/styles.scss';
+@import '../../../../../../../shared/app/components/support/text-input-semanticize/styles/styles.scss';
 
 #user-new {
   @extend %container;
   padding: 32px;
-  .typed-text-input {
-    @extend %typed-text-input;
+  .text-input {
+    @extend %text-input;
   }
   .industry {
     margin-top: 24px;

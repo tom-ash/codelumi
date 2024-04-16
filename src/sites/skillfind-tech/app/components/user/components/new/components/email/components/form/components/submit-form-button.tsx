@@ -5,12 +5,17 @@ import { useTexts } from '../../../../../../../../../../../shared/app/functions/
 import { useInputs } from '../../../../../../../../../../../shared/app/functions/store/use-inputs'
 
 export const SubmitFormButton = () => {
-  const { submitFormButtonLabel: label, termsOfServiceConsentLabel } = useTexts()
-  const { emailAddress, password, termsOfServiceConsent, pictures, logo, businessName, industry } = useInputs()
+  const {
+    submitFormButtonLabel: label,
+    termsOfServiceConsentLabel,
+    businessNameInputInvalidError: businessNameError,
+  } = useTexts()
+  const { emailAddress, password, termsOfServiceConsent, logo, businessName, industry } = useInputs()
 
   const submitButtonProps = {
     label,
     businessName,
+    businessNameError,
     industry,
     logo,
     emailAddress,
