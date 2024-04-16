@@ -50,11 +50,12 @@ export const buildUserObject: BuildUserObject = args => {
       errorMessage: businessNameError,
       setErrors,
     }),
+    // TODO!,
     validateLogo({
       value: logo,
       errorMessage: 'TODO',
       setErrors,
-    })
+    }),
   ]
 
   const userObjectInvalid = !validateUserObject({ userObject, setErrors })
