@@ -7,6 +7,7 @@ import styles from './styles/styles.scss'
 import { Image } from '../../../../../../../../shared/app/components/support/image/image'
 import { Remuneration } from './components/remuneration/remuneration'
 import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
+import { LocationAndCooperationMode } from './location-and-cooperation-mode/location-and-cooperation-mode'
 
 interface PostingIndexTileInterface {
   (props: {
@@ -18,6 +19,8 @@ interface PostingIndexTileInterface {
     skills: SkillProps[]
     logo: string;
     href: string;
+    locality?: string;
+    country?: string;
   }): React.ReactElement
 }
 
@@ -38,6 +41,8 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
     logo,
     // industry,
     href,
+    locality,
+    country,
   } = props
 
   return (
@@ -64,6 +69,10 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
       <Remuneration
         b2bMin={b2bMin}
         b2bMax={b2bMax}
+      />
+      <LocationAndCooperationMode
+        locality={locality}
+        country={country}
       />
       <div className='skills'>
         {skills.map(skill => {
