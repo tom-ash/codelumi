@@ -21,6 +21,10 @@ interface PostingIndexTileInterface {
     href: string;
     locality?: string;
     country?: string;
+    cooperationMode: {
+      icon: string;
+      label: string;
+    }
   }): React.ReactElement
 }
 
@@ -43,6 +47,7 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
     href,
     locality,
     country,
+    cooperationMode,
   } = props
 
   return (
@@ -73,6 +78,7 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
       <LocationAndCooperationMode
         locality={locality}
         country={country}
+        cooperationMode={cooperationMode}
       />
       <div className='skills'>
         {skills.map(skill => {
