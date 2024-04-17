@@ -21,10 +21,7 @@ const AnnouncementCreateForm = () => {
       className='form'
     >
       <h1>{title}</h1>
-      <section>
-        <h2>SKILLS</h2>
-        <Skills />
-      </section>
+      <Skills />
       <CooperationMode />
       <Location />
       <Description />

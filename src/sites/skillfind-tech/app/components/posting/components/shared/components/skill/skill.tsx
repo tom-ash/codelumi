@@ -9,7 +9,7 @@ const levelNames = Object.values(SkillLevel)
 function Skill(props: SkillProps) {
   useStyles(styles)
 
-  const { view, name, level, selectSkill, unselectSkill } = props
+  const { view, name, level, selectSkill, unselectSkill, setErrors } = props
   const [levelHovered, setLevelHovered] = useState(0)
   const levelName = levelHovered ? levelNames[levelHovered - 1] : levelNames[level - 1]
 
@@ -22,6 +22,7 @@ function Skill(props: SkillProps) {
     levelHovered,
     selectSkill,
     setLevelHovered,
+    setErrors,
   }
 
   return (

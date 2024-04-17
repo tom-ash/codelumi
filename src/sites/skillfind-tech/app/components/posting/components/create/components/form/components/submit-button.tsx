@@ -4,11 +4,14 @@ import { submit } from '../functions/submit'
 import { useApp } from '../../../../../../../../../shared/app/functions/store/use-app'
 import { useTexts } from '../../../../../../../../../shared/app/functions/store/use-texts'
 import { useInputs } from '../../../../../../../../../shared/app/functions/store/use-inputs'
+import { useDispatch } from 'react-redux'
 
 const SubmitButton = () => {
   const { lang } = useApp()
   const texts = useTexts()
   const inputs = useInputs()
+  const dispatch = useDispatch()
+  const setErrors = (value: any) => dispatch({ type: 'errors', value })
 
   const {
     selectedSkills,
@@ -51,6 +54,7 @@ const SubmitButton = () => {
         country,
         locality,
         sublocality,
+        setErrors,
       }),
   }
 

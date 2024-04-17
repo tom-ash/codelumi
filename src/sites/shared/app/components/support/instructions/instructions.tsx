@@ -1,11 +1,28 @@
 import React from 'react'
 
-type InfoProps = {
-  text: string
+type InstructionsInterface = {
+  (props: {
+    text: string;
+    isError?: boolean;
+  }): React.ReactElement;
 }
 
-export const Instructions = (props: InfoProps) => {
-  const { text } = props
+export const Instructions: InstructionsInterface = (props) => {
+  const {
+    text,
+    isError,
+  } = props
 
-  return <div className='instructions'>{text}</div>
+  const classNames = ['instructions']
+  if (isError) {
+    classNames.push('error')
+  }
+
+  return (
+    <div
+      className={classNames.join(' ')}
+    >
+      {text}
+    </div>
+  )
 }

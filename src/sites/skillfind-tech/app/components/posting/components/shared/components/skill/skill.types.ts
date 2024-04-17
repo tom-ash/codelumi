@@ -19,4 +19,5 @@ export interface SkillProps {
   view: SkillView
   selectSkill?: any // TODO!
   unselectSkill?: any // TODO!
+  setErrors?(params: { skills: null }): void
 }
