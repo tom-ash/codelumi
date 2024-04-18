@@ -17,7 +17,8 @@ type SubmitProps = {
   country: string | undefined
   locality: string | undefined
   sublocality: string | undefined
-  description: string;
+  plDescription: string;
+  enDescription: string;
   b2b: boolean
   b2bMin: number
   b2bMax: number
@@ -32,7 +33,8 @@ export const submit = async (props: SubmitProps) => {
     lang,
     selectedSkills,
     cooperationMode,
-    description,
+    plDescription,
+    enDescription,
     b2b,
     b2bMax,
     b2bMin,
@@ -52,7 +54,8 @@ export const submit = async (props: SubmitProps) => {
   const body = {
     selectedSkills,
     cooperationMode,
-    description,
+    plDescription,
+    enDescription,
     b2b,
     b2bMax,
     b2bMin,

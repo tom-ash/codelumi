@@ -17,4 +17,15 @@
       color: $ERROR-COLOR;
     }
   }
+  .description {
+    .pl, .en {
+      margin-top: 24px;
+      .quill {
+        margin-top: 24px;
+        .ql-container {
+          min-height: 160px;
+        }
+      }
+    }
+  }
 }
