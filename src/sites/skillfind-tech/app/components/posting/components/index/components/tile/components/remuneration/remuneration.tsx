@@ -11,6 +11,14 @@ interface RemunerationInterface {
   }): React.ReactElement | null;
 }
 
+interface FormatRemuneration {
+  (remuneration: number): string;
+}
+
+const formatRemuneration:FormatRemuneration = (remuneration) => {
+  return remuneration.toLocaleString().replace(/,/g, ' ')
+}
+
 export const Remuneration: RemunerationInterface = (props) => {
   const {
     b2bMin,
@@ -21,17 +29,17 @@ export const Remuneration: RemunerationInterface = (props) => {
   
   if (b2bMin && b2bMax) {
     return (
-      <div className='b2b-remuneration'>
-        {b2bMin} - {b2bMax} PLN
-      </div>
+      <strong className='b2b-remuneration'>
+        {formatRemuneration(b2bMin)} - {formatRemuneration(b2bMax)} PLN
+      </strong>
     )
   }
 
   if (employmentMin && employmentMax) {
     return (
-      <div className='employment-remuneration'>
+      <strong className='employment-remuneration'>
         {employmentMin} - {employmentMax} PLN
-      </div>
+      </strong>
     )
   }
 
