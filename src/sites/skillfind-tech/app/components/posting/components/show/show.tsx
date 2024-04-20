@@ -9,6 +9,8 @@ import { SkillView } from '../shared/components/skill/skill.types';
 import { Skills } from '../common/skills/skills';
 import { LocationAndCooperationMode } from '../common/location-and-cooperation-mode/location-and-cooperation-mode';
 import { Remuneration } from '../common/remuneration/remuneration';
+import Image from '../../../../../../shared/app/components/support/image/image';
+import { PostingIndexTileIndustry } from '../index/components/components/industry/industry';
 
 interface PostingShowInterface {
   (props: {}): React.ReactElement;
@@ -28,22 +30,36 @@ const PostingsShow: PostingShowInterface = (props) => {
     country,
     cooperationMode,
     skills,
+    logo,
+    businessName,
+    industry,
   } = posting
 
   return (
     <div id='postings-show'>
       <GoBack />
+      <div className='company'>
+        <div className='company-logo'>
+          <Image
+            src={`https://s3.eu-central-1.amazonaws.com/skillfind-tech-dev/logos/${logo}`}
+            alt='warsaw-digital'
+          />
+        </div>
+        <div className='business-name'>{businessName}</div>
+        <PostingIndexTileIndustry industry={industry} />
+      </div>
+      <LocationAndCooperationMode
+        locality={locality}
+        country={country}
+        cooperationMode={cooperationMode}
+      />
       <Remuneration
         b2bMin={b2bMin}
         b2bMax={b2bMax}
         employmentMin={employmentMin}
         employmentMax={employmentMax}
       />
-      <LocationAndCooperationMode
-        locality={locality}
-        country={country}
-        cooperationMode={cooperationMode}
-      />
+
       <Skills
         skills={skills}
         view={SkillView.indexVisitor}

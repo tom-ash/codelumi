@@ -3,22 +3,78 @@
 @import '../../common/remuneration/styles/styles.scss';
 
 #postings-show {
-  padding: 30px;
+  position: relative;
   background: white;
   border-radius: 6px;
+  padding-bottom: 20px;
   .location-and-cooperation-mode {
     @extend %location-and-cooperation-mode;
+    position: absolute;
+    left: 185px;
+    top: 135px;
   }
-  .b2b-remuneration {
-    @extend %b2b-remuneration;
+  .go-back {
+    position: absolute;
     top: 20px;
     right: 20px;
   }
+  .company {
+    background: #5B2C6F;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    height: 150px;
+    margin-bottom: 70px;
+    .business-name {
+      position: absolute;
+      top: 92px;
+      left: 185px;
+      font-size: 20px;
+      color: white;
+    }
+    .industry {
+      position: absolute;
+      top: 122px;
+      left: 185px;
+      color: white;
+      font-size: 14px;
+    }
+    .company-logo {
+      position: relative;
+      background: white;
+      position: absolute;
+      width: 150px;
+      height: 100px;
+      top: 90px;
+      left: 20px;
+      padding: 5px;
+      border-radius: 6px;
+    }
+    img {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: calc(100% - 10px);
+      height: calc(100% - 10px);
+      border-radius: 4px;
+    }
+  }
+  .b2b-remuneration {
+    display: block;
+    @extend %b2b-remuneration;
+    position: static;
+    padding: 0;
+    padding: 0 25px;
+    margin-top: 25px;
+    text-align: left;
+  }
   .skills {
     @extend %skills;
+    padding: 0 25px;
+    margin-bottom: 0;
   }
   .description {
-    margin-top: 40px;
+    margin-top: 50px;
+    padding: 0 25px;
     ul, ol {
       padding-left: 20px;
     }

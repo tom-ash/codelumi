@@ -2,7 +2,7 @@ import React from 'react'
 import { useData } from '../../../../../../../../shared/app/functions/store/use-data';
 
 interface DescriptionInterface {
-  (props: {}): React.ReactElement;
+  (props: {}): React.ReactElement | null;
 }
 
 export const Description: DescriptionInterface = () => {
@@ -11,6 +11,10 @@ export const Description: DescriptionInterface = () => {
       description
     }
   } = useData()
+
+  if (!description) {
+    return null;
+  }
 
   return (
     <div

@@ -18,6 +18,7 @@ export const GoBack: GoBackInterface = () => {
 
   return (
     <Link
+      customClassNames='go-back'
       href={href}
       hrefLang={hrefLang}
       title={title}
