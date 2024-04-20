@@ -1,13 +1,13 @@
 import React from 'react'
-import Skill from '../../../shared/components/skill/skill'
 import { SkillProps, SkillView } from '../../../shared/components/skill/skill.types'
 import { PostingIndexTileIndustry } from '../components/industry/industry'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { Image } from '../../../../../../../../shared/app/components/support/image/image'
-import { Remuneration } from './components/remuneration/remuneration'
+import { Remuneration } from '../../../common/remuneration/remuneration'
 import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
-import { LocationAndCooperationMode } from './location-and-cooperation-mode/location-and-cooperation-mode'
+import { LocationAndCooperationMode } from '../../../common/location-and-cooperation-mode/location-and-cooperation-mode'
+import { Skills } from '../../../common/skills/skills'
 
 interface PostingIndexTileInterface {
   (props: {
@@ -16,6 +16,8 @@ interface PostingIndexTileInterface {
     industry: string
     b2bMin?: number
     b2bMax?: number
+    employmentMin?: number
+    employmentMax?: number
     skills: SkillProps[]
     logo: string;
     href: string;
@@ -35,15 +37,12 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
     id,
     businessName,
     industry,
-    // b2b,
     b2bMin,
     b2bMax,
-    // employment,
-    // employmentMin,
-    // employmentMax,
+    employmentMin,
+    employmentMax,
     skills,
     logo,
-    // industry,
     href,
     locality,
     country,
@@ -74,25 +73,18 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
       <Remuneration
         b2bMin={b2bMin}
         b2bMax={b2bMax}
+        employmentMin={employmentMin}
+        employmentMax={employmentMax}
       />
       <LocationAndCooperationMode
         locality={locality}
         country={country}
         cooperationMode={cooperationMode}
       />
-      <div className='skills'>
-        {skills.map(skill => {
-          return (
-            <Skill
-              key={skill.name}
-              name={skill.name}
-              level={skill.level}
-              view={SkillView.indexVisitor}
-            />
-          )
-        })}
-        <div className='float-clear' />
-      </div>
+      <Skills
+        skills={skills}
+        view={SkillView.indexVisitor}
+      />
     </a>
   )
 }

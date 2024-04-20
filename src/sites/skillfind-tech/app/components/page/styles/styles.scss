@@ -8,23 +8,22 @@
       width: 100%;
       margin-top: 74px;
     }
+    main {
+      max-width: 840px;
+      article {
+        @extend %article;
+      }
+      @media #{$LARGE-PHONE} {
+        margin: 18px 0 0;
+        width: 100%;
+      }
+    }
   }
   .breadcrumbs {
     margin: 36px auto 0;
     @media #{$LARGE-TABLET} {
       margin: 18px 0 0;
       padding: 0 24px;
-    }
-  }
-  main {
-    // margin: 18px auto 0;
-    max-width: 840px;
-    article {
-      @extend %article;
-    }
-    @media #{$LARGE-PHONE} {
-      margin: 18px 0 0;
-      width: 100%;
     }
   }
   button.page-edit {

@@ -1,0 +1,26 @@
+@import '../../common/skills/styles/styles.scss';
+@import '../../common/location-and-cooperation-mode/styles/styles.scss';
+@import '../../common/remuneration/styles/styles.scss';
+
+#postings-show {
+  padding: 30px;
+  background: white;
+  border-radius: 6px;
+  .location-and-cooperation-mode {
+    @extend %location-and-cooperation-mode;
+  }
+  .b2b-remuneration {
+    @extend %b2b-remuneration;
+    top: 20px;
+    right: 20px;
+  }
+  .skills {
+    @extend %skills;
+  }
+  .description {
+    margin-top: 40px;
+    ul, ol {
+      padding-left: 20px;
+    }
+  }
+}

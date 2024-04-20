@@ -1,5 +1,5 @@
 import React from 'react'
-import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
+import { SVG } from '../../../../../../../shared/app/components/support/svg/svg'
 
 interface LocationAndCooperationModeInterface {
   (props: {

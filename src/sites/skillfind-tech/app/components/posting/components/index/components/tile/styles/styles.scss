@@ -1,3 +1,7 @@
+@import '../../../../common/skills/styles/styles.scss';
+@import '../../../../common/location-and-cooperation-mode/styles/styles.scss';
+@import '../../../../common/remuneration/styles/styles.scss';
+
 .postings-index-tile {
   display: block;
   float: none;
@@ -14,29 +18,11 @@
     rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
   .location-and-cooperation-mode {
-    margin-top: 24px;
-    font-size: 16px;
-    color: #34495E;
-    display: flex;
-    svg {
-      height: 16px;
-      position: relative;
-      top: 2px;
-      margin-right: 4px;
-      fill: #34495E;
-    }
-    .location {
-      margin-right: 24px;
-    }
+    @extend %location-and-cooperation-mode;
   }
 
   .skills {
-    margin-top: 10px;
-    .skill {
-      float: left;
-      margin-right: 32px;
-      margin-top: 20px;
-    }
+    @extend %skills;
   }
 
   .industry {
@@ -66,13 +52,6 @@
   }
 
   .b2b-remuneration {
-    width: 300px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    text-align: right;
-    padding: 20px;
-    font-size: 16px;
-    color: #2874A6;
+    @extend %b2b-remuneration;
   }
 }

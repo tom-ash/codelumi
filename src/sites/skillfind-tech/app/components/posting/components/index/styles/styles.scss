@@ -28,27 +28,19 @@
     bottom: 0;
     left: 0;
     main {
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 640px;
       #list {
-        background: #e5e7e9;
         &.scroll {
           position: absolute;
           top: 0;
           right: 0;
           bottom: 0;
           left: 0;
-
           width: 640px;
-
           padding: 0 20px 20px;
           overflow-x: hidden;
           overflow-y: scroll;
           scrollbar-width: none;
           -ms-overflow-style: none;
-          background: #e5e7e9;
           h1 {
             margin: 6px 0 18px 0;
             text-align: center;
@@ -115,10 +107,6 @@
     @media #{$LARGE-TABLET} {
       position: relative;
       top: 0;
-      // main {
-      //   position: relative;
-      //   width: 100%;
-      // }
       #google-map-container {
         position: relative;
         left: 0;
