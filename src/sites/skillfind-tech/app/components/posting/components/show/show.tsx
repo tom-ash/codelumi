@@ -11,6 +11,7 @@ import { LocationAndCooperationMode } from '../common/location-and-cooperation-m
 import { Remuneration } from '../common/remuneration/remuneration';
 import Image from '../../../../../../shared/app/components/support/image/image';
 import { PostingIndexTileIndustry } from '../index/components/components/industry/industry';
+import { Application } from './components/application/application';
 
 interface PostingShowInterface {
   (props: {}): React.ReactElement;
@@ -59,12 +60,12 @@ const PostingsShow: PostingShowInterface = (props) => {
         employmentMin={employmentMin}
         employmentMax={employmentMax}
       />
-
       <Skills
         skills={skills}
         view={SkillView.indexVisitor}
       />
       <Description />
+      <Application />
     </div>
   )
 }

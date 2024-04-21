@@ -1,6 +1,8 @@
 @import '../../common/skills/styles/styles.scss';
 @import '../../common/location-and-cooperation-mode/styles/styles.scss';
 @import '../../common/remuneration/styles/styles.scss';
+@import '../../../../../styles/inputs/text.scss';
+@import '../../../../../styles/inputs/button.scss';
 
 #postings-show {
   position: relative;
@@ -77,6 +79,51 @@
     padding: 0 25px;
     ul, ol {
       padding-left: 20px;
+    }
+  }
+  .application {
+    padding: 0 20px;
+    margin-top: 20px;
+    border-top: 1px solid lightgray;
+    padding-top: 20px;
+    h2 {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+    form {
+      margin-top: 8px;
+    }
+    .text-input {
+      @extend %text-input;
+      width: 48%;
+      float: left;
+      margin-bottom: 0;
+      margin-top: 16px;
+      margin-right: 4%;
+      &:nth-of-type(2n) {
+        margin-right: 0;
+      }
+      label {
+        display: block;
+        margin-bottom: 6px!important;
+        font-weight: bold;
+        font-size: 14px;
+      }
+    }
+    .submit-button {
+      @extend %button;
+      margin-top: 20px;
+
+      
+
+      // position: relative;
+
+      // .button-spinner {
+      //   position: absolute;
+      //   left: 0px;
+      //   top: 0px;
+      // }
+
     }
   }
 }
