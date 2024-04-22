@@ -17,6 +17,7 @@ export const Submit = () => {
     phoneNumber,
     linkedInProfile,
     gitHubAccount,
+    cV,
   } = useInputs()
 
   const params = {
@@ -27,6 +28,7 @@ export const Submit = () => {
     phoneNumber,
     linkedInProfile,
     gitHubAccount,
+    cV,
   }
 
   return (

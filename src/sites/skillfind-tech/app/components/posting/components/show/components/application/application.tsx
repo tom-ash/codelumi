@@ -12,6 +12,8 @@ import { LinkedInProfile } from './components/linked-in-profile';
 import { GitHubAccount } from './components/git-hub-account';
 import { Submit } from './components/submit';
 import { Heading } from './components/heading';
+import { FileInput } from '../../../../../../../../shared/app/components/support/file-input/file-input';
+import { CV } from './components/cv';
 
 interface ApplicationInterface {
   (props: {}): React.ReactElement | null;
@@ -29,6 +31,7 @@ export const Application: ApplicationInterface = () => {
         <LinkedInProfile />
         <GitHubAccount />
         <FloatClear />
+        <CV />
         <Submit />
       </form>
     </section>

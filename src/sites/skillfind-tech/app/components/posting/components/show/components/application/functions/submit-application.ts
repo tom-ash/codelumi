@@ -1,3 +1,4 @@
+import { saveFile } from '../../../../../../../../../shared/app/components/support/file-input/functions/save-file';
 import API_URL from '../../../../../../../../shared/constants/urls/api';
 
 interface SubmitApplication {
@@ -9,7 +10,7 @@ interface SubmitApplication {
     phoneNumber: string;
     linkedInProfile: string;
     gitHubAccount: string;
-    // TODO;
+    cV: File;
   }): void
 }
 
@@ -22,9 +23,17 @@ export const submitApplication: SubmitApplication = async (params) => {
     phoneNumber,
     linkedInProfile,
     gitHubAccount,
+    cV,
   } = params
 
-  // TODO: Save CV in pdf.
+  const persistedCV = await saveFile({
+    apiUrl: API_URL,
+    file: cV,
+    path: 'temporary',
+    randomizeKey: true,
+  })
+
+  console.log('persistedCV', persistedCV)
 
   const body = JSON.stringify({
     postingId,
@@ -34,6 +43,7 @@ export const submitApplication: SubmitApplication = async (params) => {
     phoneNumber,
     linkedInProfile,
     gitHubAccount,
+    cv: persistedCV,
   })
 
   const response = await fetch(API_URL + '/posting-applications', {
