@@ -6,21 +6,31 @@ import { UserNewEmail } from './components/email/email'
 import { Logo } from './components/logo/logo'
 import { BusinessName } from './components/business-name/business-name'
 import { Industry } from './components/industry/industry'
+import Verify from './components/verify/verify'
 
 const UserNew = () => {
   useStyles(styles)
 
   const render = useRender()
-  const renderAnnouncementCreate = render['listings/new/form']
 
-  if (renderAnnouncementCreate) return <UserNewEmail />
+  const {
+    'user/new/form': renderForm,
+    'user/new/verify': renderVerify,
+  } = useRender()
 
   return (
     <div id='user-new'>
-      <BusinessName />
-      <Industry />
-      <Logo />
-      <UserNewEmail />
+      {renderForm && (
+        <div className='form'>
+          <BusinessName />
+          <Industry />
+          <Logo />
+          <UserNewEmail />
+        </div>
+      )}
+      {renderVerify && (
+        <Verify />
+      )}
     </div>
   )
 }

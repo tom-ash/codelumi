@@ -39,6 +39,8 @@ export const postUserObject: PostUserObject = async args => {
     .then(jsonResponse => {
       const { verificationToken, href } = jsonResponse
 
+      console.log('jsonResponse', jsonResponse)
+
       setVerificationToken(verificationToken)
       changeUrl({ href })
     })

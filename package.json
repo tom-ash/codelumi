@@ -55,12 +55,13 @@
     "react-dom": "^18.2.0",
     "react-quill": "^2.0.0",
     "react-redux": "^7.2.6",
+    "react-verification-input": "^4.1.2",
     "redux": "^4.1.2",
+    "semanticize": "^0.0.4",
     "vhost": "^3.0.2",
     "webfontloader": "^1.6.28",
     "xml": "^1.0.1",
-    "xml-formatter": "^3.6.0",
-    "semanticize": "^0.0.4"
+    "xml-formatter": "^3.6.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.5",

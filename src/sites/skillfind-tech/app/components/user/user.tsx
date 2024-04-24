@@ -11,7 +11,11 @@ const User = () => {
   useStyles(styles)
 
   const render = useRender()
-  const { 'user/new': renderNew, 'user/auth': renderAuth, 'user/password-reset': renderPasswordReset } = render
+  const {
+    'user/new': renderNew,
+    'user/auth': renderAuth,
+    'user/password-reset': renderPasswordReset
+  } = render
 
   return (
     <div id='user'>
