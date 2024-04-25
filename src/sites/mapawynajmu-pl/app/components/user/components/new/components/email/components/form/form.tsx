@@ -30,7 +30,7 @@ const UserNewEmailForm = () => {
   }
 
   return (
-    <form id='user-new-form'>
+    <form id='users-new-form'>
       {userNewForm && (
         <>
           {/* @ts-ignore */}

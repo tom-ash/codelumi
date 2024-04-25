@@ -9,7 +9,7 @@ const UserNewEmailVerification = () => {
   const { headingOne, verificationCodeExplanation } = useTexts()
 
   return (
-    <div id='user-new-email-verification'>
+    <div id='users-new-email-verification'>
       <Heading
         tier={1}
         text={headingOne}

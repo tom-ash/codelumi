@@ -74,7 +74,7 @@ export function publish(addPromotion: boolean = false) {
   if (!authorized && !user) {
     setControl({ connecting: false })
 
-    return scrollToElement(document.getElementById('user-new-email-first-name'), 12, -160)
+    return scrollToElement(document.getElementById('users-new-email-first-name'), 12, -160)
   }
 
   // @ts-ignore

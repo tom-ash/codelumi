@@ -5,6 +5,8 @@ import { createSocialImage } from '../components/social-image/functions/create-s
 import { validateSkills } from '../components/skill-selector/functions/validate-skills'
 import scrollToElement from '../../../../../../../../../shared/app/functions/screen/scrollers/to-element'
 import { validateLocation } from '../components/location/functions/validate-location'
+import { buildUserObject } from '../../../../../../user/components/new/components/form/components/submit/functions/build-user-object'
+import { UserObject } from '../../../../../../user/components/new/components/form/components/submit/types/user-object.interface'
 
 type SubmitProps = {
   lang: Lang
@@ -24,8 +26,12 @@ type SubmitProps = {
   b2bMax: number
   employment: boolean
   employmentMin: number
-  employmentMax: number
+  employmentMax: number;
+  authorized: boolean;
   setErrors(params: any): void;
+} & UserObject & {
+  businessNameError: string;
+  termsOfServiceConsentLabel: string;
 }
 
 export const submit = async (props: SubmitProps) => {
@@ -48,6 +54,15 @@ export const submit = async (props: SubmitProps) => {
     country,
     locality,
     sublocality,
+    businessName,
+    businessNameError,
+    industry,
+    emailAddress,
+    password,
+    termsOfServiceConsent,
+    termsOfServiceConsentLabel,
+    logo,
+    authorized,
     setErrors,
   } = props
 
@@ -84,6 +99,26 @@ export const submit = async (props: SubmitProps) => {
     }),
   ]
 
+  let userObject: UserObject | undefined
+
+  if (!authorized) {
+    userObject = buildUserObject({
+      businessName,
+      businessNameError,
+      industry,
+      emailAddress,
+      password,
+      termsOfServiceConsent,
+      termsOfServiceConsentLabel,
+      logo,
+      setErrors,
+    })
+
+    if (!userObject) {
+      return
+    }
+  }
+
   for(let i = 0; i < validations.length; i++) {
     const validation = validations[i]
     if (validation) {
@@ -95,10 +130,12 @@ export const submit = async (props: SubmitProps) => {
   }
 
   const socialImageKey = await createSocialImage()
+  console.warn('TODO: socialImageKey', socialImageKey)
 
-  // TODO: Send socialImageKey.
+  const path = authorized ? '/postings' : '/postings/users'
+  const extendedBody = authorized ? body : { ...body, ...userObject } 
 
-  fetch(apiUrl + '/postings', {
+  fetch(`${apiUrl}/${path}`, {
     method: 'POST',
     // @ts-ignore
     headers: {
@@ -106,7 +143,7 @@ export const submit = async (props: SubmitProps) => {
       'Access-Token': getAccessToken(),
       Lang: lang,
     },
-    body: JSON.stringify(body),
+    body: JSON.stringify(extendedBody),
   })
   .then(response => {
     if (response.ok) return response.json()

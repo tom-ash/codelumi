@@ -1,6 +1,6 @@
 import API_URL from '../../../../../../../../../../shared/constants/urls/api'
 import setVerificationToken from '../../../../../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
-import { UserObject } from '../form.types'
+import { UserObject } from '../types/user-object.interface'
 import { changeUrl } from '../../../../../../../../../../../shared/app/functions/routes/changers/change-url'
 import { Picture } from '../../../../../../../../../../../shared/app/components/support/picture-input/types/picture.interface'
 import { saveBlob } from '../../../../../../../../../../../shared/app/components/support/picture-input/functions/save-blob'
@@ -38,8 +38,6 @@ export const postUserObject: PostUserObject = async args => {
     )
     .then(jsonResponse => {
       const { verificationToken, href } = jsonResponse
-
-      console.log('jsonResponse', jsonResponse)
 
       setVerificationToken(verificationToken)
       changeUrl({ href })

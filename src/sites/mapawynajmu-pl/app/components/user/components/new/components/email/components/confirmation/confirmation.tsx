@@ -26,7 +26,7 @@ const Confirmation = () => {
   }
 
   return (
-    <div id='user-new-confirmation'>
+    <div id='users-new-confirmation'>
       <h1>{h1}</h1>
       <Line />
       <div>{congratulations}</div>

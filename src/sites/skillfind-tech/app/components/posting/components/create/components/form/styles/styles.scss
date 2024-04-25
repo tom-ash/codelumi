@@ -1,10 +1,11 @@
 @import 'react-quill/dist/quill.snow.css';
 @import '../../../../../../../styles/colors.scss';
+@import '../../../../../../user/components/new/components/form/styles/styles.scss';
 
 #listing-create-form {
   max-width: 768px;
   margin: 0 auto;
-  padding: 42px;
+  padding: 60px;
   background: white;
   border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -28,4 +29,14 @@
       }
     }
   }
+
+  .poster {
+    margin-top: 60px;
+  }
+  .users-new-form {
+    @extend %users-new-form;
+    max-width: 320px;
+    padding-top: 20px;
+  }
+
 }

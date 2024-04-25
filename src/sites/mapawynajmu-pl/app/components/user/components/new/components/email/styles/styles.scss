@@ -3,7 +3,7 @@
 @import '../../../../../../../styles/inputs/text';
 @import '../../../../../../../styles/inputs/button';
 
-#user-new-email {
+#users-new-email {
   @extend %container;
   h1 {
     @extend %h1;
@@ -21,7 +21,7 @@
   }
 }
 
-#user-new-email-verification {
+#users-new-email-verification {
   padding: 32px;
   .explanation {
     margin-bottom: 24px;

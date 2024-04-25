@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextInput } from '../../../../../../../../shared/app/components/support/text-input-semanticize/text-input'
+import { TextInput } from '../../../../../../../../../../shared/app/components/support/text-input-semanticize/text-input'
 import { validateBusinessName } from './functions/validate-business-name'
 
 export const BusinessName = () => {

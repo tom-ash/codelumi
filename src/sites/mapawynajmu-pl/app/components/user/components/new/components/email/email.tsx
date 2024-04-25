@@ -14,7 +14,7 @@ export const UserNewEmail = () => {
   const renderConfirmation = render['user/create/confirmation']
 
   return (
-    <div id='user-new-email'>
+    <div id='users-new-email'>
       {renderForm && <Form />}
       {renderVerification && <Verification />}
       {renderConfirmation && <Confirmation />}

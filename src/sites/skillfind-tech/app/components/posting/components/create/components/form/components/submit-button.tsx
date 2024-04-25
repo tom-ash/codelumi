@@ -5,6 +5,8 @@ import { useApp } from '../../../../../../../../../shared/app/functions/store/us
 import { useTexts } from '../../../../../../../../../shared/app/functions/store/use-texts'
 import { useInputs } from '../../../../../../../../../shared/app/functions/store/use-inputs'
 import { useDispatch } from 'react-redux'
+import { useErrors } from '../../../../../../../../../shared/app/functions/store/use-errors'
+import { useUser } from '../../../../../../../../../shared/app/functions/store/use-user'
 
 const SubmitButton = () => {
   const { lang } = useApp()
@@ -12,6 +14,12 @@ const SubmitButton = () => {
   const inputs = useInputs()
   const dispatch = useDispatch()
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
+
+  const {
+    authorized,
+  } = useUser()
+
+  console.log('authorized', authorized)
 
   const {
     selectedSkills,
@@ -31,7 +39,18 @@ const SubmitButton = () => {
     country,
     locality,
     sublocality,
+    businessName,
+    industry,
+    emailAddress,
+    password,
+    termsOfServiceConsent,
+    consents,
+    logo,
   } = inputs
+  const {
+    businessNameInputInvalidError: businessNameError,
+    termsOfServiceConsentLabel,
+  } = useTexts()
 
   const buttonProps = {
     classNames: { container: 'submit-button' },
@@ -56,6 +75,16 @@ const SubmitButton = () => {
         country,
         locality,
         sublocality,
+        businessName,
+        businessNameError,
+        industry,
+        emailAddress,
+        password,
+        termsOfServiceConsent,
+        termsOfServiceConsentLabel,
+        consents,
+        logo,
+        authorized,
         setErrors,
       }),
   }

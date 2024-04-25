@@ -1,10 +1,10 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
-import { PictureInput } from '../../../../../../../../shared/app/components/support/picture-input/picture-input'
-import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
+import { PictureInput } from '../../../../../../../../../../shared/app/components/support/picture-input/picture-input'
+import { useTexts } from '../../../../../../../../../../shared/app/functions/store/use-texts'
 import { useDispatch } from 'react-redux'
-import { useErrors } from '../../../../../../../../shared/app/functions/store/use-errors'
+import { useErrors } from '../../../../../../../../../../shared/app/functions/store/use-errors'
 
 export const Logo = () => {
   useStyles(styles)

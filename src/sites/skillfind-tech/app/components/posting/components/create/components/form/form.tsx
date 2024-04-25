@@ -9,13 +9,16 @@ import { Location } from './components/location/location'
 import { CooperationMode } from './components/cooperation-mode/cooperation-mode'
 import { Description } from './components/description/description'
 import { SocialImage } from './components/social-image/social-image'
+import { Poster } from './components/poster/poster'
+import { useUser } from '../../../../../../../../shared/app/functions/store/use-user'
 
 const AnnouncementCreateForm = () => {
   useStyles(styles)
 
   const { title } = useTexts()
-
-  // TODO!
+  const {
+    authorized,
+  } = useUser()
 
   return (
     <div
@@ -32,6 +35,7 @@ const AnnouncementCreateForm = () => {
         <Contracts />
       </section>
       <SocialImage />
+      {!authorized && <Poster />}
       <SubmitButton />
     </div>
   )
