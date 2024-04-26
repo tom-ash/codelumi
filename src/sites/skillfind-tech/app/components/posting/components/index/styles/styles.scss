@@ -10,6 +10,27 @@
   border-radius: 12px;
   background: white;
   overflow: hidden;
+
+  .pin {
+    width: 36px;
+    height: 36px;
+    background: white;
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #7B7D7D;
+    svg {
+      max-height: 20px;
+      max-width: 20px;
+    }
+    &.hovered {
+      background: red;
+    }
+    &.current {
+      background: blue;
+    }
+  }
+
   @media #{$MEDIUM-PC} {
     margin-left: 24px;
     margin-right: 24px;

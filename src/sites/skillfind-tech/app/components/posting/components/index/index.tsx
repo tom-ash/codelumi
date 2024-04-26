@@ -20,6 +20,8 @@ const PostingIndex: PostingIndex = (props) => {
 
   const { ShowItem, renderShow} = props
   const { postings } = useData()
+  
+  // TODO: ADD MARKER ICONS.
 
   return (
     <div id='postings-index'>

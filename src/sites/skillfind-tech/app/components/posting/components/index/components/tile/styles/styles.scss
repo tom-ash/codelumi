@@ -26,8 +26,15 @@
   }
 
   .industry {
-    color: #7b7d7d;
+    color: #4D5656;
     margin-top: 5px;
+    svg {
+      position: relative;
+      top: 1px;
+      height: 16px;
+      margin-right: 8px;
+      fill: #4D5656;
+    }
   }
 
   .business-name {

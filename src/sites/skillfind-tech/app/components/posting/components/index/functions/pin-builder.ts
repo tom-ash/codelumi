@@ -1,20 +1,34 @@
 // @ts-ignore
 export const pinBuilder = props => {
-  const { id, lat: latitude, lng: longitude } = props
+  const {
+    id,
+    lat: latitude,
+    lng: longitude,
+    industryIcon,
+    svgs,
+    currentListingId,
+  } = props
 
-  //   const htmlContent = `
-  //     <svg
-  //       xmlns="http://www.w3.org/2000/svg"
-  //       viewBox="${svg && svg.viewBox}"
-  //     >
-  //       <path
-  //         style="fill:#4D5656;"
-  //         d="${svg && svg.pathData}"
-  //       />
-  //     </svg>`
+  const classNames = ['pin']
 
-  const htmlContent = 'ABC'
-  const className = 'todo'
+  if (+currentListingId === id) {
+    classNames.push('current')
+  }
+
+  const svg = svgs[industryIcon]
+
+  const htmlContent = `
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="${svg && svg.viewBox}"
+    >
+      <path
+        style="fill:#4D5656;"
+        d="${svg && svg.pathData}"
+      />
+    </svg>`
+
+  const className = classNames.join(' ')
   const href = 'todo'
 
   return {

@@ -33,8 +33,6 @@ export const submitApplication: SubmitApplication = async (params) => {
     randomizeKey: true,
   })
 
-  console.log('persistedCV', persistedCV)
-
   const body = JSON.stringify({
     postingId,
     firstName,

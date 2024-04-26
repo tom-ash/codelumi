@@ -38,7 +38,14 @@
       top: 122px;
       left: 185px;
       color: white;
-      font-size: 14px;
+      font-size: 16px;
+      svg {
+        position: relative;
+        top: 2px;
+        height: 16px;
+        margin-right: 8px;
+        fill: white;
+      }
     }
     .company-logo {
       position: relative;

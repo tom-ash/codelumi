@@ -34,6 +34,7 @@ const PostingsShow: PostingShowInterface = (props) => {
     logo,
     businessName,
     industry,
+    industryIcon,
   } = posting
 
   return (
@@ -47,7 +48,7 @@ const PostingsShow: PostingShowInterface = (props) => {
           />
         </div>
         <div className='business-name'>{businessName}</div>
-        <PostingIndexTileIndustry industry={industry} />
+        <PostingIndexTileIndustry industry={industry} icon={industryIcon} />
       </div>
       <LocationAndCooperationMode
         locality={locality}

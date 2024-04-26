@@ -58,7 +58,5 @@ export const validateUserObject: ValidateUserObject = params => {
     })
   ]
 
-  console.log('validationArray', validationArray)
-
   return !validationArray.find(element => element)
 }

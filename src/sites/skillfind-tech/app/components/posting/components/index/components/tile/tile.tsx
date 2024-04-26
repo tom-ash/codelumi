@@ -14,6 +14,7 @@ interface PostingIndexTileInterface {
     id: number
     businessName: string
     industry: string
+    industryIcon: string;
     b2bMin?: number
     b2bMax?: number
     employmentMin?: number
@@ -27,6 +28,8 @@ interface PostingIndexTileInterface {
       icon: string;
       label: string;
     }
+    changeHoveredTileId(listingId: number): void
+    changeUnhoveredTileId(listingId: number): void
   }): React.ReactElement
 }
 
@@ -37,6 +40,7 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
     id,
     businessName,
     industry,
+    industryIcon,
     b2bMin,
     b2bMax,
     employmentMin,
@@ -47,6 +51,8 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
     locality,
     country,
     cooperationMode,
+    changeHoveredTileId,
+    changeUnhoveredTileId,
   } = props
 
   return (
@@ -59,6 +65,8 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
 
         changeUrl({ href })
       }}
+      onMouseOver={() => changeHoveredTileId(id)}
+      onMouseLeave={() => changeUnhoveredTileId(id)}
     >
       <div className='company'>
         <div className='company-logo'>
@@ -68,7 +76,7 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
           />
         </div>
         <div className='business-name'>{businessName}</div>
-        <PostingIndexTileIndustry industry={industry} />
+        <PostingIndexTileIndustry industry={industry} icon={industryIcon} />
       </div>
       <Remuneration
         b2bMin={b2bMin}

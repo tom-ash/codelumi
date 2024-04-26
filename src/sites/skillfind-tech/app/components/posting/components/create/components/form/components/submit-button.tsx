@@ -19,8 +19,6 @@ const SubmitButton = () => {
     authorized,
   } = useUser()
 
-  console.log('authorized', authorized)
-
   const {
     selectedSkills,
     cooperationMode,
