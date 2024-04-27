@@ -20,6 +20,14 @@ const Header: HeaderInterface = props => {
   const { isMobile } = useApp()
   const { authorized } = useUser()
 
+  // largePc: 'scroll',
+  // mediumPc: 'scroll',
+  // smallPc: 'scroll',
+  // largeTablet: 'slider',
+  // smallTablet: 'slider',
+  // largePhone: 'slider',
+  // smallPhone: 'slider',
+
   return (
     <header id='header'>
       <div className='inner'>

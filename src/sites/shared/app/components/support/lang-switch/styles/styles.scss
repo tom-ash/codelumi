@@ -2,10 +2,13 @@
 
 .lang-switch {
   float: left;
-  height: 60px;
-  line-height: 60px;
-  width: 60px;
+  height: 40px;
+  line-height: 40px;
   text-align: center;
+
+  border-left: 1px solid lightgray;
+  padding-left: 10px;
+  margin-top: 10px;
 
   .cover {
     position: fixed;
@@ -21,17 +24,30 @@
     font-size: 14px;
     color: #17202a;
     text-transform: uppercase;
+    line-height: 40px!important;
     svg {
       display: inline-block;
       fill: #17202a;
       height: 10px;
-      transform: rotate(-90deg);
       margin-left: 3px;
       transition: ease-in 0.2s;
+      &:first-of-type {
+        position: relative;
+        top: 3px;
+        height: 15px;
+        margin-right: 8px;
+      }
+      &:last-of-type {
+        fill: gray;
+        margin-left: 5px;
+        transform: rotate(-90deg);
+      }
     }
     &.open {
       svg {
-        transform: rotate(90deg);
+        &:last-of-type {
+          transform: rotate(90deg);
+        }
       }
     }
   }

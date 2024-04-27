@@ -4,7 +4,7 @@ import { Link } from '../../../../../../../../../shared/app/components/support/l
 export const SignInLink = () => {
   const linkProps = {
     linkKey: 'user/auth',
-    customClassNames: 'header-link',
+    customClassNames: 'link',
   }
 
   return <Link {...linkProps} />

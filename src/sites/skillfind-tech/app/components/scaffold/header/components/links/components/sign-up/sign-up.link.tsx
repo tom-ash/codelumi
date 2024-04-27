@@ -4,7 +4,7 @@ import { Link } from '../../../../../../../../../shared/app/components/support/l
 export const SignUpLink = () => {
   const linkProps = {
     linkKey: 'user/new/form',
-    customClassNames: 'header-link',
+    customClassNames: 'link',
   }
 
   return <Link {...linkProps} />

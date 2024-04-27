@@ -3,6 +3,7 @@ import { ManagedLink } from 'managed-inputs'
 import { changeUrl } from '../../../functions/routes/changers/change-url'
 import { scrollToFragment } from '../../../functions/scrollers/scroll-to-fragment'
 import { useLinks } from '../../../functions/store/use-links'
+import { SVG } from '../svg/svg'
 
 type LinkInterfaceProps =
   | {
@@ -56,7 +57,21 @@ export const Link: LinkInterface = props => {
 
     const onClick = () => changeUrl({ ...link })
 
-    linkProps = { ...link, label, classNames, onClick }
+    const {
+      href,
+      hrefLang,
+      title,
+      icon,
+    } = link
+
+    linkProps = {
+      href,
+      hrefLang,
+      title,
+      label: icon ? <><SVG name={icon} />{label}</> : label,
+      classNames,
+      onClick
+    }
   } else {
     const isAnchor = href && href.match(/^#.+$/)
     const onClick = () => (isAnchor ? scrollToFragment(href!) : changeUrl({ href }))
