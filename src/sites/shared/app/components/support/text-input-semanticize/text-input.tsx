@@ -11,6 +11,7 @@ interface TextInputInterface {
     onChange?(value?: string): void;
     onBlur?(value?: string): void;
     validate?(params: any): void; // TODO!
+    placeholder?: string;
     // className?: string
     // match?: RegExp
     // disabled?: boolean
@@ -28,6 +29,7 @@ export const TextInput: TextInputInterface = props => {
     onChange: onChangeCallback,
     onBlur: onBlurCallback,
     validate,
+    placeholder,
     // classNames,
     // match,
     // onClick: onClickCallback,
@@ -72,6 +74,7 @@ export const TextInput: TextInputInterface = props => {
       onChange={onChange}
       onBlur={onBlur}
       error={error}
+      placeholder={placeholder}
     />
   )
 }

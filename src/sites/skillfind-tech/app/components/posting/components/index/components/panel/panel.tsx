@@ -5,9 +5,10 @@ import { useInputs } from '../../../../../../../../shared/app/functions/store/us
 import { Select } from 'semanticize';
 import Skill from '../../../shared/components/skill/skill';
 import { SkillView } from '../../../shared/components/skill/skill.types';
-import { useDispatch } from 'react-redux';
 import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear';
 import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url';
+import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg';
+import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts';
 
 interface PanelInterface {
   (params: {
@@ -25,8 +26,8 @@ interface SelectedSkill {
 export const Panel: PanelInterface = () => {
   useStyles(styles)
 
-  const { skillOptions } = useInputs()
-  const { selectedSkills } = useInputs()
+  const { skillSelectPlaceholder } = useTexts()
+  const { skillOptions, selectedSkills } = useInputs()
 
   return (
     <div className='panel'>
@@ -34,6 +35,7 @@ export const Panel: PanelInterface = () => {
         className='select'
         options={skillOptions}
         value={''}
+        placeholder={skillSelectPlaceholder}
         onSelect={(value) => {
           const newSelectedSkills = [...selectedSkills]
           const newSelectedSkill = skillOptions.find((skillOption: any) => {
@@ -56,7 +58,9 @@ export const Panel: PanelInterface = () => {
             changeUrl({ href: '/' })
           }
         }}
-      />
+      >
+        <SVG name='magnifyingGlass' />
+      </Select>
       <section className='selected-skills'>
         {selectedSkills.map((selectedSkill: any) => {
           const {

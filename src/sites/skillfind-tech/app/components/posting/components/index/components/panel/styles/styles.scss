@@ -5,9 +5,11 @@
 
   .panel {
     .select {
+      position: relative;
       width: 320px;
       margin: 20px auto 0;
       input {
+        padding-left: 48px;
         cursor: default;
         width: 100%;
         height: 48px;
@@ -15,7 +17,6 @@
         border: 1px solid #CCD1D1;
         background: #F2F4F4;
         &:focus {
-          // border: 1px solid #CCD1D1;
           outline: none;
           border-bottom-right-radius: 0;
           border-bottom-left-radius: 0;
@@ -55,6 +56,21 @@
         float: left;
         margin-right: 40px;
       }
+    }
+
+    .logo-icon {
+      position: absolute;
+      top: 13px;
+      left: 16px;
+      scale: .09;
+      transform-origin: top left;
+    }
+
+    svg {
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      height: 18px;
     }
 
   }

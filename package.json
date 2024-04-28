@@ -57,7 +57,7 @@
     "react-redux": "^7.2.6",
     "react-verification-input": "^4.1.2",
     "redux": "^4.1.2",
-    "semanticize": "^0.0.4",
+    "semanticize": "^0.0.5",
     "vhost": "^3.0.2",
     "webfontloader": "^1.6.28",
     "xml": "^1.0.1",
