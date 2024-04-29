@@ -36,6 +36,7 @@ export const Panel: PanelInterface = () => {
         options={skillOptions}
         value={''}
         placeholder={skillSelectPlaceholder}
+        searchable={true}
         onSelect={(value) => {
           const newSelectedSkills = [...selectedSkills]
           const newSelectedSkill = skillOptions.find((skillOption: any) => {
