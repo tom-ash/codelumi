@@ -1,22 +1,24 @@
 %button {
   position: relative;
-  height: 30px;
-  .input {
+  height: 40px;
+  margin-top: 40px;
+  button {
+    cursor: pointer;
     display: block;
     margin: 0 auto;
     width: 120px;
-    height: 30px;
+    height: 40px;
     border: none;
-    border-radius: 15px;
-    background: #2471a3;
+    border-radius: 4px;
+    background: #1B2631;
     font-size: 13px;
     color: white;
+    transition: background-color 0.1s ease-in;
     &:hover {
-      background: #2980b9;
+      background: #424949;
     }
     &:disabled {
-      background: #a9cce3;
-      color: #f2f3f4;
+      background: #626567;
       cursor: not-allowed;
     }
   }

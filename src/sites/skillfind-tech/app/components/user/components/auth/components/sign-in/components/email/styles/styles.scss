@@ -1,33 +1,35 @@
 @import '../../../../../../../../../styles/container';
-@import '../../../../../../../../../styles/headings/h1';
+@import '../../../../../../../../../styles/headings/main-heading';
 @import '../../../../../../../../../styles/inputs/text';
 @import '../../../../../../../../../styles/inputs/button.scss';
 
 #user-auth-email {
   @extend %container;
-  padding: 32px;
-  h1 {
-    @extend %h1;
-    margin-bottom: 24px;
+  position: relative;
+  padding: 20px 40px 40px;
+  .main-heading {
+    @extend %main-heading;
   }
   .text-input {
     @extend %text-input;
   }
   .submit-button {
     @extend %button;
-    margin-top: 24px;
   }
-  //   .line {
-  //     @extend %line;
-  //     margin-bottom: 24px;
-  //   }
-  //   .links {
-  //     @extend %links;
-  //   }
   .credentials-error {
-    // margin-bottom: 24px;
     font-size: 14px;
     text-align: center;
     color: $ERROR-COLOR;
+  }
+  .link {
+    margin-top: 40px;
+    text-align: center;
+    a {
+      font-size: 14px;
+      color: #424949;
+      &:hover {
+        color: gray;
+      }
+    }
   }
 }
