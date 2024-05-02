@@ -9,18 +9,15 @@ import { Panel } from './components/panel/panel'
 import { ItemShowInterface } from '../../../../../../shared/app/components/support/map-index/types/item-show.interface'
 
 interface PostingIndex {
-  (props: {
-    ShowItem: ItemShowInterface;
-    renderShow: boolean;
-  }): React.ReactElement;
+  (props: { ShowItem: ItemShowInterface; renderShow: boolean }): React.ReactElement
 }
 
-const PostingIndex: PostingIndex = (props) => {
+const PostingIndex: PostingIndex = props => {
   useStyles(styles)
 
-  const { ShowItem, renderShow} = props
+  const { ShowItem, renderShow } = props
   const { postings } = useData()
-  
+
   // TODO: ADD MARKER ICONS.
 
   return (

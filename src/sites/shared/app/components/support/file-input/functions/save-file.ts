@@ -1,19 +1,9 @@
 interface SaveFile {
-  (params: {
-    apiUrl: string;
-    file: File;
-    path: string;
-    randomizeKey: boolean;
-  }): Promise<string>
+  (params: { apiUrl: string; file: File; path: string; randomizeKey: boolean }): Promise<string>
 }
 
 export const saveFile: SaveFile = async params => {
-  const {
-    apiUrl,
-    file,
-    path,
-    randomizeKey
-} = params
+  const { apiUrl, file, path, randomizeKey } = params
 
   const presignedPostResponse = await fetch(`${apiUrl}/remote-asset/presigned-post`, {
     method: 'POST',

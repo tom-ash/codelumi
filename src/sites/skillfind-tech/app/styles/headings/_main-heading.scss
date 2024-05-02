@@ -1,21 +1,21 @@
-  %main-heading {
-    text-align: center;
-    border-bottom: 1px solid lightgray;
-    padding-bottom: 20px;
-    margin-bottom: 40px;
-    svg {
-      position: relative;
-      top: 2.5px;
-      height: 16px;
-      display: inline-block;
-      margin-right: 10px;
-      fill: #1B2631;
-    }
-    h1 {
-      display: inline-block;
-      font-size: 16px;
-      color: gray;
-      font-family: 'Roboto';
-      color: #1B2631;
-    }
+%main-heading {
+  text-align: center;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  svg {
+    position: relative;
+    top: 2.5px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 10px;
+    fill: #1b2631;
   }
+  h1 {
+    display: inline-block;
+    font-size: 16px;
+    color: gray;
+    font-family: 'Roboto';
+    color: #1b2631;
+  }
+}

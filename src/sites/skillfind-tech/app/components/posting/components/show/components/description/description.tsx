@@ -1,19 +1,17 @@
 import React from 'react'
-import { useData } from '../../../../../../../../shared/app/functions/store/use-data';
+import { useData } from '../../../../../../../../shared/app/functions/store/use-data'
 
 interface DescriptionInterface {
-  (props: {}): React.ReactElement | null;
+  (props: {}): React.ReactElement | null
 }
 
 export const Description: DescriptionInterface = () => {
   const {
-    posting: {
-      description
-    }
+    posting: { description },
   } = useData()
 
   if (!description) {
-    return null;
+    return null
   }
 
   return (

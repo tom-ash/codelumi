@@ -13,10 +13,10 @@ export const Logo = () => {
   const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
-  const { logo: isError } = useErrors()
+  const { logo: logoError } = useErrors()
 
   const classNames = ['logo']
-  if (isError) {
+  if (logoError) {
     classNames.push('error')
   }
 
@@ -25,16 +25,18 @@ export const Logo = () => {
       id='logo'
       className={classNames.join(' ')}
     >
+      <label>Logo</label>
       <PictureInput
         multiple={false}
         limit={1}
-        icon='camera'
+        icon='plus'
         instructions={logoUploadInstructions}
-        onPictureSet={(pictures) => {
+        onPictureSet={pictures => {
           setInputs({ logo: pictures[0] })
           setErrors({ logo: false })
         }}
       />
+      {logoError && <div className='error'>{logoError}</div>}
     </div>
   )
 }

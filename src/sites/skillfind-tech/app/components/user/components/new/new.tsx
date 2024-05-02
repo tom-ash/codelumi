@@ -10,10 +10,7 @@ const Form = loadable(() => import('./components/form/form'))
 const UserNew = () => {
   useStyles(styles)
 
-  const {
-    'user/new/form': renderForm,
-    'user/new/verify': renderVerify,
-  } = useRender()
+  const { 'user/new/form': renderForm, 'user/new/verify': renderVerify } = useRender()
 
   return (
     <div id='users-new'>

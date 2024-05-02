@@ -1,16 +1,16 @@
 import { ChangeEvent } from 'react'
 import { createPictures } from './create-blobs'
-import { Picture } from '../../../types/picture.interface';
-import { SetPictures } from '../../../types/set-pictures.interface';
+import { Picture } from '../../../types/picture.interface'
+import { SetPictures } from '../../../types/set-pictures.interface'
 
 interface SetPicturesInterface {
   (params: {
-    e: ChangeEvent<HTMLInputElement>;
-    limit?: number;
-    targetWidth?: number;
-    targetHeight?: number;
-    pictures: Picture[];
-    setPictures: SetPictures;
+    e: ChangeEvent<HTMLInputElement>
+    limit?: number
+    targetWidth?: number
+    targetHeight?: number
+    pictures: Picture[]
+    setPictures: SetPictures
   }): void
 }
 

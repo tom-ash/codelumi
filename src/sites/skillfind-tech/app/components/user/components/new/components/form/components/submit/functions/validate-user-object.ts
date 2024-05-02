@@ -9,9 +9,9 @@ import { validateLogo } from '../../logo/functions/validate-logo'
 import { UserObject } from '../types/user-object.interface'
 
 type ValidateUserObjectParams = UserObject & {
-  businessNameError: string;
-  // logoError: string;
-  setErrors(params: any): void;
+  businessNameError: string
+  logoError: string
+  setErrors(params: any): void
 }
 
 type ValidateUserObject = {
@@ -19,16 +19,8 @@ type ValidateUserObject = {
 }
 
 export const validateUserObject: ValidateUserObject = params => {
-  const {
-    businessName,
-    businessNameError,
-    logo,
-    // logoError,
-    emailAddress,
-    password,
-    termsOfServiceConsent,
-    setErrors,
-  } = params
+  const { businessName, businessNameError, logo, logoError, emailAddress, password, termsOfServiceConsent, setErrors } =
+    params
 
   const validationArray = [
     validateBusinessName({
@@ -38,7 +30,7 @@ export const validateUserObject: ValidateUserObject = params => {
     }),
     validateLogo({
       value: logo,
-      errorMessage: 'TODO',
+      errorMessage: logoError,
       setErrors,
     }),
     validateEmail({
@@ -55,7 +47,7 @@ export const validateUserObject: ValidateUserObject = params => {
       value: termsOfServiceConsent,
       errorMessage: 'TODO',
       setErrors,
-    })
+    }),
   ]
 
   return !validationArray.find(element => element)

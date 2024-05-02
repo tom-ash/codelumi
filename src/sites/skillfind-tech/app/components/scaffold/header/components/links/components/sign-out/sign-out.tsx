@@ -12,8 +12,12 @@ export const SignOutButton = () => {
   const classNames = { container: 'sign-out' }
   const onClick = () => signOut({ href })
 
-
-  const label = <><SVG name={'signOut'} />{signOutButtonLabel}</>
+  const label = (
+    <>
+      <SVG name={'signOut'} />
+      {signOutButtonLabel}
+    </>
+  )
 
   const buttonProps = {
     classNames,

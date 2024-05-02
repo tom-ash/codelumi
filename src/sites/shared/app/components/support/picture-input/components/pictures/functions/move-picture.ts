@@ -1,22 +1,12 @@
-import { Picture } from "../../../types/picture.interface";
-import { SetPictures } from "../../../types/set-pictures.interface";
+import { Picture } from '../../../types/picture.interface'
+import { SetPictures } from '../../../types/set-pictures.interface'
 
 interface MovePicture {
-  (params: {
-    pictures: Picture[];
-    direction: 'up' | 'down';
-    index: number;
-    setPictures: SetPictures;
-  }): void
+  (params: { pictures: Picture[]; direction: 'up' | 'down'; index: number; setPictures: SetPictures }): void
 }
 
-export const movePicture: MovePicture = (params) => {
-  const {
-    pictures,
-    direction,
-    index,
-    setPictures
-  } = params
+export const movePicture: MovePicture = params => {
+  const { pictures, direction, index, setPictures } = params
 
   const destination = direction === 'up' ? index - 1 : index + 1
   if (destination < 0 || destination === pictures.length) return

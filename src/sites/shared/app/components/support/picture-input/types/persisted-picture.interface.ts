@@ -1,4 +1,4 @@
 export interface PersistedPicture {
-  source: string;
-  database: string;
+  source: string
+  database: string
 }

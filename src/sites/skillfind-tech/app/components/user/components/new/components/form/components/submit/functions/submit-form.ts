@@ -4,9 +4,9 @@ import { postUserObject } from './post-user-object'
 
 interface SubmitForm {
   (args: {
-    businessName: string;
-    businessNameError: string;
-    industry: string;
+    businessName: string
+    businessNameError: string
+    industry: string
     lang: Lang
     emailAddress: string
     password: string
@@ -14,7 +14,8 @@ interface SubmitForm {
     termsOfServiceConsentLabel: string
     setControl(args: { connecting: boolean }): void
     setErrors(args: any): void // TODO
-    logo: Picture;
+    logo: Picture
+    logoError: string
   }): void
 }
 
@@ -24,6 +25,7 @@ export const submitForm: SubmitForm = args => {
     businessNameError,
     industry,
     logo,
+    logoError,
     lang,
     emailAddress,
     password,
@@ -42,6 +44,7 @@ export const submitForm: SubmitForm = args => {
     termsOfServiceConsent,
     termsOfServiceConsentLabel,
     logo,
+    logoError,
     setErrors,
   })
 

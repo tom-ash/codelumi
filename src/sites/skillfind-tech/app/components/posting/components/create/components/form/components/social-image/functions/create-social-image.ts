@@ -1,11 +1,15 @@
-import { compressBlob } from "../../../../../../../../../../../shared/app/functions/images/compress-blob";
-import { drawOnCanvas } from "../../../../../../../../../../../shared/app/functions/images/draw-on-canvas";
-import { IMAGE_FILE_TYPE, IMAGE_MIME_TYPE, saveBlob } from "../../../../../../../../../../../shared/app/functions/images/save-blob";
-import { transformCanvasToBlob } from "../../../../../../../../../../../shared/app/functions/images/transform-canvas-to-blob";
-import apiUrl from '../../../../../../../../../../shared/constants/urls/api';
+import { compressBlob } from '../../../../../../../../../../../shared/app/functions/images/compress-blob'
+import { drawOnCanvas } from '../../../../../../../../../../../shared/app/functions/images/draw-on-canvas'
+import {
+  IMAGE_FILE_TYPE,
+  IMAGE_MIME_TYPE,
+  saveBlob,
+} from '../../../../../../../../../../../shared/app/functions/images/save-blob'
+import { transformCanvasToBlob } from '../../../../../../../../../../../shared/app/functions/images/transform-canvas-to-blob'
+import apiUrl from '../../../../../../../../../../shared/constants/urls/api'
 
 interface CreateSocialImage {
-  (): Promise<string>;
+  (): Promise<string>
 }
 
 export const createSocialImage: CreateSocialImage = async () => {

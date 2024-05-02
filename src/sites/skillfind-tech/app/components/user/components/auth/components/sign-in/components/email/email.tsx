@@ -22,7 +22,7 @@ const UserAuthEmail = () => {
 
   return (
     <div id='user-auth-email'>
-      <MainHeading icon='signIn'/>
+      <MainHeading icon='signIn' />
       <form>
         <EmailAddressInput />
         <PasswordInput {...passwordInputProps} />

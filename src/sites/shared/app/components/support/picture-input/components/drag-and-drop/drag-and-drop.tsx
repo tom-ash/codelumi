@@ -6,14 +6,14 @@ import { SetPictures } from '../../types/set-pictures.interface'
 
 interface DragAndDropInterface {
   (props: {
-    pictures: Picture[];
-    multiple?: boolean;
-    limit?: number;
-    targetWidth?: number;
-    targetHeight?: number;
-    icon: string;
-    instructions: string;
-    setPictures: SetPictures;
+    pictures: Picture[]
+    multiple?: boolean
+    limit?: number
+    targetWidth?: number
+    targetHeight?: number
+    icon: string
+    instructions: string
+    setPictures: SetPictures
   }): React.ReactElement
 }
 
@@ -27,14 +27,16 @@ export const DragAndDrop: DragAndDropInterface = props => {
         <input
           type='file'
           multiple={multiple}
-          onChange={e => buildPicturesFromFiles({
-            e,
-            limit,
-            targetWidth,
-            targetHeight,
-            pictures,
-            setPictures,
-          })}
+          onChange={e =>
+            buildPicturesFromFiles({
+              e,
+              limit,
+              targetWidth,
+              targetHeight,
+              pictures,
+              setPictures,
+            })
+          }
         />
       </div>
       <p className='instructions'>{instructions}</p>

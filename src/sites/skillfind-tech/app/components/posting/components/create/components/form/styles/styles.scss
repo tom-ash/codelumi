@@ -19,7 +19,8 @@
     }
   }
   .description {
-    .pl, .en {
+    .pl,
+    .en {
       margin-top: 24px;
       .quill {
         margin-top: 24px;
@@ -38,5 +39,4 @@
     max-width: 320px;
     padding-top: 20px;
   }
-
 }

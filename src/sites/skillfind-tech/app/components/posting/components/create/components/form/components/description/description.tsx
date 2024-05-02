@@ -1,6 +1,6 @@
-import React from 'react';
-import { LocalizedDescription } from './components/localized-description';
-import { useTexts } from '../../../../../../../../../../shared/app/functions/store/use-texts';
+import React from 'react'
+import { LocalizedDescription } from './components/localized-description'
+import { useTexts } from '../../../../../../../../../../shared/app/functions/store/use-texts'
 
 export const Description = () => {
   const { descriptionHeading: heading } = useTexts()

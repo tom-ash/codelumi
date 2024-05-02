@@ -3,22 +3,16 @@ import { DragAndDrop } from './components/drag-and-drop/drag-and-drop'
 
 interface FileInputInterface {
   (props: {
-    label?: string;
-    limit: number;
-    icon: string;
-    instructions: string;
+    label?: string
+    limit: number
+    icon: string
+    instructions: string
     onFilesSet(files: File[]): void
   }): React.ReactElement
 }
 
 export const FileInput: FileInputInterface = props => {
-  const {
-    label,
-    limit,
-    icon,
-    instructions,
-    onFilesSet,
-  } = props
+  const { label, limit, icon, instructions, onFilesSet } = props
 
   const [files, setFiles] = useState<File[]>([])
 
@@ -28,15 +22,11 @@ export const FileInput: FileInputInterface = props => {
 
   return (
     <div className='file-input'>
-      {label && (
-        <label>
-          {label}
-        </label>
-      )}
+      {label && <label>{label}</label>}
       <DragAndDrop
         files={files}
         limit={limit}
-        icon={icon}      
+        icon={icon}
         instructions={instructions}
         setFiles={setFiles}
       />

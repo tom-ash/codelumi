@@ -1,16 +1,13 @@
-import { saveCookie } from "../../../../../../../../../mapawynajmu-pl/app/functions/cookie-handlers";
-import getCookieValue from "../../../../../../../../../shared/app/functions/cookies/getters/get-cookie-value"
-import { changeUrl } from "../../../../../../../../../shared/app/functions/routes/changers/change-url";
-import API_URL from '../../../../../../../../shared/constants/urls/api';
+import { saveCookie } from '../../../../../../../../../mapawynajmu-pl/app/functions/cookie-handlers'
+import getCookieValue from '../../../../../../../../../shared/app/functions/cookies/getters/get-cookie-value'
+import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/change-url'
+import API_URL from '../../../../../../../../shared/constants/urls/api'
 
 interface SendVerificationCode {
-  (params: {
-    lang: Lang;
-    verificationCode: string;
-  }): void
+  (params: { lang: Lang; verificationCode: string }): void
 }
 
-export const sendVerificationCode: SendVerificationCode = async (params) => {
+export const sendVerificationCode: SendVerificationCode = async params => {
   const { verificationCode, lang } = params
   const verificationToken = getCookieValue('verificationToken')
 
@@ -26,10 +23,7 @@ export const sendVerificationCode: SendVerificationCode = async (params) => {
   if (response.status === 200) {
     const jsonResponse = await response.json()
 
-    const {
-      accessToken,
-      href,
-    } = jsonResponse
+    const { accessToken, href } = jsonResponse
 
     saveCookie('access_token', accessToken, 'ninetyDays')
 

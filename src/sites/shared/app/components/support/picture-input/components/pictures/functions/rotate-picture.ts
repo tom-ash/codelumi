@@ -1,16 +1,12 @@
-import { createBlob, loadImage } from "../../drag-and-drop/functions/create-blobs";
-import { Picture } from "../../../types/picture.interface"
-import { SetPictures } from "../../../types/set-pictures.interface";
+import { createBlob, loadImage } from '../../drag-and-drop/functions/create-blobs'
+import { Picture } from '../../../types/picture.interface'
+import { SetPictures } from '../../../types/set-pictures.interface'
 
 interface RotatePicture {
-  (params: {
-    pictures: Picture[];
-    index: number;
-    setPictures: SetPictures;
-  }): void;
+  (params: { pictures: Picture[]; index: number; setPictures: SetPictures }): void
 }
 
-export const rotatePicture: RotatePicture = async (params) => {
+export const rotatePicture: RotatePicture = async params => {
   const { pictures, index, setPictures } = params
   const picture = pictures[index]
   const file = picture.file
@@ -33,30 +29,30 @@ export const rotatePicture: RotatePicture = async (params) => {
         oc.height = img.width
         octx.translate(img.height, 0)
         octx.rotate((90 * Math.PI) / 180)
-        newRotatedBy = 90;
-        break;
+        newRotatedBy = 90
+        break
       case 90:
         oc.width = img.width
         oc.height = img.height
         octx.translate(img.width, img.height)
         octx.rotate((180 * Math.PI) / 180)
-        newRotatedBy = 180;
-        break;
+        newRotatedBy = 180
+        break
       case 180:
         oc.width = img.height
         oc.height = img.width
         octx.translate(0, img.width)
         octx.rotate((270 * Math.PI) / 180)
-        newRotatedBy = 270;
-        break;
+        newRotatedBy = 270
+        break
       case 270:
         oc.width = img.width
         oc.height = img.height
-        break;
+        break
     }
 
     octx.drawImage(img, 0, 0)
-    oc.toBlob(async (newBlob) => {
+    oc.toBlob(async newBlob => {
       if (newBlob) {
         const evenNewerBlob = await createBlob({
           fileSrc: window.URL.createObjectURL(newBlob),

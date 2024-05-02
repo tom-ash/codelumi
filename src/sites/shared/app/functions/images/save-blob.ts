@@ -3,7 +3,7 @@ export enum IMAGE_FILE_TYPE {
 }
 
 export enum IMAGE_MIME_TYPE {
-  PNG = 'image/png'
+  PNG = 'image/png',
 }
 
 interface SaveBlob {
@@ -11,7 +11,7 @@ interface SaveBlob {
     apiUrl: string
     blob: Blob
     key: string
-    fileType: IMAGE_FILE_TYPE;
+    fileType: IMAGE_FILE_TYPE
     mimeType: IMAGE_MIME_TYPE
   }): Promise<string>
 }

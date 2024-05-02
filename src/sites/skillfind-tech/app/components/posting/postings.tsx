@@ -12,11 +12,7 @@ import PostingsShow from './components/show/show'
 const Postings = () => {
   useStyles(styles)
 
-  const {
-    'postings/new': renderNew,
-    'postings/index': renderIndex,
-    'postings/show': renderShow,
-  } = useRender()
+  const { 'postings/new': renderNew, 'postings/index': renderIndex, 'postings/show': renderShow } = useRender()
 
   return (
     <div id='postings'>

@@ -60,7 +60,7 @@ async function create(savedPictures) {
     method,
     // @ts-ignore
     headers: { 'Content-Type': 'application/json', Lang: lang, 'Access-Token': accessToken },
-    body: JSON.stringify({ announcement: { ...announcement, pictures: savedPictures} }),
+    body: JSON.stringify({ announcement: { ...announcement, pictures: savedPictures } }),
   })
     .then(response => {
       if (response.ok) return response.json()

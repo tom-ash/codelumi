@@ -2,6 +2,7 @@
 @import '../../common/location-and-cooperation-mode/styles/styles.scss';
 @import '../../common/remuneration/styles/styles.scss';
 @import '../../../../../styles/inputs/text.scss';
+@import '../../../../../styles/inputs/drag-and-drop.scss';
 @import '../../../../../styles/inputs/button.scss';
 
 #postings-show {
@@ -21,7 +22,7 @@
     right: 20px;
   }
   .company {
-    background: #5B2C6F;
+    background: #5b2c6f;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     height: 150px;
@@ -84,7 +85,8 @@
   .description {
     margin-top: 50px;
     padding: 0 25px;
-    ul, ol {
+    ul,
+    ol {
       padding-left: 20px;
     }
   }
@@ -112,7 +114,7 @@
       }
       label {
         display: block;
-        margin-bottom: 6px!important;
+        margin-bottom: 6px !important;
         font-weight: bold;
         font-size: 14px;
       }
@@ -135,48 +137,9 @@
   }
 
   .drag-and-drop-container {
-    position: relative;
-    .drag-and-drop {
-      position: relative;
-      height: 40px;
-      border-radius: 4px;
-      border: 1px dashed gray;
-      input {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        opacity: 0;
-        z-index: 2;
-      }
-      cursor: pointer !important;
-      svg {
-        width: 20px;
-        height: 20px;
-        top: 0;
-        bottom: 0;
-        left: 10px;
-        margin: auto;
-        position: absolute;
-        color: gray;
-      }
-      &:hover {
-        svg {
-          fill: gray;
-          cursor: pointer !important;
-        }
-      }
-    }
+    @extend %drag-and-drop-container;
   }
 
-  .instructions {
-    position: absolute;
-    top: 0;
-    left: 40px;
-    line-height: 40px;
-    font-size: 14px;
-  }
   ul {
     list-style-type: none;
     margin-top: 8px;
@@ -188,6 +151,4 @@
       text-overflow: ellipsis;
     }
   }
-
-
 }

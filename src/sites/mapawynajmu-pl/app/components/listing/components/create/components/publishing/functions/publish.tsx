@@ -26,14 +26,13 @@ export function publish(addPromotion: boolean = false) {
     // @ts-ignore
   } = this.props
 
-
   const validations = [
     validateCategory({ category, setErrors }),
     validateLocation({ lat: latitude, lng: longitude, setErrors }),
-    validatePictures({ pictures, setErrors })
+    validatePictures({ pictures, setErrors }),
   ]
 
-  for(let i = 0; i < validations.length; i++) {
+  for (let i = 0; i < validations.length; i++) {
     const validation = validations[i]
     if (validation) {
       const element = document.getElementById(validation)

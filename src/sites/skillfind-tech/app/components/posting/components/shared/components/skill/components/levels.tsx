@@ -11,7 +11,7 @@ interface SkillLevelsProps {
   levelHovered: number
   selectSkill(props: object): void
   setLevelHovered(levelHovered: number): void
-  setErrors?(params: { skills: null }): void;
+  setErrors?(params: { skills: null }): void
 }
 
 export const SkillLevels = (props: SkillLevelsProps) => {
@@ -46,7 +46,7 @@ export const SkillLevels = (props: SkillLevelsProps) => {
                 selectSkill({ name, level: levelHovered })
               },
             })}
-            {...((view === SkillView.INDEX_PANEL) && {
+            {...(view === SkillView.INDEX_PANEL && {
               onMouseOver: () => setLevelHovered(index + 1),
               onMouseLeave: () => setLevelHovered(0),
               onClick: () => selectSkill({ name, level: levelHovered }),

@@ -1,23 +1,23 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
-import { useData } from '../../../../../../shared/app/functions/store/use-data';
-import { PostingIndexTile } from '../index/components/tile/tile';
-import { GoBack } from './components/go-back/go-back';
-import { Description } from './components/description/description';
-import { SkillView } from '../shared/components/skill/skill.types';
-import { Skills } from '../common/skills/skills';
-import { LocationAndCooperationMode } from '../common/location-and-cooperation-mode/location-and-cooperation-mode';
-import { Remuneration } from '../common/remuneration/remuneration';
-import Image from '../../../../../../shared/app/components/support/image/image';
-import { PostingIndexTileIndustry } from '../index/components/components/industry/industry';
-import { Application } from './components/application/application';
+import { useData } from '../../../../../../shared/app/functions/store/use-data'
+import { PostingIndexTile } from '../index/components/tile/tile'
+import { GoBack } from './components/go-back/go-back'
+import { Description } from './components/description/description'
+import { SkillView } from '../shared/components/skill/skill.types'
+import { Skills } from '../common/skills/skills'
+import { LocationAndCooperationMode } from '../common/location-and-cooperation-mode/location-and-cooperation-mode'
+import { Remuneration } from '../common/remuneration/remuneration'
+import Image from '../../../../../../shared/app/components/support/image/image'
+import { PostingIndexTileIndustry } from '../index/components/components/industry/industry'
+import { Application } from './components/application/application'
 
 interface PostingShowInterface {
-  (props: {}): React.ReactElement;
+  (props: {}): React.ReactElement
 }
 
-const PostingsShow: PostingShowInterface = (props) => {
+const PostingsShow: PostingShowInterface = props => {
   useStyles(styles)
 
   const { posting } = useData()
@@ -48,7 +48,10 @@ const PostingsShow: PostingShowInterface = (props) => {
           />
         </div>
         <div className='business-name'>{businessName}</div>
-        <PostingIndexTileIndustry industry={industry} icon={industryIcon} />
+        <PostingIndexTileIndustry
+          industry={industry}
+          icon={industryIcon}
+        />
       </div>
       <LocationAndCooperationMode
         locality={locality}

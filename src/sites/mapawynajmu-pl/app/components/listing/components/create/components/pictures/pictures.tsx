@@ -5,7 +5,7 @@ import { PictureInput } from '../../../../../../../../shared/app/components/supp
 import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
 import { useDispatch } from 'react-redux'
 import { useData } from '../../../../../../../../shared/app/functions/store/use-data'
-import s3Url from '../../../../../../../shared/constants/urls/aws-s3';
+import s3Url from '../../../../../../../shared/constants/urls/aws-s3'
 import { useErrors } from '../../../../../../../../shared/app/functions/store/use-errors'
 
 export const PICTURES_ID = 'pictures'
@@ -14,7 +14,7 @@ export const Pictures = () => {
   useStyles(styles)
 
   const { picturesHeading, picturesUploadInstructions } = useTexts()
-  const { id: listingId } = useData()        
+  const { id: listingId } = useData()
   const { persistedPictures } = useData()
   const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
@@ -31,9 +31,7 @@ export const Pictures = () => {
       id={PICTURES_ID}
       className={classNames.join(' ')}
     >
-      <h2>
-        {picturesHeading}
-      </h2>
+      <h2>{picturesHeading}</h2>
       <PictureInput
         multiple={true}
         limit={12}
@@ -49,7 +47,7 @@ export const Pictures = () => {
             database,
           }
         })}
-        onPictureSet={(pictures) => {
+        onPictureSet={pictures => {
           setInputs({ pictures })
           setErrors({ isPicturesError: false })
         }}

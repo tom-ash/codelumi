@@ -7,13 +7,10 @@ import { movePicture } from './functions/move-picture'
 import { SetPictures } from '../../types/set-pictures.interface'
 
 interface PicturesInterface {
-  (params: {
-    pictures: Picture[];
-    setPictures: SetPictures;
-  }): React.ReactElement
+  (params: { pictures: Picture[]; setPictures: SetPictures }): React.ReactElement
 }
 
-export const Pictures: PicturesInterface = (params) => {
+export const Pictures: PicturesInterface = params => {
   const { pictures, setPictures } = params
 
   return (
@@ -29,23 +26,27 @@ export const Pictures: PicturesInterface = (params) => {
             <img src={src} />
             <div className='buttons'>
               <div
-                onClick={() => deletePicture({
-                  pictures,
-                  index,
-                  setPictures,
-                })}
+                onClick={() =>
+                  deletePicture({
+                    pictures,
+                    index,
+                    setPictures,
+                  })
+                }
                 className='button delete'
               >
                 <SVG name='close' />
               </div>
               {index !== 0 && (
                 <div
-                  onClick={() => movePicture({
-                    pictures,
-                    direction: 'up',
-                    index,
-                    setPictures,
-                  })}
+                  onClick={() =>
+                    movePicture({
+                      pictures,
+                      direction: 'up',
+                      index,
+                      setPictures,
+                    })
+                  }
                   className='button up'
                 >
                   <SVG name='chevron' />
@@ -53,12 +54,14 @@ export const Pictures: PicturesInterface = (params) => {
               )}
               {pictures.length !== index + 1 && (
                 <div
-                  onClick={() => movePicture({
-                    pictures,
-                    direction: 'down',
-                    index,
-                    setPictures,
-                  })}
+                  onClick={() =>
+                    movePicture({
+                      pictures,
+                      direction: 'down',
+                      index,
+                      setPictures,
+                    })
+                  }
                   className='button down'
                 >
                   <SVG name='chevron' />
@@ -66,11 +69,13 @@ export const Pictures: PicturesInterface = (params) => {
               )}
               {!picture.database && (
                 <div
-                  onClick={() => rotatePicture({
-                    pictures,
-                    index,
-                    setPictures,
-                  })}
+                  onClick={() =>
+                    rotatePicture({
+                      pictures,
+                      index,
+                      setPictures,
+                    })
+                  }
                   className='button rotate'
                 >
                   <SVG name='rotate' />

@@ -1,7 +1,7 @@
-import React from 'react';
-import { useTexts } from '../../../../../../../../../../shared/app/functions/store/use-texts';
+import React from 'react'
+import { useTexts } from '../../../../../../../../../../shared/app/functions/store/use-texts'
 import loadable from '@loadable/component'
-const Form = loadable(() => import('../../../../../../../user/components/new/components/form/form'));
+const Form = loadable(() => import('../../../../../../../user/components/new/components/form/form'))
 
 export const Poster = () => {
   const { posterHeading: heading } = useTexts()

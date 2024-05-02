@@ -9,6 +9,7 @@ export const Submit = () => {
     submitFormButtonLabel: label,
     termsOfServiceConsentLabel,
     businessNameInputInvalidError: businessNameError,
+    logoInputMissingError: logoError,
   } = useTexts()
   const { emailAddress, password, termsOfServiceConsent, logo, businessName, industry } = useInputs()
 
@@ -18,6 +19,7 @@ export const Submit = () => {
     businessNameError,
     industry,
     logo,
+    logoError,
     emailAddress,
     password,
     termsOfServiceConsent,

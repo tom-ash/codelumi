@@ -1,13 +1,6 @@
 // @ts-ignore
 export const pinBuilder = props => {
-  const {
-    id,
-    lat: latitude,
-    lng: longitude,
-    industryIcon,
-    svgs,
-    currentListingId,
-  } = props
+  const { id, lat: latitude, lng: longitude, industryIcon, svgs, currentListingId } = props
 
   const classNames = ['pin']
 

@@ -14,19 +14,19 @@ interface PostingIndexTileInterface {
     id: number
     businessName: string
     industry: string
-    industryIcon: string;
+    industryIcon: string
     b2bMin?: number
     b2bMax?: number
     employmentMin?: number
     employmentMax?: number
     skills: SkillProps[]
-    logo: string;
-    href: string;
-    locality?: string;
-    country?: string;
+    logo: string
+    href: string
+    locality?: string
+    country?: string
     cooperationMode: {
-      icon: string;
-      label: string;
+      icon: string
+      label: string
     }
     changeHoveredTileId(listingId: number): void
     changeUnhoveredTileId(listingId: number): void
@@ -60,7 +60,7 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
       className='postings-index-tile'
       key={id}
       href={href}
-      onClick={(e) => {
+      onClick={e => {
         e.preventDefault()
 
         changeUrl({ href })
@@ -76,7 +76,10 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
           />
         </div>
         <div className='business-name'>{businessName}</div>
-        <PostingIndexTileIndustry industry={industry} icon={industryIcon} />
+        <PostingIndexTileIndustry
+          industry={industry}
+          icon={industryIcon}
+        />
       </div>
       <Remuneration
         b2bMin={b2bMin}

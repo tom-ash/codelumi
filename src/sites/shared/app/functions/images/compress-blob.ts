@@ -11,11 +11,8 @@ interface CompressBlob {
 export const compressBlob: CompressBlob = async (blob: Blob) => {
   const imageCompressor = new ImageCompressor()
 
-  return imageCompressor.compress(
-    blob,
-    {
-      quality: 0.8,
-      convertSize: 100000,
-    },
-  )
+  return imageCompressor.compress(blob, {
+    quality: 0.8,
+    convertSize: 100000,
+  })
 }

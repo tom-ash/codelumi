@@ -1,11 +1,7 @@
-import { LOCATION_ID } from "../location";
+import { LOCATION_ID } from '../location'
 
 interface ValidateLocation {
-  (params: {
-    lat: number | null;
-    lng: number | null;
-    setErrors(params: object): void }
-  ): 'location' | null
+  (params: { lat: number | null; lng: number | null; setErrors(params: object): void }): 'location' | null
 }
 
 export const validateLocation: ValidateLocation = params => {

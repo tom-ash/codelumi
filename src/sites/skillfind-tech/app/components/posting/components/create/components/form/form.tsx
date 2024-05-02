@@ -16,9 +16,7 @@ const AnnouncementCreateForm = () => {
   useStyles(styles)
 
   const { title } = useTexts()
-  const {
-    authorized,
-  } = useUser()
+  const { authorized } = useUser()
 
   return (
     <div

@@ -1,19 +1,15 @@
 import React from 'react'
-import { useLinks } from '../../../../../../../../shared/app/functions/store/use-links';
-import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url';
-import { Link } from '../../../../../../../../shared/app/components/support/link/link';
+import { useLinks } from '../../../../../../../../shared/app/functions/store/use-links'
+import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
+import { Link } from '../../../../../../../../shared/app/components/support/link/link'
 
 interface GoBackInterface {
-  (props: {}): React.ReactElement;
+  (props: {}): React.ReactElement
 }
 
 export const GoBack: GoBackInterface = () => {
-  const { 
-    root: {
-      href,
-      hrefLang,
-      title,
-    }
+  const {
+    root: { href, hrefLang, title },
   } = useLinks()
 
   return (

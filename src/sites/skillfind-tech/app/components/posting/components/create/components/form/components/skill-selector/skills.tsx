@@ -33,7 +33,7 @@ function Skills() {
       selectableSkills,
       setInputs,
     })
-  
+
   const { skills: isError } = useErrors()
 
   const classNames = []

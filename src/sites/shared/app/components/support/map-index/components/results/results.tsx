@@ -11,7 +11,7 @@ import { PinBuilder } from '../../types/pin-builder.interface'
 interface ResultsInterface {
   (props: {
     items: Item[]
-    renderShow: boolean,
+    renderShow: boolean
     ListItem: ItemIndexInterface
     ShowItem: ItemShowInterface
     pinBuilder: PinBuilder

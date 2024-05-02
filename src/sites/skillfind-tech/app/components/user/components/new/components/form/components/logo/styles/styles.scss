@@ -1,50 +1,30 @@
 @import '../../../../../../../../../styles/colors.scss';
+@import '../../../../../../../../../styles/inputs/drag-and-drop.scss';
 
-#users-new, #listing-create-form {
+#users-new,
+#listing-create-form {
   .logo {
     position: relative;
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+      font-weight: bold;
+      color: rgb(64, 64, 64);
+      font-family: Roboto, sans-serif;
+    }
     .drag-and-drop-container {
-      height: 48px;
-    }
-    .drag-and-drop {
-      position: absolute;
-      top: 0;
-      left: 0;
-      input {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        opacity: 0;
+      @extend %drag-and-drop-container;
+      .instructions {
+        font-size: 14px;
+        font-family: Roboto;
       }
-      cursor: pointer !important;
-      svg {
-        width: 48px;
-        vertical-align: middle;
-        cursor: pointer !important;
-      }
-      &:hover {
-        svg {
-          fill: gray;
-          cursor: pointer !important;
-        }
-      }
-    }
-    .instructions {
-      height: 48px;
-      padding-left: 64px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
     .blobs {
-      margin-top: 24px;
-      margin-bottom: 48px;
       text-align: center;
       .picture {
+        margin-top: 22px;
         padding-right: 40px;
-        margin-bottom: 20px;
         position: relative;
         img {
           width: 100%;
@@ -79,15 +59,22 @@
         color: $ERROR-COLOR;
       }
       .drag-and-drop {
+        background: $ERROR-BACKGROUND-COLOR;
+        border-color: $ERROR-COLOR;
         svg {
           fill: $ERROR-COLOR;
         }
         &:hover {
           svg {
-            fill: rgba($ERROR-COLOR, .75);
+            fill: rgba($ERROR-COLOR, 0.75);
             cursor: pointer !important;
           }
         }
+      }
+      .error {
+        color: $ERROR-COLOR;
+        font-family: Roboto;
+        margin-top: 6px;
       }
     }
   }

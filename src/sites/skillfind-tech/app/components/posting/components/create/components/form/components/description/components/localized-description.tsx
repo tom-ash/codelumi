@@ -1,36 +1,31 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react'
+import { useDispatch } from 'react-redux'
 import { ManagedCheckbox } from 'managed-inputs'
-import { useApp } from '../../../../../../../../../../../shared/app/functions/store/use-app';
-import { useInputs } from '../../../../../../../../../../../shared/app/functions/store/use-inputs';
-import { useTexts } from '../../../../../../../../../../../shared/app/functions/store/use-texts';
+import { useApp } from '../../../../../../../../../../../shared/app/functions/store/use-app'
+import { useInputs } from '../../../../../../../../../../../shared/app/functions/store/use-inputs'
+import { useTexts } from '../../../../../../../../../../../shared/app/functions/store/use-texts'
 
-let ReactQuill: any;
+let ReactQuill: any
 if (typeof window !== 'undefined') {
   ReactQuill = require('react-quill')
 }
 
 interface LocalizedDescriptionInterface {
-  (props: {
-    lang: Lang
-  }): React.ReactElement;
+  (props: { lang: Lang }): React.ReactElement
 }
 
 const capitalize = (string: string) => {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+  return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-export const LocalizedDescription: LocalizedDescriptionInterface = (props) => {
+export const LocalizedDescription: LocalizedDescriptionInterface = props => {
   const { lang } = props
   const capitalizedLang = capitalize(lang)
   const { isDocumentReady } = useApp()
   const descriptionKey = `${lang}Description`
   const addDescriptionKey = `add${capitalizedLang}Description`
   const { [`${addDescriptionKey}Label`]: label } = useTexts()
-  const {
-    [addDescriptionKey]: addDescription,
-    [descriptionKey]: description
-  } = useInputs()
+  const { [addDescriptionKey]: addDescription, [descriptionKey]: description } = useInputs()
   const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
 
@@ -44,7 +39,7 @@ export const LocalizedDescription: LocalizedDescriptionInterface = (props) => {
       />
       {isDocumentReady && addDescription && (
         <ReactQuill
-          theme="snow"
+          theme='snow'
           value={description}
           onChange={(value: any) => {
             setInputs({ [descriptionKey]: value })

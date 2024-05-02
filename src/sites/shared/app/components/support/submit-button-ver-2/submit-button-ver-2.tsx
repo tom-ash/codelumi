@@ -8,16 +8,16 @@ import { useTexts } from '../../../functions/store/use-texts'
 
 interface SubmitButtonVer2Interface {
   (props: {
-    name: string;
-    className?: string;
+    name: string
+    className?: string
     params: {
-      [key: string]: any;
-    };
+      [key: string]: any
+    }
     submit(params: any): void
   }): JSX.Element
 }
 
-export const SubmitButtonVer2: SubmitButtonVer2Interface = (props) => {
+export const SubmitButtonVer2: SubmitButtonVer2Interface = props => {
   const { name, className: customClassName, submit, params } = props
   const { lang } = useApp()
   const { [`${name}ButtonLabel`]: textLabel } = useTexts()

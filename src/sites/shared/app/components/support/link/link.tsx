@@ -57,20 +57,22 @@ export const Link: LinkInterface = props => {
 
     const onClick = () => changeUrl({ ...link })
 
-    const {
-      href,
-      hrefLang,
-      title,
-      icon,
-    } = link
+    const { href, hrefLang, title, icon } = link
 
     linkProps = {
       href,
       hrefLang,
       title,
-      label: icon ? <><SVG name={icon} />{label}</> : label,
+      label: icon ? (
+        <>
+          <SVG name={icon} />
+          {label}
+        </>
+      ) : (
+        label
+      ),
       classNames,
-      onClick
+      onClick,
     }
   } else {
     const isAnchor = href && href.match(/^#.+$/)

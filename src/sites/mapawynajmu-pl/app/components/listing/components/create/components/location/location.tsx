@@ -7,11 +7,7 @@ import { useErrors } from '../../../../../../../../shared/app/functions/store/us
 export const LOCATION_ID = 'location'
 
 export const Location = () => {
-
-  const {
-    locationHeading,
-    locationInstructions,
-  } = useTexts()
+  const { locationHeading, locationInstructions } = useTexts()
   const { isLocationError: isError } = useErrors()
 
   const classNames = ['location']

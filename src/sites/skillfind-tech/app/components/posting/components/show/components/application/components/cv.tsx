@@ -1,7 +1,7 @@
 import React from 'react'
-import { FileInput } from '../../../../../../../../../shared/app/components/support/file-input/file-input';
-import { useTexts } from '../../../../../../../../../shared/app/functions/store/use-texts';
-import { useDispatch } from 'react-redux';
+import { FileInput } from '../../../../../../../../../shared/app/components/support/file-input/file-input'
+import { useTexts } from '../../../../../../../../../shared/app/functions/store/use-texts'
+import { useDispatch } from 'react-redux'
 
 export const CV = () => {
   const { cVFileInputLabel, cVFileInputInstructions } = useTexts()
@@ -15,7 +15,7 @@ export const CV = () => {
       icon='plus'
       instructions={cVFileInputInstructions}
       onFilesSet={(files: File[]) => {
-        setInputs({ cV: files[0]})
+        setInputs({ cV: files[0] })
       }}
     />
   )

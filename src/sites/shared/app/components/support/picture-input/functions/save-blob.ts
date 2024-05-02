@@ -56,7 +56,7 @@ export const saveBlob: SaveBlob = async params => {
     },
   })
 
-  return ({
-    database: presignedPost.trailingKey
-  })
+  return {
+    database: presignedPost.trailingKey,
+  }
 }

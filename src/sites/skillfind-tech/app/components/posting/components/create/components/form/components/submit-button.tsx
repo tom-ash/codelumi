@@ -15,9 +15,7 @@ const SubmitButton = () => {
   const dispatch = useDispatch()
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
 
-  const {
-    authorized,
-  } = useUser()
+  const { authorized } = useUser()
 
   const {
     selectedSkills,
@@ -48,6 +46,7 @@ const SubmitButton = () => {
   const {
     businessNameInputInvalidError: businessNameError,
     termsOfServiceConsentLabel,
+    logoInputMissingError: logoError,
   } = useTexts()
 
   const buttonProps = {
@@ -82,6 +81,7 @@ const SubmitButton = () => {
         termsOfServiceConsentLabel,
         consents,
         logo,
+        logoError,
         authorized,
         setErrors,
       }),

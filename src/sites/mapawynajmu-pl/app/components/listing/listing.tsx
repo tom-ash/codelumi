@@ -16,7 +16,6 @@ const Listing = () => {
     listingPromotion,
   } = render
 
-
   return (
     <>
       {(renderCreate || renderEdit) && <AnnouncementCreate />}

@@ -6,10 +6,11 @@ import { Picture } from '../../../../../../../../../../../shared/app/components/
 
 interface BuildUserObject {
   (args: {
-    businessName: string;
-    businessNameError: string;
-    industry: string;
-    logo: Picture;
+    businessName: string
+    businessNameError: string
+    industry: string
+    logo: Picture
+    logoError: string
     emailAddress: string
     password: string
     termsOfServiceConsent: boolean
@@ -28,7 +29,8 @@ export const buildUserObject: BuildUserObject = args => {
     termsOfServiceConsent,
     termsOfServiceConsentLabel,
     logo,
-    setErrors
+    logoError,
+    setErrors,
   } = args
 
   let userObject: UserObject = {
@@ -44,6 +46,7 @@ export const buildUserObject: BuildUserObject = args => {
   const userObjectInvalid = !validateUserObject({
     ...userObject,
     businessNameError,
+    logoError,
     setErrors,
   })
 

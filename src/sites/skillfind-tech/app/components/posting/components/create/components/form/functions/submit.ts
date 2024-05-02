@@ -19,20 +19,21 @@ type SubmitProps = {
   country: string | undefined
   locality: string | undefined
   sublocality: string | undefined
-  plDescription: string;
-  enDescription: string;
+  plDescription: string
+  enDescription: string
   b2b: boolean
   b2bMin: number
   b2bMax: number
   employment: boolean
   employmentMin: number
-  employmentMax: number;
-  authorized: boolean;
-  setErrors(params: any): void;
+  employmentMax: number
+  authorized: boolean
+  setErrors(params: any): void
 } & UserObject & {
-  businessNameError: string;
-  termsOfServiceConsentLabel: string;
-}
+    businessNameError: string
+    logoError: string
+    termsOfServiceConsentLabel: string
+  }
 
 export const submit = async (props: SubmitProps) => {
   const {
@@ -62,6 +63,7 @@ export const submit = async (props: SubmitProps) => {
     termsOfServiceConsent,
     termsOfServiceConsentLabel,
     logo,
+    logoError,
     authorized,
     setErrors,
   } = props
@@ -105,6 +107,7 @@ export const submit = async (props: SubmitProps) => {
     userObject = buildUserObject({
       businessName,
       businessNameError,
+      logoError,
       industry,
       emailAddress,
       password,
@@ -119,7 +122,7 @@ export const submit = async (props: SubmitProps) => {
     }
   }
 
-  for(let i = 0; i < validations.length; i++) {
+  for (let i = 0; i < validations.length; i++) {
     const validation = validations[i]
     if (validation) {
       const element = document.getElementById(validation)
@@ -133,7 +136,7 @@ export const submit = async (props: SubmitProps) => {
   console.warn('TODO: socialImageKey', socialImageKey)
 
   const path = authorized ? '/postings' : '/postings/users'
-  const extendedBody = authorized ? body : { ...body, ...userObject } 
+  const extendedBody = authorized ? body : { ...body, ...userObject }
 
   fetch(`${apiUrl}/${path}`, {
     method: 'POST',
@@ -145,10 +148,10 @@ export const submit = async (props: SubmitProps) => {
     },
     body: JSON.stringify(extendedBody),
   })
-  .then(response => {
-    if (response.ok) return response.json()
-  })
-  .then(href => {
-    changeUrl({ href })
-  })
+    .then(response => {
+      if (response.ok) return response.json()
+    })
+    .then(href => {
+      changeUrl({ href })
+    })
 }

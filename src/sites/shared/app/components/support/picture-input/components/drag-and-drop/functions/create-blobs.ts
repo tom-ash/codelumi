@@ -1,15 +1,15 @@
-import { Picture } from "../../../types/picture.interface";
+import { Picture } from '../../../types/picture.interface'
 
 interface CreatePictures {
   (params: {
-    files: File[];
-    currentPictures: Picture[];
-    targetWidth?: number;
-    targetHeight?: number;
-  }): Promise<Picture[]>;
+    files: File[]
+    currentPictures: Picture[]
+    targetWidth?: number
+    targetHeight?: number
+  }): Promise<Picture[]>
 }
 
-export const createPictures: CreatePictures = async (params) => {
+export const createPictures: CreatePictures = async params => {
   const { files, targetWidth, targetHeight, currentPictures } = params
   let pictures: Picture[] = [...currentPictures]
 
@@ -47,14 +47,10 @@ export const loadImage = async (fileSrc: string): Promise<HTMLImageElement> => {
 }
 
 interface CreateBlobInterface {
-  (params: {
-    fileSrc: string;
-    targetWidth?: number;
-    targetHeight?: number;
-  }): Promise<Blob | void | null>
+  (params: { fileSrc: string; targetWidth?: number; targetHeight?: number }): Promise<Blob | void | null>
 }
 
-export const createBlob: CreateBlobInterface = async (params) => {
+export const createBlob: CreateBlobInterface = async params => {
   const { fileSrc, targetWidth, targetHeight } = params
 
   const oc = document.createElement('canvas')
@@ -96,7 +92,7 @@ export const createBlob: CreateBlobInterface = async (params) => {
       0,
       0,
       width,
-      height,
+      height
     )
 
     return new Promise(function (resolve, reject) {

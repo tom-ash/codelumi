@@ -3,13 +3,7 @@ import { SVG } from '../../../svg/svg'
 import { SetFiles } from '../../types/set-files.interface'
 
 interface DragAndDropInterface {
-  (props: {
-    files: File[];
-    limit: number;
-    icon: string;
-    instructions: string;
-    setFiles: SetFiles;
-  }): React.ReactElement
+  (props: { files: File[]; limit: number; icon: string; instructions: string; setFiles: SetFiles }): React.ReactElement
 }
 
 export const DragAndDrop: DragAndDropInterface = props => {
@@ -37,7 +31,7 @@ export const DragAndDrop: DragAndDropInterface = props => {
               if (unusedLimit <= 0) {
                 return
               }
-  
+
               const slicedAddedFiles = arrayedFiles.slice(0, unusedLimit)
 
               setFiles(files.concat(slicedAddedFiles))
