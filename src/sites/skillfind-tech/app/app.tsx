@@ -5,6 +5,7 @@ const Header = loadable(() => import('./components/scaffold/header/header'))
 const Footer = loadable(() => import('./components/scaffold/footer/footer'))
 const Visitor = loadable(() => import('./components/visitor/visitor'))
 const User = loadable(() => import('./components/user/user'))
+const UserPostingsIndex = loadable(() => import('./components/user/postings/index/index'))
 const Postings = loadable(() => import('./components/posting/postings'))
 const Page = loadable(() => import('../../shared/app/components/page/page'))
 const Image = loadable(() => import('../../shared/app/components/image/image'))
@@ -49,6 +50,7 @@ const App = () => {
     visitor: renderVisitor,
     postings: renderPostings,
     user: renderUser,
+    'user/postings/index': renderUserPostingsIndex,
     assetsIndex,
     redirectsIndex,
     renderQuestions,
@@ -59,6 +61,7 @@ const App = () => {
       <Header />
       <div id='content'>
         {renderUser && <User />}
+        {renderUserPostingsIndex && <UserPostingsIndex />}
         {renderPostings && <Postings />}
         {renderVisitor && <Visitor />}
         {renderImage && <Image />}
