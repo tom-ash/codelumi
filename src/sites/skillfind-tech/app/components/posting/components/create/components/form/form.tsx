@@ -12,7 +12,7 @@ import { SocialImage } from './components/social-image/social-image'
 import { Poster } from './components/poster/poster'
 import { useUser } from '../../../../../../../../shared/app/functions/store/use-user'
 
-const AnnouncementCreateForm = () => {
+export const PostingsForm = () => {
   useStyles(styles)
 
   const { title } = useTexts()
@@ -39,4 +39,4 @@ const AnnouncementCreateForm = () => {
   )
 }
 
-export default AnnouncementCreateForm
+export default PostingsForm

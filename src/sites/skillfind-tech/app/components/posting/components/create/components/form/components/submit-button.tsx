@@ -7,6 +7,7 @@ import { useInputs } from '../../../../../../../../../shared/app/functions/store
 import { useDispatch } from 'react-redux'
 import { useErrors } from '../../../../../../../../../shared/app/functions/store/use-errors'
 import { useUser } from '../../../../../../../../../shared/app/functions/store/use-user'
+import { useData } from '../../../../../../../../../shared/app/functions/store/use-data'
 
 const SubmitButton = () => {
   const { lang } = useApp()
@@ -14,6 +15,7 @@ const SubmitButton = () => {
   const inputs = useInputs()
   const dispatch = useDispatch()
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
+  const { postingId } = useData()
 
   const { authorized } = useUser()
 
@@ -54,6 +56,7 @@ const SubmitButton = () => {
     label: texts.submit,
     onClick: () =>
       submit({
+        postingId: postingId || null,
         lang,
         selectedSkills,
         plDescription,

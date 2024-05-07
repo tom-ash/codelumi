@@ -9,6 +9,7 @@ import { buildUserObject } from '../../../../../../user/components/new/component
 import { UserObject } from '../../../../../../user/components/new/components/form/components/submit/types/user-object.interface'
 
 type SubmitProps = {
+  postingId: number | null;
   lang: Lang
   selectedSkills: Array<any>
   cooperationMode: string
@@ -37,6 +38,7 @@ type SubmitProps = {
 
 export const submit = async (props: SubmitProps) => {
   const {
+    postingId,
     lang,
     selectedSkills,
     cooperationMode,
@@ -69,6 +71,7 @@ export const submit = async (props: SubmitProps) => {
   } = props
 
   const body = {
+    postingId,
     selectedSkills,
     cooperationMode,
     plDescription,
@@ -137,9 +140,10 @@ export const submit = async (props: SubmitProps) => {
 
   const path = authorized ? '/postings' : '/postings/users'
   const extendedBody = authorized ? body : { ...body, ...userObject }
+  const method = postingId ? 'PUT' : 'POST'
 
   fetch(`${apiUrl}/${path}`, {
-    method: 'POST',
+    method,
     // @ts-ignore
     headers: {
       'Content-Type': 'application/json',
