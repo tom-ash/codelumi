@@ -24,6 +24,12 @@
     }
   }
 
+  // .address-input {
+  //   svg {
+  //     height: 14px;
+  //   }
+  // }
+
   // TODO: Refactor.
   .filter.location {
     @extend %text-input;
@@ -32,6 +38,11 @@
     top: 10px;
     right: 15px;
     left: 15px;
+    svg {
+      height: 14px;
+      position: absolute;
+      top: 0;
+    }
   }
 
   .autocompletes {

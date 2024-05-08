@@ -1,32 +1,99 @@
+@import '../../../../../../show/styles/company';
+@import '../../../../../../common/location-and-cooperation-mode/styles/styles.scss';
+@import '../../../../../../common/remuneration/styles/styles.scss';
+
 #social-image {
   position: absolute;
   background: white;
-  left: 10000px;
-
   width: 1200px;
-  height: 630px;
-
-  border: 1px solid lightgray;
-  padding: 50px;
-
-  .location {
-    margin-top: 40px;
-    font-size: 32px;
+  transform-origin: top left;
+  outline: 1px solid gray;
+  padding-bottom: 10px;
+  left: 1000px;
+  left: 10000px;
+  // &:last-of-type {
+  //   left: 0px;
+  //   scale: .5;
+  // }
+  .company {
+    @extend %company;
+    border-radius: 0;
+    height: 220px;
+    margin: 0;
+    .background {
+      background: #5b2c6f;
+      height: 150px;
+    }
+    .company-logo {
+      width: 240px;
+      height: 160px;
+      top: 60px;
+      left: 60px;
+      img {
+        top: 7px;
+        right: 7px;
+        width: calc(100% - 14px);
+        height: calc(100% - 14px);
+      }
+    }
+    .business-name {
+      top: 60px;
+      left: 320px;
+      font-size: 32px;
+    }
+    .industry {
+      position: absolute;
+      top: 110px;
+      left: 320px;
+      color: white;
+      font-size: 20px;
+      svg {
+        top: 2.5px;
+        height: 18px;
+      }
+    }
+  }
+  .location-and-cooperation-mode {
+    @extend %location-and-cooperation-mode;
+    position: absolute;
+    left: 320px;
+    top: 144px;
+    font-size: 24px;
+    svg {
+      height: 24px;
+    }
   }
 
-  .remuneration {
-    font-size: 48px;
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    color: #d35400;
+  // @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+  .b2b-remuneration {
+    @extend %b2b-remuneration;
+    position: relative;
+    display: block;
+    margin-top: 60px;
+    margin-left: 70px;
+    padding: 0;
+    font-size: 36px;
+    width: auto;
+    text-align: left;
+    // font-family: 'Helvetica Neue', sans-serif;
+    font-family: Oswald, sans-serif;
+    font-weight: 400;
+    // svg {
+    //   height: 36px;
+    //   position: relative;
+    //   top: 3px;
+    // }
   }
 
   .skills {
-    margin-top: 40px;
-    position: absolute;
-    bottom: 50px;
-    left: 50px;
+    position: relative;
+    margin: 20px 0 60px 70px;
+    padding-top: 10px;
+    .skill {
+      display: block;
+      margin-top: 60px!important;
+    }
   }
 
   .skill {

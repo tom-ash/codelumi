@@ -4,6 +4,7 @@
 @import '../../../../../styles/inputs/text.scss';
 @import '../../../../../styles/inputs/drag-and-drop.scss';
 @import '../../../../../styles/inputs/button.scss';
+@import './company.scss';
 
 #postings-show {
   position: relative;
@@ -22,51 +23,7 @@
     right: 20px;
   }
   .company {
-    background: #5b2c6f;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    height: 150px;
-    margin-bottom: 70px;
-    .business-name {
-      position: absolute;
-      top: 92px;
-      left: 185px;
-      font-size: 20px;
-      color: white;
-    }
-    .industry {
-      position: absolute;
-      top: 122px;
-      left: 185px;
-      color: white;
-      font-size: 16px;
-      svg {
-        position: relative;
-        top: 2px;
-        height: 16px;
-        margin-right: 8px;
-        fill: white;
-      }
-    }
-    .company-logo {
-      position: relative;
-      background: white;
-      position: absolute;
-      width: 150px;
-      height: 100px;
-      top: 90px;
-      left: 20px;
-      padding: 5px;
-      border-radius: 6px;
-    }
-    img {
-      position: absolute;
-      top: 5px;
-      right: 5px;
-      width: calc(100% - 10px);
-      height: calc(100% - 10px);
-      border-radius: 4px;
-    }
+    @extend %company;
   }
   .b2b-remuneration {
     display: block;

@@ -33,6 +33,7 @@ export const PostingsForm = () => {
         <Contracts />
       </section>
       <SocialImage />
+      {/* <SocialImage /> */}
       {!authorized && <Poster />}
       <SubmitButton />
     </div>

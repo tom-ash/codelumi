@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const Image = (props: ImageProps) => {
-  const { src, alt, style } = props
+  const { src, alt, style, crossOrigin } = props
   const imgProps = {
     src,
     alt,
@@ -12,6 +12,7 @@ export const Image = (props: ImageProps) => {
   return (
     <img
       {...imgProps}
+      crossOrigin={crossOrigin}
       loading='lazy'
     />
   )

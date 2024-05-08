@@ -1,4 +1,5 @@
 import React from 'react'
+import { SVG } from '../../../../../../../shared/app/components/support/svg/svg'
 
 interface RemunerationInterface {
   (props: {
@@ -16,7 +17,8 @@ interface FormatRemuneration {
 }
 
 const formatRemuneration: FormatRemuneration = remuneration => {
-  return remuneration.toLocaleString().replace(/,/g, ' ')
+  console.log('remuneration.toLocaleString()', remuneration.toLocaleString())
+  return Number(remuneration).toLocaleString().replace(/,/g, ' ')
 }
 
 export const Remuneration: RemunerationInterface = props => {
@@ -25,6 +27,7 @@ export const Remuneration: RemunerationInterface = props => {
   if (b2bMin && b2bMax) {
     return (
       <strong className='b2b-remuneration'>
+        {/* <SVG name='coins' /> */}
         {formatRemuneration(b2bMin)} - {formatRemuneration(b2bMax)} PLN
       </strong>
     )
