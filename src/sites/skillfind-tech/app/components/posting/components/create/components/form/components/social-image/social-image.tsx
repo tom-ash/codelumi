@@ -1,21 +1,11 @@
 import React, { useMemo } from 'react'
 import { useInputs } from '../../../../../../../../../../shared/app/functions/store/use-inputs'
-import { useDispatch } from 'react-redux'
-import { useApp } from '../../../../../../../../../../shared/app/functions/store/use-app'
-import Skill from '../../../../../shared/components/skill/skill'
-import { SkillView } from '../../../../../shared/components/skill/skill.types'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
-import { Skills } from '../../../../../common/skills/skills'
-import { Company } from '../../../../../show/components/company/company'
-import { LocationAndCooperationMode } from '../../../../../common/location-and-cooperation-mode/location-and-cooperation-mode'
 import { useData } from '../../../../../../../../../../shared/app/functions/store/use-data'
-import { Remuneration } from '../../../../../common/remuneration/remuneration'
-
-let ReactQuill: any
-if (typeof window !== 'undefined') {
-  ReactQuill = require('react-quill')
-}
+import { Preview } from './components/preview/preview'
+import { ColorPicker } from '../../../../../../../../../../shared/app/components/support/color-picker/color-picker'
+import { SectionHeading } from '../../../../../../../../../../shared/app/components/support/headings/section-heading'
 
 export const SocialImage = () => {
   useStyles(styles)
@@ -30,6 +20,8 @@ export const SocialImage = () => {
     industry,
     b2bMin,
     b2bMax,
+    backgroundColor,
+    textColor,
   } = useInputs()
 
   const { industries, cooperationModes } = useData()
@@ -63,29 +55,42 @@ export const SocialImage = () => {
 
   return (
     <section id='social-image'>
-      {logo && businessName && industryObject && (
-        <Company
-          logo={logoSrc}
-          businessName={businessName}
-          industry={industryObject}
-        />
-      )}
-      {locality && country && cooperationModeObject && (
-        <LocationAndCooperationMode
-          locality={locality}
-          country={country}
-          cooperationMode={cooperationModeObject}
-        />
-      )}
-      <Remuneration
+      <SectionHeading name='socialImage' />
+      <ColorPicker
+        label='Background Color'
+        name='backgroundColor'
+      />
+      <ColorPicker
+        label='Text Color'
+        name='textColor'
+      />
+      <Preview
+        id={'social-image-preview'}
+        logo={logoSrc}
+        businessName={businessName}
+        industry={industryObject}
+        backgroundColor={backgroundColor}
+        textColor={textColor}
+        locality={locality}
+        country={country}
+        cooperationMode={cooperationModeObject}
         b2bMin={b2bMin}
         b2bMax={b2bMax}
-        // employmentMin={employmentMin}
-        // employmentMax={employmentMax}
-      />
-      <Skills
         skills={skills}
-        view={SkillView.indexVisitor}
+      />
+      <Preview
+        id={'social-image-canvas'}
+        logo={logoSrc}
+        businessName={businessName}
+        industry={industryObject}
+        backgroundColor={backgroundColor}
+        textColor={textColor}
+        locality={locality}
+        country={country}
+        cooperationMode={cooperationModeObject}
+        b2bMin={b2bMin}
+        b2bMax={b2bMax}
+        skills={skills}
       />
     </section>
   )

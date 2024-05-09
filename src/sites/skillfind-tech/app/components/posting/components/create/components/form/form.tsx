@@ -4,18 +4,17 @@ import styles from './styles/styles.scss'
 import Skills from './components/skill-selector/skills'
 import SubmitButton from './components/submit-button'
 import { Contracts } from './components/contracts/contracts'
-import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
 import { Location } from './components/location/location'
 import { CooperationMode } from './components/cooperation-mode/cooperation-mode'
 import { Description } from './components/description/description'
 import { SocialImage } from './components/social-image/social-image'
 import { Poster } from './components/poster/poster'
 import { useUser } from '../../../../../../../../shared/app/functions/store/use-user'
+import { MainHeading } from '../../../../../../../../shared/app/components/support/headings/main-heading'
 
 export const PostingsForm = () => {
   useStyles(styles)
 
-  const { title } = useTexts()
   const { authorized } = useUser()
 
   return (
@@ -23,18 +22,14 @@ export const PostingsForm = () => {
       id='listing-create-form'
       className='form'
     >
-      <h1>{title}</h1>
+      <MainHeading />
       <Skills />
       <CooperationMode />
       <Location />
       <Description />
-      <section>
-        {/* TODO */}
-        <Contracts />
-      </section>
-      <SocialImage />
-      {/* <SocialImage /> */}
+      <Contracts />
       {!authorized && <Poster />}
+      <SocialImage />
       <SubmitButton />
     </div>
   )

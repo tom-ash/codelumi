@@ -13,7 +13,7 @@ interface CreateSocialImage {
 }
 
 export const createSocialImage: CreateSocialImage = async () => {
-  const canvas = await drawOnCanvas('social-image')
+  const canvas = await drawOnCanvas('social-image-canvas')
   // Resizing canvas: https://stackoverflow.com/questions/3543358/resizing-a-html-canvas-blanks-its-contents.
   const blob = await transformCanvasToBlob(canvas)
   const compressedBlob = await compressBlob(blob)

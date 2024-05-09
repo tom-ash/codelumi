@@ -25,10 +25,13 @@
 }
 
 %select {
+  position: relative;
+  z-index: 3;
   input {
     cursor: default;
   }
   ul {
+    z-index: 3;
     position: absolute;
     top: 67px;
     background: white;

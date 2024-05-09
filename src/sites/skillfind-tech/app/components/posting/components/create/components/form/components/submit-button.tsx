@@ -5,7 +5,6 @@ import { useApp } from '../../../../../../../../../shared/app/functions/store/us
 import { useTexts } from '../../../../../../../../../shared/app/functions/store/use-texts'
 import { useInputs } from '../../../../../../../../../shared/app/functions/store/use-inputs'
 import { useDispatch } from 'react-redux'
-import { useErrors } from '../../../../../../../../../shared/app/functions/store/use-errors'
 import { useUser } from '../../../../../../../../../shared/app/functions/store/use-user'
 import { useData } from '../../../../../../../../../shared/app/functions/store/use-data'
 
@@ -44,6 +43,8 @@ const SubmitButton = () => {
     termsOfServiceConsent,
     consents,
     logo,
+    backgroundColor,
+    textColor,
   } = inputs
   const {
     businessNameInputInvalidError: businessNameError,
@@ -87,6 +88,8 @@ const SubmitButton = () => {
         logoError,
         authorized,
         setErrors,
+        backgroundColor,
+        textColor,
       }),
   }
 

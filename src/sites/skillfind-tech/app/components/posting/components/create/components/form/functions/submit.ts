@@ -30,6 +30,8 @@ type SubmitProps = {
   employmentMax: number
   authorized: boolean
   setErrors(params: any): void
+  backgroundColor: string;
+  textColor: string;
 } & UserObject & {
     businessNameError: string
     logoError: string
@@ -68,6 +70,8 @@ export const submit = async (props: SubmitProps) => {
     logoError,
     authorized,
     setErrors,
+    backgroundColor,
+    textColor,
   } = props
 
   const body = {
@@ -89,6 +93,8 @@ export const submit = async (props: SubmitProps) => {
     country,
     locality,
     sublocality,
+    backgroundColor,
+    textColor,
   }
 
   const validations = [

@@ -17,7 +17,6 @@ interface FormatRemuneration {
 }
 
 const formatRemuneration: FormatRemuneration = remuneration => {
-  console.log('remuneration.toLocaleString()', remuneration.toLocaleString())
   return Number(remuneration).toLocaleString().replace(/,/g, ' ')
 }
 

@@ -11,20 +11,30 @@ interface CompanyInterface {
       value: string;
       label: string;
       icon: string;
-    }
+    };
+    backgroundColor?: string;
+    textColor?: string;
   }): React.ReactElement | null
 }
+
+
 
 export const Company: CompanyInterface = (props) => {
   const {
     logo,
     businessName,
     industry,
+    backgroundColor,
+    textColor,
   } = props
 
   return (
     <div className='company'>
-    <div className='background' />
+    <div className='background'
+      style={{
+        backgroundColor,
+      }}
+    />
     <div className='company-logo'>
       <Image
         src={logo}
@@ -32,10 +42,18 @@ export const Company: CompanyInterface = (props) => {
         crossOrigin='anonymous'
       />
     </div>
-    <div className='business-name'>{businessName}</div>
+    <div
+      className='business-name'
+      style={{
+        color: textColor,
+      }}
+    >
+      {businessName}
+    </div>
     <PostingIndexTileIndustry
       industry={industry.label}
       icon={industry.icon}
+      textColor={textColor}
     />
   </div>
   )

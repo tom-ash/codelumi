@@ -3,103 +3,111 @@
 @import '../../../../../../common/remuneration/styles/styles.scss';
 
 #social-image {
-  position: absolute;
-  background: white;
-  width: 1200px;
-  transform-origin: top left;
-  outline: 1px solid gray;
-  padding-bottom: 10px;
-  left: 1000px;
-  left: 10000px;
-  // &:last-of-type {
-  //   left: 0px;
-  //   scale: .5;
-  // }
-  .company {
-    @extend %company;
-    border-radius: 0;
-    height: 220px;
-    margin: 0;
-    .background {
-      background: #5b2c6f;
-      height: 150px;
+  .color-picker {
+    display: inline-block;
+    margin-top: 30px;
+    label {
+      font-size: 14px;
+      font-weight: bold;
     }
-    .company-logo {
-      width: 240px;
-      height: 160px;
-      top: 60px;
-      left: 60px;
-      img {
-        top: 7px;
-        right: 7px;
-        width: calc(100% - 14px);
-        height: calc(100% - 14px);
-      }
+    .chrome-picker {
+      box-shadow: none!important;
+      border: 1px solid lightgray;
+      margin-top: 8px;
     }
-    .business-name {
-      top: 60px;
-      left: 320px;
-      font-size: 32px;
-    }
-    .industry {
-      position: absolute;
-      top: 110px;
-      left: 320px;
-      color: white;
-      font-size: 20px;
-      svg {
-        top: 2.5px;
-        height: 18px;
-      }
+    &:first-of-type {
+      margin-right: 20px;
     }
   }
-  .location-and-cooperation-mode {
-    @extend %location-and-cooperation-mode;
+  .preview {
+    &#social-image-preview {
+      position: relative;
+      scale: 0.53;
+      margin-top: 20px;
+      margin-bottom: -100px;
+    }
+    &#social-image-canvas {
+      left: 10000px;
+    }
     position: absolute;
-    left: 320px;
-    top: 144px;
-    font-size: 24px;
-    svg {
-      height: 24px;
+    background: white;
+    width: 1200px;
+    transform-origin: top left;
+    outline: 1px solid gray;
+    padding-bottom: 10px;
+    .company {
+      @extend %company;
+      border-radius: 0;
+      height: 220px;
+      margin: 0;
+      .background {
+        background: #5b2c6f;
+        height: 150px;
+      }
+      .company-logo {
+        width: 240px;
+        height: 160px;
+        top: 60px;
+        left: 60px;
+        img {
+          top: 7px;
+          right: 7px;
+          width: calc(100% - 14px);
+          height: calc(100% - 14px);
+        }
+      }
+      .business-name {
+        top: 60px;
+        left: 320px;
+        font-size: 32px;
+      }
+      .industry {
+        position: absolute;
+        top: 110px;
+        left: 320px;
+        color: white;
+        font-size: 20px;
+        svg {
+          top: 2.5px;
+          height: 18px;
+        }
+      }
     }
-  }
-
-  // @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-
-  .b2b-remuneration {
-    @extend %b2b-remuneration;
-    position: relative;
-    display: block;
-    margin-top: 60px;
-    margin-left: 70px;
-    padding: 0;
-    font-size: 36px;
-    width: auto;
-    text-align: left;
-    // font-family: 'Helvetica Neue', sans-serif;
-    font-family: Oswald, sans-serif;
-    font-weight: 400;
-    // svg {
-    //   height: 36px;
-    //   position: relative;
-    //   top: 3px;
-    // }
-  }
-
-  .skills {
-    position: relative;
-    margin: 20px 0 60px 70px;
-    padding-top: 10px;
-    .skill {
+    .location-and-cooperation-mode {
+      @extend %location-and-cooperation-mode;
+      position: absolute;
+      left: 320px;
+      top: 144px;
+      font-size: 24px;
+      svg {
+        height: 24px;
+      }
+    }
+    .b2b-remuneration {
+      @extend %b2b-remuneration;
+      position: relative;
       display: block;
-      margin-top: 60px!important;
+      margin-top: 60px;
+      margin-left: 70px;
+      padding: 0;
+      font-size: 36px;
+      width: auto;
+      text-align: left;
+      font-family: Oswald, sans-serif;
+      font-weight: 400;
     }
-  }
-
-  .skill {
-    float: left;
-    transform: scale(1.5);
-    transform-origin: bottom left;
-    width: 200px;
+    .skills {
+      position: relative;
+      margin: 20px 0 60px 70px;
+      padding-top: 10px;
+      .skill {
+        float: left;
+        transform: scale(1.5);
+        transform-origin: bottom left;
+        width: 200px;
+        display: block;
+        margin-top: 60px!important;
+      }
+    }
   }
 }

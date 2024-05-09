@@ -24,8 +24,10 @@ export const SVG: SVGInterface = props => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      fill={fill}
       viewBox={viewBox}
+      style={{
+        fill,
+      }}
     >
       <path d={pathData} />
     </svg>
