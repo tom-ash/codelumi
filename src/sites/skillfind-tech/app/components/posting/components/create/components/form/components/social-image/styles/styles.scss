@@ -3,6 +3,8 @@
 @import '../../../../../../common/remuneration/styles/styles.scss';
 
 #social-image {
+  position: relative;
+  height: 650px;
   .color-picker {
     display: inline-block;
     margin-top: 30px;
@@ -21,7 +23,9 @@
   }
   .preview {
     &#social-image-preview {
-      position: relative;
+      top: 316px;
+      left: 0;
+      position: absolute;
       scale: 0.53;
       margin-top: 20px;
       margin-bottom: -100px;

@@ -31,6 +31,7 @@ type SubmitProps = {
   employmentMax: number
   authorized: boolean
   setErrors(params: any): void
+  setControl(params: any): void
   backgroundColor: string;
   textColor: string;
 } & UserObject & {
@@ -71,9 +72,12 @@ export const submit = async (props: SubmitProps) => {
     logoError,
     authorized,
     setErrors,
+    setControl,
     backgroundColor,
     textColor,
   } = props
+
+  setControl({ isSubmitting: true })
 
   const body = {
     postingId,
@@ -115,6 +119,8 @@ export const submit = async (props: SubmitProps) => {
     const validation = validations[i]
     if (validation) {
       const element = document.getElementById(validation)
+
+      setControl({ isSubmitting: false })
 
       scrollIntoView(element);
 
