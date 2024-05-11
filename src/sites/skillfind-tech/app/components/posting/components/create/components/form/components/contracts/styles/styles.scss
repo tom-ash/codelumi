@@ -1,5 +1,8 @@
+@import '../../../styles/section.scss';
+
 #listing-create-form {
   .contracts {
+    @extend %section;
     margin-top: 64px;
     h2 {
       margin-bottom: 24px;

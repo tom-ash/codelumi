@@ -1,6 +1,8 @@
 @import 'react-quill/dist/quill.snow.css';
+@import '../../../../../../../styles/headings/main-heading';
 @import '../../../../../../../styles/colors.scss';
 @import '../../../../../../user/components/new/components/form/styles/styles.scss';
+@import './section.scss';
 
 #listing-create-form {
   max-width: 768px;
@@ -8,9 +10,15 @@
   padding: 60px;
   background: white;
   border-radius: 3px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border: 1px solid lightgray;
+  .main-heading {
+    @extend %main-heading;
+    margin-bottom: 30px;
+  }
+
   h2 {
-    margin-top: 32px;
+    margin-top: 0;
+    font-size: 19px;
   }
   .instructions {
     margin-top: 24px;
@@ -19,6 +27,7 @@
     }
   }
   .description {
+    @extend %section;
     .pl,
     .en {
       margin-top: 24px;
@@ -30,9 +39,12 @@
       }
     }
   }
-
   .poster {
-    margin-top: 60px;
+    @extend %section;
+    .main-heading {
+      // TODO: Remove from DOM.
+      display: none;
+    }
   }
   .users-new-form {
     @extend %users-new-form;

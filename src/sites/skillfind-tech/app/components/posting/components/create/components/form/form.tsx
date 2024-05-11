@@ -22,7 +22,7 @@ export const PostingsForm = () => {
       id='listing-create-form'
       className='form'
     >
-      <MainHeading />
+      <MainHeading icon='plus' />
       <Skills />
       <CooperationMode />
       <Location />

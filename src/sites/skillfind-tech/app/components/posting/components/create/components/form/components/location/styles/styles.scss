@@ -1,6 +1,8 @@
+@import '../../../styles/section.scss';
 @import '../../../../../../../../../styles/inputs/text.scss';
 
 #listing-create-form {
+  
   #google-map-container {
     width: 100%;
     height: 520px;
@@ -17,18 +19,13 @@
   }
 
   #location {
+    @extend %section;
     &.error {
       h2 {
         color: $ERROR-COLOR;
       }
     }
   }
-
-  // .address-input {
-  //   svg {
-  //     height: 14px;
-  //   }
-  // }
 
   // TODO: Refactor.
   .filter.location {

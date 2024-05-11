@@ -1,8 +1,10 @@
 @import '../../../../../../show/styles/company';
+@import '../../../styles/section.scss';
 @import '../../../../../../common/location-and-cooperation-mode/styles/styles.scss';
 @import '../../../../../../common/remuneration/styles/styles.scss';
 
 #social-image {
+  @extend %section;
   position: relative;
   height: 650px;
   .color-picker {
@@ -23,7 +25,7 @@
   }
   .preview {
     &#social-image-preview {
-      top: 316px;
+      top: 334px;
       left: 0;
       position: absolute;
       scale: 0.53;

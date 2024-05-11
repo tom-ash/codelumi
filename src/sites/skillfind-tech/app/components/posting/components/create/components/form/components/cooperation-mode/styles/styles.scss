@@ -1,4 +1,7 @@
+@import '../../../styles/section.scss';
+
 .cooperation-mode {
+  @extend %section;
   fieldset {
     margin-inline-start: 0;
     margin-inline-end: 0;
@@ -12,13 +15,14 @@
     margin: 0;
     min-width: 0;
     font-size: 16px;
+    margin-top: 20px;
     legend {
       padding: 0;
       display: table;
       margin-bottom: 12px;
     }
     div {
-      margin-bottom: 8px;
+      margin-top: 8px;
     }
     label {
       margin-left: 8px;

@@ -13,7 +13,7 @@ import { useControl } from '../../../../../../../../../shared/app/functions/stor
 
 const SubmitButton = () => {
   const { lang } = useApp()
-  const texts = useTexts()
+  const { submitButtonLabel } = useTexts()
   const inputs = useInputs()
   const dispatch = useDispatch()
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
@@ -63,7 +63,7 @@ const SubmitButton = () => {
       color='white'
       size={8}
     />
-  ) : '(SUBMIT)'
+  ) : submitButtonLabel
 
   const buttonProps = {
     classNames: { container: 'submit-button' },
