@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 export enum SkillView {
   formSelectable = 'formSelectable',
   formSelected = 'formSelected',
@@ -17,7 +19,8 @@ export interface SkillProps {
   name: string
   level: number
   view: SkillView
-  selectSkill?: any // TODO!
-  unselectSkill?: any // TODO!
-  setErrors?(params: { skills: null }): void
+  unselectSkill?: any // TODO!  
+  children?: ReactNode;
+
+  onLevelClicked?(params: { name: string, level: number }): void;
 }

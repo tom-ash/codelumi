@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { useTexts } from '../../../functions/store/use-texts'
 import { useDispatch } from 'react-redux'
 import { TextInput as SemanticTextInput } from 'semanticize'
@@ -11,6 +11,7 @@ interface TextInputInterface {
     onChange?(value?: string): void
     onBlur?(value?: string): void
     validate?(params: any): void // TODO!
+    children?: ReactNode;
     // placeholder?: string
     // className?: string
     // match?: RegExp
@@ -29,6 +30,7 @@ export const TextInput: TextInputInterface = props => {
     onChange: onChangeCallback,
     onBlur: onBlurCallback,
     validate,
+    children,
     // classNames,
     // match,
     // onClick: onClickCallback,
@@ -76,6 +78,7 @@ export const TextInput: TextInputInterface = props => {
       onBlur={onBlur}
       error={error}
       placeholder={placeholder}
+      children={children}
     />
   )
 }

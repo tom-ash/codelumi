@@ -18,6 +18,7 @@
     "node": "^20.1.0"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "@babel/core": "^7.21.8",
     "@babel/preset-react": "^7.18.6",
     "@loadable/babel-plugin": "^5.15.3",
@@ -65,6 +66,7 @@
     "xml-formatter": "^3.6.0"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.0",
     "@babel/cli": "^7.21.5",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/preset-env": "^7.21.5",

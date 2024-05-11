@@ -39,4 +39,18 @@
     max-width: 320px;
     padding-top: 20px;
   }
+
+  .submit-button {
+    margin-top: 24px;
+    .input {
+      display: block;
+      margin: 0 auto;
+      padding: 12px;
+      border: none;
+      background: black;
+      color: white;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+  }
 }

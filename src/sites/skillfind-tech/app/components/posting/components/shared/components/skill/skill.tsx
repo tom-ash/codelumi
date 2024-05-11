@@ -9,7 +9,7 @@ const levelNames = Object.values(SkillLevel)
 function Skill(props: SkillProps) {
   useStyles(styles)
 
-  const { view, name, level, selectSkill, unselectSkill, setErrors } = props
+  const { view, name, level, children, onLevelClicked } = props
   const [levelHovered, setLevelHovered] = useState(0)
   const levelName = levelHovered ? levelNames[levelHovered - 1] : levelNames[level - 1]
 
@@ -20,9 +20,8 @@ function Skill(props: SkillProps) {
     levelNames,
     levelName,
     levelHovered,
-    selectSkill,
     setLevelHovered,
-    setErrors,
+    onLevelClicked,
   }
 
   return (
@@ -30,12 +29,7 @@ function Skill(props: SkillProps) {
       <div className='name'>{name}</div>
       <SkillLevels {...levelsProps} />
       <div className='level-name'>{levelName}</div>
-      {view === SkillView.formSelected && (
-        <div
-          className='delete'
-          onClick={() => unselectSkill({ name, level: undefined })}
-        />
-      )}
+      {children}
     </div>
   )
 }

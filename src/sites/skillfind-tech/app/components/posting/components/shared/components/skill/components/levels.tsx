@@ -9,13 +9,13 @@ interface SkillLevelsProps {
   levelNames: string[]
   levelName: SkillLevel
   levelHovered: number
-  selectSkill(props: object): void
   setLevelHovered(levelHovered: number): void
+  onLevelClicked?(params: { name: string, level: number }): void;
   setErrors?(params: { skills: null }): void
 }
 
 export const SkillLevels = (props: SkillLevelsProps) => {
-  const { view, name, level, levelNames, levelName, levelHovered, selectSkill, setLevelHovered, setErrors } = props
+  const { view, name, level, levelNames, levelName, levelHovered, onLevelClicked, setLevelHovered, setErrors } = props
 
   return (
     <div className='levelNames'>
@@ -29,11 +29,6 @@ export const SkillLevels = (props: SkillLevelsProps) => {
           : ''
         const classNames = ['level', fillClass]
         const sharedLevelProps = { className: classNames.join(' '), key: availableLevel }
-        // const formProps = {
-        //   onMouseOver: () => setLevelHovered(index + 1),
-        //   onMouseLeave: () => setLevelHovered(0),
-        //   onClick: () => selectSkill({ name, level: levelHovered }),
-        // }
 
         return (
           <div
@@ -43,13 +38,13 @@ export const SkillLevels = (props: SkillLevelsProps) => {
               onMouseLeave: () => setLevelHovered(0),
               onClick: () => {
                 setErrors && setErrors({ skills: null })
-                selectSkill({ name, level: levelHovered })
+                onLevelClicked && onLevelClicked({ name, level: levelHovered })
               },
             })}
             {...(view === SkillView.INDEX_PANEL && {
               onMouseOver: () => setLevelHovered(index + 1),
               onMouseLeave: () => setLevelHovered(0),
-              onClick: () => selectSkill({ name, level: levelHovered }),
+              onClick: () => onLevelClicked && onLevelClicked({ name, level: levelHovered }),
             })}
           />
         )
