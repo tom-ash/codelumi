@@ -94,6 +94,7 @@ function Skills() {
       level: level,
     }])
 
+    setErrors({ skills: null })
     setInputs({
       selectableSkills: newSelectableSkills,
       selectedSkills: newSelectedSkills,

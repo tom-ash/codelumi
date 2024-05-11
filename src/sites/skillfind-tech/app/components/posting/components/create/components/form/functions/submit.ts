@@ -3,10 +3,11 @@ import { getAccessToken } from '../../../../../../../../../shared/app/components
 import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/change-url'
 import { createSocialImage } from '../components/social-image/functions/create-social-image'
 import { validateSkills } from '../components/skill-selector/functions/validate-skills'
-import scrollToElement from '../../../../../../../../../shared/app/functions/screen/scrollers/to-element'
 import { validateLocation } from '../components/location/functions/validate-location'
 import { buildUserObject } from '../../../../../../user/components/new/components/form/components/submit/functions/build-user-object'
 import { UserObject } from '../../../../../../user/components/new/components/form/components/submit/types/user-object.interface'
+
+var scrollIntoView = require('scroll-into-view');
 
 type SubmitProps = {
   postingId: number | null;
@@ -110,6 +111,17 @@ export const submit = async (props: SubmitProps) => {
     }),
   ]
 
+  for (let i = 0; i < validations.length; i++) {
+    const validation = validations[i]
+    if (validation) {
+      const element = document.getElementById(validation)
+
+      scrollIntoView(element);
+
+      return
+    }
+  }
+
   let userObject: UserObject | undefined
 
   if (!authorized) {
@@ -127,16 +139,6 @@ export const submit = async (props: SubmitProps) => {
     })
 
     if (!userObject) {
-      return
-    }
-  }
-
-  for (let i = 0; i < validations.length; i++) {
-    const validation = validations[i]
-    if (validation) {
-      const element = document.getElementById(validation)
-      // setControl({ connecting: false })
-      scrollToElement(element, 12, -120)
       return
     }
   }
