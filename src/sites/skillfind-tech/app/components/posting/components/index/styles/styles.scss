@@ -1,5 +1,17 @@
 @import '../../../../../../../shared/app/styles/media-breakpoints';
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 #map-index {
   position: relative;
   max-width: 1440px;
@@ -19,15 +31,19 @@
     border-radius: 4px;
     text-align: center;
     border: 1px solid #7b7d7d;
+    transform-origin: center center;
+    transition: background-color 0.16s ease-in;
     svg {
       max-height: 20px;
       max-width: 20px;
     }
     &.hovered {
-      background: red;
+      z-index: 2;
+      animation: pulse 1s infinite;
     }
     &.current {
-      background: blue;
+      z-index: 2;
+      animation: pulse 1s infinite;
     }
   }
 
