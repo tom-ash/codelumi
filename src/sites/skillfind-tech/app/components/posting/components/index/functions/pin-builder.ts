@@ -2,6 +2,8 @@
 export const pinBuilder = props => {
   const { id, lat: latitude, lng: longitude, industryIcon, svgs, currentListingId } = props
 
+  console.log('props', props)
+
   const classNames = ['pin']
 
   if (+currentListingId === id) {

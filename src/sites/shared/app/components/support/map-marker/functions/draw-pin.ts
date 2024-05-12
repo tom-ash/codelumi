@@ -1,31 +1,26 @@
-import { categories } from '../../../../../../mapawynajmu-pl/app/components/listing/constants/categories'
-import { getPinContent } from '../../../../../../mapawynajmu-pl/app/components/listing/functions/map/pins/get-pin-content'
 import removePins from '../../../../../../mapawynajmu-pl/app/components/listing/functions/map/pins/remove-pins'
+import { PinBuilder } from '../map-marker'
 
-interface DrawPinProps {
+interface ItemProps {
   latitude: number
   longitude: number
-  svgs: object[]
-  category: string
+  [key: string]: any
 }
 
-export const drawPin = (props: DrawPinProps) => {
-  const { latitude, longitude, svgs, category } = props
+export const drawPin = (item: ItemProps, pinBuilder: PinBuilder) => {
+  const {
+    longitude,
+    latitude,
+  } = item
 
-  let svg
-  let pinContent = '?'
-  if (category !== '') {
-    const svgCategory = categories.find(categoryOn => categoryOn.number === +category)
-    // @ts-ignore
-    svg = svgs[svgCategory?.pin?.svg]
-  }
-
-  if (svg) {
-    pinContent = getPinContent(svg)
-  }
+  const pinContent = pinBuilder(item)
 
   // @ts-ignore
   removePins(window.pins || [])
+
+  if (!(longitude && latitude)) {
+    return
+  }
 
   // @ts-ignore
   window.pins = [

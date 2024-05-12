@@ -1,16 +1,5 @@
 @import '../../../../../../../shared/app/styles/media-breakpoints';
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.6);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
+@import '../../../styles/pin.scss';
 
 #map-index {
   position: relative;
@@ -24,27 +13,7 @@
   overflow: hidden;
 
   .pin {
-    width: 36px;
-    height: 36px;
-    background: white;
-    padding: 8px;
-    border-radius: 4px;
-    text-align: center;
-    border: 1px solid #7b7d7d;
-    transform-origin: center center;
-    transition: background-color 0.16s ease-in;
-    svg {
-      max-height: 20px;
-      max-width: 20px;
-    }
-    &.hovered {
-      z-index: 2;
-      animation: pulse 1s infinite;
-    }
-    &.current {
-      z-index: 2;
-      animation: pulse 1s infinite;
-    }
+    @extend %pin;
   }
 
   @media #{$MEDIUM-PC} {

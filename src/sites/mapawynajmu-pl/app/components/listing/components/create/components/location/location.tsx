@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { MapMarker } from '../../../../../../../../shared/app/components/support/map-marker/map-marker'
 import { Instructions } from '../../../../../../../../shared/app/components/support/instructions/instructions'
 import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
 import { useErrors } from '../../../../../../../../shared/app/functions/store/use-errors'
+import { useInputs } from '../../../../../../../../shared/app/functions/store/use-inputs'
+import { useStore } from 'react-redux'
+import { pinBuilder } from './functions/pin-builder'
 
 export const LOCATION_ID = 'location'
 
@@ -15,6 +18,22 @@ export const Location = () => {
     classNames.push('error')
   }
 
+  const { longitude, latitude, category } = useInputs()
+
+  const {
+    // @ts-ignore
+    assets: { svgs },
+  } = useStore().getState()
+
+  const item = useMemo(() => {
+    return ({
+      longitude,
+      latitude,
+      category,
+      svgs,
+    })
+  }, [longitude, latitude, category])
+
   return (
     <div
       id={LOCATION_ID}
@@ -22,7 +41,10 @@ export const Location = () => {
     >
       <h2>{locationHeading}</h2>
       <Instructions text={locationInstructions} />
-      <MapMarker />
+      <MapMarker
+        item={item}
+        pinBuilder={pinBuilder}
+      />
     </div>
   )
 }
