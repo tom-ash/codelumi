@@ -15,8 +15,8 @@ interface MapInterface {
 export const Map: MapInterface = props => {
   const { items, pinBuilder } = props
 
-  const { isMobile, isMapInitialized } = useApp()
-  const { mapOptions, isPinsDrawn, hoveredTileId, unhoveredTileId } = useControl()
+  const { isMapInitialized } = useApp()
+  const { mapOptions, isPinsDrawn } = useControl()
   const { currentListingId } = useData()
   const {
     // @ts-ignore
@@ -25,7 +25,6 @@ export const Map: MapInterface = props => {
 
   const dispatch = useDispatch()
   const setControl = (value: any) => dispatch({ type: 'control', value })
-  const setData = (value: any) => dispatch({ type: 'data', value })
 
   useEffect(() => {
     if (isMapInitialized && !isPinsDrawn) {
@@ -41,20 +40,6 @@ export const Map: MapInterface = props => {
       }, 0)
     }
   }, [isMapInitialized, isPinsDrawn])
-
-  useEffect(() => {
-    setControl({ unhoveredTileId: null })
-
-    const pin = document.getElementById(`google-map-pin-${hoveredTileId}`)
-    if (pin) pin.classList.add('hovered')
-  }, [hoveredTileId])
-
-  useEffect(() => {
-    setControl({ hoveredTileId: null })
-
-    const pin = document.getElementById(`google-map-pin-${unhoveredTileId}`)
-    if (pin) pin.classList.remove('hovered')
-  }, [unhoveredTileId])
 
   useEffect(() => {
     if (isMapInitialized && mapOptions) {

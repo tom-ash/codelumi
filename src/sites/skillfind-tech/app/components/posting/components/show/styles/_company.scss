@@ -1,50 +1,50 @@
 %company {
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    height: 150px;
-    margin-bottom: 70px;
-    .background {
-      background: #5b2c6f;
-      height: 100px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  height: 150px;
+  margin-bottom: 70px;
+  .background {
+    background: #5b2c6f;
+    height: 100px;
+  }
+  .company-logo {
+    position: relative;
+    background: white;
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    top: 90px;
+    left: 20px;
+    padding: 5px;
+    border-radius: 6px;
+    img {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: calc(100% - 10px);
+      height: calc(100% - 10px);
+      border-radius: 4px;
     }
-    .company-logo {
+  }
+  .business-name {
+    position: absolute;
+    top: 92px;
+    left: 185px;
+    font-size: 20px;
+    color: white;
+  }
+  .industry {
+    position: absolute;
+    top: 122px;
+    left: 185px;
+    color: white;
+    font-size: 16px;
+    svg {
       position: relative;
-      background: white;
-      position: absolute;
-      width: 150px;
-      height: 100px;
-      top: 90px;
-      left: 20px;
-      padding: 5px;
-      border-radius: 6px;
-      img {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        width: calc(100% - 10px);
-        height: calc(100% - 10px);
-        border-radius: 4px;
-      }
+      top: 2px;
+      height: 16px;
+      margin-right: 8px;
+      fill: white;
     }
-    .business-name {
-      position: absolute;
-      top: 92px;
-      left: 185px;
-      font-size: 20px;
-      color: white;
-    }
-    .industry {
-      position: absolute;
-      top: 122px;
-      left: 185px;
-      color: white;
-      font-size: 16px;
-      svg {
-        position: relative;
-        top: 2px;
-        height: 16px;
-        margin-right: 8px;
-        fill: white;
-      }
-    }
+  }
 }

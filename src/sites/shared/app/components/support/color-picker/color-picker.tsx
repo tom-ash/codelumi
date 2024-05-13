@@ -1,13 +1,10 @@
 import React from 'react'
-import { useInputs } from '../../../functions/store/use-inputs';
-import { ChromePicker } from 'react-color';
-import { useDispatch } from 'react-redux';
+import { useInputs } from '../../../functions/store/use-inputs'
+import { ChromePicker } from 'react-color'
+import { useDispatch } from 'react-redux'
 
 type ColorPickerInterface = {
-  (props: {
-    label?: string
-    name: string;
-  }): React.ReactElement
+  (props: { label?: string; name: string }): React.ReactElement
 }
 
 export const ColorPicker: ColorPickerInterface = props => {
@@ -18,14 +15,10 @@ export const ColorPicker: ColorPickerInterface = props => {
 
   return (
     <div className='color-picker'>
-      {label && (
-        <label>
-          {label}
-        </label>
-      )}
+      {label && <label>{label}</label>}
       <ChromePicker
-        color={color}  
-        onChangeComplete={(color) => setInputs({ [name]: color.hex })}
+        color={color}
+        onChangeComplete={color => setInputs({ [name]: color.hex })}
         disableAlpha={true}
       />
     </div>

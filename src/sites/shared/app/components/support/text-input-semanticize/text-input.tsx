@@ -11,7 +11,7 @@ interface TextInputInterface {
     onChange?(value?: string): void
     onBlur?(value?: string): void
     validate?(params: any): void // TODO!
-    children?: ReactNode;
+    children?: ReactNode
     // placeholder?: string
     // className?: string
     // match?: RegExp

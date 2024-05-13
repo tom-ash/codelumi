@@ -28,6 +28,7 @@ function setUpPinCreator(props: SetUpPinCreatorProps) {
       div.innerHTML = this.args.htmlContent
       if (typeof self.args.pinId !== 'undefined') {
         div.id = `google-map-pin-${self.args.pinId}`
+        div.setAttribute('data-id', self.args.pinId)
       }
       const panes = this.getPanes()
       panes.overlayImage.appendChild(div)

@@ -1,14 +1,9 @@
-import { PinBuilder } from "../../../../../../../../../shared/app/components/support/map-marker/map-marker"
-import { categories } from "../../../../../constants/categories"
-import { getPinContent } from "../../../../../functions/map/pins/get-pin-content"
+import { PinBuilder } from '../../../../../../../../../shared/app/components/support/map-marker/map-marker'
+import { categories } from '../../../../../constants/categories'
+import { getPinContent } from '../../../../../functions/map/pins/get-pin-content'
 
-export const pinBuilder: PinBuilder = (params) => {
-  const {
-    category,
-    svgs,
-  } = params
-
-  console.log('params', params)
+export const pinBuilder: PinBuilder = params => {
+  const { category, svgs } = params
 
   let svg
   if (category !== '') {

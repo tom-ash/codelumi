@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { ReactNode } from 'react'
 
 export enum SkillView {
   formSelectable = 'formSelectable',
@@ -19,8 +19,8 @@ export interface SkillProps {
   name: string
   level: number
   view: SkillView
-  unselectSkill?: any // TODO!  
-  children?: ReactNode;
+  unselectSkill?: any // TODO!
+  children?: ReactNode
 
-  onLevelClicked?(params: { name: string, level: number }): void;
+  onLevelClicked?(params: { name: string; level: number }): void
 }

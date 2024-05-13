@@ -29,8 +29,6 @@ interface CommonProps {
   lang: Lang
   isMobile: boolean
   changeUrl: ChangeUrl
-  changeHoveredTileId(listingId: number): void
-  changeUnhoveredTileId(listingId: number): void
   setControl(attrs: any): void
 }
 
@@ -57,8 +55,6 @@ export const ListingsIndexTile: ListingsIndexTile = props => {
     isPromoted,
     changeUrl,
     lang,
-    changeHoveredTileId,
-    changeUnhoveredTileId,
     isMobile,
     setControl,
   } = props
@@ -90,8 +86,6 @@ export const ListingsIndexTile: ListingsIndexTile = props => {
       disableSlides={true}
       lang={lang}
       onClick={onClick}
-      onMouseOver={() => changeHoveredTileId(id)}
-      onMouseLeave={() => changeUnhoveredTileId(id)}
     >
       {isMobile && (
         <ShowOnMapButton

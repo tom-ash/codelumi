@@ -26,32 +26,22 @@ export const SocialImage = () => {
 
   const { industries, cooperationModes } = useData()
 
-  const industryObject = useMemo(
-    () => {
-      return industries.find((ind: {
-        value: string;
-        label: string;
-        icon: string;
-      }) => {
-        return ind.value === industry
-      })
-    },
-    [industry]
-  );
+  const industryObject = useMemo(() => {
+    return industries.find((ind: { value: string; label: string; icon: string }) => {
+      return ind.value === industry
+    })
+  }, [industry])
 
-  const cooperationModeObject = useMemo(
-    () => {
-      return cooperationModes.find((coopMode: {
-        value: string;
-        icon: string;
-      }) => {
-        return coopMode.value === cooperationMode
-      })
-    },
-    [cooperationMode]
-  );
+  const cooperationModeObject = useMemo(() => {
+    return cooperationModes.find((coopMode: { value: string; icon: string }) => {
+      return coopMode.value === cooperationMode
+    })
+  }, [cooperationMode])
 
-  const logoSrc = typeof logo === 'object' ? logo.objectUrl : `https://s3.eu-central-1.amazonaws.com/skillfind-tech-dev/logos/${logo}?salt=${Math.random()}`
+  const logoSrc =
+    typeof logo === 'object'
+      ? logo.objectUrl
+      : `https://s3.eu-central-1.amazonaws.com/skillfind-tech-dev/logos/${logo}?salt=${Math.random()}`
 
   return (
     <section id='social-image'>

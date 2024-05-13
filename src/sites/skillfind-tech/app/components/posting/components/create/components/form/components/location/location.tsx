@@ -24,19 +24,13 @@ export const Location = () => {
   const { industries } = useData()
   const { longitude, latitude, industry } = useInputs()
 
-  const industryIcon = useMemo(
-    () => {
-      const selectedIndustry = industries.find((ind: {
-        value: string;
-        icon: string;
-      }) => {
-        return ind.value === industry
-      })
+  const industryIcon = useMemo(() => {
+    const selectedIndustry = industries.find((ind: { value: string; icon: string }) => {
+      return ind.value === industry
+    })
 
-      return selectedIndustry?.icon
-    },
-    [industry]
-  );
+    return selectedIndustry?.icon
+  }, [industry])
 
   const {
     // @ts-ignore
@@ -44,12 +38,12 @@ export const Location = () => {
   } = useStore().getState()
 
   const item = useMemo(() => {
-    return ({
+    return {
       longitude,
       latitude,
       industryIcon,
       svgs,
-    })
+    }
   }, [longitude, latitude, industryIcon])
 
   return (

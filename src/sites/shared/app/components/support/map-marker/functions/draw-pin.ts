@@ -8,10 +8,7 @@ interface ItemProps {
 }
 
 export const drawPin = (item: ItemProps, pinBuilder: PinBuilder) => {
-  const {
-    longitude,
-    latitude,
-  } = item
+  const { longitude, latitude } = item
 
   const pinContent = pinBuilder(item)
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useRender } from '../../../../../functions/store/use-render'
 import { useControl } from '../../../../../functions/store/use-control'
 import { List } from './components/list/list'
@@ -23,7 +23,10 @@ export const Results: ResultsInterface = props => {
   const { isSSR } = useControl()
 
   return (
-    <section className='results'>
+    <section
+      id='results'
+      className='results'
+    >
       <main>
         {!(renderShow && isSSR) && (
           <List

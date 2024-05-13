@@ -18,14 +18,14 @@ interface MapMarkerInterface {
       [key: string]: any
     }
     pinBuilder: PinBuilder
-  }): React.ReactElement;
+  }): React.ReactElement
 }
 
 export interface PinBuilder {
-  (params: any): string;
+  (params: any): string
 }
 
-export const MapMarker: MapMarkerInterface = (props) => {
+export const MapMarker: MapMarkerInterface = props => {
   const { item, pinBuilder } = props
   const dispatch = useDispatch()
   const setData = (value: any) => dispatch({ type: 'data', value })

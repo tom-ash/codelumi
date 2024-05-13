@@ -95,7 +95,11 @@ export const ListingIndexTile: ListingIndexTileInterface = props => {
   // TODO: @ts-ignores
 
   return (
-    <a {...tileProps}>
+    <a
+      {...tileProps}
+      data-id={id}
+      data-type='map-index-tile'
+    >
       <Pictures {...picturesProps} />
       <div className='primary'>
         {/* @ts-ignore */}

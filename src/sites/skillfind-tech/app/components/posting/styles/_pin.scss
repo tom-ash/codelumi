@@ -1,35 +1,40 @@
-  %pin {
-    width: 36px;
-    height: 36px;
-    background: white;
-    padding: 8px;
-    border-radius: 4px;
-    text-align: center;
-    border: 1px solid #7b7d7d;
-    transition: background-color 0.16s ease-in;
-    transform: translate(-18px, -18px);
-    svg {
-      max-height: 20px;
-      max-width: 20px;
-    }
-    &.hovered {
-      z-index: 2;
-      animation: pulse 1s infinite;
-    }
-    &.current {
-      z-index: 2;
-      animation: pulse 1s infinite;
-    }
-  }
+%pin {
+  width: 36px;
+  height: 36px;
+  background: white;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: center;
+  border: 1px solid #7b7d7d;
+  transition: background-color 0.16s ease-in;
 
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.6);
-    }
-    100% {
-      transform: scale(1);
-    }
+  transform: translate(-18px, -18px);
+
+  svg {
+    max-height: 20px;
+    max-width: 20px;
   }
+  &.hovered {
+    z-index: 2;
+    animation: pulse 1s infinite;
+  }
+  &.current {
+    z-index: 2;
+    animation: pulse 1s infinite;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    // scale: 1;
+    transform: scale(1) translate(-18px, -18px);
+  }
+  50% {
+    // scale: 2;
+    transform: scale(2) translate(-9px, -9px);
+  }
+  100% {
+    // scale: 1;
+    transform: scale(1) translate(-18px, -18px);
+  }
+}

@@ -28,8 +28,6 @@ interface PostingIndexTileInterface {
       icon: string
       label: string
     }
-    changeHoveredTileId(listingId: number): void
-    changeUnhoveredTileId(listingId: number): void
   }): React.ReactElement
 }
 
@@ -51,22 +49,20 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
     locality,
     country,
     cooperationMode,
-    changeHoveredTileId,
-    changeUnhoveredTileId,
   } = props
 
   return (
     <a
       className='postings-index-tile'
       key={id}
+      data-id={id}
+      data-type='map-index-tile'
       href={href}
       onClick={e => {
         e.preventDefault()
 
         changeUrl({ href })
       }}
-      onMouseOver={() => changeHoveredTileId(id)}
-      onMouseLeave={() => changeUnhoveredTileId(id)}
     >
       <div className='company'>
         <div className='company-logo'>

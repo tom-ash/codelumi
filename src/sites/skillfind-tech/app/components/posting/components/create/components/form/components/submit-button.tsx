@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux'
 import { useUser } from '../../../../../../../../../shared/app/functions/store/use-user'
 import { useData } from '../../../../../../../../../shared/app/functions/store/use-data'
 
-import BeatLoader from "react-spinners/BeatLoader";
+import BeatLoader from 'react-spinners/BeatLoader'
 import { useControl } from '../../../../../../../../../shared/app/functions/store/use-control'
 
 const SubmitButton = () => {
@@ -63,7 +63,9 @@ const SubmitButton = () => {
       color='white'
       size={8}
     />
-  ) : submitButtonLabel
+  ) : (
+    submitButtonLabel
+  )
 
   const buttonProps = {
     classNames: { container: 'submit-button' },

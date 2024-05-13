@@ -7,10 +7,10 @@ import { validateLocation } from '../components/location/functions/validate-loca
 import { buildUserObject } from '../../../../../../user/components/new/components/form/components/submit/functions/build-user-object'
 import { UserObject } from '../../../../../../user/components/new/components/form/components/submit/types/user-object.interface'
 
-var scrollIntoView = require('scroll-into-view');
+var scrollIntoView = require('scroll-into-view')
 
 type SubmitProps = {
-  postingId: number | null;
+  postingId: number | null
   lang: Lang
   selectedSkills: Array<any>
   cooperationMode: string
@@ -32,8 +32,8 @@ type SubmitProps = {
   authorized: boolean
   setErrors(params: any): void
   setControl(params: any): void
-  backgroundColor: string;
-  textColor: string;
+  backgroundColor: string
+  textColor: string
 } & UserObject & {
     businessNameError: string
     logoError: string
@@ -122,7 +122,7 @@ export const submit = async (props: SubmitProps) => {
 
       setControl({ isSubmitting: false })
 
-      scrollIntoView(element);
+      scrollIntoView(element)
 
       return
     }

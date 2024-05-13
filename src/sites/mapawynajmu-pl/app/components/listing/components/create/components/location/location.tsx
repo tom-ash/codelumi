@@ -26,12 +26,12 @@ export const Location = () => {
   } = useStore().getState()
 
   const item = useMemo(() => {
-    return ({
+    return {
       longitude,
       latitude,
       category,
       svgs,
-    })
+    }
   }, [longitude, latitude, category])
 
   return (

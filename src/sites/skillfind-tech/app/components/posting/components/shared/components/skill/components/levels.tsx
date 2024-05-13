@@ -10,7 +10,7 @@ interface SkillLevelsProps {
   levelName: SkillLevel
   levelHovered: number
   setLevelHovered(levelHovered: number): void
-  onLevelClicked?(params: { name: string, level: number }): void;
+  onLevelClicked?(params: { name: string; level: number }): void
   setErrors?(params: { skills: null }): void
 }
 

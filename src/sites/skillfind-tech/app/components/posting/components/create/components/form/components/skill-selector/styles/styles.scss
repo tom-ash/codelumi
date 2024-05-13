@@ -33,7 +33,7 @@
     width: 280px;
     border: 1px solid #424949;
     border-radius: 4px;
-    background: #FBFCFC;
+    background: #fbfcfc;
     padding: 30px 30px 0 30px;
     display: flex;
     flex-direction: column;
@@ -80,7 +80,7 @@
     height: calc(100% - 36px);
     width: 260px;
     padding: 30px;
-    background: #F8F9F9;
+    background: #f8f9f9;
     border-radius: 4px;
     overflow: hidden;
     overflow-y: auto;
@@ -94,7 +94,9 @@
       .level-name {
         height: 20px;
       }
-      .delete, .up, .down {
+      .delete,
+      .up,
+      .down {
         position: absolute;
         top: 0;
         bottom: 0;
@@ -108,7 +110,7 @@
         &:hover {
           svg {
             fill: gray;
-          } 
+          }
         }
       }
       .delete {

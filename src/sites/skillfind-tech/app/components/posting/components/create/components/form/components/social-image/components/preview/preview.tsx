@@ -1,36 +1,36 @@
 import React from 'react'
-import { SkillProps, SkillView } from '../../../../../../../shared/components/skill/skill.types';
-import { Company } from '../../../../../../../show/components/company/company';
-import { LocationAndCooperationMode } from '../../../../../../../common/location-and-cooperation-mode/location-and-cooperation-mode';
-import { Remuneration } from '../../../../../../../common/remuneration/remuneration';
+import { SkillProps, SkillView } from '../../../../../../../shared/components/skill/skill.types'
+import { Company } from '../../../../../../../show/components/company/company'
+import { LocationAndCooperationMode } from '../../../../../../../common/location-and-cooperation-mode/location-and-cooperation-mode'
+import { Remuneration } from '../../../../../../../common/remuneration/remuneration'
 import { Skills } from '../../../../../../../common/skills/skills'
 
 interface PreviewInterface {
   (props: {
-    id: string;
+    id: string
     skills: SkillProps[]
-    locality: string;
+    locality: string
     country: string
     cooperationMode: {
-      value: string;
-      label: string;
-      icon: string;
+      value: string
+      label: string
+      icon: string
     }
     logo: string
     businessName: string
     industry: {
-      value: string;
-      label: string;
-      icon: string;
+      value: string
+      label: string
+      icon: string
     }
-    b2bMin: number;
-    b2bMax: number;
-    backgroundColor: string;
-    textColor: string;
-  }): React.ReactElement;
+    b2bMin: number
+    b2bMax: number
+    backgroundColor: string
+    textColor: string
+  }): React.ReactElement
 }
 
-export const Preview: PreviewInterface = (props) => {
+export const Preview: PreviewInterface = props => {
   const {
     id,
     logo,
@@ -47,7 +47,10 @@ export const Preview: PreviewInterface = (props) => {
   } = props
 
   return (
-    <div className='preview' id={id}>
+    <div
+      className='preview'
+      id={id}
+    >
       {logo && businessName && industry && (
         <Company
           logo={logo}
@@ -73,7 +76,7 @@ export const Preview: PreviewInterface = (props) => {
       <Skills
         skills={skills}
         view={SkillView.indexVisitor}
-      />   
+      />
     </div>
   )
 }

@@ -7,29 +7,7 @@ import { Device } from '../../../../../../../../../skillfind-tech/app/types/devi
 import { Slider } from '../../../../../slider/slider'
 import { ItemIndexInterface } from '../../../../types/item-index.interface'
 import { Item } from '../../../../types/item.interface'
-
-// interface Picture {
-//   database: string
-// }
-
-// TODO:
-// export interface ListingBase {
-//   id: number
-//   category: number
-//   href: string
-//   title: string
-//   name: string
-//   pictures: Picture[]
-//   latitude: number
-//   longitude: number
-//   locality: string
-//   sublocality?: string
-//   area?: number
-//   netRentAmount?: number
-//   grossRentAmount?: number
-//   rentCurrency?: number
-//   isPromoted: boolean
-// }
+import { useMouseHovering } from '../../hooks/use-mouse-hovering'
 
 const deviceConfig = {
   largePc: 'scroll',
@@ -63,8 +41,6 @@ export const List: ListInterface = props => {
 
   const dispatch = useDispatch()
   const setControl = (value: any) => dispatch({ type: 'control', value })
-  const changeHoveredTileId = (hoveredTileId: number | null) => setControl({ hoveredTileId })
-  const changeUnhoveredTileId = (unhoveredTileId: number | null) => setControl({ unhoveredTileId })
 
   // TODO: REMOVE!
   const { currentPartnerName } = useData()
@@ -77,11 +53,11 @@ export const List: ListInterface = props => {
   const commonProps = {
     lang,
     changeUrl,
-    changeHoveredTileId,
-    changeUnhoveredTileId,
     isMobile,
     setControl,
   }
+
+  useMouseHovering()
 
   return (
     <div

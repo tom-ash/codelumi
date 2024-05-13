@@ -2,11 +2,7 @@ import React from 'react'
 import { SVG } from '../../../../../../../../../shared/app/components/support/svg/svg'
 
 interface PostingIndexTileIndustryInterface {
-  (props: {
-    industry: string;
-    icon: string
-    textColor?: string
-  }): React.ReactElement
+  (props: { industry: string; icon: string; textColor?: string }): React.ReactElement
 }
 
 export const PostingIndexTileIndustry: PostingIndexTileIndustryInterface = props => {
@@ -15,7 +11,10 @@ export const PostingIndexTileIndustry: PostingIndexTileIndustryInterface = props
   return (
     <div className='industry'>
       <div className='icon'>
-        <SVG name={icon} fill={textColor} />
+        <SVG
+          name={icon}
+          fill={textColor}
+        />
         <span style={{ color: textColor }}>{industry}</span>
       </div>
     </div>
