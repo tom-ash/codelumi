@@ -1,6 +1,5 @@
 import React from 'react'
 import { Select as SemanticSelect } from 'semanticize'
-import { SVG } from '../svg/svg'
 import { useTexts } from '../../../functions/store/use-texts'
 import { useInputs } from '../../../functions/store/use-inputs'
 import { useDispatch } from 'react-redux'
@@ -11,11 +10,12 @@ interface SelectInterface {
     className?: string
     children?: React.ReactElement
     onChangeCallback?(): void
+    disabled?: boolean
   }): JSX.Element
 }
 
 export const Select: SelectInterface = props => {
-  const { selectKey, className, onChangeCallback } = props
+  const { selectKey, className, onChangeCallback, disabled } = props
   const inputs = useInputs()
   const dispatch = useDispatch()
   const options = inputs[`${selectKey}SelectOptions`]
@@ -34,6 +34,7 @@ export const Select: SelectInterface = props => {
       options={options}
       value={value}
       onSelect={onSelect}
+      // disabled={disabled}
     />
   )
 }

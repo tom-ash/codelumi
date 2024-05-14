@@ -13,6 +13,9 @@ const Image = loadable(() => import('../../shared/app/components/image/image'))
 const AssetsIndex = loadable(() => import('./components/asset/components/index'))
 const RedirectsIndex = loadable(() => import('../../shared/app/components/redirect/components/index'))
 const QuestionsShow = loadable(() => import('./components/questions/show/show'))
+
+const UserUsersEdit = loadable(() => import('./components/user/components/edit/edit'))
+
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import apiUrl from '../shared/constants/urls/api'
@@ -53,6 +56,7 @@ const App = () => {
     user: renderUser,
     'user/postings/index': renderUserPostingsIndex,
     'user/postings/edit': renderUserPostingsEdit,
+    'user/users/edit': renderUserUsersEdit,
     assetsIndex,
     redirectsIndex,
     renderQuestions,
@@ -65,6 +69,7 @@ const App = () => {
         {renderUser && <User />}
         {renderUserPostingsIndex && <UserPostingsIndex />}
         {renderUserPostingsEdit && <UserPostingsEdit />}
+        {renderUserUsersEdit && <UserUsersEdit />}
         {renderPostings && <Postings />}
         {renderVisitor && <Visitor />}
         {renderImage && <Image />}

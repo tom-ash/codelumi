@@ -48,3 +48,17 @@ export const postApi: PostApi = args => {
     body,
   })
 }
+
+interface Patch {
+  (args: { path: string; body: any }): Promise<any>
+}
+
+export const patch: Patch = args => {
+  const { path, body } = args
+
+  return fetchApi({
+    path,
+    method: FetchMethod.PATCH,
+    body,
+  })
+}

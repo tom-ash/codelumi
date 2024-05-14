@@ -12,6 +12,7 @@ interface TextInputInterface {
     onBlur?(value?: string): void
     validate?(params: any): void // TODO!
     children?: ReactNode
+    disabled?: boolean
     // placeholder?: string
     // className?: string
     // match?: RegExp
@@ -31,6 +32,7 @@ export const TextInput: TextInputInterface = props => {
     onBlur: onBlurCallback,
     validate,
     children,
+    disabled,
     // classNames,
     // match,
     // onClick: onClickCallback,
@@ -79,6 +81,7 @@ export const TextInput: TextInputInterface = props => {
       error={error}
       placeholder={placeholder}
       children={children}
+      disabled={disabled}
     />
   )
 }

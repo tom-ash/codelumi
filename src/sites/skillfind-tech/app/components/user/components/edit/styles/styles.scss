@@ -1,0 +1,50 @@
+@import '../../../../../styles/container';
+@import '../../../../../styles/headings/main-heading';
+@import '../../../../../styles/inputs/text.scss';
+@import '../../../../../styles/inputs/select.scss';
+
+#user-users-edit {
+  @extend %container;
+  margin-top: 120px;
+  padding: 30px;
+  .main-heading {
+    @extend %main-heading;
+  }
+  .text-input {
+    @extend %text-input;
+  }
+  .select {
+    @extend %select-element;
+  }
+
+  .attribute-editor {
+    .buttons {
+      margin-top: 8px;
+      height: 20px;
+    }
+    .cancel,
+    .save,
+    .edit {
+      border: none;
+      background: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .cancel,
+    .save {
+      float: left;
+    }
+
+    .cancel {
+      margin-right: 12px;
+      color: red;
+    }
+    .save {
+      color: green;
+    }
+    .edit {
+      float: right;
+    }
+  }
+}
