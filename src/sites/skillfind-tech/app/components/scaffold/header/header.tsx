@@ -9,6 +9,7 @@ import { SignInLink } from './components/links/components/sign-in/sign-in.link'
 import { SignOutButton } from './components/links/components/sign-out/sign-out'
 import { useApp } from '../../../../../shared/app/functions/store/use-app'
 import { useUser } from '../../../../../shared/app/functions/store/use-user'
+import { AddPostingLink } from './components/links/components/add-posting/add-posting.link'
 
 interface HeaderInterface {
   (props: {}): JSX.Element
@@ -20,14 +21,6 @@ const Header: HeaderInterface = props => {
   const { isMobile } = useApp()
   const { authorized } = useUser()
 
-  // largePc: 'scroll',
-  // mediumPc: 'scroll',
-  // smallPc: 'scroll',
-  // largeTablet: 'slider',
-  // smallTablet: 'slider',
-  // largePhone: 'slider',
-  // smallPhone: 'slider',
-
   return (
     <header id='header'>
       <div className='inner'>
@@ -36,6 +29,7 @@ const Header: HeaderInterface = props => {
         {!authorized && !isMobile && <SignUpLink />}
         {!authorized && !isMobile && <SignInLink />}
         {authorized && !isMobile && <SignOutButton />}
+        {!isMobile && <AddPostingLink />}
         <FloatClear />
       </div>
     </header>
