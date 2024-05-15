@@ -10,6 +10,7 @@ import { SignOutButton } from './components/links/components/sign-out/sign-out'
 import { useApp } from '../../../../../shared/app/functions/store/use-app'
 import { useUser } from '../../../../../shared/app/functions/store/use-user'
 import { AddPostingLink } from './components/links/components/add-posting/add-posting.link'
+import { Account } from './components/account/account'
 
 interface HeaderInterface {
   (props: {}): JSX.Element
@@ -28,8 +29,9 @@ const Header: HeaderInterface = props => {
         <LangSwitch />
         {!authorized && !isMobile && <SignUpLink />}
         {!authorized && !isMobile && <SignInLink />}
-        {authorized && !isMobile && <SignOutButton />}
+        {authorized && !isMobile && <Account />}
         {!isMobile && <AddPostingLink />}
+        
         <FloatClear />
       </div>
     </header>
