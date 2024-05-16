@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLinks } from '../../../../../../../../shared/app/functions/store/use-links'
-import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
 import { Link } from '../../../../../../../../shared/app/components/support/link/link'
+import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
 
 interface GoBackInterface {
   (props: {}): React.ReactElement
@@ -12,13 +12,18 @@ export const GoBack: GoBackInterface = () => {
     root: { href, hrefLang, title },
   } = useLinks()
 
+  const label = (
+    <div className='go-back'>
+      <SVG name='arrowRight' />
+    </div>
+  )
+
   return (
     <Link
-      customClassNames='go-back'
       href={href}
       hrefLang={hrefLang}
       title={title}
-      label='GO BACK'
+      label={label}
     />
   )
 }

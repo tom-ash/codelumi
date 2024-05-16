@@ -1,5 +1,6 @@
 import React from 'react'
 import { useData } from '../../../../../../../../shared/app/functions/store/use-data'
+import { SectionHeading } from '../../../../../../../../shared/app/components/support/headings/section-heading'
 
 interface DescriptionInterface {
   (props: {}): React.ReactElement | null
@@ -15,9 +16,12 @@ export const Description: DescriptionInterface = () => {
   }
 
   return (
-    <div
-      className='description'
-      dangerouslySetInnerHTML={{ __html: description }}
-    />
+    <section id='description'>
+      <SectionHeading name='description' icon='quoteLeft' />
+      <div
+        className='description'
+        dangerouslySetInnerHTML={{ __html: description }}
+      />
+    </section>
   )
 }

@@ -6,10 +6,7 @@ import { SettingsLink } from '../links/components/settings/settings.link'
 
 export const Account = () => {
   const {
-    'user/users/show': {
-      label,
-      icon,
-    }
+    'user/users/show': { label, icon },
   } = useLinks()
 
   const [isOpen, setIsOpen] = useState(false)
@@ -33,7 +30,7 @@ export const Account = () => {
         <div
           className='menu'
           onMouseDown={e => {
-            e.preventDefault();
+            e.preventDefault()
           }}
         >
           <SettingsLink />

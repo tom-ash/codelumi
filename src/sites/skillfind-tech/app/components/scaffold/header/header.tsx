@@ -31,7 +31,6 @@ const Header: HeaderInterface = props => {
         {!authorized && !isMobile && <SignInLink />}
         {authorized && !isMobile && <Account />}
         {!isMobile && <AddPostingLink />}
-        
         <FloatClear />
       </div>
     </header>

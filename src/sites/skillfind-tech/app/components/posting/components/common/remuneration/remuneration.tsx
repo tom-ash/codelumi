@@ -1,5 +1,4 @@
 import React from 'react'
-import { SVG } from '../../../../../../../shared/app/components/support/svg/svg'
 
 interface RemunerationInterface {
   (props: {

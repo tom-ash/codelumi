@@ -1,6 +1,6 @@
 import React from 'react'
 import { SkillProps, SkillView } from '../../../../../../../shared/components/skill/skill.types'
-import { Company } from '../../../../../../../show/components/company/company'
+import { Company } from '../../../../../../../common/company/company'
 import { LocationAndCooperationMode } from '../../../../../../../common/location-and-cooperation-mode/location-and-cooperation-mode'
 import { Remuneration } from '../../../../../../../common/remuneration/remuneration'
 import { Skills } from '../../../../../../../common/skills/skills'
@@ -58,6 +58,7 @@ export const Preview: PreviewInterface = props => {
           industry={industry}
           backgroundColor={backgroundColor}
           textColor={textColor}
+          isPreview={true}
         />
       )}
       {locality && country && cooperationMode && (
