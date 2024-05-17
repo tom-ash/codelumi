@@ -3,7 +3,7 @@ import { useTexts } from '../../../functions/store/use-texts'
 import { SVG } from '../svg/svg'
 
 interface SectionHeadingInterface {
-  (props: { name: string, icon?: string }): React.ReactElement
+  (props: { name: string; icon?: string }): React.ReactElement
 }
 
 export const SectionHeading: SectionHeadingInterface = props => {

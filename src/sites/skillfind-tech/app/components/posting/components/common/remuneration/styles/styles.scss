@@ -1,10 +1,30 @@
-%b2b-remuneration {
-  width: 300px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  text-align: right;
+%contract-and-remuneration {
   padding: 20px;
-  font-size: 16px;
-  color: #2874a6;
+  .contract {
+    display: inline-block;
+    font-size: 12px;
+  }
+  .remuneration {
+    font-size: 20px;
+    font-family: Oswald, sans-serif;
+    font-weight: 300;
+    .amount {
+      display: inline-block;
+      margin-right: 5px;
+    }
+    .currency {
+      display: inline-block;
+      margin-right: 4px;
+    }
+    .per {
+      display: inline-block;
+      font-size: 14px;
+    }
+  }
+  &.b2b {
+    color: #ba4a00;
+  }
+  &.employment {
+    color: #2874a6;
+  }
 }

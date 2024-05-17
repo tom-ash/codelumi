@@ -15,7 +15,10 @@ export const Skills: SkillsInterface = () => {
 
   return (
     <section id='searched-skills'>
-      <SectionHeading name='skills' icon='magnifyingGlass' />
+      <SectionHeading
+        name='skills'
+        icon='magnifyingGlass'
+      />
       <SkillsPartial
         skills={skills}
         view={SkillView.indexVisitor}

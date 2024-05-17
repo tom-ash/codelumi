@@ -89,18 +89,26 @@
         height: 24px;
       }
     }
-    .b2b-remuneration {
-      @extend %b2b-remuneration;
-      position: relative;
-      display: block;
-      margin-top: 60px;
-      margin-left: 70px;
-      padding: 0;
-      font-size: 36px;
-      width: auto;
-      text-align: left;
-      font-family: Oswald, sans-serif;
-      font-weight: 400;
+    .contract-and-remuneration {
+      @extend %contract-and-remuneration;
+      margin-top: 30px;
+      margin-left: 50px;
+      float: left;
+      .contract {
+        font-size: 20px;
+      }
+      .remuneration {
+        font-size: 40px;
+        .amount {
+          margin-right: 10px;
+        }
+        .currency {
+          margin-right: 10px;
+        }
+        .per {
+          font-size: 28px;
+        }
+      }
     }
     .skills {
       position: relative;

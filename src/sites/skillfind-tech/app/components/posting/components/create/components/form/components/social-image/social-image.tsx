@@ -20,6 +20,8 @@ export const SocialImage = () => {
     industry,
     b2bMin,
     b2bMax,
+    employmentMin,
+    employmentMax,
     backgroundColor,
     textColor,
   } = useInputs()
@@ -66,6 +68,8 @@ export const SocialImage = () => {
         cooperationMode={cooperationModeObject}
         b2bMin={b2bMin}
         b2bMax={b2bMax}
+        employmentMin={employmentMin}
+        employmentMax={employmentMax}
         skills={skills}
       />
       <Preview
@@ -80,6 +84,8 @@ export const SocialImage = () => {
         cooperationMode={cooperationModeObject}
         b2bMin={b2bMin}
         b2bMax={b2bMax}
+        employmentMin={employmentMin}
+        employmentMax={employmentMax}
         skills={skills}
       />
     </section>

@@ -23,8 +23,10 @@ interface PreviewInterface {
       label: string
       icon: string
     }
-    b2bMin: number
-    b2bMax: number
+    b2bMin?: number
+    b2bMax?: number
+    employmentMin?: number
+    employmentMax?: number
     backgroundColor: string
     textColor: string
   }): React.ReactElement
@@ -43,6 +45,8 @@ export const Preview: PreviewInterface = props => {
     cooperationMode,
     b2bMin,
     b2bMax,
+    employmentMin,
+    employmentMax,
     skills,
   } = props
 
@@ -68,12 +72,14 @@ export const Preview: PreviewInterface = props => {
           cooperationMode={cooperationMode}
         />
       )}
-      <Remuneration
-        b2bMin={b2bMin}
-        b2bMax={b2bMax}
-        // employmentMin={employmentMin}
-        // employmentMax={employmentMax}
-      />
+      {((b2bMin && b2bMax) || (employmentMin && employmentMax)) && (
+        <Remuneration
+          b2bMin={b2bMin}
+          b2bMax={b2bMax}
+          employmentMin={employmentMin}
+          employmentMax={employmentMax}
+        />
+      )}
       <Skills
         skills={skills}
         view={SkillView.indexVisitor}

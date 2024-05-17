@@ -15,7 +15,7 @@ export const CooperationMode = () => {
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
 
   return (
-    <section className='cooperation-mode'>
+    <section className='cooperation-mode-section'>
       <h2>{cooperationModeHeading}</h2>
       <fieldset>
         <legend>{cooperationModeLegend}</legend>

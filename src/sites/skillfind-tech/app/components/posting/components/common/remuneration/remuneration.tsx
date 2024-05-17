@@ -1,4 +1,8 @@
 import React from 'react'
+import { SVG } from '../../../../../../../shared/app/components/support/svg/svg'
+import { ContractAndRemunerationItem } from './components/contract-and-remuneration-item/contract-and-remuneration-item'
+import { useTexts } from '../../../../../../../shared/app/functions/store/use-texts'
+import { FloatClear } from '../../../../../../../shared/app/components/support/float-clear/float-clear'
 
 interface RemunerationInterface {
   (props: {
@@ -8,36 +12,37 @@ interface RemunerationInterface {
     employmentMin?: number
     employmentMax?: number
     // employmentCurrency?: string;
-  }): React.ReactElement | null
-}
-
-interface FormatRemuneration {
-  (remuneration: number): string
-}
-
-const formatRemuneration: FormatRemuneration = remuneration => {
-  return Number(remuneration).toLocaleString().replace(/,/g, ' ')
+  }): React.ReactElement
 }
 
 export const Remuneration: RemunerationInterface = props => {
   const { b2bMin, b2bMax, employmentMin, employmentMax } = props
 
-  if (b2bMin && b2bMax) {
-    return (
-      <strong className='b2b-remuneration'>
-        {/* <SVG name='coins' /> */}
-        {formatRemuneration(b2bMin)} - {formatRemuneration(b2bMax)} PLN
-      </strong>
-    )
-  }
+  const { b2bContract, employmentContract, b2bPer, employmentPer } = useTexts()
 
-  if (employmentMin && employmentMax) {
-    return (
-      <strong className='employment-remuneration'>
-        {employmentMin} - {employmentMax} PLN
-      </strong>
-    )
-  }
-
-  return null
+  return (
+    <div>
+      {b2bMin && b2bMax && (
+        <ContractAndRemunerationItem
+          className='b2b'
+          contract={b2bContract}
+          min={b2bMin}
+          max={b2bMax}
+          currency='PLN'
+          per={b2bPer}
+        />
+      )}
+      {employmentMin && employmentMax && (
+        <ContractAndRemunerationItem
+          className='employment'
+          contract={employmentContract}
+          min={employmentMin}
+          max={employmentMax}
+          currency='PLN'
+          per={employmentPer}
+        />
+      )}
+      <FloatClear />
+    </div>
+  )
 }
