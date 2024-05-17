@@ -20,10 +20,12 @@ export const LocationAndCooperationMode: LocationAndCooperationModeInterface = p
   return (
     <section className='location-and-cooperation-mode'>
       <div className='location'>
-        <SVG name='marker' /> {locality}, {country}
+        <SVG name='marker' />
+        {locality}, {country}
       </div>
       <div className='cooperation-mode'>
-        <SVG name={cooperationModeIcon} /> {cooperationModeLabel}
+        <SVG name={cooperationModeIcon} />
+        {cooperationModeLabel}
       </div>
     </section>
   )

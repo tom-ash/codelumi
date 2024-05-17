@@ -23,7 +23,7 @@ export const ContractAndRemunerationItem: ContractAndRemunerationItemInterface =
   const { className, contract, min, max, currency, per } = props
 
   return (
-    <div className={`contract-and-remuneration ${className}`}>
+    <div className={className}>
       <div className='contract'>{contract}</div>
       <div className='remuneration'>
         <span className='amount'>

@@ -21,7 +21,7 @@ export const Remuneration: RemunerationInterface = props => {
   const { b2bContract, employmentContract, b2bPer, employmentPer } = useTexts()
 
   return (
-    <div>
+    <div className='contract-and-remuneration'>
       {b2bMin && b2bMax && (
         <ContractAndRemunerationItem
           className='b2b'

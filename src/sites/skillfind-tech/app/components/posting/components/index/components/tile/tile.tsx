@@ -8,6 +8,7 @@ import { Remuneration } from '../../../common/remuneration/remuneration'
 import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
 import { LocationAndCooperationMode } from '../../../common/location-and-cooperation-mode/location-and-cooperation-mode'
 import { Skills } from '../../../common/skills/skills'
+import { Company } from '../../../common/company/company'
 
 interface PostingIndexTileInterface {
   (props: {
@@ -64,29 +65,25 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
         changeUrl({ href })
       }}
     >
-      <div className='company'>
-        <div className='company-logo'>
-          <Image
-            src={`https://s3.eu-central-1.amazonaws.com/skillfind-tech-dev/logos/${logo}`}
-            alt='warsaw-digital'
-          />
-        </div>
-        <div className='business-name'>{businessName}</div>
-        <PostingIndexTileIndustry
-          industry={industry}
-          icon={industryIcon}
-        />
-      </div>
-      <Remuneration
-        b2bMin={b2bMin}
-        b2bMax={b2bMax}
-        employmentMin={employmentMin}
-        employmentMax={employmentMax}
+      <Company
+        logo={`https://s3.eu-central-1.amazonaws.com/skillfind-tech-dev/logos/${logo}`}
+        businessName={businessName}
+        industry={{
+          value: industry,
+          label: industry,
+          icon: industryIcon,
+        }}
       />
       <LocationAndCooperationMode
         locality={locality}
         country={country}
         cooperationMode={cooperationMode}
+      />
+      <Remuneration
+        b2bMin={b2bMin}
+        b2bMax={b2bMax}
+        employmentMin={employmentMin}
+        employmentMax={employmentMax}
       />
       <Skills
         skills={skills}

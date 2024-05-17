@@ -92,8 +92,10 @@
     .contract-and-remuneration {
       @extend %contract-and-remuneration;
       margin-top: 30px;
-      margin-left: 50px;
-      float: left;
+      .b2b, .employment {
+        margin-left: 50px;
+        float: left;
+      }
       .contract {
         font-size: 20px;
       }

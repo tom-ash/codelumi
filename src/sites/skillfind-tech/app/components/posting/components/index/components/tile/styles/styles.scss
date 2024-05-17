@@ -1,64 +1,97 @@
 @import '../../../../common/skills/styles/styles.scss';
 @import '../../../../common/location-and-cooperation-mode/styles/styles.scss';
 @import '../../../../common/remuneration/styles/styles.scss';
+@import '../../../../../../../styles/colors.scss';
 
 .postings-index-tile {
   display: block;
   float: none;
   position: relative;
-
   background: white;
   margin-top: 20px;
-
-  padding: 20px;
+  padding: 20px 20px 10px;
   border-radius: 6px;
-
-  box-shadow:
-    rgba(0, 0, 0, 0.12) 0px 1px 3px,
-    rgba(0, 0, 0, 0.24) 0px 1px 2px;
-
-  .location-and-cooperation-mode {
-    @extend %location-and-cooperation-mode;
-  }
-
-  .skills {
-    @extend %skills;
-  }
-
-  .industry {
-    color: #4d5656;
-    margin-top: 5px;
-    svg {
-      position: relative;
-      top: 1px;
-      height: 16px;
-      margin-right: 8px;
-      fill: #4d5656;
-    }
-  }
-
-  .business-name {
-    font-size: 20px;
-    font-weight: bold;
-    color: #424949;
-  }
-
+  border: 1px solid $CONTAINER-BORDER-COLOR;
   .company {
     padding-left: 90px;
-  }
-
-  .company-logo {
-    height: 48px;
-    position: absolute;
-    left: 20px;
-    border-radius: 4px;
-    overflow: hidden;
-    img {
-      height: 100%;
+    height: 50px;
+    .company-logo {
+      height: 50px;
+      position: absolute;
+      left: 20px;
+      border-radius: 4px;
+      overflow: hidden;
+      img {
+        height: 100%;
+      }
+    }
+    .business-name {
+      font-size: 16px;
+      font-weight: bold;
+      color: #424949;
+      position: relative;
+      top: 6px;
+    }
+    .industry {
+      color: #4d5656;
+      margin-top: 2px;
+      font-size: 14px;
+      position: relative;
+      top: 8px;
+      svg {
+        position: relative;
+        height: 12px;
+        top: 2px;
+        margin-right: 8px;
+        fill: #4d5656;
+      }
     }
   }
-
+  .location-and-cooperation-mode {
+    @extend %location-and-cooperation-mode;
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-size: 14px;
+    .location {
+      margin-right: 12px;
+      svg {
+        height: 13px;
+      }
+    }
+    svg {
+      height: 13px;
+      margin-right: 4px;
+    }
+  }
   .contract-and-remuneration {
     @extend %contract-and-remuneration;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0;
+    .b2b, .employment {
+      text-align: right;
+      .contract {
+        display: inline-block;
+        font-size: 10px;
+        margin-right: 4px;
+      }
+      .remuneration {
+        display: inline-block;
+        font-size: 16px;
+      }
+      .per {
+        font-size: 13px;
+      }
+    }
+    .b2b {
+      margin-bottom: 4px;
+    }
+  }
+  .skills {
+    @extend %skills;
+    margin-top: -4px;
+    scale: .9;
+    transform-origin: top left;
   }
 }
