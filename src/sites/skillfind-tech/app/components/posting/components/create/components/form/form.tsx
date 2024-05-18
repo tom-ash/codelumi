@@ -11,6 +11,7 @@ import { SocialImage } from './components/social-image/social-image'
 import { Poster } from './components/poster/poster'
 import { useUser } from '../../../../../../../../shared/app/functions/store/use-user'
 import { MainHeading } from '../../../../../../../../shared/app/components/support/headings/main-heading'
+import { Application } from './components/application/application'
 
 export const PostingsForm = () => {
   useStyles(styles)
@@ -30,6 +31,7 @@ export const PostingsForm = () => {
       <Contracts />
       {!authorized && <Poster />}
       <SocialImage />
+      <Application />
       <SubmitButton />
     </div>
   )

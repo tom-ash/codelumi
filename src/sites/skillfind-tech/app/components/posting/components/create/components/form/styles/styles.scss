@@ -3,6 +3,7 @@
 @import '../../../../../../../styles/colors.scss';
 @import '../../../../../../user/components/new/components/form/styles/styles.scss';
 @import './section.scss';
+@import '../../../../../../../styles/inputs/text.scss';
 
 #listing-create-form {
   max-width: 768px;
@@ -11,6 +12,10 @@
   background: white;
   border-radius: 3px;
   border: 1px solid lightgray;
+  .text-input {
+    @extend %text-input;
+    max-width: 320px;
+  }
   .main-heading {
     @extend %main-heading;
     margin-bottom: 30px;
@@ -51,7 +56,6 @@
     max-width: 320px;
     padding-top: 20px;
   }
-
   .submit-button {
     margin-top: 24px;
     .input {
@@ -65,4 +69,20 @@
       font-size: 15px;
     }
   }
+  .application {
+    @extend %section;
+    .application-manner {
+      margin-top: 20px;
+    }
+    .text-input {
+      margin-left: 30px;
+      max-width: none;
+    }
+    &.error {
+      .instructions {
+        color: $ERROR-COLOR;
+      }
+    }
+  }
+
 }

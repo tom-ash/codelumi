@@ -6,6 +6,7 @@ import { validateSkills } from '../components/skill-selector/functions/validate-
 import { validateLocation } from '../components/location/functions/validate-location'
 import { buildUserObject } from '../../../../../../user/components/new/components/form/components/submit/functions/build-user-object'
 import { UserObject } from '../../../../../../user/components/new/components/form/components/submit/types/user-object.interface'
+import { validateApplication } from '../components/application/functions/validate-application'
 
 var scrollIntoView = require('scroll-into-view')
 
@@ -34,6 +35,11 @@ type SubmitProps = {
   setControl(params: any): void
   backgroundColor: string
   textColor: string
+
+  formApplicationManner: boolean
+  linkApplicationManner: boolean
+  applicationLink: string
+  applicationLinkError: string
 } & UserObject & {
     businessNameError: string
     logoError: string
@@ -75,6 +81,10 @@ export const submit = async (props: SubmitProps) => {
     setControl,
     backgroundColor,
     textColor,
+    formApplicationManner,
+    linkApplicationManner,
+    applicationLink,
+    applicationLinkError,
   } = props
 
   setControl({ isSubmitting: true })
@@ -100,6 +110,9 @@ export const submit = async (props: SubmitProps) => {
     sublocality,
     backgroundColor,
     textColor,
+    formApplicationManner,
+    linkApplicationManner,
+    applicationLink,
   }
 
   const validations = [
@@ -113,6 +126,13 @@ export const submit = async (props: SubmitProps) => {
       lng,
       setErrors,
     }),
+    validateApplication({
+      formApplicationManner,
+      linkApplicationManner,
+      applicationLink,
+      applicationLinkError,
+      setErrors,
+    })
   ]
 
   for (let i = 0; i < validations.length; i++) {

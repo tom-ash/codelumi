@@ -7,7 +7,6 @@ import { useInputs } from '../../../../../../../../../shared/app/functions/store
 import { useDispatch } from 'react-redux'
 import { useUser } from '../../../../../../../../../shared/app/functions/store/use-user'
 import { useData } from '../../../../../../../../../shared/app/functions/store/use-data'
-
 import BeatLoader from 'react-spinners/BeatLoader'
 import { useControl } from '../../../../../../../../../shared/app/functions/store/use-control'
 
@@ -51,12 +50,19 @@ const SubmitButton = () => {
     logo,
     backgroundColor,
     textColor,
+
+    formApplicationManner,
+    linkApplicationManner,
+    applicationLink,
   } = inputs
   const {
     businessNameInputInvalidError: businessNameError,
+    applicationLinkInputInvalidError: applicationLinkError,
     termsOfServiceConsentLabel,
     logoInputMissingError: logoError,
   } = useTexts()
+
+  console.log('applicationLinkError', applicationLinkError)
 
   const label = isSubmitting ? (
     <BeatLoader
@@ -106,6 +112,10 @@ const SubmitButton = () => {
         setControl,
         backgroundColor,
         textColor,
+        formApplicationManner,
+        linkApplicationManner,
+        applicationLink,
+        applicationLinkError,
       }),
   }
 
