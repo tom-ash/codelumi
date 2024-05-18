@@ -16,6 +16,7 @@ interface SubmitForm {
     setErrors(args: any): void // TODO
     logo: Picture
     logoError: string
+    link?: string
   }): void
 }
 
@@ -33,6 +34,7 @@ export const submitForm: SubmitForm = args => {
     termsOfServiceConsentLabel,
     setControl,
     setErrors,
+    link,
   } = args
 
   const userObject = buildUserObject({
@@ -46,6 +48,7 @@ export const submitForm: SubmitForm = args => {
     logo,
     logoError,
     setErrors,
+    link,
   })
 
   if (!userObject) return setControl({ connecting: false })

@@ -11,6 +11,7 @@ const UserUsersEdit = () => {
     <div id='user-users-edit'>
       <MainHeading icon='userCog' />
       <AttributeEditor name='businessName' />
+      <AttributeEditor name='link' />
       <AttributeEditor
         name='industry'
         isSelectable={true}

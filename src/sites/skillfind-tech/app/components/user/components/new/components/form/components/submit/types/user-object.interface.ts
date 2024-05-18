@@ -8,4 +8,5 @@ export interface UserObject {
   termsOfServiceConsent: boolean
   consents: any[] // TODO
   logo: Picture
+  link?: string
 }

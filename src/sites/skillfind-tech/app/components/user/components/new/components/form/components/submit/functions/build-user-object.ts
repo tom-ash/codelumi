@@ -16,6 +16,7 @@ interface BuildUserObject {
     termsOfServiceConsent: boolean
     termsOfServiceConsentLabel: string
     setErrors(args: object): void
+    link?: string
   }): UserObject | undefined
 }
 
@@ -31,6 +32,7 @@ export const buildUserObject: BuildUserObject = args => {
     logo,
     logoError,
     setErrors,
+    link,
   } = args
 
   let userObject: UserObject = {
@@ -41,6 +43,7 @@ export const buildUserObject: BuildUserObject = args => {
     termsOfServiceConsent,
     consents: [],
     logo,
+    link,
   }
 
   const userObjectInvalid = !validateUserObject({
