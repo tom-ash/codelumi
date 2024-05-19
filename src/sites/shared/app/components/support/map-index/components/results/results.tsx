@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import { useRender } from '../../../../../functions/store/use-render'
+import React from 'react'
 import { useControl } from '../../../../../functions/store/use-control'
 import { List } from './components/list/list'
 import { Map } from './components/map/map'

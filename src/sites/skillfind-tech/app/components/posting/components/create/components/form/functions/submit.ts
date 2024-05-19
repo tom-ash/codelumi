@@ -132,7 +132,7 @@ export const submit = async (props: SubmitProps) => {
       applicationLink,
       applicationLinkError,
       setErrors,
-    })
+    }),
   ]
 
   for (let i = 0; i < validations.length; i++) {

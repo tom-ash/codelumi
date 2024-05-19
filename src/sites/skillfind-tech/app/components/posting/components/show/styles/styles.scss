@@ -4,6 +4,7 @@
 @import '../../../../../styles/inputs/text.scss';
 @import '../../../../../styles/inputs/drag-and-drop.scss';
 @import '../../../../../styles/inputs/button.scss';
+@import '../../../../../styles/colors.scss';
 @import './company.scss';
 
 .go-back {
@@ -32,7 +33,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: #e5e7e9;
+  background: $POSTINGS-RESULTS-BACKGROUND;
   width: 100%;
   padding: 20px;
   overflow-y: scroll;
@@ -109,7 +110,8 @@
       font-family: Oswald, sans-serif;
       font-weight: 400;
     }
-    .b2b, .employment {
+    .b2b,
+    .employment {
       float: left;
       margin-right: 40px;
     }

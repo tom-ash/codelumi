@@ -35,6 +35,8 @@ interface PostingIndexTileInterface {
 export const PostingIndexTile: PostingIndexTileInterface = props => {
   useStyles(styles)
 
+  // console.log('props', props)
+
   const {
     id,
     businessName,

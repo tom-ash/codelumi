@@ -19,7 +19,10 @@ export const Application = () => {
   }
 
   return (
-    <section id='application' className={classNames.join(' ')}>
+    <section
+      id='application'
+      className={classNames.join(' ')}
+    >
       <SectionHeading name='application' />
       <Instructions text={applicationSectionInstructions} />
       <ApplicationManner name={ApplicationMannerEnum.FORM} />

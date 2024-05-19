@@ -1,5 +1,5 @@
 interface ValidateApplicationLink {
-  (params: { value: string; errorMessage: string; setErrors(params: object): void }): boolean;
+  (params: { value: string; errorMessage: string; setErrors(params: object): void }): boolean
 }
 
 export const validateApplicationLink: ValidateApplicationLink = params => {

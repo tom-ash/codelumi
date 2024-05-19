@@ -25,7 +25,18 @@ const sliderDeviceConfig = {
   smallPc: { perPage: 2, gap: 40 },
   largeTablet: { perPage: 2, gap: 40, padding: 60, pagination: false },
   smallTablet: { perPage: 1, gap: 40, padding: 60, pagination: false },
-  largePhone: { perPage: 1, gap: 20, padding: 60, pagination: false },
+  // @ts-ignore
+  largePhone: {
+    perPage: 1,
+    gap: 20,
+    padding: {
+      left: 20,
+      right: 80,
+      top: 0,
+      bottom: 0,
+    },
+    pagination: false,
+  },
   smallPhone: { perPage: 1, gap: 20, padding: 60, pagination: false },
 }
 
@@ -86,6 +97,7 @@ export const List: ListInterface = props => {
           <Slider
             slides={items}
             Slide={ListItem}
+            // @ts-ignore
             deviceConfig={sliderDeviceConfig}
             commonProps={commonProps}
           />

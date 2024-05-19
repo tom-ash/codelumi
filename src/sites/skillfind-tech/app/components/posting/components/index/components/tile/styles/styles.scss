@@ -23,6 +23,7 @@
       overflow: hidden;
       img {
         height: 100%;
+        aspect-ratio: 4/2.6666;
       }
     }
     .business-name {
@@ -69,7 +70,8 @@
     top: 20px;
     right: 20px;
     padding: 0;
-    .b2b, .employment {
+    .b2b,
+    .employment {
       text-align: right;
       .contract {
         display: inline-block;
@@ -79,6 +81,7 @@
       .remuneration {
         display: inline-block;
         font-size: 16px;
+        font-weight: 400;
       }
       .per {
         font-size: 13px;
@@ -91,7 +94,7 @@
   .skills {
     @extend %skills;
     margin-top: -4px;
-    scale: .9;
+    scale: 0.9;
     transform-origin: top left;
   }
 }

@@ -50,12 +50,18 @@ export const Slider: SliderInterface = props => {
           type,
           padding,
           pagination,
+          arrows: false,
+          lazyLoad: 'nearby'
         }}
       >
         {slides.map((slide: any) => (
-          <SplideSlide>
+          <SplideSlide
+            // onLoad={(props) => {
+            //   console.log('props', props)
+            // }}
+          >
             <Slide
-              ley={slide.id}
+              key={slide.id}
               {...{ ...commonProps, ...slide }}
             />
           </SplideSlide>

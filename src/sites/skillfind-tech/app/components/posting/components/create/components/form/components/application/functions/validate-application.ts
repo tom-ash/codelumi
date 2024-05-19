@@ -1,7 +1,13 @@
-import { validateApplicationLink } from "../components/application-link/functions/validate-application-link";
+import { validateApplicationLink } from '../components/application-link/functions/validate-application-link'
 
 interface ValidateLocation {
-  (params: { formApplicationManner: boolean; linkApplicationManner: boolean; applicationLink: string; applicationLinkError: string; setErrors(params: object): void }): 'application' | null
+  (params: {
+    formApplicationManner: boolean
+    linkApplicationManner: boolean
+    applicationLink: string
+    applicationLinkError: string
+    setErrors(params: object): void
+  }): 'application' | null
 }
 
 export const validateApplication: ValidateLocation = params => {
@@ -13,7 +19,10 @@ export const validateApplication: ValidateLocation = params => {
     return 'application'
   }
 
-  if (!validateApplicationLink({ value: applicationLink, errorMessage: applicationLinkError, setErrors })) {
+  if (
+    linkApplicationManner &&
+    !validateApplicationLink({ value: applicationLink, errorMessage: applicationLinkError, setErrors })
+  ) {
     return 'application'
   }
 
