@@ -32,6 +32,7 @@ interface ListingIndexTileInterface {
     onClick?: (e: React.SyntheticEvent) => void
     onMouseOver?: () => void
     onMouseLeave?: () => void
+    loadImage?: boolean
   }): React.ReactElement
 }
 
@@ -57,6 +58,7 @@ export const ListingIndexTile: ListingIndexTileInterface = props => {
     onMouseOver,
     onMouseLeave,
     disableSlides,
+    loadImage,
   } = props
 
   const classNames = ['listing-index-tile']
@@ -76,6 +78,7 @@ export const ListingIndexTile: ListingIndexTileInterface = props => {
     title,
     pictures,
     disableSlides,
+    loadImage,
   }
   const headingProps = {
     name,

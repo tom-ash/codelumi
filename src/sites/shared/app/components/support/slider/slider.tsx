@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { useApp } from '../../../functions/store/use-app'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
@@ -41,6 +41,8 @@ export const Slider: SliderInterface = props => {
   const device = app.device as Device
   const { perPage, gap, type, padding, pagination } = deviceConfig[device]
 
+  const [currentIndex, setCurrentIndex] = useState(0)
+
   return (
     <div className='slider'>
       <Splide
@@ -53,15 +55,13 @@ export const Slider: SliderInterface = props => {
           arrows: false,
           lazyLoad: 'nearby'
         }}
+        onMoved={(e) => setCurrentIndex(e.index)}
       >
-        {slides.map((slide: any) => (
-          <SplideSlide
-            // onLoad={(props) => {
-            //   console.log('props', props)
-            // }}
-          >
+        {slides.map((slide: any, index) => (
+          <SplideSlide>
             <Slide
               key={slide.id}
+              loadImage={currentIndex >= index - 2}
               {...{ ...commonProps, ...slide }}
             />
           </SplideSlide>

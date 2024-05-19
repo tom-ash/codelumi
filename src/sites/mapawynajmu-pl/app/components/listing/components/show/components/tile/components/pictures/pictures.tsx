@@ -10,17 +10,19 @@ interface Picture {
 }
 
 interface ListingTilePicturesInterface {
-  (props: { pictures: Picture[]; disableSlides: boolean; title: string; id: number }): React.ReactElement
+  (props: { pictures: Picture[]; disableSlides: boolean; title: string; id: number; loadImage?: boolean }): React.ReactElement
 }
 
 export const ListingTilePictures: ListingTilePicturesInterface = props => {
   useStyles(styles)
 
-  const { id, title, pictures, disableSlides } = props
+  const { id, title, pictures, disableSlides, loadImage } = props
 
   const pictureUrls = pictures.map(picture => ({
     database: `${AWS_S3_URL}/announcements/${id}/${picture.database}`,
   }))
+
+  const loading = loadImage ? undefined : 'lazy'
 
   if (disableSlides) {
     return (
@@ -28,7 +30,7 @@ export const ListingTilePictures: ListingTilePicturesInterface = props => {
         <img
           src={pictureUrls[0].database}
           alt={title}
-          loading='lazy'
+          loading={loading}
         />
       </div>
     )

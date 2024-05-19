@@ -23,6 +23,7 @@ export interface ListingBase {
   grossRentAmount?: number
   rentCurrency?: number
   isPromoted: boolean
+  loadImage?: boolean
 }
 
 interface CommonProps {
@@ -57,6 +58,7 @@ export const ListingsIndexTile: ListingsIndexTile = props => {
     lang,
     isMobile,
     setControl,
+    loadImage,
   } = props
 
   const isCommercial = [0, 1, 6, 7, 8].indexOf(category) !== -1
@@ -67,6 +69,8 @@ export const ListingsIndexTile: ListingsIndexTile = props => {
 
     changeUrl({ href, retainQueryParams: true, withScroll: false })
   }
+
+  console.log('props', props)
 
   return (
     <ListingIndexTile
@@ -86,6 +90,7 @@ export const ListingsIndexTile: ListingsIndexTile = props => {
       disableSlides={true}
       lang={lang}
       onClick={onClick}
+      loadImage={loadImage}
     >
       {isMobile && (
         <ShowOnMapButton
