@@ -8,6 +8,7 @@ import { Remuneration } from './components/remuneration/remuneration'
 import { Description } from './components/description/description'
 import { Application } from './components/application/application'
 import { Skills } from './components/skills/skills'
+import { FloatClear } from '../../../../../../shared/app/components/support/float-clear/float-clear'
 
 interface PostingShowInterface {
   (props: {}): React.ReactElement
@@ -18,8 +19,10 @@ const PostingsShow: PostingShowInterface = props => {
 
   return (
     <>
-      <GoBack />
+      {/* <GoBack /> */}
       <div id='postings-show'>
+        <GoBack />
+        <FloatClear />
         <div id='posting'>
           <Company />
           <LocationAndCooperationMode />

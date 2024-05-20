@@ -13,9 +13,7 @@ export const GoBack: GoBackInterface = () => {
   } = useLinks()
 
   const label = (
-    <div className='go-back'>
-      <SVG name='arrowRight' />
-    </div>
+    <SVG name='arrowLong' />
   )
 
   return (
@@ -24,6 +22,7 @@ export const GoBack: GoBackInterface = () => {
       hrefLang={hrefLang}
       title={title}
       label={label}
+      customClassNames='go-back'
     />
   )
 }
