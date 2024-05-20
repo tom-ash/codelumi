@@ -28,6 +28,17 @@ const sliderDeviceConfig = {
   // @ts-ignore
   largePhone: {
     perPage: 1,
+    gap: 15,
+    padding: {
+      left: 15,
+      right: 70,
+      top: 0,
+      bottom: 0,
+    },
+    pagination: false,
+  },
+  smallPhone: {
+    perPage: 1,
     gap: 20,
     padding: {
       left: 20,
@@ -37,7 +48,6 @@ const sliderDeviceConfig = {
     },
     pagination: false,
   },
-  smallPhone: { perPage: 1, gap: 20, padding: 60, pagination: false },
 }
 
 interface ListInterface {

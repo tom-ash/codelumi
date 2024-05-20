@@ -12,11 +12,9 @@
   border-radius: 12px;
   background: white;
   overflow: hidden;
-
   .pin {
     @extend %pin;
   }
-
   @media #{$MEDIUM-PC} {
     margin-left: 24px;
     margin-right: 24px;
@@ -46,7 +44,7 @@
           bottom: 0;
           left: 0;
           width: 640px;
-          padding: 0 20px 20px;
+          padding: 0 15px 15px;
           overflow-x: hidden;
           overflow-y: scroll;
           scrollbar-width: none;
@@ -75,7 +73,7 @@
           }
         }
         &.slider {
-          padding: 20px 0;
+          padding: 15px 0;
           .listing-index-tile {
             width: auto;
             position: relative;
@@ -114,42 +112,164 @@
         height: 100%;
       }
     }
+    main {
+      .postings-index-tile {
+        padding: 0 0 10px;
+        margin-top: 15px;
+        .company {
+          width: 280px;
+          height: 60px;
+          padding: 7px 0 10px;
+          border-bottom-right-radius: 4px;
+          border-bottom-left-radius: 4px;
+          margin-left: 90px;
+          .company-logo {
+            background: white;
+            width: 70px;
+            height: 60px;
+            left: 15px;
+            top: 0;
+            display: flex;
+            justify-content: left;
+            border-radius: none;
+            img {
+              position: relative;
+              max-width: 70px;
+              max-height: 40px;
+              display: block;
+              margin: auto 0;
+            }
+          }
+          .business-name {
+            font-size: 14px;
+          }
+          .industry {
+            margin-top: 8px;
+            top: 0;
+            font-size: 12px;
+          }
+          
+        }
+        .contract-and-remuneration {
+          margin: 0;
+          top: 8px;
+          right: 15px;
+        }
+        .location-and-cooperation-mode {
+          margin: 0 15px 0;
+          .location {
+            font-size: 13px;
+            svg {
+              height: 12px;
+              top: 1px;
+            }
+          }
+          .cooperation-mode {
+            font-size: 13px;
+            svg {
+              height: 10px;
+              top: 0px;
+            }
+          }
+        }
+        .skills {
+          text-wrap: nowrap;
+          margin: -5px 15px;
+          .skill {
+            display: inline-block;
+            float: none;
+            margin-right: 20px;
+            scale: .9;
+            transform-origin: top left;
+            .level-name {
+              display: none;
+            }
+          }
+        }
+      }
+    }
     @media #{$LARGE-TABLET} {
       position: relative;
       top: 0;
       main {
         position: relative;
         width: 100%;
-
-        // @import '../../../../../styles/inputs/button.scss';
         .postings-index-tile {
           margin-top: 0;
           padding-bottom: 20px;
-          height: 433px;
+          height: 370px;
+          padding: 0;
+          .company {
+            position: relative;
+            padding-left: 100px;
+            height: auto;
+            margin: 0;
+            .company-logo {
+              left: 15px;
+            }
+            .business-name {
+              position: relative;
+              height: 16px;
+            }
+            .industry {
+              position: relative;
+              margin-top: 8px;
+            }
+          }
+          .location-and-cooperation-mode {
+            display: block;
+            margin: 20px 20px 0;
+            .location {
+              display: block;
+              font-size: 15px;
+            }
+            .cooperation-mode {
+              display: block;
+              margin-top: 8px;
+              font-size: 15px;
+            }
+          }
           .contract-and-remuneration {
             position: relative;
-            margin: 0 20px;
+            top: 0;
+            right: 0;
+            margin: 20px 20px 0;
+            text-wrap: nowrap;
             .b2b,
             .employment {
               text-align: left;
+              display: inline-block;
               .contract {
-                font-size: 14px;
+                display: block;
+                font-size: 13px;
               }
               .remuneration {
-                font-size: 18px;
+                display: block;
+                font-size: 15px;
               }
+              .per {
+                font-size: 12px;
+              }
+            }
+            .b2b {
+              margin-right: 25px;
             }
           }
           .skills {
             position: relative;
             scale: 1;
             margin: 0;
-            margin-top: 20px;
             padding: 0;
+            margin: 5px 20px 0;
+            text-wrap: wrap;
             .skill {
-              margin-right: 40px;
+              margin-top: 15px;
+              margin-right: 30px;
               &:nth-of-type(2n) {
                 margin-right: 0;
+              }
+              .level-name {
+                display: none;
               }
             }
           }

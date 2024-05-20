@@ -21,13 +21,12 @@ export const Company: CompanyInterface = props => {
   const { logo, businessName, industry, backgroundColor, textColor, isPreview } = props
 
   return (
-    <div className='company'>
-      <div
-        className='background'
-        style={{
-          backgroundColor,
-        }}
-      />
+    <div
+      className='company'
+      style={{
+        backgroundColor,
+      }}
+    >
       <div className='company-logo'>
         <Image
           src={logo}
