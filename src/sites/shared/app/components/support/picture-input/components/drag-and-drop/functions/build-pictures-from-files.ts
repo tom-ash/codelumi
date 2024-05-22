@@ -9,13 +9,15 @@ interface SetPicturesInterface {
     limit?: number
     targetWidth?: number
     targetHeight?: number
+    maxWidth?: number
+    maxHeight?: number
     pictures: Picture[]
     setPictures: SetPictures
   }): void
 }
 
 export const buildPicturesFromFiles: SetPicturesInterface = async params => {
-  const { e, targetWidth, limit, targetHeight, pictures: currentPictures, setPictures } = params
+  const { e, targetWidth, limit, targetHeight, pictures: currentPictures, setPictures, maxWidth, maxHeight } = params
   const pictureFiles = e.target.files
 
   if (pictureFiles) {
@@ -35,6 +37,8 @@ export const buildPicturesFromFiles: SetPicturesInterface = async params => {
       files: arrayedPictureFiles,
       targetWidth,
       targetHeight,
+      maxWidth,
+      maxHeight,
       currentPictures,
     })
 

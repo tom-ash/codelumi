@@ -6,11 +6,13 @@ interface CreatePictures {
     currentPictures: Picture[]
     targetWidth?: number
     targetHeight?: number
+    maxWidth?: number
+    maxHeight?: number
   }): Promise<Picture[]>
 }
 
 export const createPictures: CreatePictures = async params => {
-  const { files, targetWidth, targetHeight, currentPictures } = params
+  const { files, targetWidth, targetHeight, currentPictures, maxWidth, maxHeight } = params
   let pictures: Picture[] = [...currentPictures]
 
   await Promise.all(
@@ -21,6 +23,8 @@ export const createPictures: CreatePictures = async params => {
         fileSrc,
         targetWidth,
         targetHeight,
+        maxWidth,
+        maxHeight,
       })
 
       if (blob) {
@@ -47,11 +51,11 @@ export const loadImage = async (fileSrc: string): Promise<HTMLImageElement> => {
 }
 
 interface CreateBlobInterface {
-  (params: { fileSrc: string; targetWidth?: number; targetHeight?: number }): Promise<Blob | void | null>
+  (params: { fileSrc: string; targetWidth?: number; targetHeight?: number, maxWidth?: number, maxHeight?: number }): Promise<Blob | void | null>
 }
 
 export const createBlob: CreateBlobInterface = async params => {
-  const { fileSrc, targetWidth, targetHeight } = params
+  const { fileSrc, targetWidth, targetHeight, maxWidth, maxHeight } = params
 
   const oc = document.createElement('canvas')
   const octx = oc.getContext('2d')
@@ -61,6 +65,22 @@ export const createBlob: CreateBlobInterface = async params => {
 
   let widthIndent = 0
   let heightIndent = 0
+
+  let width = sourceWidth
+  let height = sourceHeight
+
+  if (maxWidth && maxHeight) {
+    const requestedRatio = maxWidth / maxHeight
+    const pictureRatio = sourceWidth / sourceHeight
+
+    if (requestedRatio > pictureRatio) {
+      height = maxHeight
+      width = sourceWidth / (sourceHeight / maxHeight)
+    } else {
+      width = maxWidth
+      height = sourceHeight / (sourceWidth / maxWidth)
+    }
+  }
 
   if (targetWidth && targetHeight) {
     const ratio = targetHeight / targetWidth
@@ -74,10 +94,10 @@ export const createBlob: CreateBlobInterface = async params => {
       widthIndent = Math.round((sourceWidth - ratiodWitdh) / 2)
       heightIndent = 0
     }
-  }
 
-  const width = targetWidth || sourceWidth
-  const height = targetHeight || sourceHeight
+    width = targetWidth
+    height = targetHeight
+  }
 
   oc.width = width
   oc.height = height

@@ -31,6 +31,8 @@ export const Logo = () => {
         limit={1}
         icon='plus'
         instructions={logoUploadInstructions}
+        maxWidth={480}
+        maxHeight={360}
         onPictureSet={pictures => {
           setInputs({ logo: pictures[0] })
           setErrors({ logo: false })

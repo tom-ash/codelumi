@@ -44,33 +44,29 @@
     .company {
       @extend %company;
       border-radius: 0;
-      height: 220px;
+      height: 150px;
       margin: 0;
-      .background {
-        background: #5b2c6f;
-        height: 150px;
-      }
       .company-logo {
-        width: 240px;
-        height: 160px;
+        width: 200px;
+        height: 150px;
         top: 60px;
         left: 60px;
+        display: flex;
         img {
-          top: 7px;
-          right: 7px;
-          width: calc(100% - 14px);
-          height: calc(100% - 14px);
+          max-height: 127px;
+          max-width: 170px;
+          margin: auto;
         }
       }
       .business-name {
         top: 60px;
-        left: 320px;
+        left: 290px;
         font-size: 32px;
       }
       .industry {
         position: absolute;
         top: 110px;
-        left: 320px;
+        left: 290px;
         color: white;
         font-size: 20px;
         svg {
@@ -81,9 +77,11 @@
     }
     .location-and-cooperation-mode {
       @extend %location-and-cooperation-mode;
-      position: absolute;
-      left: 320px;
-      top: 144px;
+      // position: absolute;
+      margin: 0 60px;
+      margin-top: 80px;
+      // left: 320px;
+      // top: 144px;
       font-size: 24px;
       svg {
         height: 24px;
@@ -91,10 +89,13 @@
     }
     .contract-and-remuneration {
       @extend %contract-and-remuneration;
-      margin-top: 30px;
+      margin-top: 50px;
+      margin-left: 60px;
+      left: 0;
+      padding: 0;
       .b2b,
       .employment {
-        margin-left: 50px;
+        margin-left: 0;
         float: left;
       }
       .contract {
@@ -115,7 +116,7 @@
     }
     .skills {
       position: relative;
-      margin: 20px 0 60px 70px;
+      margin: 0 0 60px 60px;
       padding-top: 10px;
       .skill {
         float: left;

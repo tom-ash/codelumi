@@ -11,6 +11,10 @@ interface DragAndDropInterface {
     limit?: number
     targetWidth?: number
     targetHeight?: number
+
+    maxWidth?: number;
+    maxHeight?: number;
+
     icon: string
     instructions: string
     setPictures: SetPictures
@@ -18,7 +22,7 @@ interface DragAndDropInterface {
 }
 
 export const DragAndDrop: DragAndDropInterface = props => {
-  const { pictures, icon, multiple, limit, instructions, targetWidth, targetHeight, setPictures } = props
+  const { pictures, icon, multiple, limit, instructions, targetWidth, targetHeight, setPictures, maxWidth, maxHeight } = props
 
   return (
     <div className='drag-and-drop-container'>
@@ -33,6 +37,8 @@ export const DragAndDrop: DragAndDropInterface = props => {
               limit,
               targetWidth,
               targetHeight,
+              maxWidth,
+              maxHeight,
               pictures,
               setPictures,
             })
