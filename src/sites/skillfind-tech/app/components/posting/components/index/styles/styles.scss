@@ -116,7 +116,9 @@
       .postings-index-tile {
         padding: 0 0 10px;
         margin-top: 15px;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        box-shadow:
+          rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+          rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
         border: none;
         .company {
           width: 280px;
@@ -146,7 +148,6 @@
             top: 0;
             font-size: 12px;
           }
-          
         }
         .contract-and-remuneration {
           margin: 0;
@@ -177,7 +178,7 @@
             display: inline-block;
             float: none;
             margin-right: 20px;
-            scale: .9;
+            scale: 0.9;
             transform-origin: top left;
             .level-name {
               display: none;

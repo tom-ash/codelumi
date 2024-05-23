@@ -2,11 +2,15 @@
 @import '../../../../../styles/headings/main-heading';
 @import '../../../../../styles/inputs/text.scss';
 @import '../../../../../styles/inputs/select.scss';
+@import '../../../../../styles/inputs/picture-input.scss';
 
 #user-users-edit {
   @extend %container;
   margin-top: 120px;
   padding: 30px;
+  .logo {
+    @extend %picture-input;
+  }
   .main-heading {
     @extend %main-heading;
   }
@@ -16,8 +20,7 @@
   .select {
     @extend %select-element;
   }
-
-  .attribute-editor {
+  .attribute-editor, .logo {
     .buttons {
       margin-top: 8px;
       height: 20px;
@@ -35,7 +38,6 @@
     .save {
       float: left;
     }
-
     .cancel {
       margin-right: 12px;
       color: red;

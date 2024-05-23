@@ -1,0 +1,77 @@
+@import './drag-and-drop.scss';
+
+%picture-input {
+  position: relative;
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(64, 64, 64);
+    font-family: Roboto, sans-serif;
+  }
+  .drag-and-drop-container {
+    @extend %drag-and-drop-container;
+    .instructions {
+      font-size: 14px;
+      font-family: Roboto;
+    }
+  }
+  .blobs {
+    text-align: center;
+    .picture {
+      margin-top: 22px;
+      padding-right: 40px;
+      position: relative;
+      img {
+        width: 100%;
+      }
+      .buttons {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 40px;
+        .button {
+          height: 40px;
+          width: 40px;
+          &.delete {
+            svg {
+              width: 14px;
+              fill: red;
+            }
+          }
+          &.rotate {
+            margin-top: 4px;
+            svg {
+              width: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.error {
+    .instructions {
+      color: $ERROR-COLOR;
+    }
+    .drag-and-drop {
+      background: $ERROR-BACKGROUND-COLOR;
+      border-color: $ERROR-COLOR;
+      svg {
+        fill: $ERROR-COLOR;
+      }
+      &:hover {
+        svg {
+          fill: rgba($ERROR-COLOR, 0.75);
+          cursor: pointer !important;
+        }
+      }
+    }
+    .error {
+      color: $ERROR-COLOR;
+      font-family: Roboto;
+      margin-top: 6px;
+    }
+  }
+}

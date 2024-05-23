@@ -53,9 +53,9 @@ export const Slider: SliderInterface = props => {
           padding,
           pagination,
           arrows: false,
-          lazyLoad: 'nearby'
+          lazyLoad: 'nearby',
         }}
-        onMoved={(e) => setCurrentIndex(e.index)}
+        onMoved={e => setCurrentIndex(e.index)}
       >
         {slides.map((slide: any, index) => (
           <SplideSlide>

@@ -72,7 +72,7 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
       }}
     >
       <Company
-        logo={`https://s3.eu-central-1.amazonaws.com/skillfind-tech-dev/logos/${logo}`}
+        logo={logo}
         businessName={businessName}
         industry={{
           value: industry,

@@ -10,7 +10,13 @@ interface Picture {
 }
 
 interface ListingTilePicturesInterface {
-  (props: { pictures: Picture[]; disableSlides: boolean; title: string; id: number; loadImage?: boolean }): React.ReactElement
+  (props: {
+    pictures: Picture[]
+    disableSlides: boolean
+    title: string
+    id: number
+    loadImage?: boolean
+  }): React.ReactElement
 }
 
 export const ListingTilePictures: ListingTilePicturesInterface = props => {

@@ -43,7 +43,7 @@ export const SocialImage = () => {
   const logoSrc =
     typeof logo === 'object'
       ? logo.objectUrl
-      : `https://s3.eu-central-1.amazonaws.com/skillfind-tech-dev/logos/${logo}?salt=${Math.random()}`
+      : `${logo}?salt=${Math.random()}`
 
   return (
     <section id='social-image'>

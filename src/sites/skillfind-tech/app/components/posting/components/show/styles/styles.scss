@@ -65,7 +65,6 @@
         max-width: 130px;
         margin: auto;
       }
-
     }
     .business-name {
       top: 42px;
@@ -241,7 +240,8 @@
       left: 0;
       margin: 20px 0 0 20px;
       display: block;
-      .location, .cooperation-mode {
+      .location,
+      .cooperation-mode {
         display: block;
       }
       .cooperation-mode {

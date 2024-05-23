@@ -51,7 +51,13 @@ export const loadImage = async (fileSrc: string): Promise<HTMLImageElement> => {
 }
 
 interface CreateBlobInterface {
-  (params: { fileSrc: string; targetWidth?: number; targetHeight?: number, maxWidth?: number, maxHeight?: number }): Promise<Blob | void | null>
+  (params: {
+    fileSrc: string
+    targetWidth?: number
+    targetHeight?: number
+    maxWidth?: number
+    maxHeight?: number
+  }): Promise<Blob | void | null>
 }
 
 export const createBlob: CreateBlobInterface = async params => {

@@ -9,14 +9,10 @@ interface PictureInputInterface {
   (props: {
     multiple?: boolean
     limit?: number
+    maxWidth?: number
+    maxHeight?: number
     targetWidth?: number
     targetHeight?: number
-
-
-    maxWidth?: number;
-    maxHeight?: number;
-
-
     icon: string
     instructions: string
     persistedPictures?: PersistedPicture[]
@@ -25,7 +21,18 @@ interface PictureInputInterface {
 }
 
 export const PictureInput: PictureInputInterface = props => {
-  const { icon, limit, multiple, instructions, targetWidth, targetHeight, persistedPictures, onPictureSet, maxWidth, maxHeight } = props
+  const {
+    icon,
+    limit,
+    multiple,
+    instructions,
+    targetWidth,
+    targetHeight,
+    persistedPictures,
+    onPictureSet,
+    maxWidth,
+    maxHeight,
+  } = props
 
   const [pictures, setPictures] = useState<Picture[]>([])
 
@@ -50,10 +57,8 @@ export const PictureInput: PictureInputInterface = props => {
         limit={limit}
         targetWidth={targetWidth}
         targetHeight={targetHeight}
-
         maxWidth={maxWidth}
         maxHeight={maxHeight}
-
         icon={icon}
         instructions={instructions}
         setPictures={setPictures}

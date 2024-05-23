@@ -13,7 +13,7 @@ export const Company: CompanyInterface = () => {
 
   return (
     <CompanyPartial
-      logo={`https://s3.eu-central-1.amazonaws.com/skillfind-tech-dev/logos/${logo}`}
+      logo={logo}
       businessName={businessName}
       industry={industry}
       backgroundColor={backgroundColor}
