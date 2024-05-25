@@ -1,7 +1,7 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
-import { Logo } from './components/logo'
+import { LogoName } from './components/logo'
 import { LangSwitch } from '../../../../../shared/app/components/support/lang-switch/lang-switch'
 import { FloatClear } from '../../../../../shared/app/components/support/float-clear/float-clear'
 import { SignUpLink } from './components/links/components/sign-up/sign-up.link'
@@ -25,7 +25,7 @@ const Header: HeaderInterface = props => {
   return (
     <header id='header'>
       <div className='inner'>
-        <Logo />
+        <LogoName />
         <LangSwitch />
         {!authorized && !isMobile && <SignUpLink />}
         {!authorized && !isMobile && <SignInLink />}

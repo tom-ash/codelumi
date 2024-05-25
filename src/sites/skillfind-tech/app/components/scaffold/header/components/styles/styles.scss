@@ -1,18 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 
 .logo {
-  font-size: 14px;
   font-family: 'IBM Plex Mono', monospace;
   color: black;
   a {
     display: flex;
     justify-content: center;
   }
-  .logo-string {
+  #logo-name {
     display: block;
-    line-height: 256px;
-    padding-left: 80px;
     font-size: 128px;
+    font-size: 16px;
     .tech {
       color: black;
     }

@@ -9,6 +9,7 @@ import { FloatClear } from '../../../../../../../../shared/app/components/suppor
 import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
 import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
 import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
+import LogoIcon from '../../../../../scaffold/header/components/image/image'
 
 interface PanelInterface {
   (params: {}): React.ReactElement
@@ -58,7 +59,7 @@ export const Panel: PanelInterface = () => {
           }
         }}
       >
-        <SVG name='magnifyingGlass' />
+        <LogoIcon />
       </Select>
       <section className='selected-skills'>
         {selectedSkills.map((selectedSkill: any) => {

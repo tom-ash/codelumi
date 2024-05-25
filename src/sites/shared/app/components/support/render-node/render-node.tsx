@@ -17,7 +17,7 @@ const Share = loadable(() => import('./components/share/share'))
 const Definition = loadable(() => import('./components/definition/definition'))
 const Figure = loadable(() => import('./components/figure/figure'))
 
-const SkillFindTechLogo = loadable(
+const LogoIcon = loadable(
   () => import('../../../../../skillfind-tech/app/components/scaffold/header/components/logo')
 )
 
@@ -39,7 +39,7 @@ const elements = {
   FeatureItem,
   QuestionIndex,
   Breadcrumbs,
-  SkillFindTechLogo,
+  LogoIcon,
 }
 
 export const RenderNode = (props: RenderNodeProps) => {

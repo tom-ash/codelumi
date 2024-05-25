@@ -52,12 +52,12 @@ interface Breadcrumbs {
   data: undefined
 }
 
-interface SkillFindTechLogo {
-  cat: 'SkillFindTechLogo'
+interface LogoIcon {
+  cat: 'LogoIcon'
   data?: { scale: number }
 }
 
-type RenderNodeData = string | string[] | ObjectNode | Author | Index | QuestionIndex | SkillFindTechLogo
+type RenderNodeData = string | string[] | ObjectNode | Author | Index | QuestionIndex | LogoIcon
 
 type RenderNodeProps = {
   node: RenderNodeData
