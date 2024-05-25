@@ -1,10 +1,13 @@
+@import '../../../../posting/components/index/components/tile/styles/styles.scss';
+
 #user-postings-index {
   ul {
     max-width: 600px;
     margin: 0 auto;
     list-style-type: none;
     li {
-      margin-top: 50px;
+      // margin-top: 50px;
+      margin: 50px 20px 0;
       .id {
         background: #f8f9f9;
         display: inline-block;
@@ -15,6 +18,7 @@
         font-family: monospace;
       }
       .postings-index-tile {
+        @extend %postings-index-tile;
         margin-top: 10px;
         border: 1px solid #b3b6b7;
         box-shadow: none;
