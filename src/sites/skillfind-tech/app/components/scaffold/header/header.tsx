@@ -11,6 +11,7 @@ import { useApp } from '../../../../../shared/app/functions/store/use-app'
 import { useUser } from '../../../../../shared/app/functions/store/use-user'
 import { AddPostingLink } from './components/links/components/add-posting/add-posting.link'
 import { Account } from './components/account/account'
+import { SideMenu } from './components/side-menu/side-menu'
 
 interface HeaderInterface {
   (props: {}): JSX.Element
@@ -26,6 +27,7 @@ const Header: HeaderInterface = props => {
     <header id='header'>
       <div className='inner'>
         <LogoName />
+        {isMobile && <SideMenu />}
         <LangSwitch />
         {!authorized && !isMobile && <SignUpLink />}
         {!authorized && !isMobile && <SignInLink />}

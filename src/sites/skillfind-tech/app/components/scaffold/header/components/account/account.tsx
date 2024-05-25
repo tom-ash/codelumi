@@ -4,6 +4,7 @@ import { SVG } from '../../../../../../../shared/app/components/support/svg/svg'
 import { SignOutButton } from './components/sign-out/sign-out'
 import { SettingsLink } from '../links/components/settings/settings.link'
 import { MyPostings } from './components/my-postings/my-postings'
+import { useApp } from '../../../../../../../shared/app/functions/store/use-app'
 
 export const Account = () => {
   const {
