@@ -6,7 +6,7 @@ import { LangSwitch } from '../../../../../shared/app/components/support/lang-sw
 import { FloatClear } from '../../../../../shared/app/components/support/float-clear/float-clear'
 import { SignUpLink } from './components/links/components/sign-up/sign-up.link'
 import { SignInLink } from './components/links/components/sign-in/sign-in.link'
-import { SignOutButton } from './components/links/components/sign-out/sign-out'
+import { SignOutButton } from './components/account/components/sign-out/sign-out'
 import { useApp } from '../../../../../shared/app/functions/store/use-app'
 import { useUser } from '../../../../../shared/app/functions/store/use-user'
 import { AddPostingLink } from './components/links/components/add-posting/add-posting.link'

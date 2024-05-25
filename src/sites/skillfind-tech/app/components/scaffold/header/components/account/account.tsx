@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useLinks } from '../../../../../../../shared/app/functions/store/use-links'
 import { SVG } from '../../../../../../../shared/app/components/support/svg/svg'
-import { SignOutButton } from '../links/components/sign-out/sign-out'
+import { SignOutButton } from './components/sign-out/sign-out'
 import { SettingsLink } from '../links/components/settings/settings.link'
+import { MyPostings } from './components/my-postings/my-postings'
 
 export const Account = () => {
   const {
@@ -33,6 +34,7 @@ export const Account = () => {
             e.preventDefault()
           }}
         >
+          <MyPostings />
           <SettingsLink />
           <SignOutButton />
         </div>
