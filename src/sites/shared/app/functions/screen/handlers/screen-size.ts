@@ -6,8 +6,8 @@ interface ScreenSizeHandler {
 
 export const screenSizeHandler: ScreenSizeHandler = args => {
   const { dispatch } = args
-  const screenWidth = window.innerWidth
-  const screenHeight = window.innerHeight
+  const screenWidth = window.screen.width
+  const screenHeight = window.screen.height
   const device = (() => {
     if (screenWidth > 1440) return 'largePc'
     if (screenWidth > 1200) return 'mediumPc'

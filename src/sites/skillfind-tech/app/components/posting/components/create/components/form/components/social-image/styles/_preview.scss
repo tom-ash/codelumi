@@ -1,0 +1,112 @@
+@import '../../../../../../show/styles/company';
+@import '../../../../../../common/location-and-cooperation-mode/styles/styles.scss';
+@import '../../../../../../common/remuneration/styles/styles.scss';
+@import '../../../../../../../../../../../shared/app/styles/media-breakpoints';
+
+%preview {
+  position: absolute;
+  // min-height: 630px;
+  &#social-image-preview {
+    position: absolute;
+    margin-top: 20px;
+  }
+  &#social-image-canvas {
+    position: fixed;
+    left: 10000px;
+  }
+  background: white;
+  width: 1200px;
+  transform-origin: top left;
+  outline: 1px solid gray;
+  padding-bottom: 10px;
+  .company {
+    @extend %company;
+    border-radius: 0;
+    height: 150px;
+    margin: 0;
+    .company-logo {
+      width: 200px;
+      height: 150px;
+      top: 60px;
+      left: 60px;
+      display: flex;
+      img {
+        max-height: 127px;
+        max-width: 170px;
+        margin: auto;
+      }
+    }
+    .business-name {
+      top: 60px;
+      left: 290px;
+      font-size: 32px;
+    }
+    .industry {
+      position: absolute;
+      top: 110px;
+      left: 290px;
+      color: white;
+      font-size: 20px;
+      svg {
+        top: 2.5px;
+        height: 18px;
+      }
+    }
+  }
+  .location-and-cooperation-mode {
+    @extend %location-and-cooperation-mode;
+    margin: 0 60px;
+    margin-top: 80px;
+    font-size: 24px;
+    svg {
+      height: 24px;
+    }
+  }
+  .contract-and-remuneration {
+    @extend %contract-and-remuneration;
+    margin-top: 50px;
+    margin-left: 60px;
+    left: 0;
+    padding: 0;
+    .b2b,
+    .employment {
+      margin-left: 0;
+      float: left;
+    }
+    .contract {
+      font-size: 20px;
+    }
+    .remuneration {
+      font-size: 40px;
+      .amount {
+        margin-right: 10px;
+      }
+      .currency {
+        margin-right: 10px;
+      }
+      .per {
+        font-size: 28px;
+      }
+    }
+  }
+  .skills {
+    position: relative;
+    margin: 0 0 60px 60px;
+    padding-top: 10px;
+    .skill {
+      float: left;
+      transform: scale(1.5);
+      transform-origin: bottom left;
+      width: 200px;
+      display: block;
+      margin-top: 60px !important;
+    }
+  }
+
+  @media #{$LARGE-PHONE} {
+    &#social-image-preview {
+      // position: relative;
+      // top: 0;
+    }
+  }
+}

@@ -6,9 +6,12 @@ import { useData } from '../../../../../../../../../../shared/app/functions/stor
 import { Preview } from './components/preview/preview'
 import { ColorPicker } from '../../../../../../../../../../shared/app/components/support/color-picker/color-picker'
 import { SectionHeading } from '../../../../../../../../../../shared/app/components/support/headings/section-heading'
+import { useApp } from '../../../../../../../../../../shared/app/functions/store/use-app'
 
 export const SocialImage = () => {
   useStyles(styles)
+
+  const { isMobile, screenWidth } = useApp()
 
   const {
     selectedSkills: skills,
@@ -40,22 +43,44 @@ export const SocialImage = () => {
     })
   }, [cooperationMode])
 
-  const logoSrc =
-    typeof logo === 'object'
-      ? logo.objectUrl
-      : `${logo}?salt=${Math.random()}`
+  const logoSrc = typeof logo === 'object' ? logo.objectUrl : `${logo}?salt=${Math.random()}`
+
+  const scale = isMobile ? (screenWidth - 60) / 1200 : 646 / 1200
+
+  let colorPickersHeight: number | undefined = 120
+  let previewHeight: number | undefined = 130
+
+  if (typeof document !== 'undefined') {
+    colorPickersHeight = document.getElementById('color-pickers')?.getBoundingClientRect().height
+    previewHeight = document.getElementById('social-image-preview')?.getBoundingClientRect().height
+  }
+
+  const sectionHeight = useMemo(() => {
+    if (colorPickersHeight && previewHeight) {
+      return colorPickersHeight + 80 + previewHeight
+    }
+
+    return undefined
+  }, [colorPickersHeight, previewHeight])
 
   return (
-    <section id='social-image'>
+    <section
+      id='social-image'
+      style={{
+        height: sectionHeight,
+      }}
+    >
       <SectionHeading name='socialImage' />
-      <ColorPicker
-        label='Background Color'
-        name='backgroundColor'
-      />
-      <ColorPicker
-        label='Text Color'
-        name='textColor'
-      />
+      <div id='color-pickers'>
+        <ColorPicker
+          label='Background Color'
+          name='backgroundColor'
+        />
+        <ColorPicker
+          label='Text Color'
+          name='textColor'
+        />
+      </div>
       <Preview
         id={'social-image-preview'}
         logo={logoSrc}
@@ -71,6 +96,7 @@ export const SocialImage = () => {
         employmentMin={employmentMin}
         employmentMax={employmentMax}
         skills={skills}
+        scale={scale}
       />
       <Preview
         id={'social-image-canvas'}

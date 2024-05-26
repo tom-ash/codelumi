@@ -1,0 +1,15 @@
+%application {
+  @extend %section;
+  .application-manner {
+    margin-top: 20px;
+  }
+  .text-input {
+    margin-left: 30px;
+    max-width: none;
+  }
+  &.error {
+    .instructions {
+      color: $ERROR-COLOR;
+    }
+  }
+}

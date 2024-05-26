@@ -17,9 +17,7 @@ const Share = loadable(() => import('./components/share/share'))
 const Definition = loadable(() => import('./components/definition/definition'))
 const Figure = loadable(() => import('./components/figure/figure'))
 
-const LogoIcon = loadable(
-  () => import('../../../../../skillfind-tech/app/components/scaffold/header/components/logo')
-)
+const LogoIcon = loadable(() => import('../../../../../skillfind-tech/app/components/scaffold/header/components/logo'))
 
 const SkillFindLogoLogoAndTitle = loadable(
   () => import('../../../../../skillfind-tech/app/components/scaffold/header/components/image/image')

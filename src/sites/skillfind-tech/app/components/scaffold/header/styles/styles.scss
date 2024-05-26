@@ -46,11 +46,13 @@
       position: fixed;
       z-index: 99;
       width: 0;
-      transition: width .3s ease-in-out;
+      transition: width 0.3s ease-in-out;
       right: -40px;
       background: white;
       top: 70px;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      box-shadow:
+        rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
       padding: 30px 20px;
       border-top-left-radius: 6px;
       border-bottom-left-radius: 6px;

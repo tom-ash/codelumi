@@ -29,14 +29,14 @@ export const Logo = () => {
         persistedPictures={[persistedLogo]}
         maxWidth={480}
         maxHeight={360}
-        onPictureSet={(pictures) => {
+        onPictureSet={pictures => {
           if (pictures && pictures.length) {
             if (!pictures[0].database) {
               setIsEdited(true)
             }
 
             setInputs({
-              logo: pictures[0]
+              logo: pictures[0],
             })
           } else {
             // setIsEdited(true)
@@ -48,43 +48,47 @@ export const Logo = () => {
         }}
       />
       <div className='buttons'>
-        {(isEdited  || !logo) && <button
-          className='cancel'
-          onClick={() => {
-            // TODO: Implement better solution.
-            location.reload()
-          }}
-        >
-          {cancel}
-        </button>}
-        {isEdited && <button
-          className='save'
-          onClick={async () => {
-            if (logo) {
-              const abc = await saveBlob({
-                apiUrl: API_URL,
-                blob: logo.blob,
-                path: 'temporary',
-                key: '',
-                randomizeKey: true,
-                fileType: 'png',
-                mimeType: 'image/png',
-              })
-
-              console.log('abc', abc)
-
-              await patch({
-                path: `user/update/logo`,
-                body: { value: abc.database },
-              })
-
+        {(isEdited || !logo) && (
+          <button
+            className='cancel'
+            onClick={() => {
               // TODO: Implement better solution.
               location.reload()
-            }
-          }}
-        >
-          {save}
-        </button>}
+            }}
+          >
+            {cancel}
+          </button>
+        )}
+        {isEdited && (
+          <button
+            className='save'
+            onClick={async () => {
+              if (logo) {
+                const abc = await saveBlob({
+                  apiUrl: API_URL,
+                  blob: logo.blob,
+                  path: 'temporary',
+                  key: '',
+                  randomizeKey: true,
+                  fileType: 'png',
+                  mimeType: 'image/png',
+                })
+
+                console.log('abc', abc)
+
+                await patch({
+                  path: `user/update/logo`,
+                  body: { value: abc.database },
+                })
+
+                // TODO: Implement better solution.
+                location.reload()
+              }
+            }}
+          >
+            {save}
+          </button>
+        )}
         <FloatClear />
       </div>
     </div>

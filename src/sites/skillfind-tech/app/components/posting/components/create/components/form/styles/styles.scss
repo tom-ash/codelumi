@@ -1,14 +1,22 @@
 @import 'react-quill/dist/quill.snow.css';
-@import '../../../../../../../styles/headings/main-heading';
 @import '../../../../../../../styles/colors.scss';
-@import '../../../../../../user/components/new/components/form/styles/styles.scss';
-@import './section.scss';
+@import '../../../../../../../styles/headings/main-heading';
 @import '../../../../../../../styles/inputs/text.scss';
+@import './section.scss';
+@import './instructions';
+@import '../../../../../../../../../shared/app/styles/media-breakpoints';
+@import '../components/skill-selector/styles/styles.scss';
+@import '../components/description/styles/styles.scss';
+@import '../components/contracts/styles/styles.scss';
+@import '../components/poster/styles/styles.scss';
+@import '../components/social-image/styles/styles.scss';
+@import '../components/application/styles/styles.scss';
+@import '../components/submit/styles/styles.scss';
 
-#listing-create-form {
+#postings-new-form {
   max-width: 768px;
   margin: 0 auto;
-  padding: 60px;
+  padding: 40px;
   background: white;
   border-radius: 3px;
   border: 1px solid lightgray;
@@ -20,68 +28,37 @@
     @extend %main-heading;
     margin-bottom: 30px;
   }
-
   h2 {
     margin-top: 0;
     font-size: 19px;
   }
   .instructions {
-    margin-top: 24px;
-    &.error {
-      color: $ERROR-COLOR;
-    }
+    @extend %instructions;
+  }
+  #skills {
+    @extend %skills;
   }
   .description {
-    @extend %section;
-    .pl,
-    .en {
-      margin-top: 24px;
-      .quill {
-        margin-top: 24px;
-        .ql-container {
-          min-height: 160px;
-        }
-      }
-    }
+    @extend %description;
   }
-  .poster {
-    @extend %section;
-    .main-heading {
-      // TODO: Remove from DOM.
-      display: none;
-    }
+  .contracts {
+    @extend %contracts;
   }
-  .users-new-form {
-    @extend %users-new-form;
-    max-width: 320px;
-    padding-top: 20px;
+  #poster {
+    @extend %poster;
   }
-  .submit-button {
-    margin-top: 24px;
-    .input {
-      display: block;
-      margin: 0 auto;
-      padding: 12px;
-      border: none;
-      background: black;
-      color: white;
-      border-radius: 5px;
-      font-size: 15px;
-    }
+  #social-image {
+    @extend %social-image;
   }
   .application {
-    @extend %section;
-    .application-manner {
-      margin-top: 20px;
-    }
-    .text-input {
-      margin-left: 30px;
-      max-width: none;
-    }
-    &.error {
-      .instructions {
-        color: $ERROR-COLOR;
-      }
-    }
+    @extend %application;
+  }
+  .submit-button {
+    @extend %submit-button;
+  }
+  @media #{$LARGE-PHONE} {
+    padding: 0;
+    padding: 30px;
+    border: none;
   }
 }

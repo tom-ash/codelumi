@@ -1,0 +1,14 @@
+@import '../../../../../../../../user/components/new/components/form/styles/styles.scss';
+
+%poster {
+  @extend %section;
+  .main-heading {
+    // TODO: Remove from DOM.
+    display: none;
+  }
+  .users-new-form {
+    @extend %users-new-form;
+    max-width: 320px;
+    padding-top: 20px;
+  }
+}

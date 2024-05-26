@@ -29,6 +29,7 @@ interface PreviewInterface {
     employmentMax?: number
     backgroundColor: string
     textColor: string
+    scale?: number
   }): React.ReactElement
 }
 
@@ -48,12 +49,18 @@ export const Preview: PreviewInterface = props => {
     employmentMin,
     employmentMax,
     skills,
+    scale,
   } = props
 
   return (
     <div
       className='preview'
       id={id}
+      {...(scale && {
+        style: {
+          transform: `scale(${scale})`,
+        },
+      })}
     >
       {logo && businessName && industry && (
         <Company

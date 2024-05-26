@@ -25,9 +25,7 @@ export const SideMenu = () => {
 
   return (
     <div className={classNames.join(' ')}>
-      <button
-        onClick={() => setControl({ isSideMenuOpen: !isOpen })}
-      >
+      <button onClick={() => setControl({ isSideMenuOpen: !isOpen })}>
         <div className='bar' />
         <div className='bar' />
         <div className='bar' />

@@ -1,134 +1,155 @@
 @import '../../../../../../../../../styles/colors.scss';
+@import '../../../../../../../../../../../shared/app/styles/media-breakpoints';
 
-#skills {
+%skills {
   &.error {
     h2 {
       color: $ERROR-COLOR;
     }
   }
-}
-
-#skill-selector {
-  width: 100%;
-  height: 408px;
-  border-radius: 4px;
-  margin-top: 24px;
-  #selectable-skills-container {
-    float: left;
-    height: 100%;
-  }
-  #selected-skills-container {
-    float: left;
-    height: 100%;
-  }
-  label {
-    display: block;
-    height: 36px;
-    font-size: 15px;
-    font-weight: bold;
-  }
-  #selectable-skills {
-    height: calc(100% - 36px);
-    min-width: 240px;
-    width: 280px;
-    border: 1px solid #424949;
+  #skill-selector {
+    width: 100%;
+    height: 408px;
     border-radius: 4px;
-    background: #fbfcfc;
-    padding: 30px 30px 0 30px;
-    display: flex;
-    flex-direction: column;
-    margin-right: 20px;
-    .text-input {
-      position: relative;
-      width: 100%;
-      svg {
-        top: 6px;
-        height: 16px;
-        position: absolute;
-        fill: #424949;
-      }
-      input {
-        padding-left: 24px;
-        display: block;
+    margin-top: 24px;
+    #selectable-skills-container {
+      float: left;
+      height: 100%;
+    }
+    #selected-skills-container {
+      float: left;
+      height: 100%;
+    }
+    label {
+      display: block;
+      height: 36px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    #selectable-skills {
+      height: calc(100% - 36px);
+      min-width: 240px;
+      width: 280px;
+      border: 1px solid #424949;
+      border-radius: 4px;
+      background: #fbfcfc;
+      padding: 30px 30px 0 30px;
+      display: flex;
+      flex-direction: column;
+      margin-right: 20px;
+      .text-input {
+        position: relative;
         width: 100%;
-        height: 30px;
-        background: none;
-        border: none;
-        border-bottom: 2px solid #424949;
-        outline: none;
-        font-size: 16px;
+        svg {
+          top: 6px;
+          height: 16px;
+          position: absolute;
+          fill: #424949;
+        }
+        input {
+          padding-left: 24px;
+          display: block;
+          width: 100%;
+          height: 30px;
+          background: none;
+          border: none;
+          border-bottom: 2px solid #424949;
+          outline: none;
+          font-size: 16px;
+        }
+      }
+      .skill-list {
+        margin-top: 30px;
+        overflow: hidden;
+        overflow-y: auto;
+        border-radius: 3px;
+        ::-webkit-scrollbar {
+          display: none;
+        }
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        .skill {
+          .level-name {
+            height: 20px;
+          }
+        }
       }
     }
-    .skill-list {
-      margin-top: 30px;
+    #selected-skills {
+      height: calc(100% - 36px);
+      width: 260px;
+      padding: 30px;
+      background: #f8f9f9;
+      border-radius: 4px;
       overflow: hidden;
       overflow-y: auto;
-      border-radius: 3px;
       ::-webkit-scrollbar {
         display: none;
       }
       -ms-overflow-style: none;
       scrollbar-width: none;
       .skill {
+        margin-top: 10px;
         .level-name {
           height: 20px;
         }
-      }
-    }
-  }
-  #selected-skills {
-    height: calc(100% - 36px);
-    width: 260px;
-    padding: 30px;
-    background: #f8f9f9;
-    border-radius: 4px;
-    overflow: hidden;
-    overflow-y: auto;
-    ::-webkit-scrollbar {
-      display: none;
-    }
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    .skill {
-      margin-top: 10px;
-      .level-name {
-        height: 20px;
-      }
-      .delete,
-      .up,
-      .down {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        height: 22px;
-        width: 22px;
-        cursor: pointer;
-        svg {
-          height: 100%;
-        }
-        &:hover {
+        .delete,
+        .up,
+        .down {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          height: 22px;
+          width: 22px;
+          cursor: pointer;
           svg {
-            fill: gray;
+            height: 100%;
+          }
+          &:hover {
+            svg {
+              fill: gray;
+            }
+          }
+        }
+        .delete {
+          left: 115px;
+          fill: red;
+        }
+        .up {
+          left: 147px;
+          height: 18px;
+          svg {
+            transform: rotate(-90deg);
+          }
+        }
+        .down {
+          left: 179px;
+          height: 18px;
+          svg {
+            transform: rotate(90deg);
           }
         }
       }
-      .delete {
-        left: 115px;
-        fill: red;
-      }
-      .up {
-        left: 147px;
-        height: 18px;
-        svg {
-          transform: rotate(-90deg);
+    }
+
+    @media #{$LARGE-PHONE} {
+      height: auto;
+
+      #selectable-skills-container {
+        float: none;
+        // height: 360px;
+        #selectable-skills {
+          width: 100%;
+          height: 336px;
         }
       }
-      .down {
-        left: 179px;
-        height: 18px;
-        svg {
-          transform: rotate(90deg);
+      #selected-skills-container {
+        float: none;
+        margin-top: 20px;
+        #selected-skills {
+          width: 100%;
+          height: auto;
         }
       }
     }

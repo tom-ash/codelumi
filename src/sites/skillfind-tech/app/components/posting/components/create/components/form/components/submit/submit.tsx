@@ -1,16 +1,16 @@
 import React from 'react'
 import { ManagedButton } from 'managed-inputs'
-import { submit } from '../functions/submit'
-import { useApp } from '../../../../../../../../../shared/app/functions/store/use-app'
-import { useTexts } from '../../../../../../../../../shared/app/functions/store/use-texts'
-import { useInputs } from '../../../../../../../../../shared/app/functions/store/use-inputs'
+import { submit } from '../../functions/submit'
+import { useApp } from '../../../../../../../../../../shared/app/functions/store/use-app'
+import { useTexts } from '../../../../../../../../../../shared/app/functions/store/use-texts'
+import { useInputs } from '../../../../../../../../../../shared/app/functions/store/use-inputs'
 import { useDispatch } from 'react-redux'
-import { useUser } from '../../../../../../../../../shared/app/functions/store/use-user'
-import { useData } from '../../../../../../../../../shared/app/functions/store/use-data'
+import { useUser } from '../../../../../../../../../../shared/app/functions/store/use-user'
+import { useData } from '../../../../../../../../../../shared/app/functions/store/use-data'
 import BeatLoader from 'react-spinners/BeatLoader'
-import { useControl } from '../../../../../../../../../shared/app/functions/store/use-control'
+import { useControl } from '../../../../../../../../../../shared/app/functions/store/use-control'
 
-const SubmitButton = () => {
+export const Submit = () => {
   const { lang } = useApp()
   const { submitButtonLabel } = useTexts()
   const inputs = useInputs()
@@ -18,9 +18,7 @@ const SubmitButton = () => {
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
   const setControl = (value: any) => dispatch({ type: 'control', value })
   const { postingId } = useData()
-
   const { authorized } = useUser()
-
   const { isSubmitting } = useControl()
 
   const {
@@ -50,7 +48,6 @@ const SubmitButton = () => {
     logo,
     backgroundColor,
     textColor,
-
     formApplicationManner,
     linkApplicationManner,
     applicationLink,
@@ -61,8 +58,6 @@ const SubmitButton = () => {
     termsOfServiceConsentLabel,
     logoInputMissingError: logoError,
   } = useTexts()
-
-  console.log('applicationLinkError', applicationLinkError)
 
   const label = isSubmitting ? (
     <BeatLoader
@@ -121,5 +116,3 @@ const SubmitButton = () => {
 
   return <ManagedButton {...buttonProps} />
 }
-
-export default SubmitButton

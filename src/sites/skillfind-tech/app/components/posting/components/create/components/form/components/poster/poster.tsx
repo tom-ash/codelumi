@@ -7,7 +7,7 @@ export const Poster = () => {
   const { posterHeading: heading } = useTexts()
 
   return (
-    <section className='poster'>
+    <section id='poster'>
       <h2>{heading}</h2>
       <Form isSubmittable={false} />
     </section>

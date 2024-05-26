@@ -12,6 +12,7 @@ import { Instructions } from '../../../../../../../../../../shared/app/component
 import { TextInput } from '../../../../../../../../../../shared/app/components/support/text-input-semanticize/text-input'
 import { SVG } from '../../../../../../../../../../shared/app/components/support/svg/svg'
 import escapeRegExp from 'lodash/escapeRegExp'
+import { FloatClear } from '../../../../../../../../../../shared/app/components/support/float-clear/float-clear'
 
 function Skills() {
   useStyles(styles)
@@ -219,7 +220,7 @@ function Skills() {
             ))}
           </div>
         </div>
-        <div className='float-clear' />
+        <FloatClear />
       </div>
     </section>
   )
