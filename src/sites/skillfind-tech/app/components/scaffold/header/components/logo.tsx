@@ -12,7 +12,7 @@ export const LogoName: LogoInterface = props => {
 
   const label = (
     <div id='logo-name'>
-      <span>skillfind.</span>
+      <span>skillfind</span>
       <span className='tech'>tech</span>
     </div>
   )

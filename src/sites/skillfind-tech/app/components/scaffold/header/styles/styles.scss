@@ -13,12 +13,21 @@
   background: $LIGHT_THEME_HEADER_BACKGROUND_COLOR;
   margin: 0 auto;
   border-bottom: 1px solid $LIGHT_THEME_HEADER_BORDER_COLOR;
+  #logo {
+    .logo-icon {
+      position: absolute;
+      scale: 0.035;
+      top: 32px;
+      transform-origin: top left;
+      left: 74px;
+    }
+  }
   .side-menu {
     float: right;
     margin: 0 6px;
     margin-top: 16px;
     margin-left: 32px;
-    margin-right: 16px;
+    // margin-right: 16px;
     button {
       border: none;
       background: none;
@@ -209,4 +218,12 @@
       }
     }
   }
+
+  @media #{$LARGE-PHONE} {
+    padding: 0 10px;
+  }
+  .lang-switch {
+    border-left: none;
+  }
+
 }

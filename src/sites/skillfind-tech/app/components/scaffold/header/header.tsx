@@ -12,6 +12,7 @@ import { useUser } from '../../../../../shared/app/functions/store/use-user'
 import { AddPostingLink } from './components/links/components/add-posting/add-posting.link'
 import { Account } from './components/account/account'
 import { SideMenu } from './components/side-menu/side-menu'
+import LogoIcon from './components/image/image'
 
 interface HeaderInterface {
   (props: {}): JSX.Element
@@ -26,7 +27,10 @@ const Header: HeaderInterface = props => {
   return (
     <header id='header'>
       <div className='inner'>
-        <LogoName />
+        <div id='logo'>
+          <LogoIcon />
+          <LogoName />
+        </div>
         {isMobile && <SideMenu />}
         <LangSwitch />
         {!authorized && !isMobile && <SignUpLink />}

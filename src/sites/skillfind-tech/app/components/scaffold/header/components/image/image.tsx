@@ -8,10 +8,6 @@ export const LogoIcon = () => {
   return (
     <div className='logo-icon'>
       <div className='magnifying-glass'>
-        <div className='zero-one'>
-          <span className='zero'>0</span>
-          <span className='one'>1</span>
-        </div>
       </div>
       <div className='handle' />
     </div>

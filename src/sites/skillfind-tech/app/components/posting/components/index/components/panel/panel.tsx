@@ -59,7 +59,7 @@ export const Panel: PanelInterface = () => {
           }
         }}
       >
-        <LogoIcon />
+        <SVG name='magnifyingGlass' />
       </Select>
       <section className='selected-skills'>
         {selectedSkills.map((selectedSkill: any) => {
