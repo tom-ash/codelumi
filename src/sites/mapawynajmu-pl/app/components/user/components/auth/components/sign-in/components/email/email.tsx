@@ -30,7 +30,7 @@ const UserAuthEmail = () => {
   }
 
   return (
-    <div id='user-auth-email'>
+    <div id='visitor-users-auth-email'>
       <Heading {...headingProps} />
       <Line />
       <form>

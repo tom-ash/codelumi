@@ -2,11 +2,13 @@
 @import '../../../../../../../../../styles/headings/main-heading';
 @import '../../../../../../../../../styles/inputs/text';
 @import '../../../../../../../../../styles/inputs/button.scss';
+@import '../../../../../../../../../../../shared/app/styles/media-breakpoints';
 
-#user-auth-email {
+#visitor-users-auth-email {
   @extend %container;
   position: relative;
-  padding: 20px 40px 40px;
+  padding: 40px;
+  margin-top: 60px;
   .main-heading {
     @extend %main-heading;
   }
@@ -31,5 +33,9 @@
         color: gray;
       }
     }
+  }
+  @media #{$LARGE-PHONE} {
+    margin-top: 0;
+    border: none;
   }
 }
