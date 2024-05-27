@@ -1,10 +1,11 @@
-@import '../../../../../styles/container';
 @import '../components/form/styles/styles';
+@import '../components/verify/styles/styles.scss';
 
 #users-new {
-  @extend %container;
-  padding: 40px;
   .users-new-form {
     @extend %users-new-form;
+  }
+  #visitor-users-verify {
+    @extend %visitor-users-verify;
   }
 }

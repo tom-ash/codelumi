@@ -9,7 +9,7 @@ export const Verify = () => {
   const { lang } = useApp()
 
   return (
-    <div className='verify'>
+    <div id='visitor-users-verify'>
       <h1>{heading}</h1>
       <div className='instructions'>{instructions}</div>
       <VerificationInput

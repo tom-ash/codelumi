@@ -1,25 +1,22 @@
+@import '../../../../../../../styles/container';
 @import '../../../../../../../styles/headings/main-heading';
 @import '../../../../../../../styles/inputs/text';
 @import '../../../../../../../styles/inputs/select.scss';
 @import '../../../../../../../styles/inputs/button';
 @import '../../../../../../../styles/inputs/checkbox.scss';
 @import '../../../../../../../styles/inputs/text.scss';
+@import '../../../../../../../../../shared/app/styles/media-breakpoints';
 
 %users-new-form {
+  @extend %container;
+  margin-top: 60px;
+  padding: 40px;
   .main-heading {
     @extend %main-heading;
     svg {
       top: 2px;
     }
   }
-  fieldset {
-    border: none;
-    padding: 0;
-  }
-  .logo {
-    margin-top: 22px;
-  }
-
   .text-input {
     @extend %text-input;
   }
@@ -28,6 +25,13 @@
   }
   .checkbox {
     @extend %checkbox;
+  }
+  fieldset {
+    border: none;
+    padding: 0;
+  }
+  .logo {
+    margin-top: 22px;
   }
   .terms-of-service-consent {
     margin-top: 20px;
@@ -39,5 +43,10 @@
   .submit-button {
     @extend %button;
     margin-top: 20px;
+  }
+  @media #{$LARGE-PHONE} {
+    margin-top: 0;
+    border: none;
+    border-radius: 0;
   }
 }
