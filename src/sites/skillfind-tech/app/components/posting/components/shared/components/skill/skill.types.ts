@@ -19,8 +19,6 @@ export interface SkillProps {
   name: string
   level: number
   view: SkillView
-  unselectSkill?: any // TODO!
   children?: ReactNode
-
   onLevelClicked?(params: { name: string; level: number }): void
 }

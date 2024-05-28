@@ -27,7 +27,9 @@ function Skill(props: SkillProps) {
   return (
     <div className='skill'>
       <div className='name'>{name}</div>
-      <SkillLevels {...levelsProps} />
+      <SkillLevels
+        {...levelsProps}
+      />
       <div className='level-name'>{levelName}</div>
       {children}
     </div>

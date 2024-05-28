@@ -9,54 +9,47 @@ import { FloatClear } from '../../../../../../../../shared/app/components/suppor
 import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
 import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
 import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
-import LogoIcon from '../../../../../scaffold/header/components/image/image'
+import { useDispatch } from 'react-redux'
+import { querySkills } from './helpers/query-skills'
 
 interface PanelInterface {
   (params: {}): React.ReactElement
 }
 
-interface SelectedSkill {
+export interface SelectableSkill {
   value: string
   text: string
   url: string
-  level: number
 }
+
+export type SelectedSkill = SelectableSkill & { level: string }
 
 export const Panel: PanelInterface = () => {
   useStyles(styles)
 
   const { skillSelectPlaceholder } = useTexts()
-  const { skillOptions, selectedSkills } = useInputs()
+  const { selectableSkills, selectedSkills } = useInputs()
+  const dispatch = useDispatch()
+  const setInputs = (value: any) => dispatch({ type: 'inputs', value })
 
   return (
     <div className='panel'>
       <Select
         className='select'
-        options={skillOptions}
+        options={selectableSkills}
         value={''}
         placeholder={skillSelectPlaceholder}
         searchable={true}
         onSelect={value => {
           const newSelectedSkills = [...selectedSkills]
-          const newSelectedSkill = skillOptions.find((skillOption: any) => {
-            return skillOption.value === value
+          const newSelectedSkill = selectableSkills.find((selectableSkill: SelectableSkill) => {
+            return selectableSkill.value === value
           })
 
           newSelectedSkills.push({ ...newSelectedSkill, level: 0 })
 
-          if (newSelectedSkills.length > 0) {
-            let queryParameters: string[] = []
-
-            newSelectedSkills.map((selectedSkill: SelectedSkill) => {
-              const { url, level } = selectedSkill
-
-              queryParameters.push(`${url}=${level}`)
-            })
-
-            changeUrl({ href: `?${queryParameters.join('&')}` })
-          } else {
-            changeUrl({ href: '/' })
-          }
+          setInputs({ selectedSkills: newSelectedSkills })
+          querySkills(newSelectedSkills)
         }}
       >
         <SVG name='magnifyingGlass' />
@@ -67,33 +60,25 @@ export const Panel: PanelInterface = () => {
 
           return (
             <Skill
+              onLevelClicked={(skill) => {
+                const newSelectedSkills: SelectedSkill[] = selectedSkills.map((selectedSkill: SelectedSkill) => {
+                  if (skill.name === selectedSkill.value) {
+                    return ({
+                      ...selectedSkill,
+                      level: skill.level
+                    })
+                  }
+
+                  return selectedSkill
+                })
+
+                setInputs({ selectedSkills: newSelectedSkills })
+                querySkills(newSelectedSkills)
+              }}
               key={value}
               name={value}
               level={level}
               view={SkillView.INDEX_PANEL}
-              // @ts-ignore
-              selectSkill={({ name, level }) => {
-                const newSelectedSkills = [...selectedSkills]
-                const newSelectedSkill = skillOptions.find((skillOption: any) => {
-                  return skillOption.value === name
-                })
-
-                newSelectedSkills.push({ ...newSelectedSkill, level })
-
-                if (newSelectedSkills.length > 0) {
-                  let queryParameters: string[] = []
-
-                  newSelectedSkills.map((selectedSkill: SelectedSkill) => {
-                    const { url, level } = selectedSkill
-
-                    queryParameters.push(`${url}=${level}`)
-                  })
-
-                  changeUrl({ href: `?${queryParameters.join('&')}` })
-                } else {
-                  changeUrl({ href: '/' })
-                }
-              }}
             />
           )
         })}
