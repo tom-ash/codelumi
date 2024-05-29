@@ -4,101 +4,58 @@
 
 #visitor-page-index {
   position: relative;
-  margin: 0 auto;
-  max-width: 1400px;
-  .skills,
-  .articles {
-    margin-top: 80px;
-    > h2 {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 22px;
-      line-height: 36px;
-      margin-bottom: 24px;
+  margin: 60px auto 0;
+  > h2 {
+    font-size: 22px;
+    line-height: 36px;
+    margin-bottom: 24px;
+  }
+  .splide__arrow {
+    scale: 2;
+    &--prev {
+      transform-origin: left;
     }
-    .splide__arrow {
-      scale: 2;
-      &--prev {
-        transform-origin: left;
-      }
-      &--next {
-        transform-origin: right;
-      }
+    &--next {
+      transform-origin: right;
     }
   }
-  .skills {
-    .skill {
-      position: relative;
-      background: white;
-      overflow: hidden;
-      line-height: 1.5;
-      border: 1px solid $LIGHT_THEME_CONTAINER_BORDER_COLOR;
-      border-radius: 12px;
-      a {
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-      }
-      .image {
-        background: lightgray;
+  .skill {
+    position: relative;
+    background: white;
+    overflow: hidden;
+    line-height: 1.5;
+    border: 1px solid $LIGHT_THEME_CONTAINER_BORDER_COLOR;
+    border-radius: 12px;
+    a {
+      width: 100%;
+    }
+    .image {
+      width: 100%;
+      background: lightgray;
+      aspect-ratio: 1;
+      img {
+        width: 100%;
         aspect-ratio: 1;
       }
-      .title {
-        font-size: 18px;
-        font-weight: bold;
-        text-align: center;
-        font-family: 'IBM Plex Mono', monospace;
-        padding: 24px 12px;
-        height: 96px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .description {
-        padding: 0 18px;
-        font-size: 14px;
-        font-style: italic;
-        line-height: 1.4;
-        height: 112px;
-        overflow: hidden;
-      }
     }
-  }
-  .articles {
-    .article {
+    .title {
       font-size: 16px;
-      line-height: 24px;
-      font-weight: 600;
-      font-weight: normal;
+      font-weight: bold;
+      text-align: center;
       font-family: 'IBM Plex Mono', monospace;
-      border-radius: 12px;
+      height: 72px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .description {
+      padding: 0 20px;
+      font-size: 12px;
+      font-style: italic;
+      line-height: 1.4;
+      height: 60px;
       overflow: hidden;
-      border: 1px solid $LIGHT_THEME_CONTAINER_BORDER_COLOR;
-      a {
-        width: 100%;
-        .cover {
-          display: block;
-          width: 100%;
-          @media #{$LARGE-PHONE} {
-            height: 220px;
-          }
-          img {
-            margin-left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            aspect-ratio: 16/9;
-            @media #{$LARGE-PHONE} {
-              height: 240px;
-            }
-          }
-        }
-        .title {
-          font-size: 18px;
-          background: white;
-          padding: 20px;
-          height: 88px;
-        }
-      }
+      background: none;
     }
   }
 }

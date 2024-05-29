@@ -9,8 +9,9 @@ interface DeviceConfigItem {
   perPage: number
   gap: number | string
   type?: string //'slide' | 'loop' | 'fade',
-  padding?: number | string
+  padding?: number | string | { left?: number; right?: number }
   pagination?: boolean
+  arrows?: boolean
 }
 
 interface DeviceConfig {
@@ -39,8 +40,7 @@ export const Slider: SliderInterface = props => {
   const { slides, Slide, deviceConfig, commonProps } = props
   const app = useApp()
   const device = app.device as Device
-  const { perPage, gap, type, padding, pagination } = deviceConfig[device]
-
+  const { perPage, gap, type, padding, pagination, arrows = false } = deviceConfig[device]
   const [currentIndex, setCurrentIndex] = useState(0)
 
   return (
@@ -52,8 +52,7 @@ export const Slider: SliderInterface = props => {
           type,
           padding,
           pagination,
-          arrows: false,
-          lazyLoad: 'nearby',
+          arrows,
         }}
         onMoved={e => setCurrentIndex(e.index)}
       >
