@@ -1,5 +1,12 @@
 %drag-and-drop-container {
   position: relative;
+  // .required {
+  //   height: 6px;
+  //   margin-left: 4px;
+  //   position: relative;
+  //   top: -5px;
+  //   fill: #C0392B;
+  // }
   .drag-and-drop {
     position: relative;
     height: 40px;
@@ -14,6 +21,7 @@
       left: 0;
       opacity: 0;
       z-index: 2;
+      background: none;
     }
     cursor: pointer !important;
     svg {

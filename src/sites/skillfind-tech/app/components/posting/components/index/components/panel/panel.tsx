@@ -60,13 +60,13 @@ export const Panel: PanelInterface = () => {
 
           return (
             <Skill
-              onLevelClicked={(skill) => {
+              onLevelClicked={skill => {
                 const newSelectedSkills: SelectedSkill[] = selectedSkills.map((selectedSkill: SelectedSkill) => {
                   if (skill.name === selectedSkill.value) {
-                    return ({
+                    return {
                       ...selectedSkill,
-                      level: skill.level
-                    })
+                      level: skill.level,
+                    }
                   }
 
                   return selectedSkill

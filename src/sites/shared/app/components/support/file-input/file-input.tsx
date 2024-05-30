@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { DragAndDrop } from './components/drag-and-drop/drag-and-drop'
+import { SVG } from '../svg/svg'
 
 interface FileInputInterface {
   (props: {
@@ -8,11 +9,13 @@ interface FileInputInterface {
     icon: string
     instructions: string
     onFilesSet(files: File[]): void
+    required?: boolean
+    error?: string
   }): React.ReactElement
 }
 
 export const FileInput: FileInputInterface = props => {
-  const { label, limit, icon, instructions, onFilesSet } = props
+  const { label, limit, icon, instructions, onFilesSet, required = false, error } = props
 
   const [files, setFiles] = useState<File[]>([])
 
@@ -20,9 +23,24 @@ export const FileInput: FileInputInterface = props => {
     onFilesSet(files)
   }, [files])
 
+  const classNames = ['file-input']
+  if (error) {
+    classNames.push('error')
+  }
+
   return (
-    <div className='file-input'>
-      {label && <label>{label}</label>}
+    <div className={classNames.join(' ')}>
+      {label && (
+        <label>
+          {label}{' '}
+          {required && (
+            <SVG
+              name='dot'
+              className='required'
+            />
+          )}
+        </label>
+      )}
       <DragAndDrop
         files={files}
         limit={limit}
@@ -35,6 +53,11 @@ export const FileInput: FileInputInterface = props => {
           return <li>{file.name}</li>
         })}
       </ul>
+      {error && (
+        <div className='error'>
+          {error}
+        </div>
+      )}
     </div>
   )
 }

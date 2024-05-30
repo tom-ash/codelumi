@@ -7,8 +7,7 @@ export const LogoIcon = () => {
 
   return (
     <div className='logo-icon'>
-      <div className='magnifying-glass'>
-      </div>
+      <div className='magnifying-glass'></div>
       <div className='handle' />
     </div>
   )

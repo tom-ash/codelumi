@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { TextInput as SemanticTextInput } from 'semanticize'
 import { useInputs } from '../../../functions/store/use-inputs'
 import { useErrors } from '../../../functions/store/use-errors'
+import { SVG } from '../svg/svg'
 
 interface TextInputInterface {
   (props: {
@@ -13,6 +14,8 @@ interface TextInputInterface {
     validate?(params: any): void // TODO!
     children?: ReactNode
     disabled?: boolean
+    required?: boolean
+    optional?: boolean
     // placeholder?: string
     // className?: string
     // match?: RegExp
@@ -33,6 +36,8 @@ export const TextInput: TextInputInterface = props => {
     validate,
     children,
     disabled,
+    required = false,
+    optional = false,
     // classNames,
     // match,
     // onClick: onClickCallback,
@@ -74,14 +79,31 @@ export const TextInput: TextInputInterface = props => {
       id={id}
       value={value}
       className='text-input'
-      label={label}
+      label={
+        <>
+          {label}
+          {required && (
+            <SVG
+              name='dot'
+              className='required'
+            />
+          )}
+          {optional && (
+            <SVG
+              name='emptyDot'
+              className='optional'
+            />
+          )}
+        </>
+      }
       onFocus={onFocus}
       onChange={onChange}
       onBlur={onBlur}
       error={error}
       placeholder={placeholder}
-      children={children}
       disabled={disabled}
-    />
+    >
+      {children}
+    </SemanticTextInput>
   )
 }

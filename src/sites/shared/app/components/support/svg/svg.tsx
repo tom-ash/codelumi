@@ -2,16 +2,16 @@ import React, { useContext } from 'react'
 import { ReactReduxContext } from 'react-redux'
 
 interface SVGInterface {
-  (props: { name: string; fill?: string }): React.ReactElement | null
+  (props: { name: string; fill?: string; className?: string }): React.ReactElement | null
 }
 
 export const SVG: SVGInterface = props => {
   const { store } = useContext(ReactReduxContext)
-  const { getState, dispatch } = store
+  const { getState } = store
   const {
     assets: { svgs },
   } = getState()
-  const { name, fill } = props
+  const { name, fill, className } = props
 
   if (!svgs) return null
 
@@ -28,6 +28,7 @@ export const SVG: SVGInterface = props => {
       style={{
         fill,
       }}
+      className={className}
     >
       <path d={pathData} />
     </svg>

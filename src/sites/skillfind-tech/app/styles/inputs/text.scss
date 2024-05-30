@@ -10,6 +10,17 @@
     font-size: 15px;
     font-weight: bold;
     color: rgb(64, 64, 64);
+    .required,
+    .optional {
+      height: 6px;
+      margin-left: 4px;
+      position: relative;
+      top: -5px;
+      fill: #c0392b;
+    }
+    .optional {
+      fill: #2e86c1;
+    }
   }
   .input,
   input {

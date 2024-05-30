@@ -1,23 +1,22 @@
-import { changeUrl } from "../../../../../../../../../shared/app/functions/routes/changers/change-url"
-import { SelectedSkill } from "../panel"
+import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/change-url'
+import { SelectedSkill } from '../panel'
 
 interface QuerySkills {
   (selectedSkills: SelectedSkill[]): void
 }
 
-export const querySkills: QuerySkills = (selectedSkills) => {
-    if (selectedSkills.length > 0) {
-        let queryParameters: string[] = []
+export const querySkills: QuerySkills = selectedSkills => {
+  if (selectedSkills.length > 0) {
+    let queryParameters: string[] = []
 
-        selectedSkills.map((selectedSkill) => {
-          const { url, level } = selectedSkill
+    selectedSkills.map(selectedSkill => {
+      const { url, level } = selectedSkill
 
-          queryParameters.push(`${url}=${level}`)
-        })
+      queryParameters.push(`${url}=${level}`)
+    })
 
-        changeUrl({ href: `?${queryParameters.join('&')}` })
-      } else {
-        changeUrl({ href: '/' })
-      }
-
+    changeUrl({ href: `?${queryParameters.join('&')}` })
+  } else {
+    changeUrl({ href: '/' })
+  }
 }

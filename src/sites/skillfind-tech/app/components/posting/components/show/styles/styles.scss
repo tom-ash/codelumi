@@ -192,10 +192,30 @@
       margin-bottom: 8px;
       font-size: 14px;
     }
+    .required {
+      height: 6px;
+      margin-left: 4px;
+      position: relative;
+      top: -5px;
+      fill: #c0392b;
+    }
+    .drag-and-drop-container {
+      @extend %drag-and-drop-container;
+    }
+    .error {
+      color: $ERROR-COLOR;
+      font-size: 14px;
+    }
+    &.error {
+      .drag-and-drop-container {
+        .drag-and-drop {
+          border: 1px dashed $ERROR-COLOR;
+          background: $ERROR-BACKGROUND-COLOR;
+        }
+      }
+    }
   }
-  .drag-and-drop-container {
-    @extend %drag-and-drop-container;
-  }
+
   ul {
     list-style-type: none;
     margin-top: 8px;
