@@ -6,8 +6,8 @@ const Figure = (props: FigureProps) => {
 
   return (
     <figure>
-      <span>{content}</span>
       {caption && <figcaption>{caption}</figcaption>}
+      <span>{content}</span>
     </figure>
   )
 }

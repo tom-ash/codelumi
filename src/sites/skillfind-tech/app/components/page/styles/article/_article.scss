@@ -2,8 +2,8 @@
 @import './table-of-contents';
 @import '../../../../styles/colors';
 
-$DESKTOP-MARGIN: 32px;
-$MOBILE-MARGIN: 24px;
+$DESKTOP-MARGIN: 30px;
+$MOBILE-MARGIN: 20px;
 $PRE-MARGIN: 18px;
 
 %standard-margins {
@@ -20,13 +20,11 @@ $PRE-MARGIN: 18px;
   font-size: 18px;
   color: rgb(42, 42, 42);
   background: white;
-  border-radius: 12px;
+  border-radius: 6px;
   width: 100%;
   line-height: 1.5;
   padding: 0 0 $DESKTOP-MARGIN 0;
-
   border: 1px solid $LIGHT_THEME_CONTAINER_BORDER_COLOR;
-
   > section {
     margin-top: 64px;
     &:first-of-type {
@@ -59,10 +57,10 @@ $PRE-MARGIN: 18px;
   }
   .table-of-contents {
     @extend %table-of-contents;
-    margin: 32px $DESKTOP-MARGIN;
-    @media #{$LARGE-PHONE} {
-      margin: 32px $MOBILE-MARGIN;
-    }
+    margin: $PRE-MARGIN 0;
+    // @media #{$LARGE-PHONE} {
+    //   padding: 20px;
+    // }
   }
   .author {
     @extend %standard-margins;
@@ -96,14 +94,12 @@ $PRE-MARGIN: 18px;
   h2 + h3 {
     margin-top: 0;
   }
-
   a {
     color: #2471a3;
     &:hover {
       color: #3498db;
     }
   }
-
   p {
     @extend %standard-margins;
     code {
@@ -168,60 +164,57 @@ $PRE-MARGIN: 18px;
   header + .table-of-contents {
     margin-top: 48px;
   }
-
   pre {
     @extend %standard-margins;
   }
-
   .definition {
-    @extend %standard-margins;
+    margin: 0;
     background: #ebf5fb;
-    padding: 16px;
     border-radius: 3px;
-    border: 3px solid #3498db;
     dfn {
       font-weight: bold;
     }
     position: relative;
-    padding: 40px 16px 12px;
+    padding: 20px 30px;
+    margin-top: $PRE-MARGIN;
+    @media #{$LARGE-PHONE} {
+      padding: 20px;
+    }
   }
-
-  .definition::before {
-    content: 'Definition';
-    text-transform: uppercase;
-    position: absolute;
-    top: 0;
-    left: 16px;
-    margin: 0 auto;
-    background: #3498db;
-    color: white;
-    font-size: 8px;
-    font-weight: bold;
-    padding: 8px;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-    width: 104px;
-    text-align: center;
-  }
-
   figure {
-    @extend %standard-margins;
+    background: #fef9e7;
+    padding: 20px 30px;
+    margin-top: $PRE-MARGIN;
+    @media #{$LARGE-PHONE} {
+      padding: 20px;
+    }
     span {
       display: block;
       background: #fef9e7;
-      padding: 16px;
       border-radius: 3px;
-      border-left: 3px solid #edbb99;
       color: rgb(64, 64, 64);
     }
     figcaption {
       color: rgb(88, 88, 88);
-      font-size: 14px;
+      font-size: 13px;
       font-style: italic;
     }
   }
-
   @media #{$LARGE-PHONE} {
     border-radius: 0;
+  }
+  .index {
+    position: relative;
+    max-width: 768px;
+    margin-top: 32px;
+    li {
+      margin-bottom: 4px;
+    }
+    .link {
+      h2 {
+        font-size: 18px;
+        font-weight: normal;
+      }
+    }
   }
 }

@@ -3,39 +3,21 @@
 $padding-mobile: 18px;
 
 %table-of-contents {
-  margin-top: 56px;
   .inner-container {
     line-height: 1.25;
     background: rgb(255, 250, 250);
-    padding: 16px;
-    border: 3px solid #641e16;
-    border-radius: 3px;
-    color: black;
-    position: relative;
-    padding: 40px 16px 12px;
+    padding: 20px 30px;
+    @media #{$LARGE-PHONE} {
+      padding: 20px;
+    }
   }
   h2 {
-    width: 104px;
-    font-size: 14px;
-    line-height: 16px;
-    margin-bottom: 12px;
-    color: $PRIMARY-GREEN-COLOR;
     padding-bottom: 8px;
     margin: 0;
     @media #{$LARGE-PHONE} {
       margin: 0 0 16px;
     }
-    background-color: #641e16;
-    color: white;
-    padding: 8px;
-    position: absolute;
-    top: 0;
-    left: 16px;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-    font-size: 8px;
-    text-transform: uppercase;
-    text-align: center;
+    color: #641e16;
   }
   a {
     font-size: 14px;
