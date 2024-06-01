@@ -13,12 +13,8 @@ export const Submit = () => {
   const { firstName, lastName, email, phoneNumber, linkedInProfile, gitHubAccount, cV } = useInputs()
   const dispatch = useDispatch()
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
-  const {
-    firstNameInputInvalidError,
-    lastNameInputInvalidError,
-    emailInputInvalidError,
-    cVFileInputInvalid,
-  } = useTexts()
+  const { firstNameInputInvalidError, lastNameInputInvalidError, emailInputInvalidError, cVFileInputInvalid } =
+    useTexts()
 
   const params = {
     postingId,

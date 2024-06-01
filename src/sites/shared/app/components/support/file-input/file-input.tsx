@@ -53,11 +53,7 @@ export const FileInput: FileInputInterface = props => {
           return <li>{file.name}</li>
         })}
       </ul>
-      {error && (
-        <div className='error'>
-          {error}
-        </div>
-      )}
+      {error && <div className='error'>{error}</div>}
     </div>
   )
 }

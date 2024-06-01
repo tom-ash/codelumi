@@ -25,7 +25,22 @@ interface SubmitApplication {
 }
 
 export const submitApplication: SubmitApplication = async params => {
-  const { postingId, firstName, lastName, email, phoneNumber, linkedInProfile, gitHubAccount, cV, setErrors, firstNameInputInvalidError, lastNameInputInvalidError, emailInputInvalidError, cVFileInputInvalid, setControl } = params
+  const {
+    postingId,
+    firstName,
+    lastName,
+    email,
+    phoneNumber,
+    linkedInProfile,
+    gitHubAccount,
+    cV,
+    setErrors,
+    firstNameInputInvalidError,
+    lastNameInputInvalidError,
+    emailInputInvalidError,
+    cVFileInputInvalid,
+    setControl,
+  } = params
 
   const validationArray = [
     validateFirstName({
@@ -47,13 +62,13 @@ export const submitApplication: SubmitApplication = async params => {
       value: cV,
       errorMessage: cVFileInputInvalid,
       setErrors,
-    })
+    }),
   ]
 
   if (validationArray.find(el => el)) {
     setControl({ applyTransferring: false })
     return
-  }  
+  }
 
   const persistedCV = await saveFile({
     apiUrl: API_URL,

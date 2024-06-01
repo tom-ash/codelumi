@@ -5,8 +5,7 @@
     max-width: 600px;
     margin: 0 auto;
     list-style-type: none;
-    li {
-      // margin-top: 50px;
+    li.posting-tile {
       margin: 50px 20px 0;
       .id {
         background: #f8f9f9;
@@ -29,9 +28,8 @@
         background: #f8f9f9;
         border: 1px solid #b3b6b7;
         border-top: none;
-        border-radius: 4px;
-        border-top-right-radius: 0;
-        border-top-left-radius: 0;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
         padding: 20px;
         .edit {
           display: inline-block;
@@ -52,6 +50,49 @@
           cursor: pointer;
           &:hover {
             text-decoration: underline;
+          }
+        }
+      }
+      .applications {
+        background: white;
+        border: 1px solid #b3b6b7;
+        border-radius: 6px;
+        font-size: 12px;
+        margin-top: 10px;
+        .header {
+          padding: 10px;
+          background: #f2f3f4;
+          border-top-right-radius: 6px;
+          border-top-left-radius: 6px;
+          vertical-align: middle;
+        }
+        span {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .name {
+          width: 160px;
+        }
+        .email {
+          width: 60px;
+        }
+        .cv {
+          width: 60px;
+        }
+        ul {
+          li {
+            border-top: 1px solid gray;
+            padding: 10px;
+            svg {
+              position: relative;
+              top: 2px;
+              fill: black;
+              height: 14px;
+              &.disabled {
+                fill: #d0d3d4;
+                cursor: not-allowed;
+              }
+            }
           }
         }
       }
