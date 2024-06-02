@@ -12,7 +12,7 @@ interface FetchApi {
   (args: { path: string; method: FetchMethod; body?: any }): Promise<any>
 }
 
-export const fetchApi: FetchApi = args => {
+export const fetchApi: FetchApi = async args => {
   const { path, method, body } = args
   // @ts-ignore
   const apiUrl = window.apiUrl
@@ -60,5 +60,18 @@ export const patch: Patch = args => {
     path,
     method: FetchMethod.PATCH,
     body,
+  })
+}
+
+interface Delete {
+  (args: { path: string }): Promise<any>
+}
+
+export const deleteApi: Delete = async args => {
+  const { path } = args
+
+  return fetchApi({
+    path,
+    method: FetchMethod.DELETE,
   })
 }

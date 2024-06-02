@@ -18,7 +18,6 @@ interface ApplicationInterface {
 }
 
 export const Application: ApplicationInterface = () => {
-
   const { applicationFormSent } = useControl()
   const { applicationSendingConfirmation } = useTexts()
 
@@ -39,9 +38,7 @@ export const Application: ApplicationInterface = () => {
           <Submit />
         </form>
       ) : (
-        <div className='application-confirmation'>
-          {applicationSendingConfirmation}
-        </div>
+        <div className='application-confirmation'>{applicationSendingConfirmation}</div>
       )}
     </section>
   )

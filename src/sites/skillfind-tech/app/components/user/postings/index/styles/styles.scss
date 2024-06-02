@@ -98,4 +98,51 @@
       }
     }
   }
+  .deleted-posting-modal-cover {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    .deleted-posting-modal {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 200px;
+      height: 100px;
+      overflow: hidden;
+      margin: auto;
+      background: white;
+      border-radius: 6px;
+      box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
+      .monit {
+        padding: 20px;
+        text-align: center;
+      }
+      .buttons {
+        height: 30px;
+        font-size: 15px;
+        button {
+          border: none;
+          background: none;
+          width: 50%;
+          line-height: 30px;
+          cursor: pointer;
+          &.cancel {
+            color: green;
+          }
+          &.confirm {
+            color: red;
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
 }
