@@ -9,6 +9,7 @@ import { GitHubAccount } from './components/git-hub-account/git-hub-account'
 import { Submit } from './components/submit/submit'
 import { Heading } from './components/heading/heading'
 import { CV } from './components/cv/cv'
+import { Link } from './components/link/link'
 
 interface ApplicationInterface {
   (props: {}): React.ReactElement | null
@@ -18,6 +19,7 @@ export const Application: ApplicationInterface = () => {
   return (
     <section className='application'>
       <Heading />
+      <Link />
       <form>
         <FirstName />
         <LastName />
