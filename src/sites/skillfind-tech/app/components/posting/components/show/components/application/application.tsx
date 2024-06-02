@@ -10,27 +10,39 @@ import { Submit } from './components/submit/submit'
 import { Heading } from './components/heading/heading'
 import { CV } from './components/cv/cv'
 import { Link } from './components/link/link'
+import { useControl } from '../../../../../../../../shared/app/functions/store/use-control'
+import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
 
 interface ApplicationInterface {
   (props: {}): React.ReactElement | null
 }
 
 export const Application: ApplicationInterface = () => {
+
+  const { applicationFormSent } = useControl()
+  const { applicationSendingConfirmation } = useTexts()
+
   return (
     <section className='application'>
       <Heading />
       <Link />
-      <form>
-        <FirstName />
-        <LastName />
-        <Email />
-        <PhoneNumber />
-        <LinkedInProfile />
-        <GitHubAccount />
-        <FloatClear />
-        <CV />
-        <Submit />
-      </form>
+      {!applicationFormSent ? (
+        <form>
+          <FirstName />
+          <LastName />
+          <Email />
+          <PhoneNumber />
+          <LinkedInProfile />
+          <GitHubAccount />
+          <FloatClear />
+          <CV />
+          <Submit />
+        </form>
+      ) : (
+        <div className='application-confirmation'>
+          {applicationSendingConfirmation}
+        </div>
+      )}
     </section>
   )
 }

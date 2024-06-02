@@ -18,21 +18,18 @@ const PostingsShow: PostingShowInterface = props => {
   useStyles(styles)
 
   return (
-    <>
-      {/* <GoBack /> */}
-      <div id='postings-show'>
-        <GoBack />
-        <FloatClear />
-        <div id='posting'>
-          <Company />
-          <LocationAndCooperationMode />
-          <Remuneration />
-          <Skills />
-          <Description />
-        </div>
-        <Application />
+    <div id='postings-show'>
+      <GoBack />
+      <FloatClear />
+      <div id='posting'>
+        <Company />
+        <LocationAndCooperationMode />
+        <Remuneration />
+        <Skills />
+        <Description />
       </div>
-    </>
+      <Application />
+    </div>
   )
 }
 

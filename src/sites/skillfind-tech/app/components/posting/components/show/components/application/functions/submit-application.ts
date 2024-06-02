@@ -95,6 +95,6 @@ export const submitApplication: SubmitApplication = async params => {
   })
 
   if (response.status == 201) {
-    // TODO
+    setControl({ applyTransferring: false, applicationFormSent: true })
   }
 }
