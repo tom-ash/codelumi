@@ -19,15 +19,10 @@ const UserPostingsIndex = () => {
   const dispatch = useDispatch()
   const setControl = (value: any) => dispatch({ type: 'control', value })
   const { deletedPosting } = useControl()
-  const {
-    deletionMonit,
-    cancel,
-    confirm,
-  } = useTexts()
+  const { deletionMonit, cancel, confirm } = useTexts()
 
   return (
     <div id='user-postings-index'>
-
       <ul>
         {postings.map((posting: any) => {
           const {
@@ -160,11 +155,9 @@ const UserPostingsIndex = () => {
         >
           <div
             className='deleted-posting-modal'
-            onClick={(e) => e.stopPropagation()}
+            onClick={e => e.stopPropagation()}
           >
-            <div className='monit'>
-              {deletionMonit}
-            </div>
+            <div className='monit'>{deletionMonit}</div>
             <div className='buttons'>
               <button
                 className='cancel'
@@ -174,8 +167,8 @@ const UserPostingsIndex = () => {
               </button>
               <button
                 className='confirm'
-                onClick={async (e) => {
-                  const response = await deleteApi({ path: `postings/${deletedPosting}`})
+                onClick={async e => {
+                  const response = await deleteApi({ path: `postings/${deletedPosting}` })
 
                   if (response) {
                     changeUrl({ href: window.location.pathname })

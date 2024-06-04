@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { useInputs } from '../../../../../../../../shared/app/functions/store/use-inputs'
@@ -6,7 +6,6 @@ import { Select } from 'semanticize'
 import Skill from '../../../shared/components/skill/skill'
 import { SkillView } from '../../../shared/components/skill/skill.types'
 import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
-import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
 import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
 import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
 import { useDispatch } from 'react-redux'
@@ -32,14 +31,45 @@ export const Panel: PanelInterface = () => {
   const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
 
+  const enrichedSelectableSkills = useMemo(() => {
+    // @ts-ignore
+    return selectableSkills.map(option => {
+      const { value } = option
+
+      return {
+        ...option,
+        jsx: (
+          <Skill
+            onLevelClicked={skill => {
+              const newSelectedSkills = [...selectedSkills]
+              const newSelectedSkill = selectableSkills.find((selectableSkill: SelectableSkill) => {
+                return selectableSkill.value === skill.name
+              })
+
+              newSelectedSkills.push({ ...newSelectedSkill, level: skill.level })
+
+              setInputs({ selectedSkills: newSelectedSkills })
+              querySkills(newSelectedSkills)
+            }}
+            key={value}
+            name={value}
+            level={0}
+            view={SkillView.INDEX_PANEL}
+          />
+        ),
+      }
+    })
+  }, [selectableSkills])
+
   return (
     <div className='panel'>
       <Select
         className='select'
-        options={selectableSkills}
+        options={enrichedSelectableSkills}
         value={''}
         placeholder={skillSelectPlaceholder}
         searchable={true}
+        id='visitor-postings-index-skill-select'
         onSelect={value => {
           const newSelectedSkills = [...selectedSkills]
           const newSelectedSkill = selectableSkills.find((selectableSkill: SelectableSkill) => {

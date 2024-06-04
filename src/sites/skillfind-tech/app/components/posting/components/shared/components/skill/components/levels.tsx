@@ -36,7 +36,9 @@ export const SkillLevels = (props: SkillLevelsProps) => {
             {...((view === SkillView.formSelectable || view === SkillView.formSelected) && {
               onMouseOver: () => setLevelHovered(index + 1),
               onMouseLeave: () => setLevelHovered(0),
-              onClick: () => {
+              onClick: e => {
+                e.stopPropagation()
+
                 setErrors && setErrors({ skills: null })
                 onLevelClicked && onLevelClicked({ name, level: levelHovered })
               },
@@ -44,7 +46,14 @@ export const SkillLevels = (props: SkillLevelsProps) => {
             {...(view === SkillView.INDEX_PANEL && {
               onMouseOver: () => setLevelHovered(index + 1),
               onMouseLeave: () => setLevelHovered(0),
-              onClick: () => onLevelClicked && onLevelClicked({ name, level: levelHovered }),
+              onClick: e => {
+                e.stopPropagation()
+
+                const select = document.getElementById('visitor-postings-index-skill-select')
+                select!.blur()
+
+                onLevelClicked && onLevelClicked({ name, level: levelHovered })
+              },
             })}
           />
         )
