@@ -109,7 +109,24 @@ export const Panel: PanelInterface = () => {
               name={value}
               level={level}
               view={SkillView.INDEX_PANEL}
-            />
+            >
+              <div
+                className='delete'
+                onClick={() => {
+                  const unselectedSkillIndex = selectedSkills.findIndex(
+                    (selectedSkill: any) => selectedSkill.value === value
+                  )
+
+                  const newSelectedSkills = [...selectedSkills]
+                  newSelectedSkills.splice(unselectedSkillIndex, 1)
+
+                  setInputs({ selectedSkills: newSelectedSkills })
+                  querySkills(newSelectedSkills)
+                }}
+              >
+                <SVG name='close' />
+              </div>
+            </Skill>
           )
         })}
         <FloatClear />

@@ -53,7 +53,20 @@
       padding: 20px 40px;
       .skill {
         float: left;
-        margin-right: 40px;
+        margin-right: 60px;
+        .delete {
+          display: inline-block;
+          height: 14px;
+          width: 14px;
+          position: absolute;
+          left: 104px;
+          top: 27px;
+          cursor: pointer;
+          svg {
+            top: 0;
+            left: 0;
+          }
+        }
       }
     }
 
