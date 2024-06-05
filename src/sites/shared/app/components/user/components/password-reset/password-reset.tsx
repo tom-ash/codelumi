@@ -1,8 +1,6 @@
 import React from 'react'
 import { PasswordResetStep } from './password-reset.types'
-import { Heading } from '../../../../../../mapawynajmu-pl/app/components/support/components/heading'
 import { Line } from '../../../../../../mapawynajmu-pl/app/components/support/components/line/line'
-import { EmailAddressInput } from '../common/components/email-address/email-address.input'
 import { SubmitEmailButton } from './components/submit-email-button'
 import { VerificationCodeInput } from '../new/components/verification/components/verification-code/verification-code'
 import { SubmitVerificationCodeButton } from './components/submit-verification-code-button'
@@ -13,17 +11,14 @@ import { PasswordAutoComplete } from '../common/components/password/password.inp
 import { Explanation } from '../../../support/explanation/explanationt'
 import { useControl } from '../../../../functions/store/use-control'
 import { useTexts } from '../../../../functions/store/use-texts'
+import { MainHeading } from '../../../support/headings/main-heading'
+import { Email } from '../../../support/inputs/email/email'
 
 const PasswordReset = () => {
   const { step } = useControl()
 
-  const { headingOne, emailAddressExplanation, verificationExplanation, passwordExplanation, successExplanation } =
+  const { emailAddressExplanation, verificationExplanation, passwordExplanation, successExplanation } =
     useTexts()
-
-  const headingProps = {
-    tier: 1,
-    text: headingOne,
-  }
 
   const passwordProps = {
     autoComplete: PasswordAutoComplete.NEW_PASSWORD,
@@ -32,13 +27,13 @@ const PasswordReset = () => {
 
   return (
     <div id='user-edit-password'>
-      <Heading {...headingProps} />
+      <MainHeading icon='signIn' />
       <Line />
       <form>
         {step === PasswordResetStep.EMAIL && (
           <>
             <Explanation explanation={emailAddressExplanation} />
-            <EmailAddressInput />
+            <Email />
             <SubmitEmailButton />
           </>
         )}

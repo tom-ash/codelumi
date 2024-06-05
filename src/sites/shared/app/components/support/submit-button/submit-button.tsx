@@ -1,9 +1,9 @@
 import React from 'react'
-import { ButtonSpinner } from '../../../../../mapawynajmu-pl/app/components/support/components/button-spinner/button-spinner'
 import { ManagedButton } from 'managed-inputs'
 import { useApp } from '../../../functions/store/use-app'
 import { useControl } from '../../../functions/store/use-control'
 import { useDispatch } from 'react-redux'
+import { BeatLoader } from 'react-spinners'
 
 interface SubmitButtonInterface {
   (props: {
@@ -22,11 +22,18 @@ export const SubmitButton: SubmitButtonInterface = props => {
   const disabled = connecting
   const containerClassNames = customContainerClassNames ? `submit-button ${customContainerClassNames}` : 'submit-button'
   const classNames = { container: containerClassNames }
-  const buttonSpinnerProps = { connecting, label: textLabel }
-  const label = <ButtonSpinner {...buttonSpinnerProps} />
   const setControl = (value: any) => dispatch({ type: 'control', value })
   const setData = (value: any) => dispatch({ type: 'data', value })
   const setErrors = (value: any) => dispatch({ type: 'errors', value })
+
+  const label = connecting ? (
+    <BeatLoader
+      color='white'
+      size={8}
+    />
+  ) : (
+    textLabel
+  )
 
   const onClick = () => {
     setControl({ connecting: true })

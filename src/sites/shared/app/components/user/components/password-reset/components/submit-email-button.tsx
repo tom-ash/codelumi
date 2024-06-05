@@ -6,13 +6,14 @@ import { useData } from '../../../../../functions/store/use-data'
 import { useInputs } from '../../../../../functions/store/use-inputs'
 
 export const SubmitEmailButton = () => {
-  const { submitEmail: label } = useTexts()
+  const { submitEmail: label, emailInputInvalidError } = useTexts()
   const { apiUrl } = useData()
-  const { emailAddress: email } = useInputs()
+  const { email } = useInputs()
 
   const submitButtonProps = {
     apiUrl,
     label,
+    emailInputInvalidError,
     submit: submitEmail,
     email,
   }

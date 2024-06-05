@@ -8,7 +8,7 @@ import { useInputs } from '../../../../../functions/store/use-inputs'
 export const SubmitPasswordButton = () => {
   const { submitPassword: label } = useTexts()
   const { apiUrl } = useData()
-  const { emailAddress: email, verificationCode, password } = useInputs()
+  const { email, verificationCode, password } = useInputs()
 
   const submitButtonProps = {
     apiUrl,

@@ -6,6 +6,7 @@ import styles from './styles/styles.scss'
 const PasswordReset = () => {
   useStyles(styles)
 
+  // <MainHeading icon='signIn' />
   return <CommonPasswordReset />
 }
 

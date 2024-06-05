@@ -1,4 +1,5 @@
 import setVerificationToken from '../../../../../functions/cookies/setters/confirmation-token'
+import { validateEmail } from '../../../../support/inputs/email/validators/validate-email'
 import { PasswordResetStep } from '../password-reset.types'
 
 interface SubmitEmail {
@@ -7,11 +8,26 @@ interface SubmitEmail {
     lang: Lang
     email: string
     setControl: any // TODO: TS!
+    setErrors(params: { [keyof: string]: string }): void;
+    emailInputInvalidError: string;
   }): void
 }
 
 export const submitEmail: SubmitEmail = args => {
-  const { apiUrl, lang, email, setControl } = args
+  const { apiUrl, lang, email, setControl, setErrors, emailInputInvalidError } = args
+
+  const validationArray = [
+    validateEmail({
+      value: email,
+      errorMessage: emailInputInvalidError,
+      setErrors,
+    }),
+  ]
+
+  if (validationArray.find(el => el)) {
+    setControl({ connecting: false })
+    return
+  }
 
   fetch(apiUrl + '/user/update/password/verification', {
     method: 'PUT',
