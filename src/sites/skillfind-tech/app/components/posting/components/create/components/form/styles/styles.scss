@@ -40,9 +40,21 @@
   }
   .description {
     @extend %description;
+    .form-input {
+      .label {
+        position: absolute;
+        top: -2px;
+      }
+    }
   }
   .contracts {
     @extend %contracts;
+    .form-input {
+      .label {
+        position: absolute;
+        top: -2px;
+      }
+    }
   }
   #poster {
     @extend %poster;

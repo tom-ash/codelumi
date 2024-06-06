@@ -21,11 +21,11 @@ export const LocationAndCooperationMode: LocationAndCooperationModeInterface = p
     <section className='location-and-cooperation-mode'>
       <div className='location'>
         <SVG name='marker' />
-        {locality}, {country}
+        <span>{locality}, {country}</span>
       </div>
       <div className='cooperation-mode'>
         <SVG name={cooperationModeIcon} />
-        {cooperationModeLabel}
+        <span>{cooperationModeLabel}</span>
       </div>
     </section>
   )

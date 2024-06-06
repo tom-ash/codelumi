@@ -1,8 +1,7 @@
 @import '../../../../../../../shared/app/styles/media-breakpoints';
 
-#listing-create {
-  padding: 60px 0;
-  background: #f4f6f7;
+#postings-new {
+  margin-top: 60px;
   @media #{$LARGE-PHONE} {
     padding: 0;
   }

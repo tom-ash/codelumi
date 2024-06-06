@@ -10,13 +10,11 @@ export const PostingIndexTileIndustry: PostingIndexTileIndustryInterface = props
 
   return (
     <div className='industry'>
-      <div className='icon'>
-        <SVG
-          name={icon}
-          fill={textColor}
-        />
-        <span style={{ color: textColor }}>{industry}</span>
-      </div>
+      <SVG
+        name={icon}
+        fill={textColor}
+      />
+      <span style={{ color: textColor }}>{industry}</span>
     </div>
   )
 }

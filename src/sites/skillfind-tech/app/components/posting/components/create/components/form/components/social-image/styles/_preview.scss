@@ -43,13 +43,17 @@
     }
     .industry {
       position: absolute;
-      top: 110px;
+      top: 108px;
       left: 290px;
       color: white;
       font-size: 20px;
       svg {
-        top: 2.5px;
         height: 18px;
+        top: 0;
+      }
+      span {
+        position: relative;
+        top: -2.5px;
       }
     }
   }
@@ -64,14 +68,18 @@
   }
   .contract-and-remuneration {
     @extend %contract-and-remuneration;
-    margin-top: 50px;
+    margin-top: 60px;
     margin-left: 60px;
+    // margin-right: 50px;
     left: 0;
     padding: 0;
     .b2b,
     .employment {
       margin-left: 0;
       float: left;
+    }
+    .b2b {
+      margin-right: 60px;
     }
     .contract {
       font-size: 20px;
@@ -100,13 +108,6 @@
       width: 200px;
       display: block;
       margin-top: 60px !important;
-    }
-  }
-
-  @media #{$LARGE-PHONE} {
-    &#social-image-preview {
-      // position: relative;
-      // top: 0;
     }
   }
 }
