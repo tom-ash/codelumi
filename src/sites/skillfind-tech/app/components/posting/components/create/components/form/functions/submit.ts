@@ -170,11 +170,12 @@ export const submit = async (props: SubmitProps) => {
   }
 
   const socialImageKey = await createSocialImage()
-  console.warn('TODO: socialImageKey', socialImageKey)
-
+  const bodyWithImage = { ...body, image: socialImageKey }
+  const extendedBody = authorized ? bodyWithImage : { ...bodyWithImage, ...userObject }
   const path = authorized ? '/postings' : '/postings/users'
-  const extendedBody = authorized ? body : { ...body, ...userObject }
   const method = postingId ? 'PUT' : 'POST'
+
+  console.log('extendedBody', extendedBody)
 
   fetch(`${apiUrl}/${path}`, {
     method,
