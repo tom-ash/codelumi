@@ -13,6 +13,7 @@ type LinkInterfaceProps =
       label?: React.ReactElement | string
       title?: string
       customClassNames?: string
+      retainQueryParams?: boolean
     }
   | {
       href: string
@@ -20,6 +21,7 @@ type LinkInterfaceProps =
       label?: React.ReactElement | string
       title?: string
       customClassNames?: string
+      retainQueryParams?: boolean
     }
 
 interface LinkInterface {
@@ -27,7 +29,7 @@ interface LinkInterface {
 }
 
 export const Link: LinkInterface = props => {
-  const { label: customLabel, href, hrefLang, title, customClassNames } = props
+  const { label: customLabel, href, hrefLang, title, customClassNames, retainQueryParams } = props
   const links = useLinks()
   const containerClassNames = customClassNames ? `${customClassNames} link` : 'link'
   const classNames = { container: containerClassNames }
@@ -55,7 +57,7 @@ export const Link: LinkInterface = props => {
       )
     }
 
-    const onClick = () => changeUrl({ ...link })
+    const onClick = () => changeUrl({ ...link, retainQueryParams })
 
     const { href, hrefLang, title, icon } = link
 
@@ -76,7 +78,7 @@ export const Link: LinkInterface = props => {
     }
   } else {
     const isAnchor = href && href.match(/^#.+$/)
-    const onClick = () => (isAnchor ? scrollToFragment(href!) : changeUrl({ href }))
+    const onClick = () => (isAnchor ? scrollToFragment(href!) : changeUrl({ href, retainQueryParams }))
 
     linkProps = { href, hrefLang, label: customLabel, title, classNames, onClick }
   }

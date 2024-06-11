@@ -68,7 +68,7 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
       onClick={e => {
         e.preventDefault()
 
-        changeUrl({ href })
+        changeUrl({ href, retainQueryParams: true })
       }}
     >
       <Company

@@ -21,6 +21,7 @@ export const GoBack: GoBackInterface = () => {
       title={title}
       label={label}
       customClassNames='go-back'
+      retainQueryParams={true}
     />
   )
 }
