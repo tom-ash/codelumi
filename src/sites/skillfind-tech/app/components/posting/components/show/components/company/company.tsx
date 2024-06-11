@@ -8,13 +8,14 @@ interface CompanyInterface {
 
 export const Company: CompanyInterface = () => {
   const {
-    posting: { logo, businessName, industry, backgroundColor, textColor },
+    posting: { logo, businessName, industry, backgroundColor, textColor, posterLink: link },
   } = useData()
 
   return (
     <CompanyPartial
       logo={logo}
       businessName={businessName}
+      link={link}
       industry={industry}
       backgroundColor={backgroundColor}
       textColor={textColor}

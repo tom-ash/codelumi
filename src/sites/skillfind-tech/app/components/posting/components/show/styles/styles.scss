@@ -70,6 +70,9 @@
       top: 42px;
       left: 205px;
       font-size: 17px;
+      a {
+        text-decoration: underline;
+      }
     }
     .industry {
       top: 68px;
@@ -258,6 +261,9 @@
         top: 133px;
         left: 20px;
         font-size: 18px;
+        // a {
+        //   text-decoration: underline;
+        // }
       }
       .industry {
         top: 163px;
