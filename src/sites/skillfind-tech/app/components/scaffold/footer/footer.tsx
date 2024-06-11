@@ -37,8 +37,9 @@ const Footer = () => {
         <div className='float-clear' />
       </div>
       <div className='copyright'>
-        <span className='warsaw-digital'>Warsaw Digital Sp. z o.o. 2020 - 2023</span>
-        <span className='all-rights-reserved'>{allRightsReserved}</span>
+        <SVG name='copyright' />
+        <span className='warsaw-digital'>2024 Warsaw Digital Sp. z o.o.</span>
+        {/* <span className='all-rights-reserved'>{allRightsReserved}</span> */}
       </div>
       <FloatClear />
     </footer>

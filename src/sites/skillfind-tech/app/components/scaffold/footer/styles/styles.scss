@@ -2,54 +2,72 @@
 
 #footer {
   z-index: 2;
-  width: 1024px;
-  color: white;
-  margin: 96px auto 0;
-  padding: 0 18px;
-  line-height: 40px;
-  font-size: 12px;
+  background: white;
+  border-top: 1px solid lightgray;
+  margin-top: 40px;
   .social-pages {
-    float: left;
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+    padding: 24px 0 14px;
     a {
       display: inline-block;
       position: relative;
-      height: 20px;
-      width: 20px;
-      fill: white;
-      transition: fill 0.3s ease-in;
       cursor: pointer;
-      margin-right: 12px;
-      &:hover {
-        fill: lightgray;
+      margin-right: 16px;
+      height: 24px!important;
+      &:last-of-type {
+        margin-right: 0;
       }
       svg {
-        position: relative;
-        top: 7px;
+        transition: fill 0.3s ease-in;
+        height: 26px;
+        width: 26px;
+        &:hover {
+          fill: lightgray;
+        }
       }
     }
   }
   .links {
-    float: left;
+    text-align: center;
+    padding: 20px 0 18px;
+    border-bottom: 1px solid lightgray;
     .link {
-      float: left;
-      margin-right: 10px;
+      display: inline-block;
+      margin-right: 20px;
+      border-right: 1px solid lightgray;
+      padding-right: 20px;
+      &:hover {
+        a {
+          text-decoration: underline;
+        }
+      }
     }
   }
   .copyright {
-    float: right;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 15px;
+    color: #424949;
+    svg {
+      height: 13px;
+      fill: #424949;
+      margin-right: 6px;
+      position: relative;
+      top: 2px;
+    }
   }
   @media #{$LARGE-TABLET} {
     width: auto;
     margin: 0;
-    padding: 18px;
-    .social-pages {
-      float: none;
-    }
     .links {
-      float: none;
-    }
-    .copyright {
-      float: none;
+      .link {
+        display: block;
+        border-right: none;
+        margin-top: 10px;
+        margin-right: 0;
+        padding-right: 0;
+      }
     }
   }
 }
