@@ -1,4 +1,4 @@
-// TODO
+@import '../../../../../../../../../shared/app/styles/hidden-scrollbar';
 
 #postings-index {
   .panel {
@@ -7,21 +7,23 @@
       width: 320px;
       margin: 20px auto 0;
       input {
-        padding-left: 48px;
+        padding-left: 32px;
         cursor: default;
         width: 100%;
-        height: 48px;
-        border-radius: 24px;
-        border: 1px solid #ccd1d1;
-        background: #f2f4f4;
+        height: 36px;
+        // background: #f2f4f4;
+        border: none;
+        border-bottom: 2px solid black;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        font-size: 16px;
         &:focus {
           outline: none;
-          border-bottom-right-radius: 0;
-          border-bottom-left-radius: 0;
-          border-bottom: none;
         }
       }
       ul {
+        @extend %hidden-scrollbar;
+        top: 36px;
         position: absolute;
         background: white;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -32,14 +34,16 @@
         height: 384px;
         overflow-x: hidden;
         overflow-y: scroll;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
         li {
           cursor: default;
           padding: 10px 20px;
           &.current {
-            background: lightblue;
+            background: #F2F3F4;
           }
           &:hover {
-            background: lightblue;
+            background: #F2F3F4;
           }
         }
       }
@@ -47,10 +51,9 @@
         margin-top: 24px;
       }
     }
-
     .selected-skills {
-      height: 84px;
-      padding: 20px 40px;
+      height: 86px;
+      padding: 12px 20px 8px;
       .skill {
         float: left;
         margin-right: 60px;
@@ -69,7 +72,6 @@
         }
       }
     }
-
     .logo-icon {
       position: absolute;
       top: 13px;
@@ -77,11 +79,10 @@
       scale: 0.09;
       transform-origin: top left;
     }
-
     svg {
       position: absolute;
-      top: 14px;
-      left: 16px;
+      top: 8px;
+      left: 4px;
       height: 18px;
     }
   }
