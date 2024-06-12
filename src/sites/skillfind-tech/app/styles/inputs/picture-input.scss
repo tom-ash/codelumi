@@ -8,13 +8,11 @@
     font-size: 15px;
     font-weight: bold;
     color: rgb(64, 64, 64);
-    font-family: Roboto, sans-serif;
   }
   .drag-and-drop-container {
     @extend %drag-and-drop-container;
     .instructions {
       font-size: 14px;
-      font-family: Roboto;
     }
   }
   .blobs {
@@ -70,7 +68,6 @@
     }
     .error {
       color: $ERROR-COLOR;
-      font-family: Roboto;
       margin-top: 6px;
     }
   }

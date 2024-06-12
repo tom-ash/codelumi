@@ -1,6 +1,3 @@
-import { emailAddressValidator } from '../../../../../../../../../../../shared/app/components/user/components/common/components/email-address/email-address.validator'
-import { passwordValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/form/components/password/password.validator'
-import { termsOfServiceConsentValidator } from '../../../../../../../../../../../shared/app/components/user/components/new/components/form/components/terms-of-service-consent/terms-of-service-consent.validator'
 import { validateBusinessName } from '../../business-name/functions/validate-business-name'
 import { validateEmail } from '../../email-credentials/functions/validate-email'
 import { validatePassword } from '../../email-credentials/functions/validate-password'

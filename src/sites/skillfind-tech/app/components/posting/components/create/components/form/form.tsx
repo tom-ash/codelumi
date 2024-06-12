@@ -29,9 +29,9 @@ export const PostingsForm = () => {
       <Location />
       <Description />
       <Contracts />
+      <Application />
       {!authorized && <Poster />}
       <SocialImage />
-      <Application />
       <Submit />
     </div>
   )
