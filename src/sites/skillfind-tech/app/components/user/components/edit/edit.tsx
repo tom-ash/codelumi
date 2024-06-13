@@ -4,6 +4,7 @@ import styles from './styles/styles.scss'
 import { MainHeading } from '../../../../../../shared/app/components/support/headings/main-heading'
 import { AttributeEditor } from '../../../../../../shared/app/components/support/attribute-editor/attribute-editor'
 import { Logo } from './components/logo/logo'
+import { Delete } from './components/delete/delete'
 
 const UserUsersEdit = () => {
   useStyles(styles)
@@ -18,6 +19,7 @@ const UserUsersEdit = () => {
         name='industry'
         isSelectable={true}
       />
+      <Delete />
     </div>
   )
 }

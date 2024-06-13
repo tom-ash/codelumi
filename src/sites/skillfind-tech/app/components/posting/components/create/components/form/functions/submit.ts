@@ -123,7 +123,7 @@ export const submit = async (props: SubmitProps) => {
     applicationLink,
   }
 
-  const validations = [
+  const validations: (null | string)[] = [
     validateSkills({
       value: selectedSkills,
       errorMessage: 'TODO',
@@ -141,7 +141,10 @@ export const submit = async (props: SubmitProps) => {
       applicationLinkError,
       setErrors,
     }),
-    ...validateUserInputs({
+  ]
+
+  if (!authorized) {
+    validations.push(...validateUserInputs({
       businessName,
       businessNameError,
       industry,
@@ -153,8 +156,8 @@ export const submit = async (props: SubmitProps) => {
       logo,
       logoError,
       setErrors,
-    }),
-  ]
+    }))
+  }
 
   for (let i = 0; i < validations.length; i++) {
     const validation = validations[i]
