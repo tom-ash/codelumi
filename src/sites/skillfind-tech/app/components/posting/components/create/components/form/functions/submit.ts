@@ -7,6 +7,10 @@ import { validateLocation } from '../components/location/functions/validate-loca
 import { buildUserObject } from '../../../../../../user/components/new/components/form/components/submit/functions/build-user-object'
 import { UserObject } from '../../../../../../user/components/new/components/form/components/submit/types/user-object.interface'
 import { validateApplication } from '../components/application/functions/validate-application'
+import { validateInputs as validateUserInputs } from '../../../../../../user/components/new/components/form/components/submit/functions/validate-inputs'
+import { saveBlob } from '../../../../../../../../../shared/app/components/support/picture-input/functions/save-blob'
+import API_URL from '../../../../../../../../shared/constants/urls/api'
+import setVerificationToken from '../../../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
 
 var scrollIntoView = require('scroll-into-view')
 
@@ -43,6 +47,8 @@ type SubmitProps = {
 } & UserObject & {
     businessNameError: string
     logoError: string
+    emailError: string
+    passwordError: string
     termsOfServiceConsentLabel: string
   }
 
@@ -70,8 +76,10 @@ export const submit = async (props: SubmitProps) => {
     businessName,
     businessNameError,
     industry,
-    emailAddress,
+    email,
+    emailError,
     password,
+    passwordError,
     termsOfServiceConsent,
     termsOfServiceConsentLabel,
     logo,
@@ -133,6 +141,19 @@ export const submit = async (props: SubmitProps) => {
       applicationLinkError,
       setErrors,
     }),
+    ...validateUserInputs({
+      businessName,
+      businessNameError,
+      industry,
+      email,
+      emailError,
+      password,
+      passwordError,
+      termsOfServiceConsent,
+      logo,
+      logoError,
+      setErrors,
+    }),
   ]
 
   for (let i = 0; i < validations.length; i++) {
@@ -156,13 +177,26 @@ export const submit = async (props: SubmitProps) => {
       businessNameError,
       logoError,
       industry,
-      emailAddress,
+      email,
       password,
       termsOfServiceConsent,
       termsOfServiceConsentLabel,
       logo,
       setErrors,
     })
+
+    const { database: persistedLogo } = await saveBlob({
+      apiUrl: API_URL,
+      blob: logo.blob,
+      path: 'temporary',
+      key: 'logo',
+      randomizeKey: true,
+      fileType: 'png',
+      mimeType: 'image/png',
+    })
+
+    // @ts-ignore
+    userObject.logo = persistedLogo
 
     if (!userObject) {
       return
@@ -174,8 +208,6 @@ export const submit = async (props: SubmitProps) => {
   const extendedBody = authorized ? bodyWithImage : { ...bodyWithImage, ...userObject }
   const path = authorized ? '/postings' : '/postings/users'
   const method = postingId ? 'PUT' : 'POST'
-
-  console.log('extendedBody', extendedBody)
 
   fetch(`${apiUrl}/${path}`, {
     method,
@@ -190,7 +222,10 @@ export const submit = async (props: SubmitProps) => {
     .then(response => {
       if (response.ok) return response.json()
     })
-    .then(href => {
+    .then(jsonResponse => {
+      const { verificationToken, href } = jsonResponse
+
+      setVerificationToken(verificationToken)
       changeUrl({ href })
     })
 }

@@ -1,6 +1,7 @@
 import { Picture } from '../../../../../../../../../../../shared/app/components/support/picture-input/types/picture.interface'
 import { buildUserObject } from './build-user-object'
 import { postUserObject } from './post-user-object'
+import { validateInputs } from './validate-inputs'
 
 interface SubmitForm {
   (args: {
@@ -8,8 +9,10 @@ interface SubmitForm {
     businessNameError: string
     industry: string
     lang: Lang
-    emailAddress: string
+    email: string
+    emailError: string
     password: string
+    passwordError: string
     termsOfServiceConsent: boolean
     termsOfServiceConsentLabel: string
     setControl(args: { connecting: boolean }): void
@@ -28,8 +31,10 @@ export const submitForm: SubmitForm = args => {
     logo,
     logoError,
     lang,
-    emailAddress,
+    email,
+    emailError,
     password,
+    passwordError,
     termsOfServiceConsent,
     termsOfServiceConsentLabel,
     setControl,
@@ -37,11 +42,33 @@ export const submitForm: SubmitForm = args => {
     link,
   } = args
 
+  const validations = validateInputs({
+    businessName,
+    businessNameError,
+    industry,
+    email,
+    emailError,
+    password,
+    passwordError,
+    termsOfServiceConsent,
+    logo,
+    logoError,
+    setErrors,
+  })
+
+  const userObjectInvalid = validations.find(element => element)
+
+  if (userObjectInvalid) {
+    setControl({ connecting: false })
+
+    return
+  }
+
   const userObject = buildUserObject({
     businessName,
     businessNameError,
     industry,
-    emailAddress,
+    email,
     password,
     termsOfServiceConsent,
     termsOfServiceConsentLabel,
@@ -50,8 +77,6 @@ export const submitForm: SubmitForm = args => {
     setErrors,
     link,
   })
-
-  if (!userObject) return setControl({ connecting: false })
 
   postUserObject({ userObject, lang })
 }

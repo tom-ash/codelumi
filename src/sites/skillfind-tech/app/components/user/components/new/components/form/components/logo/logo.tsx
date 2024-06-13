@@ -5,6 +5,7 @@ import { PictureInput } from '../../../../../../../../../../shared/app/component
 import { useTexts } from '../../../../../../../../../../shared/app/functions/store/use-texts'
 import { useDispatch } from 'react-redux'
 import { useErrors } from '../../../../../../../../../../shared/app/functions/store/use-errors'
+import { SVG } from '../../../../../../../../../../shared/app/components/support/svg/svg'
 
 export const Logo = () => {
   useStyles(styles)
@@ -22,10 +23,16 @@ export const Logo = () => {
 
   return (
     <div
-      id='logo'
+      id='logo-input'
       className={classNames.join(' ')}
     >
-      <label>Logo</label>
+      <label>
+        Logo
+        <SVG
+          name='dot'
+          className='required'
+        />
+      </label>
       <PictureInput
         multiple={false}
         limit={1}

@@ -4,7 +4,10 @@ import { TextInput } from '../../../../../../../../../../shared/app/components/s
 export const Link = () => {
   return (
     <div className='link'>
-      <TextInput inputKey='link' />
+      <TextInput
+        inputKey='link'
+        optional={true}
+      />
     </div>
   )
 }

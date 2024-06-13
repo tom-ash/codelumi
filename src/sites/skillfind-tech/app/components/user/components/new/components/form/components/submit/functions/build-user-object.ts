@@ -1,5 +1,4 @@
 import { UserObject } from '../types/user-object.interface'
-import { validateUserObject } from './validate-user-object'
 import { hashPassword } from '../../../../../../../../../../../shared/app/components/user/functions/hash-password'
 import { termsOfServiceConsentParser } from '../../../../../../../../../../../shared/app/components/user/components/new/components/form/components/terms-of-service-consent/terms-of-service-consent.parser'
 import { Picture } from '../../../../../../../../../../../shared/app/components/support/picture-input/types/picture.interface'
@@ -11,51 +10,38 @@ interface BuildUserObject {
     industry: string
     logo: Picture
     logoError: string
-    emailAddress: string
+    email: string
     password: string
     termsOfServiceConsent: boolean
     termsOfServiceConsentLabel: string
     setErrors(args: object): void
     link?: string
-  }): UserObject | undefined
+  }): UserObject
 }
 
 export const buildUserObject: BuildUserObject = args => {
   const {
     businessName,
-    businessNameError,
     industry,
-    emailAddress,
+    email,
     password,
     termsOfServiceConsent,
     termsOfServiceConsentLabel,
     logo,
-    logoError,
-    setErrors,
     link,
   } = args
 
   let userObject: UserObject = {
     businessName,
     industry,
-    emailAddress,
+    email,
     password,
     termsOfServiceConsent,
-    consents: [],
     logo,
     link,
   }
 
-  const userObjectInvalid = !validateUserObject({
-    ...userObject,
-    businessNameError,
-    logoError,
-    setErrors,
-  })
-
-  if (userObjectInvalid) return
-
-  userObject.password = hashPassword(userObject.password, userObject.emailAddress)
+  userObject.password = hashPassword(userObject.password, userObject.email)
   userObject.consents = [termsOfServiceConsentParser(termsOfServiceConsentLabel)]
 
   return userObject

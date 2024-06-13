@@ -3,7 +3,7 @@ interface ValidateTermsOfService {
     value: boolean
     errorMessage: string
     setErrors(errors: { termsOfServiceConsent: string }): void
-  }): 'terms-of-service' | null
+  }): 'terms-of-service-consent' | null
 }
 
 export const validateTermsOfService: ValidateTermsOfService = params => {
@@ -12,7 +12,7 @@ export const validateTermsOfService: ValidateTermsOfService = params => {
   if (!value) {
     setErrors({ termsOfServiceConsent: errorMessage })
 
-    return 'terms-of-service'
+    return 'terms-of-service-consent'
   }
 
   return null

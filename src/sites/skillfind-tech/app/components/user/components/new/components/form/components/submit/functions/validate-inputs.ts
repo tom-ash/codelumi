@@ -1,6 +1,6 @@
+import { validateEmail } from '../../../../../../../../../../../shared/app/components/support/inputs/email/validators/validate-email'
+import { validatePassword } from '../../../../../../../../../../../shared/app/components/support/inputs/password/validators/validate-password'
 import { validateBusinessName } from '../../business-name/functions/validate-business-name'
-import { validateEmail } from '../../email-credentials/functions/validate-email'
-import { validatePassword } from '../../email-credentials/functions/validate-password'
 import { validateTermsOfService } from '../../email-credentials/functions/validate-terms-of-service'
 import { validateLogo } from '../../logo/functions/validate-logo'
 import { UserObject } from '../types/user-object.interface'
@@ -8,18 +8,20 @@ import { UserObject } from '../types/user-object.interface'
 type ValidateUserObjectParams = UserObject & {
   businessNameError: string
   logoError: string
+  emailError: string
+  passwordError: string
   setErrors(params: any): void
 }
 
-type ValidateUserObject = {
-  (params: ValidateUserObjectParams): boolean
+type ValidateInputs = {
+  (params: ValidateUserObjectParams): (null | string)[]
 }
 
-export const validateUserObject: ValidateUserObject = params => {
-  const { businessName, businessNameError, logo, logoError, emailAddress, password, termsOfServiceConsent, setErrors } =
+export const validateInputs: ValidateInputs = params => {
+  const { businessName, businessNameError, logo, logoError, email, emailError, password, passwordError, termsOfServiceConsent, setErrors } =
     params
 
-  const validationArray = [
+  return [
     validateBusinessName({
       value: businessName,
       errorMessage: businessNameError,
@@ -31,13 +33,13 @@ export const validateUserObject: ValidateUserObject = params => {
       setErrors,
     }),
     validateEmail({
-      value: emailAddress,
-      errorMessage: 'TODO',
+      value: email,
+      errorMessage: emailError,
       setErrors,
     }),
     validatePassword({
       value: password,
-      errorMessage: 'TODO',
+      errorMessage: passwordError,
       setErrors,
     }),
     validateTermsOfService({
@@ -46,6 +48,4 @@ export const validateUserObject: ValidateUserObject = params => {
       setErrors,
     }),
   ]
-
-  return !validationArray.find(element => element)
 }

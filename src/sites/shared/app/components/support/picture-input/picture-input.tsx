@@ -17,6 +17,7 @@ interface PictureInputInterface {
     instructions: string
     persistedPictures?: PersistedPicture[]
     onPictureSet(pictures: Picture[]): void
+    required?: boolean
   }): React.ReactElement
 }
 
@@ -32,6 +33,7 @@ export const PictureInput: PictureInputInterface = props => {
     onPictureSet,
     maxWidth,
     maxHeight,
+    required = false,
   } = props
 
   const [pictures, setPictures] = useState<Picture[]>([])

@@ -9,22 +9,28 @@ export const Submit = () => {
     submitFormButtonLabel: label,
     termsOfServiceConsentLabel,
     businessNameInputInvalidError: businessNameError,
+    emailInputInvalidError: emailError,
+    passwordInputInvalidError: passwordError,
     logoInputMissingError: logoError,
   } = useTexts()
-  const { emailAddress, password, termsOfServiceConsent, logo, businessName, industry, link } = useInputs()
+  const { email, password, termsOfServiceConsent, logo, businessName, industry, link } = useInputs()
 
   const submitButtonProps = {
     label,
     businessName,
     businessNameError,
+    link,
     industry,
+    // industryError
     logo,
     logoError,
-    emailAddress,
+    email,
+    emailError,
     password,
+    passwordError,
     termsOfServiceConsent,
     termsOfServiceConsentLabel,
-    link,
+
     submit: submitForm,
   }
 

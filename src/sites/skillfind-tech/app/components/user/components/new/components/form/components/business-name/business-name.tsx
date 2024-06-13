@@ -7,6 +7,7 @@ export const BusinessName = () => {
     <div className='business-name'>
       <TextInput
         inputKey='businessName'
+        required={true}
         validate={validateBusinessName}
       />
     </div>

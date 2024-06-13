@@ -3,10 +3,10 @@ import { Picture } from '../../../../../../../../../../../shared/app/components/
 export interface UserObject {
   businessName: string
   industry: string
-  emailAddress: string
+  email: string
   password: string
   termsOfServiceConsent: boolean
-  consents: any[] // TODO
+  consents?: any[],
   logo: Picture
   link?: string
 }

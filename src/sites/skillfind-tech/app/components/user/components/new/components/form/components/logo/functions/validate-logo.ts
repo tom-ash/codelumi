@@ -1,7 +1,7 @@
 import { Picture } from '../../../../../../../../../../../shared/app/components/support/picture-input/types/picture.interface'
 
 interface ValidateLogo {
-  (params: { value: Picture | null; errorMessage: string; setErrors(errors: { logo: string }): void }): 'logo' | null
+  (params: { value: Picture | null; errorMessage: string; setErrors(errors: { logo: string }): void }): 'logo-input' | null
 }
 
 export const validateLogo: ValidateLogo = params => {
@@ -10,7 +10,7 @@ export const validateLogo: ValidateLogo = params => {
   if (!value) {
     setErrors({ logo: errorMessage })
 
-    return 'logo'
+    return 'logo-input'
   }
 
   return null

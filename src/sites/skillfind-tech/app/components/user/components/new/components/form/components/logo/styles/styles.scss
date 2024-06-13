@@ -11,6 +11,13 @@
       font-size: 15px;
       font-weight: bold;
       color: rgb(64, 64, 64);
+      .required {
+        height: 6px!important;
+        margin-left: 4px;
+        position: relative;
+        top: -5px;
+        fill: #c0392b;
+      }
     }
     .drag-and-drop-container {
       @extend %drag-and-drop-container;
