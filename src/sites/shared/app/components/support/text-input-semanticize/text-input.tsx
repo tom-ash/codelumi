@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import { useTexts } from '../../../functions/store/use-texts'
 import { useDispatch } from 'react-redux'
-import { TextInput as SemanticTextInput } from 'semanticize'
+import { TextInput as SemanticTextInput, TextInputType } from 'semanticize'
 import { useInputs } from '../../../functions/store/use-inputs'
 import { useErrors } from '../../../functions/store/use-errors'
 import { SVG } from '../svg/svg'
@@ -16,6 +16,7 @@ interface TextInputInterface {
     disabled?: boolean
     required?: boolean
     optional?: boolean
+    type?: TextInputType
     // placeholder?: string
     // className?: string
     // match?: RegExp
@@ -38,6 +39,7 @@ export const TextInput: TextInputInterface = props => {
     disabled,
     required = false,
     optional = false,
+    type,
     // classNames,
     // match,
     // onClick: onClickCallback,
@@ -77,6 +79,7 @@ export const TextInput: TextInputInterface = props => {
   return (
     <SemanticTextInput
       id={id}
+      type={type}
       value={value}
       className='text-input'
       label={

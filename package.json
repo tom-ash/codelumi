@@ -61,7 +61,7 @@
     "react-verification-input": "^4.1.2",
     "redux": "^4.1.2",
     "scroll-into-view": "^1.16.2",
-    "semanticize": "^0.0.7",
+    "semanticize": "^0.0.8",
     "vhost": "^3.0.2",
     "webfontloader": "^1.6.28",
     "xml": "^1.0.1",
