@@ -26,24 +26,6 @@ export const TermsOfServiceConsentLabel = (props: TermsOfServiceConsentLabelProp
           {termsOfService}
         </a>
       )
-
-      // TODO: Add SyntheticEvent to managed-link and use the below.
-      // const {
-      //   href,
-      //   hrefLang,
-      // } = termsOfServiceLink
-
-      // const linkProps = {
-      //   classNames: 'link',
-      //   href,
-      //   hrefLang,
-      //   title: termsOfService,
-      //   label: termsOfService,
-      //   onMouseOver: (e: SyntheticEvent) => e.stopPropagation(),
-      //   onClick: (e: SyntheticEvent) => e.stopPropagation(),
-      // }
-
-      // return <ManagedLink {...linkProps} />
     }
 
     return element

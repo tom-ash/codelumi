@@ -8,6 +8,8 @@ import { Submit } from './components/submit/submit'
 import { MainHeading } from '../../../../../../../../shared/app/components/support/headings/main-heading'
 import { Link } from './components/link/link'
 
+// TODO: ADD CONSENTS
+
 interface FormInterface {
   (props: { isSubmittable?: boolean }): React.ReactElement
 }
