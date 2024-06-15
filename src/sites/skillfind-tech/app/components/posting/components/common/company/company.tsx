@@ -25,12 +25,7 @@ export const Company: CompanyInterface = props => {
   console.log('link', link)
 
   return (
-    <div
-      className='company'
-      style={{
-        backgroundColor,
-      }}
-    >
+    <div className='company'>
       <div className='company-logo'>
         <Image
           src={logo}
@@ -39,24 +34,31 @@ export const Company: CompanyInterface = props => {
         />
       </div>
       <div
-        className='business-name'
+        className='business-name-and-industry'
         style={{
-          color: textColor,
+          backgroundColor,
         }}
       >
-        {link ? (
-          <Link
-            href={link}
-            label={businessName}
-            title={businessName}
-          />
-        ) : businessName}
+        <div
+          className='business-name'
+          style={{
+            color: textColor,
+          }}
+        >
+          {link ? (
+            <Link
+              href={link}
+              label={businessName}
+              title={businessName}
+            />
+          ) : businessName}
+        </div>
+        <PostingIndexTileIndustry
+          industry={industry.label}
+          icon={industry.icon}
+          textColor={textColor}
+        />
       </div>
-      <PostingIndexTileIndustry
-        industry={industry.label}
-        icon={industry.icon}
-        textColor={textColor}
-      />
     </div>
   )
 }

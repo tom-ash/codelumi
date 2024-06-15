@@ -72,6 +72,10 @@ export const Preview: PreviewInterface = props => {
           isPreview={true}
         />
       )}
+      <div className='role'>
+        {/* <SVG name='magnifyingGlass' /> */}
+        Senior JavaScript Engineer
+      </div>
       {locality && country && cooperationMode && (
         <LocationAndCooperationMode
           locality={locality}
