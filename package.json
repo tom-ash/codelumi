@@ -55,6 +55,7 @@
     "react-calendar": "^2.19.2",
     "react-color": "^2.19.3",
     "react-dom": "^18.2.0",
+    "react-loader-spinner": "^6.1.6",
     "react-quill": "^2.0.0",
     "react-redux": "^7.2.6",
     "react-spinners": "^0.13.8",

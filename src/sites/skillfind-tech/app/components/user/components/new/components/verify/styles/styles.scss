@@ -1,7 +1,45 @@
-%visitor-users-verify {
-  h1 {
+@import '../../../../../../../styles/container';
+@import '../../../../../../../styles/headings/main-heading';
+@import '../../../../../../../styles/colors.scss';
+
+%visitor-users-new-verify {
+  @extend %container;
+  .main-heading {
+    @extend %main-heading;
     font-size: 20px;
+    svg {
+      height: 18px;
+    }
   }
-  max-width: 300px;
-  margin: 60px auto 0;
+  padding: 30px;
+  margin: 200px auto 0;
+  .loader {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .vi__container {
+    margin: 30px auto;
+    .vi__character {
+      border-radius: 6px;
+      border: 1px solid #626567;
+      color: #E5E7E9;
+    }
+    .vi__character--selected {
+      outline: 2px solid black;
+      color: black;
+    }
+    .vi__character--filled {
+      color: black;
+      background: #D7DBDD;
+    }
+    .vi__character--inactive {
+      outline: none;
+      background: #D7DBDD;
+      
+    }
+  }
+  .error {
+    margin-top: 30px;
+    color: $ERROR-COLOR;
+  }
 }
