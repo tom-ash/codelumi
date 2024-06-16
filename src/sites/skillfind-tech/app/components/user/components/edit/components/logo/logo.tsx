@@ -74,8 +74,6 @@ export const Logo = () => {
                   mimeType: 'image/png',
                 })
 
-                console.log('abc', abc)
-
                 await patch({
                   path: `user/update/logo`,
                   body: { value: abc.database },

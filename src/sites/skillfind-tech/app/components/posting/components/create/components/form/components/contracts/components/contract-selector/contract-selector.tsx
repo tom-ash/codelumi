@@ -4,6 +4,7 @@ import { NumberInput } from './components/number-input'
 import { useDispatch } from 'react-redux'
 import { useInputs } from '../../../../../../../../../../../../shared/app/functions/store/use-inputs'
 import { SVG } from '../../../../../../../../../../../../shared/app/components/support/svg/svg'
+import { Select } from '../../../../../../../../../../../../shared/app/components/support/select/select'
 
 interface ContractSelectorInterface {
   name: string
@@ -43,6 +44,12 @@ export const ContractSelector = (props: ContractSelectorInterface) => {
             placeholder={maxPlaceholder}
             onChange={setMax}
           />
+          <Select
+            className='select'
+            selectKey={`${name}Currency`}
+          >
+            <SVG name='chevron' />
+          </Select>
         </div>
       )}
     </div>

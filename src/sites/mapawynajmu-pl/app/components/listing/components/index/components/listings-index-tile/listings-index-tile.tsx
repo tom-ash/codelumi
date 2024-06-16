@@ -70,8 +70,6 @@ export const ListingsIndexTile: ListingsIndexTile = props => {
     changeUrl({ href, retainQueryParams: true, withScroll: false })
   }
 
-  console.log('props', props)
-
   return (
     <ListingIndexTile
       key={href}

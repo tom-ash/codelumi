@@ -35,4 +35,12 @@
     height: 10px;
     margin: 0 15px;
   }
+  .select {
+    display: inline-block;
+    margin-left: 20px;
+    width: 80px;
+    ul {
+      height: 130px;
+    }
+  }
 }

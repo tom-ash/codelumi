@@ -24,11 +24,21 @@ export const SocialImage = () => {
     industry,
     b2bMin,
     b2bMax,
+    b2bCurrency: b2bCurrencyValue,
+    b2bCurrencySelectOptions,
     employmentMin,
     employmentMax,
+    employmentCurrency: employmentCurrencyValue,
+    employmentCurrencySelectOptions,
     backgroundColor,
     textColor,
   } = useInputs()
+
+  // @ts-ignore
+  const b2bCurrency = b2bCurrencySelectOptions.find(currency => currency.value === b2bCurrencyValue).text
+
+  // @ts-ignore
+  const employmentCurrency = employmentCurrencySelectOptions.find(currency => currency.value === employmentCurrencyValue).text
 
   const { industries, cooperationModes } = useData()
 
@@ -95,8 +105,10 @@ export const SocialImage = () => {
         cooperationMode={cooperationModeObject}
         b2bMin={b2bMin}
         b2bMax={b2bMax}
+        b2bCurrency={b2bCurrency}
         employmentMin={employmentMin}
         employmentMax={employmentMax}
+        employmentCurrency={employmentCurrency}
         skills={skills}
         scale={scale}
       />
@@ -113,8 +125,10 @@ export const SocialImage = () => {
         cooperationMode={cooperationModeObject}
         b2bMin={b2bMin}
         b2bMax={b2bMax}
+        b2bCurrency={b2bCurrency}
         employmentMin={employmentMin}
         employmentMax={employmentMax}
+        employmentCurrency={employmentCurrency}
         skills={skills}
       />
     </section>

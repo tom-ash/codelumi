@@ -1,14 +1,13 @@
 import React from 'react'
 import { SkillProps, SkillView } from '../../../shared/components/skill/skill.types'
-import { PostingIndexTileIndustry } from '../components/industry/industry'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
-import { Image } from '../../../../../../../../shared/app/components/support/image/image'
 import { Remuneration } from '../../../common/remuneration/remuneration'
 import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
 import { LocationAndCooperationMode } from '../../../common/location-and-cooperation-mode/location-and-cooperation-mode'
 import { Skills } from '../../../common/skills/skills'
 import { Company } from '../../../common/company/company'
+import { Currency } from '../../../../postings.types'
 
 interface PostingIndexTileInterface {
   (props: {
@@ -18,8 +17,10 @@ interface PostingIndexTileInterface {
     industryIcon: string
     b2bMin?: number
     b2bMax?: number
+    b2bCurrency?: Currency
     employmentMin?: number
     employmentMax?: number
+    employmentCurrency?: Currency
     skills: SkillProps[]
     logo: string
     href: string
@@ -37,8 +38,6 @@ interface PostingIndexTileInterface {
 export const PostingIndexTile: PostingIndexTileInterface = props => {
   useStyles(styles)
 
-  // console.log('props', props)
-
   const {
     id,
     businessName,
@@ -46,8 +45,10 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
     industryIcon,
     b2bMin,
     b2bMax,
+    b2bCurrency,
     employmentMin,
     employmentMax,
+    employmentCurrency,
     skills,
     logo,
     href,
@@ -79,8 +80,6 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
           label: industry,
           icon: industryIcon,
         }}
-        // backgroundColor={backgroundColor}
-        // textColor={textColor}
       />
       <LocationAndCooperationMode
         locality={locality}
@@ -92,6 +91,8 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
         b2bMax={b2bMax}
         employmentMin={employmentMin}
         employmentMax={employmentMax}
+        b2bCurrency={b2bCurrency}
+        employmentCurrency={employmentCurrency}
       />
       <Skills
         skills={skills}

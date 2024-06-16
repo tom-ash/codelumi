@@ -22,8 +22,6 @@ interface CompanyInterface {
 export const Company: CompanyInterface = props => {
   const { logo, businessName, industry, backgroundColor, textColor, isPreview, link } = props
 
-  console.log('link', link)
-
   return (
     <div className='company'>
       <div className='company-logo'>

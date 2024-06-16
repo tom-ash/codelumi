@@ -5,6 +5,7 @@ import { LocationAndCooperationMode } from '../../../../../../../common/location
 import { Remuneration } from '../../../../../../../common/remuneration/remuneration'
 import { Skills } from '../../../../../../../common/skills/skills'
 import { Position } from '../../../../../../../common/position/position'
+import { Currency } from '../../../../../../../../postings.types'
 
 interface PreviewInterface {
   (props: {
@@ -27,8 +28,10 @@ interface PreviewInterface {
     }
     b2bMin?: number
     b2bMax?: number
+    b2bCurrency?: Currency;
     employmentMin?: number
     employmentMax?: number
+    employmentCurrency?: Currency;
     backgroundColor: string
     textColor: string
     scale?: number
@@ -49,8 +52,10 @@ export const Preview: PreviewInterface = props => {
     cooperationMode,
     b2bMin,
     b2bMax,
+    b2bCurrency,
     employmentMin,
     employmentMax,
+    employmentCurrency,
     skills,
     scale,
   } = props
@@ -89,6 +94,8 @@ export const Preview: PreviewInterface = props => {
           b2bMax={b2bMax}
           employmentMin={employmentMin}
           employmentMax={employmentMax}
+          b2bCurrency={b2bCurrency}
+          employmentCurrency={employmentCurrency}
         />
       )}
       <Skills

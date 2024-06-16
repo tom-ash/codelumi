@@ -12,6 +12,7 @@ import { saveBlob } from '../../../../../../../../../shared/app/components/suppo
 import API_URL from '../../../../../../../../shared/constants/urls/api'
 import setVerificationToken from '../../../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
 import { validatePosition } from '../components/position/validators/validate-position'
+import { Currency } from '../../../../../postings.types'
 
 var scrollIntoView = require('scroll-into-view')
 
@@ -34,9 +35,11 @@ type SubmitProps = {
   b2b: boolean
   b2bMin: number
   b2bMax: number
+  b2bCurrency: Currency
   employment: boolean
   employmentMin: number
   employmentMax: number
+  employmentCurrency: Currency
   authorized: boolean
   setErrors(params: any): void
   setControl(params: any): void
@@ -68,9 +71,11 @@ export const submit = async (props: SubmitProps) => {
     b2b,
     b2bMax,
     b2bMin,
+    b2bCurrency,
     employment,
     employmentMax,
     employmentMin,
+    employmentCurrency,
     placeId,
     placeAutocomplete,
     lat,
@@ -112,9 +117,11 @@ export const submit = async (props: SubmitProps) => {
     b2b,
     b2bMax,
     b2bMin,
+    b2bCurrency,
     employment,
     employmentMax,
     employmentMin,
+    employmentCurrency,
     placeId,
     placeAutocomplete,
     lat,

@@ -19,7 +19,7 @@ export const PostingsForm = () => {
 
   const { authorized } = useUser()
   
-  // POSITION
+  // CURRENCIES
 
   return (
     <div

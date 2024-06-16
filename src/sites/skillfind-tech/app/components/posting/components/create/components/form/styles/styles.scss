@@ -13,6 +13,7 @@
 @import '../components/social-image/styles/styles.scss';
 @import '../components/application/styles/styles.scss';
 @import '../components/submit/styles/styles.scss';
+@import '../../../../../../../styles/inputs/select.scss';
 
 #postings-new-form {
   max-width: 768px;
@@ -21,9 +22,16 @@
   background: white;
   border-radius: 3px;
   border: 1px solid lightgray;
+
   .text-input {
     @extend %text-input;
     max-width: 320px;
+  }
+  .select {
+    @extend %select-element;
+    ul {
+      top: 50px;
+    }
   }
   .main-heading {
     @extend %main-heading;
