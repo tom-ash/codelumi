@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { HeadingTwo } from '../../../../../../../../shared/app/components/support/headings/heading-two'
-import { Instructions } from '../../../../../../../../shared/app/components/support/instructions/instructions'
+import { InstructionsDeprecated } from '../../../../../../../../shared/app/components/support/instructions_deprecated/instructions_deprecated'
 import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
 import { categories } from '../../../../constants/categories'
 import { useApp } from '../../../../../../../../shared/app/functions/store/use-app'
@@ -41,7 +41,7 @@ export const Category = () => {
       className={classNames.join(' ')}
     >
       <HeadingTwo text={categoryHeading} />
-      <Instructions text={categoryInstructions} />
+      <InstructionsDeprecated text={categoryInstructions} />
       <div className='categories'>
         {categories.map(category => {
           const {

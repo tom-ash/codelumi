@@ -8,7 +8,7 @@ import { SkillView } from '../../../../../shared/components/skill/skill.types'
 import { useTexts } from '../../../../../../../../../../shared/app/functions/store/use-texts'
 import { useInputs } from '../../../../../../../../../../shared/app/functions/store/use-inputs'
 import { useErrors } from '../../../../../../../../../../shared/app/functions/store/use-errors'
-import { Instructions } from '../../../../../../../../../../shared/app/components/support/instructions/instructions'
+import { InstructionsDeprecated } from '../../../../../../../../../../shared/app/components/support/instructions_deprecated/instructions_deprecated'
 import { TextInput } from '../../../../../../../../../../shared/app/components/support/text-input-semanticize/text-input'
 import { SVG } from '../../../../../../../../../../shared/app/components/support/svg/svg'
 import escapeRegExp from 'lodash/escapeRegExp'
@@ -159,7 +159,7 @@ function Skills() {
       className={classNames.join(' ')}
     >
       <h2>{skillSelectorHeading}</h2>
-      <Instructions
+      <InstructionsDeprecated
         text={skillSelectionInstructions}
         isError={isError}
       />

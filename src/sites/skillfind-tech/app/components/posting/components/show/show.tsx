@@ -10,6 +10,7 @@ import { Application } from './components/application/application'
 import { Skills } from './components/skills/skills'
 import { FloatClear } from '../../../../../../shared/app/components/support/float-clear/float-clear'
 import { SVG } from '../../../../../../shared/app/components/support/svg/svg'
+import { Position } from './components/position/position'
 
 interface PostingShowInterface {
   (props: {}): React.ReactElement
@@ -24,10 +25,7 @@ const PostingsShow: PostingShowInterface = props => {
       <FloatClear />
       <div id='posting'>
         <Company />
-        <div className='role'>
-          {/* <SVG name='magnifyingGlass' /> */}
-          Senior JavaScript Engineer
-        </div>
+        <Position />
         <LocationAndCooperationMode />
         <Remuneration />
         <Skills />

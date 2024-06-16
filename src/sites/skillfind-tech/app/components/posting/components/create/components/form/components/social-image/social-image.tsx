@@ -15,6 +15,7 @@ export const SocialImage = () => {
 
   const {
     selectedSkills: skills,
+    position,
     locality,
     country,
     cooperationMode,
@@ -83,6 +84,7 @@ export const SocialImage = () => {
       </div>
       <Preview
         id={'social-image-preview'}
+        position={position}
         logo={logoSrc}
         businessName={businessName}
         industry={industryObject}
@@ -100,6 +102,7 @@ export const SocialImage = () => {
       />
       <Preview
         id={'social-image-canvas'}
+        position={position}
         logo={logoSrc}
         businessName={businessName}
         industry={industryObject}

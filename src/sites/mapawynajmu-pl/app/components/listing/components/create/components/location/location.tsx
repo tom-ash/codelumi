@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { MapMarker } from '../../../../../../../../shared/app/components/support/map-marker/map-marker'
-import { Instructions } from '../../../../../../../../shared/app/components/support/instructions/instructions'
+import { InstructionsDeprecated } from '../../../../../../../../shared/app/components/support/instructions_deprecated/instructions_deprecated'
 import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
 import { useErrors } from '../../../../../../../../shared/app/functions/store/use-errors'
 import { useInputs } from '../../../../../../../../shared/app/functions/store/use-inputs'
@@ -40,7 +40,7 @@ export const Location = () => {
       className={classNames.join(' ')}
     >
       <h2>{locationHeading}</h2>
-      <Instructions text={locationInstructions} />
+      <InstructionsDeprecated text={locationInstructions} />
       <MapMarker
         item={item}
         pinBuilder={pinBuilder}

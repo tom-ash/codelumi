@@ -11,11 +11,14 @@ import { validateInputs as validateUserInputs } from '../../../../../../user/com
 import { saveBlob } from '../../../../../../../../../shared/app/components/support/picture-input/functions/save-blob'
 import API_URL from '../../../../../../../../shared/constants/urls/api'
 import setVerificationToken from '../../../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
+import { validatePosition } from '../components/position/validators/validate-position'
 
 var scrollIntoView = require('scroll-into-view')
 
 type SubmitProps = {
   postingId: number | null
+  position: string
+  positionError: string
   lang: Lang
   selectedSkills: Array<any>
   cooperationMode: string
@@ -55,6 +58,8 @@ type SubmitProps = {
 export const submit = async (props: SubmitProps) => {
   const {
     postingId,
+    position,
+    positionError,
     lang,
     selectedSkills,
     cooperationMode,
@@ -99,6 +104,7 @@ export const submit = async (props: SubmitProps) => {
 
   const body = {
     postingId,
+    position,
     selectedSkills,
     cooperationMode,
     plDescription,
@@ -127,6 +133,11 @@ export const submit = async (props: SubmitProps) => {
     validateSkills({
       value: selectedSkills,
       errorMessage: 'TODO',
+      setErrors,
+    }),
+    validatePosition({
+      value: position,
+      errorMessage: positionError,
       setErrors,
     }),
     validateLocation({

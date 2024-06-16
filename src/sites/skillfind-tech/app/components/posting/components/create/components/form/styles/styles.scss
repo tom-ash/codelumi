@@ -7,6 +7,7 @@
 @import '../../../../../../../../../shared/app/styles/media-breakpoints';
 @import '../components/skill-selector/styles/styles.scss';
 @import '../components/description/styles/styles.scss';
+@import '../components/position/styles/styles.scss';
 @import '../components/contracts/styles/styles.scss';
 @import '../components/poster/styles/styles.scss';
 @import '../components/social-image/styles/styles.scss';
@@ -37,6 +38,9 @@
   }
   #skills {
     @extend %skills;
+  }
+  .position {
+    @extend %position;
   }
   .description {
     @extend %description;

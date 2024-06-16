@@ -1,0 +1,9 @@
+@import '../../../styles/section.scss';
+
+%position {
+  @extend %section;
+  .text-input {
+    width: 560px;
+    max-width: none;
+  }
+}

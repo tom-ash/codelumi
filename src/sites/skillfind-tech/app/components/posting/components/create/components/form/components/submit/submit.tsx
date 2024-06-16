@@ -23,6 +23,7 @@ export const Submit = () => {
 
   const {
     selectedSkills,
+    position,
     cooperationMode,
     plDescription,
     enDescription,
@@ -59,6 +60,7 @@ export const Submit = () => {
     applicationLinkInputInvalidError: applicationLinkError,
     termsOfServiceConsentLabel,
     logoInputMissingError: logoError,
+    positionInputInvalidError: positionError,
   } = useTexts()
 
   const label = isSubmitting ? (
@@ -76,6 +78,8 @@ export const Submit = () => {
     onClick: () =>
       submit({
         postingId: postingId || null,
+        position,
+        positionError,
         lang,
         selectedSkills,
         plDescription,

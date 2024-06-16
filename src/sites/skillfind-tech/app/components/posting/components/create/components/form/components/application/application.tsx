@@ -1,7 +1,7 @@
 import React from 'react'
 import { ApplicationManner, ApplicationMannerEnum } from './components/application-manner/application-manner'
 import { SectionHeading } from '../../../../../../../../../../shared/app/components/support/headings/section-heading'
-import { Instructions } from '../../../../../../../../../../shared/app/components/support/instructions/instructions'
+import { InstructionsDeprecated } from '../../../../../../../../../../shared/app/components/support/instructions_deprecated/instructions_deprecated'
 import { useTexts } from '../../../../../../../../../../shared/app/functions/store/use-texts'
 import { ApplicationLink } from './components/application-link/application-link'
 import { useInputs } from '../../../../../../../../../../shared/app/functions/store/use-inputs'
@@ -24,7 +24,7 @@ export const Application = () => {
       className={classNames.join(' ')}
     >
       <SectionHeading name='application' />
-      <Instructions text={applicationSectionInstructions} />
+      <InstructionsDeprecated text={applicationSectionInstructions} />
       <ApplicationManner name={ApplicationMannerEnum.FORM} />
       <ApplicationManner name={ApplicationMannerEnum.LINK} />
       {linkApplicationManner && <ApplicationLink />}

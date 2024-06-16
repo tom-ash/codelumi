@@ -12,11 +12,14 @@ import { useUser } from '../../../../../../../../shared/app/functions/store/use-
 import { MainHeading } from '../../../../../../../../shared/app/components/support/headings/main-heading'
 import { Application } from './components/application/application'
 import { Submit } from './components/submit/submit'
+import { Position } from './components/position/position'
 
 export const PostingsForm = () => {
   useStyles(styles)
 
   const { authorized } = useUser()
+  
+  // POSITION
 
   return (
     <div
@@ -25,6 +28,7 @@ export const PostingsForm = () => {
     >
       <MainHeading icon='plus' />
       <Skills />
+      <Position />
       <CooperationMode />
       <Location />
       <Description />

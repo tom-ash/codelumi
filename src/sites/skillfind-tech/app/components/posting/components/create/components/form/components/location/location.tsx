@@ -4,7 +4,7 @@ import { useTexts } from '../../../../../../../../../../shared/app/functions/sto
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { useErrors } from '../../../../../../../../../../shared/app/functions/store/use-errors'
-import { Instructions } from '../../../../../../../../../../shared/app/components/support/instructions/instructions'
+import { InstructionsDeprecated } from '../../../../../../../../../../shared/app/components/support/instructions_deprecated/instructions_deprecated'
 import { useStore } from 'react-redux'
 import { useInputs } from '../../../../../../../../../../shared/app/functions/store/use-inputs'
 import { pinBuilder } from './functions/pin-builder'
@@ -52,7 +52,7 @@ export const Location = () => {
       className={classNames.join(' ')}
     >
       <h2>{locationHeading}</h2>
-      <Instructions
+      <InstructionsDeprecated
         text={locationInstructions}
         isError={isError}
       />

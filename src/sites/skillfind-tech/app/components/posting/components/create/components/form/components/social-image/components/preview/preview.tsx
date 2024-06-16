@@ -4,10 +4,12 @@ import { Company } from '../../../../../../../common/company/company'
 import { LocationAndCooperationMode } from '../../../../../../../common/location-and-cooperation-mode/location-and-cooperation-mode'
 import { Remuneration } from '../../../../../../../common/remuneration/remuneration'
 import { Skills } from '../../../../../../../common/skills/skills'
+import { Position } from '../../../../../../../common/position/position'
 
 interface PreviewInterface {
   (props: {
     id: string
+    position: string
     skills: SkillProps[]
     locality: string
     country: string
@@ -36,6 +38,7 @@ interface PreviewInterface {
 export const Preview: PreviewInterface = props => {
   const {
     id,
+    position,
     logo,
     businessName,
     industry,
@@ -72,10 +75,7 @@ export const Preview: PreviewInterface = props => {
           isPreview={true}
         />
       )}
-      <div className='role'>
-        {/* <SVG name='magnifyingGlass' /> */}
-        Senior JavaScript Engineer
-      </div>
+      <Position position={position} />
       {locality && country && cooperationMode && (
         <LocationAndCooperationMode
           locality={locality}
