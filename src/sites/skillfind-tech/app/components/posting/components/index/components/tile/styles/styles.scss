@@ -22,7 +22,7 @@
     vertical-align: top;
     .company-logo {
       vertical-align: top;
-      display: inline-block!important;
+      display: inline-block;
       border-radius: 0;
       overflow: hidden;
       background: white;
@@ -46,6 +46,9 @@
         color: #424949;
         font-size: 17px;
         font-weight: 500;
+        overflow: hidden;
+        max-width: 160px;
+        text-overflow: ellipsis;
       }
       .industry {
         color: #4d5656;
