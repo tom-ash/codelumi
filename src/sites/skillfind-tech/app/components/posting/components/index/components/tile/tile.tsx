@@ -8,6 +8,7 @@ import { LocationAndCooperationMode } from '../../../common/location-and-coopera
 import { Skills } from '../../../common/skills/skills'
 import { Company } from '../../../common/company/company'
 import { Currency } from '../../../../postings.types'
+import { Position } from '../../../common/position/position'
 
 interface PostingIndexTileInterface {
   (props: {
@@ -32,6 +33,7 @@ interface PostingIndexTileInterface {
     }
     backgroundColor: string
     textColor: string
+    position: string
   }): React.ReactElement
 }
 
@@ -57,6 +59,7 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
     cooperationMode,
     backgroundColor,
     textColor,
+    position,
   } = props
 
   return (
@@ -81,11 +84,16 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
           icon: industryIcon,
         }}
       />
-      <LocationAndCooperationMode
-        locality={locality}
-        country={country}
-        cooperationMode={cooperationMode}
-      />
+      <div className='position-cooperation-mode-and-location'>
+        <Position
+          position={position}
+        />
+        <LocationAndCooperationMode
+          locality={locality}
+          country={country}
+          cooperationMode={cooperationMode}
+        />
+      </div>
       <Remuneration
         b2bMin={b2bMin}
         b2bMax={b2bMax}
