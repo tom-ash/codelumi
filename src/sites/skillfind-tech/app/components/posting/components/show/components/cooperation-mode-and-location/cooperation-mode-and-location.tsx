@@ -1,18 +1,18 @@
 import React from 'react'
 import { useData } from '../../../../../../../../shared/app/functions/store/use-data'
-import { LocationAndCooperationMode as LocationAndCooperationModePartial } from '../../../common/location-and-cooperation-mode/location-and-cooperation-mode'
+import { CooperationModeAndLocation as CooperationModeAndLocationPartial } from '../../../common/cooperation-mode-and-location/cooperation-mode-and-location'
 
-interface LocationAndCooperationModeInterface {
+interface CooperationModeAndLocationInterface {
   (props: {}): React.ReactElement
 }
 
-export const LocationAndCooperationMode: LocationAndCooperationModeInterface = () => {
+export const CooperationModeAndLocation: CooperationModeAndLocationInterface = () => {
   const {
     posting: { locality, country, cooperationMode },
   } = useData()
 
   return (
-    <LocationAndCooperationModePartial
+    <CooperationModeAndLocationPartial
       locality={locality}
       country={country}
       cooperationMode={cooperationMode}

@@ -3,13 +3,12 @@ import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { GoBack } from './components/go-back/go-back'
 import { Company } from './components/company/company'
-import { LocationAndCooperationMode } from './components/location-and-cooperation-mode/location-and-cooperation-mode'
+import { CooperationModeAndLocation } from './components/cooperation-mode-and-location/cooperation-mode-and-location'
 import { Remuneration } from './components/remuneration/remuneration'
 import { Description } from './components/description/description'
 import { Application } from './components/application/application'
 import { Skills } from './components/skills/skills'
 import { FloatClear } from '../../../../../../shared/app/components/support/float-clear/float-clear'
-import { SVG } from '../../../../../../shared/app/components/support/svg/svg'
 import { Position } from './components/position/position'
 
 interface PostingShowInterface {
@@ -26,7 +25,7 @@ const PostingsShow: PostingShowInterface = props => {
       <div id='posting'>
         <Company />
         <Position />
-        <LocationAndCooperationMode />
+        <CooperationModeAndLocation />
         <Remuneration />
         <Skills />
         <Description />

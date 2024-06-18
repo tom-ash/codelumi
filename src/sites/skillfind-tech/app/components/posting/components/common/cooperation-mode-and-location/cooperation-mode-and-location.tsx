@@ -1,7 +1,7 @@
 import React from 'react'
 import { SVG } from '../../../../../../../shared/app/components/support/svg/svg'
 
-interface LocationAndCooperationModeInterface {
+interface CooperationModeAndLocationInterface {
   (props: {
     locality?: string
     country?: string
@@ -12,13 +12,13 @@ interface LocationAndCooperationModeInterface {
   }): React.ReactElement
 }
 
-export const LocationAndCooperationMode: LocationAndCooperationModeInterface = props => {
+export const CooperationModeAndLocation: CooperationModeAndLocationInterface = props => {
   const { locality, country, cooperationMode } = props
 
   const { icon: cooperationModeIcon, label: cooperationModeLabel } = cooperationMode
 
   return (
-    <section className='location-and-cooperation-mode'>
+    <section className='cooperation-mode-and-location'>
       <div className='cooperation-mode'>
         <SVG name={cooperationModeIcon} />
         <span>{cooperationModeLabel}</span>

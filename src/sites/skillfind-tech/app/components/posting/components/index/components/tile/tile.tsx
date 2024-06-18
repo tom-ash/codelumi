@@ -4,7 +4,7 @@ import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { Remuneration } from '../../../common/remuneration/remuneration'
 import { changeUrl } from '../../../../../../../../shared/app/functions/routes/changers/change-url'
-import { LocationAndCooperationMode } from '../../../common/location-and-cooperation-mode/location-and-cooperation-mode'
+import { CooperationModeAndLocation } from '../../../common/cooperation-mode-and-location/cooperation-mode-and-location'
 import { Skills } from '../../../common/skills/skills'
 import { Company } from '../../../common/company/company'
 import { Currency } from '../../../../postings.types'
@@ -88,7 +88,7 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
         <Position
           position={position}
         />
-        <LocationAndCooperationMode
+        <CooperationModeAndLocation
           locality={locality}
           country={country}
           cooperationMode={cooperationMode}

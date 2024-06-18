@@ -1,5 +1,5 @@
 @import '../../common/skills/styles/styles.scss';
-@import '../../common/location-and-cooperation-mode/styles/styles.scss';
+@import '../../common/cooperation-mode-and-location/styles/styles.scss';
 @import '../../common/remuneration/styles/styles.scss';
 @import '../../../../../styles/inputs/text.scss';
 @import '../../../../../styles/inputs/drag-and-drop.scss';
@@ -75,8 +75,8 @@
       }
     }
   }
-  .location-and-cooperation-mode {
-    @extend %location-and-cooperation-mode;
+  .cooperation-mode-and-location {
+    @extend %cooperation-mode-and-location;
     margin: 8px 30px 0;
   }
   .section-heading {
@@ -239,7 +239,7 @@
   }
   @media #{$LARGE-TABLET} {
     position: relative;
-    padding: 20px;
+    padding: 150px;
     .company {
       height: 200px;
       .background {
@@ -262,7 +262,7 @@
         font-size: 16px;
       }
     }
-    .location-and-cooperation-mode {
+    .cooperation-mode-and-location {
       position: relative;
       top: 0;
       left: 0;

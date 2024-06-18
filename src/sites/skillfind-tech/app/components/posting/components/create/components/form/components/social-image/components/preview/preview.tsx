@@ -1,7 +1,7 @@
 import React from 'react'
 import { SkillProps, SkillView } from '../../../../../../../shared/components/skill/skill.types'
 import { Company } from '../../../../../../../common/company/company'
-import { LocationAndCooperationMode } from '../../../../../../../common/location-and-cooperation-mode/location-and-cooperation-mode'
+import { CooperationModeAndLocation } from '../../../../../../../common/cooperation-mode-and-location/cooperation-mode-and-location'
 import { Remuneration } from '../../../../../../../common/remuneration/remuneration'
 import { Skills } from '../../../../../../../common/skills/skills'
 import { Position } from '../../../../../../../common/position/position'
@@ -82,7 +82,7 @@ export const Preview: PreviewInterface = props => {
       )}
       <Position position={position} />
       {locality && country && cooperationMode && (
-        <LocationAndCooperationMode
+        <CooperationModeAndLocation
           locality={locality}
           country={country}
           cooperationMode={cooperationMode}
