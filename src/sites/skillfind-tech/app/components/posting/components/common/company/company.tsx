@@ -2,6 +2,7 @@ import React from 'react'
 import Image from '../../../../../../../shared/app/components/support/image/image'
 import { PostingIndexTileIndustry } from '../../index/components/components/industry/industry'
 import { Link } from '../../../../../../../shared/app/components/support/link/link'
+import { FloatClear } from '../../../../../../../shared/app/components/support/float-clear/float-clear'
 
 interface CompanyInterface {
   (props: {
@@ -57,6 +58,7 @@ export const Company: CompanyInterface = props => {
           textColor={textColor}
         />
       </div>
+      <FloatClear />
     </div>
   )
 }

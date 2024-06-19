@@ -9,6 +9,7 @@ import { Skills } from '../../../common/skills/skills'
 import { Company } from '../../../common/company/company'
 import { Currency } from '../../../../postings.types'
 import { Position } from '../../../common/position/position'
+import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
 
 interface PostingIndexTileInterface {
   (props: {
@@ -94,6 +95,7 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
           cooperationMode={cooperationMode}
         />
       </div>
+      <FloatClear />
       <Remuneration
         b2bMin={b2bMin}
         b2bMax={b2bMax}

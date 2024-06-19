@@ -7,47 +7,45 @@
 %postings-index-tile {
   display: block;
   float: none;
-  position: relative;
-  background: white;
   margin-top: 20px;
-  border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   border: none;
-  text-wrap: nowrap;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding: 0;
+  background: white;
   .company {
-    width: calc(45% - 40px);
-    display: inline-block;
+    width: calc(50% - 20px);
+    float: left;
     margin: 20px 0 0 20px;
-    vertical-align: top;
+    color: #424949;
     .company-logo {
-      vertical-align: top;
-      display: inline-block;
-      border-radius: 0;
-      overflow: hidden;
-      background: white;
+      float: left;
       height: 36px;
-      margin-right: 10px;
+      width: 50px;
+      margin-right: 20px;
       position: relative;
       top: 2px;
+      position: relative;
+      text-align: center;
       img {
-        height: 100%;
-        width: 100%;
+        vertical-align: bottom;
+        max-width: 100%;
+        max-height: 100%;
+        position: relative;
+        top: 4px;
+        width: auto!important;
       }
     }
     .business-name-and-industry {
-      display: inline-block;
-      margin: 0;
-      vertical-align: top;
+      float: left;
+      max-width: calc(100% - 90px);
       .business-name {
+        max-width: 100%;
+        overflow: hidden;
         margin: 0;
-        vertical-align: top;
-        display: inline-block;
-        color: #424949;
+        text-wrap: nowrap;
         font-size: 17px;
         font-weight: 500;
-        overflow: hidden;
-        max-width: 160px;
         text-overflow: ellipsis;
       }
       .industry {
@@ -65,36 +63,37 @@
     }
   }
   .position-cooperation-mode-and-location {
-    display: inline-block;
-    vertical-align: top;
-    width: calc(55% - 40px);
+    float: left;
+    width: calc(50% - 20px);
     margin: 20px 20px 0 0;
+    color: #424949;
     .role {
-      display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+      text-wrap: nowrap;
+      text-overflow: ellipsis;
       font-size: 17px;
       font-weight: 500;
-      color: #424949;
     }
     .cooperation-mode-and-location {
       @extend %cooperation-mode-and-location;
       margin: 0;
-      .location {
-        font-size: 13px;
-        svg {
-          height: 12px;
-          top: 1px;
-        }
-      }
-      svg {
-        height: 13px;
-        margin-right: 4px;
-      }
+      font-size: 13px;
       .cooperation-mode {
+        float: left;
         margin-right: 12px;
-        font-size: 13px;
         svg {
+          margin-right: 5px;
           height: 10px;
           top: 0px;
+        }
+      }
+      .location {
+        float: left;
+        svg {
+          margin-right: 5px;
+          height: 12px;
+          top: 1px;
         }
       }
     }
@@ -149,29 +148,31 @@
     height: 370px;
     padding: 15px;
     .company {
-      display: block;
+      float: none;
       margin: 0;
+      width: 100%;
     }
     .position-cooperation-mode-and-location {
-      display: block;
-      margin: 15px 0 0;
-      .role {
-        line-height: 10px;
-      }
+      float: none;
+      width: 100%;
+      margin: 25px 0 0;
       .cooperation-mode-and-location {
         display: block;
-        .location {
-          display: inline-block;
-          font-size: 15px;
-        }
         .cooperation-mode {
-          display: inline-block;
+          font-size: 15px;
+          margin: 0;
+          width: 80px;
+        }
+        .location {
+          width: calc(100% - 110px);
+          overflow: hidden;
+          text-overflow: ellipsis;
           font-size: 15px;
         }
       }
     }
     .contract-and-remuneration {
-      margin: 15px 0 0;
+      margin: 25px 0 0;
       height: 32px;
       .b2b,
       .employment {
@@ -197,8 +198,9 @@
       padding: 0;
       margin: 0;
       text-wrap: wrap;
+      margin-top: 10px;
       .skill {
-        margin-top: 15px;
+        margin-top: 5px;
         margin-right: 15px;
         &:nth-of-type(2n) {
           margin-right: 0;

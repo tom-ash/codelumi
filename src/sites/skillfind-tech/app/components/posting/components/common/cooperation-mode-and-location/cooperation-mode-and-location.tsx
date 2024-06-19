@@ -1,5 +1,6 @@
 import React from 'react'
 import { SVG } from '../../../../../../../shared/app/components/support/svg/svg'
+import { FloatClear } from '../../../../../../../shared/app/components/support/float-clear/float-clear'
 
 interface CooperationModeAndLocationInterface {
   (props: {
@@ -27,6 +28,7 @@ export const CooperationModeAndLocation: CooperationModeAndLocationInterface = p
         <SVG name='marker' />
         <span>{locality}, {country}</span>
       </div>
+      <FloatClear />
     </section>
   )
 }
