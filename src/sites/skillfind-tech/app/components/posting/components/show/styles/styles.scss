@@ -45,17 +45,6 @@
     padding-bottom: 30px;
     border: 1px solid $CONTAINER-BORDER-COLOR;
   }
-  .role {
-    height: 60px;
-    padding: 30px;
-    font-size: 24px;
-    svg {
-      height: 18px;
-      position: relative;
-      top: 1px;
-      margin-right: 12px;
-    }
-  }
   .company {
     position: relative;
     @extend %company;
@@ -75,9 +64,23 @@
       }
     }
   }
+  .role {
+    margin: 30px 30px 0;
+    font-size: 24px;
+    line-height: 32px;
+    svg {
+      height: 18px;
+      position: relative;
+      top: 1px;
+      margin-right: 12px;
+    }
+  }
   .cooperation-mode-and-location {
     @extend %cooperation-mode-and-location;
-    margin: 8px 30px 0;
+    margin: 10px 30px 0;
+    .cooperation-mode {
+      width: 96px;
+    }
   }
   .section-heading {
     h2 {
@@ -239,34 +242,34 @@
   }
   @media #{$LARGE-TABLET} {
     position: relative;
-    padding: 15px;
+    padding: 10px;
     #posting {
-      margin-top: 15px;
+      margin-top: 10px;
     }
     .company {
       margin: 15px 0 0;
       display: block;
       text-align: center;
+      float: none;
       .company-logo {
-        height: 80px;
-        display: inline-block;
-        img {
-          height: 100%;
-        }
+        float: none;
+        width: auto;
+        height: 60px;
+        line-height: 60px;
       }
       .business-name-and-industry {
+        float: none;
+        display: block;
         margin-top: 15px;
         text-align: left;
-        width: 100%;
         padding: 15px;
         height: auto;
         border-radius: 0;
+        width: auto;
       }
       .business-name {
-        font-size: 14px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        text-wrap: nowrap;
+        font-size: 22px!important;
+        text-wrap: wrap!important;
       }
       .industry {
         font-size: 10px;
