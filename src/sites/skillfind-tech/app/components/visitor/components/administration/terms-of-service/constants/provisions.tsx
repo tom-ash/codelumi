@@ -82,7 +82,7 @@ export const provisions = [
     ),
     en: (
       <span>
-        <strong>Account</strong> - an Agreement between the Administrator and a given entity and a corresponding record
+        <strong>Account</strong> - an Agreement between the Service Administrator and a given entity and a corresponding record
         in the Service's database.{' '}
       </span>
     ),
@@ -129,7 +129,7 @@ export const provisions = [
     tier: 'point',
     version: versions['1.0'],
     pl: <span>Właścicielem i administratorem Serwisu jest Administrator.</span>,
-    en: <span>The owner and the administrator of the Service is the Administrator.</span>,
+    en: <span>The owner and the administrator of the Service is the Service Administrator.</span>,
   },
   {
     item: '2.2.',
@@ -174,7 +174,7 @@ export const provisions = [
     ),
     en: (
       <span>
-        The Administrator is entitled to de-activate and/or delete the Account in case of determining of violation of
+        The Service Administrator is entitled to de-activate and/or delete the Account in case of determining of violation of
         these Terms of Service by the User.
       </span>
     ),
@@ -184,7 +184,7 @@ export const provisions = [
     tier: 'header',
     version: versions['1.0'],
     pl: <span>Prawa i odpowiedzialność Administratora.</span>,
-    en: <span>The rights and liability of the Administrator</span>,
+    en: <span>The rights and liability of the Service Administrator</span>,
   },
   {
     item: '5.1.',
@@ -198,7 +198,7 @@ export const provisions = [
     ),
     en: (
       <span>
-        The Administrator is entitled at any time to terminate rendering of the services through the Service, and/or to
+        The Service Administrator is entitled at any time to terminate rendering of the services through the Service, and/or to
         interrupt rendering of those services.
       </span>
     ),
@@ -215,7 +215,7 @@ export const provisions = [
     ),
     en: (
       <span>
-        The Administrator does not give any guarantee that the information, data and opinions included in the articles
+        The Service Administrator does not give any guarantee that the information, data and opinions included in the articles
         in the Service are correct.
       </span>
     ),
@@ -247,7 +247,7 @@ export const provisions = [
     ),
     en: (
       <span>
-        An entity creating an Account authorizes the Administrator to process personal data connected with that Account.
+        An entity creating an Account authorizes the Service Administrator to process personal data connected with that Account.
       </span>
     ),
   },
@@ -444,6 +444,182 @@ export const provisions = [
 
 
 
+
+  {
+    item: '10.',
+    tier: 'header',
+    version: versions['1.0'],
+    pl: <span>Zmiana Regulaminu</span>,
+    en: <span>Amendments to the Terms of Service</span>,
+  },
+  {
+    item: '10.1',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Administrator Serwisu ma prawo do zmiany Regulaminu oraz jego integralnych części, takich jak w szczególności, ale nie
+        wyłącznie, Polityka Prywatności oraz Polityka Cookies, w odniesieniu do:
+      </span>
+    ),
+    en: (
+      <span>
+        The Service Administrator is entitled to amend these Terms of Service and their integral parts, including, without
+        limitation, the Privacy Policy and the Cookies Policy, with regard to:
+      </span>
+    ),
+  },
+  {
+    item: 'a)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: <span>zmian wymaganych z uwagi na bezwzględnie obowiązujące przepisy prawa,</span>,
+    en: <span>amendments required due to the mandatory provisions of law,</span>,
+  },
+  {
+    item: 'b)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        zmian wymaganych z uwagi na przeciwdziałanie nadużyciom oraz zapewnienie bezpieczeństwa Odwiedzających oraz
+        Serwisu,
+      </span>
+    ),
+    en: (
+      <span>amendments required due to counteracting abuses and ensuring safety of the Visitors and the Service,</span>
+    ),
+  },
+  {
+    item: 'c)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: <span>rozpoczęcia świadczenia nowych usług przez Administratora Serwisu w ramach Serwisu,</span>,
+    en: <span>commencement of the provision of new services by the Service Administrator within the Service,</span>,
+  },
+  {
+    item: 'd)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: (
+      <span>zmian w zakresie świadczenia dotychczasowych usług przez Administratora Serwisu w ramach Serwisu,</span>
+    ),
+    en: (
+      <span>
+        amendments in the scope provisioning of the existing services by the Service Administrator within the
+        Service,
+      </span>
+    ),
+  },
+  {
+    item: 'e)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: <span>zakończenia świadczenia dotychczasowych usług przez Administratora Serwisu w ramach Serwisu,</span>,
+    en: <span>termination of the provision of the existing services by the Service Administrator within the Service,</span>,
+  },
+  {
+    item: 'f)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: <span>zmian w zakresie funkcjononowania Serwisu,</span>,
+    en: <span>amendments in the scope of the functioning of the Service,</span>,
+  },
+  {
+    item: 'g)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: <span>zmian w zakresie ochrony prywatności Odwiedzających oraz analizy zachowań Odwiedzających Serwis,</span>,
+    en: <span>amendments in the scope of privacy protection of the Visitors and the Visitor behavior analysis,</span>,
+  },
+  {
+    item: 'h)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: <span>zmian redakcyjnych.</span>,
+    en: <span>editorial amendments.</span>,
+  },
+  {
+    item: '10.2',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Zmiany Regulaminu wchodzą w życie w terminie wskazanym przez Administratora Serwisu, jednakże nie krótszym niż 14 dni od
+        dnia powiadomienia o tych zmianach poprzez ich publikację na stronie dostępnej pod adresem
+        https://skillfind.tech/regulamin, oraz w odniesieniu do dotychczasowych Użytkowników poprzez przesłanie
+        informacji o tych zmianach na adres email Użytkownika podany przez Użytkownika i zapisany w Serwisie.
+      </span>
+    ),
+    en: (
+      <span>
+        Aamendments to the Terms of Service enter into force on the date indicated by the Service Administrator, however not
+        shorter than 15 days from the date of notification about those amendments through their publication on the
+        website available at https://skillfind.tech/terms-of-service, and with regard to the existing Users through
+        sending information about these changes to the User's email address provided by the User and saved within the
+        Service.
+      </span>
+    ),
+  },
+  {
+    item: '10.3',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Zmiany Regulaminu wprowadzone z uwagi na bezwzględnie obowiązujące przepisy prawa lub z uwagi na
+        przeciwdziałanie nadużyciom oraz zapewnienie bezpieczeństwa Odwiedzających oraz Serwisu mogą wejść w życie w
+        terminie krótszym od przewidzianego w Punkcie 10.2, w tym nawet ze skutkiem natychmiastowym.
+      </span>
+    ),
+    en: (
+      <span>
+        The amendments to the Terms of Service introduced due to the mandatory provisions of law and/or due to
+        counteracting abuses and ensuring safety of the Visitors and the Service may enter into force in the period
+        shorter than specified under Point 10.2, including even with immediate effect.
+      </span>
+    ),
+  },
+  {
+    item: '10.5',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        W przypadku braku akceptacji planowanych zmian Regulaminu, dotychczasowy Użytkownik uprawniony jest do
+        wypowiedzenia umowy dotyczącej prowadzenia Konta w Serwisie ze skutkiem natychmiastowym, w terminie 14 dni od
+        dnia otrzymania powiadomienia o tych zmianach, poprzez wysłanie wiadomości email o odpowiedniej treści na adres <u>kontakt@skillfind.tech</u>, z zastrzeżeniem, że takie wypowiedzenie nie ma zastosowania do odpłatnch usług
+        Administratora Serwisu świadczonych w ramach Serwisu aktywowanych przez Użytkownika przed tymi zmianami, aż do czasu
+        zakończenia świadczenia tych usług.
+      </span>
+    ),
+    en: (
+      <span>
+        In case of non-acceptance of the planned amendments to the Terms of Service, the existing User is entitiled
+        terminate the agreement regarding Account maintenance within the Service with immediate effect, within the
+        period of 14 days from the date of receiving notification of these changes, through sending an email message
+        with the relevant content to the address <u>contact@skillfind.tech</u>, with the reservation that such
+        termination is not applicable to the paid services provisioned by the Service Administrator within the Service activated before these amendements, until the termination of provisioning of those services.
+      </span>
+    ),
+  },
+  {
+    item: '10.6',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>Po wejściu w życie zmian Regulaminu aktywowanie nowej usługi wymaga ponownej akceptacji Regulaminu.</span>
+    ),
+    en: (
+      <span>
+        Once the amendments to the Terms of Service enter into force an activation of a new service requires
+        re-accaptance of the Terms of Service.
+      </span>
+    ),
+  },
+
+
+
   {
     item: '7.',
     tier: 'header',
@@ -464,7 +640,7 @@ export const provisions = [
     tier: 'point',
     version: versions['1.0'],
     pl: <span>Spory wynikłe z niniejszego Regulaminu rozstrzygane będą przez sąd właściwy dla Administratora.</span>,
-    en: <span>Disputes arising out of these Terms of Service shall be determined by the court having jurisdiction over the Administrator.</span>,
+    en: <span>Disputes arising out of these Terms of Service shall be determined by the court having jurisdiction over the Service Administrator.</span>,
   },
   {
     item: '7.3.',
@@ -486,7 +662,7 @@ export const provisions = [
     ),
     en: (
       <span>
-        The Administrator is authorized to amend these Terms of Service, the Privacy Policy, the Cookies Policy and the
+        The Service Administrator is authorized to amend these Terms of Service, the Privacy Policy, the Cookies Policy and the
         Pricing through publication of the amendments to those documents within the Service under the address{' '}
         <i>skillfind.tech</i>. The amendments are applicable after the lapse of the period of 14 days from their
         publication.
