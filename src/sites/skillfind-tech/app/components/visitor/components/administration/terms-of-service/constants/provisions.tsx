@@ -251,12 +251,206 @@ export const provisions = [
       </span>
     ),
   },
+
+  {
+    item: 'X.',
+    tier: 'header',
+    version: versions['1.0'],
+    pl: <span>Licencja</span>,
+    en: <span>License</span>,
+  },
+  {
+    item: 'X.1.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>Ogłoszeniodawca przy zakładaniu Konta, edycji Konta i dodawaniu Ogłoszeń, jak i przy korzystaniu z innych usług świadczonych przez Administratora Serwisu w ramach Serwisu, podaje nazwy handlowe, znaki graficzne oraz znaki słowne (dalej zwane "<strong>Utworami Ogłoszeniodawcy</strong>").</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: 'X.2.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>Ogłoszeniodawca oświadcza, że ma pełnię majątkowych praw autorskich lub właściwe licencje do Utworów Ogłoszeniodawcy i ich podanie zgodnie z Punktem X.1 powyżej nie narusza praw osób trzecich, a w szczególności, ale nie wyłącznie, praw autorskich, licencji i dóbr osobistych osób trzecich.</span>,
+    en: (
+      <span>
+        TODO
+      </span>
+    ),
+  },
+  {
+    item: 'X.3.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>Ogłoszeniodawca ponosi pełną i wyłączną odpowiedzialność wobec osób trzecich w związku z podaniem Utworów Ogłoszeniodawcy zgodnie z Punktem X.1 powyżej i zobowiązuje się pokryć koszty związane z zaspakajaniem roszczeń osób trzecich wobec Administratora Serwisu w związku z tym podaniem.</span>,
+    en: (
+      <span>
+        TODO
+      </span>
+    ),
+  },
+  {
+    item: 'X.4.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>Ogłoszeniodawca udziela Administratorowi Serwisu nieograniczonej terytorialnie oraz niewyłącznej licencji na używanie Utworów Ogłoszeniodawcy w celu realizacji usług świadczonych na rzecz Ogłoszeniodawcy przez Serwis, takich jak, w szczególności, ale nie wyłącznie, publiczne udostępnianie Ogłoszeń publikowanych przez Ogłoszeniodawcę, które zawierają Uwtory Ogłoszeniodawcy, jak i w celu promowania tych Ogłoszeń.</span>,
+    en: (
+      <span>
+        TODO
+      </span>
+    ),
+  },
+  {
+    item: 'X.5.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>Licencja, o której mowa w Punkcie X.4. powyżej udzielana jest nieodpłatnie w celu i na czas realizacji usług na rzecz Ogłoszeniodawcy przez Administratora Serwisu poprzez Serwis.</span>,
+    en: (
+      <span>
+        TODO
+      </span>
+    ),
+  },
+  {
+    item: 'X.6.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>W celu realizacji usług na rzecz Ogłoszeniodawcy, w tym w szczególności, ale niewyłącznie, w celu promowania Ogłoszeń Ogłoszeniodawcy, Administrator Serwisu uprawniony jest do udzielania sublicencji w odniesieniu do Utworów Ogłoszeniodawcy.</span>,
+    en: (
+      <span>
+        TODO
+      </span>
+    ),
+  },
+
+  {
+    item: 'X.7.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>Licencja, o której mowa w Punkcie X.4. powyżej, udzielana jest na następującyh polach eksploatacji:</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: 'a)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: <span>w zakresie zastosowania Utworów Ogłoszeniodawcy: jednokrotne lub wielokrotne zastosowanie Utworów Ogłoszeniodawcy, w celach wskazanych w Punkcie X.4. powyżej,</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: 'b)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: <span>w zakresie utrwalania i zwielokrotniania Utworów Ogłoszeniodawcy: wytwarzanie różnymi technikami egzemplarzy Utworów Ogłoszeniodawcy, w tym w szczególności, ale nie wyłącznie, technikami poligraficznymi, drukarskimi, reprograficznymi, magnetycznymi, informatycznymi, cyfrowymi, fotograficznymi, plastycznymi, wizualnymi, audiowizualnymi, multimedialnymi, a ponadto trwałe lub czasowe zwielokrotnianie Utworów Ogłoszeniodawcy w całości lub w części jakimikolwiek środkami i w jakiejkolwiek formie,</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: 'c)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: <span>w zakresie rozpowszechniania Utworów Ogłoszeniodawcy: publiczne wykonanie, wystawienie, wyświetlenie, odtwarzanie oraz nadawanie i reemitowanie, a także udostępnianie Utworów Ogłoszeniodawcy w taki sposób, aby każdy mógł mieć do nich dostęp w miejscu i w czasie przez siebie wybranym, w tym w szczególności, ale nie wyłącznie, w sieci Internet,</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: 'd)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: <span>w zakresie ingerencji w Utwory Ogłoszeniodawcy: tłumaczenia, przystosowywania, zmiany układu, dokonywanie skrótów lub jakiekolwiek inne zmiany tych utworów, z zachowaniem praw osoby, która tych zmian dokonała.</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: 'X.8.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>Ogłoszeniodawca niniejszym wyraża zgodę na anonimowe korzystanie przez Administratora Serwisu z Utworów Ogłoszeniodawcy na wszystkich polach eksploatacji wskazanych w Punkcie X.7 powyżej, a w szczególności, ale nie wyłącznie, Administrator Serwisu ma prawo do korzystania z Utworów Ogłoszeniodawcy bez oznaczenia autorstwa Ogłoszeniodawcy.</span>,
+    en: <span>TODO</span>,
+  },
+
+
+
+  {
+    item: 'X.',
+    tier: 'header',
+    version: versions['1.0'],
+    pl: <span>TODO</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: 'X.1.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>TODO</span>,
+    en: <span>TODO</span>,
+  },
+
+  {
+    item: 'X.',
+    tier: 'header',
+    version: versions['1.0'],
+    pl: <span>TODO</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: 'X.1.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>TODO</span>,
+    en: <span>TODO</span>,
+  },
+
+  {
+    item: 'X.',
+    tier: 'header',
+    version: versions['1.0'],
+    pl: <span>TODO</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: 'X.1.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>TODO</span>,
+    en: <span>TODO</span>,
+  },
+
+  {
+    item: 'X.',
+    tier: 'header',
+    version: versions['1.0'],
+    pl: <span>TODO</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: 'X.1.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>TODO</span>,
+    en: <span>TODO</span>,
+  },
+
+  {
+    item: 'X.',
+    tier: 'header',
+    version: versions['1.0'],
+    pl: <span>TODO</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: 'X.1.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>TODO</span>,
+    en: <span>TODO</span>,
+  },
+
+
+
   {
     item: '7.',
     tier: 'header',
     version: versions['1.0'],
-    pl: <span>Postanowienia końcowe</span>,
-    en: <span>Final Provisions</span>,
+    pl: <span>Postanowienia końcowe
+    </span>,
+    en: <span>TODO</span>,
   },
   {
     item: '7.1.',
@@ -270,12 +464,7 @@ export const provisions = [
     tier: 'point',
     version: versions['1.0'],
     pl: <span>Spory wynikłe z niniejszego Regulaminu rozstrzygane będą przez sąd właściwy dla Administratora.</span>,
-    en: (
-      <span>
-        Disputes arising out of these Terms of Service shall be determined by the court having jurisdiction over the
-        Administrator.
-      </span>
-    ),
+    en: <span>Disputes arising out of these Terms of Service shall be determined by the court having jurisdiction over the Administrator.</span>,
   },
   {
     item: '7.3.',
