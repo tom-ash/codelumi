@@ -39,12 +39,12 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        <strong>Serwis</strong> - serwis internetowy znajdujący się pod adresem <u>skillfind.tech</u>.
+        <strong>Serwis</strong> - serwis internetowy znajdujący się pod adresem <u>skillfind.tech</u>,
       </span>
     ),
     en: (
       <span>
-        <strong>Service</strong> - a web service located at the address <u>skillfind.tech</u>.
+        <strong>Service</strong> - a web service located at the address <u>skillfind.tech</u>,
       </span>
     ),
   },
@@ -54,51 +54,55 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        <strong>Administrator</strong> - Warsaw Digital Sp. z o.o., z siedzibą w Warszawie przy
+        <strong>Usługodawca</strong> - Warsaw Digital Sp. z o.o., z siedzibą w Warszawie przy
         ul.&nbsp;Twardej&nbsp;18, 00-105 Warszawa, zarejestrowana w rejestrze przedsiębiorców prowadzonym przez Sąd
         Rejonowy dla m. st. Warszawy, XII Wydział Gospodarczy Krajowego Rejestru Sądowego, pod numerem KRS 0000735294, o
         kapitale zakładowym 20.000,00 PLN, w pełni wpłaconym, posiadająca numer REGON 380529016 oraz numer NIP
-        5252753799.
+        5252753799,
       </span>
     ),
     en: (
       <span>
-        <strong>Administrator</strong> - Warsaw Digital Sp. z o.o., with its registered office in Warsaw at&nbsp;Twarda
+        <strong>Service Provider</strong> - Warsaw Digital Sp. z o.o., with its registered office in Warsaw at&nbsp;Twarda
         18 St., 00-105 Warsaw, registered in the register of entrepreneurs held by the District Court for the capital
         city of Warsaw, XII Commercial Division of the National Court Register, under the KRS number 0000735294, with
-        the share capital of 20,000.00 PLN, fully paid, with REGON number 380529016, and NIP number 5252753799.
+        the share capital of 20,000.00 PLN, fully paid, with REGON number 380529016, and NIP number 5252753799,
       </span>
     ),
   },
+
+
+
   {
     item: 'c)',
     tier: 'subpoint',
     version: versions['1.0'],
     pl: (
       <span>
-        <strong>Konto</strong> - umowa pomiędzy Administratorem oraz danym podmiotem i odpowiadający tej umowie zapis w
-        bazie danych Serwisu.
+        <strong>Konto</strong> - zapis w bazie danych Serwisu identyfikujący dany podmiot w Serwisie przy użyciu systemu logowania,
       </span>
     ),
     en: (
       <span>
-        <strong>Account</strong> - an Agreement between the Service Administrator and a given entity and a corresponding record
-        in the Service's database.{' '}
+        <strong>Account</strong> - a record in the Service's database identifying a given entity within the Service using the logging system,
       </span>
     ),
   },
+
+
+
   {
     item: 'd)',
     tier: 'subpoint',
     version: versions['1.0'],
     pl: (
       <span>
-        <strong>Odwiedzający</strong> - osoba, która uzyskała dostęp do Serwisu, np. poprzez przeglądarkę internetową.
+        <strong>Odwiedzający</strong> - osoba, która uzyskała dostęp do Serwisu, np. poprzez przeglądarkę internetową,
       </span>
     ),
     en: (
       <span>
-        <strong>Visitor</strong> - a person which obtained access to the Service, for example through a web browser.
+        <strong>Visitor</strong> - a person which obtained access to the Service, for example through a web browser,
       </span>
     ),
   },
@@ -108,15 +112,66 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        <strong>Użytkownik</strong> - podmiot posiadający Konto w Serwisie.
+        <strong>Użytkownik</strong> - podmiot posiadający Konto w Serwisie,
       </span>
     ),
     en: (
       <span>
-        <strong>User</strong> - an entity having an Account in the Service.
+        <strong>User</strong> - an entity having an Account in the Service,
       </span>
     ),
   },
+
+  {
+    item: 'f)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        <strong>Ogłoszeniodawca</strong> - podmiot wykonujący we własnym imieniu działalność gospodarczą, który posiada Konto w Serwisie dedykowane dodawaniu Ogłoszeń Współpracy,
+      </span>
+
+
+    ),
+    en: (
+      <span>
+        <strong>Poster</strong> - an entity conducting business activity in its own name, which has an Account in the Service dedidacted to adding Job Postings,
+      </span>
+    ),
+  },
+
+  {
+    item: 'f)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        <strong>Ogłoszenie Współpracy</strong> - zapisy w bazach danych Serwisu, z których niektóre elementy pod określonymi warunkami są publicznie dostępne, informujące o poszukiwaniu osób fizycznych do pracy na podstawie umowy o pracę lub współpracy na podstawie umowy cywilnoprawnej innej niż umowa o pracę, na stanowiska o profilu technologicznym,
+      </span>
+    ),
+    en: (
+      <span>
+        <strong>Job Posting</strong> - records in the Service's databases, some elements of which are publicly accessible under certain conditions, providing information on the search for individuals for employment under an employment contract or for cooperation under a civil law contract other than an employment contract, for positions with a technological profile,
+      </span>
+    ),
+  },
+
+  {
+    item: 'f)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        <strong>Kandydat</strong> - osoba fizyczna, która odpowiedziała na Ogłoszenie Współpracy poprzez dostępny w Serwisie formularz aplikacyjny,
+      </span>
+    ),
+    en: (
+      <span>
+        <strong>Candidate</strong> - a natural person who has responded to a Cooperation Announcement through the application form available within the Service,,
+      </span>
+    ),
+  },
+
   {
     item: '2.',
     tier: 'header',
@@ -128,8 +183,8 @@ export const provisions = [
     item: '2.1.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Właścicielem i administratorem Serwisu jest Administrator.</span>,
-    en: <span>The owner and the administrator of the Service is the Service Administrator.</span>,
+    pl: <span>Właścicielem i administratorem Serwisu jest Usługodawca.</span>,
+    en: <span>The owner and the administrator of the Service is the Service Provider.</span>,
   },
   {
     item: '2.2.',
@@ -168,13 +223,13 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Administrator uprawniony jest do deaktywacji lub usunięcia Konta w przypadku stwierdzenia naruszenia Regulaminu
+        Usługodawca uprawniony jest do deaktywacji lub usunięcia Konta w przypadku stwierdzenia naruszenia Regulaminu
         przez Użytkownika.
       </span>
     ),
     en: (
       <span>
-        The Service Administrator is entitled to de-activate and/or delete the Account in case of determining of violation of
+        The Service Provider is entitled to de-activate and/or delete the Account in case of determining of violation of
         these Terms of Service by the User.
       </span>
     ),
@@ -183,8 +238,8 @@ export const provisions = [
     item: '5.',
     tier: 'header',
     version: versions['1.0'],
-    pl: <span>Prawa i odpowiedzialność Administratora.</span>,
-    en: <span>The rights and liability of the Service Administrator</span>,
+    pl: <span>Prawa i odpowiedzialność Usługodawcy.</span>,
+    en: <span>The rights and liability of the Service Provider</span>,
   },
   {
     item: '5.1.',
@@ -192,13 +247,13 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Administrator uprawniony jest w każdym momencie do zaprzestania świadczenia usług poprzez Serwis, jak i do
+        Usługodawca uprawniony jest w każdym momencie do zaprzestania świadczenia usług poprzez Serwis, jak i do
         wprowadzania przerw w świadczeniu tych usług.
       </span>
     ),
     en: (
       <span>
-        The Service Administrator is entitled at any time to terminate rendering of the services through the Service, and/or to
+        The Service Provider is entitled at any time to terminate rendering of the services through the Service, and/or to
         interrupt rendering of those services.
       </span>
     ),
@@ -209,13 +264,13 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Administrator nie daje jakiejkolwiek gwarancji, że informacje, dane i opinie zamieszczone w artykułach zawartych
+        Usługodawca nie daje jakiejkolwiek gwarancji, że informacje, dane i opinie zamieszczone w artykułach zawartych
         w Serwisie są poprawne.
       </span>
     ),
     en: (
       <span>
-        The Service Administrator does not give any guarantee that the information, data and opinions included in the articles
+        The Service Provider does not give any guarantee that the information, data and opinions included in the articles
         in the Service are correct.
       </span>
     ),
@@ -242,12 +297,12 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Podmiot tworzący Konto upoważnia Administratora do przetwarzanie danych osobowych powiązanych z tym Kontem.
+        Podmiot tworzący Konto upoważnia Usługodawcę do przetwarzanie danych osobowych powiązanych z tym Kontem.
       </span>
     ),
     en: (
       <span>
-        An entity creating an Account authorizes the Service Administrator to process personal data connected with that Account.
+        An entity creating an Account authorizes the Service Provider to process personal data connected with that Account.
       </span>
     ),
   },
@@ -263,7 +318,7 @@ export const provisions = [
     item: 'X.1.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Ogłoszeniodawca przy zakładaniu Konta, edycji Konta i dodawaniu Ogłoszeń, jak i przy korzystaniu z innych usług świadczonych przez Administratora Serwisu w ramach Serwisu, podaje nazwy handlowe, znaki graficzne oraz znaki słowne (dalej zwane "<strong>Utworami Ogłoszeniodawcy</strong>").</span>,
+    pl: <span>Ogłoszeniodawca przy zakładaniu Konta, edycji Konta i dodawaniu Ogłoszeń, jak i przy korzystaniu z innych usług świadczonych przez Usługodawcę w ramach Serwisu, podaje nazwy handlowe, znaki graficzne oraz znaki słowne (dalej zwane "<strong>Utworami Ogłoszeniodawcy</strong>").</span>,
     en: <span>TODO</span>,
   },
   {
@@ -281,7 +336,7 @@ export const provisions = [
     item: 'X.3.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Ogłoszeniodawca ponosi pełną i wyłączną odpowiedzialność wobec osób trzecich w związku z podaniem Utworów Ogłoszeniodawcy zgodnie z Punktem X.1 powyżej i zobowiązuje się pokryć koszty związane z zaspakajaniem roszczeń osób trzecich wobec Administratora Serwisu w związku z tym podaniem.</span>,
+    pl: <span>Ogłoszeniodawca ponosi pełną i wyłączną odpowiedzialność wobec osób trzecich w związku z podaniem Utworów Ogłoszeniodawcy zgodnie z Punktem X.1 powyżej i zobowiązuje się pokryć koszty związane z zaspakajaniem roszczeń osób trzecich wobec Usługodawcy w związku z tym podaniem.</span>,
     en: (
       <span>
         TODO
@@ -292,7 +347,7 @@ export const provisions = [
     item: 'X.4.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Ogłoszeniodawca udziela Administratorowi Serwisu nieograniczonej terytorialnie oraz niewyłącznej licencji na używanie Utworów Ogłoszeniodawcy w celu realizacji usług świadczonych na rzecz Ogłoszeniodawcy przez Serwis, takich jak, w szczególności, ale nie wyłącznie, publiczne udostępnianie Ogłoszeń publikowanych przez Ogłoszeniodawcę, które zawierają Uwtory Ogłoszeniodawcy, jak i w celu promowania tych Ogłoszeń.</span>,
+    pl: <span>Ogłoszeniodawca udziela Usługodawcy nieograniczonej terytorialnie oraz niewyłącznej licencji na używanie Utworów Ogłoszeniodawcy w celu realizacji usług świadczonych na rzecz Ogłoszeniodawcy przez Serwis, takich jak, w szczególności, ale nie wyłącznie, publiczne udostępnianie Ogłoszeń publikowanych przez Ogłoszeniodawcę, które zawierają Uwtory Ogłoszeniodawcy, jak i w celu promowania tych Ogłoszeń.</span>,
     en: (
       <span>
         TODO
@@ -303,7 +358,7 @@ export const provisions = [
     item: 'X.5.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Licencja, o której mowa w Punkcie X.4. powyżej udzielana jest nieodpłatnie w celu i na czas realizacji usług na rzecz Ogłoszeniodawcy przez Administratora Serwisu poprzez Serwis.</span>,
+    pl: <span>Licencja, o której mowa w Punkcie X.4. powyżej udzielana jest nieodpłatnie w celu i na czas realizacji usług na rzecz Ogłoszeniodawcy przez Usługodawcę poprzez Serwis.</span>,
     en: (
       <span>
         TODO
@@ -314,7 +369,7 @@ export const provisions = [
     item: 'X.6.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>W celu realizacji usług na rzecz Ogłoszeniodawcy, w tym w szczególności, ale niewyłącznie, w celu promowania Ogłoszeń Ogłoszeniodawcy, Administrator Serwisu uprawniony jest do udzielania sublicencji w odniesieniu do Utworów Ogłoszeniodawcy.</span>,
+    pl: <span>W celu realizacji usług na rzecz Ogłoszeniodawcy, w tym w szczególności, ale niewyłącznie, w celu promowania Ogłoszeń Ogłoszeniodawcy, Usługodawca uprawniony jest do udzielania sublicencji w odniesieniu do Utworów Ogłoszeniodawcy.</span>,
     en: (
       <span>
         TODO
@@ -361,7 +416,7 @@ export const provisions = [
     item: 'X.8.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Ogłoszeniodawca niniejszym wyraża zgodę na anonimowe korzystanie przez Administratora Serwisu z Utworów Ogłoszeniodawcy na wszystkich polach eksploatacji wskazanych w Punkcie X.7 powyżej, a w szczególności, ale nie wyłącznie, Administrator Serwisu ma prawo do korzystania z Utworów Ogłoszeniodawcy bez oznaczenia autorstwa Ogłoszeniodawcy.</span>,
+    pl: <span>Ogłoszeniodawca niniejszym wyraża zgodę na anonimowe korzystanie przez Usługodawcę z Utworów Ogłoszeniodawcy na wszystkich polach eksploatacji wskazanych w Punkcie X.7 powyżej, a w szczególności, ale nie wyłącznie, Usługodawca ma prawo do korzystania z Utworów Ogłoszeniodawcy bez oznaczenia autorstwa Ogłoszeniodawcy.</span>,
     en: <span>TODO</span>,
   },
 
@@ -458,13 +513,13 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Administrator Serwisu ma prawo do zmiany Regulaminu oraz jego integralnych części, takich jak w szczególności, ale nie
+        Usługodawca ma prawo do zmiany Regulaminu oraz jego integralnych części, takich jak w szczególności, ale nie
         wyłącznie, Polityka Prywatności oraz Polityka Cookies, w odniesieniu do:
       </span>
     ),
     en: (
       <span>
-        The Service Administrator is entitled to amend these Terms of Service and their integral parts, including, without
+        The Service Provider is entitled to amend these Terms of Service and their integral parts, including, without
         limitation, the Privacy Policy and the Cookies Policy, with regard to:
       </span>
     ),
@@ -494,19 +549,19 @@ export const provisions = [
     item: 'c)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: <span>rozpoczęcia świadczenia nowych usług przez Administratora Serwisu w ramach Serwisu,</span>,
-    en: <span>commencement of the provision of new services by the Service Administrator within the Service,</span>,
+    pl: <span>rozpoczęcia świadczenia nowych usług przez Usługodawcę w ramach Serwisu,</span>,
+    en: <span>commencement of the provision of new services by the Service Provider within the Service,</span>,
   },
   {
     item: 'd)',
     tier: 'subpoint',
     version: versions['1.0'],
     pl: (
-      <span>zmian w zakresie świadczenia dotychczasowych usług przez Administratora Serwisu w ramach Serwisu,</span>
+      <span>zmian w zakresie świadczenia dotychczasowych usług przez Usługodawcę w ramach Serwisu,</span>
     ),
     en: (
       <span>
-        amendments in the scope provisioning of the existing services by the Service Administrator within the
+        amendments in the scope provisioning of the existing services by the Service Provider within the
         Service,
       </span>
     ),
@@ -515,8 +570,8 @@ export const provisions = [
     item: 'e)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: <span>zakończenia świadczenia dotychczasowych usług przez Administratora Serwisu w ramach Serwisu,</span>,
-    en: <span>termination of the provision of the existing services by the Service Administrator within the Service,</span>,
+    pl: <span>zakończenia świadczenia dotychczasowych usług przez Usługodawcę w ramach Serwisu,</span>,
+    en: <span>termination of the provision of the existing services by the Service Provider within the Service,</span>,
   },
   {
     item: 'f)',
@@ -545,7 +600,7 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Zmiany Regulaminu wchodzą w życie w terminie wskazanym przez Administratora Serwisu, jednakże nie krótszym niż 14 dni od
+        Zmiany Regulaminu wchodzą w życie w terminie wskazanym przez Usługodawcę, jednakże nie krótszym niż 14 dni od
         dnia powiadomienia o tych zmianach poprzez ich publikację na stronie dostępnej pod adresem
         https://skillfind.tech/regulamin, oraz w odniesieniu do dotychczasowych Użytkowników poprzez przesłanie
         informacji o tych zmianach na adres email Użytkownika podany przez Użytkownika i zapisany w Serwisie.
@@ -553,7 +608,7 @@ export const provisions = [
     ),
     en: (
       <span>
-        Aamendments to the Terms of Service enter into force on the date indicated by the Service Administrator, however not
+        Aamendments to the Terms of Service enter into force on the date indicated by the Service Provider, however not
         shorter than 15 days from the date of notification about those amendments through their publication on the
         website available at https://skillfind.tech/terms-of-service, and with regard to the existing Users through
         sending information about these changes to the User's email address provided by the User and saved within the
@@ -589,7 +644,7 @@ export const provisions = [
         W przypadku braku akceptacji planowanych zmian Regulaminu, dotychczasowy Użytkownik uprawniony jest do
         wypowiedzenia umowy dotyczącej prowadzenia Konta w Serwisie ze skutkiem natychmiastowym, w terminie 14 dni od
         dnia otrzymania powiadomienia o tych zmianach, poprzez wysłanie wiadomości email o odpowiedniej treści na adres <u>kontakt@skillfind.tech</u>, z zastrzeżeniem, że takie wypowiedzenie nie ma zastosowania do odpłatnch usług
-        Administratora Serwisu świadczonych w ramach Serwisu aktywowanych przez Użytkownika przed tymi zmianami, aż do czasu
+        Usługodawcy świadczonych w ramach Serwisu aktywowanych przez Użytkownika przed tymi zmianami, aż do czasu
         zakończenia świadczenia tych usług.
       </span>
     ),
@@ -599,7 +654,7 @@ export const provisions = [
         terminate the agreement regarding Account maintenance within the Service with immediate effect, within the
         period of 14 days from the date of receiving notification of these changes, through sending an email message
         with the relevant content to the address <u>contact@skillfind.tech</u>, with the reservation that such
-        termination is not applicable to the paid services provisioned by the Service Administrator within the Service activated before these amendements, until the termination of provisioning of those services.
+        termination is not applicable to the paid services provisioned by the Service Provider within the Service activated before these amendements, until the termination of provisioning of those services.
       </span>
     ),
   },
@@ -639,8 +694,8 @@ export const provisions = [
     item: '7.2.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Spory wynikłe z niniejszego Regulaminu rozstrzygane będą przez sąd właściwy dla Administratora.</span>,
-    en: <span>Disputes arising out of these Terms of Service shall be determined by the court having jurisdiction over the Service Administrator.</span>,
+    pl: <span>Spory wynikłe z niniejszego Regulaminu rozstrzygane będą przez sąd właściwy dla Usługodawcy.</span>,
+    en: <span>Disputes arising out of these Terms of Service shall be determined by the court having jurisdiction over the Service Provider.</span>,
   },
   {
     item: '7.3.',
@@ -648,25 +703,5 @@ export const provisions = [
     version: versions['1.0'],
     pl: <span>Niniejszy Regulamin obowiązuje od dnia 1 czerwca 2021 r.</span>,
     en: <span>These Terms of Service are applicable as of 1st June 2020.</span>,
-  },
-  {
-    item: '7.4.',
-    tier: 'point',
-    version: versions['1.0'],
-    pl: (
-      <span>
-        Administrator ma prawo do zmiany Regulaminu, Polityki Prywatności, Polityki Cookies oraz Cennika poprzez
-        zamieszczenie zmian tych dokumentów w Serwisie pod adresem <i>skillfind.tech</i>. Zmiany te wchodzą w&nbsp;życie
-        po upływie okresu 14 dni od ich ogłoszenia.
-      </span>
-    ),
-    en: (
-      <span>
-        The Service Administrator is authorized to amend these Terms of Service, the Privacy Policy, the Cookies Policy and the
-        Pricing through publication of the amendments to those documents within the Service under the address{' '}
-        <i>skillfind.tech</i>. The amendments are applicable after the lapse of the period of 14 days from their
-        publication.
-      </span>
-    ),
   },
 ]
