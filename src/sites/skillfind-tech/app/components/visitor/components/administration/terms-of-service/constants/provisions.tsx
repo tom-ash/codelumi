@@ -5,20 +5,23 @@ const versions = {
 }
 
 export const provisions = [
+
   {
     item: '1.',
     tier: 'header',
     version: versions['1.0'],
-    pl: <span>Wprowadzenie</span>,
-    en: <span>Introduction</span>,
+    pl: <span>Przedmiot Regulaminu</span>,
+    en: <span>TODO</span>,
   },
   {
     item: '',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Niniejszy Regulamin określa zasady korzystania z Serwisu.</span>,
-    en: <span>These Terms of Service stipulate the terms of use of the Service.</span>,
+    pl: <span>Przedmiotem Regulaminu jest określenie zasad świadczenia Usług przez Usługodawcę w ramach Serwisu, zgodnie z definicjami wskazanymi w Punkcie 2.1 poniżej.</span>,
+    en: <span>TODO</span>,
   },
+
+
   {
     item: '2.',
     tier: 'header',
@@ -27,12 +30,29 @@ export const provisions = [
     en: <span>Definitions</span>,
   },
   {
-    item: '1.1.',
+    item: '2.1.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>W niniejszym Regulaminie wyrażenia pisane z wielkiej litery będą miały następujące znaczenia:</span>,
-    en: <span>In these Terms of Service the capitalized expressions shall have the following meanings:</span>,
+    pl: <span>W niniejszym Regulaminie wyrażenia pisane z wielkiej litery mają następujące znaczenia:</span>,
+    en: <span>In these Terms of Service the capitalized expressions have the following meanings:</span>,
   },
+
+  {
+    item: 'a)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        <strong>Regulamin</strong> - niniejszy regulamin,
+      </span>
+    ),
+    en: (
+      <span>
+        TODO,
+      </span>
+    ),
+  },
+
   {
     item: 'a)',
     tier: 'subpoint',
@@ -71,6 +91,39 @@ export const provisions = [
     ),
   },
 
+  {
+    item: 'b)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: (
+      <div>
+        <strong>Usługi</strong> - usługi świadczone przez Usługodawcę w ramach Serwisu wymienione niewyczerpująco w Puncie 3.1 poniżej,
+      </div>
+    ),
+    en: (
+      <span>
+        <strong>TODO</strong> - TODO
+      </span>
+    ),
+  },
+
+
+  {
+    item: 'c)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        <strong>Odwiedzający</strong> - osoba, która uzyskała dostęp do Serwisu, np. poprzez przeglądarkę internetową,
+      </span>
+    ),
+    en: (
+      <span>
+        <strong>Visitor</strong> - a person which obtained access to the Service, for example through a web browser,
+      </span>
+    ),
+  },
+
 
 
   {
@@ -91,21 +144,7 @@ export const provisions = [
 
 
 
-  {
-    item: 'd)',
-    tier: 'subpoint',
-    version: versions['1.0'],
-    pl: (
-      <span>
-        <strong>Odwiedzający</strong> - osoba, która uzyskała dostęp do Serwisu, np. poprzez przeglądarkę internetową,
-      </span>
-    ),
-    en: (
-      <span>
-        <strong>Visitor</strong> - a person which obtained access to the Service, for example through a web browser,
-      </span>
-    ),
-  },
+
   {
     item: 'e)',
     tier: 'subpoint',
@@ -146,12 +185,12 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        <strong>Ogłoszenie Współpracy</strong> - zapisy w bazach danych Serwisu, z których niektóre elementy pod określonymi warunkami są publicznie dostępne, informujące o poszukiwaniu osób fizycznych do pracy na podstawie umowy o pracę lub współpracy na podstawie umowy cywilnoprawnej innej niż umowa o pracę, na stanowiska o profilu technologicznym,
+        <strong>Ogłoszenie Współpracy</strong> - zapis w bazie danych Serwisu, którego niektóre elementy pod określonymi warunkami są publicznie dostępne i informują o poszukiwaniu osoby lub osób fizycznych do pracy na podstawie umowy o pracę lub współpracę na podstawie umowy cywilnoprawnej innej niż umowa o pracę, na stanowiska o profilu technologicznym,
       </span>
     ),
     en: (
       <span>
-        <strong>Job Posting</strong> - records in the Service's databases, some elements of which are publicly accessible under certain conditions, providing information on the search for individuals for employment under an employment contract or for cooperation under a civil law contract other than an employment contract, for positions with a technological profile,
+        <strong>Job Posting</strong> - an record in the Service's database, some elements of which are publicly available under certain conditions and inform about the search for a natural person and/or persons for employment based on an employment contract and/or cooperation based on a civil law contract other than an employment contract, for positions with a technological profile,
       </span>
     ),
   },
@@ -171,6 +210,85 @@ export const provisions = [
       </span>
     ),
   },
+
+  {
+    item: '3.',
+    tier: 'header',
+    version: versions['1.0'],
+    pl: <span>Usługi Usługodawcy</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: '3.1',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>Usługi świadczone przez Usługodawcę w ramach niniejszego Serwisu polegają w szczególności, ale nie wyłącznie, na:</span>,
+    en: <span>TODO</span>,
+  },
+
+  {
+    item: 'a)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        przyjmowaniu od Ogłoszeniodawców Ogłoszeń Współpracy i publikowaniu ich w Serwisie,
+      </span>
+    ),
+    en: (
+      <span>
+        TODO,
+      </span>
+    ),
+  },
+  {
+    item: 'b)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        przyjmowaniu aplikacji od Odwiedzających w odniesieniu do Ogłoszeń Współpracy i udostępnianiu tych aplikacji Ogłoszeniodawcom,
+      </span>
+    ),
+    en: (
+      <span>
+        TODO,
+      </span>
+    ),
+  },
+  {
+    item: 'c)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        przekierowywaniu Odwiedzających do formularzy aplikacyjnych Ogłoszeniodawców, oraz
+      </span>
+    ),
+    en: (
+      <span>
+        TODO,
+      </span>
+    ),
+  },
+  {
+    item: 'd)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        udostępnianiu treści cyfrowych, w tym w szczególności, ale nie wyłącznie, artykułów technicznych,
+      </span>
+    ),
+    en: (
+      <span>
+        TODO,
+      </span>
+    ),
+  },
+
+
+
 
   {
     item: '2.',
