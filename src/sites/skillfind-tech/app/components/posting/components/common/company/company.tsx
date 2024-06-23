@@ -8,7 +8,7 @@ interface CompanyInterface {
   (props: {
     logo: string
     businessName: string
-    link?: string;
+    link?: string
     industry: {
       value: string
       label: string
@@ -50,7 +50,9 @@ export const Company: CompanyInterface = props => {
               label={businessName}
               title={businessName}
             />
-          ) : businessName}
+          ) : (
+            businessName
+          )}
         </div>
         <PostingIndexTileIndustry
           industry={industry.label}

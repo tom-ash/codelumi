@@ -5,17 +5,17 @@ import API_URL from '../../../../../../../../shared/constants/urls/api'
 
 interface SendVerificationCode {
   (params: {
-    lang: Lang;
-    verificationCode: string;
-    setErrors(params: { [key: string]: string; }): void,
-    setControl(params: { transferringVerificationCode: boolean }): void,
+    lang: Lang
+    verificationCode: string
+    setErrors(params: { [key: string]: string }): void
+    setControl(params: { transferringVerificationCode: boolean }): void
     error: string
   }): void
 }
 
 export const sendVerificationCode: SendVerificationCode = async params => {
   const { verificationCode, lang, setErrors, error, setControl } = params
-  
+
   setControl({ transferringVerificationCode: true })
 
   const verificationToken = getCookieValue('verificationToken')

@@ -33,7 +33,7 @@
         max-height: 100%;
         position: relative;
         top: 4px;
-        width: auto!important;
+        width: auto !important;
       }
     }
     .business-name-and-industry {
@@ -125,7 +125,7 @@
   }
   .skills {
     @extend %skills;
-    scale: .9;
+    scale: 0.9;
     transform-origin: top left;
     text-wrap: nowrap;
     margin: 0 15px;

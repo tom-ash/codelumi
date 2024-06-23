@@ -36,9 +36,10 @@ export const SocialImage = () => {
 
   // @ts-ignore
   const b2bCurrency = b2bCurrencySelectOptions.find(currency => currency.value === b2bCurrencyValue).text
-
-  // @ts-ignore
-  const employmentCurrency = employmentCurrencySelectOptions.find(currency => currency.value === employmentCurrencyValue).text
+  const employmentCurrency = employmentCurrencySelectOptions.find(
+    // @ts-ignore
+    currency => currency.value === employmentCurrencyValue
+  ).text
 
   const { industries, cooperationModes } = useData()
 

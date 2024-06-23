@@ -11,11 +11,7 @@ export const Delete = () => {
 
   return (
     <div className='delete'>
-      <button
-        onClick={() => setShowModal(true)}
-      >
-        {deleteButtonLabel}
-      </button>
+      <button onClick={() => setShowModal(true)}>{deleteButtonLabel}</button>
       {showModal && (
         <DeleteModal
           onCancel={() => setShowModal(false)}

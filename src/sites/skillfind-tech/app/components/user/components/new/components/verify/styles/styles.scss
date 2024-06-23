@@ -22,7 +22,7 @@
     .vi__character {
       border-radius: 6px;
       border: 1px solid #626567;
-      color: #E5E7E9;
+      color: #e5e7e9;
     }
     .vi__character--selected {
       outline: 2px solid black;
@@ -30,12 +30,11 @@
     }
     .vi__character--filled {
       color: black;
-      background: #D7DBDD;
+      background: #d7dbdd;
     }
     .vi__character--inactive {
       outline: none;
-      background: #D7DBDD;
-      
+      background: #d7dbdd;
     }
   }
   .error {

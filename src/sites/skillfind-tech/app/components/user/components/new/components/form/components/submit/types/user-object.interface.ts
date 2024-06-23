@@ -6,7 +6,7 @@ export interface UserObject {
   email: string
   password: string
   termsOfServiceConsent: boolean
-  consents?: any[],
+  consents?: any[]
   logo: Picture
   link?: string
 }

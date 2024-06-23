@@ -86,9 +86,7 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
         }}
       />
       <div className='position-cooperation-mode-and-location'>
-        <Position
-          position={position}
-        />
+        <Position position={position} />
         <CooperationModeAndLocation
           locality={locality}
           country={country}

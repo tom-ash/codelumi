@@ -4,12 +4,8 @@ interface PositionInterface {
   (props: { position: string }): React.ReactElement
 }
 
-export const Position: PositionInterface = (props) => {
+export const Position: PositionInterface = props => {
   const { position } = props
 
-  return (
-    <div className='role'>
-      {position}
-    </div>
-  )
+  return <div className='role'>{position}</div>
 }

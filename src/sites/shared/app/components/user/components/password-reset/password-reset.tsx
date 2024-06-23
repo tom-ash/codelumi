@@ -17,8 +17,7 @@ import { Email } from '../../../support/inputs/email/email'
 const PasswordReset = () => {
   const { step } = useControl()
 
-  const { emailAddressExplanation, verificationExplanation, passwordExplanation, successExplanation } =
-    useTexts()
+  const { emailAddressExplanation, verificationExplanation, passwordExplanation, successExplanation } = useTexts()
 
   const passwordProps = {
     autoComplete: PasswordAutoComplete.NEW_PASSWORD,

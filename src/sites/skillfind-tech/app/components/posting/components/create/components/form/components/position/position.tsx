@@ -10,14 +10,18 @@ import { useErrors } from '../../../../../../../../../../shared/app/functions/st
 export const Position = () => {
   useStyles(styles)
 
-  const {
-    position: error
-  } = useErrors()
+  const { position: error } = useErrors()
 
   return (
-    <div className='position' id='position'>
+    <div
+      className='position'
+      id='position'
+    >
       <SectionHeading name='position' />
-      <Instructions name='position' isError={!!error} />
+      <Instructions
+        name='position'
+        isError={!!error}
+      />
       <TextInput
         inputKey='position'
         validate={validatePosition}

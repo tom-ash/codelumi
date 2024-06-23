@@ -2,16 +2,13 @@ import React from 'react'
 import { useTexts } from '../../../../functions/store/use-texts'
 
 interface DeleteModalInterface {
-  (props: {
-    onCancel(): void;
-    onConfirm(): void;
-  }): React.ReactElement;
+  (props: { onCancel(): void; onConfirm(): void }): React.ReactElement
 }
 
 export const DeleteModal: DeleteModalInterface = props => {
   const { onCancel, onConfirm } = props
   const { areYouSure, cancel, confirm } = useTexts()
-  
+
   return (
     <div
       className='delete-modal-container'

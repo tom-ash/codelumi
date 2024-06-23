@@ -57,7 +57,7 @@
       display: inline-block;
       background: none;
       border: none;
-      color: #C0392B;
+      color: #c0392b;
       font-size: 12px;
       cursor: pointer;
       &:hover {
@@ -71,7 +71,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, .2);
+    background: rgba(0, 0, 0, 0.2);
     z-index: 999;
     .delete-modal {
       height: 140px;
@@ -97,7 +97,8 @@
       left: 10px;
       height: 24px;
     }
-    .cancel-container, .confirm-container {
+    .cancel-container,
+    .confirm-container {
       display: inline-block;
       width: 50%;
       text-align: center;

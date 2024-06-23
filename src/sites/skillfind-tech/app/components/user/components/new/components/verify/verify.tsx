@@ -26,11 +26,11 @@ export const Verify = () => {
         <div className='loader'>
           <RotatingLines
             visible={true}
-            width="40"
-            strokeColor="#17202A"
-            strokeWidth="5"
-            animationDuration="0.75"
-            ariaLabel="rotating-lines-loading"
+            width='40'
+            strokeColor='#17202A'
+            strokeWidth='5'
+            animationDuration='0.75'
+            ariaLabel='rotating-lines-loading'
           />
         </div>
       ) : (
@@ -52,11 +52,7 @@ export const Verify = () => {
           }}
         />
       )}
-      {error && (
-        <div className='error'>
-          {error}
-        </div>
-      )}
+      {error && <div className='error'>{error}</div>}
     </div>
   )
 }

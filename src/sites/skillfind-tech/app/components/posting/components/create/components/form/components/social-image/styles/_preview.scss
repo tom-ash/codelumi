@@ -49,7 +49,7 @@
   }
   .role {
     margin: 60px 0 0 60px;
-    font-size: 50px
+    font-size: 50px;
   }
   .cooperation-mode-and-location {
     @extend %cooperation-mode-and-location;
@@ -57,10 +57,10 @@
     font-size: 32px;
     svg {
       height: 28px;
-      fill: #1D1B15;
+      fill: #1d1b15;
     }
     span {
-      color: #1D1B15;
+      color: #1d1b15;
       top: -3px;
     }
   }

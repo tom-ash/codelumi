@@ -8,8 +8,8 @@ interface SubmitEmail {
     lang: Lang
     email: string
     setControl: any // TODO: TS!
-    setErrors(params: { [keyof: string]: string }): void;
-    emailInputInvalidError: string;
+    setErrors(params: { [keyof: string]: string }): void
+    emailInputInvalidError: string
   }): void
 }
 

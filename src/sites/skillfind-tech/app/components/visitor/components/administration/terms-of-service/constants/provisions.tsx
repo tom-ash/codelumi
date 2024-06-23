@@ -5,7 +5,6 @@ const versions = {
 }
 
 export const provisions = [
-
   {
     item: '1.',
     tier: 'header',
@@ -17,10 +16,14 @@ export const provisions = [
     item: '',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Przedmiotem Regulaminu jest określenie zasad świadczenia Usług przez Usługodawcę w ramach Serwisu, zgodnie z definicjami wskazanymi w Punkcie 2.1 poniżej.</span>,
+    pl: (
+      <span>
+        Przedmiotem Regulaminu jest określenie zasad świadczenia Usług przez Usługodawcę w ramach Serwisu, zgodnie z
+        definicjami wskazanymi w Punkcie 2.1 poniżej.
+      </span>
+    ),
     en: <span>TODO</span>,
   },
-
 
   {
     item: '2.',
@@ -46,11 +49,7 @@ export const provisions = [
         <strong>Regulamin</strong> - niniejszy regulamin,
       </span>
     ),
-    en: (
-      <span>
-        TODO,
-      </span>
-    ),
+    en: <span>TODO,</span>,
   },
 
   {
@@ -74,19 +73,19 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        <strong>Usługodawca</strong> - Warsaw Digital Sp. z o.o., z siedzibą w Warszawie przy
-        ul.&nbsp;Twardej&nbsp;18, 00-105 Warszawa, zarejestrowana w rejestrze przedsiębiorców prowadzonym przez Sąd
-        Rejonowy dla m. st. Warszawy, XII Wydział Gospodarczy Krajowego Rejestru Sądowego, pod numerem KRS 0000735294, o
-        kapitale zakładowym 20.000,00 PLN, w pełni wpłaconym, posiadająca numer REGON 380529016 oraz numer NIP
-        5252753799,
+        <strong>Usługodawca</strong> - Warsaw Digital Sp. z o.o., z siedzibą w Warszawie przy ul.&nbsp;Twardej&nbsp;18,
+        00-105 Warszawa, zarejestrowana w rejestrze przedsiębiorców prowadzonym przez Sąd Rejonowy dla m. st. Warszawy,
+        XII Wydział Gospodarczy Krajowego Rejestru Sądowego, pod numerem KRS 0000735294, o kapitale zakładowym 20.000,00
+        PLN, w pełni wpłaconym, posiadająca numer REGON 380529016 oraz numer NIP 5252753799,
       </span>
     ),
     en: (
       <span>
-        <strong>Service Provider</strong> - Warsaw Digital Sp. z o.o., with its registered office in Warsaw at&nbsp;Twarda
-        18 St., 00-105 Warsaw, registered in the register of entrepreneurs held by the District Court for the capital
-        city of Warsaw, XII Commercial Division of the National Court Register, under the KRS number 0000735294, with
-        the share capital of 20,000.00 PLN, fully paid, with REGON number 380529016, and NIP number 5252753799,
+        <strong>Service Provider</strong> - Warsaw Digital Sp. z o.o., with its registered office in Warsaw
+        at&nbsp;Twarda 18 St., 00-105 Warsaw, registered in the register of entrepreneurs held by the District Court for
+        the capital city of Warsaw, XII Commercial Division of the National Court Register, under the KRS number
+        0000735294, with the share capital of 20,000.00 PLN, fully paid, with REGON number 380529016, and NIP number
+        5252753799,
       </span>
     ),
   },
@@ -97,7 +96,8 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <div>
-        <strong>Usługi</strong> - usługi świadczone przez Usługodawcę w ramach Serwisu wymienione niewyczerpująco w Puncie 3.1 poniżej,
+        <strong>Usługi</strong> - usługi świadczone przez Usługodawcę w ramach Serwisu wymienione niewyczerpująco w
+        Puncie 3.1 poniżej,
       </div>
     ),
     en: (
@@ -106,7 +106,6 @@ export const provisions = [
       </span>
     ),
   },
-
 
   {
     item: 'c)',
@@ -124,26 +123,23 @@ export const provisions = [
     ),
   },
 
-
-
   {
     item: 'c)',
     tier: 'subpoint',
     version: versions['1.0'],
     pl: (
       <span>
-        <strong>Konto</strong> - zapis w bazie danych Serwisu identyfikujący dany podmiot w Serwisie przy użyciu systemu logowania,
+        <strong>Konto</strong> - zapis w bazie danych Serwisu identyfikujący dany podmiot w Serwisie przy użyciu systemu
+        logowania,
       </span>
     ),
     en: (
       <span>
-        <strong>Account</strong> - a record in the Service's database identifying a given entity within the Service using the logging system,
+        <strong>Account</strong> - a record in the Service's database identifying a given entity within the Service
+        using the logging system,
       </span>
     ),
   },
-
-
-
 
   {
     item: 'e)',
@@ -167,14 +163,14 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        <strong>Ogłoszeniodawca</strong> - podmiot wykonujący we własnym imieniu działalność gospodarczą, który posiada Konto w Serwisie dedykowane dodawaniu Ogłoszeń Współpracy,
+        <strong>Ogłoszeniodawca</strong> - podmiot wykonujący we własnym imieniu działalność gospodarczą, który posiada
+        Konto w Serwisie dedykowane dodawaniu Ogłoszeń Współpracy,
       </span>
-
-
     ),
     en: (
       <span>
-        <strong>Poster</strong> - an entity conducting business activity in its own name, which has an Account in the Service dedidacted to adding Job Postings,
+        <strong>Poster</strong> - an entity conducting business activity in its own name, which has an Account in the
+        Service dedidacted to adding Job Postings,
       </span>
     ),
   },
@@ -185,12 +181,18 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        <strong>Ogłoszenie Współpracy</strong> - zapis w bazie danych Serwisu, którego niektóre elementy pod określonymi warunkami są publicznie dostępne i informują o poszukiwaniu osoby lub osób fizycznych do pracy na podstawie umowy o pracę lub współpracę na podstawie umowy cywilnoprawnej innej niż umowa o pracę, na stanowiska o profilu technologicznym,
+        <strong>Ogłoszenie Współpracy</strong> - zapis w bazie danych Serwisu, którego niektóre elementy pod określonymi
+        warunkami są publicznie dostępne i informują o poszukiwaniu osoby lub osób fizycznych do pracy na podstawie
+        umowy o pracę lub współpracę na podstawie umowy cywilnoprawnej innej niż umowa o pracę, na stanowiska o profilu
+        technologicznym,
       </span>
     ),
     en: (
       <span>
-        <strong>Job Posting</strong> - an record in the Service's database, some elements of which are publicly available under certain conditions and inform about the search for a natural person and/or persons for employment based on an employment contract and/or cooperation based on a civil law contract other than an employment contract, for positions with a technological profile,
+        <strong>Job Posting</strong> - an record in the Service's database, some elements of which are publicly
+        available under certain conditions and inform about the search for a natural person and/or persons for
+        employment based on an employment contract and/or cooperation based on a civil law contract other than an
+        employment contract, for positions with a technological profile,
       </span>
     ),
   },
@@ -201,12 +203,14 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        <strong>Kandydat</strong> - osoba fizyczna, która odpowiedziała na Ogłoszenie Współpracy poprzez dostępny w Serwisie formularz aplikacyjny,
+        <strong>Kandydat</strong> - osoba fizyczna, która odpowiedziała na Ogłoszenie Współpracy poprzez dostępny w
+        Serwisie formularz aplikacyjny,
       </span>
     ),
     en: (
       <span>
-        <strong>Candidate</strong> - a natural person who has responded to a Cooperation Announcement through the application form available within the Service,,
+        <strong>Candidate</strong> - a natural person who has responded to a Cooperation Announcement through the
+        application form available within the Service,,
       </span>
     ),
   },
@@ -222,7 +226,12 @@ export const provisions = [
     item: '3.1',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Usługi świadczone przez Usługodawcę w ramach niniejszego Serwisu polegają w szczególności, ale nie wyłącznie, na:</span>,
+    pl: (
+      <span>
+        Usługi świadczone przez Usługodawcę w ramach niniejszego Serwisu polegają w szczególności, ale nie wyłącznie,
+        na:
+      </span>
+    ),
     en: <span>TODO</span>,
   },
 
@@ -230,16 +239,8 @@ export const provisions = [
     item: 'a)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: (
-      <span>
-        przyjmowaniu od Ogłoszeniodawców Ogłoszeń Współpracy i publikowaniu ich w Serwisie,
-      </span>
-    ),
-    en: (
-      <span>
-        TODO,
-      </span>
-    ),
+    pl: <span>przyjmowaniu od Ogłoszeniodawców Ogłoszeń Współpracy i publikowaniu ich w Serwisie,</span>,
+    en: <span>TODO,</span>,
   },
   {
     item: 'b)',
@@ -247,48 +248,26 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        przyjmowaniu aplikacji od Odwiedzających w odniesieniu do Ogłoszeń Współpracy i udostępnianiu tych aplikacji Ogłoszeniodawcom,
+        przyjmowaniu aplikacji od Odwiedzających w odniesieniu do Ogłoszeń Współpracy i udostępnianiu tych aplikacji
+        Ogłoszeniodawcom,
       </span>
     ),
-    en: (
-      <span>
-        TODO,
-      </span>
-    ),
+    en: <span>TODO,</span>,
   },
   {
     item: 'c)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: (
-      <span>
-        przekierowywaniu Odwiedzających do formularzy aplikacyjnych Ogłoszeniodawców, oraz
-      </span>
-    ),
-    en: (
-      <span>
-        TODO,
-      </span>
-    ),
+    pl: <span>przekierowywaniu Odwiedzających do formularzy aplikacyjnych Ogłoszeniodawców, oraz</span>,
+    en: <span>TODO,</span>,
   },
   {
     item: 'd)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: (
-      <span>
-        udostępnianiu treści cyfrowych, w tym w szczególności, ale nie wyłącznie, artykułów technicznych,
-      </span>
-    ),
-    en: (
-      <span>
-        TODO,
-      </span>
-    ),
+    pl: <span>udostępnianiu treści cyfrowych, w tym w szczególności, ale nie wyłącznie, artykułów technicznych,</span>,
+    en: <span>TODO,</span>,
   },
-
-
-
 
   {
     item: '2.',
@@ -371,8 +350,8 @@ export const provisions = [
     ),
     en: (
       <span>
-        The Service Provider is entitled at any time to terminate rendering of the services through the Service, and/or to
-        interrupt rendering of those services.
+        The Service Provider is entitled at any time to terminate rendering of the services through the Service, and/or
+        to interrupt rendering of those services.
       </span>
     ),
   },
@@ -382,14 +361,14 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Usługodawca nie daje jakiejkolwiek gwarancji, że informacje, dane i opinie zamieszczone w artykułach zawartych
-        w Serwisie są poprawne.
+        Usługodawca nie daje jakiejkolwiek gwarancji, że informacje, dane i opinie zamieszczone w artykułach zawartych w
+        Serwisie są poprawne.
       </span>
     ),
     en: (
       <span>
-        The Service Provider does not give any guarantee that the information, data and opinions included in the articles
-        in the Service are correct.
+        The Service Provider does not give any guarantee that the information, data and opinions included in the
+        articles in the Service are correct.
       </span>
     ),
   },
@@ -420,7 +399,8 @@ export const provisions = [
     ),
     en: (
       <span>
-        An entity creating an Account authorizes the Service Provider to process personal data connected with that Account.
+        An entity creating an Account authorizes the Service Provider to process personal data connected with that
+        Account.
       </span>
     ),
   },
@@ -436,122 +416,154 @@ export const provisions = [
     item: 'X.1.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Ogłoszeniodawca przy zakładaniu Konta, edycji Konta i dodawaniu Ogłoszeń, jak i przy korzystaniu z innych usług świadczonych przez Usługodawcę w ramach Serwisu, podaje nazwy handlowe, znaki graficzne oraz znaki słowne (dalej zwane "<strong>Utworami Ogłoszeniodawcy</strong>").</span>,
+    pl: (
+      <span>
+        Ogłoszeniodawca przy zakładaniu Konta, edycji Konta i dodawaniu Ogłoszeń, jak i przy korzystaniu z innych usług
+        świadczonych przez Usługodawcę w ramach Serwisu, podaje nazwy handlowe, znaki graficzne oraz znaki słowne (dalej
+        zwane "<strong>Utworami Ogłoszeniodawcy</strong>").
+      </span>
+    ),
     en: <span>TODO</span>,
   },
   {
     item: 'X.2.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Ogłoszeniodawca oświadcza, że ma pełnię majątkowych praw autorskich lub właściwe licencje do Utworów Ogłoszeniodawcy i ich podanie zgodnie z Punktem X.1 powyżej nie narusza praw osób trzecich, a w szczególności, ale nie wyłącznie, praw autorskich, licencji i dóbr osobistych osób trzecich.</span>,
-    en: (
+    pl: (
       <span>
-        TODO
+        Ogłoszeniodawca oświadcza, że ma pełnię majątkowych praw autorskich lub właściwe licencje do Utworów
+        Ogłoszeniodawcy i ich podanie zgodnie z Punktem X.1 powyżej nie narusza praw osób trzecich, a w szczególności,
+        ale nie wyłącznie, praw autorskich, licencji i dóbr osobistych osób trzecich.
       </span>
     ),
+    en: <span>TODO</span>,
   },
   {
     item: 'X.3.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Ogłoszeniodawca ponosi pełną i wyłączną odpowiedzialność wobec osób trzecich w związku z podaniem Utworów Ogłoszeniodawcy zgodnie z Punktem X.1 powyżej i zobowiązuje się pokryć koszty związane z zaspakajaniem roszczeń osób trzecich wobec Usługodawcy w związku z tym podaniem.</span>,
-    en: (
+    pl: (
       <span>
-        TODO
+        Ogłoszeniodawca ponosi pełną i wyłączną odpowiedzialność wobec osób trzecich w związku z podaniem Utworów
+        Ogłoszeniodawcy zgodnie z Punktem X.1 powyżej i zobowiązuje się pokryć koszty związane z zaspakajaniem roszczeń
+        osób trzecich wobec Usługodawcy w związku z tym podaniem.
       </span>
     ),
+    en: <span>TODO</span>,
   },
   {
     item: 'X.4.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Ogłoszeniodawca udziela Usługodawcy nieograniczonej terytorialnie oraz niewyłącznej licencji na używanie Utworów Ogłoszeniodawcy w celu realizacji usług świadczonych na rzecz Ogłoszeniodawcy przez Serwis, takich jak, w szczególności, ale nie wyłącznie, publiczne udostępnianie Ogłoszeń publikowanych przez Ogłoszeniodawcę, które zawierają Uwtory Ogłoszeniodawcy, jak i w celu promowania tych Ogłoszeń.</span>,
-    en: (
+    pl: (
       <span>
-        TODO
+        Ogłoszeniodawca udziela Usługodawcy nieograniczonej terytorialnie oraz niewyłącznej licencji na używanie Utworów
+        Ogłoszeniodawcy w celu realizacji usług świadczonych na rzecz Ogłoszeniodawcy przez Serwis, takich jak, w
+        szczególności, ale nie wyłącznie, publiczne udostępnianie Ogłoszeń publikowanych przez Ogłoszeniodawcę, które
+        zawierają Uwtory Ogłoszeniodawcy, jak i w celu promowania tych Ogłoszeń.
       </span>
     ),
+    en: <span>TODO</span>,
   },
   {
     item: 'X.5.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Licencja, o której mowa w Punkcie X.4. powyżej udzielana jest nieodpłatnie w celu i na czas realizacji usług na rzecz Ogłoszeniodawcy przez Usługodawcę poprzez Serwis.</span>,
-    en: (
+    pl: (
       <span>
-        TODO
+        Licencja, o której mowa w Punkcie X.4. powyżej udzielana jest nieodpłatnie w celu i na czas realizacji usług na
+        rzecz Ogłoszeniodawcy przez Usługodawcę poprzez Serwis.
       </span>
     ),
+    en: <span>TODO</span>,
   },
   {
     item: 'X.6.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>W celu realizacji usług na rzecz Ogłoszeniodawcy, w tym w szczególności, ale niewyłącznie, w celu promowania Ogłoszeń Ogłoszeniodawcy, Usługodawca uprawniony jest do udzielania sublicencji w odniesieniu do Utworów Ogłoszeniodawcy.</span>,
-    en: (
+    pl: (
       <span>
-        TODO
+        W celu realizacji usług na rzecz Ogłoszeniodawcy, w tym w szczególności, ale niewyłącznie, w celu promowania
+        Ogłoszeń Ogłoszeniodawcy, Usługodawca uprawniony jest do udzielania sublicencji w odniesieniu do Utworów
+        Ogłoszeniodawcy.
       </span>
     ),
+    en: <span>TODO</span>,
   },
 
   {
     item: 'X.7.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Licencja, o której mowa w Punkcie X.4. powyżej, udzielana jest na następującyh polach eksploatacji:</span>,
+    pl: (
+      <span>Licencja, o której mowa w Punkcie X.4. powyżej, udzielana jest na następującyh polach eksploatacji:</span>
+    ),
     en: <span>TODO</span>,
   },
   {
     item: 'a)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: <span>w zakresie zastosowania Utworów Ogłoszeniodawcy: jednokrotne lub wielokrotne zastosowanie Utworów Ogłoszeniodawcy, w celach wskazanych w Punkcie X.4. powyżej,</span>,
+    pl: (
+      <span>
+        w zakresie zastosowania Utworów Ogłoszeniodawcy: jednokrotne lub wielokrotne zastosowanie Utworów
+        Ogłoszeniodawcy, w celach wskazanych w Punkcie X.4. powyżej,
+      </span>
+    ),
     en: <span>TODO</span>,
   },
   {
     item: 'b)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: <span>w zakresie utrwalania i zwielokrotniania Utworów Ogłoszeniodawcy: wytwarzanie różnymi technikami egzemplarzy Utworów Ogłoszeniodawcy, w tym w szczególności, ale nie wyłącznie, technikami poligraficznymi, drukarskimi, reprograficznymi, magnetycznymi, informatycznymi, cyfrowymi, fotograficznymi, plastycznymi, wizualnymi, audiowizualnymi, multimedialnymi, a ponadto trwałe lub czasowe zwielokrotnianie Utworów Ogłoszeniodawcy w całości lub w części jakimikolwiek środkami i w jakiejkolwiek formie,</span>,
+    pl: (
+      <span>
+        w zakresie utrwalania i zwielokrotniania Utworów Ogłoszeniodawcy: wytwarzanie różnymi technikami egzemplarzy
+        Utworów Ogłoszeniodawcy, w tym w szczególności, ale nie wyłącznie, technikami poligraficznymi, drukarskimi,
+        reprograficznymi, magnetycznymi, informatycznymi, cyfrowymi, fotograficznymi, plastycznymi, wizualnymi,
+        audiowizualnymi, multimedialnymi, a ponadto trwałe lub czasowe zwielokrotnianie Utworów Ogłoszeniodawcy w
+        całości lub w części jakimikolwiek środkami i w jakiejkolwiek formie,
+      </span>
+    ),
     en: <span>TODO</span>,
   },
   {
     item: 'c)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: <span>w zakresie rozpowszechniania Utworów Ogłoszeniodawcy: publiczne wykonanie, wystawienie, wyświetlenie, odtwarzanie oraz nadawanie i reemitowanie, a także udostępnianie Utworów Ogłoszeniodawcy w taki sposób, aby każdy mógł mieć do nich dostęp w miejscu i w czasie przez siebie wybranym, w tym w szczególności, ale nie wyłącznie, w sieci Internet,</span>,
+    pl: (
+      <span>
+        w zakresie rozpowszechniania Utworów Ogłoszeniodawcy: publiczne wykonanie, wystawienie, wyświetlenie,
+        odtwarzanie oraz nadawanie i reemitowanie, a także udostępnianie Utworów Ogłoszeniodawcy w taki sposób, aby
+        każdy mógł mieć do nich dostęp w miejscu i w czasie przez siebie wybranym, w tym w szczególności, ale nie
+        wyłącznie, w sieci Internet,
+      </span>
+    ),
     en: <span>TODO</span>,
   },
   {
     item: 'd)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: <span>w zakresie ingerencji w Utwory Ogłoszeniodawcy: tłumaczenia, przystosowywania, zmiany układu, dokonywanie skrótów lub jakiekolwiek inne zmiany tych utworów, z zachowaniem praw osoby, która tych zmian dokonała.</span>,
+    pl: (
+      <span>
+        w zakresie ingerencji w Utwory Ogłoszeniodawcy: tłumaczenia, przystosowywania, zmiany układu, dokonywanie
+        skrótów lub jakiekolwiek inne zmiany tych utworów, z zachowaniem praw osoby, która tych zmian dokonała.
+      </span>
+    ),
     en: <span>TODO</span>,
   },
   {
     item: 'X.8.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Ogłoszeniodawca niniejszym wyraża zgodę na anonimowe korzystanie przez Usługodawcę z Utworów Ogłoszeniodawcy na wszystkich polach eksploatacji wskazanych w Punkcie X.7 powyżej, a w szczególności, ale nie wyłącznie, Usługodawca ma prawo do korzystania z Utworów Ogłoszeniodawcy bez oznaczenia autorstwa Ogłoszeniodawcy.</span>,
-    en: <span>TODO</span>,
-  },
-
-
-
-  {
-    item: 'X.',
-    tier: 'header',
-    version: versions['1.0'],
-    pl: <span>TODO</span>,
-    en: <span>TODO</span>,
-  },
-  {
-    item: 'X.1.',
-    tier: 'point',
-    version: versions['1.0'],
-    pl: <span>TODO</span>,
+    pl: (
+      <span>
+        Ogłoszeniodawca niniejszym wyraża zgodę na anonimowe korzystanie przez Usługodawcę z Utworów Ogłoszeniodawcy na
+        wszystkich polach eksploatacji wskazanych w Punkcie X.7 powyżej, a w szczególności, ale nie wyłącznie,
+        Usługodawca ma prawo do korzystania z Utworów Ogłoszeniodawcy bez oznaczenia autorstwa Ogłoszeniodawcy.
+      </span>
+    ),
     en: <span>TODO</span>,
   },
 
@@ -615,8 +627,20 @@ export const provisions = [
     en: <span>TODO</span>,
   },
 
-
-
+  {
+    item: 'X.',
+    tier: 'header',
+    version: versions['1.0'],
+    pl: <span>TODO</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: 'X.1.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>TODO</span>,
+    en: <span>TODO</span>,
+  },
 
   {
     item: '10.',
@@ -674,13 +698,10 @@ export const provisions = [
     item: 'd)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: (
-      <span>zmian w zakresie świadczenia dotychczasowych usług przez Usługodawcę w ramach Serwisu,</span>
-    ),
+    pl: <span>zmian w zakresie świadczenia dotychczasowych usług przez Usługodawcę w ramach Serwisu,</span>,
     en: (
       <span>
-        amendments in the scope provisioning of the existing services by the Service Provider within the
-        Service,
+        amendments in the scope provisioning of the existing services by the Service Provider within the Service,
       </span>
     ),
   },
@@ -761,7 +782,8 @@ export const provisions = [
       <span>
         W przypadku braku akceptacji planowanych zmian Regulaminu, dotychczasowy Użytkownik uprawniony jest do
         wypowiedzenia umowy dotyczącej prowadzenia Konta w Serwisie ze skutkiem natychmiastowym, w terminie 14 dni od
-        dnia otrzymania powiadomienia o tych zmianach, poprzez wysłanie wiadomości email o odpowiedniej treści na adres <u>kontakt@skillfind.tech</u>, z zastrzeżeniem, że takie wypowiedzenie nie ma zastosowania do odpłatnch usług
+        dnia otrzymania powiadomienia o tych zmianach, poprzez wysłanie wiadomości email o odpowiedniej treści na adres{' '}
+        <u>kontakt@skillfind.tech</u>, z zastrzeżeniem, że takie wypowiedzenie nie ma zastosowania do odpłatnch usług
         Usługodawcy świadczonych w ramach Serwisu aktywowanych przez Użytkownika przed tymi zmianami, aż do czasu
         zakończenia świadczenia tych usług.
       </span>
@@ -772,7 +794,8 @@ export const provisions = [
         terminate the agreement regarding Account maintenance within the Service with immediate effect, within the
         period of 14 days from the date of receiving notification of these changes, through sending an email message
         with the relevant content to the address <u>contact@skillfind.tech</u>, with the reservation that such
-        termination is not applicable to the paid services provisioned by the Service Provider within the Service activated before these amendements, until the termination of provisioning of those services.
+        termination is not applicable to the paid services provisioned by the Service Provider within the Service
+        activated before these amendements, until the termination of provisioning of those services.
       </span>
     ),
   },
@@ -791,14 +814,11 @@ export const provisions = [
     ),
   },
 
-
-
   {
     item: '7.',
     tier: 'header',
     version: versions['1.0'],
-    pl: <span>Postanowienia końcowe
-    </span>,
+    pl: <span>Postanowienia końcowe</span>,
     en: <span>TODO</span>,
   },
   {
@@ -813,7 +833,12 @@ export const provisions = [
     tier: 'point',
     version: versions['1.0'],
     pl: <span>Spory wynikłe z niniejszego Regulaminu rozstrzygane będą przez sąd właściwy dla Usługodawcy.</span>,
-    en: <span>Disputes arising out of these Terms of Service shall be determined by the court having jurisdiction over the Service Provider.</span>,
+    en: (
+      <span>
+        Disputes arising out of these Terms of Service shall be determined by the court having jurisdiction over the
+        Service Provider.
+      </span>
+    ),
   },
   {
     item: '7.3.',

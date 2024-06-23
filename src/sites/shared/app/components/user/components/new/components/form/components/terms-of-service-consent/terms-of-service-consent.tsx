@@ -8,7 +8,10 @@ export const TermsOfServiceConsent = () => {
   const { termsOfServiceConsent: termsOfServiceConsentErrorTriggered } = useErrors()
 
   return (
-    <div id='terms-of-service-consent' className='terms-of-service-consent'>
+    <div
+      id='terms-of-service-consent'
+      className='terms-of-service-consent'
+    >
       <TermsOfServiceConsentCheckbox />
       {termsOfServiceConsentErrorTriggered && <div className='error'>{termsOfServiceConsentNotGrantedError}</div>}
     </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTexts } from '../../../functions/store/use-texts';
+import { useTexts } from '../../../functions/store/use-texts'
 
 type InstructionsInterface = {
   (props: { name: string; isError?: boolean }): React.ReactElement

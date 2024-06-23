@@ -18,10 +18,7 @@ interface SelectInterface {
 }
 
 export const Select: SelectInterface = props => {
-  const { selectKey, className, onChangeCallback, disabled,
-    required = false,
-    optional = false,
-  } = props
+  const { selectKey, className, onChangeCallback, disabled, required = false, optional = false } = props
   const inputs = useInputs()
   const dispatch = useDispatch()
   const options = inputs[`${selectKey}SelectOptions`]

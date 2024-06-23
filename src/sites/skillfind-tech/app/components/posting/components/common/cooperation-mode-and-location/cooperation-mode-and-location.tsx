@@ -26,7 +26,9 @@ export const CooperationModeAndLocation: CooperationModeAndLocationInterface = p
       </div>
       <div className='location'>
         <SVG name='marker' />
-        <span>{locality}, {country}</span>
+        <span>
+          {locality}, {country}
+        </span>
       </div>
       <FloatClear />
     </section>

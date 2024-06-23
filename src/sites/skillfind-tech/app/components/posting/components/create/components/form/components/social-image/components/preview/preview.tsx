@@ -28,10 +28,10 @@ interface PreviewInterface {
     }
     b2bMin?: number
     b2bMax?: number
-    b2bCurrency?: Currency;
+    b2bCurrency?: Currency
     employmentMin?: number
     employmentMax?: number
-    employmentCurrency?: Currency;
+    employmentCurrency?: Currency
     backgroundColor: string
     textColor: string
     scale?: number

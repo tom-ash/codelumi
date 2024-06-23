@@ -18,8 +18,18 @@ type ValidateInputs = {
 }
 
 export const validateInputs: ValidateInputs = params => {
-  const { businessName, businessNameError, logo, logoError, email, emailError, password, passwordError, termsOfServiceConsent, setErrors } =
-    params
+  const {
+    businessName,
+    businessNameError,
+    logo,
+    logoError,
+    email,
+    emailError,
+    password,
+    passwordError,
+    termsOfServiceConsent,
+    setErrors,
+  } = params
 
   return [
     validateBusinessName({

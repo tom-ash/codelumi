@@ -20,16 +20,8 @@ interface BuildUserObject {
 }
 
 export const buildUserObject: BuildUserObject = args => {
-  const {
-    businessName,
-    industry,
-    email,
-    password,
-    termsOfServiceConsent,
-    termsOfServiceConsentLabel,
-    logo,
-    link,
-  } = args
+  const { businessName, industry, email, password, termsOfServiceConsent, termsOfServiceConsentLabel, logo, link } =
+    args
 
   let userObject: UserObject = {
     businessName,

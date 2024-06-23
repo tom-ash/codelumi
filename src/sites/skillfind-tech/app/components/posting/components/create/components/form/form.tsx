@@ -18,7 +18,7 @@ export const PostingsForm = () => {
   useStyles(styles)
 
   const { authorized } = useUser()
-  
+
   // CURRENCIES
 
   return (

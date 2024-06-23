@@ -11,7 +11,5 @@ export const Position: PositionInterface = () => {
     posting: { position },
   } = useData()
 
-  return (
-    <PositionPartial position={position} />
-  )
+  return <PositionPartial position={position} />
 }

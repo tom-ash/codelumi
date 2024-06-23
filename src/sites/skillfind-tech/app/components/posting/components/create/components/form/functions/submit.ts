@@ -162,19 +162,21 @@ export const submit = async (props: SubmitProps) => {
   ]
 
   if (!authorized) {
-    validations.push(...validateUserInputs({
-      businessName,
-      businessNameError,
-      industry,
-      email,
-      emailError,
-      password,
-      passwordError,
-      termsOfServiceConsent,
-      logo,
-      logoError,
-      setErrors,
-    }))
+    validations.push(
+      ...validateUserInputs({
+        businessName,
+        businessNameError,
+        industry,
+        email,
+        emailError,
+        password,
+        passwordError,
+        termsOfServiceConsent,
+        logo,
+        logoError,
+        setErrors,
+      })
+    )
   }
 
   for (let i = 0; i < validations.length; i++) {
