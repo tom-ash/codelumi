@@ -10,7 +10,7 @@ export const provisions = [
     tier: 'header',
     version: versions['1.0'],
     pl: <span>Jaki podmiot jest administratorem danych osobowych?</span>,
-    en: <span>Which entity is the administrator of the personal data?</span>,
+    en: <span>Which entity is the Service Provider of the personal data?</span>,
   },
   {
     item: '',
@@ -19,28 +19,62 @@ export const provisions = [
     pl: (
       <span>
         Administratorem zbieranych w Serwisie danych osobowych w rozumieniu Rozporządzenia Parlamentu Europejskiego i
-        Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w&nbsp;sprawie ochrony osób fizycznych w związku z przetwarzaniem
-        danych osobowych i w sprawie swobodnego przepływu takich danych oraz&nbsp;uchylenia dyrektywy 95/46/WE (ogólne
-        rozporządzenie o ochronie danych) jest Administrator, czyli Warsaw Digital Sp. z o.o., z siedzibą
-        w&nbsp;Warszawie.
+        Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem
+        danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (ogólne
+        rozporządzenie o ochronie danych) jest Usługodawca, czyli Warsaw Digital Sp. z o.o., z siedzibą w Warszawie.
       </span>
     ),
     en: (
       <span>
-        The administrator of the personal data gathered in the Service with the meaning of the Regulation (EU) 2016/679
+        {/* the Service Provider of the personal data gathered in the Service with the meaning of the Regulation (EU) 2016/679
         of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard
         to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC
-        (General Data Protection Regulation) is the Administrator, i.e. Warsaw Digital Sp. z o.o., with its registered
-        office in Warsaw.
+        (General Data Protection Regulation) is the Service Provider, i.e. Warsaw Digital Sp. z o.o., with its registered
+        office in Warsaw. */}
       </span>
     ),
   },
+
+  {
+    item: '',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        W przypadku aplikowania na stanowisko objęte danym Ogłoszeniem Współpracy poprzez formularz znajdujący się poza
+        Serwisem, do którego dostęp uzyskuje się poprzez przekierowanie z Serwisu na adres podany przy Ogłoszeniu przez
+        Ogłoszeniodawcę, wyłącznym administratorem danych osobowych zebranych poprzez taki formularz jest
+        Ogłoszeniodawca lub podmiot przetwarzający te dane w jego imieniu i podmioty te są wyłącznie odpowiedzialne za
+        przetwarzanie tych danych osobowych, a Usługodawca w tym zakresie nie występuje w roli administratora.
+      </span>
+    ),
+    en: <span>TODO</span>,
+  },
+
+  {
+    item: '',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Ponadto, Usługodawca umożliwia zaaplikowanie na stanowisko objęte danym Ogłoszeniem Współpracy poprzez formularz
+        aplikacyjny znajdujący się na stronie Usługodawcy przy danym Ogłoszeniu. W takiej sytuacji zebrane od Kandydata
+        dane osobowe udostępniane są Ogłoszeniodawcy w celu przeprowadzenia procesu rekrutacyjnego, a Ogłoszeniodawca
+        również staje się administratorem tych danych osobowych i jest wyłącznie odpowiedzialny za przetwarzanie tych
+        danych osobowych w tym zakresie, a Usługodawca w tym zakresie nie występuje w roli administratora. Usługodawca
+        zachowuje udostępnione Ogłoszeniodawcy dane osobowe tylko w celu zabezpieczenia się przed ewentualnymi
+        roszczeniami w przyszłości, a po okresie przedawnienia ewentualnych roszczeń dane te są usuwane.
+      </span>
+    ),
+    en: <span>TODO</span>,
+  },
+
   {
     item: '2.',
     tier: 'header',
     version: versions['1.0'],
-    pl: <span>Kim są Zaufani Partnerzy Administratora?</span>,
-    en: <span>Who are the Trusted Partners of the Administrator?</span>,
+    pl: <span>Kim są Zaufani Partnerzy Usługodawcy?</span>,
+    en: <span>Who are the Trusted Partners of the Service Provider?</span>,
   },
   {
     item: '',
@@ -49,16 +83,15 @@ export const provisions = [
     pl: (
       <span>
         W niniejsze Polityce Prywatności, jak i w całym Regulaminie, przez Zaufanych Partnerów rozumie się podmioty
-        świadczące na rzecz Administratora usługi hostingu danych, wysyłania wiadomości email oraz sms, generowania map,
-        prowadzenia statystyki, oraz współpracujące z Administratorem w odniesieniu do wyświetlania treści
-        marketingowych.
+        świadczące na rzecz Usługodawcy usługi hostingu danych, wysyłania wiadomości email oraz sms, generowania map,
+        prowadzenia statystyki, oraz współpracujące z Usługodawcą w odniesieniu do wyświetlania treści marketingowych.
       </span>
     ),
     en: (
       <span>
-        In this Privacy Policy, as well as in the Terms of Service as a whole, entities rendering to the Administrator
-        the services of data hosting, email and phone messaging, map generation, statistics, and cooperating with the
-        Administrator with regard to marketing content are considered Trusted Partners.
+        In this Privacy Policy, as well as in the Terms of Service as a whole, entities rendering to the Service
+        Provider the services of data hosting, email and phone messaging, map generation, statistics, and cooperating
+        with the Service Provider with regard to marketing content are considered Trusted Partners.
       </span>
     ),
   },
@@ -66,8 +99,8 @@ export const provisions = [
     item: '3.',
     tier: 'header',
     version: versions['1.0'],
-    pl: <span>Jakie rodzaje danych osobowych zbierane są przez Administratora?</span>,
-    en: <span>What kinds of personal data are gathered by the Administrator?</span>,
+    pl: <span>Jakie rodzaje danych osobowych zbierane są przez Usługodawcy?</span>,
+    en: <span>What kinds of personal data are gathered by the Service Provider?</span>,
   },
   {
     item: '',
@@ -94,13 +127,13 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Ponadto, Administrator może gromadzić informacje o Odwiedzających Serwis odnoszące się do ich zachowań w
-        Serwisie, ich lokalizacji oraz rodzaju urządzeń wykorzystywanych do odwiedzania serwisu.
+        Ponadto, Usługodawca może gromadzić informacje o Odwiedzających Serwis odnoszące się do ich zachowań w Serwisie,
+        ich lokalizacji oraz rodzaju urządzeń wykorzystywanych do odwiedzania serwisu.
       </span>
     ),
     en: (
       <span>
-        Furthermore, the Administrator may gather data regarding Service's Visitors regarding their behavior in the
+        Furthermore, the Service Provider may gather data regarding Service's Visitors regarding their behavior in the
         Service, their location and kinds of devices used during visiting the Service.
       </span>
     ),
@@ -112,12 +145,13 @@ export const provisions = [
     pl: (
       <span>
         Dane, o których mowa powyżej przechowywane są na serwerach usługodawców świadczących usługi hostingu na rzecz
-        Administratora.
+        Usługodawcy.
       </span>
     ),
     en: (
       <span>
-        The data referred to above is hosted on the servers of entites providing hosting services to the Administrator.
+        The data referred to above is hosted on the servers of entites providing hosting services to the Service
+        Provider.
       </span>
     ),
   },
@@ -125,8 +159,8 @@ export const provisions = [
     item: '4.',
     tier: 'header',
     version: versions['1.0'],
-    pl: <span>W jaki sposób Administrator gromadzi dane osobowe?</span>,
-    en: <span>By what means the Administrator gathers the personal data?</span>,
+    pl: <span>W jaki sposób Usługodawca gromadzi dane osobowe?</span>,
+    en: <span>By what means the Service Provider gathers the personal data?</span>,
   },
   {
     item: '',
@@ -134,16 +168,16 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Administrator gromadzi dane osobowe pozyskane od Użytkowników przy tworzeniu i&nbsp;zmianie danych Konta oraz od
+        Usługodawca gromadzi dane osobowe pozyskane od Użytkowników przy tworzeniu i zmianie danych Konta oraz od
         Odwiedzających poprzez zanonimizowaną, zsumowaną analizę ich zachowań w Serwisie przy zastosowaniu między innymi
         technologii, o których mowa w <u>Polityce Plików Cookies</u>.
       </span>
     ),
     en: (
       <span>
-        The Administrator gathers personal data acquired from the Users at the Account registration and changing Account
-        data, and, from the Visitors through anonymised, combined analysis of their behaviour through usage of - among
-        others - technologies reffered to under the <u>Cookies Policy</u>.
+        the Service Provider gathers personal data acquired from the Users at the Account registration and changing
+        Account data, and, from the Visitors through anonymised, combined analysis of their behaviour through usage of -
+        among others - technologies reffered to under the <u>Cookies Policy</u>.
       </span>
     ),
   },
@@ -151,22 +185,22 @@ export const provisions = [
     item: '5.',
     tier: 'header',
     version: versions['1.0'],
-    pl: <span>W jakim celu Administrator zbiera dane osobowe</span>,
-    en: <span>What is the purpose of gathering of the personal data by the Administrator?</span>,
+    pl: <span>W jakim celu Usługodawca zbiera dane osobowe</span>,
+    en: <span>What is the purpose of gathering of the personal data by the Service Provider?</span>,
   },
   {
     item: '',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Administrator zbiera dane osobowe w celu:</span>,
-    en: <span>The Administrator gathers personal data to:</span>,
+    pl: <span>Usługodawca zbiera dane osobowe w celu:</span>,
+    en: <span>the Service Provider gathers personal data to:</span>,
   },
   {
     item: 'a)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: <span>zapewnienia bezpieczeństwa Użytkowników, Odwiedzających oraz Serwisu,</span>,
-    en: <span>ensure safety of the Users, Visitors and the Service,</span>,
+    pl: <span>zapewnienia bezpieczeństwa Odwiedzających, Ogłoszeniodawców, Kandydatów oraz Serwisu,</span>,
+    en: <span>ensure safety of the Visitors, the Posters and the Service,</span>,
   },
   {
     item: 'b)',
@@ -203,13 +237,13 @@ export const provisions = [
     pl: (
       <span>
         Dla wypełnienia celów, o których mowa w Punkcie 5 niniejsze Polityki Prywatności, dane osobowe zbierane przez
-        Administratora mogą być przekazywane Zaufanym Partnerom.
+        Usługodawcy mogą być przekazywane Zaufanym Partnerom.
       </span>
     ),
     en: (
       <span>
-        To fulfill purposes referred to under Point 5 of this Privacy Policy, the personal data gathered by the
-        Administrator may be transferred to the Trusted Partners.
+        To fulfill purposes referred to under Point 5 of this Privacy Policy, the personal data gathered by the Service
+        Provider may be transferred to the Trusted Partners.
       </span>
     ),
   },
@@ -219,13 +253,13 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Administrator oraz Zaufani Partnerzy mogą przekazywać zbierane dane osobowe organom publicznym w przypadkach
+        Usługodawca oraz Zaufani Partnerzy mogą przekazywać zbierane dane osobowe organom publicznym w przypadkach
         wymaganych przepisami prawa.
       </span>
     ),
     en: (
       <span>
-        The Administrator and the Trusted Partners may provide the public authorities with the personal data in the
+        the Service Provider and the Trusted Partners may provide the public authorities with the personal data in the
         cases envisioned by the law.
       </span>
     ),
@@ -245,7 +279,7 @@ export const provisions = [
       <span>
         W przypadku, w którym w Serwisie zawarte są przekierowania (<i>linki</i>) Odwiedzający podążający za takim
         przekierowaniem przyjmuje do wiadomości, że niniejsza Polityka Prywatności nie znajduje zastosowania do tych
-        stron, a&nbsp;proces przetwarzania tych danych odbywa się na zasadach i warunkach przewidzianych przez reguły
+        stron, a proces przetwarzania tych danych odbywa się na zasadach i warunkach przewidzianych przez reguły
         odnoszące się do tych stron.
       </span>
     ),
@@ -326,7 +360,7 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Wykonanie powyższych praw pozostaje bez wpływu na dotychczasowe przetwarzanie, a&nbsp;ponadto może wiązać się z
+        Wykonanie powyższych praw pozostaje bez wpływu na dotychczasowe przetwarzanie, a ponadto może wiązać się z
         ograniczeniem funkcjonalności Serwisu, takich jak, między innymi, posiadanie Konta.
       </span>
     ),
@@ -343,13 +377,13 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Wykonanie powyższych praw następuje poprzez wysłanie pisma na adres korespondencyjny Administratora lub emaila
-        na adres <i>kontakt@warsaw.digital</i> wskazujących wykonywane prawa.
+        Wykonanie powyższych praw następuje poprzez wysłanie pisma na adres korespondencyjny Usługodawcy lub emaila na
+        adres <i>kontakt@warsaw.digital</i> wskazujących wykonywane prawa.
       </span>
     ),
     en: (
       <span>
-        The execution of the abovementioned rights is made through sending a letter to the Administrator's
+        The execution of the abovementioned rights is made through sending a letter to the Service Provider's
         correspondence address or an email to <i>contact@warsaw.digital</i> with indication of the rights being
         executed.
       </span>
@@ -368,22 +402,22 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        W celach wskazanych w Punkcie 5. niniejszej Polityki Prywatności, Administrator korzysta z usług Zaufanych
+        W celach wskazanych w Punkcie 5. niniejszej Polityki Prywatności, Usługodawca korzysta z usług Zaufanych
         Partnerów mających siedziby na obszarze Europejskiego Obszaru Gospodarczego (EOG) lub w Stanach Zjednoczonych. W
-        związku z tym dane osobowe mogą być przekazywane poza granice EOG. Gwarancje należytej ochrony danych osobowych
-        przez Zaufanych Partnerów mających siedziby w Stanach Zjednoczonych opierają się między innymi na zobowiązaniach
-        do stosowania przez te podmioty standardowych klauzul umownych przyjętych przez Komisję Unii Europejskiej
-        oraz&nbsp;uczestnictwa w Tarczy Prywatności (ang. Privacy Shield).
+        związku z tym dane osobowe mogą być przekazywane poza granice EOG. Gwarancje należytej ochrony danych osobowych
+        przez Zaufanych Partnerów mających siedziby w Stanach Zjednoczonych opierają się między innymi, ale nie
+        wyłącznie, na zobowiązaniach do stosowania przez te podmioty standardowych klauzul umownych przyjętych przez
+        Komisję Unii Europejskiej oraz wydanych przez Komisję decyzjach o adekwatności.
       </span>
     ),
     en: (
       <span>
-        With the purposes referred to under Point 5 of this Privacy Policy, the Administrator employs the services of
+        {/* With the purposes referred to under Point 5 of this Privacy Policy, the Service Provider employs the services of
         Trusted Partners with registered offices within the European Economic Area and/or in the United States.
         Therefore, the personal data may be transferred outside of EEA. The guarantees of the proper protection of the
         personal data by the Trusted Partners with their registered offices in United States are based, among others, on
         the obligations of those entities to apply standard contractual clauses approved by the Commission of the
-        European Union and the participation in the Privacy Shield program.
+        European Union and the participation in the Privacy Shield program. */}
       </span>
     ),
   },
@@ -391,8 +425,8 @@ export const provisions = [
     item: '10.',
     tier: 'header',
     version: versions['1.0'],
-    pl: <span>Jak długo przechowywane są dane osobowe przez Administratora?</span>,
-    en: <span>How long the personal data is stored by the Administrator?</span>,
+    pl: <span>Jak długo przechowywane są dane osobowe przez Usługodawcy?</span>,
+    en: <span>How long the personal data is stored by the Service Provider?</span>,
   },
   {
     item: '',
@@ -400,14 +434,14 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Dane osobowe przechowywane są przez Administratora przez okres nieprzekraczający terminu przedawnienia roszczeń
-        w odniesieniu do relacji łączących Administratora z daną osobą.
+        Dane osobowe przechowywane są przez Usługodawcy przez okres nieprzekraczający terminu przedawnienia roszczeń w
+        odniesieniu do relacji łączących Usługodawcy z daną osobą.
       </span>
     ),
     en: (
       <span>
-        The personal data is stored by the Administrator for the period not surpassing the period of limitation with
-        respect to relations connecting the Administrator with a given person.
+        The personal data is stored by the Service Provider for the period not surpassing the period of limitation with
+        respect to relations connecting the Service Provider with a given person.
       </span>
     ),
   },

@@ -113,12 +113,12 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        <strong>Odwiedzający</strong> - osoba, która uzyskała dostęp do Serwisu, np. poprzez przeglądarkę internetową,
+        <strong>Odwiedzający</strong> - osoba fizyczna, która uzyskała dostęp do Serwisu, np. poprzez przeglądarkę internetową,
       </span>
     ),
     en: (
       <span>
-        <strong>Visitor</strong> - a person which obtained access to the Service, for example through a web browser,
+        <strong>Visitor</strong> - a natural person which obtained access to the Service, for example through a web browser,
       </span>
     ),
   },
@@ -203,14 +203,13 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        <strong>Kandydat</strong> - osoba fizyczna, która odpowiedziała na Ogłoszenie Współpracy poprzez dostępny w
-        Serwisie formularz aplikacyjny,
+        <strong>Kandydat</strong> - osoba fizyczna, która zaaplikowała na dane stanowisko objęte danym Ogłoszeniem
+        Współpracy poprzez dostępny w Serwisie formularz aplikacyjny,
       </span>
     ),
     en: (
       <span>
-        <strong>Candidate</strong> - a natural person who has responded to a Cooperation Announcement through the
-        application form available within the Service,,
+        <strong>Candidate</strong> - TODO,
       </span>
     ),
   },
@@ -258,7 +257,12 @@ export const provisions = [
     item: 'c)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: <span>przekierowywaniu Odwiedzających do formularzy aplikacyjnych Ogłoszeniodawców, oraz</span>,
+    pl: (
+      <span>
+        przekierowywaniu Odwiedzających do formularzy aplikacyjnych Ogłoszeniodawców znajdujących się poza Serwisem,
+        oraz
+      </span>
+    ),
     en: <span>TODO,</span>,
   },
   {
@@ -369,38 +373,6 @@ export const provisions = [
       <span>
         The Service Provider does not give any guarantee that the information, data and opinions included in the
         articles in the Service are correct.
-      </span>
-    ),
-  },
-  {
-    item: '6.',
-    tier: 'header',
-    version: versions['1.0'],
-    pl: <span>Ochrona danych osobowych</span>,
-    en: <span>Personal Data Protection</span>,
-  },
-  {
-    item: '6.1.',
-    tier: 'point',
-    version: versions['1.0'],
-    pl: (
-      <span>Integralnymi częściami niniejszego Regulaminu są Polityka Prywatności oraz Polityka Plików Cookies.</span>
-    ),
-    en: <span>The Privacy Policy and the Cookies Policy consitute integral parts of these Terms of Service.</span>,
-  },
-  {
-    item: '6.2.',
-    tier: 'point',
-    version: versions['1.0'],
-    pl: (
-      <span>
-        Podmiot tworzący Konto upoważnia Usługodawcę do przetwarzanie danych osobowych powiązanych z tym Kontem.
-      </span>
-    ),
-    en: (
-      <span>
-        An entity creating an Account authorizes the Service Provider to process personal data connected with that
-        Account.
       </span>
     ),
   },
@@ -628,17 +600,76 @@ export const provisions = [
   },
 
   {
-    item: 'X.',
+    item: '9.',
     tier: 'header',
     version: versions['1.0'],
-    pl: <span>TODO</span>,
+    pl: <span>Ochrona danych osobowych</span>,
+    en: <span>Personal Data Protection</span>,
+  },
+  {
+    item: '9.1.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>Integralnymi częściami niniejszego Regulaminu są Polityka Prywatności oraz Polityka Plików Cookies.</span>
+    ),
+    en: <span>The Privacy Policy and the Cookies Policy consitute integral parts of these Terms of Service.</span>,
+  },
+  {
+    item: '9.2.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        W odniesieniu do danych osobowych Odwiedzających przetwarzanych przez Usługodawcę w związku ze świadczeniem
+        Usług w ramach Serwisu, administratorem danych osobowych jest Usługodawca.
+      </span>
+    ),
+    en: <span>TODO</span>,
+  },
+
+  {
+    item: '9.3.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Usługodawca nie jest administratorem danych osobowych podanych poza Serwisem, nawet, gdy podanie tych danych
+        nastąpiło po przekierowaniu z Serwisu. W szczególności, ale nie wyłącznie, Usługodawca nie jest administratorem
+        danych osobowych podanych po przekierowaniu Odwiedzających do formularzy aplikacyjnych Ogłoszeniodawców
+        znajdujących się poza Serwisem, zgodnie z Punktem 3.1 c), których administratorem są podmioty, które te dane
+        zebrały lub przetwarzają.
+      </span>
+    ),
     en: <span>TODO</span>,
   },
   {
-    item: 'X.1.',
+    item: '9.4.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>TODO</span>,
+    pl: (
+      <span>
+        Po zebraniu danych osobowych i udostępnieniu ich Ogłoszeniodawcy, zgodnie z Punktem 3.1
+        b), administratorem tych danych osobowych staje się również Ogłoszeniodawca, który jest wyłącznie odpowiedzialny
+        za przetwarzanie tych danych osobowych przez tego Ogłoszeniodawcę, które następuje po ich udostępnieniu, a
+        Usługodawca w tym zakresie nie występuje w roli administratora.
+      </span>
+    ),
+    en: <span>TODO</span>,
+  },
+  {
+    item: '9.5.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Ogłoszeniodawca, który stał się administratorem danych osobowych zgodnie z Punktem 9.4 powyżej zobowiązany jest
+        do wypełniania wszelkich obowiązków wymaganych przepisami prawa jako administrator danych osobowych, w tym w
+        szczególności, ale nie wyłącznie, wdrożenia odpowiednich środków technicznych i organizacyjnych w celu
+        wypełnienia obowiązków nakreślonych przepisami prawa oraz zapewniających bezpieczeństwo danych osobowych, oraz{' '}
+        <strong>spełnienia obowiązków informacyjnych wobec osób, których dane dotyczą</strong>.
+      </span>
+    ),
     en: <span>TODO</span>,
   },
 
