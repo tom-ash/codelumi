@@ -335,48 +335,63 @@ export const provisions = [
       </span>
     ),
   },
+
   {
-    item: '5.',
+    item: '4.',
     tier: 'header',
     version: versions['1.0'],
-    pl: <span>Prawa i odpowiedzialność Usługodawcy.</span>,
-    en: <span>The rights and liability of the Service Provider</span>,
+    pl: <span>Ogłoszenia Współpracy</span>,
+    en: <span>TODO</span>,
   },
   {
-    item: '5.1.',
+    item: '4.1.',
     tier: 'point',
     version: versions['1.0'],
-    pl: (
-      <span>
-        Usługodawca uprawniony jest w każdym momencie do zaprzestania świadczenia usług poprzez Serwis, jak i do
-        wprowadzania przerw w świadczeniu tych usług.
-      </span>
-    ),
-    en: (
-      <span>
-        The Service Provider is entitled at any time to terminate rendering of the services through the Service, and/or
-        to interrupt rendering of those services.
-      </span>
-    ),
+    pl: <span>Ogłoszenia Współpracy nie stanowią ofert w rozumieniu polskiego kodeksu cywilnego, a jedynie zaproszenia do rozpoczęcia procesu rekrutacyjnego w celu zawarcia umowy o pracę lub negocacji w celu zawarcia innego rodzaju umowy.</span>,
+    en: <span>TODO</span>,
   },
   {
-    item: '5.2.',
+    item: '4.2.',
     tier: 'point',
     version: versions['1.0'],
-    pl: (
-      <span>
-        Usługodawca nie daje jakiejkolwiek gwarancji, że informacje, dane i opinie zamieszczone w artykułach zawartych w
-        Serwisie są poprawne.
-      </span>
-    ),
-    en: (
-      <span>
-        The Service Provider does not give any guarantee that the information, data and opinions included in the
-        articles in the Service are correct.
-      </span>
-    ),
+    pl: <span>Ogłoszeniodawcy odpowiedzialni są za zapewnienie, aby treść Ogłoszeń Współpracy przez nich publikowana była zgodna z prawem, dobrymi obyczajami oraz normami etycznymi</span>,
+    en: <span>TODO</span>,
   },
-
+  {
+    item: '4.3.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>Odpowiedzialność za treść Ogłoszeń Współpracy, dotyczącą między innymi ich pełności, aktualności oraz poprawności, ponoszą wyłącznie ich Ogłoszeniodawcy.</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: '4.4.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>Dodane Ogłoszenie pozostaje aktywne przez okres 60 dni, chyba, że zostanie wcześniej usunięte przez Ogłoszeniodawcę lub Usługodawcę. Po upływie okresu aktywacji Ogłoszenie jest niewidoczne dla Odwiedzających.</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: '4.5.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>Ogłoszenie może być w każdym momencie usunięte przez Ogłoszeniodawcę.</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: '4.6.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>Usługodawca uprawniony jest do usunięcia Ogłoszenia w przypadku stwierdzenia naruszenia Regulaminu przez Ogłoszeniodawcę, a Ogłoszeniodawcy z tego tytułu nie przysługuje ani zwrot jakichkolwiek kosztów, ani odszkodowanie, ani jakiekolwiek inne roszczenie.</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: '4.7.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>Zabronione jest umieszczanie w Ogłoszeniach Współpracy zapytań o dane osobowe ujawniające pochodzenie rasowe lub etniczne, poglądy polityczne, przekonania religijne lub filozoficzne, przynależność wyznaniową, partyjną lub związkową, jak również danych o stanie zdrowia, kodzie genetycznym, nałogach lub życiu seksualnym oraz danych dotyczących skazań, orzeczeń o ukaraniu i mandatów karnych, a także innych orzeczeń wydanych w postępowaniu sądowym lub administracyjnym.</span>,
+    en: <span>TODO</span>,
+  },
   {
     item: 'X.',
     tier: 'header',
@@ -538,67 +553,6 @@ export const provisions = [
     ),
     en: <span>TODO</span>,
   },
-
-  {
-    item: 'X.',
-    tier: 'header',
-    version: versions['1.0'],
-    pl: <span>TODO</span>,
-    en: <span>TODO</span>,
-  },
-  {
-    item: 'X.1.',
-    tier: 'point',
-    version: versions['1.0'],
-    pl: <span>TODO</span>,
-    en: <span>TODO</span>,
-  },
-
-  {
-    item: 'X.',
-    tier: 'header',
-    version: versions['1.0'],
-    pl: <span>TODO</span>,
-    en: <span>TODO</span>,
-  },
-  {
-    item: 'X.1.',
-    tier: 'point',
-    version: versions['1.0'],
-    pl: <span>TODO</span>,
-    en: <span>TODO</span>,
-  },
-
-  {
-    item: 'X.',
-    tier: 'header',
-    version: versions['1.0'],
-    pl: <span>TODO</span>,
-    en: <span>TODO</span>,
-  },
-  {
-    item: 'X.1.',
-    tier: 'point',
-    version: versions['1.0'],
-    pl: <span>TODO</span>,
-    en: <span>TODO</span>,
-  },
-
-  {
-    item: 'X.',
-    tier: 'header',
-    version: versions['1.0'],
-    pl: <span>TODO</span>,
-    en: <span>TODO</span>,
-  },
-  {
-    item: 'X.1.',
-    tier: 'point',
-    version: versions['1.0'],
-    pl: <span>TODO</span>,
-    en: <span>TODO</span>,
-  },
-
   {
     item: '9.',
     tier: 'header',
@@ -671,6 +625,49 @@ export const provisions = [
       </span>
     ),
     en: <span>TODO</span>,
+  },
+
+
+  {
+    item: '5.',
+    tier: 'header',
+    version: versions['1.0'],
+    pl: <span>Prawa i odpowiedzialność Usługodawcy.</span>,
+    en: <span>The rights and liability of the Service Provider</span>,
+  },
+  {
+    item: '5.1.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Usługodawca uprawniony jest w każdym momencie do zaprzestania świadczenia usług poprzez Serwis, jak i do
+        wprowadzania przerw w świadczeniu tych usług.
+      </span>
+    ),
+    en: (
+      <span>
+        The Service Provider is entitled at any time to terminate rendering of the services through the Service, and/or
+        to interrupt rendering of those services.
+      </span>
+    ),
+  },
+  {
+    item: '5.2.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Usługodawca nie daje jakiejkolwiek gwarancji, że informacje, dane i opinie zamieszczone w artykułach zawartych w
+        Serwisie są poprawne.
+      </span>
+    ),
+    en: (
+      <span>
+        The Service Provider does not give any guarantee that the information, data and opinions included in the
+        articles in the Service are correct.
+      </span>
+    ),
   },
 
   {
@@ -877,5 +874,19 @@ export const provisions = [
     version: versions['1.0'],
     pl: <span>Niniejszy Regulamin obowiązuje od dnia 1 czerwca 2021 r.</span>,
     en: <span>These Terms of Service are applicable as of 1st June 2020.</span>,
+  },
+  {
+    item: 'X.',
+    tier: 'header',
+    version: versions['1.0'],
+    pl: <span>TODO</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: 'X.1.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>TODO</span>,
+    en: <span>TODO</span>,
   },
 ]
