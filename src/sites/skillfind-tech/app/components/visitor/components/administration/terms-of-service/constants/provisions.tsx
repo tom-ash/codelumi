@@ -392,6 +392,15 @@ export const provisions = [
     pl: <span>Zabronione jest umieszczanie w Ogłoszeniach Współpracy zapytań o dane osobowe ujawniające pochodzenie rasowe lub etniczne, poglądy polityczne, przekonania religijne lub filozoficzne, przynależność wyznaniową, partyjną lub związkową, jak również danych o stanie zdrowia, kodzie genetycznym, nałogach lub życiu seksualnym oraz danych dotyczących skazań, orzeczeń o ukaraniu i mandatów karnych, a także innych orzeczeń wydanych w postępowaniu sądowym lub administracyjnym.</span>,
     en: <span>TODO</span>,
   },
+
+  {
+    item: '4.7.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>W celach promocyjnych Ogłoszenia Współpracy mogą być publikowane przez Usługodawcę w całości, w części lub w formie streszczeń poza Serwisem, w innych serwisach internetowych, platformach reklamowych, materiałach promocyjnych, listach mailingowych oraz innych miejscach, w sposób zawierający Utwory Ogłoszeniodawcy, zgodnie z ich definicją zawartą w Punkcie X.1 poniżej.</span>,
+    en: <span>TODO</span>,
+  },
+
   {
     item: 'X.',
     tier: 'header',
