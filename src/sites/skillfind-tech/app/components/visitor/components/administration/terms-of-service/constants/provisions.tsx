@@ -298,8 +298,8 @@ export const provisions = [
     item: '3.',
     tier: 'header',
     version: versions['1.0'],
-    pl: <span>Konta</span>,
-    en: <span>Accounts</span>,
+    pl: <span>Ogłoszeniodawcy</span>,
+    en: <span>TODO</span>,
   },
   {
     item: '3.1.',
@@ -307,17 +307,33 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Konto w Serwisie może założyć a) osoba fizyczna niedziałająca jako przedsiębiorca (Konto Prywatne) lub b)
-        podmiot działający jako przedsiębiorca (Konto Firmowe).
+        Konto dedykowane dodawaniu Ogłoszeń Współpracy w Serwisie może założyć wyłącznie podmiot wykonujący we własnym imieniu działalność gospodarczą.
       </span>
     ),
     en: (
       <span>
-        An Account in the Service can be registered by a) a natural person not acting as an entrepreneur (Private
-        Account) and/or b) an entity acting as an entrepreneur (Business Account).
+        {/* An Account in the Service can be registered by a) a natural person not acting as an entrepreneur (Private
+        Account) and/or b) an entity acting as an entrepreneur (Business Account). */}
       </span>
     ),
   },
+
+  {
+    item: '3.2.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Osoby fizyczne, która działają w imieniu Ogłoszeniodawcy w odniesieniu do czynności podejmowanych w ramach Serwisu wobec Usługodawcy oraz wobec osób trzecich, zobowiązane są mieć odpowiednie prawa reprezentacji lub umocowania.
+      </span>
+    ),
+    en: (
+      <span>
+        TODO
+      </span>
+    ),
+  },
+
   {
     item: '3.2.',
     tier: 'point',
@@ -400,6 +416,8 @@ export const provisions = [
     pl: <span>W celach promocyjnych Ogłoszenia Współpracy mogą być publikowane przez Usługodawcę w całości, w części lub w formie streszczeń poza Serwisem, w innych serwisach internetowych, platformach reklamowych, materiałach promocyjnych, listach mailingowych oraz innych miejscach, w sposób zawierający Utwory Ogłoszeniodawcy, zgodnie z ich definicją zawartą w Punkcie X.1 poniżej.</span>,
     en: <span>TODO</span>,
   },
+
+  // REPRESENTATION
 
   {
     item: 'X.',
