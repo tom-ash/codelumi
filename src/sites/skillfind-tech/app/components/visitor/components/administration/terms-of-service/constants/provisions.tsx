@@ -318,6 +318,8 @@ export const provisions = [
     ),
   },
 
+  // TODO
+
   {
     item: '3.2.',
     tier: 'point',
@@ -655,6 +657,7 @@ export const provisions = [
   },
 
 
+
   {
     item: '5.',
     tier: 'header',
@@ -696,6 +699,48 @@ export const provisions = [
       </span>
     ),
   },
+
+  {
+    item: 'X.',
+    tier: 'header',
+    version: versions['1.0'],
+    pl: <span>Reklamacje</span>,
+    en: <span>TODO</span>,
+  },
+  {
+    item: 'X.1.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Użytkownicy Serwisu mają prawo do składania reklamacji w sprawach świadczenia Usług przez Usługodawcę w ramach Serwisu.
+      </span>
+    ),
+    en: <span>TODO</span>,
+  },
+  {
+    item: 'X.1.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Reklamacje, o których mowa w Punkcie X.1 powyżej, można składać listownie na adres rejestrowy Usługodawcy lub mailowo na kontakt@skillfind.tech.
+      </span>
+    ),
+    en: <span>TODO</span>,
+  },
+  {
+    item: 'X.1.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Usługodawca dokłada starań, aby reklamacje rozpatrywane były w terminie do 30 dni kalendarzowych.
+      </span>
+    ),
+    en: <span>TODO</span>,
+  },
+  
 
   {
     item: '10.',
