@@ -5,6 +5,8 @@ const versions = {
 }
 
 export const provisions = [
+  // --- THE SUBJECT OF THE TERMS OF SERVICE ---
+  
   {
     item: '1.',
     tier: 'header',
@@ -19,11 +21,13 @@ export const provisions = [
     pl: (
       <span>
         Przedmiotem Regulaminu jest określenie zasad świadczenia Usług przez Usługodawcę w ramach Serwisu, zgodnie z
-        definicjami wskazanymi w Punkcie 2.1 poniżej.
+        definicjami wskazanymi w Punkcie 2 poniżej.
       </span>
     ),
     en: <span>TODO</span>,
   },
+
+  // --- DEFINITIONS ---
 
   {
     item: '2.',
@@ -33,7 +37,7 @@ export const provisions = [
     en: <span>Definitions</span>,
   },
   {
-    item: '2.1.',
+    item: '',
     tier: 'point',
     version: versions['1.0'],
     pl: <span>W niniejszym Regulaminie wyrażenia pisane z wielkiej litery mają następujące znaczenia:</span>,
@@ -89,7 +93,6 @@ export const provisions = [
       </span>
     ),
   },
-
   {
     item: 'b)',
     tier: 'subpoint',
@@ -97,7 +100,7 @@ export const provisions = [
     pl: (
       <div>
         <strong>Usługi</strong> - usługi świadczone przez Usługodawcę w ramach Serwisu wymienione niewyczerpująco w
-        Puncie 3.1 poniżej,
+        Puncie 3.2 poniżej,
       </div>
     ),
     en: (
@@ -106,7 +109,6 @@ export const provisions = [
       </span>
     ),
   },
-
   {
     item: 'c)',
     tier: 'subpoint',
@@ -122,7 +124,6 @@ export const provisions = [
       </span>
     ),
   },
-
   {
     item: 'c)',
     tier: 'subpoint',
@@ -214,15 +215,24 @@ export const provisions = [
     ),
   },
 
+  // --- THE SERVICE ---
+
   {
     item: '3.',
     tier: 'header',
     version: versions['1.0'],
-    pl: <span>Usługi Usługodawcy</span>,
+    pl: <span>Serwis</span>,
     en: <span>TODO</span>,
   },
   {
-    item: '3.1',
+    item: '3.1.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>Właścicielem i administratorem Serwisu jest Usługodawca.</span>,
+    en: <span>The owner and the administrator of the Service is the Service Provider.</span>,
+  },
+  {
+    item: '3.2',
     tier: 'point',
     version: versions['1.0'],
     pl: (
@@ -233,24 +243,18 @@ export const provisions = [
     ),
     en: <span>TODO</span>,
   },
-
   {
     item: 'a)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: <span>przyjmowaniu od Ogłoszeniodawców Ogłoszeń Współpracy i publikowaniu ich w Serwisie,</span>,
+    pl: <span>przyjmowaniu od Ogłoszeniodawców Ogłoszeń Współpracy do publikacji ich w Serwisie,</span>,
     en: <span>TODO,</span>,
   },
   {
     item: 'b)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: (
-      <span>
-        przyjmowaniu aplikacji od Odwiedzających w odniesieniu do Ogłoszeń Współpracy i udostępnianiu tych aplikacji
-        Ogłoszeniodawcom,
-      </span>
-    ),
+    pl: <span>publikowaniu Ogłoszeń Współpracy w Serwisie,</span>,
     en: <span>TODO,</span>,
   },
   {
@@ -259,8 +263,7 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        przekierowywaniu Odwiedzających do formularzy aplikacyjnych Ogłoszeniodawców znajdujących się poza Serwisem,
-        oraz
+        przyjmowaniu aplikacji od osób fizycznych do stanowisk objętych Ogłoszeniami Współpracy i udostępnianiu tych aplikacji Ogłoszeniodawcom, oraz
       </span>
     ),
     en: <span>TODO,</span>,
@@ -269,40 +272,53 @@ export const provisions = [
     item: 'd)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: <span>udostępnianiu treści cyfrowych, w tym w szczególności, ale nie wyłącznie, artykułów technicznych,</span>,
+    pl: <span>udostępnianiu treści cyfrowych, w tym w szczególności, ale nie wyłącznie, artykułów technicznych.</span>,
+    en: <span>TODO,</span>,
+  },
+  {
+    item: '3.3',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Korzystanie z Serwisu wymaga od Odwiedzającego spełnienia następujących wymagań technicznych:
+      </span>
+    ),
+    en: <span>TODO</span>,
+  },
+  {
+    item: 'a)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: <span>posiadanie dostępu do urządzenia komputerowego lub mobilnego z dostępem do Internetu, które zapewnia bezpieczeństwo swoich użytkowników,</span>,
+    en: <span>TODO,</span>,
+  },
+  {
+    item: 'b)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: <span>posiadanie na urządzeniu aktualnej wersji przeglądarki internetowej Google Chrome, Mozilla Firefox, Microsoft Edge, Opera, Safari lub innej kompatybilnej z wymienionymi, oraz</span>,
+    en: <span>TODO,</span>,
+  },
+  {
+    item: 'c)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: <span>włączenie w przeglądarce internetowej obsługi JavaScript oraz plików cookies,</span>,
     en: <span>TODO,</span>,
   },
 
+  // --- POSTERS ---
+
   {
-    item: '2.',
-    tier: 'header',
-    version: versions['1.0'],
-    pl: <span>Serwis</span>,
-    en: <span>The Service</span>,
-  },
-  {
-    item: '2.1.',
-    tier: 'point',
-    version: versions['1.0'],
-    pl: <span>Właścicielem i administratorem Serwisu jest Usługodawca.</span>,
-    en: <span>The owner and the administrator of the Service is the Service Provider.</span>,
-  },
-  {
-    item: '2.2.',
-    tier: 'point',
-    version: versions['1.0'],
-    pl: <span>Serwis przeznaczony jest do prezentowania artykułów dotyczących programowania komputerowego.</span>,
-    en: <span>The Service is intended to present articles regarding computer programming.</span>,
-  },
-  {
-    item: '3.',
+    item: '4.',
     tier: 'header',
     version: versions['1.0'],
     pl: <span>Ogłoszeniodawcy</span>,
     en: <span>TODO</span>,
   },
   {
-    item: '3.1.',
+    item: '4.1.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
@@ -317,11 +333,8 @@ export const provisions = [
       </span>
     ),
   },
-
-  // TODO
-
   {
-    item: '3.2.',
+    item: '4.2.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
@@ -337,74 +350,73 @@ export const provisions = [
   },
 
   {
-    item: '3.2.',
+    item: '4.3.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
       <span>
-        Usługodawca uprawniony jest do deaktywacji lub usunięcia Konta w przypadku stwierdzenia naruszenia Regulaminu
-        przez Użytkownika.
+        Usługodawca uprawniony jest do deaktywacji lub usunięcia Konta Ogłoszeniodawcy w przypadku stwierdzenia naruszenia Regulaminu przez tego Ogłoszeniodawcę, a Ogłoszeniodawcy z tego tytułu nie przysługuje ani zwrot jakichkolwiek kosztów, ani odszkodowanie, ani jakiekolwiek inne roszczenie.
       </span>
     ),
     en: (
       <span>
-        The Service Provider is entitled to de-activate and/or delete the Account in case of determining of violation of
-        these Terms of Service by the User.
+        {/* The Service Provider is entitled to de-activate and/or delete the Account in case of determining of violation of
+        these Terms of Service by the User. */}
       </span>
     ),
   },
 
   {
-    item: '4.',
+    item: '5.',
     tier: 'header',
     version: versions['1.0'],
     pl: <span>Ogłoszenia Współpracy</span>,
     en: <span>TODO</span>,
   },
   {
-    item: '4.1.',
+    item: '5.1.',
     tier: 'point',
     version: versions['1.0'],
     pl: <span>Ogłoszenia Współpracy nie stanowią ofert w rozumieniu polskiego kodeksu cywilnego, a jedynie zaproszenia do rozpoczęcia procesu rekrutacyjnego w celu zawarcia umowy o pracę lub negocacji w celu zawarcia innego rodzaju umowy.</span>,
     en: <span>TODO</span>,
   },
   {
-    item: '4.2.',
+    item: '5.2.',
     tier: 'point',
     version: versions['1.0'],
     pl: <span>Ogłoszeniodawcy odpowiedzialni są za zapewnienie, aby treść Ogłoszeń Współpracy przez nich publikowana była zgodna z prawem, dobrymi obyczajami oraz normami etycznymi</span>,
     en: <span>TODO</span>,
   },
   {
-    item: '4.3.',
+    item: '5.3.',
     tier: 'point',
     version: versions['1.0'],
     pl: <span>Odpowiedzialność za treść Ogłoszeń Współpracy, dotyczącą między innymi ich pełności, aktualności oraz poprawności, ponoszą wyłącznie ich Ogłoszeniodawcy.</span>,
     en: <span>TODO</span>,
   },
   {
-    item: '4.4.',
+    item: '5.4.',
     tier: 'point',
     version: versions['1.0'],
     pl: <span>Dodane Ogłoszenie pozostaje aktywne przez okres 60 dni, chyba, że zostanie wcześniej usunięte przez Ogłoszeniodawcę lub Usługodawcę. Po upływie okresu aktywacji Ogłoszenie jest niewidoczne dla Odwiedzających.</span>,
     en: <span>TODO</span>,
   },
   {
-    item: '4.5.',
+    item: '5.5.',
     tier: 'point',
     version: versions['1.0'],
     pl: <span>Ogłoszenie może być w każdym momencie usunięte przez Ogłoszeniodawcę.</span>,
     en: <span>TODO</span>,
   },
   {
-    item: '4.6.',
+    item: '5.6.',
     tier: 'point',
     version: versions['1.0'],
     pl: <span>Usługodawca uprawniony jest do usunięcia Ogłoszenia w przypadku stwierdzenia naruszenia Regulaminu przez Ogłoszeniodawcę, a Ogłoszeniodawcy z tego tytułu nie przysługuje ani zwrot jakichkolwiek kosztów, ani odszkodowanie, ani jakiekolwiek inne roszczenie.</span>,
     en: <span>TODO</span>,
   },
   {
-    item: '4.7.',
+    item: '5.7.',
     tier: 'point',
     version: versions['1.0'],
     pl: <span>Zabronione jest umieszczanie w Ogłoszeniach Współpracy zapytań o dane osobowe ujawniające pochodzenie rasowe lub etniczne, poglądy polityczne, przekonania religijne lub filozoficzne, przynależność wyznaniową, partyjną lub związkową, jak również danych o stanie zdrowia, kodzie genetycznym, nałogach lub życiu seksualnym oraz danych dotyczących skazań, orzeczeń o ukaraniu i mandatów karnych, a także innych orzeczeń wydanych w postępowaniu sądowym lub administracyjnym.</span>,
@@ -412,24 +424,24 @@ export const provisions = [
   },
 
   {
-    item: '4.7.',
+    item: '5.8.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>W celach promocyjnych Ogłoszenia Współpracy mogą być publikowane przez Usługodawcę w całości, w części lub w formie streszczeń poza Serwisem, w innych serwisach internetowych, platformach reklamowych, materiałach promocyjnych, listach mailingowych oraz innych miejscach, w sposób zawierający Utwory Ogłoszeniodawcy, zgodnie z ich definicją zawartą w Punkcie X.1 poniżej.</span>,
+    pl: <span>W celach promocyjnych Ogłoszenia Współpracy mogą być publikowane przez Usługodawcę w całości, w części lub w formie streszczeń poza Serwisem, w innych serwisach internetowych, platformach reklamowych, materiałach promocyjnych, listach mailingowych oraz innych miejscach, w sposób zawierający Utwory Ogłoszeniodawcy, zgodnie z ich definicją zawartą w Punkcie 6.1 poniżej.</span>,
     en: <span>TODO</span>,
   },
 
   // REPRESENTATION
 
   {
-    item: 'X.',
+    item: '6.',
     tier: 'header',
     version: versions['1.0'],
     pl: <span>Licencja</span>,
     en: <span>License</span>,
   },
   {
-    item: 'X.1.',
+    item: '6.1.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
@@ -442,33 +454,33 @@ export const provisions = [
     en: <span>TODO</span>,
   },
   {
-    item: 'X.2.',
+    item: '6.2.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
       <span>
         Ogłoszeniodawca oświadcza, że ma pełnię majątkowych praw autorskich lub właściwe licencje do Utworów
-        Ogłoszeniodawcy i ich podanie zgodnie z Punktem X.1 powyżej nie narusza praw osób trzecich, a w szczególności,
+        Ogłoszeniodawcy i ich podanie zgodnie z Punktem 6.1 powyżej nie narusza praw osób trzecich, a w szczególności,
         ale nie wyłącznie, praw autorskich, licencji i dóbr osobistych osób trzecich.
       </span>
     ),
     en: <span>TODO</span>,
   },
   {
-    item: 'X.3.',
+    item: '6.3.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
       <span>
         Ogłoszeniodawca ponosi pełną i wyłączną odpowiedzialność wobec osób trzecich w związku z podaniem Utworów
-        Ogłoszeniodawcy zgodnie z Punktem X.1 powyżej i zobowiązuje się pokryć koszty związane z zaspakajaniem roszczeń
+        Ogłoszeniodawcy zgodnie z Punktem 6.1 powyżej i zobowiązuje się pokryć koszty związane z zaspakajaniem roszczeń
         osób trzecich wobec Usługodawcy w związku z tym podaniem.
       </span>
     ),
     en: <span>TODO</span>,
   },
   {
-    item: 'X.4.',
+    item: '6.4.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
@@ -482,19 +494,19 @@ export const provisions = [
     en: <span>TODO</span>,
   },
   {
-    item: 'X.5.',
+    item: '6.5.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
       <span>
-        Licencja, o której mowa w Punkcie X.4. powyżej udzielana jest nieodpłatnie w celu i na czas realizacji usług na
+        Licencja, o której mowa w Punkcie 6.4. powyżej udzielana jest nieodpłatnie w celu i na czas realizacji usług na
         rzecz Ogłoszeniodawcy przez Usługodawcę poprzez Serwis.
       </span>
     ),
     en: <span>TODO</span>,
   },
   {
-    item: 'X.6.',
+    item: '6.6.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
@@ -508,11 +520,11 @@ export const provisions = [
   },
 
   {
-    item: 'X.7.',
+    item: '6.7.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
-      <span>Licencja, o której mowa w Punkcie X.4. powyżej, udzielana jest na następującyh polach eksploatacji:</span>
+      <span>Licencja, o której mowa w Punkcie 6.4. powyżej, udzielana jest na następującyh polach eksploatacji:</span>
     ),
     en: <span>TODO</span>,
   },
@@ -523,7 +535,7 @@ export const provisions = [
     pl: (
       <span>
         w zakresie zastosowania Utworów Ogłoszeniodawcy: jednokrotne lub wielokrotne zastosowanie Utworów
-        Ogłoszeniodawcy, w celach wskazanych w Punkcie X.4. powyżej,
+        Ogłoszeniodawcy, w celach wskazanych w Punkcie 6.4. powyżej,
       </span>
     ),
     en: <span>TODO</span>,
@@ -570,27 +582,27 @@ export const provisions = [
     en: <span>TODO</span>,
   },
   {
-    item: 'X.8.',
+    item: '6.8.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
       <span>
         Ogłoszeniodawca niniejszym wyraża zgodę na anonimowe korzystanie przez Usługodawcę z Utworów Ogłoszeniodawcy na
-        wszystkich polach eksploatacji wskazanych w Punkcie X.7 powyżej, a w szczególności, ale nie wyłącznie,
+        wszystkich polach eksploatacji wskazanych w Punkcie 6.7 powyżej, a w szczególności, ale nie wyłącznie,
         Usługodawca ma prawo do korzystania z Utworów Ogłoszeniodawcy bez oznaczenia autorstwa Ogłoszeniodawcy.
       </span>
     ),
     en: <span>TODO</span>,
   },
   {
-    item: '9.',
+    item: '7.',
     tier: 'header',
     version: versions['1.0'],
     pl: <span>Ochrona danych osobowych</span>,
     en: <span>Personal Data Protection</span>,
   },
   {
-    item: '9.1.',
+    item: '7.1.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
@@ -599,7 +611,7 @@ export const provisions = [
     en: <span>The Privacy Policy and the Cookies Policy consitute integral parts of these Terms of Service.</span>,
   },
   {
-    item: '9.2.',
+    item: '7.2.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
@@ -612,22 +624,20 @@ export const provisions = [
   },
 
   {
-    item: '9.3.',
+    item: '7.3.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
       <span>
         Usługodawca nie jest administratorem danych osobowych podanych poza Serwisem, nawet, gdy podanie tych danych
-        nastąpiło po przekierowaniu z Serwisu. W szczególności, ale nie wyłącznie, Usługodawca nie jest administratorem
-        danych osobowych podanych po przekierowaniu Odwiedzających do formularzy aplikacyjnych Ogłoszeniodawców
-        znajdujących się poza Serwisem, zgodnie z Punktem 3.1 c), których administratorem są podmioty, które te dane
+        nastąpiło po przekierowaniu z Serwisu, a administratorami tych danych są podmioty, które te dane
         zebrały lub przetwarzają.
       </span>
     ),
     en: <span>TODO</span>,
   },
   {
-    item: '9.4.',
+    item: '7.4.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
@@ -641,7 +651,7 @@ export const provisions = [
     en: <span>TODO</span>,
   },
   {
-    item: '9.5.',
+    item: '7.5.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
@@ -659,14 +669,14 @@ export const provisions = [
 
 
   {
-    item: '5.',
+    item: '8.',
     tier: 'header',
     version: versions['1.0'],
     pl: <span>Prawa i odpowiedzialność Usługodawcy.</span>,
     en: <span>The rights and liability of the Service Provider</span>,
   },
   {
-    item: '5.1.',
+    item: '8.1.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
@@ -683,7 +693,7 @@ export const provisions = [
     ),
   },
   {
-    item: '5.2.',
+    item: '8.2.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
@@ -699,16 +709,47 @@ export const provisions = [
       </span>
     ),
   },
+  {
+    item: '8.3.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Odpowiedzialność Usługodawcy wobec danego Ogłoszeniodawcy ograniczona jest do wysokości kosztów, jakie Ogłoszeniodawca poniósł na zakup Usług Usługodawcy w ramach Serwisu, chyba, że Usługodawca działał z winy umyślnej.
+      </span>
+    ),
+    en: (
+      <span>
+        TODO
+      </span>
+    ),
+  },
+  {
+    item: '8.3.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Usługodawca nie ponosi odpowiedzialności, gdy jego działania lub zaniechania wynikają z obowiązków nakładanych przez bezwzględnie obowiązujące przepisy prawa.
+      </span>
+    ),
+    en: (
+      <span>
+        TODO
+      </span>
+    ),
+  },
+
 
   {
-    item: 'X.',
+    item: '9.',
     tier: 'header',
     version: versions['1.0'],
     pl: <span>Reklamacje</span>,
     en: <span>TODO</span>,
   },
   {
-    item: 'X.1.',
+    item: '9.1.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
@@ -719,18 +760,18 @@ export const provisions = [
     en: <span>TODO</span>,
   },
   {
-    item: 'X.1.',
+    item: '9.2.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
       <span>
-        Reklamacje, o których mowa w Punkcie X.1 powyżej, można składać listownie na adres rejestrowy Usługodawcy lub mailowo na kontakt@skillfind.tech.
+        Reklamacje, o których mowa w Punkcie 9.1 powyżej, można składać listownie na adres rejestrowy Usługodawcy lub mailowo na kontakt@skillfind.tech.
       </span>
     ),
     en: <span>TODO</span>,
   },
   {
-    item: 'X.1.',
+    item: '9.3.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
@@ -915,50 +956,36 @@ export const provisions = [
   },
 
   {
-    item: '7.',
+    item: '11.',
     tier: 'header',
     version: versions['1.0'],
     pl: <span>Postanowienia końcowe</span>,
     en: <span>TODO</span>,
   },
   {
-    item: '7.1.',
+    item: '11.1.',
     tier: 'point',
     version: versions['1.0'],
     pl: <span>Niniejszy Regulamin poddany jest prawu polskiemu.</span>,
     en: <span>These Terms of Service are governed by the Polish law.</span>,
   },
   {
-    item: '7.2.',
+    item: '11.2.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Spory wynikłe z niniejszego Regulaminu rozstrzygane będą przez sąd właściwy dla Usługodawcy.</span>,
+    pl: <span>Spory wynikłe z niniejszego Regulaminu rozstrzygane będą przez sąd właściwy dla Usługodawcy, chyba, że bezwzględnie obowiązujące przepisy prawa określają inną właściwość.</span>,
     en: (
       <span>
-        Disputes arising out of these Terms of Service shall be determined by the court having jurisdiction over the
-        Service Provider.
+        {/* Disputes arising out of these Terms of Service shall be determined by the court having jurisdiction over the
+        Service Provider. */}
       </span>
     ),
   },
   {
-    item: '7.3.',
+    item: '11.3.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Niniejszy Regulamin obowiązuje od dnia 1 czerwca 2021 r.</span>,
-    en: <span>These Terms of Service are applicable as of 1st June 2020.</span>,
-  },
-  {
-    item: 'X.',
-    tier: 'header',
-    version: versions['1.0'],
-    pl: <span>TODO</span>,
-    en: <span>TODO</span>,
-  },
-  {
-    item: 'X.1.',
-    tier: 'point',
-    version: versions['1.0'],
-    pl: <span>TODO</span>,
-    en: <span>TODO</span>,
+    pl: <span>Niniejszy Regulamin obowiązuje od dnia 28 lipca 2024 r.</span>,
+    en: <span>These Terms of Service are applicable as of July 28th, 2024.</span>,
   },
 ]
