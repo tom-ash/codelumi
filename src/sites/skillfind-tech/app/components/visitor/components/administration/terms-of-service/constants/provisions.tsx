@@ -208,6 +208,23 @@ export const provisions = [
       </span>
     ),
   },
+
+  {
+    item: 'g)',
+    tier: 'subpoint',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        <strong>Cennik</strong> - wykaz cen Usług dostępny pod <u>https://skillfind.tech/pl/cennik</u>,
+      </span>
+    ),
+    en: (
+      <span>
+        <strong>Price List</strong> - a list of the Services' prices available at <u>https://skillfind.tech/price-list</u>,
+      </span>
+    ),
+  },
+
   {
     item: '3.',
     tier: 'header',
@@ -297,6 +314,52 @@ export const provisions = [
     version: versions['1.0'],
     pl: <span>włączenie w przeglądarce internetowej obsługi JavaScript oraz plików cookies,</span>,
     en: <span>enabling JavaScript and cookies support in the web browser.,</span>,
+  },
+
+  {
+    item: '3.4.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Usługa, o której mowa w Punkcie 3.2 a) powyżej, czyli przyjmowania od Ogłoszeniodawców Ogłoszeń Współpracy może być odpłatna zgodnie z Cennikiem.
+      </span>
+    ),
+    en: (
+      <span>
+        The service referred to in Point 3.2 a) above, namely the acceptance of Job Postings from Posters, may be subject to a fee according to the Price List.
+      </span>
+    ),
+  },
+  {
+    item: '3.5.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Zmiana Cennika nie stanowi zmiany Regulaminu.
+      </span>
+    ),
+    en: (
+      <span>
+        A change in the Price List does not constitute a change in the Terms of Service.
+      </span>
+    ),
+  },
+  {
+    item: '3.6.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Zmiana Cennika nie ma wpływu na ceny Usług, które są w trakcie realizacji.
+      </span>
+    ),
+    en: (
+      <span>
+        A change in the Price List does not affect the prices of Services that are in progress.
+      </span>
+    ),
   },
   {
     item: '4.',
