@@ -413,6 +413,29 @@ export const provisions = [
     pl: <span>W celach promocyjnych Ogłoszenia Współpracy mogą być publikowane przez Usługodawcę w całości, w części lub w formie streszczeń poza Serwisem, w innych serwisach internetowych, platformach reklamowych, materiałach promocyjnych, listach mailingowych oraz innych miejscach, w sposób zawierający Utwory Ogłoszeniodawcy, zgodnie z ich definicją zawartą w Punkcie 6.1 poniżej.</span>,
     en: <span>For promotional purposes, Job Postings may be published by the Service Provider in whole, in part, or in summary form outside of the Service, on other websites, advertising platforms, promotional materials, mailing lists, and other locations, in a manner that includes the Posters's Works, as defined in Section 6.1 below.</span>,
   },
+
+  {
+    item: '5.9.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>Usługodawca nie gwarantuje Ogłoszeniodawcy, że po publikacji Ogłoszenia Współpracy otrzyma jakiekolwiek aplikacje na stanowisko objęte tym ogłoszeniem, ani że złożone aplikacje będą miały jakąkolwiek wartość gospodarczą.</span>,
+    en: <span>The Service Provider does not guarantee to the Poster that after the publication of the Job Posting they will receive any applications for the position covered by the posting, nor that the submitted applications will have any economic value.</span>,
+  },
+  {
+    item: '5.10.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>Usługodawca nie gwarantuje osobie aplikującej na stanowisko objęte danym Ogłoszeniem Współpracy, że Ogłoszeniodawca zaproponuje jej jakąkolwiek formę współpracy, ani, że skontaktuje się z nią po otrzymaniu tej aplikacji.</span>,
+    en: <span>The Service Provider does not guarantee to the applicant for the position covered by a given Job Posting that the Poster will offer them any form of cooperation, nor that they will contact them after receiving the application.</span>,
+  },
+  {
+    item: '5.11.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: <span>Za wyjątkiem udostępniania Ogłoszeniodawcy aplikacji złożonej poprzez formularz aplikacyjny dostępny w Serwisie, Usługodawca nie uczestniczy w kontaktach pomiędzy Ogłoszeniodawcą, a osobą, która taką aplikację złożyła.</span>,
+    en: <span>Except for making available to the Poster the application submitted through the application form available in the Service, the Service Provider does not participate in the contacts between the Poster and the person who submitted such an application.</span>,
+  },
+
   {
     item: '6.',
     tier: 'header',
@@ -656,15 +679,16 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Usługodawca uprawniony jest w każdym momencie do zaprzestania świadczenia usług poprzez Serwis, jak i do
-        wprowadzania przerw w świadczeniu tych usług.
+        Usługodawca uprawniony jest w każdym momencie do zaprzestania świadczenia Usług poprzez Serwis, jak i do
+        wprowadzania przerw w świadczeniu tych Usług.
       </span>
     ),
     en: (
       <span>
-        The Service Provider is entitled to cease providing services through the Service at any time, as well as to introduce interruptions in the provision of these services.
+        The Service Provider is entitled to cease providing the Services through the Service at any time, as well as to introduce interruptions in the provision of the Services.
       </span>
     ),
+    // TODO: Co w przypadku zaprzestania i w przypadku przerw.
   },
   {
     item: '8.2.',
@@ -698,7 +722,7 @@ export const provisions = [
     ),
   },
   {
-    item: '8.3.',
+    item: '8.4.',
     tier: 'point',
     version: versions['1.0'],
     pl: (
@@ -712,6 +736,68 @@ export const provisions = [
       </span>
     ),
   },
+  {
+    item: '8.5.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Usługodawca dokłada należytej staranności, aby jakość świadczonych przez niego usług w ramach Serwisu była należytej jakości, ale nie udziela na nie jakiejkolwiek gwarancji.
+      </span>
+    ),
+    en: (
+      <span>
+        The Service Provider exercises due diligence to ensure that the quality of services provided within the Service is adequate, but does not offer any guarantee for them.
+      </span>
+    ),
+  },
+  {
+    item: '8.6.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Usługodawca dokłada należytej staranności, aby treści prezentowane w ramach Serwisu była należytej jakości, ale nie udziela na nie jakiejkolwiek gwarancji.
+      </span>
+    ),
+    en: (
+      <span>
+        The Service Provider exercises due diligence to ensure that the content presented within the Service is of adequate quality, but does not offer any guarantee for it.
+      </span>
+    ),
+  },
+  {
+    item: '8.7.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Usługodawca nie ponosi odpowiedzialności z tytułu korzyści utraconych ze względu na korzystanie z Usług Usługodawcy świadczonych w ramach Serwisu, ani ze względu na jakiekolwiek inne korzystanie z Serwisu, chyba, że wymagają tego bezwzględnie obowiązujące przepisy prawa.
+      </span>
+    ),
+    en: (
+      <span>
+        The Service Provider is not liable for lost profits due to the use of the Services provided by the Service Provider within the Service, nor for any other use of the Service, unless mandatory provisions of law require otherwise.
+      </span>
+    ),
+  },
+
+  {
+    item: '8.8.',
+    tier: 'point',
+    version: versions['1.0'],
+    pl: (
+      <span>
+        Usługodawca nie ponosi odpowiedzialności za szkody powstałe z uwagi na na korzystanie z Usług Usługodawcy świadczonych w ramach Serwisu, ani ze względu na jakiekolwiek inne korzystanie z Serwisu, które powstały ze względu na działania lub zaniechania podmiotu poszkodowanego lub osób trzecich, chyba, że wymagają tego bezwzględnie obowiązujące przepisy prawa.
+      </span>
+    ),
+    en: (
+      <span>
+        The Service Provider is not liable for damages arising from the use of the Services provided by the Service Provider within the Service, nor for any other use of the Service, that arise from actions or omissions of the injured party or third parties, unless mandatory provisions of law require otherwise.
+      </span>
+    ),
+  },
+
   {
     item: '9.',
     tier: 'header',
