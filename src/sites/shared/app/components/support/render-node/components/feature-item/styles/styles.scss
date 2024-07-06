@@ -17,6 +17,7 @@
     margin: 0 !important; // TODO: Remove !important.
     padding: 0 !important; // TODO: Remove !important.
     border-radius: 5px;
+    // overflow: hidden;
   }
   @media #{$SMALL-TABLET} {
     padding: 0 32px;

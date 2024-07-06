@@ -29,7 +29,7 @@
   }
   .results {
     position: relative;
-    height: calc(100% - 152px);
+    height: calc(100% - 132px);
     main {
       position: absolute;
       top: 0;
@@ -45,7 +45,7 @@
           bottom: 0;
           left: 0;
           width: 640px;
-          padding: 0 15px 15px;
+          padding: 0 10px 10px;
           overflow-x: hidden;
           overflow-y: scroll;
           scrollbar-width: none;

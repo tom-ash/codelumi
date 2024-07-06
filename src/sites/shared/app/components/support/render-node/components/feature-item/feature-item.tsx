@@ -6,10 +6,14 @@ import styles from './styles/styles.scss'
 import { enrichText } from '../../helpers/enrich-text/enrich-text'
 import { Figure } from '../../../../../../../shared/app/components/support/figure/figure'
 
-const FeatureItem = (props: any) => {
+interface FeatureItemInterface {
+  (props: { heading: string; imgSrc: string; imgAlternate: string; text: string }): React.ReactElement
+}
+
+const FeatureItem: FeatureItemInterface = props => {
   useStyles(styles)
 
-  const { text, heading, pictureSource, pictureAlternate } = props
+  const { text, heading, imgSrc, imgAlternate } = props
 
   const __html = enrichText(text)
 
@@ -18,8 +22,8 @@ const FeatureItem = (props: any) => {
       <HeadingTwo text={heading} />
       <Figure>
         <Image
-          src={pictureSource}
-          alt={pictureAlternate}
+          src={imgSrc}
+          alt={imgAlternate}
         />
       </Figure>
       <p dangerouslySetInnerHTML={{ __html }} />

@@ -8,7 +8,6 @@ export enum SkillView {
 }
 
 export enum SkillLevel {
-  NOVICE = 'Novice',
   JUNIOR = 'Junior',
   MID = 'Mid',
   SENIOR = 'Senior',

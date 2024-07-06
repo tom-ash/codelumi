@@ -43,9 +43,6 @@ type SubmitProps = {
   authorized: boolean
   setErrors(params: any): void
   setControl(params: any): void
-  backgroundColor: string
-  textColor: string
-
   formApplicationManner: boolean
   linkApplicationManner: boolean
   applicationLink: string
@@ -97,8 +94,6 @@ export const submit = async (props: SubmitProps) => {
     authorized,
     setErrors,
     setControl,
-    backgroundColor,
-    textColor,
     formApplicationManner,
     linkApplicationManner,
     applicationLink,
@@ -129,10 +124,8 @@ export const submit = async (props: SubmitProps) => {
     country,
     locality,
     sublocality,
-    backgroundColor,
-    textColor,
     formApplicationManner,
-    linkApplicationManner,
+    linkApplicationManner: true,
     applicationLink,
   }
 
@@ -154,7 +147,7 @@ export const submit = async (props: SubmitProps) => {
     }),
     validateApplication({
       formApplicationManner,
-      linkApplicationManner,
+      linkApplicationManner: true,
       applicationLink,
       applicationLinkError,
       setErrors,

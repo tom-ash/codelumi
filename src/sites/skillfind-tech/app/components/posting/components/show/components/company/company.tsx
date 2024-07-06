@@ -8,7 +8,7 @@ interface CompanyInterface {
 
 export const Company: CompanyInterface = () => {
   const {
-    posting: { logo, businessName, industry, backgroundColor, textColor, posterLink: link },
+    posting: { logo, businessName, industry, posterLink: link },
   } = useData()
 
   return (
@@ -17,8 +17,6 @@ export const Company: CompanyInterface = () => {
       businessName={businessName}
       link={link}
       industry={industry}
-      backgroundColor={backgroundColor}
-      textColor={textColor}
     />
   )
 }

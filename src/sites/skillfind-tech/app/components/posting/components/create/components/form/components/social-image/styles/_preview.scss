@@ -1,4 +1,3 @@
-@import '../../../../../../show/styles/company';
 @import '../../../../../../common/cooperation-mode-and-location/styles/styles.scss';
 @import '../../../../../../common/remuneration/styles/styles.scss';
 @import '../../../../../../../../../../../shared/app/styles/media-breakpoints';
@@ -12,61 +11,81 @@
   &#social-image-canvas {
     position: fixed;
     left: 10000px;
+
+    // // EDIT
+    // left: 0;
+    // right: 0;
+    // margin: 0 auto;
+    // top: 100px;
   }
   background: white;
   width: 1200px;
   transform-origin: top left;
-  outline: 1px solid gray;
+  outline: 1px solid #d7dbdd;
   padding-bottom: 10px;
   .company {
-    @extend %company;
-    margin: 0;
-    margin: 80px 0 0 60px;
+    margin: 50px 0 0 50px;
     .company-logo {
-      height: 160px;
+      float: left;
+      margin-right: 50px;
+      line-height: 240px;
+      background: lightgray;
+      img {
+        vertical-align: middle;
+        max-height: 240px;
+        max-width: 350px;
+      }
     }
     .business-name-and-industry {
-      height: 160px;
-      border-top-left-radius: 12px;
-      border-bottom-left-radius: 12px;
-      padding: 40px;
+      float: left;
+      height: 240px;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       .business-name {
-        font-size: 32px;
+        font-size: 50px;
+        color: black;
       }
       .industry {
-        color: white;
+        color: black;
         font-size: 28px;
         svg {
           height: 22px;
-          top: 0;
+          margin-right: 12px;
+          fill: black;
         }
         span {
           position: relative;
-          top: -3px;
+          top: -2px;
         }
       }
     }
   }
   .role {
-    margin: 60px 0 0 60px;
-    font-size: 50px;
+    margin: 50px 50px 0;
+    font-size: 80px;
+    border-top: 2px solid #d7dbdd;
+    padding-top: 20px;
+    vertical-align: top;
   }
   .cooperation-mode-and-location {
     @extend %cooperation-mode-and-location;
-    margin: 4px 0 0 60px;
-    font-size: 32px;
-    svg {
-      height: 28px;
-      fill: #1d1b15;
-    }
+    margin: 0 0 0 50px;
+    font-size: 36px;
     span {
-      color: #1d1b15;
-      top: -3px;
+      position: relative;
+      top: -4px;
+    }
+    svg {
+      height: 36px;
+      margin: 0 18px;
     }
   }
   .contract-and-remuneration {
     @extend %contract-and-remuneration;
-    margin: 50px 0 0 60px;
+    margin: 50px 50px 0;
     padding: 0;
     .b2b,
     .employment {
@@ -74,13 +93,14 @@
       float: left;
     }
     .b2b {
-      margin-right: 60px;
+      margin-right: 50px;
     }
     .contract {
-      font-size: 20px;
+      font-size: 30px;
     }
     .remuneration {
-      font-size: 40px;
+      font-size: 50px;
+      font-weight: 350;
       .amount {
         margin-right: 10px;
       }
@@ -94,14 +114,22 @@
   }
   .skills {
     position: relative;
-    margin: 20px 0 60px 60px;
+    margin: 0 0 50px 50px;
     .skill {
       float: left;
-      transform: scale(1.6);
-      transform-origin: bottom left;
-      width: 200px;
-      display: block;
-      margin-top: 60px !important;
+      width: 280px;
+      margin-top: 50px;
+      .name {
+        font-size: 34px;
+      }
+      .levels {
+        margin-top: 10px;
+        .level {
+          width: 30px;
+          height: 30px;
+          margin-right: 17px;
+        }
+      }
     }
   }
 }

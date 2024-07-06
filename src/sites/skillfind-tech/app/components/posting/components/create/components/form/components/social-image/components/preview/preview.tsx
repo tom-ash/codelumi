@@ -32,8 +32,6 @@ interface PreviewInterface {
     employmentMin?: number
     employmentMax?: number
     employmentCurrency?: Currency
-    backgroundColor: string
-    textColor: string
     scale?: number
   }): React.ReactElement
 }
@@ -45,8 +43,6 @@ export const Preview: PreviewInterface = props => {
     logo,
     businessName,
     industry,
-    backgroundColor,
-    textColor,
     locality,
     country,
     cooperationMode,
@@ -75,8 +71,6 @@ export const Preview: PreviewInterface = props => {
           logo={logo}
           businessName={businessName}
           industry={industry}
-          backgroundColor={backgroundColor}
-          textColor={textColor}
           isPreview={true}
         />
       )}

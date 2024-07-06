@@ -9,6 +9,7 @@ import { useMouseMarking } from './hooks/use-mouse-marking'
 import { useErrors } from '../../../functions/store/use-errors'
 import { useControl } from '../../../functions/store/use-control'
 import removePins from '../../../../../mapawynajmu-pl/app/components/listing/functions/map/pins/remove-pins'
+import { MapStyles } from '../map-index/map-index'
 
 interface MapMarkerInterface {
   (props: {
@@ -18,6 +19,7 @@ interface MapMarkerInterface {
       [key: string]: any
     }
     pinBuilder: PinBuilder
+    mapStyles?: MapStyles
   }): React.ReactElement
 }
 
@@ -26,7 +28,7 @@ export interface PinBuilder {
 }
 
 export const MapMarker: MapMarkerInterface = props => {
-  const { item, pinBuilder } = props
+  const { item, pinBuilder, mapStyles } = props
   const dispatch = useDispatch()
   const setData = (value: any) => dispatch({ type: 'data', value })
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
@@ -84,7 +86,7 @@ export const MapMarker: MapMarkerInterface = props => {
         }
         isError={isError}
       />
-      <GoogleMap />
+      <GoogleMap mapStyles={mapStyles} />
     </div>
   )
 }

@@ -63,27 +63,29 @@ export const Panel: PanelInterface = () => {
 
   return (
     <div className='panel'>
-      <Select
-        className='select'
-        options={enrichedSelectableSkills}
-        value={''}
-        placeholder={skillSelectPlaceholder}
-        searchable={true}
-        id='visitor-postings-index-skill-select'
-        onSelect={value => {
-          const newSelectedSkills = [...selectedSkills]
-          const newSelectedSkill = selectableSkills.find((selectableSkill: SelectableSkill) => {
-            return selectableSkill.value === value
-          })
+      <div className='selects'>
+        <Select
+          className='select'
+          options={enrichedSelectableSkills}
+          value={''}
+          placeholder={skillSelectPlaceholder}
+          searchable={true}
+          id='visitor-postings-index-skill-select'
+          onSelect={value => {
+            const newSelectedSkills = [...selectedSkills]
+            const newSelectedSkill = selectableSkills.find((selectableSkill: SelectableSkill) => {
+              return selectableSkill.value === value
+            })
 
-          newSelectedSkills.push({ ...newSelectedSkill, level: 0 })
+            newSelectedSkills.push({ ...newSelectedSkill, level: 0 })
 
-          setInputs({ selectedSkills: newSelectedSkills })
-          querySkills(newSelectedSkills)
-        }}
-      >
-        <SVG name='magnifyingGlass' />
-      </Select>
+            setInputs({ selectedSkills: newSelectedSkills })
+            querySkills(newSelectedSkills)
+          }}
+        >
+          <SVG name='magnifyingGlass' />
+        </Select>
+      </div>
       <section className='selected-skills'>
         {selectedSkills.map((selectedSkill: any) => {
           const { value, level } = selectedSkill

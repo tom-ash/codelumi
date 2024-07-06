@@ -7,6 +7,7 @@ import { MapIndex } from '../../../../../../shared/app/components/support/map-in
 import { pinBuilder } from './functions/pin-builder'
 import { Panel } from './components/panel/panel'
 import { ItemShowInterface } from '../../../../../../shared/app/components/support/map-index/types/item-show.interface'
+import { mapStyles } from '../../styles/map-styles'
 
 interface PostingIndex {
   (props: { ShowItem: ItemShowInterface; renderShow: boolean }): React.ReactElement
@@ -18,8 +19,6 @@ const PostingIndex: PostingIndex = props => {
   const { ShowItem, renderShow } = props
   const { postings } = useData()
 
-  // TODO: ADD MARKER ICONS.
-
   return (
     <div id='postings-index'>
       <MapIndex
@@ -29,6 +28,8 @@ const PostingIndex: PostingIndex = props => {
         ShowItem={ShowItem}
         items={postings}
         pinBuilder={pinBuilder}
+        // @ts-ignore
+        mapStyles={mapStyles}
       />
     </div>
   )

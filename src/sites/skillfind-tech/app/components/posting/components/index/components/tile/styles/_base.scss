@@ -1,0 +1,121 @@
+%postings-index-tile-base {
+  position: relative;
+  display: block;
+  float: none;
+  margin: 10px 0 0;
+  padding: 0 0 15px;
+  background: white;
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border-radius: 6px;
+  .company {
+    float: left;
+    width: 70px;
+    margin: 15px 0 0 15px;
+    color: #424949;
+    .company-logo {
+      float: left;
+      width: 50px;
+      height: 36px;
+      margin: 0 15px 0 0;
+      text-align: center;
+      img {
+        position: relative;
+        max-width: 100%;
+        max-height: 100%;
+        vertical-align: middle;
+      }
+    }
+    .business-name-and-industry {
+      display: none;
+    }
+  }
+  .position-cooperation-mode-and-location {
+    float: left;
+    width: calc(50% - 15px);
+    margin: 15px 15px 0 0;
+    color: #424949;
+    .role {
+      display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+      vertical-align: top;
+      text-wrap: nowrap;
+      text-overflow: ellipsis;
+      line-height: 18px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .cooperation-mode-and-location {
+      @extend %cooperation-mode-and-location;
+      font-size: 12px;
+      span {
+        position: relative;
+        top: -2px;
+      }
+      svg {
+        height: 12px;
+        margin: 0 8px;
+      }
+    }
+  }
+  .contract-and-remuneration {
+    @extend %contract-and-remuneration;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    margin: 0;
+    padding: 0;
+    width: 140px;
+    text-align: right;
+    .b2b,
+    .employment {
+      margin: 0;
+      padding: 0;
+      width: auto;
+      height: auto;
+      font-weight: 400;
+      .contract {
+        display: none;
+      }
+      .remuneration {
+        line-height: 13px;
+        font-size: 13px;
+        .amount {
+          margin: 0 5px 0 0;
+        }
+        .currency {
+          margin: 0 2px 0 0;
+        }
+      }
+      .per {
+        font-size: 12px;
+      }
+    }
+    .employment {
+      height: auto;
+      margin: 5px 0 0;
+    }
+  }
+  .skills {
+    margin: 4px 0 0 15px;
+    .skill {
+      display: inline-block;
+      margin: 12px 15px 0 0;
+      .name {
+        line-height: 14px;
+        font-size: 13px;
+      }
+      .levels {
+        margin: 6px 0 0;
+        .level {
+          width: 11px;
+          height: 11px;
+          margin: 0 6px 0 0;
+          line-height: 10px;
+        }
+      }
+    }
+  }
+}

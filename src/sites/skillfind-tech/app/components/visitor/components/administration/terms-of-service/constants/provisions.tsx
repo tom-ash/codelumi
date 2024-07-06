@@ -18,12 +18,14 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Przedmiotem Regulaminu jest określenie zasad i warunków świadczenia Usług przez Usługodawcę w ramach Serwisu, zgodnie z definicjami wskazanymi w Punkcie 2 poniżej.
+        Przedmiotem Regulaminu jest określenie zasad i warunków świadczenia Usług przez Usługodawcę w ramach Serwisu,
+        zgodnie z definicjami wskazanymi w Punkcie 2 poniżej.
       </span>
     ),
     en: (
       <span>
-        The subject of the Terms of Service is defining the terms and conditions for the provision of Services by the Service Provider within the Service, in accordance with the definitions specified in Point 2 below.
+        The subject of the Terms of Service is defining the terms and conditions for the provision of Services by the
+        Service Provider within the Service, in accordance with the definitions specified in Point 2 below.
       </span>
     ),
   },
@@ -77,19 +79,18 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        <strong>Usługodawca</strong> - Warsaw Digital Sp. z o.o., z siedzibą w Warszawie przy ul. Twardej 18,
-        00-105 Warszawa, zarejestrowana w rejestrze przedsiębiorców prowadzonym przez Sąd Rejonowy dla m. st. Warszawy,
-        XII Wydział Gospodarczy Krajowego Rejestru Sądowego, pod numerem KRS 0000735294, o kapitale zakładowym 20.000,00
+        <strong>Usługodawca</strong> - Warsaw Digital Sp. z o.o., z siedzibą w Warszawie przy ul. Twardej 18, 00-105
+        Warszawa, zarejestrowana w rejestrze przedsiębiorców prowadzonym przez Sąd Rejonowy dla m. st. Warszawy, XII
+        Wydział Gospodarczy Krajowego Rejestru Sądowego, pod numerem KRS 0000735294, o kapitale zakładowym 20.000,00
         PLN, w pełni wpłaconym, posiadająca numer REGON 380529016 oraz numer NIP 5252753799,
       </span>
     ),
     en: (
       <span>
-        <strong>Service Provider</strong> - Warsaw Digital Sp. z o.o., with its registered office in Warsaw
-        at Twarda 18 St., 00-105 Warsaw, registered in the register of entrepreneurs held by the District Court for
-        the capital city of Warsaw, XII Commercial Division of the National Court Register, under the KRS number
-        0000735294, with the share capital of 20,000.00 PLN, fully paid, with REGON number 380529016, and NIP number
-        5252753799,
+        <strong>Service Provider</strong> - Warsaw Digital Sp. z o.o., with its registered office in Warsaw at Twarda 18
+        St., 00-105 Warsaw, registered in the register of entrepreneurs held by the District Court for the capital city
+        of Warsaw, XII Commercial Division of the National Court Register, under the KRS number 0000735294, with the
+        share capital of 20,000.00 PLN, fully paid, with REGON number 380529016, and NIP number 5252753799,
       </span>
     ),
   },
@@ -105,7 +106,8 @@ export const provisions = [
     ),
     en: (
       <span>
-        <strong>Services</strong> - services provided by the Service Provider within the Service, listed non-exhaustively in Point 3.2 below,
+        <strong>Services</strong> - services provided by the Service Provider within the Service, listed
+        non-exhaustively in Point 3.2 below,
       </span>
     ),
   },
@@ -168,7 +170,8 @@ export const provisions = [
     ),
     en: (
       <span>
-        <strong>Poster</strong> - entity conducting business activities on its own behalf, which holds an Account on the Service dedicated to adding Job Postings,
+        <strong>Poster</strong> - entity conducting business activities on its own behalf, which holds an Account on the
+        Service dedicated to adding Job Postings,
       </span>
     ),
   },
@@ -179,16 +182,17 @@ export const provisions = [
     pl: (
       <span>
         <strong>Ogłoszenie Współpracy</strong> - zapis w bazie danych Serwisu, którego niektóre elementy pod określonymi
-        warunkami są publicznie dostępne, które informują o poszukiwaniu osób fizycznych do pracy na podstawie
-        umowy o pracę lub współpracę na podstawie umowy cywilnoprawnej innej niż umowa o pracę, na stanowiska o profilu
+        warunkami są publicznie dostępne, które informują o poszukiwaniu osób fizycznych do pracy na podstawie umowy o
+        pracę lub współpracę na podstawie umowy cywilnoprawnej innej niż umowa o pracę, na stanowiska o profilu
         technologicznym,
       </span>
     ),
     en: (
       <span>
         <strong>Job Posting</strong> - an record in the Service's database, certain elements of which are publicly
-        available under specified conditions, informing about the search for natural persons for employment based on an employment contract and/or cooperation based on a civil law contract other than an
-        employment contract, for positions with a technological profile,
+        available under specified conditions, informing about the search for natural persons for employment based on an
+        employment contract and/or cooperation based on a civil law contract other than an employment contract, for
+        positions with a technological profile,
       </span>
     ),
   },
@@ -204,7 +208,8 @@ export const provisions = [
     ),
     en: (
       <span>
-        <strong>Candidate</strong> - a natural person, which applied to a given position covered by a given Job Posting throught the application form available in the Service,
+        <strong>Candidate</strong> - a natural person, which applied to a given position covered by a given Job Posting
+        throught the application form available in the Service,
       </span>
     ),
   },
@@ -220,7 +225,8 @@ export const provisions = [
     ),
     en: (
       <span>
-        <strong>Price List</strong> - a list of the Services' prices available at <u>https://skillfind.tech/price-list</u>,
+        <strong>Price List</strong> - a list of the Services' prices available at{' '}
+        <u>https://skillfind.tech/price-list</u>,
       </span>
     ),
   },
@@ -271,10 +277,16 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        przyjmowaniu aplikacji od osób fizycznych do stanowisk objętych Ogłoszeniami Współpracy i udostępnianiu tych aplikacji Ogłoszeniodawcom, oraz
+        przyjmowaniu aplikacji od osób fizycznych do stanowisk objętych Ogłoszeniami Współpracy i udostępnianiu tych
+        aplikacji Ogłoszeniodawcom, oraz
       </span>
     ),
-    en: <span>accepting applications from natural persons for positions covered by Job Postings and making these applications available to Posters,</span>,
+    en: (
+      <span>
+        accepting applications from natural persons for positions covered by Job Postings and making these applications
+        available to Posters,
+      </span>
+    ),
   },
   {
     item: 'd)',
@@ -287,26 +299,37 @@ export const provisions = [
     item: '3.3',
     tier: 'point',
     version: versions['1.0'],
-    pl: (
-      <span>
-        Korzystanie z Serwisu wymaga od Odwiedzającego spełnienia następujących wymagań technicznych:
-      </span>
-    ),
+    pl: <span>Korzystanie z Serwisu wymaga od Odwiedzającego spełnienia następujących wymagań technicznych:</span>,
     en: <span>Using the Service requires the Visitor to meet the following technical requirements:</span>,
   },
   {
     item: 'a)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: <span>posiadanie dostępu do urządzenia komputerowego lub mobilnego z dostępem do Internetu, które zapewnia bezpieczeństwo swoich użytkowników,</span>,
+    pl: (
+      <span>
+        posiadanie dostępu do urządzenia komputerowego lub mobilnego z dostępem do Internetu, które zapewnia
+        bezpieczeństwo swoich użytkowników,
+      </span>
+    ),
     en: <span>having access to a computer or mobile device with Internet access that ensures user security,</span>,
   },
   {
     item: 'b)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: <span>posiadanie na urządzeniu aktualnej wersji przeglądarki internetowej Google Chrome, Mozilla Firefox, Microsoft Edge, Opera, Safari lub innej kompatybilnej z wymienionymi, oraz</span>,
-    en: <span>having on the device the current version of a web browser such as Google Chrome, Mozilla Firefox, Microsoft Edge, Opera, Safari, or another compatible with the aforementioned,,</span>,
+    pl: (
+      <span>
+        posiadanie na urządzeniu aktualnej wersji przeglądarki internetowej Google Chrome, Mozilla Firefox, Microsoft
+        Edge, Opera, Safari lub innej kompatybilnej z wymienionymi, oraz
+      </span>
+    ),
+    en: (
+      <span>
+        having on the device the current version of a web browser such as Google Chrome, Mozilla Firefox, Microsoft
+        Edge, Opera, Safari, or another compatible with the aforementioned,,
+      </span>
+    ),
   },
   {
     item: 'c)',
@@ -322,12 +345,14 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Usługa, o której mowa w Punkcie 3.2 a) powyżej, czyli przyjmowania od Ogłoszeniodawców Ogłoszeń Współpracy może być odpłatna zgodnie z Cennikiem.
+        Usługa, o której mowa w Punkcie 3.2 a) powyżej, czyli przyjmowania od Ogłoszeniodawców Ogłoszeń Współpracy może
+        być odpłatna zgodnie z Cennikiem.
       </span>
     ),
     en: (
       <span>
-        The service referred to in Point 3.2 a) above, namely the acceptance of Job Postings from Posters, may be subject to a fee according to the Price List.
+        The service referred to in Point 3.2 a) above, namely the acceptance of Job Postings from Posters, may be
+        subject to a fee according to the Price List.
       </span>
     ),
   },
@@ -335,31 +360,15 @@ export const provisions = [
     item: '3.5.',
     tier: 'point',
     version: versions['1.0'],
-    pl: (
-      <span>
-        Zmiana Cennika nie stanowi zmiany Regulaminu.
-      </span>
-    ),
-    en: (
-      <span>
-        A change in the Price List does not constitute a change in the Terms of Service.
-      </span>
-    ),
+    pl: <span>Zmiana Cennika nie stanowi zmiany Regulaminu.</span>,
+    en: <span>A change in the Price List does not constitute a change in the Terms of Service.</span>,
   },
   {
     item: '3.6.',
     tier: 'point',
     version: versions['1.0'],
-    pl: (
-      <span>
-        Zmiana Cennika nie ma wpływu na ceny Usług, które są w trakcie realizacji.
-      </span>
-    ),
-    en: (
-      <span>
-        A change in the Price List does not affect the prices of Services that are in progress.
-      </span>
-    ),
+    pl: <span>Zmiana Cennika nie ma wpływu na ceny Usług, które są w trakcie realizacji.</span>,
+    en: <span>A change in the Price List does not affect the prices of Services that are in progress.</span>,
   },
   {
     item: '4.',
@@ -374,12 +383,14 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Konto dedykowane dodawaniu Ogłoszeń Współpracy w Serwisie może założyć wyłącznie podmiot wykonujący we własnym imieniu działalność gospodarczą.
+        Konto dedykowane dodawaniu Ogłoszeń Współpracy w Serwisie może założyć wyłącznie podmiot wykonujący we własnym
+        imieniu działalność gospodarczą.
       </span>
     ),
     en: (
       <span>
-        An account dedicated to adding Job Postings in the Service may only be created by entities conducting business activities on their own behalf.
+        An account dedicated to adding Job Postings in the Service may only be created by entities conducting business
+        activities on their own behalf.
       </span>
     ),
   },
@@ -389,12 +400,15 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Osoby fizyczne, która działają w imieniu Ogłoszeniodawcy w odniesieniu do czynności podejmowanych w ramach Serwisu wobec Usługodawcy oraz wobec osób trzecich, zobowiązane są mieć odpowiednie prawa reprezentacji lub umocowania.
+        Osoby fizyczne, która działają w imieniu Ogłoszeniodawcy w odniesieniu do czynności podejmowanych w ramach
+        Serwisu wobec Usługodawcy oraz wobec osób trzecich, zobowiązane są mieć odpowiednie prawa reprezentacji lub
+        umocowania.
       </span>
     ),
     en: (
       <span>
-        Natural persons acting on behalf of the Poster concerning activities within the Service towards the Service Provider and third parties must have appropriate representation rights or authorization.
+        Natural persons acting on behalf of the Poster concerning activities within the Service towards the Service
+        Provider and third parties must have appropriate representation rights or authorization.
       </span>
     ),
   },
@@ -404,12 +418,16 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Usługodawca uprawniony jest do dezaktywacji lub usunięcia Konta Ogłoszeniodawcy w przypadku stwierdzenia naruszenia Regulaminu przez tego Ogłoszeniodawcę, a Ogłoszeniodawcy z tego tytułu nie przysługuje ani zwrot jakichkolwiek kosztów, ani odszkodowanie, ani jakiekolwiek inne roszczenie.
+        Usługodawca uprawniony jest do dezaktywacji lub usunięcia Konta Ogłoszeniodawcy w przypadku stwierdzenia
+        naruszenia Regulaminu przez tego Ogłoszeniodawcę, a Ogłoszeniodawcy z tego tytułu nie przysługuje ani zwrot
+        jakichkolwiek kosztów, ani odszkodowanie, ani jakiekolwiek inne roszczenie.
       </span>
     ),
     en: (
       <span>
-        The Service Provider is entitled to deactivate and/or delete a Poster's Account in case of a breach of the Terms of Service by the Poster. The Poster is not entitled to any refund of costs, damages, or any other claim in this regard.
+        The Service Provider is entitled to deactivate and/or delete a Poster's Account in case of a breach of the Terms
+        of Service by the Poster. The Poster is not entitled to any refund of costs, damages, or any other claim in this
+        regard.
       </span>
     ),
   },
@@ -424,29 +442,73 @@ export const provisions = [
     item: '5.1.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Ogłoszenia Współpracy nie stanowią ofert w rozumieniu polskiego kodeksu cywilnego, a jedynie zaproszenia do rozpoczęcia procesu rekrutacyjnego w celu zawarcia umowy o pracę lub negocacji w celu zawarcia innego rodzaju umowy.</span>,
-    en: <span>Job Postings do not constitute offers within the meaning of the Polish Civil Code, but only invitations to commence a recruitment process for entering into an employment contract or negotiations for entering into another type of contract.</span>,
+    pl: (
+      <span>
+        Ogłoszenia Współpracy nie stanowią ofert w rozumieniu polskiego kodeksu cywilnego, a jedynie zaproszenia do
+        rozpoczęcia procesu rekrutacyjnego w celu zawarcia umowy o pracę lub negocacji w celu zawarcia innego rodzaju
+        umowy.
+      </span>
+    ),
+    en: (
+      <span>
+        Job Postings do not constitute offers within the meaning of the Polish Civil Code, but only invitations to
+        commence a recruitment process for entering into an employment contract or negotiations for entering into
+        another type of contract.
+      </span>
+    ),
   },
   {
     item: '5.2.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Ogłoszeniodawcy odpowiedzialni są za zapewnienie, aby treść Ogłoszeń Współpracy przez nich publikowana była zgodna z prawem, dobrymi obyczajami oraz normami etycznymi</span>,
-    en: <span>Posters are responsible for ensuring that the content of Job Postings they publish complies with the law, good practices, and ethical standards.</span>,
+    pl: (
+      <span>
+        Ogłoszeniodawcy odpowiedzialni są za zapewnienie, aby treść Ogłoszeń Współpracy przez nich publikowana była
+        zgodna z prawem, dobrymi obyczajami oraz normami etycznymi
+      </span>
+    ),
+    en: (
+      <span>
+        Posters are responsible for ensuring that the content of Job Postings they publish complies with the law, good
+        practices, and ethical standards.
+      </span>
+    ),
   },
   {
     item: '5.3.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Odpowiedzialność za treść Ogłoszeń Współpracy, dotyczącą między innymi ich pełności, aktualności oraz poprawności, ponoszą wyłącznie ich Ogłoszeniodawcy.</span>,
-    en: <span>The responsibility for the content of Job Postings, including their completeness, timeliness, and accuracy, lies solely with the Posters.</span>,
+    pl: (
+      <span>
+        Odpowiedzialność za treść Ogłoszeń Współpracy, dotyczącą między innymi ich pełności, aktualności oraz
+        poprawności, ponoszą wyłącznie ich Ogłoszeniodawcy.
+      </span>
+    ),
+    en: (
+      <span>
+        The responsibility for the content of Job Postings, including their completeness, timeliness, and accuracy, lies
+        solely with the Posters.
+      </span>
+    ),
   },
   {
     item: '5.4.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Ogłoszenie Współpracy pozostaje aktywne przez okres 60 dni od daty publikacji, chyba, że zostanie wcześniej usunięte przez Ogłoszeniodawcę lub Usługodawcę. Po upływie okresu aktywacji Ogłoszenie jest niewidoczne dla Odwiedzających.</span>,
-    en: <span>Each Job Posting remains active for a period of 60 days from the publication date, unless removed earlier by the Poster or the Service Provider. Upon expiration of the activation period, the Job Posting becomes invisible to Visitors.</span>,
+    pl: (
+      <span>
+        Ogłoszenie Współpracy pozostaje aktywne przez okres 60 dni od daty publikacji, chyba, że zostanie wcześniej
+        usunięte przez Ogłoszeniodawcę lub Usługodawcę. Po upływie okresu aktywacji Ogłoszenie jest niewidoczne dla
+        Odwiedzających.
+      </span>
+    ),
+    en: (
+      <span>
+        Each Job Posting remains active for a period of 60 days from the publication date, unless removed earlier by the
+        Poster or the Service Provider. Upon expiration of the activation period, the Job Posting becomes invisible to
+        Visitors.
+      </span>
+    ),
   },
   {
     item: '5.5.',
@@ -459,44 +521,120 @@ export const provisions = [
     item: '5.6.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Usługodawca uprawniony jest do usunięcia Ogłoszenia w przypadku stwierdzenia naruszenia Regulaminu przez Ogłoszeniodawcę, a Ogłoszeniodawcy z tego tytułu nie przysługuje ani zwrot jakichkolwiek kosztów, ani odszkodowanie, ani jakiekolwiek inne roszczenie.</span>,
-    en: <span>The Service Provider reserves the right to remove a Job Posting if it determines that the Poster has violated the Terms of Service. The Poster is not entitled to any refund of costs, damages, or any other claim in this regard.</span>,
+    pl: (
+      <span>
+        Usługodawca uprawniony jest do usunięcia Ogłoszenia w przypadku stwierdzenia naruszenia Regulaminu przez
+        Ogłoszeniodawcę, a Ogłoszeniodawcy z tego tytułu nie przysługuje ani zwrot jakichkolwiek kosztów, ani
+        odszkodowanie, ani jakiekolwiek inne roszczenie.
+      </span>
+    ),
+    en: (
+      <span>
+        The Service Provider reserves the right to remove a Job Posting if it determines that the Poster has violated
+        the Terms of Service. The Poster is not entitled to any refund of costs, damages, or any other claim in this
+        regard.
+      </span>
+    ),
   },
   {
     item: '5.7.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Zabronione jest umieszczanie w Ogłoszeniach Współpracy zapytań o dane osobowe ujawniające pochodzenie rasowe lub etniczne, poglądy polityczne, przekonania religijne lub filozoficzne, przynależność wyznaniową, partyjną lub związkową, jak również danych o stanie zdrowia, kodzie genetycznym, nałogach lub życiu seksualnym oraz danych dotyczących skazań, orzeczeń o ukaraniu i mandatów karnych, a także innych orzeczeń wydanych w postępowaniu sądowym lub administracyjnym.</span>,
-    en: <span>It is prohibited to include in Job Postings inquiries about personal data revealing racial or ethnic origin, political opinions, religious or philosophical beliefs, membership in a religious denomination, political party or trade union, as well as data concerning health, genetic code, addictions or sexual life, and data regarding criminal convictions, penalties, and fines, as well as other judgments issued in court or administrative proceedings.</span>,
+    pl: (
+      <span>
+        Zabronione jest umieszczanie w Ogłoszeniach Współpracy zapytań o dane osobowe ujawniające pochodzenie rasowe lub
+        etniczne, poglądy polityczne, przekonania religijne lub filozoficzne, przynależność wyznaniową, partyjną lub
+        związkową, jak również danych o stanie zdrowia, kodzie genetycznym, nałogach lub życiu seksualnym oraz danych
+        dotyczących skazań, orzeczeń o ukaraniu i mandatów karnych, a także innych orzeczeń wydanych w postępowaniu
+        sądowym lub administracyjnym.
+      </span>
+    ),
+    en: (
+      <span>
+        It is prohibited to include in Job Postings inquiries about personal data revealing racial or ethnic origin,
+        political opinions, religious or philosophical beliefs, membership in a religious denomination, political party
+        or trade union, as well as data concerning health, genetic code, addictions or sexual life, and data regarding
+        criminal convictions, penalties, and fines, as well as other judgments issued in court or administrative
+        proceedings.
+      </span>
+    ),
   },
   {
     item: '5.8.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>W celach promocyjnych Ogłoszenia Współpracy mogą być publikowane przez Usługodawcę w całości, w części lub w formie streszczeń poza Serwisem, w innych serwisach internetowych, platformach reklamowych, materiałach promocyjnych, listach mailingowych oraz innych miejscach, w sposób zawierający Utwory Ogłoszeniodawcy, zgodnie z ich definicją zawartą w Punkcie 6.1 poniżej.</span>,
-    en: <span>For promotional purposes, Job Postings may be published by the Service Provider in whole, in part, or in summary form outside of the Service, on other websites, advertising platforms, promotional materials, mailing lists, and other locations, in a manner that includes the Posters's Works, as defined in Section 6.1 below.</span>,
+    pl: (
+      <span>
+        W celach promocyjnych Ogłoszenia Współpracy mogą być publikowane przez Usługodawcę w całości, w części lub w
+        formie streszczeń poza Serwisem, w innych serwisach internetowych, platformach reklamowych, materiałach
+        promocyjnych, listach mailingowych oraz innych miejscach, w sposób zawierający Utwory Ogłoszeniodawcy, zgodnie z
+        ich definicją zawartą w Punkcie 6.1 poniżej.
+      </span>
+    ),
+    en: (
+      <span>
+        For promotional purposes, Job Postings may be published by the Service Provider in whole, in part, or in summary
+        form outside of the Service, on other websites, advertising platforms, promotional materials, mailing lists, and
+        other locations, in a manner that includes the Posters's Works, as defined in Section 6.1 below.
+      </span>
+    ),
   },
 
   {
     item: '5.9.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Usługodawca nie gwarantuje Ogłoszeniodawcy, że po publikacji Ogłoszenia Współpracy otrzyma jakiekolwiek aplikacje na stanowisko objęte tym ogłoszeniem, ani że złożone aplikacje będą miały jakąkolwiek wartość gospodarczą.</span>,
-    en: <span>The Service Provider does not guarantee to the Poster that after the publication of the Job Posting they will receive any applications for the position covered by the posting, nor that the submitted applications will have any economic value.</span>,
+    pl: (
+      <span>
+        Usługodawca nie gwarantuje Ogłoszeniodawcy, że po publikacji Ogłoszenia Współpracy otrzyma jakiekolwiek
+        aplikacje na stanowisko objęte tym ogłoszeniem, ani że złożone aplikacje będą miały jakąkolwiek wartość
+        gospodarczą.
+      </span>
+    ),
+    en: (
+      <span>
+        The Service Provider does not guarantee to the Poster that after the publication of the Job Posting they will
+        receive any applications for the position covered by the posting, nor that the submitted applications will have
+        any economic value.
+      </span>
+    ),
   },
   {
     item: '5.10.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Usługodawca nie gwarantuje osobie aplikującej na stanowisko objęte danym Ogłoszeniem Współpracy, że Ogłoszeniodawca zaproponuje jej jakąkolwiek formę współpracy, ani, że skontaktuje się z nią po otrzymaniu tej aplikacji.</span>,
-    en: <span>The Service Provider does not guarantee to the applicant for the position covered by a given Job Posting that the Poster will offer them any form of cooperation, nor that they will contact them after receiving the application.</span>,
+    pl: (
+      <span>
+        Usługodawca nie gwarantuje osobie aplikującej na stanowisko objęte danym Ogłoszeniem Współpracy, że
+        Ogłoszeniodawca zaproponuje jej jakąkolwiek formę współpracy, ani, że skontaktuje się z nią po otrzymaniu tej
+        aplikacji.
+      </span>
+    ),
+    en: (
+      <span>
+        The Service Provider does not guarantee to the applicant for the position covered by a given Job Posting that
+        the Poster will offer them any form of cooperation, nor that they will contact them after receiving the
+        application.
+      </span>
+    ),
   },
   {
     item: '5.11.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Za wyjątkiem udostępniania Ogłoszeniodawcy aplikacji złożonej poprzez formularz aplikacyjny dostępny w Serwisie, Usługodawca nie uczestniczy w kontaktach pomiędzy Ogłoszeniodawcą, a osobą, która taką aplikację złożyła.</span>,
-    en: <span>Except for making available to the Poster the application submitted through the application form available in the Service, the Service Provider does not participate in the contacts between the Poster and the person who submitted such an application.</span>,
+    pl: (
+      <span>
+        Za wyjątkiem udostępniania Ogłoszeniodawcy aplikacji złożonej poprzez formularz aplikacyjny dostępny w Serwisie,
+        Usługodawca nie uczestniczy w kontaktach pomiędzy Ogłoszeniodawcą, a osobą, która taką aplikację złożyła.
+      </span>
+    ),
+    en: (
+      <span>
+        Except for making available to the Poster the application submitted through the application form available in
+        the Service, the Service Provider does not participate in the contacts between the Poster and the person who
+        submitted such an application.
+      </span>
+    ),
   },
 
   {
@@ -517,7 +655,13 @@ export const provisions = [
         zwane "<strong>Utworami Ogłoszeniodawcy</strong>").
       </span>
     ),
-    en: <span>When creating an Account, editing an Account, adding Job Postings, and using other services provided by the Service Provider within the Service, a Poster provides trade names, graphic symbols, and verbal marks (hereinafter referred to as the <strong>"Poster's Works"</strong>).</span>,
+    en: (
+      <span>
+        When creating an Account, editing an Account, adding Job Postings, and using other services provided by the
+        Service Provider within the Service, a Poster provides trade names, graphic symbols, and verbal marks
+        (hereinafter referred to as the <strong>"Poster's Works"</strong>).
+      </span>
+    ),
   },
   {
     item: '6.2.',
@@ -530,7 +674,13 @@ export const provisions = [
         ale nie wyłącznie, praw autorskich, licencji i dóbr osobistych osób trzecich.
       </span>
     ),
-    en: <span>The Poster declares that they hold full proprietary copyrights or appropriate licenses to the Poster's Works, and providing them in accordance with Section 6.1 above does not infringe the rights of third parties, particularly but not limited to copyrights, licenses, and personal rights of third parties.</span>,
+    en: (
+      <span>
+        The Poster declares that they hold full proprietary copyrights or appropriate licenses to the Poster's Works,
+        and providing them in accordance with Section 6.1 above does not infringe the rights of third parties,
+        particularly but not limited to copyrights, licenses, and personal rights of third parties.
+      </span>
+    ),
   },
   {
     item: '6.3.',
@@ -543,7 +693,13 @@ export const provisions = [
         osób trzecich wobec Usługodawcy w związku z tym podaniem.
       </span>
     ),
-    en: <span>The Poster assumes full and exclusive responsibility towards third parties in connection with providing the Poster's Works in accordance with Section 6.1 above and agrees to cover costs related to satisfying third-party claims against the Service Provider in this regard.</span>,
+    en: (
+      <span>
+        The Poster assumes full and exclusive responsibility towards third parties in connection with providing the
+        Poster's Works in accordance with Section 6.1 above and agrees to cover costs related to satisfying third-party
+        claims against the Service Provider in this regard.
+      </span>
+    ),
   },
   {
     item: '6.4.',
@@ -557,7 +713,14 @@ export const provisions = [
         zawierają Uwtory Ogłoszeniodawcy, jak i w celu promowania tych Ogłoszeń.
       </span>
     ),
-    en: <span>The Poster grants the Service Provider a territorially unlimited and non-exclusive license to use the Poster's Works for the purpose of providing services to the Poster through the Service, including, but not limited to, publicly sharing Job Postings published by the Poster that contain the Poster's Works, as well as promoting these Job Postings.</span>,
+    en: (
+      <span>
+        The Poster grants the Service Provider a territorially unlimited and non-exclusive license to use the Poster's
+        Works for the purpose of providing services to the Poster through the Service, including, but not limited to,
+        publicly sharing Job Postings published by the Poster that contain the Poster's Works, as well as promoting
+        these Job Postings.
+      </span>
+    ),
   },
   {
     item: '6.5.',
@@ -569,7 +732,12 @@ export const provisions = [
         rzecz Ogłoszeniodawcy przez Usługodawcę poprzez Serwis.
       </span>
     ),
-    en: <span>The license referred to in Section 6.4 above is granted free of charge for the purpose and duration of providing services to the Poster by the Service Provider through the Service.</span>,
+    en: (
+      <span>
+        The license referred to in Section 6.4 above is granted free of charge for the purpose and duration of providing
+        services to the Poster by the Service Provider through the Service.
+      </span>
+    ),
   },
   {
     item: '6.6.',
@@ -582,7 +750,12 @@ export const provisions = [
         Ogłoszeniodawcy.
       </span>
     ),
-    en: <span>To provide services to the Poster, including, but not limited to, promoting the Poster's Job Postings, the Service Provider is authorized to grant sublicenses concerning the Poster's Works.</span>,
+    en: (
+      <span>
+        To provide services to the Poster, including, but not limited to, promoting the Poster's Job Postings, the
+        Service Provider is authorized to grant sublicenses concerning the Poster's Works.
+      </span>
+    ),
   },
   {
     item: '6.7.',
@@ -603,7 +776,12 @@ export const provisions = [
         Ogłoszeniodawcy, w celach wskazanych w Punkcie 6.4. powyżej,
       </span>
     ),
-    en: <span>regarding the application of the Poster's Works: single or multiple use of the Poster's Works for the purposes indicated in Section 6.4 above,</span>,
+    en: (
+      <span>
+        regarding the application of the Poster's Works: single or multiple use of the Poster's Works for the purposes
+        indicated in Section 6.4 above,
+      </span>
+    ),
   },
   {
     item: 'b)',
@@ -618,7 +796,14 @@ export const provisions = [
         całości lub w części jakimikolwiek środkami i w jakiejkolwiek formie,
       </span>
     ),
-    en: <span>regarding the preservation and reproduction of the Poster's Works: production of copies of the Poster's Works by various techniques, including but not limited to printing, reprographic, magnetic, IT, digital, photographic, artistic, visual, audiovisual, multimedia techniques, and furthermore, permanent or temporary reproduction of the Poster's Works in whole or in part by any means and in any form,</span>,
+    en: (
+      <span>
+        regarding the preservation and reproduction of the Poster's Works: production of copies of the Poster's Works by
+        various techniques, including but not limited to printing, reprographic, magnetic, IT, digital, photographic,
+        artistic, visual, audiovisual, multimedia techniques, and furthermore, permanent or temporary reproduction of
+        the Poster's Works in whole or in part by any means and in any form,
+      </span>
+    ),
   },
   {
     item: 'c)',
@@ -632,7 +817,13 @@ export const provisions = [
         wyłącznie, w sieci Internet,
       </span>
     ),
-    en: <span>regarding the dissemination of the Poster's Works: public performance, exhibition, display, playback, and broadcasting and rebroadcasting, as well as making the Poster's Works available in such a way that anyone can access them at a place and time chosen by them, including but not limited to on the Internet,</span>,
+    en: (
+      <span>
+        regarding the dissemination of the Poster's Works: public performance, exhibition, display, playback, and
+        broadcasting and rebroadcasting, as well as making the Poster's Works available in such a way that anyone can
+        access them at a place and time chosen by them, including but not limited to on the Internet,
+      </span>
+    ),
   },
   {
     item: 'd)',
@@ -644,7 +835,12 @@ export const provisions = [
         skrótów lub jakiekolwiek inne zmiany tych utworów, z zachowaniem praw osoby, która tych zmian dokonała.
       </span>
     ),
-    en: <span>regarding interference with the Poster's Works: translation, adaptation, rearrangement, making of summaries, or any other changes to these works, with the rights of the person making these changes being preserved.</span>,
+    en: (
+      <span>
+        regarding interference with the Poster's Works: translation, adaptation, rearrangement, making of summaries, or
+        any other changes to these works, with the rights of the person making these changes being preserved.
+      </span>
+    ),
   },
   {
     item: '6.8.',
@@ -657,7 +853,13 @@ export const provisions = [
         Usługodawca ma prawo do korzystania z Utworów Ogłoszeniodawcy bez oznaczenia autorstwa Ogłoszeniodawcy.
       </span>
     ),
-    en: <span>The Poster hereby agrees to the anonymous use of the Poster's Works by the Service Provider in all fields of exploitation indicated in Section 6.7 above, particularly but not exclusively, the Service Provider has the right to use the Poster's Works without indicating the authorship of the Poster.</span>,
+    en: (
+      <span>
+        The Poster hereby agrees to the anonymous use of the Poster's Works by the Service Provider in all fields of
+        exploitation indicated in Section 6.7 above, particularly but not exclusively, the Service Provider has the
+        right to use the Poster's Works without indicating the authorship of the Poster.
+      </span>
+    ),
   },
   {
     item: '7.',
@@ -685,7 +887,12 @@ export const provisions = [
         Usług w ramach Serwisu, administratorem danych osobowych jest Usługodawca.
       </span>
     ),
-    en: <span>With regard to the personal data of Visitors processed by the Service Provider in connection with the provision of Services within the Service, the Service Provider is the data controller.</span>,
+    en: (
+      <span>
+        With regard to the personal data of Visitors processed by the Service Provider in connection with the provision
+        of Services within the Service, the Service Provider is the data controller.
+      </span>
+    ),
   },
   {
     item: '7.3.',
@@ -694,11 +901,17 @@ export const provisions = [
     pl: (
       <span>
         Usługodawca nie jest administratorem danych osobowych podanych poza Serwisem, nawet, gdy podanie tych danych
-        nastąpiło po przekierowaniu z Serwisu, a administratorami tych danych są podmioty, które te dane
-        zebrały lub przetwarzają.
+        nastąpiło po przekierowaniu z Serwisu, a administratorami tych danych są podmioty, które te dane zebrały lub
+        przetwarzają.
       </span>
     ),
-    en: <span>The Service Provider is not the data controller for personal data provided outside the Service, even if such data was provided after being redirected from the Service. The data controllers for such data are the entities that collected or process this data.</span>,
+    en: (
+      <span>
+        The Service Provider is not the data controller for personal data provided outside the Service, even if such
+        data was provided after being redirected from the Service. The data controllers for such data are the entities
+        that collected or process this data.
+      </span>
+    ),
   },
   {
     item: '7.4.',
@@ -706,13 +919,20 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Po zebraniu danych osobowych i udostępnieniu ich Ogłoszeniodawcy, zgodnie z Punktem 3.1
-        b), administratorem tych danych osobowych staje się również Ogłoszeniodawca, który jest wyłącznie odpowiedzialny
-        za przetwarzanie tych danych osobowych przez tego Ogłoszeniodawcę, które następuje po ich udostępnieniu, a
-        Usługodawca w tym zakresie nie występuje w roli administratora.
+        Po zebraniu danych osobowych i udostępnieniu ich Ogłoszeniodawcy, zgodnie z Punktem 3.1 b), administratorem tych
+        danych osobowych staje się również Ogłoszeniodawca, który jest wyłącznie odpowiedzialny za przetwarzanie tych
+        danych osobowych przez tego Ogłoszeniodawcę, które następuje po ich udostępnieniu, a Usługodawca w tym zakresie
+        nie występuje w roli administratora.
       </span>
     ),
-    en: <span>After collecting personal data and providing it to the Poster in accordance with Section 3.1(b), the Poster also becomes the data controller for these personal data, being solely responsible for the processing of this personal data that occurs after the provision. The Service Provider does not act as the data controller in this regard.</span>,
+    en: (
+      <span>
+        After collecting personal data and providing it to the Poster in accordance with Section 3.1(b), the Poster also
+        becomes the data controller for these personal data, being solely responsible for the processing of this
+        personal data that occurs after the provision. The Service Provider does not act as the data controller in this
+        regard.
+      </span>
+    ),
   },
   {
     item: '7.5.',
@@ -723,11 +943,18 @@ export const provisions = [
         Ogłoszeniodawca, który stał się administratorem danych osobowych zgodnie z Punktem 7.4 powyżej zobowiązany jest
         do wypełniania wszelkich obowiązków wymaganych przepisami prawa jako administrator danych osobowych, w tym w
         szczególności, ale nie wyłącznie, wdrożenia odpowiednich środków technicznych i organizacyjnych w celu
-        wypełnienia obowiązków nakreślonych przepisami prawa oraz zapewniających bezpieczeństwo danych osobowych, oraz 
+        wypełnienia obowiązków nakreślonych przepisami prawa oraz zapewniających bezpieczeństwo danych osobowych, oraz
         <strong>wypełnienia obowiązków informacyjnych wobec osób, których dane dotyczą</strong>.
       </span>
     ),
-    en: <span>The Poster, who has become the data controller in accordance with Section 7.4 above, is obliged to fulfill all legal obligations required as a data controller, including but not limited to, implementing appropriate technical and organizational measures to meet legal obligations and ensure data security, as well as <strong>fulfilling informational obligations towards the data subjects</strong>.</span>,
+    en: (
+      <span>
+        The Poster, who has become the data controller in accordance with Section 7.4 above, is obliged to fulfill all
+        legal obligations required as a data controller, including but not limited to, implementing appropriate
+        technical and organizational measures to meet legal obligations and ensure data security, as well as{' '}
+        <strong>fulfilling informational obligations towards the data subjects</strong>.
+      </span>
+    ),
   },
   {
     item: '8.',
@@ -748,7 +975,8 @@ export const provisions = [
     ),
     en: (
       <span>
-        The Service Provider is entitled to cease providing the Services through the Service at any time, as well as to introduce interruptions in the provision of the Services.
+        The Service Provider is entitled to cease providing the Services through the Service at any time, as well as to
+        introduce interruptions in the provision of the Services.
       </span>
     ),
     // TODO: Co w przypadku zaprzestania i w przypadku przerw.
@@ -765,7 +993,8 @@ export const provisions = [
     ),
     en: (
       <span>
-        The Service Provider does not guarantee that the information, data, and opinions presented in the articles contained in the Service are correct.
+        The Service Provider does not guarantee that the information, data, and opinions presented in the articles
+        contained in the Service are correct.
       </span>
     ),
   },
@@ -775,12 +1004,16 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Odpowiedzialność Usługodawcy wobec danego Ogłoszeniodawcy ograniczona jest do wysokości kosztów, jakie Ogłoszeniodawca poniósł na zakup Usług Usługodawcy w ramach Serwisu, chyba, że Usługodawca działał z winy umyślnej.
+        Odpowiedzialność Usługodawcy wobec danego Ogłoszeniodawcy ograniczona jest do wysokości kosztów, jakie
+        Ogłoszeniodawca poniósł na zakup Usług Usługodawcy w ramach Serwisu, chyba, że Usługodawca działał z winy
+        umyślnej.
       </span>
     ),
     en: (
       <span>
-        The Service Provider's liability to a given Poster is limited to the amount of costs incurred by the Poster for purchasing the Service Provider's Services within the Service, unless the Service Provider acted with willful misconduct.
+        The Service Provider's liability to a given Poster is limited to the amount of costs incurred by the Poster for
+        purchasing the Service Provider's Services within the Service, unless the Service Provider acted with willful
+        misconduct.
       </span>
     ),
   },
@@ -790,12 +1023,14 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Usługodawca nie ponosi odpowiedzialności, gdy jego działania lub zaniechania wynikają z obowiązków nakładanych przez bezwzględnie obowiązujące przepisy prawa.
+        Usługodawca nie ponosi odpowiedzialności, gdy jego działania lub zaniechania wynikają z obowiązków nakładanych
+        przez bezwzględnie obowiązujące przepisy prawa.
       </span>
     ),
     en: (
       <span>
-        The Service Provider is not liable when its actions or omissions result from obligations imposed by mandatory provisions of law.
+        The Service Provider is not liable when its actions or omissions result from obligations imposed by mandatory
+        provisions of law.
       </span>
     ),
   },
@@ -805,12 +1040,14 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Usługodawca dokłada należytej staranności, aby jakość świadczonych przez niego usług w ramach Serwisu była należytej jakości, ale nie udziela na nie jakiejkolwiek gwarancji.
+        Usługodawca dokłada należytej staranności, aby jakość świadczonych przez niego usług w ramach Serwisu była
+        należytej jakości, ale nie udziela na nie jakiejkolwiek gwarancji.
       </span>
     ),
     en: (
       <span>
-        The Service Provider exercises due diligence to ensure that the quality of services provided within the Service is adequate, but does not offer any guarantee for them.
+        The Service Provider exercises due diligence to ensure that the quality of services provided within the Service
+        is adequate, but does not offer any guarantee for them.
       </span>
     ),
   },
@@ -820,12 +1057,14 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Usługodawca dokłada należytej staranności, aby treści prezentowane w ramach Serwisu była należytej jakości, ale nie udziela na nie jakiejkolwiek gwarancji.
+        Usługodawca dokłada należytej staranności, aby treści prezentowane w ramach Serwisu była należytej jakości, ale
+        nie udziela na nie jakiejkolwiek gwarancji.
       </span>
     ),
     en: (
       <span>
-        The Service Provider exercises due diligence to ensure that the content presented within the Service is of adequate quality, but does not offer any guarantee for it.
+        The Service Provider exercises due diligence to ensure that the content presented within the Service is of
+        adequate quality, but does not offer any guarantee for it.
       </span>
     ),
   },
@@ -835,12 +1074,16 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Usługodawca nie ponosi odpowiedzialności z tytułu korzyści utraconych ze względu na korzystanie z Usług Usługodawcy świadczonych w ramach Serwisu, ani ze względu na jakiekolwiek inne korzystanie z Serwisu, chyba, że wymagają tego bezwzględnie obowiązujące przepisy prawa.
+        Usługodawca nie ponosi odpowiedzialności z tytułu korzyści utraconych ze względu na korzystanie z Usług
+        Usługodawcy świadczonych w ramach Serwisu, ani ze względu na jakiekolwiek inne korzystanie z Serwisu, chyba, że
+        wymagają tego bezwzględnie obowiązujące przepisy prawa.
       </span>
     ),
     en: (
       <span>
-        The Service Provider is not liable for lost profits due to the use of the Services provided by the Service Provider within the Service, nor for any other use of the Service, unless mandatory provisions of law require otherwise.
+        The Service Provider is not liable for lost profits due to the use of the Services provided by the Service
+        Provider within the Service, nor for any other use of the Service, unless mandatory provisions of law require
+        otherwise.
       </span>
     ),
   },
@@ -851,12 +1094,17 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Usługodawca nie ponosi odpowiedzialności za szkody powstałe z uwagi na na korzystanie z Usług Usługodawcy świadczonych w ramach Serwisu, ani ze względu na jakiekolwiek inne korzystanie z Serwisu, które powstały ze względu na działania lub zaniechania podmiotu poszkodowanego lub osób trzecich, chyba, że wymagają tego bezwzględnie obowiązujące przepisy prawa.
+        Usługodawca nie ponosi odpowiedzialności za szkody powstałe z uwagi na na korzystanie z Usług Usługodawcy
+        świadczonych w ramach Serwisu, ani ze względu na jakiekolwiek inne korzystanie z Serwisu, które powstały ze
+        względu na działania lub zaniechania podmiotu poszkodowanego lub osób trzecich, chyba, że wymagają tego
+        bezwzględnie obowiązujące przepisy prawa.
       </span>
     ),
     en: (
       <span>
-        The Service Provider is not liable for damages arising from the use of the Services provided by the Service Provider within the Service, nor for any other use of the Service, that arise from actions or omissions of the injured party or third parties, unless mandatory provisions of law require otherwise.
+        The Service Provider is not liable for damages arising from the use of the Services provided by the Service
+        Provider within the Service, nor for any other use of the Service, that arise from actions or omissions of the
+        injured party or third parties, unless mandatory provisions of law require otherwise.
       </span>
     ),
   },
@@ -874,10 +1122,16 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Odwiedzający oraz Użytkownicy Serwisu mają prawo do składania reklamacji w sprawach świadczenia Usług przez Usługodawcę w ramach Serwisu.
+        Odwiedzający oraz Użytkownicy Serwisu mają prawo do składania reklamacji w sprawach świadczenia Usług przez
+        Usługodawcę w ramach Serwisu.
       </span>
     ),
-    en: <span>Visitors and Users of the Service have the right to file complaints regarding the provision of Services by the Service Provider within the Service.</span>,
+    en: (
+      <span>
+        Visitors and Users of the Service have the right to file complaints regarding the provision of Services by the
+        Service Provider within the Service.
+      </span>
+    ),
   },
   {
     item: '9.2.',
@@ -885,20 +1139,22 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Reklamacje, o których mowa w Punkcie 9.1 powyżej, można składać listownie na adres rejestrowy Usługodawcy lub mailowo na kontakt@skillfind.tech.
+        Reklamacje, o których mowa w Punkcie 9.1 powyżej, można składać listownie na adres rejestrowy Usługodawcy lub
+        mailowo na kontakt@skillfind.tech.
       </span>
     ),
-    en: <span>Complaints referred to in Section 9.1 above can be submitted by mail to the registered address of the Service Provider or by email to contact@skillfind.tech.</span>,
+    en: (
+      <span>
+        Complaints referred to in Section 9.1 above can be submitted by mail to the registered address of the Service
+        Provider or by email to contact@skillfind.tech.
+      </span>
+    ),
   },
   {
     item: '9.3.',
     tier: 'point',
     version: versions['1.0'],
-    pl: (
-      <span>
-        Usługodawca dokłada starań, aby reklamacje rozpatrywane były w terminie do 30 dni kalendarzowych.
-      </span>
-    ),
+    pl: <span>Usługodawca dokłada starań, aby reklamacje rozpatrywane były w terminie do 30 dni kalendarzowych.</span>,
     en: <span>The Service Provider strives to address complaints within 30 calendar days.</span>,
   },
   {
@@ -1091,10 +1347,16 @@ export const provisions = [
     item: '11.2.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Spory wynikłe z niniejszego Regulaminu rozstrzygane będą przez sąd właściwy dla Usługodawcy, chyba, że bezwzględnie obowiązujące przepisy prawa określają inną właściwość.</span>,
+    pl: (
+      <span>
+        Spory wynikłe z niniejszego Regulaminu rozstrzygane będą przez sąd właściwy dla Usługodawcy, chyba, że
+        bezwzględnie obowiązujące przepisy prawa określają inną właściwość.
+      </span>
+    ),
     en: (
       <span>
-        Disputes arising from these Terms of Service will be resolved by the court having jurisdiction over the Service Provider, unless mandatory provisions of law specify otherwise.
+        Disputes arising from these Terms of Service will be resolved by the court having jurisdiction over the Service
+        Provider, unless mandatory provisions of law specify otherwise.
       </span>
     ),
   },

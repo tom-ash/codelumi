@@ -9,6 +9,7 @@ import { useStore } from 'react-redux'
 import { useInputs } from '../../../../../../../../../../shared/app/functions/store/use-inputs'
 import { pinBuilder } from './functions/pin-builder'
 import { useData } from '../../../../../../../../../../shared/app/functions/store/use-data'
+import { mapStyles } from '../../../../../../styles/map-styles'
 
 export const Location = () => {
   useStyles(styles)
@@ -59,6 +60,8 @@ export const Location = () => {
       <MapMarker
         item={item}
         pinBuilder={pinBuilder}
+        // @ts-ignore
+        mapStyles={mapStyles}
       />
     </section>
   )

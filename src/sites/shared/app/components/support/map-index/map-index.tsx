@@ -5,6 +5,9 @@ import { ItemIndexInterface } from './types/item-index.interface'
 import { PanelInterface } from './types/panel.interface'
 import { Item } from './types/item.interface'
 import { PinBuilder } from './types/pin-builder.interface'
+// import { MapTypeStyle } from '@types/google.maps'
+
+export type MapStyles = google.maps.MapTypeStyle[]
 
 interface MapIndexInterface {
   (props: {
@@ -14,11 +17,12 @@ interface MapIndexInterface {
     ShowItem: ItemShowInterface
     pinBuilder: PinBuilder
     items: Item[]
+    mapStyles?: MapStyles
   }): React.ReactElement
 }
 
 export const MapIndex: MapIndexInterface = props => {
-  const { items, renderShow = false, Panel, ListItem, ShowItem, pinBuilder } = props
+  const { items, renderShow = false, Panel, ListItem, ShowItem, pinBuilder, mapStyles } = props
 
   return (
     <section id='map-index'>
@@ -29,6 +33,7 @@ export const MapIndex: MapIndexInterface = props => {
         ShowItem={ShowItem}
         items={items}
         pinBuilder={pinBuilder}
+        mapStyles={mapStyles}
       />
     </section>
   )

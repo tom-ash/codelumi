@@ -7,13 +7,14 @@ import { drawPins } from '../../../../../../../../../mapawynajmu-pl/app/componen
 import { useData } from '../../../../../../../functions/store/use-data'
 import { Item } from '../../../../types/item.interface'
 import { PinBuilder } from '../../../../types/pin-builder.interface'
+import { MapStyles } from '../../../../map-index'
 
 interface MapInterface {
-  (props: { items: Item[]; pinBuilder: PinBuilder }): React.ReactElement
+  (props: { items: Item[]; pinBuilder: PinBuilder; mapStyles?: MapStyles }): React.ReactElement
 }
 
 export const Map: MapInterface = props => {
-  const { items, pinBuilder } = props
+  const { items, pinBuilder, mapStyles } = props
 
   const { isMapInitialized } = useApp()
   const { mapOptions, isPinsDrawn } = useControl()
@@ -48,5 +49,5 @@ export const Map: MapInterface = props => {
     }
   }, [isMapInitialized, mapOptions])
 
-  return <GoogleMap />
+  return <GoogleMap mapStyles={mapStyles} />
 }

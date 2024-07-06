@@ -3,32 +3,6 @@
 
 %social-image {
   @extend %section;
-  position: relative;
-  // height: 650px;
-  // #color-pickers {
-  //   text-wrap: nowrap;
-  //   transform-origin: top left;
-  // }
-  .color-picker {
-    display: inline-block;
-    margin-top: 30px;
-    transform-origin: top left;
-    // scale: 0.5;
-    // width: 100px;
-    label {
-      font-size: 15px;
-      font-weight: bold;
-    }
-    .chrome-picker {
-      box-shadow: none !important;
-      border: 1px solid lightgray;
-      margin-top: 8px;
-      // width: 100px!important;
-    }
-    &:first-of-type {
-      margin-right: 20px;
-    }
-  }
   .preview {
     @extend %preview;
   }
