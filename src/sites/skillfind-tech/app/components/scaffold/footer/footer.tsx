@@ -10,6 +10,7 @@ import { useTexts } from '../../../../../shared/app/functions/store/use-texts'
 import { Link } from '../../../../../shared/app/components/support/link/link'
 import { SVG } from '../../../../../shared/app/components/support/svg/svg'
 import { FloatClear } from '../../../../../shared/app/components/support/float-clear/float-clear'
+import { AboutSkillfindTechLink } from './components/about-skillfind-tech/about-skillfind-tech.link'
 
 const Footer = () => {
   useStyles(styles)
@@ -34,6 +35,7 @@ const Footer = () => {
         <CookiesPolicyLink />
         <PrivacyPolicyLink />
         <PrivacySettingsLink />
+        <AboutSkillfindTechLink />
         <div className='float-clear' />
       </div>
       <div className='copyright'>

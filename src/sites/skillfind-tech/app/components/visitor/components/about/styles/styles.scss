@@ -1,0 +1,27 @@
+@import '../../../../../styles/container';
+
+#about {
+  @extend %container;
+  padding: 32px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  min-width: 768px;
+  h2 {
+    padding-top: 5px;
+  }
+  p {
+    margin-top: 10px;
+  }
+  .intro {
+    margin-top: 20px;
+  }
+  .features {
+    margin-top: 35px;
+  }
+  ul {
+    list-style-type: none;
+    li {
+      margin-top: 35px;
+    }
+  }
+}

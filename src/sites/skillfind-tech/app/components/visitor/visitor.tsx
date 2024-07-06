@@ -4,6 +4,7 @@ import { useRender } from '../../../../shared/app/functions/store/use-render'
 import { useVisitor } from '../../../../shared/app/functions/store/use-visitor'
 const PrivacyMonit = loadable(() => import('./components/administration/privacy-monit/privacy-monit'))
 const VisitorContact = loadable(() => import('./components/contact/contact'))
+const About = loadable(() => import('./components/about/about'))
 const TermsOfService = loadable(() => import('./components/administration/terms-of-service/terms-of-service'))
 const CookiesPolicy = loadable(() => import('./components/administration/cookies-policy/cookies-policy'))
 const PrivacyPolicy = loadable(() => import('./components/administration/privacy-policy/privacy-policy'))
@@ -19,6 +20,7 @@ export const Visitor = () => {
   const renderPrivacyPolicy = render['visitor/privacy-policy']
   const renderTermsOfService = render['visitor/terms-of-service']
   const renderPrivacySettings = render['visitor/privacy-settings']
+  const renderAbout = render['visitor/about']
   const renderNotFound = render['page/not-found']
   const { renderVisitorPageIndex } = render
   const showPrivacyMonit =
@@ -39,6 +41,7 @@ export const Visitor = () => {
       {renderPrivacyPolicy && <PrivacyPolicy />}
       {renderPrivacySettings && <PrivacySettings />}
       {renderVisitorPageIndex && <PageIndex />}
+      {renderAbout && <About />}
     </div>
   )
 }
