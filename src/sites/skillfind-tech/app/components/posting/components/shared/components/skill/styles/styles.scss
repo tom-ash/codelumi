@@ -12,7 +12,7 @@
     width: 14px;
     height: 14px;
     margin-right: 5px;
-    border-radius: 2px;
+    border-radius: 100%;
     background: lightgray;
     cursor: pointer;
     &.novice {
@@ -35,17 +35,6 @@
     margin-top: 4px;
     font-size: 13px;
     color: gray;
+    display: none;
   }
-  // .delete {
-  //   width: 24px;
-  //   height: 24px;
-  //   border: 1px solid gray;
-  //   border-radius: 12px;
-  //   position: absolute;
-  //   top: 0;
-  //   bottom: 36px;
-  //   left: 150px;
-  //   margin: auto;
-  //   cursor: pointer;
-  // }
 }
