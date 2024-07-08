@@ -1,40 +1,40 @@
 .skill {
   position: relative;
-  .name {
-    font-size: 16px;
-    margin-bottom: 6px;
-  }
   .levels {
-    display: inline-block;
-  }
-  .level {
-    float: left;
-    width: 14px;
-    height: 14px;
-    margin-right: 5px;
-    border-radius: 100%;
-    background: lightgray;
-    cursor: pointer;
-    &.novice {
-      background: #f9e79f;
+    .level {
+      float: left;
+      border-radius: 100%;
+      background: lightgray;
+      cursor: pointer;
+      &.junior {
+        background: #27AE60;
+      }
+      &.mid {
+        background: #3498DB;
+      }
+      &.senior {
+        background: #F39C12;
+      }
+      &.expert {
+        background: #E74C3C;
+      }
     }
-    &.junior {
-      background: #27ae60;
+    .level-name {
+      display: block;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      z-index: 2;
+      width: auto;
+      height: 25px;
+      background: black;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      border-radius: 4px;
+      padding: 0 8px;
+      text-align: center;
+      line-height: 25px;
+      font-size: 14px;
+      color: white;
     }
-    &.mid {
-      background: #2874a6;
-    }
-    &.senior {
-      background: #e74c3c;
-    }
-    &.expert {
-      background: #6c3483;
-    }
-  }
-  .level-name {
-    margin-top: 4px;
-    font-size: 13px;
-    color: gray;
-    display: none;
   }
 }

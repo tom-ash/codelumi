@@ -137,7 +137,18 @@
     @extend %skills;
     margin-top: 0;
     .skill {
+      float: left;
       margin-top: 15px;
+      width: 140px;
+      .levels {
+        margin-top: 8px;
+        .level {
+          width: 15px;
+          height: 15px;
+          margin-right: 8px;
+          position: relative;
+        }
+      }
     }
   }
   .description {

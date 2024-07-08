@@ -6,7 +6,7 @@ interface SkillLevelsProps {
   view: SkillView
   name: string
   level: number
-  levelNames: string[]
+  levels: string[]
   levelName: SkillLevel
   levelHovered: number
   setLevelHovered(levelHovered: number): void
@@ -15,14 +15,14 @@ interface SkillLevelsProps {
 }
 
 export const SkillLevels = (props: SkillLevelsProps) => {
-  const { view, name, level, levelNames, levelName, levelHovered, onLevelClicked, setLevelHovered, setErrors } = props
+  const { view, name, level, levels, levelName, levelHovered, onLevelClicked, setLevelHovered, setErrors } = props
 
   return (
-    <div className='levelNames'>
-      {levelNames.map((availableLevel, index) => {
+    <div className='levels'>
+      {levels.map((availableLevel, index) => {
         const fillClass = levelHovered
           ? levelHovered > index
-            ? levelNames[levelHovered - 1].toLowerCase()
+            ? levels[levelHovered - 1].toLowerCase()
             : ''
           : level > index || levelHovered > index
           ? levelName.toLowerCase()
@@ -55,7 +55,11 @@ export const SkillLevels = (props: SkillLevelsProps) => {
                 onLevelClicked && onLevelClicked({ name, level: levelHovered })
               },
             })}
-          />
+          >
+            {(index + 1) === levelHovered && (
+              <div className='level-name'>{levelName}</div>
+            )}
+          </div>
         )
       })}
       <div className='float-clear' />

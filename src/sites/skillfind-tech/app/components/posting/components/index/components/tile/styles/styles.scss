@@ -1,4 +1,4 @@
-@import '../../../../common/skills/styles/styles.scss';
+// @import '../../../../common/skills/styles/styles.scss';
 @import '../../../../common/cooperation-mode-and-location/styles/styles.scss';
 @import '../../../../common/remuneration/styles/styles.scss';
 @import '../../../../../../../styles/colors.scss';
@@ -13,10 +13,11 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding: 0;
   background: white;
+  position: relative;
   .company {
-    width: calc(50% - 20px);
+    width: 70px;
     float: left;
-    margin: 20px 0 0 20px;
+    margin: 15px 0 0 15px;
     color: #424949;
     .company-logo {
       float: left;
@@ -37,29 +38,7 @@
       }
     }
     .business-name-and-industry {
-      float: left;
-      max-width: calc(100% - 90px);
-      .business-name {
-        max-width: 100%;
-        overflow: hidden;
-        margin: 0;
-        text-wrap: nowrap;
-        font-size: 17px;
-        font-weight: 500;
-        text-overflow: ellipsis;
-      }
-      .industry {
-        color: #4d5656;
-        font-size: 13px;
-        margin: 0;
-        svg {
-          position: relative;
-          height: 11px;
-          top: 1px;
-          margin-right: 6px;
-          fill: #4d5656;
-        }
-      }
+      display: none;
     }
   }
   .position-cooperation-mode-and-location {
@@ -72,8 +51,11 @@
       overflow: hidden;
       text-wrap: nowrap;
       text-overflow: ellipsis;
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 500;
+      vertical-align: top;
+      display: inline-block;
+      line-height: 18px;
     }
     .cooperation-mode-and-location {
       @extend %cooperation-mode-and-location;
@@ -101,63 +83,82 @@
   .contract-and-remuneration {
     @extend %contract-and-remuneration;
     padding: 0;
-    margin: 10px 0 0 20px;
+    margin: 0;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 140px;
     .b2b,
     .employment {
-      display: inline-block;
-      text-align: left;
       font-weight: 400;
+      padding: 0;
+      margin: 0;
+      height: auto;
+      width: auto;
       .contract {
         font-size: 10px;
         line-height: 10px;
+        font-variant: small-caps;
+        text-align: left;
       }
       .remuneration {
-        line-height: 15px;
-        font-size: 15px;
+        line-height: 14px;
+        font-size: 14px;
+        .amount {
+          margin-right: 5px;
+        }
+        .currency {
+          margin-right: 2px;
+        }
       }
       .per {
         font-size: 12px;
       }
     }
-    .b2b {
-      margin-right: 30px;
+    .employment {
+      margin-top: 5px;
+      height: auto
     }
   }
   .skills {
-    @extend %skills;
-    scale: 0.9;
-    transform-origin: top left;
-    text-wrap: nowrap;
-    margin: 0 15px;
+    margin: 5px 0 15px 15px;
+    padding-bottom: 15px;
     .skill {
       display: inline-block;
-      float: none;
-      margin-right: 15px;
-      scale: 0.9;
-      transform-origin: top left;
+      margin-right: 20px;
+      margin-top: 10px;
       .name {
-        margin: 0;
+        font-size: 13px;
+        line-height: 14px;
       }
-      .levelNames {
-        margin-top: 2px;
+      .levels {
+        margin-top: 6px;
+        .level {
+          line-height: 10px;
+          width: 11px;
+          height: 11px;
+          margin-right: 6px;
+        }
       }
     }
   }
   @media #{$LARGE-TABLET} {
     margin: 0;
     height: 370px;
-    padding: 15px;
+    padding: 20px;
     .company {
       float: none;
       margin: 0;
-      width: 100%;
+      width: 100px;
+      .company-logo {
+        width: 100%;
+      }
     }
     .position-cooperation-mode-and-location {
       float: none;
       width: 100%;
-      margin: 25px 0 0;
+      margin: 15px 0 0;
       .cooperation-mode-and-location {
-        display: block;
         .cooperation-mode {
           font-size: 15px;
           margin: 0;
@@ -172,8 +173,9 @@
       }
     }
     .contract-and-remuneration {
-      margin: 25px 0 0;
-      height: 32px;
+      position: static;
+      padding: 0;
+      margin: 25px 0 0 0;
       .b2b,
       .employment {
         text-align: left;
@@ -184,6 +186,10 @@
         }
         .remuneration {
           display: block;
+          margin-top: 4px;
+          .amount {
+            font-size: 14px;
+          }
           .per {
             font-size: 12px;
           }
@@ -194,20 +200,10 @@
       }
     }
     .skills {
-      scale: 1;
-      padding: 0;
       margin: 0;
-      text-wrap: wrap;
-      margin-top: 10px;
       .skill {
-        margin-top: 5px;
-        margin-right: 15px;
-        &:nth-of-type(2n) {
-          margin-right: 0;
-        }
-        .level-name {
-          display: none;
-        }
+        margin-top: 15px;
+        width: 100px;
       }
     }
   }

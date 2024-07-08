@@ -72,10 +72,19 @@
           display: none;
         }
         -ms-overflow-style: none;
-        scrollbar-width: none;
         .skill {
-          .level-name {
-            height: 20px;
+          margin-top: 15px;
+          .name {
+            font-size: 16px;
+          }
+          .levels {
+            margin-top: 3px;
+          }
+          .level {
+            position: relative;
+            width: 15px;
+            height: 15px;
+            margin-right: 8px;
           }
         }
       }
@@ -95,8 +104,11 @@
       scrollbar-width: none;
       .skill {
         margin-top: 10px;
-        .level-name {
-          height: 20px;
+        .level {
+          width: 14px;
+          height: 14px;
+          margin-right: 7px;
+          position: relative;
         }
         .delete,
         .up,
