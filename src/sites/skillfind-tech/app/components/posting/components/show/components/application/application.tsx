@@ -12,6 +12,7 @@ import { CV } from './components/cv/cv'
 import { Link } from './components/link/link'
 import { useControl } from '../../../../../../../../shared/app/functions/store/use-control'
 import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
+import { useData } from '../../../../../../../../shared/app/functions/store/use-data'
 
 interface ApplicationInterface {
   (props: {}): React.ReactElement | null
@@ -21,10 +22,20 @@ export const Application: ApplicationInterface = () => {
   const { applicationFormSent } = useControl()
   const { applicationSendingConfirmation } = useTexts()
 
+  const {
+    posting: {
+      applicationLink
+    }
+  } = useData()
+
+  if (applicationLink) {
+    return <Link />
+  }
+
   return (
     <section className='application'>
       <Heading />
-      <Link />
+      {/* <Link /> */}
       {!applicationFormSent ? (
         <form>
           <FirstName />

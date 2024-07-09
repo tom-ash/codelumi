@@ -18,16 +18,19 @@ export const Application = () => {
     classNames.push('error')
   }
 
+  // TODO
+
   return (
     <section
       id='application'
       className={classNames.join(' ')}
     >
       <SectionHeading name='application' />
-      <InstructionsDeprecated text={applicationSectionInstructions} />
+      {/* <InstructionsDeprecated text={applicationSectionInstructions} />
       <ApplicationManner name={ApplicationMannerEnum.FORM} />
       <ApplicationManner name={ApplicationMannerEnum.LINK} />
-      {linkApplicationManner && <ApplicationLink />}
+      {linkApplicationManner && <ApplicationLink />} */}
+      <ApplicationLink />
     </section>
   )
 }

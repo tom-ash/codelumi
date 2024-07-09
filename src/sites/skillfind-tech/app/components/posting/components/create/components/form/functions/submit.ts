@@ -132,7 +132,7 @@ export const submit = async (props: SubmitProps) => {
     backgroundColor,
     textColor,
     formApplicationManner,
-    linkApplicationManner,
+    linkApplicationManner: true,
     applicationLink,
   }
 
@@ -154,7 +154,7 @@ export const submit = async (props: SubmitProps) => {
     }),
     validateApplication({
       formApplicationManner,
-      linkApplicationManner,
+      linkApplicationManner: true,
       applicationLink,
       applicationLinkError,
       setErrors,
