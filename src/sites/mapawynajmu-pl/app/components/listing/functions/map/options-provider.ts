@@ -1,4 +1,4 @@
-import googleMapStyles from '../../constants/google-map-styles'
+import { MapStyles } from '../../../../../../shared/app/components/support/map-index/map-index'
 
 export interface MapOptions {
   center: {
@@ -11,24 +11,25 @@ export interface MapOptions {
 type MapOptionsProviderProps = {
   mapOptions: undefined | MapOptions
   isMobile: boolean
+  mapStyles?: MapStyles
 }
 
 const DEFAULT_OPTIONS = {
   fullscreenControl: false,
   clickableIcons: false,
   zoomControl: false,
-  styles: googleMapStyles,
   mapTypeControl: false,
   streetViewControl: false,
 }
 
 function mapOptionsProvider(props: MapOptionsProviderProps) {
-  const { mapOptions, isMobile } = props
+  const { mapOptions, isMobile, mapStyles } = props
 
   return {
     ...DEFAULT_OPTIONS,
     ...(!isMobile && { gestureHandling: 'greedy' }),
     ...mapOptions,
+    styles: mapStyles,
   }
 }
 

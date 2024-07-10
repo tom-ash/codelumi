@@ -7,15 +7,10 @@ import { enrichText } from '../../helpers/enrich-text/enrich-text'
 import { Figure } from '../../../../../../../shared/app/components/support/figure/figure'
 
 interface FeatureItemInterface {
-  (props: {
-    heading: string;
-    imgSrc: string;
-    imgAlternate: string;
-    text: string;
-  }): React.ReactElement;
+  (props: { heading: string; imgSrc: string; imgAlternate: string; text: string }): React.ReactElement
 }
 
-const FeatureItem: FeatureItemInterface = (props) => {
+const FeatureItem: FeatureItemInterface = props => {
   useStyles(styles)
 
   const { text, heading, imgSrc, imgAlternate } = props

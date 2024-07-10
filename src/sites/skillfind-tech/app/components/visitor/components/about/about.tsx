@@ -17,18 +17,11 @@ const VisitorContact = () => {
       <div className='container'>
         <MainHeading />
         <div className='intro'>
-          <strong>
-            {intro}
-          </strong>
+          <strong>{intro}</strong>
         </div>
         <ul className='features'>
           {features.map((feature: any) => {
-            const {
-              heading,
-              imgSrc,
-              imgAlternate,
-              text,
-            } = feature
+            const { heading, imgSrc, imgAlternate, text } = feature
 
             return (
               <li>
@@ -40,7 +33,7 @@ const VisitorContact = () => {
                 />
               </li>
             )
-          })}  
+          })}
         </ul>
       </div>
     </div>

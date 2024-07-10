@@ -9,9 +9,7 @@ export const Link = () => {
     posting: { applicationLink },
   } = useData()
 
-  const {
-    applyButtonLabel
-  } = useTexts()
+  const { applyButtonLabel } = useTexts()
 
   return (
     <>

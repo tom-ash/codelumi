@@ -1,12 +1,19 @@
 import React from 'react'
-import { useGoogleMaps } from '../../../../../mapawynajmu-pl/app/functions/use-google-maps'
+import { useGoogleMaps } from '../../../functions/use-google-maps'
+import { MapStyles } from '../map-index/map-index'
 
 interface GoogleMapInterface {
-  (): React.ReactElement
+  (props: {
+    mapStyles?: MapStyles
+  }): React.ReactElement
 }
 
-export const GoogleMap: GoogleMapInterface = () => {
-  useGoogleMaps()
+const apiKey = 'AIzaSyAUEJ1HRdOeh_QKQTUU-sCAgnerzNJY-8k'
+
+export const GoogleMap: GoogleMapInterface = (props) => {
+  const { mapStyles } = props
+
+  useGoogleMaps(apiKey, mapStyles)
 
   return (
     <div id='google-map-container'>

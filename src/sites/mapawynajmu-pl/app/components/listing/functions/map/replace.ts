@@ -1,12 +1,14 @@
+import { MapStyles } from '../../../../../../shared/app/components/support/map-index/map-index'
 import mapOptionsProvider, { MapOptions } from './options-provider'
 
 interface ReplaceMapProps {
   mapOptions: MapOptions
   isMobile: boolean
+  mapStyles?: MapStyles
 }
 
 function replaceMap(props: ReplaceMapProps) {
-  const { mapOptions, isMobile } = props
+  const { mapOptions, isMobile, mapStyles } = props
 
   const googleMapContainer = document.getElementById('google-map-container')
   if (!googleMapContainer) return
@@ -23,6 +25,7 @@ function replaceMap(props: ReplaceMapProps) {
     mapOptionsProvider({
       mapOptions,
       isMobile,
+      mapStyles,
     })
   )
 }

@@ -6,6 +6,7 @@ import { ItemShowInterface } from '../../types/item-show.interface'
 import { ItemIndexInterface } from '../../types/item-index.interface'
 import { Item } from '../../types/item.interface'
 import { PinBuilder } from '../../types/pin-builder.interface'
+import { MapStyles } from '../../map-index'
 
 interface ResultsInterface {
   (props: {
@@ -14,11 +15,12 @@ interface ResultsInterface {
     ListItem: ItemIndexInterface
     ShowItem: ItemShowInterface
     pinBuilder: PinBuilder
+    mapStyles?: MapStyles
   }): React.ReactElement
 }
 
 export const Results: ResultsInterface = props => {
-  const { renderShow, ListItem, ShowItem, items, pinBuilder } = props
+  const { renderShow, ListItem, ShowItem, items, pinBuilder, mapStyles } = props
   const { isSSR } = useControl()
 
   return (
@@ -39,6 +41,7 @@ export const Results: ResultsInterface = props => {
       <Map
         items={items}
         pinBuilder={pinBuilder}
+        mapStyles={mapStyles}
       />
     </section>
   )

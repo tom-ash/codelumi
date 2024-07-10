@@ -56,9 +56,7 @@ export const SkillLevels = (props: SkillLevelsProps) => {
               },
             })}
           >
-            {(index + 1) === levelHovered && (
-              <div className='level-name'>{levelName}</div>
-            )}
+            {index + 1 === levelHovered && <div className='level-name'>{levelName}</div>}
           </div>
         )
       })}

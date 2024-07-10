@@ -7,16 +7,16 @@
       background: lightgray;
       cursor: pointer;
       &.junior {
-        background: #27AE60;
+        background: #27ae60;
       }
       &.mid {
-        background: #3498DB;
+        background: #3498db;
       }
       &.senior {
-        background: #F39C12;
+        background: #f39c12;
       }
       &.expert {
-        background: #E74C3C;
+        background: #e74c3c;
       }
     }
     .level-name {
@@ -28,7 +28,9 @@
       width: auto;
       height: 25px;
       background: black;
-      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+      box-shadow:
+        rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
       border-radius: 4px;
       padding: 0 8px;
       text-align: center;

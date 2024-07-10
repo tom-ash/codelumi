@@ -23,9 +23,7 @@ export const Application: ApplicationInterface = () => {
   const { applicationSendingConfirmation } = useTexts()
 
   const {
-    posting: {
-      applicationLink
-    }
+    posting: { applicationLink },
   } = useData()
 
   if (applicationLink) {
