@@ -14,14 +14,12 @@ interface CompanyInterface {
       label: string
       icon: string
     }
-    backgroundColor?: string
-    textColor?: string
     isPreview?: boolean
   }): React.ReactElement | null
 }
 
 export const Company: CompanyInterface = props => {
-  const { logo, businessName, industry, backgroundColor, textColor, isPreview, link } = props
+  const { logo, businessName, industry, isPreview, link } = props
 
   return (
     <div className='company'>
@@ -34,15 +32,9 @@ export const Company: CompanyInterface = props => {
       </div>
       <div
         className='business-name-and-industry'
-        style={{
-          backgroundColor,
-        }}
       >
         <div
           className='business-name'
-          style={{
-            color: textColor,
-          }}
         >
           {link ? (
             <Link
@@ -57,7 +49,6 @@ export const Company: CompanyInterface = props => {
         <PostingIndexTileIndustry
           industry={industry.label}
           icon={industry.icon}
-          textColor={textColor}
         />
       </div>
       <FloatClear />

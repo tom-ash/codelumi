@@ -7,13 +7,15 @@
 %postings-index-tile {
   display: block;
   float: none;
-  margin-top: 20px;
+  margin-top: 10px;
   border: none;
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  // border-radius: 8px;
+  // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding: 0;
   background: white;
   position: relative;
+  // border-radius: ;
+  border: 1px solid lightgray;
   .company {
     width: 70px;
     float: left;

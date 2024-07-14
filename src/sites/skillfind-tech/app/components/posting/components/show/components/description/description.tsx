@@ -17,10 +17,6 @@ export const Description: DescriptionInterface = () => {
 
   return (
     <section id='description'>
-      <SectionHeading
-        name='description'
-        icon='quoteLeft'
-      />
       <div
         className='description'
         dangerouslySetInnerHTML={{ __html: description }}

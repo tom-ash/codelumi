@@ -2,10 +2,18 @@
 
 #postings-index {
   .panel {
+    .selects {
+      background: #1B2631;
+
+      height: 66px;
+      padding-top: 12px;
+
+    }
     .select {
       position: relative;
       width: 320px;
-      margin: 20px auto 0;
+      margin: 0 auto 0;
+      background: none;
       input {
         padding-left: 32px;
         cursor: default;
@@ -13,12 +21,20 @@
         height: 36px;
         border: none;
         border-bottom: 2px solid black;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
         font-size: 16px;
+        border-radius: 0;
+        background: none;
+        color: white;
+        border-bottom: 2px solid white;
         &:focus {
           outline: none;
         }
+        &::placeholder {
+          color: lightgray;
+        }
+      }
+      svg {
+        fill: white;
       }
       ul {
         @extend %hidden-scrollbar;
@@ -63,8 +79,9 @@
       }
     }
     .selected-skills {
-      height: 86px;
-      padding: 12px 20px 8px;
+      background: white;
+      height: 66px;
+      padding: 15px 15px;
       .skill {
         float: left;
         margin-right: 60px;
@@ -86,8 +103,8 @@
           height: 14px;
           width: 14px;
           position: absolute;
-          left: 104px;
-          top: 27px;
+          left: 94px;
+          top: 20px;
           cursor: pointer;
           svg {
             top: 0;

@@ -12,7 +12,7 @@ export const GoBack: GoBackInterface = () => {
     root: { href, hrefLang, title },
   } = useLinks()
 
-  const label = <SVG name='arrowLong' />
+  const label = <SVG name='close' />
 
   return (
     <Link

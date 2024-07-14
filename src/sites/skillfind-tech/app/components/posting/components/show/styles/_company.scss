@@ -1,29 +1,29 @@
 %company {
   .company-logo {
     float: left;
-    height: 100px;
+    height: 120px;
     width: 120px;
     margin-right: 20px;
     text-align: center;
     display: block;
-    line-height: 100px;
+    line-height: 120px;
+    border: 1px solid lightgray;
     img {
       vertical-align: middle;
-      max-width: 100%;
-      max-height: 100%;
+      max-width: calc(100% - 40px);
+      max-height: calc(100% - 40px);
     }
   }
   .business-name-and-industry {
     display: block;
     float: left;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-    padding: 20px;
-    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 120px;
     width: calc(100% - 140px);
     .business-name {
-      font-size: 22px;
-      color: white;
+      font-size: 25px;
       max-width: 100%;
       overflow: hidden;
       text-wrap: nowrap;
@@ -31,14 +31,12 @@
     }
     .industry {
       margin-top: 6px;
-      color: white;
-      font-size: 16px;
+      font-size: 15px;
       svg {
         position: relative;
-        top: 2px;
-        height: 16px;
+        top: 3px;
+        height: 15px;
         margin-right: 8px;
-        fill: white;
       }
     }
   }

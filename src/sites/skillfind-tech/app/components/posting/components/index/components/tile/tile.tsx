@@ -32,8 +32,6 @@ interface PostingIndexTileInterface {
       icon: string
       label: string
     }
-    backgroundColor: string
-    textColor: string
     position: string
   }): React.ReactElement
 }
@@ -58,8 +56,6 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
     locality,
     country,
     cooperationMode,
-    backgroundColor,
-    textColor,
     position,
   } = props
 
