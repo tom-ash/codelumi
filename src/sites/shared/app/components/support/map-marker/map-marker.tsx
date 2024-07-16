@@ -86,9 +86,7 @@ export const MapMarker: MapMarkerInterface = props => {
         }
         isError={isError}
       />
-      <GoogleMap
-        mapStyles={mapStyles}
-      />
+      <GoogleMap mapStyles={mapStyles} />
     </div>
   )
 }

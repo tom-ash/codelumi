@@ -49,9 +49,5 @@ export const Map: MapInterface = props => {
     }
   }, [isMapInitialized, mapOptions])
 
-  return (
-    <GoogleMap
-      mapStyles={mapStyles}
-    />
-  )
+  return <GoogleMap mapStyles={mapStyles} />
 }

@@ -30,12 +30,8 @@ export const Company: CompanyInterface = props => {
           crossOrigin={isPreview ? 'anonymous' : undefined}
         />
       </div>
-      <div
-        className='business-name-and-industry'
-      >
-        <div
-          className='business-name'
-        >
+      <div className='business-name-and-industry'>
+        <div className='business-name'>
           {link ? (
             <Link
               href={link}

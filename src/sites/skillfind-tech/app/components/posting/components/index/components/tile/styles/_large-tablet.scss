@@ -1,0 +1,76 @@
+%postings-index-tile-large-tablet {
+  @media #{$LARGE-TABLET} {
+    margin: 0;
+    height: 370px;
+    padding: 25px 20px 20px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    .company {
+      float: none;
+      margin: 0;
+      width: 100%;
+      height: 25px;
+      text-align: center;
+      position: static;
+      .company-logo {
+        position: static;
+        float: none;
+        display: inline-block;
+        height: 100%;
+        width: auto;
+        img {
+          position: static;
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+    .position-cooperation-mode-and-location {
+      float: none;
+      width: 100%;
+      margin: 25px 0 0;
+      .cooperation-mode-and-location {
+        .cooperation-mode {
+          font-size: 15px;
+          margin: 0;
+          width: 80px;
+        }
+        .location {
+          width: calc(100% - 110px);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 15px;
+        }
+      }
+    }
+    .contract-and-remuneration {
+      position: static;
+      padding: 0;
+      margin: 15px 0 0 0;
+      height: 36px;
+      .b2b,
+      .employment {
+        margin: 0;
+        display: block;
+        text-align: left;
+      }
+      .employment {
+        margin-top: 10px;
+      }
+    }
+    .skills {
+      margin: 5px 0 0;
+      .skill {
+        margin-top: 15px;
+        width: calc(50% - 20px);
+        .levels {
+          .level {
+            width: 12px;
+            height: 12px;
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+  }
+}

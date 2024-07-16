@@ -15,6 +15,7 @@ export const Skills: SkillsInterface = () => {
 
   return (
     <section id='searched-skills'>
+      <SectionHeading name='skills' />
       <SkillsPartial
         skills={skills}
         view={SkillView.indexVisitor}

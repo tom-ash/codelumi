@@ -1,0 +1,77 @@
+%large-tablet {
+  @media #{$LARGE-TABLET} {
+    position: relative;
+    #posting {
+      padding: 15px 0 25px;
+      .company {
+        display: block;
+        text-align: center;
+        float: none;
+        margin: 15px 15px 0;
+        .company-logo {
+          float: none;
+          width: auto;
+          height: 40px;
+          line-height: 40px;
+          margin: 0;
+          border: none;
+          img {
+            max-height: 100%;
+            max-width: 100%;
+          }
+        }
+        .business-name-and-industry {
+          float: none;
+          display: block;
+          margin-top: 10px;
+          text-align: center;
+          height: auto;
+          border-radius: 0;
+          width: auto;
+        }
+        .business-name {
+          font-size: 22px;
+          text-wrap: wrap;
+        }
+        .industry {
+          font-size: 15px;
+        }
+      }
+      .role {
+        position: relative;
+        margin: 40px 20px 0;
+        padding: 0;
+      }
+      .cooperation-mode-and-location {
+        margin: 10px 20px 0;
+        svg {
+          height: 16px;
+        }
+      }
+      #remuneration {
+        margin: 40px 20px 0;
+        .employment {
+          margin-top: 15px;
+        }
+      }
+      #searched-skills {
+        margin: 40px 20px 0;
+        .skills {
+          .skill {
+            width: 50%;
+            .levels {
+              .level {
+                width: 14px;
+                height: 14px;
+                margin-right: 9px;
+              }
+            }
+          }
+        }
+      }
+      #description {
+        margin: 40px 20px 0;
+      }
+    }
+  }
+}

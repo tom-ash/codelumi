@@ -15,7 +15,7 @@
   background: white;
   width: 1200px;
   transform-origin: top left;
-  outline: 1px solid #D7DBDD;
+  outline: 1px solid #d7dbdd;
   padding-bottom: 10px;
   .company {
     margin: 50px 0 0 50px;
@@ -65,24 +65,16 @@
     font-size: 80px;
   }
   .cooperation-mode-and-location {
-    margin: 10px 0 0 60px;
-    font-size: 36px !important;
-    svg {
-      height: 30px;
-      fill: #1d1b15;
-      margin-right: 12px;
-    }
+    @extend %cooperation-mode-and-location;
+    margin: 0 0 0 60px;
+    font-size: 36px;
     span {
       position: relative;
-      color: #1d1b15;
-      top: -3px;
+      top: -4px;
     }
-    .cooperation-mode {
-      margin-right: 50px;
-      float: left;
-    }
-    .location {
-      float: left;
+    svg {
+      height: 36px;
+      margin: 0 18px;
     }
   }
   .contract-and-remuneration {

@@ -1,0 +1,269 @@
+%base {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $POSTINGS-RESULTS-BACKGROUND;
+  width: 100%;
+  padding: 15px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  .section-heading {
+    h2 {
+      display: inline-block;
+      font-size: 14px;
+      color: #424949;
+    }
+    svg {
+      position: relative;
+      top: 2px;
+      display: inline-block;
+      height: 14px;
+      margin-right: 8px;
+      fill: #424949;
+    }
+  }
+  #posting {
+    position: relative;
+    background: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border: 1px solid $CONTAINER-BORDER-COLOR;
+    border: none;
+    box-shadow:
+      rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    border-radius: 8px;
+  }
+  .company {
+    position: relative;
+    @extend %company;
+    margin: 0 0 0 30px;
+    .business-name {
+      font-size: 17px;
+      a {
+        text-decoration: underline;
+      }
+    }
+    .industry {
+      top: 68px;
+      left: 205px;
+      font-size: 13px;
+      svg {
+        height: 13px;
+      }
+    }
+  }
+  .role {
+    margin: 30px 30px 0;
+    font-size: 30px;
+    line-height: 32px;
+    svg {
+      height: 18px;
+      position: relative;
+      top: 1px;
+      margin-right: 12px;
+    }
+  }
+  .cooperation-mode-and-location {
+    @extend %cooperation-mode-and-location;
+    svg {
+      height: 16px;
+      margin: 0 10px;
+    }
+    span {
+      position: relative;
+      top: -2px;
+    }
+    margin: 8px 30px 0;
+  }
+  #remuneration {
+    margin: 40px 30px 0;
+    h2 {
+      color: #34495e;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+  }
+  .contract-and-remuneration {
+    margin-top: 10px;
+    display: block;
+    @extend %contract-and-remuneration;
+    position: static;
+    text-align: left;
+    padding: 0;
+    .remuneration {
+      font-family: Oswald, sans-serif;
+    }
+    .b2b,
+    .employment {
+      float: left;
+      margin-right: 40px;
+      .contract {
+        font-size: 18px;
+      }
+      .amount {
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: 300;
+        margin-right: 10px;
+      }
+      .currency {
+        font-size: 18px;
+        margin-right: 5px;
+      }
+      .per {
+        font-size: 18px;
+      }
+    }
+  }
+  #description {
+    margin: 30px 30px 0;
+    padding-top: 20px;
+    .description {
+      margin: 10px 0 0;
+      padding: 0;
+      color: #424949;
+    }
+    border-top: 1px solid lightgray;
+  }
+  #searched-skills {
+    margin: 40px 30px 0;
+    h2 {
+      color: #34495e;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+  }
+  .skills {
+    @extend %skills;
+    margin-top: 0;
+
+    .skill {
+      float: left;
+      margin-top: 15px;
+      width: 140px;
+      .levels {
+        margin-top: 8px;
+        .level {
+          width: 15px;
+          height: 15px;
+          margin-right: 8px;
+          position: relative;
+        }
+      }
+    }
+  }
+  .description {
+    margin-top: 50px;
+    padding: 0 25px;
+    ul,
+    ol {
+      padding-left: 20px;
+    }
+  }
+  .application-link {
+    margin: 20px 30px 0;
+    .link {
+      a {
+        display: block;
+        margin: 20px auto 0;
+        width: 100px;
+        height: 40px;
+        border-radius: 4px;
+        background: black;
+        line-height: 40px;
+        color: white;
+        text-align: center;
+      }
+    }
+  }
+  .application {
+    display: none;
+    margin: 30px 30px 0;
+    padding-top: 20px;
+    h2 {
+      color: #34495e;
+      font-size: 18px;
+      font-weight: 400;
+    }
+    .application-confirmation {
+      margin-top: 20px;
+    }
+    .line {
+      margin-top: 20px;
+      border-bottom: 1px solid #d0d3d4;
+    }
+    form {
+      margin-top: 8px;
+    }
+    .text-input {
+      @extend %text-input;
+      width: 48%;
+      float: left;
+      margin-bottom: 0;
+      margin-top: 16px;
+      margin-right: 4%;
+      &:nth-of-type(2n) {
+        margin-right: 0;
+      }
+      label {
+        display: block;
+        margin-bottom: 6px !important;
+        font-weight: bold;
+        font-size: 14px;
+      }
+    }
+    .submit-button {
+      @extend %button;
+      margin-top: 30px;
+    }
+  }
+  .file-input {
+    width: 48%;
+    margin-top: 24px;
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .required {
+      height: 6px;
+      margin-left: 4px;
+      position: relative;
+      top: -5px;
+      fill: #c0392b;
+    }
+    .drag-and-drop-container {
+      @extend %drag-and-drop-container;
+    }
+    .error {
+      color: $ERROR-COLOR;
+      font-size: 14px;
+    }
+    &.error {
+      .drag-and-drop-container {
+        .drag-and-drop {
+          border: 1px dashed $ERROR-COLOR;
+          background: $ERROR-BACKGROUND-COLOR;
+        }
+      }
+    }
+  }
+  ul {
+    list-style-type: none;
+    margin-top: 8px;
+    width: 100%;
+    li {
+      white-space: nowrap;
+      overflow: hidden;
+      width: calc(100% - 40px);
+      text-overflow: ellipsis;
+    }
+  }
+}
