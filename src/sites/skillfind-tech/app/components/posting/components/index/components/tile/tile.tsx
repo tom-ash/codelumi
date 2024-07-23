@@ -11,29 +11,31 @@ import { Currency } from '../../../../postings.types'
 import { Position } from '../../../common/position/position'
 import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
 
+export interface PostingTileProps {
+  id: number
+  businessName: string
+  industry: string
+  industryIcon: string
+  b2bMin?: number
+  b2bMax?: number
+  b2bCurrency?: Currency
+  employmentMin?: number
+  employmentMax?: number
+  employmentCurrency?: Currency
+  skills: SkillProps[]
+  logo: string
+  href: string
+  locality?: string
+  country?: string
+  cooperationMode: {
+    icon: string
+    label: string
+  }
+  position: string
+}
+
 interface PostingIndexTileInterface {
-  (props: {
-    id: number
-    businessName: string
-    industry: string
-    industryIcon: string
-    b2bMin?: number
-    b2bMax?: number
-    b2bCurrency?: Currency
-    employmentMin?: number
-    employmentMax?: number
-    employmentCurrency?: Currency
-    skills: SkillProps[]
-    logo: string
-    href: string
-    locality?: string
-    country?: string
-    cooperationMode: {
-      icon: string
-      label: string
-    }
-    position: string
-  }): React.ReactElement
+  (props: PostingTileProps): React.ReactElement
 }
 
 export const PostingIndexTile: PostingIndexTileInterface = props => {
