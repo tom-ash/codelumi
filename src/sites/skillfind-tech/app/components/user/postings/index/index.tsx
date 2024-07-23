@@ -4,18 +4,19 @@ import { PostingIndexTile } from '../../../posting/components/index/components/t
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { Link } from '../../../../../../shared/app/components/support/link/link'
-import { SVG } from '../../../../../../shared/app/components/support/svg/svg'
+// import { SVG } from '../../../../../../shared/app/components/support/svg/svg'
 import { useTexts } from '../../../../../../shared/app/functions/store/use-texts'
 import { useDispatch } from 'react-redux'
 import { useControl } from '../../../../../../shared/app/functions/store/use-control'
 import { deleteApi } from '../../../../../../shared/app/functions/fetch-api/fetch-api'
 import { changeUrl } from '../../../../../../shared/app/functions/routes/changers/change-url'
+import { PostingImage as Image } from './components/image'
 
 const UserPostingsIndex = () => {
   useStyles(styles)
 
   const { postings } = useData()
-  const { name, cv, coverLetter, email, phoneNumber, gitHub, linkedIn } = useTexts()
+  const { name, cv, coverLetter, email, phoneNumber, gitHub, linkedIn, socialImage, download } = useTexts()
   const dispatch = useDispatch()
   const setControl = (value: any) => dispatch({ type: 'control', value })
   const { deletedPosting } = useControl()
@@ -27,7 +28,8 @@ const UserPostingsIndex = () => {
         {postings.map((posting: any) => {
           const {
             link: { href, label },
-            applications,
+            // applications,
+            image: imageSrc,
           } = posting
 
           return (
@@ -49,6 +51,13 @@ const UserPostingsIndex = () => {
                   Usuń
                 </button>
               </div>
+              <Image
+                heading={socialImage}
+                imageSrc={imageSrc}
+                // imageAlt
+                postingId={posting.id}
+                downloadLabel={download}
+              />
             </li>
           )
         })}

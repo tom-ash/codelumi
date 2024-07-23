@@ -25,8 +25,8 @@ export const SkillLevels = (props: SkillLevelsProps) => {
             ? levels[levelHovered - 1].toLowerCase()
             : ''
           : level > index || levelHovered > index
-          ? levelName.toLowerCase()
-          : ''
+            ? levelName.toLowerCase()
+            : ''
         const classNames = ['level', fillClass]
         const sharedLevelProps = { className: classNames.join(' '), key: availableLevel }
 

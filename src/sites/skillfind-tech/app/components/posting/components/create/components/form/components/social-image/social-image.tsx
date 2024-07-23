@@ -79,7 +79,7 @@ export const SocialImage = () => {
         height: sectionHeight,
       }}
     >
-      <SectionHeading name='socialImage' />
+      {/* <SectionHeading name='socialImage' />
       <Preview
         id={'social-image-preview'}
         position={position}
@@ -97,7 +97,7 @@ export const SocialImage = () => {
         employmentCurrency={employmentCurrency}
         skills={skills}
         scale={scale}
-      />
+      /> */}
       <Preview
         id={'social-image-canvas'}
         position={position}

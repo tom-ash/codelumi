@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 // {/* <div className='applications'>
 // <div className='header'>
 //   <span className='name'>{name}</span>
@@ -19,7 +9,6 @@
 //   <span className='email'>{linkedIn}</span>
 // </div>
 // </div> */}
-
 
 // {/* <ul>
 //                   {/* @ts-ignore */}
