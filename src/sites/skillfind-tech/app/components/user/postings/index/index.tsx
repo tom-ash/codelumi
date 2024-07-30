@@ -14,7 +14,21 @@ const UserPostingsIndex = () => {
   useStyles(styles)
 
   const { postings } = useData()
-  const { name, cv, coverLetter, email, phoneNumber, gitHub, linkedIn, socialImage, download, createdAt: createdAtLabel, expiresAt: expiresAtLabel, edit: editLabel, delete: deleteLabel } = useTexts()
+  const {
+    name,
+    cv,
+    coverLetter,
+    email,
+    phoneNumber,
+    gitHub,
+    linkedIn,
+    socialImage,
+    download,
+    createdAt: createdAtLabel,
+    expiresAt: expiresAtLabel,
+    edit: editLabel,
+    delete: deleteLabel,
+  } = useTexts()
   const dispatch = useDispatch()
   const setControl = (value: any) => dispatch({ type: 'control', value })
   const { deletedPosting } = useControl()
@@ -42,9 +56,7 @@ const UserPostingsIndex = () => {
             country,
             cooperationMode,
             position,
-            link: {
-              href: editHref,
-            },
+            link: { href: editHref },
             createdAt,
             expiresAt,
             image: imageSrc,

@@ -11,6 +11,12 @@
   &#social-image-canvas {
     position: fixed;
     left: 10000px;
+
+    // // EDIT
+    // left: 0;
+    // right: 0;
+    // margin: 0 auto;
+    // top: 100px;
   }
   background: white;
   width: 1200px;
@@ -21,28 +27,25 @@
     margin: 50px 0 0 50px;
     .company-logo {
       float: left;
-      width: 250px;
-      height: 250px;
-      line-height: 250px;
-      margin-right: 60px;
-      border: 1px solid lightgray;
-      text-align: center;
+      margin-right: 50px;
+      line-height: 240px;
+      background: lightgray;
       img {
         vertical-align: middle;
-        max-width: calc(100% - 40px);
-        max-height: calc(100% - 40px);
+        max-height: 240px;
+        max-width: 350px;
       }
     }
     .business-name-and-industry {
       float: left;
-      height: 250px;
+      height: 240px;
       border-top-left-radius: 8px;
       border-bottom-left-radius: 8px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       .business-name {
-        font-size: 60px;
+        font-size: 50px;
         color: black;
       }
       .industry {
@@ -61,12 +64,15 @@
     }
   }
   .role {
-    margin: 60px 0 0 60px;
+    margin: 50px 50px 0;
     font-size: 80px;
+    border-top: 2px solid #d7dbdd;
+    padding-top: 20px;
+    vertical-align: top;
   }
   .cooperation-mode-and-location {
     @extend %cooperation-mode-and-location;
-    margin: 0 0 0 60px;
+    margin: 0 0 0 50px;
     font-size: 36px;
     span {
       position: relative;
@@ -79,7 +85,7 @@
   }
   .contract-and-remuneration {
     @extend %contract-and-remuneration;
-    margin: 60px 0 0 60px;
+    margin: 50px 50px 0;
     padding: 0;
     .b2b,
     .employment {
@@ -87,7 +93,7 @@
       float: left;
     }
     .b2b {
-      margin-right: 60px;
+      margin-right: 50px;
     }
     .contract {
       font-size: 30px;
@@ -97,7 +103,6 @@
       font-weight: 350;
       .amount {
         margin-right: 10px;
-        // font-weight: 300;
       }
       .currency {
         margin-right: 10px;
@@ -109,11 +114,11 @@
   }
   .skills {
     position: relative;
-    margin: 40px 0 60px 60px;
+    margin: 0 0 50px 50px;
     .skill {
       float: left;
       width: 280px;
-      margin-top: 40px;
+      margin-top: 50px;
       .name {
         font-size: 34px;
       }

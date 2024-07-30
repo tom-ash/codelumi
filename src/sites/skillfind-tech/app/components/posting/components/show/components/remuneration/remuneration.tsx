@@ -1,6 +1,5 @@
 import React from 'react'
 import { useData } from '../../../../../../../../shared/app/functions/store/use-data'
-import { SectionHeading } from '../../../../../../../../shared/app/components/support/headings/section-heading'
 import { Remuneration as RemunerationPartial } from '../../../common/remuneration/remuneration'
 
 interface RemunerationInterface {
@@ -17,16 +16,13 @@ export const Remuneration: RemunerationInterface = () => {
   }
 
   return (
-    <section id='remuneration'>
-      <SectionHeading name='remuneration' />
-      <RemunerationPartial
-        b2bMin={b2bMin}
-        b2bMax={b2bMax}
-        employmentMin={employmentMin}
-        employmentMax={employmentMax}
-        b2bCurrency={b2bCurrency}
-        employmentCurrency={employmentCurrency}
-      />
-    </section>
+    <RemunerationPartial
+      b2bMin={b2bMin}
+      b2bMax={b2bMax}
+      employmentMin={employmentMin}
+      employmentMax={employmentMax}
+      b2bCurrency={b2bCurrency}
+      employmentCurrency={employmentCurrency}
+    />
   )
 }

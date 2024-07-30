@@ -2,76 +2,63 @@
   @media #{$LARGE-TABLET} {
     position: relative;
     #posting {
-      padding: 15px 0 25px;
+      padding: 5px 0 25px;
       .company {
-        display: block;
-        text-align: center;
         float: none;
-        margin: 15px 15px 0;
+        margin: 10px 15px 0;
         .company-logo {
-          float: none;
-          width: auto;
-          height: 40px;
-          line-height: 40px;
-          margin: 0;
-          border: none;
+          margin: 0 15px 0 0;
+          line-height: 80px;
           img {
-            max-height: 100%;
-            max-width: 100%;
+            max-width: 120px;
+            max-height: 80px;
           }
         }
         .business-name-and-industry {
-          float: none;
-          display: block;
-          margin-top: 10px;
-          text-align: center;
-          height: auto;
-          border-radius: 0;
-          width: auto;
-        }
-        .business-name {
-          font-size: 22px;
-          text-wrap: wrap;
-        }
-        .industry {
-          font-size: 15px;
+          height: 80px;
         }
       }
       .role {
         position: relative;
-        margin: 40px 20px 0;
-        padding: 0;
+        margin: 25px 15px 0;
+        padding: 15px 0 0;
       }
       .cooperation-mode-and-location {
-        margin: 10px 20px 0;
-        svg {
-          height: 16px;
-        }
+        margin: 10px 15px 0;
       }
-      #remuneration {
-        margin: 40px 20px 0;
-        .employment {
-          margin-top: 15px;
-        }
-      }
-      #searched-skills {
-        margin: 40px 20px 0;
-        .skills {
-          .skill {
-            width: 50%;
-            .levels {
-              .level {
-                width: 14px;
-                height: 14px;
-                margin-right: 9px;
-              }
+      .skills {
+        margin: 10px 15px 0;
+        .skill {
+          width: 130px;
+          margin: 20px 0 0;
+          .levels {
+            .level {
+              width: 14px;
+              height: 14px;
+              margin: 0 10px 0 0;
             }
           }
         }
       }
-      #description {
-        margin: 40px 20px 0;
+      .contract-and-remuneration {
+        margin: 30px 15px 0;
+        .b2b,
+        .employment {
+          .contract {
+            font-size: 15px;
+          }
+        }
+        .employment {
+          margin: 10px 0 0;
+        }
       }
+      #description {
+        margin: 20px 15px 0;
+        padding: 20px 0 0;
+      }
+    }
+    .application-link {
+      margin: 15px 0 0;
     }
   }
 }

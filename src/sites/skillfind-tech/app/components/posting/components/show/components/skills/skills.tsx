@@ -1,6 +1,5 @@
 import React from 'react'
 import { useData } from '../../../../../../../../shared/app/functions/store/use-data'
-import { SectionHeading } from '../../../../../../../../shared/app/components/support/headings/section-heading'
 import { Skills as SkillsPartial } from '../../../common/skills/skills'
 import { SkillView } from '../../../shared/components/skill/skill.types'
 
@@ -14,12 +13,9 @@ export const Skills: SkillsInterface = () => {
   } = useData()
 
   return (
-    <section id='searched-skills'>
-      <SectionHeading name='skills' />
-      <SkillsPartial
-        skills={skills}
-        view={SkillView.indexVisitor}
-      />
-    </section>
+    <SkillsPartial
+      skills={skills}
+      view={SkillView.indexVisitor}
+    />
   )
 }

@@ -3,16 +3,18 @@ import { PostingIndexTile, PostingTileProps } from '../../../../posting/componen
 import { Link } from '../../../../../../../shared/app/components/support/link/link'
 
 interface TileInterface {
-  (props: PostingTileProps & {
-    createdAt: string
-    expiresAt: string
-    editHref: string
-    setControl(params: any): void
-    createdAtLabel: string
-    expiresAtLabel: string
-    editLabel: string
-    deleteLabel: string
-  }): React.ReactElement
+  (
+    props: PostingTileProps & {
+      createdAt: string
+      expiresAt: string
+      editHref: string
+      setControl(params: any): void
+      createdAtLabel: string
+      expiresAtLabel: string
+      editLabel: string
+      deleteLabel: string
+    }
+  ): React.ReactElement
 }
 
 export const Tile: TileInterface = props => {
@@ -69,20 +71,12 @@ export const Tile: TileInterface = props => {
       <div className='panel'>
         <div className='meta'>
           <div className='created-at'>
-            <label>
-              {createdAtLabel}
-            </label>
-            <div className='value'>
-              {createdAt}
-            </div>                  
+            <label>{createdAtLabel}</label>
+            <div className='value'>{createdAt}</div>
           </div>
           <div className='expires-at'>
-            <label>
-              {expiresAtLabel}
-            </label>
-            <div className='value'>
-              {expiresAt}
-            </div>                  
+            <label>{expiresAtLabel}</label>
+            <div className='value'>{expiresAt}</div>
           </div>
         </div>
         <div className='buttons'>

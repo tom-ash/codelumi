@@ -26,8 +26,8 @@ const PostingsShow: PostingShowInterface = props => {
         <Company />
         <Position />
         <CooperationModeAndLocation />
-        <Remuneration />
         <Skills />
+        <Remuneration />
         <Description />
       </div>
       <Application />
