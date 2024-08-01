@@ -18,6 +18,7 @@ interface PreviewInterface {
       value: string
       label: string
       icon: string
+      symbol: string
     }
     logo: string
     businessName: string

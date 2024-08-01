@@ -30,6 +30,7 @@ export interface PostingTileProps {
   cooperationMode: {
     icon: string
     label: string
+    symbol: string
   }
   position: string
 }

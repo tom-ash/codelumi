@@ -9,19 +9,21 @@ interface CooperationModeAndLocationInterface {
     cooperationMode: {
       icon: string
       label: string
+      symbol: string
     }
   }): React.ReactElement
 }
 
 export const CooperationModeAndLocation: CooperationModeAndLocationInterface = props => {
   const { locality, country, cooperationMode } = props
-
-  const { icon: cooperationModeIcon, label: cooperationModeLabel } = cooperationMode
+  const { symbol: cooperationModeSymbol, label: cooperationModeLabel } = cooperationMode
 
   return (
     <section className='cooperation-mode-and-location'>
-      <span className='cooperation-mode'>{cooperationModeLabel}</span>
-      <SVG name='minus' />
+      <span className='cooperation-mode'>
+        {cooperationModeLabel}
+      </span>
+      <SVG name={cooperationModeSymbol} />
       <span className='location'>
         {locality}, {country}
       </span>
