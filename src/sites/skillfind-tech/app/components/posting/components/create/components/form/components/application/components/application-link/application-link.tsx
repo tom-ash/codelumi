@@ -12,6 +12,7 @@ export const ApplicationLink: ApplicationLinkInterface = () => {
       <TextInput
         inputKey='applicationLink'
         validate={validateApplicationLink}
+        match={/^https\:\/\/.*/}
       />
     </div>
   )

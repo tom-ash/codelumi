@@ -7,6 +7,8 @@ interface SubmitForm {
   (args: {
     businessName: string
     businessNameError: string
+    link: string
+    linkError: string
     industry: string
     lang: Lang
     email: string
@@ -19,7 +21,6 @@ interface SubmitForm {
     setErrors(args: any): void // TODO
     logo: Picture
     logoError: string
-    link?: string
   }): void
 }
 
@@ -27,6 +28,8 @@ export const submitForm: SubmitForm = args => {
   const {
     businessName,
     businessNameError,
+    link,
+    linkError,
     industry,
     logo,
     logoError,
@@ -39,12 +42,13 @@ export const submitForm: SubmitForm = args => {
     termsOfServiceConsentLabel,
     setControl,
     setErrors,
-    link,
   } = args
 
   const validations = validateInputs({
     businessName,
     businessNameError,
+    link,
+    linkError,
     industry,
     email,
     emailError,

@@ -43,6 +43,7 @@ export const Submit = () => {
     locality,
     sublocality,
     businessName,
+    link,
     industry,
     email,
     password,
@@ -61,6 +62,7 @@ export const Submit = () => {
     termsOfServiceConsentLabel,
     logoInputMissingError: logoError,
     positionInputInvalidError: positionError,
+    linkInputInvalidError: linkError,
   } = useTexts()
 
   const label = isSubmitting ? (
@@ -102,6 +104,8 @@ export const Submit = () => {
         sublocality,
         businessName,
         businessNameError,
+        link,
+        linkError,
         industry,
         email,
         emailError,
