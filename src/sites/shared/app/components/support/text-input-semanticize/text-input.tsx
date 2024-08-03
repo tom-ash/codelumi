@@ -17,6 +17,7 @@ interface TextInputInterface {
     required?: boolean
     optional?: boolean
     type?: TextInputType
+    match?: RegExp
     // placeholder?: string
     // className?: string
     // match?: RegExp
@@ -40,6 +41,7 @@ export const TextInput: TextInputInterface = props => {
     required = false,
     optional = false,
     type,
+    match,
     // classNames,
     // match,
     // onClick: onClickCallback,
@@ -105,6 +107,7 @@ export const TextInput: TextInputInterface = props => {
       error={error}
       placeholder={placeholder}
       disabled={disabled}
+      match={match}
     >
       {children}
     </SemanticTextInput>

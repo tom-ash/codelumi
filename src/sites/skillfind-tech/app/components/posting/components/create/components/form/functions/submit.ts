@@ -49,6 +49,7 @@ type SubmitProps = {
   applicationLinkError: string
 } & UserObject & {
     businessNameError: string
+    linkError: string
     logoError: string
     emailError: string
     passwordError: string
@@ -82,6 +83,10 @@ export const submit = async (props: SubmitProps) => {
     sublocality,
     businessName,
     businessNameError,
+    link,
+    linkError,
+    logo,
+    logoError,
     industry,
     email,
     emailError,
@@ -89,8 +94,6 @@ export const submit = async (props: SubmitProps) => {
     passwordError,
     termsOfServiceConsent,
     termsOfServiceConsentLabel,
-    logo,
-    logoError,
     authorized,
     setErrors,
     setControl,
@@ -159,6 +162,8 @@ export const submit = async (props: SubmitProps) => {
       ...validateUserInputs({
         businessName,
         businessNameError,
+        link,
+        linkError,
         industry,
         email,
         emailError,

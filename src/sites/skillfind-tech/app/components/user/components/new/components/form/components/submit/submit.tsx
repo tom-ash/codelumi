@@ -12,6 +12,7 @@ export const Submit = () => {
     emailInputInvalidError: emailError,
     passwordInputInvalidError: passwordError,
     logoInputMissingError: logoError,
+    linkInputInvalidError: linkError,
   } = useTexts()
   const { email, password, termsOfServiceConsent, logo, businessName, industry, link } = useInputs()
 
@@ -20,6 +21,7 @@ export const Submit = () => {
     businessName,
     businessNameError,
     link,
+    linkError,
     industry,
     // industryError
     logo,

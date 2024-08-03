@@ -2,11 +2,13 @@ import { validateEmail } from '../../../../../../../../../../../shared/app/compo
 import { validatePassword } from '../../../../../../../../../../../shared/app/components/support/inputs/password/validators/validate-password'
 import { validateBusinessName } from '../../business-name/functions/validate-business-name'
 import { validateTermsOfService } from '../../email-credentials/functions/validate-terms-of-service'
+import { validateLink } from '../../link/functions/validate-application-link'
 import { validateLogo } from '../../logo/functions/validate-logo'
 import { UserObject } from '../types/user-object.interface'
 
 type ValidateUserObjectParams = UserObject & {
   businessNameError: string
+  linkError: string
   logoError: string
   emailError: string
   passwordError: string
@@ -21,6 +23,8 @@ export const validateInputs: ValidateInputs = params => {
   const {
     businessName,
     businessNameError,
+    link,
+    linkError,
     logo,
     logoError,
     email,
@@ -35,6 +39,11 @@ export const validateInputs: ValidateInputs = params => {
     validateBusinessName({
       value: businessName,
       errorMessage: businessNameError,
+      setErrors,
+    }),
+    validateLink({
+      value: link,
+      errorMessage: linkError,
       setErrors,
     }),
     validateLogo({

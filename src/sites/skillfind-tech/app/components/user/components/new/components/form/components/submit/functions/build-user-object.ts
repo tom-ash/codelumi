@@ -30,7 +30,7 @@ export const buildUserObject: BuildUserObject = args => {
     password,
     termsOfServiceConsent,
     logo,
-    link,
+    link: link === 'https://' ? undefined : link,
   }
 
   userObject.password = hashPassword(userObject.password, userObject.email)
