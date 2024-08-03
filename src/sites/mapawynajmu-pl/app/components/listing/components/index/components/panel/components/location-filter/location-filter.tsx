@@ -25,6 +25,7 @@ export const LocationFilter = () => {
     <GooglePlacesAutocomplete
       onItemClick={filterByLocation}
       onInputEnter={filterByLocation}
+      country='pl'
     />
   )
 }

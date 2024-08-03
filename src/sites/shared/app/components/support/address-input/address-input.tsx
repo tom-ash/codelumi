@@ -6,6 +6,8 @@ import { useInputs } from '../../../functions/store/use-inputs'
 import { ManagedText } from 'managed-inputs'
 import { GooglePlacesAutocompleteItem } from '../../../types/google-places-autocomplete'
 
+export type GooglePlacesAutocompleteCountry = string | string[]
+
 interface AddressInputInterface {
   (props: {
     items: GooglePlacesAutocompleteItem[]
@@ -15,11 +17,12 @@ interface AddressInputInterface {
     setCurrentItem(autocompleteItem: number): void
     setHideItemsOnBlur(hideItemsOnBlur: boolean): void
     isError?: boolean
+    country?: GooglePlacesAutocompleteCountry
   }): React.ReactElement
 }
 
 export const AddressInput: AddressInputInterface = props => {
-  const { currentItemIndex, hideItemsOnBlur, onInputEnter, setCurrentItem, setHideItemsOnBlur, isError } = props
+  const { currentItemIndex, hideItemsOnBlur, onInputEnter, setCurrentItem, setHideItemsOnBlur, isError, country } = props
   const { placesAutocompleteInputPlaceholder: placeholder } = useTexts()
   const { location } = useInputs()
   const { items } = useData()
@@ -71,8 +74,8 @@ export const AddressInput: AddressInputInterface = props => {
     autocompleteService.getPlacePredictions(
       {
         input,
-        componentRestrictions: { country: 'pl' },
         sessionToken,
+        ...country && { componentRestrictions: { country } },
       },
       items => {
         if (!items) return setData({ items: [] })

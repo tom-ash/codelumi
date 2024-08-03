@@ -60,6 +60,7 @@ export const Location = () => {
       <MapMarker
         item={item}
         pinBuilder={pinBuilder}
+        lang='en'
         // @ts-ignore
         mapStyles={mapStyles}
       />

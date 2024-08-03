@@ -28,6 +28,7 @@ const PostingIndex: PostingIndex = props => {
         ShowItem={ShowItem}
         items={postings}
         pinBuilder={pinBuilder}
+        lang='en'
         // @ts-ignore
         mapStyles={mapStyles}
       />

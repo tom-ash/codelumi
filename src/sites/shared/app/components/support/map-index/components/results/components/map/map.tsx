@@ -10,11 +10,11 @@ import { PinBuilder } from '../../../../types/pin-builder.interface'
 import { MapStyles } from '../../../../map-index'
 
 interface MapInterface {
-  (props: { items: Item[]; pinBuilder: PinBuilder; mapStyles?: MapStyles }): React.ReactElement
+  (props: { items: Item[]; pinBuilder: PinBuilder; lang?: Lang, mapStyles?: MapStyles }): React.ReactElement
 }
 
 export const Map: MapInterface = props => {
-  const { items, pinBuilder, mapStyles } = props
+  const { items, pinBuilder, lang, mapStyles } = props
 
   const { isMapInitialized } = useApp()
   const { mapOptions, isPinsDrawn } = useControl()
@@ -49,5 +49,5 @@ export const Map: MapInterface = props => {
     }
   }, [isMapInitialized, mapOptions])
 
-  return <GoogleMap mapStyles={mapStyles} />
+  return <GoogleMap lang={lang} mapStyles={mapStyles} />
 }

@@ -7,7 +7,16 @@ import { useControl } from './store/use-control'
 import removePins from '../../../mapawynajmu-pl/app/components/listing/functions/map/pins/remove-pins'
 import { MapStyles } from '../components/support/map-index/map-index'
 
-export const useGoogleMaps = (googleMapsApiKey: any, mapStyles?: MapStyles) => {
+export const useGoogleMaps = (params: {
+  googleMapsApiKey: any,
+  lang?: Lang,
+  mapStyles?: MapStyles,
+}) => {
+  const {
+    googleMapsApiKey,
+    lang,
+    mapStyles,
+  } = params
   const { store } = useContext(ReactReduxContext)
   const { dispatch } = store
   const setApp = (value: any) => dispatch({ type: 'app', value })
@@ -15,9 +24,11 @@ export const useGoogleMaps = (googleMapsApiKey: any, mapStyles?: MapStyles) => {
   const { mapOptions } = useControl()
   const { googleMaps } = scripts
 
+  const langQuery = lang ? `&language=${lang}` : ''
+
   useEffect(() => {
     if (!googleMaps) {
-      loadScript(`https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&libraries=places&language=pl`).then(
+      loadScript(`https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&libraries=places${langQuery}`).then(
         () => {
           const newScripts = { ...scripts, googleMaps: true }
 

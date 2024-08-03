@@ -15,12 +15,13 @@ interface ResultsInterface {
     ListItem: ItemIndexInterface
     ShowItem: ItemShowInterface
     pinBuilder: PinBuilder
+    lang?: Lang
     mapStyles?: MapStyles
   }): React.ReactElement
 }
 
 export const Results: ResultsInterface = props => {
-  const { renderShow, ListItem, ShowItem, items, pinBuilder, mapStyles } = props
+  const { renderShow, ListItem, ShowItem, items, pinBuilder, lang, mapStyles } = props
   const { isSSR } = useControl()
 
   return (
@@ -41,6 +42,7 @@ export const Results: ResultsInterface = props => {
       <Map
         items={items}
         pinBuilder={pinBuilder}
+        lang={lang}
         mapStyles={mapStyles}
       />
     </section>

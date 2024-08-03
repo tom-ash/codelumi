@@ -17,12 +17,13 @@ interface MapIndexInterface {
     ShowItem: ItemShowInterface
     pinBuilder: PinBuilder
     items: Item[]
+    lang?: Lang
     mapStyles?: MapStyles
   }): React.ReactElement
 }
 
 export const MapIndex: MapIndexInterface = props => {
-  const { items, renderShow = false, Panel, ListItem, ShowItem, pinBuilder, mapStyles } = props
+  const { items, renderShow = false, Panel, ListItem, ShowItem, pinBuilder, lang, mapStyles } = props
 
   return (
     <section id='map-index'>
@@ -33,6 +34,7 @@ export const MapIndex: MapIndexInterface = props => {
         ShowItem={ShowItem}
         items={items}
         pinBuilder={pinBuilder}
+        lang={lang}
         mapStyles={mapStyles}
       />
     </section>

@@ -61,8 +61,8 @@ class AnnouncementIndexSearch extends React.Component {
             ShowItem={ListingsShow}
             items={announcements}
             pinBuilder={pinBuilder}
+            lang='pl'
           />
-
           <section id='visitor-articles-index'>
             <div className='slider'>
               <Splide

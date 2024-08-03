@@ -10,6 +10,7 @@ import { useErrors } from '../../../functions/store/use-errors'
 import { useControl } from '../../../functions/store/use-control'
 import removePins from '../../../../../mapawynajmu-pl/app/components/listing/functions/map/pins/remove-pins'
 import { MapStyles } from '../map-index/map-index'
+import { GooglePlacesAutocompleteCountry } from '../address-input/address-input'
 
 interface MapMarkerInterface {
   (props: {
@@ -20,6 +21,8 @@ interface MapMarkerInterface {
     }
     pinBuilder: PinBuilder
     mapStyles?: MapStyles
+    lang?: Lang
+    country?: GooglePlacesAutocompleteCountry
   }): React.ReactElement
 }
 
@@ -28,7 +31,7 @@ export interface PinBuilder {
 }
 
 export const MapMarker: MapMarkerInterface = props => {
-  const { item, pinBuilder, mapStyles } = props
+  const { item, pinBuilder, mapStyles, country, lang } = props
   const dispatch = useDispatch()
   const setData = (value: any) => dispatch({ type: 'data', value })
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
@@ -85,8 +88,9 @@ export const MapMarker: MapMarkerInterface = props => {
           })
         }
         isError={isError}
+        country={country}
       />
-      <GoogleMap mapStyles={mapStyles} />
+      <GoogleMap lang={lang} mapStyles={mapStyles} />
     </div>
   )
 }

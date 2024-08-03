@@ -44,6 +44,8 @@ export const Location = () => {
       <MapMarker
         item={item}
         pinBuilder={pinBuilder}
+        lang='pl'
+        country='pl'
       />
     </div>
   )
