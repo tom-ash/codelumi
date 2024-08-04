@@ -26,60 +26,38 @@ import { useRender } from '../../shared/app/functions/store/use-render'
 import { useDispatch } from 'react-redux'
 import { useScreenSizeHandler } from '../../mapawynajmu-pl/app/functions/use-screen-size-handler'
 
+const Row = (props: { className: string }) => {
+  const { className } = props
+
+  return (
+    <div className={className}>
+      <div className='nook' />
+      <div className='traverse' />
+      <div className='nook' />
+      <div className='traverse' />
+      <div className='nook' />
+      <div className='traverse' />
+      <div className='nook' />
+    </div>
+  )
+}
+
 const App = () => {
   useStyles(styles)
 
-  useStateToRouteMatcher()
-  useScreenSizeHandler()
-
-  const { lang } = useApp()
-  const render = useRender()
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    // @ts-ignore
-    window.apiUrl = apiUrl
-    // @ts-ignore
-    window.lang = lang
-    // @ts-ignore
-    dispatch({ type: 'app', value: { isDocumentReady: true } })
-  }, [lang])
-
-  useEffect(() => setIsMobile(dispatch), []) // TODO: Consider moving to server.
-  useEffect(() => setConsents(dispatch), [])
-
-  const {
-    page: renderPage,
-    image: renderImage,
-    visitor: renderVisitor,
-    postings: renderPostings,
-    user: renderUser,
-    'user/postings/index': renderUserPostingsIndex,
-    'user/postings/edit': renderUserPostingsEdit,
-    'user/users/edit': renderUserUsersEdit,
-    assetsIndex,
-    redirectsIndex,
-    renderQuestions,
-  } = render
-
   return (
-    <>
-      <Header />
-      <div id='content'>
-        {renderUser && <User />}
-        {renderUserPostingsIndex && <UserPostingsIndex />}
-        {renderUserPostingsEdit && <UserPostingsEdit />}
-        {renderUserUsersEdit && <UserUsersEdit />}
-        {renderPostings && <Postings />}
-        {renderVisitor && <Visitor />}
-        {renderImage && <Image />}
-        {assetsIndex && <AssetsIndex />}
-        {redirectsIndex && <RedirectsIndex />}
-        {renderQuestions && <QuestionsShow />}
-        {renderPage && <Page />}
+    <div id='bookcase'>
+      <Row className='bottom' />
+      <Row className='bottom' />
+      <div id='tv-pane'>
+        <div id='tv-panel'>
+          <div id='tv' />
+        </div>
       </div>
-      <Footer />
-    </>
+
+
+
+    </div>
   )
 }
 
