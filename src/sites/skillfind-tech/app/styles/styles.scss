@@ -14,6 +14,18 @@
 
 
 
+// 8 shelves = 8 * 2.5 = 20
+
+// 269 - 20 = 249
+// 9 nooks = 27.67 per nook
+// tv pane = 3 * 27.67 + 2 * 2.5 = 82.98 + 5 = 87.98
+
+// html {
+//   height: 400px;
+//   width: 300px;
+// }
+
+
 #bookcase {
 
   height: 269px;
@@ -29,14 +41,28 @@
     width: 100%;
     height: 90.88px;
     border-top: 2.5px solid black;
+    display: flex;
+    .crossbar {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      .shelf {
+        width: 100%;
+        height: 2.5px;
+        background: black;
+      }
+      .nook {
+        height: 27.67px;
+        // flex-grow: 1;
+      }
+    }
     #tv-panel {
-      width: 143.79px;
-      height: 90.88px;
+      width: 141.74px; // 17.95px difference
+      height: 88.83px; // 17.95px difference
       background: black;
       position: relative;
       display: block;
       flex: none;
-      margin: 0 auto;
       #tv {
         position: absolute;
         width: 123.79px;
@@ -50,9 +76,8 @@
       }
     }
   }
-
-  .bottom {
-    height: 25px;
+  .bottom, .top {
+    // height: 27.67px;
     width: 100%;
     border-top: 2.5px solid black;
     display: flex;
@@ -60,11 +85,15 @@
       width: 2.5px;
       background: black;
       height: 100%;
+      height: 27.11px;
     }
     .nook {
       flex-grow: 1;
     }
   }
-
-
+  .top {
+    &:last-of-type {
+      border-top: none;
+    }
+  }
 }

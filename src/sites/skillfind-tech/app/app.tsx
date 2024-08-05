@@ -50,13 +50,28 @@ const App = () => {
       <Row className='bottom' />
       <Row className='bottom' />
       <div id='tv-pane'>
+        <div className='crossbar'>
+          <div className='nook' />
+          <div className='shelf' />
+          <div className='nook' />
+          <div className='shelf' />
+          <div className='nook' />
+        </div>
         <div id='tv-panel'>
           <div id='tv' />
         </div>
+        <div className='crossbar'>
+          <div className='nook' />
+          <div className='shelf' />
+          <div className='nook' />
+          <div className='shelf' />
+          <div className='nook' />
+        </div>
       </div>
-
-
-
+      <Row className='top' />
+      <Row className='top' />
+      <Row className='top' />
+      <Row className='top' />
     </div>
   )
 }
