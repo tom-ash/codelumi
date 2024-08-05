@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
-.logo {
-  font-family: 'IBM Plex Mono', monospace;
+
+#logo {
   font-family: 'Source Sans 3', sans-serif;
-  color: black;
-  a {
-    display: flex;
-    justify-content: center;
+  padding-left: 30px;
+  position: relative;
+  top: 0;
+  left: 0;
+  .icon {
+    position: absolute;
+    top: 18px;
+    left: 0;
   }
-  #logo-name {
+  span {
+    font-size: 20px;
+    line-height: 60px;
     display: block;
-    font-size: 22px;
-    font-weight: 400;
-    .tech {
-      margin-left: 9px;
-      color: black;
-    }
   }
 }

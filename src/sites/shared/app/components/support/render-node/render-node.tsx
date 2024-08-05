@@ -17,10 +17,10 @@ const Share = loadable(() => import('./components/share/share'))
 const Definition = loadable(() => import('./components/definition/definition'))
 const Figure = loadable(() => import('./components/figure/figure'))
 
-const LogoIcon = loadable(() => import('../../../../../skillfind-tech/app/components/scaffold/header/components/logo'))
+const LogoIcon = loadable(() => import('../../../../../skillfind-tech/app/components/scaffold/logo/logo'))
 
 const SkillFindLogoLogoAndTitle = loadable(
-  () => import('../../../../../skillfind-tech/app/components/scaffold/header/components/image/image')
+  () => import('../../../../../skillfind-tech/app/components/scaffold/symbol/image')
 )
 const MapawynajmuPlExtendedLogo = loadable(
   () => import('../../../../../mapawynajmu-pl/app/components/support/extended-logo/extended-logo')

@@ -1,0 +1,32 @@
+#logo {
+  position: relative;
+  .icon {
+    scale: 0.1;
+    transform-origin: top left;
+  }
+  .lens {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 200px;
+    width: 200px;
+    border: 20px solid black;
+    border-radius: 100px;
+    text-align: center;
+    line-height: 168px;
+    font-size: 80px;
+    font-weight: 600;
+  }
+  .handle {
+    position: absolute;
+    top: 240px;
+    left: 130px;
+    height: 24px;
+    width: 120px;
+    background: black;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    transform: rotate(45deg);
+    transform-origin: right;
+  }
+}
