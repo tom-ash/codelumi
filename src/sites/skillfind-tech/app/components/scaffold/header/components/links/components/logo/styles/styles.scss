@@ -1,0 +1,13 @@
+@import '../../../../../../../../../../shared/app/styles/media-breakpoints';
+@import '../../../../../../../../styles/z-index';
+@import '../../../../../../../../styles/dimensions';
+@import '../../../../../../../../styles/colors';
+
+.logo-link {
+  float: left!important;
+  display: block!important;
+  line-height: auto!important;
+  a {
+    display: block!important;
+  }
+}

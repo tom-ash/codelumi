@@ -16,20 +16,16 @@ const YouTubeEmbed = loadable(() => import('./components/youtube-embed/youtube-e
 const Share = loadable(() => import('./components/share/share'))
 const Definition = loadable(() => import('./components/definition/definition'))
 const Figure = loadable(() => import('./components/figure/figure'))
-
-const LogoIcon = loadable(() => import('../../../../../skillfind-tech/app/components/scaffold/header/components/logo'))
-
-const SkillFindLogoLogoAndTitle = loadable(
-  () => import('../../../../../skillfind-tech/app/components/scaffold/header/components/image/image')
-)
-const MapawynajmuPlExtendedLogo = loadable(
-  () => import('../../../../../mapawynajmu-pl/app/components/support/extended-logo/extended-logo')
-)
 const FeatureItem = loadable(() => import('./components/feature-item/feature-item'))
 const Author = loadable(() => import('../author/author'))
 const Index = loadable(() => import('./components/index/index'))
 const QuestionIndex = loadable(() => import('./components/question-index/question-index'))
 const Breadcrumbs = loadable(() => import('./components/breadcrumbs/breadcrumbs'))
+
+const SkillfindTechIcon = loadable(() => import('../../../../../skillfind-tech/app/components/scaffold/icon/icon'))
+
+
+const SkillfindTechLogo = loadable(() => import('../../../../../skillfind-tech/app/components/scaffold/logo/logo'))
 
 const elements = {
   Author,
@@ -37,7 +33,7 @@ const elements = {
   FeatureItem,
   QuestionIndex,
   Breadcrumbs,
-  LogoIcon,
+  // SkillfindTechIcon,
 }
 
 export const RenderNode = (props: RenderNodeProps) => {
@@ -51,6 +47,20 @@ export const RenderNode = (props: RenderNodeProps) => {
 
       return <Paragraph {...paragraphProps} />
     }
+
+    // @ts-ignore
+    if (node.SkillfindTechIcon) {
+
+      // @ts-ignore
+      return <SkillfindTechIcon {...node.SkillfindTechIcon} />
+    }
+
+        // @ts-ignore
+        if (node.SkillfindTechLogo) {
+
+          // @ts-ignore
+          return <SkillfindTechLogo {...node.SkillfindTechLogo} />
+        }
 
     // @ts-ignore
     if (node.Paragraph) {
@@ -68,6 +78,7 @@ export const RenderNode = (props: RenderNodeProps) => {
     }
 
     if (node.cat) {
+      // @ts-ignore
       const Component = elements[node.cat]
       const data = node.data // || {}
 
@@ -314,19 +325,6 @@ export const RenderNode = (props: RenderNodeProps) => {
       }
 
       return <Figure {...figureProps} />
-    }
-
-    // @ts-ignore
-    if (node.SkillFindLogo) {
-      return <SkillFindLogoLogoAndTitle />
-    }
-
-    // @ts-ignore
-    if (node.MapawynajmuPlExtendedLogo) {
-      // @ts-ignore
-      const { scale } = node.MapawynajmuPlExtendedLogo
-
-      return <MapawynajmuPlExtendedLogo scale={scale} />
     }
 
     // @ts-ignore

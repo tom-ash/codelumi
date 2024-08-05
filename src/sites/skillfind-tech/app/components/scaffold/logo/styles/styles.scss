@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+#logo {
+  font-family: 'Source Sans 3', sans-serif;
+  padding-left: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  .icon {
+    position: absolute;
+    top: 18px;
+    left: 68px;
+    top: 32px;
+  }
+  .skillfind {
+    font-size: 20px;
+    line-height: 60px;
+    display: inline-block;
+  }
+  .tech {
+    position: relative;
+    font-size: 20px;
+    line-height: 60px;
+    display: inline-block;
+    left: 10px;
+  }
+}
