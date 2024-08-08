@@ -15,14 +15,17 @@
 @import '../components/submit/styles/styles.scss';
 @import '../../../../../../../styles/inputs/select.scss';
 
+//  = 30px
+
 #postings-new-form {
+  $MARGIN_TOP: 30px;
+  $MARGIN_HORIZONTAL: 30px;
   max-width: 768px;
-  margin: 0 auto;
-  padding: 40px;
+  margin: 60px auto 120px;
   background: white;
   border-radius: 3px;
   border: 1px solid lightgray;
-
+  padding: 30px 0;
   .text-input {
     @extend %text-input;
     max-width: 320px;
@@ -35,23 +38,54 @@
   }
   .main-heading {
     @extend %main-heading;
-    margin-bottom: 30px;
+    margin: 0 $MARGIN_HORIZONTAL;
+  }
+  .section-heading {
+    h2 {
+      display: inline-block;
+    }
+    .suffix {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 10px;
+      position: relative;
+      left: 5px;
+      top: -7px;
+      font-weight: bold;
+      &.required {
+        color: #e74c3c;
+      }
+      &.optional {
+        color: #27ae60;
+      }
+    }
   }
   h2 {
     margin-top: 0;
     font-size: 19px;
+    margin: 0;
   }
   .instructions {
     @extend %instructions;
   }
   #skills {
     @extend %skills;
+    margin: $MARGIN_TOP $MARGIN_HORIZONTAL;
   }
   .position {
     @extend %position;
+    margin: $MARGIN_TOP $MARGIN_HORIZONTAL 0;
+  }
+  .cooperation-mode-section {
+    margin: $MARGIN_TOP $MARGIN_HORIZONTAL 0;
+    padding: $MARGIN_TOP 0 0;
+  }
+  #location {
+    margin: $MARGIN_TOP $MARGIN_HORIZONTAL 0;
   }
   .description {
     @extend %description;
+    margin: $MARGIN_TOP $MARGIN_HORIZONTAL 0;
     .form-input {
       .label {
         position: absolute;
@@ -61,6 +95,7 @@
   }
   .contracts {
     @extend %contracts;
+    margin: $MARGIN_TOP $MARGIN_HORIZONTAL 0;
     .form-input {
       .label {
         position: absolute;
@@ -68,8 +103,17 @@
       }
     }
   }
+  .application {
+    @extend %application;
+    margin: $MARGIN_TOP $MARGIN_HORIZONTAL 0;
+    padding: 0;
+    padding: $MARGIN_TOP 0 0;
+  }
   #poster {
     @extend %poster;
+    margin: $MARGIN_TOP $MARGIN_HORIZONTAL 0;
+    padding: 0;
+    padding: $MARGIN_TOP 0 0;
   }
   #social-image {
     @extend %social-image;
@@ -78,15 +122,41 @@
     margin: 0;
     padding: 0;
   }
-  .application {
-    @extend %application;
-  }
   .submit-button {
     @extend %submit-button;
+    margin: $MARGIN_TOP $MARGIN_HORIZONTAL 0;
   }
   @media #{$LARGE-PHONE} {
-    padding: 0;
-    padding: 30px;
     border: none;
+    margin: 0;
+    max-width: 100%;
+    // $MARGIN_HORIZONTAL: 20px;
+    // .main-heading {
+    //   margin: 0 $MARGIN_HORIZONTAL;
+    // }
+    // #skills {
+    //   margin: $MARGIN_TOP $MARGIN_HORIZONTAL 0;
+    // }
+    // .position {
+    //   margin: $MARGIN_TOP $MARGIN_HORIZONTAL 0;
+    // }
+    // .cooperation-mode-section {
+    //   margin: $MARGIN_TOP $MARGIN_HORIZONTAL 0;
+    // }
+    // #location {
+    //   margin: $MARGIN_TOP $MARGIN_HORIZONTAL 0;
+    // }
+    // .description {
+    //   margin: $MARGIN_TOP $MARGIN_HORIZONTAL 0;
+    // }
+    // .contracts {
+    //   margin: $MARGIN_TOP $MARGIN_HORIZONTAL 0;
+    // }
+    // .application {
+    //   margin: $MARGIN_TOP $MARGIN_HORIZONTAL 0;
+    // }
+    // #poster {
+    //   margin: $MARGIN_TOP $MARGIN_HORIZONTAL 0;
+    // }
   }
 }

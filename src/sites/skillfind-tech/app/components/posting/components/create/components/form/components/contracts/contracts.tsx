@@ -4,6 +4,7 @@ import styles from './styles/styles.scss'
 import { useInputs } from '../../../../../../../../../../shared/app/functions/store/use-inputs'
 import { ContractSelector } from './components/contract-selector/contract-selector'
 import { useTexts } from '../../../../../../../../../../shared/app/functions/store/use-texts'
+import { SectionHeading } from '../../../../../../../../../../shared/app/components/support/headings/section-heading'
 
 interface Contract {
   name: string
@@ -16,11 +17,14 @@ export const Contracts = () => {
 
   const { contracts } = useInputs()
   const inputs = useInputs()
-  const { minPlaceholder, maxPlaceholder } = useTexts()
+  const { minPlaceholder, maxPlaceholder, optional } = useTexts()
 
   return (
     <div className='contracts'>
-      <h2>Contract</h2>
+      <SectionHeading
+        name='remuneration'
+        suffix={<span className='suffix optional'>{optional}</span>}
+      />
       {contracts.map((contract: Contract) => {
         const { name, label, instructions } = contract
 

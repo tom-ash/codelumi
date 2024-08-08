@@ -35,9 +35,10 @@
     @extend %text-input;
     position: absolute;
     z-index: 311;
-    top: 10px;
+    top: 15px;
     right: 15px;
     left: 15px;
+    margin: 0;
     .label {
       display: none;
     }
@@ -54,6 +55,7 @@
 
   .autocompletes {
     position: relative;
+    top: -5px;
     background: white;
     z-index: 200;
     border-radius: 4px;

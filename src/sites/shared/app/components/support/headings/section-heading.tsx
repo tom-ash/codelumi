@@ -3,22 +3,24 @@ import { useTexts } from '../../../functions/store/use-texts'
 import { SVG } from '../svg/svg'
 
 interface SectionHeadingInterface {
-  (props: { name: string; icon?: string }): React.ReactElement
+  (props: { name: string; icon?: string; suffix?: React.ReactElement }): React.ReactElement
 }
 
 export const SectionHeading: SectionHeadingInterface = props => {
-  const { name, icon } = props
+  const { name, icon, suffix } = props
   const { [`${name}SectionHeading`]: heading } = useTexts()
-  const className = 'section-heading'
 
-  if (icon) {
+  if (icon || suffix) {
     return (
-      <div className={className}>
-        <SVG name={icon} />
+      <div className='section-heading'>
+        {icon && <SVG name={icon} />}
         <h2>{heading}</h2>
+        {suffix && suffix}
       </div>
     )
   }
 
-  return <h2 className={className}>{heading}</h2>
+  return (
+    <h2 className='section-heading'>{heading}</h2>
+  )
 }

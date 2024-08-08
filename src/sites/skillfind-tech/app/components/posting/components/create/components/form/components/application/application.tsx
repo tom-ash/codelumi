@@ -8,9 +8,9 @@ import { useInputs } from '../../../../../../../../../../shared/app/functions/st
 import { useErrors } from '../../../../../../../../../../shared/app/functions/store/use-errors'
 
 export const Application = () => {
-  const { applicationSectionInstructions } = useTexts()
-  const { linkApplicationManner } = useInputs()
-
+  // const { applicationSectionInstructions } = useTexts()
+  // const { linkApplicationManner } = useInputs()
+  const { required } = useTexts()
   const { isApplicationError: isError } = useErrors()
 
   const classNames = ['application']
@@ -18,14 +18,15 @@ export const Application = () => {
     classNames.push('error')
   }
 
-  // TODO
-
   return (
     <section
       id='application'
       className={classNames.join(' ')}
     >
-      <SectionHeading name='application' />
+      <SectionHeading
+        name='application'
+        suffix={<span className='suffix required'>{required}</span>}
+      />
       {/* <InstructionsDeprecated text={applicationSectionInstructions} />
       <ApplicationManner name={ApplicationMannerEnum.FORM} />
       <ApplicationManner name={ApplicationMannerEnum.LINK} />

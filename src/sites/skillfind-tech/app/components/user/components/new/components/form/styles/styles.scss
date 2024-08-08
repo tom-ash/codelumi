@@ -22,6 +22,15 @@
   }
   .select {
     @extend %select;
+    label {
+      svg {
+        display: inline-block;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+      }
+    }
   }
   .checkbox {
     @extend %checkbox;

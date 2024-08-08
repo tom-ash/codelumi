@@ -13,11 +13,12 @@ import { TextInput } from '../../../../../../../../../../shared/app/components/s
 import { SVG } from '../../../../../../../../../../shared/app/components/support/svg/svg'
 import escapeRegExp from 'lodash/escapeRegExp'
 import { FloatClear } from '../../../../../../../../../../shared/app/components/support/float-clear/float-clear'
+import { SectionHeading } from '../../../../../../../../../../shared/app/components/support/headings/section-heading'
 
 function Skills() {
   useStyles(styles)
 
-  const { skillSelectorHeading, skillSelectionInstructions, selectableSkillsHeading, selectedSkillsHeading } =
+  const { required, skillSelectionInstructions, selectableSkillsHeading, selectedSkillsHeading } =
     useTexts()
   const { selectableSkills, selectedSkills, skillSearch } = useInputs()
   const dispatch = useDispatch()
@@ -158,7 +159,10 @@ function Skills() {
       id='skills'
       className={classNames.join(' ')}
     >
-      <h2>{skillSelectorHeading}</h2>
+      <SectionHeading
+        name='skills'
+        suffix={<span className='suffix required'>{required}</span>}
+      />
       <InstructionsDeprecated
         text={skillSelectionInstructions}
         isError={isError}

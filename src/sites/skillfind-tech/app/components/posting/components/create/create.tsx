@@ -14,9 +14,7 @@ class AnnouncementCreate extends React.Component<Create> {
 
   render() {
     return (
-      <div id='postings-new'>
-        <AnnouncementCreateForm />
-      </div>
+      <AnnouncementCreateForm />
     )
   }
 }

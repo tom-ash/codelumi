@@ -4,11 +4,12 @@ import styles from './styles/styles.scss'
 import { useTexts } from '../../../../../../../../../../shared/app/functions/store/use-texts'
 import { useInputs } from '../../../../../../../../../../shared/app/functions/store/use-inputs'
 import { useDispatch } from 'react-redux'
+import { SectionHeading } from '../../../../../../../../../../shared/app/components/support/headings/section-heading'
 
 export const CooperationMode = () => {
   useStyles(styles)
 
-  const { cooperationModeHeading, cooperationModeLegend } = useTexts()
+  const { required, cooperationModeLegend } = useTexts()
   const { cooperationMode, cooperationModeRadio } = useInputs()
   const { name, options } = cooperationModeRadio
   const dispatch = useDispatch()
@@ -16,7 +17,10 @@ export const CooperationMode = () => {
 
   return (
     <section className='cooperation-mode-section'>
-      <h2>{cooperationModeHeading}</h2>
+      <SectionHeading
+        name='cooperationMode'
+        suffix={<span className='suffix required'>{required}</span>}
+      />
       <fieldset>
         <legend>{cooperationModeLegend}</legend>
         {options.map((option: { value: string; label: string }) => {

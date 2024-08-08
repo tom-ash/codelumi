@@ -9,6 +9,7 @@ export const Link = () => {
         inputKey='link'
         optional={true}
         validate={validateLink}
+        match={/^https\:\/\/.*/}
       />
     </div>
   )

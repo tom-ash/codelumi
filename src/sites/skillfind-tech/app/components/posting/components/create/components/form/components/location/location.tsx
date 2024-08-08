@@ -10,11 +10,12 @@ import { useInputs } from '../../../../../../../../../../shared/app/functions/st
 import { pinBuilder } from './functions/pin-builder'
 import { useData } from '../../../../../../../../../../shared/app/functions/store/use-data'
 import { mapStyles } from '../../../../../../styles/map-styles'
+import { SectionHeading } from '../../../../../../../../../../shared/app/components/support/headings/section-heading'
 
 export const Location = () => {
   useStyles(styles)
 
-  const { locationHeading, locationInstructions } = useTexts()
+  const { required, locationInstructions } = useTexts()
   const { isLocationError: isError } = useErrors()
 
   const classNames = ['location']
@@ -52,7 +53,10 @@ export const Location = () => {
       id='location'
       className={classNames.join(' ')}
     >
-      <h2>{locationHeading}</h2>
+      <SectionHeading
+        name='location'
+        suffix={<span className='suffix required'>{required}</span>}
+      />
       <InstructionsDeprecated
         text={locationInstructions}
         isError={isError}

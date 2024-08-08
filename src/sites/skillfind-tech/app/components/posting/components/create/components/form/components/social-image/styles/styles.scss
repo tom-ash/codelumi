@@ -2,7 +2,7 @@
 @import './preview';
 
 %social-image {
-  @extend %section;
+  height: 0;
   .preview {
     @extend %preview;
   }
