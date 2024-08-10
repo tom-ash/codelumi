@@ -53,6 +53,7 @@ export const SocialImage = () => {
   return (
     <section id='social-image'>
       <Preview
+        id='social-image-canvas'
         position={position}
         logo={logoSrc}
         businessName={businessName}

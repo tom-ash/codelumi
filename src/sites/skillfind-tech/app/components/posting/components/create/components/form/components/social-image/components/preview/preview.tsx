@@ -9,6 +9,7 @@ import { Currency } from '../../../../../../../../postings.types'
 
 interface PreviewInterface {
   (props: {
+    id: string;
     position: string
     skills: SkillProps[]
     locality: string
@@ -38,6 +39,7 @@ interface PreviewInterface {
 
 export const Preview: PreviewInterface = props => {
   const {
+    id,
     position,
     logo,
     businessName,
@@ -57,6 +59,7 @@ export const Preview: PreviewInterface = props => {
 
   return (
     <div
+      id={id}
       className='preview'
       {...(scale && {
         style: {
