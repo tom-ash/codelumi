@@ -10,8 +10,6 @@ const VisitorContact = () => {
 
   const { intro, features } = useTexts()
 
-  console.log('features', features)
-
   return (
     <div id='about'>
       <div className='container'>

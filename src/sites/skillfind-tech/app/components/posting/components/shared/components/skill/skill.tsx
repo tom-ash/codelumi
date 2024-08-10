@@ -9,26 +9,23 @@ const levels = Object.values(SkillLevel)
 function Skill(props: SkillProps) {
   useStyles(styles)
 
-  const { view, name, level, children, onLevelClicked } = props
+  const { value, display, view, level = 0, children, onLevelClicked } = props
   const [levelHovered, setLevelHovered] = useState(0)
-  const levelName = levelHovered ? levels[levelHovered - 1] : levels[level - 1]
-
-  const levelsProps = {
-    view,
-    name,
-    level,
-    levels,
-    levelName,
-    levelHovered,
-    setLevelHovered,
-    onLevelClicked,
-  }
+  const levelName = levelHovered ? levels[levelHovered - 1] : undefined
 
   return (
     <div className='skill'>
-      <div className='name'>{name}</div>
-      <SkillLevels {...levelsProps} />
-      {/* <div className='level-name'>{levelName}</div> */}
+      <div className='name'>{display}</div>
+      <SkillLevels
+        view={view}
+        value={value}
+        level={level}
+        levels={levels}
+        levelName={levelName}
+        levelHovered={levelHovered}
+        setLevelHovered={setLevelHovered}
+        onLevelClicked={onLevelClicked}
+      />
       {children}
     </div>
   )

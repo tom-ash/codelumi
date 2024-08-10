@@ -15,7 +15,7 @@ export const Skills: SkillsInterface = () => {
   return (
     <SkillsPartial
       skills={skills}
-      view={SkillView.indexVisitor}
+      view={SkillView.INDEX_LIST}
     />
   )
 }

@@ -12,11 +12,15 @@ export const Skills: SkillsInterface = props => {
   return (
     <div className='skills'>
       {skills.map(skill => {
+        const { value, display, queryParam, level } = skill
+
         return (
           <Skill
-            key={skill.name}
-            name={skill.name}
-            level={skill.level}
+            key={value}
+            value={value}
+            display={display}
+            queryParam={queryParam}
+            level={level}
             view={view}
           />
         )

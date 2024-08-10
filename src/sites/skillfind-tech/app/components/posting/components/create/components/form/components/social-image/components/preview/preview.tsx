@@ -95,7 +95,7 @@ export const Preview: PreviewInterface = props => {
       )}
       <Skills
         skills={skills}
-        view={SkillView.indexVisitor}
+        view={SkillView.PREVIEW}
       />
     </div>
   )
