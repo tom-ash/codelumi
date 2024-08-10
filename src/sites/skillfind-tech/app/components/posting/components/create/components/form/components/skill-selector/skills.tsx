@@ -15,6 +15,8 @@ import escapeRegExp from 'lodash/escapeRegExp'
 import { FloatClear } from '../../../../../../../../../../shared/app/components/support/float-clear/float-clear'
 import { SectionHeading } from '../../../../../../../../../../shared/app/components/support/headings/section-heading'
 
+type ExtendedSkillProps = SkillProps & { isSelected: boolean }
+
 function Skills() {
   useStyles(styles)
 
@@ -32,11 +34,10 @@ function Skills() {
   }
 
   const searchedSkills = useMemo(() => {
-    // TODO: any
-    return selectableSkills.filter((selectableSkill: any) => {
+    return selectableSkills.filter((selectableSkill: ExtendedSkillProps) => {
       const regexp = new RegExp(escapeRegExp(skillSearch?.toLowerCase()))
 
-      return !selectableSkill.isSelected && selectableSkill.name.toLowerCase().match(regexp)
+      return !selectableSkill.isSelected && selectableSkill.display.toLowerCase().match(regexp)
     })
   }, [skillSearch, selectableSkills])
 
@@ -78,24 +79,20 @@ function Skills() {
 
   // @ts-ignore
   const onSelectableSkillLevelClicked = useCallback(
-    // @ts-ignore
-    params => {
-      const { name, level } = params
+    (params: Pick<SkillProps, 'value' | 'level'>) => {
+      const { value, level } = params
 
-      const selectedSkillIndex = selectableSkills.findIndex((selectableSkill: any) => selectableSkill.name === name)
-      const selectedSkill = selectableSkills[selectedSkillIndex]
-
+      const selectedableSkillIndex = selectableSkills.findIndex((selectableSkill: ExtendedSkillProps) => selectableSkill.value === value)
       const newSelectableSkills = [...selectableSkills]
-      newSelectableSkills[selectedSkillIndex] = {
-        name: selectedSkill.name,
+      const selectedSkill = newSelectableSkills[selectedableSkillIndex]
+
+      newSelectableSkills[selectedableSkillIndex] = {
+        ...selectedSkill,
         isSelected: true,
       }
 
       const newSelectedSkills = [...selectedSkills].concat([
-        {
-          name: name,
-          level: level,
-        },
+        { ...selectedSkill, level }
       ])
 
       setErrors({ skills: null })
@@ -107,16 +104,15 @@ function Skills() {
     [selectableSkills, selectedSkills]
   )
 
-  // @ts-ignore
   const onSelectedSkillLevelClicked = useCallback(
-    // @ts-ignore
-    params => {
-      const { name, level } = params
+    (params: Pick<SkillProps, 'value' | 'level'>) => {
+      const { value, level } = params
 
-      const changedSelectedSkillIndex = selectedSkills.findIndex((selectedSkill: any) => selectedSkill.name === name)
+      const changedSelectedSkillIndex = selectedSkills.findIndex((selectedSkill: ExtendedSkillProps) => selectedSkill.value === value)
+      const selectedSkill = selectedSkills[changedSelectedSkillIndex]
       const newSelectedSkills = [...selectedSkills]
       newSelectedSkills[changedSelectedSkillIndex] = {
-        name,
+        ...selectedSkill,
         level,
       }
 
@@ -127,22 +123,17 @@ function Skills() {
     [selectedSkills]
   )
 
-  // @ts-ignore
   const unselectSkill = useCallback(
-    // @ts-ignore
-    params => {
-      const { name } = params
+    (params: Pick<SkillProps, 'value' | 'level'>) => {
+      const { value } = params
 
-      const selectedSkillIndex = selectableSkills.findIndex((selectableSkill: any) => selectableSkill.name === name)
+      const selectedSkillIndex = selectableSkills.findIndex((selectableSkill: ExtendedSkillProps) => selectableSkill.value === value)
       const selectedSkill = selectableSkills[selectedSkillIndex]
 
       const newSelectableSkills = [...selectableSkills]
-      newSelectableSkills[selectedSkillIndex] = {
-        name: selectedSkill.name,
-        isSelected: false,
-      }
+      newSelectableSkills[selectedSkillIndex].isSelected = false
 
-      const unselectedSkillIndex = selectedSkills.findIndex((selectedSkill: any) => selectedSkill.name === name)
+      const unselectedSkillIndex = selectedSkills.findIndex((selectedSkill: ExtendedSkillProps) => selectedSkill.value === value)
       const newSelectedSkills = [...selectedSkills]
       newSelectedSkills.splice(unselectedSkillIndex, 1)
 
@@ -177,13 +168,12 @@ function Skills() {
             <div className='skill-list'>
               {searchedSkills.map((skill: SkillProps) => (
                 <Skill
-                  {...{
-                    ...skill,
-                    view: SkillView.formSelectable,
-                    setErrors,
-                    onLevelClicked: params => onSelectableSkillLevelClicked(params),
-                  }}
-                  key={skill.name}
+                  key={`${SkillView.FORM_SELECTABLE}_${skill.value}`}
+                  value={skill.value}
+                  display={skill.display}
+                  queryParam={skill.queryParam}
+                  view={SkillView.FORM_SELECTABLE}
+                  onLevelClicked={params => onSelectableSkillLevelClicked(params)}
                 />
               ))}
             </div>
@@ -194,17 +184,17 @@ function Skills() {
           <div id='selected-skills'>
             {selectedSkills.map((skill: SkillProps, index: number) => (
               <Skill
-                {...{
-                  ...skill,
-                  unselectSkill,
-                  view: SkillView.formSelected,
-                  onLevelClicked: params => onSelectedSkillLevelClicked(params),
-                }}
-                key={skill.name}
+                key={`${SkillView.FORM_SELECTED}_${skill.value}`}
+                value={skill.value}
+                display={skill.display}
+                queryParam={skill.queryParam}
+                level={skill.level}
+                view={SkillView.FORM_SELECTED}
+                onLevelClicked={params => onSelectedSkillLevelClicked(params)}
               >
                 <div
                   className='delete'
-                  onClick={() => unselectSkill({ name: skill.name })}
+                  onClick={() => unselectSkill({ value: skill.value })}
                 >
                   <SVG name='close' />
                 </div>

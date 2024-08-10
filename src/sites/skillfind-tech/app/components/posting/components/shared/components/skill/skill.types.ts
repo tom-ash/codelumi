@@ -1,10 +1,11 @@
 import { ReactNode } from 'react'
 
 export enum SkillView {
-  formSelectable = 'formSelectable',
-  formSelected = 'formSelected',
-  indexVisitor = 'indexVisitor',
-  INDEX_PANEL = 'INDEX_PANEL',
+  FORM_SELECTABLE = 'form_selectable',
+  FORM_SELECTED = 'form_selected',
+  PREVIEW = 'preview',
+  INDEX_PANEL = 'index_panel',
+  INDEX_LIST = 'index_list',
 }
 
 export enum SkillLevel {
@@ -15,9 +16,11 @@ export enum SkillLevel {
 }
 
 export interface SkillProps {
-  name: string
-  level: number
-  view: SkillView
+  value: string
+  display: string
+  queryParam: string
+  level?: number
+  view?: SkillView
   children?: ReactNode
-  onLevelClicked?(params: { name: string; level: number }): void
+  onLevelClicked?(params: { value: string; level: number }): void
 }

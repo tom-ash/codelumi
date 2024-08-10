@@ -4,7 +4,7 @@ import styles from './styles/styles.scss'
 import { useInputs } from '../../../../../../../../shared/app/functions/store/use-inputs'
 import { Select } from 'semanticize'
 import Skill from '../../../shared/components/skill/skill'
-import { SkillView } from '../../../shared/components/skill/skill.types'
+import { SkillProps, SkillView } from '../../../shared/components/skill/skill.types'
 import { FloatClear } from '../../../../../../../../shared/app/components/support/float-clear/float-clear'
 import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
 import { useTexts } from '../../../../../../../../shared/app/functions/store/use-texts'
@@ -14,14 +14,6 @@ import { querySkills } from './helpers/query-skills'
 interface PanelInterface {
   (params: {}): React.ReactElement
 }
-
-export interface SelectableSkill {
-  value: string
-  text: string
-  url: string
-}
-
-export type SelectedSkill = SelectableSkill & { level: string }
 
 export const Panel: PanelInterface = () => {
   useStyles(styles)
@@ -34,27 +26,29 @@ export const Panel: PanelInterface = () => {
   const enrichedSelectableSkills = useMemo(() => {
     // @ts-ignore
     return selectableSkills.map(option => {
-      const { value } = option
+      const { value, display, queryParam } = option
 
       return {
         ...option,
         jsx: (
           <Skill
-            onLevelClicked={skill => {
+            key={value}
+            value={value}
+            display={display}
+            queryParam={queryParam}
+            level={0}
+            view={SkillView.INDEX_PANEL}
+            onLevelClicked={({ value, level }) => {
               const newSelectedSkills = [...selectedSkills]
-              const newSelectedSkill = selectableSkills.find((selectableSkill: SelectableSkill) => {
-                return selectableSkill.value === skill.name
+              const newSelectedSkill = selectableSkills.find((selectableSkill: SkillProps) => {
+                return selectableSkill.value === value
               })
 
-              newSelectedSkills.push({ ...newSelectedSkill, level: skill.level })
+              newSelectedSkills.push({ ...newSelectedSkill, level })
 
               setInputs({ selectedSkills: newSelectedSkills })
               querySkills(newSelectedSkills)
             }}
-            key={value}
-            name={value}
-            level={0}
-            view={SkillView.INDEX_PANEL}
           />
         ),
       }
@@ -73,7 +67,7 @@ export const Panel: PanelInterface = () => {
           id='visitor-postings-index-skill-select'
           onSelect={value => {
             const newSelectedSkills = [...selectedSkills]
-            const newSelectedSkill = selectableSkills.find((selectableSkill: SelectableSkill) => {
+            const newSelectedSkill = selectableSkills.find((selectableSkill: SkillProps) => {
               return selectableSkill.value === value
             })
 
@@ -88,16 +82,22 @@ export const Panel: PanelInterface = () => {
       </div>
       <section className='selected-skills'>
         {selectedSkills.map((selectedSkill: any) => {
-          const { value, level } = selectedSkill
+          const { value, display, queryParam, level } = selectedSkill
 
           return (
             <Skill
-              onLevelClicked={skill => {
-                const newSelectedSkills: SelectedSkill[] = selectedSkills.map((selectedSkill: SelectedSkill) => {
-                  if (skill.name === selectedSkill.value) {
+              key={value}
+              value={value}
+              display={display}
+              queryParam={queryParam}
+              level={level}
+              view={SkillView.INDEX_PANEL}
+              onLevelClicked={({ value, level }) => {
+                const newSelectedSkills: SkillProps[] = selectedSkills.map((selectedSkill: SkillProps) => {
+                  if (selectedSkill.value === value) {
                     return {
                       ...selectedSkill,
-                      level: skill.level,
+                      level,
                     }
                   }
 
@@ -107,10 +107,7 @@ export const Panel: PanelInterface = () => {
                 setInputs({ selectedSkills: newSelectedSkills })
                 querySkills(newSelectedSkills)
               }}
-              key={value}
-              name={value}
-              level={level}
-              view={SkillView.INDEX_PANEL}
+
             >
               <div
                 className='delete'

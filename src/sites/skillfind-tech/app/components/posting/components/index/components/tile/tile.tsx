@@ -103,7 +103,7 @@ export const PostingIndexTile: PostingIndexTileInterface = props => {
       />
       <Skills
         skills={skills}
-        view={SkillView.indexVisitor}
+        view={SkillView.INDEX_LIST}
       />
     </a>
   )

@@ -1,8 +1,8 @@
 import { changeUrl } from '../../../../../../../../../shared/app/functions/routes/changers/change-url'
-import { SelectedSkill } from '../panel'
+import { SkillProps } from '../../../../shared/components/skill/skill.types'
 
 interface QuerySkills {
-  (selectedSkills: SelectedSkill[]): void
+  (selectedSkills: SkillProps[]): void
 }
 
 export const querySkills: QuerySkills = selectedSkills => {
@@ -10,13 +10,13 @@ export const querySkills: QuerySkills = selectedSkills => {
     let queryParameters: string[] = []
 
     selectedSkills.map(selectedSkill => {
-      const { url, level } = selectedSkill
+      const { queryParam, level } = selectedSkill
 
-      queryParameters.push(`${url}=${level}`)
+      queryParameters.push(`${queryParam}=${level}`)
     })
 
-    changeUrl({ href: `?${queryParameters.join('&')}` })
+    changeUrl({ href: `${window.location.pathname}?${queryParameters.join('&')}` })
   } else {
-    changeUrl({ href: '/' })
+    changeUrl({ href: window.location.pathname })
   }
 }

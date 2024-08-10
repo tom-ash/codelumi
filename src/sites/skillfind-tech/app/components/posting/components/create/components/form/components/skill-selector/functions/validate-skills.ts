@@ -1,5 +1,7 @@
+import { SkillDto } from "../../../types/skill.dto";
+
 interface ValidateSkills {
-  (params: { value: any[]; errorMessage: string; setErrors(errors: { skills: string }): void }): 'skills' | null
+  (params: { value: SkillDto[]; errorMessage: string; setErrors(errors: { skills: string }): void }): 'skills' | null
 }
 
 export const validateSkills: ValidateSkills = params => {

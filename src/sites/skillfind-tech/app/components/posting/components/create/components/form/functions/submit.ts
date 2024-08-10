@@ -13,6 +13,7 @@ import API_URL from '../../../../../../../../shared/constants/urls/api'
 import setVerificationToken from '../../../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
 import { validatePosition } from '../components/position/validators/validate-position'
 import { Currency } from '../../../../../postings.types'
+import { SkillDto } from '../types/skill.dto'
 
 var scrollIntoView = require('scroll-into-view')
 
@@ -21,7 +22,7 @@ type SubmitProps = {
   position: string
   positionError: string
   lang: Lang
-  selectedSkills: Array<any>
+  selectedSkills: SkillDto[]
   cooperationMode: string
   placeAutocomplete: string
   lat: number
