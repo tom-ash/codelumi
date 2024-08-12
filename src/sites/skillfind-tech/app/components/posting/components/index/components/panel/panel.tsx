@@ -30,6 +30,7 @@ export const Panel: PanelInterface = () => {
 
       return {
         ...option,
+        text: display,
         jsx: (
           <Skill
             key={value}
