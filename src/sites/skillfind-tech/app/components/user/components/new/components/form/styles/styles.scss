@@ -6,6 +6,7 @@
 @import '../../../../../../../styles/inputs/checkbox.scss';
 @import '../../../../../../../styles/inputs/text.scss';
 @import '../../../../../../../../../shared/app/styles/media-breakpoints';
+@import '../../../../common/components/industry/styles/styles.scss';
 
 %users-new-form {
   @extend %container;
@@ -22,15 +23,11 @@
   }
   .select {
     @extend %select;
-    label {
-      svg {
-        display: inline-block;
-        top: auto;
-        right: auto;
-        bottom: auto;
-        left: auto;
-      }
-    }
+    @extend %text-input;
+
+  }
+  .industry {
+    @extend %industry;
   }
   .checkbox {
     @extend %checkbox;

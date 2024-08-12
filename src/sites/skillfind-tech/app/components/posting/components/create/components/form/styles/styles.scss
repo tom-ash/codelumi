@@ -31,10 +31,8 @@
     max-width: 320px;
   }
   .select {
-    @extend %select-element;
-    ul {
-      top: 50px;
-    }
+    @extend %select;
+    @extend %text-input;
   }
   .main-heading {
     @extend %main-heading;

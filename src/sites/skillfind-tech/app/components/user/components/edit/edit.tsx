@@ -5,6 +5,7 @@ import { MainHeading } from '../../../../../../shared/app/components/support/hea
 import { AttributeEditor } from '../../../../../../shared/app/components/support/attribute-editor/attribute-editor'
 import { Logo } from './components/logo/logo'
 import { Delete } from './components/delete/delete'
+import { Industry } from '../common/components/industry/industry'
 
 const UserUsersEdit = () => {
   useStyles(styles)
@@ -14,11 +15,10 @@ const UserUsersEdit = () => {
       <MainHeading icon='userCog' />
       <AttributeEditor name='businessName' />
       <AttributeEditor name='link' />
+      <AttributeEditor name='industry'>
+        <Industry />
+      </AttributeEditor>
       <Logo />
-      <AttributeEditor
-        name='industry'
-        isSelectable={true}
-      />
       <Delete />
     </div>
   )

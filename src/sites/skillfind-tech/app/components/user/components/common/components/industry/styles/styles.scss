@@ -1,0 +1,25 @@
+  %industry {
+    padding-left: 50px;
+    position: relative;
+    label {
+      position: relative;
+      margin-left: -50px;
+    }
+    > .icon {
+      border: 1px solid black;
+      height: 40px;
+      width: 40px;
+      border-radius: 5px;
+      line-height: 40px;
+      text-align: center;
+      position: absolute;
+      top: 29.5px;
+      left: 0;
+      svg {
+        height: 14px;
+        position: relative;
+        top: 1.5px;
+      }
+    }
+  }
+  

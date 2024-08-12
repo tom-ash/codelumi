@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Select as SemanticSelect } from 'semanticize'
 import { useTexts } from '../../../functions/store/use-texts'
 import { useInputs } from '../../../functions/store/use-inputs'
@@ -30,6 +30,22 @@ export const Select: SelectInterface = props => {
     onChangeCallback && onChangeCallback()
   }
 
+  const parsedOptions = useMemo(() => {
+    return options.map((option: any) => {
+      return ({
+        ...option,
+        ...option.icon && {
+          jsx: (
+            <>
+              <span className='icon'><SVG name={option.icon} /></span>
+              <span className='text'>{option.text}</span>
+            </>
+          )
+        }
+      })
+    })
+  }, [options])
+
   return (
     <SemanticSelect
       className={className}
@@ -50,7 +66,7 @@ export const Select: SelectInterface = props => {
           )}
         </>
       }
-      options={options}
+      options={parsedOptions}
       value={value}
       onSelect={onSelect}
       // disabled={disabled}

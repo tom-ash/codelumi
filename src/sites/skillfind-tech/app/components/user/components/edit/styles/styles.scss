@@ -3,6 +3,7 @@
 @import '../../../../../styles/inputs/text.scss';
 @import '../../../../../styles/inputs/select.scss';
 @import '../../../../../styles/inputs/picture-input.scss';
+@import '../../common/components/industry/styles/styles.scss';
 
 #user-users-edit {
   @extend %container;
@@ -18,7 +19,14 @@
     @extend %text-input;
   }
   .select {
-    @extend %select-element;
+    @extend %select;
+    @extend %text-input;
+    ul {
+      max-width: 100%;
+    }
+  }
+  .industry {
+    @extend %industry;
   }
   .attribute-editor,
   .logo {

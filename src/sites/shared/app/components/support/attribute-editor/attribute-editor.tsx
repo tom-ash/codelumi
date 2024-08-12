@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { TextInput } from '../text-input-semanticize/text-input'
 import { useInputs } from '../../../functions/store/use-inputs'
 import { useDispatch } from 'react-redux'
@@ -8,37 +8,44 @@ import { useTexts } from '../../../functions/store/use-texts'
 import { Select } from '../select/select'
 
 interface AttributeEditorInterface {
-  (props: { name: string; isSelectable?: boolean }): React.ReactElement
+  (props: { name: string; isSelectable?: boolean; children?: React.ReactElement }): React.ReactElement
 }
 
 export const AttributeEditor: AttributeEditorInterface = props => {
-  const { name, isSelectable } = props
-
+  const { name, isSelectable, children } = props
   const { edit, save, cancel } = useTexts()
-
   const { [`${name}IsEdited`]: isEdited } = useInputs()
-
   const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
   const { [name]: value, [`${name}Current`]: currentValue } = useInputs()
 
-  return (
-    <div className='attribute-editor'>
-      {isSelectable ? (
-        <>
-          {/* TODO: Add disabled. */}
-          <Select
-            selectKey={name}
-            className='select'
-            disabled={!isEdited}
-          />
-        </>
-      ) : (
-        <TextInput
-          inputKey={name}
+  const attributeElement = useMemo(() => {
+    if (children) {
+      return React.cloneElement(children, { isEdited: !!isEdited })
+    }
+
+    if (isSelectable) {
+      return (
+        <Select
+          selectKey={name}
+          className='select'
           disabled={!isEdited}
         />
-      )}
+      )
+    }
+
+    return (
+      <TextInput
+        inputKey={name}
+        disabled={!isEdited}
+      />
+    )
+  }, [children, isEdited])
+
+
+  return (
+    <div className='attribute-editor'>
+      {attributeElement}
       <div className='buttons'>
         {isEdited && (
           <>
