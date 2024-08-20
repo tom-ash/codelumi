@@ -90,7 +90,10 @@ export const MapMarker: MapMarkerInterface = props => {
         isError={isError}
         country={country}
       />
-      <GoogleMap lang={lang} mapStyles={mapStyles} />
+      <GoogleMap
+        lang={lang}
+        mapStyles={mapStyles}
+      />
     </div>
   )
 }

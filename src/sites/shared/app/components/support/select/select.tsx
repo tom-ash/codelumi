@@ -32,17 +32,19 @@ export const Select: SelectInterface = props => {
 
   const parsedOptions = useMemo(() => {
     return options.map((option: any) => {
-      return ({
+      return {
         ...option,
-        ...option.icon && {
+        ...(option.icon && {
           jsx: (
             <>
-              <span className='icon'><SVG name={option.icon} /></span>
+              <span className='icon'>
+                <SVG name={option.icon} />
+              </span>
               <span className='text'>{option.text}</span>
             </>
-          )
-        }
-      })
+          ),
+        }),
+      }
     })
   }, [options])
 

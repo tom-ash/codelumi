@@ -42,7 +42,6 @@ export const AttributeEditor: AttributeEditorInterface = props => {
     )
   }, [children, isEdited])
 
-
   return (
     <div className='attribute-editor'>
       {attributeElement}

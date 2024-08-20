@@ -10,9 +10,7 @@ interface LogoInterface {
 export const Logo: LogoInterface = props => {
   useStyles(styles)
 
-  const {
-    scale,
-  } = props
+  const { scale } = props
 
   return (
     <div
@@ -21,13 +19,9 @@ export const Logo: LogoInterface = props => {
         transform: `scale(${scale})`,
       }}
     >
-      <span className='skillfind'>
-        skillfind
-      </span>
-      <Icon scale={.03}/>
-      <span className='tech'>
-        tech
-      </span>
+      <span className='skillfind'>skillfind</span>
+      <Icon scale={0.03} />
+      <span className='tech'>tech</span>
     </div>
   )
 }

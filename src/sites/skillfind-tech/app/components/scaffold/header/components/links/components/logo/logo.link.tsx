@@ -16,7 +16,7 @@ export const LogoLink: LogoInterface = () => {
   const linkProps = {
     linkKey: 'root',
     label,
-    customClassNames: 'logo-link'
+    customClassNames: 'logo-link',
   }
 
   return <Link {...linkProps} />

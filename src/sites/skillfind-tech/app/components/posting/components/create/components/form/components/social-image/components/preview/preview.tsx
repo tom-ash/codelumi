@@ -9,7 +9,7 @@ import { Currency } from '../../../../../../../../postings.types'
 
 interface PreviewInterface {
   (props: {
-    id: string;
+    id: string
     position: string
     skills: SkillProps[]
     locality: string

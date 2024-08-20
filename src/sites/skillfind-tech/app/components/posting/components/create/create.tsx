@@ -13,9 +13,7 @@ class AnnouncementCreate extends React.Component<Create> {
   }
 
   render() {
-    return (
-      <AnnouncementCreateForm />
-    )
+    return <AnnouncementCreateForm />
   }
 }
 

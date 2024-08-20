@@ -22,7 +22,8 @@ interface AddressInputInterface {
 }
 
 export const AddressInput: AddressInputInterface = props => {
-  const { currentItemIndex, hideItemsOnBlur, onInputEnter, setCurrentItem, setHideItemsOnBlur, isError, country } = props
+  const { currentItemIndex, hideItemsOnBlur, onInputEnter, setCurrentItem, setHideItemsOnBlur, isError, country } =
+    props
   const { placesAutocompleteInputPlaceholder: placeholder } = useTexts()
   const { location } = useInputs()
   const { items } = useData()
@@ -75,7 +76,7 @@ export const AddressInput: AddressInputInterface = props => {
       {
         input,
         sessionToken,
-        ...country && { componentRestrictions: { country } },
+        ...(country && { componentRestrictions: { country } }),
       },
       items => {
         if (!items) return setData({ items: [] })

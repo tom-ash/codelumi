@@ -24,7 +24,6 @@ const Breadcrumbs = loadable(() => import('./components/breadcrumbs/breadcrumbs'
 
 const SkillfindTechIcon = loadable(() => import('../../../../../skillfind-tech/app/components/scaffold/icon/icon'))
 
-
 const SkillfindTechLogo = loadable(() => import('../../../../../skillfind-tech/app/components/scaffold/logo/logo'))
 
 const elements = {
@@ -50,17 +49,15 @@ export const RenderNode = (props: RenderNodeProps) => {
 
     // @ts-ignore
     if (node.SkillfindTechIcon) {
-
       // @ts-ignore
       return <SkillfindTechIcon {...node.SkillfindTechIcon} />
     }
 
-        // @ts-ignore
-        if (node.SkillfindTechLogo) {
-
-          // @ts-ignore
-          return <SkillfindTechLogo {...node.SkillfindTechLogo} />
-        }
+    // @ts-ignore
+    if (node.SkillfindTechLogo) {
+      // @ts-ignore
+      return <SkillfindTechLogo {...node.SkillfindTechLogo} />
+    }
 
     // @ts-ignore
     if (node.Paragraph) {

@@ -26,12 +26,16 @@ const Header: HeaderInterface = props => {
     <header id='header'>
       <div className='inner'>
         <LogoLink />
+        {!isMobile && (
+          <>
+            {!authorized && <SignUpLink />}
+            {!authorized && <SignInLink />}
+            {authorized && <Account />}
+            <AddPostingLink />
+          </>
+        )}
         {isMobile && <SideMenu />}
         <LangSwitch />
-        {!authorized && !isMobile && <SignUpLink />}
-        {!authorized && !isMobile && <SignInLink />}
-        {authorized && !isMobile && <Account />}
-        {!isMobile && <AddPostingLink />}
         <FloatClear />
       </div>
     </header>

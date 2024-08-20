@@ -108,7 +108,6 @@ export const Panel: PanelInterface = () => {
                 setInputs({ selectedSkills: newSelectedSkills })
                 querySkills(newSelectedSkills)
               }}
-
             >
               <div
                 className='delete'

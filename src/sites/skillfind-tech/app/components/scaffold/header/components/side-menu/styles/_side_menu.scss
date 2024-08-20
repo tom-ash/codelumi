@@ -1,0 +1,55 @@
+%side-menu {
+  position: fixed;
+  top: 70px;
+  right: 0;
+  z-index: 99;
+  width: 0;
+  padding: 30px 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background: white;
+  text-wrap: nowrap;
+  transition: width 0.3s ease-out;
+  &.open {
+    width: 240px;
+  }
+  svg {
+    height: 16px;
+  }
+  .link,
+  .sign-out {
+    position: relative;
+    float: none;
+    margin: 30px;
+    padding: 0 0 30px 38px;
+    border-bottom: 1px solid $LIGHT_THEME_BREAKING_LINE_COLOR;
+    line-height: 19px;
+    font-size: 19px;
+    svg {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      height: 18px;
+    }
+    &:first-of-type {
+      margin-top: 0;
+    }
+    &:last-of-type {
+      margin: 30px 30px 0;
+      padding: 0 0 0 38px;
+      border-bottom: none;
+    }
+  }
+  .sign-out {
+    button {
+      line-height: 19px;
+      font-size: 19px;
+      svg {
+        top: 0.5px;
+      }
+    }
+  }
+}

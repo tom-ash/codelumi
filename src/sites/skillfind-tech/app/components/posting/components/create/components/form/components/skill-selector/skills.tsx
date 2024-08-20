@@ -20,8 +20,7 @@ type ExtendedSkillProps = SkillProps & { isSelected: boolean }
 function Skills() {
   useStyles(styles)
 
-  const { required, skillSelectionInstructions, selectableSkillsHeading, selectedSkillsHeading } =
-    useTexts()
+  const { required, skillSelectionInstructions, selectableSkillsHeading, selectedSkillsHeading } = useTexts()
   const { selectableSkills, selectedSkills, skillSearch } = useInputs()
   const dispatch = useDispatch()
   const setInputs = (value: any) => dispatch({ type: 'inputs', value })
@@ -82,7 +81,9 @@ function Skills() {
     (params: Pick<SkillProps, 'value' | 'level'>) => {
       const { value, level } = params
 
-      const selectedableSkillIndex = selectableSkills.findIndex((selectableSkill: ExtendedSkillProps) => selectableSkill.value === value)
+      const selectedableSkillIndex = selectableSkills.findIndex(
+        (selectableSkill: ExtendedSkillProps) => selectableSkill.value === value
+      )
       const newSelectableSkills = [...selectableSkills]
       const selectedSkill = newSelectableSkills[selectedableSkillIndex]
 
@@ -91,9 +92,7 @@ function Skills() {
         isSelected: true,
       }
 
-      const newSelectedSkills = [...selectedSkills].concat([
-        { ...selectedSkill, level }
-      ])
+      const newSelectedSkills = [...selectedSkills].concat([{ ...selectedSkill, level }])
 
       setErrors({ skills: null })
       setInputs({
@@ -108,7 +107,9 @@ function Skills() {
     (params: Pick<SkillProps, 'value' | 'level'>) => {
       const { value, level } = params
 
-      const changedSelectedSkillIndex = selectedSkills.findIndex((selectedSkill: ExtendedSkillProps) => selectedSkill.value === value)
+      const changedSelectedSkillIndex = selectedSkills.findIndex(
+        (selectedSkill: ExtendedSkillProps) => selectedSkill.value === value
+      )
       const selectedSkill = selectedSkills[changedSelectedSkillIndex]
       const newSelectedSkills = [...selectedSkills]
       newSelectedSkills[changedSelectedSkillIndex] = {
@@ -127,13 +128,17 @@ function Skills() {
     (params: Pick<SkillProps, 'value' | 'level'>) => {
       const { value } = params
 
-      const selectedSkillIndex = selectableSkills.findIndex((selectableSkill: ExtendedSkillProps) => selectableSkill.value === value)
+      const selectedSkillIndex = selectableSkills.findIndex(
+        (selectableSkill: ExtendedSkillProps) => selectableSkill.value === value
+      )
       const selectedSkill = selectableSkills[selectedSkillIndex]
 
       const newSelectableSkills = [...selectableSkills]
       newSelectableSkills[selectedSkillIndex].isSelected = false
 
-      const unselectedSkillIndex = selectedSkills.findIndex((selectedSkill: ExtendedSkillProps) => selectedSkill.value === value)
+      const unselectedSkillIndex = selectedSkills.findIndex(
+        (selectedSkill: ExtendedSkillProps) => selectedSkill.value === value
+      )
       const newSelectedSkills = [...selectedSkills]
       newSelectedSkills.splice(unselectedSkillIndex, 1)
 

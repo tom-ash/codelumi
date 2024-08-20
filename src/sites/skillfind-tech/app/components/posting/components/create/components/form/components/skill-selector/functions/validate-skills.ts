@@ -1,4 +1,4 @@
-import { SkillDto } from "../../../types/skill.dto";
+import { SkillDto } from '../../../types/skill.dto'
 
 interface ValidateSkills {
   (params: { value: SkillDto[]; errorMessage: string; setErrors(errors: { skills: string }): void }): 'skills' | null

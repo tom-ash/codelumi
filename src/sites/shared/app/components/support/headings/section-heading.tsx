@@ -20,7 +20,5 @@ export const SectionHeading: SectionHeadingInterface = props => {
     )
   }
 
-  return (
-    <h2 className='section-heading'>{heading}</h2>
-  )
+  return <h2 className='section-heading'>{heading}</h2>
 }

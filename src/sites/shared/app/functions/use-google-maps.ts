@@ -7,16 +7,8 @@ import { useControl } from './store/use-control'
 import removePins from '../../../mapawynajmu-pl/app/components/listing/functions/map/pins/remove-pins'
 import { MapStyles } from '../components/support/map-index/map-index'
 
-export const useGoogleMaps = (params: {
-  googleMapsApiKey: any,
-  lang?: Lang,
-  mapStyles?: MapStyles,
-}) => {
-  const {
-    googleMapsApiKey,
-    lang,
-    mapStyles,
-  } = params
+export const useGoogleMaps = (params: { googleMapsApiKey: any; lang?: Lang; mapStyles?: MapStyles }) => {
+  const { googleMapsApiKey, lang, mapStyles } = params
   const { store } = useContext(ReactReduxContext)
   const { dispatch } = store
   const setApp = (value: any) => dispatch({ type: 'app', value })
