@@ -1,3 +1,5 @@
+@import '../z-index';
+
 %drag-and-drop-container {
   position: relative;
   // .required {
@@ -20,7 +22,7 @@
       bottom: 0;
       left: 0;
       opacity: 0;
-      z-index: 2;
+      z-index: $SUPPORT_DRAG_AND_DROP_INPUT_Z_INDEX;
       background: none;
     }
     cursor: pointer !important;

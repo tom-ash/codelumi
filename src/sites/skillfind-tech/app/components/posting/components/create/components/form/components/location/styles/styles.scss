@@ -1,6 +1,7 @@
 @import '../../../styles/section.scss';
 @import '../../../../../../../../../styles/inputs/text.scss';
 @import '../../../../../../../styles/pin.scss';
+@import '../../../../../../../../../styles/z-index';
 
 #postings-new-form {
   #google-map-container {
@@ -34,7 +35,7 @@
   .filter.location {
     @extend %text-input;
     position: absolute;
-    z-index: 311;
+    z-index: $VISITOR_POSTINGS_NEW_LOCATION_Z_INDEX;
     top: 15px;
     right: 15px;
     left: 15px;
@@ -57,7 +58,6 @@
     position: relative;
     top: -5px;
     background: white;
-    z-index: 200;
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     ul {

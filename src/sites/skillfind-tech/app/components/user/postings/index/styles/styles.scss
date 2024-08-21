@@ -1,4 +1,5 @@
 @import '../../../../posting/components/index/components/tile/styles/styles.scss';
+@import '../../../../../styles/z-index';
 
 #user-postings-index {
   ul {
@@ -158,7 +159,7 @@
     bottom: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.2);
-    z-index: 999;
+    z-index: $USER_POSTINGS_INDEX_DELETE_MODAL_COVER_Z_INDEX;
     .deleted-posting-modal {
       position: absolute;
       top: 0;

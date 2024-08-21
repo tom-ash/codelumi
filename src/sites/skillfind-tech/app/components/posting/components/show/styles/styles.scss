@@ -8,6 +8,7 @@
 @import '../../../../../../../shared/app/styles/media-breakpoints';
 @import './base';
 @import './large-tablet';
+@import '../../../../../styles/z-index';
 
 #postings-show {
   @extend %base;
@@ -16,7 +17,7 @@
 
 .go-back {
   background: white;
-  z-index: 2;
+  z-index: $VISITOR_POSTINGS_SHOW_GO_BACK_BUTTON_Z_INDEX;
   position: absolute;
   top: 30px;
   right: 30px;

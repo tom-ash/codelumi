@@ -4,6 +4,7 @@
 @import '../../../../../styles/inputs/select.scss';
 @import '../../../../../styles/inputs/picture-input.scss';
 @import '../../common/components/industry/styles/styles.scss';
+@import '../../../../../styles/z-index';
 
 #user-users-edit {
   @extend %container;
@@ -80,7 +81,7 @@
     bottom: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.2);
-    z-index: 999;
+    z-index: $USER_USERS_EDIT_DELETE_MODAL_COVER_Z_INDEX;
     .delete-modal {
       height: 140px;
       width: 240px;
