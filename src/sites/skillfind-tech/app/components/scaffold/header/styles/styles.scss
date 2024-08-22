@@ -3,184 +3,57 @@
 @import '../../../../styles/dimensions';
 @import '../../../../styles/colors';
 @import '../components/side-menu/styles/side_menu';
+@import './link';
+@import './account';
+@import './lang_switch';
 
 #header {
-  z-index: $SCAFFOLD-HEADER-Z-INDEX;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  z-index: $SCAFFOLD-HEADER-Z-INDEX;
   height: $DESKTOP_HEADER_HEIGHT;
-  background: $LIGHT_THEME_HEADER_BACKGROUND_COLOR;
   margin: 0 auto;
   border-bottom: 1px solid $LIGHT_THEME_HEADER_BORDER_COLOR;
-  .side-menu-bars {
-    float: right;
-    margin: 0 6px;
-    margin-top: 16px;
-    margin-left: 32px;
-    button {
-      border: none;
-      background: none;
-    }
-    .bar {
-      width: 30px;
-      height: 3px;
-      background: black;
-      border: none;
-      margin-top: 10px;
-      border-radius: 4px;
-      &:first-of-type {
-        margin-top: 0;
-      }
-    }
-    .cover {
-      position: fixed;
-      z-index: $SCAFFOLD_HEADER_SIDE_MENU_COVER_Z_INDEX;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
-    .side-menu {
-      @extend %side-menu;
-    }
-  }
-
+  background: $LIGHT_THEME_HEADER_BACKGROUND_COLOR;
   .inner {
     position: relative;
     max-width: 1440px;
-    margin: 0 auto;
     height: 60px;
+    margin: 0 auto;
     .logo {
       position: absolute;
     }
-    .lang-switch {
-      float: right;
-      color: black;
-      .current {
-        line-height: $DESKTOP_HEADER_HEIGHT;
-      }
-      .all {
-        top: $DESKTOP_HEADER_HEIGHT;
-        border-bottom-right-radius: 4px;
-        border-bottom-left-radius: 4px;
-        a {
-          display: block;
-        }
-      }
-    }
     .link,
     .account {
-      float: right;
-      margin-right: 40px;
-      font-size: 15px;
-      line-height: $DESKTOP_HEADER_HEIGHT;
-      svg {
-        position: relative;
-        top: 2px;
-        height: 15px;
-        margin-right: 8px;
-      }
+      @extend %link;
     }
-
     .account {
-      position: relative;
-      // line-height: 1000px;
-      // .link {
-      //   line-height: 16px;
-      //   text-wrap: nowrap;
-      // }
-      > button {
-        margin-top: 20px;
-        height: 15px;
-        line-height: 15px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        svg {
-          &:first-of-type {
-            top: 2.5px;
-          }
-          &:last-of-type {
-            position: relative;
-            margin-left: 6px;
-            top: 1px;
-            transition: ease-in 0.2s;
-            fill: #17202a;
-            height: 10px;
-            fill: gray;
-            transform: rotate(-90deg);
-          }
-        }
-      }
-
-      &.open {
-        > button {
-          svg {
-            &:last-of-type {
-              transform: rotate(90deg);
-            }
-          }
-        }
-      }
-      .menu {
-        position: absolute;
-        padding: 20px 30px;
-        background: white;
-        box-shadow:
-          rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-        top: 65px;
-        right: -60px;
-        width: 200px;
-        border-radius: 4px;
-      }
-      .link {
-        float: none;
-        line-height: 15px;
-        text-wrap: nowrap;
-        a {
-          &:hover {
-            // color: gray;
-            // text-decoration: underline!important;
-          }
-        }
-        svg {
-          top: 3px;
-          margin-right: 12px;
-        }
-      }
-      .settings {
-        margin: 0;
-        margin-top: 20px;
-      }
-      .sign-out {
-        line-height: 15px;
-        margin-top: 20px;
-        // margin-right: 12px;
-        width: auto;
-        svg {
-          position: relative;
-          top: 2.5px;
-          margin-right: 12px;
-        }
-        .input {
-          width: 100%;
-          text-align: left;
-          border: none;
-          background: none;
-          font-size: 15px;
-          cursor: pointer;
-        }
-      }
+      @extend %account;
+    }
+    .lang-switch {
+      @extend %lang-switch;
+    }
+    .side-menu-button {
+      @extend %side-menu-button;
+    }
+    .side-menu-panel {
+      @extend %side-menu-panel;
     }
   }
-
-  @media #{$LARGE-PHONE} {
-    padding: 0 10px;
+  @media #{$MEDIUM-PC} {
+    .inner {
+      margin: 0 30px;
+    }
   }
-  .lang-switch {
-    border-left: none;
+  @media #{$LARGE-PHONE} {
+    padding: 0 20px;
+    .inner {
+      margin: 0;
+      .lang-switch {
+        border-left: none;
+      }
+    }
   }
 }

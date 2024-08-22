@@ -21,6 +21,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button {
+  font-family: 'Source Sans 3', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 #app {
   background: $LIGHT_THEME_APP_BACKGROUND_COLOR;
   padding-top: $DESKTOP_HEADER_HEIGHT;

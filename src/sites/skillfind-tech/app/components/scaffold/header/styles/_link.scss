@@ -1,0 +1,15 @@
+%link {
+  float: right;
+  margin-right: 30px;
+  line-height: $DESKTOP_HEADER_HEIGHT;
+  font-size: 16px;
+  font-weight: 500;
+  svg {
+    display: none;
+  }
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

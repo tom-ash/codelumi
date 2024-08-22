@@ -20,7 +20,7 @@ export const Logo: LogoInterface = props => {
       }}
     >
       <span className='skillfind'>skillfind</span>
-      <Icon scale={0.03} />
+      <Icon scale={0.035} />
       <span className='tech'>tech</span>
     </div>
   )

@@ -7,16 +7,17 @@
   position: relative;
   top: 0;
   left: 0;
-  .icon {
-    position: absolute;
-    top: 18px;
-    left: 68px;
-    top: 32px;
-  }
+
   .skillfind {
     font-size: 20px;
     line-height: 60px;
     display: inline-block;
+  }
+  .icon {
+    position: absolute;
+    top: 18px;
+    left: 69.3px;
+    top: 32px;
   }
   .tech {
     position: relative;

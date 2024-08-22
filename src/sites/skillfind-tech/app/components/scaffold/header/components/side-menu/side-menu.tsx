@@ -12,8 +12,8 @@ import { useUser } from '../../../../../../../shared/app/functions/store/use-use
 export const SideMenu = () => {
   const { authorized } = useUser()
   const { isSideMenuOpen: isOpen } = useControl()
-  const classNames = ['side-menu-bars']
-  const menuClassNames = ['side-menu']
+  const classNames = ['side-menu-button']
+  const menuClassNames = ['side-menu-panel']
   const dispatch = useDispatch()
   const setControl = (value: any) => dispatch({ type: 'control', value })
 
@@ -23,18 +23,22 @@ export const SideMenu = () => {
   }
 
   return (
-    <div className={classNames.join(' ')}>
-      <button onClick={() => setControl({ isSideMenuOpen: !isOpen })}>
-        <div className='bar' />
-        <div className='bar' />
-        <div className='bar' />
-      </button>
-      {isOpen && (
-        <div
-          className='cover'
-          onClick={() => setControl({ isSideMenuOpen: false })}
-        />
-      )}
+    <>
+      {/* Create component: SideMenuButton */}
+      <div className={classNames.join(' ')}>
+        <button onClick={() => setControl({ isSideMenuOpen: !isOpen })}>
+          <div className='bar' />
+          <div className='bar' />
+          <div className='bar' />
+        </button>
+        {isOpen && (
+          <div
+            className='cover'
+            onClick={() => setControl({ isSideMenuOpen: false })}
+          />
+        )}
+      </div>
+      {/* Create component: SideMenuPanel */}
       <div
         className={menuClassNames.join(' ')}
         onMouseDown={e => {
@@ -56,6 +60,6 @@ export const SideMenu = () => {
           </>
         )}
       </div>
-    </div>
+    </>
   )
 }

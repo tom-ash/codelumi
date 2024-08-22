@@ -16,6 +16,8 @@ interface HeaderInterface {
   (props: {}): JSX.Element
 }
 
+// TODO
+
 const Header: HeaderInterface = props => {
   useStyles(styles)
 
@@ -26,6 +28,8 @@ const Header: HeaderInterface = props => {
     <header id='header'>
       <div className='inner'>
         <LogoLink />
+        {isMobile && <SideMenu />}
+        <LangSwitch />
         {!isMobile && (
           <>
             {!authorized && <SignUpLink />}
@@ -34,8 +38,6 @@ const Header: HeaderInterface = props => {
             <AddPostingLink />
           </>
         )}
-        {isMobile && <SideMenu />}
-        <LangSwitch />
         <FloatClear />
       </div>
     </header>

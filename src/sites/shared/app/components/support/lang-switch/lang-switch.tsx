@@ -56,7 +56,7 @@ export const LangSwitch = () => {
         className={currentClasses.join(' ')}
         onClick={() => setShowLangs(!showLangs)}
       >
-        <SVG name='earthGlobe' />
+        {/* <SVG name='earthGlobe' /> */}
         {lang}
         <SVG name='chevron' />
       </div>

@@ -1,0 +1,79 @@
+%account {
+  position: relative;
+  > button {
+    height: 15px;
+    margin-top: 20px;
+    border: none;
+    background: none;
+    line-height: 15px;    
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+    svg {
+      display: none;
+    }
+  }
+  &.open {
+    > button {
+      svg {
+        &:last-of-type {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+  .menu {
+    position: absolute;
+    top: 65px;
+    right: -60px;
+    width: 200px;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow:
+      rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background: white;
+  }
+  .link {
+    float: none;
+    line-height: 15px;
+    text-wrap: nowrap;
+    a {
+      &:hover {
+        text-decoration: underline !important;
+      }
+    }
+    svg {
+      top: 3px;
+      margin-right: 12px;
+    }
+  }
+  .settings {
+    margin: 20px 0 0;
+  }
+  .sign-out {
+    width: auto;
+    margin: 20px 0 0;
+    line-height: 15px;
+    svg {
+      display: none;
+    }
+    .input {
+      width: 100%;
+      border: none;
+      background: none;
+      text-align: left;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    button {
+      font-weight: 500;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

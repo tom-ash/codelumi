@@ -1,12 +1,42 @@
 @import '../../../../../../styles/z-index';
 
-%side-menu {
+%side-menu-button {
+  float: right;
+  margin: 0 6px;
+  margin-top: 16px;
+  margin-left: 32px;
+  button {
+    border: none;
+    background: none;
+  }
+  .bar {
+    width: 30px;
+    height: 3px;
+    background: black;
+    border: none;
+    margin-top: 10px;
+    border-radius: 4px;
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+  .cover {
+    position: fixed;
+    z-index: $SCAFFOLD_HEADER_SIDE_MENU_COVER_Z_INDEX;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+%side-menu-panel {
   position: fixed;
   z-index: $SCAFFOLD_HEADER_SIDE_MENU_Z_INDEX;
   top: 70px;
   right: 0;
   width: 0;
-  padding: 30px 0;
+  padding: 30px 0 !important;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
   box-shadow:
@@ -15,8 +45,9 @@
   background: white;
   text-wrap: nowrap;
   transition: width 0.3s ease-out;
+  overflow: hidden;
   &.open {
-    width: 240px;
+    width: 220px;
   }
   svg {
     height: 16px;
@@ -24,24 +55,27 @@
   .link,
   .sign-out {
     position: relative;
-    float: none;
-    margin: 30px;
-    padding: 0 0 30px 38px;
+    float: none !important;
+    margin: 30px !important;
+    padding: 0 0 30px 0 !important;
     border-bottom: 1px solid $LIGHT_THEME_BREAKING_LINE_COLOR;
-    line-height: 19px;
-    font-size: 19px;
+    line-height: 19px !important;
+    font-size: 19px !important;
+    text-align: left !important;
+    font-weight: 500;
     svg {
+      display: none;
       position: absolute;
       top: 0px;
       left: 0;
       height: 18px;
     }
     &:first-of-type {
-      margin-top: 0;
+      margin-top: 0 !important;
     }
     &:last-of-type {
-      margin: 30px 30px 0;
-      padding: 0 0 0 38px;
+      margin: 30px 30px 0 !important;
+      padding: 0 0 0 0 !important;
       border-bottom: none;
     }
   }
