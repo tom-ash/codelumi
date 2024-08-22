@@ -5,7 +5,6 @@
   .panel {
     .selects {
       background: #1b2631;
-
       height: 66px;
       padding-top: 12px;
     }
@@ -84,6 +83,7 @@
       padding: 15px 15px;
       .skill {
         float: left;
+        z-index: $VISITOR_POSTINGS_INDEX_MAP_SELECTED_SKILL_Z_INDEX;
         margin-right: 60px;
         .name {
           font-size: 17px;
