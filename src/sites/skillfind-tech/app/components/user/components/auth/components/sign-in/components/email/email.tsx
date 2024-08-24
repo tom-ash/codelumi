@@ -8,7 +8,7 @@ import { CredentialsError } from '../../../../../../../../../../shared/app/compo
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { useTexts } from '../../../../../../../../../../shared/app/functions/store/use-texts'
-import { Link } from '../../../../../../../../../../shared/app/components/support/link/link'
+import { DeprecatedLink } from '../../../../../../../../../../shared/app/components/support/deprecated-link/deprecated-link'
 import { MainHeading } from '../../../../../../../../../../shared/app/components/support/headings/main-heading'
 
 const UserAuthEmail = () => {
@@ -29,7 +29,7 @@ const UserAuthEmail = () => {
         <CredentialsError />
         <SignInButton />
       </form>
-      <Link linkKey='user/password-reset' />
+      <DeprecatedLink linkKey='user/password-reset' />
     </div>
   )
 }

@@ -3,7 +3,7 @@ import { FloatClear } from '../../../../../../../../shared/app/components/suppor
 
 // TODO: Add Image to support components.
 import Image from '../../../../../../../../shared/app/components/support/render-node/components/image/image'
-import { Link } from '../../../../../../../../shared/app/components/support/link/link'
+import { DeprecatedLink } from '../../../../../../../../shared/app/components/support/deprecated-link/deprecated-link'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { useData } from '../../../../../../../../shared/app/functions/store/use-data'
@@ -37,7 +37,7 @@ const VisitorPageIndex = () => {
           hrefLang: lang,
         }
 
-        return <Link {...linkProps} />
+        return <DeprecatedLink {...linkProps} />
       })}
       <FloatClear />
     </div>

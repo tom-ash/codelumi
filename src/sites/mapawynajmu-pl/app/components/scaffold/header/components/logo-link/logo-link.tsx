@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from '../../../../../../../shared/app/components/support/link/link'
+import { DeprecatedLink } from '../../../../../../../shared/app/components/support/deprecated-link/deprecated-link'
 import { ExtendedLogo } from '../../../../support/extended-logo/extended-logo'
 
 export const LogoLink = () => {
@@ -11,5 +11,5 @@ export const LogoLink = () => {
     customClassNames: 'logo',
   }
 
-  return <Link {...linkProps} />
+  return <DeprecatedLink {...linkProps} />
 }

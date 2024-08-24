@@ -7,7 +7,7 @@ import { PrivacySettingsLink } from './components/privacy-settings/privacy-setti
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { useTexts } from '../../../../../shared/app/functions/store/use-texts'
-import { Link } from '../../../../../shared/app/components/support/link/link'
+import { DeprecatedLink } from '../../../../../shared/app/components/support/deprecated-link/deprecated-link'
 import { SVG } from '../../../../../shared/app/components/support/svg/svg'
 import { FloatClear } from '../../../../../shared/app/components/support/float-clear/float-clear'
 import { AboutSkillfindTechLink } from './components/about-skillfind-tech/about-skillfind-tech.link'
@@ -20,11 +20,11 @@ const Footer = () => {
   return (
     <footer id='footer'>
       <div className='social-pages'>
-        <Link
+        <DeprecatedLink
           linkKey='facebook'
           label={<SVG name='facebookSquare' />}
         />
-        <Link
+        <DeprecatedLink
           linkKey='linkedin'
           label={<SVG name='linkedinSquare' />}
         />

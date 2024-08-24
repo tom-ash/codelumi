@@ -1,7 +1,7 @@
 import React from 'react'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
-import { Link } from '../../../../../../../../../shared/app/components/support/link/link'
+import { DeprecatedLink } from '../../../../../../../../../shared/app/components/support/deprecated-link/deprecated-link'
 import Logo from '../../../../../logo/logo'
 
 interface LogoInterface {
@@ -19,7 +19,7 @@ export const LogoLink: LogoInterface = () => {
     customClassNames: 'logo-link',
   }
 
-  return <Link {...linkProps} />
+  return <DeprecatedLink {...linkProps} />
 }
 
 export default LogoLink

@@ -1,6 +1,6 @@
 import React from 'react'
 import { SVG } from '../../../../../../../../../../shared/app/components/support/svg/svg'
-import { Link } from '../../../../../../../../../../shared/app/components/support/link/link'
+import { DeprecatedLink } from '../../../../../../../../../../shared/app/components/support/deprecated-link/deprecated-link'
 import Image from '../../../../../../../../../../shared/app/components/support/image/image'
 
 interface SkillTileInterface {
@@ -48,5 +48,5 @@ export const SkillTile: SkillTileInterface = props => {
     customClassNames: 'skill',
   }
 
-  return <Link {...linkProps} />
+  return <DeprecatedLink {...linkProps} />
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from '../../../link/link'
+import { DeprecatedLink } from '../../../deprecated-link/deprecated-link'
 import { useData } from '../../../../../functions/store/use-data'
 
 // TODO: Refactor the whole file.
@@ -59,7 +59,7 @@ const TableOfContents = props => {
 
             return (
               <li key={index}>
-                <Link
+                <DeprecatedLink
                   href={`#${identifier}`}
                   label={headingTwo}
                   title={headingTwo}
@@ -72,7 +72,7 @@ const TableOfContents = props => {
 
                       return (
                         <li>
-                          <Link
+                          <DeprecatedLink
                             href={`#${identifier}`}
                             label={headingThree}
                             title={headingThree}

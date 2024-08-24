@@ -1,6 +1,6 @@
 import React from 'react'
 import { FloatClear } from '../../../float-clear/float-clear'
-import { Link } from '../../../link/link'
+import { DeprecatedLink } from '../../../deprecated-link/deprecated-link'
 import { useData } from '../../../../../functions/store/use-data'
 
 interface QuestionIndexInterface {
@@ -23,7 +23,7 @@ const QuestionIndex: QuestionIndexInterface = props => {
 
         return (
           <li>
-            <Link
+            <DeprecatedLink
               href={href}
               hrefLang={lang}
               label={title}

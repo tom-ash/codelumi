@@ -1,6 +1,6 @@
 import React from 'react'
 import { PostingIndexTile, PostingTileProps } from '../../../../posting/components/index/components/tile/tile'
-import { Link } from '../../../../../../../shared/app/components/support/link/link'
+import { DeprecatedLink } from '../../../../../../../shared/app/components/support/deprecated-link/deprecated-link'
 
 interface TileInterface {
   (
@@ -80,7 +80,7 @@ export const Tile: TileInterface = props => {
           </div>
         </div>
         <div className='buttons'>
-          <Link
+          <DeprecatedLink
             href={editHref}
             customClassNames='edit'
             label={editLabel}

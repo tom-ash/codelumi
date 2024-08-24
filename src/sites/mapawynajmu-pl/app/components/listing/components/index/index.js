@@ -9,7 +9,7 @@ import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import { componentDidUpdate } from './functions/lifecycle'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
-import { Link } from '../../../../../../shared/app/components/support/link/link'
+import { DeprecatedLink } from '../../../../../../shared/app/components/support/deprecated-link/deprecated-link'
 import { MapIndex } from '../../../../../../shared/app/components/support/map-index/map-index'
 import { ListingsIndexTile } from './components/listings-index-tile/listings-index-tile'
 import { pinBuilder } from './functions/pin-builder'
@@ -83,7 +83,7 @@ class AnnouncementIndexSearch extends React.Component {
 
                   return (
                     <SplideSlide>
-                      <Link
+                      <DeprecatedLink
                         href={article.href}
                         hrefLang={article.hrefLang}
                         title={article.title}

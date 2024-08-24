@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from '../../../../../../../../../shared/app/components/support/link/link'
+import { DeprecatedLink } from '../../../../../../../../../shared/app/components/support/deprecated-link/deprecated-link'
 import { useApp } from '../../../../../../../../../shared/app/functions/store/use-app'
 
 export const PrivacySettingsLink = () => {
@@ -11,5 +11,5 @@ export const PrivacySettingsLink = () => {
     label: { pl: 'Ustawienia', en: 'Settings' }[lang],
   }
 
-  return <Link {...linkProps} />
+  return <DeprecatedLink {...linkProps} />
 }

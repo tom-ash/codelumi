@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from '../../../../../../../../../../shared/app/components/support/link/link'
+import { DeprecatedLink } from '../../../../../../../../../../shared/app/components/support/deprecated-link/deprecated-link'
 
 import Image from '../../../../../../../../../../shared/app/components/support/image/image'
 
@@ -29,5 +29,5 @@ export const ArticleTile: ArticleTileInterface = props => {
     customClassNames: 'article',
   }
 
-  return <Link {...linkProps} />
+  return <DeprecatedLink {...linkProps} />
 }

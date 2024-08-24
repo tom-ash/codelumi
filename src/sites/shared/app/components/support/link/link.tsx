@@ -1,87 +1,62 @@
-import React from 'react'
-import { ManagedLink } from 'managed-inputs'
+import React, { useCallback } from 'react'
 import { changeUrl } from '../../../functions/routes/changers/change-url'
-import { scrollToFragment } from '../../../functions/scrollers/scroll-to-fragment'
-import { useLinks } from '../../../functions/store/use-links'
-import { SVG } from '../svg/svg'
 
-type LinkInterfaceProps =
-  | {
-      linkKey: string
-      href?: string
-      hrefLang?: Lang
-      label?: React.ReactElement | string
-      title?: string
-      customClassNames?: string
-      retainQueryParams?: boolean
-    }
-  | {
-      href: string
-      hrefLang?: Lang
-      label?: React.ReactElement | string
-      title?: string
-      customClassNames?: string
-      retainQueryParams?: boolean
-    }
+// TODO: scrollToFragment
 
 interface LinkInterface {
-  (props: LinkInterfaceProps): React.ReactElement | null
+  (props: {
+    href: string
+    lang: Lang
+    label: React.ReactElement | string
+    title: string
+    classNames?: string[]
+    retainTab?: boolean
+    retainQuery?: boolean
+    external?: boolean
+  }): React.ReactElement | null
 }
 
 export const Link: LinkInterface = props => {
-  const { label: customLabel, href, hrefLang, title, customClassNames, retainQueryParams } = props
-  const links = useLinks()
-  const containerClassNames = customClassNames ? `${customClassNames} link` : 'link'
-  const classNames = { container: containerClassNames }
+  const {
+    href,
+    lang,
+    label,
+    title,
+    classNames: customClassNames,
+    retainTab = false,
+    retainQuery = false,
+    external = false,
+  } = props
 
-  let linkProps
+  const classNames = ['link']
 
-  if ('linkKey' in props) {
-    const linkKey = props.linkKey
-    const link = links[linkKey]
-    if (!link) return null
-
-    const label = customLabel || link.label
-    const external = link.external
-
-    if (external) {
-      const { href } = link
-
-      return (
-        <a
-          href={href}
-          target='_blank'
-        >
-          {label}
-        </a>
-      )
-    }
-
-    const onClick = () => changeUrl({ ...link, retainQueryParams })
-
-    const { href, hrefLang, title, icon } = link
-
-    linkProps = {
-      href,
-      hrefLang,
-      title,
-      label: icon ? (
-        <>
-          <SVG name={icon} />
-          {label}
-        </>
-      ) : (
-        label
-      ),
-      classNames,
-      onClick,
-    }
-  } else {
-    const isAnchor = href && href.match(/^#.+$/)
-    const onClick = () => (isAnchor ? scrollToFragment(href!) : changeUrl({ href, retainQueryParams }))
-
-    linkProps = { href, hrefLang, label: customLabel, title, classNames, onClick }
+  if (customClassNames) {
+    // https://stackoverflow.com/a/45949156
+    classNames.push.apply(classNames, customClassNames)
   }
 
-  return <ManagedLink {...linkProps} />
+  const className = classNames.join(' ')
+
+  const onClick = useCallback((e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    if (!external) {
+      e.preventDefault()
+
+      changeUrl({ href, retainQueryParams: retainQuery })
+    }
+  }, [external]);
+
+  const target = retainTab ? undefined : '_blank'
+
+  return (
+    <a
+      href={href}
+      hrefLang={lang}
+      title={title}
+      className={className}
+      onClick={onClick}
+      target={target}
+    >
+      {label}
+    </a>
+  )
 }

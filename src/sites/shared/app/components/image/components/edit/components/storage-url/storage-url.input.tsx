@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from '../../../../../support/link/link'
+import { DeprecatedLink } from '../../../../../support/deprecated-link/deprecated-link'
 import { useTexts } from '../../../../../../functions/store/use-texts'
 import { useData } from '../../../../../../functions/store/use-data'
 
@@ -15,7 +15,7 @@ export const StorageUrl = () => {
   return (
     <div className='storage-url'>
       <label>{storageUrlLinkLabel}</label>
-      <Link {...linkProps} />
+      <DeprecatedLink {...linkProps} />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from '../../../../../../../shared/app/components/support/link/link'
+import { DeprecatedLink } from '../../../../../../../shared/app/components/support/deprecated-link/deprecated-link'
 
 export const TermsOfServiceLink = () => {
   const linkProps = {
@@ -7,5 +7,5 @@ export const TermsOfServiceLink = () => {
     customClassNames: 'link',
   }
 
-  return <Link {...linkProps} />
+  return <DeprecatedLink {...linkProps} />
 }

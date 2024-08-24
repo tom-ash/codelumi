@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLinks } from '../../../../../../../../shared/app/functions/store/use-links'
-import { Link } from '../../../../../../../../shared/app/components/support/link/link'
+import { DeprecatedLink } from '../../../../../../../../shared/app/components/support/deprecated-link/deprecated-link'
 import { SVG } from '../../../../../../../../shared/app/components/support/svg/svg'
 
 interface GoBackInterface {
@@ -15,7 +15,7 @@ export const GoBack: GoBackInterface = () => {
   const label = <SVG name='close' />
 
   return (
-    <Link
+    <DeprecatedLink
       href={href}
       hrefLang={hrefLang}
       title={title}

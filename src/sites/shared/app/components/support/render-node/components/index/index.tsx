@@ -1,7 +1,7 @@
 import React from 'react'
 import { FloatClear } from '../../../float-clear/float-clear'
 import { Image } from '../../../image/image'
-import { Link } from '../../../link/link'
+import { DeprecatedLink } from '../../../deprecated-link/deprecated-link'
 import { useData } from '../../../../../functions/store/use-data'
 
 interface IndexInterface {
@@ -38,7 +38,7 @@ const Index: IndexInterface = props => {
 
         return (
           <li>
-            <Link
+            <DeprecatedLink
               href={href}
               hrefLang={hrefLang}
               label={label}

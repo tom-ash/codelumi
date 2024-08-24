@@ -7,7 +7,7 @@ import { PrivacySettingsLink } from './components/privacy-settings/privacy-setti
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
 import { SVG } from '../../../../../shared/app/components/support/svg/svg'
-import { Link } from '../../../../../shared/app/components/support/link/link'
+import { DeprecatedLink } from '../../../../../shared/app/components/support/deprecated-link/deprecated-link'
 import { FloatClear } from '../../../../../shared/app/components/support/float-clear/float-clear'
 import { useTexts } from '../../../../../shared/app/functions/store/use-texts'
 
@@ -27,15 +27,15 @@ const Footer = () => {
       id='footer'
     >
       <div className='social-pages'>
-        <Link
+        <DeprecatedLink
           linkKey='facebook'
           label={<SVG name='facebookSquare' />}
         />
-        <Link
+        <DeprecatedLink
           linkKey='linkedin'
           label={<SVG name='linkedinSquare' />}
         />
-        <Link
+        <DeprecatedLink
           linkKey='linkedin'
           label={<SVG name='twitterSquare' />}
         />
