@@ -1,7 +1,7 @@
 import React from 'react'
 
 const versions = {
-  '1.0': '2024.07.29',
+  '1.0': '2024.08.25',
 }
 
 export const provisions = [
@@ -59,7 +59,7 @@ export const provisions = [
     ),
   },
   {
-    item: 'a)',
+    item: 'b)',
     tier: 'subpoint',
     version: versions['1.0'],
     pl: (
@@ -74,7 +74,7 @@ export const provisions = [
     ),
   },
   {
-    item: 'b)',
+    item: 'c)',
     tier: 'subpoint',
     version: versions['1.0'],
     pl: (
@@ -95,7 +95,7 @@ export const provisions = [
     ),
   },
   {
-    item: 'b)',
+    item: 'd)',
     tier: 'subpoint',
     version: versions['1.0'],
     pl: (
@@ -112,7 +112,7 @@ export const provisions = [
     ),
   },
   {
-    item: 'c)',
+    item: 'e)',
     tier: 'subpoint',
     version: versions['1.0'],
     pl: (
@@ -127,7 +127,7 @@ export const provisions = [
     ),
   },
   {
-    item: 'c)',
+    item: 'f)',
     tier: 'subpoint',
     version: versions['1.0'],
     pl: (
@@ -144,7 +144,7 @@ export const provisions = [
     ),
   },
   {
-    item: 'e)',
+    item: 'g)',
     tier: 'subpoint',
     version: versions['1.0'],
     pl: (
@@ -159,7 +159,7 @@ export const provisions = [
     ),
   },
   {
-    item: 'f)',
+    item: 'h)',
     tier: 'subpoint',
     version: versions['1.0'],
     pl: (
@@ -170,13 +170,13 @@ export const provisions = [
     ),
     en: (
       <span>
-        <strong>Poster</strong> - entity conducting business activities on its own behalf, which holds an Account on the
+        <strong>Poster</strong> - entity conducting business activities on its own behalf, which holds an Account in the
         Service dedicated to adding Job Postings,
       </span>
     ),
   },
   {
-    item: 'f)',
+    item: 'i)',
     tier: 'subpoint',
     version: versions['1.0'],
     pl: (
@@ -197,7 +197,7 @@ export const provisions = [
     ),
   },
   {
-    item: 'f)',
+    item: 'j)',
     tier: 'subpoint',
     version: versions['1.0'],
     pl: (
@@ -215,7 +215,7 @@ export const provisions = [
   },
 
   {
-    item: 'g)',
+    item: 'k)',
     tier: 'subpoint',
     version: versions['1.0'],
     pl: (
@@ -251,8 +251,7 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Usługi świadczone przez Usługodawcę w ramach niniejszego Serwisu obejmują w szczególności, ale nie wyłącznie,
-        na:
+        Usługi świadczone przez Usługodawcę w ramach niniejszego Serwisu obejmują w szczególności, ale nie wyłącznie:
       </span>
     ),
     en: <span>The services provided by the Service Provider within this Service include, without limitation:</span>,
@@ -261,14 +260,14 @@ export const provisions = [
     item: 'a)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: <span>przyjmowaniu od Ogłoszeniodawców Ogłoszeń Współpracy do publikacji ich w Serwisie,</span>,
+    pl: <span>przyjmowanie od Ogłoszeniodawców Ogłoszeń Współpracy do publikacji ich w Serwisie,</span>,
     en: <span>accepting Job Postings from Posters for publication in the Service,,</span>,
   },
   {
     item: 'b)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: <span>publikowaniu Ogłoszeń Współpracy w Serwisie,</span>,
+    pl: <span>publikowanie Ogłoszeń Współpracy w Serwisie,</span>,
     en: <span>publishing Job Postings in the Service,</span>,
   },
   {
@@ -277,7 +276,7 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        przyjmowaniu aplikacji od osób fizycznych do stanowisk objętych Ogłoszeniami Współpracy i udostępnianiu tych
+        przyjmowanie aplikacji od osób fizycznych do stanowisk objętych Ogłoszeniami Współpracy i udostępnianie tych
         aplikacji Ogłoszeniodawcom, oraz
       </span>
     ),
@@ -292,7 +291,7 @@ export const provisions = [
     item: 'd)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: <span>udostępnianiu treści cyfrowych, w tym w szczególności, ale nie wyłącznie, artykułów technicznych.</span>,
+    pl: <span>udostępnianie treści cyfrowych, w tym w szczególności, ale nie wyłącznie, artykułów technicznych.</span>,
     en: <span>providing access to digital content, including, without limitation, technical articles,</span>,
   },
   {
@@ -327,7 +326,7 @@ export const provisions = [
     en: (
       <span>
         having on the device the current version of a web browser such as Google Chrome, Mozilla Firefox, Microsoft
-        Edge, Opera, Safari, or another compatible with the aforementioned,,
+        Edge, Opera, Safari, or another compatible with the aforementioned, and
       </span>
     ),
   },
@@ -335,8 +334,8 @@ export const provisions = [
     item: 'c)',
     tier: 'subpoint',
     version: versions['1.0'],
-    pl: <span>włączenie w przeglądarce internetowej obsługi JavaScript oraz plików cookies,</span>,
-    en: <span>enabling JavaScript and cookies support in the web browser.,</span>,
+    pl: <span>włączenie w przeglądarce internetowej obsługi JavaScript oraz plików cookies.</span>,
+    en: <span>enabling JavaScript and cookies support in the web browser.</span>,
   },
 
   {
@@ -636,7 +635,6 @@ export const provisions = [
       </span>
     ),
   },
-
   {
     item: '6.',
     tier: 'header',
@@ -710,7 +708,7 @@ export const provisions = [
         Ogłoszeniodawca udziela Usługodawcy nieograniczonej terytorialnie oraz niewyłącznej licencji na używanie Utworów
         Ogłoszeniodawcy w celu realizacji usług świadczonych na rzecz Ogłoszeniodawcy przez Serwis, takich jak, w
         szczególności, ale nie wyłącznie, publiczne udostępnianie Ogłoszeń publikowanych przez Ogłoszeniodawcę, które
-        zawierają Uwtory Ogłoszeniodawcy, jak i w celu promowania tych Ogłoszeń.
+        zawierają Utwory Ogłoszeniodawcy, jak i w celu promowania tych Ogłoszeń.
       </span>
     ),
     en: (
@@ -919,7 +917,7 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Po zebraniu danych osobowych i udostępnieniu ich Ogłoszeniodawcy, zgodnie z Punktem 3.1 b), administratorem tych
+        Po zebraniu danych osobowych i udostępnieniu ich Ogłoszeniodawcy, zgodnie z Punktem 3.2 c), administratorem tych
         danych osobowych staje się również Ogłoszeniodawca, który jest wyłącznie odpowiedzialny za przetwarzanie tych
         danych osobowych przez tego Ogłoszeniodawcę, które następuje po ich udostępnieniu, a Usługodawca w tym zakresie
         nie występuje w roli administratora.
@@ -927,7 +925,7 @@ export const provisions = [
     ),
     en: (
       <span>
-        After collecting personal data and providing it to the Poster in accordance with Section 3.1(b), the Poster also
+        After collecting personal data and providing it to the Poster in accordance with Section 3.2 c), the Poster also
         becomes the data controller for these personal data, being solely responsible for the processing of this
         personal data that occurs after the provision. The Service Provider does not act as the data controller in this
         regard.
@@ -943,7 +941,7 @@ export const provisions = [
         Ogłoszeniodawca, który stał się administratorem danych osobowych zgodnie z Punktem 7.4 powyżej zobowiązany jest
         do wypełniania wszelkich obowiązków wymaganych przepisami prawa jako administrator danych osobowych, w tym w
         szczególności, ale nie wyłącznie, wdrożenia odpowiednich środków technicznych i organizacyjnych w celu
-        wypełnienia obowiązków nakreślonych przepisami prawa oraz zapewniających bezpieczeństwo danych osobowych, oraz
+        wypełnienia obowiązków nakreślonych przepisami prawa oraz zapewniających bezpieczeństwo danych osobowych, oraz{' '}
         <strong>wypełnienia obowiązków informacyjnych wobec osób, których dane dotyczą</strong>.
       </span>
     ),
@@ -979,7 +977,6 @@ export const provisions = [
         introduce interruptions in the provision of the Services.
       </span>
     ),
-    // TODO: Co w przypadku zaprzestania i w przypadku przerw.
   },
   {
     item: '8.2.',
@@ -1094,7 +1091,7 @@ export const provisions = [
     version: versions['1.0'],
     pl: (
       <span>
-        Usługodawca nie ponosi odpowiedzialności za szkody powstałe z uwagi na na korzystanie z Usług Usługodawcy
+        Usługodawca nie ponosi odpowiedzialności za szkody powstałe z uwagi na korzystanie z Usług Usługodawcy
         świadczonych w ramach Serwisu, ani ze względu na jakiekolwiek inne korzystanie z Serwisu, które powstały ze
         względu na działania lub zaniechania podmiotu poszkodowanego lub osób trzecich, chyba, że wymagają tego
         bezwzględnie obowiązujące przepisy prawa.
@@ -1300,7 +1297,8 @@ export const provisions = [
         dnia otrzymania powiadomienia o tych zmianach, poprzez wysłanie wiadomości email o odpowiedniej treści na adres{' '}
         <u>kontakt@skillfind.tech</u>, z zastrzeżeniem, że takie wypowiedzenie nie ma zastosowania do odpłatnch usług
         Usługodawcy świadczonych w ramach Serwisu aktywowanych przez Użytkownika przed tymi zmianami, aż do czasu
-        zakończenia świadczenia tych usług.
+        zakończenia świadczenia tych usług. Brak wypowiedzenia umowy dotyczącej prowadzenia Konta w Serwisie w tym
+        trybie oznacza akceptację Regulaminu.
       </span>
     ),
     en: (
@@ -1310,7 +1308,9 @@ export const provisions = [
         period of 14 days from the date of receiving notification of these changes, through sending an email message
         with the relevant content to the address <u>contact@skillfind.tech</u>, with the reservation that such
         termination is not applicable to the paid services provisioned by the Service Provider within the Service
-        activated before these amendements, until the termination of provisioning of those services.
+        activated before these amendements, until the termination of provisioning of those services. Failure to
+        terminate the agreement regarding the maintenance of the Account in the Service in this manner constitutes
+        acceptance of the Terms and Conditions.
       </span>
     ),
   },
@@ -1364,7 +1364,7 @@ export const provisions = [
     item: '11.3.',
     tier: 'point',
     version: versions['1.0'],
-    pl: <span>Niniejszy Regulamin obowiązuje od dnia 28 lipca 2024 r.</span>,
-    en: <span>These Terms of Service are applicable as of July 28th, 2024.</span>,
+    pl: <span>Niniejszy Regulamin obowiązuje od dnia 25 sierpnia 2024 r.</span>,
+    en: <span>These Terms of Service are applicable as of August 25th, 2024.</span>,
   },
 ]
