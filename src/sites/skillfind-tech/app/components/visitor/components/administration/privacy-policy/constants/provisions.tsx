@@ -1,7 +1,7 @@
 import React from 'react'
 
 const versions = {
-  '1.0': '2021.06.01',
+  '1.0': '2024.08.25',
 }
 
 export const provisions = [
@@ -117,7 +117,7 @@ export const provisions = [
     item: '3.',
     tier: 'header',
     version: versions['1.0'],
-    pl: <span>Jakie rodzaje danych osobowych zbierane są przez Usługodawcy?</span>,
+    pl: <span>Jakie rodzaje danych osobowych zbierane są przez Usługodawcę?</span>,
     en: <span>What kinds of personal data are gathered by the Service Provider?</span>,
   },
   {
@@ -127,7 +127,7 @@ export const provisions = [
     pl: (
       <span>
         Usługodawca może gromadzić informacje o Odwiedzających Serwis odnoszące się do ich zachowań w Serwisie, ich
-        lokalizacji oraz rodzaju urządzeń wykorzystywanych do odwiedzania serwisu.
+        lokalizacji oraz rodzaju urządzeń wykorzystywanych do odwiedzania Serwisu.
       </span>
     ),
     en: (
@@ -235,7 +235,6 @@ export const provisions = [
     pl: <span>Usługodawca przetwarza dane osobowe:</span>,
     en: <span>The Service Provider processes personal data:</span>,
   },
-
   {
     item: 'a)',
     tier: 'subpoint',
@@ -283,9 +282,10 @@ export const provisions = [
     ),
     en: (
       <span>
-        to make it available to the Poster regarding a person who submitted an application for the position covered by a
-        given Job Posting through the form available on the Service with that posting, for the purpose of the Poster
-        conducting the recruitment process for that position, when the data subject gives their consent.,
+        to make the personal data available to the Poster regarding a person who submitted an application for the
+        position covered by a given Job Posting through the form available in the Service with that posting, for the
+        purpose of the Poster conducting the recruitment process for that position, when the data subject gives their
+        consent.,
       </span>
     ),
   },
@@ -523,7 +523,7 @@ export const provisions = [
     item: '10.',
     tier: 'header',
     version: versions['1.0'],
-    pl: <span>Jak długo przechowywane są dane osobowe przez Usługodawcy?</span>,
+    pl: <span>Jak długo przechowywane są dane osobowe przez Usługodawcę?</span>,
     en: <span>How long the personal data is stored by the Service Provider?</span>,
   },
   {

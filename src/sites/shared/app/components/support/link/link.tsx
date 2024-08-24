@@ -37,13 +37,16 @@ export const Link: LinkInterface = props => {
 
   const className = classNames.join(' ')
 
-  const onClick = useCallback((e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    if (!external) {
-      e.preventDefault()
+  const onClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+      if (!external) {
+        e.preventDefault()
 
-      changeUrl({ href, retainQueryParams: retainQuery })
-    }
-  }, [external]);
+        changeUrl({ href, retainQueryParams: retainQuery })
+      }
+    },
+    [external]
+  )
 
   const target = retainTab ? undefined : '_blank'
 

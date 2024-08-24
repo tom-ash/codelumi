@@ -3,11 +3,7 @@ import { useLinks } from '../../../functions/store/use-links'
 import { Link } from '../link/link'
 
 interface TrackedLinkInterface {
-  (props: {
-    track: string
-    classNames?: string[]
-    retainQuery?: boolean
-  }): React.ReactElement;
+  (props: { track: string; classNames?: string[]; retainQuery?: boolean }): React.ReactElement
 }
 
 export const TrackedLink: TrackedLinkInterface = props => {
@@ -16,16 +12,10 @@ export const TrackedLink: TrackedLinkInterface = props => {
   const link = links[track]
 
   if (!link) {
-    throw new Error('Link track unavailable.'); // TODO: Custom error.
+    throw new Error('Link track unavailable.') // TODO: Custom error.
   }
 
-  const {
-    href,
-    lang,
-    label,
-    title,
-    external,
-  } = link
+  const { href, lang, label, title, external } = link
 
   return (
     <Link
