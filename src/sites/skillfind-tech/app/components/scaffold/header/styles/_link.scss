@@ -12,4 +12,12 @@
       text-decoration: underline;
     }
   }
+  &.add-posting {
+    line-height: 32px;
+    background: rgba(27, 38, 49, .1);
+    color: #1b2631;
+    padding: 0 12px;
+    border-radius: 4px;
+    margin-top: 14px;
+  }
 }

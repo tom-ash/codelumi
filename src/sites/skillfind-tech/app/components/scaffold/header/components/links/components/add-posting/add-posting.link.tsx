@@ -4,7 +4,7 @@ import { DeprecatedLink } from '../../../../../../../../../shared/app/components
 export const AddPostingLink = () => {
   const linkProps = {
     linkKey: 'listings/new/form',
-    customClassNames: 'link',
+    customClassNames: 'add-posting',
   }
 
   return <DeprecatedLink {...linkProps} />
