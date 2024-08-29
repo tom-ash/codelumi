@@ -2,7 +2,7 @@
 @import './table-of-contents';
 @import '../../../../styles/colors';
 
-$DESKTOP-MARGIN: 30px;
+$DESKTOP-MARGIN: 40px;
 $MOBILE-MARGIN: 20px;
 $PRE-MARGIN: 18px;
 
@@ -24,7 +24,6 @@ $PRE-MARGIN: 18px;
   width: 100%;
   line-height: 1.5;
   padding: 0 0 $DESKTOP-MARGIN 0;
-  border: 1px solid $LIGHT_THEME_CONTAINER_BORDER_COLOR;
   > section {
     margin-top: 64px;
     &:first-of-type {
@@ -162,24 +161,10 @@ $PRE-MARGIN: 18px;
   }
   header + .definition,
   header + .table-of-contents {
-    margin-top: 48px;
+    margin-top: 40px;
   }
   pre {
     @extend %standard-margins;
-  }
-  .definition {
-    margin: 0;
-    background: #ebf5fb;
-    border-radius: 3px;
-    dfn {
-      font-weight: bold;
-    }
-    position: relative;
-    padding: 20px 30px;
-    margin-top: $PRE-MARGIN;
-    @media #{$LARGE-PHONE} {
-      padding: 20px;
-    }
   }
   figure {
     background: #fef9e7;
@@ -199,9 +184,35 @@ $PRE-MARGIN: 18px;
       font-size: 13px;
       font-style: italic;
     }
-  }
-  @media #{$LARGE-PHONE} {
-    border-radius: 0;
+    &.definition {
+      @extend %standard-margins;
+      position: relative;
+      border-radius: 3px;
+      padding: 20px;
+      background: #ebf5fb;
+      figcaption {
+        display: block;
+        margin: 0 0 20px;
+        padding: 0 0 10px;
+        border-bottom: 1px solid gray;
+        line-height: 14px;
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        color: black;
+        text-transform: uppercase;
+      }
+      p {
+        margin: 0;
+        dfn {
+          font-weight: bold;
+        }
+      }
+      @media #{$LARGE-PHONE} {
+        margin: $PRE-MARGIN 0 0;
+        padding: 20px;
+      }
+    }
   }
   .index {
     position: relative;
@@ -216,5 +227,8 @@ $PRE-MARGIN: 18px;
         font-weight: normal;
       }
     }
+  }
+  @media #{$LARGE-PHONE} {
+    border-radius: 0;
   }
 }

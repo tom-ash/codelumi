@@ -51,7 +51,7 @@ const TableOfContents = props => {
   return (
     <nav className='table-of-contents'>
       <div className='inner-container'>
-        <h2>{title}</h2>
+        <h2>{title?.toLowerCase()}</h2>
         <ul>
           {/* @ts-ignore */}
           {mappedSections.map((mappedSection, index) => {

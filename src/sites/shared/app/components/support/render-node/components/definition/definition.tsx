@@ -15,10 +15,14 @@ const Definition = (props: DefinitionProps) => {
   const __html = `<dfn>${term}</dfn> ${enrichText(body)}`
 
   return (
-    <p
-      className='definition'
-      dangerouslySetInnerHTML={{ __html }}
-    />
+    <figure className='definition'>
+      <figcaption>
+        <strong>{term}</strong>
+      </figcaption>
+      <p
+        dangerouslySetInnerHTML={{ __html }}
+      />
+    </figure>
   )
 }
 

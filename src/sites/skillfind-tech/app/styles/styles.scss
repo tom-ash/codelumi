@@ -50,7 +50,7 @@ a {
 
 .breadcrumbs {
   @extend %breadcrumbs;
-  max-width: 840px;
+  max-width: 960px;
   font-variant-caps: all-small-caps;
   width: 100%;
   text-align: left;
@@ -62,7 +62,6 @@ a {
   position: relative;
   svg {
     position: relative;
-    // fill: white;
     top: 1px;
     height: 13px;
   }
