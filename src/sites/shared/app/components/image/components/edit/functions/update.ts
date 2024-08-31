@@ -23,10 +23,12 @@ export const update = (props: saveProps) => {
     // @ts-ignore
     .then(compress)
     .then(compressedBlob => {
-      const keyExtension = '.jpeg' // TODO: Derive from compressedBlob.type.
+      const keyExtension = 'jpeg' // TODO: Derive from compressedBlob.type.
+
+      const key = `images/${storageKey}.${keyExtension}`
 
       const body = JSON.stringify({
-        key: storageKey + keyExtension,
+        key,
         content_type: compressedBlob.type,
       })
 
@@ -55,10 +57,10 @@ export const update = (props: saveProps) => {
               acl: 'public-read',
             },
           }).then(response => {
-            const storageUrl = response.url + storageKey + keyExtension
+            const storageUrl = response.url + key
 
             setData({
-              storageUrl: response.url + storageKey + keyExtension,
+              storageUrl: response.url + key
             })
 
             fetch(`${apiUrl}/image/update`, {
