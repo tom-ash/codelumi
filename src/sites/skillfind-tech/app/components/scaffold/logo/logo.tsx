@@ -14,13 +14,13 @@ export const Logo: LogoInterface = props => {
 
   return (
     <div
-      id='logo'
+      className='logo'
       style={{
         transform: `scale(${scale})`,
       }}
     >
       <span className='skillfind'>skillfind</span>
-      <Icon scale={0.035} />
+      <Icon scale={0.038} />
       <span className='tech'>tech</span>
     </div>
   )

@@ -5,6 +5,7 @@ import { PrivacySettingsLink } from './components/privacy-settings/privacy-setti
 import { AcceptButton } from './components/accept/accept'
 import useStyles from 'isomorphic-style-loader-react18/useStyles'
 import styles from './styles/styles.scss'
+import Logo from '../../../../scaffold/logo/logo'
 
 const VisitorPrivacyMonit = () => {
   useStyles(styles)
@@ -15,6 +16,10 @@ const VisitorPrivacyMonit = () => {
       className='cover'
     >
       <div id='privacy-monit'>
+        <div className='logo-container'>
+          <Logo />
+        </div>
+
         <Cookies />
         <DataProcessing />
         <div className='buttons'>
