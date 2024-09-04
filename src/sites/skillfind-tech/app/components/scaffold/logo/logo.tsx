@@ -4,23 +4,21 @@ import styles from './styles/styles.scss'
 import Icon from '../icon/icon'
 
 interface LogoInterface {
-  (props: { scale?: number }): JSX.Element
+  (props: { scale?: number, style?: React.CSSProperties, iconColor?: string }): JSX.Element
 }
 
 export const Logo: LogoInterface = props => {
   useStyles(styles)
 
-  const { scale } = props
+  const { style, iconColor } = props
 
   return (
     <div
       className='logo'
-      style={{
-        transform: `scale(${scale})`,
-      }}
+      style={style}
     >
       <span className='skillfind'>skillfind</span>
-      <Icon scale={0.038} />
+      <Icon scale={0.04} color={iconColor} />
       <span className='tech'>tech</span>
     </div>
   )

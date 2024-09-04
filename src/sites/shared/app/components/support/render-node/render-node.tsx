@@ -56,7 +56,7 @@ export const RenderNode = (props: RenderNodeProps) => {
     // @ts-ignore
     if (node.SkillfindTechLogo) {
       // @ts-ignore
-      return <SkillfindTechLogo {...node.SkillfindTechLogo} />
+      return <SkillfindTechLogo {...node.SkillfindTechLogo} style={node.style} iconColor={node.iconColor} />
     }
 
     // @ts-ignore

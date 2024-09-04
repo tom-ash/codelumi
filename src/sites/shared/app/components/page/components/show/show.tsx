@@ -18,7 +18,7 @@ const PageShow = () => {
       <PageTile />
       {isAdmin && (
         <button
-          className={'page-edit'}
+          className={'pages-edit'}
           onClick={() => changeUrl({ href })}
         >
           <SVG name='edit' />

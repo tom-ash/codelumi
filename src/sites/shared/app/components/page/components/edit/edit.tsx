@@ -35,7 +35,7 @@ const PageCreate = () => {
   }, [body])
 
   return (
-    <div id='page-edit'>
+    <div id='pages-edit'>
       <PageTile />
       <div id='edit-panel'>
         <nav>

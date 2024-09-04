@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { useData } from '../../../functions/store/use-data'
-import { SVG } from '../svg/svg'
+import { ExternalLink } from '../external-link/external-link'
 
 interface AuthorInterface {
   (): React.ReactElement
@@ -11,16 +11,34 @@ export const Author: AuthorInterface = () => {
     author: {
       firstName,
       lastName,
-      // url, // TODO!
-      pictureUrl,
+      url,
+      // pictureUrl,
+      // linkedInUrl,
+      // xUrl,
     },
   } = useData()
 
-  const name = `${firstName} ${lastName}`
+  const name = useMemo(() => {
+    const firstNameAndLastName = `${firstName} ${lastName}`
+
+    if (url) {
+      return (
+        <ExternalLink
+          href={url}
+          lang={'en'}
+          label={firstNameAndLastName}
+          title={firstNameAndLastName}
+        />
+      )
+    }
+
+    return (
+      firstNameAndLastName
+    )
+  }, [firstName, lastName, url])
 
   return (
     <div className='author'>
-      <SVG name='pen' />
       {name}
     </div>
   )
