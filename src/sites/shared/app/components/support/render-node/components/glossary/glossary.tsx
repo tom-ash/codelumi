@@ -1,7 +1,9 @@
 import React, { useMemo, useState } from 'react'
-import { MainHeading } from '../../../headings/main-heading';
 import { TextInput } from 'semanticize';
 import { escapeRegExp } from 'lodash';
+import { FloatClear } from '../../../float-clear/float-clear';
+import { SVG } from '../../../svg/svg';
+import Markdown from 'markdown-to-jsx';
 
 export interface GlossaryProps {
   title: string;
@@ -22,29 +24,34 @@ export const Glossary = (props: GlossaryProps) => {
 
       return entry.term.toLowerCase().match(regexp)
     })
-  }, [search])
+  }, [search, entries])
 
   return (
     <div className='glossary'>
       <h1>
         {title}
       </h1>
-      <div className='search'>
-        <TextInput
-          value={search}
-          onChange={setSearch}
-        />
-      </div>
+      <TextInput
+        className='search'
+        value={search}
+        onChange={setSearch}
+        placeholder='Search skills'
+      >
+        <SVG name='magnifyingGlass' />
+      </TextInput >
       <div className='entries'>
         {searchedEntries.map(entry => {
           const { term, definition } = entry
 
           return (
-            <div>
-              <dfn>{term}</dfn>
-              <div>
-                {definition}
+            <div className='entry'>
+              <dfn><strong>{term}</strong></dfn>
+              <div className='explanation'>
+                <Markdown>
+                  {definition}
+                </Markdown>
               </div>
+              <FloatClear />
             </div>
           )
         })}

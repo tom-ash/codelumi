@@ -21,6 +21,7 @@ const Author = loadable(() => import('../author/author'))
 const Index = loadable(() => import('./components/index/index'))
 const QuestionIndex = loadable(() => import('./components/question-index/question-index'))
 const Breadcrumbs = loadable(() => import('./components/breadcrumbs/breadcrumbs'))
+const Glossary = loadable(() => import('./components/glossary/glossary'))
 
 const SkillfindTechIcon = loadable(() => import('../../../../../skillfind-tech/app/components/scaffold/icon/icon'))
 
@@ -33,6 +34,7 @@ const elements = {
   QuestionIndex,
   Breadcrumbs,
   // SkillfindTechIcon,
+  // Glossary
 }
 
 export const RenderNode = (props: RenderNodeProps) => {
@@ -336,6 +338,12 @@ export const RenderNode = (props: RenderNodeProps) => {
           React.createElement(component, node.props, node.text || node.nodes)
         )
       }
+    }
+
+    // @ts-ignore
+    if (node.Glossary) {
+      // @ts-ignore
+      return <Glossary {...node.Glossary} />
     }
 
     return null
