@@ -10,11 +10,18 @@ interface Breadcrumb {
 }
 
 export const Breadcrumbs = () => {
-  const breadcrumbs = useData().breadcrumbs as Breadcrumb[]
+  const {
+    contentType,
+    breadcrumbs,
+  } = useData()
+
+  if (contentType === 'stand_alone') {
+    return null
+  }
 
   return (
     <ul className='breadcrumbs'>
-      {breadcrumbs.map((breadcrumb, index) => {
+      {breadcrumbs.map((breadcrumb: Breadcrumb, index: number) => {
         const label = index === 0 ? <SVG name='home' /> : breadcrumb.name
 
         return (
