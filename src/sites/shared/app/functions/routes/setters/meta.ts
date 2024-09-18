@@ -50,6 +50,8 @@ function metaSetter(meta) {
 
   replaceOpenGraph(openGraph)
 
+  // changeAlternate
+
   document.querySelector(`script[type="application/ld+json"]`)!.innerHTML = JSON.stringify(schemaOrg)
 }
 
