@@ -40,7 +40,7 @@ function routeSender({
     })
     .then(jsonResponse => {
       const { state, meta } = jsonResponse
-      const { redirectedUrl, status: redirectStatus, lang, alternateLangLinks } = meta
+      const { redirectedUrl, status: redirectStatus, lang, alternateLinks } = meta
 
       if (redirectedUrl) {
         res.redirect(redirectStatus, redirectedUrl)
@@ -53,7 +53,7 @@ function routeSender({
           visitor,
         }
         const appAsHtml = appRenderer(initialState)
-        const html = indexRenderer({ ...meta, ...appAsHtml, lang, clientUrl, gtmId, alternateLangLinks })
+        const html = indexRenderer({ ...meta, ...appAsHtml, lang, clientUrl, gtmId, alternateLinks })
 
         res.status(status).send(html)
       }

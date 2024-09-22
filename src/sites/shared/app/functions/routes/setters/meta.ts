@@ -38,19 +38,40 @@ const replaceOpenGraph = openGraphProps => {
 
 // @ts-ignore
 function metaSetter(meta) {
-  const { clientUrl, url, canonicalUrl, schemaOrg, openGraph, lang, title, description, keywords, author } = meta
+  const { url, canonicalUrl, schemaOrg, openGraph, lang, title, description, keywords, author, alternateLinks } = meta
   const canonicalPath = typeof canonicalUrl === 'string' ? canonicalUrl : url
 
   document.documentElement.lang = lang
   document.title = title
+  
   // appendAuthor(author)
+
   document.querySelector('meta[name="description"]')!.setAttribute('content', description)
   document.querySelector('meta[name="keywords"]')!.setAttribute('content', keywords)
-  document.querySelector('link[rel="canonical"]')!.setAttribute('href', getPureUrl(`${clientUrl}/${canonicalPath}`))
+  document.querySelector('link[rel="canonical"]')!.setAttribute('href', canonicalPath)
 
   replaceOpenGraph(openGraph)
 
-  // changeAlternate
+  const alternateLinkElements = document.querySelectorAll('link[rel="alternate"]')
+
+  if (alternateLinkElements.length) {
+    Array.from(alternateLinkElements).map(alternateLinkElement => {
+      alternateLinkElement.remove()
+    })
+  }
+
+  if (alternateLinks && alternateLinks.length) {
+    alternateLinks.map((alternateLink: { href: string, hrefLang: string }) => {
+      const { href, hrefLang } = alternateLink
+
+      const link = document.createElement('link');
+      link.rel = 'alternate';
+      link.href = href;
+      link.hreflang = hrefLang;
+
+      document.head.appendChild(link);
+    })
+  }
 
   document.querySelector(`script[type="application/ld+json"]`)!.innerHTML = JSON.stringify(schemaOrg)
 }

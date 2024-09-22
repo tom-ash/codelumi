@@ -15,7 +15,6 @@ function indexRenderer(props) {
   const {
     lang,
     canonicalUrl,
-    alternateLinks,
     title,
     robots,
     description,
@@ -29,7 +28,7 @@ function indexRenderer(props) {
     clientUrl,
     gtmId,
     author,
-    alternateLangLinks,
+    alternateLinks,
   } = props
 
   const authorMeta = author ? `<meta name="author" content="${author}">` : ''
@@ -39,7 +38,7 @@ function indexRenderer(props) {
       <head>
         <title>${title}</title>
         <link rel="canonical" href="${canonicalUrl}">
-        ${buildAlternateLangLinkElements(alternateLangLinks)}
+        ${buildAlternateLangLinkElements(alternateLinks)}
         <link rel="icon" type="image/x-icon" href="${clientUrl}/favicon.ico">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">

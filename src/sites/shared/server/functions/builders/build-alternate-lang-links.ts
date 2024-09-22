@@ -1,6 +1,6 @@
 interface BuildAlternateLangLinkElements {
   (
-    alternateLangLinks:
+    alternateLinks:
       | {
           href: string
           hrefLang: Lang
@@ -9,17 +9,17 @@ interface BuildAlternateLangLinkElements {
   ): string
 }
 
-export const buildAlternateLangLinkElements: BuildAlternateLangLinkElements = alternateLangLinks => {
+export const buildAlternateLangLinkElements: BuildAlternateLangLinkElements = alternateLinks => {
   const elements: string[] = []
 
-  if (!alternateLangLinks) {
+  if (!alternateLinks) {
     return ''
   }
 
-  alternateLangLinks.map(alternateLangLink => {
+  alternateLinks.map(alternateLangLink => {
     const { href, hrefLang } = alternateLangLink
 
-    elements.push(`<link rel=”alternate” hreflang=”${hrefLang}” href=”${href}” />`)
+    elements.push(`<link rel="alternate" hreflang="${hrefLang}" href="${href}" />`)
   })
 
   return elements.join('')
