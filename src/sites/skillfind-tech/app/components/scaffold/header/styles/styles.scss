@@ -14,9 +14,8 @@
   left: 0;
   z-index: $SCAFFOLD-HEADER-Z-INDEX;
   height: $DESKTOP_HEADER_HEIGHT;
-  margin: 0 auto;
-  border-bottom: 1px solid $LIGHT_THEME_HEADER_BORDER_COLOR;
-  background: $LIGHT_THEME_HEADER_BACKGROUND_COLOR;
+  background: $HEADER_BACKGROUND_COLOR;
+  color: $HEADER_TEXT_COLOR;
   .inner {
     position: relative;
     max-width: 1440px;

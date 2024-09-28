@@ -1,3 +1,5 @@
+@import '../../../../styles/colors.scss';
+
 .icon {
   transform-origin: top left;
   .lens {
@@ -6,7 +8,7 @@
     left: 0px;
     height: 200px;
     width: 200px;
-    border: 20px solid black;
+    border: 20px solid $HEADER_TEXT_COLOR;
     border-radius: 100px;
     text-align: center;
     line-height: 168px;
@@ -19,7 +21,7 @@
     left: 130px;
     height: 24px;
     width: 120px;
-    background: black;
+    background: $HEADER_TEXT_COLOR;
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
     transform: rotate(45deg);
