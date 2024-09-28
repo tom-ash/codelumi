@@ -3,40 +3,49 @@
 $padding-mobile: 18px;
 
 %table-of-contents {
+  margin: 40px 40px!important;
+  padding: 20px 20px!important;
+  background: #f7f8f9;
+  border-radius: 4px;
   h2 {
     display: block;
     margin: 0 0 20px;
-    padding: 0 0 10px;
-    border-bottom: 1px solid gray;
     line-height: 14px;
     font-size: 14px;
-    font-weight: 600;
-    color: black;
+    font-weight: 500;
     text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #424949;
+    color: #424949;
   }
   .inner-container {
-    margin: 40px;
-    padding: 20px;
-    background: rgb(255, 250, 250);
-    border-radius: 4px;
+    margin: 0;
     line-height: 1.25;
   }
   a {
     font-size: 16px;
     color: black;
+    color: #2471a3;
     &:hover {
-      color: black;
-      text-decoration: underline;
+      color: #3498db;
     }
   }
   ul {
     margin: 0;
-    padding: 0;
-    list-style-type: none;
+    padding: 0 0 0 20px;
     li {
       position: relative;
       margin: 4px 0 0;
       line-height: 22px;
+      &::marker {
+        color: #2471a3;
+        font-size: 14px;
+      }
+      &:hover {
+        &::marker {
+          color: #3498db;
+        }
+      }
       ul {
         margin: 0 0 8px 18px;
         list-style-type: disc;
@@ -47,8 +56,8 @@ $padding-mobile: 18px;
     }
   }
   @media #{$LARGE-PHONE} {
-    .inner-container {
-      margin: 40px 0;
-    }
+    margin: 40px 0!important;
+    padding: 20px 20px!important;
+    border-radius: 0;
   }
 }

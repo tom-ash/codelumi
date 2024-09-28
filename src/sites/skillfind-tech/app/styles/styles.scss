@@ -28,7 +28,7 @@ button {
 }
 
 #app {
-  background: $LIGHT_THEME_APP_BACKGROUND_COLOR;
+  // background: $LIGHT_THEME_APP_BACKGROUND_COLOR;
   padding-top: $DESKTOP_HEADER_HEIGHT;
 }
 
@@ -50,12 +50,13 @@ a {
 
 .breadcrumbs {
   @extend %breadcrumbs;
-  max-width: 960px;
+  max-width: 800px;
   font-variant-caps: all-small-caps;
   width: 100%;
   text-align: left;
   font-size: 20px;
   padding-left: 4px;
+  border-bottom: 1px solid $LIGHT_THEME_BREAKING_LINE_COLOR;
   li {
     font-weight: bold;
   }
@@ -64,6 +65,15 @@ a {
     position: relative;
     top: 1px;
     height: 13px;
+    &:hover {
+      fill: gray;
+    }
+  }
+  a {
+    &:hover {
+      // text-decoration: underline;
+      color: gray;
+    }
   }
 }
 

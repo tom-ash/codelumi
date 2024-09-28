@@ -3,12 +3,14 @@
 
 %page {
   #pages-show, #pages-edit {
+    background: white;
+    width: 100%;
     @media #{$LARGE-PHONE} {
       width: 100%;
       background: white;
     }
     main {
-      max-width: 960px;
+      max-width: 880px;
       margin: 15px auto 0;
       article {
         @extend %article;
@@ -103,9 +105,9 @@
   }
   .breadcrumbs {
     margin: 0 auto;
-    padding: 60px 0 0;
+    padding: 40px 0 10px;
     @media #{$LARGE-TABLET} {
-      padding: 15px 20px 0;
+      padding: 20px 20px 10px;
     }
   }
   button.pages-edit {

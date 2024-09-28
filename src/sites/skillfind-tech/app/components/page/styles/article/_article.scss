@@ -17,7 +17,7 @@ $PRE-MARGIN: 18px;
   background: none;
   overflow: hidden;
   line-height: 26px;
-  font-size: 18px;
+  font-size: 17px;
   color: rgb(42, 42, 42);
   background: white;
   border-radius: 6px;
@@ -38,10 +38,11 @@ $PRE-MARGIN: 18px;
   }
   h1 {
     @extend %standard-margins;
-    margin-top: 24px;
+    margin: 0 40px;
     font-size: 36px;
     @media #{$LARGE-PHONE} {
       font-size: 28px;
+      margin: 0 20px;
     }
   }
   .description {
@@ -74,6 +75,9 @@ $PRE-MARGIN: 18px;
       left: 0;
       height: 13px;
     }
+    @media #{$LARGE-PHONE} {
+      margin: 12px 20px 0;
+    }
   }
   .cover + h1 {
     margin-top: 36px;
@@ -95,6 +99,8 @@ $PRE-MARGIN: 18px;
   }
   a {
     color: #2471a3;
+    font-weight: 500;
+    // font-size: 100px;
     &:hover {
       color: #3498db;
     }
@@ -105,10 +111,12 @@ $PRE-MARGIN: 18px;
       font-family: monospace;
       display: inline-block;
       color: #cb4335;
-      border-radius: 4px;
+      border-radius: 3px;
       line-height: 22px;
-      font-size: 15px;
+      font-size: 17px;
       position: relative;
+      background: #f7f8f9;
+      padding: 0 4px;
     }
   }
   img {
@@ -165,6 +173,10 @@ $PRE-MARGIN: 18px;
   }
   pre {
     @extend %standard-margins;
+    @media #{$LARGE-PHONE} {
+      margin: 20px 0 0;
+      border-radius: 0;
+    }
   }
   figure {
     background: #fef9e7;
@@ -223,7 +235,7 @@ $PRE-MARGIN: 18px;
     }
     .link {
       h2 {
-        font-size: 18px;
+        font-size: 17px;
         font-weight: normal;
       }
     }
