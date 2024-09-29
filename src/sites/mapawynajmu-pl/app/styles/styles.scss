@@ -22,10 +22,6 @@ body {
   padding: 0;
 }
 
-#pages-show {
-  padding: 120px 0;
-}
-
 .breadcrumbs {
   @extend %breadcrumbs;
   max-width: 768px;
@@ -36,23 +32,20 @@ body {
   text-align: left;
   font-size: 18px;
   margin: 0 auto;
+  position: relative;
   li {
     font-weight: bold;
     .link {
       text-decoration: none;
       a {
         text-decoration: none;
+        // font-weight: 600;
       }
     }
   }
-
-  position: relative;
-
-  svg {
-    position: relative;
-    fill: black;
-    top: 1px;
-    height: 11px;
+  @media #{$LARGE-PHONE} {
+    background: white;
+    padding: 20px 20px 10px;
   }
 }
 

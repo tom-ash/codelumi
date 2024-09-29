@@ -5,7 +5,13 @@
 
 %page {
   @extend %root;
-  background: #fdfefe;
+  #pages-show {
+    padding: 40px 0;
+    background: white;
+    @media #{$LARGE-PHONE} {
+      padding: 0;
+    }
+  }
   main {
     // TODO!
     article {

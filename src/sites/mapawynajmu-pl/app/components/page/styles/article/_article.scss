@@ -18,11 +18,12 @@ $PRE-MARGIN: 18px;
   background: none;
   overflow: hidden;
   line-height: 26px;
-  font-size: 16px;
+  font-size: 17px;
   color: rgb(42, 42, 42);
   @media #{$LARGE-PHONE} {
     margin: 0 auto 32px;
     padding: 0;
+    background: white;
   }
   h1 {
     @extend %standard-margins;
@@ -35,8 +36,7 @@ $PRE-MARGIN: 18px;
   .author {
     @extend %standard-margins;
     position: relative;
-    margin-top: 12px;
-    padding-left: 22px;
+    margin-top: 10px;
     line-height: 16px;
     font-size: 15px;
     svg {
@@ -48,10 +48,6 @@ $PRE-MARGIN: 18px;
   }
   .table-of-contents {
     @extend %table-of-contents;
-    margin: 32px $DESKTOP-MARGIN;
-    @media #{$LARGE-PHONE} {
-      margin: 32px $MOBILE-MARGIN;
-    }
   }
   > section {
     margin-top: 64px;
@@ -86,9 +82,9 @@ $PRE-MARGIN: 18px;
     a {
       display: inline;
       color: #3498db;
-      text-decoration: underline;
+      font-weight: 600;
       &:hover {
-        color: rgb(186, 42, 24);
+        color: #85c1e9;
       }
     }
   }
@@ -115,16 +111,19 @@ $PRE-MARGIN: 18px;
   }
   img {
     margin: 0;
-    margin-top: 18px;
+    // margin-top: 15px;
+    // border-radius: 4px;
   }
   header {
     > img {
       width: 100%;
       padding: 0;
       margin-bottom: 0;
+      margin-top: 15px;
+      border-radius: 4px;
+      @media #{$LARGE-PHONE} {
+        border-radius: 0;
+      }
     }
-  }
-  .breadcrumbs {
-    @extend %breadcrumbs;
   }
 }

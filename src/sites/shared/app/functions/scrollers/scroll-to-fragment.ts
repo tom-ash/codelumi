@@ -9,7 +9,7 @@ export const scrollToFragment: ScrollToFragment = fragmentId => {
 
   history.pushState(null, '', `${window.location.pathname}${fragmentId}`)
 
-  const top = elementRect.top - bodyRect.top - 64
+  const top = elementRect.top - bodyRect.top - 100
 
   window.scrollTo({ top, behavior: 'smooth' })
 }

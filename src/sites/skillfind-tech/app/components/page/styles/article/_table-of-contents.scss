@@ -5,8 +5,10 @@ $padding-mobile: 18px;
 %table-of-contents {
   margin: 40px 40px!important;
   padding: 20px 20px!important;
-  background: #f7f8f9;
+  // background: #f7f8f9;
   border-radius: 4px;
+  display: inline-block;
+  border: 1px solid black;
   h2 {
     display: block;
     margin: 0 0 20px;
@@ -21,13 +23,17 @@ $padding-mobile: 18px;
   .inner-container {
     margin: 0;
     line-height: 1.25;
+    display: inline-block;
   }
   a {
     font-size: 16px;
     color: black;
     color: #2471a3;
+    color: black;
+    font-weight: 400;
     &:hover {
-      color: #3498db;
+      // color: #3498db;
+      color: gray;
     }
   }
   ul {
@@ -38,12 +44,11 @@ $padding-mobile: 18px;
       margin: 4px 0 0;
       line-height: 22px;
       &::marker {
-        color: #2471a3;
         font-size: 14px;
       }
       &:hover {
         &::marker {
-          color: #3498db;
+          color: gray;
         }
       }
       ul {
