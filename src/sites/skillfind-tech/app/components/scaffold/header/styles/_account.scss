@@ -9,6 +9,7 @@
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
+    color: $HEADER_TEXT_COLOR;
     &:hover {
       text-decoration: underline;
     }
@@ -27,30 +28,40 @@
   }
   .menu {
     position: absolute;
-    top: 65px;
-    right: -60px;
-    width: 200px;
+    top: 60px;
+    left: -30px;
     padding: 20px;
-    border-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
     box-shadow:
-      rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    background: white;
-  }
-  .link {
-    float: none;
-    line-height: 15px;
-    text-wrap: nowrap;
-    a {
-      &:hover {
-        text-decoration: underline !important;
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background: $HEADER_BACKGROUND_COLOR;
+    padding: 20px;
+    .link {
+      float: none;
+      line-height: 15px;
+      text-wrap: nowrap;
+      color: $HEADER_TEXT_COLOR;
+      border-bottom: 1px solid $LIGHT_THEME_BREAKING_LINE_COLOR;
+      padding: 0 0 30px;
+      width: 100%;
+      margin: 20px 0 0;
+      &:first-of-type {
+        margin-top: 0 !important;
+      }
+      a {
+        &:hover {
+          text-decoration: underline !important;
+        }
+      }
+      svg {
+        top: 3px;
+        margin-right: 12px;
       }
     }
-    svg {
-      top: 3px;
-      margin-right: 12px;
-    }
   }
+
   .settings {
     margin: 20px 0 0;
   }
@@ -71,6 +82,7 @@
     }
     button {
       font-weight: 500;
+      color: $HEADER_TEXT_COLOR;
       &:hover {
         text-decoration: underline;
       }

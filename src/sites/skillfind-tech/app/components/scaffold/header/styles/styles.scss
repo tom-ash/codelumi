@@ -40,6 +40,13 @@
     .side-menu-panel {
       @extend %side-menu-panel;
     }
+    .sign-out {
+      button {
+        background: none;
+        border: none;
+        color: $HEADER_TEXT_COLOR;
+      }
+    }
   }
   @media #{$MEDIUM-PC} {
     .inner {
