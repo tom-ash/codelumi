@@ -8,7 +8,6 @@ import Success from './components/success/success'
 import { Spinner } from '../../../support/components/spinner/spinner'
 import * as lifecycle from './functions/lifecycle'
 import { publish } from './components/publishing/functions/publish'
-// import { validatePictures } from './components/pictures/functions/validate-pictures'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import { H1, ADDITIONAL_DATA_HEADER } from './constants/texts'
@@ -21,6 +20,7 @@ import { SubmitWithoutPromotionButton } from './components/submit/submit-without
 import { SubmitWithPromotion } from './components/submit/submit-with-promotion/submit-with-promotion'
 import { Location } from './components/location/location'
 import { Pictures } from './components/pictures/pictures'
+import { SocialImage } from './components/social-image/social-image'
 
 class AnnouncementCreate extends React.Component {
   // @ts-ignore
@@ -53,15 +53,17 @@ class AnnouncementCreate extends React.Component {
       isPromoted,
     } = this.props
 
-    if (step === 'publishing')
+    if (step === 'publishing') {
       return (
         <section
           id='listing-create'
           className={step}
         >
+          <SocialImage />
           <Spinner spinnerClass='windmill-medium-spinner' />
         </section>
       )
+    }
 
     return (
       <section
@@ -116,6 +118,7 @@ class AnnouncementCreate extends React.Component {
         )}
         {renderVerification && <UserCreateEmailVerify />}
         {renderSuccess && <Success {...this.props} />}
+        {/* <SocialImage /> */}
       </section>
     )
   }

@@ -8,12 +8,15 @@ import {
 import setVerificationToken from '../../../../../../../shared/app/functions/cookies/setters/confirmation-token'
 import { changeUrl } from '../../../../../../../shared/app/functions/routes/changers/change-url'
 import { savePictures } from '../components/pictures/functions/save-pictures'
+import { createSocialImage } from '../../../../../../../shared/app/components/support/social-image-canvas/functions/create-social-image'
 
 async function createAnnouncement() {
   // @ts-ignore
   const { authorized, renderEdit, pictures } = this.props
 
   const savedPictures = await savePictures(pictures)
+
+  await createSocialImage({ apiUrl: API_URL })
 
   // @ts-ignore
   if (renderEdit) return update.call(this, savedPictures)

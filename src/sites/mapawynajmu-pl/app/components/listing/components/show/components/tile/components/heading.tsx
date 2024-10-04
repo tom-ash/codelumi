@@ -4,14 +4,14 @@ import localitiesPresenter from '../../../../../functions/localities-presenter'
 
 interface HeadingProps {
   tier: number
-  name: string
+  name?: string
   category: number
   lang: string
   locality: string
   sublocality?: string
 }
 
-const Heading = (props: HeadingProps) => {
+export const Heading = (props: HeadingProps) => {
   const { tier, name, category, locality, sublocality, lang } = props
 
   return React.createElement(
