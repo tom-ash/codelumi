@@ -82,7 +82,7 @@ class AnnouncementIndexSearch extends React.Component {
                   )
 
                   return (
-                    <SplideSlide>
+                    <SplideSlide key={article.title}>
                       <DeprecatedLink
                         href={article.href}
                         hrefLang={article.hrefLang}

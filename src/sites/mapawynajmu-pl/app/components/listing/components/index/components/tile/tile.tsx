@@ -1,12 +1,8 @@
 import React from 'react'
-import loadable from '@loadable/component'
-import useStyles from 'isomorphic-style-loader-react18/useStyles'
-import styles from './styles/styles.scss'
+import { ListingTilePictures as Pictures } from '../../../show/components/tile/components/pictures/pictures'
+import { Heading } from '../../../show/components/tile/components/heading'
 import { Area } from '../../../common/area/area'
 import { Rent } from '../../../common/rent/rent'
-
-const Heading = loadable(() => import('../../../show/components/tile/components/heading'))
-const Pictures = loadable(() => import('../../../show/components/tile/components/pictures/pictures'))
 
 interface Picture {
   database: string
@@ -37,8 +33,6 @@ interface ListingIndexTileInterface {
 }
 
 export const ListingIndexTile: ListingIndexTileInterface = props => {
-  useStyles(styles)
-
   const {
     href,
     id,
@@ -66,51 +60,39 @@ export const ListingIndexTile: ListingIndexTileInterface = props => {
     classNames.push('promoted')
   }
 
-  const tileProps = {
-    href,
-    className: classNames.join(' '),
-    onClick,
-    onMouseOver,
-    onMouseLeave,
-  }
-  const picturesProps = {
-    id,
-    title,
-    pictures,
-    disableSlides,
-    loadImage,
-  }
-  const headingProps = {
-    name,
-    category,
-    locality,
-    sublocality,
-    lang,
-  }
-  const areaProps = {
-    area,
-  }
-  const rentProps = {
-    rentAmount,
-    rentCurrency,
-  }
-
-  // TODO: @ts-ignores
-
   return (
     <a
-      {...tileProps}
+      href={href}
+      className={classNames.join(' ')}
+      onClick={onClick}
+      onMouseOver={onMouseOver}
+      onMouseLeave={onMouseLeave}
       data-id={id}
       data-type='map-index-tile'
     >
-      <Pictures {...picturesProps} />
+      <Pictures
+        id={id}
+        title={title}
+        pictures={pictures}
+        disableSlides={disableSlides}
+        loadImage={loadImage}
+      />
       <div className='primary'>
-        {/* @ts-ignore */}
-        <Heading {...{ ...headingProps, tier: 2 }} />
-        {/* @ts-ignore */}
-        <Area {...areaProps} />
-        {/* @ts-ignore */}
-        <Rent {...rentProps} />
+        <Heading
+          name={name}
+          category={category}
+          locality={locality}
+          sublocality={sublocality}
+          lang={lang}
+          tier={2}
+        />
+        {area && <Area
+          area={area}
+        />}
+        {rentAmount && rentCurrency !== undefined && <Rent
+          rentAmount={rentAmount}
+          rentCurrency={rentCurrency}
+        />}
       </div>
       {children}
     </a>

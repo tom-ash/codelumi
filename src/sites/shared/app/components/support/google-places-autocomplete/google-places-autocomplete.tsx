@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { SVG } from '../svg/svg'
+// import { SVG } from '../svg/svg'
 import { AddressInput, GooglePlacesAutocompleteCountry } from '../address-input/address-input'
 import { useData } from '../../../functions/store/use-data'
 import { GooglePlacesAutocompleteItem } from '../../../types/google-places-autocomplete'
@@ -22,7 +22,7 @@ export const GooglePlacesAutocomplete: GooglePlacesAutocompleteInterface = props
 
   return (
     <div className='filter location'>
-      <SVG name='marker' />
+      {/* <SVG key='adasdasdasdasdasdas' name='ad' /> */}
       <AddressInput
         items={items}
         currentItemIndex={currentItemIndex}

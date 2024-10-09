@@ -64,7 +64,7 @@ export const ListingTilePictures: ListingTilePicturesInterface = props => {
       >
         {pictureUrls.map(pictureUrl => {
           return (
-            <SplideSlide>
+            <SplideSlide key={pictureUrl.database}>
               <img
                 src={pictureUrl.database}
                 alt={title}

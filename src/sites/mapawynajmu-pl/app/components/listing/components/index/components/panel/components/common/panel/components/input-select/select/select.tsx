@@ -15,6 +15,7 @@ export const Select: SelectInterface = props => {
     <div className='select'>
       {options.map(option => (
         <div
+          key={option}
           className='option'
           onClick={() => {
             setInputs({ [`${name}${kind}`]: option })
