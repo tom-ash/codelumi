@@ -16,19 +16,19 @@ async function createAnnouncement() {
 
   const savedPictures = await savePictures(pictures)
 
-  await createSocialImage({ apiUrl: API_URL })
+  const socialImage = await createSocialImage({ apiUrl: API_URL })
 
   // @ts-ignore
-  if (renderEdit) return update.call(this, savedPictures)
+  if (renderEdit) return update.call(this, savedPictures, socialImage)
   // @ts-ignore
-  if (authorized) return create.call(this, savedPictures)
+  if (authorized) return create.call(this, savedPictures, socialImage)
 
   // @ts-ignore
-  createWithUser.call(this, savedPictures)
+  createWithUser.call(this, savedPictures, socialImage)
 }
 
 // @ts-ignore
-function update(savedPictures) {
+function update(savedPictures, socialImage) {
   // @ts-ignore
   const { lang, announcement } = this.props
   const { method, route } = UPDATE_API_ROUTE_DATA
@@ -44,7 +44,7 @@ function update(savedPictures) {
       Lang: lang,
       'Access-Token': accessToken,
     },
-    body: JSON.stringify({ announcement: { ...announcement, pictures: savedPictures } }),
+    body: JSON.stringify({ announcement: { ...announcement, pictures: savedPictures, socialImage } }),
   })
     .then(response => {
       if (response.ok) return response.json()
@@ -53,7 +53,7 @@ function update(savedPictures) {
 }
 
 // @ts-ignore
-async function create(savedPictures) {
+async function create(savedPictures, socialImage) {
   // @ts-ignore
   const { lang, announcement } = this.props
   const { method, route } = CREATE_API_ROUTE_DATA
@@ -63,7 +63,7 @@ async function create(savedPictures) {
     method,
     // @ts-ignore
     headers: { 'Content-Type': 'application/json', Lang: lang, 'Access-Token': accessToken },
-    body: JSON.stringify({ announcement: { ...announcement, pictures: savedPictures } }),
+    body: JSON.stringify({ announcement: { ...announcement, pictures: savedPictures, socialImage } }),
   })
     .then(response => {
       if (response.ok) return response.json()
@@ -72,7 +72,7 @@ async function create(savedPictures) {
 }
 
 // @ts-ignore
-function createWithUser(savedPictures) {
+function createWithUser(savedPictures, socialImage) {
   // @ts-ignore
   const { lang, announcement, user } = this.props
   const { method, route } = CREATE_WITH_USER_API_ROUTE_DATA
@@ -80,7 +80,7 @@ function createWithUser(savedPictures) {
   fetch(API_URL + route, {
     method,
     headers: { 'Content-Type': 'application/json', Lang: lang },
-    body: JSON.stringify({ announcement: { ...announcement, pictures: savedPictures }, user }),
+    body: JSON.stringify({ announcement: { ...announcement, pictures: savedPictures, socialImage }, user }),
   })
     .then(response => {
       if (response.ok) return response.json()
