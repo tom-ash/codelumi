@@ -2,9 +2,10 @@ import React from 'react'
 import withStyles from 'isomorphic-style-loader-react18/withStyles'
 import styles from './styles/styles.scss'
 import { PromoteButton } from './components/promote'
-import { ListingIndexTile } from '../../../index/components/tile/tile'
 import { FacebookSharerButton } from '../../../../../../../../shared/app/components/support/facebook-sharer-button/facebook-sharer-button'
 import { PromotionBenefits } from '../../../common/promotion-benefits/promotion-benefits'
+import { Image } from '../../../../../../../../shared/app/components/support/image/image'
+import { TrackedLink } from '../../../../../../../../shared/app/components/support/tracked-link/tracked-link'
 
 class AnnouncementCreateSuccess extends React.Component {
   // @ts-ignore
@@ -25,40 +26,16 @@ class AnnouncementCreateSuccess extends React.Component {
     } = this.props
     const {
       id,
-      title,
-      pictures,
-      name,
-      category,
-      locality,
-      sublocality,
-      grossRentAmount,
-      netRentAmount,
-      rentCurrency,
-      area,
       href,
       isPromoted,
       // @ts-ignore
     } = this.props.announcement
 
-    const isCommercial = [0, 1, 6, 7, 8].indexOf(category) !== -1
-    const rentAmount = isCommercial ? netRentAmount : grossRentAmount
-
-    const tileProps = {
-      href,
-      id,
-      title,
-      name,
-      pictures,
-      disableSlides: false,
-      category,
-      locality,
-      sublocality,
-      lang,
-      rentAmount,
-      rentCurrency,
-      area,
-      isPromoted,
-    }
+    // console.log( this.props)
+    const {
+      image
+      // @ts-ignore
+    } = this.props.announcement
 
     const facebookSharerButtonProps = {
       href,
@@ -74,7 +51,15 @@ class AnnouncementCreateSuccess extends React.Component {
       >
         <div className='further-steps'>
           <div className='congratulations'>{congratulations}</div>
-          <ListingIndexTile {...tileProps} />
+          <TrackedLink
+            track='announcement/show'
+          >
+            <Image
+              src={image}
+              alt='todo'
+              className='social-image'
+            />
+          </TrackedLink>
           <div className='promotion-actions'>
             {!isPromoted && (
               <div className='promote'>

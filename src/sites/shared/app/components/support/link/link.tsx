@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react'
 import { changeUrl } from '../../../functions/routes/changers/change-url'
+import { ReactChildren } from '../../../../../mapawynajmu-pl/app/app.d'
 
 // TODO: scrollToFragment
 
@@ -13,6 +14,7 @@ interface LinkInterface {
     retainTab?: boolean
     retainQuery?: boolean
     external?: boolean
+    children?: ReactChildren
   }): React.ReactElement | null
 }
 
@@ -26,6 +28,7 @@ export const Link: LinkInterface = props => {
     retainTab = false,
     retainQuery = false,
     external = false,
+    children,
   } = props
 
   const classNames = ['link']
@@ -59,7 +62,7 @@ export const Link: LinkInterface = props => {
       onClick={onClick}
       target={target}
     >
-      {label}
+      {children || label}
     </a>
   )
 }

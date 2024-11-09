@@ -23,3 +23,5 @@ export interface ValidateVerificationCode {
 }
 
 export type EmptyTextInput = ''
+
+export type ReactChildren = React.ReactNode

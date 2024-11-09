@@ -1,13 +1,19 @@
 import React from 'react'
 import { useLinks } from '../../../functions/store/use-links'
 import { Link } from '../link/link'
+import { ReactChildren } from '../../../../../mapawynajmu-pl/app/app.d';
 
 interface TrackedLinkInterface {
-  (props: { track: string; classNames?: string[]; retainQuery?: boolean }): React.ReactElement
+  (props: {
+    track: string;
+    children?: ReactChildren,
+    classNames?: string[];
+    retainQuery?: boolean
+  }): React.ReactElement
 }
 
 export const TrackedLink: TrackedLinkInterface = props => {
-  const { track, classNames, retainQuery } = props
+  const { track, children, classNames, retainQuery } = props
   const links = useLinks()
   const link = links[track]
 
@@ -26,6 +32,8 @@ export const TrackedLink: TrackedLinkInterface = props => {
       classNames={classNames}
       retainQuery={retainQuery}
       external={external}
-    />
+    >
+      {children}
+    </Link>
   )
 }
