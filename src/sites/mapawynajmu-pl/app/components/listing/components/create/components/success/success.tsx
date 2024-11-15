@@ -6,6 +6,7 @@ import { FacebookSharerButton } from '../../../../../../../../shared/app/compone
 import { PromotionBenefits } from '../../../common/promotion-benefits/promotion-benefits'
 import { Image } from '../../../../../../../../shared/app/components/support/image/image'
 import { TrackedLink } from '../../../../../../../../shared/app/components/support/tracked-link/tracked-link'
+import { SocialImage } from '../social-image/social-image'
 
 class AnnouncementCreateSuccess extends React.Component {
   // @ts-ignore
@@ -16,13 +17,13 @@ class AnnouncementCreateSuccess extends React.Component {
   render() {
     const {
       // @ts-ignore
-      lang,
-      // @ts-ignore
       isMobile,
       // @ts-ignore
       shareOnFacebookButtonLabel,
       // @ts-ignore
       congratulations,
+      // @ts-ignore
+      socialImageExplanation,
     } = this.props
     const {
       id,
@@ -30,6 +31,8 @@ class AnnouncementCreateSuccess extends React.Component {
       isPromoted,
       // @ts-ignore
     } = this.props.announcement
+
+    console.log(this.props)
 
     // console.log( this.props)
     const {
@@ -60,6 +63,11 @@ class AnnouncementCreateSuccess extends React.Component {
               className='social-image'
             />
           </TrackedLink>
+
+          <div className='social-image-explanation'>
+            {socialImageExplanation}
+          </div>
+
           <div className='promotion-actions'>
             {!isPromoted && (
               <div className='promote'>
