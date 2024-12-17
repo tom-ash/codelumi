@@ -1,0 +1,38 @@
+@import './text.module.css';
+
+.container {
+  composes: container from './text.module.css';
+  position: relative;
+}
+
+.label {
+  composes: label from './text.module.css';
+}
+
+.input {
+  composes: input from './text.module.css';
+}
+
+.options {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  background: white;
+  list-style-type: none;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  max-height: 200px;
+  overflow: scroll;
+}
+
+.option {
+  padding: 5px 10px;
+}
+
+.option:hover {
+  background: lightgray;
+}
+
+.current {
+  /* TODO */
+}

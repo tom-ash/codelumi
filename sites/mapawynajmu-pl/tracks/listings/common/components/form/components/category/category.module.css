@@ -1,0 +1,46 @@
+.categories {
+  margin-top: 30px;
+}
+
+.tile {
+  display: inline-block;
+  margin-right: 28px;
+  margin-bottom: 12px;
+  vertical-align: top;
+  cursor: pointer;
+  width: 100px;
+}
+
+.tile.selected .iconContainer {
+  background: #85c1e9;
+}
+
+.iconContainer {
+  display: block;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  transition: background-color 0.2s ease-in;
+  line-height: 100px;
+  background: #d6eaf8;
+  text-align: center;
+  height: 100px;
+}
+
+.icon {
+  fill: #f7f9f9;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.iconContainer:hover {
+  background: #85c1e9;
+}
+
+.iconContainer:hover .icon {
+  fill: white;
+}
+
+.label {
+  text-align: center;
+  font-size: 14px;
+}

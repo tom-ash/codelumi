@@ -1,0 +1,26 @@
+.input {
+  display: block;
+  margin: 0 auto;
+  width: 120px;
+  height: 32px;
+  border: none;
+  border-radius: 5px;
+  background: #2471a3;
+  font-size: 13px;
+  color: white;
+  cursor: pointer;
+  margin-top: 30px;
+  /* &:hover {
+    background: #2980b9;
+  }
+  &:disabled {
+    background: #a9cce3;
+    color: #f2f3f4;
+    cursor: not-allowed;
+  } */
+}
+/* .button-spinner {
+  position: absolute;
+  left: -52px;
+  top: -52px;
+} */

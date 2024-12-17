@@ -1,3 +1,0 @@
-interface ShareProps {
-  href: string
-}

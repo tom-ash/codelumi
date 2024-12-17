@@ -1,0 +1,17 @@
+@import './text.module.css';
+
+.container {
+  composes: container from './text.module.css';
+  position: relative;
+}
+
+.label {
+  composes: label from './text.module.css';
+}
+
+.input {
+  composes: input from './text.module.css';
+  resize: none;
+  height: 240px;
+  padding: 10px;
+}

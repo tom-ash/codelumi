@@ -1,0 +1,98 @@
+.pictureInput {
+  margin-top: 20px;
+}
+
+.dragAndDropContainer {
+  display: flex;
+  align-items: center;
+}
+
+.dragAndDrop {
+  position: relative;
+  width: 100px;
+  height: 87.5px;
+  margin-right: 20px;
+}
+
+.icon {
+  display: block;
+  width: 100px;
+}
+
+.dragAndDrop:hover .icon {
+  fill: gray;
+}
+
+.dragAndDropInput {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.blobs {
+  margin-top: 20px;
+}
+
+.blobContainer {
+  display: flex;
+  align-items: stretch;
+  float: left;
+  width: 28%;
+  margin-top: 30px;
+  margin-right: 8%;
+}
+
+.blobContainer:nth-child(3n) {
+  margin-right: 0;
+}
+
+.blob {
+  width: 90%;
+  border-radius: 4px;
+}
+
+.blobControls {
+  width: 10%;
+  height: 100%;
+  padding: 0 0 0 10px;
+}
+
+.control {
+  width: 12px;
+  text-align: right;
+}
+
+.delete {
+  width: 12px;
+  cursor: pointer;
+}
+
+.up {
+  position: relative;
+  left: 1.4px;
+  width: 9px;
+  margin-top: 4px;
+  rotate: 90deg;
+  cursor: pointer;
+}
+
+.down {
+  position: relative;
+  left: 1.2px;
+  width: 9px;
+  margin-top: 4px;
+  rotate: -90deg;
+  cursor: pointer;
+}
+
+.rotate {
+  width: 12px;
+  left: -1.2px;
+  margin-top: 4px;
+  rotate: -90deg;
+  cursor: pointer;
+}

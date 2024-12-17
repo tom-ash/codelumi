@@ -1,0 +1,45 @@
+import React from 'react';
+import Image from '../image/image';
+import { Heading } from '../../../../../../sites/mapawynajmu-pl/tracks/common/components/heading';
+import { useData } from '../../../../../../src copy/sites/shared/app/functions/store/use-data';
+import { Author } from '../../../author/author';
+
+interface ArticleHeaderInterface {
+  (props: {
+    useCoverImage?: boolean;
+    useCoverImageSource?: string;
+    useAuthor?: boolean;
+    useDescription?: boolean;
+  }): React.ReactElement;
+}
+
+const ArticleHeader: ArticleHeaderInterface = (props) => {
+  const {
+    useCoverImage = true,
+    useAuthor = true,
+    useDescription = false,
+    useCoverImageSource,
+  } = props;
+  const { coverImage, title, description } = useData();
+
+  const imageProps = {
+    src: useCoverImageSource || coverImage,
+    alt: title,
+  };
+
+  const headingProps = {
+    tier: 1,
+    text: title,
+  };
+
+  return (
+    <header>
+      {useCoverImage && <Image {...imageProps} />}
+      <Heading {...headingProps} />
+      {useAuthor && <Author />}
+      {useDescription && <div className="description">{description}</div>}
+    </header>
+  );
+};
+
+export default ArticleHeader;

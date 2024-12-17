@@ -1,0 +1,83 @@
+.preview {
+  position: absolute;
+  top: 0;
+  left: 10000px;
+  /* position: relative; */
+  width: 1200px;
+  height: 630px;
+  overflow: hidden;
+}
+
+.preview img {
+  width: 100%;
+  align-self: center;
+}
+
+.heading {
+  z-index: 2;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  bottom: 20px;
+  left: 20px;
+  width: 570px;
+  right: 20px;
+  margin: 0;
+  z-index: 999;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 40px;
+  padding: 20px;
+  text-align: left;
+  font-size: 36px;
+  line-height: 36px;
+  height: 115px;
+}
+
+.localityAndSublocality {
+  margin-top: 15px;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.area {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  width: 275px;
+  height: 115px;
+  left: 610px;
+  bottom: 20px;
+  z-index: 999;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 90px;
+  font-size: 40px;
+  color: #c1ddf0;
+}
+
+.rent {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  width: 275px;
+  height: 115px;
+  left: 905px;
+  bottom: 20px;
+  z-index: 999;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 115px;
+  font-size: 40px;
+  color: #ffc299;
+}
+
+.rentAmount {
+  margin-right: 10px;
+}
+
+.rentPerMonth {
+  margin-left: 10px;
+  font-size: 20px;
+}
