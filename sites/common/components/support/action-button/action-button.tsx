@@ -7,16 +7,11 @@ interface ActionButtonProps {
   disabled?: boolean;
   styles: {
     container: string;
-  }
+  };
 }
 
 export const ActionButton = (props: ActionButtonProps) => {
-  const {
-    label,
-    action,
-    disabled,
-    styles,
-  } = props;
+  const { label, action, disabled, styles } = props;
 
   return (
     <ManagedButton
@@ -27,5 +22,5 @@ export const ActionButton = (props: ActionButtonProps) => {
         container: styles.container,
       }}
     />
-  )
+  );
 };

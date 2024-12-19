@@ -1,13 +1,9 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { useApp } from '../../../../../../../../src copy/sites/shared/app/functions/store/use-app';
-import { useData } from '../../../../../../../../src copy/sites/shared/app/functions/store/use-data';
-import { changeUrl } from '../../../../../../../../src copy/sites/shared/app/functions/routes/changers/change-url';
-import { Device } from '../../../../../../../../src copy/sites/skillfind-tech/app/types/device.enum';
-import { Slider } from '../../../../../slider/slider';
 import { ItemIndexInterface } from '../../../../types/item-index.interface';
 import { Item } from '../../../../types/item.interface';
-import { useMouseHovering } from '../../hooks/use-mouse-hovering';
+import { SetControl } from '../../../../../../../../../lib/types/setters';
+import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
+import { Styles } from '../../../../../../../../mapawynajmu-pl/types/styles';
 
 const deviceConfig = {
   largePc: 'scroll',
@@ -50,43 +46,31 @@ const sliderDeviceConfig = {
   },
 };
 
-interface ListInterface {
-  (props: {
+interface ListProps {
     ListItem: ItemIndexInterface;
     renderShow: boolean;
     items: Item[];
-  }): React.ReactElement;
+    lang: string;
+    device: string;
+    isMobile: boolean;
+    setControl: SetControl;
+    currentPartnerName?: string;
+    router: AppRouterInstance;
+    classNames: Styles;
 }
 
-export const List: ListInterface = (props) => {
-  const { ListItem, renderShow, items } = props;
+export const List = (props: ListProps) => {
+  const { ListItem, renderShow, items, lang, isMobile, setControl, router, classNames } = props;
+  const listType = 'scroll' // TODO
 
-  const { lang, device, isMobile } = useApp();
-  const listType = deviceConfig[device as Device];
-
-  const dispatch = useDispatch();
-  const setControl = (value: any) => dispatch({ type: 'control', value });
-
-  // TODO: REMOVE!
-  const { currentPartnerName } = useData();
-
-  const classNames = [listType];
-  if (renderShow) {
-    classNames.push('render-show');
-  }
-
-  const commonProps = {
-    lang,
-    changeUrl,
-    isMobile,
-    setControl,
-  };
-
-  useMouseHovering();
+//   const classNames = [listType];
+//   if (renderShow) {
+//     classNames.push('render-show');
+//   }
 
   return (
-    <div id="list" className={classNames.join(' ')}>
-      {currentPartnerName && <h2>{currentPartnerName}</h2>}
+    <div className={classNames.list}>
+      {/* {currentPartnerName && <h2>{currentPartnerName}</h2>} */}
       {listType === 'scroll' && (
         <>
           {items.map((item: Item) => {
@@ -94,26 +78,40 @@ export const List: ListInterface = (props) => {
             return (
               <ListItem
                 key={item.id}
-                {...{
-                  ...commonProps,
-                  ...item,
+                lang={lang}
+                isMobile={isMobile}
+                setControl={setControl}
+                router={router}
+                className={classNames.tile}
+                promotedClassName={classNames.tilePromoted}
+                primaryClassName={classNames.tilePrimary}
+                styles={classNames}
+                disableSlides={true}
+                onClick={(e: React.SyntheticEvent) => {
+                  e.preventDefault()
+
+                  router.push(item.href)
                 }}
+                {...item}
               />
             );
           })}
         </>
       )}
-      {listType === 'slider' && (
+      {/* {listType === 'slider' && (
         <>
           <Slider
             slides={items}
             Slide={ListItem}
             // @ts-ignore
             deviceConfig={sliderDeviceConfig}
-            commonProps={commonProps}
+            lang={lang}
+            isMobile={isMobile}
+            setControl={setControl}
+            router={router}
           />
         </>
-      )}
+      )} */}
     </div>
   );
 };

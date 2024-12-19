@@ -1,0 +1,202 @@
+
+// #map-index {
+//   position: relative;
+//   max-width: 1440px;
+//   max-height: 960px;
+//   height: calc(100vh - 60px - 48px);
+//   margin: 24px auto;
+//   border: 1px solid #d7dbdd;
+//   border-radius: 12px;
+//   background: white;
+//   overflow: hidden;
+//   > h1 {
+//     @extend %lined-heading;
+//   }
+//   @media #{$MEDIUM-PC} {
+//     margin-left: 24px;
+//     margin-right: 24px;
+//   }
+//   @media #{$LARGE-TABLET} {
+//     max-height: none;
+//     height: auto;
+//     margin: 0;
+//     border: none;
+//     border-radius: 0;
+//   }
+
+//   .results {
+//     position: absolute;
+//     top: 80px;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     main {
+//       top: 0;
+//       bottom: 0;
+//       left: 0;
+//       width: 640px;
+//       #list {
+//         background: #e5e7e9;
+//         .listing-index-tile {
+//           @extend %listing-index-tile;
+//         }
+//         &.scroll {
+//           position: absolute;
+//           top: 0;
+//           right: 0;
+//           bottom: 0;
+//           left: 0;
+//           padding: 20px 20px 0;
+//           overflow-x: hidden;
+//           overflow-y: scroll;
+//           scrollbar-width: none;
+//           -ms-overflow-style: none;
+//           background: #e5e7e9;
+//           h1 {
+//             margin: 6px 0 18px 0;
+//             text-align: center;
+//             letter-spacing: 1px;
+//             font-size: 13px;
+//             color: #4d5656;
+//             font-weight: normal;
+//             text-transform: uppercase;
+//           }
+//           > h2 {
+//             font-size: 18px;
+//             margin-bottom: 24px;
+//             text-align: center;
+//             color: #424949;
+//           }
+//           .listing-index-tile {
+//             margin-bottom: 20px;
+//           }
+//           &::-webkit-scrollbar {
+//             width: 0;
+//             height: 0;
+//           }
+//         }
+//         &.slider {
+//           padding: 20px 0;
+//           .listing-index-tile {
+//             width: auto;
+//             position: relative;
+//             .picture {
+//               width: auto;
+//             }
+//           }
+//           .splide__list {
+//             padding-bottom: 0;
+//           }
+//           .splide__arrow {
+//             scale: 2;
+//             &--prev {
+//               left: 10px;
+//               transform-origin: left;
+//             }
+//             &--next {
+//               right: 10px;
+//               transform-origin: right;
+//             }
+//           }
+//         }
+//         &.render-show {
+//           height: 0;
+//           padding: 0;
+//         }
+//       }
+//     }
+//     #google-map-container {
+//       position: absolute;
+//       top: 0;
+//       right: 0;
+//       bottom: 0;
+//       left: 640px;
+//       #google-map {
+//         height: 100%;
+//       }
+//       .pin {
+//         position: relative;
+//         @extend %map-pin;
+//         &.promoted {
+//           z-index: 1;
+//           background: #fef5e7;
+//           &.hovered,
+//           &:hover {
+//             z-index: $LISTING-INDEX-PIN-HOVERED + 1;
+//           }
+//         }
+//       }
+//     }
+//     @media #{$LARGE-TABLET} {
+//       position: relative;
+//       top: 0;
+//       main {
+//         position: relative;
+//         width: 100%;
+//       }
+//       #google-map-container {
+//         position: relative;
+//         left: 0;
+//         .gm-bundled-control {
+//           display: none;
+//         }
+//         #google-map {
+//           height: 400px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// #visitor-articles-index {
+//   @extend %splide;
+//   max-width: 1440px;
+//   margin: 128px auto;
+//   .slider {
+//     margin: 0 3rem;
+//   }
+//   .link {
+//     border-radius: 1rem;
+//     overflow: hidden;
+//     margin: 0 1rem;
+//   }
+//   img {
+//     aspect-ratio: 16/9;
+//   }
+//   .splide__arrow {
+//     scale: 1.5;
+//     &--prev {
+//       left: -3rem;
+//       transform-origin: left;
+//     }
+//     &--next {
+//       right: -3rem;
+//       transform-origin: right;
+//     }
+//   }
+//   .title {
+//     padding: 20px;
+//     background: white;
+//     line-height: 1.5;
+//     height: 96px;
+//   }
+//   .splide__list {
+//     li {
+//       box-sizing: content-box;
+//     }
+//   }
+//   @media #{$LARGE-TABLET} {
+//     .slider {
+//       margin: 0 1rem;
+//     }
+//     .splide__arrow {
+//       scale: 1.7;
+//       &--prev {
+//         left: 0;
+//       }
+//       &--next {
+//         right: 0;
+//       }
+//     }
+//   }
+// }

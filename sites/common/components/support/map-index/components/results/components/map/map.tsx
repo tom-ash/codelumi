@@ -1,36 +1,50 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useStore } from 'react-redux';
+import { useEffect } from 'react';
 import { GoogleMap } from '../../../../../google-map/google-map';
-import { useApp } from '../../../../../../../../src copy/sites/shared/app/functions/store/use-app';
-import { useControl } from '../../../../../../../../src copy/sites/shared/app/functions/store/use-control';
-import { drawPins } from '../../../../../../../../sites/mapawynajmu-pl/tracks/listings/common/helpers/map/pins/draw-pins';
-import { useData } from '../../../../../../../../src copy/sites/shared/app/functions/store/use-data';
 import { Item } from '../../../../types/item.interface';
 import { PinBuilder } from '../../../../types/pin-builder.interface';
 import { MapStyles } from '../../../../map-index';
+import { drawPins } from './helpers/draw-pins';
+import { SVGs } from '../../../../../../../types/asset';
+import {
+  SetApp,
+  SetControl,
+} from '../../../../../../../../../lib/types/setters';
+import { GoogleMapOptions } from '../../../../../../../types/google';
+import { Scripts } from '../../../../../../../../../lib/types/scripts';
+import { Styles } from '../../../../../../../../mapawynajmu-pl/types/styles';
 
-interface MapInterface {
-  (props: {
-    items: Item[];
-    pinBuilder: PinBuilder;
-    lang?: Lang;
-    mapStyles?: MapStyles;
-  }): React.ReactElement;
+interface MapProps {
+  isMapInitialized: boolean;
+  isPinsDrawn: boolean;
+  currentListingId: number;
+  svgs: SVGs;
+  items: Item[];
+  pinBuilder: PinBuilder;
+  lang: string;
+  mapStyles: MapStyles;
+  setControl: SetControl;
+  mapOptions: GoogleMapOptions;
+  setApp: SetApp;
+  scripts: Scripts;
+  styles: Styles;
 }
 
-export const Map: MapInterface = (props) => {
-  const { items, pinBuilder, lang, mapStyles } = props;
-
-  const { isMapInitialized } = useApp();
-  const { mapOptions, isPinsDrawn } = useControl();
-  const { currentListingId } = useData();
+export const Map = (props: MapProps) => {
   const {
-    // @ts-ignore
-    assets: { svgs },
-  } = useStore().getState();
-
-  const dispatch = useDispatch();
-  const setControl = (value: any) => dispatch({ type: 'control', value });
+    styles,
+    setApp,
+    scripts,
+    svgs,
+    isMapInitialized,
+    isPinsDrawn,
+    currentListingId,
+    items,
+    pinBuilder,
+    lang,
+    mapStyles,
+    setControl,
+    mapOptions,
+  } = props;
 
   useEffect(() => {
     if (isMapInitialized && !isPinsDrawn) {
@@ -39,6 +53,7 @@ export const Map: MapInterface = (props) => {
         currentListingId,
         svgs,
         pinBuilder,
+        pinClassName: styles.pin,
       });
 
       setTimeout(() => {
@@ -49,10 +64,20 @@ export const Map: MapInterface = (props) => {
 
   useEffect(() => {
     if (isMapInitialized && mapOptions) {
+      // @ts-ignore // TODO
       const map = window.googleMap;
       map.setOptions(mapOptions);
     }
   }, [isMapInitialized, mapOptions]);
 
-  return <GoogleMap lang={lang} mapStyles={mapStyles} />;
+  return (
+    <GoogleMap
+      lang={lang}
+      mapStyles={mapStyles}
+      mapOptions={mapOptions}
+      setApp={setApp}
+      scripts={scripts}
+      styles={styles}
+    />
+  );
 };

@@ -10,7 +10,7 @@ interface ShareOnFacebookProps {
   label: string;
   styles: {
     container: string;
-  }
+  };
 }
 
 export const ShareOnFacebookButton = (props: ShareOnFacebookProps) => {
@@ -42,9 +42,7 @@ export const ShareOnFacebookButton = (props: ShareOnFacebookProps) => {
 
   const label = (
     <>
-      <SVG
-        data={facebookSvg}
-      />
+      <SVG data={facebookSvg} />
       {customLabel}
     </>
   );
@@ -55,11 +53,5 @@ export const ShareOnFacebookButton = (props: ShareOnFacebookProps) => {
     action,
   };
 
-  return (
-    <ActionButton
-      label={label}
-      action={action}
-      styles={styles}
-    />
-  )
+  return <ActionButton label={label} action={action} styles={styles} />;
 };

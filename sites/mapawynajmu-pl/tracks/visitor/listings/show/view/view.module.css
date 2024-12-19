@@ -1,0 +1,7 @@
+.view {
+  composes: view from '../../../../../../common/styles/view.module.css';
+}
+
+.container {
+  max-width: 768px;
+}

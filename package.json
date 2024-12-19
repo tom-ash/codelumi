@@ -27,6 +27,7 @@
     "scroll-into-view": "^1.16.2"
   },
   "devDependencies": {
+    "@types/googlemaps": "^3.43.3",
     "@types/js-cookie": "^3.0.6",
     "@types/lodash": "^4.17.13",
     "@types/node": "^20",

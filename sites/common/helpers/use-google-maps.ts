@@ -1,15 +1,14 @@
 import { useEffect } from 'react';
 import { SetApp } from '../../../lib/types/setters';
-import { Lang } from '../../mapawynajmu-pl/tracks/common/types/lang';
 import { loadScript } from './scripts/load-script';
-import { initializeMap } from '../../mapawynajmu-pl/tracks/listings/common/helpers/map/initialize';
-import removePins from '../../mapawynajmu-pl/tracks/listings/common/helpers/map/pins/remove-pins';
+import { initializeMap } from '../../mapawynajmu-pl/tracks/visitor/listings/common/helpers/map/initialize';
 import { GoogleMapOptions, GoogleMapStyles } from '../types/google';
 import { Scripts } from '../../../lib/types/scripts';
+import { removePins } from '../components/support/map-index/components/results/components/map/helpers/remove-pins';
 
 interface UseGoogleMapsParams {
   googleMapsApiKey: string;
-  lang: Lang;
+  lang: string;
   mapStyles: GoogleMapStyles;
   setApp: SetApp;
   scripts: Scripts;
@@ -30,6 +29,8 @@ export const useGoogleMaps = (params: UseGoogleMapsParams) => {
   const { googleMaps } = scripts;
 
   const langQuery = lang ? `&language=${lang}` : '';
+
+  console.log('googleMaps', googleMaps)
 
   useEffect(() => {
     if (!googleMaps) {

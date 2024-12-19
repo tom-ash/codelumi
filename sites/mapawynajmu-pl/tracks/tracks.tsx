@@ -3,22 +3,28 @@
 import dynamic from 'next/dynamic';
 
 const UsersNewCredentialsFormView = dynamic(
-  () => import('./users/new/credentials/form/view/view'),
+  () => import('./visitor/users/new/credentials/form/view/view'),
 );
 const UsersNewCredentialsVerificationView = dynamic(
-  () => import('./users/new/credentials/verification/view/view'),
+  () => import('./visitor/users/new/credentials/verification/view/view'),
 );
 const UsersNewCredentialsConfirmationView = dynamic(
-  () => import('./users/new/credentials/confirmation/view/view'),
+  () => import('./visitor/users/new/credentials/confirmation/view/view'),
 );
 
 const UsersAuthCredentialsView = dynamic(
-  () => import('./users/auth/credentials/view/view'),
+  () => import('./visitor/users/auth/credentials/view/view'),
 );
 
-const ListingsNewForm = dynamic(() => import('./listings/new/form/view/view'));
+const ListingsNewForm = dynamic(
+  () => import('./visitor/listings/new/form/view/view'),
+);
 const ListingsNewConfirmation = dynamic(
-  () => import('./listings/new/confirmation/view/view'),
+  () => import('./visitor/listings/new/confirmation/view/view'),
+);
+
+const VisitorListingsIndex = dynamic(
+  () => import('./visitor/listings/index/view/view'),
 );
 
 import { reducer, StateKey } from '../../../lib/helpers/reducer/reducer';
@@ -29,7 +35,7 @@ import {
   SetErrors,
   SetData,
 } from '../../../lib/types/setters';
-import React, { useReducer, useCallback } from 'react';
+import React, { useReducer, useCallback, useMemo } from 'react';
 import { notFound } from 'next/navigation';
 
 const views: { [key: string]: React.ComponentType<any> } = {
@@ -39,12 +45,16 @@ const views: { [key: string]: React.ComponentType<any> } = {
   'user/auth': UsersAuthCredentialsView,
   'listings/new/form': ListingsNewForm,
   'announcement/create/summary': ListingsNewConfirmation,
+  'announcement/show': VisitorListingsIndex,
+  root: VisitorListingsIndex,
 };
 
 const Tracks = (props: { data: any }) => {
   const { data } = props;
   const { track } = data;
   const [state, dispatch] = useReducer(reducer, data.state);
+
+  // console.log('track', track)
 
   const setApp: SetApp = useCallback(
     (value) => dispatch({ type: StateKey.APP, value }),
@@ -67,9 +77,21 @@ const Tracks = (props: { data: any }) => {
     [],
   );
 
+  const googleMaps = useMemo(() => {
+    // @ts-ignore
+    if (typeof window !== 'undefined' && window.googleMap) {
+      return true
+    }
+    
+    return false
+  }, [])
+
   const app = {
     ...{
-      scripts: {},
+      scripts: {
+        googleMaps,
+        isMapInitialized: !!googleMaps,
+      },
     },
     ...state.app,
   };

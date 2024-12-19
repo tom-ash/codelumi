@@ -1,4 +1,5 @@
-import removePins from '../../../../../mapawynajmu-pl/tracks/listings/common/helpers/map/pins/remove-pins';
+// import removePins from '../../map-index/components/results/components/map/helpers/remove-pins';
+import { removePins } from '../../map-index/components/results/components/map/helpers/remove-pins';
 import { PinBuilder } from '../map-marker';
 
 interface ItemProps {

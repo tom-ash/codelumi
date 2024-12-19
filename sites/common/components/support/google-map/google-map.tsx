@@ -1,13 +1,14 @@
 import { useGoogleMaps } from '../../../helpers/use-google-maps';
-import { Lang } from '../../../../mapawynajmu-pl/tracks/common/types/lang';
 import { GoogleMapOptions, GoogleMapStyles } from '../../../types/google';
 import { SetApp } from '../../../../../lib/types/setters';
 import { Scripts } from '../../../../../lib/types/scripts';
-// import styles from './google-map.module.css'
 import { Styles } from '../../../../mapawynajmu-pl/types/styles';
 
+export const GOOGLE_MAP_CONTAINER_ID = 'google-map-container'
+export const GOOGLE_MAP_ID = "google-map"
+
 interface GoogleMapProps {
-  lang: Lang;
+  lang: string;
   mapStyles: GoogleMapStyles;
   setApp: SetApp;
   scripts: Scripts;
@@ -31,8 +32,8 @@ export const GoogleMap = (props: GoogleMapProps) => {
   });
 
   return (
-    <div id="google-map-container" className={styles.container}>
-      <div id="google-map" className={styles.map} />
+    <div id={GOOGLE_MAP_CONTAINER_ID} className={styles.googleMapContainer}>
+      <div id={GOOGLE_MAP_ID} className={styles.googleMap} />
     </div>
   );
 };
