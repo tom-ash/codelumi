@@ -1,4 +1,7 @@
-import { GoogleMapOptions, GoogleMapStyles } from '../../../../../../../common/types/google';
+import {
+  GoogleMapOptions,
+  GoogleMapStyles,
+} from '../../../../../../../common/types/google';
 import { mapOptionsProvider } from './options-provider';
 import { setUpPinCreator } from './pins/set-up-creator';
 import { replaceMap } from './replace';

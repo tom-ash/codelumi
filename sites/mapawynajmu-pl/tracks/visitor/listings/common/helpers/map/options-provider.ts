@@ -3,7 +3,10 @@
 //   GoogleMapStyles,
 // } from '../../../../../../common/types/google';
 
-import { GoogleMapOptions, GoogleMapStyles } from "../../../../../../../common/types/google";
+import {
+  GoogleMapOptions,
+  GoogleMapStyles,
+} from '../../../../../../../common/types/google';
 
 type MapOptionsProviderParams = {
   mapOptions: GoogleMapOptions;

@@ -70,8 +70,6 @@ const ListingsNewForm = (props: ListingsNewContract) => {
 
   const router = useRouter();
 
-  console.log('props', props);
-
   const submit = useCallback(() => {
     if (
       submitValidator({

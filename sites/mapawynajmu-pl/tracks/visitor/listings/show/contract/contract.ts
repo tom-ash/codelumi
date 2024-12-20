@@ -23,8 +23,7 @@ export interface ListingsNewApp {
   lang: Lang;
 }
 
-export interface ListingsNewControl {
-}
+export interface ListingsNewControl {}
 
 export interface ListingsNewData {
   // announcement: {

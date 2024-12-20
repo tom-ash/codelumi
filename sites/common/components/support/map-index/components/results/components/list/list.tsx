@@ -47,26 +47,30 @@ const sliderDeviceConfig = {
 };
 
 interface ListProps {
-    ListItem: ItemIndexInterface;
-    renderShow: boolean;
-    items: Item[];
-    lang: string;
-    device: string;
-    isMobile: boolean;
-    setControl: SetControl;
-    currentPartnerName?: string;
-    router: AppRouterInstance;
-    classNames: Styles;
+  ListItem: ItemIndexInterface;
+  renderShow: boolean;
+  items: Item[];
+  lang: string;
+  device: string;
+  isMobile: boolean;
+  setControl: SetControl;
+  currentPartnerName?: string;
+  router: AppRouterInstance;
+  classNames: Styles;
 }
 
 export const List = (props: ListProps) => {
-  const { ListItem, renderShow, items, lang, isMobile, setControl, router, classNames } = props;
-  const listType = 'scroll' // TODO
-
-//   const classNames = [listType];
-//   if (renderShow) {
-//     classNames.push('render-show');
-//   }
+  const {
+    ListItem,
+    renderShow,
+    items,
+    lang,
+    isMobile,
+    setControl,
+    router,
+    classNames,
+  } = props;
+  const listType = 'scroll'; // TODO
 
   return (
     <div className={classNames.list}>
@@ -88,9 +92,9 @@ export const List = (props: ListProps) => {
                 styles={classNames}
                 disableSlides={true}
                 onClick={(e: React.SyntheticEvent) => {
-                  e.preventDefault()
+                  e.preventDefault();
 
-                  router.push(item.href)
+                  router.push(item.href);
                 }}
                 {...item}
               />
@@ -115,3 +119,8 @@ export const List = (props: ListProps) => {
     </div>
   );
 };
+
+//   const classNames = [listType];
+//   if (renderShow) {
+//     classNames.push('render-show');
+//   }

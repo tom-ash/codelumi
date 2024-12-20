@@ -11,13 +11,18 @@ import { Styles } from '../../../../../../mapawynajmu-pl/types/styles';
 import { List } from './components/list/list';
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import { PinBuilder } from '../../../../../../mapawynajmu-pl/tracks/visitor/listings/index/view/helpers/pin-builder';
+import { ReactNode } from 'react';
+
+// type BaseProps = {
+//   name: string;
+//   // convertValue?: (value: T) => T;
+// };
 
 interface ResultsProps {
   isSSR: boolean;
   items: Item[];
   renderShow: boolean;
   ListItem: ItemIndexInterface;
-  ShowItem: ItemShowInterface;
   pinBuilder: PinBuilder;
   lang: string;
   mapStyles: MapStyles;
@@ -33,6 +38,7 @@ interface ResultsProps {
   device: string;
   isMobile: boolean;
   router: AppRouterInstance;
+  children?: ReactNode
 }
 
 export const Results = (props: ResultsProps) => {
@@ -40,7 +46,6 @@ export const Results = (props: ResultsProps) => {
     isSSR,
     renderShow,
     ListItem,
-    ShowItem,
     items,
     pinBuilder,
     lang,
@@ -57,12 +62,13 @@ export const Results = (props: ResultsProps) => {
     device,
     isMobile,
     router,
+    children,
   } = props;
 
   return (
     <section className={styles.results}>
-      <main>
-        {!(renderShow && isSSR) && (
+      <main className={styles.main}>
+        {!children && (
           <List
             ListItem={ListItem}
             renderShow={renderShow}
@@ -75,7 +81,7 @@ export const Results = (props: ResultsProps) => {
             classNames={styles}
           />
         )}
-        {renderShow && <ShowItem />}
+        {children}
       </main>
       <Map
         items={items}

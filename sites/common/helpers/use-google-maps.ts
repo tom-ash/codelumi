@@ -30,8 +30,6 @@ export const useGoogleMaps = (params: UseGoogleMapsParams) => {
 
   const langQuery = lang ? `&language=${lang}` : '';
 
-  console.log('googleMaps', googleMaps)
-
   useEffect(() => {
     if (!googleMaps) {
       loadScript(

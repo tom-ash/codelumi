@@ -1,5 +1,11 @@
-import { GOOGLE_MAP_CONTAINER_ID, GOOGLE_MAP_ID } from '../../../../../../../common/components/support/google-map/google-map';
-import { GoogleMapOptions, GoogleMapStyles } from '../../../../../../../common/types/google';
+import {
+  GOOGLE_MAP_CONTAINER_ID,
+  GOOGLE_MAP_ID,
+} from '../../../../../../../common/components/support/google-map/google-map';
+import {
+  GoogleMapOptions,
+  GoogleMapStyles,
+} from '../../../../../../../common/types/google';
 import { mapOptionsProvider } from './options-provider';
 
 interface ReplaceMapProps {
@@ -25,7 +31,6 @@ export const replaceMap = (props: ReplaceMapProps) => {
 
   // @ts-ignore
   map.setOptions(
-    
     mapOptionsProvider({
       mapOptions,
       isMobile,

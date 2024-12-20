@@ -15,8 +15,6 @@ const ListingsShow = (props: ListingsShowContract) => {
     // texts: { congratulations, socialImageExplanation },
   } = props;
 
-  console.log('props', props);
-
   return <div className={styles.view}>SHOW</div>;
 };
 

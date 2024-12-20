@@ -28,8 +28,6 @@ interface HeadingProps {
 export const Heading = (props: HeadingProps) => {
   const { tier, name, category, locality, sublocality, lang, styles } = props;
 
-  console.log('props', props)
-
   return React.createElement(
     `h${tier}`,
     {

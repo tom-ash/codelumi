@@ -5,8 +5,6 @@ import { ListingsNewConfirmationContract } from '../contract/contract';
 import styles from './view.module.css';
 
 const ListingsNewConfirmation = (props: ListingsNewConfirmationContract) => {
-  console.log('props', props);
-
   const {
     app: { lang },
     assets: {
@@ -17,8 +15,6 @@ const ListingsNewConfirmation = (props: ListingsNewConfirmationContract) => {
     },
     texts: { congratulations, socialImageExplanation },
   } = props;
-
-  console.log('adasd', props);
 
   return (
     <div className={styles.view}>

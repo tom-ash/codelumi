@@ -1,8 +1,8 @@
-import { Styles } from "../../../../../../types/styles";
-import { Area } from "../area/area";
-import Heading from "../heading/heading";
-import { Rent } from "../rent/rent";
-import { Pictures } from "./components/pictures/pictures";
+import { Styles } from '../../../../../../types/styles';
+import { Area } from '../area/area';
+import Heading from '../heading/heading';
+import { Rent } from '../rent/rent';
+import { Pictures } from './components/pictures/pictures';
 
 interface Picture {
   database: string;
@@ -33,7 +33,7 @@ interface ListingsCommonTileProps {
   primaryClassName: string;
   promotedClassName: string;
   styles: Styles;
-  grossRentAmount: number | undefined
+  grossRentAmount: number | undefined;
 }
 
 export const ListingsCommonTile = (props: ListingsCommonTileProps) => {
@@ -68,9 +68,6 @@ export const ListingsCommonTile = (props: ListingsCommonTileProps) => {
     classNames.push(promotedClassName);
   }
 
-  console.log('item', props)
-  console.log('grossRentAmount', grossRentAmount)
-
   return (
     <a
       href={href}
@@ -104,7 +101,12 @@ export const ListingsCommonTile = (props: ListingsCommonTileProps) => {
         {area && <Area area={area} className={styles.area} />}
         {grossRentAmount && rentCurrency !== undefined && (
           // @ts-ignore
-          <Rent rent={grossRentAmount} currency={rentCurrency} styles={styles} />
+          <Rent
+            // @ts-ignore
+            rent={grossRentAmount}
+            currency={rentCurrency}
+            styles={styles}
+          />
         )}
       </div>
       {children}

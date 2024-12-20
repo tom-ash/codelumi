@@ -1,8 +1,7 @@
-import { Styles } from "../../../../../../../../types/styles";
-
-interface Picture {
-  database: string;
-}
+import { Picture } from '../../../../../../../../../common/components/support/picture-input/types/picture.interface';
+import { Styles } from '../../../../../../../../types/styles';
+// @ts-ignore
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 interface PicturesProps {
   pictures: Picture[];
@@ -30,36 +29,39 @@ export const Pictures = (props: PicturesProps) => {
     );
   }
 
-  return null
-
-  // return (
-  //   <div className="pictures">
-  //     <Splide
-  //       onArrowsMounted={(_, prev, next) => {
-  //         prev.addEventListener('click', (e) => {
-  //           e.stopPropagation();
-  //           e.preventDefault();
-  //         });
-  //         next.addEventListener('click', (e) => {
-  //           e.stopPropagation();
-  //           e.preventDefault();
-  //         });
-  //       }}
-  //       onPaginationMounted={(_, listObject) => {
-  //         listObject.list.addEventListener('click', (e) => {
-  //           e.stopPropagation();
-  //           e.preventDefault();
-  //         });
-  //       }}
-  //     >
-  //       {pictureUrls.map((pictureUrl) => {
-  //         return (
-  //           <SplideSlide key={pictureUrl.database}>
-  //             <img src={pictureUrl.database} alt={title} />
-  //           </SplideSlide>
-  //         );
-  //       })}
-  //     </Splide>
-  //   </div>
-  // );
+  return (
+    <div className="pictures">
+      <Splide
+        // @ts-ignore
+        onArrowsMounted={(_, prev, next) => {
+          // @ts-ignore
+          prev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+          });
+          // @ts-ignore
+          next.addEventListener('click', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+          });
+        }}
+        // @ts-ignore
+        onPaginationMounted={(_, listObject) => {
+          // @ts-ignore
+          listObject.list.addEventListener('click', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+          });
+        }}
+      >
+        {pictureUrls.map((pictureUrl) => {
+          return (
+            <SplideSlide key={pictureUrl.database}>
+              <img src={pictureUrl.database} alt={title} />
+            </SplideSlide>
+          );
+        })}
+      </Splide>
+    </div>
+  );
 };

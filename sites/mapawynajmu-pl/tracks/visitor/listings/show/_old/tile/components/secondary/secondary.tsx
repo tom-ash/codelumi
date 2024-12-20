@@ -1,8 +1,8 @@
 import React from 'react';
-import { presentRooms } from '../primary/functions/present-rooms';
-import { presentFloor } from '../primary/functions/present-floor';
-import { presentTotalFloors } from '../primary/functions/present-total-floors';
-import { presentAvailabilityDate } from '../primary/functions/present-availability-date';
+import { presentRooms } from './present-rooms';
+import { presentFloor } from './present-floor';
+import { presentTotalFloors } from './present-total-floors';
+import { presentAvailabilityDate } from './present-availability-date';
 import { SVG } from '../../../../../../../../../common/components/support/svg/svg';
 
 interface ListingTileShowSecondaryInterface {

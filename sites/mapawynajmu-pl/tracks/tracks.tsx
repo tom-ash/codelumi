@@ -54,8 +54,6 @@ const Tracks = (props: { data: any }) => {
   const { track } = data;
   const [state, dispatch] = useReducer(reducer, data.state);
 
-  // console.log('track', track)
-
   const setApp: SetApp = useCallback(
     (value) => dispatch({ type: StateKey.APP, value }),
     [],
@@ -80,11 +78,11 @@ const Tracks = (props: { data: any }) => {
   const googleMaps = useMemo(() => {
     // @ts-ignore
     if (typeof window !== 'undefined' && window.googleMap) {
-      return true
+      return true;
     }
-    
-    return false
-  }, [])
+
+    return false;
+  }, []);
 
   const app = {
     ...{

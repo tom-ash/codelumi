@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Results } from './components/results/results';
-import { ItemShowInterface } from './types/item-show.interface';
 import { ItemIndexInterface } from './types/item-index.interface';
-import { PanelInterface } from './types/panel.interface';
 import { Item } from './types/item.interface';
 import { SVGs } from '../../../types/asset';
 import { SetApp, SetControl } from '../../../../../lib/types/setters';
@@ -17,14 +15,12 @@ export type MapStyles = google.maps.MapTypeStyle[];
 interface MapIndexProps {
   isSSR: boolean;
   renderShow?: boolean;
-  Panel: PanelInterface;
+  Panel: JSX.Element;
   ListItem: ItemIndexInterface;
-  ShowItem: ItemShowInterface;
   pinBuilder: PinBuilder;
   items: Item[];
   lang: string;
   mapStyles: MapStyles;
-
   isMapInitialized: boolean;
   isPinsDrawn: boolean;
   currentListingId: number;
@@ -37,6 +33,7 @@ interface MapIndexProps {
   device: string;
   isMobile: boolean;
   router: AppRouterInstance;
+  children?: ReactNode
 }
 
 export const MapIndex = (props: MapIndexProps) => {
@@ -46,7 +43,6 @@ export const MapIndex = (props: MapIndexProps) => {
     renderShow = false,
     Panel,
     ListItem,
-    ShowItem,
     pinBuilder,
     lang,
     mapStyles,
@@ -62,16 +58,16 @@ export const MapIndex = (props: MapIndexProps) => {
     device,
     isMobile,
     router,
+    children,
   } = props;
 
   return (
     <section id="map-index">
-      <Panel />
+      {Panel}
       <Results
         isSSR={isSSR}
         ListItem={ListItem}
         renderShow={renderShow}
-        ShowItem={ShowItem}
         items={items}
         pinBuilder={pinBuilder}
         lang={lang}
@@ -88,7 +84,9 @@ export const MapIndex = (props: MapIndexProps) => {
         device={device}
         isMobile={isMobile}
         router={router}
-      />
+      >
+        {children}
+      </Results>
     </section>
   );
 };

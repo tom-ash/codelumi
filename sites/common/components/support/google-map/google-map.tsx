@@ -4,8 +4,8 @@ import { SetApp } from '../../../../../lib/types/setters';
 import { Scripts } from '../../../../../lib/types/scripts';
 import { Styles } from '../../../../mapawynajmu-pl/types/styles';
 
-export const GOOGLE_MAP_CONTAINER_ID = 'google-map-container'
-export const GOOGLE_MAP_ID = "google-map"
+export const GOOGLE_MAP_CONTAINER_ID = 'google-map-container';
+export const GOOGLE_MAP_ID = 'google-map';
 
 interface GoogleMapProps {
   lang: string;

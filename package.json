@@ -12,6 +12,7 @@
     "format": "prettier ./ -w"
   },
   "dependencies": {
+    "@splidejs/react-splide": "^0.7.12",
     "crypto-js": "^4.2.0",
     "html2canvas": "^1.4.1",
     "image-compressor": "^2.0.3",

@@ -22,7 +22,9 @@ export const drawPins = (params: DrawPinsParams) => {
   // @ts-ignore
   items.map((item) => {
     // @ts-ignore
-    pins.push(drawPin(pinBuilder({ ...item, svgs, currentListingId, pinClassName })));
+    pins.push(
+      drawPin(pinBuilder({ ...item, svgs, currentListingId, pinClassName })),
+    );
   });
 
   // @ts-ignore

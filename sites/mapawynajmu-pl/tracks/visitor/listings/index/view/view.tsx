@@ -4,33 +4,35 @@ import { VisitorListingsIndexContract } from '../contract/contract';
 import { pinBuilder } from './helpers/pin-builder';
 import styles from './view.module.css';
 import { ListingsCommonTile } from '../../common/components/tile/tile';
+import ListingsShowTile from '../../show/view/components/tile/tile';
 
 const VisitorListingsIndexView = (props: VisitorListingsIndexContract) => {
   const {
     app: { lang, isMapInitialized, isPinsDrawn, scripts, isMobile, device },
     assets: { svgs },
-    data: { currentListingId, announcements },
-    control: {mapOptions },
+    data: { currentListingId, announcements, tile },
+    control: { mapOptions },
     setApp,
     setControl,
+    links: {
+      root: rootLinkData,
+    },
   } = props;
+
+  const router = useRouter();
 
   console.log('props', props);
 
-  const renderShow = false; // TODO
-  const AnnouncementIndexPanel = () => <div>PANEL</div>; // TODO
-  const ListingsShow = () => <div>TODO</div>; // TODO
+  const AnnouncementIndexPanel = <div>asdas PANEL</div>; // TODO
   const isSSR = false; // TODO
-  const router = useRouter();
-  
+
   return (
     <div className={styles.view}>
       <MapIndex
         isSSR={isSSR}
-        renderShow={renderShow}
+        renderShow={!!tile}
         Panel={AnnouncementIndexPanel}
         ListItem={ListingsCommonTile}
-        ShowItem={ListingsShow}
         items={announcements}
         pinBuilder={pinBuilder}
         mapStyles={[]} // TODO
@@ -47,7 +49,25 @@ const VisitorListingsIndexView = (props: VisitorListingsIndexContract) => {
         router={router}
         isMobile={isMobile}
         device={device}
-      />
+      >
+        {tile && (
+          <ListingsShowTile
+            category={tile.category}
+            lang={lang}
+            locality={tile.locality}
+            sublocality={tile.sublocality}
+            styles={styles}
+            id={tile.id}
+            title={tile.title}
+            pictures={tile.pictures}
+            area={tile.area}
+            grossRentAmount={tile.grossRentAmount}
+            rentCurrency={tile.rentCurrency}
+            router={router}
+            rootLinkData={rootLinkData}
+          />
+        )}
+      </MapIndex>
     </div>
   );
 };
@@ -87,3 +107,5 @@ export default VisitorListingsIndexView;
 // if (renderMy) {
 //   return <AnnouncementIndexMy />;
 // }
+
+// const abc = typeof VisitorListingsIndexView

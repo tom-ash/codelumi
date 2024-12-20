@@ -2,12 +2,12 @@ import { SVGs } from '../../../../../../../common/types/asset';
 import { categories } from '../../../common/constants/categories';
 
 interface PinBuilderProps {
-  id: number
-  category: number
-  latitude: number
+  id: number;
+  category: number;
+  latitude: number;
   longitude: number;
   href: string;
-  isPromoted: boolean
+  isPromoted: boolean;
   svgs: SVGs;
   currentListingId: number;
   pinClassName: string;
@@ -25,7 +25,7 @@ interface PinData {
 }
 
 export interface PinBuilder {
-  (props: PinBuilderProps): PinData
+  (props: PinBuilderProps): PinData;
 }
 
 export const pinBuilder: PinBuilder = (props) => {
