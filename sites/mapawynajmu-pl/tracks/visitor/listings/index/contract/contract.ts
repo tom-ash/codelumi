@@ -12,7 +12,7 @@ export interface VisitorListingsIndexContract {
   assets: Assets;
   control: ListingsNewControl;
   data: ListingsNewData;
-    links: ListingsNewLinks;
+  links: ListingsNewLinks;
   inputs: ListingsNewInputs;
   errors: ListingsNewErrors;
   texts: ListingsNewTexts;
@@ -70,7 +70,7 @@ export interface ListingsNewData {
 
     // rooms
     // totalFloors
-  }
+  };
 }
 
 export interface ListingsNewTexts {

@@ -1,33 +1,32 @@
-import React from 'react';
-import useStyles from 'isomorphic-style-loader-react18/useStyles';
-import styles from './styles/styles.scss';
 import Logo from '../logo/logo';
+import { Nova_Slim } from 'next/font/google';
 
-interface ExtendedLogoInterface {
-  (props: { scale?: number }): React.ReactElement;
+const novaSlim = Nova_Slim({ weight: '400' });
+
+interface ExtendedLogoProps {
+  scale?: number;
+  className: string;
+  titleClassName: string;
 }
 
-export const ExtendedLogo: ExtendedLogoInterface = (props) => {
-  useStyles(styles);
-
-  const { scale: customScale } = props;
+export const ExtendedLogo = (props: ExtendedLogoProps) => {
+  const { scale: customScale, className, titleClassName } = props;
   const scale = customScale || 1;
-
   const paddingLeft = 420 * scale;
   const fontSize = 160 * scale;
 
   return (
-    <div id="extended-logo">
+    <div className={className}>
       <Logo scale={scale} />
       <div
-        className="title"
+        className={`${titleClassName} ${novaSlim.className}`}
         style={{
           paddingLeft,
           fontSize,
         }}
       >
         <div>mapa</div>
-        <div className="lease">wynajmu</div>
+        <div>wynajmu</div>
       </div>
     </div>
   );

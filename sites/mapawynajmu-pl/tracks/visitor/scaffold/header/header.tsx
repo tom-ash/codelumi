@@ -1,37 +1,82 @@
-import React from 'react';
-import { LogoLink } from './components/logo-link/logo-link';
-import { FloatClear } from '../../../../../common/components/support/float-clear/float-clear';
-import useStyles from 'isomorphic-style-loader-react18/useStyles';
-import styles from './styles/styles.scss';
-import { Links } from './components/links/links';
-import { MyAccountMenu } from './components/my-account-menu/my-account-menu';
-import { MobileMenu } from './components/mobile-menu/mobile-menu';
+import { useMemo } from 'react';
+import { LinkData } from '../../../../../../lib/types/link-data';
 import { LangSwitch } from '../../../../../common/components/support/lang-switch/lang-switch';
-import { useControl } from '../../../../src copy/sites/shared/app/functions/store/use-control';
-import { useApp } from '../../../../src copy/sites/shared/app/functions/store/use-app';
+import { Lang } from '../../../common/types/lang';
+import styles from './header.module.css';
+import { FloatClear } from '../../../../../common/components/support/float-clear/float-clear';
+import { LogoLink } from './components/common/logo';
+import { PCLinks } from './components/pc/pc-links';
+import { SetControl } from '../../../../../../lib/types/setters';
 
-const Header = () => {
-  useStyles(styles);
+interface HeaderProps {
+  lang: Lang;
+  authenticated: boolean;
+  currentPlLinkData?: LinkData;
+  currentEnLinkData?: LinkData;
+  rootLinkData: LinkData;
+  visitorListingsNewLinkData: LinkData;
+  visitorUsersNewLinkData: LinkData;
+  visitorUsersAuthLinkData: LinkData;
+  setControl: SetControl;
+  showPCUserUsersShowDropDown: boolean;
+}
 
-  const { device } = useApp();
-  const { showMyAccountMenu } = useControl();
+const Header = (props: HeaderProps) => {
+  const {
+    lang,
+    authenticated,
+    rootLinkData,
+    currentPlLinkData,
+    currentEnLinkData,
+    visitorListingsNewLinkData,
+    visitorUsersNewLinkData,
+    visitorUsersAuthLinkData,
+    setControl,
+    showPCUserUsersShowDropDown,
+  } = props;
 
-  // TODO!!!
-  const isMobile =
-    ['largeTablet', 'smallTablet', 'largePhone', 'smallPhone'].indexOf(
-      device,
-    ) !== -1;
+  const alternateLangLinks = useMemo(() => {
+    const links = [];
 
-  // TODO: ADD ARTICLES TO MOBILE MENU!
+    if (currentPlLinkData) {
+      links.push({ ...currentPlLinkData, label: 'pl' });
+    }
+
+    if (currentEnLinkData) {
+      links.push({ ...currentEnLinkData, label: 'en' });
+    }
+
+    return links;
+  }, []);
+
+  console.log('showDropDown', showPCUserUsersShowDropDown)
 
   return (
-    <header id="header">
-      <div id="inner-header">
-        <LogoLink />
-        <LangSwitch />
-        {!isMobile && <Links />}
-        {showMyAccountMenu && <MyAccountMenu />}
-        {isMobile && <MobileMenu />}
+    <header className={styles.header}>
+      <div className={styles.headerInner}>
+        <LogoLink
+          rootLinkData={rootLinkData}
+          extendedLogoClassName={styles.extendedLogo}
+          extendedLogoTitleClassName={styles.extendedLogoTitle}
+          className={styles.logoLink}
+        />
+        <LangSwitch
+          lang={lang}
+          alternateLangLinks={alternateLangLinks}
+          styles={styles}
+        />
+        <PCLinks
+          authenticated={authenticated}
+          rootLinkData={rootLinkData}
+          visitorListingsNewLinkData={visitorListingsNewLinkData}
+          visitorUsersNewLinkData={visitorUsersNewLinkData}
+          visitorUsersAuthLinkData={visitorUsersAuthLinkData}
+          setControl={setControl}
+          showDropDown={showPCUserUsersShowDropDown}
+        />
+        {/* {!isMobile && <Links />} */}
+        {/* {showMyAccountMenu && <MyAccountMenu />} */}
+        {/* {isMobile && <MobileMenu />} */}
         <FloatClear />
       </div>
     </header>
@@ -39,3 +84,18 @@ const Header = () => {
 };
 
 export default Header;
+
+// announcement/index/user // MY LISTINGS
+// user/edit // ACCOUNT
+// visitorPageIndex // ARTYKULY
+
+// const { device } = useApp();
+// const { showMyAccountMenu } = useControl();
+
+// // TODO!!!
+// const isMobile =
+//   ['largeTablet', 'smallTablet', 'largePhone', 'smallPhone'].indexOf(
+//     device,
+//   ) !== -1;
+
+// TODO: ADD ARTICLES TO MOBILE MENU!

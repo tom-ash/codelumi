@@ -56,7 +56,7 @@ const UsersAuthCredentials = (props: UsersAuthCredentialsContract) => {
         setErrors,
         router,
       }),
-    [],
+    [lang, emailAddress, password],
   );
 
   return (

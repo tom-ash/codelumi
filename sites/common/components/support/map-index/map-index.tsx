@@ -33,7 +33,7 @@ interface MapIndexProps {
   device: string;
   isMobile: boolean;
   router: AppRouterInstance;
-  children?: ReactNode
+  children?: ReactNode;
 }
 
 export const MapIndex = (props: MapIndexProps) => {

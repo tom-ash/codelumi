@@ -27,6 +27,10 @@ const VisitorListingsIndex = dynamic(
   () => import('./visitor/listings/index/view/view'),
 );
 
+const Header = dynamic(() => import('./visitor/scaffold/header/header'));
+
+import { parse } from 'cookie';
+
 import { reducer, StateKey } from '../../../lib/helpers/reducer/reducer';
 import {
   SetApp,
@@ -84,19 +88,36 @@ const Tracks = (props: { data: any }) => {
     return false;
   }, []);
 
+  const isMobile = useMemo(() => {
+    if (typeof window !== 'undefined') {
+      return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent,
+      );
+    }
+  }, []);
+
   const app = {
     ...{
       scripts: {
         googleMaps,
         isMapInitialized: !!googleMaps,
+        isMobile,
       },
     },
     ...state.app,
   };
 
+  const user = {
+    ...{
+      authenticated: state.user.authorized,
+    },
+    ...state.user,
+  };
+
   const extendedState = {
     ...state,
     app,
+    user,
     setApp,
     setData,
     setControl,
@@ -110,7 +131,27 @@ const Tracks = (props: { data: any }) => {
     return notFound();
   }
 
-  return React.createElement(view, extendedState);
+  const rootLinkData = state.links.root;
+
+  console.log('state', extendedState);
+
+  return (
+    <>
+      <Header
+        rootLinkData={rootLinkData}
+        lang={state.app.lang}
+        authenticated={extendedState.user.authenticated}
+        currentPlLinkData={state.links['current/pl']}
+        currentEnLinkData={state.links['current/en']}
+        visitorListingsNewLinkData={state.links['listings/new/form']}
+        visitorUsersNewLinkData={state.links['user/new/form']}
+        visitorUsersAuthLinkData={state.links['user/auth']}
+        setControl={setControl}
+        showPCUserUsersShowDropDown={state.control.showPCUserUsersShowDropDown}
+      />
+      {React.createElement(view, extendedState)}
+    </>
+  );
 };
 
 export default Tracks;

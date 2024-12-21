@@ -26,7 +26,20 @@ interface ListingsShowTileProps {
 }
 
 const ListingsShowTile = (props: ListingsShowTileProps) => {
-  const { pictures, id, title, category, lang, locality, sublocality, styles, area, grossRentAmount, rentCurrency, rootLinkData } = props;
+  const {
+    pictures,
+    id,
+    title,
+    category,
+    lang,
+    locality,
+    sublocality,
+    styles,
+    area,
+    grossRentAmount,
+    rentCurrency,
+    rootLinkData,
+  } = props;
 
   return (
     <div className={styles.showTile}>
@@ -38,10 +51,7 @@ const ListingsShowTile = (props: ListingsShowTileProps) => {
         sublocality={sublocality}
         styles={styles}
       />
-      <Link
-        data={rootLinkData}
-        className={styles.rootLink}
-      />
+      <Link data={rootLinkData} className={styles.rootLink} />
       <Pictures
         id={id}
         title={title}

@@ -38,7 +38,7 @@ interface ResultsProps {
   device: string;
   isMobile: boolean;
   router: AppRouterInstance;
-  children?: ReactNode
+  children?: ReactNode;
 }
 
 export const Results = (props: ResultsProps) => {

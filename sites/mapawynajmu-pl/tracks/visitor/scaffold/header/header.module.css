@@ -1,0 +1,94 @@
+.header {
+  position: fixed;
+  height: 50px;
+  border-radius: 4px;
+  margin: 0 auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: white;
+  z-index: 2;
+  opacity: 0.9;
+  border-bottom: 1px solid lightgray;
+  width: 100%;
+}
+
+.headerInner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.headerInner img {
+  height: 100%;
+}
+
+.extendedLogo {
+  position: relative;
+  margin-top: 7px;
+}
+
+.extendedLogoTitle {
+  position: absolute;
+  top: 1px;
+  font-family: 'Nova Slim';
+  color: rgb(55, 129, 190);
+  line-height: 1;
+}
+
+.cover {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.langSwitch {
+  float: right;
+  line-height: 50px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.langSwtichCurrent {
+  cursor: pointer;
+}
+
+.langSwitch ul {
+  position: absolute;
+  z-index: 2;
+  list-style-type: none;
+  background: white;
+  border: 1px solid gray;
+  width: 30px;
+  text-align: center;
+}
+
+.langSwitch ul a {
+  text-decoration: none;
+}
+
+.logoLink {
+  float: left;
+}
+
+.desktopLinks {
+  float: right;
+}
+
+.link {
+  display: block;
+  float: left;
+  line-height: 50px;
+  text-decoration: none;
+  margin-right: 20px;
+  color: inherit;
+}
+
+.userUsersDeAuthButton, .userUsersShowButton {
+  margin-right: 20px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  line-height: 50px;
+}

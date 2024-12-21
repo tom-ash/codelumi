@@ -1,21 +1,11 @@
 .view {
   composes: view from '../../../../../../common/styles/view.module.css';
+  padding-top: 82px;
 }
 
 .container {
   max-width: 768px;
 }
-
-/* results */
-/* //   position: relative;
-//   max-width: 1440px;
-//   max-height: 960px;
-//   height: calc(100vh - 60px - 48px);
-//   margin: 24px auto;
-//   border: 1px solid #d7dbdd;
-//   border-radius: 12px;
-//   background: white;
-//   overflow: hidden; */
 
 .googleMapContainer {
   width: 768px;
@@ -224,7 +214,8 @@
   display: flex;
 }
 
-.areaAndRent .area, .areaAndRent .rent {
+.areaAndRent .area,
+.areaAndRent .rent {
   margin-top: 0;
 }
 

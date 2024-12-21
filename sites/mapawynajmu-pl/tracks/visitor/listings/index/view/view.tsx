@@ -14,16 +14,11 @@ const VisitorListingsIndexView = (props: VisitorListingsIndexContract) => {
     control: { mapOptions },
     setApp,
     setControl,
-    links: {
-      root: rootLinkData,
-    },
+    links: { root: rootLinkData },
   } = props;
 
   const router = useRouter();
-
-  console.log('props', props);
-
-  const AnnouncementIndexPanel = <div>asdas PANEL</div>; // TODO
+  const AnnouncementIndexPanel = <></>; //<div>asdas PANEL</div>; // TODO
   const isSSR = false; // TODO
 
   return (

@@ -1,8 +1,7 @@
 import { Metadata } from 'next';
 import { fetchTrackData } from '../../../sites/common/helpers/fetch-track-data/fetch-track-data';
 import Tracks from '../../../sites/mapawynajmu-pl/tracks/tracks';
-
-import { headers } from 'next/headers';
+import { cookies } from 'next/headers';
 
 export type SyncProps = {
   params: Promise<{ sync: string[] }>;
