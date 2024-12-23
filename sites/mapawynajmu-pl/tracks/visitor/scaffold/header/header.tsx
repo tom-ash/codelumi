@@ -49,8 +49,6 @@ const Header = (props: HeaderProps) => {
     return links;
   }, []);
 
-  console.log('showDropDown', showPCUserUsersShowDropDown)
-
   return (
     <header className={styles.header}>
       <div className={styles.headerInner}>

@@ -1,57 +1,66 @@
-import React from 'react';
-import { ContactLink } from './components/contact/contact.link';
-import { TermsOfServiceLink } from './components/terms-of-service/terms-of-service.link';
-import { CookiesPolicyLink } from './components/cookies-policy/cookies-policy.link';
-import { PrivacyPolicyLink } from './components/privacy-policy/privacy-policy.link';
-import { PrivacySettingsLink } from './components/privacy-settings/privacy-settings.link';
-import useStyles from 'isomorphic-style-loader-react18/useStyles';
-import styles from './styles/styles.scss';
-import { SVG } from '../../../../../common/components/support/svg/svg';
-import { DeprecatedLink } from '../../../../../common/components/support/deprecated-link/deprecated-link';
+import { LinkData } from '../../../../../../lib/types/link-data';
 import { FloatClear } from '../../../../../common/components/support/float-clear/float-clear';
-import { useTexts } from '../../../../src copy/sites/shared/app/functions/store/use-texts';
+import { Link } from '../../../../../common/components/support/link/link';
+import styles from './footer.module.css'
 
-const Footer = () => {
-  useStyles(styles);
+interface FooterProps {
+  facebookLinkData: LinkData;
+  linkedinLinkData: LinkData;
+  contactLinkData: LinkData
+  termsOfServiceLinkData: LinkData;
+  cookiesPolicyLinkData: LinkData;
+  privacyPolicyLinkData: LinkData;
+  privacySettingsLinkData: LinkData;
+}
 
-  const { allRightsReserved } = useTexts();
-  const footerClassNames = ['footer'];
+const Footer = (props: FooterProps) => {
+  const {
+    facebookLinkData,
+    linkedinLinkData,
+    contactLinkData,
+    termsOfServiceLinkData,
+    cookiesPolicyLinkData,
+    privacyPolicyLinkData,
+    privacySettingsLinkData,
+  } = props
 
-  if (true) {
-    footerClassNames.push('mini');
-  }
+  console.log('props', props)
 
   return (
-    <footer className={footerClassNames.join(' ')} id="footer">
-      <div className="social-pages">
-        <DeprecatedLink
-          linkKey="facebook"
-          label={<SVG name="facebookSquare" />}
+    <footer className={styles.footer}>
+      <div className={styles.socialPages}>
+        <Link
+          data={{...facebookLinkData, label: 'FACEBOOK' }} // TODO
         />
-        <DeprecatedLink
-          linkKey="linkedin"
-          label={<SVG name="linkedinSquare" />}
-        />
-        <DeprecatedLink
-          linkKey="linkedin"
-          label={<SVG name="twitterSquare" />}
+        <Link
+          data={{...linkedinLinkData, label: 'LINKEDIN' }} // TODO
         />
       </div>
-      <div className="administrative">
-        <div className="links">
-          <ContactLink />
-          <TermsOfServiceLink />
-          <CookiesPolicyLink />
-          <PrivacyPolicyLink />
-          <PrivacySettingsLink />
-          <div className="float-clear" />
+      <div className={styles.administration}>
+        <div className={styles.links}>
+          <Link
+            data={contactLinkData}
+          />
+          <Link
+            data={termsOfServiceLinkData}
+          />
+          <Link
+            data={cookiesPolicyLinkData}
+          />
+          <Link
+            data={privacyPolicyLinkData}
+          />
+          <Link
+            data={privacySettingsLinkData}
+          />
+          <FloatClear />
         </div>
       </div>
-      <div className="copyright">
-        <span className="warsaw-digital">
+      <div className={styles.copyright}>
+        <span className={styles.warsawDigital}>
           Warsaw Digital Sp. z o.o. 2020 - 2023
         </span>
-        <span className="all-rights-reserved">{allRightsReserved}</span>
+        {/* <span className="all-rights-reserved">{allRightsReserved}</span> */}
       </div>
       <FloatClear />
     </footer>

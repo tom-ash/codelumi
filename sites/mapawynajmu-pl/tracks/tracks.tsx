@@ -28,6 +28,7 @@ const VisitorListingsIndex = dynamic(
 );
 
 const Header = dynamic(() => import('./visitor/scaffold/header/header'));
+const Footer = dynamic(() => import('./visitor/scaffold/footer/footer'));
 
 import { parse } from 'cookie';
 
@@ -150,6 +151,15 @@ const Tracks = (props: { data: any }) => {
         showPCUserUsersShowDropDown={state.control.showPCUserUsersShowDropDown}
       />
       {React.createElement(view, extendedState)}
+      <Footer
+        facebookLinkData={state.links['facebook']}
+        linkedinLinkData={state.links['linkedin']}
+        contactLinkData={state.links['visitor/contact']}
+        termsOfServiceLinkData={state.links['visitor/terms-of-service']}
+        cookiesPolicyLinkData={state.links['visitor/cookies-policy']}
+        privacyPolicyLinkData={state.links['visitor/privacy-policy']}
+        privacySettingsLinkData={state.links['visitor/privacy-settings']}
+      />
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdministrativeDocument } from '../../../../../../../common/components/visitor/components/administration/components/administrative-document/cookies-policy/administrative-document';
+import { AdministrativeDocument } from '../../../../../../common/components/visitor/components/administration/components/administrative-document/cookies-policy/administrative-document';
 import { provisions } from './constants/provisions-2.x';
 import useStyles from 'isomorphic-style-loader-react18/useStyles';
 import styles from './styles/styles.scss';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { DeprecatedLink } from '../../../../../../../../../common/components/support/deprecated-link/deprecated-link';
+import { DeprecatedLink } from '../../../../../../../../common/components/support/deprecated-link/deprecated-link';
 import { useApp } from '../../../../../../../../src copy/sites/shared/app/functions/store/use-app';
 
 export const PrivacySettingsLink = () => {

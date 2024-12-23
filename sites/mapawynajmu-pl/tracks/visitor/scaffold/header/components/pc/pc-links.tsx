@@ -29,8 +29,6 @@ export const PCLinks = (props: PCLinksProps) => {
     showDropDown,
   } = props;
 
-  console.log('showDropDown', showDropDown)
-
   return (
     <div className={styles.desktopLinks}>
       <VisitorListingsNewLink data={visitorListingsNewLinkData} />
