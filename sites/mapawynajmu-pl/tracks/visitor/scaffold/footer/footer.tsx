@@ -11,6 +11,8 @@ import { DeprecatedLink } from '../../../../../common/components/support/depreca
 import { FloatClear } from '../../../../../common/components/support/float-clear/float-clear';
 import { useTexts } from '../../../../src copy/sites/shared/app/functions/store/use-texts';
 
+// TODO
+
 const Footer = () => {
   useStyles(styles);
 
