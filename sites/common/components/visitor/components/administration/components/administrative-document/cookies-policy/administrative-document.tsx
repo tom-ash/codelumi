@@ -1,30 +1,30 @@
 import React from 'react';
 import { Provision } from '../../provision/provision';
-import { Heading } from '../../../../../../../../sites/mapawynajmu-pl/tracks/common/components/heading';
-import { useApp } from '../../../../../../../../src copy/sites/shared/app/functions/store/use-app';
-import { useTexts } from '../../../../../../../../src copy/sites/shared/app/functions/store/use-texts';
+import { MainHeading } from '../../../../../../support/headings/main-heading';
+import { Styles } from '../../../../../../../../mapawynajmu-pl/types/styles';
 
-interface AdministrativeDocumentInterface {
-  (props: {
-    identifier: string;
-    provisions: any[]; // TODO!
-  }): React.ReactElement;
+interface AdministrativeDocumentProps {
+  lang: string;
+  heading: string;
+  provisions: any[]; // TODO!
+  styles: Styles;
 }
 
-export const AdministrativeDocument: AdministrativeDocumentInterface = (
-  props,
+export const AdministrativeDocument = (
+  props: AdministrativeDocumentProps,
 ) => {
-  const { identifier, provisions } = props;
-  const { lang } = useApp();
-  const { headingOne } = useTexts();
-  const headingOneProps = { tier: 1, text: headingOne };
+  const { lang, heading, provisions, styles } = props;
 
   return (
-    <div id={identifier}>
-      <div className="container">
-        <Heading {...headingOneProps} />
+    <div>
+      <div className={styles.container}>
+        <MainHeading
+          value={heading}
+          styles={{}} // TODO
+        />
+        {/* <Heading {...headingOneProps} /> */}
         {provisions.map((provision, index) => (
-          <Provision {...{ ...provision, lang, key: index }} />
+          <Provision key={index} {...{ ...provision, lang,  }} />
         ))}
       </div>
     </div>

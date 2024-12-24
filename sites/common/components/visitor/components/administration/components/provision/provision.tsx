@@ -1,8 +1,7 @@
-import React from 'react';
 import { FloatClear } from '../../../../../support/float-clear/float-clear';
 
 interface ProvisionInterface {
-  lang: Lang;
+  lang: string;
   tier: string;
   item: string;
   pl: JSX.Element;
@@ -10,6 +9,7 @@ interface ProvisionInterface {
 }
 
 export const Provision = (props: ProvisionInterface) => {
+  // @ts-ignore // TODO: Typing.
   const { tier, item, lang, [lang]: text } = props;
 
   return (
