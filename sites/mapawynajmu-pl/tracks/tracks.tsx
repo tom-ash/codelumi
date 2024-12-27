@@ -38,8 +38,9 @@ const VisitorAdministrationContact = dynamic(
 const VisitorAdministrationPrivacyPolicy = dynamic(
   () => import('./visitor/administration/privacy-policy/view/view'),
 );
-
-import { parse } from 'cookie';
+const AdministrationTermsOfService = dynamic(
+  () => import('./visitor/administration/terms-of-service/view/view'),
+);
 
 import { reducer, StateKey } from '../../../lib/helpers/reducer/reducer';
 import {
@@ -64,6 +65,7 @@ const views: { [key: string]: React.ComponentType<any> } = {
   'visitor/cookies-policy': VisitorAdministrationCookiesPolicy,
   'visitor/contact': VisitorAdministrationContact,
   'visitor/privacy-policy': VisitorAdministrationPrivacyPolicy,
+  'visitor/terms-of-service': AdministrationTermsOfService,
 };
 
 const Tracks = (props: { data: any }) => {
