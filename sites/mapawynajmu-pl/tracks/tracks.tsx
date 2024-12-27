@@ -35,6 +35,9 @@ const VisitorAdministrationCookiesPolicy = dynamic(
 const VisitorAdministrationContact = dynamic(
   () => import('./visitor/administration/contact/view/view'),
 );
+const VisitorAdministrationPrivacyPolicy = dynamic(
+  () => import('./visitor/administration/privacy-policy/view/view'),
+);
 
 import { parse } from 'cookie';
 
@@ -60,6 +63,7 @@ const views: { [key: string]: React.ComponentType<any> } = {
   root: VisitorListingsIndex,
   'visitor/cookies-policy': VisitorAdministrationCookiesPolicy,
   'visitor/contact': VisitorAdministrationContact,
+  'visitor/privacy-policy': VisitorAdministrationPrivacyPolicy,
 };
 
 const Tracks = (props: { data: any }) => {

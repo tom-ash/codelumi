@@ -1,10 +1,10 @@
 import { AdministrativeDocument } from '../../../../../../common/components/administrative-document/administrative-document';
-import { AdministrationCookiesPolicyContract } from '../contract/contract';
+import { AdministrationPrivacyPolicyContract } from '../contract/contract';
 import { provisions } from './constants/provisions';
 import styles from './view.module.css';
 
-const AdministrationCookiesPolicy = (
-  props: AdministrationCookiesPolicyContract,
+const AdministrationPrivacyPolicy = (
+  props: AdministrationPrivacyPolicyContract,
 ) => {
   const {
     app: { lang },
@@ -23,4 +23,4 @@ const AdministrationCookiesPolicy = (
   );
 };
 
-export default AdministrationCookiesPolicy;
+export default AdministrationPrivacyPolicy;
