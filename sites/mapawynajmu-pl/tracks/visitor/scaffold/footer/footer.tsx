@@ -1,12 +1,12 @@
 import { LinkData } from '../../../../../../lib/types/link-data';
 import { FloatClear } from '../../../../../common/components/support/float-clear/float-clear';
 import { Link } from '../../../../../common/components/support/link/link';
-import styles from './footer.module.css'
+import styles from './footer.module.css';
 
 interface FooterProps {
   facebookLinkData: LinkData;
   linkedinLinkData: LinkData;
-  contactLinkData: LinkData
+  contactLinkData: LinkData;
   termsOfServiceLinkData: LinkData;
   cookiesPolicyLinkData: LinkData;
   privacyPolicyLinkData: LinkData;
@@ -22,37 +22,25 @@ const Footer = (props: FooterProps) => {
     cookiesPolicyLinkData,
     privacyPolicyLinkData,
     privacySettingsLinkData,
-  } = props
-
-  console.log('props', props)
+  } = props;
 
   return (
     <footer className={styles.footer}>
       <div className={styles.socialPages}>
         <Link
-          data={{...facebookLinkData, label: 'FACEBOOK' }} // TODO
+          data={{ ...facebookLinkData, label: 'FACEBOOK' }} // TODO
         />
         <Link
-          data={{...linkedinLinkData, label: 'LINKEDIN' }} // TODO
+          data={{ ...linkedinLinkData, label: 'LINKEDIN' }} // TODO
         />
       </div>
       <div className={styles.administration}>
         <div className={styles.links}>
-          <Link
-            data={contactLinkData}
-          />
-          <Link
-            data={termsOfServiceLinkData}
-          />
-          <Link
-            data={cookiesPolicyLinkData}
-          />
-          <Link
-            data={privacyPolicyLinkData}
-          />
-          <Link
-            data={privacySettingsLinkData}
-          />
+          <Link data={contactLinkData} />
+          <Link data={termsOfServiceLinkData} />
+          <Link data={cookiesPolicyLinkData} />
+          <Link data={privacyPolicyLinkData} />
+          <Link data={privacySettingsLinkData} />
           <FloatClear />
         </div>
       </div>

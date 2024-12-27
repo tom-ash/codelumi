@@ -1,5 +1,5 @@
 import { SetControl } from '../../../../../../../../lib/types/setters';
-import styles from '../../header.module.css'
+import styles from '../../header.module.css';
 
 interface PCUserUsersShowButtonInterface {
   setControl: SetControl;
@@ -8,14 +8,14 @@ interface PCUserUsersShowButtonInterface {
 export const PCUserUsersShowButton = (
   props: PCUserUsersShowButtonInterface,
 ) => {
-  const { setControl } = props
+  const { setControl } = props;
 
   return (
     <button
       onClick={() => {
         setControl({
           showPCUserUsersShowDropDown: true,
-        })
+        });
       }}
       className={styles.userUsersShowButton}
     >

@@ -10,9 +10,7 @@ interface AdministrativeDocumentProps {
   styles: Styles;
 }
 
-export const AdministrativeDocument = (
-  props: AdministrativeDocumentProps,
-) => {
+export const AdministrativeDocument = (props: AdministrativeDocumentProps) => {
   const { lang, heading, provisions, styles } = props;
 
   return (
@@ -24,7 +22,7 @@ export const AdministrativeDocument = (
         />
         {/* <Heading {...headingOneProps} /> */}
         {provisions.map((provision, index) => (
-          <Provision key={index} {...{ ...provision, lang,  }} />
+          <Provision key={index} {...{ ...provision, lang }} />
         ))}
       </div>
     </div>

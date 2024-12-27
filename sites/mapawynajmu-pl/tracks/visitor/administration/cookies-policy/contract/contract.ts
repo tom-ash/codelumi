@@ -1,4 +1,5 @@
-import { Lang } from "../../../../common/types/lang";
+import { TextsRecord } from '../../../../../../common/types/texts-record';
+import { Lang } from '../../../../common/types/lang';
 
 export interface AdministrationCookiesPolicyContract {
   app: App;
@@ -9,7 +10,4 @@ export interface App {
   lang: Lang;
 }
 
-type Texts = Record<
-  'headingOne',
-  string
->
+type Texts = TextsRecord<'headingOne'>;

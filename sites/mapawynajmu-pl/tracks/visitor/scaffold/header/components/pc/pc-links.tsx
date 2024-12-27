@@ -46,9 +46,7 @@ export const PCLinks = (props: PCLinksProps) => {
       )}
       {showDropDown && (
         // COVER
-        <div>
-          (USER MENU)
-        </div>
+        <div>(USER MENU)</div>
       )}
       {/* <VisitorPageIndexLink /> */}
       <FloatClear />

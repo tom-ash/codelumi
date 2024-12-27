@@ -3,8 +3,6 @@
   padding-top: 82px;
 }
 
-/* @import '../../../../../../common/styles/container.module.css'; */
-
 .container {
   composes: container from '../../../../../../common/styles/container.module.css';
   position: relative;

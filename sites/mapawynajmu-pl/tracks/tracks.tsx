@@ -29,7 +29,12 @@ const VisitorListingsIndex = dynamic(
 
 const Header = dynamic(() => import('./visitor/scaffold/header/header'));
 const Footer = dynamic(() => import('./visitor/scaffold/footer/footer'));
-const VisitorAdministrationCookiesPolicy = dynamic(() => import('./visitor/administration/cookies-policy/view/view'));
+const VisitorAdministrationCookiesPolicy = dynamic(
+  () => import('./visitor/administration/cookies-policy/view/view'),
+);
+const VisitorAdministrationContact = dynamic(
+  () => import('./visitor/administration/contact/view/view'),
+);
 
 import { parse } from 'cookie';
 
@@ -53,7 +58,8 @@ const views: { [key: string]: React.ComponentType<any> } = {
   'announcement/create/summary': ListingsNewConfirmation,
   'announcement/show': VisitorListingsIndex,
   root: VisitorListingsIndex,
-  'visitor/cookies-policy': VisitorAdministrationCookiesPolicy
+  'visitor/cookies-policy': VisitorAdministrationCookiesPolicy,
+  'visitor/contact': VisitorAdministrationContact,
 };
 
 const Tracks = (props: { data: any }) => {
@@ -103,7 +109,7 @@ const Tracks = (props: { data: any }) => {
     ...{
       scripts: {
         googleMaps,
-        isMapInitialized: !!googleMaps,
+        // isMapInitialized: !!googleMaps,
         isMobile,
       },
     },
@@ -127,9 +133,8 @@ const Tracks = (props: { data: any }) => {
     setInputs,
     setErrors,
   };
-  
 
-  console.log('track', track)
+  console.log('track', track);
 
   const view = views[track];
 

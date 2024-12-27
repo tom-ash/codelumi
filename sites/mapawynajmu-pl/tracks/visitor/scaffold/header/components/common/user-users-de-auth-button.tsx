@@ -1,7 +1,7 @@
 import { LinkData } from '../../../../../../../../lib/types/link-data';
 import { useRouter } from 'next/navigation';
 import Cookies from 'js-cookie';
-import styles from '../../header.module.css'
+import styles from '../../header.module.css';
 
 interface UserUsersDeAuthButtonInterface {
   rootLinkData: LinkData;
